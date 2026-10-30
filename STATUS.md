@@ -6,14 +6,16 @@
 - Recherche abgeschlossen: Analyse der Videos und Kanäle, Account-Strategie, Nischen, Claude-Kapazität (siehe `docs/`).
 - Repo als Projekt-Zentrale eingerichtet.
 - **Korrektur 30.10.:** Die Shop-Videos bleiben öffentlich. Markeninhalte lassen sich nicht auf „Nur ich“ stellen, und die CRP-Prüfung betrifft sie nicht (Details in `docs/02-account-strategie.md`).
-- **Wartet auf den Inhaber:** Ergebnis von Schritt 1 (Kontotyp und Account check).
+- **Schritt 1 erledigt (30.10.):** Das Konto ist privat (kein Business-Konto), der Account check ist ohne Befund (alles grün), Shop-Provisionen spielen keine Rolle.
+- **Startnische ausgearbeitet:** „Geld-Duell“ mit Profil, Bauplan und 30 Themen (siehe `docs/05-startnische-geld-duell.md`). **Bestätigung durch den Inhaber offen.**
+- **Zweiter Account:** Empfehlung „jetzt nicht, frühestens ab Woche 4“, stattdessen ein YouTube-Kanal ab Tag 1.
 
 ## Nächste Schritte
 
 | # | Schritt | Wer | Zeit | Status |
 |---|---|---|---|---|
-| 1 | Kontotyp prüfen (Einstellungen → Konto: steht dort „Zu privatem Konto wechseln“?), Account check in TikTok Studio, Shop-Provisionen der letzten 90 Tage | Inhaber | 15 Min. | offen |
-| 2 | Shop-Videos öffentlich lassen, Profil auf neue Marke umbauen, keine neuen Shop-Videos mehr | Inhaber | 30 Min. | offen |
+| 1 | Kontotyp prüfen, Account check in TikTok Studio, Shop-Provisionen | Inhaber | 15 Min. | erledigt 30.10. |
+| 2 | Nische und Namen bestätigen; Profil erst am Tag des ersten neuen Videos umbauen (Name, Benutzername, Bio, Bild); keine neuen Shop-Videos mehr | Inhaber | 30 Min. | offen |
 | 3 | Pipeline bauen: Rechen-Engine, Three.js-Duell-Vorlage, Stimme, Render, Untertitel; 3 Pilotvideos | Claude Code mit Inhaber | 6–8 Std. über 2 Wochen | offen |
 | 4 | ElevenLabs bezahlt, Impressum-Seite, Nebentätigkeit klären | Inhaber | 1 Std. | offen |
 | 5 | Testphase: 2 Videos pro Tag, 14 Tage, einmal pro Woche als Stapel einplanen | Claude plus Inhaber | 2–3 Std./Woche | offen |
@@ -24,7 +26,9 @@
 ## Offene Punkte
 - [ ] Zeit- und Geldbudget bestätigen (angenommen: 5 Std./Woche Aufbau, 50 €/Monat)
 - [ ] Wie viel vom Max-Abo darf das Projekt nutzen (angenommen: 50 %)?
-- [ ] Startnische bestätigen (Empfehlung: Geld-Duelle)
+- [ ] Startnische „Geld-Duell“ und Benutzername bestätigen (Wunsch `@geldduell`, Alternativen `@geld.duell`, `@dasgeldduell`; ob frei, zeigt erst die App)
+- [ ] YouTube-Kanal „Geld-Duell“ anlegen (am Tag des ersten Videos)
+- [ ] Stimme: kleinster bezahlter ElevenLabs-Plan oder freie Open-Source-Stimme testen?
 - [ ] Render-Rechner: Windows, Mac oder Server?
 - [ ] Sprache: zuerst Deutsch, dann Englisch?
 - [ ] Optional: TikTok-CDN-Domains freigeben, damit Claude Bilder und Transkripte der Vorbild-Videos auswerten kann
