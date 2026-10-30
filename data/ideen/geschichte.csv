@@ -39,11 +39,11 @@ G037,Alltag früher in Zahlen,Wie viel Wasser verbrauchte ein Mensch früher am 
 G038,Alltag früher in Zahlen,Waschtag: Wie viele Stunden Hausarbeit kostete eine Woche ohne Waschmaschine?,Hausarbeit früher Waschtag Stunden,evergreen,niedrig,"Statistisches Bundesamt (Zeitbudgeterhebung), Fachliteratur",2
 G039,Reisen Handel Entdeckungen,Seidenstraße: Wie lange war eine Karawane unterwegs?,Seidenstraße Reisezeit Karawane,evergreen,niedrig,"ORBIS (Stanford), historische Quellen",3
 G040,Reisen Handel Entdeckungen,"Wie schnell war eine Nachricht, bevor es das Telefon gab?",Nachrichten Geschwindigkeit Postreiter,evergreen,niedrig,historische Quellen,4
-G041,Reisen Handel Entdeckungen,Kolumbus 1492: Wie schnell segelte die Santa María?,Kolumbus Überfahrt Santa Maria Geschwindigkeit,evergreen,mittel,"Logbuch-Auszüge (Las Casas), Fachliteratur",3
+G041,Reisen Handel Entdeckungen,Kolumbus 1492: Wie schnell segelte die Santa María?,Kolumbus Überfahrt Santa Maria Geschwindigkeit,saisonal,mittel,"Logbuch-Auszüge (Las Casas), Fachliteratur",3
 G042,Reisen Handel Entdeckungen,Wie fanden Wikinger ihren Weg ohne Kompass?,Wikinger Navigation ohne Kompass,evergreen,niedrig,"Archäologie, Fachliteratur",2
 G043,Reisen Handel Entdeckungen,Wie viel Ladung fasste eine Hansekogge?,Hanse Kogge Ladung Fahrtzeit,evergreen,niedrig,"historische Quellen, Deutsches Schifffahrtsmuseum",3
 G044,Reisen Handel Entdeckungen,Mit der Postkutsche von Berlin nach München: Wie lange und wie teuer?,Postkutsche Reisezeit Preußen,evergreen,niedrig,historische Fahrpläne und Posttaxen,4
-G045,Reisen Handel Entdeckungen,Der Jakobsweg im Mittelalter: Wie lange war ein Pilger unterwegs?,Jakobsweg Pilger Dauer,evergreen,niedrig,historische Quellen,2
+G045,Reisen Handel Entdeckungen,Der Jakobsweg im Mittelalter: Wie lange war ein Pilger unterwegs?,Jakobsweg Pilger Dauer,saisonal,niedrig,historische Quellen,2
 G046,Reisen Handel Entdeckungen,Die Alte Salzstraße: Wie viel Salz transportierte ein Fuhrwerk?,Salzstraße Lüneburg Lübeck,evergreen,niedrig,historische Quellen,1
 G047,Reisen Handel Entdeckungen,Wie navigierten die Polynesier über den Pazifik?,Polynesier Navigation Pazifik,evergreen,niedrig,"Fachliteratur, Polynesian Voyaging Society",1
 G048,Reisen Handel Entdeckungen,Die Überfahrt nach Amerika 1850 gegen heute,Auswanderer Überfahrt Segelschiff Dampfschiff,evergreen,niedrig,historische Statistiken,2
@@ -53,10 +53,10 @@ G051,Technik und Erfindungen,Gutenberg: Wie viele Seiten druckte eine Werkstatt 
 G052,Technik und Erfindungen,Warum hält römischer Beton 2.000 Jahre?,römischer Beton Haltbarkeit,evergreen,niedrig,Fachpublikationen (MIT),1
 G053,Technik und Erfindungen,Wassermühle gegen Handmühle: Wie viel Mehl mahlte sie?,Wassermühle Leistung Handmühle,evergreen,niedrig,Fachliteratur,2
 G054,Technik und Erfindungen,Wie viele Schafe brauchte man für eine Pergament-Bibel?,Pergament Bibel Schafe,evergreen,niedrig,Fachliteratur,2
-G055,Technik und Erfindungen,Die Laufmaschine von Drais: Karlsruhe bis Mannheim 1817,Draisine Laufmaschine 1817,evergreen,niedrig,"Technoseum, historische Quellen",1
+G055,Technik und Erfindungen,Die Laufmaschine von Drais: Karlsruhe bis Mannheim 1817,Draisine Laufmaschine 1817,saisonal,niedrig,"Technoseum, historische Quellen",1
 G056,Technik und Erfindungen,Wie viel Holzkohle brauchte man für ein Kilo Eisen?,Eisenherstellung Holzkohle Mittelalter,evergreen,niedrig,Archäologie,2
 G057,Technik und Erfindungen,Wie viele Eichen brauchte ein großes Segelschiff?,Schiffbau Eichen Holzverbrauch,evergreen,niedrig,Royal Museums Greenwich,1
-G058,Technik und Erfindungen,Das erste Foto: Warum dauerte die Belichtung 8 Stunden?,erstes Foto Niépce Belichtungszeit,evergreen,niedrig,historische Quellen,1
+G058,Technik und Erfindungen,Das erste Foto: Wie lange musste man belichten?,erstes Foto Niépce Belichtungszeit,evergreen,niedrig,historische Quellen,1
 G059,Technik und Erfindungen,Jacquard-Webstuhl: Wie Lochkarten zum Computer führten,Jacquard Webstuhl Lochkarten,evergreen,niedrig,Fachliteratur,1
 G060,Technik und Erfindungen,Wie schnell war ein Wikingerschiff?,Wikingerschiff Geschwindigkeit Segel,evergreen,niedrig,Wikingerschiffsmuseum Roskilde,2
 G061,Technik und Erfindungen,Wie segelt ein Schiff gegen den Wind?,Segeln gegen den Wind Physik,evergreen,niedrig,Fachliteratur,1
@@ -65,7 +65,7 @@ G063,Technik und Erfindungen,Nähmaschine: Wie viel Zeit sparte sie beim Hemdenn
 G064,Geld Preise Wirtschaft,Was kostete ein Brot und wie lange musste man dafür arbeiten?,Tagelohn Brotpreis Mittelalter,evergreen,niedrig,"Fachliteratur (Allen), Global Price and Income History Group",6
 G065,Geld Preise Wirtschaft,Wie viel war ein Taler wert? Kaufkraft von damals in Euro,Taler Kaufkraft heute,evergreen,niedrig,Deutsche Bundesbank (Kaufkraftvergleiche),3
 G066,Geld Preise Wirtschaft,Wie reich war Jakob Fugger wirklich?,Jakob Fugger Vermögen,evergreen,niedrig,Fachliteratur,2
-G067,Geld Preise Wirtschaft,Hyperinflation 1923: Wie schnell stieg der Brotpreis?,Hyperinflation 1923 Brotpreis,evergreen,mittel,"Deutsche Bundesbank, Statistisches Reichsamt",2
+G067,Geld Preise Wirtschaft,Hyperinflation 1923: Wie schnell stieg der Brotpreis?,Hyperinflation 1923 Brotpreis,saisonal,mittel,"Deutsche Bundesbank, Statistisches Reichsamt",2
 G068,Geld Preise Wirtschaft,Die Tulpenmanie 1637: Was kostete eine Zwiebel wirklich?,Tulpenmanie Preis,evergreen,niedrig,Fachliteratur (Goldgar),1
 G069,Geld Preise Wirtschaft,Ein Pfennig bei Christi Geburt: die Zinseszins-Rechnung,Zinseszins Pfennig Geburt Christi,evergreen,mittel,Fachliteratur (Richard Price 1772),1
 G070,Geld Preise Wirtschaft,Wie viel arbeiteten Menschen pro Jahr? 1800 gegen heute,Jahresarbeitszeit Geschichte,evergreen,niedrig,"Our World in Data, Statistisches Bundesamt",3
@@ -79,7 +79,7 @@ G077,Ernährung Landwirtschaft Gesundheit,Wie viele Kalorien brauchte ein Bauer 
 G078,Ernährung Landwirtschaft Gesundheit,Kartoffel gegen Getreide: Wie viel mehr ernährt ein Acker?,Kartoffel Ertrag Getreide Vergleich,evergreen,niedrig,"FAO, Fachliteratur",1
 G079,Ernährung Landwirtschaft Gesundheit,Dreifelderwirtschaft: Wie viel Ernte gab ein Korn im Mittelalter?,Dreifelderwirtschaft Ertrag,evergreen,niedrig,Fachliteratur,2
 G080,Ernährung Landwirtschaft Gesundheit,Wie viele Menschen arbeiteten in der Landwirtschaft? 1800 gegen heute,Anteil Landwirtschaft Beschäftigte Geschichte,evergreen,niedrig,"Statistisches Bundesamt, Our World in Data",3
-G081,Ernährung Landwirtschaft Gesundheit,Das Reinheitsgebot von 1516: Wie viel Bier trank man damals?,Reinheitsgebot 1516 Bierverbrauch,evergreen,mittel,"historische Quellen, Fachliteratur",1
+G081,Ernährung Landwirtschaft Gesundheit,Das Reinheitsgebot von 1516: Wie viel Bier trank man damals?,Reinheitsgebot 1516 Bierverbrauch,saisonal,mittel,"historische Quellen, Fachliteratur",1
 G082,Ernährung Landwirtschaft Gesundheit,Wie schnell breitete sich die Pest 1347 bis 1353 über Europa aus?,Pest Ausbreitung Karte,evergreen,hoch,"Fachliteratur, historische Quellen",2
 G083,Ernährung Landwirtschaft Gesundheit,Der Eiskeller: Wie kühlte man Essen vor dem Kühlschrank?,Eiskeller Kühlung früher,evergreen,niedrig,Fachliteratur,1
 G084,Ernährung Landwirtschaft Gesundheit,Zucker: Vom Luxusgut zum Alltag,Zucker Verbrauch pro Kopf Geschichte,evergreen,niedrig,"Our World in Data, FAO",1
@@ -87,12 +87,12 @@ G085,Ernährung Landwirtschaft Gesundheit,Mit der Sense gegen den Mähdrescher: 
 G086,Ernährung Landwirtschaft Gesundheit,Wie viel Ackerland brauchte ein Mensch zum Satt-Werden?,Ackerfläche pro Person Ernährung,evergreen,niedrig,FAO,2
 G087,Ernährung Landwirtschaft Gesundheit,Wie viel Fleisch aßen die Menschen früher?,Fleischverbrauch früher,evergreen,niedrig,"Fachliteratur, BMEL",1
 G088,Ernährung Landwirtschaft Gesundheit,Was bekam ein Mönch zu essen? Die Regel des Benedikt,Benediktregel Verpflegung Kloster,evergreen,niedrig,Regula Benedicti,1
-G089,Zeit Kalender Wissenschaft,Kalenderreform 1582: Wo sind die zehn Tage geblieben?,Kalenderreform 1582 zehn Tage,evergreen,niedrig,historische Quellen,1
+G089,Zeit Kalender Wissenschaft,Kalenderreform 1582: Wo sind die zehn Tage geblieben?,Kalenderreform 1582 zehn Tage,saisonal,niedrig,historische Quellen,1
 G090,Zeit Kalender Wissenschaft,Warum hat die Stunde 60 Minuten?,Sexagesimalsystem 60 Minuten,evergreen,niedrig,Fachliteratur,1
 G091,Zeit Kalender Wissenschaft,Der Antikythera-Mechanismus: der älteste Computer der Welt?,Antikythera Mechanismus,evergreen,niedrig,Antikythera Research Project,1
 G092,Zeit Kalender Wissenschaft,Eratosthenes misst den Erdumfang mit einem Stock,Eratosthenes Erdumfang Schatten,evergreen,niedrig,historische Quellen,1
 G093,Zeit Kalender Wissenschaft,Wie genau gingen Uhren früher?,Uhrenpräzision Geschichte,evergreen,niedrig,"PTB, Fachliteratur",2
-G094,Zeit Kalender Wissenschaft,Bahnzeit: Als jede Stadt ihre eigene Uhrzeit hatte,Einführung Mitteleuropäische Zeit 1893,evergreen,niedrig,"PTB, historische Quellen",1
+G094,Zeit Kalender Wissenschaft,Bahnzeit: Als jede Stadt ihre eigene Uhrzeit hatte,Einführung Mitteleuropäische Zeit 1893,saisonal,niedrig,"PTB, historische Quellen",1
 G095,Zeit Kalender Wissenschaft,Die Erfindung der Null,Null Erfindung Zahlensystem,evergreen,niedrig,Fachliteratur,1
 G096,Zeit Kalender Wissenschaft,"Elle, Fuß und Meile: Das Maßeinheiten-Chaos vor dem Meter",Maßeinheiten früher Elle Meile,evergreen,niedrig,PTB,2
 G097,Zeit Kalender Wissenschaft,Wie wurde der Meter festgelegt? Die Vermessung des Meridians,Definition Meter Meridian,evergreen,niedrig,"PTB, BIPM",1
@@ -126,15 +126,15 @@ G124,Frühe Menschheit und Urgeschichte,Die Himmelsscheibe von Nebra: Was zeigt 
 G125,Frühe Menschheit und Urgeschichte,Goseck: Das Sonnenobservatorium von 4900 v. Chr.,Goseck Sonnenobservatorium Sonnenwende,saisonal,niedrig,Landesamt für Denkmalpflege Sachsen-Anhalt,1
 G126,Industrialisierung und Moderne,Dampfmaschine: Wie viel Energie ging wirklich in Arbeit?,Dampfmaschine Wirkungsgrad Watt,evergreen,niedrig,Fachliteratur,1
 G127,Industrialisierung und Moderne,Spinning Jenny: Wie viel mehr Garn schaffte eine Maschine?,Spinning Jenny Produktivität,evergreen,niedrig,Fachliteratur,1
-G128,Industrialisierung und Moderne,Nürnberg nach Fürth 1835: Die erste deutsche Eisenbahn in Zahlen,Eisenbahn Nürnberg Fürth 1835,evergreen,niedrig,"DB Museum, historische Quellen",1
+G128,Industrialisierung und Moderne,Nürnberg nach Fürth 1835: Die erste deutsche Eisenbahn in Zahlen,Eisenbahn Nürnberg Fürth 1835,saisonal,niedrig,"DB Museum, historische Quellen",1
 G129,Industrialisierung und Moderne,Energiesklaven: Wie viele Arbeiter ersetzt eine Kilowattstunde?,Energiesklaven Kilowattstunde Muskelkraft,evergreen,niedrig,Fachliteratur (Smil),2
 G130,Industrialisierung und Moderne,"Wie schnell verbreiteten sich Strom, Radio und Handy in den Haushalten?",Technikverbreitung Haushalte Geschichte,evergreen,niedrig,"Our World in Data, Statistisches Bundesamt",3
 G131,Industrialisierung und Moderne,Die Pferdemist-Krise von 1894: Mythos oder Wahrheit?,Pferdemist Krise Städte 1894,evergreen,niedrig,Fachliteratur,1
 G132,Industrialisierung und Moderne,Wie viel reicher sind wir als 1850? Das Bruttoinlandsprodukt pro Kopf,BIP pro Kopf Deutschland seit 1850,evergreen,niedrig,"Maddison Project, Statistisches Bundesamt",1
-G133,Industrialisierung und Moderne,"Die Berliner Luftbrücke: Wie viele Flugzeuge, wie viele Tonnen?",Berliner Luftbrücke Tonnen Flugzeuge,evergreen,mittel,"Alliiertenmuseum, historische Quellen",1
+G133,Industrialisierung und Moderne,"Die Berliner Luftbrücke: Wie viele Flugzeuge, wie viele Tonnen?",Berliner Luftbrücke Tonnen Flugzeuge,saisonal,mittel,"Alliiertenmuseum, historische Quellen",1
 G134,Industrialisierung und Moderne,Rheinbegradigung: Wie viel kürzer wurde der Rhein?,Rheinbegradigung Tulla Länge,evergreen,niedrig,historische Quellen,1
 G135,Industrialisierung und Moderne,Der Suezkanal: Wie viel kürzer wurde der Seeweg?,Suezkanal Abkürzung Seeweg,evergreen,niedrig,historische Quellen,1
-G136,Industrialisierung und Moderne,Kinderarbeit in Preußen: Das Verbot von 1839 in Zahlen,Kinderarbeit Preußen 1839 Verbot,evergreen,mittel,historische Quellen,1
+G136,Industrialisierung und Moderne,Kinderarbeit in Preußen: Das Regulativ von 1839 in Zahlen,Kinderarbeit Preußen 1839 Verbot,saisonal,mittel,historische Quellen,1
 G137,Industrialisierung und Moderne,Das Fließband: Wie schnell wurde ein Auto bei Ford fertig?,Fließband Ford Montagezeit,evergreen,niedrig,Henry Ford Museum,1
 G138,Industrialisierung und Moderne,Haber-Bosch: Wie viele Menschen ernährt Kunstdünger?,Haber-Bosch Ernährung Bevölkerung,evergreen,mittel,Fachliteratur (Smil),1
 G139,Städte und Bevölkerung,Wie groß war Köln im Mittelalter?,Stadtgröße Mittelalter Köln Einwohner,evergreen,niedrig,Fachliteratur (Bairoch),3

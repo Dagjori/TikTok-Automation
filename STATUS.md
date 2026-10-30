@@ -8,6 +8,7 @@
 - **Korrektur 30.10.:** Die Shop-Videos bleiben öffentlich. Markeninhalte lassen sich nicht auf „Nur ich“ stellen, und die CRP-Prüfung betrifft sie nicht (Details in `docs/02-account-strategie.md`).
 - **Schritt 1 erledigt (30.10.):** Das Konto ist privat (kein Business-Konto), der Account check ist ohne Befund (alles grün), Shop-Provisionen spielen keine Rolle.
 - **Startnische neu ausgearbeitet:** „Der Testlauf – Alltag simuliert“ (Verkehr, Warteschlangen, Zuhause, Spiele) mit Profil, Bauplan und 30 Themen (siehe `docs/05-startnische.md`). „Geld-Duell“ wurde verworfen, weil es zu nah an bestehenden Accounts ist. **Bestätigung durch den Inhaber offen.**
+- **Themenvorrat gemessen (30.10.):** 9 Nischen mit je 150 eigenständigen Ideen gelistet (`data/ideen/`), Ranking in `docs/06-nischen-ranking.md`. **Der Inhaber wählt die Nische aus dem Ranking.**
 - **Zweiter Account:** Empfehlung „jetzt nicht, frühestens ab Woche 4“, stattdessen ein YouTube-Kanal ab Tag 1. Bester späterer Kandidat ist „Der Testlauf“ auf Englisch.
 
 ## Nächste Schritte
@@ -26,7 +27,7 @@
 ## Offene Punkte
 - [ ] Zeit- und Geldbudget bestätigen (angenommen: 5 Std./Woche Aufbau, 50 €/Monat)
 - [ ] Wie viel vom Max-Abo darf das Projekt nutzen (angenommen: 50 %)?
-- [ ] Startnische „Der Testlauf“ und Benutzername bestätigen (Wunsch `@dertestlauf`, Alternativen `@der.testlauf`, Plan B `@nachsimuliert`; ob frei, zeigt erst die App)
+- [ ] Nische aus dem Ranking wählen (`docs/06-nischen-ranking.md`); danach Name und Benutzername festlegen. Bisheriger Vorschlag: „Der Testlauf“ (Wunsch `@dertestlauf`, Alternativen `@der.testlauf`, Plan B `@nachsimuliert`; ob frei, zeigt erst die App)
 - [ ] YouTube-Kanal „Der Testlauf“ anlegen (am Tag des ersten Videos)
 - [ ] Stimme: kleinster bezahlter ElevenLabs-Plan oder freie Open-Source-Stimme testen?
 - [ ] Render-Rechner: Windows, Mac oder Server?
