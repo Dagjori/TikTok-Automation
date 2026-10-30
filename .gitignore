@@ -1,0 +1,19 @@
+# Abhängigkeiten
+node_modules/
+__pycache__/
+.venv/
+
+# Render-Ausgaben und Zwischenstände
+out/
+renders/
+frames/
+*.mp4
+*.wav
+*.mp3
+
+# Geheimnisse
+.env
+.env.*
+
+# System
+.DS_Store
