@@ -1,0 +1,151 @@
+id,kategorie,titel,suchbegriff,typ,risiko,datenquelle,varianten
+TL-001,Autoverkehr & Straße,Reißverschluss: früh einordnen oder bis zum Ende fahren?,reißverschlussverfahren,evergreen,niedrig,Nagel-Schreckenberg-Modell; § 7 Abs. 4 StVO,10
+TL-002,Autoverkehr & Straße,Phantomstau: wie ein einziger Bremser kilometerlangen Stau auslöst,stau aus dem nichts,evergreen,niedrig,Ringversuch Sugiyama et al. 2008; Nagel-Schreckenberg-Modell,6
+TL-003,Autoverkehr & Straße,Spurwechsel im Stau: bist du auf der anderen Spur wirklich schneller?,spurwechsel stau,evergreen,niedrig,Nagel-Schreckenberg-Modell (Mehrspur),6
+TL-004,Autoverkehr & Straße,130 oder 160 km/h: wie viel Zeit sparst du wirklich auf 300 km?,schneller fahren zeit sparen,evergreen,hoch,eigene Rechnung mit BASt-Verkehrsdaten,10
+TL-005,Autoverkehr & Straße,Rettungsgasse: wie viele Minuten verliert ein Rettungswagen ohne sie?,rettungsgasse,evergreen,hoch,§ 11 Abs. 2 StVO; Nagel-Schreckenberg-Modell,3
+TL-006,Autoverkehr & Straße,Grüne Welle: warum stehst du trotzdem immer an der roten Ampel?,grüne welle,evergreen,niedrig,Ampel-Taktmodell (Zeit-Weg-Diagramm),4
+TL-007,Autoverkehr & Straße,Kreisverkehr oder Ampelkreuzung: was schafft mehr Autos?,kreisverkehr vorteile nachteile,evergreen,niedrig,HBS (FGSV) Leistungsfähigkeitsverfahren; Agentenmodell,5
+TL-008,Autoverkehr & Straße,Elefantenrennen: wie lange blockiert ein Lkw-Überholmanöver die Autobahn?,elefantenrennen lkw überholen,evergreen,niedrig,Nagel-Schreckenberg-Modell (Mischverkehr); BASt,4
+TL-009,Autoverkehr & Straße,Drängeln: wie viele Minuten spart dichtes Auffahren auf 100 km?,drängeln zeit sparen,evergreen,hoch,Nagel-Schreckenberg-Modell; Bußgeldkatalog,4
+TL-010,Autoverkehr & Straße,Linksabbieger: wie viel Stau macht ein einziges wartendes Auto?,linksabbieger stau ampel,evergreen,niedrig,Warteschlangentheorie; HBS (FGSV),3
+TL-011,Autoverkehr & Straße,Rechts vor links: wann klappt eine Kreuzung ohne Ampel?,rechts vor links kreuzung,evergreen,niedrig,§ 8 StVO; Agentenmodell,4
+TL-012,Autoverkehr & Straße,"Navi-Umleitung: was passiert, wenn alle der Abkürzung folgen?",navi umleitung stau,evergreen,niedrig,Braess-Paradoxon (1968); Wardrop-Gleichgewicht,5
+TL-013,Autoverkehr & Straße,Landstraße: wie lang wird die Schlange hinter einem langsamen Traktor?,traktor überholen landstraße stau,saisonal,niedrig,Pulkbildung auf Landstraßen (Warteschlangenmodell),3
+TL-014,Autoverkehr & Straße,Sommerferien: samstags früh oder nachts losfahren?,urlaub stau abfahrtszeit,saisonal,niedrig,ADAC-Stauprognose; Verkehrsnachfragemodell,6
+TL-015,Autoverkehr & Straße,Baustelle: 60 oder 80 km/h – was lässt mehr Autos durch?,baustelle autobahn tempolimit stau,evergreen,niedrig,Fundamentaldiagramm des Verkehrsflusses; BASt,4
+TL-016,Autoverkehr & Straße,Schulstart: wie lange staut sich die Straße vor der Schule durch Elterntaxis?,elterntaxi schule stau,saisonal,mittel,Warteschlangentheorie; Annahmen offen,3
+TL-017,Autoverkehr & Straße,Tunnel und Blitzer: warum bremsen alle – und wie viel Stau kostet das?,stau vor tunnel warum,evergreen,niedrig,Nagel-Schreckenberg-Modell (Bremswelle); Verkehrsstudien,3
+TL-018,Autoverkehr & Straße,Fußgängerampel: bringt mehrmaliges Drücken des Knopfs etwas?,ampelknopf mehrmals drücken,evergreen,niedrig,Ampelsteuerung (Anforderungstaster; Mindestumlaufzeit),2
+TL-019,"Unterwegs: Parken, Bus, Bahn, Flug",Parkplatz: den ersten freien nehmen oder nah am Eingang suchen?,parkplatz suchen,evergreen,niedrig,Agentenmodell; Parkplatzproblem (Optimal Stopping),6
+TL-020,"Unterwegs: Parken, Bus, Bahn, Flug","Boarding: hinten nach vorne, zufällig oder Steffen-Methode?",boarding flugzeug methode,evergreen,niedrig,Steffen 2008 (J. Air Transport Management),8
+TL-021,"Unterwegs: Parken, Bus, Bahn, Flug",Aussteigen aus dem Flugzeug: bringt sofortiges Aufstehen etwas?,flugzeug aussteigen aufstehen,evergreen,niedrig,Agentenmodell; Warteschlangentheorie,3
+TL-022,"Unterwegs: Parken, Bus, Bahn, Flug",Straßenbahn-Vorrang an der Ampel: wer verliert wie viel Zeit?,straßenbahn ampel vorrang,evergreen,niedrig,Ampel-Taktmodell; Studien zur ÖPNV-Beschleunigung,3
+TL-023,"Unterwegs: Parken, Bus, Bahn, Flug",Bus: vorne einsteigen oder an allen Türen?,bus einsteigen alle türen,evergreen,niedrig,TCQSM (Transit Capacity and Quality of Service Manual); Agentenmodell,3
+TL-024,"Unterwegs: Parken, Bus, Bahn, Flug",Bus-Bunching: warum kommen drei Busse auf einmal?,warum kommen busse zusammen,evergreen,niedrig,Newell & Potts 1964; Agentenmodell,3
+TL-025,"Unterwegs: Parken, Bus, Bahn, Flug",Wartezeit: warum wartest du an der Haltestelle im Schnitt länger als gedacht?,wartezeit haltestelle fahrplan,evergreen,niedrig,Inspektionsparadoxon (Warteschlangentheorie),3
+TL-026,"Unterwegs: Parken, Bus, Bahn, Flug",Verspätungsdomino: wie fünf Minuten Verspätung ein ganzes Netz durcheinanderbringen,zugverspätung folgen domino,evergreen,niedrig,Fahrplan-Netzmodell; Pünktlichkeitsdaten der Bahn,4
+TL-027,"Unterwegs: Parken, Bus, Bahn, Flug",Anschluss: wie wahrscheinlich ist ein Umstieg mit 5 Minuten Zeit?,umsteigezeit 5 minuten anschluss,evergreen,niedrig,Monte-Carlo-Simulation; Verspätungsverteilung (Pünktlichkeitsdaten der Bahn),5
+TL-028,"Unterwegs: Parken, Bus, Bahn, Flug",Rad oder Auto: wer ist in der Stadt auf 5 km schneller?,fahrrad oder auto stadt schneller,evergreen,mittel,Reisezeitmodell; Mobilität in Deutschland (MiD),6
+TL-029,"Unterwegs: Parken, Bus, Bahn, Flug",Fahrgemeinschaft: wie viel Umweg kosten zusätzliche Mitfahrer?,fahrgemeinschaft umweg,evergreen,niedrig,Routenplanung (Traveling-Salesman-Heuristik),5
+TL-030,"Unterwegs: Parken, Bus, Bahn, Flug","Ladesäulen an der Raststätte: wie viele braucht es, damit niemand wartet?",ladesäulen warteschlange raststätte,news,mittel,Warteschlangentheorie (Erlang-Modell); Ladesäulenregister der Bundesnetzagentur,5
+TL-031,"Unterwegs: Parken, Bus, Bahn, Flug",Parkhaus: Zahlen am Automaten oder an der Ausfahrt – was staut weniger?,parkhaus ausfahrt stau,evergreen,niedrig,Warteschlangentheorie (Tandem-Warteschlange),3
+TL-032,"Unterwegs: Parken, Bus, Bahn, Flug",Haltestellenabstand: wie weit auseinander sollten Bushaltestellen liegen?,haltestellenabstand bus,evergreen,niedrig,Reisezeitmodell (Zugangs- plus Fahrzeit),3
+TL-033,Warteschlangen & Abfertigung,Supermarkt: eine Schlange für alle Kassen oder eine pro Kasse?,schlange supermarkt kasse,evergreen,niedrig,Warteschlangentheorie (M/M/c),6
+TL-034,Warteschlangen & Abfertigung,Expresskasse: bringt eine Kasse nur für wenige Artikel wirklich etwas?,express kasse wenige artikel,evergreen,niedrig,Warteschlangentheorie (kürzeste Aufgabe zuerst),3
+TL-035,Warteschlangen & Abfertigung,Self-Checkout oder Kasse: was ist wirklich schneller?,self checkout schneller,evergreen,niedrig,Warteschlangentheorie; Annahmen offen,4
+TL-036,Warteschlangen & Abfertigung,Kassenschlange wählen: wenige Leute mit vollen Wagen oder viele mit wenigen Artikeln?,welche kassenschlange wählen,evergreen,niedrig,Warteschlangentheorie; Agentenmodell,4
+TL-037,Warteschlangen & Abfertigung,Zweite Kasse: ab wie vielen Wartenden sollte sie öffnen?,zweite kasse aufmachen,evergreen,niedrig,Warteschlangentheorie (Schwellenwert-Steuerung),3
+TL-038,Warteschlangen & Abfertigung,Bürgeramt: Termin oder Wartenummer – wer wartet im Schnitt kürzer?,bürgeramt termin oder ohne termin,evergreen,niedrig,Warteschlangentheorie; Terminsystem-Modell,4
+TL-039,Warteschlangen & Abfertigung,Arztpraxis: warum wartest du trotz Termin so lange?,arzt warten trotz termin,evergreen,mittel,Bailey-Welch-Regel (1952); Warteschlangentheorie,3
+TL-040,Warteschlangen & Abfertigung,Toilettenschlange: warum warten Frauen länger – und wie viele Kabinen bräuchte es?,toilette schlange frauen,evergreen,mittel,Warteschlangentheorie; Studien zur Verweildauer,3
+TL-041,Warteschlangen & Abfertigung,Frühstücksbuffet: warum staut es sich immer am Toaster?,buffet schlange engpass,evergreen,niedrig,Engpasstheorie (Theory of Constraints); Warteschlangentheorie,4
+TL-042,Warteschlangen & Abfertigung,Freizeitpark: ist die Einzelfahrer-Schlange wirklich schneller?,single rider schlange schneller,saisonal,niedrig,Kapazitätsmodell (Sitzplatzfüllung); Warteschlangentheorie,3
+TL-043,Warteschlangen & Abfertigung,Vordrängeln: wie viel Zeit kostet ein einziger Vordrängler alle anderen?,vordrängeln schlange,evergreen,niedrig,Warteschlangentheorie (Queue-Jumping),3
+TL-044,Warteschlangen & Abfertigung,"Hotline: wann rufst du an, damit die Warteschleife am kürzesten ist?",hotline warteschleife beste uhrzeit,evergreen,niedrig,Erlang-C-Modell (Callcenter-Planung),3
+TL-045,Warteschlangen & Abfertigung,Auslastung: warum explodiert jede Schlange kurz vor 100 Prozent?,warum schlange so lang auslastung,evergreen,niedrig,Warteschlangentheorie (Kingman-Formel),6
+TL-046,Warteschlangen & Abfertigung,Drive-in: eine oder zwei Bestellspuren – was ist schneller?,drive in warteschlange,evergreen,niedrig,Tandem-Warteschlange; Warteschlangentheorie,3
+TL-047,Warteschlangen & Abfertigung,Taxistand: warum warten Taxis und Fahrgäste gleichzeitig?,taxistand warten,evergreen,niedrig,zweiseitige Warteschlangen (Douglas 1972),2
+TL-048,Menschenmengen & Gehen,"Rolltreppe: links gehen, rechts stehen oder beide Seiten stehen?",rolltreppe links gehen rechts stehen,evergreen,niedrig,Transport-for-London-Test in Holborn (2015/16),4
+TL-049,Menschenmengen & Gehen,Aufzug: warum fährt er immer in die falsche Richtung?,aufzug falsche richtung,evergreen,niedrig,Aufzugssteuerung (Sammelsteuerung); Agentenmodell,4
+TL-050,Menschenmengen & Gehen,Engstelle: warum macht Drängeln am Ausgang alle langsamer?,drängeln ausgang langsamer,evergreen,hoch,Helbing et al. 2000 (Nature; Social-Force-Modell),4
+TL-051,Menschenmengen & Gehen,Säule vor dem Ausgang: macht ein Hindernis die Menge schneller?,säule vor ausgang menge,evergreen,hoch,Social-Force-Modell (Helbing et al.),2
+TL-052,Menschenmengen & Gehen,Gehweg: warum bilden sich von selbst Gehspuren?,fußgänger spurbildung gehweg,evergreen,niedrig,Social-Force-Modell (Helbing & Molnár 1995),2
+TL-053,Menschenmengen & Gehen,Treppe oder Aufzug: ab welcher Etage ist der Aufzug schneller?,treppe oder aufzug schneller,evergreen,niedrig,Aufzug-Kinematik; Wartezeitmodell,4
+TL-054,Menschenmengen & Gehen,Konzert-Einlass: alle auf einmal oder gestaffelt?,konzert einlass gedränge,evergreen,mittel,Warteschlangenmodell; Social-Force-Modell,3
+TL-055,Menschenmengen & Gehen,"La Ola: wie viele müssen anfangen, damit die Welle startet?",la ola stadion welle,evergreen,niedrig,"Farkas, Helbing & Vicsek 2002 (Nature)",2
+TL-056,Menschenmengen & Gehen,Applaus: warum klatscht ein Publikum plötzlich im Takt?,applaus synchron takt,evergreen,niedrig,Néda et al. 2000 (Nature); Kuramoto-Modell,1
+TL-057,Menschenmengen & Gehen,Drehtür oder Schwingtür: was lässt mehr Leute durch?,drehtür oder schwingtür,evergreen,niedrig,Durchflussmodell; Agentenmodell,2
+TL-058,Menschenmengen & Gehen,Wandergruppe: wie viel langsamer wird die ganze Gruppe durch einen Langsamen?,wandergruppe langsamster,evergreen,niedrig,Boids-Modell (Reynolds 1987); Agentenmodell,3
+TL-059,Menschenmengen & Gehen,Handy beim Gehen: wie sehr bremsen Smartphone-Läufer den Gehweg?,handy beim gehen gehweg,evergreen,niedrig,Social-Force-Modell; Studien zur Gehgeschwindigkeit,2
+TL-060,Zuhause & Haushalt,Stoßlüften oder Kippfenster: Wärmeverlust und Luftqualität im Vergleich,stoßlüften oder kippen,saisonal,mittel,Umweltbundesamt; Verbraucherzentrale; Wärmebilanz-Modell,8
+TL-061,Zuhause & Haushalt,Heizung nachts aus oder nur runterdrehen?,heizung nachts aus oder runter,saisonal,mittel,Wärmebilanz-Modell; Verbraucherzentrale,5
+TL-062,Zuhause & Haushalt,Wäsche drinnen trocknen: wie viel Wasser landet in der Raumluft?,wäsche trocknen wohnung feuchtigkeit,saisonal,mittel,Feuchtebilanz (Bauphysik); Umweltbundesamt,4
+TL-063,Zuhause & Haushalt,Saugroboter: zufällig fahren oder systematisch?,saugroboter zufällig oder systematisch,evergreen,niedrig,Coverage-Path-Planning; Zufallsbewegung,4
+TL-064,Zuhause & Haushalt,Warum bleibt immer eine einzelne Socke übrig?,socke verschwunden waschmaschine,evergreen,niedrig,Wahrscheinlichkeitsrechnung (Paarungs-Simulation); Annahmen offen,4
+TL-065,Zuhause & Haushalt,Ein Zimmer heizen oder alle gleichmäßig? Wärmeströme in der Wohnung,nur ein zimmer heizen,saisonal,mittel,Mehrzonen-Wärmebilanz; Verbraucherzentrale,3
+TL-066,Zuhause & Haushalt,"Sicherung fliegt: wann trifft es dich, wenn mehrere Geräte laufen?",sicherung fliegt welche geräte,evergreen,mittel,Lastprofil-Simulation; DIN VDE 0100,3
+TL-067,Zuhause & Haushalt,"Morgens im Bad: wer geht zuerst, damit alle pünktlich sind?",badezimmer reihenfolge familie morgens,evergreen,niedrig,Scheduling-Theorie (Smith 1956),4
+TL-068,Zuhause & Haushalt,"Waschmaschine: halbe Ladungen oder warten, bis sie voll ist?",waschmaschine halb voll,evergreen,niedrig,Verbraucherzentrale; Verbrauchskennwerte der Geräte,4
+TL-069,Zuhause & Haushalt,Hitze in der Wohnung: tagsüber lüften oder Fenster zu?,wohnung kühl halten sommer lüften,saisonal,mittel,Wärmebilanz-Modell; DWD-Temperaturdaten; Umweltbundesamt,5
+TL-070,Zuhause & Haushalt,Waschen und Trocknen: welche Reihenfolge schafft 5 Ladungen am schnellsten?,wäsche waschen trocknen reihenfolge,evergreen,niedrig,Flow-Shop-Scheduling (Johnson 1954),3
+TL-071,Zuhause & Haushalt,"Klobrille: immer runter, immer hoch oder wie der Letzte sie hinterlassen hat?",klobrille hoch oder runter,evergreen,mittel,Markov-Modell der Nutzungsfolgen; Annahmen offen,3
+TL-072,Zuhause & Haushalt,Sortieren oder suchen: ab wann lohnt sich Ordnung?,ordnung halten oder suchen,evergreen,niedrig,Suchaufwand (lineare vs. binäre Suche; Informatik),3
+TL-073,"Küche, Einkauf & Packen",Spülmaschine einräumen: welche Methode bekommt am meisten rein?,spülmaschine richtig einräumen,evergreen,niedrig,Packungsproblem (Bin-Packing); Simulation,4
+TL-074,"Küche, Einkauf & Packen","Frühstück: Kaffee, Toast, Eier – welche Reihenfolge wird gleichzeitig fertig?",frühstück gleichzeitig fertig,evergreen,niedrig,Scheduling (Critical-Path-Methode),3
+TL-075,"Küche, Einkauf & Packen","Supermarkt-Route: Zickzack, Außenring oder nach Liste?",supermarkt route einkaufsliste,evergreen,niedrig,Traveling-Salesman-Heuristik,4
+TL-076,"Küche, Einkauf & Packen",Kofferraum packen: große Teile zuerst oder kleine zuerst?,kofferraum packen reihenfolge,saisonal,niedrig,Bin-Packing (First-Fit-Decreasing),4
+TL-077,"Küche, Einkauf & Packen","Einmal Großeinkauf oder täglich frisch: was kostet mehr Zeit, was landet im Müll?",großeinkauf oder täglich einkaufen,evergreen,niedrig,Lagerhaltungsmodell; Destatis (Lebensmittelabfälle),4
+TL-078,"Küche, Einkauf & Packen",Kühlschrank einräumen: Altes nach vorn oder egal – wie viel verdirbt?,kühlschrank altes nach vorne,evergreen,niedrig,Lagerhaltungsmodell (FIFO); Destatis (Lebensmittelabfälle),3
+TL-079,"Küche, Einkauf & Packen","Kuchen teilen: einer schneidet, der andere wählt – ist das wirklich fair?",kuchen fair teilen,evergreen,niedrig,Fair-Division-Theorie (Cut-and-Choose),3
+TL-080,"Küche, Einkauf & Packen","Wie viele Pizzen für die Party, damit niemand leer ausgeht?",wie viele pizzen für party,evergreen,niedrig,Binomial- und Normalverteilung; Monte-Carlo-Simulation; Annahmen offen,4
+TL-081,"Küche, Einkauf & Packen",Restaurant: warum kommt das Essen am Tisch nie gleichzeitig?,restaurant essen kommt nicht gleichzeitig,evergreen,niedrig,Job-Shop-Scheduling; Warteschlangentheorie,2
+TL-082,"Küche, Einkauf & Packen",Zu viele Köche: ab wie vielen Helfern wird es langsamer?,zu viele köche,evergreen,niedrig,Amdahlsches Gesetz; Brooks 1975,4
+TL-083,Spiele & Partyspiele,Mensch ärgere dich nicht: rausschmeißen oder schnell laufen? 100.000 Partien,mensch ärgere dich nicht strategie,evergreen,niedrig,eigene Monte-Carlo-Simulation,6
+TL-084,Spiele & Partyspiele,Monopoly: welche Straßen gewinnen wirklich?,monopoly beste straßen,evergreen,mittel,Markov-Kette der Spielfelder,5
+TL-085,Spiele & Partyspiele,Siedler von Catan: wo setzt du die erste Siedlung?,catan beste startposition,evergreen,mittel,Würfelwahrscheinlichkeiten; Monte-Carlo-Simulation,4
+TL-086,Spiele & Partyspiele,Mau-Mau: Sonderkarten sofort spielen oder aufheben?,mau mau strategie,evergreen,niedrig,Monte-Carlo-Simulation,3
+TL-087,Spiele & Partyspiele,"Schere, Stein, Papier: gibt es eine Gewinnstrategie?",schere stein papier strategie,evergreen,niedrig,"Wang, Xu & Zhou 2014 (Scientific Reports)",3
+TL-088,Spiele & Partyspiele,Vier gewinnt: wer gewinnt bei perfektem Spiel?,vier gewinnt gewinnstrategie,evergreen,mittel,Allis 1988 (Lösung per Spielbaum-Suche),6
+TL-089,Spiele & Partyspiele,Memory: wie viele Züge brauchst du – merken oder raten?,memory spiel strategie,evergreen,niedrig,Zwick & Paterson 1993; Monte-Carlo-Simulation,3
+TL-090,Spiele & Partyspiele,Kniffel: wie viele Punkte schafft man mit perfekter Strategie?,kniffel beste strategie,evergreen,mittel,Optimalstrategie per dynamischer Programmierung (Verhoeff; Glenn),3
+TL-091,Spiele & Partyspiele,Schiffe versenken: welche Schusstaktik gewinnt?,schiffe versenken strategie,evergreen,niedrig,Wahrscheinlichkeitsdichte-Strategie; Monte-Carlo-Simulation,3
+TL-092,Spiele & Partyspiele,Fangen: wie viele Fänger braucht ein Spielfeld?,fangen spielen strategie,evergreen,niedrig,Pursuit-Evasion-Modell (Agentenmodell),3
+TL-093,Spiele & Partyspiele,Reise nach Jerusalem: hat der Schnellste wirklich Vorteil?,reise nach jerusalem strategie,evergreen,niedrig,Agentenmodell,2
+TL-094,Spiele & Partyspiele,Wortraten im Wordle-Stil: welches Startwort gewinnt am häufigsten?,wordle bestes startwort deutsch,evergreen,mittel,Informationsentropie (Shannon); freie deutsche Wortlisten,4
+TL-095,Spiele & Partyspiele,Werwolf: wie viele Werwölfe braucht ein Dorf für ein faires Spiel?,werwolf wie viele werwölfe,evergreen,mittel,Monte-Carlo-Simulation (Abstimmungsmodell),3
+TL-096,Spiele & Partyspiele,Stille Post: wie schnell zerfällt eine Nachricht?,stille post,evergreen,niedrig,Informationstheorie (Rauschen); Markov-Modell,3
+TL-097,Spiele & Partyspiele,"Karten mischen: wie oft musst du mischen, bis es wirklich zufällig ist?",karten mischen wie oft,evergreen,mittel,Bayer & Diaconis 1992,2
+TL-098,Spiele & Partyspiele,"Darts: wohin zielst du, wenn du kein Profi bist?",darts wohin zielen,evergreen,niedrig,"Tibshirani, Price & Taylor 2011",3
+TL-099,Zufall & Spieltheorie,Geburtstagsparadoxon: wie wahrscheinlich haben zwei in der Klasse am selben Tag Geburtstag?,geburtstagsparadoxon,evergreen,niedrig,Wahrscheinlichkeitsrechnung (Kombinatorik),5
+TL-100,Zufall & Spieltheorie,Ziegenproblem: wechseln oder bleiben? 100.000 Spiele,ziegenproblem,evergreen,niedrig,Bedingte Wahrscheinlichkeit (vos Savant 1990),3
+TL-101,Zufall & Spieltheorie,Wichteln: wie wahrscheinlich ziehst du dich selbst?,wichteln selbst ziehen,saisonal,niedrig,Kombinatorik (Fixpunkte von Permutationen),4
+TL-102,Zufall & Spieltheorie,37-Prozent-Regel: wann hörst du auf zu suchen und schlägst zu?,37 prozent regel,evergreen,niedrig,Optimal-Stopping-Theorie (Gilbert & Mosteller 1966),6
+TL-103,Zufall & Spieltheorie,Gefangenendilemma: warum kooperiert keiner – und welche Strategie gewinnt das Turnier?,gefangenendilemma tit for tat,evergreen,niedrig,Axelrod 1984,3
+TL-104,Zufall & Spieltheorie,Eisverkäufer am Strand: wo stellt sich der zweite Verkäufer hin?,hotelling modell eisverkäufer,saisonal,niedrig,Hotelling 1929,3
+TL-105,Zufall & Spieltheorie,"Gruppenentscheidung: wie stimmt ihr ab, damit alle zufrieden sind?",gruppe abstimmen restaurant,evergreen,niedrig,Wahlverfahren (Condorcet; Borda; Arrow),5
+TL-106,Zufall & Spieltheorie,Weisheit der Vielen: wie gut schätzt eine Menge? (Gummibärchen im Glas),weisheit der vielen schätzen,evergreen,niedrig,Galton 1907 (Nature),3
+TL-107,Zufall & Spieltheorie,Freundschaftsparadox: warum haben deine Freunde mehr Freunde als du?,freundschaftsparadox,evergreen,niedrig,Feld 1991 (Netzwerktheorie),2
+TL-108,Zufall & Spieltheorie,Kleine-Welt-Phänomen: über wie viele Ecken kennst du jeden?,sechs grad trennung,evergreen,niedrig,Milgram 1967; Watts & Strogatz 1998,2
+TL-109,Zufall & Spieltheorie,"Hamsterkäufe: warum sind Regale leer, obwohl genug da ist?",hamsterkäufe warum leere regale,news,mittel,Agentenmodell (Herdenverhalten); Lagerhaltungsmodell,3
+TL-110,Zufall & Spieltheorie,Münzwurf: ist er wirklich 50:50? 350.757 Würfe,münzwurf 50 50,evergreen,niedrig,Bartoš et al. 2023 (350.757 Würfe); Diaconis et al. 2007,2
+TL-111,Zufall & Spieltheorie,Sammelbilder-Album: wie viele Tüten brauchst du für das volle Album – mit und ohne Tauschen?,sammelbilder album komplett wie viele,saisonal,mittel,Coupon-Collector-Problem,4
+TL-112,Zufall & Spieltheorie,"Gruppenfoto: wie viele Versuche, bis niemand blinzelt?",gruppenfoto blinzeln,evergreen,niedrig,Binomialverteilung; Studien zur Blinzelrate,3
+TL-113,Zufall & Spieltheorie,Zufallswiedergabe: warum spielt der Shuffle gefühlt immer denselben Künstler?,shuffle zufall wiederholt,evergreen,niedrig,Fisher-Yates-Mischen; Clustering-Illusion,3
+TL-114,Zufall & Spieltheorie,"Kurzen Strohhalm ziehen: ist es besser, zuerst oder zuletzt zu ziehen?",strohhalm ziehen reihenfolge,evergreen,niedrig,Kombinatorik (Ziehen ohne Zurücklegen),3
+TL-115,Sport & Wettkampf,"Elfmeter: Ecke, Mitte oder hoch – und soll der Torwart springen?",elfmeter wohin schießen,evergreen,niedrig,Bar-Eli et al. 2007; Chiappori et al. 2002,5
+TL-116,Sport & Wettkampf,Bundesliga: wie viel Zufall steckt in der Tabelle?,bundesliga zufall tabelle,saisonal,mittel,Poisson-Modell mit Saisondaten (OpenLigaDB),5
+TL-117,Sport & Wettkampf,Turniermodus: K.-o.-Runde oder Gruppenphase – wie oft gewinnt der Beste?,turniermodus k o system gruppenphase,saisonal,niedrig,Monte-Carlo-Simulation (Elo-Modell),6
+TL-118,Sport & Wettkampf,"Elfmeterschießen: lohnt es sich, zuerst zu schießen?",elfmeterschießen reihenfolge vorteil,saisonal,niedrig,Apesteguia & Palacios-Huerta 2010 (American Economic Review),3
+TL-119,Sport & Wettkampf,Windschatten: wie viel Kraft spart man im Peloton?,windschatten radfahren peloton,evergreen,niedrig,Blocken et al. 2018 (Strömungssimulation),4
+TL-120,Sport & Wettkampf,Marathon: gleichmäßig laufen oder schnell starten?,marathon tempo einteilen,saisonal,mittel,Pacing-Studien (Abbiss & Laursen 2008),3
+TL-121,Sport & Wettkampf,Heiße Hand: gibt es Trefferserien im Sport wirklich?,heiße hand basketball,evergreen,niedrig,Gilovich et al. 1985; Miller & Sanjurjo 2018,2
+TL-122,Sport & Wettkampf,Tennis: wie oft verliert der Bessere wegen der Zählweise?,tennis zählweise gerecht,evergreen,niedrig,Newton & Keller 2005 (Markov-Modell),3
+TL-123,Sport & Wettkampf,Schwimmbad: Bahnen nach Tempo trennen oder alle durcheinander?,schwimmbad bahnen schwimmen tempo,evergreen,niedrig,Agentenmodell (Social-Force-Modell),2
+TL-124,Sport & Wettkampf,"Elo-System: wie viele Spiele, bis dein Rang stimmt?",elo system wie viele spiele,evergreen,niedrig,Elo-Modell (Elo 1978); Glicko,3
+TL-125,Sport & Wettkampf,"Best-of-3, 5 oder 7: wie lang muss eine Serie sein, damit der Bessere gewinnt?",best of 7 serie fair,evergreen,niedrig,Binomialverteilung; Monte-Carlo-Simulation,4
+TL-126,Sport & Wettkampf,Heimvorteil: wie viel bringt er in der Bundesliga wirklich?,heimvorteil fußball,evergreen,mittel,Poisson-Modell mit Saisondaten (OpenLigaDB),3
+TL-127,Sport & Wettkampf,Freistoßmauer: wie viele Spieler braucht es?,freistoß mauer wie viele,evergreen,niedrig,Torwinkel-Geometrie; Spielregeln des IFAB,2
+TL-128,Sport & Wettkampf,Boxenstopp-Strategie: ein Stopp oder zwei – was gewinnt das Rennen?,boxenstopp strategie formel 1,news,mittel,Rennsimulation mit Reifenverschleiß-Modell; öffentliche Rundenzeiten-Datensätze,4
+TL-129,"Arbeit, Schule & Zusammenleben",WG-Putzplan: feste Aufgaben oder rotierend – was ist fairer?,wg putzplan fair,evergreen,niedrig,Scheduling- und Fair-Division-Simulation,3
+TL-130,"Arbeit, Schule & Zusammenleben",Gemeinschaftswaschküche: fester Plan oder freie Nutzung?,waschküche plan mehrfamilienhaus,evergreen,niedrig,Warteschlangentheorie,2
+TL-131,"Arbeit, Schule & Zusammenleben",Kaffeekasse: warum zahlen irgendwann nur noch wenige?,kaffeekasse trittbrettfahrer,evergreen,niedrig,Fehr & Gächter 2000 (Public-Goods-Spiel),3
+TL-132,"Arbeit, Schule & Zusammenleben",Desk-Sharing: wie viele Schreibtische reichen für 100 Leute?,desk sharing wie viele arbeitsplätze,news,niedrig,Binomialverteilung; Büro-Belegungsstudien,4
+TL-133,"Arbeit, Schule & Zusammenleben",Terminfindung: warum findest du mit 8 Leuten nie einen gemeinsamen Termin?,gemeinsamen termin finden gruppe,evergreen,niedrig,Wahrscheinlichkeitsrechnung (Verfügbarkeit hoch n),4
+TL-134,"Arbeit, Schule & Zusammenleben",Antwort an alle: wie viele Mails löst eine einzige Mail aus?,antwort an alle mail lawine,evergreen,niedrig,Verzweigungsprozess (Galton-Watson); Annahmen offen,2
+TL-135,"Arbeit, Schule & Zusammenleben",Multiple Choice: wie viele Aufgaben schaffst du durch Raten?,multiple choice raten wahrscheinlichkeit,saisonal,niedrig,Binomialverteilung,4
+TL-136,"Arbeit, Schule & Zusammenleben","Sitzplan: wie oft wechseln, damit jeder mal neben jedem sitzt?",sitzordnung wechseln jeder neben jedem,evergreen,niedrig,Kombinatorik (Kirkman 1850; Round-Robin),3
+TL-137,"Arbeit, Schule & Zusammenleben",Lernen: alles kurz vor der Prüfung oder über Wochen verteilt?,lernen verteilt oder kurz vorher,saisonal,mittel,Ebbinghaus-Vergessenskurve; Cepeda et al. 2006,3
+TL-138,"Arbeit, Schule & Zusammenleben",WLAN: warum wird das Netz abends langsam – Nachbarn auf demselben Kanal?,wlan langsam abends nachbarn,evergreen,niedrig,"IEEE 802.11 (CSMA/CA); Kanalbelegung im 2,4-GHz-Band",3
+TL-139,"Arbeit, Schule & Zusammenleben",Brainstorming: allein oder in der Gruppe – wo entstehen mehr Ideen?,brainstorming gruppe oder allein,evergreen,niedrig,Diehl & Stroebe 1987,2
+TL-140,"Feste, Jahreszeiten & Wetter",Weihnachtsmarkt: Einbahnweg oder freier Lauf zwischen den Buden?,weihnachtsmarkt gedränge,saisonal,niedrig,Social-Force-Modell (Helbing & Molnár 1995),3
+TL-141,"Feste, Jahreszeiten & Wetter",Ostereiersuche: welche Suchstrategie findet die meisten Eier?,ostereier suchen strategie,saisonal,niedrig,Suchtheorie (Koopman 1956); Agentenmodell,3
+TL-142,"Feste, Jahreszeiten & Wetter",Plätzchen ausstechen: wie viel Teig bleibt übrig – und wie legst du die Förmchen?,plätzchen ausstechen teig,saisonal,niedrig,Kreispackung (hexagonale Packung),3
+TL-143,"Feste, Jahreszeiten & Wetter",Zeitumstellung: wie viel Tageslicht bekommst du wirklich mehr oder weniger?,zeitumstellung tageslicht,saisonal,mittel,Sonnenstandsberechnung (NOAA-Formeln),3
+TL-144,"Feste, Jahreszeiten & Wetter",Im Regen rennen oder gehen: wer wird weniger nass?,im regen rennen oder gehen,saisonal,niedrig,Regentropfen-Modell (Bocci 2012; European Journal of Physics),3
+TL-145,"Feste, Jahreszeiten & Wetter",Tischordnung: wie viele Möglichkeiten gibt es bei 40 Gästen – und wie findest du die beste?,tischordnung hochzeit optimieren,saisonal,niedrig,Kombinatorik; Simulated Annealing (Kirkpatrick 1983),3
+TL-146,"Feste, Jahreszeiten & Wetter","Party: wie viele Leute einladen, damit 20 kommen?",wie viele einladen party zusagen,evergreen,niedrig,Binomialverteilung; Annahmen offen,4
+TL-147,"Feste, Jahreszeiten & Wetter",Tanzfläche: warum tanzt plötzlich die ganze Party?,party tanzfläche voll warum,evergreen,niedrig,Schwellenmodell (Granovetter 1978),3
+TL-148,"Feste, Jahreszeiten & Wetter","Süßes oder Saures: wann lohnt es sich, zum nächsten Haus weiterzuziehen?",halloween süßes oder saures strategie,saisonal,mittel,Marginalwerttheorem (Charnov 1976); Annahmen offen,3
+TL-149,"Feste, Jahreszeiten & Wetter",Brückentage: mit wie vielen Urlaubstagen holst du das Maximum raus?,brückentage urlaub optimal,saisonal,niedrig,Feiertagskalender der Bundesländer,16
+TL-150,"Feste, Jahreszeiten & Wetter",Regenwahrscheinlichkeit: was heißen 30 Prozent Regen wirklich?,regenwahrscheinlichkeit 30 prozent bedeutung,saisonal,niedrig,DWD-Definition der Niederschlagswahrscheinlichkeit,2
