@@ -1,0 +1,151 @@
+id,kategorie,titel,suchbegriff,typ,risiko,datenquelle,varianten
+AP-001,Wetter & Natur,Rennen oder gehen: Wo wirst du im Regen weniger nass?,rennen oder gehen im regen,evergreen,niedrig,"Physik-Lehrbuch, DWD (Regenraten)",10
+AP-002,Wetter & Natur,Wie schnell ist ein Regentropfen und wie fest trifft er dich?,regentropfen geschwindigkeit,evergreen,niedrig,"Physik-Lehrbuch, DWD",3
+AP-003,Wetter & Natur,Regenschirm im Sturm: Ab welcher Windstärke klappt er um?,regenschirm sturm umklappen,saisonal,niedrig,"Physik-Lehrbuch, Beaufort-Skala (DWD)",6
+AP-004,Wetter & Natur,Hagel: Wie hart schlägt ein Hagelkorn auf?,hagelkorn aufprall,saisonal,niedrig,"DWD, Fachliteratur",4
+AP-005,Wetter & Natur,Blitz und Donner: Wie weit ist das Gewitter entfernt?,gewitter entfernung berechnen,saisonal,niedrig,"Physik-Lehrbuch, DWD",3
+AP-006,Wetter & Natur,Warum bist du im Auto bei einem Blitzeinschlag geschützt?,blitz auto faradayscher käfig,saisonal,mittel,"Physik-Lehrbuch, DWD",2
+AP-007,Wetter & Natur,Wie viel Energie steckt in einem Blitz?,blitz energie,saisonal,niedrig,"Fachliteratur, DWD",3
+AP-008,Wetter & Natur,Schnee auf dem Dach: Wie viel wiegt ein Quadratmeter?,schneelast dach gewicht,saisonal,mittel,"DWD, DIN EN 1991-1-3",5
+AP-009,Wetter & Natur,Warum ist Eis so glatt?,warum ist eis glatt,saisonal,niedrig,Fachliteratur (Paper),1
+AP-010,Wetter & Natur,Wie viel wiegt eine Wolke?,wolke gewicht,evergreen,niedrig,"DWD, Fachliteratur",2
+AP-011,Wetter & Natur,Warum platzen Wasserleitungen bei Frost?,wasserleitung frost platzen,saisonal,niedrig,Physik-Lehrbuch,3
+AP-012,Wetter & Natur,Wäsche trocknet bei Frost: Wie geht das?,wäsche trocknen frost,saisonal,niedrig,Physik-Lehrbuch (Sublimation),3
+AP-013,Wetter & Natur,Starkregen: Was bedeuten 40 Liter pro Quadratmeter?,liter pro quadratmeter regen,evergreen,mittel,DWD,5
+AP-014,Wetter & Natur,Chipstüte im Flugzeug oder auf dem Berg: Warum bläht sie sich auf?,chipstüte luftdruck,evergreen,niedrig,Physik-Lehrbuch,3
+AP-015,Wetter & Natur,Warum schwimmt Eis oben und ein See friert nicht bis zum Grund?,eis schwimmt oben anomalie wasser,saisonal,niedrig,Physik-Lehrbuch,2
+AP-016,Verkehr & Fortbewegung,Bremsweg bei 30 vs. 50 km/h,bremsweg 30 50 kmh,evergreen,mittel,"ADAC, StVO-Faustformeln",12
+AP-017,Verkehr & Fortbewegung,Kurve zu schnell: Ab welchem Tempo rutscht das Auto raus?,kurve zu schnell rutscht,evergreen,mittel,"ADAC, Physik-Lehrbuch",6
+AP-018,Verkehr & Fortbewegung,Toter Winkel beim Lkw: Wie groß ist er wirklich?,toter winkel lkw größe,evergreen,mittel,"DEKRA, Fachliteratur",4
+AP-019,Verkehr & Fortbewegung,Autobahn: Warum wächst der Luftwiderstand mit dem Quadrat des Tempos?,luftwiderstand tempo quadrat,evergreen,mittel,"Physik-Lehrbuch, ADAC",6
+AP-020,Verkehr & Fortbewegung,Fahrrad: Warum bleibt es von allein aufrecht?,fahrrad balance selbststabil,evergreen,niedrig,Fachliteratur (Paper),2
+AP-021,Verkehr & Fortbewegung,Fahrrad bergab ohne Treten: Wie schnell wird man?,fahrrad bergab endgeschwindigkeit,evergreen,mittel,Physik-Lehrbuch,5
+AP-022,Verkehr & Fortbewegung,"Gegenwind oder Rückenwind: Verlierst du mehr, als du gewinnst?",radfahren gegenwind rückenwind,evergreen,niedrig,Fachliteratur,4
+AP-023,Verkehr & Fortbewegung,Warum braucht ein ICE über einen Kilometer zum Anhalten?,ice bremsweg,evergreen,mittel,"Bahn-Betriebsdaten, Physik-Lehrbuch",3
+AP-024,Verkehr & Fortbewegung,Turbulenzen: Wie viele Meter sackt ein Flugzeug wirklich ab?,turbulenzen wie tief,evergreen,mittel,"Fachliteratur, Luftfahrtdaten",3
+AP-025,Verkehr & Fortbewegung,Aquaplaning: Ab welchem Tempo schwimmt der Reifen auf?,aquaplaning ab wann,saisonal,mittel,ADAC,4
+AP-026,Verkehr & Fortbewegung,Containerschiff: Wie lange braucht es zum Anhalten?,containerschiff bremsweg,evergreen,niedrig,Fachliteratur,2
+AP-027,Verkehr & Fortbewegung,Startbahn: Wie lang muss sie für einen Airbus A320 sein?,startbahn länge a320,evergreen,niedrig,Herstellerdaten,4
+AP-028,Wärme & Kälte,"Getränkedose schnell kühlen: Gefrierfach, Schnee oder Salzwasser?",getränk schnell kühlen,saisonal,niedrig,"Physik-Lehrbuch (Newton, Wärmekapazität)",8
+AP-029,Wärme & Kälte,Kaffee schneller abkühlen: Milch sofort oder später?,kaffee abkühlen milch,evergreen,niedrig,Physik-Lehrbuch (Newtonsches Abkühlungsgesetz),3
+AP-030,Wärme & Kälte,Wie heiß wird ein Auto in der Sonne?,auto innenraum hitze,saisonal,mittel,"ADAC, Messreihen",6
+AP-031,Wärme & Kälte,Warum fühlt sich Metall kälter an als Holz?,metall kälter als holz,evergreen,niedrig,Materialdatentabellen,3
+AP-032,Wärme & Kälte,Strand: Warum ist der Sand heiß und das Meer kühl?,sand heiß wasser kalt,saisonal,niedrig,Physik-Lehrbuch (spez. Wärmekapazität),2
+AP-033,Wärme & Kälte,Zwiebellook: Wie viel wärmt jede Kleidungsschicht?,zwiebellook warm,saisonal,niedrig,"Physik-Lehrbuch, Materialdaten",5
+AP-034,Wärme & Kälte,"Wärmeverlust im Haus: Wie viel geht durch Fenster, Wand und Dach?",wärmeverlust haus,evergreen,niedrig,"Umweltbundesamt, Energieberatung",5
+AP-035,Wärme & Kälte,Warum ist es im Iglu warm?,iglu warm,saisonal,niedrig,Physik-Lehrbuch,2
+AP-036,Wärme & Kälte,Offene Kühlschranktür: Wird die Küche kühler?,kühlschranktür offen küche kühler,evergreen,niedrig,Physik-Lehrbuch (2. Hauptsatz),2
+AP-037,Wärme & Kälte,Heißes Wasser gefriert schneller als kaltes? Der Mpemba-Effekt,mpemba effekt,evergreen,niedrig,Fachliteratur (Paper),1
+AP-038,Wärme & Kälte,"Warum hältst du 90 Grad in der Sauna aus, aber kein 90 Grad heißes Wasser?",sauna 90 grad wasser,evergreen,mittel,Physik-Lehrbuch,2
+AP-039,Wärme & Kälte,Taupunkt: Warum beschlägt die Scheibe?,taupunkt scheibe beschlägt,saisonal,niedrig,"DWD, Physik-Lehrbuch",4
+AP-040,Wärme & Kälte,Gefühlte Temperatur: Wie rechnet man den Windchill?,windchill berechnen,saisonal,niedrig,DWD,4
+AP-041,Wärme & Kälte,Schwarzes oder weißes T-Shirt: Wie viel heißer wird es in der Sonne?,schwarzes t-shirt sonne,saisonal,niedrig,Physik-Lehrbuch (Absorption),3
+AP-042,Wärme & Kälte,Wasser kocht auf dem Berg bei weniger als 100 Grad: Wie viel weniger?,wasser kocht höhe siedepunkt,evergreen,niedrig,Physik-Lehrbuch,3
+AP-043,Wärme & Kälte,Warum fühlen sich 20 Grad im Wasser kälter an als 20 Grad in der Luft?,wasser luft 20 grad kälter,evergreen,niedrig,Physik-Lehrbuch (Wärmeleitung),2
+AP-044,Küche & Haushalt,Wasser kochen: Wie viel Energie spart der Deckel?,deckel wasser kochen energie,evergreen,niedrig,Physik-Lehrbuch,4
+AP-045,Küche & Haushalt,Salz im Nudelwasser: Kocht es schneller?,salz nudelwasser siedepunkt,evergreen,niedrig,Physik-Lehrbuch,3
+AP-046,Küche & Haushalt,Ei kochen: Wie wandert die Hitze ins Ei?,ei kochen garzeit physik,evergreen,niedrig,Fachliteratur,5
+AP-047,Küche & Haushalt,Leidenfrost-Effekt: Warum tanzen Wassertropfen auf der heißen Pfanne?,leidenfrost pfanne wassertropfen,evergreen,niedrig,Fachliteratur,1
+AP-048,Küche & Haushalt,Ketchup: Warum kommt erst nichts und dann alles?,ketchup flasche fließt nicht,evergreen,niedrig,Fachliteratur (Rheologie),2
+AP-049,Küche & Haushalt,Speisestärke-Brei: Warum kann man über eine Flüssigkeit rennen?,oobleck maisstärke,evergreen,niedrig,Fachliteratur,2
+AP-050,Küche & Haushalt,Stromausfall: Wie lange bleibt der Kühlschrank kalt?,stromausfall kühlschrank wie lange,evergreen,mittel,"Physik-Lehrbuch, Verbraucherzentrale",5
+AP-051,Küche & Haushalt,Tropfender Wasserhahn: Wie viele Liter gehen im Jahr verloren?,tropfender wasserhahn liter,evergreen,niedrig,Umweltbundesamt,4
+AP-052,Küche & Haushalt,Nasses Handy: Hilft Reis wirklich?,handy reis nass,evergreen,mittel,"Herstellerangaben, Messreihen",3
+AP-053,Küche & Haushalt,Dose implodiert: Warum zerdrückt der Luftdruck sie?,dose implodiert luftdruck,evergreen,mittel,Physik-Lehrbuch,2
+AP-054,Küche & Haushalt,"Pizza: Warum verbrennt man sich am Käse, aber nicht am Teig?",pizza käse heiß verbrennen,evergreen,niedrig,Physik-Lehrbuch (Wärmekapazität),2
+AP-055,Küche & Haushalt,Alufolie: Glänzende oder matte Seite nach außen?,alufolie glänzende seite,evergreen,niedrig,Physik-Lehrbuch (Strahlung),2
+AP-056,Küche & Haushalt,Tiefkühlware auftauen: Warum geht es im Wasser schneller als an der Luft?,auftauen wasser luft schneller,evergreen,mittel,"Physik-Lehrbuch, BfR-Hinweise",3
+AP-057,Küche & Haushalt,Popcorn: Warum platzt der Mais?,popcorn platzt warum,evergreen,niedrig,Fachliteratur (Dampfdruck),2
+AP-058,Wasser & Flüssigkeiten,Wie viel Last trägt ein Schlauchboot?,schlauchboot tragfähigkeit auftrieb,saisonal,niedrig,Physik-Lehrbuch,6
+AP-059,Wasser & Flüssigkeiten,Warum schwimmt ein Stahlschiff?,stahlschiff schwimmt archimedes,evergreen,niedrig,Physik-Lehrbuch,4
+AP-060,Wasser & Flüssigkeiten,"Badewanne: Wie viel steigt der Wasserspiegel, wenn du einsteigst?",badewanne wasserspiegel steigt,evergreen,niedrig,Physik-Lehrbuch,3
+AP-061,Wasser & Flüssigkeiten,Strudel im Abfluss: Dreht er auf der Südhalbkugel anders?,abfluss strudel coriolis,evergreen,niedrig,Physik-Lehrbuch,1
+AP-062,Wasser & Flüssigkeiten,Wasserhahn: Warum wird der Strahl nach unten dünner?,wasserhahn strahl dünner,evergreen,niedrig,Physik-Lehrbuch,2
+AP-063,Wasser & Flüssigkeiten,Wasserdruck: Wie hoch ist er am Grund eines 5-Meter-Beckens?,wasserdruck tiefe schwimmbecken,evergreen,niedrig,Physik-Lehrbuch,4
+AP-064,Wasser & Flüssigkeiten,Strohhalm: Wie hoch kann man Wasser höchstens saugen?,strohhalm wie hoch saugen,evergreen,niedrig,Physik-Lehrbuch (Luftdruck),2
+AP-065,Wasser & Flüssigkeiten,Wie viele Tropfen passen auf eine Münze?,tropfen auf münze oberflächenspannung,evergreen,niedrig,Physik-Lehrbuch,3
+AP-066,Wasser & Flüssigkeiten,Büroklammer auf dem Wasser: Warum geht sie nicht unter?,büroklammer schwimmt oberflächenspannung,evergreen,niedrig,Physik-Lehrbuch,2
+AP-067,Wasser & Flüssigkeiten,Pfeffer und Spülmittel: Warum flieht der Pfeffer?,pfeffer spülmittel experiment,evergreen,niedrig,Chemie-Lehrbuch,1
+AP-068,Wasser & Flüssigkeiten,Warum schwappt Kaffee beim Gehen über?,kaffee schwappt gehen,evergreen,niedrig,Fachliteratur (Paper),3
+AP-069,Wasser & Flüssigkeiten,Pool mit dem Gartenschlauch füllen: Wie lange dauert das?,pool füllen gartenschlauch dauer,saisonal,niedrig,"Physik-Lehrbuch, Wasserversorger-Daten",10
+AP-070,Wasser & Flüssigkeiten,Eisberg: Wie viel ragt aus dem Wasser?,eisberg wie viel unter wasser,evergreen,niedrig,Physik-Lehrbuch,2
+AP-071,Wasser & Flüssigkeiten,Totes Meer: Warum geht man dort nicht unter?,totes meer schwimmen dichte,evergreen,niedrig,Physik-Lehrbuch,2
+AP-072,Wasser & Flüssigkeiten,Geschütteltes Sprudelwasser: Warum spritzt es beim Öffnen?,sprudel geschüttelt spritzt,evergreen,niedrig,Physik-Lehrbuch (Henry-Gesetz),3
+AP-073,Wasser & Flüssigkeiten,Eiswürfel schmilzt im Glas: Steigt der Pegel?,eiswürfel schmilzt pegel,evergreen,niedrig,Physik-Lehrbuch,2
+AP-074,"Fallen, Stoß & Kräfte",Fallender Aufzug: Hilft Springen im letzten Moment?,aufzug absturz springen,evergreen,mittel,Physik-Lehrbuch,3
+AP-075,"Fallen, Stoß & Kräfte",Waage im Aufzug: Was zeigt sie beim Anfahren?,waage aufzug gewicht,evergreen,niedrig,Physik-Lehrbuch,3
+AP-076,"Fallen, Stoß & Kräfte",Warum fällt Toast angeblich immer auf die Butterseite?,brot butterseite fallen,evergreen,niedrig,Fachliteratur (Paper),2
+AP-077,"Fallen, Stoß & Kräfte","Handy fällt aus 1,5 Metern: Wie hart ist der Aufprall?",handy fall aufprall kraft,evergreen,niedrig,Physik-Lehrbuch,6
+AP-078,"Fallen, Stoß & Kräfte",Eimer im Kreis schwingen: Warum bleibt das Wasser drin?,eimer wasser schwingen,evergreen,niedrig,Physik-Lehrbuch,3
+AP-079,"Fallen, Stoß & Kräfte",Tischtuch-Trick: Warum bleibt das Geschirr stehen?,tischtuch trick trägheit,evergreen,niedrig,Physik-Lehrbuch,2
+AP-080,"Fallen, Stoß & Kräfte",Münze vom Hochhaus: Mythos oder echte Gefahr?,münze hochhaus mythos,evergreen,mittel,"Fachliteratur, Physik-Lehrbuch",3
+AP-081,"Fallen, Stoß & Kräfte",Domino-Effekt: Wie groß kann der letzte Stein werden?,domino größer exponentiell,evergreen,niedrig,Fachliteratur (Whitehead 1983),2
+AP-082,"Fallen, Stoß & Kräfte","Drehstuhl: Warum drehst du dich schneller, wenn du die Arme anziehst?",drehstuhl arme anziehen drehimpuls,evergreen,niedrig,Physik-Lehrbuch,2
+AP-083,"Fallen, Stoß & Kräfte",Aufprall bei 50 km/h: Aus welcher Höhe entspricht das einem Sturz?,aufprall 50 kmh fallhöhe,evergreen,mittel,"ADAC, Physik-Lehrbuch",8
+AP-084,"Fallen, Stoß & Kräfte",Seil um einen Poller: Wie wenig Kraft reicht zum Halten?,seilreibung poller,evergreen,niedrig,Physik-Lehrbuch (Euler-Eytelwein),3
+AP-085,"Fallen, Stoß & Kräfte",Regal kippt: Ab welchem Winkel passiert das?,regal kippt winkel,evergreen,mittel,"Physik-Lehrbuch, DIN",5
+AP-086,"Fallen, Stoß & Kräfte",Bus bremst: Wie viel Kraft musst du beim Stehen abfangen?,bus bremsen stehen kraft,evergreen,niedrig,Physik-Lehrbuch,3
+AP-087,"Fallen, Stoß & Kräfte",Feder und Hammer: Fallen beide gleich schnell?,feder hammer vakuum fallen,evergreen,niedrig,Physik-Lehrbuch,2
+AP-088,Sport & Spiel,Freistoß: Wie viel Effet braucht eine Bananenflanke?,bananenflanke magnus effekt,evergreen,niedrig,Fachliteratur (Magnus-Effekt),6
+AP-089,Sport & Spiel,Basketball: Welcher Abwurfwinkel ist optimal?,basketball wurfwinkel,evergreen,niedrig,"Physik-Lehrbuch, Fachliteratur",4
+AP-090,Sport & Spiel,Achterbahn-Looping: Warum fällst du nicht raus?,looping achterbahn physik,evergreen,niedrig,Physik-Lehrbuch,3
+AP-091,Sport & Spiel,"Schaukel: Warum schwingst du höher, wenn du richtig pumpst?",schaukel pumpen resonanz,evergreen,niedrig,Physik-Lehrbuch,2
+AP-092,Sport & Spiel,Golfball: Warum fliegt er mit Dellen weiter?,golfball dellen,evergreen,niedrig,Fachliteratur,1
+AP-093,Sport & Spiel,Bumerang: Warum kommt er zurück?,bumerang flug,evergreen,niedrig,Physik-Lehrbuch,2
+AP-094,Sport & Spiel,Kreisel: Warum fällt er nicht um?,kreisel warum fällt nicht um,evergreen,niedrig,Physik-Lehrbuch,2
+AP-095,Sport & Spiel,Fallschirm: Wie schnell fällt ein Springer mit offenem Schirm?,fallschirm geschwindigkeit offen,evergreen,mittel,Physik-Lehrbuch,3
+AP-096,Sport & Spiel,Windschatten im Radsport: Wie viel Kraft spart man?,windschatten radfahren,evergreen,niedrig,Fachliteratur,3
+AP-097,Sport & Spiel,Skispringen: Warum fliegt man im V-Stil weiter?,skispringen v-stil,saisonal,niedrig,Fachliteratur,2
+AP-098,Sport & Spiel,Papierflieger: Welche Form fliegt am weitesten?,papierflieger weitester,evergreen,niedrig,Fachliteratur,6
+AP-099,Sport & Spiel,Ball: Warum springt er nie wieder so hoch wie vorher?,ball springt energie,evergreen,niedrig,Physik-Lehrbuch,5
+AP-100,Licht & Schall,Warum ist der Himmel blau und der Sonnenuntergang rot?,himmel blau sonnenuntergang rot,evergreen,niedrig,Physik-Lehrbuch (Rayleigh),2
+AP-101,Licht & Schall,Regenbogen: Warum immer genau 42 Grad?,regenbogen 42 grad,evergreen,niedrig,Physik-Lehrbuch,2
+AP-102,Licht & Schall,Echo: Wie weit muss die Wand entfernt sein?,echo entfernung wand,evergreen,niedrig,Physik-Lehrbuch,3
+AP-103,Licht & Schall,Martinshorn: Warum ändert sich der Ton beim Vorbeifahren?,doppler effekt martinshorn,evergreen,niedrig,Physik-Lehrbuch,3
+AP-104,Licht & Schall,Dezibel: Warum sind 60 dB nicht doppelt so laut wie 30 dB?,dezibel erklärt,evergreen,niedrig,"Physik-Lehrbuch, Umweltbundesamt",4
+AP-105,Licht & Schall,Wie weit trägt Musik vom Balkon?,lärm entfernung nachbar balkon,saisonal,niedrig,"Umweltbundesamt, Physik-Lehrbuch",4
+AP-106,Licht & Schall,"Spiegel: Warum vertauscht er links und rechts, aber nicht oben und unten?",spiegel links rechts vertauscht,evergreen,niedrig,Physik-Lehrbuch,0
+AP-107,Licht & Schall,"Wie groß muss ein Spiegel sein, damit du dich ganz siehst?",spiegel ganzkörper größe,evergreen,niedrig,Physik-Lehrbuch,2
+AP-108,Licht & Schall,Löffel im Wasserglas: Warum sieht er geknickt aus?,löffel glas wasser gebrochen,evergreen,niedrig,Physik-Lehrbuch (Brechung),2
+AP-109,Licht & Schall,Warum hallt es im Badezimmer?,bad hall nachhall,evergreen,niedrig,Physik-Lehrbuch (Sabine-Formel),3
+AP-110,Licht & Schall,Flasche anblasen: Warum ändert sich der Ton mit dem Füllstand?,flasche pfeifen ton füllstand,evergreen,niedrig,Physik-Lehrbuch,2
+AP-111,Licht & Schall,Wie weit siehst du bis zum Horizont?,horizont entfernung,evergreen,niedrig,Physik-Lehrbuch (Geometrie),6
+AP-112,Licht & Schall,Resonanz: Kann Schall ein Glas zerspringen lassen?,glas zerspringen stimme resonanz,evergreen,niedrig,Physik-Lehrbuch,2
+AP-113,Licht & Schall,Glaskugel am Fenster: Kann sie wirklich einen Brand auslösen?,glaskugel brand brennglas,saisonal,mittel,"Physik-Lehrbuch, Feuerwehr-Hinweise",2
+AP-114,Strom & Magnetismus,Warum bekommst du im Winter Schläge an der Autotür?,statische aufladung schlag,saisonal,niedrig,Physik-Lehrbuch,3
+AP-115,Strom & Magnetismus,Kann ein Magnet Handy und Bankkarte zerstören?,magnet handy bankkarte,evergreen,mittel,"Herstellerangaben, Physik-Lehrbuch",3
+AP-116,Strom & Magnetismus,Kompass: Warum zeigt er nach Norden und was stört ihn?,kompass funktion stören,evergreen,niedrig,Physik-Lehrbuch,2
+AP-117,Strom & Magnetismus,Wie viel Energie steckt in einer Batterie? Wie hoch könnte sie dich heben?,batterie energie heben,evergreen,niedrig,"Physik-Lehrbuch, Herstellerdaten",4
+AP-118,Strom & Magnetismus,Stand-by-Verbrauch: Wie viel kostet ein Jahr?,standby stromverbrauch kosten,evergreen,niedrig,"Verbraucherzentrale, Umweltbundesamt",10
+AP-119,Strom & Magnetismus,Warum bekommt ein Vogel auf der Stromleitung keinen Schlag?,vogel stromleitung,evergreen,mittel,Physik-Lehrbuch,1
+AP-120,Strom & Magnetismus,Kabeltrommel: Warum nie aufgerollt benutzen?,kabeltrommel aufgerollt überhitzt,evergreen,mittel,"VDE, Herstellerdaten",2
+AP-121,Strom & Magnetismus,Steckdosenleiste: Wie viele Geräte darf man anschließen?,steckdosenleiste wie viele geräte watt,evergreen,mittel,"VDE, Herstellerdaten",5
+AP-122,Strom & Magnetismus,Magnet im Kupferrohr: Warum fällt er so langsam?,magnet kupferrohr langsam,evergreen,niedrig,Physik-Lehrbuch (Lenzsche Regel),1
+AP-123,Strom & Magnetismus,Wie schnell fließen Elektronen im Kabel?,elektronen geschwindigkeit kabel,evergreen,niedrig,Physik-Lehrbuch,1
+AP-124,Strom & Magnetismus,Fahrrad-Generator: Wie lange strampeln für einen Toast?,strampeln strom toast,evergreen,niedrig,"Physik-Lehrbuch, Herstellerdaten",10
+AP-125,Strom & Magnetismus,Warum brennt die Glühbirne meist beim Einschalten durch?,glühbirne brennt beim einschalten durch,evergreen,niedrig,Physik-Lehrbuch,2
+AP-126,Strom & Magnetismus,Warum wird das Handy beim Laden warm?,handy laden warm,evergreen,niedrig,Physik-Lehrbuch,2
+AP-127,Strom & Magnetismus,Magnet teilen: Hat jedes Stück einen Nord- und einen Südpol?,magnet teilen nordpol südpol,evergreen,niedrig,Physik-Lehrbuch,1
+AP-128,Materialien & Strukturen,Papier 42-mal falten: Wie dick wird es?,papier 42 mal falten,evergreen,niedrig,"Mathematik, Physik-Lehrbuch",3
+AP-129,Materialien & Strukturen,Spaghetti: Warum brechen sie nie in zwei Teile?,spaghetti brechen drei teile,evergreen,niedrig,Fachliteratur (Audoly und Neukirch 2005),1
+AP-130,Materialien & Strukturen,Wie viel trägt ein Menschenhaar?,haar tragkraft,evergreen,niedrig,Materialdatentabellen,4
+AP-131,Materialien & Strukturen,Bücherstapel: Wie weit darf er überhängen?,bücherstapel überhang,evergreen,niedrig,Mathematik (harmonische Reihe),3
+AP-132,Materialien & Strukturen,Warum bestehen Brücken und Dächer aus Dreiecken?,dreieck stabil brücke,evergreen,niedrig,Physik-Lehrbuch,2
+AP-133,Materialien & Strukturen,"Ei: Warum bricht es nicht, wenn du es zusammendrückst?",ei drücken stabil,evergreen,niedrig,Physik-Lehrbuch,1
+AP-134,Materialien & Strukturen,Ist Glas eine Flüssigkeit? Der Kirchenfenster-Mythos,glas flüssigkeit mythos,evergreen,niedrig,Fachliteratur,0
+AP-135,Materialien & Strukturen,Warum sind Stahlträger I-förmig?,doppel-t-träger,evergreen,niedrig,Physik-Lehrbuch,2
+AP-136,Materialien & Strukturen,Wärmeausdehnung: Warum haben Brücken Fugen?,brücke dehnungsfuge,saisonal,niedrig,"Materialdatentabellen, Physik-Lehrbuch",3
+AP-137,Materialien & Strukturen,Wäscheleine: Warum hängt sie immer durch?,wäscheleine durchhang,evergreen,niedrig,Physik-Lehrbuch,3
+AP-138,Materialien & Strukturen,Stöckelschuh oder Elefant: Wer drückt stärker auf den Boden?,stöckelschuh elefant druck,evergreen,niedrig,Physik-Lehrbuch,2
+AP-139,Große Zahlen & Gedankenexperimente,Wie viele Luftballons heben einen Menschen?,luftballons heben mensch,evergreen,niedrig,Physik-Lehrbuch,6
+AP-140,Große Zahlen & Gedankenexperimente,Alle Deutschen springen gleichzeitig: Was passiert?,alle springen gleichzeitig deutschland,evergreen,niedrig,"Statistisches Bundesamt, Physik-Lehrbuch",3
+AP-141,Große Zahlen & Gedankenexperimente,Wie viel wiegt die Luft in deinem Zimmer?,luft gewicht zimmer,evergreen,niedrig,Physik-Lehrbuch,4
+AP-142,Große Zahlen & Gedankenexperimente,Wie viel wiegt das Wasser in einem Schwimmbecken?,wasser gewicht schwimmbecken,evergreen,niedrig,Physik-Lehrbuch,5
+AP-143,Große Zahlen & Gedankenexperimente,"Seil um die Erde: Wie hoch schwebt es, wenn es 1 Meter länger ist?",seil um die erde 1 meter,evergreen,niedrig,Mathematik,2
+AP-144,Große Zahlen & Gedankenexperimente,Warum gibt es keine Riesen? Das Quadrat-Kubik-Gesetz,warum keine riesen,evergreen,niedrig,"Fachliteratur (Galilei, Haldane)",3
+AP-145,Große Zahlen & Gedankenexperimente,Wie viele Kilo drückt die Luft auf deinen Körper?,luftdruck körper kilo,evergreen,niedrig,Physik-Lehrbuch,2
+AP-146,Große Zahlen & Gedankenexperimente,Ein Loch durch die Erde: Wie lange fällt man hindurch?,loch durch die erde fall,evergreen,niedrig,Physik-Lehrbuch,3
+AP-147,Große Zahlen & Gedankenexperimente,"Stein in den Brunnen: Wie tief ist er, wenn du den Aufprall nach 3 Sekunden hörst?",stein brunnen tiefe schätzen,evergreen,niedrig,Physik-Lehrbuch,4
+AP-148,Große Zahlen & Gedankenexperimente,Wie viele Atome stecken in einem Wassertropfen?,atome wassertropfen,evergreen,niedrig,Physik-Lehrbuch,2
+AP-149,Große Zahlen & Gedankenexperimente,"Wie lange dauert es, zu Fuß einmal um die Erde zu gehen?",zu fuß um die erde,evergreen,niedrig,"Geografie-Daten, Mathematik",3
+AP-150,Große Zahlen & Gedankenexperimente,Eine Million und eine Milliarde Sekunden: Wie lang ist das?,million milliarde sekunden,evergreen,niedrig,Mathematik,3

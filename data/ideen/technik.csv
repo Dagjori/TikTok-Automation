@@ -1,0 +1,151 @@
+id,kategorie,titel,suchbegriff,typ,risiko,datenquelle,varianten
+TE-001,Haushaltsgroßgeräte,Wie funktioniert ein Kühlschrank?,wie funktioniert ein kühlschrank,evergreen,niedrig,"Herstellerdaten, Physik-Lehrbuch",4
+TE-002,Haushaltsgroßgeräte,Wie funktioniert eine Waschmaschine?,waschmaschine funktionsweise,evergreen,niedrig,Herstellerdaten,4
+TE-003,Haushaltsgroßgeräte,Wie funktioniert ein Wäschetrockner? Kondensation gegen Wärmepumpe,wäschetrockner funktionsweise wärmepumpe,evergreen,niedrig,Herstellerdaten,3
+TE-004,Haushaltsgroßgeräte,Wie funktioniert ein Geschirrspüler?,geschirrspüler funktionsweise,evergreen,niedrig,Herstellerdaten,4
+TE-005,Haushaltsgroßgeräte,Wie funktioniert eine Mikrowelle?,wie funktioniert eine mikrowelle,evergreen,niedrig,"Physik-Lehrbuch, Herstellerdaten",2
+TE-006,Haushaltsgroßgeräte,Wie funktioniert ein Induktionsherd?,induktionsherd funktionsweise,evergreen,niedrig,Herstellerdaten,2
+TE-007,Haushaltsgroßgeräte,"Wie funktioniert ein Backofen: Ober-/Unterhitze, Umluft, Grill?",backofen umluft ober unterhitze,evergreen,niedrig,Herstellerdaten,3
+TE-008,Haushaltsgroßgeräte,Wie funktioniert ein Staubsauger?,staubsauger funktionsweise,evergreen,niedrig,Herstellerdaten,4
+TE-009,Haushaltsgroßgeräte,Wie findet ein Saugroboter seinen Weg?,saugroboter navigation lidar,evergreen,niedrig,"Herstellerdaten, Fachliteratur",3
+TE-010,Küchenkleingeräte,Wie funktioniert ein Wasserkocher?,wie funktioniert ein wasserkocher,evergreen,niedrig,Herstellerdaten,2
+TE-011,Küchenkleingeräte,Wie funktioniert ein Toaster?,toaster funktion,evergreen,niedrig,Herstellerdaten,2
+TE-012,Küchenkleingeräte,Wie funktioniert eine Filterkaffeemaschine?,kaffeemaschine funktionsweise filter,evergreen,niedrig,Herstellerdaten,2
+TE-013,Küchenkleingeräte,Wie funktioniert eine Espressomaschine?,espressomaschine druck funktionsweise,evergreen,niedrig,Herstellerdaten,4
+TE-014,Küchenkleingeräte,Wie funktioniert eine Heißluftfritteuse?,heißluftfritteuse funktion,evergreen,niedrig,Herstellerdaten,3
+TE-015,Küchenkleingeräte,Wie funktioniert ein Reiskocher?,reiskocher funktion,evergreen,niedrig,Herstellerdaten,2
+TE-016,Küchenkleingeräte,Wie funktioniert ein Sous-vide-Stab?,sous vide funktionsweise,evergreen,niedrig,Herstellerdaten,2
+TE-017,Küchenkleingeräte,Wie funktioniert ein Schnellkochtopf?,schnellkochtopf druck,evergreen,mittel,"Herstellerdaten, Physik-Lehrbuch",2
+TE-018,"Heizung, Wasser & Klima",Wie funktioniert eine Wärmepumpe?,wärmepumpe funktionsweise,news,mittel,"Fraunhofer ISE, Herstellerdaten",5
+TE-019,"Heizung, Wasser & Klima",Wie funktioniert ein Gas-Brennwertkessel?,brennwertkessel funktion,evergreen,mittel,Herstellerdaten,2
+TE-020,"Heizung, Wasser & Klima",Wie funktioniert eine Fußbodenheizung?,fußbodenheizung funktion,evergreen,niedrig,Herstellerdaten,2
+TE-021,"Heizung, Wasser & Klima",Heizkörper: Wie kommt die Wärme in den Raum?,heizkörper funktion konvektion,saisonal,niedrig,"Herstellerdaten, Physik-Lehrbuch",3
+TE-022,"Heizung, Wasser & Klima","Thermostatventil: Woher weiß der Heizkörper, wann Schluss ist?",thermostatventil funktion,saisonal,niedrig,Herstellerdaten,2
+TE-023,"Heizung, Wasser & Klima",Was ist ein hydraulischer Abgleich?,hydraulischer abgleich erklärt,news,niedrig,"BAFA, Herstellerdaten",2
+TE-024,"Heizung, Wasser & Klima",Wie funktioniert ein Durchlauferhitzer?,durchlauferhitzer funktion,evergreen,niedrig,Herstellerdaten,2
+TE-025,"Heizung, Wasser & Klima",Wie funktioniert ein Spülkasten?,wc spülkasten funktion,evergreen,niedrig,Herstellerdaten,3
+TE-026,"Heizung, Wasser & Klima",Siphon: Warum riecht es nicht aus dem Abfluss?,siphon funktion geruch,evergreen,niedrig,Fachliteratur,2
+TE-027,"Heizung, Wasser & Klima",Wie funktioniert ein Einhebelmischer?,einhebelmischer funktion,evergreen,niedrig,Herstellerdaten,2
+TE-028,"Heizung, Wasser & Klima",Wie funktioniert eine Klimaanlage?,klimaanlage funktionsweise,saisonal,niedrig,Herstellerdaten,3
+TE-029,"Heizung, Wasser & Klima","Ventilator: Warum kühlt er, obwohl er die Luft nicht kühlt?",ventilator kühlt warum,saisonal,niedrig,Physik-Lehrbuch,2
+TE-030,"Heizung, Wasser & Klima",Wie funktioniert ein Luftentfeuchter?,luftentfeuchter funktion,saisonal,niedrig,Herstellerdaten,2
+TE-031,Strom & Energie,Was passiert in der Steckdose?,steckdose funktionsweise phase nullleiter,evergreen,mittel,"VDE-Normen, Fachliteratur",2
+TE-032,Strom & Energie,Wie funktioniert ein Sicherungsautomat?,sicherungsautomat funktion,evergreen,mittel,VDE-Normen,2
+TE-033,Strom & Energie,Wie funktioniert ein FI-Schutzschalter?,fi schalter funktion,evergreen,mittel,VDE-Normen,2
+TE-034,Strom & Energie,Wie funktioniert ein Smart Meter?,smart meter funktionsweise,news,mittel,"Bundesnetzagentur, BSI",2
+TE-035,Strom & Energie,Stromnetz: Der Weg vom Kraftwerk bis zur Steckdose,stromnetz funktionsweise,evergreen,niedrig,"Bundesnetzagentur, Netzbetreiber",2
+TE-036,Strom & Energie,Wie funktioniert ein Transformator?,transformator funktion,evergreen,niedrig,Physik-Lehrbuch,2
+TE-037,Strom & Energie,Wie funktioniert ein Handy-Ladegerät?,ladegerät funktion netzteil,evergreen,niedrig,Fachliteratur,2
+TE-038,Strom & Energie,Wie funktioniert eine Solarzelle?,solarzelle funktion,evergreen,niedrig,Fraunhofer ISE,3
+TE-039,Strom & Energie,Wie funktioniert ein Balkonkraftwerk?,balkonkraftwerk funktionsweise einspeisung,news,mittel,"Bundesnetzagentur, Fraunhofer ISE",3
+TE-040,Strom & Energie,Wie funktioniert ein Heimspeicher?,stromspeicher haus funktion,news,niedrig,Fraunhofer ISE,3
+TE-041,Strom & Energie,Wie funktioniert ein Lithium-Ionen-Akku?,lithium ionen akku funktion,evergreen,mittel,"Fachliteratur, Herstellerdaten",3
+TE-042,Strom & Energie,Wie funktioniert eine Batterie?,batterie funktionsweise,evergreen,niedrig,Fachliteratur,2
+TE-043,Strom & Energie,Wie funktioniert ein Windrad?,windrad funktion,evergreen,mittel,"Fraunhofer, Herstellerdaten",3
+TE-044,Strom & Energie,Wie funktioniert ein Generator?,generator funktion dynamo,evergreen,niedrig,Physik-Lehrbuch,3
+TE-045,Strom & Energie,Wie funktioniert ein Elektromotor?,elektromotor funktion,evergreen,niedrig,Physik-Lehrbuch,3
+TE-046,Strom & Energie,Wie funktioniert eine Wallbox?,wallbox funktionsweise,news,mittel,"Herstellerdaten, VDE",3
+TE-047,Strom & Energie,Wie funktioniert eine Wechselschaltung?,wechselschaltung funktion,evergreen,mittel,VDE-Normen,2
+TE-048,Strom & Energie,Wie funktioniert eine Glühbirne?,glühbirne funktion,evergreen,niedrig,Physik-Lehrbuch,2
+TE-049,Strom & Energie,Wie funktioniert eine LED?,led funktionsweise,evergreen,niedrig,Physik-Lehrbuch,3
+TE-050,Auto & Antrieb,Wie funktioniert ein Verbrennungsmotor?,verbrennungsmotor viertakt,evergreen,niedrig,Fachliteratur,4
+TE-051,Auto & Antrieb,Wie funktioniert ein Turbolader?,turbolader funktion,evergreen,niedrig,Fachliteratur,2
+TE-052,Auto & Antrieb,Wie funktioniert ein Katalysator?,katalysator funktion,evergreen,niedrig,Fachliteratur,1
+TE-053,Auto & Antrieb,Wie funktioniert die Kupplung?,autokupplung funktion,evergreen,niedrig,Fachliteratur,1
+TE-054,Auto & Antrieb,Wie funktioniert ein Schaltgetriebe?,schaltgetriebe funktion,evergreen,niedrig,Fachliteratur,2
+TE-055,Auto & Antrieb,Wie funktioniert ein Automatikgetriebe?,automatikgetriebe funktion,evergreen,niedrig,Fachliteratur,3
+TE-056,Auto & Antrieb,Wie funktioniert ein Differential?,differential funktion,evergreen,niedrig,Fachliteratur,1
+TE-057,Auto & Antrieb,Wie funktioniert das ABS?,abs bremsen funktion,evergreen,mittel,"ADAC, Fachliteratur",2
+TE-058,Auto & Antrieb,Wie funktioniert das ESP?,esp funktion kurve,evergreen,mittel,ADAC,1
+TE-059,Auto & Antrieb,Wie funktioniert eine Scheibenbremse samt Hydraulik?,bremsanlage funktion hydraulik,evergreen,mittel,"ADAC, Fachliteratur",3
+TE-060,Auto & Antrieb,Wie funktioniert ein Airbag?,airbag funktion,evergreen,mittel,"ADAC, Fachliteratur",2
+TE-061,Auto & Antrieb,Wie funktioniert ein Sicherheitsgurt mit Gurtstraffer?,gurtstraffer funktion,evergreen,mittel,ADAC,1
+TE-062,Auto & Antrieb,Rekuperation: Wie holt ein E-Auto Energie beim Bremsen zurück?,rekuperation funktion,evergreen,niedrig,Fachliteratur,2
+TE-063,Auto & Antrieb,E-Auto-Akku: Wie arbeitet das Batteriemanagement?,e-auto akku batteriemanagement,evergreen,niedrig,Fachliteratur,3
+TE-064,Auto & Antrieb,Wie funktioniert Schnellladen am E-Auto?,schnellladen ccs funktion,news,niedrig,Fachliteratur,3
+TE-065,Auto & Antrieb,Wie funktioniert ein Abstandstempomat?,abstandstempomat radar,evergreen,niedrig,Fachliteratur,2
+TE-066,Auto & Antrieb,Wie funktioniert eine Einparkhilfe?,einparkhilfe ultraschall,evergreen,niedrig,Fachliteratur,1
+TE-067,"Bahn, Flug & Fahrrad",Wie funktioniert eine Fahrradschaltung?,fahrradschaltung funktion,evergreen,niedrig,Herstellerdaten,3
+TE-068,"Bahn, Flug & Fahrrad",Wie funktioniert ein E-Bike-Motor?,e-bike motor funktion drehmomentsensor,evergreen,niedrig,Herstellerdaten,2
+TE-069,"Bahn, Flug & Fahrrad","Ampel: Woher weiß sie, dass du wartest?",ampel induktionsschleife funktion,evergreen,niedrig,"Fachliteratur, FGSV-Richtlinien",2
+TE-070,"Bahn, Flug & Fahrrad",Wie funktioniert ein Aufzug?,aufzug funktion gegengewicht,evergreen,mittel,"Fachliteratur, TRBS",2
+TE-071,"Bahn, Flug & Fahrrad",Wie funktioniert ein Düsentriebwerk?,flugzeugtriebwerk funktion,evergreen,niedrig,Fachliteratur,2
+TE-072,"Bahn, Flug & Fahrrad",Landeklappen und Vorflügel: Wozu dienen sie?,landeklappen funktion,evergreen,niedrig,Fachliteratur,1
+TE-073,"Bahn, Flug & Fahrrad",Wie funktioniert die Druckkabine im Flugzeug?,druckkabine flugzeug,evergreen,niedrig,Fachliteratur,1
+TE-074,"Bahn, Flug & Fahrrad",Wie funktionieren Oberleitung und Stromabnehmer?,oberleitung stromabnehmer zug,evergreen,niedrig,Bahn-Betriebsdaten,1
+TE-075,"Bahn, Flug & Fahrrad",Warum bleibt ein Zug auf den Schienen?,zug kegelräder schiene,evergreen,niedrig,Fachliteratur,1
+TE-076,"Bahn, Flug & Fahrrad",Wie funktioniert eine Schiffsschleuse?,schleuse funktion,evergreen,niedrig,Fachliteratur,2
+TE-077,"Bahn, Flug & Fahrrad",Wie funktioniert eine Drohne?,drohne quadrocopter funktion,evergreen,mittel,Fachliteratur,3
+TE-078,"Bahn, Flug & Fahrrad",Katzenaugen und Reflektoren: Wie werfen sie das Licht zurück?,katzenauge reflektor funktion,evergreen,niedrig,Fachliteratur,2
+TE-079,"Bahn, Flug & Fahrrad",Wie fährt ein Segelboot gegen den Wind?,segelboot gegen den wind,saisonal,niedrig,Fachliteratur,2
+TE-080,"Bahn, Flug & Fahrrad",Wie funktioniert die Rücktrittbremse?,rücktrittbremse funktion,evergreen,niedrig,Herstellerdaten,1
+TE-081,Computer & Netzwerk,Wie funktioniert eine SSD?,ssd funktionsweise,evergreen,niedrig,Fachliteratur,1
+TE-082,Computer & Netzwerk,Wie funktioniert eine Festplatte?,festplatte funktionsweise,evergreen,niedrig,Fachliteratur,1
+TE-083,Computer & Netzwerk,Wie funktioniert ein Prozessor?,prozessor funktionsweise transistoren,evergreen,niedrig,Fachliteratur,3
+TE-084,Computer & Netzwerk,Wie funktioniert ein LCD-Bildschirm?,lcd flüssigkristall funktion,evergreen,niedrig,Fachliteratur,2
+TE-085,Computer & Netzwerk,Wie funktioniert ein OLED-Display?,oled funktionsweise,evergreen,niedrig,Fachliteratur,2
+TE-086,Computer & Netzwerk,Wie funktioniert ein Router?,router funktionsweise,evergreen,niedrig,Fachliteratur,2
+TE-087,Computer & Netzwerk,Wie funktioniert WLAN?,wlan funktionsweise,evergreen,niedrig,Fachliteratur (IEEE 802.11),3
+TE-088,Computer & Netzwerk,Wie funktioniert Glasfaser?,glasfaser funktion lichtleiter,news,niedrig,"Fachliteratur, Bundesnetzagentur",2
+TE-089,Computer & Netzwerk,"Was passiert, wenn du eine Webadresse eingibst?",dns erklärt webseite aufrufen,evergreen,niedrig,Fachliteratur (RFC),2
+TE-090,Computer & Netzwerk,HTTPS: Wie schützt das Schloss-Symbol deine Daten?,https verschlüsselung funktion,evergreen,mittel,"Fachliteratur (RFC), BSI",2
+TE-091,Computer & Netzwerk,Seekabel: Wie kommt das Internet über den Atlantik?,seekabel internet,evergreen,niedrig,"Fachliteratur, öffentliche Kabelkarten",1
+TE-092,Computer & Netzwerk,Video-Streaming: Wie kommt der Film auf dein Handy?,streaming funktionsweise puffer,evergreen,niedrig,Fachliteratur,2
+TE-093,Computer & Netzwerk,Wie schrumpft Kompression ein Foto oder ein Lied?,jpeg kompression erklärt,evergreen,niedrig,Fachliteratur,3
+TE-094,Computer & Netzwerk,Wie funktioniert ein QR-Code?,qr code funktion fehlerkorrektur,evergreen,niedrig,ISO/IEC 18004,2
+TE-095,Computer & Netzwerk,Wie funktioniert ein Laserdrucker?,laserdrucker funktion,evergreen,niedrig,Herstellerdaten,2
+TE-096,Computer & Netzwerk,Wie funktioniert ein Tintenstrahldrucker?,tintenstrahldrucker funktion,evergreen,niedrig,Herstellerdaten,2
+TE-097,Computer & Netzwerk,Wie funktioniert ein 3D-Drucker?,3d-drucker funktion,evergreen,niedrig,Fachliteratur,2
+TE-098,Computer & Netzwerk,Wie funktioniert eine Suchmaschine?,suchmaschine funktionsweise crawler,evergreen,niedrig,Fachliteratur,3
+TE-099,Smartphone & Funk,Wie funktioniert ein Touchscreen?,touchscreen funktionsweise kapazitiv,evergreen,niedrig,Fachliteratur,2
+TE-100,Smartphone & Funk,Wie funktioniert die Smartphone-Kamera?,smartphone kamera sensor funktion,evergreen,niedrig,Fachliteratur,2
+TE-101,Smartphone & Funk,Wie funktioniert GPS?,gps funktionsweise satelliten,evergreen,niedrig,Fachliteratur,2
+TE-102,Smartphone & Funk,Wie funktioniert kontaktloses Bezahlen?,nfc kontaktlos bezahlen funktion,evergreen,mittel,EMVCo-Spezifikation,2
+TE-103,Smartphone & Funk,Wie funktioniert Mobilfunk?,mobilfunk funktionsweise funkzellen,evergreen,niedrig,"Bundesnetzagentur, 3GPP",3
+TE-104,Smartphone & Funk,Wie funktioniert Bluetooth?,bluetooth funktion,evergreen,niedrig,Bluetooth SIG,2
+TE-105,Smartphone & Funk,Warum dreht sich der Bildschirm mit? Der Lagesensor im Handy,beschleunigungssensor handy,evergreen,niedrig,Fachliteratur,2
+TE-106,Smartphone & Funk,Wie funktioniert kabelloses Laden?,induktives laden qi,evergreen,niedrig,WPC-Spezifikation,2
+TE-107,Smartphone & Funk,Wie funktioniert eine Infrarot-Fernbedienung?,infrarot fernbedienung funktion,evergreen,niedrig,Fachliteratur,2
+TE-108,Smartphone & Funk,Wie funktioniert eine Satellitenschüssel?,satellitenschüssel funktion lnb,evergreen,niedrig,Fachliteratur,2
+TE-109,Smartphone & Funk,Wie funktioniert die Spracherkennung im Handy?,spracherkennung handy funktion,evergreen,mittel,Fachliteratur (Paper),2
+TE-110,Smartphone & Funk,Funkloch: Warum fehlt der Empfang im Keller oder Tunnel?,funkloch warum kein empfang,evergreen,niedrig,"Bundesnetzagentur, Physik-Lehrbuch",3
+TE-111,"Audio, Bild & Foto",Wie funktioniert ein Lautsprecher?,lautsprecher funktion membran,evergreen,niedrig,Physik-Lehrbuch,2
+TE-112,"Audio, Bild & Foto",Wie funktioniert ein Mikrofon?,mikrofon funktionsweise,evergreen,niedrig,Physik-Lehrbuch,2
+TE-113,"Audio, Bild & Foto",Wie funktioniert Noise-Cancelling?,noise cancelling funktion,evergreen,niedrig,Fachliteratur,2
+TE-114,"Audio, Bild & Foto",Schallplatte: Wie steckt Musik in der Rille?,schallplatte rille funktion,evergreen,niedrig,Fachliteratur,1
+TE-115,"Audio, Bild & Foto",Wie funktioniert eine Digitalkamera?,kamera blende sensor funktion,evergreen,niedrig,Fachliteratur,3
+TE-116,"Audio, Bild & Foto",Wie funktioniert ein E-Book-Reader mit E-Ink?,e-ink funktion,evergreen,niedrig,Fachliteratur,1
+TE-117,"Audio, Bild & Foto",Wie funktioniert eine Wärmebildkamera?,wärmebildkamera funktion,evergreen,niedrig,Fachliteratur,2
+TE-118,"Audio, Bild & Foto",Wie funktioniert ein E-Gitarren-Tonabnehmer?,e-gitarre tonabnehmer funktion,evergreen,niedrig,Fachliteratur,1
+TE-119,"Audio, Bild & Foto",Wie funktioniert ein Klavier?,klavier hammermechanik funktion,evergreen,niedrig,Fachliteratur,1
+TE-120,"Audio, Bild & Foto",Wie funktioniert ein Fernglas?,fernglas prismen funktion,evergreen,niedrig,Physik-Lehrbuch,2
+TE-121,"Audio, Bild & Foto",Wie funktioniert der Autofokus einer Kamera?,autofokus funktion phasenerkennung,evergreen,niedrig,Fachliteratur,2
+TE-122,Haus & Sicherheit,Wie funktioniert ein Zylinderschloss?,schlüssel schloss funktion stiftzuhaltung,evergreen,mittel,Fachliteratur,2
+TE-123,Haus & Sicherheit,Wie funktioniert ein Rauchmelder?,rauchmelder funktion,saisonal,niedrig,"DIN 14676, Herstellerdaten",2
+TE-124,Haus & Sicherheit,Wie funktioniert ein Feuerlöscher?,feuerlöscher funktion,evergreen,mittel,DIN EN 3,3
+TE-125,Haus & Sicherheit,Sprinkler: Warum löst nur der Sprinkler am Brandherd aus?,sprinkler funktion glasampulle,evergreen,niedrig,Fachliteratur,1
+TE-126,Haus & Sicherheit,Wie funktioniert ein Bewegungsmelder?,bewegungsmelder infrarot funktion,evergreen,niedrig,Herstellerdaten,2
+TE-127,Haus & Sicherheit,Dreifachverglasung: Was bringen Edelgas und Beschichtung?,dreifachverglasung funktion,evergreen,niedrig,"Herstellerdaten, Fraunhofer",2
+TE-128,Haus & Sicherheit,Wie funktioniert ein Turmdrehkran?,baukran funktion gegengewicht,evergreen,niedrig,Fachliteratur,2
+TE-129,Haus & Sicherheit,Hydraulik: Wie hebt ein Bagger Tonnen mit Öl?,hydraulik bagger funktion,evergreen,niedrig,Physik-Lehrbuch,3
+TE-130,Werkzeug & Kleingeräte,Wie funktioniert ein Akkuschrauber?,akkuschrauber funktion,evergreen,niedrig,Herstellerdaten,2
+TE-131,Werkzeug & Kleingeräte,Wie funktioniert ein Reißverschluss?,reißverschluss funktion aufbau,evergreen,niedrig,Fachliteratur,2
+TE-132,Werkzeug & Kleingeräte,Wie funktioniert ein Kugelschreiber?,kugelschreiber funktion,evergreen,niedrig,Fachliteratur,1
+TE-133,Werkzeug & Kleingeräte,Wie funktioniert ein Klettverschluss?,klettverschluss funktion bionik,evergreen,niedrig,Fachliteratur,1
+TE-134,Werkzeug & Kleingeräte,Wie funktioniert eine Sprühflasche?,pumpspray funktion,evergreen,niedrig,Fachliteratur,1
+TE-135,Werkzeug & Kleingeräte,Wie funktioniert eine elektrische Zahnbürste?,elektrische zahnbürste funktion,evergreen,niedrig,Herstellerdaten,2
+TE-136,Werkzeug & Kleingeräte,Wie funktioniert ein Föhn?,föhn funktion,evergreen,niedrig,Herstellerdaten,2
+TE-137,Werkzeug & Kleingeräte,Wie funktioniert eine Nähmaschine?,nähmaschine funktion greifer,evergreen,niedrig,Fachliteratur,2
+TE-138,Werkzeug & Kleingeräte,Wie funktioniert eine Thermoskanne?,thermoskanne funktion vakuum,evergreen,niedrig,Physik-Lehrbuch,2
+TE-139,Werkzeug & Kleingeräte,Wie funktioniert eine Wasserwaage?,wasserwaage libelle funktion,evergreen,niedrig,Fachliteratur,1
+TE-140,Werkzeug & Kleingeräte,Wie funktioniert ein Flaschenzug?,flaschenzug funktion,evergreen,niedrig,Physik-Lehrbuch,3
+TE-141,Werkzeug & Kleingeräte,Wie funktioniert ein Handwärmer mit Knickplättchen?,handwärmer natriumacetat funktion,saisonal,niedrig,Fachliteratur,1
+TE-142,Werkzeug & Kleingeräte,Wie funktioniert ein Leuchtstab?,leuchtstab knicklicht funktion,evergreen,niedrig,Chemie-Lehrbuch,1
+TE-143,Werkzeug & Kleingeräte,Kabelbinder: Warum lässt er sich nur in eine Richtung ziehen?,kabelbinder funktion ratsche,evergreen,niedrig,Fachliteratur,1
+TE-144,Messen & Sensorik,Wie funktioniert eine Digitalwaage?,digitalwaage dehnungsmessstreifen,evergreen,niedrig,Fachliteratur,2
+TE-145,Messen & Sensorik,Wie funktioniert eine Quarzuhr?,quarzuhr funktion,evergreen,niedrig,Fachliteratur,1
+TE-146,Messen & Sensorik,Wie funktioniert eine mechanische Uhr?,mechanische uhr funktion unruh,evergreen,niedrig,Fachliteratur,1
+TE-147,Messen & Sensorik,Wie funktioniert ein Infrarot-Stirnthermometer?,infrarot thermometer funktion,evergreen,mittel,Fachliteratur,2
+TE-148,Messen & Sensorik,Wie funktioniert ein Metalldetektor?,metalldetektor funktion,evergreen,niedrig,Fachliteratur,2
+TE-149,Messen & Sensorik,Wie funktioniert ein Blitzer?,blitzer funktion radar laser,evergreen,mittel,"PTB, Fachliteratur",3
+TE-150,Messen & Sensorik,Torlinientechnik: Wie erkennt das System ein Tor?,torlinientechnik funktion,evergreen,niedrig,Fachliteratur,2
