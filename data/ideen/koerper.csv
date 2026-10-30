@@ -1,0 +1,151 @@
+id,kategorie,titel,suchbegriff,typ,risiko,datenquelle,varianten
+KO001,Herz und Kreislauf,Treppe oder Aufzug: Was macht das Herz?,treppe oder aufzug herz,evergreen,niedrig,"Sportmedizin (Fachliteratur), Compendium of Physical Activities",8
+KO002,Herz und Kreislauf,Wie viele Herzschläge hat ein Menschenleben?,herzschläge im leben,evergreen,niedrig,Fachliteratur (Physiologie),4
+KO003,Herz und Kreislauf,Wie viele Liter Blut pumpt dein Herz in einem Leben?,herz pumpt liter blut,evergreen,niedrig,Fachliteratur (Physiologie),3
+KO004,Herz und Kreislauf,Wie lang sind alle Blutgefäße zusammen?,länge blutgefäße körper,evergreen,niedrig,"Lehrbücher (Schätzwert, Streuung beachten)",2
+KO005,Herz und Kreislauf,Eine Runde durch den Körper: Wie lange braucht ein Blutstropfen?,kreislauf dauer blut runde,evergreen,niedrig,Lehrbücher Physiologie,2
+KO006,Herz und Kreislauf,Herz-Duell: Ausdauersportler gegen Büroarbeiter,ruhepuls sportler vergleich,evergreen,niedrig,Sportmedizinische Studien,5
+KO007,Herz und Kreislauf,"Dein Puls im Tagesverlauf: Aufstehen, Treppe, Schreck, Schlaf",puls tagesverlauf,evergreen,niedrig,"Fachliteratur, Herzfrequenzstudien",4
+KO008,Herz und Kreislauf,Wie schnell fließt Blut in Aorta und Kapillare?,blutfluss geschwindigkeit aorta kapillare,evergreen,niedrig,Lehrbücher Physiologie,2
+KO009,Herz und Kreislauf,Wie schnell füllt der Körper nach einer Blutspende wieder auf?,blutspende regeneration,evergreen,mittel,"DRK-Blutspendedienst, Fachliteratur",2
+KO010,Herz und Kreislauf,Plötzlich aufstehen: Warum wird dir schwarz vor Augen?,schwarz vor augen aufstehen,evergreen,mittel,Fachliteratur (orthostatische Reaktion),2
+KO011,Herz und Kreislauf,Die Leistung deines Herzens in Watt: Wie viele Herzen für eine Glühbirne?,herz leistung watt,evergreen,niedrig,Fachliteratur (Physiologie),3
+KO012,Herz und Kreislauf,Musik und Puls: Folgt dein Herz dem Takt?,puls musik tempo,evergreen,mittel,Studien zu Musik und Herzfrequenz,2
+KO013,Herz und Kreislauf,Das EKG erklärt: Was zeigt jede Zacke?,ekg erklärt zacken,evergreen,mittel,Lehrbücher Kardiologie,2
+KO014,Herz und Kreislauf,Lub-dub: Woher kommt das Geräusch deines Herzschlags?,herzschlag geräusch herzklappen,evergreen,niedrig,Lehrbücher Kardiologie,1
+KO015,Atmung und Luft,Wie viele Atemzüge machst du in einem Leben?,atemzüge im leben,evergreen,niedrig,Fachliteratur (Atemphysiologie),3
+KO016,Atmung und Luft,"Du atmest mehr Kilogramm Luft am Tag, als du isst",luft pro tag atmen kilogramm,evergreen,niedrig,"Lehrbücher, Rechnung",2
+KO017,Atmung und Luft,Luft anhalten: Was passiert in den ersten drei Minuten im Körper?,luft anhalten was passiert,evergreen,hoch,Fachliteratur (Tauchmedizin),4
+KO018,Atmung und Luft,Die Lunge ausgebreitet: Wie groß ist die Atemoberfläche wirklich?,lunge oberfläche tennisplatz,evergreen,niedrig,"Fachliteratur (Lungenphysiologie, Angaben variieren)",2
+KO019,Atmung und Luft,Höhenluft: Was passiert im Körper auf 5.000 Metern?,höhenluft sauerstoff körper,evergreen,mittel,Fachliteratur (Höhenmedizin),4
+KO020,Atmung und Luft,"Niesen, Husten, Sprechen: Wie weit fliegen die Tröpfchen?",niesen wie schnell wie weit,evergreen,mittel,Aerosolstudien,3
+KO021,Atmung und Luft,"Lungenvolumen-Duell: Schwimmer, Sängerin und Büromensch",lungenvolumen vergleich,evergreen,niedrig,Fachliteratur (Spirometrie),3
+KO022,Atmung und Luft,Feinstaub: Was landet nach einem Jahr Stadtluft in deiner Lunge?,feinstaub lunge was passiert,evergreen,mittel,"Umweltbundesamt, WHO",3
+KO023,Atmung und Luft,Wie viel Sauerstoff nimmt dein Körper aus der Luft eigentlich auf?,sauerstoff aufnahme ausatmen,evergreen,niedrig,Lehrbücher Physiologie,2
+KO024,Atmung und Luft,Schluckauf: Was passiert da im Zwerchfell?,schluckauf ursache,evergreen,niedrig,Fachliteratur (Physiologie),1
+KO025,Atmung und Luft,Deine Stimme in Hertz: Wie schnell schwingen die Stimmbänder?,stimmbänder schwingungen hertz,evergreen,niedrig,Fachliteratur (Phoniatrie),2
+KO026,Schlaf und innere Uhr,"Was passiert in deinem Körper, wenn du 3 Tage nicht schläfst?",3 tage nicht schlafen,evergreen,mittel,Fachliteratur (Schlafmedizin),5
+KO027,Schlaf und innere Uhr,Wie viele Jahre deines Lebens verschläfst du?,wie viele jahre schläft man,evergreen,niedrig,"Fachliteratur, Destatis (Zeitverwendung)",3
+KO028,Schlaf und innere Uhr,Eine Nacht im Zeitraffer: Schlafphasen und 90-Minuten-Zyklen,schlafphasen zyklen,evergreen,niedrig,Schlafmedizin (Fachgesellschaften),3
+KO029,Schlaf und innere Uhr,Zeitumstellung: Was macht eine Stunde Verschiebung mit dem Körper?,zeitumstellung körper,saisonal,mittel,Chronobiologie (Fachstudien),3
+KO030,Schlaf und innere Uhr,Jetlag: Wie lange braucht die innere Uhr pro Zeitzone?,jetlag dauer zeitzonen,saisonal,niedrig,Chronobiologie (Fachliteratur),3
+KO031,Schlaf und innere Uhr,Powernap-Duell: 20 Minuten gegen 90 Minuten Mittagsschlaf,mittagsschlaf 20 oder 90 minuten,evergreen,mittel,Schlafstudien,2
+KO032,Schlaf und innere Uhr,"Kaffee-Nickerchen: Was macht wacher – Kaffee, Nickerchen oder beides?",coffee nap,evergreen,mittel,Schlafstudien (Reyner & Horne),2
+KO033,Schlaf und innere Uhr,Wie viel Schlaf braucht der Mensch in welchem Alter?,schlafbedarf alter,evergreen,mittel,"Fachgesellschaften (DGSM, AASM)",3
+KO034,Schlaf und innere Uhr,Wie laut kann Schnarchen werden?,schnarchen dezibel,evergreen,niedrig,"Lärmstufen, Studien zu Schnarchlautstärke",2
+KO035,Schlaf und innere Uhr,Träumen: Wie viele Träume hast du pro Nacht und im Leben?,wie viele träume pro nacht,evergreen,niedrig,Schlafforschung (REM-Schlaf),2
+KO036,Schlaf und innere Uhr,Warum zuckst du beim Einschlafen zusammen?,einschlafzucken warum,evergreen,niedrig,Fachliteratur (Schlafmedizin),1
+KO037,Schlaf und innere Uhr,Wie lang ist dein innerer Tag wirklich?,innere uhr 24 stunden,evergreen,niedrig,Chronobiologie (Czeisler et al. 1999),2
+KO038,Schlaf und innere Uhr,Bildschirmlicht am Abend: Was macht es mit dem Schlafhormon?,handylicht schlaf melatonin,evergreen,mittel,Schlafstudien,2
+KO039,Schlaf und innere Uhr,Sekundenschlaf: Wie weit fährt ein Auto in 4 Sekunden?,sekundenschlaf strecke autobahn,evergreen,mittel,"ADAC, DVR, Rechnung",3
+KO040,Schlaf und innere Uhr,17 Stunden wach: Wie stark sinkt die Reaktionsfähigkeit?,müdigkeit reaktionsfähigkeit,evergreen,mittel,Studien zu Wachheit und Leistung,2
+KO041,Schlaf und innere Uhr,Frühaufsteher gegen Nachteule: Wie verteilen sich die Chronotypen?,chronotyp lerche eule,evergreen,niedrig,"Chronobiologie (Roenneberg), Fachstudien",3
+KO042,Gehirn und Reaktion,Dein Gehirn gegen den Supercomputer: Wer braucht mehr Strom?,gehirn energieverbrauch watt,evergreen,niedrig,Fachliteratur (Neurophysiologie),3
+KO043,Gehirn und Reaktion,Schnell wie ein Gedanke? Wie schnell sind Nervensignale?,nervensignale geschwindigkeit,evergreen,niedrig,Lehrbücher Neurophysiologie,3
+KO044,Gehirn und Reaktion,"Reaktionszeit-Duell: Auge, Ohr und Tastsinn",reaktionszeit sehen hören,evergreen,niedrig,Fachstudien (Reaktionszeit),3
+KO045,Gehirn und Reaktion,Wie schnell vergisst du? Die Vergessenskurve,vergessenskurve ebbinghaus,evergreen,niedrig,"Gedächtnisforschung (Ebbinghaus, Replikationen)",3
+KO046,Gehirn und Reaktion,Multitasking: Wie viel Zeit kostet jeder Aufgabenwechsel?,multitasking zeitverlust,evergreen,niedrig,Studien zur Aufgabenwechsel-Forschung,3
+KO047,Gehirn und Reaktion,Die 8-Sekunden-Aufmerksamkeit: Stimmt der Goldfisch-Vergleich?,aufmerksamkeitsspanne mythos,evergreen,niedrig,"Quellenprüfung, Fachstudien",2
+KO048,Gehirn und Reaktion,Wie viele Wörter sprichst du am Tag?,wörter pro tag,evergreen,mittel,Studie von Mehl et al. 2007 (Science),2
+KO049,Gehirn und Reaktion,Verbraucht Denken mehr Energie? Der Schach-Mythos,schach kalorien denken,evergreen,niedrig,Studien zur Energiebilanz des Gehirns,2
+KO050,Gehirn und Reaktion,Kampf oder Flucht: Was passiert in den ersten 10 Sekunden nach einem Schreck?,schreck körper reaktion adrenalin,evergreen,mittel,Fachliteratur (Stressphysiologie),3
+KO051,Gehirn und Reaktion,Wie viel kann dein Gehirn speichern? Das Petabyte-Rätsel,gehirn speicherkapazität,evergreen,niedrig,Fachpublikationen (Synapsen-Studien),2
+KO052,Gehirn und Reaktion,Wie viele Verbindungen hat dein Gehirn? Synapsen gegen Sterne,synapsen anzahl gehirn,evergreen,niedrig,Fachliteratur (Neuroanatomie),2
+KO053,Gehirn und Reaktion,"Du lebst 0,1 Sekunden in der Vergangenheit: Wie lang ist die Verzögerung?",wahrnehmung verzögerung gehirn,evergreen,niedrig,Neurowissenschaft (Wahrnehmungsforschung),2
+KO054,Gehirn und Reaktion,Nutzen wir nur 10 Prozent des Gehirns? Der Bildgebungs-Check,10 prozent gehirn mythos,evergreen,niedrig,"Neurowissenschaft (Bildgebung), Quellenprüfung",1
+KO055,Gehirn und Reaktion,Warum kannst du dich nicht selbst kitzeln?,selbst kitzeln unmöglich,evergreen,niedrig,"Fachpublikationen (Neurowissenschaft, Kleinhirn-Vorhersage)",1
+KO056,Gehirn und Reaktion,Ansteckendes Gähnen: Wie viele Menschen gähnen mit?,gähnen ansteckend warum,evergreen,niedrig,Verhaltensstudien (Gähn-Ansteckung),2
+KO057,Sinne,Wie viele Megapixel hat dein Auge wirklich?,auge megapixel,evergreen,niedrig,Fachliteratur (Ophthalmologie),2
+KO058,Sinne,Der blinde Fleck und die Schärfe: Wie viel siehst du wirklich scharf?,blinder fleck sehen,evergreen,niedrig,Fachliteratur (Sehphysiologie),2
+KO059,Sinne,Wie laut ist laut? Die Dezibel-Skala von Flüstern bis Schmerzgrenze,dezibel skala alltag,evergreen,mittel,"Umweltbundesamt, Fachliteratur (Lärmwirkung)",4
+KO060,Sinne,Wie viele Gerüche kannst du unterscheiden?,wie viele gerüche unterscheiden,evergreen,niedrig,"Fachpublikationen (Geruchsforschung, Kontroverse beachten)",2
+KO061,Sinne,Die Zungenkarte-Legende: Wie viele Geschmacksknospen hast du?,geschmacksknospen zungenkarte mythos,evergreen,niedrig,Lehrbücher Sinnesphysiologie,2
+KO062,Sinne,Drehschwindel: Warum dreht sich alles nach dem Karussell?,drehschwindel karussell,evergreen,niedrig,Lehrbücher (Gleichgewichtsorgan),2
+KO063,Sinne,Hörbereich: Welche Töne hörst du in welchem Alter?,hörtest frequenz alter,evergreen,niedrig,Fachliteratur (Audiologie),3
+KO064,Sinne,Fingerspitzen-Duell: Wie fein spürst du?,tastsinn fingerspitzen genauigkeit,evergreen,niedrig,Fachpublikationen (Tastsinnforschung),2
+KO065,Sinne,Warum werden Finger im Wasser schrumpelig?,finger schrumpelig wasser,evergreen,niedrig,Fachpublikationen,1
+KO066,Sinne,Warum schmeckt Essen mit verstopfter Nase fad?,nase zu geschmack,evergreen,niedrig,Lehrbücher Sinnesphysiologie,1
+KO067,Sinne,Wie oft blinzelst du – und wie viel siehst du deshalb nicht?,blinzeln pro tag,evergreen,niedrig,Fachliteratur (Ophthalmologie),2
+KO068,Sinne,"Wie lange dauert es, bis deine Augen im Dunkeln sehen?",dunkeladaption auge dauer,evergreen,niedrig,Fachliteratur (Sehphysiologie),2
+KO069,Sinne,Der Cocktailparty-Effekt: Wie filtert dein Gehör eine Stimme heraus?,cocktailparty effekt hören,evergreen,niedrig,Fachliteratur (Hörforschung),1
+KO070,Sinne,Papierschnitt: Warum tut er an der Fingerspitze so weh?,papierschnitt schmerz fingerspitze,evergreen,niedrig,Lehrbücher Schmerzphysiologie,1
+KO071,Bewegung und Muskeln,Wie viele Schritte machst du in einem Leben – und wie oft um die Erde?,schritte im leben erde,evergreen,niedrig,"Schrittzählerstudien, Fachliteratur",3
+KO072,Bewegung und Muskeln,Gehen oder Laufen: Was kostet pro Kilometer mehr Energie?,gehen oder laufen energie,evergreen,niedrig,Fachliteratur (Biomechanik),3
+KO073,Bewegung und Muskeln,Sprinter oder Marathonläufer: Wer hat welche Muskelfasern?,muskelfasern sprinter marathon,evergreen,niedrig,Fachliteratur (Sportphysiologie),3
+KO074,Bewegung und Muskeln,Liegestütze: Wie viel deines Gewichts stemmst du?,liegestütz gewicht prozent,evergreen,niedrig,Biomechanik-Studien,2
+KO075,Bewegung und Muskeln,Muskelkater: Was passiert wirklich – und was ist Mythos?,muskelkater ursache mythos,evergreen,mittel,Fachliteratur (Sportmedizin),2
+KO076,Bewegung und Muskeln,Dein Sprung auf dem Mond: Wie hoch kämst du?,sprung mond wie hoch,evergreen,niedrig,"NASA, Rechnung",3
+KO077,Bewegung und Muskeln,Marathon: Wo ist die Wand? Energie-Rechnung über 42 Kilometer,marathon wand glykogen,evergreen,mittel,Sportphysiologie,3
+KO078,Bewegung und Muskeln,Wie viel Druck herrscht im Knie beim Treppensteigen?,kniegelenk belastung treppe,evergreen,mittel,Biomechanik-Studien,3
+KO079,Bewegung und Muskeln,10.000 Schritte: Woher kommt die Zahl und was sagen Studien?,10000 schritte mythos,evergreen,mittel,"Bewegungsstudien (Kohortenstudien), Quellenprüfung",3
+KO080,Bewegung und Muskeln,Rad oder Läufer: Wer kommt mit weniger Energie pro Kilometer weiter?,fahrrad energie pro kilometer,evergreen,niedrig,Biomechanik (Energiekosten der Fortbewegung),3
+KO081,Bewegung und Muskeln,"Wie lange musst du radeln, um einen Toast zu rösten?",radeln strom erzeugen toast,evergreen,niedrig,"Sportphysiologie, Gerätedaten",3
+KO082,Bewegung und Muskeln,"Stehen, Sitzen, Liegen: Was verbraucht dein Körper pro Stunde?",stehen sitzen kalorien,evergreen,mittel,Compendium of Physical Activities,3
+KO083,Bewegung und Muskeln,Warum ist bei rund 45 km/h Schluss? Die Grenze des menschlichen Sprints,schnellster mensch grenze,evergreen,niedrig,"Biomechanik (Bodenkraft-Studien), World Athletics",3
+KO084,Energie und Wärme,Was verbraucht dein Körper im Ruhezustand? Der Grundumsatz nach Organen,grundumsatz organe,evergreen,niedrig,"Ernährungsphysiologie, DGE",3
+KO085,Energie und Wärme,Dein Tagesumsatz im Auto: Wie weit käme ein Wagen damit?,körper energie benzin vergleich,evergreen,niedrig,"Rechnung, DGE-Referenzwerte",2
+KO086,Energie und Wärme,Mensch als Heizung: Wie viele Menschen heizen einen Raum?,körperwärme heizung raum,evergreen,niedrig,"Thermophysiologie, Gebäudephysik",3
+KO087,Energie und Wärme,Koffein: Wie lange bleibt der Kaffee im Körper?,koffein halbwertszeit,evergreen,mittel,Pharmakokinetik (Fachliteratur),3
+KO088,Energie und Wärme,Fieber: Wie viel Energie kostet jedes Grad?,fieber energieverbrauch,evergreen,mittel,Fachliteratur (Thermoregulation),2
+KO089,Energie und Wärme,Wasserhaushalt: Woher kommt und wohin geht ein Liter?,wasserhaushalt körper,evergreen,mittel,"DGE, Fachliteratur",3
+KO090,Energie und Wärme,Wie warm ist dein Körper wo? Die Temperaturkarte,körpertemperatur karte,evergreen,niedrig,Fachliteratur (Thermoregulation),2
+KO091,Energie und Wärme,Sauna: Warum verbrennst du dich bei 90 °C nicht?,sauna 90 grad warum,saisonal,mittel,"Physik (Wärmeleitung), Fachliteratur",2
+KO092,Energie und Wärme,Schweiß als Klimaanlage: Wie viel Wärme kühlt ein Liter Schweiß?,schweiß kühlung,saisonal,niedrig,Fachliteratur (Thermoregulation),2
+KO093,Energie und Wärme,Zuckerwürfel-Rechnung: Wie viel Zucker steckt in einem Liter Limonade?,zuckerwürfel limonade,evergreen,mittel,"DGE, Lebensmittelinhaltsstoffe",4
+KO094,Energie und Wärme,Salz im Körper: Wie viel brauchst du und wie viel isst du?,salz pro tag körper,evergreen,mittel,"DGE, WHO",2
+KO095,Verdauung und Ausscheidung,Die Reise eines Bissens: Wie lange dauert die Verdauung?,verdauung dauer,evergreen,niedrig,Fachliteratur (Gastroenterologie),3
+KO096,Verdauung und Ausscheidung,Die Darmoberfläche: Wie groß ist sie wirklich?,darm oberfläche,evergreen,niedrig,"Fachpublikationen (Gastroenterologie, Angaben variieren)",2
+KO097,Verdauung und Ausscheidung,Wie viel passt in den Magen – und wie stark ist die Magensäure?,magen fassungsvermögen säure,evergreen,niedrig,Lehrbücher Physiologie,3
+KO098,Verdauung und Ausscheidung,Wie viel Speichel bildest du in einem Leben?,speichel pro tag leben,evergreen,niedrig,Fachliteratur,2
+KO099,Verdauung und Ausscheidung,Wie viele Tonnen Essen und Trinken nimmst du in einem Leben zu dir?,essen im leben tonnen,evergreen,niedrig,"DGE, Destatis (Verzehrmengen)",3
+KO100,Verdauung und Ausscheidung,Wie viel Urin produzierst du in einem Leben? Die Badewannen-Rechnung,urin im leben badewanne,evergreen,niedrig,Fachliteratur (Nierenphysiologie),2
+KO101,Verdauung und Ausscheidung,Kaugummi verschluckt: Bleibt er wirklich sieben Jahre?,kaugummi verschlucken sieben jahre,evergreen,niedrig,Fachliteratur (Gastroenterologie),1
+KO102,Verdauung und Ausscheidung,Wie viel Blut filtern deine Nieren am Tag?,nieren filtern liter,evergreen,niedrig,Lehrbücher (Nierenphysiologie),2
+KO103,Verdauung und Ausscheidung,Die Leber wächst nach: Wie schnell wächst ein Teil zurück?,leber regeneration,evergreen,mittel,Fachliteratur (Hepatologie),2
+KO104,Verdauung und Ausscheidung,Mikroplastik im Körper: Stimmt die Kreditkarte pro Woche?,mikroplastik kreditkarte pro woche,evergreen,mittel,"Quellenprüfung, Fachpublikationen",2
+KO105,"Zellen, Blut und Immunsystem",Wie viele Zellen hat dein Körper – und wie viele sterben pro Sekunde?,wie viele zellen hat der körper,evergreen,niedrig,Fachpublikationen (Zellzählung),4
+KO106,"Zellen, Blut und Immunsystem",Wie alt sind deine Zellen wirklich? Der Körper erneuert sich,wie alt sind zellen,evergreen,niedrig,Fachpublikationen (Zellalter),3
+KO107,"Zellen, Blut und Immunsystem",Mehr Bakterien als Körperzellen? Das 1:1-Verhältnis,bakterien körper anzahl,evergreen,niedrig,Fachpublikationen (Zellzählung),2
+KO108,"Zellen, Blut und Immunsystem",Dein Knochenmark: Wie viele Blutzellen entstehen pro Sekunde?,blutzellen pro sekunde,evergreen,niedrig,Lehrbücher Hämatologie,2
+KO109,"Zellen, Blut und Immunsystem",Wie lang ist die DNA in deinem Körper? Bis zur Sonne und zurück,dna länge körper,evergreen,niedrig,Fachliteratur (Molekularbiologie),2
+KO110,"Zellen, Blut und Immunsystem",Immunsystem als Tower-Defense: Wie wehrt der Körper einen Erkältungsvirus ab?,immunsystem erklärt erkältung,evergreen,mittel,"Lehrbücher Immunologie, RKI",4
+KO111,"Zellen, Blut und Immunsystem",Exponentielles Wachstum: Wie schnell vermehrt sich ein Bakterium?,bakterien verdopplung 20 minuten,evergreen,niedrig,Lehrbücher Mikrobiologie,3
+KO112,"Zellen, Blut und Immunsystem",Händewaschen im Mikroskop: 10 gegen 30 Sekunden,händewaschen dauer keime,evergreen,mittel,"Hygienestudien, BZgA",3
+KO113,"Zellen, Blut und Immunsystem",Wie funktioniert eine Impfung? Das Training des Immunsystems,impfung erklärt immunsystem,evergreen,hoch,"RKI, STIKO, Lehrbücher Immunologie",4
+KO114,"Zellen, Blut und Immunsystem",Pollenalarm: Warum reagiert das Immunsystem auf harmlosen Blütenstaub?,heuschnupfen erklärt,saisonal,mittel,"Allergologie (Fachliteratur), Pollenflug-Vorhersage des DWD",3
+KO115,"Zellen, Blut und Immunsystem",Blutgruppen: Wer kann wem Blut spenden?,blutgruppen spenden tabelle,evergreen,niedrig,"DRK-Blutspendedienst, Lehrbücher",3
+KO116,"Zellen, Blut und Immunsystem",Dein Gesicht berühren: Wie oft machst du das pro Stunde?,gesicht berühren pro stunde,evergreen,mittel,Beobachtungsstudien (Hygiene),2
+KO117,"Zellen, Blut und Immunsystem",Wie viele Erkältungen hast du in einem Leben?,erkältungen im leben,evergreen,mittel,"RKI, Fachliteratur",2
+KO118,"Zellen, Blut und Immunsystem",Eine Grippewelle im Klassenzimmer: Wie breitet sich eine Infektion aus? (SIR-Simulation),infektion ausbreitung simulation,evergreen,hoch,"Epidemiologie (SIR-Modell), RKI",4
+KO119,"Knochen, Haut und Haare",Babys haben mehr Knochen als Erwachsene: Wie viele sind es?,wie viele knochen hat der mensch,evergreen,niedrig,Lehrbücher Anatomie,3
+KO120,"Knochen, Haut und Haare",Knochen gegen Stahl: Was hält mehr aus?,knochen stärker als stahl,evergreen,niedrig,Fachliteratur (Biomechanik),3
+KO121,"Knochen, Haut und Haare",Die Haut ausgebreitet: Wie groß und wie schwer ist das größte Organ?,haut fläche gewicht,evergreen,niedrig,Lehrbücher Dermatologie,2
+KO122,"Knochen, Haut und Haare",Wie lang sind alle Haare und Nägel deines Lebens?,haare nägel wachstum leben,evergreen,niedrig,Fachliteratur (Dermatologie),3
+KO123,"Knochen, Haut und Haare",Ein Haar trägt 100 Gramm: Wie viele Haare tragen ein Auto?,haar zugfestigkeit,evergreen,niedrig,Materialforschung,2
+KO124,"Knochen, Haut und Haare",Morgens größer als abends: Wie viel schrumpfst du am Tag?,körpergröße morgens abends,evergreen,niedrig,Fachliteratur (Orthopädie),2
+KO125,"Knochen, Haut und Haare",Zahnschmelz: Das härteste Material im Körper gegen Stahl,zahnschmelz härte,evergreen,niedrig,"Materialforschung, Zahnmedizin",2
+KO126,"Knochen, Haut und Haare",Wie lange putzt du in deinem Leben Zähne?,zähneputzen lebenszeit,evergreen,niedrig,"Empfehlungen der Zahnärzteverbände, Rechnung",2
+KO127,"Knochen, Haut und Haare",Da Vincis Mensch: Ist die Armspanne gleich der Körpergröße?,armspanne körpergröße,evergreen,niedrig,Anthropometrie-Studien,2
+KO128,"Knochen, Haut und Haare","Woraus besteht dein Gewicht? Haut, Knochen, Muskeln und Organe",körpergewicht zusammensetzung,evergreen,niedrig,Lehrbücher Anatomie,2
+KO129,"Knochen, Haut und Haare",Warum knackt ein Gelenk? Die Blasen-Frage,gelenke knacken ursache,evergreen,mittel,Fachpublikationen (Bildgebung),2
+KO130,"Knochen, Haut und Haare",Wachsen Haare nach der Rasur dicker nach? Der Mess-Mythos,rasur haare dicker nachwachsen,evergreen,niedrig,Dermatologie (Studien),1
+KO131,"Knochen, Haut und Haare",Haut und Sonne: Wie lange bis zum Sonnenbrand je Hauttyp?,sonnenbrand zeit hauttyp,saisonal,mittel,Bundesamt für Strahlenschutz (UV-Index),3
+KO132,"Knochen, Haut und Haare",Sind Venen blau? Der Venen-Mythos,venen blau warum,evergreen,niedrig,"Lehrbücher Dermatologie, Optik",1
+KO133,"Knochen, Haut und Haare",Tattoos und Hauterneuerung: Warum bleibt die Tinte?,tattoo haut erneuert sich,evergreen,mittel,Dermatologie (Fachliteratur),1
+KO134,Körper in Extremsituationen,Hitze: Was passiert im Körper bei 40 °C?,40 grad hitze körper,saisonal,mittel,"Deutscher Wetterdienst, Fachliteratur (Hitzemedizin)",4
+KO135,Körper in Extremsituationen,Kaltes Wasser: Wie schnell kühlt der Körper aus?,kaltes wasser körper unterkühlung,saisonal,hoch,"Fachliteratur (Kältephysiologie), DLRG",3
+KO136,Körper in Extremsituationen,"Tauchen: Was macht der Wasserdruck in 10, 30 und 100 Metern mit dem Körper?",tauchen druck körper,evergreen,mittel,Fachliteratur (Tauchmedizin),3
+KO137,Körper in Extremsituationen,Flugzeugkabine: Warum schwellen die Füße an und knackt das Ohr?,flugzeug druck ohren,saisonal,niedrig,"EASA, Fachliteratur",2
+KO138,Körper in Extremsituationen,Wie viel Strahlung bekommst du pro Jahr – und woher?,strahlung pro jahr alltag banane,evergreen,mittel,Bundesamt für Strahlenschutz,3
+KO139,Körper in Extremsituationen,Strom und Körper: Ab wie vielen Milliampere wird es gefährlich?,strom körper milliampere,evergreen,mittel,"VDE, DGUV",2
+KO140,Körper in Extremsituationen,Verbrühung: Bei welcher Temperatur verbrennt die Haut in wie vielen Sekunden?,verbrühung temperatur sekunden,evergreen,mittel,Fachliteratur (Verbrennungsmedizin),2
+KO141,Körper in Extremsituationen,Kalt duschen: Was passiert im Körper beim Kälteschock?,kalt duschen was passiert,evergreen,hoch,Fachliteratur (Kältephysiologie),3
+KO142,Wachstum und Lebensalter,Vom Baby zum Erwachsenen: Wie verändern sich die Körperproportionen?,körperproportionen baby erwachsene,evergreen,niedrig,Lehrbücher Anthropometrie,2
+KO143,Wachstum und Lebensalter,Das Gehirn im ersten Lebensjahr: Wie schnell wächst es?,gehirn baby wachstum,evergreen,niedrig,Fachliteratur (Pädiatrie),2
+KO144,Wachstum und Lebensalter,"Kind gegen Erwachsener: Puls, Atmung und Knochen im Vergleich",vitalwerte kind erwachsener,evergreen,niedrig,Normwerte (Pädiatrie),3
+KO145,Wachstum und Lebensalter,Neun Monate im Zeitraffer: Wie wächst ein Embryo?,schwangerschaft wochen entwicklung,evergreen,mittel,Fachliteratur (Embryologie),3
+KO146,Wachstum und Lebensalter,"Der Körper im Zeitraffer: 20, 40 und 60 Jahre",körper altern zeitraffer,evergreen,mittel,Fachliteratur (Geriatrie),3
+KO147,Wachstum und Lebensalter,"Wie wahrscheinlich ist es, 100 zu werden?",wahrscheinlichkeit 100 werden,evergreen,mittel,Destatis (Sterbetafel),3
+KO148,Wachstum und Lebensalter,Die Menschheit wird größer: Wie viel sind wir seit 1850 gewachsen?,durchschnittsgröße 1850 heute,evergreen,niedrig,Fachstudien (Körpergrößen-Reihen),3
+KO149,Wachstum und Lebensalter,Lebenserwartung: Wie viele Monate gewinnst du pro Jahr?,lebenserwartung steigt,news,mittel,"Destatis, Max-Planck-Institut für demografische Forschung",3
+KO150,Wachstum und Lebensalter,Wann bist du am stärksten? Der Leistungsgipfel nach Alter,peak alter leistung,evergreen,niedrig,"Altersstudien (Psychologie, Sportstatistik)",3

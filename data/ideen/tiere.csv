@@ -1,0 +1,151 @@
+id,kategorie,titel,suchbegriff,typ,risiko,datenquelle,varianten
+TI001,"Geschwindigkeit, Sprung und Beschleunigung",Gepard gegen Gabelbock: Wer gewinnt über 1 km?,gepard gegen gabelbock,evergreen,niedrig,"Zoologische Daten, Fachliteratur (Sprint und Ausdauer)",6
+TI002,"Geschwindigkeit, Sprung und Beschleunigung",Gepard gegen Sportwagen: Wer ist schneller auf 100 km/h?,gepard beschleunigung vs auto,evergreen,niedrig,"Zoologische Daten (Sprintmessungen), Herstellerangaben",4
+TI003,"Geschwindigkeit, Sprung und Beschleunigung",Wer ist wirklich der Schnellste? Tiere in Körperlängen pro Sekunde,schnellstes tier körperlängen,evergreen,niedrig,Fachpublikationen (Zoologie),5
+TI004,"Geschwindigkeit, Sprung und Beschleunigung","Das Langsamkeitsrennen: Faultier, Schnecke und Schildkröte auf einem Meter",langsamstes tier,evergreen,niedrig,Zoologische Daten,4
+TI005,"Geschwindigkeit, Sprung und Beschleunigung",Elefant gegen Stoppuhr: Kann ein Elefant rennen?,kann ein elefant rennen,evergreen,niedrig,Fachpublikation (Bewegungsanalyse),2
+TI006,"Geschwindigkeit, Sprung und Beschleunigung",Hauskatze gegen Hund: Wer gewinnt das Wohnzimmer-Rennen?,katze oder hund schneller,evergreen,niedrig,"Zoologische Daten, Rekordlisten",4
+TI007,"Geschwindigkeit, Sprung und Beschleunigung",Floh gegen Känguru: Wer springt relativ weiter?,floh sprung vs känguru,evergreen,niedrig,"Zoologische Daten, Fachliteratur (Biomechanik)",4
+TI008,"Geschwindigkeit, Sprung und Beschleunigung",Fangschreckenkrebs gegen Pistolenkugel: Wie schnell ist der Schlag?,fangschreckenkrebs schlag geschwindigkeit,evergreen,niedrig,Fachpublikationen (Hochgeschwindigkeitsaufnahmen),2
+TI009,"Geschwindigkeit, Sprung und Beschleunigung",Chamäleonzunge gegen Sportwagen: Wer beschleunigt schneller?,chamäleon zunge geschwindigkeit,evergreen,niedrig,Fachpublikationen (Hochgeschwindigkeitsaufnahmen),2
+TI010,"Geschwindigkeit, Sprung und Beschleunigung",Kaiserpinguin gegen Hochspringer: Wer springt höher aus dem Wasser?,pinguin sprung aus wasser,evergreen,niedrig,"Fachpublikationen, Rekordlisten",1
+TI011,"Geschwindigkeit, Sprung und Beschleunigung",Gazelle gegen Gepard: Wann lohnt sich der Sprung in die Luft?,gazelle stotting warum,evergreen,niedrig,Fachpublikationen (Verhaltensökologie),2
+TI012,"Geschwindigkeit, Sprung und Beschleunigung",Schaumzikade gegen Astronaut: Wer erlebt mehr g?,schaumzikade beschleunigung,evergreen,niedrig,Fachpublikationen (Biomechanik),1
+TI013,"Geschwindigkeit, Sprung und Beschleunigung",Schritt gegen Trab gegen Galopp: Wann spart das Pferd Energie?,pferd gangart energie,evergreen,niedrig,Fachpublikationen (Biomechanik),2
+TI014,"Geschwindigkeit, Sprung und Beschleunigung","Basilisk gegen Mensch: Wie schnell müsstest du sein, um über Wasser zu laufen?",basilisk über wasser laufen,evergreen,niedrig,Fachpublikationen (Strömungsmechanik),2
+TI015,"Geschwindigkeit, Sprung und Beschleunigung",Nesseltier gegen Gewehrkugel: Der schnellste Mechanismus der Natur,nesselzelle beschleunigung,evergreen,niedrig,Fachpublikationen (Hochgeschwindigkeitsaufnahmen),1
+TI016,Flug und Luft,Wanderfalke gegen Gepard: Wer ist schneller – und was schafft ein Fallschirmspringer?,wanderfalke geschwindigkeit,evergreen,niedrig,"Zoologische Daten, Rekordlisten",5
+TI017,Flug und Luft,Mauersegler gegen Mensch: Wie lange kann ein Vogel am Stück fliegen?,mauersegler fliegt monate,evergreen,niedrig,Fachpublikation (Geolokator-Studie),2
+TI018,Flug und Luft,Pfuhlschnepfe gegen Verkehrsflugzeug: Elf Tage nonstop von Alaska nach Neuseeland,pfuhlschnepfe 11000 km,evergreen,niedrig,Satellitentelemetrie-Studien,2
+TI019,Flug und Luft,Kolibri gegen Mensch: Flügelschläge und Herzschlag im Vergleich,kolibri flügelschläge,evergreen,niedrig,Zoologische Daten,3
+TI020,Flug und Luft,Albatros gegen Segelflugzeug: Wer gleitet weiter?,albatros gleiten dynamic soaring,evergreen,niedrig,Fachpublikationen (Flugforschung),2
+TI021,Flug und Luft,"Höhenflug-Rekord: Gans, Kranich und Geier über dem Himalaya",vogel höhenrekord himalaya,evergreen,niedrig,"Zoologische Daten, Fachpublikationen",3
+TI022,Flug und Luft,V-Formation: Wie viel Energie spart ein Zugvogel hinter dem Vordermann?,v formation vögel energie,saisonal,niedrig,Fachpublikation (Flugformationsstudie),2
+TI023,Flug und Luft,Fledermaus gegen Vogel: Wer manövriert besser?,fledermaus flug manöver,saisonal,niedrig,Fachpublikationen (Flugforschung),2
+TI024,Flug und Luft,Flugsaurier gegen Albatros: Wer hatte die größere Spannweite?,flugsaurier größe vs albatros,evergreen,niedrig,Paläontologische Schätzungen,2
+TI025,Flug und Luft,Eule gegen Taube: Wer fliegt leiser?,eule lautloser flug,evergreen,niedrig,Fachpublikationen (Bionik),2
+TI026,Flug und Luft,Fliegende Fische gegen Segelflug: Wie weit gleiten sie?,fliegende fische gleiten weite,evergreen,niedrig,Fachpublikationen (Meeresbiologie),1
+TI027,Flug und Luft,Hummel gegen Aerodynamik: Dürfte sie eigentlich fliegen?,hummel darf nicht fliegen mythos,evergreen,niedrig,Fachpublikationen (Flugmechanik der Insekten),1
+TI028,Flug und Luft,Libelle von heute gegen Urzeit-Libelle: Warum wurden Insekten kleiner?,riesenlibelle sauerstoff,evergreen,niedrig,Paläontologische Schätzungen,2
+TI029,Schwimmen und Tauchen,"Wer schwimmt am schnellsten? Schwertfisch, Delfin und Orca im Vergleich",schnellster schwimmer tier,evergreen,niedrig,Zoologische Daten (Messungen variieren),4
+TI030,Schwimmen und Tauchen,"Tauchduell: Pottwal, Kaiserpinguin und Freitaucher",tiefster tauchgang tier,evergreen,niedrig,"Zoologische Daten, Freitauch-Rekorde",5
+TI031,Schwimmen und Tauchen,Lachs gegen Wasserfall: Wie hoch springt er?,lachs wasserfall sprung,saisonal,niedrig,Fachpublikationen (Fischereibiologie),2
+TI032,Schwimmen und Tauchen,"Die lautesten Tiere: Blauwal, Pottwal und Pistolenkrebs gegen Düsenjet",lautestes tier dezibel,evergreen,niedrig,"Zoologische Daten, Fachpublikationen",3
+TI033,Schwimmen und Tauchen,Auster gegen Kläranlage: Wie viel Wasser filtert sie am Tag?,auster wasser filtern,evergreen,niedrig,Fachpublikationen (Meeresbiologie),2
+TI034,Schwimmen und Tauchen,Tiefseefisch gegen U-Boot: Wie hält er den Druck aus?,tiefsee fisch druck,evergreen,niedrig,Fachpublikationen (Tiefseebiologie),2
+TI035,Schwimmen und Tauchen,Hai gegen Mythos: Müssen Haie wirklich immer schwimmen?,müssen haie immer schwimmen,evergreen,niedrig,Fachpublikationen (Haibiologie),1
+TI036,Schwimmen und Tauchen,Feuerameisen gegen Wasser: Wie bauen sie ein lebendes Floß? (Simulation),feuerameisen floß,evergreen,niedrig,Fachpublikation (Kollektivverhalten),2
+TI037,Kraft und Biss,"Bisskraft-Duell: Krokodil, Hai, Löwe und Mensch",bisskraft vergleich tiere,evergreen,niedrig,Zoologische Daten (Fachpublikationen zur Bisskraft),10
+TI038,Kraft und Biss,Pound for pound: Wer beißt im Verhältnis zum Körpergewicht am stärksten?,bisskraft pro körpergewicht,evergreen,niedrig,Fachpublikationen (Biomechanik),4
+TI039,Kraft und Biss,Nashornkäfer gegen Mensch: Wer ist im Verhältnis stärker?,nashornkäfer stärkstes tier,evergreen,niedrig,Zoologische Daten,4
+TI040,Kraft und Biss,Schimpanse gegen Profisportler: Wie viel stärker ist ein Affe wirklich?,schimpanse stärker als mensch,evergreen,niedrig,Fachpublikation (Muskelstudien an Primaten),3
+TI041,Kraft und Biss,Elefantenrüssel gegen Menschenhand: Kraft und Feingefühl,elefantenrüssel muskeln,evergreen,niedrig,Lehrbücher Zoologie,2
+TI042,Kraft und Biss,1 PS gegen 1 Pferd: Wie stark ist ein Pferd wirklich?,pferdestärke ein pferd,evergreen,niedrig,"Physik, Zoologische Daten",3
+TI043,Kraft und Biss,"Großkatzen-Rangliste: Löwe, Tiger, Jaguar und Leopard in fünf Disziplinen",löwe oder tiger stärker,evergreen,niedrig,"Zoologische Daten, Artenporträts",6
+TI044,Kraft und Biss,Spinnenseide gegen Stahl: Was hält mehr aus?,spinnenseide stärker als stahl,evergreen,niedrig,Fachpublikationen (Materialforschung),3
+TI045,Kraft und Biss,Gecko gegen Decke: Wie viele Geckos hält ein Mensch?,gecko haftkraft,evergreen,niedrig,Fachpublikation (Haftkraftmessungen),2
+TI046,Kraft und Biss,Adler gegen Kind: Wie viel kann ein Adler wirklich tragen?,adler trägt kind tragkraft,evergreen,mittel,"Zoologische Daten, Fachpublikationen",2
+TI047,Ausdauer und Wanderung,Küstenseeschwalbe gegen Mond: Wie weit fliegt sie im Leben?,küstenseeschwalbe strecke,saisonal,niedrig,Fachpublikation (Geolokator-Studie),3
+TI048,Ausdauer und Wanderung,"Wer wandert am weitesten? Seeschwalbe, Grauwal und Karibu im Vergleich",längste tierwanderung,evergreen,niedrig,Zoologische Daten (Fachpublikationen),4
+TI049,Ausdauer und Wanderung,"Gnu-Wanderung: 1,5 Millionen Tiere im Kreis (Simulation)",gnu wanderung serengeti,saisonal,niedrig,"Serengeti-Forschung, Zählungen",3
+TI050,Ausdauer und Wanderung,"Monarchfalter: Vier Generationen, eine Reise",monarchfalter wanderung,saisonal,niedrig,Fachpublikationen (Wanderforschung),2
+TI051,Ausdauer und Wanderung,Aal gegen Atlantik: Warum zieht er zum Laichen in die Sargassosee?,aal sargassosee,evergreen,niedrig,Fachpublikationen (Fischereibiologie),2
+TI052,Ausdauer und Wanderung,Schlittenhund gegen Marathonläufer: Wer verbrennt mehr Energie?,schlittenhund energie kalorien,evergreen,mittel,Fachpublikationen (Sportphysiologie),2
+TI053,Ausdauer und Wanderung,Känguru gegen Läufer: Warum kostet schnelleres Hüpfen kaum mehr Energie?,känguru hüpfen energie,evergreen,niedrig,Fachpublikation (Energetik des Hüpfens),2
+TI054,Ausdauer und Wanderung,Kamel gegen Mensch: 150 Liter in 15 Minuten saufen und zwei Wochen ohne,kamel wasser trinken,evergreen,niedrig,Zoologische Daten,3
+TI055,Ausdauer und Wanderung,Wüstenameise: Ein Schrittzähler im Kopf,wüstenameise schrittzähler,evergreen,niedrig,Fachpublikation (Navigationsforschung),2
+TI056,Ausdauer und Wanderung,Brieftaube gegen Navi: Wer findet 1.000 km nach Hause?,brieftaube navigation,evergreen,niedrig,Fachpublikationen (Magnetfeld-Navigation),2
+TI057,Ausdauer und Wanderung,Rote Landkrabben: 50 Millionen Krabben auf Wanderschaft,rote landkrabbe weihnachtsinsel,saisonal,niedrig,Parks Australia,2
+TI058,Ausdauer und Wanderung,Weihnachtsmann gegen Rentier: Wie schnell müsste ein Schlitten fliegen?,rentier weihnachtsmann geschwindigkeit,saisonal,niedrig,"Rechnung (Weltbevölkerung, Haushalte), Zoologische Daten",3
+TI059,Ausdauer und Wanderung,Hamster gegen Marathonläufer: Wie weit läuft ein Hamster pro Nacht im Rad?,hamster laufrad strecke pro nacht,evergreen,niedrig,Fachpublikationen (Aktivitätsmessungen an Kleinsäugern),2
+TI060,Größe und Körperbau,Blauwal gegen Dinosaurier: Das schwerste Tier aller Zeiten,schwerstes tier aller zeiten,evergreen,niedrig,"Paläontologische Schätzungen, Zoologische Daten",4
+TI061,Größe und Körperbau,Das Blauwal-Herz gegen ein Auto: Wie groß und wie langsam schlägt es?,blauwal herz größe,evergreen,niedrig,Fachpublikation (Herzfrequenz-Messung),2
+TI062,Größe und Körperbau,Wie lang ist das längste Tier der Welt – gegen den Blauwal?,längstes tier der welt,evergreen,niedrig,Zoologische Daten,2
+TI063,Größe und Körperbau,Giraffe gegen Mensch: Wie pumpt das Herz Blut zwei Meter hoch?,giraffe blutdruck hals,evergreen,niedrig,Fachpublikationen (Kreislaufphysiologie),3
+TI064,Größe und Körperbau,"Krake gegen Mensch: Drei Herzen, neun Gehirne, blaues Blut",krake drei herzen,evergreen,niedrig,Lehrbücher Zoologie,2
+TI065,Größe und Körperbau,Blauwal-Zunge gegen Elefant: Wer wiegt mehr?,blauwal zunge gewicht,evergreen,niedrig,Zoologische Daten,1
+TI066,Größe und Körperbau,"Das größte Ei im Verhältnis: Kiwi, Strauß und Kolibri",größtes ei verhältnis,evergreen,niedrig,Zoologische Daten,3
+TI067,Größe und Körperbau,Kleinstes gegen größtes Säugetier: Der Faktor 50 Millionen,kleinstes säugetier,evergreen,niedrig,Zoologische Daten,2
+TI068,Größe und Körperbau,"Wer wiegt mehr: alle Menschen, alle Nutztiere oder alle wilden Säugetiere?",biomasse säugetiere menschen nutztiere,evergreen,niedrig,Fachpublikation (Biomasse-Schätzung),4
+TI069,Größe und Körperbau,Hai gegen Mensch: Wie viele Zähne hat ein Hai im Leben?,hai zähne wie viele,evergreen,niedrig,Zoologische Daten,2
+TI070,Größe und Körperbau,Seeotter gegen Mensch: Wie dicht ist das Fell?,seeotter fell dichte,evergreen,niedrig,Fachpublikationen,2
+TI071,Größe und Körperbau,Specht gegen Mensch: Wie viel g hält ein Kopf beim Aufprall aus?,specht gehirn aufprall,evergreen,niedrig,Fachpublikationen (Biomechanik),2
+TI072,Größe und Körperbau,Tausendfüßer gegen Hundertfüßer: Wer hat wirklich mehr Beine?,tausendfüßer beine anzahl,evergreen,niedrig,Fachpublikation (Artbeschreibung),1
+TI073,Größe und Körperbau,Elefant gegen Maus: Wer braucht wie lange zum Urinieren?,urinieren 21 sekunden säugetiere,evergreen,niedrig,"Fachpublikation (Strömungsmechanik, 2014)",2
+TI074,Größe und Körperbau,Hirschgeweih gegen Menschenknochen: Wer wächst schneller?,geweih wachstum pro tag,saisonal,niedrig,Zoologische Daten,2
+TI075,Größe und Körperbau,Krakenauge gegen Menschenauge: Wer hat den Konstruktionsfehler?,krakenauge blinder fleck,evergreen,niedrig,Lehrbücher (Augenentwicklung),1
+TI076,Sinne,Hundenase gegen Menschennase: Wie viel besser riecht ein Hund?,hund riechen vs mensch,evergreen,niedrig,Fachpublikationen (Geruchsforschung),4
+TI077,Sinne,Eule gegen Maus: Hört sie eine Maus unter 20 cm Schnee?,eule gehör,evergreen,niedrig,Fachpublikationen (Neuroethologie),2
+TI078,Sinne,Fledermaus gegen Delfin: Wer „sieht“ mit Schall besser?,echoortung fledermaus delfin,saisonal,niedrig,Fachpublikationen (Bioakustik),3
+TI079,Sinne,Fangschreckenkrebs gegen Mensch: 16 Farbrezeptoren gegen 3,fangschreckenkrebs farbsehen,evergreen,niedrig,Fachpublikationen (Farbsehen),2
+TI080,Sinne,Adler gegen Mensch: Aus welcher Entfernung erkennt ein Adler einen Hasen?,adler sehschärfe,evergreen,niedrig,Fachpublikationen (Sehschärfe Greifvögel),3
+TI081,Sinne,Katze gegen Mensch: Wie viel Licht braucht sie im Dunkeln?,katze nachtsicht,evergreen,niedrig,Fachpublikationen (Tapetum lucidum),2
+TI082,Sinne,Hai gegen Batterie: Wie fein spürt er elektrische Felder?,hai elektrorezeption,evergreen,niedrig,Fachpublikationen (Elektrorezeption),2
+TI083,Sinne,Fliege gegen Fliegenklatsche: Warum erwischst du sie nicht?,fliege reaktion zeitlupe,evergreen,niedrig,Fachpublikation (Flimmerverschmelzung),2
+TI084,Sinne,Grubenotter gegen Wärmebildkamera: Wer sieht Wärme genauer?,schlange wärmebild,evergreen,niedrig,Fachpublikationen (Infrarotsinn),2
+TI085,Sinne,Elefant gegen Erdbebenmessgerät: Hören Elefanten mit den Füßen?,elefanten infraschall boden,evergreen,niedrig,Fachpublikationen (seismische Kommunikation),2
+TI086,Sinne,"Blickfeld-Duell: Pferd, Taube, Eule und Mensch",blickfeld tiere vergleich,evergreen,niedrig,Fachpublikationen (Sehfeld),3
+TI087,Sinne,Mücke gegen Mensch: Wie findet sie dich?,mücke findet mensch co2,saisonal,niedrig,Fachpublikationen (Max-Planck-Forschung),3
+TI088,Sinne,Falter gegen Duftspur: Wie weit riecht ein Männchen sein Weibchen?,falter duft entfernung,evergreen,niedrig,"Fachpublikationen (Pheromonforschung, Angaben variieren)",1
+TI089,Sinne,Riesenkalmar gegen Fußball: Wie groß ist das größte Auge?,riesenkalmar auge größe,evergreen,niedrig,Fachpublikation (Augengröße),1
+TI090,Sinne,Hund gegen Hundepfeife: Welche Töne hört dein Hund?,hund hörbereich hundepfeife,evergreen,niedrig,"Fachliteratur (Audiologie, Tierartenvergleich)",2
+TI091,Sinne,Hund gegen Kompass: Warum richten sich Hunde beim Geschäft nach Nord-Süd aus?,hund nord süd kompass,evergreen,niedrig,Fachpublikation (Verhaltensforschung),1
+TI092,Sinne,Glühwürmchen gegen Glühbirne: Wer macht effizienteres Licht?,glühwürmchen licht effizienz,saisonal,niedrig,Fachliteratur (Biolumineszenz),2
+TI093,"Stoffwechsel, Schlaf und Lebensdauer","Schlafduell: Giraffe, Faultier, Koala und Mensch",tier schlafdauer vergleich,evergreen,niedrig,Zoologische Daten (Schlafforschung),4
+TI094,"Stoffwechsel, Schlaf und Lebensdauer",Delfin gegen Mensch: Schlafen mit der halben Gehirnhälfte,delfin schlafen halbes gehirn,evergreen,niedrig,Fachpublikationen (Schlafforschung),2
+TI095,"Stoffwechsel, Schlaf und Lebensdauer",Pferd gegen Mensch: Warum kann ein Pferd im Stehen schlafen?,pferd schläft im stehen,evergreen,niedrig,Lehrbücher Veterinäranatomie,2
+TI096,"Stoffwechsel, Schlaf und Lebensdauer","Langlebigkeits-Duell: Grönlandhai, Muschel, Schildkröte und Mensch",ältestes tier der welt,evergreen,niedrig,"Fachpublikation (Altersbestimmung), Zoologische Daten",6
+TI097,"Stoffwechsel, Schlaf und Lebensdauer",Spitzmaus gegen Mensch: Täglich das eigene Gewicht fressen?,spitzmaus frisst eigenes gewicht,evergreen,niedrig,Zoologische Daten,2
+TI098,"Stoffwechsel, Schlaf und Lebensdauer",Kolibri gegen Bär: Nachtstarre gegen Winterschlaf – wer spart mehr Energie?,kolibri torpor bär winterschlaf,saisonal,niedrig,Fachpublikationen (Energiehaushalt),3
+TI099,"Stoffwechsel, Schlaf und Lebensdauer",Blauwal gegen Krill: Wie viele Millionen Krebse frisst er am Tag?,blauwal krill pro tag,evergreen,niedrig,Fachpublikation (Fressraten),3
+TI100,"Stoffwechsel, Schlaf und Lebensdauer",Maus gegen Elefant: Warum leben kleine Tiere kürzer? Das Kleiber-Gesetz,kleiber gesetz lebensdauer,evergreen,niedrig,Fachpublikationen (Skalierung des Stoffwechsels),3
+TI101,"Stoffwechsel, Schlaf und Lebensdauer",Faultier gegen Mensch: Wie lange braucht ein Blatt zur Verdauung?,faultier verdauung,evergreen,niedrig,Fachpublikationen,2
+TI102,"Stoffwechsel, Schlaf und Lebensdauer",Wüstenspringmaus gegen Kamel: Wer kommt ohne Trinken aus?,wüstenspringmaus wasser,evergreen,niedrig,Fachpublikationen (Physiologie),1
+TI103,"Stoffwechsel, Schlaf und Lebensdauer",Tragzeit-Duell: Elefant gegen Opossum,tragzeit tiere,evergreen,niedrig,Zoologische Daten,3
+TI104,"Stoffwechsel, Schlaf und Lebensdauer",Kaninchen in Australien: 24 Tiere werden zur Plage (Simulation),kaninchen australien vermehrung,evergreen,niedrig,"Historische Aufzeichnungen, Populationsmodelle",3
+TI105,"Stoffwechsel, Schlaf und Lebensdauer",Hundejahre: Wie alt ist dein Hund im Vergleich zum Menschen?,hundejahre umrechnen,evergreen,niedrig,Fachpublikation (epigenetische Uhr),3
+TI106,"Stoffwechsel, Schlaf und Lebensdauer","Igel im Winter: Wie schwer muss er sein, um zu überleben?",igel winterschlaf gewicht,saisonal,niedrig,"Naturschutzverbände (NABU), Fachpublikationen",2
+TI107,"Stoffwechsel, Schlaf und Lebensdauer",Axolotl gegen Mensch: Wie schnell wächst ein Bein nach?,axolotl regeneration,evergreen,niedrig,Fachpublikationen,1
+TI108,"Stoffwechsel, Schlaf und Lebensdauer",Spinnen gegen Menschen: Wer verputzt mehr Fleisch pro Jahr?,spinnen fressen tonnen pro jahr,evergreen,niedrig,Fachpublikation (Beuteschätzung),2
+TI109,"Jagd, Verteidigung und Gefahr","Wer jagt am erfolgreichsten? Löwe, Wolf und Libelle im Vergleich",jagderfolg tiere,evergreen,niedrig,Fachpublikationen (Jagderfolgsquoten),4
+TI110,"Jagd, Verteidigung und Gefahr","Giftigste Tiere: Pfeilgiftfrosch, Seewespe und Inlandtaipan im Vergleich",giftigstes tier ld50,evergreen,mittel,"Fachpublikationen (LD50-Daten), Giftinformationszentren",3
+TI111,"Jagd, Verteidigung und Gefahr",Stinktier gegen Mensch: Wie weit spritzt es und wie weit riecht man es?,stinktier reichweite,evergreen,niedrig,Zoologische Daten,1
+TI112,"Jagd, Verteidigung und Gefahr","Bombardierkäfer gegen Wasserkocher: 100 °C heißes Spray, 500-mal pro Sekunde",bombardierkäfer spray,evergreen,niedrig,Fachpublikation (Verteidigungsmechanismus),2
+TI113,"Jagd, Verteidigung und Gefahr","Panzer-Duell: Gürteltier, Schildkröte und Krokodil",panzer tiere vergleich,evergreen,niedrig,Fachpublikationen (Materialforschung),2
+TI114,"Jagd, Verteidigung und Gefahr","Mücke, Hund, Hai: Welches Tier tötet die meisten Menschen?",gefährlichste tiere der welt,evergreen,mittel,"WHO, Fachstatistiken",3
+TI115,"Jagd, Verteidigung und Gefahr",Zebra gegen Bremse: Wozu hat das Zebra Streifen?,zebra streifen warum,evergreen,niedrig,Fachpublikation (Streifenstudie),2
+TI116,"Jagd, Verteidigung und Gefahr",Komodowaran gegen Giftschlange: Bakterienbiss oder Gift?,komodowaran biss gift,evergreen,niedrig,Fachpublikation (Giftforschung),1
+TI117,"Jagd, Verteidigung und Gefahr",Tintenfisch gegen Chamäleon: Wer wechselt die Farbe schneller?,tintenfisch farbwechsel geschwindigkeit,evergreen,niedrig,Fachpublikationen,1
+TI118,"Jagd, Verteidigung und Gefahr",Zitteraal gegen Steckdose: Wie viel Spannung steckt im Schlag?,zitteraal volt steckdose,evergreen,niedrig,Fachpublikation (Elektrophysiologie),1
+TI119,"Schwärme, Bauten und Populationen","Termitenhügel gegen Burj Khalifa: Wie hoch wäre er, wenn Menschen so bauen würden?",termitenhügel menschengröße,evergreen,niedrig,Zoologische Daten (Skalierung),3
+TI120,"Schwärme, Bauten und Populationen",Der längste Biberdamm der Welt: Vom All aus sichtbar?,größter biberdamm,evergreen,niedrig,"Parks Canada, Satellitenbilder",2
+TI121,"Schwärme, Bauten und Populationen","Die Superkolonie der Argentinischen Ameise: Wie viele Tiere, wie groß?",ameisen superkolonie,evergreen,niedrig,Fachpublikation (Kolonie-Genetik),2
+TI122,"Schwärme, Bauten und Populationen",Ein Glas Honig: Wie weit fliegt das Bienenvolk dafür?,honig glas bienen flugstrecke,evergreen,niedrig,"Imkerverbände, Zoologische Daten",3
+TI123,"Schwärme, Bauten und Populationen",Der Schwänzeltanz: Wie codieren Bienen Richtung und Entfernung?,bienentanz entfernung,evergreen,niedrig,Verhaltensforschung (von Frisch),2
+TI124,"Schwärme, Bauten und Populationen",Wie entsteht ein Schwarm? Drei Regeln (Boids-Simulation),schwarm simulation boids,evergreen,niedrig,"Verhaltensmodelle (Reynolds 1987), Schwarmforschung",4
+TI125,"Schwärme, Bauten und Populationen",Wanderheuschrecken gegen Menschen: Wie viel frisst ein Schwarm am Tag?,heuschreckenschwarm fressen,evergreen,mittel,FAO,3
+TI126,"Schwärme, Bauten und Populationen",Luchs gegen Hase: Räuber und Beute im Zahlentakt (Lotka-Volterra),räuber beute zyklus lotka volterra,evergreen,niedrig,"Pelzhandelsdaten (Hudson's Bay Company), Lotka-Volterra-Modell",3
+TI127,"Schwärme, Bauten und Populationen",Bienenkönigin gegen Arbeiterin: Fünf Jahre gegen sechs Wochen,bienenkönigin lebensdauer,evergreen,niedrig,Zoologische Daten,2
+TI128,"Schwärme, Bauten und Populationen",Quelea gegen Menschheit: Der größte Vogelschwarm der Welt,quelea schwarm,evergreen,niedrig,"FAO, Zoologische Daten",2
+TI129,"Schwärme, Bauten und Populationen",Pinguinkot gegen Satellit: Wie groß ist die Kolonie?,pinguinkot satellit kolonie,evergreen,niedrig,Fachpublikation (Satellitenbild-Auswertung),1
+TI130,"Schwärme, Bauten und Populationen",Ratte gegen Mensch: Gibt es in Städten wirklich mehr Ratten als Menschen?,ratten pro mensch stadt,evergreen,mittel,Fachpublikation (Schädlingsforschung),2
+TI131,"Schwärme, Bauten und Populationen",Biene gegen Wirtschaft: Was ist Bestäubung weltweit wert?,bestäubung wert milliarden,evergreen,niedrig,Fachpublikation (Weltbiodiversitätsrat IPBES),2
+TI132,"Schwärme, Bauten und Populationen",Wie viele Tierarten gibt es – und wie viele kennen wir?,wie viele tierarten gibt es,evergreen,niedrig,Fachpublikation (Artenschätzung),2
+TI133,"Kälte, Hitze und Extremlebensräume",Kaiserpinguine im Schneesturm: Die Huddle-Simulation,kaiserpinguin huddle wärme,saisonal,niedrig,Fachpublikationen (Verhaltensforschung),3
+TI134,"Kälte, Hitze und Extremlebensräume",Eisbär gegen Wärmebildkamera: Warum ist er unsichtbar?,eisbär wärmebild fell,saisonal,niedrig,Fachpublikationen (Thermografie),2
+TI135,"Kälte, Hitze und Extremlebensräume",Kamel gegen Mensch: Warum schwankt die Körpertemperatur um 6 °C?,kamel körpertemperatur hitze,evergreen,niedrig,Fachpublikationen (Thermophysiologie),2
+TI136,"Kälte, Hitze und Extremlebensräume",Bärtierchen gegen Mensch: Wer überlebt das Weltall?,bärtierchen überleben,evergreen,niedrig,Fachpublikationen (Weltraumbiologie),3
+TI137,"Kälte, Hitze und Extremlebensräume",Waldfrosch gegen Mensch: Wer überlebt das Einfrieren?,waldfrosch gefriert,saisonal,niedrig,Fachpublikationen (Kältebiologie),1
+TI138,"Kälte, Hitze und Extremlebensräume",Elefantenohr gegen Heizkörper: Wie viel Wärme gibt ein Ohr ab?,elefant ohren kühlen,evergreen,niedrig,Fachpublikationen (Thermoregulation),2
+TI139,"Kälte, Hitze und Extremlebensräume",Röhrenwurm gegen Pflanze: Leben ohne Sonne an der Tiefsee-Quelle,tiefsee leben ohne sonne,evergreen,niedrig,Fachpublikationen (Hydrothermalquellen),2
+TI140,"Kälte, Hitze und Extremlebensräume",Eisfisch gegen Mensch: Blut ohne rote Blutkörperchen,eisfisch weißes blut,evergreen,niedrig,Fachpublikationen (Polarbiologie),1
+TI141,"Kälte, Hitze und Extremlebensräume",Rentier gegen Mensch: Warum wechseln die Augen im Winter die Farbe?,rentier augen farbe,saisonal,niedrig,Fachpublikation (Rentierauge),1
+TI142,"Kälte, Hitze und Extremlebensräume",Pinguin gegen Eisbär: Warum begegnen sie sich nie?,pinguin eisbär begegnung,evergreen,niedrig,Zoologische Daten (Verbreitungskarten),2
+TI143,Mensch gegen Tier,Mensch gegen Pferd: Wer gewinnt den Marathon?,mensch gegen pferd marathon,evergreen,niedrig,"Rennergebnisse (Man-versus-Horse), Fachpublikationen (Thermoregulation)",4
+TI144,Mensch gegen Tier,Usain Bolt gegen Tiere: Wen kann er überholen?,usain bolt gegen tiere,evergreen,niedrig,"World Athletics, Zoologische Daten",5
+TI145,Mensch gegen Tier,Delfin gegen Michael Phelps: Wer gewinnt 100 Meter?,delfin gegen schwimmer,evergreen,niedrig,"World Aquatics, Zoologische Daten",3
+TI146,Mensch gegen Tier,Krähe gegen Kind: Wer löst das Rätsel schneller (Äsops Fabel)?,krähe kind äsop test,evergreen,niedrig,Fachpublikation (Verhaltensexperiment),2
+TI147,Mensch gegen Tier,Kannst du vor einem Bären davonlaufen?,bär davonlaufen geschwindigkeit,evergreen,mittel,"Zoologische Daten, World Athletics",4
+TI148,Mensch gegen Tier,Schimpanse gegen Mensch: Wer hat das bessere Zahlengedächtnis?,schimpanse zahlengedächtnis,evergreen,niedrig,Fachpublikation (Primatenforschung),2
+TI149,Mensch gegen Tier,Border Collie gegen Kleinkind: Wie viele Wörter kennt ein Hund?,hund wörter wortschatz,evergreen,niedrig,Fachpublikation (Verhaltensforschung),2
+TI150,Mensch gegen Tier,Biene gegen Grundschüler: Wer zählt bis vier?,bienen zählen,evergreen,niedrig,Fachpublikationen (Kognitionsforschung),2

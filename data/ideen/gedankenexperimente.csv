@@ -1,0 +1,151 @@
+id,kategorie,titel,suchbegriff,typ,risiko,datenquelle,varianten
+GE001,Verprassen und Kaufen,1 Mrd. € in 30 Tagen ausgeben – geht das?,1 milliarde euro ausgeben,evergreen,mittel,"Preislisten, Destatis (Verbraucherpreise)",12
+GE002,Verprassen und Kaufen,Einen ganzen Supermarkt leerkaufen: Was kostet das komplette Sortiment?,supermarkt leerkaufen kosten,evergreen,niedrig,"Handelsverband HDE, Destatis",5
+GE003,Verprassen und Kaufen,Ein ganzes Dorf kaufen: Was kostet ein Dorf in Deutschland?,dorf kaufen preis,evergreen,niedrig,"Gutachterausschüsse (Bodenrichtwerte), Immobilienangebote",4
+GE004,Verprassen und Kaufen,Eine Privatinsel kaufen: Was kostet der Unterhalt pro Jahr?,privatinsel kaufen kosten,evergreen,niedrig,"Immobilienmarktberichte, Versorgerpreise",4
+GE005,Verprassen und Kaufen,Einen Bundesligaverein übernehmen: Was kostet eine Saison?,fußballverein kaufen kosten,evergreen,mittel,DFL-Wirtschaftsreport,4
+GE006,Verprassen und Kaufen,"Ein Schloss kaufen: Wer zahlt Dach, Heizung und Personal?",schloss kaufen unterhalt,evergreen,niedrig,"Denkmalschutz-Fördermittelberichte, Immobilienangebote",3
+GE007,Verprassen und Kaufen,Ein Kreuzfahrtschiff betreiben: Was kostet ein Tag auf See?,kreuzfahrtschiff betriebskosten pro tag,evergreen,niedrig,"Branchenberichte (CLIA), Treibstoffpreise",3
+GE008,Verprassen und Kaufen,Privatjet gegen Linienflug: Was kostet die Flugstunde?,privatjet kosten pro stunde,evergreen,niedrig,"Charter-Preislisten, Herstellerangaben",5
+GE009,Verprassen und Kaufen,Ein Ticket ins All: Wie viele Jahresgehälter kostet ein Weltraumflug?,weltraumflug ticket preis,evergreen,niedrig,"Anbieterangaben, NASA",3
+GE010,Verprassen und Kaufen,Ein Jahr nur im Hotel leben: Wann ist es billiger als eine Wohnung?,im hotel leben statt miete,evergreen,niedrig,"Destatis, Hotelpreise",4
+GE011,Verprassen und Kaufen,Ein Jahr lang jeden Tag im Sternerestaurant essen: Was kostet das?,sternerestaurant jeden tag kosten,evergreen,niedrig,Restaurant-Preislisten,3
+GE012,Verprassen und Kaufen,Ein Hochhaus bauen: Was kostet jedes Stockwerk?,hochhaus bauen kosten,evergreen,niedrig,"Baupreisindex Destatis, Architekturstudien",5
+GE013,Verprassen und Kaufen,Alle Länder der Welt bereisen: Wie viel Geld und Zeit braucht man?,alle länder bereisen kosten,evergreen,niedrig,"Flug- und Visapreise, UN-Länderliste",4
+GE014,Verprassen und Kaufen,Ein Freibad betreiben: Was kostet jeder Badegast?,freibad kosten pro besucher,saisonal,niedrig,"Kommunale Haushalte, Bäderverbände",3
+GE015,Geld und große Zahlen,"Eine Million gegen eine Milliarde: Wie lange dauert es, bis dahin zu zählen?",million milliarde unterschied sekunden,evergreen,niedrig,Rechnung (Mathematik),6
+GE016,Geld und große Zahlen,Ein Stapel aus 1 Mrd. € in Scheinen: Wie hoch und wie schwer ist er?,milliarde euro stapel höhe gewicht,evergreen,niedrig,EZB (Banknoten-Maße),10
+GE017,Geld und große Zahlen,Das gesamte Gold der Welt als Würfel: Wie groß wäre er?,gold der welt würfel,evergreen,niedrig,"World Gold Council, USGS",4
+GE018,Geld und große Zahlen,Gold im Meerwasser: Warum holt es keiner heraus?,gold im meerwasser wert,evergreen,niedrig,"NOAA, USGS",2
+GE019,Geld und große Zahlen,Was kostet die Herstellung einer 1-Cent-Münze?,1 cent münze herstellungskosten,evergreen,niedrig,"EZB, Bundesbank",4
+GE020,Geld und große Zahlen,"Den Cent abschaffen: Wer gewinnt, wer verliert durch das Runden?",cent abschaffen runden,evergreen,mittel,"EZB, Erfahrungen aus Finnland und den Niederlanden",3
+GE021,Geld und große Zahlen,Wie viele Pfandflaschen braucht man für ein Auto?,pfandflaschen auto bezahlen,evergreen,niedrig,"Umweltbundesamt, Deutsche Pfandsystem GmbH",4
+GE022,Geld und große Zahlen,Dagobert Ducks Geldspeicher: Wie viel Geld passt wirklich hinein?,dagobert duck geldspeicher,evergreen,mittel,"EZB (Banknoten-Maße), Rechnung",3
+GE023,Geld und große Zahlen,Mit Geldscheinen heizen: Wie viel Wärme steckt in 1 Mio. €?,mit geld heizen heizwert,evergreen,mittel,"Heizwert Papier, EZB",2
+GE024,Geld und große Zahlen,Wie lange hält ein Geldschein im Umlauf?,lebensdauer geldschein,evergreen,niedrig,"Bundesbank, EZB",3
+GE025,Geld und große Zahlen,Falschgeld: Wie viele Blüten sind im Umlauf?,falschgeld wie viel,news,niedrig,Bundesbank (Falschgeldstatistik),2
+GE026,Geld und große Zahlen,Wunschbrunnen: Wie viel Geld liegt im Brunnen und wer bekommt es?,wunschbrunnen geld münzen,evergreen,niedrig,"Stadtverwaltungen, Hilfsorganisationen",3
+GE027,Geld und große Zahlen,Was ist ein Mensch chemisch wert? Der Körper als Rohstoff,körper rohstoffwert chemie,evergreen,niedrig,"Rohstoffpreise, Fachliteratur",3
+GE028,Geld und große Zahlen,Alte Handys: Wie viel Gold steckt in 1.000 Stück?,gold in alten handys,evergreen,niedrig,"Umweltbundesamt, Bitkom",3
+GE029,Geld und große Zahlen,Wie viel Geld existiert nur digital und wie viel als Schein?,wie viel bargeld gibt es,evergreen,niedrig,"EZB, BIS",3
+GE030,Geld und große Zahlen,Wikipedia ausdrucken: Wie viele Bände und Regalmeter wären das?,wikipedia ausdrucken bände,evergreen,niedrig,Wikimedia-Statistik,2
+GE031,Geld und große Zahlen,Der Asteroid Psyche: Wäre er wirklich Billiarden wert?,asteroid psyche wert,evergreen,niedrig,"NASA, Goldpreis",2
+GE032,Reichtum und Verteilung,Die Vermögens-Parade: Wenn alle Deutschen nach Vermögen in einer Reihe laufen,vermögensverteilung deutschland parade,evergreen,mittel,Bundesbank (PHF-Studie),6
+GE033,Reichtum und Verteilung,"Wie lange müsste man sparen, um Milliardär zu werden?",wie lange sparen milliardär,evergreen,mittel,"Rechnung, Forbes-Listen",6
+GE034,Reichtum und Verteilung,Wie viel Vermögen wächst bei einem Top-Milliardär pro Sekunde?,milliardär vermögen pro sekunde,news,mittel,"Forbes, Bloomberg Billionaires Index",4
+GE035,Reichtum und Verteilung,Wie viele Milliardäre gibt es – und wie viele passen in einen Reisebus?,wie viele milliardäre gibt es,news,niedrig,"Forbes-Liste, UBS Global Wealth Report",3
+GE036,Reichtum und Verteilung,Wo beginnt „reich“? Die Reichtumsgrenze beim Einkommen,ab wann ist man reich einkommen,evergreen,mittel,"Destatis, Eurostat",4
+GE037,Reichtum und Verteilung,Ab wie viel Vermögen gehört man zu den reichsten 10 und 1 Prozent?,vermögen reichste 10 prozent,evergreen,mittel,"Bundesbank (PHF-Studie), DIW",4
+GE038,Reichtum und Verteilung,Macht mehr Geld glücklicher? Das Glücks-Plateau,ab wann macht geld glücklich,evergreen,mittel,Fachstudien der Wohlbefindensforschung,3
+GE039,Reichtum und Verteilung,Wie viel wird in Deutschland jedes Jahr vererbt?,erbschaft deutschland pro jahr,evergreen,mittel,"DIW, Destatis (Erbschaftsteuerstatistik)",3
+GE040,Reichtum und Verteilung,Talent oder Glück? Wer wird in einer Simulation am reichsten,talent oder glück reich werden,evergreen,mittel,Agentenbasierte Modelle (Fachpublikation),6
+GE041,Reichtum und Verteilung,Alle Milliardäre teilen: Was bekäme jeder Mensch auf der Erde?,milliardäre vermögen teilen,evergreen,hoch,"Forbes, UN-Bevölkerungsdaten",4
+GE042,Reichtum und Verteilung,Sozialer Aufstieg: Wie viele Generationen dauert es von arm zur Mittelschicht?,sozialer aufstieg generationen,evergreen,mittel,OECD-Studie zur sozialen Mobilität,3
+GE043,"Einkommen, Arbeit und Zeit",Wie lange muss man zum Mindestlohn für ein DAX-Vorstandsgehalt arbeiten?,mindestlohn dax vorstand,news,mittel,"Vergütungsstudien (z. B. DSW), Mindestlohnkommission",10
+GE044,"Einkommen, Arbeit und Zeit",Dein Lebensverdienst: Wie viele Millionen verdienst du in 40 Berufsjahren?,lebensverdienst berechnen,evergreen,niedrig,Destatis (Verdiensterhebung),6
+GE045,"Einkommen, Arbeit und Zeit","Lohnt es sich, einen Cent aufzuheben? Dein Stundenlohn pro Sekunde",cent aufheben lohnt sich,evergreen,niedrig,"Destatis, Rechnung",4
+GE046,"Einkommen, Arbeit und Zeit","Verdienst pro Minute: Fußballprofi, Pflegekraft und Lehrkraft im Vergleich",gehalt pro minute vergleich,evergreen,mittel,"Tarifverträge, Destatis, Gehaltsreports",8
+GE047,"Einkommen, Arbeit und Zeit",Wie viel sind unbezahlte Überstunden pro Jahr wert?,unbezahlte überstunden wert,news,niedrig,IAB (Arbeitszeitrechnung),2
+GE048,"Einkommen, Arbeit und Zeit","Was wäre Hausarbeit wert, wenn man sie bezahlen würde?",hausarbeit wert gehalt,evergreen,mittel,Destatis (Zeitverwendungserhebung),3
+GE049,"Einkommen, Arbeit und Zeit",Meeting-Uhr: Was kostet eine Besprechung pro Minute?,meeting kosten pro minute,evergreen,niedrig,"Destatis (Arbeitskosten), Rechnung",4
+GE050,"Einkommen, Arbeit und Zeit",Keynes sagte die 15-Stunden-Woche voraus: Was ist daraus geworden?,15 stunden woche keynes,evergreen,mittel,"OECD, Our World in Data",3
+GE051,"Einkommen, Arbeit und Zeit",Equal Pay Day: Bis wann arbeiten Frauen „umsonst“?,equal pay day erklärt,saisonal,hoch,Destatis (Gender Pay Gap),2
+GE052,"Einkommen, Arbeit und Zeit",Wann hast du deine Rentenbeiträge wieder raus?,rentenbeiträge break even,evergreen,hoch,Deutsche Rentenversicherung,3
+GE053,"Einkommen, Arbeit und Zeit",Trinkgeld-Rechnung: Wie viel verdient ein Kellner wirklich dazu?,trinkgeld wie viel,evergreen,niedrig,"DEHOGA, Tarifverträge",3
+GE054,"Einkommen, Arbeit und Zeit",Wie viele Stunden deines Lebens gehen für Arbeit drauf?,lebensarbeitszeit stunden,evergreen,niedrig,"Destatis (Zeitverwendung), IAB",4
+GE055,Staat und Gemeinschaftskasse,Der Bundeshaushalt pro Sekunde: Wie viel gibt Deutschland aus?,bundeshaushalt pro sekunde,news,mittel,Bundesfinanzministerium,4
+GE056,Staat und Gemeinschaftskasse,Die Schuldenuhr: Wie schnell wachsen die Staatsschulden?,schuldenuhr deutschland,news,mittel,"Destatis, Bund der Steuerzahler",3
+GE057,Staat und Gemeinschaftskasse,Wie viel wäre ganz Deutschland wert? Das Volksvermögen,volksvermögen deutschland wert,evergreen,mittel,"Bundesbank, Destatis (VGR)",3
+GE058,Staat und Gemeinschaftskasse,Wohin geht dein Steuer-Euro?,wohin gehen steuern,news,mittel,Bundesfinanzministerium,4
+GE059,Staat und Gemeinschaftskasse,"Straße, Schiene, Radweg: Was kostet ein Kilometer?",autobahn kosten pro kilometer,evergreen,niedrig,"Bundesrechnungshof, Verkehrsministerium",4
+GE060,Staat und Gemeinschaftskasse,Strompreis zerlegt: Wie viel davon sind Steuern und Abgaben?,strompreis zusammensetzung,news,mittel,"BDEW, Bundesnetzagentur",3
+GE061,Staat und Gemeinschaftskasse,Was kostet ein Schülerleben den Staat – von der Einschulung bis zum Abitur?,kosten pro schüler,evergreen,niedrig,Destatis (Bildungsausgaben),3
+GE062,Staat und Gemeinschaftskasse,Was kostet ein Tag im Krankenhaus – und wer zahlt?,krankenhaus kosten pro tag,evergreen,mittel,Destatis (Krankenhausstatistik),3
+GE063,Staat und Gemeinschaftskasse,Was kauft man für 1 Mrd. € beim Staat?,was kostet eine milliarde,evergreen,mittel,"Bundesfinanzministerium, Baupreisindex",6
+GE064,Staat und Gemeinschaftskasse,Kostenloser Nahverkehr für eine Stadt: Was würde er kosten?,kostenloser nahverkehr kosten,evergreen,hoch,"Verkehrsverbünde, VDV",4
+GE065,Staat und Gemeinschaftskasse,Bedingungsloses Grundeinkommen: Was würden 1.000 € für alle kosten?,grundeinkommen kosten rechnung,evergreen,hoch,"Destatis, Bundeshaushalt",5
+GE066,Staat und Gemeinschaftskasse,Wie viele Beitragszahler tragen einen Rentner – von 1960 bis 2040?,rentner beitragszahler verhältnis,evergreen,hoch,"Destatis (Bevölkerungsvorausberechnung), DRV",4
+GE067,Staat und Gemeinschaftskasse,Der Belastungsquote-Kalender: Bis wann arbeitest du für Steuern und Abgaben?,steuerzahlergedenktag,saisonal,hoch,"Bund der Steuerzahler, IW Köln",2
+GE068,Staat und Gemeinschaftskasse,Die ISS: Was kostet jede Sekunde im All?,iss kosten pro sekunde,evergreen,niedrig,"NASA, ESA (Budgetberichte)",3
+GE069,Staat und Gemeinschaftskasse,Die Schattenwirtschaft: Wie groß ist sie in Deutschland?,schattenwirtschaft deutschland größe,news,hoch,"Schätzungen (IAW, Schneider), Zoll",2
+GE070,"Zins, Wachstum und Geldschöpfung",Ein Cent verdoppelt sich 30 Tage lang: Wie viel Geld entsteht?,cent verdoppeln 30 tage,evergreen,niedrig,Rechnung (Exponentialwachstum),6
+GE071,"Zins, Wachstum und Geldschöpfung",Der Zeitwert des Geldes: 1.000 € heute oder mehr in 10 Jahren?,zeitwert des geldes,evergreen,mittel,"Bundesbank (Zinsstatistik), Rechnung",4
+GE072,"Zins, Wachstum und Geldschöpfung",Deine persönliche Inflationsrate: Wie stark stiegen deine Preise wirklich?,persönliche inflationsrate,news,mittel,Destatis (Warenkorb),4
+GE073,"Zins, Wachstum und Geldschöpfung",Wie entsteht Geld? Aus 100 € werden bei der Bank viele,geldschöpfung erklärt,evergreen,mittel,"Bundesbank (Monatsbericht), EZB",3
+GE074,"Zins, Wachstum und Geldschöpfung",Wie oft wandert ein Euro durch die Hände? Der Geldkreislauf,geldkreislauf multiplikator,evergreen,niedrig,"Bundesbank, Rechnung (Multiplikator)",3
+GE075,Wenn alle … (Gesellschaft),Jeder Deutsche bekommt 1 Mio. € – was passiert?,jeder bekommt eine million,evergreen,mittel,"Destatis, Bundesbank, Rechnung",10
+GE076,Wenn alle … (Gesellschaft),Alle Deutschen reisen am selben Tag in den Urlaub: Wie viel Stau entsteht?,alle urlaub gleichzeitig stau,saisonal,niedrig,"ADAC, Destatis, KBA",3
+GE077,Wenn alle … (Gesellschaft),Passt die ganze Menschheit nach Berlin? Wie eng ist die Erde wirklich?,passt die menschheit in berlin,evergreen,niedrig,"UN-Bevölkerungsdaten, Destatis",4
+GE078,Wenn alle … (Gesellschaft),Ein Tag ohne Konsum: Was verliert die Wirtschaft?,tag ohne einkaufen wirtschaft,evergreen,mittel,"Destatis (VGR), HDE",3
+GE079,Wenn alle … (Gesellschaft),Jeder Deutsche spendet 1 € pro Tag: Was käme zusammen?,spenden 1 euro pro tag,evergreen,mittel,"Deutscher Spendenrat, Destatis",4
+GE080,Wenn alle … (Gesellschaft),"Halbzeitpause: Was passiert mit Wasser- und Stromnetz, wenn alle gleichzeitig …?",halbzeitpause wasserverbrauch stromspitze,evergreen,niedrig,"BDEW, Netzbetreiber",3
+GE081,Wenn alle … (Gesellschaft),Jeder Deutsche pflanzt einen Baum: Wie viel Fläche und wie viel CO₂?,jeder pflanzt einen baum,evergreen,mittel,"Thünen-Institut, Umweltbundesamt",3
+GE082,Wenn alle … (Gesellschaft),Alle im Homeoffice: Wie viele Pendelkilometer und Stunden fallen weg?,alle homeoffice pendeln einsparung,evergreen,mittel,"Destatis, IAB, Pendleratlas",4
+GE083,Wenn alle … (Gesellschaft),"Erdüberlastungstag: Wie viele Erden bräuchte die Welt, wenn alle wie wir lebten?",erdüberlastungstag,saisonal,mittel,Global Footprint Network,3
+GE084,Wenn alle … (Gesellschaft),Alle Autos elektrisch: Wie viel Strom würde Deutschland brauchen?,alle autos elektrisch strombedarf,evergreen,mittel,"Fraunhofer ISE, KBA, BDEW",4
+GE085,Wenn alle … (Gesellschaft),"Bank Run: Was passiert, wenn alle gleichzeitig ihr Geld abheben?",bank run was passiert,evergreen,mittel,"Bundesbank, EZB",3
+GE086,Wenn alle … (Gesellschaft),"Ein Tag lang ganz Deutschland vegetarisch: Wie viel Fläche, Wasser und CO₂?",ganz deutschland vegetarisch,evergreen,hoch,"Thünen-Institut, UBA, FAO",3
+GE087,Wenn alle … (Gesellschaft),Alle Autos Deutschlands hintereinander: Wie oft reicht die Schlange um die Erde?,alle autos hintereinander länge,evergreen,niedrig,KBA,5
+GE088,Wenn alle … (Gesellschaft),Alte Handys in der Schublade: Wie viele liegen in Deutschland herum?,handys in der schublade deutschland,evergreen,niedrig,Bitkom,2
+GE089,Wenn alle … (Gesellschaft),Silvester: Wie viel Geld verpufft pro Sekunde in der Neujahrsnacht?,silvester feuerwerk kosten,saisonal,mittel,"Verband der pyrotechnischen Industrie, Destatis",3
+GE090,Wenn alle … (Gesellschaft),Weihnachtsmänner aus Schokolade: Wie viele werden gemacht und wie hoch wäre der Stapel?,schoko weihnachtsmänner anzahl,saisonal,niedrig,"Destatis (Produktion), BDSI",2
+GE091,Wenn alle … (Gesellschaft),Alle Weihnachtsbeleuchtungen Deutschlands: Wie viel Strom frisst das Lichtermeer?,weihnachtsbeleuchtung stromverbrauch,saisonal,niedrig,"BDEW, Umweltbundesamt",3
+GE092,Wenn alle … (Gesellschaft),Valentinstag: Wie viele Rosen werden verschenkt – und wie weit sind sie gereist?,valentinstag rosen import,saisonal,niedrig,"Destatis (Außenhandel), BLE",2
+GE093,Wenn alle … (Gesellschaft),"Sparparadox: Was passiert, wenn alle gleichzeitig sparen?",sparparadox erklärt,evergreen,mittel,"Bundesbank, VWL-Fachliteratur",4
+GE094,Wenn alle … (Gesellschaft),Dein Leben in Wochen: Wie viele hast du noch?,leben in wochen,evergreen,mittel,Destatis (Sterbetafel),3
+GE095,Wenn alle … (Gesellschaft),Der Wertverlust zu Weihnachten: Wie viel Geld vernichten Geschenke?,weihnachtsgeschenke wertverlust,saisonal,niedrig,"Wirtschaftsforschung (Studie von Waldfogel), HDE",3
+GE096,"Konzerne, Märkte und Preise","Umsatz pro Sekunde: Was macht der größte Konzern der Welt, während du blinzelst?",konzern umsatz pro sekunde,evergreen,mittel,"Fortune Global 500, Geschäftsberichte",4
+GE097,"Konzerne, Märkte und Preise",Wo bleibt dein Euro? Der Preis einer Tafel Schokolade zerlegt,schokolade preis aufschlüsselung,evergreen,mittel,"BLE, Studien von Fairtrade- und Entwicklungsorganisationen",6
+GE098,"Konzerne, Märkte und Preise",Konzerne gegen Länder: Welcher Konzernumsatz übertrifft das BIP welches Landes?,konzern größer als land,evergreen,mittel,"Weltbank, Fortune Global 500",4
+GE099,"Konzerne, Märkte und Preise",Ein Werbespot im Fernsehen: Was kostet ein Zuschauer?,tv werbung kosten reichweite,evergreen,niedrig,"AGF Videoforschung, Mediadaten",3
+GE100,"Konzerne, Märkte und Preise",Wie viele Unternehmen werden pro Tag gegründet und wie viele gehen pleite?,firmengründungen insolvenzen pro tag,news,mittel,"Destatis (Insolvenzstatistik), IfM Bonn",3
+GE101,"Konzerne, Märkte und Preise","Wie viele Burger muss ein Restaurant verkaufen, um die Miete zu zahlen?",restaurant miete burger break even,evergreen,niedrig,"DEHOGA, Destatis",3
+GE102,"Konzerne, Märkte und Preise",Treuepunkte: Wie viel ist ein Bonuspunkt in Euro wirklich wert?,treuepunkte wert,evergreen,niedrig,Verbraucherzentrale,3
+GE103,"Konzerne, Märkte und Preise",Wie viele Streams braucht es für ein Brötchen?,streaming vergütung pro stream,evergreen,mittel,"Branchenberichte (z. B. IFPI), Verwertungsgesellschaften",3
+GE104,"Konzerne, Märkte und Preise",Ein Blockbuster: Was kostet jede Filmminute?,filmproduktion kosten pro minute,evergreen,niedrig,"Filmförderanstalt, Branchenberichte",3
+GE105,"Konzerne, Märkte und Preise",Wie viel kostet der Transport eines Schuhs von Asien nach Europa?,containerschiff kosten pro schuh,evergreen,niedrig,"UNCTAD, Frachtratenindizes",3
+GE106,"Konzerne, Märkte und Preise",Du bist das Produkt: Was verdient ein soziales Netzwerk an dir pro Jahr?,was verdient ein netzwerk pro nutzer,evergreen,mittel,Geschäftsberichte (Umsatz je Nutzer),3
+GE107,"Konzerne, Märkte und Preise",Wasser gegen Diamant: Warum kostet das Lebenswichtige weniger?,wasser diamanten paradox,evergreen,niedrig,"Wasserversorger, Diamantpreisindizes",2
+GE108,"Konzerne, Märkte und Preise",Monopoly: Auf welchen Feldern landest du am häufigsten?,monopoly beste straße,evergreen,mittel,"Markov-Rechnung, Spielregeln",4
+GE109,"Konzerne, Märkte und Preise",Der Materialwert eines Meisterwerks: Leinwand und Farbe gegen den Auktionspreis,gemälde materialwert auktionspreis,evergreen,niedrig,"Auktionsberichte, Materialpreise",3
+GE110,Spieltheorie und Verhalten,Die Dollar-Auktion: Warum zahlst du 5 € für einen 1-€-Schein?,dollar auktion spieltheorie,evergreen,niedrig,Spieltheorie (Experiment nach Shubik),3
+GE111,Spieltheorie und Verhalten,Das Ultimatum-Spiel: Ab welchem Angebot sagt man Nein?,ultimatumspiel fairness,evergreen,niedrig,Verhaltensökonomie (Laborexperimente),3
+GE112,Spieltheorie und Verhalten,Die Tragik der Allmende: Fischer-Simulation,tragik der allmende simulation,evergreen,niedrig,"Spieltheorie (Hardin, Ostrom)",4
+GE113,Spieltheorie und Verhalten,Das Braess-Paradoxon: Warum mehr Straßen mehr Stau bringen können,braess paradoxon,evergreen,mittel,Verkehrsforschung (Braess 1968),3
+GE114,Spieltheorie und Verhalten,Preiskrieg: Warum senken zwei Tankstellen gegenseitig die Preise?,gefangenendilemma preiskrieg,evergreen,mittel,"Spieltheorie, Bundeskartellamt (Kraftstoffbericht)",3
+GE115,Spieltheorie und Verhalten,Verlustaversion: Warum tut Verlieren doppelt so weh wie Gewinnen schön ist?,verlustaversion kahneman,evergreen,mittel,Verhaltensökonomie (Prospect Theory),3
+GE116,Spieltheorie und Verhalten,Die Concorde-Falle: Warum wirft man gutem Geld schlechtes hinterher?,sunk cost falle,evergreen,niedrig,Verhaltensökonomie (Sunk-Cost-Studien),3
+GE117,Spieltheorie und Verhalten,"9,99 € statt 10 €: Wie stark wirkt der Preis-Trick wirklich?","9,99 preis psychologie",evergreen,niedrig,Marketingforschung (Preisstudien),3
+GE118,Spieltheorie und Verhalten,Schwarmintelligenz: 800 Menschen schätzen das Gewicht eines Ochsen,weisheit der vielen galton,evergreen,niedrig,Galton 1907 (Nature),3
+GE119,Spieltheorie und Verhalten,"Das Dinner-Dilemma: Warum wird es teurer, wenn alle die Rechnung teilen?",rechnung teilen dilemma,evergreen,niedrig,Verhaltensökonomie (Laborexperimente),3
+GE120,Geld und Geschichte,Wie viele Arbeitsminuten kostete ein Brot 1960 – und heute?,kaufkraft brot früher heute,evergreen,niedrig,Destatis (Lohn- und Preisreihen),8
+GE121,Geld und Geschichte,Hyperinflation 1923: Wie schnell wurde Geld wertlos?,hyperinflation 1923,evergreen,mittel,"Bundesbank (Geschichte), Reichsbank-Reihen",3
+GE122,Geld und Geschichte,Wer war der reichste Mensch der Geschichte – inflationsbereinigt?,reichster mensch der geschichte,evergreen,niedrig,Wirtschaftsgeschichte (Schätzungen),3
+GE123,Geld und Geschichte,Euro-Teuro: Stimmt die gefühlte Inflation seit 2002?,euro teuro stimmt das,evergreen,niedrig,"Destatis, Bundesbank",3
+GE124,Geld und Geschichte,Mindestlohn seit 2015: Wie viel Kaufkraft kam wirklich dazu?,mindestlohn kaufkraft seit 2015,news,mittel,"Mindestlohnkommission, Destatis",3
+GE125,Geld und Geschichte,Das Apollo-Programm: Was kostete der Mond inflationsbereinigt?,apollo programm kosten heute,evergreen,niedrig,"NASA, US-Haushaltsdaten",3
+GE126,Geld und Geschichte,Die Cheops-Pyramide: Was würde der Bau heute kosten?,pyramide bauen kosten heute,evergreen,niedrig,Archäologische Schätzungen,3
+GE127,Geld und Geschichte,Eine Stunde Licht: Wie lange musste man dafür um 1800 arbeiten?,kosten von licht geschichte,evergreen,niedrig,Wirtschaftsgeschichte (Studie von Nordhaus),2
+GE128,Geld und Geschichte,Wie teuer war ein Buch vor dem Buchdruck – in Arbeitstagen?,preis buch mittelalter,evergreen,niedrig,Wirtschaftsgeschichte (Buchpreisforschung),2
+GE129,Geld und Geschichte,Ein Telefonat 1990: Was kostete die Minute – und was kostet sie heute?,telefonkosten früher,evergreen,niedrig,"Bundesnetzagentur, Destatis",2
+GE130,Geld und Geschichte,Wie viele Jahresgehälter kostete eine Wohnung 1990 – und heute?,immobilienpreise einkommen früher,evergreen,mittel,"Gutachterausschüsse, Destatis, Bundesbank",4
+GE131,Geld und Geschichte,Handy gegen Apollo-Computer: Wie viel Rechenpower pro Euro?,handy vs apollo computer,evergreen,niedrig,"NASA, Hersteller-Benchmarks",3
+GE132,Geld und Geschichte,Alaska 1867: Was wäre der Kaufpreis heute?,alaska kaufpreis,evergreen,niedrig,"US-Archivdaten, Inflationsrechner",2
+GE133,Geld und Geschichte,Seit wann wächst der Wohlstand? Die Hockeyschläger-Kurve der Weltwirtschaft,wirtschaftswachstum geschichte,evergreen,niedrig,"Maddison Project, Our World in Data",2
+GE134,Welt-Vergleiche,Die Welt als Dorf mit 100 Menschen,welt als 100 menschen,evergreen,niedrig,"UN, Weltbank",4
+GE135,Welt-Vergleiche,1.000 € in anderen Ländern: Wie weit reicht das Geld?,kaufkraft 1000 euro ausland,evergreen,niedrig,"Weltbank (Kaufkraftparitäten), Eurostat",8
+GE136,Welt-Vergleiche,Mindestlohn im Ländervergleich: Wo reicht er am weitesten?,mindestlohn ländervergleich kaufkraft,evergreen,mittel,"Eurostat, OECD",4
+GE137,Welt-Vergleiche,Die Global Rich List: Zu den reichsten wie viel Prozent der Welt gehörst du?,bin ich reich weltweit,evergreen,mittel,Weltbank (Poverty and Inequality Platform),3
+GE138,Welt-Vergleiche,"Was würde es kosten, extreme Armut zu beenden?",extreme armut beenden kosten,evergreen,mittel,"Weltbank, UN",2
+GE139,Welt-Vergleiche,Strompreise in Europa: Wo zahlt man am meisten?,strompreis europa vergleich,news,mittel,Eurostat,3
+GE140,Welt-Vergleiche,Wer arbeitet am meisten? Jahresarbeitsstunden im Ländervergleich,arbeitsstunden pro jahr länder,evergreen,mittel,OECD,3
+GE141,Welt-Vergleiche,Urlaub und Feiertage: Welches Land hat die meisten freien Tage?,urlaubstage ländervergleich,evergreen,niedrig,"Eurostat, OECD",2
+GE142,Welt-Vergleiche,"Je reicher, desto länger leben? Die Wohlstands-Gesundheits-Kurve",reich länger leben kurve,evergreen,niedrig,"Weltbank, WHO, Our World in Data",2
+GE143,Welt-Vergleiche,Wie viele Menschen leben 2100 auf der Erde?,weltbevölkerung 2100,evergreen,niedrig,"UN (World Population Prospects), Destatis (für Deutschland)",5
+GE144,Welt-Vergleiche,Wie viele Menschen haben jemals gelebt?,wie viele menschen haben gelebt,evergreen,niedrig,Population Reference Bureau,2
+GE145,Welt-Vergleiche,Wie viel Wasser steckt in einer Jeans?,wasserfußabdruck jeans,evergreen,niedrig,"Water Footprint Network, Umweltbundesamt",3
+GE146,Welt-Vergleiche,"CO₂ pro Kopf: Wie unterscheiden sich Deutsche, Inder und Amerikaner?",co2 pro kopf vergleich,evergreen,mittel,"Global Carbon Project, Our World in Data",3
+GE147,Welt-Vergleiche,Die Weltwirtschaft als Kuchen: Wer erwirtschaftet wie viel?,weltwirtschaft anteile länder,evergreen,mittel,"Weltbank, IWF",3
+GE148,Welt-Vergleiche,Wem schuldet die Welt eigentlich das Geld? Die Schulden der Welt,schulden der welt,evergreen,mittel,"BIS, IWF",3
+GE149,Welt-Vergleiche,Jedem Menschen ein Smartphone: Was würde das kosten?,jedem ein smartphone kosten,evergreen,niedrig,"Marktdaten, UN",2
+GE150,Welt-Vergleiche,Wie viel Energie strahlt die Sonne in einer Stunde auf die Erde – und was wäre sie wert?,sonne energie wert euro,evergreen,niedrig,"NASA, IEA",2
