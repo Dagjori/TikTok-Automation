@@ -1,0 +1,151 @@
+id,kategorie,titel,suchbegriff,typ,risiko,datenquelle,varianten
+G001,Antike Hochkulturen,Wie weit marschierte eine römische Legion pro Tag?,Römische Legion Marsch pro Tag,evergreen,mittel,"Vegetius, Archäologie",6
+G002,Antike Hochkulturen,Wie lange dauerte die Reise von Rom nach Köln?,Reisezeit Rom Köln römische Straßen,evergreen,niedrig,"ORBIS (Stanford), Itinerarium Antonini",4
+G003,Antike Hochkulturen,Römischer Aquädukt: Wie funktionierte das Gefälle über 95 Kilometer?,römischer Aquädukt Gefälle Eifelwasserleitung,evergreen,niedrig,"Frontinus, Archäologie",3
+G004,Antike Hochkulturen,Kolosseum: Wie schnell konnten 50.000 Menschen den Saal verlassen?,Kolosseum Evakuierung Zuschauer,evergreen,mittel,"Archäologie, Fachliteratur",2
+G005,Antike Hochkulturen,Wie viel Getreide brauchte eine römische Legion pro Tag?,Legion Verpflegung Getreide,evergreen,mittel,"Vegetius, Vindolanda-Täfelchen",3
+G006,Antike Hochkulturen,Wie weit lief der Läufer von Marathon nach Athen?,Marathonlauf Ursprung Strecke,evergreen,mittel,"Plutarch, Herodot",1
+G007,Antike Hochkulturen,Wer durfte im antiken Athen abstimmen?,Athen Demokratie Bürger Anteil,evergreen,mittel,"Thukydides, Fachliteratur",2
+G008,Antike Hochkulturen,Kleopatra lebte näher an der Mondlandung als am Bau der Cheops-Pyramide,Kleopatra Cheops Mondlandung,evergreen,niedrig,Fachliteratur,2
+G009,Antike Hochkulturen,"Terrakottaarmee: Wie lange dauerte es, 8.000 Figuren zu fertigen?",Terrakottaarmee Herstellung,evergreen,niedrig,"Archäologie, UNESCO",2
+G010,Antike Hochkulturen,Römische Thermen: Wie viel Holz verbrannte eine Therme am Tag?,römische Thermen Holzverbrauch Heizung,evergreen,niedrig,Archäologie (Trier),2
+G011,Antike Hochkulturen,Wie baute man einen Kilometer römische Straße?,römischer Straßenbau Schichten,evergreen,niedrig,"Vitruv, Archäologie",2
+G012,Antike Hochkulturen,Wie viel Getreide brauchte die Stadt Rom pro Jahr?,Rom Getreideversorgung Ostia,evergreen,niedrig,"Fachliteratur, Archäologie",2
+G013,Antike Hochkulturen,Wie schnell lief ein Sprinter im antiken Olympia?,antiker Stadionlauf Olympia,evergreen,niedrig,"Pausanias, Fachliteratur",1
+G014,Bauwerke und Baukunst,Wie lange dauerte der Bau des Kölner Doms?,Kölner Dom Bauzeit,evergreen,niedrig,"Dombauhütte Köln, historische Quellen",3
+G015,Bauwerke und Baukunst,Cheops-Pyramide: Wie viele Steine mussten pro Tag gesetzt werden?,Cheops Pyramide Steine pro Tag,evergreen,niedrig,Archäologie (Papyri von Wadi al-Jarf),2
+G016,Bauwerke und Baukunst,Die Chinesische Mauer: Wie lange würde man zu Fuß brauchen?,Chinesische Mauer Länge zu Fuß,evergreen,niedrig,Chinesische Denkmalbehörde (NCHA),2
+G017,Bauwerke und Baukunst,Der Obergermanisch-Raetische Limes: Wie dicht standen die Wachtürme?,Limes Länge Wachtürme,evergreen,niedrig,"UNESCO, Deutsche Limeskommission",2
+G018,Bauwerke und Baukunst,Stonehenge: Wie bewegte man 25-Tonnen-Steine ohne Räder?,Stonehenge Transport Steine,evergreen,niedrig,"English Heritage, Archäologie",3
+G019,Bauwerke und Baukunst,Stonehenge und die Sonnenwende: Wie genau sind die Steine ausgerichtet?,Stonehenge Sonnenwende Ausrichtung,saisonal,niedrig,English Heritage,1
+G020,Bauwerke und Baukunst,Wie hoch kann Stein stehen? Das Strebewerk gotischer Kathedralen,gotische Kathedrale Strebewerk,evergreen,niedrig,Fachliteratur,2
+G021,Bauwerke und Baukunst,"Wie lange dauerte es, eine Ritterburg zu bauen?",Burgbau Dauer Kosten,evergreen,niedrig,Fachliteratur,3
+G022,Bauwerke und Baukunst,Der Schiefe Turm von Pisa: Warum fällt er nicht um?,Schiefer Turm Pisa Neigung,evergreen,niedrig,Fachliteratur,1
+G023,Bauwerke und Baukunst,Chichén Itzá: Die Schlange aus Licht zur Tagundnachtgleiche,Chichén Itzá Schlange Tagundnachtgleiche,saisonal,niedrig,Archäologie (INAH),1
+G024,Bauwerke und Baukunst,Wie wanderten die Moai über die Osterinsel?,Moai Transport laufen,evergreen,niedrig,Archäologie (Hunt und Lipo),1
+G025,Bauwerke und Baukunst,Abu Simbel: Wie versetzte man einen ganzen Tempel?,Abu Simbel Versetzung,evergreen,niedrig,UNESCO,1
+G026,Bauwerke und Baukunst,Das höchste Bauwerk der Welt: 3.800 Jahre lang die Cheops-Pyramide,höchstes Bauwerk der Welt Geschichte,evergreen,niedrig,Fachliteratur,1
+G027,Alltag früher in Zahlen,Mittelalter in Zahlen: Wie viele Tage im Jahr arbeitete ein Bauer?,Mittelalter Bauer Arbeitstage Feiertage,evergreen,niedrig,"Fachliteratur, historische Quellen",3
+G028,Alltag früher in Zahlen,Wie alt wurden Menschen im Mittelalter wirklich?,Lebenserwartung Mittelalter Mythos,evergreen,mittel,"Fachliteratur, Our World in Data",3
+G029,Alltag früher in Zahlen,Wie teuer war Licht? Eine Stunde Kerzenschein gegen eine LED,Kerzen Licht Kosten früher,evergreen,niedrig,Fachliteratur (Nordhaus),2
+G030,Alltag früher in Zahlen,Badeten die Menschen im Mittelalter wirklich nie?,Mittelalter Baden Hygiene Mythos,evergreen,niedrig,"Fachliteratur, Stadtarchive",1
+G031,Alltag früher in Zahlen,Wie groß waren Menschen früher?,Körpergröße früher Mittelalter,evergreen,niedrig,"Fachliteratur (Steckel), NCD-RisC",3
+G032,Alltag früher in Zahlen,"Wie viele Stunden dauerte es, ein Hemd herzustellen?",Kleidung früher Spinnen Arbeitszeit,evergreen,niedrig,Fachliteratur,2
+G033,Alltag früher in Zahlen,Wie viel Wohnfläche hatte ein Mensch früher?,Wohnfläche pro Kopf früher,evergreen,niedrig,"Statistisches Bundesamt, Fachliteratur",3
+G034,Alltag früher in Zahlen,Wann wurde die Schule Pflicht? Von 1717 bis heute,Schulpflicht Geschichte Preußen,evergreen,niedrig,historische Quellen,1
+G035,Alltag früher in Zahlen,Wie viele Menschen konnten lesen und schreiben?,Alphabetisierung Geschichte,evergreen,niedrig,Our World in Data,2
+G036,Alltag früher in Zahlen,Wie viel Holz verbrauchte ein Haushalt zum Heizen und Kochen?,Holzverbrauch Haushalt früher,evergreen,niedrig,"Forstgeschichte, Fachliteratur",2
+G037,Alltag früher in Zahlen,Wie viel Wasser verbrauchte ein Mensch früher am Tag?,Wasserverbrauch pro Kopf früher,evergreen,niedrig,"BDEW, Fachliteratur",2
+G038,Alltag früher in Zahlen,Waschtag: Wie viele Stunden Hausarbeit kostete eine Woche ohne Waschmaschine?,Hausarbeit früher Waschtag Stunden,evergreen,niedrig,"Statistisches Bundesamt (Zeitbudgeterhebung), Fachliteratur",2
+G039,Reisen Handel Entdeckungen,Seidenstraße: Wie lange war eine Karawane unterwegs?,Seidenstraße Reisezeit Karawane,evergreen,niedrig,"ORBIS (Stanford), historische Quellen",3
+G040,Reisen Handel Entdeckungen,"Wie schnell war eine Nachricht, bevor es das Telefon gab?",Nachrichten Geschwindigkeit Postreiter,evergreen,niedrig,historische Quellen,4
+G041,Reisen Handel Entdeckungen,Kolumbus 1492: Wie schnell segelte die Santa María?,Kolumbus Überfahrt Santa Maria Geschwindigkeit,evergreen,mittel,"Logbuch-Auszüge (Las Casas), Fachliteratur",3
+G042,Reisen Handel Entdeckungen,Wie fanden Wikinger ihren Weg ohne Kompass?,Wikinger Navigation ohne Kompass,evergreen,niedrig,"Archäologie, Fachliteratur",2
+G043,Reisen Handel Entdeckungen,Wie viel Ladung fasste eine Hansekogge?,Hanse Kogge Ladung Fahrtzeit,evergreen,niedrig,"historische Quellen, Deutsches Schifffahrtsmuseum",3
+G044,Reisen Handel Entdeckungen,Mit der Postkutsche von Berlin nach München: Wie lange und wie teuer?,Postkutsche Reisezeit Preußen,evergreen,niedrig,historische Fahrpläne und Posttaxen,4
+G045,Reisen Handel Entdeckungen,Der Jakobsweg im Mittelalter: Wie lange war ein Pilger unterwegs?,Jakobsweg Pilger Dauer,evergreen,niedrig,historische Quellen,2
+G046,Reisen Handel Entdeckungen,Die Alte Salzstraße: Wie viel Salz transportierte ein Fuhrwerk?,Salzstraße Lüneburg Lübeck,evergreen,niedrig,historische Quellen,1
+G047,Reisen Handel Entdeckungen,Wie navigierten die Polynesier über den Pazifik?,Polynesier Navigation Pazifik,evergreen,niedrig,"Fachliteratur, Polynesian Voyaging Society",1
+G048,Reisen Handel Entdeckungen,Die Überfahrt nach Amerika 1850 gegen heute,Auswanderer Überfahrt Segelschiff Dampfschiff,evergreen,niedrig,historische Statistiken,2
+G049,Reisen Handel Entdeckungen,Alexander von Humboldt: Wie viele Kilometer legte er in Südamerika zurück?,Humboldt Reise Strecke,evergreen,niedrig,Humboldt-Tagebücher,1
+G050,Reisen Handel Entdeckungen,Die Rheinzölle: Wie oft musste ein Händler im Mittelalter zahlen?,Rheinzölle Mittelalter,evergreen,niedrig,historische Quellen,1
+G051,Technik und Erfindungen,Gutenberg: Wie viele Seiten druckte eine Werkstatt pro Tag?,Gutenberg Druck Seiten pro Tag,evergreen,niedrig,"Gutenberg-Museum, historische Quellen",2
+G052,Technik und Erfindungen,Warum hält römischer Beton 2.000 Jahre?,römischer Beton Haltbarkeit,evergreen,niedrig,Fachpublikationen (MIT),1
+G053,Technik und Erfindungen,Wassermühle gegen Handmühle: Wie viel Mehl mahlte sie?,Wassermühle Leistung Handmühle,evergreen,niedrig,Fachliteratur,2
+G054,Technik und Erfindungen,Wie viele Schafe brauchte man für eine Pergament-Bibel?,Pergament Bibel Schafe,evergreen,niedrig,Fachliteratur,2
+G055,Technik und Erfindungen,Die Laufmaschine von Drais: Karlsruhe bis Mannheim 1817,Draisine Laufmaschine 1817,evergreen,niedrig,"Technoseum, historische Quellen",1
+G056,Technik und Erfindungen,Wie viel Holzkohle brauchte man für ein Kilo Eisen?,Eisenherstellung Holzkohle Mittelalter,evergreen,niedrig,Archäologie,2
+G057,Technik und Erfindungen,Wie viele Eichen brauchte ein großes Segelschiff?,Schiffbau Eichen Holzverbrauch,evergreen,niedrig,Royal Museums Greenwich,1
+G058,Technik und Erfindungen,Das erste Foto: Warum dauerte die Belichtung 8 Stunden?,erstes Foto Niépce Belichtungszeit,evergreen,niedrig,historische Quellen,1
+G059,Technik und Erfindungen,Jacquard-Webstuhl: Wie Lochkarten zum Computer führten,Jacquard Webstuhl Lochkarten,evergreen,niedrig,Fachliteratur,1
+G060,Technik und Erfindungen,Wie schnell war ein Wikingerschiff?,Wikingerschiff Geschwindigkeit Segel,evergreen,niedrig,Wikingerschiffsmuseum Roskilde,2
+G061,Technik und Erfindungen,Wie segelt ein Schiff gegen den Wind?,Segeln gegen den Wind Physik,evergreen,niedrig,Fachliteratur,1
+G062,Technik und Erfindungen,Wie viel Leistung hatte eine Windmühle?,Windmühle Leistung Watt,evergreen,niedrig,Fachliteratur,1
+G063,Technik und Erfindungen,Nähmaschine: Wie viel Zeit sparte sie beim Hemdennähen?,Nähmaschine Zeitersparnis Hemd,evergreen,niedrig,Fachliteratur,1
+G064,Geld Preise Wirtschaft,Was kostete ein Brot und wie lange musste man dafür arbeiten?,Tagelohn Brotpreis Mittelalter,evergreen,niedrig,"Fachliteratur (Allen), Global Price and Income History Group",6
+G065,Geld Preise Wirtschaft,Wie viel war ein Taler wert? Kaufkraft von damals in Euro,Taler Kaufkraft heute,evergreen,niedrig,Deutsche Bundesbank (Kaufkraftvergleiche),3
+G066,Geld Preise Wirtschaft,Wie reich war Jakob Fugger wirklich?,Jakob Fugger Vermögen,evergreen,niedrig,Fachliteratur,2
+G067,Geld Preise Wirtschaft,Hyperinflation 1923: Wie schnell stieg der Brotpreis?,Hyperinflation 1923 Brotpreis,evergreen,mittel,"Deutsche Bundesbank, Statistisches Reichsamt",2
+G068,Geld Preise Wirtschaft,Die Tulpenmanie 1637: Was kostete eine Zwiebel wirklich?,Tulpenmanie Preis,evergreen,niedrig,Fachliteratur (Goldgar),1
+G069,Geld Preise Wirtschaft,Ein Pfennig bei Christi Geburt: die Zinseszins-Rechnung,Zinseszins Pfennig Geburt Christi,evergreen,mittel,Fachliteratur (Richard Price 1772),1
+G070,Geld Preise Wirtschaft,Wie viel arbeiteten Menschen pro Jahr? 1800 gegen heute,Jahresarbeitszeit Geschichte,evergreen,niedrig,"Our World in Data, Statistisches Bundesamt",3
+G071,Geld Preise Wirtschaft,Der römische Denar: Wie sank sein Silbergehalt?,Denar Silbergehalt Inflation Rom,evergreen,niedrig,Numismatik,1
+G072,Geld Preise Wirtschaft,Der Zehnt: Wie viel gab ein Bauer an Abgaben ab?,Zehnt Abgaben Bauer,evergreen,niedrig,Fachliteratur,2
+G073,Geld Preise Wirtschaft,Wofür gaben Familien ihr Geld aus? Das Haushaltsbudget 1850 gegen heute,Haushaltsbudget Essen Anteil früher,evergreen,niedrig,Statistisches Bundesamt (Historische Statistik),2
+G074,Geld Preise Wirtschaft,Wie viele Münzen konnte ein Münzmeister pro Stunde prägen?,Münzprägung Handarbeit,evergreen,niedrig,Numismatik,1
+G075,Geld Preise Wirtschaft,Die Preisrevolution des 16. Jahrhunderts: Wie das Silber aus Amerika alles verteuerte,Preisrevolution 16. Jahrhundert Silber,evergreen,niedrig,Fachliteratur,1
+G076,Geld Preise Wirtschaft,Kakaobohnen als Geld: Was kostete ein Truthahn bei den Azteken?,Kakaobohnen Währung Azteken,evergreen,niedrig,Fachliteratur,1
+G077,Ernährung Landwirtschaft Gesundheit,Wie viele Kalorien brauchte ein Bauer im Mittelalter?,Kalorien Mittelalter Bauer Ernährung,evergreen,niedrig,Fachliteratur,2
+G078,Ernährung Landwirtschaft Gesundheit,Kartoffel gegen Getreide: Wie viel mehr ernährt ein Acker?,Kartoffel Ertrag Getreide Vergleich,evergreen,niedrig,"FAO, Fachliteratur",1
+G079,Ernährung Landwirtschaft Gesundheit,Dreifelderwirtschaft: Wie viel Ernte gab ein Korn im Mittelalter?,Dreifelderwirtschaft Ertrag,evergreen,niedrig,Fachliteratur,2
+G080,Ernährung Landwirtschaft Gesundheit,Wie viele Menschen arbeiteten in der Landwirtschaft? 1800 gegen heute,Anteil Landwirtschaft Beschäftigte Geschichte,evergreen,niedrig,"Statistisches Bundesamt, Our World in Data",3
+G081,Ernährung Landwirtschaft Gesundheit,Das Reinheitsgebot von 1516: Wie viel Bier trank man damals?,Reinheitsgebot 1516 Bierverbrauch,evergreen,mittel,"historische Quellen, Fachliteratur",1
+G082,Ernährung Landwirtschaft Gesundheit,Wie schnell breitete sich die Pest 1347 bis 1353 über Europa aus?,Pest Ausbreitung Karte,evergreen,hoch,"Fachliteratur, historische Quellen",2
+G083,Ernährung Landwirtschaft Gesundheit,Der Eiskeller: Wie kühlte man Essen vor dem Kühlschrank?,Eiskeller Kühlung früher,evergreen,niedrig,Fachliteratur,1
+G084,Ernährung Landwirtschaft Gesundheit,Zucker: Vom Luxusgut zum Alltag,Zucker Verbrauch pro Kopf Geschichte,evergreen,niedrig,"Our World in Data, FAO",1
+G085,Ernährung Landwirtschaft Gesundheit,Mit der Sense gegen den Mähdrescher: Wie viele Stunden braucht ein Hektar?,Sense Mähdrescher Arbeitsstunden,evergreen,niedrig,"KTBL, Fachliteratur",2
+G086,Ernährung Landwirtschaft Gesundheit,Wie viel Ackerland brauchte ein Mensch zum Satt-Werden?,Ackerfläche pro Person Ernährung,evergreen,niedrig,FAO,2
+G087,Ernährung Landwirtschaft Gesundheit,Wie viel Fleisch aßen die Menschen früher?,Fleischverbrauch früher,evergreen,niedrig,"Fachliteratur, BMEL",1
+G088,Ernährung Landwirtschaft Gesundheit,Was bekam ein Mönch zu essen? Die Regel des Benedikt,Benediktregel Verpflegung Kloster,evergreen,niedrig,Regula Benedicti,1
+G089,Zeit Kalender Wissenschaft,Kalenderreform 1582: Wo sind die zehn Tage geblieben?,Kalenderreform 1582 zehn Tage,evergreen,niedrig,historische Quellen,1
+G090,Zeit Kalender Wissenschaft,Warum hat die Stunde 60 Minuten?,Sexagesimalsystem 60 Minuten,evergreen,niedrig,Fachliteratur,1
+G091,Zeit Kalender Wissenschaft,Der Antikythera-Mechanismus: der älteste Computer der Welt?,Antikythera Mechanismus,evergreen,niedrig,Antikythera Research Project,1
+G092,Zeit Kalender Wissenschaft,Eratosthenes misst den Erdumfang mit einem Stock,Eratosthenes Erdumfang Schatten,evergreen,niedrig,historische Quellen,1
+G093,Zeit Kalender Wissenschaft,Wie genau gingen Uhren früher?,Uhrenpräzision Geschichte,evergreen,niedrig,"PTB, Fachliteratur",2
+G094,Zeit Kalender Wissenschaft,Bahnzeit: Als jede Stadt ihre eigene Uhrzeit hatte,Einführung Mitteleuropäische Zeit 1893,evergreen,niedrig,"PTB, historische Quellen",1
+G095,Zeit Kalender Wissenschaft,Die Erfindung der Null,Null Erfindung Zahlensystem,evergreen,niedrig,Fachliteratur,1
+G096,Zeit Kalender Wissenschaft,"Elle, Fuß und Meile: Das Maßeinheiten-Chaos vor dem Meter",Maßeinheiten früher Elle Meile,evergreen,niedrig,PTB,2
+G097,Zeit Kalender Wissenschaft,Wie wurde der Meter festgelegt? Die Vermessung des Meridians,Definition Meter Meridian,evergreen,niedrig,"PTB, BIPM",1
+G098,Zeit Kalender Wissenschaft,Epizyklen gegen Ellipsen: Wie rechnete man die Planetenbahnen vor Kepler?,Epizyklen Ptolemäus Kopernikus,evergreen,niedrig,Fachliteratur,1
+G099,Zeit Kalender Wissenschaft,Der Maya-Kalender: Wie rechneten die Maya mit Zeit?,Maya Kalender Zahlensystem,evergreen,mittel,Fachliteratur,1
+G100,Zeit Kalender Wissenschaft,Wie wird das Osterdatum berechnet? Die Formel von Gauß,Osterformel Gauß,saisonal,niedrig,"PTB, Fachliteratur",1
+G101,Zeit Kalender Wissenschaft,Radiokohlenstoffdatierung: Wie rechnet man das Alter eines Fundes aus?,Radiokarbonmethode C14,evergreen,niedrig,Fachliteratur,1
+G102,Reiche Herrscher Territorien,Die größten Reiche der Geschichte im Größenvergleich,größte Reiche der Geschichte Größenvergleich,evergreen,mittel,"Fachliteratur (Taagepera), historische Atlanten",6
+G103,Reiche Herrscher Territorien,Kleinstaaterei: Wie viele Herrschaftsgebiete hatte das Heilige Römische Reich?,Kleinstaaterei Heiliges Römisches Reich Karte,evergreen,niedrig,historische Atlanten,2
+G104,Reiche Herrscher Territorien,Reisekönigtum: Wie viele Kilometer legte ein Kaiser im Leben zurück?,Reisekönigtum Itinerar Kaiser,evergreen,niedrig,Regesta Imperii,1
+G105,Reiche Herrscher Territorien,Wer regierte am längsten? Herrscher im Vergleich,Regierungsdauer Herrscher Vergleich,evergreen,niedrig,Fachliteratur,2
+G106,Reiche Herrscher Territorien,Wie nah verwandt waren die Habsburger? Der Inzuchtkoeffizient,Habsburger Inzucht Koeffizient,evergreen,mittel,Fachpublikation (Alvarez 2009),1
+G107,Reiche Herrscher Territorien,Wie viele Vorfahren hast du und stammst du von Karl dem Großen ab?,Vorfahren Anzahl Generationen Karl der Große,evergreen,niedrig,"Fachpublikationen (Chang, Rohde)",2
+G108,Reiche Herrscher Territorien,Wie oft änderten sich die Grenzen Deutschlands in 1.000 Jahren?,Grenzen Deutschland Karte Geschichte,evergreen,mittel,historische Atlanten,1
+G109,Reiche Herrscher Territorien,Der Zollverein 1834: Wie Zollgrenzen verschwanden,Zollverein 1834,evergreen,niedrig,historische Quellen,1
+G110,Reiche Herrscher Territorien,Versailles: Wie viele Menschen und Kerzen brauchte der Hof des Sonnenkönigs?,Versailles Hofstaat Kosten,evergreen,niedrig,Fachliteratur,2
+G111,Reiche Herrscher Territorien,Papstwahl: Wie lange dauerte die längste Wahl?,Papstwahl Rekord Dauer,evergreen,mittel,historische Quellen,1
+G112,Reiche Herrscher Territorien,Heiraten statt kämpfen: Wie die Habsburger ihr Reich erwarben,Habsburger Heiratspolitik Karte,evergreen,niedrig,historische Atlanten,1
+G113,Frühe Menschheit und Urgeschichte,Wie viele Kalorien lieferte ein Mammut?,Mammut Kalorien Jäger,evergreen,niedrig,Fachliteratur,1
+G114,Frühe Menschheit und Urgeschichte,"Wie lange dauert es, ohne Streichholz Feuer zu machen?",Feuer machen Steinzeit,evergreen,niedrig,Archäologie,2
+G115,Frühe Menschheit und Urgeschichte,Wie schnell breitete sich der Mensch von Afrika aus?,Out of Africa Ausbreitung Geschwindigkeit,evergreen,mittel,Fachpublikationen,1
+G116,Frühe Menschheit und Urgeschichte,Doggerland: Als die Nordsee noch Land war,Doggerland Nordsee Landbrücke,evergreen,niedrig,"Fachpublikationen (Univ. Bradford, TNO)",1
+G117,Frühe Menschheit und Urgeschichte,Ötzi: Wie weit und wie hoch ist er gelaufen?,Ötzi Alter Gletschermumie,evergreen,mittel,Südtiroler Archäologiemuseum,2
+G118,Frühe Menschheit und Urgeschichte,Göbekli Tepe: Älter als Stonehenge und die Pyramiden,Göbekli Tepe Alter Vergleich,evergreen,niedrig,"DAI, UNESCO",1
+G119,Frühe Menschheit und Urgeschichte,Wie viel Neandertaler steckt in uns?,Neandertaler Genanteil,evergreen,mittel,MPI für evolutionäre Anthropologie,1
+G120,Frühe Menschheit und Urgeschichte,"Wie lange dauert es, einen Faustkeil zu schlagen?",Faustkeil Herstellung Zeit,evergreen,niedrig,Archäologie,1
+G121,Frühe Menschheit und Urgeschichte,Jäger und Sammler gegen Bauern: Wer arbeitete weniger?,Jäger Sammler Arbeitszeit Bauern,evergreen,mittel,"Fachliteratur (Sahlins, umstritten)",1
+G122,Frühe Menschheit und Urgeschichte,"Wie lange dauerte es, einen Einbaum mit Steinbeil zu bauen?",Einbaum Bau Steinbeil,evergreen,niedrig,Archäologie,1
+G123,Frühe Menschheit und Urgeschichte,Vom Wolf zum Hund: Wie lange dauerte die Zähmung?,Wolf Hund Domestikation,evergreen,niedrig,Fachpublikationen,1
+G124,Frühe Menschheit und Urgeschichte,Die Himmelsscheibe von Nebra: Was zeigt sie am Himmel?,Himmelsscheibe von Nebra,evergreen,niedrig,"Landesmuseum für Vorgeschichte Halle, UNESCO",1
+G125,Frühe Menschheit und Urgeschichte,Goseck: Das Sonnenobservatorium von 4900 v. Chr.,Goseck Sonnenobservatorium Sonnenwende,saisonal,niedrig,Landesamt für Denkmalpflege Sachsen-Anhalt,1
+G126,Industrialisierung und Moderne,Dampfmaschine: Wie viel Energie ging wirklich in Arbeit?,Dampfmaschine Wirkungsgrad Watt,evergreen,niedrig,Fachliteratur,1
+G127,Industrialisierung und Moderne,Spinning Jenny: Wie viel mehr Garn schaffte eine Maschine?,Spinning Jenny Produktivität,evergreen,niedrig,Fachliteratur,1
+G128,Industrialisierung und Moderne,Nürnberg nach Fürth 1835: Die erste deutsche Eisenbahn in Zahlen,Eisenbahn Nürnberg Fürth 1835,evergreen,niedrig,"DB Museum, historische Quellen",1
+G129,Industrialisierung und Moderne,Energiesklaven: Wie viele Arbeiter ersetzt eine Kilowattstunde?,Energiesklaven Kilowattstunde Muskelkraft,evergreen,niedrig,Fachliteratur (Smil),2
+G130,Industrialisierung und Moderne,"Wie schnell verbreiteten sich Strom, Radio und Handy in den Haushalten?",Technikverbreitung Haushalte Geschichte,evergreen,niedrig,"Our World in Data, Statistisches Bundesamt",3
+G131,Industrialisierung und Moderne,Die Pferdemist-Krise von 1894: Mythos oder Wahrheit?,Pferdemist Krise Städte 1894,evergreen,niedrig,Fachliteratur,1
+G132,Industrialisierung und Moderne,Wie viel reicher sind wir als 1850? Das Bruttoinlandsprodukt pro Kopf,BIP pro Kopf Deutschland seit 1850,evergreen,niedrig,"Maddison Project, Statistisches Bundesamt",1
+G133,Industrialisierung und Moderne,"Die Berliner Luftbrücke: Wie viele Flugzeuge, wie viele Tonnen?",Berliner Luftbrücke Tonnen Flugzeuge,evergreen,mittel,"Alliiertenmuseum, historische Quellen",1
+G134,Industrialisierung und Moderne,Rheinbegradigung: Wie viel kürzer wurde der Rhein?,Rheinbegradigung Tulla Länge,evergreen,niedrig,historische Quellen,1
+G135,Industrialisierung und Moderne,Der Suezkanal: Wie viel kürzer wurde der Seeweg?,Suezkanal Abkürzung Seeweg,evergreen,niedrig,historische Quellen,1
+G136,Industrialisierung und Moderne,Kinderarbeit in Preußen: Das Verbot von 1839 in Zahlen,Kinderarbeit Preußen 1839 Verbot,evergreen,mittel,historische Quellen,1
+G137,Industrialisierung und Moderne,Das Fließband: Wie schnell wurde ein Auto bei Ford fertig?,Fließband Ford Montagezeit,evergreen,niedrig,Henry Ford Museum,1
+G138,Industrialisierung und Moderne,Haber-Bosch: Wie viele Menschen ernährt Kunstdünger?,Haber-Bosch Ernährung Bevölkerung,evergreen,mittel,Fachliteratur (Smil),1
+G139,Städte und Bevölkerung,Wie groß war Köln im Mittelalter?,Stadtgröße Mittelalter Köln Einwohner,evergreen,niedrig,Fachliteratur (Bairoch),3
+G140,Städte und Bevölkerung,Die Kölner Stadtmauer: Wie lang war sie und was schloss sie ein?,Stadtmauer Köln Länge,evergreen,niedrig,"Archäologie, Stadtkonservator",2
+G141,Städte und Bevölkerung,Wie viele Deutsche gab es 1800 und wie viele heute?,Bevölkerung Deutschland 1800 bis heute,evergreen,niedrig,Statistisches Bundesamt,3
+G142,Städte und Bevölkerung,Der Große Gestank von London 1858: Wie die Kanalisation entstand,Great Stink London 1858 Kanalisation,evergreen,niedrig,historische Quellen,1
+G143,Städte und Bevölkerung,Wie viele Berufe gab es in einer mittelalterlichen Stadt?,Berufe Mittelalter Stadt Zünfte,evergreen,niedrig,Fachliteratur,1
+G144,Städte und Bevölkerung,Wann heirateten die Menschen im Mittelalter und wie viele Kinder bekamen sie?,Heiratsalter Mittelalter Kinder pro Frau,evergreen,niedrig,Fachliteratur,2
+G145,Städte und Bevölkerung,Die größte Stadt der Welt: Wer war über die Jahrtausende die Nummer eins?,größte Stadt der Welt Geschichte,evergreen,niedrig,"Fachpublikation (Reba et al. 2016, Yale)",1
+G146,Städte und Bevölkerung,Wann lebten mehr Menschen in der Stadt als auf dem Land?,Verstädterung Anteil Stadtbevölkerung,evergreen,niedrig,"Our World in Data, UN",1
+G147,Städte und Bevölkerung,Woher kommen deutsche Nachnamen?,Nachnamen Herkunft Häufigkeit,evergreen,niedrig,Namensforschung (Universität Leipzig),1
+G148,Städte und Bevölkerung,Die Alterspyramide 1900 gegen heute,Alterspyramide Deutschland 1900 2020,evergreen,niedrig,Statistisches Bundesamt,2
+G149,Städte und Bevölkerung,Warum liegen Dörfer oft eine Gehstunde auseinander?,Dorfabstand Gehstunde Siedlung,evergreen,niedrig,Fachliteratur (Siedlungsgeografie),1
+G150,Städte und Bevölkerung,Ein Dorf mit 100 Einwohnern im Mittelalter: Wer machte was?,mittelalterliches Dorf 100 Einwohner Berufe,evergreen,niedrig,Fachliteratur,3
