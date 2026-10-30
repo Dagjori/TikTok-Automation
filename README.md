@@ -19,7 +19,7 @@ Zentrale für den Aufbau und Betrieb gesichtsloser KI-Simulationsvideos (3D bzw.
 | [docs/02-account-strategie.md](docs/02-account-strategie.md) | Weg zu 10k, Regeln des Creator Rewards Program, Umgang mit den Shop-Videos |
 | [docs/03-nischen.md](docs/03-nischen.md) | 8 bewertete Nischen plus Ranking |
 | [docs/04-claude-kapazitaet.md](docs/04-claude-kapazitaet.md) | Videos pro Tag im Claude-Max-Abo, Modellwahl, Kosten |
-| [docs/05-startnische-geld-duell.md](docs/05-startnische-geld-duell.md) | Startnische „Geld-Duell“: Profil, Video-Bauplan, 30 Themen, Empfehlung zum zweiten Account |
+| [docs/05-startnische.md](docs/05-startnische.md) | Startnische „Der Testlauf – Alltag simuliert“: Belege, Profil, Video-Bauplan, 30 Themen, Empfehlung zum zweiten Account |
 | [data/](data/) | Datenstände der Kanal- und Videoanalyse (CSV) |
 
 ## So arbeiten wir

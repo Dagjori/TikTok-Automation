@@ -2,6 +2,8 @@
 
 Teil von [Projektübersicht](00-projektuebersicht.md). Datengrundlage: [Marktanalyse](01-marktanalyse.md).
 
+> **Update 30.10.2026:** Die Geld-Duelle (#1) wurden vom Inhaber verworfen, weil sie zu nah an bestehenden Accounts sind. Die Startnische ist jetzt „Der Testlauf – Alltag simuliert“, siehe [05-startnische.md](05-startnische.md).
+
 Alle Nischen nutzen **dieselbe Pipeline**: Claude Code baut Rechnung bzw. Simulation plus 3D-Szene, rendert sie und legt Stimme und Untertitel darauf. Es ändern sich nur die Themen und die Bausteine der Vorlage.
 
 Legende: **F** = belegter Fakt (Profil- bzw. Videodaten vom 29.10.2026), **S** = Schätzung, **A** = Annahme.
