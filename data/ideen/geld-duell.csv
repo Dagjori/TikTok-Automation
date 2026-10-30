@@ -1,0 +1,151 @@
+id,kategorie,titel,suchbegriff,typ,risiko,datenquelle,varianten
+GD001,Wohnen (Miete und Kauf),Mieten oder kaufen? 30 Jahre durchgerechnet,mieten oder kaufen rechner,evergreen,mittel,"Gutachterausschüsse, Mietspiegel, Bundesbank-Zinsstatistik",20
+GD002,Wohnen (Miete und Kauf),Wie viel Eigenkapital brauchst du wirklich für die erste Immobilie?,eigenkapital hauskauf wie viel,evergreen,niedrig,"Bundesbank-Zinsstatistik, eigene Rechnung",8
+GD003,Wohnen (Miete und Kauf),Kaufnebenkosten: Was kostet der Hauskauf zusätzlich zum Preis?,kaufnebenkosten rechner,evergreen,niedrig,"Grunderwerbsteuer-Sätze der Länder, GNotKG",16
+GD004,Wohnen (Miete und Kauf),Lohnt sich ein Makler beim Hauskauf oder geht es auch ohne?,makler provision lohnt sich,evergreen,mittel,"BGB (Maklerrecht), Gutachterausschüsse",5
+GD005,Wohnen (Miete und Kauf),Neubau oder Altbau: Was ist über 20 Jahre günstiger?,neubau oder altbau kosten,evergreen,mittel,"GEG, Baupreisindex Destatis, dena",8
+GD006,Wohnen (Miete und Kauf),Stadt oder Land: Wo bleibt am Monatsende mehr übrig?,stadt oder land lebenshaltungskosten,evergreen,niedrig,"Destatis, Mietspiegel, ADAC Autokosten",15
+GD007,Wohnen (Miete und Kauf),WG oder allein wohnen: Was kostet der Unterschied in 10 Jahren?,wg oder alleine wohnen kosten,evergreen,niedrig,"Destatis Mietstatistik, eigene Rechnung",8
+GD008,Wohnen (Miete und Kauf),Für 150 € weniger Miete umziehen: Ab wann lohnt es sich?,umzug lohnt sich weniger miete,evergreen,niedrig,"Verbraucherzentrale (Umzugskosten), Mietspiegel",12
+GD009,Wohnen (Miete und Kauf),Staffelmiete oder Indexmiete: Welche wird teurer?,staffelmiete oder indexmiete,evergreen,mittel,"Destatis Verbraucherpreisindex, BGB",6
+GD010,Wohnen (Miete und Kauf),"Eigentumswohnung: Was kostet sie im Monat wirklich (Hausgeld, Rücklage, Instandhaltung)?",eigentumswohnung laufende kosten hausgeld,evergreen,niedrig,"WEG-Recht, II. Berechnungsverordnung, eigene Rechnung",6
+GD011,Wohnen (Miete und Kauf),Wohnung vermieten: Wie viel Rendite bleibt nach Kosten und Steuern?,immobilie als kapitalanlage rendite,evergreen,hoch,"Gutachterausschüsse, EStG, eigene Rechnung",10
+GD012,Wohnen (Miete und Kauf),"Anbau, Aufstockung oder größere Wohnung: Was ist günstiger bei mehr Platz?",mehr wohnraum anbau oder umzug kosten,evergreen,mittel,"Baupreisindex Destatis, Gutachterausschüsse",5
+GD013,Wohnen (Miete und Kauf),Neue Grundsteuer: Wer zahlt jetzt mehr und wie viel?,grundsteuer neu berechnen,news,mittel,"Grundsteuergesetze der Länder, Hebesätze (Destatis)",16
+GD014,Auto und Mobilität,E-Auto oder Verbrenner: 8 Jahre Gesamtkosten,e auto oder verbrenner kosten,evergreen,mittel,"ADAC Autokosten, KBA, BDEW Strompreise",20
+GD015,Auto und Mobilität,"Auto kaufen: Leasing, Finanzierung oder bar bezahlen?",auto leasing oder finanzierung,evergreen,mittel,"Bundesbank-Zinsstatistik, ADAC, eigene Rechnung",12
+GD016,Auto und Mobilität,Neuwagen oder Gebrauchtwagen: Wo geht das Geld verloren?,neuwagen oder gebrauchtwagen wertverlust,evergreen,niedrig,"ADAC Autokosten, KBA",12
+GD017,Auto und Mobilität,Was kostet dein Auto pro Kilometer wirklich?,autokosten pro kilometer,evergreen,niedrig,"ADAC Autokostenübersicht, eigene Rechnung",10
+GD018,Auto und Mobilität,"Auto abschaffen: Ab wie vielen Kilometern lohnt sich Carsharing, Bahn oder Taxi?",auto abschaffen carsharing kosten,evergreen,niedrig,"ADAC Autokosten, Bundesverband Carsharing, ÖPNV-Tarife",8
+GD019,Auto und Mobilität,Monatsticket für Bus und Bahn oder Auto zur Arbeit: Was kostet der Arbeitsweg?,deutschlandticket oder auto pendeln,evergreen,niedrig,"ÖPNV-Tarife, ADAC Autokosten",12
+GD020,Auto und Mobilität,E-Bike statt Zweitwagen: Was spart eine Familie in 5 Jahren?,ebike statt zweitwagen,evergreen,niedrig,"ADAC Autokosten, Zweirad-Industrie-Verband, eigene Rechnung",6
+GD021,Auto und Mobilität,Wallbox zu Hause oder öffentlich laden: Wann zahlt sich die Wallbox aus?,wallbox lohnt sich,evergreen,niedrig,"BDEW Strompreise, Bundesnetzagentur Ladepunkte",6
+GD022,Auto und Mobilität,Tanken: Zu welcher Uhrzeit ist Sprit am günstigsten?,wann tanken am günstigsten,evergreen,niedrig,"Markttransparenzstelle für Kraftstoffe, ADAC",6
+GD023,Auto und Mobilität,10 km/h langsamer fahren: Wie viel Sprit und Geld spart das und wie viel Zeit kostet es?,langsamer fahren spart sprit,evergreen,niedrig,"ADAC, Umweltbundesamt, eigene Simulation",8
+GD024,Auto und Mobilität,Altes Auto reparieren oder ersetzen: Wo liegt die Grenze?,auto reparieren oder neukaufen,evergreen,niedrig,"ADAC, DAT-Restwerte, eigene Rechnung",8
+GD025,Auto und Mobilität,Sommerreifen und Winterreifen oder Ganzjahresreifen: Was ist über 8 Jahre günstiger?,ganzjahresreifen oder winterreifen kosten,saisonal,niedrig,"ADAC Reifentests, Marktpreise, eigene Rechnung",4
+GD026,Auto und Mobilität,Führerschein in der Großstadt: Lohnt er sich überhaupt?,führerschein kosten lohnt sich,evergreen,niedrig,"Bundesverband Fahrlehrer, ADAC, eigene Rechnung",6
+GD027,Kredite und Finanzierung,Kredit schneller tilgen oder das Geld anlegen: Was bringt mehr?,sondertilgung oder etf,evergreen,hoch,"Bundesbank-Zinsstatistik, historische Indexdaten, eigene Rechnung",10
+GD028,Kredite und Finanzierung,0-%-Finanzierung im Laden: Wo steckt der Preis?,0 prozent finanzierung falle,evergreen,niedrig,"Verbraucherzentrale, Preisangabenverordnung, eigene Rechnung",6
+GD029,Kredite und Finanzierung,Dispo oder Ratenkredit: Was kosten 3.000 € Minus über ein Jahr?,dispokredit zinsen kosten,evergreen,niedrig,"Bundesbank-Zinsstatistik, Verbraucherzentrale",6
+GD030,Kredite und Finanzierung,Kredit umschulden: Ab welchem Zinsvorteil lohnt es sich?,umschulden lohnt sich,evergreen,niedrig,"Bundesbank-Zinsstatistik, BGB (Darlehensrecht), eigene Rechnung",6
+GD031,Kredite und Finanzierung,"Zinsbindung 10, 15 oder 20 Jahre: Welche passt zur Baufinanzierung?",zinsbindung 10 oder 15 jahre,evergreen,mittel,"Bundesbank-Zinsstatistik, eigene Rechnung",6
+GD032,Kredite und Finanzierung,"Anschlussfinanzierung: Was passiert mit deiner Rate, wenn die Zinsen steigen?",anschlussfinanzierung zinsen steigen,news,mittel,"Bundesbank-Zinsstatistik, EZB-Leitzins",8
+GD033,Kredite und Finanzierung,"Tilgung 1, 2 oder 3 Prozent: Wann bist du schuldenfrei?",tilgung 1 prozent oder 3 prozent,evergreen,niedrig,"eigene Rechnung (Annuität), Bundesbank",10
+GD034,Kredite und Finanzierung,Warten auf bessere Zinsen: Was kostet dich ein Jahr Zögern beim Hauskauf?,hauskauf warten zinsen,news,mittel,"Bundesbank, Gutachterausschüsse, eigene Rechnung",5
+GD035,Kredite und Finanzierung,Schulden abbauen: Schneeball- oder Lawinenmethode?,schulden abbauen schneeball lawine,evergreen,niedrig,eigene Rechnung (Simulation),5
+GD036,Kredite und Finanzierung,"Kreditkarte: Wie lange dauert es, 2.000 € mit der Mindestrate abzuzahlen?",kreditkarte mindestzahlung teilzahlung,evergreen,niedrig,"Bundesbank-Zinsstatistik, Verbraucherzentrale",4
+GD037,Kredite und Finanzierung,Bausparvertrag: Wann geht die Rechnung mit der Zinssicherung auf?,bausparvertrag lohnt sich,evergreen,mittel,"Bundesbank-Zinsstatistik, Bausparkassengesetz, eigene Rechnung",5
+GD038,Kredite und Finanzierung,Kredit vorzeitig ablösen: Was kostet die Vorfälligkeitsentschädigung?,vorfälligkeitsentschädigung berechnen,evergreen,mittel,"BGB (Darlehensrecht), Verbraucherzentrale, eigene Rechnung",5
+GD039,Sparen und Geldanlage,100 € im Monat sparen: Was wird daraus in 30 Jahren?,sparplan 100 euro monatlich 30 jahre,evergreen,hoch,"historische Indexdaten, Bundesbank-Zinsen, eigene Rechnung",20
+GD040,Sparen und Geldanlage,Inflation: Was sind 10.000 € in 20 Jahren noch wert?,inflation kaufkraft rechner,evergreen,niedrig,"Destatis Verbraucherpreisindex, eigene Rechnung",10
+GD041,Sparen und Geldanlage,"Geld auf dem Girokonto: Was kostet es dich, nichts damit zu tun?",girokonto oder tagesgeld zinsen,evergreen,mittel,"Bundesbank-Zinsstatistik, Destatis Verbraucherpreisindex",6
+GD042,Sparen und Geldanlage,Früh anfangen oder später mehr sparen: 25 gegen 35,früh sparen zinseszins,evergreen,mittel,"eigene Rechnung, historische Indexdaten",8
+GD043,Sparen und Geldanlage,Einmalbetrag oder Sparplan: Was war historisch besser?,einmalanlage oder sparplan,evergreen,hoch,"historische Indexdaten, eigene Rechnung",6
+GD044,Sparen und Geldanlage,"Börsencrash im Sparplan: Was passiert, wenn der Markt 40 Prozent fällt?",sparplan crash simulation,news,hoch,"historische Indexdaten, eigene Rechnung",6
+GD045,Sparen und Geldanlage,Notgroschen: Wie viel Rücklage brauchst du wirklich?,notgroschen wie viel,evergreen,niedrig,"Destatis (Verbrauchsausgaben), Verbraucherzentrale",5
+GD046,Sparen und Geldanlage,50/30/20-Regel: Geht das mit deutschen Mieten überhaupt auf?,50 30 20 regel deutschland,evergreen,niedrig,Destatis (Einkommens- und Verbrauchsstichprobe),6
+GD047,Sparen und Geldanlage,"Gebühren fressen Rendite: 0,2 Prozent gegen 1,5 Prozent über 30 Jahre",fondskosten rendite kosten effekt,evergreen,hoch,"historische Indexdaten, Kostenquoten (Verbraucherzentrale), eigene Rechnung",5
+GD048,Sparen und Geldanlage,"Geld verdoppeln: In wie vielen Jahren schaffst du das bei 2, 5 oder 8 Prozent?",geld verdoppeln wie lange 72er regel,evergreen,mittel,eigene Rechnung (Zinseszins),4
+GD049,Sparen und Geldanlage,Immobilie oder Geldanlage am Kapitalmarkt: Was baut mehr Vermögen auf?,immobilie oder etf vermögensaufbau,evergreen,hoch,"Gutachterausschüsse, historische Indexdaten, eigene Rechnung",8
+GD050,Sparen und Geldanlage,"Wie lange dauert es, 1 Million Euro zu sparen?",wie lange bis zur ersten million,evergreen,hoch,"eigene Rechnung, Bundesbank (Vermögensbefragung)",12
+GD051,Steuern und Abgaben,Brutto zu Netto: Wohin gehen von 3.500 € Gehalt die Abzüge?,brutto netto rechner,evergreen,mittel,"BMF-Lohnsteuerrechner, Sozialversicherungs-Rechengrößen (BMAS)",20
+GD052,Steuern und Abgaben,Steuerklassen bei Paaren: Welche Kombination bringt am meisten?,steuerklasse 3 und 5 oder 4 und 4,evergreen,mittel,"BMF-Lohnsteuerrechner, EStG",10
+GD053,Steuern und Abgaben,Warum bleibt von 200 € mehr Gehalt so wenig übrig?,gehaltserhöhung netto wie viel bleibt,evergreen,niedrig,"BMF-Lohnsteuerrechner, Einkommensteuertarif (EStG)",8
+GD054,Steuern und Abgaben,Pendlerpauschale: Wie viel Geld bringt dir der Arbeitsweg zurück?,pendlerpauschale berechnen,evergreen,mittel,"EStG § 9, BMF",10
+GD055,Steuern und Abgaben,Homeoffice-Pauschale oder Arbeitszimmer: Was bringt mehr Steuerersparnis?,homeoffice pauschale steuer,evergreen,mittel,"EStG § 4 Abs. 5, BMF-Schreiben",4
+GD056,Steuern und Abgaben,Steuererklärung: Wie viel Geld bekommst du pro Stunde Arbeit?,steuererklärung lohnt sich,saisonal,niedrig,"Destatis (Steuerstatistik), BMF",5
+GD057,Steuern und Abgaben,"Grundfreibetrag: Wie viel darfst du verdienen, bevor du Steuern zahlst?",grundfreibetrag steuerfrei verdienen,news,niedrig,"EStG § 32a, BMF",4
+GD058,Steuern und Abgaben,Zinsen und Kapitalerträge: Ab wann zahlst du Steuern (Sparerpauschbetrag)?,sparerpauschbetrag freistellungsauftrag,evergreen,mittel,"EStG §§ 20 und 44a, BMF",4
+GD059,Steuern und Abgaben,Handwerker und Haushaltshilfe: Wie viel Steuer sparst du wirklich?,handwerkerleistungen steuer absetzen,evergreen,mittel,EStG § 35a,5
+GD060,Steuern und Abgaben,Abfindung: Wie viel bleibt nach Steuern übrig (Fünftelregelung)?,abfindung steuer fünftelregelung,evergreen,hoch,"EStG § 34, BMF-Lohnsteuerrechner",6
+GD061,Steuern und Abgaben,Was kostet dein Gehalt den Arbeitgeber wirklich?,arbeitgeberkosten brutto netto,evergreen,niedrig,"BMAS (Sozialversicherungswerte), Destatis Arbeitskosten",6
+GD062,Steuern und Abgaben,Benzinpreis: Wie viel vom Preis an der Zapfsäule ist Steuer?,benzinpreis zusammensetzung steuer,evergreen,mittel,"Zoll (Energiesteuer), Mineralölwirtschaft, Umweltbundesamt",6
+GD063,Steuern und Abgaben,Gebrauchtes verkaufen: Ab wann wird es steuerpflichtig und meldepflichtig?,verkaufen steuer finanzamt kleinanzeigen,news,hoch,"Plattformen-Steuertransparenzgesetz, EStG § 23, BMF",5
+GD064,Job und Selbstständigkeit,4-Tage-Woche: Wie viel Gehalt gibst du wirklich auf?,4 tage woche gehalt teilzeit netto,evergreen,niedrig,"BMF-Lohnsteuerrechner, Sozialversicherungswerte, eigene Rechnung",8
+GD065,Job und Selbstständigkeit,"Neuer Job, längerer Weg: Wie viel mehr Gehalt brauchst du?",jobwechsel längerer arbeitsweg gehalt,evergreen,niedrig,"ADAC Autokosten, BMF-Lohnsteuerrechner",8
+GD066,Job und Selbstständigkeit,Minijob oder Teilzeit: Was bleibt im Geldbeutel?,minijob oder midijob netto,evergreen,mittel,"BMAS (Geringfügigkeits- und Übergangsbereich), Sozialversicherungswerte",6
+GD067,Job und Selbstständigkeit,Nebenjob neben dem Hauptjob: Wie viel bleibt nach Abzügen?,nebenjob steuerklasse 6 netto,evergreen,mittel,"BMF-Lohnsteuerrechner, Sozialversicherungswerte",5
+GD068,Job und Selbstständigkeit,Gehaltserhöhung oder steuerfreie Extras: Was bringt netto mehr?,gehalt oder benefits netto,evergreen,mittel,"EStG (steuerfreie Sachbezüge), BMF",6
+GD069,Job und Selbstständigkeit,Ausbildung oder Studium: Wer hat am Ende mehr Lebenseinkommen?,ausbildung oder studium lebenseinkommen,evergreen,niedrig,"IAB, Destatis (Verdienststatistik), BAföG-Daten",12
+GD070,Job und Selbstständigkeit,"Selbstständig werden: Wie viel Umsatz brauchst du, um dein Angestelltengehalt zu halten?",selbstständig umsatz brutto netto vergleich,evergreen,mittel,"BMF, Beitragssätze der Sozialversicherung, DRV, eigene Rechnung",8
+GD071,Job und Selbstständigkeit,Kleinunternehmerregelung: Wann lohnt sie sich und wann nicht?,kleinunternehmerregelung lohnt sich,evergreen,mittel,"UStG § 19, BMF",4
+GD072,Job und Selbstständigkeit,Homeoffice: Was spart oder kostet es im Jahr?,homeoffice kosten ersparnis,evergreen,niedrig,"Destatis, ADAC, eigene Rechnung",6
+GD073,Job und Selbstständigkeit,Gehaltsverhandlung: Was machen 5 Prozent mehr über ein Berufsleben aus?,gehaltsverhandlung 5 prozent berufsleben,evergreen,niedrig,"Destatis (Verdienststatistik), eigene Rechnung",6
+GD074,Job und Selbstständigkeit,"Arbeitslosengeld I: Wie viel Geld bleibt, wenn der Job endet?",arbeitslosengeld 1 berechnen,evergreen,mittel,"SGB III, Bundesagentur für Arbeit",5
+GD075,Job und Selbstständigkeit,Dienstwagen mit 1-%-Regel oder eigenes Auto: Was ist günstiger?,dienstwagen 1 prozent regel lohnt sich,evergreen,mittel,"EStG § 6 Abs. 1 Nr. 4, BMF, ADAC Autokosten",8
+GD076,Job und Selbstständigkeit,Sabbatical: Wie viel musst du für ein Jahr Auszeit zurücklegen?,sabbatical kosten finanzieren,evergreen,niedrig,"eigene Rechnung, DRV, SGB V",4
+GD077,Rente und Vorsorge,Wie hoch wird deine gesetzliche Rente? Rentenpunkte erklärt,rente berechnen rentenpunkte,evergreen,mittel,"Deutsche Rentenversicherung, aktueller Rentenwert",10
+GD078,Rente und Vorsorge,"Rentenlücke: Wie viel musst du zusätzlich sparen, um deinen Lebensstandard zu halten?",rentenlücke berechnen,evergreen,mittel,"DRV-Rentenversicherungsbericht, Destatis, eigene Rechnung",10
+GD079,Rente und Vorsorge,Früher in Rente oder länger arbeiten: Was kostet oder bringt jeder Monat?,früher in rente abschläge,news,mittel,"SGB VI, Deutsche Rentenversicherung",8
+GD080,Rente und Vorsorge,Riester-Rente: Rechnet sie sich noch?,riester rente lohnt sich,news,hoch,"Zulagenstelle (BMF), DRV, eigene Rechnung",6
+GD081,Rente und Vorsorge,Betriebliche Altersvorsorge: Was bleibt netto von der Entgeltumwandlung?,betriebliche altersvorsorge lohnt sich,evergreen,hoch,"BetrAVG, EStG § 3 Nr. 63, Sozialversicherungswerte",6
+GD082,Rente und Vorsorge,"Basisrente (Rürup): Steuern sparen jetzt, zahlen später?",rürup rente steuervorteil,evergreen,hoch,"EStG § 10, BMF",4
+GD083,Rente und Vorsorge,Private Rentenversicherung oder ETF-Sparplan: Was liefert mehr?,private rentenversicherung oder etf,evergreen,hoch,"Bundesbank, historische Indexdaten, VVG-Informationspflichten",6
+GD084,Rente und Vorsorge,Wie viel Steuer zahlst du auf deine Rente?,rente steuer berechnen,evergreen,mittel,"EStG § 22, BMF",6
+GD085,Rente und Vorsorge,Wie viel Vermögen brauchst du für 2.000 € Zusatzrente im Monat?,4 prozent regel entnahme vermögen,evergreen,hoch,"historische Indexdaten, Destatis (Sterbetafeln), eigene Rechnung",8
+GD086,Rente und Vorsorge,Arbeiten in der Rente: Wie viel darfst du hinzuverdienen?,rente hinzuverdienen grenze,news,mittel,"SGB VI, Deutsche Rentenversicherung",4
+GD087,Rente und Vorsorge,Pflegeheim: Was kostet ein Platz und wie viel zahlt die Pflegeversicherung?,pflegeheim kosten eigenanteil,news,mittel,"Verband der Ersatzkassen, Destatis (Pflegestatistik)",6
+GD088,Rente und Vorsorge,Haus im Alter verkaufen: Wie lange reicht der Erlös?,haus verkaufen rente lebensunterhalt,evergreen,mittel,"Gutachterausschüsse, Destatis (Sterbetafeln), eigene Rechnung",4
+GD089,Rente und Vorsorge,Rentenabschläge ausgleichen: Wann zahlt sich eine Extra-Einzahlung aus?,rentenabschläge ausgleichen sonderzahlung,evergreen,hoch,"SGB VI § 187a, Deutsche Rentenversicherung",4
+GD090,Versicherungen,Teilkasko oder Vollkasko beim älteren Auto: Wann lohnt sich was?,teilkasko oder vollkasko,evergreen,mittel,"ADAC, GDV, DAT-Restwerte",6
+GD091,Versicherungen,Höhere Selbstbeteiligung: Ab wann spart sie wirklich Geld?,selbstbeteiligung versicherung lohnt sich,evergreen,mittel,"GDV-Schadenstatistik, eigene Rechnung",6
+GD092,Versicherungen,Monatlich oder jährlich zahlen: Wie teuer sind Raten bei Versicherungen?,versicherung monatlich oder jährlich zahlen,evergreen,niedrig,"Verbraucherzentrale, VVG",4
+GD093,Versicherungen,Kleinen Schaden melden oder selbst zahlen? Die Rechnung mit der Schadenfreiheitsklasse,schadenfreiheitsklasse schaden selbst zahlen,evergreen,niedrig,"GDV, eigene Rechnung",6
+GD094,Versicherungen,Rechtsschutzversicherung: Beitrag gegen Prozesskosten,rechtsschutzversicherung lohnt sich,evergreen,mittel,"RVG- und GKG-Gebührentabellen, GDV",5
+GD095,Versicherungen,Berufsunfähigkeit: Wie viel Einkommen fehlt ohne Absicherung?,berufsunfähigkeitsversicherung lohnt sich,evergreen,hoch,"DRV (Erwerbsminderungsrente), GDV",6
+GD096,Versicherungen,Gesetzlich oder privat krankenversichert: Wie entwickeln sich die Beiträge über 30 Jahre?,pkv oder gkv kosten vergleich,evergreen,hoch,"SGB V, BMG, PKV-Verband-Statistik, DRV",6
+GD097,Versicherungen,Zahnersatz: Zusatzversicherung oder selbst zurücklegen?,zahnzusatzversicherung lohnt sich,evergreen,mittel,"GKV-Spitzenverband (Festzuschüsse), Verbraucherzentrale",4
+GD098,Versicherungen,Versicherungs-Check: Welcher Beitrag steht in welchem Verhältnis zum möglichen Schaden?,welche versicherungen braucht man,evergreen,hoch,"GDV, Verbraucherzentrale, eigene Rechnung",8
+GD099,Versicherungen,"Alte Lebensversicherung: Kündigen, beitragsfrei stellen oder weiterzahlen?",lebensversicherung kündigen oder weiterzahlen,evergreen,hoch,"VVG § 169, BaFin, Verbraucherzentrale",4
+GD100,Haushalt und Energie,Wärmepumpe oder Gasheizung: Kosten über 20 Jahre,wärmepumpe oder gasheizung kosten,news,mittel,"BAFA-Förderrichtlinien, BDEW, Verbraucherzentrale, GEG",10
+GD101,Haushalt und Energie,Solaranlage aufs Dach: Nach wie vielen Jahren hat sie sich bezahlt gemacht?,photovoltaik amortisation,evergreen,mittel,"Fraunhofer ISE, Bundesnetzagentur (Einspeisevergütung), BDEW",8
+GD102,Haushalt und Energie,Balkonkraftwerk: Wann rechnet es sich?,balkonkraftwerk lohnt sich,evergreen,niedrig,"Verbraucherzentrale, Bundesnetzagentur, BDEW",6
+GD103,Haushalt und Energie,"Stromfresser im Haushalt: Was kosten Standby, Kühlschrank und Trockner im Jahr?",stromfresser haushalt kosten,evergreen,niedrig,"Umweltbundesamt, Verbraucherzentrale, BDEW",6
+GD104,Haushalt und Energie,Alten Kühlschrank ersetzen: Ab wann zahlt sich ein sparsames Gerät aus?,alter kühlschrank austauschen lohnt sich,evergreen,niedrig,"EU-Energielabel-Datenbank EPREL, BDEW",6
+GD105,Haushalt und Energie,Heizung um 1 Grad senken: Wie viel Geld und Energie spart das?,heizung 1 grad weniger sparen,saisonal,niedrig,"Umweltbundesamt, Verbraucherzentrale, DWD (Gradtage)",6
+GD106,Haushalt und Energie,Heizung nachts runter oder durchheizen: Was stimmt?,nachtabsenkung heizung oder durchheizen,saisonal,niedrig,"Verbraucherzentrale, eigene Wärmeverlust-Simulation, DWD",4
+GD107,Haushalt und Energie,Fester oder dynamischer Stromtarif: Wer zahlt am Ende weniger?,dynamischer stromtarif lohnt sich,news,mittel,"Bundesnetzagentur (SMARD), BDEW",6
+GD108,Haushalt und Energie,Stromanbieter wechseln: Wie viel spart der Bonus wirklich im zweiten Jahr?,stromanbieter wechseln neukundenbonus,evergreen,mittel,"Bundesnetzagentur, Verbraucherzentrale, BDEW",5
+GD109,Haushalt und Energie,Fassade dämmen: Nach wie vielen Jahren zahlt sich das aus?,fassade dämmen amortisation,evergreen,mittel,"dena, Förderrichtlinien (BEG), Fraunhofer IBP",5
+GD110,Haushalt und Energie,"Nebenkostenabrechnung: Wohin geht dein Geld bei Heizung, Wasser und Müll?",nebenkostenabrechnung erklärt,saisonal,niedrig,"Deutscher Mieterbund (Betriebskostenspiegel), Destatis",8
+GD111,Haushalt und Energie,Wäschetrockner oder Wäscheleine: Was kostet ein Jahr Wäsche?,wäschetrockner stromkosten pro jahr,evergreen,niedrig,"Umweltbundesamt, BDEW",4
+GD112,Haushalt und Energie,Klimaanlage an Hitzetagen: Was kostet eine kühle Wohnung pro Sommer?,klimaanlage stromkosten sommer,saisonal,niedrig,"Umweltbundesamt, BDEW, DWD",5
+GD113,Konsum und Alltagsausgaben,Abos im Check: Was kosten 10 Abos im Jahr?,abos kosten kündigen streaming,evergreen,niedrig,"Verbraucherzentrale, Destatis (Konsumausgaben)",8
+GD114,Konsum und Alltagsausgaben,Täglicher Coffee-to-go: Was kostet die Gewohnheit in 10 Jahren?,coffee to go kosten pro jahr,evergreen,niedrig,"Destatis (Verbraucherpreise), eigene Rechnung",6
+GD115,Konsum und Alltagsausgaben,"Mittagessen im Job: Kantine, selbst gekocht oder bestellt?",mittagessen kosten kantine meal prep,evergreen,niedrig,"Destatis, Verbraucherzentrale, eigene Rechnung",8
+GD116,Konsum und Alltagsausgaben,"Discounter, Supermarkt oder Wochenmarkt: Wo kostet der Wocheneinkauf am meisten?",discounter oder supermarkt preisvergleich,evergreen,niedrig,"Destatis (Preiserhebung), Verbraucherzentrale (Preisstichproben)",8
+GD117,Konsum und Alltagsausgaben,Marke oder Eigenmarke: Wie viel spart man im Jahr?,eigenmarke oder markenprodukt,evergreen,niedrig,"Verbraucherzentrale, Destatis",6
+GD118,Konsum und Alltagsausgaben,Lebensmittel im Müll: Wie viel Geld wirfst du pro Jahr weg?,lebensmittel wegwerfen kosten,evergreen,niedrig,"Thünen-Institut, Destatis, BMEL",4
+GD119,Konsum und Alltagsausgaben,Kaufen oder leihen: Ab wie vielen Einsätzen lohnt sich die eigene Bohrmaschine?,kaufen oder leihen werkzeug,evergreen,niedrig,"Verbraucherzentrale, eigene Rechnung",8
+GD120,Konsum und Alltagsausgaben,Gebraucht statt neu: Wie viel sparst du bei Möbeln und Technik wirklich?,gebraucht kaufen sparen,evergreen,niedrig,"Verbraucherzentrale, Bitkom (Marktdaten), eigene Rechnung",8
+GD121,Konsum und Alltagsausgaben,Black Friday: Wie viel Rabatt ist echt? Preisverlauf statt Streichpreis,black friday echte rabatte,saisonal,mittel,"Verbraucherzentrale, Preisangabenverordnung, öffentliche Preisverläufe",6
+GD122,Konsum und Alltagsausgaben,Teure oder billige Jacke: Was kostet ein Tragen?,teure kleidung oder billig kosten pro tragen,evergreen,niedrig,"Destatis (Preise), eigene Rechnung",6
+GD123,Konsum und Alltagsausgaben,Shrinkflation: Wie viel weniger Inhalt bekommst du fürs gleiche Geld?,shrinkflation beispiele,news,niedrig,"Verbraucherzentrale Hamburg, Destatis",8
+GD124,Konsum und Alltagsausgaben,Wohin geht dein Geld? Das Durchschnittsbudget einer Familie in Deutschland,durchschnittliche ausgaben haushalt deutschland,evergreen,niedrig,Destatis (Einkommens- und Verbrauchsstichprobe),6
+GD125,Konsum und Alltagsausgaben,Wie viele Arbeitsstunden kostet das? Preise in Lebenszeit umgerechnet,arbeitsstunden preis umrechnen,evergreen,niedrig,"Destatis (Verdienste), eigene Rechnung",10
+GD126,Familie und Lebensphasen,Was kostet ein Kind bis zum 18. Geburtstag?,kosten kind bis 18,evergreen,niedrig,"Destatis (EVS), BMFSFJ",8
+GD127,Familie und Lebensphasen,"Elterngeld: Wie viel bekommst du und was lohnt sich, Basis oder Plus?",elterngeld berechnen elterngeld plus,news,mittel,"BEEG, BMFSFJ-Elterngeldrechner",8
+GD128,Familie und Lebensphasen,"Kita, Tagesmutter oder zu Hause bleiben: Was bleibt am Ende?",kita kosten oder zu hause bleiben,evergreen,niedrig,"Destatis (Kinderbetreuung), Gebührensatzungen der Kommunen",8
+GD129,Familie und Lebensphasen,Wer bleibt nach der Geburt zu Hause? Die Rechnung für Einkommen und Rente,elternzeit wer bleibt zuhause finanziell,evergreen,mittel,"Destatis (Verdienstunterschied), DRV, BEEG",8
+GD130,Familie und Lebensphasen,Gemeinsame Haushaltskasse: 50/50 oder nach Einkommen aufteilen?,paar finanzen 50 50 oder nach einkommen,evergreen,niedrig,"Destatis, eigene Rechnung",6
+GD131,Familie und Lebensphasen,"Hochzeit: Kleine Feier oder großes Fest, was kostet es im Schnitt?",hochzeit kosten durchschnitt,saisonal,niedrig,"Destatis (Preisindizes), Verbraucherzentrale, eigene Rechnung",6
+GD132,Familie und Lebensphasen,Sparen fürs Kind: Was wird aus 50 € im Monat bis zum 18. Geburtstag?,kindersparplan 50 euro 18 jahre,evergreen,hoch,"historische Indexdaten, Bundesbank, eigene Rechnung",8
+GD133,Familie und Lebensphasen,"Studium finanzieren: BAföG, Nebenjob oder Studienkredit?",studium finanzieren bafög nebenjob kredit,evergreen,mittel,"BAföG-Gesetz, Deutsches Studierendenwerk (Sozialerhebung)",6
+GD134,Familie und Lebensphasen,Haustier: Was kostet ein Hund im Leben und was eine Katze?,hund oder katze kosten leben,evergreen,niedrig,"Industrieverband Heimtierbedarf, Verbraucherzentrale, Tierärztegebührenordnung",6
+GD135,Familie und Lebensphasen,Elternunterhalt: Ab welchem Einkommen müssen Kinder für Pflegekosten zahlen?,elternunterhalt einkommensgrenze 100000,news,mittel,"BGB, Angehörigen-Entlastungsgesetz, BMAS",4
+GD136,Familie und Lebensphasen,Erben und Schenken: Wie viel ist steuerfrei?,schenkungssteuer freibetrag erbschaft,evergreen,mittel,"ErbStG, BMF",6
+GD137,Familie und Lebensphasen,"Haushaltshilfe: Lohnt es sich, Zeit gegen Geld zu tauschen?",putzhilfe kosten lohnt sich,evergreen,niedrig,"Destatis (Verdienste), EStG § 35a, eigene Rechnung",4
+GD138,Familie und Lebensphasen,Schulstart: Was kostet das erste Schuljahr?,einschulung kosten schulranzen schulbedarf,saisonal,niedrig,"Destatis, Verbraucherzentrale",5
+GD139,Reisen und Freizeit,"600 km zum Urlaubsziel: Auto, Bahn oder Flug?",auto bahn flug vergleich kosten,saisonal,niedrig,"ADAC Autokosten, Bahntarife, öffentliche Flugpreise, Umweltbundesamt",12
+GD140,Reisen und Freizeit,Pauschalreise oder selbst buchen: Was ist günstiger?,pauschalreise oder einzeln buchen,saisonal,niedrig,"BGB (Pauschalreiserecht), Verbraucherzentrale, eigene Rechnung",8
+GD141,Reisen und Freizeit,Urlaub in der Nebensaison: Wie viel spart man?,nebensaison urlaub günstiger,saisonal,niedrig,"Destatis (Reisepreise), öffentliche Preisverläufe, Ferienkalender der KMK",10
+GD142,Reisen und Freizeit,Ferienwohnung oder Hotel: Was kostet die Woche für die Familie?,ferienwohnung oder hotel kosten,saisonal,niedrig,"Destatis (Tourismusstatistik), Verbraucherzentrale",8
+GD143,Reisen und Freizeit,"Wohnmobil kaufen, mieten oder Hotel: Ab wie vielen Urlaubstagen lohnt sich was?",wohnmobil kaufen oder mieten,evergreen,niedrig,"Caravaning Industrie Verband, ADAC, eigene Rechnung",6
+GD144,Reisen und Freizeit,Reiserücktrittsversicherung: Wann lohnt sie sich?,reiserücktrittsversicherung lohnt sich,saisonal,mittel,"GDV, Verbraucherzentrale, BGB (Reiserecht)",5
+GD145,Reisen und Freizeit,"Im Ausland bezahlen: Karte, Bargeld oder Geld abheben, was kostet am wenigsten?",ausland bezahlen gebühren kreditkarte bargeld,saisonal,mittel,"Verbraucherzentrale, EU-Verordnung 2021/1230, Bundesbank",6
+GD146,Reisen und Freizeit,Weihnachten: Wie viel geben Familien aus und wie plant man das Budget?,weihnachtsbudget geschenke ausgaben,saisonal,niedrig,"Destatis (Konsumausgaben), Handelsverband Deutschland",4
+GD147,Reisen und Freizeit,Konzertkarten: Warum sind sie so teuer? Wie setzt sich der Preis zusammen?,konzertkarten preis gebühren,news,mittel,"Bundeskartellamt, Verbraucherzentrale, Preisangabenverordnung",6
+GD148,Reisen und Freizeit,Hobbys im Kostenvergleich: Was kostet eine Stunde Spaß?,teuerstes hobby kosten pro stunde,evergreen,niedrig,"Destatis (Preise), eigene Rechnung",12
+GD149,Reisen und Freizeit,"Konsole, Gaming-PC oder Cloud-Gaming: Was kostet Zocken über 5 Jahre?",konsole oder gaming pc kosten,evergreen,niedrig,"Branchenverband game (Marktdaten), BDEW Strompreise, eigene Rechnung",6
+GD150,Reisen und Freizeit,Kreuzfahrt oder Hotelurlaub: Was bleibt am Ende wirklich im Preis?,kreuzfahrt kosten pro tag vergleich,saisonal,niedrig,"CLIA Deutschland, Verbraucherzentrale, eigene Rechnung",5
