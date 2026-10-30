@@ -1,0 +1,151 @@
+id,kategorie,titel,suchbegriff,typ,risiko,datenquelle,varianten
+W001,Mond und Gezeiten,"Was passiert, wenn der Mond verschwindet?",was wäre wenn Mond verschwindet,evergreen,mittel,"NASA, ESA",3
+W002,Mond und Gezeiten,Passen alle Planeten zwischen Erde und Mond?,alle Planeten zwischen Erde und Mond,evergreen,niedrig,NASA,2
+W003,Mond und Gezeiten,Der Mond entfernt sich: Wann endet die totale Sonnenfinsternis?,Mond entfernt sich von der Erde,evergreen,niedrig,NASA (Laser-Reflektoren der Apollo-Missionen),1
+W004,Mond und Gezeiten,Warum zeigt der Mond immer dieselbe Seite?,gebundene Rotation Mond,evergreen,niedrig,NASA,2
+W005,Mond und Gezeiten,Wie ist der Mond entstanden? Der Theia-Einschlag simuliert,Theia Mond Entstehung,evergreen,niedrig,"NASA, Fachpublikationen",1
+W006,Mond und Gezeiten,Warum gibt es zweimal am Tag Flut?,Gezeiten erklärt Simulation,evergreen,niedrig,"BSH, NOAA",4
+W007,Mond und Gezeiten,Der Mond halb so weit weg: Wie hoch wären Flut und Mond am Himmel?,Mond näher an der Erde,evergreen,mittel,NASA,3
+W008,Mond und Gezeiten,Blutmond: Warum wird der Mond bei einer Finsternis rot?,Blutmond Mondfinsternis,saisonal,niedrig,"NASA Eclipse, Fachliteratur",2
+W009,Mond und Gezeiten,Wie hell ist der Vollmond im Vergleich zur Sonne?,Vollmond Helligkeit Sonne,evergreen,niedrig,NASA,2
+W010,Mond und Gezeiten,Wie breit ist der Mond? Größenvergleich mit Europa und Afrika,Mond Größe Vergleich Europa,evergreen,niedrig,NASA,3
+W011,Mond und Gezeiten,Hitze und Frost: ein Tag und eine Nacht auf dem Mond,Mond Temperatur Tag Nacht,evergreen,niedrig,NASA (LRO Diviner),2
+W012,Mond und Gezeiten,Wie weit fliegt ein Golfball auf dem Mond?,Golfball Mond Apollo 14,evergreen,niedrig,NASA,8
+W013,Mond und Gezeiten,Supermond: Wie viel größer ist er wirklich?,Supermond Größe,saisonal,niedrig,NASA,1
+W014,Sonne und Sterne,Die Sonne verschwindet: Was merken wir nach 8 Minuten?,Sonne verschwindet Gedankenexperiment,evergreen,mittel,NASA,2
+W015,Sonne und Sterne,Wie viele Erden passen in die Sonne?,Sonne Größe Erden Vergleich,evergreen,niedrig,NASA,4
+W016,Sonne und Sterne,Größenvergleich: Von der Erde bis zum größten bekannten Stern,Größenvergleich Sterne,evergreen,niedrig,"ESO, Sternkataloge",3
+W017,Sonne und Sterne,Wie lange braucht Sonnenlicht bis zu jedem Planeten?,Lichtlaufzeit Sonne Planeten,evergreen,niedrig,NASA,3
+W018,Sonne und Sterne,"Wie heiß ist die Sonne? Kern, Oberfläche und die rätselhafte Korona",Sonne Temperatur Korona,evergreen,niedrig,NASA (Parker Solar Probe),1
+W019,Sonne und Sterne,Wann stirbt die Sonne? Vom Roten Riesen zum Weißen Zwerg,Sonne Lebensende Roter Riese,evergreen,mittel,"NASA, ESA",2
+W020,Sonne und Sterne,100.000 Jahre bis zur Oberfläche: Die Reise eines Lichtteilchens aus dem Sonnenkern,Photon Sonnenkern Zufallsweg,evergreen,niedrig,"NASA, Fachliteratur",1
+W021,Sonne und Sterne,Sonnenzyklus 25: Wann ist das Maximum und was bedeutet es?,Sonnenzyklus Maximum,news,mittel,"NOAA SWPC, SILSO",2
+W022,Sonne und Sterne,Polarlichter: Wie entstehen sie und wann sieht man sie in Deutschland?,Polarlichter Deutschland,saisonal,niedrig,"NOAA SWPC, GFZ Potsdam",3
+W023,Sonne und Sterne,Das Carrington-Ereignis: Was würde ein Sonnensturm heute anrichten?,Carrington Ereignis Sonnensturm,evergreen,hoch,"NASA, NOAA, Versicherungsstudien",2
+W024,Sonne und Sterne,Zwei Sonnen am Himmel: Wie wäre ein Planet bei einem Doppelstern?,Doppelstern Planet zwei Sonnen,evergreen,niedrig,NASA Exoplaneten-Archiv,3
+W025,Sonne und Sterne,Betelgeuse explodiert: Was würden wir am Himmel sehen?,Betelgeuse Supernova,news,mittel,"ESO, NASA",2
+W026,Sonne und Sterne,Ein Teelöffel Neutronenstern: Wie schwer ist das?,Neutronenstern Teelöffel Gewicht,evergreen,niedrig,NASA,3
+W027,Sonne und Sterne,Eine Stunde Sonnenlicht gegen den Jahresverbrauch der Menschheit,Sonnenenergie Stunde Jahresverbrauch,evergreen,niedrig,"NASA, IEA",2
+W028,Planeten und Monde,Dein Gewicht auf anderen Himmelskörpern,Gewicht auf anderen Planeten,evergreen,niedrig,NASA,8
+W029,Planeten und Monde,Alle Planeten im Größenvergleich,Planeten Größenvergleich,evergreen,niedrig,NASA,2
+W030,Planeten und Monde,Auf der Venus ist ein Tag länger als ein Jahr,Venus Tag länger als Jahr,evergreen,niedrig,NASA,3
+W031,Planeten und Monde,Warum ist die Venus heißer als der Merkur?,Venus heißester Planet,evergreen,niedrig,NASA,2
+W032,Planeten und Monde,Der Große Rote Fleck: Wie viele Erden passen in den Sturm?,Jupiter Roter Fleck Größe,evergreen,niedrig,NASA (Juno),2
+W033,Planeten und Monde,Saturn würde im Wasser schwimmen: Die Dichte der Planeten,Saturn schwimmt im Wasser,evergreen,niedrig,NASA,4
+W034,Planeten und Monde,Olympus Mons: Der höchste Vulkan im Sonnensystem im Größenvergleich,Olympus Mons Größe,evergreen,niedrig,NASA (MOLA),3
+W035,Planeten und Monde,Kann man den Mars bewohnbar machen? Die Terraforming-Rechnung,Mars Terraforming,evergreen,mittel,NASA (Studie 2018),2
+W036,Planeten und Monde,Mehr Wasser als alle Ozeane der Erde: der Ozean unter dem Eis des Jupitermonds Europa,Europa Mond Ozean,evergreen,niedrig,NASA (Europa Clipper),3
+W037,Planeten und Monde,Wie viele Planeten kennen wir um andere Sterne?,Exoplaneten Anzahl,news,niedrig,NASA Exoplanet Archive,2
+W038,Planeten und Monde,Die habitable Zone: Wo kann flüssiges Wasser existieren?,habitable Zone,evergreen,niedrig,NASA,3
+W039,Planeten und Monde,Die Erde auf der Marsbahn: Wie kalt würde es?,Erde weiter von der Sonne,evergreen,mittel,NASA,4
+W040,Planeten und Monde,Planetenparade: Stehen alle Planeten wirklich in einer Reihe?,Planetenparade,news,mittel,"NASA, JPL Horizons",2
+W041,Planeten und Monde,Planeten statt Mond am Himmel: Wie groß würden sie aussehen?,Planeten am Himmel Mondentfernung,evergreen,niedrig,NASA,8
+W042,Planeten und Monde,Wie tief könntest du in Jupiter sinken?,Fall in Jupiter,evergreen,niedrig,NASA (Galileo-Sonde),3
+W043,Raumfahrt und Reisen,Mit dem Auto zum Mond: Wie lange dauert die Fahrt?,Autofahrt zum Mond,evergreen,niedrig,NASA,10
+W044,Raumfahrt und Reisen,Wie lange dauert die Reise zum nächsten Stern?,Proxima Centauri Reise,evergreen,niedrig,"NASA, ESA",3
+W045,Raumfahrt und Reisen,Voyager 1 erreicht einen Lichttag Entfernung,Voyager 1 Lichttag,news,niedrig,NASA JPL,1
+W046,Raumfahrt und Reisen,Die Raketengleichung: Warum besteht eine Rakete fast nur aus Treibstoff?,Raketengleichung Treibstoff,evergreen,niedrig,NASA,3
+W047,Raumfahrt und Reisen,"Fluchtgeschwindigkeit: Wie schnell muss man sein, um die Erde zu verlassen?",Fluchtgeschwindigkeit Erde,evergreen,niedrig,NASA,5
+W048,Raumfahrt und Reisen,Warum fallen Satelliten nicht herunter? Newtons Kanonenkugel,Orbit erklärt Satellit,evergreen,niedrig,NASA,2
+W049,Raumfahrt und Reisen,Wie fliegt man zum Mars? Startfenster und Flugzeit,Marsreise Flugzeit Startfenster,evergreen,niedrig,NASA,3
+W050,Raumfahrt und Reisen,Weltraumschrott: Wie viele Trümmer umkreisen die Erde?,Weltraumschrott Kessler-Syndrom,news,mittel,ESA Space Debris Report,2
+W051,Raumfahrt und Reisen,Wie viele Satelliten umkreisen die Erde heute?,Starlink Satelliten Anzahl,news,mittel,"UN-Register (UNOOSA), ESA",2
+W052,Raumfahrt und Reisen,Auf der ISS geht die Sonne 16-mal am Tag auf,ISS Sonnenaufgänge,evergreen,niedrig,NASA,2
+W053,Raumfahrt und Reisen,Der Weltraumaufzug: Wie lang müsste das Seil sein?,Weltraumaufzug,evergreen,niedrig,"NASA, ISEC",2
+W054,Raumfahrt und Reisen,Artemis: Wie fliegt man um den Mond herum und zurück?,Artemis Flugbahn Mond,news,niedrig,NASA,2
+W055,Raumfahrt und Reisen,Wie viel jünger wird ein Astronaut auf der ISS?,Zeitdilatation ISS Astronaut,evergreen,niedrig,NASA,2
+W056,Raumfahrt und Reisen,Ohne Relativitätstheorie wäre dein GPS jeden Tag 10 Kilometer falsch,GPS Relativitätstheorie,evergreen,niedrig,"NASA, GPS.gov",1
+W057,Raumfahrt und Reisen,Mit welcher Geschwindigkeit rast du gerade durchs All?,Geschwindigkeit der Erde im Weltall,evergreen,niedrig,NASA,1
+W058,Asteroiden Kometen Einschläge,Asteroid trifft die Nordsee: simuliert,Asteroid Nordsee Einschlag,evergreen,mittel,"NASA, ESA, Impact-Earth-Rechner (Purdue/Imperial)",6
+W059,Asteroiden Kometen Einschläge,"Chicxulub: der Einschlag, der die Dinosaurier beendete",Dinosaurier Asteroid Chicxulub,evergreen,mittel,"NASA, Fachpublikationen",2
+W060,Asteroiden Kometen Einschläge,Tunguska 1908: Wie viel Energie hatte die Explosion?,Tunguska Explosion Energie,evergreen,mittel,"NASA, Fachliteratur",1
+W061,Asteroiden Kometen Einschläge,Wie oft trifft ein Asteroid die Erde? Einschlagshäufigkeit nach Größe,Asteroiden Einschlag Häufigkeit,evergreen,mittel,NASA CNEOS,1
+W062,Asteroiden Kometen Einschläge,DART und Hera: Wie lenkt man einen Asteroiden ab?,DART Asteroid Ablenkung,news,niedrig,"NASA, ESA (Hera)",2
+W063,Asteroiden Kometen Einschläge,Apophis 2029: Wie nah kommt der Asteroid der Erde?,Apophis 2029 Vorbeiflug,news,mittel,"NASA JPL CNEOS, ESA",1
+W064,Asteroiden Kometen Einschläge,Halleyscher Komet: Wann kommt er wieder?,Halleyscher Komet Umlaufbahn,evergreen,niedrig,"NASA, ESA",2
+W065,Asteroiden Kometen Einschläge,Warum zeigt der Kometenschweif immer von der Sonne weg?,Kometenschweif Sonnenwind,evergreen,niedrig,ESA (Rosetta),1
+W066,Asteroiden Kometen Einschläge,Sternschnuppen: Wie groß sind sie wirklich?,Sternschnuppen Perseiden,saisonal,niedrig,"NASA Meteoroid Environment Office, IMO",3
+W067,Asteroiden Kometen Einschläge,Wie viele Tonnen Weltraumstaub fallen jeden Tag auf die Erde?,Meteoriten Staub pro Tag,evergreen,niedrig,NASA,1
+W068,Asteroiden Kometen Einschläge,Das Nördlinger Ries: der Einschlag vor der Haustür,Nördlinger Ries Einschlag,evergreen,niedrig,"Geopark Ries, Fachpublikationen",1
+W069,Asteroiden Kometen Einschläge,Warum verglüht ein Meteorit in der Atmosphäre?,Meteor Atmosphäre verglühen,evergreen,niedrig,NASA,2
+W070,Erde: Rotation Form Aufbau,Wie lange fällt man durch die Erde?,durch die Erde fallen Tunnel,evergreen,niedrig,"USGS, PREM-Erdmodell",5
+W071,Erde: Rotation Form Aufbau,Die Erde dreht sich 10 Prozent schneller: Was ändert sich?,Erde dreht sich schneller,evergreen,mittel,NASA,4
+W072,Erde: Rotation Form Aufbau,Die Erde bleibt plötzlich stehen: Was passiert mit der Atmosphäre und den Meeren?,Erde hört auf sich zu drehen,evergreen,mittel,NASA,1
+W073,Erde: Rotation Form Aufbau,Wie lang war ein Tag zur Zeit der Dinosaurier?,Tageslänge Dinosaurier,evergreen,niedrig,Fachpublikationen (Korallenringe),1
+W074,Erde: Rotation Form Aufbau,Die Erde ist keine Kugel: der Äquatorwulst und die Potsdamer Kartoffel,Erde Abplattung Geoid,evergreen,niedrig,"GFZ Potsdam, NASA",2
+W075,Erde: Rotation Form Aufbau,Die Kola-Bohrung: Wie tief sind wir wirklich gekommen?,Kola Bohrung tiefstes Loch,evergreen,niedrig,"USGS, Fachliteratur",1
+W076,Erde: Rotation Form Aufbau,Wie heiß ist der Erdkern?,Erdkern Temperatur,evergreen,niedrig,USGS,1
+W077,Erde: Rotation Form Aufbau,Das Erdmagnetfeld: der unsichtbare Schutzschild,Erdmagnetfeld schützt,evergreen,niedrig,"NASA, ESA (Swarm)",2
+W078,Erde: Rotation Form Aufbau,Magnetpolumkehr: Was würde passieren?,Polumkehr Erdmagnetfeld,evergreen,hoch,"ESA (Swarm), GFZ Potsdam",1
+W079,Erde: Rotation Form Aufbau,Der magnetische Nordpol wandert: Wo ist Norden?,magnetischer Nordpol wandert,news,niedrig,"NOAA, British Geological Survey (World Magnetic Model)",1
+W080,Erde: Rotation Form Aufbau,"Der Chimborazo: der Gipfel, der dem Weltall am nächsten ist",Chimborazo höchster Punkt,evergreen,niedrig,"NOAA, USGS",1
+W081,Erde: Rotation Form Aufbau,Die Schwerkraft ist nicht überall gleich: die Schwerkraftkarte der Erde,Schwerkraft Karte Erde,evergreen,niedrig,"GFZ Potsdam, NASA (GRACE)",1
+W082,Erde: Rotation Form Aufbau,"Was wäre, wenn die Erde doppelt so groß wäre?",Erde doppelt so groß Schwerkraft,evergreen,niedrig,NASA,4
+W083,Erde: Rotation Form Aufbau,Wie weit siehst du bis zum Horizont?,Entfernung Horizont Erdkrümmung,evergreen,niedrig,"Geodäsie, NOAA",6
+W084,Erde: Rotation Form Aufbau,Dreht sich das Wasser im Abfluss wirklich andersherum? Der Coriolis-Mythos,Coriolis Abfluss Mythos,evergreen,niedrig,"NOAA, Fachliteratur",1
+W085,Geologie: Vulkane Beben Platten,Wie schnell wandern die Kontinente?,Kontinentaldrift Geschwindigkeit,evergreen,niedrig,"USGS, GFZ Potsdam",3
+W086,Geologie: Vulkane Beben Platten,Pangaea Ultima: Wie sieht die Erde in 250 Millionen Jahren aus?,Superkontinent Zukunft,evergreen,niedrig,Fachpublikationen (Nature Geoscience),1
+W087,Geologie: Vulkane Beben Platten,Yellowstone: Wie viel Asche würde ein Supervulkan ausstoßen?,Yellowstone Supervulkan,evergreen,hoch,USGS,2
+W088,Geologie: Vulkane Beben Platten,Wie heiß ist Lava und wie schnell fließt sie?,Lava Temperatur Fließgeschwindigkeit,evergreen,niedrig,USGS,2
+W089,Geologie: Vulkane Beben Platten,Surtsey: Wie entsteht eine Vulkaninsel aus dem Nichts?,Vulkaninsel Surtsey Entstehung,evergreen,niedrig,"USGS, Icelandic Institute of Natural History",2
+W090,Geologie: Vulkane Beben Platten,Warum ist Magnitude 7 nicht nur doppelt so stark wie Magnitude 6?,Magnitude Erdbeben Energie Skala,evergreen,mittel,USGS,2
+W091,Geologie: Vulkane Beben Platten,P-Wellen und S-Wellen: Wie schnell laufen Erdbebenwellen durch die Erde?,Erdbebenwellen P S,evergreen,mittel,"USGS, GFZ Potsdam",2
+W092,Geologie: Vulkane Beben Platten,Wie schnell verschwinden die Alpen durch Erosion?,Alpen Erosion Hebung,evergreen,niedrig,"GFZ Potsdam, Fachpublikationen",1
+W093,Geologie: Vulkane Beben Platten,Wie sind die Alpen entstanden?,Alpen Entstehung Plattenkollision,evergreen,niedrig,"Fachpublikationen, Geologische Dienste",1
+W094,Geologie: Vulkane Beben Platten,Wie alt ist die Erde? Zerfallsuhren im Gestein,Erdalter Radiometrie,evergreen,niedrig,USGS,1
+W095,Geologie: Vulkane Beben Platten,Die Erdgeschichte auf einer 24-Stunden-Uhr,Erdgeschichte 24 Stunden Uhr,evergreen,niedrig,"USGS, ICS",2
+W096,Klima und Atmosphäre,Wie dünn ist die Atmosphäre? Die Apfelschale der Erde,Atmosphäre Dicke Maßstab,evergreen,niedrig,"NASA, NOAA",1
+W097,Klima und Atmosphäre,Was wäre die Erde ohne Treibhauseffekt?,Treibhauseffekt ohne Erde Temperatur,evergreen,mittel,"NASA, IPCC",1
+W098,Klima und Atmosphäre,Die Keeling-Kurve: Wie viel CO2 ist in der Luft?,CO2 Konzentration Mauna Loa,news,mittel,"NOAA GML, Scripps",2
+W099,Klima und Atmosphäre,Eine Tonne CO2 als Ballon: Wie groß ist sie?,CO2 Volumen Tonne,evergreen,mittel,"UBA, NOAA",2
+W100,Klima und Atmosphäre,Ozonloch: Wann ist es wieder geschlossen?,Ozonloch Erholung,saisonal,niedrig,"WMO, UNEP, Copernicus (CAMS)",2
+W101,Klima und Atmosphäre,Wie viel Energie steckt in einem Blitz?,Blitz Energie Temperatur,evergreen,niedrig,"NOAA, DWD",2
+W102,Klima und Atmosphäre,Wie weit ist das Gewitter weg? Blitz und Donner zählen,Gewitter Entfernung Donner,saisonal,niedrig,DWD,1
+W103,Klima und Atmosphäre,Wie viel Energie steckt in einem Hurrikan?,Hurrikan Energie,evergreen,mittel,NOAA,2
+W104,Klima und Atmosphäre,Wie entsteht ein Tornado und wie schnell dreht er?,Tornado Entstehung,saisonal,mittel,"DWD, NOAA",2
+W105,Klima und Atmosphäre,Warum ist der Himmel blau und der Sonnenuntergang rot?,Himmel blau Rayleigh Streuung,evergreen,niedrig,NASA,1
+W106,Klima und Atmosphäre,Der Jetstream: Warum dauert der Flug nach Westen länger?,Jetstream Flugzeit,evergreen,niedrig,"DWD, NOAA",1
+W107,Klima und Atmosphäre,Warum sind Städte wärmer? Die Hitzeinsel simuliert,städtische Wärmeinsel,saisonal,mittel,"DWD, UBA",2
+W108,Klima und Atmosphäre,Der Schmetterlingseffekt: Warum ist das Wetter nicht lange vorhersagbar?,Schmetterlingseffekt Wetter Lorenz,evergreen,niedrig,"DWD, ECMWF",1
+W109,Ozeane Eis Wasser,Wie lange sinkt ein Stein bis zum Grund des Marianengrabens?,Marianengraben Tiefe Stein,evergreen,niedrig,NOAA,3
+W110,Ozeane Eis Wasser,Wenn alles Eis schmilzt: Wie hoch steigt das Meer wirklich?,Meeresspiegel Eis schmilzt Karte,evergreen,mittel,"USGS, NASA, PIK",2
+W111,Ozeane Eis Wasser,Tsunami: Wie schnell läuft eine Welle über den Ozean?,Tsunami Geschwindigkeit Wassertiefe,evergreen,mittel,"NOAA NCEI, BSH",2
+W112,Ozeane Eis Wasser,Alles Wasser der Erde als Kugel,Wasser der Erde Kugel,evergreen,niedrig,USGS,2
+W113,Ozeane Eis Wasser,Das Meer verdunstet: Wie hoch läge das Salz?,Meer Salz verdunsten Schicht,evergreen,niedrig,NOAA,1
+W114,Ozeane Eis Wasser,Eiszeit: Berlin unter zwei Kilometern Eis,Eiszeit Norddeutschland Eis,evergreen,niedrig,"BGR, Fachpublikationen",2
+W115,Ozeane Eis Wasser,Wie viel vom Eisberg ist unter Wasser?,Eisberg unter Wasser Archimedes,evergreen,niedrig,NSIDC,2
+W116,Ozeane Eis Wasser,Der Golfstrom: 150 Amazonas-Flüsse in einer Strömung,Golfstrom Wassermenge,evergreen,niedrig,NOAA,2
+W117,Ozeane Eis Wasser,Wie schnell fließt ein Gletscher?,Gletscher Geschwindigkeit,evergreen,niedrig,WGMS,2
+W118,Ozeane Eis Wasser,Gletscherschwund in den Alpen: Wie viel Eis ist schon weg?,Alpengletscher Rückgang,news,mittel,"WGMS, GLAMOS",2
+W119,Ozeane Eis Wasser,Monsterwellen: Wie hoch kann eine Welle werden?,Monsterwelle Höhe,evergreen,mittel,"ESA (MaxWave), NOAA",1
+W120,Ozeane Eis Wasser,Wir kennen den Mond besser als den Meeresboden,Meeresboden kartiert Seabed 2030,news,niedrig,GEBCO (Seabed 2030),1
+W121,Kosmos und Schwarze Löcher,Wie groß ist das Universum? Der Zoom von der Erde bis zum Rand,Größe des Universums Zoom,evergreen,niedrig,"NASA, ESA",3
+W122,Kosmos und Schwarze Löcher,"Was passiert, wenn man in ein Schwarzes Loch fällt?",Schwarzes Loch Fall Spaghettifizierung,evergreen,niedrig,"NASA, EHT",3
+W123,Kosmos und Schwarze Löcher,Die Erde als Schwarzes Loch: So groß wäre eine Erbse,Schwarzschild-Radius Erde Erbse,evergreen,niedrig,NASA,5
+W124,Kosmos und Schwarze Löcher,Wie weit zurück in die Zeit sieht das James-Webb-Teleskop?,James Webb Teleskop Blick zurück,news,niedrig,"NASA, ESA, CSA",2
+W125,Kosmos und Schwarze Löcher,Gibt es mehr Sterne oder Sandkörner?,Sterne Sandkörner Vergleich,evergreen,niedrig,"ESA (Gaia), USGS",2
+W126,Kosmos und Schwarze Löcher,Wie lange braucht die Sonne für einen Umlauf um die Milchstraße?,Sonne Umlauf Milchstraße,evergreen,niedrig,ESA (Gaia),1
+W127,Kosmos und Schwarze Löcher,Die Milchstraße kollidiert mit Andromeda,Andromeda Kollision Milchstraße,evergreen,niedrig,"NASA (Hubble), ESA (Gaia)",1
+W128,Kosmos und Schwarze Löcher,Dunkle Materie: Warum fehlt 85 Prozent der Masse?,Dunkle Materie Rotationskurve,evergreen,niedrig,"ESA (Planck), NASA",1
+W129,Kosmos und Schwarze Löcher,Das Universum dehnt sich aus: Der Rosinenteig-Trick,Expansion Universum Hubble-Konstante,evergreen,niedrig,"NASA, ESA",1
+W130,Kosmos und Schwarze Löcher,Der Große Wagen in 100.000 Jahren: Sternbilder verändern sich,Sternbilder verändern sich Eigenbewegung,evergreen,niedrig,"ESA (Gaia, Hipparcos)",2
+W131,Kosmos und Schwarze Löcher,Die Drake-Gleichung: Wie viele Zivilisationen gibt es in der Milchstraße?,Drake-Gleichung Zivilisationen,evergreen,niedrig,"SETI Institute, NASA",1
+W132,Kosmos und Schwarze Löcher,Warum ist der Nachthimmel dunkel? Das Olbers-Paradoxon,Olbers Paradoxon Nachthimmel,evergreen,niedrig,NASA,1
+W133,Himmel und Zeit,Warum passt der Mond genau vor die Sonne? Der kosmische Zufall,Sonnenfinsternis Zufall Größenverhältnis,saisonal,niedrig,NASA Eclipse,2
+W134,Himmel und Zeit,Warum gibt es Jahreszeiten? Der Mythos vom Sonnenabstand,Jahreszeiten Erdachse Neigung,saisonal,niedrig,"NASA, DWD",3
+W135,Himmel und Zeit,Wie lang ist der kürzeste Tag? Hamburg gegen Tromsø,Tageslänge Breitengrad Polartag,saisonal,niedrig,"NOAA, PTB",3
+W136,Himmel und Zeit,Warum gibt es Schaltjahre und wie genau ist die Regel?,Schaltjahr Regel,evergreen,niedrig,"PTB, IERS",1
+W137,Himmel und Zeit,Die Schaltsekunde verschwindet: Warum dreht sich die Erde unregelmäßig?,Schaltsekunde abschaffen,news,niedrig,"IERS, BIPM",1
+W138,Himmel und Zeit,Wie viele Sterne siehst du wirklich? Lichtverschmutzung in Deutschland,Lichtverschmutzung Sterne sichtbar,evergreen,niedrig,"GFZ Potsdam (Globe at Night), Falchi-Atlas",2
+W139,Himmel und Zeit,Der Polarstern wechselt: Der Himmel in 12.000 Jahren,Präzession Polarstern wechselt,evergreen,niedrig,Fachliteratur,1
+W140,Himmel und Zeit,Warum ist die Venus der hellste Stern am Abendhimmel?,Venus Abendstern hellster,saisonal,niedrig,NASA,1
+W141,Himmel und Zeit,"Das Analemma: Die Acht, die die Sonne ans Jahr schreibt",Analemma Sonne Acht,evergreen,niedrig,NASA (APOD),1
+W142,Mensch im All,Was passiert im Vakuum ohne Raumanzug wirklich?,Vakuum ohne Raumanzug,evergreen,mittel,NASA,2
+W143,Mensch im All,Wie viel Proviant braucht eine Marsreise?,Marsreise Proviant Wasser Essen,evergreen,niedrig,NASA,2
+W144,Mensch im All,Was macht die Schwerelosigkeit mit Knochen und Muskeln?,Schwerelosigkeit Körper Knochen,evergreen,mittel,"NASA, DLR",2
+W145,Mensch im All,Auf der ISS wird Urin zu Trinkwasser: Wie viel wird recycelt?,ISS Wasser Urin recycelt,evergreen,niedrig,NASA,2
+W146,Mensch im All,Wie viel Strahlung bekommt man auf dem Flug zum Mars?,Strahlung Marsflug Dosis,evergreen,mittel,"NASA, DLR (RAD-Messungen)",2
+W147,Mensch im All,G-Kräfte beim Raketenstart: Was hält ein Mensch aus?,G-Kräfte Raketenstart Astronaut,evergreen,niedrig,"NASA, DLR",2
+W148,Mensch im All,Künstliche Schwerkraft: Wie groß muss ein rotierendes Raumschiff sein?,künstliche Schwerkraft Rotation,evergreen,niedrig,NASA,3
+W149,Mensch im All,Das Ende der ISS: Wie stürzt sie 2031 kontrolliert ab?,ISS Deorbit 2031,news,mittel,NASA,1
+W150,Mensch im All,Wie groß ist die ISS wirklich? Größenvergleich mit einem Haus,ISS Größe Vergleich,evergreen,niedrig,NASA,2
