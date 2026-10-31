@@ -17,6 +17,7 @@ import { fileURLToPath } from 'node:url';
 import {
   Aufzeichner,
   freieFahrzeitS,
+  pruefeTrajektorien,
   Simulation,
   STANDARD_PARAMETER,
   STRATEGIEN,
@@ -270,65 +271,6 @@ function linear(karte, t) {
 const lauf_info = {};
 const pruefungen = {};
 
-function pruefe(traj, vmaxMs) {
-  // Kollisionen/Überlappungen, Überholen, Sprünge, Rückwärtsfahren
-  const frames = traj.frames;
-  let sprungMax = 0;
-  let rueckwaerts = 0;
-  let minAbstand = Infinity;
-  let ueberlappung = 0;
-  let ueberholt = 0;
-  let spurWechsel = 0;
-  let schnellMax = 0;
-  const vorher = new Map();
-  for (let fr = 0; fr < frames; fr++) {
-    const jetzt = [];
-    for (const f of traj.fahrzeuge) {
-      const k = fr - f.f;
-      if (k < 0 || k >= f.x.length) continue;
-      jetzt.push({ id: f.id, x: f.x[k], s: f.s[k], v: f.v[k], k });
-      if (k > 0) {
-        const dx = f.x[k] - f.x[k - 1];
-        if (dx < -0.06) rueckwaerts++;
-        if (dx > sprungMax) sprungMax = dx;
-      }
-      if (f.v[k] > schnellMax) schnellMax = f.v[k];
-    }
-    for (const g of [0, 1]) {
-      const gruppe = jetzt.filter((a) => (g === 0 ? a.s < 0.15 : a.s > 0.85)).sort((a, b) => a.x - b.x);
-      for (let i = 0; i + 1 < gruppe.length; i++) {
-        const d = gruppe[i + 1].x - gruppe[i].x;
-        if (d < minAbstand) minAbstand = d;
-        const pa = vorher.get(gruppe[i].id);
-        const pb = vorher.get(gruppe[i + 1].id);
-        if (pa && pb && pa.g === g && pb.g === g && pa.x > pb.x) ueberholt++;
-      }
-    }
-    // Überlappung: gleiche Querposition (|Δs| < 0,6) und Längsabstand < 4,5 m (Fahrzeuglänge)
-    const sortiert = [...jetzt].sort((a, b) => a.x - b.x);
-    for (let i = 0; i < sortiert.length; i++) {
-      for (let j = i + 1; j < sortiert.length && sortiert[j].x - sortiert[i].x < 4.5; j++) {
-        if (Math.abs(sortiert[j].s - sortiert[i].s) < 0.6) ueberlappung++;
-      }
-    }
-    vorher.clear();
-    for (const a of jetzt) vorher.set(a.id, { x: a.x, g: a.s < 0.15 ? 0 : a.s > 0.85 ? 1 : -1 });
-  }
-  for (const f of traj.fahrzeuge) if (new Set(f.s.map((s) => Math.round(s))).size > 1) spurWechsel++;
-  return {
-    fahrzeuge: traj.fahrzeuge.length,
-    frames,
-    maxSprungProBildM: runde(sprungMax, 2),
-    maxGeschwindigkeitMs: runde(schnellMax, 1),
-    erlaubtMs: vmaxMs,
-    rueckwaertsBilder: rueckwaerts,
-    kleinsterAbstandGleicheSpurM: runde(minAbstand, 1),
-    ueberlappungenUnter4_5m: ueberlappung,
-    ueberholvorgaengeInSpur: ueberholt,
-    spurwechsel: spurWechsel,
-  };
-}
-
 for (const sz of szenarien) {
   for (const st of strategien) {
     const seed = typischerSeed(haupt[sz][st]);
@@ -337,7 +279,7 @@ for (const sz of szenarien) {
     const sim = new Simulation({ strategie: st, zuflussKfzH: SZENARIEN[sz].zuflussKfzH, seed, parameter });
     const xbM = sim.xb * ZELLE_M;
     const aufz = new Aufzeichner({ xVonM: xbM - 1100, xBisM: xbM + 330 });
-    const rv = sim.xb - 800; // Plotbereich: 6 km vor der Engstelle bis zum Streckenende
+    const rv = sim.xb - 1100; // Plotbereich: 8,25 km vor der Engstelle bis zum Streckenende
     const W = sim.N - rv;
     const raster = [];
     const zeile = new Uint8Array(W);
@@ -441,7 +383,7 @@ for (const sz of szenarien) {
     }
     const datei = `trajektorien_${sz}_${st}.json`;
     writeFileSync(ZIEL + datei, text);
-    const pr = pruefe(traj, STANDARD_PARAMETER.vmax * ZELLE_M);
+    const pr = pruefeTrajektorien(traj, STANDARD_PARAMETER.vmax * ZELLE_M);
     pr.dateigroesseKB = Math.round(Buffer.byteLength(text) / 1024);
     pr.xBereichM = [-upstream, 250];
     pruefungen[`${sz}_${st}`] = pr;

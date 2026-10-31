@@ -625,32 +625,57 @@ export class Aufzeichner {
   }
 }
 
-/** Monotone kubische Hermite-Interpolation (PCHIP) für äquidistante Stützstellen (Abstand 1 s). */
-function tangenten(x) {
-  const n = x.length;
-  const m = new Array(n).fill(0);
-  if (n < 2) return m;
-  const d = [];
-  for (let k = 0; k < n - 1; k++) d.push(x[k + 1] - x[k]);
-  m[0] = d[0];
-  m[n - 1] = d[n - 2];
-  for (let k = 1; k < n - 1; k++) {
-    m[k] = d[k - 1] * d[k] <= 0 ? 0 : (2 * d[k - 1] * d[k]) / (d[k - 1] + d[k]);
-  }
-  return m;
+/**
+ * Weg eines Fahrzeugs als stückweise lineare Funktion der Zeit (Stützstellen im Abstand 1 s),
+ * außerhalb der Stützstellen mit der Randgeschwindigkeit verlängert. Liefert Weg P(u) und das
+ * Integral I(u) von P ab u = 0, damit sich gleitende Mittel exakt berechnen lassen.
+ */
+function lineareBahn(xs) {
+  const n = xs.length;
+  const summe = new Array(n).fill(0); // Integral von 0 bis k
+  for (let k = 1; k < n; k++) summe[k] = summe[k - 1] + (xs[k - 1] + xs[k]) / 2;
+  const d0 = n > 1 ? xs[1] - xs[0] : 0;
+  const d1 = n > 1 ? xs[n - 1] - xs[n - 2] : 0;
+  const P = (u) => {
+    if (n < 2) return xs[0];
+    if (u <= 0) return xs[0] + d0 * u;
+    if (u >= n - 1) return xs[n - 1] + d1 * (u - (n - 1));
+    const k = Math.floor(u);
+    return xs[k] + (xs[k + 1] - xs[k]) * (u - k);
+  };
+  const I = (u) => {
+    if (n < 2) return xs[0] * u;
+    if (u <= 0) return xs[0] * u + (d0 * u * u) / 2;
+    if (u >= n - 1) {
+      const r = u - (n - 1);
+      return summe[n - 1] + xs[n - 1] * r + (d1 * r * r) / 2;
+    }
+    const k = Math.floor(u);
+    const f = u - k;
+    return summe[k] + xs[k] * f + ((xs[k + 1] - xs[k]) * f * f) / 2;
+  };
+  return { P, I };
 }
 
 /**
- * Erzeugt Trajektorien mit `fps` Bildern pro Sekunde.
- * x relativ zur Engstelle (negativ = davor), Spur `s` kontinuierlich (0 = durchgehend, 1 = endend),
- * v in m/s. Ein Spurwechsel dauert 1,5 s (weiche Überblendung um den Modellschritt).
+ * Erzeugt Trajektorien mit `fps` Bildern pro Sekunde aus den Sekundenaufzeichnungen.
+ *  - Weg: lineare Interpolation zwischen den Modellschritten, danach gleitendes Mittel über `glaettungS`
+ *    (Standard 1 s). Das Mittel ist exakt monoton, überschreitet nie die Modellgeschwindigkeit und
+ *    hält den Mindestabstand (7,5 m Mitte–Mitte) zwischen Fahrzeugen derselben Spur ein.
+ *  - Geschwindigkeit v (m/s) ist die exakte Ableitung des geglätteten Wegs.
+ *  - x relativ zur Engstelle (negativ = davor), Spur `s` kontinuierlich (0 = durchgehend, 1 = endend);
+ *    ein Spurwechsel dauert `wechselDauerS` und beginnt `wechselVersatzS` nach dem Modellschritt.
  */
-export function trajektorien30Hz(aufz, { tVonS, dauerS, fps = 30, engstelleM, xVonRelM, xBisRelM }) {
+export function trajektorien30Hz(
+  aufz,
+  { tVonS, dauerS, fps = 30, engstelleM, xVonRelM, xBisRelM, glaettungS = 1, wechselDauerS = 1, wechselVersatzS = 0 },
+) {
   const frames = Math.round(dauerS * fps) + 1;
   const fahrzeuge = [];
+  const halb = glaettungS / 2;
   for (const r of aufz.reihen.values()) {
     const xs = r.x;
-    const mx = tangenten(xs);
+    const { P, I } = lineareBahn(xs);
     const tEnde = r.t0 + xs.length - 1;
     // Spurwechsel-Ereignisse (Zeitpunkt = Modellschritt, in dem gewechselt wurde)
     const ereignisse = [];
@@ -663,41 +688,23 @@ export function trajektorien30Hz(aufz, { tVonS, dauerS, fps = 30, engstelleM, xV
     const V = [];
     for (let f = 0; f < frames; f++) {
       const t = tVonS + f / fps;
-      if (t < r.t0 || t > tEnde) {
+      // Das Mittelungsfenster muss in der Aufzeichnung liegen
+      if (t - halb < r.t0 || t + halb > tEnde) {
         if (f0 >= 0) break;
         continue;
       }
-      const k = Math.min(xs.length - 2, Math.max(0, Math.floor(t - r.t0)));
-      let x;
-      let v;
-      if (xs.length < 2) {
-        x = xs[0];
-        v = 0;
-      } else {
-        const u = t - r.t0 - k;
-        const u2 = u * u;
-        const u3 = u2 * u;
-        const h00 = 2 * u3 - 3 * u2 + 1;
-        const h10 = u3 - 2 * u2 + u;
-        const h01 = -2 * u3 + 3 * u2;
-        const h11 = u3 - u2;
-        x = h00 * xs[k] + h10 * mx[k] + h01 * xs[k + 1] + h11 * mx[k + 1];
-        const dh00 = 6 * u2 - 6 * u;
-        const dh10 = 3 * u2 - 4 * u + 1;
-        const dh01 = -6 * u2 + 6 * u;
-        const dh11 = 3 * u2 - 2 * u;
-        v = dh00 * xs[k] + dh10 * mx[k] + dh01 * xs[k + 1] + dh11 * mx[k + 1];
-      }
+      const u = t - r.t0;
+      const x = (I(u + halb) - I(u - halb)) / glaettungS;
+      const v = (P(u + halb) - P(u - halb)) / glaettungS;
       const xRel = x - engstelleM;
       if (xRel < xVonRelM || xRel > xBisRelM) {
         if (f0 >= 0) break;
         continue;
       }
-      // Spur
-      let s = r.spur[Math.min(xs.length - 1, Math.floor(t - r.t0))];
+      let s = r.spur[Math.min(xs.length - 1, Math.floor(u))];
       for (const e of ereignisse) {
-        const u = (t - (e.t - 0.25)) / 1.5;
-        if (u >= 0) s = e.von + (e.nach - e.von) * glatt(u);
+        const w = (t - (e.t + wechselVersatzS)) / wechselDauerS;
+        if (w >= 0) s = e.von + (e.nach - e.von) * glatt(w);
       }
       if (f0 < 0) f0 = f;
       X.push(xRel);
@@ -707,4 +714,70 @@ export function trajektorien30Hz(aufz, { tVonS, dauerS, fps = 30, engstelleM, xV
     if (f0 >= 0) fahrzeuge.push({ id: r.id, h: r.herk, f: f0, x: X, s: S, v: V });
   }
   return { frames, fahrzeuge };
+}
+
+/**
+ * Plausibilitätsprüfung von 30-Hz-Trajektorien (Ausgabe von `trajektorien30Hz`):
+ * Rückwärtsfahren, Sprünge, Höchstgeschwindigkeit, Überholen innerhalb einer Spur,
+ * Abstand in einer Spur und Überlappungen (Längsabstand < 4,5 m bei gleicher Querposition).
+ */
+export function pruefeTrajektorien(traj, vmaxMs) {
+  const r1 = (x, d = 1) => Math.round(x * 10 ** d) / 10 ** d;
+  const frames = traj.frames;
+  let sprungMax = 0;
+  let rueckwaerts = 0;
+  let minAbstand = Infinity;
+  let minAbstandUeberlappung = Infinity;
+  let ueberlappung = 0;
+  let ueberholt = 0;
+  let schnellMax = 0;
+  let vorher = new Map();
+  for (let fr = 0; fr < frames; fr++) {
+    const jetzt = [];
+    for (const f of traj.fahrzeuge) {
+      const k = fr - f.f;
+      if (k < 0 || k >= f.x.length) continue;
+      jetzt.push({ id: f.id, x: f.x[k], s: f.s[k] });
+      if (k > 0) {
+        const dx = f.x[k] - f.x[k - 1];
+        if (dx < -0.06) rueckwaerts++;
+        if (dx > sprungMax) sprungMax = dx;
+      }
+      if (f.v[k] > schnellMax) schnellMax = f.v[k];
+    }
+    for (const g of [0, 1]) {
+      const gruppe = jetzt.filter((a) => (g === 0 ? a.s < 0.15 : a.s > 0.85)).sort((a, b) => a.x - b.x);
+      for (let i = 0; i + 1 < gruppe.length; i++) {
+        const d = gruppe[i + 1].x - gruppe[i].x;
+        if (d < minAbstand) minAbstand = d;
+        const pa = vorher.get(gruppe[i].id);
+        const pb = vorher.get(gruppe[i + 1].id);
+        if (pa && pb && pa.g === g && pb.g === g && pa.x > pb.x) ueberholt++;
+      }
+    }
+    const sortiert = [...jetzt].sort((a, b) => a.x - b.x);
+    for (let i = 0; i < sortiert.length; i++) {
+      for (let j = i + 1; j < sortiert.length && sortiert[j].x - sortiert[i].x < 4.5; j++) {
+        if (Math.abs(sortiert[j].s - sortiert[i].s) < 0.6) {
+          ueberlappung++;
+          minAbstandUeberlappung = Math.min(minAbstandUeberlappung, sortiert[j].x - sortiert[i].x);
+        }
+      }
+    }
+    vorher = new Map(jetzt.map((a) => [a.id, { x: a.x, g: a.s < 0.15 ? 0 : a.s > 0.85 ? 1 : -1 }]));
+  }
+  const spurwechsel = traj.fahrzeuge.filter((f) => new Set(f.s.map((s) => Math.round(s))).size > 1).length;
+  return {
+    fahrzeuge: traj.fahrzeuge.length,
+    frames,
+    maxSprungProBildM: r1(sprungMax, 2),
+    maxGeschwindigkeitMs: r1(schnellMax),
+    erlaubtMs: vmaxMs,
+    rueckwaertsBilder: rueckwaerts,
+    kleinsterAbstandGleicheSpurM: r1(minAbstand),
+    ueberlappungenUnter4_5m: ueberlappung,
+    kleinsterAbstandBeiUeberlappungM: ueberlappung ? r1(minAbstandUeberlappung) : null,
+    ueberholvorgaengeInSpur: ueberholt,
+    spurwechsel,
+  };
 }

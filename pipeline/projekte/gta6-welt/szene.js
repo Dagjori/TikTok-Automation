@@ -12,6 +12,10 @@ import { HUD, Markenleiste, SchrittAnzeige, karte, chip, Zaehler, KinetikTitel, 
 import { ease, feder, FEDER, fortschritt, clamp, lerp, hash, rauschen, keyframes, smoothstep } from "../../engine/bewegung.js";
 
 const FPS = 30;
+// Qualitätsschalter per URL (für Tests): ?msaa=0&schatten=1024
+const Q = new URLSearchParams(location.search);
+const MSAA = Q.has("msaa") ? +Q.get("msaa") : 4;
+const SCHATTEN = Q.has("schatten") ? +Q.get("schatten") : 2048;
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const lade = async (url) => {
   const r = await fetch(url, { cache: "no-store" });
@@ -221,7 +225,7 @@ function baueStadt(buehne, zp) {
   const szene = new THREE.Scene();
   szene.background = verlauf([[0, "#8EBBFF"], [0.45, "#CFE2FF"], [1, "#FFF1E2"]]);
   szene.fog = new THREE.Fog("#DCE9F7", 75, 170);
-  lichtTag(szene, buehne.renderer, { sonnenRichtung: [0.5, 1.0, 0.55], sonnenStaerke: 2.35, bereich: 20, schattenKarte: 2048, schattenWeich: 5, ziel: [2.5, 0, -1], umgebungsStaerke: 0.4, himmelStaerke: 0.6 });
+  lichtTag(szene, buehne.renderer, { sonnenRichtung: [0.5, 1.0, 0.55], sonnenStaerke: 2.35, bereich: 20, schattenKarte: SCHATTEN, schattenWeich: 5, ziel: [2.5, 0, -1], umgebungsStaerke: 0.4, himmelStaerke: 0.6 });
 
   const boden = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), B.mat("#A9D795", { rau: 1 }));
   boden.rotation.x = -Math.PI / 2;
@@ -580,13 +584,15 @@ async function start() {
   const W = (s, w, o) => zp.w(s, w, o);
   const S = (id) => zp.seg(id);
 
-  const buehne = new Buehne(document.getElementById("leinwand"), { msaa: 4 });
+  const buehne = new Buehne(document.getElementById("leinwand"), { msaa: MSAA, schatten: SCHATTEN > 0 });
   await Promise.all(["900 70px 'SB Display'", "800 30px 'SB Display'", "700 27px 'SB Display'", "700 27px 'SB Text'", "600 27px 'SB Text'", "800 27px 'SB Text'"].map((f) => document.fonts.load(f)));
   await document.fonts.ready;
 
   const daten = await lade("../../engine/daten/globus-punkte.json");
   const G = baueGlobus(buehne, daten, zp);
   const ST = baueStadt(buehne, zp);
+  if (Q.get("env") === "0") { ST.welt.szene.environment = null; }
+  if (Q.get("pcf") === "1") buehne.renderer.shadowMap.type = THREE.PCFShadowMap;
 
   // Zeitleiste
   const zl = new Zeitleiste(buehne);
