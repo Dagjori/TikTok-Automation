@@ -26,7 +26,10 @@
 | 10 | **Merksatz** | letzte 5–8 s | ein kurzer, zitierfähiger Satz | große Pointe-Typo |
 | 11 | **Schluss** | letzte 2–3 s | **genau:** „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ | Bild kehrt zum Anfangsbild zurück (**Schleife**) |
 
-- **Länge:** 65–80 s, 170–220 Wörter, mindestens 61 s (CRP).
+- **Länge:** 65–80 s, mindestens 61 s (CRP).
+  - **Wortzahl mit Ben im Original: ca. 130–165 Wörter.** Gemessen am 31.10. spricht Ben mit den gespeicherten Einstellungen ca. 2,0 Wörter/s, mit Satzpausen von 0,5–0,7 s, bei v4 und v2 gleich, mit und ohne Zeilenumbruch (F).
+  - Die Vorbilder sprechen 2,5–2,9 W/s mit 170–220 Wörtern. Ben im Original ist ruhiger.
+  - Das Tempo wird nicht künstlich erhöht (Inhaber). Die Spannung kommt aus kurzen Sätzen und dem Bild.
 - **Kein** Kanalname, **kein** Logo und **keine** Rubrik („GELD“, „ALLTAG“) im Video, weder im Bild noch im Text (Entscheidung des Inhabers 31.10.).
 
 ## 2. Textregeln (Spannung im Text)
@@ -64,7 +67,7 @@
 
 ### 3.2 Regeln für den Regie-Text
 
-1. **Eine Zeile pro Satz**, Leerzeile zwischen Phasen. Lange Pausen gibt es nicht: Der Maßstab liegt bei ca. 0,26 s nach jedem Satz und nie über 0,4 s (F).
+1. **Eine Zeile pro Satz**, Leerzeile zwischen Phasen. Keine zusätzlichen Pausen-Tags außer bei einem echten Spannungsmoment. Ben setzt nach jedem Satz von sich aus 0,5–0,7 s (F); jede weitere Pause bremst.
 2. **Je Phase höchstens ein Gefühls-Tag** (v4): Hook `[curious]`, Start `[excited]`, Wendung `[surprised]`, Warum `[thoughtful]`. Zu viele Tags klingen gespielt (A).
 3. **Pro Satz höchstens ein großgeschriebenes Wort**, nur auf dem Wort, das die Spannung trägt.
 4. **Zahlen ausgeschrieben**, englische Wörter in Lautschrift („G T A sechs“).
@@ -109,7 +112,7 @@ Die Zahlen stammen aus der eigenen Simulation `pipeline/projekte/spurwechsel/sim
 | Merksatz | Die andere Spur wirkt nur schneller. Du wirst fast doppelt so lange überholt, wie du selbst überholst. | `Die andere Spur WIRKT nur schneller.` / `Du wirst fast doppelt so lange überholt, wie du selbst überholst.` |
 | Schluss | Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare. | `Was sollen wir als Nächstes zeigen?` / `Schreib es in die Kommentare.` |
 
-Umfang ca. 150 Wörter. Für 65–80 s fehlen noch ca. 20–40 Wörter. Sie kommen in der Produktion aus einem zweiten Zwischenstand im Rennen und einem Satz zum Drängler-Fall dazu (50 s mit 23 Wechseln, S). Vor der Produktion prüfen:
+Umfang ca. 150 Wörter, mit Ben im Original also ca. 75 s (S, 2,0 W/s). Optional kommt ein zweiter Zwischenstand im Rennen bzw. ein Satz zum Drängler-Fall dazu (50 s mit 23 Wechseln, S), solange das Video unter 80 s bleibt. Vor der Produktion prüfen:
 - „Wechseln alle, bleiben drei Sekunden“ beruht auf der Variante „95 % Spurwechsler“ mit 3,4 s (S).
 - „Fast doppelt so lange“ beruht auf 20,3 % gegen 10,8 % im Referenzlauf (S). Beide stehen in `sim_ergebnisse.md`.
 
