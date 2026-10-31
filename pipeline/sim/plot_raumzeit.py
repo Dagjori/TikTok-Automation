@@ -73,7 +73,7 @@ def raumzeit(sz, sz_name):
         spalten.append((st, st_name, meta, daten))
 
     PW, PH = 640, 400  # Panelgröße
-    RL, RO, RU, RR = 78, 96, 56, 18  # Ränder
+    RL, RO, RU, RR = 78, 118, 56, 18  # Ränder
     luecke = 24
     breite = RL + 2 * PW + luecke + RR
     hoehe = RO + 2 * PH + luecke + RU
@@ -150,7 +150,6 @@ def raumzeit(sz, sz_name):
                     d.text((xx - 8, y0 + PH + 8), f"{minute}", font=f_s, fill=(40, 40, 40))
                 d.text((x0 + PW // 2 - 50, y0 + PH + 28), "Zeit in Minuten", font=f_s, fill=(40, 40, 40))
             if ci == 0:
-                d.text((6, y0 + PH // 2 - 8), SPUREN[ri][:6], font=f_s, fill=(40, 40, 40))
                 for km in range(-8, 1):
                     yy = ypos(xb + km * 1000 / zelle)
                     if y0 <= yy <= y0 + PH:
@@ -165,9 +164,10 @@ def raumzeit(sz, sz_name):
 def detail(sz, sz_name):
     """Trajektorien des Animationsfensters (aus den fertigen JSON-Dateien) je Spur."""
     PW, PH = 640, 330
-    RL, RO, RU, RR = 78, 96, 50, 18
+    ZH = 300  # Höhe des Zoom-Panels
+    RL, RO, RU, RR = 78, 118, 50, 18
     luecke = 24
-    bild = Image.new("RGB", (RL + 2 * PW + luecke + RR, RO + 2 * PH + luecke + RU), (255, 255, 255))
+    bild = Image.new("RGB", (RL + 2 * PW + luecke + RR, RO + 2 * PH + ZH + 2 * luecke + RU), (255, 255, 255))
     d = ImageDraw.Draw(bild)
     f_t, f_k, f_s = font(22, True), font(15, True), font(13)
     d.text((RL, 16), f"Trajektorien (30 Hz) · {sz_name}", font=f_t, fill=(20, 20, 20))
@@ -218,6 +218,36 @@ def detail(sz, sz_name):
                         yy = y0 + PH - int(PH * (m - xmin) / (xmax - xmin))
                         d.line([x0 - 5, yy, x0, yy], fill=(60, 60, 60))
                         d.text((x0 - 56, yy - 8), f"{m:+d} m" if m else "0 m", font=f_s, fill=(40, 40, 40))
+        # Zoom auf die Engstelle: beide Spuren, Spur 0 dick, Spur 1 dünn
+        z0, z1 = -120.0, 60.0
+        y0 = RO + 2 * (PH + luecke)
+        d.rectangle([x0, y0, x0 + PW, y0 + ZH], fill=(250, 250, 250), outline=(60, 60, 60))
+        yb = y0 + ZH - int(ZH * (0 - z0) / (z1 - z0))
+        for xx in range(x0, x0 + PW, 8):
+            d.line([xx, yb, xx + 4, yb], fill=(0, 0, 0))
+        for fz in traj["fahrzeuge"]:
+            farbe_f = (230, 120, 20) if fz["h"] == 1 else (30, 100, 200)
+            pts0, pts1 = [], []
+            for k, (xv, sv) in enumerate(zip(fz["x"], fz["s"])):
+                if not (z0 <= xv <= z1):
+                    continue
+                px = x0 + int(PW * (fz["f"] + k) / (frames - 1))
+                py = y0 + ZH - int(ZH * (xv - z0) / (z1 - z0))
+                (pts0 if sv < 0.5 else pts1).append((px, py))
+            if len(pts0) > 1:
+                d.line(pts0, fill=farbe_f, width=2)
+            if len(pts1) > 1:
+                d.line(pts1, fill=farbe_f, width=1)
+        d.text((x0 + 6, y0 + 4), "Zoom Engstelle: Spur 0 dick, Spur 1 dünn", font=f_s, fill=(20, 20, 20))
+        for s_ in range(0, int(dauer) + 1, 3):
+            xx = x0 + int(PW * s_ / dauer)
+            d.line([xx, y0 + ZH, xx, y0 + ZH + 5], fill=(60, 60, 60))
+            d.text((xx - 6, y0 + ZH + 8), f"{s_}", font=f_s, fill=(40, 40, 40))
+        if ci == 0:
+            for m in range(-100, 61, 20):
+                yy = y0 + ZH - int(ZH * (m - z0) / (z1 - z0))
+                d.line([x0 - 5, yy, x0, yy], fill=(60, 60, 60))
+                d.text((x0 - 56, yy - 8), f"{m:+d} m" if m else "0 m", font=f_s, fill=(40, 40, 40))
     pfad = PLOTS / f"detail_{sz}.png"
     bild.save(pfad, optimize=True)
     return pfad

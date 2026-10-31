@@ -23,12 +23,25 @@ const lade = async (url) => {
   return r.json();
 };
 const hdr = (hex, k) => new THREE.Color(hex).multiplyScalar(k);
+/**
+ * Startzeit eines Worts; fehlt es (z. B. nach einer Skriptänderung), wird geschätzt:
+ * Anteil `anteil` der Segmentdauer. So bricht die Szene nie, und die Warnung zeigt, was nachzuziehen ist.
+ */
+function wortZeit(zp, seg, wort, anteil = 0.5, opt) {
+  try {
+    return zp.w(seg, wort, opt);
+  } catch (e) {
+    const g = zp.seg(seg);
+    console.warn(`Anker fehlt: ${seg}/${wort} → ${Math.round(anteil * 100)} % des Segments`);
+    return g.start + anteil * (g.ende - g.start);
+  }
+}
 
 // =====================================================================================
 // Welt 1: Punkte-Globus (hook, behauptung, kaeufer) und Schluss
 // =====================================================================================
 function baueGlobus(buehne, daten, zp) {
-  const W = (s, w, o) => zp.w(s, w, o);
+  const W = (s, w, a, o) => wortZeit(zp, s, w, a, o);
   const S = (id) => zp.seg(id);
   const szene = new THREE.Scene();
   szene.background = verlauf([[0, "#06112B"], [0.42, "#0E2862"], [0.7, "#0C2457"], [1, "#071530"]], { radial: [0.5, 0.55, 0.52, "rgba(70,130,255,0.42)"] });
@@ -59,14 +72,14 @@ function baueGlobus(buehne, daten, zp) {
     const d = Math.hypot(p.lat - 39, (p.lon + 97) * Math.cos((39 * Math.PI) / 180));
     return { i: p.i, d, farbe: new THREE.Color() };
   });
-  const usaStart = W("behauptung", "Ökonom") - 0.55;
-  const usaEnde = W("behauptung", "Ich") + 0.1;
-  const scanStart = W("behauptung", "hab's") + 0.25;
-  const scanDauer = 1.7;
+  const usaStart = W("behauptung", "USA,", 0.4) - 0.6;
+  const usaEnde = W("behauptung", "Also", 0.78) + 0.05;
+  const scanStart = W("behauptung", "rechnen", 0.82) + 0.05;
+  const scanDauer = 1.5;
   // Käufer: Schwerpunkt Nordamerika, Europa, Japan
   const gewicht = { 0: 0.08, 1: 0.95, 2: 0.5, 3: 1, 4: 1, 5: 1, 6: 0.45, 7: 0.28, 8: 0.22, 9: 0.3, 10: 0.06, 11: 0.14 };
-  const kStart = W("kaeufer", "25") - 0.25;
-  const kSplit = W("kaeufer", "60") - 0.1;
+  const kStart = W("kaeufer", "25", 0.08) - 0.25;
+  const kSplit = W("kaeufer", "Schüler", 0.55) - 0.1;
   const kaeufer = P.filter((p) => {
     let w = gewicht[p.region] ?? 0.08;
     if (p.region === 2 && p.lat > 56) w = 0.08;
@@ -220,7 +233,7 @@ function baueGlobus(buehne, daten, zp) {
 // Welt 2: Miniatur-Stadt (krank, kosten, dreh) und Rechts-Szene
 // =====================================================================================
 function baueStadt(buehne, zp) {
-  const W = (s, w, o) => zp.w(s, w, o);
+  const W = (s, w, a, o) => wortZeit(zp, s, w, a, o);
   const S = (id) => zp.seg(id);
   const szene = new THREE.Scene();
   szene.background = verlauf([[0, "#8EBBFF"], [0.45, "#CFE2FF"], [1, "#FFF1E2"]]);
@@ -335,7 +348,7 @@ function baueStadt(buehne, zp) {
   // Figuren mit Wegen vom Büro nach Hause
   const figFarben = [B.FARBE.orange, B.FARBE.blau, B.FARBE.gruen, B.FARBE.gelb, B.FARBE.koralle, "#7A5CFA", "#FFFFFF"];
   const ziele = haeuser.filter((h) => ["Q2", "Q3", "Q4"].includes(h.q));
-  const figStart = W("krank", "Wie") - 0.3;
+  const figStart = W("krank", "wie", 0.02) - 0.2;
   const figuren = ziele.map((h, i) => {
     const f = B.figur({ farbe: figFarben[i % figFarben.length] });
     szene.add(f);
@@ -387,8 +400,8 @@ function baueStadt(buehne, zp) {
   muenzen.receiveShadow = true;
   muenzen.frustumCulled = false;
   szene.add(muenzen);
-  const mStart = W("kosten", "erwirtschaftet") - 0.2;
-  const mEnde = W("kosten", "300") + 0.3;
+  const mStart = W("kosten", "Geld.", 0.05) - 0.1;
+  const mEnde = W("kosten", "300", 0.87) + 0.3;
   const fensterVorne = buero.fensterInfo.filter((f) => (f.seite === 0 || f.seite === 1) && f.etage >= 2);
   const muenzDaten = Array.from({ length: NM }, (_, k) => {
     const f = fensterVorne[Math.floor(hash(k, 61) * fensterVorne.length)];
@@ -451,8 +464,8 @@ function baueStadt(buehne, zp) {
   turm.receiveShadow = true;
   turm.frustumCulled = false;
   szene.add(turm);
-  const tBau0 = W("dreh", "Weltwirtschaft") - 0.15;
-  const tBau1 = W("dreh", "450") + 0.9;
+  const tBau0 = W("dreh", "Weltwirtschaft", 0.12) - 0.15;
+  const tBau1 = W("dreh", "450", 0.3) + 0.9;
   const LAGE = 0.102;
   const turmDaten = Array.from({ length: NT }, (_, k) => {
     const lage = Math.floor(k / 9);
@@ -489,12 +502,12 @@ function baueStadt(buehne, zp) {
   // Kamerafahrt (Position, Ziel) – an Wörter gebunden
   const kamera = new THREE.PerspectiveCamera(32, 1080 / 1920, 0.1, 600);
   const sK = S("krank").start;
-  const kw = (s, w) => W(s, w);
+  const kw = (s, w, a) => W(s, w, a);
   // Kamera in Kugelkoordinaten um ein Ziel: [Azimut, Höhenwinkel, Abstand, Ziel x, y, z]
   const fahrt = [
     { t: sK - 0.5, v: [0.5, 1.25, 95, 1.5, 0, -0.5] },
     { t: sK + 1.9, v: [0.42, 0.92, 44, 0.8, 0, 0.0], e: ease.outCubic },
-    { t: kw("krank", "Mitte:"), v: [0.02, 0.86, 39, 0.4, 0, 0.2], e: ease.linear },
+    { t: kw("krank", "Mitte.", 0.6), v: [0.02, 0.86, 39, 0.4, 0, 0.2], e: ease.linear },
     { t: S("kosten").start + 1.8, v: [0.62, 0.5, 21, 4.9, 1.7, -1.7], e: ease.inOutCubic },
     { t: kw("kosten", "300") + 0.6, v: [0.72, 0.4, 15.5, 5.7, 1.0, -1.1], e: ease.linear },
     { t: S("dreh").start + 0.9, v: [0.78, 0.2, 4.4, 6.35, 0.26, -0.85], e: ease.inOutCubic },
@@ -581,7 +594,7 @@ async function start() {
   try { timing = await lade("audio/timing.json"); }
   catch { try { timing = await lade("audio/timing_schaetzung.json"); } catch { timing = schaetzeTiming(skript); } }
   const zp = new Zeitplan(timing);
-  const W = (s, w, o) => zp.w(s, w, o);
+  const W = (s, w, a, o) => wortZeit(zp, s, w, a, o);
   const S = (id) => zp.seg(id);
 
   const buehne = new Buehne(document.getElementById("leinwand"), { msaa: MSAA, schatten: SCHATTEN > 0 });
@@ -625,38 +638,38 @@ async function start() {
     { text: "1 Mrd. $?", t: hk("eine"), klasse: "gelb" },
   ], { y: 280, groesse: 108, zeilenhoehe: 1.02, aus: S("behauptung").start + 0.6 }));
   const pille = el("div", "pille", "<span>0 $</span>", hud.wurzel);
-  hud.add(new Erscheinung(hud, pille, { x: 54, y: 650, ein: W("hook", "Milliarde?") - 0.35, aus: S("behauptung").start + 0.55, stil: "pop", feder: FEDER.knackig }));
-  hud.add(new Zaehler(hud, pille.querySelector("span"), { start: W("hook", "Milliarde?") - 0.3, dauer: 1.25, bis: 1e9, format: (n) => fmt.zahl(Math.round(n)) + " $" }));
+  hud.add(new Erscheinung(hud, pille, { x: 54, y: 650, ein: W("hook", "Milliarde", 0.6) - 0.35, aus: S("behauptung").start + 0.45, stil: "pop", feder: FEDER.knackig }));
+  hud.add(new Zaehler(hud, pille.querySelector("span"), { start: W("hook", "Milliarde", 0.6) - 0.3, dauer: 1.25, bis: 1e9, format: (n) => fmt.zahl(Math.round(n)) + " $" }));
 
   // Behauptung
-  const kb = karte(hud, { label: "Schätzung eines Ökonomen", wert: "USA: 1 Mrd. $", einheit: "", zusatz: "Schaden am Release-Tag?", x: 54, y: 300, ein: W("behauptung", "Ökonom") - 0.1, aus: W("behauptung", "Ich") - 0.05, stil: "kipp", farbe: "#FF7A1A" });
+  const kb = karte(hud, { label: "Schätzung eines Ökonomen", wert: "USA: 1 Mrd. $", einheit: "", zusatz: "Schaden an einem Tag?", x: 54, y: 300, ein: W("behauptung", "Ökonomen.", 0.12) - 0.1, aus: W("behauptung", "Also", 0.78) - 0.05, stil: "kipp", farbe: "#FF7A1A" });
   kb.e.querySelector(".wert").style.fontSize = "92px";
-  const simChip = chip(hud, { flagge: "SIM", text: "Ganze Welt", x: 54, y: 300, ein: W("behauptung", "simuliert.") - 0.55, aus: S("kaeufer").start + 0.1, stil: "pop", farbe: "#2F6FED", klasse: "gross" });
+  const simChip = chip(hud, { flagge: "SIM", text: "Ganze Welt", x: 54, y: 300, ein: W("behauptung", "ganze", 0.9) - 0.2, aus: S("kaeufer").start + 0.1, stil: "pop", farbe: "#2F6FED", klasse: "gross" });
 
   // Schritte
   hud.add(new SchrittAnzeige(hud, [
     { ab: S("kaeufer").start, bis: S("krank").start, titel: "Wer kauft?" },
-    { ab: S("krank").start, bis: S("kosten").start, titel: "Wer bleibt daheim?" },
+    { ab: S("krank").start, bis: S("kosten").start, titel: "Wer schwänzt?" },
     { ab: S("kosten").start, bis: S("dreh").start - 0.3, titel: "Was kostet das?" },
   ], { top: 240 }));
 
   // Käufer
-  const kk = karte(hud, { label: "Käufer am 1. Tag", wert: "0", einheit: "Mio.", x: 54, y: 330, ein: W("kaeufer", "25") - 0.3, aus: sKrank - 0.25, stil: "pop", farbe: "#FFD23F" });
-  hud.add(new Zaehler(hud, kk.zahl, { start: W("kaeufer", "25") - 0.2, dauer: 2.6, bis: 25, format: (n) => fmt.zahl(Math.round(n)) }));
-  const kc = chip(hud, { flagge: "× 60 %", text: "berufstätig", x: 54, y: 560, ein: W("kaeufer", "60") - 0.1, aus: sKrank - 0.25, farbe: "#FF7A1A", klasse: "gross" });
-  const kr = chip(hud, { flagge: "=", text: "15 Mio.", x: 54, y: 690, ein: W("kaeufer", "15") - 0.1, aus: sKrank - 0.25, farbe: "#19B36B", klasse: "gross" });
+  const kk = karte(hud, { label: "Käufer am 1. Tag", wert: "0", einheit: "Mio.", x: 54, y: 330, ein: W("kaeufer", "25", 0.08) - 0.3, aus: sKrank - 0.25, stil: "pop", farbe: "#FFD23F" });
+  hud.add(new Zaehler(hud, kk.zahl, { start: W("kaeufer", "25", 0.08) - 0.2, dauer: 2.2, bis: 25, format: (n) => fmt.zahl(Math.round(n)) }));
+  const kc = chip(hud, { flagge: "× 60 %", text: "berufstätig", x: 54, y: 560, ein: W("kaeufer", "arbeitet.", 0.45) - 0.1, aus: sKrank - 0.25, farbe: "#FF7A1A", klasse: "gross" });
+  const kr = chip(hud, { flagge: "=", text: "15 Mio. Berufstätige", x: 54, y: 690, ein: W("kaeufer", "15", 0.8) - 0.1, aus: sKrank - 0.25, farbe: "#19B36B", klasse: "gross" });
 
   // Krank
-  const uk = chip(hud, { flagge: "UK", text: "2 %", x: 54, y: 330, ein: W("krank", "2") - 0.1, aus: W("krank", "Mitte:") - 0.1, farbe: "#2F6FED" });
-  const us = chip(hud, { flagge: "USA", text: "10 %", x: 54, y: 440, ein: W("krank", "10") - 0.1, aus: W("krank", "Mitte:") - 0.1, farbe: "#FF7A1A" });
-  const mitte = chip(hud, { flagge: "Mitte", text: "5 % bleiben daheim", x: 54, y: 330, ein: W("krank", "Mitte:") + 0.05, aus: S("kosten").start + 0.05, farbe: "#19B36B", klasse: "gross" });
-  const fehl = karte(hud, { label: "Fehltage", wert: "0", x: 54, y: 470, ein: W("krank", "750.000") - 0.15, aus: zp.segEnde("kosten") - 0.35, stil: "pop", farbe: "#FF7A1A" });
-  hud.add(new Zaehler(hud, fehl.zahl, { start: W("krank", "750.000") - 0.1, dauer: 1.1, bis: 750000, format: (n) => fmt.zahl(Math.round(n / 1000) * 1000) }));
+  const uk = chip(hud, { flagge: "UK", text: "2 %", x: 54, y: 330, ein: W("krank", "2", 0.25) - 0.1, aus: W("krank", "Mitte.", 0.6) - 0.1, farbe: "#2F6FED" });
+  const us = chip(hud, { flagge: "USA", text: "10 %", x: 54, y: 440, ein: W("krank", "10", 0.45) - 0.1, aus: W("krank", "Mitte.", 0.6) - 0.1, farbe: "#FF7A1A" });
+  const mitte = chip(hud, { flagge: "Mitte", text: "5 % schwänzen", x: 54, y: 330, ein: W("krank", "5", 0.66) - 0.15, aus: S("kosten").start + 0.05, farbe: "#19B36B", klasse: "gross" });
+  const fehl = karte(hud, { label: "Leere Schreibtische", wert: "0", x: 54, y: 470, ein: W("krank", "750.000", 0.8) - 0.15, aus: zp.segEnde("kosten") - 0.35, stil: "pop", farbe: "#FF7A1A" });
+  hud.add(new Zaehler(hud, fehl.zahl, { start: W("krank", "750.000", 0.8) - 0.1, dauer: 1.1, bis: 750000, format: (n) => fmt.zahl(Math.round(n / 1000) * 1000) }));
 
   // Kosten
-  const proTag = chip(hud, { flagge: "× 400 $", text: "pro Arbeitstag", x: 54, y: 700, ein: W("kosten", "400") - 0.1, aus: zp.segEnde("kosten") - 0.35, farbe: "#2F6FED", klasse: "gross" });
-  const summe = karte(hud, { label: "Wertschöpfung, die fehlt", wert: "0", einheit: "Mio. $", x: 54, y: 830, ein: W("kosten", "300") - 0.15, aus: zp.segEnde("kosten") - 0.35, stil: "pop", farbe: "#19B36B" });
-  hud.add(new Zaehler(hud, summe.zahl, { start: W("kosten", "300") - 0.1, dauer: 1.0, bis: 300, format: (n) => fmt.zahl(Math.round(n)) }));
+  const proTag = chip(hud, { flagge: "× 400 $", text: "pro Arbeitstag", x: 54, y: 700, ein: W("kosten", "400", 0.48) - 0.1, aus: zp.segEnde("kosten") - 0.35, farbe: "#2F6FED", klasse: "gross" });
+  const summe = karte(hud, { label: "Wirtschaftsleistung weg", wert: "0", einheit: "Mio. $", x: 54, y: 830, ein: W("kosten", "Macht", 0.85) - 0.1, aus: zp.segEnde("kosten") - 0.35, stil: "pop", farbe: "#19B36B" });
+  hud.add(new Zaehler(hud, summe.zahl, { start: W("kosten", "300", 0.87) - 0.15, dauer: 1.0, bis: 300, format: (n) => fmt.zahl(Math.round(n)) }));
   // Bei Münzen-Szene Fehltage-Karte etwas kleiner nach oben
   fehl.e.style.transformOrigin = "left top";
 
@@ -676,16 +689,16 @@ async function start() {
   promille.style.fontSize = "120px";
   promille.style.height = "160px";
   promille.style.padding = "0 50px";
-  hud.add(new Erscheinung(hud, promille, { x: 54, y: 700, ein: W("dreh", "weniger") - 0.1, aus: zp.segEnde("dreh") - 0.25, stil: "zoom", feder: FEDER.knackig, klang: "boom" }));
-  chip(hud, { flagge: "↺", text: "meist nachgeholt", x: 54, y: 900, ein: W("dreh", "meiste") - 0.1, aus: zp.segEnde("dreh") - 0.25, farbe: "#19B36B" });
+  hud.add(new Erscheinung(hud, promille, { x: 54, y: 700, ein: W("dreh", "weniger", 0.53) - 0.1, aus: W("dreh", "Milliarde?", 0.82) - 0.35, stil: "zoom", feder: FEDER.knackig, klang: "boom" }));
+  chip(hud, { flagge: "↺", text: "meist nachgearbeitet", x: 54, y: 900, ein: W("dreh", "meiste", 0.67) - 0.1, aus: W("dreh", "Milliarde?", 0.82) - 0.35, farbe: "#19B36B" });
 
   // Recht
-  const rot = karte(hud, { label: "Krank vortäuschen", wert: "→ Kündigung möglich", x: 54, y: 380, ein: W("recht", "vortäuscht,") - 0.15, aus: sEnde - 0.3, stil: "links", farbe: "#F0443A", klasse: "farbig" });
+  const rot = karte(hud, { label: "Krank vortäuschen", wert: "→ Kündigung möglich", x: 54, y: 380, ein: W("recht", "vortäuscht,", 0.35) - 0.15, aus: sEnde - 0.3, stil: "links", farbe: "#F0443A", klasse: "farbig" });
   rot.e.style.background = "#F0443A";
   rot.e.querySelector(".wert").style.fontSize = "74px";
-  const gruen = karte(hud, { label: "Der sichere Weg", wert: "Urlaub ✓", x: 54, y: 640, ein: W("recht", "sichere") - 0.1, aus: sEnde - 0.3, stil: "rechts", farbe: "#19B36B", klasse: "farbig" });
+  const gruen = karte(hud, { label: "Der sichere Weg", wert: "Urlaub ✓", x: 54, y: 640, ein: W("recht", "sichere", 0.7) - 0.1, aus: sEnde - 0.3, stil: "rechts", farbe: "#19B36B", klasse: "farbig" });
   gruen.e.style.background = "#19B36B";
-  const teuer = chip(hud, { flagge: "!", text: "Teuer wird's für dich", x: 54, y: 260, ein: W("recht", "Teuer") + 0.15, aus: sEnde - 0.3, farbe: "#F0443A" });
+  const teuer = chip(hud, { flagge: "!", text: "Teuer wird's für dich", x: 54, y: 260, ein: W("recht", "Teuer", 0.02) + 0.15, aus: sEnde - 0.3, farbe: "#F0443A" });
 
   // Schlusskarte
   const schluss = el("div", "schluss", `<div class="logoGross">${WUERFEL}SIMULIERBAR</div><div class="aufruf"><span class="blase">${SPRECHBLASE}</span><span>Schreibt euren Simulations&shy;wunsch in die Kommentare</span></div>`, hud.wurzel);
@@ -710,9 +723,9 @@ async function start() {
   const klang = [...hud.klang, ...zl.klangEreignisse()];
   klang.push({ t: ST.tBau0, typ: "rumpeln", dauer: ST.tBau1 - ST.tBau0 });
   klang.push({ t: ST.morph + 0.15, typ: "pop" });
-  klang.push({ t: W("behauptung", "hab's") + 0.25, typ: "scan", dauer: 1.7 });
+  klang.push({ t: W("behauptung", "rechnen", 0.82) + 0.05, typ: "scan", dauer: 1.5 });
   for (let k = 0; k < 14; k++) klang.push({ t: 0.2 + k * 0.38, typ: "blip", lautstaerke: 0.4 + 0.04 * k });
-  for (let k = 0; k < 38; k++) klang.push({ t: W("kosten", "erwirtschaftet") + 0.8 + k * ((W("kosten", "300") - W("kosten", "erwirtschaftet")) / 38), typ: "muenze" });
+  for (let k = 0; k < 40; k++) klang.push({ t: W("kosten", "Geld.", 0.05) + 0.8 + k * ((W("kosten", "300", 0.87) - W("kosten", "Geld.", 0.05)) / 40), typ: "muenze" });
   klang.sort((a, b) => a.t - b.t);
 
   const gl = buehne.renderer.getContext();
