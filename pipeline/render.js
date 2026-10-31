@@ -8,6 +8,7 @@
 //   node render.js projekte/gta6-welt --zeiten 1.5,30     Standbilder (PNG) → out/gta6-welt/standbilder/
 //   Optionen: --fps 30  --format jpg|png  --qualitaet 95  --nur-fehlende  --ausgabe <ordner>
 //             --query "msaa=4&schatten=2048"  (Qualitätsschalter, die die Szene auswertet)
+//             --gpu   echte Grafikkarte statt SwiftShader (Windows-PC)
 //
 // Die Szene (szene.html) muss window.renderAt(t), window.dauer und window.__fertig bereitstellen.
 import http from "node:http";
@@ -46,6 +47,7 @@ function argumente(argv) {
     else if (x === "--nur-fehlende") a.nurFehlende = true;
     else if (x === "--ausgabe") a.ausgabe = n();
     else if (x === "--query") a.query = n();
+    else if (x === "--gpu") a.gpu = true;
     else if (!x.startsWith("--")) a.projekt = x;
   }
   if (!a.projekt) {
@@ -83,9 +85,11 @@ function timingVorbereiten(projektDir) {
   return `timing_schaetzung.json (geschätzt, ${t.dauer.toFixed(1)} s Sprechzeit)`;
 }
 
-async function oeffneSeite(chromium, url) {
+async function oeffneSeite(chromium, url, gpu = false) {
+  // Ohne GPU (Cloud): WebGL über SwiftShader. Mit --gpu: Grafikkarte des Rechners (z. B. Windows-PC).
+  const gl = gpu ? ["--use-gl=angle", "--ignore-gpu-blocklist"] : ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"];
   const browser = await chromium.launch({
-    args: ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist", "--disable-gpu-vsync", "--disable-frame-rate-limit", "--font-render-hinting=none", "--force-color-profile=srgb"],
+    args: [...gl, "--disable-gpu-vsync", "--disable-frame-rate-limit", "--font-render-hinting=none", "--force-color-profile=srgb"],
   });
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   page.on("pageerror", (f) => console.error("Seitenfehler:", f.message));
@@ -113,7 +117,7 @@ async function main() {
   console.log(`Projekt ${name} · ${timingInfo}`);
 
   // Erste Seite: Dauer und Klang-Ereignisse abfragen
-  const erste = await oeffneSeite(chromium, url);
+  const erste = await oeffneSeite(chromium, url, a.gpu);
   const dauer = await erste.page.evaluate(() => window.dauer);
   const fps = a.fps;
   const meta = await erste.page.evaluate(() => ({ dauer: window.dauer, klang: window.klangEreignisse || [], stimmEnde: window.stimmEnde }));
@@ -141,7 +145,7 @@ async function main() {
   let naechster = 0;
   const zeiten = { render: 0, bild: 0 };
   async function worker(nr, seite) {
-    const { browser, page } = seite || (await oeffneSeite(chromium, url));
+    const { browser, page } = seite || (await oeffneSeite(chromium, url, a.gpu));
     try {
       while (naechster < auftraege.length) {
         const job = auftraege[naechster++];
