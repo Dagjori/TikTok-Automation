@@ -16,3 +16,7 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-10-31 | Trend-Vorschläge Weihnachtsgeld und Mindestlohn angenommen, unter der Bedingung, dass jedes Video mindestens 1 Minute trägt | CRP verlangt Videos über 1 Minute |
 | 2026-10-31 | Kanalname „Der Testlauf“ abgelehnt; neuer Name wird aus Vorschlägen gewählt | Wunsch des Inhabers |
 | 2026-10-31 | Vor dem Pipeline-Bau gibt der Inhaber den Stil anhand von Beispiel-Skripten frei | Kontrolle von Ton und Stil |
+| 2026-10-31 | Kanalname: **Simulierbar** | Auswahl des Inhabers aus den Namensvorschlägen |
+| 2026-10-31 | Kein „1.000 Lebensläufe“-Merkmal: gleiches Format wie die Vorbilder, nur eigene Themen | Verkompliziert das Vorhaben, bringt keinen Vorteil |
+| 2026-10-31 | Jedes Video endet mit „Schreibt euren Simulationswunsch in die Kommentare.“ statt „Morgen: …“ | Zuschauer liefern die nächsten Themen |
+| 2026-10-31 | Erstes Video: GTA 6 und Krankfeiern, Wirtschaftsrechnung für Deutschland, Start vor dem Release am 19.11. | Idee des Inhabers, Durchbruchpotenzial (Trend-Score 85) |

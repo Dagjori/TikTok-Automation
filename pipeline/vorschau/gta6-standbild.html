@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Simulierbar – Vorschau GTA 6</title>
+<style>
+  :root {
+    --blau: #2f6fed;
+    --orange: #ff7a1a;
+    --gruen: #19b36b;
+    --tinte: #14171f;
+    --karte: rgba(255, 255, 255, 0.94);
+  }
+  html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #cfe8ff; font-family: "Inter", "DejaVu Sans", sans-serif; }
+  #szene { position: absolute; inset: 0; }
+  .hud { position: absolute; inset: 0; pointer-events: none; }
+
+  /* Sichere Zone: oben ~150 px, rechts ~150 px (TikTok-Buttons), unten ~400 px (Beschreibung) */
+  .kopf { position: absolute; top: 150px; left: 56px; right: 170px; display: flex; gap: 14px; align-items: center; }
+  .marke { background: var(--tinte); color: #fff; font-weight: 800; letter-spacing: 0.08em; font-size: 30px; padding: 12px 22px; border-radius: 999px; display: flex; align-items: center; gap: 12px; }
+  .marke .punkt { width: 18px; height: 18px; border-radius: 50%; background: var(--gruen); box-shadow: 0 0 0 5px rgba(25, 179, 107, 0.3); }
+  .rubrik { background: #fff; color: var(--tinte); font-weight: 800; font-size: 28px; padding: 12px 20px; border-radius: 999px; border: 3px solid var(--tinte); }
+  .uhr { margin-left: auto; background: rgba(20, 23, 31, 0.75); color: #fff; font-weight: 700; font-size: 26px; padding: 10px 18px; border-radius: 14px; font-variant-numeric: tabular-nums; }
+
+  .titel { position: absolute; top: 250px; left: 56px; right: 170px; background: var(--karte); border-radius: 30px; padding: 30px 34px; box-shadow: 0 18px 40px rgba(20, 23, 31, 0.18); }
+  .titel .zeile1 { font-family: "Inter Display", "Inter", sans-serif; font-weight: 700; font-size: 34px; color: var(--orange); margin-bottom: 6px; }
+  .titel .zeile2 { font-family: "Inter Display", "Inter", sans-serif; font-weight: 900; font-size: 60px; line-height: 1.05; color: var(--tinte); }
+
+  .zaehler { position: absolute; top: 640px; left: 56px; width: 560px; display: flex; flex-direction: column; gap: 18px; }
+  .stat { background: var(--karte); border-radius: 24px; padding: 20px 26px; box-shadow: 0 12px 30px rgba(20, 23, 31, 0.14); border-left: 12px solid var(--orange); }
+  .stat.blau { border-left-color: var(--blau); }
+  .stat .label { font-size: 26px; font-weight: 600; color: #4a5160; }
+  .stat .wert { font-family: "Inter Display", "Inter", sans-serif; font-size: 76px; font-weight: 900; color: var(--tinte); font-variant-numeric: tabular-nums; line-height: 1.05; }
+  .stat .wert small { font-size: 40px; font-weight: 800; }
+  .balken { margin-top: 10px; height: 18px; background: #e6e9ef; border-radius: 9px; overflow: hidden; }
+  .balken > div { height: 100%; width: 8%; background: var(--gruen); border-radius: 9px; }
+  .balken-text { margin-top: 8px; font-size: 24px; font-weight: 700; color: var(--gruen); }
+
+  .untertitel { position: absolute; left: 56px; right: 170px; top: 1300px; text-align: center; line-height: 1.5; }
+  .untertitel span { display: inline; font-family: "Inter Display", "Inter", sans-serif; font-weight: 900; font-size: 64px; line-height: 1.25; color: #fff; background: rgba(20, 23, 31, 0.82); padding: 6px 18px; border-radius: 16px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .untertitel span b { color: #ffd23f; }
+
+  .hinweis { position: absolute; top: 1052px; left: 56px; font-size: 22px; font-weight: 600; color: rgba(20, 23, 31, 0.65); background: rgba(255, 255, 255, 0.7); padding: 6px 14px; border-radius: 10px; }
+</style>
+<script type="importmap">{ "imports": { "three": "/node_modules/three/build/three.module.js" } }</script>
+</head>
+<body>
+<canvas id="szene" width="1080" height="1920"></canvas>
+<div class="hud">
+  <div class="kopf">
+    <div class="marke"><span class="punkt"></span>SIMULIERBAR</div>
+    <div class="rubrik">€ GELD</div>
+    <div class="uhr">Release-Tag · 07:30</div>
+  </div>
+  <div class="titel">
+    <div class="zeile1">GTA 6 erscheint am 19.11.</div>
+    <div class="zeile2">Was kostet es Deutschland, wenn alle krankfeiern?</div>
+  </div>
+  <div class="zaehler">
+    <div class="stat">
+      <div class="label">Krankmeldungen am Release-Tag</div>
+      <div class="wert">36.000</div>
+    </div>
+    <div class="stat blau">
+      <div class="label">Wirtschaftsleistung, die fehlt</div>
+      <div class="wert">13,5 <small>Mio. €</small></div>
+      <div class="balken"><div></div></div>
+      <div class="balken-text">= 0,08 % eines Arbeitstags</div>
+    </div>
+  </div>
+  <div class="hinweis">Vorschau · alle Zahlen Beispielwerte</div>
+  <div class="untertitel"><span>Klingt nach viel.</span><br><span><b>Ist es aber nicht.</b></span></div>
+</div>
+
+<script type="module">
+import * as THREE from "three";
+
+const canvas = document.getElementById("szene");
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1);
+renderer.setSize(1080, 1920, false);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+const scene = new THREE.Scene();
+
+// Himmel als Farbverlauf (warmer Nachmittag)
+const himmel = document.createElement("canvas");
+himmel.width = 2; himmel.height = 512;
+const hctx = himmel.getContext("2d");
+const verlauf = hctx.createLinearGradient(0, 0, 0, 512);
+verlauf.addColorStop(0, "#9fd3ff");
+verlauf.addColorStop(0.6, "#d9ecff");
+verlauf.addColorStop(1, "#ffe1c4");
+hctx.fillStyle = verlauf; hctx.fillRect(0, 0, 2, 512);
+scene.background = new THREE.CanvasTexture(himmel);
+scene.fog = new THREE.Fog(0xe9f1fb, 170, 320);
+
+const kamera = new THREE.PerspectiveCamera(30, 1080 / 1920, 0.1, 600);
+kamera.position.set(95, 120, 130);
+kamera.lookAt(-4, 0, 6);
+// Szene in den unteren, freien Bildteil schieben (oben liegen Titel und Zähler)
+kamera.setViewOffset(1080, 1920, 0, -330, 1080, 1920);
+
+scene.add(new THREE.HemisphereLight(0xffffff, 0xb9c7a8, 1.6));
+const sonne = new THREE.DirectionalLight(0xfff1dc, 2.4);
+sonne.position.set(-40, 70, 30);
+sonne.castShadow = true;
+sonne.shadow.mapSize.set(2048, 2048);
+Object.assign(sonne.shadow.camera, { left: -70, right: 70, top: 70, bottom: -70, far: 220 });
+scene.add(sonne);
+
+const mat = (farbe, extra = {}) => new THREE.MeshStandardMaterial({ color: farbe, roughness: 0.85, flatShading: true, ...extra });
+function box(b, h, t, farbe, x, y, z, extra) {
+  const m = new THREE.Mesh(new THREE.BoxGeometry(b, h, t), mat(farbe, extra));
+  m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true; scene.add(m); return m;
+}
+
+// Boden, Straßen, Wiese
+box(240, 1, 240, 0xcfe3b4, 0, -0.5, 0);
+box(240, 0.12, 9, 0x8d96a6, 0, 0.06, 6);
+box(9, 0.12, 240, 0x8d96a6, -6, 0.06, 0);
+for (let i = -110; i < 110; i += 8) box(3, 0.14, 0.4, 0xffffff, i, 0.13, 6);
+
+// Bürohochhaus in der Mitte: Fenster dunkel = leer
+const buero = new THREE.Group(); scene.add(buero);
+const turm = new THREE.Mesh(new THREE.BoxGeometry(14, 34, 14), mat(0xdfe5ee)); turm.position.set(10, 17, -12); turm.castShadow = true; buero.add(turm);
+for (let stock = 0; stock < 9; stock++) {
+  for (let s = 0; s < 4; s++) {
+    const leer = (stock * 4 + s) % 5 !== 0; // die meisten Plätze sind leer
+    const fenster = new THREE.Mesh(new THREE.BoxGeometry(2.2, 2, 0.2), mat(leer ? 0x3a4357 : 0xfff3b0, leer ? {} : { emissive: 0xffe58a, emissiveIntensity: 0.6 }));
+    fenster.position.set(4.6 + s * 3.6, 4 + stock * 3.4, -4.9); buero.add(fenster);
+    const fensterSeite = fenster.clone(); fensterSeite.rotation.y = Math.PI / 2; fensterSeite.position.set(17.1, 4 + stock * 3.4, -17.4 + s * 3.6); buero.add(fensterSeite);
+  }
+}
+box(15, 1.2, 15, 0xb7c0cc, 10, 34.6, -12);
+
+// Wohnhäuser mit blau leuchtenden Fenstern (Konsole an)
+const haeuser = [[-26, -6], [-34, 18], [-20, 26], [-40, -4], [22, 22], [34, 30], [-28, 40], [8, 38], [40, 12], [-46, 30]];
+const dachFarben = [0xff7a1a, 0x2f6fed, 0xe25b45, 0x19b36b, 0xffb020];
+haeuser.forEach(([x, z], i) => {
+  box(7, 5, 7, 0xf5efe6, x, 2.5, z);
+  const dach = new THREE.Mesh(new THREE.ConeGeometry(5.6, 3.2, 4), mat(dachFarben[i % dachFarben.length]));
+  dach.position.set(x, 6.6, z); dach.rotation.y = Math.PI / 4; dach.castShadow = true; scene.add(dach);
+  const tv = new THREE.Mesh(new THREE.BoxGeometry(2.4, 1.8, 0.2), new THREE.MeshStandardMaterial({ color: 0x55b8ff, emissive: 0x3aa0ff, emissiveIntensity: 1.4 }));
+  tv.position.set(x, 2.6, z + 3.55); scene.add(tv);
+  const licht = new THREE.PointLight(0x5ab4ff, 6, 9); licht.position.set(x, 2.6, z + 4.6); scene.add(licht);
+});
+
+// Bäume
+for (let i = 0; i < 26; i++) {
+  const x = (Math.sin(i * 12.9) * 0.5 + 0.5) * 120 - 60, z = (Math.sin(i * 78.2) * 0.5 + 0.5) * 120 - 60;
+  if (Math.abs(z - 6) < 7 || Math.abs(x + 6) < 7 || (Math.abs(x - 10) < 12 && Math.abs(z + 12) < 12)) continue;
+  box(0.8, 2, 0.8, 0x8a5a3b, x, 1, z);
+  const krone = new THREE.Mesh(new THREE.IcosahedronGeometry(2.2, 0), mat(0x4fae6a)); krone.position.set(x, 3.6, z); krone.castShadow = true; scene.add(krone);
+}
+
+// Menschen (orange) laufen vom Büro weg zu den Häusern
+const figurGeo = new THREE.CapsuleGeometry(0.55, 1.2, 4, 8);
+const kopfGeo = new THREE.SphereGeometry(0.5, 10, 8);
+for (let i = 0; i < 46; i++) {
+  const ziel = haeuser[i % haeuser.length];
+  const t = (i * 0.137) % 1;                     // Fortschritt auf dem Weg
+  const x = THREE.MathUtils.lerp(4, ziel[0], t) + Math.sin(i * 3.1) * 1.2;
+  const z = THREE.MathUtils.lerp(-2, ziel[1], t) + Math.cos(i * 2.3) * 1.2;
+  const koerper = new THREE.Mesh(figurGeo, mat(0xff7a1a)); koerper.position.set(x, 1.15, z); koerper.castShadow = true; scene.add(koerper);
+  const kopf = new THREE.Mesh(kopfGeo, mat(0xffd9b8)); kopf.position.set(x, 2.55, z); kopf.castShadow = true; scene.add(kopf);
+}
+// wenige blaue Figuren gehen trotzdem ins Büro
+for (let i = 0; i < 6; i++) {
+  const x = 2 + i * 1.6, z = 9 + (i % 2) * 1.4;
+  const k = new THREE.Mesh(figurGeo, mat(0x2f6fed)); k.position.set(x, 1.15, z); k.castShadow = true; scene.add(k);
+  const kp = new THREE.Mesh(kopfGeo, mat(0xffd9b8)); kp.position.set(x, 2.55, z); scene.add(kp);
+}
+
+// Autos auf der Straße
+[[-30, 4.2, 0xff7a1a], [-8, 7.8, 0x2f6fed], [26, 4.2, 0xffffff], [44, 7.8, 0x19b36b]].forEach(([x, z, f]) => {
+  box(4.4, 1.4, 2.2, f, x, 1.0, z); box(2.4, 1.0, 2.0, 0xdfe9f5, x - 0.2, 2.1, z);
+});
+
+renderer.render(scene, kamera);
+window.__fertig = true;
+</script>
+</body>
+</html>

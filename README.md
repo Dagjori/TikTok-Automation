@@ -1,4 +1,4 @@
-# TikTok Automation
+# TikTok Automation · Kanal „Simulierbar“
 
 Zentrale für den Aufbau und Betrieb gesichtsloser KI-Simulationsvideos (3D bzw. Daten-Animation, Deutsch) für TikTok und YouTube Shorts. Die Produktion läuft weitgehend automatisiert mit Claude Code.
 
@@ -23,6 +23,9 @@ Zentrale für den Aufbau und Betrieb gesichtsloser KI-Simulationsvideos (3D bzw.
 | [docs/05-startnische.md](docs/05-startnische.md) | Gewählte Nische „Der Testlauf – Alltag durchgerechnet“: Marke, Profil, Video-Bauplan, die ersten 30 Testläufe |
 | [docs/06-nischen-ranking.md](docs/06-nischen-ranking.md) | Ranking von 10 Nischen nach Themenvorrat, Nachschub, Beleg, Wettbewerb, Risiko, Aufwand |
 | [docs/07-trend-monitoring.md](docs/07-trend-monitoring.md) | Wöchentlicher Ablauf zur Markt- und Trendbeobachtung |
+| [docs/08-beispielskripte.md](docs/08-beispielskripte.md) | Stil-Regeln und Skripte (Video #1 GTA 6, Reißverschluss, Weihnachtsgeld, Mindestlohn) |
+| [docs/assets/](docs/assets/) | Vorschaubilder |
+| [pipeline/](pipeline/) | Render-Pipeline (Three.js, Headless-Chrome); `pipeline/vorschau/` = Standbild-Prototyp |
 | [data/](data/) | Datenstände der Kanal- und Videoanalyse; `data/ideen/`: je 150 Video-Ideen pro Nische (CSV); `data/monitor/`: beobachtete Kanäle und Verlauf |
 
 ## So arbeiten wir

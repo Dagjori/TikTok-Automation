@@ -3,41 +3,37 @@
 **Stand:** 31.10.2026
 
 ## Wo wir stehen
-- Recherche abgeschlossen: Analyse der Videos und Kanäle, Account-Strategie, Nischen, Claude-Kapazität (siehe `docs/`).
-- Repo als Projekt-Zentrale eingerichtet.
-- **Korrektur 30.10.:** Die Shop-Videos bleiben öffentlich. Markeninhalte lassen sich nicht auf „Nur ich“ stellen, und die CRP-Prüfung betrifft sie nicht (Details in `docs/02-account-strategie.md`).
-- **Schritt 1 erledigt (30.10.):** Das Konto ist privat (kein Business-Konto), der Account check ist ohne Befund (alles grün), Shop-Provisionen spielen keine Rolle.
-- **Themenvorrat gemessen (30.10.):** 9 Nischen mit je 150 eigenständigen Ideen gelistet (`data/ideen/`), Ranking in `docs/06-nischen-ranking.md`.
-- **Nische gewählt (31.10.):** „Alltag durchgerechnet“ (Arbeitstitel, GELD plus ALLTAG; Kanalname offen). Marke, Profil, Bauplan und die ersten 30 Testläufe stehen in `docs/05-startnische.md`.
-- **Trend-Radar täglich (31.10.):** geplante Aufgabe „Trend-Radar Alltag durchgerechnet“, jeden Tag 05:35 Uhr Berlin. Läuft in der festen Sitzung „Trend-Radar täglich (TikTok Automation)“ auf Sonnet 5.5. Erster Lauf erfolgreich gepusht. Ablauf und Raster in `docs/07-trend-monitoring.md`, Vorschläge (nur Score ≥ 70) in `docs/trends/vorschlaege.md`.
-- **Trend-Vorschläge angenommen (31.10.):** Weihnachtsgeld netto (83, posten 20.–28.11.), Mindestlohn 14,60 € (86, posten 28.12.–05.01.), jeweils unter der Bedingung mindestens 1 Minute (nachgewiesen in `docs/08-beispielskripte.md`).
-- **Neuer Trend-Vorschlag (31.10.):** Deutschlandticket 66,80 € ab 01.01.2027 (Score 79, posten 12.–20.12., spätestens 03.01.), Details in `docs/trends/vorschlaege.md`.
-- **Beispiel-Skripte (31.10.):** Reißverschluss (ALLTAG) und Weihnachtsgeld (GELD) in `docs/08-beispielskripte.md`. **Wartet auf Stil-Freigabe; erst danach Pipeline-Bau.**
-- **Neue Konkurrenz (31.10.):** @gegenprobe (in den letzten Stunden angelegt, „Alltagsmythen als Simulation“), @alltagsduell, @alltagsformel, @alltaginzahlen. Alle im Monitor. Die Nische zieht Nachahmer an, Tempo zählt.
-- **Ausstattung entschieden:** ElevenLabs Starter, Rendern auf dem Windows-PC des Inhabers. Creator Search Insights ist im Account nicht verfügbar (nur „Inspiration“).
-- **Zweiter Account:** Empfehlung „jetzt nicht, frühestens ab Woche 4“, stattdessen ein YouTube-Kanal ab Tag 1. Bester späterer Kandidat ist „Der Testlauf“ auf Englisch.
+- **Kanal:** **Simulierbar** (`@simulierbar`, laut öffentlicher Profilseite frei, in der App bestätigen). Nische „Alltag durchgerechnet“ mit den Rubriken 💶 GELD und ⏱️ ALLTAG (`docs/05-startnische.md`).
+- **Stil festgelegt (31.10.):**
+  - Format wie die Vorbilder, nur eigene Themen, kein „1.000 Lebensläufe“-Merkmal.
+  - Ende immer „Schreibt euren Simulationswunsch in die Kommentare.“
+  - Skripte: `docs/08-beispielskripte.md`. Vorschaubild: `docs/assets/vorschau-gta6.png`.
+- **Video #1 (31.10. beschlossen):** „GTA 6: Was kostet es Deutschland, wenn alle krankfeiern?“, **posten am 17.11.2026** (Release am 19.11.). Trend-Score 85, Skript-Entwurf steht.
+- **Trend-Radar:** läuft täglich um 05:35 Uhr in der festen Sitzung „Trend-Radar täglich (TikTok Automation)“ (Sonnet 5.5). Push-Benachrichtigung bei Vorschlägen mit Score ≥ 70 funktioniert. Vorschläge in `docs/trends/vorschlaege.md`.
+- **Angenommene Trend-Videos:** GTA 6 (17.11.), Weihnachtsgeld (20.–28.11.), Mindestlohn 14,60 € (28.12.–05.01.). **Offen:** Deutschlandticket (79 Punkte, 12.–20.12.).
+- **Konkurrenz:** Die Nische zieht Nachahmer an (@gegenprobe, @alltagsduell, @alltagsformel, @alltaginzahlen; alle im Monitor). Tempo zählt.
+- **Konto:** privat, Account check sauber. Shop-Videos bleiben öffentlich (Markeninhalte können nicht privat sein); keine neuen Shop-Videos.
+- **Ausstattung:** ElevenLabs Starter; Rendern zuerst in der Cloud-Sitzung (für den Start am 17.11.), danach auf dem Windows-PC des Inhabers. Creator Search Insights ist im Account nicht verfügbar.
+- **Grundlagen:** Analyse, Ranking und Ideenlisten in `docs/01`–`06` und `data/`.
 
 ## Nächste Schritte
 
 | # | Schritt | Wer | Zeit | Status |
 |---|---|---|---|---|
-| 1 | Kontotyp prüfen, Account check in TikTok Studio, Shop-Provisionen | Inhaber | 15 Min. | erledigt 30.10. |
-| 2 | Kanalnamen aus den Vorschlägen wählen und in der App prüfen, ob er frei ist (noch nicht umbenennen); Profil erst am Tag des ersten neuen Videos umbauen; keine neuen Shop-Videos mehr | Inhaber | 5 Min. (+30 Min. am Starttag) | offen |
-| 2b | Stil der Beispiel-Skripte freigeben bzw. Änderungen nennen (`docs/08-beispielskripte.md`, Tabelle „Stil-Regler“) | Inhaber | 10 Min. | offen |
-| 3 | Pipeline bauen: Simulations-Engine (Agenten plus Monte Carlo), Three.js-Vorlage (Teams, Zähler, Lebenslinien, Rubrik-Abzeichen), Stimme, Render, Untertitel; 3 Pilotvideos (#1 Reißverschluss, #2 200 € mehr Gehalt, #3 Supermarkt-Schlange) | Claude Code mit Inhaber | 6–8 Std. über 2 Wochen | offen |
-| 3b | Trend-Radar läuft täglich automatisch; Inhaber prüft nur die Vorschläge in `docs/trends/vorschlaege.md` bzw. die Push-Nachricht | Claude (automatisch) plus Inhaber | ca. 5 Min./Tag beim Inhaber | läuft |
-| 3c | ElevenLabs-Starter-Plan abschließen (Preis vorher auf elevenlabs.io prüfen), API-Key erzeugen, **nicht** ins Repo legen | Inhaber | 10 Min. | offen |
-| 4 | Impressum-Seite einrichten, Nebentätigkeit klären | Inhaber | 1 Std. | offen |
-| 5 | Testphase: 2 Videos pro Tag, 14 Tage, einmal pro Woche als Stapel einplanen | Claude plus Inhaber | 2–3 Std./Woche | offen |
-| 6 | Auswertung nach 20 Videos (Retention, Follower pro 1.000 Views, Gewinner-Themen) | Claude | 30 Min. | offen |
-| 7 | Ab 10k Followern plus 100k Views in 30 Tagen: CRP beantragen, Playlists anlegen | Inhaber | 15 Min. | offen |
-| 8 | Zweiter Account (Alltagsphysik) bzw. englischer Klon | Claude plus Inhaber | +1 Std./Woche | offen |
+| 1 | In der App prüfen, ob `@simulierbar` frei ist (noch nicht umbenennen) | Inhaber | 5 Min. | offen |
+| 2 | ElevenLabs Starter abschließen (Preis vorher prüfen), API-Key erzeugen, **nicht** in den Chat und nicht ins Repo | Inhaber | 10 Min. | offen |
+| 3 | **Pipeline-MVP für Video #1:** Rechenmodell GTA (Destatis-Zahlen, Umfragen), Three.js-Szene „Mini-Stadt“ als Animation, Zähler-Karten, Stimme, Untertitel, ffmpeg. Rendern in der Cloud | Claude Code mit Inhaber | ca. 4–6 Std. bis 14.11. | offen |
+| 4 | Video #1 abnehmen (Fakten, Ton, Länge ≥ 61 s) | Inhaber | 15 Min. | bis 15.11. |
+| 5 | Starttag 17.11.: Profil auf Simulierbar umbauen (Name, Bio, Bild, Impressum-Link), YouTube-Kanal „Simulierbar“ anlegen, Video #1 posten | Inhaber | 30 Min. | 17.11. |
+| 6 | Videos #2 (Reißverschluss) und Weihnachtsgeld produzieren, danach 1–2 Videos pro Tag | Claude plus Inhaber | 2–3 Std./Woche | ab 18.11. |
+| 7 | Windows-Setup für das lokale Rendern (Installationsskript) | Claude plus Inhaber | 30 Min. | nach dem Start |
+| 8 | Impressum-Seite einrichten, Nebentätigkeit klären | Inhaber | 1 Std. | vor 17.11. |
+| 9 | Auswertung nach 20 Videos (Retention, Follower pro 1.000 Views, Gewinner-Themen) | Claude | 30 Min. | später |
+| 10 | Ab 10k Followern plus 100k Views in 30 Tagen: CRP beantragen | Inhaber | 15 Min. | später |
 
 ## Offene Punkte
+- [ ] Deutschlandticket-Vorschlag (79) annehmen oder ablehnen
+- [ ] Stimme: männlich oder weiblich? Musik: leiser Hintergrund oder nur Soundeffekte?
 - [ ] Zeit- und Geldbudget bestätigen (angenommen: 5 Std./Woche Aufbau, 50 €/Monat)
-- [ ] Wie viel vom Max-Abo darf das Projekt nutzen (angenommen: 50 %)? Der tägliche Trend-Radar verbraucht ebenfalls Kontingent.
-- [ ] Kanalname wählen. Auf TikTok laut öffentlicher Profilseite nicht belegt (31.10.): Tausendmal getestet (`@tausendmalgetestet` / `@1000malgetestet`), Faktenduell (`@faktenduell`), Rechenlabor (`@rechenlabor`), Der Rechenweg (`@rechenweg` / `@derrechenweg`), Was rechnet sich? (`@wasrechnetsich`), Zahlenbeweis (`@zahlenbeweis`), Rechenduell (`@rechenduell`), Alltagsmathe (`@alltagsmathe`), Simulierbar (`@simulierbar`). Belegt: gegenprobe, alltagsduell, alltagsformel, alltaginzahlen, dertestlauf (abgelehnt)
-- [ ] Stil der Beispiel-Skripte freigeben
-- [ ] YouTube-Kanal „Der Testlauf“ anlegen (am Tag des ersten Videos)
-- [ ] Sprache: zuerst Deutsch, dann Englisch?
+- [ ] Wie viel vom Max-Abo darf das Projekt nutzen (angenommen: 50 %)? Der Trend-Radar verbraucht pro Lauf etwa so viel wie 0,60 $ zu API-Preisen.
 - [ ] Optional: TikTok-CDN-Domains freigeben, damit Claude Bilder und Transkripte der Vorbild-Videos auswerten kann

@@ -1,0 +1,10 @@
+{
+  "name": "simulierbar-pipeline",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Render-Pipeline für Simulierbar (Three.js-Szenen, Headless-Chrome, ffmpeg)",
+  "type": "module",
+  "dependencies": {
+    "three": "^0.170.0"
+  }
+}
