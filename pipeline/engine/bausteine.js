@@ -126,6 +126,14 @@ export function haus({ breite = 1.5, tiefe = 1.3, hoehe = 1.05, wand = FARBE.wei
   const seite = rundeBox(0.06, 0.34, 0.4, { farbe: FARBE.weiss, radius: 0.03 });
   seite.position.set(breite / 2 + 0.005, hoehe * 0.38, 0);
   g.add(seite);
+  // Rückfenster (TV-Leuchten auch von hinten sichtbar)
+  const hinten = rundeBox(0.46, 0.4, 0.06, { farbe: FARBE.weiss, radius: 0.035 });
+  hinten.position.set(-breite * 0.15, hoehe * 0.38, -tiefe / 2 - 0.005);
+  g.add(hinten);
+  const glas3 = new THREE.Mesh(new THREE.PlaneGeometry(0.36, 0.3), glasMat);
+  glas3.rotation.y = Math.PI;
+  glas3.position.set(-breite * 0.15, hoehe * 0.38 + 0.2, -tiefe / 2 - 0.037);
+  g.add(glas3);
   const glas2 = new THREE.Mesh(new THREE.PlaneGeometry(0.3, 0.26), glasMat);
   glas2.rotation.y = Math.PI / 2;
   glas2.position.set(breite / 2 + 0.037, hoehe * 0.38 + 0.17, 0);
@@ -343,7 +351,7 @@ export function buendelMaterialien() {
 
 // ---------- Straße ----------
 /** Gerade Straße entlang x mit Mittellinie (gestrichelt) und Bordsteinen. */
-export function strasse({ laenge = 20, breite = 2.2, gestrichelt = true, farbe = "#9BA3B4" } = {}) {
+export function strasse({ laenge = 20, breite = 2.2, gestrichelt = true, farbe = "#8C95AA" } = {}) {
   const g = new THREE.Group();
   const s = new THREE.Mesh(new THREE.BoxGeometry(laenge, 0.04, breite), mat(farbe, { rau: 0.9 }));
   s.position.y = 0.02;

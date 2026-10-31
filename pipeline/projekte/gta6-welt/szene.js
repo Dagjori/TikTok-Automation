@@ -40,8 +40,8 @@ function baueGlobus(buehne, daten, zp) {
   g.gruppe.add(scanRing);
 
   const P = g.punkte;
-  const ORANGE = hdr("#FF7A1A", 3.2);
-  const GELB = hdr("#FFD23F", 2.4);
+  const ORANGE = hdr("#FF7A1A", 2.1);
+  const GELB = hdr("#FFD23F", 1.55);
   const DUNKEL = hdr("#5B78B8", 0.55);
   const WEISS = hdr("#FFFFFF", 2.6);
   const CYAN = hdr("#8FE3FF", 2.2);
@@ -128,7 +128,7 @@ function baueGlobus(buehne, daten, zp) {
         const dt = t - t0;
         const puls = 1 + 0.22 * Math.sin(dt * 5.5 - u.d * 0.3);
         u.farbe.copy(ORANGE).multiplyScalar(0.8 + 0.25 * puls);
-        liste.push({ i: u.i, groesse: feder(dt, FEDER.pop) * 1.05 * puls * aus, farbe: u.farbe, ring: u.d < 3 ? (dt % 1.3) / 1.3 : undefined, ringFarbe: GELB });
+        liste.push({ i: u.i, groesse: feder(dt, FEDER.pop) * 0.78 * puls * aus, farbe: u.farbe, ring: u.d < 3 ? (dt % 1.3) / 1.3 : undefined, ringFarbe: GELB });
       }
     }
     // Scan
@@ -166,7 +166,7 @@ function baueGlobus(buehne, daten, zp) {
         }
       } else k.farbe.copy(GELB);
       liste.push({
-        i: k.i, groesse: s, farbe: k.farbe,
+        i: k.i, groesse: s * 0.85, farbe: k.farbe,
         ring: k.ring ? dt / 1.0 : k.job && split > 0 && hash(k.i, 27) < 0.25 ? split / 0.9 : undefined,
         strahl: k.strahl ? feder(dt, FEDER.weich) * (0.35 + 0.65 * Math.exp(-dt / 1.2)) : undefined,
       });
@@ -220,10 +220,10 @@ function baueStadt(buehne, zp) {
   const S = (id) => zp.seg(id);
   const szene = new THREE.Scene();
   szene.background = verlauf([[0, "#8EBBFF"], [0.45, "#CFE2FF"], [1, "#FFF1E2"]]);
-  szene.fog = new THREE.Fog("#DCE9F7", 45, 110);
-  lichtTag(szene, buehne.renderer, { sonnenRichtung: [0.55, 1.0, 0.62], sonnenStaerke: 2.7, bereich: 20, schattenKarte: 2048, schattenWeich: 5, ziel: [2.5, 0, -1], umgebungsStaerke: 0.5, himmelStaerke: 0.85 });
+  szene.fog = new THREE.Fog("#DCE9F7", 75, 170);
+  lichtTag(szene, buehne.renderer, { sonnenRichtung: [0.5, 1.0, 0.55], sonnenStaerke: 2.35, bereich: 20, schattenKarte: 2048, schattenWeich: 5, ziel: [2.5, 0, -1], umgebungsStaerke: 0.4, himmelStaerke: 0.6 });
 
-  const boden = new THREE.Mesh(new THREE.PlaneGeometry(260, 260), B.mat("#CFE5C2", { rau: 1 }));
+  const boden = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), B.mat("#A9D795", { rau: 1 }));
   boden.rotation.x = -Math.PI / 2;
   boden.receiveShadow = true;
   szene.add(boden);
@@ -235,7 +235,7 @@ function baueStadt(buehne, zp) {
   sz.rotation.y = Math.PI / 2;
   sz.position.x = -1.2;
   szene.add(sx, sz);
-  const kreuzung = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.056, 2.6), B.mat("#9BA3B4", { rau: 0.9 }));
+  const kreuzung = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.056, 2.6), B.mat("#8C95AA", { rau: 0.9 }));
   kreuzung.position.set(-1.2, 0.028, 1.6);
   kreuzung.receiveShadow = true;
   szene.add(kreuzung);
@@ -256,11 +256,11 @@ function baueStadt(buehne, zp) {
   // Blöcke (Gehweg-Platten) und Rasen
   const SOCKEL = 0.14;
   const block = (x0, x1, z0, z1, rasen = true) => {
-    const p = B.rundeBox(x1 - x0, SOCKEL, z1 - z0, { farbe: "#F4EEE4", radius: 0.12, segmente: 2 });
+    const p = B.rundeBox(x1 - x0, SOCKEL, z1 - z0, { farbe: "#EFE5D5", radius: 0.12, segmente: 2 });
     p.position.set((x0 + x1) / 2, 0, (z0 + z1) / 2);
     szene.add(p);
     if (rasen) {
-      const r = B.rundeBox(x1 - x0 - 1.3, 0.07, z1 - z0 - 1.3, { farbe: "#A8D88E", radius: 0.06, segmente: 2 });
+      const r = B.rundeBox(x1 - x0 - 1.3, 0.07, z1 - z0 - 1.3, { farbe: "#8FCB72", radius: 0.06, segmente: 2 });
       r.position.set((x0 + x1) / 2, SOCKEL - 0.01, (z0 + z1) / 2);
       szene.add(r);
     }
@@ -270,7 +270,7 @@ function baueStadt(buehne, zp) {
   block(-24, -2.65, 3.05, 24);
   block(0.25, 22, 3.05, 24);
   // Grünstreifen hinter dem Büro
-  const gs = B.rundeBox(19, 0.07, 6, { farbe: "#A8D88E", radius: 0.06, segmente: 2 });
+  const gs = B.rundeBox(19, 0.07, 6, { farbe: "#8FCB72", radius: 0.06, segmente: 2 });
   gs.position.set(11.5, SOCKEL - 0.01, -15);
   szene.add(gs);
   const RASEN = SOCKEL + 0.06;
@@ -483,22 +483,23 @@ function baueStadt(buehne, zp) {
   szene.add(turmSchatten);
 
   // Kamerafahrt (Position, Ziel) – an Wörter gebunden
-  const kamera = new THREE.PerspectiveCamera(30, 1080 / 1920, 0.1, 400);
+  const kamera = new THREE.PerspectiveCamera(32, 1080 / 1920, 0.1, 600);
   const sK = S("krank").start;
   const kw = (s, w) => W(s, w);
+  // Kamera in Kugelkoordinaten um ein Ziel: [Azimut, Höhenwinkel, Abstand, Ziel x, y, z]
   const fahrt = [
-    { t: sK - 0.5, v: [9, 46, 34, 1.5, 0, -0.5] },
-    { t: sK + 1.7, v: [-5.5, 17.5, 21, 0.6, 0, -0.6], e: ease.outCubic },
-    { t: kw("krank", "Mitte:"), v: [-10.5, 14.5, 17.5, 0.2, 0, -0.2], e: ease.linear },
-    { t: S("kosten").start + 1.6, v: [15.5, 9.2, 12.5, 4.6, 2.0, -1.6], e: ease.inOutCubic },
-    { t: kw("kosten", "300") + 0.6, v: [12.6, 5.6, 8.8, 5.6, 1.0, -1.0], e: ease.linear },
-    { t: S("dreh").start + 0.9, v: [8.6, 1.35, 2.5, 6.15, 0.3, -0.85], e: ease.inOutCubic },
-    { t: tBau0 + 0.1, v: [9.3, 1.75, 3.2, 6.6, 0.45, -1.0], e: ease.linear },
-    { t: tBau1 + 0.4, v: [27, 13.5, 25, 6.8, 7.4, -2.2], e: ease.inOutCubic },
-    { t: zp.segEnde("dreh") + 1, v: [29, 14.5, 27.5, 6.8, 7.8, -2.2], e: ease.linear },
+    { t: sK - 0.5, v: [0.5, 1.25, 95, 1.5, 0, -0.5] },
+    { t: sK + 1.9, v: [0.42, 0.92, 44, 0.8, 0, 0.0], e: ease.outCubic },
+    { t: kw("krank", "Mitte:"), v: [0.02, 0.86, 39, 0.4, 0, 0.2], e: ease.linear },
+    { t: S("kosten").start + 1.8, v: [0.62, 0.5, 21, 4.9, 1.7, -1.7], e: ease.inOutCubic },
+    { t: kw("kosten", "300") + 0.6, v: [0.72, 0.4, 15.5, 5.7, 1.0, -1.1], e: ease.linear },
+    { t: S("dreh").start + 0.9, v: [0.78, 0.2, 4.4, 6.35, 0.26, -0.85], e: ease.inOutCubic },
+    { t: tBau0 + 0.1, v: [0.74, 0.24, 5.4, 6.6, 0.42, -1.0], e: ease.linear },
+    { t: tBau1 + 0.4, v: [0.62, 0.3, 47, 7.8, 7.6, -2.2], e: ease.inOutCubic },
+    { t: zp.segEnde("dreh") + 1, v: [0.58, 0.31, 49, 7.8, 8.0, -2.2], e: ease.linear },
   ];
   const _z = V(0, 0, 0);
-  const post = { bloomStaerke: 0.55, bloomSchwelle: 1.1, tiltStaerke: 0.85, tiltBreite: 0.3, tiltMitte: 0.5, vignette: 0.24, koernung: 0.038, saettigung: 1.1, kontrast: 1.03, belichtung: 1.0 };
+  const post = { bloomStaerke: 0.6, bloomSchwelle: 1.2, tiltStaerke: 0.85, tiltBreite: 0.3, tiltMitte: 0.5, vignette: 0.24, koernung: 0.038, saettigung: 1.16, kontrast: 1.05, belichtung: 0.96 };
 
   function zustand(t) {
     // Fenster gehen aus, wenn die Figuren gehen
@@ -536,8 +537,8 @@ function baueStadt(buehne, zp) {
     update(t) {
       zustand(t);
       const v = keyframes(fahrt, t);
-      const wackeln = rauschen(t * 0.4, 7) * 0.08;
-      kamera.position.set(v[0] + wackeln, v[1] + rauschen(t * 0.37, 8) * 0.06, v[2]);
+      const az = v[0] + rauschen(t * 0.3, 7) * 0.006, el = v[1] + rauschen(t * 0.27, 8) * 0.004;
+      kamera.position.set(v[3] + v[2] * Math.cos(el) * Math.sin(az), v[4] + v[2] * Math.sin(el), v[5] + v[2] * Math.cos(el) * Math.cos(az));
       kamera.lookAt(_z.set(v[3], v[4], v[5]));
       kamera.updateMatrixWorld();
       // Tilt-Shift bei der Nahaufnahme stärker, beim Turm schwächer
@@ -708,10 +709,15 @@ async function start() {
   for (let k = 0; k < 38; k++) klang.push({ t: W("kosten", "erwirtschaftet") + 0.8 + k * ((W("kosten", "300") - W("kosten", "erwirtschaftet")) / 38), typ: "muenze" });
   klang.sort((a, b) => a.t - b.t);
 
+  const gl = buehne.renderer.getContext();
+  const px = new Uint8Array(4);
   window.renderAt = (t) => {
     zl.zeichne(t, Math.round(t * FPS));
     hud.update(t);
+    gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px); // wartet, bis die GPU fertig ist (ehrliche Zeitmessung)
   };
+  // Aufwärmen: alle Shader einmal kompilieren (Übergänge eingeschlossen)
+  for (const t of [0, sKrank, sKrank + 1, ST.tBau1 + 0.5, sRecht, sRecht + 1, sEnde, sEnde + 1]) window.renderAt(Math.min(t, zp.dauer - 0.05));
   window.dauer = zp.dauer;
   window.stimmEnde = zp.stimmEnde;
   window.klangEreignisse = klang;

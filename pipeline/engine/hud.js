@@ -243,10 +243,21 @@ export class Karaoke {
   }
   /** Wörter in Blöcke (max. 2 Zeilen) aufteilen. Erst nach document.fonts.ready aufrufen. */
   vorbereiten() {
-    const c = document.createElement("canvas").getContext("2d");
-    c.font = `900 ${this.groesse}px "SB Display"`;
-    const luft = this.groesse * 0.26;
-    const breite = (w) => c.measureText(w).width * 0.985 + luft;
+    // Wortbreiten im echten DOM messen (gleiche Klassen wie später)
+    const probe = el("div", "block", "", this.e);
+    probe.style.visibility = "hidden";
+    probe.style.position = "absolute";
+    const pz = el("div", "zeile", "", probe);
+    pz.style.fontSize = this.groesse + "px";
+    const cache = new Map();
+    const breite = (w) => {
+      if (!cache.has(w)) {
+        const s = el("span", "w", w, pz);
+        cache.set(w, s.getBoundingClientRect().width);
+        s.remove();
+      }
+      return cache.get(w);
+    };
     for (const seg of this.zp.segmente) {
       let block = null;
       const neuerBlock = () => {
@@ -276,6 +287,7 @@ export class Karaoke {
       });
       if (!block.woerter.length) this.bloecke.pop();
     }
+    probe.remove();
     // Zeiten und DOM
     this.bloecke.forEach((b, i) => {
       b.start = b.woerter[0].start;
@@ -286,6 +298,7 @@ export class Karaoke {
       b.marker = el("div", "marker", "", b.el);
       b.zeilen.forEach((z) => {
         const ze = el("div", "zeile", "", b.el);
+        ze.style.fontSize = this.groesse + "px";
         z.forEach((wi) => {
           b.woerter[wi].el = el("span", "w", b.woerter[wi].wort, ze);
         });
@@ -323,20 +336,20 @@ export class Karaoke {
         continue;
       }
       const jetzt = b.woerter[k].el;
-      const r1 = { x: jetzt.offsetLeft, y: jetzt.offsetTop + jetzt.parentElement.offsetTop - b.woerter[0].el.parentElement.offsetTop, w: jetzt.offsetWidth, h: jetzt.offsetHeight };
-      r1.y = jetzt.parentElement.offsetTop + jetzt.offsetTop;
+      // .w ist position:relative → offsetParent ist .block
+      const r1 = { x: jetzt.offsetLeft, y: jetzt.offsetTop, w: jetzt.offsetWidth, h: jetzt.offsetHeight };
       let r = r1;
       const p = feder(t - b.woerter[k].start, { frequenz: 5, daempfung: 0.75 });
       if (k > 0) {
         const vorher = b.woerter[k - 1].el;
-        const r0 = { x: vorher.offsetLeft, y: vorher.parentElement.offsetTop + vorher.offsetTop, w: vorher.offsetWidth, h: vorher.offsetHeight };
+        const r0 = { x: vorher.offsetLeft, y: vorher.offsetTop, w: vorher.offsetWidth, h: vorher.offsetHeight };
         if (Math.abs(r0.y - r1.y) < 2) r = { x: lerp(r0.x, r1.x, p), y: r1.y, w: lerp(r0.w, r1.w, p), h: r1.h };
       }
       const pop = k === 0 || r === r1 ? clamp(p * 1.4) : 1;
       b.marker.style.opacity = String(pop);
-      b.marker.style.left = r.x + "px";
+      b.marker.style.left = r.x + 3 + "px";
       b.marker.style.top = r.y + 4 + "px";
-      b.marker.style.width = r.w + "px";
+      b.marker.style.width = r.w - 6 + "px";
       b.marker.style.height = r.h - 6 + "px";
       b.marker.style.transform = `scale(${0.7 + 0.3 * pop})`;
     }

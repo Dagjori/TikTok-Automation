@@ -89,7 +89,7 @@ async function oeffneSeite(chromium, url) {
   page.on("pageerror", (f) => console.error("Seitenfehler:", f.message));
   page.on("console", (m) => { if (m.type() === "error" || m.type() === "warning") console.error("Konsole:", m.text()); });
   await page.goto(url);
-  await page.waitForFunction(() => window.__fertig === true || window.__fehler, null, { timeout: 180000 });
+  await page.waitForFunction(() => window.__fertig === true || window.__fehler, null, { timeout: 600000 });
   const fehler = await page.evaluate(() => window.__fehler);
   if (fehler) throw new Error("Szene meldet Fehler: " + fehler);
   return { browser, page };
@@ -146,7 +146,7 @@ async function main() {
         const t0 = Date.now();
         await page.evaluate((t) => window.renderAt(t), job.t);
         const t1 = Date.now();
-        const opt = { path: job.datei, type: job.format === "png" ? "png" : "jpeg", animations: "disabled", caret: "hide" };
+        const opt = { path: job.datei, type: job.format === "png" ? "png" : "jpeg", animations: "disabled", caret: "hide", timeout: 180000 };
         if (opt.type === "jpeg") opt.quality = a.qualitaet;
         await page.screenshot(opt);
         zeiten.render += t1 - t0;
