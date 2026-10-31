@@ -1,4 +1,4 @@
-# Startnische: „Der Testlauf“ – Alltag durchgerechnet
+# Startnische: „Alltag durchgerechnet“ (Arbeitstitel, Kanalname offen)
 
 **Stand:** 31.10.2026 · **Status:** vom Inhaber gewählt (Nische 1 aus [06-nischen-ranking.md](06-nischen-ranking.md))
 
@@ -28,8 +28,7 @@ Legende: **F** = belegter Fakt (mit Quelle), **S** = Schätzung, **A** = Annahme
 - **Risiko:** TikTok empfiehlt eine klare Nische. Ob dieselben Zuschauer beide Rubriken mögen, ist eine **Annahme**. Gegenmittel: gleiche Optik, gleiches Versprechen, gleicher Serien-Name. Prüfung nach 28 Videos (siehe „Auswertung“).
 
 ## Marke und Profil
-- **Name:** Der Testlauf
-- **Benutzername:** Wunsch `@dertestlauf`, Alternative `@der.testlauf`. Laut öffentlicher Profilseite nicht belegt (F, 30.10.). Ob frei, zeigt erst die App.
+- **Name:** offen. „Der Testlauf“ hat der Inhaber am 31.10. abgelehnt. Neue Vorschläge stehen in `STATUS.md`.
 - **Bio (maximal 80 Zeichen):**
 
 ```

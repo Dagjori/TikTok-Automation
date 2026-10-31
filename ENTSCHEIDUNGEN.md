@@ -13,3 +13,6 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-10-31 | Trend-Radar läuft täglich automatisch; Claude bewertet Trends selbst und schlägt nur Trends mit Potenzial vor | Das Tempo ist hoch, eine Woche ist zu lang |
 | 2026-10-31 | Stimme: ElevenLabs, kleinster bezahlter Plan; bei Bedarf der nächstgrößere | Kommerzielle Lizenz nötig, Kosten zuerst klein halten |
 | 2026-10-31 | Gerendert wird auf dem Windows-PC des Inhabers | Vorhandene Hardware |
+| 2026-10-31 | Trend-Vorschläge Weihnachtsgeld und Mindestlohn angenommen, unter der Bedingung, dass jedes Video mindestens 1 Minute trägt | CRP verlangt Videos über 1 Minute |
+| 2026-10-31 | Kanalname „Der Testlauf“ abgelehnt; neuer Name wird aus Vorschlägen gewählt | Wunsch des Inhabers |
+| 2026-10-31 | Vor dem Pipeline-Bau gibt der Inhaber den Stil anhand von Beispiel-Skripten frei | Kontrolle von Ton und Stil |

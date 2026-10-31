@@ -10,7 +10,9 @@
 - **Themenvorrat gemessen (30.10.):** 9 Nischen mit je 150 eigenständigen Ideen gelistet (`data/ideen/`), Ranking in `docs/06-nischen-ranking.md`.
 - **Nische gewählt (31.10.):** „Der Testlauf – Alltag durchgerechnet“ (GELD plus ALLTAG). Marke, Profil, Bauplan und die ersten 30 Testläufe stehen in `docs/05-startnische.md`.
 - **Trend-Radar täglich (31.10.):** geplante Aufgabe „Trend-Radar Der Testlauf“, jeden Tag 05:35 Uhr Berlin, Push-Benachrichtigung bei Funden. Ablauf und Raster in `docs/07-trend-monitoring.md`, Vorschläge (nur Score ≥ 70) in `docs/trends/vorschlaege.md`.
-- **Offene Trend-Vorschläge:** Weihnachtsgeld netto (83, posten 20.–28.11.), Mindestlohn 14,60 € (86, posten 28.12.–05.01.).
+- **Trend-Vorschläge angenommen (31.10.):** Weihnachtsgeld netto (83, posten 20.–28.11.), Mindestlohn 14,60 € (86, posten 28.12.–05.01.), jeweils unter der Bedingung mindestens 1 Minute (nachgewiesen in `docs/08-beispielskripte.md`).
+- **Beispiel-Skripte (31.10.):** Reißverschluss (ALLTAG) und Weihnachtsgeld (GELD) in `docs/08-beispielskripte.md`. **Wartet auf Stil-Freigabe; erst danach Pipeline-Bau.**
+- **Neue Konkurrenz (31.10.):** @gegenprobe (in den letzten Stunden angelegt, „Alltagsmythen als Simulation“), @alltagsduell, @alltagsformel, @alltaginzahlen. Alle im Monitor. Die Nische zieht Nachahmer an, Tempo zählt.
 - **Ausstattung entschieden:** ElevenLabs Starter, Rendern auf dem Windows-PC des Inhabers. Creator Search Insights ist im Account nicht verfügbar (nur „Inspiration“).
 - **Zweiter Account:** Empfehlung „jetzt nicht, frühestens ab Woche 4“, stattdessen ein YouTube-Kanal ab Tag 1. Bester späterer Kandidat ist „Der Testlauf“ auf Englisch.
 
@@ -19,7 +21,8 @@
 | # | Schritt | Wer | Zeit | Status |
 |---|---|---|---|---|
 | 1 | Kontotyp prüfen, Account check in TikTok Studio, Shop-Provisionen | Inhaber | 15 Min. | erledigt 30.10. |
-| 2 | In der App prüfen, ob `@dertestlauf` frei ist (noch nicht umbenennen); Profil erst am Tag des ersten neuen Videos umbauen; keine neuen Shop-Videos mehr | Inhaber | 5 Min. (+30 Min. am Starttag) | offen |
+| 2 | Kanalnamen aus den Vorschlägen wählen und in der App prüfen, ob er frei ist (noch nicht umbenennen); Profil erst am Tag des ersten neuen Videos umbauen; keine neuen Shop-Videos mehr | Inhaber | 5 Min. (+30 Min. am Starttag) | offen |
+| 2b | Stil der Beispiel-Skripte freigeben bzw. Änderungen nennen (`docs/08-beispielskripte.md`, Tabelle „Stil-Regler“) | Inhaber | 10 Min. | offen |
 | 3 | Pipeline bauen: Simulations-Engine (Agenten plus Monte Carlo), Three.js-Vorlage (Teams, Zähler, Lebenslinien, Rubrik-Abzeichen), Stimme, Render, Untertitel; 3 Pilotvideos (#1 Reißverschluss, #2 200 € mehr Gehalt, #3 Supermarkt-Schlange) | Claude Code mit Inhaber | 6–8 Std. über 2 Wochen | offen |
 | 3b | Trend-Radar läuft täglich automatisch; Inhaber prüft nur die Vorschläge in `docs/trends/vorschlaege.md` bzw. die Push-Nachricht | Claude (automatisch) plus Inhaber | ca. 5 Min./Tag beim Inhaber | läuft |
 | 3c | ElevenLabs-Starter-Plan abschließen (Preis vorher auf elevenlabs.io prüfen), API-Key erzeugen, **nicht** ins Repo legen | Inhaber | 10 Min. | offen |
@@ -32,8 +35,8 @@
 ## Offene Punkte
 - [ ] Zeit- und Geldbudget bestätigen (angenommen: 5 Std./Woche Aufbau, 50 €/Monat)
 - [ ] Wie viel vom Max-Abo darf das Projekt nutzen (angenommen: 50 %)? Der tägliche Trend-Radar verbraucht ebenfalls Kontingent.
-- [ ] Benutzername `@dertestlauf` (Alternative `@der.testlauf`) in der App prüfen; ob frei, zeigt erst die App
+- [ ] Kanalname wählen. Auf TikTok laut öffentlicher Profilseite nicht belegt (31.10.): Tausendmal getestet (`@tausendmalgetestet` / `@1000malgetestet`), Faktenduell (`@faktenduell`), Rechenlabor (`@rechenlabor`), Der Rechenweg (`@rechenweg` / `@derrechenweg`), Was rechnet sich? (`@wasrechnetsich`), Zahlenbeweis (`@zahlenbeweis`), Rechenduell (`@rechenduell`), Alltagsmathe (`@alltagsmathe`), Simulierbar (`@simulierbar`). Belegt: gegenprobe, alltagsduell, alltagsformel, alltaginzahlen, dertestlauf (abgelehnt)
+- [ ] Stil der Beispiel-Skripte freigeben
 - [ ] YouTube-Kanal „Der Testlauf“ anlegen (am Tag des ersten Videos)
-- [ ] Trend-Vorschläge Weihnachtsgeld und Mindestlohn annehmen oder ablehnen (`docs/trends/vorschlaege.md`)
 - [ ] Sprache: zuerst Deutsch, dann Englisch?
 - [ ] Optional: TikTok-CDN-Domains freigeben, damit Claude Bilder und Transkripte der Vorbild-Videos auswerten kann

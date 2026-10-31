@@ -3,7 +3,7 @@
 Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Projektwissen liegt in `docs/`.
 
 ## Projekt in Kürze
-- **Nische (gewählt 31.10.2026):** „Der Testlauf – Alltag durchgerechnet“ mit zwei Rubriken: **💶 GELD** (Geldentscheidungen als Simulation von 1.000 Lebensläufen) und **⏱️ ALLTAG** (Strategien in Verkehr, Warteschlangen, Zuhause, Spielen, Sport, simuliert). Details: `docs/05-startnische.md`, Ideen: `data/ideen/geld-duell.csv` und `data/ideen/testlauf.csv`.
+- **Nische (gewählt 31.10.2026):** „Alltag durchgerechnet“ (Arbeitstitel, Kanalname noch offen) mit zwei Rubriken: **💶 GELD** (Geldentscheidungen als Simulation von 1.000 Lebensläufen) und **⏱️ ALLTAG** (Strategien in Verkehr, Warteschlangen, Zuhause, Spielen, Sport, simuliert). Details: `docs/05-startnische.md`, Ideen: `data/ideen/geld-duell.csv` und `data/ideen/testlauf.csv`.
 - **Format:** gesichtslose 3D- bzw. Daten-Simulationen auf Deutsch, 70–90 s, KI-Stimme, Untertitel.
 - **Kanäle:** bestehender TikTok-Account des Inhabers (ca. 3k Follower, früher TikTok-Shop-Affiliate). YouTube Shorts als Zweitverwertung.
 - **Ziel:** 10k Follower, Creator Rewards Program (CRP), danach Ausbau (zweite Nische, englische Version).
