@@ -18,7 +18,7 @@
 | Ton | locker, „ich hab's simuliert“, leichter Humor, du-Anrede |
 | Ende | **immer genau dieser eine Satz: „Schreibt euren Simulationswunsch in die Kommentare.“** (kein „Morgen: …“) |
 | Länge | ca. 65–75 s Sprechtext, mindestens 61 s Video |
-| Zahlen | gerundet, Quellen und Annahmen in der Beschreibung |
+| Zahlen | gerundet; Quellen und Annahmen nur intern in `skript.json` |
 | Offen | Stimme (männlich oder weiblich), Musik (leiser Hintergrund oder nur Soundeffekte) |
 
 ---
@@ -37,12 +37,10 @@
 | 66–76 s | Rote Karte „Fristlose Kündigung“ neben grüner Karte „Urlaub“ | „Krank spielen → Kündigung möglich“ | „Teuer wird's eher für dich: Wer eine Krankheit nur vortäuscht, riskiert die fristlose Kündigung. Der sichere Weg heißt Urlaub.“ |
 | 76–79 s | Logo Simulierbar | „Dein Simulationswunsch? 👇“ | „Schreibt euren Simulationswunsch in die Kommentare.“ |
 
-**Beschreibung**
+**Caption** (Format laut CLAUDE.md)
 
 ```
-GTA 6 kommt am 19.11. – kostet das krankfeiern Deutschland Millionen? 🎮💶 Nachgerechnet mit echten Zahlen 👇
-Annahmen: [Käufer, Berufstätige, Krankmeldequote]. Quellen: Destatis, Umfragen YouGov/GameSquare. Vereinfachte Modellrechnung. Stimme: KI.
-#gta6 #gta #wirtschaft #arbeit
+Kostet GTA 6 Deutschland wirklich Millionen, weil alle krankfeiern? 🎮💶 Ich hab's durchgerechnet. Was schätzt du? 👇 #gta6 #gta #arbeit #wissen #simulation
 ```
 
 **Faktenlage und Prüfliste**

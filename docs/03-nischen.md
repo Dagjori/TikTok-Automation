@@ -54,7 +54,7 @@ Legende: **F** = belegter Fakt (Profil- bzw. Videodaten vom 29.10.2026), **S** =
 - **Zeitbedarf:** nach dem Aufbau 2–3 Stunden pro Woche für Qualitätskontrolle und Planung (S).
 - **Risiken:**
   - TikTok: „Misuse of authoritative sources … selectively referencing certain scientific data“.
-  - Keine Produktempfehlung (Anlageberatung bzw. Erlaubnisfrage nach § 34f GewO vermeiden): nur Modellrechnungen mit offenen Annahmen und dem Hinweis „keine Anlageberatung“.
+  - Keine Produktempfehlung (Anlageberatung bzw. Erlaubnisfrage nach § 34f GewO vermeiden): nur Modellrechnungen, keine Produktempfehlungen (Hinweistext in der Caption seit 31.10. nicht mehr verwendet).
   - Werbung bzw. Affiliate kennzeichnen.
 - **Exit-Potenzial:** Der TikTok-Account selbst ist schlecht verkaufbar, weil die CRP-Auszahlung an deine verifizierte Identität gebunden ist. Verkaufbar sind Marke, YouTube-Kanal, Rechner bzw. Produkte, E-Mail-Liste und die Pipeline (A).
 - **Wichtig für Affiliate bzw. Rechner:** TikTok drosselt die Sichtbarkeit von Inhalten, die zum Kauf außerhalb von TikTok führen, wenn TikTok Shop im Markt verfügbar ist (DE: ja) (F, CG). Deshalb kein Kaufaufruf im Video, Angebote nur über die Bio, YouTube und die eigene Website.

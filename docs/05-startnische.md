@@ -56,9 +56,9 @@ Ich simuliere deinen Alltag mit echten Zahlen 💶⏱️ Dein Wunsch? Kommentar 
 **Regeln**
 - Jedes Video ist in sich abgeschlossen, keine Cliffhanger-Teile.
 - Mindestens 61 s, 1080×1920.
-- Finanzthemen nur als Modellrechnung mit offenen Annahmen und dem Hinweis „keine Anlageberatung“.
+- Finanzthemen nur als Modellrechnung, keine konkreten Produkt- oder Anlageempfehlungen.
 - Keine Anbieter und keine Kaufaufrufe.
-- In der Beschreibung „Stimme: KI“ und „vereinfachtes Modell, Quelle: …“ angeben.
+- Caption im festen Kurzformat (CLAUDE.md), ohne Quellen und Hinweise. Pflicht ist nur der KI-Schalter beim Posten (Entscheidung 31.10.).
 
 ## Die ersten 30 Testläufe (im Wechsel, nach Kalender)
 

@@ -10,7 +10,7 @@
 ## TikTok (Browser, TikTok Studio)
 1. Video-Datei (MP4) auf den Rechner bzw. das Handy laden.
 2. Am PC `https://www.tiktok.com/tiktokstudio/upload` öffnen → **Video auswählen**.
-3. **Beschreibung:** Text aus dem Abschnitt „Texte zum Kopieren“ unten komplett einfügen (inklusive Hashtags).
+3. **Caption:** Text aus dem Abschnitt „Texte zum Kopieren“ unten einfügen (eine Zeile inklusive Hashtags, Format laut CLAUDE.md). Keine Quellen, keine Hinweise.
 4. **Titelbild:** „Titelbild bearbeiten“ → das Bild aus den ersten Sekunden wählen (Titel ist dort groß im Bild). Keinen zusätzlichen Text darüberlegen.
 5. **Wer kann das sehen:** Alle. Kommentare: an. Duett und Stitch: an.
 6. **„Mehr anzeigen“ bzw. Erweiterte Einstellungen:**
@@ -25,7 +25,7 @@
 ## YouTube Shorts (Browser, YouTube Studio)
 1. `https://studio.youtube.com` → **Erstellen** → **Videos hochladen** → MP4 wählen. Hochformat und höchstens 3 Minuten werden automatisch ein Short. ([YouTube Hilfe](https://support.google.com/youtube/answer/15424877?hl=de))
 2. **Titel:** aus „Texte zum Kopieren“ (höchstens 100 Zeichen).
-3. **Beschreibung:** derselbe Text wie bei TikTok.
+3. **Beschreibung:** dieselbe Caption wie bei TikTok.
 4. **Zielgruppe:** „Nein, es ist nicht speziell für Kinder“.
 5. **Mehr anzeigen → Veränderte oder synthetische Inhalte: Ja.** Vorsichtige Auslegung: Rein animierte Inhalte sind nach der YouTube-Hilfe ausgenommen, aber YouTube nennt eine synthetische Erzählstimme in seinem Blog als Beispiel. Das Label erscheint nur in der erweiterten Beschreibung. ([YouTube Hilfe](https://support.google.com/youtube/answer/14328491?hl=de), [YouTube Blog](https://blog.youtube/news-and-events/disclosing-ai-generated-content/))
 6. **Sprache:** Deutsch. Untertitel sind schon im Bild.
@@ -36,23 +36,19 @@
 ### Video 1: GTA 6 weltweit
 - **Datei:** `pipeline/out/gta6-welt/gta6-welt.mp4`
 - **YouTube-Titel:** `GTA 6: Kostet das Krankfeiern die Welt eine Milliarde? #shorts`
-- **Beschreibung (TikTok und YouTube):**
+- **Caption (TikTok und YouTube):**
 
 ```
-GTA 6 kommt am 19.11. und angeblich kostet das Krankfeiern 1 Milliarde Dollar. Ich hab's weltweit durchgerechnet 🎮💸 Glaubst du an die Milliarde? 👇
-Modellrechnung: 25 Mio. Käufer, 60 % berufstätig, 5 % fehlen, ca. 400 $ pro Arbeitstag. Quellen: J. G. Montalvo (UPF), GameSquare, One Day Agency/YouGov, Take-Two. Keine Rechts- oder Anlageberatung. Stimme: KI.
-#gta6 #gta #wirtschaft #arbeit #simulation
+Kostet GTA 6 die Welt wirklich eine Milliarde, weil alle krankfeiern? 🎮💸 Ich hab's durchgerechnet. Was schätzt du? 👇 #gta6 #gta #wissen #wirtschaft #simulation
 ```
 
 ### Video 2: Reißverschluss
 - **Datei:** `pipeline/out/reissverschluss/reissverschluss.mp4`
 - **YouTube-Titel:** `Früh einordnen oder bis zum Ende? Simuliert #shorts`
-- **Beschreibung (TikTok und YouTube):**
+- **Caption (TikTok und YouTube):**
 
 ```
-Früh einordnen oder bis zum Ende fahren? 🚗🚧 Ich hab's simuliert. Team früh oder Team Reißverschluss? 👇
-Modell: 50 Läufe je Verkehrslage, Rückstau nach 30 Min. Quellen: MnDOT „Zipper Merge“, § 7 Abs. 4 StVO. Vereinfachte Modellrechnung. Stimme: KI.
-#reißverschlussverfahren #stau #autofahren #baustelle #simulation
+Früh einordnen oder bis zum Ende fahren? 🚗 Ich hab's simuliert. Team früh oder Team Reißverschluss? 👇 #reißverschlussverfahren #stau #autofahren #wissen #simulation
 ```
 
-Die Quellen-Links im Detail stehen in `pipeline/projekte/<projekt>/skript.json` unter `quellen` (für Rückfragen in den Kommentaren).
+Die Quellen stehen nur intern in `pipeline/projekte/<projekt>/skript.json` unter `quellen`, falls jemand in den Kommentaren nachfragt.

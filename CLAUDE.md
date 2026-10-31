@@ -32,7 +32,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Pro
   - Kein eigenes Bot-Posting, keine inoffiziellen Tools. Die TikTok Content Posting API postet ohne Audit nur privat. Die Community Guidelines verbieten „automation tools, scripts … designed to bypass our systems“.
 - **Kein Umgehen von Bot-Schutz.** Für Recherche nur öffentliche Seiten abrufen, keine internen TikTok-APIs.
 - **Videos:**
-  - mindestens 61 s, 1080×1920, eigene Rechnung bzw. Simulation, Quellen nennen
+  - mindestens 61 s, 1080×1920, eigene Rechnung bzw. Simulation. Quellen recherchiert Claude und dokumentiert sie nur intern in `skript.json` (nicht im Video, nicht in der Caption)
   - Hook in den ersten 3 Sekunden, Auflösung im selben Video
   - Ende immer genau mit: „Schreibt euren Simulationswunsch in die Kommentare.“ (kein „Morgen: …“)
   - Stil und Beispiele: `docs/08-beispielskripte.md`
@@ -41,7 +41,11 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Pro
   - keine künstlichen Cliffhanger-Teile (TikTok: Clickbait ist ein CRP-Ausschlussgrund)
 - **Kein Kaufaufruf im Video.** TikTok drosselt in TikTok-Shop-Märkten Inhalte, die zum Kauf außerhalb von TikTok führen.
 - **Profil:** keine E-Mail und keine Telefonnummer in der Bio (CRP-Kriterium „Advertising“). Das Impressum nur als Link.
-- **Kennzeichnung:** KI-Stimme in der Beschreibung nennen. TikTok-KI-Label bei realistisch wirkenden Szenen. Finanzthemen nur als Modellrechnung mit offenen Annahmen und dem Hinweis „keine Anlageberatung“.
+- **Caption (TikTok und YouTube gleich), genau dieses Format, eine Zeile** (Entscheidung 31.10.):
+  - `Hook-Frage mit Suchbegriff? Emoji Ich hab's simuliert. (bzw. durchgerechnet.) Kommentarfrage? 👇 #thema1 #thema2 #thema3 #wissen #simulation`
+  - Beispiel: „Früh einordnen oder bis zum Ende fahren? 🚗 Ich hab's simuliert. Team früh oder Team Reißverschluss? 👇 #reißverschlussverfahren #stau #autofahren #wissen #simulation“
+  - höchstens ca. 150 Zeichen plus 5 Hashtags; kein #fyp/#viral; keine Quellen, keine Annahmen, keine Hinweise wie „Stimme: KI“ oder „keine Anlageberatung“ (nicht verpflichtend, kostet nur Arbeit)
+- **Kennzeichnung:** Beim Posten immer den Schalter „KI-generierte Inhalte“ AN (TikTok) bzw. „Veränderte oder synthetische Inhalte: Ja“ (YouTube). Das ist die Pflicht-Kennzeichnung. Finanzthemen nur als Modellrechnung, nie konkrete Produkt- oder Anlageempfehlungen.
 - **Keine neuen TikTok-Shop-Videos** auf dem Hauptaccount (Werbevideos sind nicht CRP-fähig).
 
 ## Technik
