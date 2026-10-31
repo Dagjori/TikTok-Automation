@@ -1,0 +1,979 @@
+{
+ "stimme": "zfc8CJQpe8Kqyl0vvCzo",
+ "voice_id": "zfc8CJQpe8Kqyl0vvCzo",
+ "modell": "eleven_multilingual_v2",
+ "dauer": 78.157,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Die Drängler, die bis ganz vorne fahren, haben recht. Ich hab's simuliert.",
+   "start": 0.0,
+   "ende": 3.684,
+   "woerter": [
+    {
+     "wort": "Die",
+     "start": 0.0,
+     "ende": 0.174
+    },
+    {
+     "wort": "Drängler,",
+     "start": 0.209,
+     "ende": 0.569
+    },
+    {
+     "wort": "die",
+     "start": 0.592,
+     "ende": 0.673
+    },
+    {
+     "wort": "bis",
+     "start": 0.708,
+     "ende": 0.848
+    },
+    {
+     "wort": "ganz",
+     "start": 0.917,
+     "ende": 1.103
+    },
+    {
+     "wort": "vorne",
+     "start": 1.149,
+     "ende": 1.37
+    },
+    {
+     "wort": "fahren,",
+     "start": 1.416,
+     "ende": 1.649
+    },
+    {
+     "wort": "haben",
+     "start": 1.683,
+     "ende": 1.869
+    },
+    {
+     "wort": "recht.",
+     "start": 1.927,
+     "ende": 2.299
+    },
+    {
+     "wort": "Ich",
+     "start": 2.473,
+     "ende": 2.589
+    },
+    {
+     "wort": "hab's",
+     "start": 2.624,
+     "ende": 2.763
+    },
+    {
+     "wort": "simuliert.",
+     "start": 2.786,
+     "ende": 3.669
+    }
+   ]
+  },
+  {
+   "id": "setup",
+   "text": "Zwei gleiche Baustellen. Links ordnen sich alle früh ein, höflich, wie man's gelernt hat. Rechts fahren alle bis zur Engstelle und fädeln dann abwechselnd ein.",
+   "start": 3.984,
+   "ende": 12.919,
+   "woerter": [
+    {
+     "wort": "Zwei",
+     "start": 3.984,
+     "ende": 4.239
+    },
+    {
+     "wort": "gleiche",
+     "start": 4.274,
+     "ende": 4.553
+    },
+    {
+     "wort": "Baustellen.",
+     "start": 4.599,
+     "ende": 5.191
+    },
+    {
+     "wort": "Links",
+     "start": 5.342,
+     "ende": 5.702
+    },
+    {
+     "wort": "ordnen",
+     "start": 5.818,
+     "ende": 6.085
+    },
+    {
+     "wort": "sich",
+     "start": 6.12,
+     "ende": 6.248
+    },
+    {
+     "wort": "alle",
+     "start": 6.318,
+     "ende": 6.457
+    },
+    {
+     "wort": "früh",
+     "start": 6.503,
+     "ende": 6.701
+    },
+    {
+     "wort": "ein,",
+     "start": 6.736,
+     "ende": 7.107
+    },
+    {
+     "wort": "höflich,",
+     "start": 7.2,
+     "ende": 7.862
+    },
+    {
+     "wort": "wie",
+     "start": 7.908,
+     "ende": 8.036
+    },
+    {
+     "wort": "man's",
+     "start": 8.071,
+     "ende": 8.222
+    },
+    {
+     "wort": "gelernt",
+     "start": 8.256,
+     "ende": 8.582
+    },
+    {
+     "wort": "hat.",
+     "start": 8.616,
+     "ende": 8.86
+    },
+    {
+     "wort": "Rechts",
+     "start": 9.104,
+     "ende": 9.476
+    },
+    {
+     "wort": "fahren",
+     "start": 9.545,
+     "ende": 9.812
+    },
+    {
+     "wort": "alle",
+     "start": 9.87,
+     "ende": 10.044
+    },
+    {
+     "wort": "bis",
+     "start": 10.079,
+     "ende": 10.195
+    },
+    {
+     "wort": "zur",
+     "start": 10.23,
+     "ende": 10.323
+    },
+    {
+     "wort": "Engstelle",
+     "start": 10.369,
+     "ende": 10.88
+    },
+    {
+     "wort": "und",
+     "start": 10.996,
+     "ende": 11.136
+    },
+    {
+     "wort": "fädeln",
+     "start": 11.182,
+     "ende": 11.449
+    },
+    {
+     "wort": "dann",
+     "start": 11.496,
+     "ende": 11.623
+    },
+    {
+     "wort": "abwechselnd",
+     "start": 11.681,
+     "ende": 12.169
+    },
+    {
+     "wort": "ein.",
+     "start": 12.25,
+     "ende": 12.9
+    }
+   ]
+  },
+  {
+   "id": "runde1",
+   "text": "Runde eins: wenig Verkehr. Kein Stau, gleiche Fahrzeit. Hier ist frühes Einordnen sogar völlig okay.",
+   "start": 13.139,
+   "ende": 20.637,
+   "woerter": [
+    {
+     "wort": "Runde",
+     "start": 13.139,
+     "ende": 13.429
+    },
+    {
+     "wort": "eins:",
+     "start": 13.487,
+     "ende": 13.987
+    },
+    {
+     "wort": "wenig",
+     "start": 14.137,
+     "ende": 14.521
+    },
+    {
+     "wort": "Verkehr.",
+     "start": 14.579,
+     "ende": 15.229
+    },
+    {
+     "wort": "Kein",
+     "start": 15.438,
+     "ende": 15.647
+    },
+    {
+     "wort": "Stau,",
+     "start": 15.693,
+     "ende": 16.181
+    },
+    {
+     "wort": "gleiche",
+     "start": 16.332,
+     "ende": 16.668
+    },
+    {
+     "wort": "Fahrzeit.",
+     "start": 16.715,
+     "ende": 17.411
+    },
+    {
+     "wort": "Hier",
+     "start": 17.795,
+     "ende": 18.015
+    },
+    {
+     "wort": "ist",
+     "start": 18.062,
+     "ende": 18.201
+    },
+    {
+     "wort": "frühes",
+     "start": 18.259,
+     "ende": 18.514
+    },
+    {
+     "wort": "Einordnen",
+     "start": 18.596,
+     "ende": 19.037
+    },
+    {
+     "wort": "sogar",
+     "start": 19.083,
+     "ende": 19.374
+    },
+    {
+     "wort": "völlig",
+     "start": 19.466,
+     "ende": 19.792
+    },
+    {
+     "wort": "okay.",
+     "start": 19.85,
+     "ende": 20.616
+    }
+   ]
+  },
+  {
+   "id": "runde2",
+   "text": "Runde zwei: Feierabend. Nach einer halben Stunde reicht der Stau links 3,4 Kilometer zurück. Denn auf den letzten 500 Metern vor der Baustelle steht links kaum jemand. Rechts wird dieser Platz genutzt: nur 2,5 Kilometer. In beiden Staus laufen Bremswellen nach hinten.",
+   "start": 20.857,
+   "ende": 38.517,
+   "woerter": [
+    {
+     "wort": "Runde",
+     "start": 20.857,
+     "ende": 21.124
+    },
+    {
+     "wort": "zwei:",
+     "start": 21.194,
+     "ende": 21.635
+    },
+    {
+     "wort": "Feierabend.",
+     "start": 21.844,
+     "ende": 22.68
+    },
+    {
+     "wort": "Nach",
+     "start": 23.376,
+     "ende": 23.539
+    },
+    {
+     "wort": "einer",
+     "start": 23.585,
+     "ende": 23.759
+    },
+    {
+     "wort": "halben",
+     "start": 23.783,
+     "ende": 24.015
+    },
+    {
+     "wort": "Stunde",
+     "start": 24.038,
+     "ende": 24.328
+    },
+    {
+     "wort": "reicht",
+     "start": 24.386,
+     "ende": 24.595
+    },
+    {
+     "wort": "der",
+     "start": 24.619,
+     "ende": 24.712
+    },
+    {
+     "wort": "Stau",
+     "start": 24.746,
+     "ende": 24.944
+    },
+    {
+     "wort": "links",
+     "start": 25.002,
+     "ende": 25.257
+    },
+    {
+     "wort": "3,4",
+     "start": 25.304,
+     "ende": 26.105
+    },
+    {
+     "wort": "Kilometer",
+     "start": 26.14,
+     "ende": 26.581
+    },
+    {
+     "wort": "zurück.",
+     "start": 26.639,
+     "ende": 27.115
+    },
+    {
+     "wort": "Denn",
+     "start": 27.359,
+     "ende": 27.568
+    },
+    {
+     "wort": "auf",
+     "start": 27.626,
+     "ende": 27.73
+    },
+    {
+     "wort": "den",
+     "start": 27.788,
+     "ende": 27.893
+    },
+    {
+     "wort": "letzten",
+     "start": 27.962,
+     "ende": 28.299
+    },
+    {
+     "wort": "500",
+     "start": 28.345,
+     "ende": 28.763
+    },
+    {
+     "wort": "Metern",
+     "start": 28.81,
+     "ende": 29.088
+    },
+    {
+     "wort": "vor",
+     "start": 29.147,
+     "ende": 29.286
+    },
+    {
+     "wort": "der",
+     "start": 29.332,
+     "ende": 29.414
+    },
+    {
+     "wort": "Baustelle",
+     "start": 29.46,
+     "ende": 29.959
+    },
+    {
+     "wort": "steht",
+     "start": 29.994,
+     "ende": 30.238
+    },
+    {
+     "wort": "links",
+     "start": 30.319,
+     "ende": 30.551
+    },
+    {
+     "wort": "kaum",
+     "start": 30.621,
+     "ende": 30.83
+    },
+    {
+     "wort": "jemand.",
+     "start": 30.911,
+     "ende": 31.387
+    },
+    {
+     "wort": "Rechts",
+     "start": 31.898,
+     "ende": 32.246
+    },
+    {
+     "wort": "wird",
+     "start": 32.304,
+     "ende": 32.432
+    },
+    {
+     "wort": "dieser",
+     "start": 32.467,
+     "ende": 32.687
+    },
+    {
+     "wort": "Platz",
+     "start": 32.722,
+     "ende": 32.931
+    },
+    {
+     "wort": "genutzt:",
+     "start": 32.966,
+     "ende": 33.558
+    },
+    {
+     "wort": "nur",
+     "start": 33.651,
+     "ende": 33.802
+    },
+    {
+     "wort": "2,5",
+     "start": 33.86,
+     "ende": 34.673
+    },
+    {
+     "wort": "Kilometer.",
+     "start": 34.742,
+     "ende": 35.346
+    },
+    {
+     "wort": "In",
+     "start": 35.729,
+     "ende": 35.88
+    },
+    {
+     "wort": "beiden",
+     "start": 35.927,
+     "ende": 36.228
+    },
+    {
+     "wort": "Staus",
+     "start": 36.275,
+     "ende": 36.565
+    },
+    {
+     "wort": "laufen",
+     "start": 36.635,
+     "ende": 36.89
+    },
+    {
+     "wort": "Bremswellen",
+     "start": 36.937,
+     "ende": 37.436
+    },
+    {
+     "wort": "nach",
+     "start": 37.459,
+     "ende": 37.622
+    },
+    {
+     "wort": "hinten.",
+     "start": 37.645,
+     "ende": 38.504
+    }
+   ]
+  },
+  {
+   "id": "runde3",
+   "text": "Runde drei: Ferienbeginn. Hier ist der Rückstau mit Reißverschluss nur noch 13 Prozent kürzer, denn bei so viel Stau zählen die 500 Meter kaum noch. Schneller bist du damit aber nicht, nur der Stau wird kürzer. Die Verkehrsbehörde von Minnesota nennt bis zu 40 Prozent. Und in Deutschland ist es sogar Vorschrift: Paragraf 7 der Straßenverkehrsordnung.",
+   "start": 38.737,
+   "ende": 60.995,
+   "woerter": [
+    {
+     "wort": "Runde",
+     "start": 38.737,
+     "ende": 39.062
+    },
+    {
+     "wort": "drei:",
+     "start": 39.109,
+     "ende": 39.561
+    },
+    {
+     "wort": "Ferienbeginn.",
+     "start": 39.805,
+     "ende": 40.746
+    },
+    {
+     "wort": "Hier",
+     "start": 41.129,
+     "ende": 41.338
+    },
+    {
+     "wort": "ist",
+     "start": 41.372,
+     "ende": 41.477
+    },
+    {
+     "wort": "der",
+     "start": 41.512,
+     "ende": 41.605
+    },
+    {
+     "wort": "Rückstau",
+     "start": 41.639,
+     "ende": 42.057
+    },
+    {
+     "wort": "mit",
+     "start": 42.081,
+     "ende": 42.174
+    },
+    {
+     "wort": "Reißverschluss",
+     "start": 42.232,
+     "ende": 42.824
+    },
+    {
+     "wort": "nur",
+     "start": 42.882,
+     "ende": 42.998
+    },
+    {
+     "wort": "noch",
+     "start": 43.021,
+     "ende": 43.16
+    },
+    {
+     "wort": "13",
+     "start": 43.195,
+     "ende": 43.578
+    },
+    {
+     "wort": "Prozent",
+     "start": 43.636,
+     "ende": 43.961
+    },
+    {
+     "wort": "kürzer,",
+     "start": 44.008,
+     "ende": 44.542
+    },
+    {
+     "wort": "denn",
+     "start": 44.635,
+     "ende": 44.821
+    },
+    {
+     "wort": "bei",
+     "start": 44.879,
+     "ende": 45.006
+    },
+    {
+     "wort": "so",
+     "start": 45.053,
+     "ende": 45.192
+    },
+    {
+     "wort": "viel",
+     "start": 45.262,
+     "ende": 45.413
+    },
+    {
+     "wort": "Stau",
+     "start": 45.471,
+     "ende": 45.749
+    },
+    {
+     "wort": "zählen",
+     "start": 45.831,
+     "ende": 46.063
+    },
+    {
+     "wort": "die",
+     "start": 46.109,
+     "ende": 46.225
+    },
+    {
+     "wort": "500",
+     "start": 46.283,
+     "ende": 46.794
+    },
+    {
+     "wort": "Meter",
+     "start": 46.841,
+     "ende": 47.073
+    },
+    {
+     "wort": "kaum",
+     "start": 47.131,
+     "ende": 47.352
+    },
+    {
+     "wort": "noch.",
+     "start": 47.398,
+     "ende": 47.665
+    },
+    {
+     "wort": "Schneller",
+     "start": 47.944,
+     "ende": 48.42
+    },
+    {
+     "wort": "bist",
+     "start": 48.478,
+     "ende": 48.629
+    },
+    {
+     "wort": "du",
+     "start": 48.652,
+     "ende": 48.71
+    },
+    {
+     "wort": "damit",
+     "start": 48.768,
+     "ende": 49.0
+    },
+    {
+     "wort": "aber",
+     "start": 49.047,
+     "ende": 49.197
+    },
+    {
+     "wort": "nicht,",
+     "start": 49.244,
+     "ende": 49.604
+    },
+    {
+     "wort": "nur",
+     "start": 49.697,
+     "ende": 50.057
+    },
+    {
+     "wort": "der",
+     "start": 50.208,
+     "ende": 50.37
+    },
+    {
+     "wort": "Stau",
+     "start": 50.416,
+     "ende": 50.625
+    },
+    {
+     "wort": "wird",
+     "start": 50.684,
+     "ende": 50.834
+    },
+    {
+     "wort": "kürzer.",
+     "start": 50.881,
+     "ende": 51.403
+    },
+    {
+     "wort": "Die",
+     "start": 51.728,
+     "ende": 51.972
+    },
+    {
+     "wort": "Verkehrsbehörde",
+     "start": 52.03,
+     "ende": 52.773
+    },
+    {
+     "wort": "von",
+     "start": 52.82,
+     "ende": 52.947
+    },
+    {
+     "wort": "Minnesota",
+     "start": 52.994,
+     "ende": 53.598
+    },
+    {
+     "wort": "nennt",
+     "start": 53.679,
+     "ende": 53.876
+    },
+    {
+     "wort": "bis",
+     "start": 53.923,
+     "ende": 54.12
+    },
+    {
+     "wort": "zu",
+     "start": 54.236,
+     "ende": 54.387
+    },
+    {
+     "wort": "40",
+     "start": 54.468,
+     "ende": 54.886
+    },
+    {
+     "wort": "Prozent.",
+     "start": 54.921,
+     "ende": 55.455
+    },
+    {
+     "wort": "Und",
+     "start": 55.606,
+     "ende": 55.757
+    },
+    {
+     "wort": "in",
+     "start": 55.827,
+     "ende": 55.885
+    },
+    {
+     "wort": "Deutschland",
+     "start": 55.966,
+     "ende": 56.489
+    },
+    {
+     "wort": "ist",
+     "start": 56.558,
+     "ende": 56.697
+    },
+    {
+     "wort": "es",
+     "start": 56.756,
+     "ende": 56.802
+    },
+    {
+     "wort": "sogar",
+     "start": 56.825,
+     "ende": 57.057
+    },
+    {
+     "wort": "Vorschrift:",
+     "start": 57.115,
+     "ende": 57.882
+    },
+    {
+     "wort": "Paragraf",
+     "start": 58.009,
+     "ende": 58.509
+    },
+    {
+     "wort": "7",
+     "start": 58.578,
+     "ende": 58.903
+    },
+    {
+     "wort": "der",
+     "start": 58.985,
+     "ende": 59.124
+    },
+    {
+     "wort": "Straßenverkehrsordnung.",
+     "start": 59.17,
+     "ende": 60.982
+    }
+   ]
+  },
+  {
+   "id": "regel",
+   "text": "Also: Viel Verkehr? Bis zum Ende fahren und abwechselnd rein. Wenig Verkehr? Dann ruhig früher. Drängler sind nicht die, die vorne einfädeln, sondern die, die keinen reinlassen.",
+   "start": 61.215,
+   "ende": 75.008,
+   "woerter": [
+    {
+     "wort": "Also:",
+     "start": 61.215,
+     "ende": 61.807
+    },
+    {
+     "wort": "Viel",
+     "start": 62.132,
+     "ende": 62.411
+    },
+    {
+     "wort": "Verkehr?",
+     "start": 62.48,
+     "ende": 63.084
+    },
+    {
+     "wort": "Bis",
+     "start": 63.525,
+     "ende": 63.758
+    },
+    {
+     "wort": "zum",
+     "start": 63.874,
+     "ende": 64.025
+    },
+    {
+     "wort": "Ende",
+     "start": 64.106,
+     "ende": 64.315
+    },
+    {
+     "wort": "fahren",
+     "start": 64.373,
+     "ende": 64.756
+    },
+    {
+     "wort": "und",
+     "start": 64.849,
+     "ende": 65.023
+    },
+    {
+     "wort": "abwechselnd",
+     "start": 65.139,
+     "ende": 65.778
+    },
+    {
+     "wort": "rein.",
+     "start": 65.836,
+     "ende": 66.277
+    },
+    {
+     "wort": "Wenig",
+     "start": 66.881,
+     "ende": 67.252
+    },
+    {
+     "wort": "Verkehr?",
+     "start": 67.287,
+     "ende": 67.844
+    },
+    {
+     "wort": "Dann",
+     "start": 68.088,
+     "ende": 68.402
+    },
+    {
+     "wort": "ruhig",
+     "start": 68.645,
+     "ende": 68.936
+    },
+    {
+     "wort": "früher.",
+     "start": 68.994,
+     "ende": 69.47
+    },
+    {
+     "wort": "Drängler",
+     "start": 69.853,
+     "ende": 70.282
+    },
+    {
+     "wort": "sind",
+     "start": 70.317,
+     "ende": 70.457
+    },
+    {
+     "wort": "nicht",
+     "start": 70.515,
+     "ende": 70.735
+    },
+    {
+     "wort": "die,",
+     "start": 70.758,
+     "ende": 70.933
+    },
+    {
+     "wort": "die",
+     "start": 70.967,
+     "ende": 71.095
+    },
+    {
+     "wort": "vorne",
+     "start": 71.165,
+     "ende": 71.455
+    },
+    {
+     "wort": "einfädeln,",
+     "start": 71.49,
+     "ende": 72.117
+    },
+    {
+     "wort": "sondern",
+     "start": 72.14,
+     "ende": 72.477
+    },
+    {
+     "wort": "die,",
+     "start": 72.546,
+     "ende": 72.837
+    },
+    {
+     "wort": "die",
+     "start": 72.883,
+     "ende": 73.08
+    },
+    {
+     "wort": "keinen",
+     "start": 73.15,
+     "ende": 73.464
+    },
+    {
+     "wort": "reinlassen.",
+     "start": 73.522,
+     "ende": 75.008
+    }
+   ]
+  },
+  {
+   "id": "ende",
+   "text": "Schreibt euren Simulationswunsch in die Kommentare.",
+   "start": 75.308,
+   "ende": 78.157,
+   "woerter": [
+    {
+     "wort": "Schreibt",
+     "start": 75.308,
+     "ende": 75.738
+    },
+    {
+     "wort": "euren",
+     "start": 75.784,
+     "ende": 76.028
+    },
+    {
+     "wort": "Simulationswunsch",
+     "start": 76.074,
+     "ende": 76.957
+    },
+    {
+     "wort": "in",
+     "start": 77.003,
+     "ende": 77.061
+    },
+    {
+     "wort": "die",
+     "start": 77.096,
+     "ende": 77.166
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 77.2,
+     "ende": 78.141
+    }
+   ]
+  }
+ ]
+}

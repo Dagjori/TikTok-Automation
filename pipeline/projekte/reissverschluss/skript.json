@@ -2,19 +2,27 @@
   "titel": "Früh einordnen oder bis zum Ende? Simuliert",
   "rubrik": "ALLTAG",
   "segmente": [
-    {"id": "hook",   "text": "Die Drängler, die bis ganz vorne fahren, haben recht. Ich hab's simuliert."},
-    {"id": "setup",  "text": "Zwei gleiche Baustellen. Links ordnen sich alle früh ein, höflich, wie man's gelernt hat. Rechts fahren alle bis zur Engstelle und fädeln dann abwechselnd ein."},
-    {"id": "runde1", "text": "Runde eins: wenig Verkehr. Kein Stau, gleiche Fahrzeit. Hier ist früh einordnen sogar völlig okay."},
-    {"id": "runde2", "text": "Runde zwei: Feierabend. Nach einer halben Stunde reicht der Stau links 3,4 Kilometer zurück, denn die letzten 500 Meter vor der Baustelle bleiben meist staufrei. Rechts sind es nur 2,5 Kilometer. In beiden Staus laufen Bremswellen nach hinten."},
-    {"id": "runde3", "text": "Runde drei: Rushhour. Beim Reißverschluss ist der Rückstau am Ende 13 Prozent kürzer. Schneller bist du damit nicht, nur der Stau wird kürzer. Die Verkehrsbehörde von Minnesota misst in echt bis zu 40 Prozent. Und in Deutschland ist es sogar Vorschrift: Paragraf 7 der Straßenverkehrsordnung."},
-    {"id": "regel",  "text": "Also: Viel Verkehr? Bis zum Ende fahren und abwechselnd rein. Wenig Verkehr? Dann ruhig früher. Drängler sind nicht die, die vorne einfädeln, sondern die, die keinen reinlassen."},
-    {"id": "ende",   "text": "Schreibt euren Simulationswunsch in die Kommentare."}
+    {"id": "hook",   "text": "Die Drängler, die bis ganz vorne fahren, haben recht. Ich hab's simuliert.",
+                     "sprechtext": "Die Drängler, die bis ganz vorne fahren, haben recht. Ich hab's simuliert."},
+    {"id": "setup",  "text": "Zwei gleiche Baustellen. Links ordnen sich alle früh ein, höflich, wie man's gelernt hat. Rechts fahren alle bis zur Engstelle und fädeln dann abwechselnd ein.",
+                     "sprechtext": "Zwei gleiche Baustellen. Links ordnen sich alle früh ein, höflich, wie man's gelernt hat. Rechts fahren alle bis zur Engstelle und fädeln dann abwechselnd ein."},
+    {"id": "runde1", "text": "Runde eins: wenig Verkehr. Kein Stau, gleiche Fahrzeit. Hier ist frühes Einordnen sogar völlig okay.",
+                     "sprechtext": "Runde eins: wenig Verkehr. Kein Stau, gleiche Fahrzeit. Hier ist frühes Einordnen sogar völlig okay."},
+    {"id": "runde2", "text": "Runde zwei: Feierabend. Nach einer halben Stunde reicht der Stau links 3,4 Kilometer zurück. Denn auf den letzten 500 Metern vor der Baustelle steht links kaum jemand. Rechts wird dieser Platz genutzt: nur 2,5 Kilometer. In beiden Staus laufen Bremswellen nach hinten.",
+                     "sprechtext": "Runde zwei: Feierabend. Nach einer halben Stunde reicht der Stau links drei Komma vier Kilometer zurück. Denn auf den letzten fünfhundert Metern vor der Baustelle steht links kaum jemand. Rechts wird dieser Platz genutzt: nur zwei Komma fünf Kilometer. In beiden Staus laufen Bremswellen nach hinten."},
+    {"id": "runde3", "text": "Runde drei: Ferienbeginn. Hier ist der Rückstau mit Reißverschluss nur noch 13 Prozent kürzer, denn bei so viel Stau zählen die 500 Meter kaum noch. Schneller bist du damit aber nicht, nur der Stau wird kürzer. Die Verkehrsbehörde von Minnesota nennt bis zu 40 Prozent. Und in Deutschland ist es sogar Vorschrift: Paragraf 7 der Straßenverkehrsordnung.",
+                     "sprechtext": "Runde drei: Ferienbeginn. Hier ist der Rückstau mit Reißverschluss nur noch dreizehn Prozent kürzer, denn bei so viel Stau zählen die fünfhundert Meter kaum noch. Schneller bist du damit aber nicht, nur der Stau wird kürzer. Die Verkehrsbehörde von Minnesota nennt bis zu vierzig Prozent. Und in Deutschland ist es sogar Vorschrift: Paragraf sieben der Straßenverkehrsordnung."},
+    {"id": "regel",  "text": "Also: Viel Verkehr? Bis zum Ende fahren und abwechselnd rein. Wenig Verkehr? Dann ruhig früher. Drängler sind nicht die, die vorne einfädeln, sondern die, die keinen reinlassen.",
+                     "sprechtext": "Also: Viel Verkehr? Bis zum Ende fahren und abwechselnd rein. Wenig Verkehr? Dann ruhig früher. Drängler sind nicht die, die vorne einfädeln, sondern die, die keinen reinlassen."},
+    {"id": "ende",   "text": "Schreibt euren Simulationswunsch in die Kommentare.",
+                     "sprechtext": "Schreibt euren Simulationswunsch in die Kommentare."}
   ],
-  "beschreibung": "Früh einordnen oder bis zum Ende fahren? 🚗🚧 Zwei Baustellen, drei Verkehrslagen: simuliert 👇\nAnnahmen: Fahrstreifen endet (2 auf 1), 30 Minuten Verkehrsspitze, Zufluss 1.200 / 2.400 / 3.200 Kfz/h (Wenig / Feierabend / Rushhour), 50 Läufe je Szenario, Stau = Fahrzeuge unter 27 km/h. Ergebnis im Modell nach 30 Minuten: Rückstau Feierabend 3,4 km (früh einordnen) gegen 2,5 km (Reißverschluss), Rushhour 6,2 gegen 5,4 km. Vereinfachte Modellrechnung, keine Messung. Stimme: KI.\n#reißverschlussverfahren #stau #autobahn #baustelle",
+  "szenario_namen": {"wenig": "Wenig Verkehr", "feierabend": "Feierabend", "rushhour": "Ferienbeginn"},
+  "beschreibung": "Früh einordnen oder bis zum Ende fahren? 🚗🚧 Zwei Baustellen, drei Verkehrslagen, simuliert 👇\nErgebnis im Modell nach 30 Minuten Verkehrsspitze: Rückstau Feierabend 3,4 km (früh einordnen) gegen 2,5 km (Reißverschluss), Ferienbeginn 6,2 gegen 5,4 km. Bei wenig Verkehr kein Stau. Fahrzeit praktisch gleich.\nAnnahmen: Fahrstreifen endet (2 auf 1), Früh-Einordner wechseln ab 800 m vor der Engstelle, Zufluss 1.200 / 2.400 / 3.200 Kfz/h, 50 Läufe je Szenario, Stau = Kolonne unter 27 km/h. Vereinfachte Modellrechnung, keine Messung.\nQuellen: MnDOT „Zipper Merge“ (bis zu 40 % kürzerer Rückstau), § 7 Abs. 4 StVO.\nStimme: KI.\n#reißverschlussverfahren #stau #autobahn #baustelle #simulation",
   "quellen": [
-    "Eigene Simulation (Nagel-Schreckenberg, 2 Spuren, 50 Läufe je Szenario): pipeline/projekte/reissverschluss/sim_ergebnisse.json",
-    "MnDOT Zipper Merge (bis zu 40 % kürzerer Rückstau; bei wenig Verkehr früh einordnen): https://dot.state.mn.us/zippermerge/ (aus docs/08 übernommen, vor Veröffentlichung erneut prüfen)",
-    "§ 7 Abs. 4 StVO, Reißverschlussverfahren: https://www.ace.de/verkehrssicherheit/tipps-sicheres-fahren/reissverschlussverfahren/ (aus docs/08 übernommen, Primärquelle prüfen)",
+    "Eigene Simulation (Nagel-Schreckenberg, 2 Spuren, 50 Läufe je Szenario): pipeline/projekte/reissverschluss/sim_ergebnisse.json und sim_ergebnisse.md",
+    "MnDOT, Zipper Merge: „Reduces the overall length of traffic backup by as much as 40 percent“; bei flüssigem Verkehr früher einordnen. https://www.dot.state.mn.us/zippermerge/ (abgerufen 31.10.2026)",
+    "§ 7 Abs. 4 StVO (Reißverschlussverfahren, „unmittelbar vor Beginn der Verengung jeweils im Wechsel“): https://www.gesetze-im-internet.de/stvo_2013/__7.html (abgerufen 31.10.2026)",
     "Kapazität von Arbeitsstellen (HCM-Richtwert 1.600 pc/h je Spur, Praxisspanne 1.100–1.900): https://workzonesafety.org/publication/survey-of-work-zone-practices-and-validation-of-highway-capacity-manual-work-zone-capacity-model/ (Suchauszug)"
   ]
 }

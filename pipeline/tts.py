@@ -6,8 +6,10 @@ Schreibt:<projekt>/audio/stimme.mp3, <projekt>/audio/timing.json (Start und Ende
 Key:     Cloud: Netzwerk-Secret (Header xi-api-key für api.elevenlabs.io); lokal: Umgebungsvariable ELEVENLABS_API_KEY. Nie ins Repo.
 """
 import base64
+import difflib
 import json
 import os
+import re
 import sys
 import urllib.request
 from pathlib import Path
@@ -117,16 +119,30 @@ def woerter(zeichen, starts, enden, versatz=0):
 
 
 def anzeige_woerter(anzeige, gesprochen):
-    """Verteilt die Wörter der Anzeigefassung zeitlich auf die gesprochenen Wörter (anteilig nach Position)."""
+    """Ordnet die Wörter der Anzeigefassung den gesprochenen Wörtern zu.
+
+    Gleiche Wörter bekommen ihre exakte Zeit. Abweichende Blöcke (z. B. „3,4“ ↔ „drei Komma vier“,
+    „GTA“ ↔ „G T A“) teilen sich die Zeit des gesprochenen Blocks.
+    """
     ziel = anzeige.split()
-    if [w["wort"] for w in gesprochen] == ziel or not gesprochen:
+    if not gesprochen or [w["wort"] for w in gesprochen] == ziel:
         return gesprochen
-    n, m = len(ziel), len(gesprochen)
+    norm = lambda w: re.sub(r"[^\w]", "", w.lower())
+    abgleich = difflib.SequenceMatcher(None, [norm(w) for w in ziel], [norm(w["wort"]) for w in gesprochen], autojunk=False)
     ergebnis = []
-    for i, wort in enumerate(ziel):
-        von = gesprochen[min(m - 1, int(i * m / n))]
-        bis = gesprochen[min(m - 1, max(int((i + 1) * m / n) - 1, int(i * m / n)))]
-        ergebnis.append({"wort": wort, "start": von["start"], "ende": bis["ende"]})
+    for art, i1, i2, j1, j2 in abgleich.get_opcodes():
+        if art == "equal":
+            ergebnis += [{"wort": ziel[i1 + k], "start": gesprochen[j1 + k]["start"], "ende": gesprochen[j1 + k]["ende"]}
+                         for k in range(i2 - i1)]
+        elif i2 > i1:  # „replace“ oder „delete“; „insert“ (nur gesprochen) braucht kein Anzeige-Wort
+            if j2 > j1:
+                start, ende = gesprochen[j1]["start"], gesprochen[j2 - 1]["ende"]
+            else:  # Anzeige-Wort ohne gesprochenes Gegenstück: in die Lücke zwischen den Nachbarn
+                start = gesprochen[j1 - 1]["ende"] if j1 > 0 else gesprochen[0]["start"]
+                ende = gesprochen[j1]["start"] if j1 < len(gesprochen) else start
+            schritt = (ende - start) / (i2 - i1)
+            ergebnis += [{"wort": ziel[i1 + k], "start": start + k * schritt, "ende": start + (k + 1) * schritt}
+                         for k in range(i2 - i1)]
     return ergebnis
 
 

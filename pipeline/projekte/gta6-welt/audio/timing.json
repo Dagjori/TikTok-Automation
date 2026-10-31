@@ -13,66 +13,66 @@
     {
      "wort": "GTA",
      "start": 0.0,
-     "ende": 0.128
+     "ende": 0.47
     },
     {
      "wort": "6",
-     "start": 0.255,
-     "ende": 0.325
-    },
-    {
-     "wort": "kommt.",
-     "start": 0.499,
-     "ende": 0.569
-    },
-    {
-     "wort": "Und",
-     "start": 0.697,
+     "start": 0.47,
      "ende": 0.94
     },
     {
-     "wort": "die",
+     "wort": "kommt.",
      "start": 0.987,
      "ende": 1.347
     },
     {
-     "wort": "halbe",
+     "wort": "Und",
      "start": 1.521,
      "ende": 1.637
     },
     {
-     "wort": "Welt",
+     "wort": "die",
      "start": 1.66,
+     "ende": 1.741
+    },
+    {
+     "wort": "halbe",
+     "start": 1.788,
      "ende": 2.055
     },
     {
-     "wort": "meldet",
+     "wort": "Welt",
      "start": 2.09,
      "ende": 2.299
     },
     {
-     "wort": "sich",
+     "wort": "meldet",
      "start": 2.357,
      "ende": 2.612
     },
     {
-     "wort": "krank.",
+     "wort": "sich",
      "start": 2.647,
      "ende": 2.786
     },
     {
-     "wort": "Kostet",
+     "wort": "krank.",
      "start": 2.833,
      "ende": 3.181
     },
     {
-     "wort": "das",
+     "wort": "Kostet",
      "start": 3.39,
      "ende": 3.715
     },
     {
-     "wort": "wirklich",
+     "wort": "das",
      "start": 3.738,
+     "ende": 3.866
+    },
+    {
+     "wort": "wirklich",
+     "start": 3.936,
      "ende": 4.238
     },
     {
@@ -98,11 +98,11 @@
     {
      "wort": "hab's",
      "start": 5.933,
-     "ende": 6.049
+     "ende": 6.177
     },
     {
      "wort": "durchgerechnet.",
-     "start": 6.107,
+     "start": 6.223,
      "ende": 7.198
     }
    ]
@@ -783,111 +783,111 @@
     {
      "wort": "GTA",
      "start": 62.434,
-     "ende": 62.584
+     "ende": 62.927
     },
     {
      "wort": "6",
-     "start": 62.677,
-     "ende": 62.759
+     "start": 62.927,
+     "ende": 63.42
     },
     {
      "wort": "kostet",
-     "start": 62.91,
-     "ende": 63.06
-    },
-    {
-     "wort": "also",
-     "start": 63.177,
+     "start": 63.478,
      "ende": 63.78
     },
     {
-     "wort": "weniger",
+     "wort": "also",
      "start": 63.838,
      "ende": 64.024
     },
     {
-     "wort": "als",
+     "wort": "weniger",
      "start": 64.082,
      "ende": 64.454
     },
     {
-     "wort": "ein",
+     "wort": "als",
      "start": 64.489,
      "ende": 64.616
     },
     {
-     "wort": "Promille.",
+     "wort": "ein",
      "start": 64.686,
      "ende": 64.837
     },
     {
-     "wort": "Und",
+     "wort": "Promille.",
      "start": 64.895,
      "ende": 65.452
     },
     {
-     "wort": "das",
+     "wort": "Und",
      "start": 65.777,
      "ende": 65.882
     },
     {
-     "wort": "meiste",
+     "wort": "das",
      "start": 65.905,
      "ende": 66.009
     },
     {
-     "wort": "wird",
+     "wort": "meiste",
      "start": 66.079,
      "ende": 66.334
     },
     {
-     "wort": "sowieso",
+     "wort": "wird",
      "start": 66.381,
      "ende": 66.509
     },
     {
-     "wort": "nachgearbeitet.",
+     "wort": "sowieso",
      "start": 66.532,
      "ende": 66.857
     },
     {
-     "wort": "Die",
+     "wort": "nachgearbeitet.",
      "start": 66.938,
      "ende": 67.809
     },
     {
-     "wort": "Milliarde?",
+     "wort": "Die",
      "start": 67.902,
      "ende": 68.018
     },
     {
-     "wort": "Weltweit",
+     "wort": "Milliarde?",
      "start": 68.065,
      "ende": 68.726
     },
     {
-     "wort": "nicht",
+     "wort": "Weltweit",
      "start": 68.935,
      "ende": 69.376
     },
     {
-     "wort": "mal",
+     "wort": "nicht",
      "start": 69.435,
      "ende": 69.585
     },
     {
-     "wort": "ein",
+     "wort": "mal",
      "start": 69.62,
      "ende": 69.736
     },
     {
-     "wort": "Drittel",
+     "wort": "ein",
      "start": 69.794,
      "ende": 69.899
     },
     {
-     "wort": "davon.",
+     "wort": "Drittel",
      "start": 69.922,
+     "ende": 70.178
+    },
+    {
+     "wort": "davon.",
+     "start": 70.212,
      "ende": 70.851
     }
    ]
@@ -906,81 +906,81 @@
     {
      "wort": "wird's",
      "start": 71.458,
-     "ende": 71.644
-    },
-    {
-     "wort": "eher",
-     "start": 71.714,
      "ende": 71.783
     },
     {
-     "wort": "für",
+     "wort": "eher",
      "start": 71.876,
      "ende": 72.039
     },
     {
-     "wort": "dich.",
+     "wort": "für",
      "start": 72.097,
      "ende": 72.213
     },
     {
-     "wort": "Wer",
+     "wort": "dich.",
      "start": 72.248,
      "ende": 72.654
     },
     {
-     "wort": "Krankheit",
+     "wort": "Wer",
      "start": 72.979,
      "ende": 73.13
     },
     {
-     "wort": "nur",
+     "wort": "Krankheit",
      "start": 73.176,
      "ende": 73.525
     },
     {
-     "wort": "vortäuscht,",
+     "wort": "nur",
      "start": 73.583,
      "ende": 73.699
     },
     {
-     "wort": "riskiert",
+     "wort": "vortäuscht,",
      "start": 73.745,
      "ende": 74.454
     },
     {
-     "wort": "die",
+     "wort": "riskiert",
      "start": 74.535,
      "ende": 74.953
     },
     {
-     "wort": "Kündigung.",
+     "wort": "die",
      "start": 74.988,
      "ende": 75.08
     },
     {
-     "wort": "Der",
+     "wort": "Kündigung.",
      "start": 75.127,
      "ende": 75.789
     },
     {
-     "wort": "sichere",
+     "wort": "Der",
      "start": 75.998,
      "ende": 76.149
     },
     {
-     "wort": "Weg",
+     "wort": "sichere",
      "start": 76.195,
      "ende": 76.532
     },
     {
-     "wort": "heißt",
+     "wort": "Weg",
      "start": 76.567,
      "ende": 76.752
     },
     {
-     "wort": "Urlaub.",
+     "wort": "heißt",
      "start": 76.81,
+     "ende": 77.135
+    },
+    {
+     "wort": "Urlaub.",
+     "start": 77.344,
      "ende": 78.18
     }
    ]
