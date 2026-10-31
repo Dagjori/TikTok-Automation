@@ -20,7 +20,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Pro
 ## Arbeitsregeln
 - **Nichts ohne Auftrag anlegen.** Keine zusätzlichen Dateien außerhalb dieses Repos, keine Notizen, Webseiten oder Einträge in externen Diensten (Notion, Drive, Gmail usw.), außer der Inhaber verlangt es ausdrücklich.
 - **Arbeitsstand gehört in dieses Repo.** Cloud-Sitzungen sind flüchtig: Am Ende jeder Sitzung `STATUS.md` aktualisieren, committen und pushen. Entscheidungen des Inhabers in `ENTSCHEIDUNGEN.md` eintragen (Datum, Entscheidung, Begründung).
-- **Trend-Monitoring:** Ablauf in `docs/07-trend-monitoring.md` (wöchentlich; Wettbewerbs-Monitor `python3 tools/monitor_kanaele.py`).
+- **Trend-Radar:** läuft täglich automatisch (geplante Aufgabe „Trend-Radar Der Testlauf“, 05:35 Uhr Berlin). Ablauf und Bewertungsraster: `docs/07-trend-monitoring.md`. Dem Inhaber nur Trends mit Score ≥ 70 vorschlagen (`docs/trends/vorschlaege.md`).
 - **Keine Kopien:** Fremde Videos nie nachbauen. Themen, die ein Konkurrent schon viral gemacht hat, nur mit eigenem Ansatz umsetzen.
 - **Keine Geheimnisse ins Repo.** API-Keys (z. B. ElevenLabs) nur über Umgebungsvariablen bzw. `.env`, das in `.gitignore` steht.
 
@@ -48,6 +48,8 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Pro
   8. Qualitätskontrolle
   9. Planung in TikTok Studio und YouTube Studio
 - **Referenz:** https://github.com/stochosfrance/lowpoly-reel (MIT).
+- **Render-Rechner:** Windows-PC des Inhabers. Die Pipeline muss unter Windows laufen (Node.js, Chrome bzw. Chromium, ffmpeg, Python).
+- **Stimme:** ElevenLabs, kleinster bezahlter Plan (Starter). Reichen die Credits nicht, auf den nächstgrößeren Plan wechseln.
 - **Modellwahl:**
   - Opus 5.5 für Architektur und neue Szenentypen
   - Sonnet 5.5 für die tägliche Produktion

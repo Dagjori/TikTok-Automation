@@ -10,3 +10,6 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-10-30 | Keine 1:1-Kopie bestehender Formate; Nische „Geld-Duell“ verworfen | Zu nah an @kontostand.vs und @wissentogo_de; gesucht ist eine Nische mit gleichem Prinzip, aber eigenem Thema |
 | 2026-10-31 | Nische: Kombi „Alltag durchgerechnet“ (Geld-Duell + Testlauf), Platz 1 im Ranking | Größter Themenvorrat (300 Ideen, ca. 1.600 Varianten), Nachfrage für beide Rubriken belegt |
 | 2026-10-31 | Der TikTok-Markt wird laufend beobachtet, um neue Trends zu erkennen | Themen-Nachschub, Konkurrenz und Regeländerungen früh sehen |
+| 2026-10-31 | Trend-Radar läuft täglich automatisch; Claude bewertet Trends selbst und schlägt nur Trends mit Potenzial vor | Das Tempo ist hoch, eine Woche ist zu lang |
+| 2026-10-31 | Stimme: ElevenLabs, kleinster bezahlter Plan; bei Bedarf der nächstgrößere | Kommerzielle Lizenz nötig, Kosten zuerst klein halten |
+| 2026-10-31 | Gerendert wird auf dem Windows-PC des Inhabers | Vorhandene Hardware |

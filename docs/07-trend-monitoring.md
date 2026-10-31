@@ -1,58 +1,83 @@
-# Trend-Monitoring
+# Trend-Radar
 
-**Stand:** 31.10.2026 · Auftrag des Inhabers: „Für die Zukunft behalten wir den TikTok-Markt im Auge, um neue Trends zu erkennen.“
+**Stand:** 31.10.2026 · Auftrag des Inhabers:
+- „Für die Zukunft behalten wir den TikTok-Markt im Auge, um neue Trends zu erkennen.“
+- 31.10.: **täglich** automatisch. Trends selbst vorausahnen, **selbst analysieren und bewerten**. **Nur vorschlagen, was Potenzial hat.**
 
 ## Ziel
-- Neue Themen, Formate und Konkurrenten früh erkennen.
-- Den Themen-Backlog auffüllen.
-- Regeländerungen bei TikTok rechtzeitig mitbekommen.
+- Trends **vor dem Höhepunkt** erkennen und rechtzeitig fertige Videos haben.
+- Konkurrenz und Regeländerungen täglich im Blick behalten.
+- Den Inhaber nur mit geprüften Vorschlägen behelligen.
 
-## Wöchentlicher Ablauf (Sonntag, ca. 25 Minuten gesamt)
+## Täglicher Lauf (automatisch, 05:35 Uhr Berlin)
+Dieser Abschnitt ist die Arbeitsanweisung für die geplante Aufgabe „Trend-Radar Der Testlauf“. Maximal ca. 20 Minuten, sparsam mit Websuchen (höchstens ca. 12 pro Lauf).
 
-### A) Inhaber in der TikTok-App (ca. 10 Minuten)
-Diese Werkzeuge gibt es nur im eigenen Account. Claude hat darauf keinen Zugriff.
-
-1. **Trending Topics**
-   - Weg: TikTok Studio → Inspiration (Creation Inspiration) → Trending → Reiter **Topics** → Region Deutschland.
-   - Laut TikTok: bis zu 50 Themen, sortiert nach Views, mit Trendkurve. In DE verfügbar (F: [Creator Academy](https://www.tiktok.com/creator-academy/article/trending-topics)).
-   - Screenshot der Top 20 machen.
-2. **Creator Search Insights, Reiter „Content gap“**
-   - Themen, nach denen viel gesucht wird, zu denen es aber wenig gute Videos gibt (F: [Creator Academy](https://www.tiktok.com/creator-academy/article/Getting-discovered-with-Search)).
-   - Screenshot machen.
-   - Ob das Werkzeug im Account sichtbar ist, noch prüfen.
-3. **Eigene Analysen:** Top-3-Videos der Woche und Follower pro Video notieren.
-4. Alles **in eine Claude-Sitzung mit diesem Repo** geben.
-
-### B) Claude (ca. 15 Minuten, automatisierbar)
 1. **Wettbewerbs-Monitor:** `python3 tools/monitor_kanaele.py`
-   - Ruft die öffentlichen Profile aller Kanäle aus `data/monitor/kanaele.csv` ab, eine Anfrage pro Kanal, keine internen APIs.
-   - Speichert den Stand in `data/monitor/verlauf.csv`.
-   - Meldet Kanäle mit mindestens +20 % oder mindestens +1.000 Followern seit dem letzten Lauf.
-2. **Neue Kanäle suchen** (Websuche), z. B. `site:tiktok.com "durchgerechnet"`, `"simuliert" tiktok wissen`, `"lohnt sich" tiktok animation`. Neue relevante Kanäle kommen in `kanaele.csv`.
-3. **Screenshots des Inhabers auswerten:** Passt ein Trend zu „Der Testlauf“ (GELD oder ALLTAG)? Wenn ja, als Idee in die passende Liste in `data/ideen/` aufnehmen, mit `typ` = `news` bzw. `saisonal`.
-4. **Regel-Check (einmal pro Monat):**
-   - Versionsdatum der Community Guidelines und der CRP-Bedingungen prüfen.
-   - Neuigkeiten in der Creator Academy durchsehen.
-   - Änderungen in `docs/02-account-strategie.md` und `CLAUDE.md` nachziehen.
-5. **Kurzbericht** in `docs/trends/JJJJ-KW.md` (maximal 15 Zeilen):
-   - auffällige Kanäle
-   - 3–5 neue Ideen
-   - Regeländerungen
-   - Empfehlung für die nächste Woche
-6. `STATUS.md` aktualisieren, committen, pushen.
+   - Auffällige Kanäle (mindestens +20 % oder mindestens +1.000 Follower) bekommen den Signal-Typ `konkurrenz`.
+   - Für jeden auffälligen Kanal die öffentliche Profilseite bzw. die Videoseite des stärksten neuen Videos ansehen: Welches Thema bzw. Format zieht?
+2. **Signale sammeln.** Quellen in dieser Reihenfolge:
+   1. **Konkurrenz-Signale** aus Schritt 1.
+   2. **Vorhersehbare Anlässe (Trend-Kalender):** `data/trends/kalender.csv` lesen. Alles, was in den nächsten 7–45 Tagen liegt, prüfen. Fehlende Termine der nächsten 90 Tage ergänzen: Gesetzes- und Preisänderungen, EZB-Zinsentscheide, Feiertage, Ferienbeginn, Zeitumstellung, Sport-Großereignisse, Shopping-Tage, Steuerfristen, Wetterumschwünge laut Saison.
+   3. **Nachrichten mit Alltags- bzw. Geldbezug** der letzten 48 Stunden (Websuche, deutsch), z. B. Preis-, Zins-, Steuer-, Verkehrs- und Bahnthemen.
+   4. **Internationale Vorläufer:** neue virale Formate bei den Benchmark-Kanälen (EN) aus `data/monitor/kanaele.csv`. Formate aus den USA kommen oft mit Verzögerung nach Deutschland (Annahme). Ein solches Format ist ein Kandidat, wenn es auf Deutsch noch fehlt.
+   5. **Neue Kanäle:** 1–2 Websuchen nach neuen deutschen Simulations- bzw. Rechen-Kanälen. Relevante Treffer kommen in `data/monitor/kanaele.csv`.
+3. **Jedes Signal bewerten** (Raster unten). Alle Bewertungen kommen als Zeile in `data/trends/trend-log.csv`, auch die verworfenen. Signale, die schon im Log stehen, nicht doppelt bewerten. Nur neu bewerten, wenn sich etwas Wesentliches geändert hat.
+4. **Vorschlagen nur bei Score ≥ 70 und ohne K.-o.-Kriterium.** Dann in `docs/trends/vorschlaege.md` oben eintragen:
+   - Titel des Videos (als Frage)
+   - Rubrik
+   - Score mit Kurzbegründung
+   - Quelle
+   - **spätestes Posting-Datum**
+   - Vorschlag zur Umsetzung, eigenständig, keine Kopie
+   - Bei passenden Themen zusätzlich als Idee in `data/ideen/geld-duell.csv` bzw. `testlauf.csv` mit `typ` = `news` bzw. `saisonal`.
+5. **Regel-Check, jeden Montag:**
+   - „Released/Effective“-Datum der Community Guidelines prüfen (`https://www.tiktok.com/community-guidelines/en`).
+   - Die CRP-Bedingungen EWR und die Startseite der Creator Academy prüfen.
+   - Bei Änderungen einen Vorschlag mit Typ `regel` eintragen (immer vorschlagen, ohne Score).
+6. **STATUS.md** nur ergänzen, wenn es neue Vorschläge oder Regeländerungen gibt (eine Zeile unter „Wo wir stehen“).
+7. **Committen und pushen** auf `main`.
+8. **Letzte Antwort der Sitzung:**
+   - Bei neuen Vorschlägen: kurze Liste (Titel, Score, warum jetzt, spätestes Posting-Datum).
+   - Sonst genau ein Satz: „Trend-Radar JJJJ-MM-TT: keine neuen Trends mit Potenzial.“
 
-## Automatisierung (Option, noch nicht eingerichtet)
-- Teil B kann als **geplante Aufgabe** jeden Sonntag automatisch in einer neuen Claude-Sitzung laufen.
-- Der Kurzbericht liegt dann im Repo, bevor der Inhaber Teil A erledigt.
-- **Wird nur auf ausdrücklichen Wunsch des Inhabers eingerichtet** (siehe CLAUDE.md: „Nichts ohne Auftrag anlegen“).
+## Bewertungsraster
+**K.-o.-Kriterien (sofort verwerfen, nicht vorschlagen):**
+- Nicht als eigene Rechnung bzw. Simulation umsetzbar, oder passt in keine Rubrik (GELD bzw. ALLTAG).
+- Risiko-Thema laut Ausschlussliste (`docs/06-nischen-ranking.md`): Glücksspiel, Tabak, Gesundheitsversprechen, Tragödien, Krypto, Einzelaktien, Anbieter-Empfehlungen, Parteipolitik.
+- Nur durch Nachbau eines fremden Videos umsetzbar (CLAUDE.md: keine Kopien).
+- Höhepunkt liegt in weniger als 2 Tagen und ist nicht vorbereitbar.
+
+**Punkte 1–5 je Kriterium:**
+
+| Kriterium | Gewicht | 5 = | 1 = |
+|---|---|---|---|
+| Nachfrage-Signal | 30 % | belegte Reichweite (Views, Suchspitze, Leitmedien) | nur Bauchgefühl |
+| Timing | 20 % | Trend steigt noch bzw. Termin ist planbar mit mindestens 7 Tagen Vorlauf | Trend ist durch |
+| Wettbewerb DE | 15 % | niemand setzt es als Simulation bzw. Rechnung um | mehrere virale Videos im gleichen Format |
+| Passung zum Format | 15 % | Simulation mit echtem Aha-Effekt | nur mit Mühe rechenbar |
+| Aufwand | 10 % | bestehende Vorlage reicht | neuer Szenentyp nötig |
+| Risiko | 10 % | kein Plattform- bzw. Rechtsrisiko | heikel (Steuern, Recht, Politiknähe) |
+
+**Score** = Summe (Gewicht × Punkte) / 5, Bereich 20–100.
+
+| Score | Entscheidung |
+|---|---|
+| ≥ 70 | **vorschlagen** |
+| 50–69 | `beobachten` (im Log, nach 7 Tagen erneut prüfen) |
+| < 50 | `verworfen` |
+
+## Teil des Inhabers (optional, wöchentlich ca. 5 Minuten)
+- In der App ist nur **Inspiration** sichtbar. „Creator Search Insights“ fehlt (Stand 31.10.).
+- Wenn Zeit ist: Inspiration öffnen, Screenshot der angezeigten Trends in eine Sitzung mit diesem Repo geben.
+- Claude bewertet die Trends nach demselben Raster.
 
 ## Regeln
 - Nur öffentliche Seiten, keine internen TikTok-APIs, kein Umgehen von Bot-Schutz (CLAUDE.md).
-- Trends nur übernehmen, wenn sie zum Format passen (eigene Rechnung bzw. Simulation) und kein Risiko-Thema sind (siehe Ausschlüsse in `docs/06-nischen-ranking.md`).
-- Fremde Videos nie nachbauen, nur die Frage bzw. den Trend aufgreifen und eigenständig umsetzen.
+- Nichts außerhalb dieses Repos anlegen.
+- Fakten mit Quelle. Schätzungen und Annahmen kennzeichnen.
 
-## Erster Lauf (31.10.2026, Vergleich zu 29.10.)
-- **@kontostand.vs:** 418 → 553 Follower (+32 %), ein Video weniger (gelöscht bzw. privat gestellt).
-- **@unnoetig_tiefgruendig:** 483 → 580 (+20 %).
-- **@wissentogo_de:** 640 → 740 (+16 %), +2 Videos.
-- **Große Kanäle stabil:** @kurzsimuliert, @retrodreamspace, @weltraumweisheiten mit weniger als 1 % Wachstum.
+## Erster Lauf des Wettbewerbs-Monitors (31.10.2026, Vergleich zu 29.10.)
+- @kontostand.vs: 418 → 553 Follower (+32 %), ein Video weniger.
+- @unnoetig_tiefgruendig: 483 → 580 (+20 %).
+- @wissentogo_de: 640 → 740 (+16 %), +2 Videos.
+- Große Kanäle stabil (weniger als 1 % Wachstum).

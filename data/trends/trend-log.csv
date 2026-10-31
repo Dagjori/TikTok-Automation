@@ -1,0 +1,4 @@
+datum,signal,typ,quelle,rubrik,nachfrage,timing,wettbewerb,passung,aufwand,risiko,score,entscheidung,begruendung
+2026-10-31,Weihnachtsgeld: was bleibt netto?,kalender,"Kalender, Novemberabrechnung (Annahme)",GELD,3,5,4,5,5,4,83,vorschlagen,"planbarer Anlass, Monte-Carlo über Steuerklassen/Einkommen passt, Vorlage aus GD053 wiederverwendbar; Nachfrage nur angenommen"
+2026-10-31,Mindestlohn 14,60 € ab 01.01.2027,kalender,"bundesregierung.de (MiLoV5); Medien zu 'Was ändert sich 2027'",GELD,4,5,3,5,5,4,86,vorschlagen,"fester Termin, jährliches Suchthema, Twist Minijob-Grenze steigt mit; Steuerwerte 2027 vor Produktion prüfen"
+2026-10-31,@kontostand.vs +32 % Follower in 2 Tagen,konkurrenz,tools/monitor_kanaele.py,GELD,3,3,2,4,5,4,64,beobachten,"Geld-Duelle wachsen; kein neues Thema, nur Bestätigung der Rubrik"
