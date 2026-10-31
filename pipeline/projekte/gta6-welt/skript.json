@@ -4,38 +4,38 @@
   "segmente": [
     {
       "id": "hook",
-      "text": "GTA 6 kommt, und die halbe Welt feiert krank. Kostet das wirklich eine Milliarde?",
-      "sprechtext": "G T A sechs kommt, und die halbe Welt feiert krank. Kostet das wirklich eine Milliarde?"
+      "text": "GTA 6 kommt. Und die halbe Welt meldet sich krank. Kostet das wirklich eine Milliarde Dollar? Ich hab's durchgerechnet.",
+      "sprechtext": "G T A sechs kommt. Und die halbe Welt meldet sich krank. Kostet das wirklich eine Milliarde Dollar? Ich hab es durchgerechnet."
     },
     {
       "id": "behauptung",
-      "text": "Diese Zahl geht gerade um die Welt: Ein Ökonom schätzt allein für die USA eine Milliarde Dollar Schaden am Release-Tag. Ich hab's für die ganze Welt simuliert.",
-      "sprechtext": "Diese Zahl geht gerade um die Welt: Ein Ökonom schätzt allein für die USA eine Milliarde Dollar Schaden am Rilies-Tag. Ich hab es für die ganze Welt simuliert."
+      "text": "Die Zahl kommt von einem Ökonomen. Eine Milliarde Schaden, nur in den USA, an einem einzigen Tag. Klingt verrückt. Also rechnen wir das für die ganze Welt.",
+      "sprechtext": "Die Zahl kommt von einem Ökonomen. Eine Milliarde Schaden, nur in den USA, an einem einzigen Tag. Klingt verrückt. Also rechnen wir das für die ganze Welt."
     },
     {
       "id": "kaeufer",
-      "text": "Schritt eins: Analysten erwarten rund 25 Millionen verkaufte Spiele am ersten Tag. Etwa 60 Prozent der Käufer sind berufstätig. Macht 15 Millionen.",
-      "sprechtext": "Schritt eins: Analysten erwarten rund fünfundzwanzig Millionen verkaufte Spiele am ersten Tag. Etwa sechzig Prozent der Käufer sind berufstätig. Macht fünfzehn Millionen."
+      "text": "Analysten erwarten 25 Millionen verkaufte Spiele am ersten Tag. Aber nicht jeder Käufer arbeitet. Schüler und Studenten fallen raus. Bleiben rund 15 Millionen Berufstätige.",
+      "sprechtext": "Analysten erwarten fünfundzwanzig Millionen verkaufte Spiele am ersten Tag. Aber nicht jeder Käufer arbeitet. Schüler und Studenten fallen raus. Bleiben rund fünfzehn Millionen Berufstätige."
     },
     {
       "id": "krank",
-      "text": "Schritt zwei: Wie viele bleiben zu Hause? In Großbritannien planen es laut Umfrage 2 Prozent, in den USA wollen 10 Prozent nicht arbeiten. Ich nehme die Mitte: 750.000 Fehltage.",
-      "sprechtext": "Schritt zwei: Wie viele bleiben zu Hause? In Großbritannien planen es laut Umfrage zwei Prozent, in den USA wollen zehn Prozent nicht arbeiten. Ich nehme die Mitte: siebenhundertfünfzigtausend Fehltage."
+      "text": "Und wie viele schwänzen wirklich? In Großbritannien planen es 2 Prozent fest ein. In den USA wollen 10 Prozent gar nicht arbeiten. Wir nehmen die Mitte. 5 Prozent. Das sind 750.000 leere Schreibtische.",
+      "sprechtext": "Und wie viele schwänzen wirklich? In Großbritannien planen es zwei Prozent fest ein. In den USA wollen zehn Prozent gar nicht arbeiten. Wir nehmen die Mitte. Fünf Prozent. Das sind siebenhundertfünfzigtausend leere Schreibtische."
     },
     {
       "id": "kosten",
-      "text": "Schritt drei: Die meisten Käufer leben in reichen Ländern. Dort erwirtschaftet ein Arbeitstag im Schnitt rund 400 Dollar. Das sind 300 Millionen Dollar.",
-      "sprechtext": "Schritt drei: Die meisten Käufer leben in reichen Ländern. Dort erwirtschaftet ein Arbeitstag im Schnitt rund vierhundert Dollar. Das sind dreihundert Millionen Dollar."
+      "text": "Jetzt kommt das Geld. Die meisten Käufer leben in reichen Ländern. Dort bringt ein Arbeitstag im Schnitt rund 400 Dollar Wirtschaftsleistung. 750.000 mal 400. Macht 300 Millionen Dollar.",
+      "sprechtext": "Jetzt kommt das Geld. Die meisten Käufer leben in reichen Ländern. Dort bringt ein Arbeitstag im Schnitt rund vierhundert Dollar Wirtschaftsleistung. Siebenhundertfünfzigtausend mal vierhundert. Macht dreihundert Millionen Dollar."
     },
     {
       "id": "dreh",
-      "text": "Klingt nach viel. Ist es aber nicht. Die Weltwirtschaft schafft an einem einzigen Arbeitstag rund 450 Milliarden Dollar. GTA 6 kostet weniger als ein Promille, und das meiste wird nachgeholt.",
-      "sprechtext": "Klingt nach viel. Ist es aber nicht. Die Weltwirtschaft schafft an einem einzigen Arbeitstag rund vierhundertfünfzig Milliarden Dollar. G T A sechs kostet weniger als ein Promille, und das meiste wird nachgeholt."
+      "text": "Aber jetzt kommt der Haken. Die Weltwirtschaft schafft an einem Arbeitstag rund 450 Milliarden Dollar. GTA 6 kostet also weniger als ein Promille. Und das meiste wird sowieso nachgearbeitet. Die Milliarde? Weltweit nicht mal ein Drittel davon.",
+      "sprechtext": "Aber jetzt kommt der Haken. Die Weltwirtschaft schafft an einem Arbeitstag rund vierhundertfünfzig Milliarden Dollar. G T A sechs kostet also weniger als ein Promille. Und das meiste wird sowieso nachgearbeitet. Die Milliarde? Weltweit nicht mal ein Drittel davon."
     },
     {
       "id": "recht",
-      "text": "Teuer wird's eher für dich: Wer Krankheit nur vortäuscht, riskiert die Kündigung. Der sichere Weg heißt Urlaub.",
-      "sprechtext": "Teuer wird es eher für dich: Wer Krankheit nur vortäuscht, riskiert die Kündigung. Der sichere Weg heißt Urlaub."
+      "text": "Teuer wird's eher für dich. Wer Krankheit nur vortäuscht, riskiert die Kündigung. Der sichere Weg heißt Urlaub.",
+      "sprechtext": "Teuer wird es eher für dich. Wer Krankheit nur vortäuscht, riskiert die Kündigung. Der sichere Weg heißt Urlaub."
     },
     {
       "id": "ende",

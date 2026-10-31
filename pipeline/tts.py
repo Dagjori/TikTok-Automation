@@ -16,8 +16,10 @@ API = "https://api.elevenlabs.io/v1"
 MODELL = "eleven_multilingual_v2"
 STANDARD_STIMME = "Daniel"  # vom Inhaber gewählt (31.10.)
 EINSTELLUNGEN = {"stability": 0.6, "similarity_boost": 0.8, "style": 0.0, "use_speaker_boost": True, "speed": 1.12}
-PAUSE = 0.22          # Pause zwischen Segmenten in Sekunden
-PAUSE_LANG = 0.38     # nach dem Hook und vor dem Schluss-Satz
+PAUSE = 0.18          # Pause zwischen Segmenten (Vorbilder: Median 0,16–0,22 s)
+PAUSE_LANG = 0.18     # keine langen Pausen (Vorbilder: keine Pause über 0,5 s)
+ZIEL_WPS = 2.95       # Wörter pro Sekunde beim Sprechen (Top-Videos: 2,91–3,02, gemessen 31.10.2026)
+MAX_DEHNUNG = 1.35    # stärker beschleunigen klingt unnatürlich
 RATE = 44100
 
 
@@ -82,6 +84,15 @@ def pcm(mp3_bytes):
     a = array.array("h"); a.frombytes(roh); return a
 
 
+def dehnen(samples, faktor):
+    """Beschleunigt Sprache ohne Tonhöhenänderung (ffmpeg atempo)."""
+    import array, subprocess
+    raus = subprocess.run(["ffmpeg", "-v", "error", "-f", "s16le", "-ac", "1", "-ar", str(RATE), "-i", "pipe:0",
+                           "-filter:a", f"atempo={faktor:.4f}", "-f", "s16le", "-ac", "1", "-ar", str(RATE), "pipe:1"],
+                          input=samples.tobytes(), capture_output=True, check=True).stdout
+    a = array.array("h"); a.frombytes(raus); return a
+
+
 def mp3_schreiben(samples, ziel):
     import subprocess
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "s16le", "-ac", "1", "-ar", str(RATE), "-i", "pipe:0",
@@ -144,8 +155,9 @@ def main():
     # „sprechtext“ = Fassung für die Stimme (Zahlen ausgeschrieben, Lautschrift); „text“ = Anzeige bzw. Untertitel
     texte = [s.get("sprechtext") or s["text"] for s in skript["segmente"]]
     import array
-    gesamt_audio, segmente, zeit = array.array("h"), [], 0.0
-    for i, (seg, gesprochen) in enumerate(zip(skript["segmente"], texte)):
+    # Durchgang 1: alle Segmente erzeugen (Cache), Ränder bestimmen, natürliches Tempo messen
+    roh = []
+    for i, gesprochen in enumerate(texte):
         davor = " ".join(texte[max(0, i - 2):i])
         danach = texte[i + 1] if i + 1 < len(texte) else ""
         antwort = sprechen(gesprochen, voice_id, davor, danach)
@@ -155,13 +167,23 @@ def main():
         von = max(0.0, starts[sichtbar[0]] - 0.03)
         bis = enden[sichtbar[-1]] + 0.07
         samples = pcm(base64.b64decode(antwort["audio_base64"]))
-        stueck = samples[int(von * RATE):int(bis * RATE)]
+        roh.append((zeichen, starts, enden, von, samples[int(von * RATE):int(bis * RATE)]))
+    anzahl_woerter = sum(len(s["text"].split()) for s in skript["segmente"])
+    sprechdauer = sum(len(r[4]) for r in roh) / RATE
+    faktor = min(MAX_DEHNUNG, max(1.0, ZIEL_WPS / (anzahl_woerter / sprechdauer)))
+    print(f"  natürliches Tempo {anzahl_woerter / sprechdauer:.2f} W/s → Faktor {faktor:.3f}")
+
+    # Durchgang 2: beschleunigen (Tonhöhe bleibt), Pausen setzen, Zeiten umrechnen
+    gesamt_audio, segmente, zeit = array.array("h"), [], 0.0
+    for i, (seg, (zeichen, starts, enden, von, stueck)) in enumerate(zip(skript["segmente"], roh)):
+        if faktor > 1.0:
+            stueck = dehnen(stueck, faktor)
         if i > 0:  # Pause vor diesem Segment
             pause = PAUSE_LANG if i == 1 or i == len(texte) - 1 else PAUSE
             gesamt_audio.extend(array.array("h", bytes(2 * int(pause * RATE))))
             zeit += pause
-        versatz = zeit - von
-        gesprochene_woerter = [{"wort": w["wort"], "start": round(w["start"] + versatz, 3), "ende": round(w["ende"] + versatz, 3)}
+        gesprochene_woerter = [{"wort": w["wort"], "start": round(zeit + (w["start"] - von) / faktor, 3),
+                                "ende": round(zeit + (w["ende"] - von) / faktor, 3)}
                                for w in woerter(zeichen, starts, enden)]
         laenge = len(stueck) / RATE  # echte Länge (kann kürzer sein als bis - von, wenn das Audio vorher endet)
         segmente.append({
