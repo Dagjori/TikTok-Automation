@@ -11,6 +11,7 @@
 - **Nische gewählt (31.10.):** „Der Testlauf – Alltag durchgerechnet“ (GELD plus ALLTAG). Marke, Profil, Bauplan und die ersten 30 Testläufe stehen in `docs/05-startnische.md`.
 - **Trend-Radar täglich (31.10.):** geplante Aufgabe „Trend-Radar Der Testlauf“, jeden Tag 05:35 Uhr Berlin, Push-Benachrichtigung bei Funden. Ablauf und Raster in `docs/07-trend-monitoring.md`, Vorschläge (nur Score ≥ 70) in `docs/trends/vorschlaege.md`.
 - **Trend-Vorschläge angenommen (31.10.):** Weihnachtsgeld netto (83, posten 20.–28.11.), Mindestlohn 14,60 € (86, posten 28.12.–05.01.), jeweils unter der Bedingung mindestens 1 Minute (nachgewiesen in `docs/08-beispielskripte.md`).
+- **Neuer Trend-Vorschlag (31.10.):** Deutschlandticket 66,80 € ab 01.01.2027 (Score 79, posten 12.–20.12., spätestens 03.01.), Details in `docs/trends/vorschlaege.md`.
 - **Beispiel-Skripte (31.10.):** Reißverschluss (ALLTAG) und Weihnachtsgeld (GELD) in `docs/08-beispielskripte.md`. **Wartet auf Stil-Freigabe; erst danach Pipeline-Bau.**
 - **Neue Konkurrenz (31.10.):** @gegenprobe (in den letzten Stunden angelegt, „Alltagsmythen als Simulation“), @alltagsduell, @alltagsformel, @alltaginzahlen. Alle im Monitor. Die Nische zieht Nachahmer an, Tempo zählt.
 - **Ausstattung entschieden:** ElevenLabs Starter, Rendern auf dem Windows-PC des Inhabers. Creator Search Insights ist im Account nicht verfügbar (nur „Inspiration“).

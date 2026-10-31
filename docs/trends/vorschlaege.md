@@ -6,6 +6,18 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
+## 💶 Deutschlandticket wird teurer: Ab wie vielen Fahrten lohnt es sich noch?
+- **Score:** 79 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 5) · **Status:** neu
+- **Warum:**
+  - Preis steigt am 01.01.2027 von 63 € auf 66,80 € (F: Verkehrsministerkonferenz laut [Tagesspiegel Background](https://background.tagesspiegel.de/verkehr-und-smart-mobility/briefing/deutschlandticket-wird-2027-teurer), [Stuttgarter Zeitung](https://www.stuttgarter-zeitung.de/panorama/preiserhoehung-deutschlandticket-kostet-2027-rund-45-euro-mehr-79612861.html)).
+  - Bis Ende 12.2026 gilt noch 63 € (F: laut Suchzusammenfassung, vor Produktion prüfen).
+  - Erstmals Index-Automatismus, also künftig jährlich Thema (A).
+- **Eigene Umsetzung:** 1.000 simulierte Pendler mit unterschiedlicher Strecke, Fahrtenzahl und Einzelticket-/Auto-Kosten. Wo liegt der Break-even, wie viele zahlen drauf? Rubrik GELD, Idee GD019 als Basis.
+- **Vor Produktion prüfen:** Einzelticket-Preise je Region, Autokosten (ADAC), Preis 66,80 € gegen Primärquelle VMK.
+- **Posten:** 12.–20.12.2026 empfohlen (Abstand zum Mindestlohn-Video), spätestens 03.01.2027.
+
+---
+
 ## 💶 Mindestlohn 14,60 €: Was kommt netto wirklich mehr an?
 - **Score:** 86 (Nachfrage 4, Timing 5, Wettbewerb 3, Passung 5, Aufwand 5, Risiko 4) · **Status:** angenommen (31.10., unter der Bedingung mindestens 1 Minute; Ablauf mit ca. 75 s in `docs/08-beispielskripte.md`)
 - **Warum:**
