@@ -14,7 +14,7 @@ from pathlib import Path
 
 API = "https://api.elevenlabs.io/v1"
 MODELL = "eleven_multilingual_v2"
-STANDARD_STIMME = "George"
+STANDARD_STIMME = "zfc8CJQpe8Kqyl0vvCzo"  # vom Inhaber gewählt (31.10.)
 EINSTELLUNGEN = {"stability": 0.45, "similarity_boost": 0.8, "style": 0.2, "use_speaker_boost": True}
 
 

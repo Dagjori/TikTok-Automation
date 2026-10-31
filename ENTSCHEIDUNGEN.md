@@ -23,3 +23,4 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-10-31 | Account heißt ab sofort Simulierbar (`@simulierbar` aktiv); ElevenLabs-API-Key ist erstellt | Umsetzung durch den Inhaber |
 | 2026-10-31 | Optik deutlich hochwertiger als die Konkurrenz (Motion Design) wird zum Markenzeichen | Abheben über Qualität |
 | 2026-10-31 | Start **heute** mit 2 Videos: GTA 6 **weltweit** gerechnet plus Reißverschluss. Die Deutschland-Version von GTA 6 wird eine eigene, spätere Idee | Tempo; weltweite Rechnung hat größere Reichweite |
+| 2026-10-31 | Sprecherstimme: ElevenLabs-Voice `zfc8CJQpe8Kqyl0vvCzo` (Standard in `pipeline/tts.py`) | Auswahl des Inhabers |
