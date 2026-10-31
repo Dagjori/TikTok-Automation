@@ -84,12 +84,12 @@ function baueGlobus(buehne, daten, zp) {
     { t: kEnde - 0.3, v: [49, 6], e: ease.inOutCubic },
   ];
   const abstand = [
-    { t: 0, v: 11.2 },
-    { t: sB, v: 9.6, e: ease.outCubic },
-    { t: sB + 2.2, v: 5.4, e: ease.inOutCubic },
-    { t: usaEnde - 0.2, v: 5.0, e: ease.linear },
-    { t: usaEnde + 1.6, v: 9.4, e: ease.inOutCubic },
-    { t: kEnde - 1.25, v: 8.6, e: ease.linear },
+    { t: 0, v: 13.2 },
+    { t: sB, v: 11.6, e: ease.outCubic },
+    { t: sB + 2.2, v: 5.6, e: ease.inOutCubic },
+    { t: usaEnde - 0.2, v: 5.2, e: ease.linear },
+    { t: usaEnde + 1.6, v: 11.4, e: ease.inOutCubic },
+    { t: kEnde - 1.25, v: 10.4, e: ease.linear },
     { t: kEnde + 0.5, v: 1.55, e: ease.inCubic },
   ];
 
@@ -180,7 +180,7 @@ function baueGlobus(buehne, daten, zp) {
 
   const welt = {
     szene, kamera, update,
-    post: { bloomStaerke: 1.15, bloomSchwelle: 0.85, bloomKnie: 0.5, vignette: 0.38, koernung: 0.045, saettigung: 1.06, kontrast: 1.04 },
+    post: { bloomStaerke: 1.2, bloomSchwelle: 1.35, bloomKnie: 0.5, vignette: 0.38, koernung: 0.045, saettigung: 1.06, kontrast: 1.04 },
   };
 
   // Schluss-Welt: gleicher Globus, eigene Kamera und Lichter
@@ -189,7 +189,7 @@ function baueGlobus(buehne, daten, zp) {
   const ende = P.filter((p) => hash(p.i, 41) < 0.33).map((p) => ({ i: p.i, d: Math.hypot(p.lat - 50, p.lon - 8), farbe: [GELB, ORANGE, hdr("#19B36B", 2.6), WEISS][Math.floor(hash(p.i, 42) * 4)] }));
   const welt2 = {
     szene, kamera: kameraEnde,
-    post: { bloomStaerke: 1.2, bloomSchwelle: 0.85, vignette: 0.42, koernung: 0.045, saettigung: 1.06, unschaerfe: 0.0 },
+    post: { bloomStaerke: 1.2, bloomSchwelle: 1.35, vignette: 0.42, koernung: 0.045, saettigung: 1.06, unschaerfe: 0.0 },
     update(t) {
       const dt = t - sE;
       g.setzeDrehung((22 * Math.PI) / 180, ((-8 - dt * 9) * Math.PI) / 180);

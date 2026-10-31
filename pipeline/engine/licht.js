@@ -43,12 +43,12 @@ export function lichtTag(szene, renderer, {
 }
 
 /** Licht für den Globus: Studio-Umgebung, Führungslicht von oben links, kühles Gegenlicht */
-export function lichtGlobus(szene, renderer, { umgebungsStaerke = 0.8 } = {}) {
+export function lichtGlobus(szene, renderer, { umgebungsStaerke = 0.38 } = {}) {
   szene.environment = umgebung(renderer);
   szene.environmentIntensity = umgebungsStaerke;
-  const key = new THREE.DirectionalLight("#FFFFFF", 2.2);
+  const key = new THREE.DirectionalLight("#FFFFFF", 1.9);
   key.position.set(-3, 4, 5);
-  const rim = new THREE.DirectionalLight("#7FB2FF", 2.5);
+  const rim = new THREE.DirectionalLight("#7FB2FF", 1.6);
   rim.position.set(4, 2, -4);
   const hemi = new THREE.HemisphereLight("#BFD6FF", "#0A1530", 0.6);
   szene.add(key, rim, hemi);

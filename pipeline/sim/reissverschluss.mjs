@@ -405,7 +405,7 @@ export class Simulation {
     const luecke = this.stauLuecke;
     const minFzg = this.p.stauMinFahrzeuge;
     const kopfMin = xb - this.wechselStartZellen - 40; // Spitze höchstens 300 m vor dem Wechselbereich
-    const kopfMax = xb + 20;
+    const kopfMax = xb + 60; // langsam anfahrende Fahrzeuge reichen bis ca. 450 m hinter die Engstelle
     let besteLaenge = 0;
     let besteAnzahl = 0;
     let besteEnde = -1;
@@ -493,6 +493,12 @@ export class Simulation {
     const p = this.p;
     const dauer = p.zuflussDauerS;
     const nSp = Math.min(dauer, this.stauVerlaufM.length - 1); // letzter Zeitpunkt der Verkehrsspitze
+    // „Ende“ = Mittel der letzten 60 s der Verkehrsspitze (robust gegen Einzelmessungen)
+    const mittel = (reihe, von, bis) => {
+      let sm = 0;
+      for (let t = Math.max(0, von); t <= bis; t++) sm += reihe[t];
+      return sm / (bis - Math.max(0, von) + 1);
+    };
     let stauMax = 0;
     let stauSumme = 0;
     let rueckMax = 0;
@@ -532,15 +538,15 @@ export class Simulation {
     const reisezeit = rz.length ? rz.reduce((a, b) => a + b, 0) / rz.length : NaN;
     return {
       seed: this.seed,
-      // Kolonne (Spitze bis Stauende)
+      // Kolonne (Spitze bis Stauende); „Ende“ = Mittel der letzten 60 s der Verkehrsspitze
       stauMaxM: stauMax,
       stauMittelM: stauSumme / (nSp + 1),
-      stauEndeM: this.stauVerlaufM[nSp],
+      stauEndeM: mittel(this.stauVerlaufM, nSp - 59, nSp),
       // Rückstau (Stauende bis Engstelle)
       rueckstauMaxM: rueckMax,
       rueckstauMittelM: rueckSumme / (nSp + 1),
-      rueckstauEndeM: this.rueckstauVerlaufM[nSp],
-      fahrzeugeImStauAmEnde: this.stauVerlaufFzg[nSp],
+      rueckstauEndeM: mittel(this.rueckstauVerlaufM, nSp - 59, nSp),
+      fahrzeugeImStauAmEnde: mittel(this.stauVerlaufFzg, nSp - 59, nSp),
       stauDichteFzgProZelle: dichteN ? dichteSumme / dichteN : NaN,
       reisezeitMittelS: reisezeit,
       durchsatzKfzH: (zeitenImFenster.length / fensterS) * 3600,
@@ -593,7 +599,8 @@ export class Aufzeichner {
     this.xVonM = xVonM;
     this.xBisM = xBisM;
     this.reihen = new Map(); // id -> { t0, herk, x: [], spur: [] }
-    this.stau = new Map(); // t -> Staulänge (m)
+    this.stau = new Map(); // t -> Länge der Kolonne (m)
+    this.rueckstau = new Map(); // t -> Abstand Stauende–Engstelle (m)
     this.kumulativ = new Map(); // t -> Fahrzeuge, die die Engstelle passiert haben
   }
 
@@ -613,6 +620,7 @@ export class Aufzeichner {
       r.spur.push(sim.vSpur[i]);
     }
     this.stau.set(t, sim.stauVerlaufM[t]);
+    this.rueckstau.set(t, sim.rueckstauVerlaufM[t]);
     this.kumulativ.set(t, sim.kreuzZeiten.length);
   }
 }

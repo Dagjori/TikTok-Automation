@@ -37,7 +37,7 @@ export class PunktGlobus {
    * @param {{punkte:Array, abstand:number}} daten  aus globus-punkte.json
    */
   constructor(daten, {
-    ozean = "#1D4FCF", noppe = "#EAF1FF", noppenGroesse = 0.42, atmosphaere = "#6FA8FF",
+    ozean = "#1E50D2", noppe = "#F2F6FF", noppenGroesse = 0.42, atmosphaere = "#6FA8FF",
     segmente = 128,
   } = {}) {
     this.gruppe = new THREE.Group();
@@ -45,7 +45,7 @@ export class PunktGlobus {
     const abstandRad = (daten.abstand * Math.PI) / 180;
 
     // Ozean: glänzende Kugel
-    this.ozeanMat = new THREE.MeshPhysicalMaterial({ color: ozean, roughness: 0.32, metalness: 0.0, clearcoat: 0.7, clearcoatRoughness: 0.25 });
+    this.ozeanMat = new THREE.MeshPhysicalMaterial({ color: ozean, roughness: 0.5, metalness: 0.0, clearcoat: 0.35, clearcoatRoughness: 0.35 });
     this.ozean = new THREE.Mesh(new THREE.SphereGeometry(1, segmente, segmente >> 1), this.ozeanMat);
     this.gruppe.add(this.ozean);
 
@@ -68,11 +68,11 @@ export class PunktGlobus {
 
     // Atmosphäre (Rand-Leuchten hinter der Kugel) und weicher Glanz vorne
     this.atmo = new THREE.Mesh(
-      new THREE.SphereGeometry(1.12, 96, 48),
+      new THREE.SphereGeometry(1.06, 96, 48),
       new THREE.ShaderMaterial({
         vertexShader: ATMO_VERT,
         fragmentShader: ATMO_FRAG,
-        uniforms: { farbe: { value: new THREE.Color(atmosphaere) }, staerke: { value: 1.6 }, potenz: { value: 2.2 } },
+        uniforms: { farbe: { value: new THREE.Color(atmosphaere) }, staerke: { value: 1.25 }, potenz: { value: 3.2 } },
         side: THREE.BackSide, blending: THREE.AdditiveBlending, transparent: true, depthWrite: false,
       })
     );
@@ -81,7 +81,7 @@ export class PunktGlobus {
       new THREE.ShaderMaterial({
         vertexShader: ATMO_VERT,
         fragmentShader: ATMO_FRAG,
-        uniforms: { farbe: { value: new THREE.Color(atmosphaere) }, staerke: { value: 0.9 }, potenz: { value: 3.0 } },
+        uniforms: { farbe: { value: new THREE.Color(atmosphaere) }, staerke: { value: 0.45 }, potenz: { value: 3.5 } },
         blending: THREE.AdditiveBlending, transparent: true, depthWrite: false,
       })
     );
@@ -139,7 +139,7 @@ export class PunktGlobus {
    * Lichter für dieses Bild setzen.
    * liste: [{ i: Punktindex, groesse: 0..∞, farbe: THREE.Color (HDR), ring: 0..1 Fortschritt|undefined, ringFarbe, strahl: 0..1|undefined }]
    */
-  setzeLichter(liste, { lichtGroesse = 0.011, ringGroesse = 0.075, strahlHoehe = 0.22, strahlBreite = 0.0035 } = {}) {
+  setzeLichter(liste, { lichtGroesse = 0.0165, ringGroesse = 0.085, strahlHoehe = 0.22, strahlBreite = 0.0035 } = {}) {
     let a = 0, b = 0, c = 0;
     const m4 = this._m4, q = this._q, s = this._s, p = this._p;
     for (const l of liste) {

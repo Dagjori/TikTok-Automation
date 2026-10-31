@@ -1,0 +1,1454 @@
+{
+ "meta": {
+  "titel": "Früh einordnen oder Reißverschluss? Mikrosimulation einer Fahrstreifenreduktion 2 auf 1",
+  "erstellt": "2026-10-31",
+  "modell": "Nagel-Schreckenberg-Zellularautomat, 2 Spuren, offene Ränder, Seeded RNG (mulberry32). Quelle: pipeline/sim/reissverschluss.mjs",
+  "laeufeJeZelle": 10,
+  "seeds": "1001…1010 (je Szenario und Strategie dieselben Seeds, gleiche Ankünfte bei A und B)",
+  "kennzeichnung": "Alle Zahlen sind Modellergebnisse (Schätzung), keine Messungen. Die Zuflussraten und die Wahl der Strategie-Definition sind Annahmen.",
+  "methodik": [
+   "Strecke: 10 km vor der Engstelle (2 Spuren), 0,9 km dahinter (1 Spur). Zelle 7,5 m, Zeitschritt 1 s, vmax 3 Zellen/s (81 km/h), Trödeln p = 0,2.",
+   "Ablauf: Straße bei t = 0 mit freiem Verkehr in Höhe der Zuflussrate gefüllt; 30 min Verkehrsspitze mit konstantem Zufluss (je Spur Bernoulli je Sekunde), danach läuft der Verkehr aus.",
+   "Strategie A (Früh einordnen): Wechselwunsch ab Schild 800 m vor der Engstelle; wer nicht sofort wechseln kann, passt sich der Zielspur an und bremst zum Lückensuchen. Strategie B (Reißverschluss): Wechselwunsch erst in den letzten 60 m vor der Engstelle.",
+   "Beide Strategien: Wechsel nur in freie Zelle, wenn der Hintermann höchstens um 1 Zelle/s stärker bremsen muss; „im Wechsel“: nicht dicht neben einem Fahrzeug einscheren, das selbst eingefädelt ist.",
+   "Stau: zusammenhängende Kolonne von mindestens 10 Fahrzeugen mit v ≤ 1 Zelle/s (27 km/h), Lücken bis 112,5 m. Staulänge = Kolonne von Spitze bis Ende, Rückstau = Abstand Stauende–Engstelle.",
+   "Durchsatz: Fahrzeuge, die die Engstelle in Minute 10 bis 30 passieren, hochgerechnet auf Kfz/h. Reisezeit: mittlere Fahrzeit der Fahrzeuge, die während der 30 min einfahren, über die gesamte Strecke (10,9 km).",
+   "Vergleich gepaart je Seed; „Reduktion“ = (A − B) / A aus den Mittelwerten (positiv: Reißverschluss kürzer). Streuung: Standardabweichung über die Läufe, ci95 = Halbbreite des 95-%-Intervalls des Mittelwerts."
+  ]
+ },
+ "parameter": {
+  "vmax": 3,
+  "traeodel": 0.2,
+  "anfahrTraeodel": 0.2,
+  "streckeVorM": 10000,
+  "streckeNachM": 900,
+  "schildM": 800,
+  "zoneM": 60,
+  "anteilEndendeSpur": 0.5,
+  "bremsToleranz": 1,
+  "suchBremsWahrsch": 0.5,
+  "abwechselnd": 1,
+  "abwechselndLueckeZellen": 4,
+  "stauGeschwindigkeit": 1,
+  "stauLueckeM": 112.5,
+  "stauMinFahrzeuge": 10,
+  "zuflussDauerS": 1800,
+  "messVonS": 600,
+  "messBisS": 1800,
+  "zelleM": 7.5,
+  "schrittS": 1,
+  "vmaxMs": 22.5,
+  "freieFahrzeitS": 519.2,
+  "schildEffektivM": 802.5,
+  "zoneEffektivM": 60
+ },
+ "kalibrierung": {
+  "hinweis": "Kapazität der Engstelle = gemessener Durchsatz bei Überlast (Rushhour). Vergleich: HCM-Richtwert 1.600 pc/h je Spur, Praxisspanne 1.100–1.900.",
+  "kapazitaetEngstelleKfzH": {
+   "frueh": {
+    "n": 10,
+    "mittel": 1794,
+    "sd": 18.5,
+    "ci95": 11.5,
+    "min": 1764,
+    "median": 1798.5,
+    "max": 1818
+   },
+   "reissverschluss": {
+    "n": 10,
+    "mittel": 1773.6,
+    "sd": 31.2,
+    "ci95": 19.3,
+    "min": 1731,
+    "median": 1777.5,
+    "max": 1815
+   }
+  },
+  "staudichteFzgProZelleUndSpur": {
+   "frueh": {
+    "n": 10,
+    "mittel": 0.47,
+    "sd": 0.02,
+    "ci95": 0.01,
+    "min": 0.44,
+    "median": 0.47,
+    "max": 0.49
+   },
+   "reissverschluss": {
+    "n": 10,
+    "mittel": 0.54,
+    "sd": 0.02,
+    "ci95": 0.01,
+    "min": 0.51,
+    "median": 0.54,
+    "max": 0.57
+   },
+   "hinweis": "Fahrzeuge je Zelle (7,5 m) und Spur in der Kolonne; 1,0 = Stoßstange an Stoßstange. Näherung: Kolonnenlänge verteilt auf beide Spuren."
+  }
+ },
+ "szenarien": {
+  "wenig": {
+   "name": "Wenig Verkehr",
+   "zuflussKfzH": 1200,
+   "zuflussBegruendung": "Nebenverkehrszeit (mittags, abends): 600 Kfz/h je Spur, deutlich unter der Kapazität einer einzelnen Baustellenspur (HCM-Richtwert 1.600, Praxis 1.100–1.900).",
+   "laeufeJeStrategie": 10,
+   "strategien": {
+    "frueh": {
+     "rueckstauEndeM": {
+      "n": 10,
+      "mittel": 0,
+      "sd": 0,
+      "ci95": 0,
+      "min": 0,
+      "median": 0,
+      "max": 0
+     },
+     "rueckstauMaxM": {
+      "n": 10,
+      "mittel": 168,
+      "sd": 354.3,
+      "ci95": 219.6,
+      "min": 0,
+      "median": 0,
+      "max": 862.5
+     },
+     "rueckstauMittelM": {
+      "n": 10,
+      "mittel": 0.1,
+      "sd": 0.4,
+      "ci95": 0.3,
+      "min": 0,
+      "median": 0,
+      "max": 1.4
+     },
+     "stauEndeM": {
+      "n": 10,
+      "mittel": 0,
+      "sd": 0,
+      "ci95": 0,
+      "min": 0,
+      "median": 0,
+      "max": 0
+     },
+     "stauMaxM": {
+      "n": 10,
+      "mittel": 30.8,
+      "sd": 65,
+      "ci95": 40.3,
+      "min": 0,
+      "median": 0,
+      "max": 165
+     },
+     "stauMittelM": {
+      "n": 10,
+      "mittel": 0,
+      "sd": 0.1,
+      "ci95": 0,
+      "min": 0,
+      "median": 0,
+      "max": 0.2
+     },
+     "fahrzeugeImStauAmEnde": {
+      "n": 10,
+      "mittel": 0,
+      "sd": 0,
+      "ci95": 0,
+      "min": 0,
+      "median": 0,
+      "max": 0
+     },
+     "reisezeitMittelS": {
+      "n": 10,
+      "mittel": 525.2,
+      "sd": 0.7,
+      "ci95": 0.4,
+      "min": 524.1,
+      "median": 525.1,
+      "max": 526.5
+     },
+     "verlustzeitMittelS": {
+      "n": 10,
+      "mittel": 6,
+      "sd": 0.7,
+      "ci95": 0.4,
+      "min": 4.9,
+      "median": 5.9,
+      "max": 7.3
+     },
+     "durchsatzKfzH": {
+      "n": 10,
+      "mittel": 1195.5,
+      "sd": 69.9,
+      "ci95": 43.3,
+      "min": 1038,
+      "median": 1210.5,
+      "max": 1272
+     },
+     "anteilVonEndenderSpurProzent": {
+      "n": 10,
+      "mittel": 48.6,
+      "sd": 2.1,
+      "ci95": 1.3,
+      "min": 44.8,
+      "median": 48.9,
+      "max": 51.2
+     },
+     "wechselquoteProzent": {
+      "n": 10,
+      "mittel": 62.7,
+      "sd": 3,
+      "ci95": 1.9,
+      "min": 56.9,
+      "median": 63.4,
+      "max": 66.7
+     },
+     "wechselAbstandMittelM": {
+      "n": 10,
+      "mittel": 757.9,
+      "sd": 5.4,
+      "ci95": 3.3,
+      "min": 746.9,
+      "median": 759.1,
+      "max": 766.1
+     },
+     "stauDichteFzgProZelle": {
+      "n": 0,
+      "mittel": null,
+      "sd": null,
+      "ci95": null,
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "maxWartend": {
+      "n": 10,
+      "mittel": 2,
+      "sd": 0,
+      "ci95": 0,
+      "min": 2,
+      "median": 2,
+      "max": 2
+     }
+    },
+    "reissverschluss": {
+     "rueckstauEndeM": {
+      "n": 10,
+      "mittel": 0,
+      "sd": 0,
+      "ci95": 0,
+      "min": 0,
+      "median": 0,
+      "max": 0
+     },
+     "rueckstauMaxM": {
+      "n": 10,
+      "mittel": 18.8,
+      "sd": 39.6,
+      "ci95": 24.5,
+      "min": 0,
+      "median": 0,
+      "max": 97.5
+     },
+     "rueckstauMittelM": {
+      "n": 10,
+      "mittel": 0,
+      "sd": 0.1,
+      "ci95": 0,
+      "min": 0,
+      "median": 0,
+      "max": 0.2
+     },
+     "stauEndeM": {
+      "n": 10,
+      "mittel": 0,
+      "sd": 0,
+      "ci95": 0,
+      "min": 0,
+      "median": 0,
+      "max": 0
+     },
+     "stauMaxM": {
+      "n": 10,
+      "mittel": 20.3,
+      "sd": 44.4,
+      "ci95": 27.5,
+      "min": 0,
+      "median": 0,
+      "max": 127.5
+     },
+     "stauMittelM": {
+      "n": 10,
+      "mittel": 0,
+      "sd": 0.1,
+      "ci95": 0.1,
+      "min": 0,
+      "median": 0,
+      "max": 0.3
+     },
+     "fahrzeugeImStauAmEnde": {
+      "n": 10,
+      "mittel": 0,
+      "sd": 0,
+      "ci95": 0,
+      "min": 0,
+      "median": 0,
+      "max": 0
+     },
+     "reisezeitMittelS": {
+      "n": 10,
+      "mittel": 524.6,
+      "sd": 0.7,
+      "ci95": 0.4,
+      "min": 523.2,
+      "median": 524.7,
+      "max": 525.5
+     },
+     "verlustzeitMittelS": {
+      "n": 10,
+      "mittel": 5.4,
+      "sd": 0.7,
+      "ci95": 0.4,
+      "min": 4,
+      "median": 5.5,
+      "max": 6.3
+     },
+     "durchsatzKfzH": {
+      "n": 10,
+      "mittel": 1195.2,
+      "sd": 68.5,
+      "ci95": 42.5,
+      "min": 1038,
+      "median": 1210.5,
+      "max": 1272
+     },
+     "anteilVonEndenderSpurProzent": {
+      "n": 10,
+      "mittel": 48.7,
+      "sd": 2.1,
+      "ci95": 1.3,
+      "min": 44.8,
+      "median": 49.1,
+      "max": 51.4
+     },
+     "wechselquoteProzent": {
+      "n": 10,
+      "mittel": 63,
+      "sd": 3.8,
+      "ci95": 2.3,
+      "min": 56.5,
+      "median": 63.4,
+      "max": 68.5
+     },
+     "wechselAbstandMittelM": {
+      "n": 10,
+      "mittel": 42,
+      "sd": 0.7,
+      "ci95": 0.5,
+      "min": 41.4,
+      "median": 41.8,
+      "max": 44
+     },
+     "stauDichteFzgProZelle": {
+      "n": 0,
+      "mittel": null,
+      "sd": null,
+      "ci95": null,
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "maxWartend": {
+      "n": 10,
+      "mittel": 2,
+      "sd": 0,
+      "ci95": 0,
+      "min": 2,
+      "median": 2,
+      "max": 2
+     }
+    }
+   },
+   "vergleichBGegenA": {
+    "rueckstauEnde": {
+     "A_mittel": 0,
+     "B_mittel": 0,
+     "reduktionProzent": null,
+     "reduktionProzentJeSeed": {
+      "n": 0,
+      "mittel": null,
+      "sd": null,
+      "ci95": null,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    },
+    "rueckstauMax": {
+     "A_mittel": 168,
+     "B_mittel": 18.8,
+     "reduktionProzent": 88.8,
+     "reduktionProzentJeSeed": {
+      "n": 2,
+      "mittel": 94.8,
+      "sd": 7.4,
+      "ci95": 10.2,
+      "min": 89.6,
+      "median": 94.8,
+      "max": 100
+     }
+    },
+    "rueckstauMittel": {
+     "A_mittel": 0.1,
+     "B_mittel": 0,
+     "reduktionProzent": null,
+     "reduktionProzentJeSeed": {
+      "n": 0,
+      "mittel": null,
+      "sd": null,
+      "ci95": null,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    },
+    "stauEnde": {
+     "A_mittel": 0,
+     "B_mittel": 0,
+     "reduktionProzent": null,
+     "reduktionProzentJeSeed": {
+      "n": 0,
+      "mittel": null,
+      "sd": null,
+      "ci95": null,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    },
+    "stauMax": {
+     "A_mittel": 30.8,
+     "B_mittel": 20.3,
+     "reduktionProzent": null,
+     "reduktionProzentJeSeed": {
+      "n": 2,
+      "mittel": 55.3,
+      "sd": 63.3,
+      "ci95": 87.7,
+      "min": 10.5,
+      "median": 55.3,
+      "max": 100
+     }
+    },
+    "stauMittel": {
+     "A_mittel": 0,
+     "B_mittel": 0,
+     "reduktionProzent": null,
+     "reduktionProzentJeSeed": {
+      "n": 0,
+      "mittel": null,
+      "sd": null,
+      "ci95": null,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    },
+    "reisezeit": {
+     "A_mittel": 525.2,
+     "B_mittel": 524.6,
+     "differenzBMinusA": {
+      "n": 10,
+      "mittel": -0.6,
+      "sd": 0.3,
+      "ci95": 0.2,
+      "min": -1.2,
+      "median": -0.5,
+      "max": -0.2
+     },
+     "differenzProzent": -0.1,
+     "unterscheidbar": true
+    },
+    "durchsatz": {
+     "A_mittel": 1195.5,
+     "B_mittel": 1195.2,
+     "differenzBMinusA": {
+      "n": 10,
+      "mittel": -0.3,
+      "sd": 3.9,
+      "ci95": 2.4,
+      "min": -9,
+      "median": 0,
+      "max": 6
+     },
+     "differenzProzent": 0,
+     "unterscheidbar": false
+    }
+   },
+   "typischeLaeufe": {
+    "frueh": {
+     "seed": 1005,
+     "datei": "trajektorien_wenig_frueh.json",
+     "rueckstauEndeM": 0,
+     "stauEndeM": 0,
+     "reisezeitMittelS": 525.1,
+     "durchsatzKfzH": 1200
+    },
+    "reissverschluss": {
+     "seed": 1001,
+     "datei": "trajektorien_wenig_reissverschluss.json",
+     "rueckstauEndeM": 0,
+     "stauEndeM": 0,
+     "reisezeitMittelS": 524.7,
+     "durchsatzKfzH": 1209
+    }
+   }
+  },
+  "feierabend": {
+   "name": "Feierabend",
+   "zuflussKfzH": 2400,
+   "zuflussBegruendung": "Spitzenstunde einer gut belasteten zweistreifigen Autobahnrichtung: 1.200 Kfz/h je Spur, etwa 60 % der Kapazität der freien Strecke, aber über der einer einzelnen Baustellenspur.",
+   "laeufeJeStrategie": 10,
+   "strategien": {
+    "frueh": {
+     "rueckstauEndeM": {
+      "n": 10,
+      "mittel": 3439.5,
+      "sd": 188.3,
+      "ci95": 116.7,
+      "min": 3052.9,
+      "median": 3419.5,
+      "max": 3728.8
+     },
+     "rueckstauMaxM": {
+      "n": 10,
+      "mittel": 3928.5,
+      "sd": 171.5,
+      "ci95": 106.3,
+      "min": 3675,
+      "median": 3900,
+      "max": 4230
+     },
+     "rueckstauMittelM": {
+      "n": 10,
+      "mittel": 2019.4,
+      "sd": 110.4,
+      "ci95": 68.4,
+      "min": 1872.9,
+      "median": 2039.9,
+      "max": 2206.2
+     },
+     "stauEndeM": {
+      "n": 10,
+      "mittel": 2917,
+      "sd": 248.4,
+      "ci95": 154,
+      "min": 2528.3,
+      "median": 2852.9,
+      "max": 3336.1
+     },
+     "stauMaxM": {
+      "n": 10,
+      "mittel": 3939.8,
+      "sd": 228.6,
+      "ci95": 141.7,
+      "min": 3547.5,
+      "median": 3903.8,
+      "max": 4275
+     },
+     "stauMittelM": {
+      "n": 10,
+      "mittel": 1508.1,
+      "sd": 109.8,
+      "ci95": 68.1,
+      "min": 1344.1,
+      "median": 1508.4,
+      "max": 1699.3
+     },
+     "fahrzeugeImStauAmEnde": {
+      "n": 10,
+      "mittel": 340,
+      "sd": 34.8,
+      "ci95": 21.5,
+      "min": 294.3,
+      "median": 339.3,
+      "max": 410
+     },
+     "reisezeitMittelS": {
+      "n": 10,
+      "mittel": 1004.2,
+      "sd": 40.2,
+      "ci95": 24.9,
+      "min": 945,
+      "median": 999.9,
+      "max": 1091.9
+     },
+     "verlustzeitMittelS": {
+      "n": 10,
+      "mittel": 485,
+      "sd": 40.2,
+      "ci95": 24.9,
+      "min": 425.8,
+      "median": 480.8,
+      "max": 572.7
+     },
+     "durchsatzKfzH": {
+      "n": 10,
+      "mittel": 1806.6,
+      "sd": 23.1,
+      "ci95": 14.3,
+      "min": 1773,
+      "median": 1806,
+      "max": 1842
+     },
+     "anteilVonEndenderSpurProzent": {
+      "n": 10,
+      "mittel": 57.7,
+      "sd": 0.6,
+      "ci95": 0.4,
+      "min": 56,
+      "median": 57.9,
+      "max": 58.1
+     },
+     "wechselquoteProzent": {
+      "n": 10,
+      "mittel": 84.6,
+      "sd": 1.2,
+      "ci95": 0.7,
+      "min": 83.7,
+      "median": 84.3,
+      "max": 87.6
+     },
+     "wechselAbstandMittelM": {
+      "n": 10,
+      "mittel": 670.4,
+      "sd": 7,
+      "ci95": 4.4,
+      "min": 660.7,
+      "median": 671.7,
+      "max": 680.3
+     },
+     "stauDichteFzgProZelle": {
+      "n": 10,
+      "mittel": 0.8,
+      "sd": 0.05,
+      "ci95": 0.03,
+      "min": 0.72,
+      "median": 0.79,
+      "max": 0.88
+     },
+     "maxWartend": {
+      "n": 10,
+      "mittel": 3.6,
+      "sd": 0.7,
+      "ci95": 0.4,
+      "min": 3,
+      "median": 3.5,
+      "max": 5
+     }
+    },
+    "reissverschluss": {
+     "rueckstauEndeM": {
+      "n": 10,
+      "mittel": 2590.2,
+      "sd": 170.7,
+      "ci95": 105.8,
+      "min": 2293.1,
+      "median": 2589.3,
+      "max": 2935.8
+     },
+     "rueckstauMaxM": {
+      "n": 10,
+      "mittel": 3090.8,
+      "sd": 178,
+      "ci95": 110.3,
+      "min": 2865,
+      "median": 3078.8,
+      "max": 3375
+     },
+     "rueckstauMittelM": {
+      "n": 10,
+      "mittel": 1312.5,
+      "sd": 75.9,
+      "ci95": 47.1,
+      "min": 1154.6,
+      "median": 1325.1,
+      "max": 1410.3
+     },
+     "stauEndeM": {
+      "n": 10,
+      "mittel": 2608.7,
+      "sd": 178,
+      "ci95": 110.3,
+      "min": 2300.5,
+      "median": 2599.3,
+      "max": 2939.9
+     },
+     "stauMaxM": {
+      "n": 10,
+      "mittel": 3254.3,
+      "sd": 172.9,
+      "ci95": 107.2,
+      "min": 3022.5,
+      "median": 3251.3,
+      "max": 3562.5
+     },
+     "stauMittelM": {
+      "n": 10,
+      "mittel": 1335.2,
+      "sd": 79.2,
+      "ci95": 49.1,
+      "min": 1167.8,
+      "median": 1349.1,
+      "max": 1435.8
+     },
+     "fahrzeugeImStauAmEnde": {
+      "n": 10,
+      "mittel": 363.2,
+      "sd": 35.4,
+      "ci95": 22,
+      "min": 306.2,
+      "median": 359.9,
+      "max": 420.1
+     },
+     "reisezeitMittelS": {
+      "n": 10,
+      "mittel": 1019,
+      "sd": 41.5,
+      "ci95": 25.7,
+      "min": 967.8,
+      "median": 1012.4,
+      "max": 1114.5
+     },
+     "verlustzeitMittelS": {
+      "n": 10,
+      "mittel": 499.8,
+      "sd": 41.5,
+      "ci95": 25.7,
+      "min": 448.6,
+      "median": 493.2,
+      "max": 595.3
+     },
+     "durchsatzKfzH": {
+      "n": 10,
+      "mittel": 1779,
+      "sd": 20,
+      "ci95": 12.4,
+      "min": 1749,
+      "median": 1776,
+      "max": 1806
+     },
+     "anteilVonEndenderSpurProzent": {
+      "n": 10,
+      "mittel": 53.8,
+      "sd": 0.4,
+      "ci95": 0.3,
+      "min": 53.3,
+      "median": 53.7,
+      "max": 54.6
+     },
+     "wechselquoteProzent": {
+      "n": 10,
+      "mittel": 92.4,
+      "sd": 0.8,
+      "ci95": 0.5,
+      "min": 91,
+      "median": 92.6,
+      "max": 93.3
+     },
+     "wechselAbstandMittelM": {
+      "n": 10,
+      "mittel": 51,
+      "sd": 0.5,
+      "ci95": 0.3,
+      "min": 50.2,
+      "median": 51,
+      "max": 51.7
+     },
+     "stauDichteFzgProZelle": {
+      "n": 10,
+      "mittel": 0.98,
+      "sd": 0.07,
+      "ci95": 0.05,
+      "min": 0.85,
+      "median": 0.96,
+      "max": 1.11
+     },
+     "maxWartend": {
+      "n": 10,
+      "mittel": 3.7,
+      "sd": 0.8,
+      "ci95": 0.5,
+      "min": 3,
+      "median": 3.5,
+      "max": 5
+     }
+    }
+   },
+   "vergleichBGegenA": {
+    "rueckstauEnde": {
+     "A_mittel": 3439.5,
+     "B_mittel": 2590.2,
+     "reduktionProzent": 24.7,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 24.7,
+      "sd": 2.5,
+      "ci95": 1.5,
+      "min": 21.3,
+      "median": 24.3,
+      "max": 29.6
+     }
+    },
+    "rueckstauMax": {
+     "A_mittel": 3928.5,
+     "B_mittel": 3090.8,
+     "reduktionProzent": 21.3,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 21.3,
+      "sd": 2.7,
+      "ci95": 1.7,
+      "min": 17.9,
+      "median": 21,
+      "max": 27.4
+     }
+    },
+    "rueckstauMittel": {
+     "A_mittel": 2019.4,
+     "B_mittel": 1312.5,
+     "reduktionProzent": 35,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 35,
+      "sd": 2.5,
+      "ci95": 1.6,
+      "min": 31.9,
+      "median": 34,
+      "max": 40.4
+     }
+    },
+    "stauEnde": {
+     "A_mittel": 2917,
+     "B_mittel": 2608.7,
+     "reduktionProzent": 10.6,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 10.4,
+      "sd": 3.6,
+      "ci95": 2.2,
+      "min": 3.5,
+      "median": 10.7,
+      "max": 16.8
+     }
+    },
+    "stauMax": {
+     "A_mittel": 3939.8,
+     "B_mittel": 3254.3,
+     "reduktionProzent": 17.4,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 17.3,
+      "sd": 3.2,
+      "ci95": 2,
+      "min": 10.8,
+      "median": 17.3,
+      "max": 22.4
+     }
+    },
+    "stauMittel": {
+     "A_mittel": 1508.1,
+     "B_mittel": 1335.2,
+     "reduktionProzent": 11.5,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 11.3,
+      "sd": 5.1,
+      "ci95": 3.2,
+      "min": 4,
+      "median": 11,
+      "max": 22.5
+     }
+    },
+    "reisezeit": {
+     "A_mittel": 1004.2,
+     "B_mittel": 1019,
+     "differenzBMinusA": {
+      "n": 10,
+      "mittel": 14.8,
+      "sd": 23.9,
+      "ci95": 14.8,
+      "min": -20.7,
+      "median": 12.4,
+      "max": 60.6
+     },
+     "differenzProzent": 1.5,
+     "unterscheidbar": false
+    },
+    "durchsatz": {
+     "A_mittel": 1806.6,
+     "B_mittel": 1779,
+     "differenzBMinusA": {
+      "n": 10,
+      "mittel": -27.6,
+      "sd": 37.5,
+      "ci95": 23.2,
+      "min": -81,
+      "median": -22.5,
+      "max": 27
+     },
+     "differenzProzent": -1.5,
+     "unterscheidbar": true
+    }
+   },
+   "typischeLaeufe": {
+    "frueh": {
+     "seed": 1002,
+     "datei": "trajektorien_feierabend_frueh.json",
+     "rueckstauEndeM": 3359.1,
+     "stauEndeM": 2834.8,
+     "reisezeitMittelS": 993.3,
+     "durchsatzKfzH": 1806
+    },
+    "reissverschluss": {
+     "seed": 1008,
+     "datei": "trajektorien_feierabend_reissverschluss.json",
+     "rueckstauEndeM": 2580.6,
+     "stauEndeM": 2593.6,
+     "reisezeitMittelS": 1023.9,
+     "durchsatzKfzH": 1767
+    }
+   }
+  },
+  "rushhour": {
+   "name": "Rushhour",
+   "zuflussKfzH": 3200,
+   "zuflussBegruendung": "Stark belastete Pendlerstrecke: 1.600 Kfz/h je Spur, etwa 80 % der Kapazität der freien Strecke, weit über der einer einzelnen Baustellenspur.",
+   "laeufeJeStrategie": 10,
+   "strategien": {
+    "frueh": {
+     "rueckstauEndeM": {
+      "n": 10,
+      "mittel": 6329,
+      "sd": 304.4,
+      "ci95": 188.7,
+      "min": 5738.1,
+      "median": 6357.1,
+      "max": 6810
+     },
+     "rueckstauMaxM": {
+      "n": 10,
+      "mittel": 6918.8,
+      "sd": 259.8,
+      "ci95": 161,
+      "min": 6510,
+      "median": 6967.5,
+      "max": 7305
+     },
+     "rueckstauMittelM": {
+      "n": 10,
+      "mittel": 3535.2,
+      "sd": 161.1,
+      "ci95": 99.8,
+      "min": 3265.8,
+      "median": 3536.6,
+      "max": 3734.6
+     },
+     "stauEndeM": {
+      "n": 10,
+      "mittel": 5921.5,
+      "sd": 322.3,
+      "ci95": 199.8,
+      "min": 5172.9,
+      "median": 6069.1,
+      "max": 6251.5
+     },
+     "stauMaxM": {
+      "n": 10,
+      "mittel": 6883.5,
+      "sd": 314.4,
+      "ci95": 194.9,
+      "min": 6307.5,
+      "median": 6892.5,
+      "max": 7297.5
+     },
+     "stauMittelM": {
+      "n": 10,
+      "mittel": 3045.1,
+      "sd": 156.2,
+      "ci95": 96.8,
+      "min": 2731.3,
+      "median": 3025.2,
+      "max": 3267.6
+     },
+     "fahrzeugeImStauAmEnde": {
+      "n": 10,
+      "mittel": 850.3,
+      "sd": 43.8,
+      "ci95": 27.1,
+      "min": 773.9,
+      "median": 849,
+      "max": 927.5
+     },
+     "reisezeitMittelS": {
+      "n": 10,
+      "mittel": 1610.9,
+      "sd": 54,
+      "ci95": 33.5,
+      "min": 1533.7,
+      "median": 1596.9,
+      "max": 1728.6
+     },
+     "verlustzeitMittelS": {
+      "n": 10,
+      "mittel": 1091.7,
+      "sd": 54,
+      "ci95": 33.5,
+      "min": 1014.6,
+      "median": 1077.7,
+      "max": 1209.5
+     },
+     "durchsatzKfzH": {
+      "n": 10,
+      "mittel": 1794,
+      "sd": 18.5,
+      "ci95": 11.5,
+      "min": 1764,
+      "median": 1798.5,
+      "max": 1818
+     },
+     "anteilVonEndenderSpurProzent": {
+      "n": 10,
+      "mittel": 57.9,
+      "sd": 0.6,
+      "ci95": 0.4,
+      "min": 56.6,
+      "median": 57.9,
+      "max": 58.7
+     },
+     "wechselquoteProzent": {
+      "n": 10,
+      "mittel": 84.2,
+      "sd": 1.2,
+      "ci95": 0.8,
+      "min": 82.6,
+      "median": 84,
+      "max": 86.9
+     },
+     "wechselAbstandMittelM": {
+      "n": 10,
+      "mittel": 661.3,
+      "sd": 7.6,
+      "ci95": 4.7,
+      "min": 647.3,
+      "median": 665,
+      "max": 668.2
+     },
+     "stauDichteFzgProZelle": {
+      "n": 10,
+      "mittel": 0.94,
+      "sd": 0.04,
+      "ci95": 0.03,
+      "min": 0.87,
+      "median": 0.94,
+      "max": 0.98
+     },
+     "maxWartend": {
+      "n": 10,
+      "mittel": 9.3,
+      "sd": 2.8,
+      "ci95": 1.7,
+      "min": 6,
+      "median": 9.5,
+      "max": 15
+     }
+    },
+    "reissverschluss": {
+     "rueckstauEndeM": {
+      "n": 10,
+      "mittel": 5461.8,
+      "sd": 336.6,
+      "ci95": 208.6,
+      "min": 4729,
+      "median": 5627.4,
+      "max": 5824.5
+     },
+     "rueckstauMaxM": {
+      "n": 10,
+      "mittel": 6248.3,
+      "sd": 314.6,
+      "ci95": 195,
+      "min": 5610,
+      "median": 6333.8,
+      "max": 6645
+     },
+     "rueckstauMittelM": {
+      "n": 10,
+      "mittel": 2735.7,
+      "sd": 166.5,
+      "ci95": 103.2,
+      "min": 2458.5,
+      "median": 2816.6,
+      "max": 2956.5
+     },
+     "stauEndeM": {
+      "n": 10,
+      "mittel": 5486.9,
+      "sd": 347.7,
+      "ci95": 215.5,
+      "min": 4744.9,
+      "median": 5663.8,
+      "max": 5885.5
+     },
+     "stauMaxM": {
+      "n": 10,
+      "mittel": 6349.5,
+      "sd": 307.3,
+      "ci95": 190.5,
+      "min": 5910,
+      "median": 6371.3,
+      "max": 6877.5
+     },
+     "stauMittelM": {
+      "n": 10,
+      "mittel": 2762.6,
+      "sd": 170.9,
+      "ci95": 105.9,
+      "min": 2487.5,
+      "median": 2837.4,
+      "max": 2991.1
+     },
+     "fahrzeugeImStauAmEnde": {
+      "n": 10,
+      "mittel": 864.3,
+      "sd": 52.2,
+      "ci95": 32.4,
+      "min": 774,
+      "median": 872.8,
+      "max": 966.6
+     },
+     "reisezeitMittelS": {
+      "n": 10,
+      "mittel": 1638,
+      "sd": 59.7,
+      "ci95": 37,
+      "min": 1541.9,
+      "median": 1631.9,
+      "max": 1756.7
+     },
+     "verlustzeitMittelS": {
+      "n": 10,
+      "mittel": 1118.8,
+      "sd": 59.7,
+      "ci95": 37,
+      "min": 1022.7,
+      "median": 1112.7,
+      "max": 1237.5
+     },
+     "durchsatzKfzH": {
+      "n": 10,
+      "mittel": 1773.6,
+      "sd": 31.2,
+      "ci95": 19.3,
+      "min": 1731,
+      "median": 1777.5,
+      "max": 1815
+     },
+     "anteilVonEndenderSpurProzent": {
+      "n": 10,
+      "mittel": 53.9,
+      "sd": 0.5,
+      "ci95": 0.3,
+      "min": 53.3,
+      "median": 53.7,
+      "max": 54.7
+     },
+     "wechselquoteProzent": {
+      "n": 10,
+      "mittel": 92.2,
+      "sd": 0.9,
+      "ci95": 0.6,
+      "min": 90.7,
+      "median": 92.5,
+      "max": 93.2
+     },
+     "wechselAbstandMittelM": {
+      "n": 10,
+      "mittel": 51.3,
+      "sd": 0.3,
+      "ci95": 0.2,
+      "min": 50.7,
+      "median": 51.2,
+      "max": 51.8
+     },
+     "stauDichteFzgProZelle": {
+      "n": 10,
+      "mittel": 1.08,
+      "sd": 0.04,
+      "ci95": 0.02,
+      "min": 1.02,
+      "median": 1.08,
+      "max": 1.13
+     },
+     "maxWartend": {
+      "n": 10,
+      "mittel": 9.5,
+      "sd": 2.8,
+      "ci95": 1.7,
+      "min": 7,
+      "median": 9,
+      "max": 15
+     }
+    }
+   },
+   "vergleichBGegenA": {
+    "rueckstauEnde": {
+     "A_mittel": 6329,
+     "B_mittel": 5461.8,
+     "reduktionProzent": 13.7,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 13.7,
+      "sd": 2,
+      "ci95": 1.2,
+      "min": 10.5,
+      "median": 13.5,
+      "max": 17.6
+     }
+    },
+    "rueckstauMax": {
+     "A_mittel": 6918.8,
+     "B_mittel": 6248.3,
+     "reduktionProzent": 9.7,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 9.7,
+      "sd": 2.3,
+      "ci95": 1.4,
+      "min": 5.8,
+      "median": 10.1,
+      "max": 13.8
+     }
+    },
+    "rueckstauMittel": {
+     "A_mittel": 3535.2,
+     "B_mittel": 2735.7,
+     "reduktionProzent": 22.6,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 22.7,
+      "sd": 1.8,
+      "ci95": 1.1,
+      "min": 19.2,
+      "median": 22.9,
+      "max": 24.9
+     }
+    },
+    "stauEnde": {
+     "A_mittel": 5921.5,
+     "B_mittel": 5486.9,
+     "reduktionProzent": 7.3,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 7.3,
+      "sd": 3,
+      "ci95": 1.9,
+      "min": 1.6,
+      "median": 7,
+      "max": 12.9
+     }
+    },
+    "stauMax": {
+     "A_mittel": 6883.5,
+     "B_mittel": 6349.5,
+     "reduktionProzent": 7.8,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 7.7,
+      "sd": 2.1,
+      "ci95": 1.3,
+      "min": 3.8,
+      "median": 7.7,
+      "max": 11
+     }
+    },
+    "stauMittel": {
+     "A_mittel": 3045.1,
+     "B_mittel": 2762.6,
+     "reduktionProzent": 9.3,
+     "reduktionProzentJeSeed": {
+      "n": 10,
+      "mittel": 9.3,
+      "sd": 2.7,
+      "ci95": 1.7,
+      "min": 6.1,
+      "median": 8.8,
+      "max": 14.8
+     }
+    },
+    "reisezeit": {
+     "A_mittel": 1610.9,
+     "B_mittel": 1638,
+     "differenzBMinusA": {
+      "n": 10,
+      "mittel": 27.1,
+      "sd": 25,
+      "ci95": 15.5,
+      "min": -15,
+      "median": 23.2,
+      "max": 67.9
+     },
+     "differenzProzent": 1.7,
+     "unterscheidbar": true
+    },
+    "durchsatz": {
+     "A_mittel": 1794,
+     "B_mittel": 1773.6,
+     "differenzBMinusA": {
+      "n": 10,
+      "mittel": -20.4,
+      "sd": 30.8,
+      "ci95": 19.1,
+      "min": -72,
+      "median": -21,
+      "max": 30
+     },
+     "differenzProzent": -1.1,
+     "unterscheidbar": true
+    }
+   },
+   "typischeLaeufe": {
+    "frueh": {
+     "seed": 1002,
+     "datei": "trajektorien_rushhour_frueh.json",
+     "rueckstauEndeM": 6278.3,
+     "stauEndeM": 5799.8,
+     "reisezeitMittelS": 1601.5,
+     "durchsatzKfzH": 1806
+    },
+    "reissverschluss": {
+     "seed": 1008,
+     "datei": "trajektorien_rushhour_reissverschluss.json",
+     "rueckstauEndeM": 5637.8,
+     "stauEndeM": 5643.1,
+     "reisezeitMittelS": 1668.5,
+     "durchsatzKfzH": 1800
+    }
+   }
+  }
+ },
+ "sensitivitaet": [],
+ "qualitaetspruefung": {
+  "hinweis": "Prüfung der 30-Hz-Trajektorien der typischen Läufe: Fahrzeuge dürfen sich weder überholen noch überlappen oder springen.",
+  "laeufe": {
+   "wenig_frueh": {
+    "fahrzeuge": 28,
+    "frames": 541,
+    "maxSprungProBildM": 1.01,
+    "maxGeschwindigkeitMs": 30.2,
+    "erlaubtMs": 22.5,
+    "rueckwaertsBilder": 0,
+    "kleinsterAbstandGleicheSpurM": 13.1,
+    "ueberlappungenUnter4_5m": 0,
+    "ueberholvorgaengeInSpur": 0,
+    "spurwechsel": 0,
+    "dateigroesseKB": 148,
+    "xBereichM": [
+     -1000,
+     250
+    ]
+   },
+   "wenig_reissverschluss": {
+    "fahrzeuge": 29,
+    "frames": 541,
+    "maxSprungProBildM": 1.01,
+    "maxGeschwindigkeitMs": 30.2,
+    "erlaubtMs": 22.5,
+    "rueckwaertsBilder": 0,
+    "kleinsterAbstandGleicheSpurM": 7.5,
+    "ueberlappungenUnter4_5m": 0,
+    "ueberholvorgaengeInSpur": 0,
+    "spurwechsel": 4,
+    "dateigroesseKB": 161,
+    "xBereichM": [
+     -1000,
+     250
+    ]
+   },
+   "feierabend_frueh": {
+    "fahrzeuge": 96,
+    "frames": 541,
+    "maxSprungProBildM": 1.01,
+    "maxGeschwindigkeitMs": 30.2,
+    "erlaubtMs": 22.5,
+    "rueckwaertsBilder": 0,
+    "kleinsterAbstandGleicheSpurM": 7.3,
+    "ueberlappungenUnter4_5m": 8,
+    "ueberholvorgaengeInSpur": 0,
+    "spurwechsel": 7,
+    "dateigroesseKB": 568,
+    "xBereichM": [
+     -1000,
+     250
+    ]
+   },
+   "feierabend_reissverschluss": {
+    "fahrzeuge": 192,
+    "frames": 541,
+    "maxSprungProBildM": 1.01,
+    "maxGeschwindigkeitMs": 30.2,
+    "erlaubtMs": 22.5,
+    "rueckwaertsBilder": 0,
+    "kleinsterAbstandGleicheSpurM": 7.3,
+    "ueberlappungenUnter4_5m": 12,
+    "ueberholvorgaengeInSpur": 0,
+    "spurwechsel": 4,
+    "dateigroesseKB": 1129,
+    "xBereichM": [
+     -1000,
+     250
+    ]
+   },
+   "rushhour_frueh": {
+    "fahrzeuge": 108,
+    "frames": 541,
+    "maxSprungProBildM": 1.01,
+    "maxGeschwindigkeitMs": 30.2,
+    "erlaubtMs": 22.5,
+    "rueckwaertsBilder": 0,
+    "kleinsterAbstandGleicheSpurM": 7.5,
+    "ueberlappungenUnter4_5m": 2,
+    "ueberholvorgaengeInSpur": 0,
+    "spurwechsel": 4,
+    "dateigroesseKB": 632,
+    "xBereichM": [
+     -1000,
+     250
+    ]
+   },
+   "rushhour_reissverschluss": {
+    "fahrzeuge": 190,
+    "frames": 541,
+    "maxSprungProBildM": 1.01,
+    "maxGeschwindigkeitMs": 30.2,
+    "erlaubtMs": 22.5,
+    "rueckwaertsBilder": 0,
+    "kleinsterAbstandGleicheSpurM": 6.3,
+    "ueberlappungenUnter4_5m": 12,
+    "ueberholvorgaengeInSpur": 0,
+    "spurwechsel": 5,
+    "dateigroesseKB": 1114,
+    "xBereichM": [
+     -1000,
+     250
+    ]
+   }
+  }
+ },
+ "grenzen": [
+  "Nagel-Schreckenberg ist grob: Zellen von 7,5 m, 1-s-Schritte, sofortiges Bremsen, keine echte Fahrphysik.",
+  "Nur Pkw mit gleichem Wunschtempo; kein Lkw-Anteil, keine Fahrer-Unterschiede, kein Überholen, keine Spurwechsel nach rechts.",
+  "Das „Abwechseln“ ist als Nachbarschaftsregel modelliert, nicht aus Fahrerverhalten gemessen. Reale Fahrer sind weniger kooperativ (Drängler, Blockierer).",
+  "Das Ergebnis hängt stark davon ab, wo die Früh-Einordner wechseln (Schild-Entfernung) und wie lange die Verkehrsspitze dauert.",
+  "Staulängen absolut sind unsicher (Staudichte, Trödelparameter); belastbarer sind die Verhältnisse zwischen A und B."
+ ]
+}
