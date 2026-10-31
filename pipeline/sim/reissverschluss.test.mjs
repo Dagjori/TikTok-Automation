@@ -126,7 +126,8 @@ test('Überlast (Rushhour): Stau entsteht, Kapazität der Engstelle im plausible
 test('Reißverschluss wechselt nahe der Engstelle, Früh-Einordner ab dem Schild', () => {
   const a = neu('frueh', 'feierabend', 4).laufeBisEnde();
   const b = neu('reissverschluss', 'feierabend', 4).laufeBisEnde();
-  assert.ok(a.wechselAbstandMittelM > 700 && a.wechselAbstandMittelM < 1000, `A ${a.wechselAbstandMittelM}`);
+  // Früh-Einordner wechseln nie vor dem Schild (802,5 m), im Stau im Mittel einige 100 m dahinter
+  assert.ok(a.wechselAbstandMittelM > 500 && a.wechselAbstandMittelM < 803, `A ${a.wechselAbstandMittelM}`);
   assert.ok(b.wechselAbstandMittelM < 80, `B ${b.wechselAbstandMittelM}`);
 });
 

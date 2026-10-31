@@ -3,7 +3,7 @@
 // Alle Zeiten hängen am Stimm-Timing (audio/timing.json bzw. audio/timing_schaetzung.json).
 import * as THREE from "three";
 import { Buehne } from "../../engine/kern.js";
-import { lichtTag, lichtGlobus, verlauf } from "../../engine/licht.js";
+import { lichtTag, lichtGlobus, verlauf, umgebung } from "../../engine/licht.js";
 import { PunktGlobus } from "../../engine/globus.js";
 import * as B from "../../engine/bausteine.js";
 import { Zeitplan, schaetzeTiming } from "../../engine/zeitplan.js";
@@ -14,7 +14,7 @@ import { ease, feder, FEDER, fortschritt, clamp, lerp, hash, rauschen, keyframes
 const FPS = 30;
 // Qualitätsschalter per URL (für Tests): ?msaa=0&schatten=1024
 const Q = new URLSearchParams(location.search);
-const MSAA = Q.has("msaa") ? +Q.get("msaa") : 4;
+const MSAA = Q.has("msaa") ? +Q.get("msaa") : 0;
 const SCHATTEN = Q.has("schatten") ? +Q.get("schatten") : 2048;
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const lade = async (url) => {
@@ -57,14 +57,14 @@ function baueGlobus(buehne, daten, zp) {
   g.gruppe.add(scanRing);
 
   const P = g.punkte;
-  const ORANGE = hdr("#FF7A1A", 2.1);
+  const ORANGE = hdr("#FF6A0A", 1.75);
   const GELB = hdr("#FFD23F", 1.55);
   const DUNKEL = hdr("#5B78B8", 0.55);
   const WEISS = hdr("#FFFFFF", 2.6);
   const CYAN = hdr("#8FE3FF", 2.2);
 
   // Hook: Lichtpunkte poppen weltweit auf (beschleunigend)
-  const hook = P.filter((p) => hash(p.i, 11) < 0.085 && p.lat > -50).map((p) => ({
+  const hook = P.filter((p) => hash(p.i, 11) < 0.11 && p.lat > -50).map((p) => ({
     i: p.i, t0: -0.4 + 5.6 * Math.pow(hash(p.i, 12), 0.75), strahl: hash(p.i, 13) < 0.32, ring: hash(p.i, 14) < 0.55, farbe: new THREE.Color(),
   }));
   // USA-Welle
@@ -101,8 +101,8 @@ function baueGlobus(buehne, daten, zp) {
     { t: kEnde - 0.3, v: [49, 6], e: ease.inOutCubic },
   ];
   const abstand = [
-    { t: 0, v: 13.2 },
-    { t: sB, v: 11.6, e: ease.outCubic },
+    { t: 0, v: 10.8 },
+    { t: sB, v: 9.8, e: ease.outCubic },
     { t: sB + 2.2, v: 5.6, e: ease.inOutCubic },
     { t: usaEnde - 0.2, v: 5.2, e: ease.linear },
     { t: usaEnde + 1.6, v: 11.4, e: ease.inOutCubic },
@@ -130,7 +130,7 @@ function baueGlobus(buehne, daten, zp) {
         const s = feder(dt, FEDER.pop) * hookAus;
         h.farbe.copy(ORANGE).lerp(GELB, clamp(1 - dt / 0.5) * 0.6);
         liste.push({
-          i: h.i, groesse: s * 1.25, farbe: h.farbe,
+          i: h.i, groesse: s * 1.45, farbe: h.farbe,
           ring: h.ring ? dt / 1.1 : undefined,
           strahl: h.strahl ? feder(dt, FEDER.weich) * (0.3 + 0.7 * Math.exp(-dt / 1.4)) * hookAus : undefined,
         });
@@ -145,7 +145,7 @@ function baueGlobus(buehne, daten, zp) {
         const dt = t - t0;
         const puls = 1 + 0.22 * Math.sin(dt * 5.5 - u.d * 0.3);
         u.farbe.copy(ORANGE).multiplyScalar(0.8 + 0.25 * puls);
-        liste.push({ i: u.i, groesse: feder(dt, FEDER.pop) * 0.78 * puls * aus, farbe: u.farbe, ring: u.d < 3 ? (dt % 1.3) / 1.3 : undefined, ringFarbe: GELB });
+        liste.push({ i: u.i, groesse: feder(dt, FEDER.pop) * 0.6 * puls * aus, farbe: u.farbe, ring: u.d < 3 ? (dt % 1.3) / 1.3 : undefined, ringFarbe: GELB });
       }
     }
     // Scan
@@ -210,9 +210,9 @@ function baueGlobus(buehne, daten, zp) {
     update(t) {
       const dt = t - sE;
       g.setzeDrehung((22 * Math.PI) / 180, ((-8 - dt * 9) * Math.PI) / 180);
-      const D = lerp(12.5, 11.2, ease.outCubic(clamp(dt / 4)));
+      const D = lerp(13.5, 11.8, ease.outCubic(clamp(dt / 4)));
       kameraEnde.position.set(0, 0, D);
-      kameraEnde.lookAt(0, -0.42 * D * 0.27, 0);
+      kameraEnde.lookAt(0, 0.1 * D, 0);
       kameraEnde.updateMatrixWorld();
       scanRing.visible = false;
       liste.length = 0;
@@ -238,7 +238,9 @@ function baueStadt(buehne, zp) {
   const szene = new THREE.Scene();
   szene.background = verlauf([[0, "#8EBBFF"], [0.45, "#CFE2FF"], [1, "#FFF1E2"]]);
   szene.fog = new THREE.Fog("#DCE9F7", 75, 170);
-  lichtTag(szene, buehne.renderer, { sonnenRichtung: [0.5, 1.0, 0.55], sonnenStaerke: 2.35, bereich: 20, schattenKarte: SCHATTEN, schattenWeich: 5, ziel: [2.5, 0, -1], umgebungsStaerke: 0.4, himmelStaerke: 0.6 });
+  lichtTag(szene, buehne.renderer, { sonnenRichtung: [0.5, 1.0, 0.55], sonnenStaerke: 2.5, bereich: 22, schattenKarte: SCHATTEN, schattenWeich: 5, ziel: [3.5, 0, -1.5], umgebungsStaerke: 0.4, himmelStaerke: 1.25, himmel: "#DDEBFF", boden: "#F6E7CF" });
+  // Ohne PMREM-Umgebung: halbe Renderzeit unter SwiftShader und kräftigere Spielzeugfarben (getestet)
+  if (Q.get("env") !== "1") szene.environment = null;
 
   const boden = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), B.mat("#A9D795", { rau: 1 }));
   boden.rotation.x = -Math.PI / 2;
@@ -351,6 +353,7 @@ function baueStadt(buehne, zp) {
   const figStart = W("krank", "wie", 0.02) - 0.2;
   const figuren = ziele.map((h, i) => {
     const f = B.figur({ farbe: figFarben[i % figFarben.length] });
+    f.userData.skala = 1.45;
     szene.add(f);
     const spur = (hash(i, 51) - 0.5) * 0.5;
     const z0 = -0.12 + spur * 0.4;
@@ -387,7 +390,7 @@ function baueStadt(buehne, zp) {
       B.setzeFigur(fg.f, p, richtung, s * 3.2, 1);
       const rein = feder(t - fg.t0, FEDER.pop);
       const raus = 1 - ease.inCubic(clamp((t - fg.t1) / 0.35));
-      fg.f.scale.setScalar(Math.max(0.001, rein * raus));
+      fg.f.scale.setScalar(Math.max(0.001, rein * raus) * fg.f.userData.skala);
     }
   }
 
@@ -395,7 +398,11 @@ function baueStadt(buehne, zp) {
   const HAUFEN = V(6.4, SOCKEL, -0.85);
   const muenzGeo = B.muenzGeo(0.12, 0.034);
   const NM = 150;
-  const muenzen = new THREE.InstancedMesh(muenzGeo, B.goldMaterial(), NM);
+  // Gold braucht Spiegelungen: eigene Umgebungstextur nur für die Münzen (billig, da klein im Bild)
+  const gold = B.goldMaterial().clone();
+  gold.envMap = umgebung(buehne.renderer);
+  gold.envMapIntensity = 1.4;
+  const muenzen = new THREE.InstancedMesh(muenzGeo, gold, NM);
   muenzen.castShadow = true;
   muenzen.receiveShadow = true;
   muenzen.frustumCulled = false;
@@ -512,11 +519,11 @@ function baueStadt(buehne, zp) {
     { t: kw("kosten", "300") + 0.6, v: [0.72, 0.4, 15.5, 5.7, 1.0, -1.1], e: ease.linear },
     { t: S("dreh").start + 0.9, v: [0.78, 0.2, 4.4, 6.35, 0.26, -0.85], e: ease.inOutCubic },
     { t: tBau0 + 0.1, v: [0.74, 0.24, 5.4, 6.6, 0.42, -1.0], e: ease.linear },
-    { t: tBau1 + 0.4, v: [0.62, 0.3, 47, 7.8, 7.6, -2.2], e: ease.inOutCubic },
-    { t: zp.segEnde("dreh") + 1, v: [0.58, 0.31, 49, 7.8, 8.0, -2.2], e: ease.linear },
+    { t: tBau1 + 0.4, v: [0.6, 0.27, 74, 7.4, 6.8, -2.0], e: ease.inOutCubic },
+    { t: zp.segEnde("dreh") + 1, v: [0.56, 0.28, 77, 7.4, 6.8, -2.0], e: ease.linear },
   ];
   const _z = V(0, 0, 0);
-  const post = { bloomStaerke: 0.6, bloomSchwelle: 1.2, tiltStaerke: 0.85, tiltBreite: 0.3, tiltMitte: 0.5, vignette: 0.24, koernung: 0.038, saettigung: 1.16, kontrast: 1.05, belichtung: 0.96 };
+  const post = { bloomStaerke: 0.6, bloomSchwelle: 1.2, tiltStaerke: 0.85, tiltBreite: 0.3, tiltMitte: 0.5, vignette: 0.24, koernung: 0.038, saettigung: 1.04, kontrast: 1.0, belichtung: 1.0 };
 
   function zustand(t) {
     // Fenster gehen aus, wenn die Figuren gehen
@@ -572,12 +579,12 @@ function baueStadt(buehne, zp) {
   const sR = S("recht").start;
   const weltRecht = {
     szene, kamera: kameraR,
-    post: { bloomStaerke: 0.8, bloomSchwelle: 1.0, tiltStaerke: 0, unschaerfe: 0.62, vignette: 0.3, koernung: 0.04, saettigung: 1.0, kontrast: 1.0, belichtung: 0.92, tonung: [0.92, 0.96, 1.08], tonungStaerke: 0.5 },
+    post: { bloomStaerke: 0.9, bloomSchwelle: 1.0, tiltStaerke: 0, unschaerfe: 0.5, vignette: 0.3, koernung: 0.04, saettigung: 1.0, kontrast: 1.0, belichtung: 0.92, tonung: [0.92, 0.96, 1.08], tonungStaerke: 0.5 },
     update(t) {
       zustand(t);
       const p = ease.outCubic(clamp((t - sR + 0.5) / 8));
-      kameraR.position.set(lerp(-1.5, -2.8, p), lerp(3.8, 3.2, p), lerp(12.5, 10.8, p));
-      kameraR.lookAt(-6.9, 0.9, 4.7);
+      kameraR.position.set(lerp(1.5, 0.2, p), lerp(7.5, 6.4, p), lerp(19, 16.5, p));
+      kameraR.lookAt(-6.4, 0.6, 4.0);
       kameraR.updateMatrixWorld();
     },
   };
@@ -604,7 +611,6 @@ async function start() {
   const daten = await lade("../../engine/daten/globus-punkte.json");
   const G = baueGlobus(buehne, daten, zp);
   const ST = baueStadt(buehne, zp);
-  if (Q.get("env") === "0") { ST.welt.szene.environment = null; }
   if (Q.get("pcf") === "1") buehne.renderer.shadowMap.type = THREE.PCFShadowMap;
 
   // Zeitleiste
@@ -627,7 +633,7 @@ async function start() {
   const hk = (w) => Math.max(0.02, W("hook", w) - 0.12);
   hud.add(new KinetikTitel(hud, [
     { text: "GTA 6", t: hk("GTA"), klasse: "gelb" },
-    { text: "kommt.", t: hk("kommt,") },
+    { text: "kommt.", t: hk("kommt.") },
   ], { y: 300, groesse: 150, aus: hk("Kostet") - 0.15 }));
   hud.add(new KinetikTitel(hud, [
     { text: "Kostet", t: hk("Kostet") },
@@ -676,11 +682,11 @@ async function start() {
   // Dreh: Größenvergleich mit 3D-Ankern
   const kamStadt = ST.kamera;
   hud.add(new Anker(hud, {
-    html: "<small>GTA 6</small>0,3 Mrd. $", kamera: kamStadt, ein: S("dreh").start + 0.15, aus: zp.segEnde("dreh") - 0.2,
+    html: "<small>GTA 6</small>0,3 Mrd. $", kamera: kamStadt, ein: S("dreh").start + 0.15, aus: W("dreh", "Milliarde?", 0.82) - 0.3, minY: 330,
     punkt: () => ST.HAUFEN.clone().add(V(0, 0.12, 0)), hoehe: (t) => lerp(330, 150, smoothstep(ST.tBau0, ST.tBau1, t)),
   }));
   const turmLabel = new Anker(hud, {
-    html: "<small>1 Arbeitstag Weltwirtschaft</small><span class='tz'>0</span> Mrd. $", kamera: kamStadt, ein: ST.tBau0 + 0.25, aus: zp.segEnde("dreh") - 0.2,
+    html: "<small>1 Arbeitstag Weltwirtschaft</small><span class='tz'>0</span> Mrd. $", kamera: kamStadt, ein: ST.tBau0 + 0.25, aus: W("dreh", "Milliarde?", 0.82) - 0.3, minY: 250,
     punkt: (t) => ST.TURM.clone().add(V(0, ST.turmHoehe(t) + 0.15, 0)), hoehe: 70, klasse: "turm",
   });
   hud.add(turmLabel);
@@ -689,8 +695,26 @@ async function start() {
   promille.style.fontSize = "120px";
   promille.style.height = "160px";
   promille.style.padding = "0 50px";
-  hud.add(new Erscheinung(hud, promille, { x: 54, y: 700, ein: W("dreh", "weniger", 0.53) - 0.1, aus: W("dreh", "Milliarde?", 0.82) - 0.35, stil: "zoom", feder: FEDER.knackig, klang: "boom" }));
-  chip(hud, { flagge: "↺", text: "meist nachgearbeitet", x: 54, y: 900, ein: W("dreh", "meiste", 0.67) - 0.1, aus: W("dreh", "Milliarde?", 0.82) - 0.35, farbe: "#19B36B" });
+  hud.add(new Erscheinung(hud, promille, { x: 54, y: 560, ein: W("dreh", "weniger", 0.53) - 0.1, aus: W("dreh", "Milliarde?", 0.82) - 0.35, stil: "zoom", feder: FEDER.knackig, klang: "boom" }));
+  chip(hud, { flagge: "↺", text: "meist nachgearbeitet", x: 54, y: 745, ein: W("dreh", "meiste", 0.67) - 0.1, aus: W("dreh", "Milliarde?", 0.82) - 0.35, farbe: "#19B36B" });
+
+  // „Die Milliarde? Weltweit nicht mal ein Drittel davon.“ – Balkenvergleich
+  const tMrd = W("dreh", "Milliarde?", 0.82);
+  const tDrittel = W("dreh", "Drittel", 0.95);
+  const vgl = el("div", "karte vergleich", `<div class="label"><span class="punkt"></span>Die Milliarde?</div>
+    <div class="vz"><span>Behauptung · nur USA</span><b>1 Mrd. $</b></div><div class="vb"><i class="b1"></i></div>
+    <div class="vz"><span>Simuliert · ganze Welt</span><b class="g">0,3 Mrd. $</b></div><div class="vb"><i class="b2"></i></div>`, hud.wurzel);
+  const b1 = vgl.querySelector(".b1"), b2 = vgl.querySelector(".b2");
+  const vz2 = vgl.querySelectorAll(".vz")[1];
+  hud.add(new Erscheinung(hud, vgl, {
+    x: 54, y: 270, breite: 820, ein: tMrd - 0.15, aus: zp.segEnde("dreh") - 0.3, stil: "pop", farbe: "#FF7A1A",
+    nachUpdate: (t) => {
+      b1.style.transform = `scaleX(${ease.outCubic(fortschritt(t, tMrd, tMrd + 0.6))})`;
+      const p2 = feder(t - (tDrittel - 0.35), FEDER.standard);
+      b2.style.transform = `scaleX(${0.3 * Math.max(0, p2)})`;
+      vz2.style.opacity = String(clamp((t - tDrittel + 0.45) * 4));
+    },
+  }));
 
   // Recht
   const rot = karte(hud, { label: "Krank vortäuschen", wert: "→ Kündigung möglich", x: 54, y: 380, ein: W("recht", "vortäuscht,", 0.35) - 0.15, aus: sEnde - 0.3, stil: "links", farbe: "#F0443A", klasse: "farbig" });
@@ -715,7 +739,7 @@ async function start() {
   }));
 
   // Karaoke-Untertitel (über allem außer Schlusskarte)
-  const karaoke = new Karaoke(hud, zp, { y: KY, maxBreite: 800, groesse: 70, versteckt: [[sEnde - 0.15, 999]] });
+  const karaoke = new Karaoke(hud, zp, { y: KY, maxBreite: 820, groesse: 66, versteckt: [[sEnde - 0.15, 999]] });
   karaoke.vorbereiten();
   hud.add(karaoke);
 

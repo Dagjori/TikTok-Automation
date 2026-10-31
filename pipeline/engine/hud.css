@@ -100,3 +100,12 @@ body { font-family: var(--text); -webkit-font-smoothing: antialiased; text-rende
 .schluss .logoGross .wuerfel i:nth-child(3) { left: 71px; top: 71px; }
 .schluss .aufruf { background: #fff; color: var(--tinte); border-radius: 40px; padding: 36px 40px; font-family: var(--display); font-weight: 900; font-size: 62px; line-height: 1.08; letter-spacing: -0.02em; box-shadow: var(--schatten); display: flex; gap: 30px; align-items: center; }
 .schluss .aufruf .blase { flex: none; width: 120px; height: 120px; border-radius: 36px; background: var(--blau); display: flex; align-items: center; justify-content: center; }
+
+/* Vergleichskarte mit Balken */
+.karte.vergleich .vz { display: flex; justify-content: space-between; align-items: baseline; margin-top: 22px; font-family: var(--display); font-weight: 800; font-size: 34px; color: var(--grau); }
+.karte.vergleich .vz b { font-weight: 900; font-size: 52px; color: var(--tinte); }
+.karte.vergleich .vz b.g { color: var(--gruen); }
+.karte.vergleich .vb { height: 30px; border-radius: 15px; background: #e8ebf1; margin-top: 10px; overflow: hidden; }
+.karte.vergleich .vb i { display: block; height: 100%; border-radius: 15px; transform-origin: left center; transform: scaleX(0); }
+.karte.vergleich .b1 { background: var(--orange); }
+.karte.vergleich .b2 { background: var(--gruen); }

@@ -79,6 +79,8 @@ function lauf(szenarioId, strategie, seed, parameter = {}, zuflussFaktor = 1) {
   });
   const e = sim.laufeBisEnde();
   e.verlustzeitMittelS = e.reisezeitMittelS - T_FREI;
+  // Abstand der Stauspitze zur Engstelle (positiv: Spitze liegt vor der Engstelle)
+  e.stauSpitzeVorEngstelleM = e.rueckstauEndeM - e.stauEndeM;
   return e;
 }
 
@@ -89,6 +91,7 @@ const KENNZAHLEN = [
   ['stauEndeM', 1],
   ['stauMaxM', 1],
   ['stauMittelM', 1],
+  ['stauSpitzeVorEngstelleM', 1],
   ['fahrzeugeImStauAmEnde', 1],
   ['reisezeitMittelS', 1],
   ['verlustzeitMittelS', 1],
@@ -112,13 +115,13 @@ function vergleiche(a, b) {
     const ma = mittelwert(a.map((x) => x[k]));
     const mb = mittelwert(b.map((x) => x[k]));
     const paar = a
-      .map((x, i) => (x[k] > 50 ? (100 * (x[k] - b[i][k])) / x[k] : NaN))
+      .map((x, i) => (x[k] > 500 ? (100 * (x[k] - b[i][k])) / x[k] : NaN))
       .filter((x) => Number.isFinite(x));
     return {
       A_mittel: runde(ma, 1),
       B_mittel: runde(mb, 1),
       // „B ist x % kürzer als A“, aus den Mittelwerten (positiv = B kürzer)
-      reduktionProzent: ma > 50 ? runde((100 * (ma - mb)) / ma, 1) : null,
+      reduktionProzent: ma > 500 ? runde((100 * (ma - mb)) / ma, 1) : null, // nur bei Staus über 500 m sinnvoll
       reduktionProzentJeSeed: statistik(paar, 1),
     };
   };
@@ -401,6 +404,27 @@ for (const sz of szenarien) {
 
 // --- Ergebnisdatei -----------------------------------------------------------
 
+/** Gerundete Kernzahlen je Szenario (für Skript und Kurzfassung). */
+function kernzahlen(sz) {
+  const A = aggregiere(haupt[sz].frueh);
+  const B = aggregiere(haupt[sz].reissverschluss);
+  const v = vergleiche(haupt[sz].frueh, haupt[sz].reissverschluss);
+  const km = (x) => runde(x / 1000, 1);
+  return {
+    hinweis: 'Rückstau = Abstand Stauende–Engstelle; „am Ende“ = Mittel der letzten 60 s der 30-min-Verkehrsspitze.',
+    rueckstauAmEndeKm: { frueh: km(A.rueckstauEndeM.mittel), reissverschluss: km(B.rueckstauEndeM.mittel) },
+    rueckstauMaxKm: { frueh: km(A.rueckstauMaxM.mittel), reissverschluss: km(B.rueckstauMaxM.mittel) },
+    rueckstauMittelKm: { frueh: km(A.rueckstauMittelM.mittel), reissverschluss: km(B.rueckstauMittelM.mittel) },
+    rueckstauReduktionProzent: { amEnde: runde(v.rueckstauEnde.reduktionProzent, 0), max: runde(v.rueckstauMax.reduktionProzent, 0), mittel: runde(v.rueckstauMittel.reduktionProzent, 0) },
+    kolonneAmEndeKm: { frueh: km(A.stauEndeM.mittel), reissverschluss: km(B.stauEndeM.mittel) },
+    kolonneReduktionProzentAmEnde: runde(v.stauEnde.reduktionProzent, 0),
+    stauSpitzeVorEngstelleM: { frueh: runde(A.stauSpitzeVorEngstelleM.mittel, 0), reissverschluss: runde(B.stauSpitzeVorEngstelleM.mittel, 0) },
+    reisezeitMin: { frueh: runde(A.reisezeitMittelS.mittel / 60, 1), reissverschluss: runde(B.reisezeitMittelS.mittel / 60, 1) },
+    reisezeitDifferenzSekundenBMinusA: v.reisezeit.differenzBMinusA.mittel,
+    durchsatzKfzH: { frueh: runde(A.durchsatzKfzH.mittel, 0), reissverschluss: runde(B.durchsatzKfzH.mittel, 0) },
+  };
+}
+
 const ergebnisse = {};
 for (const sz of szenarien) {
   ergebnisse[sz] = {
@@ -411,6 +435,7 @@ for (const sz of szenarien) {
     strategien: Object.fromEntries(strategien.map((st) => [st, aggregiere(haupt[sz][st])])),
     vergleichBGegenA: vergleiche(haupt[sz].frueh, haupt[sz].reissverschluss),
     typischeLaeufe: { frueh: lauf_info[`${sz}_frueh`], reissverschluss: lauf_info[`${sz}_reissverschluss`] },
+    kernzahlen: kernzahlen(sz),
   };
 }
 
@@ -429,7 +454,7 @@ const json = {
       'Ablauf: Straße bei t = 0 mit freiem Verkehr in Höhe der Zuflussrate gefüllt; 30 min Verkehrsspitze mit konstantem Zufluss (je Spur Bernoulli je Sekunde), danach läuft der Verkehr aus.',
       'Strategie A (Früh einordnen): Wechselwunsch ab Schild 800 m vor der Engstelle; wer nicht sofort wechseln kann, passt sich der Zielspur an und bremst zum Lückensuchen. Strategie B (Reißverschluss): Wechselwunsch erst in den letzten 60 m vor der Engstelle.',
       'Beide Strategien: Wechsel nur in freie Zelle, wenn der Hintermann höchstens um 1 Zelle/s stärker bremsen muss; „im Wechsel“: nicht dicht neben einem Fahrzeug einscheren, das selbst eingefädelt ist.',
-      'Stau: zusammenhängende Kolonne von mindestens 10 Fahrzeugen mit v ≤ 1 Zelle/s (27 km/h), Lücken bis 112,5 m. Staulänge = Kolonne von Spitze bis Ende, Rückstau = Abstand Stauende–Engstelle.',
+      'Stau: zusammenhängende Kolonne von mindestens 10 Fahrzeugen mit v ≤ 1 Zelle/s (27 km/h), Lücken bis 112,5 m. Zwei Längen: Kolonne = von der Stauspitze bis zum Stauende; Rückstau = Abstand Stauende–Engstelle. Bei B liegt die Spitze an der Engstelle (beide Längen gleich), bei A am Ort des Einordnens. „Am Ende“ = Mittel der letzten 60 s der 30-min-Spitze, „Maximum“ = größter Wert des ganzen Laufs, „Mittel“ = Zeitmittel über die 30 min.',
       'Durchsatz: Fahrzeuge, die die Engstelle in Minute 10 bis 30 passieren, hochgerechnet auf Kfz/h. Reisezeit: mittlere Fahrzeit der Fahrzeuge, die während der 30 min einfahren, über die gesamte Strecke (10,9 km).',
       'Vergleich gepaart je Seed; „Reduktion“ = (A − B) / A aus den Mittelwerten (positiv: Reißverschluss kürzer). Streuung: Standardabweichung über die Läufe, ci95 = Halbbreite des 95-%-Intervalls des Mittelwerts.',
     ],

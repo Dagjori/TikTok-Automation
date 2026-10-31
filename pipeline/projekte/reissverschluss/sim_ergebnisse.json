@@ -11,7 +11,7 @@
    "Ablauf: Straße bei t = 0 mit freiem Verkehr in Höhe der Zuflussrate gefüllt; 30 min Verkehrsspitze mit konstantem Zufluss (je Spur Bernoulli je Sekunde), danach läuft der Verkehr aus.",
    "Strategie A (Früh einordnen): Wechselwunsch ab Schild 800 m vor der Engstelle; wer nicht sofort wechseln kann, passt sich der Zielspur an und bremst zum Lückensuchen. Strategie B (Reißverschluss): Wechselwunsch erst in den letzten 60 m vor der Engstelle.",
    "Beide Strategien: Wechsel nur in freie Zelle, wenn der Hintermann höchstens um 1 Zelle/s stärker bremsen muss; „im Wechsel“: nicht dicht neben einem Fahrzeug einscheren, das selbst eingefädelt ist.",
-   "Stau: zusammenhängende Kolonne von mindestens 10 Fahrzeugen mit v ≤ 1 Zelle/s (27 km/h), Lücken bis 112,5 m. Staulänge = Kolonne von Spitze bis Ende, Rückstau = Abstand Stauende–Engstelle.",
+   "Stau: zusammenhängende Kolonne von mindestens 10 Fahrzeugen mit v ≤ 1 Zelle/s (27 km/h), Lücken bis 112,5 m. Zwei Längen: Kolonne = von der Stauspitze bis zum Stauende; Rückstau = Abstand Stauende–Engstelle. Bei B liegt die Spitze an der Engstelle (beide Längen gleich), bei A am Ort des Einordnens. „Am Ende“ = Mittel der letzten 60 s der 30-min-Spitze, „Maximum“ = größter Wert des ganzen Laufs, „Mittel“ = Zeitmittel über die 30 min.",
    "Durchsatz: Fahrzeuge, die die Engstelle in Minute 10 bis 30 passieren, hochgerechnet auf Kfz/h. Reisezeit: mittlere Fahrzeit der Fahrzeuge, die während der 30 min einfahren, über die gesamte Strecke (10,9 km).",
    "Vergleich gepaart je Seed; „Reduktion“ = (A − B) / A aus den Mittelwerten (positiv: Reißverschluss kürzer). Streuung: Standardabweichung über die Läufe, ci95 = Halbbreite des 95-%-Intervalls des Mittelwerts."
   ]
@@ -147,6 +147,15 @@
       "min": 0,
       "median": 0,
       "max": 1.2
+     },
+     "stauSpitzeVorEngstelleM": {
+      "n": 50,
+      "mittel": 0,
+      "sd": 0,
+      "ci95": 0,
+      "min": 0,
+      "median": 0,
+      "max": 0
      },
      "fahrzeugeImStauAmEnde": {
       "n": 50,
@@ -285,6 +294,15 @@
       "median": 0,
       "max": 0.3
      },
+     "stauSpitzeVorEngstelleM": {
+      "n": 50,
+      "mittel": 0,
+      "sd": 0,
+      "ci95": 0,
+      "min": 0,
+      "median": 0,
+      "max": 0
+     },
      "fahrzeugeImStauAmEnde": {
       "n": 50,
       "mittel": 0,
@@ -386,7 +404,7 @@
     "rueckstauMax": {
      "A_mittel": 68.3,
      "B_mittel": 9.6,
-     "reduktionProzent": 85.9,
+     "reduktionProzent": null,
      "reduktionProzentJeSeed": {
       "n": 4,
       "mittel": 95,
@@ -430,13 +448,13 @@
      "B_mittel": 11.9,
      "reduktionProzent": null,
      "reduktionProzentJeSeed": {
-      "n": 4,
-      "mittel": 72.2,
-      "sd": 42.4,
-      "ci95": 41.5,
-      "min": 10.5,
-      "median": 89.2,
-      "max": 100
+      "n": 0,
+      "mittel": null,
+      "sd": null,
+      "ci95": null,
+      "min": null,
+      "median": null,
+      "max": null
      }
     },
     "stauMittel": {
@@ -501,6 +519,44 @@
      "reisezeitMittelS": 524.7,
      "durchsatzKfzH": 1200
     }
+   },
+   "kernzahlen": {
+    "hinweis": "Rückstau = Abstand Stauende–Engstelle; „am Ende“ = Mittel der letzten 60 s der 30-min-Verkehrsspitze.",
+    "rueckstauAmEndeKm": {
+     "frueh": 0,
+     "reissverschluss": 0
+    },
+    "rueckstauMaxKm": {
+     "frueh": 0.1,
+     "reissverschluss": 0
+    },
+    "rueckstauMittelKm": {
+     "frueh": 0,
+     "reissverschluss": 0
+    },
+    "rueckstauReduktionProzent": {
+     "amEnde": null,
+     "max": null,
+     "mittel": null
+    },
+    "kolonneAmEndeKm": {
+     "frueh": 0,
+     "reissverschluss": 0
+    },
+    "kolonneReduktionProzentAmEnde": null,
+    "stauSpitzeVorEngstelleM": {
+     "frueh": 0,
+     "reissverschluss": 0
+    },
+    "reisezeitMin": {
+     "frueh": 8.8,
+     "reissverschluss": 8.7
+    },
+    "reisezeitDifferenzSekundenBMinusA": -0.4,
+    "durchsatzKfzH": {
+     "frueh": 1198,
+     "reissverschluss": 1197
+    }
    }
   },
   "feierabend": {
@@ -563,6 +619,15 @@
       "min": 1206.1,
       "median": 1508.4,
       "max": 1772.6
+     },
+     "stauSpitzeVorEngstelleM": {
+      "n": 50,
+      "mittel": 491.3,
+      "sd": 111.2,
+      "ci95": 30.8,
+      "min": 199.9,
+      "median": 490.7,
+      "max": 731.1
      },
      "fahrzeugeImStauAmEnde": {
       "n": 50,
@@ -700,6 +765,15 @@
       "min": 967.9,
       "median": 1310.5,
       "max": 1534
+     },
+     "stauSpitzeVorEngstelleM": {
+      "n": 50,
+      "mittel": -30.7,
+      "sd": 31.9,
+      "ci95": 8.9,
+      "min": -115.9,
+      "median": -15.9,
+      "max": -0.1
      },
      "fahrzeugeImStauAmEnde": {
       "n": 50,
@@ -917,6 +991,44 @@
      "reisezeitMittelS": 1020.7,
      "durchsatzKfzH": 1791
     }
+   },
+   "kernzahlen": {
+    "hinweis": "Rückstau = Abstand Stauende–Engstelle; „am Ende“ = Mittel der letzten 60 s der 30-min-Verkehrsspitze.",
+    "rueckstauAmEndeKm": {
+     "frueh": 3.4,
+     "reissverschluss": 2.5
+    },
+    "rueckstauMaxKm": {
+     "frueh": 3.9,
+     "reissverschluss": 3
+    },
+    "rueckstauMittelKm": {
+     "frueh": 2,
+     "reissverschluss": 1.3
+    },
+    "rueckstauReduktionProzent": {
+     "amEnde": 26,
+     "max": 22,
+     "mittel": 36
+    },
+    "kolonneAmEndeKm": {
+     "frueh": 2.9,
+     "reissverschluss": 2.5
+    },
+    "kolonneReduktionProzentAmEnde": 12,
+    "stauSpitzeVorEngstelleM": {
+     "frueh": 491,
+     "reissverschluss": -31
+    },
+    "reisezeitMin": {
+     "frueh": 16.7,
+     "reissverschluss": 16.9
+    },
+    "reisezeitDifferenzSekundenBMinusA": 14.6,
+    "durchsatzKfzH": {
+     "frueh": 1799,
+     "reissverschluss": 1784
+    }
    }
   },
   "rushhour": {
@@ -979,6 +1091,15 @@
       "min": 2617.6,
       "median": 3007.6,
       "max": 3274.6
+     },
+     "stauSpitzeVorEngstelleM": {
+      "n": 50,
+      "mittel": 467,
+      "sd": 135,
+      "ci95": 37.4,
+      "min": 107.8,
+      "median": 491.9,
+      "max": 691.9
      },
      "fahrzeugeImStauAmEnde": {
       "n": 50,
@@ -1116,6 +1237,15 @@
       "min": 2366.3,
       "median": 2750.7,
       "max": 3002.5
+     },
+     "stauSpitzeVorEngstelleM": {
+      "n": 50,
+      "mittel": -33.5,
+      "sd": 33,
+      "ci95": 9.2,
+      "min": -109.6,
+      "median": -19.1,
+      "max": 0
      },
      "fahrzeugeImStauAmEnde": {
       "n": 50,
@@ -1332,6 +1462,44 @@
      "stauEndeM": 5456.9,
      "reisezeitMittelS": 1621.5,
      "durchsatzKfzH": 1776
+    }
+   },
+   "kernzahlen": {
+    "hinweis": "Rückstau = Abstand Stauende–Engstelle; „am Ende“ = Mittel der letzten 60 s der 30-min-Verkehrsspitze.",
+    "rueckstauAmEndeKm": {
+     "frueh": 6.2,
+     "reissverschluss": 5.4
+    },
+    "rueckstauMaxKm": {
+     "frueh": 6.9,
+     "reissverschluss": 6.2
+    },
+    "rueckstauMittelKm": {
+     "frueh": 3.5,
+     "reissverschluss": 2.7
+    },
+    "rueckstauReduktionProzent": {
+     "amEnde": 13,
+     "max": 10,
+     "mittel": 22
+    },
+    "kolonneAmEndeKm": {
+     "frueh": 5.8,
+     "reissverschluss": 5.5
+    },
+    "kolonneReduktionProzentAmEnde": 6,
+    "stauSpitzeVorEngstelleM": {
+     "frueh": 467,
+     "reissverschluss": -33
+    },
+    "reisezeitMin": {
+     "frueh": 26.9,
+     "reissverschluss": 27.2
+    },
+    "reisezeitDifferenzSekundenBMinusA": 16.5,
+    "durchsatzKfzH": {
+     "frueh": 1793,
+     "reissverschluss": 1781
     }
    }
   }

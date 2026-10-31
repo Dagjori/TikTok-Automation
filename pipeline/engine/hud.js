@@ -258,34 +258,62 @@ export class Karaoke {
       }
       return cache.get(w);
     };
+    // Zeilen: bei zwei Zeilen den Umbruch so wählen, dass beide Zeilen ähnlich lang sind
+    const summe = (ws) => ws.reduce((a, w) => a + breite(w.wort), 0);
+    const zeilen = (ws) => {
+      if (summe(ws) <= this.maxBreite) return [ws];
+      let best = null;
+      for (let k = 1; k < ws.length; k++) {
+        const a = summe(ws.slice(0, k)), b = summe(ws.slice(k));
+        if (a > this.maxBreite || b > this.maxBreite) continue;
+        const m = Math.max(a, b);
+        if (!best || m < best.m) best = { k, m };
+      }
+      return best ? [ws.slice(0, best.k), ws.slice(best.k)] : null; // null = passt nicht in 2 Zeilen
+    };
+    const passt = (ws) => zeilen(ws) !== null;
     for (const seg of this.zp.segmente) {
-      let block = null;
-      const neuerBlock = () => {
-        block = { woerter: [], zeilen: [[]], zeilenBreite: [0] };
-        this.bloecke.push(block);
-      };
-      neuerBlock();
+      // 1) Sätze bilden
+      const saetze = [[]];
       seg.woerter.forEach((w, i) => {
-        const b = breite(w.wort);
-        let z = block.zeilen.length - 1;
-        if (block.zeilenBreite[z] + b > this.maxBreite && block.zeilen[z].length) {
-          if (block.zeilen.length >= this.maxZeilen) {
-            neuerBlock();
-            z = 0;
-          } else {
-            block.zeilen.push([]);
-            block.zeilenBreite.push(0);
-            z++;
-          }
-        }
-        block.zeilen[z].push(block.woerter.length);
-        block.zeilenBreite[z] += b;
-        block.woerter.push({ ...w });
-        // Satzende: neuer Block, wenn der aktuelle schon genug Wörter hat
-        const satzende = /[.!?:]$/.test(w.wort) && !/^\d/.test(seg.woerter[i + 1]?.wort || "x");
-        if (satzende && block.woerter.length >= 3 && i < seg.woerter.length - 1) neuerBlock();
+        saetze[saetze.length - 1].push({ ...w });
+        if (/[.!?]$/.test(w.wort) && i < seg.woerter.length - 1) saetze.push([]);
       });
-      if (!block.woerter.length) this.bloecke.pop();
+      // 2) zu lange Sätze gleichmäßig teilen
+      let teile = [];
+      for (const satz of saetze) {
+        if (!satz.length) continue;
+        if (passt(satz)) { teile.push(satz); continue; }
+        let n = 2;
+        for (; n < 12; n++) {
+          const ziel = summe(satz) / n;
+          const stuecke = [[]];
+          let acc = 0;
+          for (const w of satz) {
+            if (acc >= ziel * stuecke.length - breite(w.wort) * 0.5 && stuecke.length < n && stuecke[stuecke.length - 1].length) stuecke.push([]);
+            stuecke[stuecke.length - 1].push(w);
+            acc += breite(w.wort);
+          }
+          if (stuecke.every(passt)) { teile.push(...stuecke); break; }
+        }
+        if (n >= 12) teile.push(satz);
+      }
+      // 3) sehr kurze Teile (≤ 2 Wörter) mit dem Nachbarn zusammenlegen, wenn es in 2 Zeilen passt
+      for (let i = 0; i < teile.length; i++) {
+        if (teile[i].length > 2) continue;
+        if (i + 1 < teile.length && passt([...teile[i], ...teile[i + 1]])) {
+          teile.splice(i, 2, [...teile[i], ...teile[i + 1]]);
+          i--;
+        } else if (i > 0 && passt([...teile[i - 1], ...teile[i]])) {
+          teile.splice(i - 1, 2, [...teile[i - 1], ...teile[i]]);
+          i -= 2;
+        }
+      }
+      for (const t of teile) {
+        const z = zeilen(t) || [t];
+        let idx = 0;
+        this.bloecke.push({ woerter: t, zeilen: z.map((zeile) => zeile.map(() => idx++)) });
+      }
     }
     probe.remove();
     // Zeiten und DOM
@@ -362,12 +390,12 @@ export class Anker {
    * Schild über einem 3D-Punkt. punkt(t) → THREE.Vector3 (Weltkoordinaten), kamera: THREE.Camera
    * hoehe: Länge der Linie in px
    */
-  constructor(hud, { html, punkt, kamera, ein, aus = Infinity, hoehe = 120, breite = 1080, hoeheBild = 1920, klasse = "", klang = "pop" }) {
+  constructor(hud, { html, punkt, kamera, ein, aus = Infinity, hoehe = 120, breite = 1080, hoeheBild = 1920, klasse = "", klang = "pop", minY = 240 }) {
     this.e = el("div", `anker ${klasse}`, `<div class="linie"></div><div class="fuss"></div><div class="schild">${html}</div>`, hud.wurzel);
     this.linie = this.e.querySelector(".linie");
     this.schild = this.e.querySelector(".schild");
     this.fuss = this.e.querySelector(".fuss");
-    Object.assign(this, { punkt, kamera, ein, aus, hoehe, breite, hoeheBild, klang });
+    Object.assign(this, { punkt, kamera, ein, aus, hoehe, breite, hoeheBild, klang, minY });
   }
   klangEreignisse() {
     return this.klang ? [{ t: this.ein, typ: this.klang }] : [];
@@ -383,7 +411,10 @@ export class Anker {
     const y = (-v.y * 0.5 + 0.5) * this.hoeheBild;
     const s = feder(t - this.ein, FEDER.standard);
     const raus = ease.inCubic(fortschritt(t, this.aus, this.aus + 0.3));
-    const h = (typeof this.hoehe === "function" ? this.hoehe(t) : this.hoehe) * clamp(s);
+    let h = (typeof this.hoehe === "function" ? this.hoehe(t) : this.hoehe) * clamp(s);
+    // Schild nie in die obere Sicherheitszone schieben: Linie verkürzen bzw. Schild unter den Punkt klappen
+    const sh = this.schild.offsetHeight || 110;
+    if (y - h - 8 - sh < this.minY) h = Math.max(24, y - 8 - sh - this.minY);
     this.e.style.transform = `translate(${x}px, ${y}px)`;
     this.e.style.opacity = String(1 - raus);
     this.linie.style.top = -h + "px";
