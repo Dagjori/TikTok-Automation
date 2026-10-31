@@ -30,13 +30,24 @@ def anfrage(pfad, daten=None):
         return json.loads(antwort.read())
 
 
+# Feste IDs der ElevenLabs-Standardstimmen (der Key braucht dafür kein Leserecht „voices_read“)
+STIMMEN = {
+    "George": "JBFqnCBsd6RMkjVDRZzb",     # männlich, warm
+    "Daniel": "onwK4e9ZLuTAKqWW03F9",     # männlich, nachrichtlich
+    "Brian": "nPczCjzI2devNBz1zQrb",      # männlich, tief
+    "Sarah": "EXAVITQu4vr4xnSDxMaL",      # weiblich, weich
+    "Lily": "pFZP5JQG7iQjIQuC4Bku",       # weiblich, warm
+    "Charlotte": "XB0fDUnXU5powFXDhCwa",  # weiblich, klar
+}
+
+
 def stimme_finden(wunsch):
-    stimmen = anfrage("/voices")["voices"]
-    for s in stimmen:
-        if wunsch in (s["voice_id"], s["name"]) or s["name"].lower().startswith(wunsch.lower()):
-            return s["voice_id"], s["name"]
-    namen = ", ".join(s["name"] for s in stimmen[:30])
-    sys.exit(f"Stimme '{wunsch}' nicht gefunden. Verfügbar: {namen}")
+    for name, vid in STIMMEN.items():
+        if wunsch in (name, vid) or name.lower() == wunsch.lower():
+            return vid, name
+    if len(wunsch) >= 20:  # beliebige Voice-ID direkt verwenden
+        return wunsch, wunsch
+    sys.exit(f"Stimme '{wunsch}' unbekannt. Bekannt: {', '.join(STIMMEN)} (oder eine Voice-ID angeben)")
 
 
 def sprechen(text, voice_id):
@@ -71,7 +82,7 @@ def main():
     ziel.mkdir(parents=True, exist_ok=True)
 
     if "--proben" in args:  # kurze Hörproben mehrerer Stimmen
-        for kandidat in ["George", "Brian", "Daniel", "Charlie", "Lily", "Charlotte"]:
+        for kandidat in STIMMEN:
             try:
                 vid, vname = stimme_finden(kandidat)
             except SystemExit:
