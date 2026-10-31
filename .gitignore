@@ -20,3 +20,6 @@ frames/
 
 # Sprachaufnahmen der Projekte bleiben im Repo
 !pipeline/projekte/*/audio/*.mp3
+
+# Zwischenspeicher der Sprach-API (wird lokal neu erzeugt)
+pipeline/projekte/*/audio/cache/

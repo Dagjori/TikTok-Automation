@@ -2,909 +2,909 @@
  "stimme": "Daniel",
  "voice_id": "onwK4e9ZLuTAKqWW03F9",
  "modell": "eleven_multilingual_v2",
- "dauer": 90.186,
+ "dauer": 82.874,
  "segmente": [
   {
    "id": "hook",
    "text": "GTA 6 kommt, und die halbe Welt feiert krank. Kostet das wirklich eine Milliarde?",
    "start": 0.0,
-   "ende": 7.059,
+   "ende": 5.905,
    "woerter": [
     {
      "wort": "GTA",
      "start": 0.0,
-     "ende": 0.151
+     "ende": 0.104
     },
     {
      "wort": "6",
-     "start": 0.534,
-     "ende": 0.65
+     "start": 0.221,
+     "ende": 0.279
     },
     {
      "wort": "kommt,",
-     "start": 0.824,
-     "ende": 0.94
+     "start": 0.43,
+     "ende": 0.58
     },
     {
      "wort": "und",
-     "start": 1.068,
-     "ende": 1.358
+     "start": 0.72,
+     "ende": 1.045
     },
     {
      "wort": "die",
-     "start": 1.428,
-     "ende": 1.95
+     "start": 1.103,
+     "ende": 1.521
     },
     {
      "wort": "halbe",
-     "start": 2.276,
-     "ende": 2.415
+     "start": 1.811,
+     "ende": 1.916
     },
     {
      "wort": "Welt",
-     "start": 2.438,
-     "ende": 2.902
+     "start": 1.939,
+     "ende": 2.276
     },
     {
      "wort": "feiert",
-     "start": 2.949,
-     "ende": 3.297
+     "start": 2.31,
+     "ende": 2.577
     },
     {
      "wort": "krank.",
-     "start": 3.576,
-     "ende": 3.947
+     "start": 2.728,
+     "ende": 3.088
     },
     {
      "wort": "Kostet",
-     "start": 4.017,
-     "ende": 4.551
+     "start": 3.135,
+     "ende": 3.564
     },
     {
      "wort": "das",
-     "start": 5.062,
-     "ende": 5.468
+     "start": 3.901,
+     "ende": 4.226
     },
     {
      "wort": "wirklich",
-     "start": 5.492,
-     "ende": 5.619
+     "start": 4.249,
+     "ende": 4.354
     },
     {
      "wort": "eine",
-     "start": 5.689,
-     "ende": 6.002
+     "start": 4.4,
+     "ende": 4.679
     },
     {
      "wort": "Milliarde?",
-     "start": 6.072,
-     "ende": 7.059
+     "start": 4.725,
+     "ende": 5.898
     }
    ]
   },
   {
    "id": "behauptung",
    "text": "Diese Zahl geht gerade um die Welt: Ein Ökonom schätzt allein für die USA eine Milliarde Dollar Schaden am Release-Tag. Ich hab's für die ganze Welt simuliert.",
-   "start": 7.663,
-   "ende": 19.296,
+   "start": 6.285,
+   "ende": 17.989,
    "woerter": [
     {
      "wort": "Diese",
-     "start": 7.663,
-     "ende": 7.93
+     "start": 6.285,
+     "ende": 6.54
     },
     {
      "wort": "Zahl",
-     "start": 8.011,
-     "ende": 8.243
+     "start": 6.61,
+     "ende": 6.935
     },
     {
      "wort": "geht",
-     "start": 8.313,
-     "ende": 8.464
+     "start": 7.33,
+     "ende": 7.492
     },
     {
      "wort": "gerade",
-     "start": 8.522,
-     "ende": 8.835
+     "start": 7.55,
+     "ende": 7.887
     },
     {
      "wort": "um",
-     "start": 8.893,
-     "ende": 8.951
+     "start": 7.945,
+     "ende": 8.026
     },
     {
      "wort": "die",
-     "start": 9.009,
-     "ende": 9.102
+     "start": 8.073,
+     "ende": 8.166
     },
     {
      "wort": "Welt:",
-     "start": 9.16,
-     "ende": 9.718
+     "start": 8.212,
+     "ende": 8.7
     },
     {
      "wort": "Ein",
-     "start": 10.159,
-     "ende": 10.298
+     "start": 9.037,
+     "ende": 9.164
     },
     {
      "wort": "Ökonom",
-     "start": 10.379,
-     "ende": 11.018
+     "start": 9.222,
+     "ende": 9.722
     },
     {
      "wort": "schätzt",
-     "start": 11.401,
-     "ende": 11.796
+     "start": 10.058,
+     "ende": 10.383
     },
     {
      "wort": "allein",
-     "start": 11.865,
-     "ende": 12.214
+     "start": 10.441,
+     "ende": 10.778
     },
     {
      "wort": "für",
-     "start": 12.272,
-     "ende": 12.399
+     "start": 10.836,
+     "ende": 10.975
     },
     {
      "wort": "die",
-     "start": 12.423,
-     "ende": 12.504
+     "start": 10.999,
+     "ende": 11.068
     },
     {
      "wort": "USA",
-     "start": 12.574,
-     "ende": 13.189
+     "start": 11.126,
+     "ende": 11.672
     },
     {
      "wort": "eine",
-     "start": 13.572,
-     "ende": 13.886
+     "start": 12.009,
+     "ende": 12.299
     },
     {
      "wort": "Milliarde",
-     "start": 13.932,
-     "ende": 14.431
+     "start": 12.345,
+     "ende": 12.787
     },
     {
      "wort": "Dollar",
-     "start": 14.489,
-     "ende": 14.768
+     "start": 12.845,
+     "ende": 13.112
     },
     {
      "wort": "Schaden",
-     "start": 14.826,
-     "ende": 15.337
+     "start": 13.158,
+     "ende": 13.588
     },
     {
      "wort": "am",
-     "start": 15.662,
-     "ende": 15.824
+     "start": 13.878,
+     "ende": 14.017
     },
     {
      "wort": "Release-Tag.",
-     "start": 15.917,
-     "ende": 16.846
+     "start": 14.087,
+     "ende": 14.911
     },
     {
      "wort": "Ich",
-     "start": 17.171,
-     "ende": 17.357
+     "start": 15.538,
+     "ende": 15.689
     },
     {
      "wort": "hab's",
-     "start": 17.392,
-     "ende": 17.496
+     "start": 15.736,
+     "ende": 15.852
     },
     {
      "wort": "für",
-     "start": 17.543,
-     "ende": 17.589
+     "start": 15.898,
+     "ende": 15.944
     },
     {
      "wort": "die",
-     "start": 17.636,
-     "ende": 17.74
+     "start": 15.991,
+     "ende": 16.095
     },
     {
      "wort": "ganze",
-     "start": 17.763,
-     "ende": 17.833
+     "start": 16.119,
+     "ende": 16.2
     },
     {
      "wort": "Welt",
-     "start": 17.879,
-     "ende": 18.181
+     "start": 16.235,
+     "ende": 16.49
     },
     {
      "wort": "simuliert.",
-     "start": 18.228,
-     "ende": 19.296
+     "start": 16.537,
+     "ende": 17.988
     }
    ]
   },
   {
    "id": "kaeufer",
    "text": "Schritt eins: Analysten erwarten rund 25 Millionen verkaufte Spiele am ersten Tag. Etwa 60 Prozent der Käufer sind berufstätig. Macht 15 Millionen.",
-   "start": 19.992,
-   "ende": 32.369,
+   "start": 18.209,
+   "ende": 30.017,
    "woerter": [
     {
      "wort": "Schritt",
-     "start": 19.992,
-     "ende": 20.294
+     "start": 18.209,
+     "ende": 18.488
     },
     {
      "wort": "eins:",
-     "start": 20.364,
-     "ende": 20.91
+     "start": 18.592,
+     "ende": 19.126
     },
     {
      "wort": "Analysten",
-     "start": 21.316,
-     "ende": 21.943
+     "start": 19.521,
+     "ende": 20.101
     },
     {
      "wort": "erwarten",
-     "start": 22.233,
-     "ende": 22.698
+     "start": 20.159,
+     "ende": 20.543
     },
     {
      "wort": "rund",
-     "start": 22.744,
-     "ende": 22.988
+     "start": 20.589,
+     "ende": 20.74
     },
     {
      "wort": "25",
-     "start": 23.081,
-     "ende": 23.812
+     "start": 20.786,
+     "ende": 21.483
     },
     {
      "wort": "Millionen",
-     "start": 23.847,
-     "ende": 24.451
+     "start": 21.529,
+     "ende": 21.936
     },
     {
      "wort": "verkaufte",
-     "start": 24.741,
-     "ende": 25.275
+     "start": 21.994,
+     "ende": 22.435
     },
     {
      "wort": "Spiele",
-     "start": 25.321,
-     "ende": 25.681
+     "start": 22.481,
+     "ende": 22.807
     },
     {
      "wort": "am",
-     "start": 25.728,
-     "ende": 25.832
+     "start": 22.865,
+     "ende": 22.992
     },
     {
      "wort": "ersten",
-     "start": 25.914,
-     "ende": 26.25
+     "start": 23.097,
+     "ende": 23.457
     },
     {
      "wort": "Tag.",
-     "start": 26.308,
-     "ende": 26.738
+     "start": 23.515,
+     "ende": 23.991
     },
     {
      "wort": "Etwa",
-     "start": 27.214,
-     "ende": 27.469
+     "start": 24.618,
+     "ende": 24.896
     },
     {
      "wort": "60",
-     "start": 27.527,
-     "ende": 27.864
+     "start": 24.966,
+     "ende": 25.326
     },
     {
      "wort": "Prozent",
-     "start": 27.899,
-     "ende": 28.247
+     "start": 25.361,
+     "ende": 25.709
     },
     {
      "wort": "der",
-     "start": 28.27,
-     "ende": 28.352
+     "start": 25.732,
+     "ende": 25.825
     },
     {
      "wort": "Käufer",
-     "start": 28.41,
-     "ende": 28.851
+     "start": 25.872,
+     "ende": 26.278
     },
     {
      "wort": "sind",
-     "start": 29.211,
-     "ende": 29.408
+     "start": 26.568,
+     "ende": 26.766
     },
     {
      "wort": "berufstätig.",
-     "start": 29.455,
-     "ende": 30.349
+     "start": 26.812,
+     "ende": 27.741
     },
     {
      "wort": "Macht",
-     "start": 30.813,
-     "ende": 31.057
+     "start": 28.136,
+     "ende": 28.391
     },
     {
      "wort": "15",
-     "start": 31.103,
-     "ende": 31.568
+     "start": 28.449,
+     "ende": 28.902
     },
     {
      "wort": "Millionen.",
-     "start": 31.614,
-     "ende": 32.369
+     "start": 28.948,
+     "ende": 30.005
     }
    ]
   },
   {
    "id": "krank",
    "text": "Schritt zwei: Wie viele bleiben zu Hause? In Großbritannien planen es laut Umfrage 2 Prozent, in den USA wollen 10 Prozent nicht arbeiten. Ich nehme die Mitte: 750.000 Fehltage.",
-   "start": 32.926,
-   "ende": 48.669,
+   "start": 30.237,
+   "ende": 44.37,
    "woerter": [
     {
      "wort": "Schritt",
-     "start": 32.926,
-     "ende": 33.216
+     "start": 30.237,
+     "ende": 30.539
     },
     {
      "wort": "zwei:",
-     "start": 33.297,
-     "ende": 33.89
+     "start": 30.609,
+     "ende": 31.119
     },
     {
      "wort": "Wie",
-     "start": 34.447,
-     "ende": 34.609
+     "start": 31.514,
+     "ende": 31.677
     },
     {
      "wort": "viele",
-     "start": 34.656,
-     "ende": 34.911
+     "start": 31.723,
+     "ende": 31.944
     },
     {
      "wort": "bleiben",
-     "start": 34.958,
-     "ende": 35.283
+     "start": 31.99,
+     "ende": 32.28
     },
     {
      "wort": "zu",
-     "start": 35.341,
-     "ende": 35.434
+     "start": 32.327,
+     "ende": 32.42
     },
     {
      "wort": "Hause?",
-     "start": 35.492,
-     "ende": 36.014
+     "start": 32.466,
+     "ende": 32.942
     },
     {
      "wort": "In",
-     "start": 36.572,
-     "ende": 36.711
+     "start": 33.395,
+     "ende": 33.511
     },
     {
      "wort": "Großbritannien",
-     "start": 36.746,
-     "ende": 37.512
+     "start": 33.557,
+     "ende": 34.254
     },
     {
      "wort": "planen",
-     "start": 37.814,
-     "ende": 38.174
+     "start": 34.544,
+     "ende": 34.881
     },
     {
      "wort": "es",
-     "start": 38.22,
-     "ende": 38.325
+     "start": 34.939,
+     "ende": 35.032
     },
     {
      "wort": "laut",
-     "start": 38.406,
-     "ende": 38.696
+     "start": 35.102,
+     "ende": 35.276
     },
     {
      "wort": "Umfrage",
-     "start": 38.813,
-     "ende": 39.335
+     "start": 35.345,
+     "ende": 35.787
     },
     {
      "wort": "2",
-     "start": 39.393,
-     "ende": 39.637
+     "start": 35.856,
+     "ende": 36.077
     },
     {
      "wort": "Prozent,",
-     "start": 39.695,
-     "ende": 40.38
+     "start": 36.123,
+     "ende": 36.739
     },
     {
      "wort": "in",
-     "start": 40.763,
-     "ende": 40.891
+     "start": 37.133,
+     "ende": 37.238
     },
     {
      "wort": "den",
-     "start": 40.914,
-     "ende": 41.018
+     "start": 37.273,
+     "ende": 37.377
     },
     {
      "wort": "USA",
-     "start": 41.088,
-     "ende": 41.703
+     "start": 37.435,
+     "ende": 37.923
     },
     {
      "wort": "wollen",
-     "start": 42.087,
-     "ende": 42.388
+     "start": 38.167,
+     "ende": 38.422
     },
     {
      "wort": "10",
-     "start": 42.481,
-     "ende": 42.725
+     "start": 38.468,
+     "ende": 38.643
     },
     {
      "wort": "Prozent",
-     "start": 42.795,
-     "ende": 43.317
+     "start": 38.701,
+     "ende": 39.072
     },
     {
      "wort": "nicht",
-     "start": 43.491,
-     "ende": 43.747
+     "start": 39.13,
+     "ende": 39.328
     },
     {
      "wort": "arbeiten.",
-     "start": 43.816,
-     "ende": 44.501
+     "start": 39.386,
+     "ende": 39.955
     },
     {
      "wort": "Ich",
-     "start": 44.885,
-     "ende": 45.07
+     "start": 40.291,
+     "ende": 40.431
     },
     {
      "wort": "nehme",
-     "start": 45.128,
-     "ende": 45.326
+     "start": 40.477,
+     "ende": 40.674
     },
     {
      "wort": "die",
-     "start": 45.372,
-     "ende": 45.442
+     "start": 40.709,
+     "ende": 40.79
     },
     {
      "wort": "Mitte:",
-     "start": 45.477,
-     "ende": 45.929
+     "start": 40.837,
+     "ende": 41.29
     },
     {
      "wort": "750.000",
-     "start": 46.254,
-     "ende": 47.845
+     "start": 41.742,
+     "ende": 43.112
     },
     {
      "wort": "Fehltage.",
-     "start": 47.915,
-     "ende": 48.669
+     "start": 43.17,
+     "ende": 44.355
     }
    ]
   },
   {
    "id": "kosten",
    "text": "Schritt drei: Die meisten Käufer leben in reichen Ländern. Dort erwirtschaftet ein Arbeitstag im Schnitt rund 400 Dollar. Das sind 300 Millionen Dollar.",
-   "start": 49.052,
-   "ende": 60.755,
+   "start": 44.59,
+   "ende": 55.563,
    "woerter": [
     {
      "wort": "Schritt",
-     "start": 49.052,
-     "ende": 49.401
+     "start": 44.59,
+     "ende": 44.88
     },
     {
      "wort": "drei:",
-     "start": 49.517,
-     "ende": 50.109
+     "start": 44.903,
+     "ende": 45.426
     },
     {
      "wort": "Die",
-     "start": 50.62,
-     "ende": 50.748
+     "start": 45.821,
+     "ende": 45.925
     },
     {
      "wort": "meisten",
-     "start": 50.794,
-     "ende": 51.166
+     "start": 45.972,
+     "ende": 46.273
     },
     {
      "wort": "Käufer",
-     "start": 51.224,
-     "ende": 51.7
+     "start": 46.32,
+     "ende": 46.703
     },
     {
      "wort": "leben",
-     "start": 52.025,
-     "ende": 52.385
+     "start": 47.04,
+     "ende": 47.33
     },
     {
      "wort": "in",
-     "start": 52.454,
-     "ende": 52.547
+     "start": 47.376,
+     "ende": 47.458
     },
     {
      "wort": "reichen",
-     "start": 52.628,
-     "ende": 52.988
+     "start": 47.527,
+     "ende": 47.818
     },
     {
      "wort": "Ländern.",
-     "start": 53.07,
-     "ende": 53.638
+     "start": 47.876,
+     "ende": 48.433
     },
     {
      "wort": "Dort",
-     "start": 54.021,
-     "ende": 54.311
+     "start": 48.828,
+     "ende": 49.095
     },
     {
      "wort": "erwirtschaftet",
-     "start": 54.381,
-     "ende": 55.008
+     "start": 49.153,
+     "ende": 49.745
     },
     {
      "wort": "ein",
-     "start": 55.066,
-     "ende": 55.159
+     "start": 49.791,
+     "ende": 49.873
     },
     {
      "wort": "Arbeitstag",
-     "start": 55.252,
-     "ende": 55.867
+     "start": 49.954,
+     "ende": 50.581
     },
     {
      "wort": "im",
-     "start": 55.937,
-     "ende": 56.041
+     "start": 50.871,
+     "ende": 51.01
     },
     {
      "wort": "Schnitt",
-     "start": 56.099,
-     "ende": 56.413
+     "start": 51.057,
+     "ende": 51.37
     },
     {
      "wort": "rund",
-     "start": 56.691,
-     "ende": 56.97
+     "start": 51.521,
+     "ende": 51.742
     },
     {
      "wort": "400",
-     "start": 57.04,
-     "ende": 57.527
+     "start": 51.8,
+     "ende": 52.287
     },
     {
      "wort": "Dollar.",
-     "start": 57.574,
-     "ende": 58.108
+     "start": 52.334,
+     "ende": 52.868
     },
     {
      "wort": "Das",
-     "start": 58.619,
-     "ende": 58.793
+     "start": 53.321,
+     "ende": 53.483
     },
     {
      "wort": "sind",
-     "start": 58.828,
-     "ende": 58.99
+     "start": 53.518,
+     "ende": 53.681
     },
     {
      "wort": "300",
-     "start": 59.013,
-     "ende": 59.571
+     "start": 53.704,
+     "ende": 54.145
     },
     {
      "wort": "Millionen",
-     "start": 59.629,
-     "ende": 60.116
+     "start": 54.203,
+     "ende": 54.656
     },
     {
      "wort": "Dollar.",
-     "start": 60.186,
-     "ende": 60.755
+     "start": 54.702,
+     "ende": 55.55
     }
    ]
   },
   {
    "id": "dreh",
    "text": "Klingt nach viel. Ist es aber nicht. Die Weltwirtschaft schafft an einem einzigen Arbeitstag rund 450 Milliarden Dollar. GTA 6 kostet weniger als ein Promille, und das meiste wird nachgeholt.",
-   "start": 60.999,
-   "ende": 76.753,
+   "start": 55.783,
+   "ende": 71.066,
    "woerter": [
     {
      "wort": "Klingt",
-     "start": 60.999,
-     "ende": 61.324
+     "start": 55.783,
+     "ende": 56.085
     },
     {
      "wort": "nach",
-     "start": 61.382,
-     "ende": 61.544
+     "start": 56.131,
+     "ende": 56.282
     },
     {
      "wort": "viel.",
-     "start": 61.591,
-     "ende": 62.02
+     "start": 56.329,
+     "ende": 56.758
     },
     {
      "wort": "Ist",
-     "start": 62.624,
-     "ende": 62.845
+     "start": 57.153,
+     "ende": 57.339
     },
     {
      "wort": "es",
-     "start": 62.903,
-     "ende": 62.972
+     "start": 57.385,
+     "ende": 57.455
     },
     {
      "wort": "aber",
-     "start": 63.03,
-     "ende": 63.205
+     "start": 57.501,
+     "ende": 57.652
     },
     {
      "wort": "nicht.",
-     "start": 63.251,
-     "ende": 63.669
+     "start": 57.699,
+     "ende": 58.128
     },
     {
      "wort": "Die",
-     "start": 64.11,
-     "ende": 64.226
+     "start": 58.523,
+     "ende": 58.639
     },
     {
      "wort": "Weltwirtschaft",
-     "start": 64.273,
-     "ende": 64.946
+     "start": 58.685,
+     "ende": 59.336
     },
     {
      "wort": "schafft",
-     "start": 64.969,
-     "ende": 65.271
+     "start": 59.521,
+     "ende": 59.812
     },
     {
      "wort": "an",
-     "start": 65.329,
-     "ende": 65.387
+     "start": 59.858,
+     "ende": 59.939
     },
     {
      "wort": "einem",
-     "start": 65.457,
-     "ende": 65.678
+     "start": 59.997,
+     "ende": 60.183
     },
     {
      "wort": "einzigen",
-     "start": 65.759,
-     "ende": 66.2
+     "start": 60.323,
+     "ende": 60.775
     },
     {
      "wort": "Arbeitstag",
-     "start": 66.281,
-     "ende": 66.92
+     "start": 60.845,
+     "ende": 61.495
     },
     {
      "wort": "rund",
-     "start": 67.198,
-     "ende": 68.441
+     "start": 61.785,
+     "ende": 63.086
     },
     {
      "wort": "450",
-     "start": 68.475,
-     "ende": 68.94
+     "start": 63.237,
+     "ende": 63.771
     },
     {
      "wort": "Milliarden",
-     "start": 68.998,
-     "ende": 69.544
+     "start": 63.817,
+     "ende": 64.293
     },
     {
      "wort": "Dollar.",
-     "start": 70.147,
-     "ende": 70.321
+     "start": 64.827,
+     "ende": 64.932
     },
     {
      "wort": "GTA",
-     "start": 70.565,
-     "ende": 70.716
+     "start": 65.071,
+     "ende": 65.152
     },
     {
      "wort": "6",
-     "start": 70.925,
-     "ende": 71.169
+     "start": 65.303,
+     "ende": 65.524
     },
     {
      "wort": "kostet",
-     "start": 71.61,
-     "ende": 71.982
+     "start": 65.814,
+     "ende": 66.22
     },
     {
      "wort": "weniger",
-     "start": 72.04,
-     "ende": 72.4
+     "start": 66.441,
+     "ende": 66.766
     },
     {
      "wort": "als",
-     "start": 72.446,
-     "ende": 72.818
+     "start": 66.812,
+     "ende": 67.207
     },
     {
      "wort": "ein",
-     "start": 72.864,
-     "ende": 73.003
+     "start": 67.428,
+     "ende": 67.59
     },
     {
      "wort": "Promille,",
-     "start": 73.119,
-     "ende": 73.328
+     "start": 67.695,
+     "ende": 67.881
     },
     {
      "wort": "und",
-     "start": 73.398,
-     "ende": 74.118
+     "start": 67.939,
+     "ende": 68.531
     },
     {
      "wort": "das",
-     "start": 74.559,
-     "ende": 74.687
+     "start": 68.821,
+     "ende": 68.937
     },
     {
      "wort": "meiste",
-     "start": 74.722,
-     "ende": 74.838
+     "start": 68.96,
+     "ende": 69.065
     },
     {
      "wort": "wird",
-     "start": 74.907,
-     "ende": 75.349
+     "start": 69.123,
+     "ende": 69.506
     },
     {
      "wort": "nachgeholt.",
-     "start": 75.674,
-     "ende": 76.753
+     "start": 69.75,
+     "ende": 71.062
     }
    ]
   },
   {
    "id": "recht",
    "text": "Teuer wird's eher für dich: Wer Krankheit nur vortäuscht, riskiert die Kündigung. Der sichere Weg heißt Urlaub.",
-   "start": 77.137,
-   "ende": 86.076,
+   "start": 71.286,
+   "ende": 79.515,
    "woerter": [
     {
      "wort": "Teuer",
-     "start": 77.137,
-     "ende": 77.554
+     "start": 71.286,
+     "ende": 71.692
     },
     {
      "wort": "wird's",
-     "start": 77.938,
-     "ende": 78.123
+     "start": 71.983,
+     "ende": 72.157
     },
     {
      "wort": "eher",
-     "start": 78.181,
-     "ende": 78.251
+     "start": 72.203,
+     "ende": 72.273
     },
     {
      "wort": "für",
-     "start": 78.332,
-     "ende": 78.541
+     "start": 72.331,
+     "ende": 72.528
     },
     {
      "wort": "dich:",
-     "start": 78.588,
-     "ende": 78.739
+     "start": 72.575,
+     "ende": 72.726
     },
     {
      "wort": "Wer",
-     "start": 78.774,
-     "ende": 79.226
+     "start": 72.772,
+     "ende": 73.213
     },
     {
      "wort": "Krankheit",
-     "start": 79.609,
-     "ende": 79.76
+     "start": 73.504,
+     "ende": 73.643
     },
     {
      "wort": "nur",
-     "start": 79.807,
-     "ende": 80.283
+     "start": 73.689,
+     "ende": 74.096
     },
     {
      "wort": "vortäuscht,",
-     "start": 80.364,
-     "ende": 80.492
+     "start": 74.142,
+     "ende": 74.258
     },
     {
      "wort": "riskiert",
-     "start": 80.527,
-     "ende": 81.374
+     "start": 74.305,
+     "ende": 75.082
     },
     {
      "wort": "die",
-     "start": 81.618,
-     "ende": 82.106
+     "start": 75.268,
+     "ende": 75.651
     },
     {
      "wort": "Kündigung.",
-     "start": 82.14,
-     "ende": 82.233
+     "start": 75.686,
+     "ende": 75.756
     },
     {
      "wort": "Der",
-     "start": 82.291,
-     "ende": 83.092
+     "start": 75.802,
+     "ende": 76.464
     },
     {
      "wort": "sichere",
-     "start": 83.696,
-     "ende": 83.847
+     "start": 76.859,
+     "ende": 76.975
     },
     {
      "wort": "Weg",
-     "start": 83.905,
-     "ende": 84.288
+     "start": 77.021,
+     "ende": 77.346
     },
     {
      "wort": "heißt",
-     "start": 84.335,
-     "ende": 84.648
+     "start": 77.393,
+     "ende": 77.73
     },
     {
      "wort": "Urlaub.",
-     "start": 84.973,
-     "ende": 86.076
+     "start": 78.182,
+     "ende": 79.506
     }
    ]
   },
   {
    "id": "ende",
    "text": "Schreibt euren Simulationswunsch in die Kommentare.",
-   "start": 86.517,
-   "ende": 90.186,
+   "start": 79.895,
+   "ende": 82.874,
    "woerter": [
     {
      "wort": "Schreibt",
-     "start": 86.517,
-     "ende": 86.924
+     "start": 79.895,
+     "ende": 80.278
     },
     {
      "wort": "euren",
-     "start": 86.982,
-     "ende": 87.237
+     "start": 80.325,
+     "ende": 80.522
     },
     {
      "wort": "Simulationswunsch",
-     "start": 87.295,
-     "ende": 88.445
+     "start": 80.568,
+     "ende": 81.451
     },
     {
      "wort": "in",
-     "start": 88.77,
-     "ende": 88.886
+     "start": 81.671,
+     "ende": 81.787
     },
     {
      "wort": "die",
-     "start": 88.932,
-     "ende": 89.014
+     "start": 81.834,
+     "ende": 81.915
     },
     {
      "wort": "Kommentare.",
-     "start": 89.06,
-     "ende": 90.186
+     "start": 81.962,
+     "ende": 82.867
     }
    ]
   }

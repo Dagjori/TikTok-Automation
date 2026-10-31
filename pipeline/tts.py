@@ -15,7 +15,10 @@ from pathlib import Path
 API = "https://api.elevenlabs.io/v1"
 MODELL = "eleven_multilingual_v2"
 STANDARD_STIMME = "Daniel"  # vom Inhaber gewählt (31.10.)
-EINSTELLUNGEN = {"stability": 0.45, "similarity_boost": 0.8, "style": 0.2, "use_speaker_boost": True}
+EINSTELLUNGEN = {"stability": 0.6, "similarity_boost": 0.8, "style": 0.0, "use_speaker_boost": True, "speed": 1.12}
+PAUSE = 0.22          # Pause zwischen Segmenten in Sekunden
+PAUSE_LANG = 0.38     # nach dem Hook und vor dem Schluss-Satz
+RATE = 44100
 
 
 def anfrage(pfad, daten=None):
@@ -50,9 +53,39 @@ def stimme_finden(wunsch):
     sys.exit(f"Stimme '{wunsch}' unbekannt. Bekannt: {', '.join(STIMMEN)} (oder eine Voice-ID angeben)")
 
 
-def sprechen(text, voice_id):
-    return anfrage(f"/text-to-speech/{voice_id}/with-timestamps?output_format=mp3_44100_128",
-                   {"text": text, "model_id": MODELL, "voice_settings": EINSTELLUNGEN})
+CACHE = None  # wird in main() auf <projekt>/audio/cache gesetzt
+
+
+def sprechen(text, voice_id, davor="", danach=""):
+    daten = {"text": text, "model_id": MODELL, "voice_settings": EINSTELLUNGEN}
+    if davor:
+        daten["previous_text"] = davor
+    if danach:
+        daten["next_text"] = danach
+    import hashlib
+    schluessel = hashlib.sha1(json.dumps([voice_id, daten], sort_keys=True).encode()).hexdigest()[:16]
+    if CACHE is not None and (CACHE / f"{schluessel}.json").exists():
+        return json.loads((CACHE / f"{schluessel}.json").read_text())
+    antwort = anfrage(f"/text-to-speech/{voice_id}/with-timestamps?output_format=mp3_44100_128", daten)
+    if CACHE is not None:
+        CACHE.mkdir(parents=True, exist_ok=True)
+        (CACHE / f"{schluessel}.json").write_text(json.dumps(antwort))
+    return antwort
+
+
+def pcm(mp3_bytes):
+    """MP3 → 16-bit-Mono-Samples (über ffmpeg)."""
+    import subprocess
+    roh = subprocess.run(["ffmpeg", "-v", "error", "-i", "pipe:0", "-f", "s16le", "-ac", "1", "-ar", str(RATE), "pipe:1"],
+                         input=mp3_bytes, capture_output=True, check=True).stdout
+    import array
+    a = array.array("h"); a.frombytes(roh); return a
+
+
+def mp3_schreiben(samples, ziel):
+    import subprocess
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "s16le", "-ac", "1", "-ar", str(RATE), "-i", "pipe:0",
+                    "-codec:a", "libmp3lame", "-b:a", "160k", str(ziel)], input=samples.tobytes(), check=True)
 
 
 def woerter(zeichen, starts, enden, versatz=0):
@@ -94,6 +127,8 @@ def main():
     skript = json.loads((projekt / "skript.json").read_text(encoding="utf-8"))
     ziel = projekt / "audio"
     ziel.mkdir(parents=True, exist_ok=True)
+    global CACHE
+    CACHE = ziel / "cache"
 
     if "--proben" in args:  # kurze Hörproben mehrerer Stimmen
         for kandidat in STIMMEN:
@@ -106,25 +141,40 @@ def main():
             print("Probe:", vname)
         return
 
-    # Ganzer Text in einem Durchgang (natürliche Betonung), Segmentgrenzen über Zeichenpositionen
     # „sprechtext“ = Fassung für die Stimme (Zahlen ausgeschrieben, Lautschrift); „text“ = Anzeige bzw. Untertitel
     texte = [s.get("sprechtext") or s["text"] for s in skript["segmente"]]
-    gesamt = " ".join(texte)
-    antwort = sprechen(gesamt, voice_id)
-    (ziel / "stimme.mp3").write_bytes(base64.b64decode(antwort["audio_base64"]))
-    al = antwort["alignment"]
-    zeichen, starts, enden = al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]
-
-    segmente, pos = [], 0
-    for seg, gesprochen in zip(skript["segmente"], texte):
-        a, b = pos, pos + len(gesprochen)
-        gesprochene_woerter = woerter(zeichen[a:b], starts[a:b], enden[a:b])
+    import array
+    gesamt_audio, segmente, zeit = array.array("h"), [], 0.0
+    for i, (seg, gesprochen) in enumerate(zip(skript["segmente"], texte)):
+        davor = " ".join(texte[max(0, i - 2):i])
+        danach = texte[i + 1] if i + 1 < len(texte) else ""
+        antwort = sprechen(gesprochen, voice_id, davor, danach)
+        al = antwort["alignment"]
+        zeichen, starts, enden = al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]
+        sichtbar = [k for k, z in enumerate(zeichen) if not z.isspace()]
+        von = max(0.0, starts[sichtbar[0]] - 0.03)
+        bis = enden[sichtbar[-1]] + 0.07
+        samples = pcm(base64.b64decode(antwort["audio_base64"]))
+        stueck = samples[int(von * RATE):int(bis * RATE)]
+        if i > 0:  # Pause vor diesem Segment
+            pause = PAUSE_LANG if i == 1 or i == len(texte) - 1 else PAUSE
+            gesamt_audio.extend(array.array("h", bytes(2 * int(pause * RATE))))
+            zeit += pause
+        versatz = zeit - von
+        gesprochene_woerter = [{"wort": w["wort"], "start": round(w["start"] + versatz, 3), "ende": round(w["ende"] + versatz, 3)}
+                               for w in woerter(zeichen, starts, enden)]
+        laenge = len(stueck) / RATE  # echte Länge (kann kürzer sein als bis - von, wenn das Audio vorher endet)
         segmente.append({
             "id": seg["id"], "text": seg["text"],
-            "start": round(starts[a], 3), "ende": round(enden[b - 1], 3),
+            "start": round(zeit, 3), "ende": round(zeit + laenge, 3),
             "woerter": anzeige_woerter(seg["text"], gesprochene_woerter),
         })
-        pos = b + 1  # Leerzeichen zwischen den Segmenten
+        gesamt_audio.extend(stueck)
+        zeit += laenge
+        print(f"  {seg['id']:11} {laenge:5.2f} s")
+    mp3_schreiben(gesamt_audio, ziel / "stimme.mp3")
+    gesamt = " ".join(texte)
+    enden = [segmente[-1]["ende"]]
     timing = {"stimme": name, "voice_id": voice_id, "modell": MODELL, "dauer": round(enden[-1], 3), "segmente": segmente}
     (ziel / "timing.json").write_text(json.dumps(timing, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{name}: {timing['dauer']} s, {len(gesamt)} Zeichen")
