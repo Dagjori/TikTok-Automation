@@ -1,0 +1,54 @@
+/* Maßstab-Layout für Stilbilder ab Nr. 9 (docs/15-massstab.md, Abschnitt 4):
+   Anzeigetafel oben (Teamfarben, Zähler in der Mitte) · Szene in der Mitte · Untertitel als kurze Phrase unten.
+   KEIN Kanalname, KEIN Logo, KEINE Rubrik im Bild.
+   Jede Stil-Seite setzt nur die Variablen (Material der Tafel, Teamfarben) und ergänzt bei Bedarf eigene Regeln.
+   Sichere Zonen wie gemeinsam.css: oben 150 px, rechts 150 px, unten 400 px. */
+
+:root {
+  /* Teamfarben: a = Ticket, b = Auto. -hell = Schlüsselwort im Untertitel (muss auf schwarzer Kontur leuchten) */
+  --a: #2F6FED; --a-hell: #7FB2FF; --a-text: #fff;
+  --b: #FF7A1A; --b-hell: #FFB067; --b-text: #fff;
+  /* Tafel */
+  --tafel-bg: #ffffff; --tafel-text: #14171f; --tafel-grau: #6b7280;
+  --tafel-radius: 38px; --tafel-rand: none; --tafel-schatten: 0 26px 50px -20px rgba(0, 0, 0, 0.55);
+  --tafel-schrift: var(--display); --zahl-schrift: var(--display);
+  --mitte-bg: #14171f; --mitte-text: #ffffff; --mitte-rand: 8px solid #ffffff;
+  /* Chips */
+  --chip-bg: #ffd23f; --chip-text: #14171f; --chip-radius: 999px; --chip-rand: none; --chip-schatten: 0 14px 28px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Anzeigetafel ---------- */
+.tafel9 { position: absolute; left: 54px; top: 162px; width: 876px; height: 226px; z-index: 20; }
+.tafel9 .karte { position: absolute; top: 0; width: 418px; height: 226px; padding: 22px 30px 0; background: var(--tafel-bg); color: var(--tafel-text);
+  border-radius: var(--tafel-radius); border: var(--tafel-rand); box-shadow: var(--tafel-schatten); overflow: hidden; }
+.tafel9 .karte.a { left: 0; }
+.tafel9 .karte.b { right: 0; text-align: right; }
+.tafel9 .wer { display: inline-flex; align-items: center; height: 50px; padding: 0 22px; border-radius: 999px; font-family: var(--tafel-schrift); font-weight: 900;
+  font-size: 26px; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; }
+.tafel9 .a .wer { background: var(--a); color: var(--a-text); }
+.tafel9 .b .wer { background: var(--b); color: var(--b-text); }
+.tafel9 .wert { font-family: var(--zahl-schrift); font-weight: 900; font-size: 92px; line-height: 1; letter-spacing: -0.03em; margin-top: 14px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tafel9 .a .wert { padding-right: 64px; }
+.tafel9 .b .wert { padding-left: 64px; }
+.tafel9 .einheit { font-family: var(--tafel-schrift); font-weight: 800; font-size: 23px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tafel-grau); margin-top: 8px; }
+/* Zähler in der Mitte (Live-Zähler „Fahrten“) */
+.tafel9 .mitte { position: absolute; left: 50%; top: 113px; width: 164px; height: 164px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--mitte-bg); color: var(--mitte-text);
+  border: var(--mitte-rand); box-shadow: var(--tafel-schatten); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 2; }
+.tafel9 .mitte b { font-family: var(--zahl-schrift); font-weight: 900; font-size: 68px; line-height: 0.9; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.tafel9 .mitte small { font-family: var(--tafel-schrift); font-weight: 900; font-size: 17px; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; opacity: 0.9; }
+
+/* ---------- Chips (poppen beim gesprochenen Wort auf) ---------- */
+.chip9 { position: absolute; z-index: 15; display: inline-flex; align-items: center; gap: 10px; height: 62px; padding: 0 26px; border-radius: var(--chip-radius); border: var(--chip-rand);
+  background: var(--chip-bg); color: var(--chip-text); box-shadow: var(--chip-schatten); font-family: var(--tafel-schrift); font-weight: 900; font-size: 29px; letter-spacing: 0.05em;
+  text-transform: uppercase; white-space: nowrap; transform-origin: 50% 100%; }
+.chip9.a { background: var(--a); color: var(--a-text); }
+.chip9.b { background: var(--b); color: var(--b-text); }
+
+/* ---------- Untertitel: kurze Phrase, ohne Kasten, Schlüsselwort in Teamfarbe ---------- */
+.phrase { position: absolute; left: 54px; width: 876px; top: 1336px; display: flex; flex-direction: column; align-items: center; z-index: 50; pointer-events: none; }
+.phrase .zeile { display: block; white-space: nowrap; font-family: var(--display); font-weight: 900; font-size: var(--ph-groesse, 74px); line-height: 1.12; letter-spacing: -0.01em; }
+.phrase .w { position: relative; z-index: 0; display: inline-block; margin: 0 0.2em; color: #fff; }
+.phrase .w::before { content: attr(data-t); position: absolute; left: 0; top: 0; z-index: -1; color: #000; -webkit-text-stroke: var(--ph-kontur, 16px) #000;
+  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(0, 0, 0, 0.4); }
+.phrase .w.a { color: var(--a-hell); }
+.phrase .w.b { color: var(--b-hell); }
