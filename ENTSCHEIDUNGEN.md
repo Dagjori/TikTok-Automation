@@ -8,3 +8,5 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-10-30 | Bisherige Recherche wird als Projektwissen übernommen (`docs/`, `data/`) | Grundlage für alle weiteren Schritte |
 | 2026-10-30 | Hauptaccount (ca. 3k Follower) wird umgestellt; Shop-Provisionen spielen keine Rolle | Konto ist privat und laut Account check sauber |
 | 2026-10-30 | Keine 1:1-Kopie bestehender Formate; Nische „Geld-Duell“ verworfen | Zu nah an @kontostand.vs und @wissentogo_de; gesucht ist eine Nische mit gleichem Prinzip, aber eigenem Thema |
+| 2026-10-31 | Nische: Kombi „Alltag durchgerechnet“ (Geld-Duell + Testlauf), Platz 1 im Ranking | Größter Themenvorrat (300 Ideen, ca. 1.600 Varianten), Nachfrage für beide Rubriken belegt |
+| 2026-10-31 | Der TikTok-Markt wird laufend beobachtet, um neue Trends zu erkennen | Themen-Nachschub, Konkurrenz und Regeländerungen früh sehen |

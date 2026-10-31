@@ -3,7 +3,8 @@
 Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Projektwissen liegt in `docs/`.
 
 ## Projekt in Kürze
-- **Format:** gesichtslose 3D- bzw. Daten-Simulationen auf Deutsch, 70–120 s, KI-Stimme, Untertitel. Eine Alltagsfrage wird als Duell, Simulation oder Gedankenexperiment durchgerechnet (z. B. „Mieten oder kaufen – 30 Jahre durchgerechnet“).
+- **Nische (gewählt 31.10.2026):** „Der Testlauf – Alltag durchgerechnet“ mit zwei Rubriken: **💶 GELD** (Geldentscheidungen als Simulation von 1.000 Lebensläufen) und **⏱️ ALLTAG** (Strategien in Verkehr, Warteschlangen, Zuhause, Spielen, Sport, simuliert). Details: `docs/05-startnische.md`, Ideen: `data/ideen/geld-duell.csv` und `data/ideen/testlauf.csv`.
+- **Format:** gesichtslose 3D- bzw. Daten-Simulationen auf Deutsch, 70–90 s, KI-Stimme, Untertitel.
 - **Kanäle:** bestehender TikTok-Account des Inhabers (ca. 3k Follower, früher TikTok-Shop-Affiliate). YouTube Shorts als Zweitverwertung.
 - **Ziel:** 10k Follower, Creator Rewards Program (CRP), danach Ausbau (zweite Nische, englische Version).
 - **Inhaber:** arbeitet Vollzeit im Hauptjob, Zeit ist knapp. Jeder Schritt muss den größten Hebel pro Stunde haben.
@@ -19,6 +20,8 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Pro
 ## Arbeitsregeln
 - **Nichts ohne Auftrag anlegen.** Keine zusätzlichen Dateien außerhalb dieses Repos, keine Notizen, Webseiten oder Einträge in externen Diensten (Notion, Drive, Gmail usw.), außer der Inhaber verlangt es ausdrücklich.
 - **Arbeitsstand gehört in dieses Repo.** Cloud-Sitzungen sind flüchtig: Am Ende jeder Sitzung `STATUS.md` aktualisieren, committen und pushen. Entscheidungen des Inhabers in `ENTSCHEIDUNGEN.md` eintragen (Datum, Entscheidung, Begründung).
+- **Trend-Monitoring:** Ablauf in `docs/07-trend-monitoring.md` (wöchentlich; Wettbewerbs-Monitor `python3 tools/monitor_kanaele.py`).
+- **Keine Kopien:** Fremde Videos nie nachbauen. Themen, die ein Konkurrent schon viral gemacht hat, nur mit eigenem Ansatz umsetzen.
 - **Keine Geheimnisse ins Repo.** API-Keys (z. B. ElevenLabs) nur über Umgebungsvariablen bzw. `.env`, das in `.gitignore` steht.
 
 ## Plattformregeln (verbindlich)
