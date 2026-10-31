@@ -32,6 +32,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Pro
   - Hook in den ersten 3 Sekunden, Auflösung im selben Video
   - Ende immer genau mit: „Schreibt euren Simulationswunsch in die Kommentare.“ (kein „Morgen: …“)
   - Stil und Beispiele: `docs/08-beispielskripte.md`
+  - Untertitel ohne Kasten: Wort für Wort aufbauend (max. 2 Zeilen, mittig), weiße fette Schrift mit dicker schwarzer Kontur, aktuelles Wort gelb (`Karaoke`-Stil „kontur“ in `pipeline/engine/hud.js`)
   - keine künstlichen Cliffhanger-Teile (TikTok: Clickbait ist ein CRP-Ausschlussgrund)
 - **Kein Kaufaufruf im Video.** TikTok drosselt in TikTok-Shop-Märkten Inhalte, die zum Kauf außerhalb von TikTok führen.
 - **Profil:** keine E-Mail und keine Telefonnummer in der Bio (CRP-Kriterium „Advertising“). Das Impressum nur als Link.
@@ -51,7 +52,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Pro
   9. Planung in TikTok Studio und YouTube Studio
 - **Referenz:** https://github.com/stochosfrance/lowpoly-reel (MIT).
 - **Render-Rechner:** Windows-PC des Inhabers. Die Pipeline muss unter Windows laufen (Node.js, Chrome bzw. Chromium, ffmpeg, Python).
-- **Stimme:** ElevenLabs, kleinster bezahlter Plan (Starter), Stimme `zfc8CJQpe8Kqyl0vvCzo` im natürlichen Tempo (keine künstliche Beschleunigung), Modell eleven_multilingual_v2. Jedes Segment hat zusätzlich einen `sprechtext` (Zahlen ausgeschrieben, Lautschrift für englische Wörter, z. B. „Rilies-Tag“, „G T A sechs“); die Untertitel zeigen `text`. Key als Netzwerk-Secret (Header `xi-api-key` für `api.elevenlabs.io`), er ist nie in der Sitzung sichtbar. Der Key darf keine Leserechte haben, deshalb arbeitet `pipeline/tts.py` mit festen Voice-IDs. Reichen die Credits nicht, auf den nächstgrößeren Plan wechseln.
+- **Stimme:** ElevenLabs, kleinster bezahlter Plan (Starter), Stimme **„Ben“ `aTTiK3YzK3dXETpuDE2h`** (muttersprachlich Deutsch, Bibliotheksstimme, Wahl des Inhabers 31.10.) im natürlichen Tempo (keine künstliche Beschleunigung), Modell eleven_multilingual_v2. Jedes Segment hat zusätzlich einen `sprechtext` (Zahlen ausgeschrieben, Lautschrift für englische Wörter, z. B. „Rilies-Tag“, „G T A sechs“); die Untertitel zeigen `text`. Key als Netzwerk-Secret (Header `xi-api-key` für `api.elevenlabs.io`), er ist nie in der Sitzung sichtbar. Der Key darf keine Leserechte haben, deshalb arbeitet `pipeline/tts.py` mit festen Voice-IDs. Reichen die Credits nicht, auf den nächstgrößeren Plan wechseln.
 - **Modellwahl:**
   - Opus 5.5 für Architektur und neue Szenentypen
   - Sonnet 5.5 für die tägliche Produktion

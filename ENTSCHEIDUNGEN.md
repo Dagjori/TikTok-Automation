@@ -30,3 +30,4 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-10-31 | Die ersten beiden Videos (GTA 6 weltweit, Reißverschluss) werden vor dem Posten mit neuer Stimme und neuen Untertiteln neu gebaut | Die ersten Videos prägen den Kanal-Stil |
 | 2026-10-31 | Ablage in Google Drive kommt später über den Windows-PC (Drive für Desktop), kein Cloud-Upload | Wahl des Inhabers |
 | 2026-10-31 | Trend-Radar schlägt nur noch im aktuellen Format vor (klare Modellrechnung, Duell bzw. Strategie-Vergleich), kein „1.000 simulierte …“ mehr | Inhaber: alte Regel war noch im Radar |
+| 2026-10-31 | Stimme „Ben“ (`aTTiK3YzK3dXETpuDE2h`, ElevenLabs-Bibliothek, muttersprachlich Deutsch, 2,6 Wörter/s) ist Standard; Alternativen Marc, Alexander, Otto in `pipeline/tts.py` | Auswahl des Inhabers per Hörprobe |
