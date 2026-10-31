@@ -338,10 +338,13 @@ export class Karaoke {
     if (this.yFunktion) this.e.style.top = this.yFunktion(t) + "px";
     let versteckt = 0;
     for (const [a, b] of this.versteckt) if (t >= a && t < b) versteckt = 1;
+    // genau ein Block gleichzeitig: der letzte, der schon begonnen hat
+    const vorlauf = (b) => (b.start < 0.2 ? 0.8 : 0.06); // erster Block ist schon im ersten Bild ganz da
+    let aktiv = null;
+    for (const b of this.bloecke) if (t >= b.start - vorlauf(b)) aktiv = b;
     for (const b of this.bloecke) {
-      // erster Block des Videos ist schon im ersten Bild vollständig sichtbar
-      const vor = b.start < 0.2 ? 0.8 : 0.06;
-      if (versteckt || t < b.start - vor || t >= b.ende) {
+      const vor = vorlauf(b);
+      if (versteckt || b !== aktiv || t >= b.ende) {
         if (b.el.style.display !== "none") b.el.style.display = "none";
         continue;
       }

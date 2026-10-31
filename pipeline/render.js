@@ -9,6 +9,7 @@
 //   Optionen: --fps 30  --format jpg|png  --qualitaet 95  --nur-fehlende  --ausgabe <ordner>
 //             --query "msaa=4&schatten=2048"  (Qualitätsschalter, die die Szene auswertet)
 //             --gpu   echte Grafikkarte statt SwiftShader (Windows-PC)
+//             --bilder 12,13,400   nur diese Bildnummern neu rendern (z. B. nach kleinen Korrekturen)
 //
 // Die Szene (szene.html) muss window.renderAt(t), window.dauer und window.__fertig bereitstellen.
 import http from "node:http";
@@ -48,6 +49,7 @@ function argumente(argv) {
     else if (x === "--ausgabe") a.ausgabe = n();
     else if (x === "--query") a.query = n();
     else if (x === "--gpu") a.gpu = true;
+    else if (x === "--bilder") a.bilder = n().split(",").map(Number);
     else if (!x.startsWith("--")) a.projekt = x;
   }
   if (!a.projekt) {
@@ -132,7 +134,8 @@ async function main() {
     const von = a.von != null ? Math.max(0, Math.floor(a.von * fps)) : 0;
     const bis = a.bis != null ? Math.min(gesamt, Math.ceil(a.bis * fps)) : gesamt;
     auftraege = [];
-    for (let f = von; f < bis; f++) {
+    const liste = a.bilder || Array.from({ length: Math.max(0, bis - von) }, (_, i) => von + i);
+    for (const f of liste) {
       const datei = path.join(outDir, `f_${String(f).padStart(5, "0")}.${a.format}`);
       if (a.nurFehlende && fs.existsSync(datei)) continue;
       auftraege.push({ f, t: f / fps, datei, format: a.format });

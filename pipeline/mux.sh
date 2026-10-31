@@ -20,9 +20,10 @@ PY="$(command -v python3 || command -v python)"
 
 [ -d "$FRAMES" ] || { echo "Keine Bilder in $FRAMES – zuerst: node render.js $PROJEKT"; exit 1; }
 FPS="$("$PY" -c "import json;print(json.load(open('$OUT/ereignisse.json')).get('fps',30))" 2>/dev/null || echo 30)"
-ERSTES="$(ls "$FRAMES" | head -n1)"
+ERSTES=""
+for f in "$FRAMES"/f_*; do ERSTES="$f"; break; done
 ENDUNG="${ERSTES##*.}"
-ANZAHL="$(ls "$FRAMES" | wc -l | tr -d ' ')"
+ANZAHL="$(find "$FRAMES" -name 'f_*' | wc -l | tr -d ' ')"
 echo "Bilder: $ANZAHL ($ENDUNG, $FPS fps) → $(awk "BEGIN{printf \"%.2f\", $ANZAHL/$FPS}") s"
 
 VIDEO=(-framerate "$FPS" -i "$FRAMES/f_%05d.$ENDUNG")

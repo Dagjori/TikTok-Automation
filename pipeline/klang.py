@@ -1,6 +1,6 @@
 """Tonspur eines Projekts: Stimme + selbst erzeugte Soundeffekte + leiser Klangteppich (alles synthetisch).
 
-Aufruf:  python3 pipeline/klang.py <projektordner> [--ohne-musik] [--ohne-sfx]
+Aufruf:  python3 pipeline/klang.py <projektordner> [--ohne-musik] [--ohne-sfx] [--ohne-stimme]
 Liest:   pipeline/out/<projekt>/ereignisse.json   (schreibt render.js: Dauer und Klang-Ereignisse der Szene)
          <projekt>/audio/stimme.mp3                (falls vorhanden, wird per ffmpeg dekodiert)
 Schreibt:pipeline/out/<projekt>/ton.wav            (48 kHz, Stereo, noch nicht lautheitsnormalisiert)
@@ -269,6 +269,7 @@ def main():
 
     stimme_pfad = projekt / "audio" / "stimme.mp3"
     stimme = lade_stimme(stimme_pfad, n) if stimme_pfad.exists() else np.zeros(n)
+    stimme_im_mix = 0.0 if "--ohne-stimme" in args else 1.0  # nur für Pegelkontrollen
 
     # Ducking: Musik leiser, wenn gesprochen wird (Hüllkurve der Stimme, geglättet)
     if np.any(stimme):
@@ -286,12 +287,12 @@ def main():
             return x
         return x * 10 ** ((ziel_db - rms_db(aktiv)) / 20)
 
-    musik = auf(musik, ref - 17) * duck
+    musik = auf(musik, ref - 13) * duck
     sfx_mono = sfx.sum(axis=0) / 2
     faktor = 10 ** (((ref - 12) - rms_db(sfx_mono[np.abs(sfx_mono) > 1e-5])) / 20) if np.any(sfx_mono) else 1
     sfx *= faktor
-    links = stimme + musik * 0.95 + sfx[0]
-    rechts = stimme + musik * 1.05 + sfx[1]
+    links = stimme * stimme_im_mix + musik * 0.95 + sfx[0]
+    rechts = stimme * stimme_im_mix + musik * 1.05 + sfx[1]
     schreibe_wav(out / "ton.wav", links, rechts)
     print(f"ton.wav: {dauer:.2f} s · Stimme {'ja' if np.any(stimme) else 'nein'} · {len(meta.get('klang', []))} Effekte")
 
