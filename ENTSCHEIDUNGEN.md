@@ -20,3 +20,6 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-10-31 | Kein „1.000 Lebensläufe“-Merkmal: gleiches Format wie die Vorbilder, nur eigene Themen | Verkompliziert das Vorhaben, bringt keinen Vorteil |
 | 2026-10-31 | Jedes Video endet mit „Schreibt euren Simulationswunsch in die Kommentare.“ statt „Morgen: …“ | Zuschauer liefern die nächsten Themen |
 | 2026-10-31 | Erstes Video: GTA 6 und Krankfeiern, Wirtschaftsrechnung für Deutschland, Start vor dem Release am 19.11. | Idee des Inhabers, Durchbruchpotenzial (Trend-Score 85) |
+| 2026-10-31 | Account heißt ab sofort Simulierbar (`@simulierbar` aktiv); ElevenLabs-API-Key ist erstellt | Umsetzung durch den Inhaber |
+| 2026-10-31 | Optik deutlich hochwertiger als die Konkurrenz (Motion Design) wird zum Markenzeichen | Abheben über Qualität |
+| 2026-10-31 | Start **heute** mit 2 Videos: GTA 6 **weltweit** gerechnet plus Reißverschluss. Die Deutschland-Version von GTA 6 wird eine eigene, spätere Idee | Tempo; weltweite Rechnung hat größere Reichweite |

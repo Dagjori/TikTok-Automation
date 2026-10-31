@@ -6,7 +6,11 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
-## 💶 GTA 6: Was kostet es Deutschland, wenn alle krankfeiern?
+## 💶 GTA 6 weltweit: Kostet das Krankfeiern die Welt eine Milliarde? (Video #1, wird am 31.10. produziert)
+- **Änderung 31.10. (Inhaber):** Weltweit gerechnet statt nur Deutschland. Posten **heute**. Skript: `pipeline/projekte/gta6-welt/skript.json`. Ergebnis der Rechnung: ca. 300 Mio. $ weltweit, unter 1 Promille eines Welt-Arbeitstags.
+- **Deutschland-Version** (unten) bleibt als **eigene Idee für später**, z. B. rund um den Release am 19.11.
+
+## 💶 Idee für später: GTA 6, was kostet es Deutschland, wenn alle krankfeiern?
 - **Score:** 85 (Nachfrage 5, Timing 5, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 3) · **Status:** angenommen (Idee des Inhabers, 31.10.) · **Video #1, posten 17.11.2026**
 - **Warum:**
   - Release am 19.11.2026 (F laut Medien, z. B. [arynews](https://arynews.tv/gta-6-release-date-confirmed-for-november-2026-pc-version-delayed); bei Rockstar bestätigen).

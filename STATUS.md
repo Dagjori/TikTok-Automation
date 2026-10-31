@@ -8,7 +8,8 @@
   - Format wie die Vorbilder, nur eigene Themen, kein „1.000 Lebensläufe“-Merkmal.
   - Ende immer „Schreibt euren Simulationswunsch in die Kommentare.“
   - Skripte: `docs/08-beispielskripte.md`. Vorschaubild: `docs/assets/vorschau-gta6.png`.
-- **Video #1 (31.10. beschlossen):** „GTA 6: Was kostet es Deutschland, wenn alle krankfeiern?“, **posten am 17.11.2026** (Release am 19.11.). Trend-Score 85, Skript-Entwurf steht.
+- **Start heute (31.10.):** Account ist auf Simulierbar umgestellt. Heute sollen 2 Videos raus: **#1 GTA 6 weltweit** (`pipeline/projekte/gta6-welt/`) und **#2 Reißverschluss** (`pipeline/projekte/reissverschluss/`). In Arbeit: hochwertige Render-Engine (`pipeline/engine/`) und Verkehrssimulation (`pipeline/sim/`).
+- **Stimme:** `pipeline/tts.py` (ElevenLabs mit Wort-Zeitstempeln). Wartet darauf, dass der Inhaber `api.elevenlabs.io` im Netzwerk freigibt und `ELEVENLABS_API_KEY` als Umgebungsvariable setzt; danach erzeugt eine neue Sitzung die Stimme.
 - **Trend-Radar:** läuft täglich um 05:35 Uhr in der festen Sitzung „Trend-Radar täglich (TikTok Automation)“ (Sonnet 5.5). Push-Benachrichtigung bei Vorschlägen mit Score ≥ 70 funktioniert. Vorschläge in `docs/trends/vorschlaege.md`.
 - **Angenommene Trend-Videos:** GTA 6 (17.11.), Weihnachtsgeld (20.–28.11.), Mindestlohn 14,60 € (28.12.–05.01.). **Offen:** Deutschlandticket (79 Punkte, 12.–20.12.).
 - **Konkurrenz:** Die Nische zieht Nachahmer an (@gegenprobe, @alltagsduell, @alltagsformel, @alltaginzahlen; alle im Monitor). Tempo zählt.
@@ -20,16 +21,13 @@
 
 | # | Schritt | Wer | Zeit | Status |
 |---|---|---|---|---|
-| 1 | In der App prüfen, ob `@simulierbar` frei ist (noch nicht umbenennen) | Inhaber | 5 Min. | offen |
-| 2 | ElevenLabs Starter abschließen (Preis vorher prüfen), API-Key erzeugen, **nicht** in den Chat und nicht ins Repo | Inhaber | 10 Min. | offen |
-| 3 | **Pipeline-MVP für Video #1:** Rechenmodell GTA (Destatis-Zahlen, Umfragen), Three.js-Szene „Mini-Stadt“ als Animation, Zähler-Karten, Stimme, Untertitel, ffmpeg. Rendern in der Cloud | Claude Code mit Inhaber | ca. 4–6 Std. bis 14.11. | offen |
-| 4 | Video #1 abnehmen (Fakten, Ton, Länge ≥ 61 s) | Inhaber | 15 Min. | bis 15.11. |
-| 5 | Starttag 17.11.: Profil auf Simulierbar umbauen (Name, Bio, Bild, Impressum-Link), YouTube-Kanal „Simulierbar“ anlegen, Video #1 posten | Inhaber | 30 Min. | 17.11. |
-| 6 | Videos #2 (Reißverschluss) und Weihnachtsgeld produzieren, danach 1–2 Videos pro Tag | Claude plus Inhaber | 2–3 Std./Woche | ab 18.11. |
-| 7 | Windows-Setup für das lokale Rendern (Installationsskript) | Claude plus Inhaber | 30 Min. | nach dem Start |
-| 8 | Impressum-Seite einrichten, Nebentätigkeit klären | Inhaber | 1 Std. | vor 17.11. |
-| 9 | Auswertung nach 20 Videos (Retention, Follower pro 1.000 Views, Gewinner-Themen) | Claude | 30 Min. | später |
-| 10 | Ab 10k Followern plus 100k Views in 30 Tagen: CRP beantragen | Inhaber | 15 Min. | später |
+| 1 | In der Umgebung `api.elevenlabs.io` freigeben und `ELEVENLABS_API_KEY` setzen | Inhaber | 5 Min. | offen |
+| 2 | Render-Engine plus GTA-Video (ohne Ton) bauen | Claude (Hintergrund) | läuft | läuft |
+| 3 | Verkehrssimulation plus Reißverschluss-Skript mit echten Zahlen | Claude (Hintergrund) | läuft | läuft |
+| 4 | Stimme erzeugen (neue Sitzung mit Key), final rendern, MP4 an den Inhaber | Claude | nach Schritt 1–3 | offen |
+| 5 | Videos abnehmen und posten (TikTok und YouTube Shorts) | Inhaber | 15 Min. pro Video | heute |
+| 6 | Impressum-Link in der Bio, Nebentätigkeit klären | Inhaber | 1 Std. | offen |
+| 7 | Windows-Setup für das lokale Rendern | Claude plus Inhaber | 30 Min. | später |
 
 ## Offene Punkte
 - [ ] Deutschlandticket-Vorschlag (79) annehmen oder ablehnen
