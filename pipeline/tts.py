@@ -16,10 +16,10 @@ API = "https://api.elevenlabs.io/v1"
 MODELL = "eleven_multilingual_v2"
 STANDARD_STIMME = "Daniel"  # vom Inhaber gewählt (31.10.)
 EINSTELLUNGEN = {"stability": 0.6, "similarity_boost": 0.8, "style": 0.0, "use_speaker_boost": True, "speed": 1.12}
-PAUSE = 0.18          # Pause zwischen Segmenten (Vorbilder: Median 0,16–0,22 s)
-PAUSE_LANG = 0.18     # keine langen Pausen (Vorbilder: keine Pause über 0,5 s)
+PAUSE = 0.22          # Pause zwischen Segmenten (Vorbilder: Median 0,16–0,38 s)
+PAUSE_LANG = 0.3      # nach dem Hook und vor dem Schluss-Satz
 ZIEL_WPS = 2.95       # Wörter pro Sekunde beim Sprechen (Top-Videos: 2,91–3,02, gemessen 31.10.2026)
-MAX_DEHNUNG = 1.35    # stärker beschleunigen klingt unnatürlich
+MAX_DEHNUNG = 1.0     # keine künstliche Beschleunigung (Inhaber 31.10.: 1,35 war zu schnell); Tempo kommt aus der Stimme selbst
 RATE = 44100
 
 
