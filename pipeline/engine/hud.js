@@ -262,8 +262,11 @@ export class Karaoke {
       }
       return cache.get(w);
     };
+    // Ein einzelnes Wort, das breiter ist als maxBreite (z. B. „Straßenverkehrsordnung.“), zählt beim Umbruch nur als maxBreite;
+    // sein Block wird unten kleiner gesetzt, statt den ganzen Satz in eine überlange Zeile zu zwingen.
+    const eff = (w) => Math.min(breite(w), this.maxBreite);
     // Zeilen: bei zwei Zeilen den Umbruch so wählen, dass beide Zeilen ähnlich lang sind
-    const summe = (ws) => ws.reduce((a, w) => a + breite(w.wort), 0);
+    const summe = (ws) => ws.reduce((a, w) => a + eff(w.wort), 0);
     const zeilen = (ws) => {
       if (summe(ws) <= this.maxBreite) return [ws];
       let best = null;
@@ -296,7 +299,7 @@ export class Karaoke {
           for (const w of satz) {
             if (acc >= ziel * stuecke.length - breite(w.wort) * 0.5 && stuecke.length < n && stuecke[stuecke.length - 1].length) stuecke.push([]);
             stuecke[stuecke.length - 1].push(w);
-            acc += breite(w.wort);
+            acc += eff(w.wort);
           }
           if (stuecke.every(passt)) { teile.push(...stuecke); break; }
         }
@@ -316,7 +319,10 @@ export class Karaoke {
       for (const t of teile) {
         const z = zeilen(t) || [t];
         let idx = 0;
-        this.bloecke.push({ woerter: t, zeilen: z.map((zeile) => zeile.map(() => idx++)) });
+        // echte Breite der breitesten Zeile; ist sie zu breit, wird nur dieser Block verkleinert
+        const breiteste = Math.max(...z.map((zeile) => zeile.reduce((a, w) => a + breite(w.wort), 0)));
+        const faktor = Math.min(1, this.maxBreite / breiteste);
+        this.bloecke.push({ woerter: t, zeilen: z.map((zeile) => zeile.map(() => idx++)), faktor });
       }
     }
     probe.remove();
@@ -330,7 +336,7 @@ export class Karaoke {
       b.marker = el("div", "marker", "", b.el);
       b.zeilen.forEach((z) => {
         const ze = el("div", "zeile", "", b.el);
-        ze.style.fontSize = this.groesse + "px";
+        ze.style.fontSize = this.groesse * b.faktor + "px";
         z.forEach((wi) => {
           b.woerter[wi].el = el("span", "w", b.woerter[wi].wort, ze);
         });
@@ -343,7 +349,8 @@ export class Karaoke {
     let versteckt = 0;
     for (const [a, b] of this.versteckt) if (t >= a && t < b) versteckt = 1;
     // genau ein Block gleichzeitig: der letzte, der schon begonnen hat
-    const vorlauf = (b) => (b.start < 0.2 ? 0.8 : 0.06); // erster Block ist schon im ersten Bild ganz da
+    // erster Block ist schon im ersten Bild ganz da; im Stil „kontur“ wechselt der Block genau mit dem ersten Wort (kein leeres Bild dazwischen)
+    const vorlauf = (b) => (b.start < 0.2 ? 0.8 : this.stil === "kontur" ? 0.04 : 0.06);
     let aktiv = null;
     for (const b of this.bloecke) if (t >= b.start - vorlauf(b)) aktiv = b;
     for (const b of this.bloecke) {
