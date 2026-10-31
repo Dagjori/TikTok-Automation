@@ -17,3 +17,6 @@ frames/
 
 # System
 .DS_Store
+
+# Sprachaufnahmen der Projekte bleiben im Repo
+!pipeline/projekte/*/audio/*.mp3
