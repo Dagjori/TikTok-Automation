@@ -411,7 +411,7 @@ function walzeModell() {
 // ---------------------------------------------------------------- Fahrzeugflotte
 /**
  * Viele Spielzeugautos in einem Durchgang (InstancedMesh je Bauteil). Fahrtrichtung lokal +x.
- * setze(liste): [{x, y?, z, rot, farbe: THREE.Color, bremse: 0..1, skala?}]
+ * setze(liste): [{x, y?, z, rot, farbe: THREE.Color, bremse: 0..1, schein?: 0..1 (roter Bodenschein), skala?}]
  */
 export class Fahrzeugflotte {
   constructor(max = 600, { laenge = 4.5, breite = 2.0 } = {}) {
@@ -440,7 +440,7 @@ export class Fahrzeugflotte {
     const T = texturen();
     this.blob = teil(new THREE.PlaneGeometry(L * 1.45, B * 1.9), new THREE.MeshBasicMaterial({ color: "#1A2238", alphaMap: T.blob, transparent: true, opacity: 0.38, depthWrite: false }), max, false);
     this.blob.renderOrder = 1;
-    this.schein = teil(new THREE.PlaneGeometry(L * 1.5, B * 2.2), new THREE.MeshBasicMaterial({ color: 0xffffff, alphaMap: T.blob, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }), max, false);
+    this.schein = teil(new THREE.PlaneGeometry(L * 1.15, B * 1.7), new THREE.MeshBasicMaterial({ color: 0xffffff, alphaMap: T.blob, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }), max, false);
     this.schein.renderOrder = 2;
     [[this.karo, max], [this.dach, max], [this.lichter, max * 2], [this.schein, max]].forEach(([m, n]) => {
       m.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(n * 3), 3);
@@ -491,10 +491,10 @@ export class Fahrzeugflotte {
       this._lok.setPosition(0, 0.012, 0);
       this._welt.multiplyMatrices(this._basis, this._lok);
       this.blob.setMatrixAt(i, this._welt);
-      this._lok.setPosition(-L * 0.62, 0.02, 0);
+      this._lok.setPosition(-L * 0.58, 0.02, 0);
       this._welt.multiplyMatrices(this._basis, this._lok);
       this.schein.setMatrixAt(i, this._welt);
-      c.copy(this.lichtAn).multiplyScalar(b * b * 0.9);
+      c.copy(this.lichtAn).multiplyScalar(b * b * 1.1 * (a.schein ?? 1));
       this.schein.setColorAt(i, c);
     }
     this.karo.count = this.kabine.count = this.dach.count = this.blob.count = this.schein.count = n;
