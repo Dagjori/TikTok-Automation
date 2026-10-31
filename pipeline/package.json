@@ -5,6 +5,7 @@
   "description": "Render-Pipeline für Simulierbar (Three.js-Szenen, Headless-Chrome, ffmpeg)",
   "type": "module",
   "dependencies": {
+    "@fontsource/inter": "^5.3.0",
     "three": "^0.170.0"
   },
   "devDependencies": {
