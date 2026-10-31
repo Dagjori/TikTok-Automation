@@ -10,7 +10,7 @@
 - Den Inhaber nur mit geprüften Vorschlägen behelligen.
 
 ## Täglicher Lauf (automatisch, 05:35 Uhr Berlin)
-Dieser Abschnitt ist die Arbeitsanweisung für die geplante Aufgabe „Trend-Radar Der Testlauf“. Maximal ca. 20 Minuten, sparsam mit Websuchen (höchstens ca. 12 pro Lauf).
+Dieser Abschnitt ist die Arbeitsanweisung für die geplante Aufgabe „Trend-Radar Alltag durchgerechnet“. Sie läuft in der festen Sitzung „Trend-Radar täglich (TikTok Automation)“ (Sonnet 5.5; das Repo ist dort als Quelle mit Schreibrecht hinterlegt). Maximal ca. 20 Minuten, sparsam mit Websuchen (höchstens ca. 12 pro Lauf).
 
 1. **Wettbewerbs-Monitor:** `python3 tools/monitor_kanaele.py`
    - Auffällige Kanäle (mindestens +20 % oder mindestens +1.000 Follower) bekommen den Signal-Typ `konkurrenz`.
@@ -21,7 +21,7 @@ Dieser Abschnitt ist die Arbeitsanweisung für die geplante Aufgabe „Trend-Rad
    3. **Nachrichten mit Alltags- bzw. Geldbezug** der letzten 48 Stunden (Websuche, deutsch), z. B. Preis-, Zins-, Steuer-, Verkehrs- und Bahnthemen.
    4. **Internationale Vorläufer:** neue virale Formate bei den Benchmark-Kanälen (EN) aus `data/monitor/kanaele.csv`. Formate aus den USA kommen oft mit Verzögerung nach Deutschland (Annahme). Ein solches Format ist ein Kandidat, wenn es auf Deutsch noch fehlt.
    5. **Neue Kanäle:** 1–2 Websuchen nach neuen deutschen Simulations- bzw. Rechen-Kanälen. Relevante Treffer kommen in `data/monitor/kanaele.csv`.
-3. **Jedes Signal bewerten** (Raster unten). Alle Bewertungen kommen als Zeile in `data/trends/trend-log.csv`, auch die verworfenen. Signale, die schon im Log stehen, nicht doppelt bewerten. Nur neu bewerten, wenn sich etwas Wesentliches geändert hat.
+3. **Jedes Signal bewerten** (Raster unten). Alle Bewertungen von **Themen-Signalen** kommen als Zeile in `data/trends/trend-log.csv`, auch die verworfenen. Ein Monitor-Lauf ohne auffällige Kanäle ist kein Signal und wird nicht geloggt. Signale, die schon im Log stehen, nicht doppelt bewerten. Nur neu bewerten, wenn sich etwas Wesentliches geändert hat.
 4. **Vorschlagen nur bei Score ≥ 70 und ohne K.-o.-Kriterium.** Dann in `docs/trends/vorschlaege.md` oben eintragen:
    - Titel des Videos (als Frage)
    - Rubrik
@@ -58,7 +58,7 @@ Dieser Abschnitt ist die Arbeitsanweisung für die geplante Aufgabe „Trend-Rad
 | Aufwand | 10 % | bestehende Vorlage reicht | neuer Szenentyp nötig |
 | Risiko | 10 % | kein Plattform- bzw. Rechtsrisiko | heikel (Steuern, Recht, Politiknähe) |
 
-**Score** = Summe (Gewicht × Punkte) / 5, Bereich 20–100.
+**Score** = Summe (Gewicht × Punkte) / 5, Bereich 20–100. **Immer mit `python3 tools/trend_score.py N T W P A R` berechnen, nicht im Kopf.**
 
 | Score | Entscheidung |
 |---|---|

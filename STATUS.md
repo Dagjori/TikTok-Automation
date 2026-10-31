@@ -8,8 +8,8 @@
 - **Korrektur 30.10.:** Die Shop-Videos bleiben öffentlich. Markeninhalte lassen sich nicht auf „Nur ich“ stellen, und die CRP-Prüfung betrifft sie nicht (Details in `docs/02-account-strategie.md`).
 - **Schritt 1 erledigt (30.10.):** Das Konto ist privat (kein Business-Konto), der Account check ist ohne Befund (alles grün), Shop-Provisionen spielen keine Rolle.
 - **Themenvorrat gemessen (30.10.):** 9 Nischen mit je 150 eigenständigen Ideen gelistet (`data/ideen/`), Ranking in `docs/06-nischen-ranking.md`.
-- **Nische gewählt (31.10.):** „Der Testlauf – Alltag durchgerechnet“ (GELD plus ALLTAG). Marke, Profil, Bauplan und die ersten 30 Testläufe stehen in `docs/05-startnische.md`.
-- **Trend-Radar täglich (31.10.):** geplante Aufgabe „Trend-Radar Der Testlauf“, jeden Tag 05:35 Uhr Berlin, Push-Benachrichtigung bei Funden. Ablauf und Raster in `docs/07-trend-monitoring.md`, Vorschläge (nur Score ≥ 70) in `docs/trends/vorschlaege.md`.
+- **Nische gewählt (31.10.):** „Alltag durchgerechnet“ (Arbeitstitel, GELD plus ALLTAG; Kanalname offen). Marke, Profil, Bauplan und die ersten 30 Testläufe stehen in `docs/05-startnische.md`.
+- **Trend-Radar täglich (31.10.):** geplante Aufgabe „Trend-Radar Alltag durchgerechnet“, jeden Tag 05:35 Uhr Berlin. Läuft in der festen Sitzung „Trend-Radar täglich (TikTok Automation)“ auf Sonnet 5.5. Erster Lauf erfolgreich gepusht. Ablauf und Raster in `docs/07-trend-monitoring.md`, Vorschläge (nur Score ≥ 70) in `docs/trends/vorschlaege.md`.
 - **Trend-Vorschläge angenommen (31.10.):** Weihnachtsgeld netto (83, posten 20.–28.11.), Mindestlohn 14,60 € (86, posten 28.12.–05.01.), jeweils unter der Bedingung mindestens 1 Minute (nachgewiesen in `docs/08-beispielskripte.md`).
 - **Neuer Trend-Vorschlag (31.10.):** Deutschlandticket 66,80 € ab 01.01.2027 (Score 79, posten 12.–20.12., spätestens 03.01.), Details in `docs/trends/vorschlaege.md`.
 - **Beispiel-Skripte (31.10.):** Reißverschluss (ALLTAG) und Weihnachtsgeld (GELD) in `docs/08-beispielskripte.md`. **Wartet auf Stil-Freigabe; erst danach Pipeline-Bau.**
