@@ -10,8 +10,12 @@
   - Skripte: `docs/08-beispielskripte.md`
 - **Update 31.10. abends:**
   - **Reißverschluss zurückgestellt.** @simulierts hat das Thema am 31.10. zuerst gepostet.
-  - **Zweites Video:** „Spurwechsel im Stau“ im Iso-Stil, wird gerade produziert (`pipeline/projekte/spurwechsel/`).
-  - **GTA 6, Version 3:** wird gerade mit der neuen Vertonung gerendert (am Stück, Pausen nach Sätzen und Abschnitten; vom Inhaber freigegeben).
+  - **Zweites Video: „Spurwechsel im Stau“ fertig und geprüft.** `pipeline/out/spurwechsel/spurwechsel.mp4`, 81,9 s, −14,0 LUFS, Iso-Stil, dem Inhaber geschickt.
+    - Ergebnis der Simulation: Wechseln bringt im Modell ca. 20 s auf 5 km, also ca. 2 s pro Wechsel. Die Nachbarspur wirkt schneller, weil man 20 % der Zeit überholt wird und selbst nur 11 % der Zeit überholt (Redelmeier & Tibshirani, Nature 1999).
+    - Iso-Baukasten: `pipeline/engine/iso.js` und `iso.css`.
+    - Bekannte Schwäche: Im Rennen-Teil wirkt der Stau stellenweise locker. Das liegt an der Modelldichte (40 Fz/km je Spur). Verbessern auf Wunsch des Inhabers.
+  - **GTA 6, Version 3: fertig und geprüft** (82,6 s, −14,0 LUFS, neue Vertonung am Stück mit Pausen), dem Inhaber geschickt.
+  - **Untertitel-Engine:** Die Zeile bleibt jetzt auch beim Erscheinen des letzten Worts innerhalb der sicheren Zone. Gilt ab dem nächsten Render.
 - **Erste 2 Videos: fertig, Version 2 (31.10., ca. 15:30 Uhr), dem Inhaber geschickt** (überholt, siehe Update): Die Dateien sind nicht im Repo, weil sie zu groß sind. Neu bauen lässt sich jedes Video mit den Befehlen in `pipeline/README.md`.
   - **GTA 6 weltweit:** `pipeline/out/gta6-welt/gta6-welt.mp4`, 84,0 s, −14,0 LUFS.
   - **Reißverschluss:** `pipeline/out/reissverschluss/reissverschluss.mp4`, 78,7 s, −14,0 LUFS.

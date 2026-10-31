@@ -428,7 +428,10 @@ export class Karaoke {
     b.zeilen.forEach((idx, z) => {
       const voll = idx.reduce((a, i) => a + b.breiten[i], 0);
       const sichtbar = idx.reduce((a, i) => a + b.breiten[i] * ease.outCubic(clamp((t - (b.woerter[i].start - VOR)) / 0.16)), 0);
-      b.zeilenEl[z].style.transform = `translateX(${(voll - sichtbar) / 2}px)`;
+      // nie über den rechten Rand des Blocks (= sichere Zone): das gerade erscheinende Wort zählt schon voll
+      const rechts = idx.reduce((a, i) => a + (i <= k ? b.breiten[i] : 0), 0);
+      const grenze = (b.zeilenEl[z].offsetWidth + voll) / 2 - rechts;
+      b.zeilenEl[z].style.transform = `translateX(${Math.min((voll - sichtbar) / 2, grenze)}px)`;
     });
     b.woerter.forEach((w, i) => {
       const kl = i > k ? "w kommt" : i === k ? "w jetzt" : "w";
