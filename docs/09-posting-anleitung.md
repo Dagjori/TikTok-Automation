@@ -1,6 +1,6 @@
 # Posting-Anleitung (TikTok und YouTube Shorts)
 
-**Stand:** 01.11.2026 · gilt für jedes Simulierbar-Video. Zeitbedarf: ca. 10 Minuten pro Video und Plattform.
+**Stand:** 31.10.2026 · gilt für jedes Simulierbar-Video. Zeitbedarf: ca. 10 Minuten pro Video und Plattform.
 
 ## Einmalig vor dem ersten Post (5 Min.)
 1. **TikTok-Konto öffentlich:** App → Profil → ☰ → Einstellungen und Datenschutz → Datenschutz → **Privates Konto: AUS**. Sonst sehen nur Follower die Videos. Kontotyp bleibt **persönlich**, kein Business-Konto (CRP-Bedingung).
