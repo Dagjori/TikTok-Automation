@@ -25,3 +25,8 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-10-31 | Start **heute** mit 2 Videos: GTA 6 **weltweit** gerechnet plus Reißverschluss. Die Deutschland-Version von GTA 6 wird eine eigene, spätere Idee | Tempo; weltweite Rechnung hat größere Reichweite |
 | 2026-10-31 | Sprecherstimme: ElevenLabs „Daniel“ (`onwK4e9ZLuTAKqWW03F9`, Standard in `pipeline/tts.py`); zuerst getestet `zfc8CJQpe8Kqyl0vvCzo`, Aussprache teils komisch | Auswahl des Inhabers |
 | 2026-10-31 | Stimme für den Start: zurück zu `zfc8CJQpe8Kqyl0vvCzo` (erste Wahl), natürliches Tempo, Aussprache über Sprechfassung. Daniel verworfen (zu langsam bzw. nach Beschleunigung zu schnell, klingt nach KI). Endgültige Stimmensuche in der ElevenLabs-Bibliothek, sobald der Key Leserechte hat | Inhaber: Tempo nicht künstlich ändern, Stimme soll natürlich klingen wie bei den Vorbildern |
+| 2026-10-31 | Untertitel ohne Hintergrundkasten: Wort für Wort aufbauend (max. 2 Zeilen), weiße fette Schrift mit dicker schwarzer Kontur, aktuelles Wort gelb | Inhaber: Kasten gefällt nicht, Lesbarkeit über Kontur |
+| 2026-10-31 | Stimme: männlich, muttersprachlich Deutsch (Auswahl per Hörprobe) | Inhaber: Aussprachefehler vermeiden |
+| 2026-10-31 | Die ersten beiden Videos (GTA 6 weltweit, Reißverschluss) werden vor dem Posten mit neuer Stimme und neuen Untertiteln neu gebaut | Die ersten Videos prägen den Kanal-Stil |
+| 2026-10-31 | Ablage in Google Drive kommt später über den Windows-PC (Drive für Desktop), kein Cloud-Upload | Wahl des Inhabers |
+| 2026-10-31 | Trend-Radar schlägt nur noch im aktuellen Format vor (klare Modellrechnung, Duell bzw. Strategie-Vergleich), kein „1.000 simulierte …“ mehr | Inhaber: alte Regel war noch im Radar |

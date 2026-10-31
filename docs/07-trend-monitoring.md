@@ -29,7 +29,11 @@ Dieser Abschnitt ist die Arbeitsanweisung für die geplante Aufgabe „Trend-Rad
    - Score mit Kurzbegründung
    - Quelle
    - **spätestes Posting-Datum**
-   - Vorschlag zur Umsetzung, eigenständig, keine Kopie
+   - Vorschlag zur Umsetzung, eigenständig, keine Kopie. **Immer im Simulierbar-Format:**
+     - eine klare Modellrechnung bzw. Simulation pro Video, mit konkreten Fällen statt Massen-Simulation
+     - 💶 GELD als Duell (z. B. „Ticket gegen Einzelfahrten gegen Auto“), ⏱️ ALLTAG als Strategie-Vergleich (z. B. „früh einordnen gegen Reißverschluss“)
+     - Stil wie `docs/08-beispielskripte.md`
+     - **Kein „1.000 Lebensläufe“- bzw. „1.000 simulierte …“-Merkmal** (Entscheidung des Inhabers 31.10., siehe `ENTSCHEIDUNGEN.md`). Formulierungen wie „1.000 simulierte Pendler“ nicht verwenden.
    - Bei passenden Themen zusätzlich als Idee in `data/ideen/geld-duell.csv` bzw. `testlauf.csv` mit `typ` = `news` bzw. `saisonal`.
 5. **Regel-Check, jeden Montag:**
    - „Released/Effective“-Datum der Community Guidelines prüfen (`https://www.tiktok.com/community-guidelines/en`).
