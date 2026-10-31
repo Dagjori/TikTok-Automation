@@ -3,7 +3,7 @@
 Aufruf:  python3 pipeline/tts.py <projektordner> [--voice NAME_ODER_ID] [--proben]
 Liest:   <projekt>/skript.json  (Segmente mit Text)
 Schreibt:<projekt>/audio/stimme.mp3, <projekt>/audio/timing.json (Start und Ende je Segment und je Wort)
-Key:     Umgebungsvariable ELEVENLABS_API_KEY (nie ins Repo).
+Key:     Cloud: Netzwerk-Secret (Header xi-api-key für api.elevenlabs.io); lokal: Umgebungsvariable ELEVENLABS_API_KEY. Nie ins Repo.
 """
 import base64
 import json
@@ -19,7 +19,11 @@ EINSTELLUNGEN = {"stability": 0.45, "similarity_boost": 0.8, "style": 0.2, "use_
 
 
 def anfrage(pfad, daten=None):
-    kopf = {"xi-api-key": os.environ["ELEVENLABS_API_KEY"], "Content-Type": "application/json"}
+    kopf = {"Content-Type": "application/json"}
+    # In der Cloud setzt der Proxy den Header xi-api-key selbst ein (Netzwerk-Secret).
+    # Lokal (z. B. Windows) kommt der Key aus der Umgebungsvariable.
+    if os.environ.get("ELEVENLABS_API_KEY"):
+        kopf["xi-api-key"] = os.environ["ELEVENLABS_API_KEY"]
     body = json.dumps(daten).encode() if daten is not None else None
     req = urllib.request.Request(API + pfad, data=body, headers=kopf, method="POST" if body else "GET")
     with urllib.request.urlopen(req, timeout=120) as antwort:
