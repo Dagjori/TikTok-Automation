@@ -1,0 +1,981 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_multilingual_v2",
+ "verfahren": "am_stueck",
+ "dauer": 80.406,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Im Stau ständig die Spur wechseln bringt dir 20 Sekunden. Ich hab's simuliert.",
+   "start": 0.0,
+   "ende": 4.389,
+   "woerter": [
+    {
+     "wort": "Im",
+     "start": 0.0,
+     "ende": 0.139
+    },
+    {
+     "wort": "Stau",
+     "start": 0.186,
+     "ende": 0.372
+    },
+    {
+     "wort": "ständig",
+     "start": 0.406,
+     "ende": 0.731
+    },
+    {
+     "wort": "die",
+     "start": 0.766,
+     "ende": 0.848
+    },
+    {
+     "wort": "Spur",
+     "start": 0.882,
+     "ende": 1.115
+    },
+    {
+     "wort": "wechseln",
+     "start": 1.161,
+     "ende": 1.509
+    },
+    {
+     "wort": "bringt",
+     "start": 1.556,
+     "ende": 1.765
+    },
+    {
+     "wort": "dir",
+     "start": 1.788,
+     "ende": 1.939
+    },
+    {
+     "wort": "20",
+     "start": 2.009,
+     "ende": 2.508
+    },
+    {
+     "wort": "Sekunden.",
+     "start": 2.543,
+     "ende": 3.181
+    },
+    {
+     "wort": "Ich",
+     "start": 3.332,
+     "ende": 3.471
+    },
+    {
+     "wort": "hab's",
+     "start": 3.518,
+     "ende": 3.727
+    },
+    {
+     "wort": "simuliert.",
+     "start": 3.75,
+     "ende": 4.389
+    }
+   ]
+  },
+  {
+   "id": "setup",
+   "text": "Fünf Kilometer Stau, zwei Spuren. Paul wechselt, sobald es nebenan schneller aussieht. Anna bleibt in ihrer Spur.",
+   "start": 5.074,
+   "ende": 11.633,
+   "woerter": [
+    {
+     "wort": "Fünf",
+     "start": 5.074,
+     "ende": 5.341
+    },
+    {
+     "wort": "Kilometer",
+     "start": 5.364,
+     "ende": 5.805
+    },
+    {
+     "wort": "Stau,",
+     "start": 5.851,
+     "ende": 6.223
+    },
+    {
+     "wort": "zwei",
+     "start": 6.304,
+     "ende": 6.536
+    },
+    {
+     "wort": "Spuren.",
+     "start": 6.583,
+     "ende": 7.094
+    },
+    {
+     "wort": "Paul",
+     "start": 7.477,
+     "ende": 7.744
+    },
+    {
+     "wort": "wechselt,",
+     "start": 7.802,
+     "ende": 8.231
+    },
+    {
+     "wort": "sobald",
+     "start": 8.29,
+     "ende": 8.615
+    },
+    {
+     "wort": "es",
+     "start": 8.661,
+     "ende": 8.719
+    },
+    {
+     "wort": "nebenan",
+     "start": 8.766,
+     "ende": 9.102
+    },
+    {
+     "wort": "schneller",
+     "start": 9.149,
+     "ende": 9.485
+    },
+    {
+     "wort": "aussieht.",
+     "start": 9.543,
+     "ende": 10.077
+    },
+    {
+     "wort": "Anna",
+     "start": 10.205,
+     "ende": 10.437
+    },
+    {
+     "wort": "bleibt",
+     "start": 10.495,
+     "ende": 10.762
+    },
+    {
+     "wort": "in",
+     "start": 10.797,
+     "ende": 10.844
+    },
+    {
+     "wort": "ihrer",
+     "start": 10.89,
+     "ende": 11.088
+    },
+    {
+     "wort": "Spur.",
+     "start": 11.134,
+     "ende": 11.633
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Paul wechselt sofort. Und steht direkt hinter Anna. Nach anderthalb Minuten liegt Anna 160 Meter vorn. Fünf Wechsel später steht Paul wieder hinter ihr. Erst nach sieben Minuten zieht er vorbei.",
+   "start": 12.423,
+   "ende": 26.029,
+   "woerter": [
+    {
+     "wort": "Paul",
+     "start": 12.423,
+     "ende": 12.771
+    },
+    {
+     "wort": "wechselt",
+     "start": 12.829,
+     "ende": 13.142
+    },
+    {
+     "wort": "sofort.",
+     "start": 13.177,
+     "ende": 13.758
+    },
+    {
+     "wort": "Und",
+     "start": 14.002,
+     "ende": 14.152
+    },
+    {
+     "wort": "steht",
+     "start": 14.187,
+     "ende": 14.396
+    },
+    {
+     "wort": "direkt",
+     "start": 14.431,
+     "ende": 14.837
+    },
+    {
+     "wort": "hinter",
+     "start": 14.872,
+     "ende": 15.139
+    },
+    {
+     "wort": "Anna.",
+     "start": 15.197,
+     "ende": 15.661
+    },
+    {
+     "wort": "Nach",
+     "start": 16.044,
+     "ende": 16.242
+    },
+    {
+     "wort": "anderthalb",
+     "start": 16.3,
+     "ende": 16.764
+    },
+    {
+     "wort": "Minuten",
+     "start": 16.811,
+     "ende": 17.287
+    },
+    {
+     "wort": "liegt",
+     "start": 17.461,
+     "ende": 17.693
+    },
+    {
+     "wort": "Anna",
+     "start": 17.774,
+     "ende": 18.007
+    },
+    {
+     "wort": "160",
+     "start": 18.088,
+     "ende": 18.924
+    },
+    {
+     "wort": "Meter",
+     "start": 18.982,
+     "ende": 19.272
+    },
+    {
+     "wort": "vorn.",
+     "start": 19.33,
+     "ende": 19.818
+    },
+    {
+     "wort": "Fünf",
+     "start": 20.514,
+     "ende": 20.863
+    },
+    {
+     "wort": "Wechsel",
+     "start": 20.886,
+     "ende": 21.176
+    },
+    {
+     "wort": "später",
+     "start": 21.223,
+     "ende": 21.699
+    },
+    {
+     "wort": "steht",
+     "start": 21.908,
+     "ende": 22.175
+    },
+    {
+     "wort": "Paul",
+     "start": 22.244,
+     "ende": 22.534
+    },
+    {
+     "wort": "wieder",
+     "start": 22.604,
+     "ende": 22.801
+    },
+    {
+     "wort": "hinter",
+     "start": 22.836,
+     "ende": 23.103
+    },
+    {
+     "wort": "ihr.",
+     "start": 23.15,
+     "ende": 23.463
+    },
+    {
+     "wort": "Erst",
+     "start": 23.742,
+     "ende": 23.997
+    },
+    {
+     "wort": "nach",
+     "start": 24.044,
+     "ende": 24.218
+    },
+    {
+     "wort": "sieben",
+     "start": 24.288,
+     "ende": 24.566
+    },
+    {
+     "wort": "Minuten",
+     "start": 24.589,
+     "ende": 25.042
+    },
+    {
+     "wort": "zieht",
+     "start": 25.089,
+     "ende": 25.263
+    },
+    {
+     "wort": "er",
+     "start": 25.321,
+     "ende": 25.379
+    },
+    {
+     "wort": "vorbei.",
+     "start": 25.425,
+     "ende": 26.029
+    }
+   ]
+  },
+  {
+   "id": "ziel",
+   "text": "Im Ziel: Paul nach 9:36, Anna nach 9:56. Neun Wechsel für 20 Sekunden.",
+   "start": 26.772,
+   "ende": 34.179,
+   "woerter": [
+    {
+     "wort": "Im",
+     "start": 26.772,
+     "ende": 26.935
+    },
+    {
+     "wort": "Ziel:",
+     "start": 27.028,
+     "ende": 27.55
+    },
+    {
+     "wort": "Paul",
+     "start": 27.933,
+     "ende": 28.247
+    },
+    {
+     "wort": "nach",
+     "start": 28.293,
+     "ende": 28.432
+    },
+    {
+     "wort": "9:36,",
+     "start": 28.479,
+     "ende": 29.93
+    },
+    {
+     "wort": "Anna",
+     "start": 30.104,
+     "ende": 30.359
+    },
+    {
+     "wort": "nach",
+     "start": 30.429,
+     "ende": 30.568
+    },
+    {
+     "wort": "9:56.",
+     "start": 30.615,
+     "ende": 32.101
+    },
+    {
+     "wort": "Neun",
+     "start": 32.275,
+     "ende": 32.565
+    },
+    {
+     "wort": "Wechsel",
+     "start": 32.623,
+     "ende": 32.913
+    },
+    {
+     "wort": "für",
+     "start": 32.971,
+     "ende": 33.076
+    },
+    {
+     "wort": "20",
+     "start": 33.122,
+     "ende": 33.517
+    },
+    {
+     "wort": "Sekunden.",
+     "start": 33.54,
+     "ende": 34.179
+    }
+   ]
+  },
+  {
+   "id": "schnitt",
+   "text": "Das ist typisch: Jeder Wechsel bringt im Schnitt gut zwei Sekunden. Selbst Drängler holen nur 50 Sekunden raus.",
+   "start": 34.887,
+   "ende": 41.435,
+   "woerter": [
+    {
+     "wort": "Das",
+     "start": 34.887,
+     "ende": 35.119
+    },
+    {
+     "wort": "ist",
+     "start": 35.177,
+     "ende": 35.27
+    },
+    {
+     "wort": "typisch:",
+     "start": 35.293,
+     "ende": 35.769
+    },
+    {
+     "wort": "Jeder",
+     "start": 35.944,
+     "ende": 36.28
+    },
+    {
+     "wort": "Wechsel",
+     "start": 36.327,
+     "ende": 36.605
+    },
+    {
+     "wort": "bringt",
+     "start": 36.652,
+     "ende": 36.896
+    },
+    {
+     "wort": "im",
+     "start": 36.93,
+     "ende": 37.012
+    },
+    {
+     "wort": "Schnitt",
+     "start": 37.07,
+     "ende": 37.314
+    },
+    {
+     "wort": "gut",
+     "start": 37.395,
+     "ende": 37.615
+    },
+    {
+     "wort": "zwei",
+     "start": 37.65,
+     "ende": 37.882
+    },
+    {
+     "wort": "Sekunden.",
+     "start": 37.929,
+     "ende": 38.533
+    },
+    {
+     "wort": "Selbst",
+     "start": 38.742,
+     "ende": 39.043
+    },
+    {
+     "wort": "Drängler",
+     "start": 39.067,
+     "ende": 39.601
+    },
+    {
+     "wort": "holen",
+     "start": 39.717,
+     "ende": 39.972
+    },
+    {
+     "wort": "nur",
+     "start": 39.995,
+     "ende": 40.123
+    },
+    {
+     "wort": "50",
+     "start": 40.158,
+     "ende": 40.553
+    },
+    {
+     "wort": "Sekunden",
+     "start": 40.576,
+     "ende": 40.994
+    },
+    {
+     "wort": "raus.",
+     "start": 41.04,
+     "ende": 41.435
+    }
+   ]
+  },
+  {
+   "id": "wahrnehmung",
+   "text": "Aber warum wirkt die andere Spur immer schneller? Test: Keiner wechselt, beide Spuren sind gleich schnell. Sechs Autos ziehen an Anna vorbei, sechs Sekunden lang. Dann überholt sie sechs Autos. In nur zwei Sekunden.",
+   "start": 42.085,
+   "ende": 55.877,
+   "woerter": [
+    {
+     "wort": "Aber",
+     "start": 42.085,
+     "ende": 42.434
+    },
+    {
+     "wort": "warum",
+     "start": 42.712,
+     "ende": 43.037
+    },
+    {
+     "wort": "wirkt",
+     "start": 43.083,
+     "ende": 43.246
+    },
+    {
+     "wort": "die",
+     "start": 43.269,
+     "ende": 43.339
+    },
+    {
+     "wort": "andere",
+     "start": 43.385,
+     "ende": 43.675
+    },
+    {
+     "wort": "Spur",
+     "start": 43.71,
+     "ende": 43.954
+    },
+    {
+     "wort": "immer",
+     "start": 43.989,
+     "ende": 44.163
+    },
+    {
+     "wort": "schneller?",
+     "start": 44.198,
+     "ende": 44.697
+    },
+    {
+     "wort": "Test:",
+     "start": 44.941,
+     "ende": 45.452
+    },
+    {
+     "wort": "Keiner",
+     "start": 45.626,
+     "ende": 45.951
+    },
+    {
+     "wort": "wechselt,",
+     "start": 45.997,
+     "ende": 46.45
+    },
+    {
+     "wort": "beide",
+     "start": 46.601,
+     "ende": 46.903
+    },
+    {
+     "wort": "Spuren",
+     "start": 46.949,
+     "ende": 47.333
+    },
+    {
+     "wort": "sind",
+     "start": 47.379,
+     "ende": 47.507
+    },
+    {
+     "wort": "gleich",
+     "start": 47.542,
+     "ende": 47.785
+    },
+    {
+     "wort": "schnell.",
+     "start": 47.82,
+     "ende": 48.285
+    },
+    {
+     "wort": "Sechs",
+     "start": 48.795,
+     "ende": 49.086
+    },
+    {
+     "wort": "Autos",
+     "start": 49.167,
+     "ende": 49.515
+    },
+    {
+     "wort": "ziehen",
+     "start": 49.538,
+     "ende": 49.736
+    },
+    {
+     "wort": "an",
+     "start": 49.782,
+     "ende": 49.852
+    },
+    {
+     "wort": "Anna",
+     "start": 49.922,
+     "ende": 50.072
+    },
+    {
+     "wort": "vorbei,",
+     "start": 50.131,
+     "ende": 50.607
+    },
+    {
+     "wort": "sechs",
+     "start": 50.781,
+     "ende": 51.048
+    },
+    {
+     "wort": "Sekunden",
+     "start": 51.071,
+     "ende": 51.582
+    },
+    {
+     "wort": "lang.",
+     "start": 51.64,
+     "ende": 52.0
+    },
+    {
+     "wort": "Dann",
+     "start": 52.511,
+     "ende": 52.824
+    },
+    {
+     "wort": "überholt",
+     "start": 53.033,
+     "ende": 53.567
+    },
+    {
+     "wort": "sie",
+     "start": 53.59,
+     "ende": 53.695
+    },
+    {
+     "wort": "sechs",
+     "start": 53.741,
+     "ende": 53.973
+    },
+    {
+     "wort": "Autos.",
+     "start": 54.02,
+     "ende": 54.566
+    },
+    {
+     "wort": "In",
+     "start": 54.716,
+     "ende": 54.844
+    },
+    {
+     "wort": "nur",
+     "start": 54.867,
+     "ende": 54.995
+    },
+    {
+     "wort": "zwei",
+     "start": 55.042,
+     "ende": 55.251
+    },
+    {
+     "wort": "Sekunden.",
+     "start": 55.297,
+     "ende": 55.877
+    }
+   ]
+  },
+  {
+   "id": "erklaerung",
+   "text": "Wer rollt, hat Abstand. Wer steht, steht dicht an dicht. Darum wirst du 20 Prozent der Zeit überholt. Selbst überholst du nur 11 Prozent. Bei gleich vielen Autos. Forscher aus Toronto beschrieben das schon 1999.",
+   "start": 56.516,
+   "ende": 70.808,
+   "woerter": [
+    {
+     "wort": "Wer",
+     "start": 56.516,
+     "ende": 56.737
+    },
+    {
+     "wort": "rollt,",
+     "start": 56.783,
+     "ende": 57.05
+    },
+    {
+     "wort": "hat",
+     "start": 57.073,
+     "ende": 57.189
+    },
+    {
+     "wort": "Abstand.",
+     "start": 57.259,
+     "ende": 57.793
+    },
+    {
+     "wort": "Wer",
+     "start": 57.944,
+     "ende": 58.13
+    },
+    {
+     "wort": "steht,",
+     "start": 58.176,
+     "ende": 58.443
+    },
+    {
+     "wort": "steht",
+     "start": 58.467,
+     "ende": 58.71
+    },
+    {
+     "wort": "dicht",
+     "start": 58.734,
+     "ende": 58.919
+    },
+    {
+     "wort": "an",
+     "start": 58.977,
+     "ende": 59.047
+    },
+    {
+     "wort": "dicht.",
+     "start": 59.093,
+     "ende": 59.442
+    },
+    {
+     "wort": "Darum",
+     "start": 59.72,
+     "ende": 60.034
+    },
+    {
+     "wort": "wirst",
+     "start": 60.08,
+     "ende": 60.231
+    },
+    {
+     "wort": "du",
+     "start": 60.254,
+     "ende": 60.313
+    },
+    {
+     "wort": "20",
+     "start": 60.382,
+     "ende": 60.765
+    },
+    {
+     "wort": "Prozent",
+     "start": 60.8,
+     "ende": 61.172
+    },
+    {
+     "wort": "der",
+     "start": 61.195,
+     "ende": 61.299
+    },
+    {
+     "wort": "Zeit",
+     "start": 61.357,
+     "ende": 61.566
+    },
+    {
+     "wort": "überholt.",
+     "start": 61.636,
+     "ende": 62.321
+    },
+    {
+     "wort": "Selbst",
+     "start": 62.762,
+     "ende": 63.157
+    },
+    {
+     "wort": "überholst",
+     "start": 63.308,
+     "ende": 63.796
+    },
+    {
+     "wort": "du",
+     "start": 63.819,
+     "ende": 63.877
+    },
+    {
+     "wort": "nur",
+     "start": 63.923,
+     "ende": 64.063
+    },
+    {
+     "wort": "11",
+     "start": 64.121,
+     "ende": 64.318
+    },
+    {
+     "wort": "Prozent.",
+     "start": 64.376,
+     "ende": 65.015
+    },
+    {
+     "wort": "Bei",
+     "start": 65.398,
+     "ende": 65.549
+    },
+    {
+     "wort": "gleich",
+     "start": 65.583,
+     "ende": 65.839
+    },
+    {
+     "wort": "vielen",
+     "start": 65.897,
+     "ende": 66.164
+    },
+    {
+     "wort": "Autos.",
+     "start": 66.222,
+     "ende": 66.733
+    },
+    {
+     "wort": "Forscher",
+     "start": 67.058,
+     "ende": 67.441
+    },
+    {
+     "wort": "aus",
+     "start": 67.487,
+     "ende": 67.615
+    },
+    {
+     "wort": "Toronto",
+     "start": 67.685,
+     "ende": 68.114
+    },
+    {
+     "wort": "beschrieben",
+     "start": 68.172,
+     "ende": 68.556
+    },
+    {
+     "wort": "das",
+     "start": 68.59,
+     "ende": 68.707
+    },
+    {
+     "wort": "schon",
+     "start": 68.73,
+     "ende": 68.939
+    },
+    {
+     "wort": "1999.",
+     "start": 69.02,
+     "ende": 70.808
+    }
+   ]
+  },
+  {
+   "id": "fazit",
+   "text": "Also: Bleib in deiner Spur. 20 Sekunden sind neun riskante Manöver nicht wert.",
+   "start": 71.458,
+   "ende": 76.706,
+   "woerter": [
+    {
+     "wort": "Also:",
+     "start": 71.458,
+     "ende": 71.957
+    },
+    {
+     "wort": "Bleib",
+     "start": 72.05,
+     "ende": 72.294
+    },
+    {
+     "wort": "in",
+     "start": 72.352,
+     "ende": 72.398
+    },
+    {
+     "wort": "deiner",
+     "start": 72.445,
+     "ende": 72.665
+    },
+    {
+     "wort": "Spur.",
+     "start": 72.712,
+     "ende": 73.246
+    },
+    {
+     "wort": "20",
+     "start": 73.571,
+     "ende": 74.0
+    },
+    {
+     "wort": "Sekunden",
+     "start": 74.035,
+     "ende": 74.476
+    },
+    {
+     "wort": "sind",
+     "start": 74.523,
+     "ende": 74.662
+    },
+    {
+     "wort": "neun",
+     "start": 74.778,
+     "ende": 75.022
+    },
+    {
+     "wort": "riskante",
+     "start": 75.103,
+     "ende": 75.533
+    },
+    {
+     "wort": "Manöver",
+     "start": 75.579,
+     "ende": 75.974
+    },
+    {
+     "wort": "nicht",
+     "start": 76.021,
+     "ende": 76.218
+    },
+    {
+     "wort": "wert.",
+     "start": 76.276,
+     "ende": 76.706
+    }
+   ]
+  },
+  {
+   "id": "ende",
+   "text": "Schreibt euren Simulationswunsch in die Kommentare.",
+   "start": 77.472,
+   "ende": 80.386,
+   "woerter": [
+    {
+     "wort": "Schreibt",
+     "start": 77.472,
+     "ende": 77.82
+    },
+    {
+     "wort": "euren",
+     "start": 77.867,
+     "ende": 78.11
+    },
+    {
+     "wort": "Simulationswunsch",
+     "start": 78.145,
+     "ende": 79.062
+    },
+    {
+     "wort": "in",
+     "start": 79.132,
+     "ende": 79.213
+    },
+    {
+     "wort": "die",
+     "start": 79.26,
+     "ende": 79.364
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 79.411,
+     "ende": 80.386
+    }
+   ]
+  }
+ ]
+}

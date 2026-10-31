@@ -1,0 +1,63 @@
+{
+  "titel": "Spurwechsel im Stau: Bist du auf der anderen Spur wirklich schneller?",
+  "rubrik": "ALLTAG",
+  "stil": "2 Isometrisches 3D",
+  "segmente": [
+    {
+      "id": "hook",
+      "text": "Im Stau ständig die Spur wechseln bringt dir 20 Sekunden. Ich hab's simuliert.",
+      "sprechtext": "Im Stau ständig die Spur wechseln bringt dir zwanzig Sekunden. Ich hab es simuliert."
+    },
+    {
+      "id": "setup",
+      "text": "Fünf Kilometer Stau, zwei Spuren. Paul wechselt, sobald es nebenan schneller aussieht. Anna bleibt in ihrer Spur.",
+      "sprechtext": "Fünf Kilometer Stau, zwei Spuren. Paul wechselt, sobald es nebenan schneller aussieht. Anna bleibt in ihrer Spur."
+    },
+    {
+      "id": "rennen",
+      "text": "Paul wechselt sofort. Und steht direkt hinter Anna. Nach anderthalb Minuten liegt Anna 160 Meter vorn. Fünf Wechsel später steht Paul wieder hinter ihr. Erst nach sieben Minuten zieht er vorbei.",
+      "sprechtext": "Paul wechselt sofort. Und steht direkt hinter Anna. Nach anderthalb Minuten liegt Anna hundertsechzig Meter vorn. Fünf Wechsel später steht Paul wieder hinter ihr. Erst nach sieben Minuten zieht er vorbei."
+    },
+    {
+      "id": "ziel",
+      "text": "Im Ziel: Paul nach 9:36, Anna nach 9:56. Neun Wechsel für 20 Sekunden.",
+      "sprechtext": "Im Ziel: Paul nach neun Minuten sechsunddreißig. Anna nach neun Minuten sechsundfünfzig. Neun Wechsel für zwanzig Sekunden."
+    },
+    {
+      "id": "schnitt",
+      "text": "Das ist typisch: Jeder Wechsel bringt im Schnitt gut zwei Sekunden. Selbst Drängler holen nur 50 Sekunden raus.",
+      "sprechtext": "Das ist typisch: Jeder Wechsel bringt im Schnitt gut zwei Sekunden. Selbst Drängler holen nur fünfzig Sekunden raus."
+    },
+    {
+      "id": "wahrnehmung",
+      "text": "Aber warum wirkt die andere Spur immer schneller? Test: Keiner wechselt, beide Spuren sind gleich schnell. Sechs Autos ziehen an Anna vorbei, sechs Sekunden lang. Dann überholt sie sechs Autos. In nur zwei Sekunden.",
+      "sprechtext": "Aber warum wirkt die andere Spur immer schneller? Test: Keiner wechselt, beide Spuren sind gleich schnell. Sechs Autos ziehen an Anna vorbei, sechs Sekunden lang. Dann überholt sie sechs Autos. In nur zwei Sekunden."
+    },
+    {
+      "id": "erklaerung",
+      "text": "Wer rollt, hat Abstand. Wer steht, steht dicht an dicht. Darum wirst du 20 Prozent der Zeit überholt. Selbst überholst du nur 11 Prozent. Bei gleich vielen Autos. Forscher aus Toronto beschrieben das schon 1999.",
+      "sprechtext": "Wer rollt, hat Abstand. Wer steht, steht dicht an dicht. Darum wirst du zwanzig Prozent der Zeit überholt. Selbst überholst du nur elf Prozent. Bei gleich vielen Autos. Forscher aus Toronto beschrieben das schon neunzehnhundertneunundneunzig."
+    },
+    {
+      "id": "fazit",
+      "text": "Also: Bleib in deiner Spur. 20 Sekunden sind neun riskante Manöver nicht wert.",
+      "sprechtext": "Also: Bleib in deiner Spur. Zwanzig Sekunden sind neun riskante Manöver nicht wert."
+    },
+    {
+      "id": "ende",
+      "text": "Schreibt euren Simulationswunsch in die Kommentare.",
+      "sprechtext": "Schreibt euren Simulationswunsch in die Kommentare."
+    }
+  ],
+  "beschreibung": "Spurwechsel im Stau: Bist du wirklich schneller? 🚗 Ich hab's simuliert. Team Wechseln oder Team Bleiben? 👇 #stau #spurwechsel #autofahren #wissen #simulation",
+  "quellen": [
+    "Eigene Simulation: pipeline/sim/spurwechsel.mjs, Auswertung pipeline/sim/auswertung_spurwechsel.mjs, Ergebnisse sim_ergebnisse.md/.json (100 Läufe Basis, 100 Läufe Referenz, 16 Varianten à 40 Läufe). Alle Zahlen im Video sind Modellergebnisse.",
+    "Hook/Ergebnis: Spurwechsler im Mittel 19,9 s (±1,1 s, 95 %) schneller auf 5 km Stop-and-go (578,5 s gegen 598,3 s, 3,3 %), 9,2 Spurwechsel, 2,15 s je Wechsel. Drängler-Variante (Sicherheitsabstand 0): 50,1 s bei 22,6 Wechseln.",
+    "Duell im Video: Lauf 1031, Paul = Fahrzeug 573 (576,2 s = 9:36, 9 Wechsel), Anna = Fahrzeug 303 (595,8 s = 9:56). Anna max. 165 m vorn (t = 85 s), nach dem 5. Wechsel (t = 272 s) steht Paul wieder direkt hinter Anna, ab t = 427 s (7:07) liegt Paul vorn.",
+    "Wahrnehmung (Referenz, niemand wechselt): 20,3 % der Zeit überholt werden, 10,8 % selbst überholen, 125,1 zu 124,6 Autos. Beispiel im Video: Lauf 1006, Fahrzeug 110: 6 Autos in 6 Sekunden überholen Anna, danach überholt sie 6 Autos in 2 Sekunden.",
+    "Redelmeier, D. A. & Tibshirani, R. J.: Why cars in the next lane seem to go faster. Nature 401, 35 (2. 9. 1999), doi:10.1038/43360 (PubMed 10485702). Kernaussage laut Abstract (ADS-Auszug): Es wird mehr Zeit mit Überholtwerden verbracht als mit Überholen.",
+    "University of Toronto, Pressemitteilung 30.08.1999 (ScienceDaily 02.09.1999): https://www.sciencedaily.com/releases/1999/08/990830184718.htm – Computermodell eines gestauten Highways, Videostudie mit Fahrschülern; Zitat Redelmeier: „Vehicles spread out when going fast and pack together when moving slowly.“",
+    "Gegenposition: N. Bostrom, „Cars in the next lane really do go faster“, Plus Magazine, Nov. 2001: https://plus.maths.org/cars-next-lane-really-do-go-faster (Auswahleffekt: Man steht öfter in der dichteren, langsameren Spur).",
+    "Modellgrundlagen (nicht erneut abgerufen): Nagel & Schreckenberg, J. Phys. I France 2, 2221 (1992); Rickert, Nagel, Schreckenberg & Latour, Physica A 231, 534 (1996), Zwei-Spur-Regeln; Barlovic, Santen, Schadschneider & Schreckenberg, Eur. Phys. J. B 5, 793 (1998), slow-to-start."
+  ]
+}

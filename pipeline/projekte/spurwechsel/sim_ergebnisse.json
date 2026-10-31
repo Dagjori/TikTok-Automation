@@ -1,0 +1,701 @@
+{
+ "titel": "Spurwechsel im Stau: Bist du auf der anderen Spur wirklich schneller?",
+ "stand": "2026-10-31",
+ "modell": "pipeline/sim/spurwechsel.mjs (Nagel-Schreckenberg, 2 Spuren, Ring, slow-to-start)",
+ "parameter": {
+  "ringM": 10000,
+  "dichteKmSpur": 40,
+  "anteilWechsler": 0.3,
+  "vmax": 3,
+  "troedel": 0.2,
+  "anfahrTroedel": 0.5,
+  "sperreS": 3,
+  "sicherheitZellen": 1,
+  "wechselOhneBeschleunigung": false,
+  "einschwingS": 1200,
+  "streckeM": 5000,
+  "maxS": 6000
+ },
+ "parameterBegruendung": {
+  "ringM": "Ring (periodischer Rand) hält die Dichte konstant: dauerhaft dichter Stop-and-go-Verkehr, kein Engpass.",
+  "dichteKmSpur": "40 Fz/km/Spur (Abstand im Mittel 25 m): dichter Stop-and-go-Verkehr. Annahme, keine Zählstellendaten.",
+  "anteilWechsler": "30 % der übrigen Fahrer wechseln aktiv. Annahme; Varianten 10–95 % in der Sensitivität.",
+  "vmax": "81 km/h, wie im Reißverschluss-Modell. Zwischen zwei Staus erreicht man selten mehr.",
+  "troedel": "p = 0,2 (Standardwert der NaSch-Literatur).",
+  "anfahrTroedel": "p0 = 0,5: verzögertes Anfahren aus dem Stand, erzeugt Stop-and-go-Wellen (VDR-Modell).",
+  "sperreS": "Ein Spurwechsel dauert; danach mindestens 3 s bis zum nächsten. Annahme.",
+  "sicherheitZellen": "1 Zelle (7,5 m) mehr Platz hinter sich als das Tempo des neuen Hintermanns. Annahme; 0 und 2 in der Sensitivität.",
+  "einschwingS": "20 min Einschwingen, damit sich die Staus voll ausbilden.",
+  "streckeM": "5 km Stau; Varianten 10 km."
+ },
+ "methodik": [
+  "100 Läufe (Seeds 1001–1100), je ca. 800 Fahrzeuge auf 2 × 10 km Ring.",
+  "Nach 20 min Einschwingen startet das „Rennen“: Jedes Fahrzeug fährt ab seiner aktuellen Position 5 km weit. Gemessen werden Fahrzeit, Spurwechsel und Überholvorgänge bis zum Ziel.",
+  "Mittelwerte je Lauf und Typ, dann Mittel ± 95-%-Intervall über die Läufe. Der Vorteil ist gepaart je Lauf (gleicher Lauf, gleiche Bedingungen).",
+  "Referenz: dieselben Seeds, aber niemand wechselt die Spur. Dann sind beide Spuren im Mittel exakt gleich schnell (Symmetrie).",
+  "Überholt werden: In dieser Sekunde zieht mindestens ein Auto der Nachbarspur an mir vorbei. Überholen: Ich ziehe an mindestens einem vorbei. Gleichauf zählt die linke Spur als vorn."
+ ],
+ "basis": {
+  "laeufe": 100,
+  "fahrzeitHalterS": {
+   "n": 100,
+   "mittel": 598.3,
+   "sd": 6.4,
+   "ci95": 1.3,
+   "min": 581,
+   "median": 598.9,
+   "max": 613.5
+  },
+  "fahrzeitWechslerS": {
+   "n": 100,
+   "mittel": 578.5,
+   "sd": 7.8,
+   "ci95": 1.5,
+   "min": 557,
+   "median": 578.4,
+   "max": 603.4
+  },
+  "fahrzeitAlleS": {
+   "n": 100,
+   "mittel": 592.4,
+   "sd": 6.4,
+   "ci95": 1.2,
+   "min": 577.4,
+   "median": 593,
+   "max": 610.6
+  },
+  "vorteilWechslerS": {
+   "n": 100,
+   "mittel": 19.9,
+   "sd": 5.8,
+   "ci95": 1.1,
+   "min": 7.3,
+   "median": 19.5,
+   "max": 35.5
+  },
+  "vorteilWechslerProzent": {
+   "n": 100,
+   "mittel": 3.3,
+   "sd": 1,
+   "ci95": 0.2,
+   "min": 1.2,
+   "median": 3.3,
+   "max": 5.8
+  },
+  "spurwechselWechsler": {
+   "n": 100,
+   "mittel": 9.2,
+   "sd": 0.8,
+   "ci95": 0.2,
+   "min": 7.5,
+   "median": 9.3,
+   "max": 11
+  },
+  "sekundenProSpurwechsel": {
+   "n": 100,
+   "mittel": 2.15,
+   "sd": 0.61,
+   "ci95": 0.12,
+   "min": 0.91,
+   "median": 2.03,
+   "max": 3.94
+  },
+  "wahrnehmungHalter": {
+   "anteilZeitUeberholtWerdenProzent": {
+    "n": 100,
+    "mittel": 9.1,
+    "sd": 0.5,
+    "ci95": 0.1,
+    "min": 7.9,
+    "median": 9.1,
+    "max": 10.3
+   },
+   "anteilZeitUeberholenProzent": {
+    "n": 100,
+    "mittel": 7.5,
+    "sd": 0.3,
+    "ci95": 0.1,
+    "min": 6.8,
+    "median": 7.5,
+    "max": 8.2
+   },
+   "autosUeberholtWerden": {
+    "n": 100,
+    "mittel": 54.4,
+    "sd": 3,
+    "ci95": 0.6,
+    "min": 48.1,
+    "median": 54.4,
+    "max": 62
+   },
+   "autosUeberholen": {
+    "n": 100,
+    "mittel": 50.3,
+    "sd": 2.5,
+    "ci95": 0.5,
+    "min": 45.2,
+    "median": 50.3,
+    "max": 56.4
+   },
+   "anteilNachbarSchnellerProzent": {
+    "n": 100,
+    "mittel": 18.6,
+    "sd": 1,
+    "ci95": 0.2,
+    "min": 16.3,
+    "median": 18.6,
+    "max": 21
+   },
+   "anteilNachbarLangsamerProzent": {
+    "n": 100,
+    "mittel": 14.1,
+    "sd": 0.5,
+    "ci95": 0.1,
+    "min": 12.9,
+    "median": 14.2,
+    "max": 15.1
+   },
+   "anteilStandProzent": {
+    "n": 100,
+    "mittel": 51.3,
+    "sd": 0.7,
+    "ci95": 0.1,
+    "min": 49.5,
+    "median": 51.3,
+    "max": 53
+   }
+  },
+  "wahrnehmungWechsler": {
+   "anteilZeitUeberholtWerdenProzent": {
+    "n": 100,
+    "mittel": 7.9,
+    "sd": 0.4,
+    "ci95": 0.1,
+    "min": 7.1,
+    "median": 7.9,
+    "max": 8.7
+   },
+   "anteilZeitUeberholenProzent": {
+    "n": 100,
+    "mittel": 8.3,
+    "sd": 0.5,
+    "ci95": 0.1,
+    "min": 7.3,
+    "median": 8.3,
+    "max": 9.5
+   },
+   "autosUeberholtWerden": {
+    "n": 100,
+    "mittel": 45.6,
+    "sd": 2,
+    "ci95": 0.4,
+    "min": 40.6,
+    "median": 45.9,
+    "max": 49.8
+   },
+   "autosUeberholen": {
+    "n": 100,
+    "mittel": 54.4,
+    "sd": 3.1,
+    "ci95": 0.6,
+    "min": 48,
+    "median": 54.4,
+    "max": 62.7
+   }
+  },
+  "duelle": {
+   "definition": "Spurwechsler und Spurhalter starten nebeneinander (verschiedene Spuren, höchstens 1 Zelle versetzt).",
+   "anzahl": 26644,
+   "wechslerGewinntProzent": 79.2,
+   "vorteilS": {
+    "n": 26644,
+    "mittel": 21.8,
+    "sd": 29.4,
+    "ci95": 0.4,
+    "min": -102,
+    "median": 18.3,
+    "max": 196.6
+   },
+   "vorteilMehrAls60SProzent": 9.2,
+   "halterMehrAls60SVornProzent": 0.2
+  },
+  "einzelfahrzeuge": {
+   "fahrzeitHalterS": {
+    "n": 56097,
+    "mittel": 598.4,
+    "sd": 40.4,
+    "ci95": 0.3,
+    "min": 450.7,
+    "median": 597.3,
+    "max": 756.2
+   },
+   "fahrzeitWechslerS": {
+    "n": 23903,
+    "mittel": 578.5,
+    "sd": 37.8,
+    "ci95": 0.5,
+    "min": 438.6,
+    "median": 578.2,
+    "max": 734.2
+   },
+   "spurwechselWechsler": {
+    "n": 23903,
+    "mittel": 9.2,
+    "sd": 3.2,
+    "ci95": 0,
+    "min": 0,
+    "median": 9,
+    "max": 24
+   }
+  },
+  "gegenReferenz": {
+   "erklaerung": "Positiv = in der Basis (30 % Spurwechsler) schneller als in der Referenz (niemand wechselt), gepaart nach Seed.",
+   "alleFahrzeugeS": {
+    "n": 100,
+    "mittel": 22,
+    "sd": 8,
+    "ci95": 1.6,
+    "min": 2.7,
+    "median": 21.4,
+    "max": 43.2
+   },
+   "nurHalterS": {
+    "n": 100,
+    "mittel": 16.1,
+    "sd": 7.8,
+    "ci95": 1.5,
+    "min": -1.4,
+    "median": 15.1,
+    "max": 36.4
+   }
+  }
+ },
+ "referenzNiemandWechselt": {
+  "laeufe": 100,
+  "fahrzeitS": {
+   "n": 100,
+   "mittel": 614.4,
+   "sd": 5.4,
+   "ci95": 1.1,
+   "min": 602.3,
+   "median": 614.6,
+   "max": 627.5
+  },
+  "wahrnehmung": {
+   "anteilZeitUeberholtWerdenProzent": {
+    "n": 100,
+    "mittel": 20.3,
+    "sd": 1.2,
+    "ci95": 0.2,
+    "min": 15.5,
+    "median": 20.5,
+    "max": 22.9
+   },
+   "anteilZeitUeberholenProzent": {
+    "n": 100,
+    "mittel": 10.8,
+    "sd": 0.4,
+    "ci95": 0.1,
+    "min": 9.4,
+    "median": 10.9,
+    "max": 11.6
+   },
+   "autosUeberholtWerden": {
+    "n": 100,
+    "mittel": 125.1,
+    "sd": 7.4,
+    "ci95": 1.4,
+    "min": 95.5,
+    "median": 125.3,
+    "max": 141
+   },
+   "autosUeberholen": {
+    "n": 100,
+    "mittel": 124.6,
+    "sd": 7.3,
+    "ci95": 1.4,
+    "min": 96.2,
+    "median": 125,
+    "max": 141.9
+   },
+   "anteilNachbarSchnellerProzent": {
+    "n": 100,
+    "mittel": 39,
+    "sd": 2.1,
+    "ci95": 0.4,
+    "min": 30.4,
+    "median": 39.1,
+    "max": 43.5
+   },
+   "anteilNachbarLangsamerProzent": {
+    "n": 100,
+    "mittel": 15.1,
+    "sd": 0.4,
+    "ci95": 0.1,
+    "min": 14,
+    "median": 15.1,
+    "max": 16.1
+   },
+   "anteilStandProzent": {
+    "n": 100,
+    "mittel": 54.8,
+    "sd": 0.5,
+    "ci95": 0.1,
+    "min": 53.6,
+    "median": 54.8,
+    "max": 56.3
+   }
+  }
+ },
+ "sensitivitaet": [
+  {
+   "variante": "Drängler: quetscht sich in jede Lücke (Sicherheitsabstand 0)",
+   "parameter": {
+    "sicherheitZellen": 0
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 613.9,
+   "fahrzeitWechslerS": 563.7,
+   "vorteilS": 50.1,
+   "vorteilCi95S": 2.3,
+   "vorteilProzent": 8.2,
+   "spurwechsel": 22.6,
+   "sekundenProSpurwechsel": 2.22,
+   "halterUeberholtWerdenProzent": 9.3,
+   "halterUeberholenProzent": 6.7
+  },
+  {
+   "variante": "Vorsichtig: 2 Zellen (15 m) Sicherheitsabstand",
+   "parameter": {
+    "sicherheitZellen": 2
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 599,
+   "fahrzeitWechslerS": 586.6,
+   "vorteilS": 12.3,
+   "vorteilCi95S": 1.2,
+   "vorteilProzent": 2.1,
+   "spurwechsel": 6,
+   "sekundenProSpurwechsel": 2.08,
+   "halterUeberholtWerdenProzent": 9.3,
+   "halterUeberholenProzent": 7.8
+  },
+  {
+   "variante": "Wechsel kostet Tempo (kein Beschleunigen beim Wechsel)",
+   "parameter": {
+    "wechselOhneBeschleunigung": true
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 603.1,
+   "fahrzeitWechslerS": 584.5,
+   "vorteilS": 18.5,
+   "vorteilCi95S": 1.7,
+   "vorteilProzent": 3.1,
+   "spurwechsel": 9.3,
+   "sekundenProSpurwechsel": 1.99,
+   "halterUeberholtWerdenProzent": 9.1,
+   "halterUeberholenProzent": 7.5
+  },
+  {
+   "variante": "Nur 10 % Spurwechsler",
+   "parameter": {
+    "anteilWechsler": 0.1
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 604.6,
+   "fahrzeitWechslerS": 547.2,
+   "vorteilS": 57.4,
+   "vorteilCi95S": 4.4,
+   "vorteilProzent": 9.5,
+   "spurwechsel": 12.2,
+   "sekundenProSpurwechsel": 4.72,
+   "halterUeberholtWerdenProzent": 11.5,
+   "halterUeberholenProzent": 8.5
+  },
+  {
+   "variante": "60 % Spurwechsler",
+   "parameter": {
+    "anteilWechsler": 0.6
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 594.7,
+   "fahrzeitWechslerS": 584.3,
+   "vorteilS": 10.5,
+   "vorteilCi95S": 1.2,
+   "vorteilProzent": 1.8,
+   "spurwechsel": 7.7,
+   "sekundenProSpurwechsel": 1.36,
+   "halterUeberholtWerdenProzent": 8.2,
+   "halterUeberholenProzent": 7
+  },
+  {
+   "variante": "95 % Spurwechsler",
+   "parameter": {
+    "anteilWechsler": 0.95
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 589.7,
+   "fahrzeitWechslerS": 586.3,
+   "vorteilS": 3.4,
+   "vorteilCi95S": 2.2,
+   "vorteilProzent": 0.6,
+   "spurwechsel": 6.9,
+   "sekundenProSpurwechsel": 0.49,
+   "halterUeberholtWerdenProzent": 7.5,
+   "halterUeberholenProzent": 6.9
+  },
+  {
+   "variante": "Weniger dicht (30 Fz/km/Spur)",
+   "parameter": {
+    "dichteKmSpur": 30
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 408.8,
+   "fahrzeitWechslerS": 398.5,
+   "vorteilS": 10.3,
+   "vorteilCi95S": 1.2,
+   "vorteilProzent": 2.5,
+   "spurwechsel": 5.1,
+   "sekundenProSpurwechsel": 2.01,
+   "halterUeberholtWerdenProzent": 7.8,
+   "halterUeberholenProzent": 6.5
+  },
+  {
+   "variante": "Dichter (50 Fz/km/Spur)",
+   "parameter": {
+    "dichteKmSpur": 50
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 834.6,
+   "fahrzeitWechslerS": 804.2,
+   "vorteilS": 30.4,
+   "vorteilCi95S": 1.8,
+   "vorteilProzent": 3.6,
+   "spurwechsel": 14,
+   "sekundenProSpurwechsel": 2.18,
+   "halterUeberholtWerdenProzent": 9.7,
+   "halterUeberholenProzent": 8.1
+  },
+  {
+   "variante": "Sperre 1 s statt 3 s",
+   "parameter": {
+    "sperreS": 1
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 598.1,
+   "fahrzeitWechslerS": 578.9,
+   "vorteilS": 19.2,
+   "vorteilCi95S": 1.5,
+   "vorteilProzent": 3.2,
+   "spurwechsel": 9.8,
+   "sekundenProSpurwechsel": 1.96,
+   "halterUeberholtWerdenProzent": 9.1,
+   "halterUeberholenProzent": 7.6
+  },
+  {
+   "variante": "Sperre 8 s statt 3 s",
+   "parameter": {
+    "sperreS": 8
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 600.5,
+   "fahrzeitWechslerS": 579.9,
+   "vorteilS": 20.6,
+   "vorteilCi95S": 1.9,
+   "vorteilProzent": 3.4,
+   "spurwechsel": 8.7,
+   "sekundenProSpurwechsel": 2.37,
+   "halterUeberholtWerdenProzent": 9.2,
+   "halterUeberholenProzent": 7.6
+  },
+  {
+   "variante": "Trödeln p = 0,1",
+   "parameter": {
+    "troedel": 0.1
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 564.8,
+   "fahrzeitWechslerS": 553.2,
+   "vorteilS": 11.6,
+   "vorteilCi95S": 1.2,
+   "vorteilProzent": 2.1,
+   "spurwechsel": 5.1,
+   "sekundenProSpurwechsel": 2.29,
+   "halterUeberholtWerdenProzent": 6.1,
+   "halterUeberholenProzent": 5.1
+  },
+  {
+   "variante": "Trödeln p = 0,3",
+   "parameter": {
+    "troedel": 0.3
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 641.3,
+   "fahrzeitWechslerS": 611.1,
+   "vorteilS": 30.3,
+   "vorteilCi95S": 1.8,
+   "vorteilProzent": 4.7,
+   "spurwechsel": 14.2,
+   "sekundenProSpurwechsel": 2.13,
+   "halterUeberholtWerdenProzent": 11.3,
+   "halterUeberholenProzent": 9.3
+  },
+  {
+   "variante": "Anfahren p0 = 0,3 (weniger Stop-and-go)",
+   "parameter": {
+    "anfahrTroedel": 0.3
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 459.1,
+   "fahrzeitWechslerS": 447.5,
+   "vorteilS": 11.6,
+   "vorteilCi95S": 0.9,
+   "vorteilProzent": 2.5,
+   "spurwechsel": 9.4,
+   "sekundenProSpurwechsel": 1.24,
+   "halterUeberholtWerdenProzent": 14.2,
+   "halterUeberholenProzent": 12
+  },
+  {
+   "variante": "Anfahren p0 = 0,7 (mehr Stop-and-go)",
+   "parameter": {
+    "anfahrTroedel": 0.7
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 955.6,
+   "fahrzeitWechslerS": 911.2,
+   "vorteilS": 44.4,
+   "vorteilCi95S": 2.9,
+   "vorteilProzent": 4.6,
+   "spurwechsel": 9.9,
+   "sekundenProSpurwechsel": 4.49,
+   "halterUeberholtWerdenProzent": 5.3,
+   "halterUeberholenProzent": 4.2
+  },
+  {
+   "variante": "Höheres Tempo (vmax 135 km/h)",
+   "parameter": {
+    "vmax": 5
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 595.3,
+   "fahrzeitWechslerS": 575,
+   "vorteilS": 20.2,
+   "vorteilCi95S": 1.6,
+   "vorteilProzent": 3.4,
+   "spurwechsel": 8.8,
+   "sekundenProSpurwechsel": 2.3,
+   "halterUeberholtWerdenProzent": 8.9,
+   "halterUeberholenProzent": 7.3
+  },
+  {
+   "variante": "Längere Strecke (10 km)",
+   "parameter": {
+    "streckeM": 10000,
+    "ringM": 20000
+   },
+   "laeufe": 40,
+   "fahrzeitHalterS": 1194.9,
+   "fahrzeitWechslerS": 1155,
+   "vorteilS": 39.9,
+   "vorteilCi95S": 1.7,
+   "vorteilProzent": 3.3,
+   "spurwechsel": 18.4,
+   "sekundenProSpurwechsel": 2.18,
+   "halterUeberholtWerdenProzent": 9,
+   "halterUeberholenProzent": 7.5
+  }
+ ],
+ "sensitivitaetWahrnehmung": [
+  {
+   "variante": "Referenz, 30 Fz/km/Spur",
+   "parameter": {
+    "anteilWechsler": 0,
+    "dichteKmSpur": 30
+   },
+   "laeufe": 40,
+   "ueberholtWerdenProzent": 16.3,
+   "ueberholenProzent": 9,
+   "autosUeberholtWerden": 68.6,
+   "autosUeberholen": 68.2
+  },
+  {
+   "variante": "Referenz, 50 Fz/km/Spur",
+   "parameter": {
+    "anteilWechsler": 0,
+    "dichteKmSpur": 50
+   },
+   "laeufe": 40,
+   "ueberholtWerdenProzent": 21,
+   "ueberholenProzent": 11.3,
+   "autosUeberholtWerden": 179.7,
+   "autosUeberholen": 179.7
+  },
+  {
+   "variante": "Referenz, p0 = 0,3",
+   "parameter": {
+    "anteilWechsler": 0,
+    "anfahrTroedel": 0.3
+   },
+   "laeufe": 40,
+   "ueberholtWerdenProzent": 20.4,
+   "ueberholenProzent": 14.1,
+   "autosUeberholtWerden": 95.9,
+   "autosUeberholen": 95.5
+  }
+ ],
+ "animation": {
+  "rennen": {
+   "datei": "trajektorien_rennen.json",
+   "auswahl": "Duell aus Lauf 1031: Spurwechsler 573 („Paul“) und Spurhalterin 303 („Anna“) starten nebeneinander. Kriterien: Pauls Spurwechsel = gerundetes Mittel (9), beide Fahrzeiten höchstens 4 s vom Mittel ihres Typs, Vorteil höchstens 1 s vom Mittel. Unter diesen das Duell, in dem Anna zwischendurch am weitesten vorn liegt (zeigt das Hin und Her).",
+   "zeitPaulS": 576.2,
+   "zeitAnnaS": 595.8,
+   "seed": 1031,
+   "vorteilS": 19.6,
+   "spurwechselPaul": 9,
+   "maxVorsprungPaulM": 390,
+   "maxVorsprungAnnaM": 165,
+   "spurwechselZeitpunktePaulS": [
+    5,
+    128,
+    251,
+    262,
+    272,
+    427,
+    449,
+    502,
+    534
+   ]
+  },
+  "wahrnehmung": {
+   "datei": "trajektorien_wahrnehmung.json",
+   "erklaerung": "Fenster ab t (s nach Start): 9 s wird Anna überholt, danach 5 s überholt sie selbst.",
+   "t": 79,
+   "sekundenUeberholtWerden": 6,
+   "autosUeberholtWerden": 6,
+   "sekundenUeberholen": 2,
+   "autosUeberholen": 6,
+   "seed": 1006,
+   "fahrzeug": 110
+  }
+ },
+ "kernzahlen": {
+  "fahrzeitHalter": "9:58",
+  "fahrzeitWechsler": "9:39",
+  "fahrzeitHalterS": 598,
+  "fahrzeitWechslerS": 579,
+  "vorteilS": 20,
+  "vorteilProzent": 3,
+  "spurwechsel": 9,
+  "sekundenProSpurwechsel": 2,
+  "duellWechslerGewinntProzent": 79,
+  "wahrnehmungReferenz": {
+   "ueberholtWerdenProzent": 20,
+   "ueberholenProzent": 11,
+   "autosUeberholtWerden": 125,
+   "autosUeberholen": 125
+  },
+  "draenglerVorteilS": 50,
+  "draenglerSpurwechsel": 23
+ }
+}
