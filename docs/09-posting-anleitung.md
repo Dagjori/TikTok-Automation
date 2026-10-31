@@ -39,10 +39,8 @@
 - **Beschreibung (TikTok und YouTube):**
 
 ```
-GTA 6 kommt am 19.11. Kostet das Krankfeiern die Welt wirklich eine Milliarde? 🎮💵 Weltweit nachgerechnet 👇
-Annahmen: 25 Mio. Käufer am 1. Tag (Analysten-Prognose), 60 % davon berufstätig, 5 % bleiben zu Hause (Umfragen: UK 2 %, USA 10 % der spielenden Vollzeitkräfte), ca. 400 $ Wirtschaftsleistung pro Arbeitstag, Weltwirtschaft ca. 450 Mrd. $ pro Arbeitstag.
-Quellen: Schätzung J. G. Montalvo (Univ. Pompeu Fabra), Umfragen GameSquare (USA) und One Day Agency/YouGov (UK), Release laut Take-Two.
-Vereinfachte Modellrechnung, keine Rechts- oder Anlageberatung. Stimme: KI.
+GTA 6 kommt am 19.11. und angeblich kostet das Krankfeiern 1 Milliarde Dollar. Ich hab's weltweit durchgerechnet 🎮💸 Glaubst du an die Milliarde? 👇
+Modellrechnung: 25 Mio. Käufer, 60 % berufstätig, 5 % fehlen, ca. 400 $ pro Arbeitstag. Quellen: J. G. Montalvo (UPF), GameSquare, One Day Agency/YouGov, Take-Two. Keine Rechts- oder Anlageberatung. Stimme: KI.
 #gta6 #gta #wirtschaft #arbeit #simulation
 ```
 
@@ -52,12 +50,9 @@ Vereinfachte Modellrechnung, keine Rechts- oder Anlageberatung. Stimme: KI.
 - **Beschreibung (TikTok und YouTube):**
 
 ```
-Früh einordnen oder bis zum Ende fahren? 🚗🚧 Zwei Baustellen, drei Verkehrslagen, simuliert 👇
-Ergebnis im Modell nach 30 Minuten Verkehrsspitze: Rückstau Feierabend 3,4 km (früh einordnen) gegen 2,5 km (Reißverschluss), Ferienbeginn 6,2 gegen 5,4 km. Bei wenig Verkehr kein Stau. Fahrzeit praktisch gleich.
-Annahmen: Fahrstreifen endet (2 auf 1), Früh-Einordner wechseln ab 800 m vor der Engstelle, Zufluss 1.200 / 2.400 / 3.200 Kfz/h, 50 Läufe je Szenario, Stau = Kolonne unter 27 km/h. Vereinfachte Modellrechnung, keine Messung.
-Quellen: MnDOT „Zipper Merge“ (bis zu 40 % kürzerer Rückstau), § 7 Abs. 4 StVO.
-Stimme: KI.
-#reißverschlussverfahren #stau #autobahn #baustelle #simulation
+Früh einordnen oder bis zum Ende fahren? 🚗🚧 Ich hab's simuliert. Team früh oder Team Reißverschluss? 👇
+Modell: 50 Läufe je Verkehrslage, Rückstau nach 30 Min. Quellen: MnDOT „Zipper Merge“, § 7 Abs. 4 StVO. Vereinfachte Modellrechnung. Stimme: KI.
+#reißverschlussverfahren #stau #autofahren #baustelle #simulation
 ```
 
 Die Quellen-Links im Detail stehen in `pipeline/projekte/<projekt>/skript.json` unter `quellen` (für Rückfragen in den Kommentaren).
