@@ -16,7 +16,7 @@ from pathlib import Path
 
 API = "https://api.elevenlabs.io/v1"
 MODELL = "eleven_multilingual_v2"
-STANDARD_STIMME = "zfc8CJQpe8Kqyl0vvCzo"  # erste Wahl des Inhabers; Aussprache über „sprechtext“ gelöst
+STANDARD_STIMME = "aTTiK3YzK3dXETpuDE2h"  # „Ben“, muttersprachlich Deutsch (Wahl des Inhabers 31.10. per Hörprobe)
 EINSTELLUNGEN = {"stability": 0.45, "similarity_boost": 0.8, "style": 0.2, "use_speaker_boost": True}  # natürliches Tempo der Stimme
 PAUSE = 0.22          # Pause zwischen Segmenten (Vorbilder: Median 0,16–0,38 s)
 PAUSE_LANG = 0.3      # nach dem Hook und vor dem Schluss-Satz
@@ -37,8 +37,12 @@ def anfrage(pfad, daten=None):
         return json.loads(antwort.read())
 
 
-# Feste IDs der ElevenLabs-Standardstimmen (der Key braucht dafür kein Leserecht „voices_read“)
+# Feste Voice-IDs (der Key braucht dafür kein Leserecht „voices_read“). Deutsche Bibliotheksstimmen: IDs laut json2video.com/ai-voices/elevenlabs/languages/german/
 STIMMEN = {
+    "Ben": "aTTiK3YzK3dXETpuDE2h",        # deutsch, jung, locker (Bibliotheksstimme, Standard)
+    "Marc": "gGjaVIGkCSfKUIBYtNT2",       # deutsch, angenehm, erklärend
+    "Alexander": "kkJxCnlRCckmfFvzDW5Q",  # deutsch, tief, TV-Sprecher
+    "Otto": "FTNCalFNG5bRnkkaP5Ug",       # deutsch, ruhig, Studio
     "George": "JBFqnCBsd6RMkjVDRZzb",     # männlich, warm
     "Daniel": "onwK4e9ZLuTAKqWW03F9",     # männlich, nachrichtlich
     "Brian": "nPczCjzI2devNBz1zQrb",      # männlich, tief

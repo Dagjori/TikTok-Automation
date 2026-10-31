@@ -82,6 +82,13 @@ body { font-family: var(--text); -webkit-font-smoothing: antialiased; text-rende
 .karaoke .w.kommt { color: rgba(255, 255, 255, 0.42); }
 .karaoke .w.jetzt { color: var(--tinte); }
 .karaoke .marker { position: absolute; z-index: 0; background: var(--gelb); border-radius: 18px; box-shadow: 0 6px 18px -4px rgba(255, 210, 63, 0.6); }
+/* Stil „kontur“ (Standard): kein Kasten, weiße Schrift mit dicker schwarzer Kontur und weichem Schatten, aktuelles Wort gelb */
+.karaoke.kontur .block { background: none; box-shadow: none; padding: 0; border-radius: 0; }
+.karaoke.kontur .zeile { line-height: 1.1; letter-spacing: -0.01em; }
+.karaoke.kontur .w { padding: 0 0.13em; -webkit-text-stroke: 0.2em #000; paint-order: stroke fill; text-shadow: 0 0.05em 0.02em rgba(0, 0, 0, 0.9), 0 0.08em 0.3em rgba(0, 0, 0, 0.5); }
+.karaoke.kontur .w.kommt { visibility: hidden; }
+.karaoke.kontur .w.jetzt { color: var(--gelb); }
+.karaoke.kontur .marker { display: none; }
 
 /* ---------- 3D-Anker-Label ---------- */
 .anker { position: absolute; left: 0; top: 0; will-change: transform, opacity; }

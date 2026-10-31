@@ -225,11 +225,15 @@ export class KinetikTitel {
 // ---------- Karaoke-Untertitel ----------
 export class Karaoke {
   /**
-   * Wort-für-Wort-Untertitel mit wanderndem Marker.
-   * opt: {y, maxBreite, groesse, maxZeilen, position(t) → y (optional), versteckt: [[von,bis]]}
+   * Wort-für-Wort-Untertitel.
+   * stil "kontur" (Standard seit 31.10.): kein Kasten, weiße Schrift mit schwarzer Kontur, jedes Wort erscheint,
+   *   sobald es gesprochen wird, das aktuelle Wort ist gelb.
+   * stil "kasten": dunkler Kasten mit wanderndem gelbem Marker (alter Stil).
+   * opt: {y, maxBreite, groesse, maxZeilen, position(t) → y (optional), versteckt: [[von,bis]], stil}
    */
-  constructor(hud, zeitplan, { y = 1270, maxBreite = 800, groesse = 70, maxZeilen = 2, yFunktion = null, versteckt = [] } = {}) {
+  constructor(hud, zeitplan, { y = 1270, maxBreite = 800, groesse = 70, maxZeilen = 2, yFunktion = null, versteckt = [], stil = "kontur" } = {}) {
     this.hud = hud;
+    this.stil = stil;
     this.zp = zeitplan;
     this.y = y;
     this.yFunktion = yFunktion;
@@ -237,7 +241,7 @@ export class Karaoke {
     this.groesse = groesse;
     this.maxZeilen = maxZeilen;
     this.versteckt = versteckt;
-    this.e = el("div", "karaoke", "", hud.wurzel);
+    this.e = el("div", `karaoke ${stil}`, "", hud.wurzel);
     this.e.style.top = y + "px";
     this.bloecke = [];
   }
@@ -349,6 +353,10 @@ export class Karaoke {
         continue;
       }
       b.el.style.display = "inline-block";
+      if (this.stil === "kontur") {
+        this.konturWoerter(b, t);
+        continue;
+      }
       const s = feder(t - (b.start - vor), FEDER.knackig);
       const raus = b.ende - t < 0.12 && !this.bloecke.some((x) => x.start - vor <= b.ende + 0.01 && x !== b && x.start > b.start) ? ease.inCubic(1 - (b.ende - t) / 0.12) : 0;
       b.el.style.transform = `translateY(${(1 - s) * 34}px) scale(${0.88 + 0.12 * s - raus * 0.06})`;
@@ -394,6 +402,39 @@ export class Karaoke {
       const bumpM = Math.sin(clamp((t - b.woerter[k].start) / 0.2) * Math.PI) * 0.07;
       b.marker.style.transform = `scale(${(0.7 + 0.3 * pop) * (1 + bumpM)})`;
     }
+  }
+  /** Stil „kontur“: Wörter erscheinen einzeln beim Sprechen (Platz ist reserviert, die Zeile springt nicht). */
+  konturWoerter(b, t) {
+    const VOR = 0.04; // Wort erscheint ein Bild vor dem Ton, wirkt dadurch synchron
+    const naechster = this.bloecke[this.bloecke.indexOf(b) + 1];
+    const direktWeiter = naechster && naechster.start - b.ende < 0.05;
+    const raus = !direktWeiter && b.ende - t < 0.12 ? ease.inCubic(1 - (b.ende - t) / 0.12) : 0;
+    b.el.style.opacity = String(1 - raus);
+    b.el.style.transform = raus ? `scale(${1 - raus * 0.04})` : "";
+    let k = -1;
+    b.woerter.forEach((w, i) => { if (t >= w.start - VOR) k = i; });
+    // sichtbare Wörter bleiben mittig: jede Zeile gleitet beim Erscheinen eines Worts um die halbe Wortbreite nach links
+    if (!b.zeilenEl) {
+      b.zeilenEl = [...b.el.querySelectorAll(".zeile")];
+      b.breiten = b.woerter.map((w) => w.el.offsetWidth);
+    }
+    b.zeilen.forEach((idx, z) => {
+      const voll = idx.reduce((a, i) => a + b.breiten[i], 0);
+      const sichtbar = idx.reduce((a, i) => a + b.breiten[i] * ease.outCubic(clamp((t - (b.woerter[i].start - VOR)) / 0.16)), 0);
+      b.zeilenEl[z].style.transform = `translateX(${(voll - sichtbar) / 2}px)`;
+    });
+    b.woerter.forEach((w, i) => {
+      const kl = i > k ? "w kommt" : i === k ? "w jetzt" : "w";
+      if (w.el.className !== kl) w.el.className = kl;
+      if (i === k) {
+        const p = feder(t - (w.start - VOR), { frequenz: 7, daempfung: 0.62 });
+        w.el.style.transform = `translateY(${(1 - p) * 14}px) scale(${0.72 + 0.28 * p})`;
+        w.el.style.opacity = String(clamp(p * 4));
+      } else {
+        if (w.el.style.transform) w.el.style.transform = "";
+        if (w.el.style.opacity) w.el.style.opacity = "";
+      }
+    });
   }
 }
 

@@ -659,7 +659,7 @@ async function start() {
   }));
 
   // Karaoke-Untertitel
-  const karaoke = new Karaoke(hud, zp, { y: KY, maxBreite: 850, groesse: 60, versteckt: [[tEnde - 0.15, 999]] });
+  const karaoke = new Karaoke(hud, zp, { y: KY, maxBreite: 860, groesse: 72, versteckt: [[tEnde - 0.15, 999]] });
   karaoke.vorbereiten();
   // nie zwei Untertitel-Blöcke gleichzeitig (sonst springt der alte Block für 2 Bilder zur Seite): der neuere gewinnt
   const karaokeUpdate = karaoke.update.bind(karaoke);

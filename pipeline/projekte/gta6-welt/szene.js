@@ -740,7 +740,7 @@ async function start() {
   }));
 
   // Karaoke-Untertitel (über allem außer Schlusskarte)
-  const karaoke = new Karaoke(hud, zp, { y: KY, maxBreite: 820, groesse: 66, versteckt: [[sEnde - 0.15, 999]] });
+  const karaoke = new Karaoke(hud, zp, { y: KY, maxBreite: 860, groesse: 74, versteckt: [[sEnde - 0.15, 999]] });
   karaoke.vorbereiten();
   window.karaoke = karaoke; // für Prüfskripte
   hud.add(karaoke);
