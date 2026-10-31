@@ -2,6 +2,8 @@
 
 **Stand:** 31.10.2026, abends · **Anlass:** Der Inhaber ist mit den Ergebnissen noch nicht zufrieden. Er will sehen, wie Claude arbeitet, unter welchen Regeln und mit welchen Informationen.
 
+> **Teilweise überholt (31.10. spät):** Nach der Neuaufstellung gelten `CLAUDE.md` (Rolle: Content-Creator-Experte statt Mentor), der Maßstab `docs/15-massstab.md` und `docs/08-beispielskripte.md`. Dieses Dokument beschreibt den Stand davor.
+
 **Legende:**
 - **(F)** = Fakt mit Beleg (Datei im Repo, Messung oder Sitzungsprotokoll)
 - **(S)** = Schätzung
@@ -68,7 +70,7 @@ Ausnahme: Verstößt eine Anweisung gegen Plattformregeln (z. B. Posten per eige
 | Länge | <ul><li>mindestens 61 s, weil das CRP über 1 Minute verlangt</li><li>Ziel: 65–85 s</li></ul> | CLAUDE.md |
 | Hook | <ul><li>steile Behauptung mit konkreter Zahl in den ersten 3 s</li><li>Auflösung im selben Video</li><li>kein künstlicher Cliffhanger</li></ul> | CLAUDE.md, docs/08 |
 | Sätze | <ul><li>höchstens ca. 10 Wörter, ein Gedanke pro Satz</li><li>jeder Abschnitt endet mit 0,6 s Pause</li></ul> | docs/08, ENTSCHEIDUNGEN 31.10. |
-| Schluss | genau „Schreibt euren Simulationswunsch in die Kommentare.“ | CLAUDE.md |
+| Schluss | genau „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ (seit 31.10. spät) | CLAUDE.md |
 | Stimme | <ul><li>ElevenLabs „Ben“, ganzes Skript am Stück, natürliches Tempo</li><li>Einstellungen nach ElevenLabs-Empfehlung</li><li>eigener `sprechtext` für die Aussprache</li></ul> | CLAUDE.md, `pipeline/tts.py` |
 | Untertitel | <ul><li>Wort für Wort, höchstens 2 Zeilen</li><li>weiß mit dicker schwarzer Kontur, aktuelles Wort gelb, kein Kasten</li></ul> | CLAUDE.md |
 | Optik | <ul><li>genau ein Stil aus dem Katalog mit 8 Stilen, passend zum Thema, nie zweimal hintereinander</li><li>Markenfarben</li><li>sichere Zonen: oben 150 px, rechts 150 px, unten 400 px</li><li>keine Spielszenen, keine fremden Logos, keine echten Personen</li></ul> | docs/10, `pipeline/README.md` |

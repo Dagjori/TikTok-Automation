@@ -1,105 +1,120 @@
-# Skripte und Stil · Simulierbar
+# Skripte und Regie-Text · Simulierbar
 
-**Stand:** 31.10.2026 · **Status:** Stil-Feedback des Inhabers eingearbeitet (siehe unten). Vorschaubild: [assets/vorschau-gta6.png](assets/vorschau-gta6.png)
+**Stand:** 31.10.2026, spät · **Status:** verbindlich. Neu gefasst nach dem Maßstab (`docs/15-massstab.md`) und den Vorgaben des Inhabers vom 31.10. abends.
 
 **Kennzeichnung:**
-- Zahlen mit **(B)** sind **Beispielwerte**. Vor der Produktion werden sie mit Quelle gerechnet.
-- **(F)** = belegter Fakt mit Quelle.
-
-**Sprechtempo:** Die Stimme Ben spricht ca. 2,6 Wörter pro Sekunde (F, Messung 31.10.), die Konkurrenz 2,6–2,9 (F, Messung an automatischen Untertiteln, 31.10.). Die Längenangaben der Skripte unten sind noch mit 2,4 Wörtern pro Sekunde gerechnet. Die Pipeline stellt sicher, dass jedes Video mindestens 61 s lang ist (CRP-Grenze). Wird es kürzer, laufen die Simulation bzw. die Ergebniskarte länger.
-
-## Stil-Regeln (Stand 31.10., vom Inhaber festgelegt bzw. ohne Einwand)
-
-| Regel | Festlegung |
-|---|---|
-| Kanal | **Simulierbar** |
-| Aufbau | Wie die erfolgreichen Vorbilder: eine klare Rechnung bzw. Simulation pro Video, nur eigene Themen. **Kein „1.000 Lebensläufe“- bzw. „1.000 Durchläufe“-Merkmal.** |
-| Hook | provokante These oder Frage in den ersten 3 s, die das Video dann beweist |
-| Ton | locker, „ich hab's simuliert“, leichter Humor, du-Anrede |
-| Ende | **immer genau dieser eine Satz: „Schreibt euren Simulationswunsch in die Kommentare.“** (kein „Morgen: …“) |
-| Länge | ca. 65–75 s Sprechtext, mindestens 61 s Video |
-| Zahlen | gerundet; Quellen und Annahmen nur intern in `skript.json` |
-| Satzlänge | **kurz: höchstens ca. 10 Wörter je Satz, ein Gedanke pro Satz** (wie die Vorbilder, 7–8 Wörter je Satzstück). Lange Sätze mit Kommas wirken gehetzt. |
-| Abschnitte | Jedes Segment in `skript.json` ist ein Abschnitt. Die Stimme spricht das ganze Skript am Stück: nach jedem Satz ca. 0,3–0,4 s Pause, zwischen Abschnitten 0,6 s (`pipeline/tts.py`). |
-| Hook | steile Behauptung mit konkreter Zahl, z. B. „Dieses Auto verbrennt jeden Tag 27 Euro.“ |
-| Offen | Musik (leiser Hintergrund oder nur Soundeffekte). Die Stimme ist entschieden: Ben (siehe `CLAUDE.md`). |
+- **(F)** = belegter Fakt bzw. gemessen
+- **(S)** = Schätzung
+- **(A)** = Annahme
+- **(B)** = Beispielwert, der vor der Produktion gerechnet wird
 
 ---
 
-## Video #1 · 💶 GELD · „GTA 6: Was kostet es Deutschland, wenn alle krankfeiern?“
-**Länge:** 172 Wörter ≈ 72 s (schnell ≈ 64 s) · **Posten:** 17.11.2026, 19 Uhr (A: zwei Tage vor dem Release, damit TikTok Zeit zum Verteilen hat) · **Trend-Score:** 85
+## 1. Feste Reihenfolge jedes Videos (Pflicht)
 
-| Zeit | Bild | Text im Bild | Stimme |
+| # | Phase | Zeit | Inhalt | Bild |
+|---|---|---|---|---|
+| 1 | **Scroll-Stopper-Hook** | 0–5 s | Duell-Frage in max. 2 kurzen Sätzen („X oder Y? Wer/Was … wirklich …?“) oder Du-Szenario („Du stehst im Stau. Plötzlich …“). Stimme startet unter 0,2 s. | Ganze Szene mit beiden Seiten von Bild 1 an. Titel baut sich Wort für Wort auf. Schon etwas in Bewegung. |
+| 2 | **Regeln** | 3–12 s | 3–6 Mini-Fakten, 2–5 Wörter je Satz | Jede Regel poppt als Chip in Teamfarbe auf |
+| 3 | **Denkfalle und Start** | 9–16 s | „Klar, [naheliegende Antwort]. Oder?“, dann „Los geht's.“ | Sticker „KLAR!“ bzw. „ODER?“, Startsignal, Uhr und Zähler starten |
+| 4 | **Rennen** | 12–45 s | Kommentar wie ein Sportreporter, alle 2–3 s ein Zwischenstand, Führungswechsel, Countdown-Zahlen („fünfzehn, dreizehn, zwölf“), „Jetzt wird's knapp.“ | Zähler laufen, Kamera folgt, alle 1–2 s ein neues Bild-Ereignis |
+| 5 | **Folgen-Aufruf** | ca. 20 s, max. 2 s | „Folg mir, damit du nichts verpasst.“ (Wunsch des Inhabers), direkt vor der ersten Wendung | kleines Element „+ Folgen“, Rennen läuft weiter |
+| 6 | **Erste Wendung** | 18–25 s | „Aber jetzt kommt das Merkwürdige:“ bzw. „Doch …“ | Kamera-Zoom auf den entscheidenden Moment, Vergleichskarte |
+| 7 | **Ergebnis** | 40–54 s | „Endstand:“, exakte Zahl, „[Sieger] gewinnt.“ | Bilanzkarte baut sich zeilenweise auf |
+| 8 | **Warum** | 50–64 s | „Warum?“ und max. 2 Faktoren | 2 Balken bzw. Karten |
+| 9 | **Zweite Überraschung** | 45–66 s | „Und das Verrückte:“, eine Variante dreht das Ergebnis | neue Runde bzw. Vergleich |
+| 10 | **Merksatz** | letzte 5–8 s | ein kurzer, zitierfähiger Satz | große Pointe-Typo |
+| 11 | **Schluss** | letzte 2–3 s | **genau:** „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ | Bild kehrt zum Anfangsbild zurück (**Schleife**) |
+
+- **Länge:** 65–80 s, 170–220 Wörter, mindestens 61 s (CRP).
+- **Kein** Kanalname, **kein** Logo und **keine** Rubrik („GELD“, „ALLTAG“) im Video, weder im Bild noch im Text (Entscheidung des Inhabers 31.10.).
+
+## 2. Textregeln (Spannung im Text)
+
+- **Kurze Sätze:** meist 2–8 Wörter, höchstens ca. 10. Ein Gedanke pro Satz. Die Vorbilder liegen im Median bei 4–8 Wörtern (F, `docs/15`).
+- **Du-Ansprache.** Konkrete Personen bzw. Teams mit Namen oder Buchstaben (Paul gegen Anna, A gegen B).
+- **Immer eine offene Frage im Kopf des Zuschauers:** Jede Phase endet mit einer Spannung, die erst die nächste auflöst („Also ist Rennen doch schlechter? Noch nicht.“).
+- **Zahlen:** rund und hörbar („zwanzig Sekunden“). Im Bild steht die exakte Zahl.
+- **Keine Füllsätze**, keine Quellen, kein „laut einer Studie“. Quellen stehen intern in `skript.json`.
+- **Verboten:** künstliche Cliffhanger („Teil 2 folgt“), Kaufaufrufe, Name bzw. Rubrik des Kanals.
+
+---
+
+## 3. Regie-Text für ElevenLabs (der `sprechtext`)
+
+**Grundsatz** (Inhaber 31.10.): Der Sprechtext ist wie ein Regiebuch für einen Synchronsprecher. Er legt fest, wo die Stimme betont, pausiert, Spannung aufbaut und die Stimmung wechselt.
+
+**Stimme:**
+- Ben (`aTTiK3YzK3dXETpuDE2h`) mit den **gespeicherten Original-Einstellungen**, also genau so, wie er auf ElevenLabs klingt. Die Anfrage schickt deshalb keine `voice_settings`.
+- Das Modell wählt der Inhaber per Hörprobe:
+  - **Eleven v4:** neuestes Modell, versteht Audio-Tags
+  - **Multilingual v2:** bewährt, versteht `<break>`
+
+### 3.1 Werkzeuge im Regie-Text
+
+| Wirkung | Eleven v4 | Multilingual v2 | Quelle |
 |---|---|---|---|
-| 0–5 s | Kleine Stadt von oben, Bürohochhaus, Leute strömen aus dem Büro nach Hause, Fernseher leuchten blau. | **„GTA 6 kommt. Was kostet uns das?“** | „GTA 6 kommt, und halb Deutschland feiert krank. Was kostet uns das wirklich?“ |
-| 5–14 s | Schlagzeilen-Karte „1 Mrd. $ Schaden?“ (USA) | „USA: 1 Mrd. $?“ | „In den USA geistert eine Zahl herum: eine Milliarde Dollar Schaden am Release-Tag. Ich hab's für Deutschland nachgerechnet, mit echten Zahlen.“ |
-| 14–28 s | Schritt 1: Spielfiguren erscheinen, ein Teil geht in Büros | „Käufer am 1. Tag · davon berufstätig“ | „Schritt eins: Wie viele kaufen GTA 6 am ersten Tag? Für Deutschland rechne ich mit rund 1,2 Millionen (B). Etwa 60 Prozent davon sind berufstätig (B).“ |
-| 28–42 s | Schritt 2: Figuren drehen um und gehen nach Hause, Zähler läuft | **„Krankmeldungen: 36.000 (B)“** | „Schritt zwei: Wie viele melden sich krank? In Großbritannien planen es laut Umfrage 2 Prozent, in den USA wollen 10 Prozent gar nicht arbeiten. Ich nehme die Mitte, 5 Prozent: 36.000 Krankmeldungen (B).“ |
-| 42–54 s | Schritt 3: Bürofenster werden dunkel, Euro-Zähler läuft | **„Wirtschaftsleistung weg: 13,5 Mio. € (B)“** | „Schritt drei: Ein Erwerbstätiger erwirtschaftet in Deutschland pro Arbeitstag im Schnitt rund 370 Euro (B). Macht 13,5 Millionen Euro, die an diesem Tag fehlen (B).“ |
-| 54–66 s | Riesiger Geldberg „1 Arbeitstag Deutschland“ neben winzigem Stapel „GTA-Effekt“ | **„< 1 ‰ eines Arbeitstags“** | „Klingt nach viel. Ist es aber nicht: Deutschland erwirtschaftet an einem einzigen Arbeitstag rund 17 Milliarden Euro (B). Der GTA-Effekt liegt unter einem Promille, und vieles wird später nachgearbeitet.“ |
-| 66–76 s | Rote Karte „Fristlose Kündigung“ neben grüner Karte „Urlaub“ | „Krank spielen → Kündigung möglich“ | „Teuer wird's eher für dich: Wer eine Krankheit nur vortäuscht, riskiert die fristlose Kündigung. Der sichere Weg heißt Urlaub.“ |
-| 76–79 s | Logo Simulierbar | „Dein Simulationswunsch? 👇“ | „Schreibt euren Simulationswunsch in die Kommentare.“ |
+| kurze Pause | Satzende, Zeilenumbruch, Gedankenstrich „ – “ | Satzende, Zeilenumbruch, `<break time="0.3s" />` | ElevenLabs Best Practices (F) |
+| längere Pause (selten, max. 0,4 s) | `[short pause]` | `<break time="0.4s" />` | ElevenLabs Best Practices (F); v4/v3 unterstützen **keine** `<break>`-Tags (F) |
+| Zögern, Spannung | Auslassungspunkte „…“ | „…“ | (F) |
+| Betonung eines Worts | GROSSSCHREIBUNG („Jetzt wird's KNAPP.“) | sparsam Großschreibung bzw. Satzzeichen | „Capitalization increases emphasis“ (F) |
+| Gefühl bzw. Haltung | Audio-Tags in eckigen Klammern: `[curious]`, `[excited]`, `[thoughtful]`, `[surprised]`, `[whispers]` | **nicht verwenden** (würde vorgelesen) | ElevenLabs Best Practices (F) |
+| Frage-Melodie | Fragezeichen, kurze Frage allein auf einer Zeile („Oder?“) | gleich | (A) |
+| Tempo | **nicht** künstlich ändern (Inhaber). Tempo entsteht durch kurze Sätze. Der Maßstab liegt bei 2,5–2,9 Wörtern/s. | gleich | `docs/15` |
 
-**Caption** (Format laut CLAUDE.md)
+### 3.2 Regeln für den Regie-Text
 
+1. **Eine Zeile pro Satz**, Leerzeile zwischen Phasen. Lange Pausen gibt es nicht: Der Maßstab liegt bei ca. 0,26 s nach jedem Satz und nie über 0,4 s (F).
+2. **Je Phase höchstens ein Gefühls-Tag** (v4): Hook `[curious]`, Start `[excited]`, Wendung `[surprised]`, Warum `[thoughtful]`. Zu viele Tags klingen gespielt (A).
+3. **Pro Satz höchstens ein großgeschriebenes Wort**, nur auf dem Wort, das die Spannung trägt.
+4. **Zahlen ausgeschrieben**, englische Wörter in Lautschrift („G T A sechs“).
+5. **Countdowns als Satzfetzen mit Kommas:** „Fünfzehn Kilometer, dreizehn, zwölf, zehn.“
+6. **Prüfen:** Nach der Vertonung prüft `pipeline/qc/massstab.py` Tempo, Satzpausen und Satzlängen. Eine Hörprobe der ersten 15 s geht an den Inhaber, solange das Modell neu ist.
+
+### 3.3 Format in `skript.json`
+
+```json
+{
+  "titel": "…",
+  "rubrik": "ALLTAG",                       // nur intern, nie im Video
+  "stil": "2 Isometrisches 3D",
+  "teamfarben": {"Paul": "#FF7A1A", "Anna": "#2F6FED"},
+  "segmente": [
+    {"id": "hook", "phase": "hook",
+     "text": "Spur wechseln oder bleiben? Wer ist im Stau wirklich schneller?",          // Untertitel (Anzeige)
+     "sprechtext": "Spur wechseln – oder bleiben?\n[curious] Wer ist im Stau WIRKLICH schneller?"}  // Regie-Text
+  ],
+  "quellen": ["…"]                          // nur intern
+}
 ```
-Kostet GTA 6 Deutschland wirklich Millionen, weil alle krankfeiern? 🎮💶 Ich hab's durchgerechnet. Was schätzt du? 👇 #gta6 #gta #arbeit #wissen #simulation
-```
-
-**Faktenlage und Prüfliste**
-- Release 19.11.2026 (F laut mehreren Medien, z. B. [arynews](https://arynews.tv/gta-6-release-date-confirmed-for-november-2026-pc-version-delayed)). Vor Produktion mit Rockstar Newswire bestätigen.
-- US-Schätzung 1 Mrd. $ vom Ökonomen José García Montalvo. Ökonomen bezweifeln die Zahl ([Fortune, 22.10.2026](https://fortune.com/2026/10/22/gta-vi-sick-days-billion-economy-costs-productivity/); [GameStar](https://www.gamestar.de/artikel/verursacht-gta-6-echt-eine-milliarde-dollar-wirtschaftsschaden-quatsch,3461847.html)).
-- Umfragen: UK 2 % planen konkret, sich krankzumelden; USA 10 % wollen am Starttag nicht arbeiten (Suchauszüge; Primärquellen prüfen).
-- Bundesarbeitsgericht: Vorgetäuschte Krankheit bzw. angedrohte Krankmeldung kann die fristlose Kündigung rechtfertigen (Aktenzeichen vor Produktion heraussuchen).
-- **Zu rechnen:**
-  - Day-1-Käufer DE: keine offiziellen Zahlen, als Annahme kennzeichnen bzw. aus Konsolenbestand und Umfragen herleiten.
-  - Erwerbstätige und BIP pro Arbeitstag von Destatis.
-- **Darstellung:** keine Spielszenen, kein Rockstar-Logo, nur eigene Low-Poly-Welt (Urheber- und Markenrecht). Der Name „GTA 6“ wird nur redaktionell genannt.
 
 ---
 
-## Video #2 · ⏱️ ALLTAG · „Früh einordnen oder bis zum Ende? Simuliert“
-**Länge:** 167 Wörter ≈ 70 s (schnell ≈ 62 s)
+## 4. Beispiel: „Spurwechsel im Stau“ im neuen Aufbau (Vorlage für den Neubau)
 
-| Zeit | Bild | Text im Bild | Stimme |
-|---|---|---|---|
-| 0–4 s | Autobahn von oben, Schild „Fahrstreifen endet“. Orange Autos fahren rechts bis vorne. | **„Wer macht's richtig?“** | „Die Drängler, die bis ganz vorne fahren, haben recht. Ich hab's simuliert.“ |
-| 4–13 s | Zwei gleiche Baustellen: Team Blau gegen Team Orange | „TEAM FRÜH · TEAM REISSVERSCHLUSS“ | „Zwei gleiche Baustellen. Links ordnen sich alle früh ein, höflich, wie man's gelernt hat. Rechts fahren alle bis zur Engstelle und fädeln dann abwechselnd ein.“ |
-| 13–22 s | Runde 1: wenig Verkehr | „Stau 0 m · 0 m“ | „Runde eins: wenig Verkehr. Kaum Unterschied. Hier ist früh einordnen sogar völlig okay.“ |
-| 22–38 s | Runde 2: Feierabend, Staus wachsen, rote Bremswelle | „1,8 km (B) · 1,0 km (B)“ | „Runde zwei: Feierabend. Links staut sich alles auf einer Spur, 1,8 Kilometer (B). Rechts verteilen sich die Autos auf beide Spuren, nur ein Kilometer (B). Und dann das: Einer will links noch schnell rein, alle bremsen, und die Welle läuft nach hinten.“ |
-| 38–55 s | Runde 3: Rushhour, Balken | **„−44 % Stau (B)“** | „Runde drei: Rushhour. Der Stau beim Reißverschluss ist am Ende 44 Prozent kürzer (B). Die Verkehrsbehörde von Minnesota misst in echt bis zu 40 Prozent. Und in Deutschland ist es sogar Vorschrift: Paragraf 7 der Straßenverkehrsordnung. Einfädeln unmittelbar vor der Engstelle, abwechselnd.“ |
-| 55–68 s | Grüne Regel-Karte | „Viel Verkehr → bis zum Ende · Wenig Verkehr → ruhig früher“ | „Also: Viel Verkehr? Bis zum Ende fahren und abwechselnd rein. Wenig Verkehr? Dann ruhig früher. Drängler sind nicht die, die vorne einfädeln, sondern die, die keinen reinlassen.“ |
-| 68–72 s | Logo Simulierbar | „Dein Simulationswunsch? 👇“ | „Schreibt euren Simulationswunsch in die Kommentare.“ |
+Die Zahlen stammen aus der eigenen Simulation `pipeline/projekte/spurwechsel/sim_ergebnisse.md` (Modellwerte, **S**). Im Duell-Beispiel liegen sie bei 9:36 gegen 9:56. Im Mittel bringt der Wechsel 19,9 s, das sind ca. 2 s je Wechsel. Bei 60 % Wechslern bleiben 10,5 s, bei 10 % sind es 57 s. Man wird 20 % der Zeit überholt und überholt selbst 11 % der Zeit.
 
-Quellen: [MnDOT](https://dot.state.mn.us/zippermerge/) (bis zu 40 % kürzerer Rückstau; bei wenig Verkehr früh einordnen), § 7 Abs. 4 StVO ([ACE](https://www.ace.de/verkehrssicherheit/tipps-sicheres-fahren/reissverschlussverfahren/)).
+| Phase | Untertitel (`text`) | Regie-Text (`sprechtext`, Eleven v4) |
+|---|---|---|
+| Hook | Spur wechseln oder bleiben? Wer ist im Stau wirklich schneller? | `Spur wechseln – oder bleiben?` / `[curious] Wer ist im Stau WIRKLICH schneller?` |
+| Regeln | Fünf Kilometer Stau. Zwei Spuren. Paul wechselt, sobald es nebenan schneller läuft. Anna bleibt einfach drin. | `Fünf Kilometer Stau.` / `Zwei Spuren.` / `Paul wechselt, sobald es nebenan schneller läuft.` / `Anna bleibt einfach drin.` |
+| Denkfalle und Start | Klar, Paul gewinnt. Oder? Los geht's. | `Klar, Paul gewinnt.` / `Oder?` / `[excited] Los geht's!` |
+| Rennen | Paul wechselt sofort. Und steht direkt hinter Anna. Nach anderthalb Minuten: Anna liegt 160 Meter vorn. | `Paul wechselt sofort.` / `Und steht… direkt hinter Anna.` / `Nach anderthalb Minuten:` / `Anna liegt hundertsechzig Meter VORN.` |
+| Folgen-Aufruf | Folg mir, damit du nichts verpasst. | `Folg mir, damit du nichts verpasst.` |
+| Wendung 1 | Denn jetzt kommt das Merkwürdige: Fünf Wechsel später steht Paul wieder hinter ihr. | `[surprised] Denn jetzt kommt das Merkwürdige:` / `Fünf Wechsel später…` / `steht Paul WIEDER hinter ihr.` |
+| Rennen | Erst nach sieben Minuten zieht er vorbei. Jetzt wird's knapp. | `Erst nach sieben Minuten zieht er vorbei.` / `Jetzt wird's knapp.` |
+| Ergebnis | Endstand: Paul 9:36. Anna 9:56. Neun Wechsel für 20 Sekunden. | `Endstand:` / `Paul – neun Minuten sechsunddreißig.` / `Anna – neun Minuten sechsundfünfzig.` / `Neun Wechsel… für ZWANZIG Sekunden.` |
+| Warum | Warum so wenig? Jeder Wechsel bringt im Schnitt nur zwei Sekunden. | `[thoughtful] Warum so wenig?` / `Jeder Wechsel bringt im Schnitt nur zwei Sekunden.` |
+| Zweite Überraschung | Und das Verrückte: Je mehr Leute wechseln, desto weniger bringt es. Wechseln alle, bleiben drei Sekunden. | `Und das Verrückte:` / `Je mehr Leute wechseln, desto WENIGER bringt es.` / `Wechseln alle… bleiben drei Sekunden.` |
+| Merksatz | Die andere Spur wirkt nur schneller. Du wirst fast doppelt so lange überholt, wie du selbst überholst. | `Die andere Spur WIRKT nur schneller.` / `Du wirst fast doppelt so lange überholt, wie du selbst überholst.` |
+| Schluss | Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare. | `Was sollen wir als Nächstes zeigen?` / `Schreib es in die Kommentare.` |
 
----
-
-## Video · 💶 GELD · „1.000 € Weihnachtsgeld: Warum kommt nur die Hälfte an?“ (Trend-Vorschlag, posten 20.–28.11.)
-**Länge:** 165 Wörter ≈ 69 s (schnell ≈ 61 s)
-
-| Zeit | Bild | Text im Bild | Stimme |
-|---|---|---|---|
-| 0–4 s | Geldstapel mit Schleife, Münzen fliegen weg | **„1.000 € brutto → ?“** | „Du kriegst 1.000 Euro Weihnachtsgeld. Ankommen werden ungefähr 480 (B).“ |
-| 4–12 s | Figur mit Gehaltszettel „3.500 € brutto, Steuerklasse 1“ | „Durchgerechnet“ | „Ich hab's durchgerechnet: 3.500 Euro brutto im Monat, Steuerklasse eins. Warum bleibt vom Weihnachtsgeld so viel weniger übrig als vom normalen Gehalt?“ |
-| 12–22 s | Geld fliegt in vier Töpfe | „Sozialabgaben ≈ 21 % (B)“ | „Erst die Sozialabgaben: Rente, Arbeitslosen-, Kranken- und Pflegeversicherung. Rund 21 Prozent, schon sind 210 Euro weg (B).“ |
-| 22–40 s | Steuer-Treppe, das Weihnachtsgeld landet ganz oben | „Grenzsteuersatz statt Durchschnitt“ | „Dann die Lohnsteuer, und hier ist der Trick: Das Weihnachtsgeld kommt oben auf dein Jahresgehalt drauf. Es wird also nicht mit deinem Durchschnittssatz besteuert, sondern mit deinem höchsten, dem Grenzsteuersatz. Bei 3.500 Euro brutto sind das etwa 30 Prozent. Noch mal rund 300 Euro (B).“ |
-| 40–46 s | Kleiner Topf „Kirche“ | „+ Kirchensteuer, wenn Mitglied“ | „Und wer in der Kirche ist, zahlt da noch mal drauf.“ |
-| 46–60 s | Zwei Balken: Gehalt ⅔, Weihnachtsgeld ½ | **„Gehalt: ~⅔ · Weihnachtsgeld: ~½ (B)“** | „Das Ergebnis: Vom normalen Gehalt behältst du etwa zwei Drittel. Vom Weihnachtsgeld nur knapp die Hälfte. Wer weniger verdient, behält mehr, wer mehr verdient, weniger.“ |
-| 60–70 s | Grüne Regel-Karte | „Sonderzahlung? Mit ½ rechnen, nicht mit ⅔.“ | „Die Faustregel: Rechne bei Sonderzahlungen mit etwa der Hälfte, nicht mit zwei Dritteln. Und das gilt genauso für jede Gehaltserhöhung. Darum fühlt sich mehr Geld oft nach weniger an.“ |
-| 70–73 s | Logo Simulierbar | „Dein Simulationswunsch? 👇“ | „Schreibt euren Simulationswunsch in die Kommentare.“ |
-
-**Vor der Produktion prüfen:** Beitragssätze 2026 (inkl. durchschnittlichem Zusatzbeitrag), Lohnsteuer auf sonstige Bezüge laut BMF-Programmablaufplan 2026, Soli-Freigrenze, Kirchensteuer.
+Umfang ca. 150 Wörter. Für 65–80 s fehlen noch ca. 20–40 Wörter. Sie kommen in der Produktion aus einem zweiten Zwischenstand im Rennen und einem Satz zum Drängler-Fall dazu (50 s mit 23 Wechseln, S). Vor der Produktion prüfen:
+- „Wechseln alle, bleiben drei Sekunden“ beruht auf der Variante „95 % Spurwechsler“ mit 3,4 s (S).
+- „Fast doppelt so lange“ beruht auf 20,3 % gegen 10,8 % im Referenzlauf (S). Beide stehen in `sim_ergebnisse.md`.
 
 ---
 
-## Ablauf · 💶 GELD · Mindestlohn 14,60 € (Trend-Vorschlag, posten 28.12.–05.01., ca. 70 s)
+## 5. Ältere Skripte
 
-| Zeit | Inhalt |
-|---|---|
-| 0–4 s | Hook: „Ab 1. Januar 14,60 € Mindestlohn. So viel mehr kommt wirklich bei dir an.“ |
-| 4–12 s | Drei typische Fälle: Vollzeit, Teilzeit, Minijob |
-| 12–30 s | Vollzeit: +0,70 € pro Stunde ≈ +121 € brutto im Monat (F: 14,60 − 13,90 = 0,70 €; 40 h × 4,33 Wochen). Was bleibt netto (B)? |
-| 30–48 s | Minijob: Die Grenze steigt von 603 auf 633 € (F). Mehr Geld, aber gleich viele Stunden. Teilzeit: Wo die Gleitzone greift (B) |
-| 48–64 s | Ergebnis plus Faustregel |
-| 64–68 s | „Schreibt euren Simulationswunsch in die Kommentare.“ |
+Die Skripte vom 31.10. vormittags (GTA 6, Reißverschluss, Weihnachtsgeld, Mindestlohn) folgen dem alten Aufbau mit Marke, „Schreibt euren Simulationswunsch …“ und ohne Denkfalle bzw. Folgen-Aufruf. Sie gelten nicht mehr als Vorlage. Neue Skripte entstehen nach Abschnitt 1–3. Die Rechnungen und Quellen in den Projektordnern bleiben gültig.

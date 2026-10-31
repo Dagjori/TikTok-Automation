@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PreCompact": [
+      {
+        "matcher": "manual|auto",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/tools/sitzung_sichern.py\" 2>/dev/null || true",
+            "timeout": 60,
+            "statusMessage": "Sichere den Gesprächsverlauf vor dem Komprimieren …"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":\"Das Gespräch wurde gerade komprimiert. Lies jetzt zuerst: STATUS.md, ENTSCHEIDUNGEN.md, docs/15-massstab.md und .sitzung/letzte_nachrichten.md (die letzten 40 Nachrichten wörtlich). Der vollständige Verlauf aller Nachrichten des Inhabers und deiner Antworten steht in .sitzung/verlauf.md (bei Unklarheiten dort per Grep nachsehen), der Repo-Stand vor dem Komprimieren in .sitzung/stand.md. Arbeite erst danach weiter.\"}}'",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,7 +1,13 @@
 """Erzeugt die Sprecherstimme eines Projekts über ElevenLabs, inklusive Zeitstempeln.
 
-Aufruf:  python3 pipeline/tts.py <projektordner> [--voice NAME_ODER_ID] [--proben] [--segmente]
+Aufruf:  python3 pipeline/tts.py <projektordner> [--voice NAME_ODER_ID] [--modell v4|v2] [--eigene-einstellungen] [--proben] [--segmente]
          Standard: ganzes Skript in einer Anfrage (flüssig). --segmente = altes Verfahren je Segment.
+Stimme:  Seit 31.10. (Entscheidung des Inhabers) klingt Ben wie auf der ElevenLabs-Webseite: Die Anfrage schickt KEINE
+         voice_settings, also nutzt ElevenLabs die gespeicherten Einstellungen der Stimme („Voice settings overriding
+         stored settings for the given voice“, API-Doku). --eigene-einstellungen = alte feste Werte (nur zum Vergleich).
+Regie:   Der „sprechtext“ ist ein Regie-Text (docs/08-beispielskripte.md): Satzzeichen, Zeilenumbrüche, Großschreibung
+         für Betonung; bei Eleven v4 zusätzlich Audio-Tags wie [curious] oder [short pause]; bei Multilingual v2
+         <break time="0.3s" />. Tags und Break-Markierungen werden nicht gesprochen und nicht als Untertitel-Wörter gezählt.
 Liest:   <projekt>/skript.json  (Segmente mit Text)
 Schreibt:<projekt>/audio/stimme.mp3, <projekt>/audio/timing.json (Start und Ende je Segment und je Wort)
 Key:     Cloud: Netzwerk-Secret (Header xi-api-key für api.elevenlabs.io); lokal: Umgebungsvariable ELEVENLABS_API_KEY. Nie ins Repo.
@@ -16,10 +22,12 @@ import urllib.request
 from pathlib import Path
 
 API = "https://api.elevenlabs.io/v1"
-MODELL = "eleven_multilingual_v2"
+MODELLE = {"v4": "eleven_v4", "v2": "eleven_multilingual_v2"}
+MODELL = MODELLE["v2"]  # wird in main() per --modell gesetzt; Wahl des Inhabers per Hörprobe steht noch aus (31.10.)
+GESPEICHERTE_EINSTELLUNGEN = True  # True = keine voice_settings senden → Original-Klang wie auf ElevenLabs
 STANDARD_STIMME = "aTTiK3YzK3dXETpuDE2h"  # „Ben“, muttersprachlich Deutsch (Wahl des Inhabers 31.10. per Hörprobe)
 EINSTELLUNGEN = {"stability": 0.5, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": True}  # Empfehlung von ElevenLabs: Startwert 50/75, „style“ immer 0 (sonst weniger stabil)
-PAUSE_ABSCHNITT = 0.6  # Pause zwischen zwei Abschnitten (Sätze innerhalb: ca. 0,3 s, wie bei den Vorbildern)
+PAUSE_ABSCHNITT = 0.35  # Pause zwischen zwei Abschnitten (Maßstab docs/15: Satzpausen ca. 0,26 s, nie über 0,4 s)
 PAUSE = 0.22          # Pause zwischen Segmenten (Vorbilder: Median 0,16–0,38 s)
 PAUSE_LANG = 0.3      # nach dem Hook und vor dem Schluss-Satz
 ZIEL_WPS = 2.95       # Wörter pro Sekunde beim Sprechen (Top-Videos: 2,91–3,02, gemessen 31.10.2026)
@@ -67,7 +75,9 @@ CACHE = None  # wird in main() auf <projekt>/audio/cache gesetzt
 
 
 def sprechen(text, voice_id, davor="", danach=""):
-    daten = {"text": text, "model_id": MODELL, "voice_settings": EINSTELLUNGEN}
+    daten = {"text": text, "model_id": MODELL}
+    if not GESPEICHERTE_EINSTELLUNGEN:
+        daten["voice_settings"] = EINSTELLUNGEN
     if davor:
         daten["previous_text"] = davor
     if danach:
@@ -107,9 +117,21 @@ def mp3_schreiben(samples, ziel):
                     "-codec:a", "libmp3lame", "-b:a", "160k", str(ziel)], input=samples.tobytes(), check=True)
 
 
+def ohne_regie(zeichen):
+    """Ersetzt Audio-Tags [..] und Markierungen <..> durch Leerzeichen, damit sie nicht als Wörter zählen."""
+    raus, tiefe = [], 0
+    for z in zeichen:
+        if z in "[<":
+            tiefe += 1
+        raus.append(" " if tiefe else z)
+        if z in "]>" and tiefe:
+            tiefe -= 1
+    return raus
+
+
 def woerter(zeichen, starts, enden, versatz=0):
     liste, wort, beginn = [], "", None
-    for z, s, e in zip(zeichen, starts, enden):
+    for z, s, e in zip(ohne_regie(zeichen), starts, enden):
         if z.isspace():
             if wort:
                 liste.append({"wort": wort, "start": round(beginn, 3), "ende": round(vorher, 3)})
@@ -162,7 +184,14 @@ def am_stueck(skript, texte, voice_id, name, ziel):
     # Wie ein Sprecher-Skript: jeder Satz auf eine eigene Zeile, Leerzeile vor jedem neuen Abschnitt.
     # Die Stimme setzt dadurch nach jedem Satz eine kurze und vor jedem Abschnitt eine längere Pause.
     texte = [re.sub(r"([.!?:])\s+", r"\1\n", t.strip()) for t in texte]
-    trenner = f'\n<break time="{PAUSE_ABSCHNITT}s" />\n'  # offizielle Pausen-Markierung von ElevenLabs (eleven_multilingual_v2)
+    if MODELL == MODELLE["v2"]:
+        if any(re.search(r"\[[^\]]+\]", t) for t in texte):
+            sys.exit("Audio-Tags wie [curious] funktionieren nur mit Eleven v4 (--modell v4); v2 würde sie vorlesen.")
+        trenner = f'\n<break time="{PAUSE_ABSCHNITT}s" />\n'  # offizielle Pausen-Markierung (nur v2/Flash)
+    else:
+        if any("<break" in t for t in texte):
+            sys.exit("Eleven v4 unterstützt keine <break>-Markierungen; Pausen über Satzzeichen bzw. [short pause].")
+        trenner = "\n\n"  # v4: Leerzeile zwischen Abschnitten, Pausen kommen aus Satzzeichen und Tags
     gesamt = trenner.join(texte)
     antwort = sprechen(gesamt, voice_id)
     al = antwort["alignment"]
@@ -170,7 +199,7 @@ def am_stueck(skript, texte, voice_id, name, ziel):
     if "".join(zeichen) != gesamt:
         sys.exit("Zeitstempel passen nicht zum Text (Zeichen weichen ab). Mit --segmente erzeugen.")
     samples = pcm(base64.b64decode(antwort["audio_base64"]))
-    sichtbar = [k for k, z in enumerate(zeichen) if not z.isspace()]
+    sichtbar = [k for k, z in enumerate(ohne_regie(zeichen)) if not z.isspace()]
     von = max(0.0, starts[sichtbar[0]] - 0.05)               # Atem bzw. Ansatz vor dem ersten Wort behalten
     bis = min(len(samples) / RATE, enden[sichtbar[-1]] + 0.45)  # Ausklang des letzten Worts behalten
     stueck = samples[int(von * RATE):int(bis * RATE)]
@@ -186,7 +215,9 @@ def am_stueck(skript, texte, voice_id, name, ziel):
         pos = b + len(trenner)
     mp3_schreiben(stueck, ziel / "stimme.mp3")
     dauer = round(len(stueck) / RATE, 3)
-    timing = {"stimme": name, "voice_id": voice_id, "modell": MODELL, "verfahren": "am_stueck", "dauer": dauer, "segmente": segmente}
+    timing = {"stimme": name, "voice_id": voice_id, "modell": MODELL, "verfahren": "am_stueck",
+              "einstellungen": "gespeichert (Original)" if GESPEICHERTE_EINSTELLUNGEN else EINSTELLUNGEN,
+              "dauer": dauer, "segmente": segmente}
     (ziel / "timing.json").write_text(json.dumps(timing, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{name}: {dauer} s, {len(gesamt)} Zeichen, eine Anfrage")
 
@@ -199,8 +230,12 @@ def main():
     skript = json.loads((projekt / "skript.json").read_text(encoding="utf-8"))
     ziel = projekt / "audio"
     ziel.mkdir(parents=True, exist_ok=True)
-    global CACHE
+    global CACHE, MODELL, GESPEICHERTE_EINSTELLUNGEN
     CACHE = ziel / "cache"
+    if "--modell" in args:
+        MODELL = MODELLE.get(args[args.index("--modell") + 1], args[args.index("--modell") + 1])
+    if "--eigene-einstellungen" in args:
+        GESPEICHERTE_EINSTELLUNGEN = False
 
     if "--proben" in args:  # kurze Hörproben mehrerer Stimmen
         for kandidat in STIMMEN:

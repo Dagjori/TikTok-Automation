@@ -33,6 +33,7 @@ Dieser Abschnitt ist die Arbeitsanweisung für die geplante Aufgabe „Trend-Rad
      - eine klare Modellrechnung bzw. Simulation pro Video, mit konkreten Fällen statt Massen-Simulation
      - 💶 GELD als Duell (z. B. „Ticket gegen Einzelfahrten gegen Auto“), ⏱️ ALLTAG als Strategie-Vergleich (z. B. „früh einordnen gegen Reißverschluss“)
      - Stil wie `docs/08-beispielskripte.md`
+     - **Maßstab `docs/15-massstab.md` (verbindlich seit 31.10. spät):** Vorschlag immer mit Hook-Frage („X oder Y? Wer/Was … wirklich …?“), Denkfalle („Klar, …. Oder?“), Rennen gegen die Uhr mit sichtbaren Zählern und zwei Wendungen. Themen aus `docs/15` §9 sind gesperrt. Rubrik nur intern, nie im Video.
      - **Kein „1.000 Lebensläufe“- bzw. „1.000 simulierte …“-Merkmal** (Entscheidung des Inhabers 31.10., siehe `ENTSCHEIDUNGEN.md`). Formulierungen wie „1.000 simulierte Pendler“ nicht verwenden.
    - Bei passenden Themen zusätzlich als Idee in `data/ideen/geld-duell.csv` bzw. `testlauf.csv` mit `typ` = `news` bzw. `saisonal`.
 5. **Regel-Check, jeden Montag:**

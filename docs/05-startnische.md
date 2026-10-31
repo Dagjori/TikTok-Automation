@@ -51,7 +51,7 @@ Ich simuliere deinen Alltag mit echten Zahlen 💶⏱️ Dein Wunsch? Kommentar 
 | 3–10 s | Setup | Team Mieten gegen Team Kaufen, 3 Annahmen einblenden | Team Früh-Einordner gegen Team Reißverschluss, Regeln zeigen |
 | 10–60 s | **Hold** | Kontostände wachsen Jahr für Jahr live, Ereigniskarten (Zinsen, Reparatur, Wertverlust) | 3 Durchläufe, ein Störfaktor pro Runde, Zähler live |
 | 60–75 s | Ergebnis | Sieger plus Differenz in € plus **Faustregel** | Sieger plus Unterschied in Minuten bzw. % plus **Regel für den Alltag** |
-| letzte 3 s | **Act** | „Schreibt euren Simulationswunsch in die Kommentare.“ | „Schreibt euren Simulationswunsch in die Kommentare.“ |
+| letzte 3 s | **Act** | „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ | „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ |
 
 **Regeln**
 - Jedes Video ist in sich abgeschlossen, keine Cliffhanger-Teile.

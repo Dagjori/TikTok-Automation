@@ -23,3 +23,6 @@ frames/
 
 # Zwischenspeicher der Sprach-API (wird lokal neu erzeugt)
 pipeline/projekte/*/audio/cache/
+
+# Sitzungssicherung vor /compact (Gesprächsverlauf, bleibt nur im Container)
+.sitzung/
