@@ -36,7 +36,7 @@ export function untertitel(eltern, { woerter, aktuell, sichtbarBis = aktuell, to
   const mess = document.createElement("canvas").getContext("2d");
   const breiteVon = (ws, px) => {
     mess.font = `900 ${px}px "SB Display", "Inter Display", Inter, sans-serif`;
-    return ws.reduce((s, w) => s + mess.measureText(w).width, 0) + (ws.length) * 0.2 * px + kontur;
+    return ws.reduce((s, w) => s + mess.measureText(w).width, 0) + ws.length * 0.42 * px + kontur;
   };
   let px = groesse;
   let teilung = woerter.length;

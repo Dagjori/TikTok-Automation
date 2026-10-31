@@ -83,14 +83,16 @@ async function main() {
     const fehler = await page.evaluate(() => window.__fehler);
     if (fehler) throw new Error(`Stil ${s.nr}: ${fehler}`);
     const t1 = Date.now();
-    // Zeit je Videobild schätzen: ein weiteres Bild zeichnen und fotografieren
-    await page.evaluate(() => window.renderAt(0.5));
-    const t2 = Date.now();
     const datei = path.join(ausgabe, `stil_${s.nr}_${s.name}.png`);
     await page.screenshot({ path: datei, type: "png", animations: "disabled", caret: "hide" });
+    // Zeit je Videobild schätzen: ein zweites Bild zeichnen und als JPG fotografieren (wie render.js)
+    const t1b = Date.now();
+    await page.evaluate(() => window.renderAt(0.5));
+    const t2 = Date.now();
+    await page.screenshot({ type: "jpeg", quality: 95, animations: "disabled", caret: "hide" });
     const t3 = Date.now();
-    messung.push({ ...s, laden_s: (t1 - t0) / 1000, bild_s: (t3 - t1) / 1000, zeichnen_ms: t2 - t1, foto_ms: t3 - t2 });
-    console.log(`Stil ${s.nr} ${s.titel}: Laden ${((t1 - t0) / 1000).toFixed(1)} s · je Bild ${((t3 - t1) / 1000).toFixed(2)} s (Zeichnen ${t2 - t1} ms, Foto ${t3 - t2} ms) → ${path.relative(REPO, datei)}`);
+    messung.push({ ...s, laden_s: (t1 - t0) / 1000, bild_s: (t3 - t1b) / 1000, zeichnen_ms: t2 - t1b, foto_ms: t3 - t2 });
+    console.log(`Stil ${s.nr} ${s.titel}: Laden ${((t1 - t0) / 1000).toFixed(1)} s · je Videobild ${((t3 - t1b) / 1000).toFixed(2)} s (Zeichnen ${t2 - t1b} ms, Foto ${t3 - t2} ms) → ${path.relative(REPO, datei)}`);
   }
   fs.writeFileSync(path.join(REPO, "pipeline", "stile", "messung.json"), JSON.stringify({ stand: new Date().toISOString(), gpu, messung }, null, 1));
 

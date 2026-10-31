@@ -41,7 +41,7 @@ body { font-family: var(--text); -webkit-font-smoothing: antialiased; text-rende
    baut sich Wort für Wort auf · gerade gesprochenes Wort gelb · max. 2 Zeilen · y ≈ 1290 px */
 .ut { position: absolute; left: 54px; width: 876px; top: 1290px; display: flex; flex-direction: column; align-items: center; z-index: 50; pointer-events: none; }
 .ut .zeile { display: block; white-space: nowrap; font-family: var(--display); font-weight: 900; font-size: var(--ut-groesse, 84px); line-height: 1.12; letter-spacing: -0.01em; }
-.ut .w { position: relative; z-index: 0; display: inline-block; margin: 0 0.1em; color: #fff; }
+.ut .w { position: relative; z-index: 0; display: inline-block; margin: 0 0.21em; color: #fff; }
 /* Kontur und Schatten liegen auf einer Kopie hinter dem Wort: die Kontur wächst so nur nach außen */
 .ut .w::before { content: attr(data-t); position: absolute; left: 0; top: 0; z-index: -1; color: #000; -webkit-text-stroke: var(--ut-kontur, 18px) #000; text-shadow: 0 10px 26px rgba(0, 0, 0, 0.55), 0 3px 6px rgba(0, 0, 0, 0.45); }
 .ut .w.jetzt { color: var(--gelb); transform: scale(1.06); }

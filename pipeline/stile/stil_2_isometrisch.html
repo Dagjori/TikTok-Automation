@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Stil 2 · Isometrisches 3D</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<script type="importmap">
+{ "imports": {
+  "three": "../node_modules/three/build/three.module.js",
+  "three/addons/": "../node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  body { background: #dfe2fb; }
+  /* Klötzchen-Optik: harte, versetzte Schatten wie die Seitenflächen der Kachel */
+  .marke { position: absolute; top: 150px; left: 54px; display: flex; gap: 14px; }
+  .block { height: 64px; display: flex; align-items: center; gap: 12px; padding: 0 24px; border-radius: 14px; font-family: var(--display); font-weight: 900; font-size: 28px; letter-spacing: 0.08em; box-shadow: 0 7px 0 var(--k); }
+  .logo { background: #fff; color: var(--tinte); padding-left: 10px; --k: #b9bee6; }
+  .rubrik { background: var(--gelb); color: var(--tinte); --k: #d9a90f; letter-spacing: 0.05em; }
+  .titel { position: absolute; left: 54px; top: 262px; width: 876px; color: #1c1d3a; }
+  .titel .klein { font-family: var(--display); font-weight: 800; font-size: 30px; letter-spacing: 0.06em; text-transform: uppercase; color: #5b5fa8; }
+  .titel .gross { font-family: var(--display); font-weight: 900; font-size: 84px; line-height: 0.98; letter-spacing: -0.03em; margin-top: 12px; }
+  .tag { position: absolute; transform: translate(-50%, -100%); padding: 16px 24px 18px; border-radius: 16px; background: #fff; color: var(--tinte); box-shadow: 0 9px 0 var(--k); white-space: nowrap; }
+  .tag .wer { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 900; font-size: 24px; letter-spacing: 0.08em; color: var(--f); }
+  .tag .wer i { width: 18px; height: 18px; border-radius: 4px; background: var(--f); transform: rotate(45deg); }
+  .tag .betrag { font-family: var(--display); font-weight: 900; font-size: 76px; line-height: 1; letter-spacing: -0.03em; margin-top: 6px; }
+  .tag .einheit { font-family: var(--text); font-weight: 700; font-size: 22px; color: #6b7090; margin-top: 4px; }
+  .tag.a { --f: var(--blau); --k: #9fb6ef; }
+  .tag.b { --f: #e9650b; --k: #f2b48a; }
+  .stiel { position: absolute; width: 4px; background: #1c1d3a; border-radius: 2px; transform: translateX(-50%); }
+  .fuss { position: absolute; width: 18px; height: 18px; border-radius: 50%; background: #fff; border: 4px solid #1c1d3a; transform: translate(-50%, -50%); }
+  .vs { position: absolute; width: 104px; height: 104px; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; }
+  .vs::before { content: ""; position: absolute; inset: 10px; background: var(--gelb); border-radius: 14px; transform: rotate(45deg); box-shadow: 6px 6px 0 #d9a90f; }
+  .vs span { position: relative; font-family: var(--display); font-weight: 900; font-size: 36px; color: var(--tinte); }
+  .hinweis { position: absolute; right: 150px; top: 1218px; font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: 0.06em; text-transform: uppercase; color: #5b5fa8; }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./stil_2_isometrisch.js"></script>
+</body>
+</html>

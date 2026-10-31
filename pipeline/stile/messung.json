@@ -1,0 +1,15 @@
+{
+ "stand": "2026-10-31T11:47:09.894Z",
+ "gpu": false,
+ "messung": [
+  {
+   "nr": 1,
+   "name": "lowpoly",
+   "titel": "Low-Poly-Miniatur (aktuell)",
+   "laden_s": 12.369,
+   "bild_s": 5.628,
+   "zeichnen_ms": 15,
+   "foto_ms": 5613
+  }
+ ]
+}
