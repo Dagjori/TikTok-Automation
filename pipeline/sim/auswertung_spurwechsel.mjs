@@ -357,7 +357,7 @@ for (let k = 1; k <= 12; k++) {
 }
 console.log("  gewählt:", JSON.stringify(wBest));
 // Aufzeichnung: Anna = gewähltes Fahrzeug; „Paul“ = ein beliebiges anderes Fahrzeug direkt daneben ist nicht nötig → p = a
-const wahr = aufzeichnen({ seed: wBest.seed, parameter: { anteilWechsler: 0 }, p: wBest.id, a: wBest.id, vorlaufS: 0, nachlaufS: 0, randM: 260, vonS: wBest.t - 8, bisS: wBest.t + 9 + 5 + 10 });
+const wahr = aufzeichnen({ seed: wBest.seed, parameter: { anteilWechsler: 0 }, p: wBest.id, a: wBest.id, vorlaufS: 0, nachlaufS: 0, randM: 260, vonS: wBest.t - 8, bisS: wBest.t + 9 + 5 + 45 });
 wahr.daten.meta.beispiel = { erklaerung: "Fenster ab t (s nach Start): 9 s wird Anna überholt, danach 5 s überholt sie selbst.", t: wBest.t, sekundenUeberholtWerden: wBest.sekW, autosUeberholtWerden: wBest.autosW, sekundenUeberholen: wBest.sekU, autosUeberholen: wBest.autosU };
 writeFileSync(ZIEL + "trajektorien_wahrnehmung.json", JSON.stringify(wahr.daten));
 console.log(`  trajektorien_wahrnehmung.json: ${wahr.daten.fahrzeuge.length} Bahnen`);

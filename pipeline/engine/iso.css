@@ -1,0 +1,83 @@
+/* Stil 2 „Isometrisches 3D“: HUD-Bausteine im Look der Preisschilder (weiße Blöcke, harter farbiger Schatten).
+   Ergänzt hud.css (Schriften, Karaoke) und wird zusätzlich eingebunden. Sichere Zonen: oben 150, rechts 150, unten 400 px. */
+
+body.iso { background: #dfe2fb; }
+
+/* Markenleiste als Klötzchen (wie im Stil-Muster) */
+.iso .marke .logo { background: #fff; color: #1c1d3a; height: 64px; border-radius: 14px; padding: 0 24px 0 10px; box-shadow: 0 7px 0 #b9bee6; font-size: 28px; letter-spacing: 0.08em; }
+.iso .marke .rubrik { height: 64px; border-radius: 14px; box-shadow: 0 7px 0 #d9a90f; font-size: 28px; }
+
+/* Titel im Hook */
+.iso-titel { position: absolute; left: 54px; width: 876px; color: #1c1d3a; will-change: transform, opacity; }
+.iso-titel .klein { font-family: var(--display); font-weight: 800; font-size: 34px; letter-spacing: 0.06em; text-transform: uppercase; color: #5b5fa8; }
+.iso-titel .gross { font-family: var(--display); font-weight: 900; font-size: 132px; line-height: 0.95; letter-spacing: -0.035em; margin-top: 10px; }
+.iso-titel .gross .zahl { color: #ff7a1a; }
+.iso-titel .gross.mittel { font-size: 86px; line-height: 1.0; letter-spacing: -0.03em; }
+.iso-titel .unter { font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1.1; letter-spacing: -0.01em; color: #1c1d3a; margin-top: 14px; }
+
+/* Block-Chip */
+.iso-chip { position: absolute; height: 72px; display: flex; align-items: center; gap: 12px; padding: 0 26px; border-radius: 16px; background: var(--f); color: var(--s); font-family: var(--display); font-weight: 900; font-size: 34px; letter-spacing: 0.01em; box-shadow: 0 8px 0 var(--k); white-space: nowrap; will-change: transform, opacity; }
+.iso-chip .raute { width: 18px; height: 18px; border-radius: 4px; background: var(--r, #ff7a1a); transform: rotate(45deg); flex: none; }
+.iso-chip small { font-family: var(--text); font-weight: 800; font-size: 22px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; }
+.iso-chip.gross { height: 96px; font-size: 52px; padding: 0 34px; border-radius: 20px; box-shadow: 0 10px 0 var(--k); }
+
+/* Anzeigetafel (zwei Personen) */
+.iso-tafel { position: absolute; display: flex; align-items: stretch; gap: 0; will-change: transform, opacity; transform-origin: 50% 0; }
+.iso-karte { position: relative; flex: 1 1 0; min-width: 0; background: #fff; border-radius: 20px; padding: 18px 22px 18px; box-shadow: 0 10px 0 var(--k); color: #1c1d3a; will-change: transform; }
+.iso-karte .name { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 900; font-size: 28px; letter-spacing: 0.08em; color: var(--f); }
+.iso-karte .name i { width: 18px; height: 18px; border-radius: 4px; background: var(--f); transform: rotate(45deg); flex: none; }
+.iso-karte .rolle { font-family: var(--text); font-weight: 800; font-size: 21px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7090; margin-top: 2px; }
+.iso-karte .wert { font-family: var(--display); font-weight: 900; font-size: 70px; line-height: 1.02; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; margin-top: 6px; transform-origin: left center; }
+.iso-karte .wert small { font-size: 0.5em; font-weight: 800; letter-spacing: 0; margin-left: 0.1em; }
+.iso-karte .balken { height: 14px; border-radius: 7px; background: #e8eaf6; margin-top: 10px; overflow: hidden; }
+.iso-karte .balken i { display: block; height: 100%; border-radius: 7px; background: var(--f); transform-origin: left center; transform: scaleX(0); }
+.iso-karte .zusatz { font-family: var(--display); font-weight: 800; font-size: 25px; color: #6b7090; margin-top: 10px; min-height: 30px; white-space: nowrap; }
+.iso-karte .zusatz b { color: var(--f); font-weight: 900; font-size: 30px; font-variant-numeric: tabular-nums; }
+.iso-karte.ziel .wert { color: var(--f); }
+.iso-uhr { position: relative; flex: none; width: 120px; display: flex; align-items: center; justify-content: center; z-index: 2; margin: 0 -14px; }
+.iso-uhr .raute { position: absolute; width: 104px; height: 104px; border-radius: 16px; background: #ffd23f; transform: rotate(45deg); box-shadow: 6px 6px 0 #d9a90f; }
+.iso-uhr span { position: relative; font-family: var(--display); font-weight: 900; font-size: 31px; color: #1c1d3a; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+
+/* 3D-Anker im Iso-Stil (hud.js Anker mit Klasse „iso“) */
+.anker.iso .schild { border-radius: 16px; padding: 12px 22px 14px; font-size: 40px; box-shadow: 0 9px 0 var(--k, #b9bee6); color: #1c1d3a; }
+.anker.iso .schild small { display: flex; align-items: center; gap: 9px; font-family: var(--display); font-weight: 900; font-size: 23px; letter-spacing: 0.08em; color: var(--f, #5b5fa8); margin-bottom: 0; }
+.anker.iso .schild small i { width: 15px; height: 15px; border-radius: 3px; background: var(--f, #5b5fa8); transform: rotate(45deg); flex: none; }
+.anker.iso .linie { width: 4px; left: -2px; background: #1c1d3a; box-shadow: none; }
+.anker.iso .fuss { width: 18px; height: 18px; left: -9px; top: -9px; background: #fff; border: 4px solid #1c1d3a; box-shadow: none; }
+.anker.iso.paul { --f: #e9650b; --k: #f2b48a; }
+.anker.iso.anna { --f: #2f6fed; --k: #9fb6ef; }
+.anker.iso.gruen { --f: #19b36b; --k: #9fdcbf; }
+.anker.iso.rot { --f: #f0443a; --k: #f6a8a2; }
+
+/* Große Karte (Ergebnis, Regel) */
+.iso-blatt { position: absolute; background: #fff; border-radius: 26px; padding: 30px 36px 34px; box-shadow: 0 12px 0 var(--k, #b9bee6); color: #1c1d3a; will-change: transform, opacity; }
+.iso-blatt .kopf { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 900; font-size: 30px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--f, #5b5fa8); }
+.iso-blatt .kopf i { width: 20px; height: 20px; border-radius: 4px; background: var(--f, #5b5fa8); transform: rotate(45deg); flex: none; }
+.iso-blatt .gross { font-family: var(--display); font-weight: 900; font-size: 104px; line-height: 1; letter-spacing: -0.035em; font-variant-numeric: tabular-nums; margin-top: 10px; white-space: nowrap; }
+.iso-blatt .gross small { font-size: 0.42em; font-weight: 800; letter-spacing: -0.01em; margin-left: 0.12em; color: #6b7090; }
+.iso-blatt .text { font-family: var(--display); font-weight: 800; font-size: 34px; line-height: 1.15; color: #4a4f74; margin-top: 8px; }
+.iso-blatt .zeile { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 18px; padding: 16px 20px; border-radius: 16px; background: #f1f2fb; will-change: transform, opacity; }
+.iso-blatt .zeile .links { font-family: var(--display); font-weight: 800; font-size: 32px; line-height: 1.1; color: #4a4f74; }
+.iso-blatt .zeile .links small { display: block; font-family: var(--text); font-weight: 800; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8fb0; margin-bottom: 2px; }
+.iso-blatt .zeile .rechts { font-family: var(--display); font-weight: 900; font-size: 56px; letter-spacing: -0.03em; color: var(--f2, #1c1d3a); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.iso-blatt .balkenzeile { margin-top: 22px; }
+.iso-blatt .balkenzeile .beschr { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--display); font-weight: 800; font-size: 32px; color: #4a4f74; }
+.iso-blatt .balkenzeile .beschr b { font-weight: 900; font-size: 64px; letter-spacing: -0.03em; color: var(--f2); font-variant-numeric: tabular-nums; }
+.iso-blatt .balkenzeile .spur { height: 30px; border-radius: 10px; background: #e8eaf6; margin-top: 8px; overflow: hidden; }
+.iso-blatt .balkenzeile .spur i { display: block; height: 100%; border-radius: 10px; background: var(--f2); transform-origin: left center; transform: scaleX(0); }
+.iso-blatt .fussnote { display: flex; align-items: center; gap: 14px; margin-top: 22px; font-family: var(--display); font-weight: 800; font-size: 32px; color: #4a4f74; }
+.iso-blatt .fussnote b { font-weight: 900; color: #1c1d3a; }
+
+/* Zähler-Plakette (Überholen) */
+.iso-zaehler { position: absolute; display: flex; align-items: center; gap: 16px; padding: 14px 24px 14px 18px; border-radius: 18px; background: #fff; box-shadow: 0 9px 0 var(--k); color: #1c1d3a; will-change: transform, opacity; white-space: nowrap; }
+.iso-zaehler .symbol { width: 60px; height: 60px; border-radius: 14px; background: var(--f); display: flex; align-items: center; justify-content: center; flex: none; }
+.iso-zaehler .txt small { display: block; font-family: var(--text); font-weight: 800; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7090; }
+.iso-zaehler .txt span { font-family: var(--display); font-weight: 900; font-size: 44px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.iso-zaehler .txt span em { font-style: normal; color: var(--f); }
+.iso-zaehler .txt span i { font-style: normal; }
+
+/* Schlusskarte auf hellem Grund */
+.iso .schluss .logoGross { color: #1c1d3a; }
+.iso .schluss .aufruf { border-radius: 26px; box-shadow: 0 12px 0 #b9bee6; }
+.iso .schluss .aufruf .blase { border-radius: 26px; box-shadow: 0 8px 0 #1f4fb8; }
+.iso-schleier { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(230, 232, 253, 0.92), rgba(195, 200, 244, 0.94)); will-change: opacity; }
