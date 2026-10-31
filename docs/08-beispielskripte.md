@@ -19,6 +19,9 @@
 | Ende | **immer genau dieser eine Satz: „Schreibt euren Simulationswunsch in die Kommentare.“** (kein „Morgen: …“) |
 | Länge | ca. 65–75 s Sprechtext, mindestens 61 s Video |
 | Zahlen | gerundet; Quellen und Annahmen nur intern in `skript.json` |
+| Satzlänge | **kurz: höchstens ca. 10 Wörter je Satz, ein Gedanke pro Satz** (wie die Vorbilder, 7–8 Wörter je Satzstück). Lange Sätze mit Kommas wirken gehetzt. |
+| Abschnitte | Jedes Segment in `skript.json` ist ein Abschnitt. Die Stimme spricht das ganze Skript am Stück: nach jedem Satz ca. 0,3–0,4 s Pause, zwischen Abschnitten 0,6 s (`pipeline/tts.py`). |
+| Hook | steile Behauptung mit konkreter Zahl, z. B. „Dieses Auto verbrennt jeden Tag 27 Euro.“ |
 | Offen | Stimme (männlich oder weiblich), Musik (leiser Hintergrund oder nur Soundeffekte) |
 
 ---

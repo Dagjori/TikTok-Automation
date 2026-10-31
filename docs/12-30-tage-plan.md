@@ -356,3 +356,34 @@ Sofort einsetzbare Videos, falls ein Slot ausfällt (Bonus dürfen auch als Ersa
 ## Quellen
 
 Alle Links stehen an der jeweiligen Stelle im Text. Preise: [ElevenLabs Creative](https://elevenlabs.io/pricing) und [ElevenLabs API](https://elevenlabs.io/pricing/api), abgerufen am 31.10.2026. Interne Grundlagen: `STATUS.md`, `ENTSCHEIDUNGEN.md`, `docs/04`, `docs/05`, `docs/07`, `docs/08`, `docs/09`, `docs/11`, `docs/trends/vorschlaege.md`, `data/ideen/*.csv`, `data/monitor/*.csv`, `data/trends/kalender.csv`.
+
+## Anhang C: Konkurrenz-Abgleich 31.10. (vom Inhaber geschickte Videos)
+
+**Geändert im Plan (keine Kopien, CLAUDE.md):**
+- **Reißverschluss** (01.11. abends) ist zurückgestellt. @simulierts hat das Thema am 31.10. um 10:52 Uhr gepostet („Früh einordnen oder bis zum Ende fahren: Was macht den Stau wirklich kürzer?“, 14.100 Views, F: öffentliche Videoseite). **Ersatz:** „Spurwechsel im Stau“, vorgezogen vom 12.11. Es nutzt die vorhandene Straßen-Vorlage.
+- **12.11. abends:** neu „Parkplatzsuche: Den ersten freien Platz nehmen oder näher ran kreisen?“.
+- **15.11. Bonus:** „Heizung nachts“ (@fabrik.neu hat es) → „Duschen: 5 oder 10 Minuten“.
+- **21.11. Bonus:** „Coffee-to-go“ (@geldsimuliert: Kaffee gegen Geldanlage) → „Leitungswasser oder Flaschenwasser“.
+
+**Was wir von den Videos lernen** (F: TikTok-Spracherkennung der öffentlichen Videos, 4 Videos):
+- Sie sprechen **nicht langsamer, sondern in kürzeren Sätzen**:
+  - 2,6–2,9 Wörter/s insgesamt (wir zuvor: 2,3).
+  - Im Schnitt 7–8 Wörter je Satzstück.
+  - Nach fast jedem Satz eine Pause von ca. 0,3 s.
+- **Hook** ist eine steile Behauptung mit Zahl: „Dieser Kaffee kostet dich nicht 3 Euro, sondern über 100.000.“ bzw. „Dieses Auto verbrennt jeden Tag 27 Euro.“
+- **Zwei Personen** mit Namen statt „Variante A/B“ machen das Duell greifbar (@geldsimuliert: Tom gegen Lisa).
+- **Kleine Beträge pro Tag** werden auf Jahre hochgerechnet („27 Euro jeden einzelnen Tag“).
+- **Reichweite einordnen:** Die @geldsimuliert-Videos lagen am 31.10. bei nur ca. 1.000–3.300 Views, trotz 97.700 Followern. Die Stimme allein macht keine Reichweite.
+
+**Neue eigene Ideen** (Reserve, Format: klare Rechnung, zwei Seiten):
+
+| Rubrik | Titel |
+|---|---|
+| GELD | Standby: Was kosten Geräte, die nie ganz ausgehen, im Jahr? |
+| GELD | Pfandflaschen sammeln: Welcher Stundenlohn kommt dabei raus? |
+| GELD | Fitnessstudio-Abo oder draußen laufen: Was kostet ein Training wirklich? |
+| GELD | Mit dem Auto zum Bäcker: Was kostet die Kurzstrecke im Jahr? |
+| GELD | Bäcker oder selbst gebacken: Wer spart mehr, wenn man die Zeit mitrechnet? |
+| ALLTAG | Aufzug oder Treppe: Was ist im Bürohaus schneller? |
+| ALLTAG | Tankstelle: Gleich tanken oder zur 5 Cent billigeren 3 km weiter? |
+| ALLTAG | Schlange am Flughafen: Eine lange Schlange für alle oder eine pro Schalter? |

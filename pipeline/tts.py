@@ -19,6 +19,7 @@ API = "https://api.elevenlabs.io/v1"
 MODELL = "eleven_multilingual_v2"
 STANDARD_STIMME = "aTTiK3YzK3dXETpuDE2h"  # „Ben“, muttersprachlich Deutsch (Wahl des Inhabers 31.10. per Hörprobe)
 EINSTELLUNGEN = {"stability": 0.5, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": True}  # Empfehlung von ElevenLabs: Startwert 50/75, „style“ immer 0 (sonst weniger stabil)
+PAUSE_ABSCHNITT = 0.6  # Pause zwischen zwei Abschnitten (Sätze innerhalb: ca. 0,3 s, wie bei den Vorbildern)
 PAUSE = 0.22          # Pause zwischen Segmenten (Vorbilder: Median 0,16–0,38 s)
 PAUSE_LANG = 0.3      # nach dem Hook und vor dem Schluss-Satz
 ZIEL_WPS = 2.95       # Wörter pro Sekunde beim Sprechen (Top-Videos: 2,91–3,02, gemessen 31.10.2026)
@@ -158,7 +159,11 @@ def am_stueck(skript, texte, voice_id, name, ziel):
     keine Schnitte. Das alte Verfahren (je Segment eine Anfrage, harte Schnitte, feste Pausen in digitaler
     Stille) klang abgehackt. Segment- und Wortzeiten kommen aus den Zeichen-Zeitstempeln.
     """
-    gesamt = " ".join(texte)
+    # Wie ein Sprecher-Skript: jeder Satz auf eine eigene Zeile, Leerzeile vor jedem neuen Abschnitt.
+    # Die Stimme setzt dadurch nach jedem Satz eine kurze und vor jedem Abschnitt eine längere Pause.
+    texte = [re.sub(r"([.!?:])\s+", r"\1\n", t.strip()) for t in texte]
+    trenner = f'\n<break time="{PAUSE_ABSCHNITT}s" />\n'  # offizielle Pausen-Markierung von ElevenLabs (eleven_multilingual_v2)
+    gesamt = trenner.join(texte)
     antwort = sprechen(gesamt, voice_id)
     al = antwort["alignment"]
     zeichen, starts, enden = al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]
@@ -178,7 +183,7 @@ def am_stueck(skript, texte, voice_id, name, ziel):
                          "start": gesprochen[0]["start"], "ende": gesprochen[-1]["ende"],
                          "woerter": anzeige_woerter(seg["text"], gesprochen)})
         print(f"  {seg['id']:11} {segmente[-1]['start']:6.2f}–{segmente[-1]['ende']:6.2f} s")
-        pos = b + 1  # Leerzeichen zwischen den Segmenten
+        pos = b + len(trenner)
     mp3_schreiben(stueck, ziel / "stimme.mp3")
     dauer = round(len(stueck) / RATE, 3)
     timing = {"stimme": name, "voice_id": voice_id, "modell": MODELL, "verfahren": "am_stueck", "dauer": dauer, "segmente": segmente}
