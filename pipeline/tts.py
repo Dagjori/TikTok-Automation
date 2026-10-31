@@ -14,8 +14,8 @@ from pathlib import Path
 
 API = "https://api.elevenlabs.io/v1"
 MODELL = "eleven_multilingual_v2"
-STANDARD_STIMME = "Daniel"  # vom Inhaber gewählt (31.10.)
-EINSTELLUNGEN = {"stability": 0.6, "similarity_boost": 0.8, "style": 0.0, "use_speaker_boost": True, "speed": 1.12}
+STANDARD_STIMME = "zfc8CJQpe8Kqyl0vvCzo"  # erste Wahl des Inhabers; Aussprache über „sprechtext“ gelöst
+EINSTELLUNGEN = {"stability": 0.45, "similarity_boost": 0.8, "style": 0.2, "use_speaker_boost": True}  # natürliches Tempo der Stimme
 PAUSE = 0.22          # Pause zwischen Segmenten (Vorbilder: Median 0,16–0,38 s)
 PAUSE_LANG = 0.3      # nach dem Hook und vor dem Schluss-Satz
 ZIEL_WPS = 2.95       # Wörter pro Sekunde beim Sprechen (Top-Videos: 2,91–3,02, gemessen 31.10.2026)
