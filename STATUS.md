@@ -8,6 +8,7 @@
   - wie die Vorbilder, nur eigene Themen, kein „1.000 Lebensläufe“-Merkmal
   - Ende immer „Schreibt euren Simulationswunsch in die Kommentare.“
   - Skripte: `docs/08-beispielskripte.md`
+- **Arbeitsweise:** `docs/14-arbeitsweise.md` zeigt Regeln, Informationsquellen, Ablauf, Abnahme, Schwächen und Empfehlungen (Anlass: Inhaber mit den Ergebnissen nicht ganz zufrieden). Widersprüche in den Regeldateien sind dort aufgelistet und korrigiert.
 - **Update 31.10. abends:**
   - **Reißverschluss zurückgestellt.** @simulierts hat das Thema am 31.10. zuerst gepostet.
   - **Zweites Video: „Spurwechsel im Stau“ fertig und geprüft.** `pipeline/out/spurwechsel/spurwechsel.mp4`, 81,9 s, −14,0 LUFS, Iso-Stil, dem Inhaber geschickt.
@@ -16,18 +17,7 @@
     - Bekannte Schwäche: Im Rennen-Teil wirkt der Stau stellenweise locker. Das liegt an der Modelldichte (40 Fz/km je Spur). Verbessern auf Wunsch des Inhabers.
   - **GTA 6, Version 3: fertig und geprüft** (82,6 s, −14,0 LUFS, neue Vertonung am Stück mit Pausen), dem Inhaber geschickt.
   - **Untertitel-Engine:** Die Zeile bleibt jetzt auch beim Erscheinen des letzten Worts innerhalb der sicheren Zone. Gilt ab dem nächsten Render.
-- **Erste 2 Videos: fertig, Version 2 (31.10., ca. 15:30 Uhr), dem Inhaber geschickt** (überholt, siehe Update): Die Dateien sind nicht im Repo, weil sie zu groß sind. Neu bauen lässt sich jedes Video mit den Befehlen in `pipeline/README.md`.
-  - **GTA 6 weltweit:** `pipeline/out/gta6-welt/gta6-welt.mp4`, 84,0 s, −14,0 LUFS.
-  - **Reißverschluss:** `pipeline/out/reissverschluss/reissverschluss.mp4`, 78,7 s, −14,0 LUFS.
-  - **Neu in Version 2:**
-    - Stimme „Ben“ (muttersprachlich Deutsch)
-    - Untertitel ohne Kasten: Wort für Wort, Kontur, aktuelles Wort gelb
-  - **Abnahme:**
-    - Stimme liegt auf 4 ms genau.
-    - Alle 81 Untertitelblöcke passen in die Breite.
-    - Nie zwei Blöcke gleichzeitig.
-    - Zahlen im Bild = Sprechtext bzw. Simulation.
-  - **Version 1** (alte Stimme, Untertitel mit Kasten) liegt als `*_v1_alte-stimme.mp4` daneben und wird nicht gepostet.
+- **Ältere Fassungen** (GTA 6 Version 1 und 2, Reißverschluss Version 1 und 2) liegen in `pipeline/out/` und werden nicht gepostet. Die Dateien sind nicht im Repo, weil sie zu groß sind. Neu bauen lässt sich jedes Video mit den Befehlen in `pipeline/README.md`.
 - **Stimme:** ElevenLabs „Ben“ `aTTiK3YzK3dXETpuDE2h` ist Standard in `pipeline/tts.py`. Alternativen dort hinterlegt: Marc, Alexander, Otto. Bibliotheksstimmen funktionieren mit unserem Key ohne Leserecht.
 - **Untertitel-Engine:** `Karaoke`-Stil „kontur“ in `pipeline/engine/hud.js`.
   - Überlange Wörter wie „Straßenverkehrsordnung.“ verkleinern nur ihren Block.
@@ -59,7 +49,8 @@
 
 | # | Schritt | Wer | Zeit | Status |
 |---|---|---|---|---|
-| 1 | TikTok-Konto öffentlich stellen, beide Videos (Version 2) posten: Video 1 als Buffer-Test (`docs/11`, 3 A), Video 2 per TikTok Studio oder Buffer; Texte in `docs/09-posting-anleitung.md` | Inhaber | 30–45 Min. | offen |
+| 0 | Arbeitsweise prüfen und Feedback geben: beide Videos mit der Vorlage bewerten, 2–3 Vorbild-Videos als Datei hochladen, 3 Fragen entscheiden (`docs/14-arbeitsweise.md`, Abschnitte 8–10) | Inhaber | 25 Min. | offen |
+| 1 | TikTok-Konto öffentlich stellen, GTA 6 (Version 3) und Spurwechsel posten, sobald das Feedback eingearbeitet ist: Video 1 als Buffer-Test (`docs/11`, 3 A), Video 2 per TikTok Studio oder Buffer; Captions im Format laut `CLAUDE.md`. Reißverschluss wird nicht gepostet. | Inhaber | 30–45 Min. | offen |
 | 2 | Telegram-Bot einrichten (`docs/13-telegram-radar.md`) | Inhaber | 10 Min. | offen |
 | 3 | Nach erfolgreichem Buffer-Test: Essentials buchen; danach optional das Skript `pipeline/post_buffer.py` für Entwürfe in Auftrag geben (`docs/11`, 3 B/C) | Inhaber, danach Claude | 10 Min. bzw. 2–3 Std. | offen |
 | 4 | Tägliches Startsignal: nächste Videos laut `data/plan/30-tage.csv` produzieren; erst die Duell-Tafel (V3) und die Stil-Baukästen, wenn das erste Video sie braucht | Inhaber, dann Claude | täglich | ab 01.11. |
@@ -72,5 +63,6 @@
 - [ ] Musik: leiser Hintergrund oder nur Soundeffekte (bisher: eigene Effekte plus leiser Klangteppich)
 - [ ] Zeit- und Geldbudget bestätigen (angenommen: 5 Std./Woche Aufbau, 50 €/Monat; neu dazu: Buffer ca. 9 €, ElevenLabs Creator ca. 20 €)
 - [ ] Wie viel vom Max-Abo darf das Projekt nutzen (angenommen: 50 %)? Für 2 Videos pro Tag mit 8 Stilen ist das der Engpass (`docs/12-30-tage-plan.md`, 4.2).
-- [ ] Optional: TikTok-CDN-Domains freigeben, damit Claude Bilder und Transkripte der Vorbild-Videos auswerten kann
+- [ ] Vorbild-Videos als Datei hochladen (Maßstab für Bild und Ton). Eine CDN-Freigabe hilft nicht, weil der Download als Umgehung von Bot-Schutz verweigert wird.
+- [ ] Entscheiden (Empfehlungen in `docs/14-arbeitsweise.md`, Abschnitt 9): bis 15.11. nur 3 statt 8 Stile? Darf das Bild zuspitzen, solange die Zahlen exakt bleiben? Probebilder und Hörprobe vor dem Vollrender?
 - [ ] Prompt der geplanten Radar-Aufgabe nennt Telegram noch nicht. Nicht nötig, weil der Radar `docs/07` jeden Tag neu liest. Ändern ginge nur aus der Radar-Sitzung heraus.

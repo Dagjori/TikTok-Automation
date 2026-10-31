@@ -6,7 +6,7 @@
 - Zahlen mit **(B)** sind **Beispielwerte**. Vor der Produktion werden sie mit Quelle gerechnet.
 - **(F)** = belegter Fakt mit Quelle.
 
-**Sprechtempo:** 2,4 Wörter pro Sekunde (A); schnell sind 2,7 Wörter pro Sekunde. Die Pipeline stellt sicher, dass jedes Video mindestens 61 s lang ist (CRP-Grenze). Wird es kürzer, laufen die Simulation bzw. die Ergebniskarte länger.
+**Sprechtempo:** Die Stimme Ben spricht ca. 2,6 Wörter pro Sekunde (F, Messung 31.10.), die Konkurrenz 2,6–2,9 (F, Messung an automatischen Untertiteln, 31.10.). Die Längenangaben der Skripte unten sind noch mit 2,4 Wörtern pro Sekunde gerechnet. Die Pipeline stellt sicher, dass jedes Video mindestens 61 s lang ist (CRP-Grenze). Wird es kürzer, laufen die Simulation bzw. die Ergebniskarte länger.
 
 ## Stil-Regeln (Stand 31.10., vom Inhaber festgelegt bzw. ohne Einwand)
 
@@ -22,7 +22,7 @@
 | Satzlänge | **kurz: höchstens ca. 10 Wörter je Satz, ein Gedanke pro Satz** (wie die Vorbilder, 7–8 Wörter je Satzstück). Lange Sätze mit Kommas wirken gehetzt. |
 | Abschnitte | Jedes Segment in `skript.json` ist ein Abschnitt. Die Stimme spricht das ganze Skript am Stück: nach jedem Satz ca. 0,3–0,4 s Pause, zwischen Abschnitten 0,6 s (`pipeline/tts.py`). |
 | Hook | steile Behauptung mit konkreter Zahl, z. B. „Dieses Auto verbrennt jeden Tag 27 Euro.“ |
-| Offen | Stimme (männlich oder weiblich), Musik (leiser Hintergrund oder nur Soundeffekte) |
+| Offen | Musik (leiser Hintergrund oder nur Soundeffekte). Die Stimme ist entschieden: Ben (siehe `CLAUDE.md`). |
 
 ---
 

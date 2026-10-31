@@ -67,4 +67,4 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Pro
   - Sonnet 5.5 für die tägliche Produktion
   - Haiku 5.5 für Titel, Beschreibungen und Hashtags
   - Verbrauch über `/usage` beobachten
-- **Netzwerk der Cloud-Umgebung:** `tiktok.com`-Domains sind freigegeben. TikTok-CDN-Domains (Videos, Transkripte) sind gesperrt.
+- **Netzwerk der Cloud-Umgebung:** `tiktok.com`-Domains sind freigegeben (öffentliche Profil- und Videoseiten). Automatische Untertitel einzelner Videos (`tiktokcdn-us.com`) waren am 31.10. abrufbar. Video- und Tondateien der Konkurrenz lädt Claude nicht herunter (als Umgehung von Bot-Schutz verweigert). Für eine Bild- und Tonanalyse lädt der Inhaber die Datei selbst hoch (`docs/14-arbeitsweise.md`).
