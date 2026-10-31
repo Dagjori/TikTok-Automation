@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Simulierbar · Designstile im Vergleich</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<style>
+  html, body { width: auto; height: auto; overflow: visible; }
+  body { background: #101319; color: #fff; padding: 56px 56px 48px; width: max-content; }
+  h1 { margin: 0 0 6px; font-family: var(--display); font-weight: 900; font-size: 52px; letter-spacing: -0.01em; display: flex; align-items: center; gap: 18px; }
+  p { margin: 0 0 36px; font-family: var(--text); font-weight: 600; font-size: 24px; color: rgba(255, 255, 255, 0.6); }
+  .raster { display: grid; grid-template-columns: repeat(4, 450px); gap: 40px 32px; }
+  figure { margin: 0; }
+  img { display: block; width: 450px; height: 800px; border-radius: 22px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 24px 50px -20px rgba(0, 0, 0, 0.8); }
+  figcaption { margin-top: 16px; font-family: var(--display); font-weight: 800; font-size: 30px; display: flex; gap: 12px; align-items: baseline; }
+  figcaption b { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; height: 44px; border-radius: 12px; background: var(--gelb); color: var(--tinte); font-weight: 900; font-size: 26px; }
+</style>
+<script type="module">
+  import { WUERFEL } from "./gemeinsam.js";
+  const STILE = [
+    [1, "lowpoly", "Low-Poly-Miniatur (aktuell)"],
+    [2, "isometrisch", "Isometrisches 3D"],
+    [3, "clay", "Clay-Spielzeug-3D"],
+    [4, "flat", "2D-Flat-Infografik"],
+    [5, "neon", "Neon-Daten-Dashboard"],
+    [6, "collage", "Papier-Collage"],
+    [7, "typo", "Kinetische Typografie"],
+    [8, "karte", "Karten-/Satellitenoptik"],
+  ];
+  document.querySelector("h1").insertAdjacentHTML("afterbegin", WUERFEL);
+  const r = document.querySelector(".raster");
+  const bilder = STILE.map(([nr, name, titel]) => {
+    const f = document.createElement("figure");
+    f.innerHTML = `<img src="../../docs/assets/stile/stil_${nr}_${name}.png?v=${Date.now()}" alt=""><figcaption><b>${nr}</b>${titel}</figcaption>`;
+    r.appendChild(f);
+    return new Promise((ok) => { const i = f.querySelector("img"); i.onload = ok; i.onerror = ok; });
+  });
+  Promise.all([document.fonts.ready, ...bilder]).then(() => (window.__fertig = true));
+</script>
+</head>
+<body>
+<h1>Simulierbar · Designstile im Vergleich</h1>
+<p>Gleicher Inhalt in jedem Stil: GELD-Duell „Deutschlandticket gegen Auto“ · Zahlen sind Beispielwerte · neuer Untertitel-Stil</p>
+<div class="raster"></div>
+</body>
+</html>

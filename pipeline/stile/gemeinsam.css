@@ -1,0 +1,48 @@
+/* Gemeinsame Grundlage aller Stil-Muster (1080×1920).
+   Sichere Zonen: oben 150 px, rechts 150 px, unten 400 px frei von wichtigen Inhalten.
+   Schriften: lokal installierte Inter/Inter Display, sonst @fontsource/inter aus pipeline/node_modules. */
+@font-face { font-family: "SB Display"; font-weight: 900; src: local("Inter Display Black"), local("InterDisplay-Black"), url("../node_modules/@fontsource/inter/files/inter-latin-900-normal.woff2") format("woff2"); }
+@font-face { font-family: "SB Display"; font-weight: 800; src: local("Inter Display ExtraBold"), local("InterDisplay-ExtraBold"), url("../node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "SB Display"; font-weight: 700; src: local("Inter Display Bold"), local("InterDisplay-Bold"), url("../node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "SB Display"; font-weight: 500; src: local("Inter Display Medium"), local("InterDisplay-Medium"), url("../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "SB Text"; font-weight: 600; src: local("Inter SemiBold"), local("Inter-SemiBold"), url("../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "SB Text"; font-weight: 700; src: local("Inter Bold"), local("Inter-Bold"), url("../node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "SB Text"; font-weight: 800; src: local("Inter ExtraBold"), local("Inter-ExtraBold"), url("../node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2") format("woff2"); }
+
+:root {
+  --tinte: #14171f;
+  --blau: #2f6fed;
+  --orange: #ff7a1a;
+  --gruen: #19b36b;
+  --gelb: #ffd23f;
+  --display: "SB Display", "Inter Display", "Inter", sans-serif;
+  --text: "SB Text", "Inter", sans-serif;
+}
+
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; }
+body { font-family: var(--text); -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+* { box-sizing: border-box; }
+#leinwand { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+#hud { position: absolute; inset: 0; overflow: hidden; }
+
+/* Hilfsraster für die sicheren Zonen (nur mit ?zonen=1) */
+.zonen { position: absolute; inset: 0; pointer-events: none; z-index: 999; }
+.zonen i { position: absolute; background: rgba(255, 0, 80, 0.22); }
+
+/* Markenwürfel (Logo) */
+.wuerfel { width: 46px; height: 46px; border-radius: 13px; background: var(--blau); position: relative; flex: none; box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.18), inset 0 3px 0 rgba(255, 255, 255, 0.22); }
+.wuerfel i { position: absolute; width: 11px; height: 11px; border-radius: 50%; }
+.wuerfel i:nth-child(1) { left: 7px; top: 7px; background: var(--orange); }
+.wuerfel i:nth-child(2) { left: 17.5px; top: 17.5px; background: var(--gelb); }
+.wuerfel i:nth-child(3) { left: 28px; top: 28px; background: var(--gruen); }
+
+/* ---------- Untertitel (Entscheidung Inhaber 31.10.2026) ----------
+   kein Kasten · weiße fette Schrift · dicke schwarze Kontur · weicher Schatten
+   baut sich Wort für Wort auf · gerade gesprochenes Wort gelb · max. 2 Zeilen · y ≈ 1290 px */
+.ut { position: absolute; left: 54px; width: 876px; top: 1290px; display: flex; flex-direction: column; align-items: center; z-index: 50; pointer-events: none; }
+.ut .zeile { display: block; white-space: nowrap; font-family: var(--display); font-weight: 900; font-size: var(--ut-groesse, 84px); line-height: 1.12; letter-spacing: -0.01em; }
+.ut .w { position: relative; z-index: 0; display: inline-block; margin: 0 0.1em; color: #fff; }
+/* Kontur und Schatten liegen auf einer Kopie hinter dem Wort: die Kontur wächst so nur nach außen */
+.ut .w::before { content: attr(data-t); position: absolute; left: 0; top: 0; z-index: -1; color: #000; -webkit-text-stroke: var(--ut-kontur, 18px) #000; text-shadow: 0 10px 26px rgba(0, 0, 0, 0.55), 0 3px 6px rgba(0, 0, 0, 0.45); }
+.ut .w.jetzt { color: var(--gelb); transform: scale(1.06); }
+.ut .w.kommt { visibility: hidden; }

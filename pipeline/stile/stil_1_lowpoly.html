@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Stil 1 · Low-Poly-Miniatur mit Tilt-Shift</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<script type="importmap">
+{ "imports": {
+  "three": "../node_modules/three/build/three.module.js",
+  "three/addons/": "../node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  body { background: #cfe0f5; }
+  /* HUD im aktuellen Kanal-Stil: weiße Karten, Pillen, Gelb als Akzent */
+  .marke { position: absolute; top: 150px; left: 54px; display: flex; gap: 14px; align-items: center; }
+  .marke .logo { height: 66px; display: flex; align-items: center; gap: 14px; padding: 0 28px 0 11px; border-radius: 999px; background: var(--tinte); color: #fff; font-family: var(--display); font-weight: 800; font-size: 29px; letter-spacing: 0.09em; box-shadow: 0 0 0 2px rgba(255,255,255,.14), 0 12px 30px -8px rgba(0,0,0,.45); }
+  .marke .rubrik { height: 66px; display: flex; align-items: center; padding: 0 26px; border-radius: 999px; background: var(--gelb); color: var(--tinte); font-family: var(--display); font-weight: 900; font-size: 28px; letter-spacing: 0.05em; box-shadow: 0 12px 30px -8px rgba(0,0,0,.35); }
+  .karte { position: absolute; background: #fff; border-radius: 38px; color: var(--tinte); box-shadow: 0 2px 0 rgba(20,23,31,.05), 0 22px 48px -10px rgba(20,23,31,.35); }
+  .titelkarte { left: 54px; top: 252px; width: 876px; padding: 30px 38px 34px; }
+  .label { font-family: var(--text); font-weight: 700; font-size: 26px; letter-spacing: 0.07em; text-transform: uppercase; color: #6b7385; display: flex; align-items: center; gap: 12px; }
+  .punkt { width: 16px; height: 16px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 6px rgba(255,122,26,.22); }
+  .titelkarte .gross { font-family: var(--display); font-weight: 900; font-size: 70px; line-height: 1.02; letter-spacing: -0.02em; margin-top: 10px; }
+  .team { top: 520px; width: 429px; padding: 24px 30px 28px; border-top: 8px solid var(--f); }
+  .team.a { left: 54px; --f: var(--blau); }
+  .team.b { left: 501px; --f: var(--orange); }
+  .flagge { display: inline-flex; height: 52px; align-items: center; padding: 0 20px; border-radius: 999px; background: var(--f); color: #fff; font-family: var(--display); font-weight: 900; font-size: 27px; letter-spacing: 0.04em; }
+  .team .label { margin-top: 16px; font-size: 23px; }
+  .wert { font-family: var(--display); font-weight: 900; font-size: 96px; line-height: 1; letter-spacing: -0.03em; margin-top: 8px; white-space: nowrap; }
+  .balken { height: 16px; border-radius: 8px; background: #e8ebf1; margin-top: 18px; overflow: hidden; }
+  .balken i { display: block; height: 100%; border-radius: 8px; background: var(--f); }
+  .hinweis { position: absolute; left: 54px; top: 790px; height: 50px; display: flex; align-items: center; gap: 10px; padding: 0 22px 0 16px; border-radius: 999px; background: rgba(255,255,255,.92); font-family: var(--display); font-weight: 800; font-size: 23px; color: #4a5263; box-shadow: 0 12px 30px -10px rgba(20,23,31,.35); }
+  .hinweis::before { content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--gelb); box-shadow: 0 0 0 5px rgba(255,210,63,.3); }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./stil_1_lowpoly.js"></script>
+</body>
+</html>
