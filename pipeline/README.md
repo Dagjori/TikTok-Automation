@@ -36,7 +36,7 @@ Nützliche Optionen von `render.js`: `--von 20 --bis 30` (Ausschnitt in Sekunden
 
 ## Renderzeit
 
-Ohne GPU (SwiftShader) braucht ein Bild je nach Szene 0,8–2 s. Zwei Worker sind am schnellsten, mehr Worker bremsen sich gegenseitig, weil SwiftShader schon alle Kerne nutzt. Ein Video mit 80 s dauert damit etwa 45–60 Min. Mit Grafikkarte (Windows-PC) `--gpu` anhängen; dann rendert Chromium über die echte GPU und ist um ein Vielfaches schneller (dann auch `--worker 4` testen).
+Ohne GPU (SwiftShader, 4 Kerne) braucht ein Bild je nach Szene 0,8–2 s. 1–2 Worker sind optimal; mehr Worker bremsen sich gegenseitig, weil SwiftShader schon alle Kerne nutzt (gemessen: 4 Worker ≈ 3,5 s/Bild, 2 Worker ≈ 1–1,5 s/Bild). Ein Video mit 80 s dauert damit etwa 45–60 Min. Mit Grafikkarte (Windows-PC) `--gpu` anhängen; dann rendert Chromium über die echte GPU und ist um ein Vielfaches schneller (dann auch `--worker 4` testen).
 
 ## Aufbau
 

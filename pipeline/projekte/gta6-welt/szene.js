@@ -630,7 +630,8 @@ async function start() {
   marke.verstecke(sEnde - 0.2, 999);
 
   // Hook: kinetischer Titel
-  const hk = (w) => Math.max(0.02, W("hook", w) - 0.12);
+  // Wörter am Videoanfang sind schon im ersten Bild ganz da (Vorschaubild im Feed)
+  const hk = (w) => (W("hook", w) - 0.12 <= 0.05 ? -0.8 : W("hook", w) - 0.12);
   hud.add(new KinetikTitel(hud, [
     { text: "GTA 6", t: hk("GTA"), klasse: "gelb" },
     { text: "kommt.", t: hk("kommt.") },
@@ -650,7 +651,7 @@ async function start() {
   // Behauptung
   const kb = karte(hud, { label: "Schätzung eines Ökonomen", wert: "USA: 1 Mrd. $", einheit: "", zusatz: "Schaden an einem Tag?", x: 54, y: 300, ein: W("behauptung", "Ökonomen.", 0.12) - 0.1, aus: W("behauptung", "Also", 0.78) - 0.05, stil: "kipp", farbe: "#FF7A1A" });
   kb.e.querySelector(".wert").style.fontSize = "92px";
-  const simChip = chip(hud, { flagge: "SIM", text: "Ganze Welt", x: 54, y: 300, ein: W("behauptung", "ganze", 0.9) - 0.2, aus: S("kaeufer").start + 0.1, stil: "pop", farbe: "#2F6FED", klasse: "gross" });
+  const simChip = chip(hud, { flagge: "SIM", text: "Jetzt die ganze Welt", x: 54, y: 300, ein: W("behauptung", "ganze", 0.9) - 0.2, aus: S("kaeufer").start + 0.1, stil: "pop", farbe: "#2F6FED", klasse: "gross" });
 
   // Schritte
   hud.add(new SchrittAnzeige(hud, [

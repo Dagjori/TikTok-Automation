@@ -339,7 +339,8 @@ export class Karaoke {
     let versteckt = 0;
     for (const [a, b] of this.versteckt) if (t >= a && t < b) versteckt = 1;
     for (const b of this.bloecke) {
-      const vor = 0.06;
+      // erster Block des Videos ist schon im ersten Bild vollständig sichtbar
+      const vor = b.start < 0.2 ? 0.8 : 0.06;
       if (versteckt || t < b.start - vor || t >= b.ende) {
         if (b.el.style.display !== "none") b.el.style.display = "none";
         continue;
@@ -351,15 +352,8 @@ export class Karaoke {
       b.el.style.opacity = String(clamp(s * 3) * (1 - raus));
       let k = -1;
       b.woerter.forEach((w, i) => { if (t >= w.start) k = i; });
-      b.woerter.forEach((w, i) => {
-        const kl = i > k ? "w kommt" : i === k ? "w jetzt" : "w";
-        if (w.el.className !== kl) w.el.className = kl;
-        if (i === k) {
-          const bump = Math.sin(clamp((t - w.start) / 0.2) * Math.PI) * 0.07;
-          w.el.style.transform = `scale(${1 + bump})`;
-        } else if (w.el.style.transform) w.el.style.transform = "";
-      });
       if (k < 0) {
+        b.woerter.forEach((w) => { if (w.el.className !== "w kommt") w.el.className = "w kommt"; });
         b.marker.style.opacity = "0";
         continue;
       }
@@ -367,19 +361,35 @@ export class Karaoke {
       // .w ist position:relative → offsetParent ist .block
       const r1 = { x: jetzt.offsetLeft, y: jetzt.offsetTop, w: jetzt.offsetWidth, h: jetzt.offsetHeight };
       let r = r1;
-      const p = feder(t - b.woerter[k].start, { frequenz: 5, daempfung: 0.75 });
+      // schneller Wechsel (≈ 0,1 s), damit das aktuelle Wort nie halb ohne Marker dasteht
+      const p = feder(t - b.woerter[k].start, { frequenz: 8, daempfung: 0.85 });
+      let gleitet = false;
       if (k > 0) {
         const vorher = b.woerter[k - 1].el;
         const r0 = { x: vorher.offsetLeft, y: vorher.offsetTop, w: vorher.offsetWidth, h: vorher.offsetHeight };
-        if (Math.abs(r0.y - r1.y) < 2) r = { x: lerp(r0.x, r1.x, p), y: r1.y, w: lerp(r0.w, r1.w, p), h: r1.h };
+        if (Math.abs(r0.y - r1.y) < 2) {
+          r = { x: lerp(r0.x, r1.x, p), y: r1.y, w: lerp(r0.w, r1.w, p), h: r1.h };
+          gleitet = true;
+        }
       }
-      const pop = k === 0 || r === r1 ? clamp(p * 1.4) : 1;
+      const pop = gleitet ? 1 : clamp(p * 1.4);
+      // Schriftfarbe wechselt erst, wenn der Marker überwiegend unter dem Wort liegt
+      const angekommen = gleitet ? p > 0.93 : pop > 0.5;
+      b.woerter.forEach((w, i) => {
+        const kl = i > k ? "w kommt" : i === k && angekommen ? "w jetzt" : "w"; // während des Gleitens alles weiß
+        if (w.el.className !== kl) w.el.className = kl;
+        if (i === k) {
+          const bump = Math.sin(clamp((t - w.start) / 0.2) * Math.PI) * 0.07;
+          w.el.style.transform = `scale(${1 + bump})`;
+        } else if (w.el.style.transform) w.el.style.transform = "";
+      });
       b.marker.style.opacity = String(pop);
       b.marker.style.left = r.x + 3 + "px";
       b.marker.style.top = r.y + 4 + "px";
       b.marker.style.width = r.w - 6 + "px";
       b.marker.style.height = r.h - 6 + "px";
-      b.marker.style.transform = `scale(${0.7 + 0.3 * pop})`;
+      const bumpM = Math.sin(clamp((t - b.woerter[k].start) / 0.2) * Math.PI) * 0.07;
+      b.marker.style.transform = `scale(${(0.7 + 0.3 * pop) * (1 + bumpM)})`;
     }
   }
 }
