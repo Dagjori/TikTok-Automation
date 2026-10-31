@@ -653,6 +653,7 @@ async function start() {
   // Klang-Ereignisse
   const klang = [...hud.klang, ...zl.klangEreignisse()];
   klang.push({ t: z2a, typ: "zaehlen", dauer: z2b - z2a }, { t: z3a, typ: "zaehlen", dauer: z3b - z3a });
+  klang.push({ t: 0.02, typ: "schlag" }); // Titel steht schon im ersten Bild: ein Schlag zum Start
   klang.sort((a, b) => a.t - b.t);
 
   const gl = buehne.renderer.getContext();
