@@ -155,7 +155,8 @@ async function start() {
         if (layout === "gross") {
           const k = GROSS.breite * zoom(t);
           richteKamera(kamera, { ziel: [0, 0, 0], breite: kamOverride ? kamOverride[0] : k, versatzY: kamOverride ? kamOverride[1] : GROSS.versatzY });
-          setzeVerkehr(WELT.gross, daten, ta, zentrum(ta, t), helden);
+          w.zentrumWert = zentrum(ta, t);
+          setzeVerkehr(WELT.gross, daten, ta, w.zentrumWert, helden);
           WELT.licht.folge(V(0, 0, 0), 60);
         } else {
           const m = WELT.splitMitte;
@@ -205,8 +206,9 @@ async function start() {
   const weltVorbei = welt("vorbei", { tau: linear(tVorbei, wechselPaul[5] + 2.3, 2.2), zentrum: (ta) => mitte(ta) + 3 });
   // 6) Ziel: Paul überquert die Ziellinie bei „9:36“, Zeitsprung, Anna bei „9:56“
   const tPaulZiel = W("ziel", "9:36,", 0.5);
-  const weltZiel1 = welt("ziel1", { tau: linear(tPaulZiel, ZEIT_P, 1.0), zentrum: () => STRECKE - 6 });
-  const weltZiel2 = welt("ziel2", { tau: linear(tAnnaZiel, ZEIT_A, 1.0), zentrum: () => STRECKE - 6, zoom: zoomLeicht(tAnnaZiel, uSchnitt, 1.0, 1.08) });
+  const weichMax = (a, b, k = 6) => (a + b + Math.sqrt((a - b) ** 2 + k * k)) / 2;
+  const weltZiel1 = welt("ziel1", { tau: linear(tPaulZiel, ZEIT_P, 1.0), zentrum: (ta) => weichMax(STRECKE - 6, xVon(PAUL)(ta) - 4) });
+  const weltZiel2 = welt("ziel2", { tau: linear(tAnnaZiel, ZEIT_A, 1.0), zentrum: (ta) => weichMax(STRECKE - 6, xVon(ANNA)(ta) - 4), zoom: zoomLeicht(tAnnaZiel, uSchnitt, 1.0, 1.08) });
   // 7) Im Schnitt: ruhiger Blick auf das Rennen (Rennzeit 300 s …)
   const weltSchnitt = welt("schnitt", { tau: linear(uSchnitt, 300, 1.0), zentrum: (ta) => mitte(ta), zoom: zoomLeicht(uSchnitt, uWahr, 1.1, 1.02) });
   // 8) Wahrnehmung: Referenz (niemand wechselt), Anna blau. Gleiches Zeitraffer-Tempo für beide Phasen (fair).
@@ -256,14 +258,15 @@ async function start() {
   isoChip(hud, { html: `<span class="raute"></span>simuliert`, x: 54, y: 556, ein: W("hook", "simuliert.", 0.8) - 0.1, aus: uStart - 0.3, schatten: "#B9BEE6" }, Erscheinung);
 
   // ---------- Namensschilder (3D-Anker) ----------
-  const pos3 = (T, id, d, ta) => {
+  const pos3 = (T, id, d, ta, w) => {
     const z = d.von(id, ta);
     if (!z) return V(9999, 0, 0);
     const s = T.streifen;
-    return V(z.x - s.zentrum, 2.4, s.spurZ(z.s)).add(T.streifen.gruppe.position);
+    const zentrum = T === WELT.gross && w.zentrumWert !== undefined ? w.zentrumWert : s.zentrum;
+    return V(z.x - zentrum, 2.4, s.spurZ(z.s)).add(T.streifen.gruppe.position);
   };
   const schild = (rolle, html, w, T, d, ein, aus, { hoehe = 150, minY = 560, id } = {}) =>
-    hud.add(new Anker(hud, { html, klasse: `iso ${rolle}`, kamera: w.kamera, ein, aus, hoehe, minY, punkt: (t) => pos3(T, id, d, w.tau(t)) }));
+    hud.add(new Anker(hud, { html, klasse: `iso ${rolle}`, kamera: w.kamera, ein, aus, hoehe, minY, punkt: (t) => pos3(T, id, d, w.tau(t), w) }));
   const PAUL_HTML = (zeile) => `<small><i></i>PAUL</small>${zeile}`;
   const ANNA_HTML = (zeile) => `<small><i></i>ANNA</small>${zeile}`;
   schild("paul", PAUL_HTML("wechselt"), weltHook, WELT.gross, rennen, 0.9, uStart - 0.3, { id: PAUL, hoehe: 130 });
@@ -278,18 +281,17 @@ async function start() {
   schild("paul", PAUL_HTML("im Ziel"), weltZiel1, WELT.gross, rennen, tPaulZiel - 0.1, uZiel2 - 0.25, { id: PAUL, hoehe: 140 });
   schild("anna", ANNA_HTML("im Ziel"), weltZiel2, WELT.gross, rennen, tAnnaZiel - 0.1, uSchnitt - 0.3, { id: ANNA, hoehe: 140 });
   schild("anna", ANNA_HTML("bleibt"), weltWahr, WELT.gross, wahrn, uWahr + 0.3, uErkl - 0.3, { id: ANNA_W, hoehe: 120 });
-  schild("anna", ANNA_HTML("steht"), weltErkl, WELT.gross, wahrn, uErkl + 0.25, W("erklaerung", "Darum", 0.2) - 0.4, { id: ANNA_W, hoehe: 120 });
+  schild("anna", ANNA_HTML("steht"), weltErkl, WELT.gross, wahrn, uErkl + 0.25, W("erklaerung", "Darum", 0.2) - 0.75, { id: ANNA_W, hoehe: 120 });
   // „Wer rollt, hat Abstand. Wer steht, steht dicht an dicht.“: Schilder an der Straße (relativ zu Anna)
   const strassenPunkt = (dx, spurAndere) => (t) => {
     const z = wahrn.von(ANNA_W, weltErkl.tau(t));
     if (!z) return V(9999, 0, 0);
     const s = WELT.gross.streifen;
     const spur = spurAndere ? 1 - Math.round(z.s) : Math.round(z.s);
-    return V(z.x + dx - s.zentrum, 0.4, s.spurZ(spur));
+    return V(z.x + dx - (weltErkl.zentrumWert ?? s.zentrum), 0.4, s.spurZ(spur));
   };
-  hud.add(new Anker(hud, { html: `<small><i></i>ROLLT</small>mit Abstand`, klasse: "iso gruen", kamera: weltErkl.kamera, ein: W("erklaerung", "rollt,", 0.2) - 0.15, aus: W("erklaerung", "Darum", 0.2) - 0.4, hoehe: 260, minY: 560, punkt: strassenPunkt(17, true) }));
-  hud.add(new Anker(hud, { html: `<small><i></i>STEHT</small>dicht an dicht`, klasse: "iso rot", kamera: weltErkl.kamera, ein: W("erklaerung", "steht,", 0.2) - 0.15, aus: W("erklaerung", "Darum", 0.2) - 0.4, hoehe: 90, minY: 560, punkt: strassenPunkt(-16, false) }));
-  schild("anna", ANNA_HTML("bleibt"), weltFazit, WELT.gross, rennen, uFazit + 0.3, uEnde - 0.3, { id: ANNA, hoehe: 120 });
+  hud.add(new Anker(hud, { html: `<small><i></i>ROLLT</small>mit Abstand`, klasse: "iso gruen", kamera: weltErkl.kamera, ein: W("erklaerung", "rollt,", 0.2) - 0.15, aus: W("erklaerung", "Darum", 0.2) - 0.75, hoehe: 260, minY: 560, punkt: strassenPunkt(17, true) }));
+  hud.add(new Anker(hud, { html: `<small><i></i>STEHT</small>dicht an dicht`, klasse: "iso rot", kamera: weltErkl.kamera, ein: W("erklaerung", "steht,", 0.2) - 0.15, aus: W("erklaerung", "Darum", 0.2) - 0.75, hoehe: 90, minY: 560, punkt: strassenPunkt(-16, false) }));
 
   // Namensschilder dürfen sich nicht überdecken: überlappende Paare seitlich auseinanderschieben
   const alleSchilder = hud.teile.filter((x) => x instanceof Anker);
@@ -309,6 +311,11 @@ async function start() {
         if (rLi.left - dLi < 40) dLi = Math.max(0, rLi.left - 40);
         li.schild.style.transform += ` translateX(${(-dLi).toFixed(1)}px)`;
         re.schild.style.transform += ` translateX(${dRe.toFixed(1)}px)`;
+      }
+      for (const a of sichtbar) {
+        const r = a.schild.getBoundingClientRect();
+        if (r.right > 930) a.schild.style.transform += ` translateX(${(930 - r.right).toFixed(1)}px)`;
+        else if (r.left < 54) a.schild.style.transform += ` translateX(${(54 - r.left).toFixed(1)}px)`;
       }
     },
   });
