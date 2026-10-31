@@ -1,15 +1,79 @@
 {
- "stand": "2026-10-31T11:47:09.894Z",
+ "stand": "2026-10-31T12:07:00Z",
  "gpu": false,
+ "hinweis": "Cloud-Container, 4 Kerne, SwiftShader (ohne GPU); parallel lief ein Video-Render mit 2 Workern (Last ca. 9), die Werte sind deshalb zu hoch. Je Videobild = zweites Bild zeichnen + JPG-Screenshot.",
  "messung": [
   {
    "nr": 1,
    "name": "lowpoly",
    "titel": "Low-Poly-Miniatur (aktuell)",
-   "laden_s": 12.369,
-   "bild_s": 5.628,
-   "zeichnen_ms": 15,
-   "foto_ms": 5613
+   "laden_s": 11.3,
+   "bild_s": 5.49,
+   "zeichnen_ms": 34,
+   "foto_ms": 5453
+  },
+  {
+   "nr": 2,
+   "name": "isometrisch",
+   "titel": "Isometrisches 3D",
+   "laden_s": 0.5,
+   "bild_s": 0.74,
+   "zeichnen_ms": 20,
+   "foto_ms": 722
+  },
+  {
+   "nr": 3,
+   "name": "clay",
+   "titel": "Clay-Spielzeug-3D",
+   "laden_s": 4.3,
+   "bild_s": 5.53,
+   "zeichnen_ms": 14,
+   "foto_ms": 5514
+  },
+  {
+   "nr": 4,
+   "name": "flat",
+   "titel": "2D-Flat-Infografik",
+   "laden_s": 0.3,
+   "bild_s": 0.1,
+   "zeichnen_ms": 1,
+   "foto_ms": 97
+  },
+  {
+   "nr": 5,
+   "name": "neon",
+   "titel": "Neon-Daten-Dashboard",
+   "laden_s": 0.4,
+   "bild_s": 0.06,
+   "zeichnen_ms": 4,
+   "foto_ms": 54
+  },
+  {
+   "nr": 6,
+   "name": "collage",
+   "titel": "Papier-Collage",
+   "laden_s": 0.5,
+   "bild_s": 0.1,
+   "zeichnen_ms": 2,
+   "foto_ms": 99
+  },
+  {
+   "nr": 7,
+   "name": "typo",
+   "titel": "Kinetische Typografie",
+   "laden_s": 0.1,
+   "bild_s": 0.23,
+   "zeichnen_ms": 2,
+   "foto_ms": 224
+  },
+  {
+   "nr": 8,
+   "name": "karte",
+   "titel": "Karten-/Satellitenoptik",
+   "laden_s": 3.9,
+   "bild_s": 2.54,
+   "zeichnen_ms": 31,
+   "foto_ms": 2507
   }
  ]
 }

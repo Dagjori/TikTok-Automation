@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Stil 8 · Karten- und Satellitenoptik</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<script type="importmap">
+{ "imports": {
+  "three": "../node_modules/three/build/three.module.js",
+  "three/addons/": "../node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  body { background: #0b1220; }
+  .abdunkeln { position: absolute; left: 0; right: 0; top: 0; height: 900px; background: linear-gradient(180deg, rgba(8, 13, 24, 0.92) 0%, rgba(8, 13, 24, 0.78) 45%, rgba(8, 13, 24, 0) 100%); }
+  .glas { background: rgba(14, 20, 34, 0.72); box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.14), 0 18px 40px -14px rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); }
+  .marke { position: absolute; top: 150px; left: 54px; display: flex; gap: 12px; }
+  .marke > div { height: 62px; display: flex; align-items: center; gap: 12px; padding: 0 24px; border-radius: 999px; font-family: var(--display); font-weight: 800; font-size: 27px; letter-spacing: 0.09em; color: #fff; }
+  .marke .logo { padding-left: 9px; }
+  .marke .rubrik { background: var(--gelb); color: var(--tinte); font-weight: 900; box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6); }
+  .titel { position: absolute; left: 54px; top: 254px; width: 876px; color: #fff; text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6); }
+  .titel .klein { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: 0.12em; text-transform: uppercase; color: #9fc3ff; }
+  .titel .klein svg { flex: none; }
+  .titel .gross { font-family: var(--display); font-weight: 900; font-size: 80px; line-height: 1; letter-spacing: -0.025em; margin-top: 12px; }
+  .karte { position: absolute; top: 528px; width: 429px; padding: 20px 24px 22px; border-radius: 28px; color: #fff; display: grid; grid-template-columns: 76px 1fr; column-gap: 18px; align-items: center; }
+  .karte.a { left: 54px; --f: #4da3ff; }
+  .karte.b { left: 501px; --f: #ff8a2a; }
+  .karte .icon { grid-row: span 3; width: 76px; height: 76px; border-radius: 22px; background: var(--f); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 26px -2px var(--f); }
+  .karte .wer { font-family: var(--display); font-weight: 900; font-size: 22px; letter-spacing: 0.12em; color: var(--f); }
+  .karte .betrag { font-family: var(--display); font-weight: 900; font-size: 70px; line-height: 1; letter-spacing: -0.03em; white-space: nowrap; }
+  .karte .einheit { font-family: var(--text); font-weight: 600; font-size: 21px; color: rgba(255, 255, 255, 0.62); }
+  .pin { position: absolute; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center; }
+  .pin .schild { padding: 10px 18px; border-radius: 14px; background: #fff; color: var(--tinte); font-family: var(--display); font-weight: 900; font-size: 26px; white-space: nowrap; box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.7); }
+  .pin .nadel { width: 3px; height: 34px; background: #fff; }
+  .pin .fuss { width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.28); margin-top: -2px; }
+  .hinweis { position: absolute; left: 54px; top: 690px; padding: 8px 16px; border-radius: 999px; font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); }
+  .massstab { position: absolute; right: 150px; top: 708px; display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 19px; color: rgba(255, 255, 255, 0.7); }
+  .massstab i { width: 90px; height: 8px; border: 2px solid rgba(255, 255, 255, 0.75); border-top: none; }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./stil_8_karte.js"></script>
+</body>
+</html>

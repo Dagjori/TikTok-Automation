@@ -94,7 +94,10 @@ async function main() {
     messung.push({ ...s, laden_s: (t1 - t0) / 1000, bild_s: (t3 - t1b) / 1000, zeichnen_ms: t2 - t1b, foto_ms: t3 - t2 });
     console.log(`Stil ${s.nr} ${s.titel}: Laden ${((t1 - t0) / 1000).toFixed(1)} s · je Videobild ${((t3 - t1b) / 1000).toFixed(2)} s (Zeichnen ${t2 - t1b} ms, Foto ${t3 - t2} ms) → ${path.relative(REPO, datei)}`);
   }
-  fs.writeFileSync(path.join(REPO, "pipeline", "stile", "messung.json"), JSON.stringify({ stand: new Date().toISOString(), gpu, messung }, null, 1));
+  // Messwerte nur bei einem vollständigen, regulären Lauf speichern
+  if (!pruef && auswahl.length === STILE.length) {
+    fs.writeFileSync(path.join(REPO, "pipeline", "stile", "messung.json"), JSON.stringify({ stand: new Date().toISOString(), gpu, hinweis: "Cloud-Container, 4 Kerne, SwiftShader (ohne GPU); je Videobild = zweites Bild zeichnen + JPG-Screenshot", messung }, null, 1));
+  }
 
   if (!pruef) {
     // Übersicht: alle Stile nebeneinander mit Namen

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Stil 7 · Kinetische Typografie</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<style>
+  @font-face { font-family: "SB Duenn"; font-weight: 300; src: local("Inter Display Light"), local("InterDisplay-Light"), url("../node_modules/@fontsource/inter/files/inter-latin-300-normal.woff2") format("woff2"); }
+  body { background: #f3f1ec; color: #111; }
+  .marke { position: absolute; top: 156px; left: 54px; display: flex; align-items: center; gap: 14px; font-family: var(--display); font-weight: 900; font-size: 28px; letter-spacing: 0.16em; }
+  .marke .wuerfel { width: 40px; height: 40px; border-radius: 11px; }
+  .marke .wuerfel i { width: 9px; height: 9px; }
+  .marke .wuerfel i:nth-child(1) { left: 6px; top: 6px; } .marke .wuerfel i:nth-child(2) { left: 15.5px; top: 15.5px; } .marke .wuerfel i:nth-child(3) { left: 25px; top: 25px; }
+  .marke .punkt { width: 8px; height: 8px; border-radius: 50%; background: #111; }
+  .marke .gelb { background: var(--gelb); padding: 4px 12px; }
+  .linie { position: absolute; left: 54px; width: 876px; height: 4px; background: #111; }
+  .klein { position: absolute; left: 54px; font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .frage { position: absolute; left: 50px; top: 300px; width: 900px; font-family: var(--display); font-weight: 900; font-size: 100px; line-height: 0.9; letter-spacing: -0.045em; }
+  .frage .hohl { color: transparent; -webkit-text-stroke: 3px #111; }
+  .zahl { position: absolute; font-family: var(--display); font-weight: 900; letter-spacing: -0.06em; line-height: 0.8; white-space: nowrap; }
+  .zahl small { font-size: 0.45em; letter-spacing: -0.02em; margin-left: 0.06em; }
+  .a { left: 46px; top: 600px; font-size: 218px; color: var(--blau); transform: skewX(-8deg); transform-origin: left bottom; }
+  .b { right: 150px; top: 840px; font-size: 270px; color: var(--orange); }
+  .spur { position: absolute; right: 150px; top: 840px; font-size: 270px; color: var(--orange); }
+  .etikett { position: absolute; font-family: var(--display); font-weight: 900; font-size: 30px; letter-spacing: 0.18em; padding: 6px 14px; color: #f3f1ec; background: #111; }
+  .vs { position: absolute; left: 54px; top: 800px; font-family: "SB Duenn", "Inter Display", sans-serif; font-weight: 300; font-size: 96px; letter-spacing: -0.02em; font-style: italic; transform: skewX(-12deg); }
+  .tempo { position: absolute; height: 6px; background: #111; border-radius: 3px; }
+  .balken { position: absolute; left: 54px; height: 22px; }
+  .balken i { display: block; height: 100%; }
+  .bild { position: absolute; }
+  .hinweis { position: absolute; right: 150px; font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: 0.12em; text-transform: uppercase; color: #77736b; }
+</style>
+</head>
+<body>
+<div id="hud"></div>
+<script type="module" src="./stil_7_typo.js"></script>
+</body>
+</html>

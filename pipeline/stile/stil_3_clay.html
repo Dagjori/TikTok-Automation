@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Stil 3 · Clay-Spielzeug-3D</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<script type="importmap">
+{ "imports": {
+  "three": "../node_modules/three/build/three.module.js",
+  "three/addons/": "../node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  body { background: #f7d3cb; }
+  /* Claymorphism: weiche, „aufgeblasene“ Flächen mit Innenlicht und weichem Außenschatten */
+  .knete { border-radius: 999px; box-shadow: inset -6px -8px 14px rgba(80, 30, 40, 0.12), inset 6px 8px 14px rgba(255, 255, 255, 0.75), 0 18px 34px -12px rgba(120, 50, 60, 0.45); }
+  .marke { position: absolute; top: 150px; left: 54px; display: flex; gap: 14px; }
+  .marke > div { height: 68px; display: flex; align-items: center; gap: 12px; padding: 0 28px; font-family: var(--display); font-weight: 900; font-size: 28px; letter-spacing: 0.07em; }
+  .logo { background: #fff6f2; color: #3b2340; padding-left: 11px !important; }
+  .rubrik { background: #ffe07a; color: #3b2340; }
+  .titel { position: absolute; left: 54px; top: 258px; width: 876px; padding: 30px 40px 36px; border-radius: 48px; background: #fff6f2; color: #3b2340; }
+  .titel .klein { font-family: var(--display); font-weight: 800; font-size: 27px; letter-spacing: 0.06em; text-transform: uppercase; color: #b0607a; }
+  .titel .gross { font-family: var(--display); font-weight: 900; font-size: 74px; line-height: 1; letter-spacing: -0.025em; margin-top: 10px; }
+  .team { position: absolute; top: 540px; width: 400px; padding: 22px 30px 26px; border-radius: 44px; color: #3b2340; }
+  .team.a { left: 54px; background: #d6e4ff; }
+  .team.b { left: 530px; background: #ffe0c9; }
+  .team .wer { display: inline-flex; height: 48px; align-items: center; padding: 0 20px; border-radius: 999px; font-family: var(--display); font-weight: 900; font-size: 25px; letter-spacing: 0.05em; color: #fff; }
+  .team.a .wer { background: #3d78f0; }
+  .team.b .wer { background: #f2731b; }
+  .team .betrag { font-family: var(--display); font-weight: 900; font-size: 88px; line-height: 1; letter-spacing: -0.03em; margin-top: 12px; white-space: nowrap; }
+  .team .einheit { font-family: var(--text); font-weight: 700; font-size: 24px; color: #8a5a6c; margin-top: 6px; }
+  .vs { position: absolute; left: 467px; top: 622px; width: 98px; height: 98px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #ffe07a; font-family: var(--display); font-weight: 900; font-size: 34px; color: #3b2340; transform: translateX(-50%); z-index: 2; }
+  .hinweis { position: absolute; left: 492px; transform: translateX(-50%); top: 784px; height: 46px; padding: 0 22px; display: flex; align-items: center; border-radius: 999px; background: #fff6f2; font-family: var(--display); font-weight: 800; font-size: 22px; color: #8a5a6c; }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./stil_3_clay.js"></script>
+</body>
+</html>
