@@ -89,14 +89,13 @@ def raumzeit(sz, sz_name):
         font=f_s,
         fill=(70, 70, 70),
     )
-    d.text((RL, 68), "Schwarze Linie: Ende des Rückstaus. Gestrichelt: Engstelle (schwarz), Schild bzw. Wechselzone (blau).", font=f_s, fill=(70, 70, 70))
+    d.text((RL, 68), "Schwarze Linie: Stauende (bis kurz nach dem Maximum). Gestrichelt: Engstelle (schwarz), Schild bzw. Wechselzone (blau).", font=f_s, fill=(70, 70, 70))
 
     for ci, (st, st_name, meta, daten) in enumerate(spalten):
         T, W = meta["T"], meta["W"]
         xb = meta["xbIndex"]
         zelle = meta["zelleM"]
-        tmax_s = 3600 if sz != "rushhour" else 4200
-        tmax_s = min(T, tmax_s)
+        tmax_s = min(T, 3600 if sz == "wenig" else 3900 if sz == "feierabend" else 4200)
         x0 = RL + ci * (PW + luecke)
         d.text((x0, RO - 26), f"{st_name}  (Seed {meta['seed']})", font=f_k, fill=(20, 20, 20))
         for ri in range(2):
@@ -126,13 +125,17 @@ def raumzeit(sz, sz_name):
             ym = ypos(xb - marke)
             for xx in range(x0, x0 + PW, 8):
                 d.line([xx, ym, xx + 4, ym], fill=(30, 80, 220), width=1)
-            # Rückstauende
+            # Rückstauende (nur bis kurz nach dem Maximum, danach löst sich der Stau in Teile auf)
+            rueck = meta["rueckstauM"]
+            t_max = int(np.argmax(rueck))
+            t_ende = min(tmax_s, t_max + 300)
             pts = []
             for px in range(PW):
-                t = min(len(meta["rueckstauM"]) - 1, int(px * tmax_s / PW))
-                r = meta["rueckstauM"][t]
-                if r > 0:
-                    pts.append((x0 + px, ypos(xb - r / zelle)))
+                t = int(px * tmax_s / PW)
+                r = rueck[min(len(rueck) - 1, t)]
+                yy = ypos(xb - r / zelle)
+                if r > 0 and t <= t_ende and y0 <= yy <= y0 + PH:
+                    pts.append((x0 + px, yy))
                 else:
                     if len(pts) > 1:
                         d.line(pts, fill=(0, 0, 0), width=2)
@@ -148,7 +151,7 @@ def raumzeit(sz, sz_name):
                 d.text((x0 + PW // 2 - 50, y0 + PH + 28), "Zeit in Minuten", font=f_s, fill=(40, 40, 40))
             if ci == 0:
                 d.text((6, y0 + PH // 2 - 8), SPUREN[ri][:6], font=f_s, fill=(40, 40, 40))
-                for km in range(-6, 1):
+                for km in range(-8, 1):
                     yy = ypos(xb + km * 1000 / zelle)
                     if y0 <= yy <= y0 + PH:
                         d.line([x0 - 5, yy, x0, yy], fill=(60, 60, 60))

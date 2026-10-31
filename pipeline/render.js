@@ -7,6 +7,7 @@
 //   node render.js projekte/gta6-welt --worker 4          Anzahl paralleler Chromium-Prozesse
 //   node render.js projekte/gta6-welt --zeiten 1.5,30     Standbilder (PNG) → out/gta6-welt/standbilder/
 //   Optionen: --fps 30  --format jpg|png  --qualitaet 95  --nur-fehlende  --ausgabe <ordner>
+//             --query "msaa=4&schatten=2048"  (Qualitätsschalter, die die Szene auswertet)
 //
 // Die Szene (szene.html) muss window.renderAt(t), window.dauer und window.__fertig bereitstellen.
 import http from "node:http";
@@ -44,6 +45,7 @@ function argumente(argv) {
     else if (x === "--zeiten") a.zeiten = n().split(",").map(Number);
     else if (x === "--nur-fehlende") a.nurFehlende = true;
     else if (x === "--ausgabe") a.ausgabe = n();
+    else if (x === "--query") a.query = n();
     else if (!x.startsWith("--")) a.projekt = x;
   }
   if (!a.projekt) {
@@ -106,7 +108,7 @@ async function main() {
 
   const server = await starteServer();
   const port = server.address().port;
-  const url = `http://127.0.0.1:${port}/${relativ}/szene.html`;
+  const url = `http://127.0.0.1:${port}/${relativ}/szene.html${a.query ? "?" + a.query.replace(/^\?/, "") : ""}`;
   const { chromium } = ladePlaywright();
   console.log(`Projekt ${name} · ${timingInfo}`);
 

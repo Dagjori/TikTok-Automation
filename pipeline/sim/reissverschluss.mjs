@@ -660,15 +660,16 @@ function lineareBahn(xs) {
 /**
  * Erzeugt Trajektorien mit `fps` Bildern pro Sekunde aus den Sekundenaufzeichnungen.
  *  - Weg: lineare Interpolation zwischen den Modellschritten, danach gleitendes Mittel über `glaettungS`
- *    (Standard 1 s). Das Mittel ist exakt monoton, überschreitet nie die Modellgeschwindigkeit und
+ *    (Standard 0,6 s). Das Mittel ist exakt monoton, überschreitet nie die Modellgeschwindigkeit und
  *    hält den Mindestabstand (7,5 m Mitte–Mitte) zwischen Fahrzeugen derselben Spur ein.
  *  - Geschwindigkeit v (m/s) ist die exakte Ableitung des geglätteten Wegs.
  *  - x relativ zur Engstelle (negativ = davor), Spur `s` kontinuierlich (0 = durchgehend, 1 = endend);
- *    ein Spurwechsel dauert `wechselDauerS` und beginnt `wechselVersatzS` nach dem Modellschritt.
+ *    ein Spurwechsel dauert `wechselDauerS` und beginnt `wechselVersatzS` nach dem Modellschritt
+ *    (negativ = kurz davor; so bleiben Fahrzeuge beim Einfädeln ohne Überlappung).
  */
 export function trajektorien30Hz(
   aufz,
-  { tVonS, dauerS, fps = 30, engstelleM, xVonRelM, xBisRelM, glaettungS = 1, wechselDauerS = 1, wechselVersatzS = 0 },
+  { tVonS, dauerS, fps = 30, engstelleM, xVonRelM, xBisRelM, glaettungS = 0.6, wechselDauerS = 1, wechselVersatzS = -0.25 },
 ) {
   const frames = Math.round(dauerS * fps) + 1;
   const fahrzeuge = [];

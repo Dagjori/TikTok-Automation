@@ -362,7 +362,7 @@ for (const sz of szenarien) {
         frames,
         fenster: { start_s: FENSTER_START_S, dauer_s: FENSTER_DAUER_S },
         koordinaten:
-          'x in m relativ zur Engstelle (negativ = davor, Fahrtrichtung +x). Spur s: 0 = durchgehende Spur, 1 = endende Spur, Zwischenwerte beim Spurwechsel (ca. 1,5 s). v in m/s. Fahrzeugmitte, Fahrzeuglänge ca. 4,5 m.',
+          'x in m relativ zur Engstelle (negativ = davor, Fahrtrichtung +x). Spur s: 0 = durchgehende Spur, 1 = endende Spur, Zwischenwerte beim Spurwechsel (ca. 1 s). v in m/s. Fahrzeugmitte, Fahrzeuglänge ca. 4,5 m.',
         felder:
           'fahrzeuge[]: id, h = Herkunftsspur (1 = Fahrzeug kommt von der endenden Spur), f = erstes Bild im Fenster, x/s/v = ein Wert je Bild ab f. staulaenge.kolonne_m = Länge der Kolonne, staulaenge.rueckstau_m = Abstand Stauende–Engstelle (je Bild), staulaenge.ganzer_lauf = dasselbe alle 10 s für den ganzen Lauf. engstelle_passiert = Fahrzeuge, die die Engstelle seit Laufbeginn passiert haben.',
         x_bereich_m: [-upstream, 250],
