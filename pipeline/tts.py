@@ -14,7 +14,7 @@ from pathlib import Path
 
 API = "https://api.elevenlabs.io/v1"
 MODELL = "eleven_multilingual_v2"
-STANDARD_STIMME = "zfc8CJQpe8Kqyl0vvCzo"  # vom Inhaber gewählt (31.10.)
+STANDARD_STIMME = "Daniel"  # vom Inhaber gewählt (31.10.)
 EINSTELLUNGEN = {"stability": 0.45, "similarity_boost": 0.8, "style": 0.2, "use_speaker_boost": True}
 
 
@@ -72,6 +72,20 @@ def woerter(zeichen, starts, enden, versatz=0):
     return liste
 
 
+def anzeige_woerter(anzeige, gesprochen):
+    """Verteilt die Wörter der Anzeigefassung zeitlich auf die gesprochenen Wörter (anteilig nach Position)."""
+    ziel = anzeige.split()
+    if [w["wort"] for w in gesprochen] == ziel or not gesprochen:
+        return gesprochen
+    n, m = len(ziel), len(gesprochen)
+    ergebnis = []
+    for i, wort in enumerate(ziel):
+        von = gesprochen[min(m - 1, int(i * m / n))]
+        bis = gesprochen[min(m - 1, max(int((i + 1) * m / n) - 1, int(i * m / n)))]
+        ergebnis.append({"wort": wort, "start": von["start"], "ende": bis["ende"]})
+    return ergebnis
+
+
 def main():
     projekt = Path(sys.argv[1])
     args = sys.argv[2:]
@@ -93,7 +107,8 @@ def main():
         return
 
     # Ganzer Text in einem Durchgang (natürliche Betonung), Segmentgrenzen über Zeichenpositionen
-    texte = [s["text"] for s in skript["segmente"]]
+    # „sprechtext“ = Fassung für die Stimme (Zahlen ausgeschrieben, Lautschrift); „text“ = Anzeige bzw. Untertitel
+    texte = [s.get("sprechtext") or s["text"] for s in skript["segmente"]]
     gesamt = " ".join(texte)
     antwort = sprechen(gesamt, voice_id)
     (ziel / "stimme.mp3").write_bytes(base64.b64decode(antwort["audio_base64"]))
@@ -101,12 +116,13 @@ def main():
     zeichen, starts, enden = al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]
 
     segmente, pos = [], 0
-    for seg in skript["segmente"]:
-        a, b = pos, pos + len(seg["text"])
+    for seg, gesprochen in zip(skript["segmente"], texte):
+        a, b = pos, pos + len(gesprochen)
+        gesprochene_woerter = woerter(zeichen[a:b], starts[a:b], enden[a:b])
         segmente.append({
             "id": seg["id"], "text": seg["text"],
             "start": round(starts[a], 3), "ende": round(enden[b - 1], 3),
-            "woerter": woerter(zeichen[a:b], starts[a:b], enden[a:b]),
+            "woerter": anzeige_woerter(seg["text"], gesprochene_woerter),
         })
         pos = b + 1  # Leerzeichen zwischen den Segmenten
     timing = {"stimme": name, "voice_id": voice_id, "modell": MODELL, "dauer": round(enden[-1], 3), "segmente": segmente}

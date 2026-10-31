@@ -2,14 +2,46 @@
   "titel": "GTA 6: Kostet das Krankfeiern die Welt eine Milliarde?",
   "rubrik": "GELD",
   "segmente": [
-    {"id": "hook",      "text": "GTA 6 kommt, und die halbe Welt feiert krank. Kostet das wirklich eine Milliarde?"},
-    {"id": "behauptung","text": "Diese Zahl geht gerade um die Welt: Ein Ökonom schätzt allein für die USA eine Milliarde Dollar Schaden am Release-Tag. Ich hab's für die ganze Welt simuliert."},
-    {"id": "kaeufer",   "text": "Schritt eins: Analysten erwarten rund 25 Millionen verkaufte Spiele am ersten Tag. Etwa 60 Prozent der Käufer sind berufstätig. Macht 15 Millionen."},
-    {"id": "krank",     "text": "Schritt zwei: Wie viele bleiben zu Hause? In Großbritannien planen es laut Umfrage 2 Prozent, in den USA wollen 10 Prozent nicht arbeiten. Ich nehme die Mitte: 750.000 Fehltage."},
-    {"id": "kosten",    "text": "Schritt drei: Die meisten Käufer leben in reichen Ländern. Dort erwirtschaftet ein Arbeitstag im Schnitt rund 400 Dollar. Das sind 300 Millionen Dollar."},
-    {"id": "dreh",      "text": "Klingt nach viel. Ist es aber nicht. Die Weltwirtschaft schafft an einem einzigen Arbeitstag rund 450 Milliarden Dollar. GTA 6 kostet weniger als ein Promille, und das meiste wird nachgeholt."},
-    {"id": "recht",     "text": "Teuer wird's eher für dich: Wer Krankheit nur vortäuscht, riskiert die Kündigung. Der sichere Weg heißt Urlaub."},
-    {"id": "ende",      "text": "Schreibt euren Simulationswunsch in die Kommentare."}
+    {
+      "id": "hook",
+      "text": "GTA 6 kommt, und die halbe Welt feiert krank. Kostet das wirklich eine Milliarde?",
+      "sprechtext": "G T A sechs kommt, und die halbe Welt feiert krank. Kostet das wirklich eine Milliarde?"
+    },
+    {
+      "id": "behauptung",
+      "text": "Diese Zahl geht gerade um die Welt: Ein Ökonom schätzt allein für die USA eine Milliarde Dollar Schaden am Release-Tag. Ich hab's für die ganze Welt simuliert.",
+      "sprechtext": "Diese Zahl geht gerade um die Welt: Ein Ökonom schätzt allein für die USA eine Milliarde Dollar Schaden am Rilies-Tag. Ich hab es für die ganze Welt simuliert."
+    },
+    {
+      "id": "kaeufer",
+      "text": "Schritt eins: Analysten erwarten rund 25 Millionen verkaufte Spiele am ersten Tag. Etwa 60 Prozent der Käufer sind berufstätig. Macht 15 Millionen.",
+      "sprechtext": "Schritt eins: Analysten erwarten rund fünfundzwanzig Millionen verkaufte Spiele am ersten Tag. Etwa sechzig Prozent der Käufer sind berufstätig. Macht fünfzehn Millionen."
+    },
+    {
+      "id": "krank",
+      "text": "Schritt zwei: Wie viele bleiben zu Hause? In Großbritannien planen es laut Umfrage 2 Prozent, in den USA wollen 10 Prozent nicht arbeiten. Ich nehme die Mitte: 750.000 Fehltage.",
+      "sprechtext": "Schritt zwei: Wie viele bleiben zu Hause? In Großbritannien planen es laut Umfrage zwei Prozent, in den USA wollen zehn Prozent nicht arbeiten. Ich nehme die Mitte: siebenhundertfünfzigtausend Fehltage."
+    },
+    {
+      "id": "kosten",
+      "text": "Schritt drei: Die meisten Käufer leben in reichen Ländern. Dort erwirtschaftet ein Arbeitstag im Schnitt rund 400 Dollar. Das sind 300 Millionen Dollar.",
+      "sprechtext": "Schritt drei: Die meisten Käufer leben in reichen Ländern. Dort erwirtschaftet ein Arbeitstag im Schnitt rund vierhundert Dollar. Das sind dreihundert Millionen Dollar."
+    },
+    {
+      "id": "dreh",
+      "text": "Klingt nach viel. Ist es aber nicht. Die Weltwirtschaft schafft an einem einzigen Arbeitstag rund 450 Milliarden Dollar. GTA 6 kostet weniger als ein Promille, und das meiste wird nachgeholt.",
+      "sprechtext": "Klingt nach viel. Ist es aber nicht. Die Weltwirtschaft schafft an einem einzigen Arbeitstag rund vierhundertfünfzig Milliarden Dollar. G T A sechs kostet weniger als ein Promille, und das meiste wird nachgeholt."
+    },
+    {
+      "id": "recht",
+      "text": "Teuer wird's eher für dich: Wer Krankheit nur vortäuscht, riskiert die Kündigung. Der sichere Weg heißt Urlaub.",
+      "sprechtext": "Teuer wird es eher für dich: Wer Krankheit nur vortäuscht, riskiert die Kündigung. Der sichere Weg heißt Urlaub."
+    },
+    {
+      "id": "ende",
+      "text": "Schreibt euren Simulationswunsch in die Kommentare.",
+      "sprechtext": "Schreibt euren Simulationswunsch in die Kommentare."
+    }
   ],
   "beschreibung": "GTA 6 kommt am 19.11. – kostet das Krankfeiern die Welt wirklich eine Milliarde? 🎮💵 Weltweit nachgerechnet 👇\nAnnahmen: 25 Mio. Käufer am 1. Tag (Analysten-Prognose Konvoy), 60 % berufstätig, 5 % bleiben zu Hause (Umfragen UK 2 %, USA 10 %), ~400 $ Wertschöpfung pro Arbeitstag, Weltwirtschaft ~450 Mrd. $ pro Arbeitstag. Vereinfachte Modellrechnung. Stimme: KI.\n#gta6 #gta #wirtschaft #arbeit",
   "quellen": [

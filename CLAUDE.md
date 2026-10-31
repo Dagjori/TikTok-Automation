@@ -51,7 +51,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Pro
   9. Planung in TikTok Studio und YouTube Studio
 - **Referenz:** https://github.com/stochosfrance/lowpoly-reel (MIT).
 - **Render-Rechner:** Windows-PC des Inhabers. Die Pipeline muss unter Windows laufen (Node.js, Chrome bzw. Chromium, ffmpeg, Python).
-- **Stimme:** ElevenLabs, kleinster bezahlter Plan (Starter), Voice `zfc8CJQpe8Kqyl0vvCzo`, Modell eleven_multilingual_v2. Key als Netzwerk-Secret (Header `xi-api-key` für `api.elevenlabs.io`), er ist nie in der Sitzung sichtbar. Der Key darf keine Leserechte haben, deshalb arbeitet `pipeline/tts.py` mit festen Voice-IDs. Reichen die Credits nicht, auf den nächstgrößeren Plan wechseln.
+- **Stimme:** ElevenLabs, kleinster bezahlter Plan (Starter), Stimme „Daniel“ (`onwK4e9ZLuTAKqWW03F9`), Modell eleven_multilingual_v2. Jedes Segment hat zusätzlich einen `sprechtext` (Zahlen ausgeschrieben, Lautschrift für englische Wörter, z. B. „Rilies-Tag“, „G T A sechs“); die Untertitel zeigen `text`. Key als Netzwerk-Secret (Header `xi-api-key` für `api.elevenlabs.io`), er ist nie in der Sitzung sichtbar. Der Key darf keine Leserechte haben, deshalb arbeitet `pipeline/tts.py` mit festen Voice-IDs. Reichen die Credits nicht, auf den nächstgrößeren Plan wechseln.
 - **Modellwahl:**
   - Opus 5.5 für Architektur und neue Szenentypen
   - Sonnet 5.5 für die tägliche Produktion
