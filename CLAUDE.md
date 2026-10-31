@@ -20,18 +20,23 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Pro
 ## Arbeitsregeln
 - **Nichts ohne Auftrag anlegen.** Keine zusätzlichen Dateien außerhalb dieses Repos, keine Notizen, Webseiten oder Einträge in externen Diensten (Notion, Drive, Gmail usw.), außer der Inhaber verlangt es ausdrücklich.
 - **Arbeitsstand gehört in dieses Repo.** Cloud-Sitzungen sind flüchtig: Am Ende jeder Sitzung `STATUS.md` aktualisieren, committen und pushen. Entscheidungen des Inhabers in `ENTSCHEIDUNGEN.md` eintragen (Datum, Entscheidung, Begründung).
-- **Trend-Radar:** läuft täglich automatisch (geplante Aufgabe „Trend-Radar Simulierbar“, 05:35 Uhr Berlin, feste Sitzung „Trend-Radar täglich (TikTok Automation)“). Ablauf und Bewertungsraster: `docs/07-trend-monitoring.md`. Dem Inhaber nur Trends mit Score ≥ 70 vorschlagen (`docs/trends/vorschlaege.md`).
+- **Trend-Radar:** läuft täglich automatisch (geplante Aufgabe „Trend-Radar Simulierbar“, 05:35 Uhr Berlin, feste Sitzung „Trend-Radar täglich (TikTok Automation)“). Ablauf und Bewertungsraster: `docs/07-trend-monitoring.md`. Dem Inhaber nur Trends mit Score ≥ 70 vorschlagen (`docs/trends/vorschlaege.md`). Das Ergebnis geht zusätzlich jeden Tag per Telegram an den Inhaber (`tools/telegram_senden.py`, Einrichtung `docs/13-telegram-radar.md`).
+- **Produktion nur auf Startsignal:** Der Inhaber kommt täglich in die Sitzung und gibt das Startsignal. Erst dann produziert Claude die nächsten Videos in der Reihenfolge von `data/plan/30-tage.csv` (`docs/12-30-tage-plan.md`).
 - **Keine Kopien:** Fremde Videos nie nachbauen. Themen, die ein Konkurrent schon viral gemacht hat, nur mit eigenem Ansatz umsetzen.
 - **Keine Geheimnisse ins Repo.** API-Keys (z. B. ElevenLabs) nur über Umgebungsvariablen bzw. `.env`, das in `.gitignore` steht.
 
 ## Plattformregeln (verbindlich)
-- **Kein Bot-Posting.** Uploads laufen über die Planungsfunktion von TikTok Studio (Web, bis 30 Tage im Voraus) und YouTube Studio. Die TikTok Content Posting API postet ohne Audit nur privat. Die Community Guidelines verbieten „automation tools, scripts … designed to bypass our systems“.
+- **Posten nur über offizielle Wege, der Inhaber gibt jedes Video frei.**
+  - Erlaubt: Planung in TikTok Studio (Web, bis 30 Tage im Voraus) und YouTube Studio, dazu **Buffer** als offizielles Partner-Tool (Entscheidung 31.10.).
+  - Buffer erst nach bestandenem Test einsetzen: Video wirklich öffentlich und KI-Label gesetzt (`docs/11-automatisierung.md`). Claude legt dort höchstens geplante Entwürfe an.
+  - Kein eigenes Bot-Posting, keine inoffiziellen Tools. Die TikTok Content Posting API postet ohne Audit nur privat. Die Community Guidelines verbieten „automation tools, scripts … designed to bypass our systems“.
 - **Kein Umgehen von Bot-Schutz.** Für Recherche nur öffentliche Seiten abrufen, keine internen TikTok-APIs.
 - **Videos:**
   - mindestens 61 s, 1080×1920, eigene Rechnung bzw. Simulation, Quellen nennen
   - Hook in den ersten 3 Sekunden, Auflösung im selben Video
   - Ende immer genau mit: „Schreibt euren Simulationswunsch in die Kommentare.“ (kein „Morgen: …“)
   - Stil und Beispiele: `docs/08-beispielskripte.md`
+  - **Designstil je Video:** genau einer aus dem Stil-Katalog in `docs/10-designstile.md` (Abschnitt 0), passend zum Thema. Nie zweimal derselbe Stil hintereinander. Neue gute Stile sofort in den Katalog aufnehmen (Entscheidung 31.10.).
   - Untertitel ohne Kasten: Wort für Wort aufbauend (max. 2 Zeilen, mittig), weiße fette Schrift mit dicker schwarzer Kontur, aktuelles Wort gelb (`Karaoke`-Stil „kontur“ in `pipeline/engine/hud.js`)
   - keine künstlichen Cliffhanger-Teile (TikTok: Clickbait ist ein CRP-Ausschlussgrund)
 - **Kein Kaufaufruf im Video.** TikTok drosselt in TikTok-Shop-Märkten Inhalte, die zum Kauf außerhalb von TikTok führen.
@@ -49,7 +54,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md` und `ENTSCHEIDUNGEN.md`. Das Pro
   6. Stimme über ElevenLabs (bezahlter Plan)
   7. Mix und Untertitel mit ffmpeg
   8. Qualitätskontrolle
-  9. Planung in TikTok Studio und YouTube Studio
+  9. Planung in TikTok Studio und YouTube Studio bzw. als Entwurf in Buffer (nach bestandenem Test)
 - **Referenz:** https://github.com/stochosfrance/lowpoly-reel (MIT).
 - **Render-Rechner:** Windows-PC des Inhabers. Die Pipeline muss unter Windows laufen (Node.js, Chrome bzw. Chromium, ffmpeg, Python).
 - **Stimme:** ElevenLabs, kleinster bezahlter Plan (Starter), Stimme **„Ben“ `aTTiK3YzK3dXETpuDE2h`** (muttersprachlich Deutsch, Bibliotheksstimme, Wahl des Inhabers 31.10.) im natürlichen Tempo (keine künstliche Beschleunigung), Modell eleven_multilingual_v2. Jedes Segment hat zusätzlich einen `sprechtext` (Zahlen ausgeschrieben, Lautschrift für englische Wörter, z. B. „Rilies-Tag“, „G T A sechs“); die Untertitel zeigen `text`. Key als Netzwerk-Secret (Header `xi-api-key` für `api.elevenlabs.io`), er ist nie in der Sitzung sichtbar. Der Key darf keine Leserechte haben, deshalb arbeitet `pipeline/tts.py` mit festen Voice-IDs. Reichen die Credits nicht, auf den nächstgrößeren Plan wechseln.

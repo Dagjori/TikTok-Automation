@@ -31,3 +31,7 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-10-31 | Ablage in Google Drive kommt später über den Windows-PC (Drive für Desktop), kein Cloud-Upload | Wahl des Inhabers |
 | 2026-10-31 | Trend-Radar schlägt nur noch im aktuellen Format vor (klare Modellrechnung, Duell bzw. Strategie-Vergleich), kein „1.000 simulierte …“ mehr | Inhaber: alte Regel war noch im Radar |
 | 2026-10-31 | Stimme „Ben“ (`aTTiK3YzK3dXETpuDE2h`, ElevenLabs-Bibliothek, muttersprachlich Deutsch, 2,6 Wörter/s) ist Standard; Alternativen Marc, Alexander, Otto in `pipeline/tts.py` | Auswahl des Inhabers per Hörprobe |
+| 2026-10-31 | Designstil wechselt je Thema: alle 8 Stile aus `docs/10-designstile.md` bleiben im Katalog, je Video der passendste, nie zweimal hintereinander gleich; neue Stile werden aufgenommen | Inhaber: Abwechslung, Stil passend zum Thema |
+| 2026-10-31 | Auto-Posting: Buffer testen (ca. 9 €/Monat). Regel gelockert: offizielle Partner-Tools erlaubt, Claude legt nur Entwürfe an, der Inhaber gibt frei | Recherche `docs/11-automatisierung.md`: auditierte Partner-Tools dürfen öffentlich posten |
+| 2026-10-31 | Trend-Radar täglich per Telegram-Bot (statt WhatsApp) | Kostenlos, offiziell, 10 Min. Einrichtung |
+| 2026-10-31 | 30-Tage-Plan ist die Reihenfolge der nächsten Videos; Produktion startet täglich auf Zuruf des Inhabers, kein Autopilot. ElevenLabs bleibt vorerst Starter | Inhaber |

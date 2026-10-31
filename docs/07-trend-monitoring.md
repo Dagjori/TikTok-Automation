@@ -42,8 +42,9 @@ Dieser Abschnitt ist die Arbeitsanweisung für die geplante Aufgabe „Trend-Rad
 6. **STATUS.md** nur ergänzen, wenn es neue Vorschläge oder Regeländerungen gibt (eine Zeile unter „Wo wir stehen“).
 7. **Committen und pushen** auf `main`.
 8. **Letzte Antwort der Sitzung:**
-   - Bei neuen Vorschlägen: kurze Liste (Titel, Score, warum jetzt, spätestes Posting-Datum).
+   - Bei neuen Vorschlägen: kurze Liste (Titel, Score, warum jetzt, Umsetzung in einem Satz, spätestes Posting-Datum).
    - Sonst genau ein Satz: „Trend-Radar JJJJ-MM-TT: keine neuen Trends mit Potenzial.“
+9. **Dieselbe Antwort jeden Tag per Telegram an den Inhaber** (Entscheidung 31.10.): `python3 tools/telegram_senden.py "<Text der letzten Antwort>"`. Ist Telegram noch nicht eingerichtet, meldet das Skript es nur und der Lauf geht normal weiter. Einrichtung: `docs/13-telegram-radar.md`.
 
 ## Bewertungsraster
 **K.-o.-Kriterien (sofort verwerfen, nicht vorschlagen):**

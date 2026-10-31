@@ -1,6 +1,6 @@
 # Designstile für Simulierbar
 
-**Stand:** 31.10.2026 · **Status:** Vorschlag, Entscheidung des Inhabers offen
+**Stand:** 31.10.2026 · **Status:** entschieden: Stil wechselt je Thema (Abschnitt 0)
 
 **Legende:**
 - **F** = belegter Fakt mit Quelle
@@ -13,7 +13,35 @@ Alle Beispielbilder zeigen denselben Inhalt: das GELD-Duell „Deutschlandticket
 
 ---
 
-## 1. Kurzfazit und Empfehlung
+## 0. Entscheidung des Inhabers (31.10.2026): Stil-Katalog, Stil wechselt je Thema
+
+- **Alle 8 Stile bleiben im Einsatz.** Jedes Video bekommt genau **einen** Stil, und zwar den, der am besten zum Thema passt. Es gibt keinen festen Hauptlook (die Empfehlung in Abschnitt 1 ist damit überholt).
+- **Neue Stile kommen sofort in diesen Katalog**, sobald Claude einen weiteren passenden Stil findet: neue Zeile in der Tabelle unten, Beispielbild in `docs/assets/stile/`, Quellcode in `pipeline/stile/`.
+- **Der Untertitel-Stil ist in allen Looks gleich** (ohne Kasten, Kontur, aktuelles Wort gelb).
+- Im 30-Tage-Plan steht der Stil je Video in der Spalte `stil` (`data/plan/30-tage.csv`).
+
+### Stil-Katalog und Auswahlregel
+
+| Nr. | Stil | Beispiel | Passt zu (Auswahlregel) |
+|---|---|---|---|
+| 1 | Low-Poly-Miniatur (Tilt-Shift) | `assets/stile/stil_1_lowpoly.png` | Szenen mit vielen kleinen Akteuren in Bewegung: Verkehr, Straße, Menschenmengen, Stadtleben |
+| 2 | Isometrisches 3D | `assets/stile/stil_2_isometrisch.png` | Systeme und Abläufe auf einen Blick: Büro, Kreuzung, Supermarkt, Wohnung im Schnitt, Boarding |
+| 3 | Clay-Spielzeug-3D | `assets/stile/stil_3_clay.png` | Spiele, Zufall, Sport, Haushalt, Haustiere, Familie, Essen: verspielte Alltagsthemen |
+| 4 | 2D-Flat-Infografik | `assets/stile/stil_4_flat.png` | Erklär-Rechnungen mit Schritten: Netto, Steuern, Regeln, Statistik, Ablaufpläne |
+| 5 | Neon-Daten-Dashboard | `assets/stile/stil_5_neon.png` | Geld über Zeit: Zinsen, Schulden, Inflation, Sparen, Preisverläufe (braucht immer Bewegung) |
+| 6 | Papier-Collage | `assets/stile/stil_6_collage.png` | News, Gesetze, Handel und Werbung, Debatten: Black Friday, Finanzierung, Abos, Singles Day |
+| 7 | Kinetische Typografie | `assets/stile/stil_7_typo.png` | Eine starke Zahl oder ein Mythos: Netto-Schock, Wahrscheinlichkeits-Paradoxa, „Was kostet das in Arbeitsstunden“ |
+| 8 | Karten-/Satellitenoptik | `assets/stile/stil_8_karte.png` | Orte, Wege, Regionen: Stadt gegen Land, Pendeln, Deutschland-Vergleiche, Wetter |
+
+**Regeln bei der Wahl:**
+- Zwei direkt aufeinanderfolgende Videos haben nie denselben Stil.
+- Passen zwei Stile, gewinnt der, der länger nicht dran war.
+- Typografie (7) darf als Baustein für Hook und Ergebnis in jedem Stil auftauchen.
+- Jeder Stil braucht beim ersten Einsatz einen eigenen Szenen-Baukasten auf Basis der Beispielbilder in `pipeline/stile/` (**Schätzung:** 3–6 Std. Agentenarbeit je Stil). Danach ist er wiederverwendbar.
+
+---
+
+## 1. Kurzfazit und Empfehlung (Recherche-Stand vor der Entscheidung)
 
 - **Empfehlung: Isometrisches 3D (Stil 2) als neuer Hauptlook für beide Rubriken.** Dazu kinetische Typografie (Stil 7) als festes Element für Hook und Ergebnis.
 - **Warum Isometrie:**

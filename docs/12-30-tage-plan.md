@@ -1,8 +1,16 @@
 # 30-Tage-Plan · Simulierbar (01.–30.11.2026)
 
-**Stand:** 31.10.2026 · **Status:** Vorschlag zur Freigabe · **Daten:** [`data/plan/30-tage.csv`](../data/plan/30-tage.csv) (70 Zeilen, Spalten wie vereinbart)
+**Stand:** 31.10.2026 · **Status:** Reihenfolge der nächsten Videos (Start täglich durch den Inhaber) · **Daten:** [`data/plan/30-tage.csv`](../data/plan/30-tage.csv) (70 Zeilen, Spalten wie vereinbart)
 
 Legende: **(F)** = belegter Fakt mit Quelle, **(S)** = Schätzung, **(A)** = Annahme, **(B)** = Beispielwert, der vor der Produktion gerechnet wird. Zeitangaben der Posts (12:00, 16:00, 20:00) sind eine **(A)**, bis eigene Analytics vorliegen.
+
+## 0. Arbeitsweise (Entscheidung des Inhabers 31.10.2026)
+
+- **Der Plan ist die Reihenfolge der nächsten Videos, kein Autopilot.** Der Inhaber kommt jeden Tag in die Sitzung und gibt das Startsignal. Erst dann produziert Claude die nächsten Videos aus dieser Liste (oberste offene Zeilen zuerst).
+- Termine im Plan sind Ziel-Posting-Tage. Fällt ein Tag aus, rutscht die Liste nach. Zeitkritische Themen (z. B. GTA 6 am 17.11., Weihnachtsgeld, Black Friday) werden dann vorgezogen.
+- Szenen-Vorlagen und Stil-Baukästen baut Claude erst, wenn das erste Video ansteht, das sie braucht. Die Bau-Termine unten sind daher Richtwerte.
+- **Stil je Video:** Spalte `stil` in der CSV, gewählt nach dem Stil-Katalog in `docs/10-designstile.md` (Abschnitt 0). Nie zweimal derselbe Stil hintereinander.
+- ElevenLabs bleibt vorerst bei Starter. Upgrade auf Creator, sobald die Credits nicht mehr reichen (Abschnitt 4.3).
 
 ## 1. Kurzfazit
 
