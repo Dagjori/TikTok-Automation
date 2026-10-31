@@ -132,8 +132,6 @@ void main() {
     vec3 b = texture2D(tB, vUv - dir * vec2(1.0 / aspekt, 1.0) * (1.0 - p) * 0.06).rgb;
     float x = front - s;
     col = x < 0.0 ? a : (x < breite ? farbe1 : (x < 2.0 * breite ? farbe2 : b));
-    float ka = smoothstep(0.0, 0.004, x) * (1.0 - smoothstep(0.0, 0.004, x - breite));
-    col = mix(col, mix(col, farbe1, 1.0), 0.0 * ka);
   } else { // Zoom: A fliegt auf den Betrachter zu, B kommt aus der Tiefe
     float e = smoothstep(0.0, 1.0, p);
     vec2 uvA = mitte + (vUv - mitte) / (1.0 + e * 1.6);
@@ -282,8 +280,10 @@ export class Buehne {
   }
 
   /** Eine Welt ({szene, kamera, post}) in ein LDR-Ziel rendern */
-  _welt(welt, ausgabe) {
+  _welt(welt, ausgabe, t) {
     const r = this.renderer;
+    // Zustand der Welt für diese Zeit setzen (Welten dürfen sich eine Szene teilen)
+    if (welt.update) welt.update(t);
     const post = { ...POST_STANDARD, ...(welt.post || {}) };
     r.setRenderTarget(this.rtSzene);
     r.clear();
@@ -357,16 +357,16 @@ export class Buehne {
   /**
    * Ein Bild zeichnen.
    * @param {object} weltA  aktive Welt
-   * @param {object} [opt]  { weltB, uebergang: {typ:'blende'|'iris'|'wisch'|'zoom', p, mitte:[x,y], richtung:[x,y], farbe1, farbe2}, bildNr }
+   * @param {object} [opt]  { weltB, uebergang: {typ:'blende'|'iris'|'wisch'|'zoom', p, mitte:[x,y], richtung:[x,y], farbe1, farbe2}, bildNr, t }
    */
-  zeichne(weltA, { weltB = null, uebergang = null, bildNr = 0 } = {}) {
+  zeichne(weltA, { weltB = null, uebergang = null, bildNr = 0, t = 0 } = {}) {
     const r = this.renderer;
     r.autoClear = false;
-    const postA = this._welt(weltA, this.rtLdrA);
+    const postA = this._welt(weltA, this.rtLdrA, t);
     let bild = this.rtLdrA;
     let koernung = postA.koernung;
     if (weltB && uebergang) {
-      const postB = this._welt(weltB, this.rtLdrB);
+      const postB = this._welt(weltB, this.rtLdrB, t);
       const u = this.m.uebergang.uniforms;
       u.tA.value = this.rtLdrA.texture;
       u.tB.value = this.rtLdrB.texture;

@@ -36,9 +36,7 @@ export class Zeitleiste {
   }
   zeichne(t, bildNr) {
     const z = this.zustand(t);
-    z.weltA.update?.(t);
-    if (z.weltB && z.weltB !== z.weltA) z.weltB.update?.(t);
-    this.buehne.zeichne(z.weltA, { weltB: z.weltB, uebergang: z.uebergang, bildNr });
+    this.buehne.zeichne(z.weltA, { weltB: z.weltB, uebergang: z.uebergang, bildNr, t });
     return z;
   }
 }

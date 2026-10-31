@@ -41,6 +41,7 @@ export const SCHRITT_S = 1;
 export const STANDARD_PARAMETER = Object.freeze({
   vmax: 3, // Zellen/s = 22,5 m/s = 81 km/h (Baustellentempo 80 km/h)
   traeodel: 0.2, // p, Trödelwahrscheinlichkeit
+  anfahrTraeodel: 0.2, // p0, Trödelwahrscheinlichkeit für stehende Fahrzeuge (VDR; = p: klassisches NaSch)
   streckeVorM: 10000, // Strecke vor der Engstelle (Platz für den Rückstau)
   streckeNachM: 900, // Strecke hinter der Engstelle (eine Spur)
   schildM: 800, // Strategie A: Einordnen ab hier
@@ -49,9 +50,10 @@ export const STANDARD_PARAMETER = Object.freeze({
   bremsToleranz: 1, // Zellen/s, die ein Hintermann wegen eines Einfädlers bremsen darf
   suchBremsWahrsch: 0.5, // zusätzliches Bremsen beim Lückensuchen
   abwechselnd: 1, // Wahrscheinlichkeit, dass ein Fahrer „im Wechsel“ einfädelt (0 = Drängler)
+  abwechselndLueckeZellen: 4, // „Im Wechsel“ gilt, wenn der Nachbar höchstens so viele freie Zellen (4 = 30 m) entfernt ist
   stauGeschwindigkeit: 1, // Zellen/s (= 27 km/h): langsamer gilt als „im Stau“
   stauLueckeM: 112.5, // max. Abstand zwischen zwei langsamen Fahrzeugen innerhalb eines Staus
-  stauMinFahrzeuge: 5, // kleinere Ansammlungen zählen nicht als Stau
+  stauMinFahrzeuge: 10, // kleinere Ansammlungen zählen nicht als Stau
   zuflussDauerS: 1800, // Dauer der Verkehrsspitze
   messVonS: 600, // Messfenster für den Durchsatz (Anlaufphase ausgeklammert)
   messBisS: 1800,
@@ -138,6 +140,7 @@ export class Simulation {
     this.schildZellen = Math.round(p.schildM / ZELLE_M);
     this.zoneZellen = Math.round(p.zoneM / ZELLE_M);
     this.stauLuecke = Math.round(p.stauLueckeM / ZELLE_M);
+    this.einfahrtLuecke = Math.max(0, p.vmax - 1); // freie Zellen, die zur Einfahrt nötig sind
     this.wechselStartZellen = strategie === 'frueh' ? this.schildZellen : this.zoneZellen;
 
     this.zufluss = mulberry32(mischeSeed(seed, 1));
@@ -170,7 +173,7 @@ export class Simulation {
     this.kreuzHerkunft = []; // Herkunftsspur dieses Fahrzeugs
     this.stauVerlaufM = []; // Staulänge je Sekunde (m)
     this.stauVerlaufFzg = [];
-    this.stauEndeVorEngstelleM = []; // Abstand des Stauendes zur Engstelle (m)
+    this.rueckstauVerlaufM = []; // Abstand des Stauendes zur Engstelle (m)
     this.angekommen = 0;
     this.maxWartend = 0;
     this.wechsel = 0;
@@ -235,8 +238,11 @@ export class Simulation {
             break;
           }
         }
-        const i = this._neuesFahrzeug(spur, 0, Math.min(vmax, luecke), warte.shift());
-        occ[0] = i;
+        // Einfahrt nur mit Mindestlücke, sonst entstünden am Rand künstliche Pulks
+        if (luecke >= this.einfahrtLuecke) {
+          const i = this._neuesFahrzeug(spur, 0, Math.min(vmax, luecke), warte.shift());
+          occ[0] = i;
+        }
       }
     }
   }
@@ -256,7 +262,8 @@ export class Simulation {
     const { xb, N, vmax, occ0, occ1, vV, vSpur, vSuche, vHerk } = this;
     const tol = this.p.bremsToleranz;
     const abw = this.p.abwechselnd;
-    const rueck = Math.max(vmax, 3);
+    const nah = this.p.abwechselndLueckeZellen;
+    const rueck = Math.max(vmax, nah + 1);
     vSuche.fill(0, 0, this.n);
     const von = Math.max(0, xb - this.wechselStartZellen);
     for (let c = xb - 1; c >= von; c--) {
@@ -269,7 +276,7 @@ export class Simulation {
         // neuer Vordermann
         let luecke = vmax;
         let vorn = -1;
-        for (let k = 1; k <= vmax && c + k < N; k++) {
+        for (let k = 1; k <= rueck && c + k < N; k++) {
           if (occ0[c + k] !== -1) {
             luecke = k - 1;
             vorn = occ0[c + k];
@@ -277,7 +284,7 @@ export class Simulation {
           }
         }
         if (luecke < vv - tol) moeglich = false;
-        if (vorn >= 0 && luecke <= 2 && vHerk[vorn] === 1) dichtDahinterEingefaedelt = true;
+        if (vorn >= 0 && luecke <= nah && vHerk[vorn] === 1) dichtDahinterEingefaedelt = true;
       }
       if (moeglich) {
         // neuer Hintermann
@@ -285,7 +292,7 @@ export class Simulation {
           const j = occ0[c - k];
           if (j !== -1) {
             if (k <= vmax && vV[j] - (k - 1) > tol) moeglich = false;
-            if (k - 1 <= 2 && vHerk[j] === 1) dichtDahinterEingefaedelt = true;
+            if (k - 1 <= nah && vHerk[j] === 1) dichtDahinterEingefaedelt = true;
             break;
           }
         }
@@ -307,6 +314,7 @@ export class Simulation {
   _bewegung() {
     const { xb, N, vmax, occ0, occ1, vX, vV, vSpur, vSuche, n } = this;
     const pTroedel = this.p.traeodel;
+    const pAnfahr = this.p.anfahrTraeodel;
     const pSuche = this.p.suchBremsWahrsch;
     const tNeu = this.t + SCHRITT_S;
     const vNeu = new Int8Array(n);
@@ -350,7 +358,7 @@ export class Simulation {
         if (vn > 0 && this.troedel() < pSuche) vn -= 1;
       }
       // Trödeln (Zufallszahl wird immer gezogen)
-      if (this.troedel() < pTroedel && vn > 0) vn -= 1;
+      if (this.troedel() < (vV[i] === 0 ? pAnfahr : pTroedel) && vn > 0) vn -= 1;
       vNeu[i] = vn;
     }
 
@@ -381,18 +389,23 @@ export class Simulation {
   }
 
   /**
-   * Staulänge = Länge der längsten zusammenhängenden Kolonne langsamer Fahrzeuge
+   * Staumessung. Ein Stau ist eine zusammenhängende Kolonne langsamer Fahrzeuge
    * (v <= stauGeschwindigkeit, beide Spuren zusammen). Zwei langsame Fahrzeuge gehören zur selben
    * Kolonne, wenn sie höchstens `stauLueckeM` auseinanderliegen. Kolonnen mit weniger als
-   * `stauMinFahrzeuge` Fahrzeugen zählen nicht. Gemessen wird von der Stauspitze bis zum Stauende,
-   * die Spitze liegt bei B an der Engstelle, bei A am Ort des frühen Einordnens.
-   * Zusätzlich: Abstand des Stauendes zur Engstelle.
+   * `stauMinFahrzeuge` Fahrzeugen zählen nicht, ebenso Kolonnen, deren Spitze weit weg vom
+   * Einordnungs-/Einfädelpunkt liegt (abgekoppelte Stauwellen).
+   *   staulaenge = Länge der Kolonne von der Spitze bis zum Stauende
+   *   rueckstau  = Abstand zwischen Stauende und Engstelle
+   * Bei B liegt die Spitze an der Engstelle, beide Werte sind dann (fast) gleich. Bei A liegt die Spitze
+   * am Ort des frühen Einordnens, der Rückstau ist um diese Strecke länger.
    */
   _stauMessen() {
     const { N, xb, occ0, occ1, vV } = this;
     const vs = this.p.stauGeschwindigkeit;
     const luecke = this.stauLuecke;
     const minFzg = this.p.stauMinFahrzeuge;
+    const kopfMin = xb - this.wechselStartZellen - 40; // Spitze höchstens 300 m vor dem Wechselbereich
+    const kopfMax = xb + 20;
     let besteLaenge = 0;
     let besteAnzahl = 0;
     let besteEnde = -1;
@@ -400,7 +413,7 @@ export class Simulation {
     let ende = -1; // stromaufwärtigste Zelle
     let anzahl = 0;
     const abschliessen = () => {
-      if (kopf >= 0 && anzahl >= minFzg) {
+      if (kopf >= 0 && anzahl >= minFzg && kopf >= kopfMin && kopf <= kopfMax) {
         const laenge = kopf - ende + 1;
         if (laenge > besteLaenge) {
           besteLaenge = laenge;
@@ -428,7 +441,7 @@ export class Simulation {
     abschliessen();
     this.stauVerlaufM.push(besteLaenge * ZELLE_M);
     this.stauVerlaufFzg.push(besteAnzahl);
-    this.stauEndeVorEngstelleM.push(besteLaenge > 0 ? Math.max(0, xb - besteEnde) * ZELLE_M : 0);
+    this.rueckstauVerlaufM.push(besteLaenge > 0 ? Math.max(0, xb - besteEnde) * ZELLE_M : 0);
   }
 
   // --- Abfragen ---------------------------------------------------------------
@@ -475,26 +488,31 @@ export class Simulation {
     return this.ergebnis();
   }
 
-  /** Kennzahlen eines Laufs. */
+  /** Kennzahlen eines Laufs (Längen in m, Zeiten in s, Durchsatz in Kfz/h). */
   ergebnis() {
     const p = this.p;
     const dauer = p.zuflussDauerS;
-    let max = 0;
-    let summe = 0;
-    let endeMax = 0;
+    const nSp = Math.min(dauer, this.stauVerlaufM.length - 1); // letzter Zeitpunkt der Verkehrsspitze
+    let stauMax = 0;
+    let stauSumme = 0;
+    let rueckMax = 0;
+    let rueckSumme = 0;
     let dichteSumme = 0;
     let dichteN = 0;
-    for (let t = 0; t <= dauer && t < this.stauVerlaufM.length; t++) {
+    for (let t = 0; t < this.stauVerlaufM.length; t++) {
       const s = this.stauVerlaufM[t];
-      if (s > max) max = s;
-      if (this.stauEndeVorEngstelleM[t] > endeMax) endeMax = this.stauEndeVorEngstelleM[t];
-      summe += s;
+      const r = this.rueckstauVerlaufM[t];
+      if (s > stauMax) stauMax = s;
+      if (r > rueckMax) rueckMax = r;
+      if (t <= nSp) {
+        stauSumme += s;
+        rueckSumme += r;
+      }
       if (s >= 300) {
         dichteSumme += this.stauVerlaufFzg[t] / (s / ZELLE_M);
         dichteN++;
       }
     }
-    const ende = this.stauVerlaufM[Math.min(dauer, this.stauVerlaufM.length - 1)];
     const zeitenImFenster = [];
     const herkImFenster = [];
     for (let k = 0; k < this.kreuzZeiten.length; k++) {
@@ -514,12 +532,16 @@ export class Simulation {
     const reisezeit = rz.length ? rz.reduce((a, b) => a + b, 0) / rz.length : NaN;
     return {
       seed: this.seed,
-      stauMaxM: max,
-      stauMittelM: summe / (Math.min(dauer, this.stauVerlaufM.length - 1) + 1),
-      stauEndeM: ende,
-      stauEndeVorEngstelleMaxM: endeMax,
-      stauEndeVorEngstelleEndeM: this.stauEndeVorEngstelleM[Math.min(dauer, this.stauEndeVorEngstelleM.length - 1)],
-      langsameFzgProZelleImStau: dichteN ? dichteSumme / dichteN : NaN,
+      // Kolonne (Spitze bis Stauende)
+      stauMaxM: stauMax,
+      stauMittelM: stauSumme / (nSp + 1),
+      stauEndeM: this.stauVerlaufM[nSp],
+      // Rückstau (Stauende bis Engstelle)
+      rueckstauMaxM: rueckMax,
+      rueckstauMittelM: rueckSumme / (nSp + 1),
+      rueckstauEndeM: this.rueckstauVerlaufM[nSp],
+      fahrzeugeImStauAmEnde: this.stauVerlaufFzg[nSp],
+      stauDichteFzgProZelle: dichteN ? dichteSumme / dichteN : NaN,
       reisezeitMittelS: reisezeit,
       durchsatzKfzH: (zeitenImFenster.length / fensterS) * 3600,
       anteilVonEndenderSpurProzent: herkImFenster.length ? (100 * aus1) / herkImFenster.length : NaN,
