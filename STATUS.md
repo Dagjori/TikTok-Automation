@@ -1,6 +1,6 @@
 # STATUS
 
-**Stand:** 31.10.2026, ca. 16:00 Uhr
+**Stand:** 31.10.2026, abends
 
 ## Wo wir stehen
 - **Kanal:** **Simulierbar** (`@simulierbar`, seit 31.10. aktiv). Nische „Alltag durchgerechnet“ mit den Rubriken 💶 GELD und ⏱️ ALLTAG (`docs/05-startnische.md`).
@@ -8,7 +8,11 @@
   - wie die Vorbilder, nur eigene Themen, kein „1.000 Lebensläufe“-Merkmal
   - Ende immer „Schreibt euren Simulationswunsch in die Kommentare.“
   - Skripte: `docs/08-beispielskripte.md`
-- **Erste 2 Videos: fertig, Version 2 (31.10., ca. 15:30 Uhr), dem Inhaber geschickt.** Die Dateien sind nicht im Repo, weil sie zu groß sind. Neu bauen lässt sich jedes Video mit den Befehlen in `pipeline/README.md`.
+- **Update 31.10. abends:**
+  - **Reißverschluss zurückgestellt.** @simulierts hat das Thema am 31.10. zuerst gepostet.
+  - **Zweites Video:** „Spurwechsel im Stau“ im Iso-Stil, wird gerade produziert (`pipeline/projekte/spurwechsel/`).
+  - **GTA 6, Version 3:** wird gerade mit der neuen Vertonung gerendert (am Stück, Pausen nach Sätzen und Abschnitten; vom Inhaber freigegeben).
+- **Erste 2 Videos: fertig, Version 2 (31.10., ca. 15:30 Uhr), dem Inhaber geschickt** (überholt, siehe Update): Die Dateien sind nicht im Repo, weil sie zu groß sind. Neu bauen lässt sich jedes Video mit den Befehlen in `pipeline/README.md`.
   - **GTA 6 weltweit:** `pipeline/out/gta6-welt/gta6-welt.mp4`, 84,0 s, −14,0 LUFS.
   - **Reißverschluss:** `pipeline/out/reissverschluss/reissverschluss.mp4`, 78,7 s, −14,0 LUFS.
   - **Neu in Version 2:**
