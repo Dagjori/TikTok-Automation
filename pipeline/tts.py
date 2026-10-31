@@ -1,6 +1,7 @@
 """Erzeugt die Sprecherstimme eines Projekts über ElevenLabs, inklusive Zeitstempeln.
 
-Aufruf:  python3 pipeline/tts.py <projektordner> [--voice NAME_ODER_ID] [--proben]
+Aufruf:  python3 pipeline/tts.py <projektordner> [--voice NAME_ODER_ID] [--proben] [--segmente]
+         Standard: ganzes Skript in einer Anfrage (flüssig). --segmente = altes Verfahren je Segment.
 Liest:   <projekt>/skript.json  (Segmente mit Text)
 Schreibt:<projekt>/audio/stimme.mp3, <projekt>/audio/timing.json (Start und Ende je Segment und je Wort)
 Key:     Cloud: Netzwerk-Secret (Header xi-api-key für api.elevenlabs.io); lokal: Umgebungsvariable ELEVENLABS_API_KEY. Nie ins Repo.
@@ -17,7 +18,7 @@ from pathlib import Path
 API = "https://api.elevenlabs.io/v1"
 MODELL = "eleven_multilingual_v2"
 STANDARD_STIMME = "aTTiK3YzK3dXETpuDE2h"  # „Ben“, muttersprachlich Deutsch (Wahl des Inhabers 31.10. per Hörprobe)
-EINSTELLUNGEN = {"stability": 0.45, "similarity_boost": 0.8, "style": 0.2, "use_speaker_boost": True}  # natürliches Tempo der Stimme
+EINSTELLUNGEN = {"stability": 0.5, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": True}  # Empfehlung von ElevenLabs: Startwert 50/75, „style“ immer 0 (sonst weniger stabil)
 PAUSE = 0.22          # Pause zwischen Segmenten (Vorbilder: Median 0,16–0,38 s)
 PAUSE_LANG = 0.3      # nach dem Hook und vor dem Schluss-Satz
 ZIEL_WPS = 2.95       # Wörter pro Sekunde beim Sprechen (Top-Videos: 2,91–3,02, gemessen 31.10.2026)
@@ -150,6 +151,41 @@ def anzeige_woerter(anzeige, gesprochen):
     return ergebnis
 
 
+def am_stueck(skript, texte, voice_id, name, ziel):
+    """Ganzes Skript in einer einzigen Anfrage sprechen lassen (Standard seit 31.10.).
+
+    Die Stimme spricht durchgehend wie bei einer echten Aufnahme: natürliche Satzmelodie und Pausen,
+    keine Schnitte. Das alte Verfahren (je Segment eine Anfrage, harte Schnitte, feste Pausen in digitaler
+    Stille) klang abgehackt. Segment- und Wortzeiten kommen aus den Zeichen-Zeitstempeln.
+    """
+    gesamt = " ".join(texte)
+    antwort = sprechen(gesamt, voice_id)
+    al = antwort["alignment"]
+    zeichen, starts, enden = al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]
+    if "".join(zeichen) != gesamt:
+        sys.exit("Zeitstempel passen nicht zum Text (Zeichen weichen ab). Mit --segmente erzeugen.")
+    samples = pcm(base64.b64decode(antwort["audio_base64"]))
+    sichtbar = [k for k, z in enumerate(zeichen) if not z.isspace()]
+    von = max(0.0, starts[sichtbar[0]] - 0.05)               # Atem bzw. Ansatz vor dem ersten Wort behalten
+    bis = min(len(samples) / RATE, enden[sichtbar[-1]] + 0.45)  # Ausklang des letzten Worts behalten
+    stueck = samples[int(von * RATE):int(bis * RATE)]
+    segmente, pos = [], 0
+    for seg, t in zip(skript["segmente"], texte):
+        a, b = pos, pos + len(t)
+        gesprochen = [{"wort": w["wort"], "start": round(w["start"] - von, 3), "ende": round(w["ende"] - von, 3)}
+                      for w in woerter(zeichen[a:b], starts[a:b], enden[a:b])]
+        segmente.append({"id": seg["id"], "text": seg["text"],
+                         "start": gesprochen[0]["start"], "ende": gesprochen[-1]["ende"],
+                         "woerter": anzeige_woerter(seg["text"], gesprochen)})
+        print(f"  {seg['id']:11} {segmente[-1]['start']:6.2f}–{segmente[-1]['ende']:6.2f} s")
+        pos = b + 1  # Leerzeichen zwischen den Segmenten
+    mp3_schreiben(stueck, ziel / "stimme.mp3")
+    dauer = round(len(stueck) / RATE, 3)
+    timing = {"stimme": name, "voice_id": voice_id, "modell": MODELL, "verfahren": "am_stueck", "dauer": dauer, "segmente": segmente}
+    (ziel / "timing.json").write_text(json.dumps(timing, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"{name}: {dauer} s, {len(gesamt)} Zeichen, eine Anfrage")
+
+
 def main():
     projekt = Path(sys.argv[1])
     args = sys.argv[2:]
@@ -174,6 +210,8 @@ def main():
 
     # „sprechtext“ = Fassung für die Stimme (Zahlen ausgeschrieben, Lautschrift); „text“ = Anzeige bzw. Untertitel
     texte = [s.get("sprechtext") or s["text"] for s in skript["segmente"]]
+    if "--segmente" not in args:
+        return am_stueck(skript, texte, voice_id, name, ziel)
     import array
     # Durchgang 1: alle Segmente erzeugen (Cache), Ränder bestimmen, natürliches Tempo messen
     roh = []
