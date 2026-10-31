@@ -504,7 +504,7 @@ async function start() {
 
   // Hook: kinetischer Titel
   const hk = (w, a) => Math.max(0.02, W("hook", w, a) - 0.1);
-  hud.add(new KinetikTitel(hud, [
+  const hookTitel = hud.add(new KinetikTitel(hud, [
     // schon im ersten Bild vollständig (Vorschaubild im Feed)
     { text: "Wer", t: -0.8 },
     { text: "macht’s", t: -0.8 },
@@ -513,10 +513,30 @@ async function start() {
   ], { y: 290, groesse: 120, zeilenhoehe: 1.0, aus: tSetup - 0.35 }));
   chip(hud, { flagge: "SIM", text: "simuliert", x: 54, y: 590, ein: hk("simuliert.", 0.8), aus: tSetup - 0.35, farbe: BLAU, klasse: "gross" });
   // Drängler-Schild über dem vordersten orangen Auto
-  hud.add(new Anker(hud, {
+  const draengler = hud.add(new Anker(hud, {
     html: "<small>Fährt bis vorne</small>Drängler?", kamera: weltHook.kamera, ein: -0.8, aus: tSetup - 0.4, minY: 470, hoehe: 170,
     punkt: () => vorderstes,
   }));
+  // Das Schild weicht dem Titel aus: mindestens 24 px Abstand zu jedem Titelwort (nach rechts verschieben)
+  const draenglerUpdate = draengler.update.bind(draengler);
+  draengler.update = (t) => {
+    draenglerUpdate(t);
+    if (draengler.e.style.visibility === "hidden") return;
+    const a = draengler.schild.getBoundingClientRect();
+    let dx = 0, dy = 0;
+    for (const w of hookTitel.woerter) {
+      if (w.el.style.opacity === "0") continue;
+      const r = w.el.getBoundingClientRect();
+      const senkrecht = a.top < r.bottom + 24 && a.bottom > r.top - 24;
+      if (senkrecht && a.left < r.right + 24 && a.right > r.left - 24) {
+        dx = Math.max(dx, r.right + 24 - a.left);
+        dy = Math.max(dy, r.bottom + 24 - a.top);
+      }
+    }
+    // bevorzugt nach rechts ausweichen, solange die rechte Sicherheitszone (150 px) frei bleibt, sonst nach unten
+    if (dx > 0 && a.right + dx <= 930) draengler.schild.style.transform += ` translateX(${dx.toFixed(1)}px)`;
+    else if (dy > 0) draengler.schild.style.transform += ` translateY(${dy.toFixed(1)}px)`;
+  };
 
   // Setup: wo wird eingeordnet?
   hud.add(new Anker(hud, {
