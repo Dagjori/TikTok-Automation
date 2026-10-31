@@ -303,7 +303,9 @@ function rueckstauKurve(traj, endwertM) {
     const f = clamp(p) * (glatt.length - 1);
     const i = Math.floor(f), u = f - i;
     const w = glatt[i] + ((glatt[Math.min(glatt.length - 1, i + 1)]) - glatt[i]) * u;
-    return p >= 1 ? endwertM : Math.min(endwertM, Math.max(0, (w * endwertM) / ende));
+    if (p <= 0) return 0;
+    // Anfang weich bei 0 beginnen (der geglättete erste Wert ist nicht 0)
+    return p >= 1 ? endwertM : Math.min(endwertM, Math.max(0, (w * endwertM) / ende)) * smoothstep(0, 0.08, p);
   };
 }
 const formatStau = (m) => (m < 995 ? `${fmt.zahl(Math.round(m / 10) * 10)} m` : `${fmt.zahl(m / 1000, 1)} km`);
@@ -370,9 +372,9 @@ async function start() {
   const K = {
     beide: [0, 0.5, 170, 1.5, 0, 33, 30],           // beide Engstellen, Straßen füllen die Bildbreite
     schildLinks: [0, 0.5, 150, -XO, 0, 790, 30],    // linke Straße am Schild (800 m vor der Engstelle)
-    endeRechts: [0, 0.5, 125, XO, 0, 17, 30],       // rechte Straße an der Engstelle
+    endeRechts: [0, 0.6, 225, XO, 0, 40, 30],       // rechte Straße: Engstelle oben, Einfädelzone (60 m) in der Bildmitte
     ueberblick: [0, 0.16, 325, 1.5, 0, 485, 32],    // flache Drohne: Engstelle oben (y ≈ 640), 570 m davor bei y ≈ 1150
-    stau: [0, 0.45, 160, 1.5, 0, 700, 30],          // über den Staus (Bremswellen)
+    stau: [0, 0.45, 160, 1.5, 0, 800, 30],          // über den Staus vor dem Schild (Bremswellen); Bildunterkante bleibt vor 1.000 m
   };
   const mix = (a, b, d) => a.map((x, i) => x + (d[i] || 0));
 
@@ -422,7 +424,7 @@ async function start() {
     { t: W("runde2", "Denn", 0.6) - 0.2, v: K.ueberblick, e: ease.inOutCubic },
     { t: W("runde2", "In", 0.9, { ab: 20 }) - 0.4, v: mix(K.ueberblick, [], [0, 0.01, -20, 0, 0, 10]), e: ease.linear },
     { t: tBrems + 0.7, v: K.stau, e: ease.inOutCubic },
-    { t: tR3 + 0.5, v: mix(K.stau, [], [0, 0.02, -10, 0, 0, 25]), e: ease.linear },
+    { t: tR3 + 0.5, v: mix(K.stau, [], [0, 0.02, -10, 0, 0, -12]), e: ease.linear },
   ], (t) => ({ daten: traj.feierabend, tau: r2Tau(t) }), { bloomStaerke: 0.85, bloomSchwelle: 1.05, tiltStaerke: 0.8, tiltBreite: 0.38, tiltMitte: 0.55, vignette: 0.24, koernung: 0.038 });
 
   // Runde 3: Ferienbeginn (Daten „rushhour“), leicht verlangsamt, damit das 18-s-Fenster reicht.
@@ -430,7 +432,7 @@ async function start() {
   const r3Rate = Math.min(1, 17.9 / (tRegel - tR3 + 0.4));
   const r3Tau = tauLinear(tR3, r3Rate, 0.0);
   const weltR3 = welt("runde3", [
-    { t: tR3 - 0.4, v: mix(K.stau, [], [0, 0, 20, 0, 0, 20]) },
+    { t: tR3 - 0.4, v: mix(K.stau, [], [0, 0.02, 10, 0, 0, -20]) },
     { t: W("runde3", "Rückstau", 0.3), v: K.stau, e: ease.linear },
     { t: W("runde3", "13", 0.5) + 0.6, v: K.ueberblick, e: ease.inOutCubic },
     { t: W("runde3", "Die", 0.7, { ab: 30 }) - 0.3, v: mix(K.ueberblick, [], [0, 0.01, -25, 0, 0, 10]), e: ease.linear },
@@ -450,7 +452,7 @@ async function start() {
   const weltEnde = welt("ende", [
     { t: tEnde - 0.5, v: [0.0, 1.0, 700, 1.5, 0, 200, 30] },
     { t: DAUER, v: [0.08, 1.1, 620, 1.5, 0, 160, 30], e: ease.linear },
-  ], (t) => ({ daten: traj.feierabend, tau: endeTau(t) }), { bloomStaerke: 1.0, bloomSchwelle: 0.9, unschaerfe: 0.8, vignette: 0.5, koernung: 0.045, belichtung: 0.55, tonung: [0.55, 0.7, 1.25], tonungStaerke: 0.85, saettigung: 0.9 });
+  ], (t) => ({ daten: traj.feierabend, tau: endeTau(t) }), { bloomStaerke: 0.6, bloomSchwelle: 1.2, unschaerfe: 0.85, vignette: 0.55, koernung: 0.045, belichtung: 0.42, tonung: [0.42, 0.58, 1.3], tonungStaerke: 0.92, saettigung: 0.75 });
 
   // Markierungsbänder in Runde 2 und 3
   const t500 = W("runde2", "500", 0.4);
@@ -503,15 +505,16 @@ async function start() {
   // Hook: kinetischer Titel
   const hk = (w, a) => Math.max(0.02, W("hook", w, a) - 0.1);
   hud.add(new KinetikTitel(hud, [
-    { text: "Wer", t: 0.08 },
-    { text: "macht's", t: 0.3 },
+    // schon im ersten Bild vollständig (Vorschaubild im Feed)
+    { text: "Wer", t: -0.8 },
+    { text: "macht’s", t: -0.8 },
     { umbruch: true },
-    { text: "richtig?", t: 0.62, klasse: "gelb" },
-  ], { y: 290, groesse: 132, zeilenhoehe: 1.0, aus: tSetup - 0.35 }));
+    { text: "richtig?", t: -0.8, klasse: "gelb" },
+  ], { y: 290, groesse: 120, zeilenhoehe: 1.0, aus: tSetup - 0.35 }));
   chip(hud, { flagge: "SIM", text: "simuliert", x: 54, y: 590, ein: hk("simuliert.", 0.8), aus: tSetup - 0.35, farbe: BLAU, klasse: "gross" });
   // Drängler-Schild über dem vordersten orangen Auto
   hud.add(new Anker(hud, {
-    html: "<small>Fährt bis vorne</small>Drängler?", kamera: weltHook.kamera, ein: hk("Drängler,", 0.1), aus: tSetup - 0.4, minY: 720, hoehe: 130,
+    html: "<small>Fährt bis vorne</small>Drängler?", kamera: weltHook.kamera, ein: -0.8, aus: tSetup - 0.4, minY: 470, hoehe: 170,
     punkt: () => vorderstes,
   }));
 
@@ -522,7 +525,7 @@ async function start() {
   }));
   hud.add(new Anker(hud, {
     html: "<small>an der Engstelle</small>abwechselnd", kamera: weltSetup.kamera, ein: tRechts + 0.8, aus: tR1 - 0.3, minY: 600, hoehe: 110,
-    punkt: () => V(XO, 1.0, 40),
+    punkt: () => V(XO, 1.0, 50),
   }));
 
   // Runden-Anzeige
@@ -586,7 +589,7 @@ async function start() {
   // Runde 2: 3D-Labels an den Markierungsbändern
   const bandAus = W("runde2", "Bremswellen", 0.85) - 0.45;
   chip(hud, { flagge: "500 m", text: "kaum Stau", x: 54, y: 760, ein: t500 + 0.25, aus: bandAus, farbe: GRUEN, stil: "links" });
-  chip(hud, { flagge: "500 m", text: "genutzt", x: 650, y: 760, ein: tGenutzt + 0.25, aus: bandAus, farbe: ORANGE, stil: "rechts" });
+  chip(hud, { flagge: "500 m", text: "genutzt", x: 596, y: 760, ein: tGenutzt + 0.25, aus: bandAus, farbe: ORANGE, stil: "rechts" });
   chip(hud, { flagge: "500 m", text: "zählen kaum", x: 54, y: 760, ein: t500b + 0.2, aus: t500b + 2.6, farbe: GRUEN, stil: "links" });
   chip(hud, { flagge: "!", text: "Bremswellen laufen nach hinten", x: 54, y: 590, ein: W("runde2", "Bremswellen", 0.85) - 0.15, aus: tR3 - 0.35, farbe: ROT });
 
@@ -611,9 +614,10 @@ async function start() {
     x: 54, y: 300, breite: 876, ein: tRegel + 0.05, aus: tEnde - 0.3, stil: "kipp", farbe: GRUEN, klang: "ding",
     nachUpdate: (t) => {
       for (const [z, t0] of [[z1, tViel], [z2, tWenig]]) {
+        // Zeilen sind von Anfang an da (gedimmt), damit die Karte nie leer wirkt; zum Wort leuchten sie auf
         const s = t < t0 ? 0 : feder(t - t0, FEDER.knackig);
-        z.style.opacity = String(clamp(s * 2.5));
-        z.style.transform = `translateX(${(1 - s) * 120}px)`;
+        z.style.opacity = String(0.22 + 0.78 * clamp(s * 2.5));
+        z.style.transform = `translateX(${(1 - Math.min(1, s)) * 40}px) scale(${0.97 + 0.03 * Math.min(1, s)})`;
       }
     },
   }));
@@ -637,6 +641,13 @@ async function start() {
   // Karaoke-Untertitel
   const karaoke = new Karaoke(hud, zp, { y: KY, maxBreite: 850, groesse: 60, versteckt: [[tEnde - 0.15, 999]] });
   karaoke.vorbereiten();
+  // nie zwei Untertitel-Blöcke gleichzeitig (sonst springt der alte Block für 2 Bilder zur Seite): der neuere gewinnt
+  const karaokeUpdate = karaoke.update.bind(karaoke);
+  karaoke.update = (t) => {
+    karaokeUpdate(t);
+    const sichtbar = karaoke.bloecke.filter((b) => b.el.style.display !== "none");
+    for (let i = 0; i < sichtbar.length - 1; i++) sichtbar[i].el.style.display = "none";
+  };
   hud.add(karaoke);
 
   // Klang-Ereignisse
