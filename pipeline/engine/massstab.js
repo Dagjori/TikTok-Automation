@@ -1082,7 +1082,7 @@ class Pointe extends Baustein {
       if (d < 0) { setzeStil(w.e, "opacity", "0"); continue; }
       const s = feder(d, FED.pop);
       setzeStil(w.e, "opacity", String(clamp(d / 0.05)));
-      w.e.style.transform = `translateY(${((1 - s) * 50).toFixed(2)}px) scale(${lerp(1.7, 1, clamp(s)).toFixed(4)}) rotate(${((1 - s) * -6).toFixed(2)}deg)`;
+      w.e.style.transform = `translateY(${((1 - s) * 50).toFixed(2)}px) scale(${lerp(1.35, 1, clamp(s)).toFixed(4)}) rotate(${((1 - s) * -6).toFixed(2)}deg)`;
     }
   }
 }

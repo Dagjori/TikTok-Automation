@@ -246,8 +246,8 @@
    "quelle": "Regie",
    "t": 5.523,
    "art": "folgen",
-   "dauer": 999994.477,
-   "laufend": true
+   "bisEnde": true,
+   "klang": false
   },
   {
    "quelle": "Tafel",
@@ -752,7 +752,7 @@
    "t": 11.438,
    "art": "schleife",
    "dauer": 1.695,
-   "klang": "whoosh"
+   "klang": false
   },
   {
    "t": 11.438,

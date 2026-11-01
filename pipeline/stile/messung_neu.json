@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-01T01:00:43.706Z",
+ "stand": "2026-11-01T01:05:56.045Z",
  "gpu": false,
  "hinweis": "Cloud-Container, 4 Kerne, ohne GPU (SwiftShader bzw. Cycles CPU). bild_s = zweites Bild im Browser zeichnen + JPG; blender.sekunden = Cycles-Render der Szene 1080×1920.",
  "messung": [
@@ -69,10 +69,10 @@
    "name": "glas",
    "titel": "Glas-Labor (Füllstand)",
    "technik": "Blender Cycles",
-   "laden_s": 0.457,
-   "bild_s": 0.326,
+   "laden_s": 0.188,
+   "bild_s": 0.193,
    "blender": {
-    "sekunden": 557.5,
+    "sekunden": 299.3,
     "samples": 56,
     "aufloesung": "1080x1920",
     "geraet": "CPU",
@@ -84,8 +84,8 @@
    "name": "holz_gltf",
    "titel": "Holz gebacken (Blender → glTF → Three.js)",
    "technik": "Blender-Bake + Three.js",
-   "laden_s": 1.05,
-   "bild_s": 2.978,
+   "laden_s": 1.021,
+   "bild_s": 1.752,
    "blender": {
     "sekunden": 560.2,
     "samples": 32,
