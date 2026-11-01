@@ -24,7 +24,7 @@ PY="$(command -v python3 || command -v python)"
 [ -d "$FRAMES" ] || { echo "Keine Bilder in $FRAMES – zuerst: node render.js $PROJEKT"; exit 1; }
 FPS="$("$PY" -c "import json;print(json.load(open('$OUT/ereignisse.json')).get('fps',30))" 2>/dev/null || echo 30)"
 # Bilder müssen bei f_00000 beginnen (sonst ab der ersten vorhandenen Nummer)
-START="$(ls "$FRAMES" | grep -m1 -E '^f_[0-9]+' | sed -E 's/^f_0*([0-9]+).*/\1/')"
+START="$(ls "$FRAMES" | grep -m1 -E '^f_[0-9]+' | sed -E 's/^f_0*([0-9]+).*/\1/' || true)"  # || true: grep -m1 beendet die Pipe früh (SIGPIPE bei ls + pipefail)
 START="${START:-0}"
 ERSTES=""
 for f in "$FRAMES"/f_*; do ERSTES="$f"; break; done
