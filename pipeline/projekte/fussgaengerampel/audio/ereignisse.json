@@ -89,7 +89,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 4.4,
+   "t": 4.8,
    "typ": "chip",
    "klang": "pop",
    "text": "3 AMPELN"
@@ -147,37 +147,37 @@
   },
   {
    "quelle": "Chip",
-   "t": 9.98,
+   "t": 9.68,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 9.98,
+   "t": 9.68,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 9.98,
+   "t": 9.68,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 9.98,
+   "t": 9.68,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 9.98,
+   "t": 9.68,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 9.98,
+   "t": 9.68,
    "typ": "chip-weg",
    "klang": false
   },
@@ -299,7 +299,7 @@
    "quelle": "LiveZaehler",
    "t": 14.913,
    "typ": "zaehler",
-   "dauer": 9.137,
+   "dauer": 8.887,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -453,7 +453,7 @@
    "quelle": "LiveZaehler",
    "t": 20.5,
    "typ": "zaehler",
-   "dauer": 3.55,
+   "dauer": 3.3,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -537,18 +537,18 @@
    "klang": "uhr"
   },
   {
+   "quelle": "Chip",
+   "t": 23.68,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
    "quelle": "Tafel",
    "t": 23.727,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 23.98,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Szene",
@@ -649,7 +649,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 27.9,
+   "t": 27.65,
    "typ": "chip-weg",
    "klang": false
   },
@@ -708,7 +708,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 29.07,
+   "t": 28.82,
    "typ": "chip-weg",
    "klang": false
   },
@@ -737,7 +737,7 @@
    "quelle": "LiveZaehler",
    "t": 29.47,
    "typ": "zaehler",
-   "dauer": 5.576,
+   "dauer": 5.326,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -842,7 +842,7 @@
    "quelle": "LiveZaehler",
    "t": 33.066,
    "typ": "zaehler",
-   "dauer": 5.224,
+   "dauer": 4.974,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -988,7 +988,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 35.82,
+   "t": 35.62,
    "typ": "chip-weg",
    "klang": false
   },
@@ -1010,7 +1010,7 @@
    "quelle": "LiveZaehler",
    "t": 35.92,
    "typ": "zaehler",
-   "dauer": 1.9,
+   "dauer": 1.18,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -1508,7 +1508,7 @@
    "quelle": "LiveZaehler",
    "t": 54.24,
    "typ": "zaehler",
-   "dauer": 4.96,
+   "dauer": 4.41,
    "laufend": true,
    "klang": "zaehlen"
   },

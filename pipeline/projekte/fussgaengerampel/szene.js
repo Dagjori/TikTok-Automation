@@ -261,14 +261,14 @@ class AmpelNr {
     const x = clamp(p.x - 30, SICHER.links, SICHER.rechts - this.w);
     const y = clamp(p.y - this.h - 18, SICHER.oben + 170, SICHER.unten - 260);
     const drin = p.x > -80 && p.x < 1160 && p.y > 0 && p.y < 1920 ? 1 : 0;
-    this.e.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) scale(${(0.4 + 0.6 * s).toFixed(4)})`;
+    this.e.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) scale(${Math.min(1, 0.4 + 0.6 * s).toFixed(4)})`; // kein Überschwingen in die Tafel
     this.e.style.transformOrigin = "30px 100%";
     this.e.style.opacity = String(clamp((t - this.ein) / 0.06) * (1 - raus) * drin);
   }
 }
 
 /** Chip an einen 3D-Punkt heften (Position folgt der Kamera) */
-function anheften(chip, punkt, { dy = -40, min = SICHER.oben + 170 } = {}) {
+function anheften(chip, punkt, { dy = -40, min = SICHER.oben + 195 } = {}) {
   const upd = chip.update.bind(chip);
   chip.anker = "mitte";
   chip.update = (t) => {
@@ -280,6 +280,20 @@ function anheften(chip, punkt, { dy = -40, min = SICHER.oben + 170 } = {}) {
     upd(t);
   };
   return chip;
+}
+
+/** Sticker-Aufprall dämpfen: Start bei 1,15-fach statt 2,5-fach (Rest der Engine-Animation bleibt) */
+function sanfterAufprall(st) {
+  const upd = st.update.bind(st);
+  st.update = (t) => {
+    upd(t);
+    const d = t - st.ein;
+    if (d >= 0 && d < 0.1) {
+      const k = ease.inQuad(d / 0.1);
+      st.inn.style.transform = `rotate(${(st.winkel - 5 * (1 - k)).toFixed(2)}deg) scale(${lerp(1.15, 1, k).toFixed(4)})`;
+    }
+  };
+  return st;
 }
 
 /** monotone kubische Interpolation (Fritsch–Carlson) über Stützstellen [[x, y], …] */
@@ -398,23 +412,25 @@ async function start() {
   });
 
   // ---------- Regeln als Chips ----------
-  M.chips({ y: 360, ausrichtung: "mitte", aus: "falle:Klar,-0.1", liste: [
-    { text: "3 AMPELN", ein: "regeln:Drei", art: "voll", team: "akzent", gross: true },
+  M.chips({ y: 362, abstand: 56, ausrichtung: "mitte", aus: "falle:Klar,-0.4", liste: [
+    { text: "3 AMPELN", ein: "regeln:Ampeln", art: "voll", team: "akzent", gross: true },
     { text: "ZUR BAHN", ein: "regeln:Bahn.", art: "dunkel", gross: true },
   ] });
-  M.chips({ y: 470, ausrichtung: "mitte", aus: "falle:Klar,-0.1", liste: [
+  M.chips({ y: 492, abstand: 56, ausrichtung: "mitte", aus: "falle:Klar,-0.4", liste: [
     { text: "MAX HETZT", ein: "regeln:hetzt", art: "voll", team: "a" },
     { text: "DRÜCKT STURM", ein: "regeln:Sturm.", art: "voll", team: "a" },
   ] });
-  M.chips({ y: 560, ausrichtung: "mitte", aus: "falle:Klar,-0.1", liste: [
+  M.chips({ y: 612, abstand: 56, ausrichtung: "mitte", aus: "falle:Klar,-0.4", liste: [
     { text: "LEA GEHT NORMAL", ein: "regeln:Lea", art: "voll", team: "b" },
     { text: "DRÜCKT 1×", ein: "regeln:einmal.", art: "voll", team: "b" },
   ] });
 
   // ---------- Denkfalle und Start ----------
   const sKlar = M.stempel({ text: "KLAR!", ein: "falle:Klar,", x: 330, y: 520, winkel: -8, farbe: "akzent", groesse: 120 });
-  const sOder = M.stempel({ text: "ODER?", ein: "falle:Oder?", aus: "Los-0.06", x: 650, y: 560, winkel: 7, farbe: "weiss", textFarbe: "tinte", groesse: 120 });
-  const sLos = M.stempel({ text: "LOS GEHT'S!", ein: "Los", aus: "rennen1:Ampel-0.1", x: 492, y: 520, winkel: -5, farbe: GRUEN, groesse: 116 });
+  const sOder = M.stempel({ text: "ODER?", ein: "falle:Oder?", aus: "Los-0.3", x: 650, y: 560, winkel: 7, farbe: "weiss", textFarbe: "tinte", groesse: 120 });
+  const sLos = M.stempel({ text: "LOS GEHT'S!", ein: "Los", aus: "rennen1:Ampel-0.35", x: 492, y: 520, winkel: -5, farbe: GRUEN, groesse: 116 });
+
+  for (const s of [sKlar, sOder, sLos]) sanfterAufprall(s);
 
   // ---------- Projektion ----------
   const kamera = new THREE.PerspectiveCamera(34, 1080 / 1920, 0.2, 400);
@@ -454,21 +470,47 @@ async function start() {
   const kopf = (q) => (t) => { const z = figurZustand(q, tau(t), t); return [z.pos[0], 1.05, z.pos[2]]; };
 
   // ---------- Leiste (Weg zur Bahn) ----------
-  M.leiste({
+  const leiste = M.leiste({
     y: 1160, ein: "rennen2:Ampel", aus: "ergebnis:Endstand:-0.1", label: "Weg zur Bahn · 235 m",
     marken: AMPELN.map((a) => ({ anteil: a.x / ZIEL_M, label: String(a.id) })),
     teams: { a: (t) => clamp(MAX.x(tau(t)) / ZIEL_M), b: (t) => clamp(LEA.x(tau(t)) / ZIEL_M) },
     kurz: { a: "M", b: "L" },
   });
 
+  {
+    // Engine-Leiste fährt 70 px von unten ein bzw. 40 px nach unten aus und streift dabei die Untertitel: hier nur 20 px
+    const upd = leiste.update.bind(leiste);
+    leiste.update = (t) => {
+      upd(t);
+      const tr = leiste.e.style.transform;
+      const m = /translateY\(([-\d.]+)px\) scale\(([-\d.]+)\)/.exec(tr || "");
+      if (!m) return;
+      const sc = +m[2], v = +m[1];
+      const sf = clamp((sc - 0.92) / 0.08), x = clamp((v - (1 - sf) * 70) / 40);
+      leiste.e.style.transform = `translateY(${((1 - sf) * 20 + x * 20).toFixed(2)}px) scale(${sc.toFixed(4)})`;
+    };
+  }
+
   // ---------- Rennen: Ampelschilder, Wartezähler, Chips, Stempel ----------
   const signalPunkt = (i, dx = 0) => [dx, 1.75, STR[i].fern - 0.18];
-  hud.add(new AmpelNr(M, { nr: 1, text: "BEDARFSAMPEL", ein: "rennen1:Ampel", aus: "folgen:Folg-0.1", punkt: an(signalPunkt(0, -1.02)) }));
-  hud.add(new AmpelNr(M, { nr: 2, text: "FESTER TAKT · 90 S", ein: "rennen2:Ampel", aus: "rennen2:Lea:-0.1", punkt: an(signalPunkt(1, -1.02)) }));
-  hud.add(new AmpelNr(M, { nr: 3, text: "GRÜNE WELLE · 90 S", ein: "wendung2:Ampel", aus: "wendung2:spät.-0.05", punkt: an(signalPunkt(2, -1.02)) }));
+  hud.add(new AmpelNr(M, { nr: 1, text: "BEDARFSAMPEL", ein: "rennen1:Ampel", aus: "folgen:Folg-0.3", punkt: an(signalPunkt(0, -1.02)) }));
+  hud.add(new AmpelNr(M, { nr: 2, text: "FESTER TAKT · 90 S", ein: "rennen2:Ampel", aus: "rennen2:letzte-0.35", punkt: an(signalPunkt(1, -1.02)) }));
+  hud.add(new AmpelNr(M, { nr: 3, text: "GRÜNE WELLE · 90 S", ein: "wendung2:Ampel", aus: "wendung2:Sekunde", punkt: an(signalPunkt(2, -1.02)) }));
+  /** Zähler am 3D-Anker nur in der Aktionszone zeigen (nicht über Leiste und Untertiteln, nicht unter der Tafel) */
+  const zone = (z, punkt, { unten = 1000, oben = 400 } = {}) => {
+    const upd = z.update.bind(z);
+    z.update = (t) => {
+      upd(t);
+      if (z.e.style.visibility === "hidden") return;
+      const p = punkt(t);
+      const f = clamp((unten + 60 - p.y) / 60) * clamp((p.y - (oben - 60)) / 60);
+      z.e.style.opacity = String(+(z.e.style.opacity || 1) * f);
+    };
+    return z;
+  };
   const wartet = (q, i, label = "WARTET") => {
-    const ein = videoZeit(q.ankunft[i]) + 0.05, aus = videoZeit(q.gruen[i]) - 0.05;
-    return M.zaehler({ ein, aus, wert: (t) => clamp(tau(t) - q.ankunft[i], 0, q.warte[i]), einheit: "s", max: 99, team: q === MAX ? "a" : "b", art: "voll", label, punkt: an(kopf(q), 0, -48) });
+    const ein = videoZeit(q.ankunft[i]) + 0.05, aus = videoZeit(q.gruen[i]) - 0.3;
+    return zone(M.zaehler({ ein, aus, wert: (t) => clamp(tau(t) - q.ankunft[i], 0, q.warte[i]), einheit: "s", max: 99, team: q === MAX ? "a" : "b", art: "voll", label, punkt: an(kopf(q), 0, -48) }), an(kopf(q), 0, -48));
   };
   wartet(MAX, 0);
   wartet(LEA, 0);
@@ -476,12 +518,12 @@ async function start() {
   wartet(MAX, 2);
   const tasterPunkt = (i, q) => [LAT[q.id] * 1.02, 0.7, STR[i].nah + 0.25];
   M.chip({ text: "SIGNAL KOMMT", ein: videoZeit(MAX.druecke[0][0]) + 0.05, aus: "folgen:Folg-0.15", art: "dunkel", x: SICHER.rechts, y: 470, anker: "rechts" });
-  M.chip({ text: "SCHON GESPEICHERT", ein: "wendung1:Druck.", aus: "wendung1:Grün.-0.1", art: "voll", team: "b", x: SICHER.links, y: 455 });
-  const sGleich = M.stempel({ text: "GLEICHSTAND!", ein: "wendung1:Grün.", aus: "rennen2:Ampel-0.05", x: 492, y: 480, winkel: -6, farbe: "akzent", groesse: 104 });
+  M.chip({ text: "SCHON GESPEICHERT", ein: "wendung1:Druck.", aus: "wendung1:Grün.-0.4", art: "voll", team: "b", x: SICHER.links, y: 455 });
+  const sGleich = M.stempel({ text: "GLEICHSTAND!", ein: "wendung1:Grün.", aus: "rennen2:Ampel-0.05", x: 492, y: 494, winkel: -6, farbe: "akzent", groesse: 104 });
   M.melde({ t: T("wendung1:Grün."), typ: "wendung", klang: "ding" });
-  anheften(M.chip({ text: "KNOPF OHNE WIRKUNG", ein: "rennen2:Takt.", aus: "rennen2:letzte-0.1", art: "dunkel", x: 0, y: 0 }), an(tasterPunkt(1, MAX)), { dy: -70 });
-  anheften(M.chip({ text: "NOCH 1 S GRÜN", ein: "rennen2:letzte", aus: "rennen2:Lea:-0.05", art: "voll", team: "a", x: 0, y: 0 }), an(kopf(MAX)), { dy: -60 });
-  const sRot = M.stempel({ text: "ROT!", ein: "rennen2:Rot.", aus: "wendung2:Ampel-0.1", x: 560, y: 480, winkel: 8, farbe: ROT, textFarbe: "weiss", groesse: 104 });
+  anheften(M.chip({ text: "KNOPF OHNE WIRKUNG", ein: "rennen2:Takt.", aus: "rennen2:letzte-0.35", art: "dunkel", x: 0, y: 0 }), an(tasterPunkt(1, MAX)), { dy: -70 });
+  anheften(M.chip({ text: "NOCH 1 S GRÜN", ein: "rennen2:letzte", aus: "rennen2:Lea:-0.3", art: "voll", team: "a", x: 0, y: 0 }), an(kopf(MAX)), { dy: -60 });
+  const sRot = M.stempel({ text: "ROT!", ein: "rennen2:Rot.", aus: "wendung2:Ampel-0.35", x: 560, y: 480, winkel: 8, farbe: ROT, textFarbe: "weiss", groesse: 104 });
   M.melde({ t: T("rennen2:letzte"), typ: "fuehrung", klang: "ding", text: "Max vorn" });
   // Ampel 3: Ring bis zum Entscheidungszeitpunkt, dann bis zum nächsten Grün (an die Rennzeit gekoppelt)
   const ringNachTau = (r, tau0, tau1) => {
@@ -495,23 +537,25 @@ async function start() {
   };
   const DEC = A3.versatz - A3.entscheidung;
   const tR1 = T("wendung2:Ampel"), tR1e = videoZeit(DEC);
-  ringNachTau(M.ring({ ein: tR1, dauer: Math.max(0.6, tR1e - tR1), von: Math.round(DEC - tauRoh(tR1 + 0.1)), bis: 0, label: "ANFORDERN", ende: "ZU!", team: "a", groesse: 150, aus: T("wendung2:Grün") - 0.15, x: 200, y: 700 }), tauRoh(tR1 + 0.1), DEC);
-  const sSpaet = M.stempel({ text: "1 S ZU SPÄT!", ein: "wendung2:spät.", aus: "wendung2:Umlauf.-0.1", x: 470, y: 480, winkel: -7, farbe: ROT, textFarbe: "weiss", groesse: 100 });
+  ringNachTau(M.ring({ ein: tR1, dauer: Math.max(0.6, tR1e - tR1), von: Math.round(DEC - tauRoh(tR1 + 0.1)), bis: 0, label: "ANFORDERN", ende: "ZU!", team: "a", groesse: 150, aus: T("wendung2:spät.") - 0.24, x: 200, y: 700 }), tauRoh(tR1 + 0.1), DEC);
+  const sSpaet = M.stempel({ text: "1 S ZU SPÄT!", ein: "wendung2:spät.", aus: "wendung2:Grün-0.25", x: 470, y: 480, winkel: -7, farbe: ROT, textFarbe: "weiss", groesse: 100 });
   M.melde({ t: T("wendung2:spät."), typ: "wendung", klang: "ding" });
   const tR2 = T("wendung2:Grün"), tR2e = T("ergebnis:Grün");
-  ringNachTau(M.ring({ ein: tR2, dauer: tR2e - tR2, von: Math.round(MAX.gruen[2] - tauRoh(tR2 + 0.1)), bis: 0, label: "NÄCHSTES GRÜN", ende: "GRÜN", team: "b", groesse: 150, aus: tR2e + 0.4, x: 200, y: 700 }), tauRoh(tR2 + 0.1), MAX.gruen[2]);
-  anheften(M.chip({ text: "NÄCHSTER UMLAUF", ein: "wendung2:nächsten", aus: "wendung2:Lea-0.1", art: "voll", team: "a", x: 0, y: 0 }), an(kopf(MAX)), { dy: -140 });
+  ringNachTau(M.ring({ ein: tR2, dauer: tR2e - tR2, von: Math.round(MAX.gruen[2] - tauRoh(tR2 + 0.1)), bis: 0, label: "NÄCHSTES GRÜN", ende: "GRÜN", team: "b", groesse: 150, aus: tR2e - 0.25, x: 200, y: 700 }), tauRoh(tR2 + 0.1), MAX.gruen[2]);
+  M.chip({ text: "NÄCHSTER UMLAUF", ein: "wendung2:nächsten", aus: "wendung2:Lea-0.3", art: "voll", team: "a", x: SICHER.rechts, y: 366, anker: "rechts" });
   // Lea holt auf: Restweg bis Ampel 3
-  M.zaehler({ ein: "wendung2:Lea", aus: videoZeit(LEA.ankunft[2]) + 0.1, wert: (t) => Math.max(0, Math.round(A3.x - LEA.x(tau(t)))), einheit: "m", max: 999, team: "b", art: "voll", label: "NOCH", punkt: an(kopf(LEA), 0, -48) });
+  zone(M.zaehler({ ein: "wendung2:Lea", aus: "wendung2:Jetzt-0.1", wert: (t) => Math.max(0, Math.round(A3.x - LEA.x(tau(t)))), einheit: "m", max: 999, team: "b", art: "voll", label: "NOCH", punkt: an(kopf(LEA), 0, -48) }), an(kopf(LEA), 0, -48));
   M.melde({ t: T("wendung2:holt"), typ: "wendung", klang: "whoosh" });
   const sBeide = M.stempel({ text: "GRÜN FÜR BEIDE!", ein: "ergebnis:Grün", aus: "ergebnis:Endstand:-0.1", x: 492, y: 480, winkel: -6, farbe: GRUEN, textFarbe: "weiss", groesse: 96 });
+
+  for (const s of [sGleich, sRot, sSpaet, sBeide]) sanfterAufprall(s);
 
   // ---------- Folgen-Aufruf ----------
   M.folgen({ ein: "folgen:Folg", dauer: 1.8, y: 540, team: "a" });
 
   // ---------- Ergebnis ----------
   const sBahn = M.stempel({ text: "DIESELBE BAHN!", ein: "ergebnis:dieselbe", aus: "ergebnis:Max-0.1", x: 492, y: 840, winkel: -5, farbe: "akzent", groesse: 98 });
-  M.bilanz({
+  const bilanz = M.bilanz({
     y: 330, ein: "ergebnis:Endstand:", aus: "warum:Nur-0.4", titel: "Endstand · dieselbe Bahn",
     zeilen: [
       { label: "MAX · GEDRÜCKT", wert: MAX.druckSumme, einheit: "×", team: "a", ein: "ergebnis:63-mal" },
@@ -519,6 +563,16 @@ async function start() {
     ],
     differenz: { label: "ZEITGEWINN", wert: 0, einheit: "s", ein: T("ergebnis:dreimal.") + 0.42 },
   });
+
+  {
+    const upd = bilanz.update.bind(bilanz);
+    bilanz.update = (t) => {
+      upd(t);
+      if (t <= bilanz.aus) return;
+      const m = /translateY\(([-\d.]+)px\) scale\(([-\d.]+)\)/.exec(bilanz.e.style.transform || "");
+      if (m) bilanz.e.style.transform = `translateY(${Math.max(0, +m[1]).toFixed(2)}px) scale(${m[2]})`;
+    };
+  }
 
   // ---------- Warum? ----------
   const WS = { max: Math.round(MAX.warteSumme), lea: Math.round(LEA.warteSumme) };
@@ -538,12 +592,14 @@ async function start() {
   let regieWas;
   const anWas = (p, dx = 0, dy = 0) => (t) => { regieWas.anwenden(t); const q = bild(typeof p === "function" ? p(t) : p, kamWas); return { x: q.x + dx, y: q.y + dy }; };
   anheften(M.chip({ text: "KEINE ANFORDERUNG", ein: "ueberraschung:keiner,", aus: "merksatz:Einmal-0.1", art: "dunkel", x: 0, y: 0 }), anWas([0, 0.55, STR[0].nah + 0.25]), { dy: -80 });
-  M.zaehler({ ein: "ueberraschung:Drückt", aus: "merksatz:Einmal+0.4", wert: (t) => Math.max(0, wasTau(t)) / 60, nk: 1, einheit: "min", max: 99, team: ROT, art: "voll", label: "WARTEN", punkt: anWas([0, 1.15, STR[0].nah + 0.55], 0, -40) });
+  M.zaehler({ ein: "ueberraschung:Drückt", aus: "merksatz:Einmal-0.15", wert: (t) => Math.max(0, wasTau(t)) / 60, nk: 1, einheit: "min", max: 99, team: ROT, art: "voll", label: "WARTEN", punkt: anWas([0, 1.15, STR[0].nah + 0.55], 0, -40) });
   const sBleibt = M.stempel({ text: "BLEIBT ROT!", ein: "ueberraschung:bleibt", aus: "ueberraschung:wartest.+0.3", x: 492, y: 480, winkel: -6, farbe: ROT, textFarbe: "weiss", groesse: 100 });
   anheften(M.chip({ text: "SIGNAL KOMMT", ein: tWasDrueck + 0.05, aus: "merksatz:reicht.", art: "voll", team: "b", x: 0, y: 0 }), anWas([LAT.lea * 1.02, 0.55, STR[0].nah + 0.25]), { dy: -80 });
 
+  for (const s of [sBahn, sBleibt]) sanfterAufprall(s);
+
   // ---------- Merksatz: Pointe ----------
-  M.pointe({ text: "EINMAL | *REICHT.*", ein: "merksatz:Einmal", takt: 0.16, aus: "merksatz:Wann-0.1", y: 420, groesse: 158 });
+  M.pointe({ text: "EINMAL | *REICHT.*", ein: "merksatz:Einmal", takt: 0.16, aus: "merksatz:Wann-0.32", y: 420, groesse: 158 });
   M.pointe({ text: "WANN DU KOMMST, | *ENTSCHEIDET.*", ein: "merksatz:Wann", takt: 0.14, aus: "schluss:Was-0.15", y: 420, groesse: 100, klang: "pop" });
 
   // ---------- Untertitel: Wort für Wort (Stil „kontur“), Teamwörter in Teamfarbe ----------
@@ -797,6 +853,7 @@ async function start() {
     hud.update(t);
     gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px);
   };
+  window.hudAt = (t) => hud.update(t); // nur HUD (für qc/text_ueberlappung.mjs; Anker rechnen die Kamera selbst)
   for (const t of [0, tLos + 1, tWarum + 1, tWas + 1]) window.renderAt(Math.min(t, ENDE));
   const schleifenPruefung = M.pruefeSchleife(window.renderAt, { regie });
   if (!schleifenPruefung.ok) console.warn("Schleife nicht geschlossen:", JSON.stringify(schleifenPruefung));

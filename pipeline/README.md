@@ -124,6 +124,8 @@ Prüft und zeigt als Tabelle (Ist · Ziel · Maßstab · ja/nein): Stimme starte
 
 Tests für Stichwort-Zeiten und Phrasen: `node --test qc/zeitplan.test.mjs`.
 
+Text-Überlappung aller Bilder (HUD: Tafel, Chips, Zähler, Ringe, Sticker-Plaketten, Schlagzeilen, Karten, Leiste, Untertitel-Wörter; Deckkraft > 0,3): `node qc/text_ueberlappung.mjs projekte/<name> [--abstand 12] [--deckkraft 0.15] [--von s --bis s]`. Nutzt `window.hudAt(t)` der Szene (nur HUD, ca. 30 s für ein Video), sonst `renderAt`. Exit-Code 1 bei Treffern.
+
 **Zielbereiche:** Profil `ben` = Stimme Ben mit Original-Einstellungen (1,9–2,4 W/s, Satzpausen ≤ 0,8 s, 130–170 Wörter, 65–80 s); Profil `massstab` = Vorbilder (2,5–2,9 W/s, ≤ 0,4 s, 170–220 Wörter). Exit-Code 1, wenn ein Pflichtpunkt „nein“ ist.
 
 ## Renderzeit
