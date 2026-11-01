@@ -47,6 +47,7 @@ def nur_auswahl(objs, aktiv=None):
 
 
 # ---------------------------------------------------------------- 1. Alles in echte Meshes umwandeln
+bpy.context.view_layer.update()  # Weltmatrizen der Kinder (z. B. Schild) erst berechnen, sonst landen sie am Ursprung
 for o in list(sc.objects):
     if o.parent:
         m = o.matrix_world.copy()

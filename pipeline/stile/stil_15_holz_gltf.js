@@ -67,7 +67,7 @@ async function start() {
   composer.setPixelRatio(1);
   composer.setSize(W, H);
   composer.addPass(new RenderPass(szene, kamera));
-  composer.addPass(new BokehPass(szene, kamera, { focus: info.fokus_m, aperture: 0.006, maxblur: 0.012 }));
+  if (!new URLSearchParams(location.search).has("ohneDof")) composer.addPass(new BokehPass(szene, kamera, { focus: info.fokus_m, aperture: 0.006, maxblur: 0.012 }));
   composer.addPass(new OutputPass());
 
   const hud = document.getElementById("hud");
