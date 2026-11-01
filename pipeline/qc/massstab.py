@@ -153,6 +153,14 @@ def pruefe(projekt, profil, extra_ziele):
         zeile("5b", "… ohne laufende Zähler/Uhren gerechnet", f"{zahl(l2)} s ({zahl(wo2[0], 1)}–{zahl(wo2[1], 1)} s)", "≤ 2 s (Hinweis)", "–", l2 <= 2.0, pflicht=False)
         bild = [e for e in ereignisse if e.get("typ") not in NICHT_BILD and e.get("bild") is not False]
         zeile("5c", "Bild-Ereignisse je Sekunde", zahl(len(bild) / max(1e-9, bis), 2), "≥ 0,5 (Hinweis)", "alle 1–2 s neu", len(bild) / max(1e-9, bis) >= 0.5, pflicht=False)
+        # 5d/5e Gesundes Maß (Inhaber 01.11.: „wir übertreiben mit den Stickern“): große Sticker/Stempel nur an
+        # Dramaturgie-Punkten, max. 5 je Video, mind. 5 s Abstand; Chips nur mit neuer Zahl bzw. Info.
+        st = sorted(e["t"] for e in ereignisse if e.get("typ") in ("stempel", "sticker"))
+        abst = min((b - a for a, b in zip(st, st[1:])), default=None)
+        ok5d = len(st) <= 5 and (abst is None or abst >= 5.0)
+        zeile("5d", "Große Sticker/Stempel (gesundes Maß)", f"{len(st)}×, kleinster Abstand {zahl(abst, 1) if abst is not None else '–'} s", "≤ 5×, Abstand ≥ 5 s", "nur Höhepunkte und Denkfalle", ok5d)
+        chips = sum(1 for e in ereignisse if e.get("typ") == "chip")
+        zeile("5e", "Chips gesamt", f"{chips}", "≤ 15 (Hinweis)", "–", chips <= 15, pflicht=False)
     else:
         zeile("5", "Längste Phase ohne Bild-Ereignis", "kein Ereignis-Protokoll", "≤ 2 s", "1,7 s (K3)", False)
 

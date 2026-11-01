@@ -57,3 +57,9 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-11-01 | Stimme: Eleven v4 für alle Videos (Ben, gespeicherte Original-Einstellungen) | Wahl des Inhabers per Hörprobe |
 | 2026-11-01 | Untertitel bleiben Wort für Wort (Stil „kontur“), keine Phrasen. Ersetzt die Ableitung vom 31.10. | Inhaber |
 | 2026-11-01 | GTA 6 und Spurwechsel sind bereits gepostet, kein Neubau. Plan ab 01.11. verschoben: heute „Treppe oder Aufzug“ (12:00) und „200 € oder 100 € steuerfrei“ (20:00); Termin-Videos behalten ihr Datum | Inhaber |
+| 2026-11-01 | Sticker in gesundem Maß. Claude-Regel dazu: große Sticker bzw. Stempel nur an Dramaturgie-Punkten, **max. 5 je Video, mind. 5 s Abstand** (Pflichtpunkt 5d in `qc/massstab.py`); Chips nur mit neuer Zahl bzw. Info (Hinweis ≤ 15). Dynamik alle 1–2 s vor allem über Kamera, Zähler, Figuren und Szenenwechsel | Inhaber: „wir übertreiben mit den Stickern … sonst ist es zu viel“ (bisher 9–14 Sticker je Video) |
+| 2026-11-01 | Inhalte mittig ausrichten, ein Format für TikTok und YouTube Shorts (1080×1920, 9:16). Die Engine-Mittelachse lag bei x 492 statt 540; neue symmetrische Schutzzone nach Kalibrier-Test auf dem Handy des Inhabers | Inhaber: „nicht ganz in der Mitte ausgerichtet“ |
+| 2026-11-01 | Account 2: keine KI-Video-Generatoren, alles mit Blender und Three.js (wie Account 1); weitere Werkzeuge nur nach Vorschlag und Freigabe | Inhaber |
+| 2026-11-01 | Account 2: POV-Stil wie @man_ia_c („Was wäre, wenn …“), der Sprecher spricht aus der Perspektive der Kamera; eigene Themen, keine Kopien | Inhaber: „dieser POV-Style ist sehr gut und die Zahlen ebenfalls“ |
+| 2026-11-01 | Account 2: eigene Stimme, deutscher Muttersprachler, mit Eleven v4 | Inhaber |
+| 2026-11-01 | Steuern, Gewerbe und Nebentätigkeit für CRP-Erlöse: später | Inhaber: „heben wir uns für später auf“ |

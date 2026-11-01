@@ -50,6 +50,8 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
 - Im Bild passiert **alle 1–2 s etwas Neues**: Chip, Zähler, Sticker, Kamerafahrt oder Szenenwechsel.
 - Nie mehr als 2 s Stillstand.
 - Text und Bild halten die Spannung gemeinsam (Inhaber 31.10.: „Die Aufmerksamkeitsspanne ist gering, wir müssen deutlich mehr liefern“).
+- **Gesundes Maß** (Inhaber 01.11.): große Sticker bzw. Stempel nur an Dramaturgie-Punkten (Denkfalle, Wendung, Ergebnis, zweite Überraschung), **max. 5 je Video, mind. 5 s Abstand** (Prüfpunkt 5d). Die Dynamik kommt vor allem aus Kamera, Zählern, Figuren und Szenenwechseln, nicht aus Text-Einblendungen.
+- **Mittig ausrichten** (Inhaber 01.11.): Mittelachse x = 540, symmetrische Schutzzone, gleiches Format für TikTok und YouTube Shorts (1080×1920).
 
 ## Kommunikation
 - Deutsch, du-Form, direkt und klar. Kurze Fragen kurz beantworten.

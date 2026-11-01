@@ -260,3 +260,4 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 | 15 | Kein Kanalname, kein Logo, keine Rubrik im Video |
 | 16 | Teamfarben überall gleich (Figuren, Tafel, Chips, Untertitel) |
 | 17 | Thema nicht bei der Konkurrenz viral (Abschnitt 9 plus Konkurrenz-Check vor Produktionsstart) |
+| 18 | Große Sticker bzw. Stempel max. 5, mind. 5 s Abstand; Inhalte mittig (Achse x = 540). Entscheidung des Inhabers 01.11. („gesundes Maß“) |

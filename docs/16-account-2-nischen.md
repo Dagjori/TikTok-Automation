@@ -1,7 +1,7 @@
 # Account 2: Nischen-Recherche und CRP-Rechnung (01.11.2026)
 
 Kennzeichnung: **F** = Fakt (gemessen oder mit Quelle), **S** = Schätzung, **A** = Annahme.
-Ausgangslage: zweiter TikTok-Account des Inhabers mit ca. 800 Followern. Ziel: 10k Follower, CRP und eine Nische, in der wir in Deutschland Trendsetter sind.
+Ausgangslage: zweiter TikTok-Account des Inhabers mit 130 Followern (Thema Gesundheit, letztes Video August 2024; Korrektur des Inhabers, zuerst hieß es ca. 800). Ziel: 10k Follower, CRP und eine Nische, in der wir in Deutschland Trendsetter sind.
 
 ## 1. Kurzfazit
 
@@ -177,3 +177,32 @@ Formel: Umsatz = Views × Anteil qualifiziert × RPM / 1.000.
 - [ ] Lücken-Tests der Ränge 4–8 sind nur vorläufig (Suchkontingent erschöpft)
 - [ ] RPM nach den ersten CRP-Wochen durch echte Dashboard-Zahlen ersetzen
 - [ ] TikTok Creative Center (ads.tiktok.com) und mehrere Drittquellen sind aus der Cloud gesperrt; bei Bedarf in den Netzwerkeinstellungen freigeben
+
+## 9. Rückmeldung des Inhabers und Entscheidungen (01.11., später am Tag)
+
+- **Format:** POV-Stil wie @man_ia_c (F: 281.000 Follower, 22 Videos, 4,7 Mio. Likes, Standort FR, Creator-Label KI).
+  - Der Sprecher spricht aus der Perspektive der Kamera.
+  - Vorschlag von Claude: Ich-Erzähler im Präsens („Ich stehe am Brandenburger Tor. Plötzlich …“). Das grenzt uns zugleich von @man_ia_c ab, der „you“ sagt. Bestätigung durch den Inhaber steht aus.
+- **Werkzeuge:** nur Blender und Three.js, keine KI-Video-Generatoren. Die Optik von @man_ia_c entsteht vermutlich mit KI-Video (Label gesetzt, S). Wir bauen den POV-Look stilisiert-filmisch in 3D nach, nicht fotorealistisch.
+- **Stimme:** neue Stimme, deutscher Muttersprachler, Eleven v4. Der API-Key darf die Stimmen-Bibliothek nicht lesen (F: Fehler „missing the permission voices_read“).
+- **Konkurrenz hat sich positioniert (F, öffentliche Profile, 01.11.):**
+  - @angenommen.pov: angelegt 07.10.2026, Bio „Gedankenexperimente in 3D. Du mittendrin, die Uhr läuft ⏱️“, **0 Videos**
+  - @waswaerewenn.pov: angelegt 22.06.2026, „Unmögliche Szenarien. Echte Physik. Deine Sicht.“, 2 Videos, 42 Likes
+  - Die Nische ist auf Deutsch noch leer, aber das Konzept ist schon reserviert. Tempo entscheidet (S).
+- **Freie Handles** (F, Profilseite „nicht gefunden“, 01.11.): `malangenommen.pov`, `was.waere.wenn.pov`, `stellvordir`, `dannpassiert.das`.
+
+### Alten Account wiederbeleben oder neu anlegen?
+**Empfehlung: neu anlegen (S).**
+- 130 Follower bringen fürs CRP (10.000 nötig) praktisch nichts.
+- Sie folgen wegen Gesundheit und waren 15 Monate ohne neues Video.
+- Ein Nischenwechsel spricht laut Praktikern für einen Neustart. Offizielle Aussagen von TikTok dazu gibt es nicht (F: nichts gefunden).
+- Ein neuer Account bekommt Name, Handle und Bio passend zur Nische und hat keine alten Gesundheitsvideos auf dem Profil.
+- Den alten Account nicht löschen, er schadet nicht.
+- **Bedingungen für den neuen Account (F, CRP-Regeln):** Privatkonto (kein Business-Konto), Region Deutschland, Inhaber ab 18.
+
+### Weitere Werkzeuge (Bewertung von Claude)
+| Werkzeug | Stärke | Passt für uns? |
+|---|---|---|
+| **Unreal Engine 5** (kostenlos) | filmische Echtzeit-Grafik, Zerstörung (Chaos), Partikel (Niagara), riesige freie Asset-Bibliothek | der stärkste Kandidat für den POV-Look; braucht den Windows-PC mit GPU, in der Cloud nicht lauffähig. Erst nach Einrichtung des PCs testen |
+| Godot, Babylon.js | Spiel-Engines bzw. WebGL wie Three.js | kein Vorteil gegenüber Three.js |
+| Remotion, Motion Canvas, Manim | 2D-Animation bzw. Grafiken aus Code | deckt unsere HTML-/Three.js-Ebene schon ab |
