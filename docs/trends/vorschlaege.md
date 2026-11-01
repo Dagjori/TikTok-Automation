@@ -6,6 +6,24 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
+## 💶 Tankrabatt endet: Lohnt sich Volltanken am 31.12. oder reicht der 2. Januar?
+- **Score:** 80 (Nachfrage 4, Timing 4, Wettbewerb 4, Passung 4, Aufwand 4, Risiko 4) · **Status:** neu
+- **Warum:**
+  - Die Energiesteuer auf Benzin und Diesel ist vom 01.10. bis 31.12.2026 um 14,04 ct/l gesenkt (ca. 17 ct brutto). Ab 01.01.2027 gelten wieder 654,50 €/1.000 l Benzin und 470,40 €/1.000 l Diesel (F: [Bundestag](https://www.bundestag.de/resource/blob/1225468/tankrabatt.pdf), [Verkehrsrundschau](https://www.verkehrsrundschau.de/nachrichten/transport-logistik/tankrabatt-2026-beschlossen-bis-zu-17-cent-weniger-pro-liter-3909527), [fuel-prices.eu](https://www.fuel-prices.eu/news/germany-fuel-tax-cut-1-october-2026/)).
+  - Die Weitergabe an der Zapfsäule ist nicht vorgeschrieben; beim ersten Rabatt kamen 2,9 ct (Diesel) bzw. 3,7 ct (E5) nicht an (F: laut Suchzusammenfassung, vor Produktion gegen Primärquelle prüfen).
+- **Eigene Umsetzung (Duell, ALLTAG/GELD):** Eine Modellrechnung mit zwei Fahrern: Fahrer A tankt am 31.12. voll, Fahrer B am 02.01. Wer spart wirklich? Bedingung: Tankgröße, Umweg und Zeit. Zwei Wendungen: Ersparnis pro Tankfüllung (A: ca. 50 l × 0,17 € ≈ 8,35 €, Rechnung vorher prüfen) und ob der Umweg sie auffrisst.
+- **Vor Produktion prüfen:** Primärquelle BMF, aktuelle Spritpreise, Hinweis „Modellrechnung“, keine Anlageberatung.
+- **Posten:** 15.–23.12.2026 empfohlen, spätestens 29.12.2026.
+
+## 💶 Weihnachtsbaum 2026 wird teurer: Echter Baum oder Kunstbaum, wer gewinnt über 10 Jahre?
+- **Score:** 70 (Nachfrage 3, Timing 4, Wettbewerb 2, Passung 4, Aufwand 4, Risiko 5) · **Status:** neu (schwächerer Vorschlag)
+- **Warum:** Nordmanntannen kosten 2026 bis zu 33 €/m, das Angebot sinkt (F: Einzelquelle [ms-aktuell](https://ms-aktuell.de/finanzen/weihnachtsbaum-preise-11-10-2026/) laut Erzeugerverband). Der Vergleich Echtbaum gegen Kunstbaum ist ein Evergreen, vermutlich bereits viel umgesetzt (A).
+- **Eigene Umsetzung (Duell):** Echter Baum gegen Kunstbaum, Kosten je Weihnachten, Break-even nach X Jahren. Twist: Lagerplatz und Entsorgung.
+- **Vor Produktion prüfen:** zweite Preisquelle, Wettbewerber auf TikTok prüfen.
+- **Posten:** 01.–08.12.2026, spätestens 12.12.2026.
+
+---
+
 ## 💶 GTA 6 weltweit: Kostet das Krankfeiern die Welt eine Milliarde? (Video #1, wird am 31.10. produziert)
 - **Änderung 31.10. (Inhaber):** Weltweit gerechnet statt nur Deutschland. Posten **heute**. Skript: `pipeline/projekte/gta6-welt/skript.json`. Ergebnis der Rechnung: ca. 300 Mio. $ weltweit, unter 1 Promille eines Welt-Arbeitstags.
 - **Deutschland-Version** (unten) bleibt als **eigene Idee für später**, z. B. rund um den Release am 19.11.
