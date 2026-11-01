@@ -58,7 +58,7 @@
 | 4e | Prototyp Account 2 (neuer Szenentyp, Opus): deutscher Ort, Du-Perspektive, eigenes Thema mit Rechnung | Claude (Agent) | 1–2 Agententage | bereit, wartet auf Startsignal |
 | 4c | Startsignal für 03.11.: „Schere, Stein, Papier“ (Stil 3 Clay) und „Mittagessen im Job“ (Stil 6 Collage) | Inhaber | – | offen |
 | 5 | Windows-PC einrichten (Claude Code, Node, ffmpeg, Blender), um mit GPU zu rendern | Inhaber plus Claude | 30–60 Min. | empfohlen |
-| 6 | Buffer eingerichtet, beide TikTok-Accounts verbunden (01.11. abends). Offen: Test-Post (öffentlich? KI-Label?), API-Key als Netzwerk-Secret, Entscheidung Video-Speicher für öffentliche URL (Empfehlung Supabase Storage, Region Frankfurt). Danach baut Claude `pipeline/post_buffer.py` (Entwürfe mit Caption, Zeit aus dem Plan, KI-Flag AN). Telegram (`docs/13`) weiter offen | Inhaber, dann Claude | 20 Min. plus 1–2 Std. Claude | läuft |
+| 6 | Buffer eingerichtet, beide TikTok-Accounts verbunden (01.11. abends). Offen: Test-Post (öffentlich? KI-Label?), API-Key als Netzwerk-Secret, Supabase Storage einrichten (Inhaber wählt Weg A; max. 50 MB je Datei im Gratis-Plan). YouTube vorerst nicht. Danach baut Claude `pipeline/post_buffer.py` (Entwürfe mit Caption, Zeit aus dem Plan, KI-Flag AN). Produktion 03.11. und Prototyp Account 2 starten erst, wenn alles steht (Inhaber). Telegram (`docs/13`) weiter offen | Inhaber, dann Claude | 20 Min. plus 1–2 Std. Claude | läuft |
 | 7 | Nach 48 Std.: Aufrufe, Wiedergabedauer und Abbruchstelle von Treppe und Gehalt aus TikTok Studio an Claude geben, damit wir messen statt raten | Inhaber | 5 Min. | 03.11. |
 | 8 | ElevenLabs-Plan beobachten (Credits), Impressum-Link, Nebentätigkeit klären | Inhaber | – | später |
 

@@ -71,3 +71,6 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-11-01 | API-Key hat jetzt Leserechte für Stimmen (voices_read); Stimmen-Bibliothek per API durchsuchbar | Inhaber hat den Key angepasst |
 | 2026-11-01 | Account 2: Nische „Was wäre, wenn …“-3D-POV bestätigt (Du-Perspektive). „Wer war's?“ bleibt Kandidat für Account 3 | Inhaber; Vergleich in `docs/16` §10 (Score 86 gegen 70) |
 | 2026-11-01 | Account 2: Stimme **Otto** (ElevenLabs-Bibliothek, `FTNCalFNG5bRnkkaP5Ug`), Eleven v4, gespeicherte Original-Einstellungen | Wahl des Inhabers per Hörprobe (6 Kandidaten) |
+| 2026-11-01 | Buffer eingerichtet, beide TikTok-Accounts verbunden. **YouTube vorerst nicht** (weder in Buffer noch als Zweitverwertung), kommt später | Inhaber: erst TikTok sauber automatisieren |
+| 2026-11-01 | Video-Speicher für die Buffer-API: **Supabase Storage** (Gratis-Plan, Region Frankfurt, privater Bucket, ablaufende Links, Datei nach dem Posten löschen). Gratis-Plan erlaubt max. 50 MB je Datei, größere Videos bekommen automatisch eine Upload-Kopie unter 50 MB in gleicher Auflösung | Inhaber wählt Weg A; 50-MB-Grenze laut Supabase-Doku nachträglich gefunden |
+| 2026-11-01 | Produktion und Prototyp Account 2 erst, wenn Buffer, API-Key und Speicher eingerichtet sind | Inhaber |
