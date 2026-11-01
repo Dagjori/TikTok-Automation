@@ -21,9 +21,16 @@ sc = bg.neue_szene(samples=48, hintergrund=(0.86, 0.93, 1.0), staerke=0.5, look=
 D = 0.012  # Kartondicke
 
 
+def _dunkler(h, f=0.93):
+    h = h.lstrip("#")
+    return "#" + "".join(f"{max(0, min(255, int(int(h[i:i + 2], 16) * f))):02X}" for i in (0, 2, 4))
+
+
 def papier(name, farbe, rau=0.88):
+    """Karton: matte Faser mit Relief, leichte Wolkigkeit im Farbton (wie eingefärbtes Papier)."""
     m = bg.material(name, farbe, rau=rau, sheen=0.35, sheen_rau=0.6)
-    bg.rausch_bump(m, skala=260.0, staerke=0.22, detail=8.0, abstand=0.002)
+    bg.rausch_bump(m, skala=150.0, staerke=0.32, detail=10.0, abstand=0.002)
+    bg.farb_variation(m, _dunkler(farbe, 0.95), farbe, skala=4.0)
     return m
 
 
@@ -47,9 +54,15 @@ def band(x0, x1, unten, oben_fn, n=120):
     return pts + [(x1, unten), (x0, unten)]
 
 
+_nr = [0]
+
+
 def schicht(name, punkte, tiefe, farbe_mat, dx=0.0, dz=0.0):
-    """Aufrechte Kartonform in der Ebene y = tiefe (Punkte in x/z)."""
-    return bg.flaeche(name, [(x + dx, z + dz) for x, z in punkte], D, (0, tiefe, 0), farbe_mat, rot=(math.pi / 2, 0, 0))
+    """Aufrechte Kartonform in der Ebene y = tiefe (Punkte in x/z). Die Kante zittert leicht wie von Hand geschnitten."""
+    _nr[0] += 1
+    s = _nr[0] * 1.7
+    pts = [(x + dx + 0.007 * math.sin(z * 9.0 + s), z + dz + 0.007 * math.sin(x * 11.0 + s * 1.3)) for x, z in punkte]
+    return bg.flaeche(name, pts, D, (0, tiefe, 0), farbe_mat, rot=(math.pi / 2, 0, 0))
 
 
 # ---------------------------------------------------------------- Materialien

@@ -16,21 +16,21 @@
     --chip-bg: #ffd23f; --chip-text: #1b2140;
   }
   .tafel9 .karte, .tafel9 .mitte { backdrop-filter: blur(18px) saturate(1.3); -webkit-backdrop-filter: blur(18px) saturate(1.3); }
-  .marke214 { position: absolute; z-index: 14; font-family: var(--display); font-weight: 900; font-size: 26px; letter-spacing: 0.04em; color: #ff7a1a; text-transform: uppercase;
-    padding: 6px 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.7); border: 2px solid #ff7a1a; transform: translate(0, -50%); white-space: nowrap; }
 </style>
 </head>
 <body>
 <canvas id="leinwand" width="1080" height="1920"></canvas>
 <div id="hud"></div>
 <script type="module">
-  import { el, zonen, fertig } from "./gemeinsam.js";
+  import { zonen, fertig } from "./gemeinsam.js";
   import { INHALT9, anzeigetafel, chip, phrase, hintergrund } from "./massstab.js";
   try {
     await hintergrund("../out/stile/blender/stil_14_glas.png");
     const hud = document.getElementById("hud");
     anzeigetafel(hud);
-    chip(hud, `${INHALT9.chip} · Fahrt 13`, { x: 492, y: 1000 });
+    chip(hud, INHALT9.a.team, { x: 316, y: 502, team: "a" });
+    chip(hud, INHALT9.b.team, { x: 764, y: 502, team: "b" });
+    chip(hud, `${INHALT9.chip} · Fahrt 13`, { x: 492, y: 1052 });
     phrase(hud);
     zonen(hud);
     fertig();

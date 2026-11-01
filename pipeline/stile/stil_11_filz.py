@@ -20,36 +20,44 @@ import blender_gemeinsam as bg  # noqa: E402
 sc = bg.neue_szene(samples=48, hintergrund=(0.98, 0.92, 0.86), staerke=0.5, look="AgX - Punchy", belichtung=0.2)
 
 
+def _heller(h, f):
+    h = h.lstrip("#")
+    return "#" + "".join(f"{max(0, min(255, int(int(h[i:i + 2], 16) * f))):02X}" for i in (0, 2, 4))
+
+
 def filz(name, farbe, farbe2=None, fusel=1.0):
-    """Filz: matt, starker Faserglanz an den Kanten, feine plus grobe Struktur, leichte Farbwolken."""
-    m = bg.material(name, farbe, rau=1.0, sheen=1.0, sheen_rau=0.35, sss=0.08, sss_radius=(0.5, 0.3, 0.2), sss_skala=0.02)
+    """Filz: matt, starker Faserglanz an den Kanten, Faser-Sprenkel in der Farbe (bleibt nach dem Entrauschen sichtbar),
+    feine plus grobe Struktur als Relief."""
+    m = bg.material(name, farbe, rau=1.0, sheen=1.0, sheen_rau=0.3, sss=0.08, sss_radius=(0.5, 0.3, 0.2), sss_skala=0.02)
     n, l, p = bg.knoten(m)
     tc = n.new("ShaderNodeTexCoord")
     fein = n.new("ShaderNodeTexNoise")
-    fein.inputs["Scale"].default_value = 420.0
-    fein.inputs["Detail"].default_value = 12.0
-    fein.inputs["Roughness"].default_value = 0.75
+    fein.inputs["Scale"].default_value = 160.0
+    fein.inputs["Detail"].default_value = 14.0
+    fein.inputs["Roughness"].default_value = 0.8
+    fein.inputs["Distortion"].default_value = 1.5
     grob = n.new("ShaderNodeTexNoise")
-    grob.inputs["Scale"].default_value = 18.0
+    grob.inputs["Scale"].default_value = 14.0
     grob.inputs["Detail"].default_value = 4.0
     l.new(tc.outputs["Object"], fein.inputs["Vector"])
     l.new(tc.outputs["Object"], grob.inputs["Vector"])
     summe = n.new("ShaderNodeMath")
     summe.operation = "MULTIPLY_ADD"
-    summe.inputs[1].default_value = 0.25
+    summe.inputs[1].default_value = 0.3
     l.new(grob.outputs["Fac"], summe.inputs[0])
     l.new(fein.outputs["Fac"], summe.inputs[2])
     bu = n.new("ShaderNodeBump")
-    bu.inputs["Strength"].default_value = 0.55 * fusel
-    bu.inputs["Distance"].default_value = 0.003
+    bu.inputs["Strength"].default_value = min(1.0, 0.8 * fusel)
+    bu.inputs["Distance"].default_value = 0.004
     l.new(summe.outputs[0], bu.inputs["Height"])
     l.new(bu.outputs["Normal"], p.inputs["Normal"])
+    # Farbe: dunkle und helle Fasern (feines Rauschen) über leichten Farbwolken (grobes Rauschen)
     cr = n.new("ShaderNodeValToRGB")
-    cr.color_ramp.elements[0].color = bg.hex2lin(farbe)
-    cr.color_ramp.elements[1].color = bg.hex2lin(farbe2 or farbe)
-    cr.color_ramp.elements[0].position = 0.35
-    cr.color_ramp.elements[1].position = 0.75
-    l.new(grob.outputs["Fac"], cr.inputs["Fac"])
+    cr.color_ramp.elements[0].color = bg.hex2lin(_heller(farbe, 0.86))
+    cr.color_ramp.elements[1].color = bg.hex2lin(_heller(farbe2 or farbe, 1.12))
+    cr.color_ramp.elements[0].position = 0.38
+    cr.color_ramp.elements[1].position = 0.66
+    l.new(summe.outputs[0], cr.inputs["Fac"])
     l.new(cr.outputs["Color"], p.inputs["Base Color"])
     l.new(cr.outputs["Color"], p.inputs["Sheen Tint"])
     return m
@@ -206,13 +214,11 @@ for s in (-0.13, 0.13):
     bg.kugel(f"AutoLicht{s}", 0.035, (XA + 0.43, YR + s, 0.29), GELB)
 
 # ---------------------------------------------------------------- Fähnchen „13“ auf Holzstab
-fx, fy = XL - 0.2, 0.76
+fx, fy = XL - 0.05, 1.02
 bg.zylinder("Stab", 0.018, 1.0, (fx, fy, 0.55), HOLZ)
 bg.kugel("StabKopf", 0.035, (fx, fy, 1.06), KNOPF_R)
-polster("Fahne", (0.04, 0.5, 0.36), (fx, fy - 0.27, 0.86), GELB, rund=0.25)
-bg.text("Dreizehn", "13", (fx + 0.022, fy - 0.27, 0.86), 0.27, BLAU_D, dicke=0.01, rot=(math.pi / 2, 0, math.pi / 2), rundung=0.003)
-for dy in (-0.22, 0.22):
-    naht_linie((fx + 0.022, fy - 0.27 + dy), (fx + 0.022, fy - 0.27 + dy), 0.86, FADEN_W)
+polster("Fahne", (0.04, 0.44, 0.32), (fx, fy - 0.24, 0.86), GELB, rund=0.25)
+bg.text("Dreizehn", "13", (fx + 0.022, fy - 0.24, 0.86), 0.24, BLAU_D, dicke=0.01, rot=(math.pi / 2, 0, math.pi / 2), rundung=0.003)
 
 # ---------------------------------------------------------------- Bommel-Bäume, Watte-Wolken, Garnrolle
 def bommelbaum(x, y, s, mat):

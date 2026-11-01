@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-01T00:14:57.705Z",
+ "stand": "2026-11-01T01:00:43.706Z",
  "gpu": false,
  "hinweis": "Cloud-Container, 4 Kerne, ohne GPU (SwiftShader bzw. Cycles CPU). bild_s = zweites Bild im Browser zeichnen + JPG; blender.sekunden = Cycles-Render der Szene 1080×1920.",
  "messung": [
@@ -34,6 +34,21 @@
    }
   },
   {
+   "nr": 11,
+   "name": "filz",
+   "titel": "Filz & Knöpfe",
+   "technik": "Blender Cycles",
+   "laden_s": 0.514,
+   "bild_s": 0.156,
+   "blender": {
+    "sekunden": 592.1,
+    "samples": 48,
+    "aufloesung": "1080x1920",
+    "geraet": "CPU",
+    "kerne": 4
+   }
+  },
+  {
    "nr": 12,
    "name": "comic",
    "titel": "Comic-Toon 3D",
@@ -48,6 +63,46 @@
    "technik": "Three.js",
    "laden_s": 1.44,
    "bild_s": 0.245
+  },
+  {
+   "nr": 14,
+   "name": "glas",
+   "titel": "Glas-Labor (Füllstand)",
+   "technik": "Blender Cycles",
+   "laden_s": 0.457,
+   "bild_s": 0.326,
+   "blender": {
+    "sekunden": 557.5,
+    "samples": 56,
+    "aufloesung": "1080x1920",
+    "geraet": "CPU",
+    "kerne": 4
+   }
+  },
+  {
+   "nr": 15,
+   "name": "holz_gltf",
+   "titel": "Holz gebacken (Blender → glTF → Three.js)",
+   "technik": "Blender-Bake + Three.js",
+   "laden_s": 1.05,
+   "bild_s": 2.978,
+   "blender": {
+    "sekunden": 560.2,
+    "samples": 32,
+    "art": "einmaliges Backen + Export (nicht pro Bild)",
+    "bake_sekunden": {
+     "Tisch": 60,
+     "Wand": 7.7,
+     "Kulisse": 252.5,
+     "Zug": 128.5,
+     "Auto": 109.1
+    },
+    "gesamt_sekunden": 560.2,
+    "glb_mb": 1.74,
+    "fokus_m": 3.606,
+    "blende": 1.100000023841858,
+    "dreiecke": 26513
+   }
   }
  ]
 }

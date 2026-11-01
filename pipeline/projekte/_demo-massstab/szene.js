@@ -295,6 +295,7 @@ async function start() {
   // HUD und Bausteine
   // =====================================================================================
   const hud = new HUD(document.getElementById("hud"));
+  if (Q.get("hud") === "0") hud.wurzel.style.display = "none"; // nur für Messungen der Renderzeit
   const M = new Massstab(hud, zp, {
     teams: {
       a: { name: "RASER", farbe: TEAM_A, woerter: ["Rasen", "Raser*"] },
@@ -343,7 +344,7 @@ async function start() {
 
   // ---------- Fortschrittsleiste mit Ampel-Marken ----------
   M.leiste({
-    y: 1178, ein: "sechs", aus: "Was", label: "2 km · 6 Ampeln",
+    y: 1178, ein: "sechs", aus: "Zwölf-0.1", label: "2 km · 6 Ampeln",
     marken: AMPEL_M.map((m, i) => ({ anteil: m / STRECKE, label: String(i + 1) })),
     teams: { a: (t) => Math.min(1, xA(t) / STRECKE), b: (t) => Math.min(1, xB(t) / STRECKE) },
   });
@@ -366,7 +367,7 @@ async function start() {
   // ---------- Pausen-Ring an der roten Ampel ----------
   const tAb1 = videoZeit(MOD.abfahrt1);
   const ampel2 = V(AMPEL_M[1] / M_PRO_E, 2.6, -0.75);
-  M.ring({ ein: "Rot!-0.02", dauer: Math.max(0.5, tAb1 - tRot), von: MOD.W1, bis: 0, label: "ROT", ende: "GRÜN", team: ROT, groesse: 136, aus: Math.min(tAb1 + 0.2, tZiel - 0.2),
+  M.ring({ ein: "Rot!-0.02", dauer: Math.max(0.5, tAb1 - tRot), von: MOD.W1, bis: 0, label: "ROT", ende: "GRÜN", team: ROT, groesse: 136, aus: Math.min(tAb1 + 0.12, tZiel - 0.2),
     punkt: (t) => { regie.anwenden(t); const p = bildpunkt(ampel2, kamRennen); return { x: p.x + 170, y: p.y - 60 }; } });
 
   // ---------- Schwebende Live-Zähler über den Autos (Tempo) ----------
@@ -477,7 +478,7 @@ async function start() {
   const kamZiel = new THREE.PerspectiveCamera(38, 1080 / 1920, 0.1, 400);
   const regieZiel = new Regie(kamZiel, (t) => {
     const k = ease.outCubic(fortschritt(t, tZiel - 0.3, T("Was")));
-    return { pos: [L + 15.5 - 1.5 * k, 4.6 - 0.5 * k, 5.2 - 0.6 * k], ziel: [L + 3.2, 0.2, -0.2], fov: 36 };
+    return { pos: [L + 19 - 1.5 * k, 5.4 - 0.5 * k, 5.6 - 0.6 * k], ziel: [L + 5.6, 0.2, -0.2], fov: 36 };
   });
   regieZiel.stoss({ t: T("Vorsprung.>+0.05"), staerke: 0.6 });
   const weltZiel = { szene: W.szene, kamera: kamZiel, post, update(t) { setzeWelt(t); regieZiel.anwenden(t); sonneFolgt(L - 2); } };
@@ -485,7 +486,7 @@ async function start() {
   const kamUeber = new THREE.PerspectiveCamera(34, 1080 / 1920, 0.1, 600);
   const regieUeber = new Regie(kamUeber, (t) => {
     const w = 0.75 + 0.3 * fortschritt(t, T("Was") - 0.4, tWolke + 0.6);
-    return { pos: [L + 4 - Math.cos(w) * 24, 27, Math.sin(w) * 24], ziel: [L + 1, 0, 0], fov: 34 };
+    return { pos: [L + 6 - Math.cos(w) * 24, 27, Math.sin(w) * 24], ziel: [L + 10, 0, 0], fov: 34 };
   });
   const weltUeber = { szene: W.szene, kamera: kamUeber, post, update(t) { setzeWelt(t); regieUeber.anwenden(t); sonneFolgt(L); } };
 

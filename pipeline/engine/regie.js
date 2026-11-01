@@ -77,7 +77,7 @@ export class Regie {
       const off = versatz ? alsArray(versatz) : minus(z.pos, z.ziel);
       return { ...z, ziel: mix3(z.ziel, zi, w), pos: mix3(z.pos, plus(zi, off), w) };
     } });
-    this._melde({ t: a, art: "folgen", dauer: Math.min(b, 1e6) - a, laufend: true });
+    this._melde({ t: a, art: "folgen", dauer: Number.isFinite(b) ? b - a : undefined, bisEnde: !Number.isFinite(b), klang: false });
     return this;
   }
   /**
@@ -142,7 +142,7 @@ export class Regie {
   /** Schleife: im Fenster [ab, ende] gleitet die Kamera in den Zustand von t = 0 zurück (ab ende exakt gleich) */
   schleife({ ab, ende, kurve = ease.inOutCubic }) {
     this.schleifeOpt = { ab: this._z(ab), ende: this._z(ende), kurve };
-    this._melde({ t: this.schleifeOpt.ab, art: "schleife", dauer: this.schleifeOpt.ende - this.schleifeOpt.ab, klang: "whoosh" });
+    this._melde({ t: this.schleifeOpt.ab, art: "schleife", dauer: this.schleifeOpt.ende - this.schleifeOpt.ab, klang: false }); // Klang kommt von Massstab.schleife
     return this;
   }
   /** Zustand ohne Schleife */

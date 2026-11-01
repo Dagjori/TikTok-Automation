@@ -1,43 +1,165 @@
 # Designstile für Simulierbar
 
-**Stand:** 31.10.2026 · **Status:** entschieden: Stil wechselt je Thema (Abschnitt 0)
+**Stand:** 01.11.2026 · **Status:** entschieden: Stil wechselt je Thema (Abschnitt 0) · **neu:** Stile 9–15, Technik-Pfade und Alleinstellungsmerkmal (Abschnitte 0.1–0.5)
 
 **Legende:**
-- **F** = belegter Fakt mit Quelle
+- **F** = belegter Fakt mit Quelle (bei Messungen: selbst gemessen, Datei genannt)
 - **S** = Schätzung
 - **A** = Annahme
 
-Alle Beispielbilder zeigen denselben Inhalt: das GELD-Duell „Deutschlandticket gegen Auto: Ab wann lohnt sich das Ticket?“. Die Zahlen (66,80 € und 214 € pro Monat, Break-even 13 Fahrten) sind **Beispielwerte**, keine Rechnung. Jedes Bild nutzt den neuen Untertitel-Stil.
+Alle Beispielbilder zeigen denselben Inhalt: das GELD-Duell „Deutschlandticket gegen Auto: Ab wann lohnt sich das Ticket?“. Die Zahlen (66,80 € und 214 € pro Monat, Break-even 13 Fahrten) sind **Beispielwerte**, keine Rechnung.
 
-![Alle Stile im Vergleich](assets/stile/uebersicht.jpg)
+> **Achtung, alte Beispielbilder 1–8:** Sie entstanden vor dem Maßstab ([15-massstab.md](15-massstab.md)). Sie zeigen teils noch Kanalname und Logo („SIMULIERBAR“ mit Würfel), die Rubrik („€ GELD“), eine große Titelkarte und den alten Karaoke-Untertitel mit gelbem aktuellem Wort. **Das gilt im Video nicht mehr.** Verbindlich ist das Maßstab-Layout: Anzeigetafel oben mit Teamfarben und Zähler, Szene in der Mitte, Untertitel als kurze Phrase (weiß, fett, schwarze Kontur, kein Kasten, Schlüsselwort in Teamfarbe), **kein Kanalname, kein Logo, keine Rubrik**. Die neuen Bilder 9–15 zeigen dieses Layout. Für die Stile 1–8 gilt beim ersten Einsatz: Szene übernehmen, HUD aus `pipeline/stile/massstab.css` bzw. `massstab.js` (Muster) bzw. der Engine.
+
+![Neue Stile 9–15 im Maßstab-Layout](assets/stile/uebersicht_neu.jpg)
+
+![Stile 1–8 (alter Stand mit Marke, Rubrik und Karaoke-Untertitel)](assets/stile/uebersicht.jpg)
 
 ---
 
 ## 0. Entscheidung des Inhabers (31.10.2026): Stil-Katalog, Stil wechselt je Thema
 
-- **Alle 8 Stile bleiben im Einsatz.** Jedes Video bekommt genau **einen** Stil, und zwar den, der am besten zum Thema passt. Es gibt keinen festen Hauptlook (die Empfehlung in Abschnitt 1 ist damit überholt).
+- **Alle Stile bleiben im Einsatz.** Jedes Video bekommt genau **einen** Stil, und zwar den, der am besten zum Thema passt. Es gibt keinen festen Hauptlook (die Empfehlung in Abschnitt 1 ist damit überholt).
 - **Neue Stile kommen sofort in diesen Katalog**, sobald Claude einen weiteren passenden Stil findet: neue Zeile in der Tabelle unten, Beispielbild in `docs/assets/stile/`, Quellcode in `pipeline/stile/`.
-- **Der Untertitel-Stil ist in allen Looks gleich** (ohne Kasten, Kontur, aktuelles Wort gelb).
+- **Untertitel und HUD sind in allen Looks gleich aufgebaut** (Maßstab-Layout, siehe Hinweis oben). Nur das Material der Tafel passt sich dem Stil an (Holzbrett, Karton, Filzflicken, Comic-Panel, Milchglas …).
+- **Neue feste Regel (Auftrag des Inhabers, 31.10.2026):** Videos entstehen **ausschließlich mit Three.js und/oder Blender**, auch kombiniert: Modelle, Materialien und Licht in Blender bauen und backen, als glTF exportieren und in Three.js animieren (Stil 15 zeigt den Weg). Das HUD (Tafel, Chips, Untertitel) bleibt HTML/CSS in der Three.js-Seite. Folge für die alten SVG/HTML-Muster 4–7: siehe Spalte „Technik“.
 - Im 30-Tage-Plan steht der Stil je Video in der Spalte `stil` (`data/plan/30-tage.csv`).
 
 ### Stil-Katalog und Auswahlregel
 
-| Nr. | Stil | Beispiel | Passt zu (Auswahlregel) |
-|---|---|---|---|
-| 1 | Low-Poly-Miniatur (Tilt-Shift) | `assets/stile/stil_1_lowpoly.png` | Szenen mit vielen kleinen Akteuren in Bewegung: Verkehr, Straße, Menschenmengen, Stadtleben |
-| 2 | Isometrisches 3D | `assets/stile/stil_2_isometrisch.png` | Systeme und Abläufe auf einen Blick: Büro, Kreuzung, Supermarkt, Wohnung im Schnitt, Boarding |
-| 3 | Clay-Spielzeug-3D | `assets/stile/stil_3_clay.png` | Spiele, Zufall, Sport, Haushalt, Haustiere, Familie, Essen: verspielte Alltagsthemen |
-| 4 | 2D-Flat-Infografik | `assets/stile/stil_4_flat.png` | Erklär-Rechnungen mit Schritten: Netto, Steuern, Regeln, Statistik, Ablaufpläne |
-| 5 | Neon-Daten-Dashboard | `assets/stile/stil_5_neon.png` | Geld über Zeit: Zinsen, Schulden, Inflation, Sparen, Preisverläufe (braucht immer Bewegung) |
-| 6 | Papier-Collage | `assets/stile/stil_6_collage.png` | News, Gesetze, Handel und Werbung, Debatten: Black Friday, Finanzierung, Abos, Singles Day |
-| 7 | Kinetische Typografie | `assets/stile/stil_7_typo.png` | Eine starke Zahl oder ein Mythos: Netto-Schock, Wahrscheinlichkeits-Paradoxa, „Was kostet das in Arbeitsstunden“ |
-| 8 | Karten-/Satellitenoptik | `assets/stile/stil_8_karte.png` | Orte, Wege, Regionen: Stadt gegen Land, Pendeln, Deutschland-Vergleiche, Wetter |
+Renderkosten: Sekunden je Videobild 1080×1920 im Cloud-Container (4 Kerne, ohne GPU), Standbild-Messung (F, `pipeline/stile/messung.json` und `messung_neu.json`). Ein 80-s-Video hat 2.400 Bilder.
+
+| Nr. | Stil | Beispiel | Passt zu (Auswahlregel) | Technik | Renderkosten je Bild |
+|---|---|---|---|---|---|
+| 1 | Low-Poly-Miniatur (Tilt-Shift) | `assets/stile/stil_1_lowpoly.png` | Szenen mit vielen kleinen Akteuren in Bewegung: Verkehr, Straße, Menschenmengen, Stadtleben | Three.js + Bloom, Tilt-Shift, Schatten | 5,5 s (unter Last; ohne Last ca. 1–1,5 s) |
+| 2 | Isometrisches 3D | `assets/stile/stil_2_isometrisch.png` | Systeme und Abläufe auf einen Blick: Büro, Kreuzung, Supermarkt, Wohnung im Schnitt, Boarding | Three.js | 0,7 s |
+| 3 | Clay-Spielzeug-3D | `assets/stile/stil_3_clay.png` | Spiele, Zufall, Sport, Haushalt, Haustiere, Familie, Essen: verspielte Alltagsthemen | Three.js (Physical-Material, weiche Schatten); Upgrade: Knete in Blender (Abschnitt 0.2) | 5,5 s |
+| 4 | 2D-Flat-Infografik | `assets/stile/stil_4_flat.png` | Erklär-Rechnungen mit Schritten: Netto, Steuern, Regeln, Statistik, Ablaufpläne | heute SVG/HTML → **nach neuer Regel in Three.js nachbauen** (flache Meshes, orthografische Kamera) | 0,1 s (SVG) |
+| 5 | Neon-Daten-Dashboard | `assets/stile/stil_5_neon.png` | Geld über Zeit: Zinsen, Schulden, Inflation, Sparen, Preisverläufe (braucht immer Bewegung) | heute SVG + Leuchtfilter → **Three.js** (dicke Linien wie Stil 13 + Bloom) | 0,06 s (SVG) |
+| 6 | Papier-Collage | `assets/stile/stil_6_collage.png` | News, Gesetze, Handel und Werbung, Debatten: Black Friday, Finanzierung, Abos, Singles Day | heute SVG + Papierfilter → **Three.js** (Flächen mit Canvas-Texturen) oder als 3D-Variante Stil 10 | 0,1 s (SVG) |
+| 7 | Kinetische Typografie | `assets/stile/stil_7_typo.png` | Eine starke Zahl oder ein Mythos: Netto-Schock, Wahrscheinlichkeits-Paradoxa, „Was kostet das in Arbeitsstunden“ | HTML/CSS; bleibt als **HUD-Baustein** in jeder Three.js-Seite erlaubt | 0,2 s |
+| 8 | Karten-/Satellitenoptik | `assets/stile/stil_8_karte.png` | Orte, Wege, Regionen: Stadt gegen Land, Pendeln, Deutschland-Vergleiche, Wetter | Three.js + Bloom | 2,5 s |
+| 9 | **Holzspielzeug-Tisch** | `assets/stile/stil_9_holz.png` | Verkehr und Wege als Spielzeug-Rennen, Familie, Kinder, Spiele, Haushalt; GELD-Duelle mit „Spielgeld“-Münzen | Blender Cycles (Standbild) → fürs Video **Blender → Bake → glTF → Three.js** (Stil 15) | Cycles: «T9» · gebacken in Three.js: «T15F» |
+| 10 | **Papier-Diorama** | `assets/stile/stil_10_papier.png` | Seitenansicht mit zwei Bahnen (wie K1/K2), Stadt gegen Land, Wetter, Natur, Geschichten mit Szenenwechsel (Kulissen schieben) | Blender Cycles → Bake → glTF → Three.js (flache Schichten backen sehr gut) | Cycles: «T10» |
+| 11 | **Filz & Knöpfe** | `assets/stile/stil_11_filz.png` | Zuhause, Heizen, Strom, Schlaf, Winter, **Weihnachten** (Weihnachtsgeld 20.–28.11.), Kinder und Familie | Blender Cycles (Faserglanz) → Bake → glTF → Three.js | Cycles: «T11» |
+| 12 | **Comic-Toon 3D** | `assets/stile/stil_12_comic.png` | Schnelle Rennen mit Action: Verkehr, Sport, Wettläufe, Mythen; Sticker „ÜBERHOLT!“ passt perfekt | Three.js (Cel-Shading 3 Stufen, Rasterpunkte, Konturen) | «T12» |
+| 13 | **Blaupause / Schnittmodell** | `assets/stile/stil_13_blaupause.png` | „Warum?“-Aufschlüsselung, Technik, Energie, Autokosten, Geräte im Querschnitt; auch als **Szenenwechsel-Baustein** in jedem Stil | Three.js (dicke Linien, verdeckte Kanten gestrichelt, Röntgen-Füllung) | «T13» |
+| 14 | **Glas-Labor (Füllstand)** | `assets/stile/stil_14_glas.png` | Alles, was sich ansammelt: Kosten pro Fahrt, Wasser, Strom, Sprit, Zeit; Füllstand-Rennen | Blender Cycles (dünnwandiges Glas, Flüssigkeit mit Subsurface); Three.js mit `transmission` als schnellere, schwächere Variante | Cycles: «T14» |
+| 15 | **Holz gebacken** (Technik-Muster zu 9) | `assets/stile/stil_15_holz_gltf.png` | wie 9; zeigt den Produktionsweg für alle Blender-Stile | Blender (Cycles-Bake) → glTF → Three.js | einmalig Backen «T15B», danach «T15F» |
 
 **Regeln bei der Wahl:**
 - Zwei direkt aufeinanderfolgende Videos haben nie denselben Stil.
 - Passen zwei Stile, gewinnt der, der länger nicht dran war.
-- Typografie (7) darf als Baustein für Hook und Ergebnis in jedem Stil auftauchen.
-- Jeder Stil braucht beim ersten Einsatz einen eigenen Szenen-Baukasten auf Basis der Beispielbilder in `pipeline/stile/` (**Schätzung:** 3–6 Std. Agentenarbeit je Stil). Danach ist er wiederverwendbar.
+- Typografie (7) darf als Baustein für Hook und Ergebnis in jedem Stil auftauchen. **Blaupause (13) darf als Szenenwechsel für „Warum?“ in jedem Stil auftauchen** (wie der Querschnitt in K3).
+- Die Material-Stile 9, 10, 11 (und später Knete als Upgrade von 3) bilden die Familie **„Handgemachte Miniatur“** mit festem Kamera- und Lichtrezept (Abschnitt 0.4). Sie sind unser Alleinstellungsmerkmal.
+- Jeder Stil braucht beim ersten Einsatz einen eigenen Szenen-Baukasten auf Basis der Beispielbilder in `pipeline/stile/` (**Schätzung:** 3–6 Std. Agentenarbeit je Stil, Blender-Stile mit Bake-Weg 5–8 Std.). Danach ist er wiederverwendbar.
+
+### 0.1 Neue Stile 9–15: Steckbriefe
+
+Gemeinsam: Maßstab-HUD aus `pipeline/stile/massstab.css` und `massstab.js` (Tafel mit Teamfarben und Zähler „13 Fahrten“, Chip „Break-even“, Phrase „Das **Ticket** zieht vorbei.“), Teamfarben Blau (Ticket) gegen Orange (Auto). Alle Modelle, Materialien und Texturen sind im Code erzeugt (prozedural), keine fremden Assets, keine Marken.
+
+9. **Holzspielzeug-Tisch** (`stil_9_holz.py` + `.html`)
+   - Look: Buche mit Maserung, lackierte Teamfarben, Holzschienen mit Rillen, Spielgeld-Münzen, Schild „13“, mintfarbener Spieltisch, warmes Fensterlicht, starke Schärfentiefe.
+   - Stärke: sofort lesbar, warm, „anfassbar“, wirkt hochwertig wie Produktfotografie (A). Rennbahn kommt auf den Zuschauer zu: ideal für Duelle.
+   - Schwäche: echte Holzoptik nur mit Pfadverfolgung (Cycles) bzw. gebacken; reines Three.js-Holz wirkt flacher (A).
+10. **Papier-Diorama** (`stil_10_papier.py` + `.html`)
+    - Look: Kartonschichten wie im Schaukasten (Himmel, Stadt, Hügel, Gleis, Straße, Vordergrund), echte Schatten zwischen den Lagen, leicht zittrige Schnittkanten, Papierfaser.
+    - Stärke: Seitenansicht mit zwei Bahnen ist exakt das K1/K2-Rennschema, aber in Material statt 2D-Flat (A). Szenenwechsel wie im Theater: Kulissen schieben sich ins Bild.
+    - Schwäche: Seitenansicht ohne Kamerafahrt in die Tiefe; Dynamik kommt aus Parallaxe, Zählern und Kulissenwechseln (A).
+11. **Filz & Knöpfe** (`stil_11_filz.py` + `.html`)
+    - Look: gepolsterte Filzformen mit Faserglanz, Ziernähte, Knöpfe als Räder, Bommel-Bäume, Garnrolle, Filzfähnchen „13“, Tafel als Filzflicken mit Naht.
+    - Stärke: gemütlich, saisonal (Winter, Weihnachten), sehr eigen (A).
+    - Schwäche: teuerster Material-Look (Faserglanz und Struktur brauchen Samples); feine Fusseln nur mit Haar-Partikeln (noch teurer). Für viele Objekte zu unruhig (A).
+12. **Comic-Toon 3D** (`stil_12_comic.html` + `.js`)
+    - Look: Cel-Shading in 3 Stufen, Rasterpunkte (Halftone) in den Schatten, schwarze Konturen, harte Schatten, Strahlenkranz-Himmel, Tempostriche, Sticker „ÜBERHOLT!“, schräge Comic-Panels als Tafel.
+    - Stärke: maximal lesbar und energiegeladen, rendert schnell, keine Nachbearbeitung nötig (F, Messung). Bausteine aus dem Maßstab (Sticker, Chips) passen nahtlos.
+    - Schwäche: weniger „edel“ als die Material-Stile; Comic-Optik ist bekannt (Spider-Verse-Welle), aber im deutschen Simulations-Genre nicht verbreitet (A).
+13. **Blaupause / Schnittmodell** (`stil_13_blaupause.html` + `.js`)
+    - Look: technische Zeichnung auf Blaupausen-Raster, dicke weiße Kanten, verdeckte Kanten gestrichelt, Auto als Röntgen-Schnitt mit Kostenteilen in Teamfarbe (Sprit, Wartung, Wertverlust, Steuer + Versicherung) und Führungslinien.
+    - Stärke: macht die „Warum?“-Aufschlüsselung sichtbar (Maßstab-Gesetz 8). Schnellster neuer Stil (F, Messung).
+    - Schwäche: allein zu kühl für ein ganzes Video; am besten als Szenenwechsel (A).
+14. **Glas-Labor** (`stil_14_glas.py` + `.html`)
+    - Look: zwei Messzylinder im Fotostudio (Hohlkehle, Softboxen), Geld als farbige Flüssigkeit, Zulauf mit Strahl über dem Auto-Zylinder, gelbe Gleichstand-Linie, Zielstrich „214“, Milchglas-Tafel.
+    - Stärke: Füllstand ist ein Live-Zähler, den jeder ohne Erklärung versteht; erinnert an K4 (Messzylinder), aber fotorealistisch statt 2.5D (A).
+    - Schwäche: Glas mit Brechung ist der teuerste Effekt; im Video nur gebacken bzw. mit Three.js-`transmission` vereinfacht (S).
+15. **Holz gebacken: Blender → glTF → Three.js** (`stil_15_holz_gltf.py` + `.html`/`.js`)
+    - Weg: Szene aus Stil 9 bauen → Licht in Texturen backen (Cycles, diffus: direkt + indirekt + Farbe) → eine `.glb`-Datei → Three.js zeigt sie mit unbeleuchteten Materialien, Tiefenunschärfe per Bokeh-Pass, AgX-Tonemapping wie Blender.
+    - Regeln: Tisch und Kulisse **ohne** Fahrzeuge backen, Fahrzeuge einzeln backen und mit mitfahrendem Kontaktschatten bewegen; Glanz wird nicht gebacken.
+    - Ergebnis: siehe Bild und Abschnitt 0.3. Unterschied zum Cycles-Bild: weniger Glanz, Schatten der Fahrzeuge weicher, Unschärfe etwas anders (F, Bildvergleich).
+
+### 0.2 Bewertung aller geprüften Kandidaten (Recherche 31.10./01.11.2026)
+
+Punkte 1 (schlecht) bis 5 (gut), alle **Schätzungen (S)** auf Basis der Beispielbilder, der Messungen und der Quellen in 0.5. „Render“: 5 = schnell im Produktionsweg (bei Blender-Stilen: gebacken). „Aufwand“: 5 = wenig Arbeit für einen wiederverwendbaren Baukasten.
+
+| Kandidat | Handy-Lesbarkeit | Maßstab-Bausteine (Tafel, Zähler, Chips, Rennen mit Uhr) | Dynamik | Render | Abhebung von 2D-Flat und Low-Poly | Aufwand | Summe | Ergebnis |
+|---|---|---|---|---|---|---|---|---|
+| Comic-Toon mit Konturen und Rasterpunkten | 5 | 5 | 5 | 5 | 4 | 4 | **28** | **Stil 12** |
+| Holzspielzeug | 5 | 4 | 4 | 4 | 5 | 4 | **26** | **Stil 9** (+ 15) |
+| Blaupause / Röntgen-Querschnitt | 4 | 5 | 3 | 5 | 5 | 4 | **26** | **Stil 13** |
+| Papier-Diorama / Papercraft | 5 | 4 | 3 | 4 | 5 | 4 | **25** | **Stil 10** |
+| 3D-Datenraum (Infografik im Raum) | 4 | 5 | 4 | 5 | 3 | 4 | 25 | als Baustein in 5 und 13, kein eigener Stil (zu nah an Neon und Bar-Chart-Races) |
+| Filz / Stoff | 4 | 4 | 3 | 3 | 5 | 3 | **22** | **Stil 11** (saisonal) |
+| Glas-Labor (Glas als Szene) | 4 | 4 | 4 | 2 | 4 | 3 | **21** | **Stil 14** |
+| Frosted-Glass-UI über 3D | 4 | 5 | 3 | 4 | 2 | 5 | 23 | nur als HUD-Variante (Tafel in Stil 14), kein Szenenstil |
+| Pastell-Isometrie à la „Monument Valley“ | 4 | 3 | 3 | 5 | 2 | 4 | 21 | nein: zu nah an Stil 2 und am Pastell-Look von K3, Kopie-Risiko |
+| Synthwave-Nacht | 4 | 4 | 4 | 3 | 2 | 4 | 21 | nein: Trend von 2018–2020, nah an Stil 5 (A) |
+| Knete / Claymation (Blender, SSS, Fingerabdrücke) | 4 | 4 | 4 | 2 | 3 | 3 | 20 | später als **Upgrade von Stil 3** (gleiche Familie wie 9–11), kein neuer Stil |
+| Baustein-Optik (Klemmbausteine) | 4 | 4 | 4 | 3 | 2 | 3 | 20 | nein: sehr verbreitet (Brickfilms), Markennähe; Form des Steins ist zwar nicht markengeschützt, die Figuren schon (F, EuGH C-48/09 P und EuG zu Minifiguren) |
+| Voxel | 3 | 3 | 4 | 5 | 1 | 4 | 20 | nein: wirkt wie Spielegrafik, verschärft die „Video Games“-Einordnung (F: 4 von 6 3D-Videos so eingeordnet, [01-marktanalyse.md](01-marktanalyse.md)) |
+| Miniatur-Modelleisenbahn (realistisch) | 3 | 4 | 4 | 2 | 3 | 2 | 18 | nein: feine Details auf dem Handy unlesbar, nah an Stil 1 |
+| Grease Pencil / handgezeichnet in 3D | 4 | 4 | 4 | 2 | 4 | 2 | 20 | nein: in der Cloud nicht renderbar (braucht Eevee/GPU); Comic-Look deckt Stil 12 ab |
+
+### 0.3 Technik-Pfade und Renderkosten (gemessen 01.11.2026)
+
+Messung im Cloud-Container (4 Kerne, ohne GPU). **Parallel lief ein Blender-Render eines anderen Agenten** (Last 7–10). Die absoluten Cycles-Werte sind deshalb zu hoch, ohne Last etwa halb so lang (S).
+
+| Pfad | Was | Cloud (F, gemessen) | Windows-PC mit GPU (S) | Einsatz |
+|---|---|---|---|---|
+| Three.js direkt | Comic (12), Blaupause (13) | «T12» bzw. «T13» je Bild → 80-s-Video ca. «V12» | 3–5 Min. je Video | Produktion |
+| Blender Cycles je Bild | Holz, Papier, Filz, Glas als Standbild, 1080×1920, 48–96 Samples + Denoiser | Holz «T9», Papier «T10», Filz «T11», Glas «T14» je Bild → 80-s-Video **über 200 Std.** | 5–20 s je Bild → 3–13 Std. je Video | **nur** Standbilder, Vorschaubild, kurze Einschübe (1–3 s) |
+| Blender → Bake → glTF → Three.js | Stil 15 (Holz) | einmalig Backen «T15B», danach «T15F» je Bild → 80-s-Video ca. «V15» | Backen 1–3 Min., je Bild unter 0,3 s | **Produktionsweg für alle Material-Stile** |
+| Blender Eevee | gleiche Szenen, Echtzeit-Renderer | in der Cloud nicht brauchbar: läuft nur per Software-OpenGL (Testkugel 540×960: 42 s, mit Bildfehler) (F) | ca. 0,5–3 s je Bild (S) | Option, sobald der Windows-PC rendert |
+
+Folgerung: Der Qualitätssprung durch Blender ist im Standbild deutlich (F, Bildvergleich 9 gegen 3). Fürs Video ist Cycles je Bild in der Cloud nicht machbar. **Der Bake-Weg holt den Großteil der Blender-Qualität (Licht, weiche Schatten, Material) zu Three.js-Kosten** (F, Messung Stil 15). Was verloren geht: Glanz und Spiegelungen, Glas-Brechung, bewegte Schatten (Ersatz: Kontaktschatten, Three.js-Glanzlicht) (F, Bildvergleich).
+
+### 0.4 Alleinstellungsmerkmal: Empfehlung
+
+**Empfehlung: „Handgemachte Miniatur-Rennbahn“.** Jedes Duell läuft als Rennen auf einer Tisch-Miniatur aus echten Materialien: **Holz (9), Papier (10), Filz (11)**, später Knete (Upgrade von 3). Gerendert mit Blender-Licht, ausgeliefert über den Bake-Weg in Three.js (15). Dazu zwei schnelle Bausteine: **Blaupause (13)** als Szenenwechsel für „Warum?“ und **Comic-Toon (12)** für actionreiche Rennen bzw. wenn es schnell gehen muss.
+
+Festes Rezept (gilt für alle Material-Stile, macht den Kanal ohne Logo wiedererkennbar):
+- Kamera blickt der Rennbahn entgegen, leicht erhöht (ca. 20°); die Fahrzeuge kommen auf den Zuschauer zu. Der Führende ist größer im Bild.
+- Warmes Tischlicht von vorn-oben, weiche Schatten, starke Schärfentiefe (Miniatur-Effekt).
+- Die Anzeigetafel ist aus demselben Material wie die Szene (Holzbrett, Karton, Filzflicken), Zahlen bleiben groß und flach lesbar.
+- Teamfarben Blau gegen Orange (oder pro Video fest), überall gleich: Fahrzeug, Tafel, Chips, Schlüsselwort im Untertitel.
+
+Begründung:
+- **Die Konkurrenz nutzt 2D-Flat (K1, K2, K4) und Low-Poly-Pastell (K3).** Kein Vorbild zeigt echte Materialien (F, [15-massstab.md](15-massstab.md)). Unser bisheriger Stil 1 nutzt dieselbe Low-Poly-Welle wie die Konkurrenz (F, Abschnitt 2.1).
+- **Design-Trend 2026: zurück zum Taktilen und Handgemachten.** Trendberichte beschreiben eine Abkehr vom glatten Digital-3D von 2025 hin zu Oberflächen, die „gemacht“ wirken (Papier, Stoff, Ton), gerade als Gegenpol zu KI-Bildern (F, Sekundärquellen: Creative Bloq, Videobolt, Graphic Design Junction; Blogs, keine Reichweitendaten).
+- **Spielzeug statt Spielegrafik:** Holz, Papier und Filz wirken wie Bastel- bzw. Spielzeugwelt, nicht wie ein Videospiel. Das kann die Einordnung als „Video Games“ verringern (A; Anlass F: 4 von 6 unserer 3D-Videos wurden so eingeordnet).
+- **Schwer zu kopieren:** Pfadverfolgte Materialien plus automatisierter Bake-Weg brauchen Blender-Wissen und eine Pipeline. Eine öffentliche Low-Poly-Vorlage reicht dafür nicht (A).
+- **Bezahlbar:** Mit dem Bake-Weg kostet ein Videobild «T15F» statt «T9» (F, Messung).
+- **Wechsel je Thema bleibt möglich** (Entscheidung 31.10.), trotzdem bleibt der Kanal erkennbar: Material wechselt, Rezept und HUD bleiben (A).
+- **Ehrlicher Vorbehalt:** Es gibt keinen Beleg, dass ein Material-Look mehr Views bringt. Der Effekt muss im Test gemessen werden (Abschnitt 3, Schritt 4).
+
+### 0.5 Nächste Schritte und Quellen der Recherche
+
+| # | Schritt | Wer | Zeit (S) |
+|---|---|---|---|
+| 1 | Übersicht `uebersicht_neu.jpg` ansehen, Familie „Handgemachte Miniatur“ bestätigen oder Stile streichen | Inhaber | 10 Min. |
+| 2 | Bake-Baukasten verallgemeinern: Blender-Szene → Bake → glTF → Engine-Modul (Fahrzeuge animieren, Kontaktschatten, Bokeh) für Holz, danach Papier und Filz | Claude (mit dem Engine-Agenten abstimmen) | 6–8 Std. |
+| 3 | Erstes Video im Holz-Stil (Thema mit Rennen, z. B. Verkehr) und eins in Comic-Toon als schnelle Gegenprobe | Claude | je 3–4 Std. |
+| 4 | Blaupausen-Szenenwechsel als Engine-Baustein für „Warum?“ | Claude | 3 Std. |
+| 5 | Auf dem Windows-PC messen: `python pipeline\stile\stil_9_holz.py --gpu` und `node stile/render_neu.js --gpu` (bpy per `pip install bpy`) | Inhaber | 15 Min. |
+| 6 | Filz-Stil für die Weihnachtsgeld-Videos (20.–28.11.) vorbereiten | Claude | 4 Std. |
+
+**Quellen (Recherche 31.10./01.11.2026):**
+- Trend taktil/handgemacht: [Creative Bloq: Texture, warmth and tactile rebellion – graphic design trends 2026](https://www.creativebloq.com/design/graphic-design/texture-warmth-and-tactile-rebellion-the-big-graphic-design-trends-for-2026) · [Creative Bloq: 3D art trends 2026](https://www.creativebloq.com/3d/the-critical-3d-art-trends-that-will-impact-2026) · [Videobolt: Motion graphics trends 2026 – crafted content stands out in the age of AI](https://blog.videobolt.net/post/top-motion-graphics-trends-2026) · [Graphic Design Junction: Video and motion trends 2026](https://graphicdesignjunction.com/2026/01/video-and-motion-creative-trends-2026/) · [Motionographer: 25 for 2025](https://motionographer.com/2025/01/02/25-for-2025-the-motionographers-crystal-ball-motion-design-predictions-part-2/)
+- Papier-Look in Blender: [Blender Studio: Devlog Papercraft Woods](https://studio.blender.org/blog/devlog-papercraft-woods/) · [80.lv: animiertes Diorama mit 2D-Elementen in Blender](https://80.lv/articles/creating-animated-tokyo-diorama-in-3d-with-2d-elements-using-blender)
+- Knete in Blender: [80.lv: Clay Doh shader](https://80.lv/articles/clay-d-oh-a-clay-shader-for-blender) · [Digital Production: Clay 4.Doh](https://digitalproduction.com/2025/08/25/clay-4-doh-update-sculpts-blender-workflow/)
+- Comic/Halftone: [Three.js Journey: Halftone Shading](https://threejs-journey.com/lessons/halftone-shading-shaders) · [BlenderNation: Spiderverse-Shader in 7 Schritten](https://www.blendernation.com/2024/01/15/7-steps-to-make-a-spiderverse-shader-in-blender/)
+- Backen für Three.js: [three.js Forum: Lightmaps batch-backen für Three.js](https://discourse.threejs.org/t/made-a-blender-script-for-batch-baking-lightmaps-to-optimize-models-for-threejs/82346) · [Svilenkovic: How to bake lighting for web](https://www.svilenkovic.com/3d/how-to-bake-lighting-for-web) · [Needle Engine: Lightmapping](https://engine.needle.tools/docs/blender/lightmapping)
+- Baustein-Form und Marke: [IPKat zu EuGH C-48/09 P (Lego-Stein)](https://ipkitten.blogspot.com/2010/09/lego-brick-hits-wall.html) · [World Trademark Review zur Löschung der Formmarke](https://www.worldtrademarkreview.com/article/grand-board-upolds-cancellation-of-lego-shape-mark) · [DIMT: EuG zu Minifiguren](https://www.dimt.it/news/78eu-general-court-rules-lego-mini-figures-should-continue-to-be-protected-as-shape-marks/)
+- GPU-Leistung Blender (Drittanbieter, auf Basis Blender Open Data): [Renderjuice: RTX 4070 for Blender](https://www.renderjuice.com/gpus/rtx-4070-for-blender)
 
 ---
 
@@ -165,6 +287,8 @@ Gemessen im Cloud-Container: 4 Kerne, ohne Grafikkarte (SwiftShader). **Parallel
 
 ### 2.5 Neuer Untertitel-Stil (in allen Bildern)
 
+> **Überholt durch den Maßstab** ([15-massstab.md](15-massstab.md), Abschnitt 8): Untertitel jetzt als kurze Phrase (2–5 Wörter) mit Schlüsselwort in Teamfarbe statt Karaoke mit gelbem Wort. Muster: `phrase()` in `pipeline/stile/massstab.js`. Der Text unten beschreibt den alten Stand der Bilder 1–8.
+
 - Umgesetzt nach der Entscheidung vom 31.10.: kein Kasten, weiße fette Schrift, dicke schwarze Kontur, weicher Schatten, aktuelles Wort gelb, Aufbau Wort für Wort, höchstens 2 Zeilen (F, [ENTSCHEIDUNGEN.md](../ENTSCHEIDUNGEN.md)).
 - Baustein: `pipeline/stile/gemeinsam.css` (Klasse `.ut`) und `untertitel()` in `pipeline/stile/gemeinsam.js`.
   - Die Kontur liegt auf einer Kopie hinter dem Wort. Sie wächst nur nach außen und frisst die Buchstaben nicht an.
@@ -195,11 +319,18 @@ Gemessen im Cloud-Container: 4 Kerne, ohne Grafikkarte (SwiftShader). **Parallel
 - [ ] **Schriften unter Windows:** JetBrains Mono (Stil 5), Bitstream Charter und Courier 10 Pitch (Stil 6) fehlen dort meist. Ersatz ist hinterlegt (Consolas, Georgia, Courier New). Für identische Optik die Schriften als Dateien ins Repo holen (freie Lizenzen, z. B. über `@fontsource`).
 - [ ] **Zahlen in den Bildern sind Beispielwerte.** Den Preis des Deutschlandtickets 2026 und die Autokosten vor einer echten Produktion mit Quelle rechnen.
 - [ ] **Belege für Isometrie und Clay auf TikTok fehlen.** Keine Kanäle mit belastbaren Zahlen gefunden. Der Test in Schritt 4 klärt das.
+- [ ] **Neue Stile 9–15 (01.11.):** Familie „Handgemachte Miniatur“ als Alleinstellungsmerkmal bestätigen (Abschnitt 0.4)? Welche Stile streichen?
+- [ ] **Alte Muster 4, 5, 6 sind SVG/HTML.** Nach der neuen Regel (nur Three.js und/oder Blender) beim ersten Einsatz in Three.js nachbauen; Typo (7) bleibt als HUD-Baustein. Bitte bestätigen, dass HTML/CSS für HUD und Untertitel weiter erlaubt ist (A: ja, weil Teil der Three.js-Seite).
+- [ ] **Bake-Weg im Video noch nicht erprobt:** Stil 15 ist ein Standbild-Beweis mit verschiebbaren Fahrzeugen. Offen: Drehung der Räder, Kontaktschatten bei Kurven, Farbabgleich (AgX-„Punchy“-Look fehlt in Three.js, Bild etwas flauer).
+- [ ] **Blender unter Windows:** `pip install bpy` braucht die passende Python-Version (bpy 5.2 → Python 3.13). Alternativ Blender 5.2 installieren und `blender -b -P pipeline/stile/stil_9_holz.py -- --gpu` nutzen (A: gleiche Skripte laufen dort, nicht getestet).
+- [ ] **Schrift im Blender-Text (Schild „13“):** nutzt Inter Display Black aus `/usr/share/fonts`; unter Windows Fallback Arial Black bzw. Blender-Schrift. Für gleiche Optik Inter installieren.
 - [ ] **Recherche-Grenzen:** `ads.tiktok.com` und `omr.com` sind im Netz der Cloud-Sitzung gesperrt. Der Abruf von TikTok-Profilseiten per Skript wurde blockiert. Die Firecrawl-Credits waren aufgebraucht. Kanalzahlen stammen deshalb teils von Drittanbietern (vidIQ, CreatorDB, SocialCounts, Socialpruf, SpeakRJ).
 
 ---
 
 **Dateien:**
-- Bilder: `docs/assets/stile/stil_<nr>_<name>.png`, Übersicht `docs/assets/stile/uebersicht.jpg`
+- Bilder: `docs/assets/stile/stil_<nr>_<name>.png`, Übersicht `docs/assets/stile/uebersicht.jpg` (1–8) und `uebersicht_neu.jpg` (9–15)
+- Neue Stile 9–15: Maßstab-HUD `pipeline/stile/massstab.css` und `massstab.js`; Blender-Skripte `stil_9_holz.py`, `stil_10_papier.py`, `stil_11_filz.py`, `stil_14_glas.py`, `stil_15_holz_gltf.py` mit gemeinsamen Bausteinen `blender_gemeinsam.py`; Three.js `stil_12_comic.*`, `stil_13_blaupause.*`, `stil_15_holz_gltf.*`; Renderer `render_neu.js`, Messwerte `messung_neu.json`
+- Neu rendern (neue Stile): erst die Blender-Szenen `/home/user/.venv-blender/bin/python pipeline/stile/stil_<nr>_<name>.py` (Vorschau mit `--vorschau`, Windows mit `--gpu`; geteilter Rechner: `BLENDER_THREADS=2`), dann `cd pipeline && node stile/render_neu.js` (einzelne Stile: Nummern anhängen). Die Blender-Szenenbilder liegen in `pipeline/out/stile/blender/` (nicht im Repo).
 - Quellcode: `pipeline/stile/` (je Stil eine HTML- und JS-Datei, gemeinsame Bausteine `gemeinsam.css`/`gemeinsam.js`, Renderer `render_stile.js`, Übersicht `uebersicht.html`, Messwerte `messung.json`)
 - Neu rendern: `cd pipeline && node stile/render_stile.js` (einzelne Stile: Nummern anhängen, z. B. `node stile/render_stile.js 2 5`; Prüfansicht der sicheren Zonen: `--zonen`, Ausgabe nach `pipeline/out/stile/`)

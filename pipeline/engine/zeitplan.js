@@ -68,6 +68,8 @@ export function schaetzeTiming(skript, opt = {}) {
 
 /** Füllwörter, mit denen eine Untertitel-Phrase nicht enden soll */
 const SCHWACH = new Set("der die das den dem des ein eine einen einem einer eines und oder aber doch denn zu zum zur in im ins mit von vom für auf an am bei nach aus um über unter vor hinter durch gegen ohne als wie dass weil wenn ob nicht kein keine so sehr nur noch schon es ist sind wird hat".split(" "));
+/** Wörter, vor denen eine neue Phrase gut beginnen kann (Konjunktionen, Präpositionen) */
+const BEGINNER = new Set("und oder aber doch denn weil dass wenn als ob sobald obwohl damit bis seit mit nach in im ins an am auf für bei von vom zu zum zur über unter vor hinter durch gegen ohne".split(" "));
 
 /**
  * Wörter in Untertitel-Phrasen teilen: Sätze nie zusammenlegen, an Kommas/Doppelpunkten trennen,
@@ -98,7 +100,14 @@ export function bildePhrasen(woerter, { max = 5, min = 2, segmentGrenzen = true 
         const a = e - l;
         if (a < 0 || kosten[a] === Infinity) continue;
         const ende = normalisiere(teil[e - 1].wort);
-        const c = kosten[a] + (l - ideal) ** 2 + (e < n && SCHWACH.has(ende) ? 4 : 0) + 1.5;
+        let grenze = 0;
+        if (e < n) {
+          const naechstes = teil[e].wort;
+          if (SCHWACH.has(ende)) grenze += 4; // nie mit Artikel/Präposition enden
+          if (/^[A-ZÄÖÜ]/.test(naechstes)) grenze += 2; // nicht vor einem Substantiv trennen (gehört meist zum Vorwort)
+          if (BEGINNER.has(normalisiere(naechstes)) || /^\d/.test(naechstes)) grenze -= 1; // gut: neue Phrase beginnt
+        }
+        const c = kosten[a] + (l - ideal) ** 2 + grenze + 1.5;
         if (c < kosten[e]) { kosten[e] = c; zurueck[e] = a; }
       }
     }
@@ -196,7 +205,13 @@ export class Zeitplan {
     if (typeof x === "string") {
       const m = x.match(/^(?:([^:]+):)?(.+?)(#\d+)?(>)?([+-]\d+(?:\.\d+)?)?$/);
       if (!m) throw new Error(`Zeitangabe „${x}“ nicht lesbar`);
-      const [, seg, wort, nr, ende, versatz] = m;
+      let [, seg, wort, nr, ende, versatz] = m;
+      // „9:36,“ ist ein Wort, kein Segment „9“: Präfix nur, wenn es das Segment gibt
+      if (seg && !this.index.has(seg)) {
+        const m2 = x.match(/^(.+?)(#\d+)?(>)?([+-]\d+(?:\.\d+)?)?$/);
+        [, wort, nr, ende, versatz] = m2;
+        seg = null;
+      }
       const w = this.finde(wort, { seg: seg || null, nr: nr ? +nr.slice(1) : 1 });
       return (ende ? w.ende : w.start) + (versatz ? +versatz : 0);
     }

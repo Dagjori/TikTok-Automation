@@ -48,6 +48,12 @@ function hell(hex) {
   return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
 }
 
+/** 1 = Ankerpunkt (px) im Bild, weich auf 0 außerhalb (3D-Anker, die aus dem Bild laufen, blenden aus) */
+function ankerImBild(x, y) {
+  const r = 80;
+  return clamp(Math.min(x + r, 1080 + r - x, y - SICHER.oben + r, SICHER.unten + r - y) / r);
+}
+
 /** Ein-/Ausblende: null = unsichtbar, sonst {d, s (Feder), x (Ausblenden 0..1)} */
 function huelle(t, ein, aus, f = FED.pop, ausDauer = 0.22) {
   if (t < ein || t > aus + ausDauer) return null;
@@ -520,9 +526,10 @@ class Tafel extends Baustein {
       // Führung: Fläche in Teamfarbe (Feder rein), alter Führer blendet aus
       let g = istVorn ? (tw < 0 ? 1 : clamp(feder(dw, FED.schnell))) : warVorn ? 1 - ease.outCubic(clamp(dw / 0.25)) : 0;
       if (istVorn && tw < 0) g = 1;
+      g *= 1 - M.schleifenK(t); // in der Schleife blendet die Führung weich aus (erstes Bild: keine Führung)
       setzeStil(s.glanz, "opacity", g.toFixed(3));
       s.k.classList.toggle("vorn", g > 0.5);
-      const pv = istVorn ? feder(dw - 0.08, FED.pop) : 0;
+      const pv = istVorn ? feder(dw - 0.08, FED.pop) * (1 - M.schleifenK(t)) : 0;
       setzeStil(s.vorn, "opacity", String(clamp(pv * 3)));
       s.vorn.style.transform = `scale(${(0.4 + 0.6 * pv).toFixed(4)})`;
       const bump = istVorn && tw >= 0 ? Math.exp(-dw * 6) * Math.sin(clamp(dw / 0.4) * Math.PI) : 0;
@@ -663,10 +670,11 @@ class Ring extends Baustein {
     const f = fertig ? feder(t - this.ein - this.dauer, FED.pop) : 0;
     let x = this.x, y = this.y;
     if (this.punkt) ({ x, y } = this.punkt(t));
+    const drin = ankerImBild(x, y);
     const w = this.e.offsetWidth || this.g;
     x = clamp(x, SICHER.links + w / 2, SICHER.rechts - w / 2);
     y = clamp(y, SICHER.oben + 200 + this.g / 2, SICHER.unten - 120 - this.g / 2);
-    const s = h.s;
+    const s = h.s * drin;
     this.e.style.transform = `translate(${(x - w / 2).toFixed(1)}px, ${(y - this.g / 2).toFixed(1)}px) scale(${((0.3 + 0.7 * s) * (1 + 0.05 * puls + 0.08 * Math.sin(clamp(f) * Math.PI)) * (1 - 0.3 * h.x)).toFixed(4)})`;
     this.e.style.opacity = String(clamp(s * 3) * (1 - h.x));
   }
@@ -1145,6 +1153,7 @@ class LiveZaehler extends Baustein {
     this.rz.setze(v, Math.abs(v - v0) < 1e-6);
     let x = this.x, y = this.y;
     if (this.punkt) ({ x, y } = this.punkt(t));
+    const drin = ankerImBild(x, y);
     const w = this.e.offsetWidth;
     let left = this.anker === "mitte" ? x - w / 2 : this.anker === "rechts" ? x - w : x;
     left = clamp(left, SICHER.links, SICHER.rechts - w);
@@ -1152,7 +1161,7 @@ class LiveZaehler extends Baustein {
     y = clamp(y, (this.o.minY ?? SICHER.oben + 180) + hh / 2, SICHER.unten - 100 - hh / 2);
     const s = this.ein <= 0 ? 1 : h.s;
     this.e.style.transform = `translate(${left.toFixed(1)}px, ${(y - hh / 2).toFixed(1)}px) scale(${((0.4 + 0.6 * s) * (1 - 0.3 * h.x)).toFixed(4)})`;
-    this.e.style.opacity = String(clamp(s * 3) * (1 - h.x));
+    this.e.style.opacity = String(clamp(s * 3) * (1 - h.x) * drin);
   }
 }
 

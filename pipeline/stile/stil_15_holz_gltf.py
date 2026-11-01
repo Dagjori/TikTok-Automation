@@ -36,7 +36,7 @@ sc = bpy.context.scene
 ZIEL = os.path.join(bg.AUSGABE, "gltf")
 os.makedirs(ZIEL, exist_ok=True)
 arg = bg.argumente()
-SAMPLES = arg["samples"] or 40
+SAMPLES = arg["samples"] or 32
 
 
 def nur_auswahl(objs, aktiv=None):
@@ -115,7 +115,7 @@ sc.render.bake.use_pass_direct = True
 sc.render.bake.use_pass_indirect = True
 sc.render.bake.use_pass_color = True
 sc.render.bake.margin = 8
-GROESSE = {"Tisch": (2048, 1024), "Kulisse": (2048, 2048), "Zug": (1024, 1024), "Auto": (1024, 1024), "Wand": (512, 512)}
+GROESSE = {"Tisch": (1024, 512), "Kulisse": (2048, 2048), "Zug": (1024, 1024), "Auto": (1024, 1024), "Wand": (512, 512)}
 zeiten = {}
 
 
@@ -124,6 +124,9 @@ def backe(name):
     w, h = GROESSE[name]
     img = bpy.data.images.new("Bake_" + name, w, h, float_buffer=True)
     neu = []
+    for slot in o.material_slots:
+        if slot.material is None:  # Teile ohne Material (z. B. umgewandelte Texte) bekommen ein neutrales
+            slot.material = bpy.data.materials.get("Ersatz") or bg.material("Ersatz", "#DDDDDD", rau=0.6)
     for slot in o.material_slots:
         nodes = slot.material.node_tree.nodes
         n = nodes.new("ShaderNodeTexImage")
