@@ -1,8 +1,78 @@
 # 30-Tage-Plan · Simulierbar (01.–30.11.2026)
 
-**Stand:** 31.10.2026 · **Status:** Reihenfolge der nächsten Videos (Start täglich durch den Inhaber) · **Daten:** [`data/plan/30-tage.csv`](../data/plan/30-tage.csv) (70 Zeilen, Spalten wie vereinbart)
+**Stand:** 31.10.2026, überarbeitet nach dem Maßstab · **Status:** Reihenfolge der nächsten Videos (Start täglich durch den Inhaber) · **Daten:** [`data/plan/30-tage.csv`](../data/plan/30-tage.csv) (70 Zeilen) · **PDF zum Herunterladen:** [`docs/plan/30-tage-plan.pdf`](plan/30-tage-plan.pdf) (neu erzeugen: `node tools/plan_pdf.mjs`)
 
 Legende: **(F)** = belegter Fakt mit Quelle, **(S)** = Schätzung, **(A)** = Annahme, **(B)** = Beispielwert, der vor der Produktion gerechnet wird. Zeitangaben der Posts (12:00, 16:00, 20:00) sind eine **(A)**, bis eigene Analytics vorliegen.
+
+## Überarbeitung nach Maßstab (31.10.2026)
+
+**Kurzfazit:** Alle 70 Zeilen sind gegen den Maßstab aus [`docs/15-massstab.md`](15-massstab.md) bewertet. **17 Themen sind raus, 17 neue rein.** 7 Themen sind zum Duell umgebaut, 3 verschoben. Jede Zeile hat jetzt Hook, Denkfalle, zwei Wendungen, Teamfarben, Maßstab-Score und Konkurrenz-Check. Der Schnitt liegt bei 76,5 Punkten, kein Video liegt unter 63 (S).
+
+**Bewertungsraster** (S, eigene Gewichtung; die Teilpunkte stehen in der Spalte `massstab_begruendung`):
+
+| Kürzel | Frage | Punkte |
+|---|---|---|
+| D | Lässt es sich als Duell bzw. Rennen gegen die Uhr (oder als Du-Szenario wie K3) mit sichtbaren Zählern zeigen? | 0–30 |
+| K | Ist die Antwort kontraintuitiv und hat sie eine Bedingung (Diskussionsstoff)? | 0–25 |
+| B | Kennt jeder die Situation? | 0–20 |
+| L | Trägt es 65–80 s mit mindestens 2 Wendungen? | 0–15 |
+| F | Ist es frei von gesperrten Themen (§9) und noch nicht bei der Konkurrenz viral? | 0–10 |
+
+Unter 60 Punkten fliegt ein Thema raus.
+
+**Raus und rein:**
+
+| Tag und Slot | Raus (Score) | Rein (Score) | Grund |
+|---|---|---|---|
+| Mo 02.11. abends | Desk-Sharing (52) | Treppe oder Aufzug (91) | Bürothema ohne Rennen, wenige kennen es |
+| Mi 04.11. mittags | 50/30/20-Regel (58) | Steuererklärung oder Überstunden (84) | kein Duell, Antwort erwartbar |
+| Do 05.11. abends | 30 Prozent Regen (58) | Rad oder Auto in der Stadt (84) | Erklärthema ohne Rennen, Regen-Optik nah an K1 |
+| Fr 06.11. abends | Heiße Hand (58) | Monopoly: Schlossallee oder Orange (86) | abstrakt, Basketball in Deutschland wenig bekannt |
+| So 08.11. Bonus | Hobbys im Kostenvergleich (52) | Billige oder teure Winterjacke (75) | fünf Hobbys, kein Duell |
+| Do 12.11. Bonus | Fangen (58) | Strohhalm: zuerst oder zuletzt (80) | keine Überraschung, zu dünn |
+| Sa 14.11. mittags | Inflation 10.000 € (54) | Ausbildung oder Studium (84) | bekannt, kein Rennen |
+| Sa 14.11. Bonus | Lebensmittel im Müll (56) | Alter oder neuer Kühlschrank (71) | Durchschnittszahl ohne Duell |
+| So 15.11. Bonus | Duschen: 5 oder 10 Minuten | Fitnessstudio oder joggen (73) | **gesperrt** (§9: Duschkosten) |
+| So 15.11. abends | Was kostet ein Kind bis 18 (58) | Steuerklasse 3/5 oder 4/4 (73) | große Zahl ohne Duell |
+| Mi 18.11. Bonus | Einzelne Socke (59) | Memory: merken oder raten (75) | trägt keine 65 s |
+| Fr 20.11. mittags | Spülmaschine einräumen (57) | Saugroboter: Zufall oder Bahnen (86) | kein Rennen, Modell kaum machbar |
+| Fr 20.11. abends | Haushaltshilfe (58) | 5 % mehr Gehalt bis zur Rente (79) | wenige betroffen, kein Rennen |
+| So 22.11. Bonus | – (Karten mischen rückt auf 29.11.) | Führerscheinprüfung nur mit Raten (78) | neue eigene Idee |
+| Do 26.11. mittags | Frühstück-Reihenfolge (57) | Klobrille: runter oder so lassen (81) | keine Überraschung |
+| So 29.11. Bonus | Münzwurf (58) | Karten mischen (64, verschoben) | Die Münzwurf-Studie lief schon bei @watson_news auf TikTok |
+| So 29.11. abends | Abos im Check (58) | 600 km: Auto oder Bahn (86) | kein Duell; Heimreise zu Weihnachten passt |
+| Mo 30.11. abends | Weihnachtsbudget (52) | Wichteln oder jeder beschenkt jeden (86) | Umfragezahl ohne Duell |
+
+**Zum Duell umgebaut (Thema bleibt):**
+- 03.11.: „200 € mehr Gehalt oder 100 € steuerfrei?“ (baut weiter das Netto-Modul, jetzt für 9 Videos)
+- 05.11.: Mittagessen als „Selbst kochen oder bestellen?“, die Kantine kommt als zweite Wendung
+- 10.11.: Kreditkarte als „Mindestrate oder feste 100 €?“
+- 17.11.: GTA 6 Deutschland mit Hook „GTA 6 oder Brückentag?“
+- 21.11.: Kniffel als „Kniffel jagen oder sicher punkten?“
+- 25.11.: Tanken als „Vor 12 Uhr oder danach?“. Seit 01.04.2026 dürfen Tankstellen Preise nur noch um 12 Uhr erhöhen (laut Suchauszug, **vor Produktion prüfen**). Die alte Frage „morgens oder abends“ hat der ADAC selbst auf TikTok.
+- 26.11.: Weihnachtsgeld als „Wem bleibt mehr: bei 2.500 oder 7.000 € Gehalt?“
+
+**Verschoben:** Baustelle vom 30.11. auf den 28.11. mittags, Kuchen teilen vom 28.11. auf den 30.11. mittags. Sonst stünden „Auto oder Bahn“ (29.11.) und die Baustelle direkt hintereinander. Karten mischen rückt vom 22.11. auf den 29.11. (Bonus).
+
+**Startvideos:** GTA 6 weltweit und Spurwechsel sind nach alten Regeln gebaut (Rubrik, Logo, alter Schluss, 29–30 % Stillstand laut `docs/15`, §2). Status jetzt „Neubau nach Maßstab nötig“, Aufwand je 3.
+
+**Neue Spalten in der CSV:** `massstab_score`, `massstab_begruendung`, `hook` (Sprechtext, Zahlen ausgeschrieben), `denkfalle`, `wendung_1` (bei ca. 20 s), `wendung_2`, `teamfarben` (Name und Hex-Wert, im ganzen Video gleich) und `konkurrenz_check`. Die Spalte `rubrik` bleibt nur intern, im Video steht sie nicht.
+
+**Gilt zusätzlich für jedes Video** (Entscheidungen vom 31.10. in `ENTSCHEIDUNGEN.md`): Folgen-Aufruf bei ca. 20 s, Schluss „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“, keine Rubrik und kein Kanalname im Bild, letztes Bild gleich erstes Bild.
+
+**Konkurrenz-Check (31.10.):**
+- Methode: WebSearch je Thema, eingeschränkt auf tiktok.com und youtube.com. Das Ergebnis steht in der Spalte `konkurrenz_check`.
+- Grenze: Der Suchindex kennt TikTok kaum und findet eher YouTube. Es ist ein Mindest-Check, kein Beweis. Der Check am Vortag jeder Produktion durch den Trend-Radar bleibt Pflicht.
+- Deutsche TikToks zum selben Thema gefunden:
+  - Ampelknopf: @offenunehrlich
+  - Schere, Stein, Papier: @studyflix, @mentalisttimonkrause
+  - Tanken: @adac, @finanzdenker, @mathemitnick
+  - Kfz-Schaden: @clauseinars
+  - GTA 6: @alex.spielttv
+  - Münzwurf: @watson_news, deshalb raus
+- Bei diesen Themen ist der eigene Winkel in der Spalte `hook` bzw. `wendung_2` festgelegt.
+
+**Stile:** Der Plan nutzt nur die Stile 1–8. Nie steht zweimal derselbe Stil hintereinander, auch dann nicht, wenn ein Bonusvideo ausfällt (per Skript geprüft). Neue Stile ab Nr. 9 aus `docs/10-designstile.md` können später einzelne Zeilen übernehmen.
 
 ## 0. Arbeitsweise (Entscheidung des Inhabers 31.10.2026)
 
@@ -14,25 +84,27 @@ Legende: **(F)** = belegter Fakt mit Quelle, **(S)** = Schätzung, **(A)** = Ann
 
 ## 1. Kurzfazit
 
-- **Plan:** 60 Hauptslots (2 pro Tag, davon 30 GELD und 30 ALLTAG) plus 10 optionale Bonusvideos. Das sind 2 fertige, 58 neue Hauptvideos und bis zu 10 Bonusvideos. Du postest höchstens 3 pro Tag.
+- **Plan:** 60 Hauptslots (2 pro Tag, davon 30 GELD und 30 ALLTAG) plus 10 optionale Bonusvideos. Das sind 2 Startvideos (Neubau nach Maßstab nötig), 58 neue Hauptvideos und bis zu 10 Bonusvideos. Du postest höchstens 3 pro Tag.
 - **Frequenz (klare Empfehlung):** 2 pro Tag bleibt der Plan. Das dritte Video ist die Ausnahme: höchstens 3 pro Woche, nur zeitlose Themen. Kein Beleg zeigt, dass ein drittes Video pro Tag einem kleinen Konto mehr bringt. Dafür steigen Aufwand und Qualitätsrisiko. Details in Abschnitt 5.
-- **Der Engpass sind Vorlagen, nicht Ideen.** Von 7 Vorlagen existieren 2. **In Woche 1 musst du die Duell-Tafel (V3) bauen lassen, Ziel Mo 02.11. vormittags.** Sie trägt 20 von 68 neuen Videos und das Netto-Rechenmodul für 4 Videos. Zusätzlich empfehle ich V7 Spiel/Zufall bis Di 03.11. Danach V4 (08.11.), V6 (12.11.), V5 (18.11.).
+- **Der Engpass sind Vorlagen, nicht Ideen.** Von 7 Vorlagen existieren 2. **In Woche 1 musst du die Duell-Tafel (V3) bauen lassen, Ziel Mo 02.11. vormittags.** Sie trägt 20 von 68 neuen Videos und das Netto-Rechenmodul für 9 Videos. Zusätzlich empfehle ich V7 Spiel/Zufall bis Di 03.11. Danach V4 (08.11.), V6 (12.11.), V5 (18.11.).
 - **Termine sind eingebaut:** Singles Day 11.11., GTA 6 Deutschland 17.11., Kfz-Kündigungsfrist 30.11. (Video am 21.11.), Streichpreis-Check 24.11., Weihnachtsgeld 26.11., 0-%-Finanzierung am Black Friday 27.11., Weihnachtsmarkt am 1. Advent 29.11. Heizperiode und Winterreifen laufen als Themen mit.
 - **Risiko Nummer 1:** Die Anlauftage 02. und 03.11. Es gibt nur V1 und V2, die Tafel wird gerade erst gebaut. Der Mittagsslot am 02.11. hat deshalb Priorität C und darf entfallen.
 - **Stil entschieden (31.10.):** Der Stil wechselt je Thema (`docs/10-designstile.md`, Abschnitt 0, Spalte `stil` in der CSV).
-- **Risiko Nummer 2:** Das Arbeitsvolumen. Mein konservatives Raster ergibt ca. 190 Stunden Agentenarbeit für 68 neue Videos (S), dazu 35–54 Stunden für die Vorlagen (S). Das geht nur mit parallelen Sitzungen. Nach Woche 1 messen wir den echten Wert. Wenn er doppelt so hoch ist wie geplant, gehen wir auf 1,5 Videos pro Tag.
+- **Risiko Nummer 2:** Das Arbeitsvolumen. Mein konservatives Raster ergibt ca. 194 Stunden Agentenarbeit für 68 neue Videos plus 2 Neubauten (S), dazu 35–54 Stunden für die Vorlagen (S). Das geht nur mit parallelen Sitzungen. Nach Woche 1 messen wir den echten Wert. Wenn er doppelt so hoch ist wie geplant, gehen wir auf 1,5 Videos pro Tag.
 - **Stimme:** ElevenLabs **Creator, $22 pro Monat** (ca. 20 € ohne Steuern, A). Starter reicht nur für ca. 23 Videos. Vorher 5 Minuten prüfen, welche der zwei Preislisten dein Konto nutzt (Abschnitt 4.3).
 - **Deine Zeit:** ca. 5 Stunden pro Woche (S) fürs Abnehmen, Hochladen und Kommentare. Das entspricht deinem angenommenen Budget. Ein drittes Video pro Tag würde es sprengen.
 
-### Die 5 stärksten Videos des Monats (S, keine Messdaten)
+### Die 5 stärksten Videos des Monats (S, nach Maßstab-Score, keine Messdaten)
 
-| # | Datum | Video | Warum |
-|---|---|---|---|
-| 1 | Di 17.11. | GTA 6: Was kostet es Deutschland, wenn alle krankfeiern? | Trend-Score 85 (Trend-Radar), fester Termin, US-Zahl läuft viral, deutsche Rechnung fehlt (laut `docs/trends/vorschlaege.md`) |
-| 2 | Do 26.11. | Weihnachtsgeld: Was bleibt von 1.000 € brutto übrig? | Score 83, Skript steht, jeder kennt die Enttäuschung, löst Kommentar-Streit aus |
-| 3 | Di 24.11. | Black Friday: Wie echt ist der Streichpreis? | Harte Regel (§ 11 PAngV: niedrigster Preis der letzten 30 Tage), starker Aha-Effekt, kein Händler nötig, Konkurrenz auf Rechnungsebene nicht gefunden (A) |
-| 4 | Mi 11.11. | Singles Day: Wie viel teurer ist Alleinleben als zu zweit? | Passender Anlass, Debatte-Potenzial, Teile-Faktor (A) |
-| 5 | Sa 07.11. | Ziegenproblem: Wechseln oder bleiben? | Klassiker mit Kommentar-Streit („Das stimmt nicht“), exakte Lösung 2/3, kein Konkurrent im Monitor (A) |
+| # | Datum | Video | Score | Warum |
+|---|---|---|---|---|
+| 1 | Mo 02.11. | Treppe oder Aufzug: Wer ist im Bürohaus wirklich schneller oben? | 91 | Echtes Rennen mit Uhr und Etagenzähler. Das Ergebnis kippt mit der Wartezeit. Kein Konkurrenzvideo gefunden |
+| 2 | Mo 09.11. | Kreisverkehr oder Ampel: Wo kommen wirklich mehr Autos durch? | 90 | Zählerrennen zweier Kreuzungen. Die Antwort hängt an der Verkehrsmenge und gibt Streit |
+| 3 | Mo 23.11. | Rolltreppe: Links gehen oder beide Seiten stehen? | 90 | Stärkste Denkfalle im Plan. Auf Deutsch kein Video gefunden, nur ein englisches zum Londoner Test |
+| 4 | Do 12.11. | Parkplatz: Erster freier Platz oder näher ran kreisen? | 89 | Rennen mit Uhr, jeder kennt es, die Belegung als Bedingung |
+| 5 | So 01.11. | Spurwechsel im Stau (Neubau nach Maßstab) | 87 | Das Ergebnis ist schon gerechnet. Nur Bild und Ton müssen auf den Maßstab |
+
+**Stärkste Terminvideos** (S): Wichteln (30.11., 86), Auto oder Bahn zu Weihnachten (29.11., 86), Black-Friday-Streichpreis (24.11., 79), Weihnachtsmarkt (29.11., 79), Singles Day (11.11., 72), Weihnachtsgeld (26.11., 72), GTA 6 Deutschland (17.11., 68). Die Trend-Scores aus `docs/trends/vorschlaege.md` (GTA 6: 85, Weihnachtsgeld: 83) messen Nachfrage und Timing, nicht die Eignung fürs Duell-Format. Beides gilt nebeneinander.
 
 ## 2. Wochenübersicht
 
@@ -55,26 +127,26 @@ Die Wochen laufen von Sonntag bis Samstag, weil der Plan am Sonntag 01.11. start
   1. Zwei direkt aufeinanderfolgende Hauptvideos haben nie dieselbe Rubrik (einzige Ausnahme: Abend 14.11. auf Mittag 15.11.).
   2. Nach 14 Tagen kannst du Uhrzeit und Rubrik getrennt vergleichen (A: TikTok misst pro Video).
   3. GTA 6 Deutschland am 17.11. fällt auf den Abendslot (20:00 statt 19:00 im alten Skript, A).
-- **Themenvielfalt:** 19 Themenfelder. Das größte, „Auto und Verkehr“, hat 9 von 70 Videos (13 %). Es folgen Konsum (8) und Spiele (7).
+- **Themenvielfalt:** Die größten Themenfelder sind jetzt „Spiele und Zufall“ mit 15 von 70 Videos und „Auto und Verkehr“ mit 13 (vorher 9, mitgezählt sind Haltestelle und Führerschein). Direkt aufeinanderfolgende Videos haben nie dasselbe Feld, auch nicht, wenn ein Bonusvideo ausfällt (Skript-Prüfung nach der Überarbeitung 31.10.).
 - **Nähe zum Format:** Jede Idee ist eine klare Modellrechnung mit konkreten Fällen. GELD ist ein Duell (zwei Wege nebeneinander), ALLTAG ein Strategie-Vergleich. In keinem Titel steht „1.000“ oder „simulierte …“. Bei Spielen läuft die Rechnung im Hintergrund, im Video siehst du Fälle.
-- **Länge:** Jedes Video muss mindestens 61 Sekunden tragen (CRP verlangt „at least one minute long“, F, [TikTok Support](https://support.tiktok.com/en/business-and-creator/creator-rewards-program)). Dünne Themen wie Münzwurf, Socke oder Fangen tragen das schwer. Deshalb sind sie Bonus.
+- **Länge:** Jedes Video muss mindestens 61 Sekunden tragen (CRP verlangt „at least one minute long“, F, [TikTok Support](https://support.tiktok.com/en/business-and-creator/creator-rewards-program)). Dünne Themen wie Münzwurf, Socke oder Fangen sind seit der Überarbeitung am 31.10. ganz raus. Knappe Themen (Strohhalm, Karten mischen, Reise nach Jerusalem) stehen nur im Bonus.
 
 ### 3.2 Reihenfolge: zuerst die vorhandenen Vorlagen
 
 | Phase | Tage | Was läuft | Vorlagen |
 |---|---|---|---|
-| Anlauf | 02.–03.11. | Stadt oder Land, Desk-Sharing, Fußgängerampel, dazu die erste Tafel (200 €) | V1/V2, V3 ab 03.11. |
+| Anlauf | 02.–03.11. | Stadt oder Land, Treppe oder Aufzug, Fußgängerampel, dazu die erste Tafel (200 € gegen steuerfrei) | V1/V2, V3 ab 03.11. |
 | Aufbau | 04.–14.11. | GELD fast nur auf V3, ALLTAG auf V7, V1, V2. Ab 10.11. V4, ab 13.11. V6 | V3, V7, dann V4, V6 |
 | Termine | 15.–21.11. | GTA 6 Deutschland, Release, Kfz-Frist, Kassenschlange | V5 ab 19.11. |
 | Dichte | 22.–30.11. | Streichpreis, Weihnachtsgeld, Black Friday, Advent | alle |
 
-Warum „200 € mehr Gehalt“ so früh (03.11.)? Es baut das Netto-Modul (Lohnsteuer 2026, Sozialabgaben) als Code mit Tests. Das Weihnachtsgeld, die 4-Tage-Woche und die Pendlerpauschale nutzen es später. Der Abstand zum Weihnachtsgeld beträgt 23 Tage.
+Warum „200 € mehr Gehalt“ so früh (03.11.)? Es baut das Netto-Modul (Lohnsteuer 2026, Sozialabgaben) als Code mit Tests. Acht spätere Videos nutzen es: Steuererklärung (04.11.), 4-Tage-Woche, Ausbildung oder Studium, Steuerklassen, Pendlerpauschale, Gehaltsverhandlung, Arbeitsstunden und Weihnachtsgeld. Der Abstand zum Weihnachtsgeld beträgt 23 Tage.
 
 ### 3.3 Feste Termine
 
 | Termin | Datum 2026 | Beleg | Umsetzung im Plan |
 |---|---|---|---|
-| Heizperiode | seit 01.10., läuft bis 30.04. | (F) Üblich, kein Gesetz; Ursprung LG Berlin 1998 ([ista](https://www.ista.com/de/blog/heizen-abrechnen/heizperiode-in-deutschland/), [Haufe](https://www.haufe.de/id/beitrag/zentralheizung-HI923579.html)). 6 % je Grad ist Faustregel, exakt 5,55 % ([Öko-Test](https://www.oekotest.de/freizeit-technik/1-grad-weniger-heizen-wie-viel-euro-lassen-sich-damit-sparen_13132_1.html)) | Heizung 1 Grad (06.11.), Wäsche (13.11.), Zimmer heizen (18.11.), Stoßlüften (25.11.), Bonus nachts (15.11.) |
+| Heizperiode | seit 01.10., läuft bis 30.04. | (F) Üblich, kein Gesetz; Ursprung LG Berlin 1998 ([ista](https://www.ista.com/de/blog/heizen-abrechnen/heizperiode-in-deutschland/), [Haufe](https://www.haufe.de/id/beitrag/zentralheizung-HI923579.html)). 6 % je Grad ist Faustregel, exakt 5,55 % ([Öko-Test](https://www.oekotest.de/freizeit-technik/1-grad-weniger-heizen-wie-viel-euro-lassen-sich-damit-sparen_13132_1.html)) | Heizung 1 Grad (06.11.), Wäsche (13.11.), Zimmer heizen (18.11.), Stoßlüften (25.11.) |
 | Winterreifen | situativ, kein Stichtag | (F) § 2 Abs. 3a StVO, „O bis O“ nur Merkregel, Bußgeld ab 60 € ([RuV](https://www.ruv.de/kfz-versicherung/magazin/rund-ums-auto/winterreifen-drohende-bussgelder-und-probleme-mit-der-versicherung), [Bußgeldkatalog](https://www.bussgeldkatalog.de/winterreifen/)) (Suchzusammenfassung) | Reifen-Duell 16.11. |
 | **Martinstag** | Mi 11.11. | (F) 11.11. ([Stuttgarter Zeitung](https://www.stuttgarter-zeitung.de/panorama/martinsumzug-am-11-november-sankt-martin-der-gute-mann-von-tours-78879539.html)) | **Kein eigenes Video** (siehe 3.6) |
 | **Singles Day** | Mi 11.11. | (F) 11.11., seit 2009 von Alibaba groß gemacht ([Wikipedia](https://en.wikipedia.org/wiki/Singles%27_Day)) | Singles-Day-Duell, 11.11. 12:00 |
@@ -86,8 +158,8 @@ Warum „200 € mehr Gehalt“ so früh (03.11.)? Es baut das Netto-Modul (Lohn
 | **Weihnachtsgeld** | 20.–28.11. (A) | (F) Etwa die Hälfte der Beschäftigten bekommt es, 2023 laut WSI 53 % ([Böckler](https://www.boeckler.de/de/pressemitteilungen-2675-53-prozent-aller-beschaeftigten-bekommen-weihnachtsgeld-53695.htm)). Auszahlung meist Ende November (Sekundärquellen) | **Do 26.11., 20:00** |
 | **Black Friday** | Fr 27.11. | (F) ([Universal Time Date](https://www.universaltimedate.com/articles/black-friday-2026), [Klaviyo](https://www.klaviyo.com/uk/bfcm/calendar)); Thanksgiving ist der 26.11. (Rechnung) | Streichpreis-Check **Di 24.11.**, 0-%-Finanzierung **Fr 27.11.** |
 | Rechtsgrundlage Streichpreis | seit 2022 | (F) § 11 PAngV: bei Preisermäßigung gilt der niedrigste Preis der letzten 30 Tage als Referenz ([lxgesetze](https://lxgesetze.de/pangv/11), [Händlerbund](https://www.haendlerbund.de/de/ratgeber/recht/streichpreise)) | Kern des Streichpreis-Videos |
-| **1. Advent** | So 29.11. | Rechnung: Heiligabend ist ein Donnerstag, der 4. Advent der 20.12.; im Kalender `data/trends/kalender.csv` als geprüft geführt | Weihnachtsmarkt **So 29.11.**, Weihnachtsbudget Mo 30.11. |
-| Cyber Monday | Mo 30.11. | (F) ([Klaviyo](https://www.klaviyo.com/uk/bfcm/calendar)) | kein eigenes Video (Abos 29.11. und Weihnachtsbudget 30.11. laufen daneben) |
+| **1. Advent** | So 29.11. | Rechnung: Heiligabend ist ein Donnerstag, der 4. Advent der 20.12.; im Kalender `data/trends/kalender.csv` als geprüft geführt | Weihnachtsmarkt **So 29.11.**, Heimreise Auto oder Bahn So 29.11. abends, Wichteln Mo 30.11. |
+| Cyber Monday | Mo 30.11. | (F) ([Klaviyo](https://www.klaviyo.com/uk/bfcm/calendar)) | kein eigenes Video (Wichteln 30.11. läuft daneben) |
 
 ### 3.4 Abstandsregeln und Prüfung
 
@@ -96,8 +168,9 @@ Ich habe alle 70 Zeilen mit einem Skript geprüft (Reihenfolge, Vorlagen-Verfüg
 | Regel | Umsetzung | Ergebnis |
 |---|---|---|
 | Weihnachtsgeld mindestens 5 Tage Abstand zu „200 € mehr Gehalt“ | 03.11. und 26.11. | 23 Tage, erfüllt |
-| Keine zwei sehr ähnlichen Themen direkt hintereinander | Direkt aufeinanderfolgende Videos haben nie dasselbe Themenfeld und nie dieselbe Vorlage. Dasselbe Feld frühestens nach zwei Videos Abstand | **Eine Ausnahme:** 02.11. mittags und abends sind beide V2 (Stadt oder Land, Desk-Sharing). Die Themen sind verschieden. Es liegt daran, dass in den Anlauftagen nur V1/V2 existieren |
-| Stau-Themen nach dem Reißverschluss | Kreisverkehr 09.11., Spurwechsel 12.11., Baustelle 30.11. Phantomstau liegt in der Reserve | mindestens 8 Tage Abstand |
+| Keine zwei sehr ähnlichen Themen direkt hintereinander | Direkt aufeinanderfolgende Videos haben nie dasselbe Themenfeld und nie dieselbe Vorlage. Dasselbe Feld frühestens nach zwei Videos Abstand | **Eine Ausnahme:** 02.11. mittags und abends sind beide V2 (Stadt oder Land, Treppe oder Aufzug). Die Themen sind verschieden. Es liegt daran, dass in den Anlauftagen nur V1/V2 existieren |
+| Stau-Themen | Spurwechsel 01.11., Kreisverkehr 09.11., Baustelle 28.11. Phantomstau liegt in der Reserve | mindestens 8 Tage Abstand |
+| Stil (seit 31.10.) | nie zweimal derselbe Stil hintereinander, auch nicht, wenn ein Bonusvideo ausfällt | erfüllt (Skript-Prüfung 31.10.) |
 | Bonus ohne Zeitdruck | alle 10 Bonusvideos sind zeitlos | erfüllt (Balkonkraftwerk wegen Winter in der Reserve) |
 | Bonus höchstens 3 pro Woche | Wochen: 3 / 3 / 3 / 1 | erfüllt |
 
@@ -109,7 +182,8 @@ Der Abgleich läuft nur auf **Kanalebene**. Einzelne Videos der neuen Nachahmer 
 |---|---|
 | @kontostand.vs: Mieten oder kaufen (504k Views) | **nicht im Plan.** Erst im Dezember mit eigenem Winkel (Instandhaltung, Zinsbindungsende) |
 | @wissentogo_de: Leasing, Finanzierung oder bar (298k) | **nicht im Plan.** Die 0-%-Finanzierung im Laden ist ein anderes Thema (Ratenkauf, kein Auto) |
-| @kurzsimuliert: Regen, rennen oder gehen (2,1 Mio.) | bleibt gestrichen. „Was heißen 30 Prozent Regen?“ ist eine andere Frage (Wahrscheinlichkeit, kein Nässe-Vergleich) |
+| @kurzsimuliert: Regen, rennen oder gehen (2,1 Mio.) | bleibt gestrichen (Maßstab §9). Auch „Was heißen 30 Prozent Regen?“ ist seit 31.10. raus: kein Rennen, Regen-Optik zu nah an K1 |
+| Maßstab K2 bis K4 (Pausen gegen Tempo, Tsunami, Duschen gegen Baden) | gesperrt (§9). Die Bonus-Zeile „Duschen: 5 oder 10 Minuten“ ist raus. „120 oder 130 km/h“ (08.11.) bleibt, aber mit Tagesoptik und „Euro pro Stunde“ als Kern statt „Wer kommt zuerst an?“ |
 | @retrodreamspace: Zigarette gegen Vape | Tabak ist ausgeschlossen |
 | @unnoetig_tiefgruendig: Strom in der Steckdose | Stromfresser (GD103) bewusst nicht im Plan |
 | Reißverschluss (EN, 3,2–3,4 Mio. Views) | ist unser Video #2. Ähnliche Themen frühestens nach 8 Tagen und mit anderem Kern |
@@ -135,7 +209,11 @@ Der Abgleich läuft nur auf **Kanalebene**. Einzelne Videos der neuen Nachahmer 
 | `quellen_pruefen` | Was vor der Produktion geprüft wird (Rechtsstand, Preise, Studien) |
 | `aufwand` | 1 = ca. 0,5 Std. aktive Arbeit, 2 = 1,5, 3 = 3, 4 = 5 (S). Stufe 5 (neue Vorlage) kommt nicht vor, der Vorlagenbau steht in Abschnitt 4.1 |
 | `prioritaet` | **A** Terminvideo, fertig oder Fundament: bleibt fix. **B** Standard: darf 1–3 Tage rutschen. **C** Bonus oder Anlauf-Slot: darf ersatzlos entfallen |
-| `status` | `geplant`, die zwei Startvideos stehen auf `fertig` |
+| `status` | `geplant` (mit Hinweis „neu“, „umgebaut“ oder „verschoben“ seit 31.10.); die zwei Startvideos stehen auf „Neubau nach Maßstab nötig“ |
+| `massstab_score`, `massstab_begruendung` | 0–100 nach dem Raster oben (D, K, B, L, F), mit Kurzbegründung (S) |
+| `hook`, `denkfalle`, `wendung_1`, `wendung_2` | Dramaturgie nach `docs/15`, §1 und §5. Hook als Sprechtext, Zahlen ausgeschrieben. Werte in den Wendungen sind (B) bzw. Hypothesen, bis die Rechnung steht |
+| `teamfarben` | zwei feste Farben je Video (Name und Hex-Wert) für Figuren, Tafel, Chips und Untertitel-Schlüsselwort |
+| `konkurrenz_check` | Ergebnis der WebSearch vom 31.10. (nur Mindest-Check, siehe oben) |
 
 **Schiebe-Regel:** Besteht ein Video die Abnahme nicht rechtzeitig, rutscht das nächste B-Video derselben Rubrik nach. Terminvideos (A) bleiben auf ihrem Tag. Gefüllt wird nie mit einem ungeprüften Video. Als Notnagel dient die Reserve in Anhang B.
 
@@ -147,12 +225,12 @@ Ich habe alle 58 neuen Hauptthemen auf 7 Vorlagen verteilt. **Eine Vorlage ist n
 
 | Vorlage | Status | Fertig bis (Ziel) | Videos (Haupt + Bonus) | Erstes Video | Bau (S) | Inhalt |
 |---|---|---|---|---|---|---|
-| V1 Straße | vorhanden | – | 5 (davon 1 fertig) | 01.11. | – (Kreisverkehr braucht neue Geometrie, steckt im Videoaufwand) | Autobahn und Landstraße, Baustelle, Trajektorien aus `pipeline/sim` |
-| V2 Stadt/Globus | vorhanden | – | 6 (davon 1 fertig) | 01.11. | – (Stadt/Land, Büro, Ampel brauchen neue Szenenteile, stecken im Videoaufwand) | Low-Poly-Stadt, Hochhaus, Figuren, Globus |
-| **V3 Duell-Tafel** | **neu, Woche 1, Pflicht** | **Mo 02.11. vormittags** | 18 + 2 | 03.11. (200 €) | 8–12 h | Zwei Team-Spalten (Blau, Orange), Geldfluss in Töpfe, wachsende Balken, Faustregel-Karte. Baut auf `engine/duell.js` und `bausteine.js` auf. Dazu das Netto-Modul als Code |
+| V1 Straße | vorhanden | – | 5 (davon 1 Neubau) | 01.11. | – (Kreisverkehr braucht neue Geometrie, steckt im Videoaufwand) | Autobahn und Landstraße, Baustelle, Trajektorien aus `pipeline/sim` |
+| V2 Stadt/Globus | vorhanden | – | 7 (davon 1 Neubau) | 01.11. | – (Stadt/Land, Treppenhaus, Ampel, Radweg und Deutschlandkarte brauchen neue Szenenteile, stecken im Videoaufwand) | Low-Poly-Stadt, Hochhaus, Figuren, Globus |
+| **V3 Duell-Tafel** | **neu, Woche 1, Pflicht** | **Mo 02.11. vormittags** | 18 + 2 | 03.11. (200 € gegen steuerfrei) | 8–12 h | Zwei Team-Spalten (Blau, Orange), Geldfluss in Töpfe, wachsende Balken, Faustregel-Karte. Baut auf `engine/duell.js` und `bausteine.js` auf. Dazu das Netto-Modul als Code |
 | **V7 Spiel/Zufall** | **neu, Woche 1, empfohlen** | Di 03.11. | 10 + 5 | 04.11. (Schere, Stein, Papier) | 6–10 h | Türen, Würfel, Karten, Spielfeld, Tor. Siegquoten als Balken |
-| V4 Zeitachse | neu, Woche 2 | So 08.11. (baut auf V3) | 11 + 2 | 10.11. (Kreditkarte) | 5–8 h | Kurve über Jahre, Break-even-Linie, Preisverlauf, Tagesverlauf |
-| V6 Zuhause | neu, Woche 2 | Do 12.11. | 6 + 1 | 13.11. (Bad) | 8–12 h | Wohnungsquerschnitt, Wärmefluss, Zähler, Küche |
+| V4 Zeitachse | neu, Woche 2 | So 08.11. (baut auf V3) | 9 + 3 | 10.11. (Kreditkarte) | 5–8 h | Kurve über Jahre, Break-even-Linie, Preisverlauf, Tagesverlauf |
+| V6 Zuhause | neu, Woche 2 | Do 12.11. | 7 + 0 | 13.11. (Bad) | 8–12 h | Wohnungsquerschnitt, Wärmefluss, Zähler, Küche |
 | V5 Schlange/Menge | neu, Woche 3 | Mi 18.11. | 4 + 0 | 19.11. (Kassenschlange) | 8–12 h | Draufsicht, Figuren als Agenten, Kassen, Wege |
 
 Summe der neuen Vorlagen: 35–54 Stunden (S).
@@ -165,15 +243,15 @@ Mein Raster für die aktive Arbeit pro Video bei vorhandener Vorlage (S): Aufwan
 
 | Woche | Neue Videos | Agentenstunden (S) |
 |---|---|---|
-| 1 | 12 | 37,5 |
-| 2 | 17 | 41,0 |
-| 3 | 17 | 54,0 |
-| 4 | 17 | 44,5 |
-| 5 | 5 | 12,5 |
-| **Summe** | **68** (58 Haupt + 10 Bonus) | **189,5** (Haupt 173, Bonus 16,5) |
+| 1 | 14 (12 neu, 2 Neubauten) | 45,0 |
+| 2 | 17 | 42,5 |
+| 3 | 17 | 51,0 |
+| 4 | 17 | 41,5 |
+| 5 | 5 | 14,0 |
+| **Summe** | **70** (58 neu Haupt, 2 Neubauten, 10 Bonus) | **194,0** (Haupt 179, Bonus 15) |
 
 - **Einordnung:** `docs/04-claude-kapazitaet.md` rechnet nur mit 20–30 Minuten aktiver Zeit pro Video bei fertiger Vorlage. Das wären für 68 Videos ca. 34 Stunden (S). Mein Raster ist bewusst vorsichtig, weil jede Szene bisher Maßarbeit war. Die Wahrheit liegt dazwischen. **Messpunkt:** Nach Woche 1 erfassen wir die echten Stunden pro Video (`/usage`) und passen den Plan an.
-- **Parallel arbeiten:** 190 Stunden in 30 Tagen sind ca. 6 Stunden pro Tag. Das geht nur mit mehreren Sitzungen gleichzeitig und Nachtschichten (A). Es belastet das Max-Kontingent (offen: Wie viel darf das Projekt nutzen? Annahme bisher 50 %).
+- **Parallel arbeiten:** 194 Stunden in 30 Tagen sind ca. 6,5 Stunden pro Tag (Stand nach der Überarbeitung 31.10.). Das geht nur mit mehreren Sitzungen gleichzeitig und Nachtschichten (A). Es belastet das Max-Kontingent (offen: Wie viel darf das Projekt nutzen? Annahme bisher 50 %).
 - **Modellwahl:** Opus 5.5 für die 5 neuen Vorlagen, Sonnet 5.5 für die Videos (laut `CLAUDE.md`).
 - **Rendern:** 50 Minuten pro Video in der Cloud (F, gemessen laut `STATUS.md`). Für 68 Videos sind das 56,7 Stunden Rechenzeit (Rechnung). Auf dem Windows-PC mit GPU rechne ich mit 5–15 Minuten pro Video (S, nicht gemessen), das wären 6–17 Stunden. Der isometrische Stil rendert laut `docs/10` rund 7-mal schneller (0,74 s statt 5,5 s je Bild, F, ohne GPU gemessen). Übertragen auf 50 Minuten wären das ca. 7 Minuten pro Video, für 68 Videos ca. 8 Stunden (S). **Deshalb ziehe ich das Windows-Setup von „später“ auf diese Woche vor** (45–60 Minuten, danach Zeitmessung).
 - **Vorlauf:** Ab Woche 2 sollen immer mindestens 2 Tage Videos fertig im Voraus liegen. So fängt eine Verzögerung nichts Zeitkritisches ab.
@@ -273,7 +351,8 @@ Hinweis: tiktok.com war in dieser Sitzung nicht abrufbar. Alle TikTok-Zitate sta
 | 3 | Startvideos abnehmen und posten (Neubau mit Stimme Ben) | Du | 30–60 Min. | 31.10./01.11. |
 | 4 | **V3 Duell-Tafel plus Netto-Modul bauen** | Claude (Opus) | 8–12 Std. | **bis Mo 02.11. vormittags** |
 | 5 | V7 Spiel/Zufall bauen (parallele Sitzung) | Claude (Opus) | 6–10 Std. | bis Di 03.11. |
-| 6 | Sechs Videos für 02.–04.11. produzieren (Stadt/Land, Desk-Sharing, 200 €, Ampel, 50/30/20, Schere-Stein-Papier) | Claude (Sonnet) | ca. 19 Std. (S) | 31.10.–03.11. |
+| 6 | Sechs Videos für 02.–04.11. produzieren (Stadt/Land, Treppe oder Aufzug, 200 € gegen steuerfrei, Ampel, Steuererklärung, Schere-Stein-Papier) | Claude (Sonnet) | ca. 19 Std. (S) | 31.10.–03.11. |
+| 6a | Startvideos GTA 6 und Spurwechsel nach Maßstab neu bauen (Hook, Denkfalle, Rennen mit Zählern, Schleife, neuer Schluss) | Claude | ca. 6 Std. (S) | vor dem ersten Post |
 | 7 | Windows-Setup und Zeitmessung mit GPU | Claude plus Du | 45–60 Min. | bis Sa 07.11. |
 | 8 | V4 und V6 bauen | Claude (Opus) | 5–8 plus 8–12 Std. | bis 08.11. bzw. 12.11. |
 | 9 | Wöchentlicher Upload-Stapel in TikTok Studio und YouTube Studio | Du | ca. 3,5 Std. | jeden Sonntag |
@@ -301,40 +380,40 @@ Hinweis: tiktok.com war in dieser Sitzung nicht abrufbar. Alle TikTok-Zitate sta
 
 ## Anhang A: Plan im Überblick
 
-Fett = Priorität A (Terminvideo, fertig oder Fundament für spätere Videos). G = GELD, A = ALLTAG. In Klammern die Vorlage. Mittag 12:00, Bonus 16:00, Abend 20:00 (A).
+Fett = Priorität A (Terminvideo, Startvideo oder Fundament für spätere Videos). G = GELD, A = ALLTAG (nur intern). In Klammern die Vorlage und der Maßstab-Score. Mittag 12:00, Bonus 16:00, Abend 20:00 (A). Alle Details je Video stehen in der CSV und im PDF.
 
 | Datum | Mittag | Abend | Bonus |
 |---|---|---|---|
-| So 01.11. | **G · GTA 6: Kostet das Krankfeiern die Welt eine Milliarde? (V2)** | **A · Früh einordnen oder bis zum Ende fahren? (V1)** |  |
-| Mo 02.11. | G · Stadt oder Land: Wo bleibt am Monatsende mehr übrig? (V2) | A · Desk-Sharing: Wie viele Schreibtische braucht ein Büro mit 100 Leuten wirklich? (V2) |  |
-| Di 03.11. | **G · Warum bleibt von 200 € mehr Gehalt so wenig übrig? (V3)** | A · Fußgängerampel: Bringt mehrmaliges Drücken des Knopfs etwas? (V2) |  |
-| Mi 04.11. | G · 50/30/20-Regel: Geht das mit deutschen Mieten überhaupt auf? (V3) | A · Schere, Stein, Papier: Gibt es eine Gewinnstrategie? (V7) |  |
-| Do 05.11. | G · Mittagessen im Job: Kantine, selbst kochen oder bestellen? (V3) | A · Regenwahrscheinlichkeit: Was heißen 30 Prozent Regen wirklich? (V2) |  |
-| Fr 06.11. | G · Heizung um 1 Grad senken: Wie viel Geld bringt das wirklich? (V3) | A · Heiße Hand: Gibt es Trefferserien im Sport wirklich? (V7) |  |
-| Sa 07.11. | G · Hund oder Katze: Was kostet ein Haustier im ganzen Leben? (V3) | A · Ziegenproblem: Wechseln oder bleiben? (V7) |  |
-| So 08.11. | G · 10 km/h langsamer auf 300 km: Wie viel Sprit sparst du, wie viel Zeit kostet es? (V1) | A · Mensch ärgere dich nicht: Rausschmeißen oder schnell laufen? (V7) | G · Hobbys im Kostenvergleich: Was kostet eine Stunde Spaß? (V3) |
-| Mo 09.11. | G · 4-Tage-Woche: Wie viel Gehalt gibst du wirklich auf? (V3) | A · Kreisverkehr oder Ampelkreuzung: Was schafft mehr Autos? (V1) |  |
-| Di 10.11. | G · 2.000 € Kreditkartenschulden: Wie lange dauert es mit der Mindestrate? (V4) | A · Geburtstagsparadoxon: Wie wahrscheinlich haben zwei in der Klasse am selben Tag Geburtstag? (V7) |  |
-| Mi 11.11. | **G · Singles Day: Wie viel teurer ist Alleinleben als zu zweit? (V3)** | A · Haltestelle: Warum wartest du im Schnitt länger als gedacht? (V4) |  |
-| Do 12.11. | G · Marke oder Eigenmarke: Wie viel sparst du im Jahr wirklich? (V3) | A · Spurwechsel im Stau: Bist du auf der anderen Spur wirklich schneller? (V1) | A · Fangen: Wie viele Fänger braucht ein Spielfeld? (V7) |
-| Fr 13.11. | G · Wäschetrockner oder Wäscheleine: Was kostet ein Jahr Wäsche? (V3) | A · Morgens im Bad: Wer geht zuerst, damit alle pünktlich sind? (V6) |  |
-| Sa 14.11. | G · Inflation: Was sind 10.000 € in 20 Jahren noch wert? (V4) | A · Zu viele Köche: Ab wie vielen Helfern wird es langsamer? (V6) | G · Lebensmittel im Müll: Wie viel Geld wirfst du pro Jahr weg? (V3) |
-| So 15.11. | A · Schiffe versenken: Welche Schusstaktik gewinnt? (V7) | G · Was kostet ein Kind bis zum 18. Geburtstag? (V4) | G · Heizung nachts runter oder durchheizen: Was stimmt? (V6) |
-| Mo 16.11. | A · Elfmeter: Ecke, Mitte oder hoch, und soll der Torwart springen? (V7) | G · Sommer- plus Winterreifen oder Ganzjahresreifen: Was ist über 8 Jahre günstiger? (V3) |  |
-| Di 17.11. | A · 37-Prozent-Regel: Wann hörst du auf zu suchen und schlägst zu? (V4) | **G · GTA 6: Was kostet es Deutschland, wenn alle krankfeiern? (V2)** |  |
-| Mi 18.11. | A · Ein Zimmer heizen oder alle gleichmäßig? (V6) | G · Pendlerpauschale: Wie viel Geld bekommst du für deinen Arbeitsweg zurück? (V3) | A · Warum bleibt immer eine einzelne Socke übrig? (V7) |
-| Do 19.11. | A · Kassenschlange: Wenige Leute mit vollen Wagen oder viele mit wenigen Artikeln? (V5) | G · Mit 25 anfangen oder mit 35 mehr sparen: Wer liegt vorn? (V4) |  |
-| Fr 20.11. | A · Spülmaschine einräumen: Welche Methode bekommt am meisten rein? (V6) | G · Haushaltshilfe: Lohnt es sich, Zeit gegen Geld zu tauschen? (V3) |  |
-| Sa 21.11. | A · Kniffel: Wie viele Punkte schafft man mit perfekter Strategie? (V7) | **G · Kleinen Kfz-Schaden melden oder selbst zahlen? Die Rechnung vor dem 30.11. (V3)** | G · Täglicher Coffee-to-go: Was kostet die Gewohnheit in 10 Jahren? (V4) |
-| So 22.11. | A · Kaffeekasse: Warum zahlen irgendwann nur noch wenige? (V4) | G · Dispo oder Ratenkredit: Was kosten 3.000 € Minus über ein Jahr? (V4) | A · Karten mischen: Wie oft musst du mischen, bis es zufällig ist? (V7) |
-| Mo 23.11. | A · Rolltreppe: Links gehen, rechts stehen oder beide Seiten stehen? (V5) | G · Wie viele Arbeitsstunden kostet das? Preise in Lebenszeit (V3) |  |
-| Di 24.11. | A · Best-of-3, 5 oder 7: Wie lang muss eine Serie sein, damit der Bessere gewinnt? (V7) | **G · Black Friday: Wie echt ist der Streichpreis? Der 30-Tage-Check (V4)** |  |
-| Mi 25.11. | A · Stoßlüften oder Kippfenster: Was kostet mehr Wärme? (V6) | G · Tanken: Zu welcher Uhrzeit ist Sprit am günstigsten? (V4) | A · Reise nach Jerusalem: Hat der Schnellste wirklich Vorteil? (V7) |
-| Do 26.11. | A · Frühstück: Kaffee, Toast, Eier, welche Reihenfolge wird zusammen fertig? (V6) | **G · Weihnachtsgeld: Was bleibt von 1.000 € brutto wirklich übrig? (V3)** |  |
-| Fr 27.11. | A · Boarding: Hinten nach vorne, zufällig oder Steffen-Methode? (V5) | **G · 0-%-Finanzierung im Laden: Wo steckt der Preis? (V3)** |  |
-| Sa 28.11. | A · Kuchen teilen: Einer schneidet, der andere wählt, ist das fair? (V7) | G · Gemeinsame Haushaltskasse: 50/50 oder nach Einkommen aufteilen? (V3) | G · Kaufen oder leihen: Ab wie vielen Einsätzen lohnt sich die eigene Bohrmaschine? (V4) |
-| So 29.11. | **A · Weihnachtsmarkt: Einbahnweg oder freier Lauf zwischen den Buden? (V5)** | G · Abos im Check: Was kosten 10 Abos in 10 Jahren? (V4) | A · Münzwurf: Ist er wirklich 50:50? (V7) |
-| Mo 30.11. | A · Baustelle: 60 oder 80 km/h, was lässt mehr Autos durch? (V1) | G · Weihnachten: Wie viel geben Familien aus und wie plant man das Budget? (V3) |  |
+| So 01.11. | **G · GTA 6: Kostet das Krankfeiern die Welt eine Milliarde? (V2, 66)** | **A · Spurwechsel im Stau: Bist du auf der anderen Spur wirklich schneller? (V1, 87)** |  |
+| Mo 02.11. | G · Stadt oder Land: Wo bleibt am Monatsende mehr übrig? (V2, 70) | A · Treppe oder Aufzug: Wer ist im Bürohaus wirklich schneller oben? (V2, 91) |  |
+| Di 03.11. | **G · 200 € mehr Gehalt oder 100 € steuerfrei: Was bringt dir netto mehr? (V3, 78)** | A · Fußgängerampel: Bringt mehrmaliges Drücken des Knopfs etwas? (V2, 76) |  |
+| Mi 04.11. | G · Steuererklärung oder Überstunden: Was bringt dir mehr Geld pro Stunde? (V3, 84) | A · Schere, Stein, Papier: Gibt es eine Gewinnstrategie? (V7, 77) |  |
+| Do 05.11. | G · Mittagessen im Job: Selbst kochen oder bestellen, was kostet ein Jahr wirklich? (V3, 67) | A · Rad oder Auto: Wer ist auf 5 km in der Stadt wirklich schneller? (V2, 84) |  |
+| Fr 06.11. | G · Heizung um 1 Grad senken: Wie viel Geld bringt das wirklich? (V3, 67) | A · Monopoly: Schlossallee oder die orangen Straßen, was bringt wirklich mehr Geld? (V7, 86) |  |
+| Sa 07.11. | G · Hund oder Katze: Was kostet ein Haustier im ganzen Leben? (V3, 70) | A · Ziegenproblem: Wechseln oder bleiben? (V7, 78) |  |
+| So 08.11. | G · 10 km/h langsamer auf 300 km: Wie viel Sprit sparst du, wie viel Zeit kostet es? (V1, 76) | A · Mensch ärgere dich nicht: Rausschmeißen oder schnell laufen? (V7, 85) | G · Billige oder teure Winterjacke: Welche kostet dich pro Tragen wirklich weniger? (V3, 75) |
+| Mo 09.11. | G · 4-Tage-Woche: Wie viel Gehalt gibst du wirklich auf? (V3, 72) | A · Kreisverkehr oder Ampelkreuzung: Was schafft mehr Autos? (V1, 90) |  |
+| Di 10.11. | G · 2.000 € Kreditkartenschulden: Mindestrate oder feste 100 €, wer ist zuerst schuldenfrei? (V4, 72) | A · Geburtstagsparadoxon: Wie wahrscheinlich haben zwei in der Klasse am selben Tag Geburtstag? (V7, 76) |  |
+| Mi 11.11. | **G · Singles Day: Wie viel teurer ist Alleinleben als zu zweit? (V3, 72)** | A · Haltestelle: Warum wartest du im Schnitt länger als gedacht? (V4, 82) |  |
+| Do 12.11. | G · Marke oder Eigenmarke: Wie viel sparst du im Jahr wirklich? (V3, 63) | A · Parkplatzsuche: Den ersten freien Platz nehmen oder näher ran kreisen? (V1, 89) | A · Strohhalm ziehen: Zuerst oder zuletzt, wer erwischt öfter den kurzen? (V7, 80) |
+| Fr 13.11. | G · Wäschetrockner oder Wäscheleine: Was kostet ein Jahr Wäsche? (V3, 75) | A · Morgens im Bad: Wer geht zuerst, damit alle pünktlich sind? (V6, 85) |  |
+| Sa 14.11. | G · Ausbildung oder Studium: Wer hat bis zur Rente wirklich mehr verdient? (V4, 84) | A · Zu viele Köche: Ab wie vielen Helfern wird es langsamer? (V6, 84) | G · Alter Kühlschrank oder neuer: Ab wann zahlt sich der Tausch wirklich aus? (V3, 71) |
+| So 15.11. | A · Schiffe versenken: Welche Schusstaktik gewinnt? (V7, 84) | G · Steuerklasse 3/5 oder 4/4: Wer hat am Jahresende wirklich mehr? (V3, 73) | G · Fitnessstudio oder draußen joggen: Was kostet dich ein Training wirklich? (V4, 73) |
+| Mo 16.11. | A · Elfmeter: Ecke, Mitte oder hoch, und soll der Torwart springen? (V7, 82) | G · Sommer- plus Winterreifen oder Ganzjahresreifen: Was ist über 8 Jahre günstiger? (V3, 71) |  |
+| Di 17.11. | A · 37-Prozent-Regel: Wann hörst du auf zu suchen und schlägst zu? (V4, 77) | **G · GTA 6: Was kostet es Deutschland, wenn alle krankfeiern? (V2, 68)** |  |
+| Mi 18.11. | A · Ein Zimmer heizen oder alle gleichmäßig? (V6, 81) | G · Pendlerpauschale: Wie viel Geld bekommst du für deinen Arbeitsweg zurück? (V3, 74) | A · Memory: Alles merken oder blind raten, wie viel schneller ist man wirklich? (V7, 75) |
+| Do 19.11. | A · Kassenschlange: Wenige Leute mit vollen Wagen oder viele mit wenigen Artikeln? (V5, 86) | G · Mit 25 anfangen oder mit 35 mehr sparen: Wer liegt vorn? (V4, 77) |  |
+| Fr 20.11. | A · Saugroboter: Kreuz und quer oder Bahn für Bahn, wer ist wirklich schneller fertig? (V6, 86) | G · Einmal nachverhandeln oder nicht: Was machen 5 % mehr Gehalt bis zur Rente wirklich aus? (V4, 79) |  |
+| Sa 21.11. | A · Kniffel: Immer auf den Kniffel gehen oder sicher Punkte holen? (V7, 80) | **G · Kleinen Kfz-Schaden melden oder selbst zahlen? Die Rechnung vor dem 30.11. (V3, 70)** | G · Leitungswasser oder Flaschenwasser: Was kostet der Unterschied in 30 Jahren? (V4, 71) |
+| So 22.11. | A · Kaffeekasse: Warum zahlen irgendwann nur noch wenige? (V6, 64) | G · Dispo oder Ratenkredit: Was kosten 3.000 € Minus über ein Jahr? (V4, 63) | A · Führerscheinprüfung nur mit Raten: Wie weit kommst du wirklich? (V7, 78) |
+| Mo 23.11. | A · Rolltreppe: Links gehen, rechts stehen oder beide Seiten stehen? (V5, 90) | G · Wie viele Arbeitsstunden kostet das? Preise in Lebenszeit (V3, 63) |  |
+| Di 24.11. | A · Best-of-3, 5 oder 7: Wie lang muss eine Serie sein, damit der Bessere gewinnt? (V7, 75) | **G · Black Friday: Wie echt ist der Streichpreis? Der 30-Tage-Check (V4, 79)** |  |
+| Mi 25.11. | A · Stoßlüften oder Kippfenster: Was kostet mehr Wärme? (V6, 79) | G · Tanken: Vor 12 Uhr oder danach, was spart die richtige Uhrzeit wirklich? (V4, 71) | A · Reise nach Jerusalem: Hat der Schnellste wirklich Vorteil? (V7, 65) |
+| Do 26.11. | A · Klobrille: Immer runter oder so lassen, wie sie ist? Wer muss wirklich öfter anfassen? (V6, 81) | **G · Weihnachtsgeld: Was bleibt von 1.000 € brutto wirklich übrig? (V3, 72)** |  |
+| Fr 27.11. | A · Boarding: Hinten nach vorne, zufällig oder Steffen-Methode? (V5, 82) | **G · 0-%-Finanzierung im Laden: Wo steckt der Preis? (V3, 73)** |  |
+| Sa 28.11. | A · Baustelle: 60 oder 80 km/h, was lässt mehr Autos durch? (V1, 84) | G · Gemeinsame Haushaltskasse: 50/50 oder nach Einkommen aufteilen? (V3, 72) | G · Kaufen oder leihen: Ab wie vielen Einsätzen lohnt sich die eigene Bohrmaschine? (V4, 66) |
+| So 29.11. | **A · Weihnachtsmarkt: Einbahnweg oder freier Lauf zwischen den Buden? (V5, 79)** | G · 600 km nach Hause: Auto oder Bahn, was ist schneller und günstiger? (V2, 86) | A · Karten mischen: Wie oft musst du mischen, bis es zufällig ist? (V7, 64) |
+| Mo 30.11. | A · Kuchen teilen: Einer schneidet, der andere wählt, ist das fair? (V7, 66) | G · Wichteln oder jeder beschenkt jeden: Was spart eure Familie wirklich? (V3, 86) |  |
 
 ## Anhang B: Reserve für Ausfälle und Dezember
 
@@ -362,7 +441,7 @@ Alle Links stehen an der jeweiligen Stelle im Text. Preise: [ElevenLabs Creative
 **Geändert im Plan (keine Kopien, CLAUDE.md):**
 - **Reißverschluss** (01.11. abends) ist zurückgestellt. @simulierts hat das Thema am 31.10. um 10:52 Uhr gepostet („Früh einordnen oder bis zum Ende fahren: Was macht den Stau wirklich kürzer?“, 14.100 Views, F: öffentliche Videoseite). **Ersatz:** „Spurwechsel im Stau“, vorgezogen vom 12.11. Es nutzt die vorhandene Straßen-Vorlage.
 - **12.11. abends:** neu „Parkplatzsuche: Den ersten freien Platz nehmen oder näher ran kreisen?“.
-- **15.11. Bonus:** „Heizung nachts“ (@fabrik.neu hat es) → „Duschen: 5 oder 10 Minuten“.
+- **15.11. Bonus:** „Heizung nachts“ (@fabrik.neu hat es) → „Duschen: 5 oder 10 Minuten“. Am 31.10. abends wieder raus, weil der Maßstab (§9) Duschkosten sperrt. Jetzt: „Fitnessstudio oder draußen joggen“.
 - **21.11. Bonus:** „Coffee-to-go“ (@geldsimuliert: Kaffee gegen Geldanlage) → „Leitungswasser oder Flaschenwasser“.
 
 **Was wir von den Videos lernen** (F: TikTok-Spracherkennung der öffentlichen Videos, 4 Videos):
