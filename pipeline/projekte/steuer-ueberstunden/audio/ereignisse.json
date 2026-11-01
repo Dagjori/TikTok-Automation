@@ -974,6 +974,13 @@
    "text": "SOZIALABGABEN−17,57 €"
   },
   {
+   "quelle": "Marke",
+   "t": 31.56,
+   "typ": "chip",
+   "klang": "klick",
+   "text": "NETTO"
+  },
+  {
    "quelle": "Stempel",
    "t": 31.81,
    "typ": "stempel",
@@ -981,18 +988,18 @@
    "text": "−45 %"
   },
   {
-   "quelle": "Marke",
-   "t": 33.04,
-   "typ": "chip",
-   "klang": "klick",
-   "text": "NETTO"
-  },
-  {
    "quelle": "Etikett",
-   "t": 33.92,
+   "t": 33.04,
    "typ": "chip",
    "klang": "pop",
    "text": "NETTO44,45 €"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 33.99,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "= 11,11 € PRO STUNDE"
   },
   {
    "quelle": "Szene",

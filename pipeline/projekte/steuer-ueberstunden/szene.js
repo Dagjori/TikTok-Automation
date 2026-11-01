@@ -31,6 +31,7 @@ const GRUEN = "#12B886"; // Akzent: Geld zurück, Ergebnis
 const ROT = "#E8484F"; // Abzüge, Hürde
 const TINTE = FLAT.tinte;
 const euro = (v, nk = 2) => `${fmt.zahl(v, nk)} €`;
+const UT_OBEN = 1296, UT_UNTEN = 1450; // Untertitel-Bereich (kontur, 2 Zeilen à 70 px, Unterkante 1450)
 
 // =====================================================================================
 // HUD-Etikett an einem Weltpunkt (Chip, der mit der Kamera mitwandert), meldet sich wie ein Chip im Protokoll
@@ -60,7 +61,7 @@ class Etikett {
     const p = this.punkt(t);
     let left = p.x + this.dx - (this.anker === "mitte" ? this.b / 2 : this.anker === "rechts" ? this.b : 0);
     left = clamp(left, SICHER.links, SICHER.rechts - this.b);
-    const top = clamp(p.y + this.dy - this.h / 2, this.minY, this.maxY);
+    const top = clamp(p.y + this.dy - this.h / 2, this.minY, Math.min(this.maxY, UT_OBEN - 14 - this.h)); // nie in den Untertitel-Bereich
     this.e.style.transform = `translate(${left.toFixed(1)}px, ${(top + (1 - s) * 24 - x * 16).toFixed(1)}px) scale(${((0.3 + 0.7 * s) * (1 - 0.35 * x)).toFixed(4)}) rotate(${(this.winkel + (1 - s) * -8).toFixed(2)}deg)`;
     this.e.style.opacity = String(clamp((t - this.ein) / 0.06) * (1 - x));
   }
@@ -340,7 +341,8 @@ async function start() {
   const SP = { x: 50, y: 86, w: 860, h: 46, max: 2000 };
   const pxE = (e) => SP.x + (e / SP.max) * SP.w;
   rr(leiste, SP.x, SP.y, SP.w, SP.h, SP.h / 2, "#ECEEF7", 0.1);
-  textFlaeche(leiste, "WERBUNGSKOSTEN", SP.x + 4, 44, { groesse: 26, farbe: "#6A7392", anker: "links", z: 0.2 });
+  const weltTexte = [];
+  weltTexte.push(textFlaeche(leiste, "WERBUNGSKOSTEN", SP.x + 4, 44, { groesse: 26, farbe: "#6A7392", anker: "links", z: 0.2 }));
   const segFarben = { konto: "#A9B2FF", mittel: "#8592FF", ho: "#6F7DFF", weg: INDIGO };
   const segmente = {};
   for (const id of ["konto", "mittel", "ho", "weg"]) {
@@ -370,7 +372,7 @@ async function start() {
   rahmen(huerde, -8, 52, 16, 96, 8, 2.5, ROT, 0.08);
   kreis(huerde, 0, 50, 15, ROT, 0.1);
   kreis(huerde, 0, 50, 6, "#FFFFFF", 0.12);
-  textFlaeche(leiste, "PAUSCHBETRAG 1.230 €", pxE(REGELN.pauschbetrag), 22, { groesse: 24, farbe: ROT, z: 0.2 });
+  weltTexte.push(textFlaeche(leiste, "PAUSCHBETRAG 1.230 €", pxE(REGELN.pauschbetrag), 22, { groesse: 24, farbe: ROT, z: 0.2 }));
   const huerdeBlitz = kreis(huerde, 0, 100, 60, ROT, -0.2, { deckkraft: 0, eigen: true });
 
   // ---------- Arbeitsweg: Haus – Straße – Büro ----------
@@ -422,7 +424,7 @@ async function start() {
     folgen: [590, 1000, 1.1],
     weg: [560, 1270, 1.0],
     huerde: [660, 1180, 1.3],
-    uebers: [300, 900, 1.45],
+    uebers: [300, 760, 1.45],
     ergebnis: [540, 1030, 1.0],
     warum: [540, 1100, 1.12],
     fallB: [560, 1300, 1.0],
@@ -487,7 +489,7 @@ async function start() {
     anteil: (t) => ({ a: ueRoh(t) / 230, b: erstRoh(t) / 230 }),
     uhr: { ein: "falle:Los", zeit: (t) => Math.round(stundenRoh(t) * 3600 / 60) * 60, format: fmtUhr, label: "UHR" },
   });
-  hud.add(new Marke(M, { x: 74, y: 330, ein: T("rennen:20") - 0.1, aus: "ergebnis:Endstand:-0.3", texte: [{ t: T("rennen:20") - 0.1, text: "BRUTTO", farbe: TINTE }, { t: "netto:Netto", text: "NETTO", farbe: ROT }] }));
+  hud.add(new Marke(M, { x: 74, y: 330, ein: T("rennen:20") - 0.1, aus: "ergebnis:Endstand:-0.3", texte: [{ t: T("rennen:20") - 0.1, text: "BRUTTO", farbe: TINTE }, { t: T("netto:Abgaben") + 0.6, text: "NETTO", farbe: ROT }] }));
 
   // ---------- Hook: Titel Wort für Wort ----------
   M.titel({
@@ -511,8 +513,8 @@ async function start() {
     { text: "3.500 € BRUTTO", ein: "regeln:3.500-0.03", art: "voll", team: "a" },
     { text: "STEUERKLASSE 1", ein: "regeln:brutto.-0.03", art: "hell", team: "a" },
   ] });
-  hud.add(new Etikett(M, { html: "25 KM ARBEITSWEG", art: "voll", farbe: "b", ein: "regeln:25-0.03", aus: "falle:Klar,-0.15", punkt: P(540, 1280), gross: true }));
-  hud.add(new Etikett(M, { html: "PENDELN MIT DEM AUTO", art: "hell", farbe: "b", ein: "regeln:Arbeit.-0.05", aus: "falle:Klar,-0.15", punkt: P(540, 1380) }));
+  hud.add(new Etikett(M, { html: "25 KM ARBEITSWEG", art: "voll", farbe: "b", ein: "regeln:25-0.03", aus: "falle:Klar,-0.15", punkt: () => ({ x: 540, y: 980 }), gross: true }));
+  hud.add(new Etikett(M, { html: "PENDELN MIT DEM AUTO", art: "hell", farbe: "b", ein: "regeln:Arbeit.-0.05", aus: "falle:Klar,-0.15", punkt: () => ({ x: 540, y: 1090 }) }));
 
   // ---------- Denkfalle und Start ----------
   const sKlar = M.stempel({ text: "KLAR!", ein: "falle:Klar,", x: 300, y: 560, winkel: -8, farbe: "a" });
@@ -530,7 +532,7 @@ async function start() {
     const naechster = eintraege[eintraege.indexOf(e) + 1];
     hud.add(new Etikett(M, { html: `<span class="klein">${kurz[e.id]}</span><span class="betrag">+${fmt.zahl(e.betrag, 0)} €</span>`, art: "hell", farbe: "b", ein: e.tFlug, aus: e.id === "ho" ? T("rennen:Und") - 0.1 : naechster.tFlug - 0.05, punkt: P(KARTE_R[0] + 215, KARTE_R[1] + 150), klang: "pop" }));
   }
-  hud.add(new Etikett(M, { html: `<span class="betrag">688 €</span><span class="klein">&nbsp;&lt; 1.230 €</span>`, art: "dunkel", ein: "rennen:Steuererklärung?", aus: "rennen:null.+0.9", punkt: P(BAR.x + pxE(1660), BAR.y + 44), gross: true }));
+  hud.add(new Etikett(M, { html: `<span class="betrag">688 €</span><span class="klein">&nbsp;&lt; 1.230 €</span>`, art: "dunkel", ein: "rennen:Steuererklärung?", aus: "rennen:null.+0.9", punkt: P(BAR.x + pxE(820), BAR.y - 36) }));
   M.stempel({ text: "NOCH NULL!", ein: "rennen:null.-0.04", aus: "folgen:Folg+0.2", x: 520, y: 640, winkel: -6, farbe: "b", groesse: 104 });
 
   // ---------- Folgen-Aufruf (ca. 20 s, vor der Wendung) ----------
@@ -544,11 +546,12 @@ async function start() {
   hud.add(new Etikett(M, { html: `<span class="klein">ZURÜCK</span><span class="betrag">+${A.erstattung} €</span>`, art: "voll", farbe: "akzent", ein: "wendung:Euro", aus: "netto:Und-0.2", punkt: P(BAR.x + pxE(1600), BAR.y + SP.y + SP.h + 50), gross: true, maxY: 1230 }));
 
   // ---------- Netto der Überstunden ----------
-  hud.add(new Etikett(M, { html: `<span class="betrag">${euro(UE.brutto)}</span><span class="klein">&nbsp;BRUTTO</span>`, art: "voll", farbe: "a", ein: "netto:80", aus: "netto:Netto-0.1", punkt: P(KARTE_L[0] + 330, KARTE_L[1] - 34), gross: true }));
-  hud.add(new Etikett(M, { html: `<span class="klein">LOHNSTEUER</span><span class="betrag">−${euro(UE.lohnsteuer)}</span>`, art: "voll", klasse: "minus", ein: "netto:Steuer", aus: "ergebnis:Endstand:-0.3", punkt: P(KARTE_L[0] + 150, KARTE_L[1] + 125), dy: 0 }));
-  hud.add(new Etikett(M, { html: `<span class="klein">SOZIALABGABEN</span><span class="betrag">−${euro(UE.sozial)}</span>`, art: "voll", klasse: "minus", ein: "netto:Abgaben", aus: "ergebnis:Endstand:-0.3", punkt: P(KARTE_L[0] + 150, KARTE_L[1] + 205), dy: 0 }));
-  M.stempel({ text: "−45 %", ein: "netto:fast-0.05", aus: "netto:Netto-0.05", x: 770, y: 680, winkel: -8, farbe: ROT, groesse: 120 });
-  hud.add(new Etikett(M, { html: `<span class="klein">NETTO</span><span class="betrag">${euro(UE.netto)}</span>`, art: "voll", farbe: "a", ein: "netto:44.", aus: "ergebnis:Endstand:-0.3", punkt: P(KARTE_L[0] + 330, KARTE_L[1] - 34), gross: true }));
+  hud.add(new Etikett(M, { html: `<span class="betrag">${euro(UE.brutto)}</span><span class="klein">&nbsp;BRUTTO</span>`, art: "voll", farbe: "a", ein: "netto:80", aus: "netto:Netto-0.1", punkt: () => ({ x: 492, y: 430 }), gross: true }));
+  hud.add(new Etikett(M, { html: `<span class="klein">LOHNSTEUER</span><span class="betrag">−${euro(UE.lohnsteuer)}</span>`, art: "voll", klasse: "minus", ein: "netto:Steuer", aus: "ergebnis:Endstand:-0.3", punkt: () => ({ x: 492, y: 535 }), dy: 0 }));
+  hud.add(new Etikett(M, { html: `<span class="klein">SOZIALABGABEN</span><span class="betrag">−${euro(UE.sozial)}</span>`, art: "voll", klasse: "minus", ein: "netto:Abgaben", aus: "ergebnis:Endstand:-0.3", punkt: () => ({ x: 492, y: 625 }), dy: 0 }));
+  M.stempel({ text: "−45 %", ein: "netto:fast-0.05", aus: "netto:Netto-0.05", x: 820, y: 780, winkel: -8, farbe: ROT, groesse: 110 });
+  hud.add(new Etikett(M, { html: `<span class="klein">NETTO</span><span class="betrag">${euro(UE.netto)}</span>`, art: "voll", farbe: "a", ein: "netto:Netto", aus: "ergebnis:Endstand:-0.3", punkt: () => ({ x: 492, y: 430 }), gross: true }));
+  M.stempel({ text: "= 11,11 € PRO STUNDE", ein: "netto:44.-0.03", aus: "ergebnis:Endstand:-0.25", x: 640, y: 780, winkel: -6, farbe: "a", groesse: 64 });
 
   // ---------- Ergebnis: Bilanzkarte pro Stunde ----------
   M.bilanz({
@@ -639,6 +642,19 @@ async function start() {
     const zeile = Math.floor(tau * 1.6) % 5;
     cursorL.position.y = -(zeile * 15);
     zeilenL.forEach((z, i) => { z.scale.x = 0.6 + 0.4 * ((Math.sin(tau * 2.2 + i * 1.7) + 1) / 2); });
+    // Welt-Beschriftungen nie hinter dem Untertitel: im Bereich UT_OBEN–UT_UNTEN (plus Rand) weich ausblenden
+    regie.anwenden(t);
+    W.parallax();
+    for (const m of weltTexte) {
+      m.updateMatrixWorld(true);
+      const b = new THREE.Box3().setFromObject(m);
+      const a = b.min.clone().project(W.kamera), c = b.max.clone().project(W.kamera);
+      const y0 = ((1 - Math.max(a.y, c.y)) / 2) * 1920, y1 = ((1 - Math.min(a.y, c.y)) / 2) * 1920;
+      const abstand = Math.max(UT_OBEN - 12 - y1, y0 - (UT_UNTEN + 6));
+      const k = clamp(abstand / 16);
+      m.material.opacity = k;
+      m.visible = k > 0.02;
+    }
     // Laptop rechts: Felder füllen sich mit den Einträgen
     ["konto", "mittel", "ho", "weg"].forEach((id, i) => {
       const p = postenA[id].betrag > 0 ? clamp(s[id] / postenA[id].betrag) : 0;
@@ -744,6 +760,18 @@ async function start() {
   const schleifenPruefung = M.pruefeSchleife(window.renderAt, { regie });
   if (!schleifenPruefung.ok) console.warn("Schleife nicht geschlossen:", JSON.stringify(schleifenPruefung));
   M.veroeffentliche({ regie, dauer: DAUER, teppich: skript.klangteppich, schleifenPruefung });
+  window.__nurHud = (t) => { regie.anwenden(t); W.parallax(); hud.update(t); };
+  window.__weltSetzen = (t) => setzeWelt(t);
+  window.__weltTexte = weltTexte;
+  // Prüfhilfe: Bildschirm-Rechtecke der Welt-Beschriftungen (für die Kontrolle „keine Schrift hinter dem Untertitel“)
+  window.__textRechtecke = () => weltTexte.filter((m) => m.visible).map((m) => {
+    m.updateMatrixWorld(true);
+    const box = new THREE.Box3().setFromObject(m);
+    const a = box.min.clone().project(W.kamera), b = box.max.clone().project(W.kamera);
+    const x0 = ((Math.min(a.x, b.x) + 1) / 2) * 1080, x1 = ((Math.max(a.x, b.x) + 1) / 2) * 1080;
+    const y0 = ((1 - Math.max(a.y, b.y)) / 2) * 1920, y1 = ((1 - Math.min(a.y, b.y)) / 2) * 1920;
+    return { text: m.userData.text || "Welttext", x0, y0, x1, y1 };
+  });
   window.modell = { ue: UE.netto, erstattungA: A.erstattung, erstattungB: B.erstattung, proStunde: [UE.proStunde, A.proStunde] };
   window.renderAt(0);
   window.__fertig = true;
