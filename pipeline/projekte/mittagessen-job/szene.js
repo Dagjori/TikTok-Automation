@@ -165,7 +165,7 @@ async function start() {
     const strich = new THREE.Mesh(strichGeo.clone(), strichMat);
     strich.position.set(178 + 391, -y, 0);
     hilfslinien.add(strich);
-    etikett(wurzel, `${k}.000 €`, 108, y, { w: 118, groesse: 23, z: 3.4, dreh: k % 2 ? -2 : 2, seed: 300 + k, grund: "#EADFC4" });
+    etikett(wurzel, `${k}.000 €`, 98, y, { w: 118, groesse: 23, z: 3.4, dreh: k % 2 ? -2 : 2, seed: 300 + k, grund: "#EADFC4" });
   }
   // Boden: Wellpappe
   pappstreifen(wurzel, 540, 1262, 1040, 92, 8, { seed: 170 });
@@ -246,7 +246,7 @@ async function start() {
     ergebnis: [540, 1010, 0.98],
     warum: [540, 985, 1.04],
     kantine: [540, 1030, 1.12],
-    tops: [395, 1034, 2.5],
+    tops: [395, 1000, 1.7],
     merk: [540, 960, 1.0],
   };
   const fahrten = [
@@ -317,7 +317,7 @@ async function start() {
 
   // ---------- Hook: Titel Wort für Wort ----------
   M.titel({
-    y: 346, groesse: 100, aus: "hook:wirklich?>+0.05",
+    y: 338, groesse: 94, aus: "hook:wirklich?>+0.05",
     woerter: [
       { text: "KOCHEN", ein: "hook:kochen-0.02", team: "a" },
       { umbruch: true },
@@ -343,7 +343,7 @@ async function start() {
   M.zaehler({ wert: (t) => Math.round(tagRoh(t)), nk: 0, einheit: "TAG", max: 300, team: "tinte", art: "voll", punkt: P(KAL.x, KAL.y + 28), ein: tSchleife + 0.7, minY: 300 }); // Schleife: der Kalender kommt mit zurück
 
   // ---------- Jahresende: Summen an den Säulen ----------
-  hud.add(new Etikett(M, { html: `<span class="klein">KOCHEN</span><span class="betrag">${euro(V.kochen.geld)}</span>`, art: "voll", farbe: "a", ein: "rennen:770", aus: "rennen:Bestellen-0.1", punkt: (t) => P(X.k, topY(S(t).gK, S(t).zK) - 200)(t), gross: true }));
+  hud.add(new Etikett(M, { html: `<span class="klein">KOCHEN</span><span class="betrag">${euro(V.kochen.geld)}</span>`, art: "voll", farbe: "a", ein: "rennen:770", aus: "rennen:Bestellen-0.1", punkt: (t) => P(X.k + 40, topY(S(t).gK, S(t).zK) - 200)(t), gross: true }));
   hud.add(new Etikett(M, { html: `<span class="klein">BESTELLEN</span><span class="betrag">${euro(V.bestellen.geld)}</span>`, art: "voll", farbe: "b", ein: "rennen:3.300", aus: "folgen:Folg-0.05", punkt: (t) => P(X.b - 40, topY(S(t).gB, S(t).zB) - 200)(t), gross: true }));
 
   // ---------- Folgen-Aufruf (ca. 20 s, vor der Wendung) ----------

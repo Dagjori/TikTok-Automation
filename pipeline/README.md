@@ -130,25 +130,30 @@ Text-Überlappung aller Bilder (HUD: Tafel, Chips, Zähler, Ringe, Sticker-Plake
 
 **Zielbereiche:** Profil `ben` = Stimme Ben mit Original-Einstellungen (1,9–2,4 W/s, Satzpausen ≤ 0,8 s, 130–170 Wörter, 65–80 s); Profil `massstab` = Vorbilder (2,5–2,9 W/s, ≤ 0,4 s, 170–220 Wörter). Exit-Code 1, wenn ein Pflichtpunkt „nein“ ist.
 
-## Entwurf nach Buffer (`post_buffer.py`)
+## Post über Buffer einplanen (`post_buffer.py`)
 
-Bringt ein **abgenommenes** Video als **Entwurf** in Buffer (TikTok, KI-Kennzeichnung AN). Freigeben tut der Inhaber in Buffer; das Skript kann nicht selbst veröffentlichen (`saveToDraft: true` ist fest). Hintergrund und exakte Feldnamen: `docs/11-automatisierung.md` §3C-Technik.
+Plant ein **geprüftes** Video direkt für die Posting-Zeit in Buffer ein (TikTok, Status `scheduled`; Buffer veröffentlicht zur Zeit selbst) und prüft es nach dem Posten auf der öffentlichen TikTok-Seite. Regeln des Inhabers vom 01.11.: **kein KI-Label als Standard**, **keine Freigabe in Buffer**, feste Posting-Zeiten. Technik, Feldnamen und Testergebnisse: `docs/11-automatisierung.md`, Abschnitt C-Technik.
 
 ```bash
 export SUPABASE_URL=https://<projekt>.supabase.co     # nicht im Repo (öffentlich); Cloud: Umgebungsvariable der Umgebung
-python3 post_buffer.py --pruefen [--schreibtest]      # Zugang testen: Buffer lesen, Supabase-Bucket lesen, optional Mini-Upload-Roundtrip
-python3 post_buffer.py --video out/<name>/<name>.mp4 --kanal simulierbar --zeit "2026-11-03T18:30:00+01:00" \
+python3 post_buffer.py --pruefen [--schreibtest]      # Zugang testen: Buffer lesen, Posting-Zeiten lesen, Supabase lesen, optional Mini-Upload-Roundtrip
+python3 post_buffer.py --video out/<name>/<name>.mp4 --kanal simulierbar --zeit auto:2026-11-03:mittag \
        --text "Hook? 🚗 Ich hab's simuliert. Frage? 👇 #a #b #c #wissen #simulation" --trocken     # alles prüfen, Mutation nur ausgeben
-python3 post_buffer.py ... (gleiche Argumente ohne --trocken)                                        # echter Entwurf
-python3 post_buffer.py --aufraeumen [--trocken]       # Supabase-Dateien löschen, deren Buffer-Post „sent“ ist
+python3 post_buffer.py ... (gleiche Argumente ohne --trocken)                                        # echter Post, wird eingeplant
+python3 post_buffer.py --nachpruefen [--trocken]      # nach dem Posten: öffentlich? Dauer, KI-Label; danach Supabase-Datei löschen
+python3 post_buffer.py --aufraeumen [--trocken]       # nur Supabase-Dateien löschen, deren Buffer-Post „sent“ ist
 ```
 
-- **Kanäle:** `simulierbar`, `stelldirvor.pov` (werden live in Buffer aufgelöst). `--zeit` braucht eine Zone (`+01:00` Winter, `+02:00` Sommer). Caption statt `--text` auch per `--text-datei` (UTF-8, praktisch unter Windows wegen Emojis).
-- **Prüfungen:** 1080×1920, mind. 61 s, Kanal verbunden, Schema-Abgleich der Mutation gegen die Live-Introspection, Bucket erreichbar. Caption-Format (5 Hashtags, eine Zeile, kein #fyp) nur als Warnung. Ein zweiter Entwurf für dasselbe Video und denselben Kanal braucht `--nochmal`.
+- **Zeit:** `--zeit auto:YYYY-MM-DD:slot` rechnet aus dem Wochentag die Uhrzeit (Slots in `data/plan/posting_zeiten.json`, Europe/Berlin: `simulierbar` Mo–Fr `mittag` 12:30 / `abend` 19:30, Sa–So `mittag` 09:30 / `abend` 19:30; `stelldirvor.pov` Mo–Fr `abend` 20:30, Sa–So `abend` 13:00) und den UTC-Wert inklusive Sommer-/Winterzeit. Außerdem ISO mit Zone (`2026-11-03T12:30:00+01:00`) und `sofort` (= jetzt + 15 Min., nur für Ausnahmen). Weniger als 10 Min. Vorlauf: Abbruch. Windows: einmal `pip install tzdata`.
+- **Caption ist Pflicht** (`--text` oder `--text-datei`, UTF-8, praktisch unter Windows wegen Emojis): 3 bis 5 Hashtags, kein #fyp/#viral/#foryou, höchstens 2.200 Zeichen, sonst Abbruch.
+- **KI-Label:** Standard AUS (`isAiGenerated: false`). `--ki-label` setzt es AN, nur für realistischen KI-Inhalt. **Entwurf:** `--entwurf` legt statt eines geplanten Posts einen Entwurf an (alter Weg, Freigabe in Buffer).
+- **Prüfungen vor dem Schreiben:** 1080×1920, mind. 61 s, Kanal verbunden und Warteschlange nicht pausiert, kein anderer Post auf dem Kanal innerhalb von ± 20 Min., Schema-Abgleich der Mutation gegen die Live-Introspection, Bucket erreichbar. Ein zweiter Post für dasselbe Video und denselben Kanal oder ein belegter Slot braucht `--nochmal`.
+- **Nach dem Anlegen:** erwarteter Status `scheduled` (mit `--entwurf` `draft`), `isAiGenerated` wie gesetzt, `dueAt` wie gewünscht, sonst **Exit-Code 2** (Post existiert, in Buffer prüfen). Ausgegeben wird auch, ob `assets[].source` noch auf Supabase zeigt.
 - **Größe:** Über 48 MB entsteht eine Upload-Kopie in `out/_buffer/<name>_upload.mp4` (2-pass H.264, gleiche Auflösung, Ziel 45 MB, AAC unverändert, faststart; ca. 1,5 Min. in der Cloud mit 4 Kernen und `--preset medium`; SSIM 0,977 gegenüber dem 14,7-Mbit/s-Original). Das Original wird nie angefasst. Eine vorhandene aktuelle Kopie wird wiederverwendet, auch vom Trockenlauf.
-- **Log:** `out/buffer_log.jsonl` (nicht im Repo): je Entwurf Post-ID, Kanal, Supabase-Pfad, Hash; `--aufraeumen` ergänzt Zeilen „geloescht“. Der signierte Link steht nie im Log.
-- **Zugänge:** Cloud: der Proxy setzt die Header (Buffer `Authorization`, Supabase `apikey`). Lokal: `BUFFER_API_KEY` und `SUPABASE_KEY`; `SUPABASE_AUTH=bearer` bzw. `SUPABASE_AUTHORIZATION` nur, falls Storage einen Authorization-Header verlangt (siehe Kopf von `post_buffer.py` und docs/11).
-- Exit-Code 0 = ok, 1 = Prüfung/Fehler (vor dem Schreiben), 2 = Entwurf existiert, aber Status oder KI-Flag stimmen nicht (in Buffer prüfen!).
+- **Supabase-Link:** gültig bis `dueAt` + 12 h, mindestens 24 h. Die Datei bleibt bis nach dem Posten liegen.
+- **`--nachpruefen`:** ruft für Log-Einträge mit Buffer-Status `sent` die öffentliche TikTok-Seite (`externalLink`) mit Browser-User-Agent ab und meldet `privateItem` (muss `false` sein), Dauer und `aigcLabelType`; ohne Daten (z. B. Bot-Schutz) steht „nicht prüfbar“, es wird nichts umgangen. Danach löscht es die Supabase-Datei, das Ergebnis steht im Log.
+- **Log:** `out/buffer_log.jsonl` (nicht im Repo): je Post Post-ID, Kanal, Supabase-Pfad, Hash, Modus; später Zeilen „nachgeprueft“ und „geloescht“. Der signierte Link steht nie im Log.
+- **Zugänge:** Cloud: der Proxy setzt die Header (Buffer `Authorization`, Supabase `apikey`). Lokal: `BUFFER_API_KEY` und `SUPABASE_KEY`; `SUPABASE_AUTH`/`SUPABASE_AUTHORIZATION` nur, falls Storage einen Authorization-Header verlangt (siehe Kopf von `post_buffer.py`).
 
 ## Renderzeit
 
@@ -188,13 +193,14 @@ engine/          wiederverwendbar für alle Videos
   strasse.js     Autobahn-Baukasten und Trajektorien-Abspieler
   globus.js      Punkte-Globus mit Lichtern, Ringen, Strahlen (Daten: daten/globus-punkte.json aus Natural Earth)
   stil_flat.js   Baukasten Designstil 4 „2D-Flat-Infografik“ in Three.js: Formen in Bild-Pixeln, orthografische Kamera (Zoom über kamera.zoom), Parallax-Ebenen, Figuren, Möbel, Münzen, Belege, Haus/Büro/Auto
+  stil_collage.js Baukasten Designstil 6 „Papier-Collage“ in Three.js: Papierstücke mit Rissrand, weißem Saum und Papierschatten (`papier(eltern, rechteck(w, h), farbe, {x, y, z, dreh, amp, schatten, raster, druck})`), Kraftpapier-Grund, Zeitungsfetzen, Klebeband, Schreibmaschinen-Etikett, Wellpappe-Boden, Münzsäule aus Papierscheiben (`muenzSaeule(...).setze(geld, zeit)`), Abreißkalender mit Flugblättern, Papieruhr, Papierfigur, Topf, Lieferbeutel, Tablett, Einkaufstüte, Schwamm, `stopp(t, 12)` für Stop-Motion-Takt; Muster `projekte/mittagessen-job/`
   stil_lowpoly.js Baukasten Designstil 1 „Low-Poly-Miniatur“ (Stadt/Verkehr, mit kern.js): Fußgänger mit Gelenken (Gehen, Drücken, Warten), Fußgänger-/Kfz-Signale, Anforderungstaster mit „Signal kommt“, Querstraße mit Furt, Straßenbahn, Autoströme mit Rückstau, Tilt-Shift-Fokus
 projekte/<name>/ skript.json, audio/ (stimme.mp3, timing.json, ereignisse.json), szene.html, szene.js
 qc/massstab.py   Prüfliste docs/15 §11
 render.js        Bilder rendern (parallel), Ereignis-Protokoll schreiben
 klang.py         Tonspur: Stimme + synthetische Effekte + Klangteppich (keine fremden Dateien)
 mux.sh           MP4 (H.264 CRF 18, yuv420p, 30 fps, AAC, −14 LUFS)
-post_buffer.py   fertiges MP4 als Entwurf nach Buffer (Supabase-Zwischenspeicher, KI-Flag AN), siehe oben
+post_buffer.py   fertiges MP4 über Buffer einplanen (Supabase-Zwischenspeicher), nachprüfen, aufräumen, siehe oben
 out/             Ausgaben (nicht im Repo)
 ```
 

@@ -2,7 +2,7 @@
  "version": 2,
  "erzeugt": "render.js",
  "projekt": "schall-schritttempo",
- "fps": 2,
+ "fps": 30,
  "dauer": 74.13333333333334,
  "stimmEnde": 73.349,
  "timing": "timing.json (echte Stimme)",
@@ -932,12 +932,33 @@
    "klang": "whoosh"
   },
   {
+   "quelle": "Chip",
+   "t": 60.85,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SCHALL WIEDER 1.235 KM/H"
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.55,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.8,
+   "text": "Blickwechsel"
+  },
+  {
    "quelle": "Szene",
    "t": 62.81,
    "typ": "kamera",
    "klang": false,
    "dauer": 0.9,
    "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 63.26,
+   "typ": "chip-weg",
+   "klang": false
   },
   {
    "quelle": "Pointe",

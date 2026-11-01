@@ -1,29 +1,35 @@
 #!/usr/bin/env python3
-"""Bringt ein fertiges, abgenommenes TikTok-Video als ENTWURF nach Buffer. Der Inhaber gibt den Post selbst in Buffer frei.
+"""Plant ein fertiges, geprüftes TikTok-Video über Buffer ein (Supabase als Zwischenspeicher) und prüft es nach dem Posten.
 
-Regel:   CLAUDE.md (Plattformregeln) und docs/11-automatisierung.md §3C bzw. §3C-Technik (exakte Feldnamen, Quelle: Introspection 01.11.).
-         Das Skript legt NUR Entwürfe an (saveToDraft: true). Es veröffentlicht nie selbst, es gibt keinen Schalter dafür.
+Regel:   Regeln des Inhabers vom 01.11.: kein KI-Label als Standard, keine Freigabe in Buffer (Claude prüft selbst und plant direkt),
+         feste Posting-Zeiten (data/plan/posting_zeiten.json). Technik und Feldnamen: docs/11-automatisierung.md, Abschnitt C-Technik.
+         Standard = geplanter Post (Status „scheduled“, Buffer veröffentlicht zur Zeit selbst). Mit --entwurf wie bisher nur ein Entwurf.
 
-Aufruf:  python3 pipeline/post_buffer.py --video <mp4> --kanal simulierbar|stelldirvor.pov --text "<Caption>" --zeit "2026-11-01T22:30:00+01:00" [--trocken]
+Aufruf:  python3 pipeline/post_buffer.py --video <mp4> --kanal simulierbar|stelldirvor.pov --text "<Caption>" --zeit auto:2026-11-03:mittag [--trocken]
+           --zeit  auto:YYYY-MM-DD:slot (Uhrzeit aus posting_zeiten.json, Sommer-/Winterzeit automatisch) | ISO mit Zone | sofort (= jetzt + 15 Min.)
+           --ki-label   setzt die KI-Kennzeichnung (isAiGenerated) auf AN; Standard AUS, nur für realistischen KI-Inhalt
+           --entwurf    nur Entwurf (saveToDraft), kein Einplanen
          python3 pipeline/post_buffer.py --pruefen [--schreibtest]      Zugangstest (Buffer lesen, Supabase lesen, optional Supabase-Roundtrip)
-         python3 pipeline/post_buffer.py --aufraeumen [--trocken]       Supabase-Dateien löschen, deren Buffer-Post „sent“ ist
+         python3 pipeline/post_buffer.py --nachpruefen [--trocken]      gepostete Videos auf der öffentlichen TikTok-Seite prüfen, dann Supabase-Datei löschen
+         python3 pipeline/post_buffer.py --aufraeumen [--trocken]       nur Supabase-Dateien löschen, deren Buffer-Post „sent“ ist
 
-Ablauf:  1. Video prüfen (1080x1920, mind. 61 s)  2. > 48 MB: Upload-Kopie per 2-pass H.264 (Original bleibt unberührt)
-         3. Upload nach Supabase (privater Bucket, nicht erratbarer Pfad <datum>/<uuid>.mp4)  4. signierter Link (24 h)
-         5. Buffer-Entwurf mit KI-Kennzeichnung AN  6. Eintrag in pipeline/out/buffer_log.jsonl (nicht im Repo)
+Ablauf:  1. Prüfen: Caption (3–5 Hashtags, kein #fyp), Zeit (mind. 10 Min. Vorlauf), Video (1080x1920, mind. 61 s), Kanal, Slot frei, Supabase, Schema
+         2. > 48 MB: Upload-Kopie per 2-pass H.264 (Original bleibt unberührt)  3. Upload nach Supabase (privater Bucket, Pfad <datum>/<uuid>.mp4)
+         4. signierter Link, gültig bis dueAt + 12 h (mind. 24 h)  5. createPost (geplant, bzw. Entwurf)  6. Eintrag in pipeline/out/buffer_log.jsonl (nicht im Repo)
+         Erwarteter Status nach dem Anlegen: „scheduled“ (mit --entwurf „draft“), sonst Exit-Code 2.
          --trocken führt alle Prüfungen und lesenden Abfragen aus, schreibt aber nichts nach Supabase und Buffer, sondern gibt die Mutation nur aus.
 
 Zugänge: Cloud: Der Proxy setzt die Header selbst ein (Buffer: Authorization; Supabase: apikey). Das Skript setzt dort KEINE Anmelde-Header.
          Lokal (Windows): Umgebungsvariablen BUFFER_API_KEY (→ Authorization: Bearer) und SUPABASE_KEY (→ Header apikey).
          Supabase-Host: Umgebungsvariable SUPABASE_URL oder --supabase-url. Steht bewusst NICHT im Repo (öffentlich), es gibt keinen Fallback.
-         Storage braucht evtl. zusätzlich einen Authorization-Header. Konfigurierbar (Einzelheiten in docs/11 §3C-Technik):
-           SUPABASE_AUTH=keine    (Standard) kein Authorization-Header vom Skript; das Gateway ergänzt ihn bei neuen sb_secret_-Keys (zu testen)
-           SUPABASE_AUTH=bearer   Authorization: Bearer $SUPABASE_KEY (nur für alte JWT-Keys, die mit „eyJ“ beginnen)
-           SUPABASE_AUTHORIZATION kompletter Wert des Authorization-Headers, z. B. „Bearer eyJ…“ (hat Vorrang)
-Python:  nur Standardbibliothek + ffmpeg/ffprobe. Optional: ist `graphql-core` installiert, prüft --trocken zusätzlich das ganze Mutations-Dokument gegen das Live-Schema.
+         Falls Storage zusätzlich einen Authorization-Header verlangt (in der Cloud war das nicht nötig), konfigurierbar:
+           SUPABASE_AUTH=keine (Standard) | bearer (Authorization: Bearer $SUPABASE_KEY, nur für alte JWT-Keys) | SUPABASE_AUTHORIZATION = kompletter Header-Wert
+Python:  nur Standardbibliothek + ffmpeg/ffprobe. Windows: für Europe/Berlin einmal `pip install tzdata`. Optional: ist `graphql-core` installiert,
+         prüft --trocken zusätzlich das ganze Mutations-Dokument gegen das Live-Schema.
 """
 import argparse
 import datetime
+import gzip
 import hashlib
 import json
 import os
@@ -45,7 +51,16 @@ KOPIEN_ORDNER = HIER / "out" / "_buffer"     # Upload-Kopien (das Original wird 
 BUFFER_API = "https://api.buffer.com"
 KANAELE = ("simulierbar", "stelldirvor.pov")  # Namen der TikTok-Kanäle in Buffer; IDs werden live aufgelöst
 BUCKET = "buffer-uploads"
-SIGNIER_SEKUNDEN = 86400                       # 24 h
+MIN_LINK_SEKUNDEN = 86400                      # signierter Link: mindestens 24 h gültig ...
+LINK_NACHLAUF_STUNDEN = 12                     # ... und bis dueAt + 12 h
+ZEITEN_DATEI = HIER.parent / "data" / "plan" / "posting_zeiten.json"
+TAGE = ("mo", "di", "mi", "do", "fr", "sa", "so")
+MIN_VORLAUF_MIN = 10                           # Posting-Zeit mindestens so weit in der Zukunft
+SOFORT_MIN = 15                                # --zeit sofort = jetzt + 15 Min.
+SLOT_FENSTER_MIN = 20                          # anderer Post auf demselben Kanal innerhalb von ± 20 Min. gilt als belegt
+MIN_TAGS, MAX_TAGS, MAX_CAPTION = 3, 5, 2200
+VERBOTENE_TAGS = ("#fyp", "#viral", "#foryou", "#foryoupage")
+BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 MIN_SEKUNDEN = 61                              # CLAUDE.md: Videos mindestens 61 s
 MAX_SEKUNDEN = 600                             # Buffer/TikTok: Video 3 s bis 10 min (docs/11 §2)
 BREITE, HOEHE = 1080, 1920
@@ -115,7 +130,7 @@ def json_oder_text(rohdaten):
 
 # ───────────────────────── Buffer (GraphQL) ─────────────────────────
 
-MUTATION = """mutation EntwurfAnlegen($input: CreatePostInput!) {
+MUTATION = """mutation PostAnlegen($input: CreatePostInput!) {
   createPost(input: $input) {
     __typename
     ... on PostActionSuccess {
@@ -149,7 +164,13 @@ KANAL_ABFRAGE = """query Kanaele($o: OrganizationId!) {
   channels(input: {organizationId: $o}) { id name service isDisconnected isLocked isQueuePaused timezone }
 }"""
 
-POST_ABFRAGE = """query PostStatus($id: PostId!) { post(input: {id: $id}) { id status dueAt sentAt externalLink } }"""
+POST_ABFRAGE = """query PostStatus($id: PostId!) { post(input: {id: $id}) { id status dueAt sentAt externalLink error { message } } }"""
+
+SLOT_ABFRAGE = """query Slot($o: OrganizationId!, $c: ChannelId!, $s: DateTime!, $e: DateTime!) {
+  posts(first: 5, input: {organizationId: $o, filter: {channelIds: [$c], status: [draft, scheduled, sending], dueAt: {start: $s, end: $e}}}) {
+    edges { node { id status dueAt } }
+  }
+}"""
 
 
 def buffer_kopf():
@@ -188,7 +209,7 @@ def lade_kanaele():
     return org, buffer_lesen(KANAL_ABFRAGE, {"o": org})["channels"]
 
 
-def finde_kanal(name, bericht):
+def finde_kanal(name, bericht, plant=True):
     org, kanaele = lade_kanaele()
     treffer = [k for k in kanaele if k["name"] == name]
     if not treffer:
@@ -199,9 +220,32 @@ def finde_kanal(name, bericht):
     if k["isDisconnected"] or k["isLocked"]:
         raise Fehler(f"Kanal „{name}“ ist {'getrennt' if k['isDisconnected'] else 'gesperrt'}: in Buffer neu verbinden.")
     if k["isQueuePaused"]:
-        bericht.warnung(f"Die Warteschlange von „{name}“ ist in Buffer pausiert (Entwürfe sind davon nicht betroffen, geplante Posts schon).")
+        if plant:
+            bericht.fehl(f"Die Warteschlange von „{name}“ ist in Buffer pausiert: geplante Posts würden nicht veröffentlicht.")
+        else:
+            bericht.warnung(f"Die Warteschlange von „{name}“ ist in Buffer pausiert (Entwürfe sind davon nicht betroffen).")
     bericht.ok(f"Buffer-Kanal „{name}“: TikTok, verbunden, Zeitzone {k['timezone']}.")
+    k["org"] = org
     return k
+
+
+def belegte_posts(kanal, zeit):
+    """Lesend: geplante Posts/Entwürfe/laufende Posts desselben Kanals im Zeitfenster um `zeit`."""
+    f = datetime.timedelta(minutes=SLOT_FENSTER_MIN)
+    fmt = "%Y-%m-%dT%H:%M:%S.000Z"
+    daten = buffer_lesen(SLOT_ABFRAGE, {"o": kanal["org"], "c": kanal["id"], "s": (zeit - f).strftime(fmt), "e": (zeit + f).strftime(fmt)})
+    return [e["node"] for e in daten["posts"]["edges"] or []]
+
+
+def buffer_post(post_id):
+    """Post lesen; None, wenn es ihn in Buffer nicht (mehr) gibt."""
+    status, antwort = buffer_roh(POST_ABFRAGE, {"id": post_id})
+    post = (antwort.get("data") or {}).get("post")
+    if post:
+        return post
+    if any((f.get("extensions") or {}).get("code") == "NOT_FOUND" for f in antwort.get("errors", [])):
+        return None
+    raise Fehler("; ".join(f.get("message", "?") for f in antwort.get("errors", [])) or f"HTTP {status}")
 
 
 # ───────── Schema-Abgleich (Introspection, nur lesend) ─────────
@@ -458,7 +502,7 @@ class Supabase:
         if status not in (200, 201):
             raise self.meldung(status, kopfzeilen, body, "Upload")
 
-    def signieren(self, objekt, sekunden=SIGNIER_SEKUNDEN):
+    def signieren(self, objekt, sekunden=MIN_LINK_SEKUNDEN):
         status, kopfzeilen, body = http("POST", f"{self.basis}/storage/v1/object/sign/{self.pfad(self.bucket)}/{self.pfad(objekt)}",
                                         self.kopf({"Content-Type": "application/json"}), json.dumps({"expiresIn": sekunden}).encode())
         if status != 200:
@@ -491,7 +535,7 @@ def supabase_pruefung(sb, bericht, brauche_bytes=None):
     except Fehler as e:
         bericht.fehl(str(e))
         return False
-    bericht.ok(f"Supabase-Bucket „{sb.bucket}“ erreichbar, Auflisten erlaubt (apikey und Authorization werden akzeptiert).")
+    bericht.ok(f"Supabase-Bucket „{sb.bucket}“ erreichbar, Auflisten erlaubt (Anmeldung wird akzeptiert).")
     if b.get("public"):
         bericht.warnung("Der Bucket ist ÖFFENTLICH. Erwartet war ein privater Bucket (signierte Links).")
     limit = b.get("file_size_limit")
@@ -534,30 +578,125 @@ def jetzt():
 
 # ───────────────────────── Eingaben ─────────────────────────
 
-def parse_zeit(text):
+def jetzt_utc():
+    return datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0)
+
+
+def zeitzone(name):
     try:
-        z = datetime.datetime.fromisoformat(text.strip().replace("Z", "+00:00"))
+        from zoneinfo import ZoneInfo
+        return ZoneInfo(name)
+    except Exception as e:
+        raise Fehler(f"Zeitzone {name} nicht verfügbar ({e}). Unter Windows einmal: pip install tzdata")
+
+
+def lade_zeiten():
+    try:
+        return json.loads(ZEITEN_DATEI.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as e:
+        raise Fehler(f"{ZEITEN_DATEI} nicht lesbar: {e}")
+
+
+def tage_aus(schluessel):
+    """„mo-fr“, „sa,so“, „mo“ → Menge von Tageskürzeln."""
+    tage = set()
+    for teil in schluessel.lower().replace(" ", "").split(","):
+        grenzen = teil.split("-")
+        if not 1 <= len(grenzen) <= 2 or any(g not in TAGE for g in grenzen):
+            raise Fehler(f"posting_zeiten.json: Tagesangabe „{schluessel}“ nicht verständlich (erlaubt: {' '.join(TAGE)}, Bereiche wie mo-fr, Listen mit Komma).")
+        i, j = TAGE.index(grenzen[0]), TAGE.index(grenzen[-1])
+        tage |= {TAGE[(i + k) % 7] for k in range((j - i) % 7 + 1)}
+    return tage
+
+
+def slots_fuer(kanal, tag):
+    """{slot: 'HH:MM'} für den Kanal am Datum `tag` (Wochentag → Gruppe in posting_zeiten.json)."""
+    zeiten = lade_zeiten()
+    konf = (zeiten.get("kanaele") or {}).get(kanal)
+    if not konf:
+        raise Fehler(f"posting_zeiten.json kennt den Kanal „{kanal}“ nicht.")
+    wochentag = TAGE[tag.weekday()]
+    slots = {}
+    for gruppe, eintraege in konf.items():
+        if wochentag in tage_aus(gruppe):
+            slots.update(eintraege)
+    return slots, zeitzone(zeiten.get("zeitzone", "Europe/Berlin")), wochentag
+
+
+def auto_zeit(text, kanal):
+    m = re.fullmatch(r"auto:(\d{4}-\d{2}-\d{2}):([\wäöü-]+)", text.strip().lower())
+    if not m:
+        raise Fehler(f"--zeit „{text}“: erwartet auto:YYYY-MM-DD:slot, z. B. auto:2026-11-03:mittag.")
+    try:
+        tag = datetime.date.fromisoformat(m.group(1))
     except ValueError:
-        raise Fehler(f"--zeit „{text}“ ist kein ISO-8601-Zeitpunkt (Beispiel: 2026-11-01T22:30:00+01:00).")
+        raise Fehler(f"--zeit „{text}“: {m.group(1)} ist kein Datum.")
+    slot = m.group(2)
+    slots, tz, wochentag = slots_fuer(kanal, tag)
+    if slot not in slots:
+        raise Fehler(f"Slot „{slot}“ gibt es für {kanal} am {tag} ({wochentag.upper()}) nicht (vorhanden: {', '.join(slots) or 'keiner'}).")
+    try:
+        stunde, minute = (int(x) for x in slots[slot].split(":"))
+        lokal = datetime.datetime(tag.year, tag.month, tag.day, stunde, minute, tzinfo=tz)
+    except ValueError:
+        raise Fehler(f"posting_zeiten.json: Uhrzeit „{slots[slot]}“ für {kanal}/{slot} ist nicht HH:MM.")
+    versatz = lokal.strftime("%z")
+    return lokal.astimezone(datetime.timezone.utc), f"{wochentag.upper()} {tag} {slot} = {slots[slot]} {tz.key} (UTC{versatz[:3]}:{versatz[3:]})"
+
+
+def lese_zeit(text, kanal):
+    """--zeit → (UTC-Zeitpunkt, Beschreibung). Formen: auto:YYYY-MM-DD:slot | sofort | ISO 8601 mit Zone."""
+    t = text.strip()
+    if t.lower() == "sofort":
+        return jetzt_utc() + datetime.timedelta(minutes=SOFORT_MIN), f"sofort = jetzt + {SOFORT_MIN} Min."
+    if t.lower().startswith("auto:"):
+        return auto_zeit(t, kanal)
+    try:
+        z = datetime.datetime.fromisoformat(t.replace("Z", "+00:00"))
+    except ValueError:
+        raise Fehler(f"--zeit „{text}“ ist weder auto:YYYY-MM-DD:slot noch sofort noch ISO 8601 (Beispiel: 2026-11-01T22:30:00+01:00).")
     if z.tzinfo is None:
         raise Fehler("--zeit braucht eine Zeitzone, z. B. +01:00 (Winterzeit) bzw. +02:00 (Sommerzeit).")
-    return z.astimezone(datetime.timezone.utc)
+    return z.astimezone(datetime.timezone.utc), "feste Zeit"
 
 
-def caption_hinweise(text, bericht):
-    """Weiche Prüfung nach dem Caption-Format in CLAUDE.md (nur Warnungen)."""
-    if not text.strip():
-        bericht.fehl("Der Text (Caption) ist leer.")
+def pruefe_vorlauf(zeit, bericht):
+    """Mindestens MIN_VORLAUF_MIN Minuten in der Zukunft. Liefert True, wenn ok."""
+    rest = (zeit - jetzt_utc()).total_seconds() / 60
+    if rest < MIN_VORLAUF_MIN:
+        bericht.fehl(f"Die Posting-Zeit {zeit:%Y-%m-%d %H:%M} UTC liegt {'in der Vergangenheit' if rest < 0 else f'nur {rest:.0f} Min. in der Zukunft'}; nötig sind mindestens {MIN_VORLAUF_MIN} Min. Vorlauf.")
+        return False
+    return True
+
+
+def link_sekunden(zeit):
+    """Signierter Link: bis dueAt + 12 h, mindestens 24 h."""
+    bis_zeit = int((zeit - jetzt_utc()).total_seconds()) + LINK_NACHLAUF_STUNDEN * 3600
+    return max(MIN_LINK_SEKUNDEN, bis_zeit)
+
+
+def caption_pruefung(text, bericht):
+    """Caption ist Pflicht: 3 bis 5 Hashtags, kein #fyp/#viral/#foryou, höchstens 2200 Zeichen. Verstöße brechen ab (Fehler)."""
+    t = text.strip()
+    if not t:
+        bericht.fehl("Die Caption ist Pflicht und darf nicht leer sein (--text bzw. --text-datei).")
         return
-    tags = re.findall(r"#\w+", text)
-    if len(text) > 2200:
-        bericht.warnung(f"Caption hat {len(text)} Zeichen; TikTok erlaubt höchstens 2200 [Annahme].")
-    if "\n" in text.strip():
+    tags = re.findall(r"#\w+", t)
+    schlecht = False
+    if len(t) > MAX_CAPTION:
+        bericht.fehl(f"Caption hat {len(t)} Zeichen, erlaubt sind höchstens {MAX_CAPTION}.")
+        schlecht = True
+    if not MIN_TAGS <= len(tags) <= MAX_TAGS:
+        bericht.fehl(f"Caption hat {len(tags)} Hashtags, erlaubt sind {MIN_TAGS} bis {MAX_TAGS}.")
+        schlecht = True
+    verboten = [x for x in tags if x.lower() in VERBOTENE_TAGS]
+    if verboten:
+        bericht.fehl(f"Caption enthält verbotene Hashtags: {', '.join(verboten)}.")
+        schlecht = True
+    if "\n" in t:
         bericht.warnung("Caption hat mehrere Zeilen; Format laut CLAUDE.md: eine Zeile.")
-    if len(tags) != 5:
-        bericht.warnung(f"Caption hat {len(tags)} Hashtags; Format laut CLAUDE.md: genau 5.")
-    if any(t.lower() in ("#fyp", "#viral", "#foryou", "#foryoupage") for t in tags):
-        bericht.warnung("Caption enthält #fyp/#viral o. Ä.; laut CLAUDE.md verboten.")
+    if not schlecht:
+        bericht.ok(f"Caption: {len(t)} Zeichen, {len(tags)} Hashtags.")
 
 
 def sha256(pfad):
@@ -576,17 +715,19 @@ def raeume_weg(sb, objekt):
         info(f"[WARNUNG]  Supabase-Datei {objekt} konnte nicht gelöscht werden ({e}); später mit --aufraeumen --verwaiste prüfen bzw. im Dashboard löschen.")
 
 
-def baue_variablen(kanal_id, text, zeit_utc, planung, link):
-    return {"input": {
+def baue_variablen(kanal_id, text, zeit_utc, planung, link, ki_label=False, entwurf=False):
+    eingabe = {
         "channelId": kanal_id,
         "text": text,
         "mode": "customScheduled",          # Zeitpunkt aus dueAt
         "dueAt": zeit_utc.strftime("%Y-%m-%dT%H:%M:%S.000Z"),
-        "schedulingType": planung,          # automatic = Buffer veröffentlicht nach DEINER Freigabe selbst; notification = nur Erinnerung
-        "saveToDraft": True,                # ENTWURF: Status „draft“, wird nicht veröffentlicht, bis der Inhaber in Buffer freigibt
+        "schedulingType": planung,          # automatic = Buffer veröffentlicht zur Zeit selbst; notification = nur Erinnerung
         "assets": [{"video": {"url": link}}],
-        "metadata": {"tiktok": {"isAiGenerated": True}},  # KI-Kennzeichnung AN
-    }}
+        "metadata": {"tiktok": {"isAiGenerated": bool(ki_label)}},  # KI-Kennzeichnung: Standard AUS, --ki-label = AN
+    }
+    if entwurf:
+        eingabe["saveToDraft"] = True       # nur mit --entwurf: Status „draft“, wird nicht veröffentlicht, bis der Inhaber in Buffer freigibt
+    return {"input": eingabe}
 
 
 # ───────────────────────── Befehle ─────────────────────────
@@ -600,6 +741,20 @@ def befehl_pruefen(args, sb_url):
         for name in KANAELE:
             if name not in [k["name"] for k in kanaele]:
                 bericht.fehl(f"Kanal „{name}“ fehlt in Buffer.")
+    except Fehler as e:
+        bericht.fehl(str(e))
+    info("== Posting-Zeiten ==")
+    try:
+        zeiten = lade_zeiten()
+        zeitzone(zeiten.get("zeitzone", "Europe/Berlin"))
+        for name in KANAELE:
+            konf = (zeiten.get("kanaele") or {}).get(name)
+            if not konf:
+                bericht.fehl(f"posting_zeiten.json: Kanal „{name}“ fehlt.")
+                continue
+            for gruppe in konf:
+                tage_aus(gruppe)
+            bericht.ok(f"{name}: " + "; ".join(f"{g} " + ", ".join(f"{slot} {uhr}" for slot, uhr in sl.items()) for g, sl in konf.items()) + f" ({zeiten.get('zeitzone')})")
     except Fehler as e:
         bericht.fehl(str(e))
     info("== Supabase ==")
@@ -636,35 +791,50 @@ def befehl_pruefen(args, sb_url):
 
 def befehl_posten(args, sb_url):
     bericht = Bericht()
-    trocken = args.trocken
+    trocken, entwurf, ki = args.trocken, args.entwurf, args.ki_label
+    erwartet = "draft" if entwurf else "scheduled"
 
     def halt():  # im echten Lauf: vor jedem Schreiben stoppen
         if bericht.fehler and not trocken:
             raise Fehler("Abbruch vor dem Hochladen, es wurde nichts geschrieben.")
 
-    info(f"== Prüfungen ({'Trockenlauf: es wird nichts nach Supabase oder Buffer geschrieben' if trocken else 'echter Lauf'}) ==")
+    modus = "Entwurf (saveToDraft)" if entwurf else "geplanter Post (Buffer veröffentlicht zur Zeit selbst)"
+    info(f"== Prüfungen ({'Trockenlauf: es wird nichts nach Supabase oder Buffer geschrieben' if trocken else 'echter Lauf'}; {modus}) ==")
     max_bytes, ziel_bytes = int(args.max_mb * MB), int(args.ziel_mb * MB)
-    if not args.kanal or not args.zeit or not (args.text or args.text_datei) or not args.video:
-        raise Fehler("Für einen Entwurf sind --video, --kanal, --text (oder --text-datei) und --zeit nötig.")
+    if not args.kanal or not args.zeit or not args.video:
+        raise Fehler("Für einen Post sind --video, --kanal, --text (oder --text-datei) und --zeit nötig.")
     video = Path(args.video).expanduser().resolve()
-    text = Path(args.text_datei).read_text(encoding="utf-8").strip() if args.text_datei else args.text.strip()
-    zeit = parse_zeit(args.zeit)
-    if zeit <= datetime.datetime.now(datetime.timezone.utc):
-        bericht.fehl(f"--zeit {args.zeit} liegt in der Vergangenheit.")
+    if args.text_datei:
+        text = Path(args.text_datei).read_text(encoding="utf-8").strip()
     else:
-        bericht.ok(f"Zeitpunkt: {zeit.strftime('%Y-%m-%dT%H:%M:%SZ')} (UTC).")
-    caption_hinweise(text, bericht)
+        text = (args.text or "").strip()
+    caption_pruefung(text, bericht)
+    zeit, zeit_text = lese_zeit(args.zeit, args.kanal)
+    if pruefe_vorlauf(zeit, bericht):
+        bericht.ok(f"Zeitpunkt: {zeit:%Y-%m-%d %H:%M} UTC ({zeit_text}).")
+    bericht.ok(f"KI-Kennzeichnung: {'AN (--ki-label)' if ki else 'AUS (Standard)'}.")
 
     s = pruefe_video(video, bericht)
     pruef_hash = sha256(video)
-    if not args.nochmal and any(z.get("video_sha256") == pruef_hash and z.get("kanal") == args.kanal for z in log_lesen(Path(args.log)) if z.get("ereignis") == "angelegt"):
-        bericht.fehl(f"Für dieses Video und den Kanal „{args.kanal}“ gibt es schon einen Entwurf im Log ({args.log}). Mit --nochmal trotzdem anlegen.")
+    log = Path(args.log)
+    if not args.nochmal and any(z.get("video_sha256") == pruef_hash and z.get("kanal") == args.kanal for z in log_lesen(log) if z.get("ereignis") == "angelegt"):
+        bericht.fehl(f"Für dieses Video und den Kanal „{args.kanal}“ gibt es schon einen Eintrag im Log ({args.log}). Mit --nochmal trotzdem anlegen.")
 
     kanal = None
     try:
-        kanal = finde_kanal(args.kanal, bericht)
+        kanal = finde_kanal(args.kanal, bericht, plant=not entwurf)
     except Fehler as e:
         bericht.fehl(str(e))
+    if kanal and not args.nochmal:
+        try:
+            belegt = belegte_posts(kanal, zeit)
+            if belegt:
+                bericht.fehl("Auf dem Kanal ist rund um diese Zeit schon etwas eingeplant: " + ", ".join(f"{b['id']} ({b['status']}, {b['dueAt']})" for b in belegt)
+                             + ". Mit --nochmal trotzdem anlegen.")
+            else:
+                bericht.ok(f"Slot frei: kein anderer Post auf „{args.kanal}“ innerhalb von ± {SLOT_FENSTER_MIN} Min.")
+        except Fehler as e:
+            bericht.fehl(f"Slot-Prüfung nicht möglich: {e}")
 
     sb = None
     try:
@@ -673,8 +843,8 @@ def befehl_posten(args, sb_url):
     except Fehler as e:
         bericht.fehl(str(e))
     objekt = f"{datetime.date.today().isoformat()}/{uuid.uuid4()}.mp4"
-    platzhalter = f"<SUPABASE_URL>/storage/v1/object/sign/{args.bucket}/{objekt}?token=<SIGNIERT, {SIGNIER_SEKUNDEN // 3600} h>"
-    variablen = baue_variablen(kanal["id"] if kanal else "<KANAL-ID>", text, zeit, args.planung, platzhalter)
+    platzhalter = f"<SUPABASE_URL>/storage/v1/object/sign/{args.bucket}/{objekt}?token=<SIGNIERT, {link_sekunden(zeit) / 3600:.0f} h>"
+    variablen = baue_variablen(kanal["id"] if kanal else "<KANAL-ID>", text, zeit, args.planung, platzhalter, ki, entwurf)
     if kanal:
         schema_pruefung(variablen, bericht)  # nur lesende Introspection; vor dem Upload, damit nichts umsonst hochgeladen wird
     halt()
@@ -708,49 +878,87 @@ def befehl_posten(args, sb_url):
     sb.hochladen(objekt, upload)
     bericht.ok(f"Hochgeladen: {args.bucket}/{objekt} ({upload.stat().st_size / MB:.1f} MB).")
     try:
-        link = sb.signieren(objekt)
+        if args.zeit.strip().lower() == "sofort":  # „jetzt + 15 Min.“ ab jetzt rechnen, Kopieren und Hochladen haben gedauert
+            zeit = lese_zeit(args.zeit, args.kanal)[0]
+        if not pruefe_vorlauf(zeit, bericht):
+            raise Fehler("Die Posting-Zeit ist inzwischen zu nah (Kopieren/Hochladen hat gedauert). Neue --zeit wählen.")
+        sekunden = link_sekunden(zeit)
+        link = sb.signieren(objekt, sekunden)
         status, typ = sb.link_test(link)
         if status not in (200, 206):
             raise Fehler(f"Signierter Link liefert HTTP {status} statt 200/206.")
-        bericht.ok(f"Signierter Link ({SIGNIER_SEKUNDEN // 3600} h) erzeugt und abrufbar (Content-Type {typ}).")
+        bis = jetzt_utc() + datetime.timedelta(seconds=sekunden)
+        bericht.ok(f"Signierter Link erzeugt und abrufbar (gültig bis {bis:%Y-%m-%d %H:%M} UTC = dueAt + {LINK_NACHLAUF_STUNDEN} h, mind. 24 h; Content-Type {typ}).")
     except Fehler:
         raeume_weg(sb, objekt)  # nichts liegen lassen, wenn es nicht weitergeht
         raise
-    variablen = baue_variablen(kanal["id"], text, zeit, args.planung, link)
-    info("== Buffer: Entwurf anlegen ==")
+    variablen = baue_variablen(kanal["id"], text, zeit, args.planung, link, ki, entwurf)
+    info(f"== Buffer: {'Entwurf anlegen' if entwurf else 'Post einplanen'} ==")
     try:
         status, antwort = buffer_roh(MUTATION, variablen)
-    except Fehler as e:  # Antwort unklar: der Entwurf kann trotzdem entstanden sein, deshalb die Datei NICHT löschen
-        raise Fehler(f"{e} Der Entwurf kann trotzdem entstanden sein: in Buffer unter Entwürfe nachsehen. Die Supabase-Datei {objekt} bleibt liegen.")
+    except Fehler as e:  # Antwort unklar: der Post kann trotzdem entstanden sein, deshalb die Datei NICHT löschen
+        raise Fehler(f"{e} Der Post kann trotzdem entstanden sein: in Buffer nachsehen (Kalender/Entwürfe). Die Supabase-Datei {objekt} bleibt liegen.")
     nutzlast = (antwort.get("data") or {}).get("createPost")
     if not nutzlast or nutzlast.get("__typename") != "PostActionSuccess":
         raeume_weg(sb, objekt)
         meldung = nutzlast.get("message") if nutzlast else "; ".join(f.get("message", "?") for f in antwort.get("errors", [])) or f"HTTP {status}"
-        raise Fehler(f"Buffer hat keinen Entwurf angelegt ({nutzlast.get('__typename') if nutzlast else 'GraphQL-Fehler'}): {meldung}. Supabase-Datei wieder gelöscht.")
+        raise Fehler(f"Buffer hat den Post nicht angelegt ({nutzlast.get('__typename') if nutzlast else 'GraphQL-Fehler'}): {meldung}. Supabase-Datei wieder gelöscht.")
 
     post = nutzlast["post"]
     bericht.angelegt = True
-    ki = (post.get("metadata") or {}).get("isAiGenerated")
-    eintrag = {"ereignis": "angelegt", "zeit": jetzt(), "post_id": post["id"], "kanal": args.kanal, "kanal_id": kanal["id"], "bucket": args.bucket,
-               "pfad": objekt, "video": video.name, "video_sha256": pruef_hash, "upload_kopie": kopie, "due_at": post.get("dueAt"),
-               "status": post["status"], "ki_flag": ki}
-    log_schreiben(Path(args.log), eintrag)
-    bericht.ok(f"Entwurf angelegt: Post-ID {post['id']}, Status {post['status']}, fällig {post.get('dueAt')}, Planung {post.get('schedulingType')}.")
-    (bericht.ok if ki else bericht.fehl)(f"KI-Kennzeichnung (isAiGenerated) in Buffer: {ki}.")
-    if post["status"] != "draft":
-        bericht.fehl(f"STATUS IST NICHT „draft“ SONDERN „{post['status']}“. Der Post könnte automatisch veröffentlicht werden: SOFORT in Buffer prüfen (Post-ID {post['id']}).")
+    ki_ist = (post.get("metadata") or {}).get("isAiGenerated")
+    log_schreiben(log, {"ereignis": "angelegt", "zeit": jetzt(), "post_id": post["id"], "kanal": args.kanal, "kanal_id": kanal["id"], "bucket": args.bucket,
+                        "pfad": objekt, "video": video.name, "video_sha256": pruef_hash, "video_dauer_s": round(s["dauer"], 1), "upload_kopie": kopie,
+                        "modus": "entwurf" if entwurf else "geplant", "due_at": post.get("dueAt"), "status": post["status"], "ki_flag": ki_ist})
+    bericht.ok(f"Angelegt: Post-ID {post['id']}, Status {post['status']}, fällig {post.get('dueAt')}, Planung {post.get('schedulingType')}.")
+    if post["status"] == erwartet:
+        bericht.ok(f"Status „{erwartet}“ wie erwartet.")
+    else:
+        bericht.fehl(f"STATUS IST „{post['status']}“, ERWARTET „{erwartet}“. In Buffer sofort prüfen (Post-ID {post['id']}); "
+                     + ("der Post könnte automatisch veröffentlicht werden." if entwurf else "der Post wird so nicht veröffentlicht."))
+    if ki_ist == ki:
+        bericht.ok(f"KI-Kennzeichnung (isAiGenerated) in Buffer: {ki_ist}, wie gesetzt.")
+    else:
+        bericht.fehl(f"KI-Kennzeichnung (isAiGenerated) in Buffer ist {ki_ist}, gesetzt war {ki}.")
+    try:
+        gleich = datetime.datetime.fromisoformat((post.get("dueAt") or "").replace("Z", "+00:00")) == zeit
+    except ValueError:
+        gleich = False
+    if not gleich:
+        bericht.fehl(f"dueAt in Buffer ({post.get('dueAt')}) weicht von der gewünschten Zeit ({zeit:%Y-%m-%dT%H:%M:%SZ}) ab.")
     for a in post.get("assets") or []:
         host = urllib.parse.urlsplit(a.get("source") or "").netloc
         v = a.get("video") or {}
+        auf_supabase = host == sb.host
         info(f"           Asset {a.get('type')}: {a.get('mimeType')}, {v.get('width')}x{v.get('height')}, {(v.get('durationMs') or 0) / 1000:.1f} s, "
-             f"Verarbeitung läuft: {v.get('isVideoProcessing')}, Transcodierung nötig: {v.get('isTranscodingRequired')}, "
-             f"Quelle: {'noch der Supabase-Link (läuft in 24 h ab!)' if host == sb.host else 'Buffer-eigener Speicher (' + host + ')'}")
-        if host == sb.host:
-            bericht.warnung("Buffer verweist noch auf den signierten Supabase-Link. Gibst du den Entwurf nach mehr als 24 h frei, könnte der Link abgelaufen sein.")
+             f"Verarbeitung läuft: {v.get('isVideoProcessing')}, Transcodierung nötig: {v.get('isTranscodingRequired')}")
+        if auf_supabase:
+            info(f"           assets[].source zeigt noch auf Supabase (Link gültig bis {bis:%Y-%m-%d %H:%M} UTC): die Datei dort NICHT vor dem Posten löschen.")
+            if entwurf:
+                bericht.warnung("Entwurf mit Supabase-Link: wird er nach Ablauf des Links freigegeben, kann das Video fehlen.")
+        else:
+            info(f"           assets[].source zeigt auf eine Buffer-Kopie ({host}), die Supabase-Datei wird nur noch als Reserve gebraucht.")
     info("")
     if not bericht.fehler:
-        info("Nächster Schritt: In Buffer prüfen und freigeben (Kalender/Entwürfe). Dort auch Sichtbarkeit (öffentlich) und Markeninhalt (AUS) kontrollieren: per API nicht setzbar.")
+        if entwurf:
+            info("Nächster Schritt: In Buffer prüfen und freigeben (Entwürfe). Sichtbarkeit und Markeninhalt sind per API nicht setzbar, dort kontrollieren.")
+        else:
+            info(f"Eingeplant für {zeit:%Y-%m-%d %H:%M} UTC. Nach dem Posten: python3 pipeline/post_buffer.py --nachpruefen (öffentlich? Dauer, KI-Label; löscht dann die Supabase-Datei).")
     return bericht
+
+
+def loesche_dateien(sb, log, liste, bericht):
+    """liste = [(Log-Eintrag, Grund)]; löscht in Supabase und vermerkt es im Log."""
+    if not liste:
+        return
+    try:
+        sb.loeschen([e["pfad"] for e, _ in liste])
+    except Fehler as f:
+        bericht.fehl(str(f))
+        return
+    for e, grund in liste:
+        log_schreiben(log, {"ereignis": "geloescht", "zeit": jetzt(), "post_id": e["post_id"], "pfad": e["pfad"], "grund": grund})
+    bericht.ok(f"{len(liste)} Supabase-Datei(en) gelöscht.")
 
 
 def befehl_aufraeumen(args, sb_url):
@@ -763,37 +971,121 @@ def befehl_aufraeumen(args, sb_url):
     sb = Supabase(sb_url, args.bucket, args.supabase_auth)
     weg = []
     for e in offen:
-        status = None
         try:
-            status, antwort = buffer_roh(POST_ABFRAGE, {"id": e["post_id"]})
-            if (antwort.get("data") or {}).get("post"):
-                status = antwort["data"]["post"]["status"]
-            elif any((f.get("extensions") or {}).get("code") == "NOT_FOUND" for f in antwort.get("errors", [])):
-                status = "nicht_gefunden"
-            else:
-                raise Fehler("; ".join(f.get("message", "?") for f in antwort.get("errors", [])) or f"HTTP {status}")
+            post = buffer_post(e["post_id"])
         except Fehler as f:
             bericht.fehl(f"Post {e['post_id']}: Status nicht abrufbar: {f}")
             continue
+        status = post["status"] if post else "nicht_gefunden"
         loeschen = status == "sent" or (status == "nicht_gefunden" and args.verwaiste)
         info(f"{e['post_id']}  {e['kanal']:<16} {status:<15} {e['pfad']}  → {'löschen' if loeschen else 'bleibt'}")
         if loeschen:
             weg.append((e, status))
     if args.trocken:
         info(f"Trockenlauf: {len(weg)} Datei(en) würden gelöscht, nichts geändert.")
-        return bericht
-    if weg:
-        try:
-            sb.loeschen([e["pfad"] for e, _ in weg])
-        except Fehler as f:
-            bericht.fehl(str(f))
-            return bericht
-        for e, status in weg:
-            log_schreiben(log, {"ereignis": "geloescht", "zeit": jetzt(), "post_id": e["post_id"], "pfad": e["pfad"], "grund": status})
-        bericht.ok(f"{len(weg)} Supabase-Datei(en) gelöscht.")
+    elif weg:
+        loesche_dateien(sb, log, weg, bericht)
     else:
         info("Nichts zu löschen (kein Post mit Status „sent“).")
     return bericht
+
+
+def tiktok_seite(url):
+    """Öffentliche TikTok-Videoseite mit normalem Browser-User-Agent abrufen (kein Login, keine internen APIs, kein Umgehen von Schutz).
+    Liest das JSON __UNIVERSAL_DATA_FOR_REHYDRATION__ → __DEFAULT_SCOPE__ → webapp.video-detail → itemInfo.itemStruct."""
+    status, kopfzeilen, body = http("GET", url.split("?", 1)[0], {"User-Agent": BROWSER_UA, "Accept": "text/html,application/xhtml+xml",
+                                                                    "Accept-Language": "de-DE,de;q=0.9,en;q=0.8"}, timeout=30)
+    if status != 200:
+        raise Fehler(f"TikTok-Seite liefert HTTP {status}.")
+    if kopfzeilen and (kopfzeilen.get("Content-Encoding") or "").lower() == "gzip":
+        body = gzip.decompress(body)
+    treffer = re.search(r'<script id="__UNIVERSAL_DATA_FOR_REHYDRATION__"[^>]*>(.*?)</script>', body.decode("utf-8", "replace"), re.S)
+    if not treffer:
+        raise Fehler("Die Seite enthält keine Videodaten (Bot-Schutz oder geändertes Seitenformat). Das wird nicht umgangen; Video von Hand im Browser ansehen.")
+    detail = json.loads(treffer.group(1)).get("__DEFAULT_SCOPE__", {}).get("webapp.video-detail", {})
+    item = (detail.get("itemInfo") or {}).get("itemStruct")
+    if not item:
+        raise Fehler(f"Seite ohne itemStruct (statusCode {detail.get('statusCode')}, {detail.get('statusMsg') or 'ohne Meldung'}): Video nicht öffentlich abrufbar?")
+    return item
+
+
+def befehl_nachpruefen(args, sb_url):
+    """Gepostete Videos (Buffer-Status sent) auf der öffentlichen TikTok-Seite prüfen, Ergebnis ins Log, dann Supabase-Datei löschen."""
+    bericht = Bericht()
+    log = Path(args.log)
+    zeilen = log_lesen(log)
+    geprueft = {z["post_id"] for z in zeilen if z.get("ereignis") == "nachgeprueft"}
+    geloescht = {z["pfad"] for z in zeilen if z.get("ereignis") == "geloescht"}
+    kandidaten = [z for z in zeilen if z.get("ereignis") == "angelegt" and (z["post_id"] not in geprueft or z["pfad"] not in geloescht)]
+    if not kandidaten:
+        info("Nichts nachzuprüfen: alle Log-Einträge sind geprüft und aufgeräumt.")
+        return bericht
+    sb = Supabase(sb_url, args.bucket, args.supabase_auth)
+    weg = []
+    for e in kandidaten:
+        kopf = f"{e['post_id']} ({e['kanal']}, {e.get('video', '?')})"
+        try:
+            post = buffer_post(e["post_id"])
+        except Fehler as f:
+            bericht.fehl(f"{kopf}: Status nicht abrufbar: {f}")
+            continue
+        if not post:
+            info(f"{kopf}: in Buffer nicht (mehr) vorhanden; Datei bleibt (--aufraeumen --verwaiste löscht sie).")
+            continue
+        if post["status"] != "sent":
+            fehlertext = f", Fehler: {post['error']['message']}" if post.get("error") else ""
+            (bericht.fehl if post["status"] == "error" else info)(f"{kopf}: Status „{post['status']}“, fällig {post.get('dueAt')}{fehlertext}; noch nichts zu prüfen.")
+            continue
+        info(f"{kopf}: gesendet {post.get('sentAt')}")
+        if e["post_id"] not in geprueft:
+            if not post.get("externalLink"):
+                bericht.warnung(f"{kopf}: Buffer liefert keinen externalLink, Seite nicht prüfbar.")
+            else:
+                try:
+                    item = tiktok_seite(post["externalLink"])
+                    ergebnis = bewerte_seite(item, e, bericht, kopf)
+                    if not args.trocken:
+                        log_schreiben(log, {"ereignis": "nachgeprueft", "zeit": jetzt(), "post_id": e["post_id"], "externer_link": post["externalLink"].split("?", 1)[0], **ergebnis})
+                except Fehler as f:
+                    bericht.warnung(f"{kopf}: öffentliche Seite nicht prüfbar: {f}")
+        if e["pfad"] not in geloescht:
+            weg.append((e, "nachgeprueft"))
+    if args.trocken:
+        info(f"Trockenlauf: {len(weg)} Supabase-Datei(en) würden gelöscht; Log und Supabase unverändert.")
+    else:
+        loesche_dateien(sb, log, weg, bericht)
+    return bericht
+
+
+def bewerte_seite(item, eintrag, bericht, kopf):
+    """Meldet privateItem (muss false sein), Dauer und KI-Label; liefert das Ergebnis fürs Log."""
+    privat = item.get("privateItem")
+    dauer = (item.get("video") or {}).get("duration")
+    label = item.get("aigcLabelType")
+    ist_aigc = item.get("IsAigc")
+    hat_label = label not in (None, "", 0, "0") or bool(ist_aigc)  # aigcLabelType kommt als Text („1“), fehlt ohne Label
+    ergebnis = {"privateItem": privat, "dauer_s": dauer, "aigcLabelType": label, "IsAigc": ist_aigc}
+    info(f"           TikTok-Seite: privateItem={privat}, Dauer={dauer} s, aigcLabelType={label}, IsAigc={ist_aigc}")
+    if privat is False:
+        bericht.ok(f"{kopf}: öffentlich (privateItem=false).")
+    else:
+        bericht.fehl(f"{kopf}: privateItem={privat}: das Video ist NICHT öffentlich. In TikTok auf „Alle“ stellen.")
+    soll = eintrag.get("video_dauer_s")
+    if soll and dauer is not None and abs(float(dauer) - float(soll)) > 1.5:
+        bericht.warnung(f"{kopf}: Dauer auf TikTok {dauer} s, Original {soll} s.")
+    if eintrag.get("ki_flag"):
+        if not hat_label:
+            bericht.fehl(f"{kopf}: KI-Label war gesetzt (--ki-label), steht aber nicht am TikTok-Video (aigcLabelType={label}).")
+        else:
+            bericht.ok(f"{kopf}: KI-Label am Video vorhanden.")
+    elif hat_label:
+        bericht.warnung(f"{kopf}: am Video steht ein KI-Label (aigcLabelType={label}, IsAigc={ist_aigc}), obwohl keins gesetzt wurde.")
+    else:
+        info("           Kein KI-Label am Video, wie vorgesehen.")
+    for schluessel in ("isProhibited", "takeDown", "isReviewing"):
+        if item.get(schluessel):
+            bericht.warnung(f"{kopf}: TikTok meldet {schluessel}={item[schluessel]}.")
+    return ergebnis
 
 
 # ───────────────────────── main ─────────────────────────
@@ -804,16 +1096,19 @@ def main():
             strom.reconfigure(encoding="utf-8", errors="replace")
         except Exception:
             pass
-    p = argparse.ArgumentParser(description="Video als Entwurf nach Buffer (TikTok). Nur Entwürfe, die Freigabe gibt der Inhaber in Buffer.")
+    p = argparse.ArgumentParser(description="Video über Buffer auf TikTok einplanen (Supabase als Zwischenspeicher), nach dem Posten prüfen und aufräumen.")
     p.add_argument("--video", help="fertiges MP4 (1080x1920, mind. 61 s)")
     p.add_argument("--kanal", choices=KANAELE)
-    p.add_argument("--text", help="Caption (eine Zeile, Format laut CLAUDE.md)")
+    p.add_argument("--text", help="Caption (Pflicht; eine Zeile, 3 bis 5 Hashtags, höchstens 2200 Zeichen, kein #fyp/#viral/#foryou)")
     p.add_argument("--text-datei", help="Caption aus Textdatei (UTF-8), nützlich unter Windows wegen Emojis")
-    p.add_argument("--zeit", help="geplanter Zeitpunkt mit Zone, z. B. 2026-11-01T22:30:00+01:00")
+    p.add_argument("--zeit", help="auto:YYYY-MM-DD:slot (Slots in data/plan/posting_zeiten.json, z. B. auto:2026-11-03:mittag) | ISO 8601 mit Zone | sofort (jetzt + 15 Min.)")
+    p.add_argument("--ki-label", action="store_true", help="KI-Kennzeichnung (isAiGenerated) AN; Standard AUS, nur für realistischen KI-Inhalt")
+    p.add_argument("--entwurf", action="store_true", help="nur Entwurf anlegen (saveToDraft), nicht einplanen; der Inhaber gibt dann in Buffer frei")
     p.add_argument("--trocken", action="store_true", help="alles prüfen, nichts schreiben, Mutation nur ausgeben")
-    p.add_argument("--nochmal", action="store_true", help="auch anlegen, wenn für dieses Video und den Kanal schon ein Entwurf im Log steht")
-    p.add_argument("--planung", choices=GUELTIG, default="automatic", help="automatic (Standard): Buffer veröffentlicht nach Freigabe selbst; notification: nur Erinnerung")
-    p.add_argument("--aufraeumen", action="store_true", help="Supabase-Dateien löschen, deren Buffer-Post „sent“ ist")
+    p.add_argument("--nochmal", action="store_true", help="auch anlegen, wenn für dieses Video und den Kanal schon ein Log-Eintrag steht oder der Slot belegt ist")
+    p.add_argument("--planung", choices=GUELTIG, default="automatic", help="automatic (Standard): Buffer veröffentlicht zur Zeit selbst; notification: nur Erinnerung")
+    p.add_argument("--nachpruefen", action="store_true", help="gepostete Videos (Buffer: sent) auf der öffentlichen TikTok-Seite prüfen, dann Supabase-Datei löschen")
+    p.add_argument("--aufraeumen", action="store_true", help="nur Supabase-Dateien löschen, deren Buffer-Post „sent“ ist")
     p.add_argument("--verwaiste", action="store_true", help="mit --aufraeumen auch Dateien löschen, deren Post in Buffer nicht mehr existiert")
     p.add_argument("--pruefen", action="store_true", help="Zugangstest (Buffer und Supabase, nur lesend)")
     p.add_argument("--schreibtest", action="store_true", help="mit --pruefen: Mini-Video nach Supabase hochladen, signieren, abrufen, löschen")
@@ -828,6 +1123,8 @@ def main():
     try:
         if args.pruefen:
             bericht = befehl_pruefen(args, args.supabase_url)
+        elif args.nachpruefen:
+            bericht = befehl_nachpruefen(args, args.supabase_url)
         elif args.aufraeumen:
             bericht = befehl_aufraeumen(args, args.supabase_url)
         else:
@@ -839,9 +1136,9 @@ def main():
         info("Abgebrochen.")
         return 130
     if bericht.fehler:
-        if not args.trocken or args.pruefen:
+        if not args.trocken or args.pruefen or args.nachpruefen:
             info(f"{len(bericht.fehler)} Fehler.")
-        return 2 if bericht.angelegt else 1  # 2 = Entwurf existiert, aber Zustand falsch (Status/KI-Flag): in Buffer prüfen
+        return 2 if bericht.angelegt else 1  # 2 = Post existiert, aber Zustand falsch (Status/KI-Flag/Zeit): in Buffer prüfen
     return 0
 
 

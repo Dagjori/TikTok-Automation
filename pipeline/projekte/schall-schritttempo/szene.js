@@ -311,10 +311,10 @@ function baueWelt(buehne) {
   const fluegelGeo = new THREE.BufferGeometry();
   fluegelGeo.setAttribute("position", new THREE.Float32BufferAttribute([0, 0, 0, -0.12, 0, 0.5, 0.12, 0.02, 0.42, 0.18, 0, 0.12, 0, 0, 0, 0.12, 0.02, 0.42, -0.12, 0, 0.5, -0.2, -0.04, 0.34, 0, 0, 0], 3));
   fluegelGeo.computeVertexNormals();
-  const fl = new THREE.Mesh(fluegelGeo, new THREE.MeshStandardMaterial({ color: "#232737", side: THREE.DoubleSide, roughness: 0.8 }));
+  const fl = new THREE.Mesh(fluegelGeo, new THREE.MeshStandardMaterial({ color: "#232737", side: THREE.DoubleSide, roughness: 0.8, emissive: "#2EC4B6", emissiveIntensity: 0.35 }));
   const fr = fl.clone(); fr.scale.z = -1;
   const flG = new THREE.Group(); flG.add(fl); const frG = new THREE.Group(); frG.add(fr);
-  fleder.add(flG, frG); fleder.visible = false; fleder.scale.setScalar(1.6); szene.add(fleder);
+  fleder.add(flG, frG); fleder.visible = false; fleder.scale.setScalar(1.3); szene.add(fleder);
 
   // --- Schallwellen ---
   const wellen = [];
@@ -541,7 +541,8 @@ async function start() {
       const d = AUGE.clone().sub(MUND); const dist = d.length(); d.normalize();
       const r = Math.min(heyR, dist - 0.55);
       W.heyText.position.copy(MUND).addScaledVector(d, r).add(V(0, 0.12, 0));
-      const s = 0.28 * (1 + 0.6 * ease.outBack(clamp((t - tHey) / 0.4)) - 0.6) * (1 - 0.45 * clamp((heyR - 0.6) / (dist - 0.6)));
+      const zurKamera = W.heyText.position.distanceTo(AUGE);
+      const s = 0.26 * (1 + 0.6 * ease.outBack(clamp((t - tHey) / 0.4)) - 0.6) * clamp(zurKamera / dist, 0.25, 1);
       W.heyText.scale.set(s * 4, s, 1);
       W.heyText.material.opacity = 1 - clamp((heyR - (dist - 0.5)) / 0.4);
     }
@@ -559,8 +560,8 @@ async function start() {
     const fk = fortschritt(t, tFleder - 0.5, tFleder + 1.4);
     W.fleder.visible = pov && fk > 0 && fk < 1;
     if (W.fleder.visible) {
-      W.fleder.position.set(lerp(9, -2, fk), 2.9 + Math.sin(fk * 9) * 0.25, lerp(8.5, 1.2, fk));
-      W.fleder.rotation.y = Math.atan2(-(1.2 - 8.5), -(-2 - 9)) + Math.PI;
+      W.fleder.position.set(lerp(5.4, 6.2, fk), 1.62 + Math.sin(fk * 11) * 0.08, lerp(9.5, -2.5, fk));
+      W.fleder.rotation.y = Math.atan2(-(-2.5 - 9.5), 6.2 - 5.4);
       const flap = Math.sin(t * 34) * 0.9;
       W.flG.rotation.x = flap; W.frG.rotation.x = -flap;
     }
@@ -588,7 +589,7 @@ async function start() {
     { t: tS5 - 0.15, z: ZN, d: 0.6 },
     { t: tUeb - 0.2, z: ZG, d: 0.01 },
     { t: T("ueberraschung:alles,") - 0.1, z: () => V(22, 1.6, 0.4), d: 0.8 }, // Blick auf die eingefrorenen Wellen
-    { t: tUltra - 0.6, z: () => V(4, 2.6, 6.5), d: 0.9 },
+    { t: tUltra - 0.6, z: () => V(7, 2.7, 2.2), d: 0.9 },
     { t: tMerk - 0.25, z: ZF, d: 0.8 },
   ];
   for (const k of ziele.slice(1)) if (k.d > 0.05) M.melde({ t: k.t, typ: "kamera", klang: false, dauer: k.d, text: "Blickwechsel" });

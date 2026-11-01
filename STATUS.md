@@ -46,7 +46,7 @@
 - **Neue Trend-Vorschläge (01.11.):** Tankrabatt endet 31.12. (Score 80, posten 15.–23.12.), Weihnachtsbaum teurer (Score 70, schwächer, posten 01.–08.12.), Details in `docs/trends/vorschlaege.md`.
 
 ## Neue Regeln Automatisierung (01.11. abends)
-- Kein KI-Label, Posten ohne Freigabe (Claude prüft und plant selbst über Buffer), jeder Post mit Caption, Posting-Zeiten Simulierbar Mo–Fr 12:30/19:30, Sa–So 09:30/19:30, @stelldirvor.pov Mo–Fr 20:30, Sa–So 13:00. Regelwerk-PDF `docs/regelwerk/regelwerk-2026-11-01-abends.pdf`.
+- Kein KI-Label, Posten ohne Freigabe (Claude prüft und plant selbst über Buffer), jeder Post mit Caption, Posting-Zeiten beide Accounts Mo–Fr 12:30/19:30, Sa–So 09:30/19:30 (je 2 pro Tag). Buffer Essentials gebucht. Testvideo Account 2 („Stell dir vor, Schall hat fünf Sekunden lang nur noch Schritttempo“, S-Bahn-Steig) direkt nach Prüfung posten; ab 02.11. 12:30 Normalbetrieb: 02.11. Simulierbar Ampel 12:30, Steuer 19:30; Account 2 zwei neue Videos (Themen vom Plan-Agenten). Regelwerk-PDF `docs/regelwerk/regelwerk-2026-11-01-abends.pdf`.
 - In Arbeit: Umbau `post_buffer.py` auf direktes Planen (Agent), 30-Tage-Plan Account 2 (Agent, `docs/17`, `data/plan/account2-30-tage.csv`), erstes Video `@stelldirvor.pov` (Prototyp „schall-schritttempo“), Simulierbar 03.11. (Schere, Stein, Papier; Mittagessen).
 - Offen: Posting-Zeiten in `docs/11` §3C eintragen, sobald der Agent mit `docs/11` fertig ist. Inhaber zeigt später Konkurrenzvideos für Account 2.
 

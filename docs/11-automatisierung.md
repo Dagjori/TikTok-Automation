@@ -173,66 +173,74 @@
    - **Network access:** Domain `api.buffer.com` hinzufügen.
    - **Network secrets:** Host `api.buffer.com`, Header `Authorization`, Wert `Bearer <Schlüssel>`. So wie es bei ElevenLabs gemacht ist.
 3. **Dateien:** Buffer holt Videos nur über eine **öffentliche URL**. Variante 1: Du lädst das MP4 selbst in Buffer hoch (2 Min., keine Technik). Variante 2: Das MP4 liegt kurz unter einer nicht erratbaren öffentlichen URL (z. B. Objektspeicher mit öffentlichem Link, nach dem Posten löschen). Der Host muss ebenfalls freigegeben werden.
-4. Skript `pipeline/post_buffer.py` (gebaut 01.11., Technik siehe **§3C-Technik** unten). Es legt den Beitrag als **Entwurf** an, mit Caption, KI-Flag an. Der Markeninhalt-Schalter lässt sich per API nicht setzen (siehe §3C-Technik). Du gibst im Buffer-Kalender frei (30 Sekunden). So bleibt die TikTok-Vorgabe „full awareness and control“ erfüllt.
+4. Skript `pipeline/post_buffer.py` (gebaut 01.11., Technik siehe **§3C-Technik** unten). Seit der Regel vom 01.11. plant es den Post direkt zur Posting-Zeit ein (kein KI-Label als Standard, keine Freigabe in Buffer); mit `--entwurf` entsteht wie ursprünglich vorgesehen nur ein Entwurf, den du im Buffer-Kalender freigibst (30 Sekunden, entspricht TikToks Vorgabe „full awareness and control“). Der Markeninhalt-Schalter lässt sich per API nicht setzen (siehe §3C-Technik).
 5. Wöchentlich 5 Minuten: Prüfen, ob alle Posts öffentlich sind.
 
-### C-Technik: Buffer-Entwurf per API und Supabase-Zwischenspeicher (Stand 01.11.2026)
+### C-Technik: Buffer-Post per API und Supabase-Zwischenspeicher (Stand 01.11.2026)
+
+**Regeln des Inhabers vom 01.11.** (Stand der Umsetzung in `pipeline/post_buffer.py`; in `CLAUDE.md` und `ENTSCHEIDUNGEN.md` nachzutragen): (1) **kein KI-Label als Standard**, nur bei realistischem KI-Inhalt mit `--ki-label`; (2) **kein Entwurf, keine Freigabe in Buffer**: Claude prüft selbst und plant direkt (Status `scheduled`); `--entwurf` bleibt als Schalter für den alten Weg; (3) **feste Posting-Zeiten** pro Kanal; (4) Caption ist Pflicht; (5) Nachprüfung auf der öffentlichen TikTok-Seite nach dem Posten.
 
 **Quelle Buffer:** GraphQL-Introspection von `https://api.buffer.com` am 01.11.2026 (`__schema`, `__type`), plus lesende Abfragen auf die beiden Kanäle. **[Fakt]** Die API ist laut Buffer noch Beta, Namen können sich ändern. `pipeline/post_buffer.py` gleicht seine Eingabe vor jedem Lauf per Introspection mit dem Live-Schema ab (und, falls `graphql-core` installiert ist, auch das ganze Mutations-Dokument).
 
-**Entwürfe per API: ja.** `createPost` mit `saveToDraft: true` legt den Post mit Status `draft` an. Laut Schema-Beschreibung gilt dann: Status `draft` statt `buffer`, Posting-Limits werden nicht geprüft, der Post wird erst veröffentlicht, wenn er ausdrücklich geplant wird (das macht der Inhaber in Buffer). Lesen: `post(input:{id})`, `posts(input:{organizationId, filter:{channelIds, status:[draft]}})`. Ändern/Löschen: `editPost` (u. a. `assets`, `dueAt`, `saveToDraft`), `deletePost`. `PostStatus` = `draft`, `scheduled`, `sending`, `sent`, `error`, `needs_approval`.
+**Geplanter Post (Standard) und Entwurf per API.** `createPost` mit `mode: customScheduled`, `schedulingType: automatic` und `dueAt` plant den Post; Buffer veröffentlicht zur Zeit selbst, erwarteter Status danach `scheduled`. Mit zusätzlich `saveToDraft: true` entsteht stattdessen ein Entwurf (Status `draft`; laut Schema-Beschreibung werden dann Posting-Limits nicht geprüft und der Post wird erst veröffentlicht, wenn er ausdrücklich geplant wird). Lesen: `post(input:{id})`, `posts(input:{organizationId, filter:{channelIds, status:[…], dueAt:{start,end}}})`. Ändern/Löschen: `editPost` (u. a. `assets`, `dueAt`, `saveToDraft`), `deletePost`. `PostStatus` = `draft`, `scheduled`, `sending`, `sent`, `error`, `needs_approval`.
 
-**Mutation** `createPost(input: CreatePostInput!)` liefert die Union `PostActionPayload` = `PostActionSuccess { post }` oder einen der Fehler `NotFoundError`, `UnauthorizedError`, `UnexpectedError`, `RestProxyError`, `LimitReachedError`, `InvalidInputError` (alle mit `message`). Variablen, wie das Skript sie sendet:
+**Mutation** `createPost(input: CreatePostInput!)` liefert die Union `PostActionPayload` = `PostActionSuccess { post }` oder einen der Fehler `NotFoundError`, `UnauthorizedError`, `UnexpectedError`, `RestProxyError`, `LimitReachedError`, `InvalidInputError` (alle mit `message`). Variablen, wie das Skript sie im Standard sendet (mit `--entwurf` kommt `"saveToDraft": true` dazu, mit `--ki-label` steht `isAiGenerated` auf `true`):
 
 ```json
 {"input": {
   "channelId": "<Kanal-ID aus channels(...)>",
   "text": "<Caption>",
   "mode": "customScheduled",
-  "dueAt": "2026-11-03T17:30:00.000Z",
+  "dueAt": "2026-11-03T11:30:00.000Z",
   "schedulingType": "automatic",
-  "saveToDraft": true,
   "assets": [{"video": {"url": "<signierter Link>"}}],
-  "metadata": {"tiktok": {"isAiGenerated": true}}
+  "metadata": {"tiktok": {"isAiGenerated": false}}
 }}
 ```
 
 | Feld in `CreatePostInput` | Typ | Bedeutung / unser Wert |
 |---|---|---|
 | `channelId` | `ChannelId!` | ID des TikTok-Kanals; das Skript löst sie über `channels(input:{organizationId})` per Namen auf (`simulierbar`, `stelldirvor.pov`) |
-| `text` | `String` | Caption |
+| `text` | `String` | Caption (Pflicht, siehe unten) |
 | `mode` | `ShareMode!` | `addToQueue`, `customScheduled`, `shareNext`, `shareNow`; wir: `customScheduled` |
-| `dueAt` | `DateTime` | ISO 8601, wir senden UTC (`…Z`); bei einem Entwurf der vorgeschlagene Zeitpunkt |
-| `schedulingType` | `SchedulingType!` | `automatic` (Buffer veröffentlicht nach Freigabe selbst) oder `notification` (nur Erinnerung); Standard `automatic`, Schalter `--planung` |
-| `saveToDraft` | `Boolean` | **`true` = Entwurf**; im Skript fest verdrahtet |
+| `dueAt` | `DateTime` | ISO 8601, wir senden UTC (`…Z`): die Posting-Zeit |
+| `schedulingType` | `SchedulingType!` | `automatic` (Buffer veröffentlicht zur Zeit selbst) oder `notification` (nur Erinnerung); Standard `automatic`, Schalter `--planung` |
+| `saveToDraft` | `Boolean` | `true` = Entwurf; wird nur mit `--entwurf` gesendet |
 | `assets` | `[AssetInput!]!` | `[{video: {url: String!}}]`; `VideoAssetInput.thumbnailUrl` darf nicht gesetzt werden (API lehnt ab); optional `metadata {title, thumbnailOffset}` |
-| `metadata.tiktok.isAiGenerated` | `Boolean` | **KI-Kennzeichnung („AI-generated“), nur TikTok-Video; wir: `true`** |
+| `metadata.tiktok.isAiGenerated` | `Boolean` | **KI-Kennzeichnung („AI-generated“), nur TikTok-Video; Standard `false`, mit `--ki-label` `true`** |
 | `metadata.tiktok.title` | `String` | nur für Foto-Posts, ungenutzt |
 | `aiAssisted` | `Boolean` | heißt „mit KI-Hilfe von Buffer erstellt“ (Nutzungsstatistik), ist **nicht** die Kennzeichnung; ungenutzt |
 | `needsApproval` | `Boolean! = false` | Freigabe-Workflow für Teams; ungenutzt |
 
-Antwortfelder: `post { id status dueAt schedulingType channelId text metadata { ... on TiktokPostMetadata { isAiGenerated type } } assets { id type mimeType source ... on VideoAsset { video { durationMs width height fileSize isVideoProcessing isTranscodingRequired } } } }`. Das Skript prüft daran, dass `status == "draft"` und `isAiGenerated == true` zurückkommen.
+Antwortfelder: `post { id status dueAt schedulingType channelId text metadata { ... on TiktokPostMetadata { isAiGenerated type } } assets { id type mimeType source ... on VideoAsset { video { durationMs width height fileSize isVideoProcessing isTranscodingRequired } } } }`. Das Skript prüft daran: `status == "scheduled"` (mit `--entwurf` `"draft"`), `isAiGenerated` gleich dem gesetzten Wert und `dueAt` gleich der gewünschten Zeit. Weicht etwas ab, endet es mit **Exit-Code 2** (der Post existiert dann schon, in Buffer prüfen). Ob `assets[].source` auf Supabase oder auf eine Buffer-Kopie zeigt, steht in der Ausgabe (ein eigenes Feld für eine Buffer-Kopie gibt es im Schema nicht, nur `source`).
 
-**Nicht per API setzbar (wichtig):** `TikTokPostMetadataInput` kennt nur `isAiGenerated` und `title`. Es gibt **kein Feld für Markeninhalt/Branded Content, Sichtbarkeit (öffentlich/privat), Kommentare, Duett oder Stitch**. (YouTube hat dagegen `privacy`.) „Markeninhalt AUS“ und „öffentlich“ gelten also nur, wenn Buffers Standard so ist. **[Annahme]** Die älteren, über das Netzwerk eingelesenen Posts der beiden Kanäle sind laut Test vom 01.11. öffentlich; beim **ersten** Entwurf im Buffer-Composer ansehen, was für Sichtbarkeit und Markeninhalt voreingestellt ist. Beim Gehalt-Test (01.11.) fehlte außerdem das KI-Label am veröffentlichten Video (`aigcLabelType` leer): Beim ersten über die API angelegten Post prüfen, ob `isAiGenerated: true` wirklich als Label bei TikTok ankommt.
+**Nicht per API setzbar (wichtig):** `TikTokPostMetadataInput` kennt nur `isAiGenerated` und `title`. Es gibt **kein Feld für Markeninhalt/Branded Content, Sichtbarkeit (öffentlich/privat), Kommentare, Duett oder Stitch**. (YouTube hat dagegen `privacy`.) „Markeninhalt AUS“ und „öffentlich“ gelten also nur, wenn Buffers Standard so ist **[Annahme]**. Ob das Video wirklich öffentlich ist, sagt erst `--nachpruefen` (`privateItem`).
 
-**Supabase (Zwischenspeicher, privater Bucket `buffer-uploads`):** Aufrufe nach Supabase-Doku **[Fakt, Zweitquelle: Doku, am 01.11. nur teilweise testbar]**, Host `SUPABASE_URL` (Umgebungsvariable bzw. `--supabase-url`; steht nicht im Repo):
+**Posting-Zeiten (Regel, `data/plan/posting_zeiten.json`, alle Zeiten Europe/Berlin, Startwerte bis zur ersten Auswertung):**
+
+| Kanal | Mo–Fr | Sa–So |
+|---|---|---|
+| `simulierbar` | `mittag` 12:30, `abend` 19:30 | `mittag` 09:30, `abend` 19:30 |
+| `stelldirvor.pov` | `abend` 20:30 | `abend` 13:00 |
+
+`--zeit auto:2026-11-03:mittag` nimmt den Wochentag des Datums, sucht den Slot des Kanals und rechnet die Uhrzeit mit `zoneinfo` in UTC um (Sommer- und Winterzeit automatisch; getestet u. a. 24.10. = UTC+2, 26.10. = UTC+1, 29.03.2027 = UTC+2). Unter Windows braucht Python dafür einmal `pip install tzdata`. Weitere Formen: ISO mit Zone (`2026-11-03T12:30:00+01:00`) und `sofort` (= jetzt plus 15 Min., nur für Ausnahmen wie Tests). Liegt die Zeit weniger als 10 Min. in der Zukunft, bricht das Skript ab. Es bricht auch ab, wenn auf dem Kanal innerhalb von ± 20 Min. schon ein geplanter Post oder Entwurf liegt (`--nochmal` hebt das auf).
+
+**Caption (Pflicht, Abbruch bei Verstoß):** nicht leer, 3 bis 5 Hashtags, kein `#fyp`, `#viral`, `#foryou`, höchstens 2.200 Zeichen. Mehrere Zeilen sind nur eine Warnung (Format laut `CLAUDE.md`: eine Zeile).
+
+**Supabase (Zwischenspeicher, privater Bucket `buffer-uploads`):** Aufrufe nach Supabase-Doku, Host `SUPABASE_URL` (Umgebungsvariable bzw. `--supabase-url`; steht nicht im Repo):
 
 | Schritt | Aufruf |
 |---|---|
 | Upload | `POST {SUPABASE_URL}/storage/v1/object/buffer-uploads/<datum>/<uuid>.mp4`, Body = Datei, `Content-Type: video/mp4` |
-| Link (24 h) | `POST {SUPABASE_URL}/storage/v1/object/sign/buffer-uploads/<pfad>` mit `{"expiresIn": 86400}` → `signedURL` (relativ, das Skript ergänzt `/storage/v1`) |
+| Link | `POST {SUPABASE_URL}/storage/v1/object/sign/buffer-uploads/<pfad>` mit `{"expiresIn": <Sekunden>}` → `signedURL` (relativ, das Skript ergänzt `/storage/v1`). Gültigkeit: bis `dueAt` + 12 h, mindestens 24 h |
 | Löschen | `DELETE {SUPABASE_URL}/storage/v1/object/buffer-uploads` mit `{"prefixes": ["<pfad>", …]}` |
 | Zugangstest | `GET …/storage/v1/bucket/buffer-uploads` und `POST …/storage/v1/object/list/buffer-uploads` (nur lesend) |
 
-**Anmeldung an Supabase (offen, muss getestet werden).** Die Cloud setzt den Header `apikey` per Proxy; das Skript schickt dort keine Anmelde-Header. Stand 01.11. 19:53 UTC: `/rest/v1/` antwortet `UNAUTHORIZED_MISSING_API_KEY`, `/storage/v1/bucket` antwortet 400 „headers must have required property 'authorization'“. Der apikey kommt also noch nicht an. Nach der Korrektur der Reihe nach prüfen:
-1. `python3 pipeline/post_buffer.py --pruefen` ist grün: fertig. Erwartet bei neuen `sb_secret_`-Schlüsseln: Das Gateway ergänzt den Authorization-Header selbst. **[Annahme laut Supabase-Doku zu den neuen API-Keys, ungetestet]**
-2. Meldung „required property 'authorization'“ bleibt trotz apikey: Das Gateway ergänzt ihn nicht. Dann zweiten Proxy-Header `Authorization: Bearer <alter service_role-JWT, beginnt mit eyJ>` für den Supabase-Host setzen. Das Skript braucht dafür nichts. (Lokal ohne Proxy: `SUPABASE_KEY=<JWT>` und `SUPABASE_AUTH=bearer`, oder `SUPABASE_AUTHORIZATION="Bearer …"`.)
-3. Meldung „Invalid JWT“ o. Ä.: Ein `sb_secret_`-Schlüssel wird irgendwo als Bearer geschickt. Das geht laut Doku nicht, Authorization-Header entfernen und Punkt 1 oder 2 nehmen.
-4. `--pruefen --schreibtest`: Mini-Upload, Link, Abruf, Löschen. Zeigt auch das Dateilimit des Buckets (Gratis-Plan: 50 MB je Datei **[Fakt laut Entscheidung 01.11.]**, deshalb Upload-Kopie ab 48 MB).
-5. Den signierten Link einmal ohne Header abrufen (Browser, anderes Gerät): Buffer holt ihn ohne Anmeldung.
-6. Erster echter Entwurf: Zeigt `assets[].source` noch auf Supabase, hat Buffer die Datei nicht kopiert, und der Link läuft nach 24 h ab. Dann Entwürfe nur am selben Tag freigeben oder den Link vor der Freigabe per `editPost` (neue `assets`) erneuern.
+**Anmeldung an Supabase:** Stand 01.11. abends **funktioniert**: Der Proxy setzt den Header `apikey`, das Skript schickt keine Anmelde-Header, und `python3 pipeline/post_buffer.py --pruefen --schreibtest` (Bucket lesen, Mini-Upload, Link, Abruf, Löschen) ist in allen Punkten OK **[Fakt, getestet]**. Falls es sich ändert (Meldung „headers must have required property 'authorization'“): zweiter Proxy-Header `Authorization: Bearer <alter service_role-JWT>` für den Supabase-Host, oder lokal `SUPABASE_KEY` plus `SUPABASE_AUTH=bearer` bzw. `SUPABASE_AUTHORIZATION`. Ein `sb_secret_`-Schlüssel darf laut Doku nicht als Bearer geschickt werden. Das Dateilimit (Gratis-Plan 50 MB je Datei, Entscheidung 01.11.) gilt projektweit, deshalb Upload-Kopie ab 48 MB.
 
-**Ablauf und Aufräumen:** Das Skript legt den Entwurf an und trägt Post-ID, Kanal und Supabase-Pfad in `pipeline/out/buffer_log.jsonl` ein. Nach dem Posten löscht `python3 pipeline/post_buffer.py --aufraeumen` die Dateien aller Einträge, deren Post in Buffer `sent` ist (`--verwaiste`: auch die, deren Post in Buffer gelöscht wurde). Gebrauch: `pipeline/README.md`, Abschnitt „Entwurf nach Buffer“.
+**Nachprüfung nach dem Posten (`--nachpruefen`):** Für jeden Log-Eintrag, dessen Buffer-Post `sent` ist, ruft das Skript `externalLink` aus Buffer ab (ohne `utm_…`-Teil) und liest die **öffentliche** TikTok-Videoseite mit einem normalen Browser-User-Agent (keine internen APIs, kein Login, Schutzmaßnahmen werden nicht umgangen: liefert die Seite keine Daten, steht „nicht prüfbar“ da). In der Seite steht das JSON `<script id="__UNIVERSAL_DATA_FOR_REHYDRATION__">`, darin `__DEFAULT_SCOPE__` → `webapp.video-detail` → `itemInfo.itemStruct`. Gemeldet werden `privateItem` (muss `false` sein, sonst Fehler), `video.duration` (Abgleich mit dem Original), `aigcLabelType` und `IsAigc`. `aigcLabelType` kommt als Text (`"1"`) und fehlt, wenn kein Label gesetzt ist; war `--ki-label` gesetzt, ist ein fehlendes Label ein Fehler. Danach wird die Supabase-Datei gelöscht (wie bei `--aufraeumen`), das Ergebnis steht als Zeile `nachgeprueft` im Log. Test am 01.11. an drei bereits geposteten Videos von `@simulierbar` **[Fakt, gemessen]**: Gehalt (66 s) öffentlich, kein Label; Treppe (74 s) öffentlich, `aigcLabelType` = 1; GTA (82 s) öffentlich, `aigcLabelType` = 1.
+
+**Ablauf und Aufräumen:** Das Skript trägt Post-ID, Kanal, Supabase-Pfad, Modus (`geplant`/`entwurf`) und KI-Flag in `pipeline/out/buffer_log.jsonl` ein. Die Supabase-Datei bleibt bis nach dem Posten liegen (Buffer holt sie unter Umständen erst zur Posting-Zeit ab). Danach `python3 pipeline/post_buffer.py --nachpruefen` (prüfen und löschen) oder nur `--aufraeumen` (löschen, `--verwaiste`: auch Dateien, deren Post in Buffer gelöscht wurde). Gebrauch: `pipeline/README.md`, Abschnitt „Post über Buffer einplanen“.
 
 ### D. WhatsApp Stufe 1: CallMeBot (ca. 15 Min.)
 1. Seite `callmebot.com` > Anleitung „WhatsApp“ öffnen. Die **aktuelle Bot-Nummer und den Freigabe-Satz dort ablesen** (ich schreibe sie nicht ab, sie ändern sich).
