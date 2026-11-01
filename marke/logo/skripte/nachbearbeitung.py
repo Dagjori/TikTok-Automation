@@ -31,6 +31,7 @@ KONZEPTE = {
 TINTE = (20, 23, 31)
 HG_MITTE = (36, 42, 58)      # Profilbild: hellere Mitte (Studio-Spot)
 HG_RAND = (14, 16, 22)       # Profilbild: dunkler Rand
+EMPFEHLUNG = "a-s-kurve"
 RADIUS_ANTEIL = 0.415        # Motiv reicht bis 83 % des Kreisdurchmessers
 
 
@@ -188,8 +189,8 @@ def uebersicht(profile):
     d = ImageDraw.Draw(img)
     d.rectangle((0, 0, B, 820), fill=(16, 18, 24))
     d.text((60, 44), "Simulierbar · Bildmarke · 3 Konzepte", font=schrift(44, True), fill=(240, 240, 240))
-    d.text((60, 104), "Profilbild im Kreis-Zuschnitt (TikTok/YouTube). Unten: echte Größen 110 px, 48 px und 32 px.",
-           font=schrift(22), fill=(160, 166, 180))
+    d.text((60, 104), "Profilbild im Kreis-Zuschnitt (TikTok/YouTube). Unten: echte Größen 110 px, 48 px und 32 px. "
+           "Nicht im Video verwenden.", font=schrift(22), fill=(160, 166, 180))
     spalte = B // 3
     for i, (ordner, profil) in enumerate(profile.items()):
         kenn, titel, _ = KONZEPTE[ordner]
@@ -197,6 +198,11 @@ def uebersicht(profile):
         gross = rund(profil, 520)
         img.paste(gross, (x0 + (spalte - 520) // 2, 180), gross)
         d.text((x0 + (spalte - 520) // 2, 724), f"{kenn}  {titel}", font=schrift(34, True), fill=(240, 240, 240))
+        if ordner == EMPFEHLUNG:
+            breite = d.textlength(f"{kenn}  {titel}", font=schrift(34, True))
+            px0 = x0 + (spalte - 520) // 2 + breite + 22
+            d.rounded_rectangle((px0, 728, px0 + 150, 766), radius=19, fill=(255, 210, 63))
+            d.text((px0 + 17, 734), "Empfehlung", font=schrift(20, True), fill=(20, 23, 31))
         # Kleinvorschau: dunkel (oben im hellen Bereich als dunkle Karte) und hell
         for k, (hg, y) in enumerate([((18, 18, 18), 860), ((255, 255, 255), 1010)]):
             karte = (x0 + 60, y, x0 + spalte - 60, y + 130)
