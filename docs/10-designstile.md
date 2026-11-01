@@ -61,6 +61,14 @@ Renderkosten: Sekunden je Videobild 1080×1920 im Cloud-Container (4 Kerne, ohne
 - Die Material-Stile 9, 10, 11 (und später Knete als Upgrade von 3) sind normale Katalog-Stile wie alle anderen. Sie werden gewählt, wenn sie zum Thema passen. Ein fester Look ist abgelehnt (Inhaber 01.11.).
 - Jeder Stil braucht beim ersten Einsatz einen eigenen Szenen-Baukasten auf Basis der Beispielbilder in `pipeline/stile/` (**Schätzung:** 3–6 Std. Agentenarbeit je Stil, Blender-Stile mit Bake-Weg 5–8 Std.). Danach ist er wiederverwendbar.
 
+**Fertige Produktions-Baukästen (Stand 01.11.2026):**
+
+| Stil | Baukasten | Erster Einsatz | Gemessen (Cloud, ohne GPU) |
+|---|---|---|---|
+| 12 Comic-Toon 3D | `pipeline/engine/stil_comic.js` (Cel-Shading, Konturen, Strahlenkranz, eigene Bühne mit den Übergängen aus `kern.js`) | „Treppe oder Aufzug“ (01.11.) | 1,17 s/Bild effektiv mit 2 Workern |
+| 13 Blaupause | `pipeline/engine/stil_blaupause.js` (Papier-Raster, dicke Kanten, gestrichelte verdeckte Kanten) | „Warum?“-Szene in „Treppe oder Aufzug“ | im Comic-Video enthalten |
+| 14 Glas-Labor | `pipeline/engine/stil_glas.js` (Studio-Hohlkehle, Messzylinder als Live-Zähler, Zulauf, Ablaufhahn, Becherglas mit Schichten) | „200 € oder 100 € steuerfrei“ (01.11.) | 3,35 s/Bild effektiv (110,7 Min. für 66 s) |
+
 ### 0.1 Neue Stile 9–15: Steckbriefe
 
 Gemeinsam: Maßstab-HUD aus `pipeline/stile/massstab.css` und `massstab.js` (Tafel mit Teamfarben und Zähler „13 Fahrten“, Chip „Break-even“, Phrase „Das **Ticket** zieht vorbei.“), Teamfarben Blau (Ticket) gegen Orange (Auto). Alle Modelle, Materialien und Texturen sind im Code erzeugt (prozedural), keine fremden Assets, keine Marken.
