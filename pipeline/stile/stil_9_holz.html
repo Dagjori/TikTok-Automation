@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Stil 9 · Holzspielzeug-Tisch</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<link rel="stylesheet" href="massstab.css">
+<style>
+  body { background: #e9e2d6; }
+  /* Tafel wie ein Holzbrett: Buche mit feiner Maserung, lackierte Teamfarben, Münze als Zähler */
+  :root {
+    --a: #2f6fed; --a-hell: #86b6ff; --b: #ff7a1a; --b-hell: #ffb36b;
+    --tafel-bg: #f2dfbd repeating-linear-gradient(176deg, rgba(160, 110, 50, 0.0) 0 11px, rgba(160, 110, 50, 0.10) 11px 13px, rgba(160, 110, 50, 0.0) 13px 29px);
+    --tafel-text: #3a2614; --tafel-grau: #8a6a46; --tafel-radius: 34px; --tafel-rand: none;
+    --tafel-schatten: inset 0 -7px 0 rgba(120, 75, 30, 0.22), inset 0 3px 0 rgba(255, 255, 255, 0.55), 0 22px 40px -16px rgba(70, 40, 10, 0.55);
+    --mitte-bg: radial-gradient(circle at 40% 35%, #ffe08a, #ffc93c 60%, #e9a91c); --mitte-text: #3a2614; --mitte-rand: 6px solid #f7c64a;
+    --chip-bg: #ffc93c; --chip-text: #3a2614; --chip-schatten: inset 0 -4px 0 rgba(120, 75, 30, 0.25), 0 14px 26px -12px rgba(70, 40, 10, 0.6);
+  }
+  .tafel9 .wer { box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.18), inset 0 2px 0 rgba(255, 255, 255, 0.3); }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module">
+  import { zonen, fertig } from "./gemeinsam.js";
+  import { INHALT9, anzeigetafel, chip, phrase, hintergrund } from "./massstab.js";
+  try {
+    await hintergrund("../out/stile/blender/stil_9_holz.png");
+    const hud = document.getElementById("hud");
+    anzeigetafel(hud);
+    chip(hud, INHALT9.chip, { x: 712, y: 548, drehung: -3 });
+    phrase(hud);
+    zonen(hud);
+    fertig();
+  } catch (e) { window.__fehler = String(e); }
+</script>
+</body>
+</html>

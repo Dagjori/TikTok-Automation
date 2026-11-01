@@ -4,7 +4,7 @@
 import { feder, FEDER, ease, fortschritt, clamp } from "./bewegung.js";
 import { el, animiere } from "./hud.js";
 
-/** Stoppuhr-Symbol für die Rubrik ALLTAG (SVG statt Emoji) */
+/** Stoppuhr-Symbol (SVG statt Emoji) */
 export const STOPPUHR = `<svg class="symbol" width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13.6" r="7.6" stroke="currentColor" stroke-width="2.5"/><path d="M12 13.6V9.6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M9.4 2.9h5.2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M18.4 6.9l1.4-1.4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>`;
 
 // ---------- Rundenanzeige („Runde 2 · Feierabend“) ----------

@@ -27,14 +27,14 @@ def kreis(r, n=256, mx=0.0, my=0.0):
 
 def zeiger(name, winkel, laenge, breite, mat, wurzel, z):
     w = math.radians(winkel)
-    a = (-0.10 * math.cos(w), -0.10 * math.sin(w))
+    a = (-0.04 * math.cos(w), -0.04 * math.sin(w))
     b = (laenge * math.cos(w), laenge * math.sin(w))
     pts = [(a[0] + (b[0] - a[0]) * i / 40, a[1] + (b[1] - a[1]) * i / 40) for i in range(41)]
     return g.platte_aus_umriss(name, [g.strich_umriss(pts, breite)], tiefe=0.025, fase=0.03,
                                mat=mat, eltern=wurzel, z=z)
 
 
-def baue(w_blau=W_BLAU, w_orange=W_ORANGE, mit_glas=True):
+def baue(w_blau=W_BLAU, w_orange=W_ORANGE, mit_glas=False):
     wurzel = g.logo_wurzel()
     m_gehaeuse = g.keramik("Gehaeuse")
     m_blatt = g.material("Zifferblatt", g.FARBEN["tinte"], rauheit=0.45, lack=0.4, lack_rauheit=0.1)
@@ -92,17 +92,20 @@ def baue(w_blau=W_BLAU, w_orange=W_ORANGE, mit_glas=True):
         me.materials.append(g.glas())
         o.location = (0, 0, 0.12)
         o.parent = wurzel
+        # Glas wirft keinen Schatten (sonst wird das Zifferblatt ohne Kaustiken schwarz)
+        o.visible_shadow = False
     return wurzel
 
 
 def szene(vorschau=False, aufloesung=2048):
-    s = g.leere_szene(aufloesung=aufloesung, samples=32 if vorschau else 128)
+    s = g.leere_szene(aufloesung=aufloesung, samples=32 if vorschau else 64)
     g.welt()
     baue()
     groesse = 2 * R_AUSSEN + 0.5
     g.kamera(abstand=g.abstand_fuer(groesse, 100, 0.80), azimut=-12, hoehe=10, brennweite=100,
              ziel=(0, 0, 0.18))
     g.studio_licht(skala=0.6, staerke=0.75)
+    g.kamera_einpassen(0.86)
     return s
 
 

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Neue Designstile im Maßstab-Layout</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<style>
+  html, body { width: auto; height: auto; overflow: visible; }
+  body { background: #101319; color: #fff; padding: 56px 56px 48px; width: max-content; }
+  h1 { margin: 0 0 6px; font-family: var(--display); font-weight: 900; font-size: 52px; letter-spacing: -0.01em; }
+  p { margin: 0 0 36px; font-family: var(--text); font-weight: 600; font-size: 24px; color: rgba(255, 255, 255, 0.6); }
+  .raster { display: grid; grid-template-columns: repeat(4, 450px); gap: 40px 32px; }
+  figure { margin: 0; }
+  img { display: block; width: 450px; height: 800px; border-radius: 22px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 24px 50px -20px rgba(0, 0, 0, 0.8); }
+  figcaption { margin-top: 16px; font-family: var(--display); font-weight: 800; font-size: 28px; display: flex; gap: 12px; align-items: baseline; }
+  figcaption b { display: inline-flex; align-items: center; justify-content: center; min-width: 52px; height: 44px; border-radius: 12px; background: var(--gelb); color: var(--tinte); font-weight: 900; font-size: 26px; }
+  figcaption small { display: block; font-family: var(--text); font-weight: 600; font-size: 20px; color: rgba(255, 255, 255, 0.55); margin-top: 4px; }
+</style>
+<script type="module">
+  const STILE = [
+    [9, "holz", "Holzspielzeug-Tisch", "Blender Cycles"],
+    [10, "papier", "Papier-Diorama", "Blender Cycles"],
+    [11, "filz", "Filz & Knöpfe", "Blender Cycles"],
+    [12, "comic", "Comic-Toon 3D", "Three.js"],
+    [13, "blaupause", "Blaupause / Schnitt", "Three.js"],
+    [14, "glas", "Glas-Labor", "Blender Cycles"],
+    [15, "holz_gltf", "Holz gebacken", "Blender → glTF → Three.js"],
+  ];
+  const r = document.querySelector(".raster");
+  const bilder = STILE.map(([nr, name, titel, technik]) => {
+    const f = document.createElement("figure");
+    f.innerHTML = `<img src="../../docs/assets/stile/stil_${nr}_${name}.png?v=${Date.now()}" alt=""><figcaption><b>${nr}</b><span>${titel}<small>${technik}</small></span></figcaption>`;
+    r.appendChild(f);
+    return new Promise((ok) => { const i = f.querySelector("img"); i.onload = ok; i.onerror = () => { f.remove(); ok(); }; });
+  });
+  Promise.all([document.fonts.ready, ...bilder]).then(() => (window.__fertig = true));
+</script>
+</head>
+<body>
+<h1>Neue Designstile 9–15 im Maßstab-Layout</h1>
+<p>Gleicher Inhalt: „Deutschlandticket gegen Auto“ · Beispielwerte · Anzeigetafel oben, Szene Mitte, Untertitel-Phrase unten</p>
+<div class="raster"></div>
+</body>
+</html>

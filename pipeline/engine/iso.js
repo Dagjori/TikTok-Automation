@@ -4,7 +4,7 @@
 //
 // Inhalt
 //   ISO, isoMat, isoBox, isoVerlauf        Farben, Material-Cache, Quader, Hintergrund-Verlauf
-//   IsoBuehne                               Renderer: MSAA-Ziel, Übergänge (blende, wisch, schieben), sRGB, Dithering
+//   IsoBuehne                               Renderer: MSAA-Ziel, Übergänge (blende, wisch, schieben, wolken, blasen, zoomwisch), sRGB, Dithering
 //   isoKamera, richteKamera                 orthografische Kamera mit fester Blickrichtung (Azimut/Höhe)
 //   isoLicht                                Sonne mit harten Schatten (folgt dem Bildausschnitt), Himmelslicht
 //   StrassenStreifen                        schwebender Streifen mit Richtungsfahrbahn (2 Spuren), mitlaufender Kulisse,
@@ -16,6 +16,7 @@
 import * as THREE from "three";
 import { feder, FEDER, ease, fortschritt, clamp, lerp, hash } from "./bewegung.js";
 import { el, animiere } from "./hud.js";
+import { UEBERGANG_GLSL, UEBERGANG_NR } from "./uebergaenge.js";
 
 export const ISO = {
   hintergrund: [[0, "#E6E8FD"], [0.55, "#D6DAFB"], [1, "#C3C8F4"]],
@@ -106,6 +107,9 @@ uniform vec3 farbe1, farbe2; uniform float bildNr; uniform float koernung; unifo
 varying vec2 vUv;
 vec3 zuSRGB(vec3 c) { c = clamp(c, 0.0, 1.0); return mix(c * 12.92, 1.055 * pow(c, vec3(1.0 / 2.4)) - 0.055, step(0.0031308, c)); }
 float h12(vec2 q) { vec3 p3 = fract(vec3(q.xyx) * 0.1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }
+#define UE_LIES(t, uv) zuSRGB(texture2D(t, clamp(uv, 0.0, 1.0)).rgb)
+#define UE_FARBE(c) zuSRGB(c)
+${UEBERGANG_GLSL}
 void main() {
   vec3 a = zuSRGB(texture2D(tA, vUv).rgb);
   vec3 col = a;
@@ -127,6 +131,12 @@ void main() {
     vec2 uvB = vUv + dir * (e - 1.0);
     bool inA = all(greaterThanEqual(uvA, vec2(0.0))) && all(lessThanEqual(uvA, vec2(1.0)));
     col = inA ? zuSRGB(texture2D(tA, uvA).rgb) : zuSRGB(texture2D(tB, uvB).rgb);
+  } else if (typ == 10) {
+    col = ue_wolken(tA, tB, vUv, p, aspekt, vec2(0.5), farbe1, farbe2);
+  } else if (typ == 11) {
+    col = ue_blasen(tA, tB, vUv, p, aspekt, farbe1);
+  } else if (typ == 12) {
+    col = ue_zoomwisch(tA, tB, vUv, p, aspekt, vec2(0.5), richtung, farbe1);
   }
   vec2 px = floor(vUv * aufloesung);
   float o = mod(bildNr, 64.0) * 17.31;
@@ -189,10 +199,11 @@ export class IsoBuehne {
       this._welt(weltB, this.rtB, t);
       u.tB.value = this.rtB.texture;
       u.p.value = uebergang.p;
-      u.typ.value = { blende: 1, wisch: 2, schieben: 3 }[uebergang.typ] ?? 1;
+      u.typ.value = { blende: 1, wisch: 2, schieben: 3, ...UEBERGANG_NR }[uebergang.typ] ?? 1;
       u.richtung.value.set(...(uebergang.richtung || [1, 0]));
-      u.farbe1.value.set(uebergang.farbe1 || ISO.gelb);
-      u.farbe2.value.set(uebergang.farbe2 || ISO.blau);
+      const std = { wolken: ["#FFFFFF", "#C9CDF0"], blasen: ["#FFFFFF", "#FFFFFF"], zoomwisch: ["#FFF6D8", "#FFFFFF"] }[uebergang.typ] || [ISO.gelb, ISO.blau];
+      u.farbe1.value.set(uebergang.farbe1 || std[0]);
+      u.farbe2.value.set(uebergang.farbe2 || std[1]);
     }
     u.bildNr.value = bildNr;
     this.renderer.setRenderTarget(null);
@@ -748,7 +759,7 @@ export class IsoDuellTafel {
   }
 }
 
-/** Kleiner Block-Chip im Stil der Markenleiste (weiß bzw. farbig, harter Schatten) */
+/** Kleiner Block-Chip (weiß bzw. farbig, harter Schatten) */
 export function isoChip(hud, { html, x, y, farbe = "#FFFFFF", schrift = ISO.tinte, schatten = "#B9BEE6", klasse = "", ...opt }, Erscheinung) {
   const e = el("div", `iso-chip ${klasse}`, html, hud.wurzel);
   e.style.setProperty("--f", farbe);

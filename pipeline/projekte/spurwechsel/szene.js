@@ -5,7 +5,7 @@
 import * as THREE from "three";
 import { Zeitplan, schaetzeTiming } from "../../engine/zeitplan.js";
 import { Zeitleiste } from "../../engine/zeitleiste.js";
-import { HUD, Markenleiste, Karaoke, Anker, Erscheinung, el, fmt, WUERFEL, SPRECHBLASE } from "../../engine/hud.js";
+import { HUD, Karaoke, Anker, Erscheinung, el, fmt, SPRECHBLASE } from "../../engine/hud.js";
 import { STOPPUHR } from "../../engine/duell.js";
 import { ease, feder, FEDER, fortschritt, clamp, lerp, hash, smoothstep } from "../../engine/bewegung.js";
 import { ISO, IsoBuehne, isoKamera, richteKamera, isoLicht, isoVerlauf, StrassenStreifen, IsoAutos, IsoVerkehr, gierwinkel, IsoDuellTafel, isoChip } from "../../engine/iso.js";
@@ -249,8 +249,7 @@ async function start() {
   // =====================================================================================
   const hud = new HUD(document.getElementById("hud"));
   const KY = 1300;
-  const marke = hud.add(new Markenleiste(hud, { rubrik: `${STOPPUHR}ALLTAG` }));
-  marke.verstecke(tEnde - 0.2, 999);
+  // (Markenleiste entfernt: kein Kanalname, kein Logo, keine Rubrik im Video, Entscheidung 31.10.)
 
   // ---------- Hook: Titel (steht schon im ersten Bild) ----------
   const titel = el("div", "iso-titel", `<div class="klein">Ständig die Spur wechseln?</div><div class="gross"><span class="zahl">20</span> Sekunden.</div><div class="unter">So viel bringt es auf 5 km Stau.</div>`, hud.wurzel);
@@ -453,13 +452,11 @@ async function start() {
   // ---------- Schlusskarte ----------
   const schleier = el("div", "iso-schleier", "", hud.wurzel);
   hud.add({ update: (t) => { schleier.style.opacity = String(ease.inOutSine(fortschritt(t, uEnde - 0.2, uEnde + 0.4))); } });
-  const schluss = el("div", "schluss", `<div class="logoGross">${WUERFEL}SIMULIERBAR</div><div class="aufruf"><span class="blase">${SPRECHBLASE}</span><span>Schreibt euren Simulations&shy;wunsch in die Kommentare</span></div>`, hud.wurzel);
-  const logoGross = schluss.querySelector(".logoGross");
+  const schluss = el("div", "schluss", `<div class="aufruf"><span class="blase">${SPRECHBLASE}</span><span>Schreibt euren Simulations&shy;wunsch in die Kommentare</span></div>`, hud.wurzel);
   const aufruf = schluss.querySelector(".aufruf");
   const blase = schluss.querySelector(".blase");
-  hud.add(new Erscheinung(hud, logoGross, { ein: tEnde + 0.05, stil: "pop", feder: FEDER.knackig, klang: "ding" }));
   hud.add(new Erscheinung(hud, aufruf, {
-    ein: tEnde + 0.35, stil: "hoch", feder: FEDER.standard,
+    ein: tEnde + 0.05, stil: "hoch", feder: FEDER.standard, klang: "ding",
     nachUpdate: (t) => {
       const b = Math.max(0, Math.sin((t - tEnde - 0.9) * 4.2)) * Math.exp(-Math.max(0, t - tEnde - 0.9) * 0.25);
       blase.style.transform = `translateY(${-b * 16}px) rotate(${-b * 6}deg)`;

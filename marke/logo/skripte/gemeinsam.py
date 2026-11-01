@@ -35,11 +35,7 @@ FARBEN = {
 def argumente():
     """Argumente nach '--' auswerten."""
     a = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
-    return {
-        "vorschau": "--vorschau" in a,
-        "nur_render": "--nur-render" in a,
-        "animation": "--animation" in a,
-    }
+    return {"vorschau": "--vorschau" in a}
 
 
 def hex_linear(h, alpha=1.0):
@@ -372,6 +368,7 @@ def speichern_und_exportieren(ordner, name):
             o.select_set(True)
     bpy.ops.export_scene.gltf(filepath=glb, export_format="GLB", use_selection=True, export_apply=True,
                               export_cameras=False, export_lights=False, export_yup=True)
+    bpy.context.preferences.filepaths.save_version = 0  # keine .blend1-Sicherungskopien
     bpy.ops.wm.save_as_mainfile(filepath=blend, compress=True, relative_remap=True)
     print("gespeichert:", blend, glb)
 
@@ -385,3 +382,33 @@ def rendern(pfad, aufloesung=None, samples=None):
     s.render.filepath = pfad
     bpy.ops.render.render(write_still=True)
     print("gerendert:", pfad)
+
+
+def kamera_einpassen(fuellung=0.86, runden=2):
+    """Brennweite und Shift so setzen, dass alle Meshes mittig sitzen und die
+    längere Seite `fuellung` des (quadratischen) Bildes einnimmt."""
+    from bpy_extras.object_utils import world_to_camera_view
+    s = bpy.context.scene
+    cam = s.camera
+    for _ in range(runden):
+        bpy.context.view_layer.update()
+        dg = bpy.context.evaluated_depsgraph_get()
+        us, vs = [], []
+        for o in s.objects:
+            if o.type != "MESH" or not o.visible_get():
+                continue
+            oe = o.evaluated_get(dg)
+            mw = oe.matrix_world
+            for v in oe.data.vertices:
+                co = world_to_camera_view(s, cam, mw @ v.co)
+                us.append(co.x)
+                vs.append(co.y)
+        u0, u1, v0, v1 = min(us), max(us), min(vs), max(vs)
+        e = max(u1 - u0, v1 - v0)
+        f = fuellung / e
+        cu = (u0 + u1) / 2 - 0.5
+        cv = (v0 + v1) / 2 - 0.5
+        cam.data.shift_x = (cam.data.shift_x + cu) * f
+        cam.data.shift_y = (cam.data.shift_y + cv) * f
+        cam.data.lens *= f
+    return cam

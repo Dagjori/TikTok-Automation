@@ -1,6 +1,7 @@
-// HUD-Komponenten (DOM über der 3D-Leinwand): Markenleiste, Schritt-Anzeige, Karten, Chips, Zähler,
-// kinetischer Titel, Karaoke-Untertitel, 3D-Anker-Labels, Schlusskarte.
+// HUD-Komponenten (DOM über der 3D-Leinwand): Schritt-Anzeige, Karten, Chips, Zähler,
+// kinetischer Titel, Karaoke-Untertitel, 3D-Anker-Labels. Die Bausteine nach Maßstab (docs/15) liegen in massstab.js.
 // Jede Komponente hat update(t) und setzt ihren Zustand ausschließlich aus t (deterministisch).
+// Kanalname, Logo und Rubrik erscheinen nie im Video (Entscheidung des Inhabers 31.10.): Markenleiste ist wirkungslos.
 import { feder, FEDER, ease, fortschritt, clamp, lerp } from "./bewegung.js";
 
 export const fmt = {
@@ -15,22 +16,44 @@ export function el(tag, klasse = "", html = "", eltern = null) {
   return e;
 }
 
-export const WUERFEL = '<span class="wuerfel"><i></i><i></i><i></i></span>';
 export const SPRECHBLASE = `<svg width="72" height="72" viewBox="0 0 24 24" fill="none"><path d="M4 5.5C4 4.67 4.67 4 5.5 4h13c.83 0 1.5.67 1.5 1.5v9c0 .83-.67 1.5-1.5 1.5H10l-4.2 3.6c-.33.28-.8.05-.8-.38V16h-.5C3.67 16 3 15.33 3 14.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="10" r="1.3" fill="#FFD23F"/><circle cx="12" cy="10" r="1.3" fill="#FF7A1A"/><circle cx="15.5" cy="10" r="1.3" fill="#19B36B"/></svg>`;
 
 export class HUD {
   constructor(wurzel) {
     this.wurzel = wurzel;
     this.teile = [];
-    this.klang = []; // Klang-Ereignisse {t, typ, ...} für die Tonspur
+    this.klang = []; // Klang-Ereignisse {t, typ, ...} für die Tonspur (ältere Bausteine und Handeinträge der Szene)
+    this._teilKlang = new Set();
   }
   add(teil) {
     this.teile.push(teil);
-    if (teil.klangEreignisse) this.klang.push(...teil.klangEreignisse());
+    if (teil.klangEreignisse && !teil.ereignisse) {
+      const k = teil.klangEreignisse();
+      teil.__klang = k;
+      k.forEach((e) => this._teilKlang.add(e));
+      this.klang.push(...k);
+    }
     return teil;
   }
   update(t) {
     for (const teil of this.teile) teil.update(t);
+  }
+  /**
+   * Ereignis-Protokoll aller Bausteine: [{t, typ, dauer?, klang?, laufend?, quelle, …}].
+   * Neue Bausteine melden sich über ereignisse(); ältere werden aus ihren Klang-Ereignissen abgeleitet.
+   */
+  protokoll() {
+    const liste = [];
+    for (const teil of this.teile) {
+      const quelle = teil.constructor && teil.constructor.name !== "Object" ? teil.constructor.name : "Teil";
+      if (teil.ereignisse) liste.push(...teil.ereignisse().map((e) => ({ quelle, ...e })));
+      else if (teil.__klang) liste.push(...teil.__klang.map((k) => ({ t: k.t, typ: "element", dauer: k.dauer, klang: k.typ, quelle })));
+    }
+    return liste.filter((e) => Number.isFinite(e.t)).sort((a, b) => a.t - b.t);
+  }
+  /** Klänge, die die Szene von Hand in hud.klang ergänzt hat (nicht aus Bausteinen) */
+  extraKlang() {
+    return this.klang.filter((k) => !this._teilKlang.has(k));
   }
 }
 
@@ -61,25 +84,17 @@ export function animiere(e, t, { ein, aus = Infinity, stil = "pop", feder: f = F
   return { sichtbar: true, s, e: x };
 }
 
-// ---------- Markenleiste ----------
+// ---------- Markenleiste (abgeschafft) ----------
+/**
+ * Wirkungslos seit 31.10.: Kanalname, Würfel-Logo und Rubrik-Chip erscheinen nie mehr im Video.
+ * Bleibt nur, damit ältere Szenen ohne Änderung laufen; erzeugt kein Element.
+ */
 export class Markenleiste {
-  constructor(hud, { rubrik = "€ GELD", ein = -1 } = {}) {
-    this.e = el("div", "marke", `<div class="logo">${WUERFEL}SIMULIERBAR</div><div class="rubrik">${rubrik}</div>`, hud.wurzel);
-    this.ein = ein;
-    this.ausblenden = [];
-  }
-  /** Bereiche [von, bis], in denen die Leiste ausgeblendet ist (z. B. Schlusskarte) */
-  verstecke(von, bis) {
-    this.ausblenden.push([von, bis]);
+  constructor() {}
+  verstecke() {
     return this;
   }
-  update(t) {
-    let o = 1;
-    for (const [a, b] of this.ausblenden) {
-      o = Math.min(o, 1 - clamp((t - a) / 0.3) * (1 - clamp((t - b) / 0.3)));
-    }
-    this.e.style.opacity = String(o);
-  }
+  update() {}
 }
 
 // ---------- Schritt-Anzeige ----------

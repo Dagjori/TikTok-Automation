@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Stil 15 · Holz gebacken (Blender → glTF → Three.js)</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<link rel="stylesheet" href="massstab.css">
+<script type="importmap">
+{ "imports": {
+  "three": "../node_modules/three/build/three.module.js",
+  "three/addons/": "../node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  body { background: #e9e2d6; }
+  /* gleiche Tafel wie Stil 9 */
+  :root {
+    --a: #2f6fed; --a-hell: #86b6ff; --b: #ff7a1a; --b-hell: #ffb36b;
+    --tafel-bg: #f2dfbd repeating-linear-gradient(176deg, rgba(160, 110, 50, 0.0) 0 11px, rgba(160, 110, 50, 0.10) 11px 13px, rgba(160, 110, 50, 0.0) 13px 29px);
+    --tafel-text: #3a2614; --tafel-grau: #8a6a46; --tafel-radius: 34px; --tafel-rand: none;
+    --tafel-schatten: inset 0 -7px 0 rgba(120, 75, 30, 0.22), inset 0 3px 0 rgba(255, 255, 255, 0.55), 0 22px 40px -16px rgba(70, 40, 10, 0.55);
+    --mitte-bg: radial-gradient(circle at 40% 35%, #ffe08a, #ffc93c 60%, #e9a91c); --mitte-text: #3a2614; --mitte-rand: 6px solid #f7c64a;
+    --chip-bg: #ffc93c; --chip-text: #3a2614; --chip-schatten: inset 0 -4px 0 rgba(120, 75, 30, 0.25), 0 14px 26px -12px rgba(70, 40, 10, 0.6);
+  }
+  .tafel9 .wer { box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.18), inset 0 2px 0 rgba(255, 255, 255, 0.3); }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./stil_15_holz_gltf.js"></script>
+</body>
+</html>

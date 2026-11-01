@@ -107,3 +107,27 @@ export function keyframes(keys, t) {
   }
   return keys[keys.length - 1].v;
 }
+
+/**
+ * Schleifen-Helfer für beliebige Werte: im Fenster [ab, ende] gleitet der Wert zum Wert bei t = 0 zurück
+ * (die Bewegung läuft dabei gebremst weiter, wirkt wie ein Zurückspulen). f(t) → Zahl | Array | THREE.Vector3.
+ * Ab t = ende gilt exakt f(0): letztes Bild = erstes Bild.
+ */
+export function schleifenWert(f, { ab, ende, kurve = ease.inOutCubic } = {}) {
+  if (ab === undefined || ende === undefined) return f;
+  return (t) => {
+    if (t < ab) return f(t);
+    const k = kurve(fortschritt(t, ab, ende));
+    const a = f(ab + (t - ab) * (1 - k));
+    const b = f(0);
+    if (typeof a === "number") return lerp(a, b, k);
+    if (a && a.isVector3) return a.clone().lerp(b, k);
+    if (Array.isArray(a)) return a.map((x, i) => lerp(x, b[i], k));
+    if (a && typeof a === "object") {
+      const o = {};
+      for (const key of Object.keys(a)) o[key] = typeof a[key] === "number" && typeof b[key] === "number" ? lerp(a[key], b[key], k) : k < 0.5 ? a[key] : b[key];
+      return o;
+    }
+    return k < 0.5 ? a : b;
+  };
+}

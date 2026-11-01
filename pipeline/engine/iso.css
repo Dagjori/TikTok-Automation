@@ -3,9 +3,6 @@
 
 body.iso { background: #dfe2fb; }
 
-/* Markenleiste als Klötzchen (wie im Stil-Muster) */
-.iso .marke .logo { background: #fff; color: #1c1d3a; height: 64px; border-radius: 14px; padding: 0 24px 0 10px; box-shadow: 0 7px 0 #b9bee6; font-size: 28px; letter-spacing: 0.08em; }
-.iso .marke .rubrik { height: 64px; border-radius: 14px; box-shadow: 0 7px 0 #d9a90f; font-size: 28px; }
 
 /* Titel im Hook */
 .iso-titel { position: absolute; left: 54px; width: 876px; color: #1c1d3a; will-change: transform, opacity; }
@@ -77,7 +74,6 @@ body.iso { background: #dfe2fb; }
 .iso-zaehler .txt span i { font-style: normal; }
 
 /* Schlusskarte auf hellem Grund */
-.iso .schluss .logoGross { color: #1c1d3a; }
 .iso .schluss .aufruf { border-radius: 26px; box-shadow: 0 12px 0 #b9bee6; }
 .iso .schluss .aufruf .blase { border-radius: 26px; box-shadow: 0 8px 0 #1f4fb8; }
 .iso-schleier { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(230, 232, 253, 0.92), rgba(195, 200, 244, 0.94)); will-change: opacity; }

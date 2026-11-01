@@ -1,9 +1,10 @@
 // Kern: WebGL-Renderer und Nachbearbeitung (Bloom, Tilt-Shift/Unschärfe, ACES-Filmic,
-// Farbkorrektur, Vignette, Körnung, FXAA) sowie Szenenübergänge.
+// Farbkorrektur, Vignette, Körnung, FXAA) sowie Szenenübergänge (blende, iris, wisch, zoom, wolken, blasen, zoomwisch).
 // Ablauf je Bild:  Welt → HDR-Ziel → [Bloom-Kette, Unschärfe-Kette] → Komposit (ACES) → LDR-Ziel
 //                  (→ Übergang mischt zwei LDR-Ziele) → FXAA → Körnung → Bildschirm
 import * as THREE from "three";
 import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
+import { UEBERGANG_GLSL, UEBERGANG_NR } from "./uebergaenge.js";
 
 const VERTEX = /* glsl */ `
 varying vec2 vUv;
@@ -100,6 +101,10 @@ const UEBERGANG = /* glsl */ `
 uniform sampler2D tA, tB; uniform float p; uniform int typ; uniform vec2 mitte; uniform float aspekt;
 uniform vec2 richtung; uniform vec3 farbe1, farbe2;
 varying vec2 vUv;
+vec3 ue_srgb(vec3 c) { c = clamp(c, 0.0, 1.0); return mix(c * 12.92, 1.055 * pow(c, vec3(1.0 / 2.4)) - 0.055, step(0.0031308, c)); }
+#define UE_LIES(t, uv) texture2D(t, clamp(uv, 0.0, 1.0)).rgb
+#define UE_FARBE(c) ue_srgb(c)
+${UEBERGANG_GLSL}
 vec3 zoomBlur(sampler2D t, vec2 uv, vec2 m, float staerke) {
   vec3 c = vec3(0.0);
   for (int i = 0; i < 12; i++) { float f = 1.0 - staerke * float(i) / 11.0; c += texture2D(t, m + (uv - m) * f).rgb; }
@@ -132,6 +137,12 @@ void main() {
     vec3 b = texture2D(tB, vUv - dir * vec2(1.0 / aspekt, 1.0) * (1.0 - p) * 0.06).rgb;
     float x = front - s;
     col = x < 0.0 ? a : (x < breite ? farbe1 : (x < 2.0 * breite ? farbe2 : b));
+  } else if (typ == 10) {
+    col = ue_wolken(tA, tB, vUv, p, aspekt, mitte, farbe1, farbe2);
+  } else if (typ == 11) {
+    col = ue_blasen(tA, tB, vUv, p, aspekt, farbe1);
+  } else if (typ == 12) {
+    col = ue_zoomwisch(tA, tB, vUv, p, aspekt, mitte, richtung, farbe1);
   } else { // Zoom: A fliegt auf den Betrachter zu, B kommt aus der Tiefe
     float e = smoothstep(0.0, 1.0, p);
     vec2 uvA = mitte + (vUv - mitte) / (1.0 + e * 1.6);
@@ -357,7 +368,7 @@ export class Buehne {
   /**
    * Ein Bild zeichnen.
    * @param {object} weltA  aktive Welt
-   * @param {object} [opt]  { weltB, uebergang: {typ:'blende'|'iris'|'wisch'|'zoom', p, mitte:[x,y], richtung:[x,y], farbe1, farbe2}, bildNr, t }
+   * @param {object} [opt]  { weltB, uebergang: {typ:'blende'|'iris'|'wisch'|'zoom'|'wolken'|'blasen'|'zoomwisch', p, mitte:[x,y], richtung:[x,y], farbe1, farbe2}, bildNr, t }
    */
   zeichne(weltA, { weltB = null, uebergang = null, bildNr = 0, t = 0 } = {}) {
     const r = this.renderer;
@@ -371,7 +382,11 @@ export class Buehne {
       u.tA.value = this.rtLdrA.texture;
       u.tB.value = this.rtLdrB.texture;
       u.p.value = uebergang.p;
-      u.typ.value = { blende: 0, iris: 1, wisch: 2, zoom: 3 }[uebergang.typ] ?? 0;
+      u.typ.value = { blende: 0, iris: 1, wisch: 2, zoom: 3, ...UEBERGANG_NR }[uebergang.typ] ?? 0;
+      // Standardfarben der neuen Übergänge (Wolken: hell/Schatten, Blasen: Rand, Zoom-Wisch: Lichtkante)
+      const std = { wolken: ["#FFFFFF", "#C9D3E6"], blasen: ["#FFFFFF", "#FFFFFF"], zoomwisch: ["#FFF6D8", "#FFFFFF"] }[uebergang.typ];
+      if (std && !uebergang.farbe1) u.farbe1.value.set(std[0]);
+      if (std && !uebergang.farbe2) u.farbe2.value.set(std[1]);
       u.mitte.value.set(...(uebergang.mitte || [0.5, 0.5]));
       u.richtung.value.set(...(uebergang.richtung || [1, 0]));
       if (uebergang.farbe1) u.farbe1.value.set(uebergang.farbe1);

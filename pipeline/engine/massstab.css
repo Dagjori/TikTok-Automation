@@ -1,0 +1,164 @@
+/* Maßstab-Bausteine (docs/15 §4, §8): Anzeigetafel, Live-Zähler, Renn-Uhr, Countdown-Ring, Chips, Sticker/Stempel,
+   Fortschrittsleiste, Formel-, Bilanz- und Aufschlüsselungskarte, Pointe, Folgen-Aufruf, Phrasen-Untertitel.
+   Nach hud.css einbinden. Teamfarben und Flächen sind Theme-Variablen (setzt Massstab je Video auf #hud):
+   --team-a, --team-b, --akzent, --tinte, --karte, --karte-text.  Sichere Zonen: oben 150 px, rechts 150 px (x ≤ 930),
+   nichts Wichtiges unter y ≈ 1500. */
+
+#hud {
+  --team-a: #ff5a4e;
+  --team-b: #13b5a6;
+  --team-a-text: #fff;
+  --team-b-text: #fff;
+  --akzent: #ffd23f;
+  --tinte: #12151d;
+  --karte: #ffffff;
+  --karte-text: #12151d;
+  --karte-grau: #6b7385;
+  --karte-linie: #e7eaf0;
+  --ms-radius: 30px;
+  --ms-schatten: 0 2px 0 rgba(18, 21, 29, 0.06), 0 20px 44px -14px rgba(8, 12, 28, 0.5);
+}
+.ms { position: absolute; will-change: transform, opacity; font-family: var(--display); color: var(--karte-text); }
+.ms, .ms * { font-feature-settings: "tnum" 1, "ss01" 1, "cv11" 1; }
+.ms-unsichtbar { visibility: hidden; }
+
+/* ---------- Rollzahl (Ziffern rollen wie ein Zählwerk) ---------- */
+.ms-rz { display: inline-flex; align-items: flex-end; white-space: nowrap; }
+.ms-rz-z { display: inline-flex; align-items: flex-start; }
+.ms-rz-s { display: inline-block; height: 1.04em; overflow: hidden; line-height: 1.04em; }
+.ms-rz-b { display: flex; flex-direction: column; will-change: transform; }
+.ms-rz-b span { display: block; height: 1.04em; text-align: center; }
+.ms-rz-t { display: inline-block; line-height: 1.04em; }
+.ms-rz small { font-size: 0.42em; font-weight: 800; letter-spacing: 0; margin-left: 0.14em; color: var(--karte-grau); line-height: 1.6; }
+
+/* ---------- Titel im Hook ---------- */
+.ms-titel { left: 54px; width: 876px; text-align: center; color: #fff; font-weight: 900; letter-spacing: -0.03em; line-height: 0.98; }
+.ms-titel .ms-tz { display: block; white-space: nowrap; }
+.ms-titel .ms-tz + .ms-tz { margin-top: 0.1em; }
+.ms-titel .ms-tw { display: inline-block; overflow: hidden; padding: 0.08em 0.1em 0.16em; margin: -0.08em 0 -0.16em; vertical-align: top; }
+.ms-titel .ms-twi { display: inline-block; will-change: transform; -webkit-text-stroke: 0.085em var(--tinte); paint-order: stroke fill; text-shadow: 0 0.075em 0 var(--tinte); }
+.ms-titel .ms-tw.klein { font-size: 0.56em; letter-spacing: -0.01em; }
+.ms-titel .ms-vs { display: inline-flex; align-items: center; justify-content: center; width: 1.05em; height: 1.05em; border-radius: 50%; background: var(--tinte); color: #fff; font-size: 0.5em; letter-spacing: 0; -webkit-text-stroke: 0; text-shadow: none; box-shadow: 0 0 0 0.09em #fff, 0 0.2em 0.5em rgba(0, 0, 0, 0.35); transform-origin: 50% 50%; vertical-align: 0.38em; margin: 0 0.12em; }
+.ms-titel .ms-vs i { font-style: normal; display: inline-block; transform: skewX(-8deg); }
+
+/* ---------- Anzeigetafel oben ---------- */
+.ms-tafel { left: 54px; width: 876px; height: 150px; display: flex; align-items: center; transform-origin: 50% 0; }
+.ms-seite { position: relative; flex: 1 1 0; height: 136px; min-width: 0; border-radius: var(--ms-radius); background: var(--karte); box-shadow: var(--ms-schatten); padding: 16px 34px 0; overflow: hidden; will-change: transform; }
+.ms-seite.links { margin-right: -34px; padding-right: 64px; }
+.ms-seite.rechts { margin-left: -34px; padding-left: 64px; text-align: right; }
+.ms-seite .ms-glanz { position: absolute; inset: 0; background: var(--tf); opacity: 0; }
+.ms-seite .ms-kopf { position: relative; display: flex; align-items: center; gap: 10px; height: 34px; font-weight: 900; font-size: 26px; letter-spacing: 0.08em; color: var(--tf); white-space: nowrap; }
+.ms-seite.rechts .ms-kopf { justify-content: flex-end; }
+.ms-seite .ms-kopf i { width: 16px; height: 16px; border-radius: 50%; background: var(--tf); box-shadow: 0 0 0 5px color-mix(in srgb, var(--tf) 22%, transparent); flex: none; }
+.ms-seite .ms-vorn { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 999px; background: var(--tinte); color: #fff; font-size: 18px; letter-spacing: 0.08em; transform-origin: 50% 50%; }
+.ms-seite .ms-wert { position: relative; font-weight: 900; font-size: 74px; line-height: 1; letter-spacing: -0.03em; margin-top: 4px; white-space: nowrap; }
+.ms-seite .ms-spur { position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: color-mix(in srgb, var(--tf) 18%, transparent); }
+.ms-seite .ms-spur b { position: absolute; inset: 0; background: var(--tf); transform-origin: left center; transform: scaleX(0); }
+.ms-seite.rechts .ms-spur b { transform-origin: right center; }
+.ms-seite.vorn .ms-kopf, .ms-seite.vorn .ms-wert, .ms-seite.vorn .ms-rz small { color: var(--tt); }
+.ms-seite.vorn .ms-kopf i { background: var(--tt); box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.28); }
+.ms-mitte { position: relative; z-index: 2; flex: none; width: 140px; height: 140px; border-radius: 50%; background: var(--tinte); box-shadow: 0 0 0 7px var(--karte), 0 16px 36px -10px rgba(0, 0, 0, 0.55); display: flex; align-items: center; justify-content: center; color: #fff; }
+.ms-mitte svg { position: absolute; inset: 10px; width: 120px; height: 120px; transform: rotate(-90deg); }
+.ms-mitte .ms-vs, .ms-mitte .ms-uhrtext { position: absolute; font-weight: 900; will-change: transform, opacity; }
+.ms-mitte .ms-vs { font-size: 50px; letter-spacing: -0.02em; transform: skewX(-8deg); }
+.ms-mitte .ms-uhrtext { font-size: 36px; letter-spacing: -0.02em; text-align: center; line-height: 1; }
+.ms-mitte .ms-uhrtext small { display: block; font-size: 15px; letter-spacing: 0.14em; color: var(--akzent); margin-top: 6px; }
+
+/* ---------- Renn-Uhr / Stoppuhr ---------- */
+.ms-uhr { display: flex; flex-direction: column; align-items: center; transform-origin: 50% 40%; }
+.ms-uhr svg { display: block; overflow: visible; filter: drop-shadow(0 16px 22px rgba(8, 12, 28, 0.38)); }
+.ms-uhr .ms-digital { margin-top: -18px; position: relative; display: inline-flex; align-items: center; gap: 10px; height: 64px; padding: 0 22px; border-radius: 999px; background: var(--tinte); color: #fff; font-weight: 900; font-size: 40px; letter-spacing: -0.02em; box-shadow: 0 0 0 5px var(--karte), 0 12px 26px -8px rgba(0, 0, 0, 0.5); white-space: nowrap; }
+.ms-uhr .ms-digital small { font-size: 18px; letter-spacing: 0.1em; color: var(--akzent); }
+
+/* ---------- Countdown-/Pausen-Ring ---------- */
+.ms-ring { left: 0; top: 0; display: flex; flex-direction: column; align-items: center; }
+.ms-ring .ms-rk { position: relative; border-radius: 50%; background: var(--karte); box-shadow: var(--ms-schatten); display: flex; align-items: center; justify-content: center; }
+.ms-ring svg { position: absolute; inset: 0; transform: rotate(-90deg); overflow: visible; }
+.ms-ring .ms-rzahl { position: relative; font-weight: 900; letter-spacing: -0.03em; line-height: 1; color: var(--karte-text); }
+.ms-ring .ms-rzahl small { font-size: 0.36em; font-weight: 800; margin-left: 0.06em; color: var(--karte-grau); }
+.ms-ring .ms-rlabel { margin-top: 12px; height: 46px; display: inline-flex; align-items: center; gap: 8px; padding: 0 18px; border-radius: 999px; background: var(--tf); color: var(--tt); font-weight: 900; font-size: 26px; letter-spacing: 0.08em; box-shadow: 0 10px 22px -8px rgba(0, 0, 0, 0.45); white-space: nowrap; }
+
+/* ---------- Chips ---------- */
+.ms-chip { left: 0; top: 0; height: 78px; display: inline-flex; align-items: center; gap: 14px; padding: 0 30px; border-radius: 999px; font-weight: 900; font-size: 40px; letter-spacing: -0.005em; white-space: nowrap; box-shadow: var(--ms-schatten); transform-origin: 50% 60%; }
+.ms-chip.hell { background: var(--karte); color: var(--karte-text); padding-left: 22px; }
+.ms-chip.hell i { width: 22px; height: 22px; border-radius: 50%; background: var(--tf); box-shadow: 0 0 0 6px color-mix(in srgb, var(--tf) 20%, transparent); flex: none; }
+.ms-chip.voll { background: var(--tf); color: var(--tt); }
+.ms-chip.voll i, .ms-chip.dunkel i { display: none; }
+.ms-chip.dunkel { background: var(--tinte); color: #fff; }
+.ms-chip.gross { height: 96px; font-size: 52px; padding: 0 38px; }
+.ms-chip .ms-puls { position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 0 4px var(--tf); opacity: 0; pointer-events: none; }
+.ms-chip.dunkel .ms-puls, .ms-chip.hell .ms-puls { box-shadow: 0 0 0 4px var(--tf); }
+.ms-chip em { font-style: normal; color: var(--tf); }
+.ms-chip.voll em { color: var(--tt); text-decoration: underline; text-decoration-thickness: 0.08em; text-underline-offset: 0.12em; }
+
+/* ---------- Sticker und Stempel ---------- */
+.ms-stempel { left: 0; top: 0; width: 0; height: 0; }
+.ms-stempel .ms-st-in { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.ms-stempel .ms-strahlen { position: absolute; left: 0; top: 0; overflow: visible; will-change: transform, opacity; }
+.ms-stempel .ms-plakette { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); padding: 0.14em 0.42em 0.18em; border-radius: 0.24em; background: var(--sf); color: var(--sc); font-weight: 900; letter-spacing: -0.035em; line-height: 1; white-space: nowrap; box-shadow: 0 0 0 0.075em #fff, 0 0.1em 0 0.075em rgba(0, 0, 0, 0.22), 0 0.32em 0.6em -0.1em rgba(0, 0, 0, 0.5); }
+.ms-stempel.stempel .ms-plakette { background: rgba(255, 255, 255, 0.94); color: var(--sf); box-shadow: inset 0 0 0 0.075em var(--sf), inset 0 0 0 0.12em #fff, inset 0 0 0 0.15em var(--sf), 0 0.3em 0.6em -0.12em rgba(0, 0, 0, 0.45); padding: 0.2em 0.5em 0.24em; border-radius: 0.14em; letter-spacing: 0.01em; }
+
+/* ---------- Fortschrittsleiste ---------- */
+.ms-leiste { left: 54px; width: 876px; height: 108px; border-radius: 28px; background: var(--karte); box-shadow: var(--ms-schatten); padding: 0 76px 0 30px; transform-origin: 50% 100%; }
+.ms-leiste .ms-bahn { position: absolute; left: 30px; right: 86px; height: 10px; border-radius: 5px; background: var(--karte-linie); }
+.ms-leiste .ms-bahn b { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; border-radius: 5px; background: var(--tf); transform-origin: left center; transform: scaleX(0); }
+.ms-leiste .ms-marke { position: absolute; top: 40px; bottom: 14px; width: 4px; margin-left: -2px; border-radius: 2px; background: var(--karte-linie); }
+.ms-leiste .ms-marke.vorbei { background: var(--tinte); }
+.ms-leiste .ms-marke span { position: absolute; bottom: -2px; left: 50%; transform: translate(-50%, 100%); font-weight: 900; font-size: 0; }
+.ms-leiste .ms-punkt { position: absolute; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; background: var(--tf); box-shadow: 0 0 0 5px #fff, 0 6px 14px -2px rgba(0, 0, 0, 0.4); will-change: transform; z-index: 2; }
+.ms-leiste .ms-punkt span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: var(--tt); font-weight: 900; font-size: 17px; letter-spacing: 0; }
+.ms-leiste .ms-flagge { position: absolute; right: 22px; top: 50%; width: 46px; height: 58px; margin-top: -29px; }
+.ms-leiste .ms-lbl { position: absolute; left: 30px; top: 10px; font-family: var(--text); font-weight: 800; font-size: 18px; letter-spacing: 0.12em; color: var(--karte-grau); text-transform: uppercase; }
+
+/* ---------- Karten (Formel, Bilanz, Aufschlüsselung) ---------- */
+.ms-karte { left: 54px; width: 876px; border-radius: 34px; background: var(--karte); box-shadow: var(--ms-schatten); padding: 26px 34px 30px; transform-origin: 50% 30%; }
+.ms-karte .ms-kk { display: flex; align-items: center; gap: 12px; font-family: var(--text); font-weight: 800; font-size: 24px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--karte-grau); }
+.ms-karte .ms-kk i { width: 14px; height: 14px; border-radius: 4px; background: var(--akzent); transform: rotate(45deg); box-shadow: 0 0 0 4px color-mix(in srgb, var(--akzent) 30%, transparent); }
+.ms-formel .ms-ft { display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 18px; margin-top: 14px; white-space: nowrap; }
+.ms-formel .ms-tok { display: inline-flex; align-items: baseline; font-weight: 900; font-size: 84px; letter-spacing: -0.035em; line-height: 1.05; color: var(--tf, var(--karte-text)); will-change: transform, opacity; }
+.ms-formel .ms-tok small { font-size: 0.46em; font-weight: 800; letter-spacing: -0.01em; margin-left: 0.1em; color: var(--karte-grau); }
+.ms-formel .ms-tok.op { width: 74px; height: 74px; border-radius: 50%; background: var(--tinte); color: #fff; font-size: 50px; justify-content: center; align-items: center; letter-spacing: 0; }
+.ms-formel .ms-tok.erg { padding: 4px 26px 8px; border-radius: 26px; background: var(--akzent); color: var(--tinte); box-shadow: 0 14px 30px -12px color-mix(in srgb, var(--akzent) 80%, transparent); }
+.ms-formel .ms-tok.erg small { color: color-mix(in srgb, var(--tinte) 65%, transparent); }
+.ms-formel .ms-unter { margin-top: 16px; text-align: center; font-weight: 900; font-size: 40px; letter-spacing: 0.01em; color: var(--tf, var(--karte-text)); will-change: transform, opacity; }
+
+.ms-bilanz .ms-bz { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 18px; height: 88px; margin-top: 12px; padding: 0 24px; border-radius: 22px; background: color-mix(in srgb, var(--karte-linie) 55%, var(--karte)); will-change: transform, opacity; overflow: hidden; }
+.ms-bilanz .ms-bz .l { display: flex; align-items: center; gap: 14px; font-weight: 900; font-size: 36px; letter-spacing: 0.02em; color: var(--karte-text); white-space: nowrap; }
+.ms-bilanz .ms-bz .l i { width: 18px; height: 18px; border-radius: 50%; background: var(--tf); box-shadow: 0 0 0 5px color-mix(in srgb, var(--tf) 22%, transparent); flex: none; }
+.ms-bilanz .ms-bz .r { font-weight: 900; font-size: 58px; letter-spacing: -0.03em; color: var(--tf, var(--karte-text)); }
+.ms-bilanz .ms-bz.diff { background: color-mix(in srgb, var(--akzent) 26%, var(--karte)); box-shadow: inset 0 0 0 3px var(--akzent); }
+.ms-bilanz .ms-bz.diff .r { color: var(--karte-text); }
+.ms-bilanz .ms-bz .zusatz { font-family: var(--text); font-weight: 800; font-size: 22px; letter-spacing: 0.06em; color: var(--karte-grau); margin-left: 10px; }
+.ms-bilanz .ms-sieger { display: flex; align-items: center; justify-content: center; gap: 16px; height: 92px; margin-top: 14px; border-radius: 22px; background: var(--tf); color: var(--tt); font-weight: 900; font-size: 46px; letter-spacing: 0.02em; will-change: transform, opacity; box-shadow: 0 16px 34px -14px var(--tf); }
+
+.ms-balken .ms-fk { margin-top: 18px; will-change: transform, opacity; }
+.ms-balken .ms-fk .kopf { display: flex; align-items: center; justify-content: space-between; font-weight: 900; font-size: 32px; letter-spacing: 0.04em; color: var(--karte-text); }
+.ms-balken .ms-fk .tag { display: inline-flex; align-items: center; height: 44px; padding: 0 16px; border-radius: 999px; background: var(--tinte); color: #fff; font-size: 24px; letter-spacing: 0.08em; will-change: transform, opacity; }
+.ms-balken .ms-zeile { display: flex; align-items: center; gap: 14px; margin-top: 10px; }
+.ms-balken .ms-zeile .spur { position: relative; flex: 1 1 auto; height: 40px; border-radius: 12px; background: color-mix(in srgb, var(--karte-linie) 70%, var(--karte)); overflow: hidden; }
+.ms-balken .ms-zeile .spur b { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; border-radius: 12px; background: var(--tf); transform-origin: left center; transform: scaleX(0); }
+.ms-balken .ms-zeile .w { flex: none; width: 150px; text-align: right; font-weight: 900; font-size: 44px; letter-spacing: -0.03em; color: var(--tf); }
+
+/* ---------- Pointe (große Typo) ---------- */
+.ms-pointe { left: 54px; width: 876px; text-align: center; color: #fff; font-weight: 900; letter-spacing: -0.04em; line-height: 0.94; }
+.ms-pointe .ms-pz { display: block; white-space: nowrap; }
+.ms-pointe .ms-pw { position: relative; display: inline-block; margin: 0 0.1em; will-change: transform, opacity; -webkit-text-stroke: 0.08em var(--tinte); paint-order: stroke fill; text-shadow: 0 0.07em 0 var(--tinte), 0 0.2em 0.5em rgba(0, 0, 0, 0.4); }
+.ms-pointe .ms-pw.akzent { color: var(--akzent); }
+.ms-pointe .ms-pw.a { color: var(--team-a); }
+.ms-pointe .ms-pw.b { color: var(--team-b); }
+
+/* ---------- Folgen-Aufruf ---------- */
+.ms-folgen { left: 0; top: 0; display: flex; align-items: center; gap: 12px; transform-origin: 100% 50%; }
+.ms-folgen .ms-fp { display: inline-flex; align-items: center; gap: 14px; height: 80px; padding: 0 32px 0 12px; border-radius: 999px; background: var(--tinte); color: #fff; font-weight: 900; font-size: 38px; letter-spacing: -0.01em; box-shadow: var(--ms-schatten); white-space: nowrap; }
+.ms-folgen .ms-plus { position: relative; width: 56px; height: 56px; border-radius: 50%; background: var(--tf); flex: none; }
+.ms-folgen .ms-plus svg { position: absolute; inset: 0; }
+.ms-folgen .ms-pfeil { width: 92px; height: 62px; overflow: visible; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35)); }
+
+/* ---------- Phrasen-Untertitel (§8): Block, kein Kasten, Kontur, Schlüsselwort in Teamfarbe ---------- */
+.ms-ut { position: absolute; left: 54px; width: 876px; height: 0; }
+.ms-ut .ms-ub { position: absolute; left: 0; right: 0; bottom: 0; text-align: center; display: none; will-change: transform, opacity; transform-origin: 50% 100%; }
+.ms-ut .ms-ul { display: block; white-space: nowrap; font-family: var(--display); font-weight: 900; line-height: 1.16; letter-spacing: -0.005em; color: #fff; }
+.ms-ut .ms-uw { display: inline-block; padding: 0 0.15em; -webkit-text-stroke: 0.17em #000; paint-order: stroke fill; text-shadow: 0 0.05em 0.02em rgba(0, 0, 0, 0.85), 0 0.08em 0.3em rgba(0, 0, 0, 0.45); }
+.ms-ut .ms-uw.a { color: var(--team-a); }
+.ms-ut .ms-uw.b { color: var(--team-b); }
+.ms-ut .ms-uw.akzent { color: var(--akzent); }

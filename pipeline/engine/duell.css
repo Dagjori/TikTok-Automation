@@ -1,6 +1,5 @@
 /* Duell-HUD (zwei Teams): Rundenanzeige, Anzeigetafel, Ergebnis-Pille, Regel-Karte. Ergänzt hud.css. */
 
-.marke .rubrik .symbol { margin-right: 10px; margin-left: -6px; }
 
 /* Rundenanzeige nutzt die Stile von .schritt */
 .schritt.runde .nr { color: var(--tinte); }

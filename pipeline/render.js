@@ -12,6 +12,9 @@
 //             --bilder 12,13,400   nur diese Bildnummern neu rendern (z. B. nach kleinen Korrekturen)
 //
 // Die Szene (szene.html) muss window.renderAt(t), window.dauer und window.__fertig bereitstellen.
+// Ereignis-Protokoll: Szenen mit Maßstab-Bausteinen setzen window.ereignisse (engine/massstab.js → veroeffentliche()).
+// render.js schreibt es nach <projekt>/audio/ereignisse.json (für klang.py und qc/massstab.py) und nach out/<name>/ereignisse.json.
+// Ältere Szenen ohne Protokoll: Die Klang-Ereignisse (window.klangEreignisse) werden als Ersatz-Protokoll eingetragen.
 import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";
@@ -84,7 +87,7 @@ function timingVorbereiten(projektDir) {
   fs.mkdirSync(path.join(projektDir, "audio"), { recursive: true });
   const t = schaetzeTiming(skript);
   fs.writeFileSync(path.join(projektDir, "audio", "timing_schaetzung.json"), JSON.stringify(t, null, 1));
-  return `timing_schaetzung.json (geschätzt, ${t.dauer.toFixed(1)} s Sprechzeit)`;
+  return `timing_schaetzung.json (geschätzt, ${t.dauer.toFixed(1)} s Sprechzeit, ${t.wps} W/s, Satzpause ${t.schaetzung.satzpause} s)`;
 }
 
 async function oeffneSeite(chromium, url, gpu = false) {
@@ -122,9 +125,30 @@ async function main() {
   const erste = await oeffneSeite(chromium, url, a.gpu);
   const dauer = await erste.page.evaluate(() => window.dauer);
   const fps = a.fps;
-  const meta = await erste.page.evaluate(() => ({ dauer: window.dauer, klang: window.klangEreignisse || [], stimmEnde: window.stimmEnde }));
+  const meta = await erste.page.evaluate(() => ({
+    dauer: window.dauer, klang: window.klangEreignisse || [], stimmEnde: window.stimmEnde,
+    ereignisse: window.ereignisse || null, teppich: window.klangteppich || null, massstab: window.massstab || null,
+  }));
+  const protokoll = Array.isArray(meta.ereignisse);
+  const inhalt = {
+    version: 2,
+    erzeugt: "render.js",
+    projekt: name,
+    fps,
+    dauer: meta.dauer,
+    stimmEnde: meta.stimmEnde,
+    timing: timingInfo,
+    protokoll, // true: ereignisse = Bild-Ereignisse aller Bausteine, klang = nur zusätzliche Klänge der Szene
+    teppich: meta.teppich,
+    massstab: meta.massstab,
+    ereignisse: protokoll ? meta.ereignisse : meta.klang.map((k) => ({ t: k.t, typ: "klang", art: k.typ, dauer: k.dauer, klang: false, quelle: "klangEreignisse" })),
+    klang: meta.klang,
+  };
   fs.mkdirSync(path.join(WURZEL, "out", name), { recursive: true });
-  fs.writeFileSync(path.join(WURZEL, "out", name, "ereignisse.json"), JSON.stringify({ ...meta, fps }, null, 1));
+  fs.writeFileSync(path.join(WURZEL, "out", name, "ereignisse.json"), JSON.stringify(inhalt, null, 1));
+  fs.mkdirSync(path.join(projektDir, "audio"), { recursive: true });
+  fs.writeFileSync(path.join(projektDir, "audio", "ereignisse.json"), JSON.stringify(inhalt, null, 1));
+  console.log(`Ereignisse: ${inhalt.ereignisse.length}${protokoll ? " (Protokoll der Bausteine)" : " (aus Klang-Ereignissen)"} → ${path.relative(process.cwd(), path.join(projektDir, "audio", "ereignisse.json"))}`);
 
   let auftraege;
   if (a.zeiten) {

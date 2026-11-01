@@ -11,7 +11,7 @@ import * as B from "../../engine/bausteine.js";
 import { autobahn, Fahrzeugflotte, Trajektorie, spurX } from "../../engine/strasse.js";
 import { Zeitplan, schaetzeTiming } from "../../engine/zeitplan.js";
 import { Zeitleiste } from "../../engine/zeitleiste.js";
-import { HUD, Markenleiste, KinetikTitel, Karaoke, Anker, Erscheinung, chip, el, fmt, WUERFEL, SPRECHBLASE } from "../../engine/hud.js";
+import { HUD, KinetikTitel, Karaoke, Anker, Erscheinung, chip, el, fmt, SPRECHBLASE } from "../../engine/hud.js";
 import { RundenAnzeige, Anzeigetafel, ergebnisPille, STOPPUHR } from "../../engine/duell.js";
 import { ease, feder, FEDER, fortschritt, clamp, lerp, hash, rauschen, keyframes, smoothstep } from "../../engine/bewegung.js";
 
@@ -499,8 +499,7 @@ async function start() {
   // =====================================================================================
   const hud = new HUD(document.getElementById("hud"));
   const KY = 1300;
-  const marke = hud.add(new Markenleiste(hud, { rubrik: `${STOPPUHR}ALLTAG` }));
-  marke.verstecke(tEnde - 0.2, 999);
+  // (Markenleiste entfernt: kein Kanalname, kein Logo, keine Rubrik im Video, Entscheidung 31.10.)
 
   // Hook: kinetischer Titel
   const hk = (w, a) => Math.max(0.02, W("hook", w, a) - 0.1);
@@ -645,13 +644,11 @@ async function start() {
   chip(hud, { flagge: "!", text: "Drängler = wer keinen reinlässt", x: 54, y: 880, ein: W("regel", "Drängler", 0.6) - 0.1, aus: tEnde - 0.3, farbe: ROT });
 
   // Schlusskarte
-  const schluss = el("div", "schluss", `<div class="logoGross">${WUERFEL}SIMULIERBAR</div><div class="aufruf"><span class="blase">${SPRECHBLASE}</span><span>Schreibt euren Simulations&shy;wunsch in die Kommentare</span></div>`, hud.wurzel);
-  const logoGross = schluss.querySelector(".logoGross");
+  const schluss = el("div", "schluss", `<div class="aufruf"><span class="blase">${SPRECHBLASE}</span><span>Schreibt euren Simulations&shy;wunsch in die Kommentare</span></div>`, hud.wurzel);
   const aufruf = schluss.querySelector(".aufruf");
   const blase = schluss.querySelector(".blase");
-  hud.add(new Erscheinung(hud, logoGross, { ein: tEnde + 0.05, stil: "pop", feder: FEDER.knackig, klang: "ding" }));
   hud.add(new Erscheinung(hud, aufruf, {
-    ein: tEnde + 0.35, stil: "hoch", feder: FEDER.standard,
+    ein: tEnde + 0.05, stil: "hoch", feder: FEDER.standard, klang: "ding",
     nachUpdate: (t) => {
       const b = Math.max(0, Math.sin((t - tEnde - 0.9) * 4.2)) * Math.exp(-Math.max(0, t - tEnde - 0.9) * 0.25);
       blase.style.transform = `translateY(${-b * 16}px) rotate(${-b * 6}deg)`;

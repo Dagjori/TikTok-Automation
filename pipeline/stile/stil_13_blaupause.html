@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Stil 13 · Blaupause / Schnittmodell</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<link rel="stylesheet" href="massstab.css">
+<script type="importmap">
+{ "imports": {
+  "three": "../node_modules/three/build/three.module.js",
+  "three/addons/": "../node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  /* Monospace für Beschriftungen: lokal JetBrains Mono, unter Windows Consolas */
+  @font-face { font-family: "SB Mono"; font-weight: 800; src: local("JetBrains Mono ExtraBold"), local("JetBrainsMono-ExtraBold"), local("Consolas Bold"); }
+  @font-face { font-family: "SB Mono"; font-weight: 500; src: local("JetBrains Mono Medium"), local("JetBrainsMono-Medium"), local("Consolas"); }
+  body { background: #0b3a78; }
+  :root {
+    --a: #35d0ff; --a-hell: #6fe0ff; --a-text: #04213f; --b: #ff9a3c; --b-hell: #ffb36b; --b-text: #2a1300;
+    --tafel-bg: rgba(6, 34, 76, 0.86); --tafel-text: #ffffff; --tafel-grau: #9cc3f2; --tafel-radius: 6px; --tafel-rand: 3px solid #d8ecff; --tafel-schatten: none;
+    --tafel-schrift: "SB Mono", "JetBrains Mono", Consolas, monospace;
+    --mitte-bg: #0b3a78; --mitte-text: #ffffff; --mitte-rand: 3px solid #d8ecff;
+    --chip-bg: rgba(6, 34, 76, 0.9); --chip-text: #ffffff; --chip-radius: 4px; --chip-rand: 3px solid #ffe14d; --chip-schatten: none;
+  }
+  .tafel9 .wer { border-radius: 4px; height: 46px; font-size: 24px; }
+  .tafel9 .einheit { font-weight: 500; letter-spacing: 0.04em; }
+  .tafel9 .mitte small { font-size: 15px; letter-spacing: 0.06em; }
+  /* Eckmarken wie auf einer technischen Zeichnung */
+  .tafel9 .karte::after { content: ""; position: absolute; inset: 8px; border: 1px dashed rgba(216, 236, 255, 0.35); pointer-events: none; }
+  .chip9 { color: #ffe14d; }
+  /* Beschriftungen mit Führungslinie */
+  svg.linien { position: absolute; inset: 0; width: 1080px; height: 1920px; z-index: 12; overflow: visible; }
+  .label { position: absolute; z-index: 13; font-family: "SB Mono", "JetBrains Mono", Consolas, monospace; font-weight: 800; font-size: 23px; letter-spacing: 0.03em;
+    text-transform: uppercase; color: #fff; padding: 6px 12px; border: 2px solid currentColor; background: rgba(6, 34, 76, 0.88); white-space: nowrap; }
+  .label small { display: block; font-weight: 500; font-size: 17px; letter-spacing: 0; color: #9cc3f2; text-transform: none; margin-top: 2px; }
+  .label.b { color: #ffb36b; }
+  .label.a { color: #6fe0ff; }
+  .stempel { position: absolute; z-index: 13; right: 166px; top: 1236px; font-family: "SB Mono", "JetBrains Mono", Consolas, monospace; font-weight: 500; font-size: 17px; color: #9cc3f2;
+    border: 2px solid #9cc3f2; padding: 8px 12px; line-height: 1.35; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.85; }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./stil_13_blaupause.js"></script>
+</body>
+</html>

@@ -1,0 +1,790 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "_demo-massstab",
+ "fps": 30,
+ "dauer": 13.166666666666666,
+ "stimmEnde": 12.37,
+ "timing": "timing_schaetzung.json (geschätzt, 12.4 s Sprechzeit, 2.6 W/s, Satzpause 0.26 s)",
+ "protokoll": true,
+ "teppich": "strasse",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "RASER",
+    "farbe": "#FF5A4E"
+   },
+   "b": {
+    "name": "ROLLER",
+    "farbe": "#13B5A6"
+   }
+  },
+  "schleife": {
+   "ab": 11.438,
+   "ende": 13.133333333333333
+  },
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 5,
+   "groesse": 60,
+   "unten": 1450,
+   "phrasen": 14
+  },
+  "timing": "geschätzt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 13.133,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 5.662137425588298e-15
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Rasen oder rollen?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Titel",
+   "t": 0.06,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "RASEN"
+  },
+  {
+   "quelle": "Titel",
+   "t": 0.374,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "vs"
+  },
+  {
+   "quelle": "Titel",
+   "t": 0.569,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "ROLLEN"
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.142,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WER"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 1.152,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wer gewinnt?",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.338,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "GEWINNT?"
+  },
+  {
+   "quelle": "Chip",
+   "t": 1.96,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2 KM"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 1.96,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Zwei Kilometer,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Folgen",
+   "t": 1.99,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 2.906,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "6 AMPELN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 2.906,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "sechs Ampeln.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Leiste",
+   "t": 2.936,
+   "typ": "leiste",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 3.753,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar, der Raser.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Stempel",
+   "t": 3.883,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "KLAR!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 3.883,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.464,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "60 KM/H"
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.714,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "40 KM/H"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 4.998,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Stempel",
+   "t": 5.128,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "ODER?"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 5.128,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.403,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.403,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.403,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.403,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 5.493,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Los geht's!",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 5.523,
+   "art": "folgen",
+   "dauer": 999994.477,
+   "laufend": true
+  },
+  {
+   "quelle": "Tafel",
+   "t": 5.567,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 5.567,
+   "typ": "zaehler",
+   "dauer": 0.7,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 5.567,
+   "typ": "zaehler",
+   "dauer": 1.8,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 5.569,
+   "typ": "leiste-lauf",
+   "dauer": 0.7,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Leiste",
+   "t": 5.603,
+   "typ": "leiste-lauf",
+   "dauer": 1.767,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 5.623,
+   "typ": "uhr",
+   "dauer": 2.8,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 5.623,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "LOS GEHT'S!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 5.623,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Uhr",
+   "t": 5.643,
+   "typ": "uhr-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 5.673,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 5.673,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Uhr",
+   "t": 5.676,
+   "typ": "uhr",
+   "dauer": 1.584,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 5.773,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 5.773,
+   "typ": "zaehler",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 6.069,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "1"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 6.169,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "1"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 6.173,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 6.223,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Rot!",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Ring",
+   "t": 6.233,
+   "typ": "ring",
+   "dauer": 0.568,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 6.253,
+   "art": "zoom",
+   "dauer": 0.55,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 6.269,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "2"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 6.667,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 6.669,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "2"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 6.679,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Überholt!",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Stempel",
+   "t": 6.789,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "ÜBERHOLT!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 6.789,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 6.8,
+   "typ": "zaehler",
+   "dauer": 0.233,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Ring",
+   "t": 6.801,
+   "typ": "ring-ende",
+   "klang": "ding"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 6.803,
+   "typ": "leiste-lauf",
+   "dauer": 0.233,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 6.806,
+   "typ": "zaehler",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 6.836,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "3"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 6.936,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "3"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 6.969,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "4"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 6.973,
+   "typ": "zaehler",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "t": 7.03,
+   "typ": "uebergang",
+   "art": "zoomwisch",
+   "dauer": 0.5,
+   "quelle": "Zeitleiste",
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 7.036,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "4"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 7.103,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "5"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 7.133,
+   "typ": "zaehler",
+   "dauer": 1.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 7.136,
+   "typ": "leiste-lauf",
+   "dauer": 1.333,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 7.14,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 7.236,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "6"
+  },
+  {
+   "quelle": "Leiste",
+   "t": 7.269,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "5"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 7.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ziel.",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Leiste",
+   "t": 7.336,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "6"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 7.825,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Zwölf Sekunden Vorsprung.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 7.855,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "ROLLER"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 8.129,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "RASER"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 8.521,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "VORSPRUNG"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 8.721,
+   "typ": "sieger",
+   "klang": "sieg",
+   "text": "ROLLER GEWINNT"
+  },
+  {
+   "t": 8.781,
+   "typ": "uebergang",
+   "art": "blasen",
+   "dauer": 0.7,
+   "quelle": "Zeitleiste",
+   "klang": "blasen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.181,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Was sollen wir",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 9.407,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "STEHZEIT"
+  },
+  {
+   "quelle": "Balken",
+   "t": 9.72,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "+63 S"
+  },
+  {
+   "quelle": "Balken",
+   "t": 9.82,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "FAHRZEIT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.886,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "als Nächstes zeigen?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 9.966,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "−51 S"
+  },
+  {
+   "quelle": "Formel",
+   "t": 10.112,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "132"
+  },
+  {
+   "quelle": "Formel",
+   "t": 10.252,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "+"
+  },
+  {
+   "quelle": "Formel",
+   "t": 10.392,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "63"
+  },
+  {
+   "quelle": "Formel",
+   "t": 10.503,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "="
+  },
+  {
+   "quelle": "Formel",
+   "t": 10.643,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "195"
+  },
+  {
+   "quelle": "Formel",
+   "t": 10.841,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "ROLLER: 183 S"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 11.046,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Schreib es in die Kommentare.",
+   "woerter": 5,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Pointe",
+   "t": 11.076,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "ROLLEN | *GEWINNT.*"
+  },
+  {
+   "t": 11.438,
+   "typ": "uebergang",
+   "art": "wolken",
+   "dauer": 1,
+   "quelle": "Zeitleiste",
+   "klang": "wolke"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 11.438,
+   "art": "schleife",
+   "dauer": 1.695,
+   "klang": "whoosh"
+  },
+  {
+   "t": 11.438,
+   "typ": "schleife",
+   "dauer": 1.695,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 11.467,
+   "typ": "zaehler",
+   "dauer": 1.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 11.467,
+   "typ": "zaehler",
+   "dauer": 1.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 11.556,
+   "typ": "uhr",
+   "dauer": 1.4,
+   "laufend": true,
+   "klang": "uhr"
+  }
+ ],
+ "klang": []
+}

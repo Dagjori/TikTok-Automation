@@ -1,0 +1,4 @@
+# Unbearbeitete Renderings: Zwischenstand, die Konzept-Skripte erzeugen sie neu
+roh-2048.png
+# Die Logo-Animation gehört ins Repo (die oberste .gitignore schließt *.mp4 sonst aus)
+!*.mp4

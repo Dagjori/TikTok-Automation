@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Stil 10 · Papier-Diorama</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<link rel="stylesheet" href="massstab.css">
+<style>
+  body { background: #9ed8f5; }
+  /* Tafel aus Karton: cremefarbenes Papier, zweite Lage als Versatz, weicher Schlagschatten */
+  :root {
+    --a: #2f6fed; --a-hell: #86b6ff; --b: #ff7a1a; --b-hell: #ffb36b;
+    --tafel-bg: #fbf7ee; --tafel-text: #1b2a55; --tafel-grau: #7d86a3; --tafel-radius: 22px; --tafel-rand: none;
+    --tafel-schatten: 0 7px 0 #e4dccb, 0 22px 30px -12px rgba(30, 50, 90, 0.45);
+    --mitte-bg: #ffc93c; --mitte-text: #1b2a55; --mitte-rand: 7px solid #fbf7ee;
+    --chip-bg: #fbf7ee; --chip-text: #1b2a55; --chip-radius: 14px; --chip-schatten: 0 6px 0 #e4dccb, 0 16px 22px -10px rgba(30, 50, 90, 0.5);
+  }
+  .tafel9 .wer { border-radius: 12px; box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15); }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module">
+  import { zonen, fertig } from "./gemeinsam.js";
+  import { INHALT9, anzeigetafel, chip, phrase, hintergrund } from "./massstab.js";
+  try {
+    await hintergrund("../out/stile/blender/stil_10_papier.png");
+    const hud = document.getElementById("hud");
+    anzeigetafel(hud);
+    chip(hud, INHALT9.chip, { x: 640, y: 640, drehung: -2 });
+    phrase(hud);
+    zonen(hud);
+    fertig();
+  } catch (e) { window.__fehler = String(e); }
+</script>
+</body>
+</html>

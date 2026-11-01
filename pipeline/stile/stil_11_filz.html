@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Stil 11 · Filz &amp; Knöpfe</title>
+<link rel="stylesheet" href="gemeinsam.css">
+<link rel="stylesheet" href="massstab.css">
+<style>
+  body { background: #f5d9c9; }
+  /* Tafel als Filzflicken mit Ziernaht, Zähler als großer Knopf */
+  :root {
+    --a: #2f6fed; --a-hell: #86b6ff; --b: #ff7a1a; --b-hell: #ffb36b;
+    --tafel-bg: #fbf1e6; --tafel-text: #2a2b33; --tafel-grau: #9a7f6e; --tafel-radius: 40px; --tafel-rand: none;
+    --tafel-schatten: inset 0 -6px 12px rgba(150, 100, 70, 0.18), inset 0 4px 10px rgba(255, 255, 255, 0.7), 0 20px 36px -16px rgba(90, 50, 30, 0.55);
+    --mitte-bg: radial-gradient(circle at 42% 36%, #ff7c6e, #e8443a 62%, #c7342b); --mitte-text: #fff; --mitte-rand: 6px solid #f2a29a;
+    --chip-bg: #ffc93c; --chip-text: #2a2b33; --chip-schatten: 0 14px 26px -12px rgba(90, 50, 30, 0.6);
+  }
+  .tafel9 .karte { outline: 4px dashed rgba(190, 150, 120, 0.55); outline-offset: -14px; }
+  .tafel9 .wer { outline: 3px dashed rgba(255, 255, 255, 0.85); outline-offset: -8px; height: 54px; padding: 0 26px; }
+  .chip9 { outline: 3px dashed rgba(255, 255, 255, 0.9); outline-offset: -9px; }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module">
+  import { zonen, fertig } from "./gemeinsam.js";
+  import { INHALT9, anzeigetafel, chip, phrase, hintergrund } from "./massstab.js";
+  try {
+    await hintergrund("../out/stile/blender/stil_11_filz.png");
+    const hud = document.getElementById("hud");
+    anzeigetafel(hud);
+    chip(hud, INHALT9.chip, { x: 712, y: 548, drehung: -3 });
+    phrase(hud);
+    zonen(hud);
+    fertig();
+  } catch (e) { window.__fehler = String(e); }
+</script>
+</body>
+</html>

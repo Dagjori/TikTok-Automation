@@ -8,7 +8,7 @@ import { PunktGlobus } from "../../engine/globus.js";
 import * as B from "../../engine/bausteine.js";
 import { Zeitplan, schaetzeTiming } from "../../engine/zeitplan.js";
 import { Zeitleiste } from "../../engine/zeitleiste.js";
-import { HUD, Markenleiste, SchrittAnzeige, karte, chip, Zaehler, KinetikTitel, Karaoke, Anker, Erscheinung, el, fmt, WUERFEL, SPRECHBLASE } from "../../engine/hud.js";
+import { HUD, SchrittAnzeige, karte, chip, Zaehler, KinetikTitel, Karaoke, Anker, Erscheinung, el, fmt, SPRECHBLASE } from "../../engine/hud.js";
 import { ease, feder, FEDER, fortschritt, clamp, lerp, hash, rauschen, keyframes, smoothstep } from "../../engine/bewegung.js";
 
 const FPS = 30;
@@ -626,8 +626,7 @@ async function start() {
   // ---------- HUD ----------
   const hud = new HUD(document.getElementById("hud"));
   const KY = 1300; // Untertitel-Oberkante
-  const marke = hud.add(new Markenleiste(hud, { rubrik: "€ GELD" }));
-  marke.verstecke(sEnde - 0.2, 999);
+  // (Markenleiste entfernt: kein Kanalname, kein Logo, keine Rubrik im Video, Entscheidung 31.10.)
 
   // Hook: kinetischer Titel
   // Wörter am Videoanfang sind schon im ersten Bild ganz da (Vorschaubild im Feed)
@@ -726,13 +725,11 @@ async function start() {
   const teuer = chip(hud, { flagge: "!", text: "Teuer wird's für dich", x: 54, y: 260, ein: W("recht", "Teuer", 0.02) + 0.15, aus: sEnde - 0.3, farbe: "#F0443A" });
 
   // Schlusskarte
-  const schluss = el("div", "schluss", `<div class="logoGross">${WUERFEL}SIMULIERBAR</div><div class="aufruf"><span class="blase">${SPRECHBLASE}</span><span>Schreibt euren Simulations&shy;wunsch in die Kommentare</span></div>`, hud.wurzel);
-  const logoGross = schluss.querySelector(".logoGross");
+  const schluss = el("div", "schluss", `<div class="aufruf"><span class="blase">${SPRECHBLASE}</span><span>Schreibt euren Simulations&shy;wunsch in die Kommentare</span></div>`, hud.wurzel);
   const aufruf = schluss.querySelector(".aufruf");
   const blase = schluss.querySelector(".blase");
-  hud.add(new Erscheinung(hud, logoGross, { ein: sEnde + 0.05, stil: "pop", feder: FEDER.knackig, klang: "ding" }));
   hud.add(new Erscheinung(hud, aufruf, {
-    ein: sEnde + 0.35, stil: "hoch", feder: FEDER.standard,
+    ein: sEnde + 0.05, stil: "hoch", feder: FEDER.standard, klang: "ding",
     nachUpdate: (t) => {
       const b = Math.max(0, Math.sin((t - sEnde - 0.9) * 4.2)) * Math.exp(-Math.max(0, t - sEnde - 0.9) * 0.25);
       blase.style.transform = `translateY(${-b * 16}px) rotate(${-b * 6}deg)`;

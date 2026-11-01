@@ -1,0 +1,223 @@
+{
+ "stimme": "Schätzung",
+ "geschaetzt": true,
+ "schaetzung": {
+  "wps": 2.6,
+  "satzpause": 0.26,
+  "kommapause": 0.28,
+  "segmentpause": 0.26,
+  "vorlauf": 0.1
+ },
+ "wps": 2.6,
+ "dauer": 12.37,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Rasen oder rollen? Wer gewinnt?",
+   "start": 0.1,
+   "ende": 1.702,
+   "woerter": [
+    {
+     "wort": "Rasen",
+     "start": 0.1,
+     "ende": 0.352
+    },
+    {
+     "wort": "oder",
+     "start": 0.374,
+     "ende": 0.59
+    },
+    {
+     "wort": "rollen?",
+     "start": 0.609,
+     "ende": 0.897
+    },
+    {
+     "wort": "Wer",
+     "start": 1.182,
+     "ende": 1.362
+    },
+    {
+     "wort": "gewinnt?",
+     "start": 1.378,
+     "ende": 1.702
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Zwei Kilometer, sechs Ampeln.",
+   "start": 1.99,
+   "ende": 3.498,
+   "woerter": [
+    {
+     "wort": "Zwei",
+     "start": 1.99,
+     "ende": 2.206
+    },
+    {
+     "wort": "Kilometer,",
+     "start": 2.225,
+     "ende": 2.621
+    },
+    {
+     "wort": "sechs",
+     "start": 2.936,
+     "ende": 3.188
+    },
+    {
+     "wort": "Ampeln.",
+     "start": 3.21,
+     "ende": 3.498
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, der Raser. Oder? Los geht's!",
+   "start": 3.783,
+   "ende": 5.971,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 3.783,
+     "ende": 3.999
+    },
+    {
+     "wort": "der",
+     "start": 4.298,
+     "ende": 4.478
+    },
+    {
+     "wort": "Raser.",
+     "start": 4.494,
+     "ende": 4.746
+    },
+    {
+     "wort": "Oder?",
+     "start": 5.028,
+     "ende": 5.244
+    },
+    {
+     "wort": "Los",
+     "start": 5.523,
+     "ende": 5.703
+    },
+    {
+     "wort": "geht's!",
+     "start": 5.719,
+     "ende": 5.971
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Rot! Überholt! Ziel.",
+   "start": 6.253,
+   "ende": 7.576,
+   "woerter": [
+    {
+     "wort": "Rot!",
+     "start": 6.253,
+     "ende": 6.433
+    },
+    {
+     "wort": "Überholt!",
+     "start": 6.709,
+     "ende": 7.069
+    },
+    {
+     "wort": "Ziel.",
+     "start": 7.36,
+     "ende": 7.576
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Zwölf Sekunden Vorsprung.",
+   "start": 7.855,
+   "ende": 8.917,
+   "woerter": [
+    {
+     "wort": "Zwölf",
+     "start": 7.855,
+     "ende": 8.107
+    },
+    {
+     "wort": "Sekunden",
+     "start": 8.129,
+     "ende": 8.489
+    },
+    {
+     "wort": "Vorsprung.",
+     "start": 8.521,
+     "ende": 8.917
+    }
+   ]
+  },
+  {
+   "id": "ende",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 9.211,
+   "ende": 12.37,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 9.211,
+     "ende": 9.391
+    },
+    {
+     "wort": "sollen",
+     "start": 9.407,
+     "ende": 9.695
+    },
+    {
+     "wort": "wir",
+     "start": 9.72,
+     "ende": 9.9
+    },
+    {
+     "wort": "als",
+     "start": 9.916,
+     "ende": 10.096
+    },
+    {
+     "wort": "Nächstes",
+     "start": 10.112,
+     "ende": 10.472
+    },
+    {
+     "wort": "zeigen?",
+     "start": 10.503,
+     "ende": 10.791
+    },
+    {
+     "wort": "Schreib",
+     "start": 11.076,
+     "ende": 11.401
+    },
+    {
+     "wort": "es",
+     "start": 11.429,
+     "ende": 11.573
+    },
+    {
+     "wort": "in",
+     "start": 11.585,
+     "ende": 11.73
+    },
+    {
+     "wort": "die",
+     "start": 11.742,
+     "ende": 11.922
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 11.938,
+     "ende": 12.37
+    }
+   ]
+  }
+ ]
+}

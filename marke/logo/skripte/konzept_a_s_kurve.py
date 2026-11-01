@@ -1,8 +1,8 @@
 """Konzept A „S-Kurve“: ein S aus zwei parallelen Rennbahnen (Blau und Orange).
 
 Die Bahnen tauschen in der Mitte Innen- und Außenseite (wie bei einer echten
-Schikane): oben fährt Blau innen, unten Orange. Am Ende jeder Bahn liegt eine
-Kugel als „Läufer“ – Orange hat knapp die Nase vorn.
+Schikane): oben fährt Blau innen, unten Orange – keiner hat einen Vorteil.
+Leicht kursiv gestellt, damit das Zeichen nach Tempo aussieht.
 """
 
 import math
@@ -20,9 +20,10 @@ SPUR = 0.44              # Breite einer Bahn
 LUECKE = 0.10            # Spalt zwischen den Bahnen
 VERSATZ = (SPUR + LUECKE) / 2
 W_START, W_ENDE = 18.0, 270.0  # Winkel des oberen Bogens (Grad); der untere ist punktsymmetrisch
+SCHRAEG = 0.18           # Kursiv-Scherung (x += SCHRAEG * y)
 
 
-def mittellinie(n=360):
+def mittellinie(n=200):
     """S-Mittellinie: oberer Bogen gegen den Uhrzeigersinn, unterer im Uhrzeigersinn."""
     pts = []
     for i in range(n + 1):
@@ -31,7 +32,7 @@ def mittellinie(n=360):
     for i in range(1, n + 1):
         w = math.radians(90 - (W_ENDE - W_START) * i / n)
         pts.append((RX * math.cos(w), -RY + RY * math.sin(w)))
-    return pts
+    return [(x + SCHRAEG * y, y) for x, y in pts]
 
 
 def versetzt(pts, d):
@@ -63,54 +64,40 @@ def teil(pts, von, bis):
     return out, L
 
 
-def punkt_bei(pts, anteil):
-    from mathutils import Vector
-    P = [Vector(p) for p in pts]
-    laengen = [0.0]
-    for i in range(1, len(P)):
-        laengen.append(laengen[-1] + (P[i] - P[i - 1]).length)
-    ziel = anteil * laengen[-1]
-    for i in range(1, len(P)):
-        if laengen[i] >= ziel:
-            f = (ziel - laengen[i - 1]) / max(laengen[i] - laengen[i - 1], 1e-9)
-            p = P[i - 1].lerp(P[i], f)
-            t = (P[i] - P[i - 1]).normalized()
-            return p, t
-    return P[-1], (P[-1] - P[-2]).normalized()
+def bahnen_bauen(wurzel, fortschritt, m_blau, m_orange):
+    """Beide Bahnen bis zum jeweiligen Anteil ihrer Länge bauen (1.0 = fertig)."""
+    mitte = mittellinie()
+    bahnen = (("Blau", versetzt(mitte, VERSATZ), m_blau, fortschritt[0]),
+              ("Orange", versetzt(mitte, -VERSATZ), m_orange, fortschritt[1]))
+    objekte = []
+    for name, linie, mat, f in bahnen:
+        stueck, _ = teil(linie, 0.0, f)
+        if f <= 0.002 or len(stueck) < 3:
+            continue
+        umriss = g.strich_umriss(stueck, SPUR - 0.12)
+        objekte.append(g.platte_aus_umriss(f"Bahn{name}", [umriss], tiefe=0.13, fase=0.06, fase_aufloesung=6,
+                                           mat=mat, eltern=wurzel))
+    return objekte
 
 
-def baue(fortschritt=(1.0, 1.0), kugeln=True):
+def baue(fortschritt=(1.0, 1.0)):
     """Baut das Logo. fortschritt = (blau, orange) als Anteil der Bahnlänge (für die Animation)."""
     wurzel = g.logo_wurzel()
     m_blau = g.kunststoff("Blau", g.FARBEN["blau"])
     m_orange = g.kunststoff("Orange", g.FARBEN["orange"])
-    m_kugel = g.keramik("Kugel")
-    mitte = mittellinie()
-    bahnen = {"Blau": (versetzt(mitte, VERSATZ), m_blau, fortschritt[0]),
-              "Orange": (versetzt(mitte, -VERSATZ), m_orange, fortschritt[1])}
-    objekte = []
-    for name, (linie, mat, f) in bahnen.items():
-        if f <= 0.002:
-            continue
-        stueck, _ = teil(linie, 0.0, f)
-        if len(stueck) < 3:
-            continue
-        umriss = g.strich_umriss(stueck, SPUR - 0.12)
-        o = g.platte_aus_umriss(f"Bahn{name}", [umriss], tiefe=0.13, fase=0.06, fase_aufloesung=8,
-                                mat=mat, eltern=wurzel)
-        objekte.append(o)
-    return wurzel, objekte
+    return wurzel, bahnen_bauen(wurzel, fortschritt, m_blau, m_orange)
 
 
-def szene(vorschau=False, aufloesung=2048):
-    s = g.leere_szene(aufloesung=aufloesung, samples=32 if vorschau else 128)
+def szene(vorschau=False, aufloesung=2048, staerke=0.75):
+    s = g.leere_szene(aufloesung=aufloesung, samples=32 if vorschau else 64)
     g.welt()
-    wurzel, _ = baue()
+    baue()
     hoehe = 4 * RY + 2 * VERSATZ + SPUR
     breite = 2 * RX + 2 * VERSATZ + SPUR
     groesse = max(hoehe, breite)
     g.kamera(abstand=g.abstand_fuer(groesse, 100, 0.80), azimut=-14, hoehe=10, brennweite=100)
-    g.studio_licht(skala=1.0)
+    g.studio_licht(skala=1.0, staerke=staerke)
+    g.kamera_einpassen(0.86)
     return s
 
 

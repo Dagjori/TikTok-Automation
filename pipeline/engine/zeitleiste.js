@@ -9,7 +9,7 @@ export class Zeitleiste {
   }
   /**
    * Neue Einstellung ab Zeit `ab`. uebergang (optional) vom vorherigen Shot:
-   * { typ: 'blende'|'iris'|'wisch'|'zoom', dauer, mitte:[x,y], richtung:[x,y], farbe1, farbe2, kurve }
+   * { typ: 'blende'|'iris'|'wisch'|'zoom'|'wolken'|'blasen'|'zoomwisch', dauer, mitte:[x,y], richtung:[x,y], farbe1, farbe2, kurve }
    */
   shot(ab, welt, uebergang = null) {
     this.shots.push({ ab, welt, uebergang });
@@ -18,6 +18,14 @@ export class Zeitleiste {
   }
   klangEreignisse() {
     return this.shots.filter((s) => s.uebergang).map((s) => ({ t: s.ab - s.uebergang.dauer / 2, typ: "whoosh", dauer: s.uebergang.dauer }));
+  }
+  /** Ereignis-Protokoll (Szenenwechsel): {t, typ:"uebergang", art, dauer, klang} */
+  ereignisse() {
+    const klang = { wolken: "wolke", blasen: "blasen" };
+    return this.shots.filter((s) => s.uebergang).map((s) => ({
+      t: s.ab - s.uebergang.dauer / 2, typ: "uebergang", art: s.uebergang.typ, dauer: s.uebergang.dauer, quelle: "Zeitleiste",
+      klang: s.uebergang.klang ?? klang[s.uebergang.typ] ?? "whoosh",
+    }));
   }
   /** Welche Welten sind bei t aktiv? */
   zustand(t) {

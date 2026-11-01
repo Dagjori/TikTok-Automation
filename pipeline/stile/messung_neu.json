@@ -1,0 +1,53 @@
+{
+ "stand": "2026-11-01T00:14:57.705Z",
+ "gpu": false,
+ "hinweis": "Cloud-Container, 4 Kerne, ohne GPU (SwiftShader bzw. Cycles CPU). bild_s = zweites Bild im Browser zeichnen + JPG; blender.sekunden = Cycles-Render der Szene 1080×1920.",
+ "messung": [
+  {
+   "nr": 9,
+   "name": "holz",
+   "titel": "Holzspielzeug-Tisch",
+   "technik": "Blender Cycles",
+   "laden_s": 0.358,
+   "bild_s": 0.071,
+   "blender": {
+    "sekunden": 306.7,
+    "samples": 48,
+    "aufloesung": "1080x1920",
+    "geraet": "CPU",
+    "kerne": 4
+   }
+  },
+  {
+   "nr": 10,
+   "name": "papier",
+   "titel": "Papier-Diorama",
+   "technik": "Blender Cycles",
+   "laden_s": 0.212,
+   "bild_s": 0.201,
+   "blender": {
+    "sekunden": 306.5,
+    "samples": 48,
+    "aufloesung": "1080x1920",
+    "geraet": "CPU",
+    "kerne": 4
+   }
+  },
+  {
+   "nr": 12,
+   "name": "comic",
+   "titel": "Comic-Toon 3D",
+   "technik": "Three.js",
+   "laden_s": 0.761,
+   "bild_s": 0.579
+  },
+  {
+   "nr": 13,
+   "name": "blaupause",
+   "titel": "Blaupause / Schnittmodell",
+   "technik": "Three.js",
+   "laden_s": 1.44,
+   "bild_s": 0.245
+  }
+ ]
+}
