@@ -224,14 +224,10 @@ def pruefe(projekt, profil, extra_ziele):
         akz = [e for e in ereignisse if e.get("typ") == "pointe" or e.get("klang") == "akzent"]
         zeile("13b", "Akzent-Klang auf der Pointe", f"{len(akz)}×", "≥ 1", "K1, K2", len(akz) > 0, pflicht=False)
 
-    # 14 Untertitel als Phrasen
+    # 14 Untertitel: Wort für Wort im Stil „kontur“ (Entscheidung des Inhabers 01.11.; Maßstab: Phrasen)
     ut = ms.get("untertitel") if ms else None
-    ut_ev = [e for e in ereignisse if e.get("typ") == "untertitel"]
-    if ut and ut.get("stil") == "phrase" and ut_ev:
-        mx = max(int(e.get("woerter") or 0) for e in ut_ev)
-        zeile("14", "Untertitel als kurze Phrasen", f"{len(ut_ev)} Phrasen, max. {mx} Wörter", "Phrasen, max. 5 Wörter", "2–5 Wörter", mx <= 5)
-    else:
-        zeile("14", "Untertitel als kurze Phrasen", (ut or {}).get("stil", "unbekannt"), "Phrasen, max. 5 Wörter", "2–5 Wörter", False)
+    stil_ut = (ut or {}).get("stil", "unbekannt")
+    zeile("14", "Untertitel Wort für Wort (kontur)", stil_ut, "kontur (Inhaber 01.11.)", "Phrasen 2–5 Wörter", stil_ut == "kontur")
 
     # 15 Kein Kanalname, kein Logo, keine Rubrik
     funde = re.findall(r"SIMULIERBAR|new Markenleiste\(|WUERFEL|logoGross|rubrik:", szene)

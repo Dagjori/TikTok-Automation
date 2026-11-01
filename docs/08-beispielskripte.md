@@ -49,9 +49,7 @@
 
 **Stimme:**
 - Ben (`aTTiK3YzK3dXETpuDE2h`) mit den **gespeicherten Original-Einstellungen**, also genau so, wie er auf ElevenLabs klingt. Die Anfrage schickt deshalb keine `voice_settings`.
-- Das Modell wählt der Inhaber per Hörprobe:
-  - **Eleven v4:** neuestes Modell, versteht Audio-Tags
-  - **Multilingual v2:** bewährt, versteht `<break>`
+- **Modell: Eleven v4 für alle Videos** (Entscheidung des Inhabers 01.11. per Hörprobe). Es versteht Audio-Tags, aber keine `<break>`-Tags. Die Spalte „Multilingual v2“ unten gilt nur noch zum Vergleich.
 
 ### 3.1 Werkzeuge im Regie-Text
 

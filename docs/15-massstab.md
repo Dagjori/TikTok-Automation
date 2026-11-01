@@ -209,6 +209,8 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 
 ## 8. Untertitel
 
+> **Bei uns gilt (Inhaber 01.11.):** Wort für Wort im Stil „kontur“, nicht in Phrasen. Die Beobachtung unten bleibt als Wissen über die Vorbilder stehen.
+
 - Kurze Phrasen mit 2–5 Wörtern, die als Block erscheinen, im unteren Drittel (ca. 78–83 % der Bildhöhe).
 - Eher klein (ca. 3 % der Bildhöhe), weiße fette Schrift. K1/K2 ohne Hintergrund, K3 mit dunkler Pille, K4 mit heller Karte.
 - **Das Schlüsselwort ist in Teamfarbe eingefärbt** („Der **Läufer** zieht“, „Klar, die **Badewanne**.“).
@@ -254,7 +256,7 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 | 11 | Letztes Bild = erstes Bild (Schleife) |
 | 12 | Sätze meist unter 10 Wörtern, Satzpausen ca. 0,25 s, Tempo 2,5–2,9 W/s, 170–220 Wörter, 65–80 s |
 | 13 | Klangteppich zum Thema (8–13 dB unter der Stimme), Effekt bei jedem Bild-Ereignis, Akzent auf der Pointe |
-| 14 | Untertitel als kurze Phrasen, Schlüsselwort in Teamfarbe |
+| 14 | Untertitel **Wort für Wort** (Stil „kontur“: weiß, schwarze Kontur, kein Kasten, aktuelles Wort gelb). Entscheidung des Inhabers 01.11., weicht bewusst von den Vorbildern ab (sie zeigen Phrasen). |
 | 15 | Kein Kanalname, kein Logo, keine Rubrik im Video |
 | 16 | Teamfarben überall gleich (Figuren, Tafel, Chips, Untertitel) |
 | 17 | Thema nicht bei der Konkurrenz viral (Abschnitt 9 plus Konkurrenz-Check vor Produktionsstart) |

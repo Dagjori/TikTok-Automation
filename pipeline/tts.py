@@ -23,7 +23,7 @@ from pathlib import Path
 
 API = "https://api.elevenlabs.io/v1"
 MODELLE = {"v4": "eleven_v4", "v2": "eleven_multilingual_v2"}
-MODELL = MODELLE["v2"]  # wird in main() per --modell gesetzt; Wahl des Inhabers per Hörprobe steht noch aus (31.10.)
+MODELL = MODELLE["v4"]  # Standard für alle Videos: Eleven v4 (Wahl des Inhabers per Hörprobe, 01.11.); --modell v2 nur zum Vergleich
 GESPEICHERTE_EINSTELLUNGEN = True  # True = keine voice_settings senden → Original-Klang wie auf ElevenLabs
 STANDARD_STIMME = "aTTiK3YzK3dXETpuDE2h"  # „Ben“, muttersprachlich Deutsch (Wahl des Inhabers 31.10. per Hörprobe)
 EINSTELLUNGEN = {"stability": 0.5, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": True}  # Empfehlung von ElevenLabs: Startwert 50/75, „style“ immer 0 (sonst weniger stabil)

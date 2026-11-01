@@ -54,7 +54,14 @@ Unter 60 Punkten fliegt ein Thema raus.
 
 **Verschoben:** Baustelle vom 30.11. auf den 28.11. mittags, Kuchen teilen vom 28.11. auf den 30.11. mittags. Sonst stünden „Auto oder Bahn“ (29.11.) und die Baustelle direkt hintereinander. Karten mischen rückt vom 22.11. auf den 29.11. (Bonus).
 
-**Startvideos:** GTA 6 weltweit und Spurwechsel sind nach alten Regeln gebaut (Rubrik, Logo, alter Schluss, 29–30 % Stillstand laut `docs/15`, §2). Status jetzt „Neubau nach Maßstab nötig“, Aufwand je 3.
+**Startvideos:** GTA 6 weltweit und Spurwechsel sind **bereits gepostet** (alte Version). Es gibt keinen Neubau (Inhaber 01.11.).
+
+**Terminverschiebung 01.11.2026 (Inhaber):**
+- Am Sonntag 01.11. geht es mit „Treppe oder Aufzug“ (12:00) und „200 € oder 100 € steuerfrei“ (20:00) weiter.
+- Die übrigen Videos sind in alter Reihenfolge nachgerückt. Die Termin-Videos behalten ihr Datum: Singles Day, GTA 6 Deutschland, Kfz-Schaden, Black Friday, Weihnachtsgeld, 0-%-Finanzierung, Weihnachtsmarkt, 600 km nach Hause und Wichteln.
+- „Stadt oder Land“ (Priorität C) ist auf den 25.11. gerückt. Zwei Bonusvideos sind in frei gewordene Hauptslots hochgestuft: Winterjacke 28.11. und Strohhalm 30.11.
+- Kein Stil steht zweimal hintereinander, weder mit noch ohne Bonusvideos (Skriptprüfung). An 2 Stellen folgen zwei Videos derselben Rubrik aufeinander, das ist vertretbar.
+- Die Stilspalte von Treppe bzw. Gehalt nennt Kandidaten: Gewählt wird bei der Produktion nach Konkurrenz-Recherche.
 
 **Neue Spalten in der CSV:** `massstab_score`, `massstab_begruendung`, `hook` (Sprechtext, Zahlen ausgeschrieben), `denkfalle`, `wendung_1` (bei ca. 20 s), `wendung_2`, `teamfarben` (Name und Hex-Wert, im ganzen Video gleich) und `konkurrenz_check`. Die Spalte `rubrik` bleibt nur intern, im Video steht sie nicht.
 

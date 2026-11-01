@@ -17,7 +17,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CSV_PATH = path.join(ROOT, "data", "plan", "30-tage.csv");
-const PLANSTAND = "31.10.2026 (überarbeitet nach dem Maßstab, docs/15-massstab.md)";
+const PLANSTAND = "01.11.2026 (Termine verschoben: GTA 6 und Spurwechsel sind gepostet, heute geht es mit Treppe oder Aufzug weiter)";
 
 const args = process.argv.slice(2);
 const argVal = (name) => {
@@ -67,6 +67,8 @@ const KRIT = { D: "Duell/Rennen mit Zählern", K: "kontraintuitiv mit Bedingung"
 
 function scoreClass(s) { s = Number(s); return s >= 85 ? "s-top" : s >= 75 ? "s-gut" : s >= 65 ? "s-mittel" : "s-knapp"; }
 function statusKind(st) {
+  st = st.replace(/ · verschoben 01\.11\. \([^)]*\)/, ""); // reine Terminverschiebung vom 01.11. zählt nicht als Änderung
+  if (st.startsWith("gepostet")) return ["gepostet", "st-alt"];
   if (st.startsWith("Neubau")) return ["Neubau nötig", "st-neubau"];
   if (st.startsWith("geplant (neu 31.10.") && /Score|Maßstab|eigene Idee/.test(st)) return ["neu im Plan", "st-neu"];
   if (st.includes("umgebaut") || st.includes("Hook nach Maßstab")) return ["umgebaut", "st-umbau"];
@@ -107,7 +109,7 @@ const haupt = rows.filter((r) => r.slot !== "bonus").length;
 const bonus = rows.length - haupt;
 const kinds = {};
 rows.forEach((r) => { const k = statusKind(r.status)[0]; kinds[k] = (kinds[k] || 0) + 1; });
-const top5 = [...rows].sort((a, b) => b.massstab_score - a.massstab_score || a.nr - b.nr).slice(0, 5);
+const top5 = [...rows].filter((r) => !r.status.startsWith("gepostet")).sort((a, b) => b.massstab_score - a.massstab_score || a.nr - b.nr).slice(0, 5);
 const erzeugt = new Date().toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" });
 
 function pill(text, cls) { return `<span class="pill ${cls}">${esc(text)}</span>`; }
@@ -134,9 +136,9 @@ function deckblatt() {
       <ul>
         <li>2 Videos pro Tag (12:00 und 20:00), dazu höchstens 3 Bonusvideos pro Woche (16:00). Uhrzeiten sind eine Annahme (A), bis Analytics vorliegen.</li>
         <li>Produktion nur auf dein Startsignal, in der Reihenfolge dieses Plans. Fällt ein Tag aus, rutscht die Liste nach; Terminvideos (Priorität A) bleiben fix.</li>
-        <li>Die zwei Startvideos (GTA 6 weltweit, Spurwechsel) wurden nach alten Regeln gebaut und müssen nach dem Maßstab neu gebaut werden.</li>
+        <li>GTA 6 weltweit und Spurwechsel sind bereits gepostet (alte Version, kein Neubau). Ab Sonntag 01.11. geht es mit „Treppe oder Aufzug“ (12:00) und „200 € oder 100 € steuerfrei“ (20:00) weiter. Termin-Videos behalten ihr Datum, der Rest ist nachgerückt.</li>
         <li>Jedes Video: Hook in 5 s, „Klar … Oder?“ und „Los geht's.“ vor Sekunde 16, erste Wendung bei 18–25 s, Folgen-Aufruf bei ca. 20 s, Schluss „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“, letztes Bild = erstes Bild.</li>
-        <li>Stil je Video aus dem Katalog (Stile 1–8), nie zweimal hintereinander. Keine Rubrik und kein Kanalname im Bild.</li>
+        <li>Stil je Video aus dem Katalog (derzeit 15 Stile), passend zum Thema, nie zweimal hintereinander. Untertitel Wort für Wort, Stimme Ben (Eleven v4). Keine Rubrik und kein Kanalname im Bild.</li>
       </ul>
     </div>
     <div class="box">
@@ -353,7 +355,7 @@ try {
     displayHeaderFooter: true,
     headerTemplate: "<span></span>",
     footerTemplate: `<div style="width:100%;font-family:Arial,sans-serif;font-size:7.5px;color:#7a8494;padding:0 13mm;display:flex;justify-content:space-between;">
-      <span>Simulierbar · 30-Tage-Plan November 2026 · Planstand 31.10.2026</span>
+      <span>Simulierbar · 30-Tage-Plan November 2026 · Planstand 01.11.2026</span>
       <span>Seite <span class="pageNumber"></span> von <span class="totalPages"></span></span></div>`,
   });
 } finally {

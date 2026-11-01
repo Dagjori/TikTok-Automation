@@ -106,11 +106,11 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
     - Stilwahl mit Konkurrenz-Recherche: erfolgreiche Videos zum Thema ansehen, welcher Look trägt es am besten (`docs/10`, Abschnitt 0)
     - nie zweimal derselbe Stil hintereinander
     - neue gute Stile sofort in den Katalog aufnehmen
-  - **Untertitel** (nach Maßstab, `docs/15` §8):
-    - kurze Phrasen mit 2–5 Wörtern, unteres Drittel
+  - **Untertitel Wort für Wort** (Entscheidung des Inhabers 01.11., weicht bewusst vom Maßstab ab):
+    - Stil „kontur“: `M.untertitel({ stil: "kontur" })` in `pipeline/engine/massstab.js` bzw. `Karaoke` in `hud.js`
+    - jedes gesprochene Wort erscheint einzeln, max. 2 Zeilen, mittig, aktuelles Wort gelb
     - weiße fette Schrift mit schwarzer Kontur, **kein Kasten**
-    - Schlüsselwort in Teamfarbe
-    - Der alte Wort-für-Wort-Stil „kontur“ bleibt als Option in `pipeline/engine/hud.js`.
+    - Der Phrasen-Stil der Vorbilder (`M.untertitel()` ohne `stil`) wird nicht verwendet.
   - **Teamfarben:** zwei feste Farben je Video, überall gleich (Figuren, Anzeigetafel, Chips, Untertitel).
   - **Ton:** Klangteppich passend zum Thema 8–13 dB unter der Stimme, Effekt bei jedem Bild-Ereignis, Akzent auf der Pointe. Nur selbst erzeugte Klänge.
   - keine künstlichen Cliffhanger-Teile (TikTok: Clickbait ist ein CRP-Ausschlussgrund)
@@ -130,7 +130,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
 - **ElevenLabs, Stimme „Ben“ `aTTiK3YzK3dXETpuDE2h`, im Original** (Entscheidung 31.10.).
   - Sie soll genau so klingen wie beim Anhören auf ElevenLabs. `pipeline/tts.py` schickt deshalb **keine** `voice_settings`, und ElevenLabs nutzt die gespeicherten Einstellungen der Stimme (laut API-Doku: „Voice settings overriding stored settings for the given voice“).
   - Keine künstliche Beschleunigung.
-- **Modell:** `eleven_v4` (Audio-Tags) oder `eleven_multilingual_v2` (`<break>`). Die Auswahl trifft der Inhaber per Hörprobe (offen seit 31.10.). Aufruf `--modell v4|v2`.
+- **Modell: `eleven_v4` für alle Videos** (Entscheidung des Inhabers 01.11. per Hörprobe; Standard in `pipeline/tts.py`). Regie per Audio-Tags, Satzzeichen und Großschreibung; **keine** `<break>`-Tags (v4 unterstützt sie nicht).
 - **Regie-Text:**
   - Der `sprechtext` jedes Segments ist ein Regiebuch für den Sprecher: eine Zeile pro Satz, Satzzeichen, Auslassungspunkte, Großschreibung für Betonung, bei v4 Audio-Tags. Regeln in `docs/08`, Abschnitt 3.
   - Der Untertitel zeigt `text`. Zahlen sind im Sprechtext ausgeschrieben, englische Wörter in Lautschrift.
