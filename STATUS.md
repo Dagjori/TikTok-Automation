@@ -1,68 +1,71 @@
 # STATUS
 
-**Stand:** 31.10.2026, abends
+**Stand:** 01.11.2026, ca. 01:30 Uhr (Nacht nach der Neuaufstellung)
 
 ## Wo wir stehen
-- **Kanal:** **Simulierbar** (`@simulierbar`, seit 31.10. aktiv). Nische „Alltag durchgerechnet“ mit den Rubriken 💶 GELD und ⏱️ ALLTAG (`docs/05-startnische.md`).
-- **Format:**
-  - wie die Vorbilder, nur eigene Themen, kein „1.000 Lebensläufe“-Merkmal
-  - Ende immer „Schreibt euren Simulationswunsch in die Kommentare.“
-  - Skripte: `docs/08-beispielskripte.md`
-- **Arbeitsweise:** `docs/14-arbeitsweise.md` zeigt Regeln, Informationsquellen, Ablauf, Abnahme, Schwächen und Empfehlungen (Anlass: Inhaber mit den Ergebnissen nicht ganz zufrieden). Widersprüche in den Regeldateien sind dort aufgelistet und korrigiert.
-- **Update 31.10. abends:**
-  - **Reißverschluss zurückgestellt.** @simulierts hat das Thema am 31.10. zuerst gepostet.
-  - **Zweites Video: „Spurwechsel im Stau“ fertig und geprüft.** `pipeline/out/spurwechsel/spurwechsel.mp4`, 81,9 s, −14,0 LUFS, Iso-Stil, dem Inhaber geschickt.
-    - Ergebnis der Simulation: Wechseln bringt im Modell ca. 20 s auf 5 km, also ca. 2 s pro Wechsel. Die Nachbarspur wirkt schneller, weil man 20 % der Zeit überholt wird und selbst nur 11 % der Zeit überholt (Redelmeier & Tibshirani, Nature 1999).
-    - Iso-Baukasten: `pipeline/engine/iso.js` und `iso.css`.
-    - Bekannte Schwäche: Im Rennen-Teil wirkt der Stau stellenweise locker. Das liegt an der Modelldichte (40 Fz/km je Spur). Verbessern auf Wunsch des Inhabers.
-  - **GTA 6, Version 3: fertig und geprüft** (82,6 s, −14,0 LUFS, neue Vertonung am Stück mit Pausen), dem Inhaber geschickt.
-  - **Untertitel-Engine:** Die Zeile bleibt jetzt auch beim Erscheinen des letzten Worts innerhalb der sicheren Zone. Gilt ab dem nächsten Render.
-- **Ältere Fassungen** (GTA 6 Version 1 und 2, Reißverschluss Version 1 und 2) liegen in `pipeline/out/` und werden nicht gepostet. Die Dateien sind nicht im Repo, weil sie zu groß sind. Neu bauen lässt sich jedes Video mit den Befehlen in `pipeline/README.md`.
-- **Stimme:** ElevenLabs „Ben“ `aTTiK3YzK3dXETpuDE2h` ist Standard in `pipeline/tts.py`. Alternativen dort hinterlegt: Marc, Alexander, Otto. Bibliotheksstimmen funktionieren mit unserem Key ohne Leserecht.
-- **Untertitel-Engine:** `Karaoke`-Stil „kontur“ in `pipeline/engine/hud.js`.
-  - Überlange Wörter wie „Straßenverkehrsordnung.“ verkleinern nur ihren Block.
-  - Der Blockwechsel kommt ohne leeres Bild aus. Das gilt ab dem nächsten Render.
-- **Designstile:** Katalog mit 8 Stilen in `docs/10-designstile.md` (Abschnitt 0), Beispielbilder in `docs/assets/stile/`. Je Video gilt der Stil, der zum Thema passt (Entscheidung 31.10.). Für jeden Stil wird beim ersten Einsatz ein Szenen-Baukasten gebaut.
-- **30-Tage-Plan:** `data/plan/30-tage.csv` und `docs/12-30-tage-plan.md`.
-  - Umfang: 60 Videos (2 pro Tag) plus max. 10 Bonusvideos, mit Spalte `stil`.
-  - Der Plan ist die Reihenfolge der nächsten Videos. Die Produktion startet täglich erst auf das Startsignal des Inhabers.
-- **Auto-Posting:** Buffer wird getestet (`docs/11-automatisierung.md`, Abschnitt 3 A). Die Regel in CLAUDE.md ist angepasst: offizielle Partner-Tools sind erlaubt, Claude legt nur Entwürfe an, der Inhaber gibt frei.
-- **Trend-Radar:** läuft täglich um 05:35 Uhr, Vorschläge stehen in `docs/trends/vorschlaege.md`.
-  - Das alte „1.000 simulierte …“-Format ist entfernt (`docs/07-trend-monitoring.md`, Schritt 4). Die Radar-Sitzung hat das bestätigt.
-  - Neuer Schritt 9: Das Ergebnis geht täglich per Telegram an den Inhaber, sobald Telegram eingerichtet ist (`docs/13-telegram-radar.md`, Skript `tools/telegram_senden.py`). Die Telegram-API ist im Netz der Umgebung noch gesperrt.
-- **Angenommene Trend-Videos:**
-  - GTA 6 Deutschland am 17.11.
-  - Weihnachtsgeld vom 20. bis 28.11.
-  - Mindestlohn 14,60 € vom 28.12. bis 05.01.
-  - Offen: Deutschlandticket (79 Punkte, 12.–20.12.).
-- **Konkurrenz:** @gegenprobe, @alltagsduell, @alltagsformel, @alltaginzahlen (alle im Monitor). Tempo zählt.
-- **Konto:**
-  - Laut letztem Stand noch **privat**. Vor dem ersten Post auf öffentlich stellen (`docs/09-posting-anleitung.md`).
-  - Shop-Videos bleiben öffentlich, keine neuen Shop-Videos.
-- **Ausstattung:**
-  - ElevenLabs Starter. Für 2 Videos am Tag später Creator für 22 $/Monat (`docs/12-30-tage-plan.md`, 4.3).
-  - Rendern vorerst in der Cloud (ca. 50 Min. pro Video), später auf dem Windows-PC.
-  - Google-Drive-Ablage kommt später über Drive für Desktop auf dem PC.
-  - Firecrawl-Credits waren am 31.10. aufgebraucht.
+- **Neuaufstellung (31.10. spät):** Maßstab sind 4 virale Konkurrenzvideos (je über 1 Mio. Aufrufe), Auswertung in `docs/15-massstab.md`. Verbindlich, Pflichtlektüre zu Beginn jeder Sitzung.
+- **Regeln neu:**
+  - `CLAUDE.md`
+    - Rolle Content-Creator-Experte
+    - nur Three.js/Blender
+    - Videoaufbau in 11 Phasen
+    - kein Name und keine Rubrik im Video
+    - Folgen-Aufruf bei ca. 20 s
+    - Schluss: „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“
+  - `docs/08-beispielskripte.md`: Aufbau, Textregeln, Regie-Text für ElevenLabs, Spurwechsel-Neubau als Beispiel
+  - `ENTSCHEIDUNGEN.md`: 14 neue Einträge vom 31.10.
+- **Stimme:**
+  - Ben im Original: Die Anfrage schickt keine `voice_settings`, ElevenLabs nutzt die gespeicherten Einstellungen (`pipeline/tts.py`, `--modell v4|v2`).
+  - Gemessen spricht Ben im Original ca. 2,0 Wörter/s mit Satzpausen von 0,5–0,7 s (Maßstab 2,5–2,9). Deshalb Skripte mit ca. 130–165 Wörtern.
+  - Hörproben v4 und v2: `pipeline/out/stimmprobe/` (nicht im Repo), an den Inhaber geschickt.
+  - **Modellwahl offen.**
+- **Engine nach Maßstab** (`pipeline/engine/massstab.js`, `regie.js`, `uebergaenge.js`, Nutzung in `pipeline/README.md`):
+  - Bausteine: Anzeigetafel mit Live-Zählern, Renn-Uhr, Chips, Stempel, Fortschrittsleiste, Formel-, Bilanz- und Warum-Karten, Pointe, Folgen-Aufruf, Phrasen-Untertitel mit Teamfarbe
+  - Kamera-Regie, neue Übergänge, Schleife
+  - Ton: Klangteppiche plus automatische Effekte aus `ereignisse.json`
+  - Prüfskript `pipeline/qc/massstab.py`
+  - Demo `pipeline/projekte/_demo-massstab`: 5,9 Ereignisse/s, längste Ruhe 0,95 s
+  - Marke und Rubrik sind aus der Engine entfernt.
+  - **Renderzeit gestiegen:** 4,6–5,2 s/Bild unter Last (S: ohne Last ca. 2,5 s/Bild, also ca. 1,5 Std. pro Video). Schnelle Vorschau mit `--query "msaa=0&schatten=1024"`.
+- **Stile:**
+  - Katalog um 9–15 erweitert (Holz, Papier, Filz, Comic-Toon, Blaupause, Glas-Labor, Holz gebacken). Übersicht `docs/assets/stile/uebersicht_neu.jpg`.
+  - Empfehlung Alleinstellungsmerkmal: Familie „Handgemachte Miniatur“ (Holz/Papier/Filz, später Knete) über den Weg „Blender backen → glTF → Three.js“ (`docs/10`, Abschnitt 0.4).
+  - **Bestätigung durch den Inhaber offen.**
+  - Die alten Stile 4/5/6 werden beim ersten Einsatz in Three.js nachgebaut.
+- **Logo:** 3 Konzepte aus Blender in `marke/` (Übersicht `marke/logo/uebersicht.png`). Empfehlung: A „S-Kurve“. **Wahl offen.** Nicht im Video verwenden.
+- **30-Tage-Plan nach Maßstab:**
+  - 17 Themen ersetzt (u. a. Duschen, weil es Vorbild-Video K4 ist), 7 als Duell umgebaut
+  - je Video Hook, Denkfalle, 2 Wendungen, Teamfarben, Maßstab-Score (Schnitt 76,5)
+  - PDF: `docs/plan/30-tage-plan.pdf` (neu erzeugen: `node tools/plan_pdf.mjs`)
+- **Erste Videos:**
+  - GTA 6 (Version 3) und Spurwechsel sind nach alten Regeln gebaut (mit Marke, alter Schluss, ohne Maßstab-Bausteine). Status im Plan: **„Neubau nach Maßstab nötig“**.
+  - Reißverschluss bleibt zurückgestellt.
+- **Gedächtnis:**
+  - PreCompact-Hook sichert alle Nachrichten nach `.sitzung/` (nicht im Repo).
+  - SessionStart-Hook (nach `/compact`) erinnert ans Lesen.
+  - Aktiv ab der nächsten Sitzung bzw. nach einmal `/hooks` öffnen.
+- **Repo ist öffentlich.** Empfehlung an den Inhaber: auf privat stellen. Konkurrenzmaterial und Gesprächsverläufe kommen nicht ins Repo.
+- **Trend-Radar:** läuft täglich 05:35 Uhr. `docs/07` verlangt jetzt Vorschläge im Maßstab-Format. Telegram ist noch nicht eingerichtet.
 
 ## Nächste Schritte
 
 | # | Schritt | Wer | Zeit | Status |
 |---|---|---|---|---|
-| 0 | Arbeitsweise prüfen und Feedback geben: beide Videos mit der Vorlage bewerten, 2–3 Vorbild-Videos als Datei hochladen, 3 Fragen entscheiden (`docs/14-arbeitsweise.md`, Abschnitte 8–10) | Inhaber | 25 Min. | offen |
-| 1 | TikTok-Konto öffentlich stellen, GTA 6 (Version 3) und Spurwechsel posten, sobald das Feedback eingearbeitet ist: Video 1 als Buffer-Test (`docs/11`, 3 A), Video 2 per TikTok Studio oder Buffer; Captions im Format laut `CLAUDE.md`. Reißverschluss wird nicht gepostet. | Inhaber | 30–45 Min. | offen |
-| 2 | Telegram-Bot einrichten (`docs/13-telegram-radar.md`) | Inhaber | 10 Min. | offen |
-| 3 | Nach erfolgreichem Buffer-Test: Essentials buchen; danach optional das Skript `pipeline/post_buffer.py` für Entwürfe in Auftrag geben (`docs/11`, 3 B/C) | Inhaber, danach Claude | 10 Min. bzw. 2–3 Std. | offen |
-| 4 | Tägliches Startsignal: nächste Videos laut `data/plan/30-tage.csv` produzieren; erst die Duell-Tafel (V3) und die Stil-Baukästen, wenn das erste Video sie braucht | Inhaber, dann Claude | täglich | ab 01.11. |
-| 5 | ElevenLabs auf Creator, sobald die Credits nicht mehr reichen (ca. 1.250–1.400 Credits pro Video) | Inhaber | 5 Min. | später |
-| 6 | Impressum-Link in der Bio, Nebentätigkeit klären | Inhaber | 1 Std. | offen |
-| 7 | Windows-Setup für das lokale Rendern (inklusive Drive für Desktop) | Claude plus Inhaber | 30 Min. | später |
+| 1 | Entscheiden: Stimme v4 oder v2; Logo A/B/C; Stil-Familie „Handgemachte Miniatur“ ja/nein; Untertitel als Phrasen ok | Inhaber | 10 Min. | offen |
+| 2 | Repo auf privat stellen (GitHub → Settings → General → Change visibility) | Inhaber | 2 Min. | offen |
+| 3 | Startsignal: Spurwechsel als erstes Video nach Maßstab neu bauen (Skript steht in `docs/08` §4) mit dem neuen Baukasten, danach GTA 6 | Inhaber, dann Claude | ca. 3–4 Std. Claude | wartet |
+| 4 | Windows-PC einrichten (Claude Code, Node, ffmpeg, Blender), um mit GPU zu rendern | Inhaber plus Claude | 30–60 Min. | empfohlen |
+| 5 | TikTok-Konto öffentlich, Buffer-Test, Telegram (`docs/13`) | Inhaber | 30 Min. | offen |
+| 6 | Bausteine `pipeline/stile/massstab.js` und `pipeline/engine/massstab.js` zusammenführen; Bake-Weg (Stil 15) als Engine-Baukasten | Claude | 2–4 Std. | beim ersten Einsatz |
+| 7 | ElevenLabs Creator, sobald die Credits knapp werden; Impressum-Link; Nebentätigkeit klären | Inhaber | – | später |
 
 ## Offene Punkte
-- [ ] Deutschlandticket-Vorschlag (79) annehmen oder ablehnen
-- [ ] Musik: leiser Hintergrund oder nur Soundeffekte (bisher: eigene Effekte plus leiser Klangteppich)
-- [ ] Zeit- und Geldbudget bestätigen (angenommen: 5 Std./Woche Aufbau, 50 €/Monat; neu dazu: Buffer ca. 9 €, ElevenLabs Creator ca. 20 €)
-- [ ] Wie viel vom Max-Abo darf das Projekt nutzen (angenommen: 50 %)? Für 2 Videos pro Tag mit 8 Stilen ist das der Engpass (`docs/12-30-tage-plan.md`, 4.2).
-- [ ] Vorbild-Videos als Datei hochladen (Maßstab für Bild und Ton). Eine CDN-Freigabe hilft nicht, weil der Download als Umgehung von Bot-Schutz verweigert wird.
-- [ ] Entscheiden (Empfehlungen in `docs/14-arbeitsweise.md`, Abschnitt 9): bis 15.11. nur 3 statt 8 Stile? Darf das Bild zuspitzen, solange die Zahlen exakt bleiben? Probebilder und Hörprobe vor dem Vollrender?
-- [ ] Prompt der geplanten Radar-Aufgabe nennt Telegram noch nicht. Nicht nötig, weil der Radar `docs/07` jeden Tag neu liest. Ändern ginge nur aus der Radar-Sitzung heraus.
+- [ ] Stimme: Eleven v4 oder Multilingual v2 (Hörproben verschickt)
+- [ ] Logo: A „S-Kurve“ (Empfehlung), B oder C
+- [ ] Stil-Familie „Handgemachte Miniatur“ als Alleinstellungsmerkmal bestätigen
+- [ ] Position des Folgen-Elements (y ≈ 950) auf echtem Gerät prüfen
+- [ ] Teppich-Pegel (−10 dB) mit echter Stimme gegenhören
+- [ ] Plan: „120 oder 130 km/h“ ist optisch nah an K2. Bleibt mit eigenem Winkel (Tagesoptik, Euro pro Stunde).
+- [ ] Vor der Produktion prüfen: Tank-12-Uhr-Regel, Pendlerpauschale 2026, Steuerklassen 3/5 (Liste in `docs/12`)
+- [ ] Firecrawl-Credits fast leer (Recherche läuft über die Websuche)
+- [ ] Musik bzw. Klang: Teppich-Varianten mit echter Stimme abnehmen
