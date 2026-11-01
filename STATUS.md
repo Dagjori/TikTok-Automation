@@ -1,6 +1,6 @@
 # STATUS
 
-**Stand:** 01.11.2026, ca. 01:45 Uhr (Nacht nach der Neuaufstellung)
+**Stand:** 01.11.2026, ca. 03:00 Uhr · **Heute in Produktion:** „Treppe oder Aufzug“ (Posting 12:00) und „200 € oder 100 € steuerfrei“ (Posting 20:00), zwei Agenten arbeiten parallel
 
 ## Wo wir stehen
 - **Neuaufstellung (31.10. spät):** Maßstab sind 4 virale Konkurrenzvideos (je über 1 Mio. Aufrufe), Auswertung in `docs/15-massstab.md`. Verbindlich, Pflichtlektüre zu Beginn jeder Sitzung.
@@ -17,8 +17,7 @@
 - **Stimme:**
   - Ben im Original: Die Anfrage schickt keine `voice_settings`, ElevenLabs nutzt die gespeicherten Einstellungen (`pipeline/tts.py`, `--modell v4|v2`).
   - Gemessen spricht Ben im Original ca. 2,0 Wörter/s mit Satzpausen von 0,5–0,7 s (Maßstab 2,5–2,9). Deshalb Skripte mit ca. 130–165 Wörtern.
-  - Hörproben v4 und v2: `pipeline/out/stimmprobe/` (nicht im Repo), an den Inhaber geschickt.
-  - **Modellwahl offen.**
+  - **Modell: Eleven v4 für alle Videos** (Inhaber 01.11.), Standard in `tts.py`.
 - **Engine nach Maßstab** (`pipeline/engine/massstab.js`, `regie.js`, `uebergaenge.js`, Nutzung in `pipeline/README.md`):
   - Bausteine: Anzeigetafel mit Live-Zählern, Renn-Uhr, Chips, Stempel, Fortschrittsleiste, Formel-, Bilanz- und Warum-Karten, Pointe, Folgen-Aufruf, Phrasen-Untertitel mit Teamfarbe
   - Kamera-Regie, neue Übergänge, Schleife
@@ -36,7 +35,8 @@
   - 17 Themen ersetzt (u. a. Duschen, weil es Vorbild-Video K4 ist), 7 als Duell umgebaut
   - je Video Hook, Denkfalle, 2 Wendungen, Teamfarben, Maßstab-Score (Schnitt 76,5)
   - PDF: `docs/plan/30-tage-plan.pdf` (neu erzeugen: `node tools/plan_pdf.mjs`)
-- **Erste Videos:**
+- **Erste Videos (Update 01.11.): GTA 6 und Spurwechsel sind gepostet (alte Version), kein Neubau.** Untertitel bleiben Wort für Wort (Inhaber 01.11.). Plan ab 01.11. verschoben, PDF neu.
+- **Erste Videos (Stand davor):**
   - GTA 6 (Version 3) und Spurwechsel sind nach alten Regeln gebaut (mit Marke, alter Schluss, ohne Maßstab-Bausteine). Status im Plan: **„Neubau nach Maßstab nötig“**.
   - Reißverschluss bleibt zurückgestellt.
 - **Gedächtnis:**
@@ -50,16 +50,15 @@
 
 | # | Schritt | Wer | Zeit | Status |
 |---|---|---|---|---|
-| 1 | Entscheiden: Stimme v4 oder v2 (Proben am 01.11. erneut als Video geschickt); Untertitel als Phrasen ok; Logo als TikTok-Profilbild hochladen | Inhaber | 10 Min. | offen |
+| 1 | Logo A als TikTok-Profilbild hochladen; heute 12:00 und 20:00 posten (KI-Schalter AN) | Inhaber | 15 Min. | heute |
 | 2 | Repo auf privat stellen (GitHub → Settings → General → Change visibility) | Inhaber | 2 Min. | offen |
-| 3 | Startsignal: Spurwechsel als erstes Video nach Maßstab neu bauen (Skript steht in `docs/08` §4) mit dem neuen Baukasten, danach GTA 6 | Inhaber, dann Claude | ca. 3–4 Std. Claude | wartet |
+| 3 | Produktion heute: Treppe oder Aufzug (fertig bis 10:30), 200 € oder 100 € steuerfrei (fertig bis 18:30) | Claude (Agenten) | läuft | läuft |
 | 4 | Windows-PC einrichten (Claude Code, Node, ffmpeg, Blender), um mit GPU zu rendern | Inhaber plus Claude | 30–60 Min. | empfohlen |
 | 5 | TikTok-Konto öffentlich, Buffer-Test, Telegram (`docs/13`) | Inhaber | 30 Min. | offen |
 | 6 | Bausteine `pipeline/stile/massstab.js` und `pipeline/engine/massstab.js` zusammenführen; Bake-Weg (Stil 15) als Engine-Baukasten | Claude | 2–4 Std. | beim ersten Einsatz |
 | 7 | ElevenLabs Creator, sobald die Credits knapp werden; Impressum-Link; Nebentätigkeit klären | Inhaber | – | später |
 
 ## Offene Punkte
-- [ ] Stimme: Eleven v4 oder Multilingual v2 (Hörproben verschickt)
 - [ ] Position des Folgen-Elements (y ≈ 950) auf echtem Gerät prüfen
 - [ ] Teppich-Pegel (−10 dB) mit echter Stimme gegenhören
 - [ ] Plan: „120 oder 130 km/h“ ist optisch nah an K2. Bleibt mit eigenem Winkel (Tagesoptik, Euro pro Stunde).
