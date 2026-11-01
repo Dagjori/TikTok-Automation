@@ -18,7 +18,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
   - meist ein Duell bzw. Rennen gegen die Uhr mit sichtbaren Zählern (Maßstab)
 - **Kanäle:** bestehender TikTok-Account des Inhabers (ca. 3k Follower). YouTube Shorts als Zweitverwertung.
 - **Ziel:** 10k Follower und CRP, danach Ausbau (zweite Nische, englische Version).
-- **Account 2 (in Vorbereitung):** neuer Account, „Mal angenommen …“-3D-POV in Du-Perspektive, nur Blender/Three.js (Unreal Engine 5 optional), eigene deutsche v4-Stimme. Details und Stand: `docs/16-account-2-nischen.md`.
+- **Account 2 (in Vorbereitung, Nische bestätigt 01.11.):** neuer Account, „Was wäre, wenn …“-3D-POV in Du-Perspektive, nur Blender/Three.js (Unreal Engine 5 optional), Stimme **Otto** `FTNCalFNG5bRnkkaP5Ug` (Eleven v4, Original-Einstellungen), Logo „Fragezeichen-Countdown“ (`marke/account2/`). Details und Stand: `docs/16-account-2-nischen.md`.
 - **Inhaber:** arbeitet Vollzeit im Hauptjob, Zeit ist knapp. Jeder Schritt muss den größten Hebel pro Stunde haben.
 
 ## Maßstab (verbindlich, darf nie untergehen)

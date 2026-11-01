@@ -239,3 +239,18 @@ Formel: Umsatz = Views × Anteil qualifiziert × RPM / 1.000.
 | 6 | Leonie, Clear and Engaging | uvysWDLbKpA4XvpD3GI6 |
 
 Speech-to-Text bestätigt: v4 spricht die Regie-Tags nicht mit (Proben 1 und 4 geprüft).
+
+## 11. Entscheidungen, Namen und Logo (01.11., abends)
+
+- **Bestätigt (Inhaber):** Nische „Was wäre, wenn …“-3D-POV in Du-Perspektive, Stimme **Otto** (`FTNCalFNG5bRnkkaP5Ug`, Eleven v4).
+- **Namensvorschläge.** Geprüft am 01.11. über die öffentlichen TikTok-Profilseiten: „nicht gefunden“ heißt sehr wahrscheinlich frei (F). Gesperrte oder reservierte Namen sieht man erst bei der Anmeldung. YouTube-Handles sind aus der Cloud nicht prüfbar.
+
+| Rang | Anzeigename | Handle | Status | Bewertung (S) |
+|---|---|---|---|---|
+| 1 | Stell dir vor … | `@stelldirvor.pov` | frei | passt wörtlich zur Du-Perspektive (jedes Video beginnt so), eigenständig; `@stelldirvor` ohne Zusatz ist vergeben, aber leer (46 Follower, 0 Videos) |
+| 2 | Plötzlich … | `@ploetzlich.pov` | frei | kurz, Spannung, das Wendewort jedes Du-Szenarios; Handle ohne Umlaut |
+| 3 | Was wäre, wenn … | `@waswaere.pov` | frei | stärkster Suchbegriff, aber generisch und nah an `@waswaerewenn.pov` und `@angenommen.pov` |
+| 4 | Und was dann? | `@undwasdann.pov` | frei | neugierig, gut als Kommentar-Aufhänger |
+| 5 | Mal angenommen … | `@malangenommen.pov` | frei | Wunsch des Inhabers, aber **Verwechslungsgefahr** mit dem aktiven `@mal.angenommen` (seit Okt. 2026, 1.543 Follower, Gedankenexperimente) |
+
+- **Logo:** Konzept „Fragezeichen-Countdown“, `marke/account2/` (Dateien und Farben im README dort).

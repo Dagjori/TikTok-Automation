@@ -24,6 +24,7 @@
 - Empfehlung: „Mal angenommen …“-Gedankenexperimente in 3D aus Ich-Perspektive, Kern „Was wäre, wenn [Naturbaustein] 5 Sekunden verschwindet?“ (US Okt. 2026: Median 838.700, Max. 18,2 Mio., alle über 60 s; DE kaum besetzt). Score 91.
 - CRP: 1.000 €/Monat ≈ 1,4–5 Mio. Views (mittel 2,4 Mio., ca. 40k je Video bei 60 Videos).
 - KI-Label: Das sichtbare Label steht im Feld `aigcLabelType`, nicht in `IsAigc`. Pflicht ist es nur bei realistischen Inhalten.
+- **Bestätigt 01.11. abends:** Nische „Was wäre, wenn …“-POV (Du-Perspektive), Stimme Otto `FTNCalFNG5bRnkkaP5Ug`, Logo „Fragezeichen-Countdown“ (`marke/account2/`). Namensvorschläge `docs/16` §11.
 - Inhaber 01.11.: POV-Stil wie @man_ia_c, nur Blender/Three.js, neue deutsche v4-Stimme; alter Account hat nur 130 Follower (Gesundheit, inaktiv seit 08/2024). Empfehlung von Claude: neuen Account anlegen. @angenommen.pov (0 Videos) hat das Konzept am 07.10. reserviert, also Tempo.
 - Neu: Sticker max. 5 je Video (Prüfpunkt 5d) und Inhalte mittig: Engine umgestellt auf Achse 540, Schutzzone symmetrisch 150 px (Testrender der Demo geprüft). Kein Kalibrier-Test (Inhaber). Videos vom 02.11. bleiben, wie sie sind.
 - Regelwerk-PDF: `docs/regelwerk/regelwerk-2026-11-01.pdf` (Quelle `docs/regelwerk/regelwerk.html`, `node tools/regelwerk_pdf.mjs`). Bei jeder Regeländerung neu erzeugen und schicken.
@@ -53,7 +54,7 @@
 | 3 | Repo auf privat stellen (GitHub → Settings → General → Change visibility) | Inhaber | 2 Min. | offen |
 | 4 | Produktion 02.11.: Fußgängerampel und Steuererklärung oder Überstunden | Claude (Agenten) | – | erledigt, beide übergeben |
 | 4b | 02.11. Fußgängerampel 12:00 und Steuererklärung 20:00 posten (KI-Schalter AN), vorher mit Ton anhören | Inhaber | 15 Min. | 02.11. |
-| 4d | Account 2: Nische bestätigen (Empfehlung „Mal angenommen“-POV, Score 86 gegen 70), Stimme aus 6 Proben wählen, neuen Account anlegen (Privatkonto, Region DE, Handle z. B. malangenommen.pov) | Inhaber | 15 Min. | offen |
+| 4d | Account 2: neuen Account anlegen (Privatkonto, Region DE), Namen aus `docs/16` §11 wählen (Empfehlung „Stell dir vor …“ `@stelldirvor.pov`), Profilbild `marke/account2/logo/account2-logo-fragezeichen-profilbild-1080.png` hochladen | Inhaber | 15 Min. | offen |
 | 4e | Prototyp Account 2 (neuer Szenentyp, Opus): deutscher Ort, Du-Perspektive, eigenes Thema mit Rechnung | Claude (Agent) | 1–2 Agententage | nach 4d |
 | 4c | Startsignal für 03.11.: „Schere, Stein, Papier“ (Stil 3 Clay) und „Mittagessen im Job“ (Stil 6 Collage) | Inhaber | – | offen |
 | 5 | Windows-PC einrichten (Claude Code, Node, ffmpeg, Blender), um mit GPU zu rendern | Inhaber plus Claude | 30–60 Min. | empfohlen |

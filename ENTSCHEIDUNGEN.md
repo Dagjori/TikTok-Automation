@@ -69,3 +69,5 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-11-01 | Unreal Engine 5 darf als zusätzliches Werkzeug genutzt werden, wenn es einen klaren Vorteil bringt; dabei sparsam mit Tokens | Inhaber |
 | 2026-11-01 | Bei jeder Änderung an Regeln oder Wissen bekommt der Inhaber ein 1-Seiten-PDF: was geändert, was hinzugefügt, aktueller Stand (`docs/regelwerk/`, `node tools/regelwerk_pdf.mjs`) | Inhaber: übersichtlicher Überblick |
 | 2026-11-01 | API-Key hat jetzt Leserechte für Stimmen (voices_read); Stimmen-Bibliothek per API durchsuchbar | Inhaber hat den Key angepasst |
+| 2026-11-01 | Account 2: Nische „Was wäre, wenn …“-3D-POV bestätigt (Du-Perspektive). „Wer war's?“ bleibt Kandidat für Account 3 | Inhaber; Vergleich in `docs/16` §10 (Score 86 gegen 70) |
+| 2026-11-01 | Account 2: Stimme **Otto** (ElevenLabs-Bibliothek, `FTNCalFNG5bRnkkaP5Ug`), Eleven v4, gespeicherte Original-Einstellungen | Wahl des Inhabers per Hörprobe (6 Kandidaten) |
