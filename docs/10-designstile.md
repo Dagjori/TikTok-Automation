@@ -9,7 +9,7 @@
 
 Alle Beispielbilder zeigen denselben Inhalt: das GELD-Duell „Deutschlandticket gegen Auto: Ab wann lohnt sich das Ticket?“. Die Zahlen (66,80 € und 214 € pro Monat, Break-even 13 Fahrten) sind **Beispielwerte**, keine Rechnung.
 
-> **Achtung, alte Beispielbilder 1–8:** Sie entstanden vor dem Maßstab ([15-massstab.md](15-massstab.md)). Sie zeigen teils noch Kanalname und Logo („SIMULIERBAR“ mit Würfel), die Rubrik („€ GELD“), eine große Titelkarte und den alten Karaoke-Untertitel mit gelbem aktuellem Wort. **Das gilt im Video nicht mehr.** Verbindlich ist das Maßstab-Layout: Anzeigetafel oben mit Teamfarben und Zähler, Szene in der Mitte, Untertitel als kurze Phrase (weiß, fett, schwarze Kontur, kein Kasten, Schlüsselwort in Teamfarbe), **kein Kanalname, kein Logo, keine Rubrik**. Die neuen Bilder 9–15 zeigen dieses Layout. Für die Stile 1–8 gilt beim ersten Einsatz: Szene übernehmen, HUD aus `pipeline/stile/massstab.css` bzw. `massstab.js` (Muster) bzw. der Engine.
+> **Achtung, alte Beispielbilder 1–8:** Sie entstanden vor dem Maßstab ([15-massstab.md](15-massstab.md)). Sie zeigen teils noch Kanalname und Logo („SIMULIERBAR“ mit Würfel), die Rubrik („€ GELD“), eine große Titelkarte und den alten Karaoke-Untertitel mit gelbem aktuellem Wort. **Das gilt im Video nicht mehr.** Verbindlich ist das Maßstab-Layout: Anzeigetafel oben mit Teamfarben und Zähler, Szene in der Mitte, Untertitel als kurze Phrase (weiß, fett, schwarze Kontur, kein Kasten, Schlüsselwort in Teamfarbe), **kein Kanalname, kein Logo, keine Rubrik**. Die neuen Bilder 9–15 zeigen dieses Layout. Für die Stile 1–8 gilt beim ersten Einsatz: Szene übernehmen, HUD aus der Engine (`pipeline/engine/massstab.js`). `pipeline/stile/massstab.css` und `massstab.js` sind nur das Muster für die Stilbilder.
 
 ![Neue Stile 9–15 im Maßstab-Layout](assets/stile/uebersicht_neu.jpg)
 
@@ -39,13 +39,13 @@ Renderkosten: Sekunden je Videobild 1080×1920 im Cloud-Container (4 Kerne, ohne
 | 6 | Papier-Collage | `assets/stile/stil_6_collage.png` | News, Gesetze, Handel und Werbung, Debatten: Black Friday, Finanzierung, Abos, Singles Day | heute SVG + Papierfilter → **Three.js** (Flächen mit Canvas-Texturen) oder als 3D-Variante Stil 10 | 0,1 s (SVG) |
 | 7 | Kinetische Typografie | `assets/stile/stil_7_typo.png` | Eine starke Zahl oder ein Mythos: Netto-Schock, Wahrscheinlichkeits-Paradoxa, „Was kostet das in Arbeitsstunden“ | HTML/CSS; bleibt als **HUD-Baustein** in jeder Three.js-Seite erlaubt | 0,2 s |
 | 8 | Karten-/Satellitenoptik | `assets/stile/stil_8_karte.png` | Orte, Wege, Regionen: Stadt gegen Land, Pendeln, Deutschland-Vergleiche, Wetter | Three.js + Bloom | 2,5 s |
-| 9 | **Holzspielzeug-Tisch** | `assets/stile/stil_9_holz.png` | Verkehr und Wege als Spielzeug-Rennen, Familie, Kinder, Spiele, Haushalt; GELD-Duelle mit „Spielgeld“-Münzen | Blender Cycles (Standbild) → fürs Video **Blender → Bake → glTF → Three.js** (Stil 15) | Cycles: «T9» · gebacken in Three.js: «T15F» |
-| 10 | **Papier-Diorama** | `assets/stile/stil_10_papier.png` | Seitenansicht mit zwei Bahnen (wie K1/K2), Stadt gegen Land, Wetter, Natur, Geschichten mit Szenenwechsel (Kulissen schieben) | Blender Cycles → Bake → glTF → Three.js (flache Schichten backen sehr gut) | Cycles: «T10» |
-| 11 | **Filz & Knöpfe** | `assets/stile/stil_11_filz.png` | Zuhause, Heizen, Strom, Schlaf, Winter, **Weihnachten** (Weihnachtsgeld 20.–28.11.), Kinder und Familie | Blender Cycles (Faserglanz) → Bake → glTF → Three.js | Cycles: «T11» |
-| 12 | **Comic-Toon 3D** | `assets/stile/stil_12_comic.png` | Schnelle Rennen mit Action: Verkehr, Sport, Wettläufe, Mythen; Sticker „ÜBERHOLT!“ passt perfekt | Three.js (Cel-Shading 3 Stufen, Rasterpunkte, Konturen) | «T12» |
-| 13 | **Blaupause / Schnittmodell** | `assets/stile/stil_13_blaupause.png` | „Warum?“-Aufschlüsselung, Technik, Energie, Autokosten, Geräte im Querschnitt; auch als **Szenenwechsel-Baustein** in jedem Stil | Three.js (dicke Linien, verdeckte Kanten gestrichelt, Röntgen-Füllung) | «T13» |
-| 14 | **Glas-Labor (Füllstand)** | `assets/stile/stil_14_glas.png` | Alles, was sich ansammelt: Kosten pro Fahrt, Wasser, Strom, Sprit, Zeit; Füllstand-Rennen | Blender Cycles (dünnwandiges Glas, Flüssigkeit mit Subsurface); Three.js mit `transmission` als schnellere, schwächere Variante | Cycles: «T14» |
-| 15 | **Holz gebacken** (Technik-Muster zu 9) | `assets/stile/stil_15_holz_gltf.png` | wie 9; zeigt den Produktionsweg für alle Blender-Stile | Blender (Cycles-Bake) → glTF → Three.js | einmalig Backen «T15B», danach «T15F» |
+| 9 | **Holzspielzeug-Tisch** | `assets/stile/stil_9_holz.png` | Verkehr und Wege als Spielzeug-Rennen, Familie, Kinder, Spiele, Haushalt; GELD-Duelle mit „Spielgeld“-Münzen | Blender Cycles (Standbild) → fürs Video **Blender → Bake → glTF → Three.js** (Stil 15) | Cycles: 194 s (48 Samples) · gebacken in Three.js: 0,9 s |
+| 10 | **Papier-Diorama** | `assets/stile/stil_10_papier.png` | Seitenansicht mit zwei Bahnen (wie K1/K2), Stadt gegen Land, Wetter, Natur, Geschichten mit Szenenwechsel (Kulissen schieben) | Blender Cycles → Bake → glTF → Three.js (flache Schichten backen sehr gut) | Cycles: 133 s (48 Samples) |
+| 11 | **Filz & Knöpfe** | `assets/stile/stil_11_filz.png` | Zuhause, Heizen, Strom, Schlaf, Winter, **Weihnachten** (Weihnachtsgeld 20.–28.11.), Kinder und Familie | Blender Cycles (Faserglanz) → Bake → glTF → Three.js | Cycles: 288 s (48 Samples) |
+| 12 | **Comic-Toon 3D** | `assets/stile/stil_12_comic.png` | Schnelle Rennen mit Action: Verkehr, Sport, Wettläufe, Mythen; Sticker „ÜBERHOLT!“ passt perfekt | Three.js (Cel-Shading 3 Stufen, Rasterpunkte, Konturen) | 0,5 s |
+| 13 | **Blaupause / Schnittmodell** | `assets/stile/stil_13_blaupause.png` | „Warum?“-Aufschlüsselung, Technik, Energie, Autokosten, Geräte im Querschnitt; auch als **Szenenwechsel-Baustein** in jedem Stil | Three.js (dicke Linien, verdeckte Kanten gestrichelt, Röntgen-Füllung) | 0,2 s |
+| 14 | **Glas-Labor (Füllstand)** | `assets/stile/stil_14_glas.png` | Alles, was sich ansammelt: Kosten pro Fahrt, Wasser, Strom, Sprit, Zeit; Füllstand-Rennen | Blender Cycles (dünnwandiges Glas, Flüssigkeit mit Subsurface); Three.js mit `transmission` als schnellere, schwächere Variante | Cycles: 299 s (56 Samples) |
+| 15 | **Holz gebacken** (Technik-Muster zu 9) | `assets/stile/stil_15_holz_gltf.png` | wie 9; zeigt den Produktionsweg für alle Blender-Stile | Blender (Cycles-Bake) → glTF → Three.js | einmalig Backen 5,5 Min., danach 0,9 s (ohne Unschärfe 0,5 s) |
 
 **Regeln bei der Wahl:**
 - Zwei direkt aufeinanderfolgende Videos haben nie denselben Stil.
@@ -69,7 +69,7 @@ Gemeinsam: Maßstab-HUD aus `pipeline/stile/massstab.css` und `massstab.js` (Taf
 11. **Filz & Knöpfe** (`stil_11_filz.py` + `.html`)
     - Look: gepolsterte Filzformen mit Faserglanz, Ziernähte, Knöpfe als Räder, Bommel-Bäume, Garnrolle, Filzfähnchen „13“, Tafel als Filzflicken mit Naht.
     - Stärke: gemütlich, saisonal (Winter, Weihnachten), sehr eigen (A).
-    - Schwäche: teuerster Material-Look (Faserglanz und Struktur brauchen Samples); feine Fusseln nur mit Haar-Partikeln (noch teurer). Für viele Objekte zu unruhig (A).
+    - Schwäche: neben Glas der teuerste Look (Faserglanz und Struktur brauchen Samples). Die Faser muss als Farbkörnung im Material liegen, sonst glättet der Denoiser sie weg (F, Test). Echte Fusseln nur mit Haar-Partikeln (noch teurer). Für viele Objekte zu unruhig (A).
 12. **Comic-Toon 3D** (`stil_12_comic.html` + `.js`)
     - Look: Cel-Shading in 3 Stufen, Rasterpunkte (Halftone) in den Schatten, schwarze Konturen, harte Schatten, Strahlenkranz-Himmel, Tempostriche, Sticker „ÜBERHOLT!“, schräge Comic-Panels als Tafel.
     - Stärke: maximal lesbar und energiegeladen, rendert schnell, keine Nachbearbeitung nötig (F, Messung). Bausteine aus dem Maßstab (Sticker, Chips) passen nahtlos.
@@ -79,13 +79,13 @@ Gemeinsam: Maßstab-HUD aus `pipeline/stile/massstab.css` und `massstab.js` (Taf
     - Stärke: macht die „Warum?“-Aufschlüsselung sichtbar (Maßstab-Gesetz 8). Schnellster neuer Stil (F, Messung).
     - Schwäche: allein zu kühl für ein ganzes Video; am besten als Szenenwechsel (A).
 14. **Glas-Labor** (`stil_14_glas.py` + `.html`)
-    - Look: zwei Messzylinder im Fotostudio (Hohlkehle, Softboxen), Geld als farbige Flüssigkeit, Zulauf mit Strahl über dem Auto-Zylinder, gelbe Gleichstand-Linie, Zielstrich „214“, Milchglas-Tafel.
+    - Look: zwei Messzylinder aus dünnem Laborglas im Fotostudio (Hohlkehle, Softboxen), Geld als farbige Flüssigkeit, Zulauf mit Strahl und Tropfen über dem Auto-Zylinder, gelbe Gleichstand-Linie, Zielstrich „214“, Teamchips auf den Zylindern, Milchglas-Tafel.
     - Stärke: Füllstand ist ein Live-Zähler, den jeder ohne Erklärung versteht; erinnert an K4 (Messzylinder), aber fotorealistisch statt 2.5D (A).
-    - Schwäche: Glas mit Brechung ist der teuerste Effekt; im Video nur gebacken bzw. mit Three.js-`transmission` vereinfacht (S).
+    - Schwäche: Glas und durchscheinende Flüssigkeit sind blickabhängig und lassen sich nicht backen. Fürs Video: Three.js-`transmission` bzw. halbtransparente Flüssigkeit mit gebackener Umgebung (S). Echte dicke Glaswände (Brechung) wurden in Cycles schwarz bzw. unruhig; dünnwandiges Glas (`Thin Wall`) ist sauberer und schneller (F, Test).
 15. **Holz gebacken: Blender → glTF → Three.js** (`stil_15_holz_gltf.py` + `.html`/`.js`)
     - Weg: Szene aus Stil 9 bauen → Licht in Texturen backen (Cycles, diffus: direkt + indirekt + Farbe) → eine `.glb`-Datei → Three.js zeigt sie mit unbeleuchteten Materialien, AgX-Tonemapping wie Blender und einer günstigen Tiefenunschärfe (Abstand je Pixel, Weichzeichner in halber und viertel Auflösung, Stärke aus Brennweite und Blende der Blender-Kamera). Der fertige `BokehPass` von Three.js kostete unter Last 2,6–3 s je Bild (F, Messung) und wurde deshalb ersetzt.
     - Regeln: Tisch und Kulisse **ohne** Fahrzeuge backen, Fahrzeuge einzeln backen und mit mitfahrendem Kontaktschatten bewegen; Glanz wird nicht gebacken.
-    - Ergebnis: Das Bild ist dem Cycles-Bild 9 sehr nah (F, Bildvergleich). Unterschiede: kein Glanz auf dem Lack, Farben etwas flauer (der AgX-„Punchy“-Look fehlt in Three.js), Kontaktschatten der Fahrzeuge weicher. Zug und Auto lassen sich per `renderAt(t)` verschieben (Beweis der Animierbarkeit).
+    - Ergebnis: Das Bild ist dem Cycles-Bild 9 sehr nah (A, eigener Bildvergleich). Unterschiede: kein Glanz auf dem Lack, Farben etwas flauer (der AgX-„Punchy“-Look fehlt in Three.js), Kontaktschatten der Fahrzeuge weicher. Zug und Auto lassen sich per `renderAt(t)` verschieben (Beweis der Animierbarkeit).
     - Fallstrick (behoben): `gltf.scene` ist in Three.js nur eine Gruppe. `overrideMaterial` und `background` wirken erst, wenn sie in eine echte `THREE.Scene` gehängt wird.
 
 ### 0.2 Bewertung aller geprüften Kandidaten (Recherche 31.10./01.11.2026)
@@ -112,16 +112,16 @@ Punkte 1 (schlecht) bis 5 (gut), alle **Schätzungen (S)** auf Basis der Beispie
 
 ### 0.3 Technik-Pfade und Renderkosten (gemessen 01.11.2026)
 
-Messung im Cloud-Container (4 Kerne, ohne GPU). **Parallel lief ein Blender-Render eines anderen Agenten** (Last 7–10). Die absoluten Cycles-Werte sind deshalb zu hoch, ohne Last etwa halb so lang (S).
+Messung im Cloud-Container (4 Kerne, ohne GPU), Cycles mit 3–4 Threads. **Zeitweise lief parallel ein Blender-Render eines anderen Agenten** (Last 3–10). Unter Volllast dauerten dieselben Bilder 1,6- bis 2-mal so lange (F: Holz 307 statt 194 s, Filz 592 statt 288 s, Backen 560 statt 327 s, Bild aus dem Bake-Weg 1,5–1,75 statt 0,9 s). Werte: `pipeline/stile/messung_neu.json`.
 
 | Pfad | Was | Cloud (F, gemessen) | Windows-PC mit GPU (S) | Einsatz |
 |---|---|---|---|---|
-| Three.js direkt | Comic (12), Blaupause (13) | «T12» bzw. «T13» je Bild → 80-s-Video ca. «V12» | 3–5 Min. je Video | Produktion |
-| Blender Cycles je Bild | Holz, Papier, Filz, Glas als Standbild, 1080×1920, 48–96 Samples + Denoiser | Holz «T9», Papier «T10», Filz «T11», Glas «T14» je Bild → 80-s-Video **über 200 Std.** | 5–20 s je Bild → 3–13 Std. je Video | **nur** Standbilder, Vorschaubild, kurze Einschübe (1–3 s) |
-| Blender → Bake → glTF → Three.js | Stil 15 (Holz) | einmalig Backen «T15B», danach «T15F» je Bild → 80-s-Video ca. «V15» | Backen 1–3 Min., je Bild unter 0,3 s | **Produktionsweg für alle Material-Stile** |
+| Three.js direkt | Comic (12), Blaupause (13) | 0,5 s bzw. 0,2 s je Bild → 80-s-Video ca. 21 bzw. 8 Min. | 3–5 Min. je Video | Produktion |
+| Blender Cycles je Bild | Holz, Papier, Filz, Glas als Standbild, 1080×1920, 48–56 Samples + Denoiser (OpenImageDenoise) | Papier 133 s, Holz 194 s, Filz 288 s, Glas 299 s je Bild → 80-s-Video **90–200 Std.** | 5–20 s je Bild → 3–13 Std. je Video | **nur** Standbilder, Vorschaubild, kurze Einschübe (1–3 s) |
+| Blender → Bake → glTF → Three.js | Stil 15 (Holz): 5 Lichttexturen (2048² Kulisse, 1024² Zug und Auto, 1024×512 Tisch, 512² Wand), 32 Samples, `.glb` 1,7 MB | einmalig Backen 5,5 Min. (Kulisse 152 s, Zug 68 s, Auto 64 s, Tisch 36 s, Wand 5 s), danach 0,9 s je Bild mit Tiefenunschärfe (0,5 s ohne) → 80-s-Video ca. 35 Min. | Backen 1–3 Min., je Bild unter 0,3 s | **Produktionsweg für alle Material-Stile** |
 | Blender Eevee | gleiche Szenen, Echtzeit-Renderer | in der Cloud nicht brauchbar: läuft nur per Software-OpenGL (Testkugel 540×960: 42 s, mit Bildfehler) (F) | ca. 0,5–3 s je Bild (S) | Option, sobald der Windows-PC rendert |
 
-Folgerung: Der Qualitätssprung durch Blender ist im Standbild deutlich (F, Bildvergleich 9 gegen 3). Fürs Video ist Cycles je Bild in der Cloud nicht machbar. **Der Bake-Weg holt den Großteil der Blender-Qualität (Licht, weiche Schatten, Material) zu Three.js-Kosten** (F, Messung Stil 15). Was verloren geht: Glanz und Spiegelungen, Glas-Brechung, bewegte Schatten (Ersatz: Kontaktschatten, Three.js-Glanzlicht) (F, Bildvergleich).
+Folgerung: Der Qualitätssprung durch Blender ist im Standbild deutlich (A, eigener Bildvergleich 9 gegen 3). Fürs Video ist Cycles je Bild in der Cloud nicht machbar. **Der Bake-Weg holt den Großteil der Blender-Qualität (Licht, weiche Schatten, Material) zu Three.js-Kosten** (F, Messung Stil 15). Was verloren geht: Glanz und Spiegelungen, Glas-Brechung, bewegte Schatten (Ersatz: Kontaktschatten, Three.js-Glanzlicht) (F, Vergleich der Bilder 9 und 15).
 
 ### 0.4 Alleinstellungsmerkmal: Empfehlung
 
@@ -138,7 +138,7 @@ Begründung:
 - **Design-Trend 2026: zurück zum Taktilen und Handgemachten.** Trendberichte beschreiben eine Abkehr vom glatten Digital-3D von 2025 hin zu Oberflächen, die „gemacht“ wirken (Papier, Stoff, Ton), gerade als Gegenpol zu KI-Bildern (F, Sekundärquellen: Creative Bloq, Videobolt, Graphic Design Junction; Blogs, keine Reichweitendaten).
 - **Spielzeug statt Spielegrafik:** Holz, Papier und Filz wirken wie Bastel- bzw. Spielzeugwelt, nicht wie ein Videospiel. Das kann die Einordnung als „Video Games“ verringern (A; Anlass F: 4 von 6 unserer 3D-Videos wurden so eingeordnet).
 - **Schwer zu kopieren:** Pfadverfolgte Materialien plus automatisierter Bake-Weg brauchen Blender-Wissen und eine Pipeline. Eine öffentliche Low-Poly-Vorlage reicht dafür nicht (A).
-- **Bezahlbar:** Mit dem Bake-Weg kostet ein Videobild «T15F» statt «T9» (F, Messung).
+- **Bezahlbar:** Mit dem Bake-Weg kostet ein Videobild 0,9 s statt 194 s, also gut 200-mal weniger, und ist schneller als unser bisheriger Low-Poly-Stil 1 (F, Messung).
 - **Wechsel je Thema bleibt möglich** (Entscheidung 31.10.), trotzdem bleibt der Kanal erkennbar: Material wechselt, Rezept und HUD bleiben (A).
 - **Ehrlicher Vorbehalt:** Es gibt keinen Beleg, dass ein Material-Look mehr Views bringt. Der Effekt muss im Test gemessen werden (Abschnitt 3, Schritt 4).
 
@@ -147,7 +147,7 @@ Begründung:
 | # | Schritt | Wer | Zeit (S) |
 |---|---|---|---|
 | 1 | Übersicht `uebersicht_neu.jpg` ansehen, Familie „Handgemachte Miniatur“ bestätigen oder Stile streichen | Inhaber | 10 Min. |
-| 2 | Bake-Baukasten verallgemeinern: Blender-Szene → Bake → glTF → Engine-Modul (Fahrzeuge animieren, Kontaktschatten, Bokeh) für Holz, danach Papier und Filz | Claude (mit dem Engine-Agenten abstimmen) | 6–8 Std. |
+| 2 | Bake-Baukasten verallgemeinern: Blender-Szene → Bake → glTF → Engine-Modul (Fahrzeuge animieren, Räder drehen, Kontaktschatten, Tiefenunschärfe) für Holz, danach Papier und Filz | Claude (mit dem Engine-Agenten abstimmen) | 6–8 Std. |
 | 3 | Erstes Video im Holz-Stil (Thema mit Rennen, z. B. Verkehr) und eins in Comic-Toon als schnelle Gegenprobe | Claude | je 3–4 Std. |
 | 4 | Blaupausen-Szenenwechsel als Engine-Baustein für „Warum?“ | Claude | 3 Std. |
 | 5 | Auf dem Windows-PC messen: `python pipeline\stile\stil_9_holz.py --gpu` und `node stile/render_neu.js --gpu` (bpy per `pip install bpy`) | Inhaber | 15 Min. |
@@ -159,7 +159,7 @@ Begründung:
 - Knete in Blender: [80.lv: Clay Doh shader](https://80.lv/articles/clay-d-oh-a-clay-shader-for-blender) · [Digital Production: Clay 4.Doh](https://digitalproduction.com/2025/08/25/clay-4-doh-update-sculpts-blender-workflow/)
 - Comic/Halftone: [Three.js Journey: Halftone Shading](https://threejs-journey.com/lessons/halftone-shading-shaders) · [BlenderNation: Spiderverse-Shader in 7 Schritten](https://www.blendernation.com/2024/01/15/7-steps-to-make-a-spiderverse-shader-in-blender/)
 - Backen für Three.js: [three.js Forum: Lightmaps batch-backen für Three.js](https://discourse.threejs.org/t/made-a-blender-script-for-batch-baking-lightmaps-to-optimize-models-for-threejs/82346) · [Svilenkovic: How to bake lighting for web](https://www.svilenkovic.com/3d/how-to-bake-lighting-for-web) · [Needle Engine: Lightmapping](https://engine.needle.tools/docs/blender/lightmapping)
-- Baustein-Form und Marke: [IPKat zu EuGH C-48/09 P (Lego-Stein)](https://ipkitten.blogspot.com/2010/09/lego-brick-hits-wall.html) · [World Trademark Review zur Löschung der Formmarke](https://www.worldtrademarkreview.com/article/grand-board-upolds-cancellation-of-lego-shape-mark) · [DIMT: EuG zu Minifiguren](https://www.dimt.it/news/78eu-general-court-rules-lego-mini-figures-should-continue-to-be-protected-as-shape-marks/)
+- Baustein-Form und Marke: [IPKat zu EuGH C-48/09 P (Formmarke Klemmbaustein)](https://ipkitten.blogspot.com/2010/09/lego-brick-hits-wall.html) · [World Trademark Review zur Löschung der Formmarke](https://www.worldtrademarkreview.com/article/grand-board-upolds-cancellation-of-lego-shape-mark) · [DIMT: EuG zu Minifiguren](https://www.dimt.it/news/78eu-general-court-rules-lego-mini-figures-should-continue-to-be-protected-as-shape-marks/)
 - GPU-Leistung Blender (Drittanbieter, auf Basis Blender Open Data): [Renderjuice: RTX 4070 for Blender](https://www.renderjuice.com/gpus/rtx-4070-for-blender)
 
 ---

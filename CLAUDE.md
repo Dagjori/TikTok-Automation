@@ -97,6 +97,8 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
   - **Erstellt ausschließlich mit Three.js und/oder Blender** (Entscheidung 31.10.)
     - auch kombiniert, z. B. Modelle, Materialien und Licht in Blender bauen bzw. backen, als glTF exportieren und in Three.js animieren
     - Keine anderen Video-, Vorlagen- oder KI-Video-Generatoren.
+    - HUD, Untertitel und Karten als HTML/CSS-Ebene in derselben Three.js-Seite gehören dazu. Die alten Stile 4, 5 und 6 (SVG/HTML-Muster) werden beim ersten Einsatz in Three.js nachgebaut.
+    - Echte Blender-Renders (Cycles) nur für Standbilder, Logo und kurze Szenen. Für ganze Videos in Blender-Optik gilt der Weg „Blender backen → glTF → Three.js“ (Stil 15, ca. 0,9 s/Bild).
   - **Kein Kanalname, kein Logo, keine Rubrik im Video**, nie (Entscheidung 31.10.). Das 3D-Logo (`marke/`) ist für Profilbild und Kanalgrafik.
   - **Designstil je Video:**
     - genau einer aus dem Stil-Katalog in `docs/10-designstile.md` (Abschnitt 0), passend zum Thema

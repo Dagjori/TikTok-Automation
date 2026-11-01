@@ -29,8 +29,9 @@ def _dunkler(h, f=0.93):
 def papier(name, farbe, rau=0.88):
     """Karton: matte Faser mit Relief, leichte Wolkigkeit im Farbton (wie eingefärbtes Papier)."""
     m = bg.material(name, farbe, rau=rau, sheen=0.35, sheen_rau=0.6)
-    bg.rausch_bump(m, skala=150.0, staerke=0.32, detail=10.0, abstand=0.002)
-    bg.farb_variation(m, _dunkler(farbe, 0.95), farbe, skala=4.0)
+    bg.rausch_bump(m, skala=45.0, staerke=0.45, detail=12.0, abstand=0.003)
+    # Faserkörnung in der Farbe (bleibt nach dem Entrauschen sichtbar, weil der Denoiser die Albedo erhält)
+    bg.farb_variation(m, _dunkler(farbe, 0.93), farbe, skala=55.0)
     return m
 
 
@@ -61,7 +62,13 @@ def schicht(name, punkte, tiefe, farbe_mat, dx=0.0, dz=0.0):
     """Aufrechte Kartonform in der Ebene y = tiefe (Punkte in x/z). Die Kante zittert leicht wie von Hand geschnitten."""
     _nr[0] += 1
     s = _nr[0] * 1.7
-    pts = [(x + dx + 0.007 * math.sin(z * 9.0 + s), z + dz + 0.007 * math.sin(x * 11.0 + s * 1.3)) for x, z in punkte]
+    dicht = []  # gerade Kanten unterteilen, damit das Zittern auch dort wirkt
+    for i, (x0, z0) in enumerate(punkte):
+        x1, z1 = punkte[(i + 1) % len(punkte)]
+        n = max(1, int(math.hypot(x1 - x0, z1 - z0) / 0.04))
+        dicht += [(x0 + (x1 - x0) * k / n, z0 + (z1 - z0) * k / n) for k in range(n)]
+    pts = [(x + dx + 0.006 * math.sin(z * 31.0 + s) + 0.004 * math.sin(z * 73.0 + s * 2.1),
+            z + dz + 0.006 * math.sin(x * 29.0 + s * 1.3) + 0.004 * math.sin(x * 67.0 + s * 0.7)) for x, z in dicht]
     return bg.flaeche(name, pts, D, (0, tiefe, 0), farbe_mat, rot=(math.pi / 2, 0, 0))
 
 

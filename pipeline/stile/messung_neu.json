@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-01T01:05:56.045Z",
+ "stand": "2026-11-01T01:25:16.249Z",
  "gpu": false,
  "hinweis": "Cloud-Container, 4 Kerne, ohne GPU (SwiftShader bzw. Cycles CPU). bild_s = zweites Bild im Browser zeichnen + JPG; blender.sekunden = Cycles-Render der Szene 1080×1920.",
  "messung": [
@@ -8,10 +8,10 @@
    "name": "holz",
    "titel": "Holzspielzeug-Tisch",
    "technik": "Blender Cycles",
-   "laden_s": 0.358,
-   "bild_s": 0.071,
+   "laden_s": 0.296,
+   "bild_s": 0.066,
    "blender": {
-    "sekunden": 306.7,
+    "sekunden": 193.7,
     "samples": 48,
     "aufloesung": "1080x1920",
     "geraet": "CPU",
@@ -23,10 +23,10 @@
    "name": "papier",
    "titel": "Papier-Diorama",
    "technik": "Blender Cycles",
-   "laden_s": 0.212,
-   "bild_s": 0.201,
+   "laden_s": 0.119,
+   "bild_s": 0.072,
    "blender": {
-    "sekunden": 306.5,
+    "sekunden": 132.6,
     "samples": 48,
     "aufloesung": "1080x1920",
     "geraet": "CPU",
@@ -38,10 +38,10 @@
    "name": "filz",
    "titel": "Filz & Knöpfe",
    "technik": "Blender Cycles",
-   "laden_s": 0.514,
-   "bild_s": 0.156,
+   "laden_s": 0.154,
+   "bild_s": 0.057,
    "blender": {
-    "sekunden": 592.1,
+    "sekunden": 288.4,
     "samples": 48,
     "aufloesung": "1080x1920",
     "geraet": "CPU",
@@ -53,24 +53,24 @@
    "name": "comic",
    "titel": "Comic-Toon 3D",
    "technik": "Three.js",
-   "laden_s": 0.761,
-   "bild_s": 0.579
+   "laden_s": 0.577,
+   "bild_s": 0.515
   },
   {
    "nr": 13,
    "name": "blaupause",
    "titel": "Blaupause / Schnittmodell",
    "technik": "Three.js",
-   "laden_s": 1.44,
-   "bild_s": 0.245
+   "laden_s": 0.53,
+   "bild_s": 0.202
   },
   {
    "nr": 14,
    "name": "glas",
    "titel": "Glas-Labor (Füllstand)",
    "technik": "Blender Cycles",
-   "laden_s": 0.188,
-   "bild_s": 0.193,
+   "laden_s": 0.186,
+   "bild_s": 0.128,
    "blender": {
     "sekunden": 299.3,
     "samples": 56,
@@ -84,20 +84,20 @@
    "name": "holz_gltf",
    "titel": "Holz gebacken (Blender → glTF → Three.js)",
    "technik": "Blender-Bake + Three.js",
-   "laden_s": 1.021,
-   "bild_s": 1.752,
+   "laden_s": 0.311,
+   "bild_s": 0.884,
    "blender": {
-    "sekunden": 560.2,
+    "sekunden": 327.2,
     "samples": 32,
     "art": "einmaliges Backen + Export (nicht pro Bild)",
     "bake_sekunden": {
-     "Tisch": 60,
-     "Wand": 7.7,
-     "Kulisse": 252.5,
-     "Zug": 128.5,
-     "Auto": 109.1
+     "Tisch": 36.3,
+     "Wand": 4.5,
+     "Kulisse": 151.6,
+     "Zug": 68.3,
+     "Auto": 64.2
     },
-    "gesamt_sekunden": 560.2,
+    "gesamt_sekunden": 327.2,
     "glb_mb": 1.74,
     "fokus_m": 3.606,
     "blende": 1.100000023841858,
