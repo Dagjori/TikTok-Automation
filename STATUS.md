@@ -45,6 +45,7 @@
   - Aktiv ab der nächsten Sitzung bzw. nach einmal `/hooks` öffnen.
 - **Repo ist öffentlich.** Empfehlung an den Inhaber: auf privat stellen. Konkurrenzmaterial und Gesprächsverläufe kommen nicht ins Repo.
 - **Trend-Radar:** läuft täglich 05:35 Uhr. `docs/07` verlangt jetzt Vorschläge im Maßstab-Format. Telegram ist noch nicht eingerichtet.
+- **Neue Trend-Vorschläge (01.11.):** Tankrabatt endet 31.12. (Score 80, posten 15.–23.12.), Weihnachtsbaum teurer (Score 70, schwächer, posten 01.–08.12.), Details in `docs/trends/vorschlaege.md`.
 
 ## Nächste Schritte
 
