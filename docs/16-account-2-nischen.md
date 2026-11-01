@@ -247,7 +247,7 @@ Speech-to-Text bestätigt: v4 spricht die Regie-Tags nicht mit (Proben 1 und 4 g
 
 | Rang | Anzeigename | Handle | Status | Bewertung (S) |
 |---|---|---|---|---|
-| 1 | Stell dir vor … | `@stelldirvor.pov` | frei | passt wörtlich zur Du-Perspektive (jedes Video beginnt so), eigenständig; `@stelldirvor` ohne Zusatz ist vergeben, aber leer (46 Follower, 0 Videos) |
+| 1 | Stell dir vor … | `@stelldirvor.pov` | **gewählt und angelegt (01.11.)** | passt wörtlich zur Du-Perspektive (jedes Video beginnt so), eigenständig; `@stelldirvor` ohne Zusatz ist vergeben, aber leer (46 Follower, 0 Videos) |
 | 2 | Plötzlich … | `@ploetzlich.pov` | frei | kurz, Spannung, das Wendewort jedes Du-Szenarios; Handle ohne Umlaut |
 | 3 | Was wäre, wenn … | `@waswaere.pov` | frei | stärkster Suchbegriff, aber generisch und nah an `@waswaerewenn.pov` und `@angenommen.pov` |
 | 4 | Und was dann? | `@undwasdann.pov` | frei | neugierig, gut als Kommentar-Aufhänger |

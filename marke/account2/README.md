@@ -1,6 +1,6 @@
 # Marke Account 2 („Was wäre, wenn …“-POV): Bildmarke
 
-**Stand:** 01.11.2026 · **Status:** Entwurf, der Inhaber gibt frei
+**Stand:** 01.11.2026 · **Account:** `@stelldirvor.pov` (angelegt, Profilbild und Bio gesetzt, in Buffer verbunden)
 
 > **Nicht im Video verwenden.** Wie bei Simulierbar ist das Logo nur für das Profilbild (TikTok, YouTube), Banner und Impressum gedacht.
 

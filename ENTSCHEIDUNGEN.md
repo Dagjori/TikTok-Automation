@@ -74,3 +74,4 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-11-01 | Buffer eingerichtet, beide TikTok-Accounts verbunden. **YouTube vorerst nicht** (weder in Buffer noch als Zweitverwertung), kommt später | Inhaber: erst TikTok sauber automatisieren |
 | 2026-11-01 | Video-Speicher für die Buffer-API: **Supabase Storage** (Gratis-Plan, Region Frankfurt, privater Bucket, ablaufende Links, Datei nach dem Posten löschen). Gratis-Plan erlaubt max. 50 MB je Datei, größere Videos bekommen automatisch eine Upload-Kopie unter 50 MB in gleicher Auflösung | Inhaber wählt Weg A; 50-MB-Grenze laut Supabase-Doku nachträglich gefunden |
 | 2026-11-01 | Produktion und Prototyp Account 2 erst, wenn Buffer, API-Key und Speicher eingerichtet sind | Inhaber |
+| 2026-11-01 | Account 2 heißt **`@stelldirvor.pov`** (Name „Stell dir vor …“), angelegt mit Logo und Bio, in Buffer verbunden | Wahl des Inhabers aus `docs/16` §11 |
