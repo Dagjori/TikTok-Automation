@@ -173,8 +173,66 @@
    - **Network access:** Domain `api.buffer.com` hinzufügen.
    - **Network secrets:** Host `api.buffer.com`, Header `Authorization`, Wert `Bearer <Schlüssel>`. So wie es bei ElevenLabs gemacht ist.
 3. **Dateien:** Buffer holt Videos nur über eine **öffentliche URL**. Variante 1: Du lädst das MP4 selbst in Buffer hoch (2 Min., keine Technik). Variante 2: Das MP4 liegt kurz unter einer nicht erratbaren öffentlichen URL (z. B. Objektspeicher mit öffentlichem Link, nach dem Posten löschen). Der Host muss ebenfalls freigegeben werden.
-4. Auftrag an Claude: Skript `pipeline/post_buffer.py` bauen (noch **nicht** angelegt, wartet auf deinen Auftrag). Es legt den Beitrag als **Entwurf** an, mit Text aus doc 09, KI-Flag an, Markeninhalt aus. Du gibst im Buffer-Kalender frei (30 Sekunden). So bleibt die TikTok-Vorgabe „full awareness and control“ erfüllt.
+4. Skript `pipeline/post_buffer.py` (gebaut 01.11., Technik siehe **§3C-Technik** unten). Es legt den Beitrag als **Entwurf** an, mit Caption, KI-Flag an. Der Markeninhalt-Schalter lässt sich per API nicht setzen (siehe §3C-Technik). Du gibst im Buffer-Kalender frei (30 Sekunden). So bleibt die TikTok-Vorgabe „full awareness and control“ erfüllt.
 5. Wöchentlich 5 Minuten: Prüfen, ob alle Posts öffentlich sind.
+
+### C-Technik: Buffer-Entwurf per API und Supabase-Zwischenspeicher (Stand 01.11.2026)
+
+**Quelle Buffer:** GraphQL-Introspection von `https://api.buffer.com` am 01.11.2026 (`__schema`, `__type`), plus lesende Abfragen auf die beiden Kanäle. **[Fakt]** Die API ist laut Buffer noch Beta, Namen können sich ändern. `pipeline/post_buffer.py` gleicht seine Eingabe vor jedem Lauf per Introspection mit dem Live-Schema ab (und, falls `graphql-core` installiert ist, auch das ganze Mutations-Dokument).
+
+**Entwürfe per API: ja.** `createPost` mit `saveToDraft: true` legt den Post mit Status `draft` an. Laut Schema-Beschreibung gilt dann: Status `draft` statt `buffer`, Posting-Limits werden nicht geprüft, der Post wird erst veröffentlicht, wenn er ausdrücklich geplant wird (das macht der Inhaber in Buffer). Lesen: `post(input:{id})`, `posts(input:{organizationId, filter:{channelIds, status:[draft]}})`. Ändern/Löschen: `editPost` (u. a. `assets`, `dueAt`, `saveToDraft`), `deletePost`. `PostStatus` = `draft`, `scheduled`, `sending`, `sent`, `error`, `needs_approval`.
+
+**Mutation** `createPost(input: CreatePostInput!)` liefert die Union `PostActionPayload` = `PostActionSuccess { post }` oder einen der Fehler `NotFoundError`, `UnauthorizedError`, `UnexpectedError`, `RestProxyError`, `LimitReachedError`, `InvalidInputError` (alle mit `message`). Variablen, wie das Skript sie sendet:
+
+```json
+{"input": {
+  "channelId": "<Kanal-ID aus channels(...)>",
+  "text": "<Caption>",
+  "mode": "customScheduled",
+  "dueAt": "2026-11-03T17:30:00.000Z",
+  "schedulingType": "automatic",
+  "saveToDraft": true,
+  "assets": [{"video": {"url": "<signierter Link>"}}],
+  "metadata": {"tiktok": {"isAiGenerated": true}}
+}}
+```
+
+| Feld in `CreatePostInput` | Typ | Bedeutung / unser Wert |
+|---|---|---|
+| `channelId` | `ChannelId!` | ID des TikTok-Kanals; das Skript löst sie über `channels(input:{organizationId})` per Namen auf (`simulierbar`, `stelldirvor.pov`) |
+| `text` | `String` | Caption |
+| `mode` | `ShareMode!` | `addToQueue`, `customScheduled`, `shareNext`, `shareNow`; wir: `customScheduled` |
+| `dueAt` | `DateTime` | ISO 8601, wir senden UTC (`…Z`); bei einem Entwurf der vorgeschlagene Zeitpunkt |
+| `schedulingType` | `SchedulingType!` | `automatic` (Buffer veröffentlicht nach Freigabe selbst) oder `notification` (nur Erinnerung); Standard `automatic`, Schalter `--planung` |
+| `saveToDraft` | `Boolean` | **`true` = Entwurf**; im Skript fest verdrahtet |
+| `assets` | `[AssetInput!]!` | `[{video: {url: String!}}]`; `VideoAssetInput.thumbnailUrl` darf nicht gesetzt werden (API lehnt ab); optional `metadata {title, thumbnailOffset}` |
+| `metadata.tiktok.isAiGenerated` | `Boolean` | **KI-Kennzeichnung („AI-generated“), nur TikTok-Video; wir: `true`** |
+| `metadata.tiktok.title` | `String` | nur für Foto-Posts, ungenutzt |
+| `aiAssisted` | `Boolean` | heißt „mit KI-Hilfe von Buffer erstellt“ (Nutzungsstatistik), ist **nicht** die Kennzeichnung; ungenutzt |
+| `needsApproval` | `Boolean! = false` | Freigabe-Workflow für Teams; ungenutzt |
+
+Antwortfelder: `post { id status dueAt schedulingType channelId text metadata { ... on TiktokPostMetadata { isAiGenerated type } } assets { id type mimeType source ... on VideoAsset { video { durationMs width height fileSize isVideoProcessing isTranscodingRequired } } } }`. Das Skript prüft daran, dass `status == "draft"` und `isAiGenerated == true` zurückkommen.
+
+**Nicht per API setzbar (wichtig):** `TikTokPostMetadataInput` kennt nur `isAiGenerated` und `title`. Es gibt **kein Feld für Markeninhalt/Branded Content, Sichtbarkeit (öffentlich/privat), Kommentare, Duett oder Stitch**. (YouTube hat dagegen `privacy`.) „Markeninhalt AUS“ und „öffentlich“ gelten also nur, wenn Buffers Standard so ist. **[Annahme]** Die älteren, über das Netzwerk eingelesenen Posts der beiden Kanäle sind laut Test vom 01.11. öffentlich; beim **ersten** Entwurf im Buffer-Composer ansehen, was für Sichtbarkeit und Markeninhalt voreingestellt ist. Beim Gehalt-Test (01.11.) fehlte außerdem das KI-Label am veröffentlichten Video (`aigcLabelType` leer): Beim ersten über die API angelegten Post prüfen, ob `isAiGenerated: true` wirklich als Label bei TikTok ankommt.
+
+**Supabase (Zwischenspeicher, privater Bucket `buffer-uploads`):** Aufrufe nach Supabase-Doku **[Fakt, Zweitquelle: Doku, am 01.11. nur teilweise testbar]**, Host `SUPABASE_URL` (Umgebungsvariable bzw. `--supabase-url`; steht nicht im Repo):
+
+| Schritt | Aufruf |
+|---|---|
+| Upload | `POST {SUPABASE_URL}/storage/v1/object/buffer-uploads/<datum>/<uuid>.mp4`, Body = Datei, `Content-Type: video/mp4` |
+| Link (24 h) | `POST {SUPABASE_URL}/storage/v1/object/sign/buffer-uploads/<pfad>` mit `{"expiresIn": 86400}` → `signedURL` (relativ, das Skript ergänzt `/storage/v1`) |
+| Löschen | `DELETE {SUPABASE_URL}/storage/v1/object/buffer-uploads` mit `{"prefixes": ["<pfad>", …]}` |
+| Zugangstest | `GET …/storage/v1/bucket/buffer-uploads` und `POST …/storage/v1/object/list/buffer-uploads` (nur lesend) |
+
+**Anmeldung an Supabase (offen, muss getestet werden).** Die Cloud setzt den Header `apikey` per Proxy; das Skript schickt dort keine Anmelde-Header. Stand 01.11. 19:53 UTC: `/rest/v1/` antwortet `UNAUTHORIZED_MISSING_API_KEY`, `/storage/v1/bucket` antwortet 400 „headers must have required property 'authorization'“. Der apikey kommt also noch nicht an. Nach der Korrektur der Reihe nach prüfen:
+1. `python3 pipeline/post_buffer.py --pruefen` ist grün: fertig. Erwartet bei neuen `sb_secret_`-Schlüsseln: Das Gateway ergänzt den Authorization-Header selbst. **[Annahme laut Supabase-Doku zu den neuen API-Keys, ungetestet]**
+2. Meldung „required property 'authorization'“ bleibt trotz apikey: Das Gateway ergänzt ihn nicht. Dann zweiten Proxy-Header `Authorization: Bearer <alter service_role-JWT, beginnt mit eyJ>` für den Supabase-Host setzen. Das Skript braucht dafür nichts. (Lokal ohne Proxy: `SUPABASE_KEY=<JWT>` und `SUPABASE_AUTH=bearer`, oder `SUPABASE_AUTHORIZATION="Bearer …"`.)
+3. Meldung „Invalid JWT“ o. Ä.: Ein `sb_secret_`-Schlüssel wird irgendwo als Bearer geschickt. Das geht laut Doku nicht, Authorization-Header entfernen und Punkt 1 oder 2 nehmen.
+4. `--pruefen --schreibtest`: Mini-Upload, Link, Abruf, Löschen. Zeigt auch das Dateilimit des Buckets (Gratis-Plan: 50 MB je Datei **[Fakt laut Entscheidung 01.11.]**, deshalb Upload-Kopie ab 48 MB).
+5. Den signierten Link einmal ohne Header abrufen (Browser, anderes Gerät): Buffer holt ihn ohne Anmeldung.
+6. Erster echter Entwurf: Zeigt `assets[].source` noch auf Supabase, hat Buffer die Datei nicht kopiert, und der Link läuft nach 24 h ab. Dann Entwürfe nur am selben Tag freigeben oder den Link vor der Freigabe per `editPost` (neue `assets`) erneuern.
+
+**Ablauf und Aufräumen:** Das Skript legt den Entwurf an und trägt Post-ID, Kanal und Supabase-Pfad in `pipeline/out/buffer_log.jsonl` ein. Nach dem Posten löscht `python3 pipeline/post_buffer.py --aufraeumen` die Dateien aller Einträge, deren Post in Buffer `sent` ist (`--verwaiste`: auch die, deren Post in Buffer gelöscht wurde). Gebrauch: `pipeline/README.md`, Abschnitt „Entwurf nach Buffer“.
 
 ### D. WhatsApp Stufe 1: CallMeBot (ca. 15 Min.)
 1. Seite `callmebot.com` > Anleitung „WhatsApp“ öffnen. Die **aktuelle Bot-Nummer und den Freigabe-Satz dort ablesen** (ich schreibe sie nicht ab, sie ändern sich).

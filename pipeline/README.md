@@ -130,6 +130,26 @@ Text-Überlappung aller Bilder (HUD: Tafel, Chips, Zähler, Ringe, Sticker-Plake
 
 **Zielbereiche:** Profil `ben` = Stimme Ben mit Original-Einstellungen (1,9–2,4 W/s, Satzpausen ≤ 0,8 s, 130–170 Wörter, 65–80 s); Profil `massstab` = Vorbilder (2,5–2,9 W/s, ≤ 0,4 s, 170–220 Wörter). Exit-Code 1, wenn ein Pflichtpunkt „nein“ ist.
 
+## Entwurf nach Buffer (`post_buffer.py`)
+
+Bringt ein **abgenommenes** Video als **Entwurf** in Buffer (TikTok, KI-Kennzeichnung AN). Freigeben tut der Inhaber in Buffer; das Skript kann nicht selbst veröffentlichen (`saveToDraft: true` ist fest). Hintergrund und exakte Feldnamen: `docs/11-automatisierung.md` §3C-Technik.
+
+```bash
+export SUPABASE_URL=https://<projekt>.supabase.co     # nicht im Repo (öffentlich); Cloud: Umgebungsvariable der Umgebung
+python3 post_buffer.py --pruefen [--schreibtest]      # Zugang testen: Buffer lesen, Supabase-Bucket lesen, optional Mini-Upload-Roundtrip
+python3 post_buffer.py --video out/<name>/<name>.mp4 --kanal simulierbar --zeit "2026-11-03T18:30:00+01:00" \
+       --text "Hook? 🚗 Ich hab's simuliert. Frage? 👇 #a #b #c #wissen #simulation" --trocken     # alles prüfen, Mutation nur ausgeben
+python3 post_buffer.py ... (gleiche Argumente ohne --trocken)                                        # echter Entwurf
+python3 post_buffer.py --aufraeumen [--trocken]       # Supabase-Dateien löschen, deren Buffer-Post „sent“ ist
+```
+
+- **Kanäle:** `simulierbar`, `stelldirvor.pov` (werden live in Buffer aufgelöst). `--zeit` braucht eine Zone (`+01:00` Winter, `+02:00` Sommer). Caption statt `--text` auch per `--text-datei` (UTF-8, praktisch unter Windows wegen Emojis).
+- **Prüfungen:** 1080×1920, mind. 61 s, Kanal verbunden, Schema-Abgleich der Mutation gegen die Live-Introspection, Bucket erreichbar. Caption-Format (5 Hashtags, eine Zeile, kein #fyp) nur als Warnung. Ein zweiter Entwurf für dasselbe Video und denselben Kanal braucht `--nochmal`.
+- **Größe:** Über 48 MB entsteht eine Upload-Kopie in `out/_buffer/<name>_upload.mp4` (2-pass H.264, gleiche Auflösung, Ziel 45 MB, AAC unverändert, faststart; ca. 1,5 Min. in der Cloud mit 4 Kernen und `--preset medium`; SSIM 0,977 gegenüber dem 14,7-Mbit/s-Original). Das Original wird nie angefasst. Eine vorhandene aktuelle Kopie wird wiederverwendet, auch vom Trockenlauf.
+- **Log:** `out/buffer_log.jsonl` (nicht im Repo): je Entwurf Post-ID, Kanal, Supabase-Pfad, Hash; `--aufraeumen` ergänzt Zeilen „geloescht“. Der signierte Link steht nie im Log.
+- **Zugänge:** Cloud: der Proxy setzt die Header (Buffer `Authorization`, Supabase `apikey`). Lokal: `BUFFER_API_KEY` und `SUPABASE_KEY`; `SUPABASE_AUTH=bearer` bzw. `SUPABASE_AUTHORIZATION` nur, falls Storage einen Authorization-Header verlangt (siehe Kopf von `post_buffer.py` und docs/11).
+- Exit-Code 0 = ok, 1 = Prüfung/Fehler (vor dem Schreiben), 2 = Entwurf existiert, aber Status oder KI-Flag stimmen nicht (in Buffer prüfen!).
+
 ## Renderzeit
 
 Ohne GPU (SwiftShader) braucht ein Bild je nach Szene 0,8–6 s. 1–2 Worker sind optimal; mehr Worker bremsen sich gegenseitig, weil SwiftShader schon alle Kerne nutzt. Mit Grafikkarte (Windows-PC) `--gpu` anhängen.
@@ -174,6 +194,7 @@ qc/massstab.py   Prüfliste docs/15 §11
 render.js        Bilder rendern (parallel), Ereignis-Protokoll schreiben
 klang.py         Tonspur: Stimme + synthetische Effekte + Klangteppich (keine fremden Dateien)
 mux.sh           MP4 (H.264 CRF 18, yuv420p, 30 fps, AAC, −14 LUFS)
+post_buffer.py   fertiges MP4 als Entwurf nach Buffer (Supabase-Zwischenspeicher, KI-Flag AN), siehe oben
 out/             Ausgaben (nicht im Repo)
 ```
 
