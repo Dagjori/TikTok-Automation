@@ -1,6 +1,6 @@
 # STATUS
 
-**Stand:** 01.11.2026, ca. 06:45 Uhr · **Heute fertig und übergeben:** „Treppe oder Aufzug“ (Posting 12:00) und „200 € oder 100 € steuerfrei“ (Posting 20:00). Nächste Produktion erst auf Startsignal des Inhabers.
+**Stand:** 01.11.2026, ca. 07:35 UTC · **Heute fertig und übergeben:** „Treppe oder Aufzug“ (Posting 12:00) und „200 € oder 100 € steuerfrei“ (Posting 20:00). **In Produktion (Startsignal 01.11. morgens):** „Fußgängerampel“ (Posting 02.11. 12:00, Ziel fertig 01.11. ca. 16:00 UTC, Projekt `pipeline/projekte/fussgaengerampel/`, Stil 1 Low-Poly, rendert zuerst, Sperrdatei `pipeline/out/RENDER_AMPEL_LAEUFT`) und „Steuererklärung oder Überstunden“ (Posting 02.11. 20:00, Ziel fertig 01.11. ca. 21:00 UTC, Projekt `pipeline/projekte/steuer-ueberstunden/`, Stil 4 Flat neu in Three.js). Zwei Agenten arbeiten parallel; Claude nimmt beide Videos selbst ab, bevor sie an den Inhaber gehen.
 
 ## Heute (01.11.) fertig
 
@@ -37,7 +37,7 @@
 | 1 | Treppe 12:00 und Gehalt 20:00 posten (KI-Schalter AN, Caption oben), vorher einmal mit Ton anhören | Inhaber | 15 Min. | heute |
 | 2 | Logo A als TikTok-Profilbild hochladen | Inhaber | 2 Min. | heute |
 | 3 | Repo auf privat stellen (GitHub → Settings → General → Change visibility) | Inhaber | 2 Min. | offen |
-| 4 | Startsignal für 02.11.: Fußgängerampel (mittag) und Steuererklärung oder Überstunden (abend), Konkurrenz-Check und Fakten vorher prüfen | Inhaber → Claude | ca. 3–4 Std. Agentenzeit je Video | wartet |
+| 4 | Produktion 02.11.: Fußgängerampel (mittag) und Steuererklärung oder Überstunden (abend), inkl. Konkurrenz-Check, Faktenprüfung (u. a. Überstunden-Steuerrecht 2026, Pendlerpauschale 2026, RiLSA), Abnahme durch Claude | Claude (Agenten) | heute bis ca. 21:00 UTC | läuft |
 | 5 | Windows-PC einrichten (Claude Code, Node, ffmpeg, Blender), um mit GPU zu rendern | Inhaber plus Claude | 30–60 Min. | empfohlen |
 | 6 | TikTok-Konto öffentlich, Buffer-Test, Telegram (`docs/13`) | Inhaber | 30 Min. | offen |
 | 7 | Nach 48 Std.: Aufrufe, Wiedergabedauer und Abbruchstelle von Treppe und Gehalt aus TikTok Studio an Claude geben, damit wir messen statt raten | Inhaber | 5 Min. | 03.11. |
