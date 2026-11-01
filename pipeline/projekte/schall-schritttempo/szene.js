@@ -504,7 +504,6 @@ async function start() {
   M.melde({ t: tS4 + 0.1, typ: "kamera", klang: "whoosh", dauer: 0.7, text: "Blick zum Lautsprecher" });
   M.melde({ t: tVorbei - 0.25, typ: "kamera", klang: "whoosh", dauer: 1.2, text: "S-Bahn rauscht vorbei" });
   M.melde({ t: tUltra, typ: "welle", klang: "scan", dauer: 0.9, text: "Ultraschall" });
-  M.melde({ t: tFleder - 0.2, typ: "figur", klang: "whoosh", dauer: 0.6, text: "Fledermaus" });
   M.melde({ t: tFrei, typ: "standbild", klang: "ding", text: "τ = 5 s, Bild friert ein" });
 
   // =====================================================================================
@@ -558,7 +557,7 @@ async function start() {
     W.du.g.visible = !pov; W.duRing.visible = !pov; W.duLabel.visible = !pov;
     // Fledermaus
     const fk = fortschritt(t, tFleder - 0.5, tFleder + 1.4);
-    W.fleder.visible = pov && fk > 0 && fk < 1;
+    W.fleder.visible = false; // Fledermaus verworfen (im Bild zu klein, verdeckt von Chips)
     if (W.fleder.visible) {
       W.fleder.position.set(lerp(5.4, 6.2, fk), 1.62 + Math.sin(fk * 11) * 0.08, lerp(9.5, -2.5, fk));
       W.fleder.rotation.y = Math.atan2(-(-2.5 - 9.5), 6.2 - 5.4);

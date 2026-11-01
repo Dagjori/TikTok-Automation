@@ -1,14 +1,14 @@
 {
   "zeitzone": "Europe/Berlin",
-  "hinweis": "Startwerte bis zur ersten Auswertung (Entscheidung des Inhabers 01.11.). Alle Uhrzeiten Europe/Berlin, Sommer- und Winterzeit rechnet pipeline/post_buffer.py selbst. Aufruf: --zeit auto:YYYY-MM-DD:slot, z. B. auto:2026-11-03:mittag. Tage: mo di mi do fr sa so, Bereiche wie mo-fr oder Listen wie sa,so.",
+  "hinweis": "Startwerte bis zur ersten Auswertung (Entscheidung des Inhabers 01.11.; stelldirvor.pov hat seit 01.11. 21:30 dieselben Zeiten wie simulierbar). Alle Uhrzeiten Europe/Berlin, Sommer- und Winterzeit rechnet pipeline/post_buffer.py selbst. Aufruf: --zeit auto:YYYY-MM-DD:slot, z. B. auto:2026-11-03:mittag. Tage: mo di mi do fr sa so, Bereiche wie mo-fr oder Listen wie sa,so.",
   "kanaele": {
     "simulierbar": {
       "mo-fr": { "mittag": "12:30", "abend": "19:30" },
       "sa-so": { "mittag": "09:30", "abend": "19:30" }
     },
     "stelldirvor.pov": {
-      "mo-fr": { "abend": "20:30" },
-      "sa-so": { "abend": "13:00" }
+      "mo-fr": { "mittag": "12:30", "abend": "19:30" },
+      "sa-so": { "mittag": "09:30", "abend": "19:30" }
     }
   }
 }

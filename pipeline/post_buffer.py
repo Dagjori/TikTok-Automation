@@ -166,6 +166,8 @@ KANAL_ABFRAGE = """query Kanaele($o: OrganizationId!) {
 
 POST_ABFRAGE = """query PostStatus($id: PostId!) { post(input: {id: $id}) { id status dueAt sentAt externalLink error { message } } }"""
 
+LIMIT_ABFRAGE = """query Limit($c: ChannelId!, $d: DateTime!) { dailyPostingLimits(input: {channelIds: [$c], date: $d}) { channelId isAtLimit limit scheduled sent } }"""
+
 SLOT_ABFRAGE = """query Slot($o: OrganizationId!, $c: ChannelId!, $s: DateTime!, $e: DateTime!) {
   posts(first: 5, input: {organizationId: $o, filter: {channelIds: [$c], status: [draft, scheduled, sending], dueAt: {start: $s, end: $e}}}) {
     edges { node { id status dueAt } }
@@ -235,6 +237,12 @@ def belegte_posts(kanal, zeit):
     fmt = "%Y-%m-%dT%H:%M:%S.000Z"
     daten = buffer_lesen(SLOT_ABFRAGE, {"o": kanal["org"], "c": kanal["id"], "s": (zeit - f).strftime(fmt), "e": (zeit + f).strftime(fmt)})
     return [e["node"] for e in daten["posts"]["edges"] or []]
+
+
+def tageslimit(kanal, zeit):
+    """Lesend: Buffer-Tageslimit (TikTok: 25 Posts je 24 h und Kanal). Liefert das Statusobjekt."""
+    daten = buffer_lesen(LIMIT_ABFRAGE, {"c": kanal["id"], "d": zeit.strftime("%Y-%m-%dT%H:%M:%S.000Z")})
+    return daten["dailyPostingLimits"][0]
 
 
 def buffer_post(post_id):
@@ -835,6 +843,16 @@ def befehl_posten(args, sb_url):
                 bericht.ok(f"Slot frei: kein anderer Post auf „{args.kanal}“ innerhalb von ± {SLOT_FENSTER_MIN} Min.")
         except Fehler as e:
             bericht.fehl(f"Slot-Prüfung nicht möglich: {e}")
+
+    if kanal and not entwurf:  # bei Entwürfen prüft Buffer die Limits nicht
+        try:
+            lim = tageslimit(kanal, zeit)
+            if lim["isAtLimit"]:
+                bericht.fehl(f"Buffer-Tageslimit erreicht: {lim['scheduled']} geplant + {lim['sent']} gesendet bei höchstens {lim['limit']} Posts je 24 h.")
+            else:
+                bericht.ok(f"Buffer-Tageslimit frei: {lim['scheduled']} geplant, {lim['sent']} gesendet, Limit {lim['limit']} je 24 h.")
+        except Fehler as e:
+            bericht.fehl(f"Tageslimit-Prüfung nicht möglich: {e}")
 
     sb = None
     try:

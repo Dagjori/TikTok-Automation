@@ -221,9 +221,9 @@ Antwortfelder: `post { id status dueAt schedulingType channelId text metadata { 
 | Kanal | Mo–Fr | Sa–So |
 |---|---|---|
 | `simulierbar` | `mittag` 12:30, `abend` 19:30 | `mittag` 09:30, `abend` 19:30 |
-| `stelldirvor.pov` | `abend` 20:30 | `abend` 13:00 |
+| `stelldirvor.pov` | `mittag` 12:30, `abend` 19:30 | `mittag` 09:30, `abend` 19:30 |
 
-`--zeit auto:2026-11-03:mittag` nimmt den Wochentag des Datums, sucht den Slot des Kanals und rechnet die Uhrzeit mit `zoneinfo` in UTC um (Sommer- und Winterzeit automatisch; getestet u. a. 24.10. = UTC+2, 26.10. = UTC+1, 29.03.2027 = UTC+2). Unter Windows braucht Python dafür einmal `pip install tzdata`. Weitere Formen: ISO mit Zone (`2026-11-03T12:30:00+01:00`) und `sofort` (= jetzt plus 15 Min., nur für Ausnahmen wie Tests). Liegt die Zeit weniger als 10 Min. in der Zukunft, bricht das Skript ab. Es bricht auch ab, wenn auf dem Kanal innerhalb von ± 20 Min. schon ein geplanter Post oder Entwurf liegt (`--nochmal` hebt das auf).
+`--zeit auto:2026-11-03:mittag` nimmt den Wochentag des Datums, sucht den Slot des Kanals und rechnet die Uhrzeit mit `zoneinfo` in UTC um (Sommer- und Winterzeit automatisch; getestet u. a. 24.10. = UTC+2, 26.10. = UTC+1, 29.03.2027 = UTC+2). Unter Windows braucht Python dafür einmal `pip install tzdata`. Weitere Formen: ISO mit Zone (`2026-11-03T12:30:00+01:00`) und `sofort` (= jetzt plus 15 Min., nur für Ausnahmen wie Tests). Liegt die Zeit weniger als 10 Min. in der Zukunft, bricht das Skript ab. Es bricht auch ab, wenn auf dem Kanal innerhalb von ± 20 Min. schon ein geplanter Post oder Entwurf liegt (`--nochmal` hebt das auf). Eine Grenze für „Tage im Voraus“ oder „geplante Posts“ baut das Skript nicht ein: Buffer Essentials mit 2 Kanälen (bezahlt, Entscheidung 01.11.) hat nur noch die Buffer-Grenze von 25 Posts je 24 h und Kanal; das Skript fragt sie lesend ab (`dailyPostingLimits`) und bricht ab, wenn der Kanal zur Posting-Zeit am Limit ist.
 
 **Caption (Pflicht, Abbruch bei Verstoß):** nicht leer, 3 bis 5 Hashtags, kein `#fyp`, `#viral`, `#foryou`, höchstens 2.200 Zeichen. Mehrere Zeilen sind nur eine Warnung (Format laut `CLAUDE.md`: eine Zeile).
 
