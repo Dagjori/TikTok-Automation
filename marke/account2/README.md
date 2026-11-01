@@ -31,3 +31,9 @@
 Erzeugen: `/home/user/.venv-blender/bin/python skripte/konzept_fragezeichen.py` (Render 2048 px), danach `python3 skripte/nachbearbeitung_account2.py`.
 
 **TikTok-Profilbild (S, Drittquellen, keine offizielle TikTok-Seite gefunden):** quadratisch, wird rund angezeigt, mindestens 200×200 px, Motiv in den inneren 80 %.
+
+## Profiltexte (Entwurf 01.11.)
+- **Bio** (57 Zeichen, unter dem 80-Zeichen-Limit, ohne Kontaktdaten wegen der CRP-Regel „Advertising“):
+  `Was wäre, wenn …? Du erlebst es live 🌍⏱️ Dein Szenario? 👇`
+- Bewusst nicht verwendet: „Du mittendrin“ (Bio von @angenommen.pov) und „Echte Physik. Deine Sicht.“ (Bio von @waswaerewenn.pov).
+- **Google Drive:** Ordner „Account 2 – Logo (Was wäre, wenn)“ angelegt. Das Hochladen von Bilddateien über den Drive-Zugang scheiterte: Die Datei muss dabei als base64-Text abgeschrieben werden, die hochgeladene Datei war 3 Bytes größer als das Original und kam deshalb in den Papierkorb. Die Logos lädt der Inhaber selbst in den Ordner.
