@@ -83,9 +83,10 @@ Gemeinsam: Maßstab-HUD aus `pipeline/stile/massstab.css` und `massstab.js` (Taf
     - Stärke: Füllstand ist ein Live-Zähler, den jeder ohne Erklärung versteht; erinnert an K4 (Messzylinder), aber fotorealistisch statt 2.5D (A).
     - Schwäche: Glas mit Brechung ist der teuerste Effekt; im Video nur gebacken bzw. mit Three.js-`transmission` vereinfacht (S).
 15. **Holz gebacken: Blender → glTF → Three.js** (`stil_15_holz_gltf.py` + `.html`/`.js`)
-    - Weg: Szene aus Stil 9 bauen → Licht in Texturen backen (Cycles, diffus: direkt + indirekt + Farbe) → eine `.glb`-Datei → Three.js zeigt sie mit unbeleuchteten Materialien, Tiefenunschärfe per Bokeh-Pass, AgX-Tonemapping wie Blender.
+    - Weg: Szene aus Stil 9 bauen → Licht in Texturen backen (Cycles, diffus: direkt + indirekt + Farbe) → eine `.glb`-Datei → Three.js zeigt sie mit unbeleuchteten Materialien, AgX-Tonemapping wie Blender und einer günstigen Tiefenunschärfe (Abstand je Pixel, Weichzeichner in halber und viertel Auflösung, Stärke aus Brennweite und Blende der Blender-Kamera). Der fertige `BokehPass` von Three.js kostete unter Last 2,6–3 s je Bild (F, Messung) und wurde deshalb ersetzt.
     - Regeln: Tisch und Kulisse **ohne** Fahrzeuge backen, Fahrzeuge einzeln backen und mit mitfahrendem Kontaktschatten bewegen; Glanz wird nicht gebacken.
-    - Ergebnis: siehe Bild und Abschnitt 0.3. Unterschied zum Cycles-Bild: weniger Glanz, Schatten der Fahrzeuge weicher, Unschärfe etwas anders (F, Bildvergleich).
+    - Ergebnis: Das Bild ist dem Cycles-Bild 9 sehr nah (F, Bildvergleich). Unterschiede: kein Glanz auf dem Lack, Farben etwas flauer (der AgX-„Punchy“-Look fehlt in Three.js), Kontaktschatten der Fahrzeuge weicher. Zug und Auto lassen sich per `renderAt(t)` verschieben (Beweis der Animierbarkeit).
+    - Fallstrick (behoben): `gltf.scene` ist in Three.js nur eine Gruppe. `overrideMaterial` und `background` wirken erst, wenn sie in eine echte `THREE.Scene` gehängt wird.
 
 ### 0.2 Bewertung aller geprüften Kandidaten (Recherche 31.10./01.11.2026)
 
