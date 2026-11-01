@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Schere, Stein, Papier · Clay-Spielzeug</title>
+<link rel="stylesheet" href="../../engine/hud.css">
+<link rel="stylesheet" href="../../engine/massstab.css">
+<script type="importmap">
+{ "imports": {
+  "three": "/node_modules/three/build/three.module.js",
+  "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  body { background: #e8d2ad; }
+  /* Untertitel Wort für Wort (Stil „kontur“), Teamwörter in Teamfarbe (aktuelles Wort bleibt gelb) */
+  .karaoke.kontur .w { color: var(--wf, #ffffff); }
+  /* Unentschieden-Zähler unter dem Brett */
+  .ssp-remis { position: absolute; left: 0; top: 0; z-index: 6; display: flex; align-items: center; gap: 12px; height: 52px; padding: 0 22px 0 8px; border-radius: 999px; background: #FFF6E6; color: #2A2530;
+    font-family: var(--display); font-weight: 900; font-size: 24px; letter-spacing: 0.05em; white-space: nowrap; box-shadow: 0 0 0 4px #fff, 0 12px 26px -10px rgba(40,25,10,.55); will-change: transform, opacity; }
+  .ssp-remis b { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; height: 38px; padding: 0 8px; border-radius: 999px; background: #C9C1B2; color: #2A2530; font-size: 26px; }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./szene.js"></script>
+</body>
+</html>

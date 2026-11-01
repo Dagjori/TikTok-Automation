@@ -1,0 +1,112 @@
+{
+  "titel": "Stell dir vor, Schall hat fünf Sekunden lang nur noch Schritttempo",
+  "konto": "stelldirvor",
+  "stil": "16 POV-Filmlook stilisiert (neu, Account 2): Three.js, Ich-Kamera auf Augenhöhe, Abendlicht, Bloom, sichtbare Schallwellen",
+  "stil_begruendung": "Konkurrenz-Check 01.11. (Websuche, nur öffentliche Seiten, keine Mediendateien): Im US-Format „What if … for 5 seconds“ laufen Schwerkraft (mehrfach), Reibung (mehrfach), Erdmagnetfeld, Gleichgewicht, Elektronen, Sauerstoff, Erdrotation. Langsamer Schall fand sich nur einmal (@whatifsreality, „What if sound moved at 1 m/s for 5 seconds? Could you outrun“, Suchauszug zeigt 74, also nicht viral). Unser eigener Ansatz: deutscher S-Bahn-Steig, Schritttempo 5 km/h, Rennen S-Bahn gegen ihr eigenes Geräusch, Durchsage kommt nie an, Ultraschall danach. Look: POV soll laut Inhaber filmisch-stilisiert sein (docs/16 §9), kein Katalogstil passt zur Ich-Perspektive, deshalb neuer Stil 16 (stilisierte Low-Poly-Geometrie, Abendlicht, Bloom, Vignette, Körnung). Die Schallwellen als leuchtende Kugelschalen machen das Unsichtbare sichtbar und tragen die Dynamik.",
+  "teamfarben": {
+    "S-Bahn": "#FF4F5A",
+    "Schall": "#2EC4B6"
+  },
+  "klangteppich": "raum",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Stell dir vor, Schall hat fünf Sekunden lang nur noch Schritttempo.",
+      "sprechtext": "[curious] Stell dir vor, Schall hat fünf Sekunden lang nur noch SCHRITTTEMPO."
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Fünf km/h. Du stehst am Bahnsteig, neben dir deine Freundin. Die S-Bahn fährt ein. Mit fünfzig.",
+      "sprechtext": "Fünf Kilometer pro Stunde.\nDu stehst am Bahnsteig, neben dir deine Freundin.\nDie S-Bahn fährt ein. Mit fünfzig."
+    },
+    {
+      "id": "falle",
+      "phase": "denkfalle",
+      "text": "Klar, dann hörst du alles nur später. Oder?",
+      "sprechtext": "Klar, dann hörst du alles nur später.\nOder?"
+    },
+    {
+      "id": "start",
+      "phase": "start",
+      "text": "Los geht's.",
+      "sprechtext": "[excited] Los geht's!"
+    },
+    {
+      "id": "sek1",
+      "phase": "rennen",
+      "text": "Sekunde eins. Deine Freundin ruft: Hey! Und du hörst nichts.",
+      "sprechtext": "Sekunde EINS.\nDeine Freundin ruft: Hey!\nUnd du hörst NICHTS."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst."
+    },
+    {
+      "id": "sek2",
+      "phase": "wendung",
+      "text": "Sekunde zwei. Doch jetzt kommt ihr Hey an. 1,4 Sekunden für zwei Meter.",
+      "sprechtext": "Sekunde ZWEI.\n[surprised] Doch jetzt kommt ihr Hey an.\nEins Komma vier Sekunden für zwei Meter."
+    },
+    {
+      "id": "sek3",
+      "phase": "wendung",
+      "text": "Sekunde drei. Die S-Bahn ist zehnmal schneller als ihr eigener Lärm. Mach 10.",
+      "sprechtext": "Sekunde DREI.\nDie S-Bahn ist zehnmal schneller als ihr eigener Lärm.\nMach ZEHN."
+    },
+    {
+      "id": "sek4",
+      "phase": "wendung",
+      "text": "Sekunde vier. Die Durchsage: Zurückbleiben, bitte! Aber bis zu dir braucht sie fast sechs Sekunden.",
+      "sprechtext": "Sekunde VIER.\nDie Durchsage: Zurückbleiben, bitte!\nAber bis zu dir braucht sie fast SECHS Sekunden."
+    },
+    {
+      "id": "sek5",
+      "phase": "wendung",
+      "text": "Sekunde fünf. Die S-Bahn rauscht an dir vorbei. Völlig lautlos.",
+      "sprechtext": "Sekunde FÜNF.\nDie S-Bahn rauscht an dir vorbei.\nVöllig… LAUTLOS."
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Ergebnis: Die S-Bahn ist 38,9 Sekunden vor ihrem Lärm da.",
+      "sprechtext": "Ergebnis:\nDie S-Bahn ist achtunddreißig Komma neun Sekunden VOR ihrem Lärm da."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Erstens: Schall schafft jetzt nur sieben Meter. Zweitens: Was schneller ist als du, überholt seinen Lärm.",
+      "sprechtext": "[thoughtful] Warum?\nErstens: Schall schafft jetzt nur SIEBEN Meter.\nZweitens: Was schneller ist als du, überholt seinen Lärm."
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "ueberraschung",
+      "text": "Das Verrückteste: Danach wird alles, was noch in der Luft hängt, zu Ultraschall. Nur Fledermäuse hören es.",
+      "sprechtext": "[surprised] Das Verrückteste:\nDanach wird alles, was noch in der Luft hängt, zu ULTRASCHALL.\nNur Fledermäuse hören es."
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Was du hörst, ist immer schon passiert.",
+      "sprechtext": "Was du hörst, ist immer schon PASSIERT."
+    },
+    {
+      "id": "ende",
+      "phase": "schluss",
+      "text": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare.",
+      "sprechtext": "Welches Szenario soll ich als Nächstes durchspielen?\nSchreib es in die Kommentare."
+    }
+  ],
+  "rechnung": "pipeline/sim/schall_schritttempo.mjs (Tests: node --test sim/schall_schritttempo.test.mjs). c0 = 331,3·√(1+20/273,15) = 343,2 m/s = 1.235,6 km/h; c1 = 5 km/h = 1,389 m/s; Faktor 247,1. Hey aus 2 m: 1,44 s (an bei τ = 1,54 s). Durchsage aus 8 m: 5,76 s (ab τ = 3 s, an bei 8,76 s, also nicht in den 5 s). S-Bahn 50 km/h = Mach 10, Machkegel 5,7°, Zugspitze bei dir nach 4,32 s (Start 60 m). Frühester Ton der S-Bahn bei dir: 5,60 s (Außenhaut 1,79 m neben dir), also in den 5 s lautlos. Rennen: Geräusch aus 60 m bräuchte 43,27 s, S-Bahn 4,32 s, Vorsprung 38,95 s ≈ 38,9 s. Reichweite in 5 s: 6,94 m (≈ sieben Meter). Danach (c wieder normal, Wellenlänge bleibt): Frequenz ×247, eine Stimme mit 200 Hz → 49 kHz; hörbar bleibt nur, was unter 81 Hz lag. Annahmen: S-Bahn fährt in den 5 s konstant 50 km/h; Lautstärke- und Druckeffekte (Kopfwelle) nicht modelliert; das Szenario ist ein Gedankenexperiment (Ursache für langsamen Schall offen).",
+  "quellen": [
+    "Schallgeschwindigkeit in Luft c = 331,3·√(1+ϑ/273,15) m/s, 20 °C ≈ 343 m/s: Physikalisch-Technische Bundesanstalt / Lehrbuchformel (z. B. LEIFIphysik „Schallgeschwindigkeit“)",
+    "Hörbereich Mensch ca. 16 Hz – 20 kHz; Fledermäuse orten mit ca. 20–120 kHz: NABU „Fledermäuse – Ortung mit Ultraschall“ bzw. LBV",
+    "S-Bahn ET 423: Länge 67,4 m, Breite 3,02 m (Herstellerangaben Alstom/Bombardier, Wikipedia „DB-Baureihe 423“)",
+    "Machzahl M = v/c, Machwinkel sin μ = 1/M: Lehrbuch Strömungslehre",
+    "Doppler/Überschall: Quelle schneller als Schall läuft ihren Wellen voraus (Machkegel), Lehrbuch"
+  ],
+  "caption": "Was wäre, wenn Schall nur Schritttempo hätte? 🔊 Ich hab's durchgespielt. Hörst du die S-Bahn oder nicht? 👇 #schall #physik #sbahn #wissen #wasweaerewenn"
+}

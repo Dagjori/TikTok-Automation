@@ -1,0 +1,55 @@
+/* Stil 6 „Papier-Collage“ (Three.js): HUD als Papierschnipsel – Karten aus Papier mit Faser, weiche Papierschatten,
+   Schreibmaschinen-Etiketten, leichte Schieflage (CSS-Eigenschaft rotate), Klebeband an den Karten. */
+html, body { background: #C9A77C; }
+#hud {
+  --faser: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 .38  0 0 0 0 .3  0 0 0 0 .2  0 0 0 .34 0'/></filter><rect width='100%25' height='100%25' filter='url(%23f)'/></svg>");
+  --karte: #FBF7EE;
+  --karte-linie: #E6DBC4;
+  --karte-grau: #7A6C58;
+  --ms-radius: 9px;
+  --ms-schatten: 3px 6px 0 rgba(58, 40, 16, 0.2), 8px 16px 20px -8px rgba(58, 40, 16, 0.4);
+  --schreib: "Liberation Mono", "Courier New", monospace;
+}
+/* Papierfaser über allen Flächen */
+.ms-seite, .ms-karte, .ms-chip, .ms-folgen .ms-fp, .ms-stempel .ms-plakette { background-image: var(--faser); }
+.ms-seite { border-radius: 8px 12px 9px 11px; box-shadow: var(--ms-schatten); rotate: -0.7deg; }
+.ms-seite.rechts { border-radius: 12px 8px 11px 9px; rotate: 0.8deg; }
+.ms-seite .ms-wert { font-size: 68px; }
+.ms-seite .ms-kopf { font-family: var(--schreib); font-size: 25px; letter-spacing: 0.06em; font-weight: 700; }
+.ms-seite .ms-kopf i { border-radius: 3px; }
+.ms-seite .ms-vorn { border-radius: 4px; font-family: var(--schreib); }
+.ms-mitte { box-shadow: 0 0 0 7px var(--karte), 4px 10px 0 7px rgba(58, 40, 16, 0.22), 10px 20px 22px 4px rgba(58, 40, 16, 0.3); background-image: var(--faser); }
+.ms-mitte .ms-uhrtext { font-size: 34px; }
+.ms-mitte .ms-uhrtext small { font-family: var(--schreib); }
+/* Karten: Papier mit Klebeband */
+.ms-karte { border-radius: 7px 11px 8px 12px; rotate: -0.6deg; padding-top: 34px; }
+.ms-karte::before { content: ""; position: absolute; left: 50%; top: -18px; width: 130px; height: 36px; margin-left: -65px; rotate: -3deg; background: rgba(241, 227, 184, 0.88); box-shadow: 1px 2px 3px rgba(58, 40, 16, 0.22); clip-path: polygon(0 8%, 4% 0, 9% 10%, 14% 2%, 100% 0, 96% 20%, 100% 38%, 96% 58%, 100% 80%, 94% 100%, 9% 100%, 4% 84%, 0 96%, 3% 62%, 0 38%, 4% 22%); }
+.ms-karte .ms-kk { font-family: var(--schreib); font-size: 24px; font-weight: 700; }
+.ms-karte .ms-kk i { border-radius: 2px; }
+.ms-bilanz .ms-bz, .ms-bilanz .ms-sieger { border-radius: 6px; }
+.ms-balken .ms-fk .tag { border-radius: 4px; font-family: var(--schreib); }
+.ms-balken .ms-zeile .spur, .ms-balken .ms-zeile .spur b { border-radius: 5px; }
+.ms-formel .ms-tok.op { border-radius: 50%; }
+.ms-formel .ms-tok.erg { border-radius: 8px; }
+/* Etiketten wie aus dem Beschriftungsgerät / Schreibmaschine */
+.ms-chip { border-radius: 7px 5px 8px 5px; font-family: var(--schreib); font-weight: 700; font-size: 38px; letter-spacing: -0.02em; box-shadow: 3px 5px 0 rgba(58, 40, 16, 0.22), 6px 12px 14px -6px rgba(58, 40, 16, 0.4); }
+.ms-chip.gross { font-size: 46px; }
+.ms-chip.hell i { border-radius: 3px; }
+.ms-chip .ms-puls { border-radius: 8px; }
+.ms-chip .ms-rz { font-family: var(--display); }
+.ms-chip .ms-rz-t, .ms-chip .ms-rz-b { font-family: var(--display); font-weight: 900; }
+/* Stempel und Sticker: Papieraufkleber mit Rand */
+.ms-stempel .ms-plakette { border-radius: 8px; font-family: var(--display); box-shadow: 0 0 0 0.06em #FBF7EE, 0.05em 0.1em 0 0.06em rgba(58, 40, 16, 0.25), 0 0.3em 0.6em -0.1em rgba(58, 40, 16, 0.5); }
+.ms-stempel.stempel .ms-plakette { background-color: rgba(251, 247, 238, 0.96); }
+.ms-folgen .ms-fp { border-radius: 8px; font-family: var(--schreib); font-weight: 700; box-shadow: 3px 6px 0 rgba(58, 40, 16, 0.25), 8px 14px 16px -8px rgba(58, 40, 16, 0.45); }
+/* Etiketten an Weltpunkten */
+.fl-etikett { position: absolute; left: 0; top: 0; will-change: transform, opacity; }
+.fl-etikett .ms-chip { position: relative; }
+.fl-etikett .betrag { font-family: var(--display); font-weight: 900; letter-spacing: -0.02em; }
+.fl-etikett .klein { font-size: 0.6em; letter-spacing: 0.04em; opacity: 0.88; margin-right: 0.2em; }
+.fl-etikett .ms-chip.minus { background: #C8371D; color: #fff; }
+/* Untertitel Wort für Wort (Stil „kontur“) auf Packpapier */
+.karaoke.kontur .w { text-shadow: 0 0.05em 0.02em rgba(0, 0, 0, 0.92), 0 0.1em 0.4em rgba(40, 24, 8, 0.55); }
+.ms-titel .ms-tw.klein { font-size: 0.6em; }
+.ms-titel .ms-twi { -webkit-text-stroke: 0.08em var(--tinte); }
+.ms-seite.rechts .ms-vorn { position: absolute; left: 58px; top: 82px; }

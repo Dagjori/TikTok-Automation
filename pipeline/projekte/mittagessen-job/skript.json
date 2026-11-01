@@ -1,0 +1,156 @@
+{
+  "titel": "Mittagessen im Job: Selbst kochen oder bestellen, was kostet ein Jahr wirklich?",
+  "rubrik": "GELD",
+  "stil": "6 Papier-Collage, neu in Three.js (Packpapier, gerissene Papierkanten mit weißem Rand, Rasterpunkte, Klebeband, Schreibmaschinen-Etiketten, Baukasten engine/stil_collage.js)",
+  "stil_begruendung": "Konkurrenz- und Stilrecherche 01.11.2026 (Websuche, öffentliche Seiten; TikTok-Seiten selbst sind aus der Cloud nicht abrufbar): Zu „Mittagessen im Job: kochen oder bestellen“ gibt es auf Deutsch nur Ratgeber, Rechner und Blogtexte (Mittagskosten-Rechner, Meal-Prep-Artikel, Kantine-Steuerseiten), kein Simulationsvideo mit Duell und laufenden Zählern. Die Collage ist laut docs/10 im deutschen Simulationsgenre nicht besetzt (stärkste Abgrenzung), kommt von großen Erklärkanälen (Vox, Johnny Harris) und passt zu Handel, Werbung, Abos und Alltag mit Preisschildern: Preise, Lieferzettel, Kassenbons und Münzstapel sind selbst Papier. Die Geld-Säulen sind Münzstapel aus Papierscheiben (Höhe = Euro), dazu Kalender, der Blätter verliert, Papieruhr, Schreibmaschinen-Etiketten. Schwäche laut docs/10 (Bewegung wirkt wie Stop-Motion) wird zum Stilmittel: Teile schlagen ein, wippen auf der Stelle (Stop-Motion-Takt 12 Bilder/s für kleine Teile), Kamerafahrten und Zähler sorgen für Fluss. Nicht Stil 4 (Steuer-Video 02.11. abend), nicht Stil 3 (Schere-Stein-Papier 03.11. mittag). Eigene Gestaltung, kein Vorbild nachgebaut.",
+  "teamfarben": {
+    "KOCHEN": "#2ECC71",
+    "BESTELLEN": "#E040FB",
+    "KANTINE (dritte Option, nur im Schlussteil, kein Team)": "#3F6AF0"
+  },
+  "klangteppich": "raum",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Selbst kochen oder bestellen? Was kostet dein Mittagessen im Jahr wirklich?",
+      "sprechtext": "Selbst kochen oder bestellen?\n[curious] Was kostet dein Mittagessen im Jahr WIRKLICH?"
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "220 Arbeitstage. Kochen: 3,50 Euro. Bestellen: 15 Euro.",
+      "sprechtext": "Zweihundertzwanzig Arbeitstage.\nKochen: dreieinhalb Euro.\nBestellen: fünfzehn Euro."
+    },
+    {
+      "id": "falle",
+      "phase": "denkfalle_start",
+      "text": "Klar, Kochen ist billiger. Oder? Los geht's!",
+      "sprechtext": "Klar, Kochen ist billiger.\nOder?\n[excited] Los geht's!"
+    },
+    {
+      "id": "rennen",
+      "phase": "rennen",
+      "text": "Nach einem Jahr: Kochen 770. Bestellen 3.300.",
+      "sprechtext": "Nach einem Jahr:\nKochen siebenhundertsiebzig.\nBestellen dreitausenddreihundert."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst."
+    },
+    {
+      "id": "wendung",
+      "phase": "wendung_1",
+      "text": "Doch jetzt rechnen wir die Zeit mit. Einkaufen, kochen, spülen: 15 Minuten.",
+      "sprechtext": "[surprised] Doch jetzt rechnen wir die ZEIT mit.\nEinkaufen, kochen, spülen: fünfzehn Minuten."
+    },
+    {
+      "id": "netto",
+      "phase": "wendung_2",
+      "text": "Dein Netto-Stundenlohn: 13,46 Euro. Das macht 55 Stunden. Also 740 Euro mehr.",
+      "sprechtext": "Dein Netto-Stundenlohn: dreizehn Euro sechsundvierzig.\nDas macht fünfundfünfzig Stunden.\nAlso siebenhundertvierzig Euro MEHR."
+    },
+    {
+      "id": "bestellzeit",
+      "phase": "wendung_2",
+      "text": "Und Bestellen? Nur 6 Minuten. 296 Euro Zeit.",
+      "sprechtext": "Und Bestellen?\nNur sechs Minuten.\nZweihundertsechsundneunzig Euro Zeit."
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Endstand: Kochen 1.510 Euro. Bestellen 3.596. Kochen gewinnt.",
+      "sprechtext": "Endstand:\nKochen eintausendfünfhundertzehn Euro.\nBestellen dreitausendfünfhundertsechsundneunzig.\nKochen GEWINNT."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Kochen spart 2.530 Euro Geld. Kostet aber 444 Euro mehr Zeit.",
+      "sprechtext": "[thoughtful] Warum?\nKochen spart zweitausendfünfhundertdreißig Euro Geld.\nKostet aber vierhundertvierundvierzig Euro mehr Zeit."
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "zweite_ueberraschung",
+      "text": "Und das Verrückte: Die Kantine. 4,57 Euro, 10 Minuten Weg. Am Ende: 1.499. Sie holt das Kochen ein.",
+      "sprechtext": "Und das Verrückte:\nDie Kantine.\nVier Euro siebenundfünfzig, zehn Minuten Weg.\nAm Ende: eintausendvierhundertneunundneunzig.\nSie holt das Kochen EIN."
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Kochen spart Geld. Die Kantine spart Zeit. Und Zeit hat einen Preis.",
+      "sprechtext": "Kochen spart GELD.\nDie Kantine spart ZEIT.\nUnd Zeit hat einen PREIS."
+    },
+    {
+      "id": "schluss",
+      "phase": "schluss",
+      "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+      "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare."
+    }
+  ],
+  "beschreibung": "Mittagessen im Job: Selbst kochen oder bestellen – was kostet ein Jahr wirklich? 🍱 Ich hab's durchgerechnet. Team Kochen oder Team Bestellen? 👇 #mittagessen #mealprep #lieferdienst #wissen #simulation",
+  "zahlen": {
+    "hinweis": "Modellrechnung 2026 aus pipeline/sim/mittagessen.mjs (Netto-Modul pipeline/sim/netto.mjs), 13 Tests; Auswertung in sim_ergebnisse.md",
+    "arbeitstage": 220,
+    "brutto": 3500,
+    "netto_monat": 2333.25,
+    "netto_stundenlohn": 13.46,
+    "kochen": {
+      "zutaten_je_portion": 3.5,
+      "minuten_je_portion": 15,
+      "geld": 770,
+      "stunden": 55,
+      "zeitwert": 740.36,
+      "gesamt": 1510.36
+    },
+    "bestellen": {
+      "gericht": 12.5,
+      "lieferung_service": 2.5,
+      "je_bestellung": 15,
+      "minuten_je_bestellung": 6,
+      "geld": 3300,
+      "stunden": 22,
+      "zeitwert": 296.14,
+      "gesamt": 3596.14
+    },
+    "kantine": {
+      "eigenanteil": 4.57,
+      "minuten_weg_und_anstehen": 10,
+      "geld": 1005.4,
+      "stunden": 36.67,
+      "zeitwert": 493.57,
+      "gesamt": 1498.97
+    },
+    "geld_vorteil_kochen_gegen_bestellen": 2530,
+    "zeit_nachteil_kochen_gegen_bestellen": 444.21,
+    "vorteil_kochen_gesamt": 2085.79,
+    "faktor_bestellen_zu_kochen": 2.38,
+    "kantine_vor_kochen": 11.39,
+    "kipp_kochminuten_kantine_gleich_kochen": 14.77,
+    "kipp_kochminuten_bestellen_gleich_kochen": 57.26
+  },
+  "annahmen": [
+    "(A) Person: 3.500 € brutto im Monat, 40-Stunden-Woche, Steuerklasse 1, kinderlos, gesetzlich versichert mit dem durchschnittlichen Zusatzbeitrag 2026 (2,9 %), ohne Kirchensteuer (gleiche Person wie „200 € oder 100 € steuerfrei“ und „Steuererklärung oder Überstunden“). Netto laut Netto-Modul 2.333,25 € im Monat → Netto-Stundenlohn 2.333,25 × 12 / 52 / 40 = 13,46 €.",
+    "(A) 220 Arbeitstage mit je einem Mittagessen (Plan GD115). Gesetzlich Rahmen: 365 Tage − 104 Wochenendtage − Feiertage − 30 Urlaubstage − Krankheit ergibt bei Vollzeit rund 215 bis 225 Tage; die Zahl ist gerundet und ändert die Rangfolge nicht (Empfindlichkeit 200 / 220 / 230 Tage getestet).",
+    "(A) Team KOCHEN = Meal-Prep: 3,50 € je Portion (Zutaten, Strom, Verpackung) und 15 Minuten je Portion (Einkaufen 3, Kochen 9 in Vorratsmengen, Spülen und Verpacken 3). Richtwerte: Destatis-Zeitverwendungserhebung 2022 nennt im Mittel 41 Minuten am Tag für Zubereitung und Küchenarbeit (≈ 14 Minuten je Mahlzeit bei drei Mahlzeiten, Presseberichte); Blogrechnungen für vorgekochte Portionen liegen bei 1,20 bis 1,60 € (zu niedrig, nur Zutaten), Destatis-Haushaltsausgaben für Nahrungsmittel (Einpersonenhaushalt rund 254 € im Monat, Ratgeber Juni 2026, Quelle nicht eindeutig) ergeben rund 2,80 € je Mahlzeit im Durchschnitt aller Mahlzeiten; ein Mittagessen mit Eiweiß und Gemüse liegt darüber.",
+    "(A) Team BESTELLEN = Lieferdienst: 12,50 € Gericht + 2,50 € Lieferung und Service = 15,00 € je Bestellung, 6 Minuten (Bestellen 2, Entgegennehmen 4). Richtwerte: Business-Lunch-Index 2024: durchschnittlich 18,50 € in den 20 größten Städten (zuvor 16,68 €), ältere Erhebung 16,27 €; Menüservice 9 bis 13 € (Anbieterangabe Frühjahr 2025); Bowl zum Mitnehmen 10 bis 12 € (Anbieterangabe); Service- bzw. Lieferpauschale laut Branchenblog 2,5 % des Warenkorbs, höchstens 0,99 € je Bestellung plus Liefergebühr. Keine Anbieternamen im Video.",
+    "(A) Kantine mit Zuschuss: 4,57 € Eigenanteil = Sachbezugswert 2026 für ein Mittag- oder Abendessen (SvEV 2026). Zahlt der Beschäftigte mindestens diesen Wert, entsteht kein steuer- und beitragspflichtiger geldwerter Vorteil; der Arbeitgeber trägt den Rest (Zuschuss bis zu 3,10 € über dem Sachbezugswert, Verrechnungswert höchstens 7,67 €). 10 Minuten für Weg und Anstehen. Vergleich: Mensa-Hauptgericht im Mittel 3,66 € (Erhebung 2026, Unternehmensvergleich) bzw. 4,33 € (Studierendenwerk Ulm 2023); Beispiele für Eigenanteile in der Steuerliteratur 2,50 bis 3,50 €.",
+    "(S) Die Zeit wird zum Netto-Stundenlohn bewertet, als wäre eine Stunde Freizeit so viel wert wie eine Stunde Arbeit netto. Das ist eine Modellannahme, kein Naturgesetz; wer Kochen als Hobby empfindet, setzt die Zeit niedriger an. Zeitwerte: Kochen 55 h = 740,36 €, Bestellen 22 h = 296,14 €, Kantine 36,7 h = 493,57 €.",
+    "(S) Ergebnis hängt an den Annahmen: Bestellen ist in allen 18 getesteten Varianten (Zutaten 2,50 bis 5 €, Kochzeit 10 bis 25 Minuten, Weg zur Kantine 5 bis 15 Minuten, Gericht 10 bis 15 €, 200 bis 230 Tage) am teuersten. Kochen gegen Kantine kippt bei 14,77 Minuten Kochzeit je Portion: darunter gewinnt Kochen, darüber die Kantine. Bei unseren 15 Minuten liegt die Kantine 11,39 € (0,8 %) vorn, also praktisch Gleichstand. Bestellen würde das Kochen erst ab 57,3 Minuten je Portion schlagen.",
+    "Plan-Wendung (Hypothese) „Mit Zeit gerechnet holt die Kantine mit Zuschuss beide ein“: nur zur Hälfte bestätigt. Die Kantine holt das Kochen ein (Gleichstand, 11 € vorn), den Lieferdienst überholt sie klar, aber sie „holt“ ihn nicht ein, weil er weit zurückliegt. Im Video ehrlich umgebaut: Wendung 1 = Zeit mit einrechnen, Ergebnis = Kochen gewinnt gegen Bestellen, zweite Überraschung = Kantine holt das Kochen ein, Bedingung = Kipppunkt Kochzeit.",
+    "Nur Modellrechnung, keine Beratung, keine Anbieter, keine Produkte."
+  ],
+  "quellen": [
+    "(F) Sachbezugswert 2026 für Mittag- und Abendessen 4,57 € (Sozialversicherungsentgeltverordnung 2026; haufe.de „Sachbezugswerte für Mahlzeiten im Jahr 2026“, steuertipps.de „Sachbezugswerte für 2026“, lohnsteuer-kompakt.de „Sachbezugswerte 2026 einfach erklärt“, ihk.de/hannover „Sachbezugswerte für Mahlzeiten im Jahr 2026“, randstad.de „Verpflegungszuschuss“; Abruf über Websuche 01.11.2026, Seiten selbst aus der Cloud nicht abrufbar). Hinweis: einzelne Seiten nennen noch 4,40 € (Wert 2025) oder 4,13 € (Wert 2024); maßgeblich 4,57 €.",
+    "(F) Arbeitgeberzuschuss zu Mahlzeiten: Verrechnungswert darf den Sachbezugswert um höchstens 3,10 € übersteigen, 2026 also höchstens 7,67 € (haufe.de, steuerschroeder.de „Sachbezugswerte für Mahlzeiten ab 2026“, der-betrieb.de „Zum Sachbezugswert für Zuschüsse zu Mahlzeiten“).",
+    "(F) Business-Lunch-Index 2024 (AC & Co): Durchschnitt in den 20 größten Städten 18,50 € (vorher 16,68 €), München 21,50 €, Essen und Dresden 16,50 € (businesstraveller.com „Business Lunch Index“, hogapage.de „Teurer Mittagstisch in Tokio und Bern“). Ältere Erhebung Smunch: Business Lunch 16,27 €, Dresden 11,98 €, München 22,49 € (journal-frankfurt.de „Studie untersucht das Lunch-Angebot“). Erhebungsjahr der zweiten Quelle unklar.",
+    "(F) Mensa- und Kantinenpreise: Hauptgericht im Mittel 3,66 € (Heidelberg 2,90 € günstigster, Hamburg 4,71 € teuerster; Erhebung eines Unternehmens, 2026, heidelberg24.de „Mensa-Ranking“); Studierendenwerk Ulm nannte 4,33 € als eigenen Durchschnitt (schwaebische.de). Beispiele für Mitarbeiter-Eigenanteile 2,50 bis 3,50 € (etl.de „Versteuerung von Kantinenessen und Co“).",
+    "(F) Zeitverwendung: Personen ab 10 Jahren wenden im Mittel 41 Minuten am Tag für Zubereitung von Mahlzeiten und Küchenarbeit auf (Destatis, Zeitverwendungserhebung 2022, wiedergegeben in Presseberichten; destatis.de aus der Cloud nicht abrufbar); Einkaufen im stationären Handel 26 Minuten am Tag (Destatis, Zeitverwendungserhebung 2012/13).",
+    "(F) Haushaltsausgaben für Nahrungsmittel: im Mittel rund 335 € im Monat je Privathaushalt (Destatis, Wirtschaftsrechnungen / EVS 2023, Pressemeldung über zm-online.de und retail-news.de wiedergegeben); Einpersonenhaushalt rund 254 € laut Ratgeberartikel Juni 2026 (infranken.de, Quelle dort nicht eindeutig, nur als Größenordnung).",
+    "(F) Durchschnittliches Mittagessen deutscher Beschäftigter rund 7,43 € (wandernundmehr.at „Wie teuer ist ein Mittagessen zu Hause?“, Erhebung ohne genaue Angabe, Stand 2024); Menüservice 9 bis 13 € (Anbieterangabe). Service-Pauschale Lieferplattform 2,5 % des Warenkorbs, höchstens 0,99 € ab April 2025 (Branchenblog gastro-master.de, Sekundärquelle).",
+    "(F) Netto-Stundenlohn: Netto-Modul pipeline/sim/netto.mjs nach BMF-Programmablaufplan 2026 (BMF-Schreiben IV C 5 - S 2361/00025/016/028 vom 12.11.2025), Quellen im Detail projekte/gehalt-steuerfrei/skript.json; Stunden je Monat = 52/12 Wochen × 40 Stunden.",
+    "Konkurrenz-Check 01.11.2026 (Websuche Deutsch, site:tiktok.com und allgemein): kein deutsches Simulations- oder Duellvideo „kochen oder bestellen, Mittagessen im Job, Jahreskosten mit Zeit als Netto-Stundenlohn“ gefunden; nur Rechner (miniwebtool.com Mittagskosten-Rechner), Ratgeberseiten und englische Meal-Prep-Blogs. Thema steht nicht in docs/15 §9 (gesperrt). Eigener Winkel: Zeit als Netto-Stundenlohn und die Kantine mit Zuschuss als dritte Option."
+  ],
+  "konkurrenz_check": "01.11.2026, Websuche (Deutsch, site:tiktok.com und allgemein): kein virales Duell- oder Simulationsvideo zu „Mittagessen im Job: kochen oder bestellen“ mit Jahresrechnung und Zeitbewertung gefunden (Planzeile 31.10. ebenso); TikTok-Seiten selbst sind aus der Cloud nicht abrufbar. Nicht in docs/15 §9 gesperrt."
+}

@@ -1,0 +1,891 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 70.323,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Schere, Stein, Papier: Glück oder Taktik? Wer gewinnt wirklich?",
+   "start": 0.0,
+   "ende": 4.8,
+   "woerter": [
+    {
+     "wort": "Schere,",
+     "start": 0.0,
+     "ende": 0.48
+    },
+    {
+     "wort": "Stein,",
+     "start": 0.6,
+     "ende": 0.92
+    },
+    {
+     "wort": "Papier:",
+     "start": 0.96,
+     "ende": 1.52
+    },
+    {
+     "wort": "Glück",
+     "start": 1.92,
+     "ende": 2.24
+    },
+    {
+     "wort": "oder",
+     "start": 2.48,
+     "ende": 2.64
+    },
+    {
+     "wort": "Taktik?",
+     "start": 2.72,
+     "ende": 3.4
+    },
+    {
+     "wort": "Wer",
+     "start": 3.728,
+     "ende": 3.76
+    },
+    {
+     "wort": "gewinnt",
+     "start": 3.84,
+     "ende": 4.16
+    },
+    {
+     "wort": "wirklich?",
+     "start": 4.24,
+     "ende": 4.8
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Hundert Runden. Rot spielt mit Taktik. Cyan würfelt jede Runde neu.",
+   "start": 5.28,
+   "ende": 10.28,
+   "woerter": [
+    {
+     "wort": "Hundert",
+     "start": 5.28,
+     "ende": 5.6
+    },
+    {
+     "wort": "Runden.",
+     "start": 5.68,
+     "ende": 6.16
+    },
+    {
+     "wort": "Rot",
+     "start": 6.64,
+     "ende": 6.88
+    },
+    {
+     "wort": "spielt",
+     "start": 6.96,
+     "ende": 7.2
+    },
+    {
+     "wort": "mit",
+     "start": 7.28,
+     "ende": 7.36
+    },
+    {
+     "wort": "Taktik.",
+     "start": 7.4,
+     "ende": 7.92
+    },
+    {
+     "wort": "Cyan",
+     "start": 8.32,
+     "ende": 8.72
+    },
+    {
+     "wort": "würfelt",
+     "start": 8.76,
+     "ende": 9.12
+    },
+    {
+     "wort": "jede",
+     "start": 9.2,
+     "ende": 9.44
+    },
+    {
+     "wort": "Runde",
+     "start": 9.52,
+     "ende": 9.76
+    },
+    {
+     "wort": "neu.",
+     "start": 9.84,
+     "ende": 10.28
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, die Taktik gewinnt. Oder? Los geht's!",
+   "start": 10.48,
+   "ende": 13.96,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 10.48,
+     "ende": 10.96
+    },
+    {
+     "wort": "die",
+     "start": 11.04,
+     "ende": 11.12
+    },
+    {
+     "wort": "Taktik",
+     "start": 11.2,
+     "ende": 11.52
+    },
+    {
+     "wort": "gewinnt.",
+     "start": 11.6,
+     "ende": 12.12
+    },
+    {
+     "wort": "Oder?",
+     "start": 12.32,
+     "ende": 12.64
+    },
+    {
+     "wort": "Los",
+     "start": 13.04,
+     "ende": 13.28
+    },
+    {
+     "wort": "geht's!",
+     "start": 13.36,
+     "ende": 13.96
+    }
+   ]
+  },
+  {
+   "id": "start",
+   "text": "Runde eins: unentschieden. Zwei: Rot. Drei: Cyan.",
+   "start": 14.16,
+   "ende": 19.04,
+   "woerter": [
+    {
+     "wort": "Runde",
+     "start": 14.16,
+     "ende": 14.4
+    },
+    {
+     "wort": "eins:",
+     "start": 14.56,
+     "ende": 15.04
+    },
+    {
+     "wort": "unentschieden.",
+     "start": 15.2,
+     "ende": 16.16
+    },
+    {
+     "wort": "Zwei:",
+     "start": 16.24,
+     "ende": 16.88
+    },
+    {
+     "wort": "Rot.",
+     "start": 17.08,
+     "ende": 17.6
+    },
+    {
+     "wort": "Drei:",
+     "start": 17.64,
+     "ende": 18.24
+    },
+    {
+     "wort": "Cyan.",
+     "start": 18.32,
+     "ende": 19.04
+    }
+   ]
+  },
+  {
+   "id": "rennen1",
+   "text": "Zehn Runden: Rot führt, 4 zu 2.",
+   "start": 19.12,
+   "ende": 22.24,
+   "woerter": [
+    {
+     "wort": "Zehn",
+     "start": 19.12,
+     "ende": 19.36
+    },
+    {
+     "wort": "Runden:",
+     "start": 19.44,
+     "ende": 20.08
+    },
+    {
+     "wort": "Rot",
+     "start": 20.16,
+     "ende": 20.4
+    },
+    {
+     "wort": "führt,",
+     "start": 20.48,
+     "ende": 21.12
+    },
+    {
+     "wort": "4",
+     "start": 21.16,
+     "ende": 21.28
+    },
+    {
+     "wort": "zu",
+     "start": 21.36,
+     "ende": 21.52
+    },
+    {
+     "wort": "2.",
+     "start": 21.6,
+     "ende": 22.24
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 22.32,
+   "ende": 24.08,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 22.32,
+     "ende": 22.48
+    },
+    {
+     "wort": "mir,",
+     "start": 22.56,
+     "ende": 22.8
+    },
+    {
+     "wort": "damit",
+     "start": 22.88,
+     "ende": 23.04
+    },
+    {
+     "wort": "du",
+     "start": 23.08,
+     "ende": 23.12
+    },
+    {
+     "wort": "nichts",
+     "start": 23.2,
+     "ende": 23.36
+    },
+    {
+     "wort": "verpasst.",
+     "start": 23.44,
+     "ende": 24.08
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Doch dann zieht Cyan vorbei. Runde 30: 11 zu 11.",
+   "start": 24.16,
+   "ende": 28.4,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 24.16,
+     "ende": 24.32
+    },
+    {
+     "wort": "dann",
+     "start": 24.4,
+     "ende": 24.56
+    },
+    {
+     "wort": "zieht",
+     "start": 24.64,
+     "ende": 24.8
+    },
+    {
+     "wort": "Cyan",
+     "start": 24.88,
+     "ende": 25.2
+    },
+    {
+     "wort": "vorbei.",
+     "start": 25.253,
+     "ende": 26.0
+    },
+    {
+     "wort": "Runde",
+     "start": 26.08,
+     "ende": 26.32
+    },
+    {
+     "wort": "30:",
+     "start": 26.4,
+     "ende": 26.92
+    },
+    {
+     "wort": "11",
+     "start": 26.92,
+     "ende": 27.44
+    },
+    {
+     "wort": "zu",
+     "start": 27.6,
+     "ende": 27.76
+    },
+    {
+     "wort": "11.",
+     "start": 27.92,
+     "ende": 28.4
+    }
+   ]
+  },
+  {
+   "id": "rennen2",
+   "text": "Runde 60: Rot wieder vorn.",
+   "start": 28.48,
+   "ende": 30.88,
+   "woerter": [
+    {
+     "wort": "Runde",
+     "start": 28.48,
+     "ende": 28.72
+    },
+    {
+     "wort": "60:",
+     "start": 28.8,
+     "ende": 29.52
+    },
+    {
+     "wort": "Rot",
+     "start": 29.6,
+     "ende": 29.84
+    },
+    {
+     "wort": "wieder",
+     "start": 29.92,
+     "ende": 30.16
+    },
+    {
+     "wort": "vorn.",
+     "start": 30.24,
+     "ende": 30.88
+    }
+   ]
+  },
+  {
+   "id": "ergebnis1",
+   "text": "Endstand: 34 zu 31. Praktisch gleich.",
+   "start": 31.0,
+   "ende": 34.72,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 31.0,
+     "ende": 31.68
+    },
+    {
+     "wort": "34",
+     "start": 31.72,
+     "ende": 32.32
+    },
+    {
+     "wort": "zu",
+     "start": 32.4,
+     "ende": 32.56
+    },
+    {
+     "wort": "31.",
+     "start": 32.64,
+     "ende": 33.52
+    },
+    {
+     "wort": "Praktisch",
+     "start": 33.56,
+     "ende": 33.92
+    },
+    {
+     "wort": "gleich.",
+     "start": 34.0,
+     "ende": 34.72
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Aber jetzt spielt Cyan wie ein Mensch.",
+   "start": 34.79,
+   "ende": 37.12,
+   "woerter": [
+    {
+     "wort": "Aber",
+     "start": 34.79,
+     "ende": 34.96
+    },
+    {
+     "wort": "jetzt",
+     "start": 35.04,
+     "ende": 35.28
+    },
+    {
+     "wort": "spielt",
+     "start": 35.36,
+     "ende": 35.6
+    },
+    {
+     "wort": "Cyan",
+     "start": 35.68,
+     "ende": 36.0
+    },
+    {
+     "wort": "wie",
+     "start": 36.08,
+     "ende": 36.16
+    },
+    {
+     "wort": "ein",
+     "start": 36.24,
+     "ende": 36.32
+    },
+    {
+     "wort": "Mensch.",
+     "start": 36.4,
+     "ende": 37.12
+    }
+   ]
+  },
+  {
+   "id": "mensch",
+   "text": "Menschen wiederholen ihren Zug zu oft: 44 statt 33 Prozent.",
+   "start": 37.16,
+   "ende": 42.08,
+   "woerter": [
+    {
+     "wort": "Menschen",
+     "start": 37.16,
+     "ende": 37.52
+    },
+    {
+     "wort": "wiederholen",
+     "start": 37.56,
+     "ende": 38.08
+    },
+    {
+     "wort": "ihren",
+     "start": 38.12,
+     "ende": 38.32
+    },
+    {
+     "wort": "Zug",
+     "start": 38.4,
+     "ende": 38.64
+    },
+    {
+     "wort": "zu",
+     "start": 38.72,
+     "ende": 38.8
+    },
+    {
+     "wort": "oft:",
+     "start": 38.88,
+     "ende": 39.44
+    },
+    {
+     "wort": "44",
+     "start": 39.52,
+     "ende": 40.16
+    },
+    {
+     "wort": "statt",
+     "start": 40.24,
+     "ende": 40.48
+    },
+    {
+     "wort": "33",
+     "start": 40.52,
+     "ende": 41.2
+    },
+    {
+     "wort": "Prozent.",
+     "start": 41.28,
+     "ende": 42.08
+    }
+   ]
+  },
+  {
+   "id": "rennen3",
+   "text": "Runde 30: 17 zu 8. Rot zieht davon.",
+   "start": 42.12,
+   "ende": 45.76,
+   "woerter": [
+    {
+     "wort": "Runde",
+     "start": 42.12,
+     "ende": 42.4
+    },
+    {
+     "wort": "30:",
+     "start": 42.48,
+     "ende": 43.08
+    },
+    {
+     "wort": "17",
+     "start": 43.08,
+     "ende": 43.68
+    },
+    {
+     "wort": "zu",
+     "start": 43.76,
+     "ende": 43.92
+    },
+    {
+     "wort": "8.",
+     "start": 44.04,
+     "ende": 44.48
+    },
+    {
+     "wort": "Rot",
+     "start": 44.6,
+     "ende": 44.72
+    },
+    {
+     "wort": "zieht",
+     "start": 44.8,
+     "ende": 45.04
+    },
+    {
+     "wort": "davon.",
+     "start": 45.12,
+     "ende": 45.76
+    }
+   ]
+  },
+  {
+   "id": "ergebnis2",
+   "text": "Endstand: Rot 50, Cyan 31. Neunzehn Siege Vorsprung.",
+   "start": 45.84,
+   "ende": 50.8,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 45.84,
+     "ende": 46.56
+    },
+    {
+     "wort": "Rot",
+     "start": 46.72,
+     "ende": 46.88
+    },
+    {
+     "wort": "50,",
+     "start": 46.96,
+     "ende": 47.70666666666667
+    },
+    {
+     "wort": "Cyan",
+     "start": 47.70666666666667,
+     "ende": 48.45333333333333
+    },
+    {
+     "wort": "31.",
+     "start": 48.45333333333333,
+     "ende": 49.2
+    },
+    {
+     "wort": "Neunzehn",
+     "start": 49.28,
+     "ende": 49.76
+    },
+    {
+     "wort": "Siege",
+     "start": 49.84,
+     "ende": 50.08
+    },
+    {
+     "wort": "Vorsprung.",
+     "start": 50.24,
+     "ende": 50.8
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Gewinner bleiben bei ihrem Zug. Verlierer wechseln. Rot setzt genau darauf.",
+   "start": 51.12,
+   "ende": 56.8,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 51.12,
+     "ende": 51.8
+    },
+    {
+     "wort": "Gewinner",
+     "start": 52.0,
+     "ende": 52.4
+    },
+    {
+     "wort": "bleiben",
+     "start": 52.48,
+     "ende": 52.8
+    },
+    {
+     "wort": "bei",
+     "start": 52.88,
+     "ende": 52.96
+    },
+    {
+     "wort": "ihrem",
+     "start": 53.0,
+     "ende": 53.2
+    },
+    {
+     "wort": "Zug.",
+     "start": 53.28,
+     "ende": 53.84
+    },
+    {
+     "wort": "Verlierer",
+     "start": 53.92,
+     "ende": 54.32
+    },
+    {
+     "wort": "wechseln.",
+     "start": 54.4,
+     "ende": 55.2
+    },
+    {
+     "wort": "Rot",
+     "start": 55.32,
+     "ende": 55.44
+    },
+    {
+     "wort": "setzt",
+     "start": 55.52,
+     "ende": 55.76
+    },
+    {
+     "wort": "genau",
+     "start": 55.84,
+     "ende": 56.16
+    },
+    {
+     "wort": "darauf.",
+     "start": 56.24,
+     "ende": 56.8
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und das Verrückte: Würfelt Cyan ab der Hälfte, ist der Vorsprung weg. Zweite Hälfte: 14 zu 15.",
+   "start": 56.96,
+   "ende": 63.6,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 56.96,
+     "ende": 57.04
+    },
+    {
+     "wort": "das",
+     "start": 57.08,
+     "ende": 57.12
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 57.2,
+     "ende": 57.84
+    },
+    {
+     "wort": "Würfelt",
+     "start": 58.0,
+     "ende": 58.32
+    },
+    {
+     "wort": "Cyan",
+     "start": 58.4,
+     "ende": 58.72
+    },
+    {
+     "wort": "ab",
+     "start": 58.8,
+     "ende": 58.88
+    },
+    {
+     "wort": "der",
+     "start": 58.96,
+     "ende": 59.04
+    },
+    {
+     "wort": "Hälfte,",
+     "start": 59.08,
+     "ende": 59.52
+    },
+    {
+     "wort": "ist",
+     "start": 59.6,
+     "ende": 59.68
+    },
+    {
+     "wort": "der",
+     "start": 59.72,
+     "ende": 59.76
+    },
+    {
+     "wort": "Vorsprung",
+     "start": 59.92,
+     "ende": 60.4
+    },
+    {
+     "wort": "weg.",
+     "start": 60.48,
+     "ende": 60.88
+    },
+    {
+     "wort": "Zweite",
+     "start": 61.04,
+     "ende": 61.36
+    },
+    {
+     "wort": "Hälfte:",
+     "start": 61.44,
+     "ende": 61.84
+    },
+    {
+     "wort": "14",
+     "start": 62.08,
+     "ende": 62.56
+    },
+    {
+     "wort": "zu",
+     "start": 62.64,
+     "ende": 62.8
+    },
+    {
+     "wort": "15.",
+     "start": 62.84,
+     "ende": 63.6
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Gegen Zufall hilft keine Taktik. Nur gegen Muster.",
+   "start": 63.68,
+   "ende": 67.28,
+   "woerter": [
+    {
+     "wort": "Gegen",
+     "start": 63.68,
+     "ende": 63.84
+    },
+    {
+     "wort": "Zufall",
+     "start": 64.0,
+     "ende": 64.4
+    },
+    {
+     "wort": "hilft",
+     "start": 64.48,
+     "ende": 64.64
+    },
+    {
+     "wort": "keine",
+     "start": 64.72,
+     "ende": 64.96
+    },
+    {
+     "wort": "Taktik.",
+     "start": 65.12,
+     "ende": 65.68
+    },
+    {
+     "wort": "Nur",
+     "start": 65.84,
+     "ende": 66.08
+    },
+    {
+     "wort": "gegen",
+     "start": 66.16,
+     "ende": 66.4
+    },
+    {
+     "wort": "Muster.",
+     "start": 66.48,
+     "ende": 67.28
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 67.36,
+   "ende": 70.4,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 67.36,
+     "ende": 67.44
+    },
+    {
+     "wort": "sollen",
+     "start": 67.48,
+     "ende": 67.68
+    },
+    {
+     "wort": "wir",
+     "start": 67.707,
+     "ende": 67.76
+    },
+    {
+     "wort": "als",
+     "start": 67.84,
+     "ende": 67.92
+    },
+    {
+     "wort": "Nächstes",
+     "start": 68.0,
+     "ende": 68.32
+    },
+    {
+     "wort": "zeigen?",
+     "start": 68.4,
+     "ende": 68.96
+    },
+    {
+     "wort": "Schreib",
+     "start": 69.04,
+     "ende": 69.2
+    },
+    {
+     "wort": "es",
+     "start": 69.28,
+     "ende": 69.36
+    },
+    {
+     "wort": "in",
+     "start": 69.4,
+     "ende": 69.44
+    },
+    {
+     "wort": "die",
+     "start": 69.48,
+     "ende": 69.52
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 69.6,
+     "ende": 70.4
+    }
+   ]
+  }
+ ]
+}

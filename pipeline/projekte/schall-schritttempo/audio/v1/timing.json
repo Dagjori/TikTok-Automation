@@ -1,0 +1,1015 @@
+{
+ "stimme": "Otto",
+ "voice_id": "FTNCalFNG5bRnkkaP5Ug",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 78.782,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Stell dir vor, Schall hat fünf Sekunden lang nur noch Schritttempo.",
+   "start": 0.05,
+   "ende": 4.21,
+   "woerter": [
+    {
+     "wort": "Stell",
+     "start": 0.05,
+     "ende": 0.21
+    },
+    {
+     "wort": "dir",
+     "start": 0.29,
+     "ende": 0.53
+    },
+    {
+     "wort": "vor,",
+     "start": 0.69,
+     "ende": 1.17
+    },
+    {
+     "wort": "Schall",
+     "start": 1.25,
+     "ende": 1.49
+    },
+    {
+     "wort": "hat",
+     "start": 1.57,
+     "ende": 1.81
+    },
+    {
+     "wort": "fünf",
+     "start": 1.89,
+     "ende": 2.13
+    },
+    {
+     "wort": "Sekunden",
+     "start": 2.21,
+     "ende": 2.61
+    },
+    {
+     "wort": "lang",
+     "start": 2.69,
+     "ende": 2.93
+    },
+    {
+     "wort": "nur",
+     "start": 3.01,
+     "ende": 3.17
+    },
+    {
+     "wort": "noch",
+     "start": 3.25,
+     "ende": 3.41
+    },
+    {
+     "wort": "Schritttempo.",
+     "start": 3.49,
+     "ende": 4.21
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Statt über 1.200 km/h: nur noch fünf. Du stehst am Bahnsteig. Neben dir: deine Freundin. Die S-Bahn fährt ein. Mit fünfzig.",
+   "start": 4.69,
+   "ende": 15.17,
+   "woerter": [
+    {
+     "wort": "Statt",
+     "start": 4.69,
+     "ende": 4.93
+    },
+    {
+     "wort": "über",
+     "start": 5.05,
+     "ende": 5.17
+    },
+    {
+     "wort": "1.200",
+     "start": 5.25,
+     "ende": 6.29
+    },
+    {
+     "wort": "km/h:",
+     "start": 6.29,
+     "ende": 7.33
+    },
+    {
+     "wort": "nur",
+     "start": 7.73,
+     "ende": 7.81
+    },
+    {
+     "wort": "noch",
+     "start": 7.89,
+     "ende": 8.05
+    },
+    {
+     "wort": "fünf.",
+     "start": 8.21,
+     "ende": 8.93
+    },
+    {
+     "wort": "Du",
+     "start": 9.25,
+     "ende": 9.33
+    },
+    {
+     "wort": "stehst",
+     "start": 9.37,
+     "ende": 9.65
+    },
+    {
+     "wort": "am",
+     "start": 9.73,
+     "ende": 9.81
+    },
+    {
+     "wort": "Bahnsteig.",
+     "start": 9.89,
+     "ende": 10.53
+    },
+    {
+     "wort": "Neben",
+     "start": 10.85,
+     "ende": 11.09
+    },
+    {
+     "wort": "dir:",
+     "start": 11.17,
+     "ende": 11.41
+    },
+    {
+     "wort": "deine",
+     "start": 11.65,
+     "ende": 11.81
+    },
+    {
+     "wort": "Freundin.",
+     "start": 11.89,
+     "ende": 12.57
+    },
+    {
+     "wort": "Die",
+     "start": 12.77,
+     "ende": 12.85
+    },
+    {
+     "wort": "S-Bahn",
+     "start": 12.93,
+     "ende": 13.33
+    },
+    {
+     "wort": "fährt",
+     "start": 13.41,
+     "ende": 13.57
+    },
+    {
+     "wort": "ein.",
+     "start": 13.65,
+     "ende": 14.05
+    },
+    {
+     "wort": "Mit",
+     "start": 14.21,
+     "ende": 14.37
+    },
+    {
+     "wort": "fünfzig.",
+     "start": 14.53,
+     "ende": 15.17
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, dann hörst du alles nur etwas später. Oder?",
+   "start": 15.57,
+   "ende": 18.61,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 15.57,
+     "ende": 16.13
+    },
+    {
+     "wort": "dann",
+     "start": 16.21,
+     "ende": 16.37
+    },
+    {
+     "wort": "hörst",
+     "start": 16.45,
+     "ende": 16.61
+    },
+    {
+     "wort": "du",
+     "start": 16.65,
+     "ende": 16.69
+    },
+    {
+     "wort": "alles",
+     "start": 16.77,
+     "ende": 17.01
+    },
+    {
+     "wort": "nur",
+     "start": 17.05,
+     "ende": 17.13
+    },
+    {
+     "wort": "etwas",
+     "start": 17.17,
+     "ende": 17.41
+    },
+    {
+     "wort": "später.",
+     "start": 17.49,
+     "ende": 18.09
+    },
+    {
+     "wort": "Oder?",
+     "start": 18.29,
+     "ende": 18.61
+    }
+   ]
+  },
+  {
+   "id": "start",
+   "text": "Los geht's.",
+   "start": 19.17,
+   "ende": 19.89,
+   "woerter": [
+    {
+     "wort": "Los",
+     "start": 19.17,
+     "ende": 19.41
+    },
+    {
+     "wort": "geht's.",
+     "start": 19.49,
+     "ende": 19.89
+    }
+   ]
+  },
+  {
+   "id": "sek1",
+   "text": "Sekunde eins. Deine Freundin ruft: Hey! Du siehst es. Und hörst nichts.",
+   "start": 20.13,
+   "ende": 25.81,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 20.13,
+     "ende": 20.53
+    },
+    {
+     "wort": "eins.",
+     "start": 20.69,
+     "ende": 21.17
+    },
+    {
+     "wort": "Deine",
+     "start": 21.33,
+     "ende": 21.49
+    },
+    {
+     "wort": "Freundin",
+     "start": 21.57,
+     "ende": 21.89
+    },
+    {
+     "wort": "ruft:",
+     "start": 21.97,
+     "ende": 22.33
+    },
+    {
+     "wort": "Hey!",
+     "start": 22.45,
+     "ende": 22.85
+    },
+    {
+     "wort": "Du",
+     "start": 23.17,
+     "ende": 23.25
+    },
+    {
+     "wort": "siehst",
+     "start": 23.33,
+     "ende": 23.57
+    },
+    {
+     "wort": "es.",
+     "start": 23.65,
+     "ende": 23.89
+    },
+    {
+     "wort": "Und",
+     "start": 24.13,
+     "ende": 24.29
+    },
+    {
+     "wort": "hörst",
+     "start": 24.41,
+     "ende": 25.09
+    },
+    {
+     "wort": "nichts.",
+     "start": 25.17,
+     "ende": 25.81
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 26.05,
+   "ende": 28.05,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 26.05,
+     "ende": 26.29
+    },
+    {
+     "wort": "mir,",
+     "start": 26.37,
+     "ende": 26.69
+    },
+    {
+     "wort": "damit",
+     "start": 26.77,
+     "ende": 26.93
+    },
+    {
+     "wort": "du",
+     "start": 26.97,
+     "ende": 27.01
+    },
+    {
+     "wort": "nichts",
+     "start": 27.17,
+     "ende": 27.45
+    },
+    {
+     "wort": "verpasst.",
+     "start": 27.49,
+     "ende": 28.05
+    }
+   ]
+  },
+  {
+   "id": "sek2",
+   "text": "Sekunde zwei. Doch jetzt kommt ihr Hey an. 1,4 Sekunden für zwei Meter.",
+   "start": 28.29,
+   "ende": 34.37,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 28.29,
+     "ende": 28.69
+    },
+    {
+     "wort": "zwei.",
+     "start": 28.85,
+     "ende": 29.33
+    },
+    {
+     "wort": "Doch",
+     "start": 29.61,
+     "ende": 29.65
+    },
+    {
+     "wort": "jetzt",
+     "start": 29.73,
+     "ende": 30.37
+    },
+    {
+     "wort": "kommt",
+     "start": 30.41,
+     "ende": 30.61
+    },
+    {
+     "wort": "ihr",
+     "start": 30.65,
+     "ende": 30.77
+    },
+    {
+     "wort": "Hey",
+     "start": 30.85,
+     "ende": 31.09
+    },
+    {
+     "wort": "an.",
+     "start": 31.17,
+     "ende": 31.41
+    },
+    {
+     "wort": "1,4",
+     "start": 31.81,
+     "ende": 32.45
+    },
+    {
+     "wort": "Sekunden",
+     "start": 32.53,
+     "ende": 33.01
+    },
+    {
+     "wort": "für",
+     "start": 33.09,
+     "ende": 33.33
+    },
+    {
+     "wort": "zwei",
+     "start": 33.37,
+     "ende": 33.57
+    },
+    {
+     "wort": "Meter.",
+     "start": 33.65,
+     "ende": 34.37
+    }
+   ]
+  },
+  {
+   "id": "sek3",
+   "text": "Sekunde drei. Die S-Bahn ist zehnmal schneller als ihr eigener Lärm. Mach 10.",
+   "start": 34.41,
+   "ende": 39.89,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 34.41,
+     "ende": 34.85
+    },
+    {
+     "wort": "drei.",
+     "start": 34.93,
+     "ende": 35.33
+    },
+    {
+     "wort": "Die",
+     "start": 35.57,
+     "ende": 35.65
+    },
+    {
+     "wort": "S-Bahn",
+     "start": 35.73,
+     "ende": 36.13
+    },
+    {
+     "wort": "ist",
+     "start": 36.21,
+     "ende": 36.45
+    },
+    {
+     "wort": "zehnmal",
+     "start": 36.53,
+     "ende": 37.01
+    },
+    {
+     "wort": "schneller",
+     "start": 37.09,
+     "ende": 37.49
+    },
+    {
+     "wort": "als",
+     "start": 37.57,
+     "ende": 37.65
+    },
+    {
+     "wort": "ihr",
+     "start": 37.73,
+     "ende": 37.89
+    },
+    {
+     "wort": "eigener",
+     "start": 37.93,
+     "ende": 38.29
+    },
+    {
+     "wort": "Lärm.",
+     "start": 38.33,
+     "ende": 38.93
+    },
+    {
+     "wort": "Mach",
+     "start": 38.983,
+     "ende": 39.09
+    },
+    {
+     "wort": "10.",
+     "start": 39.25,
+     "ende": 39.89
+    }
+   ]
+  },
+  {
+   "id": "sek4",
+   "text": "Sekunde vier. Die Durchsage: Zurückbleiben, bitte! Aber bis zu dir braucht sie fast sechs Sekunden.",
+   "start": 39.93,
+   "ende": 46.45,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 39.93,
+     "ende": 40.37
+    },
+    {
+     "wort": "vier.",
+     "start": 40.53,
+     "ende": 40.93
+    },
+    {
+     "wort": "Die",
+     "start": 41.09,
+     "ende": 41.17
+    },
+    {
+     "wort": "Durchsage:",
+     "start": 41.21,
+     "ende": 41.97
+    },
+    {
+     "wort": "Zurückbleiben,",
+     "start": 42.13,
+     "ende": 42.85
+    },
+    {
+     "wort": "bitte!",
+     "start": 42.93,
+     "ende": 43.37
+    },
+    {
+     "wort": "Aber",
+     "start": 43.57,
+     "ende": 43.73
+    },
+    {
+     "wort": "bis",
+     "start": 43.81,
+     "ende": 43.89
+    },
+    {
+     "wort": "zu",
+     "start": 43.97,
+     "ende": 44.05
+    },
+    {
+     "wort": "dir",
+     "start": 44.21,
+     "ende": 44.45
+    },
+    {
+     "wort": "braucht",
+     "start": 44.53,
+     "ende": 44.77
+    },
+    {
+     "wort": "sie",
+     "start": 44.85,
+     "ende": 44.93
+    },
+    {
+     "wort": "fast",
+     "start": 45.09,
+     "ende": 45.25
+    },
+    {
+     "wort": "sechs",
+     "start": 45.33,
+     "ende": 45.53
+    },
+    {
+     "wort": "Sekunden.",
+     "start": 45.57,
+     "ende": 46.45
+    }
+   ]
+  },
+  {
+   "id": "sek5",
+   "text": "Sekunde fünf. Die S-Bahn rauscht an dir vorbei. Völlig lautlos.",
+   "start": 46.49,
+   "ende": 51.61,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 46.49,
+     "ende": 46.93
+    },
+    {
+     "wort": "fünf.",
+     "start": 47.09,
+     "ende": 47.49
+    },
+    {
+     "wort": "Die",
+     "start": 47.73,
+     "ende": 47.81
+    },
+    {
+     "wort": "S-Bahn",
+     "start": 47.89,
+     "ende": 48.37
+    },
+    {
+     "wort": "rauscht",
+     "start": 48.45,
+     "ende": 48.77
+    },
+    {
+     "wort": "an",
+     "start": 48.85,
+     "ende": 48.93
+    },
+    {
+     "wort": "dir",
+     "start": 49.01,
+     "ende": 49.09
+    },
+    {
+     "wort": "vorbei.",
+     "start": 49.17,
+     "ende": 49.69
+    },
+    {
+     "wort": "Völlig",
+     "start": 49.89,
+     "ende": 50.69
+    },
+    {
+     "wort": "lautlos.",
+     "start": 50.77,
+     "ende": 51.61
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Ergebnis: Die S-Bahn ist 38,9 Sekunden vor ihrem eigenen Lärm da.",
+   "start": 51.81,
+   "ende": 57.49,
+   "woerter": [
+    {
+     "wort": "Ergebnis:",
+     "start": 51.81,
+     "ende": 52.45
+    },
+    {
+     "wort": "Die",
+     "start": 52.69,
+     "ende": 52.77
+    },
+    {
+     "wort": "S-Bahn",
+     "start": 52.85,
+     "ende": 53.25
+    },
+    {
+     "wort": "ist",
+     "start": 53.33,
+     "ende": 53.57
+    },
+    {
+     "wort": "38,9",
+     "start": 53.65,
+     "ende": 54.85
+    },
+    {
+     "wort": "Sekunden",
+     "start": 54.93,
+     "ende": 55.41
+    },
+    {
+     "wort": "vor",
+     "start": 55.57,
+     "ende": 55.89
+    },
+    {
+     "wort": "ihrem",
+     "start": 55.97,
+     "ende": 56.29
+    },
+    {
+     "wort": "eigenen",
+     "start": 56.33,
+     "ende": 56.69
+    },
+    {
+     "wort": "Lärm",
+     "start": 56.77,
+     "ende": 57.01
+    },
+    {
+     "wort": "da.",
+     "start": 57.09,
+     "ende": 57.49
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Erstens: Schall schafft jetzt nur sieben Meter. Zweitens: Was schneller ist als du, überholt seinen Lärm.",
+   "start": 57.85,
+   "ende": 65.01,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 57.85,
+     "ende": 58.33
+    },
+    {
+     "wort": "Erstens:",
+     "start": 58.53,
+     "ende": 59.17
+    },
+    {
+     "wort": "Schall",
+     "start": 59.33,
+     "ende": 59.57
+    },
+    {
+     "wort": "schafft",
+     "start": 59.65,
+     "ende": 59.89
+    },
+    {
+     "wort": "jetzt",
+     "start": 59.97,
+     "ende": 60.13
+    },
+    {
+     "wort": "nur",
+     "start": 60.21,
+     "ende": 60.37
+    },
+    {
+     "wort": "sieben",
+     "start": 60.45,
+     "ende": 60.69
+    },
+    {
+     "wort": "Meter.",
+     "start": 60.77,
+     "ende": 61.37
+    },
+    {
+     "wort": "Zweitens:",
+     "start": 61.57,
+     "ende": 62.21
+    },
+    {
+     "wort": "Was",
+     "start": 62.37,
+     "ende": 62.53
+    },
+    {
+     "wort": "schneller",
+     "start": 62.57,
+     "ende": 62.93
+    },
+    {
+     "wort": "ist",
+     "start": 63.01,
+     "ende": 63.09
+    },
+    {
+     "wort": "als",
+     "start": 63.17,
+     "ende": 63.33
+    },
+    {
+     "wort": "du,",
+     "start": 63.41,
+     "ende": 63.65
+    },
+    {
+     "wort": "überholt",
+     "start": 63.81,
+     "ende": 64.21
+    },
+    {
+     "wort": "seinen",
+     "start": 64.29,
+     "ende": 64.53
+    },
+    {
+     "wort": "Lärm.",
+     "start": 64.61,
+     "ende": 65.01
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und das Verrückteste: Danach wird alles, was noch in der Luft hängt, zu Ultraschall. Nur Fledermäuse hören es.",
+   "start": 65.307,
+   "ende": 71.97,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 65.307,
+     "ende": 65.33
+    },
+    {
+     "wort": "das",
+     "start": 65.41,
+     "ende": 65.49
+    },
+    {
+     "wort": "Verrückteste:",
+     "start": 65.53,
+     "ende": 66.37
+    },
+    {
+     "wort": "Danach",
+     "start": 66.53,
+     "ende": 66.93
+    },
+    {
+     "wort": "wird",
+     "start": 66.97,
+     "ende": 67.25
+    },
+    {
+     "wort": "alles,",
+     "start": 67.41,
+     "ende": 67.61
+    },
+    {
+     "wort": "was",
+     "start": 67.65,
+     "ende": 67.73
+    },
+    {
+     "wort": "noch",
+     "start": 67.81,
+     "ende": 67.89
+    },
+    {
+     "wort": "in",
+     "start": 67.97,
+     "ende": 68.01
+    },
+    {
+     "wort": "der",
+     "start": 68.05,
+     "ende": 68.13
+    },
+    {
+     "wort": "Luft",
+     "start": 68.21,
+     "ende": 68.37
+    },
+    {
+     "wort": "hängt,",
+     "start": 68.41,
+     "ende": 68.717
+    },
+    {
+     "wort": "zu",
+     "start": 68.743,
+     "ende": 68.77
+    },
+    {
+     "wort": "Ultraschall.",
+     "start": 69.01,
+     "ende": 70.09
+    },
+    {
+     "wort": "Nur",
+     "start": 70.13,
+     "ende": 70.29
+    },
+    {
+     "wort": "Fledermäuse",
+     "start": 70.37,
+     "ende": 71.01
+    },
+    {
+     "wort": "hören",
+     "start": 71.05,
+     "ende": 71.33
+    },
+    {
+     "wort": "es.",
+     "start": 71.61,
+     "ende": 71.97
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Was du hörst, ist immer schon passiert.",
+   "start": 72.05,
+   "ende": 74.65,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 72.05,
+     "ende": 72.13
+    },
+    {
+     "wort": "du",
+     "start": 72.21,
+     "ende": 72.29
+    },
+    {
+     "wort": "hörst,",
+     "start": 72.37,
+     "ende": 72.957
+    },
+    {
+     "wort": "ist",
+     "start": 73.063,
+     "ende": 73.17
+    },
+    {
+     "wort": "immer",
+     "start": 73.25,
+     "ende": 73.41
+    },
+    {
+     "wort": "schon",
+     "start": 73.49,
+     "ende": 73.73
+    },
+    {
+     "wort": "passiert.",
+     "start": 73.89,
+     "ende": 74.65
+    }
+   ]
+  },
+  {
+   "id": "ende",
+   "text": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare.",
+   "start": 74.69,
+   "ende": 78.85,
+   "woerter": [
+    {
+     "wort": "Welches",
+     "start": 74.69,
+     "ende": 75.01
+    },
+    {
+     "wort": "Szenario",
+     "start": 75.09,
+     "ende": 75.57
+    },
+    {
+     "wort": "soll",
+     "start": 75.65,
+     "ende": 75.81
+    },
+    {
+     "wort": "ich",
+     "start": 75.85,
+     "ende": 75.89
+    },
+    {
+     "wort": "als",
+     "start": 75.97,
+     "ende": 76.13
+    },
+    {
+     "wort": "Nächstes",
+     "start": 76.17,
+     "ende": 76.53
+    },
+    {
+     "wort": "durchspielen?",
+     "start": 76.57,
+     "ende": 77.33
+    },
+    {
+     "wort": "Schreib",
+     "start": 77.41,
+     "ende": 77.65
+    },
+    {
+     "wort": "es",
+     "start": 77.69,
+     "ende": 77.73
+    },
+    {
+     "wort": "in",
+     "start": 77.81,
+     "ende": 77.89
+    },
+    {
+     "wort": "die",
+     "start": 77.93,
+     "ende": 77.97
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 78.05,
+     "ende": 78.85
+    }
+   ]
+  }
+ ]
+}

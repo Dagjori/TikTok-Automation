@@ -1,0 +1,114 @@
+{
+  "titel": "Schere, Stein, Papier: Gibt es eine Gewinnstrategie?",
+  "rubrik": "ALLTAG",
+  "stil": "3 Clay-Spielzeug-3D (neu als Baukasten engine/stil_clay.js, Three.js)",
+  "teamfarben": {
+    "ROT (Taktik)": "#FF4D4D",
+    "CYAN (Zufall, dann Mensch)": "#33D1FF"
+  },
+  "klangteppich": "musik",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Schere, Stein, Papier: Glück oder Taktik? Wer gewinnt wirklich?",
+      "sprechtext": "Schere, Stein, Papier: Glück oder Taktik?\n[curious] Wer gewinnt WIRKLICH?"
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Hundert Runden. Rot spielt mit Taktik. Cyan würfelt jede Runde neu.",
+      "sprechtext": "Hundert Runden.\nRot spielt mit Taktik.\nZyan würfelt jede Runde NEU."
+    },
+    {
+      "id": "falle",
+      "phase": "denkfalle_start",
+      "text": "Klar, die Taktik gewinnt. Oder? Los geht's!",
+      "sprechtext": "Klar, die Taktik gewinnt.\nOder?\n[excited] Los geht's!"
+    },
+    {
+      "id": "start",
+      "phase": "rennen",
+      "text": "Runde eins: unentschieden. Zwei: Rot. Drei: Cyan.",
+      "sprechtext": "Runde eins: unentschieden.\nZwei: Rot.\nDrei: Zyan."
+    },
+    {
+      "id": "rennen1",
+      "phase": "rennen",
+      "text": "Zehn Runden: Rot führt, 4 zu 2.",
+      "sprechtext": "Zehn Runden: Rot FÜHRT.\nVier zu zwei."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst."
+    },
+    {
+      "id": "wendung1",
+      "phase": "wendung_1",
+      "text": "Doch dann zieht Cyan vorbei. Runde 30: 11 zu 11.",
+      "sprechtext": "[surprised] Doch dann zieht Zyan VORBEI.\nRunde dreißig: elf zu elf."
+    },
+    {
+      "id": "rennen2",
+      "phase": "rennen",
+      "text": "Runde 60: Rot wieder vorn.",
+      "sprechtext": "Runde sechzig: Rot wieder VORN."
+    },
+    {
+      "id": "ergebnis1",
+      "phase": "zwischenstand",
+      "text": "Endstand: 34 zu 31. Praktisch gleich.",
+      "sprechtext": "Endstand:\nVierunddreißig zu einunddreißig.\nPraktisch GLEICH."
+    },
+    {
+      "id": "wendung2",
+      "phase": "wendung_2",
+      "text": "Aber jetzt spielt Cyan wie ein Mensch.",
+      "sprechtext": "[surprised] Aber jetzt spielt Zyan wie ein MENSCH."
+    },
+    {
+      "id": "mensch",
+      "phase": "rennen",
+      "text": "Menschen wiederholen ihren Zug zu oft: 44 statt 33 Prozent.",
+      "sprechtext": "Menschen wiederholen ihren Zug zu OFT:\nvierundvierzig statt dreiunddreißig Prozent."
+    },
+    {
+      "id": "rennen3",
+      "phase": "rennen",
+      "text": "Runde 30: 17 zu 8. Rot zieht davon.",
+      "sprechtext": "Runde dreißig: siebzehn zu acht.\nRot zieht DAVON."
+    },
+    {
+      "id": "ergebnis2",
+      "phase": "ergebnis",
+      "text": "Endstand: Rot 50, Cyan 31. Neunzehn Siege Vorsprung.",
+      "sprechtext": "Endstand:\nRot fünfzig, Zyan einunddreißig.\nNeunzehn Siege VORSPRUNG."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Gewinner bleiben bei ihrem Zug. Verlierer wechseln. Rot setzt genau darauf.",
+      "sprechtext": "[thoughtful] Warum?\nGewinner bleiben bei ihrem Zug.\nVerlierer WECHSELN.\nRot setzt genau darauf."
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "zweite_ueberraschung",
+      "text": "Und das Verrückte: Würfelt Cyan ab der Hälfte, wächst der Vorsprung nicht mehr. Zweite Hälfte: 14 zu 15.",
+      "sprechtext": "Und das Verrückte:\nWürfelt Zyan ab der Hälfte, wächst der Vorsprung NICHT mehr.\nZweite Hälfte: vierzehn zu fünfzehn."
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Gegen Zufall hilft keine Taktik. Nur gegen Muster.",
+      "sprechtext": "Gegen Zufall hilft keine Taktik.\nNur gegen MUSTER."
+    },
+    {
+      "id": "schluss",
+      "phase": "schluss",
+      "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+      "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare."
+    }
+  ]
+}
