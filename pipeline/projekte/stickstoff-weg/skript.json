@@ -1,0 +1,103 @@
+{
+  "titel": "Was, wenn der Stickstoff 5 Sekunden aus der Luft verschwindet?",
+  "konto": "stelldirvor",
+  "stil": "16 POV-Filmlook stilisiert (Account 2): Three.js, Ich-Kamera auf Augenhöhe im Supermarkt, Neonlicht, Bloom, sichtbare Luftmoleküle",
+  "klangteppich": "raum",
+  "teamfarben": {
+    "Stickstoff": "#5B8CFF",
+    "Sauerstoff": "#FF4F5A"
+  },
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Stell dir vor, der Stickstoff verschwindet fünf Sekunden lang aus der Luft.",
+      "sprechtext": "[curious] Stell dir vor, der STICKSTOFF verschwindet fünf Sekunden lang aus der Luft."
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Du stehst mitten im Supermarkt. Auch in Tüten, Lunge und Ohr fehlt er.",
+      "sprechtext": "Du stehst mitten im Supermarkt.\nAuch in Tüten, Lunge und Ohr fehlt er."
+    },
+    {
+      "id": "falle",
+      "phase": "denkfalle",
+      "text": "Klar, 78 Prozent der Luft sind weg. Du erstickst. Oder?",
+      "sprechtext": "Klar, achtundsiebzig Prozent der Luft sind weg.\nDu erstickst.\nOder?"
+    },
+    {
+      "id": "start",
+      "phase": "start",
+      "text": "Los geht's.",
+      "sprechtext": "[excited] Los geht's!"
+    },
+    {
+      "id": "sek1",
+      "phase": "rennen",
+      "text": "Sekunde eins. Du atmest weiter, der Sauerstoff ist ja noch da.",
+      "sprechtext": "Sekunde EINS.\nDu atmest weiter, der Sauerstoff ist ja noch DA."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst."
+    },
+    {
+      "id": "sek2",
+      "phase": "wendung",
+      "text": "Sekunde zwei. Aber der Druck fällt auf 222 hPa. So dünn wie in 11 Kilometern Höhe.",
+      "sprechtext": "Sekunde ZWEI.\n[surprised] Aber der Druck fällt auf zweihundertzweiundzwanzig Hektopascal.\nSo DÜNN wie in elf Kilometern Höhe."
+    },
+    {
+      "id": "sek3",
+      "phase": "wendung",
+      "text": "Sekunde drei. Die Chipstüten klatschen zusammen. Außen drücken gut 2 Tonnen pro Quadratmeter.",
+      "sprechtext": "Sekunde DREI.\nDie Chipstüten klatschen ZUSAMMEN.\nAußen drücken gut zwei Tonnen pro Quadratmeter."
+    },
+    {
+      "id": "sek4",
+      "phase": "wendung",
+      "text": "Sekunde vier. Dein Ohr? Kein Knall.",
+      "sprechtext": "Sekunde VIER.\nDein Ohr? Kein Knall."
+    },
+    {
+      "id": "sek5",
+      "phase": "wendung",
+      "text": "Sekunde fünf. Hinter dir zischt etwas.",
+      "sprechtext": "Sekunde FÜNF.\nHinter dir zischt etwas."
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Ergebnis: Nur noch 222 hPa.",
+      "sprechtext": "Ergebnis:\nNur noch zweihundertzweiundzwanzig Hektopascal."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Erstens: Stickstoff ist 78 Prozent der Luft, aber du atmest ihn nur ein und aus. Zweitens: Dein Sauerstoffdruck bleibt gleich. Gefühlt: nur 2.000 Meter.",
+      "sprechtext": "[thoughtful] Warum?\nErstens: Stickstoff ist achtundsiebzig Prozent der Luft, aber du atmest ihn nur ein und aus.\nZweitens: Dein Sauerstoffdruck bleibt GLEICH.\nGefühlt: nur zweitausend Meter."
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "ueberraschung",
+      "text": "Das Verrückteste: Wasser kocht jetzt schon bei 62 Grad. Dein Kaffee hat 80. Er kocht über, ohne Herd.",
+      "sprechtext": "[surprised] Das Verrückteste:\nWasser kocht jetzt schon bei zweiundsechzig Grad.\nDein Kaffee hat achtzig. Er kocht ÜBER, ohne Herd."
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Sauerstoff zum Atmen. Stickstoff für den Druck.",
+      "sprechtext": "Sauerstoff zum ATMEN. Stickstoff für den DRUCK."
+    },
+    {
+      "id": "ende",
+      "phase": "schluss",
+      "text": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare.",
+      "sprechtext": "Welches Szenario soll ich als Nächstes durchspielen?\nSchreib es in die Kommentare."
+    }
+  ],
+  "caption": "Was, wenn der Stickstoff 5 Sekunden weg wäre? 🫧 Ich hab's durchgespielt. Hättest du gedacht, dass du weiteratmest? 👇 #stickstoff #luft #chemie #wissen #waswaerewenn"
+}

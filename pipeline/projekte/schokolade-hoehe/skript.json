@@ -1,0 +1,110 @@
+{
+  "titel": "Wie hoch bringt dich eine Tafel Schokolade?",
+  "konto": "stelldirvor",
+  "stil": "16 POV-Filmlook stilisiert (Account 2): Three.js, Ich-Kamera, goldene Stunde, Bloom, Küche → Dach → Himmel",
+  "stil_begruendung": "Konkurrenz-Check 01.11. durch den Plan-Agenten (Thema frei). Look wie im Prototyp (Stil 16: stilisierte Low-Poly-Geometrie, Bloom, Vignette, Körnung), aber goldene Stunde statt blauer Stunde und ein senkrechter Flug durch die Decke über eine Stadt zu stilisierten Höhenmarken (Dom, Fernsehturm, Brocken, Feldberg, Zugspitze). Die Höhenmarken stehen als Vergleichsmodelle, keine Landkarte.",
+  "teamfarben": {
+    "Schokolade": "#FF4F5A",
+    "Höhe": "#2EC4B6"
+  },
+  "klangteppich": "musik",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Stell dir vor, eine Tafel Schokolade hebt dich in die Luft.",
+      "sprechtext": "[curious] Stell dir vor, eine Tafel Schokolade hebt dich in die LUFT."
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Wie hoch? Hundert Gramm Vollmilch. Alles wird zu Höhe. Du wiegst 75 Kilo. Ohne Luftwiderstand.",
+      "sprechtext": "Wie HOCH?\nHundert Gramm Vollmilch.\nAlles wird zu Höhe.\nDu wiegst fünfundsiebzig Kilo.\nOhne Luftwiderstand."
+    },
+    {
+      "id": "falle",
+      "phase": "denkfalle",
+      "text": "Klar, eine Tafel bringt dich höchstens aufs Dach. Oder?",
+      "sprechtext": "Klar, eine Tafel bringt dich höchstens aufs DACH.\nOder?"
+    },
+    {
+      "id": "start",
+      "phase": "start",
+      "text": "Los geht's.",
+      "sprechtext": "[excited] Los geht's!"
+    },
+    {
+      "id": "flug1",
+      "phase": "rennen",
+      "text": "Stückchen eins. Du schwebst durch die Decke. Sanft.",
+      "sprechtext": "Stückchen EINS.\nDu schwebst durch die Decke.\nSanft."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst."
+    },
+    {
+      "id": "wende1",
+      "phase": "wendung",
+      "text": "Doch jetzt wird's schnell. Nach drei Stückchen bist du über dem Berliner Fernsehturm.",
+      "sprechtext": "[surprised] Doch jetzt wird's SCHNELL.\nNach drei Stückchen bist du über dem Berliner FERNSEHTURM."
+    },
+    {
+      "id": "flug2",
+      "phase": "wendung",
+      "text": "Neun Stückchen: Brocken. Zwölf: Feldberg.",
+      "sprechtext": "Neun Stückchen: Brocken.\nZwölf: Feldberg."
+    },
+    {
+      "id": "flug3",
+      "phase": "wendung",
+      "text": "Dreiundzwanzig. Zur Zugspitze fehlen neunzehn Meter.",
+      "sprechtext": "Dreiundzwanzig.\nZur Zugspitze fehlen neunzehn Meter."
+    },
+    {
+      "id": "flug4",
+      "phase": "wendung",
+      "text": "Das letzte Stückchen. Du überholst die Zugspitze!",
+      "sprechtext": "Das LETZTE Stückchen.\n[excited] Du überholst die ZUGSPITZE!"
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Endstand: 3.071 Meter. 109 Meter über der Zugspitze.",
+      "sprechtext": "Endstand:\nDreitausendeinundsiebzig Meter.\nHundertneun Meter über der Zugspitze."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Eine Tafel: 2,26 Millionen Joule. Ein Meter Höhe: nur 736 Joule.",
+      "sprechtext": "[thoughtful] Warum?\nEine Tafel: zwei Komma zwei sechs Millionen Joule.\nEin Meter Höhe: nur siebenhundertsechsunddreißig Joule."
+    },
+    {
+      "id": "ueber",
+      "phase": "ueberraschung",
+      "text": "Und das Verrückte: Schokolade hat pro Kilo 5,4-mal so viel Energie wie TNT. Sie explodiert nicht, weil sie Sauerstoff braucht.",
+      "sprechtext": "[surprised] Und das Verrückte:\nSchokolade hat pro Kilo fünf Komma vier Mal so viel Energie wie T N T.\nSie explodiert nicht, weil sie Sauerstoff braucht."
+    },
+    {
+      "id": "echt",
+      "phase": "ueberraschung",
+      "text": "In echt nutzen Muskeln nur ein Viertel: 768 Meter. Zugspitze? Vier Tafeln.",
+      "sprechtext": "In echt nutzen Muskeln nur ein Viertel:\nsiebenhundertachtundsechzig Meter.\nZugspitze? Vier Tafeln."
+    },
+    {
+      "id": "merk",
+      "phase": "merksatz",
+      "text": "In jeder Tafel steckt ein Berg.",
+      "sprechtext": "In jeder Tafel steckt ein BERG."
+    },
+    {
+      "id": "ende",
+      "phase": "schluss",
+      "text": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare.",
+      "sprechtext": "Welches Szenario soll ich als Nächstes durchspielen?\nSchreib es in die Kommentare."
+    }
+  ],
+  "caption": "Wie hoch bringt dich eine Tafel Schokolade? 🍫 Ich hab's durchgespielt. Hättest du so hoch getippt? 👇 #schokolade #energie #zugspitze #wissen #waswaerewenn"
+}

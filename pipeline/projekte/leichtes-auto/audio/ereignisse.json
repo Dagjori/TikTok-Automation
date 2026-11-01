@@ -1,0 +1,2112 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "leichtes-auto",
+ "fps": 30,
+ "dauer": 67.33333333333333,
+ "stimmEnde": 66.531,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "strasse",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "REIFEN",
+    "farbe": "#FF4F5A"
+   },
+   "b": {
+    "name": "LUFT",
+    "farbe": "#2EC4B6"
+   }
+  },
+  "schleife": {
+   "ab": 63.47,
+   "ende": 67.3
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 67.3,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 0
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": 0.02,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "STELL"
+  },
+  {
+   "quelle": "Titel",
+   "t": 0.38,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "DIR"
+  },
+  {
+   "quelle": "Titel",
+   "t": 0.58,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "VOR:"
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.18,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "DEIN"
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.46,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "AUTO"
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.78,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WIEGT"
+  },
+  {
+   "quelle": "Titel",
+   "t": 2.14,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "SO"
+  },
+  {
+   "quelle": "Titel",
+   "t": 2.34,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "VIEL"
+  },
+  {
+   "quelle": "Titel",
+   "t": 2.58,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WIE"
+  },
+  {
+   "quelle": "Titel",
+   "t": 2.74,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "EIN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.88,
+   "typ": "kamera",
+   "klang": "whoosh",
+   "dauer": 0.5,
+   "text": "Blick zum Kasten"
+  },
+  {
+   "quelle": "Titel",
+   "t": 2.9,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "KASTEN"
+  },
+  {
+   "quelle": "Titel",
+   "t": 3.38,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WASSER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.93,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.5,
+   "text": "Blick zurück auf die Straße"
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.57,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AUTOBAHN · 130 KM/H"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.05,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "5 SEKUNDEN LANG"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.27,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AUTO + DU = 15 KG"
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.47,
+   "typ": "kamera",
+   "klang": false,
+   "text": "Nicken"
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.34,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.34,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.34,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 9.74,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Stempel",
+   "t": 9.79,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "KLAR?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.57,
+   "typ": "kamera",
+   "klang": "whoosh",
+   "dauer": 1,
+   "text": "Zischen (FOV und Tempo)"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 13.6,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 13.78,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.1,
+   "typ": "kamera",
+   "klang": "whoosh",
+   "dauer": 0.5,
+   "text": "Blick zum Fuß"
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.2,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "FUSS VOM GAS"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 15.4,
+   "typ": "zaehler",
+   "dauer": 0.633,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.2,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Folgen",
+   "t": 16.25,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 19.033,
+   "typ": "zaehler",
+   "dauer": 6.6,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 19.05,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.05,
+   "typ": "welle",
+   "klang": "boom",
+   "text": "Gewicht weg: 15 kg"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 19.067,
+   "typ": "zaehler",
+   "dauer": 5.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 19.383,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 20.083,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 20.17,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "3,2 G!"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 20.55,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 21.017,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 21.483,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 21.75,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 22.017,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 22.24,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LUFT BREMST: 473 N"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 22.283,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 22.583,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 22.85,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 23,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 23.117,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 23.383,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 23.65,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 23.85,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 24.017,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 24.183,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.32,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 24.35,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 24.467,
+   "typ": "zaehler",
+   "dauer": 1.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.47,
+   "typ": "kamera",
+   "klang": "whoosh",
+   "dauer": 1.4,
+   "text": "Zeitraffer bis 24 km/h"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 24.517,
+   "typ": "uhr",
+   "dauer": 1.233,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 24.683,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 25.033,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 25.317,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.497,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "NUR NOCH 24 KM/H"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 25.7,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 25.767,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 25.867,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.31,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.31,
+   "typ": "uebergang",
+   "klang": "rueck",
+   "dauer": 0.6,
+   "text": "Rücklauf"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 26.367,
+   "typ": "zaehler",
+   "dauer": 3.467,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 26.383,
+   "typ": "uhr",
+   "dauer": 0.567,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 26.4,
+   "typ": "zaehler",
+   "dauer": 2.767,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 27.083,
+   "typ": "uhr",
+   "dauer": 0.333,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.1,
+   "typ": "welle",
+   "klang": "boom",
+   "text": "Vollgas: Gewicht weg"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 27.517,
+   "typ": "uhr",
+   "dauer": 0.233,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 27.55,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "VOLLGAS"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 27.57,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 27.85,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 27.983,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 28.183,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 28.217,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 28.45,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 28.583,
+   "typ": "uhr",
+   "dauer": 0.833,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.67,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.77,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "REIFEN AM LIMIT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.77,
+   "typ": "kamera",
+   "klang": "rumpeln",
+   "dauer": 2.4,
+   "text": "Räder drehen durch (Rütteln)"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 29.15,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 29.267,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 29.467,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 29.517,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 29.683,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 29.817,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 29.9,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 29.933,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 29.983,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 30.067,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 30.15,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 30.2,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 30.283,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 30.367,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 30.4,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 30.417,
+   "typ": "uhr",
+   "dauer": 1.733,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 30.467,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 30.6,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 30.733,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 30.867,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 31.067,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Tacho",
+   "t": 31.1,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 31.3,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 31.317,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 31.633,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Stempel",
+   "t": 31.98,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "73 KM/H"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 32.133,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 32.283,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "t": 32.96,
+   "typ": "uebergang",
+   "art": "blasen",
+   "dauer": 0.7,
+   "quelle": "Zeitleiste",
+   "klang": "blasen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.98,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 33.267,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 34.17,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "VOLLGAS"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 36.25,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "GAS WEG"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 36.93,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "NORMAL, 1.400 KG"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 37.18,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "VERLUST VOLLGAS"
+  },
+  {
+   "quelle": "Formel",
+   "t": 38.68,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "15"
+  },
+  {
+   "quelle": "Formel",
+   "t": 39.81,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "×"
+  },
+  {
+   "quelle": "Formel",
+   "t": 40.56,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "9,81"
+  },
+  {
+   "quelle": "Formel",
+   "t": 41.52,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "="
+  },
+  {
+   "quelle": "Chip",
+   "t": 42.2,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "REIFEN HALTEN NUR 147 N"
+  },
+  {
+   "quelle": "Formel",
+   "t": 42.25,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "147"
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.25,
+   "typ": "pfeil",
+   "klang": "pop",
+   "text": "Pfeil Reifen"
+  },
+  {
+   "quelle": "Formel",
+   "t": 43.23,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "µ = 1,0 · TROCKEN · HÖCHSTWERT"
+  },
+  {
+   "quelle": "Chip",
+   "t": 44.07,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 44.15,
+   "typ": "uhr",
+   "dauer": 0.633,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 44.167,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.17,
+   "typ": "kamera",
+   "klang": "rueck",
+   "dauer": 0.8,
+   "text": "Rücklauf in der Totalen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 44.3,
+   "typ": "zaehler",
+   "dauer": 0.567,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Tacho",
+   "t": 44.367,
+   "typ": "zaehler",
+   "dauer": 0.467,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Formel",
+   "t": 45.25,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "130"
+  },
+  {
+   "quelle": "Formel",
+   "t": 46.13,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "→"
+  },
+  {
+   "quelle": "Formel",
+   "t": 46.897,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "EGAL, WIE SCHWER DU BIST"
+  },
+  {
+   "quelle": "Formel",
+   "t": 47.89,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "473"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.89,
+   "typ": "pfeil",
+   "klang": "pop",
+   "text": "Pfeil Luft"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 47.933,
+   "typ": "zaehler",
+   "dauer": 1.467,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Tacho",
+   "t": 47.967,
+   "typ": "zaehler",
+   "dauer": 1.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 48.05,
+   "typ": "uhr",
+   "dauer": 1.667,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 48.39,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BEI 73 KM/H: 147 = 147"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 49.2,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 49.7,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "t": 49.76,
+   "typ": "uebergang",
+   "art": "zoomwisch",
+   "dauer": 0.5,
+   "quelle": "Zeitleiste",
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 49.88,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 49.967,
+   "typ": "zaehler",
+   "dauer": 4.233,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Tacho",
+   "t": 50,
+   "typ": "zaehler",
+   "dauer": 2.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 50.017,
+   "typ": "uhr",
+   "dauer": 1.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.38,
+   "typ": "kamera",
+   "klang": "whoosh",
+   "dauer": 0.8,
+   "text": "Blick nach hinten zum Lkw"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 50.45,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "LKW!"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 50.98,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 51.15,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 51.283,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 51.45,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 51.583,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.62,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LKW 80 · DU 30 KM/H"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 51.717,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 51.85,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 51.983,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.99,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 52.117,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 52.283,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 52.363,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 52.417,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 52.55,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 52.683,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 52.733,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 52.85,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 53,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 53.017,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 53.133,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 53.183,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 53.3,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 53.35,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 53.467,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 53.517,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.52,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "694 N = 4,7 × HAFTUNG"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 53.633,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 53.683,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 53.8,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 53.85,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 53.947,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 54,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 54.017,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 54.183,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 54.2,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 54.3,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 54.35,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 54.4,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 54.517,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 54.533,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Tacho",
+   "t": 54.633,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 54.683,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 54.767,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 54.85,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 54.867,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 54.933,
+   "typ": "zaehler",
+   "dauer": 1.867,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 54.983,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 55.133,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 55.15,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 55.292,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.292,
+   "typ": "welle",
+   "klang": "boom",
+   "text": "Luftstoß des Lkw"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 55.383,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 55.533,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 55.683,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 55.863,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 55.983,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 56.067,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 56.317,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 56.53,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 56.617,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 56.667,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 56.967,
+   "typ": "zaehler",
+   "dauer": 0.667,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 57.017,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 57.25,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 57.3,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 57.417,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 57.55,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 57.6,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 57.683,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 57.767,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 57.85,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 58,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 58.05,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 58.167,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 58.33,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 58.33,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GEWICHT ZURÜCK"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 58.33,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.33,
+   "typ": "welle",
+   "klang": "stempel",
+   "text": "Gewicht zurück"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 58.4,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 58.533,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Tacho",
+   "t": 58.7,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 58.79,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Pointe",
+   "t": 58.89,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "DEIN GEWICHT | IST NICHT | *DEIN FEIND.*"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 58.9,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Tacho",
+   "t": 59.033,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 59.033,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Tacho",
+   "t": 59.233,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Kräfteduell",
+   "t": 59.233,
+   "typ": "zaehler",
+   "dauer": 7.9,
+   "laufend": true,
+   "klang": false
+  },
+  {
+   "quelle": "Tacho",
+   "t": 59.4,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 59.567,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 59.7,
+   "typ": "zaehler",
+   "dauer": 6.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 60.017,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 60.29,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 60.517,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 60.817,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 60.85,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "ES HÄLT DICH | AUF DER | *STRASSE.*"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 61.05,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 61.25,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 61.417,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 61.55,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 61.683,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 61.817,
+   "typ": "uhr",
+   "dauer": 2.567,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 62.88,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DEIN SZENARIO?"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 63.47,
+   "art": "schleife",
+   "dauer": 3.83,
+   "klang": false
+  },
+  {
+   "t": 63.47,
+   "typ": "schleife",
+   "dauer": 3.83,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 64.483,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 64.75,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 64.917,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 65.083,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 65.11,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 65.317,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 65.65,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 66,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 66.15,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 66.267,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 66.4,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 66.6,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tacho",
+   "t": 66.9,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  }
+ ],
+ "klang": []
+}

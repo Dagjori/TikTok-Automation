@@ -1,0 +1,123 @@
+{
+  "titel": "Stell dir vor, dein Auto wiegt so viel wie ein Kasten Wasser",
+  "konto": "stelldirvor",
+  "stil": "16 POV-Filmlook stilisiert (Account 2): Three.js, Ich-Kamera auf Augenhöhe am Steuer, Autobahn im Abendlicht, Bloom, Countdown aus 5 Segmenten, Tacho als Zähler",
+  "stil_begruendung": "Konkurrenz-Check am 01.11. von der Hauptsitzung erledigt (Thema nicht als viral belegt). Look wie im Prototyp „schall-schritttempo“: stilisierte Low-Poly-Geometrie, Abendlicht, Bloom, Vignette, Körnung, Ich-Kamera. Der Tacho im Armaturenbrett ist der natürliche Zähler, daneben Gurtkraft in g und das Kräfteduell Reifen gegen Luft in Newton. Eigene Szene: deutsche Autobahn, Fahrersitz, Leitplanken, Schilderbrücken, ein Lkw.",
+  "teamfarben": {
+    "Reifen (Auto)": "#FF4F5A",
+    "Luft": "#2EC4B6"
+  },
+  "klangteppich": "strasse",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Stell dir vor, dein Auto wiegt so viel wie ein Kasten Wasser.",
+      "sprechtext": "[curious] Stell dir vor, dein Auto wiegt so viel wie ein KASTEN Wasser."
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Du fährst 130. Fünf Sekunden lang wiegen Auto und du nur 15 Kilo.",
+      "sprechtext": "Du fährst hundertdreißig.\nFünf Sekunden lang wiegen Auto und du nur fünfzehn Kilo."
+    },
+    {
+      "id": "falle",
+      "phase": "denkfalle",
+      "text": "Klar, mit demselben Motor zischst du jetzt davon. Oder?",
+      "sprechtext": "Klar, mit demselben Motor zischst du jetzt davon.\nOder?"
+    },
+    {
+      "id": "start",
+      "phase": "start",
+      "text": "Los geht's.",
+      "sprechtext": "[excited] Los geht's!"
+    },
+    {
+      "id": "gas1",
+      "phase": "rennen",
+      "text": "Du nimmst den Fuß vom Gas.",
+      "sprechtext": "Du nimmst den Fuß vom Gas."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst."
+    },
+    {
+      "id": "gas2",
+      "phase": "wendung",
+      "text": "Doch jetzt, Sekunde eins: 3,2 g im Gurt! Die Luft bremst wie eine Wand.",
+      "sprechtext": "[surprised] Doch JETZT, Sekunde eins:\nDrei Komma zwei Ge im Gurt!\nDie Luft bremst wie eine WAND."
+    },
+    {
+      "id": "gas3",
+      "phase": "wendung",
+      "text": "Nach fünf Sekunden: nur noch 24.",
+      "sprechtext": "Nach fünf Sekunden: nur noch vierundzwanzig."
+    },
+    {
+      "id": "voll1",
+      "phase": "wendung",
+      "text": "Dann eben Vollgas! Die Räder drehen durch.",
+      "sprechtext": "[excited] Dann eben VOLLGAS!\nDie Räder drehen durch."
+    },
+    {
+      "id": "voll2",
+      "phase": "wendung",
+      "text": "Der Tacho fällt trotzdem. Auf 73.",
+      "sprechtext": "[surprised] Der Tacho fällt trotzdem.\nAuf dreiundsiebzig."
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Ergebnis: 73 km/h. Mehr geht nicht.",
+      "sprechtext": "Ergebnis:\nDreiundsiebzig Stundenkilometer.\nMehr geht NICHT."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Erstens: Reifen halten nur so viel, wie das Auto drückt. 147 Newton. Zweitens: Dem Luftwiderstand ist egal, wie schwer du bist. 473 Newton.",
+      "sprechtext": "[thoughtful] Warum?\nErstens: Reifen halten nur so viel, wie das Auto drückt. Hundertsiebenundvierzig Newton.\nZweitens: Dem Luftwiderstand ist egal, wie schwer du bist. Vierhundertdreiundsiebzig Newton."
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "ueberraschung",
+      "text": "Und ein Lkw überholt dich. Sein Luftstoß ist fast fünfmal stärker als deine Haftung. Du rutschst zur Seite. Dann greifen die Reifen wieder.",
+      "sprechtext": "[surprised] Und ein Lkw überholt dich.\nSein Luftstoß ist fast FÜNFMAL stärker als deine Haftung.\nDu rutschst zur Seite.\nDann greifen die Reifen wieder."
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Dein Gewicht ist nicht dein Feind. Es hält dich auf der Straße.",
+      "sprechtext": "Dein Gewicht ist nicht dein Feind.\nEs hält dich auf der STRASSE."
+    },
+    {
+      "id": "ende",
+      "phase": "schluss",
+      "text": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare.",
+      "sprechtext": "Welches Szenario soll ich als Nächstes durchspielen?\nSchreib es in die Kommentare."
+    }
+  ],
+  "rechnung": "pipeline/sim/leichtes_auto.mjs (Tests: node --test sim/leichtes_auto.test.mjs, 14 Tests; numerische Integration RK4 mit Gegenprobe gegen die geschlossene Lösung). Luftwiderstand F = ½·ρ·cW·A·v² mit ρ = 1,2 kg/m³, cW = 0,275, A = 2,2 m² (k = 0,363 kg/m): bei 130 km/h 473 N, unabhängig vom Gewicht. Gas weg (m = 15 kg): a = 473/15 = 31,6 m/s² = 3,2 g am Anfang, nach 5 s 24,2 km/h, Weg 69,5 m (die Verzögerung fällt mit v² schnell ab, nach 1 s nur noch 0,9 g). Vollgas: Die Reifen übertragen höchstens µ·m·g = 147 N (µ = 1,0), die Räder drehen durch; Endgeschwindigkeit √(147/0,363) = 20,1 m/s = 72,5 km/h; nach 5 s zeigt der Tacho 72,8 ≈ 73 km/h (Weg 114 m), am Anfang bremst es mit 2,2 g. Normales Auto (1.400 kg), Gas weg: 0,34 m/s², nach 5 s noch 124 km/h. Lkw: Auto überholt mit 130, Lkw fährt 80; durch die Bremsung ist das Auto beim Überholen durch den Lkw nur noch 30 km/h schnell, Relativtempo 50 km/h (Lkw startet 24 m hinter dir, neben dir bei τ = 3,81 s). Luftstoß wie 50 km/h Seitenwind auf 6 m² mit cW 1: 694 N, das 4,7-fache der Haftgrenze (147 N), also „fast fünfmal“ (der Auftrag nannte „rund viermal“). Rutschen: Luftstoß 0,3 s (Annahme), Versatz knapp 1,6 m (halbe Spur), endet nach 0,74 s, vor τ = 5 s; ohne Rückkehr des Gewichts würde ein längerer Stoß weiter schieben, im Video wird nur der Beginn angedeutet. Annahmen: µ = 1,0 (Obergrenze trocken), Auftrieb nicht modelliert, Rollwiderstand ignoriert (bei 15 kg ca. 2 N, bei 1.400 kg ca. 200 N, würde den Vergleich nur verschärfen), Lkw-Luftstoß als Seitenwind-Ersatzmodell (Annahme, kein Messwert), Gedankenexperiment (Ursache der Gewichtsabnahme offen), Auto und Fahrer zusammen 15 kg.",
+  "quellen": [
+    "cW 0,275 und Stirnfläche 2,21 m² eines Kompaktwagens (VW Golf 8, Herstellerangabe im Presseportal volkswagen-newsroom.com „Das Design und die Dimensionen“; bestätigt von auto-motor-und-sport.de). Markenname nur intern, nicht im Video.",
+    "Luftwiderstandsformel F = ½·ρ·cW·A·v²: Lehrbuch, z. B. lernhelfer.de „Strömungswiderstand“; Luftdichte 1,2 kg/m³ (ca. 20 °C, Meereshöhe).",
+    "Haftreibungszahl Reifen–Asphalt trocken ca. 0,8–1,0 (Lehrbuchwerte: lernhelfer.de „Haftreibung“ 0,8; chemie.de „Haftreibung“ unter 0,9; lernhelfer.de „Fahrphysik“ bis 1,1 für S-Reifen bei 60 km/h). Wir setzen µ = 1,0 als Obergrenze, damit das Ergebnis nicht schöngerechnet ist.",
+    "Gewicht eines Getränkekastens 12 × 0,7 l Glas: keine Herstellerangabe gefunden. Schätzung 12 × (0,7 kg Wasser + ca. 0,45 kg Glas) + ca. 1,5 kg Kasten ≈ 15 kg (Websuche 01.11.). Das Skript sagt nur „so viel wie ein Kasten Wasser“.",
+    "Richtgeschwindigkeit 130 km/h: Autobahn-Richtgeschwindigkeits-Verordnung (BAB-RichtgeschwV 1978, § 1), gesetze-im-internet.de/babrigeschwv_1978/__1.html.",
+    "Lkw über 3,5 t: Höchstgeschwindigkeit 80 km/h auf Autobahnen (§ 18 Abs. 5 StVO, laut Wissenschaftlichem Dienst des Bundestags WD 5-010-22).",
+    "Windstärke 7 (steifer Wind) = 50–61 km/h (Beaufort-Skala, z. B. wissen.de, Deutscher Wetterdienst „Beaufort-Skala“): zur Einordnung des Luftstoßes von 50 km/h.",
+    "Sog beim Überholen eines Lkw: TÜV Rheinland (verkehrsrundschau.de „Tipps zum Fahrverhalten bei starkem Seitenwind“) nennt den Ansaugeffekt qualitativ. Die 694 N sind ein Ersatzmodell, kein Messwert."
+  ],
+  "annahmen": [
+    "Gedankenexperiment: Ursache der 15 kg offen, Auto und Fahrer zusammen 15 kg für 5 s.",
+    "µ = 1,0 (trocken, Obergrenze); Auftrieb nicht modelliert; Rollwiderstand ignoriert.",
+    "Lkw-Luftstoß wie 50 km/h Seitenwind (Relativtempo Lkw 80 gegen Auto 30), Dauer 0,3 s, Seitenfläche 6 m², cW 1.",
+    "Das Video fordert nicht zu riskantem Fahren auf und zeigt keinen Unfall: Rutschen nur angedeutet (ca. 1,6 m), Gewicht kommt nach 5 s zurück."
+  ],
+  "caption": "Was, wenn dein Auto nur so viel wiegt wie ein Kasten Wasser? 🚗 Ich hab's durchgespielt. Hättest du gedacht, dass du langsamer wirst? 👇 #autobahn #physik #auto #wissen #waswaerewenn",
+  "render": "node render.js projekte/leichtes-auto --worker 2 --query \"schatten=0&skala=0.75\" (nice -n 14)",
+  "ki_label": "Posten über Buffer ohne KI-Label (Entscheidung des Inhabers 01.11. abends); Optik stilisiert, nicht fotorealistisch."
+}

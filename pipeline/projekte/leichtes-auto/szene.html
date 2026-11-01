@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Leichtes Auto · Stil 16 POV-Filmlook</title>
+<link rel="stylesheet" href="../../engine/hud.css">
+<link rel="stylesheet" href="../../engine/massstab.css">
+<script type="importmap">
+{ "imports": {
+  "three": "/node_modules/three/build/three.module.js",
+  "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  body { background: #1b2447; }
+  /* Untertitel Wort für Wort (Stil „kontur“), Teamwörter in Teamfarbe (aktuelles Wort bleibt gelb) */
+  .karaoke.kontur .w { color: var(--wf, #ffffff); }
+  /* Countdown-HUD aus 5 Segmenten (Account 2): Koralle = verbleibend, #3B3F55 = abgelaufen */
+  .ms-countdown { position: absolute; left: 150px; top: 158px; width: 780px; display: flex; flex-direction: column; align-items: center; gap: 14px; z-index: 20; will-change: transform; }
+  .ms-countdown .cd-reihe { display: flex; gap: 14px; }
+  .ms-countdown .cd-seg { position: relative; width: 132px; height: 24px; border-radius: 12px; background: #3B3F55; overflow: hidden; box-shadow: 0 0 0 3px rgba(10, 14, 28, 0.55), 0 6px 18px rgba(0, 0, 0, 0.35); }
+  .ms-countdown .cd-seg i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: #FF4F5A; border-radius: 12px; transform-origin: 0 50%; }
+  .ms-countdown .cd-seg.aktiv { box-shadow: 0 0 0 3px #ffffff, 0 0 26px rgba(255, 79, 90, 0.85); }
+  .ms-countdown .cd-zahl { font-family: "SB Display", Inter, sans-serif; font-weight: 900; font-size: 92px; line-height: 1; color: #fff; letter-spacing: -0.02em; font-variant-numeric: tabular-nums;
+    -webkit-text-stroke: 0.05em #0b1020; paint-order: stroke fill; text-shadow: 0 6px 24px rgba(0, 0, 0, 0.55); }
+  .ms-countdown .cd-zahl small { font-size: 0.42em; font-weight: 800; margin-left: 6px; color: #FF4F5A; -webkit-text-stroke: 0.06em #0b1020; }
+  .ms-countdown .cd-zahl.null { color: #9aa0b8; }
+
+  /* Instrumente: Tacho (km/h), Kraft im Gurt (g), Kräfteduell Reifen gegen Luft (N), Gewicht. Mittelachse x = 540. */
+  .in { position: absolute; left: 150px; width: 780px; z-index: 18; opacity: 0; font-family: "SB Display", Inter, sans-serif; color: #fff; will-change: transform, opacity; }
+  .in .num { font-variant-numeric: tabular-nums; font-weight: 900; -webkit-text-stroke: 0.05em #0b1020; paint-order: stroke fill; text-shadow: 0 6px 22px rgba(0, 0, 0, 0.5); letter-spacing: -0.01em; }
+  .in-tacho { top: 296px; height: 190px; display: flex; flex-direction: column; align-items: center; }
+  .in-tacho .lab { font-size: 26px; font-weight: 800; letter-spacing: 0.22em; color: #fff; background: rgba(11, 16, 32, 0.72); padding: 6px 20px 6px 24px; border-radius: 999px; }
+  .in-tacho .zeile { display: flex; align-items: baseline; justify-content: center; gap: 12px; margin-top: 2px; }
+  .in-tacho .num { font-size: 146px; line-height: 1.02; min-width: 330px; text-align: right; }
+  .in-tacho small { font-size: 46px; font-weight: 800; color: #fff; -webkit-text-stroke: 0.05em #0b1020; paint-order: stroke fill; min-width: 130px; text-align: left; }
+  .in-karte { background: rgba(11, 16, 32, 0.78); border-radius: 30px; padding: 16px 26px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 0 0 2px rgba(255, 255, 255, 0.10); }
+  .in-gurt { top: 510px; height: 74px; display: flex; align-items: center; gap: 20px; }
+  .in-gurt .lab, .in-kr .lab { font-size: 25px; font-weight: 800; letter-spacing: 0.18em; color: #fff; min-width: 100px; }
+  .in-gurt .bahn { position: relative; flex: 1; height: 26px; border-radius: 13px; background: #3B3F55; overflow: visible; }
+  .in-gurt .bahn i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; border-radius: 13px; background: #FF4F5A; transform-origin: 0 50%; }
+  .in-gurt .spitze { position: absolute; top: -9px; bottom: -9px; width: 6px; margin-left: -3px; border-radius: 3px; background: #fff; }
+  .in-gurt .spitzeZahl { position: absolute; top: -44px; transform: translateX(-50%); font-size: 21px; font-weight: 800; color: #fff; white-space: nowrap; background: rgba(11,16,32,0.8); border-radius: 12px; padding: 1px 10px; }
+  .in-gurt .num { font-size: 50px; min-width: 160px; text-align: right; }
+  .in-gurt .num small { font-size: 0.5em; margin-left: 6px; color: #FF4F5A; }
+  .in-kr { top: 604px; height: 126px; padding-top: 12px; }
+  .in-kr .kopf { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .in-kr .seite { display: flex; align-items: baseline; gap: 12px; }
+  .in-kr .seite.l { color: #FF4F5A; } .in-kr .seite.r { color: #2EC4B6; flex-direction: row-reverse; }
+  .in-kr .num { font-size: 46px; color: #fff; }
+  .in-kr .num small { font-size: 0.55em; margin-left: 5px; }
+  .in-kr .lab { font-size: 22px; min-width: 0; color: inherit; }
+  .in-kr .bahn { position: relative; height: 40px; border-radius: 20px; background: #3B3F55; overflow: hidden; }
+  .in-kr .bahn::after { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; margin-left: -2px; background: rgba(255,255,255,0.55); }
+  .in-kr .bahn b { position: absolute; top: 0; bottom: 0; }
+  .in-kr .bahn .bl { right: 50%; background: #FF4F5A; transform-origin: 100% 50%; border-radius: 20px 0 0 20px; }
+  .in-kr .bahn .br { left: 50%; background: #2EC4B6; transform-origin: 0 50%; border-radius: 0 20px 20px 0; }
+  .in-kr .marke { position: absolute; top: 70px; width: 6px; height: 52px; margin-left: -3px; background: #fff; border-radius: 3px; box-shadow: 0 0 0 2px rgba(11,16,32,0.6); }
+  .in-kr .markeZahl { position: absolute; top: 82px; transform: translateX(-100%); font-size: 21px; font-weight: 900; letter-spacing: 0.06em; color: #fff; -webkit-text-stroke: 0.1em #0b1020; paint-order: stroke fill; white-space: nowrap; }
+  .in-kr .flag { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); font-size: 21px; font-weight: 900; letter-spacing: 0.08em; color: #fff; background: #FF4F5A; border-radius: 999px; padding: 3px 18px; box-shadow: 0 0 0 3px #fff; opacity: 0; white-space: nowrap; z-index: 2; }
+  .in-gewicht { top: 744px; display: flex; justify-content: center; }
+  .in-gewicht .pille { display: flex; align-items: baseline; gap: 14px; background: #FF4F5A; color: #fff; border-radius: 999px; padding: 6px 30px 8px; box-shadow: 0 0 0 4px #fff, 0 10px 28px rgba(0,0,0,0.4); }
+  .in-gewicht .lab { font-size: 24px; font-weight: 800; letter-spacing: 0.18em; }
+  .in-gewicht .num { font-size: 46px; -webkit-text-stroke: 0.04em #7A1520; }
+  .in-gewicht .num small { font-size: 0.5em; margin-left: 6px; }
+  .in-gewicht.normal .pille { background: #3B3F55; }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./szene.js"></script>
+</body>
+</html>

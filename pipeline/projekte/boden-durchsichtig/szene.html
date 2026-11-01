@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Boden durchsichtig · Stil 16 POV-Filmlook</title>
+<link rel="stylesheet" href="../../engine/hud.css">
+<link rel="stylesheet" href="../../engine/massstab.css">
+<script type="importmap">
+{ "imports": {
+  "three": "/node_modules/three/build/three.module.js",
+  "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  body { background: #0b1020; }
+  /* Untertitel Wort für Wort (Stil „kontur“), Teamwörter in Teamfarbe (aktuelles Wort bleibt gelb) */
+  .karaoke.kontur .w { color: var(--wf, #ffffff); }
+  /* Countdown-HUD aus 5 Segmenten (Account 2): Koralle = verbleibend, #3B3F55 = abgelaufen */
+  .ms-countdown { position: absolute; left: 150px; top: 158px; width: 780px; display: flex; flex-direction: column; align-items: center; gap: 14px; z-index: 20; will-change: transform; }
+  .ms-countdown .cd-reihe { display: flex; gap: 14px; }
+  .ms-countdown .cd-seg { position: relative; width: 132px; height: 24px; border-radius: 12px; background: #3B3F55; overflow: hidden; box-shadow: 0 0 0 3px rgba(10, 14, 28, 0.55), 0 6px 18px rgba(0, 0, 0, 0.35); }
+  .ms-countdown .cd-seg i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: #FF4F5A; border-radius: 12px; transform-origin: 0 50%; }
+  .ms-countdown .cd-seg.aktiv { box-shadow: 0 0 0 3px #ffffff, 0 0 26px rgba(255, 79, 90, 0.85); }
+  .ms-countdown .cd-zahl { font-family: "SB Display", Inter, sans-serif; font-weight: 900; font-size: 92px; line-height: 1; color: #fff; letter-spacing: -0.02em; font-variant-numeric: tabular-nums;
+    -webkit-text-stroke: 0.05em #0b1020; paint-order: stroke fill; text-shadow: 0 6px 24px rgba(0, 0, 0, 0.55); }
+  .ms-countdown .cd-zahl small { font-size: 0.42em; font-weight: 800; margin-left: 6px; color: #FF4F5A; -webkit-text-stroke: 0.06em #0b1020; }
+  .ms-countdown .cd-zahl.null { color: #9aa0b8; }
+
+  /* Schichtband (Account 2): Weg durch die Erde, Segmente je Schicht, Marke läuft mit */
+  .ms-band { position: absolute; left: 150px; top: 452px; width: 780px; z-index: 18; will-change: transform, opacity; }
+  .ms-band .bd-reihe { position: relative; display: flex; gap: 4px; height: 34px; }
+  .ms-band .bd-seg { position: relative; height: 34px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 0 3px rgba(10, 14, 28, 0.55), 0 6px 18px rgba(0, 0, 0, 0.35); }
+  .ms-band .bd-seg i { position: absolute; inset: 0; opacity: 0.38; background: #000; }
+  .ms-band .bd-seg b { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; transform-origin: 0 50%; border-radius: 10px; }
+  .ms-band .bd-marke { position: absolute; top: -12px; width: 0; height: 58px; }
+  .ms-band .bd-marke::before { content: ""; position: absolute; left: -3px; top: 0; width: 6px; height: 58px; border-radius: 3px; background: #fff; box-shadow: 0 0 0 2px rgba(10, 14, 28, 0.7), 0 0 18px rgba(255, 255, 255, 0.9); }
+  .ms-band .bd-name { margin-top: 18px; text-align: center; font-family: "SB Display", Inter, sans-serif; font-weight: 900; font-size: 44px; letter-spacing: 0.04em; color: #fff; line-height: 1;
+    -webkit-text-stroke: 0.07em #0b1020; paint-order: stroke fill; text-shadow: 0 5px 20px rgba(0, 0, 0, 0.55); }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./szene.js"></script>
+</body>
+</html>

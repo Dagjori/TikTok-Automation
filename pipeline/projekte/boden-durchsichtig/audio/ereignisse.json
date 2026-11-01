@@ -1,0 +1,1658 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "boden-durchsichtig",
+ "fps": 30,
+ "dauer": 72.13333333333334,
+ "stimmEnde": 71.338,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "raum",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "LAND",
+    "farbe": "#FF4F5A"
+   },
+   "b": {
+    "name": "WASSER",
+    "farbe": "#2EC4B6"
+   }
+  },
+  "schleife": {
+   "ab": 67.85,
+   "ende": 72.10000000000001
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 72.1,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 0
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": 0.01,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "STELL"
+  },
+  {
+   "quelle": "Titel",
+   "t": 0.33,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "DIR"
+  },
+  {
+   "quelle": "Titel",
+   "t": 0.73,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "VOR:"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.32,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.7,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.53,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "BODEN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.43,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.8,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Titel",
+   "t": 2.49,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WIRD"
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.43,
+   "typ": "welle",
+   "klang": "scan",
+   "dauer": 1.2,
+   "text": "Boden wird durchsichtig"
+  },
+  {
+   "quelle": "Titel",
+   "t": 3.61,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "DURCHSICHTIG"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.75,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.6,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.73,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ANDERE SEITE DER ERDE"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.43,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "12.742 KM"
+  },
+  {
+   "quelle": "Formel",
+   "t": 6.53,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "DER ERDE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.63,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.9,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.08,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SCHULHOF"
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.73,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.9,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.93,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MITTE DEUTSCHLANDS"
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.82,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.82,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.82,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.82,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.02,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.55,
+   "text": "Blickwechsel"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 10.22,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Stempel",
+   "t": 10.27,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "KLAR?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.69,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.8,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.79,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AUSTRALIEN?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.77,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.5,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.55,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.65,
+   "typ": "welle",
+   "klang": "boom",
+   "dauer": 1,
+   "text": "Boden ganz weg"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 13.7,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 13.75,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 13.75,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 14.95,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 15.083,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 15.283,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 15.45,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 15.683,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 15.717,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 15.817,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 15.917,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.927,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.117,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.183,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.25,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 16.383,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.417,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.483,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.55,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.683,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.75,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.817,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.885,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.95,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.983,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 17.083,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 17.183,
+   "typ": "zaehler",
+   "dauer": 3.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 17.217,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 17.417,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 17.617,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 17.817,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 17.817,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 18.017,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.027,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 18.183,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 18.383,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 18.517,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 18.55,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 18.75,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 18.917,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 19.083,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.21,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 19.25,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 19.283,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 19.45,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 19.65,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 19.65,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 19.85,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 19.95,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 20.05,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 20.25,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 20.383,
+   "typ": "zaehler",
+   "dauer": 0.233,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 20.45,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.477,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 20.683,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 20.683,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 20.717,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 20.85,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 20.917,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.083,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.183,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.25,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 21.383,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.383,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.483,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.55,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.75,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 21.783,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde 1 vorbei"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.85,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.95,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 22.05,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 22.183,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 22.35,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 22.55,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 22.683,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 23.08,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.085,
+   "typ": "marke",
+   "klang": "boom",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "Schichtband",
+   "t": 23.1,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Grenze: MANTEL"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 23.117,
+   "typ": "zaehler",
+   "dauer": 18.367,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 23.117,
+   "typ": "zaehler",
+   "dauer": 4.667,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 23.283,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 23.33,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "30 KM KRUSTE"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 23.883,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 24.517,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 25.117,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 25.717,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 26.35,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 26.95,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 27.583,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 27.883,
+   "typ": "zaehler",
+   "dauer": 3.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 27.89,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.893,
+   "typ": "marke",
+   "klang": "boom",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 27.9,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde 2 vorbei"
+  },
+  {
+   "quelle": "Schichtband",
+   "t": 27.9,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Grenze: ÄUSSERER KERN"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 28.083,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 28.45,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 28.85,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 29.217,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 29.617,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 30.017,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 30.383,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 30.783,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 31.183,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 31.55,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 31.77,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.777,
+   "typ": "marke",
+   "klang": "boom",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 31.783,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde 3 vorbei"
+  },
+  {
+   "quelle": "Schichtband",
+   "t": 31.8,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Grenze: INNERER KERN"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 32.05,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 32.15,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 32.683,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 32.917,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 33.317,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 33.683,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 33.917,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 34.26,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "6.000 °C"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 34.45,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 34.55,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.877,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 35.15,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 35.25,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 35.76,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KERN 6.000 °C"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 35.783,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 36.017,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.21,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SONNE 5.500 °C"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 36.417,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 36.783,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 37.017,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 37.55,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 37.65,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 37.87,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 37.87,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 37.95,
+   "typ": "zaehler",
+   "dauer": 3.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 37.97,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.977,
+   "typ": "marke",
+   "klang": "boom",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 37.983,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde 4 vorbei"
+  },
+  {
+   "quelle": "Schichtband",
+   "t": 38,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Grenze: ÄUSSERER KERN"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 38.15,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 38.583,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 38.983,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.202,
+   "typ": "marke",
+   "klang": "boom",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "Schichtband",
+   "t": 39.233,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Grenze: MANTEL"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 39.417,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 39.73,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "KEIN AUSTRALIEN"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 39.817,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 40.25,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.51,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "Schichtband",
+   "t": 40.533,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Grenze: PAZIFIK"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 40.65,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 41.083,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.218,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Schichtgrenze"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 41.483,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 41.49,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "t": 41.815,
+   "typ": "uebergang",
+   "art": "zoomwisch",
+   "dauer": 0.55,
+   "quelle": "Zeitleiste",
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 41.917,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 42.133,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde 5 vorbei"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 44.61,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "BIS ZUM PAZIFIK"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 46.57,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "BIS ZUM NÄCHSTEN LAND"
+  },
+  {
+   "quelle": "Formel",
+   "t": 48.37,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "→"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.216,
+   "typ": "kamera",
+   "klang": "whoosh",
+   "dauer": 3,
+   "text": "Karte zieht zurück"
+  },
+  {
+   "quelle": "Formel",
+   "t": 50.21,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "71"
+  },
+  {
+   "quelle": "Formel",
+   "t": 52.33,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "="
+  },
+  {
+   "quelle": "Formel",
+   "t": 52.33,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "MEER"
+  },
+  {
+   "quelle": "Formel",
+   "t": 53.35,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "NUR 15"
+  },
+  {
+   "quelle": "Formel",
+   "t": 56.17,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "LAND"
+  },
+  {
+   "t": 56.64,
+   "typ": "uebergang",
+   "art": "blasen",
+   "dauer": 0.7,
+   "quelle": "Zeitleiste",
+   "klang": "blasen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 58.23,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 58.23,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 59.963,
+   "typ": "zaehler",
+   "dauer": 3.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 59.963,
+   "typ": "zaehler",
+   "dauer": 1.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.99,
+   "typ": "welle",
+   "klang": "whoosh",
+   "dauer": 2.11,
+   "text": "Fall durch den Tunnel"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 60.14,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "42 MINUTEN"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 61.097,
+   "typ": "zaehler",
+   "dauer": 2.5,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.1,
+   "typ": "welle",
+   "klang": "boom",
+   "text": "Gegenseite erreicht"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 64.05,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "WER TIEF GENUG | GRÄBT, LANDET | *MEISTENS IM MEER.*"
+  },
+  {
+   "t": 65.23,
+   "typ": "uebergang",
+   "art": "wolken",
+   "dauer": 0.8,
+   "quelle": "Zeitleiste",
+   "klang": "wolke"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.23,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 1.6,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.15,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 1.2,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 67.56,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DEIN SZENARIO?"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 67.85,
+   "art": "schleife",
+   "dauer": 4.25,
+   "klang": false
+  },
+  {
+   "t": 67.85,
+   "typ": "schleife",
+   "dauer": 4.25,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.85,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 1.6,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 69.87,
+   "typ": "chip-weg",
+   "klang": false
+  }
+ ],
+ "klang": []
+}

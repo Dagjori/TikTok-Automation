@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Wie hoch bringt dich eine Tafel Schokolade? · Stil 16 POV-Filmlook</title>
+<link rel="stylesheet" href="../../engine/hud.css">
+<link rel="stylesheet" href="../../engine/massstab.css">
+<script type="importmap">
+{ "imports": {
+  "three": "/node_modules/three/build/three.module.js",
+  "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  body { background: #2a1e3a; }
+  /* Untertitel Wort für Wort (Stil „kontur“), Teamwörter in Teamfarbe (aktuelles Wort bleibt gelb) */
+  .karaoke.kontur .w { color: var(--wf, #ffffff); }
+  /* Höhen-HUD (Account 2): 24 Segmente = 24 Stückchen. Koralle = noch da, #3B3F55 = verbraucht */
+  .ms-hoehe { position: absolute; left: 150px; top: 158px; width: 780px; display: flex; flex-direction: column; align-items: center; gap: 12px; z-index: 20; will-change: transform; }
+  .ms-hoehe .cd-reihe { display: flex; gap: 4.6px; }
+  .ms-hoehe .cd-seg { position: relative; width: 27.6px; height: 24px; border-radius: 9px; background: #3B3F55; overflow: hidden; box-shadow: 0 0 0 2.5px rgba(10, 14, 28, 0.55), 0 5px 14px rgba(0, 0, 0, 0.35); }
+  .ms-hoehe .cd-seg i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: #FF4F5A; border-radius: 9px; transform-origin: 0 50%; }
+  .ms-hoehe .cd-seg.aktiv { box-shadow: 0 0 0 2.5px #ffffff, 0 0 22px rgba(255, 79, 90, 0.9); }
+  .ms-hoehe .cd-zahl { font-family: "SB Display", Inter, sans-serif; font-weight: 900; font-size: 96px; line-height: 1; color: #fff; letter-spacing: -0.02em; font-variant-numeric: tabular-nums;
+    -webkit-text-stroke: 0.05em #0b1020; paint-order: stroke fill; text-shadow: 0 6px 24px rgba(0, 0, 0, 0.55); }
+  .ms-hoehe .cd-zahl small { font-size: 0.42em; font-weight: 800; margin-left: 8px; color: #2EC4B6; -webkit-text-stroke: 0.06em #0b1020; }
+  .ms-hoehe .cd-sub { font-family: "SB Display", Inter, sans-serif; font-weight: 800; font-size: 31px; line-height: 1; letter-spacing: 0.06em; color: #fff; margin-top: -2px;
+    -webkit-text-stroke: 0.14em #0b1020; paint-order: stroke fill; text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5); }
+  .ms-hoehe .cd-sub b { color: #FF4F5A; font-weight: 900; }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./szene.js"></script>
+</body>
+</html>

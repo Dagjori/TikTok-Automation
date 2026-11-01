@@ -123,30 +123,30 @@
    "text": "CYAN = ZUFALL"
   },
   {
+   "quelle": "Chip",
+   "t": 10.02,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.02,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.02,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
    "quelle": "Szene",
    "t": 10.02,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.8,
    "klang": "whoosh"
-  },
-  {
-   "quelle": "Chip",
-   "t": 10.2,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 10.2,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 10.2,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Stempel",
@@ -172,7 +172,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 12.75,
+   "t": 12.52,
    "typ": "chip-weg",
    "klang": false
   },
@@ -315,13 +315,6 @@
    "klang": "uhr"
   },
   {
-   "quelle": "RemisPille",
-   "t": 18.61,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "Unentschieden"
-  },
-  {
    "quelle": "Tafel",
    "t": 18.633,
    "typ": "fuehrung",
@@ -365,6 +358,13 @@
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
+  },
+  {
+   "quelle": "RemisPille",
+   "t": 19.42,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "Unentschieden"
   },
   {
    "quelle": "Tafel",
@@ -1016,25 +1016,12 @@
    "text": "PRAKTISCH GLEICH"
   },
   {
-   "quelle": "Chip",
-   "t": 33.6,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "100.000 SPIELE: ROT VORN 48 % · CYAN VORN 48 %"
-  },
-  {
    "quelle": "Szene",
    "t": 34.209,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 1,
    "klang": "whoosh"
-  },
-  {
-   "quelle": "Chip",
-   "t": 34.229,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Szene",
@@ -1370,7 +1357,7 @@
    "t": 39,
    "typ": "chip",
    "klang": "pop",
-   "text": "MENSCH: 44 % GLEICHER ZUG"
+   "text": "MENSCH: 44 %"
   },
   {
    "quelle": "Tafel",

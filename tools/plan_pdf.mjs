@@ -1,8 +1,10 @@
 #!/usr/bin/env node
-// Erzeugt docs/plan/30-tage-plan.pdf aus data/plan/30-tage.csv.
+// Erzeugt docs/plan/30-tage-plan.pdf aus data/plan/30-tage.csv (Simulierbar, Standard)
+// bzw. mit --plan account2 docs/plan/account2-30-tage-plan.pdf aus data/plan/account2-30-tage.csv (@stelldirvor.pov).
 //
 // Aufruf (Repo-Wurzel, Windows und Linux):
 //   node tools/plan_pdf.mjs                     -> docs/plan/30-tage-plan.pdf
+//   node tools/plan_pdf.mjs --plan account2     -> docs/plan/account2-30-tage-plan.pdf
 //   node tools/plan_pdf.mjs --html plan.html    -> schreibt zusätzlich das HTML (zum Ansehen im Browser)
 //   node tools/plan_pdf.mjs --out pfad.pdf      -> anderer Zielpfad
 //
@@ -16,15 +18,20 @@ import { createRequire } from "node:module";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const CSV_PATH = path.join(ROOT, "data", "plan", "30-tage.csv");
-const PLANSTAND = "01.11.2026 (Termine verschoben: GTA 6 und Spurwechsel sind gepostet, heute geht es mit Treppe oder Aufzug weiter)";
-
 const args = process.argv.slice(2);
+const PLAN = args.includes("--plan") ? args[args.indexOf("--plan") + 1] : "account1";
+if (!["account1", "account2"].includes(PLAN)) { console.error(`Unbekannter Plan: ${PLAN} (erlaubt: account1, account2)`); process.exit(1); }
+const A2 = PLAN === "account2";
+const CSV_PATH = A2 ? path.join(ROOT, "data", "plan", "account2-30-tage.csv") : path.join(ROOT, "data", "plan", "30-tage.csv");
+const PLANSTAND = A2
+  ? "01.11.2026, 2 Videos pro Tag (Entscheidung 01.11. 21:30); die ersten 4 Videos sind in Produktion"
+  : "01.11.2026 (Termine verschoben: GTA 6 und Spurwechsel sind gepostet, heute geht es mit Treppe oder Aufzug weiter)";
+
 const argVal = (name) => {
   const i = args.indexOf(name);
   return i >= 0 && args[i + 1] ? path.resolve(args[i + 1]) : null;
 };
-const OUT_PDF = argVal("--out") || path.join(ROOT, "docs", "plan", "30-tage-plan.pdf");
+const OUT_PDF = argVal("--out") || path.join(ROOT, "docs", "plan", A2 ? "account2-30-tage-plan.pdf" : "30-tage-plan.pdf");
 const OUT_HTML = argVal("--html");
 
 // ---------- CSV ----------
@@ -319,7 +326,156 @@ table.dl tr:first-child td { border-top:0; }
 .sw em { font-style:normal; color:var(--mut); margin:0 1.5mm; font-size:7pt; }
 `;
 
-const html = `<!doctype html><html lang="de"><head><meta charset="utf-8"><title>30-Tage-Plan Simulierbar</title><style>${CSS}</style></head><body>
+// ---------- Account 2 (@stelldirvor.pov), Aufruf mit --plan account2 ----------
+const A2_KRIT = { N: ["Nachfrage-Signal", 30], T: ["Timing", 20], W: ["Wettbewerb DE", 15], P: ["Passung zum Format", 15], A: ["Aufwand (Baukasten)", 10], R: ["Risiko", 10] };
+const A2_WOCHEN = [["2026-11-02", "2026-11-08", "Mo 02.–So 08.11."], ["2026-11-09", "2026-11-15", "Mo 09.–So 15.11."], ["2026-11-16", "2026-11-22", "Mo 16.–So 22.11."],
+  ["2026-11-23", "2026-11-29", "Mo 23.–So 29.11."], ["2026-11-30", "2026-12-01", "Mo 30.11.–Di 01.12."]];
+const a2Class = (s) => { s = Number(s); return s >= 85 ? "s-top" : s >= 80 ? "s-gut" : s >= 75 ? "s-mittel" : "s-knapp"; };
+const a2Badge = (s) => `<span class="score ${a2Class(s)}">${esc(s)}</span>`;
+function a2Teile(begr) {
+  const m = begr.match(/^N(\d) T(\d) W(\d) P(\d) A(\d) R(\d)\s*·\s*(.*)$/);
+  return m ? { sub: { N: +m[1], T: +m[2], W: +m[3], P: +m[4], A: +m[5], R: +m[6] }, text: m[7] } : { sub: null, text: begr };
+}
+const a2Slot = (r) => r.datum === "reserve" ? "Reserve" : `${r.slot === "mittag" ? "Mittag" : "Abend"} · ${r.uhrzeit}`;
+const a2Prio = { A: "A · bleibt fix", B: "B · darf 1–3 Tage rutschen", C: "C · darf entfallen bzw. durch Reserve ersetzt werden" };
+
+function htmlAccount2() {
+  const haupt = rows.filter((r) => r.datum !== "reserve");
+  const reserve = rows.filter((r) => r.datum === "reserve");
+  const sc = haupt.map((r) => Number(r.score));
+  const avg2 = (sc.reduce((a, b) => a + b, 0) / sc.length).toFixed(1).replace(".", ",");
+  const top = [...haupt].filter((r) => !r.status.startsWith("Produktion")).sort((a, b) => b.score - a.score || a.nr - b.nr).slice(0, 5);
+  const orte = {};
+  haupt.forEach((r) => { (orte[r.ort] ||= []).push(r); });
+  const felder = {};
+  haupt.forEach((r) => { felder[r.themenfeld] = (felder[r.themenfeld] || 0) + 1; });
+  const erstbau = haupt.filter((r) => r.aufwand.includes("Erstbau")).length;
+
+  const deck = `
+<section class="cover">
+  <div class="kicker">Stell dir vor … · @stelldirvor.pov · Content-Plan</div>
+  <h1>30-Tage-Plan<br><span>02. November – 01. Dezember 2026</span></h1>
+  <p class="lead">„Was wäre, wenn …“ als 3D-POV in Du-Perspektive an deutschen Alltagsorten. Pro Video: Szenario, eigene Rechnung, Hook, Denkfalle, zwei Wendungen, Ergebniszahl, Quellen, Konkurrenz-Check, Score und Caption.</p>
+  <div class="stand">Planstand: ${esc(PLANSTAND)}<br>PDF erzeugt am ${esc(erzeugt)} aus <code>data/plan/account2-30-tage.csv</code> · Text: <code>docs/17-account2-30-tage-plan.md</code></div>
+  <div class="kpis">
+    <div class="kpi"><b>${haupt.length}</b><span>Videos (2 pro Tag)<br>+ ${reserve.length} Reservethemen</span></div>
+    <div class="kpi"><b>${avg2}</b><span>Ø Trend-Score<br>min. ${Math.min(...sc)}, max. ${Math.max(...sc)}</span></div>
+    <div class="kpi"><b>${Object.keys(orte).length}</b><span>Orte im Baukasten<br>${erstbau} Erstbauten</span></div>
+    <div class="kpi"><b>${Object.keys(felder).length}</b><span>Themenfelder<br>im Wechsel</span></div>
+  </div>
+  <div class="cols">
+    <div class="box">
+      <h3>Kurzüberblick</h3>
+      <ul>
+        <li>2 Videos pro Tag: Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30 (Europe/Berlin), Startwerte, nach 14 Tagen mit eigenen Daten nachjustieren.</li>
+        <li>Produktion nur auf Startsignal, in der Reihenfolge dieses Plans. Fällt ein Slot aus, rutscht die Liste nach; C-Videos dürfen entfallen oder durch Reserve ersetzt werden.</li>
+        <li>Jedes Video beginnt mit „Stell dir vor, …“, spielt an einem erkennbaren deutschen Ort, rechnet selbst und hat zwei Wendungen. Länge 61–75 s, Stimme Otto (Eleven v4).</li>
+        <li>Gesperrt: US-Themen (Elektronen, Protonen, Sauerstoff, Wasser), Maßstab §9, Klassiker ohne eigenen Ansatz. Gleicher Ort frühestens nach 2 freien Tagen, nie dasselbe Themenfeld zweimal hintereinander.</li>
+        <li><b>Vorläufig</b> (ändert sich nach der Kalibrierung mit den Konkurrenzvideos): Spalte <code>look_vorlaeufig</code> und davon abhängig <code>aufwand</code>; Uhrzeiten nach 14 Tagen. Themen, Rechnungen und Reihenfolge sind tragfähig.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Die 5 stärksten Videos (S)</h3>
+      <ol class="top">${top.map((r) => `<li>${a2Badge(r.score)}<span><b>${esc(r.titel)}</b><br><small>${esc(tag(r.datum))} · ${esc(a2Slot(r))} · ${esc(r.ort)}</small></span></li>`).join("")}</ol>
+    </div>
+  </div>
+  <div class="cols">
+    <div class="box">
+      <h3>Trend-Score (docs/07, tools/trend_score.py)</h3>
+      <table class="raster">${Object.entries(A2_KRIT).map(([k, [n, g]]) => `<tr><td><b>${k}</b></td><td>${esc(n)}</td><td>${g} %</td></tr>`).join("")}</table>
+      <p class="hint">Je 1–5 Punkte, Score = Σ(Gewicht × Punkte)/5. Ab 70 vorschlagen. Farben: <span class="score s-top">85+</span> <span class="score s-gut">80+</span> <span class="score s-mittel">75+</span> <span class="score s-knapp">&lt;75</span></p>
+    </div>
+    <div class="box">
+      <h3>Legende</h3>
+      <table class="raster">
+        <tr><td><b>(F)</b></td><td>belegter Fakt mit Quelle</td></tr>
+        <tr><td><b>(S)</b></td><td>Schätzung</td></tr>
+        <tr><td><b>(A)</b></td><td>Annahme</td></tr>
+        <tr><td><b>prüfen</b></td><td>Quelle bzw. Zahl vor der Produktion klären</td></tr>
+        <tr><td><b>vorläufig</b></td><td>Look und Aufwand, bis das Format kalibriert ist</td></tr>
+      </table>
+      <p class="hint">Aufwand: 3 = ca. 3 Std. (Ort vorhanden), 4 = ca. 5 Std. (Erstbau eines Orts, plus Ortbau laut docs/17) aktive Agentenarbeit (S).</p>
+    </div>
+  </div>
+</section>`;
+
+  const cell = (r) => r ? `<div class="wz ${r.prioritaet === "A" ? "prio-a" : ""}">${a2Badge(r.score)}<div><span class="nr">#${r.nr}</span> ${esc(r.titel)}<br><small>${esc(r.ort.replace(/ \(.*\)$/, ""))} · ${esc(r.themenfeld)}${r.aufwand.includes("Erstbau") ? " · Erstbau" : ""}</small></div></div>` : `<span class="leer">–</span>`;
+  let wochen = `<section class="page"><h2>Wochenübersicht</h2><p class="intro">Fett = Priorität A. Die Zahl im Kreis ist der Trend-Score; darunter Ort, Themenfeld und ob der Ort neu gebaut wird.</p>`;
+  for (const [von, bis, label] of A2_WOCHEN) {
+    const wr = haupt.filter((r) => r.datum >= von && r.datum <= bis);
+    const tage = [...new Set(wr.map((r) => r.datum))];
+    wochen += `<div class="woche"><h3>Woche · ${label} <small>${wr.length} Videos</small></h3>
+      <table class="wt"><thead><tr><th class="c-tag">Tag</th><th>Mittag (12:30 bzw. Sa/So 09:30)</th><th>Abend 19:30</th></tr></thead><tbody>
+      ${tage.map((d) => { const by = Object.fromEntries(wr.filter((r) => r.datum === d).map((r) => [r.slot, r])); return `<tr><td class="c-tag">${esc(tag(d))}</td><td>${cell(by.mittag)}</td><td>${cell(by.abend)}</td></tr>`; }).join("")}
+      </tbody></table></div>`;
+  }
+  wochen += `</section>`;
+
+  const ortTab = `<section class="page"><h2>Orte und Baukasten</h2><p class="intro">Jeder Ort wird einmal gebaut und dann mehrfach genutzt. Gleicher Ort frühestens nach 2 freien Tagen. Küche, Bad und Wohnzimmer teilen sich den Baukasten „Wohnung“, Weihnachtsmarkt baut auf der Altstadt auf.</p>
+  <table class="list"><thead><tr><th>Ort</th><th>Erstbau</th><th>Einsätze</th><th>Themen</th></tr></thead><tbody>
+  ${Object.entries(orte).sort((a, b) => b[1].length - a[1].length).map(([o, rs]) => `<tr><td><b>${esc(o)}</b></td><td class="nowrap">${esc(tag(rs[0].datum))}</td><td>${rs.length}</td><td>${rs.map((r) => `#${r.nr} ${esc(r.titel)}`).join("<br>")}</td></tr>`).join("")}
+  </tbody></table>
+  <h2 style="margin-top:5mm">Themenfelder</h2>
+  <table class="list"><thead><tr><th>Themenfeld</th><th>Videos</th></tr></thead><tbody>${Object.entries(felder).sort((a, b) => b[1] - a[1]).map(([f, n]) => `<tr><td>${esc(f)}</td><td>${n}</td></tr>`).join("")}</tbody></table>
+  </section>`;
+
+  const karte2 = (r) => {
+    const { sub, text } = a2Teile(r.score_begruendung);
+    const bars = sub ? Object.keys(A2_KRIT).map((k) => `<div class="bar"><span class="bl">${k}</span><span class="bt"><i style="width:${20 * sub[k]}%"></i></span><span class="bv">${sub[k]}/5</span></div>`).join("") : "";
+    const meta = r.datum === "reserve" ? `Reserve ${esc(r.nr - haupt.length)}` : `#${r.nr} · ${esc(tag(r.datum))} 2026 · ${esc(a2Slot(r))}`;
+    return `
+<article class="card">
+  <header>
+    <div class="meta">${meta} ${r.prioritaet === "A" ? pill("Priorität A", "st-a") : ""} ${r.aufwand.includes("Erstbau") ? pill("Erstbau Ort", "st-neubau") : ""}</div>
+    <h3>${esc(r.titel)}</h3>
+    <div class="big ${a2Class(r.score)}"><b>${esc(r.score)}</b><span>Score</span></div>
+  </header>
+  <div class="hook"><span class="lbl">Hook (Sprechtext, 0–5 s)</span>„${esc(r.hook)}“</div>
+  <table class="dl">
+    <tr><th>Szenario</th><td>${esc(r.szenario)}</td></tr>
+    <tr><th>Denkfalle</th><td>${esc(r.denkfalle)}</td></tr>
+    <tr><th>Wendung 1<br><small>18–25 s</small></th><td>${esc(r.wendung_1)}</td></tr>
+    <tr><th>Wendung 2 und zweite Überraschung</th><td>${esc(r.wendung_2)}</td></tr>
+    <tr><th>Ergebnis</th><td><b>${esc(r.ergebnis_zahl)}</b></td></tr>
+    <tr><th>Rechnung</th><td>${esc(r.kernrechnung_bzw_twist)}</td></tr>
+    <tr><th>Quellen prüfen</th><td>${esc(r.quellen_pruefen)}</td></tr>
+    <tr><th>Konkurrenz-Check</th><td>${esc(r.konkurrenz_check)}</td></tr>
+    <tr><th>Trend-Score</th><td><div class="bars bars6">${bars}</div><div class="why">${esc(text)}</div></td></tr>
+    <tr><th>Caption</th><td>${esc(r.caption_vorschlag)}</td></tr>
+  </table>
+  <div class="facts">
+    <div><span>Themenfeld</span><b>${esc(r.themenfeld)}</b></div>
+    <div class="w2"><span>Ort</span><b>${esc(r.ort)}</b></div>
+    <div><span>Priorität</span><b>${esc(a2Prio[r.prioritaet] || r.prioritaet)}</b></div>
+    <div class="w2"><span>Look (vorläufig)</span><b>${esc(r.look_vorlaeufig.replace(/ \(vorläufig.*\)$/, ""))}</b></div>
+    <div class="w2"><span>Aufwand (vorläufig)</span><b>${esc(r.aufwand)}</b></div>
+    <div class="w4"><span>Status</span><b>${esc(r.status)}</b></div>
+  </div>
+</article>`;
+  };
+  let karten2 = "";
+  for (const [von, bis, label] of A2_WOCHEN) {
+    const wr = haupt.filter((r) => r.datum >= von && r.datum <= bis);
+    karten2 += `<section class="page cards"><h2>Woche · ${label} <small>Videos #${wr[0].nr}–#${wr[wr.length - 1].nr}</small></h2>${wr.map(karte2).join("")}</section>`;
+  }
+  karten2 += `<section class="page cards"><h2>Reserve <small>${reserve.length} Themen für Ausfälle oder zusätzliche Slots</small></h2>${reserve.map(karte2).join("")}</section>`;
+
+  const css2 = `.bars6 { grid-template-columns:repeat(6,1fr); } .cover .kicker { color:#7a3fc2; } .hook { border-left-color:#7a3fc2; } .bt i { background:#7a3fc2; }
+.cards .card { font-size:7.2pt; line-height:1.25; padding:2mm 3mm 1.8mm; margin-bottom:2.4mm; }
+.cards .card h3 { font-size:9.6pt; } .cards .card header { margin-bottom:1mm; }
+.cards .hook { font-size:8.4pt; padding:1mm 2.2mm; margin-bottom:0.8mm; }
+.cards table.dl th { width:20mm; font-size:6.8pt; padding:0.45mm 1.6mm 0.45mm 0; } .cards table.dl td { padding:0.45mm 0; }
+.cards .facts { margin-top:0.8mm; padding-top:0.8mm; gap:0.6mm 3mm; } .cards .facts b { font-size:7.2pt; }
+.cards .big { width:10.5mm; height:10.5mm; } .cards .big b { font-size:10.5pt; }`;
+  return `<!doctype html><html lang="de"><head><meta charset="utf-8"><title>30-Tage-Plan Stell dir vor</title><style>${CSS}${css2}</style></head><body>
+${deck}
+${wochen}
+${ortTab}
+${karten2}
+</body></html>`;
+}
+
+const html = A2 ? htmlAccount2() : `<!doctype html><html lang="de"><head><meta charset="utf-8"><title>30-Tage-Plan Simulierbar</title><style>${CSS}</style></head><body>
 ${deckblatt()}
 ${aenderungen()}
 ${wochenuebersicht()}
@@ -355,11 +511,11 @@ try {
     displayHeaderFooter: true,
     headerTemplate: "<span></span>",
     footerTemplate: `<div style="width:100%;font-family:Arial,sans-serif;font-size:7.5px;color:#7a8494;padding:0 13mm;display:flex;justify-content:space-between;">
-      <span>Simulierbar · 30-Tage-Plan November 2026 · Planstand 01.11.2026</span>
+      <span>${A2 ? "@stelldirvor.pov · 30-Tage-Plan 02.11.–01.12.2026 · Planstand 01.11.2026" : "Simulierbar · 30-Tage-Plan November 2026 · Planstand 01.11.2026"}</span>
       <span>Seite <span class="pageNumber"></span> von <span class="totalPages"></span></span></div>`,
   });
 } finally {
   await browser.close();
   fs.rmSync(tmp, { force: true });
 }
-console.log(`PDF geschrieben: ${path.relative(ROOT, OUT_PDF)} (${rows.length} Videos)`);
+console.log(`PDF geschrieben: ${path.relative(ROOT, OUT_PDF)} (${rows.length} ${A2 ? "Zeilen, davon " + rows.filter((r) => r.datum === "reserve").length + " Reserve" : "Videos"})`);

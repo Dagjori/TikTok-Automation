@@ -361,7 +361,7 @@ async function start() {
 
   // ---------- Regeln als Chips ----------
   M.chips({ y: 372, ausrichtung: "mitte", aus: "falle:Klar-0.3", liste: [{ text: "100 RUNDEN", ein: "regeln:Hundert-0.03", art: "dunkel", gross: true }] });
-  M.chips({ y: 506, abstand: 44, ausrichtung: "mitte", aus: "falle:Klar-0.3", liste: [
+  M.chips({ y: 516, abstand: 44, ausrichtung: "mitte", aus: "falle:Klar-0.3", liste: [
     { text: "ROT = TAKTIK", ein: "regeln:Rot-0.03", art: "voll", team: "a" },
     { text: "CYAN = ZUFALL", ein: "regeln:Cyan-0.03", art: "voll", team: "b" },
   ] });
@@ -389,26 +389,25 @@ async function start() {
   M.chip({ text: "GLEICHSTAND", ein: T("wendung1:11") - 0.4, aus: "rennen2:Rot", art: "dunkel", gross: true, x: SICHER.mitte, anker: "mitte", y: 796 });
 
   // ---------- Ergebnis 1: praktisch gleich ----------
-  M.bilanz({
-    y: 880, ein: "ergebnis1:Endstand-0.1", aus: "wendung2:Aber-0.08", titel: "Endstand nach 100 Runden",
-    zeilen: [
-      { label: "ROT · TAKTIK", wert: lz.siegeRot, team: "a", ein: "ergebnis1:34" },
-      { label: "CYAN · ZUFALL", wert: lz.siegeCyan, team: "b", ein: "ergebnis1:31." },
-    ],
-  });
-  M.chip({ text: "PRAKTISCH GLEICH", ein: "ergebnis1:Praktisch", aus: "wendung2:Aber-0.08", art: "voll", team: "akzent", gross: true, x: SICHER.mitte, anker: "mitte", y: 1190 });
   const pct = (x) => `${Math.round(x * 100)} %`;
-  M.chip({ text: `100.000 SPIELE · JE ${pct((MC_ZUFALL.anteilRotVorn + MC_ZUFALL.anteilCyanVorn) / 2)} VORN`, ein: "ergebnis1:gleich", aus: "wendung2:Aber-0.3", art: "hell", team: "akzent", x: SICHER.mitte, anker: "mitte", y: 796 });
+  M.bilanz({
+    y: 842, ein: "ergebnis1:Endstand-0.1", aus: "wendung2:Aber-0.08", titel: "Endstand nach 100 Runden",
+    zeilen: [
+      { label: "ROT · TAKTIK", zusatz: `${pct(MC_ZUFALL.anteilRotVorn)} von 100.000 vorn`, wert: lz.siegeRot, team: "a", ein: "ergebnis1:34" },
+      { label: "CYAN · ZUFALL", zusatz: `${pct(MC_ZUFALL.anteilCyanVorn)} von 100.000 vorn`, wert: lz.siegeCyan, team: "b", ein: "ergebnis1:31." },
+    ],
+    sieger: { text: "PRAKTISCH GLEICH", team: "akzent", ein: "ergebnis1:Praktisch" },
+  });
 
   // ---------- Wendung 2: Cyan spielt wie ein Mensch ----------
   const sMensch = M.stempel({ text: "MENSCH!", ein: "wendung2:Mensch", x: SICHER.mitte, y: 740, winkel: 6, farbe: CYAN, groesse: 124 });
-  M.chip({ text: "MENSCH: 44 %", ein: "mensch:44", aus: "rennen3:Runde-0.1", art: "voll", team: "b", x: 400, anker: "mitte", y: 796 });
-  M.chip({ text: "ZUFALL: 33 %", ein: "mensch:33", aus: "rennen3:Runde-0.1", art: "dunkel", x: 690, anker: "mitte", y: 796 });
+  M.chip({ text: "MENSCH: 44 %", ein: "mensch:44", aus: "rennen3:Runde-0.1", art: "voll", team: "b", x: 330, anker: "mitte", y: 796 });
+  M.chip({ text: "ZUFALL: 33 %", ein: "mensch:33", aus: "rennen3:Runde-0.1", art: "dunkel", x: 750, anker: "mitte", y: 796 });
 
   // ---------- Ergebnis 2 ----------
   const vorsprung2 = lm.siegeRot - lm.siegeCyan;
   M.bilanz({
-    y: 856, ein: "ergebnis2:Endstand-0.1", aus: "warum:Warum-0.32", titel: "Endstand nach 100 Runden",
+    y: 842, ein: "ergebnis2:Endstand-0.1", aus: "warum:Warum-0.32", titel: "Endstand nach 100 Runden",
     zeilen: [
       { label: "ROT · TAKTIK", wert: lm.siegeRot, team: "a", ein: "ergebnis2:50," },
       { label: "CYAN · MENSCH", wert: lm.siegeCyan, team: "b", ein: "ergebnis2:31." },
@@ -419,7 +418,7 @@ async function start() {
   // ---------- Warum? zwei Faktoren ----------
   const p0 = (x) => `${Math.round(x * 100)} %`;
   M.balken({
-    y: 822, ein: "warum:Warum-0.05", aus: "ueberraschung:Und-0.12", titel: "Warum? Rot gewinnt die Runde …", max: 62,
+    y: 806, ein: "warum:Warum-0.05", aus: "ueberraschung:Und-0.12", titel: "Warum? Rot gewinnt die Runde …", max: 62,
     faktoren: [
       { label: "NACH EINEM MENSCH-SIEG", ein: "warum:Gewinner", a: { wert: WARUM.sieg.rotGewinnt * 100, text: p0(WARUM.sieg.rotGewinnt) }, b: { wert: WARUM.sieg.cyanGewinnt * 100, text: p0(WARUM.sieg.cyanGewinnt) }, tag: "BLEIBT", tagEin: "warum:bleiben" },
       { label: "NACH EINER NIEDERLAGE", ein: "warum:Verlierer", a: { wert: WARUM.niederlage.rotGewinnt * 100, text: p0(WARUM.niederlage.rotGewinnt) }, b: { wert: WARUM.niederlage.cyanGewinnt * 100, text: p0(WARUM.niederlage.cyanGewinnt) }, tag: "WECHSELT", tagEin: "warum:wechseln" },

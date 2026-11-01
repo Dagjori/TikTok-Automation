@@ -1,0 +1,915 @@
+{
+ "stimme": "Otto",
+ "voice_id": "FTNCalFNG5bRnkkaP5Ug",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 67.027,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Stell dir vor, dein Auto wiegt so viel wie ein Kasten Wasser.",
+   "start": 0.05,
+   "ende": 4.21,
+   "woerter": [
+    {
+     "wort": "Stell",
+     "start": 0.05,
+     "ende": 0.29
+    },
+    {
+     "wort": "dir",
+     "start": 0.37,
+     "ende": 0.61
+    },
+    {
+     "wort": "vor,",
+     "start": 0.77,
+     "ende": 1.09
+    },
+    {
+     "wort": "dein",
+     "start": 1.13,
+     "ende": 1.41
+    },
+    {
+     "wort": "Auto",
+     "start": 1.49,
+     "ende": 1.73
+    },
+    {
+     "wort": "wiegt",
+     "start": 1.81,
+     "ende": 2.05
+    },
+    {
+     "wort": "so",
+     "start": 2.17,
+     "ende": 2.29
+    },
+    {
+     "wort": "viel",
+     "start": 2.37,
+     "ende": 2.53
+    },
+    {
+     "wort": "wie",
+     "start": 2.61,
+     "ende": 2.69
+    },
+    {
+     "wort": "ein",
+     "start": 2.81,
+     "ende": 2.93
+    },
+    {
+     "wort": "Kasten",
+     "start": 3.037,
+     "ende": 3.41
+    },
+    {
+     "wort": "Wasser.",
+     "start": 3.45,
+     "ende": 4.21
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Du fährst 130. Fünf Sekunden lang wiegen Auto und du nur 15 Kilo.",
+   "start": 4.25,
+   "ende": 9.89,
+   "woerter": [
+    {
+     "wort": "Du",
+     "start": 4.25,
+     "ende": 4.29
+    },
+    {
+     "wort": "fährst",
+     "start": 4.37,
+     "ende": 4.61
+    },
+    {
+     "wort": "130.",
+     "start": 4.69,
+     "ende": 5.97
+    },
+    {
+     "wort": "Fünf",
+     "start": 6.01,
+     "ende": 6.17
+    },
+    {
+     "wort": "Sekunden",
+     "start": 6.21,
+     "ende": 6.69
+    },
+    {
+     "wort": "lang",
+     "start": 6.81,
+     "ende": 6.93
+    },
+    {
+     "wort": "wiegen",
+     "start": 7.01,
+     "ende": 7.33
+    },
+    {
+     "wort": "Auto",
+     "start": 7.49,
+     "ende": 7.65
+    },
+    {
+     "wort": "und",
+     "start": 7.73,
+     "ende": 7.89
+    },
+    {
+     "wort": "du",
+     "start": 8.05,
+     "ende": 8.21
+    },
+    {
+     "wort": "nur",
+     "start": 8.29,
+     "ende": 8.45
+    },
+    {
+     "wort": "15",
+     "start": 8.53,
+     "ende": 9.01
+    },
+    {
+     "wort": "Kilo.",
+     "start": 9.09,
+     "ende": 9.89
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, mit demselben Motor zischst du jetzt davon. Oder?",
+   "start": 9.97,
+   "ende": 13.61,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 9.97,
+     "ende": 10.45
+    },
+    {
+     "wort": "mit",
+     "start": 10.53,
+     "ende": 10.61
+    },
+    {
+     "wort": "demselben",
+     "start": 10.73,
+     "ende": 11.09
+    },
+    {
+     "wort": "Motor",
+     "start": 11.17,
+     "ende": 11.57
+    },
+    {
+     "wort": "zischst",
+     "start": 11.73,
+     "ende": 12.05
+    },
+    {
+     "wort": "du",
+     "start": 12.09,
+     "ende": 12.13
+    },
+    {
+     "wort": "jetzt",
+     "start": 12.21,
+     "ende": 12.37
+    },
+    {
+     "wort": "davon.",
+     "start": 12.45,
+     "ende": 13.09
+    },
+    {
+     "wort": "Oder?",
+     "start": 13.13,
+     "ende": 13.61
+    }
+   ]
+  },
+  {
+   "id": "start",
+   "text": "Los geht's.",
+   "start": 13.89,
+   "ende": 14.77,
+   "woerter": [
+    {
+     "wort": "Los",
+     "start": 13.89,
+     "ende": 14.13
+    },
+    {
+     "wort": "geht's.",
+     "start": 14.21,
+     "ende": 14.77
+    }
+   ]
+  },
+  {
+   "id": "gas1",
+   "text": "Sekunde eins. Du nimmst den Fuß vom Gas.",
+   "start": 14.81,
+   "ende": 17.41,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 14.81,
+     "ende": 15.17
+    },
+    {
+     "wort": "eins.",
+     "start": 15.25,
+     "ende": 15.89
+    },
+    {
+     "wort": "Du",
+     "start": 15.93,
+     "ende": 15.97
+    },
+    {
+     "wort": "nimmst",
+     "start": 16.05,
+     "ende": 16.21
+    },
+    {
+     "wort": "den",
+     "start": 16.29,
+     "ende": 16.37
+    },
+    {
+     "wort": "Fuß",
+     "start": 16.45,
+     "ende": 16.61
+    },
+    {
+     "wort": "vom",
+     "start": 16.65,
+     "ende": 16.77
+    },
+    {
+     "wort": "Gas.",
+     "start": 16.85,
+     "ende": 17.41
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 17.49,
+   "ende": 19.41,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 17.49,
+     "ende": 17.65
+    },
+    {
+     "wort": "mir,",
+     "start": 17.73,
+     "ende": 17.97
+    },
+    {
+     "wort": "damit",
+     "start": 18.01,
+     "ende": 18.13
+    },
+    {
+     "wort": "du",
+     "start": 18.21,
+     "ende": 18.29
+    },
+    {
+     "wort": "nichts",
+     "start": 18.37,
+     "ende": 18.57
+    },
+    {
+     "wort": "verpasst.",
+     "start": 18.61,
+     "ende": 19.41
+    }
+   ]
+  },
+  {
+   "id": "gas2",
+   "text": "Doch die Luft bremst wie eine Wand. 3,2 g im Gurt!",
+   "start": 19.48,
+   "ende": 24.05,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 19.48,
+     "ende": 19.57
+    },
+    {
+     "wort": "die",
+     "start": 19.65,
+     "ende": 19.81
+    },
+    {
+     "wort": "Luft",
+     "start": 19.89,
+     "ende": 20.21
+    },
+    {
+     "wort": "bremst",
+     "start": 20.25,
+     "ende": 20.69
+    },
+    {
+     "wort": "wie",
+     "start": 20.77,
+     "ende": 20.85
+    },
+    {
+     "wort": "eine",
+     "start": 20.903,
+     "ende": 21.01
+    },
+    {
+     "wort": "Wand.",
+     "start": 21.17,
+     "ende": 21.89
+    },
+    {
+     "wort": "3,2",
+     "start": 21.93,
+     "ende": 22.55
+    },
+    {
+     "wort": "g",
+     "start": 22.55,
+     "ende": 23.17
+    },
+    {
+     "wort": "im",
+     "start": 23.25,
+     "ende": 23.33
+    },
+    {
+     "wort": "Gurt!",
+     "start": 23.41,
+     "ende": 24.05
+    }
+   ]
+  },
+  {
+   "id": "gas3",
+   "text": "Nach fünf Sekunden: nur noch 24.",
+   "start": 24.13,
+   "ende": 26.69,
+   "woerter": [
+    {
+     "wort": "Nach",
+     "start": 24.13,
+     "ende": 24.21
+    },
+    {
+     "wort": "fünf",
+     "start": 24.29,
+     "ende": 24.45
+    },
+    {
+     "wort": "Sekunden:",
+     "start": 24.53,
+     "ende": 25.25
+    },
+    {
+     "wort": "nur",
+     "start": 25.33,
+     "ende": 25.41
+    },
+    {
+     "wort": "noch",
+     "start": 25.49,
+     "ende": 25.65
+    },
+    {
+     "wort": "24.",
+     "start": 25.73,
+     "ende": 26.69
+    }
+   ]
+  },
+  {
+   "id": "voll1",
+   "text": "Dann eben Vollgas! Die Räder drehen durch.",
+   "start": 26.759,
+   "ende": 29.89,
+   "woerter": [
+    {
+     "wort": "Dann",
+     "start": 26.759,
+     "ende": 26.93
+    },
+    {
+     "wort": "eben",
+     "start": 27.01,
+     "ende": 27.25
+    },
+    {
+     "wort": "Vollgas!",
+     "start": 27.41,
+     "ende": 28.37
+    },
+    {
+     "wort": "Die",
+     "start": 28.41,
+     "ende": 28.45
+    },
+    {
+     "wort": "Räder",
+     "start": 28.61,
+     "ende": 28.93
+    },
+    {
+     "wort": "drehen",
+     "start": 29.01,
+     "ende": 29.25
+    },
+    {
+     "wort": "durch.",
+     "start": 29.33,
+     "ende": 29.89
+    }
+   ]
+  },
+  {
+   "id": "voll2",
+   "text": "Der Tacho fällt trotzdem. Auf 73.",
+   "start": 30.03,
+   "ende": 33.17,
+   "woerter": [
+    {
+     "wort": "Der",
+     "start": 30.03,
+     "ende": 30.05
+    },
+    {
+     "wort": "Tacho",
+     "start": 30.13,
+     "ende": 30.45
+    },
+    {
+     "wort": "fällt",
+     "start": 30.53,
+     "ende": 30.77
+    },
+    {
+     "wort": "trotzdem.",
+     "start": 30.85,
+     "ende": 31.65
+    },
+    {
+     "wort": "Auf",
+     "start": 31.73,
+     "ende": 31.81
+    },
+    {
+     "wort": "73.",
+     "start": 31.89,
+     "ende": 33.17
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Ergebnis: 73 km/h. Mehr geht nicht.",
+   "start": 33.25,
+   "ende": 37.09,
+   "woerter": [
+    {
+     "wort": "Ergebnis:",
+     "start": 33.25,
+     "ende": 34.13
+    },
+    {
+     "wort": "73",
+     "start": 34.17,
+     "ende": 35.150000000000006
+    },
+    {
+     "wort": "km/h.",
+     "start": 35.150000000000006,
+     "ende": 36.13
+    },
+    {
+     "wort": "Mehr",
+     "start": 36.17,
+     "ende": 36.37
+    },
+    {
+     "wort": "geht",
+     "start": 36.53,
+     "ende": 36.69
+    },
+    {
+     "wort": "nicht.",
+     "start": 36.77,
+     "ende": 37.09
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Erstens: Reifen halten nur so viel, wie das Auto drückt. 147 Newton. Zweitens: Dem Luftwiderstand ist egal, wie schwer du bist. 473 Newton.",
+   "start": 37.49,
+   "ende": 49.65,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 37.49,
+     "ende": 38.13
+    },
+    {
+     "wort": "Erstens:",
+     "start": 38.37,
+     "ende": 39.05
+    },
+    {
+     "wort": "Reifen",
+     "start": 39.25,
+     "ende": 39.65
+    },
+    {
+     "wort": "halten",
+     "start": 39.73,
+     "ende": 39.97
+    },
+    {
+     "wort": "nur",
+     "start": 40.05,
+     "ende": 40.21
+    },
+    {
+     "wort": "so",
+     "start": 40.29,
+     "ende": 40.37
+    },
+    {
+     "wort": "viel,",
+     "start": 40.53,
+     "ende": 40.73
+    },
+    {
+     "wort": "wie",
+     "start": 40.77,
+     "ende": 40.85
+    },
+    {
+     "wort": "das",
+     "start": 40.93,
+     "ende": 41.01
+    },
+    {
+     "wort": "Auto",
+     "start": 41.09,
+     "ende": 41.33
+    },
+    {
+     "wort": "drückt.",
+     "start": 41.41,
+     "ende": 42.05
+    },
+    {
+     "wort": "147",
+     "start": 42.103,
+     "ende": 43.09
+    },
+    {
+     "wort": "Newton.",
+     "start": 43.25,
+     "ende": 43.97
+    },
+    {
+     "wort": "Zweitens:",
+     "start": 44.01,
+     "ende": 44.69
+    },
+    {
+     "wort": "Dem",
+     "start": 44.85,
+     "ende": 45.01
+    },
+    {
+     "wort": "Luftwiderstand",
+     "start": 45.09,
+     "ende": 45.81
+    },
+    {
+     "wort": "ist",
+     "start": 45.89,
+     "ende": 46.05
+    },
+    {
+     "wort": "egal,",
+     "start": 46.25,
+     "ende": 46.53
+    },
+    {
+     "wort": "wie",
+     "start": 46.57,
+     "ende": 46.61
+    },
+    {
+     "wort": "schwer",
+     "start": 46.69,
+     "ende": 46.85
+    },
+    {
+     "wort": "du",
+     "start": 46.93,
+     "ende": 47.01
+    },
+    {
+     "wort": "bist.",
+     "start": 47.09,
+     "ende": 47.65
+    },
+    {
+     "wort": "473",
+     "start": 47.73,
+     "ende": 48.85
+    },
+    {
+     "wort": "Newton.",
+     "start": 49.01,
+     "ende": 49.65
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und ein Lkw überholt dich. Sein Luftstoß ist fast fünfmal stärker als deine Haftung. Du rutschst zur Seite. Dann greifen die Reifen wieder.",
+   "start": 49.79,
+   "ende": 59.09,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 49.79,
+     "ende": 49.81
+    },
+    {
+     "wort": "ein",
+     "start": 49.89,
+     "ende": 50.05
+    },
+    {
+     "wort": "Lkw",
+     "start": 50.13,
+     "ende": 50.77
+    },
+    {
+     "wort": "überholt",
+     "start": 50.85,
+     "ende": 51.33
+    },
+    {
+     "wort": "dich.",
+     "start": 51.37,
+     "ende": 51.89
+    },
+    {
+     "wort": "Sein",
+     "start": 51.97,
+     "ende": 52.21
+    },
+    {
+     "wort": "Luftstoß",
+     "start": 52.29,
+     "ende": 52.85
+    },
+    {
+     "wort": "ist",
+     "start": 52.93,
+     "ende": 53.09
+    },
+    {
+     "wort": "fast",
+     "start": 53.25,
+     "ende": 53.41
+    },
+    {
+     "wort": "fünfmal",
+     "start": 53.49,
+     "ende": 54.05
+    },
+    {
+     "wort": "stärker",
+     "start": 54.17,
+     "ende": 54.45
+    },
+    {
+     "wort": "als",
+     "start": 54.53,
+     "ende": 54.69
+    },
+    {
+     "wort": "deine",
+     "start": 54.77,
+     "ende": 55.01
+    },
+    {
+     "wort": "Haftung.",
+     "start": 55.05,
+     "ende": 55.81
+    },
+    {
+     "wort": "Du",
+     "start": 55.89,
+     "ende": 55.97
+    },
+    {
+     "wort": "rutschst",
+     "start": 56.05,
+     "ende": 56.37
+    },
+    {
+     "wort": "zur",
+     "start": 56.45,
+     "ende": 56.53
+    },
+    {
+     "wort": "Seite.",
+     "start": 56.61,
+     "ende": 57.33
+    },
+    {
+     "wort": "Dann",
+     "start": 57.41,
+     "ende": 57.57
+    },
+    {
+     "wort": "greifen",
+     "start": 57.65,
+     "ende": 57.97
+    },
+    {
+     "wort": "die",
+     "start": 58.05,
+     "ende": 58.13
+    },
+    {
+     "wort": "Reifen",
+     "start": 58.17,
+     "ende": 58.45
+    },
+    {
+     "wort": "wieder.",
+     "start": 58.53,
+     "ende": 59.09
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Dein Gewicht ist nicht dein Feind. Es hält dich auf der Straße.",
+   "start": 59.13,
+   "ende": 62.85,
+   "woerter": [
+    {
+     "wort": "Dein",
+     "start": 59.13,
+     "ende": 59.25
+    },
+    {
+     "wort": "Gewicht",
+     "start": 59.33,
+     "ende": 59.73
+    },
+    {
+     "wort": "ist",
+     "start": 59.81,
+     "ende": 59.97
+    },
+    {
+     "wort": "nicht",
+     "start": 60.05,
+     "ende": 60.21
+    },
+    {
+     "wort": "dein",
+     "start": 60.29,
+     "ende": 60.45
+    },
+    {
+     "wort": "Feind.",
+     "start": 60.53,
+     "ende": 61.09
+    },
+    {
+     "wort": "Es",
+     "start": 61.17,
+     "ende": 61.25
+    },
+    {
+     "wort": "hält",
+     "start": 61.33,
+     "ende": 61.49
+    },
+    {
+     "wort": "dich",
+     "start": 61.543,
+     "ende": 61.65
+    },
+    {
+     "wort": "auf",
+     "start": 61.73,
+     "ende": 61.81
+    },
+    {
+     "wort": "der",
+     "start": 61.89,
+     "ende": 61.97
+    },
+    {
+     "wort": "Straße.",
+     "start": 62.05,
+     "ende": 62.85
+    }
+   ]
+  },
+  {
+   "id": "ende",
+   "text": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare.",
+   "start": 62.93,
+   "ende": 67.09,
+   "woerter": [
+    {
+     "wort": "Welches",
+     "start": 62.93,
+     "ende": 63.25
+    },
+    {
+     "wort": "Szenario",
+     "start": 63.29,
+     "ende": 63.81
+    },
+    {
+     "wort": "soll",
+     "start": 63.89,
+     "ende": 63.97
+    },
+    {
+     "wort": "ich",
+     "start": 64.05,
+     "ende": 64.13
+    },
+    {
+     "wort": "als",
+     "start": 64.21,
+     "ende": 64.29
+    },
+    {
+     "wort": "Nächstes",
+     "start": 64.37,
+     "ende": 64.69
+    },
+    {
+     "wort": "durchspielen?",
+     "start": 64.77,
+     "ende": 65.57
+    },
+    {
+     "wort": "Schreib",
+     "start": 65.65,
+     "ende": 65.89
+    },
+    {
+     "wort": "es",
+     "start": 65.93,
+     "ende": 65.97
+    },
+    {
+     "wort": "in",
+     "start": 66.05,
+     "ende": 66.13
+    },
+    {
+     "wort": "die",
+     "start": 66.17,
+     "ende": 66.21
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 66.29,
+     "ende": 67.09
+    }
+   ]
+  }
+ ]
+}

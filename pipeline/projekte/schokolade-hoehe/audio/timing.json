@@ -1,0 +1,898 @@
+{
+ "stimme": "Otto",
+ "voice_id": "FTNCalFNG5bRnkkaP5Ug",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 73.856,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Stell dir vor, eine Tafel Schokolade hebt dich in die Luft.",
+   "start": 0.05,
+   "ende": 4.09,
+   "woerter": [
+    {
+     "wort": "Stell",
+     "start": 0.05,
+     "ende": 0.25
+    },
+    {
+     "wort": "dir",
+     "start": 0.37,
+     "ende": 0.49
+    },
+    {
+     "wort": "vor,",
+     "start": 0.57,
+     "ende": 1.13
+    },
+    {
+     "wort": "eine",
+     "start": 1.21,
+     "ende": 1.37
+    },
+    {
+     "wort": "Tafel",
+     "start": 1.45,
+     "ende": 1.77
+    },
+    {
+     "wort": "Schokolade",
+     "start": 1.85,
+     "ende": 2.49
+    },
+    {
+     "wort": "hebt",
+     "start": 2.57,
+     "ende": 2.89
+    },
+    {
+     "wort": "dich",
+     "start": 2.943,
+     "ende": 3.05
+    },
+    {
+     "wort": "in",
+     "start": 3.13,
+     "ende": 3.21
+    },
+    {
+     "wort": "die",
+     "start": 3.29,
+     "ende": 3.37
+    },
+    {
+     "wort": "Luft.",
+     "start": 3.45,
+     "ende": 4.09
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Wie hoch? Hundert Gramm Vollmilch. Alles wird zu Höhe. Du wiegst 75 Kilo. Ohne Luftwiderstand.",
+   "start": 4.17,
+   "ende": 12.01,
+   "woerter": [
+    {
+     "wort": "Wie",
+     "start": 4.17,
+     "ende": 4.25
+    },
+    {
+     "wort": "hoch?",
+     "start": 4.33,
+     "ende": 5.13
+    },
+    {
+     "wort": "Hundert",
+     "start": 5.17,
+     "ende": 5.45
+    },
+    {
+     "wort": "Gramm",
+     "start": 5.53,
+     "ende": 5.77
+    },
+    {
+     "wort": "Vollmilch.",
+     "start": 5.85,
+     "ende": 6.61
+    },
+    {
+     "wort": "Alles",
+     "start": 6.81,
+     "ende": 7.21
+    },
+    {
+     "wort": "wird",
+     "start": 7.25,
+     "ende": 7.45
+    },
+    {
+     "wort": "zu",
+     "start": 7.57,
+     "ende": 7.69
+    },
+    {
+     "wort": "Höhe.",
+     "start": 7.73,
+     "ende": 8.41
+    },
+    {
+     "wort": "Du",
+     "start": 8.49,
+     "ende": 8.57
+    },
+    {
+     "wort": "wiegst",
+     "start": 8.623,
+     "ende": 8.89
+    },
+    {
+     "wort": "75",
+     "start": 8.93,
+     "ende": 9.53
+    },
+    {
+     "wort": "Kilo.",
+     "start": 9.69,
+     "ende": 10.33
+    },
+    {
+     "wort": "Ohne",
+     "start": 10.45,
+     "ende": 10.73
+    },
+    {
+     "wort": "Luftwiderstand.",
+     "start": 10.81,
+     "ende": 12.01
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, eine Tafel bringt dich höchstens aufs Dach. Oder?",
+   "start": 12.05,
+   "ende": 15.57,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 12.05,
+     "ende": 12.73
+    },
+    {
+     "wort": "eine",
+     "start": 12.77,
+     "ende": 12.97
+    },
+    {
+     "wort": "Tafel",
+     "start": 13.05,
+     "ende": 13.37
+    },
+    {
+     "wort": "bringt",
+     "start": 13.41,
+     "ende": 13.61
+    },
+    {
+     "wort": "dich",
+     "start": 13.663,
+     "ende": 13.77
+    },
+    {
+     "wort": "höchstens",
+     "start": 13.797,
+     "ende": 14.17
+    },
+    {
+     "wort": "aufs",
+     "start": 14.25,
+     "ende": 14.41
+    },
+    {
+     "wort": "Dach.",
+     "start": 14.45,
+     "ende": 15.05
+    },
+    {
+     "wort": "Oder?",
+     "start": 15.09,
+     "ende": 15.57
+    }
+   ]
+  },
+  {
+   "id": "start",
+   "text": "Los geht's.",
+   "start": 15.85,
+   "ende": 16.69,
+   "woerter": [
+    {
+     "wort": "Los",
+     "start": 15.85,
+     "ende": 16.09
+    },
+    {
+     "wort": "geht's.",
+     "start": 16.17,
+     "ende": 16.69
+    }
+   ]
+  },
+  {
+   "id": "flug1",
+   "text": "Stückchen eins. Du schwebst durch die Decke. Sanft.",
+   "start": 16.89,
+   "ende": 20.97,
+   "woerter": [
+    {
+     "wort": "Stückchen",
+     "start": 16.89,
+     "ende": 17.29
+    },
+    {
+     "wort": "eins.",
+     "start": 17.45,
+     "ende": 18.17
+    },
+    {
+     "wort": "Du",
+     "start": 18.25,
+     "ende": 18.33
+    },
+    {
+     "wort": "schwebst",
+     "start": 18.41,
+     "ende": 18.97
+    },
+    {
+     "wort": "durch",
+     "start": 19.023,
+     "ende": 19.13
+    },
+    {
+     "wort": "die",
+     "start": 19.21,
+     "ende": 19.29
+    },
+    {
+     "wort": "Decke.",
+     "start": 19.37,
+     "ende": 20.01
+    },
+    {
+     "wort": "Sanft.",
+     "start": 20.17,
+     "ende": 20.97
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 21.05,
+   "ende": 22.97,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 21.05,
+     "ende": 21.21
+    },
+    {
+     "wort": "mir,",
+     "start": 21.29,
+     "ende": 21.61
+    },
+    {
+     "wort": "damit",
+     "start": 21.69,
+     "ende": 21.81
+    },
+    {
+     "wort": "du",
+     "start": 21.85,
+     "ende": 21.93
+    },
+    {
+     "wort": "nichts",
+     "start": 22.01,
+     "ende": 22.21
+    },
+    {
+     "wort": "verpasst.",
+     "start": 22.25,
+     "ende": 22.97
+    }
+   ]
+  },
+  {
+   "id": "wende1",
+   "text": "Doch jetzt wird's schnell. Nach drei Stückchen bist du über dem Berliner Fernsehturm.",
+   "start": 23.04,
+   "ende": 27.77,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 23.04,
+     "ende": 23.21
+    },
+    {
+     "wort": "jetzt",
+     "start": 23.29,
+     "ende": 23.53
+    },
+    {
+     "wort": "wird's",
+     "start": 23.61,
+     "ende": 23.85
+    },
+    {
+     "wort": "schnell.",
+     "start": 23.877,
+     "ende": 24.49
+    },
+    {
+     "wort": "Nach",
+     "start": 24.61,
+     "ende": 24.73
+    },
+    {
+     "wort": "drei",
+     "start": 24.81,
+     "ende": 24.97
+    },
+    {
+     "wort": "Stückchen",
+     "start": 25.05,
+     "ende": 25.45
+    },
+    {
+     "wort": "bist",
+     "start": 25.53,
+     "ende": 25.61
+    },
+    {
+     "wort": "du",
+     "start": 25.69,
+     "ende": 25.85
+    },
+    {
+     "wort": "über",
+     "start": 25.97,
+     "ende": 26.09
+    },
+    {
+     "wort": "dem",
+     "start": 26.17,
+     "ende": 26.25
+    },
+    {
+     "wort": "Berliner",
+     "start": 26.33,
+     "ende": 26.65
+    },
+    {
+     "wort": "Fernsehturm.",
+     "start": 26.73,
+     "ende": 27.77
+    }
+   ]
+  },
+  {
+   "id": "flug2",
+   "text": "Neun Stückchen: Brocken. Zwölf: Feldberg.",
+   "start": 27.81,
+   "ende": 31.29,
+   "woerter": [
+    {
+     "wort": "Neun",
+     "start": 27.81,
+     "ende": 28.01
+    },
+    {
+     "wort": "Stückchen:",
+     "start": 28.09,
+     "ende": 28.81
+    },
+    {
+     "wort": "Brocken.",
+     "start": 28.85,
+     "ende": 29.61
+    },
+    {
+     "wort": "Zwölf:",
+     "start": 29.69,
+     "ende": 30.41
+    },
+    {
+     "wort": "Feldberg.",
+     "start": 30.45,
+     "ende": 31.29
+    }
+   ]
+  },
+  {
+   "id": "flug3",
+   "text": "Dreiundzwanzig. Zur Zugspitze fehlen neunzehn Meter.",
+   "start": 31.33,
+   "ende": 34.89,
+   "woerter": [
+    {
+     "wort": "Dreiundzwanzig.",
+     "start": 31.33,
+     "ende": 32.57
+    },
+    {
+     "wort": "Zur",
+     "start": 32.597,
+     "ende": 32.65
+    },
+    {
+     "wort": "Zugspitze",
+     "start": 32.81,
+     "ende": 33.37
+    },
+    {
+     "wort": "fehlen",
+     "start": 33.45,
+     "ende": 33.77
+    },
+    {
+     "wort": "neunzehn",
+     "start": 33.85,
+     "ende": 34.21
+    },
+    {
+     "wort": "Meter.",
+     "start": 34.25,
+     "ende": 34.89
+    }
+   ]
+  },
+  {
+   "id": "flug4",
+   "text": "Das letzte Stückchen. Du überholst die Zugspitze!",
+   "start": 35.01,
+   "ende": 38.13,
+   "woerter": [
+    {
+     "wort": "Das",
+     "start": 35.01,
+     "ende": 35.13
+    },
+    {
+     "wort": "letzte",
+     "start": 35.21,
+     "ende": 35.53
+    },
+    {
+     "wort": "Stückchen.",
+     "start": 35.61,
+     "ende": 36.33
+    },
+    {
+     "wort": "Du",
+     "start": 36.399,
+     "ende": 36.41
+    },
+    {
+     "wort": "überholst",
+     "start": 36.49,
+     "ende": 37.05
+    },
+    {
+     "wort": "die",
+     "start": 37.09,
+     "ende": 37.13
+    },
+    {
+     "wort": "Zugspitze!",
+     "start": 37.21,
+     "ende": 38.13
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand: 3.071 Meter. 109 Meter über der Zugspitze.",
+   "start": 38.33,
+   "ende": 43.77,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 38.33,
+     "ende": 39.13
+    },
+    {
+     "wort": "3.071",
+     "start": 39.17,
+     "ende": 40.65
+    },
+    {
+     "wort": "Meter.",
+     "start": 40.81,
+     "ende": 41.45
+    },
+    {
+     "wort": "109",
+     "start": 41.49,
+     "ende": 42.09
+    },
+    {
+     "wort": "Meter",
+     "start": 42.17,
+     "ende": 42.49
+    },
+    {
+     "wort": "über",
+     "start": 42.65,
+     "ende": 42.89
+    },
+    {
+     "wort": "der",
+     "start": 42.97,
+     "ende": 43.05
+    },
+    {
+     "wort": "Zugspitze.",
+     "start": 43.13,
+     "ende": 43.77
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Eine Tafel: 2,26 Millionen Joule. Ein Meter Höhe: nur 736 Joule.",
+   "start": 44.29,
+   "ende": 51.93,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 44.29,
+     "ende": 44.77
+    },
+    {
+     "wort": "Eine",
+     "start": 44.97,
+     "ende": 45.21
+    },
+    {
+     "wort": "Tafel:",
+     "start": 45.29,
+     "ende": 46.01
+    },
+    {
+     "wort": "2,26",
+     "start": 46.05,
+     "ende": 47.21
+    },
+    {
+     "wort": "Millionen",
+     "start": 47.29,
+     "ende": 47.85
+    },
+    {
+     "wort": "Joule.",
+     "start": 48.01,
+     "ende": 48.65
+    },
+    {
+     "wort": "Ein",
+     "start": 48.73,
+     "ende": 48.81
+    },
+    {
+     "wort": "Meter",
+     "start": 48.97,
+     "ende": 49.13
+    },
+    {
+     "wort": "Höhe:",
+     "start": 49.21,
+     "ende": 49.77
+    },
+    {
+     "wort": "nur",
+     "start": 49.81,
+     "ende": 50.01
+    },
+    {
+     "wort": "736",
+     "start": 50.09,
+     "ende": 51.29
+    },
+    {
+     "wort": "Joule.",
+     "start": 51.37,
+     "ende": 51.93
+    }
+   ]
+  },
+  {
+   "id": "ueber",
+   "text": "Und das Verrückte: Schokolade hat pro Kilo 5,4-mal so viel Energie wie TNT. Sie explodiert nicht, weil sie Sauerstoff braucht.",
+   "start": 52.07,
+   "ende": 60.73,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 52.07,
+     "ende": 52.09
+    },
+    {
+     "wort": "das",
+     "start": 52.17,
+     "ende": 52.25
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 52.29,
+     "ende": 52.89
+    },
+    {
+     "wort": "Schokolade",
+     "start": 53.13,
+     "ende": 53.77
+    },
+    {
+     "wort": "hat",
+     "start": 53.85,
+     "ende": 54.01
+    },
+    {
+     "wort": "pro",
+     "start": 54.09,
+     "ende": 54.25
+    },
+    {
+     "wort": "Kilo",
+     "start": 54.33,
+     "ende": 54.65
+    },
+    {
+     "wort": "5,4-mal",
+     "start": 54.89,
+     "ende": 56.01
+    },
+    {
+     "wort": "so",
+     "start": 56.09,
+     "ende": 56.17
+    },
+    {
+     "wort": "viel",
+     "start": 56.25,
+     "ende": 56.33
+    },
+    {
+     "wort": "Energie",
+     "start": 56.41,
+     "ende": 56.81
+    },
+    {
+     "wort": "wie",
+     "start": 56.89,
+     "ende": 56.97
+    },
+    {
+     "wort": "TNT.",
+     "start": 57.13,
+     "ende": 57.85
+    },
+    {
+     "wort": "Sie",
+     "start": 58.17,
+     "ende": 58.25
+    },
+    {
+     "wort": "explodiert",
+     "start": 58.33,
+     "ende": 58.89
+    },
+    {
+     "wort": "nicht,",
+     "start": 58.97,
+     "ende": 59.29
+    },
+    {
+     "wort": "weil",
+     "start": 59.33,
+     "ende": 59.41
+    },
+    {
+     "wort": "sie",
+     "start": 59.45,
+     "ende": 59.53
+    },
+    {
+     "wort": "Sauerstoff",
+     "start": 59.61,
+     "ende": 60.09
+    },
+    {
+     "wort": "braucht.",
+     "start": 60.17,
+     "ende": 60.73
+    }
+   ]
+  },
+  {
+   "id": "echt",
+   "text": "In echt nutzen Muskeln nur ein Viertel: 768 Meter. Zugspitze? Vier Tafeln.",
+   "start": 60.89,
+   "ende": 67.37,
+   "woerter": [
+    {
+     "wort": "In",
+     "start": 60.89,
+     "ende": 61.05
+    },
+    {
+     "wort": "echt",
+     "start": 61.17,
+     "ende": 61.37
+    },
+    {
+     "wort": "nutzen",
+     "start": 61.45,
+     "ende": 61.77
+    },
+    {
+     "wort": "Muskeln",
+     "start": 61.81,
+     "ende": 62.17
+    },
+    {
+     "wort": "nur",
+     "start": 62.25,
+     "ende": 62.41
+    },
+    {
+     "wort": "ein",
+     "start": 62.49,
+     "ende": 62.57
+    },
+    {
+     "wort": "Viertel:",
+     "start": 62.65,
+     "ende": 63.29
+    },
+    {
+     "wort": "768",
+     "start": 63.37,
+     "ende": 64.65
+    },
+    {
+     "wort": "Meter.",
+     "start": 64.73,
+     "ende": 65.37
+    },
+    {
+     "wort": "Zugspitze?",
+     "start": 65.41,
+     "ende": 66.21
+    },
+    {
+     "wort": "Vier",
+     "start": 66.41,
+     "ende": 66.57
+    },
+    {
+     "wort": "Tafeln.",
+     "start": 66.65,
+     "ende": 67.37
+    }
+   ]
+  },
+  {
+   "id": "merk",
+   "text": "In jeder Tafel steckt ein Berg.",
+   "start": 67.45,
+   "ende": 69.69,
+   "woerter": [
+    {
+     "wort": "In",
+     "start": 67.45,
+     "ende": 67.53
+    },
+    {
+     "wort": "jeder",
+     "start": 67.61,
+     "ende": 67.85
+    },
+    {
+     "wort": "Tafel",
+     "start": 67.93,
+     "ende": 68.33
+    },
+    {
+     "wort": "steckt",
+     "start": 68.41,
+     "ende": 68.73
+    },
+    {
+     "wort": "ein",
+     "start": 68.81,
+     "ende": 68.89
+    },
+    {
+     "wort": "Berg.",
+     "start": 68.97,
+     "ende": 69.69
+    }
+   ]
+  },
+  {
+   "id": "ende",
+   "text": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare.",
+   "start": 69.77,
+   "ende": 73.93,
+   "woerter": [
+    {
+     "wort": "Welches",
+     "start": 69.77,
+     "ende": 70.01
+    },
+    {
+     "wort": "Szenario",
+     "start": 70.09,
+     "ende": 70.65
+    },
+    {
+     "wort": "soll",
+     "start": 70.73,
+     "ende": 70.81
+    },
+    {
+     "wort": "ich",
+     "start": 70.89,
+     "ende": 70.97
+    },
+    {
+     "wort": "als",
+     "start": 71.05,
+     "ende": 71.13
+    },
+    {
+     "wort": "Nächstes",
+     "start": 71.21,
+     "ende": 71.61
+    },
+    {
+     "wort": "durchspielen?",
+     "start": 71.663,
+     "ende": 72.41
+    },
+    {
+     "wort": "Schreib",
+     "start": 72.49,
+     "ende": 72.73
+    },
+    {
+     "wort": "es",
+     "start": 72.77,
+     "ende": 72.81
+    },
+    {
+     "wort": "in",
+     "start": 72.89,
+     "ende": 72.97
+    },
+    {
+     "wort": "die",
+     "start": 73.01,
+     "ende": 73.05
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 73.13,
+     "ende": 73.93
+    }
+   ]
+  }
+ ]
+}

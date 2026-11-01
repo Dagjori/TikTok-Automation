@@ -1,0 +1,103 @@
+{
+  "titel": "Was siehst du, wenn der Boden unter dir 5 Sekunden durchsichtig wird?",
+  "konto": "stelldirvor",
+  "stil": "16 POV-Filmlook stilisiert (Account 2): Three.js, Ich-Kamera auf Augenhöhe auf dem Schulhof, Blick durch die Erde in Kugelschalen",
+  "teamfarben": {
+    "Land": "#FF4F5A",
+    "Wasser": "#2EC4B6"
+  },
+  "klangteppich": "raum",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Stell dir vor, der Boden unter dir wird fünf Sekunden durchsichtig.",
+      "sprechtext": "[curious] Stell dir vor, der Boden unter dir wird fünf Sekunden durchsichtig."
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Bis ganz auf die andere Seite der Erde. Du stehst auf einem Schulhof, mitten in Deutschland.",
+      "sprechtext": "Bis ganz auf die andere Seite der Erde.\nDu stehst auf einem Schulhof, mitten in Deutschland."
+    },
+    {
+      "id": "falle",
+      "phase": "denkfalle",
+      "text": "Klar, ganz unten siehst du Australien. Oder?",
+      "sprechtext": "Klar, ganz unten siehst du Australien.\nOder?"
+    },
+    {
+      "id": "start",
+      "phase": "start",
+      "text": "Los geht's.",
+      "sprechtext": "[excited] Los geht's!"
+    },
+    {
+      "id": "sek1",
+      "phase": "rennen",
+      "text": "Sekunde eins. Erde, Sand, Gestein. Und es wird heiß.",
+      "sprechtext": "Sekunde EINS.\nErde, Sand, Gestein.\nUnd es wird HEISS."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst."
+    },
+    {
+      "id": "sek2",
+      "phase": "wendung",
+      "text": "Sekunde zwei. Doch nach dreißig Kilometern endet die Kruste. Darunter glüht der Mantel.",
+      "sprechtext": "Sekunde ZWEI.\n[surprised] Doch nach dreißig Kilometern endet die Kruste.\nDarunter GLÜHT der Mantel."
+    },
+    {
+      "id": "sek3",
+      "phase": "wendung",
+      "text": "Sekunde drei. Der äußere Kern: flüssiges Eisen.",
+      "sprechtext": "Sekunde DREI.\nDer äußere Kern: flüssiges EISEN."
+    },
+    {
+      "id": "sek4",
+      "phase": "wendung",
+      "text": "Sekunde vier. Der innere Kern: sechstausend Grad. So heiß wie die Sonnenoberfläche.",
+      "sprechtext": "Sekunde VIER.\nDer innere Kern: sechstausend Grad.\nSo heiß wie die SONNENOBERFLÄCHE."
+    },
+    {
+      "id": "sek5",
+      "phase": "wendung",
+      "text": "Sekunde fünf. Unten ist kein Australien. Nur Pazifik.",
+      "sprechtext": "Sekunde FÜNF.\n[surprised] Unten ist kein Australien.\nNur PAZIFIK."
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Ergebnis: 12.742 Kilometer bis zum Pazifik. Über 800 bis zum nächsten Land.",
+      "sprechtext": "Ergebnis:\nZwölftausendsiebenhundert Kilometer bis zum Pazifik.\nÜber achthundert bis zum nächsten LAND."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Erstens: Siebzig Prozent der Erde sind Wasser. Zweitens: Nur fünfzehn Prozent vom Land haben Land gegenüber.",
+      "sprechtext": "[thoughtful] Warum?\nErstens: Siebzig Prozent der Erde sind WASSER.\nZweitens: Nur fünfzehn Prozent vom Land haben Land GEGENÜBER."
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "ueberraschung",
+      "text": "Das Verrückte: Durch ein Loch ohne Luft wärst du in zweiundvierzig Minuten drüben. Und fällst gleich wieder zurück.",
+      "sprechtext": "[surprised] Das Verrückte:\nDurch ein Loch ohne Luft wärst du in zweiundvierzig Minuten DRÜBEN.\nUnd fällst gleich wieder ZURÜCK."
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Wer tief genug gräbt, landet meistens im Meer.",
+      "sprechtext": "Wer tief genug gräbt, landet meistens im MEER."
+    },
+    {
+      "id": "ende",
+      "phase": "schluss",
+      "text": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare.",
+      "sprechtext": "Welches Szenario soll ich als Nächstes durchspielen?\nSchreib es in die Kommentare."
+    }
+  ],
+  "caption": "Was liegt auf der anderen Seite der Erde genau unter dir? 🌍 Ich hab's durchgespielt. Hättest du auf Australien getippt? 👇 #erde #gegenpunkt #geografie #wissen #waswaerewenn"
+}

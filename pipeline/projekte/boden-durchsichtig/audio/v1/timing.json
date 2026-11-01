@@ -1,0 +1,925 @@
+{
+ "stimme": "Otto",
+ "voice_id": "FTNCalFNG5bRnkkaP5Ug",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 71.259,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Stell dir vor, der Boden unter dir wird fünf Sekunden lang durchsichtig.",
+   "start": 0.05,
+   "ende": 5.01,
+   "woerter": [
+    {
+     "wort": "Stell",
+     "start": 0.05,
+     "ende": 0.29
+    },
+    {
+     "wort": "dir",
+     "start": 0.37,
+     "ende": 0.61
+    },
+    {
+     "wort": "vor,",
+     "start": 0.77,
+     "ende": 1.17
+    },
+    {
+     "wort": "der",
+     "start": 1.25,
+     "ende": 1.33
+    },
+    {
+     "wort": "Boden",
+     "start": 1.49,
+     "ende": 1.81
+    },
+    {
+     "wort": "unter",
+     "start": 1.89,
+     "ende": 2.13
+    },
+    {
+     "wort": "dir",
+     "start": 2.21,
+     "ende": 2.45
+    },
+    {
+     "wort": "wird",
+     "start": 2.49,
+     "ende": 2.69
+    },
+    {
+     "wort": "fünf",
+     "start": 2.85,
+     "ende": 3.09
+    },
+    {
+     "wort": "Sekunden",
+     "start": 3.17,
+     "ende": 3.57
+    },
+    {
+     "wort": "lang",
+     "start": 3.65,
+     "ende": 3.89
+    },
+    {
+     "wort": "durchsichtig.",
+     "start": 3.97,
+     "ende": 5.01
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Bis ganz auf die andere Seite der Erde. Du stehst auf einem Schulhof, mitten in Deutschland.",
+   "start": 5.09,
+   "ende": 10.45,
+   "woerter": [
+    {
+     "wort": "Bis",
+     "start": 5.09,
+     "ende": 5.25
+    },
+    {
+     "wort": "ganz",
+     "start": 5.33,
+     "ende": 5.57
+    },
+    {
+     "wort": "auf",
+     "start": 5.65,
+     "ende": 5.73
+    },
+    {
+     "wort": "die",
+     "start": 5.81,
+     "ende": 5.89
+    },
+    {
+     "wort": "andere",
+     "start": 5.97,
+     "ende": 6.21
+    },
+    {
+     "wort": "Seite",
+     "start": 6.29,
+     "ende": 6.53
+    },
+    {
+     "wort": "der",
+     "start": 6.61,
+     "ende": 6.69
+    },
+    {
+     "wort": "Erde.",
+     "start": 6.77,
+     "ende": 7.41
+    },
+    {
+     "wort": "Du",
+     "start": 7.49,
+     "ende": 7.57
+    },
+    {
+     "wort": "stehst",
+     "start": 7.61,
+     "ende": 7.81
+    },
+    {
+     "wort": "auf",
+     "start": 7.89,
+     "ende": 7.97
+    },
+    {
+     "wort": "einem",
+     "start": 8.01,
+     "ende": 8.21
+    },
+    {
+     "wort": "Schulhof,",
+     "start": 8.29,
+     "ende": 9.01
+    },
+    {
+     "wort": "mitten",
+     "start": 9.05,
+     "ende": 9.33
+    },
+    {
+     "wort": "in",
+     "start": 9.37,
+     "ende": 9.41
+    },
+    {
+     "wort": "Deutschland.",
+     "start": 9.49,
+     "ende": 10.45
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, ganz unten siehst du Australien. Oder?",
+   "start": 10.53,
+   "ende": 13.73,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 10.53,
+     "ende": 11.01
+    },
+    {
+     "wort": "ganz",
+     "start": 11.05,
+     "ende": 11.33
+    },
+    {
+     "wort": "unten",
+     "start": 11.41,
+     "ende": 11.73
+    },
+    {
+     "wort": "siehst",
+     "start": 11.81,
+     "ende": 11.97
+    },
+    {
+     "wort": "du",
+     "start": 12.01,
+     "ende": 12.05
+    },
+    {
+     "wort": "Australien.",
+     "start": 12.13,
+     "ende": 13.17
+    },
+    {
+     "wort": "Oder?",
+     "start": 13.21,
+     "ende": 13.73
+    }
+   ]
+  },
+  {
+   "id": "start",
+   "text": "Los geht's.",
+   "start": 14.05,
+   "ende": 14.93,
+   "woerter": [
+    {
+     "wort": "Los",
+     "start": 14.05,
+     "ende": 14.29
+    },
+    {
+     "wort": "geht's.",
+     "start": 14.37,
+     "ende": 14.93
+    }
+   ]
+  },
+  {
+   "id": "sek1",
+   "text": "Sekunde eins. Erde, Sand, Gestein. Und es wird heiß.",
+   "start": 15.09,
+   "ende": 19.89,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 15.09,
+     "ende": 15.49
+    },
+    {
+     "wort": "eins.",
+     "start": 15.57,
+     "ende": 16.17
+    },
+    {
+     "wort": "Erde,",
+     "start": 16.37,
+     "ende": 17.01
+    },
+    {
+     "wort": "Sand,",
+     "start": 17.21,
+     "ende": 17.57
+    },
+    {
+     "wort": "Gestein.",
+     "start": 17.677,
+     "ende": 18.45
+    },
+    {
+     "wort": "Und",
+     "start": 18.53,
+     "ende": 18.61
+    },
+    {
+     "wort": "es",
+     "start": 18.69,
+     "ende": 18.77
+    },
+    {
+     "wort": "wird",
+     "start": 18.85,
+     "ende": 19.01
+    },
+    {
+     "wort": "heiß.",
+     "start": 19.09,
+     "ende": 19.89
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 19.97,
+   "ende": 22.05,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 19.97,
+     "ende": 20.21
+    },
+    {
+     "wort": "mir,",
+     "start": 20.29,
+     "ende": 20.53
+    },
+    {
+     "wort": "damit",
+     "start": 20.61,
+     "ende": 20.77
+    },
+    {
+     "wort": "du",
+     "start": 20.85,
+     "ende": 20.93
+    },
+    {
+     "wort": "nichts",
+     "start": 20.983,
+     "ende": 21.17
+    },
+    {
+     "wort": "verpasst.",
+     "start": 21.25,
+     "ende": 22.05
+    }
+   ]
+  },
+  {
+   "id": "sek2",
+   "text": "Sekunde zwei. Doch nach dreißig Kilometern endet die Kruste. Darunter glüht der Mantel.",
+   "start": 22.09,
+   "ende": 28.29,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 22.09,
+     "ende": 22.53
+    },
+    {
+     "wort": "zwei.",
+     "start": 22.61,
+     "ende": 23.33
+    },
+    {
+     "wort": "Doch",
+     "start": 23.454,
+     "ende": 23.49
+    },
+    {
+     "wort": "nach",
+     "start": 23.57,
+     "ende": 23.73
+    },
+    {
+     "wort": "dreißig",
+     "start": 23.81,
+     "ende": 24.13
+    },
+    {
+     "wort": "Kilometern",
+     "start": 24.29,
+     "ende": 24.85
+    },
+    {
+     "wort": "endet",
+     "start": 24.93,
+     "ende": 25.25
+    },
+    {
+     "wort": "die",
+     "start": 25.33,
+     "ende": 25.41
+    },
+    {
+     "wort": "Kruste.",
+     "start": 25.45,
+     "ende": 26.21
+    },
+    {
+     "wort": "Darunter",
+     "start": 26.33,
+     "ende": 26.77
+    },
+    {
+     "wort": "glüht",
+     "start": 26.93,
+     "ende": 27.33
+    },
+    {
+     "wort": "der",
+     "start": 27.37,
+     "ende": 27.41
+    },
+    {
+     "wort": "Mantel.",
+     "start": 27.49,
+     "ende": 28.29
+    }
+   ]
+  },
+  {
+   "id": "sek3",
+   "text": "Sekunde drei. Der äußere Kern: flüssiges Eisen.",
+   "start": 28.33,
+   "ende": 32.13,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 28.33,
+     "ende": 28.77
+    },
+    {
+     "wort": "drei.",
+     "start": 28.85,
+     "ende": 29.49
+    },
+    {
+     "wort": "Der",
+     "start": 29.57,
+     "ende": 29.65
+    },
+    {
+     "wort": "äußere",
+     "start": 29.73,
+     "ende": 30.05
+    },
+    {
+     "wort": "Kern:",
+     "start": 30.21,
+     "ende": 30.77
+    },
+    {
+     "wort": "flüssiges",
+     "start": 30.85,
+     "ende": 31.33
+    },
+    {
+     "wort": "Eisen.",
+     "start": 31.41,
+     "ende": 32.13
+    }
+   ]
+  },
+  {
+   "id": "sek4",
+   "text": "Sekunde vier. Der innere Kern: sechstausend Grad. So heiß wie die Sonnenoberfläche.",
+   "start": 32.21,
+   "ende": 38.21,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 32.21,
+     "ende": 32.61
+    },
+    {
+     "wort": "vier.",
+     "start": 32.77,
+     "ende": 33.33
+    },
+    {
+     "wort": "Der",
+     "start": 33.37,
+     "ende": 33.41
+    },
+    {
+     "wort": "innere",
+     "start": 33.57,
+     "ende": 33.81
+    },
+    {
+     "wort": "Kern:",
+     "start": 33.97,
+     "ende": 34.53
+    },
+    {
+     "wort": "sechstausend",
+     "start": 34.61,
+     "ende": 35.33
+    },
+    {
+     "wort": "Grad.",
+     "start": 35.49,
+     "ende": 36.13
+    },
+    {
+     "wort": "So",
+     "start": 36.17,
+     "ende": 36.21
+    },
+    {
+     "wort": "heiß",
+     "start": 36.37,
+     "ende": 36.61
+    },
+    {
+     "wort": "wie",
+     "start": 36.69,
+     "ende": 36.77
+    },
+    {
+     "wort": "die",
+     "start": 36.81,
+     "ende": 36.85
+    },
+    {
+     "wort": "Sonnenoberfläche.",
+     "start": 36.93,
+     "ende": 38.21
+    }
+   ]
+  },
+  {
+   "id": "sek5",
+   "text": "Sekunde fünf. Unten ist kein Australien. Nur Pazifik.",
+   "start": 38.25,
+   "ende": 42.45,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 38.25,
+     "ende": 38.69
+    },
+    {
+     "wort": "fünf.",
+     "start": 38.77,
+     "ende": 39.41
+    },
+    {
+     "wort": "Unten",
+     "start": 39.62,
+     "ende": 39.73
+    },
+    {
+     "wort": "ist",
+     "start": 39.81,
+     "ende": 39.97
+    },
+    {
+     "wort": "kein",
+     "start": 40.05,
+     "ende": 40.29
+    },
+    {
+     "wort": "Australien.",
+     "start": 40.37,
+     "ende": 41.33
+    },
+    {
+     "wort": "Nur",
+     "start": 41.37,
+     "ende": 41.49
+    },
+    {
+     "wort": "Pazifik.",
+     "start": 41.57,
+     "ende": 42.45
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Ergebnis: 12.742 Kilometer bis zum Pazifik. Über 800 bis zum nächsten Land.",
+   "start": 42.61,
+   "ende": 49.17,
+   "woerter": [
+    {
+     "wort": "Ergebnis:",
+     "start": 42.61,
+     "ende": 43.49
+    },
+    {
+     "wort": "12.742",
+     "start": 43.53,
+     "ende": 44.93
+    },
+    {
+     "wort": "Kilometer",
+     "start": 45.01,
+     "ende": 45.57
+    },
+    {
+     "wort": "bis",
+     "start": 45.65,
+     "ende": 45.81
+    },
+    {
+     "wort": "zum",
+     "start": 45.89,
+     "ende": 46.05
+    },
+    {
+     "wort": "Pazifik.",
+     "start": 46.09,
+     "ende": 47.01
+    },
+    {
+     "wort": "Über",
+     "start": 47.063,
+     "ende": 47.17
+    },
+    {
+     "wort": "800",
+     "start": 47.41,
+     "ende": 47.97
+    },
+    {
+     "wort": "bis",
+     "start": 48.13,
+     "ende": 48.21
+    },
+    {
+     "wort": "zum",
+     "start": 48.29,
+     "ende": 48.45
+    },
+    {
+     "wort": "nächsten",
+     "start": 48.503,
+     "ende": 48.77
+    },
+    {
+     "wort": "Land.",
+     "start": 48.85,
+     "ende": 49.17
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Erstens: Siebzig Prozent der Erde sind Wasser. Zweitens: Nur fünfzehn Prozent vom Land haben Land gegenüber.",
+   "start": 49.57,
+   "ende": 57.21,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 49.57,
+     "ende": 50.05
+    },
+    {
+     "wort": "Erstens:",
+     "start": 50.37,
+     "ende": 51.17
+    },
+    {
+     "wort": "Siebzig",
+     "start": 51.25,
+     "ende": 51.57
+    },
+    {
+     "wort": "Prozent",
+     "start": 51.65,
+     "ende": 51.97
+    },
+    {
+     "wort": "der",
+     "start": 52.05,
+     "ende": 52.13
+    },
+    {
+     "wort": "Erde",
+     "start": 52.21,
+     "ende": 52.45
+    },
+    {
+     "wort": "sind",
+     "start": 52.53,
+     "ende": 52.69
+    },
+    {
+     "wort": "Wasser.",
+     "start": 52.77,
+     "ende": 53.49
+    },
+    {
+     "wort": "Zweitens:",
+     "start": 53.53,
+     "ende": 54.29
+    },
+    {
+     "wort": "Nur",
+     "start": 54.33,
+     "ende": 54.53
+    },
+    {
+     "wort": "fünfzehn",
+     "start": 54.57,
+     "ende": 55.01
+    },
+    {
+     "wort": "Prozent",
+     "start": 55.09,
+     "ende": 55.41
+    },
+    {
+     "wort": "vom",
+     "start": 55.49,
+     "ende": 55.57
+    },
+    {
+     "wort": "Land",
+     "start": 55.65,
+     "ende": 55.89
+    },
+    {
+     "wort": "haben",
+     "start": 55.97,
+     "ende": 56.21
+    },
+    {
+     "wort": "Land",
+     "start": 56.29,
+     "ende": 56.45
+    },
+    {
+     "wort": "gegenüber.",
+     "start": 56.53,
+     "ende": 57.21
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Das Verrückte: Durch ein Loch ohne Luft wärst du in zweiundvierzig Minuten drüben. Und fällst gleich wieder zurück.",
+   "start": 57.467,
+   "ende": 64.13,
+   "woerter": [
+    {
+     "wort": "Das",
+     "start": 57.467,
+     "ende": 57.49
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 57.57,
+     "ende": 58.25
+    },
+    {
+     "wort": "Durch",
+     "start": 58.37,
+     "ende": 58.53
+    },
+    {
+     "wort": "ein",
+     "start": 58.61,
+     "ende": 58.77
+    },
+    {
+     "wort": "Loch",
+     "start": 58.85,
+     "ende": 59.09
+    },
+    {
+     "wort": "ohne",
+     "start": 59.25,
+     "ende": 59.41
+    },
+    {
+     "wort": "Luft",
+     "start": 59.49,
+     "ende": 59.81
+    },
+    {
+     "wort": "wärst",
+     "start": 59.89,
+     "ende": 60.05
+    },
+    {
+     "wort": "du",
+     "start": 60.09,
+     "ende": 60.13
+    },
+    {
+     "wort": "in",
+     "start": 60.21,
+     "ende": 60.37
+    },
+    {
+     "wort": "zweiundvierzig",
+     "start": 60.45,
+     "ende": 61.17
+    },
+    {
+     "wort": "Minuten",
+     "start": 61.25,
+     "ende": 61.57
+    },
+    {
+     "wort": "drüben.",
+     "start": 61.65,
+     "ende": 62.29
+    },
+    {
+     "wort": "Und",
+     "start": 62.37,
+     "ende": 62.45
+    },
+    {
+     "wort": "fällst",
+     "start": 62.53,
+     "ende": 62.85
+    },
+    {
+     "wort": "gleich",
+     "start": 62.93,
+     "ende": 63.09
+    },
+    {
+     "wort": "wieder",
+     "start": 63.17,
+     "ende": 63.41
+    },
+    {
+     "wort": "zurück.",
+     "start": 63.45,
+     "ende": 64.13
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Wer tief genug gräbt, landet meistens im Meer.",
+   "start": 64.25,
+   "ende": 67.25,
+   "woerter": [
+    {
+     "wort": "Wer",
+     "start": 64.25,
+     "ende": 64.37
+    },
+    {
+     "wort": "tief",
+     "start": 64.41,
+     "ende": 64.61
+    },
+    {
+     "wort": "genug",
+     "start": 64.69,
+     "ende": 64.93
+    },
+    {
+     "wort": "gräbt,",
+     "start": 65.01,
+     "ende": 65.49
+    },
+    {
+     "wort": "landet",
+     "start": 65.57,
+     "ende": 65.89
+    },
+    {
+     "wort": "meistens",
+     "start": 65.97,
+     "ende": 66.45
+    },
+    {
+     "wort": "im",
+     "start": 66.53,
+     "ende": 66.61
+    },
+    {
+     "wort": "Meer.",
+     "start": 66.65,
+     "ende": 67.25
+    }
+   ]
+  },
+  {
+   "id": "ende",
+   "text": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare.",
+   "start": 67.29,
+   "ende": 71.33,
+   "woerter": [
+    {
+     "wort": "Welches",
+     "start": 67.29,
+     "ende": 67.57
+    },
+    {
+     "wort": "Szenario",
+     "start": 67.61,
+     "ende": 68.13
+    },
+    {
+     "wort": "soll",
+     "start": 68.21,
+     "ende": 68.29
+    },
+    {
+     "wort": "ich",
+     "start": 68.37,
+     "ende": 68.45
+    },
+    {
+     "wort": "als",
+     "start": 68.53,
+     "ende": 68.61
+    },
+    {
+     "wort": "Nächstes",
+     "start": 68.69,
+     "ende": 69.01
+    },
+    {
+     "wort": "durchspielen?",
+     "start": 69.09,
+     "ende": 69.89
+    },
+    {
+     "wort": "Schreib",
+     "start": 69.93,
+     "ende": 70.13
+    },
+    {
+     "wort": "es",
+     "start": 70.17,
+     "ende": 70.21
+    },
+    {
+     "wort": "in",
+     "start": 70.29,
+     "ende": 70.33
+    },
+    {
+     "wort": "die",
+     "start": 70.37,
+     "ende": 70.45
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 70.49,
+     "ende": 71.33
+    }
+   ]
+  }
+ ]
+}
