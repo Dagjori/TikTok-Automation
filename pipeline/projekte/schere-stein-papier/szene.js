@@ -360,15 +360,15 @@ async function start() {
   });
 
   // ---------- Regeln als Chips ----------
-  M.chips({ y: 372, ausrichtung: "mitte", aus: "falle:Klar-0.12", liste: [{ text: "100 RUNDEN", ein: "regeln:Hundert-0.03", art: "dunkel", gross: true }] });
-  M.chips({ y: 486, ausrichtung: "mitte", aus: "falle:Klar-0.12", liste: [
+  M.chips({ y: 372, ausrichtung: "mitte", aus: "falle:Klar-0.3", liste: [{ text: "100 RUNDEN", ein: "regeln:Hundert-0.03", art: "dunkel", gross: true }] });
+  M.chips({ y: 486, ausrichtung: "mitte", aus: "falle:Klar-0.3", liste: [
     { text: "ROT = TAKTIK", ein: "regeln:Rot-0.03", art: "voll", team: "a" },
     { text: "CYAN = ZUFALL", ein: "regeln:Cyan-0.03", art: "voll", team: "b" },
   ] });
 
   // ---------- Denkfalle und Start ----------
-  const sKlar = M.stempel({ text: "KLAR!", ein: "falle:Klar,", x: SICHER.mitte, y: 650, winkel: -7, farbe: "a", groesse: 124 });
-  M.chip({ text: "ODER?", ein: "falle:Oder?", aus: "falle:Los-0.05", art: "dunkel", gross: true, x: SICHER.mitte, anker: "mitte", y: 790, winkel: 4 });
+  const sKlar = M.stempel({ text: "KLAR!", ein: "falle:Klar,", x: SICHER.mitte, y: 740, winkel: -7, farbe: "a", groesse: 124 });
+  M.chip({ text: "ODER?", ein: "falle:Oder?", aus: "falle:Los-0.28", art: "dunkel", gross: true, x: SICHER.mitte, anker: "mitte", y: 790, winkel: 4 });
   M.chip({ text: "LOS GEHT'S!", ein: "falle:Los", aus: "start:Runde+0.15", art: "voll", team: "akzent", gross: true, x: SICHER.mitte, anker: "mitte", y: 790 });
 
   // ---------- Rennen Zufall: die ersten drei Runden einzeln ----------
@@ -376,7 +376,7 @@ async function start() {
   urteil("UNENTSCHIEDEN", tZ[1], "akzent");
   urteil("PUNKT ROT", tZ[2], "a");
   urteil("PUNKT CYAN", tZ[3], "b");
-  const remisPille = new RemisPille(M, { y: 1226, ein: tZ[4], aus: T("ergebnis1:Endstand") - 0.1, wert: (t) => stand(t).remis });
+  const remisPille = new RemisPille(M, { y: 1226, ein: tZ[4] + 0.35, aus: T("ergebnis1:Endstand") - 0.1, wert: (t) => stand(t).remis });
   hud.add(remisPille);
   const remisPille2 = new RemisPille(M, { y: 1226, ein: tM[1], aus: T("ergebnis2:Endstand") - 0.1, wert: (t) => stand(t).remis });
   hud.add(remisPille2);
@@ -385,7 +385,7 @@ async function start() {
   M.folgen({ ein: "folgen:Folg-0.05", dauer: 1.8, y: 960, team: "a" });
 
   // ---------- Wendung 1: Cyan zieht vorbei ----------
-  const sUeber = M.stempel({ text: "ÜBERHOLT!", ein: T("wendung1:vorbei") - 0.2, x: SICHER.mitte, y: 640, winkel: -6, art: "stempel", farbe: CYAN, groesse: 118 });
+  const sUeber = M.stempel({ text: "ÜBERHOLT!", ein: T("wendung1:vorbei") - 0.2, x: SICHER.mitte, y: 740, winkel: -6, art: "stempel", farbe: CYAN, groesse: 118 });
   M.chip({ text: "GLEICHSTAND", ein: T("wendung1:11") - 0.4, aus: "rennen2:Rot", art: "dunkel", gross: true, x: SICHER.mitte, anker: "mitte", y: 796 });
 
   // ---------- Ergebnis 1: praktisch gleich ----------
@@ -398,11 +398,11 @@ async function start() {
     sieger: { text: "PRAKTISCH GLEICH", team: "akzent", ein: "ergebnis1:Praktisch" },
   });
   const pct = (x) => `${Math.round(x * 100)} %`;
-  M.chip({ text: `100.000 SPIELE: ROT VORN ${pct(MC_ZUFALL.anteilRotVorn)} · CYAN VORN ${pct(MC_ZUFALL.anteilCyanVorn)}`, ein: "ergebnis1:gleich", aus: "wendung2:Aber-0.08", art: "hell", team: "akzent", x: SICHER.mitte, anker: "mitte", y: 1236 });
+  M.chip({ text: `100.000 SPIELE · JE ${pct((MC_ZUFALL.anteilRotVorn + MC_ZUFALL.anteilCyanVorn) / 2)} VORN`, ein: "ergebnis1:Endstand+0.55", aus: "wendung2:Aber-0.3", art: "hell", team: "akzent", x: SICHER.mitte, anker: "mitte", y: 778 });
 
   // ---------- Wendung 2: Cyan spielt wie ein Mensch ----------
-  const sMensch = M.stempel({ text: "MENSCH!", ein: "wendung2:Mensch", x: SICHER.mitte, y: 640, winkel: 6, farbe: CYAN, groesse: 124 });
-  M.chips({ y: 796, ausrichtung: "mitte", aus: "rennen3:Runde-0.1", liste: [
+  const sMensch = M.stempel({ text: "MENSCH!", ein: "wendung2:Mensch", x: SICHER.mitte, y: 740, winkel: 6, farbe: CYAN, groesse: 124 });
+  M.chips({ y: 796, abstand: 40, ausrichtung: "mitte", aus: "rennen3:Runde-0.1", liste: [
     { text: "MENSCH: 44 % GLEICHER ZUG", ein: "mensch:44", art: "voll", team: "b" },
     { text: "ZUFALL: 33 %", ein: "mensch:33", art: "dunkel" },
   ] });
@@ -410,7 +410,7 @@ async function start() {
   // ---------- Ergebnis 2 ----------
   const vorsprung2 = lm.siegeRot - lm.siegeCyan;
   M.bilanz({
-    y: 856, ein: "ergebnis2:Endstand-0.1", aus: "warum:Warum-0.12", titel: "Endstand nach 100 Runden",
+    y: 856, ein: "ergebnis2:Endstand-0.1", aus: "warum:Warum-0.32", titel: "Endstand nach 100 Runden",
     zeilen: [
       { label: "ROT · TAKTIK", wert: lm.siegeRot, team: "a", ein: "ergebnis2:50," },
       { label: "CYAN · MENSCH", wert: lm.siegeCyan, team: "b", ein: "ergebnis2:31." },
@@ -429,7 +429,7 @@ async function start() {
   });
 
   // ---------- Zweite Überraschung: Cyan würfelt ab der Hälfte ----------
-  const sWeg = M.stempel({ text: "STOPP!", ein: "ueberraschung:nicht", x: SICHER.mitte, y: 640, winkel: -5, art: "stempel", farbe: AKZENT, groesse: 124 });
+  const sWeg = M.stempel({ text: "STOPP!", ein: "ueberraschung:nicht", x: SICHER.mitte, y: 740, winkel: -5, art: "stempel", farbe: AKZENT, groesse: 124 });
   const haelfte2Rot = lw.siegeRot - lw.runden[49].siegeRot, haelfte2Cyan = lw.siegeCyan - lw.runden[49].siegeCyan;
   M.formel({
     y: 872, aus: "merksatz:Gegen-0.15", titel: "Zweite Hälfte · Siege", groesse: 96,
@@ -441,7 +441,7 @@ async function start() {
   });
 
   // ---------- Merksatz ----------
-  M.pointe({ woerter: [{ text: "GEGEN ZUFALL", ein: "merksatz:Gegen" }, { umbruch: true }, { text: "HILFT KEINE", ein: "merksatz:hilft" }, { text: "TAKTIK.", ein: "merksatz:Taktik", farbe: "a" }], aus: "merksatz:Nur-0.12", y: 420, groesse: 112 });
+  M.pointe({ woerter: [{ text: "GEGEN ZUFALL", ein: "merksatz:Gegen" }, { umbruch: true }, { text: "HILFT KEINE", ein: "merksatz:hilft" }, { text: "TAKTIK.", ein: "merksatz:Taktik", farbe: "a" }], aus: "merksatz:Nur-0.32", y: 420, groesse: 112 });
   M.pointe({ woerter: [{ text: "NUR GEGEN", ein: "merksatz:Nur" }, { umbruch: true }, { text: "MUSTER.", ein: "merksatz:Muster", farbe: "akzent" }], aus: "schluss:Was-0.1", y: 420, groesse: 128 });
   M.melde({ t: "merksatz:Taktik", typ: "pointe-wort", klang: "klick", text: "TAKTIK." });
   M.melde({ t: "merksatz:Muster", typ: "pointe-wort", klang: "akzent", text: "MUSTER." });

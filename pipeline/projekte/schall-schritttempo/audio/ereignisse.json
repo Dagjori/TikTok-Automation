@@ -181,6 +181,22 @@
   {
    "typ": "kamera",
    "quelle": "Regie",
+   "t": 13.81,
+   "art": "zoom",
+   "dauer": 0.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.51,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.6,
+   "text": "Blickwechsel"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
    "t": 15.46,
    "art": "stoss",
    "dauer": 0.2,
@@ -852,6 +868,13 @@
    "typ": "sieger",
    "klang": "sieg",
    "text": "S-BAHN ZUERST"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.17,
+   "typ": "kamera",
+   "klang": false,
+   "text": "Totale fährt ran"
   },
   {
    "quelle": "Formel",

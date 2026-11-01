@@ -50,6 +50,8 @@
 - In Arbeit: Umbau `post_buffer.py` auf direktes Planen (Agent), 30-Tage-Plan Account 2 (Agent, `docs/17`, `data/plan/account2-30-tage.csv`), erstes Video `@stelldirvor.pov` (Prototyp „schall-schritttempo“), Simulierbar 03.11. (Schere, Stein, Papier; Mittagessen).
 - Offen: Posting-Zeiten in `docs/11` §3C eintragen, sobald der Agent mit `docs/11` fertig ist. Inhaber zeigt später Konkurrenzvideos für Account 2.
 
+**Eingeplant in Buffer (01.11. 21:39):** simulierbar 02.11. 12:30 Fußgängerampel (Post `6ae7a3541120555c2a3641b0`), 02.11. 19:30 Steuererklärung oder Überstunden (`6ae7a35f1120555c2a364536`), beide ohne KI-Label, Status scheduled. Buffer zieht das Video erst beim Posten von Supabase (Link gültig bis dueAt + 12 h), daher Supabase-Dateien erst nach `--nachpruefen` löschen. Erinnerungen an mich: 02.11. 10:15 UTC (Schokolade eingeplant?), 11:50 UTC und 18:50 UTC (Nachprüfung). Log `pipeline/out/buffer_log.jsonl` liegt nur im Container.
+
 ## Nächste Schritte
 
 | # | Schritt | Wer | Zeit | Status |

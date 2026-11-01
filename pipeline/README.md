@@ -195,6 +195,7 @@ engine/          wiederverwendbar für alle Videos
   stil_flat.js   Baukasten Designstil 4 „2D-Flat-Infografik“ in Three.js: Formen in Bild-Pixeln, orthografische Kamera (Zoom über kamera.zoom), Parallax-Ebenen, Figuren, Möbel, Münzen, Belege, Haus/Büro/Auto
   stil_collage.js Baukasten Designstil 6 „Papier-Collage“ in Three.js: Papierstücke mit Rissrand, weißem Saum und Papierschatten (`papier(eltern, rechteck(w, h), farbe, {x, y, z, dreh, amp, schatten, raster, druck})`), Kraftpapier-Grund, Zeitungsfetzen, Klebeband, Schreibmaschinen-Etikett, Wellpappe-Boden, Münzsäule aus Papierscheiben (`muenzSaeule(...).setze(geld, zeit)`), Abreißkalender mit Flugblättern, Papieruhr, Papierfigur, Topf, Lieferbeutel, Tablett, Einkaufstüte, Schwamm, `stopp(t, 12)` für Stop-Motion-Takt; Muster `projekte/mittagessen-job/`
   stil_lowpoly.js Baukasten Designstil 1 „Low-Poly-Miniatur“ (Stadt/Verkehr, mit kern.js): Fußgänger mit Gelenken (Gehen, Drücken, Warten), Fußgänger-/Kfz-Signale, Anforderungstaster mit „Signal kommt“, Querstraße mit Furt, Straßenbahn, Autoströme mit Rückstau, Tilt-Shift-Fokus
+  stil_clay.js   Baukasten Designstil 3 „Clay-Spielzeug“ (mit kern.js): Knete-Material, Hände (Stein/Papier/Schere mischbar), Sockel, Bauer, Würfel, Kopf-Figur, Brett mit 10×10 Kacheln und Sortier-Animation, Wand und Tisch
 projekte/<name>/ skript.json, audio/ (stimme.mp3, timing.json, ereignisse.json), szene.html, szene.js
 qc/massstab.py   Prüfliste docs/15 §11
 render.js        Bilder rendern (parallel), Ereignis-Protokoll schreiben

@@ -643,6 +643,8 @@ async function start() {
     return { pos: [lerp(-26, -22, k), lerp(12.5, 9.5, k), lerp(13, 9, k)], ziel: [lerp(2, 6, k), 0.6, 0.8], fov: 46 };
   }, { zp });
   regieT.stoss({ t: T("ergebnis:Lärm") + 0.05, staerke: 0.5 });
+  regieT.zoom({ t: "Warum?", staerke: 0.14, halt: 3, rueck: 1.2 });
+  M.melde({ t: T("Warum?"), typ: "kamera", klang: false, text: "Totale fährt ran" });
   const weltT = { szene: W.szene, kamera: kamT, post: { ...post, vignette: 0.36 }, update(t) { setzeWelt(t, { pov: false }); regieT.anwenden(t); } };
 
   const zl = new Zeitleiste(buehne);
