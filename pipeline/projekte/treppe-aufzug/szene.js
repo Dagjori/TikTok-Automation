@@ -976,7 +976,7 @@ async function start() {
     W.strichMat.opacity = clamp(Math.abs(kab.v) / 1.6) * 0.85 * (kab.v > 0 ? 1 : 0.6);
     W.kab.children[W.kab.children.length - 1].scale.y = kab.v >= 0 ? 1 : -1;
     // Rufknopf EG leuchtet ab „ruft“ bis die Tür aufgeht; Etagenschilder färben sich beim Passieren
-    const knopf = (t >= knopfAn && ta < P.WARTEZEIT + 0.5) ? (t < tLos ? 0.5 + 0.5 * Math.sin((t - knopfAn) * 18) : 1) : 0;
+    const knopf = (t >= knopfAn && t < tLoop && ta < P.WARTEZEIT + 0.5) ? (t < tLos ? 0.5 + 0.5 * Math.sin((t - knopfAn) * 18) : 1) : 0;
     W.knoepfe[0].color.set(knopf > 0.5 ? GELB : "#3A4152");
     for (const s of W.schilderT) s.m.map = s.k > 0 && wertTreppe(ta) >= s.k * E - 1e-6 ? s.tx.a : s.k === ZIEL ? s.tx.ziel : s.tx.neutral;
     for (const s of W.schilderK) s.m.map = s.k > 0 && ta >= 34 && AU.hoehe(ta) >= s.k * E - 1e-6 ? s.tx.b : s.k === ZIEL ? s.tx.ziel : s.tx.neutral;
