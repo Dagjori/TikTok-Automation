@@ -1,6 +1,6 @@
 # Designstile für Simulierbar
 
-**Stand:** 01.11.2026 · **Status:** entschieden: Stil wechselt je Thema (Abschnitt 0) · **neu:** Stile 9–15, Technik-Pfade und Alleinstellungsmerkmal (Abschnitte 0.1–0.5)
+**Stand:** 01.11.2026 · **Status:** entschieden: Stil wechselt je Thema (Abschnitt 0), **kein fester Look als Markenzeichen** (Inhaber 01.11.) · **neu:** Stile 9–15 und Technik-Pfade (Abschnitte 0.1–0.3)
 
 **Legende:**
 - **F** = belegter Fakt mit Quelle (bei Messungen: selbst gemessen, Datei genannt)
@@ -23,6 +23,13 @@ Alle Beispielbilder zeigen denselben Inhalt: das GELD-Duell „Deutschlandticket
 - **Neue Stile kommen sofort in diesen Katalog**, sobald Claude einen weiteren passenden Stil findet: neue Zeile in der Tabelle unten, Beispielbild in `docs/assets/stile/`, Quellcode in `pipeline/stile/`.
 - **Untertitel und HUD sind in allen Looks gleich aufgebaut** (Maßstab-Layout, siehe Hinweis oben). Nur das Material der Tafel passt sich dem Stil an (Holzbrett, Karton, Filzflicken, Comic-Panel, Milchglas …).
 - **Neue feste Regel (Auftrag des Inhabers, 31.10.2026):** Videos entstehen **ausschließlich mit Three.js und/oder Blender**, auch kombiniert: Modelle, Materialien und Licht in Blender bauen und backen, als glTF exportieren und in Three.js animieren (Stil 15 zeigt den Weg). Das HUD (Tafel, Chips, Untertitel) bleibt HTML/CSS in der Three.js-Seite. Folge für die alten SVG/HTML-Muster 4–7: siehe Spalte „Technik“.
+- **Entscheidung des Inhabers (01.11.2026): Unser Markenzeichen ist die Qualität, nicht ein bestimmter Look.**
+  - Alle 15 Stile sind gleichberechtigt. Je Video gilt der Stil, der am besten zum Thema passt.
+  - Die Empfehlung „Handgemachte Miniatur“ als fester Look (Abschnitt 0.4) ist abgelehnt.
+- **Stilwahl je Video mit Konkurrenz-Recherche:**
+  - Vor jeder Produktion sieht sich Claude erfolgreiche Videos zum Thema bzw. zu Nachbarthemen an: öffentliche TikTok-Seiten, Websuche, Konkurrenz-Monitor, und Vorbild-Videos, die der Inhaber hochlädt, vollständig wie in `docs/15`.
+  - Daraus folgt: Welcher Look trägt dieses Thema am besten? Und wie heben wir uns in der Qualität ab?
+  - Das Ergebnis steht kurz in `skript.json` (Feld `stil_begruendung`).
 - Im 30-Tage-Plan steht der Stil je Video in der Spalte `stil` (`data/plan/30-tage.csv`).
 
 ### Stil-Katalog und Auswahlregel
@@ -51,7 +58,7 @@ Renderkosten: Sekunden je Videobild 1080×1920 im Cloud-Container (4 Kerne, ohne
 - Zwei direkt aufeinanderfolgende Videos haben nie denselben Stil.
 - Passen zwei Stile, gewinnt der, der länger nicht dran war.
 - Typografie (7) darf als Baustein für Hook und Ergebnis in jedem Stil auftauchen. **Blaupause (13) darf als Szenenwechsel für „Warum?“ in jedem Stil auftauchen** (wie der Querschnitt in K3).
-- Die Material-Stile 9, 10, 11 (und später Knete als Upgrade von 3) bilden die Familie **„Handgemachte Miniatur“** mit festem Kamera- und Lichtrezept (Abschnitt 0.4). Sie sind unser Alleinstellungsmerkmal.
+- Die Material-Stile 9, 10, 11 (und später Knete als Upgrade von 3) sind normale Katalog-Stile wie alle anderen. Sie werden gewählt, wenn sie zum Thema passen. Ein fester Look ist abgelehnt (Inhaber 01.11.).
 - Jeder Stil braucht beim ersten Einsatz einen eigenen Szenen-Baukasten auf Basis der Beispielbilder in `pipeline/stile/` (**Schätzung:** 3–6 Std. Agentenarbeit je Stil, Blender-Stile mit Bake-Weg 5–8 Std.). Danach ist er wiederverwendbar.
 
 ### 0.1 Neue Stile 9–15: Steckbriefe
@@ -123,7 +130,9 @@ Messung im Cloud-Container (4 Kerne, ohne GPU), Cycles mit 3–4 Threads. **Zeit
 
 Folgerung: Der Qualitätssprung durch Blender ist im Standbild deutlich (A, eigener Bildvergleich 9 gegen 3). Fürs Video ist Cycles je Bild in der Cloud nicht machbar. **Der Bake-Weg holt den Großteil der Blender-Qualität (Licht, weiche Schatten, Material) zu Three.js-Kosten** (F, Messung Stil 15). Was verloren geht: Glanz und Spiegelungen, Glas-Brechung, bewegte Schatten (Ersatz: Kontaktschatten, Three.js-Glanzlicht) (F, Vergleich der Bilder 9 und 15).
 
-### 0.4 Alleinstellungsmerkmal: Empfehlung
+### 0.4 Alleinstellungsmerkmal: Empfehlung (vom Inhaber abgelehnt am 01.11.)
+
+> **Entscheidung 01.11.:** kein fester Look als Markenzeichen. Das Markenzeichen ist die Qualität. Der Stil wechselt weiter je Thema. Der folgende Text bleibt nur als Begründung und Material-Wissen stehen (Kamera- und Lichtrezept gelten weiter, wenn einer der Material-Stile gewählt wird).
 
 **Empfehlung: „Handgemachte Miniatur-Rennbahn“.** Jedes Duell läuft als Rennen auf einer Tisch-Miniatur aus echten Materialien: **Holz (9), Papier (10), Filz (11)**, später Knete (Upgrade von 3). Gerendert mit Blender-Licht, ausgeliefert über den Bake-Weg in Three.js (15). Dazu zwei schnelle Bausteine: **Blaupause (13)** als Szenenwechsel für „Warum?“ und **Comic-Toon (12)** für actionreiche Rennen bzw. wenn es schnell gehen muss.
 
@@ -146,7 +155,7 @@ Begründung:
 
 | # | Schritt | Wer | Zeit (S) |
 |---|---|---|---|
-| 1 | Übersicht `uebersicht_neu.jpg` ansehen, Familie „Handgemachte Miniatur“ bestätigen oder Stile streichen | Inhaber | 10 Min. |
+| 1 | ~~Familie „Handgemachte Miniatur“ bestätigen~~ erledigt: abgelehnt, alle Stile bleiben gleichberechtigt (01.11.) | Inhaber | – |
 | 2 | Bake-Baukasten verallgemeinern: Blender-Szene → Bake → glTF → Engine-Modul (Fahrzeuge animieren, Räder drehen, Kontaktschatten, Tiefenunschärfe) für Holz, danach Papier und Filz | Claude (mit dem Engine-Agenten abstimmen) | 6–8 Std. |
 | 3 | Erstes Video im Holz-Stil (Thema mit Rennen, z. B. Verkehr) und eins in Comic-Toon als schnelle Gegenprobe | Claude | je 3–4 Std. |
 | 4 | Blaupausen-Szenenwechsel als Engine-Baustein für „Warum?“ | Claude | 3 Std. |

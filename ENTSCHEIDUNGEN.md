@@ -52,3 +52,5 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-10-31 | 30-Tage-Plan zusätzlich als PDF zum Herunterladen (`docs/plan/30-tage-plan.pdf`) | Inhaber |
 | 2026-10-31 | Vor jedem `/compact` wird der Stand gesichert (automatisch per Hook, `.sitzung/`, nicht im Repo) | Inhaber: keine Informationen verlieren |
 | 2026-10-31 | Abgeleitet aus dem Maßstab (Inhaber kann widersprechen): Untertitel als kurze Phrasen (2–5 Wörter) mit Schlüsselwort in Teamfarbe statt Wort für Wort, weiterhin ohne Kasten und mit Kontur; Satzpausen kurz (ca. 0,26 s, Abschnitte 0,35 s statt 0,6 s); Schleife (letztes Bild = erstes) | Maßstab `docs/15` §6–8 |
+| 2026-11-01 | Logo: Konzept A „S-Kurve“, als statisches Bild (keine Animation), Profilbild TikTok: `marke/logo/a-s-kurve/simulierbar-logo-a-s-kurve-profilbild-1080.png` | Inhaber: nutzt es als TikTok-Logo |
+| 2026-11-01 | Kein fester Look als Markenzeichen, unser Markenzeichen ist die Qualität. Stil wechselt weiter je Thema aus dem ganzen Katalog (15 Stile); Stilwahl gestützt auf laufende Konkurrenz-Recherche. Empfehlung „Handgemachte Miniatur“ abgelehnt | Inhaber |

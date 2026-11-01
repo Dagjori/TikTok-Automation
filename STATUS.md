@@ -1,6 +1,6 @@
 # STATUS
 
-**Stand:** 01.11.2026, ca. 01:30 Uhr (Nacht nach der Neuaufstellung)
+**Stand:** 01.11.2026, ca. 01:45 Uhr (Nacht nach der Neuaufstellung)
 
 ## Wo wir stehen
 - **Neuaufstellung (31.10. spät):** Maßstab sind 4 virale Konkurrenzvideos (je über 1 Mio. Aufrufe), Auswertung in `docs/15-massstab.md`. Verbindlich, Pflichtlektüre zu Beginn jeder Sitzung.
@@ -29,10 +29,9 @@
   - **Renderzeit gestiegen:** 4,6–5,2 s/Bild unter Last (S: ohne Last ca. 2,5 s/Bild, also ca. 1,5 Std. pro Video). Schnelle Vorschau mit `--query "msaa=0&schatten=1024"`.
 - **Stile:**
   - Katalog um 9–15 erweitert (Holz, Papier, Filz, Comic-Toon, Blaupause, Glas-Labor, Holz gebacken). Übersicht `docs/assets/stile/uebersicht_neu.jpg`.
-  - Empfehlung Alleinstellungsmerkmal: Familie „Handgemachte Miniatur“ (Holz/Papier/Filz, später Knete) über den Weg „Blender backen → glTF → Three.js“ (`docs/10`, Abschnitt 0.4).
-  - **Bestätigung durch den Inhaber offen.**
+  - **Entscheidung 01.11.:** kein fester Look als Markenzeichen, das Markenzeichen ist die Qualität. Alle 15 Stile sind gleichberechtigt, die Wahl je Thema stützt sich auf Konkurrenz-Recherche. Die Empfehlung „Handgemachte Miniatur“ ist abgelehnt.
   - Die alten Stile 4/5/6 werden beim ersten Einsatz in Three.js nachgebaut.
-- **Logo:** 3 Konzepte aus Blender in `marke/` (Übersicht `marke/logo/uebersicht.png`). Empfehlung: A „S-Kurve“. **Wahl offen.** Nicht im Video verwenden.
+- **Logo:** **A „S-Kurve“ gewählt (01.11.)**, als statisches Profilbild für TikTok (`marke/logo/a-s-kurve/simulierbar-logo-a-s-kurve-profilbild-1080.png`). Nicht im Video verwenden.
 - **30-Tage-Plan nach Maßstab:**
   - 17 Themen ersetzt (u. a. Duschen, weil es Vorbild-Video K4 ist), 7 als Duell umgebaut
   - je Video Hook, Denkfalle, 2 Wendungen, Teamfarben, Maßstab-Score (Schnitt 76,5)
@@ -51,7 +50,7 @@
 
 | # | Schritt | Wer | Zeit | Status |
 |---|---|---|---|---|
-| 1 | Entscheiden: Stimme v4 oder v2; Logo A/B/C; Stil-Familie „Handgemachte Miniatur“ ja/nein; Untertitel als Phrasen ok | Inhaber | 10 Min. | offen |
+| 1 | Entscheiden: Stimme v4 oder v2 (Proben am 01.11. erneut als Video geschickt); Untertitel als Phrasen ok; Logo als TikTok-Profilbild hochladen | Inhaber | 10 Min. | offen |
 | 2 | Repo auf privat stellen (GitHub → Settings → General → Change visibility) | Inhaber | 2 Min. | offen |
 | 3 | Startsignal: Spurwechsel als erstes Video nach Maßstab neu bauen (Skript steht in `docs/08` §4) mit dem neuen Baukasten, danach GTA 6 | Inhaber, dann Claude | ca. 3–4 Std. Claude | wartet |
 | 4 | Windows-PC einrichten (Claude Code, Node, ffmpeg, Blender), um mit GPU zu rendern | Inhaber plus Claude | 30–60 Min. | empfohlen |
@@ -61,8 +60,6 @@
 
 ## Offene Punkte
 - [ ] Stimme: Eleven v4 oder Multilingual v2 (Hörproben verschickt)
-- [ ] Logo: A „S-Kurve“ (Empfehlung), B oder C
-- [ ] Stil-Familie „Handgemachte Miniatur“ als Alleinstellungsmerkmal bestätigen
 - [ ] Position des Folgen-Elements (y ≈ 950) auf echtem Gerät prüfen
 - [ ] Teppich-Pegel (−10 dB) mit echter Stimme gegenhören
 - [ ] Plan: „120 oder 130 km/h“ ist optisch nah an K2. Bleibt mit eigenem Winkel (Tagesoptik, Euro pro Stunde).

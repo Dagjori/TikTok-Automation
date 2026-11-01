@@ -99,9 +99,11 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
     - Keine anderen Video-, Vorlagen- oder KI-Video-Generatoren.
     - HUD, Untertitel und Karten als HTML/CSS-Ebene in derselben Three.js-Seite gehören dazu. Die alten Stile 4, 5 und 6 (SVG/HTML-Muster) werden beim ersten Einsatz in Three.js nachgebaut.
     - Echte Blender-Renders (Cycles) nur für Standbilder, Logo und kurze Szenen. Für ganze Videos in Blender-Optik gilt der Weg „Blender backen → glTF → Three.js“ (Stil 15, ca. 0,9 s/Bild).
-  - **Kein Kanalname, kein Logo, keine Rubrik im Video**, nie (Entscheidung 31.10.). Das 3D-Logo (`marke/`) ist für Profilbild und Kanalgrafik.
+  - **Kein Kanalname, kein Logo, keine Rubrik im Video**, nie (Entscheidung 31.10.). Das Logo ist Konzept A „S-Kurve“ (`marke/logo/a-s-kurve/`, Entscheidung 01.11.), als statisches Profilbild ohne Animation.
   - **Designstil je Video:**
-    - genau einer aus dem Stil-Katalog in `docs/10-designstile.md` (Abschnitt 0), passend zum Thema
+    - genau einer aus dem Stil-Katalog in `docs/10-designstile.md` (Abschnitt 0, derzeit 15 Stile), passend zum Thema
+    - **kein fester Look als Markenzeichen, unser Markenzeichen ist die Qualität** (Entscheidung 01.11.)
+    - Stilwahl mit Konkurrenz-Recherche: erfolgreiche Videos zum Thema ansehen, welcher Look trägt es am besten (`docs/10`, Abschnitt 0)
     - nie zweimal derselbe Stil hintereinander
     - neue gute Stile sofort in den Katalog aufnehmen
   - **Untertitel** (nach Maßstab, `docs/15` §8):

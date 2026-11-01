@@ -8,6 +8,8 @@
 
 ## 1. Kurzfazit
 
+**Entscheidung des Inhabers (01.11.2026): Konzept A „S-Kurve“, als statisches Profilbild ohne Animation** (`logo/a-s-kurve/simulierbar-logo-a-s-kurve-profilbild-1080.png`). Die Animation bleibt nur als Reserve.
+
 **Empfehlung: Konzept A „S-Kurve“.** Es ist das einzige Zeichen, das Name (S), Format (zwei Varianten im Duell) und Tempo (Rennbahn, kursiv) zugleich trägt. Bei 48 px im Kreis bleibt ein klares zweifarbiges S übrig (gesehen in den Prüfbildern). Für A gibt es zusätzlich die Logo-Animation.
 
 ## 2. Die drei Konzepte
