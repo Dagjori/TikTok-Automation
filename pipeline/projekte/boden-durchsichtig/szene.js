@@ -369,11 +369,11 @@ function baueAbgrund(szene) {
   const texMantel = rauschTextur(1024, 512, 11, [[0, "#0A0305"], [0.35, "#2A0808"], [0.55, "#8A1C0C"], [0.75, "#E04512"], [1, "#FF8A2E"]], { sx: 6, sy: 3, oktaven: 5, kontrast: 2.1 });
   kugel(R_MOHO - 1, hitze(texMantel, { sk: [2, 1], gain: 1.0 }), { ws: 96, hs: 48 });
   // äußerer Kern: flüssiges Eisen, hell
-  const texKern = rauschTextur(1024, 512, 23, [[0, "#5A1406"], [0.4, "#C23A12"], [0.65, "#F2701E"], [0.85, "#FFA444"], [1, "#FFD9A0"]], { sx: 5, sy: 3, oktaven: 5, kontrast: 1.8 });
-  kugel(R_CMB, hitze(texKern, { sk: [3, 2], gain: 1.05, tempo: 1.6 }), { ws: 96, hs: 48 });
+  const texKern = rauschTextur(1024, 512, 23, [[0, "#4A0F05"], [0.4, "#B53410"], [0.65, "#F2701E"], [0.85, "#FFA444"], [1, "#FFE0B0"]], { sx: 6, sy: 3, oktaven: 5, kontrast: 2.5 });
+  kugel(R_CMB, hitze(texKern, { sk: [4, 3], gain: 1.0, tempo: 1.6 }), { ws: 96, hs: 48 });
   // innerer Kern: weißglühend
-  const texInnen = rauschTextur(512, 256, 37, [[0, "#FFC890"], [0.5, "#FFE8CC"], [1, "#FFFFFF"]], { sx: 6, sy: 3, oktaven: 4, kontrast: 1.2 });
-  kugel(R_ICB, hitze(texInnen, { sk: [3, 2], gain: 1.5, tempo: 2.2 }), { ws: 64, hs: 32 });
+  const texInnen = rauschTextur(512, 256, 37, [[0, "#E8742E"], [0.45, "#FFB878"], [0.8, "#FFE6C8"], [1, "#FFFFFF"]], { sx: 6, sy: 3, oktaven: 4, kontrast: 2.4 });
+  kugel(R_ICB, hitze(texInnen, { sk: [4, 3], gain: 1.0, tempo: 2.2 }), { ws: 64, hs: 32 });
 
   // Rand-Leuchten an den Grenzen (Fresnel, additiv)
   const rand = [
@@ -387,8 +387,8 @@ function baueAbgrund(szene) {
     { r: R_OBER - 17, farbe: "#D8A4A0", a: 0.85, seed: 44 }, { r: R_OBER - 23.5, farbe: "#7E93B4", a: 0.9, seed: 45 },
   ];
   const kruste = schichten.map((s, i) => {
-    const tex = rauschTextur(512, 256, s.seed, [[0, s.farbe], [1, s.farbe]], { sx: 14, sy: 7, oktaven: 4, kontrast: 2.4, alpha: (v) => smoothstep(0.55, 0.75, v) * 0.7 + 0.03 });
-    const m = new THREE.MeshBasicMaterial({ map: tex, transparent: true, opacity: s.a, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false });
+    const tex = rauschTextur(512, 256, s.seed, [[0, s.farbe], [1, s.farbe]], { sx: 14, sy: 7, oktaven: 4, kontrast: 2.4, alpha: (v) => smoothstep(0.64, 0.82, v) * 0.55 });
+    const m = new THREE.MeshBasicMaterial({ map: tex, transparent: true, opacity: s.a, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false, color: new THREE.Color(0.7, 0.7, 0.7) });
     tex.repeat.set(2, 2);
     return { m: kugel(s.r, m, { ro: 2 + i * 0.01 }), r: s.r };
   });
@@ -436,7 +436,7 @@ function baueAbgrund(szene) {
   }
   const pg = new THREE.BufferGeometry();
   pg.setAttribute("position", new THREE.BufferAttribute(pos, 3)); pg.setAttribute("color", new THREE.BufferAttribute(col, 3));
-  const partikel = new THREE.Points(pg, new THREE.PointsMaterial({ size: 1.1, map: weichPunkt(), vertexColors: true, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true, fog: false }));
+  const partikel = new THREE.Points(pg, new THREE.PointsMaterial({ size: 0.55, map: weichPunkt(), vertexColors: true, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true, fog: false }));
   partikel.frustumCulled = false; partikel.renderOrder = 8; gr.add(partikel);
   return { gr, hitzen, rand, kruste, strahlen, fische, fischInst, oberflaeche, partikel };
 }

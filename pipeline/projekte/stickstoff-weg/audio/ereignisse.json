@@ -203,19 +203,6 @@
   },
   {
    "quelle": "Chip",
-   "t": 12.6,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "ERSTICKEN?"
-  },
-  {
-   "quelle": "Chip",
-   "t": 14.33,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
    "t": 14.33,
    "typ": "chip-weg",
    "klang": false
@@ -501,13 +488,6 @@
    "klang": "uhr"
   },
   {
-   "quelle": "Chip",
-   "t": 27.56,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "11 KM"
-  },
-  {
    "quelle": "Countdown",
    "t": 27.99,
    "typ": "uhr",
@@ -530,12 +510,6 @@
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 28.98,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Chip",
@@ -643,13 +617,6 @@
    "klang": "uhr"
   },
   {
-   "quelle": "Chip",
-   "t": 32.53,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "AUSSEN: 222 HPA"
-  },
-  {
    "quelle": "Countdown",
    "t": 32.69,
    "typ": "uhr",
@@ -695,12 +662,6 @@
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 35.51,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Chip",
@@ -793,13 +754,6 @@
    "klang": "uhr"
   },
   {
-   "quelle": "Chip",
-   "t": 37.57,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "KEIN KNALL"
-  },
-  {
    "quelle": "Countdown",
    "t": 37.79,
    "typ": "uhr",
@@ -822,12 +776,6 @@
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 38.43,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Chip",
@@ -922,13 +870,6 @@
    "text": "Kaffee beginnt zu sieden"
   },
   {
-   "quelle": "Chip",
-   "t": 40.29,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "ZISCH!"
-  },
-  {
    "quelle": "Countdown",
    "t": 40.29,
    "typ": "uhr",
@@ -959,12 +900,6 @@
    "dauer": 0.7,
    "quelle": "Zeitleiste",
    "klang": "blasen"
-  },
-  {
-   "quelle": "Chip",
-   "t": 41.01,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Chip",
@@ -1109,6 +1044,14 @@
    "klang": "zaehlen"
   },
   {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 60.77,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
    "quelle": "Chip",
    "t": 61.65,
    "typ": "chip",
@@ -1139,25 +1082,12 @@
    "klang": false
   },
   {
-   "quelle": "Chip",
-   "t": 64.21,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "OHNE HERD"
-  },
-  {
    "quelle": "Szene",
    "t": 65.04,
    "typ": "kamera",
    "klang": false,
    "dauer": 1,
    "text": "Blickwechsel"
-  },
-  {
-   "quelle": "Chip",
-   "t": 65.09,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Chip",
