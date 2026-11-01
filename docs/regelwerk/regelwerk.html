@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Regelwerk Simulierbar</title>
+<style>
+  @page { size: A4; margin: 9mm 10mm 9mm 10mm; }
+  :root { --tinte:#18202b; --grau:#5b6573; --linie:#d9dee5; --neu:#127a4a; --neu-bg:#e8f6ef; --anders:#9a5b00; --anders-bg:#fff4e0; --akzent:#2448a8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: Arial, Helvetica, sans-serif; color:var(--tinte); font-size:8.3pt; line-height:1.3; }
+  header { display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid var(--tinte); padding-bottom:3px; margin-bottom:5px; }
+  h1 { font-size:15pt; margin:0; white-space:nowrap; letter-spacing:-0.01em; }
+  .stand { color:var(--grau); font-size:7pt; text-align:right; max-width:52%; }
+  h2 { font-size:9.4pt; margin:0 0 3px 0; padding:2px 6px; border-radius:3px; }
+  .oben { display:grid; grid-template-columns: 1fr 1fr; gap:7px; margin-bottom:6px; }
+  .box { border:1px solid var(--linie); border-radius:5px; padding:5px 7px 4px; }
+  .anders h2 { background:var(--anders-bg); color:var(--anders); }
+  .neu h2 { background:var(--neu-bg); color:var(--neu); }
+  .regeln h2 { background:#e9eef8; color:var(--akzent); }
+  ul { margin:0; padding-left:11px; }
+  li { margin:0 0 1.6px 0; }
+  .regeln .spalten { column-count:2; column-gap:12px; }
+  .regel { break-inside:avoid; margin-bottom:4px; }
+  .regel b.t { display:block; font-size:8.6pt; color:var(--akzent); margin-bottom:1px; }
+  .vorher { color:var(--grau); }
+  footer { margin-top:5px; padding-top:3px; border-top:1px solid var(--linie); color:var(--grau); font-size:6.6pt; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Regelwerk Simulierbar · Entwurf</h1>
+  <div class="stand">Stand 01.11.2026 · Quelle: CLAUDE.md, ENTSCHEIDUNGEN.md, docs/15-massstab.md, docs/16</div>
+</header>
+
+<div class="oben">
+  <div class="box anders">
+    <h2>Geändert (01.11.)</h2>
+    <ul>
+      <li><b>Sticker im gesunden Maß:</b> große Sticker/Stempel nur an Höhepunkten (Denkfalle, Wendung, Ergebnis, zweite Überraschung), <b>max. 5 je Video, mind. 5 s Abstand</b>. Neuer Pflicht-Prüfpunkt 5d. <span class="vorher">Vorher keine Grenze, 9–14 je Video.</span></li>
+      <li><b>Mittig ausrichten:</b> Achse x = 540, Schutzzone links und rechts je 150 px (Breite 780), für TikTok und Shorts gleich. In der Engine umgesetzt. <span class="vorher">Vorher Achse x = 492.</span></li>
+      <li><b>KI-Label:</b> Pflicht laut TikTok nur bei realistischen Menschen bzw. Szenen. Wir setzen es trotzdem weiter, es kostet laut TikTok keine Reichweite.</li>
+      <li><b>Modelle:</b> Produktions-Agenten laufen auf Sonnet 5.5 wie vorgesehen. Opus 5.5 nur für neue Szenentypen und Abnahme. <span class="vorher">Vorher liefen versehentlich alle Agenten auf Opus.</span></li>
+      <li><b>Fertige Videos bleiben, wie sie sind.</b> Neue Regeln gelten ab der nächsten Produktion („Fehler passieren, wichtig ist, dass wir uns bessern“).</li>
+    </ul>
+  </div>
+  <div class="box neu">
+    <h2>Hinzugefügt (01.11.)</h2>
+    <ul>
+      <li><b>Text-Überlappung prüfen:</b> Vor jeder Übergabe wird jedes Einzelbild auf Text über Text geprüft (<i>qc/text_ueberlappung.mjs</i>).</li>
+      <li><b>Keine gelbe Teamfarbe,</b> denn Gelb ist das aktuelle Untertitel-Wort.</li>
+      <li><b>Account 2</b> (neu anlegen, nicht den alten Gesundheits-Account):
+        <ul>
+          <li>Nische „Mal angenommen …“: 3D-POV in <b>Du-Perspektive</b> (Empfehlung, Score 86); „Wer war's?“ (Score 70) als Kandidat für Account 3.</li>
+          <li>Nur Blender und Three.js, Unreal Engine 5 optional bei klarem Vorteil und sparsam mit Tokens. Keine KI-Video-Generatoren.</li>
+          <li>Eigene Stimme: deutscher Muttersprachler, Eleven v4. 6 Hörproben liegen vor.</li>
+        </ul></li>
+      <li><b>Regelwerk-PDF:</b> Bei jeder Änderung an Regeln oder Wissen gibt es dieses 1-Seiten-PDF (geändert, hinzugefügt, aktueller Stand).</li>
+      <li><b>Steuern, Gewerbe, Nebentätigkeit:</b> später.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="box regeln">
+  <h2>Aktuelle Regeln (Kurzfassung)</h2>
+  <div class="spalten">
+    <div class="regel"><b class="t">1 · Kanal und Ziel</b>Simulierbar (@simulierbar), Nische „Alltag durchgerechnet“, intern GELD und ALLTAG (nie im Video). Ziel: 10k Follower und CRP. YouTube Shorts als Zweitverwertung.</div>
+    <div class="regel"><b class="t">2 · Videoaufbau (feste Reihenfolge)</b>
+      <ul>
+        <li><b>0–16 s:</b> Hook als Duell-Frage oder Du-Szenario (fertig vor 5 s, Stimme unter 0,2 s), Regeln als Chips, Denkfalle „Klar … Oder?“ und „Los geht's“.</li>
+        <li><b>Rennen:</b> laufende Uhr bzw. Zähler, Folgen-Aufruf ca. 20 s (max. 2 s), erste Wendung 18–25 s, danach alle 8–10 s eine neue.</li>
+        <li><b>Ende:</b> Ergebnis mit exakter Zahl, „Warum?“ (max. 2 Faktoren), zweite Überraschung, Merksatz, Schluss genau „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“, letztes Bild = erstes Bild.</li>
+      </ul></div>
+    <div class="regel"><b class="t">3 · Dynamik</b>Alle 1–2 s ein neues Bild-Ereignis, nie über 2 s Stillstand. Bewegung vor allem über Kamera, Zähler, Figuren und Szenenwechsel. Sticker max. 5. Alles mittig.</div>
+    <div class="regel"><b class="t">4 · Bild</b>1080×1920, 65–80 s (mind. 61 s). Nur Three.js und/oder Blender. Genau ein Stil aus dem Katalog, nie zweimal hintereinander; die Qualität ist das Markenzeichen. Kein Kanalname, kein Logo, keine Rubrik. Zwei feste Teamfarben (kein Gelb).</div>
+    <div class="regel"><b class="t">5 · Stimme und Untertitel</b>ElevenLabs „Ben“, Eleven v4, gespeicherte Original-Einstellungen, keine Beschleunigung. Sprechtext als Regiebuch (Audio-Tags, keine &lt;break&gt;), 130–165 Wörter. Untertitel Wort für Wort im Stil „kontur“ (weiß, schwarze Kontur, aktuelles Wort gelb, kein Kasten).</div>
+    <div class="regel"><b class="t">6 · Ton</b>Klangteppich zum Thema 8–13 dB unter der Stimme, Effekt bei jedem Bild-Ereignis, Akzent auf der Pointe. Nur selbst erzeugte Klänge, Lautheit −14 LUFS.</div>
+    <div class="regel"><b class="t">7 · Inhalt</b>Eigene Rechnung bzw. Simulation mit Tests, Quellen nur intern (skript.json). Konkurrenz-Check vor jedem Start, keine Kopien, gesperrte Themen beachten. Finanzen nur als Modellrechnung. Keine künstlichen Cliffhanger, kein Kaufaufruf.</div>
+    <div class="regel"><b class="t">8 · Caption (TikTok = YouTube)</b>Eine Zeile: „Hook-Frage? Emoji Ich hab's simuliert. Kommentarfrage? 👇“ plus 5 Hashtags (3 Thema, #wissen, #simulation). Höchstens ca. 150 Zeichen, kein #fyp, keine Quellen oder Hinweise.</div>
+    <div class="regel"><b class="t">9 · Posten</b>Nur offiziell: TikTok Studio, YouTube Studio, Buffer erst nach bestandenem Test. Der Inhaber gibt jedes Video frei. KI-Schalter immer AN. Profil ohne E-Mail und Telefonnummer.</div>
+    <div class="regel"><b class="t">10 · Prüfung vor Übergabe</b><i>qc/massstab.py</i> (alle Pflichtpunkte „ja“), Text-Überlappung, Kontaktbogen sichten, Lautheit messen. Claude nimmt jedes Video selbst ab, Fehler gehen zurück an den Agenten.</div>
+    <div class="regel"><b class="t">11 · Arbeitsweise</b>Produktion nur auf Startsignal, Reihenfolge laut 30-Tage-Plan. Arbeitsstand ins Repo (STATUS.md), Entscheidungen in ENTSCHEIDUNGEN.md. Das Repo ist öffentlich: keine Konkurrenzinhalte, keine Geheimnisse. Trend-Radar täglich, Vorschläge ab Score 70.</div>
+    <div class="regel"><b class="t">12 · Modelle und Verbrauch</b>Opus 5.5 für neue Szenentypen und Abnahme, Sonnet 5.5 für die tägliche Produktion, Haiku 5.5 für Titel und Captions. Verbrauch über /usage beobachten.</div>
+  </div>
+</div>
+
+<footer><span>Entwurf zur Freigabe durch den Inhaber</span><span>Neues PDF bei jeder Regeländerung: node tools/regelwerk_pdf.mjs</span></footer>
+</body>
+</html>

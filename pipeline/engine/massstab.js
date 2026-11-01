@@ -17,8 +17,8 @@ import { feder, FEDER, ease, fortschritt, clamp, lerp, keyframes, schleifenWert,
 import { el, fmt, Karaoke } from "./hud.js";
 import { normalisiere } from "./zeitplan.js";
 
-/** Sichere Fläche (px): oben 150, rechts 150 frei; nichts Wichtiges unter y ≈ 1500 */
-export const SICHER = { links: 54, rechts: 930, oben: 150, unten: 1500, breite: 876, mitte: 492 };
+/** Sichere Fläche (px): symmetrisch 150 links und rechts (Achse x = 540, Inhaber 01.11.), oben 150; nichts Wichtiges unter y ≈ 1500 */
+export const SICHER = { links: 150, rechts: 930, oben: 150, unten: 1500, breite: 780, mitte: 540 };
 
 const FED = {
   pop: { frequenz: 3.4, daempfung: 0.36 },
@@ -719,7 +719,7 @@ class Chip extends Baustein {
 // Sticker / Stempel: schräg, groß, mit Strahlenkranz („KLAR!“, „ODER?“, „LOS GEHT'S!“, „ÜBERHOLT!“)
 // =====================================================================================
 class Stempel extends Baustein {
-  /** o: {text, ein, aus (Standard ein + 1.1), x=492, y=760, winkel=-7, art:"sticker"|"stempel", farbe:"akzent", groesse=118, strahlen:true} */
+  /** o: {text, ein, aus (Standard ein + 1.1), x=540, y=760, winkel=-7, art:"sticker"|"stempel", farbe:"akzent", groesse=118, strahlen:true} */
   constructor(M, o) {
     super(M, o, 0);
     if (o.aus === undefined) this.aus = this.ein + 1.1;
@@ -793,7 +793,7 @@ class Leiste extends Baustein {
     this.e = el("div", "ms ms-leiste", `${o.label ? `<div class="ms-lbl">${o.label}</div>` : ""}${FLAGGE}`, M.hud.wurzel);
     this.e.style.top = (o.y ?? 1180) + "px";
     this.L0 = 30;
-    this.L = 876 - 30 - 86;
+    this.L = SICHER.breite - 30 - 86;
     const teams = Object.keys(o.teams || {});
     const yy = teams.length > 1 ? [54, 82] : [66];
     this.bahnen = teams.map((k, i) => {
@@ -851,7 +851,7 @@ class Leiste extends Baustein {
 // Vergleichs- / Formelkarte: „31 mL > 14 mL“, „14 L × 15 MIN = 210 L“
 // =====================================================================================
 class Formel extends Baustein {
-  /** o: {x=54, y, breite=876, ein, aus, titel, teile:[{text, einheit, ein, art:"wert"|"op"|"erg", team}], unter:{text, ein, team}, groesse=84} */
+  /** o: {x=SICHER.links, y, breite=SICHER.breite, ein, aus, titel, teile:[{text, einheit, ein, art:"wert"|"op"|"erg", team}], unter:{text, ein, team}, groesse=84} */
   constructor(M, o) {
     const teile = o.teile.map((x) => ({ ...x, t: M.zeit(x.ein) }));
     super(M, { ...o, ein: o.ein ?? Math.min(...teile.map((x) => x.t)) - 0.12 }, 0);

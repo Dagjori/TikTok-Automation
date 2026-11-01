@@ -25,7 +25,9 @@
 - CRP: 1.000 €/Monat ≈ 1,4–5 Mio. Views (mittel 2,4 Mio., ca. 40k je Video bei 60 Videos).
 - KI-Label: Das sichtbare Label steht im Feld `aigcLabelType`, nicht in `IsAigc`. Pflicht ist es nur bei realistischen Inhalten.
 - Inhaber 01.11.: POV-Stil wie @man_ia_c, nur Blender/Three.js, neue deutsche v4-Stimme; alter Account hat nur 130 Follower (Gesundheit, inaktiv seit 08/2024). Empfehlung von Claude: neuen Account anlegen. @angenommen.pov (0 Videos) hat das Konzept am 07.10. reserviert, also Tempo.
-- Neu: Sticker max. 5 je Video (Prüfpunkt 5d) und Inhalte mittig (Achse 540, bisher 492). Kalibrier-Video `pipeline/out/kalibrierung/kalibrierung_1080x1920.mp4` für die genaue Schutzzone.
+- Neu: Sticker max. 5 je Video (Prüfpunkt 5d) und Inhalte mittig: Engine umgestellt auf Achse 540, Schutzzone symmetrisch 150 px (Testrender der Demo geprüft). Kein Kalibrier-Test (Inhaber). Videos vom 02.11. bleiben, wie sie sind.
+- Regelwerk-PDF: `docs/regelwerk/regelwerk-2026-11-01.pdf` (Quelle `docs/regelwerk/regelwerk.html`, `node tools/regelwerk_pdf.mjs`). Bei jeder Regeländerung neu erzeugen und schicken.
+- Modelle: Hauptsitzung Opus 5.5 (Effort xhigh). Produktions-Agenten ab jetzt mit Sonnet 5.5 (bisher versehentlich Opus).
 
 ## Wo wir stehen
 - **Neuaufstellung (31.10. spät):** Maßstab sind 4 virale Konkurrenzvideos (je über 1 Mio. Aufrufe), Auswertung in `docs/15-massstab.md`. Verbindlich, Pflichtlektüre zu Beginn jeder Sitzung.
@@ -51,7 +53,8 @@
 | 3 | Repo auf privat stellen (GitHub → Settings → General → Change visibility) | Inhaber | 2 Min. | offen |
 | 4 | Produktion 02.11.: Fußgängerampel und Steuererklärung oder Überstunden | Claude (Agenten) | – | erledigt, beide übergeben |
 | 4b | 02.11. Fußgängerampel 12:00 und Steuererklärung 20:00 posten (KI-Schalter AN), vorher mit Ton anhören | Inhaber | 15 Min. | 02.11. |
-| 4d | Account 2: Fragen aus der Antwort vom 01.11. beantworten (Kalibrier-Video hochladen, Stimme, Ich- oder Du-Perspektive, neuer Account, Videos vom 02.11. nachbessern ja/nein) | Inhaber | 20 Min. | offen |
+| 4d | Account 2: Nische bestätigen (Empfehlung „Mal angenommen“-POV, Score 86 gegen 70), Stimme aus 6 Proben wählen, neuen Account anlegen (Privatkonto, Region DE, Handle z. B. malangenommen.pov) | Inhaber | 15 Min. | offen |
+| 4e | Prototyp Account 2 (neuer Szenentyp, Opus): deutscher Ort, Du-Perspektive, eigenes Thema mit Rechnung | Claude (Agent) | 1–2 Agententage | nach 4d |
 | 4c | Startsignal für 03.11.: „Schere, Stein, Papier“ (Stil 3 Clay) und „Mittagessen im Job“ (Stil 6 Collage) | Inhaber | – | offen |
 | 5 | Windows-PC einrichten (Claude Code, Node, ffmpeg, Blender), um mit GPU zu rendern | Inhaber plus Claude | 30–60 Min. | empfohlen |
 | 6 | TikTok-Konto öffentlich, Buffer-Test, Telegram (`docs/13`) | Inhaber | 30 Min. | offen |

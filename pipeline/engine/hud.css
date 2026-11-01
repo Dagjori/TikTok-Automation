@@ -31,7 +31,7 @@ body { font-family: var(--text); -webkit-font-smoothing: antialiased; text-rende
 .unsichtbar { opacity: 0; }
 
 /* ---------- Schritt-Anzeige ---------- */
-.schritt { position: absolute; top: 240px; left: 54px; height: 58px; display: flex; align-items: center; gap: 16px; padding: 0 26px 0 18px; border-radius: 999px; background: rgba(255, 255, 255, 0.95); color: var(--tinte); font-family: var(--display); font-weight: 800; font-size: 27px; box-shadow: var(--schatten); transform-origin: left center; }
+.schritt { position: absolute; top: 240px; left: 150px; height: 58px; display: flex; align-items: center; gap: 16px; padding: 0 26px 0 18px; border-radius: 999px; background: rgba(255, 255, 255, 0.95); color: var(--tinte); font-family: var(--display); font-weight: 800; font-size: 27px; box-shadow: var(--schatten); transform-origin: left center; }
 .schritt .balken { display: flex; gap: 6px; }
 .schritt .balken b { width: 30px; height: 10px; border-radius: 5px; background: #dde2ea; overflow: hidden; position: relative; }
 .schritt .balken b span { position: absolute; inset: 0; background: var(--blau); transform-origin: left; }
@@ -56,7 +56,7 @@ body { font-family: var(--text); -webkit-font-smoothing: antialiased; text-rende
 .chip.gross .flagge { height: 72px; min-width: 72px; font-size: 32px; }
 
 /* ---------- Kinetischer Titel ---------- */
-.titel { position: absolute; left: 54px; right: 150px; color: #fff; font-family: var(--display); font-weight: 900; letter-spacing: -0.025em; line-height: 0.98; }
+.titel { position: absolute; left: 150px; right: 150px; color: #fff; font-family: var(--display); font-weight: 900; letter-spacing: -0.025em; line-height: 0.98; }
 .titel .wort { display: inline-block; will-change: transform, opacity; margin-right: 0.22em; }
 .titel .gelb { color: var(--gelb); }
 .titel .schatten { text-shadow: 0 10px 40px rgba(5, 12, 30, 0.45); }
@@ -65,8 +65,8 @@ body { font-family: var(--text); -webkit-font-smoothing: antialiased; text-rende
 .pille { position: absolute; display: inline-flex; align-items: center; height: 120px; padding: 0 40px; border-radius: 999px; background: var(--gelb); color: var(--tinte); font-family: var(--display); font-weight: 900; font-size: 84px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; box-shadow: 0 24px 60px -16px rgba(255, 210, 63, 0.55), 0 2px 0 rgba(0, 0, 0, 0.06); white-space: nowrap; }
 
 /* ---------- Karaoke-Untertitel ---------- */
-.karaoke { position: absolute; left: 54px; width: 876px; display: flex; justify-content: center; }
-.karaoke .block { position: relative; display: inline-block; text-align: center; padding: 18px 28px 22px; border-radius: 34px; background: rgba(14, 17, 25, 0.88); box-shadow: 0 18px 50px -12px rgba(0, 0, 0, 0.5); will-change: transform, opacity; max-width: 876px; }
+.karaoke { position: absolute; left: 150px; width: 780px; display: flex; justify-content: center; }
+.karaoke .block { position: relative; display: inline-block; text-align: center; padding: 18px 28px 22px; border-radius: 34px; background: rgba(14, 17, 25, 0.88); box-shadow: 0 18px 50px -12px rgba(0, 0, 0, 0.5); will-change: transform, opacity; max-width: 780px; }
 .karaoke .zeile { display: block; white-space: nowrap; font-family: var(--display); font-weight: 900; font-size: 70px; line-height: 1.16; letter-spacing: -0.015em; color: #fff; }
 .karaoke .w { position: relative; display: inline-block; padding: 0 0.15em; z-index: 1; transition: none; }
 .karaoke .w.kommt { color: rgba(255, 255, 255, 0.42); }
@@ -88,7 +88,7 @@ body { font-family: var(--text); -webkit-font-smoothing: antialiased; text-rende
 .anker .fuss { position: absolute; width: 18px; height: 18px; left: -9px; top: -9px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.35); }
 
 /* ---------- Schlusskarte ---------- */
-.schluss { position: absolute; left: 54px; right: 150px; top: 520px; display: flex; flex-direction: column; align-items: flex-start; gap: 34px; }
+.schluss { position: absolute; left: 150px; right: 150px; top: 520px; display: flex; flex-direction: column; align-items: flex-start; gap: 34px; }
 .schluss .aufruf { background: #fff; color: var(--tinte); border-radius: 40px; padding: 36px 40px; font-family: var(--display); font-weight: 900; font-size: 62px; line-height: 1.08; letter-spacing: -0.02em; box-shadow: var(--schatten); display: flex; gap: 30px; align-items: center; }
 .schluss .aufruf .blase { flex: none; width: 120px; height: 120px; border-radius: 36px; background: var(--blau); display: flex; align-items: center; justify-content: center; }
 

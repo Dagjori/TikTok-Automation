@@ -63,3 +63,9 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-11-01 | Account 2: POV-Stil wie @man_ia_c („Was wäre, wenn …“), der Sprecher spricht aus der Perspektive der Kamera; eigene Themen, keine Kopien | Inhaber: „dieser POV-Style ist sehr gut und die Zahlen ebenfalls“ |
 | 2026-11-01 | Account 2: eigene Stimme, deutscher Muttersprachler, mit Eleven v4 | Inhaber |
 | 2026-11-01 | Steuern, Gewerbe und Nebentätigkeit für CRP-Erlöse: später | Inhaber: „heben wir uns für später auf“ |
+| 2026-11-01 | Fertige Videos (02.11.: Fußgängerampel, Steuererklärung) werden nicht nachgebessert; neue Regeln gelten ab der nächsten Produktion | Inhaber: „Fehler passieren, wichtig ist nur, dass wir uns bessern“ |
+| 2026-11-01 | Kein Kalibrier-Test auf dem Handy; Claude setzt die Schutzzone selbst: symmetrisch 150 px links und rechts, Achse x = 540, Breite 780 (in der Engine umgesetzt) | Inhaber: „sofern du verstanden hast, was ich will, passt das“ |
+| 2026-11-01 | Account 2: Erzählung in der **Du-Perspektive** („Du stehst am Brandenburger Tor …“), nicht Ich | Inhaber: nimmt die Leute eher mit |
+| 2026-11-01 | Unreal Engine 5 darf als zusätzliches Werkzeug genutzt werden, wenn es einen klaren Vorteil bringt; dabei sparsam mit Tokens | Inhaber |
+| 2026-11-01 | Bei jeder Änderung an Regeln oder Wissen bekommt der Inhaber ein 1-Seiten-PDF: was geändert, was hinzugefügt, aktueller Stand (`docs/regelwerk/`, `node tools/regelwerk_pdf.mjs`) | Inhaber: übersichtlicher Überblick |
+| 2026-11-01 | API-Key hat jetzt Leserechte für Stimmen (voices_read); Stimmen-Bibliothek per API durchsuchbar | Inhaber hat den Key angepasst |

@@ -206,3 +206,36 @@ Formel: Umsatz = Views × Anteil qualifiziert × RPM / 1.000.
 | **Unreal Engine 5** (kostenlos) | filmische Echtzeit-Grafik, Zerstörung (Chaos), Partikel (Niagara), riesige freie Asset-Bibliothek | der stärkste Kandidat für den POV-Look; braucht den Windows-PC mit GPU, in der Cloud nicht lauffähig. Erst nach Einrichtung des PCs testen |
 | Godot, Babylon.js | Spiel-Engines bzw. WebGL wie Three.js | kein Vorteil gegenüber Three.js |
 | Remotion, Motion Canvas, Manim | 2D-Animation bzw. Grafiken aus Code | deckt unsere HTML-/Three.js-Ebene schon ab |
+
+## 10. Nischen-Vergleich: „Mal angenommen“-POV gegen „Wer war's?“ (01.11., abends)
+
+| Kriterium | „Mal angenommen …“ 3D-POV | „Wer war's?“ Krimirätsel |
+|---|---|---|
+| Nachfrage jetzt (F) | US-Videos aus Okt. 2026: Median 838.700 Views, Maximum 18,2 Mio. | Belege aus 2023/24 (@myriddle3: 2,3 bzw. 1,8 Mio.); für 2026 keine belastbaren Belege gefunden |
+| Likes pro Video, Vorbild (F, 01.11.) | @man_ia_c: 4,7 Mio. Likes / 22 Videos ≈ **214.000**; @thewhatifstudio: 1,3 Mio. / 36 ≈ 36.000 | @myriddle3: 1,9 Mio. / 175 ≈ **10.900** |
+| Junge Accounts wachsen (F) | @thewhatifstudio: 59.300 Follower im ersten Monat | keiner mit Signal gefunden |
+| Wettbewerb DE (F) | leer, aber reserviert (@angenommen.pov, 0 Videos) | kaum besetzt (@raetselzeit_de: 7.294 Follower bei 380 Videos) |
+| Timing (S) | Trendfenster jetzt, schließt sich | immergrün, kein Zeitdruck |
+| CRP-Länge (F) | 15 von 15 Videos über 60 s | 61–66 s |
+| Kommentare (S) | „Welches als Nächstes?“ | sehr stark (Tipp abgeben) |
+| Aufwand (S) | hoch: filmische 3D-Szene je Thema, Effekte; GPU bzw. UE5 hilft | mittel: wiederverwendbare Tatort-Dioramen und Figuren; weniger Tokens und Renderzeit |
+| Risiko (S) | „Disturbing“ bei zu harter Zerstörung, Kopierdruck | „Disturbing“ bei Gewalt → Fälle ohne Blut (Diebstahl, Sabotage, Rätsel-Mord ohne Darstellung) |
+| Abgrenzung zu Simulierbar | nah (Physik bzw. Simulation), dafür Querverweise möglich | klar getrennt |
+| **Score** (`trend_score.py`) | **86** (5 5 4 4 2 4) | **70** (3 3 4 4 4 4) |
+
+**Empfehlung von Claude (S):**
+- **Account 2 = „Mal angenommen …“-POV.** Das Fenster ist jetzt offen und schließt sich, das Konzept ist auf Deutsch schon reserviert.
+- **„Wer war's?“ = Kandidat für Account 3.** Das Format ist immergrün und hat keinen Zeitdruck. Vor dem Start frisch messen.
+
+**Stimmproben für Account 2** (Eleven v4, derselbe Du-POV-Testtext, alle Rate 1,0, also ohne Aufpreis; Dateien liegen nur im Container unter `pipeline/out/stimmprobe_account2/`):
+
+| Nr. | Stimme | Voice-ID |
+|---|---|---|
+| 1 | Alexander, Deep TV Narrator | kkJxCnlRCckmfFvzDW5Q |
+| 2 | Leon Stern, Rich and Deep | re2r5d74PqDzicySNW0I |
+| 3 | Thomas Schendel, Authoritative | Fghah4fztZORbiKfIGAs |
+| 4 | Anton, Formal and Strong | Ay1WwRHxUsu3hEeAp8JZ |
+| 5 | Otto, Casual and Normal | FTNCalFNG5bRnkkaP5Ug |
+| 6 | Leonie, Clear and Engaging | uvysWDLbKpA4XvpD3GI6 |
+
+Speech-to-Text bestätigt: v4 spricht die Regie-Tags nicht mit (Proben 1 und 4 geprüft).

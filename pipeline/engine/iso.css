@@ -5,7 +5,7 @@ body.iso { background: #dfe2fb; }
 
 
 /* Titel im Hook */
-.iso-titel { position: absolute; left: 54px; width: 876px; color: #1c1d3a; will-change: transform, opacity; }
+.iso-titel { position: absolute; left: 150px; width: 780px; color: #1c1d3a; will-change: transform, opacity; }
 .iso-titel .klein { font-family: var(--display); font-weight: 800; font-size: 34px; letter-spacing: 0.06em; text-transform: uppercase; color: #5b5fa8; }
 .iso-titel .gross { font-family: var(--display); font-weight: 900; font-size: 132px; line-height: 0.95; letter-spacing: -0.035em; margin-top: 10px; }
 .iso-titel .gross .zahl { color: #ff7a1a; }

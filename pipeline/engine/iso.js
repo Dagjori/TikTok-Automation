@@ -717,7 +717,7 @@ export function gierwinkel(z, spurBreite = 3.75) {
  *   uhr: "1:30" | null, links:{wert, anteil (0..1|null), zusatz (HTML|null), ziel (bool)}, rechts:{…} }, stoesse:[{t, seite}]}
  */
 export class IsoDuellTafel {
-  constructor(hud, { x = 54, y = 262, breite = 876, ein, aus = Infinity, links, rechts, zustand, stoesse = [] }) {
+  constructor(hud, { x = 150, y = 262, breite = 780, ein, aus = Infinity, links, rechts, zustand, stoesse = [] }) {
     this.e = el("div", "iso-tafel", "", hud.wurzel);
     Object.assign(this.e.style, { left: x + "px", top: y + "px", width: breite + "px" });
     const karte = (p, seite) => {

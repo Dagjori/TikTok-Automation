@@ -18,6 +18,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
   - meist ein Duell bzw. Rennen gegen die Uhr mit sichtbaren Zählern (Maßstab)
 - **Kanäle:** bestehender TikTok-Account des Inhabers (ca. 3k Follower). YouTube Shorts als Zweitverwertung.
 - **Ziel:** 10k Follower und CRP, danach Ausbau (zweite Nische, englische Version).
+- **Account 2 (in Vorbereitung):** neuer Account, „Mal angenommen …“-3D-POV in Du-Perspektive, nur Blender/Three.js (Unreal Engine 5 optional), eigene deutsche v4-Stimme. Details und Stand: `docs/16-account-2-nischen.md`.
 - **Inhaber:** arbeitet Vollzeit im Hauptjob, Zeit ist knapp. Jeder Schritt muss den größten Hebel pro Stunde haben.
 
 ## Maßstab (verbindlich, darf nie untergehen)
@@ -67,6 +68,8 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
 
 ## Arbeitsregeln
 - **Nichts ohne Auftrag anlegen.** Keine zusätzlichen Dateien außerhalb dieses Repos, keine Notizen, Webseiten oder Einträge in externen Diensten (Notion, Drive, Gmail usw.), außer der Inhaber verlangt es ausdrücklich.
+- **Regelwerk-PDF** (Inhaber 01.11.): Bei jeder Änderung an Regeln oder Wissen `docs/regelwerk/regelwerk.html` aktualisieren (geändert, hinzugefügt, aktueller Stand), mit `node tools/regelwerk_pdf.mjs` als 1-Seiten-PDF erzeugen und dem Inhaber schicken.
+- **Fertige Videos bleiben, wie sie sind** (Inhaber 01.11.). Neue Regeln gelten ab der nächsten Produktion.
 - **Arbeitsstand gehört in dieses Repo.** Cloud-Sitzungen sind flüchtig.
   - Am Ende jeder Sitzung `STATUS.md` aktualisieren, committen und pushen.
   - Entscheidungen des Inhabers in `ENTSCHEIDUNGEN.md` eintragen (Datum, Entscheidung, Begründung).
@@ -113,7 +116,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
     - jedes gesprochene Wort erscheint einzeln, max. 2 Zeilen, mittig, aktuelles Wort gelb
     - weiße fette Schrift mit schwarzer Kontur, **kein Kasten**
     - Der Phrasen-Stil der Vorbilder (`M.untertitel()` ohne `stil`) wird nicht verwendet.
-  - **Teamfarben:** zwei feste Farben je Video, überall gleich (Figuren, Anzeigetafel, Chips, Untertitel).
+  - **Teamfarben:** zwei feste Farben je Video, überall gleich (Figuren, Anzeigetafel, Chips, Untertitel). **Kein Gelb** als Teamfarbe (Gelb = aktuelles Untertitel-Wort).
   - **Ton:** Klangteppich passend zum Thema 8–13 dB unter der Stimme, Effekt bei jedem Bild-Ereignis, Akzent auf der Pointe. Nur selbst erzeugte Klänge.
   - keine künstlichen Cliffhanger-Teile (TikTok: Clickbait ist ein CRP-Ausschlussgrund)
 - **Kein Kaufaufruf im Video.** TikTok drosselt in TikTok-Shop-Märkten Inhalte, die zum Kauf außerhalb von TikTok führen.
@@ -138,7 +141,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
   - Der Untertitel zeigt `text`. Zahlen sind im Sprechtext ausgeschrieben, englische Wörter in Lautschrift.
 - **Key:**
   - als Netzwerk-Secret (Header `xi-api-key` für `api.elevenlabs.io`), nie in der Sitzung sichtbar
-  - ohne Leserechte, deshalb feste Voice-IDs
+  - mit Leserecht für Stimmen (`voices_read`, seit 01.11.): Stimmen-Bibliothek per `GET /v1/shared-voices` durchsuchbar; Bibliotheksstimmen lassen sich direkt per Voice-ID vertonen
   - Speech-to-Text (für Maßstab-Analysen) funktioniert mit dem Key.
 - **Plan:** Reichen die Credits nicht, auf den nächstgrößeren Plan wechseln.
 
@@ -151,7 +154,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
   5. Szene in Three.js (Assets optional aus Blender)
   6. Rendern in Headless-Chrome bzw. Blender
   7. Ton und Mix mit ffmpeg
-  8. Prüfliste Maßstab (`pipeline/qc/massstab.py`) plus eigene Sichtprüfung
+  8. Prüfliste Maßstab (`pipeline/qc/massstab.py`), Text-Überlappung je Einzelbild (`pipeline/qc/text_ueberlappung.mjs`) plus eigene Sichtprüfung (Kontaktbogen)
   9. Übergabe an den Inhaber
 - **Bausteine nach Maßstab:**
   - Anzeigetafel, Live-Zähler, Uhr, Chips, Sticker, Vergleichs- und Bilanzkarten, Kamera-Regie, Schleife, Folgen-Element
@@ -162,7 +165,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
 - **Render-Rechner:** Windows-PC des Inhabers (GPU). Die Pipeline muss unter Windows laufen (Node.js, Chrome bzw. Chromium, ffmpeg, Python, Blender). Bis dahin rendert die Cloud ohne GPU (ca. 45–60 Min. pro Video).
 - **Modellwahl:**
   - Opus 5.5 für Architektur und neue Szenentypen
-  - Sonnet 5.5 für die tägliche Produktion
+  - Sonnet 5.5 für die tägliche Produktion: Produktions-Agenten **ausdrücklich mit `model: sonnet` starten**, sonst erben sie Opus (bis 01.11. versehentlich so)
   - Haiku 5.5 für Titel, Beschreibungen und Hashtags
   - Verbrauch über `/usage` beobachten
 - **Netzwerk der Cloud-Umgebung:**

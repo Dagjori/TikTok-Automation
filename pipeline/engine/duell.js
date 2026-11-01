@@ -50,7 +50,7 @@ export class Anzeigetafel {
    * opt: {y, ein, aus, links:{titel, farbe, symbol}, rechts:{…}, zustand(t) → {label, links:{wert, anteil}, rechts:{…}}, stoesse:[{t, seite}]}
    * anteil: Länge des Balkens 0..1 (z. B. Rückstau / Skala), null = ohne Balken.
    */
-  constructor(hud, { y = 330, ein, aus = Infinity, links, rechts, zustand, stoesse = [], x = 54, breite = 876 }) {
+  constructor(hud, { y = 330, ein, aus = Infinity, links, rechts, zustand, stoesse = [], x = 150, breite = 780 }) {
     this.e = el("div", "tafel", "", hud.wurzel);
     this.e.style.top = y + "px";
     this.e.style.left = x + "px";

@@ -32,7 +32,7 @@
 .ms-rz small { font-size: 0.42em; font-weight: 800; letter-spacing: 0; margin-left: 0.14em; color: var(--karte-grau); line-height: 1.6; }
 
 /* ---------- Titel im Hook ---------- */
-.ms-titel { left: 54px; width: 876px; text-align: center; color: #fff; font-weight: 900; letter-spacing: -0.03em; line-height: 0.98; }
+.ms-titel { left: 150px; width: 780px; text-align: center; color: #fff; font-weight: 900; letter-spacing: -0.03em; line-height: 0.98; }
 .ms-titel .ms-tz { display: block; white-space: nowrap; }
 .ms-titel .ms-tz + .ms-tz { margin-top: 0.1em; }
 .ms-titel .ms-tw { display: inline-block; overflow: hidden; padding: 0.08em 0.1em 0.16em; margin: -0.08em 0 -0.16em; vertical-align: top; }
@@ -42,7 +42,7 @@
 .ms-titel .ms-vs i { font-style: normal; display: inline-block; transform: skewX(-8deg); }
 
 /* ---------- Anzeigetafel oben ---------- */
-.ms-tafel { left: 54px; width: 876px; height: 150px; display: flex; align-items: center; transform-origin: 50% 0; }
+.ms-tafel { left: 150px; width: 780px; height: 150px; display: flex; align-items: center; transform-origin: 50% 0; }
 .ms-seite { position: relative; flex: 1 1 0; height: 136px; min-width: 0; border-radius: var(--ms-radius); background: var(--karte); box-shadow: var(--ms-schatten); padding: 16px 34px 0; overflow: hidden; will-change: transform; }
 .ms-seite.links { margin-right: -34px; padding-right: 64px; }
 .ms-seite.rechts { margin-left: -34px; padding-left: 64px; text-align: right; }
@@ -99,7 +99,7 @@
 .ms-stempel.stempel .ms-plakette { background: rgba(255, 255, 255, 0.94); color: var(--sf); box-shadow: inset 0 0 0 0.075em var(--sf), inset 0 0 0 0.12em #fff, inset 0 0 0 0.15em var(--sf), 0 0.3em 0.6em -0.12em rgba(0, 0, 0, 0.45); padding: 0.2em 0.5em 0.24em; border-radius: 0.14em; letter-spacing: 0.01em; }
 
 /* ---------- Fortschrittsleiste ---------- */
-.ms-leiste { left: 54px; width: 876px; height: 108px; border-radius: 28px; background: var(--karte); box-shadow: var(--ms-schatten); padding: 0 76px 0 30px; transform-origin: 50% 100%; }
+.ms-leiste { left: 150px; width: 780px; height: 108px; border-radius: 28px; background: var(--karte); box-shadow: var(--ms-schatten); padding: 0 76px 0 30px; transform-origin: 50% 100%; }
 .ms-leiste .ms-bahn { position: absolute; left: 30px; right: 86px; height: 10px; border-radius: 5px; background: var(--karte-linie); }
 .ms-leiste .ms-bahn b { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; border-radius: 5px; background: var(--tf); transform-origin: left center; transform: scaleX(0); }
 .ms-leiste .ms-marke { position: absolute; top: 40px; bottom: 14px; width: 4px; margin-left: -2px; border-radius: 2px; background: var(--karte-linie); }
@@ -111,7 +111,7 @@
 .ms-leiste .ms-lbl { position: absolute; left: 30px; top: 10px; font-family: var(--text); font-weight: 800; font-size: 18px; letter-spacing: 0.12em; color: var(--karte-grau); text-transform: uppercase; }
 
 /* ---------- Karten (Formel, Bilanz, Aufschlüsselung) ---------- */
-.ms-karte { left: 54px; width: 876px; border-radius: 34px; background: var(--karte); box-shadow: var(--ms-schatten); padding: 26px 34px 30px; transform-origin: 50% 30%; }
+.ms-karte { left: 150px; width: 780px; border-radius: 34px; background: var(--karte); box-shadow: var(--ms-schatten); padding: 26px 34px 30px; transform-origin: 50% 30%; }
 .ms-karte .ms-kk { display: flex; align-items: center; gap: 12px; font-family: var(--text); font-weight: 800; font-size: 24px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--karte-grau); }
 .ms-karte .ms-kk i { width: 14px; height: 14px; border-radius: 4px; background: var(--akzent); transform: rotate(45deg); box-shadow: 0 0 0 4px color-mix(in srgb, var(--akzent) 30%, transparent); }
 .ms-formel .ms-ft { display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 18px; margin-top: 14px; white-space: nowrap; }
@@ -140,7 +140,7 @@
 .ms-balken .ms-zeile .w { flex: none; width: 150px; text-align: right; font-weight: 900; font-size: 44px; letter-spacing: -0.03em; color: var(--tf); }
 
 /* ---------- Pointe (große Typo) ---------- */
-.ms-pointe { left: 54px; width: 876px; text-align: center; color: #fff; font-weight: 900; letter-spacing: -0.04em; line-height: 0.94; }
+.ms-pointe { left: 150px; width: 780px; text-align: center; color: #fff; font-weight: 900; letter-spacing: -0.04em; line-height: 0.94; }
 .ms-pointe .ms-pz { display: block; white-space: nowrap; }
 .ms-pointe .ms-pw { position: relative; display: inline-block; margin: 0 0.1em; will-change: transform, opacity; -webkit-text-stroke: 0.08em var(--tinte); paint-order: stroke fill; text-shadow: 0 0.07em 0 var(--tinte), 0 0.2em 0.5em rgba(0, 0, 0, 0.4); }
 .ms-pointe .ms-pw.akzent { color: var(--akzent); }
@@ -155,7 +155,7 @@
 .ms-folgen .ms-pfeil { width: 92px; height: 62px; overflow: visible; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35)); }
 
 /* ---------- Phrasen-Untertitel (§8): Block, kein Kasten, Kontur, Schlüsselwort in Teamfarbe ---------- */
-.ms-ut { position: absolute; left: 54px; width: 876px; height: 0; }
+.ms-ut { position: absolute; left: 150px; width: 780px; height: 0; }
 .ms-ut .ms-ub { position: absolute; left: 0; right: 0; bottom: 0; text-align: center; display: none; will-change: transform, opacity; transform-origin: 50% 100%; }
 .ms-ut .ms-ul { display: block; white-space: nowrap; font-family: var(--display); font-weight: 900; line-height: 1.16; letter-spacing: -0.005em; color: #fff; }
 .ms-ut .ms-uw { display: inline-block; padding: 0 0.15em; -webkit-text-stroke: 0.17em #000; paint-order: stroke fill; text-shadow: 0 0.05em 0.02em rgba(0, 0, 0, 0.85), 0 0.08em 0.3em rgba(0, 0, 0, 0.45); }

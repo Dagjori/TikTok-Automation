@@ -58,6 +58,8 @@ const M = new Massstab(hud, zp, { teams: {
 `"Los"` (erster Treffer im ganzen Skript) · `"falle:Oder?"` (nur im Segment „falle“) · `"Los#2"` (zweiter Treffer) · `"Los+0.2"` / `"Los-0.1"` (Versatz in s) · `"Los>"` (Wortende) · `"Milliard*"` (Wortanfang) · `{i: 17}` (Wort Nr. 17) · `12.5`.
 Achtung: Stichwörter werden ohne Satzzeichen und Groß/Klein verglichen („Oder?“ findet auch „oder“ im Hook). Bei Mehrdeutigkeit Segment oder `#n` angeben. Ein unbekanntes Stichwort bricht mit Fehlermeldung ab.
 
+**Ausrichtung (Inhaber 01.11.):** Alles mittig auf der Achse x = 540, Schutzzone symmetrisch 150 px links und rechts (`SICHER` in `engine/massstab.js`: links 150, rechts 930, Breite 780). Keine festen x-Werte wie 492 mehr in Szenen, stattdessen `SICHER.mitte`. Große Sticker bzw. Stempel max. 5 je Video, mind. 5 s Abstand (Prüfpunkt 5d).
+
 | Baustein | Aufruf (Beispiel) | Wirkung |
 |---|---|---|
 | Titel im Hook | `M.titel({ y: 372, aus: "Zwei-0.15", woerter: [{text:"RASEN", ein:"Rasen", team:"a"}, {art:"vs", ein:"oder"}, {text:"ROLLEN", ein:"rollen?", team:"b"}, {umbruch:true}, {text:"WER", ein:"Wer", art:"klein"}] })` | Wörter steigen im Takt der Stimme aus einer Maske, passt sich der sicheren Breite an |

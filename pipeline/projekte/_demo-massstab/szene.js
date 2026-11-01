@@ -352,8 +352,8 @@ async function start() {
   // ---------- Denkfalle und Start: Sticker ----------
   const sKlar = M.stempel({ text: "KLAR!", ein: "Klar,", x: 340, y: 740, winkel: -8, farbe: "akzent" });
   const sOder = M.stempel({ text: "ODER?", ein: "falle:Oder?", aus: "Los-0.06", x: 620, y: 830, winkel: 7, farbe: "weiss", textFarbe: "tinte" });
-  const sLos = M.stempel({ text: "LOS GEHT'S!", ein: "Los", aus: "Rot!-0.05", x: 492, y: 760, winkel: -5, farbe: "#19B36B", groesse: 112 });
-  const sUe = M.stempel({ text: "ÜBERHOLT!", ein: "Überholt!-0.02", aus: "Ziel.-0.12", x: 492, y: 700, winkel: -9, art: "stempel", farbe: "b", groesse: 120 });
+  const sLos = M.stempel({ text: "LOS GEHT'S!", ein: "Los", aus: "Rot!-0.05", x: 540, y: 760, winkel: -5, farbe: "#19B36B", groesse: 112 });
+  const sUe = M.stempel({ text: "ÜBERHOLT!", ein: "Überholt!-0.02", aus: "Ziel.-0.12", x: 540, y: 700, winkel: -9, art: "stempel", farbe: "b", groesse: 120 });
 
   // ---------- Stoppuhr im Zeitraffer ----------
   M.uhr({ ein: "Los+0.12", aus: "Ziel.-0.1", x: 186, y: 352, groesse: 196, team: "b", label: "ZEITRAFFER", zeit: (t) => Math.min(MOD.T_A, tauRoh(t)) });
