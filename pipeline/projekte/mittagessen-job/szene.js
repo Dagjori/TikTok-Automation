@@ -142,7 +142,7 @@ async function start() {
   zeitung(dekoEbene, -150, 960, 300, 520, -86, 0.03, 16);
 
   // ---------- Pappbrett als Bühne mit Klebeband, Hilfslinien bei 1.000 / 2.000 / 3.000 € ----------
-  papier(wurzel, rechteck(980, 724, 8), COLLAGE.papier, { x: 540, y: 950, z: 2, dreh: -0.5, amp: 4, schritt: 13, schatten: 1.4, seed: 31 });
+  papier(wurzel, rechteck(980, 724, 8), "#EBDDC1", { x: 540, y: 950, z: 2, dreh: -0.5, amp: 4, schritt: 13, schatten: 1.4, seed: 31 });
   const bandA = [[150, 598, 150, -14], [925, 606, 140, 11], [140, 1302, 130, 9], [940, 1296, 140, -10]];
   for (const [bx, by, bw, bd] of bandA) band(wurzel, bx, by, bw, bd, 2.6, { seed: bx });
   const hilfslinien = gruppe(wurzel, 0, 0, 3);
@@ -197,10 +197,10 @@ async function start() {
 
   // ---------- Symbole der Zeit-Phase (Einkaufen, Kochen, Spülen) ----------
   const zeitIcons = [
-    { o: einkaufstuete(), x: 168, y: 858, t: "wendung:Einkaufen," },
-    { o: topf({ farbe: GRUEN, seed: 321 }), x: 258, y: 884, t: "wendung:kochen," },
-    { o: schwamm(), x: 352, y: 858, t: "wendung:spülen:" },
-  ].map((i) => { i.o.g.position.z = 7.8; wurzel.add(i.o.g); i.o.g.scale.setScalar(0.62); i.t = T(i.t); return i; });
+    { o: einkaufstuete(), x: 160, y: 850, t: "wendung:Einkaufen," },
+    { o: topf({ farbe: GRUEN, seed: 321 }), x: 258, y: 872, t: "wendung:kochen," },
+    { o: schwamm(), x: 356, y: 850, t: "wendung:spülen:" },
+  ].map((i) => { i.o.g.position.z = 7.8; wurzel.add(i.o.g); i.o.g.scale.setScalar(0.95); i.t = T(i.t); return i; });
   const tIconsAus = T("netto:Dein") + 0.35;
 
   // ---------- Vergleichslinie auf Höhe der Kochen-Säule (zweite Überraschung) ----------
@@ -324,6 +324,7 @@ async function start() {
 
   // ---------- Kalender: Tag im Zeitraffer ----------
   M.zaehler({ wert: (t) => Math.round(tagRoh(t)), nk: 0, einheit: "TAG", max: 300, team: "tinte", art: "voll", punkt: P(KAL.x, KAL.y + 28), aus: "wendung:Doch-0.1", minY: 300 });
+  M.zaehler({ wert: (t) => Math.round(tagRoh(t)), nk: 0, einheit: "TAG", max: 300, team: "tinte", art: "voll", punkt: P(KAL.x, KAL.y + 28), ein: tSchleife + 0.7, minY: 300 }); // Schleife: der Kalender kommt mit zurück
 
   // ---------- Jahresende: Summen an den Säulen ----------
   hud.add(new Etikett(M, { html: `<span class="klein">KOCHEN</span><span class="betrag">${euro(V.kochen.geld)}</span>`, art: "voll", farbe: "a", ein: "rennen:770", aus: "rennen:Bestellen-0.1", punkt: (t) => P(X.k, topY(S(t).gK, S(t).zK) - 200)(t), gross: true }));
@@ -386,9 +387,9 @@ async function start() {
   M.melde({ t: "ueberraschung:Sie-0.05", typ: "fuehrung", klang: "ding", text: "Kantine holt Kochen ein" });
 
   // ---------- Merksatz ----------
-  M.pointe({ woerter: [{ text: "KOCHEN", ein: "merksatz:Kochen", farbe: "a" }, { text: "SPART", ein: "merksatz:spart" }, { umbruch: true }, { text: "GELD.", ein: "merksatz:Geld.", farbe: "akzent" }], aus: "merksatz:Die-0.05", y: 500, groesse: 130 });
-  M.pointe({ woerter: [{ text: "DIE", ein: "merksatz:Die" }, { text: "KANTINE", ein: "merksatz:Kantine" }, { umbruch: true }, { text: "SPART", ein: "merksatz:spart#2" }, { text: "ZEIT.", ein: "merksatz:Zeit.", farbe: "akzent" }], aus: "merksatz:Und-0.05", y: 500, groesse: 130 });
-  M.pointe({ woerter: [{ text: "ZEIT", ein: "merksatz:Zeit#2", farbe: "akzent" }, { text: "HAT", ein: "merksatz:hat" }, { umbruch: true }, { text: "EINEN", ein: "merksatz:einen" }, { text: "PREIS.", ein: "merksatz:Preis.", farbe: "akzent" }], aus: "schluss:Was-0.1", y: 500, groesse: 130 });
+  M.pointe({ woerter: [{ text: "KOCHEN", ein: "merksatz:Kochen", farbe: "a" }, { text: "SPART", ein: "merksatz:spart" }, { umbruch: true }, { text: "GELD.", ein: "merksatz:Geld.", farbe: "akzent" }], aus: "merksatz:Die-0.05", y: 500, groesse: 104 });
+  M.pointe({ woerter: [{ text: "DIE", ein: "merksatz:Die" }, { text: "KANTINE", ein: "merksatz:Kantine" }, { umbruch: true }, { text: "SPART", ein: "merksatz:spart#2" }, { text: "ZEIT.", ein: "merksatz:Zeit.", farbe: "akzent" }], aus: "merksatz:Und-0.05", y: 500, groesse: 104 });
+  M.pointe({ woerter: [{ text: "ZEIT", ein: "merksatz:Zeit#2", farbe: "akzent" }, { text: "HAT", ein: "merksatz:hat" }, { umbruch: true }, { text: "EINEN", ein: "merksatz:einen" }, { text: "PREIS.", ein: "merksatz:Preis.", farbe: "akzent" }], aus: "schluss:Was-0.1", y: 500, groesse: 104 });
   M.melde({ t: "merksatz:Geld.", typ: "pointe-wort", klang: "klick", text: "GELD." });
   M.melde({ t: "merksatz:Zeit.", typ: "pointe-wort", klang: "klick", text: "ZEIT." });
   M.melde({ t: "merksatz:Preis.", typ: "pointe-wort", klang: "akzent", text: "PREIS." });
@@ -480,7 +481,7 @@ async function start() {
       if (!ic.o.g.visible) return;
       const w = wack(20 + i);
       setzePx(ic.o.g, ic.x, ic.y + w.dy * 0.8 - (1 - k) * 40, 7.8);
-      ic.o.g.scale.setScalar(0.62 * k);
+      ic.o.g.scale.setScalar(0.95 * k);
       ic.o.g.rotation.z = w.dr * 1.3;
       if (ic.o.setze) ic.o.setze(tau);
     });

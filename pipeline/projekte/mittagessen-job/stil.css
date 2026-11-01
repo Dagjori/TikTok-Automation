@@ -53,3 +53,5 @@ html, body { background: #C9A77C; }
 .ms-titel .ms-tw.klein { font-size: 0.6em; }
 .ms-titel .ms-twi { -webkit-text-stroke: 0.08em var(--tinte); }
 .ms-seite.rechts .ms-vorn { position: absolute; left: 58px; top: 82px; }
+/* Warum-Karte: Beträge in einer Zeile */
+.ms-balken .ms-zeile .w { width: 200px; font-size: 40px; white-space: nowrap; }

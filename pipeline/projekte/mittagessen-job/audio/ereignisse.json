@@ -29,11 +29,9 @@
   },
   "timing": "echt",
   "schleifenPruefung": {
-   "ok": false,
+   "ok": true,
    "ende": 75.767,
-   "nurErstesBild": [
-    "ms.ms-chip.voll@160,297:[0]"
-   ],
+   "nurErstesBild": [],
    "nurLetztesBild": [],
    "kameraAbweichung": 0
   }
@@ -876,6 +874,20 @@
    "dauer": 3.1,
    "laufend": true,
    "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 72.59,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 72.59,
+   "typ": "zaehler",
+   "dauer": 3.167,
+   "laufend": true,
+   "klang": "zaehlen"
   }
  ],
  "klang": []

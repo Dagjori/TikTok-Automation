@@ -1,0 +1,951 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "schall-schritttempo",
+ "fps": 30,
+ "dauer": 74.13333333333334,
+ "stimmEnde": 73.349,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "raum",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "S-BAHN",
+    "farbe": "#FF4F5A"
+   },
+   "b": {
+    "name": "SCHALL",
+    "farbe": "#2EC4B6"
+   }
+  },
+  "schleife": {
+   "ab": 69.85,
+   "ende": 74.10000000000001
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 74.1,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 0
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": 0.01,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "STELL"
+  },
+  {
+   "quelle": "Titel",
+   "t": 0.37,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "DIR"
+  },
+  {
+   "quelle": "Titel",
+   "t": 0.65,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "VOR:"
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.21,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "SCHALL"
+  },
+  {
+   "quelle": "Titel",
+   "t": 2.17,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "IM"
+  },
+  {
+   "quelle": "Titel",
+   "t": 3.37,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "SCHRITTTEMPO"
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.5,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SCHALL 5 KM/H"
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.95,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SONST 1.235 KM/H"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.64,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "FREUNDIN 2 M"
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.2,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "S-BAHN 50 KM/H"
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.11,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.11,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.11,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.11,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 12.26,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Stempel",
+   "t": 12.31,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "KLAR?"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 15.46,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 17.51,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.69,
+   "typ": "welle",
+   "klang": "blip",
+   "text": "Hey (Welle startet)"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 18.79,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 18.79,
+   "typ": "zaehler",
+   "dauer": 7.467,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 18.943,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 19.477,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 20.043,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 20.577,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 21.143,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 21.41,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 21.677,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 22.21,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 22.777,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 23.31,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 23.61,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde 1 vorbei"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 23.843,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 24.31,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 24.81,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 25.31,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 25.777,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 26.25,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.25,
+   "typ": "welle",
+   "klang": "boom",
+   "text": "Hey trifft dich"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 26.31,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.78,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2 M = 1,4 S"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 26.977,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 27.643,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 28.343,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 29.01,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 29.27,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 29.377,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde 2 vorbei"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 29.47,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 29.47,
+   "typ": "zaehler",
+   "dauer": 14.5,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.57,
+   "typ": "kamera",
+   "klang": "whoosh",
+   "dauer": 0.7,
+   "text": "Blick zur S-Bahn"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 29.643,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 30.21,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 30.777,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 31.343,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 31.91,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 32.477,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 33.043,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 33.61,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 33.753,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Stempel",
+   "t": 33.783,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "MACH 10"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 34.177,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 34.71,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.843,
+   "typ": "kamera",
+   "klang": "whoosh",
+   "dauer": 0.7,
+   "text": "Blick zum Lautsprecher"
+  },
+  {
+   "quelle": "Chip",
+   "t": 35.97,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LAUTSPRECHER 8 M"
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.97,
+   "typ": "welle",
+   "klang": "blip",
+   "text": "Durchsage startet"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 35.977,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde 3 vorbei"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 36.21,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 36.777,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 37.31,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 37.843,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 38.377,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 38.91,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 39.477,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 40.01,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.08,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "= 5,8 S"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 40.543,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 41.077,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.27,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.27,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 41.377,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde 4 vorbei"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 41.743,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 42.577,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 43.377,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.72,
+   "typ": "kamera",
+   "klang": "whoosh",
+   "dauer": 1.2,
+   "text": "S-Bahn rauscht vorbei"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 43.87,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Countdown",
+   "t": 44.077,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 44.443,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 44.81,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 45.21,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 45.54,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "LAUTLOS"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 45.577,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 45.943,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "t": 46.16,
+   "typ": "uebergang",
+   "art": "blasen",
+   "dauer": 0.7,
+   "quelle": "Zeitleiste",
+   "klang": "blasen"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 46.31,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.53,
+   "typ": "standbild",
+   "klang": "ding",
+   "text": "τ = 5 s, Bild friert ein"
+  },
+  {
+   "quelle": "Countdown",
+   "t": 46.543,
+   "typ": "marke",
+   "klang": "tick",
+   "text": "Sekunde 5 vorbei"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 47.65,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "S-BAHN"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 48.39,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "IHR LÄRM"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 49.73,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "VORSPRUNG"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 51.09,
+   "typ": "sieger",
+   "klang": "sieg",
+   "text": "S-BAHN ZUERST"
+  },
+  {
+   "quelle": "Formel",
+   "t": 53.13,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "5"
+  },
+  {
+   "quelle": "Formel",
+   "t": 53.97,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "×"
+  },
+  {
+   "quelle": "Formel",
+   "t": 54.29,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "5"
+  },
+  {
+   "quelle": "Formel",
+   "t": 54.67,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "="
+  },
+  {
+   "quelle": "Formel",
+   "t": 54.77,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "6,9"
+  },
+  {
+   "quelle": "Formel",
+   "t": 56.05,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "50"
+  },
+  {
+   "quelle": "Formel",
+   "t": 56.89,
+   "typ": "formel",
+   "klang": "pop",
+   "text": ">"
+  },
+  {
+   "quelle": "Formel",
+   "t": 57.49,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "5"
+  },
+  {
+   "quelle": "Formel",
+   "t": 58.13,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "="
+  },
+  {
+   "quelle": "Formel",
+   "t": 58.38,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "MACH 10"
+  },
+  {
+   "t": 59.327,
+   "typ": "uebergang",
+   "art": "zoomwisch",
+   "dauer": 0.5,
+   "quelle": "Zeitleiste",
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 63.36,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "ULTRA- | *SCHALL*"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 63.41,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.41,
+   "typ": "welle",
+   "klang": "scan",
+   "dauer": 0.9,
+   "text": "Ultraschall"
+  },
+  {
+   "quelle": "Chip",
+   "t": 63.81,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "× 247"
+  },
+  {
+   "quelle": "Chip",
+   "t": 64.57,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "200 HZ → 49 KHZ"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.57,
+   "typ": "figur",
+   "klang": "whoosh",
+   "dauer": 0.6,
+   "text": "Fledermaus"
+  },
+  {
+   "quelle": "Chip",
+   "t": 66.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 66.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Pointe",
+   "t": 66.37,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "WAS DU HÖRST, | IST SCHON | *PASSIERT.*"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 69.85,
+   "art": "schleife",
+   "dauer": 4.25,
+   "klang": false
+  },
+  {
+   "t": 69.85,
+   "typ": "schleife",
+   "dauer": 4.25,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  }
+ ],
+ "klang": []
+}

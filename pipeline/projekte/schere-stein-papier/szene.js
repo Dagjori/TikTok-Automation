@@ -141,7 +141,7 @@ async function start() {
   // =====================================================================================
   const szene = new THREE.Scene();
   szene.background = verlauf([[0, TON.wand], [1, TON.tisch]]);
-  const licht = lichtTag(szene, buehne.renderer, { bereich: 7.5, schattenKarte: SCHATTEN || 512, sonnenRichtung: [-0.55, 1.0, 1.1], sonnenStaerke: 2.9, sonnenFarbe: "#FFF0DA", himmel: "#FFF4E2", boden: "#E8D2AD", himmelStaerke: 0.85, umgebungsStaerke: 0.55, schattenWeich: 3, ziel: [0, 2.2, 0] });
+  const licht = lichtTag(szene, buehne.renderer, { bereich: 7.5, schattenKarte: SCHATTEN || 512, sonnenRichtung: [-0.55, 1.0, 1.1], sonnenStaerke: 2.5, sonnenFarbe: "#FFF0DA", himmel: "#FFF4E2", boden: "#E8D2AD", himmelStaerke: 1.15, umgebungsStaerke: 0.7, schattenWeich: 3, ziel: [0, 2.2, 0] });
   if (!SCHATTEN) licht.sonne.castShadow = false;
 
   const kamera = new THREE.PerspectiveCamera(17, 1080 / 1920, 1, 200);
@@ -149,15 +149,15 @@ async function start() {
   szene.add(R);
 
   // Brett an der Wand
-  const B = brett({ n: 10, teilung: 0.18 });
-  B.position.set(0, 4.49, -3.06);
+  const B = brett({ n: 10, teilung: 0.215 });
+  B.position.set(0, 4.55, -3.06);
   szene.add(B);
 
-  // Sockel und Hände
-  const HX = 0.92, HY = 1.15, HS = 0.96;
-  const sockR = sockel({ farbe: ROT, radius: 0.88 });
+  // Sockel und Hände (Podeste, damit die Hände im oberen Bilddrittel der Tafel-Zone stehen)
+  const PED = 1.25, HX = 0.92, HY = 1.15 + PED - 0.5, HS = 0.96;
+  const sockR = sockel({ farbe: ROT, radius: 0.88, hoehe: PED });
   sockR.position.set(-HX, 0, 0);
-  const sockC = sockel({ farbe: CYAN, radius: 0.88 });
+  const sockC = sockel({ farbe: CYAN, radius: 0.88, hoehe: PED });
   sockC.position.set(HX, 0, 0);
   szene.add(sockR, sockC);
   const handR = hand({ farbe: ROT });
@@ -172,15 +172,15 @@ async function start() {
   const symbolR = new THREE.Group();
   const pawn = bauer({ farbe: ROT });
   symbolR.add(pawn);
-  symbolR.position.set(-1.62, 3.78, -2.55);
-  symbolR.scale.setScalar(1.05);
+  symbolR.position.set(-1.78, 3.95, -2.55);
+  symbolR.scale.setScalar(0.92);
   const symbolC = new THREE.Group();
   const wuerf = wuerfel({ farbe: CYAN });
   wuerf.position.y = 0.45;
   const kopf = kopfFigur({ farbe: CYAN });
   symbolC.add(wuerf, kopf);
-  symbolC.position.set(1.62, 3.78, -2.55);
-  symbolC.scale.setScalar(1.05);
+  symbolC.position.set(1.78, 3.95, -2.55);
+  symbolC.scale.setScalar(0.92);
   szene.add(symbolR, symbolC);
 
   // kleine Deko-Kugeln auf dem Tisch (Teamfarben), geben Tiefe
@@ -305,24 +305,22 @@ async function start() {
   const kL = (t) => M.schleifenK(t);
 
   // ---------- Anzeigetafel: Siege, Mitte = Rundenzähler ----------
-  const werteFn = M.wert((t) => { const s = stand(t); return { a: s.rot, b: s.cyan }; });
-  const rundeFn = M.wert((t) => stand(t).runde);
   const tafel = M.tafel({
     y: 166,
     links: { team: "a", name: "TAKTIK", einheit: "", nk: 0, max: 100 },
     rechts: { team: "b", name: "ZUFALL", einheit: "", nk: 0, max: 100 },
-    werte: werteFn,
-    anteil: M.wert((t) => { const s = stand(t); return { a: s.rot / 50, b: s.cyan / 50 }; }),
-    uhr: { ein: tLos - 0.1, zeit: (t) => Math.round(rundeFn(t)), format: (s) => String(Math.round(s)), label: "RUNDE" },
+    werte: (t) => { const s = stand(t); return { a: s.rot, b: s.cyan }; },
+    anteil: (t) => { const s = stand(t); return { a: s.rot / 50, b: s.cyan / 50 }; },
+    uhr: { ein: tLos - 0.1, zeit: (t) => stand(t).runde, format: (s) => String(Math.round(s)), label: "RUNDE" },
   });
-  // Name der rechten Seite wechselt: ZUFALL → MENSCH (Cyan bleibt Cyan)
+  // Name der rechten Seite wechselt: ZUFALL → MENSCH → ZUFALL (Cyan bleibt Cyan)
   const nameC = tafel.seiten[1].k.querySelector(".ms-kopf span");
   const tMensch = T("wendung2:Mensch") - 0.05;
+  const tMenschEnde = T("ueberraschung:Würfelt") - 0.05;
   const tafelUpdate = tafel.update.bind(tafel);
   tafel.update = (t) => {
     tafelUpdate(t);
-    const n = t >= tMensch && t < tW0 + 1e5 && t < T("ueberraschung:Würfelt") - 0.05 ? "MENSCH" : t >= T("ueberraschung:Würfelt") - 0.05 && t < tSchleife ? "ZUFALL" : "ZUFALL";
-    const soll = t >= tMensch && t < T("ueberraschung:Würfelt") - 0.05 ? "MENSCH" : t >= tSchleife ? (t < tMensch ? "ZUFALL" : "ZUFALL") : "ZUFALL";
+    const soll = t >= tMensch && t < tMenschEnde ? "MENSCH" : "ZUFALL";
     if (nameC.textContent !== soll) nameC.textContent = soll;
   };
 
@@ -493,6 +491,9 @@ async function start() {
   // Weltzustand je Bild
   // =====================================================================================
   const handR_ = handR, handC_ = handC;
+  const ringR = sockR.userData.ring.material = sockR.userData.ring.material.clone();
+  const ringC = sockC.userData.ring.material = sockC.userData.ring.material.clone();
+  ringR.emissive = new THREE.Color(ROT); ringC.emissive = new THREE.Color(CYAN);
   const setzeWelt = (t) => {
     const kl = kL(t);
     const h = haende(t);
@@ -501,8 +502,9 @@ async function start() {
     setzeHand(handR_, mischePose(mixW(POSE_FAUST, h.wR, ein)), { pump: h.pumpR * ein + idle, quetsch: lerp(1, h.quR, ein), wackeln: h.wackR * ein, neigung: 0.03 * Math.sin(t * 1.3) });
     setzeHand(handC_, mischePose(mixW(POSE_FAUST, h.wC, ein)), { pump: h.pumpC * ein - idle, quetsch: lerp(1, h.quC, ein), wackeln: h.wackC * ein, neigung: -0.03 * Math.sin(t * 1.3 + 1) });
     // Sockel-Ringe leuchten beim Gewinner
-    const glow = (seite) => (h.seit < 0.5 && !h.schnell ? (h.gew === seite ? Math.exp(-h.seit * 5) : 0) : h.schnell ? (h.gew === seite ? 0.4 : 0) : 0);
-    sockR.userData.ring.material = ton(ROT, { emissiv: ROT, emissivStaerke: 0 });
+    const glow = (seite) => (h.schnell ? (h.gew === seite ? 0.35 : 0) : h.seit < 0.5 && h.gew === seite ? Math.exp(-h.seit * 5) * 1.2 : 0) * ein;
+    ringR.emissiveIntensity = glow(1);
+    ringC.emissiveIntensity = glow(-1);
     // Brett
     for (let r = 1; r <= 100; r++) {
       const s = kachel(r, t);
@@ -510,7 +512,7 @@ async function start() {
       setzeKachel(B, r - 1, { groesse: g, farbe: s.farbe || "remis", drehung: s.drehung || 0, hebe: s.hebe || 0 });
     }
     // Symbole: Bauer wippt bei Rot-Siegen, Würfel rollt; bei „Mensch“ wird der Würfel zum Kopf
-    const mensch = clamp(fortschritt(t, tMensch, tMensch + 0.5)) * (1 - clamp(fortschritt(t, T("ueberraschung:Würfelt") - 0.05, T("ueberraschung:Würfelt") + 0.4)));
+    const mensch = clamp(fortschritt(t, tMensch, tMensch + 0.5)) * (1 - clamp(fortschritt(t, tMenschEnde, tMenschEnde + 0.45)));
     const m = ease.outCubic(mensch) * ein;
     wuerf.scale.setScalar(Math.max(0.001, 1 - m));
     wuerf.visible = m < 0.999;

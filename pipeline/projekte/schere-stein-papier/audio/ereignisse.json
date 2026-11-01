@@ -1,0 +1,2228 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "schere-stein-papier",
+ "fps": 30,
+ "dauer": 71,
+ "stimmEnde": 70.009,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "musik",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "TAKTIK",
+    "farbe": "#FF4D4D"
+   },
+   "b": {
+    "name": "ZUFALL",
+    "farbe": "#33D1FF"
+   }
+  },
+  "schleife": {
+   "ab": 67.00999999999999,
+   "ende": 70.96666666666667
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 70.967,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 0
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": 0.02,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "SCHERE"
+  },
+  {
+   "quelle": "Titel",
+   "t": 0.62,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "STEIN"
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.06,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "PAPIER"
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.9,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "GLÜCK"
+  },
+  {
+   "quelle": "Titel",
+   "t": 2.46,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "vs"
+  },
+  {
+   "quelle": "Titel",
+   "t": 2.7,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "TAKTIK?"
+  },
+  {
+   "quelle": "Titel",
+   "t": 3.66,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WER GEWINNT"
+  },
+  {
+   "quelle": "Titel",
+   "t": 4.22,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WIRKLICH?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.08,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.25,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "100 RUNDEN"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.53,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ROT = TAKTIK"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.21,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "CYAN = ZUFALL"
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.02,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.8,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.2,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.2,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.2,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Stempel",
+   "t": 10.42,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "KLAR!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 10.42,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 12,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ODER?"
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.75,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.8,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LOS GEHT'S!"
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.9,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1.4,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 14.07,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 14.833,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 14.84,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "UNENTSCHIEDEN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.84,
+   "typ": "zug",
+   "klang": "pop",
+   "text": "Runde 1"
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.79,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 16.633,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 16.633,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.64,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "PUNKT ROT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.64,
+   "typ": "zug",
+   "klang": "pop",
+   "text": "Runde 2"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 16.667,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 17.59,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.1,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 18.12,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "PUNKT CYAN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.12,
+   "typ": "zug",
+   "klang": "pop",
+   "text": "Runde 3"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.6,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.6,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "RemisPille",
+   "t": 18.61,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "Unentschieden"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.633,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.833,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.067,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.067,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 19.07,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.533,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.767,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.967,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.967,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.8,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 22.11,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.2,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.2,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.567,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.567,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.967,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.967,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.333,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.733,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.733,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.734,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 2.2,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.1,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.133,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.5,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.867,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.867,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 24.9,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "ÜBERHOLT!"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.9,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 24.9,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 25,
+   "art": "zoom",
+   "dauer": 1.5,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.4,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.567,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.567,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.6,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.733,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.733,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.867,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.867,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.033,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.033,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.2,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.2,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.367,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.367,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.5,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.667,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.667,
+   "typ": "uhr",
+   "dauer": 4.533,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.68,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GLEICHSTAND"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.767,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.8,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.9,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.967,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.1,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.333,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.467,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.5,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.6,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.733,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.8,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.867,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.067,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.2,
+   "typ": "zaehler",
+   "dauer": 0.4,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.467,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.733,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.8,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.867,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.067,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.233,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 29.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.6,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.667,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.8,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.933,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.1,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.167,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.3,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.36,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.433,
+   "typ": "zaehler",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.533,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.6,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.733,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.867,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.9,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 31.28,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "ROT · TAKTIK"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 32.24,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "CYAN · ZUFALL"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 33.12,
+   "typ": "sieger",
+   "klang": "sieg",
+   "text": "PRAKTISCH GLEICH"
+  },
+  {
+   "quelle": "Chip",
+   "t": 33.6,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "100.000 SPIELE: ROT VORN 48 % · CYAN VORN 48 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.209,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 34.229,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.259,
+   "typ": "welle",
+   "klang": "whoosh",
+   "text": "Brett leeren"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.733,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.733,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.733,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.033,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.033,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "RemisPille",
+   "t": 35.06,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "Unentschieden"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.067,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.3,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.533,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.567,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.767,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.767,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.79,
+   "typ": "wandlung",
+   "klang": "whoosh",
+   "text": "Würfel wird Mensch"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 35.94,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "MENSCH!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 35.94,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.033,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.033,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.067,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.267,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.5,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.767,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.767,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.233,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.5,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.767,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.767,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.267,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.5,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 3,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.8,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.8,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 39,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MENSCH: 44 % GLEICHER ZUG"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.067,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.067,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.3,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.567,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.833,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.833,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 40,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ZUFALL: 33 %"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.1,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.333,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.333,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.6,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.6,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.867,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.133,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.133,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.5,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.5,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.633,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.633,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.9,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.9,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.167,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.433,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.433,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.567,
+   "typ": "zaehler",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.567,
+   "typ": "uhr",
+   "dauer": 3.633,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.667,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.767,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.8,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.933,
+   "typ": "zaehler",
+   "dauer": 0.167,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.233,
+   "typ": "zaehler",
+   "dauer": 0.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.533,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.7,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.8,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.867,
+   "typ": "zaehler",
+   "dauer": 0.533,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.233,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.433,
+   "typ": "zaehler",
+   "dauer": 0.233,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.6,
+   "typ": "zaehler",
+   "dauer": 0.167,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.967,
+   "typ": "zaehler",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.067,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.08,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.2,
+   "typ": "zaehler",
+   "dauer": 0.867,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.333,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.8,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 46.1,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 46.167,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 46.32,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "ROT · TAKTIK"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 47.76,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "CYAN · MENSCH"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 48.56,
+   "art": "zoom",
+   "dauer": 1.6,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 49.12,
+   "typ": "sieger",
+   "klang": "sieg",
+   "text": "ROT GEWINNT · +19"
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.42,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Balken",
+   "t": 51.2,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "NACH EINEM MENSCH-SIEG"
+  },
+  {
+   "quelle": "Balken",
+   "t": 51.68,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "BLEIBT"
+  },
+  {
+   "quelle": "Balken",
+   "t": 53.04,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "NACH EINER NIEDERLAGE"
+  },
+  {
+   "quelle": "Balken",
+   "t": 53.6,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "WECHSELT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.14,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1.4,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.233,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.233,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.25,
+   "typ": "wandlung",
+   "klang": "whoosh",
+   "text": "Mensch würfelt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.7,
+   "typ": "uhr",
+   "dauer": 2.967,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.733,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.867,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.933,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.4,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.533,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.6,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.767,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.9,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 60.02,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "STOPP!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 60.02,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.2,
+   "typ": "zaehler",
+   "dauer": 0.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.267,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.5,
+   "typ": "zaehler",
+   "dauer": 0.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.867,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.933,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 61.233,
+   "typ": "zaehler",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 61.4,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 61.533,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Formel",
+   "t": 61.76,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "14"
+  },
+  {
+   "quelle": "Formel",
+   "t": 62.16,
+   "typ": "formel",
+   "klang": "pop",
+   "text": ":"
+  },
+  {
+   "quelle": "Formel",
+   "t": 62.4,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "15"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.03,
+   "typ": "welle",
+   "klang": "whoosh",
+   "text": "Brett leeren"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.03,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 63.28,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "GEGEN ZUFALL  HILFT KEINE TAKTIK."
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.72,
+   "typ": "pointe-wort",
+   "klang": "klick",
+   "text": "TAKTIK."
+  },
+  {
+   "quelle": "Pointe",
+   "t": 65.52,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "NUR GEGEN  MUSTER."
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.08,
+   "typ": "pointe-wort",
+   "klang": "akzent",
+   "text": "MUSTER."
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 67.01,
+   "art": "schleife",
+   "dauer": 3.957,
+   "klang": false
+  },
+  {
+   "t": 67.01,
+   "typ": "schleife",
+   "dauer": 3.957,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.033,
+   "typ": "zaehler",
+   "dauer": 3.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.033,
+   "typ": "zaehler",
+   "dauer": 3.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.667,
+   "typ": "uhr",
+   "dauer": 2.633,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 70.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  }
+ ],
+ "klang": []
+}

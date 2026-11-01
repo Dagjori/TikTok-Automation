@@ -132,7 +132,7 @@ export function kraftTextur() {
     const x = r() * N, y = r() * N, rad = 40 + r() * 140;
     const gr = g.createRadialGradient(x, y, 0, x, y, rad);
     const dunkel = r() < 0.5;
-    gr.addColorStop(0, dunkel ? "rgba(150,110,60,0.13)" : "rgba(255,235,200,0.13)");
+    gr.addColorStop(0, dunkel ? "rgba(150,110,60,0.09)" : "rgba(255,235,200,0.09)");
     gr.addColorStop(1, "rgba(0,0,0,0)");
     g.fillStyle = gr;
     for (const [ox, oy] of [[0, 0], [N, 0], [-N, 0], [0, N], [0, -N]]) { g.save(); g.translate(ox, oy); g.fillRect(x - rad, y - rad, rad * 2, rad * 2); g.restore(); }
@@ -481,7 +481,7 @@ export function kalender({ w = 300, h = 330, kopf = "#C8371D", seed = 140 } = {}
   const g = new THREE.Group();
   // Blockstapel (Papierkanten unten)
   for (let i = 3; i >= 1; i--) papier(g, rechteck(w - 4, h - 20, 6), COLLAGE.papier, { x: i * 2.2, y: i * 4.5 + 6, z: -0.2 - i * 0.02, dreh: (i - 2) * 0.9, amp: 2, seed: seed + i, schatten: i === 3 ? 1.1 : 0 });
-  papier(g, rechteck(w, h, 8), COLLAGE.papier, { z: 0, amp: 2.2, seed, schatten: 0.9 });
+  papier(g, rechteck(w, h, 8), "#FFFDF8", { z: 0, amp: 2.2, seed, schatten: 1.3 });
   papier(g, rechteck(w, 74, 6), kopf, { y: -h / 2 + 37, z: 0.3, amp: 1.6, seed: seed + 5, raster: "#FFFFFF", schatten: 0.4, saum: false });
   for (const dx of [-84, 0, 84]) {
     papier(g, kreisForm(12), "#2A2622", { x: dx, y: -h / 2 + 8, z: 0.8, amp: 0.8, saum: false, schatten: 0.5, seed: seed + 6 });
@@ -570,8 +570,8 @@ export function papierFigur({ farbe = "#2ECC71", haar = "#3A2B2B", haut = "#F0C8
   const koerper = new THREE.Group();
   g.add(koerper);
   const beinL = new THREE.Group(), beinR = new THREE.Group();
-  beinL.position.set(-11, -44, 0);
-  beinR.position.set(11, -44, 0);
+  beinL.position.set(-11, 44, 0); // Hüfte (rohe Gruppen: y nach oben)
+  beinR.position.set(11, 44, 0);
   papier(beinL, rechteck(15, 46, 5), hose, { y: 23, amp: 0.8, saum: false, schatten: 0.5, seed });
   papier(beinR, rechteck(15, 46, 5), hose, { y: 23, amp: 0.8, saum: false, schatten: 0.5, seed: seed + 1 });
   papier(beinL, rechteck(24, 9, 4), "#2A2622", { x: 4, y: 45, z: 0.1, amp: 0.5, saum: false, schatten: 0, seed: seed + 2 });
@@ -580,13 +580,13 @@ export function papierFigur({ farbe = "#2ECC71", haar = "#3A2B2B", haut = "#F0C8
   papier(koerper, rechteck(58, 66, 18), farbe, { y: -78, z: 0.3, amp: 1.2, seed: seed + 4, raster: "#FFFFFF" });
   papier(koerper, rechteck(58, 14, 6), ton(farbe, -0.22), { y: -52, z: 0.35, amp: 0.8, saum: false, schatten: 0, seed: seed + 5 });
   const kopf = new THREE.Group();
-  kopf.position.set(0, -134, 0.5);
+  kopf.position.set(0, 134, 0.5);
   koerper.add(kopf);
   papier(kopf, kreisForm(25, 26), haut, { amp: 1, schritt: 8, seed: seed + 6, schatten: 0.7 });
   papier(kopf, halbkreis(26), haar, { y: -4, z: 0.2, amp: 1, schritt: 7, saum: false, schatten: 0, seed: seed + 7 });
   const armL = new THREE.Group(), armR = new THREE.Group();
-  armL.position.set(-33, -100, 0.1);
-  armR.position.set(33, -100, 0.6);
+  armL.position.set(-33, 100, 0.1);
+  armR.position.set(33, 100, 0.6);
   papier(armL, rechteck(14, 46, 6), ton(farbe, -0.1), { y: 20, amp: 0.8, saum: false, schatten: 0.5, seed: seed + 8 });
   papier(armR, rechteck(14, 46, 6), ton(farbe, -0.1), { y: 20, amp: 0.8, saum: false, schatten: 0.5, seed: seed + 9 });
   koerper.add(armL, armR);
@@ -603,7 +603,7 @@ export function papierFigur({ farbe = "#2ECC71", haar = "#3A2B2B", haut = "#F0C8
     papier(item, rechteck(62, 10, 4), farbe, { amp: 0.8, seed: seed + 10, schatten: 0.6 });
     papier(item, kreisForm(14, 5), "#FBF7EE", { y: -8, z: 0.2, amp: 0.5, saum: false, schatten: 0, seed: seed + 11 });
   }
-  if (item) { item.position.set(0, 44, 0.3); armR.add(item); }
+  if (item) { item.position.set(0, -46, 0.3); armR.add(item); }
   return {
     g, koerper, kopf, armL, armR, item,
     /** gehen 0..1 (Beine schwingen), arm: −1..1 Armhebung rechts, wippen 0..1 */
