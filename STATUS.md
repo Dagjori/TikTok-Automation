@@ -19,6 +19,13 @@
 - **Nicht gehört (alle Videos):** Klangteppich und Effekte sind nur gemessen. Der Inhaber hört vor dem Posten einmal mit Ton rein.
 - **Bekannt:** Im Gehalt-Video ist Team „steuerfrei“ gelb, das aktuelle Untertitel-Wort ist ebenfalls gelb. Bei künftigen Videos keine gelbe Teamfarbe mehr wählen (Untertitel-Gelb ist reserviert).
 
+## Account 2 (Recherche 01.11.)
+- Auftrag des Inhabers: zweiten Account (ca. 800 Follower) aufbauen, Nische mit Trendsetter-Potenzial finden, CRP-Rechnung. Ergebnis: `docs/16-account-2-nischen.md`.
+- Empfehlung: „Mal angenommen …“-Gedankenexperimente in 3D aus Ich-Perspektive, Kern „Was wäre, wenn [Naturbaustein] 5 Sekunden verschwindet?“ (US Okt. 2026: Median 838.700, Max. 18,2 Mio., alle über 60 s; DE kaum besetzt). Score 91.
+- CRP: 1.000 €/Monat ≈ 1,4–5 Mio. Views (mittel 2,4 Mio., ca. 40k je Video bei 60 Videos).
+- KI-Label: Das sichtbare Label steht im Feld `aigcLabelType`, nicht in `IsAigc`. Pflicht ist es nur bei realistischen Inhalten.
+- Wartet auf den Inhaber: Nische freigeben, Werkzeuge für Account 2 (nur Three.js/Blender?), bisheriges Thema des Accounts, US-Vorbilder ansehen.
+
 ## Wo wir stehen
 - **Neuaufstellung (31.10. spät):** Maßstab sind 4 virale Konkurrenzvideos (je über 1 Mio. Aufrufe), Auswertung in `docs/15-massstab.md`. Verbindlich, Pflichtlektüre zu Beginn jeder Sitzung.
 - **Regeln:** `CLAUDE.md` (Rolle, nur Three.js/Blender, 11 Phasen, kein Name/Logo/Rubrik, Folgen-Aufruf ca. 20 s, neuer Schluss), `docs/08-beispielskripte.md` (Aufbau, Textregeln, Regie-Text), `ENTSCHEIDUNGEN.md`.
@@ -43,6 +50,7 @@
 | 3 | Repo auf privat stellen (GitHub → Settings → General → Change visibility) | Inhaber | 2 Min. | offen |
 | 4 | Produktion 02.11.: Fußgängerampel und Steuererklärung oder Überstunden | Claude (Agenten) | – | erledigt, beide übergeben |
 | 4b | 02.11. Fußgängerampel 12:00 und Steuererklärung 20:00 posten (KI-Schalter AN), vorher mit Ton anhören | Inhaber | 15 Min. | 02.11. |
+| 4d | Account 2: Nische freigeben, Werkzeuge klären, 4 US-Vorbilder ansehen (`docs/16`, Abschnitt 7) | Inhaber | 15 Min. | offen |
 | 4c | Startsignal für 03.11.: „Schere, Stein, Papier“ (Stil 3 Clay) und „Mittagessen im Job“ (Stil 6 Collage) | Inhaber | – | offen |
 | 5 | Windows-PC einrichten (Claude Code, Node, ffmpeg, Blender), um mit GPU zu rendern | Inhaber plus Claude | 30–60 Min. | empfohlen |
 | 6 | TikTok-Konto öffentlich, Buffer-Test, Telegram (`docs/13`) | Inhaber | 30 Min. | offen |
