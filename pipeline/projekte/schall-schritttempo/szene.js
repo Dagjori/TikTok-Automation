@@ -487,6 +487,7 @@ async function start() {
   M.chips({ y: 1060, ausrichtung: "mitte", aus: "merksatz:Was-0.45", liste: [{ text: "200 HZ → 49 KHZ", ein: "ueberraschung:Nur", art: "dunkel" }] });
   // Merksatz
   M.pointe({ text: "WAS DU HÖRST, | IST SCHON | *PASSIERT.*", ein: "merksatz:Was", takt: 0.13, aus: "Welches-0.1", y: 520, groesse: 112 });
+  M.chips({ y: 960, ausrichtung: "mitte", aus: "Schreib-0.1", liste: [{ text: "DEIN SZENARIO?", ein: "Szenario-0.05", art: "voll", team: "b", gross: true }] });
   M.untertitel({ stil: "kontur", unten: 1450, groesse: 62 });
 
   // Blitz, wenn die Welle dich trifft (HUD-Ebene ohne Text)
@@ -582,6 +583,7 @@ async function start() {
     { t: T("Freundin.") - 0.35, z: ZF, d: 0.6 },
     { t: T("regeln:S-Bahn") - 0.25, z: ZT, d: 0.75 },
     { t: T("Klar,") - 0.15, z: Z0, d: 0.7 },
+    { t: T("Oder?") - 0.1, z: ZT, d: 0.6 }, // „Oder?“: Blick zur S-Bahn
     { t: tS1 - 0.2, z: ZF, d: 0.75 },
     { t: tS3 - 0.1, z: ZT, d: 0.85 },
     { t: tS4 + 0.05, z: ZL, d: 0.85 },
@@ -590,6 +592,8 @@ async function start() {
     { t: T("ueberraschung:alles,") - 0.1, z: () => V(22, 1.6, 0.4), d: 0.8 }, // Blick auf die eingefrorenen Wellen
     { t: tUltra - 0.6, z: () => V(7, 2.7, 2.2), d: 0.9 },
     { t: tMerk - 0.25, z: ZF, d: 0.8 },
+    { t: T("immer") - 0.1, z: () => MUND.clone().add(V(0.9, -0.25, -0.9)), d: 1.0 }, // langsamer Schwenk an ihr vorbei
+    { t: T("Welches") - 0.1, z: () => V(14, 1.2, 4.6), d: 1.1 }, // zurück Richtung Anfangsbild
   ];
   for (const k of ziele.slice(1)) if (k.d > 0.05) M.melde({ t: k.t, typ: "kamera", klang: false, dauer: k.d, text: "Blickwechsel" });
   const blickZiel = (t) => {
@@ -625,6 +629,8 @@ async function start() {
   regie.stoss({ t: tVorbei - 0.1, staerke: 1.2, dauer: 0.7 });
   regie.stoss({ t: tUltra, staerke: 0.9 });
   regie.stoss({ t: T("Klar,") + 0.05, staerke: 0.5 });
+  regie.stoss({ t: T("passiert.") + 0.05, staerke: 0.45 });
+  regie.zoom({ t: "später.", staerke: 0, fov: -6, halt: 0.5, rueck: 0.4 });
   regie.schleife({ ab: tSchleife, ende: ENDE });
 
   const post = { bloomStaerke: BLOOM, bloomSchwelle: 0.95, bloomRadius: 1.0, belichtung: 1.0, vignette: 0.32, saettigung: 1.08, kontrast: 1.06, koernung: 0.03 };

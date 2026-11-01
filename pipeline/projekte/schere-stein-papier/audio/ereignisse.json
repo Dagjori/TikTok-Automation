@@ -1843,6 +1843,14 @@
    "text": "WECHSELT"
   },
   {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 55.04,
+   "art": "zoom",
+   "dauer": 1.5,
+   "klang": "zoom"
+  },
+  {
    "quelle": "Szene",
    "t": 56.14,
    "typ": "kamera",

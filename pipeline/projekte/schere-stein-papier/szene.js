@@ -572,6 +572,7 @@ async function start() {
   if (!schleifenPruefung.ok) console.warn("Schleife nicht geschlossen:", JSON.stringify(schleifenPruefung));
   M.veroeffentliche({ regie, dauer: DAUER, teppich: skript.klangteppich, schleifenPruefung });
   window.__nurHud = (t) => { regie.anwenden(t); hud.update(t); };
+  window.hudAt = (t) => hud.update(t); // nur HUD (für qc/text_ueberlappung.mjs)
   window.__weltSetzen = (t) => setzeWelt(t);
   window.modell = {
     seeds: V.seeds,

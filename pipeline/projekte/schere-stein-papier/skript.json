@@ -110,5 +110,86 @@
       "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
       "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare."
     }
+  ],
+  "stil_begruendung": "Konkurrenz-Check 01.11.2026 (Websuche, öffentliche Seiten): Zu Schere, Stein, Papier gibt es auf Deutsch vor allem Text- und Erklärbeiträge mit dem Tipp „Gewinner bleibt, Verlierer wechselt“ (web.de „Wissen: Wer gewinnt öfter“, Vodafone „Spieltheorie: So steigerst du deine Erfolgsaussichten“, funk/ZDF „Schere Stein Papier – dein Weg zum Sieg“); die TikTok-Seiten von @studyflix und @mentalisttimonkrause sind aus der Cloud nicht abrufbar, gesucht wurde auch nach Simulationsvideos über 100 Runden, gefunden wurde keines. Unser Ansatz ist die Simulation: dieselbe Taktik, 100 Runden gegen Zufall und gegen ein Mensch-Modell mit Brett, das sich Runde für Runde füllt. Stil 3 Clay-Spielzeug passt laut Katalog (docs/10) zu Spielen und Zufall: Würfel, Schach-Bauer und Knet-Hände sind sofort lesbar und heben sich von der Flat-Infografik der Vorbilder K1, K2, K4 ab. Vorheriges Video am 02.11. abends: Stil 4 Flat, nächstes am 03.11. abends: Stil 6 Collage, also nie derselbe Stil hintereinander. Eigene Modelle (Hände, Brett, Würfel, Bauer, Kopf-Figur), nichts von Konkurrenzvideos übernommen.",
+  "konkurrenz_check": "01.11.2026, Websuche (Deutsch und Englisch): kein Simulationsvideo „100 Runden Taktik gegen Zufall und gegen Mensch“ gefunden; verbreitet sind Tipp-Artikel und Erklärvideos zum Muster „Gewinner bleibt, Verlierer wechselt“. TikTok-Seiten (@studyflix, @mentalisttimonkrause) aus der Cloud nicht abrufbar. Thema nicht in docs/15 §9 gesperrt.",
+  "beschreibung": "Schere, Stein, Papier: Gibt es eine Gewinnstrategie? ✂️ Ich hab's simuliert. Team Taktik oder Team Zufall? 👇 #scheresteinpapier #gewinnstrategie #spieltheorie #wissen #simulation",
+  "zahlen": {
+    "hinweis": "Modellrechnung, Code pipeline/sim/schere_stein_papier.mjs (13 Tests), Auswertung pipeline/sim/auswertung_schere_stein_papier.mjs, Ergebnisse sim_ergebnisse.md",
+    "runden": 100,
+    "lauf_zufall": {
+      "seed": 308,
+      "rot": 34,
+      "cyan": 31,
+      "remis": 35,
+      "vorsprung": 3,
+      "runde10": "4:2",
+      "runde30": "11:11",
+      "runde60": "22:19"
+    },
+    "lauf_mensch": {
+      "seed": 16,
+      "rot": 50,
+      "cyan": 31,
+      "remis": 19,
+      "vorsprung": 19,
+      "runde30": "17:8",
+      "runde50": "24:16"
+    },
+    "lauf_mensch_wuerfelt_ab_51": {
+      "seed": 16,
+      "rot": 38,
+      "cyan": 31,
+      "remis": 31,
+      "vorsprung": 7,
+      "zweite_haelfte": "14:15"
+    },
+    "monte_carlo_100000_zufall": {
+      "rot_vorn": 0.476,
+      "cyan_vorn": 0.476,
+      "gleichstand": 0.048,
+      "mittlerer_vorsprung": 0.0,
+      "sigma": 8.19,
+      "siege": "33,3 / 33,3 / 33,4"
+    },
+    "monte_carlo_100000_mensch": {
+      "rot_vorn": 0.988,
+      "cyan_vorn": 0.008,
+      "gleichstand": 0.003,
+      "mittlerer_vorsprung": 17.2,
+      "sigma": 7.34,
+      "siege": "44,5 / 27,3 / 28,2"
+    },
+    "monte_carlo_100000_mensch_wuerfelt_ab_51": {
+      "vorsprung_erste_haelfte": 8.54,
+      "vorsprung_zweite_haelfte": -0.01
+    },
+    "warum": {
+      "nach_menschsieg": {
+        "rot": 0.55,
+        "cyan": 0.225
+      },
+      "nach_menschniederlage": {
+        "rot": 0.38,
+        "cyan": 0.3
+      }
+    },
+    "wiederholung_belegt": 0.44,
+    "wiederholung_zufall": 0.333
+  },
+  "annahmen": [
+    "(F) Gegen eine gleichverteilte Zufallsstrategie hat jeder Zug und jede Mischung den Erwartungswert 0 (je 1/3 Sieg, unentschieden, Niederlage): Nash-Gleichgewicht der gemischten Strategie. Im Code getestet (sim/schere_stein_papier.test.mjs, Test „Nash“) und per Monte Carlo (100.000 Läufe: Vorsprung Ø −0,01, σ 8,19 = √(100·2/3)).",
+    "(A) Mensch-Modell (bedingte Reaktion): nach Sieg bleibt der Zug mit 55 %, nach Unentschieden mit 45 %, nach Niederlage mit 32 %; die übrigen Anteile verteilen sich nach Sieg 22,5/22,5 %, nach Unentschieden 27,5/27,5 %, nach Niederlage 38 % auf den Zug, der den letzten Zug des Gegners geschlagen hätte, und 30 % auf den anderen Wechsel. Belegt sind nur die Gesamt-Wiederholungsrate 44 % und die Richtung der Befunde; die einzelnen Zahlen sind angenommen, so gewählt, dass ((0,55+0,45+0,32)/3) = 0,44 gilt. Die Einzelwerte aus Fig. 2 der Studie waren aus der Cloud nicht abrufbar (nature.com und PMC gesperrt, nur der arXiv-Volltext mit Tabelle der Wiederholungsrate).",
+    "(A) Rot kennt dieses Muster und spielt jede Runde den Zug mit dem höchsten Erwartungswert gegen das Modell; gegen den Zufallsspieler setzt Rot dieselbe Taktik ein (Rot „weiß“ nicht, wer Cyan ist).",
+    "(S) Empfindlichkeit: Skaliert man die Abweichungen des Menschen von 1/3 mit k (Rot rechnet weiter mit k = 1): k = 0,5 (Wiederholungsrate 38,7 %) → Vorsprung Ø 9,1 Siege, Rot in 86 % der Läufe vorn; k = 0,25 (36,0 %) → Ø 4,7, 70 %; k = 0 → Ø 0,05 (Zufall). Die Aussage „gegen Menschen hilft Taktik“ gilt also nur so stark, wie das Muster wirklich ist; die Größenordnung im Video (Ø +17) setzt das volle Modell voraus.",
+    "(A) Verwendete Läufe: Seeds nach festen Kriterien gewählt (sim/schere_stein_papier.mjs, waehleLaeufe): Zufall: |Vorsprung| ≤ 3 (typisch, Median von |Vorsprung| = 6), Rot führt zuerst, mindestens 3 Führungswechsel; Mensch: Endvorsprung innerhalb ±3 um den Median (17), Cyan führt anfangs, danach zieht Rot davon; Mensch würfelt ab Runde 51: gleicher Seed, Vorsprung in Runde 51–100 höchstens ±3.",
+    "(A) Spieler sind Studierende im Labor mit kleinem Geldanreiz, Zufallspaarung in Gruppen zu 6; ob einzelne Menschen gegen eine Taktik genauso spielen, ist offen. Das Video zeigt ein Modell („Ich hab's simuliert“), keine Aussage über einen bestimmten Gegner."
+  ],
+  "quellen": [
+    "(F) Wang Z, Xu B, Zhou H-J (2014): Social cycling and conditional responses in the Rock-Paper-Scissors game. Scientific Reports 4:5830, DOI 10.1038/srep05830 (arXiv:1404.5199, Volltext über die Forschungssuche gelesen): 360 Studierende der Zhejiang University, 60 Gruppen zu 6, 300 Runden, zufällige Paarung. Befunde: Marginalverteilung R 0,36, P 0,33, S 0,32 (mit NE vereinbar); Spieler wiederholen ihren letzten Zug häufiger, als sie wechseln; nach einem Sieg ist die Wiederholung „deutlich häufiger“ als jeder Wechsel; nach einer Niederlage (Auszahlungsparameter a ≥ 2) wechseln Spieler häufiger „im Uhrzeigersinn“ (R→S, S→P, P→R, also auf den Zug, der den letzten Zug des Gegners geschlagen hätte) als dass sie bleiben oder gegen den Uhrzeigersinn wechseln. Die Autoren zeigen außerdem, dass eine passend gewählte bedingte Reaktion (CR-Strategie) die NE-Mischstrategie in der Summe der Auszahlungen übertrifft (bis ca. 10 % bei hoher Auszahlung); die Marginalverteilung eines Einzelspielers ist von der NE-Mischung nicht zu unterscheiden.",
+    "(F) Wang Z, Xu B (2014): Incentive and stability in the Rock-Paper-Scissors game: an experimental investigation. arXiv:1407.1170 (ESA-Tagungsfassung, nicht peer-reviewed): Tabelle 2, a = 2 (Standard-Auszahlung), 72 Spieler, 300 Runden: Wiederholung des letzten Zugs 0,440 (s.e. 0,020), Wechsel in beide Richtungen 0,282 bzw. 0,279. Daraus der Wert 44 % im Video (Zufall: 33,3 %).",
+    "(F) Moerel M u. a. (2025): Neural decoding of competitive decision-making in Rock–Paper–Scissors. Social Cognitive and Affective Neuroscience 20(1), nsaf101 (EEG-Hyperscanning, 31 Paare, 480 Spiele; Aussage der Autoren laut Pressebericht/Suchtreffer: möglichst zufällig und unvorhersehbar spielen ist die beste Strategie; die meisten Menschen bevorzugen Stein). Stützt den Merksatz „Gegen Zufall hilft keine Taktik“. Nur Suchtreffer gelesen, Volltext nicht abrufbar.",
+    "(F) Spieltheorie: Gleichverteilte Mischstrategie ist das einzige Nash-Gleichgewicht von Schere-Stein-Papier (Osborne & Rubinstein 1994, A Course in Game Theory; Nash 1950). Hier im Code nachgerechnet und getestet.",
+    "(A) Popularität des Tipps „Gewinner bleibt, Verlierer wechselt“ in deutschen Medien (nur zur Einordnung, nicht im Video): web.de „Wissen: Wer gewinnt öfter“, Vodafone „Spieltheorie: So steigerst Du Deine Erfolgsaussichten bei Stein-Schere-Papier“, ZDF/funk „Schere Stein Papier – dein Weg zum Sieg“, Abruf über Websuche 01.11.2026 (Seiten selbst aus der Cloud gesperrt)."
   ]
 }

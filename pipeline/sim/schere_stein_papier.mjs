@@ -94,16 +94,17 @@ export function taktikZug(rng, letzterGegner, ergGegner, modell = MENSCH) {
 /**
  * Ein Lauf. gegner: "zufall" (gleichverteilt), "mensch" (Mensch-Modell), "mensch-wuerfelt" (Mensch-Modell bis Runde
  * wechselRunde − 1, danach gleichverteilt). Rot und Cyan ziehen aus getrennten Zufallsströmen: Die ersten Runden
- * von „mensch“ und „mensch-wuerfelt“ sind bei gleichem Seed identisch.
+ * von „mensch“ und „mensch-wuerfelt“ sind bei gleichem Seed identisch. modell = wie der Gegner wirklich spielt, annahme =
+ * was Rot über den Gegner annimmt (Standard: das volle Mensch-Modell).
  */
-export function spiele({ seed = 1, runden = 100, gegner = "zufall", wechselRunde = 51, modell = MENSCH } = {}) {
+export function spiele({ seed = 1, runden = 100, gegner = "zufall", wechselRunde = 51, modell = MENSCH, annahme = MENSCH } = {}) {
   const rngT = zufall(seed * 2654435761 + 11);
   const rngG = zufall(seed * 40503 + 977);
   const rundenListe = [];
   let siegeRot = 0, siegeCyan = 0, remis = 0;
   let letzterG = null, ergG = 0;
   for (let r = 1; r <= runden; r++) {
-    const rot = taktikZug(rngT, letzterG, ergG, modell);
+    const rot = taktikZug(rngT, letzterG, ergG, annahme);
     const zufaellig = gegner === "zufall" || (gegner === "mensch-wuerfelt" && r >= wechselRunde);
     const cyanZufall = zieheAus(rngG, [1 / 3, 1 / 3, 1 / 3]);
     let cyan;

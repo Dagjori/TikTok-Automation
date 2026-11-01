@@ -998,14 +998,6 @@
    "text": "200 HZ → 49 KHZ"
   },
   {
-   "quelle": "Szene",
-   "t": 64.57,
-   "typ": "figur",
-   "klang": "whoosh",
-   "dauer": 0.6,
-   "text": "Fledermaus"
-  },
-  {
    "quelle": "Chip",
    "t": 65.92,
    "typ": "chip-weg",
@@ -1033,6 +1025,37 @@
    "text": "WAS DU HÖRST, | IST SCHON | *PASSIERT.*"
   },
   {
+   "quelle": "Szene",
+   "t": 67.55,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 1,
+   "text": "Blickwechsel"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 68.26,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.15,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 1.1,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 69.56,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DEIN SZENARIO?"
+  },
+  {
    "typ": "kamera",
    "quelle": "Regie",
    "t": 69.85,
@@ -1046,6 +1069,12 @@
    "dauer": 4.25,
    "klang": "rueck",
    "quelle": "Massstab"
+  },
+  {
+   "quelle": "Chip",
+   "t": 71.83,
+   "typ": "chip-weg",
+   "klang": false
   }
  ],
  "klang": []
