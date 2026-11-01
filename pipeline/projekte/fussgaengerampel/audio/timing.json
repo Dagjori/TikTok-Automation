@@ -1,0 +1,902 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 65.464,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Einmal drücken oder zehnmal? Wer kriegt schneller Grün?",
+   "start": 0.0,
+   "ende": 4.08,
+   "woerter": [
+    {
+     "wort": "Einmal",
+     "start": 0.0,
+     "ende": 0.347
+    },
+    {
+     "wort": "drücken",
+     "start": 0.4,
+     "ende": 0.752
+    },
+    {
+     "wort": "oder",
+     "start": 1.28,
+     "ende": 1.36
+    },
+    {
+     "wort": "zehnmal?",
+     "start": 1.6,
+     "ende": 2.36
+    },
+    {
+     "wort": "Wer",
+     "start": 2.64,
+     "ende": 2.72
+    },
+    {
+     "wort": "kriegt",
+     "start": 2.8,
+     "ende": 3.04
+    },
+    {
+     "wort": "schneller",
+     "start": 3.093,
+     "ende": 3.36
+    },
+    {
+     "wort": "Grün?",
+     "start": 3.44,
+     "ende": 4.08
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Drei Ampeln bis zur Bahn. Max hetzt und drückt Sturm. Lea drückt einmal.",
+   "start": 4.4,
+   "ende": 9.68,
+   "woerter": [
+    {
+     "wort": "Drei",
+     "start": 4.4,
+     "ende": 4.64
+    },
+    {
+     "wort": "Ampeln",
+     "start": 4.8,
+     "ende": 5.12
+    },
+    {
+     "wort": "bis",
+     "start": 5.2,
+     "ende": 5.28
+    },
+    {
+     "wort": "zur",
+     "start": 5.36,
+     "ende": 5.48
+    },
+    {
+     "wort": "Bahn.",
+     "start": 5.52,
+     "ende": 6.04
+    },
+    {
+     "wort": "Max",
+     "start": 6.24,
+     "ende": 6.56
+    },
+    {
+     "wort": "hetzt",
+     "start": 6.68,
+     "ende": 6.96
+    },
+    {
+     "wort": "und",
+     "start": 7.04,
+     "ende": 7.12
+    },
+    {
+     "wort": "drückt",
+     "start": 7.2,
+     "ende": 7.44
+    },
+    {
+     "wort": "Sturm.",
+     "start": 7.52,
+     "ende": 8.0
+    },
+    {
+     "wort": "Lea",
+     "start": 8.48,
+     "ende": 8.8
+    },
+    {
+     "wort": "drückt",
+     "start": 8.84,
+     "ende": 9.12
+    },
+    {
+     "wort": "einmal.",
+     "start": 9.2,
+     "ende": 9.68
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, Max gewinnt. Oder?",
+   "start": 10.08,
+   "ende": 12.28,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 10.08,
+     "ende": 10.64
+    },
+    {
+     "wort": "Max",
+     "start": 10.72,
+     "ende": 10.96
+    },
+    {
+     "wort": "gewinnt.",
+     "start": 11.04,
+     "ende": 11.76
+    },
+    {
+     "wort": "Oder?",
+     "start": 11.8,
+     "ende": 12.28
+    }
+   ]
+  },
+  {
+   "id": "start",
+   "text": "Los geht's.",
+   "start": 12.56,
+   "ende": 13.4,
+   "woerter": [
+    {
+     "wort": "Los",
+     "start": 12.56,
+     "ende": 12.8
+    },
+    {
+     "wort": "geht's.",
+     "start": 12.84,
+     "ende": 13.4
+    }
+   ]
+  },
+  {
+   "id": "rennen1",
+   "text": "Max ist zuerst an Ampel 1. Und drückt, drückt, drückt.",
+   "start": 13.6,
+   "ende": 17.2,
+   "woerter": [
+    {
+     "wort": "Max",
+     "start": 13.6,
+     "ende": 13.84
+    },
+    {
+     "wort": "ist",
+     "start": 13.92,
+     "ende": 14.0
+    },
+    {
+     "wort": "zuerst",
+     "start": 14.04,
+     "ende": 14.4
+    },
+    {
+     "wort": "an",
+     "start": 14.48,
+     "ende": 14.56
+    },
+    {
+     "wort": "Ampel",
+     "start": 14.613,
+     "ende": 14.8
+    },
+    {
+     "wort": "1.",
+     "start": 14.88,
+     "ende": 15.2
+    },
+    {
+     "wort": "Und",
+     "start": 15.36,
+     "ende": 15.44
+    },
+    {
+     "wort": "drückt,",
+     "start": 15.52,
+     "ende": 16.08
+    },
+    {
+     "wort": "drückt,",
+     "start": 16.16,
+     "ende": 16.64
+    },
+    {
+     "wort": "drückt.",
+     "start": 16.72,
+     "ende": 17.2
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 17.6,
+   "ende": 19.44,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 17.6,
+     "ende": 17.84
+    },
+    {
+     "wort": "mir,",
+     "start": 17.92,
+     "ende": 18.16
+    },
+    {
+     "wort": "damit",
+     "start": 18.24,
+     "ende": 18.4
+    },
+    {
+     "wort": "du",
+     "start": 18.44,
+     "ende": 18.48
+    },
+    {
+     "wort": "nichts",
+     "start": 18.56,
+     "ende": 18.76
+    },
+    {
+     "wort": "verpasst.",
+     "start": 18.8,
+     "ende": 19.44
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Doch dann kommt Lea. Ein Druck. Und beide kriegen in derselben Sekunde Grün.",
+   "start": 19.669,
+   "ende": 24.32,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 19.669,
+     "ende": 19.84
+    },
+    {
+     "wort": "dann",
+     "start": 19.88,
+     "ende": 20.0
+    },
+    {
+     "wort": "kommt",
+     "start": 20.08,
+     "ende": 20.32
+    },
+    {
+     "wort": "Lea.",
+     "start": 20.4,
+     "ende": 20.8
+    },
+    {
+     "wort": "Ein",
+     "start": 21.12,
+     "ende": 21.28
+    },
+    {
+     "wort": "Druck.",
+     "start": 21.32,
+     "ende": 21.76
+    },
+    {
+     "wort": "Und",
+     "start": 21.92,
+     "ende": 22.0
+    },
+    {
+     "wort": "beide",
+     "start": 22.16,
+     "ende": 22.4
+    },
+    {
+     "wort": "kriegen",
+     "start": 22.48,
+     "ende": 22.72
+    },
+    {
+     "wort": "in",
+     "start": 22.8,
+     "ende": 22.88
+    },
+    {
+     "wort": "derselben",
+     "start": 23.0,
+     "ende": 23.44
+    },
+    {
+     "wort": "Sekunde",
+     "start": 23.48,
+     "ende": 23.92
+    },
+    {
+     "wort": "Grün.",
+     "start": 24.08,
+     "ende": 24.32
+    }
+   ]
+  },
+  {
+   "id": "rennen2",
+   "text": "Ampel 2 läuft im festen Takt. Max erwischt das letzte Grün. Lea: Rot.",
+   "start": 24.72,
+   "ende": 30.36,
+   "woerter": [
+    {
+     "wort": "Ampel",
+     "start": 24.72,
+     "ende": 24.96
+    },
+    {
+     "wort": "2",
+     "start": 25.12,
+     "ende": 25.28
+    },
+    {
+     "wort": "läuft",
+     "start": 25.44,
+     "ende": 25.68
+    },
+    {
+     "wort": "im",
+     "start": 25.76,
+     "ende": 25.84
+    },
+    {
+     "wort": "festen",
+     "start": 25.92,
+     "ende": 26.32
+    },
+    {
+     "wort": "Takt.",
+     "start": 26.4,
+     "ende": 26.92
+    },
+    {
+     "wort": "Max",
+     "start": 27.12,
+     "ende": 27.36
+    },
+    {
+     "wort": "erwischt",
+     "start": 27.44,
+     "ende": 27.68
+    },
+    {
+     "wort": "das",
+     "start": 27.76,
+     "ende": 27.92
+    },
+    {
+     "wort": "letzte",
+     "start": 28.0,
+     "ende": 28.32
+    },
+    {
+     "wort": "Grün.",
+     "start": 28.48,
+     "ende": 28.72
+    },
+    {
+     "wort": "Lea:",
+     "start": 29.12,
+     "ende": 29.64
+    },
+    {
+     "wort": "Rot.",
+     "start": 29.84,
+     "ende": 30.36
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Aber an Ampel 3 kommt Max eine Sekunde zu spät. Grün erst im nächsten Umlauf. Lea holt auf. Jetzt wird's knapp.",
+   "start": 30.56,
+   "ende": 38.08,
+   "woerter": [
+    {
+     "wort": "Aber",
+     "start": 30.56,
+     "ende": 30.8
+    },
+    {
+     "wort": "an",
+     "start": 30.88,
+     "ende": 30.96
+    },
+    {
+     "wort": "Ampel",
+     "start": 31.0,
+     "ende": 31.2
+    },
+    {
+     "wort": "3",
+     "start": 31.28,
+     "ende": 31.52
+    },
+    {
+     "wort": "kommt",
+     "start": 31.6,
+     "ende": 31.84
+    },
+    {
+     "wort": "Max",
+     "start": 32.0,
+     "ende": 32.16
+    },
+    {
+     "wort": "eine",
+     "start": 32.24,
+     "ende": 32.4
+    },
+    {
+     "wort": "Sekunde",
+     "start": 32.48,
+     "ende": 32.88
+    },
+    {
+     "wort": "zu",
+     "start": 32.96,
+     "ende": 33.04
+    },
+    {
+     "wort": "spät.",
+     "start": 33.12,
+     "ende": 33.52
+    },
+    {
+     "wort": "Grün",
+     "start": 33.84,
+     "ende": 34.16
+    },
+    {
+     "wort": "erst",
+     "start": 34.24,
+     "ende": 34.4
+    },
+    {
+     "wort": "im",
+     "start": 34.48,
+     "ende": 34.56
+    },
+    {
+     "wort": "nächsten",
+     "start": 34.64,
+     "ende": 34.96
+    },
+    {
+     "wort": "Umlauf.",
+     "start": 35.04,
+     "ende": 35.52
+    },
+    {
+     "wort": "Lea",
+     "start": 35.92,
+     "ende": 36.16
+    },
+    {
+     "wort": "holt",
+     "start": 36.24,
+     "ende": 36.4
+    },
+    {
+     "wort": "auf.",
+     "start": 36.48,
+     "ende": 37.12
+    },
+    {
+     "wort": "Jetzt",
+     "start": 37.2,
+     "ende": 37.44
+    },
+    {
+     "wort": "wird's",
+     "start": 37.48,
+     "ende": 37.68
+    },
+    {
+     "wort": "knapp.",
+     "start": 37.76,
+     "ende": 38.08
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Grün für beide! Endstand: dieselbe Bahn. Max hat 63-mal gedrückt. Lea dreimal.",
+   "start": 38.32,
+   "ende": 45.2,
+   "woerter": [
+    {
+     "wort": "Grün",
+     "start": 38.32,
+     "ende": 38.56
+    },
+    {
+     "wort": "für",
+     "start": 38.64,
+     "ende": 38.8
+    },
+    {
+     "wort": "beide!",
+     "start": 38.88,
+     "ende": 39.36
+    },
+    {
+     "wort": "Endstand:",
+     "start": 39.76,
+     "ende": 40.32
+    },
+    {
+     "wort": "dieselbe",
+     "start": 40.56,
+     "ende": 41.04
+    },
+    {
+     "wort": "Bahn.",
+     "start": 41.12,
+     "ende": 41.64
+    },
+    {
+     "wort": "Max",
+     "start": 41.84,
+     "ende": 42.08
+    },
+    {
+     "wort": "hat",
+     "start": 42.2,
+     "ende": 42.32
+    },
+    {
+     "wort": "63-mal",
+     "start": 42.36,
+     "ende": 43.28
+    },
+    {
+     "wort": "gedrückt.",
+     "start": 43.36,
+     "ende": 43.88
+    },
+    {
+     "wort": "Lea",
+     "start": 44.0,
+     "ende": 44.32
+    },
+    {
+     "wort": "dreimal.",
+     "start": 44.48,
+     "ende": 45.2
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Nur der erste Druck zählt. Und Grün kommt im Takt. Max war schneller da und hat einfach länger gewartet.",
+   "start": 45.44,
+   "ende": 52.92,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 45.44,
+     "ende": 46.08
+    },
+    {
+     "wort": "Nur",
+     "start": 46.32,
+     "ende": 46.48
+    },
+    {
+     "wort": "der",
+     "start": 46.56,
+     "ende": 46.64
+    },
+    {
+     "wort": "erste",
+     "start": 46.72,
+     "ende": 47.04
+    },
+    {
+     "wort": "Druck",
+     "start": 47.12,
+     "ende": 47.36
+    },
+    {
+     "wort": "zählt.",
+     "start": 47.44,
+     "ende": 47.92
+    },
+    {
+     "wort": "Und",
+     "start": 48.08,
+     "ende": 48.24
+    },
+    {
+     "wort": "Grün",
+     "start": 48.32,
+     "ende": 48.64
+    },
+    {
+     "wort": "kommt",
+     "start": 48.72,
+     "ende": 48.96
+    },
+    {
+     "wort": "im",
+     "start": 49.0,
+     "ende": 49.04
+    },
+    {
+     "wort": "Takt.",
+     "start": 49.12,
+     "ende": 49.52
+    },
+    {
+     "wort": "Max",
+     "start": 49.92,
+     "ende": 50.16
+    },
+    {
+     "wort": "war",
+     "start": 50.24,
+     "ende": 50.32
+    },
+    {
+     "wort": "schneller",
+     "start": 50.36,
+     "ende": 50.64
+    },
+    {
+     "wort": "da",
+     "start": 50.72,
+     "ende": 51.2
+    },
+    {
+     "wort": "und",
+     "start": 51.28,
+     "ende": 51.36
+    },
+    {
+     "wort": "hat",
+     "start": 51.44,
+     "ende": 51.52
+    },
+    {
+     "wort": "einfach",
+     "start": 51.56,
+     "ende": 51.92
+    },
+    {
+     "wort": "länger",
+     "start": 51.96,
+     "ende": 52.16
+    },
+    {
+     "wort": "gewartet.",
+     "start": 52.24,
+     "ende": 52.92
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und das Verrückte: Drückt an Ampel 1 keiner, bleibt sie rot. Egal, wie lange du wartest.",
+   "start": 53.12,
+   "ende": 58.64,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 53.12,
+     "ende": 53.2
+    },
+    {
+     "wort": "das",
+     "start": 53.28,
+     "ende": 53.36
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 53.4,
+     "ende": 53.92
+    },
+    {
+     "wort": "Drückt",
+     "start": 54.24,
+     "ende": 54.52
+    },
+    {
+     "wort": "an",
+     "start": 54.56,
+     "ende": 54.64
+    },
+    {
+     "wort": "Ampel",
+     "start": 54.68,
+     "ende": 54.88
+    },
+    {
+     "wort": "1",
+     "start": 55.04,
+     "ende": 55.2
+    },
+    {
+     "wort": "keiner,",
+     "start": 55.36,
+     "ende": 56.0
+    },
+    {
+     "wort": "bleibt",
+     "start": 56.04,
+     "ende": 56.24
+    },
+    {
+     "wort": "sie",
+     "start": 56.32,
+     "ende": 56.4
+    },
+    {
+     "wort": "rot.",
+     "start": 56.48,
+     "ende": 57.12
+    },
+    {
+     "wort": "Egal,",
+     "start": 57.2,
+     "ende": 57.573
+    },
+    {
+     "wort": "wie",
+     "start": 57.627,
+     "ende": 57.68
+    },
+    {
+     "wort": "lange",
+     "start": 57.733,
+     "ende": 57.84
+    },
+    {
+     "wort": "du",
+     "start": 57.92,
+     "ende": 58.0
+    },
+    {
+     "wort": "wartest.",
+     "start": 58.08,
+     "ende": 58.64
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Einmal drücken reicht. Wann du kommst, entscheidet.",
+   "start": 58.8,
+   "ende": 62.0,
+   "woerter": [
+    {
+     "wort": "Einmal",
+     "start": 58.8,
+     "ende": 59.12
+    },
+    {
+     "wort": "drücken",
+     "start": 59.2,
+     "ende": 59.52
+    },
+    {
+     "wort": "reicht.",
+     "start": 59.6,
+     "ende": 60.08
+    },
+    {
+     "wort": "Wann",
+     "start": 60.4,
+     "ende": 60.48
+    },
+    {
+     "wort": "du",
+     "start": 60.56,
+     "ende": 60.64
+    },
+    {
+     "wort": "kommst,",
+     "start": 60.72,
+     "ende": 61.2
+    },
+    {
+     "wort": "entscheidet.",
+     "start": 61.32,
+     "ende": 62.0
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 62.24,
+   "ende": 65.52,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 62.24,
+     "ende": 62.4
+    },
+    {
+     "wort": "sollen",
+     "start": 62.453,
+     "ende": 62.56
+    },
+    {
+     "wort": "wir",
+     "start": 62.64,
+     "ende": 62.693
+    },
+    {
+     "wort": "als",
+     "start": 62.72,
+     "ende": 62.88
+    },
+    {
+     "wort": "Nächstes",
+     "start": 62.96,
+     "ende": 63.28
+    },
+    {
+     "wort": "zeigen?",
+     "start": 63.36,
+     "ende": 64.0
+    },
+    {
+     "wort": "Schreib",
+     "start": 64.04,
+     "ende": 64.24
+    },
+    {
+     "wort": "es",
+     "start": 64.32,
+     "ende": 64.4
+    },
+    {
+     "wort": "in",
+     "start": 64.44,
+     "ende": 64.48
+    },
+    {
+     "wort": "die",
+     "start": 64.52,
+     "ende": 64.56
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 64.64,
+     "ende": 65.52
+    }
+   ]
+  }
+ ]
+}

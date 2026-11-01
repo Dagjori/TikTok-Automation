@@ -1,0 +1,30 @@
+/* Stil 4 „2D-Flat-Infografik“ (Three.js): flache Karten mit hartem Flat-Schatten statt weicher Schlagschatten, Nachtblau als Tinte */
+html, body { background: #FFF4E2; }
+#hud {
+  --karte: #FFFFFF;
+  --karte-linie: #ECEEF7;
+  --karte-grau: #6A7392;
+  --ms-radius: 28px;
+  --ms-schatten: 0 8px 0 rgba(29, 43, 83, 0.14);
+}
+.ms-seite { box-shadow: 0 9px 0 rgba(29, 43, 83, 0.14); }
+.ms-seite .ms-wert { font-size: 66px; }
+.ms-seite .ms-kopf { font-size: 23px; letter-spacing: 0.06em; }
+.ms-mitte { box-shadow: 0 0 0 7px var(--karte), 0 10px 0 7px rgba(29, 43, 83, 0.14); }
+.ms-mitte .ms-uhrtext { font-size: 34px; }
+.ms-karte { box-shadow: 0 10px 0 rgba(29, 43, 83, 0.14); }
+.ms-chip { box-shadow: 0 7px 0 rgba(29, 43, 83, 0.16); }
+.ms-folgen .ms-fp { box-shadow: 0 7px 0 rgba(29, 43, 83, 0.2); }
+/* Etiketten an Weltpunkten */
+.fl-etikett { position: absolute; left: 0; top: 0; will-change: transform, opacity; }
+.fl-etikett .ms-chip { position: relative; }
+.fl-etikett .betrag { font-family: var(--display); font-weight: 900; letter-spacing: -0.02em; }
+.fl-etikett .klein { font-size: 0.6em; letter-spacing: 0.05em; opacity: 0.88; margin-right: 0.2em; }
+.fl-etikett .ms-chip.minus { background: #E8484F; color: #fff; }
+/* kleine Marke unter der Tafel (BRUTTO/NETTO) */
+.fl-marke { position: absolute; left: 0; top: 0; height: 44px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 999px; font-family: var(--display); font-weight: 900; font-size: 24px; letter-spacing: 0.1em; color: #fff; background: var(--tinte); box-shadow: 0 5px 0 rgba(29, 43, 83, 0.16); will-change: transform, opacity; }
+/* Untertitel Wort für Wort (Stil „kontur“) auf hellem Grund: etwas kräftigerer Schatten */
+.karaoke.kontur .w { text-shadow: 0 0.05em 0.02em rgba(0, 0, 0, 0.9), 0 0.1em 0.4em rgba(20, 24, 60, 0.5); }
+.ms-titel .ms-tw.klein { font-size: 0.62em; }
+/* VORN-Marke rechts nicht unter die Uhr schieben (langer Teamname): unten links in der Karte */
+.ms-seite.rechts .ms-vorn { position: absolute; left: 58px; top: 82px; }

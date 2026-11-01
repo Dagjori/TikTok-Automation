@@ -163,6 +163,7 @@ engine/          wiederverwendbar für alle Videos
   bausteine.js   Spielzeug-Bausteine: Häuser, Hochhaus, Figuren, Autos, Bäume, Münzen, Geldbündel, Straßen, Kontaktschatten
   strasse.js     Autobahn-Baukasten und Trajektorien-Abspieler
   globus.js      Punkte-Globus mit Lichtern, Ringen, Strahlen (Daten: daten/globus-punkte.json aus Natural Earth)
+  stil_flat.js   Baukasten Designstil 4 „2D-Flat-Infografik“ in Three.js: Formen in Bild-Pixeln, orthografische Kamera (Zoom über kamera.zoom), Parallax-Ebenen, Figuren, Möbel, Münzen, Belege, Haus/Büro/Auto
 projekte/<name>/ skript.json, audio/ (stimme.mp3, timing.json, ereignisse.json), szene.html, szene.js
 qc/massstab.py   Prüfliste docs/15 §11
 render.js        Bilder rendern (parallel), Ereignis-Protokoll schreiben

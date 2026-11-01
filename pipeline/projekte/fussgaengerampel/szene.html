@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Fußgängerampel · Stil 1 Low-Poly-Miniatur</title>
+<link rel="stylesheet" href="../../engine/hud.css">
+<link rel="stylesheet" href="../../engine/massstab.css">
+<script type="importmap">
+{ "imports": {
+  "three": "/node_modules/three/build/three.module.js",
+  "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  body { background: #cfe3f7; }
+  /* Untertitel Wort für Wort (Stil „kontur“), Teamwörter in Teamfarbe (aktuelles Wort bleibt gelb) */
+  .karaoke.kontur .w { color: var(--wf, #ffffff); }
+  /* Ampel-Markierung im 3D-Bild (Nummer der Ampel) */
+  .fa-nr { position: absolute; left: 0; top: 0; z-index: 6; display: flex; align-items: center; gap: 10px; height: 58px; padding: 0 20px 0 8px; border-radius: 999px; background: var(--tinte); color: #fff;
+    font-family: var(--display); font-weight: 900; font-size: 26px; letter-spacing: 0.04em; white-space: nowrap; box-shadow: 0 0 0 4px #fff, 0 14px 30px -10px rgba(0,0,0,.55); will-change: transform, opacity; }
+  .fa-nr b { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: var(--akzent); color: var(--tinte); font-size: 28px; }
+  .fa-nr.klein { height: 50px; font-size: 22px; padding-right: 16px; }
+  .fa-nr.klein b { width: 36px; height: 36px; font-size: 24px; }
+  .fa-nr .zeiger { position: absolute; left: 30px; bottom: -16px; width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 18px solid var(--tinte); }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./szene.js"></script>
+</body>
+</html>

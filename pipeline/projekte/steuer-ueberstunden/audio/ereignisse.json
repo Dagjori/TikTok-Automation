@@ -1,0 +1,1334 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "steuer-ueberstunden",
+ "fps": 30,
+ "dauer": 67.9,
+ "stimmEnde": 66.901,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "musik",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "ÜBERSTUNDEN",
+    "farbe": "#FF8A3D"
+   },
+   "b": {
+    "name": "STEUERERKLÄRUNG",
+    "farbe": "#5465FF"
+   }
+  },
+  "schleife": {
+   "ab": 63.89,
+   "ende": 67.86666666666667
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 67.867,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 0
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": 0.02,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "STEUERERKLÄRUNG"
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.18,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "vs"
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.58,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "ÜBERSTUNDEN?"
+  },
+  {
+   "quelle": "Titel",
+   "t": 3.38,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "MEHR"
+  },
+  {
+   "quelle": "Titel",
+   "t": 3.58,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "PRO STUNDE?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.52,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.9,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.69,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "4 STUNDEN"
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.33,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "17–21 UHR"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.13,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "3.500 € BRUTTO"
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.17,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STEUERKLASSE 1"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.79,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.9,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.92,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.92,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.92,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.92,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Etikett",
+   "t": 8.01,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "25 KM ARBEITSWEG"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 9.39,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "PENDELN MIT DEM AUTO"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.99,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.8,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 10.34,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "KLAR!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 10.34,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Etikett",
+   "t": 12,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SICHERES GELD"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 13.22,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "ODER?"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 13.22,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 13.9,
+   "typ": "zaehler",
+   "dauer": 14.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 13.933,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 13.953,
+   "typ": "uhr",
+   "dauer": 2.733,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 14.02,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "LOS GEHT'S!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 14.02,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.53,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.8,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.53,
+   "typ": "muenze",
+   "klang": false,
+   "text": "Münze"
+  },
+  {
+   "quelle": "Marke",
+   "t": 14.78,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BRUTTO"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 14.88,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+20,19 €"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 15.26,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KONTOFÜHRUNG+16 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.26,
+   "typ": "beleg",
+   "dauer": 0.55,
+   "klang": "whoosh",
+   "text": "KONTOFÜHRUNG"
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.69,
+   "typ": "muenze",
+   "klang": false,
+   "text": "Münze"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 16.04,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+40,38 €"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 16.24,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ARBEITSMITTEL+120 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.24,
+   "typ": "beleg",
+   "dauer": 0.55,
+   "klang": "whoosh",
+   "text": "ARBEITSMITTEL"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.27,
+   "typ": "muenze",
+   "klang": false,
+   "text": "Münze"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 16.62,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+60,58 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 16.787,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 16.87,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "HOMEOFFICE+552 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.87,
+   "typ": "beleg",
+   "dauer": 0.55,
+   "klang": "whoosh",
+   "text": "HOMEOFFICE"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 16.92,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.053,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.187,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.32,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.4,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.8,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.487,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.62,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.753,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 17.92,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "688 €&nbsp;&lt; 1.230 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.92,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.087,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.22,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.42,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.587,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.82,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.053,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.32,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 19.66,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "NOCH NULL!"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.753,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 20.27,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.32,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1.6,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.42,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.62,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.82,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.02,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.22,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.42,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.62,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.82,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.02,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.22,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.319,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.8,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.42,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.62,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.82,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.053,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.253,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.26,
+   "typ": "beleg",
+   "dauer": 0.55,
+   "klang": "whoosh",
+   "text": "PENDELWEG"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 23.36,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "25 KM × 138 TAGE × 0,38 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.82,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 24.01,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "PENDELWEG+1.311 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.16,
+   "typ": "huerde",
+   "klang": "ding",
+   "text": "Hürde überwunden"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.187,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.26,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.55,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.42,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.5,
+   "typ": "zaehler",
+   "dauer": 0.533,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.56,
+   "typ": "muenzen",
+   "klang": "ding",
+   "text": "Münzen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.6,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.653,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 24.81,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "ÜBERHOLT!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 24.81,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.82,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.987,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.153,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.287,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.453,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.587,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.72,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.853,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 25.92,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ZURÜCK+222 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.987,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.22,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.353,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.487,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.62,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.753,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.92,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.053,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.22,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.37,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.8,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.387,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.553,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.787,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.02,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.387,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.53,
+   "typ": "muenze",
+   "klang": false,
+   "text": "Münze"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 28.88,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "80,77 €&nbsp;BRUTTO"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 30.4,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LOHNSTEUER−18,75 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.4,
+   "typ": "zaehler",
+   "dauer": 1.167,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 30.96,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SOZIALABGABEN−17,57 €"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 31.81,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "−45 %"
+  },
+  {
+   "quelle": "Marke",
+   "t": 33.04,
+   "typ": "chip",
+   "klang": "klick",
+   "text": "NETTO"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 33.92,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "NETTO44,45 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.99,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.8,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 36.08,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "STEUERERKLÄRUNG"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 37.25,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "÷ 4 STUNDEN"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 38.32,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "ÜBERSTUNDEN"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 39.92,
+   "typ": "sieger",
+   "klang": "sieg",
+   "text": "STEUERERKLÄRUNG GEWINNT"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 40.64,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "FAKTOR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.13,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.8,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Formel",
+   "t": 42.96,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "1.999"
+  },
+  {
+   "quelle": "Formel",
+   "t": 43.12,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "−"
+  },
+  {
+   "quelle": "Formel",
+   "t": 43.52,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "1.230"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 45.28,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ZÄHLT NICHT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.28,
+   "typ": "schraffur",
+   "klang": "klick",
+   "text": "Pauschbetrag zählt nicht"
+  },
+  {
+   "quelle": "Formel",
+   "t": 46.4,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "="
+  },
+  {
+   "quelle": "Formel",
+   "t": 46.88,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "769"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 46.88,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ZÄHLT"
+  },
+  {
+   "quelle": "Formel",
+   "t": 47.84,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "769"
+  },
+  {
+   "quelle": "Formel",
+   "t": 48.24,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "×"
+  },
+  {
+   "quelle": "Formel",
+   "t": 48.8,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "28,9 %"
+  },
+  {
+   "quelle": "Formel",
+   "t": 49.2,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "="
+  },
+  {
+   "quelle": "Formel",
+   "t": 49.6,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "222"
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.22,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.9,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 50.65,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "NEUER FALL"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 51.39,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 51.723,
+   "typ": "zaehler",
+   "dauer": 0.533,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 52.78,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KEIN HOMEOFFICE · KEINE EXTRAS"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 53.7,
+   "typ": "zaehler",
+   "dauer": 0.667,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 54.133,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 54.46,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "0 € ZURÜCK"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 55.33,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "ÜBERSTUNDEN VORN!"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 57.19,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 57.2,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AB 16 KM"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 57.323,
+   "typ": "zaehler",
+   "dauer": 0.8,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 57.9,
+   "typ": "zaehler",
+   "dauer": 0.4,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.167,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 58.3,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "DREHT SICH!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 58.3,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.13,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 60.08,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "DER PAUSCHBETRAG  IST DIE HÜRDE."
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.32,
+   "typ": "pointe-wort",
+   "klang": "klick",
+   "text": "HÜRDE."
+  },
+  {
+   "quelle": "Pointe",
+   "t": 61.92,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "DEIN ARBEITSWEG  ENTSCHEIDET."
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.92,
+   "typ": "pointe-wort",
+   "klang": "akzent",
+   "text": "ENTSCHEIDET."
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.887,
+   "typ": "uhr",
+   "dauer": 3.9,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 63.89,
+   "art": "schleife",
+   "dauer": 3.977,
+   "klang": false
+  },
+  {
+   "t": 63.89,
+   "typ": "schleife",
+   "dauer": 3.977,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.9,
+   "typ": "zaehler",
+   "dauer": 3.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.9,
+   "typ": "zaehler",
+   "dauer": 3.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  }
+ ],
+ "klang": []
+}

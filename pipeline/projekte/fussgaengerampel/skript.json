@@ -1,0 +1,129 @@
+{
+  "titel": "Fußgängerampel: Bringt mehrmaliges Drücken des Knopfs etwas?",
+  "rubrik": "ALLTAG",
+  "stil": "1 Low-Poly-Miniatur (Tilt-Shift-Stadt mit drei Ampeln) + 13 Blaupause als Szenenwechsel für „Warum?“",
+  "stil_begruendung": "Konkurrenz-Check 01.11. (Websuche, öffentliche Seiten): Zum Ampelknopf gibt es auf TikTok vor allem Selbsttests mit echter Kamera (bekannt: @offenunehrlich) und kurze Erklärclips (ADAC-Short „Ampel schneller grün?“), dazu viele Ratgeber-Artikel zum „geheimen Knopf unter dem Ampelkasten“ (Blindensignal). Kein Video simuliert das Rennen Einmal- gegen Dauerdrücker über mehrere Steuerungsarten. Stil 1 Low-Poly-Miniatur passt laut Auswahlregel (docs/10, Abschnitt 0) genau auf das Thema: Straße mit vielen kleinen Akteuren (zwei Fußgänger, Autos mit Rückstau, Straßenbahn, Signale). Die Tilt-Shift-Miniatur macht drei Kreuzungen und beide Figuren gleichzeitig lesbar und hebt sich klar von den Echtbild-Selbsttests ab. Signale und „Signal kommt“-Feld leuchten (Bloom). Nicht Stil 12 und 14 (beide Videos vom 01.11.), nicht 4 (zweites Video am 02.11.). „Warum?“ als Luftbild-Szenenwechsel mit Aufschlüsselung statt Blaupause, weil die Ursache (Takt der Ampeln) im Stadtbild selbst liegt. Eigene Modelle und Gestaltung, nichts von Konkurrenzvideos übernommen.",
+  "teamfarben": {
+    "Max (Dauerdrücker)": "#FF4F9A",
+    "Lea (Einmaldrücker)": "#2EC4B6"
+  },
+  "klangteppich": "strasse",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Einmal drücken oder zehnmal? Wer kriegt schneller Grün?",
+      "sprechtext": "Einmal drücken – oder ZEHNMAL?\n[curious] Wer kriegt schneller Grün?"
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Drei Ampeln bis zur Bahn. Max hetzt und drückt Sturm. Lea drückt einmal.",
+      "sprechtext": "Drei Ampeln bis zur Bahn.\nMax hetzt und drückt STURM.\nLea drückt einmal."
+    },
+    {
+      "id": "falle",
+      "phase": "denkfalle",
+      "text": "Klar, Max gewinnt. Oder?",
+      "sprechtext": "Klar, Max gewinnt.\nOder?"
+    },
+    {
+      "id": "start",
+      "phase": "start",
+      "text": "Los geht's.",
+      "sprechtext": "[excited] Los geht's!"
+    },
+    {
+      "id": "rennen1",
+      "phase": "rennen",
+      "text": "Max ist zuerst an Ampel 1. Und drückt, drückt, drückt.",
+      "sprechtext": "Max ist zuerst an Ampel eins.\nUnd drückt, drückt, DRÜCKT."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst."
+    },
+    {
+      "id": "wendung1",
+      "phase": "wendung",
+      "text": "Doch dann kommt Lea. Ein Druck. Und beide kriegen in derselben Sekunde Grün.",
+      "sprechtext": "[surprised] Doch dann kommt Lea.\nEin Druck.\nUnd beide kriegen in DERSELBEN Sekunde Grün."
+    },
+    {
+      "id": "rennen2",
+      "phase": "rennen",
+      "text": "Ampel 2 läuft im festen Takt. Max erwischt das letzte Grün. Lea: Rot.",
+      "sprechtext": "Ampel zwei läuft im festen Takt.\nMax erwischt das LETZTE Grün.\nLea: Rot."
+    },
+    {
+      "id": "wendung2",
+      "phase": "wendung",
+      "text": "Aber an Ampel 3 kommt Max eine Sekunde zu spät. Grün erst im nächsten Umlauf. Lea holt auf. Jetzt wird's knapp.",
+      "sprechtext": "Aber an Ampel drei kommt Max eine Sekunde zu spät.\nGrün erst im NÄCHSTEN Umlauf.\nLea holt auf…\nJetzt wird's knapp."
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Grün für beide! Endstand: dieselbe Bahn. Max hat 63-mal gedrückt. Lea dreimal.",
+      "sprechtext": "Grün für BEIDE!\nEndstand: dieselbe Bahn.\nMax hat dreiundsechzigmal gedrückt.\nLea dreimal."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Nur der erste Druck zählt. Und Grün kommt im Takt. Max war schneller da und hat einfach länger gewartet.",
+      "sprechtext": "[thoughtful] Warum?\nNur der ERSTE Druck zählt.\nUnd Grün kommt im Takt.\nMax war schneller da… und hat einfach länger gewartet."
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "ueberraschung",
+      "text": "Und das Verrückte: Drückt an Ampel 1 keiner, bleibt sie rot. Egal, wie lange du wartest.",
+      "sprechtext": "Und das Verrückte:\nDrückt an Ampel eins KEINER, bleibt sie rot.\nEgal, wie lange du wartest."
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Einmal drücken reicht. Wann du kommst, entscheidet.",
+      "sprechtext": "Einmal drücken REICHT.\nWann du kommst, entscheidet."
+    },
+    {
+      "id": "schluss",
+      "phase": "schluss",
+      "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+      "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare."
+    }
+  ],
+  "beschreibung": "Wird die Ampel schneller grün, wenn du öfter drückst? 🚦 Ich hab's simuliert. Team Einmal oder Team Dauerdrücken? 👇 #ampel #fußgängerampel #verkehr #wissen #simulation",
+  "zahlen": {
+    "hinweis": "Alle Zahlen im Video stammen aus pipeline/sim/ampel.mjs (Tests: sim/ampel.test.mjs), Auswertung sim_ergebnisse.md. S = Modellergebnis, F = Quelle, A = Annahme.",
+    "hauptrennen": "Ampel 1 (Bedarf): Max 27,8 s an, Lea 38,5 s an, Grün für beide 45,0 s (S). Ampel 2 (Festzeit 90 s, 16 s Grün, A/F): Max 95,0 s an (1 s vor Grünende), geht; Lea 114,2 s an, Grün 170,0 s (S). Ampel 3 (grüne Welle 90 s, Entscheidung 6 s vor Grün, A/F): Max drückt 0,97 s nach dem Entscheidungszeitpunkt → Grün erst 237,4 s; Lea kommt 235,4 s an → Grün für beide 237,4 s (S). Insel: Max 242,7 s, Lea 244,7 s; dieselbe Bahn (ab 265 s, A).",
+    "druecke": "Max 63 (12 + 0 + 51), Lea 3 (S; Drückverhalten A: Max 5er-Salve, dann alle 2 s).",
+    "warum": "Wartezeit Max 112,4 s, Lea 64,3 s (+48,1 s für Max); Gehzeit Max 130,3 s, Lea 180,4 s (S). Bild: 112 s / 64 s / +48 s.",
+    "gegenprobe": "Max mit 1 Druck je Ampel: identische Zeiten. Monte Carlo n = 20.000: Ø Wartezeit 1 Druck = viele Drücke (Bedarf 10,14 s, Festzeit 30,02 s, grüne Welle 51,15 s); ohne Druck an Bedarfsampeln nie Grün (S).",
+    "ueberraschung": "Ohne Druck an Ampel 1: kein Grün (F Heidelberg/Bremen, S). Was-wäre-Szene: Uhr läuft im Zeitraffer über 10 min; Leas einer Druck → Grün nach 5 s (Gelb 3 s F + Zwischenzeit 2 s A, F München „schaltet sofort“, wenn die Kfz-Mindestfreigabe abgelaufen ist).",
+    "zeitachse_video": "Rennzeit läuft im Zeitraffer, an Wortzeiten gekoppelt (szene.js, keys). Tafel-Uhr = Rennzeit, im Was-wäre-Teil = Wartezeit ohne Druck.",
+    "sprachpruefung": "ElevenLabs Speech-to-Text (scribe_v1) am 01.11.: Transkript stimmt mit dem Skript überein („Folg mir“ als „Folgt mir“ erkannt, Klang unauffällig). Kein Stilleschnitt nötig: Hook endet 4,08 s, „Los geht's“ 12,56 s."
+  },
+  "plan_aenderungen": [
+    "Wendung 1 der Planzeile (Gleichstand, weil nur die erste Anforderung zählt) bleibt: jetzt belegt (GIGA; Bremen „Signal kommt“-Quittierung) und im Modell über die Kfz-Mindestfreigabe erklärt (A).",
+    "Wendung 2 der Planzeile („Nachts schaltet dieselbe Ampel fast sofort“) ersetzt: Für „nachts“ fand sich kein Beleg (nur: eigene Nachtprogramme in München, abgeschaltete Ampeln in Nürnberg, schlafende Ampeln laut RiLSA). Neu und belegt: Festzeit-Ampel, an der der Knopf nichts bewirkt (Stuttgarter Zeitung, GIGA), grüne Welle mit Entscheidungszeitpunkt („eine Sekunde zu spät → nächster Umlauf“, München) und als zweite Überraschung „Drückt keiner, bleibt sie rot“ (Heidelberg, Bremen) mit „Einmal drücken reicht“.",
+    "Das Rennen bekam eine zweite Variable, die offen gezeigt wird: Max hetzt (1,8 m/s), damit es Führungswechsel gibt. Ergebnis trotzdem: dieselbe Bahn."
+  ],
+  "quellen": [
+    "Eigene Simulation: pipeline/sim/ampel.mjs (deterministisch, Monte Carlo mit festem Seed), Tests pipeline/sim/ampel.test.mjs, Ergebnisse pipeline/projekte/fussgaengerampel/sim_ergebnisse.md.",
+    "(F) Mehrfaches Drücken ohne Wirkung, Festzeit-Ampeln reagieren nicht auf den Taster, Bedarfsampeln schon: GIGA, „Macht der Ampel-Knopf schneller grün?“, https://www.giga.de/tech/macht-der-ampel-knopf-schneller-gruen-darauf-kommt-es-wirklich-an--01J5QSY0JFVHBJD60H42XZ8QDP (Sekundärquelle; Inhalt per Suchauszug geprüft).",
+    "(F) Ohne Tastendruck bzw. ohne belegte Induktionsschleife keine Anforderung, „die Ampel schaltet nicht auf GRÜN“: Stadt Heidelberg, FAQ Ampelbeauftragter, https://www.heidelberg.de/,Lde/HD/Leben/faq+ampelbeauftragter.html (per Suchauszug, Seite aus der Cloud nicht abrufbar).",
+    "(F) Fußgängergrün nur bei vorliegender Anforderung; neuere Taster quittieren die Anforderung mit „Signal kommt“: Freie Hansestadt Bremen, Unterlage Fußgängeranforderung, https://umwelt.bremen.de/sixcms/media.php/13/BdV_S_Fu%C3%9Fg%C3%A4ngeranforderung_Endf.pdf (per Suchauszug, nicht abrufbar). Verkehrsabhängige Steuerung mit Fußgängeranforderung ist in Bremen der Regelfall: https://www.rathaus.bremen.de/sixcms/media.php/13/20260616_top_3_Ampelschaltungen.pdf (per Suchauszug).",
+    "(F) Koordinierung: „Wenn der Anforderungsdrücker auch nur um eine Sekunde nach dem Verstreichen des Entscheidungszeitpunktes betätigt wird …, können die Fußgänger erst wieder im nächsten Signalumlauf berücksichtigt werden.“ Freigabe nur in Zeitfenstern, sonst ist die Koordinierung zu den Nachbaranlagen nicht gewährleistet. Landeshauptstadt München, Mobilitätsreferat, Antworten an Bezirksausschüsse: https://www.muenchen-transparent.de/dokumente/9262464/datei und https://risi.muenchen.de/risi/dokument/v/5616018 (per Suchauszug, nicht vollständig gelesen).",
+    "(F) Ohne Koordinierung und nach Ablauf der Kfz-Mindestgrünzeit schaltet die Anlage auf Anforderung sofort; mit grüner Welle nicht direkt nach der Anforderung (längere Wartezeiten): München, https://muenchen-transparent.de/dokumente/6168164/datei und Antwort zur Denninger Straße (per Suchauszug).",
+    "(F) Mindestfreigabezeit für Fußgänger in München seit 17.12.2020: 10 s, https://risi.muenchen.de/risi/dokument/v/5318006 (per Suchauszug). 90-s-Umlauf an einem Münchner Streckenabschnitt: https://risi.muenchen.de/risi/dokument/v/5028920 (per Suchauszug).",
+    "(F) Taster ohne jede Beschleunigung (Sillenbuch, Kirchheimer Straße; Tiefbauamt räumt es ein): Stuttgarter Zeitung, „Ampeln in Stuttgart: Taster haben mitunter keinen Effekt“, https://www.stuttgarter-zeitung.de/lokales/stuttgart/ampeln-in-stuttgart-taster-haben-mitunter-keinen-effekt-78908433.html (per Suchauszug).",
+    "(F) Wartezeiten: längere Wartezeiten als 40 s vermeiden, unter 60 s anstreben, bis ca. 90 s möglich (Stadt Münster, Vorlage, https://oparl.stadt-muenster.de/bodies/0001/downloadfiles/00513584.pdf); bei ÖPNV-Vorrang höchstens 90 s (Stadt Karlsruhe, https://web1.karlsruhe.de/ris/oparl/bodies/0001/downloadfiles/a/00635274.pdf). Beide per Suchauszug. Die RiLSA (FGSV, Ausgabe 2015) selbst wurde nicht eingesehen (kostenpflichtig); Werte über kommunale Dokumente.",
+    "(F) Gelbzeit 3 s bei 50 km/h (VwV-StVO zu § 37), zitiert in einer Gerichtsentscheidung: https://www.ra-kotz.de/rotlichtverstoss7.htm (per Suchauszug).",
+    "(F) Gehgeschwindigkeit, Mittel aus vielen Studien 1,34 m/s: Weidmann, U. (1993), Transporttechnik der Fussgänger, IVT ETH Zürich, https://research-collection.ethz.ch/handle/20.500.11850/242008.",
+    "(F, Hintergrund, nicht im Video) Der kleine Knopf unter dem Taster bzw. ein Taster ohne Grünanforderung schaltet nur das Blindensignal: GIGA (s. o.), Stadt Köln https://www.stadt-koeln.de/artikel/03940/index.html, OpenStreetMap-Forum https://community.openstreetmap.org/t/druckampel-mit-taster-der-signale-fur-blinde-fussganger-innen-auslost-aber-nicht-das-grunsignal-anfordert/144371. Nachts: eigene Nachtprogramme (München), ca. 180 Ampeln nachts aus (Nürnberg, https://www.nuernberg.de/internet/verkehrsplanung/ampeln.html), RiLSA erlaubt die Grundstellung „Dunkel“ (Braunschweig, https://ratsinfo.braunschweig.de/public/wicket/resource/org.apache.wicket.Application/doc1275441.pdf). Kein Beleg für „nachts fast sofort“ → nicht verwendet.",
+    "(A) Kfz-Mindestfreigabe 30 s nach jeder Fußgängerfreigabe, Zwischenzeit 2 s nach Gelb, Räumzeit 6 s, Fußgängergrün 16 s (Festzeit), Entscheidungszeitpunkt 6 s vor Grün, Umlauf-Versätze von Ampel 2 und 3 (Szenario), Gehtempo Max 1,8 m/s, Drückverhalten, Abstände 50/140/225 m, Fahrplan der Bahn."
+  ],
+  "konkurrenz_check": "01.11.2026, Websuche (Deutsch, auch site:tiktok.com): keine TikTok-Treffer über die Suche (TikTok-Seiten werden kaum indexiert). Bekannt aus dem Check vom 31.10.: @offenunehrlich (Selbsttest zum Knopf unter dem Ampelkasten) und ADAC-Short „Ampel schneller grün?“. Dazu viele Ratgeber-Artikel (GIGA, Utopia, inside-digital, Autozeitung) zum Blinden-Knopf. Unser Ansatz ist eigen: Simulation als Rennen Einmal- gegen Dauerdrücker über drei Steuerungsarten mit Uhr und Zählern, keine Selbsttest-Szene, nichts übernommen. Thema nicht in docs/15 §9 gesperrt."
+}

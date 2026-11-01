@@ -1,0 +1,826 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 66.901,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Steuererklärung oder Überstunden? Was bringt dir mehr pro Stunde?",
+   "start": 0.0,
+   "ende": 4.24,
+   "woerter": [
+    {
+     "wort": "Steuererklärung",
+     "start": 0.0,
+     "ende": 1.04
+    },
+    {
+     "wort": "oder",
+     "start": 1.2,
+     "ende": 1.44
+    },
+    {
+     "wort": "Überstunden?",
+     "start": 1.6,
+     "ende": 2.4
+    },
+    {
+     "wort": "Was",
+     "start": 2.848,
+     "ende": 2.88
+    },
+    {
+     "wort": "bringt",
+     "start": 2.96,
+     "ende": 3.12
+    },
+    {
+     "wort": "dir",
+     "start": 3.24,
+     "ende": 3.36
+    },
+    {
+     "wort": "mehr",
+     "start": 3.4,
+     "ende": 3.52
+    },
+    {
+     "wort": "pro",
+     "start": 3.6,
+     "ende": 3.76
+    },
+    {
+     "wort": "Stunde?",
+     "start": 3.84,
+     "ende": 4.24
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Vier Stunden Zeit. 3.500 brutto. 25 Kilometer zur Arbeit.",
+   "start": 4.72,
+   "ende": 10.16,
+   "woerter": [
+    {
+     "wort": "Vier",
+     "start": 4.72,
+     "ende": 4.88
+    },
+    {
+     "wort": "Stunden",
+     "start": 4.96,
+     "ende": 5.28
+    },
+    {
+     "wort": "Zeit.",
+     "start": 5.36,
+     "ende": 5.96
+    },
+    {
+     "wort": "3.500",
+     "start": 6.16,
+     "ende": 7.12
+    },
+    {
+     "wort": "brutto.",
+     "start": 7.2,
+     "ende": 8.0
+    },
+    {
+     "wort": "25",
+     "start": 8.04,
+     "ende": 8.64
+    },
+    {
+     "wort": "Kilometer",
+     "start": 8.72,
+     "ende": 9.12
+    },
+    {
+     "wort": "zur",
+     "start": 9.2,
+     "ende": 9.36
+    },
+    {
+     "wort": "Arbeit.",
+     "start": 9.44,
+     "ende": 10.16
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, die Überstunden. Sicheres Geld. Oder? Los geht's!",
+   "start": 10.24,
+   "ende": 14.72,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 10.24,
+     "ende": 10.8
+    },
+    {
+     "wort": "die",
+     "start": 10.84,
+     "ende": 10.88
+    },
+    {
+     "wort": "Überstunden.",
+     "start": 10.96,
+     "ende": 11.84
+    },
+    {
+     "wort": "Sicheres",
+     "start": 12.0,
+     "ende": 12.48
+    },
+    {
+     "wort": "Geld.",
+     "start": 12.56,
+     "ende": 13.0
+    },
+    {
+     "wort": "Oder?",
+     "start": 13.12,
+     "ende": 13.44
+    },
+    {
+     "wort": "Los",
+     "start": 13.92,
+     "ende": 14.16
+    },
+    {
+     "wort": "geht's!",
+     "start": 14.24,
+     "ende": 14.72
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "20 Euro, 40, 60. Und die Steuererklärung? Immer noch null.",
+   "start": 14.88,
+   "ende": 20.08,
+   "woerter": [
+    {
+     "wort": "20",
+     "start": 14.88,
+     "ende": 15.28
+    },
+    {
+     "wort": "Euro,",
+     "start": 15.36,
+     "ende": 15.92
+    },
+    {
+     "wort": "40,",
+     "start": 16.04,
+     "ende": 16.619999999999997
+    },
+    {
+     "wort": "60.",
+     "start": 16.619999999999997,
+     "ende": 17.2
+    },
+    {
+     "wort": "Und",
+     "start": 17.6,
+     "ende": 17.68
+    },
+    {
+     "wort": "die",
+     "start": 17.76,
+     "ende": 17.84
+    },
+    {
+     "wort": "Steuererklärung?",
+     "start": 17.92,
+     "ende": 18.72
+    },
+    {
+     "wort": "Immer",
+     "start": 19.04,
+     "ende": 19.28
+    },
+    {
+     "wort": "noch",
+     "start": 19.36,
+     "ende": 19.52
+    },
+    {
+     "wort": "null.",
+     "start": 19.6,
+     "ende": 20.08
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 20.32,
+   "ende": 22.08,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 20.32,
+     "ende": 20.56
+    },
+    {
+     "wort": "mir,",
+     "start": 20.64,
+     "ende": 20.88
+    },
+    {
+     "wort": "damit",
+     "start": 20.92,
+     "ende": 21.04
+    },
+    {
+     "wort": "du",
+     "start": 21.12,
+     "ende": 21.2
+    },
+    {
+     "wort": "nichts",
+     "start": 21.28,
+     "ende": 21.52
+    },
+    {
+     "wort": "verpasst.",
+     "start": 21.6,
+     "ende": 22.08
+    }
+   ]
+  },
+  {
+   "id": "wendung",
+   "text": "Doch dann kommt der Pendelweg. 222 Euro auf einen Schlag!",
+   "start": 22.469,
+   "ende": 27.2,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 22.469,
+     "ende": 22.64
+    },
+    {
+     "wort": "dann",
+     "start": 22.72,
+     "ende": 22.88
+    },
+    {
+     "wort": "kommt",
+     "start": 22.96,
+     "ende": 23.12
+    },
+    {
+     "wort": "der",
+     "start": 23.2,
+     "ende": 23.28
+    },
+    {
+     "wort": "Pendelweg.",
+     "start": 23.36,
+     "ende": 24.32
+    },
+    {
+     "wort": "222",
+     "start": 24.56,
+     "ende": 25.76
+    },
+    {
+     "wort": "Euro",
+     "start": 25.92,
+     "ende": 26.08
+    },
+    {
+     "wort": "auf",
+     "start": 26.16,
+     "ende": 26.32
+    },
+    {
+     "wort": "einen",
+     "start": 26.4,
+     "ende": 26.64
+    },
+    {
+     "wort": "Schlag!",
+     "start": 26.72,
+     "ende": 27.2
+    }
+   ]
+  },
+  {
+   "id": "netto",
+   "text": "Und die Überstunden? 80 Euro brutto. Steuer und Abgaben nehmen fast die Hälfte. Netto bleiben nur 44.",
+   "start": 27.52,
+   "ende": 35.12,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 27.52,
+     "ende": 27.6
+    },
+    {
+     "wort": "die",
+     "start": 27.68,
+     "ende": 27.76
+    },
+    {
+     "wort": "Überstunden?",
+     "start": 27.8,
+     "ende": 28.48
+    },
+    {
+     "wort": "80",
+     "start": 28.88,
+     "ende": 29.2
+    },
+    {
+     "wort": "Euro",
+     "start": 29.36,
+     "ende": 29.6
+    },
+    {
+     "wort": "brutto.",
+     "start": 29.68,
+     "ende": 30.24
+    },
+    {
+     "wort": "Steuer",
+     "start": 30.4,
+     "ende": 30.72
+    },
+    {
+     "wort": "und",
+     "start": 30.8,
+     "ende": 30.88
+    },
+    {
+     "wort": "Abgaben",
+     "start": 30.96,
+     "ende": 31.44
+    },
+    {
+     "wort": "nehmen",
+     "start": 31.56,
+     "ende": 31.68
+    },
+    {
+     "wort": "fast",
+     "start": 31.76,
+     "ende": 32.0
+    },
+    {
+     "wort": "die",
+     "start": 32.08,
+     "ende": 32.16
+    },
+    {
+     "wort": "Hälfte.",
+     "start": 32.24,
+     "ende": 32.84
+    },
+    {
+     "wort": "Netto",
+     "start": 33.04,
+     "ende": 33.36
+    },
+    {
+     "wort": "bleiben",
+     "start": 33.44,
+     "ende": 33.68
+    },
+    {
+     "wort": "nur",
+     "start": 33.72,
+     "ende": 33.84
+    },
+    {
+     "wort": "44.",
+     "start": 33.92,
+     "ende": 35.12
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand: 55 Euro pro Stunde gegen 11. Die Steuererklärung gewinnt. Fünfmal so viel.",
+   "start": 35.24,
+   "ende": 41.88,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 35.24,
+     "ende": 35.88
+    },
+    {
+     "wort": "55",
+     "start": 36.08,
+     "ende": 36.72
+    },
+    {
+     "wort": "Euro",
+     "start": 36.88,
+     "ende": 37.12
+    },
+    {
+     "wort": "pro",
+     "start": 37.2,
+     "ende": 37.28
+    },
+    {
+     "wort": "Stunde",
+     "start": 37.36,
+     "ende": 37.76
+    },
+    {
+     "wort": "gegen",
+     "start": 37.92,
+     "ende": 38.16
+    },
+    {
+     "wort": "11.",
+     "start": 38.32,
+     "ende": 38.8
+    },
+    {
+     "wort": "Die",
+     "start": 38.96,
+     "ende": 39.04
+    },
+    {
+     "wort": "Steuererklärung",
+     "start": 39.12,
+     "ende": 39.84
+    },
+    {
+     "wort": "gewinnt.",
+     "start": 39.92,
+     "ende": 40.56
+    },
+    {
+     "wort": "Fünfmal",
+     "start": 40.64,
+     "ende": 41.2
+    },
+    {
+     "wort": "so",
+     "start": 41.28,
+     "ende": 41.36
+    },
+    {
+     "wort": "viel.",
+     "start": 41.44,
+     "ende": 41.88
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Die ersten 1.230 Euro deckt der Pauschbetrag. Erst der Rest zählt. Davon kommen knapp 30 Prozent zurück.",
+   "start": 42.28,
+   "ende": 50.0,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 42.28,
+     "ende": 42.56
+    },
+    {
+     "wort": "Die",
+     "start": 42.96,
+     "ende": 43.04
+    },
+    {
+     "wort": "ersten",
+     "start": 43.12,
+     "ende": 43.44
+    },
+    {
+     "wort": "1.230",
+     "start": 43.52,
+     "ende": 44.4
+    },
+    {
+     "wort": "Euro",
+     "start": 44.48,
+     "ende": 44.8
+    },
+    {
+     "wort": "deckt",
+     "start": 44.88,
+     "ende": 45.093
+    },
+    {
+     "wort": "der",
+     "start": 45.147,
+     "ende": 45.2
+    },
+    {
+     "wort": "Pauschbetrag.",
+     "start": 45.28,
+     "ende": 46.08
+    },
+    {
+     "wort": "Erst",
+     "start": 46.4,
+     "ende": 46.56
+    },
+    {
+     "wort": "der",
+     "start": 46.64,
+     "ende": 46.72
+    },
+    {
+     "wort": "Rest",
+     "start": 46.88,
+     "ende": 47.04
+    },
+    {
+     "wort": "zählt.",
+     "start": 47.08,
+     "ende": 47.64
+    },
+    {
+     "wort": "Davon",
+     "start": 47.84,
+     "ende": 48.16
+    },
+    {
+     "wort": "kommen",
+     "start": 48.24,
+     "ende": 48.4
+    },
+    {
+     "wort": "knapp",
+     "start": 48.48,
+     "ende": 48.72
+    },
+    {
+     "wort": "30",
+     "start": 48.8,
+     "ende": 49.12
+    },
+    {
+     "wort": "Prozent",
+     "start": 49.2,
+     "ende": 49.52
+    },
+    {
+     "wort": "zurück.",
+     "start": 49.6,
+     "ende": 50.0
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und das Verrückte: Bei 5 Kilometern ohne Extras bringt die Erklärung null. Dann gewinnen die Überstunden. Erst ab 16 Kilometern dreht es sich.",
+   "start": 50.32,
+   "ende": 59.08,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 50.32,
+     "ende": 50.4
+    },
+    {
+     "wort": "das",
+     "start": 50.48,
+     "ende": 50.56
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 50.6,
+     "ende": 51.12
+    },
+    {
+     "wort": "Bei",
+     "start": 51.44,
+     "ende": 51.6
+    },
+    {
+     "wort": "5",
+     "start": 51.68,
+     "ende": 51.84
+    },
+    {
+     "wort": "Kilometern",
+     "start": 51.92,
+     "ende": 52.48
+    },
+    {
+     "wort": "ohne",
+     "start": 52.64,
+     "ende": 52.8
+    },
+    {
+     "wort": "Extras",
+     "start": 52.88,
+     "ende": 53.36
+    },
+    {
+     "wort": "bringt",
+     "start": 53.44,
+     "ende": 53.68
+    },
+    {
+     "wort": "die",
+     "start": 53.72,
+     "ende": 53.76
+    },
+    {
+     "wort": "Erklärung",
+     "start": 53.84,
+     "ende": 54.32
+    },
+    {
+     "wort": "null.",
+     "start": 54.4,
+     "ende": 54.84
+    },
+    {
+     "wort": "Dann",
+     "start": 55.04,
+     "ende": 55.2
+    },
+    {
+     "wort": "gewinnen",
+     "start": 55.28,
+     "ende": 55.6
+    },
+    {
+     "wort": "die",
+     "start": 55.64,
+     "ende": 55.68
+    },
+    {
+     "wort": "Überstunden.",
+     "start": 55.76,
+     "ende": 56.48
+    },
+    {
+     "wort": "Erst",
+     "start": 56.8,
+     "ende": 56.96
+    },
+    {
+     "wort": "ab",
+     "start": 57.04,
+     "ende": 57.12
+    },
+    {
+     "wort": "16",
+     "start": 57.2,
+     "ende": 57.6
+    },
+    {
+     "wort": "Kilometern",
+     "start": 57.68,
+     "ende": 58.16
+    },
+    {
+     "wort": "dreht",
+     "start": 58.24,
+     "ende": 58.48
+    },
+    {
+     "wort": "es",
+     "start": 58.52,
+     "ende": 58.56
+    },
+    {
+     "wort": "sich.",
+     "start": 58.64,
+     "ende": 59.08
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Merk dir: Der Pauschbetrag ist die Hürde. Dein Arbeitsweg entscheidet.",
+   "start": 59.28,
+   "ende": 63.64,
+   "woerter": [
+    {
+     "wort": "Merk",
+     "start": 59.28,
+     "ende": 59.44
+    },
+    {
+     "wort": "dir:",
+     "start": 59.52,
+     "ende": 59.76
+    },
+    {
+     "wort": "Der",
+     "start": 60.08,
+     "ende": 60.16
+    },
+    {
+     "wort": "Pauschbetrag",
+     "start": 60.24,
+     "ende": 60.96
+    },
+    {
+     "wort": "ist",
+     "start": 61.04,
+     "ende": 61.12
+    },
+    {
+     "wort": "die",
+     "start": 61.2,
+     "ende": 61.28
+    },
+    {
+     "wort": "Hürde.",
+     "start": 61.32,
+     "ende": 61.68
+    },
+    {
+     "wort": "Dein",
+     "start": 61.92,
+     "ende": 62.08
+    },
+    {
+     "wort": "Arbeitsweg",
+     "start": 62.16,
+     "ende": 62.8
+    },
+    {
+     "wort": "entscheidet.",
+     "start": 62.92,
+     "ende": 63.64
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 63.84,
+   "ende": 66.96,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 63.84,
+     "ende": 64.0
+    },
+    {
+     "wort": "sollen",
+     "start": 64.053,
+     "ende": 64.16
+    },
+    {
+     "wort": "wir",
+     "start": 64.2,
+     "ende": 64.28
+    },
+    {
+     "wort": "als",
+     "start": 64.32,
+     "ende": 64.4
+    },
+    {
+     "wort": "Nächstes",
+     "start": 64.48,
+     "ende": 64.8
+    },
+    {
+     "wort": "zeigen?",
+     "start": 64.88,
+     "ende": 65.36
+    },
+    {
+     "wort": "Schreib",
+     "start": 65.52,
+     "ende": 65.68
+    },
+    {
+     "wort": "es",
+     "start": 65.76,
+     "ende": 65.84
+    },
+    {
+     "wort": "in",
+     "start": 65.88,
+     "ende": 65.92
+    },
+    {
+     "wort": "die",
+     "start": 65.96,
+     "ende": 66.0
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 66.08,
+     "ende": 66.96
+    }
+   ]
+  }
+ ]
+}

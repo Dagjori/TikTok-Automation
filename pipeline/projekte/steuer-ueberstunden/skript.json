@@ -1,0 +1,139 @@
+{
+  "titel": "Steuererklärung oder Überstunden: Was bringt dir mehr Geld pro Stunde?",
+  "rubrik": "GELD",
+  "stil": "4 2D-Flat-Infografik, neu in Three.js (flache Meshes, orthografische Kamera, Baukasten engine/stil_flat.js)",
+  "stil_begruendung": "Konkurrenz-Check 01.11.2026 (Websuche, öffentliche Seiten): Kein Stundenlohn-Duell Steuererklärung gegen Überstunden auf Deutsch gefunden. Das Thema läuft als Ratgeber-Text bzw. Finfluencer-Spruch („in wenigen Stunden über 1.240 € verdienen“, Finanztip-Newsletter) und als Überstunden-Steuerratgeber (vlh.de, finanz.de, arbeitsrechte.de), nicht als Simulation mit Uhr und Zählern. Für Geld-Rechnungen mit Schritten trägt 2D-Flat am besten: Drei der vier Maßstab-Videos mit über 1 Mio. Aufrufen (K1, K2, K4) sind 2D-Flat mit Chips und Anzeigetafel (docs/15), und Finanz-Erklärungen auf TikTok laufen überwiegend als flache Infografik oder Talking-Head. Wir heben uns über die Qualität ab: echte Three.js-Szene mit orthografischer Kamera, Tiefenebenen mit Parallaxe, Kamerafahrten und Zoom, weiche Flat-Schatten, laufende Uhr, Himmel von Abendrot zu Nacht, Belege fliegen in eine Pauschbetrag-Hürde. Stil 4 passt laut Katalog genau zu „Netto, Steuern, Regeln“. Nicht Stil 1 (Fußgängerampel, 02.11. mittag) und nicht Stil 14 (Gehalt, 01.11. abend). Eigene Gestaltung, kein Vorbild nachgebaut.",
+  "teamfarben": {
+    "ÜBERSTUNDEN": "#FF8A3D",
+    "STEUERERKLÄRUNG": "#5465FF"
+  },
+  "klangteppich": "musik",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Steuererklärung oder Überstunden? Was bringt dir mehr pro Stunde?",
+      "sprechtext": "Steuererklärung oder Überstunden?\n[curious] Was bringt dir MEHR pro Stunde?"
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Vier Stunden Zeit. 3.500 brutto. 25 Kilometer zur Arbeit.",
+      "sprechtext": "Vier Stunden Zeit.\nDreitausendfünfhundert brutto.\nFünfundzwanzig Kilometer zur Arbeit."
+    },
+    {
+      "id": "falle",
+      "phase": "denkfalle_start",
+      "text": "Klar, die Überstunden. Sicheres Geld. Oder? Los geht's!",
+      "sprechtext": "Klar, die Überstunden.\nSicheres Geld.\nOder?\n[excited] Los geht's!"
+    },
+    {
+      "id": "rennen",
+      "phase": "rennen",
+      "text": "20 Euro, 40, 60. Und die Steuererklärung? Immer noch null.",
+      "sprechtext": "Zwanzig Euro, vierzig, sechzig.\nUnd die Steuererklärung?\nImmer noch NULL."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst."
+    },
+    {
+      "id": "wendung",
+      "phase": "wendung_1",
+      "text": "Doch dann kommt der Pendelweg. 222 Euro auf einen Schlag!",
+      "sprechtext": "[surprised] Doch dann kommt der PENDELWEG.\nZweihundertzweiundzwanzig Euro auf einen Schlag!"
+    },
+    {
+      "id": "netto",
+      "phase": "wendung_2",
+      "text": "Und die Überstunden? 80 Euro brutto. Steuer und Abgaben nehmen fast die Hälfte. Netto bleiben nur 44.",
+      "sprechtext": "Und die Überstunden?\nAchtzig Euro brutto.\nSteuer und Abgaben nehmen fast die Hälfte.\nNetto bleiben nur VIERUNDVIERZIG."
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Endstand: 55 Euro pro Stunde gegen 11. Die Steuererklärung gewinnt. Fünfmal so viel.",
+      "sprechtext": "Endstand:\nFünfundfünfzig Euro pro Stunde gegen elf.\nDie Steuererklärung gewinnt.\nFünfmal so VIEL."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Die ersten 1.230 Euro deckt der Pauschbetrag. Erst der Rest zählt. Davon kommen knapp 30 Prozent zurück.",
+      "sprechtext": "[thoughtful] Warum?\nDie ersten zwölfhundertdreißig Euro deckt der PAUSCHBETRAG.\nErst der Rest zählt.\nDavon kommen knapp dreißig Prozent zurück."
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "zweite_ueberraschung",
+      "text": "Und das Verrückte: Bei 5 Kilometern ohne Extras bringt die Erklärung null. Dann gewinnen die Überstunden. Erst ab 16 Kilometern dreht es sich.",
+      "sprechtext": "Und das Verrückte:\nBei fünf Kilometern ohne Extras bringt die Erklärung NULL.\nDann gewinnen die Überstunden.\nErst ab sechzehn Kilometern dreht es sich."
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Merk dir: Der Pauschbetrag ist die Hürde. Dein Arbeitsweg entscheidet.",
+      "sprechtext": "Merk dir:\nDer Pauschbetrag ist die Hürde.\nDein Arbeitsweg ENTSCHEIDET."
+    },
+    {
+      "id": "schluss",
+      "phase": "schluss",
+      "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+      "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare."
+    }
+  ],
+  "beschreibung": "Steuererklärung oder Überstunden – was bringt mehr Geld pro Stunde? 💶 Ich hab's durchgerechnet. Team Steuererklärung oder Team Überstunden? 👇 #steuererklärung #überstunden #steuern #wissen #simulation",
+  "zahlen": {
+    "hinweis": "Modellrechnung 2026 aus pipeline/sim/steuer_ueberstunden.mjs (Netto-Modul pipeline/sim/netto.mjs), Details sim_ergebnisse.md",
+    "brutto": 3500,
+    "stundenlohn_brutto": 20.19,
+    "stunden": 4,
+    "ueberstunden_brutto": 80.77,
+    "ueberstunden_netto": 44.45,
+    "ueberstunden_lohnsteuer": 18.75,
+    "ueberstunden_sozial": 17.57,
+    "ueberstunden_pro_stunde": 11.11,
+    "fallA_posten": {
+      "kontofuehrung": 16,
+      "arbeitsmittel": 120,
+      "homeoffice": 552,
+      "pendelweg": 1311
+    },
+    "fallA_werbungskosten": 1999,
+    "pauschbetrag": 1230,
+    "fallA_ueber_pauschbetrag": 769,
+    "grenzsteuersatz": 0.289,
+    "fallA_erstattung": 222,
+    "fallA_pro_stunde": 55.5,
+    "faktor": 5.0,
+    "fallB_werbungskosten": 453,
+    "fallB_erstattung": 0,
+    "kipp_km_erster_euro": 14,
+    "kipp_km_schlaegt_ueberstunden": 16
+  },
+  "annahmen": [
+    "(A) Person: 3.500 € brutto im Monat, 40-Stunden-Woche (Stundenlohn 3.500 × 12 / 52 / 40 = 20,19 € brutto), Steuerklasse 1, kinderlos und über 23, gesetzlich versichert mit dem durchschnittlichen Zusatzbeitrag 2026 (2,9 %), ohne Kirchensteuer, nicht Sachsen.",
+    "(A) Zeit: 4 Stunden. Gerundet aus dem Zeitaufwand einer typischen Arbeitnehmer-Steuererklärung (3 h 50 min, Bundesregierung). Im Video: Feierabend 17 Uhr, Uhr läuft bis 21 Uhr.",
+    "(A) Team ÜBERSTUNDEN: 4 bezahlte Überstunden im selben Monat zum normalen Stundenlohn, ohne Zuschlag, als laufender Arbeitslohn voll steuer- und beitragspflichtig. Variante mit 25 % Zuschlag: 55,60 € netto (13,90 €/h); hypothetisch mit lohnsteuerfreiem Zuschlag nach dem nicht beschlossenen Plan: 60,26 € (15,07 €/h). Beides ändert den Sieger nicht.",
+    "(A) Team STEUERERKLÄRUNG, Fall A: 25 km einfache Strecke, 3 Bürotage und 2 Homeoffice-Tage pro Woche, 46 Arbeitswochen = 138 Bürotage und 92 Homeoffice-Tage; Arbeitsmittel 120 €; Kontoführungspauschale 16 € (Verwaltungspraxis ohne Nachweis).",
+    "(A) Fall B: 5 km, 230 Bürotage, kein Homeoffice, keine Arbeitsmittel, Kontoführung 16 € → 453 € Werbungskosten, unter dem Pauschbetrag.",
+    "(A) Modell der Erstattung: Einziger Unterschied zwischen Lohnsteuerabzug und Veranlagung sind die Werbungskosten über dem Arbeitnehmer-Pauschbetrag (gleichbleibender Lohn das ganze Jahr, Vorsorgeaufwendungen = Vorsorgepauschale, keine Sonderausgaben, keine haushaltsnahen Dienstleistungen). Erstattung = Einkommensteuer auf das zvE minus Einkommensteuer auf (zvE − Werbungskosten über 1.230 €), Grundtabelle 2026, Soli 0 (unter der Freigrenze).",
+    "(S) Live-Zähler im Video: Die Erstattung nach jedem eingetragenen Posten ist die Rechnung mit den bis dahin eingetragenen Werbungskosten (so wie ein Steuerprogramm sie anzeigen würde). Reihenfolge der Posten frei gewählt; das Endergebnis hängt nicht von der Reihenfolge ab.",
+    "(S) Kipppunkt (Fall B mit 230 Bürotagen, ohne Extras): erste Erstattung ab 14 km (3 €), ab 16 km (54 €) schlägt die Erklärung die 4 Überstunden (44,45 €).",
+    "(F) Durchschnittliche Erstattung laut Destatis (Veranlagungsjahr 2022, nur Arbeitnehmer mit Erstattung): 1.240 €. Das ist ein Mittel über alle Fälle (auch Ehepaare, Kinder, Handwerker, Spenden …) und wird im Video nicht verwendet; unser Modellfall liegt mit 222 € deutlich darunter.",
+    "Rechtsstand Überstunden zum 02.11.2026: Überstunden und Überstundenzuschläge sind voll steuer- und sozialversicherungspflichtig; steuerfrei sind nur Zuschläge für Sonntags-, Feiertags- und Nachtarbeit nach § 3b EStG. Die geplante Lohnsteuerbefreiung von Überstundenzuschlägen (bis 25 % des Grundlohns, nur bei Mehrarbeit über der tariflichen bzw. 40-Stunden-Woche, weiter beitragspflichtig; Referentenentwurf Arbeitsmarktstärkungsgesetz September 2025, ursprünglich ab 01.01.2026 geplant) ist nicht in Kraft. Sie beträfe nur den Zuschlag, nicht die bezahlte Stunde selbst.",
+    "Nur Modellrechnung, keine Steuer- oder Rechtsberatung, keine Produkte oder Software-Marken."
+  ],
+  "quellen": [
+    "(F) Lohnsteuer und Sozialabgaben 2026: Netto-Modul pipeline/sim/netto.mjs nach BMF-Programmablaufplan 2026 (BMF-Schreiben IV C 5 - S 2361/00025/016/028 vom 12.11.2025), Beitragssätze und BBG 2026; Quellen im Detail projekte/gehalt-steuerfrei/skript.json.",
+    "(F) Arbeitnehmer-Pauschbetrag 1.230 € (§ 9a Satz 1 Nr. 1 Buchst. a EStG), 2026 unverändert; Werbungskosten wirken erst über diesem Betrag (lohnsteuer-kompakt.de „Fahrten zur Arbeit: Entfernungspauschale erhöht“, haufe.de „Neue Entfernungspauschale ab 2026“, steuertipps.de „Steueränderungen 2026“, Abruf über Websuche 01.11.2026).",
+    "(F) Entfernungspauschale ab 01.01.2026: 0,38 € je Entfernungskilometer ab dem ersten Kilometer, Staffel 0,30/0,38 € entfallen (Steueränderungsgesetz 2025, verkündet 23.12.2025; haufe.de, lohnsteuer-kompakt.de, finanztip.de „Entfernungspauschale“).",
+    "(F) Homeoffice-Pauschale 2026 unverändert 6 € je Tag, höchstens 1.260 € im Jahr (§ 4 Abs. 5 Satz 1 Nr. 6c EStG; steuertipps.de „Steueränderungen 2026“, spritkostenrechner.de „Pendlerpauschale 2025–2027“).",
+    "(F) Destatis, Pressemitteilung vom 10.06.2026 „Steuererklärung: Durchschnittliche Rückerstattung lag bei 1 240 Euro“ (Veranlagungsjahr 2022): 26,8 Mio. Steuerpflichtige nur mit Arbeitnehmer- (ggf. Kapital-)Einkünften, davon 15,2 Mio. veranlagt, 13,2 Mio. mit Erstattung (Ø 1.240 €, ca. 87 % der Veranlagten), 1,8 Mio. mit Nachzahlung (Ø 1.263 €); 53 % der Erstattungen zwischen 100 und 1.000 €, 8 % unter 100 € (destatis.de „im-fokus-steuererklaerung“, wiedergegeben über Websuche; destatis.de selbst aus der Cloud nicht abrufbar).",
+    "(F) Zeitaufwand: typischer Arbeitnehmer knapp 4 Stunden (3 h 50 min) je Einkommensteuererklärung laut Bundesregierung (Kleine Anfrage FDP Drucksache 19/10394, Antwort 19/10764, hib 03.06.2019); frühere Antwort 19/5034: rund 3 Stunden bei 14,1 Mio. Arbeitnehmerveranlagungen (Destatis WebSKM). Daten von 2012 bis 2019, keine neuere repräsentative Umfrage gefunden → im Video gerundet 4 Stunden (A).",
+    "(F) Überstunden 2026 nicht steuerfrei, Plan nicht in Kraft: lohndirekt.de „Überstundenzuschläge steuerfrei? Stand Oktober 2026“ (aktualisiert 12.10.2026: kein Gesetzentwurf im Bundestag), shiftbase.com „Überstunden steuerfrei? Was 2026 wirklich gilt“, barmer.de „Steuerfreie Überstundenzuschläge geplant“ (25 % des Grundlohns, beitragspflichtig, Schwelle tarifliche bzw. 40-Stunden-Woche), § 3b EStG (Sonntags-, Feiertags-, Nachtzuschläge). Hinweis: Österreich hat 2026 eigene Regeln, nicht übertragbar.",
+    "(F) Stundenlohn: Monat = 52/12 = 4,33 Wochen (finanz.de „Überstunden“).",
+    "Konkurrenz-Check 01.11.2026 (Websuche, site:tiktok.com und allgemein): kein deutsches Simulations- oder Duellvideo „Steuererklärung gegen Überstunden pro Stunde“ gefunden; Thema nur als Ratgeber und als Finfluencer-Spruch „Steuererklärung = Stundenlohn von mehreren hundert Euro“ (finanztip.de Daily „Diesen 1.240-€-teuren Fehler machen fast 12 Mio. Menschen“). Thema nicht in docs/15 §9 gesperrt. Eigener Winkel: Pauschbetrag als Hürde und Arbeitsweg als Bedingung."
+  ],
+  "konkurrenz_check": "01.11.2026, Websuche (Deutsch, site:tiktok.com): kein virales Stundenlohn-Duell Steuererklärung gegen Überstunden gefunden (Planzeile 31.10. ebenso); TikTok-Seiten selbst sind aus der Cloud nicht abrufbar. Nicht in docs/15 §9 gesperrt."
+}
