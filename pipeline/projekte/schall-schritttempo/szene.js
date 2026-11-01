@@ -1,4 +1,4 @@
-// Account 2 (@stelldirvor.pov), Video 1: „Stell dir vor, Schall hat fünf Sekunden lang nur noch Schritttempo.“
+// Account 2, Video 1: „Stell dir vor, Schall hat fünf Sekunden lang nur noch Schritttempo.“
 // Stil 16 „POV-Filmlook stilisiert“: Ich-Kamera auf Augenhöhe am S-Bahn-Steig, blaue Stunde, Bloom, sichtbare Schallwellen.
 // Rechnung: ../../sim/schall_schritttempo.mjs (Tests: node --test sim/schall_schritttempo.test.mjs).
 // Deterministisch: window.renderAt(t). Kein Logo, kein Kanalname, keine Rubrik im Bild.
@@ -19,6 +19,7 @@ const Q = new URLSearchParams(location.search);
 const MSAA = Q.has("msaa") ? +Q.get("msaa") : 0;
 const SCHATTEN = Q.has("schatten") ? +Q.get("schatten") : 1024;
 const BLOOM = Q.has("bloom") ? +Q.get("bloom") : 0.85;
+const SKALA = Q.has("skala") ? +Q.get("skala") : 1; // interne 3D-Auflösung (HUD bleibt scharf)
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const lade = async (url) => {
   const r = await fetch(url, { cache: "no-store" });
@@ -100,6 +101,11 @@ function figurBauen({ jacke = "#4E5D8C", hose = "#2A2F3D", haare = "#4A2E22", ha
   const zopf = new THREE.Mesh(new THREE.CapsuleGeometry(0.05, 0.16, 4, 8), m(haare, 0.9)); zopf.position.set(-0.12, 1.45, 0); zopf.rotation.z = -0.4; g.add(zopf);
   const auge = (z) => { const a = new THREE.Mesh(new THREE.SphereGeometry(0.014, 8, 6), mat("#1A1D26", { rau: 0.3 })); a.position.set(0.105, 1.55, z); return a; };
   g.add(auge(-0.04), auge(0.04));
+  const braue = (z) => { const b = new THREE.Mesh(new THREE.BoxGeometry(0.01, 0.008, 0.035), mat(haare, { rau: 0.9 })); b.position.set(0.108, 1.585, z); return b; };
+  g.add(braue(-0.042), braue(0.042));
+  const nase = new THREE.Mesh(new THREE.ConeGeometry(0.016, 0.04, 8), m(haut, 0.6)); nase.rotation.z = -Math.PI / 2; nase.position.set(0.122, 1.515, 0); g.add(nase);
+  const ohr = (z) => { const o = new THREE.Mesh(new THREE.SphereGeometry(0.022, 8, 6), m(haut, 0.6)); o.scale.set(0.6, 1, 0.5); o.position.set(-0.005, 1.53, z); return o; };
+  g.add(ohr(-0.105), ohr(0.105));
   const mund = new THREE.Mesh(new THREE.SphereGeometry(0.022, 10, 8), mat("#5A1E24", { rau: 0.5 })); mund.position.set(0.108, 1.48, 0); mund.scale.set(0.4, 0.5, 1.2); g.add(mund);
   const arm = (seite) => {
     const p = new THREE.Group(); p.position.set(0, 1.3, seite * 0.23);
@@ -163,7 +169,7 @@ function baueWelt(buehne) {
   const dachKante = new THREE.Mesh(new THREE.BoxGeometry(110, 0.42, 0.12), mat("#E3E6EC", { rau: 0.5 }));
   dachKante.position.set(10, 4.0, 3.9); szene.add(dachKante);
   for (const lz of [5.2, 8.6]) {
-    const band = new THREE.Mesh(new THREE.BoxGeometry(108, 0.05, 0.22), new THREE.MeshBasicMaterial({ color: new THREE.Color("#E8F0FF").multiplyScalar(2.2) }));
+    const band = new THREE.Mesh(new THREE.BoxGeometry(108, 0.05, 0.22), new THREE.MeshBasicMaterial({ color: new THREE.Color("#E8F0FF").multiplyScalar(1.15) }));
     band.position.set(10, 3.93, lz); szene.add(band);
   }
   const stuetzeGeo = new THREE.CylinderGeometry(0.14, 0.14, 4.0, 14);
@@ -179,10 +185,10 @@ function baueWelt(buehne) {
   // Zugzielanzeiger (frei erfunden)
   const anzeigeTex = canvasTextur(1024, 192, (g, b, h) => {
     g.fillStyle = "#0B0F1A"; g.fillRect(0, 0, b, h);
-    g.font = `800 ${h * 0.5}px "SB Display", Inter, sans-serif`; g.textBaseline = "middle";
+    g.font = `800 ${h * 0.4}px "SB Display", Inter, sans-serif`; g.textBaseline = "middle";
     g.fillStyle = "#FFFFFF"; g.fillText("S 3", 40, h * 0.52);
-    g.fillStyle = "#E8EEF9"; g.fillText("Lindenplatz", 230, h * 0.52);
-    g.fillStyle = "#FF8C93"; g.textAlign = "right"; g.fillText("sofort", b - 40, h * 0.52);
+    g.fillStyle = "#E8EEF9"; g.fillText("Lindenplatz", 190, h * 0.52);
+    g.fillStyle = "#FF8C93"; g.textAlign = "right"; g.fillText("1 min", b - 40, h * 0.52);
   });
   const anzeige = new THREE.Mesh(new THREE.BoxGeometry(3.2, 0.6, 0.12), [mat("#1A1F2B"), mat("#1A1F2B"), mat("#1A1F2B"), mat("#1A1F2B"),
     new THREE.MeshBasicMaterial({ map: anzeigeTex, color: new THREE.Color(1.6, 1.6, 1.6) }), mat("#1A1F2B")]);
@@ -277,7 +283,7 @@ function baueWelt(buehne) {
   const schuerze = new THREE.Mesh(new THREE.BoxGeometry(L, 0.42, B - 0.3), dunkel); schuerze.position.set(L / 2, -0.75, 0); zug.add(schuerze);
   // Scheinwerferkegel auf dem Gleis
   const kegel = new THREE.Mesh(new THREE.ConeGeometry(2.4, 14, 24, 1, true), new THREE.MeshBasicMaterial({ color: new THREE.Color("#FFF1DE").multiplyScalar(0.16), transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }));
-  kegel.rotation.z = -Math.PI / 2; kegel.position.set(-7, -0.1, 0); zug.add(kegel);
+  kegel.rotation.z = -Math.PI / 2; kegel.position.set(-7, -0.1, 0); kegel.visible = false; zug.add(kegel);
   szene.add(zug);
 
   // --- Figuren: Freundin, „Du“ (nur in der Totalen), Wartende ---
@@ -376,7 +382,7 @@ async function start() {
   const ENDE = DAUER - 1 / FPS;
   const T = (x) => zp.zeit(x);
 
-  const buehne = new Buehne(document.getElementById("leinwand"), { msaa: MSAA, schatten: SCHATTEN > 0 });
+  const buehne = new Buehne(document.getElementById("leinwand"), { breite: Math.round(1080 * SKALA), hoehe: Math.round(1920 * SKALA), msaa: MSAA, schatten: SCHATTEN > 0 });
   await Promise.all(["900 70px 'SB Display'", "800 30px 'SB Display'", "700 27px 'SB Display'", "700 27px 'SB Text'", "800 27px 'SB Text'"].map((f) => document.fonts.load(f)));
   await document.fonts.ready;
   const W = baueWelt(buehne);
@@ -423,7 +429,7 @@ async function start() {
   hud.add(new Countdown(M, hud.wurzel, { tauFn: tau, tauRoh, von: tLos, bis: tFrei + 0.2 }));
 
   // Hook: Titel (Typo-Baustein), steigt Wort für Wort auf
-  M.titel({ y: 560, groesse: 116, aus: "regeln:Fünf-0.1", woerter: [
+  M.titel({ y: 560, groesse: 116, aus: "regeln:Fünf-0.3", woerter: [
     { text: "STELL", ein: "Stell-0.04", art: "klein" }, { text: "DIR", ein: "dir-0.04", art: "klein" }, { text: "VOR:", ein: "vor,-0.04", art: "klein" },
     { umbruch: true },
     { text: "SCHALL", ein: "Schall-0.04", team: "b" }, { text: "IM", ein: "Sekunden-0.04" },
@@ -431,16 +437,12 @@ async function start() {
     { text: "SCHRITTTEMPO", ein: "Schritttempo.-0.04", team: "b" },
   ] });
   // Regeln als Chips
-  M.chips({ y: 470, ausrichtung: "mitte", aus: "Klar,-0.1", liste: [
-    { text: "SCHALL 5 KM/H", ein: "regeln:Fünf-0.03", art: "voll", team: "b", gross: true },
-    { text: "SONST 1.235 KM/H", ein: "km/h.+0.1", art: "dunkel" },
-  ] });
-  M.chips({ y: 640, ausrichtung: "mitte", aus: "Klar,-0.1", liste: [
-    { text: "FREUNDIN 2 M", ein: "Freundin.-0.05", art: "hell" },
-    { text: "S-BAHN 50 KM/H", ein: "fünfzig.-0.05", art: "voll", team: "a" },
-  ] });
+  M.chips({ y: 430, ausrichtung: "mitte", aus: "Klar,-0.4", liste: [{ text: "SCHALL 5 KM/H", ein: "regeln:Fünf+0.15", art: "voll", team: "b", gross: true }] });
+  M.chips({ y: 590, ausrichtung: "mitte", aus: "Klar,-0.4", liste: [{ text: "SONST 1.235 KM/H", ein: "km/h.+0.1", art: "dunkel" }] });
+  M.chips({ y: 720, ausrichtung: "mitte", aus: "Klar,-0.4", liste: [{ text: "FREUNDIN 2 M", ein: "Freundin.-0.05", art: "hell" }] });
+  M.chips({ y: 850, ausrichtung: "mitte", aus: "Klar,-0.4", liste: [{ text: "S-BAHN 50 KM/H", ein: "fünfzig.-0.05", art: "voll", team: "a" }] });
   // Denkfalle
-  M.stempel({ text: "KLAR?", ein: "Klar,", aus: "Los-0.1", x: SICHER.mitte, y: 700, winkel: -6, farbe: "weiss", textFarbe: "tinte", groesse: 128 });
+  M.stempel({ text: "KLAR?", ein: "Klar,", aus: "Los-0.1", x: SICHER.mitte, y: 860, winkel: -6, farbe: "weiss", textFarbe: "tinte", groesse: 128 });
   // Folgen-Aufruf
   M.folgen({ ein: "Folg", dauer: 1.8, y: 960 });
 
@@ -452,14 +454,12 @@ async function start() {
   ] });
   // Sekunde 3: Mach 10, Abstand der S-Bahn als Live-Zähler
   M.zaehler({ ein: "sek3:Sekunde+0.1", aus: "Ergebnis:-0.3", wert: (t) => Math.max(0, nase(t)), nk: 0, einheit: "m", max: 99, team: "a", label: "S-BAHN", x: SICHER.mitte, y: 420, anker: "mitte" });
-  M.stempel({ text: "MACH 10", ein: "Mach-0.02", x: SICHER.mitte, y: 640, winkel: -7, art: "stempel", farbe: "a", groesse: 132 });
+  M.stempel({ text: "MACH 10", ein: "Mach-0.02", x: SICHER.mitte, y: 880, winkel: -3, art: "stempel", farbe: "a", groesse: 92 });
   // Sekunde 4: Durchsage
-  M.chips({ y: 520, ausrichtung: "mitte", aus: "sek5:Sekunde-0.1", liste: [
-    { text: "LAUTSPRECHER 8 M", ein: "Durchsage:", art: "dunkel" },
-    { text: "= 5,8 S", ein: "sechs-0.05", art: "voll", team: "b", gross: true },
-  ] });
+  M.chips({ y: 520, ausrichtung: "mitte", aus: "sek5:Sekunde-0.1", liste: [{ text: "LAUTSPRECHER 8 M", ein: "Durchsage:", art: "dunkel" }] });
+  M.chips({ y: 670, ausrichtung: "mitte", aus: "sek5:Sekunde-0.1", liste: [{ text: "8 M = 5,8 S", ein: "sechs-0.05", art: "voll", team: "b", gross: true }] });
   // Sekunde 5: lautlos
-  M.stempel({ text: "LAUTLOS", ein: "lautlos.-0.05", x: SICHER.mitte, y: 640, winkel: 6, farbe: "#3B3F55", groesse: 132 });
+  M.stempel({ text: "LAUTLOS", ein: "Völlig", aus: "Ergebnis:-0.45", x: SICHER.mitte, y: 800, winkel: 6, farbe: "#3B3F55", groesse: 132 });
   // Ergebnis: Rennen S-Bahn gegen ihr eigenes Geräusch (60 m bis zu dir)
   const R = S.rennen();
   M.bilanz({
@@ -481,11 +481,10 @@ async function start() {
     { text: "=", ein: "überholt" }, { text: "MACH 10", ein: "überholt+0.25", art: "erg" },
   ] });
   // Zweite Überraschung: Ultraschall
-  M.pointe({ text: "ULTRA- | *SCHALL*", ein: "Ultraschall.-0.05", takt: 0.16, aus: "merksatz:Was-0.15", y: 520, groesse: 150 });
-  M.chips({ y: 900, ausrichtung: "mitte", aus: "merksatz:Was-0.15", liste: [
-    { text: "× 247", ein: "Ultraschall.+0.4", art: "voll", team: "b", gross: true },
-    { text: "200 HZ → 49 KHZ", ein: "ueberraschung:Nur", art: "dunkel" },
-  ] });
+  M.chips({ y: 430, ausrichtung: "mitte", aus: "Ultraschall.-0.15", liste: [{ text: "SCHALL WIEDER 1.235 KM/H", ein: "Danach", art: "voll", team: "b" }] });
+  M.pointe({ text: "ULTRA- | *SCHALL*", ein: "Ultraschall.-0.05", takt: 0.16, aus: "merksatz:Was-0.45", y: 520, groesse: 150 });
+  M.chips({ y: 900, ausrichtung: "mitte", aus: "merksatz:Was-0.45", liste: [{ text: "× 247", ein: "Ultraschall.+0.4", art: "voll", team: "b", gross: true }] });
+  M.chips({ y: 1060, ausrichtung: "mitte", aus: "merksatz:Was-0.45", liste: [{ text: "200 HZ → 49 KHZ", ein: "ueberraschung:Nur", art: "dunkel" }] });
   // Merksatz
   M.pointe({ text: "WAS DU HÖRST, | IST SCHON | *PASSIERT.*", ein: "merksatz:Was", takt: 0.13, aus: "Welches-0.1", y: 520, groesse: 112 });
   M.untertitel({ stil: "kontur", unten: 1450, groesse: 62 });
@@ -540,10 +539,11 @@ async function start() {
     W.heyText.visible = heySicht && pov;
     if (heySicht) {
       const d = AUGE.clone().sub(MUND); const dist = d.length(); d.normalize();
-      const r = Math.min(heyR, dist - 0.32);
+      const r = Math.min(heyR, dist - 0.55);
       W.heyText.position.copy(MUND).addScaledVector(d, r).add(V(0, 0.12, 0));
-      const s = 0.28 * (1 + 0.6 * ease.outBack(clamp((t - tHey) / 0.4)) - 0.6);
+      const s = 0.28 * (1 + 0.6 * ease.outBack(clamp((t - tHey) / 0.4)) - 0.6) * (1 - 0.45 * clamp((heyR - 0.6) / (dist - 0.6)));
       W.heyText.scale.set(s * 4, s, 1);
+      W.heyText.material.opacity = 1 - clamp((heyR - (dist - 0.5)) / 0.4);
     }
     W.durchsageText.visible = pov && t >= tDurch && t < tS5 + 0.3;
     if (W.durchsageText.visible) { W.durchsageText.position.copy(LAUTSPRECHER).add(V(-0.2, -0.75, -0.4)); const s = 0.3 * ease.outBack(clamp((t - tDurch) / 0.35)); W.durchsageText.scale.set(s * 8, s, 1); }
@@ -578,6 +578,7 @@ async function start() {
   const ZG = () => V(-6, 1.6, 0.2); // Blick auf den stehenden Zug / das Gleis
   const ziele = [
     { t: 0, z: Z0, d: 0 },
+    { t: T("regeln:Du") - 0.1, z: () => V(30, 0.6, 7.5), d: 0.9 }, // Blick den Bahnsteig entlang
     { t: T("Freundin.") - 0.35, z: ZF, d: 0.6 },
     { t: T("regeln:S-Bahn") - 0.25, z: ZT, d: 0.75 },
     { t: T("Klar,") - 0.15, z: Z0, d: 0.7 },
@@ -586,9 +587,11 @@ async function start() {
     { t: tS4 + 0.05, z: ZL, d: 0.85 },
     { t: tS5 - 0.15, z: ZN, d: 0.6 },
     { t: tUeb - 0.2, z: ZG, d: 0.01 },
+    { t: T("ueberraschung:alles,") - 0.1, z: () => V(22, 1.6, 0.4), d: 0.8 }, // Blick auf die eingefrorenen Wellen
     { t: tUltra - 0.6, z: () => V(4, 2.6, 6.5), d: 0.9 },
     { t: tMerk - 0.25, z: ZF, d: 0.8 },
   ];
+  for (const k of ziele.slice(1)) if (k.d > 0.05) M.melde({ t: k.t, typ: "kamera", klang: false, dauer: k.d, text: "Blickwechsel" });
   const blickZiel = (t) => {
     let d = ziele[0].z(t).clone().sub(AUGE).normalize();
     for (let i = 1; i < ziele.length; i++) {

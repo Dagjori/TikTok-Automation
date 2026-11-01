@@ -90,9 +90,11 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
 - **Keine Geheimnisse ins Repo.** API-Keys (z. B. ElevenLabs) nur über Umgebungsvariablen bzw. `.env`, das in `.gitignore` steht.
 
 ## Plattformregeln (verbindlich)
-- **Posten nur über offizielle Wege, der Inhaber gibt jedes Video frei.**
+- **Posten nur über offizielle Wege, vollautomatisch über Buffer** (Inhaber 01.11.: „ich will nicht freigeben müssen“).
   - Erlaubt: Planung in TikTok Studio (Web, bis 30 Tage im Voraus) und YouTube Studio, dazu **Buffer** als offizielles Partner-Tool (Entscheidung 31.10.).
-  - Buffer erst nach bestandenem Test einsetzen: Video wirklich öffentlich und KI-Label gesetzt (`docs/11-automatisierung.md`). Claude legt dort höchstens geplante Entwürfe an.
+  - **Claude prüft jedes Video selbst** (Prüfliste `docs/15` §11, Text-Überlappung, Kontaktbogen, Lautheit, Abgleich Sprechtext gegen Spracherkennung) und **plant es danach selbst in Buffer ein**, ohne Freigabe: `pipeline/post_buffer.py` (Upload nach Supabase, Post mit Caption zur festen Posting-Zeit). Der Inhaber kann geplante Posts in Buffer bis zum Zeitpunkt löschen, muss aber nichts tun.
+  - **Posting-Zeiten** (Europe/Berlin, Startwerte, Datei `data/plan/posting_zeiten.json`): Simulierbar Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30; `@stelldirvor.pov` Mo–Fr 20:30, Sa–So 13:00. Höchstens 5 Tage im Voraus planen (Gratis-Plan: 10 geplante Posts je Kanal). Nach 14 Tagen mit eigenen Zahlen aus TikTok Studio (Follower-Aktivität, Aufrufe nach 2 h und 24 h) nachjustieren. Grundlage `docs/11` §3C.
+  - **Nach dem Posten prüft Claude** (`post_buffer.py --nachpruefen`): Video öffentlich, Länge stimmt, danach Datei in Supabase löschen.
   - Kein eigenes Bot-Posting, keine inoffiziellen Tools. Die TikTok Content Posting API postet ohne Audit nur privat. Die Community Guidelines verbieten „automation tools, scripts … designed to bypass our systems“.
 - **Kein Umgehen von Bot-Schutz.** Für Recherche nur öffentliche Seiten abrufen, keine internen TikTok-APIs.
 - **Videos:**
@@ -121,13 +123,13 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
   - keine künstlichen Cliffhanger-Teile (TikTok: Clickbait ist ein CRP-Ausschlussgrund)
 - **Kein Kaufaufruf im Video.** TikTok drosselt in TikTok-Shop-Märkten Inhalte, die zum Kauf außerhalb von TikTok führen.
 - **Profil:** keine E-Mail und keine Telefonnummer in der Bio (CRP-Kriterium „Advertising“). Das Impressum nur als Link.
-- **Caption (TikTok und YouTube gleich), genau dieses Format, eine Zeile** (Entscheidung 31.10.):
+- **Caption (TikTok und YouTube gleich), genau dieses Format, eine Zeile** (Entscheidung 31.10.; jeder Buffer-Post enthält sie, Inhaber 01.11.):
   - `Hook-Frage mit Suchbegriff? Emoji Ich hab's simuliert. (bzw. durchgerechnet.) Kommentarfrage? 👇 #thema1 #thema2 #thema3 #wissen #simulation`
   - Beispiel: „Früh einordnen oder bis zum Ende fahren? 🚗 Ich hab's simuliert. Team früh oder Team Reißverschluss? 👇 #reißverschlussverfahren #stau #autofahren #wissen #simulation“
   - höchstens ca. 150 Zeichen plus 5 Hashtags; kein #fyp/#viral
   - keine Quellen, keine Annahmen, keine Hinweise wie „Stimme: KI“ oder „keine Anlageberatung“ (nicht verpflichtend, kostet nur Arbeit)
 - **Kennzeichnung:**
-  - Beim Posten immer den Schalter „KI-generierte Inhalte“ AN (TikTok) bzw. „Veränderte oder synthetische Inhalte: Ja“ (YouTube). Das ist die Pflicht-Kennzeichnung.
+  - **Kein KI-Label** (Inhaber 01.11.). TikTok verlangt es nur für realistische KI-Inhalte; ausdrücklich nicht nötig bei künstlerischen Stilen und generischer TTS-Stimme (`docs/16` §2). Unsere Bilder sind in Three.js/Blender gebaut, nicht KI-generiert. **Ausnahme:** Zeigt ein Video realistisch wirkende KI-Inhalte (z. B. Stimme einer echten Person, fotorealistische KI-Bilder), Label AN (`post_buffer.py --ki-label`). YouTube (später): Angabe „Veränderte oder synthetische Inhalte“ dann neu prüfen.
   - Finanzthemen nur als Modellrechnung, nie konkrete Produkt- oder Anlageempfehlungen.
 - **Keine neuen TikTok-Shop-Videos** auf dem Hauptaccount (Werbevideos sind nicht CRP-fähig).
 

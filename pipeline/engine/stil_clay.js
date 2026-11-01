@@ -252,7 +252,7 @@ export function brett({ n = 10, teilung = 0.18, rand = 0.15 } = {}) {
   return g;
 }
 /** Kachel setzen: groesse 0..1.x (Skalierung), farbe "rot"|"cyan"|"remis", drehung (rad um y, für das Umdrehen) */
-export function setzeKachel(b, i, { groesse = 0, farbe = "remis", drehung = 0, hebe = 0 } = {}) {
+export function setzeKachel(b, i, { groesse = 0, farbe = "remis", drehung = 0, hebe = 0, x = null, y = null } = {}) {
   const k = b.userData.kacheln[i];
   const sichtbar = groesse > 0.002;
   k.visible = sichtbar;
@@ -261,6 +261,7 @@ export function setzeKachel(b, i, { groesse = 0, farbe = "remis", drehung = 0, h
   k.scale.set(groesse, groesse, Math.max(0.2, groesse));
   k.rotation.y = drehung;
   k.position.z = 0.15 + hebe;
+  if (x !== null) { k.position.x = x; k.position.y = y; }
 }
 
 // =====================================================================================

@@ -16,8 +16,8 @@ import { videoLaeufe, monteCarlo, warumFaktoren } from "../../sim/schere_stein_p
 
 const FPS = 30;
 const Q = new URLSearchParams(location.search);
-const MSAA = Q.has("msaa") ? +Q.get("msaa") : 4;
-const SCHATTEN = Q.has("schatten") ? +Q.get("schatten") : 2048;
+const MSAA = Q.has("msaa") ? +Q.get("msaa") : 0;
+const SCHATTEN = Q.has("schatten") ? +Q.get("schatten") : 1024;
 const lade = async (url) => {
   const r = await fetch(url, { cache: "no-store" });
   if (!r.ok) throw new Error(`${url}: ${r.status}`);
@@ -98,8 +98,8 @@ async function start() {
     [3, 3, T("start:Cyan") - 0.04, 0],
     [4, 10, T("start:Cyan") + 0.45, T("rennen1:Rot")],
     [11, 19, T("rennen1:2") + 0.35, T("wendung1:vorbei") - 0.1],
-    [20, 30, T("wendung1:vorbei") + 0.12, T("wendung1:11")],
-    [31, 60, T("wendung1:11") + 0.1, T("rennen2:60") + 0.1],
+    [20, 30, T("wendung1:vorbei") + 0.12, T("wendung1:11") - 0.35],
+    [31, 60, T("wendung1:11") + 0.6, T("rennen2:60") + 0.1],
     [61, 100, T("rennen2:60") + 0.2, T("ergebnis1:34") - 0.1],
   ]);
   const tLeerZ = T("wendung2:Aber") - 0.05; // Brett wird geleert (Welle)
@@ -149,12 +149,12 @@ async function start() {
   szene.add(R);
 
   // Brett an der Wand
-  const B = brett({ n: 10, teilung: 0.215 });
-  B.position.set(0, 4.55, -3.06);
+  const B = brett({ n: 10, teilung: 0.18 });
+  B.position.set(0, 4.34, -3.06);
   szene.add(B);
 
   // Sockel und Hände (Podeste, damit die Hände im oberen Bilddrittel der Tafel-Zone stehen)
-  const PED = 1.25, HX = 0.92, HY = 1.15 + PED - 0.5, HS = 0.96;
+  const PED = 0.75, HX = 0.92, HY = 1.15 + PED - 0.5, HS = 0.96;
   const sockR = sockel({ farbe: ROT, radius: 0.88, hoehe: PED });
   sockR.position.set(-HX, 0, 0);
   const sockC = sockel({ farbe: CYAN, radius: 0.88, hoehe: PED });
@@ -172,14 +172,14 @@ async function start() {
   const symbolR = new THREE.Group();
   const pawn = bauer({ farbe: ROT });
   symbolR.add(pawn);
-  symbolR.position.set(-1.78, 3.95, -2.55);
+  symbolR.position.set(-1.5, 3.75, -2.55);
   symbolR.scale.setScalar(0.92);
   const symbolC = new THREE.Group();
   const wuerf = wuerfel({ farbe: CYAN });
   wuerf.position.y = 0.45;
   const kopf = kopfFigur({ farbe: CYAN });
   symbolC.add(wuerf, kopf);
-  symbolC.position.set(1.78, 3.95, -2.55);
+  symbolC.position.set(1.5, 3.75, -2.55);
   symbolC.scale.setScalar(0.92);
   szene.add(symbolR, symbolC);
 
@@ -254,29 +254,52 @@ async function start() {
     return { wR, wC, pumpR, pumpC, wackR, wackC, quR, quC, gew, seit, schnell };
   }
 
+  // Sortieren: Zum Ergebnis laufen die Kacheln in Farbblöcke (Rot, Cyan, unentschieden): Der Vorsprung wird sichtbar
+  const rangVon = (lauf) => {
+    const grp = { rot: 0, cyan: 1, remis: 2 };
+    const ord = lauf.runden.map((r, i) => ({ i, g: grp[farbeVon(r.erg)] })).sort((a, b) => a.g - b.g || a.i - b.i);
+    const rang = new Array(100);
+    ord.forEach((o, k) => { rang[o.i] = k; });
+    return rang;
+  };
+  const rangZ = rangVon(lz), rangM = rangVon(lm);
+  const tSortZ = T("ergebnis1:Endstand") + 0.05;
+  const tSortM = T("ergebnis2:Endstand") + 0.05;
+  const tUnsortM = T("ueberraschung:Und") + 0.35;
+  const SORT_D = 0.6;
+  const sortP = (t, t0, i) => ease.inOutCubic(clamp((t - t0 - i * 0.004) / SORT_D));
+
   /** Kachel-Zustand von Runde r (1..100) zum Zeitpunkt t */
   function kachel(r, t) {
     const i = r - 1;
     const pop = (d) => (d < 0 ? 0 : feder(d, { frequenz: 3.4, daempfung: 0.4 }));
     // Welle: Brett leeren
-    const leer = (t0, farbe, d0) => {
+    const leer = (t0, farbe, d0, extra) => {
       const d = t - t0 - i * 0.0045;
       if (d <= 0) return null;
       const k = ease.inCubic(clamp(d / 0.2));
-      return { groesse: (1 - k) * d0, farbe, drehung: k * 1.2, hebe: k * 0.15 };
+      return { groesse: (1 - k) * d0, farbe, drehung: k * 1.2, hebe: k * 0.15, ...extra };
+    };
+    const platz = B.userData.platz;
+    /** Position beim Sortieren: p = 0 (Rundenfolge) … 1 (Farbblock) */
+    const mitSort = (rang, p) => {
+      if (p <= 0.0005) return {};
+      const [x0, y0] = platz(i), [x1, y1] = platz(rang[i]);
+      return { x: lerp(x0, x1, p), y: lerp(y0, y1, p), hebe: 0.18 * Math.sin(p * Math.PI) };
     };
     const A = aktAt(t);
     const kMax = rundenBis(A, t);
-    // Zufall-Akt
     if (A.id === "Z") {
       if (r > kMax) return { groesse: 0 };
-      const e = leer(tLeerZ, farbeVon(lz.runden[i].erg), pop(t - tZ[r]));
-      return e || { groesse: pop(t - tZ[r]), farbe: farbeVon(lz.runden[i].erg) };
+      const farbe = farbeVon(lz.runden[i].erg);
+      const sp = mitSort(rangZ, sortP(t, tSortZ, rang0(i)));
+      const e = leer(tLeerZ, farbe, pop(t - tZ[r]), sp);
+      return e || { groesse: pop(t - tZ[r]), farbe, ...sp };
     }
-    // Akt Z läuft noch kurz aus (Leer-Welle), obwohl M schon gilt: nur bis tLeerZ + 0.5
     if (A.id === "M") {
       if (r > kMax) return { groesse: 0 };
-      return { groesse: pop(t - tM[r]), farbe: farbeVon(lm.runden[i].erg) };
+      const p = sortP(t, tSortM, rang0(i)) * (1 - sortP(t, tUnsortM, rang0(i)));
+      return { groesse: pop(t - tM[r]), farbe: farbeVon(lm.runden[i].erg), ...mitSort(rangM, p) };
     }
     // Würfel-Akt: Runden 51–100 drehen sich um und zeigen das neue Ergebnis
     const alt = farbeVon(lm.runden[i].erg);
@@ -287,6 +310,7 @@ async function start() {
     const p = clamp(d / 0.26);
     return { groesse: 1 + 0.18 * Math.sin(p * Math.PI), farbe: p < 0.5 ? alt : neu, drehung: p * Math.PI * (p < 1 ? 1 : 0), hebe: 0.06 * Math.sin(p * Math.PI) };
   }
+  const rang0 = (i) => i; // Versatz je Kachel beim Sortieren (Reihenfolge der Runden)
 
   // =====================================================================================
   // HUD
@@ -348,13 +372,13 @@ async function start() {
   M.chip({ text: "LOS GEHT'S!", ein: "falle:Los", aus: "start:Runde+0.15", art: "voll", team: "akzent", gross: true, x: SICHER.mitte, anker: "mitte", y: 790 });
 
   // ---------- Rennen Zufall: die ersten drei Runden einzeln ----------
-  const urteil = (text, ein, team, art = "voll") => M.chip({ text, ein, aus: T(ein) + 0.95, art, team, gross: true, x: SICHER.mitte, anker: "mitte", y: 1190, klang: "pop" });
+  const urteil = (text, ein, team, art = "voll") => M.chip({ text, ein, aus: T(ein) + 0.95, art, team, gross: true, x: SICHER.mitte, anker: "mitte", y: 1120, klang: "pop" });
   urteil("UNENTSCHIEDEN", tZ[1], "akzent");
   urteil("PUNKT ROT", tZ[2], "a");
   urteil("PUNKT CYAN", tZ[3], "b");
-  const remisPille = new RemisPille(M, { y: 812, ein: tZ[4], aus: tLeerZ, wert: (t) => stand(t).remis });
+  const remisPille = new RemisPille(M, { y: 1226, ein: tZ[4], aus: T("ergebnis1:Endstand") - 0.1, wert: (t) => stand(t).remis });
   hud.add(remisPille);
-  const remisPille2 = new RemisPille(M, { y: 812, ein: tM[1], aus: tMerk, wert: (t) => stand(t).remis });
+  const remisPille2 = new RemisPille(M, { y: 1226, ein: tM[1], aus: T("ergebnis2:Endstand") - 0.1, wert: (t) => stand(t).remis });
   hud.add(remisPille2);
 
   // ---------- Folgen-Aufruf ----------
@@ -362,7 +386,7 @@ async function start() {
 
   // ---------- Wendung 1: Cyan zieht vorbei ----------
   const sUeber = M.stempel({ text: "ÜBERHOLT!", ein: T("wendung1:vorbei") - 0.2, x: SICHER.mitte, y: 640, winkel: -6, art: "stempel", farbe: CYAN, groesse: 118 });
-  M.chip({ text: "GLEICHSTAND", ein: "wendung1:11", aus: "rennen2:Rot", art: "dunkel", gross: true, x: SICHER.mitte, anker: "mitte", y: 372 });
+  M.chip({ text: "GLEICHSTAND", ein: T("wendung1:11") - 0.4, aus: "rennen2:Rot", art: "dunkel", gross: true, x: SICHER.mitte, anker: "mitte", y: 796 });
 
   // ---------- Ergebnis 1: praktisch gleich ----------
   M.bilanz({
@@ -378,7 +402,7 @@ async function start() {
 
   // ---------- Wendung 2: Cyan spielt wie ein Mensch ----------
   const sMensch = M.stempel({ text: "MENSCH!", ein: "wendung2:Mensch", x: SICHER.mitte, y: 640, winkel: 6, farbe: CYAN, groesse: 124 });
-  M.chips({ y: 372, ausrichtung: "mitte", aus: "rennen3:Runde-0.1", liste: [
+  M.chips({ y: 796, ausrichtung: "mitte", aus: "rennen3:Runde-0.1", liste: [
     { text: "MENSCH: 44 % GLEICHER ZUG", ein: "mensch:44", art: "voll", team: "b" },
     { text: "ZUFALL: 33 %", ein: "mensch:33", art: "dunkel" },
   ] });
@@ -486,6 +510,7 @@ async function start() {
   for (const s of [sKlar, sUeber, sMensch, sWeg]) regie.stoss({ t: s.ein + 0.1, staerke: 0.8 });
   regie.zoom({ t: "wendung1:vorbei", staerke: 0.12, halt: 0.9, rueck: 0.6 });
   regie.zoom({ t: "ergebnis2:Neunzehn", staerke: 0.1, halt: 1.0, rueck: 0.6 });
+  regie.zoom({ t: "warum:genau", staerke: 0.1, halt: 0.9, rueck: 0.6 });
 
   // =====================================================================================
   // Weltzustand je Bild
@@ -508,8 +533,9 @@ async function start() {
     // Brett
     for (let r = 1; r <= 100; r++) {
       const s = kachel(r, t);
+      if (s.x === undefined) { const [bx, by] = B.userData.platz(r - 1); s.x = bx; s.y = by; }
       const g = (s.groesse || 0) * (t >= tMerk ? 1 - ease.inCubic(clamp((t - tMerk - (r - 1) * 0.004) / 0.2)) : 1) * (1 - kl);
-      setzeKachel(B, r - 1, { groesse: g, farbe: s.farbe || "remis", drehung: s.drehung || 0, hebe: s.hebe || 0 });
+      setzeKachel(B, r - 1, { groesse: g, farbe: s.farbe || "remis", drehung: s.drehung || 0, hebe: s.hebe || 0, x: s.x ?? null, y: s.y ?? null });
     }
     // Symbole: Bauer wippt bei Rot-Siegen, Würfel rollt; bei „Mensch“ wird der Würfel zum Kopf
     const mensch = clamp(fortschritt(t, tMensch, tMensch + 0.5)) * (1 - clamp(fortschritt(t, tMenschEnde, tMenschEnde + 0.45)));

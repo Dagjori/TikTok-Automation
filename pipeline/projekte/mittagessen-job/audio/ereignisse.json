@@ -3,8 +3,8 @@
  "erzeugt": "render.js",
  "projekt": "mittagessen-job",
  "fps": 30,
- "dauer": 75.8,
- "stimmEnde": 74.816,
+ "dauer": 71.96666666666667,
+ "stimmEnde": 71.054,
  "timing": "timing.json (echte Stimme)",
  "protokoll": true,
  "teppich": "raum",
@@ -21,8 +21,8 @@
    }
   },
   "schleife": {
-   "ab": 71.89,
-   "ende": 75.76666666666667
+   "ab": 67.97,
+   "ende": 71.93333333333334
   },
   "untertitel": {
    "stil": "kontur"
@@ -30,7 +30,7 @@
   "timing": "echt",
   "schleifenPruefung": {
    "ok": true,
-   "ende": 75.767,
+   "ende": 71.933,
    "nurErstesBild": [],
    "nurLetztesBild": [],
    "kameraAbweichung": 0
@@ -67,14 +67,14 @@
   },
   {
    "quelle": "Titel",
-   "t": 2.993,
+   "t": 2.9,
    "typ": "titel",
    "klang": "klick",
    "text": "MITTAGESSEN"
   },
   {
    "quelle": "Titel",
-   "t": 3.54,
+   "t": 3.5,
    "typ": "titel",
    "klang": "klick",
    "text": "IM JAHR?"
@@ -96,7 +96,7 @@
   },
   {
    "quelle": "Szene",
-   "t": 7.24,
+   "t": 7.16,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.9,
@@ -104,14 +104,14 @@
   },
   {
    "quelle": "Chip",
-   "t": 8.21,
+   "t": 8.05,
    "typ": "chip",
    "klang": "pop",
    "text": "KOCHEN 3,50 €"
   },
   {
    "quelle": "Szene",
-   "t": 9.56,
+   "t": 9.32,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.9,
@@ -119,40 +119,40 @@
   },
   {
    "quelle": "Chip",
-   "t": 10.61,
+   "t": 10.37,
    "typ": "chip",
    "klang": "pop",
    "text": "BESTELLEN 15 €"
   },
   {
+   "quelle": "Chip",
+   "t": 11.31,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.31,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.31,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
    "quelle": "Szene",
-   "t": 11.8,
+   "t": 11.56,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.8,
    "klang": "whoosh"
   },
   {
-   "quelle": "Chip",
-   "t": 11.88,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 11.88,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 11.88,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
    "quelle": "Stempel",
-   "t": 12.1,
+   "t": 11.86,
    "typ": "stempel",
    "klang": "stempel",
    "text": "KLAR!"
@@ -160,14 +160,14 @@
   {
    "typ": "kamera",
    "quelle": "Regie",
-   "t": 12.1,
+   "t": 11.86,
    "art": "stoss",
    "dauer": 0.2,
    "klang": false
   },
   {
    "quelle": "Szene",
-   "t": 14.34,
+   "t": 14.1,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.7,
@@ -175,81 +175,81 @@
   },
   {
    "quelle": "Tafel",
-   "t": 14.533,
-   "typ": "zaehler",
-   "dauer": 2.5,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 14.567,
-   "typ": "fuehrung",
-   "klang": "ding",
-   "text": "links vorn"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 14.567,
+   "t": 14.3,
    "typ": "zaehler",
    "dauer": 2.433,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
-   "quelle": "LiveZaehler",
-   "t": 14.6,
+   "quelle": "Tafel",
+   "t": 14.333,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 14.333,
    "typ": "zaehler",
    "dauer": 2.367,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
+   "quelle": "LiveZaehler",
+   "t": 14.367,
+   "typ": "zaehler",
+   "dauer": 2.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
    "quelle": "Tafel",
-   "t": 14.64,
+   "t": 14.4,
    "typ": "uhr",
-   "dauer": 2.333,
+   "dauer": 2.267,
    "laufend": true,
    "klang": "uhr"
   },
   {
    "quelle": "Szene",
-   "t": 14.64,
+   "t": 14.4,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Münzen"
   },
   {
    "quelle": "Szene",
-   "t": 15.12,
+   "t": 14.864,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Münzen"
   },
   {
    "quelle": "Szene",
-   "t": 15.6,
+   "t": 15.328,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Münzen"
   },
   {
    "quelle": "Szene",
-   "t": 16.08,
+   "t": 15.792,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Münzen"
   },
   {
    "quelle": "Szene",
-   "t": 16.56,
+   "t": 16.256,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Münzen"
   },
   {
    "quelle": "Szene",
-   "t": 16.84,
+   "t": 16.52,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.7,
@@ -257,21 +257,21 @@
   },
   {
    "quelle": "Szene",
-   "t": 17.04,
+   "t": 16.72,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Münzen"
   },
   {
    "quelle": "Etikett",
-   "t": 17.68,
+   "t": 17.36,
    "typ": "chip",
    "klang": "pop",
    "text": "KOCHEN770 €"
   },
   {
    "quelle": "Szene",
-   "t": 18.91,
+   "t": 18.47,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.8,
@@ -279,14 +279,14 @@
   },
   {
    "quelle": "Etikett",
-   "t": 19.84,
+   "t": 19.52,
    "typ": "chip",
    "klang": "pop",
    "text": "BESTELLEN3.300 €"
   },
   {
    "quelle": "Szene",
-   "t": 21.46,
+   "t": 21.18,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 1.4,
@@ -294,14 +294,14 @@
   },
   {
    "quelle": "Folgen",
-   "t": 21.51,
+   "t": 21.23,
    "typ": "folgen",
    "dauer": 1.8,
    "klang": "folgen"
   },
   {
    "quelle": "Szene",
-   "t": 23.359,
+   "t": 23.33,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.8,
@@ -309,14 +309,14 @@
   },
   {
    "quelle": "Szene",
-   "t": 23.509,
+   "t": 23.48,
    "typ": "kalender",
    "klang": "whoosh",
    "text": "Kalender weg"
   },
   {
    "quelle": "Szene",
-   "t": 23.809,
+   "t": 23.78,
    "typ": "uhr-ein",
    "klang": "ding",
    "text": "Uhr erscheint"
@@ -352,31 +352,56 @@
   },
   {
    "quelle": "Chip",
-   "t": 26.33,
+   "t": 26.29,
    "typ": "chip",
    "klang": "pop",
    "text": "KOCHEN 9 MIN"
   },
   {
    "quelle": "Szene",
-   "t": 26.36,
+   "t": 26.32,
    "typ": "symbol",
    "klang": "pop",
    "text": "Symbol"
   },
   {
    "quelle": "Chip",
-   "t": 26.93,
+   "t": 26.85,
    "typ": "chip",
    "klang": "pop",
    "text": "SPÜLEN 3 MIN"
   },
   {
    "quelle": "Szene",
-   "t": 26.96,
+   "t": 26.88,
    "typ": "symbol",
    "klang": "pop",
    "text": "Symbol"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.68,
+   "typ": "symbol",
+   "klang": "ding",
+   "text": "15 Minuten: Symbole hüpfen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.86,
+   "typ": "chip-weg",
+   "klang": false
   },
   {
    "quelle": "Szene",
@@ -385,24 +410,6 @@
    "art": "fahrt",
    "dauer": 0.9,
    "klang": "whoosh"
-  },
-  {
-   "quelle": "Chip",
-   "t": 28.91,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 28.91,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 28.91,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Formel",
@@ -427,21 +434,35 @@
   },
   {
    "quelle": "Formel",
-   "t": 30.05,
+   "t": 29.9,
    "typ": "formel",
    "klang": "pop",
    "text": "="
   },
   {
    "quelle": "Formel",
-   "t": 30.37,
+   "t": 30.35,
    "typ": "formel",
    "klang": "ding",
    "text": "13,46"
   },
   {
    "quelle": "Szene",
-   "t": 32.2,
+   "t": 30.93,
+   "typ": "puls",
+   "klang": "klick",
+   "text": "Uhr: Stundenlohn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.3,
+   "typ": "puls",
+   "klang": "ding",
+   "text": "Uhr: Stundenlohn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.22,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.8,
@@ -449,30 +470,30 @@
   },
   {
    "quelle": "LiveZaehler",
-   "t": 32.65,
+   "t": 32.57,
    "typ": "zaehler-ein",
    "klang": "pop"
   },
   {
    "quelle": "Szene",
-   "t": 32.68,
+   "t": 32.6,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Zeit-Münzen Kochen"
   },
   {
    "quelle": "LiveZaehler",
-   "t": 32.75,
+   "t": 32.67,
    "typ": "zaehler",
-   "dauer": 1.5,
+   "dauer": 1.033,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Tafel",
-   "t": 32.8,
+   "t": 32.733,
    "typ": "zaehler",
-   "dauer": 2.367,
+   "dauer": 2.6,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -485,28 +506,28 @@
   },
   {
    "quelle": "Szene",
-   "t": 34.367,
+   "t": 34.447,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Zeit-Münzen Kochen"
   },
   {
    "quelle": "Etikett",
-   "t": 34.96,
+   "t": 35.12,
    "typ": "chip",
    "klang": "pop",
    "text": "ZEIT+740 €"
   },
   {
    "quelle": "Szene",
-   "t": 35.21,
+   "t": 35.37,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Zeit-Münzen Kochen"
   },
   {
    "quelle": "Szene",
-   "t": 36.9,
+   "t": 36.78,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.8,
@@ -514,79 +535,107 @@
   },
   {
    "quelle": "Szene",
-   "t": 38,
+   "t": 37.84,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Zeit-Münzen Bestellen"
   },
   {
    "quelle": "Tafel",
-   "t": 38.033,
+   "t": 37.9,
    "typ": "zaehler",
-   "dauer": 1.667,
+   "dauer": 2.267,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Szene",
-   "t": 38.865,
+   "t": 39.025,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Zeit-Münzen Bestellen"
   },
   {
    "quelle": "Etikett",
-   "t": 39.28,
+   "t": 39.76,
    "typ": "chip",
    "klang": "pop",
    "text": "ZEIT+296 €"
   },
   {
    "quelle": "Szene",
-   "t": 39.73,
+   "t": 40.21,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Zeit-Münzen Bestellen"
   },
   {
    "quelle": "Szene",
-   "t": 41.47,
+   "t": 40.83,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.8,
    "klang": "whoosh"
   },
   {
-   "quelle": "Szene",
-   "t": 42.42,
-   "typ": "puls",
-   "klang": "klick",
-   "text": "Säulen vergleichen"
-  },
-  {
    "quelle": "Bilanz",
-   "t": 43.04,
+   "t": 42.48,
    "typ": "bilanz",
    "klang": "klick",
    "text": "KOCHEN"
   },
   {
+   "quelle": "Szene",
+   "t": 42.53,
+   "typ": "puls",
+   "klang": "klick",
+   "text": "Kochen-Säule"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.02,
+   "typ": "puls",
+   "klang": "klick",
+   "text": "Kochen-Säule"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.73,
+   "typ": "puls",
+   "klang": "klick",
+   "text": "Bestellen-Säule"
+  },
+  {
    "quelle": "Bilanz",
-   "t": 45.84,
+   "t": 45.6,
    "typ": "bilanz",
    "klang": "klick",
    "text": "BESTELLEN"
   },
   {
+   "quelle": "Szene",
+   "t": 45.68,
+   "typ": "puls",
+   "klang": "klick",
+   "text": "Bestellen-Säule"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.14,
+   "typ": "puls",
+   "klang": "ding",
+   "text": "Kochen vorn"
+  },
+  {
    "quelle": "Bilanz",
-   "t": 48.56,
+   "t": 47.6,
    "typ": "sieger",
    "klang": "sieg",
    "text": "KOCHEN GEWINNT"
   },
   {
    "quelle": "Szene",
-   "t": 49.33,
+   "t": 48.45,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.8,
@@ -594,7 +643,7 @@
   },
   {
    "quelle": "Balken",
-   "t": 50.16,
+   "t": 49.28,
    "typ": "balken",
    "dauer": 0.7,
    "klang": "wachsen",
@@ -602,21 +651,21 @@
   },
   {
    "quelle": "Balken",
-   "t": 50.88,
+   "t": 50.4,
    "typ": "balken-tag",
    "klang": "pop",
    "text": "−2.530 €"
   },
   {
    "quelle": "Szene",
-   "t": 52.8,
+   "t": 50.4,
    "typ": "puls",
    "klang": "klick",
    "text": "Geld-Teil"
   },
   {
    "quelle": "Balken",
-   "t": 53.48,
+   "t": 51.12,
    "typ": "balken",
    "dauer": 0.7,
    "klang": "wachsen",
@@ -624,21 +673,21 @@
   },
   {
    "quelle": "Balken",
-   "t": 54.32,
+   "t": 52.4,
    "typ": "balken-tag",
    "klang": "pop",
    "text": "+444 €"
   },
   {
    "quelle": "Szene",
-   "t": 56.08,
+   "t": 52.4,
    "typ": "puls",
    "klang": "klick",
    "text": "Zeit-Teil"
   },
   {
    "quelle": "Szene",
-   "t": 56.74,
+   "t": 52.94,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.9,
@@ -646,199 +695,207 @@
   },
   {
    "quelle": "Szene",
-   "t": 56.94,
+   "t": 53.14,
    "typ": "kalender",
    "klang": "whoosh",
    "text": "Uhr weg"
   },
   {
    "quelle": "Etikett",
-   "t": 58.08,
+   "t": 54.32,
    "typ": "chip",
    "klang": "pop",
    "text": "MIT ZUSCHUSS"
   },
   {
    "quelle": "Szene",
-   "t": 58.08,
+   "t": 54.32,
    "typ": "symbol",
    "klang": "pop",
    "text": "Kantinen-Figur"
   },
   {
    "quelle": "Szene",
-   "t": 58.94,
+   "t": 55.18,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Münzen Kantine"
   },
   {
    "quelle": "LiveZaehler",
-   "t": 58.99,
+   "t": 55.23,
    "typ": "zaehler-ein",
    "klang": "pop"
   },
   {
    "quelle": "LiveZaehler",
-   "t": 58.99,
+   "t": 55.23,
    "typ": "zaehler",
-   "dauer": 0.567,
+   "dauer": 0.667,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Szene",
-   "t": 59.586,
+   "t": 55.842,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Münzen Kantine"
   },
   {
    "quelle": "Szene",
-   "t": 60.232,
+   "t": 56.504,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Münzen Kantine"
   },
   {
    "quelle": "LiveZaehler",
-   "t": 60.657,
+   "t": 57.13,
    "typ": "zaehler",
-   "dauer": 1.5,
+   "dauer": 1.367,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Szene",
-   "t": 60.878,
+   "t": 57.166,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Münzen Kantine"
   },
   {
    "quelle": "Szene",
-   "t": 61.524,
+   "t": 57.828,
    "typ": "muenzen",
    "klang": "pop",
    "text": "Münzen Kantine"
-  },
-  {
-   "quelle": "Szene",
-   "t": 62.17,
-   "typ": "muenzen",
-   "klang": "pop",
-   "text": "Münzen Kantine"
-  },
-  {
-   "quelle": "Szene",
-   "t": 62.2,
-   "typ": "kamera",
-   "art": "fahrt",
-   "dauer": 1.3,
-   "klang": "whoosh"
-  },
-  {
-   "quelle": "Szene",
-   "t": 63.56,
-   "typ": "linie",
-   "klang": "klick",
-   "text": "Vergleichslinie"
   },
   {
    "quelle": "Chip",
-   "t": 64.54,
+   "t": 58.4,
    "typ": "chip",
    "klang": "pop",
    "text": "KIPPPUNKT: 14,8 MIN KOCHZEIT"
   },
   {
    "quelle": "Szene",
-   "t": 64.99,
-   "typ": "fuehrung",
-   "klang": "ding",
-   "text": "Kantine holt Kochen ein"
+   "t": 58.49,
+   "typ": "muenzen",
+   "klang": "pop",
+   "text": "Münzen Kantine"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.6,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1.3,
+   "klang": "whoosh"
   },
   {
    "quelle": "Etikett",
-   "t": 65.04,
+   "t": 59.2,
    "typ": "chip",
    "klang": "pop",
    "text": "KOCHEN1.510 €"
   },
   {
+   "quelle": "Szene",
+   "t": 60.04,
+   "typ": "linie",
+   "klang": "klick",
+   "text": "Vergleichslinie"
+  },
+  {
+   "quelle": "Chip",
+   "t": 60.76,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.91,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "Kantine holt Kochen ein"
+  },
+  {
    "quelle": "Stempel",
-   "t": 65.98,
+   "t": 61.193,
    "typ": "stempel",
    "klang": "stempel",
    "text": "EINGEHOLT!"
   },
   {
    "quelle": "Szene",
-   "t": 66.42,
+   "t": 62.3,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 0.9,
    "klang": "whoosh"
   },
   {
-   "quelle": "Chip",
-   "t": 66.47,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
    "quelle": "Pointe",
-   "t": 66.52,
+   "t": 62.4,
    "typ": "pointe",
    "klang": "akzent",
    "text": "KOCHEN SPART  GELD."
   },
   {
    "quelle": "Szene",
-   "t": 67.28,
+   "t": 63.2,
    "typ": "pointe-wort",
    "klang": "klick",
    "text": "GELD."
   },
   {
    "quelle": "Pointe",
-   "t": 67.88,
+   "t": 63.84,
    "typ": "pointe",
    "klang": "akzent",
    "text": "DIE KANTINE  SPART ZEIT."
   },
   {
    "quelle": "Szene",
-   "t": 69.12,
+   "t": 65.04,
    "typ": "pointe-wort",
    "klang": "klick",
    "text": "ZEIT."
   },
   {
    "quelle": "Pointe",
-   "t": 70,
+   "t": 66,
    "typ": "pointe",
    "klang": "akzent",
    "text": "ZEIT HAT  EINEN PREIS."
   },
   {
    "quelle": "Szene",
-   "t": 70.96,
+   "t": 67,
    "typ": "pointe-wort",
    "klang": "akzent",
    "text": "PREIS."
   },
   {
    "quelle": "Tafel",
-   "t": 71.867,
+   "t": 67.967,
    "typ": "zaehler",
-   "dauer": 3.9,
+   "dauer": 3.987,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Tafel",
-   "t": 71.873,
+   "t": 67.967,
+   "typ": "zaehler",
+   "dauer": 3.987,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.967,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -847,45 +904,37 @@
   {
    "typ": "kamera",
    "quelle": "Regie",
-   "t": 71.89,
+   "t": 67.97,
    "art": "schleife",
-   "dauer": 3.877,
+   "dauer": 3.963,
    "klang": false
   },
   {
-   "t": 71.89,
+   "t": 67.97,
    "typ": "schleife",
-   "dauer": 3.877,
+   "dauer": 3.963,
    "klang": "rueck",
    "quelle": "Massstab"
   },
   {
    "quelle": "Tafel",
-   "t": 71.9,
-   "typ": "zaehler",
-   "dauer": 3.867,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 72.273,
+   "t": 68.367,
    "typ": "uhr",
-   "dauer": 3.1,
+   "dauer": 3.167,
    "laufend": true,
    "klang": "uhr"
   },
   {
    "quelle": "LiveZaehler",
-   "t": 72.59,
+   "t": 68.67,
    "typ": "zaehler-ein",
    "klang": "pop"
   },
   {
    "quelle": "LiveZaehler",
-   "t": 72.59,
+   "t": 68.67,
    "typ": "zaehler",
-   "dauer": 3.167,
+   "dauer": 3.284,
    "laufend": true,
    "klang": "zaehlen"
   }

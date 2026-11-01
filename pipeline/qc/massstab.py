@@ -22,6 +22,8 @@ import sys
 from pathlib import Path
 
 SCHLUSS = "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare."
+# Schlusssatz je Konto (skript.json „konto“); Account 2 @stelldirvor.pov laut Auftrag des Inhabers 01.11.
+SCHLUSS_KONTO = {"stelldirvor": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare."}
 
 PROFILE = {
     # Stimme Ben, Original-Einstellungen (Entscheidung 31.10.)
@@ -188,8 +190,9 @@ def pruefe(projekt, profil, extra_ziele):
     # 10 Schlusssatz exakt
     letzter_text = " ".join(skript["segmente"][-1]["text"].split())
     gesprochen = " ".join(w["wort"] for w in woerter)
-    ok10 = letzter_text == SCHLUSS or gesprochen.endswith(SCHLUSS)
-    zeile("10", "Schlusssatz exakt", "ja" if ok10 else f"„{letzter_text[-60:]}“", "„Was sollen wir … Kommentare.“", "Frage an den Zuschauer", ok10)
+    schluss = SCHLUSS_KONTO.get(skript.get("konto"), SCHLUSS)
+    ok10 = letzter_text == schluss or gesprochen.endswith(schluss)
+    zeile("10", "Schlusssatz exakt", "ja" if ok10 else f"„{letzter_text[-60:]}“", f"„{' '.join(schluss.split()[:3])} … Kommentare.“", "Frage an den Zuschauer", ok10)
 
     # 11 Schleife
     sp = ms.get("schleifenPruefung") if ms else None
@@ -238,7 +241,7 @@ def pruefe(projekt, profil, extra_ziele):
     zeile("14", "Untertitel Wort für Wort (kontur)", stil_ut, "kontur (Inhaber 01.11.)", "Phrasen 2–5 Wörter", stil_ut == "kontur")
 
     # 15 Kein Kanalname, kein Logo, keine Rubrik
-    funde = re.findall(r"SIMULIERBAR|new Markenleiste\(|WUERFEL|logoGross|rubrik:", szene)
+    funde = re.findall(r"SIMULIERBAR|new Markenleiste\(|WUERFEL|logoGross|rubrik:|stelldirvor|STELLDIRVOR|marke/account2", szene)
     zeile("15", "Kein Kanalname/Logo/Rubrik (szene.js)", "keine Fundstelle" if not funde else ", ".join(sorted(set(funde))), "keine Fundstelle", "kein Logo, keine Rubrik", not funde)
 
     return zeilen, {"profil": profil, "ziele": ziele, "timing": "geschätzt" if geschaetzt else "echt", "protokoll": protokoll}

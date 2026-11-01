@@ -84,7 +84,7 @@ async function start() {
   let timing;
   try { timing = await lade("audio/timing.json"); }
   catch { try { timing = await lade("audio/timing_schaetzung.json"); } catch { timing = schaetzeTiming(skript); } }
-  const zp = new Zeitplan(timing, { mindestlaenge: 0, nachlauf: 1.0 });
+  const zp = new Zeitplan(timing, { mindestlaenge: 0, nachlauf: 0.9 });
   const DAUER = Math.round(zp.dauer * FPS) / FPS;
   const ENDE = DAUER - 1 / FPS;
   const T = (x) => zp.zeit(x);
@@ -112,10 +112,10 @@ async function start() {
   const uhrPRoh = (t) => ease.inOutSine(fortschritt(t, tStd0, tStd1));
   const zeitKRoh = (t) => V.kochen.zeitwert * ease.inOutSine(fortschritt(t, tStd0 + 0.1, tZK1));
   // Zeit Bestellen: „Nur 6 Minuten“ bis „296 Euro“
-  const tZB0 = T("bestellzeit:Nur"), tZB1 = T("bestellzeit:296") + 0.45;
+  const tZB0 = T("bestellzeit:Nur"), tZB1 = T("bestellzeit:300") + 0.45;
   const zeitBRoh = (t) => V.bestellen.zeitwert * ease.inOutSine(fortschritt(t, tZB0, tZB1));
   // Kantine: Geld mit „4,57 Euro“, Zeit mit „10 Minuten Weg“
-  const tC0 = T("ueberraschung:4,57") - 0.1, tC1 = T("ueberraschung:Euro,>") + 0.1, tC2 = T("ueberraschung:Minuten") - 0.3, tC3 = T("ueberraschung:Weg.>") + 0.25;
+  const tC0 = T("ueberraschung:4") - 0.1, tC1 = T("ueberraschung:Euro,>") + 0.1, tC2 = T("ueberraschung:Minuten") - 0.3, tC3 = T("ueberraschung:Weg.>") + 0.25;
   const geldCRoh = (t) => V.kantine.geld * ease.outCubic(fortschritt(t, tC0, tC1));
   const zeitCRoh = (t) => V.kantine.zeitwert * ease.inOutSine(fortschritt(t, tC2, tC3));
   const gesamtK = (t) => geldKRoh(t) + zeitKRoh(t);
@@ -146,9 +146,25 @@ async function start() {
   const bandA = [[150, 598, 150, -14], [925, 606, 140, 11], [140, 1302, 130, 9], [940, 1296, 140, -10]];
   for (const [bx, by, bw, bd] of bandA) band(wurzel, bx, by, bw, bd, 2.6, { seed: bx });
   const hilfslinien = gruppe(wurzel, 0, 0, 3);
+  const strichTex = (() => {
+    const c = document.createElement("canvas");
+    c.width = 34; c.height = 4;
+    const g = c.getContext("2d");
+    g.fillStyle = "#BFB195";
+    g.fillRect(0, 0, 18, 4);
+    const t = new THREE.CanvasTexture(c);
+    t.wrapS = t.wrapT = THREE.RepeatWrapping;
+    t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  })();
+  const strichMat = new THREE.MeshBasicMaterial({ map: strichTex, transparent: true, depthWrite: false });
+  const strichGeo = new THREE.PlaneGeometry(782, 4);
+  { const uv = strichGeo.attributes.uv; for (let i = 0; i < uv.count; i++) uv.setX(i, uv.getX(i) * (782 / 34)); }
   for (const k of [1, 2, 3]) {
     const y = BASIS - k * (1000 / COIN) * DICKE;
-    for (let x = 178; x < 960; x += 34) papier(hilfslinien, rechteck(17, 3, 1), "#CFC3AA", { x: x + 8, y, amp: 0.6, schritt: 20, saum: false, schatten: 0, seed: x + k, faser: false });
+    const strich = new THREE.Mesh(strichGeo.clone(), strichMat);
+    strich.position.set(178 + 391, -y, 0);
+    hilfslinien.add(strich);
     etikett(wurzel, `${k}.000 €`, 108, y, { w: 118, groesse: 23, z: 3.4, dreh: k % 2 ? -2 : 2, seed: 300 + k, grund: "#EADFC4" });
   }
   // Boden: Wellpappe
@@ -181,7 +197,7 @@ async function start() {
   wurzel.add(figB.g);
   const figC = papierFigur({ farbe: BLAU, trage: "tablett", haar: "#2F2A2A", seed: 260 });
   figC.g.scale.setScalar(0.82);
-  setzePx(figC.g, 392, 1292, 9);
+  setzePx(figC.g, 688, 1292, 9);
   wurzel.add(figC.g);
 
   // ---------- Mitte: Kalender (Rennen) → Uhr (Zeit) ----------
@@ -247,7 +263,7 @@ async function start() {
     { t: T("wendung:Doch") - 0.15, z: E.zeit, d: 0.8 },
     { t: T("wendung:Einkaufen,") - 0.35, z: E.icons, d: 0.9 },
     { t: T("netto:Dein") - 0.1, z: E.netto, d: 0.9 },
-    { t: T("netto:Das") - 0.2, z: E.stunden, d: 0.8 },
+    { t: T("netto:Mal") - 0.3, z: E.stunden, d: 0.8 },
     { t: T("bestellzeit:Und") - 0.1, z: E.besZeit, d: 0.8 },
     { t: T("ergebnis:Endstand:") - 0.25, z: E.ergebnis, d: 0.8 },
     { t: T("warum:Warum") - 0.15, z: E.warum, d: 0.8 },
@@ -301,26 +317,26 @@ async function start() {
 
   // ---------- Hook: Titel Wort für Wort ----------
   M.titel({
-    y: 346, groesse: 100, aus: "regeln:220-0.12",
+    y: 346, groesse: 100, aus: "hook:wirklich?>+0.05",
     woerter: [
       { text: "KOCHEN", ein: "hook:kochen-0.02", team: "a" },
       { umbruch: true },
       { art: "vs", ein: "hook:oder-0.02" },
       { text: "BESTELLEN?", ein: "hook:bestellen?-0.02", team: "b" },
       { umbruch: true },
-      { text: "WAS KOSTET", ein: "hook:kostet-0.03", art: "klein" }, { text: "MITTAGESSEN", ein: "hook:Mittagessen-0.02", art: "klein" }, { text: "IM JAHR?", ein: "hook:im-0.02", art: "klein" },
+      { text: "MITTAGESSEN", ein: "hook:Mittagessen-0.02", art: "klein" }, { text: "IM JAHR?", ein: "hook:im-0.02", art: "klein" },
     ],
   });
 
   // ---------- Regeln als Chips ----------
-  M.chips({ y: 372, ausrichtung: "mitte", aus: "falle:Klar,-0.12", liste: [{ text: "220 ARBEITSTAGE", ein: "regeln:220-0.03", art: "dunkel", gross: true }] });
-  M.chips({ y: 486, ausrichtung: "mitte", aus: "falle:Klar,-0.12", liste: [
+  M.chips({ y: 372, ausrichtung: "mitte", aus: "falle:Klar,-0.45", liste: [{ text: "220 ARBEITSTAGE", ein: "regeln:220-0.03", art: "dunkel", gross: true }] });
+  M.chips({ y: 512, ausrichtung: "mitte", aus: "falle:Klar,-0.45", abstand: 52, liste: [
     { text: "KOCHEN 3,50 €", ein: "regeln:3,50-0.03", art: "voll", team: "a" },
     { text: "BESTELLEN 15 €", ein: "regeln:15-0.03", art: "voll", team: "b" },
   ] });
 
   // ---------- Denkfalle und Start ----------
-  const sKlar = M.stempel({ text: "KLAR!", ein: "falle:Klar,", aus: "falle:Los-0.1", x: 410, y: 560, winkel: -8, farbe: "a" });
+  const sKlar = M.stempel({ text: "KLAR!", ein: "falle:Klar,", aus: "falle:Los-0.1", x: 540, y: 612, winkel: -8, farbe: "a", groesse: 88 });
 
   // ---------- Kalender: Tag im Zeitraffer ----------
   M.zaehler({ wert: (t) => Math.round(tagRoh(t)), nk: 0, einheit: "TAG", max: 300, team: "tinte", art: "voll", punkt: P(KAL.x, KAL.y + 28), aus: "wendung:Doch-0.1", minY: 300 });
@@ -334,8 +350,8 @@ async function start() {
   M.folgen({ ein: "folgen:Folg-0.05", dauer: 1.8, y: 800, team: "a" });
 
   // ---------- Wendung: Zeit mit einrechnen ----------
-  M.stempel({ text: "ZEIT!", ein: "wendung:Zeit", aus: "wendung:Einkaufen,-0.1", x: 640, y: 560, winkel: 6, farbe: "akzent" });
-  M.chips({ y: 372, ausrichtung: "mitte", aus: "netto:Dein-0.05", liste: [
+  M.stempel({ text: "ZEIT!", ein: "wendung:Zeit", aus: "wendung:Zeit+0.7", x: 540, y: 700, winkel: 6, farbe: "akzent", groesse: 104 });
+  M.chips({ y: 372, ausrichtung: "mitte", aus: "netto:Dein-0.1", abstand: 34, zeilenabstand: 30, liste: [
     { text: "EINKAUFEN 3 MIN", ein: "wendung:Einkaufen,-0.03", art: "voll", team: "a" },
     { text: "KOCHEN 9 MIN", ein: "wendung:kochen,-0.03", art: "voll", team: "a" },
     { text: "SPÜLEN 3 MIN", ein: "wendung:spülen:-0.03", art: "voll", team: "a" },
@@ -343,13 +359,13 @@ async function start() {
 
   // ---------- Netto-Stundenlohn ----------
   M.formel({
-    y: 372, aus: "netto:Das-0.1", titel: "Netto-Stundenlohn", groesse: 66,
+    y: 372, aus: "netto:Mal-0.1", titel: "Netto-Stundenlohn", groesse: 66,
     teile: [
       { text: "27.999", einheit: "€", ein: "netto:Dein+0.25" },
       { text: "÷", ein: "netto:Dein+0.55" },
       { text: "2.080", einheit: "h", ein: "netto:Dein+0.8" },
-      { text: "=", ein: "netto:13,46-0.35" },
-      { text: "13,46", einheit: "€/h", ein: "netto:13,46-0.03", art: "erg" },
+      { text: "=", ein: "netto:13-0.5" },
+      { text: "13,46", einheit: "€/h", ein: "netto:13-0.05", art: "erg" },
     ],
   });
   // Stunden der Kochen-Zeit (Uhr zählt hoch)
@@ -357,37 +373,37 @@ async function start() {
   hud.add(new Etikett(M, { html: `<span class="klein">ZEIT</span><span class="betrag">+${euro(V.kochen.zeitwert)}</span>`, art: "voll", farbe: "a", ein: "netto:740", aus: "bestellzeit:Und-0.05", punkt: (t) => P(X.k, topY(S(t).gK, S(t).zK) - 200)(t), gross: true }));
 
   // ---------- Bestellen: nur 6 Minuten ----------
-  hud.add(new Etikett(M, { html: `<span class="klein">ZEIT</span><span class="betrag">+${euro(V.bestellen.zeitwert)}</span>`, art: "voll", farbe: "b", ein: "bestellzeit:296", aus: "ergebnis:Endstand:-0.1", punkt: (t) => P(X.b - 40, topY(S(t).gB, S(t).zB) - 215)(t), gross: true }));
+  hud.add(new Etikett(M, { html: `<span class="klein">ZEIT</span><span class="betrag">+${euro(V.bestellen.zeitwert)}</span>`, art: "voll", farbe: "b", ein: "bestellzeit:300", aus: "ergebnis:Endstand:-0.5", punkt: (t) => P(X.b - 40, topY(S(t).gB, S(t).zB) - 215)(t), gross: true }));
 
   // ---------- Ergebnis: Bilanzkarte ----------
   M.bilanz({
-    y: 332, ein: "ergebnis:Endstand:-0.15", aus: "warum:Warum-0.15", titel: "Endstand · Euro pro Jahr",
+    y: 352, ein: "ergebnis:Endstand:-0.15", aus: "warum:Warum-0.15", titel: "Endstand · Euro pro Jahr",
     zeilen: [
       { label: "KOCHEN", zusatz: "Geld + Zeit", wert: V.kochen.gesamt, einheit: "€", nk: 0, team: "a", ein: "ergebnis:1.510" },
-      { label: "BESTELLEN", zusatz: "Geld + Zeit", wert: V.bestellen.gesamt, einheit: "€", nk: 0, team: "b", ein: "ergebnis:3.596" },
+      { label: "BESTELLEN", zusatz: "Geld + Zeit", wert: V.bestellen.gesamt, einheit: "€", nk: 0, team: "b", ein: "ergebnis:3.600" },
     ],
     sieger: { text: "KOCHEN GEWINNT", team: "a", ein: "ergebnis:gewinnt" },
   });
 
   // ---------- Warum? zwei Faktoren ----------
   M.balken({
-    y: 332, aus: "ueberraschung:Und-0.1", titel: "Warum?", max: V.bestellen.geld,
+    y: 352, aus: "ueberraschung:Und-0.1", titel: "Warum?", max: V.bestellen.geld,
     faktoren: [
-      { label: "GELD", ein: "warum:Kochen", a: { wert: V.kochen.geld, text: euro(V.kochen.geld) }, b: { wert: V.bestellen.geld, text: euro(V.bestellen.geld) }, tag: `−${euro(Z.geld_vorteil_kochen)}`, tagEin: "warum:2.530" },
-      { label: "ZEIT", ein: "warum:Kostet", a: { wert: V.kochen.zeitwert, text: euro(V.kochen.zeitwert) }, b: { wert: V.bestellen.zeitwert, text: euro(V.bestellen.zeitwert) }, tag: `+${euro(Z.zeit_nachteil_kochen)}`, tagEin: "warum:444" },
+      { label: "GELD", ein: "warum:Kochen", a: { wert: V.kochen.geld, text: euro(V.kochen.geld) }, b: { wert: V.bestellen.geld, text: euro(V.bestellen.geld) }, tag: `−${euro(Z.geld_vorteil_kochen)}`, tagEin: "warum:Geld." },
+      { label: "ZEIT", ein: "warum:Aber", a: { wert: V.kochen.zeitwert, text: euro(V.kochen.zeitwert) }, b: { wert: V.bestellen.zeitwert, text: euro(V.bestellen.zeitwert) }, tag: `+${euro(Z.zeit_nachteil_kochen)}`, tagEin: "warum:Zeit." },
     ],
   });
 
   // ---------- Zweite Überraschung: die Kantine ----------
   hud.add(new Etikett(M, { html: "MIT ZUSCHUSS", art: "dunkel", ein: "ueberraschung:Kantine.", aus: "ueberraschung:Am-0.1", punkt: (t) => P(X.c, topY(S(t).gC, S(t).zC) - 190)(t), dy: 0 }));
-  M.zaehler({ wert: (t) => Math.round(gesamtC(t)), nk: 0, einheit: "€", max: 5000, team: BLAU, art: "voll", punkt: (t) => P(X.c, topY(S(t).gC, S(t).zC) - 100)(t), ein: "ueberraschung:4,57-0.05", aus: "merksatz:Kochen-0.05", minY: 300 });
-  hud.add(new Etikett(M, { html: `<span class="klein">KOCHEN</span><span class="betrag">${euro(V.kochen.gesamt)}</span>`, art: "voll", farbe: "a", ein: "ueberraschung:Sie", aus: "merksatz:Kochen-0.05", punkt: (t) => P(X.k - 20, topY(S(t).gK, S(t).zK) - 110)(t), gross: false, dy: 0 }));
-  M.stempel({ text: "EINGEHOLT!", ein: "ueberraschung:ein.", aus: "merksatz:Kochen+0.25", x: 540, y: 560, winkel: -6, farbe: BLAU, groesse: 100 });
-  M.chips({ y: 372, ausrichtung: "mitte", aus: "merksatz:Kochen-0.05", liste: [{ text: `KIPPPUNKT: ${fmt.zahl(Z.kipp_kochminuten_kantine, 1)} MIN KOCHZEIT`, ein: "ueberraschung:Sie-0.5", art: "dunkel" }] });
+  M.zaehler({ wert: (t) => Math.round(gesamtC(t)), nk: 0, einheit: "€", max: 5000, team: BLAU, art: "voll", punkt: (t) => P(X.c, topY(S(t).gC, S(t).zC) - 100)(t), ein: "ueberraschung:4-0.05", aus: "ueberraschung:Sie-0.2", minY: 300 });
+  hud.add(new Etikett(M, { html: `<span class="klein">KOCHEN</span><span class="betrag">${euro(V.kochen.gesamt)}</span>`, art: "voll", farbe: "a", ein: "ueberraschung:fast", aus: "ueberraschung:Sie-0.2", punkt: (t) => P(X.k - 20, topY(S(t).gK, S(t).zK) - 110)(t), gross: false, dy: 0 }));
+  M.stempel({ text: "EINGEHOLT!", ein: "ueberraschung:holt", aus: "ueberraschung:holt+0.65", x: 540, y: 700, winkel: -6, farbe: BLAU, groesse: 100 });
+  M.chips({ y: 372, ausrichtung: "mitte", aus: "ueberraschung:Sie-0.2", liste: [{ text: `KIPPPUNKT: ${fmt.zahl(Z.kipp_kochminuten_kantine, 1)} MIN KOCHZEIT`, ein: "ueberraschung:Am", art: "dunkel" }] });
   M.melde({ t: "ueberraschung:Sie-0.05", typ: "fuehrung", klang: "ding", text: "Kantine holt Kochen ein" });
 
   // ---------- Merksatz ----------
-  M.pointe({ woerter: [{ text: "KOCHEN", ein: "merksatz:Kochen", farbe: "a" }, { text: "SPART", ein: "merksatz:spart" }, { umbruch: true }, { text: "GELD.", ein: "merksatz:Geld.", farbe: "akzent" }], aus: "merksatz:Die-0.05", y: 500, groesse: 104 });
+  M.pointe({ woerter: [{ text: "KOCHEN", ein: "merksatz:Kochen", farbe: "a" }, { text: "SPART", ein: "merksatz:spart" }, { umbruch: true }, { text: "GELD.", ein: "merksatz:Geld.", farbe: "akzent" }], aus: "merksatz:Geld.>-0.1", y: 500, groesse: 104 });
   M.pointe({ woerter: [{ text: "DIE", ein: "merksatz:Die" }, { text: "KANTINE", ein: "merksatz:Kantine" }, { umbruch: true }, { text: "SPART", ein: "merksatz:spart#2" }, { text: "ZEIT.", ein: "merksatz:Zeit.", farbe: "akzent" }], aus: "merksatz:Und-0.05", y: 500, groesse: 104 });
   M.pointe({ woerter: [{ text: "ZEIT", ein: "merksatz:Zeit#2", farbe: "akzent" }, { text: "HAT", ein: "merksatz:hat" }, { umbruch: true }, { text: "EINEN", ein: "merksatz:einen" }, { text: "PREIS.", ein: "merksatz:Preis.", farbe: "akzent" }], aus: "schluss:Was-0.1", y: 500, groesse: 104 });
   M.melde({ t: "merksatz:Geld.", typ: "pointe-wort", klang: "klick", text: "GELD." });
@@ -401,8 +417,11 @@ async function start() {
   const tMuenz = (a, b, n) => Array.from({ length: n }, (_, i) => lerp(a, b, i / Math.max(1, n - 1)));
   for (const t of tMuenz(tLos, tJahr, 6)) M.melde({ t, typ: "muenzen", klang: "pop", text: "Münzen" });
   for (const i of zeitIcons) M.melde({ t: i.t, typ: "symbol", klang: "pop", text: "Symbol" });
+  M.melde({ t: T("wendung:15"), typ: "symbol", klang: "ding", text: "15 Minuten: Symbole hüpfen" });
   M.melde({ t: T("wendung:Doch"), typ: "kalender", klang: "whoosh", text: "Kalender weg" });
   M.melde({ t: T("wendung:Doch") + 0.3, typ: "uhr-ein", klang: "ding", text: "Uhr erscheint" });
+  M.melde({ t: T("netto:Euro") + 0.05, typ: "puls", klang: "klick", text: "Uhr: Stundenlohn" });
+  M.melde({ t: T("netto:46.") + 0.1, typ: "puls", klang: "ding", text: "Uhr: Stundenlohn" });
   for (const t of tMuenz(tStd0, tZK1, 4)) M.melde({ t, typ: "muenzen", klang: "pop", text: "Zeit-Münzen Kochen" });
   for (const t of tMuenz(tZB0, tZB1, 3)) M.melde({ t, typ: "muenzen", klang: "pop", text: "Zeit-Münzen Bestellen" });
   for (const t of tMuenz(tC0, tC3, 6)) M.melde({ t, typ: "muenzen", klang: "pop", text: "Münzen Kantine" });
@@ -410,7 +429,11 @@ async function start() {
   M.melde({ t: T("ueberraschung:Kantine."), typ: "symbol", klang: "pop", text: "Kantinen-Figur" });
   M.melde({ t: T("warum:Geld."), typ: "puls", klang: "klick", text: "Geld-Teil" });
   M.melde({ t: T("warum:Zeit."), typ: "puls", klang: "klick", text: "Zeit-Teil" });
-  M.melde({ t: T("ergebnis:Endstand:") + 0.7, typ: "puls", klang: "klick", text: "Säulen vergleichen" });
+  M.melde({ t: T("ergebnis:1.510") + 0.05, typ: "puls", klang: "klick", text: "Kochen-Säule" });
+  M.melde({ t: T("ergebnis:Euro.") + 0.1, typ: "puls", klang: "klick", text: "Kochen-Säule" });
+  M.melde({ t: T("ergebnis:Bestellen") + 0.05, typ: "puls", klang: "klick", text: "Bestellen-Säule" });
+  M.melde({ t: T("ergebnis:fast") + 0.4, typ: "puls", klang: "klick", text: "Bestellen-Säule" });
+  M.melde({ t: T("ergebnis:Kochen#2") - 0.1, typ: "puls", klang: "ding", text: "Kochen vorn" });
   M.melde({ t: T("ueberraschung:Ende:") + 1.4, typ: "linie", klang: "klick", text: "Vergleichslinie" });
 
   // =====================================================================================
@@ -430,11 +453,13 @@ async function start() {
     const tau = t;
     // Säulen
     const geldPuls = puls(t, tWarumGeld - 0.1, 0.8), zeitPuls = puls(t, tWarumZeit - 0.1, 0.8);
+    const pK = puls(t, T("ergebnis:1.510"), 0.5) + puls(t, T("ergebnis:Euro.") + 0.05, 0.5) + puls(t, T("ergebnis:Kochen#2") - 0.1, 0.7);
+    const pB = puls(t, T("ergebnis:Bestellen"), 0.5) + puls(t, T("ergebnis:fast") + 0.35, 0.5);
     const rK = saeuleK.setze(s.gK / COIN, s.zK / COIN);
     const rB = saeuleB.setze(s.gB / COIN, s.zB / COIN);
     const rC = saeuleC.setze(s.gC / COIN, s.zC / COIN);
-    saeuleK.muenzen.forEach((c, i) => { if (c.visible) { const istGeld = i + 0.5 < s.gK / COIN; c.scale.x = 1 + 0.06 * (istGeld ? geldPuls : zeitPuls); } });
-    saeuleB.muenzen.forEach((c, i) => { if (c.visible) { const istGeld = i + 0.5 < s.gB / COIN; c.scale.x = 1 + 0.06 * (istGeld ? geldPuls : zeitPuls); } });
+    saeuleK.muenzen.forEach((c, i) => { if (c.visible) { const istGeld = i + 0.5 < s.gK / COIN; c.scale.x = 1 + 0.06 * (istGeld ? geldPuls : zeitPuls) + 0.05 * pK; } });
+    saeuleB.muenzen.forEach((c, i) => { if (c.visible) { const istGeld = i + 0.5 < s.gB / COIN; c.scale.x = 1 + 0.06 * (istGeld ? geldPuls : zeitPuls) + 0.05 * pB; } });
     // Stop-Motion-Wackeln der Symbole (12 Bilder je Sekunde)
     const n12 = Math.floor(tau * 12 + 1e-6);
     const wack = (i) => ({ dy: rest(n12, i) * 5, dr: rest(n12, i + 50) * 0.07 });
@@ -468,7 +493,7 @@ async function start() {
     flug.setze(t, { start: tLos - 0.05, ende: tJahr, rate: 17, x0: KAL.x, y0: KAL.y - 10, leben: 0.7 });
     const uEin = t < tUhrEin ? 0 : t < tUhrAus ? clamp(feder(t - tUhrEin, { frequenz: 2.6, daempfung: 0.42 })) : 1 - ease.inCubic(fortschritt(t, tUhrAus, tUhrAus + 0.4));
     uhr.g.visible = uEin > 0.01 && t >= tUhrEin - 0.01;
-    uhr.g.scale.setScalar(Math.max(0.001, uEin));
+    uhr.g.scale.setScalar(Math.max(0.001, uEin) * (1 + 0.06 * (puls(t, T("netto:Euro") + 0.05, 0.4) + puls(t, T("netto:46.") + 0.1, 0.4))));
     setzePx(uhr.g, UHR.x, UHR.y + (t >= tUhrAus ? -ease.inCubic(fortschritt(t, tUhrAus, tUhrAus + 0.4)) * 300 : 0), 6.6);
     uhr.g.rotation.z = (1 - clamp(uEin)) * 0.5;
     uhr.setze(0.2 + s.uhr * 3.2 + Math.max(0, tau - tStd1) * 0.02);
@@ -481,7 +506,7 @@ async function start() {
       if (!ic.o.g.visible) return;
       const w = wack(20 + i);
       setzePx(ic.o.g, ic.x, ic.y + w.dy * 0.8 - (1 - k) * 40, 7.8);
-      ic.o.g.scale.setScalar(0.95 * k);
+      ic.o.g.scale.setScalar(0.95 * k * (1 + 0.14 * puls(t, T("wendung:15"), 0.45)));
       ic.o.g.rotation.z = w.dr * 1.3;
       if (ic.o.setze) ic.o.setze(tau);
     });

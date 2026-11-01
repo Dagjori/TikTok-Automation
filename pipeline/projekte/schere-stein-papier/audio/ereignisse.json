@@ -603,15 +603,15 @@
   },
   {
    "quelle": "Tafel",
-   "t": 25.267,
+   "t": 25.233,
    "typ": "uhr",
-   "dauer": 0.033,
+   "dauer": 0.133,
    "laufend": true,
    "klang": "uhr"
   },
   {
    "quelle": "Tafel",
-   "t": 25.4,
+   "t": 25.333,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -619,15 +619,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 25.4,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.567,
+   "t": 25.467,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -635,7 +627,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 25.567,
+   "t": 25.467,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -643,14 +635,14 @@
   },
   {
    "quelle": "Tafel",
-   "t": 25.6,
+   "t": 25.5,
    "typ": "fuehrung",
    "klang": "ding",
    "text": "rechts vorn"
   },
   {
    "quelle": "Tafel",
-   "t": 25.733,
+   "t": 25.6,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -658,15 +650,15 @@
   },
   {
    "quelle": "Tafel",
-   "t": 25.733,
+   "t": 25.6,
    "typ": "uhr",
-   "dauer": 0.033,
+   "dauer": 0.133,
    "laufend": true,
    "klang": "uhr"
   },
   {
    "quelle": "Tafel",
-   "t": 25.867,
+   "t": 25.7,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -674,15 +666,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 25.867,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 26.033,
+   "t": 25.833,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -690,17 +674,41 @@
   },
   {
    "quelle": "Tafel",
-   "t": 26.033,
+   "t": 25.833,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.967,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.967,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.067,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
   },
   {
    "quelle": "Tafel",
    "t": 26.2,
    "typ": "zaehler",
-   "dauer": 0.033,
+   "dauer": 0.133,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -708,130 +716,51 @@
    "quelle": "Tafel",
    "t": 26.2,
    "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 26.367,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 26.367,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 26.5,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 26.5,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 26.667,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 26.667,
-   "typ": "uhr",
-   "dauer": 4.533,
+   "dauer": 0.133,
    "laufend": true,
    "klang": "uhr"
   },
   {
    "quelle": "Chip",
-   "t": 26.68,
+   "t": 26.28,
    "typ": "chip",
    "klang": "pop",
    "text": "GLEICHSTAND"
   },
   {
    "quelle": "Tafel",
-   "t": 26.767,
+   "t": 27.267,
    "typ": "zaehler",
-   "dauer": 0.033,
+   "dauer": 0.133,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Tafel",
-   "t": 26.8,
+   "t": 27.267,
+   "typ": "uhr",
+   "dauer": 3.933,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.3,
    "typ": "fuehrung",
    "klang": "ding",
    "text": "rechts vorn"
   },
   {
    "quelle": "Tafel",
-   "t": 26.9,
+   "t": 27.4,
    "typ": "zaehler",
    "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 26.967,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 27.1,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 27.333,
-   "typ": "zaehler",
-   "dauer": 0.1,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 27.467,
-   "typ": "zaehler",
-   "dauer": 0.1,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Tafel",
    "t": 27.5,
-   "typ": "fuehrung",
-   "klang": "ding",
-   "text": "rechts vorn"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 27.6,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -839,9 +768,9 @@
   },
   {
    "quelle": "Tafel",
-   "t": 27.733,
+   "t": 27.7,
    "typ": "zaehler",
-   "dauer": 0.033,
+   "dauer": 0.067,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -849,9 +778,16 @@
    "quelle": "Tafel",
    "t": 27.8,
    "typ": "zaehler",
-   "dauer": 0.033,
+   "dauer": 0.067,
    "laufend": true,
    "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.833,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
   },
   {
    "quelle": "Tafel",
@@ -863,7 +799,15 @@
   },
   {
    "quelle": "Tafel",
-   "t": 28.067,
+   "t": 27.967,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.033,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -873,13 +817,21 @@
    "quelle": "Tafel",
    "t": 28.2,
    "typ": "zaehler",
-   "dauer": 0.4,
+   "dauer": 0.033,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Tafel",
-   "t": 28.467,
+   "t": 28.3,
+   "typ": "zaehler",
+   "dauer": 0.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.533,
    "typ": "fuehrung",
    "klang": "ding",
    "text": "links vorn"

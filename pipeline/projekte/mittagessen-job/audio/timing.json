@@ -4,13 +4,13 @@
  "modell": "eleven_v4",
  "verfahren": "am_stueck",
  "einstellungen": "gespeichert (Original)",
- "dauer": 74.816,
+ "dauer": 71.054,
  "segmente": [
   {
    "id": "hook",
    "text": "Selbst kochen oder bestellen? Was kostet dein Mittagessen im Jahr wirklich?",
    "start": 0.0,
-   "ende": 4.84,
+   "ende": 4.56,
    "woerter": [
     {
      "wort": "Selbst",
@@ -34,38 +34,38 @@
     },
     {
      "wort": "Was",
-     "start": 2.352,
+     "start": 2.24,
      "ende": 2.4
     },
     {
      "wort": "kostet",
      "start": 2.48,
-     "ende": 2.8
+     "ende": 2.72
     },
     {
      "wort": "dein",
-     "start": 2.853,
-     "ende": 2.96
+     "start": 2.76,
+     "ende": 2.88
     },
     {
      "wort": "Mittagessen",
-     "start": 3.013,
-     "ende": 3.52
+     "start": 2.92,
+     "ende": 3.44
     },
     {
      "wort": "im",
-     "start": 3.56,
+     "start": 3.52,
      "ende": 3.6
     },
     {
      "wort": "Jahr",
      "start": 3.68,
-     "ende": 3.92
+     "ende": 3.84
     },
     {
      "wort": "wirklich?",
-     "start": 4.0,
-     "ende": 4.84
+     "start": 3.92,
+     "ende": 4.56
     }
    ]
   },
@@ -73,7 +73,7 @@
    "id": "regeln",
    "text": "220 Arbeitstage. Kochen: 3,50 Euro. Bestellen: 15 Euro.",
    "start": 5.12,
-   "ende": 11.52,
+   "ende": 11.48,
    "woerter": [
     {
      "wort": "220",
@@ -83,224 +83,224 @@
     {
      "wort": "Arbeitstage.",
      "start": 6.24,
-     "ende": 7.2
+     "ende": 7.16
     },
     {
      "wort": "Kochen:",
-     "start": 7.44,
-     "ende": 7.84
+     "start": 7.36,
+     "ende": 7.92
     },
     {
      "wort": "3,50",
-     "start": 8.24,
-     "ende": 8.88
+     "start": 8.08,
+     "ende": 8.72
     },
     {
      "wort": "Euro.",
-     "start": 8.96,
-     "ende": 9.36
+     "start": 8.8,
+     "ende": 9.32
     },
     {
      "wort": "Bestellen:",
-     "start": 9.76,
-     "ende": 10.32
+     "start": 9.52,
+     "ende": 10.08
     },
     {
      "wort": "15",
-     "start": 10.64,
-     "ende": 11.04
+     "start": 10.4,
+     "ende": 10.8
     },
     {
      "wort": "Euro.",
-     "start": 11.12,
-     "ende": 11.52
+     "start": 10.88,
+     "ende": 11.48
     }
    ]
   },
   {
    "id": "falle",
    "text": "Klar, Kochen ist billiger. Oder? Los geht's!",
-   "start": 12.0,
-   "ende": 15.56,
+   "start": 11.76,
+   "ende": 15.32,
    "woerter": [
     {
      "wort": "Klar,",
-     "start": 12.0,
-     "ende": 12.48
+     "start": 11.76,
+     "ende": 12.32
     },
     {
      "wort": "Kochen",
-     "start": 12.56,
-     "ende": 12.8
+     "start": 12.36,
+     "ende": 12.64
     },
     {
      "wort": "ist",
-     "start": 12.88,
-     "ende": 13.04
+     "start": 12.72,
+     "ende": 12.8
     },
     {
      "wort": "billiger.",
-     "start": 13.12,
-     "ende": 13.52
+     "start": 12.88,
+     "ende": 13.48
     },
     {
      "wort": "Oder?",
-     "start": 13.92,
-     "ende": 14.24
+     "start": 13.68,
+     "ende": 14.12
     },
     {
      "wort": "Los",
-     "start": 14.64,
-     "ende": 14.88
+     "start": 14.4,
+     "ende": 14.64
     },
     {
      "wort": "geht's!",
-     "start": 14.96,
-     "ende": 15.56
+     "start": 14.72,
+     "ende": 15.32
     }
    ]
   },
   {
    "id": "rennen",
    "text": "Nach einem Jahr: Kochen 770. Bestellen 3.300.",
-   "start": 15.76,
-   "ende": 21.52,
+   "start": 15.52,
+   "ende": 21.0,
    "woerter": [
     {
      "wort": "Nach",
-     "start": 15.76,
-     "ende": 15.92
+     "start": 15.52,
+     "ende": 15.68
     },
     {
      "wort": "einem",
-     "start": 16.0,
-     "ende": 16.24
+     "start": 15.76,
+     "ende": 16.0
     },
     {
      "wort": "Jahr:",
-     "start": 16.32,
-     "ende": 16.64
+     "start": 16.08,
+     "ende": 16.52
     },
     {
      "wort": "Kochen",
-     "start": 17.04,
-     "ende": 17.36
+     "start": 16.72,
+     "ende": 17.12
     },
     {
      "wort": "770.",
-     "start": 17.68,
-     "ende": 19.04
+     "start": 17.36,
+     "ende": 18.56
     },
     {
      "wort": "Bestellen",
-     "start": 19.16,
-     "ende": 19.52
+     "start": 18.72,
+     "ende": 19.2
     },
     {
      "wort": "3.300.",
-     "start": 19.84,
-     "ende": 21.52
+     "start": 19.52,
+     "ende": 21.0
     }
    ]
   },
   {
    "id": "folgen",
    "text": "Folg mir, damit du nichts verpasst.",
-   "start": 21.56,
-   "ende": 23.32,
+   "start": 21.28,
+   "ende": 23.16,
    "woerter": [
     {
      "wort": "Folg",
-     "start": 21.56,
-     "ende": 21.76
+     "start": 21.28,
+     "ende": 21.52
     },
     {
      "wort": "mir,",
-     "start": 21.84,
-     "ende": 22.08
+     "start": 21.64,
+     "ende": 21.8
     },
     {
      "wort": "damit",
-     "start": 22.16,
-     "ende": 22.28
+     "start": 21.84,
+     "ende": 22.0
     },
     {
      "wort": "du",
-     "start": 22.32,
-     "ende": 22.4
+     "start": 22.08,
+     "ende": 22.16
     },
     {
      "wort": "nichts",
-     "start": 22.48,
-     "ende": 22.68
+     "start": 22.24,
+     "ende": 22.48
     },
     {
      "wort": "verpasst.",
-     "start": 22.72,
-     "ende": 23.32
+     "start": 22.56,
+     "ende": 23.16
     }
    ]
   },
   {
    "id": "wendung",
    "text": "Doch jetzt rechnen wir die Zeit mit. Einkaufen, kochen, spülen: 15 Minuten.",
-   "start": 23.509,
+   "start": 23.48,
    "ende": 28.64,
    "woerter": [
     {
      "wort": "Doch",
-     "start": 23.509,
-     "ende": 23.6
+     "start": 23.48,
+     "ende": 23.52
     },
     {
      "wort": "jetzt",
-     "start": 23.68,
-     "ende": 23.92
+     "start": 23.6,
+     "ende": 23.84
     },
     {
      "wort": "rechnen",
-     "start": 24.0,
-     "ende": 24.24
+     "start": 23.92,
+     "ende": 24.16
     },
     {
      "wort": "wir",
-     "start": 24.267,
-     "ende": 24.32
+     "start": 24.24,
+     "ende": 24.293
     },
     {
      "wort": "die",
-     "start": 24.4,
-     "ende": 24.48
+     "start": 24.32,
+     "ende": 24.4
     },
     {
      "wort": "Zeit",
      "start": 24.56,
-     "ende": 24.88
+     "ende": 24.8
     },
     {
      "wort": "mit.",
-     "start": 25.0,
-     "ende": 25.32
+     "start": 24.88,
+     "ende": 25.12
     },
     {
      "wort": "Einkaufen,",
      "start": 25.52,
-     "ende": 26.32
+     "ende": 26.24
     },
     {
      "wort": "kochen,",
-     "start": 26.36,
-     "ende": 26.88
+     "start": 26.32,
+     "ende": 26.8
     },
     {
      "wort": "spülen:",
-     "start": 26.96,
+     "start": 26.88,
      "ende": 27.6
     },
     {
      "wort": "15",
      "start": 27.68,
-     "ende": 28.12
+     "ende": 28.08
     },
     {
      "wort": "Minuten.",
@@ -311,9 +311,9 @@
   },
   {
    "id": "netto",
-   "text": "Dein Netto-Stundenlohn: 13,46 Euro. Das macht 55 Stunden. Also 740 Euro mehr.",
+   "text": "Dein Netto-Stundenlohn: 13 Euro 46. Mal 55 Stunden Kochen. Das sind 740 Euro.",
    "start": 28.96,
-   "ende": 36.96,
+   "ende": 36.8,
    "woerter": [
     {
      "wort": "Dein",
@@ -323,450 +323,470 @@
     {
      "wort": "Netto-Stundenlohn:",
      "start": 29.2,
-     "ende": 30.32
+     "ende": 30.08
     },
     {
-     "wort": "13,46",
+     "wort": "13",
      "start": 30.4,
      "ende": 30.8
     },
     {
-     "wort": "Euro.",
+     "wort": "Euro",
      "start": 30.88,
      "ende": 31.12
     },
     {
-     "wort": "Das",
-     "start": 32.4,
-     "ende": 32.48
+     "wort": "46.",
+     "start": 31.2,
+     "ende": 32.4
     },
     {
-     "wort": "macht",
+     "wort": "Mal",
      "start": 32.52,
-     "ende": 32.72
+     "ende": 32.64
     },
     {
      "wort": "55",
-     "start": 32.8,
+     "start": 32.72,
      "ende": 33.44
     },
     {
-     "wort": "Stunden.",
-     "start": 33.6,
-     "ende": 34.32
+     "wort": "Stunden",
+     "start": 33.52,
+     "ende": 33.76
     },
     {
-     "wort": "Also",
+     "wort": "Kochen.",
+     "start": 33.92,
+     "ende": 34.36
+    },
+    {
+     "wort": "Das",
      "start": 34.48,
      "ende": 34.64
     },
     {
+     "wort": "sind",
+     "start": 34.68,
+     "ende": 34.88
+    },
+    {
      "wort": "740",
-     "start": 34.96,
-     "ende": 35.84
+     "start": 35.12,
+     "ende": 36.0
     },
     {
-     "wort": "Euro",
-     "start": 36.0,
-     "ende": 36.24
-    },
-    {
-     "wort": "mehr.",
-     "start": 36.32,
-     "ende": 36.96
+     "wort": "Euro.",
+     "start": 36.16,
+     "ende": 36.8
     }
    ]
   },
   {
    "id": "bestellzeit",
-   "text": "Und Bestellen? Nur 6 Minuten. 296 Euro Zeit.",
-   "start": 37.0,
-   "ende": 41.6,
+   "text": "Und Bestellen? Nur 6 Minuten. Das sind knapp 300 Euro.",
+   "start": 36.88,
+   "ende": 40.96,
    "woerter": [
     {
      "wort": "Und",
-     "start": 37.0,
-     "ende": 37.04
+     "start": 36.88,
+     "ende": 36.96
     },
     {
      "wort": "Bestellen?",
-     "start": 37.12,
-     "ende": 37.8
+     "start": 37.08,
+     "ende": 37.64
     },
     {
      "wort": "Nur",
-     "start": 38.0,
-     "ende": 38.16
+     "start": 37.84,
+     "ende": 38.0
     },
     {
      "wort": "6",
-     "start": 38.24,
-     "ende": 38.4
+     "start": 38.08,
+     "ende": 38.24
     },
     {
      "wort": "Minuten.",
-     "start": 38.48,
+     "start": 38.32,
+     "ende": 38.8
+    },
+    {
+     "wort": "Das",
+     "start": 39.04,
      "ende": 39.2
     },
     {
-     "wort": "296",
-     "start": 39.28,
-     "ende": 40.48
+     "wort": "sind",
+     "start": 39.253,
+     "ende": 39.36
     },
     {
-     "wort": "Euro",
-     "start": 40.64,
-     "ende": 40.88
+     "wort": "knapp",
+     "start": 39.44,
+     "ende": 39.68
     },
     {
-     "wort": "Zeit.",
-     "start": 40.96,
-     "ende": 41.6
+     "wort": "300",
+     "start": 39.76,
+     "ende": 40.16
+    },
+    {
+     "wort": "Euro.",
+     "start": 40.32,
+     "ende": 40.96
     }
    ]
   },
   {
    "id": "ergebnis",
-   "text": "Endstand: Kochen 1.510 Euro. Bestellen 3.596. Kochen gewinnt.",
-   "start": 41.72,
-   "ende": 49.12,
+   "text": "Endstand: Kochen 1.510 Euro. Bestellen fast 3.600. Kochen gewinnt.",
+   "start": 41.08,
+   "ende": 48.2,
    "woerter": [
     {
      "wort": "Endstand:",
-     "start": 41.72,
+     "start": 41.08,
+     "ende": 41.72
+    },
+    {
+     "wort": "Kochen",
+     "start": 41.92,
      "ende": 42.32
     },
     {
-     "wort": "Kochen",
-     "start": 42.48,
-     "ende": 42.88
-    },
-    {
      "wort": "1.510",
-     "start": 43.04,
-     "ende": 44.4
+     "start": 42.48,
+     "ende": 43.84
     },
     {
      "wort": "Euro.",
-     "start": 44.48,
-     "ende": 45.12
+     "start": 43.92,
+     "ende": 44.56
     },
     {
      "wort": "Bestellen",
-     "start": 45.24,
-     "ende": 45.6
+     "start": 44.68,
+     "ende": 45.12
     },
     {
-     "wort": "3.596.",
-     "start": 45.84,
-     "ende": 48.16
+     "wort": "fast",
+     "start": 45.28,
+     "ende": 45.52
+    },
+    {
+     "wort": "3.600.",
+     "start": 45.6,
+     "ende": 47.2
     },
     {
      "wort": "Kochen",
-     "start": 48.2,
-     "ende": 48.48
+     "start": 47.24,
+     "ende": 47.52
     },
     {
      "wort": "gewinnt.",
-     "start": 48.56,
-     "ende": 49.12
+     "start": 47.6,
+     "ende": 48.2
     }
    ]
   },
   {
    "id": "warum",
-   "text": "Warum? Kochen spart 2.530 Euro Geld. Kostet aber 444 Euro mehr Zeit.",
-   "start": 49.48,
-   "ende": 56.8,
+   "text": "Warum? Kochen spart viel Geld. Aber es kostet mehr Zeit.",
+   "start": 48.6,
+   "ende": 52.88,
    "woerter": [
     {
      "wort": "Warum?",
-     "start": 49.48,
-     "ende": 49.96
+     "start": 48.6,
+     "ende": 49.08
     },
     {
      "wort": "Kochen",
-     "start": 50.16,
-     "ende": 50.4
+     "start": 49.28,
+     "ende": 49.6
     },
     {
      "wort": "spart",
-     "start": 50.48,
-     "ende": 50.8
+     "start": 49.68,
+     "ende": 50.0
     },
     {
-     "wort": "2.530",
-     "start": 50.88,
-     "ende": 52.4
-    },
-    {
-     "wort": "Euro",
-     "start": 52.48,
-     "ende": 52.72
+     "wort": "viel",
+     "start": 50.08,
+     "ende": 50.32
     },
     {
      "wort": "Geld.",
-     "start": 52.8,
-     "ende": 53.44
+     "start": 50.4,
+     "ende": 50.8
     },
     {
-     "wort": "Kostet",
-     "start": 53.48,
-     "ende": 53.76
+     "wort": "Aber",
+     "start": 51.12,
+     "ende": 51.44
     },
     {
-     "wort": "aber",
-     "start": 53.84,
-     "ende": 54.08
+     "wort": "es",
+     "start": 51.6,
+     "ende": 51.68
     },
     {
-     "wort": "444",
-     "start": 54.32,
-     "ende": 55.44
-    },
-    {
-     "wort": "Euro",
-     "start": 55.52,
-     "ende": 55.76
+     "wort": "kostet",
+     "start": 51.76,
+     "ende": 52.08
     },
     {
      "wort": "mehr",
-     "start": 55.84,
-     "ende": 56.0
+     "start": 52.16,
+     "ende": 52.24
     },
     {
      "wort": "Zeit.",
-     "start": 56.08,
-     "ende": 56.8
+     "start": 52.4,
+     "ende": 52.88
     }
    ]
   },
   {
    "id": "ueberraschung",
-   "text": "Und das Verrückte: Die Kantine. 4,57 Euro, 10 Minuten Weg. Am Ende: 1.499. Sie holt das Kochen ein.",
-   "start": 56.84,
-   "ende": 66.48,
+   "text": "Und das Verrückte: Die Kantine. 4 Euro 57. 10 Minuten Weg. Am Ende: fast 1.500. Sie holt das Kochen ein.",
+   "start": 53.04,
+   "ende": 62.0,
    "woerter": [
     {
      "wort": "Und",
-     "start": 56.84,
-     "ende": 56.88
+     "start": 53.04,
+     "ende": 53.12
     },
     {
      "wort": "das",
-     "start": 56.96,
-     "ende": 57.04
+     "start": 53.2,
+     "ende": 53.28
     },
     {
      "wort": "Verrückte:",
-     "start": 57.08,
-     "ende": 57.76
+     "start": 53.32,
+     "ende": 53.84
     },
     {
      "wort": "Die",
-     "start": 57.92,
-     "ende": 58.0
+     "start": 54.16,
+     "ende": 54.24
     },
     {
      "wort": "Kantine.",
-     "start": 58.08,
-     "ende": 58.96
+     "start": 54.32,
+     "ende": 55.08
     },
     {
-     "wort": "4,57",
-     "start": 59.04,
-     "ende": 59.12
+     "wort": "4",
+     "start": 55.28,
+     "ende": 55.44
     },
     {
-     "wort": "Euro,",
-     "start": 59.28,
-     "ende": 59.52
+     "wort": "Euro",
+     "start": 55.6,
+     "ende": 55.84
+    },
+    {
+     "wort": "57.",
+     "start": 56.0,
+     "ende": 56.68
     },
     {
      "wort": "10",
-     "start": 59.6,
-     "ende": 60.92
+     "start": 56.68,
+     "ende": 57.36
     },
     {
      "wort": "Minuten",
-     "start": 60.96,
-     "ende": 61.28
+     "start": 57.44,
+     "ende": 57.76
     },
     {
      "wort": "Weg.",
-     "start": 61.36,
-     "ende": 61.92
+     "start": 57.84,
+     "ende": 58.24
     },
     {
      "wort": "Am",
-     "start": 62.0,
-     "ende": 62.08
+     "start": 58.4,
+     "ende": 58.56
     },
     {
      "wort": "Ende:",
-     "start": 62.16,
-     "ende": 62.72
+     "start": 58.64,
+     "ende": 59.04
     },
     {
-     "wort": "1.499.",
-     "start": 62.76,
-     "ende": 64.96
+     "wort": "fast",
+     "start": 59.2,
+     "ende": 59.44
+    },
+    {
+     "wort": "1.500.",
+     "start": 59.6,
+     "ende": 60.88
     },
     {
      "wort": "Sie",
-     "start": 65.04,
-     "ende": 65.12
+     "start": 60.96,
+     "ende": 61.04
     },
     {
      "wort": "holt",
-     "start": 65.2,
-     "ende": 65.36
+     "start": 61.093,
+     "ende": 61.2
     },
     {
      "wort": "das",
-     "start": 65.44,
-     "ende": 65.52
+     "start": 61.28,
+     "ende": 61.36
     },
     {
      "wort": "Kochen",
-     "start": 65.56,
-     "ende": 65.84
+     "start": 61.44,
+     "ende": 61.68
     },
     {
      "wort": "ein.",
-     "start": 65.88,
-     "ende": 66.48
+     "start": 61.76,
+     "ende": 62.0
     }
    ]
   },
   {
    "id": "merksatz",
    "text": "Kochen spart Geld. Die Kantine spart Zeit. Und Zeit hat einen Preis.",
-   "start": 66.52,
-   "ende": 71.76,
+   "start": 62.4,
+   "ende": 67.84,
    "woerter": [
     {
      "wort": "Kochen",
-     "start": 66.52,
-     "ende": 66.8
+     "start": 62.4,
+     "ende": 62.72
     },
     {
      "wort": "spart",
-     "start": 66.88,
-     "ende": 67.2
+     "start": 62.8,
+     "ende": 63.12
     },
     {
      "wort": "Geld.",
-     "start": 67.28,
-     "ende": 67.84
+     "start": 63.2,
+     "ende": 63.68
     },
     {
      "wort": "Die",
-     "start": 67.88,
-     "ende": 67.92
+     "start": 63.84,
+     "ende": 63.92
     },
     {
      "wort": "Kantine",
-     "start": 68.0,
-     "ende": 68.56
+     "start": 64.0,
+     "ende": 64.48
     },
     {
      "wort": "spart",
-     "start": 68.72,
-     "ende": 69.04
+     "start": 64.64,
+     "ende": 64.96
     },
     {
      "wort": "Zeit.",
-     "start": 69.12,
-     "ende": 69.76
+     "start": 65.04,
+     "ende": 65.52
     },
     {
      "wort": "Und",
-     "start": 69.84,
-     "ende": 69.92
+     "start": 65.68,
+     "ende": 65.84
     },
     {
      "wort": "Zeit",
-     "start": 70.0,
-     "ende": 70.32
+     "start": 66.0,
+     "ende": 66.32
     },
     {
      "wort": "hat",
-     "start": 70.48,
-     "ende": 70.64
+     "start": 66.48,
+     "ende": 66.64
     },
     {
      "wort": "einen",
-     "start": 70.68,
-     "ende": 70.88
+     "start": 66.68,
+     "ende": 66.88
     },
     {
      "wort": "Preis.",
-     "start": 70.96,
-     "ende": 71.76
+     "start": 67.0,
+     "ende": 67.84
     }
    ]
   },
   {
    "id": "schluss",
    "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
-   "start": 71.84,
-   "ende": 74.88,
+   "start": 67.92,
+   "ende": 71.12,
    "woerter": [
     {
      "wort": "Was",
-     "start": 71.84,
-     "ende": 71.92
+     "start": 67.92,
+     "ende": 68.0
     },
     {
      "wort": "sollen",
-     "start": 71.973,
-     "ende": 72.08
+     "start": 68.08,
+     "ende": 68.24
     },
     {
      "wort": "wir",
-     "start": 72.16,
-     "ende": 72.213
+     "start": 68.267,
+     "ende": 68.32
     },
     {
      "wort": "als",
-     "start": 72.24,
-     "ende": 72.4
+     "start": 68.4,
+     "ende": 68.56
     },
     {
      "wort": "Nächstes",
-     "start": 72.44,
-     "ende": 72.8
+     "start": 68.64,
+     "ende": 68.96
     },
     {
      "wort": "zeigen?",
-     "start": 72.96,
-     "ende": 73.44
+     "start": 69.04,
+     "ende": 69.6
     },
     {
      "wort": "Schreib",
-     "start": 73.48,
-     "ende": 73.68
+     "start": 69.68,
+     "ende": 69.92
     },
     {
      "wort": "es",
-     "start": 73.76,
-     "ende": 73.84
+     "start": 69.96,
+     "ende": 70.0
     },
     {
      "wort": "in",
-     "start": 73.88,
-     "ende": 73.92
+     "start": 70.08,
+     "ende": 70.12
     },
     {
      "wort": "die",
-     "start": 73.96,
-     "ende": 74.0
+     "start": 70.16,
+     "ende": 70.24
     },
     {
      "wort": "Kommentare.",
-     "start": 74.08,
-     "ende": 74.88
+     "start": 70.28,
+     "ende": 71.12
     }
    ]
   }

@@ -49,32 +49,32 @@
     {
       "id": "netto",
       "phase": "wendung_2",
-      "text": "Dein Netto-Stundenlohn: 13,46 Euro. Das macht 55 Stunden. Also 740 Euro mehr.",
-      "sprechtext": "Dein Netto-Stundenlohn: dreizehn Euro sechsundvierzig.\nDas macht fünfundfünfzig Stunden.\nAlso siebenhundertvierzig Euro MEHR."
+      "text": "Dein Netto-Stundenlohn: 13 Euro 46. Mal 55 Stunden Kochen. Das sind 740 Euro.",
+      "sprechtext": "Dein Netto-Stundenlohn: dreizehn Euro sechsundvierzig.\nMal fünfundfünfzig Stunden Kochen.\nDas sind siebenhundertvierzig Euro."
     },
     {
       "id": "bestellzeit",
       "phase": "wendung_2",
-      "text": "Und Bestellen? Nur 6 Minuten. 296 Euro Zeit.",
-      "sprechtext": "Und Bestellen?\nNur sechs Minuten.\nZweihundertsechsundneunzig Euro Zeit."
+      "text": "Und Bestellen? Nur 6 Minuten. Das sind knapp 300 Euro.",
+      "sprechtext": "Und Bestellen?\nNur sechs Minuten.\nDas sind knapp dreihundert Euro."
     },
     {
       "id": "ergebnis",
       "phase": "ergebnis",
-      "text": "Endstand: Kochen 1.510 Euro. Bestellen 3.596. Kochen gewinnt.",
-      "sprechtext": "Endstand:\nKochen eintausendfünfhundertzehn Euro.\nBestellen dreitausendfünfhundertsechsundneunzig.\nKochen GEWINNT."
+      "text": "Endstand: Kochen 1.510 Euro. Bestellen fast 3.600. Kochen gewinnt.",
+      "sprechtext": "Endstand:\nKochen eintausendfünfhundertzehn Euro.\nBestellen fast dreitausendsechshundert.\nKochen GEWINNT."
     },
     {
       "id": "warum",
       "phase": "warum",
-      "text": "Warum? Kochen spart 2.530 Euro Geld. Kostet aber 444 Euro mehr Zeit.",
-      "sprechtext": "[thoughtful] Warum?\nKochen spart zweitausendfünfhundertdreißig Euro Geld.\nKostet aber vierhundertvierundvierzig Euro mehr Zeit."
+      "text": "Warum? Kochen spart viel Geld. Aber es kostet mehr Zeit.",
+      "sprechtext": "[thoughtful] Warum?\nKochen spart viel GELD.\nAber es kostet mehr ZEIT."
     },
     {
       "id": "ueberraschung",
       "phase": "zweite_ueberraschung",
-      "text": "Und das Verrückte: Die Kantine. 4,57 Euro, 10 Minuten Weg. Am Ende: 1.499. Sie holt das Kochen ein.",
-      "sprechtext": "Und das Verrückte:\nDie Kantine.\nVier Euro siebenundfünfzig, zehn Minuten Weg.\nAm Ende: eintausendvierhundertneunundneunzig.\nSie holt das Kochen EIN."
+      "text": "Und das Verrückte: Die Kantine. 4 Euro 57. 10 Minuten Weg. Am Ende: fast 1.500. Sie holt das Kochen ein.",
+      "sprechtext": "Und das Verrückte:\nDie Kantine.\nVier Euro siebenundfünfzig.\nZehn Minuten Weg.\nAm Ende: fast fünfzehnhundert.\nSie holt das Kochen EIN."
     },
     {
       "id": "merksatz",

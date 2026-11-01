@@ -2,7 +2,7 @@
  "version": 2,
  "erzeugt": "render.js",
  "projekt": "schall-schritttempo",
- "fps": 30,
+ "fps": 2,
  "dauer": 74.13333333333334,
  "stimmEnde": 73.349,
  "timing": "timing.json (echte Stimme)",
@@ -81,7 +81,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 4.5,
+   "t": 4.68,
    "typ": "chip",
    "klang": "pop",
    "text": "SCHALL 5 KM/H"
@@ -94,11 +94,35 @@
    "text": "SONST 1.235 KM/H"
   },
   {
+   "quelle": "Szene",
+   "t": 6.35,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.9,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.34,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.6,
+   "text": "Blickwechsel"
+  },
+  {
    "quelle": "Chip",
    "t": 8.64,
    "typ": "chip",
    "klang": "pop",
    "text": "FREUNDIN 2 M"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.4,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.75,
+   "text": "Blickwechsel"
   },
   {
    "quelle": "Chip",
@@ -109,27 +133,35 @@
   },
   {
    "quelle": "Chip",
-   "t": 12.11,
+   "t": 11.81,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 12.11,
+   "t": 11.81,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 12.11,
+   "t": 11.81,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 12.11,
+   "t": 11.81,
    "typ": "chip-weg",
    "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.06,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.7,
+   "text": "Blickwechsel"
   },
   {
    "typ": "kamera",
@@ -153,6 +185,14 @@
    "art": "stoss",
    "dauer": 0.2,
    "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.17,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.75,
+   "text": "Blickwechsel"
   },
   {
    "quelle": "Countdown",
@@ -378,6 +418,14 @@
    "klang": false
   },
   {
+   "quelle": "Szene",
+   "t": 29.27,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.85,
+   "text": "Blickwechsel"
+  },
+  {
    "quelle": "Countdown",
    "t": 29.377,
    "typ": "marke",
@@ -503,6 +551,14 @@
   },
   {
    "quelle": "Szene",
+   "t": 34.793,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.85,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Szene",
    "t": 34.843,
    "typ": "kamera",
    "klang": "whoosh",
@@ -599,7 +655,7 @@
    "t": 40.08,
    "typ": "chip",
    "klang": "pop",
-   "text": "= 5,8 S"
+   "text": "8 M = 5,8 S"
   },
   {
    "quelle": "Countdown",
@@ -616,6 +672,14 @@
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.22,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.6,
+   "text": "Blickwechsel"
   },
   {
    "quelle": "Chip",
@@ -693,6 +757,13 @@
    "klang": "uhr"
   },
   {
+   "quelle": "Stempel",
+   "t": 44.71,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "LAUTLOS"
+  },
+  {
    "quelle": "Countdown",
    "t": 44.81,
    "typ": "uhr",
@@ -707,13 +778,6 @@
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
-  },
-  {
-   "quelle": "Stempel",
-   "t": 45.54,
-   "typ": "stempel",
-   "klang": "stempel",
-   "text": "LAUTLOS"
   },
   {
    "quelle": "Countdown",
@@ -868,6 +932,14 @@
    "klang": "whoosh"
   },
   {
+   "quelle": "Szene",
+   "t": 62.81,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.9,
+   "text": "Blickwechsel"
+  },
+  {
    "quelle": "Pointe",
    "t": 63.36,
    "typ": "pointe",
@@ -914,15 +986,23 @@
   },
   {
    "quelle": "Chip",
-   "t": 66.22,
+   "t": 65.92,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 66.22,
+   "t": 65.92,
    "typ": "chip-weg",
    "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.12,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.8,
+   "text": "Blickwechsel"
   },
   {
    "quelle": "Pointe",
