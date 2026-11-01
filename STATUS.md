@@ -54,8 +54,8 @@
 | 3 | Repo auf privat stellen (GitHub → Settings → General → Change visibility) | Inhaber | 2 Min. | offen |
 | 4 | Produktion 02.11.: Fußgängerampel und Steuererklärung oder Überstunden | Claude (Agenten) | – | erledigt, beide übergeben |
 | 4b | 02.11. Fußgängerampel 12:00 und Steuererklärung 20:00 posten (KI-Schalter AN), vorher mit Ton anhören | Inhaber | 15 Min. | 02.11. |
-| 4d | Account 2: neuen Account anlegen (Privatkonto, Region DE), Namen aus `docs/16` §11 wählen (Empfehlung „Stell dir vor …“ `@stelldirvor.pov`), Profilbild `marke/account2/logo/account2-logo-fragezeichen-profilbild-1080.png` hochladen | Inhaber | 15 Min. | offen |
-| 4e | Prototyp Account 2 (neuer Szenentyp, Opus): deutscher Ort, Du-Perspektive, eigenes Thema mit Rechnung | Claude (Agent) | 1–2 Agententage | nach 4d |
+| 4d | Account 2: Account anlegen, Name, Profilbild, Bio | Inhaber | 15 Min. | erledigt 01.11. abends (Inhaber: „2. tiktok account steht jetzt auch“), Handle noch nicht genannt |
+| 4e | Prototyp Account 2 (neuer Szenentyp, Opus): deutscher Ort, Du-Perspektive, eigenes Thema mit Rechnung | Claude (Agent) | 1–2 Agententage | bereit, wartet auf Startsignal |
 | 4c | Startsignal für 03.11.: „Schere, Stein, Papier“ (Stil 3 Clay) und „Mittagessen im Job“ (Stil 6 Collage) | Inhaber | – | offen |
 | 5 | Windows-PC einrichten (Claude Code, Node, ffmpeg, Blender), um mit GPU zu rendern | Inhaber plus Claude | 30–60 Min. | empfohlen |
 | 6 | TikTok-Konto öffentlich, Buffer-Test, Telegram (`docs/13`) | Inhaber | 30 Min. | offen |
