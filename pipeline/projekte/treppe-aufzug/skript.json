@@ -1,0 +1,119 @@
+{
+  "titel": "Treppe oder Aufzug: Wer ist im Bürohaus wirklich schneller oben?",
+  "rubrik": "ALLTAG",
+  "stil": "12 Comic-Toon 3D (Gebäude im Schnitt) + 13 Blaupause als Szenenwechsel für „Warum?“",
+  "stil_begruendung": "Konkurrenz-Check 01.11. (Websuche, öffentliche Seiten): kein deutsches Video mit Zeitrennen Treppe gegen Aufzug gefunden, nur Gesundheits-Tipps, Stair-Shuffle-Tanz und englische Artikel bzw. Einzeltests (MCAD, Critic NZ). Das Thema ist ein echtes Rennen mit Führungswechseln: Stil 12 Comic-Toon trägt Tempo, Sticker („ÜBERHOLT!“) und Lesbarkeit am besten und rendert schnell. Das Bürohaus als Querschnitt (Treppenhaus links, Aufzugsschacht rechts) passt perfekt ins Hochformat: beide Kontrahenten und alle Etagen sind von Bild 1 an zu sehen. Für „Warum?“ wechselt die Szene in Stil 13 Blaupause: derselbe Schnitt als technische Zeichnung, dort wird die Standzeit des Aufzugs sichtbar (wie der Querschnitt in K3). Nicht Stil 2 (letztes Video), nicht 14/5 (zweites Video heute). Eigene Gestaltung, kein Vorbild nachgebaut.",
+  "teamfarben": {
+    "Treppe": "#FF8A3D",
+    "Aufzug": "#3D8BFF"
+  },
+  "klangteppich": "raum",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Treppe oder Aufzug? Wer ist wirklich schneller oben?",
+      "sprechtext": "Treppe – oder Aufzug?\n[curious] Wer ist WIRKLICH schneller oben?"
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Bürohaus, vierter Stock. Zwei Kollegen, gleicher Start. Einer nimmt die Treppe. Einer ruft den Aufzug.",
+      "sprechtext": "Bürohaus, vierter Stock.\nZwei Kollegen, gleicher Start.\nEiner nimmt die Treppe.\nEiner ruft den Aufzug."
+    },
+    {
+      "id": "falle",
+      "phase": "denkfalle",
+      "text": "Klar, der Aufzug. Der ist fünfmal so schnell. Oder?",
+      "sprechtext": "Klar, der Aufzug.\nDer ist FÜNFMAL so schnell.\nOder?"
+    },
+    {
+      "id": "start",
+      "phase": "start",
+      "text": "Los geht's.",
+      "sprechtext": "[excited] Los geht's!"
+    },
+    {
+      "id": "rennen1",
+      "phase": "rennen",
+      "text": "Die Treppe startet sofort. Stufe für Stufe. Erster Stock nach 10 Sekunden.",
+      "sprechtext": "Die Treppe startet SOFORT.\nStufe für Stufe.\nErster Stock nach zehn Sekunden."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst."
+    },
+    {
+      "id": "wendung1",
+      "phase": "wendung",
+      "text": "Doch der Aufzug ist noch gar nicht da. Er muss erst kommen.",
+      "sprechtext": "[surprised] Doch der Aufzug… ist noch gar nicht DA.\nEr muss erst kommen."
+    },
+    {
+      "id": "rennen2",
+      "phase": "rennen",
+      "text": "Treppe: zweiter Stock. Erst jetzt geht die Tür auf. Nach 25 Sekunden. Einsteigen. Tür zu. Jetzt fliegt der Aufzug. Der Vorsprung schmilzt. Erster, zweiter, dritter Stock. Überholt!",
+      "sprechtext": "Treppe: zweiter Stock.\nErst JETZT geht die Tür auf.\nNach fünfundzwanzig Sekunden.\nEinsteigen.\nTür zu.\nJetzt FLIEGT der Aufzug.\nDer Vorsprung schmilzt.\nErster, zweiter, dritter Stock.\nÜberholt!"
+    },
+    {
+      "id": "wendung2",
+      "phase": "wendung",
+      "text": "Aber die Tür muss noch auf. Jetzt wird's knapp.",
+      "sprechtext": "Aber die Tür muss noch auf…\nJetzt wird's KNAPP."
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Endstand: Treppe 46 Sekunden. Aufzug 49. Die Treppe gewinnt. Mit drei Sekunden Vorsprung.",
+      "sprechtext": "Endstand:\nTreppe – sechsundvierzig Sekunden.\nAufzug – neunundvierzig.\nDie Treppe GEWINNT.\nMit drei Sekunden Vorsprung."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Der Aufzug fährt nur 11 Sekunden. 38 Sekunden steht er still. Die Treppe läuft einfach durch.",
+      "sprechtext": "[thoughtful] Warum?\nDer Aufzug fährt nur elf Sekunden.\nAchtunddreißig Sekunden… steht er STILL.\nDie Treppe läuft einfach durch."
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "ueberraschung",
+      "text": "Und das Verrückte: Hält er zweimal für andere? Dann gewinnt die Treppe bis zum sechsten Stock.",
+      "sprechtext": "Und das Verrückte:\nHält er zweimal für andere?\nDann gewinnt die Treppe bis zum SECHSTEN Stock."
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Die Treppe wartet nie. Der Aufzug fast immer.",
+      "sprechtext": "Die Treppe wartet NIE.\nDer Aufzug… fast immer."
+    },
+    {
+      "id": "schluss",
+      "phase": "schluss",
+      "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+      "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare."
+    }
+  ],
+  "beschreibung": "Treppe oder Aufzug: Wer ist schneller oben? 🏢 Ich hab's simuliert. Team Treppe oder Team Aufzug? 👇 #treppe #aufzug #büro #wissen #simulation",
+  "zahlen": {
+    "hinweis": "Alle Zahlen im Video stammen aus pipeline/sim/treppe_aufzug.mjs (Tests: treppe_aufzug.test.mjs), Auswertung sim_ergebnisse.md. S = Modellergebnis, F = Quelle, A = Annahme.",
+    "hauptrennen": "4. Stock (14 m), 25 s Warten: Treppe 45,55 s, Aufzug 48,75 s (ausgestiegen), Vorsprung Treppe 3,2 s (S). Aufzug zieht bei 43,2 s in der Höhe vorbei (3,74. Stock), muss danach noch die Tür öffnen (S). Bilanzkarte gerundet: 45,5 s / 48,8 s / Vorsprung 3,3 s (Differenz der gerundeten Werte); gesprochen 46 / 49 / drei Sekunden.",
+    "fuenfmal": "Aufzug 1,6 m/s (A) gegen Treppe vertikal 0,305 m/s (S aus Weidmann 0,61 m/s horizontal und Treppengeometrie) = Faktor 5,2 (S).",
+    "warum": "Aufzug fährt 10,75 s und steht 38,0 s: 25 s Warten (F/S), Türen 11 s = 2,5 auf + 3 offen + 3 zu + 2,5 auf (F), Rest 2 s = Anfahren/Einfahren 1 s (A) + Aussteigen 1 s (F) (S). Treppe 45,5 s in Bewegung, 0 s Pause.",
+    "ueberraschung": "Zwei Zwischenhalte (je 2,5 s Tür auf, 1 s Ein-/Aussteigen, 3 s Tür zu, plus Anfahren/Bremsen): Break-even steigt vom 4. auf den 6. Stock (6. Stock: Treppe 70,5 s, Aufzug 72,1 s; 7. Stock: Aufzug vorn) (S). Ohne Halte und 0 s Warten gewinnt die Treppe nur bis zum 1. Stock (S).",
+    "zeitachse_video": "Rennzeit läuft im Zeitraffer an Wortzeiten gekoppelt (Uhr in der Tafel zeigt die Rennzeit): Los = 0 s, „Erster Stock“ = 9,9 s, „zweiter Stock“ = 21,5 s, „Tür auf“ = 25 s, „fliegt“ = 34 s, „Überholt!“ = 43,2 s, „knapp“ = 45,5 s (Treppe oben), „Endstand“ ≈ 47 s, Aufzug ausgestiegen 48,75 s.",
+    "sprachpruefung": "ElevenLabs Speech-to-Text (scribe_v1) am 01.11.: Transkript stimmt Wort für Wort mit dem Skript überein. Schnitt: 0,25 s Stille nach dem Hook entfernt (Abschnittspause 0,56 → 0,31 s), damit „Los geht's“ vor Sekunde 16 liegt (15,75 s)."
+  },
+  "quellen": [
+    "Eigene Simulation: pipeline/sim/treppe_aufzug.mjs (deterministisch), Tests pipeline/sim/treppe_aufzug.test.mjs, Ergebnisse pipeline/projekte/treppe-aufzug/sim_ergebnisse.md.",
+    "(F) Weidmann, U. (1993): Transporttechnik der Fussgänger, IVT-Schriftenreihe Nr. 90, ETH Zürich. Mittelwert horizontale Gehgeschwindigkeit treppauf 0,610 m/s (aus ca. 58 Studien, Spanne 0,391–1,16 m/s), zitiert in Schadschneider et al., Evacuation Dynamics: Empirical Results, Modeling and Applications, arXiv:0802.1620. Primärtext: https://research-collection.ethz.ch/handle/20.500.11850/242008",
+    "(F) Plausibilität vertikale Steiggeschwindigkeit: Evakuierungsversuch in einem 107-m-Bürohochhaus (Bulgarien), vertikal 0,35 m/s oben bis 0,20 m/s unten; https://research.polyu.edu.hk/en/publications/experimental-and-numerical-evacuation-study-in-tall-office-buildi/ (nur Kurzfassung gesehen). Modell: 0,305 m/s.",
+    "(F) Ermüdung beim Steigen: Aufstiegsversuch in einem 50-geschossigen Hochhaus in Korea, Tempo sinkt über die ersten 20 Etagen deutlich; https://research.knu.ac.kr/en/publications/individual-stair-ascent-and-descent-walk-speeds-measured-in-a-kor/ (nur Kurzfassung). Modell: +2 % Zeit je weitere Etage (A).",
+    "(F) Türzeiten: EMSD Hongkong, Addenda to Guidelines on Energy Efficiency of Lift and Escalator Installations, Tab. 5.6.2/5.6.3: Mindestwerte 0,8 m seitlich öffnend 2,5 s öffnen, 3,0 s schließen; https://www.emsd.gov.hk/filemanager/en/content_769/addenda_to_guidelines_on_ee_of_lift_escalator_installations.pdf",
+    "(F) Offenhaltezeit und Fahrgastwechsel: Property Council of Australia Guidelines (2019), laut Peters Research FAQ: door dwell 1 = 3 s, door dwell 2 mind. 1 s, 1 s je Person; https://joomla.peters-research.com/index.php/support/frequently-asked-questions/280-how-do-i-use-elevate-to-design-to-the-property-council-of-australia-guidelines-2019",
+    "(F/S) Wartezeit: Designing Buildings Wiki, Lifts for office buildings: Intervall 20–30 s (Standard bis Prestige), 30-s-Intervall ≈ 22,5–25,5 s mittlere Wartezeit, Mittag 25 s; https://www.designingbuildings.co.uk/wiki/Lifts_for_office_buildings. Modell: 25 s.",
+    "(A) Geschosshöhe 3,5 m, Stufen 17,5/28 cm (DIN 18065, Schrittmaßregel), Podestweg 1,6 m bei 1,0 m/s, Aufzug 1,6 m/s und 0,8 m/s², Anfahren 0,5 s, Einfahren 0,5 s.",
+    "(F) Hintergrund, Einzeltests: Krankenhaus-Messung Treppe 13,1 s gegen Aufzug 35,6–37,5 s (überwiegend Warten), laut athomefitness.com; MCAD-Test; Critic NZ (Richardson Building). Nur als Plausibilität, nicht im Video."
+  ],
+  "konkurrenz_check": "01.11.2026, Websuche (Deutsch/Englisch, site:tiktok.com): kein deutschsprachiges virales Simulations- oder Rennvideo Treppe gegen Aufzug gefunden; TikTok-Seiten selbst sind aus der Cloud nicht abrufbar. Thema nicht in docs/15 §9 gesperrt."
+}

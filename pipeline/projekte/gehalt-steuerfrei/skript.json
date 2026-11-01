@@ -1,0 +1,133 @@
+{
+  "titel": "200 € mehr Gehalt oder 100 € steuerfrei: Was bringt dir netto mehr?",
+  "rubrik": "GELD",
+  "stil": "14 Glas-Labor (Three.js, MeshPhysicalMaterial mit transmission)",
+  "stil_begruendung": "Konkurrenz-Check 01.11.2026 (Websuche, öffentliche Seiten): Das Thema läuft fast nur als Ratgeber-Text, Rechner-Seite, Podcast oder Talking-Head bzw. flache Infografik (z. B. Finanztip „7 Alternativen zu mehr Gehalt“, ZDFheute „Steuerfreie Zuschüsse“, Gehaltserhöhungs-Rechner); eine Duell-Simulation auf TikTok wurde nicht gefunden. Geld als Flüssigkeit in zwei Messzylindern macht die Netto-Rechnung ohne Erklärung sichtbar: Brutto fließt rein, Sozialkassen und Finanzamt zapfen sichtbar ab, der Füllstand ist der Live-Zähler („Was landet in deinem Glas?“). Der Maßstab K4 nutzt Messzylinder nur in 2.5D; wir heben uns über echtes 3D-Glas (Transmission, Lichtkanten, Flüssigkeit mit Meniskus) ab. Stil 7 (nur Typografie) reicht nicht als Video-Stil und bleibt HUD-Baustein; 12/13 nutzt das Video davor (Treppe oder Aufzug), 2 ist ausgeschlossen. Vorlage für den Look: pipeline/stile/stil_14_glas.py (Blender-Standbild).",
+  "teamfarben": {
+    "GEHALT": "#3D8BFF",
+    "STEUERFREI": "#FFD23F"
+  },
+  "klangteppich": "musik",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "200 mehr Gehalt oder 100 steuerfrei? Was bleibt dir wirklich?",
+      "sprechtext": "Zweihundert mehr Gehalt – oder hundert steuerfrei?\n[curious] Was bleibt dir WIRKLICH?"
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "3.500 brutto. Die 100 kommen als Gutschein und Jobticket.",
+      "sprechtext": "Dreitausendfünfhundert brutto.\nDie hundert kommen als Gutschein und Jobticket."
+    },
+    {
+      "id": "falle",
+      "phase": "denkfalle_start",
+      "text": "Klar, die 200. Doppelt so viel. Oder? Los geht's!",
+      "sprechtext": "Klar, die zweihundert.\nDoppelt so viel.\nOder?\n[excited] Los geht's!"
+    },
+    {
+      "id": "rennen",
+      "phase": "rennen",
+      "text": "200 rein, 100 rein. Jetzt zapfen die Sozialkassen.",
+      "sprechtext": "Zweihundert rein, hundert rein.\nJetzt zapfen die Sozialkassen."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst."
+    },
+    {
+      "id": "wendung",
+      "phase": "wendung_1",
+      "text": "Doch jetzt kommt das Finanzamt. 150, 130, 110. Der Vorsprung schmilzt.",
+      "sprechtext": "[surprised] Doch jetzt kommt das FINANZAMT.\nHundertfünfzig, hundertdreißig, hundertzehn.\nDer Vorsprung schmilzt."
+    },
+    {
+      "id": "knapp",
+      "phase": "rennen",
+      "text": "Und steuerfrei? Da geht kein Cent weg. Jetzt wird's knapp.",
+      "sprechtext": "Und steuerfrei?\nDa geht kein Cent weg.\nJetzt wird's KNAPP."
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Endstand: knapp 110 gegen 100. Das Gehalt gewinnt. Doppelt so viel brutto, aber nicht mal 10 Euro mehr netto.",
+      "sprechtext": "Endstand:\nKnapp hundertzehn gegen hundert.\nDas Gehalt gewinnt.\nDoppelt so viel brutto – aber nicht mal ZEHN Euro mehr netto."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Fast die Hälfte ist weg. Gut 43 Euro gehen an die Sozialkassen. Fast 47 an die Lohnsteuer.",
+      "sprechtext": "[thoughtful] Warum?\nFast die Hälfte ist weg.\nGut dreiundvierzig Euro gehen an die Sozialkassen.\nFast siebenundvierzig an die Lohnsteuer."
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "zweite_ueberraschung",
+      "text": "Und das Verrückte: Bei 5.500 brutto bleiben nur 99 Euro. Dann gewinnt steuerfrei.",
+      "sprechtext": "Und das Verrückte:\nBei fünftausendfünfhundert brutto bleiben nur neunundneunzig Euro.\nDann gewinnt STEUERFREI."
+    },
+    {
+      "id": "rente",
+      "phase": "bedingung",
+      "text": "Aber Achtung: Extras zählen nicht für deine Rente. Da hat das Gehalt die Nase vorn.",
+      "sprechtext": "Aber Achtung:\nExtras zählen nicht für deine Rente.\nDa hat das Gehalt die Nase vorn."
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Brutto ist nicht netto. Zähl immer, was bei dir ankommt.",
+      "sprechtext": "Brutto ist nicht netto.\nZähl immer, was bei dir ANKOMMT."
+    },
+    {
+      "id": "schluss",
+      "phase": "schluss",
+      "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+      "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare."
+    }
+  ],
+  "beschreibung": "200 € mehr Gehalt oder 100 € steuerfrei – was bringt netto mehr? 💶 Ich hab's durchgerechnet. Team Gehalt oder Team steuerfrei? 👇 #gehaltserhöhung #nettogehalt #steuern #wissen #simulation",
+  "zahlen": {
+    "hinweis": "Modellrechnung 2026 aus pipeline/sim/gehalt_steuerfrei.mjs (Netto-Modul pipeline/sim/netto.mjs), Details sim_ergebnisse.md",
+    "brutto": 3500,
+    "plus_gehalt": 200,
+    "steuerfrei": 100,
+    "gehalt_netto": 109.75,
+    "abzuege": {
+      "rente": 18.6,
+      "kranken": 17.5,
+      "pflege": 4.8,
+      "arbeitslos": 2.6,
+      "lohnsteuer": 46.75
+    },
+    "sozial_summe": 43.5,
+    "differenz": 9.75,
+    "hoch_brutto": 5500,
+    "hoch_gehalt_netto": 99.09,
+    "hoch_lohnsteuer": 57.41,
+    "kipppunkt_brutto": 5340,
+    "rente_je_jahr_monatsrente": 1.96
+  },
+  "annahmen": [
+    "(A) Person: 3.500 € brutto im Monat, Steuerklasse 1, kinderlos und über 23, gesetzlich versichert mit dem durchschnittlichen Zusatzbeitrag 2026 (2,9 %), ohne Kirchensteuer, nicht Sachsen.",
+    "(A) Team GEHALT: +200 € brutto laufender Arbeitslohn. Team STEUERFREI: 50 € Sachbezug (Gutschein bzw. Geldkarte) plus 50 € Zuschuss zum Jobticket bzw. Deutschlandticket (63 € im Monat), beides zusätzlich zum ohnehin geschuldeten Arbeitslohn und nicht anstelle einer bereits vereinbarten Erhöhung (§ 8 Abs. 4 EStG).",
+    "(A) Der Jobticket-Zuschuss lohnt nur, wenn das Ticket ohnehin genutzt wird; steuerfreie Zuschüsse nach § 3 Nr. 15 EStG mindern die Entfernungspauschale in der Steuererklärung (wirkt erst, wenn die Werbungskosten über 1.230 € liegen).",
+    "(F) Bei 5.500 € bringen 200 € brutto 99,09 € netto; der Kipppunkt liegt bei ca. 5.340 €. Über der KV-BBG (5.812,50 €) entfallen KV/PV auf das Plus, dann gewinnt wieder das Gehalt (6.000 €: 110,30 €). Darum im Video nur das konkrete Beispiel 5.500 €, keine Pauschalaussage.",
+    "(S) Rente: 2.400 € mehr Jahresbrutto = 0,0462 Entgeltpunkte = ca. 1,96 € Monatsrente je Beitragsjahr (Rentenwert 42,52 €, ohne Dynamik). Steuerfreie Extras erzeugen keine Entgeltpunkte und zählen auch nicht für Krankengeld, Elterngeld und Arbeitslosengeld.",
+    "Nur Modellrechnung, keine Steuer- oder Rechtsberatung, keine Produkte."
+  ],
+  "quellen": [
+    "(F) BMF: Programmablaufplan für die maschinelle Berechnung der Lohnsteuer 2026, BMF-Schreiben IV C 5 - S 2361/00025/016/028 vom 12.11.2025, Anlage 1 (Fundstellen: datev-magazin.de, haufe.de, ihk-muenchen.de/…/2025-11-12-PAP-2026-anlage-1.pdf). Umgesetzt in pipeline/sim/netto.mjs; Konstanten gegengelesen mit der aus der BMF-XML generierten Bibliothek „lohnsteuerrechner“ 1.0.7 (npm, MIT, nur gelesen).",
+    "(F) § 32a EStG 2026: Grundfreibetrag 12.348 €, Zonen 17.799/69.878/277.825 €; Prüfwerte Grundtabelle 2026 (steuerschroeder.de, rechner-hub.de, vermoegenszentrum.de).",
+    "(F) Lohnsteuer-Prüfwerte 2026: Ordio-Lohnsteuerrechner (Beispieltabelle: 3.000 € StKl I 293,08 €; 3.500 € StKl III 110,16 €; 3.500 € StKl VI 822,33 €); rechner-portal.de (3.000 € StKl I, kinderlos, ZB 2,9 %: 2.054,42 € netto).",
+    "(F) Sozialversicherung 2026: BBG KV/PV 5.812,50 €/Monat, RV/AV 8.450 €/Monat; KV 14,6 % + durchschnittlicher Zusatzbeitrag 2,9 %; PV 3,6 % + 0,6 % Kinderlosenzuschlag; RV 18,6 %; AV 2,6 % (haufe.de „Sozialversicherung: die Beitragssätze für 2026“, vdek „Neuerungen im Gesundheitswesen 2026“, krankenkassen.de „Rechengrößen 2026“).",
+    "(F) Solidaritätszuschlag 2026: Freigrenze 20.350 € Jahreslohnsteuer, Milderungszone 11,9 % (PAP 2026 MPARA/MSOLZ).",
+    "(F) Vorsorgepauschale ab 2026 mit Teilbetrag Arbeitslosenversicherung, Höchstbetrag 1.900 €, ohne Mindestvorsorgepauschale (lohnsteuer-kompakt.de „Neue Berechnung der Vorsorgepauschale ab 2026“, steuerschroeder.de, BMF-Schreiben vom 14.08.2025).",
+    "(F) Sachbezugsfreigrenze 50 € im Monat, § 8 Abs. 2 Satz 11 EStG, seit 2022 unverändert, 2026 weiter 50 € (lohnklar.de „Sachbezüge 2026“, factorialhr.de, lexware.de „Sachbezugswerte 2026“); Zusätzlichkeitserfordernis § 8 Abs. 4 EStG.",
+    "(F) Jobticket: Arbeitgeberzuschuss zum ÖPNV-Ticket steuerfrei nach § 3 Nr. 15 EStG, beitragsfrei nach § 1 Abs. 1 SvEV, bis zur Höhe des Ticketpreises; zählt nicht auf die 50-€-Freigrenze; Deutschlandticket seit 01.01.2026 63 € (steuertipps.de, navit.com, barmer.de „Deutschlandticket“, deutsche-handwerks-zeitung.de).",
+    "(F) Rente 2026: vorläufiges Durchschnittsentgelt 51.944 €, aktueller Rentenwert 42,52 € ab 01.07.2026 (Rentenwertbestimmungsverordnung 2026; ihre-vorsorge.de, nexvyra.de).",
+    "Konkurrenz-Check 01.11.2026 (Websuche): keine TikTok-Duell-Simulation zum Thema gefunden; Thema als Ratgeber/Rechner (finanzfluss.de Gehaltserhöhungs-Rechner, finanztip.de Podcast #141, zdfheute.de) und YouTube-Erklärvideos (Planzeile 31.10.)."
+  ]
+}

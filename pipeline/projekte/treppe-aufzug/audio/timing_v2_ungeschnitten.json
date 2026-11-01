@@ -1,0 +1,947 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 73.614,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Treppe oder Aufzug? Wer ist wirklich schneller oben?",
+   "start": 0.0,
+   "ende": 3.84,
+   "woerter": [
+    {
+     "wort": "Treppe",
+     "start": 0.0,
+     "ende": 0.48
+    },
+    {
+     "wort": "oder",
+     "start": 1.04,
+     "ende": 1.12
+    },
+    {
+     "wort": "Aufzug?",
+     "start": 1.2,
+     "ende": 1.96
+    },
+    {
+     "wort": "Wer",
+     "start": 2.24,
+     "ende": 2.32
+    },
+    {
+     "wort": "ist",
+     "start": 2.4,
+     "ende": 2.64
+    },
+    {
+     "wort": "wirklich",
+     "start": 2.72,
+     "ende": 3.12
+    },
+    {
+     "wort": "schneller",
+     "start": 3.16,
+     "ende": 3.44
+    },
+    {
+     "wort": "oben?",
+     "start": 3.52,
+     "ende": 3.84
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Bürohaus, vierter Stock. Zwei Kollegen, gleicher Start. Einer nimmt die Treppe. Einer ruft den Aufzug.",
+   "start": 4.4,
+   "ende": 11.56,
+   "woerter": [
+    {
+     "wort": "Bürohaus,",
+     "start": 4.4,
+     "ende": 5.2
+    },
+    {
+     "wort": "vierter",
+     "start": 5.28,
+     "ende": 5.52
+    },
+    {
+     "wort": "Stock.",
+     "start": 5.6,
+     "ende": 6.16
+    },
+    {
+     "wort": "Zwei",
+     "start": 6.4,
+     "ende": 6.56
+    },
+    {
+     "wort": "Kollegen,",
+     "start": 6.64,
+     "ende": 7.36
+    },
+    {
+     "wort": "gleicher",
+     "start": 7.44,
+     "ende": 7.68
+    },
+    {
+     "wort": "Start.",
+     "start": 7.76,
+     "ende": 8.4
+    },
+    {
+     "wort": "Einer",
+     "start": 8.64,
+     "ende": 8.96
+    },
+    {
+     "wort": "nimmt",
+     "start": 9.0,
+     "ende": 9.12
+    },
+    {
+     "wort": "die",
+     "start": 9.2,
+     "ende": 9.28
+    },
+    {
+     "wort": "Treppe.",
+     "start": 9.32,
+     "ende": 9.92
+    },
+    {
+     "wort": "Einer",
+     "start": 10.16,
+     "ende": 10.48
+    },
+    {
+     "wort": "ruft",
+     "start": 10.52,
+     "ende": 10.72
+    },
+    {
+     "wort": "den",
+     "start": 10.76,
+     "ende": 10.8
+    },
+    {
+     "wort": "Aufzug.",
+     "start": 10.88,
+     "ende": 11.56
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, der Aufzug. Der ist fünfmal so schnell. Oder?",
+   "start": 11.76,
+   "ende": 15.76,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 11.76,
+     "ende": 12.32
+    },
+    {
+     "wort": "der",
+     "start": 12.4,
+     "ende": 12.48
+    },
+    {
+     "wort": "Aufzug.",
+     "start": 12.56,
+     "ende": 13.2
+    },
+    {
+     "wort": "Der",
+     "start": 13.36,
+     "ende": 13.44
+    },
+    {
+     "wort": "ist",
+     "start": 13.56,
+     "ende": 13.68
+    },
+    {
+     "wort": "fünfmal",
+     "start": 13.84,
+     "ende": 14.4
+    },
+    {
+     "wort": "so",
+     "start": 14.44,
+     "ende": 14.48
+    },
+    {
+     "wort": "schnell.",
+     "start": 14.56,
+     "ende": 15.08
+    },
+    {
+     "wort": "Oder?",
+     "start": 15.28,
+     "ende": 15.76
+    }
+   ]
+  },
+  {
+   "id": "start",
+   "text": "Los geht's.",
+   "start": 16.0,
+   "ende": 16.64,
+   "woerter": [
+    {
+     "wort": "Los",
+     "start": 16.0,
+     "ende": 16.16
+    },
+    {
+     "wort": "geht's.",
+     "start": 16.24,
+     "ende": 16.64
+    }
+   ]
+  },
+  {
+   "id": "rennen1",
+   "text": "Die Treppe startet sofort. Stufe für Stufe. Erster Stock nach 10 Sekunden.",
+   "start": 16.88,
+   "ende": 21.96,
+   "woerter": [
+    {
+     "wort": "Die",
+     "start": 16.88,
+     "ende": 16.96
+    },
+    {
+     "wort": "Treppe",
+     "start": 17.04,
+     "ende": 17.28
+    },
+    {
+     "wort": "startet",
+     "start": 17.36,
+     "ende": 17.68
+    },
+    {
+     "wort": "sofort.",
+     "start": 17.76,
+     "ende": 18.44
+    },
+    {
+     "wort": "Stufe",
+     "start": 18.56,
+     "ende": 19.04
+    },
+    {
+     "wort": "für",
+     "start": 19.12,
+     "ende": 19.28
+    },
+    {
+     "wort": "Stufe.",
+     "start": 19.36,
+     "ende": 19.96
+    },
+    {
+     "wort": "Erster",
+     "start": 20.16,
+     "ende": 20.4
+    },
+    {
+     "wort": "Stock",
+     "start": 20.48,
+     "ende": 20.72
+    },
+    {
+     "wort": "nach",
+     "start": 20.76,
+     "ende": 20.96
+    },
+    {
+     "wort": "10",
+     "start": 21.04,
+     "ende": 21.2
+    },
+    {
+     "wort": "Sekunden.",
+     "start": 21.28,
+     "ende": 21.96
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 22.16,
+   "ende": 23.68,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 22.16,
+     "ende": 22.32
+    },
+    {
+     "wort": "mir,",
+     "start": 22.4,
+     "ende": 22.64
+    },
+    {
+     "wort": "damit",
+     "start": 22.72,
+     "ende": 22.84
+    },
+    {
+     "wort": "du",
+     "start": 22.88,
+     "ende": 22.96
+    },
+    {
+     "wort": "nichts",
+     "start": 23.013,
+     "ende": 23.16
+    },
+    {
+     "wort": "verpasst.",
+     "start": 23.2,
+     "ende": 23.68
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Doch der Aufzug ist noch gar nicht da. Er muss erst kommen.",
+   "start": 24.069,
+   "ende": 27.64,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 24.069,
+     "ende": 24.16
+    },
+    {
+     "wort": "der",
+     "start": 24.24,
+     "ende": 24.32
+    },
+    {
+     "wort": "Aufzug",
+     "start": 24.4,
+     "ende": 25.2
+    },
+    {
+     "wort": "ist",
+     "start": 25.28,
+     "ende": 25.36
+    },
+    {
+     "wort": "noch",
+     "start": 25.44,
+     "ende": 25.52
+    },
+    {
+     "wort": "gar",
+     "start": 25.6,
+     "ende": 25.68
+    },
+    {
+     "wort": "nicht",
+     "start": 25.76,
+     "ende": 25.92
+    },
+    {
+     "wort": "da.",
+     "start": 26.08,
+     "ende": 26.4
+    },
+    {
+     "wort": "Er",
+     "start": 26.56,
+     "ende": 26.64
+    },
+    {
+     "wort": "muss",
+     "start": 26.68,
+     "ende": 26.8
+    },
+    {
+     "wort": "erst",
+     "start": 26.88,
+     "ende": 27.04
+    },
+    {
+     "wort": "kommen.",
+     "start": 27.12,
+     "ende": 27.64
+    }
+   ]
+  },
+  {
+   "id": "rennen2",
+   "text": "Treppe: zweiter Stock. Erst jetzt geht die Tür auf. Nach 25 Sekunden. Einsteigen. Tür zu. Jetzt fliegt der Aufzug. Der Vorsprung schmilzt. Erster, zweiter, dritter Stock. Überholt!",
+   "start": 27.84,
+   "ende": 41.44,
+   "woerter": [
+    {
+     "wort": "Treppe:",
+     "start": 27.84,
+     "ende": 28.32
+    },
+    {
+     "wort": "zweiter",
+     "start": 28.64,
+     "ende": 28.96
+    },
+    {
+     "wort": "Stock.",
+     "start": 29.04,
+     "ende": 29.36
+    },
+    {
+     "wort": "Erst",
+     "start": 29.68,
+     "ende": 30.0
+    },
+    {
+     "wort": "jetzt",
+     "start": 30.08,
+     "ende": 30.4
+    },
+    {
+     "wort": "geht",
+     "start": 30.44,
+     "ende": 30.56
+    },
+    {
+     "wort": "die",
+     "start": 30.6,
+     "ende": 30.64
+    },
+    {
+     "wort": "Tür",
+     "start": 30.72,
+     "ende": 30.96
+    },
+    {
+     "wort": "auf.",
+     "start": 31.08,
+     "ende": 31.28
+    },
+    {
+     "wort": "Nach",
+     "start": 31.44,
+     "ende": 31.6
+    },
+    {
+     "wort": "25",
+     "start": 31.76,
+     "ende": 32.56
+    },
+    {
+     "wort": "Sekunden.",
+     "start": 32.64,
+     "ende": 33.36
+    },
+    {
+     "wort": "Einsteigen.",
+     "start": 33.52,
+     "ende": 34.16
+    },
+    {
+     "wort": "Tür",
+     "start": 34.4,
+     "ende": 34.64
+    },
+    {
+     "wort": "zu.",
+     "start": 34.72,
+     "ende": 34.96
+    },
+    {
+     "wort": "Jetzt",
+     "start": 35.28,
+     "ende": 35.6
+    },
+    {
+     "wort": "fliegt",
+     "start": 35.76,
+     "ende": 36.08
+    },
+    {
+     "wort": "der",
+     "start": 36.16,
+     "ende": 36.24
+    },
+    {
+     "wort": "Aufzug.",
+     "start": 36.32,
+     "ende": 36.88
+    },
+    {
+     "wort": "Der",
+     "start": 37.12,
+     "ende": 37.2
+    },
+    {
+     "wort": "Vorsprung",
+     "start": 37.28,
+     "ende": 37.68
+    },
+    {
+     "wort": "schmilzt.",
+     "start": 37.76,
+     "ende": 38.4
+    },
+    {
+     "wort": "Erster,",
+     "start": 38.56,
+     "ende": 39.2
+    },
+    {
+     "wort": "zweiter,",
+     "start": 39.253,
+     "ende": 39.84
+    },
+    {
+     "wort": "dritter",
+     "start": 39.88,
+     "ende": 40.16
+    },
+    {
+     "wort": "Stock.",
+     "start": 40.24,
+     "ende": 40.56
+    },
+    {
+     "wort": "Überholt!",
+     "start": 40.8,
+     "ende": 41.44
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Aber die Tür muss noch auf. Jetzt wird's knapp.",
+   "start": 41.76,
+   "ende": 44.48,
+   "woerter": [
+    {
+     "wort": "Aber",
+     "start": 41.76,
+     "ende": 41.92
+    },
+    {
+     "wort": "die",
+     "start": 42.0,
+     "ende": 42.08
+    },
+    {
+     "wort": "Tür",
+     "start": 42.16,
+     "ende": 42.4
+    },
+    {
+     "wort": "muss",
+     "start": 42.453,
+     "ende": 42.56
+    },
+    {
+     "wort": "noch",
+     "start": 42.64,
+     "ende": 42.72
+    },
+    {
+     "wort": "auf.",
+     "start": 42.8,
+     "ende": 43.52
+    },
+    {
+     "wort": "Jetzt",
+     "start": 43.6,
+     "ende": 43.84
+    },
+    {
+     "wort": "wird's",
+     "start": 43.88,
+     "ende": 44.08
+    },
+    {
+     "wort": "knapp.",
+     "start": 44.16,
+     "ende": 44.48
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand: Treppe 46 Sekunden. Aufzug 49. Die Treppe gewinnt. Mit drei Sekunden Vorsprung.",
+   "start": 44.88,
+   "ende": 52.96,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 44.88,
+     "ende": 45.44
+    },
+    {
+     "wort": "Treppe",
+     "start": 45.76,
+     "ende": 46.16
+    },
+    {
+     "wort": "46",
+     "start": 46.4,
+     "ende": 47.04
+    },
+    {
+     "wort": "Sekunden.",
+     "start": 47.2,
+     "ende": 47.84
+    },
+    {
+     "wort": "Aufzug",
+     "start": 48.0,
+     "ende": 48.48
+    },
+    {
+     "wort": "49.",
+     "start": 48.8,
+     "ende": 49.68
+    },
+    {
+     "wort": "Die",
+     "start": 50.0,
+     "ende": 50.08
+    },
+    {
+     "wort": "Treppe",
+     "start": 50.24,
+     "ende": 50.56
+    },
+    {
+     "wort": "gewinnt.",
+     "start": 50.68,
+     "ende": 51.24
+    },
+    {
+     "wort": "Mit",
+     "start": 51.36,
+     "ende": 51.52
+    },
+    {
+     "wort": "drei",
+     "start": 51.6,
+     "ende": 51.76
+    },
+    {
+     "wort": "Sekunden",
+     "start": 51.84,
+     "ende": 52.32
+    },
+    {
+     "wort": "Vorsprung.",
+     "start": 52.4,
+     "ende": 52.96
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Der Aufzug fährt nur 11 Sekunden. 38 Sekunden steht er still. Die Treppe läuft einfach durch.",
+   "start": 53.36,
+   "ende": 60.64,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 53.36,
+     "ende": 54.04
+    },
+    {
+     "wort": "Der",
+     "start": 54.24,
+     "ende": 54.32
+    },
+    {
+     "wort": "Aufzug",
+     "start": 54.4,
+     "ende": 54.8
+    },
+    {
+     "wort": "fährt",
+     "start": 54.88,
+     "ende": 55.04
+    },
+    {
+     "wort": "nur",
+     "start": 55.12,
+     "ende": 55.28
+    },
+    {
+     "wort": "11",
+     "start": 55.36,
+     "ende": 55.52
+    },
+    {
+     "wort": "Sekunden.",
+     "start": 55.6,
+     "ende": 56.16
+    },
+    {
+     "wort": "38",
+     "start": 56.48,
+     "ende": 57.2
+    },
+    {
+     "wort": "Sekunden",
+     "start": 57.28,
+     "ende": 58.0
+    },
+    {
+     "wort": "steht",
+     "start": 58.08,
+     "ende": 58.24
+    },
+    {
+     "wort": "er",
+     "start": 58.32,
+     "ende": 58.4
+    },
+    {
+     "wort": "still.",
+     "start": 58.48,
+     "ende": 58.96
+    },
+    {
+     "wort": "Die",
+     "start": 59.12,
+     "ende": 59.2
+    },
+    {
+     "wort": "Treppe",
+     "start": 59.28,
+     "ende": 59.52
+    },
+    {
+     "wort": "läuft",
+     "start": 59.6,
+     "ende": 59.76
+    },
+    {
+     "wort": "einfach",
+     "start": 59.84,
+     "ende": 60.08
+    },
+    {
+     "wort": "durch.",
+     "start": 60.16,
+     "ende": 60.64
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und das Verrückte: Hält er zweimal für andere? Dann gewinnt die Treppe bis zum sechsten Stock.",
+   "start": 60.8,
+   "ende": 66.48,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 60.8,
+     "ende": 60.88
+    },
+    {
+     "wort": "das",
+     "start": 60.96,
+     "ende": 61.04
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 61.12,
+     "ende": 61.68
+    },
+    {
+     "wort": "Hält",
+     "start": 62.0,
+     "ende": 62.16
+    },
+    {
+     "wort": "er",
+     "start": 62.28,
+     "ende": 62.4
+    },
+    {
+     "wort": "zweimal",
+     "start": 62.48,
+     "ende": 63.04
+    },
+    {
+     "wort": "für",
+     "start": 63.12,
+     "ende": 63.2
+    },
+    {
+     "wort": "andere?",
+     "start": 63.28,
+     "ende": 63.88
+    },
+    {
+     "wort": "Dann",
+     "start": 64.08,
+     "ende": 64.24
+    },
+    {
+     "wort": "gewinnt",
+     "start": 64.32,
+     "ende": 64.56
+    },
+    {
+     "wort": "die",
+     "start": 64.6,
+     "ende": 64.64
+    },
+    {
+     "wort": "Treppe",
+     "start": 64.72,
+     "ende": 64.96
+    },
+    {
+     "wort": "bis",
+     "start": 65.04,
+     "ende": 65.2
+    },
+    {
+     "wort": "zum",
+     "start": 65.28,
+     "ende": 65.44
+    },
+    {
+     "wort": "sechsten",
+     "start": 65.52,
+     "ende": 65.92
+    },
+    {
+     "wort": "Stock.",
+     "start": 66.0,
+     "ende": 66.48
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Die Treppe wartet nie. Der Aufzug fast immer.",
+   "start": 66.64,
+   "ende": 70.24,
+   "woerter": [
+    {
+     "wort": "Die",
+     "start": 66.64,
+     "ende": 66.72
+    },
+    {
+     "wort": "Treppe",
+     "start": 66.8,
+     "ende": 67.12
+    },
+    {
+     "wort": "wartet",
+     "start": 67.28,
+     "ende": 67.68
+    },
+    {
+     "wort": "nie.",
+     "start": 67.84,
+     "ende": 68.24
+    },
+    {
+     "wort": "Der",
+     "start": 68.4,
+     "ende": 68.48
+    },
+    {
+     "wort": "Aufzug",
+     "start": 68.56,
+     "ende": 69.36
+    },
+    {
+     "wort": "fast",
+     "start": 69.52,
+     "ende": 69.68
+    },
+    {
+     "wort": "immer.",
+     "start": 69.84,
+     "ende": 70.24
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 70.48,
+   "ende": 73.68,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 70.48,
+     "ende": 70.64
+    },
+    {
+     "wort": "sollen",
+     "start": 70.693,
+     "ende": 70.8
+    },
+    {
+     "wort": "wir",
+     "start": 70.88,
+     "ende": 70.933
+    },
+    {
+     "wort": "als",
+     "start": 70.96,
+     "ende": 71.12
+    },
+    {
+     "wort": "Nächstes",
+     "start": 71.16,
+     "ende": 71.52
+    },
+    {
+     "wort": "zeigen?",
+     "start": 71.68,
+     "ende": 71.92
+    },
+    {
+     "wort": "Schreib",
+     "start": 72.24,
+     "ende": 72.4
+    },
+    {
+     "wort": "es",
+     "start": 72.48,
+     "ende": 72.56
+    },
+    {
+     "wort": "in",
+     "start": 72.6,
+     "ende": 72.64
+    },
+    {
+     "wort": "die",
+     "start": 72.68,
+     "ende": 72.72
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 72.8,
+     "ende": 73.68
+    }
+   ]
+  }
+ ]
+}

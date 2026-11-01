@@ -1,0 +1,791 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "gehalt-steuerfrei",
+ "fps": 30,
+ "dauer": 66.13333333333334,
+ "stimmEnde": 65.136,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "musik",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "GEHALT",
+    "farbe": "#3D8BFF"
+   },
+   "b": {
+    "name": "STEUERFREI",
+    "farbe": "#FFD23F"
+   }
+  },
+  "schleife": {
+   "ab": 62.279999999999994,
+   "ende": 66.10000000000001
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 66.1,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 5.551115123125783e-17
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": 0.04,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "+200 €"
+  },
+  {
+   "quelle": "Titel",
+   "t": 0.81,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "GEHALT"
+  },
+  {
+   "quelle": "Titel",
+   "t": 1.943,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "ODER"
+  },
+  {
+   "quelle": "Titel",
+   "t": 2.29,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "+100 €"
+  },
+  {
+   "quelle": "Titel",
+   "t": 2.61,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "STEUERFREI"
+  },
+  {
+   "quelle": "Titel",
+   "t": 3.672,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WAS BLEIBT"
+  },
+  {
+   "quelle": "Titel",
+   "t": 4.04,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "DIR?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.05,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1.2,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.32,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "3.500 € BRUTTO"
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.8,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STEUERKLASSE 1"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.55,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KINDERLOS"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 6.8,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+200 € BRUTTO"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 8.28,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "50 € GUTSCHEIN"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 8.84,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "50 € JOBTICKET"
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Etikett",
+   "t": 9.78,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STEUER- &amp; ABGABENFREI"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 9.93,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "KLAR!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 9.93,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Etikett",
+   "t": 11.643,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2× SO VIEL?"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 12.81,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "ODER?"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 12.81,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Stempel",
+   "t": 13.45,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "LOS GEHT'S!"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 13.45,
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Etikett",
+   "t": 14.54,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+200 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.607,
+   "typ": "fluss",
+   "dauer": 0.933,
+   "klang": "blasen",
+   "text": "Zulauf Gehalt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 14.633,
+   "typ": "zaehler",
+   "dauer": 0.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 14.667,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 15.54,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+100 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.607,
+   "typ": "fluss",
+   "dauer": 0.683,
+   "klang": "blasen",
+   "text": "Zulauf steuerfrei"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 15.633,
+   "typ": "zaehler",
+   "dauer": 0.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.26,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.9,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 16.733,
+   "typ": "zaehler",
+   "dauer": 1.533,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 16.76,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RENTE−18,60 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.76,
+   "typ": "fluss",
+   "dauer": 1.91,
+   "klang": "blasen",
+   "text": "Abzüge Sozialkassen"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 17.33,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KRANKEN−17,50 €"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 17.91,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "PFLEGE−4,80 €"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 18.22,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.367,
+   "typ": "zaehler",
+   "dauer": 0.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 18.37,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ARBEITSLOS−2,60 €"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 18.87,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SOZIALKASSEN −43,50 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.119,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.8,
+   "klang": "whoosh"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 21.07,
+   "art": "zoom",
+   "dauer": 1.4,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 21.12,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "FINANZAMT"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.8,
+   "typ": "zaehler",
+   "dauer": 3.467,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.81,
+   "typ": "fluss",
+   "dauer": 3.69,
+   "klang": "blasen",
+   "text": "Abzug Lohnsteuer"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.93,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.93,
+   "typ": "zaehler",
+   "dauer": 3.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 22.13,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LOHNSTEUER−46,75 €"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 22.23,
+   "typ": "chip",
+   "klang": "tick",
+   "text": "150 €"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 23.403,
+   "typ": "chip",
+   "klang": "tick",
+   "text": "130 €"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 24.577,
+   "typ": "chip",
+   "klang": "tick",
+   "text": "110 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.79,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.8,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 25.99,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "VORSPRUNG NUR 9,75 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.3,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.75,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 29.03,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABZÜGE: 0,00 €"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 29.76,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "KEIN CENT WEG"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.36,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.6,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.61,
+   "typ": "linie",
+   "klang": "ding",
+   "text": "Gleichstand-Linie 100 €"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 30.78,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "KNAPP!"
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.23,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.7,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 32.59,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "GEHALT +200 €"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 33.55,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "STEUERFREI +100 €"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 34.47,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "VORSPRUNG"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 34.79,
+   "typ": "sieger",
+   "klang": "sieg",
+   "text": "GEHALT GEWINNT"
+  },
+  {
+   "quelle": "Formel",
+   "t": 35.51,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "2×"
+  },
+  {
+   "quelle": "Formel",
+   "t": 37.03,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "→"
+  },
+  {
+   "quelle": "Formel",
+   "t": 37.67,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "+9,75"
+  },
+  {
+   "quelle": "Formel",
+   "t": 38.53,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "200 € → 109,75 € · 100 € → 100 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.9,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.9,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 40.6,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "−45 %"
+  },
+  {
+   "quelle": "Balken",
+   "t": 41.67,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "SOZIALABGABEN"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 43.23,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SOZIAL43,50 €"
+  },
+  {
+   "quelle": "Balken",
+   "t": 43.43,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "21,75 %"
+  },
+  {
+   "quelle": "Balken",
+   "t": 44.64,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "LOHNSTEUER"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 45.71,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STEUER46,75 €"
+  },
+  {
+   "quelle": "Balken",
+   "t": 45.91,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "23,4 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.73,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 0.8,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 48.04,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BEI 5.500 € BRUTTO"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 49.567,
+   "typ": "zaehler",
+   "dauer": 1.533,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.57,
+   "typ": "fluss",
+   "dauer": 1.53,
+   "klang": "blasen",
+   "text": "Abzug Lohnsteuer 5.500 €"
+  },
+  {
+   "quelle": "Etikett",
+   "t": 49.62,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LOHNSTEUER−57,41 €"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 50.27,
+   "art": "zoom",
+   "dauer": 1.6,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 50.833,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 52.4,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "STEUERFREI VORN!"
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.21,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.26,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1.2,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Stempel",
+   "t": 53.56,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "ACHTUNG!"
+  },
+  {
+   "quelle": "Formel",
+   "t": 54.79,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "STEUERFREI: 0 RENTENPUNKTE"
+  },
+  {
+   "quelle": "Formel",
+   "t": 55.61,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "+0,046"
+  },
+  {
+   "quelle": "Formel",
+   "t": 56.39,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "≈"
+  },
+  {
+   "quelle": "Formel",
+   "t": 57.21,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "+1,96 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.13,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1.6,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 58.23,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "BRUTTO ≠ *NETTO.*"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.35,
+   "typ": "pointe-wort",
+   "klang": "klick",
+   "text": "NETTO."
+  },
+  {
+   "quelle": "Pointe",
+   "t": 60.03,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "ZÄHL, WAS  ANKOMMT."
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.71,
+   "typ": "pointe-wort",
+   "klang": "klick",
+   "text": "WAS"
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.27,
+   "typ": "pointe-wort",
+   "klang": "akzent",
+   "text": "ANKOMMT."
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.267,
+   "typ": "zaehler",
+   "dauer": 3.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.267,
+   "typ": "zaehler",
+   "dauer": 3.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 62.28,
+   "art": "schleife",
+   "dauer": 3.82,
+   "klang": false
+  },
+  {
+   "t": 62.28,
+   "typ": "schleife",
+   "dauer": 3.82,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  }
+ ],
+ "klang": []
+}

@@ -1,0 +1,23 @@
+/* Stil 14 „Glas-Labor“: Milchglas-Karten über der Studio-Szene, dunkle Tinte, Gold statt Gelb für Text auf hellem Grund */
+html, body { background: #E7E4EE; }
+#hud {
+  --karte: rgba(255, 255, 255, 0.86);
+  --karte-linie: #E3E1EC;
+  --karte-grau: #6E6A86;
+  --ms-schatten: inset 0 2px 0 rgba(255, 255, 255, 0.9), 0 2px 0 rgba(40, 30, 70, 0.05), 0 22px 46px -16px rgba(50, 36, 92, 0.42);
+  --gold: #B98700; /* Teamfarbe STEUERFREI als Schrift auf hellem Grund (Gelb allein ist zu schwach) */
+}
+.ms-seite, .ms-karte { backdrop-filter: blur(16px) saturate(1.25); -webkit-backdrop-filter: blur(16px) saturate(1.25); border: 2px solid rgba(255, 255, 255, 0.9); }
+.ms-seite .ms-wert { font-size: 64px; }
+.ms-seite.rechts:not(.vorn) .ms-kopf span { color: var(--gold); }
+.ms-seite.rechts.vorn .ms-kopf span, .ms-seite.rechts.vorn .ms-wert { color: var(--tinte); }
+.ms-bilanz .ms-bz[style*="team-b"] .r, .ms-formel .ms-tok[style*="team-b"], .ms-formel .ms-unter[style*="team-b"], .ms-balken .ms-zeile[style*="team-b"] .w { color: var(--gold); }
+.ms-chip.hell { background: rgba(255, 255, 255, 0.92); }
+/* Etiketten an 3D-Punkten (Abzüge, Glas-Labels) */
+.gl-etikett { position: absolute; left: 0; top: 0; will-change: transform, opacity; }
+.gl-etikett .ms-chip { position: relative; }
+.gl-etikett .betrag { font-family: var(--display); font-weight: 900; letter-spacing: -0.02em; }
+.gl-etikett .klein { font-size: 0.62em; letter-spacing: 0.06em; opacity: 0.85; margin-right: 0.15em; }
+/* Untertitel Wort für Wort (Stil „kontur“): etwas kräftigerer Schatten auf hellem Studio-Grund */
+.karaoke.kontur .w { text-shadow: 0 0.05em 0.02em rgba(0, 0, 0, 0.9), 0 0.1em 0.42em rgba(30, 20, 60, 0.55); }
+.ms-titel .ms-tw.klein { font-size: 0.68em; }

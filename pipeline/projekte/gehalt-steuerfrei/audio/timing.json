@@ -1,0 +1,860 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 65.136,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "200 mehr Gehalt oder 100 steuerfrei? Was bleibt dir wirklich?",
+   "start": 0.0,
+   "ende": 4.87,
+   "woerter": [
+    {
+     "wort": "200",
+     "start": 0.0,
+     "ende": 0.56
+    },
+    {
+     "wort": "mehr",
+     "start": 0.64,
+     "ende": 0.8
+    },
+    {
+     "wort": "Gehalt",
+     "start": 0.84,
+     "ende": 1.44
+    },
+    {
+     "wort": "oder",
+     "start": 1.973,
+     "ende": 2.08
+    },
+    {
+     "wort": "100",
+     "start": 2.32,
+     "ende": 2.56
+    },
+    {
+     "wort": "steuerfrei?",
+     "start": 2.64,
+     "ende": 3.36
+    },
+    {
+     "wort": "Was",
+     "start": 3.702,
+     "ende": 3.75
+    },
+    {
+     "wort": "bleibt",
+     "start": 3.83,
+     "ende": 3.99
+    },
+    {
+     "wort": "dir",
+     "start": 4.07,
+     "ende": 4.23
+    },
+    {
+     "wort": "wirklich?",
+     "start": 4.27,
+     "ende": 4.87
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "3.500 brutto. Die 100 kommen als Gutschein und Jobticket.",
+   "start": 5.35,
+   "ende": 9.63,
+   "woerter": [
+    {
+     "wort": "3.500",
+     "start": 5.35,
+     "ende": 6.47
+    },
+    {
+     "wort": "brutto.",
+     "start": 6.55,
+     "ende": 7.15
+    },
+    {
+     "wort": "Die",
+     "start": 7.35,
+     "ende": 7.43
+    },
+    {
+     "wort": "100",
+     "start": 7.47,
+     "ende": 7.75
+    },
+    {
+     "wort": "kommen",
+     "start": 7.83,
+     "ende": 8.07
+    },
+    {
+     "wort": "als",
+     "start": 8.15,
+     "ende": 8.23
+    },
+    {
+     "wort": "Gutschein",
+     "start": 8.31,
+     "ende": 8.71
+    },
+    {
+     "wort": "und",
+     "start": 8.75,
+     "ende": 8.79
+    },
+    {
+     "wort": "Jobticket.",
+     "start": 8.87,
+     "ende": 9.63
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, die 200. Doppelt so viel. Oder? Los geht's!",
+   "start": 9.83,
+   "ende": 14.23,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 9.83,
+     "ende": 10.39
+    },
+    {
+     "wort": "die",
+     "start": 10.43,
+     "ende": 10.47
+    },
+    {
+     "wort": "200.",
+     "start": 10.63,
+     "ende": 11.59
+    },
+    {
+     "wort": "Doppelt",
+     "start": 11.643,
+     "ende": 11.91
+    },
+    {
+     "wort": "so",
+     "start": 11.99,
+     "ende": 12.07
+    },
+    {
+     "wort": "viel.",
+     "start": 12.15,
+     "ende": 12.55
+    },
+    {
+     "wort": "Oder?",
+     "start": 12.71,
+     "ende": 13.11
+    },
+    {
+     "wort": "Los",
+     "start": 13.35,
+     "ende": 13.59
+    },
+    {
+     "wort": "geht's!",
+     "start": 13.67,
+     "ende": 14.23
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "200 rein, 100 rein. Jetzt zapfen die Sozialkassen.",
+   "start": 14.39,
+   "ende": 18.23,
+   "woerter": [
+    {
+     "wort": "200",
+     "start": 14.39,
+     "ende": 14.79
+    },
+    {
+     "wort": "rein,",
+     "start": 14.87,
+     "ende": 15.35
+    },
+    {
+     "wort": "100",
+     "start": 15.39,
+     "ende": 15.67
+    },
+    {
+     "wort": "rein.",
+     "start": 15.75,
+     "ende": 16.31
+    },
+    {
+     "wort": "Jetzt",
+     "start": 16.39,
+     "ende": 16.63
+    },
+    {
+     "wort": "zapfen",
+     "start": 16.71,
+     "ende": 17.03
+    },
+    {
+     "wort": "die",
+     "start": 17.07,
+     "ende": 17.11
+    },
+    {
+     "wort": "Sozialkassen.",
+     "start": 17.19,
+     "ende": 18.23
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 18.27,
+   "ende": 19.99,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 18.27,
+     "ende": 18.47
+    },
+    {
+     "wort": "mir,",
+     "start": 18.55,
+     "ende": 18.79
+    },
+    {
+     "wort": "damit",
+     "start": 18.87,
+     "ende": 18.99
+    },
+    {
+     "wort": "du",
+     "start": 19.03,
+     "ende": 19.11
+    },
+    {
+     "wort": "nichts",
+     "start": 19.163,
+     "ende": 19.35
+    },
+    {
+     "wort": "verpasst.",
+     "start": 19.43,
+     "ende": 19.99
+    }
+   ]
+  },
+  {
+   "id": "wendung",
+   "text": "Doch jetzt kommt das Finanzamt. 150, 130, 110. Der Vorsprung schmilzt.",
+   "start": 20.219,
+   "ende": 27.15,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 20.219,
+     "ende": 20.39
+    },
+    {
+     "wort": "jetzt",
+     "start": 20.47,
+     "ende": 20.63
+    },
+    {
+     "wort": "kommt",
+     "start": 20.67,
+     "ende": 20.79
+    },
+    {
+     "wort": "das",
+     "start": 20.87,
+     "ende": 20.95
+    },
+    {
+     "wort": "Finanzamt.",
+     "start": 21.07,
+     "ende": 21.83
+    },
+    {
+     "wort": "150,",
+     "start": 22.23,
+     "ende": 23.403
+    },
+    {
+     "wort": "130,",
+     "start": 23.403,
+     "ende": 24.577
+    },
+    {
+     "wort": "110.",
+     "start": 24.577,
+     "ende": 25.75
+    },
+    {
+     "wort": "Der",
+     "start": 25.83,
+     "ende": 25.91
+    },
+    {
+     "wort": "Vorsprung",
+     "start": 25.99,
+     "ende": 26.39
+    },
+    {
+     "wort": "schmilzt.",
+     "start": 26.47,
+     "ende": 27.15
+    }
+   ]
+  },
+  {
+   "id": "knapp",
+   "text": "Und steuerfrei? Da geht kein Cent weg. Jetzt wird's knapp.",
+   "start": 27.35,
+   "ende": 31.03,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 27.35,
+     "ende": 27.51
+    },
+    {
+     "wort": "steuerfrei?",
+     "start": 27.59,
+     "ende": 28.31
+    },
+    {
+     "wort": "Da",
+     "start": 28.63,
+     "ende": 28.71
+    },
+    {
+     "wort": "geht",
+     "start": 28.75,
+     "ende": 28.95
+    },
+    {
+     "wort": "kein",
+     "start": 29.03,
+     "ende": 29.27
+    },
+    {
+     "wort": "Cent",
+     "start": 29.35,
+     "ende": 29.59
+    },
+    {
+     "wort": "weg.",
+     "start": 29.71,
+     "ende": 30.15
+    },
+    {
+     "wort": "Jetzt",
+     "start": 30.23,
+     "ende": 30.39
+    },
+    {
+     "wort": "wird's",
+     "start": 30.443,
+     "ende": 30.63
+    },
+    {
+     "wort": "knapp.",
+     "start": 30.71,
+     "ende": 31.03
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand: knapp 110 gegen 100. Das Gehalt gewinnt. Doppelt so viel brutto, aber nicht mal 10 Euro mehr netto.",
+   "start": 31.43,
+   "ende": 39.11,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 31.43,
+     "ende": 31.99
+    },
+    {
+     "wort": "knapp",
+     "start": 32.31,
+     "ende": 32.55
+    },
+    {
+     "wort": "110",
+     "start": 32.59,
+     "ende": 33.19
+    },
+    {
+     "wort": "gegen",
+     "start": 33.27,
+     "ende": 33.51
+    },
+    {
+     "wort": "100.",
+     "start": 33.55,
+     "ende": 34.23
+    },
+    {
+     "wort": "Das",
+     "start": 34.31,
+     "ende": 34.39
+    },
+    {
+     "wort": "Gehalt",
+     "start": 34.47,
+     "ende": 34.71
+    },
+    {
+     "wort": "gewinnt.",
+     "start": 34.79,
+     "ende": 35.35
+    },
+    {
+     "wort": "Doppelt",
+     "start": 35.51,
+     "ende": 35.83
+    },
+    {
+     "wort": "so",
+     "start": 35.87,
+     "ende": 35.91
+    },
+    {
+     "wort": "viel",
+     "start": 35.99,
+     "ende": 36.15
+    },
+    {
+     "wort": "brutto,",
+     "start": 36.19,
+     "ende": 36.55
+    },
+    {
+     "wort": "aber",
+     "start": 37.03,
+     "ende": 37.11
+    },
+    {
+     "wort": "nicht",
+     "start": 37.19,
+     "ende": 37.35
+    },
+    {
+     "wort": "mal",
+     "start": 37.43,
+     "ende": 37.51
+    },
+    {
+     "wort": "10",
+     "start": 37.67,
+     "ende": 37.91
+    },
+    {
+     "wort": "Euro",
+     "start": 38.07,
+     "ende": 38.31
+    },
+    {
+     "wort": "mehr",
+     "start": 38.39,
+     "ende": 38.55
+    },
+    {
+     "wort": "netto.",
+     "start": 38.63,
+     "ende": 39.11
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Fast die Hälfte ist weg. Gut 43 Euro gehen an die Sozialkassen. Fast 47 an die Lohnsteuer.",
+   "start": 39.47,
+   "ende": 46.79,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 39.47,
+     "ende": 39.95
+    },
+    {
+     "wort": "Fast",
+     "start": 40.15,
+     "ende": 40.31
+    },
+    {
+     "wort": "die",
+     "start": 40.39,
+     "ende": 40.47
+    },
+    {
+     "wort": "Hälfte",
+     "start": 40.55,
+     "ende": 40.87
+    },
+    {
+     "wort": "ist",
+     "start": 40.95,
+     "ende": 41.03
+    },
+    {
+     "wort": "weg.",
+     "start": 41.11,
+     "ende": 41.51
+    },
+    {
+     "wort": "Gut",
+     "start": 41.67,
+     "ende": 41.83
+    },
+    {
+     "wort": "43",
+     "start": 41.91,
+     "ende": 42.55
+    },
+    {
+     "wort": "Euro",
+     "start": 42.71,
+     "ende": 42.95
+    },
+    {
+     "wort": "gehen",
+     "start": 43.03,
+     "ende": 43.19
+    },
+    {
+     "wort": "an",
+     "start": 43.23,
+     "ende": 43.27
+    },
+    {
+     "wort": "die",
+     "start": 43.31,
+     "ende": 43.35
+    },
+    {
+     "wort": "Sozialkassen.",
+     "start": 43.43,
+     "ende": 44.47
+    },
+    {
+     "wort": "Fast",
+     "start": 44.59,
+     "ende": 44.71
+    },
+    {
+     "wort": "47",
+     "start": 44.79,
+     "ende": 45.51
+    },
+    {
+     "wort": "an",
+     "start": 45.67,
+     "ende": 45.75
+    },
+    {
+     "wort": "die",
+     "start": 45.79,
+     "ende": 45.83
+    },
+    {
+     "wort": "Lohnsteuer.",
+     "start": 45.91,
+     "ende": 46.79
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und das Verrückte: Bei 5.500 brutto bleiben nur 99 Euro. Dann gewinnt steuerfrei.",
+   "start": 46.83,
+   "ende": 53.27,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 46.83,
+     "ende": 46.87
+    },
+    {
+     "wort": "das",
+     "start": 46.95,
+     "ende": 47.03
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 47.07,
+     "ende": 47.67
+    },
+    {
+     "wort": "Bei",
+     "start": 47.83,
+     "ende": 47.99
+    },
+    {
+     "wort": "5.500",
+     "start": 48.07,
+     "ende": 49.11
+    },
+    {
+     "wort": "brutto",
+     "start": 49.19,
+     "ende": 49.59
+    },
+    {
+     "wort": "bleiben",
+     "start": 49.67,
+     "ende": 49.91
+    },
+    {
+     "wort": "nur",
+     "start": 49.99,
+     "ende": 50.23
+    },
+    {
+     "wort": "99",
+     "start": 50.27,
+     "ende": 50.95
+    },
+    {
+     "wort": "Euro.",
+     "start": 51.11,
+     "ende": 51.75
+    },
+    {
+     "wort": "Dann",
+     "start": 51.803,
+     "ende": 51.91
+    },
+    {
+     "wort": "gewinnt",
+     "start": 51.99,
+     "ende": 52.31
+    },
+    {
+     "wort": "steuerfrei.",
+     "start": 52.35,
+     "ende": 53.27
+    }
+   ]
+  },
+  {
+   "id": "rente",
+   "text": "Aber Achtung: Extras zählen nicht für deine Rente. Da hat das Gehalt die Nase vorn.",
+   "start": 53.31,
+   "ende": 58.15,
+   "woerter": [
+    {
+     "wort": "Aber",
+     "start": 53.31,
+     "ende": 53.43
+    },
+    {
+     "wort": "Achtung:",
+     "start": 53.51,
+     "ende": 54.07
+    },
+    {
+     "wort": "Extras",
+     "start": 54.35,
+     "ende": 54.63
+    },
+    {
+     "wort": "zählen",
+     "start": 54.79,
+     "ende": 55.03
+    },
+    {
+     "wort": "nicht",
+     "start": 55.11,
+     "ende": 55.27
+    },
+    {
+     "wort": "für",
+     "start": 55.35,
+     "ende": 55.43
+    },
+    {
+     "wort": "deine",
+     "start": 55.47,
+     "ende": 55.67
+    },
+    {
+     "wort": "Rente.",
+     "start": 55.71,
+     "ende": 56.31
+    },
+    {
+     "wort": "Da",
+     "start": 56.39,
+     "ende": 56.47
+    },
+    {
+     "wort": "hat",
+     "start": 56.55,
+     "ende": 56.63
+    },
+    {
+     "wort": "das",
+     "start": 56.71,
+     "ende": 56.79
+    },
+    {
+     "wort": "Gehalt",
+     "start": 56.83,
+     "ende": 57.11
+    },
+    {
+     "wort": "die",
+     "start": 57.19,
+     "ende": 57.27
+    },
+    {
+     "wort": "Nase",
+     "start": 57.31,
+     "ende": 57.51
+    },
+    {
+     "wort": "vorn.",
+     "start": 57.59,
+     "ende": 58.15
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Brutto ist nicht netto. Zähl immer, was bei dir ankommt.",
+   "start": 58.23,
+   "ende": 62.15,
+   "woerter": [
+    {
+     "wort": "Brutto",
+     "start": 58.23,
+     "ende": 58.63
+    },
+    {
+     "wort": "ist",
+     "start": 58.71,
+     "ende": 58.95
+    },
+    {
+     "wort": "nicht",
+     "start": 59.03,
+     "ende": 59.27
+    },
+    {
+     "wort": "netto.",
+     "start": 59.35,
+     "ende": 59.99
+    },
+    {
+     "wort": "Zähl",
+     "start": 60.03,
+     "ende": 60.31
+    },
+    {
+     "wort": "immer,",
+     "start": 60.43,
+     "ende": 60.63
+    },
+    {
+     "wort": "was",
+     "start": 60.71,
+     "ende": 60.79
+    },
+    {
+     "wort": "bei",
+     "start": 60.87,
+     "ende": 60.95
+    },
+    {
+     "wort": "dir",
+     "start": 61.07,
+     "ende": 61.19
+    },
+    {
+     "wort": "ankommt.",
+     "start": 61.27,
+     "ende": 62.15
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 62.23,
+   "ende": 65.19,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 62.23,
+     "ende": 62.31
+    },
+    {
+     "wort": "sollen",
+     "start": 62.35,
+     "ende": 62.55
+    },
+    {
+     "wort": "wir",
+     "start": 62.577,
+     "ende": 62.63
+    },
+    {
+     "wort": "als",
+     "start": 62.71,
+     "ende": 62.79
+    },
+    {
+     "wort": "Nächstes",
+     "start": 62.87,
+     "ende": 63.19
+    },
+    {
+     "wort": "zeigen?",
+     "start": 63.27,
+     "ende": 63.83
+    },
+    {
+     "wort": "Schreib",
+     "start": 63.87,
+     "ende": 64.07
+    },
+    {
+     "wort": "es",
+     "start": 64.11,
+     "ende": 64.15
+    },
+    {
+     "wort": "in",
+     "start": 64.23,
+     "ende": 64.27
+    },
+    {
+     "wort": "die",
+     "start": 64.31,
+     "ende": 64.39
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 64.43,
+     "ende": 65.19
+    }
+   ]
+  }
+ ],
+ "nachbearbeitung": "Pause nach „steuerfrei?“ im Hook um 0.25 s gekürzt (Stille 3.45–3.70 s herausgeschnitten, Stimme selbst unverändert, kein Tempo-Eingriff). Original: audio/original/"
+}

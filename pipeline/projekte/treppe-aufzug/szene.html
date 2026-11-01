@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Treppe oder Aufzug · Stil 12 Comic-Toon + 13 Blaupause</title>
+<link rel="stylesheet" href="../../engine/hud.css">
+<link rel="stylesheet" href="../../engine/massstab.css">
+<script type="importmap">
+{ "imports": {
+  "three": "/node_modules/three/build/three.module.js",
+  "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+<style>
+  @font-face { font-family: "SB Kursiv"; font-weight: 900; font-style: italic; src: url("../../node_modules/@fontsource/inter/files/inter-latin-900-italic.woff2") format("woff2"); }
+  @font-face { font-family: "SB Mono"; font-weight: 800; src: local("JetBrains Mono ExtraBold"), local("JetBrainsMono-ExtraBold"), local("Consolas Bold"), url("../../node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2") format("woff2"); }
+  body { background: #36b6ff; }
+  /* Comic-Panels: schwarze Kontur und harter Versatz-Schatten statt weicher Schatten (Stil 12) */
+  #hud { --ms-radius: 16px; --ms-schatten: 0 0 0 5px #12151d, 10px 10px 0 5px #12151d; --karte-linie: #e3e6ee; }
+  #hud .ms-seite { border-radius: 16px; }
+  #hud .ms-seite.links { transform-origin: 30% 50%; }
+  #hud .ms-seite .ms-wert, #hud .ms-bilanz .ms-bz .r, #hud .ms-formel .ms-tok, #hud .ms-balken .w { font-family: "SB Kursiv", var(--display); font-style: italic; }
+  #hud .ms-mitte { box-shadow: 0 0 0 7px #12151d, 8px 8px 0 7px #12151d; background: #ffd23f; color: #12151d; }
+  #hud .ms-mitte .ms-vs { color: #12151d; font-style: italic; }
+  #hud .ms-mitte .ms-uhrtext { color: #12151d; }
+  #hud .ms-mitte svg circle:first-child { stroke: rgba(18, 21, 29, 0.18); }
+  #hud .ms-mitte svg .bogen { stroke: #12151d; }
+  #hud .ms-chip { box-shadow: 0 0 0 5px #12151d, 7px 7px 0 5px #12151d; }
+  #hud .ms-karte { border-radius: 22px; }
+  #hud .ms-stempel .ms-plakette { font-family: "SB Kursiv", var(--display); font-style: italic; box-shadow: 0 0 0 0.06em #12151d, 0.09em 0.09em 0 0.06em #12151d; -webkit-text-stroke: 0.035em #12151d; paint-order: stroke fill; }
+  #hud .ms-stempel.stempel .ms-plakette { box-shadow: inset 0 0 0 0.075em var(--sf), inset 0 0 0 0.12em #fff, inset 0 0 0 0.15em var(--sf), 0 0 0 0.05em #12151d, 0.09em 0.09em 0 0.05em #12151d; -webkit-text-stroke: 0; }
+  #hud .ms-titel .ms-twi { -webkit-text-stroke: 0.06em #12151d; paint-order: stroke fill; text-shadow: 0.06em 0.06em 0 #12151d; font-family: "SB Kursiv", var(--display); font-style: italic; }
+  #hud .ms-titel .ms-twi:not([style*="color"]) { color: #fff; }
+  #hud .ms-pointe .ms-pw { font-family: "SB Kursiv", var(--display); font-style: italic; text-shadow: 0.07em 0.07em 0 var(--tinte); }
+  /* Untertitel Wort für Wort (Stil „kontur“), Teamwörter in Teamfarbe (aktuelles Wort bleibt gelb) */
+  .karaoke.kontur .w { color: var(--wf, #ffffff); }
+  /* Etagen-Ergebnis (zweite Überraschung) und Beschriftungen mit Führungslinie (Blaupause) */
+  .ta-etage { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 12px; height: 66px; padding: 0 22px 0 12px; border-radius: 14px; background: #fff; color: #12151d;
+    font-family: "SB Kursiv", var(--display); font-style: italic; font-weight: 900; font-size: 34px; white-space: nowrap; box-shadow: 0 0 0 4px #12151d, 6px 6px 0 4px #12151d; will-change: transform, opacity; transform-origin: 0 50%; }
+  .ta-etage b { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 46px; border-radius: 10px; background: #12151d; color: #fff; font-size: 30px; }
+  .ta-etage.a { background: var(--team-a); color: #12151d; }
+  .ta-etage.b { background: var(--team-b); color: #fff; }
+  .ta-label { position: absolute; left: 0; top: 0; z-index: 13; font-family: "SB Mono", "JetBrains Mono", Consolas, monospace; font-weight: 800; font-size: 30px; letter-spacing: 0.03em;
+    text-transform: uppercase; color: #fff; padding: 8px 16px; border: 3px solid currentColor; background: rgba(6, 34, 76, 0.92); white-space: nowrap; will-change: transform, opacity; }
+  .ta-label.a { color: #ffb37f; }
+  .ta-label.b { color: #8fc0ff; }
+  .ta-label small { display: block; font-weight: 800; font-size: 20px; letter-spacing: 0.02em; color: #b9d6f7; text-transform: none; margin-top: 2px; }
+  svg.ta-linien { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 12; overflow: visible; pointer-events: none; }
+</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<script type="module" src="./szene.js"></script>
+</body>
+</html>
