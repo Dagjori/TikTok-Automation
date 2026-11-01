@@ -350,7 +350,7 @@ async function start() {
 
   // ---------- Hook: Titel Wort für Wort ----------
   M.titel({
-    y: 372, groesse: 110, aus: "regeln:Hundert-0.12",
+    y: 372, groesse: 110, aus: "regeln:Hundert-0.4",
     woerter: [
       { text: "SCHERE", ein: "hook:Schere+0.02" }, { text: "STEIN", ein: "hook:Stein+0.02" }, { umbruch: true },
       { text: "PAPIER", ein: "hook:Papier+0.02" }, { umbruch: true },
@@ -361,7 +361,7 @@ async function start() {
 
   // ---------- Regeln als Chips ----------
   M.chips({ y: 372, ausrichtung: "mitte", aus: "falle:Klar-0.3", liste: [{ text: "100 RUNDEN", ein: "regeln:Hundert-0.03", art: "dunkel", gross: true }] });
-  M.chips({ y: 486, ausrichtung: "mitte", aus: "falle:Klar-0.3", liste: [
+  M.chips({ y: 506, abstand: 44, ausrichtung: "mitte", aus: "falle:Klar-0.3", liste: [
     { text: "ROT = TAKTIK", ein: "regeln:Rot-0.03", art: "voll", team: "a" },
     { text: "CYAN = ZUFALL", ein: "regeln:Cyan-0.03", art: "voll", team: "b" },
   ] });
@@ -376,7 +376,7 @@ async function start() {
   urteil("UNENTSCHIEDEN", tZ[1], "akzent");
   urteil("PUNKT ROT", tZ[2], "a");
   urteil("PUNKT CYAN", tZ[3], "b");
-  const remisPille = new RemisPille(M, { y: 1226, ein: tZ[4] + 0.35, aus: T("ergebnis1:Endstand") - 0.1, wert: (t) => stand(t).remis });
+  const remisPille = new RemisPille(M, { y: 1226, ein: tZ[3] + 1.3, aus: T("ergebnis1:Endstand") - 0.1, wert: (t) => stand(t).remis });
   hud.add(remisPille);
   const remisPille2 = new RemisPille(M, { y: 1226, ein: tM[1], aus: T("ergebnis2:Endstand") - 0.1, wert: (t) => stand(t).remis });
   hud.add(remisPille2);
@@ -385,27 +385,25 @@ async function start() {
   M.folgen({ ein: "folgen:Folg-0.05", dauer: 1.8, y: 960, team: "a" });
 
   // ---------- Wendung 1: Cyan zieht vorbei ----------
-  const sUeber = M.stempel({ text: "ÜBERHOLT!", ein: T("wendung1:vorbei") - 0.2, x: SICHER.mitte, y: 740, winkel: -6, art: "stempel", farbe: CYAN, groesse: 118 });
+  const sUeber = M.stempel({ text: "ÜBERHOLT!", ein: T("wendung1:vorbei") - 0.2, x: SICHER.mitte, y: 770, winkel: -6, art: "stempel", farbe: CYAN, groesse: 100 });
   M.chip({ text: "GLEICHSTAND", ein: T("wendung1:11") - 0.4, aus: "rennen2:Rot", art: "dunkel", gross: true, x: SICHER.mitte, anker: "mitte", y: 796 });
 
   // ---------- Ergebnis 1: praktisch gleich ----------
   M.bilanz({
-    y: 856, ein: "ergebnis1:Endstand-0.1", aus: "wendung2:Aber-0.08", titel: "Endstand nach 100 Runden",
+    y: 880, ein: "ergebnis1:Endstand-0.1", aus: "wendung2:Aber-0.08", titel: "Endstand nach 100 Runden",
     zeilen: [
       { label: "ROT · TAKTIK", wert: lz.siegeRot, team: "a", ein: "ergebnis1:34" },
       { label: "CYAN · ZUFALL", wert: lz.siegeCyan, team: "b", ein: "ergebnis1:31." },
     ],
-    sieger: { text: "PRAKTISCH GLEICH", team: "akzent", ein: "ergebnis1:Praktisch" },
   });
+  M.chip({ text: "PRAKTISCH GLEICH", ein: "ergebnis1:Praktisch", aus: "wendung2:Aber-0.08", art: "voll", team: "akzent", gross: true, x: SICHER.mitte, anker: "mitte", y: 1190 });
   const pct = (x) => `${Math.round(x * 100)} %`;
-  M.chip({ text: `100.000 SPIELE · JE ${pct((MC_ZUFALL.anteilRotVorn + MC_ZUFALL.anteilCyanVorn) / 2)} VORN`, ein: "ergebnis1:Endstand+0.55", aus: "wendung2:Aber-0.3", art: "hell", team: "akzent", x: SICHER.mitte, anker: "mitte", y: 778 });
+  M.chip({ text: `100.000 SPIELE · JE ${pct((MC_ZUFALL.anteilRotVorn + MC_ZUFALL.anteilCyanVorn) / 2)} VORN`, ein: "ergebnis1:gleich", aus: "wendung2:Aber-0.3", art: "hell", team: "akzent", x: SICHER.mitte, anker: "mitte", y: 796 });
 
   // ---------- Wendung 2: Cyan spielt wie ein Mensch ----------
   const sMensch = M.stempel({ text: "MENSCH!", ein: "wendung2:Mensch", x: SICHER.mitte, y: 740, winkel: 6, farbe: CYAN, groesse: 124 });
-  M.chips({ y: 796, abstand: 40, ausrichtung: "mitte", aus: "rennen3:Runde-0.1", liste: [
-    { text: "MENSCH: 44 % GLEICHER ZUG", ein: "mensch:44", art: "voll", team: "b" },
-    { text: "ZUFALL: 33 %", ein: "mensch:33", art: "dunkel" },
-  ] });
+  M.chip({ text: "MENSCH: 44 %", ein: "mensch:44", aus: "rennen3:Runde-0.1", art: "voll", team: "b", x: 400, anker: "mitte", y: 796 });
+  M.chip({ text: "ZUFALL: 33 %", ein: "mensch:33", aus: "rennen3:Runde-0.1", art: "dunkel", x: 690, anker: "mitte", y: 796 });
 
   // ---------- Ergebnis 2 ----------
   const vorsprung2 = lm.siegeRot - lm.siegeCyan;
@@ -429,7 +427,7 @@ async function start() {
   });
 
   // ---------- Zweite Überraschung: Cyan würfelt ab der Hälfte ----------
-  const sWeg = M.stempel({ text: "STOPP!", ein: "ueberraschung:nicht", x: SICHER.mitte, y: 740, winkel: -5, art: "stempel", farbe: AKZENT, groesse: 124 });
+  const sWeg = M.stempel({ text: "STOPP!", ein: "ueberraschung:nicht", x: SICHER.mitte, y: 770, winkel: -5, art: "stempel", farbe: AKZENT, groesse: 104 });
   const haelfte2Rot = lw.siegeRot - lw.runden[49].siegeRot, haelfte2Cyan = lw.siegeCyan - lw.runden[49].siegeCyan;
   M.formel({
     y: 872, aus: "merksatz:Gegen-0.15", titel: "Zweite Hälfte · Siege", groesse: 96,

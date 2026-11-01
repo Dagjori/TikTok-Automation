@@ -108,5 +108,7 @@
     "Machzahl M = v/c, Machwinkel sin μ = 1/M: Lehrbuch Strömungslehre",
     "Doppler/Überschall: Quelle schneller als Schall läuft ihren Wellen voraus (Machkegel), Lehrbuch"
   ],
-  "caption": "Was wäre, wenn Schall nur Schritttempo hätte? 🔊 Ich hab's durchgespielt. Hättest du die S-Bahn gehört? 👇 #schall #physik #sbahn #wissen #waswaerewenn"
+  "caption": "Was wäre, wenn Schall nur Schritttempo hätte? 🔊 Ich hab's durchgespielt. Hättest du die S-Bahn gehört? 👇 #schall #physik #sbahn #wissen #waswärewenn",
+  "render": "node render.js projekte/schall-schritttempo --worker 2 --query \"schatten=0&skala=0.75\" (3D intern 810×1440, HUD und Untertitel in 1080×1920; ohne Schattenkarte, Abendlicht ohne harte Schatten)",
+  "ki_label": "Pflicht: TikTok „KI-generierte Inhalte“ AN (synthetische Stimme, 3D-Szene). Optik stilisiert, nicht fotorealistisch."
 }
