@@ -5,7 +5,6 @@ status: aktuell
 datum: 2026-11-02
 quelle: tools/chat_befehle.py
 tags: [konto/simulierbar, claude-chat, befehl, skript]
-cssclasses: [konto-simulierbar, typ-anleitung]
 ---
 
 # Befehl Ideen und Skripte Simulierbar

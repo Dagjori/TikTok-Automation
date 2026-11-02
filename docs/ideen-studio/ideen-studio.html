@@ -146,9 +146,9 @@ th { color: var(--muted); font-weight: 500; font-size: 13px; }
 const BEFEHLE = JSON.parse(document.getElementById("befehle").textContent);
 const KONTEN = ["simulierbar", "stelldirvor"];
 const SLOTS = ["mittag", "abend"];
-/* Anbindung an Claude Code: je Video-Tag eine Sitzung (Anleitung im Repo). Die Umgebungs-ID ist kein Geheimnis, nur ein Verweis. */
-const AUTO = { server: "Claude Code Remote", umgebung: "env_01TGhvdLYk1GFuFjarVMu4gS", repo: "https://github.com/Dagjori/tiktok-automation",
-  modell: "claude-opus-5-5", anleitung: "docs/automatik/tages-sitzung.md" };
+/* Anbindung an Claude Code: Auftrag in die Warteschlange (auftraege/) und Kommentar an Claude; der Disponent (eigene Sitzung,
+   docs/automatik/disponent.md) startet je Video-Tag eine Sitzung bzw. schickt ihr den Auftrag. Kein Connector nötig. */
+const AUTO = { anleitung: "docs/automatik/tages-sitzung.md" };
 const FELDER_IDEE = {
   simulierbar: [["hook", "Erster Satz"], ["ergebnis_ansatz", "Rechnung und Ergebnis"], ["warum_relevant", "Wen es betrifft"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["bildidee", "Bildidee"], ["laender", "Land"], ["risiko", "Risiko"]],
   stelldirvor: [["ereignis", "Ereignis"], ["messgroesse", "Messwert-Anzeige"], ["welt", "Welt"], ["standpunkt", "Standpunkt"], ["tageszeit_verlauf", "Tageszeit"], ["bewegung", "Bewegung in der Welt"], ["kamera", "Kamera"], ["zeitraffer", "Zeitraffer"], ["hoehepunkt", "Höhepunkt"], ["pointe", "Pointe"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["laender", "Ort"], ["risiko", "Risiko"]],
@@ -160,10 +160,10 @@ const STATUS = {
 };
 const FERTIG = new Set(["geplant", "gepostet"]);
 const AENDERBAR = new Set(["gewaehlt", "fehler"]);
-const BUCKET = { WORKING: ["Claude Code arbeitet", "run"], BLOCKED: ["Claude Code wartet auf dich", "bad"], REVIEW_READY: ["Claude Code hat den letzten Auftrag erledigt", "ok"],
-  COMPLETED: ["Claude Code hat den letzten Auftrag erledigt", "ok"], FAILED: ["Der letzte Auftrag endete mit einem Fehler", "bad"] };
-const S = { konto: "simulierbar", datum: "", manuell: false, db: null, sample: null, user: null, mcp: null, perm: null, tab: "",
-  lernstand: {}, ideen: {}, slots: {}, laeufe: {}, geladen: false, erster: false, dbZeit: false,
+const EMPFAENGER = { available: "", writers_only: "Nur Bearbeiter des Studios können Aufträge an Claude senden.",
+  no_session: "Gerade empfängt keine Claude-Sitzung Aufträge (der Disponent läuft nicht).", off: "In dieser Ansicht lassen sich keine Kommentare an Claude senden. Öffne das Studio im Browser auf claude.ai." };
+const S = { konto: "simulierbar", datum: "", manuell: false, db: null, sample: null, user: null, comments: null, empfaenger: "", tab: "",
+  lernstand: {}, ideen: {}, slots: {}, laeufe: {}, auftraege: {}, geladen: false, erster: false, dbZeit: false,
   wunsch: { simulierbar: "", stelldirvor: "" }, entwurf: {}, busy: {}, fehler: {}, fortschritt: {}, ctl: {}, sitzung: {}, hinweis: "", kette: {}, spaeter: new Set(), manuellerAuftrag: "" };
 
 /* ---------- Hilfen ---------- */
@@ -228,18 +228,16 @@ const FEHLER = {
   prompt_too_large: "Die Anfrage war zu groß.", empty_completion: "Claude hat nichts geschrieben. Klicke noch einmal.",
 };
 const fehlerText = (e) => FEHLER[e?.code] ?? "Es hat nicht geklappt (" + (e?.code ?? "unbekannt") + "). Klicke noch einmal.";
-const MCP_FEHLER = {
-  needs_reauth: "Der Connector „Claude Code Remote“ muss neu verbunden werden (claude.ai → Einstellungen → Connectors).",
-  server_not_connected: "Der Connector „Claude Code Remote“ ist für dein Konto nicht verbunden (claude.ai → Einstellungen → Connectors).",
-  not_in_manifest: "Du hast dem Studio den Zugriff auf Claude Code nicht erlaubt. Öffne das Berechtigungs-Menü des Artifacts und erlaube „Claude Code Remote“.",
-  approval_required: "Der Start von Claude Code braucht deine Zustimmung. Klicke noch einmal und bestätige die Abfrage.",
-  selection_required: "Wähle in der Abfrage von claude.ai, welchen Connector das Studio nutzen soll, dann klicke noch einmal.",
-  blocked_by_policy: "Deine Organisation blockiert diesen Zugriff.",
-  server_unavailable: "Claude Code ist gerade nicht erreichbar. Warte kurz und klicke noch einmal.",
-  not_granted: "Diese Ansicht darf Claude Code nicht erreichen. Öffne das Studio in claude.ai.",
-  capability_disabled: "Diese Ansicht kann Claude Code nicht erreichen. Öffne das Studio in claude.ai.",
+const KOMM_FEHLER = {
+  consent_required: "Du hast dem Studio noch nicht erlaubt, Kommentare in deinem Namen an Claude zu senden. Klicke noch einmal und bestätige die Abfrage.",
+  forbidden: "Kommentare aus dem Studio sind für dich ausgeschaltet (einschalten im Kommentar-Bereich von claude.ai). Bis dahin: Auftrag kopieren.",
+  claude_unavailable: "Gerade empfängt keine Claude-Sitzung Aufträge (der Disponent läuft nicht). Kopiere den Auftrag oder gib mir in der Hauptsitzung Bescheid.",
+  rate_limited: "Zu schnell hintereinander. Warte eine Minute und klicke noch einmal.",
+  unavailable: "Kommentare sind gerade nicht verfügbar. Klicke gleich noch einmal.",
+  not_granted: "Diese Ansicht kann keine Kommentare an Claude senden. Öffne das Studio im Browser auf claude.ai.",
+  capability_disabled: "Diese Ansicht kann keine Kommentare an Claude senden. Öffne das Studio im Browser auf claude.ai.",
+  capability_removed: "Diese Ansicht kann keine Kommentare an Claude senden. Öffne das Studio im Browser auf claude.ai.",
 };
-const mcpText = (e) => (MCP_FEHLER[e?.code] ?? "Es hat nicht geklappt (" + (e?.code ?? "unbekannt") + ").") + (e?.code === "tool_error" ? " " + String(e.message || "").slice(0, 200) : "");
 
 /* ---------- Speichern (eine Schreibaktion je Dokument nach der anderen) ---------- */
 function kette(schluessel, fn) { const p = (S.kette[schluessel] || Promise.resolve()).then(fn, fn); S.kette[schluessel] = p.catch(() => {}); return p; }
@@ -285,62 +283,34 @@ function slotsEingang(neu) {
 }
 
 /* ---------- Claude Code ---------- */
-function sitzungsId(p) {
-  if (p && typeof p === "object" && p.ccr && typeof p.ccr.id === "string") return p.ccr.id;
-  const t = typeof p === "string" ? p : JSON.stringify(p || {});
-  return (t.match(/session_[A-Za-z0-9]{8,}/) || [])[0] || "";
-}
 const sitzungsLink = (id) => "https://claude.ai/code/" + id;
 function auftragText(auftrag) { return "AUFTRAG AUS DEM IDEEN-STUDIO\n" + JSON.stringify(auftrag) + "\nBefolge " + AUTO.anleitung + " (Abschnitt zu diesem Auftrag)."; }
+function kurzAuftrag(a) {
+  const name = { skripte: "Skripte recherchieren", neu_schreiben: "Skript neu schreiben", produzieren: "Produzieren und in Buffer planen", fortsetzen: "Weiterarbeiten" }[a.art] || a.art;
+  const teile = [name, a.konto ? BEFEHLE[a.konto]?.name : "", kurzTag(a.datum)];
+  if (a.slots) teile.push(a.slots.map(slotName).join(" und ")); if (a.slot) teile.push(slotName(a.slot)); if (a.ids) teile.push(a.ids.length + (a.ids.length === 1 ? " Video" : " Videos"));
+  return teile.filter(Boolean).join(" · ");
+}
 async function auftragSenden(auftrag) {
-  const d = auftrag.datum, nachricht = auftragText(auftrag);
-  if (!S.mcp) { S.manuellerAuftrag = nachricht; return { ok: false, manuell: true, text: "Claude Code ist von dieser Ansicht aus nicht erreichbar. Kopiere den Auftrag (Knopf in der Tagesübersicht) und füge ihn in eine Claude-Code-Sitzung ein." }; }
-  const lauf = S.laeufe[d];
-  const eintrag = { zeit: jetzt(), art: auftrag.art, konto: auftrag.konto || "", slots: auftrag.slots || auftrag.ids || (auftrag.slot ? [auftrag.slot] : []) };
-  const protokoll = (id, neu) => kette("l/" + d, () => S.db.doc("laeufe/" + d).set({ datum: d, session_id: id, modell: AUTO.modell,
-    gestartet: neu ? jetzt() : (lauf?.gestartet || jetzt()), auftraege: [...(neu ? [] : (lauf?.auftraege || [])), eintrag].slice(-40) })).catch(() => {});
-  if (lauf?.session_id) {
-    try {
-      await S.mcp.callTool(AUTO.server, "send_message", { session_id: lauf.session_id, message: nachricht, priority: "next" }, { cache: false });
-      await protokoll(lauf.session_id, false); statusHolen(d); return { ok: true };
-    } catch (e) {
-      if (["needs_reauth", "server_not_connected", "not_in_manifest", "blocked_by_policy", "approval_required", "selection_required", "not_granted", "capability_disabled"].includes(e?.code)) return { ok: false, text: mcpText(e) };
-      if (e?.code === "server_unavailable" || e?.code === "upstream_error") return { ok: false, text: mcpText(e) + " Prüfe in der Sitzung, ob der Auftrag angekommen ist, bevor du noch einmal klickst." };
-      /* tool_error u. a.: Sitzung archiviert oder weg → neue Sitzung */
-    }
-  }
-  const lock = await S.db.doc("laeufe/" + d).acquire({ holder: S.tab, ttlMs: 60000 }).catch(() => ({ acquired: true }));
-  if (lock && lock.acquired === false) return { ok: false, text: "Gerade startet schon eine Claude-Code-Sitzung für diesen Tag (anderes Fenster). Warte eine Minute und klicke dann noch einmal." };
-  const prompt = "Du bist die Tages-Sitzung von Claude Code für den Video-Tag " + d + " (Projekt TikTok Automation, beide Accounts). Lies zuerst " + AUTO.anleitung +
-    " vollständig und befolge sie Schritt für Schritt. Weitere Aufträge kommen als neue Nachrichten in diese Sitzung.\n\n" + nachricht;
-  const eingabe = { title: "TikTok Tag " + d, prompt, environment_id: AUTO.umgebung, source_url: AUTO.repo, model: AUTO.modell, permission_mode: "auto", tags: ["tiktok-tagessitzung"] };
-  let res;
-  try { res = await S.mcp.callTool(AUTO.server, "create_session", eingabe, { cache: false }); }
-  catch (e) {
-    if (e?.code === "tool_error" && /permission/i.test(String(e.message || ""))) {
-      try { delete eingabe.permission_mode; res = await S.mcp.callTool(AUTO.server, "create_session", eingabe, { cache: false }); }
-      catch (e2) { return { ok: false, text: mcpText(e2) }; }
-    } else return { ok: false, text: mcpText(e) + (["server_unavailable", "upstream_error"].includes(e?.code) ? " Schau unter claude.ai/code nach, ob „TikTok Tag " + d + "“ doch gestartet ist, bevor du noch einmal klickst." : "") };
-  }
-  const id = sitzungsId(res?.payload ?? res);
-  if (!id) return { ok: false, text: "Claude Code hat keine Sitzungs-ID zurückgegeben. Schau unter claude.ai/code nach, ob „TikTok Tag " + d + "“ läuft." };
-  await protokoll(id, true);
-  S.sitzung[d] = { bucket: "WORKING", zeit: Date.now() }; statusHolen(d);
-  return { ok: true };
-}
-async function statusHolen(d = S.datum) {
-  const id = S.laeufe[d]?.session_id; if (!S.mcp || !id) return;
-  S.sitzung[d] = { ...(S.sitzung[d] || {}), laedt: true }; renderTag();
+  const nachricht = auftragText(auftrag); S.manuellerAuftrag = "";
+  if (!S.db) return { ok: false, text: "Die Datenbank ist gerade nicht erreichbar." };
+  if (!S.comments) { S.manuellerAuftrag = nachricht; return { ok: false, text: EMPFAENGER.off + " Oder kopiere den Auftrag (Tagesübersicht)." }; }
+  const kann = await S.comments.canSendToClaude().catch(() => "off"); S.empfaenger = kann;
+  if (kann !== "available") { S.manuellerAuftrag = nachricht; return { ok: false, text: (EMPFAENGER[kann] || EMPFAENGER.off) + " Den Auftrag kannst du in der Tagesübersicht kopieren." }; }
+  const id = auftrag.datum + "-" + auftrag.art + "-" + Date.now().toString(36), kurz = kurzAuftrag(auftrag);
+  try { await S.db.doc("auftraege/" + id).set({ id, zeit: jetzt(), datum: auftrag.datum, art: auftrag.art, auftrag, text: nachricht, kurz, status: "offen" }); }
+  catch (e) { return { ok: false, text: "Der Auftrag konnte nicht gespeichert werden (" + (e?.code ?? "unbekannt") + ")." }; }
   try {
-    const r = await S.mcp.callTool(AUTO.server, "get_session", { session_id: id }, { cache: false });
-    const p = r?.payload, c = (p && typeof p === "object" && p.ccr) || {}, t = typeof p === "string" ? p : JSON.stringify(p || {});
-    S.sitzung[d] = { bucket: String(c.status_bucket || (t.match(/SESSION_STATUS_BUCKET_[A-Z_]+/) || [""])[0]).replace("SESSION_STATUS_BUCKET_", ""),
-      stat: String(c.session_status || "").replace("SESSION_STATUS_", ""), modus: String(c.session_context?.permission_mode || c.permission_mode || "").toLowerCase().replace("permission_mode_", ""),
-      info: String(c.post_turn_summary?.status_detail || ""), zeit: Date.now() };
-  } catch (e) { S.sitzung[d] = { fehler: mcpText(e), zeit: Date.now() }; }
-  renderTag();
+    const anchor = await S.comments.anchorFor($("#tag") || document.body);
+    await S.comments.sendToClaude({ anchor, text: "Auftrag für Claude Code: " + kurz + "\n(ID " + id + "; Einzelheiten liegen in der Warteschlange des Studios.)" });
+    S.db.doc("auftraege/" + id).update({ gemeldet: jetzt() }).catch(() => {});
+    return { ok: true };
+  } catch (e) {
+    S.db.doc("auftraege/" + id).update({ status: "abgebrochen", fehler: String(e?.code || "unbekannt") }).catch(() => {});
+    S.manuellerAuftrag = nachricht;
+    return { ok: false, text: KOMM_FEHLER[e?.code] ?? "Senden an Claude hat nicht geklappt (" + (e?.code ?? "unbekannt") + "). Klicke noch einmal oder kopiere den Auftrag." };
+  }
 }
-
 /* ---------- Aktionen ---------- */
 function ideenBefehl(wunsch) {
   let t = K().ideen_vorlage.replace("{{LERNSTAND}}", () => lernText()).replace("- {{BISHER}}", () => bisherListe().map((x) => "- " + x).join("\n"));
@@ -380,13 +350,15 @@ async function waehle(k, slot, i) {
       status: "gewaehlt", fortschritt: "", fehler: "", verlauf: [{ zeit: jetzt(), text: "Idee gewählt", von: "studio" }] }, true);
   } catch (e) { S.fehler[fid] = "Speichern nicht möglich (" + (e?.code ?? "unbekannt") + ")."; render(); }
 }
-async function mitAuftrag(busyId, aenderungen, auftrag, ruecksetzen) {
+/* Erst senden (Warteschlange + Kommentar an Claude, solange die Klick-Geste frisch ist), dann den Status der Videos setzen.
+   Der vierte Parameter (früher: Rücksetzen nach Fehler) wird nicht mehr gebraucht, weil bei Fehlern nichts geändert wurde. */
+async function mitAuftrag(busyId, aenderungen, auftrag, _unbenutzt) {
   if (S.busy[busyId]) return;
   S.busy[busyId] = true; S.fehler[busyId] = null; render();
   try {
-    for (const [id, daten] of aenderungen) await slotSetzen(id, daten);
     const r = await auftragSenden(auftrag);
-    if (!r.ok) { S.fehler[busyId] = r.text; for (const [id, daten] of ruecksetzen) await slotSetzen(id, daten).catch(() => {}); }
+    if (!r.ok) S.fehler[busyId] = r.text;
+    else for (const [id, daten] of aenderungen) await slotSetzen(id, daten);
   } catch (e) { S.fehler[busyId] = "Speichern nicht möglich (" + (e?.code ?? "unbekannt") + ")."; }
   S.busy[busyId] = false; render();
 }
@@ -453,7 +425,7 @@ function renderHinweis() {
   el.replaceChildren(...(S.hinweis ? [h("div", { class: "good row", role: "status" }, h("span", null, S.hinweis), h("button", { class: "btn ghost small", onclick: () => { S.hinweis = ""; renderHinweis(); } }, "Ok"))] : []));
 }
 function renderTag() {
-  const el = $("#tag"), d = S.datum, lauf = S.laeufe[d], st = S.sitzung[d] || {};
+  const el = $("#tag"), d = S.datum, lauf = S.laeufe[d];
   const zeilen = alleSlots(d).map((x) => {
     const doc = x.doc, u = uhr(d)[x.s];
     return h("div", { class: "orow" },
@@ -466,17 +438,18 @@ function renderTag() {
   const frei = alleSlots(d).filter((x) => x.doc?.status === "freigegeben").length;
   const offenFrei = alleSlots(d).filter((x) => x.doc && ["gewaehlt", "recherche", "skript_fertig"].includes(x.doc.status)).length;
   const cc = [];
-  if (!S.mcp) cc.push(h("p", { class: "note" }, "Claude Code ist aus dieser Ansicht nicht erreichbar (Connector „Claude Code Remote“). Aufträge kannst du kopieren und in eine Claude-Code-Sitzung einfügen."));
+  if (S.empfaenger && S.empfaenger !== "available") cc.push(h("p", { class: "note" }, EMPFAENGER[S.empfaenger] || EMPFAENGER.off));
   if (lauf?.session_id) {
-    const [txt, c] = st.fehler ? [st.fehler, "bad"] : st.stat === "ARCHIVED" ? ["Sitzung archiviert; der nächste Auftrag startet eine neue", ""] : (BUCKET[st.bucket] || [st.laedt ? "Status wird geladen …" : "Status noch nicht abgefragt", ""]);
+    const [txt, c] = lauf.status === "arbeitet" ? ["Claude Code arbeitet", "run"] : lauf.status === "wartet" ? ["Claude Code wartet auf den nächsten Auftrag", "ok"] : ["Sitzung gestartet", "run"];
     cc.push(h("div", { class: "row" }, h("span", { class: "pill " + c }, txt),
       h("a", { href: sitzungsLink(lauf.session_id), target: "_blank", rel: "noopener" }, "Sitzung öffnen"),
-      S.mcp ? h("button", { class: "btn ghost small", disabled: !!st.laedt, onclick: () => statusHolen(d) }, "Status prüfen") : null,
-      S.mcp ? h("button", { class: "btn ghost small", disabled: !!S.busy.fort, onclick: fortsetzen }, "Weiterarbeiten lassen") : null));
-    if (st.info) cc.push(h("p", { class: "state" }, "Letzte Meldung: " + st.info));
-    if (st.modus && st.modus !== "auto") cc.push(h("p", { class: "note" }, "Die Sitzung läuft nicht im Modus „Auto“ (" + st.modus + "). Sie kann an Rückfragen hängen bleiben: öffne sie und stelle den Modus auf „Auto“."));
-    if (st.bucket === "BLOCKED") cc.push(h("p", { class: "note" }, "Claude Code wartet auf eine Freigabe von dir. Öffne die Sitzung und bestätige dort."));
-  } else cc.push(h("p", { class: "muted" }, "Für diesen Tag läuft noch keine Claude-Code-Sitzung. Sie startet mit dem ersten Auftrag (Skripte recherchieren) und bleibt für den ganzen Tag dieselbe."));
+      h("button", { class: "btn ghost small", disabled: !!S.busy.fort || !S.db, onclick: fortsetzen }, "Weiterarbeiten lassen")));
+    if (lauf.letzte_meldung) cc.push(h("p", { class: "state" }, "Letzte Meldung" + (lauf.aktualisiert ? " (" + zeitText(lauf.aktualisiert) + ")" : "") + ": " + lauf.letzte_meldung));
+  } else cc.push(h("p", { class: "muted" }, "Für diesen Tag läuft noch keine Claude-Code-Sitzung. Sie startet mit dem ersten Auftrag und bleibt für den ganzen Tag dieselbe."));
+  const wartend = Object.values(S.auftraege).filter((a) => a.datum === d && ["offen", "in_arbeit"].includes(a.status));
+  const kaputt = Object.values(S.auftraege).filter((a) => a.datum === d && a.status === "fehler");
+  if (wartend.length) cc.push(h("p", { class: "state", role: "status" }, wartend.length + (wartend.length === 1 ? " Auftrag wird" : " Aufträge werden") + " gerade an Claude Code übergeben: " + wartend.map((a) => a.kurz || a.art).join("; ")));
+  kaputt.forEach((a) => cc.push(h("p", { class: "err" }, "Auftrag „" + (a.kurz || a.art) + "“ kam nicht an: " + (a.fehler || "unbekannter Fehler") + ". Klicke den Knopf noch einmal oder kopiere den Auftrag.")));
   if (S.fehler.fort) cc.push(h("p", { class: "err", role: "alert" }, S.fehler.fort));
   if (S.manuellerAuftrag) cc.push(h("div", { class: "row" }, h("button", { class: "btn ghost small", onclick: (e) => copy(S.manuellerAuftrag, e.currentTarget) }, "Auftrag kopieren (für Claude Code)")));
   el.replaceChildren(h("div", { class: "panel" },
@@ -687,8 +660,10 @@ async function start() {
   }, 250));
   render();
   const nutze = (n) => { try { return Promise.resolve(window.claude?.use ? window.claude.use(n) : null).catch(() => null); } catch (e) { return Promise.resolve(null); } };
-  const [db, sample, user, mcp, perm] = await Promise.all([nutze("db"), nutze("sample"), nutze("user"), nutze("mcp"), nutze("permissions")]);
-  S.db = db; S.sample = sample; S.user = user; S.mcp = mcp; S.perm = perm; render();
+  const [db, sample, user, comments] = await Promise.all([nutze("db"), nutze("sample"), nutze("user"), nutze("comments")]);
+  S.db = db; S.sample = sample; S.user = user; S.comments = comments;
+  S.empfaenger = comments ? await Promise.resolve(comments.canSendToClaude()).catch(() => "off") : "off";
+  render();
   if (!db) return;
   const timer = setTimeout(() => { S.dbZeit = true; render(); }, 10000);
   const da = () => { clearTimeout(timer); S.dbZeit = false; };
@@ -701,14 +676,11 @@ async function start() {
   db.collection("ideen").where("datum", ">=", plusTage(heute(), -3)).onSnapshot((snap) => {
     const neu = {}; snap.docs.forEach((d) => { if (d.exists) neu[d.id] = d.data(); }); S.ideen = neu; render();
   }, () => {});
-  let statusAbgefragt = false;
-  db.collection("laeufe").where("datum", ">=", plusTage(heute(), -14)).onSnapshot(async (snap) => {
+  db.collection("laeufe").where("datum", ">=", plusTage(heute(), -14)).onSnapshot((snap) => {
     const neu = {}; snap.docs.forEach((d) => { if (d.exists) neu[d.id] = d.data(); }); S.laeufe = neu; renderTag();
-    if (!statusAbgefragt && S.mcp && S.laeufe[S.datum]?.session_id) {
-      statusAbgefragt = true;
-      const zustand = await Promise.resolve(S.perm?.state?.("mcp:" + AUTO.server)).catch(() => "unavailable");
-      if (zustand === "granted") statusHolen(S.datum);
-    }
+  }, () => {});
+  db.collection("auftraege").where("datum", ">=", plusTage(heute(), -3)).onSnapshot((snap) => {
+    const neu = {}; snap.docs.forEach((d) => { if (d.exists) neu[d.id] = d.data(); }); S.auftraege = neu; renderTag();
   }, () => {});
 }
 start();

@@ -2,7 +2,7 @@
 
 Stand 02.11.2026 (Entscheidungen des Inhabers: Claude Code recherchiert und schreibt die Skripte; Faktenfehler korrigieren und weiter, anhalten nur, wenn das Ergebnis kippt; Push bei Problemen, wenn Skripte fertig sind und wenn alles geplant ist).
 
-Das Ideen-Studio (Artifact https://claude.ai/artifact/PMqMpqpmSHYmuhY229ghZC) startet **je Video-Tag genau eine Claude-Code-Sitzung** (Modell Opus 5.5, Modus „Auto“) und schickt ihr Aufträge. Die erste Nachricht enthält den ersten Auftrag, weitere Aufträge kommen als neue Nachrichten in dieselbe Sitzung. Du bist diese Sitzung. **Niemand liest im Chat mit:** Rückfragen gehen nur über Status `rueckfrage` und eine Push-Nachricht, nie als Frage im Chat.
+Das Ideen-Studio (Artifact https://claude.ai/artifact/PMqMpqpmSHYmuhY229ghZC) legt Aufträge in eine Warteschlange und sendet einen Kommentar an Claude; der **Disponent** (eigene Sitzung) startet daraufhin **je Video-Tag genau eine Claude-Code-Sitzung** (Modell Opus 5.5, Modus „Auto“) und schickt ihr die Aufträge. Die erste Nachricht enthält den ersten Auftrag, weitere Aufträge kommen als neue Nachrichten in dieselbe Sitzung. Du bist diese Sitzung. **Niemand liest im Chat mit:** Rückfragen gehen nur über Status `rueckfrage` und eine Push-Nachricht, nie als Frage im Chat.
 
 ## 0. Grundregeln (immer)
 1. **Kleine Schritte** (CLAUDE.md §1): Zerlege jeden Auftrag zuerst in nummerierte Teilaufgaben (TaskCreate), hake jede mit Beleg ab, gleiche am Ende Auftrag und Ergebnis ab.
@@ -13,13 +13,16 @@ Das Ideen-Studio (Artifact https://claude.ai/artifact/PMqMpqpmSHYmuhY229ghZC) st
 6. **Nichts außerhalb** von Repo, Studio-Datenbank, Buffer und Supabase anlegen. Keine Regel, keinen Skill und keinen Befehl ändern (nur vorschlagen). Keine Geheimnisse und keine Supabase-Adresse ins Repo.
 7. **Modelle:** Recherche, Skripte und Abnahme machst du selbst (Opus). Produktions-Agenten ausdrücklich mit `model: sonnet`, **höchstens 2 gleichzeitig**, gestaffelt, ihr Auftrag als nummerierte Checkliste; sie melden je Punkt „erledigt/offen“ mit Beleg, du prüfst das gegen die Liste.
 8. Am Ende jedes Auftrags: kurze Abschlussnachricht (je Slot: Titel, Status) und für jedes fertige Video committen und pushen (`git pull --rebase` vorher).
+9. **Sitzungsstatus fürs Studio:** Zu Beginn jedes Auftrags in `laeufe/<datum>` `status: "arbeitet"`, `letzte_meldung` (ein Satz, was du tust) und `aktualisiert` setzen; am Ende `status: "wartet"` und `letzte_meldung` = Kurzergebnis. Fehlt das Dokument, lege es mit `datum` und deiner `session_id` an (die eigene ID liefert `mcp__claude-code-remote__get_session` ohne Argument).
+10. Aufträge kommen meist über den **Disponenten** (eigene Sitzung, `docs/automatik/disponent.md`), der die Warteschlange `auftraege` des Studios abarbeitet. Du selbst schreibst nicht in `auftraege`.
 
 ## 1. Datenmodell (Sammlungen der Studio-Datenbank)
 | Dokument | Schreibt | Inhalt |
 |---|---|---|
 | `ideen/<acc1|acc2>-JJJJ-MM-TT` | Studio | `konto`, `datum`, `ideen` (10), `wunsch`, `erzeugt` |
 | `skripte/<acc1|acc2>-JJJJ-MM-TT-<mittag|abend>` | beide | **ein Dokument je Video** (Slot): `konto`, `datum`, `slot`, `uhrzeit`, `idee`, `titel`, `status`, `skript`, `quellen`, `zahlen`, `rechenweg`, `annahmen`, `caption`, `dramaturgie`, `selbstpruefung`, `faktencheck`, `korrekturen`, `kommentar`, `fortschritt`, `verlauf`, `fehler`, `fehler_phase`, `post_id`, `geplant_fuer`, `projekt`, `aktualisiert` |
-| `laeufe/JJJJ-MM-TT` | Studio | `session_id` dieser Sitzung, `auftraege` |
+| `laeufe/JJJJ-MM-TT` | Disponent, du | `session_id` dieser Sitzung, `auftraege`, `status` (arbeitet/wartet), `letzte_meldung`, `aktualisiert` |
+| `auftraege/<id>` | Studio, Disponent | Warteschlange: `datum`, `auftrag`, `text`, `status` (offen/in_arbeit/gesendet/fehler) |
 | `stand/lernstand-acc1|acc2` | Lernschleife | Lernstand je Account (fließt in jedes Skript) |
 
 **Status-Kette eines Slots:** `gewaehlt` (Studio) → `recherche` (Studio fordert an, du arbeitest) → `skript_fertig` (du) → `freigegeben` (Inhaber) → `uebergeben` (Studio) → `produktion` (du) → `geplant` (du, in Buffer eingeplant) → `gepostet` (du, nach der Nachprüfung). Nebenzweige: `rueckfrage` (du; der Inhaber entscheidet im Studio), `fehler` (du; mit `fehler` und `fehler_phase` = `recherche` oder `produktion`). Ein Tag ist fertig, wenn alle 4 Slots `geplant` oder `gepostet` sind; dann zeigt das Studio den nächsten Tag.

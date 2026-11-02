@@ -5,7 +5,6 @@ status: aktuell
 datum: 2026-11-02
 quelle: tools/chat_befehle.py
 tags: [konto/stelldirvor, claude-chat, befehl, skript]
-cssclasses: [konto-stelldirvor, typ-anleitung]
 ---
 
 # Befehl Ideen und Skripte Account 2
