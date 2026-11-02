@@ -210,8 +210,8 @@ async function start() {
   const ledLinie = (mat, x) => { const m = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.022, 0.022), mat); m.position.set(x, 0.622, SZ + 0.5); m.userData.dynamisch = true; return m; };
   szene.add(ledLinie(ledA, -SX), ledLinie(ledB, SX));
   const dickeM = 0.07, radM = 0.3;
-  const turmA = muenzStapel({ art: "gold", max: 34, radius: radM, dicke: dickeM, unordnung: 0.03, seed: 11, fallHoehe: 1.1 });
-  const turmB = muenzStapel({ art: "silber", max: 14, radius: radM, dicke: dickeM, unordnung: 0.03, seed: 5, fallHoehe: 1.1 });
+  const turmA = muenzStapel({ art: "gold", max: 34, radius: radM, dicke: dickeM, unordnung: 0.03, seed: 11, fallHoehe: 0.75 });
+  const turmB = muenzStapel({ art: "silber", max: 14, radius: radM, dicke: dickeM, unordnung: 0.03, seed: 5, fallHoehe: 0.75 });
   turmA.position.set(-SX, sockA.oben, SZ); turmB.position.set(SX, sockB.oben, SZ);
   // Münzen etwas matter und weniger spiegelnd, damit fallende Münzen nahe der Kamera nicht ausbrennen (Bloom)
   for (const [t, k] of [[turmA, 0.85], [turmB, 0.75]]) for (const m of t.children[0].material) { m.envMapIntensity = 0.55; m.roughness = Math.min(0.55, m.roughness + 0.2); m.color.multiplyScalar(k); }
@@ -240,7 +240,8 @@ async function start() {
   const lT = new THREE.Mesh(new THREE.BoxGeometry(0.14, 0.016, 0.016), lueckeMat), lT2 = new THREE.Mesh(new THREE.BoxGeometry(0.14, 0.016, 0.016), lueckeMat);
   const striche = Array.from({ length: 14 }, () => new THREE.Mesh(new THREE.BoxGeometry(0.13, 0.012, 0.012), lueckeMat));
   for (const m of [lV, lT, lT2, ...striche]) { m.userData.dynamisch = true; m.visible = false; szene.add(m); }
-  const sLH = new THREE.Mesh(new THREE.BoxGeometry(1, 0.016, 0.016), lueckeMat), sLV = new THREE.Mesh(new THREE.BoxGeometry(0.016, 1, 0.016), lueckeMat);
+  const lueckeMat2 = ledMat(ELFENBEIN);
+  const sLH = new THREE.Mesh(new THREE.BoxGeometry(1, 0.016, 0.016), lueckeMat2), sLV = new THREE.Mesh(new THREE.BoxGeometry(0.016, 1, 0.016), lueckeMat2);
   for (const m of [sLH, sLV]) { m.userData.dynamisch = true; m.visible = false; szene.add(m); }
   buendeln(szene);
 
@@ -340,6 +341,7 @@ async function start() {
     sLH.visible = sLV.visible = vis2;
     if (vis2) {
       const kk = Math.min(1, s.saeuleLuecke);
+      lueckeMat2.color.copy(farbeE).multiplyScalar(1.6 * kk);
       const len = (hSB - hSA) * kk;
       sLH.scale.x = 0.9; sLH.position.set(0, ys + hSB, PZ + 0.3);
       sLV.scale.y = Math.max(0.001, len); sLV.position.set(-0.05, ys + hSB - len / 2, PZ + 0.3);
