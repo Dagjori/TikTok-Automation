@@ -85,14 +85,21 @@
 - Alle 60 Simulierbar- und 60 Account-2-Themen sind im Cockpit (Status „idee“).
 - **Verpasste Entscheidungen von 10:55 UTC** (vor der Verbindung) nachgeholt: Mittagessen (frei, bleibt 03.11. abends), Schere-Stein-Papier (frei, aber durch Geld-Plan ersetzt, Reserve), Stickstoff Account 2 (frei mit Kommentar „sofort posten“, aber durch die spätere Regel „kein 5 Sekunden“ überholt und gesperrt). Antworten stehen im Cockpit.
 
+## Heute 02.11. (Nachmittag)
+- **Account 2 Eiszeit Toronto:** fertig (80 s, 22/22 Pflichtpunkte, 0 Text-Überlappungen, −14,5 LUFS, Kontaktbogen gesichtet, Faktenzeile zweizeilig nachgebessert). In Buffer eingeplant 02.11. 19:30 (Post `6ae8af082810e4a79d35d1a9`, ohne KI-Label). Nachprüfung als geplante Erinnerung 18:50 UTC. Welt `engine/welt_grossstadt_dach.js` wiederverwendbar; Schwächen für den nächsten Einsatz: Gebäude gleichförmig, Winterphase milchig, Eiswand glasig, Weißblende zu früh.
+- **Plan Account 2:** Eiszeit auf 02.11. vorgezogen, Lücke 03.11. 12:30 mit Reserve „Seil um den Äquator“ gefüllt (kein Vorrücken, Abstandsregeln `docs/17` §3.4). CSV, JSON, PDF, Cockpit aktualisiert.
+- **Render-Dienst für den Windows-PC** (Inhaber: Arbeit bleibt in der Cloud, nur Rendern auf den PC): `pipeline/render_dienst/`, Anleitung `docs/18-render-pc.md`, in der Cloud end-to-end getestet (ohne GPU). Aufruf: `auftrag.py senden <projekt> --konto …`, dann `warten`; Exit 3 = PC offline → Cloud-Render. GPU unter Windows noch ungetestet. Für künftige Sitzungen muss `SUPABASE_URL` als Umgebungsvariable der Cloud-Umgebung gesetzt sein (Inhaber).
+- **Skill `simulierbar-video`:** Agent schließt ab (Messung der Stile, Vergleichsbild). Danach Abnahme, Regelwerk, Plan-PDF.
+- **Modelle:** tägliche Produktion Sonnet, Opus nur für neue Welten und Abnahme; Warten auf Renders ohne Modell.
+
 ## Nächste Schritte
 
 | # | Schritt | Wer | Zeit | Status |
 |---|---|---|---|---|
 | 1 | Plan, Demo-Bilder und Regelwerk ansehen, Startsignal für die Produktion geben | Inhaber | 15 Min. | offen |
-| 2 | Nach Startsignal: 03.11. produzieren (Account 2: Eiszeit Toronto, Sonne 1 m Cabo da Roca; Simulierbar laut `data/plan/30-tage.csv`), je Grundwelt Erstbau auf Referenzniveau, max. 2 Agenten (Sonnet) | Claude | ca. 2 Std. Render je Video (Cloud) | wartet |
+| 2 | Nach Startsignal: 03.11. produzieren (Account 2: Seil um den Äquator und Sonne 1 m, beide Grundwelt Berg-/Seeblick; Simulierbar laut `data/plan/30-tage.csv`), je Grundwelt Erstbau auf Referenzniveau, max. 2 Agenten (Sonnet) | Claude | ca. 2 Std. Render je Video (Cloud) | wartet |
 | 3 | Ampel (12:30) und Steuer (19:30) auf Simulierbar sind für heute in Buffer eingeplant (alter Stil) | Inhaber | – | keine Rückmeldung, bleiben |
-| 4 | Windows-PC einrichten (GPU-Render), dringend wegen ca. 2 Std. Cloud-Render je Account-2-Video | Inhaber plus Claude | 30–60 Min. | empfohlen |
+| 4 | Windows-PC nach `docs/18-render-pc.md` einrichten (Render-Dienst), danach erster GPU-Testauftrag | Inhaber, dann Claude | ca. 1 Std. | offen |
 | 5 | Repo auf privat stellen, ElevenLabs-Guthaben prüfen | Inhaber | 5 Min. | offen |
 | 6 | Nach 14 Tagen Posting-Zeiten mit Zahlen aus TikTok Studio nachjustieren | Claude | 30 Min. | 16.11. |
 
