@@ -26,9 +26,9 @@ export async function baue({ renderer, T, dauer, schatten, Q }) {
   const szene = new THREE.Scene();
   szene.background = new THREE.Color("#05070C");
   dunst(szene, "#0B1220", 0.028);
-  rigNacht(szene, renderer, { richtung: [-0.9, 0.42, -0.35], farbe: "#A9C2EE", staerke: 2.0, bereich: 24, schatten, himmelStaerke: 0.25, umgebungsStaerke: 0.2 });
+  rigNacht(szene, renderer, { richtung: [-0.9, 0.42, -0.35], farbe: "#A9C2EE", staerke: 2.0, bereich: 24, schatten: Math.min(schatten, 1024), himmelStaerke: 0.25, umgebungsStaerke: 0.2 });
   const STADT = [0.5, -11], VORORT = [-2.6, -6.2], DORF = [5.2, 9.5];
-  const karte = reliefKarte({ breite: 30, tiefe: 44, seed: 5, hoehe: 2.6, flach: [[...STADT, 3.2], [...VORORT, 1.2], [...DORF, 0.9]] });
+  const karte = reliefKarte({ breite: 30, tiefe: 44, seed: 5, hoehe: 2.6, aufl: 140, flach: [[...STADT, 3.2], [...VORORT, 1.2], [...DORF, 0.9]] });
   szene.add(karte);
   szene.add(stadtLichter(karte, { mitte: STADT, radius: 3.0, anzahl: 6000, seed: 1 }));
   szene.add(stadtLichter(karte, { mitte: VORORT, radius: 1.0, anzahl: 900, strahlen: 3, seed: 2 }));
@@ -47,7 +47,7 @@ export async function baue({ renderer, T, dauer, schatten, Q }) {
   const kamera = new THREE.PerspectiveCamera(34, 1080 / 1920, 0.1, 200);
   const regie = new Regie(kamera, (t) => {
     const k = ease.inOutSine(fortschritt(t, 0, dauer));
-    return { pos: [6.6 - 2.0 * k, 21 - 1.2 * k, 25 - 1.6 * k], ziel: [1.9, 0, 1.2 - 1.0 * k], fov: 34 };
+    return { pos: [6.0 - 1.8 * k, 24 - 1.2 * k, 27.5 - 1.6 * k], ziel: [1.6, 0, -0.6 - 0.8 * k], fov: 34 };
   });
   regie.atmen({ staerke: 0.012, tempo: 0.25 });
   const post = { ...GRADING.karte, tiltMitte: 0.48, tiltBreite: 0.38, tiltStaerke: 0.55 };

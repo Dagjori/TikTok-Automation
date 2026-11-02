@@ -43,7 +43,7 @@ import { HUD } from "../../engine/hud.js";
 import { Massstab } from "../../engine/massstab.js";
 import { Regie } from "../../engine/regie.js";
 
-const Q = new URLSearchParams(location.search), MSAA = Q.has("msaa") ? +Q.get("msaa") : 2, SCHATTEN = Q.has("schatten") ? +Q.get("schatten") : 2048;
+const Q = new URLSearchParams(location.search), MSAA = Q.has("msaa") ? +Q.get("msaa") : 0, SCHATTEN = Q.has("schatten") ? +Q.get("schatten") : 2048;
 const skript = await (await fetch("skript.json")).json();
 const timing = await (await fetch("audio/timing.json")).json();          // echte Stimme (tts.py)
 const zp = new Zeitplan(timing, { mindestlaenge: 0, nachlauf: 0.8 });

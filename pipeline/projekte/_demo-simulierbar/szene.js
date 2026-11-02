@@ -1,6 +1,6 @@
 // Demo der Simulierbar-Stile 17–21 (Skill .claude/skills/simulierbar-video/): eine Welt je Stil, gleiches seriöses HUD.
 // Aufruf: szene.html?stil=nachtstadt|studio|architektur|lichtlabor|nachtkarte  (render.js … --query "stil=studio")
-// Qualitätsschalter: msaa (Standard 2), schatten (Standard 2048, 0 = aus), bloom (Faktor, Standard 1).
+// Qualitätsschalter: msaa (Standard 0 = FXAA, 2 für Standbilder), schatten (Standard 2048, 0 = aus), aus=spiegel,nebel,kegel,strahlen (je Welt).
 // Kein Video zum Posten: Beispielwerte, geschätztes Timing (Stimme Ben, 2,0 W/s), keine Stimme.
 import { SimBuehne, aktualisiere } from "../../engine/sim_atmosphaere.js";
 import { Zeitplan, schaetzeTiming } from "../../engine/zeitplan.js";
@@ -11,7 +11,7 @@ import { Massstab } from "../../engine/massstab.js";
 const FPS = 30;
 const Q = new URLSearchParams(location.search);
 const STIL = Q.get("stil") || "nachtstadt";
-const MSAA = Q.has("msaa") ? +Q.get("msaa") : 2;
+const MSAA = Q.has("msaa") ? +Q.get("msaa") : 0; // gemessen: MSAA kostet ca. 25 %, FXAA (kern.js) genügt im Video
 const SCHATTEN = Q.has("schatten") ? +Q.get("schatten") : 2048;
 
 async function start() {

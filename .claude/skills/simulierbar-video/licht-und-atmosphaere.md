@@ -5,7 +5,7 @@ Die Qualität entsteht aus Licht: ein Führungslicht mit Richtung, Kanten- bzw. 
 ## 1. Bühne und Nachbearbeitung
 ```js
 import { SimBuehne, GRADING, aktualisiere } from "../../engine/sim_atmosphaere.js";
-const buehne = new SimBuehne(leinwand, { msaa: 2, schatten: true, tiefe: true });   // tiefe nur bei Tiefenschärfe
+const buehne = new SimBuehne(leinwand, { msaa: 0, schatten: true, tiefe: true });   // FXAA genügt; tiefe nur bei Tiefenschärfe
 welt.post = { ...GRADING.nacht, belichtung: 1.2, tiltStaerke: 0.6 };             // Look je Stil, einzelne Werte überschreiben
 ```
 `SimBuehne` = `Buehne` aus `kern.js` (Bloom, Tilt-Shift, Tiefenunschärfe, ACES, Sättigung/Kontrast, Vignette, Körnung, FXAA, alle Übergänge) **plus** Lichtstrahlen im Bildraum und Farbgrading. Zusätzliche `post`-Werte (`SIM_POST`):

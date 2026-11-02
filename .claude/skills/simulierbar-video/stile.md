@@ -6,7 +6,7 @@ Jedes Video bekommt **genau einen** der fünf Stile 17–21. Kein fester Look al
 
 ## Die erlaubten Stile
 
-Renderzeit: Sekunden je Videobild 1080 × 1920 in der Cloud (4 Kerne, ohne GPU, SwiftShader), Demo-Szene mit HUD, MSAA 2, Schatten 2048, gemessen am 02.11. (Details und Messweise `docs/10` §0.6). Standbilder: `node render.js projekte/_demo-simulierbar --zeiten <t> --worker 1 --query "stil=<name>"`.
+Renderzeit: Sekunden je Videobild 1080 × 1920 in der Cloud (4 Kerne, ohne GPU, SwiftShader), Demo-Szene mit HUD, MSAA 0 (FXAA), Schatten 2048, gemessen am 02.11. (Details und Messweise `docs/10` §0.6). Standbilder: `node render.js projekte/_demo-simulierbar --zeiten <t> --worker 1 --query "stil=<name>"`.
 
 | Nr. | Stil | Look | Passt zu (Geld-Themen aus dem Plan) | Baukasten · Demo-Welt | Grading |
 |---|---|---|---|---|---|

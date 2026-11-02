@@ -31,8 +31,8 @@ export async function baue({ renderer, T, dauer, schatten, Q }) {
 
   const STR = [{ x: 0, richtung: "z", breite: 2.2 }, { x: 7.6, richtung: "z", breite: 2.0 }, { x: -7.6, richtung: "z", breite: 2.0 }, { z: 2.2, richtung: "x", breite: 2.0 }, { z: -8.2, richtung: "x", breite: 2.0 }];
   szene.add(strassenBoden({ breite: 70, tiefe: 70, strassen: STR }));
-  if (!AUS.has("spiegel")) szene.add(spiegelBoden({ breite: 70, tiefe: 70, staerke: 1.1, pfuetzen: 0.55, streckung: 3.2, massstab: 0.35, aufloesung: 0.3 }));
-  if (!AUS.has("nebel")) szene.add(nebelSchicht({ breite: 60, tiefe: 60, y: 0.15, lagen: 2, farbe: "#7F93B8", deckkraft: 0.07, massstab: 0.12 }));
+  if (!AUS.has("spiegel")) szene.add(spiegelBoden({ breite: 70, tiefe: 70, staerke: 1.1, pfuetzen: 0.55, streckung: 3.2, massstab: 0.35, aufloesung: 0.22 }));
+  if (Q.has("nebel")) szene.add(nebelSchicht({ breite: 60, tiefe: 60, y: 0.15, lagen: 2, farbe: "#7F93B8", deckkraft: 0.07, massstab: 0.12 }));
   szene.add(skyline({ anzahl: 46, radius: 34, bogen: [Math.PI * 1.02, Math.PI * 1.98], mitte: [2, -6] }));
 
   // Häuserblöcke zwischen den Straßen (Fassaden zur Straße), Parkhaus links vorne
@@ -66,7 +66,7 @@ export async function baue({ renderer, T, dauer, schatten, Q }) {
   // Laternen und Bäume entlang der Hauptstraße
   for (let z = -22; z < 12; z += 3.1) {
     for (const s of [-1, 1]) {
-      const l = laterne({ hoehe: 1.45, arm: 0.34, pfuetze: 0.9, kegel: 0.12 });
+      const l = laterne({ hoehe: 1.45, arm: 0.34, pfuetze: 0.9, kegel: AUS.has("kegel") ? 0 : 0.12 });
       l.position.set(s * 1.36, 0, z + (s > 0 ? 1.5 : 0));
       l.rotation.y = s > 0 ? Math.PI : 0;
       szene.add(l);
@@ -74,7 +74,7 @@ export async function baue({ renderer, T, dauer, schatten, Q }) {
     if (hash(z, 2) < 0.6) { const b = baumNacht({ groesse: 0.55, seed: z }); b.position.set(1.6, 0, z + 0.8); szene.add(b); }
   }
   for (let x = 1.6; x < 7; x += 2.6) for (const z of [-8.2, 2.2]) {
-    const l = laterne({ hoehe: 1.35, arm: 0.3, kegel: 0.12, pfuetze: 0.8 }); l.position.set(x, 0, z - 1.25); l.rotation.y = -Math.PI / 2; szene.add(l);
+    const l = laterne({ hoehe: 1.35, arm: 0.3, kegel: AUS.has("kegel") ? 0 : 0.12, pfuetze: 0.8 }); l.position.set(x, 0, z - 1.25); l.rotation.y = -Math.PI / 2; szene.add(l);
   }
   // geparkte Autos am Rand
   for (let i = 0; i < 12; i++) {

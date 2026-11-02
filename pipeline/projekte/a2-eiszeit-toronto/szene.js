@@ -59,7 +59,7 @@ function eisMaterial(uK, uDunst, uDunstF) {
   vec4 mvPosition = viewMatrix * lpWp;
   gl_Position = projectionMatrix * mvPosition;`);
     sh.fragmentShader = sh.fragmentShader.replace("#include <common>", `#include <common>
-varying vec3 vEisO; varying vec3 vEisN; varying float vEisD; uniform vec3 uDunst; uniform float uDunstF;
+varying vec3 vEisO; varying vec3 vEisN; varying float vEisD; uniform vec3 uDunst; uniform float uDunstF; uniform float uK;
 float eH(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
 float eN(vec2 p) { vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f); return mix(mix(eH(i), eH(i + vec2(1, 0)), u.x), mix(eH(i + vec2(0, 1)), eH(i + vec2(1, 1)), u.x), u.y); }`)
       .replace("#include <color_fragment>", `#include <color_fragment>
@@ -76,7 +76,7 @@ float eN(vec2 p) { vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 
   c = mix(c, vec3(0.42, 0.40, 0.38) * (0.8 + 0.3 * eN(vEisO.xy * 0.08)), schutt * 0.85);
   diffuseColor.rgb = c * (0.95 + 0.08 * eN(vEisO.xz * 0.05));`)
       .replace("#include <dithering_fragment>", `#include <dithering_fragment>
-  gl_FragColor.rgb = mix(gl_FragColor.rgb, uDunst, (1.0 - exp(-vEisD / 70000.0)) * uDunstF);`);
+  gl_FragColor.rgb = mix(gl_FragColor.rgb, uDunst, (1.0 - exp(-vEisD / mix(70000.0, 300000.0, 1.0 - uK))) * uDunstF);   // fern weniger Dunst: Linie am Horizont sichtbar`);
   };
   return m;
 }

@@ -29,8 +29,8 @@ export async function baue({ renderer, T, dauer, schatten, Q }) {
   szene.background = new THREE.Color("#040507");
   const XA = -0.68, XB = 0.68;
   rigLabor(szene, renderer, { schatten: schatten > 0 ? 1024 : 0, spots: [{ pos: [XA, 7, 0.4], staerke: 18, winkel: 0.2 }, { pos: [XB, 7, 0.4], staerke: 18, winkel: 0.2 }] });
-  szene.add(laborBank({ breite: 18, tiefe: 7, spiegel: AUS.has("spiegel") ? 0 : 0.55 }));
-  const wand = gegenlichtWand({ farbe: "#1C2638", staerke: 1.2 }); wand.position.set(0, 4, -6); szene.add(wand);
+  szene.add(laborBank({ breite: 18, tiefe: 7, spiegel: AUS.has("spiegel") ? 0 : 0.35 }));
+  const wand = gegenlichtWand({ farbe: "#1A2334", staerke: 1.0 }); wand.position.set(0, 4, -6); szene.add(wand);
   const A = glasGefaess({ farbe: TEAM_A, max: 400, teilung: 25, beschriftung: 100, seed: 1 });
   const B = glasGefaess({ farbe: TEAM_B, max: 400, teilung: 25, beschriftung: 100, seed: 2 });
   A.position.x = XA; B.position.x = XB;

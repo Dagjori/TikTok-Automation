@@ -42,18 +42,18 @@ export async function baue({ renderer, T, dauer, schatten, Q }) {
     szene.add(staub({ anzahl: 450, bereich: [6, 7, 5], mitte: [0.2, 3.5, 0.6], groesse: 0.011, staerke: 1.6, aussen: 0.0, kegel: { spitze: [0.2, 9.5, 0.6], richtung: [0, -1, 0], winkel: 0.33 } }));
   }
 
-  const w = waage({ breite: 3.4, hoehe: 2.3, schalenRadius: 0.6, faden: 1.05 });
+  const w = waage({ breite: 2.7, hoehe: 2.1, schalenRadius: 0.52, faden: 0.95 });
   w.rotation.y = -0.55;
   szene.add(w);
   // Teamlicht unter den Schalen (Lichtfleck in Teamfarbe auf dem Boden)
   const fleckA = lichtPfuetze({ radius: 1.1, farbe: TEAM_A, staerke: 0.32, exponent: 2 }), fleckB = lichtPfuetze({ radius: 1.1, farbe: TEAM_B, staerke: 0.32, exponent: 2 });
   fleckA.userData.dynamisch = fleckB.userData.dynamisch = true;
   szene.add(fleckA, fleckB);
-  // Inhalt: links 10 Scheine à 100 (1.000 €), rechts Münzen (je Münze 50 €), 4 Stapel
-  const scheine = scheinBuendel({ farbe: TEAM_A, wert: "100", max: 10, laenge: 0.82, breite: 0.4 });
+  // Inhalt: links 20 Scheine à 50 (1.000 €), rechts Münzen (je Münze 50 €), 4 Stapel
+  const scheine = scheinBuendel({ farbe: TEAM_A, wert: "50", max: 20, laenge: 0.7, breite: 0.34 });
   scheine.rotation.y = 0.5;
   w.links.add(scheine);
-  const stapel = [[-0.2, -0.12, "silber"], [0.14, -0.2, "gold"], [0.02, 0.2, "silber"], [0.3, 0.12, "gold"]].map(([x, z, art], i) => {
+  const stapel = [[-0.17, -0.1, "silber"], [0.12, -0.17, "gold"], [0.0, 0.17, "silber"], [0.26, 0.1, "gold"]].map(([x, z, art], i) => {
     const s = muenzStapel({ art, max: 14, seed: i + 3, radius: 0.12 });
     s.position.set(x, 0, z);
     w.rechts.add(s);
@@ -69,7 +69,7 @@ export async function baue({ renderer, T, dauer, schatten, Q }) {
   const kamera = new THREE.PerspectiveCamera(30, 1080 / 1920, 0.1, 100);
   const regie = new Regie(kamera, (t) => {
     const k = ease.inOutSine(fortschritt(t, 0, dauer));
-    return { pos: [1.6 - 0.8 * k, 1.8 + 0.1 * k, 13.8 - 0.6 * k], ziel: [0.05, 1.42, 0], fov: 31 };
+    return { pos: [1.4 - 0.7 * k, 1.75 + 0.1 * k, 11.2 - 0.5 * k], ziel: [0.05, 1.2, 0], fov: 30 };
   });
   regie.atmen({ staerke: 0.01, tempo: 0.25 });
   const post = { ...GRADING.studio, strahlen: AUS.has("strahlen") ? 0 : 0.55, strahlenPunkt: [0.2, 9.4, 0.6], strahlenSchwelle: 1.4, strahlenLaenge: 0.7, strahlenFarbe: [1, 0.95, 0.88] };
