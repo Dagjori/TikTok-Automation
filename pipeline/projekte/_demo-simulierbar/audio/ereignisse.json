@@ -3,8 +3,8 @@
  "erzeugt": "render.js",
  "projekt": "_demo-simulierbar",
  "fps": 30,
- "dauer": 11.9,
- "stimmEnde": 11.092,
+ "dauer": 9.4,
+ "stimmEnde": 8.587,
  "timing": "kein Sprechtext (Format ohne Stimme, z. B. Account 2)",
  "protokoll": true,
  "teppich": "strasse",
@@ -12,12 +12,12 @@
   "version": 1,
   "teams": {
    "a": {
-    "name": "PENDELN",
-    "farbe": "#FF8A3D"
+    "name": "PARKHAUS",
+    "farbe": "#3D8BFF"
    },
    "b": {
-    "name": "NÄHER",
-    "farbe": "#2EC4B6"
+    "name": "SUCHEN",
+    "farbe": "#FF8A3D"
    }
   },
   "schleife": null,
@@ -30,66 +30,41 @@
  "ereignisse": [
   {
    "quelle": "Tafel",
-   "t": 3.633,
+   "t": 0.633,
    "typ": "zaehler",
-   "dauer": 7.833,
+   "dauer": 0.033,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Tafel",
-   "t": 3.667,
+   "t": 0.667,
    "typ": "fuehrung",
    "klang": "ding",
    "text": "rechts vorn"
   },
   {
    "quelle": "Tafel",
-   "t": 3.667,
+   "t": 2.767,
    "typ": "zaehler",
-   "dauer": 7.8,
+   "dauer": 6.62,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Tafel",
-   "t": 3.946,
+   "t": 2.797,
    "typ": "uhr",
-   "dauer": 0.033,
+   "dauer": 6.59,
    "laufend": true,
    "klang": "uhr"
   },
   {
    "quelle": "Tafel",
-   "t": 4.08,
-   "typ": "uhr",
-   "dauer": 6.833,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 11.013,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 11.146,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 11.48,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
+   "t": 6.433,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
   }
  ],
  "klang": []
