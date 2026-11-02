@@ -75,6 +75,16 @@
 - **Neuer Plan:** `data/plan/account2-30-tage.csv`, `account2-plan.json` (75 Einträge, Sätze für die ersten 8), `docs/17`, PDF `docs/plan/account2-30-tage-plan.pdf`. Alte `account2-naechste-tage.json` gelöscht (Laacher See usw. ersetzt).
 - **Cockpit:** alle 60 Account-2-Themen als Status „idee“ eingetragen (03.11.–02.12.), alte Einträge 03./04.11. ersetzt. Übersicht-PDF `docs/plan/account2-uebersicht-2026-11-02.pdf` neu, Regelwerk `regelwerk-2026-11-02-nachmittag.pdf`.
 
+## Simulierbar Schwerpunkt Geld (02.11. abends, Inhaber)
+- Neuer Plan 03.11.–02.12.: 60 Videos (53 GELD, 7 ALLTAG mit Euro-Ergebnis) plus 15 Reserve, Ø Maßstab-Score 82,3. Zeilen 31.10.–02.11. unverändert. `data/plan/30-tage.csv`, `data/plan/simulierbar-plan.json` (mit Captions), `docs/12` neu, `docs/05` angepasst, PDF `docs/plan/30-tage-plan.pdf` (40 Seiten).
+- Konkurrenz-Sperrliste in `docs/12` §3.4 (u. a. @kontostand.vs, @wissentogo_de, @alltaginzahlen, @kurzsimuliert). Rohdaten nur im Scratchpad.
+- Offen: Werte mit „prüfen“ (Homeoffice-Pauschale, Grundfreibetrag 2026 u. a., Liste `docs/12`), Rente mit 63 am 04.11. ist politiknah (Tausch mit Reserve möglich).
+
+## Cockpit-Verbindung (02.11. abends, Inhaber)
+- Cockpit Version 2 mit Fähigkeit `comments`: Freigeben/Ablehnen/Kommentar senden zusätzlich „an Claude“ (weckt die beobachtende Sitzung). Antwort von Claude steht im Feld `claude.antwort`.
+- Alle 60 Simulierbar- und 60 Account-2-Themen sind im Cockpit (Status „idee“).
+- **Verpasste Entscheidungen von 10:55 UTC** (vor der Verbindung) nachgeholt: Mittagessen (frei, bleibt 03.11. abends), Schere-Stein-Papier (frei, aber durch Geld-Plan ersetzt, Reserve), Stickstoff Account 2 (frei mit Kommentar „sofort posten“, aber durch die spätere Regel „kein 5 Sekunden“ überholt und gesperrt). Antworten stehen im Cockpit.
+
 ## Nächste Schritte
 
 | # | Schritt | Wer | Zeit | Status |

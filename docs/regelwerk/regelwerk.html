@@ -36,6 +36,7 @@
   <div class="box anders">
     <h2>Geändert (02.11., Nachmittag)</h2>
     <ul>
+      <li><b>Simulierbar: Schwerpunkt GELD.</b> Jedes Video endet mit einem Ergebnis in Euro, mind. 50 von 60 Videos GELD, nur neue Themen. <span class="vorher">Vorher: GELD und ALLTAG gleichrangig.</span></li>
       <li><b>@stelldirvor.pov: große, globale Wissenschaftsthemen</b> aus Physik, Mathe, Biologie, Chemie, Astronomie, Geologie und Klima. <span class="vorher">Vorher: Alltags- und Deutschland-Szenarien (z. B. Schokolade, Laacher See).</span></li>
       <li><b>Kein „5 Sekunden“-Rahmen</b> mehr: Ein Ereignis dauert so lange, wie es physikalisch dauert, langsame Vorgänge im Zeitraffer. <span class="vorher">Vorher: „Was wäre, wenn … 5 Sekunden …“.</span></li>
       <li><b>Titelfrage 0,4–4,4 s</b>, wie in den Referenzen gemessen. <span class="vorher">Vorher: 0–3,5 s (eigene Schätzung, korrigiert).</span></li>
@@ -44,6 +45,7 @@
   <div class="box neu">
     <h2>Hinzugefügt (02.11., Nachmittag)</h2>
     <ul>
+      <li><b>Cockpit reagiert sofort:</b> Freigeben, Ablehnen und Kommentar gehen direkt an Claude, die Antwort steht im Cockpit. Ohne verbundene Sitzung arbeitet Claude sie beim nächsten Start ab.</li>
       <li><b>Fester Skill „stelldirvor-video“</b>, nur für Account 2: gemessene Maße, Schrift, Farben je Phase, Licht und Effekte, Ton-Verlauf, Prüfung mit 22 Pflichtpunkten.</li>
       <li><b>Neuer 30-Tage-Plan Account 2</b>: 60 Videos plus 15 Reserve, Sperrliste mit allen Themen von Lunar Animations und der US-Konten.</li>
       <li><b>Welt auf Referenzniveau:</b> Jede der 6 Grundwelten wird beim Erstbau so detailreich wie die Referenzen (Häuser, Bäume, Wasser, Menschen), bevor darin gerendert wird.</li>
@@ -54,7 +56,7 @@
 <div class="box regeln">
   <h2>Aktuelle Regeln (Kurzfassung)</h2>
   <div class="spalten">
-    <div class="regel"><b class="t">1 · Kanal und Ziel</b>Simulierbar (@simulierbar), Nische „Alltag durchgerechnet“, intern GELD und ALLTAG (nie im Video). Ziel: 10k Follower und CRP. YouTube kommt später.</div>
+    <div class="regel"><b class="t">1 · Kanal und Ziel</b>Simulierbar (@simulierbar), Nische „Alltag durchgerechnet“ mit Schwerpunkt GELD (jedes Video mit Euro-Ergebnis), intern GELD und ALLTAG (nie im Video). Ziel: 10k Follower und CRP. YouTube kommt später.</div>
     <div class="regel"><b class="t">2 · Videoaufbau (feste Reihenfolge)</b>
       <ul>
         <li><b>0–16 s:</b> Hook als Duell-Frage oder Du-Szenario (fertig vor 5 s, Stimme unter 0,2 s), Regeln als Chips, Denkfalle „Klar … Oder?“, ruhig, kein „Los geht's“.</li>
@@ -69,7 +71,7 @@
     <div class="regel"><b class="t">8 · Caption (TikTok = YouTube)</b>Eine Zeile: „Hook-Frage? Emoji Ich hab's simuliert. Kommentarfrage? 👇“ plus 5 Hashtags (3 Thema, #wissen, #simulation). Höchstens ca. 150 Zeichen, kein #fyp, keine Quellen oder Hinweise.</div>
     <div class="regel"><b class="t">9 · Posten</b>Vollautomatisch über Buffer: Claude prüft selbst und plant zur festen Posting-Zeit (beide Accounts 2 pro Tag), ohne Freigabe. Nach dem Posten prüft Claude, ob das Video öffentlich ist. Kein KI-Label (Ausnahme: realistische KI-Inhalte). Profil ohne E-Mail und Telefonnummer.</div>
     <div class="regel"><b class="t">10 · Prüfung vor Übergabe</b><i>qc/massstab.py</i> (alle Pflichtpunkte „ja“), Text-Überlappung, Kontaktbogen sichten, Lautheit messen. Claude nimmt jedes Video selbst ab, Fehler gehen zurück an den Agenten.</div>
-    <div class="regel"><b class="t">11 · Arbeitsweise</b>Pro Tag 4 Videos (2 je Account) für den nächsten Tag, nie mehr gleichzeitig, höchstens 2 Agenten parallel. Reihenfolge laut 30-Tage-Plänen. Arbeitsstand ins Repo (STATUS.md), Entscheidungen in ENTSCHEIDUNGEN.md. Das Repo ist öffentlich: keine Konkurrenzinhalte, keine Geheimnisse. Trend-Radar täglich, Vorschläge ab Score 70.</div>
+    <div class="regel"><b class="t">11 · Arbeitsweise</b>Pro Tag 4 Videos (2 je Account) für den nächsten Tag, nie mehr gleichzeitig, höchstens 2 Agenten parallel. Reihenfolge laut 30-Tage-Plänen. Arbeitsstand ins Repo (STATUS.md), Entscheidungen in ENTSCHEIDUNGEN.md. Das Repo ist öffentlich: keine Konkurrenzinhalte, keine Geheimnisse. Trend-Radar täglich, Vorschläge ab Score 70. Cockpit-Entscheidungen sofort abarbeiten.</div>
     <div class="regel"><b class="t">12 · Modelle und Verbrauch</b>Opus 5.5 für neue Szenentypen und Abnahme, Sonnet 5.5 für die tägliche Produktion, Haiku 5.5 für Titel und Captions. Verbrauch über /usage beobachten.</div>
     <div class="regel"><b class="t">13 · Account 2 @stelldirvor.pov</b>Nach dem Skill „stelldirvor-video“, strikt im Format der 4 Referenzvideos (Lunar Animations): keine Stimme, 80 s, feste Ich-Perspektive von erhöhtem Standpunkt, Titelfrage 0,4–4,4 s, Messwert-Anzeige links bis „HIER“, kurze kursive Sätze, Atmo, schwarzer Abspann mit Faktenzeile. Große globale Wissenschaftsthemen, kein „5 Sekunden“, kein Deutschland-Bezug. Gesperrt: Themen von Lunar und den US-Konten. 2 Videos pro Tag nach docs/17.</div>
   </div>

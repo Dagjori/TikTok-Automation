@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Erzeugt docs/plan/30-tage-plan.pdf aus data/plan/30-tage.csv (Simulierbar, Standard)
+// Erzeugt docs/plan/30-tage-plan.pdf aus data/plan/30-tage.csv (Simulierbar, Standard; Captions aus data/plan/simulierbar-plan.json, Uhrzeiten aus data/plan/posting_zeiten.json)
 // bzw. mit --plan account2 docs/plan/account2-30-tage-plan.pdf aus data/plan/account2-30-tage.csv (@stelldirvor.pov, Spalten seit 02.11.2026).
 //
 // Aufruf (Repo-Wurzel, Windows und Linux):
@@ -25,7 +25,7 @@ const A2 = PLAN === "account2";
 const CSV_PATH = A2 ? path.join(ROOT, "data", "plan", "account2-30-tage.csv") : path.join(ROOT, "data", "plan", "30-tage.csv");
 const PLANSTAND = A2
   ? "02.11.2026, komplett neu nach Format docs/16 §12/§12a (keine Stimme, globale Gedankenexperimente); 2 Videos pro Tag"
-  : "01.11.2026 (Termine verschoben: GTA 6 und Spurwechsel sind gepostet, heute geht es mit Treppe oder Aufzug weiter)";
+  : "02.11.2026, komplett neu mit Geld-Schwerpunkt (jedes Video mit Euro-Ergebnis, nur neue Themen); Zeilen 31.10.–02.11. unverändert; 2 Videos pro Tag 03.11.–02.12.";
 
 const argVal = (name) => {
   const i = args.indexOf(name);
@@ -66,7 +66,17 @@ const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").
 const WT = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
 const dateOf = (iso) => { const [y, m, d] = iso.split("-").map(Number); return new Date(Date.UTC(y, m - 1, d)); };
 const tag = (iso) => { const d = dateOf(iso); return `${WT[d.getUTCDay()]} ${String(d.getUTCDate()).padStart(2, "0")}.${String(d.getUTCMonth() + 1).padStart(2, "0")}.`; };
-const SLOT = { mittag: "Mittag · 12:00", bonus: "Bonus · 16:00", abend: "Abend · 20:00" };
+// Account 1: Uhrzeiten je Wochentag aus data/plan/posting_zeiten.json; Zeilen vor dem 03.11. ohne Uhrzeit (schon gepostet bzw. eingeplant)
+const A1_ZEITEN = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, "data", "plan", "posting_zeiten.json"), "utf8")).kanaele.simulierbar; } catch { return null; } })();
+function slotLabel(r) {
+  if (r.datum === "reserve") return "Reserve";
+  const name = { mittag: "Mittag", abend: "Abend", bonus: "Bonus" }[r.slot] || r.slot;
+  if (r.datum < "2026-11-03" || !A1_ZEITEN) return name;
+  const wt = dateOf(r.datum).getUTCDay();
+  const z = (wt === 0 || wt === 6 ? A1_ZEITEN["sa-so"] : A1_ZEITEN["mo-fr"]) || {};
+  return z[r.slot] ? `${name} · ${z[r.slot]}` : name;
+}
+const CAPTIONS = (() => { try { return Object.fromEntries(JSON.parse(fs.readFileSync(path.join(ROOT, "data", "plan", "simulierbar-plan.json"), "utf8")).map((e) => [e.titel, e.caption_vorschlag])); } catch { return {}; } })();
 const AUFWAND = { 1: "0,5 Std.", 2: "1,5 Std.", 3: "3 Std.", 4: "5 Std." };
 const PRIO = { A: "A · bleibt fix", B: "B · darf 1–3 Tage rutschen", C: "C · darf entfallen" };
 const MAX = { D: 30, K: 25, B: 20, L: 15, F: 10 };
@@ -74,13 +84,12 @@ const KRIT = { D: "Duell/Rennen mit Zählern", K: "kontraintuitiv mit Bedingung"
 
 function scoreClass(s) { s = Number(s); return s >= 85 ? "s-top" : s >= 75 ? "s-gut" : s >= 65 ? "s-mittel" : "s-knapp"; }
 function statusKind(st) {
-  st = st.replace(/ · verschoben 01\.11\. \([^)]*\)/, ""); // reine Terminverschiebung vom 01.11. zählt nicht als Änderung
-  if (st.startsWith("gepostet")) return ["gepostet", "st-alt"];
-  if (st.startsWith("Neubau")) return ["Neubau nötig", "st-neubau"];
-  if (st.startsWith("geplant (neu 31.10.") && /Score|Maßstab|eigene Idee/.test(st)) return ["neu im Plan", "st-neu"];
-  if (st.includes("umgebaut") || st.includes("Hook nach Maßstab")) return ["umgebaut", "st-umbau"];
-  if (st.includes("verschoben") || st.includes("vorgezogen")) return ["verschoben", "st-schieb"];
-  return ["wie bisher", "st-alt"];
+  if (st.startsWith("Reserve")) return ["Reserve", "st-alt"];
+  if (st.startsWith("gepostet") || st.startsWith("fertig")) return ["gepostet bzw. eingeplant", "st-alt"];
+  if (st.includes("halb gebaut")) return ["halb gebaut", "st-neubau"];
+  if (st.includes("übernommen")) return ["aus altem Plan", "st-umbau"];
+  if (st.includes("neu 02.11.")) return ["neu (Geld)", "st-neu"];
+  return ["geplant", "st-alt"];
 }
 function teile(begr) {
   const m = begr.match(/^D(\d+) K(\d+) B(\d+) L(\d+) F(\d+)\s*·\s*(.*)$/);
@@ -94,8 +103,15 @@ function farben(s) {
   while ((m = re.exec(s))) out.push({ name: m[1].trim(), hex: "#" + m[2], rolle: m[3] });
   return out;
 }
-const woche = (iso) => { const d = dateOf(iso).getUTCDate(); return d <= 7 ? 1 : d <= 14 ? 2 : d <= 21 ? 3 : d <= 28 ? 4 : 5; };
-const WOCHEN = { 1: "So 01.–Sa 07.11.", 2: "So 08.–Sa 14.11.", 3: "So 15.–Sa 21.11.", 4: "So 22.–Sa 28.11.", 5: "So 29.–Mo 30.11." };
+const A1_WOCHEN = [["2026-11-03", "2026-11-08", "Di 03.–So 08.11."], ["2026-11-09", "2026-11-15", "Mo 09.–So 15.11."], ["2026-11-16", "2026-11-22", "Mo 16.–So 22.11."],
+  ["2026-11-23", "2026-11-29", "Mo 23.–So 29.11."], ["2026-11-30", "2026-12-02", "Mo 30.11.–Mi 02.12."]];
+const A1_CSS = `.cards .card { font-size:7pt; line-height:1.22; padding:1.8mm 2.8mm 1.6mm; margin-bottom:2.2mm; }
+.cards .card h3 { font-size:9.6pt; } .cards .card header { margin-bottom:0.8mm; }
+.cards .hook { font-size:7.8pt; padding:0.9mm 2.2mm; margin-bottom:0.7mm; }
+.cards table.dl th { width:21mm; font-size:6.5pt; padding:0.35mm 1.5mm 0.35mm 0; } .cards table.dl td { padding:0.35mm 0; }
+.cards .bars { margin:0.2mm 0 0.3mm; } .cards .why { font-size:6.6pt; }
+.cards .facts { margin-top:0.7mm; padding-top:0.7mm; gap:0.5mm 3mm; } .cards .facts b { font-size:6.9pt; }
+.cards .big { width:10.5mm; height:10.5mm; } .cards .big b { font-size:10.5pt; }`;
 
 // ---------- Schrift ----------
 function fontFaces() {
@@ -109,51 +125,88 @@ function fontFaces() {
   return css;
 }
 
-// ---------- Inhalt ----------
-const scores = rows.map((r) => Number(r.massstab_score));
-const avg = (scores.reduce((a, b) => a + b, 0) / scores.length).toFixed(1).replace(".", ",");
-const haupt = rows.filter((r) => r.slot !== "bonus").length;
-const bonus = rows.length - haupt;
-const kinds = {};
-rows.forEach((r) => { const k = statusKind(r.status)[0]; kinds[k] = (kinds[k] || 0) + 1; });
-const top5 = [...rows].filter((r) => !r.status.startsWith("gepostet")).sort((a, b) => b.massstab_score - a.massstab_score || a.nr - b.nr).slice(0, 5);
+// ---------- Inhalt (Account 1 Simulierbar, Planstand 02.11.2026: Geld-Schwerpunkt) ----------
 const erzeugt = new Date().toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" });
 
 function pill(text, cls) { return `<span class="pill ${cls}">${esc(text)}</span>`; }
 function badge(s) { return `<span class="score ${scoreClass(s)}">${esc(s)}</span>`; }
 
-function deckblatt() {
-  return `
+// Konkurrenz-Sperrliste (öffentliche Embed-Listen und Videoseiten, 02.11.2026; Details docs/12 §3.4)
+const A1_SPERRE = [
+  ["Mieten oder kaufen", "@kontostand.vs 617k · @wissentogo_de 34k"],
+  ["Leasen, finanzieren oder bar (inkl. 0-%-Falle)", "@wissentogo_de 363k"],
+  ["Studium oder Ausbildung", "@kontostand.vs 359k · @wissentogo_de"],
+  ["E-Auto oder Benziner", "@alltaginzahlen 198k"],
+  ["Fenster auf oder Klimaanlage (Sprit)", "@kurzsimuliert 196k"],
+  ["Spülmaschine oder Handspülen", "@kurzsimuliert 124k"],
+  ["„So viel Geld ausgeben“ (Traumgeld)", "@mal.angenommen 879k"],
+  ["Auto oder Flieger (mit Personen-Wendung)", "@wissentogo_de 57k"],
+  ["Wärmepumpe oder Gasheizung", "@wissentogo_de 51k"],
+  ["Heizung nachts aus", "@rechnetsichdas 22k · @alltagsduell"],
+  ["Reifendruck, Tempo 130/160, Ganzjahresreifen", "@kurzsimuliert 15k · @alltaginzahlen 5k/4k"],
+  ["Neuwagen oder Gebrauchter", "@geldsimuliert 3k · @wissentogo_de"],
+  ["Früh anfangen zu sparen, Million, Inflation", "@geldsimuliert 0,5–2k"],
+  ["Kind kostet bzw. Kindergeld bzw. kinderfrei", "@wissentogo_de · @alltagsformel · @kontostand.vs"],
+  ["Tanken: Umweg und 12-Uhr-Regel, Trockner, LED, Abos", "@alltaginzahlen 1–1,5k · @alltagsformel"],
+  ["Maßstab K1–K4 (Regen, Pausen, Tsunami, Duschen)", "docs/15 §9 · @kurzsimuliert bis 2,1 Mio."],
+];
+const A1_REGELN = [
+  ["Keine Finanz-Betrugsmaschen, keine „get-rich-quick“-Versprechen, keine MLM", "Community Guidelines, Frauds and Scams (gültig seit 24.09.2026)"],
+  ["Werbung für eigene Produkte oder bezahlte Inhalte kennzeichnen", "Community Guidelines, Commercial Disclosure"],
+  ["Finanzdienstleistungen (Kredite, Karten, Versicherungen, Anlagen) als Branded Content nur 18+ und eingeschränkt", "Branded Content Policy (gültig seit 30.10.2026)"],
+  ["Irreführende Inhalte mit möglichem Schaden fliegen aus dem Für-dich-Feed", "Community Guidelines, Misinformation und FYF-Standards"],
+  ["CRP: mindestens 1 Minute, original, keine Werbung, hohe Qualität", "Creator Rewards Program Terms EEA"],
+];
+const A1_TERMINE = [
+  "Start Di 03.11. · Mittagessen (halb gebaut) · Erstbau Isometrisch (Stil 2) und Karte (Stil 8) für Sa 07.11.",
+  "Singles Day Mi 11.11. · Erstbau Holzspielzeug (Stil 9) für Do 12.11. und Filz (Stil 11) für So 15.11.",
+  "Erstbau Papier-Diorama (Stil 10) für Mo 16.11. · GTA-6-Release Do 19.11. · Steuerklassen-Frist 30.11. (Video Fr 20.11.)",
+  "Kfz-Stichtag 30.11. (Video Mo 23.11.) · Black Friday Fr 27.11. (Videos 24. und 27.11.) · Weihnachtsgeld-Zeit · Monatsende · 1. Advent So 29.11.",
+  "Cyber Monday 30.11. · Wichteln · Jahresende-Steuer (01.12.) · Sparvorsätze 2027 (02.12.)",
+];
+
+function htmlAccount1() {
+  const alt = rows.filter((r) => r.datum !== "reserve" && r.datum < "2026-11-03");
+  const neu = rows.filter((r) => r.datum !== "reserve" && r.datum >= "2026-11-03");
+  const reserve = rows.filter((r) => r.datum === "reserve");
+  neu.forEach((r, i) => (r.pn = `#${i + 1}`));
+  reserve.forEach((r, i) => (r.pn = `R${i + 1}`));
+  const sc = neu.map((r) => Number(r.massstab_score));
+  const avg = (sc.reduce((a, b) => a + b, 0) / sc.length).toFixed(1).replace(".", ",");
+  const geld = neu.filter((r) => r.rubrik === "GELD").length;
+  const stile = new Set(neu.map((r) => r.stil.split(" ")[0]));
+  const erstbau = neu.filter((r) => /Erstbau/.test(r.vorlage)).length;
+  const top5 = [...neu].sort((a, b) => b.massstab_score - a.massstab_score || a.nr - b.nr).slice(0, 5);
+  const avg10 = (neu.slice(0, 20).reduce((s, r) => s + Number(r.massstab_score), 0) / 20).toFixed(1).replace(".", ",");
+
+  const deck = `
 <section class="cover">
-  <div class="kicker">Simulierbar · Content-Plan</div>
-  <h1>30-Tage-Plan<br><span>01.–30. November 2026</span></h1>
-  <p class="lead">Jedes Video im Duell- bzw. Rennformat nach dem Maßstab aus vier viralen Simulationsvideos. Pro Video: Hook, Denkfalle, zwei Wendungen, Stil, Teamfarben, Rechnung, Quellen, Aufwand und Maßstab-Score.</p>
-  <div class="stand">Planstand: ${esc(PLANSTAND)}<br>PDF erzeugt am ${esc(erzeugt)} aus <code>data/plan/30-tage.csv</code></div>
-
+  <div class="kicker">Simulierbar · Content-Plan · Schwerpunkt Geld</div>
+  <h1>30-Tage-Plan<br><span>03. November – 02. Dezember 2026</span></h1>
+  <p class="lead">Jedes Video ist ein Duell zweier echter Alternativen derselben Entscheidung und endet mit einem Ergebnis in Euro auf der Anzeigetafel. Nur neue Themen: Was ein Konkurrent schon viral gemacht hat, ist gesperrt. Pro Video: Hook, Denkfalle, zwei Wendungen, Stil, Teamfarben, Rechnung, Quellen, Konkurrenz-Check, Caption und Maßstab-Score.</p>
+  <div class="stand">Planstand: ${esc(PLANSTAND)}<br>PDF erzeugt am ${esc(erzeugt)} aus <code>data/plan/30-tage.csv</code> · Text: <code>docs/12-30-tage-plan.md</code> · Captions: <code>data/plan/simulierbar-plan.json</code></div>
   <div class="kpis">
-    <div class="kpi"><b>${rows.length}</b><span>Videos<br>${haupt} Haupt, ${bonus} Bonus</span></div>
-    <div class="kpi"><b>${avg}</b><span>Ø Maßstab-Score<br>min. ${Math.min(...scores)}, max. ${Math.max(...scores)}</span></div>
-    <div class="kpi"><b>${kinds["neu im Plan"] || 0}</b><span>neue Themen<br>(Überarbeitung 31.10.)</span></div>
-    <div class="kpi"><b>${(kinds["umgebaut"] || 0) + (kinds["verschoben"] || 0)}</b><span>umgebaut bzw.<br>verschoben</span></div>
+    <div class="kpi"><b>${neu.length}</b><span>Videos (2 pro Tag)<br>+ ${reserve.length} Reservethemen</span></div>
+    <div class="kpi"><b>${avg}</b><span>Ø Maßstab-Score (S)<br>min. ${Math.min(...sc)}, max. ${Math.max(...sc)}, erste 10 Tage ${avg10}</span></div>
+    <div class="kpi"><b>${geld} / ${neu.length - geld}</b><span>GELD / ALLTAG<br>alle mit Euro-Ergebnis</span></div>
+    <div class="kpi"><b>${stile.size}</b><span>Stile im Einsatz<br>${erstbau} Erstbauten, nie 2× hintereinander</span></div>
   </div>
-
   <div class="cols">
     <div class="box">
       <h3>Kurzüberblick</h3>
       <ul>
-        <li>2 Videos pro Tag (12:00 und 20:00), dazu höchstens 3 Bonusvideos pro Woche (16:00). Uhrzeiten sind eine Annahme (A), bis Analytics vorliegen.</li>
-        <li>Produktion nur auf dein Startsignal, in der Reihenfolge dieses Plans. Fällt ein Tag aus, rutscht die Liste nach; Terminvideos (Priorität A) bleiben fix.</li>
-        <li>GTA 6 weltweit und Spurwechsel sind bereits gepostet (alte Version, kein Neubau). Ab Sonntag 01.11. geht es mit „Treppe oder Aufzug“ (12:00) und „200 € oder 100 € steuerfrei“ (20:00) weiter. Termin-Videos behalten ihr Datum, der Rest ist nachgerückt.</li>
-        <li>Jedes Video: Hook in 5 s, „Klar … Oder?“ und „Los geht's.“ vor Sekunde 16, erste Wendung bei 18–25 s, Folgen-Aufruf bei ca. 20 s, Schluss „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“, letztes Bild = erstes Bild.</li>
-        <li>Stil je Video aus dem Katalog (derzeit 15 Stile), passend zum Thema, nie zweimal hintereinander. Untertitel Wort für Wort, Stimme Ben (Eleven v4). Keine Rubrik und kein Kanalname im Bild.</li>
+        <li>2 Videos pro Tag: Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30 (Europe/Berlin). Produktion am Vortag, nach Prüfung plant Claude in Buffer ein.</li>
+        <li>Die Zeilen vom 31.10. bis 02.11. bleiben unverändert (gepostet bzw. eingeplant). Ab 03.11. ist alles neu.</li>
+        <li>Was bei der Konkurrenz zieht: große Lebensentscheidungen mit großer Endzahl (bis 617k Aufrufe). Kleine Spartipps bleiben meist unter 5k. Deshalb liegen Gehalt, Rente, Wohnen und Auto in den ersten 10 Tagen.</li>
+        <li>Finanzthemen nur als Modellrechnung: keine Produkte, Banken, Coins oder Aktien, kein Kaufaufruf, kein „schnell reich“. Zahlen für 2026 mit (F), (S), (A); Unklares steht unter „prüfen“.</li>
+        <li>Jedes Video: Hook in 5 s, „Klar … Oder?“ vor Sekunde 16, kein „Los geht's“, erste Wendung bei 18–25 s, Folgen-Aufruf bei ca. 20 s, genauer Schluss, letztes Bild = erstes Bild.</li>
       </ul>
     </div>
     <div class="box">
       <h3>Die 5 stärksten Videos (S)</h3>
-      <ol class="top">${top5.map((r) => `<li>${badge(r.massstab_score)}<span><b>${esc(r.titel)}</b><br><small>${esc(tag(r.datum))} · ${esc(SLOT[r.slot])}</small></span></li>`).join("")}</ol>
+      <ol class="top">${top5.map((r) => `<li>${badge(r.massstab_score)}<span><b>${esc(r.titel)}</b><br><small>${esc(tag(r.datum))} · ${esc(slotLabel(r))} · ${esc(r.rubrik)}</small></span></li>`).join("")}</ol>
     </div>
   </div>
-
   <div class="cols">
     <div class="box">
       <h3>Maßstab-Score (0–100, Schätzung)</h3>
@@ -167,42 +220,56 @@ function deckblatt() {
         <tr><td><b>(S)</b></td><td>Schätzung</td></tr>
         <tr><td><b>(A)</b></td><td>Annahme</td></tr>
         <tr><td><b>(B)</b></td><td>Beispielwert, wird vor der Produktion gerechnet</td></tr>
-        <tr><td><b>Hypothese</b></td><td>erst die Rechnung entscheidet</td></tr>
-        <tr><td><b>prüfen</b></td><td>Quelle bzw. Rechtsstand vor der Produktion klären</td></tr>
+        <tr><td><b>Rechnung</b></td><td>eigene Rechnung, z. B. Netto-Modul PAP 2026</td></tr>
+        <tr><td><b>prüfen</b></td><td>Zahl bzw. Rechtsstand vor der Produktion klären</td></tr>
       </table>
-      <p class="hint">Aufwand: 1 = 0,5 Std., 2 = 1,5 Std., 3 = 3 Std., 4 = 5 Std. aktive Agentenarbeit (S).</p>
+      <p class="hint">Aufwand: 2 = 1,5 Std., 3 = 3 Std., 4 = 5 Std. aktive Agentenarbeit (S); Erstbau eines Stils zusätzlich 3–8 Std.</p>
     </div>
   </div>
 </section>`;
-}
 
-function aenderungen() {
-  const neu = rows.filter((r) => statusKind(r.status)[0] !== "wie bisher");
-  return `
+  const aend = `
 <section class="page">
-  <h2>Was sich am 31.10. geändert hat</h2>
-  <p class="intro">Grundlage: Maßstab aus <code>docs/15-massstab.md</code>. Gesperrt, weil schon viral: Rennen oder Gehen im Regen, Pausen gegen Tempo auf der Autobahn, Tsunami-Warnzeichen, Duschen gegen Baden (inklusive Duschkosten). Konkurrenz-Check je Thema per Websuche (nur Mindest-Check, der Trend-Radar prüft am Vortag jeder Produktion erneut).</p>
-  <table class="list">
-    <thead><tr><th>#</th><th>Tag</th><th>Video</th><th>Änderung</th><th>Score</th></tr></thead>
-    <tbody>${neu.map((r) => { const [k, c] = statusKind(r.status); return `<tr><td>${r.nr}</td><td class="nowrap">${esc(tag(r.datum))}<br><small>${esc(r.slot)}</small></td><td><b>${esc(r.titel)}</b><br><small>${esc(r.status)}</small></td><td>${pill(k, c)}</td><td>${badge(r.massstab_score)}</td></tr>`; }).join("")}</tbody>
-  </table>
+  <h2>Was sich am 02.11. geändert hat</h2>
+  <p class="intro">Auftrag des Inhabers: klarer Schwerpunkt Geld, Konkurrenz ansehen, nur neue Ideen, kompletter Plan neu, heutige Videos bleiben. Von 64 offenen Themen des alten Plans sind 10 übernommen, 5 zu neuen Geld-Fragen umgebaut und 6 in der Reserve; 43 sind raus, meist ohne Euro-Ergebnis oder bei der Konkurrenz schon gelaufen (Gründe in docs/12 §3.5).</p>
+  <div class="cols">
+    <div class="box"><h3>Bleibt unverändert (31.10.–02.11.)</h3>
+      <table class="raster">${alt.map((r) => `<tr><td class="nowrap">${esc(tag(r.datum))}</td><td>${esc(r.titel)}</td><td>${badge(r.massstab_score)}</td></tr>`).join("")}</table></div>
+    <div class="box"><h3>TikTok-Regeln für Geld-Inhalte (F)</h3>
+      <table class="raster">${A1_REGELN.map(([a, b]) => `<tr><td>${esc(a)}</td><td><small>${esc(b)}</small></td></tr>`).join("")}</table>
+      <p class="hint">Folge für uns: keine Krypto-, Aktien-, Lotto- oder Wett-Themen, keine Anbieter, keine Kreditwerbung, Zahlen sauber belegt.</p></div>
+  </div>
+  <div class="box"><h3>Konkurrenz-Sperrliste (öffentliche Aufrufzahlen, 02.11.)</h3>
+    <table class="list"><thead><tr><th>Gesperrtes Thema</th><th>Konto und Aufrufe</th></tr></thead><tbody>${A1_SPERRE.map(([a, b]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join("")}</tbody></table>
+    <p class="hint">Geprüft: 14 deutsche Geld- und Simulationskonten über die öffentlichen Profil-Embeds und Videoseiten, dazu US-Konten als Ideenquelle. Der Trend-Radar prüft am Vortag jeder Produktion erneut.</p></div>
 </section>`;
-}
 
-function wochenuebersicht() {
-  let html = `<section class="page"><h2>Wochenübersicht</h2><p class="intro">Fett = Priorität A. Die Zahl im Kreis ist der Maßstab-Score, darunter Stil und Vorlage. Bonusvideos sind optional.</p>`;
-  for (let w = 1; w <= 5; w++) {
-    const wr = rows.filter((r) => woche(r.datum) === w);
+  const cell = (r) => r ? `<div class="wz ${r.prioritaet === "A" ? "prio-a" : ""}">${badge(r.massstab_score)}<div><span class="nr">${esc(r.pn)}</span> ${esc(r.titel)}<br><small>${esc(r.rubrik)} · Stil ${esc(r.stil)}${/Erstbau/.test(r.vorlage) ? " · Erstbau" : ""}</small></div></div>` : `<span class="leer">–</span>`;
+  let wochen = `<section class="page"><h2>Wochenübersicht</h2><p class="intro">Fett = Priorität A (Termin oder Top-Thema). Die Zahl im Kreis ist der Maßstab-Score, darunter Rubrik (intern) und Stil.</p>`;
+  A1_WOCHEN.forEach(([von, bis, label], i) => {
+    const wr = neu.filter((r) => r.datum >= von && r.datum <= bis);
     const tage = [...new Set(wr.map((r) => r.datum))];
-    const a = wr.filter((r) => r.prioritaet === "A").map((r) => `${tag(r.datum)} ${r.titel.split(":")[0]}`);
-    const cell = (r) => r ? `<div class="wz ${r.prioritaet === "A" ? "prio-a" : ""}">${badge(r.massstab_score)}<div><span class="nr">#${r.nr}</span> ${esc(r.titel)}<br><small>Stil ${esc(r.stil)} · ${esc(r.vorlage.split(" ")[0])}</small></div></div>` : `<span class="leer">–</span>`;
-    html += `<div class="woche"><h3>Woche ${w} · ${WOCHEN[w]} <small>${wr.length} Videos</small></h3>
-      ${a.length ? `<p class="termine">Termin- und Fundamentvideos: ${esc(a.join(" · "))}</p>` : ""}
-      <table class="wt"><thead><tr><th class="c-tag">Tag</th><th>Mittag 12:00</th><th>Bonus 16:00</th><th>Abend 20:00</th></tr></thead><tbody>
-      ${tage.map((d) => { const by = Object.fromEntries(wr.filter((r) => r.datum === d).map((r) => [r.slot, r])); return `<tr><td class="c-tag">${esc(tag(d))}</td><td>${cell(by.mittag)}</td><td>${cell(by.bonus)}</td><td>${cell(by.abend)}</td></tr>`; }).join("")}
+    wochen += `<div class="woche"><h3>Woche ${i + 1} · ${label} <small>${wr.length} Videos</small></h3>
+      <p class="termine">${esc(A1_TERMINE[i])}</p>
+      <table class="wt"><thead><tr><th class="c-tag">Tag</th><th>Mittag (12:30, Sa/So 09:30)</th><th>Abend 19:30</th></tr></thead><tbody>
+      ${tage.map((d) => { const by = Object.fromEntries(wr.filter((r) => r.datum === d).map((r) => [r.slot, r])); return `<tr><td class="c-tag">${esc(tag(d))}</td><td>${cell(by.mittag)}</td><td>${cell(by.abend)}</td></tr>`; }).join("")}
       </tbody></table></div>`;
-  }
-  return html + `</section>`;
+  });
+  wochen += `</section>`;
+
+  let kartenHtml = "";
+  A1_WOCHEN.forEach(([von, bis, label], i) => {
+    const wr = neu.filter((r) => r.datum >= von && r.datum <= bis);
+    kartenHtml += `<section class="page cards"><h2>Woche ${i + 1} · ${label} <small>Videos ${wr[0].pn}–${wr[wr.length - 1].pn}</small></h2>${wr.map(karte).join("")}</section>`;
+  });
+  kartenHtml += `<section class="page cards"><h2>Reserve <small>${reserve.length} Themen für Ausfälle oder freie Slots</small></h2>${reserve.map(karte).join("")}</section>`;
+
+  return `<!doctype html><html lang="de"><head><meta charset="utf-8"><title>30-Tage-Plan Simulierbar</title><style>${CSS}${A1_CSS}</style></head><body>
+${deck}
+${aend}
+${wochen}
+${kartenHtml}
+</body></html>`;
 }
 
 function karte(r) {
@@ -211,11 +278,13 @@ function karte(r) {
   const fb = farben(r.teamfarben);
   const bars = sub ? Object.entries(MAX).map(([k, mx]) => `<div class="bar"><span class="bl">${k}</span><span class="bt"><i style="width:${(100 * sub[k]) / mx}%"></i></span><span class="bv">${sub[k]}/${mx}</span></div>`).join("") : "";
   const [stNr, ...stName] = r.stil.split(" ");
-  const kc = r.konkurrenz_check.replace(/^WebSearch 31\.10\. \(tiktok\.com\/youtube\.com\):\s*/, "");
+  const kc = r.konkurrenz_check.replace(/^Embed-Listen und Videoseiten 02\.11\. \([^)]*\):\s*/, "");
+  const cap = CAPTIONS[r.titel];
+  const meta = r.datum === "reserve" ? `${r.pn} · Reserve` : `${r.pn} · ${tag(r.datum)} 2026 · ${slotLabel(r)}`;
   return `
 <article class="card">
   <header>
-    <div class="meta">#${r.nr} · ${esc(tag(r.datum))} 2026 · ${esc(SLOT[r.slot])} ${r.prioritaet === "A" ? pill("Priorität A", "st-a") : ""} ${pill(sk, sc)}</div>
+    <div class="meta">${esc(meta)} · ${esc(r.rubrik)} ${r.prioritaet === "A" && r.datum !== "reserve" ? pill("Priorität A", "st-a") : ""} ${pill(sk, sc)}</div>
     <h3>${esc(r.titel)}</h3>
     <div class="big ${scoreClass(r.massstab_score)}"><b>${esc(r.massstab_score)}</b><span>Score</span></div>
   </header>
@@ -226,28 +295,20 @@ function karte(r) {
     <tr><th>Wendung 2</th><td>${esc(r.wendung_2)}</td></tr>
     <tr><th>Kernzahl / Twist</th><td>${esc(r.kernzahl_bzw_twist)}</td></tr>
     <tr><th>Quellen prüfen</th><td>${esc(r.quellen_pruefen)}</td></tr>
-    <tr><th>Konkurrenz-Check</th><td>${esc(kc)} <small>(Websuche 31.10.)</small></td></tr>
+    <tr><th>Konkurrenz und Logik</th><td>${esc(kc)} <small>(Check 02.11.)</small></td></tr>
     <tr><th>Maßstab</th><td><div class="bars">${bars}</div><div class="why">${esc(text)}</div></td></tr>
+    ${cap ? `<tr><th>Caption</th><td>${esc(cap)}</td></tr>` : ""}
   </table>
   <div class="facts">
     <div><span>Stil</span><b>${esc(stNr)} · ${esc(stName.join(" "))}</b></div>
     <div class="w2"><span>Teamfarben</span><b class="sw">${fb.map((f) => `<i style="background:${f.hex}"></i>${esc(f.name)} <small>(${esc(f.rolle)})</small>`).join("<em>vs</em>") || esc(r.teamfarben)}</b></div>
-    <div><span>Vorlage</span><b>${esc(r.vorlage)}</b></div>
-    <div><span>Rubrik (intern)</span><b>${esc(r.rubrik)}</b></div>
     <div><span>Aufwand</span><b>${esc(r.aufwand)} · ${esc(AUFWAND[r.aufwand] || "")}</b></div>
+    <div class="w2"><span>Vorlage und Baukasten</span><b>${esc(r.vorlage)}</b></div>
     <div><span>Priorität</span><b>${esc(PRIO[r.prioritaet] || r.prioritaet)}</b></div>
+    <div><span>Rubrik (intern)</span><b>${esc(r.rubrik)}</b></div>
     <div class="w4"><span>Status</span><b>${esc(r.status)}</b></div>
   </div>
 </article>`;
-}
-
-function karten() {
-  let html = "";
-  for (let w = 1; w <= 5; w++) {
-    const wr = rows.filter((r) => woche(r.datum) === w);
-    html += `<section class="page cards"><h2>Woche ${w} · ${WOCHEN[w]} <small>Videos #${wr[0].nr}–#${wr[wr.length - 1].nr}</small></h2>${wr.map(karte).join("")}</section>`;
-  }
-  return html;
 }
 
 const CSS = `
@@ -476,12 +537,7 @@ ${karten2}
 </body></html>`;
 }
 
-const html = A2 ? htmlAccount2() : `<!doctype html><html lang="de"><head><meta charset="utf-8"><title>30-Tage-Plan Simulierbar</title><style>${CSS}</style></head><body>
-${deckblatt()}
-${aenderungen()}
-${wochenuebersicht()}
-${karten()}
-</body></html>`;
+const html = A2 ? htmlAccount2() : htmlAccount1();
 
 // ---------- Drucken ----------
 function loadPlaywright() {
@@ -512,11 +568,11 @@ try {
     displayHeaderFooter: true,
     headerTemplate: "<span></span>",
     footerTemplate: `<div style="width:100%;font-family:Arial,sans-serif;font-size:7.5px;color:#7a8494;padding:0 13mm;display:flex;justify-content:space-between;">
-      <span>${A2 ? "@stelldirvor.pov · 30-Tage-Plan 03.11.–02.12.2026 · Planstand 02.11.2026" : "Simulierbar · 30-Tage-Plan November 2026 · Planstand 01.11.2026"}</span>
+      <span>${A2 ? "@stelldirvor.pov · 30-Tage-Plan 03.11.–02.12.2026 · Planstand 02.11.2026" : "Simulierbar · 30-Tage-Plan 03.11.–02.12.2026 · Schwerpunkt Geld · Planstand 02.11.2026"}</span>
       <span>Seite <span class="pageNumber"></span> von <span class="totalPages"></span></span></div>`,
   });
 } finally {
   await browser.close();
   fs.rmSync(tmp, { force: true });
 }
-console.log(`PDF geschrieben: ${path.relative(ROOT, OUT_PDF)} (${rows.length} ${A2 ? "Zeilen, davon " + rows.filter((r) => r.datum === "reserve").length + " Reserve" : "Videos"})`);
+console.log(`PDF geschrieben: ${path.relative(ROOT, OUT_PDF)} (${rows.length} ${A2 ? "Zeilen, davon " + rows.filter((r) => r.datum === "reserve").length + " Reserve" : "Zeilen, davon " + rows.filter((r) => r.datum === "reserve").length + " Reserve"})`);

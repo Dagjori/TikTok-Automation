@@ -1,15 +1,22 @@
 # Startnische: Simulierbar – Alltag durchgerechnet
 
-**Stand:** 31.10.2026 · **Status:** vom Inhaber gewählt (Nische 1 aus [06-nischen-ranking.md](06-nischen-ranking.md)), Name „Simulierbar“
+**Stand:** 02.11.2026 (Schwerpunkt Geld) · **Status:** vom Inhaber gewählt (Nische 1 aus [06-nischen-ranking.md](06-nischen-ranking.md)), Name „Simulierbar“; Schwerpunkt Geld seit 02.11. (Inhaber)
 
 Legende: **F** = belegter Fakt (mit Quelle), **S** = Schätzung, **A** = Annahme.
 
 ## Kurzfazit
 - Der 3k-Account wird zu **„Simulierbar“** (`@simulierbar`).
-- Jedes Video testet eine Alltagsentscheidung mit echten Zahlen und zeigt, was wirklich gewinnt. Es gibt zwei Rubriken:
+- Jedes Video testet eine Entscheidung mit echten Zahlen und zeigt, was wirklich gewinnt. **Seit 02.11. liegt der Schwerpunkt klar auf Geld** (Abschnitt unten). Es gibt zwei interne Rubriken:
   - **💶 GELD:** Geldentscheidungen und Wirtschaftsfragen als klare Modellrechnung im Duell-Format, wie bei den erfolgreichen Vorbildern, nur mit eigenen Themen (Quelle der Ideen: `data/ideen/geld-duell.csv`, 150 Ideen)
   - **⏱️ ALLTAG:** Strategien in Verkehr, Warteschlangen, Zuhause, Spielen und Sport, simuliert mit Hunderten virtuellen Autos bzw. Menschen (Quelle der Ideen: `data/ideen/testlauf.csv`, 150 Ideen)
 - **Gemeinsames Versprechen:** „Ich teste deinen Alltag mit echten Zahlen. Was gewinnt wirklich?“
+
+## Schwerpunkt Geld (Entscheidung des Inhabers 02.11.: „das zieht am meisten“)
+- **Jedes Video endet mit einem Ergebnis in Euro** auf der Anzeigetafel. Im Plan 03.11.–02.12. sind 53 von 60 Videos GELD; die übrigen 7 sind Alltagsentscheidungen „Zeit gegen Geld“, die ebenfalls in Euro ausgehen ([12-30-tage-plan.md](12-30-tage-plan.md)).
+- **Beleg (F, öffentliche Videoseiten 02.11.):** Geld-Duelle zu großen Lebensentscheidungen erreichen bei kleinen Konten 198k–617k Aufrufe (Mieten oder kaufen, Leasing, Studium oder Ausbildung, E-Auto). Kleine Spartipps derselben Konten bleiben meist unter 5k.
+- **Nur neue Ideen:** Was ein Konkurrent schon gemacht hat, ist gesperrt (Sperrliste in `docs/12` §3.4). Jedes Duell vergleicht echte Alternativen derselben Entscheidung (Inhaber 02.11.).
+- **Themenfelder:** Gehalt und Arbeit, Rente, Wohnen, Auto und Wege, Konsum und Haushalt, Schulden und Sparen, Familie. Alltag ohne Euro-Ergebnis (Spiele, Verkehrsfluss, Warteschlangen) ruht.
+- **Grenzen:** nur Modellrechnung, keine Produkte, Anbieter, Banken, Coins oder Aktien, kein Kaufaufruf, kein „schnell reich“ (TikTok Community Guidelines „Frauds and Scams“, Branded Content Policy; Details `docs/12` §3.6).
 
 ## Warum diese Kombi (Kurzfassung, Details in 06)
 - **Größter Themenvorrat aller geprüften Optionen:**
@@ -19,11 +26,11 @@ Legende: **F** = belegter Fakt (mit Quelle), **S** = Schätzung, **A** = Annahme
   - 40–85 neue Themen pro Jahr (S)
   - Bei 1 Video pro Tag reicht das ca. 18 Monate, ohne Varianten (S).
 - **Nachfrage für beide Rubriken belegt (F):**
-  - Geld: @kontostand.vs 504k Views mit Video 1 bzw. 2, @wissentogo_de 298k
+  - Geld: @kontostand.vs 617k (Mieten oder kaufen) und 359k (Studium oder Ausbildung), @wissentogo_de 363k (Leasing), @alltaginzahlen 198k (E-Auto), Stand 02.11.
   - Alltag: Reißverschluss-Videos (EN) 3,2–3,4 Mio. Views
 - **Keine Kopie:**
   - Gleiches Format wie die Vorbilder, aber **eigene Themen**. Kein Thema, das ein Konkurrent schon viral gemacht hat, wird 1:1 übernommen (Entscheidung Inhaber 31.10.: kein „1.000 Lebensläufe“-Merkmal).
-  - Den Alltag-Teil macht auf Deutsch niemand.
+  - Seit Ende Oktober gibt es mehrere neue deutsche Konten im selben Format (z. B. @simulierts, @alltagsduell, @geldsimuliert; F, Profilseiten 02.11.). Unser Unterschied sind neue Themen und die Qualität der animierten Welt.
   - Das Thema „Im Regen rennen oder gehen“ (@kurzsimuliert) ist bewusst gestrichen.
 - **Risiko:** TikTok empfiehlt eine klare Nische. Ob dieselben Zuschauer beide Rubriken mögen, ist eine **Annahme**. Gegenmittel: gleiche Optik, gleiches Versprechen, gleicher Serien-Name. Prüfung nach 28 Videos (siehe „Auswertung“).
 
@@ -36,10 +43,7 @@ Ich simuliere deinen Alltag mit echten Zahlen 💶⏱️ Dein Wunsch? Kommentar 
 ```
 
 - **Link:** nur Impressum (§ 5 DDG). Keine E-Mail und keine Telefonnummer in der Bio (CRP-Kriterium „Advertising“).
-- **Optik:**
-  - heller Hintergrund
-  - Team A Blau, Team B Orange, Sieger Grün
-  - Rubrik-Abzeichen oben links: „💶 GELD“ bzw. „⏱️ ALLTAG“
+- **Optik:** Stil je Video aus `docs/10`, zwei Teamfarben je Video (kein Gelb). **Keine Rubrik, kein Kanalname, kein Logo im Video** (Entscheidung 31.10.).
 - **Cover:** „SIMULIERBAR #n“ plus Rubrik plus Frage plus Kernzahl. Vorschau des Looks: [assets/vorschau-gta6.png](assets/vorschau-gta6.png).
 - **Umbenennen:** erst am Tag des ersten Videos. Am selben Tag den YouTube-Kanal „Simulierbar“ anlegen.
 
@@ -60,52 +64,17 @@ Ich simuliere deinen Alltag mit echten Zahlen 💶⏱️ Dein Wunsch? Kommentar 
 - Keine Anbieter und keine Kaufaufrufe.
 - Caption im festen Kurzformat (CLAUDE.md), ohne Quellen und Hinweise. Pflicht ist nur der KI-Schalter beim Posten (Entscheidung 31.10.).
 
-## Die ersten 30 Testläufe (im Wechsel, nach Kalender)
-
-**Start: 17.11.2026 mit dem GTA-6-Video** (Entscheidung Inhaber 31.10.). Danach im Wechsel. IDs verweisen auf die Ideenlisten.
-
-| # | Rubrik | ID | Testlauf | Timing |
-|---|---|---|---|---|
-| 0 | 💶 | – | **GTA 6: Was kostet es Deutschland, wenn alle krankfeiern?** (Idee des Inhabers, Trend-Score 85) | **Start: 17.11.2026, zwei Tage vor dem Release** |
-| 1 | ⏱️ | TL-001 | Reißverschluss: früh einordnen oder bis zum Ende fahren? | 1–2 Tage nach GTA-Video |
-| 2 | 💶 | GD053 | Warum bleibt von 200 € mehr Gehalt so wenig übrig? | |
-| 3 | ⏱️ | TL-033 | Supermarkt: eine Schlange für alle Kassen oder eine pro Kasse? | |
-| 4 | 💶 | GD105 | Heizung um 1 Grad senken: Wie viel spart das? | Heizsaison |
-| 5 | ⏱️ | TL-060 | Stoßlüften oder Kippfenster? | Heizsaison |
-| 6 | 💶 | GD028 | 0-%-Finanzierung im Laden: Wo steckt der Preis? | vor Black Friday |
-| 7 | ⏱️ | TL-002 | Phantomstau: wie ein einziger Bremser Stau auslöst | |
-| 8 | 💶 | GD121 | Black Friday: Wie viel Rabatt ist echt? | bis 27.11.2026 |
-| 9 | ⏱️ | TL-048 | Rolltreppe: links gehen oder beide Seiten stehen? | |
-| 10 | 💶 | GD001 | Mieten oder kaufen? 30 Jahre durchgerechnet (eigener Blickwinkel, z. B. mit Instandhaltung und Zinsbindungsende) | |
-| 11 | ⏱️ | TL-020 | Boarding: hinten nach vorne, zufällig oder Steffen-Methode? | |
-| 12 | 💶 | GD014 | E-Auto oder Verbrenner: 8 Jahre Gesamtkosten | |
-| 13 | ⏱️ | TL-100 | Ziegenproblem: wechseln oder bleiben? 100.000 Spiele | |
-| 14 | 💶 | GD125 | Wie viele Arbeitsstunden kostet das? Preise in Lebenszeit | |
-| 15 | ⏱️ | TL-083 | Mensch ärgere dich nicht: rausschmeißen oder schnell laufen? | |
-| 16 | 💶 | GD042 | Früh anfangen oder später mehr sparen: 25 gegen 35 | |
-| 17 | ⏱️ | TL-140 | Weihnachtsmarkt: Einbahnweg oder freier Lauf? | ab 1. Advent (29.11.) |
-| 18 | 💶 | GD146 | Weihnachten: Wie viel geben Familien aus? | Dezember |
-| 19 | ⏱️ | TL-101 | Wichteln: Wie wahrscheinlich ziehst du dich selbst? | Dezember |
-| 20 | 💶 | GD113 | Abos im Check: Was kosten 10 Abos im Jahr? | |
-| 21 | ⏱️ | TL-003 | Spurwechsel im Stau: Bist du wirklich schneller? | |
-| 22 | 💶 | GD017 | Was kostet dein Auto pro Kilometer wirklich? | |
-| 23 | ⏱️ | TL-053 | Treppe oder Aufzug: ab welcher Etage ist der Aufzug schneller? | |
-| 24 | 💶 | GD036 | Kreditkarte: Wie lange dauert es, 2.000 € mit der Mindestrate abzuzahlen? | |
-| 25 | ⏱️ | TL-087 | Schere, Stein, Papier: Gibt es eine Gewinnstrategie? | |
-| 26 | 💶 | GD102 | Balkonkraftwerk: Wann rechnet es sich? | |
-| 27 | ⏱️ | TL-115 | Elfmeter: Ecke, Mitte oder hoch? | |
-| 28 | 💶 | GD073 | Gehaltsverhandlung: Was machen 5 % mehr über ein Berufsleben aus? | |
-| 29 | ⏱️ | TL-149 | Brückentage 2027: Mit wie wenigen Urlaubstagen holst du das Maximum raus? | Ende Dezember |
-| 30 | 💶 | GD015 | Leasing, Finanzierung oder bar? (eigener Blickwinkel gegenüber @wissentogo_de) | |
+## Reihenfolge der Videos
+Die Liste „Die ersten 30 Testläufe“ (Stand 31.10.) ist ersetzt. Gültig ist der Plan in [12-30-tage-plan.md](12-30-tage-plan.md) mit `data/plan/30-tage.csv` (60 Videos 03.11.–02.12., 15 Reservethemen).
 
 Vor jeder Produktion: Quelle bzw. Modell und Rechtsstand prüfen (Steuern, Förderungen, Termine).
 
 ## Rhythmus und Auswertung
-- **Wochen 1–4:** 2 Videos pro Tag (12:30 und 19:00 Uhr, A). **Danach 1 Video pro Tag.**
+- **2 Videos pro Tag** (Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30, `data/plan/posting_zeiten.json`), produziert am Vortag (Inhaber 02.11.).
 - **Ab Woche 3:** jede Woche 1–2 Antwort-Videos auf Zuschauerfragen.
-- **Planung:** einmal pro Woche als Stapel in TikTok Studio (Web) und YouTube Studio.
+- **Planung:** Claude prüft jedes Video und plant es selbst in Buffer ein (CLAUDE.md).
 - **Auswertung nach 28 Videos:**
-  - **Rubriken-Vergleich:** Views, Watch Time und neue Follower pro 1.000 Views getrennt nach GELD und ALLTAG. Fällt eine Rubrik bei der Follower-Umwandlung um mehr als die Hälfte ab, wird ihr Anteil reduziert.
+  - **Themenfeld-Vergleich (seit 02.11.):** Views, Watch Time und neue Follower pro 1.000 Views je Geld-Themenfeld (Arbeit, Wohnen, Auto, Konsum, Schulden, Familie). Schwache Felder bekommen weniger Slots.
   - **Ziele (S):** mindestens 1 Video über 50k Views, Median über 5k, mindestens 1 Follower pro 1.000 Views, mindestens +1.000 Follower.
 
 ## Zweiter Account
