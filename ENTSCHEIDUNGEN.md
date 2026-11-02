@@ -93,3 +93,6 @@ Hier stehen nur Entscheidungen, die der Inhaber getroffen hat. Empfehlungen, die
 | 2026-11-02 | **Fester Skill nur für @stelldirvor.pov** (`.claude/skills/stelldirvor-video/`): Videos strikt nach Design, Licht, Effekten und Animationen der Referenzvideos | Inhaber |
 | 2026-11-02 | **Simulierbar: Schwerpunkt GELD**, jedes Video mit Euro-Ergebnis, Plan ab 03.11. komplett neu (Videos vom 02.11. bleiben) | Inhaber: „das zieht am meisten … entwickeln nur neue Ideen“ |
 | 2026-11-02 | **Cockpit reagiert sofort:** Freigabe, Ablehnung und Kommentar gehen direkt als Nachricht an Claude, Claude antwortet im Cockpit | Inhaber: „sonst bringt mir das cockpit nichts“ |
+| 2026-11-02 | **Fester Skill nur für Simulierbar** (`.claude/skills/simulierbar-video/`), klar getrennt vom Account-2-Skill | Inhaber: „nenne den skill auch entsprechend damit wir das auch absolut voneinander trennen können“ |
+| 2026-11-02 | **Simulierbar seriöser Look:** weg von Cartoon/Clay, Lichteffekte und Atmosphäre, keine Sticker, hochwertige Animation | Inhaber: „was seriöseres … mit licht effekten … das eine gewisse atmosphäre entstehen kann“ |
+| 2026-11-02 | **Account 2 heute noch posten:** Video 1 aus dem neuen Plan (Eiszeit Toronto) für 02.11. 19:30, Plan rückt danach einen Platz vor | Inhaber: „mit dem Video anfängst für den 2. Account das wir heute noch posten müssen“ |

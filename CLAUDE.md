@@ -13,6 +13,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
   - Nische „Alltag durchgerechnet“ mit zwei internen Rubriken: 💶 GELD und ⏱️ ALLTAG.
   - **Schwerpunkt GELD** (Inhaber 02.11.: „das zieht am meisten“): Jedes Video endet mit einem Ergebnis in Euro, mindestens 50 von 60 Videos im Monat sind GELD. Themen nur neu entwickelt, nach Konkurrenz-Check (`docs/12`).
   - Die Rubriken dienen nur der Planung und erscheinen **nie** im Video.
+  - **Jedes Simulierbar-Video entsteht nach dem Skill `.claude/skills/simulierbar-video/`** (Inhaber 02.11., gilt nur für Account 1). Look: seriös und hochwertig, mit Licht und Atmosphäre; **keine Cartoon-, Clay-, Spielzeug-, Filz- oder Papier-Stile mehr**, keine Sticker. Erlaubte Stile stehen im Skill (`stile.md`).
   - Details: `docs/05-startnische.md`; Ideen: `data/ideen/`.
 - **Format:**
   - gesichtslose Simulationsvideos auf Deutsch, 65–80 s, KI-Stimme, Untertitel
