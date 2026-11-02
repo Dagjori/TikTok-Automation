@@ -173,17 +173,39 @@ async function main() {
   let fertig = 0;
   let naechster = 0;
   const zeiten = { render: 0, bild: 0 };
+  // Selbstheilung (02.11., GPU-Rechner): Hängt ein Bild (Screenshot-Zeitüberschreitung), wird der Browser neu geöffnet
+  // und dasselbe Bild nochmal gerendert (max. 3 Versuche); auf der GPU wird der Browser alle 600 Bilder vorsorglich erneuert.
+  const SCREENSHOT_TIMEOUT = a.gpu ? 30000 : 180000;
+  const NEU_ALLE = a.gpu ? 600 : 0;
   async function worker(nr, seite) {
-    const { browser, page } = seite || (await oeffneSeite(chromium, url, a.gpu));
+    let { browser, page } = seite || (await oeffneSeite(chromium, url, a.gpu));
+    let seitDemNeustart = 0;
+    const neuOeffnen = async () => {
+      try { await browser.close(); } catch (e) { /* Browser hängt evtl. schon */ }
+      ({ browser, page } = await oeffneSeite(chromium, url, a.gpu));
+      seitDemNeustart = 0;
+    };
     try {
       while (naechster < auftraege.length) {
         const job = auftraege[naechster++];
-        const t0 = Date.now();
-        await page.evaluate((t) => window.renderAt(t), job.t);
-        const t1 = Date.now();
-        const opt = { path: job.datei, type: job.format === "png" ? "png" : "jpeg", animations: "disabled", caret: "hide", timeout: 180000 };
+        if (NEU_ALLE && seitDemNeustart >= NEU_ALLE) await neuOeffnen();
+        const opt = { path: job.datei, type: job.format === "png" ? "png" : "jpeg", animations: "disabled", caret: "hide", timeout: SCREENSHOT_TIMEOUT };
         if (opt.type === "jpeg") opt.quality = a.qualitaet;
-        await page.screenshot(opt);
+        let t0, t1;
+        for (let versuch = 1; ; versuch++) {
+          try {
+            t0 = Date.now();
+            await page.evaluate((t) => window.renderAt(t), job.t);
+            t1 = Date.now();
+            await page.screenshot(opt);
+            break;
+          } catch (e) {
+            if (versuch >= 3) throw e;
+            console.error(`Bild ${job.f ?? job.t}: ${String(e.message).split("\n")[0]} → Browser neu öffnen, Versuch ${versuch + 1}/3`);
+            await neuOeffnen();
+          }
+        }
+        seitDemNeustart++;
         zeiten.render += t1 - t0;
         zeiten.bild += Date.now() - t1;
         fertig++;
