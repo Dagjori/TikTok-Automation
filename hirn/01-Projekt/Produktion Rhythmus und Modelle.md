@@ -16,6 +16,12 @@ cssclasses: [konto-gemeinsam, typ-regel]
 - **Themen:** kein 30-Tage-Plan mehr. Täglich 10 Ideen je Account, der Inhaber wählt 2, Claude Chat schreibt die Skripte ([[Claude-Chat-Workflow]]); **Produktion nur auf Startsignal des Inhabers.**
 - Grund der Grenze: Die Tokens begrenzen, nicht mehr die Zeit (seit der PC rendert, siehe [[Render-Dienst Windows-PC]]).
 
+## Agenten-Aufträge als Checkliste (seit 02.11. spätabends)
+- Jeder Auftrag an einen Agenten besteht aus **nummerierten Aufgaben** (eine Aufgabe = ein prüfbares Ergebnis, z. B. „Datei X ändern“, „Test Y ausführen“).
+- Der Agent meldet je Nummer **„erledigt“ oder „offen“ mit Beleg** (Datei, Testausgabe, Befehl).
+- Claude prüft die Rückmeldung **gegen die Aufgabenliste**, bevor etwas als fertig gilt; fehlende Punkte gehen zurück an den Agenten oder werden dem Inhaber als offen gemeldet.
+- Regel im Wortlaut: [[Rolle und Kommunikation]].
+
 ## Skills sind Pflicht, strikt getrennt
 Vor der Arbeit `SKILL.md` und die dort genannten Dateien lesen.
 | Account | Skill | Hirn-Einstieg |

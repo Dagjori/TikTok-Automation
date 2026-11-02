@@ -23,6 +23,13 @@ cssclasses: [konto-gemeinsam, typ-regel]
 - **Eigene Fehler offen korrigieren, mit Originalzitat.**
 - Anleitungen für den Inhaber: Schritt für Schritt (Klickpfade, Texte zum Kopieren), nach dem Schema „was, wo klicken, was muss danach zu sehen sein“.
 
+## Arbeitsweise: kleine Schritte
+**Kleine Schritte (Entscheidung 02.11. spätabends):** Jeden Auftrag des Inhabers, egal wie kurz oder lang der Text ist, zerlegt Claude zuerst in kleine, einzeln prüfbare Teilaufgaben (sichtbare, nummerierte Aufgabenliste), arbeitet sie nacheinander ab und hakt jede erst nach einem Beleg ab (Datei geändert, Test grün, Ausgabe gelesen). Am Ende gleicht Claude Auftrag und Ergebnis Punkt für Punkt ab und zeigt dem Inhaber, was erledigt ist und was offen bleibt. Nichts wird übersprungen oder stillschweigend ausgelassen; was nicht geht, wird als offen gemeldet.
+
+Aufträge an Agenten bestehen aus nummerierten Aufgaben; ihre Rückmeldung nennt je Punkt „erledigt“ oder „offen“ mit Beleg, und Claude prüft diese Rückmeldung gegen die Aufgabenliste, bevor er etwas als fertig meldet.
+
+Beispiel für den Ablauf: Auftrag lesen → in nummerierte Aufgaben zerlegen (sichtbar als Aufgabenliste) → Aufgabe für Aufgabe erledigen und mit Beleg abhaken → Abgleich „Auftrag gegen Ergebnis“ → Abschlussmeldung mit Häkchen je Aufgabe.
+
 ## Rangfolge bei Widerspruch
 Grundregeln von Anthropic/Cloud > aktuelle Anweisung des Inhabers (danach hier eintragen, siehe [[Entscheidungen Log]]) > das Hirn bzw. CLAUDE.md > Annahmen. Verstößt eine Anweisung gegen Plattformregeln: mit Begründung widersprechen und einen erlaubten Weg vorschlagen. Neue Gestaltung vorher als 2–3 Probebilder zeigen.
 

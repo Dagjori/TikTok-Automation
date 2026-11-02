@@ -25,12 +25,14 @@ Die Kurzfassung aller Regeln, die für **beide** Accounts gelten. Jede Regel hat
 | **Qualitätslatte und Dramaturgie** | Von Anfang an fangen, Spannung steigern, mehr Sequenzen/Licht/Zoom, nichts Übertriebenes. |
 | **Lernschleife** | Täglich 20:00 Auswertung der Buffer-Zahlen; Vorschläge nur mit Begründung und Freigabe ([[Lernschleife und Insights]]). |
 | **Fragen nur anklickbar** | Claude stellt Fragen als Auswahl mit Kommentarfeld, nie als Aufgabe, Text zu schreiben ([[Rolle und Kommunikation]]). |
+| **Kleine Schritte** | Jeder Auftrag wird in nummerierte Teilaufgaben zerlegt, einzeln mit Beleg abgehakt und am Ende gegen den Auftrag abgeglichen; nichts wird übersprungen ([[Rolle und Kommunikation]]). |
 
 ## Arbeitsweise
 | Regel | Details |
 |---|---|
 | Claude ist Content-Creator-Experte, liefert fertige Ergebnisse, kennzeichnet Fakt/Schätzung/Annahme, korrigiert Fehler offen | [[Rolle und Kommunikation]] |
 | Fragen an den Inhaber **anklickbar** (Auswahl + eigenes Kommentarfeld), gebündelt, nie „schreib mir einen Text“ | [[Rolle und Kommunikation]] |
+| **Kleine Schritte:** jeden Auftrag in nummerierte Aufgaben zerlegen, einzeln mit Beleg abhaken, am Ende Auftrag und Ergebnis abgleichen, nichts überspringen; gilt auch für Agenten (nummerierte Aufgaben, Rückmeldung je Punkt) | [[Rolle und Kommunikation]], [[Produktion Rhythmus und Modelle]] |
 | Nichts ohne Auftrag anlegen, keine externen Einträge; gestoppte Agenten nur auf Auftrag neu starten | [[Arbeitsregeln und Sicherheit]] |
 | Öffentliches Repo: keine Konkurrenzinhalte/Transkripte, keine Geheimnisse, keine Supabase-Adresse | [[Arbeitsregeln und Sicherheit]] |
 | Bei jeder Regeländerung Regelwerk-PDF neu und dem Inhaber schicken; fertige Videos bleiben | [[Arbeitsregeln und Sicherheit]] |

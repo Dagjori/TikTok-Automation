@@ -78,6 +78,7 @@ Nur **Entscheidungen des Inhabers** (2026 · Entscheidung · Begründung). Empfe
 - **Täglicher Ablauf über Claude Chat bzw. Ideen-Studio:** 10 Ideen je Account, der Inhaber wählt 2, danach makelloses Skript (faktentreu, nichts erfunden, Diskussionsanreiz nur implizit, perfekt für die Stimme); Claude findet den Weg ohne Kopieren · „finde einen Weg, wie wir das machen können“.
 - **Lernschleife:** täglich 20:00 Berlin Auswertung der Buffer-Zahlen, still, Lernen aus Zahlen und Skripten; Verbesserungsvorschläge nur mit Begründung und Freigabe des Inhabers · „ich segne das ab“.
 - **Fragen nur anklickbar** (Auswahl + Kommentarfeld) · „das spart mir enorm viel Zeit“. **Obsidian mit festen Farben je Kategorie** und ein eigenes Regelwerk im Hirn. Wörtliche Auszüge in `massstab.md` bleiben.
+- **Kleine Schritte:** Jeden Auftrag in nummerierte Teilaufgaben zerlegen, einzeln mit Beleg abhaken, am Ende Auftrag und Ergebnis abgleichen, nichts überspringen; gilt auch für Agenten · „damit ich sichergestellt bekomme, dass du jeden Schritt befolgst und nichts übersprungen wird“.
 
 
 ## Siehe auch
