@@ -57,4 +57,4 @@ export function videoZahlen() {
   };
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) console.log(JSON.stringify({ azubiNetto: azubiNetto(), ...videoZahlen() }, null, 2));
+if (typeof process !== "undefined" && import.meta.url === `file://${process.argv[1]}`) console.log(JSON.stringify({ azubiNetto: azubiNetto(), ...videoZahlen() }, null, 2));

@@ -1,0 +1,976 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "studium-ausbildung",
+ "fps": 30,
+ "dauer": 79.16666666666667,
+ "stimmEnde": 78.577,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "musik",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "LENA",
+    "farbe": "#FF8A3D"
+   },
+   "b": {
+    "name": "TOM",
+    "farbe": "#3D8BFF"
+   }
+  },
+  "schleife": {
+   "ab": 75.3,
+   "ende": 79.14366666666666
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 79.144,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 1.5959455978986625e-16
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "zaehler",
+   "dauer": 18.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.32,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ziellinie 40 leuchtet auf"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 6.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.4,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AUSBILDUNG · 950 € NETTO"
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Betrieb leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.52,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JOB · 2.000 €, AB 25: 2.400 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.52,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Büro leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.94,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.96,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABI · 5 JAHRE STUDIUM"
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.96,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Gymnasium leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.08,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Hörsaal leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.58,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.88,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MINIJOB · 500 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.88,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Minijob"
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.54,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.84,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DANN 2.700 €, AB 30: 3.500 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 12.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.36,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Gehaltssäule wächst"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.917,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.067,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Spot auf Tom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.56,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Spot wechselt auf Lena"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.88,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "19: Tom geht in den Hörsaal"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.65,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Tom im Hörsaal"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.867,
+   "typ": "zaehler",
+   "dauer": 5.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.867,
+   "typ": "zaehler",
+   "dauer": 5.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.04,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Tom setzt sich"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 21.34,
+   "art": "zoom",
+   "dauer": 2,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 22.32,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.433,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.133,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.633,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.84,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Tom steht auf"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.4,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Tom startet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.733,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.433,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 26.74,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 26.79,
+   "art": "zoom",
+   "dauer": 3.4,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.84,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Maßlinie Rückstand"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.867,
+   "typ": "zaehler",
+   "dauer": 5.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.867,
+   "typ": "zaehler",
+   "dauer": 5.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 29.873,
+   "typ": "zaehler",
+   "dauer": 5.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 31.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 32.133,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 32.8,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 33.467,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Abstand schrumpft"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.2,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.733,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.28,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "30: Rückstand 100.800 €"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 37.673,
+   "typ": "zaehler",
+   "dauer": 8.357,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.7,
+   "typ": "zaehler",
+   "dauer": 9.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.7,
+   "typ": "zaehler",
+   "dauer": 9.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.8,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AB 30: 3.500 € NETTO"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.8,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Toms Gehalt zieht an"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.64,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.833,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.84,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Countdown 61.200"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.433,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.013,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Countdown 34.800"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.187,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Countdown 8.400"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 43.9,
+   "art": "zoom",
+   "dauer": 2.3,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zoom auf beide"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Tom überholt: Aufleuchten"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.9,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 46.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.72,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ziel erreicht"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 46.8,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 47.22,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "TOM"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.6,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 47.76,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "LENA"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.833,
+   "typ": "uhr",
+   "dauer": 0.467,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 48.72,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "VORSPRUNG"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 48.733,
+   "typ": "uhr",
+   "dauer": 0.167,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 49.52,
+   "typ": "sieger",
+   "klang": "sieg",
+   "text": "TOM GEWINNT"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 49.767,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.3,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.667,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zeitstrahl Lena"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.233,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.433,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.6,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "8 JAHRE FRÜHER"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.667,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Zeitstrahl Tom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "8 Jahre Klammer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 54.467,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 54.97,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.12,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Gehaltssäulen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 55.82,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+ 300 € IM MONAT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.12,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Gehaltssäule Tom"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 56.167,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "300 € Differenz"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.68,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Fahrt hinter die Ziellinie"
+  },
+  {
+   "quelle": "Chip",
+   "t": 60.12,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Bahn bis 65"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 65.74,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 65.84,
+   "typ": "zaehler",
+   "dauer": 2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.84,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Säule Studium wächst"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 69.3,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 69.4,
+   "typ": "zaehler",
+   "dauer": 1.8,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.4,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Säule Ausbildung wächst"
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.737,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera gleitet zurück"
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.32,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Säulen leuchten"
+  },
+  {
+   "quelle": "Szene",
+   "t": 74.08,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "Merksatz: Säulen leuchten auf"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.3,
+   "typ": "zaehler",
+   "dauer": 3.877,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.3,
+   "typ": "zaehler",
+   "dauer": 3.877,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 75.3,
+   "art": "schleife",
+   "dauer": 3.833,
+   "klang": false
+  },
+  {
+   "t": 75.3,
+   "typ": "schleife",
+   "dauer": 3.844,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.967,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.133,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.3,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.533,
+   "typ": "uhr",
+   "dauer": 1.4,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 78.067,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 78.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  }
+ ],
+ "klang": []
+}

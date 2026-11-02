@@ -1,0 +1,426 @@
+{
+ "titel": "Studium oder Ausbildung: Wer hat mit 40 mehr verdient?",
+ "skill": "simulierbar-video",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-03-mittag",
+ "stil": "19 Architekturmodell (Abendlicht)",
+ "stil_begruendung": "Zwei Bildungswege sind räumliche Orte: Berufsschule und Betrieb gegen Schule und Hörsaal. Als weißes Kartonmodell auf einer Sperrholzplatte wird der Lebensweg zur Strecke, auf der Geld (Weglänge) und Rückstand als Abstand zweier Modellfiguren sichtbar sind; Geld-Säulen als Acrylglas-Marker in Teamfarbe, tiefes Abendlicht steigert die Spannung bis zum Überholen. Der letzte gepostete Stil war 4 (Flat-Infografik); Stil 19 trägt Wohnen/Bildung/Lebensweg ruhig und hochwertig.",
+ "teamfarben": {
+  "Lena": "#FF8A3D",
+  "Tom": "#3D8BFF"
+ },
+ "klangteppich": "musik",
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Einer verdient ab 16, der andere ab 24. Wer hat mit 40 mehr?",
+   "sprechtext": "Einer verdient ab sechzehn, der andere ab vierundzwanzig. Wer hat mit VIERZIG mehr?",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Einer verdient ab sechzehn, der andere ab vierundzwanzig.",
+     "bild": "Weitwinkel auf die Modellplatte: Lena (orange) läuft ab Bild 0 los, Tom (blau) steht an der Startlinie; Tafel Lena 0 €, Tom 0 €, Uhr 16; Weg als Strecke, Geldschilder 100.000–600.000 € am Rand"
+    },
+    {
+     "gesagt": "Wer hat mit VIERZIG mehr?",
+     "bild": "beim Wort „vierzig“ leuchtet das Ziellinien-Tor mit der Zahl 40 am Ende der Bahn auf (Glow), Kamera sinkt langsam auf die Figuren"
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "Lena: Ausbildung, dann Job. Tom: Abi, 5 Jahre Studium, Minijob. Danach verdient Tom deutlich mehr.",
+   "sprechtext": "Lena: Ausbildung, dann Job.\nTom: Abi, fünf Jahre Studium, Minijob.\nDanach verdient Tom deutlich MEHR.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Lena: Ausbildung",
+     "bild": "Kamera fährt zur linken Seite: Betrieb (Werkstatt mit Zahnrad) und Berufsschule bekommen orangen Acryl-Sockel und leuchten; Chip AUSBILDUNG · 950 € NETTO"
+    },
+    {
+     "gesagt": "dann Job",
+     "bild": "Büro leuchtet orange, orange Gehaltssäule am Büro wächst (2.400 €), Chip JOB · 2.000 €, AB 25: 2.400 €"
+    },
+    {
+     "gesagt": "Tom: Abi, fünf Jahre Studium",
+     "bild": "Kamera schwenkt zur rechten Seite: Gymnasium (blauer Sockel) leuchtet beim Wort „Abi“, Hörsaal beim Wort „Studium“; Chip ABI · 5 JAHRE STUDIUM"
+    },
+    {
+     "gesagt": "Minijob",
+     "bild": "Chip MINIJOB · 500 € beim Wort"
+    },
+    {
+     "gesagt": "Danach verdient Tom deutlich MEHR",
+     "bild": "Kamera zum Firmenviertel: blaue Gehaltssäule wächst höher als die orange (3.500 € gegen 2.400 €), Chip DANN 2.700 €, AB 30: 3.500 €"
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, dann holt Tom schnell auf. Oder?",
+   "sprechtext": "[thoughtful] Klar, dann holt Tom schnell auf.\nOder?",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Klar, dann holt Tom schnell auf.",
+     "bild": "blauer Lichtkegel auf Tom, Kamera steigt hinter beide (Erwartung wird aufgebaut)"
+    },
+    {
+     "gesagt": "Oder?",
+     "bild": "Lichtkegel springt auf Lena, kurze Stille, Kamera schwenkt auf die Gegenseite"
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Mit 19 hat Lena schon 34.200 €. Tom sitzt im Hörsaal.",
+   "sprechtext": "[calm] Mit neunzehn hat Lena schon vierunddreißigtausend Euro.\nTom sitzt im Hörsaal.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Mit neunzehn hat Lena schon vierunddreißigtausend Euro.",
+     "bild": "Uhr zeigt 19, Tafel Lena 34.200 € (exakt beim Wort), Lena-Säule steht neben ihr"
+    },
+    {
+     "gesagt": "Tom sitzt im Hörsaal.",
+     "bild": "Tom geht in den Hörsaal-Schnitt und setzt sich auf die dritte Stufe (blaue Figur sitzt sichtbar, Kommilitonen um ihn), Kamera fährt und zoomt auf den Hörsaal; Tafel Tom 295 €"
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "phase": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "sprechtext": "Folg mir, damit du nichts verpasst.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Folg mir, damit du nichts verpasst.",
+     "bild": "Folgen-Element, Weitwinkel hinter den Figuren, Uhr läuft weiter"
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Mit 24 startet Tom. Sein Rückstand: 127.200 €.",
+   "sprechtext": "Mit vierundzwanzig startet Tom.\nSein Rückstand: hundertsiebenundzwanzigtausend Euro.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Mit vierundzwanzig startet Tom.",
+     "bild": "Uhr 24, Tafel Lena 154.200 €, Tom 27.000 €; Tom steht auf, verlässt den Hörsaal und betritt die Spur"
+    },
+    {
+     "gesagt": "Sein Rückstand: 127.200 €.",
+     "bild": "Maßlinie zwischen den Figuren, Zähler RÜCKSTAND 127.200 €, Zoom auf die Lücke, Licht wird wärmer"
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Jetzt verdient er mehr pro Monat. Der Abstand schrumpft … aber langsam. Mit 30 fehlen noch 100.800 €.",
+   "sprechtext": "Jetzt verdient er mehr pro Monat.\nDer Abstand schrumpft … aber LANGSAM.\nMit dreißig fehlen noch hunderttausend.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Jetzt verdient er mehr pro Monat. Der Abstand schrumpft … aber LANGSAM.",
+     "bild": "Tom läuft, Lenas Vorsprung schrumpft sichtbar langsam (Maßlinie wird kürzer, Zähler fällt), Kamera fährt seitlich (kein Zoom)"
+    },
+    {
+     "gesagt": "Mit dreißig fehlen noch hunderttausend.",
+     "bild": "Uhr 30, Zähler RÜCKSTAND 100.800 € (exakt), Tafel Lena 322.200 €, Tom 221.400 €"
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "Ab 30 zieht Toms Gehalt an. 61.200 €, 34.800 €, 8.400 € … Kurz vor 38 zieht er vorbei.",
+   "sprechtext": "Ab dreißig zieht Toms Gehalt an.\nEinundsechzigtausend, fünfunddreißigtausend, achttausend …\nKurz vor achtunddreißig zieht er VORBEI.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Ab dreißig zieht Toms Gehalt an.",
+     "bild": "Chip AB 30: 3.500 € NETTO, Tom wird sichtbar schneller, Toms Säule wächst steiler, Kamera wechselt die Seite"
+    },
+    {
+     "gesagt": "Einundsechzigtausend, fünfunddreißigtausend, achttausend …",
+     "bild": "Zähler RÜCKSTAND zählt exakt auf 61.200 € (Uhr 33), 34.800 € (Uhr 35), 8.400 € (Uhr 37) zu den Wörtern, Kamera rückt näher"
+    },
+    {
+     "gesagt": "Kurz vor achtunddreißig zieht er VORBEI.",
+     "bild": "Zoom auf beide Figuren Schulter an Schulter, beim Wort „vorbei“ überholt Tom, Aufleuchten von Tom und Säule, Tafel-Führung wechselt zu Tom"
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Mit 40 liegt Tom vorne. Um 31.200 €.",
+   "sprechtext": "Mit vierzig liegt Tom vorne.\nUm einunddreißigtausend Euro.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Mit vierzig liegt Tom vorne.",
+     "bild": "Uhr 40, Tor 40 leuchtet voll, Tom vor Lena am Tor, Bilanzkarte baut sich auf: TOM 641.400 €, LENA 610.200 €"
+    },
+    {
+     "gesagt": "Um einunddreißigtausend Euro.",
+     "bild": "Bilanzkarte: VORSPRUNG 31.200 €, Banner TOM GEWINNT; Licht und Bloom am Höhepunkt"
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Warum so spät? Erstens: Lena verdient 8 Jahre früher. Zweitens: Bis 30 verdient Tom meist nur 300 € mehr.",
+   "sprechtext": "[thoughtful] Warum so spät?\nErstens: Lena verdient acht Jahre früher.\nZweitens: Bis dreißig verdient Tom meist nur dreihundert mehr.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Warum so spät?",
+     "bild": "Kamera fliegt hinter die Ziellinie, Licht wird ruhiger"
+    },
+    {
+     "gesagt": "Erstens: Lena verdient acht Jahre früher.",
+     "bild": "Zeitstrahl-Balken: orange 16–40, blau 24–40, leuchtende Klammer über den ersten 8 Jahren, Chip 8 JAHRE FRÜHER"
+    },
+    {
+     "gesagt": "Zweitens: Bis dreißig verdient Tom meist nur dreihundert mehr.",
+     "bild": "zwei Acryl-Gehaltssäulen 2.400 € (orange) und 2.700 € (blau) mit hellem Aufsatz für die 300 € Differenz, Chip + 300 € IM MONAT"
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "phase": "ueberraschung",
+   "text": "Der große Abstand kommt erst nach 40. Eine IAB-Studie rechnet das ganze Arbeitsleben durch. Mit Studium: rund 2,5 Millionen € brutto. Mit Ausbildung: rund 1,7.",
+   "sprechtext": "[curious] Der große Abstand kommt erst NACH vierzig.\nEine I A B Studie rechnet das ganze Arbeitsleben durch.\nMit Studium: rund zweieinhalb Millionen Euro brutto.\nMit Ausbildung: rund eins Komma sieben.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Der große Abstand kommt erst NACH vierzig.",
+     "bild": "Kamera fährt hinter die Ziellinie, die Bahn läuft sichtbar weiter bis zum Tor 65"
+    },
+    {
+     "gesagt": "Eine IAB-Studie rechnet das ganze Arbeitsleben durch.",
+     "bild": "Kamera hebt sich über die Bahn bis 65, Dämmerung"
+    },
+    {
+     "gesagt": "Mit Studium: rund zweieinhalb Millionen Euro brutto.",
+     "bild": "blaue Säule wächst zum Wort „Studium“ auf 2,52 Mio. € (Zähler STUDIUM exakt)"
+    },
+    {
+     "gesagt": "Mit Ausbildung: rund eins Komma sieben.",
+     "bild": "orange Säule wächst zum Wort „Ausbildung“ auf 1,69 Mio. € (Zähler AUSBILDUNG exakt), Kamera tilt nach oben"
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "phase": "merksatz",
+   "text": "Ein Studium lohnt sich im Schnitt – nur viel später, als du denkst.",
+   "sprechtext": "[calm] Ein Studium lohnt sich im Schnitt – nur viel später, als du denkst.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Ein Studium lohnt sich im Schnitt – nur viel später, als du denkst.",
+     "bild": "Kamera gleitet zurück, beide Säulen leuchten bei „lohnt“ und beim Wort „später“ auf (Akzent), ruhige Welt"
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "phase": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "sprechtext": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+     "bild": "Schleife: Kamera, Figuren, Säulen, Tor und Tafel gleiten zum Anfangsbild zurück (letztes Bild = erstes Bild)"
+    }
+   ]
+  }
+ ],
+ "caption": "Studium oder Ausbildung: Wer hat mit 40 mehr verdient? 🎓 Ich hab’s simuliert. Was war oder ist dein Weg? 👇 #studium #ausbildung #gehalt #wissen #simulation",
+ "quellen": [
+  "(F) BIBB, Tarifliche Ausbildungsvergütungen 2025 (Pressemitteilung 05.02.2026): Ø 1.209 € brutto/Monat, +6,7 %",
+  "(F) Stüber, H.: Berufsspezifische Lebensentgelte, IAB-Kurzbericht 18/2022: Hochschulabschluss 2,52 Mio. €, Berufsausbildung 1,69 Mio. € brutto (Vollzeit, 18.–66. Lebensjahr, real Basis 2015, BeH 2012–2020); Unterschiede wachsen mit dem Alter",
+  "(F) Mindestlohn 2026 13,90 €/Std., Minijob-Grenze 603 €/Monat (sage.com, biallo.de)",
+  "(F) SV 2026: RV 18,6 %, AV 2,6 %, KV 14,6 % + Ø-Zusatzbeitrag 2,9 %, PV 3,6 % + 0,6 % Kinderlose ab 23 (Haufe, AOK)",
+  "(F) Grundfreibetrag 2026 12.348 €; Netto per PAP 2026 (pipeline/sim/netto.mjs): 2.950→2.026 €, 3.600→2.388 €, 4.200→2.713 €, 5.700→3.482 € netto (StKl I, kinderlos, ohne Kirche)",
+  "(S) Plausibilität Gehälter: Entgeltatlas-Medianwerte 2025 Fachkraft ca. 3.841 €, Experte ca. 6.041 € brutto (entgeltatlas-online.de, Auswertung der BA-Daten); Modellwerte liegen darunter (konservativ)"
+ ],
+ "annahmen": [
+  "(A) Modellpersonen: Lena verlässt mit 16 die Realschule und macht 16–19 eine duale Ausbildung. Tom macht Abitur bis 19 (G9) und studiert 19–24 (Bachelor + Master, 5 Jahre). Beide sind ledig, kinderlos, Steuerklasse I und arbeiten Vollzeit ohne Unterbrechung.",
+  "(A) Alle Beträge sind nominal und konstant je Phase, ohne Inflation, Tariferhöhungen, Zinsen oder Rentenansprüche. Verglichen wird kumuliertes Nettoeinkommen, nicht Vermögen. Lebenshaltungskosten beider Personen werden nicht abgezogen.",
+  "(A) Netto-Monatsgehälter von Lena (2.000 €/2.400 €) und Tom (2.700 €/3.500 €) sind realistische Modellwerte, nicht belegt. Zu prüfen gegen den Entgeltatlas der Bundesagentur für Arbeit und die Destatis-Verdiensterhebung (Vollzeit, nach Berufsabschluss bzw. Anforderungsniveau). Die Brutto-Netto-Umrechnung (ca. 2.950/3.600/4.200/5.700 € brutto) ist mit dem BMF-Lohnsteuerrechner 2026 zu prüfen.",
+  "(A) Ausbildungsvergütung: BIBB-Durchschnitt 2024 von 1.133 € brutto, verwendet für 2026 als konservativer Wert. Zu prüfen, ob BIBB-Werte für 2025 vorliegen; der Durchschnitt variiert stark nach Beruf und Ausbildungsjahr.",
+  "(A) Sozialabgaben Azubi ca. 21 % (RV 9,3 %, KV 7,3 % + halber durchschnittlicher Zusatzbeitrag, PV 1,8 % unter 23, AV 1,3 %), zu prüfen für 2026.",
+  "(A) Tom erhält kein BAföG im Modell (Lebenshaltung wird wie bei Lena nicht gezählt). BAföG-Höchstsatz seit WS 2024/25: 992 €/Monat, teils Darlehen. Zu prüfen, ob für WS 2026/27 eine Erhöhung gilt. Nicht im Video verwendet.",
+  "(A) Minijob 500 €/Monat netto während des Studiums, Semesterbeitrag 300 € pro Semester (variiert je Hochschule), zu prüfen.",
+  "(A) Aussage „Der große Abstand kommt erst nach 40“ ist eine Ableitung: Modellvorsprung mit 40 (33.000 € netto) gegenüber dem IAB-Lebensverdienstabstand (ca. 1 Mio. € brutto). Zu prüfen, ob die IAB-Altersprofile das stützen (Akademikergehälter steigen bis ins Alter von 50+ weiter).",
+  "(A) Ergebnis gilt nur für diese Modellpersonen. Je nach Fach und Beruf kann der Überholpunkt deutlich früher oder später liegen oder ganz ausbleiben (z. B. gut bezahlter Ausbildungsberuf gegen schlecht bezahltes Studienfach). Keine Aussage, welcher Weg besser ist.",
+  "(A) Offene Frage an dich (ändert das Ergebnis): Sollen wir zusätzlich einen zweiten Berufsvergleich zeigen, etwa Industriemechaniker gegen Lehramt? Dann bräuchte das Skript eine zweite Überraschung statt der IAB-Zahl und würde länger. Diese Version nutzt bewusst einen einzigen Modellvergleich, um unter 80 Sekunden zu bleiben."
+ ],
+ "zahlen": {
+  "iab_lebensverdienst_berufsausbildung": "1,69 Mio. € brutto (IAB-KB 18/2022)",
+  "iab_lebensverdienst_hochschule": "2,52 Mio. € brutto (IAB-KB 18/2022)",
+  "lena_mit_19": "34.200 €",
+  "lena_mit_24": "154.200 €",
+  "lena_mit_40": "610.200 €",
+  "lena_netto_19_bis_25": "2.000 €/Monat (Annahme, ca. 2.950 € brutto)",
+  "lena_netto_25_bis_40": "2.400 €/Monat (Annahme, ca. 3.600 € brutto)",
+  "lena_netto_ausbildung_monat": "950 € (aus 1.209 € brutto, BIBB 2025; netto 953,29 € nach PAP/SV 2026)",
+  "rueckstand_mit_24": "127.200 €",
+  "rueckstand_mit_30": "100.800 €",
+  "tom_minijob_netto": "500 €/Monat (Annahme, unter Minijob-Grenze 2026 von 603 €)",
+  "tom_mit_24": "27.000 €",
+  "tom_mit_40": "641.400 €",
+  "tom_netto_24_bis_30": "2.700 €/Monat (Annahme, ca. 4.200 € brutto)",
+  "tom_netto_30_bis_40": "3.500 €/Monat (Annahme, ca. 5.700 € brutto)",
+  "tom_semesterbeitraege": "3.000 € gesamt (Annahme 300 €/Semester × 10)",
+  "ueberholalter": "37,6 Jahre (kurz vor 38)",
+  "vorsprung_tom_mit_40": "31.200 €",
+  "lena_mit_30": "322.200 €",
+  "countdown": "mit 33: 61.200 €, mit 35: 34.800 €, mit 37: 8.400 €"
+ },
+ "korrekturen": [
+  {
+   "feld": "Ausbildungsvergütung",
+   "alt": "1.133 € brutto (BIBB 2024) ≈ 900 € netto",
+   "neu": "1.209 € brutto (BIBB 2025) ≈ 950 € netto",
+   "quelle": "BIBB PM 05.02.2026; netto.mjs PAP 2026",
+   "grund": "neuere amtliche Daten",
+   "zeit": "2026-11-02T22:45:00Z"
+  },
+  {
+   "feld": "Zwischenstände/Ergebnis",
+   "alt": "Lena 32.400/608.400; Rückstand 125.400/99.000; Countdown 66.000/33.000/6.600; Überholen 37,5; Vorsprung 33.000",
+   "neu": "Lena 34.200/610.200; Rückstand 127.200/100.800; Countdown 61.200/34.800/8.400 (mit 33/35/37); Überholen 37,6 (kurz vor 38); Vorsprung 31.200",
+   "quelle": "pipeline/sim/studium_ausbildung.mjs",
+   "grund": "Folge der Azubi-Korrektur; Ergebnis kippt nicht (Tom vorne, kurz vor 38)",
+   "zeit": "2026-11-02T22:45:00Z"
+  },
+  {
+   "feld": "IAB-Lebensverdienst",
+   "alt": "IAB 1/2014: 2,3 Mio. / 1,3 Mio. €",
+   "neu": "IAB 18/2022: 2,52 Mio. / 1,69 Mio. € (gesprochen: rund zweieinhalb / eins Komma sieben)",
+   "quelle": "IAB-Kurzbericht 18/2022 (Stüber)",
+   "grund": "neuere Studie statt alter; Aussage 'Abstand wächst nach 40' durch 'Unterschiede wachsen mit dem Alter' gestützt",
+   "zeit": "2026-11-02T22:45:00Z"
+  },
+  {
+   "feld": "Offene Frage zweiter Berufsvergleich",
+   "alt": "offen",
+   "neu": "entschieden: nein, ein Modellvergleich (Länge < 80 s)",
+   "quelle": "-",
+   "grund": "Annahme im Skript, im Sinne der Kürze",
+   "zeit": "2026-11-02T22:45:00Z"
+  },
+  {
+   "feld": "Nettogehälter Modell",
+   "alt": "zu prüfen",
+   "neu": "bestätigt per PAP 2026 (2.026/2.388/2.713/3.482 €), Modellwerte bleiben",
+   "quelle": "netto.mjs",
+   "grund": "Prüfung",
+   "zeit": "2026-11-02T22:45:00Z"
+  }
+ ],
+ "dramaturgie_vorschlag": [
+  "0–6 s: Split-Screen, zwei Läufer an Startlinien. Lenas Läufer startet sofort bei 16, Toms Läufer steht noch. Zähler 0 € auf beiden Seiten. Bei „VIERZIG“ leuchtet eine Ziellinie mit „40“ auf.",
+  "6–12 s: Regeln als kurze Einblendungen über den Läufern, exakte Beträge im Bild. Bei „deutlich MEHR“ wächst Toms späterer Gehaltsbalken sichtbar größer.",
+  "12–15 s: Denkfalle, ruhiger Kamerablick auf Toms großen Gehaltsbalken. Kurze Stille nach „Oder?“.",
+  "15–20 s: Rennen beginnt, Altersuhr läuft (16, 17, 18, 19). Lenas Zähler steigt auf 32.400 €, Toms Läufer sitzt in einem Hörsaal, Zähler zeigt kaum Bewegung.",
+  "20–23 s: Folgen-Satz, Bild läuft ruhig weiter, Uhr tickt bis 24.",
+  "23–26 s: WENDUNG 1, Spannung steigt: Tom läuft los. Großer roter Rückstandszähler „−125.400 €“ leuchtet auf, Zoom auf die Lücke zwischen den Läufern.",
+  "26–34 s: WENDUNG 2: Toms Schritte werden größer, Lücke schrumpft sichtbar langsam. Uhr bei 30, Rückstand „−99.000 €“. Licht wird etwas wärmer.",
+  "34–41 s: WENDUNG 3, Höhepunkt: Toms Gehalt springt, Countdown des Rückstands (66.000, 33.000, 6.600). Kamera zoomt auf beide Läufer Schulter an Schulter. Bei „VORBEI“ Führungswechsel mit kurzem Aufleuchten, Uhr zeigt 37,5.",
+  "41–44 s: Ergebnis: Ziellinie 40, beide Endzähler exakt (641.400 € gegen 608.400 €), Differenz 33.000 € groß in der Mitte.",
+  "44–52 s: Warum: zwei Infokarten. Karte 1: Zeitstrahl, 8 Jahre Vorsprung Lena. Karte 2: Monatsdifferenz 300 € als kleiner Balken.",
+  "52–66 s: Zweite Überraschung: Kamera fährt hinter die 40er-Ziellinie, die Bahn läuft weiter bis 65. Zwei hohe Säulen 2,3 Mio. € und 1,3 Mio. € wachsen, Quelle IAB 2014 klein eingeblendet. Ruhigster, größter Bildmoment.",
+  "66–71 s: Merksatz als Texttafel über der weiterlaufenden Bahn. Schleife: Zurück zur Startlinie mit den beiden Läufern aus dem Hook.",
+  "71–75 s: Schluss-Satz, Standbild der Startlinie."
+ ],
+ "lern_notizen": {
+  "thema": "Studium oder Ausbildung: kumuliertes Nettoeinkommen bis 40 (Modellrechnung)",
+  "frage": "Wer hat mit 40 mehr verdient?",
+  "laenge_s": 79.17,
+  "hook": "Einer verdient ab sechzehn, der andere ab vierundzwanzig. Wer hat mit VIERZIG mehr?",
+  "hook_typ": "Duell-Frage mit zwei Startaltern",
+  "stil": "19 Architekturmodell (Abendlicht)",
+  "zoom": "ja: Hörsaal (20,5 s), Rückstand (27 s), vor dem Überholen (44 s); sonst Fahrten",
+  "animationen": [
+   {
+    "t": 0.0,
+    "art": "weitwinkel",
+    "was": "Platte mit beiden Figuren, Tor 40 leuchtet bei vierzig"
+   },
+   {
+    "t": 6.1,
+    "art": "kamerafahrt",
+    "was": "Lena-Seite: Betrieb und Büro leuchten"
+   },
+   {
+    "t": 8.6,
+    "art": "kamerafahrt",
+    "was": "Tom-Seite: Gymnasium und Hörsaal"
+   },
+   {
+    "t": 14.1,
+    "art": "lichtkegel",
+    "was": "Spot auf Tom, bei Oder auf Lena"
+   },
+   {
+    "t": 20.5,
+    "art": "zoom",
+    "was": "Tom sitzt im Hörsaal"
+   },
+   {
+    "t": 26.9,
+    "art": "zoom+maßlinie",
+    "was": "Rückstand 127.200 €"
+   },
+   {
+    "t": 45.9,
+    "art": "aufleuchten",
+    "was": "Tom überholt"
+   },
+   {
+    "t": 47.0,
+    "art": "bilanzkarte",
+    "was": "Ergebnis"
+   },
+   {
+    "t": 52.0,
+    "art": "zeitstrahl",
+    "was": "acht Jahre früher"
+   },
+   {
+    "t": 55.5,
+    "art": "gehaltssäulen",
+    "was": "300 € Differenz"
+   },
+   {
+    "t": 66.0,
+    "art": "säulen",
+    "was": "IAB 2,52 und 1,69 Mio. €"
+   }
+  ],
+  "licht": "tiefe Abendsonne im Gegenlicht, wird bis zum Ergebnis wärmer und stärker, Bloom am Höhepunkt, danach ruhiger",
+  "effekte": [
+   "Aufleuchten Tor 40 bei 4,3 s",
+   "Spot-Wechsel Tom/Lena",
+   "Aufleuchten Tom und Säule bei vorbei",
+   "Säulen leuchten bei „später“"
+  ],
+  "zeitpunkte": {
+   "folgen": 22.32,
+   "wendung_1": 24.56,
+   "ueberholen": 45.68,
+   "ergebnis": 46.48,
+   "warum": 50.773,
+   "pointe": 74.08
+  },
+  "tempo": {
+   "woerter": 173,
+   "wps": 2.2
+  },
+  "caption": "Studium oder Ausbildung: Wer hat mit 40 mehr verdient? 🎓 Ich hab’s simuliert. Was war oder ist dein Weg? 👇 #studium #ausbildung #gehalt #wissen #simulation",
+  "besonderheiten": "Weg = Geld (1 Einheit ≈ 48.600 €), Alter läuft als Zeitraffer; Untertitel folgen dem gesprochenen Text, exakte Beträge in Chips, Zählern und Bilanzkarte"
+ }
+}

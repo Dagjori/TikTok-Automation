@@ -1,0 +1,979 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 78.577,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Einer verdient ab 16, der andere ab 24. Wer hat mit 40 mehr?",
+   "start": 0.0,
+   "ende": 5.04,
+   "woerter": [
+    {
+     "wort": "Einer",
+     "start": 0.0,
+     "ende": 0.24
+    },
+    {
+     "wort": "verdient",
+     "start": 0.32,
+     "ende": 0.64
+    },
+    {
+     "wort": "ab",
+     "start": 0.72,
+     "ende": 0.8
+    },
+    {
+     "wort": "16,",
+     "start": 0.88,
+     "ende": 1.6
+    },
+    {
+     "wort": "der",
+     "start": 1.68,
+     "ende": 1.76
+    },
+    {
+     "wort": "andere",
+     "start": 1.84,
+     "ende": 2.16
+    },
+    {
+     "wort": "ab",
+     "start": 2.24,
+     "ende": 2.4
+    },
+    {
+     "wort": "24.",
+     "start": 2.48,
+     "ende": 3.76
+    },
+    {
+     "wort": "Wer",
+     "start": 3.84,
+     "ende": 3.92
+    },
+    {
+     "wort": "hat",
+     "start": 4.0,
+     "ende": 4.08
+    },
+    {
+     "wort": "mit",
+     "start": 4.16,
+     "ende": 4.24
+    },
+    {
+     "wort": "40",
+     "start": 4.32,
+     "ende": 4.64
+    },
+    {
+     "wort": "mehr?",
+     "start": 4.72,
+     "ende": 5.04
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Lena: Ausbildung, dann Job. Tom: Abi, 5 Jahre Studium, Minijob. Danach verdient Tom deutlich mehr.",
+   "start": 5.52,
+   "ende": 13.8,
+   "woerter": [
+    {
+     "wort": "Lena:",
+     "start": 5.52,
+     "ende": 6.16
+    },
+    {
+     "wort": "Ausbildung,",
+     "start": 6.4,
+     "ende": 7.2
+    },
+    {
+     "wort": "dann",
+     "start": 7.28,
+     "ende": 7.44
+    },
+    {
+     "wort": "Job.",
+     "start": 7.52,
+     "ende": 7.84
+    },
+    {
+     "wort": "Tom:",
+     "start": 8.24,
+     "ende": 8.76
+    },
+    {
+     "wort": "Abi,",
+     "start": 8.96,
+     "ende": 9.52
+    },
+    {
+     "wort": "5",
+     "start": 9.573,
+     "ende": 9.76
+    },
+    {
+     "wort": "Jahre",
+     "start": 9.8,
+     "ende": 10.0
+    },
+    {
+     "wort": "Studium,",
+     "start": 10.08,
+     "ende": 10.8
+    },
+    {
+     "wort": "Minijob.",
+     "start": 10.88,
+     "ende": 11.44
+    },
+    {
+     "wort": "Danach",
+     "start": 11.84,
+     "ende": 12.16
+    },
+    {
+     "wort": "verdient",
+     "start": 12.24,
+     "ende": 12.48
+    },
+    {
+     "wort": "Tom",
+     "start": 12.56,
+     "ende": 12.8
+    },
+    {
+     "wort": "deutlich",
+     "start": 12.88,
+     "ende": 13.28
+    },
+    {
+     "wort": "mehr.",
+     "start": 13.36,
+     "ende": 13.8
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, dann holt Tom schnell auf. Oder?",
+   "start": 14.067,
+   "ende": 16.88,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 14.067,
+     "ende": 14.8
+    },
+    {
+     "wort": "dann",
+     "start": 14.84,
+     "ende": 14.96
+    },
+    {
+     "wort": "holt",
+     "start": 15.0,
+     "ende": 15.2
+    },
+    {
+     "wort": "Tom",
+     "start": 15.32,
+     "ende": 15.44
+    },
+    {
+     "wort": "schnell",
+     "start": 15.48,
+     "ende": 15.76
+    },
+    {
+     "wort": "auf.",
+     "start": 15.96,
+     "ende": 16.36
+    },
+    {
+     "wort": "Oder?",
+     "start": 16.56,
+     "ende": 16.88
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Mit 19 hat Lena schon 34.200 €. Tom sitzt im Hörsaal.",
+   "start": 17.413,
+   "ende": 22.12,
+   "woerter": [
+    {
+     "wort": "Mit",
+     "start": 17.413,
+     "ende": 17.44
+    },
+    {
+     "wort": "19",
+     "start": 17.52,
+     "ende": 18.0
+    },
+    {
+     "wort": "hat",
+     "start": 18.08,
+     "ende": 18.16
+    },
+    {
+     "wort": "Lena",
+     "start": 18.24,
+     "ende": 18.48
+    },
+    {
+     "wort": "schon",
+     "start": 18.52,
+     "ende": 18.72
+    },
+    {
+     "wort": "34.200",
+     "start": 18.88,
+     "ende": 19.740000000000002
+    },
+    {
+     "wort": "€.",
+     "start": 19.740000000000002,
+     "ende": 20.6
+    },
+    {
+     "wort": "Tom",
+     "start": 20.8,
+     "ende": 20.96
+    },
+    {
+     "wort": "sitzt",
+     "start": 21.04,
+     "ende": 21.28
+    },
+    {
+     "wort": "im",
+     "start": 21.32,
+     "ende": 21.36
+    },
+    {
+     "wort": "Hörsaal.",
+     "start": 21.44,
+     "ende": 22.12
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 22.32,
+   "ende": 24.28,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 22.32,
+     "ende": 22.56
+    },
+    {
+     "wort": "mir,",
+     "start": 22.64,
+     "ende": 22.88
+    },
+    {
+     "wort": "damit",
+     "start": 22.96,
+     "ende": 23.08
+    },
+    {
+     "wort": "du",
+     "start": 23.12,
+     "ende": 23.2
+    },
+    {
+     "wort": "nichts",
+     "start": 23.28,
+     "ende": 23.52
+    },
+    {
+     "wort": "verpasst.",
+     "start": 23.6,
+     "ende": 24.28
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Mit 24 startet Tom. Sein Rückstand: 127.200 €.",
+   "start": 24.56,
+   "ende": 29.6,
+   "woerter": [
+    {
+     "wort": "Mit",
+     "start": 24.56,
+     "ende": 24.72
+    },
+    {
+     "wort": "24",
+     "start": 24.84,
+     "ende": 25.44
+    },
+    {
+     "wort": "startet",
+     "start": 25.6,
+     "ende": 25.92
+    },
+    {
+     "wort": "Tom.",
+     "start": 26.0,
+     "ende": 26.32
+    },
+    {
+     "wort": "Sein",
+     "start": 26.64,
+     "ende": 26.8
+    },
+    {
+     "wort": "Rückstand:",
+     "start": 26.84,
+     "ende": 27.48
+    },
+    {
+     "wort": "127.200",
+     "start": 27.6,
+     "ende": 28.6
+    },
+    {
+     "wort": "€.",
+     "start": 28.6,
+     "ende": 29.6
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Jetzt verdient er mehr pro Monat. Der Abstand schrumpft … aber langsam. Mit 30 fehlen noch 100.800 €.",
+   "start": 30.08,
+   "ende": 37.52,
+   "woerter": [
+    {
+     "wort": "Jetzt",
+     "start": 30.08,
+     "ende": 30.32
+    },
+    {
+     "wort": "verdient",
+     "start": 30.4,
+     "ende": 30.64
+    },
+    {
+     "wort": "er",
+     "start": 30.72,
+     "ende": 30.8
+    },
+    {
+     "wort": "mehr",
+     "start": 30.84,
+     "ende": 30.96
+    },
+    {
+     "wort": "pro",
+     "start": 31.04,
+     "ende": 31.2
+    },
+    {
+     "wort": "Monat.",
+     "start": 31.32,
+     "ende": 31.68
+    },
+    {
+     "wort": "Der",
+     "start": 32.08,
+     "ende": 32.16
+    },
+    {
+     "wort": "Abstand",
+     "start": 32.24,
+     "ende": 32.56
+    },
+    {
+     "wort": "schrumpft",
+     "start": 32.64,
+     "ende": 33.12
+    },
+    {
+     "wort": "…",
+     "start": 33.68,
+     "ende": 33.76
+    },
+    {
+     "wort": "aber",
+     "start": 33.84,
+     "ende": 33.92
+    },
+    {
+     "wort": "langsam.",
+     "start": 34.0,
+     "ende": 34.8
+    },
+    {
+     "wort": "Mit",
+     "start": 35.04,
+     "ende": 35.12
+    },
+    {
+     "wort": "30",
+     "start": 35.2,
+     "ende": 35.68
+    },
+    {
+     "wort": "fehlen",
+     "start": 35.76,
+     "ende": 36.0
+    },
+    {
+     "wort": "noch",
+     "start": 36.12,
+     "ende": 36.24
+    },
+    {
+     "wort": "100.800",
+     "start": 36.28,
+     "ende": 36.900000000000006
+    },
+    {
+     "wort": "€.",
+     "start": 36.900000000000006,
+     "ende": 37.52
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "text": "Ab 30 zieht Toms Gehalt an. 61.200 €, 34.800 €, 8.400 € … Kurz vor 38 zieht er vorbei.",
+   "start": 37.6,
+   "ende": 46.28,
+   "woerter": [
+    {
+     "wort": "Ab",
+     "start": 37.6,
+     "ende": 37.68
+    },
+    {
+     "wort": "30",
+     "start": 37.76,
+     "ende": 38.16
+    },
+    {
+     "wort": "zieht",
+     "start": 38.32,
+     "ende": 38.48
+    },
+    {
+     "wort": "Toms",
+     "start": 38.52,
+     "ende": 38.72
+    },
+    {
+     "wort": "Gehalt",
+     "start": 38.8,
+     "ende": 39.12
+    },
+    {
+     "wort": "an.",
+     "start": 39.2,
+     "ende": 39.76
+    },
+    {
+     "wort": "61.200",
+     "start": 39.84,
+     "ende": 40.42666666666667
+    },
+    {
+     "wort": "€,",
+     "start": 40.42666666666667,
+     "ende": 41.013333333333335
+    },
+    {
+     "wort": "34.800",
+     "start": 41.013333333333335,
+     "ende": 41.6
+    },
+    {
+     "wort": "€,",
+     "start": 41.6,
+     "ende": 42.18666666666667
+    },
+    {
+     "wort": "8.400",
+     "start": 42.18666666666667,
+     "ende": 42.77333333333333
+    },
+    {
+     "wort": "€",
+     "start": 42.77333333333333,
+     "ende": 43.36
+    },
+    {
+     "wort": "…",
+     "start": 43.92,
+     "ende": 43.96
+    },
+    {
+     "wort": "Kurz",
+     "start": 44.0,
+     "ende": 44.24
+    },
+    {
+     "wort": "vor",
+     "start": 44.32,
+     "ende": 44.4
+    },
+    {
+     "wort": "38",
+     "start": 44.48,
+     "ende": 45.2
+    },
+    {
+     "wort": "zieht",
+     "start": 45.36,
+     "ende": 45.52
+    },
+    {
+     "wort": "er",
+     "start": 45.56,
+     "ende": 45.6
+    },
+    {
+     "wort": "vorbei.",
+     "start": 45.68,
+     "ende": 46.28
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Mit 40 liegt Tom vorne. Um 31.200 €.",
+   "start": 46.48,
+   "ende": 50.24,
+   "woerter": [
+    {
+     "wort": "Mit",
+     "start": 46.48,
+     "ende": 46.64
+    },
+    {
+     "wort": "40",
+     "start": 46.72,
+     "ende": 47.12
+    },
+    {
+     "wort": "liegt",
+     "start": 47.28,
+     "ende": 47.44
+    },
+    {
+     "wort": "Tom",
+     "start": 47.56,
+     "ende": 47.68
+    },
+    {
+     "wort": "vorne.",
+     "start": 47.76,
+     "ende": 48.16
+    },
+    {
+     "wort": "Um",
+     "start": 48.48,
+     "ende": 48.56
+    },
+    {
+     "wort": "31.200",
+     "start": 48.72,
+     "ende": 49.480000000000004
+    },
+    {
+     "wort": "€.",
+     "start": 49.480000000000004,
+     "ende": 50.24
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum so spät? Erstens: Lena verdient 8 Jahre früher. Zweitens: Bis 30 verdient Tom meist nur 300 € mehr.",
+   "start": 50.773,
+   "ende": 59.12,
+   "woerter": [
+    {
+     "wort": "Warum",
+     "start": 50.773,
+     "ende": 50.88
+    },
+    {
+     "wort": "so",
+     "start": 50.96,
+     "ende": 51.12
+    },
+    {
+     "wort": "spät?",
+     "start": 51.2,
+     "ende": 51.8
+    },
+    {
+     "wort": "Erstens:",
+     "start": 52.0,
+     "ende": 52.72
+    },
+    {
+     "wort": "Lena",
+     "start": 52.88,
+     "ende": 53.12
+    },
+    {
+     "wort": "verdient",
+     "start": 53.2,
+     "ende": 53.6
+    },
+    {
+     "wort": "8",
+     "start": 53.68,
+     "ende": 53.92
+    },
+    {
+     "wort": "Jahre",
+     "start": 54.0,
+     "ende": 54.24
+    },
+    {
+     "wort": "früher.",
+     "start": 54.32,
+     "ende": 54.92
+    },
+    {
+     "wort": "Zweitens:",
+     "start": 55.12,
+     "ende": 55.68
+    },
+    {
+     "wort": "Bis",
+     "start": 56.08,
+     "ende": 56.16
+    },
+    {
+     "wort": "30",
+     "start": 56.24,
+     "ende": 56.64
+    },
+    {
+     "wort": "verdient",
+     "start": 56.8,
+     "ende": 57.12
+    },
+    {
+     "wort": "Tom",
+     "start": 57.2,
+     "ende": 57.36
+    },
+    {
+     "wort": "meist",
+     "start": 57.44,
+     "ende": 57.68
+    },
+    {
+     "wort": "nur",
+     "start": 57.72,
+     "ende": 57.84
+    },
+    {
+     "wort": "300",
+     "start": 57.92,
+     "ende": 58.2
+    },
+    {
+     "wort": "€",
+     "start": 58.2,
+     "ende": 58.48
+    },
+    {
+     "wort": "mehr.",
+     "start": 58.56,
+     "ende": 59.12
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Der große Abstand kommt erst nach 40. Eine IAB-Studie rechnet das ganze Arbeitsleben durch. Mit Studium: rund 2,5 Millionen € brutto. Mit Ausbildung: rund 1,7.",
+   "start": 59.187,
+   "ende": 71.6,
+   "woerter": [
+    {
+     "wort": "Der",
+     "start": 59.187,
+     "ende": 59.2
+    },
+    {
+     "wort": "große",
+     "start": 59.28,
+     "ende": 59.6
+    },
+    {
+     "wort": "Abstand",
+     "start": 59.68,
+     "ende": 60.08
+    },
+    {
+     "wort": "kommt",
+     "start": 60.16,
+     "ende": 60.32
+    },
+    {
+     "wort": "erst",
+     "start": 60.4,
+     "ende": 60.56
+    },
+    {
+     "wort": "nach",
+     "start": 60.72,
+     "ende": 60.96
+    },
+    {
+     "wort": "40.",
+     "start": 61.04,
+     "ende": 62.0
+    },
+    {
+     "wort": "Eine",
+     "start": 62.12,
+     "ende": 62.24
+    },
+    {
+     "wort": "IAB-Studie",
+     "start": 62.4,
+     "ende": 63.36
+    },
+    {
+     "wort": "rechnet",
+     "start": 63.44,
+     "ende": 63.68
+    },
+    {
+     "wort": "das",
+     "start": 63.76,
+     "ende": 63.92
+    },
+    {
+     "wort": "ganze",
+     "start": 64.0,
+     "ende": 64.24
+    },
+    {
+     "wort": "Arbeitsleben",
+     "start": 64.4,
+     "ende": 64.96
+    },
+    {
+     "wort": "durch.",
+     "start": 65.04,
+     "ende": 65.68
+    },
+    {
+     "wort": "Mit",
+     "start": 65.72,
+     "ende": 65.76
+    },
+    {
+     "wort": "Studium:",
+     "start": 65.84,
+     "ende": 66.48
+    },
+    {
+     "wort": "rund",
+     "start": 66.64,
+     "ende": 66.8
+    },
+    {
+     "wort": "2,5",
+     "start": 66.96,
+     "ende": 67.52
+    },
+    {
+     "wort": "Millionen",
+     "start": 67.64,
+     "ende": 68.0
+    },
+    {
+     "wort": "€",
+     "start": 68.16,
+     "ende": 68.4
+    },
+    {
+     "wort": "brutto.",
+     "start": 68.48,
+     "ende": 69.2
+    },
+    {
+     "wort": "Mit",
+     "start": 69.28,
+     "ende": 69.36
+    },
+    {
+     "wort": "Ausbildung:",
+     "start": 69.4,
+     "ende": 70.12
+    },
+    {
+     "wort": "rund",
+     "start": 70.24,
+     "ende": 70.4
+    },
+    {
+     "wort": "1,7.",
+     "start": 70.48,
+     "ende": 71.6
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Ein Studium lohnt sich im Schnitt – nur viel später, als du denkst.",
+   "start": 71.737,
+   "ende": 75.52,
+   "woerter": [
+    {
+     "wort": "Ein",
+     "start": 71.737,
+     "ende": 71.76
+    },
+    {
+     "wort": "Studium",
+     "start": 71.84,
+     "ende": 72.24
+    },
+    {
+     "wort": "lohnt",
+     "start": 72.32,
+     "ende": 72.48
+    },
+    {
+     "wort": "sich",
+     "start": 72.52,
+     "ende": 72.64
+    },
+    {
+     "wort": "im",
+     "start": 72.72,
+     "ende": 72.8
+    },
+    {
+     "wort": "Schnitt",
+     "start": 72.84,
+     "ende": 73.12
+    },
+    {
+     "wort": "–",
+     "start": 73.52,
+     "ende": 73.547
+    },
+    {
+     "wort": "nur",
+     "start": 73.573,
+     "ende": 73.76
+    },
+    {
+     "wort": "viel",
+     "start": 73.84,
+     "ende": 74.0
+    },
+    {
+     "wort": "später,",
+     "start": 74.08,
+     "ende": 74.44
+    },
+    {
+     "wort": "als",
+     "start": 74.48,
+     "ende": 74.56
+    },
+    {
+     "wort": "du",
+     "start": 74.64,
+     "ende": 74.72
+    },
+    {
+     "wort": "denkst.",
+     "start": 74.8,
+     "ende": 75.52
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 75.6,
+   "ende": 78.64,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 75.6,
+     "ende": 75.68
+    },
+    {
+     "wort": "sollen",
+     "start": 75.733,
+     "ende": 75.84
+    },
+    {
+     "wort": "wir",
+     "start": 75.88,
+     "ende": 75.96
+    },
+    {
+     "wort": "als",
+     "start": 76.0,
+     "ende": 76.08
+    },
+    {
+     "wort": "Nächstes",
+     "start": 76.16,
+     "ende": 76.48
+    },
+    {
+     "wort": "zeigen?",
+     "start": 76.56,
+     "ende": 77.2
+    },
+    {
+     "wort": "Schreib",
+     "start": 77.24,
+     "ende": 77.44
+    },
+    {
+     "wort": "es",
+     "start": 77.48,
+     "ende": 77.52
+    },
+    {
+     "wort": "in",
+     "start": 77.6,
+     "ende": 77.64
+    },
+    {
+     "wort": "die",
+     "start": 77.68,
+     "ende": 77.76
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 77.8,
+     "ende": 78.64
+    }
+   ]
+  }
+ ]
+}

@@ -251,3 +251,306 @@ export function abendWand() {
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
   return t;
 }
+
+// =====================================================================================
+// Erweiterung (03.11., Video „Studium oder Ausbildung“): Lebensweg-Objekte für Bildung, Arbeit und Geld
+//   modellLaeufer  Modellfigur mit Gehen/Sitzen (pose), Teamton, Lichtfleck
+//   hoersaal       Schnittmodell eines Hörsaals (Stufen, Pulte, Tafel, Deckenlicht), sitz(stufe, nr) → Sitzpunkt
+//   werkstatt      Schnittmodell eines Ausbildungsbetriebs (Sheddach, Werkbank, Maschine, Zahnrad)
+//   schulhaus      Schulgebäude mit Uhrturm und Fahne (Gymnasium, Berufsschule)
+//   zielTor        Ziellinien-Tor mit leuchtender Zahl (setze(0–1))
+//   geldSaeule     Acryl-Säule mit variabler Höhe (hoehe(h), setze(s), puls(k)) – Geld als Pegel
+//   schild         kleines stehendes Schild mit Text (Canvas, Schrift „SB Display“ vorher laden)
+//   spurBand       leuchtendes Band am Boden (laenge(l)) – Spur einer Figur
+// =====================================================================================
+
+const teamMat = (farbe, e = 0.5) => new THREE.MeshStandardMaterial({ color: farbe, emissive: farbe, emissiveIntensity: e, roughness: 0.5 });
+
+/**
+ * Modellfigur (weiß, abstrakt, ohne Gesicht) mit Gelenken: Beine und Arme pendeln beim Gehen, Sitzen setzt die Figur ab und
+ * streckt die Beine nach vorn (−z). pose({ geh: Phase in rad, schritt: 0–1 Schrittweite, sitz: 0–1 }).
+ * farbe = Teamfarbe (Schal/Rucksack-Band und Lichtfleck am Boden), Figur blickt nach −z.
+ */
+export function modellLaeufer({ groesse = 0.75, farbe = "#FF8A3D", lichtfleck = true, jacke = 0.0 } = {}) {
+  const g = new THREE.Group();
+  const weiss = gemeinsam("laeufer|weiss", () => new THREE.MeshStandardMaterial({ color: "#F4F1EC", roughness: 0.85 }));
+  const grau = gemeinsam("laeufer|grau", () => new THREE.MeshStandardMaterial({ color: "#D9D5CC", roughness: 0.9 }));
+  const tm = new THREE.MeshStandardMaterial({ color: new THREE.Color("#F4F1EC").lerp(new THREE.Color(farbe), jacke), emissive: farbe, emissiveIntensity: 0.35 + jacke * 0.4, roughness: 0.6 });
+  const s = groesse;
+  const huefte = s * 0.46;
+  const koerper = new THREE.Group(); // Rumpf, Kopf, Arme: wandert beim Sitzen nach unten
+  g.add(koerper);
+  const rumpf = new THREE.Mesh(new THREE.CapsuleGeometry(s * 0.12, s * 0.24, 4, 12), jacke > 0.01 ? tm : weiss);
+  rumpf.position.y = huefte + s * 0.2; rumpf.castShadow = true;
+  const schal = new THREE.Mesh(new THREE.TorusGeometry(s * 0.115, s * 0.03, 8, 20), tm);
+  schal.rotation.x = Math.PI / 2; schal.position.y = huefte + s * 0.4;
+  const kopf = new THREE.Mesh(new THREE.SphereGeometry(s * 0.105, 16, 12), weiss);
+  kopf.position.y = huefte + s * 0.55; kopf.castShadow = true;
+  koerper.add(rumpf, schal, kopf);
+  const bein = (x) => {
+    const p = new THREE.Group(); p.position.set(x, huefte, 0);
+    const m = new THREE.Mesh(new THREE.CapsuleGeometry(s * 0.05, huefte - s * 0.1, 3, 8), grau);
+    m.position.y = -huefte / 2; m.castShadow = true;
+    p.add(m); g.add(p); return p;
+  };
+  const arm = (x) => {
+    const p = new THREE.Group(); p.position.set(x, huefte + s * 0.34, 0);
+    const m = new THREE.Mesh(new THREE.CapsuleGeometry(s * 0.038, s * 0.2, 3, 8), weiss);
+    m.position.y = -s * 0.13; m.castShadow = true;
+    p.add(m); koerper.add(p); return p;
+  };
+  const bl = bein(-s * 0.07), br = bein(s * 0.07), al = arm(-s * 0.17), ar = arm(s * 0.17);
+  if (lichtfleck) {
+    const p = lichtPfuetze({ radius: s * 0.9, farbe, staerke: 0.75, exponent: 1.8 });
+    p.material = p.material.clone();
+    p.position.y = 0.01;
+    g.add(p);
+    g.fleck = p;
+  }
+  g.pose = ({ geh = 0, schritt = 0.5, sitz = 0 } = {}) => {
+    const a = Math.sin(geh) * 0.7 * schritt * (1 - sitz);
+    bl.rotation.x = a + sitz * Math.PI * 0.5; br.rotation.x = -a + sitz * Math.PI * 0.5;
+    al.rotation.x = -a * 0.9 + sitz * 0.5; ar.rotation.x = a * 0.9 + sitz * 0.5;
+    const wipp = Math.abs(Math.cos(geh)) * s * 0.025 * schritt * (1 - sitz);
+    const runter = sitz * (huefte - s * 0.22);
+    koerper.position.y = wipp - runter; koerper.position.z = sitz * s * 0.02;
+    bl.position.y = br.position.y = huefte - runter;
+    bl.position.z = br.position.z = 0;
+    const lift = Math.max(0, -Math.cos(geh)) * s * 0.03 * schritt * (1 - sitz);
+    g.position.y = g.userData.basisY !== undefined ? g.userData.basisY + 0 : g.position.y;
+    return lift;
+  };
+  g.leuchte = (k) => { if (g.fleck) g.fleck.material.uniforms.staerke.value = 0.75 * k; };
+  g.hoehe = s;
+  g.userData.dynamisch = true;
+  g.pose({});
+  return g;
+}
+
+/** Schnittmodell Hörsaal: offene Vorderseite (+z), Stufen steigen zur Rückwand (+x), Pulte, Tafel links, warme Deckenlichter */
+export function hoersaal({ breite = 4.4, tiefe = 2.5, hoehe = 2.5, stufen = 4, stufenHoehe = 0.3, licht = 1, gespiegelt = false } = {}) {
+  const g = new THREE.Group();
+  const sg = gespiegelt ? -1 : 1; // Stufen steigen nach −x statt +x (ohne negative Skalierung)
+  const wand = gemeinsam("hs|wand", () => new THREE.MeshStandardMaterial({ color: MODELL.karton, roughness: 0.92 }));
+  const holz = gemeinsam("hs|holz", () => new THREE.MeshStandardMaterial({ color: MODELL.holz, roughness: 0.75 }));
+  const kork = gemeinsam("hs|kork", () => new THREE.MeshStandardMaterial({ color: MODELL.kork, roughness: 0.85 }));
+  const box = (w, h, d, x, y, z, m, schatten = true) => { const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); b.position.set(sg * x, y, z); b.castShadow = schatten; b.receiveShadow = true; g.add(b); return b; };
+  box(breite, 0.06, tiefe, 0, 0.03, 0, holz); // Bodenplatte
+  box(breite, hoehe, 0.06, 0, hoehe / 2, -tiefe / 2 + 0.03, wand); // Rückwand
+  box(0.06, hoehe, tiefe, breite / 2 - 0.03, hoehe / 2, 0, wand); // Wand rechts (hinten im Raum)
+  box(breite, 0.06, tiefe, 0, hoehe, 0, wand); // Decke
+  box(0.06, hoehe * 0.55, tiefe, -breite / 2 + 0.03, hoehe * 0.275 + 0.06, 0, wand); // niedrige Wand links (Eingang)
+  const x0 = -breite / 2 + 1.0, sb = (breite - 1.2) / stufen; // Stufen von links nach rechts
+  g.stufen = [];
+  for (let i = 0; i < stufen; i++) {
+    const hh = (i + 1) * stufenHoehe, x = x0 + sb * (i + 0.5);
+    box(sb, hh, tiefe - 0.1, x, 0.06 + hh / 2, 0, i % 2 ? kork : holz);
+    const top = 0.06 + hh;
+    box(sb * 0.34, 0.035, tiefe * 0.86, x - sb * 0.2, top + 0.24, 0, kork); // Pult (Platte)
+    box(0.03, 0.24, tiefe * 0.82, x - sb * 0.2, top + 0.12, 0, kork, false); // Pultwand
+    box(sb * 0.2, 0.05, tiefe * 0.8, x + sb * 0.22, top + 0.13, 0, holz, false); // Sitzbank
+    g.stufen.push({ x: sg * (x + sb * 0.18), y: top + 0.12, breite: sb });
+  }
+  // Pult des Dozenten und Tafel
+  box(0.5, 0.42, 0.7, -breite / 2 + 0.55, 0.06 + 0.21, tiefe * 0.18, kork);
+  const tafel = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 0.9), leuchtMat("#C9D6E6", 1.1));
+  tafel.position.set(sg * (-breite / 2 + 1.0), hoehe * 0.55, -tiefe / 2 + 0.07);
+  g.add(tafel);
+  const rahmen = new THREE.Mesh(new THREE.BoxGeometry(1.58, 0.98, 0.03), kork);
+  rahmen.position.set(sg * (-breite / 2 + 1.0), hoehe * 0.55, -tiefe / 2 + 0.055);
+  g.add(rahmen);
+  for (let i = 0; i < 3; i++) box(0.9 - i * 0.15, 0.025, 0.012, -breite / 2 + 1.0 - 0.1 + i * 0.05, hoehe * 0.55 + 0.25 - i * 0.22, -tiefe / 2 + 0.085, gemeinsam("hs|kreide", () => new THREE.MeshBasicMaterial({ color: "#6D7F96" })), false);
+  // Deckenlicht
+  for (let i = 0; i < 3; i++) {
+    const x = -breite / 2 + breite * (0.22 + 0.28 * i);
+    const l = new THREE.Mesh(new THREE.PlaneGeometry(0.9, tiefe * 0.4), leuchtMat("#FFD9A8", 3.2 * licht));
+    l.rotation.x = Math.PI / 2; l.position.set(sg * x, hoehe - 0.004, 0);
+    g.add(l);
+    const p = lichtPfuetze({ radius: 1.1, farbe: "#FFB36B", staerke: 0.55 * licht, streckung: tiefe / 2.2, exponent: 1.4 });
+    p.position.set(sg * x, 0.07 + stufenHoehe * Math.min(stufen, 1 + i), 0);
+    g.add(p);
+  }
+  g.sitz = (stufe, nr = 0, anzahl = 3) => { const s = g.stufen[stufe]; return [s.x, s.y, (nr - (anzahl - 1) / 2) * (tiefe * 0.72 / Math.max(1, anzahl - 1))]; };
+  g.userData = { breite, tiefe, hoehe };
+  return g;
+}
+
+/** Schnittmodell Ausbildungsbetrieb: Sheddach, offene Vorderseite (+z), Werkbank, Maschine, Hängelampen, Zahnrad auf dem Dach */
+export function werkstatt({ breite = 3.6, tiefe = 2.4, hoehe = 1.6, licht = 1 } = {}) {
+  const g = new THREE.Group();
+  const wand = gemeinsam("ws|wand", () => new THREE.MeshStandardMaterial({ color: MODELL.karton, roughness: 0.92 }));
+  const holz = gemeinsam("ws|holz", () => new THREE.MeshStandardMaterial({ color: MODELL.holz, roughness: 0.75 }));
+  const grau = gemeinsam("ws|grau", () => new THREE.MeshStandardMaterial({ color: MODELL.grau, roughness: 0.6, metalness: 0.2 }));
+  const kork = gemeinsam("ws|kork", () => new THREE.MeshStandardMaterial({ color: MODELL.kork, roughness: 0.85 }));
+  const box = (w, h, d, x, y, z, m, schatten = true) => { const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); b.position.set(x, y, z); b.castShadow = schatten; b.receiveShadow = true; g.add(b); return b; };
+  box(breite, 0.06, tiefe, 0, 0.03, 0, holz);
+  box(breite, hoehe, 0.06, 0, hoehe / 2 + 0.06, -tiefe / 2 + 0.03, wand);
+  box(0.06, hoehe, tiefe, -breite / 2 + 0.03, hoehe / 2 + 0.06, 0, wand);
+  box(0.06, hoehe, tiefe, breite / 2 - 0.03, hoehe / 2 + 0.06, 0, wand);
+  // Sheddach: drei Sägezähne (schräge Dachflächen, hohe Wand mit Fensterband)
+  const n = 3, sw = breite / n;
+  for (let i = 0; i < n; i++) {
+    const x = -breite / 2 + sw * (i + 0.5);
+    const s = new THREE.Shape();
+    s.moveTo(-sw / 2, 0); s.lineTo(sw / 2, 0); s.lineTo(sw / 2, 0.5); s.closePath();
+    const geo = new THREE.ExtrudeGeometry(s, { depth: tiefe, bevelEnabled: false });
+    geo.translate(0, 0, -tiefe / 2);
+    const d = new THREE.Mesh(geo, wand);
+    d.position.set(x, hoehe + 0.06, 0); d.castShadow = true; d.receiveShadow = true;
+    g.add(d);
+    const f = new THREE.Mesh(new THREE.PlaneGeometry(tiefe * 0.8, 0.34), leuchtMat("#FFE2B8", 2.4 * licht));
+    f.rotation.y = -Math.PI / 2; f.position.set(x + sw / 2 - 0.004, hoehe + 0.06 + 0.25, 0);
+    g.add(f);
+  }
+  box(breite, 0.06, tiefe, 0, hoehe + 0.06, 0, wand); // Decke
+  // Werkbank mit Schraubstock, Maschine (Drehbank), Werkstück
+  box(1.2, 0.05, 0.55, -breite * 0.2, 0.42, -tiefe * 0.2, holz);
+  box(1.2, 0.36, 0.5, -breite * 0.2, 0.24, -tiefe * 0.2, kork);
+  box(0.14, 0.14, 0.14, -breite * 0.2 - 0.4, 0.52, -tiefe * 0.2, grau);
+  box(0.9, 0.5, 0.6, breite * 0.25, 0.31, -tiefe * 0.15, grau);
+  const spindel = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.5, 14), grau);
+  spindel.rotation.z = Math.PI / 2; spindel.position.set(breite * 0.25, 0.7, -tiefe * 0.15); spindel.castShadow = true; g.add(spindel);
+  box(0.5, 0.08, 0.3, breite * 0.25, 0.9, -tiefe * 0.35, kork);
+  // Zahnrad auf der Vorderkante des Dachs (als Zeichen für Ausbildung/Handwerk)
+  const z = new THREE.Group();
+  const zr = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.07, 20), gemeinsam("ws|zahn", () => new THREE.MeshStandardMaterial({ color: "#ECE6DA", roughness: 0.5, metalness: 0.15 })));
+  zr.rotation.x = Math.PI / 2; z.add(zr);
+  for (let i = 0; i < 10; i++) { const a = (i / 10) * Math.PI * 2; const t = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.07, 0.09), zr.material); t.position.set(Math.cos(a) * 0.26, Math.sin(a) * 0.26, 0); t.rotation.z = a; z.add(t); }
+  z.position.set(-breite * 0.35, hoehe + 0.06 + 0.55, tiefe / 2 - 0.08);
+  g.add(z); g.zahnrad = z; z.userData.dynamisch = true;
+  for (const x of [-0.28, 0.12]) {
+    const l = new THREE.Mesh(new THREE.PlaneGeometry(0.7, 0.3), leuchtMat("#FFD4A0", 3 * licht));
+    l.rotation.x = Math.PI / 2; l.position.set(breite * x, hoehe + 0.055 - 0.004, 0);
+    g.add(l);
+    const p = lichtPfuetze({ radius: 0.9, farbe: "#FFB36B", staerke: 0.6 * licht, streckung: tiefe / 1.8, exponent: 1.4 });
+    p.position.set(breite * x, 0.07, 0);
+    g.add(p);
+  }
+  g.userData = { breite, tiefe, hoehe };
+  return g;
+}
+
+/** Schulgebäude: langer Baukörper mit Fensterschnitten, Uhrturm mit leuchtendem Zifferblatt und Fahnenmast */
+export function schulhaus({ breite = 3.6, tiefe = 1.7, hoehe = 1.5, material = "karton", seed = 11 } = {}) {
+  const g = new THREE.Group();
+  const k = modellHaus({ breite, hoehe, tiefe, dach: "flach", material, seed });
+  g.add(k);
+  const turm = modellHaus({ breite: 0.8, hoehe: hoehe + 0.9, tiefe: 0.8, dach: "sattel", material, seed: seed + 3, dachHoehe: 0.55, fenster: false });
+  turm.position.set(breite * 0.3, 0, tiefe * 0.05);
+  g.add(turm);
+  const uhr = new THREE.Mesh(new THREE.CircleGeometry(0.26, 24), leuchtMat("#FFE9C8", 2.2));
+  uhr.position.set(breite * 0.3, hoehe + 0.55, tiefe * 0.05 + 0.405);
+  g.add(uhr);
+  const zeiger = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.2, 0.01), gemeinsam("schule|zeiger", () => new THREE.MeshBasicMaterial({ color: "#3A3631" })));
+  zeiger.position.set(breite * 0.3 + 0.04, hoehe + 0.6, tiefe * 0.05 + 0.412); zeiger.rotation.z = -0.6;
+  const zeiger2 = zeiger.clone(); zeiger2.scale.set(0.8, 0.6, 1); zeiger2.position.set(breite * 0.3 - 0.03, hoehe + 0.52, tiefe * 0.05 + 0.412); zeiger2.rotation.z = 1.1;
+  g.add(zeiger, zeiger2);
+  const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 1.1, 6), gemeinsam("draht", () => new THREE.MeshStandardMaterial({ color: "#6B5E50", roughness: 0.6, metalness: 0.3 })));
+  mast.position.set(-breite * 0.38, hoehe + 0.55, tiefe * 0.3); mast.castShadow = true; g.add(mast);
+  const fahne = new THREE.Mesh(new THREE.PlaneGeometry(0.34, 0.2), new THREE.MeshStandardMaterial({ color: "#ECE6DA", side: THREE.DoubleSide, roughness: 0.9 }));
+  fahne.position.set(-breite * 0.38 + 0.18, hoehe + 0.98, tiefe * 0.3); fahne.castShadow = true; g.add(fahne);
+  // Eingangstreppe als helle Stufen
+  for (let i = 0; i < 3; i++) { const s = new THREE.Mesh(new THREE.BoxGeometry(0.7 + i * 0.12, 0.04, 0.12), gemeinsam("schule|stufe", () => new THREE.MeshStandardMaterial({ color: MODELL.grau, roughness: 0.9 }))); s.position.set(-breite * 0.05, 0.02 + (2 - i) * 0.04, tiefe / 2 + 0.06 + i * 0.11); s.receiveShadow = true; g.add(s); }
+  g.userData = { breite, tiefe, hoehe };
+  return g;
+}
+
+/** Text auf Canvas → Textur (Schrift „SB Display“ muss geladen sein) */
+function textTextur(text, { b = 512, h = 256, farbe = "#2A2622", grund = "#ECE6DA", schrift = "800", rand = "#B9B0A2", px = null } = {}) {
+  const c = leinwand(b, h, (g) => {
+    g.fillStyle = grund; g.fillRect(0, 0, b, h);
+    g.strokeStyle = rand; g.lineWidth = 8; g.strokeRect(6, 6, b - 12, h - 12);
+    const zeilen = String(text).split("\n");
+    const groesse = px ?? Math.min(h * 0.62 / zeilen.length, (b * 0.82) / Math.max(1, Math.max(...zeilen.map((z) => z.length)) * 0.6));
+    g.fillStyle = farbe; g.textAlign = "center"; g.textBaseline = "middle"; g.font = `${schrift} ${groesse}px 'SB Display', 'Inter', sans-serif`;
+    zeilen.forEach((z, i) => g.fillText(z, b / 2, h / 2 + (i - (zeilen.length - 1) / 2) * groesse * 1.08));
+  });
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
+  return t;
+}
+
+/** Kleines stehendes Schild (Pfosten + Tafel mit Text), z. B. Geld-Meilenstein auf dem Weg */
+export function schild({ text = "", breite = 0.8, hoehe = 0.36, pfosten = 0.42, grund = "#ECE6DA", farbe = "#2A2622", px = null, schrift = "800" } = {}) {
+  const g = new THREE.Group();
+  const p = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, pfosten, 6), gemeinsam("draht", () => new THREE.MeshStandardMaterial({ color: "#6B5E50", roughness: 0.6, metalness: 0.3 })));
+  p.position.y = pfosten / 2; p.castShadow = true; g.add(p);
+  const t = textTextur(text, { b: 512, h: Math.round(512 * hoehe / breite), grund, farbe, px, schrift });
+  const m = new THREE.Mesh(new THREE.BoxGeometry(breite, hoehe, 0.025), [gemeinsam("schild|kante", () => new THREE.MeshStandardMaterial({ color: MODELL.holz, roughness: 0.8 })), gemeinsam("schild|kante", () => new THREE.MeshStandardMaterial({ color: MODELL.holz, roughness: 0.8 })), gemeinsam("schild|kante", () => new THREE.MeshStandardMaterial({ color: MODELL.holz, roughness: 0.8 })), gemeinsam("schild|kante", () => new THREE.MeshStandardMaterial({ color: MODELL.holz, roughness: 0.8 })), new THREE.MeshStandardMaterial({ map: t, roughness: 0.8, emissive: "#FFFFFF", emissiveMap: t, emissiveIntensity: 0.18 }), new THREE.MeshStandardMaterial({ color: MODELL.holz, roughness: 0.8 })]);
+  m.position.y = pfosten + hoehe / 2; m.castShadow = true; g.add(m);
+  return g;
+}
+
+/** Ziellinien-Tor: zwei Pfosten, Querbalken mit leuchtender Zahl, Lichtlinie am Boden; setze(0–1) = Aufleuchten */
+export function zielTor({ breite = 3.2, hoehe = 1.9, text = "40", farbe = "#ECE6DA", staerke = 3.0 } = {}) {
+  const g = new THREE.Group();
+  const holz = gemeinsam("tor|holz", () => new THREE.MeshStandardMaterial({ color: MODELL.karton, roughness: 0.9 }));
+  for (const x of [-breite / 2, breite / 2]) { const p = new THREE.Mesh(new THREE.BoxGeometry(0.14, hoehe, 0.14), holz); p.position.set(x, hoehe / 2, 0); p.castShadow = true; g.add(p); }
+  const bal = new THREE.Mesh(new THREE.BoxGeometry(breite + 0.14, 0.5, 0.14), holz);
+  bal.position.y = hoehe - 0.05; bal.castShadow = true; g.add(bal);
+  const t = textTextur(text, { b: 256, h: 128, grund: "#1B1E26", farbe, rand: "#1B1E26", px: 96 });
+  const tafelMat = new THREE.MeshBasicMaterial({ map: t, color: new THREE.Color(1, 1, 1).multiplyScalar(1.0), toneMapped: false });
+  const tafel = new THREE.Mesh(new THREE.PlaneGeometry(0.62, 0.4), tafelMat);
+  tafel.position.set(0, hoehe - 0.05, 0.075); g.add(tafel);
+  const tafel2 = tafel.clone(); tafel2.position.z = -0.075; tafel2.rotation.y = Math.PI; g.add(tafel2);
+  const lm = leuchtMat(farbe, staerke, { transparent: true, neu: true });
+  const linie = new THREE.Mesh(new THREE.BoxGeometry(breite, 0.012, 0.07), lm); linie.position.y = 0.012; g.add(linie);
+  const bandL = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.03, 0.15), lm); bandL.position.set(-breite / 2, hoehe + 0.2, 0); // kleine Marke auf dem Balken
+  const bandR = bandL.clone(); bandR.position.x = breite / 2; g.add(bandL, bandR);
+  const pf = lichtPfuetze({ radius: breite * 0.8, farbe, staerke: 0.5, streckung: 0.5, exponent: 1.6 });
+  pf.material = pf.material.clone(); pf.position.y = 0.015; g.add(pf);
+  g.userData.dynamisch = true;
+  g.setze = (s) => { lm.opacity = 0.12 + 0.88 * s; pf.material.uniforms.staerke.value = 0.08 + 0.7 * s; tafelMat.color.setScalar(0.45 + 0.9 * s); };
+  g.setze(0);
+  return g;
+}
+
+/**
+ * Geld-Säule: halbtransparenter Acryl-Quader in Teamfarbe mit leuchtenden Kanten und Pegelkappe. Die Höhe ist beliebig und
+ * jederzeit änderbar (hoehe(h)); setze(s) blendet ein (0–1); puls(k) erhöht kurz das Leuchten (Aufleuchten bei Ereignissen).
+ */
+export function geldSaeule({ breite = 0.4, farbe = "#FF8A3D", deckkraft = 0.34, kanten = 3.0 } = {}) {
+  const g = new THREE.Group();
+  const f = new THREE.Color(farbe);
+  const fuellMat = new THREE.MeshStandardMaterial({ color: f, emissive: f, emissiveIntensity: 0.55, transparent: true, opacity: deckkraft, roughness: 0.1, depthWrite: false });
+  const fuell = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), fuellMat);
+  fuell.renderOrder = 4; g.add(fuell);
+  const lm = leuchtMat(farbe, kanten, { transparent: true, neu: true });
+  const b = breite / 2;
+  const senkrecht = [[-b, -b], [b, -b], [b, b], [-b, b]].map(([x, z]) => { const m = new THREE.Mesh(new THREE.BoxGeometry(0.016, 1, 0.016), lm); m.position.set(x, 0.5, z); g.add(m); return m; });
+  const oben = [];
+  for (const [w, d, x, z] of [[breite, 0.016, 0, -b], [breite, 0.016, 0, b], [0.016, breite, -b, 0], [0.016, breite, b, 0]]) { const m = new THREE.Mesh(new THREE.BoxGeometry(w, 0.016, d), lm); m.position.set(x, 1, z); g.add(m); oben.push(m); }
+  const kappeMat = leuchtMat(farbe, kanten * 0.9, { transparent: true, neu: true });
+  const kappe = new THREE.Mesh(new THREE.BoxGeometry(breite * 0.96, 0.02, breite * 0.96), kappeMat);
+  kappe.position.y = 1; g.add(kappe);
+  const pf = lichtPfuetze({ radius: breite * 1.7, farbe, staerke: 0.45, exponent: 2 });
+  pf.material = pf.material.clone(); pf.position.y = 0.006; g.add(pf);
+  g.userData.dynamisch = true;
+  let H = 1, S = 1, P = 0;
+  const wende = () => {
+    g.visible = S > 0.001;
+    fuell.scale.set(breite, Math.max(H, 1e-3), breite); fuell.position.y = H / 2;
+    senkrecht.forEach((m) => { m.scale.y = Math.max(H, 1e-3); m.position.y = H / 2; });
+    oben.forEach((m) => { m.position.y = H; }); kappe.position.y = H;
+    fuellMat.opacity = Math.min(1, deckkraft * S * (1 + 0.8 * P)); fuellMat.emissiveIntensity = (0.55 + 1.6 * P) * S;
+    lm.opacity = S; kappeMat.opacity = S;
+    lm.color.copy(f).multiplyScalar(kanten * (1 + 0.8 * P)); kappeMat.color.copy(f).multiplyScalar(kanten * 0.9 * (1 + 1.2 * P));
+    pf.material.uniforms.staerke.value = (0.45 + 0.9 * P) * S;
+  };
+  g.hoehe = (h) => { H = h; wende(); return g; };
+  g.setze = (s) => { S = s; wende(); return g; };
+  g.puls = (k) => { P = k; wende(); return g; };
+  g.kopf = () => H;
+  wende();
+  return g;
+}
+
+/** Leuchtende Bodenspur (Band) in Teamfarbe: laenge(l) setzt die Länge ab dem Ursprung nach −z (Quader, kein Texturlauf) */
+export function spurBand({ breite = 0.1, farbe = "#FF8A3D", staerke = 2.6, y = 0.012 } = {}) {
+  const lm = leuchtMat(farbe, staerke, { transparent: true, neu: true, deckkraft: 0.9 });
+  const m = new THREE.Mesh(new THREE.BoxGeometry(breite, 0.012, 1), lm);
+  m.userData.dynamisch = true;
+  m.laenge = (l) => { m.visible = l > 1e-3; m.scale.z = Math.max(l, 1e-3); m.position.set(0, y, -l / 2); };
+  m.laenge(0);
+  m.mat = lm;
+  return m;
+}
