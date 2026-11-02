@@ -3,7 +3,7 @@
  "erzeugt": "render.js",
  "projekt": "schere-stein-papier",
  "fps": 30,
- "dauer": 73.96666666666667,
+ "dauer": 73.86666666666666,
  "stimmEnde": 72.961,
  "timing": "timing.json (echte Stimme)",
  "protokoll": true,
@@ -22,7 +22,7 @@
   },
   "schleife": {
    "ab": 69.97,
-   "ende": 73.93333333333334
+   "ende": 73.83333333333333
   },
   "untertitel": {
    "stil": "kontur"
@@ -30,7 +30,7 @@
   "timing": "echt",
   "schleifenPruefung": {
    "ok": true,
-   "ende": 73.933,
+   "ende": 73.833,
    "nurErstesBild": [],
    "nurLetztesBild": [],
    "kameraAbweichung": 0
@@ -138,6 +138,13 @@
    "typ": "chip",
    "klang": "pop",
    "text": "100 RUNDEN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.69,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "100 Plätze leuchten auf"
   },
   {
    "quelle": "Szene",
@@ -1464,19 +1471,6 @@
    "text": "Wiederholung Runde 1"
   },
   {
-   "quelle": "Chip",
-   "t": 53.85,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "RUNDE 1: CYAN GEWINNT"
-  },
-  {
-   "quelle": "Chip",
-   "t": 54.56,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
    "quelle": "Szene",
    "t": 54.86,
    "typ": "zug",
@@ -1922,7 +1916,7 @@
    "quelle": "Tafel",
    "t": 69.967,
    "typ": "zaehler",
-   "dauer": 3.933,
+   "dauer": 3.833,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -1931,13 +1925,13 @@
    "quelle": "Regie",
    "t": 69.97,
    "art": "schleife",
-   "dauer": 3.963,
+   "dauer": 3.863,
    "klang": false
   },
   {
    "t": 69.97,
    "typ": "schleife",
-   "dauer": 3.963,
+   "dauer": 3.863,
    "klang": "rueck",
    "quelle": "Massstab"
   },
@@ -1945,7 +1939,7 @@
    "quelle": "Tafel",
    "t": 70,
    "typ": "zaehler",
-   "dauer": 3.9,
+   "dauer": 3.8,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -1961,13 +1955,13 @@
    "quelle": "Tafel",
    "t": 70.623,
    "typ": "uhr",
-   "dauer": 2.633,
+   "dauer": 2.567,
    "laufend": true,
    "klang": "uhr"
   },
   {
    "quelle": "Tafel",
-   "t": 73.39,
+   "t": 73.29,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,

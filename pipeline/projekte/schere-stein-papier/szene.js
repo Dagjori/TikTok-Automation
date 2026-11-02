@@ -114,7 +114,7 @@ async function start() {
   let timing;
   try { timing = await lade("audio/timing.json"); }
   catch { try { timing = await lade("audio/timing_schaetzung.json"); } catch { timing = schaetzeTiming(skript); } }
-  const zp = new Zeitplan(timing, { mindestlaenge: 0, nachlauf: 1.0 });
+  const zp = new Zeitplan(timing, { mindestlaenge: 0, nachlauf: 0.9 });
   const DAUER = Math.round(zp.dauer * FPS) / FPS;
   const ENDE = DAUER - 1 / FPS;
   const T = (x) => zp.zeit(x);
@@ -174,6 +174,7 @@ async function start() {
   const tR0 = T("warum:Warum") + 0.2, tR1 = T("ueberraschung:Und") - 0.1;
   const tMerk = T("merksatz:Gegen") - 0.25; // Brett räumt auf
   const tSchleife = T("schluss:Was") + 0.05;
+  const tGeist = T("regeln:Hundert") + 0.05; // Brett leuchtet auf
 
   const akte = [
     { id: "Z", von: 0, bis: tLeerZ + 0.5, runden: lz.runden, zeiten: tZ, start: tZ[1] - 1.0 },
@@ -297,9 +298,9 @@ async function start() {
   szene.add(pflTisch);
 
   // Katze auf dem Teppich (Umfeld): folgt dem Spiel mit Kopf und Ohren
-  const katzeM = katze({ groesse: 1.25 });
-  katzeM.gruppe.position.set(1.7, 0.1, 3.2);
-  katzeM.gruppe.rotation.y = -0.55;
+  const katzeM = katze({ groesse: 0.95 });
+  katzeM.gruppe.position.set(1.15, 0.1, 2.9);
+  katzeM.gruppe.rotation.y = -0.45;
   szene.add(katzeM.gruppe);
 
   // =====================================================================================
@@ -496,7 +497,6 @@ async function start() {
   ] });
   M.chip({ text: `+${vorsprung2} SIEGE VORSPRUNG`, ein: "ergebnis2:Neunzehn", aus: "warum:Warum-0.1", art: "dunkel", gross: true, x: SICHER.mitte, anker: "mitte", y: 600 });
   // Warum: Wiederholung der Runden 1–3 mit den zwei Faktoren
-  M.chip({ text: "RUNDE 1: CYAN GEWINNT", ein: tR[1] + 0.05, aus: tR[2] - 0.3, art: "voll", team: "b", x: SICHER.mitte, anker: "mitte", y: 735 });
   M.chip({ text: "RUNDE 2: CYAN BLEIBT", ein: tR[2] + 0.05, aus: tR[3] - 0.3, art: "voll", team: "b", x: SICHER.mitte, anker: "mitte", y: 735 });
   M.chip({ text: "RUNDE 3: CYAN WECHSELT", ein: tR[3] + 0.05, aus: "warum:Rot-0.1", art: "voll", team: "b", x: SICHER.mitte, anker: "mitte", y: 735 });
   // Zweite Überraschung: zweite Hälfte
@@ -892,6 +892,7 @@ async function start() {
   for (const x of WURF_Z) if (x.r > 3) M.melde({ t: x.t, typ: "zug", klang: "pop", text: `Runde ${x.r}` });
   for (let r = 1; r <= 3; r++) M.melde({ t: tM[r], typ: "zug", klang: "pop", text: `Mensch Runde ${r}` });
   for (let r = 1; r <= 3; r++) M.melde({ t: tR[r], typ: "zug", klang: "pop", text: `Wiederholung Runde ${r}` });
+  M.melde({ t: tGeist, typ: "welt", klang: "pop", text: "100 Plätze leuchten auf" });
   M.melde({ t: tDemoWurf, typ: "wuerfel", klang: "klick", text: "Würfel rollt" });
   M.melde({ t: T("hook:Glück"), typ: "wuerfel", klang: "klick", text: "Becher schüttelt" });
   M.melde({ t: T("hook:Taktik"), typ: "welt", klang: "pop", text: "Rot schiebt die Brille" });
@@ -970,7 +971,12 @@ async function start() {
     wende(kl > 0 ? mixD(Z0, zustand(t), ein) : zustand(t));
     // Brett
     for (let r = 1; r <= 100; r++) {
-      const s = kachel(r, t);
+      let s = kachel(r, t);
+      // „Hundert Runden.“: alle 100 Plätze des Bretts leuchten einmal reihenweise auf
+      if (!(s.groesse > 0) && t >= tGeist && t < tGeist + 1.8) {
+        const u = (t - tGeist - Math.floor((r - 1) / 10) * 0.07 - ((r - 1) % 10) * 0.012) / 0.4;
+        if (u > 0 && u < 1) s = { groesse: 0.7 * Math.sin(Math.PI * u), farbe: "remis", hebe: 0.05 * Math.sin(Math.PI * u) };
+      }
       if (s.x === undefined) { const [bx, by] = B.userData.platz(r - 1); s.x = bx; s.y = by; }
       const g = (s.groesse || 0) * (t >= tMerk ? 1 - ease.inCubic(clamp((t - tMerk - (r - 1) * 0.004) / 0.2)) : 1) * (1 - kl);
       setzeKachel(B, r - 1, { groesse: g, farbe: s.farbe || "remis", drehung: s.drehung || 0, hebe: s.hebe || 0, x: s.x ?? null, y: s.y ?? null });

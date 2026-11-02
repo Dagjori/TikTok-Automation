@@ -114,6 +114,14 @@ Jeder Baustein meldet seine Ereignisse: `{t, typ, dauer?, laufend?, klang?, text
 - **Effekte automatisch je Ereignis:** Pop (Chip, Tafel, Formel), Stempel-Aufprall, Ding (Führungswechsel, Ring-Ende, Differenz), Zähler-Ticken, Uhr-Ticken, Tick (Marke), Wachsen (Balken), Sieg-Arpeggio, Folgen-Pling, Whoosh/Wolke/Blasen (Übergänge), Rückspul-Wisch (Schleife), **Akzent auf der Pointe**. Ein Ereignis kann `klang: "name"` oder `klang: false` mitbringen. Ohne Protokoll (ältere Szenen) gilt wie bisher `window.klangEreignisse`.
 - Nur selbst synthetisierte Klänge (numpy, fester Seed), keine fremden Dateien.
 
+## Referenzformat Account 2 (keine Stimme, 80 s; docs/16 §12)
+
+Beispiel `projekte/stickstoff-weg/` (`szene.js`, `halle.js` Welt, `zeiten.json` Zeitplan, `ton.py` Tonspur).
+- Ton ohne Stimme: `python3 projekte/<name>/ton.py` schreibt `out/<name>/ton.wav` (nur selbst erzeugte Atmo und Sounddesign, weicher Begrenzer auf Roh-Lautheit −16,5 LUFS). Danach `TON_FERTIG=1 LRA_ZIEL=20 ./mux.sh projekte/<name>`: `klang.py` wird übersprungen, loudnorm bringt den Mix linear auf −14 LUFS integriert (Verlauf bleibt erhalten), danach Spitzenbegrenzung 0,7.
+- Prüfung: `python3 qc/referenz_pov.py projekte/<name>` (Länge, Titel, Messwert-Anzeige, Sätze, Abspann, verbotene Elemente, Lautheit und Verlauf; Daten aus `out/<name>/ereignisse.json` und dem MP4) und `node qc/text_ueberlappung_pov.mjs projekte/<name>` (Text-Überlappung und sichere Zone der drei Textebenen plus Abspann).
+- Serifenschrift EB Garamond (SIL OFL) lokal über `npm i @fontsource/eb-garamond` (steht in `package.json`).
+- `klang.py`: neuer Effekt `sprudeln` (Zischen und Blubbern, Sieden).
+
 ## Prüfung (`qc/massstab.py`)
 
 ```bash
