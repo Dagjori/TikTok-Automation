@@ -196,6 +196,8 @@ export function baueMarkt(buehne, { schatten = 1024 } = {}) {
   const licht = lichtTag(szene, buehne.renderer, { bereich: 13, schattenKarte: Math.max(512, schatten), sonnenRichtung: [0.28, 1.0, -0.32], sonnenFarbe: "#FFF3E2", sonnenStaerke: 1.35,
     himmel: "#DDE8FF", boden: "#9C968B", himmelStaerke: 0.95, umgebungsStaerke: 0.5, schattenWeich: 4, ziel: [3, 0, 0] });
   licht.sonne.castShadow = schatten > 0;
+  buehne.renderer.shadowMap.autoUpdate = false; // alle Schattenwerfer stehen still: Schattenkarte nur beim ersten Bild rendern
+  buehne.renderer.shadowMap.needsUpdate = true;
   const gruppeDecke = new THREE.Group(); // wird in der Totalen ausgeblendet
   szene.add(gruppeDecke);
 
@@ -416,10 +418,10 @@ export function baueMarkt(buehne, { schatten = 1024 } = {}) {
   // Kaffeeautomat (ohne Marke)
   const maschine = new THREE.Group(); maschine.position.set(MASCHINE.x, MASCHINE.tisch, MASCHINE.z); theke.add(maschine);
   const stahl = mat("#C9CFDA", { rau: 0.5, metall: 0.25 });
-  const dunkel = mat("#252A33", { rau: 0.45, metall: 0.3 });
+  const dunkel = mat("#4A5264", { rau: 0.5, metall: 0.15 });
   const wanne = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.14, 0.44), stahl); wanne.position.set(0, 0.07, -0.02); wanne.castShadow = true; maschine.add(wanne);
   const rost = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.012, 0.28), mat("#59606F", { rau: 0.6, metall: 0.2 })); rost.position.set(0, 0.146, -0.09); maschine.add(rost);
-  const saeule = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.7, 0.26), dunkel); saeule.position.set(0, 0.49, 0.1); saeule.castShadow = true; maschine.add(saeule);
+  const saeule = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.7, 0.26), mat("#8C95A6", { rau: 0.5, metall: 0.2 })); saeule.position.set(0, 0.49, 0.1); saeule.castShadow = true; maschine.add(saeule);
   const kopf = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.26, 0.42), dunkel); kopf.position.set(0, 0.98, 0.0); kopf.castShadow = true; maschine.add(kopf);
   const front = new THREE.Mesh(new THREE.BoxGeometry(0.44, 0.2, 0.02), stahl); front.position.set(0, 0.98, -0.215); maschine.add(front);
   const anzeigeTex = canvasTextur(256, 96, (g, b, h) => { g.fillStyle = "#06101C"; g.fillRect(0, 0, b, h); g.fillStyle = "#6FE3FF"; g.font = `800 ${h * 0.5}px "SB Display", Inter, sans-serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText("KAFFEE", b / 2, h * 0.52); });
@@ -441,12 +443,12 @@ export function baueMarkt(buehne, { schatten = 1024 } = {}) {
   const kaffeeOben = new THREE.Mesh(new THREE.CircleGeometry(0.0425, 28), new THREE.MeshStandardMaterial({ color: "#2D1A10", roughness: 0.18, metalness: 0.05 }));
   kaffeeOben.rotation.x = -Math.PI / 2; kaffeeOben.position.y = 0.078; tasseG.add(kaffeeOben);
   // Blasen (Instanzen)
-  const nB = 640;
+  const nB = 800;
   const blasenGeo = new THREE.SphereGeometry(1, 9, 7);
   const blasen = new THREE.InstancedMesh(blasenGeo, new THREE.MeshStandardMaterial({ roughness: 0.35, metalness: 0.0, color: 0xffffff }), nB);
   blasen.frustumCulled = false; tasseG.add(blasen);
   const blasenDaten = Array.from({ length: nB }, (_, i) => ({ w: hash(i, 21), a: hash(i, 22) * Math.PI * 2, r: Math.sqrt(hash(i, 23)), ph: hash(i, 24), rate: 0.7 + hash(i, 25) * 1.3, gr: 0.006 + hash(i, 26) * 0.011, ton: hash(i, 27) }));
-  { const c = new THREE.Color(); blasenDaten.forEach((b, i) => { c.set(b.ton > 0.78 ? "#EAD7B5" : b.ton > 0.4 ? "#A8774A" : "#5A3720"); blasen.setColorAt(i, c); }); if (blasen.instanceColor) blasen.instanceColor.needsUpdate = true; }
+  { const c = new THREE.Color(); blasenDaten.forEach((b, i) => { c.set(b.ton > 0.9 ? "#EAD7B5" : b.ton > 0.45 ? "#B68554" : b.ton > 0.2 ? "#8A5A32" : "#4A2B18"); blasen.setColorAt(i, c); }); if (blasen.instanceColor) blasen.instanceColor.needsUpdate = true; }
   // Rinnsale (außen an der Tasse) und Tropfen
   const rinnsale = [];
   for (let i = 0; i < 7; i++) {
@@ -575,7 +577,7 @@ export function baueMarkt(buehne, { schatten = 1024 } = {}) {
           const dom = Math.pow(Math.max(0, 1 - (rr / Rk) ** 2), 0.7);
           const y = 0.082 + hMax * dom * (0.45 + 0.55 * b.w) * (0.9 + 0.1 * Math.sin(lauf * Math.PI));
           if (y < 0.108) rr = Math.min(rr, innen(y) - 0.004);
-          const gr = b.gr * 0.62 * (0.4 + 0.6 * smoothstep(0, 0.25, lauf)) * (1 - 0.8 * smoothstep(0.8, 1, lauf)) * smoothstep(0.0, 0.2, k) * (0.85 + 0.4 * o);
+          const gr = b.gr * 0.5 * (0.4 + 0.6 * smoothstep(0, 0.25, lauf)) * (1 - 0.8 * smoothstep(0.8, 1, lauf)) * smoothstep(0.0, 0.2, k) * (0.85 + 0.4 * o);
           p.set(Math.cos(b.a) * rr, y, Math.sin(b.a) * rr);
           q.identity(); s.set(gr, gr * 0.92, gr);
           m4.compose(p, q, s); blasen.setMatrixAt(i, m4);
@@ -598,10 +600,10 @@ export function baueMarkt(buehne, { schatten = 1024 } = {}) {
         }
         for (const d of dampf) {
           const ph = (t * d.rate * (0.6 + 0.8 * sieden) + d.ph) % 1;
-          d.s.material.opacity = 0.32 * sieden * Math.sin(Math.PI * ph) ** 1.5 * (0.5 + 0.5 * k);
-          const sc = 0.05 + 0.2 * ph;
+          d.s.material.opacity = 0.22 * sieden * Math.sin(Math.PI * ph) ** 1.5 * (0.5 + 0.5 * k);
+          const sc = 0.03 + 0.1 * ph;
           d.s.scale.set(sc, sc, 1);
-          d.s.position.set(Math.cos(d.a) * d.r * (1 + ph * 2), 0.11 + hMax * 0.8 + ph * 0.38, Math.sin(d.a) * d.r * (1 + ph * 2));
+          d.s.position.set(Math.cos(d.a) * d.r * (1 + ph * 2), 0.11 + hMax * 0.8 + ph * 0.22, Math.sin(d.a) * d.r * (1 + ph * 2));
         }
       }
     },

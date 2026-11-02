@@ -168,6 +168,21 @@ def boom():
     return tief + luft
 
 
+def sprudeln(dauer):
+    """Sieden: zartes Zischen plus viele kurze Blubb-Töne (zufällig verteilt, stärker werdend)"""
+    n = int((dauer + 0.3) * SR)
+    t = zeit(n)
+    out = bandpass_schnell(RNG.standard_normal(n), 2800, 9500) * 0.07
+    for _ in range(int(16 * dauer)):
+        m = int(0.07 * SR)
+        a = int(RNG.uniform(0, max(1, n - m)))
+        f0 = RNG.uniform(220, 620)
+        blubb = sinus_glide(m, f0, f0 * RNG.uniform(1.5, 2.4), 1.0) * huelle(m, 0.002, 0.022) * RNG.uniform(0.25, 0.8)
+        out[a:a + m] += blubb[: n - a if n - a < m else m]
+    env = np.clip(t / 0.12, 0, 1) * np.clip((dauer + 0.3 - t) / 0.3, 0, 1) * (0.55 + 0.45 * np.clip(t / max(dauer, 0.5), 0, 1))
+    return out * env * 0.45
+
+
 def stempel():
     """Aufprall: tiefer Schlag + Geräuschstoß + kurzer Klack + kleiner Raum"""
     n = int(0.6 * SR)
@@ -298,6 +313,7 @@ EFFEKTE = {
     "scan": lambda e: scan(e.get("dauer", 1.5)) * 0.6,
     "blip": lambda e: blip(e.get("lautstaerke", 0.5)),
     "boom": lambda e: boom() * 0.9,
+    "sprudeln": lambda e: sprudeln(min(e.get("dauer", 2.0), 6.0)),
     "stempel": lambda e: stempel() * 0.9,
     "akzent": lambda e: akzent(),
     "sieg": lambda e: sieg(),

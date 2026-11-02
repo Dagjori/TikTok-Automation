@@ -53,6 +53,8 @@
 
 **Eingeplant in Buffer (01.11. 21:39):** simulierbar 02.11. 12:30 Fußgängerampel (Post `6ae7a3541120555c2a3641b0`), 02.11. 19:30 Steuererklärung oder Überstunden (`6ae7a35f1120555c2a364536`), beide ohne KI-Label, Status scheduled. Buffer zieht das Video erst beim Posten von Supabase (Link gültig bis dueAt + 12 h), daher Supabase-Dateien erst nach `--nachpruefen` löschen. Erinnerungen an mich: 02.11. 10:15 UTC (Schokolade eingeplant?), 11:50 UTC und 18:50 UTC (Nachprüfung). Log `pipeline/out/buffer_log.jsonl` liegt nur im Container.
 
+**02.11. 06:40 UTC:** Testvideo Account 2 „Schall in Schritttempo“ (74,1 s, 13/13 Pflichtpunkte, 0 Text-Überlappungen, −14,1 LUFS, STT passt, Kontaktbogen gesichtet; Abnahme durch Claude, da der Prototyp-Agent am Nutzungslimit abbrach) über Buffer gepostet: Post `6ae82d2564604db314449174`, fällig 06:41 UTC, Upload-Kopie 43,8 MB. Nachprüfung läuft. Schokolade (Frist 09:30 UTC) und Stickstoff (Frist 15:00 UTC) laufen weiter. Vom Inhaber gestoppt und nicht fortsetzbar: Schere-Stein-Papier, Mittagessen, Boden durchsichtig, Leichtes Auto, Plan-Agent (CSV fertig, `docs/17` fehlt); Neustart nur auf ausdrücklichen Auftrag.
+
 ## Nächste Schritte
 
 | # | Schritt | Wer | Zeit | Status |

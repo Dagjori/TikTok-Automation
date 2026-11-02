@@ -106,5 +106,28 @@
       "sprechtext": "Welches Szenario soll ich als Nächstes durchspielen?\nSchreib es in die Kommentare."
     }
   ],
-  "caption": "Wie hoch bringt dich eine Tafel Schokolade? 🍫 Ich hab's durchgespielt. Hättest du so hoch getippt? 👇 #schokolade #energie #zugspitze #wissen #waswaerewenn"
+  "caption": "Wie hoch bringt dich eine Tafel Schokolade? 🍫 Ich hab's durchgespielt. Hättest du so hoch getippt? 👇 #schokolade #energie #zugspitze #wissen #waswaerewenn",
+  "rechnung": "pipeline/sim/schokolade_hoehe.mjs (Tests: node --test sim/schokolade_hoehe.test.mjs, 13 Tests). E = 540 kcal × 4,184 kJ/kcal = 2.259,4 kJ ≈ 2,26 MJ. Hubarbeit je Meter = m·g = 75 kg × 9,81 m/s² = 735,75 J ≈ 736 J. h = E/(m·g) = 3.070,8 m ≈ 3.071 m, also 108,8 m ≈ 109 m über der Zugspitze (2.962 m). Ein Stückchen (1/24) = 94,1 kJ = 127,95 m. Marken nach Stückchen (laufendes Stückchen = Anzeige 0…24): Kölner Dom 157 m beim 2., Berliner Fernsehturm 368 m beim 3. (nach 3 Stückchen 383,9 m), Brocken 1.141 m beim 9. (1.151,6 m), Feldberg 1.493 m beim 12. (1.535,4 m), Zugspitze 2.962 m beim 24. (nach 23 Stückchen erst 2.942,9 m, es fehlen 19,1 m). Pro kg: 540 kcal/100 g = 22,59 MJ/kg = 5,40 × 4,184 MJ/kg (TNT). Muskel-Wirkungsgrad 25 %: 767,7 m ≈ 768 m, für die Zugspitze 2.962/767,7 = 3,86 → 4 Tafeln (bei 20 %: 614 m, 5 Tafeln). Annahmen: keine Luft (kein Luftwiderstand), Start auf Meereshöhe (alle Höhen vom Startpunkt aus gezählt), 75 kg, g = 9,81 m/s², Tafel mit 24 Stückchen (4 × 6, Annahme: handelsübliche 100-g-Tafeln haben je nach Sorte 16–24 Stück), die ganze Energie wird verlustfrei zu Lageenergie (Gedankenexperiment, Ursache offen), die Tafel hat 540 kcal je 100 g (Etiketten üblicher Vollmilchschokoladen liegen bei ca. 532–577 kcal; ab 521 kcal reicht die Tafel ohne Verlust bis über die Zugspitze). Abweichungen zum Plan: (1) Zugspitze wird erst beim 24. Stückchen überholt, nicht beim 23. (nach 23 Stückchen 2.943 m, es fehlen 19 m); (2) Kölner Dom beim 2. Stückchen, nicht beim 1. (nach 1 Stückchen erst 128 m); Fernsehturm (3.), Brocken (9.), Feldberg (12.) stimmen. Ausgabe der Anzeige: „Stückchen n/24“ = Stückchen, das gerade verbraucht wird.",
+  "quellen": [
+    "Nährwert Vollmilchschokolade: Herstellerangaben (Etiketten) üblicher Sorten, ca. 532–577 kcal/100 g (u. a. Alpenvollmilch 537 kcal/2.248 kJ, Edeka Milky 568 kcal, dm Bio 572 kcal, Rapunzel Vollmilch-Kuvertüre 568 kcal; Abruf über wikifit.de, fddb.info, shop.rapunzel.de am 01.11.2026). BLS-Datensatz (Max Rubner-Institut) aus der Cloud nicht abrufbar; 540 kcal ist ein gerundeter, üblicher Wert (S).",
+    "Energieeinheit: 1 kcal = 4,184 kJ (thermochemische Kalorie, Definition).",
+    "Zugspitze 2.962 m ü. NHN (Ostgipfel; LDBV Bayern, 2.962,06 m laut Wikipedia/Sekundärquellen; die Landesamt-Seite selbst war nicht abrufbar). Westgipfel ursprünglich 2.964 m, hier nicht verwendet.",
+    "Kölner Dom ca. 157 m (157,38 m laut Sekundärquellen: wandernundmehr.at, Koelsch-Akademie-Arbeitsblatt „Türme in der Stadt“; Domseite selbst nicht abgerufen).",
+    "Berliner Fernsehturm 368 m (368,03 m bis Antennenspitze; structurae.net, Telekom).",
+    "Brocken 1.141 m (1.141,2 m ü. NHN; ältere Karten 1.142 m wegen eines Vermessungspfeilers; ich-geh-wandern.de, schierke-am-brocken.de, wandernundmehr.at).",
+    "Feldberg (Schwarzwald) 1.493 m (1.493,0 m ü. NHN; Wikipedia-Liste der höchsten Punkte der Länder).",
+    "TNT-Äquivalent: 1 g TNT = 4.184 J, also 4,184 MJ/kg (Konvention, keine Messgröße; Wikipedia „TNT equivalent“, NIST-Verweis). Gemessene Detonationsenergie schwankt zwischen ca. 2,7 und 6,7 MJ/kg.",
+    "Muskel-Wirkungsgrad: Deutsche Zeitschrift für Sportmedizin 2017 (68, S. 203–214) „Der Wirkungsgrad von Training“: isolierter Muskel ca. 30 %, im Körper niedriger; Radfahren (Bruttowirkungsgrad) typisch ca. 18–25 % (Sekundärquelle, kein Primärbeleg 20–25 % gefunden). 25 % ist die Obergrenze, daher im Video „höchstens“ bzw. „nutzen nur ein Viertel“ und 768 m als Obergrenze.",
+    "Schokolade explodiert nicht: TNT trägt den Sauerstoff für die rasche Zersetzung selbst im Molekül (Nitrogruppen), Schokolade braucht dafür Sauerstoff aus der Luft. Vereinfachte Lehrbuchaussage, in dieser Sitzung nicht einzeln belegt (Annahme)."
+  ],
+  "annahmen": [
+    "keine Luft",
+    "Start auf Meereshöhe",
+    "75 kg",
+    "g = 9,81 m/s²",
+    "24 Stückchen je Tafel",
+    "540 kcal je 100 g",
+    "verlustfreie Umwandlung in Höhe (Gedankenexperiment)",
+    "Muskel-Wirkungsgrad höchstens 25 %"
+  ]
 }

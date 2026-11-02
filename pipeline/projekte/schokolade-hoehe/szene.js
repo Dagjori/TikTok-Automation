@@ -45,24 +45,31 @@ const EYE0 = 1.2;
 const BODEN = -9.6; // Stadtboden (Küche im dritten Stock)
 const HTOP = S.hoehe(); // 3.070,8 m
 const MARKE = Object.fromEntries(S.MARKEN.map((m) => [m.id, m]));
-const ZUG_X = 240, ZUG_Z = -2150; // Gipfel der Zugspitze
-const LEN0 = Math.hypot(ZUG_X, ZUG_Z);
-const DIRX = ZUG_X / LEN0, DIRZ = ZUG_Z / LEN0; // Flugrichtung (waagerecht)
-const RECHTSX = -DIRZ, RECHTSZ = DIRX; // rechts vom Flug
+const ZUG_X = 2700, ZUG_Z = -2300; // Gipfel der Zugspitze (seitlich versetzt: aus dem Küchenfenster sieht man Stadt und Himmel)
 const CAM0 = V(0, EYE0, 0.3); // Startposition der Kamera
-const END_X = ZUG_X - DIRX * 70, END_Z = ZUG_Z - DIRZ * 70; // Endpunkt des Flugs: 70 m vor dem Gipfel (kein senkrechter Blick nach unten)
-
-/** Anteil des Wegs zum Gipfel bei Höhe h (langsam am Anfang, damit die Küche nicht verlassen wird) */
-const gWeg = (h) => Math.pow(clamp(h / HTOP), 1.2);
+// Horizontaler Flugpfad: quadratische Bezier-Kurve P0 → P1 → E (E = 70 m vor dem Gipfel, damit der Blick nie senkrecht nach unten geht)
+const P1X = 200, P1Z = -1900;
+const _tl = Math.hypot(ZUG_X - P1X, ZUG_Z - P1Z);
+const END_X = ZUG_X - ((ZUG_X - P1X) / _tl) * 70, END_Z = ZUG_Z - ((ZUG_Z - P1Z) / _tl) * 70;
+const bezier = (g) => { const a = (1 - g) * (1 - g), b = 2 * (1 - g) * g, c = g * g; return [a * CAM0.x + b * P1X + c * END_X, a * CAM0.z + b * P1Z + c * END_Z]; };
+/** Anteil des Wegs bei Höhe h (langsam am Anfang, damit die Küche nicht verlassen wird) */
+const gWeg = (h) => Math.pow(clamp(h / HTOP), 1.25);
 /** Kamerapfad: Position bei Höhe h (m über Start) */
 function pfad(h) {
-  const g = gWeg(h);
-  return V(CAM0.x + (END_X - CAM0.x) * g, EYE0 + h, CAM0.z + (END_Z - CAM0.z) * g);
+  const [x, z] = bezier(gWeg(h));
+  return V(x, EYE0 + h, z);
+}
+/** Flugrichtung (waagerecht, normiert) bei Höhe h */
+function kurs(h) {
+  const g = clamp(gWeg(h), 0.0005, 0.9995);
+  const [x0, z0] = bezier(g - 0.0004), [x1, z1] = bezier(g + 0.0004);
+  const l = Math.hypot(x1 - x0, z1 - z0);
+  return { x: (x1 - x0) / l, z: (z1 - z0) / l };
 }
 /** Punkt neben dem Pfad: seitlich (lat > 0 = rechts) und vor/zurück (vor > 0 = in Flugrichtung) */
 function nebenPfad(h, lat, vor = 0) {
-  const p = pfad(h);
-  return { x: p.x + RECHTSX * lat + DIRX * vor, z: p.z + RECHTSZ * lat + DIRZ * vor };
+  const p = pfad(h), k = kurs(h);
+  return { x: p.x + -k.z * lat + k.x * vor, z: p.z + k.x * lat + k.z * vor };
 }
 const topY = (m) => EYE0 + m.hoehe; // Weltkoordinate der Spitze (Zähler 0 = Augenhöhe in der Küche)
 
@@ -76,6 +83,7 @@ const BERGE = {
 function gelaende(x, z) {
   let y = BODEN;
   for (const b of Object.values(BERGE)) {
+    if (!b.R) continue;
     const d = Math.hypot(x - b.x, z - b.z);
     if (d >= b.R) continue;
     const u = d / b.R;
@@ -156,8 +164,8 @@ function himmelBauen() {
         vec3 oben = mix(horizont, mix(mitte, zenit, smoothstep(0.22, 0.95, h)), smoothstep(0.0, 0.42, h));
         vec3 col = h >= 0.0 ? oben : mix(horizont, unten, smoothstep(0.0, 0.3, -h));
         float sd = max(dot(normalize(vD), normalize(sonne)), 0.0);
-        col += vec3(1.0, 0.52, 0.22) * pow(sd, 5.0) * 0.55 + vec3(1.0, 0.78, 0.5) * pow(sd, 48.0) * 0.9;
-        col += vec3(1.0, 0.86, 0.62) * smoothstep(0.99955, 0.99985, sd) * 14.0;
+        col *= 0.8; col += vec3(1.0, 0.52, 0.22) * pow(sd, 6.0) * 0.32 + vec3(1.0, 0.78, 0.5) * pow(sd, 64.0) * 0.6;
+        col += vec3(1.0, 0.86, 0.62) * smoothstep(0.99955, 0.99985, sd) * 9.0;
         gl_FragColor = vec4(col, 1.0);
       }`,
     side: THREE.BackSide, depthWrite: false, depthTest: false, fog: false,
@@ -377,12 +385,8 @@ function tafelBauen() {
     gruppe.add(k);
     stuecke[i] = { k, x: k.position.x, y: k.position.y, z: k.position.z };
   }
-  const folie = new THREE.Mesh(new RoundedBoxGeometry(L + 0.034, 0.0012, Bq + 0.03, 2, 0.0006), new THREE.MeshStandardMaterial({ color: "#C9CED8", roughness: 0.28, metalness: 0.95 }));
+  const folie = new THREE.Mesh(new RoundedBoxGeometry(L + 0.02, 0.0012, Bq + 0.02, 2, 0.0006), new THREE.MeshStandardMaterial({ color: "#C9CED8", roughness: 0.28, metalness: 0.95 }));
   folie.position.y = -0.0014; folie.receiveShadow = true; folie.castShadow = true; gruppe.add(folie);
-  const lappen = new THREE.Mesh(new RoundedBoxGeometry(0.07, 0.0012, 0.05, 2, 0.0006), folie.material);
-  lappen.position.set(L / 2 + 0.03, 0.001, -0.012); lappen.rotation.set(0.0, 0.5, 0.14); gruppe.add(lappen);
-  const lappen2 = new THREE.Mesh(new RoundedBoxGeometry(0.06, 0.0012, 0.045, 2, 0.0006), folie.material);
-  lappen2.position.set(-L / 2 - 0.028, 0.0012, 0.014); lappen2.rotation.set(0.0, -0.45, -0.12); gruppe.add(lappen2);
   return { gruppe, stuecke, L, Bq };
 }
 
@@ -394,11 +398,11 @@ function baueWelt(buehne) {
   szene.fog = new THREE.Fog(HORIZONT, 500, 18000);
   const himmel = himmelBauen();
   szene.add(himmel);
-  const licht = lichtTag(szene, buehne.renderer, { bereich: 4.2, schattenKarte: Math.max(512, SCHATTEN), sonnenRichtung: [SONNE.x, SONNE.y, SONNE.z], sonnenFarbe: "#FFB174", sonnenStaerke: 3.1,
-    himmel: "#FFD9B5", boden: "#7B5C58", himmelStaerke: 0.62, umgebungsStaerke: 0.32, schattenWeich: 3, ziel: [0, 0.8, -0.4] });
+  const licht = lichtTag(szene, buehne.renderer, { bereich: 4.2, schattenKarte: Math.max(512, SCHATTEN), sonnenRichtung: [SONNE.x, SONNE.y, SONNE.z], sonnenFarbe: "#FFB174", sonnenStaerke: 2.1,
+    himmel: "#FFD9B5", boden: "#7B5C58", himmelStaerke: 0.5, umgebungsStaerke: 0.22, schattenWeich: 3, ziel: [0, 0.8, -0.4] });
   licht.sonne.castShadow = SCHATTEN > 0;
   licht.sonne.shadow.camera.far = 90; licht.sonne.shadow.camera.updateProjectionMatrix();
-  szene.environmentIntensity = 0.32;
+  szene.environmentIntensity = 0.22;
 
   // ---------- Küche ----------
   const holz = canvasTextur(512, 512, (g, b, h) => {
@@ -479,7 +483,7 @@ function baueWelt(buehne) {
   const turm = fernsehturmBauen(); { const p = nebenPfad(MARKE.turm.hoehe, 125, 30); turm.position.set(p.x, BODEN, p.z); szene.add(turm); BERGE.turmPos = p; }
   const farbBrocken = (c, t, r) => { c.set("#2F4A33").lerp(c.clone().set("#4E6B3C"), clamp(t * 1.2 + r * 0.25)); if (t > 0.86) c.lerp(c.clone().set("#8A8579"), clamp((t - 0.86) * 6)); };
   const farbFeld = (c, t, r) => { c.set("#486B3A").lerp(c.clone().set("#8F9A5A"), clamp(t * 1.1 + r * 0.3)); if (t > 0.8) c.lerp(c.clone().set("#DADDE0"), clamp((t - 0.8) * 4 + r * 0.2)); };
-  const farbZug = (c, t, r) => { c.set("#40583A").lerp(c.clone().set("#7A7A7E"), clamp((t - 0.18) * 2.4 + r * 0.2)); if (t > 0.52 + r * 0.12) c.lerp(c.clone().set("#F7F7FA"), clamp((t - 0.52) * 7)); };
+  const farbZug = (c, t, r) => { c.set("#34503A").lerp(c.clone().set("#5E6478"), clamp((t - 0.16) * 2.6 + r * 0.2)); if (t > 0.55 + r * 0.1) c.lerp(c.clone().set("#EEF1F6"), clamp((t - 0.55) * 7)); };
   const bergeMeshes = [];
   for (const [id, f, seed] of [["brocken", farbBrocken, 11], ["feldberg", farbFeld, 23], ["zugspitze", farbZug, 37]]) {
     const b = BERGE[id]; b.id = id;
@@ -488,12 +492,13 @@ function baueWelt(buehne) {
   // Wolken (Sprites), entlang des Pfads verteilt
   const wTex = wolkenTextur();
   const wolken = [];
-  for (let i = 0; i < 46; i++) {
+  for (let i = 0; i < 30; i++) {
     const h = 250 + hash(i, 1) * 2800;
-    const lat = (hash(i, 2) - 0.5) * 2 * (260 + hash(i, 3) * 900);
+    const lat = (hash(i, 2) < 0.5 ? -1 : 1) * (420 + hash(i, 3) * 1100);
     const p = nebenPfad(h + (hash(i, 4) - 0.5) * 400, lat, (hash(i, 5) - 0.3) * 500);
-    const gr = 380 + hash(i, 6) * 900;
-    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: wTex, color: i % 3 === 0 ? "#FFD9C4" : "#FFF3EA", transparent: true, opacity: 0.28 + hash(i, 7) * 0.3, depthWrite: false, fog: true }));
+    const gr = 260 + hash(i, 6) * 520;
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: wTex, color: i % 3 === 0 ? "#FFD9C4" : "#FFF3EA", transparent: true, opacity: 0.2 + hash(i, 7) * 0.2, depthWrite: false, fog: true }));
+    sp.userData.o = sp.material.opacity;
     sp.position.set(p.x, EYE0 + h, p.z); sp.scale.set(gr * 1.7, gr, 1); sp.renderOrder = 5; szene.add(sp); wolken.push(sp);
   }
 
@@ -527,7 +532,7 @@ function baueWelt(buehne) {
   for (const m of S.MARKEN) {
     const pos = m.id === "dom" ? BERGE.domPos : m.id === "turm" ? BERGE.turmPos : BERGE[m.id];
     const r = m.id === "dom" || m.id === "turm" ? 24 : 160;
-    const rg = new THREE.Mesh(new THREE.TorusGeometry(r, r * 0.07, 8, 56), new THREE.MeshBasicMaterial({ color: new THREE.Color("#FFFFFF").multiplyScalar(2), transparent: true, opacity: 0, fog: false, depthWrite: false }));
+    const rg = new THREE.Mesh(new THREE.TorusGeometry(r, r * 0.07, 8, 56), new THREE.MeshBasicMaterial({ color: new THREE.Color(TUERKIS).multiplyScalar(2.2), transparent: true, opacity: 0, fog: false, depthWrite: false }));
     rg.rotation.x = Math.PI / 2; rg.position.set(pos.x, topY(m), pos.z); rg.visible = false; szene.add(rg);
     markenRinge.push({ m, rg });
   }
@@ -746,7 +751,8 @@ async function start() {
     const tw = tDecke + 0.03;
     W.welle.visible = modus !== "kueche" && t > tw - 0.05 && t < tw + 0.9;
     if (W.welle.visible) { const k = (t - (tw - 0.05)) / 0.95; const cam = pfad(h); W.welle.position.set(cam.x, 3.45, cam.z); W.welle.scale.setScalar(0.2 + 7 * ease.outCubic(k)); W.welle.material.opacity = (1 - k) * 0.9; }
-    // Wolken: Sprites drehen sich zur Kamera automatisch; Pegel bleibt fest
+    // Wolken: nahe Wolken blenden aus (kein Schleier vor der Kamera)
+    for (const sp of W.wolken) { const d = sp.position.distanceTo(W.himmel.position); sp.material.opacity = sp.userData.o * clamp((d - 250) / 500); }
     // Höhenmarken-Ringe flackern beim Überholen
     for (const mr of W.markenRinge) {
       const tp = mr.m.id === "dom" ? tDom : mr.m.id === "turm" ? tTurm : mr.m.id === "brocken" ? tBro : mr.m.id === "feldberg" ? tFel : tZug;
@@ -786,18 +792,18 @@ async function start() {
     void tR0;
     // Tafel: Stückchen verbrauchen, Pose (Tisch → Hand)
     const kz = kamera;
-    const kHand = modus === "kueche" ? 0 : ease.inOutCubic(fortschritt(t, tLos + 0.05, tLos + 0.85));
+    const kHand = 1; // die Tafel ist von Anfang an in deiner Hand
     const hand = new THREE.Object3D();
-    hand.position.set(0, -0.31, -0.70);
+    hand.position.set(0, -0.15, -0.66);
     hand.rotation.set(Math.PI / 2 - 0.55, 0, 0);
-    hand.scale.setScalar(1.9);
+    hand.scale.setScalar(2.05);
     hand.updateMatrix();
     const mHand = kz.matrixWorld.clone().multiply(hand.matrix);
     mHand.decompose(tmpA, qA, tmpB);
     const pHandW = tmpA.clone(), qHandW = qA.clone(), sHand = tmpB.clone();
     const pT = TISCH.pos.clone(), qT = new THREE.Quaternion().setFromAxisAngle(V(0, 1, 0), TISCH.rot);
     // Hochheben: erst heben, dann zur Hand
-    const hub = Math.sin(Math.PI * kHand) * 0.06;
+    const hub = 0;
     W.tafel.gruppe.position.lerpVectors(pT, pHandW, kHand); W.tafel.gruppe.position.y += hub;
     W.tafel.gruppe.quaternion.slerpQuaternions(qT, qHandW, kHand);
     W.tafel.gruppe.scale.setScalar(lerp(TISCH.skala, sHand.x, kHand));
@@ -841,7 +847,7 @@ async function start() {
   // =====================================================================================
   // Kamera: Ich-Perspektive, Blickziele im Takt der Stimme
   // =====================================================================================
-  const flach = (p, vor, hoch) => V(p.x + DIRX * vor, p.y + hoch, p.z + DIRZ * vor); // Punkt voraus (waagerecht) mit Höhenversatz
+  const flach = (p, vor, hoch) => { const k = kurs(p.y - EYE0); return V(p.x + k.x * vor, p.y + hoch, p.z + k.z * vor); }; // Punkt voraus (in Flugrichtung) mit Höhenversatz
   const domOben = () => V(BERGE.domPos.x, topY(MARKE.dom), BERGE.domPos.z);
   const turmOben = () => V(BERGE.turmPos.x, topY(MARKE.turm), BERGE.turmPos.z);
   const bergOben = (id) => () => V(BERGE[id].x, topY(BERGE[id]), BERGE[id].z);
@@ -913,7 +919,7 @@ async function start() {
   regie.stoss({ t: T("falle:Klar,") + 0.05, staerke: 0.5 });
   regie.schleife({ ab: tSchleife, ende: ENDE });
 
-  const post = { bloomStaerke: BLOOM, bloomSchwelle: 0.95, bloomRadius: 1.0, belichtung: 1.0, vignette: 0.32, saettigung: 1.08, kontrast: 1.06, koernung: 0.03, tonung: [1.05, 1.0, 0.93], tonungStaerke: 0.22 };
+  const post = { bloomStaerke: BLOOM, bloomSchwelle: 1.5, bloomRadius: 1.0, belichtung: 1.0, vignette: 0.32, saettigung: 1.08, kontrast: 1.06, koernung: 0.03, tonung: [1.05, 1.0, 0.93], tonungStaerke: 0.22 };
   const nahe = (h) => (h < 6 ? 0.06 : h < 400 ? 0.5 : 4);
   const weltPOV = { szene: W.szene, kamera: kam, post, update(t) {
     regie.anwenden(t);
@@ -975,7 +981,7 @@ async function start() {
   const schleifenPruefung = M.pruefeSchleife(window.renderAt, { regie });
   if (!schleifenPruefung.ok) console.warn("Schleife nicht geschlossen:", JSON.stringify(schleifenPruefung));
   M.veroeffentliche({ zl, regie, dauer: DAUER, teppich: skript.klangteppich, schleifenPruefung });
-  window.modell = S.alles(); window.__dbg = { W, kam, zl, regie, setzeWelt, hRoh, sMono };
+  window.modell = S.alles(); window.__dbg = { W, kam, zl, regie, setzeWelt, hRoh, sMono, pfad, gelaende, kurs, BERGE, MARKE, tLos, tZugEnde, HTOP, nebenPfad };
   window.zeitmarken = { tLos, tDecke, tDom, tTurm, tBro, tFel, tZug, tErg, tUeb, tEcht, tMerk, tSchluss, tKitchenBack };
   window.renderAt(0);
   window.__fertig = true;
