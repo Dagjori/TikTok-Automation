@@ -83,6 +83,7 @@ button.ab{border-color:var(--crit);color:var(--crit)} button.ab[aria-pressed="tr
 button:disabled{opacity:.5;cursor:default}
 textarea{font:inherit;width:100%;min-height:72px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 10px;resize:vertical}
 .rueck{font-size:.82rem;color:var(--muted)}
+.claude-antwort{margin-top:10px;padding:8px 10px;border-left:3px solid var(--info);background:var(--sunk, rgba(127,127,127,.08));border-radius:4px}
 .raster-regeln{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
 .box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .box ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
@@ -260,7 +261,16 @@ section[hidden]{display:none!important}
   };
   const KONTO = {simulierbar:["Simulierbar","k-sim"], stelldirvor:["Stell dir vor","k-a2"]};
   const WT = ["So","Mo","Di","Mi","Do","Fr","Sa"];
-  let videos = [], db = null, stand = null;
+  let videos = [], db = null, stand = null, komm = null;
+  // Meldet eine Entscheidung sofort an die Claude-Sitzung (Kommentar „an Claude“ am Video).
+  async function anClaude(v, karte, was, kommentar){
+    if (!komm || !komm.sendToClaude) return "aus";
+    try { const st = komm.canSendToClaude ? await komm.canSendToClaude() : "available"; if (st!=="available") return st; } catch(e){ return "aus"; }
+    const text = ["Cockpit: "+was, (KONTO[v.konto]||[v.konto])[0], (v.datum||"")+" "+(v.uhrzeit||""), "„"+(v.titel||"")+"“", "ID "+v._id].join(" · ")
+      + (kommentar ? "\nKommentar: "+kommentar.slice(0,3000) : "");
+    try { const anchor = await komm.anchorFor(karte); await komm.sendToClaude({anchor, text}); return "gesendet"; }
+    catch(err){ return (err && err.code) || "fehler"; }
+  }
 
   const el = (t, a={}, ...k) => { const e=document.createElement(t); for (const [n,v] of Object.entries(a)) { if (n==="class") e.className=v; else if (n==="text") e.textContent=v; else e.setAttribute(n,v);} for (const c of k) if (c!=null) e.append(c); return e; };
   const pill = s => { const [t,c]=STATUS[s]||[s||"–","s-idle"]; return el("span",{class:"pill "+c,text:t}); };
@@ -317,17 +327,29 @@ section[hidden]{display:none!important}
     const bK=el("button",{type:"button",text:"Kommentar speichern"});
     const rueck=el("span",{class:"rueck",role:"status"});
     if (v.inhaber&&v.inhaber.zeit) rueck.textContent="Zuletzt gespeichert: "+new Date(v.inhaber.zeit).toLocaleString("de-DE",{dateStyle:"short",timeStyle:"short"});
-    async function speichern(patch, msg){
+    async function speichern(patch, msg, was){
       if (!db){ rueck.textContent="Speichern geht nur, wenn du mit deinem Claude-Konto angemeldet bist."; return; }
       for (const b of [bF,bA,bK]) b.disabled=true;
-      try { await db.doc("videos/"+v._id).update({inhaber:Object.assign({},v.inhaber||{},patch,{zeit:new Date().toISOString()})}); rueck.textContent=msg; }
+      rueck.textContent="Speichere …";
+      // Sofort an Claude senden (muss direkt aus dem Klick kommen), parallel speichern.
+      const meldung = anClaude(v, document.getElementById("d-"+v._id) || box, was, ta.value.trim());
+      let ok=false;
+      try { await db.doc("videos/"+v._id).update({inhaber:Object.assign({},v.inhaber||{},patch,{zeit:new Date().toISOString()})}); ok=true; }
       catch(err){ rueck.textContent="Nicht gespeichert: "+((err&&err.message)||"unbekannter Fehler")+". Bitte später erneut versuchen."; }
-      finally { for (const b of [bF,bA,bK]) b.disabled=false; }
+      const m = await meldung;
+      if (ok) rueck.textContent = msg + (m==="gesendet" ? " Claude ist informiert und antwortet hier im Kommentar." :
+        m==="consent_required" || m==="forbidden" ? " Gespeichert. Damit Claude sofort reagiert, erlaube dem Cockpit oben das Kommentieren." :
+        " Gespeichert. Claude ist gerade nicht verbunden und arbeitet es beim nächsten Start ab.");
+      for (const b of [bF,bA,bK]) b.disabled=false;
     }
-    bF.addEventListener("click",()=>speichern({entscheidung: e==="frei"?null:"frei", kommentar: ta.value}, e==="frei"?"Freigabe zurückgenommen.":"Freigegeben."));
-    bA.addEventListener("click",()=>speichern({entscheidung: e==="abgelehnt"?null:"abgelehnt", kommentar: ta.value}, e==="abgelehnt"?"Ablehnung zurückgenommen.":"Abgelehnt."));
-    bK.addEventListener("click",()=>speichern({kommentar: ta.value},"Kommentar gespeichert."));
+    bF.addEventListener("click",()=>speichern({entscheidung: e==="frei"?null:"frei", kommentar: ta.value}, e==="frei"?"Freigabe zurückgenommen.":"Freigegeben.", e==="frei"?"Freigabe zurückgenommen":"FREIGEGEBEN"));
+    bA.addEventListener("click",()=>speichern({entscheidung: e==="abgelehnt"?null:"abgelehnt", kommentar: ta.value}, e==="abgelehnt"?"Ablehnung zurückgenommen.":"Abgelehnt.", e==="abgelehnt"?"Ablehnung zurückgenommen":"ABGELEHNT"));
+    bK.addEventListener("click",()=>{ if (!ta.value.trim()){ rueck.textContent="Bitte erst einen Kommentar schreiben."; return; } speichern({kommentar: ta.value},"Kommentar gespeichert.","KOMMENTAR"); });
     box.append(el("div",{class:"knoepfe"},bF,bA), ta, el("div",{class:"knoepfe"},bK), rueck);
+    if (v.claude && v.claude.antwort){
+      const zeit = v.claude.zeit ? " ("+new Date(v.claude.zeit).toLocaleString("de-DE",{dateStyle:"short",timeStyle:"short"})+")" : "";
+      box.append(el("div",{class:"feld breit claude-antwort"}, el("span",{class:"lab",text:"Antwort von Claude"+zeit}), el("p",{text:v.claude.antwort})));
+    }
     return box;
   }
 
@@ -388,6 +410,7 @@ section[hidden]{display:none!important}
     if (!db){ clearTimeout(timer); const h=document.getElementById("hinweis"); h.hidden=false; h.textContent=""; h.append(el("b",{text:"Nur mit Anmeldung"}), el("span",{text:"Die Videodaten sind nur sichtbar, wenn du mit deinem Claude-Konto angemeldet bist."})); return; }
     db.collection("videos").onSnapshot(snap=>{ clearTimeout(timer); videos=snap.docs.map(d=>Object.assign({_id:d.id}, d.data()||{})); renderAlles(); }, err=>{ clearTimeout(timer); const h=document.getElementById("hinweis"); h.hidden=false; h.textContent="Videodaten nicht geladen: "+((err&&err.message)||"Fehler"); });
     db.doc("stand/aktuell").onSnapshot(snap=>{ stand=snap.data()||null; renderStand(); }, ()=>{});
+    try { komm = await window.claude.use("comments"); } catch(e){ komm = null; }
   })();
 })();
 </script>

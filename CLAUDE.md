@@ -11,6 +11,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
 ## Projekt in Kürze
 - **Kanal:** **Simulierbar** (`@simulierbar`).
   - Nische „Alltag durchgerechnet“ mit zwei internen Rubriken: 💶 GELD und ⏱️ ALLTAG.
+  - **Schwerpunkt GELD** (Inhaber 02.11.: „das zieht am meisten“): Jedes Video endet mit einem Ergebnis in Euro, mindestens 50 von 60 Videos im Monat sind GELD. Themen nur neu entwickelt, nach Konkurrenz-Check (`docs/12`).
   - Die Rubriken dienen nur der Planung und erscheinen **nie** im Video.
   - Details: `docs/05-startnische.md`; Ideen: `data/ideen/`.
 - **Format:**
@@ -81,6 +82,10 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
   - Vor jedem Komprimieren sichert der PreCompact-Hook (`.claude/settings.json`, Skript `tools/sitzung_sichern.py`) alle Nachrichten des Inhabers und alle Antworten von Claude nach `.sitzung/`. Der Ordner steht in `.gitignore` und bleibt nur im Container.
   - Nach dem Komprimieren erinnert ein SessionStart-Hook daran, `STATUS.md`, `ENTSCHEIDUNGEN.md`, `docs/15-massstab.md` und `.sitzung/letzte_nachrichten.md` zu lesen.
   - Zusätzlich hält Claude `STATUS.md` während der Arbeit aktuell und nicht erst am Ende.
+- **Cockpit** (https://claude.ai/artifact/FxZc6Cpodsg12hapn6Bpxz, Inhaber 02.11.: „sobald ich dort etwas freigebe oder ablehne, reagierst du“):
+  - Freigeben, Ablehnen und Kommentar senden einen Kommentar „an Claude“; er weckt jede Sitzung, die das Cockpit beobachtet.
+  - Claude reagiert sofort: Freigabe → Status `angepasst` bzw. in Produktion nehmen; Ablehnung → Ersatz aus der Reserve vorschlagen und eintragen; Kommentar → umsetzen. Danach im Dokument `claude: {gelesen, antwort, zeit}` setzen und im Kommentar-Thread kurz antworten.
+  - **Zu Beginn jeder Sitzung** offene Entscheidungen abarbeiten: Dokumente in `videos`, bei denen `inhaber.zeit` neuer ist als `claude.gelesen` (falls keine Sitzung verbunden war).
 - **Trend-Radar:**
   - Läuft täglich automatisch (geplante Aufgabe „Trend-Radar Simulierbar“, 05:35 Uhr Berlin, feste Sitzung „Trend-Radar täglich (TikTok Automation)“).
   - Ablauf und Bewertungsraster: `docs/07-trend-monitoring.md`.
