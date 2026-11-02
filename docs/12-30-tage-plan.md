@@ -1,6 +1,6 @@
 # 30-Tage-Plan · Simulierbar (03.11.–02.12.2026) · Schwerpunkt Geld
 
-**Stand:** 02.11.2026, komplett neu · **Status:** Reihenfolge der nächsten Videos (Produktion am Vortag, 2 Videos pro Tag) · **Daten:** [`data/plan/30-tage.csv`](../data/plan/30-tage.csv) (81 Zeilen: 6 unveränderte vom 31.10.–02.11., 60 neue, 15 Reserve) und [`data/plan/simulierbar-plan.json`](../data/plan/simulierbar-plan.json) (die 75 neuen Einträge mit `caption_vorschlag`) · **PDF:** [`docs/plan/30-tage-plan.pdf`](plan/30-tage-plan.pdf) (neu erzeugen: `node tools/plan_pdf.mjs`)
+**Stand:** 02.11.2026, komplett neu; Stile am 02.11. auf die seriösen Stile 17–21 umgestellt (Inhaber: weg vom Cartoon-Look, Licht und Atmosphäre, keine Sticker) · **Status:** Reihenfolge der nächsten Videos (Produktion am Vortag, 2 Videos pro Tag) · **Daten:** [`data/plan/30-tage.csv`](../data/plan/30-tage.csv) (81 Zeilen: 6 unveränderte vom 31.10.–02.11., 60 neue, 15 Reserve) und [`data/plan/simulierbar-plan.json`](../data/plan/simulierbar-plan.json) (die 75 neuen Einträge mit `caption_vorschlag`) · **PDF:** [`docs/plan/30-tage-plan.pdf`](plan/30-tage-plan.pdf) (neu erzeugen: `node tools/plan_pdf.mjs`)
 
 **Auftrag des Inhabers (02.11.):** klarer Schwerpunkt Geld, Konkurrenz anhand der Skripte ansehen, in deren Themenfeld gehen, aber nur neue Ideen; kompletter Plan neu, die heutigen Videos bleiben.
 
@@ -14,7 +14,7 @@
 - **Was zieht (F, Aufrufzahlen 02.11.):** große Lebensentscheidungen mit großer Endzahl: Mieten oder kaufen 617k, Leasing 363k, Studium oder Ausbildung 359k, E-Auto oder Benziner 198k. Kleine Spartipps derselben Konten bleiben meist unter 5k. **Deshalb liegen Gehalt, Rente, Wohnen und Auto in den ersten 10 Tagen** (Ø Score 86,4 gegenüber 80,3 danach, S).
 - **Ø Maßstab-Score 82,3 (S), Spanne 75–92.** Kein Video unter 75.
 - **Termine:** Singles Day 11.11., GTA-6-Release 19.11., Steuerklassen-Frist 30.11. (Video 20.11.), Kfz-Stichtag 30.11. (Video 23.11.), Black Friday 27.11. (Videos 24. und 27.11.), Weihnachtsgeld-Zeit (26.11.), Monatsende (28.11.), 1. Advent 29.11., Cyber Monday 30.11., Jahresende-Steuer (01.12.). Kein Kaufaufruf.
-- **Größtes Risiko:** Kapazität. 179 Std. Agentenarbeit (S) plus 5 neue Stil-Baukästen und ca. 70 Std. Renderzeit in der Cloud (S, Abschnitt 4). Der Windows-PC mit GPU würde den Engpass lösen.
+- **Größtes Risiko:** Kapazität. 179 Std. Agentenarbeit (S) plus themenspezifische Objekte in den neuen Stilen 17–21 und ca. 80–120 Std. Renderzeit in der Cloud (S, Abschnitt 4). Der Windows-PC mit GPU würde den Engpass lösen.
 
 ### Die 5 stärksten Videos (S, Maßstab-Score, keine Messdaten)
 
@@ -36,56 +36,56 @@ Uhrzeiten aus [`data/plan/posting_zeiten.json`](../data/plan/posting_zeiten.json
 
 | Tag | Mittag (12:30, Sa/So 09:30) | Abend (19:30) |
 |---|---|---|
-| Di 03.11. | #1 Eigenes Auto oder jede Fahrt mit dem Taxi · 90 · Stil 12 · **A** | #2 Mittagessen im Job · 83 · Stil 6 · **A** |
-| Mi 04.11. | #3 Großpackung oder zwei kleine · 85 · Stil 3 | #4 Rente mit 63 oder mit 67 · 89 · Stil 14 · **A** |
-| Do 05.11. | #5 Parkhaus oder Parkplatz suchen · 88 · Stil 1 · ALLTAG | #6 Minijob oder Überstunden · 92 · Stil 4 · **A** |
-| Fr 06.11. | #7 Handy mit Vertrag oder selbst kaufen · 87 · Stil 13 · **A** | #8 Kleinste Schulden zuerst oder die teuersten · 86 · Stil 12 |
-| Sa 07.11. | #9 Teilzeit oder Vollzeit · 88 · Stil 2 · **A** | #10 3.000 € in München oder 2.600 € in Leipzig · 90 · Stil 8 · **A** |
-| So 08.11. | #11 Heißluftfritteuse oder Backofen · 83 · Stil 3 | #12 50 € pro Stunde als Freelancer oder 30 € als Angestellter · 88 · Stil 4 · **A** |
+| Di 03.11. | #1 Eigenes Auto oder jede Fahrt mit dem Taxi · 90 · Stil 17 · **A** | #2 Mittagessen im Job · 83 · Stil 19 · **A** |
+| Mi 04.11. | #3 Großpackung oder zwei kleine · 85 · Stil 18 | #4 Rente mit 63 oder mit 67 · 89 · Stil 20 · **A** |
+| Do 05.11. | #5 Parkhaus oder Parkplatz suchen · 88 · Stil 17 · ALLTAG | #6 Minijob oder Überstunden · 92 · Stil 18 · **A** |
+| Fr 06.11. | #7 Handy mit Vertrag oder selbst kaufen · 87 · Stil 20 · **A** | #8 Kleinste Schulden zuerst oder die teuersten · 86 · Stil 18 |
+| Sa 07.11. | #9 Teilzeit oder Vollzeit · 88 · Stil 19 · **A** | #10 3.000 € in München oder 2.600 € in Leipzig · 90 · Stil 21 · **A** |
+| So 08.11. | #11 Heißluftfritteuse oder Backofen · 83 · Stil 20 | #12 50 € pro Stunde als Freelancer oder 30 € als Angestellter · 88 · Stil 18 · **A** |
 
 **Woche 2 · Mo 09.–So 15.11.**
 
 | Tag | Mittag (12:30, Sa/So 09:30) | Abend (19:30) |
 |---|---|---|
-| Mo 09.11. | #13 Super E10 oder E5 · 84 · Stil 1 | #14 WG-Zimmer oder eigene Wohnung · 84 · Stil 2 |
-| Di 10.11. | #15 40 km pendeln oder näher ziehen · 88 · Stil 8 · **A** | #16 Dienstwagen oder 500 € mehr Gehalt · 86 · Stil 12 |
-| Mi 11.11. | #17 Zusammenziehen oder getrennt wohnen · 83 · Stil 6 · **A** | #18 Alle drei Jahre den Job wechseln oder bleiben · 86 · Stil 14 |
-| Do 12.11. | #19 Selbst umziehen oder Umzugsfirma · 83 · Stil 9 · ALLTAG | #20 Homeoffice oder Büro · 85 · Stil 4 |
-| Fr 13.11. | #21 Winterreifen selbst wechseln oder Werkstatt · 79 · Stil 13 · ALLTAG | #22 Kapselmaschine oder Vollautomat · 82 · Stil 14 |
-| Sa 14.11. | #23 Gemeinsame Kasse 50/50 oder nach Einkommen · 81 · Stil 3 | #24 Werkstudent oder Minijob im Studium · 80 · Stil 2 |
-| So 15.11. | #25 Ein Zimmer heizen oder alle gleichmäßig · 81 · Stil 11 | #26 Altes Handy in der Schublade · 80 · Stil 12 |
+| Mo 09.11. | #13 Super E10 oder E5 · 84 · Stil 17 | #14 WG-Zimmer oder eigene Wohnung · 84 · Stil 19 |
+| Di 10.11. | #15 40 km pendeln oder näher ziehen · 88 · Stil 21 · **A** | #16 Dienstwagen oder 500 € mehr Gehalt · 86 · Stil 18 |
+| Mi 11.11. | #17 Zusammenziehen oder getrennt wohnen · 83 · Stil 19 · **A** | #18 Alle drei Jahre den Job wechseln oder bleiben · 86 · Stil 20 |
+| Do 12.11. | #19 Selbst umziehen oder Umzugsfirma · 83 · Stil 19 · ALLTAG | #20 Homeoffice oder Büro · 85 · Stil 21 |
+| Fr 13.11. | #21 Winterreifen selbst wechseln oder Werkstatt · 79 · Stil 17 · ALLTAG | #22 Kapselmaschine oder Vollautomat · 82 · Stil 20 |
+| Sa 14.11. | #23 Gemeinsame Kasse 50/50 oder nach Einkommen · 81 · Stil 18 | #24 Werkstudent oder Minijob im Studium · 80 · Stil 20 |
+| So 15.11. | #25 Ein Zimmer heizen oder alle gleichmäßig · 81 · Stil 19 | #26 Altes Handy in der Schublade · 80 · Stil 18 |
 
 **Woche 3 · Mo 16.–So 22.11.**
 
 | Tag | Mittag (12:30, Sa/So 09:30) | Abend (19:30) |
 |---|---|---|
-| Mo 16.11. | #27 Saisonkennzeichen oder ganzjährig · 75 · Stil 1 | #28 3 % mehr Gehalt oder 5 Tage mehr Urlaub · 83 · Stil 10 |
-| Di 17.11. | #29 Billige oder teure Winterjacke · 80 · Stil 11 | #30 Notgroschen auf dem Girokonto oder auf dem Tagesgeld · 77 · Stil 14 |
-| Mi 18.11. | #31 Hund oder Katze · 79 · Stil 3 | #32 E-Bike oder Zweitwagen · 81 · Stil 9 |
-| Do 19.11. | #33 Konsole oder Gaming-PC · 81 · Stil 12 · **A** | #34 Staffelmiete oder Indexmiete · 78 · Stil 2 |
-| Fr 20.11. | #35 Lebensmittel liefern lassen oder selbst einkaufen · 80 · Stil 1 · ALLTAG | #36 Steuerklasse 3/5 oder 4/4 · 80 · Stil 4 · **A** |
-| Sa 21.11. | #37 Waschmaschine kaputt · 82 · Stil 13 | #38 Fahrgemeinschaft oder allein zur Arbeit · 82 · Stil 8 |
-| So 22.11. | #39 Haare selbst schneiden oder Friseur · 79 · Stil 3 · ALLTAG | #40 E-Bike über den Arbeitgeber leasen oder selbst kaufen · 82 · Stil 10 |
+| Mo 16.11. | #27 Saisonkennzeichen oder ganzjährig · 75 · Stil 17 | #28 3 % mehr Gehalt oder 5 Tage mehr Urlaub · 83 · Stil 20 |
+| Di 17.11. | #29 Billige oder teure Winterjacke · 80 · Stil 18 | #30 Notgroschen auf dem Girokonto oder auf dem Tagesgeld · 77 · Stil 20 |
+| Mi 18.11. | #31 Hund oder Katze · 79 · Stil 19 | #32 E-Bike oder Zweitwagen · 81 · Stil 17 |
+| Do 19.11. | #33 Konsole oder Gaming-PC · 81 · Stil 18 · **A** | #34 Staffelmiete oder Indexmiete · 78 · Stil 19 |
+| Fr 20.11. | #35 Lebensmittel liefern lassen oder selbst einkaufen · 80 · Stil 17 · ALLTAG | #36 Steuerklasse 3/5 oder 4/4 · 80 · Stil 18 · **A** |
+| Sa 21.11. | #37 Waschmaschine kaputt · 82 · Stil 19 | #38 Fahrgemeinschaft oder allein zur Arbeit · 82 · Stil 21 |
+| So 22.11. | #39 Haare selbst schneiden oder Friseur · 79 · Stil 18 · ALLTAG | #40 E-Bike über den Arbeitgeber leasen oder selbst kaufen · 82 · Stil 17 |
 
 **Woche 4 · Mo 23.–So 29.11.**
 
 | Tag | Mittag (12:30, Sa/So 09:30) | Abend (19:30) |
 |---|---|---|
-| Mo 23.11. | #41 Brille oder Kontaktlinsen · 79 · Stil 14 | #42 Kfz-Versicherung jährlich oder monatlich zahlen · 83 · Stil 4 · **A** |
-| Di 24.11. | #43 Black Friday oder Januar · 83 · Stil 6 · **A** | #44 All-inclusive oder Ferienwohnung · 81 · Stil 10 |
-| Mi 25.11. | #45 Stoßlüften oder Kippfenster · 80 · Stil 11 | #46 Führerschein jetzt oder in drei Jahren · 79 · Stil 12 |
-| Do 26.11. | #47 Leitungswasser oder Wasser aus dem Kasten · 80 · Stil 14 | #48 Einmal 1.000 € Prämie oder 50 € mehr im Monat · 86 · Stil 9 · **A** |
-| Fr 27.11. | #49 45 % Rabatt oder erst 25 % und dann 20 % extra · 84 · Stil 6 · **A** | #50 Fitnessstudio für 24 Monate oder monatlich kündbar · 82 · Stil 2 |
-| Sa 28.11. | #51 Waschsalon oder eigene Waschmaschine · 75 · Stil 1 | #52 Dispo oder Ratenkredit · 77 · Stil 4 |
-| So 29.11. | #53 Echter Weihnachtsbaum oder künstlicher · 83 · Stil 11 · **A** | #54 Selbst streichen oder Maler · 77 · Stil 3 · ALLTAG |
+| Mo 23.11. | #41 Brille oder Kontaktlinsen · 79 · Stil 20 | #42 Kfz-Versicherung jährlich oder monatlich zahlen · 83 · Stil 18 · **A** |
+| Di 24.11. | #43 Black Friday oder Januar · 83 · Stil 17 · **A** | #44 All-inclusive oder Ferienwohnung · 81 · Stil 19 |
+| Mi 25.11. | #45 Stoßlüften oder Kippfenster · 80 · Stil 20 | #46 Führerschein jetzt oder in drei Jahren · 79 · Stil 17 |
+| Do 26.11. | #47 Leitungswasser oder Wasser aus dem Kasten · 80 · Stil 20 | #48 Einmal 1.000 € Prämie oder 50 € mehr im Monat · 86 · Stil 18 · **A** |
+| Fr 27.11. | #49 45 % Rabatt oder erst 25 % und dann 20 % extra · 84 · Stil 17 · **A** | #50 Fitnessstudio für 24 Monate oder monatlich kündbar · 82 · Stil 20 |
+| Sa 28.11. | #51 Waschsalon oder eigene Waschmaschine · 75 · Stil 17 | #52 Dispo oder Ratenkredit · 77 · Stil 18 |
+| So 29.11. | #53 Echter Weihnachtsbaum oder künstlicher · 83 · Stil 19 · **A** | #54 Selbst streichen oder Maler · 77 · Stil 18 · ALLTAG |
 
 **Woche 5 · Mo 30.11.–Mi 02.12.**
 
 | Tag | Mittag (12:30, Sa/So 09:30) | Abend (19:30) |
 |---|---|---|
-| Mo 30.11. | #55 Garantieverlängerung oder Risiko selbst tragen · 82 · Stil 13 | #56 Wichteln oder jeder beschenkt jeden · 85 · Stil 9 · **A** |
-| Di 01.12. | #57 Laptop für den Job im Dezember oder im Januar kaufen · 76 · Stil 4 | #58 Putzhilfe oder selbst putzen · 79 · Stil 2 · ALLTAG |
-| Mi 02.12. | #59 52-Wochen-Challenge oder fester Dauerauftrag · 79 · Stil 14 | #60 Gutschein oder Bargeld schenken · 79 · Stil 6 |
+| Mo 30.11. | #55 Garantieverlängerung oder Risiko selbst tragen · 82 · Stil 20 | #56 Wichteln oder jeder beschenkt jeden · 85 · Stil 19 · **A** |
+| Di 01.12. | #57 Laptop für den Job im Dezember oder im Januar kaufen · 76 · Stil 18 | #58 Putzhilfe oder selbst putzen · 79 · Stil 19 · ALLTAG |
+| Mi 02.12. | #59 52-Wochen-Challenge oder fester Dauerauftrag · 79 · Stil 20 | #60 Gutschein oder Bargeld schenken · 79 · Stil 18 |
 
 ## 3. Begründung
 
@@ -126,25 +126,18 @@ Uhrzeiten aus [`data/plan/posting_zeiten.json`](../data/plan/posting_zeiten.json
 - **Themenfelder:** Konsum und Haushalt (14), Arbeit und Gehalt (13), Auto und Wege (10), Wohnen und Energie (10), Alltag und Familie (9), Schulden und Sparen (4). Zwei direkt aufeinanderfolgende Videos haben nie dasselbe Feld (per Skript geprüft).
 - **Reihenfolge:** Die stärksten Lebensentscheidungen kommen in den ersten 10 Tagen (Ø 86,4, S). Termin-Videos liegen auf festen Tagen und haben Priorität A (18 Videos).
 - **Netto-Modul** (`pipeline/sim/netto.mjs`, PAP 2026, mit Tests) rechnet 12 Videos direkt (Minijob, Teilzeit, Jobangebot, Freelancer, Dienstwagen, Homeoffice, Werkstudent, Gehalt gegen Urlaub, Steuerklasse, Dienstrad, Prämie, Laptop) und liefert in 7 weiteren den Netto-Stundenlohn für die Zeitbewertung (Mittagessen, Umzug, Reifen, Lieferdienst, Friseur, Streichen, Putzhilfe).
-- **Stile** (`docs/10` §0; nie zweimal hintereinander, auch nicht über die Grenze 02./03.11., per Skript geprüft):
+- **Stile** (`docs/10` §0, Skill `.claude/skills/simulierbar-video/stile.md`; nie zweimal hintereinander, auch nicht über die Grenze 02./03.11., per Skript geprüft). **Neu 02.11.:** Der Inhaber will weg vom Cartoon- und Clay-Look, hin zu seriösen, hochwertigen Animationen mit Licht und Atmosphäre und ohne Sticker. Deshalb laufen alle Videos ab 03.11. in den neuen Stilen 17–21 (Baukästen `pipeline/engine/stil_*.js` mit `sim_atmosphaere.js`, Demo `pipeline/projekte/_demo-simulierbar/`). Die alten Stile 1–4, 6 und 8–15 sind für Simulierbar nicht mehr erlaubt; Blaupause (13) bleibt nur als „Warum?“-Einschub, Typografie (7) nur als HUD-Baustein.
 
 | Stil | Videos | Erster Einsatz |
 |---|---|---|
-| 1 Low-Poly-Miniatur (Tilt-Shift) | 5 | Do 05.11. |
-| 2 Isometrisches 3D | 6 | Sa 07.11. |
-| 3 Clay-Spielzeug-3D | 6 | Mi 04.11. |
-| 4 Flat-Infografik | 7 | Do 05.11. |
-| 6 Papier-Collage | 5 | Di 03.11. |
-| 8 Karten-/Satellitenoptik | 3 | Sa 07.11. |
-| 9 Holzspielzeug-Tisch | 4 | Do 12.11. |
-| 10 Papier-Diorama | 3 | Mo 16.11. |
-| 11 Filz & Knöpfe | 4 | So 15.11. |
-| 12 Comic-Toon 3D | 6 | Di 03.11. |
-| 13 Blaupause / Schnittmodell | 4 | Fr 06.11. |
-| 14 Glas-Labor (Füllstand) | 7 | Mi 04.11. |
+| 17 Nachtstadt-Miniatur | 12 | Di 03.11. |
+| 18 Dunkles Studio (Produktlicht) | 17 | Mi 04.11. |
+| 19 Architekturmodell (Abendlicht) | 13 | Di 03.11. |
+| 20 Glas & Licht | 14 | Mi 04.11. |
+| 21 Nachtkarte | 4 | Sa 07.11. |
 
-- **Erstbauten:** Isometrisch (2) und Karte (8) für Sa 07.11., Holzspielzeug (9, Bake-Weg 15) für Do 12.11., Filz (11) für So 15.11., Papier-Diorama (10) für Mo 16.11. Fertige Baukästen gibt es für 1, 3, 4, 6, 12, 13 und 14.
-- **Nicht eingeplant:** Stil 5 (Neon-Dashboard) und 7 (Kinetische Typografie) als Hauptstil, weil sie Daten- bzw. Text-Looks sind. Der Inhaber will die Kunst in der animierten Welt sehen, nicht in Einblendungen (02.11.). Beide bleiben als Bausteine erlaubt. Stil 16 gehört zu Account 2.
+- **Baukästen:** Alle fünf Stile haben seit 02.11. einen Grund-Baukasten mit Demo-Szene (`docs/10` §0). Beim ersten Einsatz je Stil kommen die themenspezifischen Objekte dazu (z. B. Zapfsäule für E10/E5, Brotdose und Lieferbeutel für das Mittagessen), Schätzung 1–3 Std. je Video zusätzlich.
+- **Nicht eingeplant:** alle alten Stile 1–15 als Hauptstil (Inhaber 02.11., `docs/10` §0). Neon (5) und Typografie (7) sind Daten- bzw. Text-Looks; der Inhaber will die Kunst in der animierten Welt sehen, nicht in Einblendungen. Stil 16 gehört zu Account 2. Nachtkarte (21) kommt nur 4-mal vor, weil nur wenige Themen echte Orte und Wege haben; die Reserve hat drei weitere Karten-Themen.
 - **Teamfarben:** zwei feste Farben je Video aus einer Palette ohne Gelb (Blau, Orange, Türkis, Koralle, Violett, Grün, Pink, Petrol, Rot, beim Mittagessen Magenta wie im Projekt). Gelb bleibt dem aktuellen Untertitel-Wort vorbehalten.
 
 ### 3.4 Konkurrenz-Sperrliste
@@ -192,8 +185,8 @@ Uhrzeiten aus [`data/plan/posting_zeiten.json`](../data/plan/posting_zeiten.json
 | raus: aufgegangen oder schwach | 8 | 4-Tage-Woche (in Teilzeit), Pendlerpauschale (in Pendeln, Homeoffice, Fahrgemeinschaft), Stadt oder Land (in Jobangebot und Pendeln), Weihnachtsgeld netto (ersetzt durch Prämie gegen 50 €), Heizung 1 Grad (Umfeld Nachtabsenkung, erwartbar), Marke oder Eigenmarke (ersetzt durch Großpackung), Arbeitsstunden-Preise (kein Duell), GTA 6 Deutschland krankfeiern (schiefer Vergleich und Nähe zu Täuschung; der Release-Termin trägt jetzt „Konsole oder Gaming-PC“) |
 
 **Halb gebaute Projekte in `pipeline/projekte/`:**
-- `mittagessen-job`: Geld, Modell mit 13 Tests und Baukasten Stil 6 fertig, **eingeplant am 03.11. abends**.
-- `schere-stein-papier`: kein Euro-Ergebnis, deshalb nicht im Plan. Der Clay-Baukasten (Stil 3) wird für Großpackung, Heißluftfritteuse und Haushaltsthemen weiter genutzt. Das fertige Modell bleibt für einen späteren Alltag-Slot liegen.
+- `mittagessen-job`: Geld, Modell mit 13 Tests fertig, **eingeplant am 03.11. abends**. Die Collage-Szene (Stil 6) gilt nicht mehr; die Szene wird im Stil 19 Architekturmodell neu gebaut (Wohnungs- und Büro-Schnitt mit Küche, Lieferung und warmem Innenlicht). Modell und Skript bleiben.
+- `schere-stein-papier`: kein Euro-Ergebnis, deshalb nicht im Plan. Clay (Stil 3) ist für Simulierbar nicht mehr erlaubt (Inhaber 02.11.); das Modell bleibt für einen späteren Alltag-Slot liegen und bekommt dann einen der Stile 17–21.
 - `leichtes-auto` und `boden-durchsichtig`: „Stell dir vor …“-Themen im Format von Account 2, kein Geld, nicht im Simulierbar-Plan.
 
 ### 3.6 TikTok-Regeln für Finanzinhalte (F, TikToks eigene Seiten, abgerufen 02.11.2026)
@@ -247,8 +240,8 @@ Uhrzeiten aus [`data/plan/posting_zeiten.json`](../data/plan/posting_zeiten.json
 ## 4. Kapazität (S)
 
 - **Agentenarbeit:** 10 Videos mit Aufwand 2 (1,5 Std.), 43 mit 3 (3 Std.), 7 mit 4 (5 Std.) = **ca. 179 Std.** in 30 Tagen, also ca. 6 Std. pro Tag für 2 Videos (S, Raster wie bisher).
-- **Neue Stil-Baukästen:** 5 Erstbauten (2, 8, 9, 10, 11), je 3–8 Std. = **ca. 15–40 Std.** (S, `docs/10`). Termine: 2 und 8 bis Fr 06.11., 9 bis Mi 11.11., 11 bis Sa 14.11., 10 bis So 15.11.
-- **Render in der Cloud ohne GPU:** gemessene Sekunden je Bild aus `docs/10` (1 Low-Poly 3,8; 3 Clay 3–5; 6 Collage 2,4; 14 Glas 3,35; 12 Comic 1,17; 4 Flat 0,7; 9 Holz gebacken 0,9) ergeben für die 60 Videos **ca. 70 Std.**, also ca. 2,4 Std. pro Tag (S). Dazu kommen die 2 Videos von Account 2. Die teuersten Stile (14 und 1) liegen deshalb nie am selben Tag.
+- **Stil-Baukästen:** Die fünf neuen Stile 17–21 haben seit 02.11. einen Grund-Baukasten (`sim_atmosphaere.js` und je Stil ein Modul). Themenspezifische Objekte kommen beim ersten Einsatz dazu, ca. 1–3 Std. je Video (S).
+- **Render in der Cloud ohne GPU:** gemessene Sekunden je Bild der neuen Stile siehe `docs/10` §0 (Demo-Messung 02.11.); mit ca. 2–3 s je Bild ergeben die 60 Videos **ca. 80–120 Std.**, also ca. 3–4 Std. pro Tag (S). Dazu kommen die 2 Videos von Account 2. Der Windows-PC mit GPU löst den Engpass.
 - **Regel des Inhabers (02.11.):** höchstens 4 Videos gleichzeitig in Arbeit, höchstens 2 Produktions-Agenten (Sonnet), gestaffelt. Erstbauten mit Opus.
 - **Stimme:** ca. 170–220 Wörter je Video wie bisher; bei Bedarf nächstgrößerer ElevenLabs-Plan (CLAUDE.md).
 - **Inhaber:** nichts zu tun außer dem Startsignal; Claude prüft und plant selbst in Buffer ein.
@@ -278,15 +271,15 @@ Uhrzeiten aus [`data/plan/posting_zeiten.json`](../data/plan/posting_zeiten.json
 | # | Schritt | Wer | Zeit (S) |
 |---|---|---|---|
 | 1 | Plan abnehmen; bei Einwänden einzelne Zeilen gegen die Reserve tauschen | Inhaber | 10 Min. |
-| 2 | Nach Startsignal: 03.11. produzieren (#1 Taxi, Stil 12; #2 Mittagessen Neustart, Stil 6) | Claude (Sonnet) | ca. 4,5 Std. plus Render |
-| 3 | Erstbau Isometrisch (2) und Karte (8) für 07.11., parallel zu 04.–06.11. | Claude (Opus) | 6–12 Std. |
+| 2 | Nach Startsignal: 03.11. produzieren (#1 Taxi, Stil 17; #2 Mittagessen Neustart, Stil 19) nach Skill `simulierbar-video` | Claude (Sonnet) | ca. 5 Std. plus Render |
+| 3 | Themenspezifische Objekte je Stil beim ersten Einsatz ergänzen (z. B. Zapfsäule, Lieferbeutel), Baukästen bleiben wiederverwendbar | Claude (Opus bei neuen Objekttypen) | 1–3 Std. je Video |
 | 4 | Werte mit „prüfen“ je Video am Vortag klären (Quellen in `skript.json`) | Claude | in der Produktion enthalten |
 | 5 | Nach 14 Tagen (16.11.): Aufrufe nach 2 und 24 Std. je Video auswerten, Reihenfolge der Wochen 3–5 anpassen | Claude | 30 Min. |
 
 ## 7. Offene Punkte
 
 1. **Werte mit „prüfen“** (je Zeile in `quellen_pruefen`), vor allem: Homeoffice-Pauschale und Pauschbetrag 2026, Dienstrad- und E-Dienstwagen-Regel 2026, Steuerklassen-Frist, Kfz-Stichtag, Reparaturbonus der Länder, Stand der Führerscheinreform, Tagesgeld-Schnitt und EZB-Beschluss auf der EZB-Seite, Mieten München/Leipzig, ADAC-Autokosten, Oktober-Mittel der Spritpreise, GTA-6-Termin am 18.11.
-2. **Erstbauten 07.11.:** Sind Stil 2 oder 8 bis Fr 06.11. nicht fertig, gilt: #9 Teilzeit in Stil 13, #10 Jobangebot in Stil 1. Die Stilfolge bleibt dann gültig.
+2. **Neue Stile 17–21 (02.11.):** Grund-Baukästen und Demo-Standbilder stehen; das erste echte Video je Stil zeigt, ob die Renderzeit pro Bild unter Volllast reicht. Fällt ein Stil aus, ist der Ersatz ein anderer der fünf Stile, der nicht am Nachbar-Slot liegt.
 3. **Rente mit 63 (04.11.)** ist politiknah. Im Video gibt es nur die Rechnung, keine Partei und keine Wertung. Wenn du das Thema lieber meiden willst: Tausch mit Reserve R7 (Kreditkarte) oder R14 (Nachtschicht).
 4. **Video vom 02.11. abends** („Steuererklärung oder Überstunden“) bleibt laut Auftrag unverändert. Die saubere Variante desselben Gedankens kommt am 05.11. (Minijob oder Überstunden).
 5. **Konkurrenz-Check:** Das Embed zeigt nur die neuesten Videos je Konto (A). Ein älterer Hit eines Kontos kann fehlen. Der Trend-Radar prüft am Vortag jeder Produktion erneut; ein Treffer sperrt das Thema, dann kommt die Reserve.

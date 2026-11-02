@@ -1,0 +1,106 @@
+/* Seriöses HUD-Thema für Simulierbar (@simulierbar, Account 1), Skill .claude/skills/simulierbar-video/design.md.
+   Lädt nach hud.css und massstab.css; wirkt nur mit <div id="hud" class="sim">. Bausteine und Aufrufe bleiben die aus
+   engine/massstab.js; hier ändert sich nur das Aussehen: Rauchglas-Karten mit Haarlinie, Kapitälchen-Etiketten,
+   Ziffern in Inter Display 800 mit Tabellenziffern, Teamfarbe als Licht (Linie, Punkt, Schein) statt als Vollfläche.
+   Untertitel bleiben unverändert im Stil „kontur“ (weiß, fett, schwarze Kontur, aktuelles Wort gelb, kein Kasten).
+   Keine Sticker/Stempel (Inhaber 02.11.): .ms-stempel ist hier ausgeblendet. */
+
+#hud.sim {
+  --karte: #10131a;
+  --karte-text: #f3f5f8;
+  --karte-grau: #9aa3b2;
+  --karte-linie: rgba(255, 255, 255, 0.12);
+  --tinte: #0b0d12;
+  --akzent: #ece6da;
+  --glas: rgba(12, 15, 21, 0.62);
+  --glas-dicht: rgba(12, 15, 21, 0.78);
+  --haar: rgba(255, 255, 255, 0.16);
+  --haar-hell: rgba(255, 255, 255, 0.28);
+  --ms-radius: 22px;
+  --ms-schatten: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 24px 48px -18px rgba(0, 0, 0, 0.7);
+}
+
+/* ---------- Rollzahl ---------- */
+#hud.sim .ms-rz small { color: var(--karte-grau); font-weight: 700; letter-spacing: 0.02em; }
+
+/* ---------- Titel im Hook: groß, ruhig, ohne Comic-Kontur ---------- */
+#hud.sim .ms-titel { font-weight: 800; letter-spacing: -0.035em; }
+#hud.sim .ms-titel .ms-twi { -webkit-text-stroke: 0; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35), 0 10px 40px rgba(0, 0, 0, 0.55); }
+#hud.sim .ms-titel .ms-tw.klein { font-weight: 700; letter-spacing: 0.01em; color: rgba(255, 255, 255, 0.86); }
+#hud.sim .ms-titel .ms-vs { background: transparent; box-shadow: inset 0 0 0 0.05em var(--haar-hell); font-weight: 700; font-size: 0.42em; letter-spacing: 0.08em; }
+#hud.sim .ms-titel .ms-vs i { transform: none; }
+
+/* ---------- Anzeigetafel ---------- */
+#hud.sim .ms-seite { background: var(--glas); box-shadow: inset 0 0 0 1.5px var(--haar), var(--ms-schatten); -webkit-backdrop-filter: blur(14px) saturate(1.15); backdrop-filter: blur(14px) saturate(1.15); }
+#hud.sim .ms-seite .ms-glanz { background: linear-gradient(180deg, color-mix(in srgb, var(--tf) 34%, transparent), color-mix(in srgb, var(--tf) 6%, transparent) 75%); }
+#hud.sim .ms-seite .ms-kopf { font-family: var(--text); font-weight: 700; font-size: 22px; letter-spacing: 0.16em; color: color-mix(in srgb, var(--tf) 70%, #fff); }
+#hud.sim .ms-seite .ms-kopf i { width: 10px; height: 10px; box-shadow: 0 0 12px 2px color-mix(in srgb, var(--tf) 70%, transparent); }
+#hud.sim .ms-seite .ms-vorn { height: 26px; padding: 0 10px; background: transparent; box-shadow: inset 0 0 0 1.5px currentColor; color: #fff; font-size: 15px; letter-spacing: 0.16em; }
+#hud.sim .ms-seite .ms-wert { font-weight: 800; letter-spacing: -0.035em; color: var(--karte-text); }
+#hud.sim .ms-seite .ms-spur { height: 4px; background: color-mix(in srgb, var(--tf) 16%, transparent); }
+#hud.sim .ms-seite .ms-spur b { box-shadow: 0 0 14px 1px var(--tf); }
+#hud.sim .ms-seite.vorn .ms-kopf, #hud.sim .ms-seite.vorn .ms-wert { color: #fff; }
+#hud.sim .ms-seite.vorn .ms-rz small { color: rgba(255, 255, 255, 0.78); }
+#hud.sim .ms-seite.vorn .ms-kopf i { background: #fff; box-shadow: 0 0 14px 3px var(--tf); }
+#hud.sim .ms-seite.vorn { box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--tf) 75%, transparent), 0 0 44px -10px var(--tf), var(--ms-schatten); }
+#hud.sim .ms-mitte { width: 124px; height: 124px; background: var(--glas-dicht); box-shadow: inset 0 0 0 1.5px var(--haar), 0 18px 36px -14px rgba(0, 0, 0, 0.7); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+#hud.sim .ms-mitte svg { inset: 6px; width: 112px; height: 112px; }
+#hud.sim .ms-mitte .ms-vs { font-family: var(--text); font-weight: 700; font-size: 26px; letter-spacing: 0.18em; transform: none; color: rgba(255, 255, 255, 0.8); }
+#hud.sim .ms-mitte .ms-uhrtext { font-weight: 800; font-size: 32px; }
+#hud.sim .ms-mitte .ms-uhrtext small { font-family: var(--text); font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: var(--karte-grau); }
+
+/* ---------- Uhr ---------- */
+#hud.sim .ms-uhr .ms-digital { background: var(--glas-dicht); box-shadow: inset 0 0 0 1.5px var(--haar), var(--ms-schatten); font-weight: 800; }
+#hud.sim .ms-uhr .ms-digital small { color: var(--karte-grau); letter-spacing: 0.16em; }
+
+/* ---------- Ring ---------- */
+#hud.sim .ms-ring .ms-rk { background: var(--glas-dicht); box-shadow: inset 0 0 0 1.5px var(--haar), var(--ms-schatten); }
+#hud.sim .ms-ring .ms-rzahl { font-weight: 800; color: var(--karte-text); }
+#hud.sim .ms-ring .ms-rlabel { font-family: var(--text); font-weight: 700; font-size: 20px; letter-spacing: 0.16em; background: var(--glas-dicht); color: #fff; box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--tf) 80%, transparent); }
+
+/* ---------- Chips: Rauchglas mit Teampunkt; „voll“ = Teamfarbe als Linie und Schein ---------- */
+#hud.sim .ms-chip { height: 68px; padding: 0 26px; font-weight: 800; font-size: 34px; letter-spacing: 0.0em; border-radius: 16px; box-shadow: inset 0 0 0 1.5px var(--haar), var(--ms-schatten); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+#hud.sim .ms-chip.hell, #hud.sim .ms-chip.dunkel { background: var(--glas); color: var(--karte-text); }
+#hud.sim .ms-chip.hell i { width: 12px; height: 12px; box-shadow: 0 0 12px 2px color-mix(in srgb, var(--tf) 70%, transparent); }
+#hud.sim .ms-chip.voll { background: linear-gradient(180deg, color-mix(in srgb, var(--tf) 30%, rgba(12, 15, 21, 0.7)), rgba(12, 15, 21, 0.7)); color: #fff; box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--tf) 85%, transparent), 0 0 30px -8px var(--tf), var(--ms-schatten); }
+#hud.sim .ms-chip.voll em { color: #fff; }
+#hud.sim .ms-chip.gross { height: 84px; font-size: 44px; padding: 0 32px; }
+#hud.sim .ms-chip .ms-puls { box-shadow: 0 0 0 2px var(--tf); }
+
+/* ---------- Sticker und Stempel: nicht verwenden (Inhaber 02.11.) ---------- */
+#hud.sim .ms-stempel { display: none !important; }
+
+/* ---------- Fortschrittsleiste ---------- */
+#hud.sim .ms-leiste { height: 92px; border-radius: 20px; background: var(--glas); box-shadow: inset 0 0 0 1.5px var(--haar), var(--ms-schatten); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+#hud.sim .ms-leiste .ms-bahn { height: 4px; background: rgba(255, 255, 255, 0.12); }
+#hud.sim .ms-leiste .ms-bahn b { box-shadow: 0 0 12px 1px var(--tf); }
+#hud.sim .ms-leiste .ms-marke { width: 2px; background: rgba(255, 255, 255, 0.2); }
+#hud.sim .ms-leiste .ms-marke.vorbei { background: rgba(255, 255, 255, 0.7); }
+#hud.sim .ms-leiste .ms-punkt { width: 22px; height: 22px; margin: -11px 0 0 -11px; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9), 0 0 18px 3px var(--tf); }
+#hud.sim .ms-leiste .ms-punkt span { display: none; }
+#hud.sim .ms-leiste .ms-lbl { color: var(--karte-grau); font-weight: 700; letter-spacing: 0.18em; font-size: 16px; }
+
+/* ---------- Karten (Formel, Bilanz, Aufschlüsselung) ---------- */
+#hud.sim .ms-karte { border-radius: 26px; background: var(--glas-dicht); box-shadow: inset 0 0 0 1.5px var(--haar), var(--ms-schatten); -webkit-backdrop-filter: blur(16px) saturate(1.1); backdrop-filter: blur(16px) saturate(1.1); }
+#hud.sim .ms-karte .ms-kk { font-weight: 700; font-size: 20px; letter-spacing: 0.2em; color: var(--karte-grau); }
+#hud.sim .ms-karte .ms-kk i { width: 10px; height: 10px; border-radius: 50%; transform: none; background: var(--akzent); box-shadow: 0 0 10px 1px color-mix(in srgb, var(--akzent) 60%, transparent); }
+#hud.sim .ms-formel .ms-tok { font-weight: 800; }
+#hud.sim .ms-formel .ms-tok.op { width: 60px; height: 60px; background: transparent; box-shadow: inset 0 0 0 1.5px var(--haar-hell); font-weight: 600; font-size: 40px; }
+#hud.sim .ms-formel .ms-tok.erg { background: var(--akzent); color: var(--tinte); box-shadow: 0 0 40px -10px color-mix(in srgb, var(--akzent) 70%, transparent); }
+#hud.sim .ms-formel .ms-unter { font-weight: 700; font-size: 32px; letter-spacing: 0.06em; }
+#hud.sim .ms-bilanz .ms-bz { background: rgba(255, 255, 255, 0.04); box-shadow: inset 0 0 0 1px var(--haar); border-radius: 16px; }
+#hud.sim .ms-bilanz .ms-bz .l { font-weight: 700; font-size: 30px; letter-spacing: 0.1em; }
+#hud.sim .ms-bilanz .ms-bz .l i { width: 12px; height: 12px; box-shadow: 0 0 12px 2px color-mix(in srgb, var(--tf) 70%, transparent); }
+#hud.sim .ms-bilanz .ms-bz .r { font-weight: 800; }
+#hud.sim .ms-bilanz .ms-bz.diff { background: color-mix(in srgb, var(--akzent) 10%, transparent); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--akzent) 70%, transparent); }
+#hud.sim .ms-bilanz .ms-sieger { border-radius: 16px; background: linear-gradient(180deg, color-mix(in srgb, var(--tf) 55%, #0c0f15), color-mix(in srgb, var(--tf) 30%, #0c0f15)); color: #fff; font-weight: 800; letter-spacing: 0.08em; box-shadow: inset 0 0 0 1.5px var(--tf), 0 0 50px -12px var(--tf); }
+#hud.sim .ms-balken .ms-fk .kopf { font-weight: 700; letter-spacing: 0.1em; font-size: 28px; }
+#hud.sim .ms-balken .ms-fk .tag { background: transparent; box-shadow: inset 0 0 0 1.5px var(--haar-hell); font-weight: 700; }
+#hud.sim .ms-balken .ms-zeile .w { font-weight: 800; }
+
+/* ---------- Pointe ---------- */
+#hud.sim .ms-pointe { font-weight: 800; letter-spacing: -0.04em; }
+#hud.sim .ms-pointe .ms-pw { -webkit-text-stroke: 0; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35), 0 12px 44px rgba(0, 0, 0, 0.6); }
+
+/* ---------- Folgen-Aufruf ---------- */
+#hud.sim .ms-folgen .ms-fp { background: var(--glas-dicht); box-shadow: inset 0 0 0 1.5px var(--haar), var(--ms-schatten); font-weight: 800; font-size: 34px; }

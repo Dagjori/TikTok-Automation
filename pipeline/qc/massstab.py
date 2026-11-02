@@ -254,6 +254,16 @@ def pruefe(projekt, profil, extra_ziele):
     funde = re.findall(r"SIMULIERBAR|new Markenleiste\(|WUERFEL|logoGross|rubrik:|stelldirvor|STELLDIRVOR|marke/account2", szene)
     zeile("15", "Kein Kanalname/Logo/Rubrik (szene.js)", "keine Fundstelle" if not funde else ", ".join(sorted(set(funde))), "keine Fundstelle", "kein Logo, keine Rubrik", not funde)
 
+    # 18b Nur erlaubte Stile für Simulierbar (Inhaber 02.11.: seriös, Licht und Atmosphäre, kein Cartoon/Clay):
+    # Stile 17–21 (Skill .claude/skills/simulierbar-video/stile.md). Pflicht für Projekte nach dem Skill
+    # (skript.json "skill": "simulierbar-video" oder Szene mit sim_atmosphaere.js), sonst Hinweis (ältere Projekte bleiben).
+    nach_skill = skript.get("skill") == "simulierbar-video" or "sim_atmosphaere" in szene
+    stil_nr = re.match(r"\s*(\d+)", str(skript.get("stil", "")))
+    alt_module = sorted(set(re.findall(r"stil_(?:clay|clay_welt|comic|collage|flat|lowpoly|glas)\.js|engine/iso\.js", szene)))
+    stil_ok = bool(stil_nr) and 17 <= int(stil_nr.group(1)) <= 21 and not alt_module
+    ist = (f"Stil {stil_nr.group(1)}" if stil_nr else "kein Stil in skript.json") + (f", alte Module: {', '.join(alt_module)}" if alt_module else "")
+    zeile("18b", "Stil erlaubt (17–21, Inhaber 02.11.)", ist, "17–21" + ("" if nach_skill else " (Hinweis)"), "seriös, Licht, Atmosphäre", stil_ok, pflicht=nach_skill)
+
     return zeilen, {"profil": profil, "ziele": ziele, "timing": "geschätzt" if geschaetzt else "echt", "protokoll": protokoll}
 
 

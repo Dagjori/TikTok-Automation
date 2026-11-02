@@ -1,0 +1,8 @@
+{
+  "titel": "Demo Simulierbar-Stile 17–21 (seriöser Look mit Licht und Atmosphäre)",
+  "hinweis": "Nur Demo der Stil-Baukästen für @simulierbar (Skill .claude/skills/simulierbar-video/). Kein Video zum Posten, Zahlen sind Beispielwerte ohne Rechnung, keine Stimme. Stil über ?stil=nachtstadt|studio|architektur|lichtlabor|nachtkarte (render.js --query \"stil=studio\"). Sprechtext und Timing-Schätzung kommen aus welten/<stil>.js.",
+  "konto": "simulierbar",
+  "stil": "17–21 (Demo)",
+  "klangteppich": "musik",
+  "quellen": ["Demo ohne Quellen (Beispielwerte)."]
+}

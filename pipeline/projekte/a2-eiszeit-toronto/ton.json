@@ -1,0 +1,20 @@
+{
+ "_hinweis": "Tonplan für atmo.py (nur selbst erzeugte Atmo und Sounddesign, keine Stimme). Schichten mit Pegelkurven [[t, dB], …] (−60 = aus). Einzelklänge aus dem Ereignis-Protokoll der Szene (protokoll_effekte).",
+ "dauer": 80,
+ "seed": 20261103,
+ "schichten": [
+  {"art": "stadt", "pegel": [[0, -26], [14, -26], [16, -30], [23, -31], [33, -36], [45, -40], [52, -48], [58, -60]]},
+  {"art": "wasser", "pegel": [[0, -31], [14, -31], [17, -40], [28.3, -44], [32, -60]]},
+  {"art": "voegel", "pegel": [[0, -32], [14.4, -31], [16, -44], [24, -60], [25, -50], [26.5, -60], [29, -60]], "dichte": 0.8},
+  {"art": "wind", "pegel": [[0, -27], [14.5, -27], [15.5, -20], [17.2, -24], [19.2, -19], [22.2, -23], [23.6, -18], [37, -22], [41, -24], [50, -20], [55, -15], [58, -10], [60.4, -6], [61.2, -14], [64, -26], [70, -34], [80, -50]],
+   "hell": [[0, 0.5], [15, 0.75], [37, 0.85], [58, 1.0], [60.6, 0.25], [80, 0.12]]},
+  {"art": "grollen", "pegel": [[0, -60], [44, -60], [47, -32], [52, -24], [56, -17], [59.5, -12], [60.4, -10], [62.5, -16], [66, -28], [72, -40], [80, -48]]},
+  {"art": "brummen", "pegel": [[0, -60], [60.5, -60], [61.2, -34], [72, -38], [80, -46]], "f": 46},
+  {"art": "tinnitus", "pegel": [[0, -60], [61.3, -60], [62, -44], [69, -48], [72, -60]], "f": 560}
+ ],
+ "dumpf": [[0, 0], [60.4, 0], [60.9, 0.88], [66, 0.85], [70, 0.92], [80, 0.95]],
+ "stille": [[38.0, 41.5, -4]],
+ "ereignisse": [],
+ "protokoll_effekte": true,
+ "verlauf": "Spätsommer-Stadt (Verkehr, Gemurmel, Wasser, Möwen) → Winterböen bei jedem Puls → Stadt leiser, See still → kurze Ruhe, als die Linie erscheint → Grollen des Eises ab 47 s → Fallwind → Einschlag bei 60,4 s, Glas, dumpf mit Brummen und Pfeifton → leiser Abspann"
+}

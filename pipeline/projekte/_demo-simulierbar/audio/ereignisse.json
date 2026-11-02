@@ -1,0 +1,71 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "_demo-simulierbar",
+ "fps": 30,
+ "dauer": 9.4,
+ "stimmEnde": 8.587,
+ "timing": "kein Sprechtext (Format ohne Stimme, z. B. Account 2)",
+ "protokoll": true,
+ "teppich": "strasse",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "PARKHAUS",
+    "farbe": "#3D8BFF"
+   },
+   "b": {
+    "name": "SUCHEN",
+    "farbe": "#FF8A3D"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "geschätzt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Tafel",
+   "t": 0.633,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0.667,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 2.767,
+   "typ": "zaehler",
+   "dauer": 6.62,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 2.797,
+   "typ": "uhr",
+   "dauer": 6.59,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 6.433,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  }
+ ],
+ "klang": []
+}

@@ -1,0 +1,68 @@
+{
+  "titel": "Was wäre, wenn wir wieder in eine Eiszeit steuern?",
+  "konto": "stelldirvor.pov",
+  "format": "referenz_pov",
+  "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Grundwelt Großstadt-Dach (engine/welt_grossstadt_dach.js)",
+  "plan": "data/plan/account2-plan.json, Eintrag 1 (Klima, Score 89)",
+  "titelfrage": "Was wäre, wenn wir wieder in eine Eiszeit steuern?",
+  "standpunkt": "Dachterrasse eines Hochhauses am Hafen von Toronto (Port Lands, Dach 150 m, Augenhöhe 151,6 m), Glasbrüstung mit Stahlhandlauf; Blick nach Nordwesten über Innenstadt und CN Tower (ca. 3 km), links der Ontariosee bis zum Horizont. Die Eisfront kommt von Norden (Hudson Bay) über die Stadt.",
+  "ereignis": "Die Erde kühlt in den Zustand des Letzten Glazialen Maximums. Die Sommer werden kürzer, Schnee bleibt liegen, der Ontariosee friert zu, der Laurentidische Eisschild schiebt sich von Norden heran und begräbt Toronto.",
+  "rechnung": {
+    "code": "pipeline/sim/eiszeit_toronto.mjs (Test: pipeline/sim/eiszeit_toronto.test.mjs, 7/7 bestanden)",
+    "lgm_temperatur": "−6,1 °C weltweit gegenüber vorindustriell (F, Tierney 2020; 95 %: −6,5 … −5,7 °C). Modell: T(J) = −6,1 · (J/94.000)^0,75",
+    "lgm_meeresspiegel": "−130 m (F-Spanne −120 … −134 m, Lambeck 2014; Modellwert A). Modell: M(J) = −130 · (J/94.000)^0,9",
+    "eis_ueber_toronto": "ca. 2.100 m im LGM (S, Rekonstruktion Dyke et al. 2002, zitiert in xkcd 1225 „Ice Sheets“; direkte Messungen gibt es nicht)",
+    "zeitraffer": "A: nach dem letzten Eiszeitzyklus (Beginn vor ca. 115.000 Jahren, Maximum vor ca. 21.000 Jahren). Eisrand erreicht Toronto nach 90.000 Jahren, Maximum nach 94.000 Jahren. 0–37,7 s: J(t) = 88.750 · (t/37,7)^2,2 (bis ca. 5.100 Jahre pro Sekunde); 37,7–60,4 s aus dem Vorstoß des Eisrands (1.250 Jahre); 60,4–70 s bis zum Maximum.",
+    "eisrand": "Vorstoß kurz vor Toronto 100 m pro Jahr (S, Spanne 50–200 m/Jahr). Anzeige: Entfernung D(τ) = 0,35·τ + 4,45·10⁻⁴·τ^4,01 km mit τ = 60,4 s − t; 125 km bei 37,7 s, 5,5 km bei 51,8 s, Turm (3 km) bei 54,0 s, 0 bei 60,4 s",
+    "weisse_linie": "Eisschild ragt ab ca. 125 km Entfernung über die Kimm (Augenhöhe 151,6 m, Erdkrümmung mit Refraktion k = 0,13, Profil nach Nye mit τ₀ = 100 kPa). Rechnung erhebungGrad() und kimmGrad() im Code.",
+    "jahreszeiten": "Darstellung (A): Jahreszeiten als Stichproben – 3 Winter-Pulse (15,0–17,2 s, 19,0–22,2 s, ab 23,4 s), die Sommer dazwischen werden kürzer; ein letzter kurzer Sommer 25,0–26,8 s, in dem der Schnee liegen bleibt. Sonne wandert vom Spätsommerabend (Westen) zum Wintermittag (Süden).",
+    "darstellung_wand": "A: Die Front ist als steile Wand gezeichnet (Fuß 110 m, 1.150 m auf 400 m Tiefe, dahinter bis 2.100 m). In der Natur steigt die Eisoberfläche am Rand über einige Kilometer auf mehrere hundert Meter und über 50–200 km auf 2 km an (Nye-Profil). Die gezeigten Höhen entsprechen der Eisdicke über Toronto im LGM.",
+    "hinweis": "Kein „5 Sekunden“-Rahmen. Die Anzeige zeigt echte Größen (Abkühlung, Meeresspiegel, Entfernung), die Unterzeile nennt die Jahre bzw. die Abkühlung."
+  },
+  "anzeige": [
+    {"von": 0, "etikett": "ABKÜHLUNG WELTWEIT", "wert": "0,0 → −2,8 °C", "unter": "HEUTE / IN … JAHREN"},
+    {"von": 24.0, "etikett": "MEERESSPIEGEL", "wert": "−50 → −123 m", "unter": "WELTWEIT, IN … JAHREN"},
+    {"von": 37.7, "etikett": "EISRAND", "wert": "125 → 0,1 km", "unter": "WELTWEIT −5,8 … −5,9 °C"},
+    {"von": 60.4, "etikett": "EISRAND", "wert": "HIER"}
+  ],
+  "saetze": [
+    [4.8, "Spätsommer über Toronto."], [9.5, "Der See glitzert, die Stadt summt."], [14.2, "Dann werden die Sommer kürzer."],
+    [18.9, "Jeder Winter bringt mehr Schnee."], [23.6, "Der Schnee bleibt im Sommer liegen."], [28.3, "Der Ontariosee friert zu."],
+    [33.0, "Die Dächer verschwinden unter Schnee."], [37.7, "Am Horizont erscheint eine weiße Linie."], [42.4, "Sie wächst zu einer Wand aus Eis."],
+    [47.1, "Weltweit nur sechs Grad kälter."], [51.8, "Die Wand ist höher als der Turm."], [56.5, "Eiskalter Wind fegt über das Dach."],
+    [62.6, "Das Eis wird zwei Kilometer dick."], [66.6, "So lag Toronto schon einmal unter Eis."]
+  ],
+  "bild_text_abgleich": [
+    [4.8, "Spätsommer über Toronto.", "tiefe Abendsonne im Westen, grüne Bäume, Skyline mit CN Tower, Segelboote"],
+    [9.5, "Der See glitzert, die Stadt summt.", "Sonnenglanz auf dem Ontariosee links, Autos fahren, Menschen gehen; Ton: Stadt-Atmo"],
+    [14.2, "Dann werden die Sommer kürzer.", "Laub färbt sich, erster Winter-Puls ab 15,0 s, Zugvögel fliegen ab 14,6 s nach Süden"],
+    [18.9, "Jeder Winter bringt mehr Schnee.", "zweiter Winter-Puls 19,0–22,2 s, Schneefall, Dächer und Straßen weiß, Bäume kahl"],
+    [23.6, "Der Schnee bleibt im Sommer liegen.", "ab 23,4 s Winter; kurzer Sommer 25,0–26,8 s (warmes Licht), Schnee bleibt"],
+    [28.3, "Der Ontariosee friert zu.", "Eis wächst 28,3–32,3 s vom Ufer über den See, Möwen ziehen ab 28,6 s ab"],
+    [33.0, "Die Dächer verschwinden unter Schnee.", "Schneekappen wachsen auf 2,8 m, Dachaufbauten verschwinden darunter"],
+    [37.7, "Am Horizont erscheint eine weiße Linie.", "dünne weiße Linie am Nordhorizont, Anzeige wechselt auf EISRAND 125 km"],
+    [42.4, "Sie wächst zu einer Wand aus Eis.", "Linie wird zur Wand (54 → 24 km), senkrechte blaue Rinnen sichtbar"],
+    [47.1, "Weltweit nur sechs Grad kälter.", "Unterzeile der Anzeige: WELTWEIT −5,9 °C; Wand füllt den Horizont"],
+    [51.8, "Die Wand ist höher als der Turm.", "Wandkrone liegt im Bild über der Turmspitze (5,5 km), Turm verschwindet bei 54,0 s im Eis"],
+    [56.5, "Eiskalter Wind fegt über das Dach.", "treibender Schnee auf die Kamera zu, Reif auf der Glasbrüstung, Kamera zittert ab 50,5 s; Ton: Windböe"],
+    [62.6, "Das Eis wird zwei Kilometer dick.", "Kamera im Eis: Blau wird dunkler, je dicker das Eis über dir (bis 2.100 m bei 70 s)"],
+    [66.6, "So lag Toronto schon einmal unter Eis.", "blaues Eisinneres, Risse im Glas, Eiskristalle; Faktenzeile im Abspann bestätigt (vor 21.000 Jahren)"]
+  ],
+  "hoehepunkt": "60,4 s: Eisfront erreicht das Hochhaus – Schneewalze, Weißblende, Stoß, Kamera kippt leicht, Glas springt (60,6 s), danach blaues Eisinneres",
+  "abspann": {"frage": "Was wäre, wenn wir wieder in eine Eiszeit steuern?", "fakt": "TORONTO, VOR 21.000 JAHREN · 2 KM EIS, WELTWEIT NUR 6 °C KÄLTER"},
+  "quellen": [
+    "Tierney, J. E. et al. (2020): Glacial cooling and climate sensitivity revisited. Nature 584, 569–573 – LGM weltweit −6,1 °C (95 %: −6,5 … −5,7 °C)",
+    "Lambeck, K. et al. (2014): Sea level and global ice volumes from the Last Glacial Maximum to the Holocene. PNAS 111 (43), 15296–15303 – Meeresspiegel im LGM ca. −120 … −134 m",
+    "Dyke, A. S. et al. (2002): The Laurentide and Innuitian ice sheets during the Last Glacial Maximum. Quaternary Science Reviews 21, 9–31 – Eisdicke über Toronto ca. 2.100 m (Wert nach xkcd 1225 „Ice Sheets“, das diese Rekonstruktion zitiert: https://xkcd.com/1225; Erklärung https://www.explainxkcd.com/wiki/index.php/Ice_Sheets)",
+    "Clark, P. U. et al. (2009): The Last Glacial Maximum. Science 325, 710–714 – Maximum vor ca. 26.500–19.000 Jahren",
+    "Nye, J. F. (1952): The mechanics of glacier flow. Journal of Glaciology 2 – plastisches Profil h = √(2τ₀s/ρg) für die Sichtbarkeit am Horizont"
+  ],
+  "annahmen": [
+    "Zeitraffer nach dem letzten Eiszeitzyklus, Eis über Toronto nach 90.000 Jahren (A)",
+    "Ausgangszustand = heute bzw. vorindustriell; die Rechnung lässt den heutigen CO₂-Anstieg außer Acht (Gedankenexperiment)",
+    "Stadt, Menschen und Autos bleiben im Zeitraffer stehen (Darstellung, kein Modell der Besiedlung)",
+    "Front als steile Wand stilisiert (siehe rechnung.darstellung_wand)"
+  ],
+  "konkurrenz_check": "02.11.: Lunar Animations – kein Eiszeit-POV im Katalog (10 TikTok-Videos, 8 Shorts). US-Konten: kein Eiszeit-POV. DE: @tierweltger „Was wäre, wenn die Eiszeit nie zu Ende gegangen wäre?“ (Fakten-Clip, kein POV). Eigener Ansatz: Eiswand erreicht ein Hochhaus in Toronto, Anzeige mit echten LGM-Werten. Kein gesperrtes Referenz-Thema.",
+  "caption": "Was wäre, wenn wir wieder in eine Eiszeit steuern? 🧊 Ich hab's durchgespielt. Hättest du mit nur 6 Grad gerechnet? 👇 #eiszeit #klima #toronto #wissen #waswaerewenn"
+}
