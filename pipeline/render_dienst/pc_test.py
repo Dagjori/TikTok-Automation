@@ -86,7 +86,7 @@ def main():
             else:
                 fehlt(f"GitHub nicht erreichbar: {err[:150]}", "Internetverbindung, Firewall oder Proxy prüfen (docs/18, Fehlerbehebung)")
         else:
-            fehlt("Dieser Ordner ist kein Git-Klon mit Quelle „origin“", "git clone https://github.com/Dagjori/tiktok-automation.git C:\\render\\tiktok-automation  (siehe docs/18)")
+            fehlt("Dieser Ordner ist kein Git-Klon mit Quelle „origin“", "git clone https://github.com/Dagjori/TikTok-Automation.git C:\\render\\tiktok-automation  (siehe docs/18)")
         mux = PIPELINE / "mux.sh"
         if mux.is_file() and b"\r\n" in mux.read_bytes():
             warn("mux.sh hat Windows-Zeilenenden (CRLF). Der Dienst repariert das bei jedem Auftrag selbst.", "Dauerhaft:  git config core.autocrlf false  und danach  git checkout -f -- pipeline/mux.sh")

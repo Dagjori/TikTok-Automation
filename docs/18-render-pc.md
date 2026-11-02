@@ -51,7 +51,7 @@ Hinweis: `winget` ist bei Windows 10/11 dabei. Kommt „winget wird nicht erkann
 ```powershell
 mkdir C:\render
 cd C:\render
-git clone -c core.autocrlf=false https://github.com/Dagjori/tiktok-automation.git
+git clone -c core.autocrlf=false https://github.com/Dagjori/TikTok-Automation.git
 cd tiktok-automation\pipeline
 ```
 
