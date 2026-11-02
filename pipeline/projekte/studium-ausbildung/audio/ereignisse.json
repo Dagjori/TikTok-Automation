@@ -816,10 +816,45 @@
   },
   {
    "quelle": "Szene",
+   "t": 60.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Tor 65 glimmt auf"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Bahn läuft weiter"
+  },
+  {
+   "quelle": "Szene",
    "t": 62.4,
    "typ": "welt",
    "klang": "klick",
-   "text": "Bahn bis 65"
+   "text": "Bahn bis 65: Tor 65 leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.44,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Bahn glimmt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.4,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Tor 65 leuchtet erneut"
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.04,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera hebt sich"
   },
   {
    "quelle": "LiveZaehler",
