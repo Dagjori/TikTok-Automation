@@ -3,8 +3,8 @@
  "erzeugt": "render.js",
  "projekt": "schere-stein-papier",
  "fps": 30,
- "dauer": 71,
- "stimmEnde": 70.009,
+ "dauer": 73.96666666666667,
+ "stimmEnde": 72.961,
  "timing": "timing.json (echte Stimme)",
  "protokoll": true,
  "teppich": "musik",
@@ -21,8 +21,8 @@
    }
   },
   "schleife": {
-   "ab": 67.00999999999999,
-   "ende": 70.96666666666667
+   "ab": 69.97,
+   "ende": 73.93333333333334
   },
   "untertitel": {
    "stil": "kontur"
@@ -30,7 +30,7 @@
   "timing": "echt",
   "schleifenPruefung": {
    "ok": true,
-   "ende": 70.967,
+   "ende": 73.933,
    "nurErstesBild": [],
    "nurLetztesBild": [],
    "kameraAbweichung": 0
@@ -53,10 +53,18 @@
   },
   {
    "quelle": "Titel",
-   "t": 1.06,
+   "t": 0.98,
    "typ": "titel",
    "klang": "klick",
    "text": "PAPIER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.62,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
   },
   {
    "quelle": "Titel",
@@ -66,11 +74,26 @@
    "text": "GLÜCK"
   },
   {
+   "quelle": "Szene",
+   "t": 1.92,
+   "typ": "wuerfel",
+   "klang": "klick",
+   "text": "Becher schüttelt"
+  },
+  {
    "quelle": "Titel",
    "t": 2.46,
    "typ": "titel",
    "klang": "klick",
    "text": "vs"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.52,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
   },
   {
    "quelle": "Titel",
@@ -80,22 +103,30 @@
    "text": "TAKTIK?"
   },
   {
-   "quelle": "Titel",
-   "t": 3.66,
-   "typ": "titel",
-   "klang": "klick",
-   "text": "WER GEWINNT"
-  },
-  {
-   "quelle": "Titel",
-   "t": 4.22,
-   "typ": "titel",
-   "klang": "klick",
-   "text": "WIRKLICH?"
+   "quelle": "Szene",
+   "t": 2.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Rot schiebt die Brille"
   },
   {
    "quelle": "Szene",
-   "t": 5.08,
+   "t": 3.5,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Titel",
+   "t": 3.58,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WER GEWINNT?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.44,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 1,
@@ -103,131 +134,115 @@
   },
   {
    "quelle": "Chip",
-   "t": 5.25,
+   "t": 4.61,
    "typ": "chip",
    "klang": "pop",
    "text": "100 RUNDEN"
   },
   {
+   "quelle": "Szene",
+   "t": 5.7,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
    "quelle": "Chip",
-   "t": 6.53,
+   "t": 5.97,
    "typ": "chip",
    "klang": "pop",
    "text": "ROT = TAKTIK"
   },
   {
+   "quelle": "Szene",
+   "t": 6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Rot schreibt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.38,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
    "quelle": "Chip",
-   "t": 8.21,
+   "t": 7.65,
    "typ": "chip",
    "klang": "pop",
    "text": "CYAN = ZUFALL"
   },
   {
+   "quelle": "Szene",
+   "t": 9,
+   "typ": "wuerfel",
+   "klang": "klick",
+   "text": "Würfel rollt"
+  },
+  {
    "quelle": "Chip",
-   "t": 10.02,
+   "t": 9.22,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 10.02,
+   "t": 9.22,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 10.02,
+   "t": 9.22,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Szene",
-   "t": 10.02,
+   "t": 9.22,
    "typ": "kamera",
    "art": "fahrt",
-   "dauer": 0.8,
+   "dauer": 1,
    "klang": "whoosh"
-  },
-  {
-   "quelle": "Stempel",
-   "t": 10.42,
-   "typ": "stempel",
-   "klang": "stempel",
-   "text": "KLAR!"
-  },
-  {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 10.42,
-   "art": "stoss",
-   "dauer": 0.2,
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 12,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "ODER?"
-  },
-  {
-   "quelle": "Chip",
-   "t": 12.52,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 12.8,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "LOS GEHT'S!"
   },
   {
    "quelle": "Szene",
-   "t": 12.9,
+   "t": 11.16,
    "typ": "kamera",
    "art": "fahrt",
-   "dauer": 1.4,
+   "dauer": 1,
    "klang": "whoosh"
   },
   {
-   "quelle": "Chip",
-   "t": 14.07,
-   "typ": "chip-weg",
-   "klang": false
+   "quelle": "Szene",
+   "t": 11.94,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
   },
   {
    "quelle": "Tafel",
-   "t": 14.833,
+   "t": 13.157,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
   },
   {
-   "quelle": "Chip",
-   "t": 14.84,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "UNENTSCHIEDEN"
-  },
-  {
    "quelle": "Szene",
-   "t": 14.84,
+   "t": 13.18,
    "typ": "zug",
    "klang": "pop",
    "text": "Runde 1"
   },
   {
-   "quelle": "Chip",
-   "t": 15.79,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
    "quelle": "Tafel",
-   "t": 16.633,
+   "t": 15.033,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -235,72 +250,60 @@
   },
   {
    "quelle": "Tafel",
-   "t": 16.633,
+   "t": 15.057,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
   },
   {
-   "quelle": "Chip",
-   "t": 16.64,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "PUNKT ROT"
-  },
-  {
    "quelle": "Szene",
-   "t": 16.64,
+   "t": 15.06,
    "typ": "zug",
    "klang": "pop",
    "text": "Runde 2"
   },
   {
    "quelle": "Tafel",
-   "t": 16.667,
+   "t": 15.067,
    "typ": "fuehrung",
    "klang": "ding",
    "text": "links vorn"
   },
   {
-   "quelle": "Chip",
-   "t": 17.59,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
    "quelle": "Tafel",
-   "t": 18.1,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 18.1,
+   "t": 16.49,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
   },
   {
-   "quelle": "Chip",
-   "t": 18.12,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "PUNKT CYAN"
+   "quelle": "Tafel",
+   "t": 16.5,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
   },
   {
    "quelle": "Szene",
-   "t": 18.12,
+   "t": 16.52,
    "typ": "zug",
    "klang": "pop",
    "text": "Runde 3"
   },
   {
+   "quelle": "Szene",
+   "t": 17.26,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
    "quelle": "Tafel",
-   "t": 18.6,
+   "t": 17.433,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -308,22 +311,29 @@
   },
   {
    "quelle": "Tafel",
-   "t": 18.6,
+   "t": 17.457,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
   },
   {
+   "quelle": "Szene",
+   "t": 17.46,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
    "quelle": "Tafel",
-   "t": 18.633,
+   "t": 17.467,
    "typ": "fuehrung",
    "klang": "ding",
    "text": "links vorn"
   },
   {
    "quelle": "Tafel",
-   "t": 18.833,
+   "t": 17.59,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -331,170 +341,30 @@
   },
   {
    "quelle": "Tafel",
-   "t": 19.067,
+   "t": 17.723,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.733,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
-   "quelle": "Tafel",
-   "t": 19.067,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 19.07,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Tafel",
-   "t": 19.3,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
    "quelle": "RemisPille",
-   "t": 19.42,
+   "t": 17.82,
    "typ": "chip",
    "klang": "pop",
    "text": "Unentschieden"
   },
   {
    "quelle": "Tafel",
-   "t": 19.533,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 19.533,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 19.767,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 19.967,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 19.967,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 21.8,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Folgen",
-   "t": 22.11,
-   "typ": "folgen",
-   "dauer": 1.8,
-   "klang": "folgen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 22.2,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 22.2,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 22.567,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 22.567,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 22.967,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 22.967,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 23,
-   "typ": "fuehrung",
-   "klang": "ding",
-   "text": "rechts vorn"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 23.333,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 23.733,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 23.733,
+   "t": 17.89,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -502,23 +372,14 @@
   },
   {
    "quelle": "Szene",
-   "t": 23.734,
-   "typ": "kamera",
-   "art": "fahrt",
-   "dauer": 2.2,
-   "klang": "whoosh"
+   "t": 17.96,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
   },
   {
    "quelle": "Tafel",
-   "t": 24.1,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 24.1,
+   "t": 18.023,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -526,251 +387,363 @@
   },
   {
    "quelle": "Tafel",
-   "t": 24.133,
+   "t": 18.033,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.157,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.5,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.523,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.257,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.26,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.29,
+   "typ": "zug",
+   "klang": "pop",
+   "text": "Runde 11"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 20.51,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.56,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Rot zeigt auf dich"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.18,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.467,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.49,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.76,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.923,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.933,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.467,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.49,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.5,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 23.6,
+   "art": "zoom",
+   "dauer": 1.5,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.6,
+   "typ": "wendung",
+   "klang": "whoosh",
+   "text": "Cyan zieht vorbei"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.89,
+   "typ": "uhr",
+   "dauer": 0.9,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.9,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.933,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.033,
    "typ": "fuehrung",
    "klang": "ding",
    "text": "links vorn"
   },
   {
    "quelle": "Tafel",
-   "t": 24.5,
+   "t": 24.033,
    "typ": "zaehler",
-   "dauer": 0.033,
+   "dauer": 0.1,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Tafel",
-   "t": 24.5,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 24.867,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 24.867,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Stempel",
-   "t": 24.9,
-   "typ": "stempel",
-   "klang": "stempel",
-   "text": "ÜBERHOLT!"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 24.9,
+   "t": 24.133,
    "typ": "fuehrung",
    "klang": "ding",
    "text": "rechts vorn"
   },
   {
+   "quelle": "Tafel",
+   "t": 24.267,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.3,
    "typ": "kamera",
-   "quelle": "Regie",
-   "t": 24.9,
-   "art": "stoss",
-   "dauer": 0.2,
-   "klang": false
-  },
-  {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 25,
-   "art": "zoom",
-   "dauer": 1.5,
-   "klang": "zoom"
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
   },
   {
    "quelle": "Tafel",
-   "t": 25.1,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.233,
-   "typ": "uhr",
-   "dauer": 0.133,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.333,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.467,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.467,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.5,
-   "typ": "fuehrung",
-   "klang": "ding",
-   "text": "rechts vorn"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.6,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.6,
-   "typ": "uhr",
-   "dauer": 0.133,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.7,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.833,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.833,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.967,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 25.967,
-   "typ": "uhr",
-   "dauer": 0.133,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 26.067,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 26.2,
-   "typ": "zaehler",
-   "dauer": 0.133,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 26.2,
-   "typ": "uhr",
-   "dauer": 0.133,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 26.28,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "GLEICHSTAND"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 27.267,
-   "typ": "zaehler",
-   "dauer": 0.133,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 27.267,
-   "typ": "uhr",
-   "dauer": 3.933,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 27.3,
-   "typ": "fuehrung",
-   "klang": "ding",
-   "text": "rechts vorn"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 27.4,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 27.5,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 27.7,
+   "t": 24.333,
    "typ": "zaehler",
    "dauer": 0.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.367,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.4,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.433,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.5,
+   "typ": "zaehler",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.6,
+   "typ": "zaehler",
+   "dauer": 0.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.62,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.99,
+   "typ": "uhr",
+   "dauer": 1.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.02,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.033,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.133,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.2,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.367,
+   "typ": "zaehler",
+   "dauer": 0.167,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.433,
+   "typ": "zaehler",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.467,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.52,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.6,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.633,
+   "typ": "zaehler",
+   "dauer": 0.033,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -778,67 +751,66 @@
    "quelle": "Tafel",
    "t": 27.8,
    "typ": "zaehler",
-   "dauer": 0.067,
+   "dauer": 0.033,
    "laufend": true,
    "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 27.833,
-   "typ": "fuehrung",
-   "klang": "ding",
-   "text": "rechts vorn"
   },
   {
    "quelle": "Tafel",
    "t": 27.867,
    "typ": "zaehler",
-   "dauer": 0.033,
+   "dauer": 0.267,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
-   "quelle": "Tafel",
-   "t": 27.967,
-   "typ": "zaehler",
-   "dauer": 0.133,
-   "laufend": true,
-   "klang": "zaehlen"
+   "quelle": "Szene",
+   "t": 28.02,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
   },
   {
    "quelle": "Tafel",
-   "t": 28.033,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 28.2,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 28.3,
-   "typ": "zaehler",
-   "dauer": 0.333,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 28.533,
+   "t": 28.067,
    "typ": "fuehrung",
    "klang": "ding",
    "text": "links vorn"
   },
   {
    "quelle": "Tafel",
-   "t": 28.733,
+   "t": 28.257,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.09,
+   "typ": "uhr",
+   "dauer": 1.967,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.1,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.12,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.167,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -846,7 +818,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 28.8,
+   "t": 29.333,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -854,49 +826,18 @@
   },
   {
    "quelle": "Tafel",
-   "t": 28.867,
+   "t": 29.5,
    "typ": "zaehler",
-   "dauer": 0.033,
+   "dauer": 0.067,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
-   "quelle": "Tafel",
-   "t": 29.067,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 29.233,
-   "typ": "zaehler",
-   "dauer": 0.1,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Chip",
-   "t": 29.28,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Tafel",
-   "t": 29.6,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 29.667,
-   "typ": "zaehler",
-   "dauer": 0.1,
-   "laufend": true,
-   "klang": "zaehlen"
+   "quelle": "Szene",
+   "t": 29.62,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
   },
   {
    "quelle": "Tafel",
@@ -908,31 +849,30 @@
   },
   {
    "quelle": "Tafel",
+   "t": 29.833,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
    "t": 29.933,
    "typ": "zaehler",
-   "dauer": 0.133,
+   "dauer": 0.333,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
-   "quelle": "Tafel",
-   "t": 30.1,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
+   "quelle": "Szene",
+   "t": 30.12,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
   },
   {
    "quelle": "Tafel",
-   "t": 30.167,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 30.3,
+   "t": 30.2,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -940,7 +880,7 @@
   },
   {
    "quelle": "Szene",
-   "t": 30.36,
+   "t": 30.3,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 1,
@@ -948,9 +888,9 @@
   },
   {
    "quelle": "Tafel",
-   "t": 30.433,
+   "t": 30.333,
    "typ": "zaehler",
-   "dauer": 0.067,
+   "dauer": 0.367,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -963,24 +903,15 @@
    "klang": "zaehlen"
   },
   {
-   "quelle": "Tafel",
-   "t": 30.6,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
+   "quelle": "Szene",
+   "t": 30.62,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
   },
   {
    "quelle": "Tafel",
-   "t": 30.733,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 30.867,
+   "t": 30.767,
    "typ": "zaehler",
    "dauer": 0.133,
    "laufend": true,
@@ -988,36 +919,29 @@
   },
   {
    "quelle": "Tafel",
-   "t": 30.9,
+   "t": 30.833,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
-   "quelle": "Bilanz",
-   "t": 31.28,
-   "typ": "bilanz",
-   "klang": "klick",
-   "text": "ROT · TAKTIK"
+   "quelle": "Chip",
+   "t": 31.24,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ROT 34"
   },
   {
-   "quelle": "Bilanz",
-   "t": 32.24,
-   "typ": "bilanz",
-   "klang": "klick",
-   "text": "CYAN · ZUFALL"
-  },
-  {
-   "quelle": "Bilanz",
-   "t": 33.12,
-   "typ": "sieger",
-   "klang": "sieg",
-   "text": "PRAKTISCH GLEICH"
+   "quelle": "Chip",
+   "t": 32.16,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "CYAN 31"
   },
   {
    "quelle": "Szene",
-   "t": 34.209,
+   "t": 32.96,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 1,
@@ -1025,30 +949,34 @@
   },
   {
    "quelle": "Szene",
-   "t": 34.259,
+   "t": 34.12,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 34.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 34.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.27,
    "typ": "welle",
    "klang": "whoosh",
    "text": "Brett leeren"
   },
   {
    "quelle": "Tafel",
-   "t": 34.733,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 34.733,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 34.733,
+   "t": 34.757,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -1056,7 +984,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 35.033,
+   "t": 34.767,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -1064,37 +992,83 @@
   },
   {
    "quelle": "Tafel",
-   "t": 35.033,
+   "t": 34.767,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.9,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.76,
+   "typ": "wandlung",
+   "klang": "whoosh",
+   "text": "Cyan fegt den Würfel vom Tisch"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.36,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.63,
+   "typ": "wandlung",
+   "klang": "whoosh",
+   "text": "Cyan spielt wie ein Mensch"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.34,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.957,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
   },
   {
-   "quelle": "RemisPille",
-   "t": 35.06,
-   "typ": "chip",
+   "quelle": "Tafel",
+   "t": 38.967,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.99,
+   "typ": "zug",
    "klang": "pop",
-   "text": "Unentschieden"
+   "text": "Mensch Runde 1"
   },
   {
    "quelle": "Tafel",
-   "t": 35.067,
+   "t": 39,
    "typ": "fuehrung",
    "klang": "ding",
    "text": "rechts vorn"
   },
   {
    "quelle": "Tafel",
-   "t": 35.3,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 35.3,
+   "t": 39.99,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -1102,329 +1076,74 @@
   },
   {
    "quelle": "Tafel",
-   "t": 35.533,
+   "t": 40,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
    "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 35.533,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 35.567,
-   "typ": "fuehrung",
-   "klang": "ding",
-   "text": "links vorn"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 35.767,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 35.767,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
   },
   {
    "quelle": "Szene",
-   "t": 35.79,
-   "typ": "wandlung",
-   "klang": "whoosh",
-   "text": "Würfel wird Mensch"
-  },
-  {
-   "quelle": "Stempel",
-   "t": 35.94,
-   "typ": "stempel",
-   "klang": "stempel",
-   "text": "MENSCH!"
-  },
-  {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 35.94,
-   "art": "stoss",
-   "dauer": 0.2,
-   "klang": false
-  },
-  {
-   "quelle": "Tafel",
-   "t": 36.033,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 36.033,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 36.067,
-   "typ": "fuehrung",
-   "klang": "ding",
-   "text": "links vorn"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 36.267,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 36.267,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 36.5,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 36.5,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 36.767,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 36.767,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 37,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 37.233,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 37.233,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 37.5,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 37.5,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 37.767,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 37.767,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 38,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 38,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 38.267,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 38.267,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
+   "t": 40.02,
+   "typ": "zug",
+   "klang": "pop",
+   "text": "Mensch Runde 2"
   },
   {
    "quelle": "Szene",
-   "t": 38.5,
+   "t": 40.44,
    "typ": "kamera",
    "art": "fahrt",
-   "dauer": 3,
+   "dauer": 1,
    "klang": "whoosh"
   },
   {
-   "quelle": "Tafel",
-   "t": 38.533,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 38.8,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 38.8,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
    "quelle": "Chip",
-   "t": 39,
+   "t": 40.64,
    "typ": "chip",
    "klang": "pop",
    "text": "MENSCH: 44 %"
   },
   {
    "quelle": "Tafel",
-   "t": 39.067,
+   "t": 41.223,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.233,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
-   "quelle": "Tafel",
-   "t": 39.067,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
+   "quelle": "Szene",
+   "t": 41.24,
+   "typ": "zug",
+   "klang": "pop",
+   "text": "Mensch Runde 3"
   },
   {
    "quelle": "Tafel",
-   "t": 39.3,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 39.3,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 39.567,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 39.833,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 39.833,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
+   "t": 41.267,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
   },
   {
    "quelle": "Chip",
-   "t": 40,
+   "t": 41.68,
    "typ": "chip",
    "klang": "pop",
    "text": "ZUFALL: 33 %"
   },
   {
    "quelle": "Tafel",
-   "t": 40.1,
+   "t": 42.4,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -1432,155 +1151,60 @@
   },
   {
    "quelle": "Tafel",
-   "t": 40.1,
+   "t": 42.423,
    "typ": "uhr",
-   "dauer": 0.033,
+   "dauer": 1.333,
    "laufend": true,
    "klang": "uhr"
   },
   {
+   "quelle": "Szene",
+   "t": 42.43,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
    "quelle": "Tafel",
-   "t": 40.333,
+   "t": 42.467,
    "typ": "zaehler",
-   "dauer": 0.033,
+   "dauer": 0.367,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Tafel",
-   "t": 40.333,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 40.6,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 40.6,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 40.867,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 41.133,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 41.133,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 41.4,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 41.5,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 41.5,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Tafel",
-   "t": 41.633,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 41.633,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 41.9,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 41.9,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 42.167,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 42.167,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 42.433,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 42.433,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
+   "t": 42.5,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
   },
   {
    "quelle": "Tafel",
    "t": 42.567,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.733,
+   "typ": "zaehler",
+   "dauer": 0.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.93,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43,
    "typ": "zaehler",
    "dauer": 0.067,
    "laufend": true,
@@ -1588,15 +1212,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 42.567,
-   "typ": "uhr",
-   "dauer": 3.633,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 42.667,
+   "t": 43.1,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -1604,25 +1220,9 @@
   },
   {
    "quelle": "Tafel",
-   "t": 42.767,
+   "t": 43.167,
    "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 42.8,
-   "typ": "zaehler",
-   "dauer": 0.1,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 42.933,
-   "typ": "zaehler",
-   "dauer": 0.167,
+   "dauer": 0.567,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -1630,113 +1230,44 @@
    "quelle": "Tafel",
    "t": 43.233,
    "typ": "zaehler",
-   "dauer": 0.3,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 43.533,
-   "typ": "zaehler",
-   "dauer": 0.133,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 43.7,
-   "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
-   "quelle": "Tafel",
-   "t": 43.8,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
+   "quelle": "Chip",
+   "t": 43.26,
+   "typ": "chip-weg",
+   "klang": false
   },
   {
-   "quelle": "Tafel",
-   "t": 43.867,
-   "typ": "zaehler",
-   "dauer": 0.533,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 44,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 44.233,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 44.433,
-   "typ": "zaehler",
-   "dauer": 0.233,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 44.6,
-   "typ": "zaehler",
-   "dauer": 0.167,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 44.967,
-   "typ": "zaehler",
-   "dauer": 0.067,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 45.067,
-   "typ": "zaehler",
-   "dauer": 0.133,
-   "laufend": true,
-   "klang": "zaehlen"
+   "quelle": "Chip",
+   "t": 43.26,
+   "typ": "chip-weg",
+   "klang": false
   },
   {
    "quelle": "Szene",
-   "t": 45.08,
+   "t": 43.26,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 1,
    "klang": "whoosh"
   },
   {
-   "quelle": "Tafel",
-   "t": 45.2,
-   "typ": "zaehler",
-   "dauer": 0.867,
-   "laufend": true,
-   "klang": "zaehlen"
+   "quelle": "Szene",
+   "t": 43.43,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
   },
   {
    "quelle": "Tafel",
-   "t": 45.333,
-   "typ": "zaehler",
-   "dauer": 0.133,
+   "t": 45.79,
+   "typ": "uhr",
+   "dauer": 0.033,
    "laufend": true,
-   "klang": "zaehlen"
+   "klang": "uhr"
   },
   {
    "quelle": "Tafel",
@@ -1748,106 +1279,300 @@
   },
   {
    "quelle": "Tafel",
-   "t": 46.1,
+   "t": 45.99,
+   "typ": "uhr",
+   "dauer": 1.933,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 46,
    "typ": "zaehler",
-   "dauer": 0.033,
+   "dauer": 0.167,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
    "quelle": "Tafel",
-   "t": 46.167,
+   "t": 46,
    "typ": "zaehler",
-   "dauer": 0.033,
+   "dauer": 0.267,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
-   "quelle": "Bilanz",
-   "t": 46.32,
-   "typ": "bilanz",
-   "klang": "klick",
-   "text": "ROT · TAKTIK"
+   "quelle": "Szene",
+   "t": 46,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
   },
   {
-   "quelle": "Bilanz",
-   "t": 47.76,
-   "typ": "bilanz",
-   "klang": "klick",
-   "text": "CYAN · MENSCH"
+   "quelle": "Tafel",
+   "t": 46.333,
+   "typ": "zaehler",
+   "dauer": 1.567,
+   "laufend": true,
+   "klang": "zaehlen"
   },
   {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 48.56,
-   "art": "zoom",
-   "dauer": 1.6,
-   "klang": "zoom"
-  },
-  {
-   "quelle": "Bilanz",
-   "t": 49.12,
-   "typ": "sieger",
-   "klang": "sieg",
-   "text": "ROT GEWINNT · +19"
+   "quelle": "Tafel",
+   "t": 46.5,
+   "typ": "zaehler",
+   "dauer": 0.367,
+   "laufend": true,
+   "klang": "zaehlen"
   },
   {
    "quelle": "Szene",
-   "t": 50.42,
+   "t": 46.5,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 46.967,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.02,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 1,
    "klang": "whoosh"
   },
   {
-   "quelle": "Balken",
-   "t": 51.2,
-   "typ": "balken",
-   "dauer": 0.7,
-   "klang": "wachsen",
-   "text": "NACH EINEM MENSCH-SIEG"
+   "quelle": "Tafel",
+   "t": 47.3,
+   "typ": "zaehler",
+   "dauer": 0.233,
+   "laufend": true,
+   "klang": "zaehlen"
   },
   {
-   "quelle": "Balken",
-   "t": 51.68,
-   "typ": "balken-tag",
+   "quelle": "Szene",
+   "t": 47.5,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.667,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.833,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 48.24,
+   "typ": "chip",
    "klang": "pop",
-   "text": "BLEIBT"
+   "text": "ROT 50"
   },
   {
-   "quelle": "Balken",
-   "t": 53.04,
-   "typ": "balken",
-   "dauer": 0.7,
-   "klang": "wachsen",
-   "text": "NACH EINER NIEDERLAGE"
-  },
-  {
-   "quelle": "Balken",
-   "t": 53.6,
-   "typ": "balken-tag",
+   "quelle": "Chip",
+   "t": 49.787,
+   "typ": "chip",
    "klang": "pop",
-   "text": "WECHSELT"
+   "text": "CYAN 31"
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.54,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.64,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+19 SIEGE VORSPRUNG"
   },
   {
    "typ": "kamera",
    "quelle": "Regie",
-   "t": 55.04,
+   "t": 50.64,
    "art": "zoom",
-   "dauer": 1.5,
+   "dauer": 1.6,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.3,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.3,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.3,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.3,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.5,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.8,
+   "typ": "zug",
+   "klang": "pop",
+   "text": "Wiederholung Runde 1"
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.85,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RUNDE 1: CYAN GEWINNT"
+  },
+  {
+   "quelle": "Chip",
+   "t": 54.56,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.86,
+   "typ": "zug",
+   "klang": "pop",
+   "text": "Wiederholung Runde 2"
+  },
+  {
+   "quelle": "Chip",
+   "t": 54.91,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RUNDE 2: CYAN BLEIBT"
+  },
+  {
+   "quelle": "Chip",
+   "t": 55.3,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.6,
+   "typ": "zug",
+   "klang": "pop",
+   "text": "Wiederholung Runde 3"
+  },
+  {
+   "quelle": "Chip",
+   "t": 55.65,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RUNDE 3: CYAN WECHSELT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.95,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 56.3,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.52,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 56.72,
+   "art": "zoom",
+   "dauer": 1.6,
    "klang": "zoom"
   },
   {
    "quelle": "Szene",
-   "t": 56.14,
+   "t": 56.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Rot setzt darauf"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.06,
    "typ": "kamera",
    "art": "fahrt",
-   "dauer": 1.4,
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.21,
+   "typ": "welle",
+   "klang": "whoosh",
+   "text": "Brett leeren"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.11,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
    "klang": "whoosh"
   },
   {
    "quelle": "Tafel",
-   "t": 58.233,
+   "t": 59.233,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -1855,7 +1580,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 58.233,
+   "t": 59.233,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
@@ -1863,7 +1588,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 58.233,
+   "t": 59.257,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -1871,22 +1596,29 @@
   },
   {
    "quelle": "Szene",
-   "t": 58.25,
+   "t": 59.26,
    "typ": "wandlung",
    "klang": "whoosh",
-   "text": "Mensch würfelt"
+   "text": "Cyan würfelt wieder"
   },
   {
    "quelle": "Tafel",
-   "t": 58.7,
+   "t": 61.29,
    "typ": "uhr",
-   "dauer": 2.967,
+   "dauer": 3.167,
    "laufend": true,
    "klang": "uhr"
   },
   {
+   "quelle": "Szene",
+   "t": 61.3,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
    "quelle": "Tafel",
-   "t": 58.733,
+   "t": 61.333,
    "typ": "zaehler",
    "dauer": 0.1,
    "laufend": true,
@@ -1894,146 +1626,19 @@
   },
   {
    "quelle": "Tafel",
-   "t": 58.867,
+   "t": 61.467,
    "typ": "zaehler",
    "dauer": 0.033,
    "laufend": true,
    "klang": "zaehlen"
   },
   {
-   "quelle": "Tafel",
-   "t": 58.933,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 59,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 59.4,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 59.533,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 59.6,
-   "typ": "zaehler",
-   "dauer": 0.133,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 59.767,
-   "typ": "zaehler",
-   "dauer": 0.1,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 59.9,
-   "typ": "zaehler",
-   "dauer": 0.1,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 60,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Stempel",
-   "t": 60.02,
-   "typ": "stempel",
-   "klang": "stempel",
-   "text": "STOPP!"
-  },
-  {
+   "quelle": "Szene",
+   "t": 61.48,
    "typ": "kamera",
-   "quelle": "Regie",
-   "t": 60.02,
-   "art": "stoss",
-   "dauer": 0.2,
-   "klang": false
-  },
-  {
-   "quelle": "Tafel",
-   "t": 60.2,
-   "typ": "zaehler",
-   "dauer": 0.2,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 60.267,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 60.5,
-   "typ": "zaehler",
-   "dauer": 0.2,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 60.867,
-   "typ": "zaehler",
-   "dauer": 0.133,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 60.933,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 61.233,
-   "typ": "zaehler",
-   "dauer": 0.067,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 61.4,
-   "typ": "zaehler",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "zaehlen"
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
   },
   {
    "quelle": "Tafel",
@@ -2044,95 +1649,301 @@
    "klang": "zaehlen"
   },
   {
-   "quelle": "Formel",
-   "t": 61.76,
-   "typ": "formel",
-   "klang": "pop",
-   "text": "14"
-  },
-  {
-   "quelle": "Formel",
-   "t": 62.16,
-   "typ": "formel",
-   "klang": "pop",
-   "text": ":"
-  },
-  {
-   "quelle": "Formel",
-   "t": 62.4,
-   "typ": "formel",
-   "klang": "pop",
-   "text": "15"
+   "quelle": "Tafel",
+   "t": 61.6,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
   },
   {
    "quelle": "Szene",
-   "t": 63.03,
-   "typ": "welle",
-   "klang": "whoosh",
-   "text": "Brett leeren"
+   "t": 61.8,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.067,
+   "typ": "zaehler",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.233,
+   "typ": "zaehler",
+   "dauer": 0.167,
+   "laufend": true,
+   "klang": "zaehlen"
   },
   {
    "quelle": "Szene",
-   "t": 63.03,
+   "t": 62.3,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.433,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.567,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.7,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.8,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.9,
+   "typ": "zaehler",
+   "dauer": 0.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.933,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.2,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.3,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.333,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.42,
    "typ": "kamera",
    "art": "fahrt",
    "dauer": 1,
    "klang": "whoosh"
   },
   {
+   "quelle": "Tafel",
+   "t": 63.6,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.667,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.733,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.8,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.967,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 64.167,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 64.3,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.3,
+   "typ": "zug",
+   "klang": false,
+   "text": "Zeitraffer"
+  },
+  {
+   "quelle": "Chip",
+   "t": 64.56,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "14"
+  },
+  {
+   "quelle": "Chip",
+   "t": 65.24,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "15"
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.87,
+   "typ": "welle",
+   "klang": "whoosh",
+   "text": "Brett leeren"
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.92,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 65.97,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 65.97,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
    "quelle": "Pointe",
-   "t": 63.28,
+   "t": 66.12,
    "typ": "pointe",
    "klang": "akzent",
    "text": "GEGEN ZUFALL  HILFT KEINE TAKTIK."
   },
   {
    "quelle": "Szene",
-   "t": 64.72,
+   "t": 67.52,
    "typ": "pointe-wort",
    "klang": "klick",
    "text": "TAKTIK."
   },
   {
    "quelle": "Pointe",
-   "t": 65.52,
+   "t": 68.36,
    "typ": "pointe",
    "klang": "akzent",
    "text": "NUR GEGEN  MUSTER."
   },
   {
    "quelle": "Szene",
-   "t": 66.08,
+   "t": 68.92,
    "typ": "pointe-wort",
    "klang": "akzent",
    "text": "MUSTER."
   },
   {
+   "quelle": "Szene",
+   "t": 69.62,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 1,
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.92,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Beide fragen dich"
+  },
+  {
    "quelle": "Tafel",
-   "t": 67,
+   "t": 69.957,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
   },
   {
+   "quelle": "Tafel",
+   "t": 69.967,
+   "typ": "zaehler",
+   "dauer": 3.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
    "typ": "kamera",
    "quelle": "Regie",
-   "t": 67.01,
+   "t": 69.97,
    "art": "schleife",
-   "dauer": 3.957,
+   "dauer": 3.963,
    "klang": false
   },
   {
-   "t": 67.01,
+   "t": 69.97,
    "typ": "schleife",
-   "dauer": 3.957,
+   "dauer": 3.963,
    "klang": "rueck",
    "quelle": "Massstab"
   },
   {
    "quelle": "Tafel",
-   "t": 67.033,
+   "t": 70,
    "typ": "zaehler",
    "dauer": 3.9,
    "laufend": true,
@@ -2140,15 +1951,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 67.033,
-   "typ": "zaehler",
-   "dauer": 3.9,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 67.533,
+   "t": 70.49,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -2156,7 +1959,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 67.667,
+   "t": 70.623,
    "typ": "uhr",
    "dauer": 2.633,
    "laufend": true,
@@ -2164,7 +1967,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 70.4,
+   "t": 73.39,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,

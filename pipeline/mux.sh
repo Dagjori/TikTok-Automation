@@ -44,15 +44,15 @@ if [ "$MODUS" = "--ohne-ton" ]; then
 fi
 
 # 1) Tonspur mischen (Stimme + Effekte + Musik)
-"$PY" "$HIER/klang.py" "$PROJEKT" "${KLANG_OPTIONEN[@]}"
+if [ -z "${TON_FERTIG:-}" ]; then "$PY" "$HIER/klang.py" "$PROJEKT" "${KLANG_OPTIONEN[@]}"; else echo "Ton: vorhandene Tonspur $OUT/ton.wav (TON_FERTIG)"; fi
 
 # 2) Lautheit messen (Durchgang 1) und anwenden (Durchgang 2, linear)
 # Ein sanfter Limiter vorab hält die Spitzen klein, damit loudnorm linear (ohne Pumpen) arbeiten kann
 VOR="alimiter=limit=0.6:attack=4:release=60:level=false"
-MESS="$(ffmpeg -hide_banner -nostats -i "$OUT/ton.wav" -af "$VOR,loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json" -f null - 2>&1 | sed -n '/^{/,/^}/p')"
+MESS="$(ffmpeg -hide_banner -nostats -i "$OUT/ton.wav" -af "$VOR,loudnorm=I=-14:TP=-1.5:LRA=${LRA_ZIEL:-11}:print_format=json" -f null - 2>&1 | sed -n '/^{/,/^}/p')"
 WERT() { echo "$MESS" | "$PY" -c "import json,sys;print(json.load(sys.stdin)['$1'])"; }
-FILTER="loudnorm=I=-14:TP=-1.5:LRA=11:measured_I=$(WERT input_i):measured_TP=$(WERT input_tp):measured_LRA=$(WERT input_lra):measured_thresh=$(WERT input_thresh):offset=$(WERT target_offset):linear=true:print_format=summary"
-ffmpeg -y -v error -i "$OUT/ton.wav" -af "$VOR,$FILTER,aresample=48000" -c:a pcm_s16le "$OUT/ton_norm.wav"
+FILTER="loudnorm=I=-14:TP=-1.5:LRA=${LRA_ZIEL:-11}:measured_I=$(WERT input_i):measured_TP=$(WERT input_tp):measured_LRA=$(WERT input_lra):measured_thresh=$(WERT input_thresh):offset=$(WERT target_offset):linear=true:print_format=summary"
+ffmpeg -y -v error -i "$OUT/ton.wav" -af "$VOR,$FILTER,aresample=48000${TON_FERTIG:+,alimiter=limit=0.7:level=false}" -c:a pcm_s16le "$OUT/ton_norm.wav"
 
 # 3) Video + Ton
 ffmpeg -y -v error -stats "${VIDEO[@]}" -i "$OUT/ton_norm.wav" "${KODIER[@]}" -c:a aac -b:a 192k -ar 48000 -shortest "$OUT/$NAME.mp4"

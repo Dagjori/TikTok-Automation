@@ -1,107 +1,122 @@
 {
   "titel": "Was, wenn der Stickstoff 5 Sekunden aus der Luft verschwindet?",
   "konto": "stelldirvor",
-  "stil": "16 POV-Filmlook stilisiert (Account 2): Three.js, Ich-Kamera auf Augenhöhe im Supermarkt, Neonlicht, Bloom, sichtbare Luftmoleküle",
-  "klangteppich": "raum",
-  "teamfarben": {
-    "Stickstoff": "#5B8CFF",
-    "Sauerstoff": "#FF4F5A"
-  },
-  "segmente": [
+  "format": "Referenzformat (docs/16 §12): 80 s, keine Stimme, eine durchgehende feste Ich-Perspektive von der Galerie über dem Supermarkt, Geländer im Vordergrund, Serifenschrift (EB Garamond, SIL OFL, lokal über @fontsource)",
+  "stil": "16 POV-Filmlook stilisiert (Account 2): Three.js, feste Ich-Kamera von der Galerie, Low-Poly-Supermarkthalle, Neonlicht, Bloom, Tiefenunschärfe im Vordergrund, zarter Dunst aus Luftmolekülen (N₂ blau, O₂ koralle)",
+  "stil_begruendung": "Konkurrenz-Check 01.11. (Plan-Agent, öffentliche Seiten): im US-Format „What if … for 5 seconds“ laufen Schwerkraft, Reibung, Erdmagnetfeld, Sauerstoff u. a.; Stickstoff nicht als Thema gefunden. Look wie im Prototyp (Stil 16 POV-Filmlook stilisiert): Ich-Kamera auf Augenhöhe, Low-Poly-Supermarkt (Regale, Tüten, Produkte als Instanzen), Neonlicht, Bloom. Die Luftmoleküle (N₂ blau, O₂ koralle) machen das Unsichtbare sichtbar. Keine Markennamen oder Logos im Bild (Schilder und Produkte frei erfunden).",
+  "titelfrage": "Was wäre, wenn der Stickstoff 5 Sekunden verschwindet?",
+  "zeitplan": "zeiten.json (Stickstoff-Anteil f(t), Sätze, Phasen)",
+  "anzeige": [
     {
-      "id": "hook",
-      "phase": "hook",
-      "text": "Stell dir vor, der Stickstoff verschwindet fünf Sekunden lang aus der Luft.",
-      "sprechtext": "[curious] Stell dir vor, der STICKSTOFF verschwindet fünf Sekunden lang aus der Luft."
+      "von": 4.0,
+      "bis": 30.0,
+      "etikett": "STICKSTOFF FEHLT IN",
+      "zahl": "Countdown 26,0 → 0,0 s",
+      "unter": "Normale Luft · 1.013 hPa"
     },
     {
-      "id": "regeln",
-      "phase": "regeln",
-      "text": "Du stehst mitten im Supermarkt. Auch in Tüten, Lunge und Ohr fehlt er.",
-      "sprechtext": "Du stehst mitten im Supermarkt.\nAuch in Tüten, Lunge und Ohr fehlt er."
+      "von": 30.0,
+      "bis": 36.5,
+      "etikett": "LUFTDRUCK",
+      "zahl": "p(t) in hPa, live: 222,06 + f·791,19",
+      "unter": "Sekunde n von 5 · deine Lunge: wie in x m Höhe (live aus PIO2)"
     },
     {
-      "id": "falle",
-      "phase": "denkfalle",
-      "text": "Klar, 78 Prozent der Luft sind weg. Du erstickst. Oder?",
-      "sprechtext": "Klar, achtundsiebzig Prozent der Luft sind weg.\nDu erstickst.\nOder?"
+      "von": 36.5,
+      "bis": 52.0,
+      "etikett": "SIEDEPUNKT",
+      "zahl": "Siedepunkt(p) in °C, live (IAPWS-IF97); 80,0 °C bei 474 hPa = Kaffee beginnt zu sieden (37,9 s)",
+      "unter": "Sekunde n von 5 · dein Kaffee hat 80 °C"
     },
     {
-      "id": "start",
-      "phase": "start",
-      "text": "Los geht's.",
-      "sprechtext": "[excited] Los geht's!"
+      "von": 52.0,
+      "bis": 62.0,
+      "etikett": "SEKUNDEN BIS ZUR RÜCKKEHR",
+      "zahl": "Restzeit der gestreckten 5 s",
+      "unter": "Sekunde 4 von 5 · Luftdruck 222 hPa; ab 56 s: Hier: 222 hPa, wie in 11 km Höhe"
     },
     {
-      "id": "sek1",
-      "phase": "rennen",
-      "text": "Sekunde eins. Du atmest weiter, der Sauerstoff ist ja noch da.",
-      "sprechtext": "Sekunde EINS.\nDu atmest weiter, der Sauerstoff ist ja noch DA."
-    },
-    {
-      "id": "folgen",
-      "phase": "folgen",
-      "text": "Folg mir, damit du nichts verpasst.",
-      "sprechtext": "Folg mir, damit du nichts verpasst."
-    },
-    {
-      "id": "sek2",
-      "phase": "wendung",
-      "text": "Sekunde zwei. Aber der Druck fällt auf 222 hPa. So dünn wie in 11 Kilometern Höhe.",
-      "sprechtext": "Sekunde ZWEI.\n[surprised] Aber der Druck fällt auf zweihundertzweiundzwanzig Hektopascal.\nSo DÜNN wie in elf Kilometern Höhe."
-    },
-    {
-      "id": "sek3",
-      "phase": "wendung",
-      "text": "Sekunde drei. Die Chipstüten klatschen zusammen. Außen drücken gut 2 Tonnen pro Quadratmeter.",
-      "sprechtext": "Sekunde DREI.\nDie Chipstüten klatschen ZUSAMMEN.\nAußen drücken gut zwei Tonnen pro Quadratmeter."
-    },
-    {
-      "id": "sek4",
-      "phase": "wendung",
-      "text": "Sekunde vier. Dein Ohr? Kein Knall.",
-      "sprechtext": "Sekunde VIER.\nDein Ohr? Kein Knall."
-    },
-    {
-      "id": "sek5",
-      "phase": "wendung",
-      "text": "Sekunde fünf. Hinter dir zischt etwas.",
-      "sprechtext": "Sekunde FÜNF.\nHinter dir zischt etwas."
-    },
-    {
-      "id": "ergebnis",
-      "phase": "ergebnis",
-      "text": "Ergebnis: Nur noch 222 hPa.",
-      "sprechtext": "Ergebnis:\nNur noch zweihundertzweiundzwanzig Hektopascal."
-    },
-    {
-      "id": "warum",
-      "phase": "warum",
-      "text": "Warum? Erstens: Stickstoff ist 78 Prozent der Luft, aber du atmest ihn nur ein und aus. Zweitens: Dein Sauerstoffdruck bleibt gleich. Gefühlt: nur 2.000 Meter.",
-      "sprechtext": "[thoughtful] Warum?\nErstens: Stickstoff ist achtundsiebzig Prozent der Luft, aber du atmest ihn nur ein und aus.\nZweitens: Dein Sauerstoffdruck bleibt GLEICH.\nGefühlt: nur zweitausend Meter."
-    },
-    {
-      "id": "ueberraschung",
-      "phase": "ueberraschung",
-      "text": "Das Verrückteste: Wasser kocht jetzt schon bei 62 Grad. Dein Kaffee hat 80. Er kocht über, ohne Herd.",
-      "sprechtext": "[surprised] Das Verrückteste:\nWasser kocht jetzt schon bei zweiundsechzig Grad.\nDein Kaffee hat achtzig. Er kocht ÜBER, ohne Herd."
-    },
-    {
-      "id": "merksatz",
-      "phase": "merksatz",
-      "text": "Sauerstoff zum Atmen. Stickstoff für den Druck.",
-      "sprechtext": "Sauerstoff zum ATMEN. Stickstoff für den DRUCK."
-    },
-    {
-      "id": "ende",
-      "phase": "schluss",
-      "text": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare.",
-      "sprechtext": "Welches Szenario soll ich als Nächstes durchspielen?\nSchreib es in die Kommentare."
+      "von": 62.0,
+      "bis": 70.0,
+      "etikett": "LUFTDRUCK",
+      "zahl": "p(t) steigt auf 1.013 hPa",
+      "unter": "Sekunde 5 von 5 vorbei · nach fünf Sekunden wieder normal"
     }
   ],
-  "caption": "Was, wenn der Stickstoff 5 Sekunden weg wäre? 🫧 Ich hab's durchgespielt. Hättest du gedacht, dass du weiteratmest? 👇 #stickstoff #luft #chemie #wissen #waswaerewenn",
-  "stil_begruendung": "Konkurrenz-Check 01.11. (Plan-Agent, öffentliche Seiten): im US-Format „What if … for 5 seconds“ laufen Schwerkraft, Reibung, Erdmagnetfeld, Sauerstoff u. a.; Stickstoff nicht als Thema gefunden. Look wie im Prototyp (Stil 16 POV-Filmlook stilisiert): Ich-Kamera auf Augenhöhe, Low-Poly-Supermarkt (Regale, Tüten, Produkte als Instanzen), Neonlicht, Bloom. Die Luftmoleküle (N₂ blau, O₂ koralle) machen das Unsichtbare sichtbar. Keine Markennamen oder Logos im Bild (Schilder und Produkte frei erfunden).",
-  "rechnung": "pipeline/sim/stickstoff_weg.mjs (12 Tests: node --test sim/stickstoff_weg.test.mjs). Luft trocken: N₂ 78,084 %, O₂ 20,946 %, Ar 0,934 %, CO₂ ca. 0,04 %. Ohne N₂ bleiben 21,916 % → 1.013,25 hPa × 0,21916 = 222,1 hPa (O₂-Teildruck bleibt 212,2 hPa, das sind 95,6 % des Restgases). Mit 50 % Luftfeuchte (Wasserdampf bleibt) 231 hPa. ICAO-Standardatmosphäre (226,32 hPa in 11 km, darüber isotherm): 222,1 hPa = 11.120 m. Atmung (Annahmen: PH2O 47 mmHg, PaCO2 40 mmHg, R 0,8, gesunder Erwachsener in Ruhe): Normal PIO2 149,3, PAO2 ≈ 99,3 mmHg. Ohne N₂: PIO2 114,3 mmHg, PAO2 (abgekürzte Gleichung, wie im Plan) 64,3 mmHg. Gefühlte Höhe = Höhe, in der normale Luft denselben Wert liefert: 2.050 m (PIO2 und abgekürzte Gleichung geben dasselbe), also ca. 2.000 m wie im Plan; die Vermutung 2.500–3.000 m stimmt nicht (in 3.000 m wäre PAO2 ≈ 50 mmHg). ABWEICHUNG: Die vollständige Alveolargleichung (mit FiO2-Korrektur, bei 95,6 % O₂ relevant) liefert PAO2 ≈ 73,8 mmHg, entspricht ca. 1.580 m. Im Video steht „gefühlt nur 2.000 Meter“ (vorsichtigerer Wert). Siedepunkt bei 222,1 hPa: 62,3 °C (IAPWS-IF97 Region 4, Prüfwerte der Norm im Test; Dampftafel 20 kPa = 60,06 °C). Kaffee 80 °C (Annahme) hat 474 hPa Dampfdruck, kocht also sofort; bis 62 °C verdampfen ca. 3,1 % (ca. 4,7 g je 150 mL, ideal, ohne Wärmeverlust). Tüte: innen nach Wegfall des N₂ nur Restsauerstoff (Branchenangabe ≤ 3 % → ≤ 30 hPa), außen 222 hPa → Druckunterschied 192–222 hPa = 1,95–2,26 t je m² (g = 9,81); der Plan nannte 2,2 t (g = 10). Je Tütenseite (ca. 0,06 m²) ca. 136 kg. Im Video: „gut zwei Tonnen“. Körper: gelöster Stickstoff (ca. 1 L im Körper, Löslichkeit in Blut 0,0122 mL/mL/atm, Herzzeitvolumen 5 L/min): in 5 s können höchstens ca. 3,8 mL (0,4 %) abgegeben werden, nicht relevant. Das Gewebe-N₂ wäre rechnerisch 3,4-fach übersättigt gegenüber 222 hPa, Blasenbildung braucht aber Minuten bis Stunden (Höhen-Dekompressionskrankheit tritt bei Expositionen von Minuten bis Stunden auf, Schätzung/Annahme), in 5 s kein Thema. Kein Gesundheitsratschlag im Video. Annahmen/Vereinfachungen: trockene Luft; Szenario ist ein Gedankenexperiment (Ursache offen); die Reihenfolge „Sekunde 1–5“ ist eine erzählte Tour durch den Zustand, die Effekte (Druck, Tüten, Kaffee) treten physikalisch sofort ein.",
+  "saetze": [
+    {
+      "t": 4.5,
+      "text": "Ein Montagabend im Supermarkt."
+    },
+    {
+      "t": 8.5,
+      "text": "Du hörst Wagen rollen und Stimmen murmeln."
+    },
+    {
+      "t": 12.5,
+      "text": "78 Prozent der Luft sind Stickstoff."
+    },
+    {
+      "t": 16.5,
+      "text": "Gleich fehlt er, für genau fünf Sekunden."
+    },
+    {
+      "t": 20.5,
+      "text": "Der Sauerstoff bleibt, nur das andere Gas geht."
+    },
+    {
+      "t": 24.5,
+      "text": "Noch ist alles ruhig."
+    },
+    {
+      "t": 28.8,
+      "text": "Jetzt beginnt er zu verschwinden."
+    },
+    {
+      "t": 33.0,
+      "text": "Du atmest weiter, der Sauerstoff reicht."
+    },
+    {
+      "t": 37.2,
+      "text": "Der Druck sinkt, der Kaffee beginnt zu sieden."
+    },
+    {
+      "t": 41.0,
+      "text": "Die Chipstüten sacken in sich zusammen."
+    },
+    {
+      "t": 45.0,
+      "text": "Die Tüten liegen flach wie vakuumverpackt."
+    },
+    {
+      "t": 49.0,
+      "text": "Wasser kocht jetzt schon bei 62 Grad."
+    },
+    {
+      "t": 52.8,
+      "text": "Dein Kaffee hat achtzig und kocht über."
+    },
+    {
+      "t": 56.6,
+      "text": "Die Palette bricht in sich zusammen."
+    },
+    {
+      "t": 61.4,
+      "text": "Fünf Sekunden sind vorbei."
+    },
+    {
+      "t": 65.2,
+      "text": "Der Stickstoff ist zurück, die Tüten blähen sich auf."
+    }
+  ],
+  "abspann": {
+    "von": 72.0,
+    "bis": 80.0,
+    "frage": "Was wäre, wenn der Stickstoff 5 Sekunden verschwindet?",
+    "fakt": "222 hPa entsprechen etwa 11 km Höhe (ICAO-Standardatmosphäre) · Wasser siedet dort bei 62 °C · Luft: 78,08 % N₂, 20,95 % O₂"
+  },
+  "ton": "projekte/stickstoff-weg/ton.py (nur selbst erzeugte Atmo und Sounddesign, Verlauf leise → Höhepunkt 55–65 s → leise im Abspann), mux mit TON_FERTIG=1 LRA_ZIEL=20 auf −14 LUFS",
+  "rechnung": "pipeline/sim/stickstoff_weg.mjs (12 Tests: node --test sim/stickstoff_weg.test.mjs). Luft trocken: N₂ 78,084 %, O₂ 20,946 %, Ar 0,934 %, CO₂ ca. 0,04 %. Ohne N₂ bleiben 21,916 % → 1.013,25 hPa × 0,21916 = 222,1 hPa (O₂-Teildruck bleibt 212,2 hPa, das sind 95,6 % des Restgases). Mit 50 % Luftfeuchte (Wasserdampf bleibt) 231 hPa. ICAO-Standardatmosphäre (226,32 hPa in 11 km, darüber isotherm): 222,1 hPa = 11.120 m. Atmung (Annahmen: PH2O 47 mmHg, PaCO2 40 mmHg, R 0,8, gesunder Erwachsener in Ruhe): Normal PIO2 149,3, PAO2 ≈ 99,3 mmHg. Ohne N₂: PIO2 114,3 mmHg, PAO2 (abgekürzte Gleichung, wie im Plan) 64,3 mmHg. Gefühlte Höhe = Höhe, in der normale Luft denselben Wert liefert: 2.050 m (PIO2 und abgekürzte Gleichung geben dasselbe), also ca. 2.000 m wie im Plan; die Vermutung 2.500–3.000 m stimmt nicht (in 3.000 m wäre PAO2 ≈ 50 mmHg). ABWEICHUNG: Die vollständige Alveolargleichung (mit FiO2-Korrektur, bei 95,6 % O₂ relevant) liefert PAO2 ≈ 73,8 mmHg, entspricht ca. 1.580 m. Im Video steht „gefühlt nur 2.000 Meter“ (vorsichtigerer Wert). Siedepunkt bei 222,1 hPa: 62,3 °C (IAPWS-IF97 Region 4, Prüfwerte der Norm im Test; Dampftafel 20 kPa = 60,06 °C). Kaffee 80 °C (Annahme) hat 474 hPa Dampfdruck, kocht also sofort; bis 62 °C verdampfen ca. 3,1 % (ca. 4,7 g je 150 mL, ideal, ohne Wärmeverlust). Tüte: innen nach Wegfall des N₂ nur Restsauerstoff (Branchenangabe ≤ 3 % → ≤ 30 hPa), außen 222 hPa → Druckunterschied 192–222 hPa = 1,95–2,26 t je m² (g = 9,81); der Plan nannte 2,2 t (g = 10). Je Tütenseite (ca. 0,06 m²) ca. 136 kg. Im Video: „gut zwei Tonnen“. Körper: gelöster Stickstoff (ca. 1 L im Körper, Löslichkeit in Blut 0,0122 mL/mL/atm, Herzzeitvolumen 5 L/min): in 5 s können höchstens ca. 3,8 mL (0,4 %) abgegeben werden, nicht relevant. Das Gewebe-N₂ wäre rechnerisch 3,4-fach übersättigt gegenüber 222 hPa, Blasenbildung braucht aber Minuten bis Stunden (Höhen-Dekompressionskrankheit tritt bei Expositionen von Minuten bis Stunden auf, Schätzung/Annahme), in 5 s kein Thema. Kein Gesundheitsratschlag im Video. Annahmen/Vereinfachungen: trockene Luft; Szenario ist ein Gedankenexperiment (Ursache offen); die Reihenfolge „Sekunde 1–5“ ist eine erzählte Tour durch den Zustand, die Effekte (Druck, Tüten, Kaffee) treten physikalisch sofort ein. Format-Hinweis: Die fünf Sekunden sind in Zeitlupe über 30–62 s gestreckt (1 Sekunde = 6,4 s Video); die Anzeige nennt „Sekunde n von 5“. Der Stickstoff-Anteil f(t) fällt in Stufen von 1 auf 0 (Kurve in zeiten.json), der Druck folgt live p = 222,06 + f × 791,19 hPa. Der Kaffee (80 °C, Annahme) beginnt exakt dann zu sieden, wenn der Siedepunkt unter 80 °C fällt (p < 474 hPa, f < 0,3185, bei 37,9 s). Die Tüten fallen in Zeitlupe zusammen (Tüten 39–46 s, Palette zuletzt, Höhepunkt 56,8 s). Nach 62 s kehrt der Stickstoff zurück.",
   "quellen": [
     "Luftzusammensetzung (trocken): N₂ 78,084 %, O₂ 20,946 %, Ar 0,934 % – EngineeringToolbox „Air – Composition“ (Sekundärquelle, gleiche Werte in NASA Earth Fact Sheet gerundet 78,08/20,95/0,93)",
     "ICAO-Standardatmosphäre: 226,32 hPa in 11.000 m, 216,65 K – ICAO Doc 7488 (nicht frei lesbar), Werte bestätigt über ISA-Tabellen (u. a. Anadolu-Univ./ITU-Skript, EngineeringToolbox)",
@@ -112,5 +127,6 @@
     "Alveolargleichung: PAO2 = FiO2·(PB − PH2O) − PaCO2/R (abgekürzt, StatPearls/MSD) bzw. vollständig mit Faktor FiO2 + (1 − FiO2)/R (West, Respiratory Physiology; Nunn) – vollständige Form aus Lehrbuchwissen, nicht auf einer abrufbaren Seite verifiziert",
     "Äquivalente Höhe über den O₂-Teildruck der Einatemluft: Luftfahrtmedizin (z. B. 100 % O₂ in 33.700 ft ≈ Meereshöhe-Luft), Wikipedia „Oxygen equivalent“ und Aerospace-Medicine-Veröffentlichungen",
     "Höhen-Dekompressionskrankheit: FAA-Broschüre „Altitude-Induced Decompression Sickness“ (Risiko steigt mit Dauer und Steiggeschwindigkeit; Expositionen im Minuten- bis Stundenbereich), Webb/Pilmanis (ASEM)"
-  ]
+  ],
+  "caption": "Was, wenn der Stickstoff 5 Sekunden weg wäre? 🫧 Ich hab's durchgespielt. Hättest du gedacht, dass du weiteratmest? 👇 #stickstoff #luft #chemie #wissen #waswaerewenn"
 }

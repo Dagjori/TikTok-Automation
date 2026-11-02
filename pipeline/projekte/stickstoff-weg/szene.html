@@ -2,9 +2,8 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<title>Stickstoff weg · Stil 16 POV-Filmlook</title>
+<title>Stickstoff weg · Referenzformat</title>
 <link rel="stylesheet" href="../../engine/hud.css">
-<link rel="stylesheet" href="../../engine/massstab.css">
 <script type="importmap">
 { "imports": {
   "three": "/node_modules/three/build/three.module.js",
@@ -12,38 +11,38 @@
 } }
 </script>
 <style>
-  body { background: #c8d2e6; }
-  /* Untertitel Wort für Wort (Stil „kontur“), Teamwörter in Teamfarbe (aktuelles Wort bleibt gelb) */
-  .karaoke.kontur .w { color: var(--wf, #ffffff); }
-  /* Countdown-HUD aus 5 Segmenten (Account 2): Koralle = verbleibend, #3B3F55 = abgelaufen */
-  .ms-countdown { position: absolute; left: 150px; top: 158px; width: 780px; display: flex; flex-direction: column; align-items: center; gap: 14px; z-index: 20; will-change: transform; }
-  .ms-countdown .cd-reihe { display: flex; gap: 14px; }
-  .ms-countdown .cd-seg { position: relative; width: 132px; height: 24px; border-radius: 12px; background: #3B3F55; overflow: hidden; box-shadow: 0 0 0 3px rgba(10, 14, 28, 0.55), 0 6px 18px rgba(0, 0, 0, 0.35); }
-  .ms-countdown .cd-seg i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: #FF4F5A; border-radius: 12px; transform-origin: 0 50%; }
-  .ms-countdown .cd-seg.aktiv { box-shadow: 0 0 0 3px #ffffff, 0 0 26px rgba(255, 79, 90, 0.85); }
-  .ms-countdown .cd-zahl { font-family: "SB Display", Inter, sans-serif; font-weight: 900; font-size: 92px; line-height: 1; color: #fff; letter-spacing: -0.02em; font-variant-numeric: tabular-nums;
-    -webkit-text-stroke: 0.05em #0b1020; paint-order: stroke fill; text-shadow: 0 6px 24px rgba(0, 0, 0, 0.55); }
-  .ms-countdown .cd-zahl small { font-size: 0.42em; font-weight: 800; margin-left: 6px; color: #FF4F5A; -webkit-text-stroke: 0.06em #0b1020; }
-  .ms-countdown .cd-zahl.null { color: #9aa0b8; }
-  /* Luftdruck-Karte: Zahl rollt von 1.013 auf 222 hPa, Balken zeigt die Zusammensetzung (N₂ blau, O₂ koralle, Argon grau) */
-  .ms-druck .dz { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 8px; }
-  .ms-druck .dz .gross { font-weight: 900; font-size: 128px; letter-spacing: -0.045em; line-height: 1; color: var(--karte-text); }
-  .ms-druck .dz .gross .ms-rz small { font-size: 0.34em; margin-left: 0.2em; }
-  .ms-druck .dz .nebe { font-family: var(--text); font-weight: 800; font-size: 26px; letter-spacing: 0.08em; color: var(--karte-grau); padding-bottom: 14px; text-align: right; line-height: 1.35; }
-  .ms-druck .spur { position: relative; height: 56px; margin-top: 20px; border-radius: 16px; background: color-mix(in srgb, var(--karte-linie) 75%, var(--karte)); overflow: hidden; }
-  .ms-druck .luft { position: absolute; left: 50%; top: 0; bottom: 0; display: flex; will-change: transform; }
-  .ms-druck .luft b { display: block; height: 100%; }
-  .ms-druck .luft .n2 { background: var(--team-a); }
-  .ms-druck .luft .o2 { background: var(--team-b); }
-  .ms-druck .luft .ar { background: #AEB8CE; }
-  .ms-druck .unter { display: flex; justify-content: space-between; margin-top: 14px; font-family: var(--text); font-weight: 800; font-size: 24px; letter-spacing: 0.1em; color: var(--karte-grau); }
-  .ms-druck .unter .hoch { color: var(--karte-text); }
-  .blitz-n2 { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; pointer-events: none; z-index: 5; opacity: 0; }
+  /* Serifenschrift: EB Garamond (SIL Open Font License, lokal über @fontsource) */
+  @font-face { font-family: "EBG"; font-weight: 400; font-style: normal; src: url("../../node_modules/@fontsource/eb-garamond/files/eb-garamond-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "EBG"; font-weight: 500; font-style: normal; src: url("../../node_modules/@fontsource/eb-garamond/files/eb-garamond-latin-500-normal.woff2") format("woff2"); }
+  @font-face { font-family: "EBG"; font-weight: 400; font-style: italic; src: url("../../node_modules/@fontsource/eb-garamond/files/eb-garamond-latin-400-italic.woff2") format("woff2"); }
+  body { background: #000; }
+  #hud .lage { position: absolute; left: 0; width: 1080px; pointer-events: none; }
+  #hud .schleier-o { top: 0; height: 640px; background: linear-gradient(rgba(6, 10, 24, 0.62), rgba(6, 10, 24, 0)); }
+  #hud .schleier-u { bottom: 0; height: 780px; background: linear-gradient(rgba(6, 10, 24, 0), rgba(6, 10, 24, 0.55) 35%, rgba(6, 10, 24, 0.78)); }
+  .serif { font-family: "EBG", "EB Garamond", Georgia, serif; color: #fff; text-shadow: 0 2px 16px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.75), 0 0 2px rgba(0, 0, 0, 0.8); }
+  #titel { position: absolute; left: 150px; width: 780px; top: 250px; text-align: center; font-size: 72px; line-height: 1.12; font-weight: 500; letter-spacing: 0.005em; opacity: 0; }
+  #anzeige { position: absolute; left: 150px; top: 780px; width: 640px; opacity: 0; }
+  #anzeige .etikett { font-size: 31px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; opacity: 0.92; }
+  #anzeige .zahl { font-size: 168px; line-height: 0.95; font-weight: 400; letter-spacing: -0.01em; font-variant-numeric: lining-nums tabular-nums; margin-top: 6px; white-space: nowrap; }
+  #anzeige .zahl small { font-size: 0.3em; letter-spacing: 0.04em; margin-left: 0.18em; font-weight: 500; }
+  #anzeige .unter { font-size: 30px; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px; opacity: 0.88; max-width: 640px; line-height: 1.25; font-weight: 400; }
+  #satz { position: absolute; left: 150px; width: 780px; top: 1340px; text-align: center; font-size: 62px; line-height: 1.22; font-style: italic; font-weight: 400; opacity: 0; }
+  #schwarz { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #000; opacity: 0; }
+  #abspann { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #000; opacity: 0; }
+  #abspann .frage { position: absolute; left: 150px; width: 780px; top: 770px; text-align: center; font-size: 72px; line-height: 1.12; font-weight: 500; }
+  #abspann .fakt { position: absolute; left: 150px; width: 780px; top: 1050px; text-align: center; font-size: 27px; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.6; opacity: 0.85; font-weight: 400; }
 </style>
 </head>
 <body>
 <canvas id="leinwand" width="1080" height="1920"></canvas>
-<div id="hud"></div>
+<div id="hud">
+  <div class="lage schleier-o"></div><div class="lage schleier-u"></div>
+  <div id="titel" class="serif"></div>
+  <div id="anzeige" class="serif"><div class="etikett"></div><div class="zahl"></div><div class="unter"></div></div>
+  <div id="satz" class="serif"></div>
+  <div id="schwarz"></div>
+  <div id="abspann"><div class="frage serif"></div><div class="fakt serif"></div></div>
+</div>
 <script type="module" src="./szene.js"></script>
 </body>
 </html>

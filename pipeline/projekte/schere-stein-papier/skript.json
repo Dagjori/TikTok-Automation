@@ -1,195 +1,198 @@
 {
-  "titel": "Schere, Stein, Papier: Gibt es eine Gewinnstrategie?",
-  "rubrik": "ALLTAG",
-  "stil": "3 Clay-Spielzeug-3D (neu als Baukasten engine/stil_clay.js, Three.js)",
-  "teamfarben": {
-    "ROT (Taktik)": "#FF4D4D",
-    "CYAN (Zufall, dann Mensch)": "#33D1FF"
+ "titel": "Schere, Stein, Papier: Gibt es eine Gewinnstrategie?",
+ "rubrik": "ALLTAG",
+ "stil": "3 Clay-Spielzeug-3D (Baukasten engine/stil_clay.js und engine/stil_clay_welt.js, Three.js): Spielabend mit zwei Figuren mit Gesicht, Tisch, Würfelbecher, Notizblock, Logen mit Fans, Wandbrett mit 10×10 Kacheln",
+ "teamfarben": {
+  "ROT (Taktik)": "#FF4D4D",
+  "CYAN (Zufall, dann Mensch)": "#33D1FF"
+ },
+ "klangteppich": "musik",
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Schere, Stein, Papier: Glück oder Taktik? Wer gewinnt?",
+   "sprechtext": "Schere, Stein, Papier: Glück oder Taktik?\nWer gewinnt?"
   },
-  "klangteppich": "musik",
-  "segmente": [
-    {
-      "id": "hook",
-      "phase": "hook",
-      "text": "Schere, Stein, Papier: Glück oder Taktik? Wer gewinnt wirklich?",
-      "sprechtext": "Schere, Stein, Papier: Glück oder Taktik?\n[curious] Wer gewinnt WIRKLICH?"
-    },
-    {
-      "id": "regeln",
-      "phase": "regeln",
-      "text": "Hundert Runden. Rot spielt mit Taktik. Cyan würfelt jede Runde neu.",
-      "sprechtext": "Hundert Runden.\nRot spielt mit Taktik.\nZyan würfelt jede Runde NEU."
-    },
-    {
-      "id": "falle",
-      "phase": "denkfalle_start",
-      "text": "Klar, die Taktik gewinnt. Oder? Los geht's!",
-      "sprechtext": "Klar, die Taktik gewinnt.\nOder?\n[excited] Los geht's!"
-    },
-    {
-      "id": "start",
-      "phase": "rennen",
-      "text": "Runde eins: unentschieden. Zwei: Rot. Drei: Cyan.",
-      "sprechtext": "Runde eins: unentschieden.\nZwei: Rot.\nDrei: Zyan."
-    },
-    {
-      "id": "rennen1",
-      "phase": "rennen",
-      "text": "Zehn Runden: Rot führt, 4 zu 2.",
-      "sprechtext": "Zehn Runden: Rot FÜHRT.\nVier zu zwei."
-    },
-    {
-      "id": "folgen",
-      "phase": "folgen",
-      "text": "Folg mir, damit du nichts verpasst.",
-      "sprechtext": "Folg mir, damit du nichts verpasst."
-    },
-    {
-      "id": "wendung1",
-      "phase": "wendung_1",
-      "text": "Doch dann zieht Cyan vorbei. Runde 30: 11 zu 11.",
-      "sprechtext": "[surprised] Doch dann zieht Zyan VORBEI.\nRunde dreißig: elf zu elf."
-    },
-    {
-      "id": "rennen2",
-      "phase": "rennen",
-      "text": "Runde 60: Rot wieder vorn.",
-      "sprechtext": "Runde sechzig: Rot wieder VORN."
-    },
-    {
-      "id": "ergebnis1",
-      "phase": "zwischenstand",
-      "text": "Endstand: 34 zu 31. Praktisch gleich.",
-      "sprechtext": "Endstand:\nVierunddreißig zu einunddreißig.\nPraktisch GLEICH."
-    },
-    {
-      "id": "wendung2",
-      "phase": "wendung_2",
-      "text": "Aber jetzt spielt Cyan wie ein Mensch.",
-      "sprechtext": "[surprised] Aber jetzt spielt Zyan wie ein MENSCH."
-    },
-    {
-      "id": "mensch",
-      "phase": "rennen",
-      "text": "Menschen wiederholen ihren Zug zu oft: 44 statt 33 Prozent.",
-      "sprechtext": "Menschen wiederholen ihren Zug zu OFT:\nvierundvierzig statt dreiunddreißig Prozent."
-    },
-    {
-      "id": "rennen3",
-      "phase": "rennen",
-      "text": "Runde 30: 17 zu 8. Rot zieht davon.",
-      "sprechtext": "Runde dreißig: siebzehn zu acht.\nRot zieht DAVON."
-    },
-    {
-      "id": "ergebnis2",
-      "phase": "ergebnis",
-      "text": "Endstand: Rot 50, Cyan 31. Neunzehn Siege Vorsprung.",
-      "sprechtext": "Endstand:\nRot fünfzig, Zyan einunddreißig.\nNeunzehn Siege VORSPRUNG."
-    },
-    {
-      "id": "warum",
-      "phase": "warum",
-      "text": "Warum? Gewinner bleiben bei ihrem Zug. Verlierer wechseln. Rot setzt genau darauf.",
-      "sprechtext": "[thoughtful] Warum?\nGewinner bleiben bei ihrem Zug.\nVerlierer WECHSELN.\nRot setzt genau darauf."
-    },
-    {
-      "id": "ueberraschung",
-      "phase": "zweite_ueberraschung",
-      "text": "Und das Verrückte: Würfelt Cyan ab der Hälfte, wächst der Vorsprung nicht mehr. Zweite Hälfte: 14 zu 15.",
-      "sprechtext": "Und das Verrückte:\nWürfelt Zyan ab der Hälfte, wächst der Vorsprung NICHT mehr.\nZweite Hälfte: vierzehn zu fünfzehn."
-    },
-    {
-      "id": "merksatz",
-      "phase": "merksatz",
-      "text": "Gegen Zufall hilft keine Taktik. Nur gegen Muster.",
-      "sprechtext": "Gegen Zufall hilft keine Taktik.\nNur gegen MUSTER."
-    },
-    {
-      "id": "schluss",
-      "phase": "schluss",
-      "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
-      "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare."
-    }
-  ],
-  "stil_begruendung": "Konkurrenz-Check 01.11.2026 (Websuche, öffentliche Seiten): Zu Schere, Stein, Papier gibt es auf Deutsch vor allem Text- und Erklärbeiträge mit dem Tipp „Gewinner bleibt, Verlierer wechselt“ (web.de „Wissen: Wer gewinnt öfter“, Vodafone „Spieltheorie: So steigerst du deine Erfolgsaussichten“, funk/ZDF „Schere Stein Papier – dein Weg zum Sieg“); die TikTok-Seiten von @studyflix und @mentalisttimonkrause sind aus der Cloud nicht abrufbar, gesucht wurde auch nach Simulationsvideos über 100 Runden, gefunden wurde keines. Unser Ansatz ist die Simulation: dieselbe Taktik, 100 Runden gegen Zufall und gegen ein Mensch-Modell mit Brett, das sich Runde für Runde füllt. Stil 3 Clay-Spielzeug passt laut Katalog (docs/10) zu Spielen und Zufall: Würfel, Schach-Bauer und Knet-Hände sind sofort lesbar und heben sich von der Flat-Infografik der Vorbilder K1, K2, K4 ab. Vorheriges Video am 02.11. abends: Stil 4 Flat, nächstes am 03.11. abends: Stil 6 Collage, also nie derselbe Stil hintereinander. Eigene Modelle (Hände, Brett, Würfel, Bauer, Kopf-Figur), nichts von Konkurrenzvideos übernommen.",
-  "konkurrenz_check": "01.11.2026, Websuche (Deutsch und Englisch): kein Simulationsvideo „100 Runden Taktik gegen Zufall und gegen Mensch“ gefunden; verbreitet sind Tipp-Artikel und Erklärvideos zum Muster „Gewinner bleibt, Verlierer wechselt“. TikTok-Seiten (@studyflix, @mentalisttimonkrause) aus der Cloud nicht abrufbar. Thema nicht in docs/15 §9 gesperrt.",
-  "beschreibung": "Schere, Stein, Papier: Gibt es eine Gewinnstrategie? ✂️ Ich hab's simuliert. Team Taktik oder Team Zufall? 👇 #scheresteinpapier #gewinnstrategie #spieltheorie #wissen #simulation",
-  "zahlen": {
-    "hinweis": "Modellrechnung, Code pipeline/sim/schere_stein_papier.mjs (13 Tests), Auswertung pipeline/sim/auswertung_schere_stein_papier.mjs, Ergebnisse sim_ergebnisse.md",
-    "runden": 100,
-    "lauf_zufall": {
-      "seed": 308,
-      "rot": 34,
-      "cyan": 31,
-      "remis": 35,
-      "vorsprung": 3,
-      "runde10": "4:2",
-      "runde30": "11:11",
-      "runde60": "22:19"
-    },
-    "lauf_mensch": {
-      "seed": 16,
-      "rot": 50,
-      "cyan": 31,
-      "remis": 19,
-      "vorsprung": 19,
-      "runde30": "17:8",
-      "runde50": "24:16"
-    },
-    "lauf_mensch_wuerfelt_ab_51": {
-      "seed": 16,
-      "rot": 38,
-      "cyan": 31,
-      "remis": 31,
-      "vorsprung": 7,
-      "zweite_haelfte": "14:15"
-    },
-    "monte_carlo_100000_zufall": {
-      "rot_vorn": 0.476,
-      "cyan_vorn": 0.476,
-      "gleichstand": 0.048,
-      "mittlerer_vorsprung": 0.0,
-      "sigma": 8.19,
-      "siege": "33,3 / 33,3 / 33,4"
-    },
-    "monte_carlo_100000_mensch": {
-      "rot_vorn": 0.988,
-      "cyan_vorn": 0.008,
-      "gleichstand": 0.003,
-      "mittlerer_vorsprung": 17.2,
-      "sigma": 7.34,
-      "siege": "44,5 / 27,3 / 28,2"
-    },
-    "monte_carlo_100000_mensch_wuerfelt_ab_51": {
-      "vorsprung_erste_haelfte": 8.54,
-      "vorsprung_zweite_haelfte": -0.01
-    },
-    "warum": {
-      "nach_menschsieg": {
-        "rot": 0.55,
-        "cyan": 0.225
-      },
-      "nach_menschniederlage": {
-        "rot": 0.38,
-        "cyan": 0.3
-      }
-    },
-    "wiederholung_belegt": 0.44,
-    "wiederholung_zufall": 0.333
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "Hundert Runden. Rot spielt mit Taktik. Cyan würfelt jeden Zug.",
+   "sprechtext": "Hundert Runden.\nRot spielt mit Taktik.\nZyan würfelt jeden Zug."
   },
-  "annahmen": [
-    "(F) Gegen eine gleichverteilte Zufallsstrategie hat jeder Zug und jede Mischung den Erwartungswert 0 (je 1/3 Sieg, unentschieden, Niederlage): Nash-Gleichgewicht der gemischten Strategie. Im Code getestet (sim/schere_stein_papier.test.mjs, Test „Nash“) und per Monte Carlo (100.000 Läufe: Vorsprung Ø −0,01, σ 8,19 = √(100·2/3)).",
-    "(A) Mensch-Modell (bedingte Reaktion): nach Sieg bleibt der Zug mit 55 %, nach Unentschieden mit 45 %, nach Niederlage mit 32 %; die übrigen Anteile verteilen sich nach Sieg 22,5/22,5 %, nach Unentschieden 27,5/27,5 %, nach Niederlage 38 % auf den Zug, der den letzten Zug des Gegners geschlagen hätte, und 30 % auf den anderen Wechsel. Belegt sind nur die Gesamt-Wiederholungsrate 44 % und die Richtung der Befunde; die einzelnen Zahlen sind angenommen, so gewählt, dass ((0,55+0,45+0,32)/3) = 0,44 gilt. Die Einzelwerte aus Fig. 2 der Studie waren aus der Cloud nicht abrufbar (nature.com und PMC gesperrt, nur der arXiv-Volltext mit Tabelle der Wiederholungsrate).",
-    "(A) Rot kennt dieses Muster und spielt jede Runde den Zug mit dem höchsten Erwartungswert gegen das Modell; gegen den Zufallsspieler setzt Rot dieselbe Taktik ein (Rot „weiß“ nicht, wer Cyan ist).",
-    "(S) Empfindlichkeit: Skaliert man die Abweichungen des Menschen von 1/3 mit k (Rot rechnet weiter mit k = 1): k = 0,5 (Wiederholungsrate 38,7 %) → Vorsprung Ø 9,1 Siege, Rot in 86 % der Läufe vorn; k = 0,25 (36,0 %) → Ø 4,7, 70 %; k = 0 → Ø 0,05 (Zufall). Die Aussage „gegen Menschen hilft Taktik“ gilt also nur so stark, wie das Muster wirklich ist; die Größenordnung im Video (Ø +17) setzt das volle Modell voraus.",
-    "(A) Verwendete Läufe: Seeds nach festen Kriterien gewählt (sim/schere_stein_papier.mjs, waehleLaeufe): Zufall: |Vorsprung| ≤ 3 (typisch, Median von |Vorsprung| = 6), Rot führt zuerst, mindestens 3 Führungswechsel; Mensch: Endvorsprung innerhalb ±3 um den Median (17), Cyan führt anfangs, danach zieht Rot davon; Mensch würfelt ab Runde 51: gleicher Seed, Vorsprung in Runde 51–100 höchstens ±3.",
-    "(A) Spieler sind Studierende im Labor mit kleinem Geldanreiz, Zufallspaarung in Gruppen zu 6; ob einzelne Menschen gegen eine Taktik genauso spielen, ist offen. Das Video zeigt ein Modell („Ich hab's simuliert“), keine Aussage über einen bestimmten Gegner."
-  ],
-  "quellen": [
-    "(F) Wang Z, Xu B, Zhou H-J (2014): Social cycling and conditional responses in the Rock-Paper-Scissors game. Scientific Reports 4:5830, DOI 10.1038/srep05830 (arXiv:1404.5199, Volltext über die Forschungssuche gelesen): 360 Studierende der Zhejiang University, 60 Gruppen zu 6, 300 Runden, zufällige Paarung. Befunde: Marginalverteilung R 0,36, P 0,33, S 0,32 (mit NE vereinbar); Spieler wiederholen ihren letzten Zug häufiger, als sie wechseln; nach einem Sieg ist die Wiederholung „deutlich häufiger“ als jeder Wechsel; nach einer Niederlage (Auszahlungsparameter a ≥ 2) wechseln Spieler häufiger „im Uhrzeigersinn“ (R→S, S→P, P→R, also auf den Zug, der den letzten Zug des Gegners geschlagen hätte) als dass sie bleiben oder gegen den Uhrzeigersinn wechseln. Die Autoren zeigen außerdem, dass eine passend gewählte bedingte Reaktion (CR-Strategie) die NE-Mischstrategie in der Summe der Auszahlungen übertrifft (bis ca. 10 % bei hoher Auszahlung); die Marginalverteilung eines Einzelspielers ist von der NE-Mischung nicht zu unterscheiden.",
-    "(F) Wang Z, Xu B (2014): Incentive and stability in the Rock-Paper-Scissors game: an experimental investigation. arXiv:1407.1170 (ESA-Tagungsfassung, nicht peer-reviewed): Tabelle 2, a = 2 (Standard-Auszahlung), 72 Spieler, 300 Runden: Wiederholung des letzten Zugs 0,440 (s.e. 0,020), Wechsel in beide Richtungen 0,282 bzw. 0,279. Daraus der Wert 44 % im Video (Zufall: 33,3 %).",
-    "(F) Moerel M u. a. (2025): Neural decoding of competitive decision-making in Rock–Paper–Scissors. Social Cognitive and Affective Neuroscience 20(1), nsaf101 (EEG-Hyperscanning, 31 Paare, 480 Spiele; Aussage der Autoren laut Pressebericht/Suchtreffer: möglichst zufällig und unvorhersehbar spielen ist die beste Strategie; die meisten Menschen bevorzugen Stein). Stützt den Merksatz „Gegen Zufall hilft keine Taktik“. Nur Suchtreffer gelesen, Volltext nicht abrufbar.",
-    "(F) Spieltheorie: Gleichverteilte Mischstrategie ist das einzige Nash-Gleichgewicht von Schere-Stein-Papier (Osborne & Rubinstein 1994, A Course in Game Theory; Nash 1950). Hier im Code nachgerechnet und getestet.",
-    "(A) Popularität des Tipps „Gewinner bleibt, Verlierer wechselt“ in deutschen Medien (nur zur Einordnung, nicht im Video): web.de „Wissen: Wer gewinnt öfter“, Vodafone „Spieltheorie: So steigerst Du Deine Erfolgsaussichten bei Stein-Schere-Papier“, ZDF/funk „Schere Stein Papier – dein Weg zum Sieg“, Abruf über Websuche 01.11.2026 (Seiten selbst aus der Cloud gesperrt)."
-  ]
+  {
+   "id": "falle",
+   "phase": "denkfalle",
+   "text": "Klar, die Taktik gewinnt. Oder?",
+   "sprechtext": "Klar, die Taktik gewinnt.\nOder?"
+  },
+  {
+   "id": "start",
+   "phase": "rennen",
+   "text": "Runde eins: unentschieden. Zwei: Rot. Drei: Cyan.",
+   "sprechtext": "Runde eins: unentschieden.\nZwei: Rot.\nDrei: Zyan."
+  },
+  {
+   "id": "rennen1",
+   "phase": "rennen",
+   "text": "Zehn Runden: Rot führt. Vier zu zwei.",
+   "sprechtext": "Zehn Runden: Rot führt.\nVier zu zwei."
+  },
+  {
+   "id": "folgen",
+   "phase": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "sprechtext": "Folg mir, damit du nichts verpasst."
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung_1",
+   "text": "Doch dann zieht Cyan vorbei. Runde dreißig: elf zu elf.",
+   "sprechtext": "Doch dann zieht Zyan vorbei.\nRunde dreißig: elf zu elf."
+  },
+  {
+   "id": "rennen2",
+   "phase": "rennen",
+   "text": "Es läuft weiter. Runde sechzig: Rot wieder vorn.",
+   "sprechtext": "Es läuft weiter.\nRunde sechzig: Rot wieder vorn."
+  },
+  {
+   "id": "ergebnis1",
+   "phase": "zwischenstand",
+   "text": "Endstand: 34 zu 31. Praktisch gleich.",
+   "sprechtext": "Endstand:\nVierunddreißig zu einunddreißig.\nPraktisch gleich."
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung_2",
+   "text": "Aber jetzt würfelt Cyan nicht mehr. Cyan spielt wie ein Mensch.",
+   "sprechtext": "Aber jetzt würfelt Zyan nicht mehr.\nZyan spielt wie ein Mensch."
+  },
+  {
+   "id": "mensch",
+   "phase": "rennen",
+   "text": "Menschen wiederholen ihren Zug zu oft: 44 statt 33 Prozent.",
+   "sprechtext": "Menschen wiederholen ihren Zug zu oft:\nvierundvierzig statt dreiunddreißig Prozent."
+  },
+  {
+   "id": "rennen3",
+   "phase": "rennen",
+   "text": "Runde dreißig: 17 zu 8. Rot zieht davon.",
+   "sprechtext": "Runde dreißig: siebzehn zu acht.\nRot zieht davon."
+  },
+  {
+   "id": "ergebnis2",
+   "phase": "ergebnis",
+   "text": "Endstand: Rot 50, Cyan 31. Neunzehn Siege Vorsprung.",
+   "sprechtext": "Endstand:\nRot fünfzig, Zyan einunddreißig.\nNeunzehn Siege Vorsprung."
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Warum? Gewinner bleiben bei ihrem Zug. Verlierer wechseln. Rot setzt genau darauf.",
+   "sprechtext": "Warum?\nGewinner bleiben bei ihrem Zug.\nVerlierer wechseln.\nRot setzt genau darauf."
+  },
+  {
+   "id": "ueberraschung",
+   "phase": "zweite_ueberraschung",
+   "text": "Und das Verrückte: Würfelt Cyan ab Runde 51 wieder, wächst der Vorsprung nicht mehr. Zweite Hälfte: 14 zu 15.",
+   "sprechtext": "Und das Verrückte:\nWürfelt Zyan ab Runde einundfünfzig wieder, wächst der Vorsprung nicht mehr.\nZweite Hälfte: vierzehn zu fünfzehn."
+  },
+  {
+   "id": "merksatz",
+   "phase": "merksatz",
+   "text": "Gegen Zufall hilft keine Taktik. Nur gegen Muster.",
+   "sprechtext": "Gegen Zufall hilft keine Taktik.\nNur gegen Muster."
+  },
+  {
+   "id": "schluss",
+   "phase": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare."
+  }
+ ],
+ "stil_begruendung": "Konkurrenz-Check 01.11.2026 (Websuche, öffentliche Seiten): Zu Schere, Stein, Papier gibt es auf Deutsch vor allem Text- und Erklärbeiträge mit dem Tipp „Gewinner bleibt, Verlierer wechselt“ (web.de „Wissen: Wer gewinnt öfter“, Vodafone „Spieltheorie: So steigerst du deine Erfolgsaussichten“, funk/ZDF „Schere Stein Papier – dein Weg zum Sieg“); die TikTok-Seiten von @studyflix und @mentalisttimonkrause sind aus der Cloud nicht abrufbar, gesucht wurde auch nach Simulationsvideos über 100 Runden, gefunden wurde keines. Unser Ansatz ist die Simulation: dieselbe Taktik, 100 Runden gegen Zufall und gegen ein Mensch-Modell mit Brett, das sich Runde für Runde füllt. Stil 3 Clay-Spielzeug passt laut Katalog (docs/10) zu Spielen und Zufall: Würfel, Schach-Bauer und Knet-Hände sind sofort lesbar und heben sich von der Flat-Infografik der Vorbilder K1, K2, K4 ab. Vorheriges Video am 02.11. abends: Stil 4 Flat, nächstes am 03.11. abends: Stil 6 Collage, also nie derselbe Stil hintereinander. Eigene Modelle (Hände, Brett, Würfel, Bauer, Kopf-Figur), nichts von Konkurrenzvideos übernommen.",
+ "konkurrenz_check": "01.11.2026, Websuche (Deutsch und Englisch): kein Simulationsvideo „100 Runden Taktik gegen Zufall und gegen Mensch“ gefunden; verbreitet sind Tipp-Artikel und Erklärvideos zum Muster „Gewinner bleibt, Verlierer wechselt“. TikTok-Seiten (@studyflix, @mentalisttimonkrause) aus der Cloud nicht abrufbar. Thema nicht in docs/15 §9 gesperrt.",
+ "beschreibung": "Schere, Stein, Papier: Gibt es eine Gewinnstrategie? ✂️ Ich hab's simuliert. Team Taktik oder Team Zufall? 👇 #scheresteinpapier #gewinnstrategie #spieltheorie #wissen #simulation",
+ "zahlen": {
+  "hinweis": "Modellrechnung, Code pipeline/sim/schere_stein_papier.mjs (13 Tests), Auswertung pipeline/sim/auswertung_schere_stein_papier.mjs, Ergebnisse sim_ergebnisse.md",
+  "runden": 100,
+  "lauf_zufall": {
+   "seed": 308,
+   "rot": 34,
+   "cyan": 31,
+   "remis": 35,
+   "vorsprung": 3,
+   "runde10": "4:2",
+   "runde30": "11:11",
+   "runde60": "22:19"
+  },
+  "lauf_mensch": {
+   "seed": 16,
+   "rot": 50,
+   "cyan": 31,
+   "remis": 19,
+   "vorsprung": 19,
+   "runde30": "17:8",
+   "runde50": "24:16"
+  },
+  "lauf_mensch_wuerfelt_ab_51": {
+   "seed": 16,
+   "rot": 38,
+   "cyan": 31,
+   "remis": 31,
+   "vorsprung": 7,
+   "zweite_haelfte": "14:15"
+  },
+  "monte_carlo_100000_zufall": {
+   "rot_vorn": 0.476,
+   "cyan_vorn": 0.476,
+   "gleichstand": 0.048,
+   "mittlerer_vorsprung": 0.0,
+   "sigma": 8.19,
+   "siege": "33,3 / 33,3 / 33,4"
+  },
+  "monte_carlo_100000_mensch": {
+   "rot_vorn": 0.988,
+   "cyan_vorn": 0.008,
+   "gleichstand": 0.003,
+   "mittlerer_vorsprung": 17.2,
+   "sigma": 7.34,
+   "siege": "44,5 / 27,3 / 28,2"
+  },
+  "monte_carlo_100000_mensch_wuerfelt_ab_51": {
+   "vorsprung_erste_haelfte": 8.54,
+   "vorsprung_zweite_haelfte": -0.01
+  },
+  "warum": {
+   "nach_menschsieg": {
+    "rot": 0.55,
+    "cyan": 0.225
+   },
+   "nach_menschniederlage": {
+    "rot": 0.38,
+    "cyan": 0.3
+   }
+  },
+  "wiederholung_belegt": 0.44,
+  "wiederholung_zufall": 0.333
+ },
+ "annahmen": [
+  "(F) Gegen eine gleichverteilte Zufallsstrategie hat jeder Zug und jede Mischung den Erwartungswert 0 (je 1/3 Sieg, unentschieden, Niederlage): Nash-Gleichgewicht der gemischten Strategie. Im Code getestet (sim/schere_stein_papier.test.mjs, Test „Nash“) und per Monte Carlo (100.000 Läufe: Vorsprung Ø −0,01, σ 8,19 = √(100·2/3)).",
+  "(A) Mensch-Modell (bedingte Reaktion): nach Sieg bleibt der Zug mit 55 %, nach Unentschieden mit 45 %, nach Niederlage mit 32 %; die übrigen Anteile verteilen sich nach Sieg 22,5/22,5 %, nach Unentschieden 27,5/27,5 %, nach Niederlage 38 % auf den Zug, der den letzten Zug des Gegners geschlagen hätte, und 30 % auf den anderen Wechsel. Belegt sind nur die Gesamt-Wiederholungsrate 44 % und die Richtung der Befunde; die einzelnen Zahlen sind angenommen, so gewählt, dass ((0,55+0,45+0,32)/3) = 0,44 gilt. Die Einzelwerte aus Fig. 2 der Studie waren aus der Cloud nicht abrufbar (nature.com und PMC gesperrt, nur der arXiv-Volltext mit Tabelle der Wiederholungsrate).",
+  "(A) Rot kennt dieses Muster und spielt jede Runde den Zug mit dem höchsten Erwartungswert gegen das Modell; gegen den Zufallsspieler setzt Rot dieselbe Taktik ein (Rot „weiß“ nicht, wer Cyan ist).",
+  "(S) Empfindlichkeit: Skaliert man die Abweichungen des Menschen von 1/3 mit k (Rot rechnet weiter mit k = 1): k = 0,5 (Wiederholungsrate 38,7 %) → Vorsprung Ø 9,1 Siege, Rot in 86 % der Läufe vorn; k = 0,25 (36,0 %) → Ø 4,7, 70 %; k = 0 → Ø 0,05 (Zufall). Die Aussage „gegen Menschen hilft Taktik“ gilt also nur so stark, wie das Muster wirklich ist; die Größenordnung im Video (Ø +17) setzt das volle Modell voraus.",
+  "(A) Verwendete Läufe: Seeds nach festen Kriterien gewählt (sim/schere_stein_papier.mjs, waehleLaeufe): Zufall: |Vorsprung| ≤ 3 (typisch, Median von |Vorsprung| = 6), Rot führt zuerst, mindestens 3 Führungswechsel; Mensch: Endvorsprung innerhalb ±3 um den Median (17), Cyan führt anfangs, danach zieht Rot davon; Mensch würfelt ab Runde 51: gleicher Seed, Vorsprung in Runde 51–100 höchstens ±3.",
+  "(A) Spieler sind Studierende im Labor mit kleinem Geldanreiz, Zufallspaarung in Gruppen zu 6; ob einzelne Menschen gegen eine Taktik genauso spielen, ist offen. Das Video zeigt ein Modell („Ich hab's simuliert“), keine Aussage über einen bestimmten Gegner.",
+  "(A) Themen-Logik (Inhaber 02.11.): Verglichen werden zwei Spielweisen desselben Spiels, nämlich Muster bzw. Taktik gegen Zufall (Rot spielt in beiden Akten identisch, Cyan würfelt bzw. spielt wie ein Mensch). Das ist eine echte Alternative derselben Entscheidung („Wie spiele ich Schere, Stein, Papier?“) und kein schiefer Vergleich. Die Studie (Wang, Xu, Zhou 2014, Scientific Reports 4:5830, arXiv:1404.5199, am 02.11. per Abstract geprüft: Titel, Autoren, Aussage „win-lose-tie conditional response“ und Abweichung vom Nash-Gleichgewicht) belegt das Muster qualitativ; die Zahl 44 % stammt aus arXiv:1407.1170 Tab. 2.",
+  "(A) „Warum?“ im Bild: Die zwei Beispielrunden (Gewinner bleibt bei Stein, Verlierer wechselt von Stein auf Schere) sind gestellte Beispiele des wahrscheinlichsten Übergangs im Modell (55 % bzw. 38 %), keine Runden aus den 100 des Laufs."
+ ],
+ "quellen": [
+  "(F) Wang Z, Xu B, Zhou H-J (2014): Social cycling and conditional responses in the Rock-Paper-Scissors game. Scientific Reports 4:5830, DOI 10.1038/srep05830 (arXiv:1404.5199, Volltext über die Forschungssuche gelesen): 360 Studierende der Zhejiang University, 60 Gruppen zu 6, 300 Runden, zufällige Paarung. Befunde: Marginalverteilung R 0,36, P 0,33, S 0,32 (mit NE vereinbar); Spieler wiederholen ihren letzten Zug häufiger, als sie wechseln; nach einem Sieg ist die Wiederholung „deutlich häufiger“ als jeder Wechsel; nach einer Niederlage (Auszahlungsparameter a ≥ 2) wechseln Spieler häufiger „im Uhrzeigersinn“ (R→S, S→P, P→R, also auf den Zug, der den letzten Zug des Gegners geschlagen hätte) als dass sie bleiben oder gegen den Uhrzeigersinn wechseln. Die Autoren zeigen außerdem, dass eine passend gewählte bedingte Reaktion (CR-Strategie) die NE-Mischstrategie in der Summe der Auszahlungen übertrifft (bis ca. 10 % bei hoher Auszahlung); die Marginalverteilung eines Einzelspielers ist von der NE-Mischung nicht zu unterscheiden.",
+  "(F) Wang Z, Xu B (2014): Incentive and stability in the Rock-Paper-Scissors game: an experimental investigation. arXiv:1407.1170 (ESA-Tagungsfassung, nicht peer-reviewed): Tabelle 2, a = 2 (Standard-Auszahlung), 72 Spieler, 300 Runden: Wiederholung des letzten Zugs 0,440 (s.e. 0,020), Wechsel in beide Richtungen 0,282 bzw. 0,279. Daraus der Wert 44 % im Video (Zufall: 33,3 %).",
+  "(F) Moerel M u. a. (2025): Neural decoding of competitive decision-making in Rock–Paper–Scissors. Social Cognitive and Affective Neuroscience 20(1), nsaf101 (EEG-Hyperscanning, 31 Paare, 480 Spiele; Aussage der Autoren laut Pressebericht/Suchtreffer: möglichst zufällig und unvorhersehbar spielen ist die beste Strategie; die meisten Menschen bevorzugen Stein). Stützt den Merksatz „Gegen Zufall hilft keine Taktik“. Nur Suchtreffer gelesen, Volltext nicht abrufbar.",
+  "(F) Spieltheorie: Gleichverteilte Mischstrategie ist das einzige Nash-Gleichgewicht von Schere-Stein-Papier (Osborne & Rubinstein 1994, A Course in Game Theory; Nash 1950). Hier im Code nachgerechnet und getestet.",
+  "(A) Popularität des Tipps „Gewinner bleibt, Verlierer wechselt“ in deutschen Medien (nur zur Einordnung, nicht im Video): web.de „Wissen: Wer gewinnt öfter“, Vodafone „Spieltheorie: So steigerst Du Deine Erfolgsaussichten bei Stein-Schere-Papier“, ZDF/funk „Schere Stein Papier – dein Weg zum Sieg“, Abruf über Websuche 01.11.2026 (Seiten selbst aus der Cloud gesperrt)."
+ ],
+ "caption": "Schere, Stein, Papier: Gibt es eine Gewinnstrategie? ✂️ Ich hab's simuliert. Team Taktik oder Team Zufall? 👇 #scheresteinpapier #gewinnstrategie #spieltheorie #wissen #simulation"
 }

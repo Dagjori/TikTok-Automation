@@ -82,7 +82,21 @@ export const GESTEN = {
   stein: { c: [1, 1, 1, 1], s: [-0.03, 0, 0.02, 0.05], th: [1.32, 1] },
   papier: { c: [0, 0, 0, 0], s: [-0.1, -0.03, 0.05, 0.15], th: [-0.82, 0] },
   schere: { c: [0, 0, 1, 1], s: [-0.19, 0.19, 0.03, 0.05], th: [1.32, 1] },
+  // Zusatz-Gesten (nicht Teil der Zugwahl): Zeigefinger zum Zuschauer, Daumen hoch
+  zeig: { c: [0, 1, 1, 1], s: [0, 0, 0.02, 0.05], th: [1.32, 1] },
+  daumen: { c: [1, 1, 1, 1], s: [-0.03, 0, 0.02, 0.05], th: [0.15, 0] },
 };
+/** Gesten mischen über Namen: { stein: 0.5, schere: 0.5 } (Summe 1) */
+export function mischeNamen(w) {
+  const c = [0, 0, 0, 0], s = [0, 0, 0, 0], th = [0, 0];
+  for (const [n, k] of Object.entries(w)) {
+    const g = GESTEN[n];
+    if (!g || !k) continue;
+    for (let i = 0; i < 4; i++) { c[i] += k * g.c[i]; s[i] += k * g.s[i]; }
+    th[0] += k * g.th[0]; th[1] += k * g.th[1];
+  }
+  return { c, s, th };
+}
 export const GESTEN_NAMEN = ["stein", "papier", "schere"]; // Index = Zug in sim/schere_stein_papier.mjs (0 Stein, 1 Papier, 2 Schere)
 
 const FINGER = [
@@ -92,15 +106,15 @@ const FINGER = [
   { x: -0.35, r: 0.089, l: [0.33, 0.25] }, // kleiner Finger
 ];
 
-export function hand({ farbe = TON.rot, manschette = TON.creme } = {}) {
+export function hand({ farbe = TON.rot, manschette = TON.creme, arm = true, manschetteR = 0.58 } = {}) {
   const wurzel = new THREE.Group();
   const innen = new THREE.Group(); // Pumpen, Neigen, Wippen
   wurzel.add(innen);
   const m = ton(farbe);
   const dunkel = ton(dunkler(farbe, 0.8));
   // Arm / Ärmel und Manschette
-  teil(new THREE.CylinderGeometry(0.5, 0.58, 1.3, 32), dunkel, 0, -0.78, 0, innen);
-  teil(new THREE.CylinderGeometry(0.58, 0.58, 0.26, 32), ton(manschette), 0, -0.12, 0, innen);
+  if (arm) teil(new THREE.CylinderGeometry(0.5, 0.58, 1.3, 32), dunkel, 0, -0.78, 0, innen);
+  teil(new THREE.CylinderGeometry(manschetteR, manschetteR, 0.26, 32), ton(manschette), 0, -0.12, 0, innen);
   // Handballen
   teil(rbox(0.98, 0.92, 0.46, 0.22), m, 0, 0.58, 0, innen);
   teil(new THREE.SphereGeometry(0.31, 20, 14), m, 0, 0.16, 0, innen); // Handwurzel

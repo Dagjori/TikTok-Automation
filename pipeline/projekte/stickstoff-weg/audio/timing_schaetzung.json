@@ -1,0 +1,945 @@
+{
+ "stimme": "Schätzung",
+ "geschaetzt": true,
+ "schaetzung": {
+  "wps": 2,
+  "satzpause": 0.6,
+  "kommapause": 0.35,
+  "segmentpause": 0.6,
+  "vorlauf": 0.12
+ },
+ "wps": 2,
+ "dauer": 81.071,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Stell dir vor, der Stickstoff verschwindet fünf Sekunden lang aus der Luft.",
+   "start": 0.12,
+   "ende": 4.816,
+   "woerter": [
+    {
+     "wort": "Stell",
+     "start": 0.12,
+     "ende": 0.447
+    },
+    {
+     "wort": "dir",
+     "start": 0.476,
+     "ende": 0.709
+    },
+    {
+     "wort": "vor,",
+     "start": 0.73,
+     "ende": 0.964
+    },
+    {
+     "wort": "der",
+     "start": 1.334,
+     "ende": 1.568
+    },
+    {
+     "wort": "Stickstoff",
+     "start": 1.588,
+     "ende": 2.149
+    },
+    {
+     "wort": "verschwindet",
+     "start": 2.198,
+     "ende": 2.852
+    },
+    {
+     "wort": "fünf",
+     "start": 2.909,
+     "ende": 3.19
+    },
+    {
+     "wort": "Sekunden",
+     "start": 3.214,
+     "ende": 3.682
+    },
+    {
+     "wort": "lang",
+     "start": 3.722,
+     "ende": 4.003
+    },
+    {
+     "wort": "aus",
+     "start": 4.027,
+     "ende": 4.261
+    },
+    {
+     "wort": "der",
+     "start": 4.281,
+     "ende": 4.515
+    },
+    {
+     "wort": "Luft.",
+     "start": 4.535,
+     "ende": 4.816
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Du stehst mitten im Supermarkt. Auch in Tüten, Lunge und Ohr fehlt er.",
+   "start": 5.44,
+   "ende": 10.49,
+   "woerter": [
+    {
+     "wort": "Du",
+     "start": 5.44,
+     "ende": 5.627
+    },
+    {
+     "wort": "stehst",
+     "start": 5.643,
+     "ende": 6.017
+    },
+    {
+     "wort": "mitten",
+     "start": 6.05,
+     "ende": 6.424
+    },
+    {
+     "wort": "im",
+     "start": 6.457,
+     "ende": 6.644
+    },
+    {
+     "wort": "Supermarkt.",
+     "start": 6.66,
+     "ende": 7.221
+    },
+    {
+     "wort": "Auch",
+     "start": 7.87,
+     "ende": 8.15
+    },
+    {
+     "wort": "in",
+     "start": 8.174,
+     "ende": 8.361
+    },
+    {
+     "wort": "Tüten,",
+     "start": 8.378,
+     "ende": 8.705
+    },
+    {
+     "wort": "Lunge",
+     "start": 9.083,
+     "ende": 9.411
+    },
+    {
+     "wort": "und",
+     "start": 9.439,
+     "ende": 9.673
+    },
+    {
+     "wort": "Ohr",
+     "start": 9.693,
+     "ende": 9.927
+    },
+    {
+     "wort": "fehlt",
+     "start": 9.947,
+     "ende": 10.275
+    },
+    {
+     "wort": "er.",
+     "start": 10.303,
+     "ende": 10.49
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, 78 Prozent der Luft sind weg. Du erstickst. Oder?",
+   "start": 11.106,
+   "ende": 15.935,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 11.106,
+     "ende": 11.387
+    },
+    {
+     "wort": "78",
+     "start": 11.761,
+     "ende": 12.088
+    },
+    {
+     "wort": "Prozent",
+     "start": 12.117,
+     "ende": 12.538
+    },
+    {
+     "wort": "der",
+     "start": 12.574,
+     "ende": 12.808
+    },
+    {
+     "wort": "Luft",
+     "start": 12.828,
+     "ende": 13.109
+    },
+    {
+     "wort": "sind",
+     "start": 13.133,
+     "ende": 13.414
+    },
+    {
+     "wort": "weg.",
+     "start": 13.438,
+     "ende": 13.672
+    },
+    {
+     "wort": "Du",
+     "start": 14.292,
+     "ende": 14.479
+    },
+    {
+     "wort": "erstickst.",
+     "start": 14.495,
+     "ende": 15.01
+    },
+    {
+     "wort": "Oder?",
+     "start": 15.654,
+     "ende": 15.935
+    }
+   ]
+  },
+  {
+   "id": "start",
+   "text": "Los geht's.",
+   "start": 16.559,
+   "ende": 17.141,
+   "woerter": [
+    {
+     "wort": "Los",
+     "start": 16.559,
+     "ende": 16.793
+    },
+    {
+     "wort": "geht's.",
+     "start": 16.813,
+     "ende": 17.141
+    }
+   ]
+  },
+  {
+   "id": "sek1",
+   "text": "Sekunde eins. Du atmest weiter, der Sauerstoff ist ja noch da.",
+   "start": 17.769,
+   "ende": 22.311,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 17.769,
+     "ende": 18.19
+    },
+    {
+     "wort": "eins.",
+     "start": 18.226,
+     "ende": 18.507
+    },
+    {
+     "wort": "Du",
+     "start": 19.131,
+     "ende": 19.318
+    },
+    {
+     "wort": "atmest",
+     "start": 19.335,
+     "ende": 19.709
+    },
+    {
+     "wort": "weiter,",
+     "start": 19.741,
+     "ende": 20.115
+    },
+    {
+     "wort": "der",
+     "start": 20.498,
+     "ende": 20.731
+    },
+    {
+     "wort": "Sauerstoff",
+     "start": 20.752,
+     "ende": 21.313
+    },
+    {
+     "wort": "ist",
+     "start": 21.362,
+     "ende": 21.595
+    },
+    {
+     "wort": "ja",
+     "start": 21.616,
+     "ende": 21.803
+    },
+    {
+     "wort": "noch",
+     "start": 21.819,
+     "ende": 22.099
+    },
+    {
+     "wort": "da.",
+     "start": 22.124,
+     "ende": 22.311
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 22.927,
+   "ende": 25.269,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 22.927,
+     "ende": 23.208
+    },
+    {
+     "wort": "mir,",
+     "start": 23.232,
+     "ende": 23.466
+    },
+    {
+     "wort": "damit",
+     "start": 23.836,
+     "ende": 24.163
+    },
+    {
+     "wort": "du",
+     "start": 24.192,
+     "ende": 24.379
+    },
+    {
+     "wort": "nichts",
+     "start": 24.395,
+     "ende": 24.769
+    },
+    {
+     "wort": "verpasst.",
+     "start": 24.802,
+     "ende": 25.269
+    }
+   ]
+  },
+  {
+   "id": "sek2",
+   "text": "Sekunde zwei. Aber der Druck fällt auf 222 hPa. So dünn wie in 11 Kilometern Höhe.",
+   "start": 25.91,
+   "ende": 32.345,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 25.91,
+     "ende": 26.33
+    },
+    {
+     "wort": "zwei.",
+     "start": 26.367,
+     "ende": 26.648
+    },
+    {
+     "wort": "Aber",
+     "start": 27.272,
+     "ende": 27.552
+    },
+    {
+     "wort": "der",
+     "start": 27.577,
+     "ende": 27.811
+    },
+    {
+     "wort": "Druck",
+     "start": 27.831,
+     "ende": 28.158
+    },
+    {
+     "wort": "fällt",
+     "start": 28.187,
+     "ende": 28.514
+    },
+    {
+     "wort": "auf",
+     "start": 28.542,
+     "ende": 28.776
+    },
+    {
+     "wort": "222",
+     "start": 28.796,
+     "ende": 29.241
+    },
+    {
+     "wort": "hPa.",
+     "start": 29.279,
+     "ende": 29.513
+    },
+    {
+     "wort": "So",
+     "start": 30.133,
+     "ende": 30.32
+    },
+    {
+     "wort": "dünn",
+     "start": 30.337,
+     "ende": 30.617
+    },
+    {
+     "wort": "wie",
+     "start": 30.641,
+     "ende": 30.875
+    },
+    {
+     "wort": "in",
+     "start": 30.895,
+     "ende": 31.082
+    },
+    {
+     "wort": "11",
+     "start": 31.099,
+     "ende": 31.426
+    },
+    {
+     "wort": "Kilometern",
+     "start": 31.454,
+     "ende": 32.015
+    },
+    {
+     "wort": "Höhe.",
+     "start": 32.064,
+     "ende": 32.345
+    }
+   ]
+  },
+  {
+   "id": "sek3",
+   "text": "Sekunde drei. Die Chipstüten klatschen zusammen. Außen drücken gut 2 Tonnen pro Quadratmeter.",
+   "start": 32.969,
+   "ende": 39.524,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 32.969,
+     "ende": 33.39
+    },
+    {
+     "wort": "drei.",
+     "start": 33.427,
+     "ende": 33.707
+    },
+    {
+     "wort": "Die",
+     "start": 34.331,
+     "ende": 34.565
+    },
+    {
+     "wort": "Chipstüten",
+     "start": 34.585,
+     "ende": 35.146
+    },
+    {
+     "wort": "klatschen",
+     "start": 35.195,
+     "ende": 35.71
+    },
+    {
+     "wort": "zusammen.",
+     "start": 35.754,
+     "ende": 36.222
+    },
+    {
+     "wort": "Außen",
+     "start": 36.862,
+     "ende": 37.19
+    },
+    {
+     "wort": "drücken",
+     "start": 37.218,
+     "ende": 37.639
+    },
+    {
+     "wort": "gut",
+     "start": 37.675,
+     "ende": 37.909
+    },
+    {
+     "wort": "2",
+     "start": 37.93,
+     "ende": 38.187
+    },
+    {
+     "wort": "Tonnen",
+     "start": 38.209,
+     "ende": 38.583
+    },
+    {
+     "wort": "pro",
+     "start": 38.616,
+     "ende": 38.849
+    },
+    {
+     "wort": "Quadratmeter.",
+     "start": 38.87,
+     "ende": 39.524
+    }
+   ]
+  },
+  {
+   "id": "sek4",
+   "text": "Sekunde vier. Dein Ohr? Kein Knall.",
+   "start": 40.181,
+   "ende": 43.334,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 40.181,
+     "ende": 40.602
+    },
+    {
+     "wort": "vier.",
+     "start": 40.638,
+     "ende": 40.919
+    },
+    {
+     "wort": "Dein",
+     "start": 41.543,
+     "ende": 41.824
+    },
+    {
+     "wort": "Ohr?",
+     "start": 41.848,
+     "ende": 42.082
+    },
+    {
+     "wort": "Kein",
+     "start": 42.702,
+     "ende": 42.983
+    },
+    {
+     "wort": "Knall.",
+     "start": 43.007,
+     "ende": 43.334
+    }
+   ]
+  },
+  {
+   "id": "sek5",
+   "text": "Sekunde fünf. Hinter dir zischt etwas.",
+   "start": 43.963,
+   "ende": 46.72,
+   "woerter": [
+    {
+     "wort": "Sekunde",
+     "start": 43.963,
+     "ende": 44.384
+    },
+    {
+     "wort": "fünf.",
+     "start": 44.42,
+     "ende": 44.701
+    },
+    {
+     "wort": "Hinter",
+     "start": 45.325,
+     "ende": 45.699
+    },
+    {
+     "wort": "dir",
+     "start": 45.732,
+     "ende": 45.965
+    },
+    {
+     "wort": "zischt",
+     "start": 45.986,
+     "ende": 46.36
+    },
+    {
+     "wort": "etwas.",
+     "start": 46.392,
+     "ende": 46.72
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Ergebnis: Nur noch 222 hPa.",
+   "start": 47.348,
+   "ende": 49.482,
+   "woerter": [
+    {
+     "wort": "Ergebnis:",
+     "start": 47.348,
+     "ende": 47.815
+    },
+    {
+     "wort": "Nur",
+     "start": 48.206,
+     "ende": 48.44
+    },
+    {
+     "wort": "noch",
+     "start": 48.46,
+     "ende": 48.741
+    },
+    {
+     "wort": "222",
+     "start": 48.765,
+     "ende": 49.209
+    },
+    {
+     "wort": "hPa.",
+     "start": 49.248,
+     "ende": 49.482
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Erstens: Stickstoff ist 78 Prozent der Luft, aber du atmest ihn nur ein und aus. Zweitens: Dein Sauerstoffdruck bleibt gleich. Gefühlt: nur 2.000 Meter.",
+   "start": 50.102,
+   "ende": 62.624,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 50.102,
+     "ende": 50.429
+    },
+    {
+     "wort": "Erstens:",
+     "start": 51.058,
+     "ende": 51.478
+    },
+    {
+     "wort": "Stickstoff",
+     "start": 51.865,
+     "ende": 52.426
+    },
+    {
+     "wort": "ist",
+     "start": 52.475,
+     "ende": 52.709
+    },
+    {
+     "wort": "78",
+     "start": 52.729,
+     "ende": 53.056
+    },
+    {
+     "wort": "Prozent",
+     "start": 53.085,
+     "ende": 53.505
+    },
+    {
+     "wort": "der",
+     "start": 53.542,
+     "ende": 53.776
+    },
+    {
+     "wort": "Luft,",
+     "start": 53.796,
+     "ende": 54.077
+    },
+    {
+     "wort": "aber",
+     "start": 54.451,
+     "ende": 54.731
+    },
+    {
+     "wort": "du",
+     "start": 54.756,
+     "ende": 54.943
+    },
+    {
+     "wort": "atmest",
+     "start": 54.959,
+     "ende": 55.333
+    },
+    {
+     "wort": "ihn",
+     "start": 55.366,
+     "ende": 55.599
+    },
+    {
+     "wort": "nur",
+     "start": 55.62,
+     "ende": 55.853
+    },
+    {
+     "wort": "ein",
+     "start": 55.874,
+     "ende": 56.108
+    },
+    {
+     "wort": "und",
+     "start": 56.128,
+     "ende": 56.362
+    },
+    {
+     "wort": "aus.",
+     "start": 56.382,
+     "ende": 56.616
+    },
+    {
+     "wort": "Zweitens:",
+     "start": 57.236,
+     "ende": 57.704
+    },
+    {
+     "wort": "Dein",
+     "start": 58.094,
+     "ende": 58.375
+    },
+    {
+     "wort": "Sauerstoffdruck",
+     "start": 58.399,
+     "ende": 59.147
+    },
+    {
+     "wort": "bleibt",
+     "start": 59.212,
+     "ende": 59.586
+    },
+    {
+     "wort": "gleich.",
+     "start": 59.619,
+     "ende": 59.993
+    },
+    {
+     "wort": "Gefühlt:",
+     "start": 60.625,
+     "ende": 61.046
+    },
+    {
+     "wort": "nur",
+     "start": 61.433,
+     "ende": 61.666
+    },
+    {
+     "wort": "2.000",
+     "start": 61.687,
+     "ende": 62.248
+    },
+    {
+     "wort": "Meter.",
+     "start": 62.296,
+     "ende": 62.624
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Das Verrückteste: Wasser kocht jetzt schon bei 62 Grad. Dein Kaffee hat 80. Er kocht über, ohne Herd.",
+   "start": 63.252,
+   "ende": 71.276,
+   "woerter": [
+    {
+     "wort": "Das",
+     "start": 63.252,
+     "ende": 63.486
+    },
+    {
+     "wort": "Verrückteste:",
+     "start": 63.506,
+     "ende": 64.161
+    },
+    {
+     "wort": "Wasser",
+     "start": 64.568,
+     "ende": 64.942
+    },
+    {
+     "wort": "kocht",
+     "start": 64.974,
+     "ende": 65.301
+    },
+    {
+     "wort": "jetzt",
+     "start": 65.33,
+     "ende": 65.657
+    },
+    {
+     "wort": "schon",
+     "start": 65.686,
+     "ende": 66.013
+    },
+    {
+     "wort": "bei",
+     "start": 66.041,
+     "ende": 66.275
+    },
+    {
+     "wort": "62",
+     "start": 66.295,
+     "ende": 66.623
+    },
+    {
+     "wort": "Grad.",
+     "start": 66.651,
+     "ende": 66.932
+    },
+    {
+     "wort": "Dein",
+     "start": 67.556,
+     "ende": 67.836
+    },
+    {
+     "wort": "Kaffee",
+     "start": 67.861,
+     "ende": 68.235
+    },
+    {
+     "wort": "hat",
+     "start": 68.267,
+     "ende": 68.501
+    },
+    {
+     "wort": "80.",
+     "start": 68.521,
+     "ende": 68.849
+    },
+    {
+     "wort": "Er",
+     "start": 69.477,
+     "ende": 69.664
+    },
+    {
+     "wort": "kocht",
+     "start": 69.68,
+     "ende": 70.008
+    },
+    {
+     "wort": "über,",
+     "start": 70.036,
+     "ende": 70.317
+    },
+    {
+     "wort": "ohne",
+     "start": 70.691,
+     "ende": 70.972
+    },
+    {
+     "wort": "Herd.",
+     "start": 70.996,
+     "ende": 71.276
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Sauerstoff zum Atmen. Stickstoff für den Druck.",
+   "start": 71.901,
+   "ende": 75.166,
+   "woerter": [
+    {
+     "wort": "Sauerstoff",
+     "start": 71.901,
+     "ende": 72.462
+    },
+    {
+     "wort": "zum",
+     "start": 72.511,
+     "ende": 72.744
+    },
+    {
+     "wort": "Atmen.",
+     "start": 72.765,
+     "ende": 73.092
+    },
+    {
+     "wort": "Stickstoff",
+     "start": 73.72,
+     "ende": 74.281
+    },
+    {
+     "wort": "für",
+     "start": 74.33,
+     "ende": 74.564
+    },
+    {
+     "wort": "den",
+     "start": 74.584,
+     "ende": 74.818
+    },
+    {
+     "wort": "Druck.",
+     "start": 74.838,
+     "ende": 75.166
+    }
+   ]
+  },
+  {
+   "id": "ende",
+   "text": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare.",
+   "start": 75.794,
+   "ende": 81.071,
+   "woerter": [
+    {
+     "wort": "Welches",
+     "start": 75.794,
+     "ende": 76.215
+    },
+    {
+     "wort": "Szenario",
+     "start": 76.251,
+     "ende": 76.719
+    },
+    {
+     "wort": "soll",
+     "start": 76.76,
+     "ende": 77.04
+    },
+    {
+     "wort": "ich",
+     "start": 77.065,
+     "ende": 77.298
+    },
+    {
+     "wort": "als",
+     "start": 77.319,
+     "ende": 77.552
+    },
+    {
+     "wort": "Nächstes",
+     "start": 77.573,
+     "ende": 78.04
+    },
+    {
+     "wort": "durchspielen?",
+     "start": 78.081,
+     "ende": 78.735
+    },
+    {
+     "wort": "Schreib",
+     "start": 79.392,
+     "ende": 79.813
+    },
+    {
+     "wort": "es",
+     "start": 79.85,
+     "ende": 80.037
+    },
+    {
+     "wort": "in",
+     "start": 80.053,
+     "ende": 80.24
+    },
+    {
+     "wort": "die",
+     "start": 80.256,
+     "ende": 80.49
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 80.51,
+     "ende": 81.071
+    }
+   ]
+  }
+ ]
+}

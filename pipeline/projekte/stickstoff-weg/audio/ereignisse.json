@@ -3,1183 +3,1674 @@
  "erzeugt": "render.js",
  "projekt": "stickstoff-weg",
  "fps": 30,
- "dauer": 73.26666666666667,
- "stimmEnde": 72.461,
+ "dauer": 80,
  "timing": "timing.json (echte Stimme)",
  "protokoll": true,
- "teppich": "raum",
+ "teppich": "keiner",
  "massstab": {
-  "version": 1,
-  "teams": {
-   "a": {
-    "name": "STICKSTOFF",
-    "farbe": "#5B8CFF"
-   },
-   "b": {
-    "name": "SAUERSTOFF",
-    "farbe": "#FF4F5A"
-   }
-  },
-  "schleife": {
-   "ab": 68.72,
-   "ende": 73.23333333333333
-  },
-  "untertitel": {
-   "stil": "kontur"
-  },
-  "timing": "echt",
-  "schleifenPruefung": {
-   "ok": true,
-   "ende": 73.233,
-   "nurErstesBild": [],
-   "nurLetztesBild": [],
-   "kameraAbweichung": 0
-  }
+  "version": 2,
+  "format": "referenz_pov",
+  "untertitel": null
  },
  "ereignisse": [
   {
-   "quelle": "Titel",
-   "t": 0.01,
+   "t": 0.15,
    "typ": "titel",
-   "klang": "klick",
-   "text": "STELL"
-  },
-  {
-   "quelle": "Titel",
-   "t": 0.37,
-   "typ": "titel",
-   "klang": "klick",
-   "text": "DIR"
-  },
-  {
-   "quelle": "Titel",
-   "t": 0.57,
-   "typ": "titel",
-   "klang": "klick",
-   "text": "VOR:"
-  },
-  {
-   "quelle": "Titel",
-   "t": 1.37,
-   "typ": "titel",
-   "klang": "klick",
-   "text": "STICKSTOFF"
-  },
-  {
-   "quelle": "Chip",
-   "t": 1.61,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "N₂ · 78 %"
-  },
-  {
-   "quelle": "Titel",
-   "t": 2.65,
-   "typ": "titel",
-   "klang": "klick",
-   "text": "5"
-  },
-  {
-   "quelle": "Titel",
-   "t": 2.97,
-   "typ": "titel",
-   "klang": "klick",
-   "text": "SEKUNDEN"
-  },
-  {
-   "quelle": "Titel",
-   "t": 3.53,
-   "typ": "titel",
-   "klang": "klick",
-   "text": "WEG"
-  },
-  {
+   "dauer": 3.35,
+   "text": "Was wäre, wenn der Stickstoff 5 Sekunden verschwindet?",
    "quelle": "Szene",
-   "t": 4.71,
-   "typ": "kamera",
-   "klang": false,
-   "dauer": 1,
-   "text": "Blickwechsel"
-  },
-  {
-   "quelle": "Chip",
-   "t": 5.84,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "O₂ · 21 %"
-  },
-  {
-   "quelle": "Szene",
-   "t": 6.573,
-   "typ": "kamera",
-   "klang": false,
-   "dauer": 0.7,
-   "text": "Blickwechsel"
-  },
-  {
-   "quelle": "Chip",
-   "t": 7.15,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "AUCH IN DER TÜTE"
-  },
-  {
-   "quelle": "Szene",
-   "t": 7.717,
-   "typ": "kamera",
-   "klang": false,
-   "dauer": 0.45,
-   "text": "Blickwechsel"
-  },
-  {
-   "quelle": "Chip",
-   "t": 7.817,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "AUCH IN DER LUNGE"
-  },
-  {
-   "quelle": "Szene",
-   "t": 8.27,
-   "typ": "kamera",
-   "klang": false,
-   "dauer": 0.5,
-   "text": "Blickwechsel"
-  },
-  {
-   "quelle": "Chip",
-   "t": 8.35,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "AUCH IM OHR"
-  },
-  {
-   "quelle": "Chip",
-   "t": 9.247,
-   "typ": "chip-weg",
    "klang": false
   },
   {
-   "quelle": "Chip",
-   "t": 9.247,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 9.247,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
+   "t": 4,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 26,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
    "quelle": "Szene",
-   "t": 9.247,
-   "typ": "kamera",
    "klang": false,
-   "dauer": 0.8,
-   "text": "Blickwechsel"
+   "bild": false
   },
   {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 9.647,
-   "art": "stoss",
-   "dauer": 0.2,
+   "t": 4.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 25.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 4.5,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Ein Montagabend im Supermarkt.",
+   "woerter": 4,
+   "quelle": "Szene",
    "klang": false
   },
   {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 11.49,
-   "art": "zoom",
-   "dauer": 0.9,
-   "klang": "zoom"
+   "t": 5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 25,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
   },
   {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 12.65,
-   "art": "zoom",
-   "dauer": 0.9,
-   "klang": "zoom"
+   "t": 5.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 24.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
   },
   {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 13.61,
-   "art": "zoom",
-   "dauer": 0.9,
-   "klang": "zoom"
+   "t": 6,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 24,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
   },
   {
-   "quelle": "Chip",
+   "t": 6.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 23.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 7,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 23,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 7.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 22.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 8,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 22,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 8.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 21.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 8.5,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Du hörst Wagen rollen und Stimmen murmeln.",
+   "woerter": 7,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 9,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 21,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 9.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 20.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 10,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 20,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 10.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 19.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 11,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 19,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 11.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 18.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 12,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 18,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 12.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 17.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 12.5,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "78 Prozent der Luft sind Stickstoff.",
+   "woerter": 6,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 13,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 17,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 13.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 16.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
    "t": 14,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 14,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 14.45,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "N₂ · 0 %"
-  },
-  {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 14.47,
-   "art": "stoss",
-   "dauer": 0.2,
-   "klang": false
-  },
-  {
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 16,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
    "quelle": "Szene",
-   "t": 14.47,
-   "typ": "welle",
-   "klang": "boom",
-   "dauer": 0.5,
-   "text": "Stickstoff verschwindet (Moleküle platzen)"
-  },
-  {
-   "quelle": "Chip",
-   "t": 15.74,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Countdown",
-   "t": 15.79,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 16.39,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Szene",
-   "t": 16.65,
-   "typ": "kamera",
    "klang": false,
-   "dauer": 0.9,
-   "text": "Blickwechsel"
+   "bild": false
   },
   {
+   "t": 14.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 15.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
    "quelle": "Szene",
-   "t": 16.75,
-   "typ": "kamera",
-   "klang": "whoosh",
-   "dauer": 0.9,
-   "text": "Einatmen: Sauerstoff strömt zu dir"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 17.023,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 17.657,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Szene",
-   "t": 17.86,
-   "typ": "kamera",
    "klang": false,
-   "dauer": 0.9,
-   "text": "Blickwechsel"
+   "bild": false
   },
   {
-   "quelle": "Chip",
-   "t": 18.01,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "O₂ BLEIBT: 212 HPA"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 18.257,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 18.89,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 19.49,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 19.51,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Folgen",
-   "t": 19.61,
-   "typ": "folgen",
-   "dauer": 1.8,
-   "klang": "folgen"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 20.123,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 20.757,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 21.357,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 21.69,
-   "typ": "marke",
-   "klang": "tick",
-   "text": "Sekunde 1 vorbei"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 22.057,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
+   "t": 15,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 15,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
    "quelle": "Szene",
-   "t": 22.77,
-   "typ": "kamera",
    "klang": false,
-   "dauer": 0.8,
-   "text": "Blickwechsel"
+   "bild": false
   },
   {
-   "quelle": "Countdown",
-   "t": 22.79,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Druckkarte",
-   "t": 22.82,
-   "typ": "formel",
-   "klang": "pop",
-   "text": "Luftdruck-Karte"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 23.523,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Druckkarte",
-   "t": 23.687,
-   "typ": "zaehler",
-   "dauer": 1,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 24.29,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Druckkarte",
-   "t": 24.73,
-   "typ": "formel",
-   "klang": "ding",
-   "text": "222 hPa"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 25.023,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 25.757,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 26.523,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 26.69,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "REISEFLUGHÖHE EINES JETS"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 27.257,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 27.99,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
+   "t": 15.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 14.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
    "quelle": "Szene",
-   "t": 28.47,
-   "typ": "kamera",
    "klang": false,
-   "dauer": 0.7,
-   "text": "Blickwechsel"
+   "bild": false
   },
   {
-   "quelle": "Countdown",
-   "t": 28.757,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 28.98,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Countdown",
-   "t": 29.14,
-   "typ": "marke",
-   "klang": "tick",
-   "text": "Sekunde 2 vorbei"
-  },
-  {
+   "t": 16,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 14,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
    "quelle": "Szene",
-   "t": 29.33,
-   "typ": "kamera",
    "klang": false,
-   "dauer": 0.9,
-   "text": "Blickwechsel"
+   "bild": false
   },
   {
-   "quelle": "Countdown",
-   "t": 29.423,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 30.09,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 30.723,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 31.21,
-   "art": "stoss",
-   "dauer": 0.2,
-   "klang": false
-  },
-  {
+   "t": 16.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 13.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
    "quelle": "Szene",
-   "t": 31.21,
-   "typ": "klatsch",
-   "klang": "schlag",
-   "text": "Tüten klatschen zusammen"
-  },
-  {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 31.35,
-   "art": "stoss",
-   "dauer": 0.2,
-   "klang": false
-  },
-  {
-   "quelle": "Szene",
-   "t": 31.35,
-   "typ": "klatsch",
-   "klang": "stempel",
-   "text": "Tütenwand schlägt nach"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 31.39,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 31.73,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "INNEN: FAST NICHTS"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 32.023,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 32.69,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 33.323,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 33.49,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "≈ 2 T PRO M²"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 33.957,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 34.623,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 35.257,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 35.51,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 35.51,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Countdown",
-   "t": 35.623,
-   "typ": "marke",
-   "klang": "tick",
-   "text": "Sekunde 3 vorbei"
-  },
-  {
-   "quelle": "Szene",
-   "t": 35.71,
-   "typ": "kamera",
    "klang": false,
-   "dauer": 0.7,
-   "text": "Blickwechsel"
+   "bild": false
   },
   {
-   "quelle": "Countdown",
-   "t": 35.723,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 36.023,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 36.323,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 36.623,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 36.923,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 36.93,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "OHR: INNEN = AUSSEN"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 37.19,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 37.49,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 37.79,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 38.09,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 38.357,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Chip",
-   "t": 38.43,
-   "typ": "chip-weg",
+   "t": 16.5,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Gleich fehlt er, für genau fünf Sekunden.",
+   "woerter": 7,
+   "quelle": "Szene",
    "klang": false
   },
   {
-   "quelle": "Countdown",
-   "t": 38.54,
-   "typ": "marke",
-   "klang": "tick",
-   "text": "Sekunde 4 vorbei"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 38.657,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 38.923,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 39.19,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
+   "t": 17,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 13,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
    "quelle": "Szene",
-   "t": 39.3,
-   "typ": "kamera",
    "klang": false,
-   "dauer": 0.9,
-   "text": "Blickwechsel"
+   "bild": false
   },
   {
-   "quelle": "Countdown",
-   "t": 39.457,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
+   "t": 17.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 12.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
    "quelle": "Szene",
-   "t": 39.55,
-   "typ": "kamera",
-   "klang": "whoosh",
-   "dauer": 0.8,
-   "text": "Umdrehen zur Backstation"
-  },
-  {
-   "quelle": "Chip",
-   "t": 39.65,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "HINTER DIR …"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 39.723,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 40.023,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Szene",
-   "t": 40.09,
-   "typ": "sieden",
-   "klang": "sprudeln",
-   "dauer": 2.2,
-   "text": "Kaffee beginnt zu sieden"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 40.29,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 40.557,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 40.823,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "t": 40.96,
-   "typ": "uebergang",
-   "art": "blasen",
-   "dauer": 0.7,
-   "quelle": "Zeitleiste",
-   "klang": "blasen"
-  },
-  {
-   "quelle": "Chip",
-   "t": 41.01,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Countdown",
-   "t": 41.09,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Countdown",
-   "t": 41.257,
-   "typ": "marke",
-   "klang": "tick",
-   "text": "Sekunde 5 vorbei"
-  },
-  {
-   "quelle": "Bilanz",
-   "t": 41.66,
-   "typ": "bilanz",
-   "klang": "klick",
-   "text": "NORMAL"
-  },
-  {
-   "quelle": "Bilanz",
-   "t": 42.64,
-   "typ": "bilanz",
-   "klang": "klick",
-   "text": "OHNE N₂"
-  },
-  {
-   "quelle": "Bilanz",
-   "t": 43.67,
-   "typ": "bilanz",
-   "klang": "ding",
-   "text": "FEHLT"
-  },
-  {
-   "quelle": "Chip",
-   "t": 44.07,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "NUR 22 % BLEIBEN"
-  },
-  {
-   "quelle": "Chip",
-   "t": 45.14,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Szene",
-   "t": 45.39,
-   "typ": "kamera",
-   "klang": "whoosh",
-   "dauer": 1,
-   "text": "Totale: Fahrt zur Erklärung"
-  },
-  {
-   "quelle": "Szene",
-   "t": 45.87,
-   "typ": "formel",
-   "klang": "pop",
-   "text": "Warum-Karte"
-  },
-  {
-   "quelle": "Balken",
-   "t": 46.77,
-   "typ": "balken",
-   "dauer": 0.7,
-   "klang": "wachsen",
-   "text": "ANTEIL DER LUFT"
-  },
-  {
-   "quelle": "Szene",
-   "t": 47.73,
-   "typ": "kamera",
-   "klang": "zoom",
-   "dauer": 1.8,
-   "text": "Totale: Zoom"
-  },
-  {
-   "quelle": "Szene",
-   "t": 49.57,
-   "typ": "kamera",
-   "klang": "zoom",
-   "dauer": 1.8,
-   "text": "Totale: Zoom"
-  },
-  {
-   "quelle": "Balken",
-   "t": 49.89,
-   "typ": "balken-tag",
-   "klang": "pop",
-   "text": "N₂: NUR EIN UND AUS"
-  },
-  {
-   "quelle": "Formel",
-   "t": 52.85,
-   "typ": "formel",
-   "klang": "pop",
-   "text": "212"
-  },
-  {
-   "quelle": "Szene",
-   "t": 52.85,
-   "typ": "kamera",
-   "klang": "zoom",
-   "dauer": 1.8,
-   "text": "Totale: Zoom"
-  },
-  {
-   "quelle": "Formel",
-   "t": 53.09,
-   "typ": "formel",
-   "klang": "pop",
-   "text": "="
-  },
-  {
-   "quelle": "Formel",
-   "t": 54.19,
-   "typ": "formel",
-   "klang": "ding",
-   "text": "212"
-  },
-  {
-   "quelle": "Formel",
-   "t": 54.39,
-   "typ": "formel",
-   "klang": "pop",
-   "text": "VORHER = JETZT"
-  },
-  {
-   "quelle": "LiveZaehler",
-   "t": 54.93,
-   "typ": "zaehler-ein",
-   "klang": "pop"
-  },
-  {
-   "quelle": "LiveZaehler",
-   "t": 55.03,
-   "typ": "zaehler",
-   "dauer": 1.333,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "t": 56.927,
-   "typ": "uebergang",
-   "art": "zoomwisch",
-   "dauer": 0.5,
-   "quelle": "Zeitleiste",
-   "klang": "whoosh"
-  },
-  {
-   "quelle": "Szene",
-   "t": 57.277,
-   "typ": "sieden",
-   "klang": "sprudeln",
-   "dauer": 3.2,
-   "text": "Kaffee kocht"
-  },
-  {
-   "quelle": "LiveZaehler",
-   "t": 58.35,
-   "typ": "zaehler-ein",
-   "klang": "pop"
-  },
-  {
-   "quelle": "LiveZaehler",
-   "t": 58.45,
-   "typ": "zaehler",
-   "dauer": 1.767,
-   "laufend": true,
-   "klang": "zaehlen"
-  },
-  {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 60.77,
-   "art": "zoom",
-   "dauer": 1.8,
-   "klang": "zoom"
-  },
-  {
-   "quelle": "Chip",
-   "t": 61.65,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "KAFFEE: 80 °C"
-  },
-  {
-   "quelle": "Chip",
-   "t": 62.87,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Szene",
-   "t": 63.47,
-   "typ": "sieden",
-   "klang": "sprudeln",
-   "dauer": 2.6,
-   "text": "Kaffee kocht über"
-  },
-  {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 63.57,
-   "art": "stoss",
-   "dauer": 0.2,
-   "klang": false
-  },
-  {
-   "quelle": "Szene",
-   "t": 65.04,
-   "typ": "kamera",
    "klang": false,
-   "dauer": 1,
-   "text": "Blickwechsel"
+   "bild": false
   },
   {
-   "quelle": "Pointe",
-   "t": 65.29,
-   "typ": "pointe",
-   "klang": "akzent",
-   "text": "SAUERSTOFF | ZUM *ATMEN.*"
+   "t": 18,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 12,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
   },
   {
-   "quelle": "Pointe",
-   "t": 66.93,
-   "typ": "pointe",
-   "klang": "akzent",
-   "text": "STICKSTOFF | FÜR DEN | *DRUCK.*"
+   "t": 18.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 11.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
   },
   {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 68.32,
-   "art": "stoss",
-   "dauer": 0.2,
+   "t": 19,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 11,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 19.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 10.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 20,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 10,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 20.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 9.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 20.5,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Der Sauerstoff bleibt, nur das andere Gas geht.",
+   "woerter": 8,
+   "quelle": "Szene",
    "klang": false
   },
   {
+   "t": 21,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 9,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
    "quelle": "Szene",
-   "t": 68.32,
-   "typ": "welle",
-   "klang": "boom",
-   "dauer": 0.6,
-   "text": "Stickstoff kehrt zurück"
+   "klang": false,
+   "bild": false
   },
   {
+   "t": 21.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 8.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
    "quelle": "Szene",
-   "t": 68.57,
-   "typ": "klatsch",
-   "klang": "weg",
-   "text": "Tüten blasen sich wieder auf"
+   "klang": false,
+   "bild": false
   },
   {
-   "quelle": "Chip",
-   "t": 68.64,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "DEIN SZENARIO?"
+   "t": 22,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 8,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
   },
   {
-   "typ": "kamera",
-   "quelle": "Regie",
-   "t": 68.72,
-   "art": "schleife",
-   "dauer": 4.513,
+   "t": 22.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 7.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 23,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 7,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 23.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 6.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 24,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 6,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 24.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 5.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 24.5,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Noch ist alles ruhig.",
+   "woerter": 4,
+   "quelle": "Szene",
    "klang": false
   },
   {
-   "t": 68.72,
-   "typ": "schleife",
-   "dauer": 4.513,
-   "klang": "rueck",
-   "quelle": "Massstab"
+   "t": 25,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
   },
   {
-   "quelle": "Chip",
-   "t": 70.95,
-   "typ": "chip-weg",
+   "t": 25.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 4.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 26,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 4,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 26.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 3.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 27,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 3,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 27.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 2.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 28,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 2,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 28.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 1.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 28.8,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Jetzt beginnt er zu verschwinden.",
+   "woerter": 5,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 29,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 1,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 29.5,
+   "typ": "anzeige",
+   "etikett": "Stickstoff fehlt in",
+   "wert": 0.5,
+   "einheit": "s",
+   "unter": "Normale Luft · 1.013 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 30,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.25,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 0 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 30.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1001.807,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 10 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 31,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 969.221,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 20 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 31.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 920.452,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 50 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 32,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 862.925,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 90 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 32.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 805.398,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 140 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 33,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 756.629,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 180 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 33,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Du atmest weiter, der Sauerstoff reicht.",
+   "woerter": 6,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 33.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 724.042,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 210 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 34,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 712.599,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 220 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 34.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 703.055,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 230 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 35,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 675.95,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 260 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 35.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 635.622,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 310 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 36,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 588.525,
+   "einheit": "hPa",
+   "unter": "Sekunde 1 von 5 · deine Lunge: wie in 380 m Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 36.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 83.348,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 37,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 81.518,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 37.2,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Der Druck sinkt, der Kaffee beginnt zu sieden.",
+   "woerter": 8,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 37.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 80.313,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 37.9,
+   "typ": "szene",
+   "name": "boil",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 38,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 79.988,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 38.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 79.718,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 39,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 79.077,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 39,
+   "typ": "szene",
+   "name": "klatsch",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 39.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 78.104,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 40,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 76.862,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 40.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 75.44,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 41,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 73.958,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 41,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Die Chipstüten sacken in sich zusammen.",
+   "woerter": 6,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 41.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 72.56,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 42,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 71.404,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 42.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 70.637,
+   "einheit": "°C",
+   "unter": "Sekunde 2 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 43,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 70.368,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 43.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 70.158,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 44,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 69.544,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 44.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 68.575,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 45,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 67.337,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 45,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Die Tüten liegen flach wie vakuumverpackt.",
+   "woerter": 6,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 45.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 65.954,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 46,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 64.585,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 46.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 63.414,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 47,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 62.62,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 47.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 62.338,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 48,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 62.338,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 48.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 62.338,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 49,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 62.338,
+   "einheit": "°C",
+   "unter": "Sekunde 3 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 49,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Wasser kocht jetzt schon bei 62 Grad.",
+   "woerter": 7,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 49.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 62.338,
+   "einheit": "°C",
+   "unter": "Sekunde 4 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 50,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 62.338,
+   "einheit": "°C",
+   "unter": "Sekunde 4 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 50.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 62.338,
+   "einheit": "°C",
+   "unter": "Sekunde 4 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 51,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 62.338,
+   "einheit": "°C",
+   "unter": "Sekunde 4 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 51.5,
+   "typ": "anzeige",
+   "etikett": "Siedepunkt",
+   "wert": 62.338,
+   "einheit": "°C",
+   "unter": "Sekunde 4 von 5 · dein Kaffee hat 80 °C",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 52,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 1.563,
+   "einheit": "s",
+   "unter": "Sekunde 4 von 5 · Luftdruck 222 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 52.5,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 1.484,
+   "einheit": "s",
+   "unter": "Sekunde 4 von 5 · Luftdruck 222 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 52.8,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Dein Kaffee hat achtzig und kocht über.",
+   "woerter": 7,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 53,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 1.406,
+   "einheit": "s",
+   "unter": "Sekunde 4 von 5 · Luftdruck 222 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 53.5,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 1.328,
+   "einheit": "s",
+   "unter": "Sekunde 4 von 5 · Luftdruck 222 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 54,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 1.25,
+   "einheit": "s",
+   "unter": "Sekunde 4 von 5 · Luftdruck 222 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 54.5,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 1.172,
+   "einheit": "s",
+   "unter": "Sekunde 4 von 5 · Luftdruck 222 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 54.5,
+   "typ": "szene",
+   "name": "palette",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 55,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 1.094,
+   "einheit": "s",
+   "unter": "Sekunde 4 von 5 · Luftdruck 222 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 55.5,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 1.016,
+   "einheit": "s",
+   "unter": "Sekunde 4 von 5 · Luftdruck 222 hPa",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 56,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.938,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 56.5,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.859,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 56.6,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Die Palette bricht in sich zusammen.",
+   "woerter": 6,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 56.8,
+   "typ": "szene",
+   "name": "crash",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 57,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.781,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 57.5,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.703,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 58,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.625,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 58.5,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.547,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 59,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.469,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 59.5,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.391,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 60,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.313,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 60.5,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.234,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 61,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.156,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 61.4,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Fünf Sekunden sind vorbei.",
+   "woerter": 4,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 61.5,
+   "typ": "anzeige",
+   "etikett": "Sekunden bis zur Rückkehr",
+   "wert": 0.078,
+   "einheit": "s",
+   "unter": "Hier: 222 hPa, wie in 11 km Höhe",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 62,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 222.064,
+   "einheit": "hPa",
+   "unter": "Sekunde 5 von 5 vorbei",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 62,
+   "typ": "szene",
+   "name": "rueck",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 62.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 244.571,
+   "einheit": "hPa",
+   "unter": "Sekunde 5 von 5 vorbei",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 63,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 402.124,
+   "einheit": "hPa",
+   "unter": "Sekunde 5 von 5 vorbei",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 63.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 773.589,
+   "einheit": "hPa",
+   "unter": "Sekunde 5 von 5 vorbei",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 64,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 974.357,
+   "einheit": "hPa",
+   "unter": "Sekunde 5 von 5 vorbei",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 64.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.07,
+   "einheit": "hPa",
+   "unter": "Sekunde 5 von 5 vorbei",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 65,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.25,
+   "einheit": "hPa",
+   "unter": "Nach fünf Sekunden wieder normal",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 65.2,
+   "typ": "satz",
+   "dauer": 3.6,
+   "text": "Der Stickstoff ist zurück, die Tüten blähen sich auf.",
+   "woerter": 9,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 65.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.25,
+   "einheit": "hPa",
+   "unter": "Nach fünf Sekunden wieder normal",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 66,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.25,
+   "einheit": "hPa",
+   "unter": "Nach fünf Sekunden wieder normal",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 66.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.25,
+   "einheit": "hPa",
+   "unter": "Nach fünf Sekunden wieder normal",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 67,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.25,
+   "einheit": "hPa",
+   "unter": "Nach fünf Sekunden wieder normal",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 67.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.25,
+   "einheit": "hPa",
+   "unter": "Nach fünf Sekunden wieder normal",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 68,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.25,
+   "einheit": "hPa",
+   "unter": "Nach fünf Sekunden wieder normal",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 68.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.25,
+   "einheit": "hPa",
+   "unter": "Nach fünf Sekunden wieder normal",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 69,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.25,
+   "einheit": "hPa",
+   "unter": "Nach fünf Sekunden wieder normal",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 69.5,
+   "typ": "anzeige",
+   "etikett": "Luftdruck",
+   "wert": 1013.25,
+   "einheit": "hPa",
+   "unter": "Nach fünf Sekunden wieder normal",
+   "quelle": "Szene",
+   "klang": false,
+   "bild": false
+  },
+  {
+   "t": 70,
+   "typ": "abblende",
+   "dauer": 2,
+   "quelle": "Szene",
+   "klang": false
+  },
+  {
+   "t": 72,
+   "typ": "abspann",
+   "dauer": 8,
+   "text": "Was wäre, wenn der Stickstoff 5 Sekunden verschwindet?",
+   "fakt": "222 hPa entsprechen etwa 11 km Höhe (ICAO-Standardatmosphäre) · Wasser siedet dort bei 62 °C · Luft: 78,08 % N₂, 20,95 % O₂",
+   "quelle": "Szene",
    "klang": false
   }
  ],

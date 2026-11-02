@@ -5,6 +5,8 @@
   "description": "Render-Pipeline für Simulierbar (Three.js-Szenen, Headless-Chrome, ffmpeg)",
   "type": "module",
   "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/eb-garamond": "^5.3.0",
     "@fontsource/inter": "^5.3.0",
     "three": "^0.170.0"
   },

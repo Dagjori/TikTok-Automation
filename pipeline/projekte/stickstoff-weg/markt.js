@@ -90,7 +90,7 @@ function tuetenTextur() {
   });
 }
 
-export function tuetenMaterial() {
+export function tuetenMaterial({ attr = false } = {}) {
   const uni = { uT: { value: -10 }, uRueck: { value: 0 } };
   const m = new THREE.MeshStandardMaterial({ map: tuetenTextur(), roughness: 0.34, metalness: 0.5, color: 0xffffff });
   m.userData.uni = uni;
@@ -98,14 +98,14 @@ export function tuetenMaterial() {
     sh.uniforms.uT = uni.uT; sh.uniforms.uRueck = uni.uRueck;
     sh.vertexShader = sh.vertexShader
       .replace("#include <common>", `#include <common>
-attribute float seite; uniform float uT; uniform float uRueck; varying float vKc;
+attribute float seite; ${attr ? 'attribute float dlyA;' : ''} uniform float uT; uniform float uRueck; varying float vKc;
 float tkHash(vec3 p){ return fract(sin(dot(p, vec3(12.9898, 78.233, 37.719))) * 43758.5453); }
 float tkK(float tt){ if (tt < 0.0) return 0.0; return clamp(1.0 - exp(-tt * 13.0) * cos(tt * 21.0), 0.0, 1.06); }
 float tkAuf(float tt){ if (tt < 0.0) return 0.0; return 1.0 - exp(-tt * 9.0) * cos(tt * 17.0); }`)
       .replace("#include <beginnormal_vertex>", `#include <beginnormal_vertex>
 float dly = 0.0;
 #ifdef USE_INSTANCING
-dly = tkHash(instanceMatrix[3].xyz) * 0.32;
+${attr ? 'dly = dlyA;' : 'dly = tkHash(instanceMatrix[3].xyz) * 0.32;'}
 #endif
 float kk = tkK(uT - dly) * (1.0 - clamp(tkAuf(uRueck - dly * 0.6), 0.0, 1.0));
 float kc = clamp(kk, 0.0, 1.0);
@@ -199,7 +199,7 @@ export function gelenkFigur({ jacke = "#4E5D8C", hose = "#2A2F3D", haare = "#4A2
   return { g: root, hueft, ober, beine, kopf, armL, armR, rumpf, sk };
 }
 
-function einkaufswagen() {
+export function einkaufswagen() {
   const g = new THREE.Group();
   const draht = mat("#C9CED8", { rau: 0.3, metall: 0.8 });
   const boden = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.03, 0.5), draht); boden.position.y = 0.38; g.add(boden);

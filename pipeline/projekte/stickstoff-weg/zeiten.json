@@ -1,0 +1,142 @@
+{
+ "dauer": 80,
+ "titelBis": 3.5,
+ "start": 30.0,
+ "sekunde": 6.4,
+ "ende5": 62.0,
+ "ueberleitung": {
+  "boil": 37.9,
+  "klatsch": 39.0,
+  "palette": 54.5,
+  "crash": 56.8,
+  "rueck": 62.0
+ },
+ "fKnoten": [
+  [
+   0,
+   1.0
+  ],
+  [
+   30.0,
+   1.0
+  ],
+  [
+   34.0,
+   0.62
+  ],
+  [
+   37.9,
+   0.3185
+  ],
+  [
+   43.0,
+   0.12
+  ],
+  [
+   47.5,
+   0.0
+  ],
+  [
+   62.0,
+   0.0
+  ]
+ ],
+ "rueckDauer": 2.6,
+ "schwarz": [
+  70.0,
+  72.0
+ ],
+ "abspann": [
+  72.0,
+  80.0
+ ],
+ "saetze": [
+  [
+   4.5,
+   "Ein Montagabend im Supermarkt."
+  ],
+  [
+   8.5,
+   "Du hörst Wagen rollen und Stimmen murmeln."
+  ],
+  [
+   12.5,
+   "78 Prozent der Luft sind Stickstoff."
+  ],
+  [
+   16.5,
+   "Gleich fehlt er, für genau fünf Sekunden."
+  ],
+  [
+   20.5,
+   "Der Sauerstoff bleibt, nur das andere Gas geht."
+  ],
+  [
+   24.5,
+   "Noch ist alles ruhig."
+  ],
+  [
+   28.8,
+   "Jetzt beginnt er zu verschwinden."
+  ],
+  [
+   33.0,
+   "Du atmest weiter, der Sauerstoff reicht."
+  ],
+  [
+   37.2,
+   "Der Druck sinkt, der Kaffee beginnt zu sieden."
+  ],
+  [
+   41.0,
+   "Die Chipstüten sacken in sich zusammen."
+  ],
+  [
+   45.0,
+   "Die Tüten liegen flach wie vakuumverpackt."
+  ],
+  [
+   49.0,
+   "Wasser kocht jetzt schon bei 62 Grad."
+  ],
+  [
+   52.8,
+   "Dein Kaffee hat achtzig und kocht über."
+  ],
+  [
+   56.6,
+   "Die Palette bricht in sich zusammen."
+  ],
+  [
+   61.4,
+   "Fünf Sekunden sind vorbei."
+  ],
+  [
+   65.2,
+   "Der Stickstoff ist zurück, die Tüten blähen sich auf."
+  ]
+ ],
+ "satzDauer": 3.6,
+ "phasen": {
+  "countdown": [
+   4.0,
+   30.0
+  ],
+  "druck": [
+   30.0,
+   36.5
+  ],
+  "siede": [
+   36.5,
+   52.0
+  ],
+  "rest": [
+   52.0,
+   62.0
+  ],
+  "nachher": [
+   62.0,
+   70.0
+  ]
+ }
+}
