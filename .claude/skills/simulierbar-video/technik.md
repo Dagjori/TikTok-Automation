@@ -83,15 +83,24 @@ window.renderAt(0); window.__fertig = true;
 Alles muss eine reine Funktion von `t` sein (jedes Bild einzeln renderbar). Werte für Zähler und Objekte kommen aus der getesteten Rechnung.
 
 ## Render und Mux
+**Standard: Render-Dienst auf dem Windows-PC des Inhabers** (GPU; `pipeline/render_dienst/`, `docs/18-render-pc.md`):
 ```bash
 cd pipeline
-node render.js projekte/<name> --zeiten 0.5,8,20,30,45,55,70 --worker 1            # Standbilder (PNG) zur Abnahme
+node render.js projekte/<name> --zeiten 0.5,8,20,30,45,55,70 --worker 1           # Standbilder (PNG) zur Abnahme, in der Cloud
+# Projekt inkl. audio/stimme.mp3 + audio/timing.json committen und pushen (der PC sieht nur GitHub), dann:
+python3 render_dienst/auftrag.py senden <name> --konto simulierbar                 # Exit 3 = PC offline → Cloud-Render (unten)
+python3 render_dienst/auftrag.py warten                                            # im Hintergrund starten (run_in_background): kostet beim Warten nichts, holt out/<name>/<name>.mp4
+```
+Exit-Codes von `senden`/`warten`: 0 ok · 1 Fehler · 2 Voraussetzung fehlt (nicht gepusht/committet, Stimme fehlt) · 3 PC offline oder ausgefallen · 4 Zeitlimit · 5 keine GPU.
+
+**Rückfall Cloud-Render** (nur bei Exit 3, vorher offenen Auftrag mit `python3 render_dienst/auftrag.py aufraeumen --alles` entfernen, sonst rendert der PC beim Wiederkommen doppelt):
+```bash
 node render.js projekte/<name> --worker 2                                           # alle Bilder (JPG), fortsetzbar mit --nur-fehlende
 ./mux.sh projekte/<name>                                                            # → out/<name>/<name>.mp4, −14 LUFS
 ```
-Andere Prozesse mit Vorrang: `nice -n 15` voranstellen und `--worker 1`. Windows-PC: `--gpu`.
+Andere Prozesse mit Vorrang: `nice -n 15` voranstellen und `--worker 1`.
 
-**Gemessene Renderzeiten der Demo-Szenen:** `stile.md`. Ziel ≤ 3 s/Bild im echten Video; wird es mehr: `msaa=0` (FXAA reicht meist), Schatten 1024, Spiegelung `aufloesung 0.22`, Nebellagen weglassen, mehr `buendeln`.
+**Gemessene Renderzeiten der Demo-Szenen (Cloud, ohne GPU):** `stile.md`. Ziel ≤ 3 s/Bild beim Cloud-Rückfall; wird es mehr: Spiegelung aus bzw. `aufloesung 0.18`, Schatten 1024, Nebellagen weglassen, mehr `buendeln`. Auf dem PC mit GPU unkritisch.
 
 ## Posting (vollautomatisch, nach bestandener Prüfung)
 ```bash

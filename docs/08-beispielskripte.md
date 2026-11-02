@@ -16,7 +16,7 @@
 |---|---|---|---|---|
 | 1 | **Scroll-Stopper-Hook** | 0–5 s | Duell-Frage in max. 2 kurzen Sätzen („X oder Y? Wer/Was … wirklich …?“) oder Du-Szenario („Du stehst im Stau. Plötzlich …“). Stimme startet unter 0,2 s. | Ganze Szene mit beiden Seiten von Bild 1 an. Titel baut sich Wort für Wort auf. Schon etwas in Bewegung. |
 | 2 | **Regeln** | 3–12 s | 3–6 Mini-Fakten, 2–5 Wörter je Satz | Jede Regel poppt als Chip in Teamfarbe auf |
-| 3 | **Denkfalle und Start** | 9–16 s | „Klar, [naheliegende Antwort]. Oder?“, dann „Los geht's.“ | Sticker „KLAR!“ bzw. „ODER?“, Startsignal, Uhr und Zähler starten |
+| 3 | **Denkfalle und Start** | 9–16 s | „Klar, [naheliegende Antwort]. Oder?“, ruhig gesprochen, **kein „Los geht's“** (Inhaber 02.11.) | Welt reagiert (Licht, Kamera), Uhr und Zähler starten; **keine Sticker** (Inhaber 02.11.) |
 | 4 | **Rennen** | 12–45 s | Kommentar wie ein Sportreporter, alle 2–3 s ein Zwischenstand, Führungswechsel, Countdown-Zahlen („fünfzehn, dreizehn, zwölf“), „Jetzt wird's knapp.“ | Zähler laufen, Kamera folgt, alle 1–2 s ein neues Bild-Ereignis |
 | 5 | **Folgen-Aufruf** | ca. 20 s, max. 2 s | „Folg mir, damit du nichts verpasst.“ (Wunsch des Inhabers), direkt vor der ersten Wendung | kleines Element „+ Folgen“, Rennen läuft weiter |
 | 6 | **Erste Wendung** | 18–25 s | „Aber jetzt kommt das Merkwürdige:“ bzw. „Doch …“ | Kamera-Zoom auf den entscheidenden Moment, Vergleichskarte |
@@ -99,7 +99,7 @@ Die Zahlen stammen aus der eigenen Simulation `pipeline/projekte/spurwechsel/sim
 |---|---|---|
 | Hook | Spur wechseln oder bleiben? Wer ist im Stau wirklich schneller? | `Spur wechseln – oder bleiben?` / `[curious] Wer ist im Stau WIRKLICH schneller?` |
 | Regeln | Fünf Kilometer Stau. Zwei Spuren. Paul wechselt, sobald es nebenan schneller läuft. Anna bleibt einfach drin. | `Fünf Kilometer Stau.` / `Zwei Spuren.` / `Paul wechselt, sobald es nebenan schneller läuft.` / `Anna bleibt einfach drin.` |
-| Denkfalle und Start | Klar, Paul gewinnt. Oder? Los geht's. | `Klar, Paul gewinnt.` / `Oder?` / `[excited] Los geht's!` |
+| Denkfalle und Start | Klar, Paul gewinnt. Oder? | `Klar, Paul gewinnt.` / `Oder?` (ruhig; seit 02.11. ohne „Los geht's“ und ohne [excited]) |
 | Rennen | Paul wechselt sofort. Und steht direkt hinter Anna. Nach anderthalb Minuten: Anna liegt 160 Meter vorn. | `Paul wechselt sofort.` / `Und steht… direkt hinter Anna.` / `Nach anderthalb Minuten:` / `Anna liegt hundertsechzig Meter VORN.` |
 | Folgen-Aufruf | Folg mir, damit du nichts verpasst. | `Folg mir, damit du nichts verpasst.` |
 | Wendung 1 | Denn jetzt kommt das Merkwürdige: Fünf Wechsel später steht Paul wieder hinter ihr. | `[surprised] Denn jetzt kommt das Merkwürdige:` / `Fünf Wechsel später…` / `steht Paul WIEDER hinter ihr.` |

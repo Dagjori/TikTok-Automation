@@ -241,7 +241,7 @@ Uhrzeiten aus [`data/plan/posting_zeiten.json`](../data/plan/posting_zeiten.json
 
 - **Agentenarbeit:** 10 Videos mit Aufwand 2 (1,5 Std.), 43 mit 3 (3 Std.), 7 mit 4 (5 Std.) = **ca. 179 Std.** in 30 Tagen, also ca. 6 Std. pro Tag für 2 Videos (S, Raster wie bisher).
 - **Stil-Baukästen:** Die fünf neuen Stile 17–21 haben seit 02.11. einen Grund-Baukasten (`sim_atmosphaere.js` und je Stil ein Modul). Themenspezifische Objekte kommen beim ersten Einsatz dazu, ca. 1–3 Std. je Video (S).
-- **Render in der Cloud ohne GPU:** gemessene Sekunden je Bild der neuen Stile siehe `docs/10` §0 (Demo-Messung 02.11.); mit ca. 2–3 s je Bild ergeben die 60 Videos **ca. 80–120 Std.**, also ca. 3–4 Std. pro Tag (S). Dazu kommen die 2 Videos von Account 2. Der Windows-PC mit GPU löst den Engpass.
+- **Render in der Cloud ohne GPU:** gemessene Sekunden je Bild der neuen Stile siehe `docs/10` §0 (Demo-Messung 02.11.); gemessen 1,7–4,0 s je Bild (Ø ca. 2,5 s), damit ergeben die 60 Videos beim Cloud-Rückfall **ca. 100 Std.**, also ca. 3,3 Std. pro Tag (S). Standard ist der Render-Dienst auf dem Windows-PC mit GPU (`docs/18-render-pc.md`), dort unkritisch.
 - **Regel des Inhabers (02.11.):** höchstens 4 Videos gleichzeitig in Arbeit, höchstens 2 Produktions-Agenten (Sonnet), gestaffelt. Erstbauten mit Opus.
 - **Stimme:** ca. 170–220 Wörter je Video wie bisher; bei Bedarf nächstgrößerer ElevenLabs-Plan (CLAUDE.md).
 - **Inhaber:** nichts zu tun außer dem Startsignal; Claude prüft und plant selbst in Buffer ein.

@@ -43,7 +43,7 @@ Muster mit allen Bausteinen: `pipeline/projekte/_demo-simulierbar/` (eine Welt j
 4. **Stimme**: `python3 tts.py projekte/<name>` → `audio/stimme.mp3` + `audio/timing.json`. (5 Min.)
 5. **Szene** `szene.html` + `szene.js` aus dem Gerüst in `technik.md`: Welt im Stil-Baukasten, Licht und Atmosphäre (`licht-und-atmosphaere.md`), Kamera-Regie, HUD (`design.md`). Fehlende Objekte im Stil-Modul ergänzen (wiederverwendbar). (2–4 Std.)
 6. **Standbilder** an 6–8 Schlüsselstellen (Hook, Regeln, Wendung, Ergebnis, Warum, Schluss) rendern, gegen `design.md`, `stile.md` und den Skript-Bild-Abgleich prüfen, nachbessern. (20–40 Min.)
-7. **Render** aller Bilder (`node render.js projekte/<name> --worker 2`), Ton und Mux (`./mux.sh projekte/<name>`). (Cloud ca. 1,5–3 Std. Rechenzeit, Windows-PC mit `--gpu` deutlich schneller)
+7. **Render** über den Render-Dienst auf dem Windows-PC: committen und pushen, `python3 pipeline/render_dienst/auftrag.py senden <name> --konto simulierbar`, dann `auftrag.py warten` im Hintergrund (holt das MP4). Bei Exit 3 (PC offline) Rückfall Cloud: `node render.js projekte/<name> --worker 2` und `./mux.sh projekte/<name>` (`technik.md`). (PC: Minuten; Cloud ca. 1–3 Std. Rechenzeit)
 8. **Prüfung** nach `pruefung.md` (Skripte + Kontaktbogen + Sichtprüfung). (20 Min.)
 9. **Posting** über `python3 post_buffer.py --kanal simulierbar --zeit auto:<datum>:<slot>` mit Caption, ohne KI-Label; nach dem Posten `--nachpruefen`. (5 Min.)
 

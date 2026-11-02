@@ -118,7 +118,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
     - Echte Blender-Renders (Cycles) nur für Standbilder, Logo und kurze Szenen. Für ganze Videos in Blender-Optik gilt der Weg „Blender backen → glTF → Three.js“ (Stil 15, ca. 0,9 s/Bild).
   - **Kein Kanalname, kein Logo, keine Rubrik im Video**, nie (Entscheidung 31.10.). Das Logo ist Konzept A „S-Kurve“ (`marke/logo/a-s-kurve/`, Entscheidung 01.11.), als statisches Profilbild ohne Animation.
   - **Designstil je Video:**
-    - genau einer aus dem Stil-Katalog in `docs/10-designstile.md` (Abschnitt 0, derzeit 15 Stile), passend zum Thema
+    - genau einer aus dem Stil-Katalog in `docs/10-designstile.md` (Abschnitt 0), passend zum Thema; **für Simulierbar seit 02.11. nur die Stile 17–21** (Nachtstadt-Miniatur, Dunkles Studio, Architekturmodell, Glas & Licht, Nachtkarte; Details im Skill `simulierbar-video`, `stile.md`)
     - **kein fester Look als Markenzeichen, unser Markenzeichen ist die Qualität** (Entscheidung 01.11.)
     - Stilwahl mit Konkurrenz-Recherche: erfolgreiche Videos zum Thema ansehen, welcher Look trägt es am besten (`docs/10`, Abschnitt 0)
     - nie zweimal derselbe Stil hintereinander
@@ -175,7 +175,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
   - Nutzung: `pipeline/README.md`
 - **Blender:** `bpy` 5.2.3 läuft in der Cloud (`/home/user/.venv-blender`, nach Neustart des Containers neu installieren: `python3 -m venv ~/.venv-blender && ~/.venv-blender/bin/pip install bpy==5.2.3`). Cycles läuft auf der CPU (langsam). Ganze Videos in Blender nur auf dem Windows-PC mit GPU.
 - **Referenz:** https://github.com/stochosfrance/lowpoly-reel (MIT).
-- **Render-Rechner:** Windows-PC des Inhabers (GPU). Die Pipeline muss unter Windows laufen (Node.js, Chrome bzw. Chromium, ffmpeg, Python, Blender). Bis dahin rendert die Cloud ohne GPU (ca. 45–60 Min. pro Video).
+- **Render-Rechner (Inhaber 02.11.):** Die ganze Arbeit bleibt in der Cloud-Sitzung, **nur das Rendern läuft auf dem Windows-PC des Inhabers (GPU)** über den Render-Dienst ohne KI (`pipeline/render_dienst/`, Anleitung `docs/18-render-pc.md`): `auftrag.py senden <projekt> --konto …`, dann `auftrag.py warten` im Hintergrund (kein Modell-Aufwand). Exit 3 = PC offline bzw. keine GPU → Rückfall Cloud-Render (ca. 2 Std. je 80-s-Video). Cloud braucht `SUPABASE_URL` als Umgebungsvariable.
 - **Modellwahl:**
   - Opus 5.5 für Architektur und neue Szenentypen
   - Sonnet 5.5 für die tägliche Produktion: Produktions-Agenten **ausdrücklich mit `model: sonnet` starten**, sonst erben sie Opus (bis 01.11. versehentlich so)

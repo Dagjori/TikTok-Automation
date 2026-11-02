@@ -16,7 +16,16 @@ Renderzeit: Sekunden je Videobild 1080 × 1920 in der Cloud (4 Kerne, ohne GPU, 
 | **20** | **Glas & Licht** | dunkles Labor, Messgefäße im Dunkelfeld (Glas nur über leuchtende Kanten), Geld als leuchtende Flüssigkeit in Teamfarbe (Füllstand = Live-Zähler), Zulauf, Bläschen, Kaustik auf der spiegelnden Bank, Spot-Kegel, Gegenlicht | alles, was sich ansammelt oder abfließt: Kaffee je Tasse, Wasser, Strom, Rente, Sparen (52-Wochen, Tagesgeld), Abo/Vertrag, Kontaktlinsen, Fitnessvertrag, Garantie | `stil_lichtlabor.js` · `welten/lichtlabor.js` (Kapselmaschine oder Vollautomat) | `GRADING.labor` |
 | **21** | **Nachtkarte** | Geländerelief im Mondlicht mit Höhenlinien, Flüssen und Wäldern, Städte als Lichtteppiche, schwaches Straßennetz, Routen in Teamfarbe mit Lichtkopf, Ortsmarken als Lichtsäulen mit Puls, tiefe Wolken mit Parallaxe | Orte und Wege: Pendeln, Jobangebot in zwei Städten, Fahrgemeinschaft, Bahn oder Auto, Homeoffice gegen Arbeitsweg, Reisen | `stil_nachtkarte.js` · `welten/nachtkarte.js` (40 km pendeln oder näher ziehen) | `GRADING.karte` |
 
-**Gemessene Renderzeit (s/Bild) und Demo-Standbild:** siehe Tabelle in `docs/10-designstile.md` §0.6 (wird bei jeder neuen Messung dort nachgetragen).
+### Gemessene Renderzeit (Demo-Szenen)
+| Nr. | Stil | Renderzeit Cloud (s/Bild) | Demo-Standbild |
+|---|---|---|---|
+| 17 | Nachtstadt-Miniatur | **4,0** (über 3 s/Bild, auf dem PC mit GPU unkritisch; Cloud-Rückfall: Spiegelung aus −0,4 s, ohne Spiegelung, Kegel, Tilt-Shift und Schatten 2,5 s) | `?stil=nachtstadt`, t = 8,2 s |
+| 18 | Dunkles Studio | **2,3** | `?stil=studio`, t = 10,4 s |
+| 19 | Architekturmodell | **2,5** | `?stil=architektur`, t = 10,8 s |
+| 20 | Glas & Licht | **1,7** | `?stil=lichtlabor`, t = 10,6 s |
+| 21 | Nachtkarte | **1,9** | `?stil=nachtkarte`, t = 12,6 s |
+
+Messung (F): 02.11.2026, 12 Bilder je Stil (t = 6,0–6,4 s), 1 Worker, ohne Fremdlast (Referenz `_demo-massstab` dabei 2,2 s je Standbild wie zu Beginn der Sitzung), MSAA 0 (FXAA), Schatten 2048, Bloom, HUD, JPG; Werte = „s/Bild effektiv“ von `render.js`. Mit MSAA 2 ca. 25 % mehr (S, Messung unter Last).
 
 ### Hinweise je Stil
 - **17 Nachtstadt:** Gebäude teilen sich den Fassaden-Atlas (ein Material) → nach dem Aufbau `buendeln(szene)`. Teamfarbe als Lack, Lichtspur, LED-Kante. Orange wirkt neben Natriumlicht schwächer: Lichtspur dann etwas heller (`staerke 5`). Kamera von schräg oben über die Straße, Hauptobjekte nicht hinter hohen Vordergrundhäusern; Vordergrund-Blöcke niedrig halten.
