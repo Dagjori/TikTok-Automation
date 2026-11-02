@@ -280,7 +280,7 @@ void main(){ vec3 d = normalize(vD); float y = d.y; float az = atan(d.x, -d.z);
 
   // ---------------------------------------------------------------- Text: Titel, Anzeige, Sätze, Abspann
   const TITEL = "Was wäre, wenn wir wieder in eine Eiszeit steuern?";
-  const FAKT = "Toronto, vor 21.000 Jahren · 2 km Eis, weltweit nur 6 °C kälter";
+  const FAKT = "Toronto, vor 21.000 Jahren\n2 km Eis, weltweit nur 6 °C kälter";
   const SAETZE = [
     [4.8, "Spätsommer über Toronto.", 4.0], [9.5, "Der See glitzert, die Stadt summt.", 4.0], [14.2, "Dann werden die Sommer kürzer.", 4.0],
     [18.9, "Jeder Winter bringt mehr Schnee.", 4.0], [23.6, "Der Schnee bleibt im Sommer liegen.", 4.0], [28.3, "Der Ontariosee friert zu.", 4.0],

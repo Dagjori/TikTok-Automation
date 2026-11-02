@@ -17,7 +17,7 @@
     "weisse_linie": "Eisschild ragt ab ca. 125 km Entfernung über die Kimm (Augenhöhe 151,6 m, Erdkrümmung mit Refraktion k = 0,13, Profil nach Nye mit τ₀ = 100 kPa). Rechnung erhebungGrad() und kimmGrad() im Code.",
     "jahreszeiten": "Darstellung (A): Jahreszeiten als Stichproben – 3 Winter-Pulse (15,0–17,2 s, 19,0–22,2 s, ab 23,4 s), die Sommer dazwischen werden kürzer; ein letzter kurzer Sommer 25,0–26,8 s, in dem der Schnee liegen bleibt. Sonne wandert vom Spätsommerabend (Westen) zum Wintermittag (Süden).",
     "darstellung_wand": "A: Die Front ist als steile Wand gezeichnet (Fuß 110 m, 1.150 m auf 400 m Tiefe, dahinter bis 2.100 m). In der Natur steigt die Eisoberfläche am Rand über einige Kilometer auf mehrere hundert Meter und über 50–200 km auf 2 km an (Nye-Profil). Die gezeigten Höhen entsprechen der Eisdicke über Toronto im LGM.",
-    "hinweis": "Kein „5 Sekunden“-Rahmen. Die Anzeige zeigt echte Größen (Abkühlung, Meeresspiegel, Entfernung), die Unterzeile nennt die Jahre bzw. die Abkühlung."
+    "hinweis": "Die Anzeige zeigt echte Größen (Abkühlung, Meeresspiegel, Entfernung), die Unterzeile nennt die Jahre bzw. die Abkühlung."
   },
   "anzeige": [
     {"von": 0, "etikett": "ABKÜHLUNG WELTWEIT", "wert": "0,0 → −2,8 °C", "unter": "HEUTE / IN … JAHREN"},
