@@ -220,13 +220,13 @@
   },
   {
    "quelle": "Chip",
-   "t": 14.33,
+   "t": 14,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 14.33,
+   "t": 14,
    "typ": "chip-weg",
    "klang": false
   },
@@ -966,6 +966,21 @@
    "t": 45.14,
    "typ": "chip-weg",
    "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.39,
+   "typ": "kamera",
+   "klang": "whoosh",
+   "dauer": 1,
+   "text": "Totale: Fahrt zur Erklärung"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.87,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "Warum-Karte"
   },
   {
    "quelle": "Balken",

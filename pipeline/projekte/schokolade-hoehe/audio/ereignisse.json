@@ -78,6 +78,14 @@
   },
   {
    "quelle": "Szene",
+   "t": 2.32,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.9,
+   "text": "Blickwechsel"
+  },
+  {
+   "quelle": "Szene",
    "t": 4.02,
    "typ": "kamera",
    "klang": false,

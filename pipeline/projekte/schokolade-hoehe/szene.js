@@ -857,6 +857,7 @@ async function start() {
   const vorn = (t, p) => flach(p, 300, -85); // Standardblick: voraus, leicht abwärts
   const ziele = [
     { t: 0, z: () => V(0, 0.42, -2.6), d: 0 },
+    { t: T("hook:hebt") - 0.25, z: () => V(0.0, 0.9, -2.0), d: 0.9 }, // „hebt dich …“: Blick wandert vom Fenster zur Tafel
     { t: tWie - 0.15, z: () => V(0.0, 0.95, -0.9), d: 0.8 }, // Hook → Tafel ansehen
     { t: T("regeln:Du") - 0.2, z: () => V(0.0, 0.85, -0.7), d: 0.55 }, // „Du wiegst …“: Blick leicht nach unten
     { t: T("Luftwiderstand.") - 1.1, z: () => V(0.1, 1.45, -2.6), d: 0.95 }, // „Ohne Luftwiderstand“: Blick aus dem Fenster

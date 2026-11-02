@@ -271,14 +271,14 @@ async function start() {
   // =====================================================================================
   // Kamera: Ich-Perspektive (Augenhöhe), Blickziele im Takt der Stimme
   // =====================================================================================
-  const COFFEE_EYE = [-1.3, 1.5, 1.22];
+  const COFFEE_EYE = [-1.4, 1.44, 1.3];
   const augeKeys = [
     { t: 0, v: [0, 1.65, 0] },
     { t: tS3 - 0.5, v: [0, 1.65, 0] },
     { t: tS3 + 0.9, v: [-0.15, 1.62, 0.4], e: ease.inOutCubic }, // ein Schritt zurück: die ganze Tütenwand passt ins Bild
     { t: tS5 - 0.1, v: [-0.15, 1.62, 0.4] },
-    { t: tZischt + 0.4, v: [-0.6, 1.58, 0.8], e: ease.inOutCubic }, // zur Backstation
-    { t: tErg + 0.5, v: [-0.6, 1.58, 0.8] },
+    { t: tZischt + 0.4, v: [-1.0, 1.52, 1.0], e: ease.inOutCubic }, // zur Backstation
+    { t: tErg + 0.5, v: [-1.0, 1.52, 1.0] },
     { t: tUeb - 0.7, v: COFFEE_EYE, e: ease.inOutCubic }, // (liegt in der Totalen, unsichtbar)
     { t: tMerk + 0.35, v: COFFEE_EYE },
     { t: tSchluss - 0.25, v: [0, 1.65, 0], e: ease.inOutCubic }, // zurück in den Gang
@@ -333,7 +333,7 @@ async function start() {
     { t: tAtmest, v: 60, e: ease.inOutSine }, { t: tSauer + 0.6, v: 66, e: ease.inOutSine },
     { t: tAber, v: 62, e: ease.inOutSine }, { t: tHoehe, v: 68, e: ease.inOutSine },
     { t: tS3 + 0.3, v: 74, e: ease.inOutSine }, { t: tS4 + 0.3, v: 66, e: ease.inOutSine },
-    { t: tHinter, v: 60, e: ease.inOutSine }, { t: tUeb - 0.5, v: 52 }, { t: tUeber, v: 46, e: ease.inOutSine }, { t: tMerk, v: 52, e: ease.inOutSine },
+    { t: tHinter, v: 58, e: ease.inOutSine }, { t: tUeb - 0.5, v: 48 }, { t: tUeber, v: 42, e: ease.inOutSine }, { t: tMerk, v: 52, e: ease.inOutSine },
     { t: tSchluss - 0.3, v: 70, e: ease.inOutSine }, { t: DAUER, v: 70 },
   ];
   const regie = new Regie(kam(), (t) => {
