@@ -264,7 +264,7 @@ Auswertung am 02.11. (je 1 Bild pro 2 s, Lautheitsverlauf, Spracherkennung). Die
 **Aufbau (F, in allen vier gleich):**
 | Zeit | Bild | Text |
 |---|---|---|
-| 0–3,5 s | Weite, belebte Szene aus fester Ich-Perspektive von erhöhtem Standpunkt (Balkon, Dachterrasse, Aussichtspunkt), Geländer bzw. Brüstung im Vordergrund | Titelfrage „Was wäre, wenn …?“ in Serifenschrift, weiß, mittig im oberen Drittel, blendet aus |
+| 0–4,4 s | Weite, belebte Szene aus fester Ich-Perspektive von erhöhtem Standpunkt (Balkon, Dachterrasse, Aussichtspunkt), Geländer bzw. Brüstung im Vordergrund | Titelfrage „Was wäre, wenn …?“ in Serifenschrift, weiß, mittig im oberen Drittel, blendet aus |
 | 4–30 s | Alltag, erste Anzeichen, die Welt lebt (Menschen, Autos, Vögel, Wasser) | Messwert-Anzeige links auf halber Höhe läuft (Countdown oder Anstieg); unten kurze kursive Sätze |
 | 30–55 s | Eskalation in Stufen, Licht- und Farbstimmung kippt, Wind, Trümmer, Staub | Anzeige wechselt 2–4× ihr Etikett (neue Messgröße je Stufe) |
 | 55–62 s | Höhepunkt erreicht den Standpunkt, Kamera wird erschüttert | Anzeige zeigt „HIER“ bzw. 0 |
@@ -276,8 +276,8 @@ Auswertung am 02.11. (je 1 Bild pro 2 s, Lautheitsverlauf, Spracherkennung). Die
 - **Keine Stimme.** Ton nur aus selbst erzeugter Atmo und Sounddesign passend zum Ort (Vögel, Wind, Stadt, Wasser, tiefes Grollen beim Ereignis), −14 LUFS integriert, Verlauf wie oben (leise → Höhepunkt → leise).
 - **Kamera:** eine durchgehende Einstellung aus fester Ich-Perspektive (Augenhöhe, erhöhter Standpunkt, Vordergrund-Element wie Geländer, Brüstung, Fensterrahmen). Nur leichtes Atmen der Kamera, beim Höhepunkt Erschütterung bzw. Kippen. Keine Schnitte.
 - **Die Welt ist die Kunst:** belebt und detailreich (viele kleine Menschen, Fahrzeuge, Vögel, Bäume, Wasser), filmisches Licht, Dunst, Tiefenunschärfe, Farbstimmung folgt dem Ereignis. Alles, was im Text steht, ist im selben Moment zu sehen.
-- **Nur drei Textebenen**, alles in Serifenschrift (freie Schrift mit OFL-Lizenz, lokal eingebunden):
-  1. Titelfrage 0–3,5 s, mittig oben.
+- **Nur drei Textebenen** (Schriften frei mit OFL-Lizenz, lokal eingebunden; Titel, Zahl, Sätze und Abspann-Titel Serif, Etikett, Unterzeile und Faktenzeile serifenlose Versalien, §12b):
+  1. Titelfrage 0,4–4,4 s, mittig oben (Korrektur 02.11. nach Messung, vorher 3,5 s).
   2. Messwert-Anzeige links Mitte: kleines Etikett in Versalien, große Zahl, kleine Unterzeile; die Zahl läuft durchgehend und stimmt mit unserer Rechnung überein.
   3. Ein kurzer kursiver Satz unten Mitte, 3–9 Wörter, je ca. 4 s, insgesamt ca. 14–17 Sätze, ruhig, Präsens, Du-Perspektive erlaubt.
 - **Abspann 72–80 s:** Titelfrage plus Faktenzeile mit echtem Bezug aus unserer Rechnung bzw. Quelle.
@@ -291,3 +291,11 @@ Auswertung am 02.11. (je 1 Bild pro 2 s, Lautheitsverlauf, Spracherkennung). Die
 - **Themen:** große, globale Gedankenexperimente aus Physik, Mathematik, Biologie, Chemie, Astronomie, Geologie und Klima (Beispiele des Inhabers: alles auf der Welt läuft automatisiert; die Sonne kommt jedes Jahr 1 m näher; wir steuern in eine neue Eiszeit). Nicht auf Deutschland bezogen, keine Alltagsthemen. Standpunkte weltweit.
 - **Vorbild:** Lunar Animations (die 4 Referenzvideos). Deren Themen sind gesperrt bzw. nur mit klar eigenem Ansatz; Konkurrenz-Check gegen deren Katalog vor jedem Thema.
 - **Skill:** `.claude/skills/stelldirvor-video/` gilt nur für diesen Account und ist verbindlich für Design, Licht, Effekte, Animation, Ton und Prüfung.
+
+### 12b. Tiefenanalyse 02.11. (Messung, Details im Skill)
+Pixel- und Tonmessung an allen 4 Referenzen; die Werte stehen in eigenen Worten in `.claude/skills/stelldirvor-video/` (design.md, licht-und-effekte.md, ton.md). Korrekturen zu §12 (F):
+- Die **Messwert-Anzeige steht ab Bild 0** (nicht erst ab 4 s) und blendet 69,2–70,1 s aus; sie sitzt bei x = 6 % (links, nicht in der Schutzzone von Simulierbar).
+- **Etikett, Unterzeile und Faktenzeile sind serifenlose Versalien mit Sperrung**; nur Titel, Zahl, Sätze und Abspann-Titel sind Serif (Umsetzung: Crimson Pro + Inter).
+- Hinter allen Textebenen liegt ein **weicher dunkler Hof** statt einer Kontur. Der Abspann-Grund ist exakt **#111111**.
+- Die Kamera ist im Alltag praktisch starr, folgt dem Ereignis aber mit **langsamen Schwenks** (T, E); beim Höhepunkt wird sie umgeworfen und liegt danach still.
+- Im Nachspiel ist der Ton **dumpf** (Höhen weg) mit einem **Pfeifton 500–650 Hz** bzw. Brummen; der Abspann trägt nur ein tiefes Brummen.

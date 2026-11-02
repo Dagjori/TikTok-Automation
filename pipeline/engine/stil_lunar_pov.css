@@ -1,0 +1,52 @@
+/* Designstil 16 „Lunar-POV“ – NUR Account 2 @stelldirvor.pov. Maße gemessen an den 4 Referenzvideos (720 × 1280, hier × 1,5 auf 1080 × 1920).
+   Verbindlich: .claude/skills/stelldirvor-video/design.md. Schriften lokal (SIL OFL 1.1, Lizenztexte in engine/schriften/):
+   Crimson Pro (Serif: Titel, Zahl, Sätze, Abspann) und Inter (Versalien-Etiketten mit Sperrung: Etikett, Unterzeile, Faktenzeile). */
+@font-face { font-family: "Lunar Serif"; font-style: normal; font-weight: 400; src: url("../node_modules/@fontsource/crimson-pro/files/crimson-pro-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Lunar Serif"; font-style: italic; font-weight: 400; src: url("../node_modules/@fontsource/crimson-pro/files/crimson-pro-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Lunar Serif"; font-style: normal; font-weight: 400; unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; src: url("../node_modules/@fontsource/crimson-pro/files/crimson-pro-latin-ext-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Lunar Sans"; font-style: normal; font-weight: 500; src: url("../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Lunar Sans"; font-style: normal; font-weight: 600; src: url("../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2") format("woff2"); }
+
+:root {
+  --lp-text: #F3F1EC;        /* Titel, Zahl, Sätze (gemessen ≈ #ECECE8 … #F0EEE6, hellste Pixel #F4F2EE) */
+  --lp-abspann-grund: #111111; /* Abspann-Hintergrund, exakt gemessen (17,17,17), ohne Körnung und Vignette */
+  --lp-abspann-text: #ECE9E4;  /* Abspann-Titel (hellste Pixel 235,232,227) */
+  --lp-fakt: #8B8985;          /* Faktenzeile (139,137,133) */
+}
+#hud .lp { position: absolute; pointer-events: none; }
+#hud .lp-voll { left: 0; top: 0; width: 1080px; height: 1920px; }
+
+/* Vignette: Rand ≈ 0,8 × Mitte im oberen Bilddrittel (gemessen 0,80–0,82), unten weicher */
+#hud .lp-vignette { background: radial-gradient(ellipse 78% 62% at 50% 47%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.16) 74%, rgba(0, 0, 0, 0.36) 100%); }
+
+/* Linsenflecken (unscharfe Asche-/Staubpunkte bzw. Tropfen nahe der Linse) und Glasriss liegen unter dem Text */
+#hud .lp-fleck { position: absolute; border-radius: 50%; }
+#hud .lp-glas { left: 0; top: 0; width: 1080px; height: 1920px; overflow: visible; }
+
+/* Weicher dunkler Hof hinter jeder Textebene (gemessen: Titel −35 % Helligkeit in der Mitte, Ellipse ≈ Textbreite × (Texthöhe + 2 × 90 px)) */
+#hud .lp-hof { position: relative; display: inline-block; isolation: isolate; }
+#hud .lp-hof::before { content: ""; position: absolute; z-index: -1; inset: var(--hof-inset, -62% -2%); background: radial-gradient(closest-side, rgba(0, 0, 0, var(--hof, 0.38)), rgba(0, 0, 0, calc(var(--hof, 0.38) * 0.6)) 48%, rgba(0, 0, 0, 0) 100%); }
+
+#hud .lp-serif { font-family: "Lunar Serif", "Crimson Pro", Georgia, serif; font-weight: 400; color: var(--lp-text); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35); font-kerning: normal; font-feature-settings: "lnum" 1, "kern" 1; }
+#hud .lp-sans { font-family: "Lunar Sans", "Inter", Arial, sans-serif; text-transform: uppercase; }
+
+/* 1. Titelfrage: 89 px (4,6 % der Bildhöhe), Zeilenabstand 1,07 (Grundlinienabstand 94,5 px), Mitte des Blocks bei y = 564 (29,4 %), max. 82 % Bildbreite */
+#hud .lp-titel { left: 97px; width: 886px; top: 564px; transform: translateY(-50%); text-align: center; }
+#hud .lp-titel .lp-hof { font-size: 89px; line-height: 1.062; --hof: 0.38; --hof-inset: -62% -3%; }
+
+/* 2. Messwert-Anzeige: links bei x = 66 (6,1 %), Etikett-Oberkante y ≈ 913 (47,6 %), Zahl-Grundlinie ≈ 990 (51,6 %), Unterzeile-Oberkante ≈ 1011 (52,7 %) */
+#hud .lp-anzeige { left: 66px; top: 911px; }
+#hud .lp-anzeige .lp-hof { --hof: 0.4; --hof-inset: -48% -22% -48% -16%; }
+#hud .lp-etikett { font-size: 22.5px; line-height: 1; font-weight: 600; letter-spacing: 0.2em; color: #FFFFFF; opacity: 0.95; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+#hud .lp-zahl { font-size: 85px; line-height: 1; margin-top: -8px; white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; }
+#hud .lp-unter { font-size: 18.5px; line-height: 1; font-weight: 500; letter-spacing: 0.2em; color: #FFFFFF; opacity: 0.72; margin-top: 3px; white-space: nowrap; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+
+/* 3. Satz: Kursiv 57 px (3,0 %), Grundlinie y ≈ 1308 (68,1 %), mittig, höchstens 2 Zeilen (wächst nach oben) */
+#hud .lp-satz { left: 110px; width: 860px; bottom: 595px; text-align: center; } /* 110–970: frei von der TikTok-Knopfspalte rechts */
+#hud .lp-satz .lp-hof { font-size: 57px; line-height: 1.12; font-style: italic; --hof: 0.26; --hof-inset: -70% -4%; }
+
+/* Abblende und Abspann */
+#hud .lp-schwarz { background: var(--lp-abspann-grund); }
+#hud .lp-abspann { background: var(--lp-abspann-grund); display: flex; flex-direction: column; align-items: center; justify-content: center; padding-bottom: 142px; box-sizing: border-box; }
+#hud .lp-frage { width: 886px; text-align: center; font-size: 80px; line-height: 1.07; color: var(--lp-abspann-text); text-shadow: none; }
+#hud .lp-fakt { width: 900px; margin-top: 53px; text-align: center; font-size: 20.5px; line-height: 1.55; font-weight: 500; letter-spacing: 0.2em; color: var(--lp-fakt); }

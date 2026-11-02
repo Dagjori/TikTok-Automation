@@ -116,11 +116,13 @@ Jeder Baustein meldet seine Ereignisse: `{t, typ, dauer?, laufend?, klang?, text
 
 ## Referenzformat Account 2 (keine Stimme, 80 s; docs/16 §12)
 
-Beispiel `projekte/stickstoff-weg/` (`szene.js`, `halle.js` Welt, `zeiten.json` Zeitplan, `ton.py` Tonspur).
-- Ton ohne Stimme: `python3 projekte/<name>/ton.py` schreibt `out/<name>/ton.wav` (nur selbst erzeugte Atmo und Sounddesign, weicher Begrenzer auf Roh-Lautheit −16,5 LUFS). Danach `TON_FERTIG=1 LRA_ZIEL=20 ./mux.sh projekte/<name>`: `klang.py` wird übersprungen, loudnorm bringt den Mix linear auf −14 LUFS integriert (Verlauf bleibt erhalten), danach Spitzenbegrenzung 0,7.
-- Prüfung: `python3 qc/referenz_pov.py projekte/<name>` (Länge, Titel, Messwert-Anzeige, Sätze, Abspann, verbotene Elemente, Lautheit und Verlauf; Daten aus `out/<name>/ereignisse.json` und dem MP4) und `node qc/text_ueberlappung_pov.mjs projekte/<name>` (Text-Überlappung und sichere Zone der drei Textebenen plus Abspann).
-- Serifenschrift EB Garamond (SIL OFL) lokal über `npm i @fontsource/eb-garamond` (steht in `package.json`).
-- `klang.py`: neuer Effekt `sprudeln` (Zischen und Blubbern, Sieden).
+**Verbindlich:** Skill `.claude/skills/stelldirvor-video/` (Design, Licht, Effekte, Ablauf, Ton, Technik, Prüfung – gemessen an den 4 Referenzvideos). Muster mit allen Bausteinen: `projekte/_demo-lunar-pov/` (Demo, nicht posten).
+- **Baukasten:** `engine/stil_lunar_pov.js` (Höhennebel, Himmel mit Sonne/Bloom, Glut, Puffs: Wolken, Rauch-/Aschesäule, Druck-/Staubwand, Feuerball, Gischt; Partikel: Staub, Asche, Schnee, Eis, Regen, Funken; Trümmer; Menschen, Autos, Vögel; Geländer/Brüstung/Fensterrahmen; `PovKamera` mit Atmen, Beben, Stoß, Kippen; Farbphasen; Ereignis-Protokoll) und `engine/lunar_hud.js` + `engine/stil_lunar_pov.css` (Titelfrage, Messwert-Anzeige mit Etikettwechsel, kursive Sätze, Abblende, Abspann, Vignette, Glasriss, Linsenflecken, Tropfen). Schriften Crimson Pro und Inter (SIL OFL, lokal über `@fontsource`, Lizenztexte in `engine/schriften/`).
+- **`kern.js`** kann zusätzlich Tiefenunschärfe (`new Buehne(…, { tiefe: true })`, `post.tiefeNah/tiefeFern/fokusNah/fokusFern`), Hitzeflimmern (`post.flimmern`, `flimmerY`) und einen Farbschleier (`post.schleier`, `schleierStaerke`). Standard aus, ältere Szenen bleiben unverändert.
+- **Ton ohne Stimme:** `python3 atmo.py projekte/<name>` (oder `python3 klang.py projekte/<name> --atmo`) baut aus `projekte/<name>/ton.json` und den Effekt-Ereignissen des Protokolls die Atmo-Spur `out/<name>/ton.wav`; danach `TON_FERTIG=1 LRA_ZIEL=20 ./mux.sh projekte/<name>` (mit `TON_FERTIG` ohne Vorbegrenzer, loudnorm linear auf −14 LUFS). `atmo.py` bringt die Spur selbst auf ≈ −14 LUFS und erzwingt den Verlauf (Höhepunkt ≥ 6 dB über dem Start, Abspann leise).
+- **`render.js`:** Projekte ohne `segmente` in `skript.json` (keine Stimme) bekommen keine Timing-Schätzung.
+- **Prüfung:** `python3 qc/referenz_pov.py projekte/<name>` (Länge, Titel, Anzeige mit „HIER“, Sätze, verbotene Elemente, Abspann, Lautheit und Verlauf, keine Stimme, kein „5 Sekunden“) und `node qc/text_ueberlappung_pov.mjs projekte/<name>` (Überlappung und sichere Zone, auch für den LunarHUD).
+- Älteres Beispiel (gestoppt): `projekte/stickstoff-weg/` mit eigenem `ton.py`.
 
 ## Prüfung (`qc/massstab.py`)
 

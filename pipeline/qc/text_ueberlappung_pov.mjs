@@ -1,6 +1,6 @@
 // Text-Überlappung für das Referenzformat (Titel, Messwert-Anzeige, kursiver Satz, Abspann): prüft alle Zeitpunkte (Standard alle 0,1 s)
 // auf Rechtecke, die sich berühren oder näher als --abstand px kommen (Deckkraft > 0,3 über alle Eltern). Außerdem: liegt jede Ebene in der sicheren Zone
-// (x 150–930, y 150–1500)? Aufruf: node qc/text_ueberlappung_pov.mjs projekte/stickstoff-weg [--abstand 12] [--schritt 0.1]
+// (x 48–1032, y 150–1500, rechte Knopfspalte x > 975 ab y 900 frei)? Unterstützt ältere Szenen (#titel …) und den LunarHUD (.lp-…). Aufruf: node qc/text_ueberlappung_pov.mjs projekte/stickstoff-weg [--abstand 12] [--schritt 0.1]
 import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";
@@ -30,12 +30,16 @@ await page.waitForFunction(() => window.__fertig === true || window.__fehler, nu
 const fehler = await page.evaluate(() => window.__fehler); if (fehler) { console.error(fehler); process.exit(2); }
 const dauer = await page.evaluate(() => window.dauer);
 const paare = new Map(), aussen = new Map();
-const sicher = { l: 150 - 2, r: 930 + 2, o: 150, u: 1500 };
+// Sichere Zone (TikTok): oben 150 px (Reiter), unten ab 1500 px (Caption), rechts die Knopfspalte (x > 975 zwischen y 900 und 1650).
+// Die Referenzen setzen die Anzeige bei x = 66 und den Titel bis 82 % Bildbreite – links ist bei TikTok frei, deshalb links 48 px.
+const sicher = { l: 48, r: 1032, o: 150, u: 1500, knopfR: 975, knopfO: 900 };
 for (let t = 0; t <= dauer - 0.01; t += opt.schritt) {
   const r = await page.evaluate(({ t, minD }) => {
     window.hudAt(t);
     const deck = (e) => { let o = 1; for (let n = e; n && n !== document.body; n = n.parentElement) { const cs = getComputedStyle(n); if (cs.display === "none" || cs.visibility === "hidden") return 0; o *= +cs.opacity; } return o; };
-    const sel = [["titel", "#titel"], ["anzeige-etikett", "#anzeige .etikett"], ["anzeige-zahl", "#anzeige .zahl"], ["anzeige-unter", "#anzeige .unter"], ["satz", "#satz"], ["abspann-frage", "#abspann .frage"], ["abspann-fakt", "#abspann .fakt"]];
+    // ältere Szenen (#titel …) und LunarHUD (engine/lunar_hud.js, .lp-…)
+    const sel = [["titel", "#titel"], ["anzeige-etikett", "#anzeige .etikett"], ["anzeige-zahl", "#anzeige .zahl"], ["anzeige-unter", "#anzeige .unter"], ["satz", "#satz"], ["abspann-frage", "#abspann .frage"], ["abspann-fakt", "#abspann .fakt"],
+      ["titel", ".lp-titel .lp-hof"], ["anzeige-etikett", ".lp-etikett"], ["anzeige-zahl", ".lp-zahl"], ["anzeige-unter", ".lp-unter"], ["satz", ".lp-satz .lp-hof"], ["abspann-frage", ".lp-frage"], ["abspann-fakt", ".lp-fakt"]];
     const liste = [];
     for (const [n, s] of sel) { const e = document.querySelector(s); if (!e || !e.textContent.trim() || deck(e) <= minD) continue;
       // Textbreite statt Boxbreite: Range über den Inhalt
@@ -44,7 +48,8 @@ for (let t = 0; t <= dauer - 0.01; t += opt.schritt) {
   }, { t, minD: opt.deckkraft });
   for (let i = 0; i < r.length; i++) {
     const a = r[i];
-    if (a.n.startsWith("abspann") === false && (a.l < sicher.l || a.r > sicher.r || a.o < sicher.o || a.u > sicher.u)) aussen.set(a.n, [...(aussen.get(a.n) || []), +t.toFixed(2)]);
+    const knopf = a.r > sicher.knopfR && a.u > sicher.knopfO;
+    if (a.n.startsWith("abspann") === false && (a.l < sicher.l || a.r > sicher.r || a.o < sicher.o || a.u > sicher.u || knopf)) aussen.set(a.n, [...(aussen.get(a.n) || []), +t.toFixed(2)]);
     for (let j = i + 1; j < r.length; j++) {
       const b = r[j], d = opt.abstand;
       if (a.n.startsWith("anzeige") && b.n.startsWith("anzeige")) continue; // Zeilen derselben Anzeige liegen absichtlich dicht übereinander

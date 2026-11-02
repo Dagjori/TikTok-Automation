@@ -67,27 +67,24 @@
 - **PDF Account 2:** `docs/plan/account2-uebersicht-2026-11-02.pdf` (erzeugt mit `tools/account2_uebersicht.py` und `tools/html_pdf.mjs`).
 - Account-2-Themen 03./04.11. an Format §12 angepasst (`data/plan/account2-naechste-tage.json`): Laacher See (75), Phantomstau von der Brücke (76), Sonnensturm (77), Stromausfall/Lichter aus (78). Restplan (05.11. ff.) noch nicht §12-geprüft.
 
-## Account 2 Neuausrichtung (02.11., Inhaber)
-- Kein „5 Sekunden“ mehr. Themen: große globale Wissenschafts-Gedankenexperimente (Physik, Mathe, Biologie, Chemie …), Vorbild Lunar Animations. Beispiele: alles automatisiert, Sonne 1 m/Jahr näher, Eiszeit.
-- In Arbeit (2 Agenten, Opus): (1) Skill `.claude/skills/stelldirvor-video/` plus Baukasten, Prüfung `qc/referenz_pov.py` und Demo-Standbilder; (2) komplett neuer 30-Tage-Plan (60 Videos plus 15 Reserve, 03.11.–02.12.), `docs/17`, PDF, `data/plan/account2-plan.json` für das Cockpit.
-- Danach: Cockpit neu befüllen, Account-2-Übersicht-PDF neu, Regelwerk-PDF.
+## Account 2 Neuausrichtung (02.11., Inhaber) – erledigt
+- Kein „5 Sekunden“ mehr. Themen: große globale Wissenschafts-Gedankenexperimente, Vorbild Lunar Animations.
+- **Skill** `.claude/skills/stelldirvor-video/` (nur Account 2): SKILL.md, design.md, licht-und-effekte.md, ablauf.md, ton.md, technik.md, pruefung.md. Baukasten `engine/stil_lunar_pov.js`, `engine/lunar_hud.js`, `stil_lunar_pov.css`, Schriften Crimson Pro und Inter (OFL), `pipeline/atmo.py`, Prüfung `qc/referenz_pov.py` (22 Pflichtpunkte) und `qc/text_ueberlappung_pov.mjs`. Demo `projekte/_demo-lunar-pov/` (nicht zum Posten) besteht alle Punkte.
+- **Qualitätslücke:** Schrift, Layout, Abspann und Ton treffen die Referenzen; die 3D-Welt nicht (Detaildichte, Wolken/Rauch, leere Höhepunkt-Bilder). Regel: Jede Grundwelt wird beim Erstbau auf Referenzniveau gebracht (Skill SKILL.md, pruefung.md §2).
+- **Korrektur:** Titel 0,4–4,4 s wie gemessen (vorher eigene Regel 0–3,5 s). Etikett, Unterzeile und Faktenzeile serifenlos (docs/16 §12b).
+- **Neuer Plan:** `data/plan/account2-30-tage.csv`, `account2-plan.json` (75 Einträge, Sätze für die ersten 8), `docs/17`, PDF `docs/plan/account2-30-tage-plan.pdf`. Alte `account2-naechste-tage.json` gelöscht (Laacher See usw. ersetzt).
+- **Cockpit:** alle 60 Account-2-Themen als Status „idee“ eingetragen (03.11.–02.12.), alte Einträge 03./04.11. ersetzt. Übersicht-PDF `docs/plan/account2-uebersicht-2026-11-02.pdf` neu, Regelwerk `regelwerk-2026-11-02-nachmittag.pdf`.
 
 ## Nächste Schritte
 
 | # | Schritt | Wer | Zeit | Status |
 |---|---|---|---|---|
-| 1 | Treppe 12:00 und Gehalt 20:00 posten (KI-Schalter AN, Caption oben), vorher einmal mit Ton anhören | Inhaber | 15 Min. | heute |
-| 2 | Logo A als TikTok-Profilbild hochladen | Inhaber | 2 Min. | heute |
-| 3 | Repo auf privat stellen (GitHub → Settings → General → Change visibility) | Inhaber | 2 Min. | offen |
-| 4 | Produktion 02.11.: Fußgängerampel und Steuererklärung oder Überstunden | Claude (Agenten) | – | erledigt, beide übergeben |
-| 4b | 02.11. Fußgängerampel 12:00 und Steuererklärung 20:00 posten (KI-Schalter AN), vorher mit Ton anhören | Inhaber | 15 Min. | 02.11. |
-| 4d | Account 2: Account anlegen, Name, Profilbild, Bio | Inhaber | 15 Min. | erledigt 01.11. abends (Inhaber: „2. tiktok account steht jetzt auch“), Handle `@stelldirvor.pov` (aus Buffer gelesen) |
-| 4e | Prototyp Account 2 (neuer Szenentyp, Opus): deutscher Ort, Du-Perspektive, eigenes Thema mit Rechnung | Claude (Agent) | 1–2 Agententage | bereit, wartet auf Startsignal |
-| 4c | Startsignal für 03.11.: „Schere, Stein, Papier“ (Stil 3 Clay) und „Mittagessen im Job“ (Stil 6 Collage) | Inhaber | – | offen |
-| 5 | Windows-PC einrichten (Claude Code, Node, ffmpeg, Blender), um mit GPU zu rendern | Inhaber plus Claude | 30–60 Min. | empfohlen |
-| 6 | Buffer eingerichtet, beide TikTok-Accounts verbunden (01.11. abends). Buffer-API funktioniert (Netzwerk-Secret, 2 Kanäle: simulierbar, stelldirvor.pov). Test Gehalt-Video (gesendet 19:57): **öffentlich ja, KI-Label fehlt** (`aigcLabelType` leer, Treppe hat 1). Klären, ob über Buffer gepostet. Supabase funktioniert (01.11. 20:25 UTC: Upload, signierter Link, Löschen getestet; Fehler vorher: Hostname stand im Feld Header-Name). `pipeline/post_buffer.py` fertig (Entwurf per API, `isAiGenerated`). Supabase Storage einrichten (Inhaber wählt Weg A; max. 50 MB je Datei im Gratis-Plan). YouTube vorerst nicht. Danach baut Claude `pipeline/post_buffer.py` (Entwürfe mit Caption, Zeit aus dem Plan, KI-Flag AN). Produktion 03.11. und Prototyp Account 2 starten erst, wenn alles steht (Inhaber). Telegram (`docs/13`) weiter offen | Inhaber, dann Claude | 20 Min. plus 1–2 Std. Claude | läuft |
-| 7 | Nach 48 Std.: Aufrufe, Wiedergabedauer und Abbruchstelle von Treppe und Gehalt aus TikTok Studio an Claude geben, damit wir messen statt raten | Inhaber | 5 Min. | 03.11. |
-| 8 | ElevenLabs-Plan beobachten (Credits), Impressum-Link, Nebentätigkeit klären | Inhaber | – | später |
+| 1 | Plan, Demo-Bilder und Regelwerk ansehen, Startsignal für die Produktion geben | Inhaber | 15 Min. | offen |
+| 2 | Nach Startsignal: 03.11. produzieren (Account 2: Eiszeit Toronto, Sonne 1 m Cabo da Roca; Simulierbar laut `data/plan/30-tage.csv`), je Grundwelt Erstbau auf Referenzniveau, max. 2 Agenten (Sonnet) | Claude | ca. 2 Std. Render je Video (Cloud) | wartet |
+| 3 | Ampel (12:30) und Steuer (19:30) auf Simulierbar sind für heute in Buffer eingeplant (alter Stil) | Inhaber | – | keine Rückmeldung, bleiben |
+| 4 | Windows-PC einrichten (GPU-Render), dringend wegen ca. 2 Std. Cloud-Render je Account-2-Video | Inhaber plus Claude | 30–60 Min. | empfohlen |
+| 5 | Repo auf privat stellen, ElevenLabs-Guthaben prüfen | Inhaber | 5 Min. | offen |
+| 6 | Nach 14 Tagen Posting-Zeiten mit Zahlen aus TikTok Studio nachjustieren | Claude | 30 Min. | 16.11. |
 
 ## Offene Punkte
 - [ ] Teppich-Pegel (−10 dB) und Effekte mit Ton abnehmen (Rückmeldung des Inhabers nach dem Anhören)

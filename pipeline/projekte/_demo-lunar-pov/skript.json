@@ -1,0 +1,45 @@
+{
+  "titel": "DEMO Lunar-POV: Vulkan gegenüber (nicht zum Posten)",
+  "konto": "stelldirvor.pov",
+  "format": "referenz_pov",
+  "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js)",
+  "zweck": "Muster für den Skill .claude/skills/stelldirvor-video/ – zeigt jeden Baustein. Kein Produktionsvideo: Konkurrenz-Check und Themenfreigabe fehlen.",
+  "titelfrage": "Was wäre, wenn der Vulkan gegenüber ausbricht?",
+  "standpunkt": "Aussichtsterrasse mit Betonbrüstung, 40 m über einem Bergdorf, Blick talaufwärts auf einen Vulkan in 14 km Entfernung",
+  "rechnung": {
+    "schall_m_s": 343,
+    "abstand_m": 14000,
+    "ausbruch_s": 19.6,
+    "ankunft_druckwelle_s": 60.42,
+    "saeule_m": "h(τ) = 10.000 · (1 − e^(−τ/25)), Startgeschwindigkeit 400 m/s (Annahme, plinianische Säulen steigen mit 100–400 m/s)",
+    "hinweis": "Echtzeit: der Schall braucht 14.000 m / 343 m/s = 40,8 s. Kein Zeitraffer."
+  },
+  "anzeige": [
+    {"von": 0, "etikett": "LUFTDRUCK", "wert": "1.013,2 hPa (ruhige Luft)", "unter": "GIPFEL 14 KM ENTFERNT"},
+    {"von": 19.6, "etikett": "ASCHESÄULE", "wert": "Höhe in km", "unter": "STEIGT MIT … M/S"},
+    {"von": 34.0, "etikett": "DRUCKWELLE IN", "wert": "Countdown m:ss bis 60,4 s", "unter": "NOCH … KM · 1.235 KM/H"},
+    {"von": 60.42, "etikett": "DRUCKWELLE", "wert": "HIER"}
+  ],
+  "abspann": {"frage": "Was wäre, wenn der Vulkan gegenüber ausbricht?", "fakt": "KRAKATAU, 1883 · DER KNALL WAR 4.800 KM WEIT ZU HÖREN"},
+  "quellen": [
+    "Krakatau 1883: Explosion auf der Insel Rodrigues in ca. 4.800 km Entfernung gehört (u. a. Smithsonian Global Volcanism Program, Krakatau; Symons 1888, Royal Society Report) – vor einer Produktion erneut prüfen",
+    "Schallgeschwindigkeit in Luft bei 15 °C: 340–343 m/s (Lehrbuchwert)"
+  ],
+  "bild_text_abgleich": [
+    [4.8, "Ein stiller Morgen im Tal.", "ruhiges Tal, Dorf, Sonne im Dunst"],
+    [9.6, "Der Berg bebt seit Tagen.", "Dampffahne am Gipfel, Kamera zittert leicht (beben 9,6–13,6 s)"],
+    [14.4, "Die Vögel fliegen auf.", "Schwärme fliegen ab 14,6 s weg"],
+    [19.6, "Dann reißt der Gipfel auf.", "Lichtblitz und Feuerball am Gipfel bei 19,6 s"],
+    [24.4, "Kein Laut. Der Schall ist unterwegs.", "Säule wächst lautlos, Ton bleibt still bis 54 s"],
+    [29.2, "Die Säule wächst und wächst.", "Aschesäule steigt (Anzeige km)"],
+    [34.0, "Die Druckwelle rollt auf dich zu.", "Etikett wechselt auf DRUCKWELLE IN, Staubfront fern im Tal"],
+    [38.8, "Unten im Ort bleiben alle stehen.", "Menschen bleiben stehen und sehen zum Berg, Autos bremsen"],
+    [43.6, "Die Wolke schiebt sich vor die Sonne.", "Schirmwolke verdeckt die Sonne 43,6–47,5 s"],
+    [48.4, "Über das Tal rast eine Wand.", "Staubwand läuft talabwärts auf die Kamera zu"],
+    [53.2, "Die Bäume legen sich flach.", "Bäume kippen, sobald die Front sie erreicht"],
+    [57.6, "Gleich ist sie da.", "Front füllt das Bild, Grollen"],
+    [62.6, "Die Druckwelle ist vorbei.", "Staubschleier, Glasriss, Kamera gekippt"],
+    [67.0, "Asche rieselt wie grauer Schnee.", "Ascheflocken fallen"]
+  ],
+  "caption": "Was passiert, wenn ein Vulkan vor deinen Augen ausbricht? 🌋 Ich hab's durchgespielt. Würdest du stehen bleiben? 👇 #vulkan #druckwelle #physik #wissen #waswaerewenn"
+}

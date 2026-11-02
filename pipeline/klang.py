@@ -1,6 +1,7 @@
 """Tonspur eines Projekts: Stimme + selbst erzeugte Soundeffekte + Klangteppich (alles synthetisch, keine fremden Dateien).
 
 Aufruf:  python3 pipeline/klang.py <projektordner> [--teppich regen|wasser|meer|strasse|nacht|raum|musik|keiner]
+         python3 pipeline/klang.py <projektordner> --atmo   (Account 2: reine Atmo ohne Stimme, Tonplan ton.json → atmo.py)
                                    [--teppich-db -10] [--ohne-musik] [--ohne-sfx] [--ohne-stimme]
 Liest:   <projekt>/audio/ereignisse.json   (schreibt render.js: Dauer, Ereignis-Protokoll der Bausteine, Klang-Extras;
                                             Ersatz: pipeline/out/<projekt>/ereignisse.json)
@@ -545,6 +546,10 @@ def effekt_liste(meta):
 def main():
     projekt = Path(sys.argv[1]).resolve()
     args = sys.argv[2:]
+    if "--atmo" in args:  # Account 2 (Referenzformat): reine Atmo-Spur ohne Stimme aus projekte/<name>/ton.json, siehe atmo.py
+        import atmo
+        atmo.erzeuge(projekt)
+        return
     wert = lambda name, std=None: args[args.index(name) + 1] if name in args and args.index(name) + 1 < len(args) else std
     wurzel = Path(__file__).resolve().parent
     out = wurzel / "out" / projekt.name

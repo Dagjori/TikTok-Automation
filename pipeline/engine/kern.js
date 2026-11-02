@@ -62,6 +62,9 @@ uniform sampler2D tScharf, tU1, tU2, tU3, tBloom;
 uniform float bloomStaerke, belichtung, tiltMitte, tiltBreite, tiltStaerke, unschaerfe;
 uniform float vignette, saettigung, kontrast, aspekt;
 uniform vec3 tonung; uniform float tonungStaerke;
+uniform sampler2D tTiefe; uniform float tiefeAn, tiefeNah, tiefeFern, fokusNah, fokusFern, kNah, kFern;
+uniform float flimmern, flimmerZeit; uniform vec2 flimmerY;
+uniform vec3 schleier; uniform float schleierStaerke;
 varying vec2 vUv;
 vec3 RRTAndODTFit(vec3 v) { vec3 a = v * (v + 0.0245786) - 0.000090537; vec3 b = v * (0.983729 * v + 0.4329510) + 0.238081; return a / b; }
 vec3 acesFilmic(vec3 c) {
@@ -71,15 +74,28 @@ vec3 acesFilmic(vec3 c) {
 }
 vec3 zuSRGB(vec3 c) { return mix(c * 12.92, 1.055 * pow(c, vec3(1.0 / 2.4)) - 0.055, step(0.0031308, c)); }
 void main() {
-  vec3 scharf = texture2D(tScharf, vUv).rgb;
-  float d = abs(vUv.y - tiltMitte);
+  vec2 uv = vUv;
+  if (flimmern > 0.0) { // Hitzeflimmern: weiche, wandernde UV-Verzerrung in einem Höhenband
+    float fm = smoothstep(flimmerY.x, flimmerY.x + 0.06, vUv.y) * (1.0 - smoothstep(flimmerY.y - 0.06, flimmerY.y, vUv.y));
+    vec2 fo = vec2(sin(vUv.y * 230.0 + flimmerZeit * 13.0 + 2.0 * sin(vUv.x * 29.0 + flimmerZeit * 2.1)), sin(vUv.y * 151.0 - flimmerZeit * 9.0 + vUv.x * 47.0));
+    uv += fo * flimmern * 0.0016 * fm;
+  }
+  vec3 scharf = texture2D(tScharf, uv).rgb;
+  float d = abs(uv.y - tiltMitte);
   float coc = smoothstep(tiltBreite * 0.5, tiltBreite * 0.5 + 0.32, d) * tiltStaerke;
+  if (tiefeAn > 0.5) { // Tiefenunschärfe aus dem Tiefenpuffer (nah vor fokusNah, fern hinter fokusFern)
+    float zb = texture2D(tTiefe, uv).x;
+    float z = kNah * kFern / (kFern - zb * (kFern - kNah));
+    float cn = z < fokusNah ? (fokusNah - z) / fokusNah * tiefeNah : 0.0;
+    float cf = z > fokusFern ? (1.0 - fokusFern / z) * tiefeFern : 0.0;
+    coc = max(coc, max(cn, cf));
+  }
   coc = clamp(max(coc, unschaerfe), 0.0, 1.0);
   vec3 col = scharf;
   if (coc > 0.001) {
-    vec3 b1 = texture2D(tU1, vUv).rgb;
-    vec3 b2 = texture2D(tU2, vUv).rgb;
-    vec3 b3 = texture2D(tU3, vUv).rgb;
+    vec3 b1 = texture2D(tU1, uv).rgb;
+    vec3 b2 = texture2D(tU2, uv).rgb;
+    vec3 b3 = texture2D(tU3, uv).rgb;
     float k = coc * 3.0;
     col = k < 1.0 ? mix(scharf, b1, k) : (k < 2.0 ? mix(b1, b2, k - 1.0) : mix(b2, b3, k - 2.0));
   }
@@ -91,6 +107,7 @@ void main() {
   col = mix(vec3(l), col, saettigung);
   col = (col - 0.5) * kontrast + 0.5;
   col = mix(col, col * tonung, tonungStaerke);
+  col = mix(col, schleier, schleierStaerke); // Schleier (Staub, Weißblende, Wasser) nach der Tonwertkurve
   vec2 p = vUv - 0.5; p.x *= aspekt;
   float v = smoothstep(0.95, 0.35, length(p) * 1.15);
   col *= mix(1.0 - vignette, 1.0, v);
@@ -188,6 +205,10 @@ export const POST_STANDARD = {
   tonung: [1, 1, 1],
   tonungStaerke: 0,
   koernung: 0.035,
+  // Tiefenunschärfe (nur mit new Buehne(…, { tiefe: true })): Meter vor fokusNah bzw. hinter fokusFern werden unscharf
+  tiefeNah: 0, tiefeFern: 0, fokusNah: 0.5, fokusFern: 1e9,
+  flimmern: 0, flimmerY: [0, 1],          // Hitzeflimmern (Stärke ≈ 0–3, Höhenband in UV 0 unten … 1 oben)
+  schleier: [1, 1, 1], schleierStaerke: 0, // Farbschleier nach der Tonwertkurve (sRGB 0–1)
 };
 
 function ziel(w, h, opt = {}) {
@@ -208,7 +229,7 @@ export class Buehne {
    * @param {HTMLCanvasElement} canvas
    * @param {{breite?:number, hoehe?:number, msaa?:number, schatten?:boolean}} opt
    */
-  constructor(canvas, { breite = 1080, hoehe = 1920, msaa = 4, schatten = true } = {}) {
+  constructor(canvas, { breite = 1080, hoehe = 1920, msaa = 4, schatten = true, tiefe = false } = {}) {
     this.breite = breite;
     this.hoehe = hoehe;
     const r = new THREE.WebGLRenderer({ canvas, antialias: false, preserveDrawingBuffer: true, alpha: false, powerPreference: "high-performance" });
@@ -222,6 +243,10 @@ export class Buehne {
     this.renderer = r;
 
     this.rtSzene = ziel(breite, hoehe, { depthBuffer: true, samples: msaa });
+    if (tiefe) { // Tiefenpuffer als Textur für die Tiefenunschärfe
+      this.rtSzene.depthTexture = new THREE.DepthTexture(breite, hoehe);
+      this.rtSzene.depthTexture.type = THREE.UnsignedIntType;
+    }
     this.rtLdrA = ziel(breite, hoehe);
     this.rtLdrB = ziel(breite, hoehe);
     this.rtMix = ziel(breite, hoehe);
@@ -262,6 +287,9 @@ export class Buehne {
         bloomStaerke: { value: 1 }, belichtung: { value: 1 }, tiltMitte: { value: 0.5 }, tiltBreite: { value: 0.3 }, tiltStaerke: { value: 0 },
         unschaerfe: { value: 0 }, vignette: { value: 0.2 }, saettigung: { value: 1 }, kontrast: { value: 1 }, aspekt: { value: breite / hoehe },
         tonung: { value: new THREE.Vector3(1, 1, 1) }, tonungStaerke: { value: 0 },
+        tTiefe: { value: null }, tiefeAn: { value: 0 }, tiefeNah: { value: 0 }, tiefeFern: { value: 0 }, fokusNah: { value: 0.5 }, fokusFern: { value: 1e9 },
+        kNah: { value: 0.1 }, kFern: { value: 1000 }, flimmern: { value: 0 }, flimmerZeit: { value: 0 }, flimmerY: { value: new THREE.Vector2(0, 1) },
+        schleier: { value: new THREE.Vector3(1, 1, 1) }, schleierStaerke: { value: 0 },
       }),
       uebergang: mat(UEBERGANG, {
         tA: { value: null }, tB: { value: null }, p: { value: 0 }, typ: { value: 0 }, mitte: { value: new THREE.Vector2(0.5, 0.5) },
@@ -324,7 +352,8 @@ export class Buehne {
     }
 
     // Unschärfe-Kette (nur wenn gebraucht)
-    const brauchtUnschaerfe = post.tiltStaerke > 0.001 || post.unschaerfe > 0.001;
+    const tiefeAn = !!this.rtSzene.depthTexture && (post.tiefeNah > 0.001 || post.tiefeFern > 0.001);
+    const brauchtUnschaerfe = post.tiltStaerke > 0.001 || post.unschaerfe > 0.001 || tiefeAn;
     if (brauchtUnschaerfe) {
       // je Stufe: herunterskalieren (13 Abgriffe) → Gauß horizontal → Gauß vertikal; Ergebnis liegt in uX
       const stufe = (quellTex, quellTexel, uX, uXh, breite) => {
@@ -361,6 +390,12 @@ export class Buehne {
     k.kontrast.value = post.kontrast;
     k.tonung.value.set(...post.tonung);
     k.tonungStaerke.value = post.tonungStaerke;
+    k.tiefeAn.value = tiefeAn ? 1 : 0;
+    k.tTiefe.value = tiefeAn ? this.rtSzene.depthTexture : null;
+    k.tiefeNah.value = post.tiefeNah; k.tiefeFern.value = post.tiefeFern; k.fokusNah.value = post.fokusNah; k.fokusFern.value = post.fokusFern;
+    k.kNah.value = welt.kamera.near ?? 0.1; k.kFern.value = welt.kamera.far ?? 1000;
+    k.flimmern.value = post.flimmern; k.flimmerZeit.value = t; k.flimmerY.value.set(...post.flimmerY);
+    k.schleier.value.set(...post.schleier); k.schleierStaerke.value = post.schleierStaerke;
     this._pass(m.komposit, ausgabe);
     return post;
   }

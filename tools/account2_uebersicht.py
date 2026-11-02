@@ -1,6 +1,6 @@
 """Übersicht Account 2 (@stelldirvor.pov) als HTML für das PDF.
 
-Quelle der Ideen: data/plan/account2-naechste-tage.json (angepasste Themen mit Score).
+Quelle der Ideen: data/plan/account2-plan.json (30-Tage-Plan vom 02.11.), die nächsten 4 Videos.
 Aufruf:  python3 tools/account2_uebersicht.py docs/plan/account2-uebersicht.html
          node tools/html_pdf.mjs docs/plan/account2-uebersicht.html docs/plan/account2-uebersicht-JJJJ-MM-TT.pdf
 """
@@ -8,10 +8,11 @@ import datetime
 import html
 import json
 import os
+import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-IDEEN = os.path.join(ROOT, "data", "plan", "account2-naechste-tage.json")
+PLAN = os.path.join(ROOT, "data", "plan", "account2-plan.json")
 WT = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
 
 
@@ -32,6 +33,41 @@ def datum(d):
     return f"{WT[t.weekday()]} {t.strftime('%d.%m.')}"
 
 
+def messwert(s):
+    out = []
+    for t in [x.strip() for x in str(s or "").split("→") if x.strip()]:
+        p = t.split(" ")
+        if len(p) > 1 and not p[-1].isupper():
+            einheit, p = p[-1], p[:-1]
+            if len(p) > 1 and p[-1] in ("Mio.", "Mrd.", "PRO", "pro"):
+                einheit, p = p[-1] + " " + einheit, p[:-1]
+            out.append({"etikett": " ".join(p), "einheit": einheit, "verlauf": ""})
+        else:
+            out.append({"etikett": t, "einheit": "", "verlauf": ""})
+    return out
+
+
+def lade_ideen(n=4, ab=None):
+    namen = {"N": "nachfrage", "T": "timing", "W": "wettbewerb", "P": "passung", "A": "aufwand", "R": "risiko"}
+    ab = ab or datetime.date.today().isoformat()
+    out = []
+    for v in json.load(open(PLAN, encoding="utf-8")):
+        if not re.match(r"\d{4}-\d\d-\d\d$", v["datum"]) or v["datum"] <= ab:
+            continue
+        m = re.match(r"((?:[NTWPAR]\d\s*)+)·\s*(.*)$", v.get("score_begruendung", ""))
+        out.append({
+            "datum": v["datum"], "uhrzeit": v["uhrzeit"], "slot": v["slot"], "titel": v["titel"], "titelfrage_video": v["titel"],
+            "standpunkt": v["standpunkt"], "ort": f"{v['welt']} · {v['themenfeld']}", "ereignis_kurz": v["ereignis"],
+            "zeitraffer": v.get("zeitraffer"), "hoehepunkt": v.get("hoehepunkt"), "pointe": v.get("pointe"),
+            "faktenzeile": v["faktenzeile"], "messwert": messwert(v["messwert_etiketten"]), "kernrechnung": v["kernrechnung"],
+            "saetze": v.get("saetze") or [], "score": int(v["score"]),
+            "score_faktoren": {namen[k]: int(w) for k, w in re.findall(r"([NTWPAR])(\d)", m.group(1))} if m else {},
+            "score_begruendung": m.group(2) if m else v.get("score_begruendung"), "konkurrenz_check": v["konkurrenz_check"],
+            "caption": v.get("caption_vorschlag")})
+    out.sort(key=lambda i: (i["datum"], i["uhrzeit"]))
+    return out[:n]
+
+
 def idee_html(i):
     mw = "".join(f"<tr><td>{e(m.get('etikett'))}</td><td>{e(m.get('einheit'))}</td><td>{e(m.get('verlauf'))}</td></tr>" for m in i.get("messwert", []))
     saetze = "".join(f"<li>{e(s)}</li>" for s in i.get("saetze", []))
@@ -46,22 +82,23 @@ def idee_html(i):
     <p class="lab">Standpunkt</p><p>{e(i.get('standpunkt'))}</p>
     <p class="lab">Ort</p><p>{e(i.get('ort'))}</p>
     <p class="lab">Ereignis</p><p>{e(i.get('ereignis_kurz'))}</p>
+    <p class="lab">Zeitraffer</p><p>{e(i.get('zeitraffer'))}</p>
+    <p class="lab">Höhepunkt</p><p>{e(i.get('hoehepunkt'))}</p>
     <p class="lab">Faktenzeile im Abspann</p><p>{e(i.get('faktenzeile'))}</p></div>
     <div><p class="lab">Messwert-Anzeige</p><table><tr><th>Etikett</th><th>Einheit</th><th>Verlauf</th></tr>{mw}</table>
+    <p class="lab">Pointe</p><p>{e(i.get('pointe'))}</p>
     <p class="lab">Kernrechnung</p><p>{e(i.get('kernrechnung'))}</p></div>
   </div>
   <p class="lab">Sätze im Video ({len(i.get('saetze', []))})</p><ol class="saetze">{saetze}</ol>
   <p class="lab">Score-Faktoren</p><p class="faktoren">{fak}</p>
   <p class="lab">Begründung</p><p>{e(i.get('score_begruendung'))}</p>
   <p class="lab">Konkurrenz-Check</p><p>{e(i.get('konkurrenz_check'))}</p>
-  <p class="lab">Geändert gegenüber dem alten Plan</p><p>{e(i.get('geaendert'))}</p>
   <p class="lab">Caption</p><p class="caption">{e(i.get('caption'))}</p>
 </section>"""
 
 
 def main(ziel):
-    ideen = json.load(open(IDEEN, encoding="utf-8")) if os.path.exists(IDEEN) else []
-    ideen.sort(key=lambda i: (i["datum"], i.get("uhrzeit", "")))
+    ideen = lade_ideen()
     tabelle = "".join(f"<tr><td>{e(datum(i['datum']))}</td><td class='num'>{e(i.get('uhrzeit'))}</td><td>{e(i.get('titel'))}</td><td>{e(kurz(i.get('standpunkt')))}</td><td class='num'><b>{e(i.get('score'))}</b></td></tr>" for i in ideen)
     heute = datetime.date.today().strftime("%d.%m.%Y")
     doc = f"""<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Übersicht Stell dir vor</title>
@@ -96,11 +133,11 @@ th {{ font-size:7.2pt; letter-spacing:.06em; text-transform:uppercase; color:var
 .seitenumbruch {{ break-before:page; }}
 </style></head><body>
 <div class="kopf"><div><p class="eyebrow">TikTok-Account 2</p><h1>Stell dir vor … (@stelldirvor.pov)</h1></div>
-<div class="stand">Stand {heute}<br>Quelle: CLAUDE.md, ENTSCHEIDUNGEN.md, docs/16 §9–12, Plan</div></div>
+<div class="stand">Stand {heute}<br>Quelle: CLAUDE.md, ENTSCHEIDUNGEN.md, docs/16 §12, docs/17, Skill stelldirvor-video</div></div>
 
 <h2>1. Steckbrief</h2>
 <div class="raster">
-<div><p class="lab">Nische</p><p>„Was wäre, wenn …“-Gedankenexperimente: ein Ereignis, aus deiner eigenen Sicht erlebt, mit echter Rechnung dahinter.</p>
+<div><p class="lab">Nische</p><p>Große, globale „Was wäre, wenn …“-Gedankenexperimente aus Physik, Mathematik, Biologie, Chemie, Astronomie, Geologie und Klima. Ein Ereignis, das du von einem festen Standpunkt aus wachsen siehst, mit echter Rechnung dahinter. Kein Deutschland-Bezug, keine Alltagsthemen, kein „5 Sekunden“-Rahmen (Inhaber 02.11.). Vorbild im Stil: Lunar Animations.</p>
 <p class="lab">Ziel</p><p>Creator Rewards Program (CRP): 10.000 Follower, 100.000 Aufrufe in 30 Tagen, Videos über 1 Minute. Für ca. 1.000 € im Monat braucht es grob 1,4–5 Mio. Aufrufe (Schätzung, docs/16 §6).</p>
 <p class="lab">Konto</p><p>Angelegt 01.11. als Privatkonto, Region Deutschland, in Buffer verbunden.</p></div>
 <div><p class="lab">Logo</p><p>„Fragezeichen-Countdown“: Fragezeichen aus Porzellan in einem Ring aus 5 Segmenten, der Punkt ist eine kleine türkise Welt. Koralle #FF4F5A, Türkis #2EC4B6. Nie im Video.</p>
@@ -116,14 +153,15 @@ th {{ font-size:7.2pt; letter-spacing:.06em; text-transform:uppercase; color:var
 <li>Feste Ich-Perspektive von erhöhtem Standpunkt, Geländer oder Brüstung im Vordergrund.</li>
 <li>Belebte, detailreiche Welt mit filmischem Licht. Das ist die Kunst.</li></ul></div>
 <div class="box"><p class="lab">Text (nur drei Ebenen)</p><ul>
-<li>Titelfrage 0–3,5 s, Serifenschrift, mittig oben.</li>
-<li>Messwert-Anzeige links Mitte, läuft durchgehend, 2–4 Etiketten, am Ende „HIER“.</li>
-<li>Ein kursiver Satz unten, 3–9 Wörter, ca. alle 4 s, 14–17 insgesamt.</li>
+<li>Titelfrage 0,4–4,4 s, Serifenschrift, mittig oben (wie in den Referenzen gemessen).</li>
+<li>Messwert-Anzeige links Mitte ab Bild 0, läuft durchgehend, 2–4 Etiketten, beim Höhepunkt „HIER“. Etikett und Unterzeile in serifenlosen Versalien.</li>
+<li>Ein kursiver Satz unten, 3–9 Wörter, je 3–5 s sichtbar, 12–18 insgesamt.</li>
 <li>Abspann 72–80 s auf Schwarz: Titelfrage und Faktenzeile.</li></ul></div>
 </div>
 <p class="lab">Ablauf jedes Videos</p>
-<div class="ablauf"><div><b>0–3,5 s</b>Titelfrage</div><div><b>4–30 s</b>Alltag, erste Anzeichen</div><div><b>30–55 s</b>Eskalation in Stufen</div><div><b>55–62 s</b>Höhepunkt: „HIER“</div><div><b>62–70 s</b>Nachspiel</div><div><b>72–80 s</b>Abspann mit Fakt</div></div>
-<p class="lab">Nicht im Video</p><p>Keine Sticker, Chips, Untertitel, Countdown-Ring, Logo, kein Folgen-Aufruf, kein gesprochener Schluss. Die Kommentarfrage steht in der Caption. Gesperrt sind die Themen der Referenzen: Asteroid über der Stadt, Sonne explodiert, Mega-Tsunami trifft Großstadt, Erde hört auf sich zu drehen.</p>
+<div class="ablauf"><div><b>0–4,4 s</b>Titelfrage</div><div><b>4–30 s</b>Alltag, erste Anzeichen</div><div><b>30–55 s</b>Eskalation in Stufen</div><div><b>55–62 s</b>Höhepunkt: „HIER“</div><div><b>62–70 s</b>Nachspiel</div><div><b>72–80 s</b>Abspann mit Fakt</div></div>
+<p class="lab">Nicht im Video</p><p>Keine Sticker, Chips, Untertitel, Countdown-Ring, Logo, kein Folgen-Aufruf, kein gesprochener Schluss. Die Kommentarfrage steht in der Caption. Gesperrt sind alle Themen von Lunar Animations und der bekannten US-Konten (Liste docs/17 §3.5).</p>
+<p class="lab">Fester Skill</p><p>Jedes Video dieses Accounts entsteht nach dem Skill <b>stelldirvor-video</b> (.claude/skills/): gemessene Maße, Schrift, Farben je Phase, Licht und Effekte (Sonnenglanz, Dunst, Rauch, Staubwand, Lichtblitz, Glasriss, Kamera-Beben), Ton-Verlauf und eine eigene Prüfung mit 22 Pflichtpunkten. Er gilt nur für @stelldirvor.pov.</p>
 
 <h2>3. Produktion und Posten</h2>
 <div class="raster">
@@ -152,16 +190,16 @@ th {{ font-size:7.2pt; letter-spacing:.06em; text-transform:uppercase; color:var
 <tr><td class="num">02.11. 19:30</td><td>Stickstoff weg (Supermarkt)</td><td>Umbau ins neue Format begonnen, gestoppt. Nicht gepostet.</td></tr>
 </table>
 
-<h2 class="seitenumbruch">6. Videoideen für die nächsten 2 Tage (neu bewertet nach dem Referenz-Format)</h2>
+<h2 class="seitenumbruch">6. Die nächsten 2 Tage aus dem neuen 30-Tage-Plan (komplett: docs/plan/account2-30-tage-plan.pdf)</h2>
 <table><tr><th>Tag</th><th>Uhrzeit</th><th>Titel</th><th>Standpunkt</th><th>Score</th></tr>{tabelle}</table>
 <p class="muted" style="color:var(--muted)">Score nach unserem Raster (tools/trend_score.py, 0–100): Nachfrage, Timing, Wettbewerb, Passung, Aufwand, Risiko. Ab 70 empfohlen.</p>
 {''.join(idee_html(i) for i in ideen) if ideen else '<p>Die angepassten Themen fehlen noch.</p>'}
 
 <h2>7. Offene Punkte</h2>
 <ul>
-<li>Dein Startsignal für die Produktion vom 03.11. (2 Videos je Kanal).</li>
-<li>Alle 60 Themen des 30-Tage-Plans an das Referenz-Format anpassen (Claude, nach Startsignal).</li>
-<li>Prüfung für das neue Format (pipeline/qc/referenz_pov.py) fertigstellen, sie wurde mit dem gestoppten Agenten begonnen.</li>
+<li>Dein Startsignal für die Produktion (2 Videos je Kanal pro Tag, jeweils für den nächsten Tag).</li>
+<li>Die 3D-Welt auf Referenzniveau heben: Detaildichte (Häuser, Bäume, Wasser, Menschen), Wolken und Rauch. Passiert beim Erstbau jeder der 6 Grundwelten in den ersten 4 Tagen.</li>
+<li>Rechenzeit: ca. 2 Std. pro Video in der Cloud. Der Windows-PC mit Grafikkarte wird dringend.</li>
 <li>Nach 14 Tagen Posting-Zeiten mit echten Zahlen aus TikTok Studio nachjustieren.</li>
 </ul>
 </body></html>"""

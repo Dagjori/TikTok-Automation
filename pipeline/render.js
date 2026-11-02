@@ -83,8 +83,10 @@ function starteServer() {
 function timingVorbereiten(projektDir) {
   const echt = path.join(projektDir, "audio", "timing.json");
   if (fs.existsSync(echt)) return "timing.json (echte Stimme)";
-  const skript = JSON.parse(fs.readFileSync(path.join(projektDir, "skript.json"), "utf8"));
+  const pfad = path.join(projektDir, "skript.json");
+  const skript = fs.existsSync(pfad) ? JSON.parse(fs.readFileSync(pfad, "utf8")) : {};
   fs.mkdirSync(path.join(projektDir, "audio"), { recursive: true });
+  if (!Array.isArray(skript.segmente)) return "kein Sprechtext (Format ohne Stimme, z. B. Account 2)";
   const t = schaetzeTiming(skript);
   fs.writeFileSync(path.join(projektDir, "audio", "timing_schaetzung.json"), JSON.stringify(t, null, 1));
   return `timing_schaetzung.json (geschätzt, ${t.dauer.toFixed(1)} s Sprechzeit, ${t.wps} W/s, Satzpause ${t.schaetzung.satzpause} s)`;

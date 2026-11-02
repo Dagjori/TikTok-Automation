@@ -49,6 +49,8 @@ if [ -z "${TON_FERTIG:-}" ]; then "$PY" "$HIER/klang.py" "$PROJEKT" "${KLANG_OPT
 # 2) Lautheit messen (Durchgang 1) und anwenden (Durchgang 2, linear)
 # Ein sanfter Limiter vorab hält die Spitzen klein, damit loudnorm linear (ohne Pumpen) arbeiten kann
 VOR="alimiter=limit=0.6:attack=4:release=60:level=false"
+# Fertige Atmo-Spur (TON_FERTIG, Account 2, atmo.py): ist schon begrenzt und auf −14 LUFS gebracht → kein Vorbegrenzer, der den Höhepunkt platt drückt
+[ -n "${TON_FERTIG:-}" ] && VOR="anull"
 MESS="$(ffmpeg -hide_banner -nostats -i "$OUT/ton.wav" -af "$VOR,loudnorm=I=-14:TP=-1.5:LRA=${LRA_ZIEL:-11}:print_format=json" -f null - 2>&1 | sed -n '/^{/,/^}/p')"
 WERT() { echo "$MESS" | "$PY" -c "import json,sys;print(json.load(sys.stdin)['$1'])"; }
 FILTER="loudnorm=I=-14:TP=-1.5:LRA=${LRA_ZIEL:-11}:measured_I=$(WERT input_i):measured_TP=$(WERT input_tp):measured_LRA=$(WERT input_lra):measured_thresh=$(WERT input_thresh):offset=$(WERT target_offset):linear=true:print_format=summary"

@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Prüfung für das Referenzformat (docs/16 §12): feste Ich-Perspektive, keine Stimme, Titelfrage, Messwert-Anzeige, kursive Sätze, Abspann.
+"""Prüfung für das Referenzformat von Account 2 @stelldirvor.pov (docs/16 §12, Skill .claude/skills/stelldirvor-video/pruefung.md):
+feste Ich-Perspektive, keine Stimme, Titelfrage, Messwert-Anzeige, kursive Sätze, Abspann.
 
-Aufruf:  python3 qc/referenz_pov.py projekte/<name> [--video out/<name>/<name>_tiktok.mp4] [--json]
+Aufruf:  python3 qc/referenz_pov.py projekte/<name> [--video out/<name>/<name>.mp4] [--json]
 Daten:   out/<name>/ereignisse.json (Ereignis-Protokoll der Szene, von render.js geschrieben) und – falls vorhanden – das MP4 (Länge, Lautheit,
          Lautheitsverlauf mit ffmpeg/ffprobe). Exit-Code 1, wenn ein Pflichtpunkt „nein“ ist.
-Prüft:   Länge 80 ± 0,5 s · Titel nur in 0–3,5 s · Messwert-Anzeige vorhanden, Zahl ändert sich, Etikett wechselt 2–4× · 12–18 Sätze mit 3–9 Wörtern,
+Prüft:   Länge 80 ± 0,5 s · Titel nur in 0–4,4 s · Messwert-Anzeige vorhanden, Zahl ändert sich, Etikett wechselt 2–4×, „HIER“ beim Höhepunkt ·
+         keine Stimme · kein „5 Sekunden“-Rahmen in Text, Skript und Szene · 12–18 Sätze mit 3–9 Wörtern,
          jeder mindestens 3 s sichtbar, keine Überlappung der Sätze · keine Sticker, Chips, Karaoke, Folgen-Aufruf, Zähler-Ringe im Protokoll ·
          Abspann ab 72 s mindestens 7 s · Lautheit −14 ± 1 LUFS integriert · Verlauf: Start leiser als Höhepunkt (55–65 s), Abspann leise.
 """
@@ -49,7 +51,10 @@ def main():
     args = sys.argv[1:]
     projekt = Path(args[0]).resolve()
     name = projekt.name
-    video = Path(args[args.index("--video") + 1]) if "--video" in args else WURZEL / "out" / name / f"{name}_tiktok.mp4"
+    if "--video" in args:
+        video = Path(args[args.index("--video") + 1])
+    else:
+        video = next((v for v in (WURZEL / "out" / name / f"{name}.mp4", WURZEL / "out" / name / f"{name}_tiktok.mp4") if v.exists()), WURZEL / "out" / name / f"{name}.mp4")
     erg = json.loads((WURZEL / "out" / name / "ereignisse.json").read_text(encoding="utf-8"))
     ev = erg["ereignisse"]
     zeilen = []
@@ -67,16 +72,31 @@ def main():
         z("1", "Länge laut Protokoll", f"{dauer_prot:.2f} s", "80 ± 0,5 s", abs(dauer_prot - 80) <= 0.5)
     # Titel
     titel = [e for e in ev if e["typ"] == "titel"]
-    ok = len(titel) == 1 and titel[0]["t"] >= 0 and titel[0]["t"] + titel[0].get("dauer", 0) <= 3.55
-    z("2", "Titelfrage nur in 0–3,5 s", ", ".join(f"{e['t']:.2f}–{e['t'] + e.get('dauer', 0):.2f} s" for e in titel) or "fehlt", "genau einmal, ≤ 3,5 s", ok)
+    ok = len(titel) == 1 and titel[0]["t"] >= 0 and titel[0]["t"] + titel[0].get("dauer", 0) <= 4.45
+    z("2", "Titelfrage nur in 0–4,4 s (wie Referenz)", ", ".join(f"{e['t']:.2f}–{e['t'] + e.get('dauer', 0):.2f} s" for e in titel) or "fehlt", "genau einmal, ≤ 4,4 s", ok)
     # Messwert-Anzeige
     an = [e for e in ev if e["typ"] == "anzeige"]
-    werte = [e["wert"] for e in an]
+    werte = [e["wert"] for e in an if e.get("wert") is not None]
     wechsel = sum(1 for a, b in zip(an, an[1:]) if a["etikett"] != b["etikett"])
     aend = sum(1 for a, b in zip(an, an[1:]) if a["wert"] != b["wert"])
     z("3", "Messwert-Anzeige vorhanden", f"{len(an)} Messpunkte, {an[0]['t']:.1f}–{an[-1]['t']:.1f} s" if an else "fehlt", "ab ≤ 4,5 s bis ≥ 68 s", bool(an) and an[0]["t"] <= 4.5 and an[-1]["t"] >= 68)
     z("3b", "Zahl ändert sich (live)", f"{aend} von {max(1, len(an) - 1)} Schritten, min {min(werte):g}, max {max(werte):g}" if an else "–", "ändert sich in ≥ 60 % der Schritte", bool(an) and aend >= 0.6 * (len(an) - 1))
     z("3c", "Etikett wechselt mit der Phase", f"{wechsel}×", "2–4×", 2 <= wechsel <= 4)
+    hier = [e for e in an if 52 <= e["t"] <= 68 and (str(e.get("zahl", "")).strip().upper() == "HIER" or e.get("wert") == 0)]
+    z("3d", "Höhepunkt: Anzeige zeigt „HIER“ bzw. 0", f"ab {hier[0]['t']:.1f} s" if hier else "nicht gefunden", "zwischen 52 und 68 s", bool(hier))
+    # keine Stimme
+    stimme = (projekt / "audio" / "stimme.mp3").exists()
+    ms = erg.get("massstab") or {}
+    z("8", "Keine Stimme, keine Untertitel", "stimme.mp3 vorhanden" if stimme else ("Untertitel gesetzt" if ms.get("untertitel") else "keine"), "keine", not stimme and not ms.get("untertitel"))
+    # kein „5 Sekunden“-Rahmen (Inhaber 02.11.)
+    muster = re.compile(r"(\b5|fünf|\bfuenf)[\s\-]*(sek|s\b)", re.I)
+    texte = [str(e.get(k, "")) for e in ev for k in ("text", "etikett", "zahl", "unter", "fakt")]
+    treffer = [x for x in texte if muster.search(x)]
+    for datei in ("skript.json", "szene.js"):
+        if (projekt / datei).exists():
+            inhalt = (projekt / datei).read_text(encoding="utf-8")
+            treffer += [f"{datei}: {m.group(0)}" for m in re.finditer(r"(\b5|fünf|fuenf)[\s\-]*sekunden", inhalt, re.I)]
+    z("9", "Kein „5 Sekunden“-Rahmen", ", ".join(sorted(set(treffer)))[:60] if treffer else "keiner", "keiner", not treffer)
     # Sätze
     sa = sorted([e for e in ev if e["typ"] == "satz"], key=lambda e: e["t"])
     z("4", "Anzahl Sätze", str(len(sa)), "12–18 (Ziel 14–17)", 12 <= len(sa) <= 18)
@@ -87,9 +107,9 @@ def main():
     ueber = [(a["text"], b["text"]) for a, b in zip(sa, sa[1:]) if a["t"] + a["dauer"] > b["t"] + 1e-6]
     z("4d", "Sätze überlappen nicht", "ja" if not ueber else f"{len(ueber)} Überlappungen", "keine", not ueber)
     erster = sa[0]["t"] if sa else 0; letzter = max((e["t"] + e["dauer"] for e in sa), default=0)
-    z("4e", "Sätze zwischen Titel und Abblende", f"{erster:.1f}–{letzter:.1f} s", "ab ≥ 3,5 s, bis ≤ 70 s", erster >= 3.5 and letzter <= 70.0 + 1e-6)
+    z("4e", "Sätze zwischen Titel und Abblende", f"{erster:.1f}–{letzter:.1f} s", "ab ≥ 4,4 s, bis ≤ 70 s", erster >= 4.4 and letzter <= 70.0 + 1e-6)
     # Verbotene Elemente
-    verboten = sorted({e["typ"] for e in ev if e["typ"] in ("chip", "stempel", "sticker", "folgen", "ring", "tafel", "untertitel", "titel-wort", "pointe", "formel", "bilanz", "balken", "leiste", "zaehler", "uhr")})
+    verboten = sorted({e["typ"] for e in ev if e["typ"] in ("chip", "stempel", "sticker", "folgen", "ring", "tafel", "untertitel", "karaoke", "titel-wort", "pointe", "formel", "bilanz", "balken", "leiste", "zaehler", "uhr", "logo")})
     z("5", "Keine Sticker, Chips, Karaoke, Folgen-Aufruf, Ringe", ", ".join(verboten) if verboten else "keine", "keine", not verboten)
     z("5b", "Keine Schnitte (eine Einstellung)", "keine Übergänge im Protokoll" if not [e for e in ev if e["typ"] in ("uebergang", "schnitt")] else "Übergang vorhanden", "keine", not [e for e in ev if e["typ"] in ("uebergang", "schnitt")])
     # Abspann
