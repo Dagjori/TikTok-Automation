@@ -13,7 +13,7 @@
   3. Der Dienst holt den Commit von GitHub, prüft die Grafikkarte, rendert mit `node render.js … --gpu`, macht Ton und `mux.sh` und lädt das MP4 hoch.
   4. Claude wartet mit `auftrag.py warten` (ein Befehl, kostet beim Warten nichts), holt das MP4 nach `pipeline/out/<projekt>/<projekt>.mp4` und löscht die Dateien in Supabase.
   5. Claude prüft das Video wie bisher und plant es in Buffer ein. Ist der PC aus (kein Herzschlag seit 5 Min.), rendert die Sitzung selbst in der Cloud.
-- **Dein Aufwand:** einmal ca. 30 bis 45 Minuten (Schritte 1 bis 8), danach nichts. Der PC muss nur **an und angemeldet** sein (Bildschirm sperren ist okay).
+- **Dein Aufwand:** einmal ca. 30 bis 45 Minuten (Schritte 1 bis 9), danach nichts. Der PC muss nur **an und angemeldet** sein (Bildschirm sperren ist okay).
 - **Sicherheit:** Der Dienst nimmt nur Aufträge aus deinem eigenen Supabase-Bucket an und führt nur Code aus deinem öffentlichen GitHub-Repo aus. Es werden keine Ports geöffnet, nur ausgehende HTTPS-Verbindungen (GitHub, Supabase). Der Supabase-Schlüssel steht nur in der Datei `.env` auf dem PC (nicht im Repo).
 
 ## 2. Was du brauchst

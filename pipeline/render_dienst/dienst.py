@@ -18,6 +18,7 @@ Python:  3.10+, nur Standardbibliothek + pipeline/post_buffer.py; für den Ton a
 Beenden: Strg+C. Ein unterbrochener Auftrag wird beim nächsten Start fortgesetzt (--nur-fehlende).
 """
 import argparse
+import hashlib
 import json
 import os
 import platform
@@ -304,7 +305,7 @@ class Dienst:
             self.log(f"Rückkehr auf {self.ruhebranch} nicht möglich: {e}")
 
     def hash_dienstdateien(self):
-        h = __import__("hashlib").sha256()
+        h = hashlib.sha256()
         hier = Path(__file__).resolve().parent
         for d in sorted(list(hier.glob("*.py")) + list(hier.glob("*.mjs")) + list(hier.glob("*.bat")) + [hier.parent / "post_buffer.py"]):
             try:
@@ -571,6 +572,11 @@ class Dienst:
             for f in (f"{p}.mp4", "vorschau_ohne_ton.mp4", "ton.wav", "ton_norm.wav"):
                 (out / f).unlink(missing_ok=True)
         out.mkdir(parents=True, exist_ok=True)
+        if gleich:  # Fortsetzung nach Abbruch: die zuletzt geschriebenen Bilder können halb sein → neu rendern lassen
+            letzte = sorted((out / "frames").glob("f_*"), key=lambda f: f.stat().st_mtime)[-8:]
+            for f in letzte:
+                f.unlink(missing_ok=True)
+            self.log(f"Fortsetzung: {len(letzte)} zuletzt geschriebene Bilder werden neu gerendert, der Rest bleibt")
         marker.write_text(json.dumps({"id": auftrag["id"], "commit": auftrag["commit"]}), encoding="utf-8")
         if not (self.pipeline / "projekte" / p / "szene.html").is_file():
             raise DienstFehler(f"pipeline/projekte/{p}/szene.html gibt es im Commit {auftrag['commit'][:10]} nicht")

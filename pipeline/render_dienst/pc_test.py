@@ -156,7 +156,7 @@ def main():
     # 7. Supabase
     sp.lade_env()
     if not (Path(__file__).resolve().parent / ".env").is_file() and not os.environ.get("SUPABASE_URL"):
-        fehlt("Datei pipeline\\render_dienst\\.env fehlt", "copy .env.beispiel .env  und SUPABASE_URL und SUPABASE_KEY eintragen (docs/18, Schritt 7)")
+        fehlt("Datei pipeline\\render_dienst\\.env fehlt", "copy .env.beispiel .env  und SUPABASE_URL und SUPABASE_KEY eintragen (docs/18, Schritt 5)")
     else:
         try:
             s = sp.Speicher()
@@ -203,7 +203,7 @@ def main():
         for i, (text, hilfe) in enumerate(todo, 1):
             print(f"  {i}. {maskiere(text)}\n     {hilfe}")
         return 1
-    print("\nALLES BEREIT. Dienst starten:  dienst_starten.bat  (Anleitung: docs/18-render-pc.md, Schritt 9)")
+    print("\nALLES BEREIT. Dienst starten:  dienst_starten.bat  (Anleitung: docs/18-render-pc.md, Schritt 7)")
     return 0
 
 

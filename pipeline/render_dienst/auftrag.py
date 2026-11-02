@@ -298,7 +298,7 @@ def befehl_warten(args, s):
     id_ = args.id or letzte_id()
     start = time.time()
     phase_alt, prozent_alt, fehler_serie, nicht_da = None, -100, 0, 0
-    wartet_ohne_pc = None
+    wartet_ohne_pc = ausfall_seit = None
     while True:
         try:
             st = s.lese_json(f"{PRAEFIX}/status/{id_}.json")
@@ -339,10 +339,15 @@ def befehl_warten(args, s):
         if hb is not None:
             if zustand == "laeuft":
                 mein = [h for h in hb if h["rechner"] == st.get("rechner")]
-                if not mein or mein[0]["alter_s"] > 2 * sp.OFFLINE_NACH_SEKUNDEN or mein[0]["daten"].get("status") == "beendet":
-                    ausgabe(f"PC {st.get('rechner')} ausgefallen oder Dienst beendet (letzter Herzschlag vor {minuten(mein[0]['alter_s']) if mein else '?'}). "
-                            f"Letzter Stand: {zeile(st)}. Rückfall: in der Cloud rendern (der Auftrag bleibt liegen und wird beim Neustart des Dienstes fortgesetzt).")
-                    return EXIT_OFFLINE
+                if mein and mein[0]["online"]:
+                    ausfall_seit = None
+                else:  # Dienst neu gestartet (Update, Windows-Neustart) oder wirklich weg? Erst nach der Geduld aufgeben
+                    ausfall_seit = ausfall_seit or time.time()
+                    if time.time() - ausfall_seit > args.geduld:
+                        ausgabe(f"PC {st.get('rechner')} ausgefallen oder Dienst beendet (letzter Herzschlag vor {minuten(mein[0]['alter_s']) if mein else '?'}, "
+                                f"seit {minuten(time.time() - ausfall_seit)} ohne Lebenszeichen). Letzter Stand: {zeile(st)}. "
+                                "Rückfall: in der Cloud rendern (der Auftrag bleibt liegen und wird beim Neustart des Dienstes fortgesetzt; vorher `aufraeumen --alles`).")
+                        return EXIT_OFFLINE
                 wartet_ohne_pc = None
             elif not any(h["online"] for h in hb):
                 wartet_ohne_pc = wartet_ohne_pc or time.time()
@@ -423,6 +428,7 @@ def main():
     a.add_argument("id", nargs="?")
     a.add_argument("--intervall", type=float, default=30, help="Sekunden zwischen zwei Abfragen (Standard 30)")
     a.add_argument("--max-min", type=float, default=240, help="Zeitlimit in Minuten (Standard 240)")
+    a.add_argument("--geduld", type=float, default=180, help="Sekunden, die der PC ohne Lebenszeichen sein darf, bevor mit Exit 3 aufgegeben wird (Neustart des Dienstes, Standard 180)")
     a.add_argument("--ausgabe", help="Zielordner statt pipeline/out/<projekt>/ (z. B. für Tests; dann wird projekte/<projekt>/audio nicht angefasst)")
     a.add_argument("--behalten", action="store_true", help="Dateien in Supabase nicht löschen")
 

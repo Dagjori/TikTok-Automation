@@ -13,7 +13,6 @@ Zugänge (wie post_buffer.py):
 Die Adresse und der Schlüssel werden in jeder Ausgabe und in jedem Log durch Platzhalter ersetzt (maskiere()).
 """
 import datetime
-import hashlib
 import json
 import os
 import re
