@@ -1,0 +1,416 @@
+{
+ "titel": "Kind: Was kostet es wirklich bis 18?",
+ "skill": "simulierbar-video",
+ "konto": "simulierbar",
+ "stil": "18 Dunkles Studio (Produktlicht)",
+ "stil_begruendung": "Reine Geldfrage (Konsumausgaben gegen Kindergeld), Geld als echtes Objekt: Münztürme auf zwei Sockeln mit LED-Kante in Teamfarbe im schwarzen Studio; in der Mitte der Drehteller mit der Lebensphase als Modell (Kinderwagen, Kinderrad, Jugendfahrrad). Letzter gepostet Stil 4, parallel entsteht Stil 19, daher 18 abgegrenzt.",
+ "teamfarben": {
+  "AUSGABEN": "#FF4F9A",
+  "KINDERGELD": "#2EC4B6"
+ },
+ "klangteppich": "raum",
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Ein Kind, 18 Jahre. Wie viel Geld kostet das wirklich?",
+   "sprechtext": "Ein Kind, achtzehn Jahre.\nWie viel GELD kostet das wirklich?",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Ein Kind. Achtzehn Jahre.",
+     "bild": "Kinderwagen im Spotlicht auf dem Drehteller, Altersuhr 0 von 18 und zwei Sockel mit 0 € sind ab Bild 0 sichtbar"
+    },
+    {
+     "gesagt": "Wie viel GELD kostet das wirklich?",
+     "bild": "Kamera fährt langsam ein, beide LED-Kanten leuchten auf"
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "Links: was Eltern laut Statistikamt ausgeben. Rechts: das Kindergeld. 259 € im Monat.",
+   "sprechtext": "Links: was Eltern laut Statistikamt ausgeben.\nRechts: das Kindergeld.\nZweihundertneunundfünfzig Euro im Monat.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Links: was Eltern laut Statistikamt ausgeben. Rechts: das Kindergeld.",
+     "bild": "Tafel mit AUSGABEN links und KINDERGELD rechts ab Bild 0, beide Sockel leuchten in Teamfarbe; Fokus und Licht wandern auf den linken Sockel (Pink), kleine Quellzeile „Destatis, EVS 2018“"
+    },
+    {
+     "gesagt": "Zweihundertneunundfünfzig Euro im Monat.",
+     "bild": "Chip 259 €/MONAT am rechten Sockel"
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, Babys sind am teuersten. Windeln, Kinderwagen, Erstausstattung. Oder?",
+   "sprechtext": "[thoughtful] Klar, Babys sind am teuersten.\nWindeln, Kinderwagen, Erstausstattung.\nOder?",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Klar, Babys sind am teuersten.",
+     "bild": "Spot auf dem Drehteller, Kinderwagen groß im Licht"
+    },
+    {
+     "gesagt": "Windeln, Kinderwagen, Erstausstattung.",
+     "bild": "Windelpaket, Kinderwagen, Erstausstattungs-Karton erscheinen nacheinander im Spotlicht"
+    },
+    {
+     "gesagt": "Oder?",
+     "bild": "Alles bleibt kurz stehen, Licht ruhig"
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Jahr 1 bis 6. 679 €.",
+   "sprechtext": "Jahr eins bis sechs.\nKnapp siebenhundert Euro.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Jahr eins bis sechs.",
+     "bild": "Altersuhr zählt 1 bis 6, Kinderwagen auf dem Drehteller, Stationen leuchten"
+    },
+    {
+     "gesagt": "Knapp siebenhundert Euro.",
+     "bild": "Chip 679 €/MONAT, linker Stapel wächst gleichmäßig auf 48.888 €"
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "phase": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "sprechtext": "Folg mir, damit du nichts verpasst.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Folg mir, damit du nichts verpasst.",
+     "bild": "Folgen-Pille, Welt läuft ruhig weiter"
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Doch der Abstand wächst. Ab 6 Jahren: 786 € im Monat. Nach 12 Jahren: links 105.480 €. Rechts nur 37.296 €.",
+   "sprechtext": "Doch der Abstand WÄCHST.\nAb sechs Jahren: knapp achthundert Euro.\nNach zwölf Jahren: links über hundertfünftausend.\nRechts nur gut siebenunddreißigtausend.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Doch der Abstand WÄCHST.",
+     "bild": "Kinderwagen wird zum Kinderrad (Modellwechsel mit Lichtblitz), Lücke-Balken zwischen den Sockeln wächst"
+    },
+    {
+     "gesagt": "Ab sechs Jahren: knapp achthundert Euro.",
+     "bild": "Chip 786 €/MONAT"
+    },
+    {
+     "gesagt": "Nach zwölf Jahren stehen links über hundertfünftausend Euro.",
+     "bild": "Zoom auf beide Sockel, linker Zähler 105.480 €"
+    },
+    {
+     "gesagt": "Rechts nur gut siebenunddreißigtausend.",
+     "bild": "rechter Zähler 37.296 €, Lücke leuchtet"
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Jetzt kommt die Jugend. 953 €. 40 % mehr als bei den Kleinsten.",
+   "sprechtext": "[calm] Jetzt kommt die Jugend.\nRund neunhundertfünfzig Euro.\nRund VIERZIG Prozent mehr als bei den Kleinsten.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Und jetzt kommt die Jugend.",
+     "bild": "Kinderrad wird zum Jugendfahrrad"
+    },
+    {
+     "gesagt": "Rund neunhundertfünfzig Euro.",
+     "bild": "Chip 953 €/MONAT leuchtet gegenüber 679 €"
+    },
+    {
+     "gesagt": "Rund VIERZIG Prozent mehr als bei den Kleinsten.",
+     "bild": "Chip +40 %"
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "Das Kindergeld bleibt gleich. Es deckt nur noch gut ein Viertel. Fünfzehn, sechzehn, siebzehn … achtzehn.",
+   "sprechtext": "Das Kindergeld bleibt gleich.\nEs deckt nur noch gut ein Viertel.\nFünfzehn, sechzehn, siebzehn … achtzehn.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Das Kindergeld bleibt gleich.",
+     "bild": "rechter Stapel wächst sichtbar langsamer, 259 € bleibt"
+    },
+    {
+     "gesagt": "Es deckt nur noch gut ein Viertel.",
+     "bild": "Deckungs-Anzeige 27 %"
+    },
+    {
+     "gesagt": "Fünfzehn, sechzehn, siebzehn … achtzehn.",
+     "bild": "Altersuhr zählt 15, 16, 17, langsamer Zoom auf den Drehteller, dann 18"
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Ausgaben: 174.096 €. Minus Kindergeld: 55.944 €. Bleiben: 118.152 €.",
+   "sprechtext": "Ausgaben: hundertvierundsiebzigtausend Euro.\nMinus Kindergeld: rund sechsundfünfzigtausend.\nBleiben … hundertachtzehntausend Euro.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Ausgaben: hundertvierundsiebzigtausend Euro.",
+     "bild": "Bilanzkarte Zeile 1: 174.096 €"
+    },
+    {
+     "gesagt": "Minus Kindergeld: rund sechsundfünfzigtausend.",
+     "bild": "Zeile 2: 55.944 €"
+    },
+    {
+     "gesagt": "Bleiben … hundertachtzehntausend Euro.",
+     "bild": "Ergebnis 118.152 € leuchtet einmal hell auf, Licht auf dem linken Sockel"
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Warum? Erstens: Die Ausgaben steigen mit dem Alter. Zweitens: Das Kindergeld wächst nicht mit.",
+   "sprechtext": "Warum?\nErstens: Die Ausgaben steigen mit dem Alter.\nZweitens: Das Kindergeld wächst nicht mit.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Warum?",
+     "bild": "Balken-Karte Warum?"
+    },
+    {
+     "gesagt": "Erstens: Die Ausgaben steigen mit dem Alter.",
+     "bild": "Faktor 1 mit 679, 786, 953"
+    },
+    {
+     "gesagt": "Zweitens: Das Kindergeld wächst nicht mit.",
+     "bild": "Faktor 2 mit flacher 259"
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "phase": "ueberraschung",
+   "text": "Die letzten 6 Jahre kosten mehr als die ersten 6. 19.728 € mehr.",
+   "sprechtext": "Die letzten sechs Jahre kosten mehr als die ersten sechs.\nRund zwanzigtausend Euro mehr.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Die letzten sechs Jahre kosten mehr als die ersten sechs.",
+     "bild": "Kamera schwenkt auf zwei Säulen: Jahre 13–18 68.616 € gegen Jahre 1–6 48.888 €"
+    },
+    {
+     "gesagt": "Rund zwanzigtausend Euro mehr.",
+     "bild": "Differenz 19.728 € leuchtet auf"
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "phase": "merksatz",
+   "text": "Ein Kind ist nicht am Anfang am teuersten, sondern am Ende.",
+   "sprechtext": "Ein Kind ist nicht am Anfang am teuersten – sondern am ENDE.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Ein Kind ist nicht am Anfang am teuersten – sondern am ENDE.",
+     "bild": "Kamera gleitet zurück zum Kinderwagen am Start, Pointe-Text"
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "phase": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "sprechtext": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+     "bild": "Anfangsbild kehrt zurück (Kinderwagen, Zähler 0 €)"
+    }
+   ]
+  }
+ ],
+ "caption": "Was kostet ein Kind bis 18 wirklich? 👶 Ich hab’s simuliert. Hättest du gedacht, in welchem Alter es am teuersten ist? 👇 #kinder #familie #geld #wissen #simulation",
+ "quellen": [
+  "(F) Destatis, Konsumausgaben von Familien für Kinder, Berechnungen auf Grundlage der EVS 2018 (erschienen 21.06.2021): Paare mit einem Kind 763 €/Monat; unter 6 J. 679 €, 6 bis unter 12 J. 786 €, 12 bis unter 18 J. 953 €",
+  "(F) Kindergeld 259 €/Monat ab 01.01.2026 (§ 66 EStG, Steuerfortentwicklungsgesetz; Bundesagentur für Arbeit PM 2025/42)",
+  "(F) Neuere Auswertung der Kinderausgaben nach Alter auf Basis der EVS 2023 nicht gefunden (Stand 02.11.2026), daher EVS 2018"
+ ],
+ "annahmen": [
+  "(A) Modellhaushalt: Paar mit einem Kind. Die Destatis-Durchschnittswerte gelten für diesen Haushaltstyp. Bei mehreren Kindern liegen die Ausgaben je Kind laut Destatis niedriger (zu prüfen).",
+  "(A) Ausgabenwerte aus der EVS 2018 in Preisen von 2018, nicht inflationsbereinigt. In Preisen von 2026 läge die Summe höher. Rückfrage: Sollen wir bei den amtlichen Nominalwerten bleiben (aktuelle Fassung) oder mit dem VPI auf 2026 hochrechnen? Die Hochrechnung wäre eine eigene Annahme. Das Ergebnis würde sich deutlich ändern.",
+  "(A) Zu prüfen: Ob Destatis inzwischen eine Auswertung zur EVS 2023 mit Kinderausgaben nach Alter veröffentlicht hat. Falls ja, diese Werte statt EVS 2018 verwenden und alle Zahlen neu rechnen.",
+  "(A) Das Kindergeld wird modellhaft für alle 18 Jahre mit dem Betrag von 2026 (259 €) angesetzt. Real war es in früheren Jahren niedriger.",
+  "(A) Nur Kindergeld wird abgezogen. Kinderfreibetrag und BEA-Freibetrag (2026 zu prüfen: 6.828 € plus 2.928 € je Elternpaar) wirken über die Günstigerprüfung erst bei höheren Einkommen stärker als das Kindergeld. Sie sind nicht modelliert. Elterngeld, Kinderzuschlag und Betreuungskosten-Abzug sind ebenfalls nicht enthalten.",
+  "(A) Die Werte sind Konsumausgaben. Entgangenes Einkommen der Eltern (Opportunitätskosten) ist nicht enthalten. Das Video behauptet darüber nichts.",
+  "(A) Die Altersgruppen werden je 6 Lebensjahren gleichgesetzt: Jahre 1 bis 6 = unter 6, Jahre 7 bis 12 = 6 bis unter 12, Jahre 13 bis 18 = 12 bis unter 18.",
+  "(A) Hinweis aus dem Lernstand: Kindergeld- und Familienthemen erreichten bisher kaum Aufrufe. Das Skript stellt deshalb das Duell Ausgaben gegen Kindergeld und die kontraintuitive Altersfrage in den Vordergrund, nicht die Sozialpolitik."
+ ],
+ "rechenweg": "Nettobelastung = Σ(Monatsausgaben je Altersgruppe × 72) − 259 × 216. 679×72 = 48.888; 786×72 = 56.592; 953×72 = 68.616; gesamt 174.096 €. Nach 12 J.: 105.480 € gegen Kindergeld 37.296 €. Kindergeld 18 J.: 55.944 €. Ergebnis 118.152 €. Jugend/Kleinkind 953/679 = 1,404 (+40 %). Deckung 259/953 = 27,2 %. Ende − Anfang = 19.728 €. Code: pipeline/sim/kind_bis_18.mjs (4 Tests grün).",
+ "zahlen": {
+  "ausgaben_unter_6_monat": "679 €",
+  "ausgaben_6_bis_12_monat": "786 €",
+  "ausgaben_12_bis_18_monat": "953 €",
+  "ausgaben_jahre_1_bis_6": "48.888 €",
+  "ausgaben_jahre_7_bis_12": "56.592 €",
+  "ausgaben_jahre_13_bis_18": "68.616 €",
+  "ausgaben_nach_12_jahren": "105.480 €",
+  "ausgaben_gesamt_18_jahre": "174.096 €",
+  "kindergeld_2026_monat": "259 €",
+  "kindergeld_nach_12_jahren": "37.296 €",
+  "kindergeld_gesamt_18_jahre": "55.944 €",
+  "nettobelastung": "118.152 €",
+  "deckung_kindergeld_jugend": "27,2 %",
+  "deckung_kindergeld_klein": "38,1 %",
+  "mehrkosten_jugend_vs_kleinkind": "+40,4 %",
+  "differenz_letzte_vs_erste_6_jahre": "19.728 €"
+ },
+ "korrekturen": [
+  {
+   "feld": "Destatis-Ausgaben nach Alter",
+   "alt": "600 / 686 / 953 €",
+   "neu": "679 / 786 / 953 €",
+   "quelle": "Destatis, Konsumausgaben von Familien für Kinder (EVS 2018), S. Paare mit einem Kind",
+   "grund": "falsche Werte im Entwurf",
+   "zeit": "2026-11-02T23:05:00Z"
+  },
+  {
+   "feld": "Summen",
+   "alt": "Ausgaben 161.208, nach 12 J. 92.592, Ergebnis 105.264 €, Differenz Ende/Anfang 25.416 €",
+   "neu": "Ausgaben 174.096, nach 12 J. 105.480, Ergebnis 118.152 €, Differenz 19.728 €",
+   "quelle": "pipeline/sim/kind_bis_18.mjs",
+   "grund": "Folge der Korrektur; Pointe (am Ende am teuersten) bleibt",
+   "zeit": "2026-11-02T23:05:00Z"
+  },
+  {
+   "feld": "Wendung 2",
+   "alt": "Über die HÄLFTE mehr (+58,8 %)",
+   "neu": "Rund VIERZIG Prozent mehr (+40,4 %)",
+   "quelle": "953/679",
+   "grund": "Aussage mit korrekten Werten falsch",
+   "zeit": "2026-11-02T23:05:00Z"
+  },
+  {
+   "feld": "Jahresmischung / Inflation",
+   "alt": "offen (Nominalwerte 2018 oder VPI-Hochrechnung?)",
+   "neu": "amtliche Nominalwerte 2018 bleiben, keine eigene Hochrechnung; offengelegt im Bild (Destatis, Erhebung 2018) und im Sprechtext 'laut Statistikamt'; Kindergeld als aktueller Wert 2026",
+   "quelle": "-",
+   "grund": "Faktentreue: keine eigene Annahme ins Ergebnis, Mischung offenlegen",
+   "zeit": "2026-11-02T23:05:00Z"
+  },
+  {
+   "feld": "EVS 2023",
+   "alt": "zu prüfen",
+   "neu": "keine Kinderkosten-Auswertung nach Alter auf Basis EVS 2023 gefunden; EVS 2018 bleibt",
+   "quelle": "Websuche 02.11.2026",
+   "grund": "Prüfung",
+   "zeit": "2026-11-02T23:05:00Z"
+  }
+ ],
+ "skript_quelle": "acc1-2026-11-03-abend",
+ "skript_aenderungen": [
+  "Kürzungen gegen die Länge (Stimme mit 163 Wörtern: 81,1 s, Grenze 80 s): entfernt „Zwei Zähler laufen.“ (regeln), „das zurückkommt“ (regeln), „stehen“ und „Und“ vor jetzt (Wendung 1/2: „Und jetzt kommt die Jugend.“ → „Jetzt kommt die Jugend.“), „Und noch etwas.“ (Überraschung); Inhalt und Zahlen unverändert; zusätzlich „Euro“ nach „hundertfünftausend“ (Wendung 1); „im Monat“ in Rennen und Wendung 2 (Einheit steht im Chip „€ / Monat“ im Bild)",
+  "hook: Punkt zwischen „Ein Kind.“ und „Achtzehn Jahre.“ durch Komma ersetzt (Hook max. 2 Sätze)",
+  "Untertitel-Texte an die Reihenfolge des Sprechtexts angepasst (Zeitzuordnung der Wörter), Zahlen unverändert"
+ ],
+ "lern_notizen": {
+  "thema": "Kosten eines Kindes bis 18 gegen Kindergeld",
+  "frage": "Wie viel Geld kostet ein Kind wirklich bis 18 (Konsumausgaben gegen Kindergeld)?",
+  "laenge_s": 77.46,
+  "hook": "Ein Kind, achtzehn Jahre. Wie viel GELD kostet das wirklich?",
+  "hook_typ": "Du-Szenario mit Frage (Kosten, 18 Jahre)",
+  "stil": "18 Dunkles Studio (Produktlicht)",
+  "zoom": "ja: Denkfalle (Push auf den Drehteller), Wendung 1 (Zoom auf beide Türme), Countdown 15–18 (langsamer Zoom), Ergebnis (zwei Heranzoomer auf die Türme); nein: Rennen, Warum, Überraschung (Fahrt/Orbit)",
+  "animationen": [
+   {
+    "t": 0.5,
+    "art": "led-aufleuchten",
+    "was": "beide Sockel-LEDs im Hook"
+   },
+   {
+    "t": 4.6,
+    "art": "lichtwechsel+kamerafahrt",
+    "was": "Licht und Kamera wandern auf den linken Sockel (Ausgaben), ab 8,1 s auf den rechten (Kindergeld)"
+   },
+   {
+    "t": 14.96,
+    "art": "objekte",
+    "was": "Windelpaket fällt auf den Drehteller, danach Kinderwagen im Spot, Erstausstattung"
+   },
+   {
+    "t": 18.72,
+    "art": "muenzregen",
+    "was": "Alter 0–6, Münzen fallen auf beide Türme, Altersring leuchtet Station für Station"
+   },
+   {
+    "t": 24.8,
+    "art": "modellwechsel+lichtblitz",
+    "was": "Kinderwagen wird Kinderrad (Drehung, Blitz)"
+   },
+   {
+    "t": 30.24,
+    "art": "zoom+luecke",
+    "was": "Zoom auf beide Türme, gestrichelte Lücken-Linie mit Klammer"
+   },
+   {
+    "t": 35.6,
+    "art": "modellwechsel+lichtblitz",
+    "was": "Kinderrad wird Jugendfahrrad"
+   },
+   {
+    "t": 45.04,
+    "art": "countdown+zoom",
+    "was": "Alter 15,16,17,18, langsamer Zoom auf den Drehteller"
+   },
+   {
+    "t": 48.8,
+    "art": "bilanzkarte+kamerafahrt",
+    "was": "Kamera fährt zurück, Bilanz baut sich auf, Ergebnis leuchtet"
+   },
+   {
+    "t": 57.76,
+    "art": "saeulenkarte",
+    "was": "steigende Säulen (Ausgaben) gegen flache Säulen (Kindergeld)"
+   },
+   {
+    "t": 64.4,
+    "art": "saeulen+orbit",
+    "was": "zwei Säulen auf dem Drehteller (Jahre 13–18 gegen 1–6), Differenz leuchtet"
+   },
+   {
+    "t": 69.92,
+    "art": "schleife",
+    "was": "Kamera, Türme und Zähler gleiten zum Anfangsbild zurück"
+   }
+  ],
+  "licht": "Softbox kühl, Spot von oben mit Kegel und Staub, Teamlicht (Pink links, Türkis rechts) auf den Sockeln, Spot auf dem Drehteller steigt bei Modellwechseln und im Countdown, Blitz bei Wechsel",
+  "effekte": [
+   "LED-Puls je neue Zahl",
+   "Münzregen",
+   "Modellwechsel mit Drehung",
+   "Lücken-Linie",
+   "Aufleuchten der Zählerseite"
+  ],
+  "zeitpunkte": {
+   "folgen": 21.92,
+   "wendung_1": 23.92,
+   "wendung_2": 35.09,
+   "wendung_3": 41.2,
+   "ergebnis": 48.8,
+   "warum": 57.76,
+   "ueberraschung": 64.4,
+   "pointe": 73.04
+  },
+  "tempo": {
+   "woerter": 153,
+   "wps": 1.99
+  },
+  "caption": "Was kostet ein Kind bis 18 wirklich? 👶 Ich hab’s simuliert. Hättest du gedacht, in welchem Alter es am teuersten ist? 👇 #kinder #familie #geld #wissen #simulation",
+  "besonderheiten": "Sprechtext gegenüber dem Skript gekürzt (Länge 81 s > 80 s), siehe skript_aenderungen; Tempo 1,99 W/s liegt unter dem Profil (2,2–2,5): Ben im Original spricht ca. 2,0 W/s."
+ }
+}

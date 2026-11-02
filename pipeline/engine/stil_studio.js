@@ -11,6 +11,7 @@
 //   const w = waage({ breite: 3 }); w.setze(neigung)  // Schalen w.links / w.rechts (Gruppen) nehmen Objekte auf
 // Maßstab: 1 Einheit ≈ 10 cm (Münze r = 0,12). Teamfarbe als Licht (LED-Kante, Lichtfleck, Banderole), nie Gelb.
 import * as THREE from "three";
+import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import { leuchtMat, glimmLinie, lichtPfuetze } from "./sim_atmosphaere.js";
 
 const zufall = (seed) => { let s = (seed * 2654435761) % 4294967296; return () => { s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; }; };
@@ -253,6 +254,279 @@ export function waage({ breite = 3.2, hoehe = 2.6, schalenRadius = 0.62, faden =
       S.h.position.set(x, y - faden, 0);
     }
   };
+  g.setze(0);
+  return g;
+}
+
+// =====================================================================================
+// Familie und Kind (03.11.2026, Projekt kind-bis-18): Drehteller mit Altersring, Kinderwagen, Kinderrad, Jugendrad,
+// Windelpaket, Erstausstattung, Säule. Alles prozedural, neutrale Farben (Elfenbein, Graphit, Kraftpapier), keine Marken.
+// Maßstab: freie Miniaturen, jedes Modell passt in einen Kreis von ca. 1,9 Einheiten (Drehteller r = 1).
+//   const d = drehteller({ radius: 1.05 }); szene.add(d); d.dreh(winkel); d.modell.add(kinderwagen());
+//   const w = kinderwagen(); w.rolle(rad);                       // Räder drehen sich um `rad` (Bogenmaß)
+//   const r = altersRing({ radius: 1.5 }); r.setze(alter, farbe)  // 18 Stationen leuchten bis zum Alter (Bruchteile erlaubt)
+// =====================================================================================
+const alu = () => gemeinsam("alu", () => new THREE.MeshStandardMaterial({ color: "#BCC1C9", metalness: 1, roughness: 0.3, envMapIntensity: 1.3 }));
+const gummi = () => gemeinsam("gummi", () => new THREE.MeshStandardMaterial({ color: "#16181C", roughness: 0.72, metalness: 0 }));
+const lackMat = (farbe, rau = 0.3) => gemeinsam(`lack|${farbe}|${rau}`, () => new THREE.MeshPhysicalMaterial({ color: farbe, roughness: rau, metalness: 0.2, clearcoat: 0.7, clearcoatRoughness: 0.22, envMapIntensity: 1.1 }));
+const stoffMat = (farbe, rau = 0.88) => gemeinsam(`stoff|${farbe}|${rau}`, () => new THREE.MeshStandardMaterial({ color: farbe, roughness: rau, metalness: 0, side: THREE.DoubleSide }));
+const mesh = (geo, mat, { x = 0, y = 0, z = 0, schatten = true } = {}) => { const m = new THREE.Mesh(geo, mat); m.position.set(x, y, z); m.castShadow = schatten; m.receiveShadow = true; return m; };
+
+/** Rohr von a nach b */
+function rohr(a, b, r, mat, seg = 12) {
+  const va = new THREE.Vector3(...a), vb = new THREE.Vector3(...b);
+  const l = va.distanceTo(vb);
+  const m = new THREE.Mesh(new THREE.CylinderGeometry(r, r, l, seg), mat);
+  m.position.copy(va).add(vb).multiplyScalar(0.5);
+  m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), vb.clone().sub(va).normalize());
+  m.castShadow = true;
+  return m;
+}
+/** Rad mit Reifen, Felge, Nabe und Speichen (Achse = z); drehbar über rotation.z */
+function rad({ r = 0.3, reifen = 0.045, speichen = 14, felge = alu() } = {}) {
+  const g = new THREE.Group();
+  g.add(mesh(new THREE.TorusGeometry(r, reifen, 14, 56), gummi()));
+  g.add(mesh(new THREE.TorusGeometry(r - reifen * 0.75, reifen * 0.3, 8, 56), felge, { schatten: false }));
+  const nabe = mesh(new THREE.CylinderGeometry(r * 0.13, r * 0.13, reifen * 2.2, 16), felge, { schatten: false });
+  nabe.rotation.x = Math.PI / 2;
+  g.add(nabe);
+  for (let i = 0; i < speichen; i++) {
+    const w = (i / speichen) * Math.PI * 2;
+    const s = mesh(new THREE.CylinderGeometry(0.0055, 0.0055, r - reifen * 0.9, 5), felge, { schatten: false });
+    s.position.set(Math.cos(w) * (r - reifen * 0.9) / 2, Math.sin(w) * (r - reifen * 0.9) / 2, 0);
+    s.rotation.z = w - Math.PI / 2;
+    g.add(s);
+  }
+  g.userData.radius = r;
+  g.userData.dynamisch = true;
+  return g;
+}
+const rolleSetzen = (g, raeder) => { g.rolle = (a) => raeder.forEach((w) => { w.rotation.z = -a / w.userData.radius; }); };
+
+/** Kinderwagen (Wanne, Verdeck, Gestell, vier Räder); fährt in +x, passt in einen Kreis von ca. 1,9 */
+export function kinderwagen({ stoff = "#E8E2D6", verdeck = "#CBC3B3", akzent = "#9FB3C8" } = {}) {
+  const g = new THREE.Group();
+  const al = alu();
+  const raeder = [];
+  for (const [x, r, z] of [[-0.42, 0.28, 0.4], [-0.42, 0.28, -0.4], [0.5, 0.21, 0.36], [0.5, 0.21, -0.36]]) {
+    const w = rad({ r, reifen: r * 0.17 }); w.position.set(x, r, z); g.add(w); raeder.push(w);
+  }
+  g.add(rohr([-0.42, 0.28, -0.4], [-0.42, 0.28, 0.4], 0.014, al), rohr([0.5, 0.21, -0.36], [0.5, 0.21, 0.36], 0.014, al));
+  for (const s of [-1, 1]) {
+    g.add(rohr([-0.42, 0.28, s * 0.4], [-0.3, 0.55, s * 0.24], 0.019, al), rohr([0.5, 0.21, s * 0.36], [0.4, 0.55, s * 0.24], 0.019, al));
+    g.add(rohr([-0.3, 0.55, s * 0.24], [0.4, 0.55, s * 0.24], 0.022, al));
+    g.add(rohr([-0.34, 0.5, s * 0.24], [-0.62, 1.05, s * 0.25], 0.022, al));
+  }
+  const griff = rohr([-0.62, 1.05, -0.27], [-0.62, 1.05, 0.27], 0.036, gummi(), 16);
+  g.add(griff);
+  // Wanne (untere Halbschale), Rand, Matratze
+  const wanne = mesh(new THREE.SphereGeometry(1, 48, 24, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), stoffMat(stoff), { x: 0.02, y: 0.98 });
+  wanne.scale.set(0.78, 0.44, 0.36);
+  g.add(wanne);
+  const rand = mesh(new THREE.TorusGeometry(1, 0.045, 10, 72), stoffMat(akzent, 0.6), { x: 0.02, y: 0.98 });
+  rand.rotation.x = Math.PI / 2; rand.scale.set(0.78, 0.36, 1);
+  g.add(rand);
+  const matratze = mesh(new THREE.SphereGeometry(1, 32, 12), stoffMat("#F4F1EA"), { x: 0.05, y: 0.95 });
+  matratze.scale.set(0.66, 0.05, 0.3);
+  g.add(matratze);
+  const kissen = mesh(new THREE.SphereGeometry(0.13, 24, 14), stoffMat("#FBF9F4"), { x: -0.38, y: 1.03 });
+  kissen.scale.set(1.2, 0.55, 1.2);
+  g.add(kissen);
+  // Verdeck: halbe Kuppel über der hinteren Hälfte, Bügel
+  const dach = mesh(new THREE.SphereGeometry(1, 40, 20, -Math.PI / 2, Math.PI, 0, Math.PI / 2), stoffMat(verdeck), { x: -0.22, y: 0.99 });
+  dach.scale.set(0.5, 0.52, 0.4);
+  g.add(dach);
+  for (const w of [0.35, 0.7]) {
+    const b = mesh(new THREE.TorusGeometry(1, 0.016, 8, 40, Math.PI), al, { x: -0.22, y: 0.99 });
+    b.scale.set(0.5, 0.52, 0.4); b.rotation.y = Math.PI / 2 - w * 0.0; b.rotation.z = 0;
+    g.add(b);
+  }
+  g.rotation.y = 0;
+  rolleSetzen(g, raeder);
+  return g;
+}
+
+/** Fahrrad (Diamantrahmen) mit Rädern r, Radstand l; stuetz = Stützräder (Kinderrad) */
+function fahrrad({ r = 0.4, l = 1.2, rahmen = "#ECE6DA", akzent = "#2B2F37", stuetz = false, sattel = 1.0, lenker = 1.0, schutz = false } = {}) {
+  const g = new THREE.Group();
+  const lack = lackMat(rahmen), dunkel = lackMat(akzent, 0.45), al = alu();
+  const raeder = [];
+  for (const x of [-l / 2, l / 2]) { const w = rad({ r, reifen: r * 0.1 }); w.position.set(x, r, 0); g.add(w); raeder.push(w); }
+  const R = [-l / 2, r, 0], F = [l / 2, r, 0];
+  const BB = [-l * 0.06, r * 0.6, 0];
+  const ST = [-l * 0.2, r * (1.55 + 0.2 * sattel), 0];       // Sattelrohr oben
+  const SB = [-l * 0.19, r * 1.62, 0];                        // Oberrohr hinten
+  const H1 = [l * 0.36, r * 1.3, 0], H2 = [l * 0.34, r * 1.7, 0];
+  const rr = 0.026 * Math.max(0.8, r / 0.4);
+  for (const [a, b] of [[BB, H1], [BB, ST], [SB, H2], [H1, H2]]) g.add(rohr(a, b, rr, lack, 14));
+  for (const s of [-1, 1]) {
+    g.add(rohr([R[0], R[1], s * 0.05], [BB[0], BB[1], s * 0.05], rr * 0.55, lack), rohr([R[0], R[1], s * 0.05], [SB[0], SB[1], s * 0.04], rr * 0.55, lack));
+    g.add(rohr([F[0], F[1], s * 0.05], [H1[0] - 0.01, H1[1] + 0.03, s * 0.04], rr * 0.6, dunkel));
+  }
+  g.add(rohr(R, [R[0], R[1], 0], 0.01, al));
+  // Sattel, Stütze, Vorbau, Lenker, Griffe
+  g.add(rohr(ST, [ST[0] - 0.02, ST[1] + 0.12 * sattel, 0], 0.014, al));
+  const s = mesh(new THREE.SphereGeometry(1, 24, 12), gummi(), { x: ST[0] - 0.04, y: ST[1] + 0.14 * sattel });
+  s.scale.set(0.12, 0.035, 0.065); g.add(s);
+  g.add(rohr(H2, [H2[0] - 0.03, H2[1] + 0.13 * lenker, 0], 0.014, al));
+  const lx = H2[0] - 0.035, ly = H2[1] + 0.14 * lenker;
+  g.add(rohr([lx, ly, -0.22], [lx, ly, 0.22], 0.012, al), rohr([lx, ly, 0.18], [lx, ly, 0.28], 0.019, gummi(), 12), rohr([lx, ly, -0.28], [lx, ly, -0.18], 0.019, gummi(), 12));
+  // Tretlager: Kettenblatt, Kurbeln, Pedale
+  const blatt = mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.012, 24), al, { x: BB[0], y: BB[1], z: 0.04 }); blatt.rotation.x = Math.PI / 2; g.add(blatt);
+  for (const sg of [-1, 1]) {
+    g.add(rohr([BB[0], BB[1], sg * 0.06], [BB[0] + sg * 0.1, BB[1] - sg * 0.07, sg * 0.1], 0.008, al));
+    g.add(mesh(new THREE.BoxGeometry(0.07, 0.012, 0.04), gummi(), { x: BB[0] + sg * 0.1, y: BB[1] - sg * 0.07, z: sg * 0.12 }));
+  }
+  if (schutz) for (const x of [-l / 2, l / 2]) { const sc = mesh(new THREE.TorusGeometry(r * 1.12, 0.012, 6, 24, Math.PI * 0.7), lack, { x, y: r }); sc.rotation.z = Math.PI * 0.15; g.add(sc); }
+  if (stuetz) for (const sg of [-1, 1]) {
+    const w = rad({ r: 0.1, reifen: 0.022, speichen: 8 }); w.position.set(-l / 2 - 0.02, 0.1, sg * 0.24); g.add(w); raeder.push(w);
+    g.add(rohr([-l / 2, r, sg * 0.05], [-l / 2 - 0.02, 0.1, sg * 0.24], 0.01, al));
+  }
+  rolleSetzen(g, raeder.length ? raeder : []);
+  g.rolle = (a) => raeder.forEach((w) => { w.rotation.z = -a / w.userData.radius; });
+  return g;
+}
+/** Kinderrad mit Stützrädern */
+export function kinderrad() { return fahrrad({ r: 0.36, l: 1.05, rahmen: "#ECE6DA", akzent: "#2B2F37", stuetz: true, sattel: 0.7, lenker: 0.9 }); }
+/** Jugendfahrrad: größere Räder, Diamantrahmen, hoher Sattel */
+export function jugendrad() { return fahrrad({ r: 0.55, l: 1.62, rahmen: "#D9DEE6", akzent: "#23272E", stuetz: false, sattel: 1.4, lenker: 1.1 }); }
+
+// ---------- Windelpaket und Erstausstattung ----------
+function windelTextur() {
+  return gemeinsam("windeltextur", () => {
+    const c = leinwand(512, 384, (g, b, h) => {
+      const v = g.createLinearGradient(0, 0, 0, h); v.addColorStop(0, "#EAF3FA"); v.addColorStop(1, "#BFD8EC");
+      g.fillStyle = v; g.fillRect(0, 0, b, h);
+      g.fillStyle = "rgba(255,255,255,0.65)"; for (let i = 0; i < 9; i++) { g.beginPath(); g.arc(40 + i * 62, 340 + (i % 2) * 12, 34, 0, Math.PI * 2); g.fill(); }
+      g.fillStyle = "#FFFFFF";
+      g.beginPath(); // Windel-Symbol: Taillenband, zwei Beinöffnungen
+      g.moveTo(130, 90); g.lineTo(382, 90); g.quadraticCurveTo(398, 170, 340, 250); g.quadraticCurveTo(300, 290, 256, 224); g.quadraticCurveTo(212, 290, 172, 250); g.quadraticCurveTo(114, 170, 130, 90); g.closePath(); g.fill();
+      g.fillStyle = "#8FB6D6"; g.fillRect(130, 90, 252, 26);
+      g.strokeStyle = "#8FB6D6"; g.lineWidth = 5; g.beginPath(); g.moveTo(204, 150); g.lineTo(308, 150); g.stroke();
+    });
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
+    return t;
+  });
+}
+/** Windelpaket (weicher Folienkarton) mit einer Windel davor */
+export function windelPaket() {
+  const g = new THREE.Group();
+  const folie = new THREE.MeshStandardMaterial({ color: "#DCEAF5", roughness: 0.4, metalness: 0, envMapIntensity: 0.9 });
+  const front = new THREE.MeshStandardMaterial({ map: windelTextur(), roughness: 0.38, envMapIntensity: 0.9 });
+  const k = new THREE.Mesh(new RoundedBoxGeometry(0.9, 0.62, 0.46, 5, 0.07), [folie, folie, folie, folie, front, front]);
+  k.position.y = 0.31; k.castShadow = true; k.receiveShadow = true;
+  g.add(k);
+  const w = new THREE.Mesh(new RoundedBoxGeometry(0.44, 0.06, 0.34, 4, 0.025), stoffMat("#FFFFFF", 0.7));
+  w.position.set(0.42, 0.03, 0.38); w.rotation.y = -0.5; w.castShadow = true;
+  g.add(w);
+  const band = mesh(new THREE.BoxGeometry(0.44, 0.064, 0.07), stoffMat("#8FB6D6", 0.7), { x: 0.42, y: 0.031, z: 0.38 }); band.rotation.y = -0.5;
+  g.add(band);
+  return g;
+}
+function babyBody(farbe) {
+  const s = new THREE.Shape();
+  s.moveTo(-0.07, 0.1); s.lineTo(-0.2, 0.06); s.lineTo(-0.27, -0.04); s.lineTo(-0.2, -0.08); s.lineTo(-0.12, -0.02); s.lineTo(-0.1, -0.2);
+  s.lineTo(0.1, -0.2); s.lineTo(0.12, -0.02); s.lineTo(0.2, -0.08); s.lineTo(0.27, -0.04); s.lineTo(0.2, 0.06); s.lineTo(0.07, 0.1);
+  s.quadraticCurveTo(0, 0.04, -0.07, 0.1);
+  const m = new THREE.Mesh(new THREE.ExtrudeGeometry(s, { depth: 0.025, bevelEnabled: true, bevelSize: 0.01, bevelThickness: 0.01, bevelSegments: 2 }), stoffMat(farbe, 0.9));
+  m.castShadow = true;
+  return m;
+}
+/** Erstausstattung: Karton mit Schleife, Strampler, Schnuller */
+export function erstausstattung() {
+  const g = new THREE.Group();
+  const karton = new THREE.Mesh(new RoundedBoxGeometry(0.84, 0.46, 0.62, 4, 0.03), new THREE.MeshStandardMaterial({ color: "#B88F63", roughness: 0.82 }));
+  karton.position.y = 0.23; karton.castShadow = true; karton.receiveShadow = true; g.add(karton);
+  const deckel = new THREE.Mesh(new RoundedBoxGeometry(0.88, 0.07, 0.66, 3, 0.02), new THREE.MeshStandardMaterial({ color: "#C9A074", roughness: 0.8 }));
+  deckel.position.y = 0.5; deckel.castShadow = true; g.add(deckel);
+  const band = stoffMat("#ECE6DA", 0.55);
+  g.add(mesh(new THREE.BoxGeometry(0.1, 0.5, 0.67), band, { y: 0.25 }), mesh(new THREE.BoxGeometry(0.89, 0.075, 0.1), band, { y: 0.5 }));
+  for (const s of [-1, 1]) { const sc = mesh(new THREE.TorusGeometry(0.085, 0.022, 10, 24), band, { x: s * 0.07, y: 0.6 }); sc.rotation.set(Math.PI / 2 - 0.3, 0, s * 0.5); sc.scale.set(1.2, 0.8, 1); g.add(sc); }
+  g.add(mesh(new THREE.SphereGeometry(0.035, 16, 10), band, { y: 0.585 }));
+  const body = babyBody("#CFE5DB"); body.position.set(-0.05, 0.545, 0.1); body.rotation.set(-Math.PI / 2 + 0.06, 0, 0.2); g.add(body);
+  const nu = new THREE.Group(); // Schnuller: Ring, Schild, Sauger
+  nu.add(mesh(new THREE.TorusGeometry(0.06, 0.012, 8, 24), lackMat("#F1C6D2", 0.35), { y: 0.0, z: 0.0 }));
+  const schild = mesh(new THREE.SphereGeometry(1, 24, 10), lackMat("#F6E3E8", 0.3)); schild.scale.set(0.07, 0.03, 0.07); schild.position.set(0, 0, 0.01); nu.add(schild);
+  const sauger = mesh(new THREE.SphereGeometry(0.035, 16, 10), stoffMat("#F7E9D3", 0.5)); sauger.position.set(0, 0.04, 0.01); sauger.scale.set(1, 1.3, 1); nu.add(sauger);
+  nu.position.set(0.22, 0.6, 0.12); nu.rotation.set(-1.2, 0, 0.5); g.add(nu);
+  return g;
+}
+
+// ---------- Drehteller, Altersring, Säule ----------
+function tellerTextur() {
+  return gemeinsam("tellertextur", () => {
+    const c = leinwand(512, 512, (g, b) => {
+      g.fillStyle = "#15171C"; g.fillRect(0, 0, b, b);
+      const m = b / 2;
+      for (let i = 0; i < 72; i++) { const w = (i / 72) * Math.PI * 2; g.strokeStyle = i % 6 === 0 ? "rgba(236,230,218,0.28)" : "rgba(236,230,218,0.09)"; g.lineWidth = i % 6 === 0 ? 3 : 1.5; g.beginPath(); g.moveTo(m + Math.cos(w) * m * 0.3, m + Math.sin(w) * m * 0.3); g.lineTo(m + Math.cos(w) * m * 0.96, m + Math.sin(w) * m * 0.96); g.stroke(); }
+      for (const f of [0.34, 0.62, 0.9]) { g.strokeStyle = "rgba(236,230,218,0.16)"; g.lineWidth = 2; g.beginPath(); g.arc(m, m, m * f, 0, Math.PI * 2); g.stroke(); }
+    });
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
+    return t;
+  });
+}
+/** Drehteller mit LED-Ring in Elfenbein; modell = Gruppe auf der Platte; dreh(winkel) dreht Platte samt Modell; led.setze(k) = Helligkeit */
+export function drehteller({ radius = 1.05, hoehe = 0.14, led = "#ECE6DA", ledStaerke = 2.4 } = {}) {
+  const g = new THREE.Group();
+  const sock = new THREE.Mesh(new THREE.CylinderGeometry(radius * 1.04, radius * 1.1, hoehe, 72), gemeinsam("sockel", () => new THREE.MeshStandardMaterial({ color: "#0C0D11", roughness: 0.28, metalness: 0.35, envMapIntensity: 1.2 })));
+  sock.position.y = hoehe / 2; sock.castShadow = true; sock.receiveShadow = true; g.add(sock);
+  const ledMat = leuchtMat(led, ledStaerke, { neu: true });
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(radius * 1.045, 0.014, 8, 96), ledMat);
+  ring.rotation.x = Math.PI / 2; ring.position.y = hoehe * 0.55; g.add(ring);
+  const platte = new THREE.Group(); platte.position.y = hoehe; platte.userData.dynamisch = true; g.add(platte);
+  const deckel = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, 0.03, 72), new THREE.MeshStandardMaterial({ map: tellerTextur(), roughness: 0.3, metalness: 0.5, envMapIntensity: 1.2 }));
+  deckel.position.y = 0.015; deckel.receiveShadow = true; deckel.castShadow = true; platte.add(deckel);
+  const modell = new THREE.Group(); modell.position.y = 0.03; platte.add(modell);
+  g.modell = modell; g.platte = platte; g.oben = hoehe + 0.03; g.radius = radius;
+  g.dreh = (w) => { platte.rotation.y = w; };
+  g.led = { setze: (k) => { ledMat.color.set(led).multiplyScalar(ledStaerke * k); } };
+  g.userData.dynamisch = true;
+  return g;
+}
+/** Altersring: n Stationen im Kreis (Start vorn, im Uhrzeigersinn), setze(alter, farbe) lässt sie nacheinander aufleuchten */
+export function altersRing({ radius = 1.6, n = 18, y = 0.012 } = {}) {
+  const g = new THREE.Group();
+  const st = [];
+  for (let i = 0; i < n; i++) {
+    const gross = (i + 1) % 6 === 0;
+    const mat = new THREE.MeshStandardMaterial({ color: "#1A1C22", roughness: 0.35, metalness: 0.4, emissive: new THREE.Color("#000000"), emissiveIntensity: 1 });
+    const m = new THREE.Mesh(new THREE.CylinderGeometry(gross ? 0.085 : 0.058, gross ? 0.095 : 0.066, 0.024, 24), mat);
+    const w = Math.PI / 2 + (i / n) * Math.PI * 2 + (Math.PI * 2) / n * 0.5;
+    m.position.set(Math.cos(w) * radius, y, Math.sin(w) * radius);
+    m.receiveShadow = true;
+    g.add(m); st.push({ m, mat, gross });
+  }
+  g.userData.dynamisch = true;
+  g.setze = (alter, farbe = "#ECE6DA", staerke = 2.6) => {
+    const c = new THREE.Color(farbe);
+    st.forEach((s, i) => {
+      const k = Math.min(1, Math.max(0, alter - i));
+      const kk = k * k * (3 - 2 * k);
+      s.mat.emissive.copy(c).multiplyScalar(kk * staerke * (s.gross ? 1.3 : 1));
+      s.m.scale.setScalar(1 + 0.25 * Math.sin(Math.min(1, k) * Math.PI) );
+    });
+  };
+  g.setze(0);
+  return g;
+}
+/** Säule (Quader mit dunklem Glanz, LED-Kanten und leuchtender Kappe) in Teamfarbe; setze(h) = Höhe, led(k) = Helligkeit */
+export function saeule({ breite = 0.5, farbe = "#FF4F9A", staerke = 3 } = {}) {
+  const g = new THREE.Group();
+  const koerper = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshStandardMaterial({ color: new THREE.Color(farbe).multiplyScalar(0.32), emissive: new THREE.Color(farbe), emissiveIntensity: 0.42, roughness: 0.18, metalness: 0.45, envMapIntensity: 1.3 }));
+  koerper.castShadow = true; koerper.receiveShadow = true; g.add(koerper);
+  const ledMat = leuchtMat(farbe, staerke, { neu: true });
+  const kanten = [];
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) { const k = new THREE.Mesh(new THREE.BoxGeometry(0.03, 1, 0.03), ledMat); kanten.push([k, sx, sz]); g.add(k); }
+  const kappe = new THREE.Mesh(new THREE.BoxGeometry(1.02, 0.03, 1.02), ledMat); g.add(kappe);
+  g.userData.dynamisch = true;
+  g.setze = (h) => {
+    const hh = Math.max(0.0001, h);
+    koerper.scale.set(breite, hh, breite); koerper.position.y = hh / 2;
+    for (const [k, sx, sz] of kanten) { k.scale.set(1, hh, 1); k.position.set(sx * breite / 2, hh / 2, sz * breite / 2); }
+    kappe.scale.set(breite, 1, breite); kappe.position.y = hh;
+    g.visible = h > 0.002;
+  };
+  g.led = (k) => { ledMat.color.set(farbe).multiplyScalar(staerke * k); };
   g.setze(0);
   return g;
 }

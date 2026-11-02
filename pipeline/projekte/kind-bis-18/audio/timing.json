@@ -1,0 +1,879 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 76.906,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Ein Kind, 18 Jahre. Wie viel Geld kostet das wirklich?",
+   "start": 0.0,
+   "ende": 4.08,
+   "woerter": [
+    {
+     "wort": "Ein",
+     "start": 0.0,
+     "ende": 0.133
+    },
+    {
+     "wort": "Kind,",
+     "start": 0.16,
+     "ende": 0.56
+    },
+    {
+     "wort": "18",
+     "start": 0.88,
+     "ende": 1.36
+    },
+    {
+     "wort": "Jahre.",
+     "start": 1.44,
+     "ende": 1.92
+    },
+    {
+     "wort": "Wie",
+     "start": 2.32,
+     "ende": 2.4
+    },
+    {
+     "wort": "viel",
+     "start": 2.48,
+     "ende": 2.56
+    },
+    {
+     "wort": "Geld",
+     "start": 2.64,
+     "ende": 2.88
+    },
+    {
+     "wort": "kostet",
+     "start": 2.92,
+     "ende": 3.2
+    },
+    {
+     "wort": "das",
+     "start": 3.32,
+     "ende": 3.44
+    },
+    {
+     "wort": "wirklich?",
+     "start": 3.52,
+     "ende": 4.08
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Links: was Eltern laut Statistikamt ausgeben. Rechts: das Kindergeld. 259 € im Monat.",
+   "start": 4.64,
+   "ende": 12.32,
+   "woerter": [
+    {
+     "wort": "Links:",
+     "start": 4.64,
+     "ende": 5.24
+    },
+    {
+     "wort": "was",
+     "start": 5.44,
+     "ende": 5.6
+    },
+    {
+     "wort": "Eltern",
+     "start": 5.68,
+     "ende": 6.0
+    },
+    {
+     "wort": "laut",
+     "start": 6.08,
+     "ende": 6.24
+    },
+    {
+     "wort": "Statistikamt",
+     "start": 6.36,
+     "ende": 7.04
+    },
+    {
+     "wort": "ausgeben.",
+     "start": 7.16,
+     "ende": 7.84
+    },
+    {
+     "wort": "Rechts:",
+     "start": 8.08,
+     "ende": 8.64
+    },
+    {
+     "wort": "das",
+     "start": 8.8,
+     "ende": 8.96
+    },
+    {
+     "wort": "Kindergeld.",
+     "start": 9.04,
+     "ende": 10.0
+    },
+    {
+     "wort": "259",
+     "start": 10.04,
+     "ende": 10.86
+    },
+    {
+     "wort": "€",
+     "start": 10.86,
+     "ende": 11.68
+    },
+    {
+     "wort": "im",
+     "start": 11.76,
+     "ende": 11.84
+    },
+    {
+     "wort": "Monat.",
+     "start": 11.92,
+     "ende": 12.32
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, Babys sind am teuersten. Windeln, Kinderwagen, Erstausstattung. Oder?",
+   "start": 12.8,
+   "ende": 18.4,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 12.8,
+     "ende": 13.36
+    },
+    {
+     "wort": "Babys",
+     "start": 13.44,
+     "ende": 13.76
+    },
+    {
+     "wort": "sind",
+     "start": 13.813,
+     "ende": 13.92
+    },
+    {
+     "wort": "am",
+     "start": 14.0,
+     "ende": 14.08
+    },
+    {
+     "wort": "teuersten.",
+     "start": 14.16,
+     "ende": 14.84
+    },
+    {
+     "wort": "Windeln,",
+     "start": 14.96,
+     "ende": 15.6
+    },
+    {
+     "wort": "Kinderwagen,",
+     "start": 15.68,
+     "ende": 16.48
+    },
+    {
+     "wort": "Erstausstattung.",
+     "start": 16.56,
+     "ende": 17.56
+    },
+    {
+     "wort": "Oder?",
+     "start": 17.76,
+     "ende": 18.4
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Jahr 1 bis 6. 679 €.",
+   "start": 18.72,
+   "ende": 21.72,
+   "woerter": [
+    {
+     "wort": "Jahr",
+     "start": 18.72,
+     "ende": 18.88
+    },
+    {
+     "wort": "1",
+     "start": 18.96,
+     "ende": 19.2
+    },
+    {
+     "wort": "bis",
+     "start": 19.28,
+     "ende": 19.44
+    },
+    {
+     "wort": "6.",
+     "start": 19.52,
+     "ende": 20.253333333333334
+    },
+    {
+     "wort": "679",
+     "start": 20.253333333333334,
+     "ende": 20.986666666666665
+    },
+    {
+     "wort": "€.",
+     "start": 20.986666666666665,
+     "ende": 21.72
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 21.92,
+   "ende": 23.76,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 21.92,
+     "ende": 22.16
+    },
+    {
+     "wort": "mir,",
+     "start": 22.24,
+     "ende": 22.48
+    },
+    {
+     "wort": "damit",
+     "start": 22.56,
+     "ende": 22.72
+    },
+    {
+     "wort": "du",
+     "start": 22.76,
+     "ende": 22.8
+    },
+    {
+     "wort": "nichts",
+     "start": 22.88,
+     "ende": 23.08
+    },
+    {
+     "wort": "verpasst.",
+     "start": 23.12,
+     "ende": 23.76
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Doch der Abstand wächst. Ab 6 Jahren: 786 € im Monat. Nach 12 Jahren: links 105.480 €. Rechts nur 37.296 €.",
+   "start": 23.92,
+   "ende": 34.76,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 23.92,
+     "ende": 24.08
+    },
+    {
+     "wort": "der",
+     "start": 24.16,
+     "ende": 24.24
+    },
+    {
+     "wort": "Abstand",
+     "start": 24.32,
+     "ende": 24.72
+    },
+    {
+     "wort": "wächst.",
+     "start": 24.8,
+     "ende": 25.4
+    },
+    {
+     "wort": "Ab",
+     "start": 25.6,
+     "ende": 25.76
+    },
+    {
+     "wort": "6",
+     "start": 25.84,
+     "ende": 26.08
+    },
+    {
+     "wort": "Jahren:",
+     "start": 26.16,
+     "ende": 26.56
+    },
+    {
+     "wort": "786",
+     "start": 26.72,
+     "ende": 27.09
+    },
+    {
+     "wort": "€",
+     "start": 27.09,
+     "ende": 27.46
+    },
+    {
+     "wort": "im",
+     "start": 27.46,
+     "ende": 27.83
+    },
+    {
+     "wort": "Monat.",
+     "start": 27.83,
+     "ende": 28.2
+    },
+    {
+     "wort": "Nach",
+     "start": 28.4,
+     "ende": 28.56
+    },
+    {
+     "wort": "12",
+     "start": 28.64,
+     "ende": 28.88
+    },
+    {
+     "wort": "Jahren:",
+     "start": 29.04,
+     "ende": 29.56
+    },
+    {
+     "wort": "links",
+     "start": 29.76,
+     "ende": 30.08
+    },
+    {
+     "wort": "105.480",
+     "start": 30.24,
+     "ende": 31.199999999999996
+    },
+    {
+     "wort": "€.",
+     "start": 31.199999999999996,
+     "ende": 32.16
+    },
+    {
+     "wort": "Rechts",
+     "start": 32.24,
+     "ende": 32.64
+    },
+    {
+     "wort": "nur",
+     "start": 32.88,
+     "ende": 33.04
+    },
+    {
+     "wort": "37.296",
+     "start": 33.12,
+     "ende": 33.94
+    },
+    {
+     "wort": "€.",
+     "start": 33.94,
+     "ende": 34.76
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Jetzt kommt die Jugend. 953 €. 40 % mehr als bei den Kleinsten.",
+   "start": 35.093,
+   "ende": 41.0,
+   "woerter": [
+    {
+     "wort": "Jetzt",
+     "start": 35.093,
+     "ende": 35.2
+    },
+    {
+     "wort": "kommt",
+     "start": 35.28,
+     "ende": 35.44
+    },
+    {
+     "wort": "die",
+     "start": 35.48,
+     "ende": 35.52
+    },
+    {
+     "wort": "Jugend.",
+     "start": 35.6,
+     "ende": 36.24
+    },
+    {
+     "wort": "953",
+     "start": 36.4,
+     "ende": 37.18
+    },
+    {
+     "wort": "€.",
+     "start": 37.18,
+     "ende": 37.96
+    },
+    {
+     "wort": "40",
+     "start": 37.96,
+     "ende": 38.74
+    },
+    {
+     "wort": "%",
+     "start": 38.74,
+     "ende": 39.52
+    },
+    {
+     "wort": "mehr",
+     "start": 39.6,
+     "ende": 39.76
+    },
+    {
+     "wort": "als",
+     "start": 39.84,
+     "ende": 39.92
+    },
+    {
+     "wort": "bei",
+     "start": 40.0,
+     "ende": 40.08
+    },
+    {
+     "wort": "den",
+     "start": 40.12,
+     "ende": 40.16
+    },
+    {
+     "wort": "Kleinsten.",
+     "start": 40.24,
+     "ende": 41.0
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "text": "Das Kindergeld bleibt gleich. Es deckt nur noch gut ein Viertel. Fünfzehn, sechzehn, siebzehn … achtzehn.",
+   "start": 41.2,
+   "ende": 48.4,
+   "woerter": [
+    {
+     "wort": "Das",
+     "start": 41.2,
+     "ende": 41.36
+    },
+    {
+     "wort": "Kindergeld",
+     "start": 41.44,
+     "ende": 41.92
+    },
+    {
+     "wort": "bleibt",
+     "start": 42.0,
+     "ende": 42.24
+    },
+    {
+     "wort": "gleich.",
+     "start": 42.32,
+     "ende": 42.8
+    },
+    {
+     "wort": "Es",
+     "start": 42.96,
+     "ende": 43.12
+    },
+    {
+     "wort": "deckt",
+     "start": 43.2,
+     "ende": 43.36
+    },
+    {
+     "wort": "nur",
+     "start": 43.4,
+     "ende": 43.52
+    },
+    {
+     "wort": "noch",
+     "start": 43.6,
+     "ende": 43.68
+    },
+    {
+     "wort": "gut",
+     "start": 43.76,
+     "ende": 43.92
+    },
+    {
+     "wort": "ein",
+     "start": 44.0,
+     "ende": 44.08
+    },
+    {
+     "wort": "Viertel.",
+     "start": 44.16,
+     "ende": 44.96
+    },
+    {
+     "wort": "Fünfzehn,",
+     "start": 45.04,
+     "ende": 45.92
+    },
+    {
+     "wort": "sechzehn,",
+     "start": 45.96,
+     "ende": 46.8
+    },
+    {
+     "wort": "siebzehn",
+     "start": 46.88,
+     "ende": 47.56
+    },
+    {
+     "wort": "…",
+     "start": 47.84,
+     "ende": 47.88
+    },
+    {
+     "wort": "achtzehn.",
+     "start": 47.92,
+     "ende": 48.4
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Ausgaben: 174.096 €. Minus Kindergeld: 55.944 €. Bleiben: 118.152 €.",
+   "start": 48.8,
+   "ende": 57.44,
+   "woerter": [
+    {
+     "wort": "Ausgaben:",
+     "start": 48.8,
+     "ende": 49.52
+    },
+    {
+     "wort": "174.096",
+     "start": 49.68,
+     "ende": 50.760000000000005
+    },
+    {
+     "wort": "€.",
+     "start": 50.760000000000005,
+     "ende": 51.84
+    },
+    {
+     "wort": "Minus",
+     "start": 51.92,
+     "ende": 52.16
+    },
+    {
+     "wort": "Kindergeld:",
+     "start": 52.24,
+     "ende": 53.12
+    },
+    {
+     "wort": "55.944",
+     "start": 53.16,
+     "ende": 55.44
+    },
+    {
+     "wort": "€.",
+     "start": 55.84,
+     "ende": 55.867
+    },
+    {
+     "wort": "Bleiben:",
+     "start": 55.893,
+     "ende": 56.40866666666667
+    },
+    {
+     "wort": "118.152",
+     "start": 56.40866666666667,
+     "ende": 56.92433333333333
+    },
+    {
+     "wort": "€.",
+     "start": 56.92433333333333,
+     "ende": 57.44
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Erstens: Die Ausgaben steigen mit dem Alter. Zweitens: Das Kindergeld wächst nicht mit.",
+   "start": 57.76,
+   "ende": 64.24,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 57.76,
+     "ende": 58.24
+    },
+    {
+     "wort": "Erstens:",
+     "start": 58.64,
+     "ende": 59.28
+    },
+    {
+     "wort": "Die",
+     "start": 59.44,
+     "ende": 59.52
+    },
+    {
+     "wort": "Ausgaben",
+     "start": 59.6,
+     "ende": 60.08
+    },
+    {
+     "wort": "steigen",
+     "start": 60.16,
+     "ende": 60.56
+    },
+    {
+     "wort": "mit",
+     "start": 60.6,
+     "ende": 60.64
+    },
+    {
+     "wort": "dem",
+     "start": 60.72,
+     "ende": 60.8
+    },
+    {
+     "wort": "Alter.",
+     "start": 60.88,
+     "ende": 61.4
+    },
+    {
+     "wort": "Zweitens:",
+     "start": 61.6,
+     "ende": 62.28
+    },
+    {
+     "wort": "Das",
+     "start": 62.4,
+     "ende": 62.56
+    },
+    {
+     "wort": "Kindergeld",
+     "start": 62.64,
+     "ende": 63.2
+    },
+    {
+     "wort": "wächst",
+     "start": 63.28,
+     "ende": 63.52
+    },
+    {
+     "wort": "nicht",
+     "start": 63.6,
+     "ende": 63.84
+    },
+    {
+     "wort": "mit.",
+     "start": 63.96,
+     "ende": 64.24
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Die letzten 6 Jahre kosten mehr als die ersten 6. 19.728 € mehr.",
+   "start": 64.4,
+   "ende": 69.84,
+   "woerter": [
+    {
+     "wort": "Die",
+     "start": 64.4,
+     "ende": 64.56
+    },
+    {
+     "wort": "letzten",
+     "start": 64.64,
+     "ende": 64.96
+    },
+    {
+     "wort": "6",
+     "start": 65.04,
+     "ende": 65.28
+    },
+    {
+     "wort": "Jahre",
+     "start": 65.36,
+     "ende": 65.68
+    },
+    {
+     "wort": "kosten",
+     "start": 65.76,
+     "ende": 66.08
+    },
+    {
+     "wort": "mehr",
+     "start": 66.16,
+     "ende": 66.4
+    },
+    {
+     "wort": "als",
+     "start": 66.48,
+     "ende": 66.56
+    },
+    {
+     "wort": "die",
+     "start": 66.64,
+     "ende": 66.72
+    },
+    {
+     "wort": "ersten",
+     "start": 66.8,
+     "ende": 67.04
+    },
+    {
+     "wort": "6.",
+     "start": 67.12,
+     "ende": 67.81333333333333
+    },
+    {
+     "wort": "19.728",
+     "start": 67.81333333333333,
+     "ende": 68.50666666666667
+    },
+    {
+     "wort": "€",
+     "start": 68.50666666666667,
+     "ende": 69.2
+    },
+    {
+     "wort": "mehr.",
+     "start": 69.28,
+     "ende": 69.84
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Ein Kind ist nicht am Anfang am teuersten, sondern am Ende.",
+   "start": 69.92,
+   "ende": 73.36,
+   "woerter": [
+    {
+     "wort": "Ein",
+     "start": 69.92,
+     "ende": 70.0
+    },
+    {
+     "wort": "Kind",
+     "start": 70.08,
+     "ende": 70.32
+    },
+    {
+     "wort": "ist",
+     "start": 70.4,
+     "ende": 70.48
+    },
+    {
+     "wort": "nicht",
+     "start": 70.533,
+     "ende": 70.64
+    },
+    {
+     "wort": "am",
+     "start": 70.72,
+     "ende": 70.8
+    },
+    {
+     "wort": "Anfang",
+     "start": 70.88,
+     "ende": 71.2
+    },
+    {
+     "wort": "am",
+     "start": 71.28,
+     "ende": 71.36
+    },
+    {
+     "wort": "teuersten,",
+     "start": 71.44,
+     "ende": 71.92
+    },
+    {
+     "wort": "sondern",
+     "start": 72.32,
+     "ende": 72.56
+    },
+    {
+     "wort": "am",
+     "start": 72.72,
+     "ende": 72.96
+    },
+    {
+     "wort": "Ende.",
+     "start": 73.04,
+     "ende": 73.36
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 73.84,
+   "ende": 76.96,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 73.84,
+     "ende": 73.92
+    },
+    {
+     "wort": "sollen",
+     "start": 74.0,
+     "ende": 74.16
+    },
+    {
+     "wort": "wir",
+     "start": 74.24,
+     "ende": 74.293
+    },
+    {
+     "wort": "als",
+     "start": 74.32,
+     "ende": 74.48
+    },
+    {
+     "wort": "Nächstes",
+     "start": 74.56,
+     "ende": 74.88
+    },
+    {
+     "wort": "zeigen?",
+     "start": 75.04,
+     "ende": 75.52
+    },
+    {
+     "wort": "Schreib",
+     "start": 75.56,
+     "ende": 75.76
+    },
+    {
+     "wort": "es",
+     "start": 75.8,
+     "ende": 75.84
+    },
+    {
+     "wort": "in",
+     "start": 75.92,
+     "ende": 76.0
+    },
+    {
+     "wort": "die",
+     "start": 76.04,
+     "ende": 76.08
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 76.16,
+     "ende": 76.96
+    }
+   ]
+  }
+ ]
+}

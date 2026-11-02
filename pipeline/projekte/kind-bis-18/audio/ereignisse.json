@@ -1,0 +1,1136 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "kind-bis-18",
+ "fps": 30,
+ "dauer": 77.46666666666667,
+ "stimmEnde": 76.906,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "raum",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "AUSGABEN",
+    "farbe": "#FF4F9A"
+   },
+   "b": {
+    "name": "KINDERGELD",
+    "farbe": "#2EC4B6"
+   }
+  },
+  "schleife": {
+   "ab": 69.92,
+   "ende": 77.42266666666667
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 77.423,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 5.2290021201883974e-8
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Szene",
+   "t": 0.5,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "LED-Kanten leuchten auf"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Drehteller-Ring leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.64,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "beide Sockel leuchten"
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.52,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Drehteller-Ring leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Licht auf Ausgaben-Sockel"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.68,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Ausgaben-Sockel leuchtet"
+  },
+  {
+   "quelle": "Quelle",
+   "t": 6.36,
+   "typ": "chip",
+   "klang": false,
+   "text": "Destatis · EVS 2018"
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.08,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Licht auf Kindergeld-Sockel"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.04,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kindergeld-Sockel leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.04,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "259 € / MONAT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.92,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kindergeld-Sockel leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.8,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Spot auf den Drehteller"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kinderwagen dreht sich im Spot"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Drehteller-Ring leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.96,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Windelpaket"
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.68,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kinderwagen im Spot"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.56,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Erstausstattung"
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ring leuchtet, Bild steht"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.7,
+   "typ": "zaehler",
+   "dauer": 6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.7,
+   "typ": "zaehler",
+   "dauer": 6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.553,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.92,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.22,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 20.253,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "679 € / MONAT"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.453,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.687,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.92,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.12,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.32,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.487,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.687,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.887,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 21.92,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.087,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.287,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.487,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.687,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.92,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.153,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.453,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.82,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.687,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.75,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kinderwagen wird Kinderrad"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.8,
+   "typ": "zaehler",
+   "dauer": 3.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.8,
+   "typ": "zaehler",
+   "dauer": 3.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.353,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.42,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.587,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.72,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "786 € / MONAT"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.787,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.953,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.087,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.253,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.387,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.52,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.653,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.887,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.02,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.153,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.287,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.42,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.587,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.753,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.92,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.187,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.753,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.24,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ausgaben-Sockel leuchtet, Lücke sichtbar"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 30.84,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.24,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lücke leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.367,
+   "typ": "zaehler",
+   "dauer": 13.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.367,
+   "typ": "zaehler",
+   "dauer": 13.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kinderrad wird Jugendfahrrad"
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.4,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "953 € / MONAT"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.553,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.52,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 37.96,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+ 40 %"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.32,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.02,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.687,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.387,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 41,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.087,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.887,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.853,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 44.16,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DECKT NUR 27 %"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.02,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.287,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.587,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.853,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 46.12,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 46.42,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 46.687,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 46.92,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.087,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.32,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.887,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Alter 18"
+  },
+  {
+   "quelle": "Chip",
+   "t": 48.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 48.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 48.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 49.68,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "AUSGABEN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ausgaben-Sockel leuchtet"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 50.38,
+   "art": "zoom",
+   "dauer": 1.7,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 51.92,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "MINUS KINDERGELD"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.16,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kindergeld-Sockel leuchtet"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 54.06,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 55.893,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "BLEIBEN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.893,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ergebnis leuchtet"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 56.409,
+   "art": "zoom",
+   "dauer": 2.3,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "WarumKarte",
+   "t": 58.64,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "warum"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Ausgaben-Sockel leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.88,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Ausgaben-Sockel leuchtet"
+  },
+  {
+   "quelle": "WarumKarte",
+   "t": 61.6,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "warum"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kindergeld-Sockel leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kindergeld-Sockel leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 65.04,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JAHR 13–18 · 68.616 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.04,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "Säule Jahre 13-18"
+  },
+  {
+   "quelle": "Chip",
+   "t": 66.8,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JAHR 1–6 · 48.888 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.8,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "Säule Jahre 1-6"
+  },
+  {
+   "quelle": "Chip",
+   "t": 67.813,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+ 19.728 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.813,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Differenz leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.113,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Drehteller-Ring leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 69.72,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 69.72,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 69.72,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 69.9,
+   "typ": "zaehler",
+   "dauer": 7.556,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 69.9,
+   "typ": "zaehler",
+   "dauer": 7.556,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 69.92,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 69.92,
+   "art": "schleife",
+   "dauer": 7.513,
+   "klang": false
+  },
+  {
+   "t": 69.92,
+   "typ": "schleife",
+   "dauer": 7.503,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 71.12,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 71.42,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 71.653,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 71.82,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 71.953,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 72.087,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 72.22,
+   "typ": "uhr",
+   "dauer": 2.9,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 72.74,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "AM ENDE"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.22,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.353,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.487,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.653,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.887,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.187,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  }
+ ],
+ "klang": []
+}

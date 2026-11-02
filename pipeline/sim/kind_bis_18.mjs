@@ -19,4 +19,4 @@ export function videoZahlen() {
     differenzEndeAnfang: (AUSGABEN[2] - AUSGABEN[0]) * 72,
   };
 }
-if (import.meta.url === `file://${process.argv[1]}`) console.log(JSON.stringify(videoZahlen(), null, 2));
+if (typeof process !== "undefined" && import.meta.url === `file://${process.argv[1]}`) console.log(JSON.stringify(videoZahlen(), null, 2));
