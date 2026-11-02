@@ -58,7 +58,7 @@
 ## Neue Regeln 02.11. (Inhaber)
 - Pro Tag genau 4 Videos (2 je Account) für den nächsten Tag, nie mehr gleichzeitig, max. 2 Produktions-Agenten. Ruhiger Ton, kein „Los geht's“, keine Sticker, Fokus animierte Welt, Skript-Bild-Abgleich, Themen-Logik. `massstab.py` prüft 3b, 5d (0 Sticker), 16a/16b.
 - @stelldirvor.pov strikt im Format der 4 Referenzvideos (`docs/16` §12): keine Stimme, 80 s, feste Ich-Perspektive, Titel, Messwert-Anzeige, kursive Sätze, Atmo, schwarzer Abspann. Stickstoff (heute 19:30) wird umgebaut; eigene Prüfung `qc/referenz_pov.py` entsteht dabei.
-- Schokolade (heute 12:30) noch im alten Stil (Stimme Otto, 5 Sticker); Render läuft bis ca. 09:20 UTC. Entscheidung beim Inhaber angefragt, Standard: posten (fertige Videos bleiben).
+- Schokolade: fertig (74,5 s, −14,1 LUFS), aber **von Claude abgelehnt, wird nicht gepostet**: Sichtprüfung zeigt verdeckten Titel im ersten Bild (Fensterrahmen) und überlappende 3D-Zahlen bei ca. 63 s; dazu 3 neue Pflichtpunkte nein (Los geht's, 5 Sticker, [excited]). Slot 02.11. 12:30 auf Account 2 bleibt leer. Thema später im Format §12 neu.
 - Dienstag in Arbeit: Schere-Stein-Papier (neuer Agent, neue Regeln). Danach gestaffelt: Boden durchsichtig, Mittagessen, Leichtes Auto (als Autobahnbrücke, Format §12). 30-Tage-Plan Account 2 muss auf Format §12 geprüft werden (Themen mit festem Standpunkt).
 - Regelwerk-PDF `docs/regelwerk/regelwerk-2026-11-02.pdf`.
 

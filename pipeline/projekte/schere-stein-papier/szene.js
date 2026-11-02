@@ -720,7 +720,7 @@ async function start() {
     if (jub > 0.5) po = mix3(po, pose({ stein: 1 }), 0.8);
     // Schulterzucken (Frage): offene Hände nach oben
     const schulter = huelle(t, wer === "rot" ? cue.rotSchulter : cue.cyanSchulter, 0.25);
-    zi = lerpv(zi, [spiel[0] - sg * 0.95, 2.15, 0.55], schulter);
+    zi = lerpv(zi, [spiel[0] - sg * 1.5, 2.1, 0.35], schulter);
     po = mix3(po, pose({ papier: 1 }), schulter);
     hint = lerpv(hint, [0, 1, 0.55], schulter);
     // Cyan denkt: Hand am Kinn (Spielhand bleibt am Spiel, freie Hand geht zum Kinn)
@@ -738,12 +738,12 @@ async function start() {
       const nase = [kopf[0] + fw[0] * 0.5, kopf[1] + 0.12, kopf[2] + fw[2] * 0.5];
       zf = lerpv(zf, nase, br); hf = lerpv(hf, [0.2, 0.2, 1], br); pf = mix3(pf, pose({ zeig: 1 }), br);
       const zg = huelle(t, cue.rotZeigt, 0.25);
-      zf = lerpv(zf, [-1.95, 3.1, 0.2], zg); hf = lerpv(hf, [0.2, 0.1, 1], zg); pf = mix3(pf, pose({ daumen: 1 }), zg);
+      zf = lerpv(zf, [-1.95 + 0.2 * Math.sin(t * 9), 3.15, 0.25], zg); hf = lerpv(hf, [0, 0, 1], zg); pf = mix3(pf, pose({ papier: 1 }), zg);
       // Jubel (freie Hand mit): wenn Rot gewinnt
       zf = lerpv(zf, [-2.35, 3.65 + 0.12 * Math.abs(Math.sin(t * 8)), 0.0], jub * 0.9);
       pf = mix3(pf, pose({ stein: 1 }), jub);
       const sc2 = schulter;
-      zf = lerpv(zf, [-2.45, 2.15, 0.5], sc2); pf = mix3(pf, pose({ papier: 1 }), sc2); hf = lerpv(hf, [0, 1, 0.55], sc2);
+      zf = lerpv(zf, [-2.55, 2.1, 0.3], sc2); pf = mix3(pf, pose({ papier: 1 }), sc2); hf = lerpv(hf, [0, 1, 0.55], sc2);
     } else {
       // Becher in der Hand beim Schütteln; sonst liegt die Hand neben dem Becher
       const wz = wuerfelZustandCache;
@@ -760,9 +760,9 @@ async function start() {
       zf = lerpv(zf, [2.35, 3.65 + 0.12 * Math.abs(Math.sin(t * 8)), 0.0], jub * 0.9);
       pf = mix3(pf, pose({ stein: 1 }), jub);
       const sc2 = schulter;
-      zf = lerpv(zf, [2.45, 2.15, 0.5], sc2); pf = mix3(pf, pose({ papier: 1 }), sc2); hf = lerpv(hf, [0, 1, 0.55], sc2);
+      zf = lerpv(zf, [2.55, 2.1, 0.3], sc2); pf = mix3(pf, pose({ papier: 1 }), sc2); hf = lerpv(hf, [0, 1, 0.55], sc2);
     }
-    const aus = { ziel: zf, hint: hf, pose: pf, quetsch: 1, wackeln: 0, neigung: 0, pol: [sg * -0.6, -0.8, -0.2] };
+    const aus = { ziel: zf, hint: hf, pose: pf, quetsch: 1, wackeln: wer === "rot" ? huelle(t, cue.rotZeigt, 0.25) * 0.3 * Math.sin(t * 9) : 0, neigung: 0, pol: [sg * -0.6, -0.8, -0.2] };
     return { innen: { ...inn, pol: [-sg * 0.45, -0.8, -0.25] }, aussen: { ...aus, pol: [-sg * 0.7, -0.8, -0.1] } };
   }
   let wuerfelZustandCache = null;
@@ -983,7 +983,7 @@ async function start() {
     }
     regie.anwenden(t);
   };
-  const post = { bloomStaerke: 0.25, bloomSchwelle: 1.1, tiltStaerke: 0, vignette: 0.2, koernung: 0.026, saettigung: 1.05, kontrast: 1.04, belichtung: 1.0 };
+  const post = { bloomStaerke: 0, bloomSchwelle: 1.1, tiltStaerke: 0, vignette: 0.2, koernung: 0.026, saettigung: 1.05, kontrast: 1.04, belichtung: 1.0 };
   const welt = { szene, kamera, post, update(t) { setzeWelt(t); } };
 
   // =====================================================================================
