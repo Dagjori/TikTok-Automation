@@ -1,4 +1,4 @@
-// Designstil 14 „Glas-Labor“ in Three.js (docs/10-designstile.md): Fotostudio mit Hohlkehle, Messzylinder aus dünnem
+// Designstil 14 „Glas-Labor“ in Three.js (.claude/skills/simulierbar-video/stile.md): Fotostudio mit Hohlkehle, Messzylinder aus dünnem
 // Laborglas (MeshPhysicalMaterial mit transmission), Flüssigkeit als Live-Zähler, Zulauf aus Chromrohren mit Strahl,
 // Ablaufhahn, Becherglas mit Schichten. Alles prozedural, keine fremden Assets. Alle Zustände nur aus t (deterministisch).
 //

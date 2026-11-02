@@ -3,7 +3,7 @@
 Aufruf:  python3 projekte/stickstoff-weg/ton.py        → out/stickstoff-weg/ton.wav (stereo, 48 kHz)
          danach: TON_FERTIG=1 LRA_ZIEL=20 ./mux.sh projekte/stickstoff-weg     (Lautheit −14 LUFS integriert)
 
-Ablauf (docs/16 §12): leise Supermarkt-Atmo (Raumklang, Kühlregale, Stimmengewirr, Wagen, Scanner) → ab 30 s dünnt die Luft aus
+Ablauf (Skill .claude/skills/stelldirvor-video/): leise Supermarkt-Atmo (Raumklang, Kühlregale, Stimmengewirr, Wagen, Scanner) → ab 30 s dünnt die Luft aus
 (leiser, dumpfer), Rascheln der Tüten (39–46 s), Zischen und Sprudeln des Kaffees (ab 37,9 s), Grollen bis zum Höhepunkt (56,8 s),
 Knall der Palette, Rückkehr der Luft (62–64,6 s), Ruhe, Abblende 70–72 s, leiser Abspann.
 Der Luftdruck p(t) kommt aus derselben Kurve wie im Bild (zeiten.json).

@@ -2,11 +2,11 @@
 
 > „hier möchte ich mehr weg von dem Cartoon Clay sachen, hier müssen was seriöseres finden bei der mit licht effekten bisschen gespielt werden kann etc. das eine gewisse atmosphäre entstehen kann … keine sticker mehr … richtig hochwertige animations videos“ (Inhaber, 02.11.)
 
-Jedes Video bekommt **genau einen** der fünf Stile 17–21. Kein fester Look als Markenzeichen (Entscheidung 01.11.), das Markenzeichen ist die Qualität. Nie zweimal derselbe Stil hintereinander (auch über Tagesgrenzen); passen zwei, gewinnt der, der länger nicht dran war. Der Stil steht im Plan (`data/plan/30-tage.csv`, Spalte `stil`); vor der Produktion kurz erfolgreiche Videos zum Thema ansehen (`docs/10` §0) und die Wahl in `skript.json → stil_begruendung` festhalten.
+Jedes Video bekommt **genau einen** der fünf Stile 17–21. Kein fester Look als Markenzeichen (Entscheidung 01.11.), das Markenzeichen ist die Qualität. Nie zweimal derselbe Stil hintereinander (auch über Tagesgrenzen); passen zwei, gewinnt der, der länger nicht dran war. Der Stil steht im Plan (`data/plan/30-tage.csv`, Spalte `stil`); vor der Produktion kurz erfolgreiche Videos zum Thema ansehen (welcher Look trägt das Thema am besten, wie heben wir uns in der Qualität ab) und die Wahl in `skript.json → stil_begruendung` festhalten.
 
 ## Die erlaubten Stile
 
-Renderzeit: Sekunden je Videobild 1080 × 1920 in der Cloud (4 Kerne, ohne GPU, SwiftShader), Demo-Szene mit HUD, MSAA 0 (FXAA), Schatten 2048, gemessen am 02.11. (Details und Messweise `docs/10` §0.6). Standbilder: `node render.js projekte/_demo-simulierbar --zeiten <t> --worker 1 --query "stil=<name>"`.
+Renderzeit: Sekunden je Videobild 1080 × 1920 in der Cloud (4 Kerne, ohne GPU, SwiftShader), Demo-Szene mit HUD, MSAA 0 (FXAA), Schatten 2048, gemessen am 02.11. (Messweise: 12 Bilder je Stil bei t = 6,0–6,4 s, 1 Worker, ohne Fremdlast). Standbilder: `node render.js projekte/_demo-simulierbar --zeiten <t> --worker 1 --query "stil=<name>"`.
 
 | Nr. | Stil | Look | Passt zu (Geld-Themen aus dem Plan) | Baukasten · Demo-Welt | Grading |
 |---|---|---|---|---|---|

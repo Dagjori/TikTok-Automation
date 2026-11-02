@@ -1,4 +1,4 @@
-// Demo · Maßstab-Bausteine (docs/15): „Rasen oder rollen? Wer gewinnt?“ – zeigt alle neuen Bausteine in ca. 13 s.
+// Demo · Maßstab-Bausteine (.claude/skills/simulierbar-video/massstab.md): „Rasen oder rollen? Wer gewinnt?“ – zeigt alle neuen Bausteine in ca. 13 s.
 // Kein Video zum Posten: Beispielwerte, geschätztes Timing (keine Stimme). Deterministisch: window.renderAt(t).
 //
 // Bausteine: Titel, Anzeigetafel (Live-Zähler, vs → Renn-Uhr, Führungswechsel), Stoppuhr, Countdown-Ring, Chips,

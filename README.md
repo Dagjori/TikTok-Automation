@@ -1,34 +1,24 @@
-# TikTok Automation · Kanal „Simulierbar“
+# TikTok Automation · Kanäle „Simulierbar“ und „Stell dir vor“
 
-Zentrale für den Aufbau und Betrieb gesichtsloser KI-Simulationsvideos (3D bzw. Daten-Animation, Deutsch) für TikTok und YouTube Shorts. Die Produktion läuft weitgehend automatisiert mit Claude Code.
+Zentrale für den Aufbau und Betrieb gesichtsloser Simulations- und Gedankenexperiment-Videos (3D, Three.js/Blender) für TikTok. Die Produktion läuft weitgehend automatisiert mit Claude Code; gepostet wird vollautomatisch über Buffer.
 
-## Ziel
-- TikTok-Account (aktuell ca. 3k Follower) auf **10.000 Follower** bringen und über das **Creator Rewards Program** monetarisieren.
-- Dieselben Videos als **YouTube Shorts** nutzen.
-- Produktion so automatisieren, dass der laufende Aufwand bei ca. 2–3 Stunden pro Woche liegt.
+- **`@simulierbar`** (Account 1): „Alltag durchgerechnet“, Schwerpunkt Geld, Deutsch, 65–80 s, Stimme Ben, 2 Videos pro Tag.
+- **`@stelldirvor.pov`** (Account 2): „Was wäre, wenn …“-3D-POV im Format der Lunar-Referenzen, 80 s, keine Stimme, 2 Videos pro Tag.
+- **Ziel:** je Account 10.000 Follower und Aufnahme ins Creator Rewards Program (CRP).
 
 ## Aufbau des Repos
 
 | Pfad | Inhalt |
 |---|---|
-| [CLAUDE.md](CLAUDE.md) | Arbeitsregeln für Claude: Kommunikation, Plattformregeln, Modellwahl |
-| [STATUS.md](STATUS.md) | Aktueller Stand, nächste Schritte, offene Punkte |
-| [tools/](tools/) | Hilfsskripte, z. B. Auswertung der Ideenlisten |
-| [ENTSCHEIDUNGEN.md](ENTSCHEIDUNGEN.md) | Getroffene Entscheidungen mit Datum und Begründung |
-| [docs/00-projektuebersicht.md](docs/00-projektuebersicht.md) | Kurzfazit, Einnahmen-Szenarien, YouTube, Technik, Recht & Steuern |
-| [docs/01-marktanalyse.md](docs/01-marktanalyse.md) | Analyse der 6 Ausgangsvideos und von 26 Vergleichskanälen |
-| [docs/02-account-strategie.md](docs/02-account-strategie.md) | Weg zu 10k, Regeln des Creator Rewards Program, Umgang mit den Shop-Videos |
-| [docs/03-nischen.md](docs/03-nischen.md) | 8 bewertete Nischen plus Ranking |
-| [docs/04-claude-kapazitaet.md](docs/04-claude-kapazitaet.md) | Videos pro Tag im Claude-Max-Abo, Modellwahl, Kosten |
-| [docs/05-startnische.md](docs/05-startnische.md) | Gewählte Nische „Der Testlauf – Alltag durchgerechnet“: Marke, Profil, Video-Bauplan, die ersten 30 Testläufe |
-| [docs/06-nischen-ranking.md](docs/06-nischen-ranking.md) | Ranking von 10 Nischen nach Themenvorrat, Nachschub, Beleg, Wettbewerb, Risiko, Aufwand |
-| [docs/07-trend-monitoring.md](docs/07-trend-monitoring.md) | Wöchentlicher Ablauf zur Markt- und Trendbeobachtung |
-| [docs/08-beispielskripte.md](docs/08-beispielskripte.md) | Stil-Regeln und Skripte (Video #1 GTA 6, Reißverschluss, Weihnachtsgeld, Mindestlohn) |
-| [docs/assets/](docs/assets/) | Vorschaubilder |
-| [pipeline/](pipeline/) | Render-Pipeline (Three.js, Headless-Chrome); `pipeline/vorschau/` = Standbild-Prototyp |
-| [data/](data/) | Datenstände der Kanal- und Videoanalyse; `data/ideen/`: je 150 Video-Ideen pro Nische (CSV); `data/monitor/`: beobachtete Kanäle und Verlauf |
+| [CLAUDE.md](CLAUDE.md) | **Das gesamte Projektwissen in einer Datei:** Rolle, Arbeitsregeln, Kanäle und Ziele, Produktion, Maßstab, Videoaufbau, Plattformregeln und Posten, Stimme, Pläne, Cockpit, Trend-Radar, Technik, aktueller Stand, Entscheidungen. Lädt in jeder Sitzung automatisch. |
+| [.claude/skills/](.claude/skills/) | Skills für die Videoproduktion, strikt getrennt: `simulierbar-video` (Account 1: Ablauf, Stile 17–21, Licht, Design, Ton, Technik, Prüfung, Maßstab, Themen mit Sperrliste) und `stelldirvor-video` (Account 2: Ablauf, Design, Licht und Effekte, Ton, Technik, Prüfung, Grundwelten und Sperrliste). |
+| [pipeline/](pipeline/) | Render-Pipeline (Three.js, Headless-Chrome, ffmpeg), Qualitätsprüfung, Posting über Buffer, Render-Dienst für den Windows-PC; Bedienung in [pipeline/README.md](pipeline/README.md) |
+| [data/](data/) | Pläne (`data/plan/`), Ideenlisten (`data/ideen/`), Konkurrenz-Monitor (`data/monitor/`), Trend-Kalender und -Log (`data/trends/`) |
+| [tools/](tools/) | Hilfsskripte: Plan-PDFs, Regelwerk-PDF, Trend-Score, Konkurrenz-Monitor, Telegram, Sitzungssicherung |
+| [marke/](marke/) | Logos und Profilbilder beider Accounts |
+| [docs/](docs/) | nur noch: [Anleitung Render-PC](docs/18-render-pc.md) · `regelwerk/` (Regelwerk als 1-Seiten-PDF) · `cockpit/` (Quelle des Kanal-Cockpits) · `plan/` (Plan-PDFs, Stil-Vergleich) · `trends/` (Trend-Vorschläge) · `assets/` (Vorschaubilder) |
 
 ## So arbeiten wir
-1. Neue Claude-Code-Sitzung mit diesem Repo starten.
-2. Claude liest `CLAUDE.md` und `STATUS.md` und weiß damit, wo wir stehen.
-3. Am Ende jeder Sitzung werden `STATUS.md` und, falls nötig, `ENTSCHEIDUNGEN.md` aktualisiert, committet und gepusht.
+1. Neue Claude-Code-Sitzung mit diesem Repo starten. `CLAUDE.md` lädt automatisch, es muss nichts weiter gelesen werden.
+2. Für ein Video lädt Claude zusätzlich den Skill des Accounts.
+3. Während der Arbeit und am Ende jeder Sitzung hält Claude `CLAUDE.md` §11 (Stand) und §12 (Entscheidungen) aktuell, committet und pusht.

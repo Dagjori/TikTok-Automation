@@ -1,4 +1,4 @@
-"""Atmo-Spur ohne Stimme für Account 2 @stelldirvor.pov (Referenzformat docs/16 §12, Skill .claude/skills/stelldirvor-video/ton.md).
+"""Atmo-Spur ohne Stimme für Account 2 @stelldirvor.pov (Referenzformat, Skill .claude/skills/stelldirvor-video/ton.md).
 
 Nur selbst erzeugte Klänge (numpy, fester Seed), keine fremden Dateien, keine Musik, keine Sprache.
 

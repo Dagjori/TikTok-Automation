@@ -11,7 +11,7 @@
   - Rushhour (3.200 Kfz/h): **6,2 km → 5,4 km, −13 %**
   - Wenig Verkehr (1.200 Kfz/h): **kein Stau, kein Unterschied** (Fahrzeit bei beiden 525 s, also ca. 8,7 min)
 - **Schneller kommt man dadurch nicht an.** Fahrzeit und Durchsatz sind praktisch gleich. Der Reißverschluss ist im Modell sogar minimal schlechter: +15 s Fahrzeit (+1 %) und −15 Kfz/h Durchsatz (−1 %), beides knapp über der Messunsicherheit. Beide Strategien schaffen ca. 1.790 Kfz/h durch die Engstelle.
-- **Das Ergebnis weicht vom Beispielwert in `docs/08` ab** (dort: 1,8 km gegen 1,0 km und −44 %). Das Modell liefert kleinere Unterschiede. Das Modell wurde nicht auf einen Wunschwert gezogen.
+- **Das Ergebnis weicht vom Beispielwert in dem damaligen Beispielskript (Git-Historie) ab** (dort: 1,8 km gegen 1,0 km und −44 %). Das Modell liefert kleinere Unterschiede. Das Modell wurde nicht auf einen Wunschwert gezogen.
 - **Hauptursache des Unterschieds:** Die Früh-Einordner wechseln ab dem Schild (800 m vor der Engstelle). Sie stehen aber davor in beiden Spuren im Stau und warten auf eine Lücke. Die Stauspitze liegt deshalb im Mittel **ca. 490 m (Feierabend) bzw. 470 m (Rushhour) vor der Baustelle**, dieser Abschnitt bleibt weitgehend staufrei. Der Reißverschluss nutzt ihn als Stauraum. Die Kolonne selbst (Spitze bis Ende) ist nur **12 % (Feierabend) bzw. 6 % (Rushhour)** kürzer.
 - **Wie groß der Vorteil ausfällt, hängt stark davon ab, wo die Früh-Einordner wechseln** (siehe Abschnitt 3). Wechseln sie schon bei 1,5 km bzw. 3 km, steigt der Vorteil auf −38 % bzw. −55 % (Feierabend) und −22 % bzw. −36 % (Rushhour).
 
@@ -69,7 +69,7 @@ Was daraus folgt:
 
 ## 4. Passt das zur Größenordnung von MnDOT?
 
-- **Fakt (laut Auftrag und `docs/08`):** MnDOT nennt einen **bis zu 40 % kürzeren Rückstau** beim Reißverschlussverfahren und rät bei wenig Verkehr zum frühen Einordnen. Die Seite war im Cloud-Netz nicht abrufbar (`dot.state.mn.us` ist gesperrt), die Angabe wurde hier **nicht erneut geprüft**.
+- **Fakt (laut Auftrag und dem damaligen Beispielskript (Git-Historie)):** MnDOT nennt einen **bis zu 40 % kürzeren Rückstau** beim Reißverschlussverfahren und rät bei wenig Verkehr zum frühen Einordnen. Die Seite war im Cloud-Netz nicht abrufbar (`dot.state.mn.us` ist gesperrt), die Angabe wurde hier **nicht erneut geprüft**.
 - **Einordnung:** „Bis zu 40 %“ ist eine Obergrenze. Das Modell liegt mit −13 % bis −26 % darunter (Größenordnung passt, kein Widerspruch). Mit früherem Einordnen (Schild bei 1,5 bis 3 km) erreicht das Modell −22 % bis −55 % und deckt damit die 40 % ab. Heißt: MnDOT-Größenordnung ist nur plausibel, wenn die Früh-Einordner deutlich vor der Baustelle wechseln. **Bei „ab 800 m“ ist das Modell vorsichtiger als MnDOT.**
 - **Wenig Verkehr:** Das Modell zeigt keinen Unterschied, passend zur MnDOT-Empfehlung, bei wenig Verkehr früh einzuordnen.
 
@@ -100,8 +100,8 @@ Was daraus folgt:
 
 ## Quellen
 
-- MnDOT, Zipper Merge: https://dot.state.mn.us/zippermerge/ (bis zu 40 % kürzerer Rückstau; bei wenig Verkehr früh einordnen). Aus `docs/08` übernommen, **nicht erneut abgerufen**.
-- § 7 Abs. 4 StVO (Reißverschlussverfahren), ACE: https://www.ace.de/verkehrssicherheit/tipps-sicheres-fahren/reissverschlussverfahren/ . Aus `docs/08` übernommen, **nicht erneut abgerufen**.
+- MnDOT, Zipper Merge: https://dot.state.mn.us/zippermerge/ (bis zu 40 % kürzerer Rückstau; bei wenig Verkehr früh einordnen). Aus dem damaligen Beispielskript (Git-Historie) übernommen, **nicht erneut abgerufen**.
+- § 7 Abs. 4 StVO (Reißverschlussverfahren), ACE: https://www.ace.de/verkehrssicherheit/tipps-sicheres-fahren/reissverschlussverfahren/ . Aus dem damaligen Beispielskript (Git-Historie) übernommen, **nicht erneut abgerufen**.
 - Kapazität von Arbeitsstellen (HCM-Richtwert 1.600 pc/h je Spur, Praxisspanne 1.100 bis 1.900): https://workzonesafety.org/publication/survey-of-work-zone-practices-and-validation-of-highway-capacity-manual-work-zone-capacity-model/ (Suchauszug).
 
 ## Wiederholen

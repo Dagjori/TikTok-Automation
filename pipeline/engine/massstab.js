@@ -1,4 +1,4 @@
-// Maßstab-Bausteine (docs/15 §4, §8, §11): alles, was die viralen Vorbilder im Bild haben, als wiederverwendbare,
+// Maßstab-Bausteine (.claude/skills/simulierbar-video/massstab.md §4, §8, §11): alles, was die viralen Vorbilder im Bild haben, als wiederverwendbare,
 // zeitgesteuerte HUD-Bausteine. Jeder Baustein …
 //   … startet über Wortzeiten: ein: "Los" | "rennen:Los" | "Los#2" | "Los+0.2" | {i: 17} | 12.5 (siehe zeitplan.js)
 //   … ist deterministisch: update(t) setzt den Zustand nur aus t (renderAt(t) in beliebiger Reihenfolge)

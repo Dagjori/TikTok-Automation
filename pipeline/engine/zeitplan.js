@@ -28,7 +28,7 @@ const TEILENDE = /[,;:–—]["“”»«’]*$/;
  * Timing aus dem Skript schätzen (solange keine echte Stimme da ist). Gleiches Format wie tts.py → audio/timing.json.
  * Standard = gemessene Werte der Stimme „Ben“ mit Original-Einstellungen (31.10.): ca. 2,0 Wörter/s inkl. Pausen,
  * Satzpause ca. 0,6 s. Ein Skript kann eigene Werte setzen: "schaetzung": {"wps": 2.7, "satzpause": 0.26, ...}.
- * wps zählt wie in docs/15 die Wörter je Sekunde Sprechzeit einschließlich Pausen.
+ * wps zählt wie in .claude/skills/simulierbar-video/massstab.md die Wörter je Sekunde Sprechzeit einschließlich Pausen.
  */
 export function schaetzeTiming(skript, opt = {}) {
   const o = { wps: 2.0, satzpause: 0.6, kommapause: 0.35, segmentpause: 0.6, vorlauf: 0.12, ...(skript.schaetzung || {}), ...opt };

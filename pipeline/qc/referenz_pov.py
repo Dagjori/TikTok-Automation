@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prüfung für das Referenzformat von Account 2 @stelldirvor.pov (docs/16 §12, Skill .claude/skills/stelldirvor-video/pruefung.md):
+"""Prüfung für das Referenzformat von Account 2 @stelldirvor.pov (Skill .claude/skills/stelldirvor-video/pruefung.md):
 feste Ich-Perspektive, keine Stimme, Titelfrage, Messwert-Anzeige, kursive Sätze, Abspann.
 
 Aufruf:  python3 qc/referenz_pov.py projekte/<name> [--video out/<name>/<name>.mp4] [--json]

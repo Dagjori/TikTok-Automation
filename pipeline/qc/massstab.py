@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prüft die messbaren Punkte der Prüfliste aus docs/15-massstab.md §11 und gibt eine Tabelle ja/nein aus.
+"""Prüft die messbaren Punkte der Prüfliste aus .claude/skills/simulierbar-video/massstab.md §11 und gibt eine Tabelle ja/nein aus.
 
 Aufruf (im Ordner pipeline/):
   python3 qc/massstab.py projekte/<name>                      Standard-Profil „ben“ (Stimme Ben, Original-Einstellungen)
@@ -28,7 +28,7 @@ SCHLUSS_KONTO = {"stelldirvor": "Welches Szenario soll ich als Nächstes durchsp
 PROFILE = {
     # Stimme Ben, Original-Einstellungen (Entscheidung 31.10.)
     "ben": {"tempo": (1.9, 2.4), "satzpause_max": 0.8, "woerter": (130, 170), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
-    # Vorbilder K1–K4 (docs/15 §2)
+    # Vorbilder K1–K4 (.claude/skills/simulierbar-video/massstab.md §2)
     "massstab": {"tempo": (2.5, 2.9), "satzpause_max": 0.4, "woerter": (170, 220), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
 }
 MASSSTAB_TEXT = {
@@ -139,7 +139,7 @@ def pruefe(projekt, profil, extra_ziele):
     ok3 = t_klar is not None and t_oder is not None and max(t_klar, t_oder) < 16
     ist3 = f"Klar {zahl(t_klar) if t_klar is not None else '–'} · oder? {zahl(t_oder) if t_oder is not None else '–'}"
     zeile("3", "Denkfalle „Klar …, oder?“ (ruhig)", ist3, "vor 16 s", "3–15,5 s", ok3, pflicht=False)
-    # 3b Inhaber 02.11.: kein „Los geht's“, kein Geschrei – ruhiger Erzählton wie die Vorbilder (docs/15: „ruhig, sachlich, freundlich“)
+    # 3b Inhaber 02.11.: kein „Los geht's“, kein Geschrei – ruhiger Erzählton wie die Vorbilder (.claude/skills/simulierbar-video/massstab.md: „ruhig, sachlich, freundlich“)
     zeile("3b", "Kein „Los geht's“ (Inhaber 02.11.)", "fehlt" if t_los is None else f"bei {zahl(t_los)} s", "nicht vorhanden", "ruhiger Erzählton", t_los is None)
 
     # 4 Ab Rennstart laufen Uhr bzw. Zähler

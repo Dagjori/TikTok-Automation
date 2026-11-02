@@ -1,23 +1,15 @@
 # Maßstab: 4 virale Simulationsvideos (je über 1 Mio. Aufrufe)
 
-**Stand:** 31.10.2026 · **Status:** **verbindlich für jedes Video** (Entscheidung des Inhabers 31.10.: „das ist dein Maßstab, an dem wir uns richten müssen“)
+Verbindlich für **jedes Simulierbar-Video** (Inhaber 31.10.: „das ist dein Maßstab, an dem wir uns richten müssen“). Kurzfassung in `CLAUDE.md` §5; dieser Text ist die vollständige eigene Auswertung (Stand 31.10.2026, ergänzt 01./02.11.). Zeitplan und Satzmuster: [ablauf.md](ablauf.md), HUD-Umsetzung: [design.md](design.md), Prüfung: [pruefung.md](pruefung.md), Themen und Sperrlisten: [themen.md](themen.md). Für Account 2 gilt dieser Maßstab nicht (dort `stelldirvor-video`).
 
 **Grundlage:**
 - 4 MP4 vom Inhaber hochgeladen am 31.10.2026, je 576×1024, 30 fps, 68–79 s.
-- Analysiert wurden:
-  - Bild: 1 Bild pro Sekunde komplett angesehen, die ersten 3 s mit 6 Bildern pro Sekunde
-  - Bewegung und Schnitte: gemessen
-  - Ton: Lautheit, Pausen, Klangteppich, Effekte
-  - Sprache: Transkript mit Wortzeiten über ElevenLabs Speech-to-Text
+- Analysiert wurden: Bild (1 Bild pro Sekunde komplett angesehen, die ersten 3 s mit 6 Bildern pro Sekunde), Bewegung und Schnitte (gemessen), Ton (Lautheit, Pausen, Klangteppich, Effekte), Sprache (Transkript mit Wortzeiten über ElevenLabs Speech-to-Text).
+- **Speicherort:** Das Repo ist öffentlich. Originale, Transkripte und Standbilder der Konkurrenz liegen **nicht** im Repo (Urheberrecht, Konkurrenz soll die Auswertung nicht sehen); hier steht nur die eigene Auswertung mit kurzen Zitaten. Für eine erneute Analyse lädt der Inhaber die Dateien wieder hoch. Neue Vorbild-Videos werden genauso ausgewertet (jede Sekunde ansehen, Transkript mit Wortzeiten, Ton-Analyse) und hier ergänzt.
 
-**Hinweis zum Speicherort:**
-- Das Repo ist öffentlich. Deshalb liegen die Originale, Transkripte und Standbilder der Konkurrenz **nicht** im Repo, aus Urheberrechtsgründen und damit die Konkurrenz unsere Auswertung nicht sieht.
-- Hier steht nur unsere eigene Auswertung mit kurzen Zitaten.
-- Für eine erneute Analyse lädt der Inhaber die Dateien wieder hoch.
+**Legende:** **(F)** gemessen bzw. im Video gesehen · **(A)** Annahme bzw. Deutung
 
-**Legende:**
-- **(F)** = gemessen bzw. im Video gesehen
-- **(A)** = Annahme bzw. Deutung
+**Abweichungen bei uns (Inhaber-Entscheidungen, haben Vorrang vor den Vorbildern):** kein „Los geht's“ (Gesetz 5), ruhiger Erzähler statt Sportreporter (Gesetz 6), keine Sticker/Stempel (Bausteine), Untertitel Wort für Wort statt Phrasen (§8), Folgen-Aufruf und eigener Schlusssatz (§10), Ziel-Tempo mit Ben im Original 130–170 Wörter (Profil `ben` in `qc/massstab.py`). Siehe §10 und Prüfliste 18–20.
 
 | Kürzel | Thema | Länge | Wörter | Optik |
 |---|---|---|---|---|
@@ -48,8 +40,6 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 11. **Im Bild passiert alle 1–2 s etwas Neues:** ein Chip, ein Zähler, ein Sticker, ein Kameraschwenk oder ein Szenenwechsel. Zähler und Uhren laufen sichtbar mit. Ruhe gibt es höchstens 1–2 s am Stück.
 12. **Unter der Stimme liegt immer ein Klangteppich passend zum Thema** (Regen, Wasser, Meer, Nachtfahrt bzw. leise Musik), ca. 8–13 dB leiser als die Stimme. Dazu kommen kurze Effekte bei jedem Bild-Ereignis und ein Akzent-Klang auf der Pointe.
 
----
-
 ## 2. Messwerte
 
 | Messgröße | K1 | K2 | K3 | K4 | **Maßstab** |
@@ -72,8 +62,6 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 - Spurwechsel: Anteil Stillstand 30 %, längste Ruhephase 3,4 s.
 
 **Wichtige Erkenntnis:** Gemessen bewegt sich in unseren Videos sogar mehr Pixel als bei der Konkurrenz. Das liegt auch an Filmkorn und Tiefenunschärfe. Trotzdem wirken sie statischer. **Dynamik entsteht nicht durch Pixelbewegung, sondern durch neue Information im Sekundentakt** (Zahlen, die laufen, Chips, die aufpoppen, Führungswechsel, Kamera, die dem Geschehen folgt). Genau das fehlt uns (A, aus dem Bildvergleich).
-
----
 
 ## 3. Ablauf der vier Videos auf der Zeitachse
 
@@ -133,8 +121,6 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 | 58–64 | Fazit: Dauer und Durchfluss zählen | Zwei Karten (normal ≈ 10 min, Spar ≈ 20 min), Chips „ZEIT + DURCHFLUSS“ |
 | 64–67,9 | „Die Uhr entscheidet. Und du? Wie lange duschst du wirklich?“ | Große Uhr, „DIE UHR ENTSCHEIDET“, **letztes Bild = erstes Bild** (Schleife) |
 
----
-
 ## 4. Bild: Bausteine der Vorbilder (alle nachbauen, eigene Gestaltung)
 
 | Baustein | Wie es aussieht | Wofür |
@@ -162,36 +148,11 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 - kein Kaufaufruf
 - kein Abspann
 
----
+## 5. Zuschauer-Ansprache
 
-## 5. Text und Dramaturgie
+direktes „du“ („Womit wirst du …“, „Und du?“). Im Text kommt kein „ich“ vor, außer bei uns „Ich hab's simuliert“ (K1–K4 sagen es nicht).
 
-**Satzmuster, die in mehreren Videos vorkommen** (F):
-- Hook: „X oder Y? Was/Wer … wirklich …?“
-- Denkfalle: „Klar, X. Oder?“ bzw. „Klar, X ist besser, oder?“
-- Start: „Los geht's.“
-- Wendung: „Aber jetzt kommt das Merkwürdige:“, „Doch …“, „Aber … läuft weiter.“
-- Spannung: Countdown-Zahlen als Satzfetzen („Fünfzehn Kilometer, dreizehn, zwölf, zehn.“), „Jetzt wird's knapp.“, „Der Vorsprung schmilzt.“
-- Ergebnis: „Endstand:“, „[Sieger] gewinnt.“
-- Erklärung: „Aber warum?“ bzw. „Warum?“
-- Zweite Überraschung: „Und das Verrückte:“, „Und hier kommt die zweite Überraschung:“, „Aber jetzt wechseln wir nur …“
-- Merksatz: kurz und zitierfähig („Die Uhr entscheidet.“, „Eine einzige Minute.“)
-- Schluss: Frage an den Zuschauer („Und du? Wie lange duschst du wirklich?“, „Hättest du gewusst …?“)
-
-**Spannungsbogen:**
-
-| Phase | Zeit | Aufgabe |
-|---|---|---|
-| Hook | 0–5 s | Duell-Frage, Szene schon sichtbar |
-| Regeln | 3–12 s | Mini-Fakten als Chips |
-| Denkfalle und Start | 9–16 s | „Klar …, oder?“ und „Los geht's.“ |
-| Rennen | 12–45 s | Führungswechsel, Wendung bei ca. 20 s, Countdown |
-| Ergebnis | 40–54 s | exakte Zahl, Sieger |
-| Warum | 50–64 s | 2 Faktoren |
-| Zweite Überraschung | 45–66 s | Variante dreht das Ergebnis |
-| Merksatz und Schlussfrage | letzte 5 s | Schleife zum Anfang |
-
-**Zuschauer-Ansprache:** direktes „du“ („Womit wirst du …“, „Und du?“). Im Text kommt kein „ich“ vor, außer bei uns „Ich hab's simuliert“ (K1–K4 sagen es nicht).
+(Satzmuster und Spannungsbogen: [ablauf.md](ablauf.md) §1–2.)
 
 ---
 
@@ -216,16 +177,12 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 - **Das Schlüsselwort ist in Teamfarbe eingefärbt** („Der **Läufer** zieht“, „Klar, die **Badewanne**.“).
 - Der große Titel erscheint nur im Hook. Danach tragen Chips und Tafel die Zahlen.
 
-## 9. Themen
+## 9. Themen (Muster der Vorbilder)
 
 - Alltagsfragen, die jeder kennt, mit kontraintuitiver Antwort: Regen, Autofahrt, Strand, Bad.
 - **Messbares Duell bzw. Rennen gegen die Uhr** (3 von 4) oder ein lebenswichtiges Wissens-Szenario (K3).
 - Die Antwort ist überraschend **und** hat eine Bedingung („Die Dusche gewinnt nicht automatisch.“), das sorgt für Diskussion.
-- **Gesperrt für uns, weil schon viral:**
-  - Rennen gegen Gehen im Regen
-  - Pausen gegen Tempo auf der Autobahn
-  - Tsunami-Warnzeichen
-  - Duschen gegen Baden (inklusive Duschkosten-Varianten)
+- **Gesperrt für uns, weil schon viral:** Rennen gegen Gehen im Regen · Pausen gegen Tempo auf der Autobahn · Tsunami-Warnzeichen · Duschen gegen Baden (inklusive Duschkosten-Varianten). Die vollständige Sperrliste steht in [themen.md](themen.md).
 
 ---
 
@@ -236,8 +193,6 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 | Folgen-Aufruf | keiner | kurz bei ca. 20 s: „Folg mir, damit du nichts verpasst.“ | Wunsch des Inhabers 31.10. |
 | Schluss | Frage an den Zuschauer | „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ | Wunsch des Inhabers 31.10., ebenfalls eine Frage und damit maßstabsgerecht |
 | Optik | 2D-Flat (K1, K2, K4), 3D-Miniatur (K3) | Three.js und Blender, gleiche Bausteine wie oben, hochwertiger in 3D | Alleinstellung über Qualität (Entscheidung 31.10.) |
-
----
 
 ## 11. Prüfliste vor jeder Übergabe (alle Punkte müssen „ja“ sein)
 
@@ -259,7 +214,7 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 | 14 | Untertitel **Wort für Wort** (Stil „kontur“: weiß, schwarze Kontur, kein Kasten, aktuelles Wort gelb). Entscheidung des Inhabers 01.11., weicht bewusst von den Vorbildern ab (sie zeigen Phrasen). |
 | 15 | Kein Kanalname, kein Logo, keine Rubrik im Video |
 | 16 | Teamfarben überall gleich (Figuren, Tafel, Chips, Untertitel) |
-| 17 | Thema nicht bei der Konkurrenz viral (Abschnitt 9 plus Konkurrenz-Check vor Produktionsstart) |
+| 17 | Thema nicht bei der Konkurrenz viral (§9 plus Sperrliste in [themen.md](themen.md) und Konkurrenz-Check vor Produktionsstart) |
 | 18 | **Keine** großen Sticker bzw. Stempel (Inhaber 02.11., vorher max. 5); Inhalte mittig (Achse x = 540) |
 | 19 | Kein „Los geht's“, ruhiger Erzählton ohne aufgeregte Audio-Tags (Inhaber 02.11.; die Vorbilder sprechen „ruhig, sachlich, freundlich“, siehe oben) |
 | 20 | Skript-Bild-Abgleich: jedes gesprochene Detail ist im selben Moment zu sehen; Duell nur zwischen echten Alternativen derselben Entscheidung (Inhaber 02.11.) |

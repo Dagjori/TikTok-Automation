@@ -2,7 +2,7 @@
 
 Ein Video entsteht aus einer Szene (`projekte/<name>/szene.html` + `szene.js`), die für jede Zeit t deterministisch ein Bild zeichnet (`window.renderAt(t)`). `render.js` fotografiert die Bilder in Headless-Chromium, `mux.sh` macht daraus das MP4 mit Ton.
 
-**Verbindlicher Maßstab:** `docs/15-massstab.md`. Jede neue Szene baut auf den Maßstab-Bausteinen (`engine/massstab.js`, `engine/regie.js`) auf. Die Prüfliste §11 prüft `qc/massstab.py` automatisch. Beispiel mit allen Bausteinen: `projekte/_demo-massstab/`.
+**Verbindlicher Maßstab:** `.claude/skills/simulierbar-video/massstab.md`. Jede neue Szene baut auf den Maßstab-Bausteinen (`engine/massstab.js`, `engine/regie.js`) auf. Die Prüfliste §11 prüft `qc/massstab.py` automatisch. Beispiel mit allen Bausteinen: `projekte/_demo-massstab/`.
 
 ## Einmal einrichten
 
@@ -121,7 +121,7 @@ Jeder Baustein meldet seine Ereignisse: `{t, typ, dauer?, laufend?, klang?, text
 - **Stil-Module:** `stil_nachtstadt.js` (17), `stil_studio.js` (18), `stil_architektur.js` (19), `stil_lichtlabor.js` (20), `stil_nachtkarte.js` (21). **HUD-Thema:** `engine/sim_hud.css` mit `<div id="hud" class="sim">` (Rauchglas, Haarlinien, Teamfarbe als Licht; Untertitel „kontur“ unverändert; Sticker ausgeblendet).
 - **Prüfung:** `qc/massstab.py` Punkt 18b „Stil erlaubt (17–21)“ (Pflicht bei `"skill": "simulierbar-video"` in `skript.json` oder Szenen mit `sim_atmosphaere.js`, sonst Hinweis); 5d (keine Sticker) bleibt Pflicht.
 
-## Referenzformat Account 2 (keine Stimme, 80 s; docs/16 §12)
+## Referenzformat Account 2 (keine Stimme, 80 s; Skill stelldirvor-video)
 
 **Verbindlich:** Skill `.claude/skills/stelldirvor-video/` (Design, Licht, Effekte, Ablauf, Ton, Technik, Prüfung – gemessen an den 4 Referenzvideos). Muster mit allen Bausteinen: `projekte/_demo-lunar-pov/` (Demo, nicht posten).
 - **Baukasten:** `engine/stil_lunar_pov.js` (Höhennebel, Himmel mit Sonne/Bloom, Glut, Puffs: Wolken, Rauch-/Aschesäule, Druck-/Staubwand, Feuerball, Gischt; Partikel: Staub, Asche, Schnee, Eis, Regen, Funken; Trümmer; Menschen, Autos, Vögel; Geländer/Brüstung/Fensterrahmen; `PovKamera` mit Atmen, Beben, Stoß, Kippen; Farbphasen; Ereignis-Protokoll) und `engine/lunar_hud.js` + `engine/stil_lunar_pov.css` (Titelfrage, Messwert-Anzeige mit Etikettwechsel, kursive Sätze, Abblende, Abspann, Vignette, Glasriss, Linsenflecken, Tropfen). Schriften Crimson Pro und Inter (SIL OFL, lokal über `@fontsource`, Lizenztexte in `engine/schriften/`).
@@ -149,7 +149,7 @@ Text-Überlappung aller Bilder (HUD: Tafel, Chips, Zähler, Ringe, Sticker-Plake
 
 ## Post über Buffer einplanen (`post_buffer.py`)
 
-Plant ein **geprüftes** Video direkt für die Posting-Zeit in Buffer ein (TikTok, Status `scheduled`; Buffer veröffentlicht zur Zeit selbst) und prüft es nach dem Posten auf der öffentlichen TikTok-Seite. Regeln des Inhabers vom 01.11.: **kein KI-Label als Standard**, **keine Freigabe in Buffer**, feste Posting-Zeiten. Technik, Feldnamen und Testergebnisse: `docs/11-automatisierung.md`, Abschnitt C-Technik.
+Plant ein **geprüftes** Video direkt für die Posting-Zeit in Buffer ein (TikTok, Status `scheduled`; Buffer veröffentlicht zur Zeit selbst) und prüft es nach dem Posten auf der öffentlichen TikTok-Seite. Regeln des Inhabers vom 01.11.: **kein KI-Label als Standard**, **keine Freigabe in Buffer**, feste Posting-Zeiten. Technik und Feldnamen: Abschnitt „Buffer-API und Supabase im Detail“ unten.
 
 ```bash
 export SUPABASE_URL=https://<projekt>.supabase.co     # nicht im Repo (öffentlich); Cloud: Umgebungsvariable der Umgebung
@@ -171,6 +171,31 @@ python3 post_buffer.py --aufraeumen [--trocken]       # nur Supabase-Dateien lö
 - **`--nachpruefen`:** ruft für Log-Einträge mit Buffer-Status `sent` die öffentliche TikTok-Seite (`externalLink`) mit Browser-User-Agent ab und meldet `privateItem` (muss `false` sein), Dauer und `aigcLabelType`; ohne Daten (z. B. Bot-Schutz) steht „nicht prüfbar“, es wird nichts umgangen. Danach löscht es die Supabase-Datei, das Ergebnis steht im Log.
 - **Log:** `out/buffer_log.jsonl` (nicht im Repo): je Post Post-ID, Kanal, Supabase-Pfad, Hash, Modus; später Zeilen „nachgeprueft“ und „geloescht“. Der signierte Link steht nie im Log.
 - **Zugänge:** Cloud: der Proxy setzt die Header (Buffer `Authorization`, Supabase `apikey`). Lokal: `BUFFER_API_KEY` und `SUPABASE_KEY`; `SUPABASE_AUTH`/`SUPABASE_AUTHORIZATION` nur, falls Storage einen Authorization-Header verlangt (siehe Kopf von `post_buffer.py`).
+
+## Buffer-API und Supabase im Detail (Stand 01.11.2026)
+
+- **API:** GraphQL `https://api.buffer.com` (öffentliche Beta, Namen können sich ändern). `post_buffer.py` gleicht seine Eingabe vor jedem Lauf per Introspection mit dem Live-Schema ab (mit installiertem `graphql-core` auch das ganze Mutations-Dokument). Zugang laut Buffer nur in Bezahlplänen (3 Keys, 3.000 Anfragen je Kanal/Monat, Zweitquelle).
+- **Planen:** `createPost` mit `mode: customScheduled`, `schedulingType: automatic` und `dueAt` (UTC) plant; Buffer veröffentlicht zur Zeit selbst, erwarteter Status `scheduled`. Mit `saveToDraft: true` entsteht ein Entwurf (`draft`, ohne Limit-Prüfung). `PostStatus`: `draft`, `scheduled`, `sending`, `sent`, `error`, `needs_approval`. Lesen: `post(input:{id})`, `posts(input:{organizationId, filter:{channelIds, status, dueAt}})`; ändern/löschen: `editPost`, `deletePost`. Antwort `PostActionPayload` = `PostActionSuccess { post }` oder `NotFoundError`, `UnauthorizedError`, `UnexpectedError`, `RestProxyError`, `LimitReachedError`, `InvalidInputError`.
+- **Variablen** (so sendet das Skript sie; mit `--entwurf` kommt `saveToDraft: true` dazu, mit `--ki-label` steht `isAiGenerated` auf `true`):
+```json
+{"input": {"channelId": "<Kanal-ID>", "text": "<Caption>", "mode": "customScheduled", "dueAt": "2026-11-03T11:30:00.000Z",
+  "schedulingType": "automatic", "assets": [{"video": {"url": "<signierter Link>"}}], "metadata": {"tiktok": {"isAiGenerated": false}}}}
+```
+`channelId` löst das Skript über `channels(input:{organizationId})` per Namen auf (`simulierbar`, `stelldirvor.pov`). `VideoAssetInput.thumbnailUrl` darf nicht gesetzt werden. `aiAssisted` heißt „mit KI-Hilfe von Buffer erstellt“ und ist **nicht** die Kennzeichnung; `needsApproval` (Team-Freigabe) bleibt ungenutzt. Das Skript prüft die Antwort auf `status == "scheduled"`, `isAiGenerated` wie gesetzt und `dueAt` wie gewünscht, sonst Exit-Code 2 (der Post existiert dann, in Buffer prüfen).
+- **Nicht per API setzbar:** `TikTokPostMetadataInput` kennt nur `isAiGenerated` und `title`. Markeninhalt, Sichtbarkeit (öffentlich/privat), Kommentare, Duett und Stitch gelten also mit Buffers Standard (A); ob das Video öffentlich ist, sagt erst `--nachpruefen` (`privateItem`).
+- **Limits (Buffer Essentials):** keine Grenze für geplante Posts, aber 25 Posts je 24 h und Kanal (das Skript fragt `dailyPostingLimits` lesend ab), Video 3 s bis 10 min und höchstens 1 GB. Das Skript bricht auch ab, wenn auf dem Kanal innerhalb von ± 20 Min. schon ein Post oder Entwurf liegt (`--nochmal` hebt das auf).
+- **Supabase (Zwischenspeicher, privater Bucket `buffer-uploads`, Host nur in `SUPABASE_URL`):** Upload `POST {SUPABASE_URL}/storage/v1/object/buffer-uploads/<datum>/<uuid>.mp4` (Body = Datei, `Content-Type: video/mp4`) · Link `POST …/storage/v1/object/sign/buffer-uploads/<pfad>` mit `{"expiresIn": <Sekunden>}` → `signedURL` (relativ, das Skript ergänzt `/storage/v1`; gültig bis `dueAt` + 12 h, mindestens 24 h) · Löschen `DELETE …/storage/v1/object/buffer-uploads` mit `{"prefixes": ["<pfad>"]}` · Zugangstest `GET …/storage/v1/bucket/buffer-uploads` und `POST …/storage/v1/object/list/buffer-uploads`. Das Gratis-Plan-Limit von 50 MB je Datei gilt projektweit (Upload-Kopie ab 48 MB).
+- **Anmeldung:** In der Cloud setzt der Proxy den Header `apikey`; das Skript schickt keine Anmelde-Header (`--pruefen --schreibtest` war am 01.11. in allen Punkten OK). Meldet Storage „headers must have required property 'authorization'“: zweiter Proxy-Header `Authorization: Bearer <alter service_role-JWT>` für den Supabase-Host, oder lokal `SUPABASE_KEY` plus `SUPABASE_AUTH=bearer` bzw. `SUPABASE_AUTHORIZATION`. Ein `sb_secret_`-Schlüssel darf laut Doku nicht als Bearer geschickt werden.
+- **Nachprüfung:** Die öffentliche Videoseite enthält `<script id="__UNIVERSAL_DATA_FOR_REHYDRATION__">` → `__DEFAULT_SCOPE__` → `webapp.video-detail` → `itemInfo.itemStruct`. Gemeldet werden `privateItem` (muss `false` sein), `video.duration`, `aigcLabelType` (Text `"1"`, fehlt ohne Label; war `--ki-label` gesetzt, ist ein fehlendes Label ein Fehler) und `IsAigc` (immer `false`, sagt nichts aus). Liefert die Seite keine Daten, steht „nicht prüfbar“; Schutzmaßnahmen werden nicht umgangen. Test am 01.11. an drei gepostete Videos: Gehalt öffentlich ohne Label, Treppe und GTA öffentlich mit `aigcLabelType` = 1.
+- **Warum Buffer (F, Zweitquellen):** TikTok erlaubt Direct Post über auditierte Clients; unauditierte posten nur privat (`unaudited_client_can_only_post_to_private_accounts`). Welche Tools auditiert sind, ist nicht öffentlich, daher der Test (Video öffentlich?). Alternativen: Metricool (EU-Anbieter, offizieller MCP-Server, Starter ab 16 €); nicht empfohlen Hootsuite, Ayrshare, Postiz (Audit nicht belegt), eigene TikTok-App (eigener Audit). Eigenes YouTube-API-Projekt lohnt nicht (OAuth, Audit, `videos.insert` 1.600 Einheiten je Aufruf bei 10.000/Tag, unauditiert nur privat, A).
+
+## Manueller Rückfall: Posten über TikTok Studio Web
+
+Nur falls Buffer ausfällt (offizieller Weg, Planung bis 30 Tage im Voraus): Konto öffentlich (Privates Konto AUS) und Kontotyp persönlich. `tiktok.com/tiktokstudio/upload` → Video wählen → Caption (eine Zeile mit Hashtags, Format `CLAUDE.md` §7) → Titelbild aus den ersten Sekunden (der Titel steht dort groß im Bild; kein zusätzlicher Text) → Wer kann das sehen: Alle, Kommentare an → unter „Mehr anzeigen“: Offenlegung Markeninhalt AUS, kein KI-Label (außer bei realistischen KI-Inhalten), keine Produkt- oder Shop-Links, kein Ort → Veröffentlichen oder Planen (geplante Posts lassen sich nicht bearbeiten, nur löschen und neu hochladen). Dieselbe Master-MP4 für YouTube später ohne TikTok-Wasserzeichen.
+
+## Blender-Bake-Weg (für Material-Looks in Three.js)
+
+Cycles je Bild kostet in der Cloud 130–300 s (80 s Video = 90–200 Std.) und taugt nur für Standbilder. Der Bake-Weg holt den Großteil der Blender-Qualität zu Three.js-Kosten: Szene in Blender bauen → Licht in Texturen backen (Cycles, diffus: direkt + indirekt + Farbe; ca. 5,5 Min. einmalig) → eine `.glb` → Three.js zeigt sie mit unbeleuchteten Materialien, AgX-Tonemapping und günstiger Tiefenunschärfe (Abstand je Pixel, Weichzeichner in halber und viertel Auflösung; der fertige `BokehPass` kostete 2,6–3 s je Bild); ca. 0,9 s je Bild (0,5 s ohne Unschärfe). Regeln: Kulisse **ohne** Fahrzeuge backen, Fahrzeuge einzeln backen und mit mitfahrendem Kontaktschatten bewegen; Glanz, Spiegelungen, Glas-Brechung und bewegte Schatten gehen verloren (Ersatz: Kontaktschatten, Three.js-Glanzlicht); dünnwandiges Glas (`Thin Wall`) ist sauberer und schneller als dicke Wände. Fallstrick: `gltf.scene` ist nur eine Gruppe, `overrideMaterial` und `background` wirken erst in einer echten `THREE.Scene`. Beispielskripte: `stile/` (`stil_9_holz.py`, `stil_15_holz_gltf.py`).
 
 ## Rendern auf dem PC (Render-Dienst, ohne KI)
 
@@ -235,7 +260,7 @@ engine/          wiederverwendbar für alle Videos
   stil_nachtstadt.js / stil_studio.js / stil_architektur.js / stil_lichtlabor.js / stil_nachtkarte.js  Baukästen der Stile 17–21; sim_hud.css = seriöses HUD-Thema
   stil_clay_welt.js Belebte Welt zu Stil 3 (02.11.): `figur` (sitzend, Gesicht mit Lidern/Pupillen/Brauen/Mund, Arme per Zwei-Knochen-IK, Hände aus stil_clay.js), `gesicht`, `fan` (Zuschauer mit Fahne), `katze`, `spieltisch`, `raumWelt` (Tapete, Dielen, Teppich), `loge`, `wimpelkette`, `becher`, `notizblock`, `tasse`, `pflanze`; alle Zustände aus Parametern (deterministisch). Muster: projekte/schere-stein-papier/szene.js (Gesamtzustand je Bild als Objekt, Schleife per mixD zum Zustand bei t = 0)
 projekte/<name>/ skript.json, audio/ (stimme.mp3, timing.json, ereignisse.json), szene.html, szene.js
-qc/massstab.py   Prüfliste docs/15 §11
+qc/massstab.py   Prüfliste .claude/skills/simulierbar-video/massstab.md §11
 render.js        Bilder rendern (parallel), Ereignis-Protokoll schreiben
 klang.py         Tonspur: Stimme + synthetische Effekte + Klangteppich (keine fremden Dateien)
 mux.sh           MP4 (H.264 CRF 18, yuv420p, 30 fps, AAC, −14 LUFS)

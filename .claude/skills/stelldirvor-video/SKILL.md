@@ -5,7 +5,7 @@ description: Nur für TikTok-Account 2 @stelldirvor.pov („Stell dir vor …“
 
 # Skill: Video für @stelldirvor.pov (Referenzformat „Lunar-POV“)
 
-**Gilt nur für Account 2 `@stelldirvor.pov`.** Für Simulierbar gelten weiter `docs/15-massstab.md`, `pipeline/qc/massstab.py`, Stimme Ben und der Videoaufbau aus `CLAUDE.md`. Umgekehrt gilt für Account 2 nichts davon (kein Folgen-Aufruf, kein Schlusssatz, keine Schleife, keine Untertitel, keine Stimme).
+**Gilt nur für Account 2 `@stelldirvor.pov`.** Für Simulierbar gelten weiter der Maßstab (`CLAUDE.md` §5, Skill `simulierbar-video`), `pipeline/qc/massstab.py`, Stimme Ben und der Videoaufbau aus `CLAUDE.md` §6. Umgekehrt gilt für Account 2 nichts davon (kein Folgen-Aufruf, kein Schlusssatz, keine Schleife, keine Untertitel, keine Stimme).
 
 Grundlage: eigene Messungen an den 4 Referenzvideos des Inhabers (02.11.; Bildvergleich je Bild, Phasenkorrelation, Pixelmessung der Schrift, EBU-R128-Lautheit, Spektren). Die Referenzen selbst, Standbilder, Texte und Ton kommen **nie** ins Repo (öffentlich). Hier stehen nur Messwerte und Regeln in eigenen Worten.
 
@@ -16,6 +16,7 @@ Grundlage: eigene Messungen an den 4 Referenzvideos des Inhabers (02.11.; Bildve
 | [licht-und-effekte.md](licht-und-effekte.md) | Licht und Farbe je Phase, Dunst, Bloom, Tiefenunschärfe, jeder Effekt mit Aussehen, Zeitpunkt, Dauer und Baukasten-Aufruf; Kamera; Welt |
 | [ablauf.md](ablauf.md) | 80-s-Zeitplan als Vorlage, Satztakt, Phasen, Etikettwechsel, Höhepunkt „HIER“, Nachspiel, Abspann; Themenregeln |
 | [ton.md](ton.md) | nur Atmo und Sounddesign (selbst erzeugt), Lautheitskurve, −14 LUFS, `atmo.py` |
+| [themen-und-plan.md](themen-und-plan.md) | Grundwelten, Abstandsregeln, Ausfall-Regel, Konkurrenz-Sperrliste (Lunar, US, DE), CSV-Spalten, Reserve |
 | [technik.md](technik.md) | Baukasten (`engine/stil_lunar_pov.js`, `engine/lunar_hud.js`), Szenengerüst, Render, stummer Mux, Posting über Buffer |
 | [pruefung.md](pruefung.md) | Abnahme vor dem Posten (automatisch und Sichtprüfung) |
 
@@ -28,7 +29,7 @@ Muster mit allen Bausteinen: `pipeline/projekte/_demo-lunar-pov/` (Demo, nicht z
 4. **Jeder Satz passt exakt zum Bild:** Was ein Satz nennt (Objekt, Handlung, Zahl, Ort), ist im selben Moment so zu sehen. Abgleich Satz für Satz in `skript.json` → `bild_text_abgleich` und am Kontaktbogen.
 5. **Die Welt ist die Kunst:** Zeit und Sorgfalt gehen in Gelände, Dunst, Licht, belebte Statisten (Menschen, Autos, Vögel), Effekte und eine Welt, die reagiert. Text bleibt sparsam (drei Ebenen).
 6. **Nur Three.js bzw. Blender** (Blender backen → glTF → Three.js erlaubt). Keine KI-Video-Generatoren, keine Vorlagen, keine fremden Assets ohne freie Lizenz.
-7. **Keine Kopien:** Themen und Texte der Referenzen sind gesperrt (Asteroid explodiert über der Stadt, Sonne explodiert, Mega-Tsunami trifft Großstadt, Erde hört auf sich zu drehen). Keine Sätze, Etiketten, Faktenzeilen oder Bildideen 1:1 übernehmen, auch nicht übersetzt. Konkurrenz-Check vor jedem Thema (`docs/16` §12a).
+7. **Keine Kopien:** Themen und Texte der Referenzen sind gesperrt (Asteroid explodiert über der Stadt, Sonne explodiert, Mega-Tsunami trifft Großstadt, Erde hört auf sich zu drehen). Keine Sätze, Etiketten, Faktenzeilen oder Bildideen 1:1 übernehmen, auch nicht übersetzt. Konkurrenz-Check vor jedem Thema ([themen-und-plan.md](themen-und-plan.md) §5).
 8. **Deutsche Texte**, deutsche Zahlen (1.013,2), Einheiten metrisch.
 9. **Rhythmus:** 2 Videos pro Tag für diesen Account (4 insgesamt), für den nächsten Tag; **höchstens 2 Produktions-Agenten gleichzeitig**, gestaffelt, Produktions-Agenten mit `model: sonnet`.
 10. **Kein Logo, kein Kanalname, keine Sticker, Chips, Karaoke, Folgen-Aufruf, Kommentar-Aufruf im Bild.** Die Kommentarfrage steht nur in der Caption.
@@ -46,4 +47,4 @@ Muster mit allen Bausteinen: `pipeline/projekte/_demo-lunar-pov/` (Demo, nicht z
 9. **Posting** über `pipeline/post_buffer.py --kanal stelldirvor.pov` zur festen Zeit, ohne KI-Label; danach `--nachpruefen`. (5 Min.)
 
 ## Qualitätsstand des Baukastens (02.11.)
-Schrift, Layout, Abspann, Ton-Verlauf und Prüfung treffen die Referenzen (Demo besteht alle Pflichtpunkte). **Die Welt bleibt noch hinter den Referenzen zurück**, vor allem bei der Detaildichte (kahle Häuser, grobe Bäume, kein Wasser, kaum sichtbare Menschen), bei Wolken und Rauch (wattig, ohne Randlicht) und bei leeren Höhepunkt-Bildern. Deshalb gilt: Jeder Erstbau einer Grundwelt (`docs/17` §3) hebt die Welt auf Referenzniveau, bevor das erste Video darin gerendert wird; Abnahme am Phasen-Vergleich (`pruefung.md` §2).
+Schrift, Layout, Abspann, Ton-Verlauf und Prüfung treffen die Referenzen (Demo besteht alle Pflichtpunkte). **Die Welt bleibt noch hinter den Referenzen zurück**, vor allem bei der Detaildichte (kahle Häuser, grobe Bäume, kein Wasser, kaum sichtbare Menschen), bei Wolken und Rauch (wattig, ohne Randlicht) und bei leeren Höhepunkt-Bildern. Deshalb gilt: Jeder Erstbau einer Grundwelt ([themen-und-plan.md](themen-und-plan.md) §3) hebt die Welt auf Referenzniveau, bevor das erste Video darin gerendert wird; Abnahme am Phasen-Vergleich (`pruefung.md` §2).

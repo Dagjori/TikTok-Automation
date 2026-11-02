@@ -1,5 +1,5 @@
 // HUD-Komponenten (DOM über der 3D-Leinwand): Schritt-Anzeige, Karten, Chips, Zähler,
-// kinetischer Titel, Karaoke-Untertitel, 3D-Anker-Labels. Die Bausteine nach Maßstab (docs/15) liegen in massstab.js.
+// kinetischer Titel, Karaoke-Untertitel, 3D-Anker-Labels. Die Bausteine nach Maßstab (.claude/skills/simulierbar-video/massstab.md) liegen in massstab.js.
 // Jede Komponente hat update(t) und setzt ihren Zustand ausschließlich aus t (deterministisch).
 // Kanalname, Logo und Rubrik erscheinen nie im Video (Entscheidung des Inhabers 31.10.): Markenleiste ist wirkungslos.
 import { feder, FEDER, ease, fortschritt, clamp, lerp } from "./bewegung.js";

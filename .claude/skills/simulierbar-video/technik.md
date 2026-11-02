@@ -19,7 +19,21 @@ Neue Objekte (Zapfsäule, Brotdose, Waschmaschine …) gehören ins Stil-Modul, 
 ## Projektordner
 `pipeline/projekte/<name>/`: `skript.json`, `audio/` (stimme.mp3, timing.json, ereignisse.json), `szene.html`, `szene.js`; Rechnung mit Test in `pipeline/sim/<name>.mjs`.
 
-`skript.json` (Format `docs/08` §3.3) zusätzlich: `"konto": "simulierbar"`, `"skill": "simulierbar-video"`, `"stil": "18 Dunkles Studio (Produktlicht)"`, `"stil_begruendung"`, `"teamfarben"`, `"klangteppich"`, `"bild_text_abgleich"`, `"caption"`, `"quellen"` (nur intern).
+`skript.json` (Beispiel unten): `titel`, `skill`, `konto`, `stil`, `stil_begruendung`, `teamfarben`, `klangteppich`, `segmente` (`id`, `phase`, `text` = Untertitel, `sprechtext` = Regie-Text, siehe `ton.md` §3), `bild_text_abgleich`, `caption`, `quellen` (nur intern).
+```json
+{
+  "titel": "…", "skill": "simulierbar-video", "konto": "simulierbar",
+  "stil": "18 Dunkles Studio (Produktlicht)", "stil_begruendung": "…",
+  "teamfarben": {"Paul": "#FF8A3D", "Anna": "#3D8BFF"}, "klangteppich": "raum",
+  "segmente": [
+    {"id": "hook", "phase": "hook",
+     "text": "Spur wechseln oder bleiben? Wer ist im Stau wirklich schneller?",
+     "sprechtext": "Spur wechseln – oder bleiben?\n[curious] Wer ist im Stau WIRKLICH schneller?",
+     "bild_text_abgleich": [{"gesagt": "…", "bild": "…"}]}
+  ],
+  "caption": "…", "quellen": ["…"]
+}
+```
 
 ## Szenengerüst
 `szene.html`:

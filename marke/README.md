@@ -2,7 +2,7 @@
 
 **Stand:** 01.11.2026 · **Status:** Entwurf, der Inhaber wählt aus
 
-> **Nicht im Video verwenden.** Im Video erscheinen weder Name noch Logo (Entscheidung des Inhabers, passt zu Gesetz 1 und 10 in `docs/15-massstab.md`). Die Bildmarke ist nur für Profilbild (TikTok, YouTube), YouTube-Banner, Impressum und später Merch gedacht.
+> **Nicht im Video verwenden.** Im Video erscheinen weder Name noch Logo (Entscheidung des Inhabers, passt zu Gesetz 1 und 10 in `.claude/skills/simulierbar-video/massstab.md`). Die Bildmarke ist nur für Profilbild (TikTok, YouTube), YouTube-Banner, Impressum und später Merch gedacht.
 
 Übersicht aller drei Konzepte: [`logo/uebersicht.png`](logo/uebersicht.png)
 

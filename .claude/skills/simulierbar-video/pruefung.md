@@ -1,6 +1,6 @@
 # Prüfung vor dem Posten (Abnahme)
 
-Ein Video geht nur in Buffer, wenn **alle** Pflichtpunkte erfüllt sind (Prüfliste `docs/15` §11). Fertige Videos bleiben, wie sie sind; neue Regeln gelten ab der nächsten Produktion.
+Ein Video geht nur in Buffer, wenn **alle** Pflichtpunkte erfüllt sind (Prüfliste [massstab.md](massstab.md) §11). Fertige Videos bleiben, wie sie sind; neue Regeln gelten ab der nächsten Produktion.
 
 ## 1. Automatisch
 ```bash
@@ -35,4 +35,4 @@ Prüfen und im Bericht festhalten:
 - [ ] Ton: Teppich 8–13 dB unter der Stimme, Effekt bei jedem Bild-Ereignis, Akzent auf der Pointe, Stimme ruhig.
 
 ## 3. Nach dem Posten
-`python3 post_buffer.py --nachpruefen`: Video öffentlich, Länge stimmt, danach Supabase-Datei gelöscht. Ergebnis in `STATUS.md`.
+`python3 post_buffer.py --nachpruefen`: Video öffentlich, Länge stimmt, danach Supabase-Datei gelöscht. Ergebnis in `CLAUDE.md` §11 vermerken.

@@ -1,6 +1,6 @@
 # Ton: Stimme Ben, Regie-Text, Klangteppich
 
-Quelle: `CLAUDE.md` (Stimme und Regie-Text, Entscheidungen 31.10./01.11./02.11.), `docs/08-beispielskripte.md` §3, `docs/15-massstab.md` §6–7, `pipeline/README.md` (Ton).
+Quelle: `CLAUDE.md` §8 (Entscheidungen 31.10./01.11./02.11.), [massstab.md](massstab.md) §6–7, `pipeline/README.md` (Ton).
 
 ## 1. Stimme
 - **ElevenLabs, Stimme „Ben“ `aTTiK3YzK3dXETpuDE2h`, im Original**: `pipeline/tts.py` schickt **keine** `voice_settings` (gespeicherte Einstellungen der Stimme), keine künstliche Beschleunigung.
@@ -15,9 +15,21 @@ Quelle: `CLAUDE.md` (Stimme und Regie-Text, Entscheidungen 31.10./01.11./02.11.)
 - **Höchstens 3 Ausrufezeichen** im Sprechtext (16b). **Kein „Los geht's“** (3b).
 
 ## 3. Regie-Text (`sprechtext` je Segment)
-- Regiebuch für den Sprecher: eine Zeile pro Satz (`\n`), Satzzeichen, Auslassungspunkte für Spannung, GROSSSCHREIBUNG für ein Betonungswort.
-- `text` = Untertitel (Ziffern erlaubt), `sprechtext` = gesprochen: Zahlen ausgeschrieben („dreitausend Euro“), englische Wörter in Lautschrift.
-- Schluss genau: „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ Folgen-Aufruf genau: „Folg mir, damit du nichts verpasst.“
+Grundsatz (Inhaber 31.10.): Der Sprechtext ist wie ein Regiebuch für einen Synchronsprecher; er legt fest, wo die Stimme betont, pausiert, Spannung aufbaut und die Stimmung wechselt. Eine Zeile pro Satz (`\n`), Leerzeile zwischen Phasen. `text` = Untertitel (Ziffern erlaubt), `sprechtext` = gesprochen (Zahlen ausgeschrieben, englische Wörter in Lautschrift „G T A sechs“).
+
+| Wirkung | Mittel bei Eleven v4 (Standard) |
+|---|---|
+| kurze Pause | Satzende, Zeilenumbruch, Gedankenstrich „ – “ |
+| längere Pause (selten, max. 0,4 s) | `[short pause]`; v4 unterstützt **keine** `<break>`-Tags |
+| Zögern, Spannung | Auslassungspunkte „…“ |
+| Betonung eines Worts | GROSSSCHREIBUNG („Jetzt wird's KNAPP.“) |
+| Haltung | ruhige Audio-Tags `[curious]`, `[thoughtful]`, `[calm]`; **keine aufgeregten** (`[excited]`, `[shouting]`, `[energetic]`, Prüfpunkt 16a) |
+| Frage-Melodie | Fragezeichen, kurze Frage allein auf einer Zeile („Oder?“) |
+| Tempo | nicht künstlich ändern; es entsteht durch kurze Sätze |
+
+Regeln: 1. Keine zusätzlichen Pausen-Tags außer bei einem echten Spannungsmoment; Ben setzt nach jedem Satz von sich aus 0,5–0,7 s (F), jede weitere Pause bremst. 2. Je Phase höchstens ein Gefühls-Tag, zu viele klingen gespielt (A). 3. Pro Satz höchstens ein großgeschriebenes Wort, nur auf dem Wort, das die Spannung trägt. 4. Countdowns als Satzfetzen mit Kommas: „Fünfzehn Kilometer, dreizehn, zwölf, zehn.“ 5. Nach der Vertonung prüft `qc/massstab.py` Tempo, Satzpausen und Satzlängen; zusätzlich Abgleich Sprechtext gegen Spracherkennung (v4 spricht die Tags nicht mit, F).
+
+Schluss genau: „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ Folgen-Aufruf genau: „Folg mir, damit du nichts verpasst.“
 ```json
 {"id": "falle", "text": "Klar, die Prämie. Oder?", "sprechtext": "Klar … die PRÄMIE.\nOder?"}
 ```

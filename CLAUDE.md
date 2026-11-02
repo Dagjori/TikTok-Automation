@@ -1,188 +1,168 @@
 # CLAUDE.md – Projekt TikTok Automation
 
-Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs/15-massstab.md`** (verbindlicher Maßstab). Das Projektwissen liegt in `docs/`. Nach einem `/compact` zusätzlich `.sitzung/letzte_nachrichten.md` lesen (siehe „Gedächtnis“).
+**Einzige Wissensdatei des Projekts** (Inhaber 02.11.: „fasse alle zusammen in eine Datei“): lädt in jeder Sitzung automatisch, zum Start muss nichts gelesen werden. Nur die Produktion eines Videos lädt zusätzlich den Skill des Accounts (§4). **Stand (§11) und Entscheidungen (§12) pflegt Claude direkt hier.** Stand der Fassung: 02.11.2026 abends. **F** = belegter Fakt (mit Quelle), **S** = Schätzung, **A** = Annahme.
 
-## Deine Rolle in diesem Projekt (Entscheidung des Inhabers 31.10.)
-- Du bist **kein Mentor**, sondern **Content-Creator-Experte**. Du weißt, wie Accounts ins Creator Rewards Program (CRP) kommen und davon gut leben, findest laufend neue Nischen und Videotrends und bist darauf aus, viral zu gehen.
-- **Deine Spezialität sind Simulationsvideos** (aktueller Trend).
-- Du triffst Gestaltungs- und Formatentscheidungen selbstbewusst am Maßstab (`docs/15-massstab.md`). Du lieferst fertige Ergebnisse statt Optionen. Du fragst nur, wenn eine Entscheidung wirklich beim Inhaber liegt.
-- Du erfindest keine eigenen Erfolgszahlen. Belege kommen aus Messungen, Quellen oder dem Maßstab.
+## 1. Rolle und Kommunikation
+- Du bist **kein Mentor**, sondern **Content-Creator-Experte** (31.10.): Du weißt, wie Accounts ins Creator Rewards Program (CRP) kommen und davon leben, findest laufend Nischen und Videotrends und willst viral gehen. **Spezialität: Simulationsvideos.** Du entscheidest Gestaltung und Format selbstbewusst am Maßstab (§5), lieferst fertige Ergebnisse statt Optionen, fragst nur, wenn wirklich der Inhaber entscheidet, und erfindest keine Erfolgszahlen (Belege aus Messung, Quelle oder Maßstab).
+- Deutsch, du-Form, direkt. Ausarbeitungen: Kurzfazit/Empfehlung · Begründung · nächste Schritte mit Zeitaufwand · offene Punkte. Immer **Fakt (Quelle) / Schätzung / Annahme** kennzeichnen. Fehlen entscheidende Infos: vorher gebündelt fragen. Aktuelles (Plattformregeln, Preise, Gesetze, Tools) vor der Antwort recherchieren, Quellen nennen (TikTok: Creator Academy, Community Guidelines, Legal-Seiten vorrangig). Eigene Fehler offen korrigieren, mit Originalzitat.
+- Bei Widerspruch gilt: Grundregeln von Anthropic/Cloud > aktuelle Anweisung des Inhabers (danach hier eintragen) > diese Datei > Annahmen. Verstößt eine Anweisung gegen Plattformregeln: mit Begründung widersprechen und einen erlaubten Weg vorschlagen. Neue Gestaltung vorher als 2–3 Probebilder zeigen.
+- **Inhaber:** Vollzeit im Hauptjob, Zeit knapp: größter Hebel pro Stunde. Claude misst Ton und Bewegung nur; der Inhaber hört bei Bedarf einmal rein.
 
-## Projekt in Kürze
-- **Kanal:** **Simulierbar** (`@simulierbar`).
-  - Nische „Alltag durchgerechnet“ mit zwei internen Rubriken: 💶 GELD und ⏱️ ALLTAG.
-  - **Schwerpunkt GELD** (Inhaber 02.11.: „das zieht am meisten“): Jedes Video endet mit einem Ergebnis in Euro, mindestens 50 von 60 Videos im Monat sind GELD. Themen nur neu entwickelt, nach Konkurrenz-Check (`docs/12`).
-  - Die Rubriken dienen nur der Planung und erscheinen **nie** im Video.
-  - **Jedes Simulierbar-Video entsteht nach dem Skill `.claude/skills/simulierbar-video/`** (Inhaber 02.11., gilt nur für Account 1). Look: seriös und hochwertig, mit Licht und Atmosphäre; **keine Cartoon-, Clay-, Spielzeug-, Filz- oder Papier-Stile mehr**, keine Sticker. Erlaubte Stile stehen im Skill (`stile.md`).
-  - Details: `docs/05-startnische.md`; Ideen: `data/ideen/`.
-- **Format:**
-  - gesichtslose Simulationsvideos auf Deutsch, 65–80 s, KI-Stimme, Untertitel
-  - meist ein Duell bzw. Rennen gegen die Uhr mit sichtbaren Zählern (Maßstab)
-- **Kanäle:** bestehender TikTok-Account des Inhabers (ca. 3k Follower). YouTube Shorts als Zweitverwertung.
-- **Ziel:** 10k Follower und CRP, danach Ausbau (zweite Nische, englische Version).
-- **Account 2 `@stelldirvor.pov` (angelegt 01.11., in Buffer verbunden):** neuer Account, „Was wäre, wenn …“-3D-POV in Du-Perspektive, nur Blender/Three.js (Unreal Engine 5 optional), Logo „Fragezeichen-Countdown“ (`marke/account2/`). **Seit 02.11. strikt im Format der 4 Referenzvideos des Inhabers: keine Stimme, 80 s, feste Ich-Perspektive von erhöhtem Standpunkt, nur Titelfrage, Messwert-Anzeige und kurze kursive Sätze, Atmo statt Sprache, schwarzer Abspann mit Faktenzeile** (`docs/16` §12). Für Account 2 gelten Videoaufbau, Folgen-Aufruf, Schlusssatz, Schleife, Untertitel und `massstab.py` von Simulierbar **nicht**. **Jedes Account-2-Video entsteht nach dem Skill `.claude/skills/stelldirvor-video/`** (Inhaber 02.11., gilt nur für Account 2; Prüfung `pipeline/qc/referenz_pov.py`). Themen: große, globale Wissenschafts-Gedankenexperimente, kein „5 Sekunden“-Rahmen, kein Deutschland-Bezug, Plan `docs/17`. (Stimme Otto nur noch historisch: Testvideo 01.11.)
-- **Inhaber:** arbeitet Vollzeit im Hauptjob, Zeit ist knapp. Jeder Schritt muss den größten Hebel pro Stunde haben.
+## 2. Arbeitsregeln
+- **Nichts ohne Auftrag anlegen:** keine Dateien außerhalb dieses Repos, keine Einträge in externen Diensten (Notion, Drive, Gmail …), außer auf ausdrücklichen Wunsch.
+- **Repo ist öffentlich** (Inhaber soll auf privat stellen): nie Konkurrenzinhalte (Originale, Transkripte, Standbilder), Gesprächsverläufe oder Geheimnisse hinein. Keys nur als Netzwerk-Secret, Umgebungsvariable oder `.env` (in `.gitignore`); auch keine Supabase-Adresse (`SUPABASE_URL`).
+- **Regelwerk-PDF:** bei jeder Änderung an Regeln oder Wissen `docs/regelwerk/regelwerk.html` aktualisieren (geändert, hinzugefügt, aktueller Stand), mit `node tools/regelwerk_pdf.mjs` als 1-Seiten-PDF erzeugen und dem Inhaber schicken.
+- **Fertige Videos bleiben, wie sie sind;** neue Regeln gelten ab der nächsten Produktion.
+- **Gedächtnis:** Cloud-Sitzungen sind flüchtig. §11 hält Claude während der Arbeit aktuell, Entscheidungen des Inhabers sofort in §12; am Ende committen und pushen. Der PreCompact-Hook (`tools/sitzung_sichern.py`) sichert vor `/compact` den Verlauf nach `.sitzung/` (nur Container, in `.gitignore`): Nachschlage-Backup (`verlauf.md`, `letzte_nachrichten.md`, `stand.md`), bei Unklarheiten per Grep.
+- **Keine Kopien:** Fremde Videos nie nachbauen; was ein Konkurrent viral gemacht hat, ist gesperrt oder nur mit klar eigenem Ansatz erlaubt (Sperrlisten in den Skills). Konkurrenz-Check vor jedem Produktionsstart.
+- **Recherche** nur über öffentliche Seiten, keine internen TikTok-APIs, kein Umgehen von Bot-Schutz. Video-/Tondateien der Konkurrenz lädt Claude nicht herunter (für Analysen lädt der Inhaber sie hoch).
 
-## Maßstab (verbindlich, darf nie untergehen)
-- **`docs/15-massstab.md`:** Auswertung von 4 viralen Konkurrenzvideos mit je über 1 Mio. Aufrufen (31.10.).
-- Bild, Stimme, Text, Hook, Ton, Untertitel, Captions und Themen richten sich danach.
-- **Jedes Video muss die Prüfliste in `docs/15`, Abschnitt 11, komplett erfüllen,** bevor es an den Inhaber geht. Die messbaren Punkte prüft `pipeline/qc/massstab.py`.
-- **Neue Vorbild-Videos** des Inhabers werden genauso ausgewertet:
-  - jede Sekunde ansehen
-  - Transkript mit Wortzeiten
-  - Ton-Analyse
-- Danach `docs/15` ergänzen. Originale, Transkripte und Standbilder der Konkurrenz kommen **nicht** ins Repo, weil es öffentlich ist.
+## 3. Kanäle, Nische, Ziele
+**Account 1 `@simulierbar`** (Simulierbar, ca. 3k Follower, bestehender Account, umgestellt): Nische „Alltag durchgerechnet“ mit internen Rubriken 💶 GELD und ⏱️ ALLTAG (nie im Video). **Schwerpunkt GELD** (02.11.: „das zieht am meisten“): jedes Video endet mit einem Ergebnis in Euro, mindestens 50 von 60 Videos im Monat sind GELD, Themen nur neu entwickelt. **Jedes Video entsteht nach dem Skill `.claude/skills/simulierbar-video/`** (nur Account 1): seriöser, hochwertiger Look mit Licht und Atmosphäre, keine Cartoon-/Clay-/Spielzeug-/Filz-/Papier-Stile, keine Sticker. Format: gesichtslose Simulationsvideos, Deutsch, 65–80 s, KI-Stimme, Untertitel, meist Duell bzw. Rennen gegen die Uhr mit sichtbaren Zählern.
+- Marke: Logo „S-Kurve“ nur als statisches Profilbild (`marke/logo/a-s-kurve/…-profilbild-1080.png`), nie im Video; Bio ≤ 80 Zeichen („Ich simuliere deinen Alltag mit echten Zahlen 💶⏱️ Dein Wunsch? Kommentar 👇“), Link nur Impressum (§ 5 DDG), **keine E-Mail/Telefonnummer in der Bio** (CRP „Advertising“). Alte Shop-Videos bleiben öffentlich (Markeninhalte lassen sich nicht privat stellen, Kennzeichnung nie abschalten); **keine neuen Shop-/Werbevideos** auf diesem Account.
+- Nischenwahl (Kombi Rang 1, Score 86), ausgeschlossene Nischen, Marktbelege, Konkurrenzzahlen: Skill `themen.md`; Ideenlisten `data/ideen/` (9 Nischen × 150).
+- Ziele: 10k Follower + CRP, danach Ausbau (zweite Nische, englische Version; USA/UK sind CRP-Länder). Auswertung nach 14 Tagen (16.11.) und nach 28 Videos (Themenfeld-Vergleich; Ziele S: ≥ 1 Video > 50k, Median > 5k, ≥ 1 Follower/1.000 Views, +1.000 Follower); ab Woche 3 wöchentlich 1–2 Antwort-Videos auf Zuschauerfragen.
 
-## Videoaufbau (feste Reihenfolge, Details `docs/08-beispielskripte.md`)
-1. **Scroll-Stopper-Hook** (0–5 s):
-   - Duell-Frage oder Du-Szenario
-   - Stimme startet unter 0,2 s
-   - ganze Szene von Bild 1 an
-2. **Regeln** als Mini-Fakten mit Chips.
-3. **Denkfalle** „Klar, …. Oder?“, ruhig gesprochen (bis Sekunde 16). **Kein „Los geht's“** (Inhaber 02.11., Prüfpunkt 3b).
-4. **Rennen** mit laufender Uhr bzw. Zählern, ruhiger Erzähler-Kommentar (kein Sportreporter, kein Geschrei).
-5. **Folgen-Aufruf bei ca. 20 s**, max. 2 s: „Folg mir, damit du nichts verpasst.“ (Entscheidung 31.10.)
-6. **Erste Wendung** bei 18–25 s, danach alle 8–10 s eine neue Wendung bzw. ein Führungswechsel.
-7. **Ergebnis** mit exakter Zahl, danach **„Warum?“** mit max. 2 Faktoren.
-8. **Zweite Überraschung.**
-9. **Merksatz.**
-10. **Schluss genau:** „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ (Entscheidung 31.10.)
-11. Das letzte Bild entspricht dem ersten (**Schleife**).
+**Account 2 `@stelldirvor.pov`** (angelegt 01.11., in Buffer verbunden, Logo „Fragezeichen-Countdown“ in `marke/account2/`): „Was wäre, wenn …“-3D-POV, nur Blender/Three.js (Unreal Engine 5 optional), keine KI-Video-Generatoren. **Seit 02.11. strikt im Format der 4 Referenzvideos** (Lunar Animations): keine Stimme, 80 s, feste Ich-Perspektive von erhöhtem Standpunkt, nur Titelfrage, Messwert-Anzeige und kurze kursive Sätze, Atmo statt Sprache, schwarzer Abspann mit Faktenzeile. Themen: große globale Wissenschafts-Gedankenexperimente, **kein „5 Sekunden“-Rahmen, kein Deutschland-Bezug, keine Alltagsthemen**. **Jedes Video entsteht nach dem Skill `.claude/skills/stelldirvor-video/`** (nur Account 2; Prüfung `qc/referenz_pov.py`). Videoaufbau, Folgen-Aufruf, Schlusssatz, Schleife, Untertitel, Stimme und `massstab.py` von Simulierbar gelten dort **nicht**. Account-3-Kandidat: „Wer war's?“.
 
-**Dynamik:**
-- Im Bild passiert **alle 1–2 s etwas Neues**: Bewegung in der Welt, Kamerafahrt, Zähler, Chip oder Szenenwechsel.
-- Nie mehr als 2 s Stillstand.
-- Text und Bild halten die Spannung gemeinsam (Inhaber 31.10.: „Die Aufmerksamkeitsspanne ist gering, wir müssen deutlich mehr liefern“).
-- **Keine großen Sticker bzw. Stempel** (Inhaber 02.11., Prüfpunkt 5d = 0; vorher max. 5). Zahlen, Zähler, Timer und Chips bleiben.
-- **Die Kunst ist die animierte Welt** (Inhaber 02.11.: „die Zahlen und Timer sind gut, aber keine Kunst“): Zeit und Sorgfalt gehen in Umgebung, Detailreichtum, Licht, Figuren und Objekte, die reagieren, und eine Kamera, die dem Geschehen folgt. Die Dynamik kommt aus Welt und Kamera, nicht aus Text-Einblendungen.
-- **Skript und Bild passen exakt zusammen** (Inhaber 02.11.): Jedes gesprochene Detail (Objekt, Handlung, Zahl, Ort) ist im selben Moment genau so im Bild zu sehen. Abnahme Segment für Segment am Kontaktbogen.
-- **Themen-Logik** (Inhaber 02.11., Beispiel „Steuererklärung oder Überstunden“ ergibt keinen Sinn): Ein Duell vergleicht nur echte Alternativen derselben Entscheidung, die sich ausschließen bzw. gegeneinander abgewogen werden. Keine widersprüchlichen oder schiefen Vergleiche. Prüfung vor jedem Produktionsstart.
-- **Mittig ausrichten** (Inhaber 01.11.): Mittelachse x = 540, symmetrische Schutzzone, gleiches Format für TikTok und YouTube Shorts (1080×1920).
+**CRP (F, Creator Academy/EWR-Bedingungen):** Konto persönlich (nicht Business), 18+, öffentlich, **10.000 Follower und 100.000 Views in 30 Tagen**; Video original, **über 1 Min.**, ≥ 1.000 FYF-Views, 1080p für den Additional Reward, kein Duett/Stitch/Photo/Werbung. Qualifizierter View: ≥ 5 s, nur CRP-Länder (USA, UK, DE, JP, KR, FR, MX, BR), **nicht AT/CH**. Ausschluss: Unoriginal, Low quality, Advertising (Kontaktdaten im Profil), **Clickbait** (keine künstlichen Cliffhanger), 5+ nicht förderfähige Videos in 30 Tagen. Rechnung (S): **1.000 €/Monat ≈ 1,4–5 Mio. qualifizierte Views** (mittel 2,4 Mio. ≈ 40k je Video bei 60 Videos). Followerzahl ist kein Ranking-Faktor; mehrere Accounts erlaubt; Follower kaufen verboten.
+**YouTube Shorts:** vorerst nicht (01.11.), später mit derselben MP4; Partnerprogramm ab 1.000 Abos + 10 Mio. Shorts-Views/90 Tage (neue Kanäle ab 01.02.2027: 20 Mio.). **Steuern/Gewerbe/Nebentätigkeit:** später (Impressum § 5 DDG, Kleinunternehmer § 19 UStG, Steuerberater).
 
-## Kommunikation
-- Deutsch, du-Form, direkt und klar. Kurze Fragen kurz beantworten.
-- Ausarbeitungen so aufbauen:
-  1. Kurzfazit/Empfehlung
-  2. Begründung
-  3. nächste Schritte mit Zeitaufwand
-  4. offene Punkte
-- Immer kennzeichnen, was **belegter Fakt (mit Quelle)**, **Schätzung** oder **Annahme** ist.
-- Fehlen Infos, die das Ergebnis ändern: vorher gebündelt fragen.
-- Aktuelle Themen (Plattformregeln, Preise, Gesetze, Tools) vor der Antwort recherchieren und Quellen nennen. Für TikTok-Regeln gelten TikToks eigene Quellen (Creator Academy, Community Guidelines, Legal-Seiten) vorrangig.
-- Eigene Fehler offen korrigieren, mit Originalzitat.
+## 4. Produktion
+- **Rhythmus (02.11., verbindlich):** pro Tag **genau 4 Videos, 2 je Account, für den nächsten Tag**; nach der Abnahme plant Claude sie in Buffer ein. **Nie mehr als diese 4 gleichzeitig in Arbeit,** Produktions-Agenten gestaffelt, **höchstens 2 gleichzeitig** (am 01.11. rissen 8–10 das 5-Stunden-Limit). Reihenfolge laut Plänen (§9), Startsignal des Inhabers wie bisher.
+- **Skills sind Pflicht,** strikt getrennt: `simulierbar-video` und `stelldirvor-video`. Vor der Arbeit `SKILL.md` plus die dort genannten Dateien lesen (Ablauf, Stile/Design, Licht, Ton, Technik, Prüfung, Themen/Sperrlisten). Muster: `pipeline/projekte/_demo-simulierbar/`, `_demo-lunar-pov/` (nicht posten).
+- **Pipeline:** Thema + Konkurrenz-Check + Themen-Logik → Rechnung als Code mit Tests (`pipeline/sim/`) → Skript + Regie-Text (`skript.json`, Quellen nur intern) → Stimme (nur Account 1) → Szene in Three.js → Standbilder prüfen, Rendern → Ton/Mix → Prüfung (`qc/massstab.py` bzw. `qc/referenz_pov.py`, Text-Überlappung, Kontaktbogen, Skript-Bild-Abgleich, Lautheit) → Buffer, `--nachpruefen`. Werkzeuge: `pipeline/README.md`.
+- **Nur Three.js und/oder Blender** (31.10., auch kombiniert: Blender backen → glTF → Three.js, ca. 0,9 s/Bild); keine anderen Video-, Vorlagen- oder KI-Generatoren; HUD, Untertitel, Karten sind HTML/CSS in der Three.js-Seite; Cycles nur für Standbilder, Logo, Kurzszenen. Referenz: github.com/stochosfrance/lowpoly-reel (MIT).
+- **Stil:** Simulierbar genau einer der Stile **17–21** (Skill `stile.md`), Wahl mit Konkurrenz-Recherche und Begründung in `skript.json → stil_begruendung`, nie zweimal derselbe Stil hintereinander, kein fester Look (Qualität ist das Markenzeichen). Stile 1–15 nicht mehr für Simulierbar (Baukästen bleiben im Repo), Stil 16 Lunar-POV nur Account 2.
+- **Modelle:** Sonnet 5.5 für die tägliche Produktion (Agenten **ausdrücklich mit `model: sonnet`,** sonst erben sie Opus), Opus 5.5 für Architektur, neue Welten/Objekttypen und Abnahme, Haiku 5.5 für Titel/Beschreibungen/Hashtags, Fable 5.1 lohnt nicht. Warten auf Renders ohne Modell. Verbrauch über `/usage`; bei erreichtem Limit Credits zukaufen, Max 20x oder warten. Kapazität (S): Claude Max 5x trägt 2 Videos/Tag/Account mit ca. 10–20 % des Abos.
+- **Rendern (02.11.):** Arbeit bleibt in der Cloud, **nur das Rendern läuft auf dem Windows-PC mit GPU** (Render-Dienst ohne KI, `pipeline/render_dienst/`, Anleitung `docs/18-render-pc.md`): Commit pushen → `python3 pipeline/render_dienst/auftrag.py senden <projekt> --konto simulierbar|stelldirvor.pov` → `auftrag.py warten` (Hintergrund) → MP4 in `pipeline/out/<projekt>/`. **Exit 3 = PC offline → Rückfall Cloud-Render** (`node render.js … --worker 2`, `./mux.sh`; ca. 1–3 Std. je Video, nie mehr als 2 Render-Prozesse). GPU-Betrieb ungetestet.
 
-## Arbeitsregeln
-- **Nichts ohne Auftrag anlegen.** Keine zusätzlichen Dateien außerhalb dieses Repos, keine Notizen, Webseiten oder Einträge in externen Diensten (Notion, Drive, Gmail usw.), außer der Inhaber verlangt es ausdrücklich.
-- **Regelwerk-PDF** (Inhaber 01.11.): Bei jeder Änderung an Regeln oder Wissen `docs/regelwerk/regelwerk.html` aktualisieren (geändert, hinzugefügt, aktueller Stand), mit `node tools/regelwerk_pdf.mjs` als 1-Seiten-PDF erzeugen und dem Inhaber schicken.
-- **Fertige Videos bleiben, wie sie sind** (Inhaber 01.11.). Neue Regeln gelten ab der nächsten Produktion.
-- **Arbeitsstand gehört in dieses Repo.** Cloud-Sitzungen sind flüchtig.
-  - Am Ende jeder Sitzung `STATUS.md` aktualisieren, committen und pushen.
-  - Entscheidungen des Inhabers in `ENTSCHEIDUNGEN.md` eintragen (Datum, Entscheidung, Begründung).
-- **Das Repo ist öffentlich** (Stand 31.10.). Deshalb kommen keine Inhalte der Konkurrenz, keine Gesprächsverläufe und keine Geheimnisse hinein.
-- **Gedächtnis bei `/compact`** (Entscheidung 31.10.):
-  - Vor jedem Komprimieren sichert der PreCompact-Hook (`.claude/settings.json`, Skript `tools/sitzung_sichern.py`) alle Nachrichten des Inhabers und alle Antworten von Claude nach `.sitzung/`. Der Ordner steht in `.gitignore` und bleibt nur im Container.
-  - Nach dem Komprimieren erinnert ein SessionStart-Hook daran, `STATUS.md`, `ENTSCHEIDUNGEN.md`, `docs/15-massstab.md` und `.sitzung/letzte_nachrichten.md` zu lesen.
-  - Zusätzlich hält Claude `STATUS.md` während der Arbeit aktuell und nicht erst am Ende.
-- **Cockpit** (https://claude.ai/artifact/FxZc6Cpodsg12hapn6Bpxz, Inhaber 02.11.: „sobald ich dort etwas freigebe oder ablehne, reagierst du“):
-  - Freigeben, Ablehnen und Kommentar senden einen Kommentar „an Claude“; er weckt jede Sitzung, die das Cockpit beobachtet.
-  - Claude reagiert sofort: Freigabe → Status `angepasst` bzw. in Produktion nehmen; Ablehnung → Ersatz aus der Reserve vorschlagen und eintragen; Kommentar → umsetzen. Danach im Dokument `claude: {gelesen, antwort, zeit}` setzen und im Kommentar-Thread kurz antworten.
-  - **Zu Beginn jeder Sitzung** offene Entscheidungen abarbeiten: Dokumente in `videos`, bei denen `inhaber.zeit` neuer ist als `claude.gelesen` (falls keine Sitzung verbunden war).
-- **Trend-Radar:**
-  - Läuft täglich automatisch (geplante Aufgabe „Trend-Radar Simulierbar“, 05:35 Uhr Berlin, feste Sitzung „Trend-Radar täglich (TikTok Automation)“).
-  - Ablauf und Bewertungsraster: `docs/07-trend-monitoring.md`.
-  - Dem Inhaber nur Trends mit Score ≥ 70 vorschlagen (`docs/trends/vorschlaege.md`). Das Ergebnis geht zusätzlich per Telegram an den Inhaber (`tools/telegram_senden.py`, `docs/13-telegram-radar.md`).
-- **Produktionsrhythmus (Inhaber 02.11., verbindlich):** Pro Tag entstehen **genau 4 Videos, 2 je Account**, und zwar **für den nächsten Tag**. Nach der Abnahme plant Claude sie in Buffer ein (12:30 und 19:30 bzw. am Wochenende 09:30 und 19:30). **Nie mehr als diese 4 Videos gleichzeitig in Arbeit** (am 01.11. liefen 8 bis 10 parallel und rissen das 5-Stunden-Limit). Agenten gestaffelt starten, höchstens 2 Produktions-Agenten gleichzeitig.
-- **Reihenfolge:** Simulierbar nach `data/plan/30-tage.csv` (`docs/12`), Account 2 nach `data/plan/account2-30-tage.csv`. Startsignal des Inhabers wie bisher.
-- **Keine Kopien:**
-  - Fremde Videos nie nachbauen.
-  - Themen, die ein Konkurrent schon viral gemacht hat, sind gesperrt (Liste in `docs/15`, Abschnitt 9) bzw. nur mit klar eigenem Ansatz erlaubt.
-  - Konkurrenz-Check vor jedem Produktionsstart.
-- **Keine Geheimnisse ins Repo.** API-Keys (z. B. ElevenLabs) nur über Umgebungsvariablen bzw. `.env`, das in `.gitignore` steht.
+## 5. Maßstab (verbindlich, darf nie untergehen)
+- **Grundlage:** 4 virale Konkurrenzvideos (je > 1 Mio. Aufrufe: Regen rennen/gehen, Pausen gegen Tempo, Tsunami-Warnzeichen, Duschen/Baden), am 31.10. komplett ausgewertet (jede Sekunde, Transkript mit Wortzeiten, Ton). Inhaber: „das ist dein Maßstab, an dem wir uns richten müssen“. Bild, Stimme, Text, Hook, Ton, Captions und Themen richten sich danach. **Jedes Simulierbar-Video muss die Prüfliste (20 Punkte) komplett erfüllen, bevor es in Buffer geht;** das Messbare prüft `pipeline/qc/massstab.py`. Auswertung, Messwerte, Zeitachsen, Bausteine, Prüfliste: **Skill `simulierbar-video/massstab.md`**.
+- **12 Gesetze:** Volltext in `massstab.md`, Kernpunkte in §6. Dazu: Dynamik entsteht nicht durch Pixelbewegung, sondern durch **neue Information im Sekundentakt**; Klangteppich 8–13 dB unter der Stimme, Effekt je Ereignis, Akzent auf der Pointe.
+- **Bewusst anders als die Vorbilder:** Folgen-Aufruf bei ca. 20 s, eigener Schlusssatz, Untertitel Wort für Wort, kein „Los geht's“, keine Sticker, hochwertige 3D-Welt statt 2D-Flat.
+- **Neue Vorbild-Videos** des Inhabers werden genauso ausgewertet und in `massstab.md` ergänzt; Originale, Transkripte, Standbilder nie ins Repo.
 
-## Plattformregeln (verbindlich)
-- **Posten nur über offizielle Wege, vollautomatisch über Buffer** (Inhaber 01.11.: „ich will nicht freigeben müssen“).
-  - Erlaubt: Planung in TikTok Studio (Web, bis 30 Tage im Voraus) und YouTube Studio, dazu **Buffer** als offizielles Partner-Tool (Entscheidung 31.10.).
-  - **Claude prüft jedes Video selbst** (Prüfliste `docs/15` §11, Text-Überlappung, Kontaktbogen, Lautheit, Abgleich Sprechtext gegen Spracherkennung) und **plant es danach selbst in Buffer ein**, ohne Freigabe: `pipeline/post_buffer.py` (Upload nach Supabase, Post mit Caption zur festen Posting-Zeit). Der Inhaber kann geplante Posts in Buffer bis zum Zeitpunkt löschen, muss aber nichts tun.
-  - **Posting-Zeiten** (Europe/Berlin, Startwerte, Datei `data/plan/posting_zeiten.json`): **beide Accounts gleich, je 2 Videos pro Tag**: Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30 (Inhaber 01.11.). Buffer Essentials (2 Kanäle, ca. 12 $/Monat): kein Limit für geplante Posts, nur 25 Posts je 24 h und Kanal. Nach 14 Tagen mit eigenen Zahlen aus TikTok Studio (Follower-Aktivität, Aufrufe nach 2 h und 24 h) nachjustieren. Grundlage `docs/11` §3C.
-  - **Nach dem Posten prüft Claude** (`post_buffer.py --nachpruefen`): Video öffentlich, Länge stimmt, danach Datei in Supabase löschen.
-  - Kein eigenes Bot-Posting, keine inoffiziellen Tools. Die TikTok Content Posting API postet ohne Audit nur privat. Die Community Guidelines verbieten „automation tools, scripts … designed to bypass our systems“.
-- **Kein Umgehen von Bot-Schutz.** Für Recherche nur öffentliche Seiten abrufen, keine internen TikTok-APIs.
-- **Videos:**
-  - mindestens 61 s, 1080×1920, eigene Rechnung bzw. Simulation
-    - Quellen recherchiert Claude und dokumentiert sie nur intern in `skript.json` (nicht im Video, nicht in der Caption).
-  - Aufbau und Dynamik wie oben, Prüfliste `docs/15` §11
-  - **Erstellt ausschließlich mit Three.js und/oder Blender** (Entscheidung 31.10.)
-    - auch kombiniert, z. B. Modelle, Materialien und Licht in Blender bauen bzw. backen, als glTF exportieren und in Three.js animieren
-    - Keine anderen Video-, Vorlagen- oder KI-Video-Generatoren.
-    - HUD, Untertitel und Karten als HTML/CSS-Ebene in derselben Three.js-Seite gehören dazu. Die alten Stile 4, 5 und 6 (SVG/HTML-Muster) werden beim ersten Einsatz in Three.js nachgebaut.
-    - Echte Blender-Renders (Cycles) nur für Standbilder, Logo und kurze Szenen. Für ganze Videos in Blender-Optik gilt der Weg „Blender backen → glTF → Three.js“ (Stil 15, ca. 0,9 s/Bild).
-  - **Kein Kanalname, kein Logo, keine Rubrik im Video**, nie (Entscheidung 31.10.). Das Logo ist Konzept A „S-Kurve“ (`marke/logo/a-s-kurve/`, Entscheidung 01.11.), als statisches Profilbild ohne Animation.
-  - **Designstil je Video:**
-    - genau einer aus dem Stil-Katalog in `docs/10-designstile.md` (Abschnitt 0), passend zum Thema; **für Simulierbar seit 02.11. nur die Stile 17–21** (Nachtstadt-Miniatur, Dunkles Studio, Architekturmodell, Glas & Licht, Nachtkarte; Details im Skill `simulierbar-video`, `stile.md`)
-    - **kein fester Look als Markenzeichen, unser Markenzeichen ist die Qualität** (Entscheidung 01.11.)
-    - Stilwahl mit Konkurrenz-Recherche: erfolgreiche Videos zum Thema ansehen, welcher Look trägt es am besten (`docs/10`, Abschnitt 0)
-    - nie zweimal derselbe Stil hintereinander
-    - neue gute Stile sofort in den Katalog aufnehmen
-  - **Untertitel Wort für Wort** (Entscheidung des Inhabers 01.11., weicht bewusst vom Maßstab ab):
-    - Stil „kontur“: `M.untertitel({ stil: "kontur" })` in `pipeline/engine/massstab.js` bzw. `Karaoke` in `hud.js`
-    - jedes gesprochene Wort erscheint einzeln, max. 2 Zeilen, mittig, aktuelles Wort gelb
-    - weiße fette Schrift mit schwarzer Kontur, **kein Kasten**
-    - Der Phrasen-Stil der Vorbilder (`M.untertitel()` ohne `stil`) wird nicht verwendet.
-  - **Teamfarben:** zwei feste Farben je Video, überall gleich (Figuren, Anzeigetafel, Chips, Untertitel). **Kein Gelb** als Teamfarbe (Gelb = aktuelles Untertitel-Wort).
-  - **Ton:** Klangteppich passend zum Thema 8–13 dB unter der Stimme, Effekt bei jedem Bild-Ereignis, Akzent auf der Pointe. Nur selbst erzeugte Klänge.
-  - keine künstlichen Cliffhanger-Teile (TikTok: Clickbait ist ein CRP-Ausschlussgrund)
-- **Kein Kaufaufruf im Video.** TikTok drosselt in TikTok-Shop-Märkten Inhalte, die zum Kauf außerhalb von TikTok führen.
-- **Profil:** keine E-Mail und keine Telefonnummer in der Bio (CRP-Kriterium „Advertising“). Das Impressum nur als Link.
-- **Caption (TikTok und YouTube gleich), genau dieses Format, eine Zeile** (Entscheidung 31.10.; jeder Buffer-Post enthält sie, Inhaber 01.11.):
-  - `Hook-Frage mit Suchbegriff? Emoji Ich hab's simuliert. (bzw. durchgerechnet.) Kommentarfrage? 👇 #thema1 #thema2 #thema3 #wissen #simulation`
-  - Beispiel: „Früh einordnen oder bis zum Ende fahren? 🚗 Ich hab's simuliert. Team früh oder Team Reißverschluss? 👇 #reißverschlussverfahren #stau #autofahren #wissen #simulation“
-  - höchstens ca. 150 Zeichen plus 5 Hashtags; kein #fyp/#viral
-  - keine Quellen, keine Annahmen, keine Hinweise wie „Stimme: KI“ oder „keine Anlageberatung“ (nicht verpflichtend, kostet nur Arbeit)
-- **Kennzeichnung:**
-  - **Kein KI-Label** (Inhaber 01.11.). TikTok verlangt es nur für realistische KI-Inhalte; ausdrücklich nicht nötig bei künstlerischen Stilen und generischer TTS-Stimme (`docs/16` §2). Unsere Bilder sind in Three.js/Blender gebaut, nicht KI-generiert. **Ausnahme:** Zeigt ein Video realistisch wirkende KI-Inhalte (z. B. Stimme einer echten Person, fotorealistische KI-Bilder), Label AN (`post_buffer.py --ki-label`). YouTube (später): Angabe „Veränderte oder synthetische Inhalte“ dann neu prüfen.
-  - Finanzthemen nur als Modellrechnung, nie konkrete Produkt- oder Anlageempfehlungen.
-- **Keine neuen TikTok-Shop-Videos** auf dem Hauptaccount (Werbevideos sind nicht CRP-fähig).
+## 6. Videoaufbau und Dynamik Simulierbar
+Feste Reihenfolge (Zeitplan, Satzmuster, Beispiel: Skill `ablauf.md`): 1. **Scroll-Stopper-Hook** (0–5 s: Duell-Frage oder Du-Szenario, Stimme < 0,2 s, ganze Szene ab Bild 1) · 2. **Regeln** als Mini-Fakten mit Chips · 3. **Denkfalle** „Klar, …. Oder?“, ruhig (bis 16 s), **kein „Los geht's“** · 4. **Rennen** mit laufender Uhr/Zählern, ruhiger Erzähler (kein Sportreporter) · 5. **Folgen-Aufruf bei ca. 20 s**, max. 2 s: „Folg mir, damit du nichts verpasst.“ · 6. **Erste Wendung** bei 18–25 s, danach alle 8–10 s Wendung/Führungswechsel · 7. **Ergebnis** mit exakter Euro-Zahl, dann **„Warum?“** (max. 2 Faktoren) · 8. **Zweite Überraschung** · 9. **Merksatz** · 10. **Schluss genau:** „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ · 11. letztes Bild = erstes (**Schleife**).
+- Länge 65–80 s (mind. 61 s). Ben im Original: ca. 2,0 Wörter/s → 130–170 Wörter, Tempo nie künstlich erhöhen. Sätze meist 2–8 Wörter, Du-Ansprache, Zahlen im Sprechtext rund (im Bild exakt), keine Füllsätze; verboten: künstliche Cliffhanger, Kaufaufrufe.
+- **Dynamik:** alle 1–2 s etwas Neues (Welt, Kamerafahrt, Zähler, Chip, Szenenwechsel), nie mehr als 2 s Stillstand (31.10.: „Die Aufmerksamkeitsspanne ist gering, wir müssen deutlich mehr liefern“). **Keine großen Sticker/Stempel** (02.11., Prüfpunkt 5d = 0); Zahlen, Zähler, Timer, Chips bleiben. **Die Kunst ist die animierte Welt** (02.11.): Umgebung, Detail, Licht, reagierende Figuren/Objekte, Kamera, die dem Geschehen folgt.
+- **Skript und Bild passen exakt** (02.11.): Jedes gesprochene Detail ist im selben Moment so zu sehen; Abnahme Segment für Segment am Kontaktbogen (`bild_text_abgleich`). **Themen-Logik:** Ein Duell vergleicht nur echte Alternativen derselben Entscheidung (Prüfung vor Produktionsstart).
+- **Layout:** Mittelachse x = 540, Schutzzone 150 px links/rechts/oben, nichts Wichtiges unter y ≈ 1500, 1080×1920 für TikTok und Shorts. **Untertitel Wort für Wort** (01.11.; `M.untertitel({ stil: "kontur" })`): jedes Wort einzeln, max. 2 Zeilen, mittig, aktuelles Wort gelb, weiß fett mit schwarzer Kontur, **kein Kasten**. **Teamfarben:** zwei feste Farben je Video, überall gleich, **nie Gelb**. **Kein Kanalname, Logo oder Rubrik im Video, nie;** keine Spielszenen, echten Personen, Marken.
+- **Ton:** Klangteppich zum Thema 8–13 dB unter der Stimme, Effekt je Bild-Ereignis, Akzent auf der Pointe, −14 LUFS, nur selbst erzeugte Klänge (`pipeline/klang.py`).
 
-## Stimme und Regie-Text
-- **ElevenLabs, Stimme „Ben“ `aTTiK3YzK3dXETpuDE2h`, im Original** (Entscheidung 31.10.).
-  - Sie soll genau so klingen wie beim Anhören auf ElevenLabs. `pipeline/tts.py` schickt deshalb **keine** `voice_settings`, und ElevenLabs nutzt die gespeicherten Einstellungen der Stimme (laut API-Doku: „Voice settings overriding stored settings for the given voice“).
-  - Keine künstliche Beschleunigung.
-- **Tonfall (Inhaber 02.11.):** ruhig, sachlich, freundlich, saubere Aussprache, wie die Vorbilder (`docs/15`). Kein Geschrei, keine aufgeregten Audio-Tags wie [excited], [shouting] oder [energetic] (Prüfpunkt 16a), höchstens 3 Ausrufezeichen im Sprechtext (16b). Gilt für Ben und Otto.
-- **Modell: `eleven_v4` für alle Videos** (Entscheidung des Inhabers 01.11. per Hörprobe; Standard in `pipeline/tts.py`). Regie per Audio-Tags, Satzzeichen und Großschreibung; **keine** `<break>`-Tags (v4 unterstützt sie nicht).
-- **Regie-Text:**
-  - Der `sprechtext` jedes Segments ist ein Regiebuch für den Sprecher: eine Zeile pro Satz, Satzzeichen, Auslassungspunkte, Großschreibung für Betonung, bei v4 Audio-Tags. Regeln in `docs/08`, Abschnitt 3.
-  - Der Untertitel zeigt `text`. Zahlen sind im Sprechtext ausgeschrieben, englische Wörter in Lautschrift.
-- **Key:**
-  - als Netzwerk-Secret (Header `xi-api-key` für `api.elevenlabs.io`), nie in der Sitzung sichtbar
-  - mit Leserecht für Stimmen (`voices_read`, seit 01.11.): Stimmen-Bibliothek per `GET /v1/shared-voices` durchsuchbar; Bibliotheksstimmen lassen sich direkt per Voice-ID vertonen
-  - Speech-to-Text (für Maßstab-Analysen) funktioniert mit dem Key.
-- **Plan:** Reichen die Credits nicht, auf den nächstgrößeren Plan wechseln.
+## 7. Plattformregeln und Posten
+- **Nur offizielle Wege, vollautomatisch über Buffer** (01.11.: „ich will nicht freigeben müssen“). F: TikTok erlaubt Direct Post über auditierte Partner-Tools, unauditierte Clients posten nur privat, die Community Guidelines verbieten „automation tools, scripts … designed to bypass our systems“. **Verboten:** Skripte/Browser-Bots in TikTok Studio, Cookie-Uploader, eigene unauditierte API-App. Erlaubt: Buffer Essentials (2 Kanäle, ca. 12 $/Monat, 25 Posts je 24 h und Kanal); manueller Rückfall TikTok Studio Web (Markeninhalt AUS, kein KI-Label).
+- **Ablauf:** Claude prüft jedes Video selbst (Skill `pruefung.md`) und plant es ohne Freigabe: `python3 pipeline/post_buffer.py --video … --kanal simulierbar|stelldirvor.pov --zeit auto:JJJJ-MM-TT:mittag|abend --text "<Caption>" [--trocken]` (Erwartung: Status `scheduled`, sonst Exit 2). Der Inhaber kann Posts in Buffer bis zum Zeitpunkt löschen.
+- **Posting-Zeiten** (Europe/Berlin, Startwerte, `data/plan/posting_zeiten.json`): **beide Accounts gleich, je 2 Videos/Tag:** Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30. Nach 14 Tagen mit Zahlen aus TikTok Studio nachjustieren (F: Zeit wirkt schwächer als Inhalt und Regelmäßigkeit).
+- **Nach dem Posten:** `python3 pipeline/post_buffer.py --nachpruefen`: öffentlich (`privateItem=false`), Länge, KI-Label wie gesetzt; **erst danach** wird die Supabase-Datei gelöscht (Buffer holt sie zur Posting-Zeit). Log `pipeline/out/buffer_log.jsonl` nur im Container.
+- **Technik:** Per API nicht setzbar: Markeninhalt, Sichtbarkeit, Kommentare, Duett/Stitch (daher `--nachpruefen`). Supabase: privater Bucket `buffer-uploads` (Frankfurt, Gratis-Plan, ≤ 50 MB je Datei, ab 48 MB automatische Upload-Kopie). Zugänge setzt in der Cloud der Proxy; Adresse nur als **`SUPABASE_URL`** (Umgebungsvariable der Cloud-Umgebung, vom Inhaber zu setzen). Details `pipeline/README.md`.
+- **Caption (TikTok und YouTube gleich), genau dieses Format, eine Zeile** (31.10.; jeder Buffer-Post enthält sie): `Hook-Frage mit Suchbegriff? Emoji Ich hab's simuliert. (bzw. durchgerechnet.) Kommentarfrage? 👇 #thema1 #thema2 #thema3 #wissen #simulation`. Beispiel: „Früh einordnen oder bis zum Ende fahren? 🚗 Ich hab's simuliert. Team früh oder Team Reißverschluss? 👇 #reißverschlussverfahren #stau #autofahren #wissen #simulation“. Ca. 150 Zeichen + 5 Hashtags, kein #fyp/#viral/#foryou, keine Quellen, Annahmen, Hinweise („Stimme: KI“, „keine Anlageberatung“). Account 2: „… Ich hab's durchgespielt. … #wissen #waswaerewenn“.
+- **Kennzeichnung:** **Kein KI-Label** (01.11.; TikTok verlangt es nur bei realistischen KI-Inhalten, nicht bei künstlerischen Stilen und generischer TTS, F; unsere Bilder sind Three.js/Blender). **Ausnahme:** realistisch wirkende KI-Inhalte (Stimme einer echten Person, fotorealistische KI-Bilder) → Label AN (`--ki-label`). Finanzthemen nur als Modellrechnung.
+- **Kein Kaufaufruf im Video** (TikTok drosselt in Shop-Märkten), kein „schnell reich“, keine Produkte, Banken, Versicherer, Broker, Coins. Ausschlussthemen: Glücksspiel, Tabak/Vape, Gesundheitsversprechen, Tragödien, Krypto, Einzelaktien, Anbieter-Empfehlungen, Parteipolitik, NS-Kennzeichen, riskantes Nachahmen. Mind. 61 s, 1080×1920, eigene Rechnung; Quellen nur intern in `skript.json`.
 
-## Technik
-- **Pipeline:**
-  1. Thema aus dem Plan und Konkurrenz-Check
-  2. Rechnung bzw. Simulation als Code mit Tests
-  3. Skript plus Regie-Text
-  4. Stimme (ElevenLabs)
-  5. Szene in Three.js (Assets optional aus Blender)
-  6. Rendern in Headless-Chrome bzw. Blender
-  7. Ton und Mix mit ffmpeg
-  8. Prüfliste Maßstab (`pipeline/qc/massstab.py`), Text-Überlappung je Einzelbild (`pipeline/qc/text_ueberlappung.mjs`) plus eigene Sichtprüfung (Kontaktbogen)
-  9. Übergabe an den Inhaber
-- **Bausteine nach Maßstab:**
-  - Anzeigetafel, Live-Zähler, Uhr, Chips, Sticker, Vergleichs- und Bilanzkarten, Kamera-Regie, Schleife, Folgen-Element
-  - Klangteppich und Effekte
-  - Nutzung: `pipeline/README.md`
-- **Blender:** `bpy` 5.2.3 läuft in der Cloud (`/home/user/.venv-blender`, nach Neustart des Containers neu installieren: `python3 -m venv ~/.venv-blender && ~/.venv-blender/bin/pip install bpy==5.2.3`). Cycles läuft auf der CPU (langsam). Ganze Videos in Blender nur auf dem Windows-PC mit GPU.
-- **Referenz:** https://github.com/stochosfrance/lowpoly-reel (MIT).
-- **Render-Rechner (Inhaber 02.11.):** Die ganze Arbeit bleibt in der Cloud-Sitzung, **nur das Rendern läuft auf dem Windows-PC des Inhabers (GPU)** über den Render-Dienst ohne KI (`pipeline/render_dienst/`, Anleitung `docs/18-render-pc.md`): `auftrag.py senden <projekt> --konto …`, dann `auftrag.py warten` im Hintergrund (kein Modell-Aufwand). Exit 3 = PC offline bzw. keine GPU → Rückfall Cloud-Render (ca. 2 Std. je 80-s-Video). Cloud braucht `SUPABASE_URL` als Umgebungsvariable.
-- **Modellwahl:**
-  - Opus 5.5 für Architektur und neue Szenentypen
-  - Sonnet 5.5 für die tägliche Produktion: Produktions-Agenten **ausdrücklich mit `model: sonnet` starten**, sonst erben sie Opus (bis 01.11. versehentlich so)
-  - Haiku 5.5 für Titel, Beschreibungen und Hashtags
-  - Verbrauch über `/usage` beobachten
-- **Netzwerk der Cloud-Umgebung:**
-  - `tiktok.com`-Domains sind freigegeben (öffentliche Profil- und Videoseiten).
-  - Automatische Untertitel einzelner Videos (`tiktokcdn-us.com`) waren am 31.10. abrufbar.
-  - Video- und Tondateien der Konkurrenz lädt Claude nicht herunter (als Umgehung von Bot-Schutz verweigert). Für eine Bild- und Tonanalyse lädt der Inhaber die Datei selbst hoch.
-  - `elevenlabs.io` (Doku-Seiten) ist gesperrt, `api.elevenlabs.io` erreichbar.
+## 8. Stimme und Ton
+- **Ben** (ElevenLabs `aTTiK3YzK3dXETpuDE2h`) **im Original:** `pipeline/tts.py` schickt **keine** `voice_settings` (gespeicherte Einstellungen), keine Beschleunigung. **Modell `eleven_v4` für alle Videos** (Hörprobe 01.11.). Alternativen: Marc, Alexander, Otto (Otto nur das Testvideo Account 2 am 01.11.).
+- **Tonfall (02.11.):** ruhig, sachlich, freundlich, saubere Aussprache, wie die Vorbilder. Kein Geschrei, keine aufgeregten Audio-Tags (`[excited]`, `[shouting]`, `[energetic]`; Prüfpunkt 16a), höchstens 3 Ausrufezeichen im Sprechtext (16b).
+- **Regie-Text:** `sprechtext` = Regiebuch: eine Zeile pro Satz, Satzzeichen, Auslassungspunkte, GROSSSCHREIBUNG auf dem Betonungswort, ruhige v4-Audio-Tags (`[curious]`, `[thoughtful]`), **keine `<break>`-Tags** (v4 unterstützt sie nicht). Untertitel zeigt `text`; Zahlen im Sprechtext ausgeschrieben, englische Wörter in Lautschrift (Skill `ton.md`).
+- **Key** nur als Netzwerk-Secret (`xi-api-key` für `api.elevenlabs.io`), nie in der Sitzung sichtbar; `voices_read`: Bibliothek per `GET /v1/shared-voices`; Speech-to-Text für Analysen und den Abgleich Sprechtext gegen Spracherkennung. Reichen die Credits nicht: nächstgrößerer Plan (Free hat keine kommerzielle Lizenz).
+- **Account 2: keine Stimme,** nur selbst erzeugte Atmo (`pipeline/atmo.py`), −14 LUFS (Skill `ton.md`). Musik nur lizenzfrei/selbst erzeugt, Schriften nur mit freier Lizenz.
+
+## 9. Pläne
+- **Simulierbar:** `data/plan/30-tage.csv` (81 Zeilen: 6 vom 31.10.–02.11., 60 neue 03.11.–02.12., 15 Reserve; Stil, Teamfarben, Hook/Denkfalle/Wendungen, `konkurrenz_check`), `data/plan/simulierbar-plan.json` (Captions), PDF `docs/plan/30-tage-plan.pdf` (`node tools/plan_pdf.mjs`). Ø Score 82,3 (S), Termin-Videos Priorität A. Auswahlregeln, Sperrliste, Finanzregeln, Zahlen 2026: Skill `simulierbar-video/themen.md`.
+- **Account 2:** `data/plan/account2-30-tage.csv` (60 + 15 Reserve), `account2-plan.json`, PDF `docs/plan/account2-30-tage-plan.pdf` (`node tools/plan_pdf.mjs --plan account2`), Übersicht `tools/account2_uebersicht.py`. Grundwelten, Abstandsregeln, **Ausfall-Regel**, Sperrliste: Skill `stelldirvor-video/themen-und-plan.md`.
+- **Konkurrenz-Check** vor jeder Produktion (5 Min.); der Radar prüft am Vortag erneut; Treffer sperrt das Thema, dann Reserve. Monitor: `tools/monitor_kanaele.py`.
+
+## 10. Cockpit, Trend-Radar, Technik
+**Cockpit** (https://claude.ai/artifact/FxZc6Cpodsg12hapn6Bpxz, Quelle `docs/cockpit/cockpit.html`; 02.11.: „sobald ich dort etwas freigebe oder ablehne, reagierst du“): Sammlung `videos` (ein Dokument je Video, 120 Themen; `status`, `score`, `inhaber{entscheidung,kommentar,zeit}`, `claude{gelesen,antwort,zeit}`) und `stand/aktuell`. Freigeben/Ablehnen/Kommentar senden einen Kommentar „an Claude“ und wecken jede Sitzung, die das Cockpit beobachtet. **Claude reagiert sofort:** Freigabe → Status `angepasst` bzw. in Produktion; Ablehnung → Ersatz aus der Reserve vorschlagen und eintragen; Kommentar → umsetzen; dann `claude` setzen und im Thread kurz antworten. **Zu Beginn jeder Sitzung** offene Entscheidungen abarbeiten (`inhaber.zeit` neuer als `claude.gelesen`). Status per `ArtifactData` täglich pflegen.
+
+**Trend-Radar – Arbeitsanweisung des täglichen Laufs** (geplante Aufgabe „Trend-Radar Simulierbar“, 05:35 Berlin, feste Sitzung „Trend-Radar täglich (TikTok Automation)“, Sonnet 5.5, max. ca. 20 Min., höchstens ca. 12 Websuchen); ihr Prompt zeigt noch auf `docs/07-trend-monitoring.md`, das nur noch hierher verweist. Der Prompt lässt sich nur in der Radar-Sitzung selbst ändern). Ziel: Trends vor dem Höhepunkt erkennen, Konkurrenz und Regeländerungen im Blick, den Inhaber nur mit geprüften Vorschlägen behelligen.
+1. `git pull --rebase origin main`. 2. **Monitor:** `python3 tools/monitor_kanaele.py`; auffällige Kanäle (≥ +20 % oder ≥ +1.000 Follower) = Signal `konkurrenz`: Profil bzw. stärkstes neues Video ansehen, welches Thema/Format zieht.
+3. **Signale sammeln** (Reihenfolge): Konkurrenz-Signale · Trend-Kalender `data/trends/kalender.csv` (Termine der nächsten 7–45 Tage prüfen, fehlende der nächsten 90 Tage ergänzen: Gesetze/Preise, EZB, Feiertage, Ferien, Zeitumstellung, Sport, Shopping-Tage, Steuerfristen, Wetter) · Nachrichten mit Alltags-/Geldbezug (48 h) · internationale Vorläufer (Benchmark-Kanäle EN in `data/monitor/kanaele.csv`; Format, das auf Deutsch fehlt) · große Ereignisse aus Popkultur/Gaming/Sport/TV/Shopping, 2–4 Wochen vorher („Was passiert mit der echten Wirtschaft bzw. dem Alltag, wenn alle …?“, Vorlage GTA 6) · neue Kanäle (1–2 Suchen, Treffer in `kanaele.csv`).
+4. **Jedes Signal bewerten** (Raster unten); Bewertungen von Themen-Signalen als Zeile in `data/trends/trend-log.csv`, auch verworfene; Monitor-Läufe ohne auffällige Kanäle nicht loggen; Signale aus dem Log nicht doppelt bewerten (nur bei wesentlicher Änderung).
+5. **Vorschlagen nur bei Score ≥ 70 und ohne K.-o.:** oben in `docs/trends/vorschlaege.md`: Titel als Frage, Rubrik, Score mit Kurzbegründung, Quelle, **spätestes Posting-Datum**, Umsetzung (eigenständig, keine Kopie, im Simulierbar-Format: eine klare Modellrechnung mit konkreten Fällen statt Massen-Simulation, Ergebnis in Euro, Hook-Frage, Denkfalle, Rennen mit Zählern, zwei Wendungen; Sperrlisten beachten (`.claude/skills/simulierbar-video/themen.md`, nur lesen); Rubrik nur intern; **kein „1.000 Lebensläufe“-/„1.000 simulierte …“-Merkmal**). Bei passenden Themen zusätzlich als Idee in `data/ideen/geld-duell.csv` bzw. `testlauf.csv` mit `typ` = `news` bzw. `saisonal`.
+6. **Regel-Check jeden Montag:** „Released/Effective“-Datum der Community Guidelines (https://www.tiktok.com/community-guidelines/en; Stand 02.11.: Released 25.08. / Effective 24.09.2026), CRP-Bedingungen EWR, Startseite der Creator Academy; Änderung → Vorschlag Typ `regel` (immer, ohne Score).
+7. §11 nur bei neuen Vorschlägen oder Regeländerungen ergänzen (eine Zeile). 8. Committen „Trend-Radar JJJJ-MM-TT“, auf `main` pushen. 9. **Letzte Antwort:** bei Vorschlägen kurze Liste (Titel, Score, warum jetzt, Umsetzung in einem Satz, spätestes Posting-Datum), sonst genau: „Trend-Radar JJJJ-MM-TT: keine neuen Trends mit Potenzial.“ **Dieselbe Antwort täglich per Telegram:** `python3 tools/telegram_senden.py "<Text>"` (meldet nur, wenn Telegram fehlt); bei Vorschlägen oder Regeländerung zusätzlich Push an den Inhaber (PushNotification, per ToolSearch laden, falls verfügbar).
+- **K.-o. (sofort verwerfen):** nicht als eigene Rechnung/Simulation mit Euro-Ergebnis umsetzbar (Schwerpunkt GELD) · Ausschlussthema (§7) · nur durch Nachbau eines fremden Videos umsetzbar · Höhepunkt in weniger als 2 Tagen und nicht vorbereitbar.
+- **Raster (Punkte 1–5, 5 = bestes):** Nachfrage-Signal 30 % (5 = belegte Reichweite, 1 = Bauchgefühl) · Timing 20 % (5 = steigt noch/planbar mit ≥ 7 Tagen Vorlauf) · Wettbewerb DE 15 % (5 = niemand setzt es um) · Passung 15 % (5 = Simulation mit echtem Aha) · Aufwand 10 % (5 = Vorlage reicht) · Risiko 10 % (5 = kein Plattform-/Rechtsrisiko). **Score = Σ(Gewicht × Punkte)/5 (20–100), immer mit `python3 tools/trend_score.py N T W P A R` berechnen.** ≥ 70 vorschlagen · 50–69 `beobachten` (nach 7 Tagen erneut) · < 50 `verworfen`. Optional wöchentlich vom Inhaber: Screenshot der App-„Inspiration“, bewertet nach demselben Raster.
+
+**Telegram (31.10., noch nicht eingerichtet):** Inhaber ca. 10 Min.: `@BotFather` → `/newbot` („Simulierbar Radar“), Bot starten; Cloud-Umgebung: Domain `api.telegram.org` freigeben, Variablen `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` (Token nie in Chat/Repo; Chat-ID notfalls `telegram_senden.py --chat-id-finden`), Testnachricht. A: Die Radar-Sitzung übernimmt neue Variablen beim nächsten Containerstart. WhatsApp verworfen, Anrufe nicht eingerichtet.
+
+**Technik und Umgebung**
+- **Blender:** `bpy` 5.2.3 in der Cloud (`/home/user/.venv-blender`; nach Container-Neustart neu: `python3 -m venv ~/.venv-blender && ~/.venv-blender/bin/pip install bpy==5.2.3`). Cycles nur CPU (130–300 s je Bild), Eevee unbrauchbar; ganze Videos in Blender-Optik nur über Bake → glTF → Three.js oder auf dem PC mit GPU.
+- **Netzwerk:** `tiktok.com`-Domains frei (öffentliche Profil-/Videoseiten; automatische Untertitel einzelner Videos waren am 31.10. abrufbar); `elevenlabs.io` (Doku) gesperrt, `api.elevenlabs.io` erreichbar; TikTok Creative Center und mehrere Drittquellen gesperrt; `api.buffer.com`, Supabase, `api.telegram.org` über die Umgebungs-Einstellungen. Firecrawl-Credits fast leer (Recherche über die Websuche).
+- **Render-PC:** Windows mit GPU (Node.js, Chrome/Chromium, ffmpeg, Python, Blender); die Pipeline muss unter Windows laufen. Kosten (S): ElevenLabs ca. 5–25 $/Monat, Buffer ca. 12 $/Monat.
+
+## 11. Aktueller Stand, nächste Schritte, offene Punkte
+**Stand 02.11.2026 abends.**
+- **Simulierbar:** gepostet GTA 6 und Spurwechsel (31.10., alte Version), „Treppe oder Aufzug“ und „200 € oder 100 € steuerfrei“ (01.11.); „Fußgängerampel“ und „Steuererklärung oder Überstunden“ für 02.11. 12:30/19:30 eingeplant (Posts `6ae7a3541120555c2a3641b0`, `6ae7a35f1120555c2a364536`, alter Stil, ohne KI-Label). Reißverschluss nicht gepostet (Konkurrenz).
+- **Account 2:** Testvideo „Schall in Schritttempo“ (02.11., Automatik-Kette bestanden). „Eiszeit Toronto“ (Referenzformat, 80 s, 22/22 Pflichtpunkte, −14,5 LUFS) für 02.11. 19:30 eingeplant (Post `6ae8af082810e4a79d35d1a9`, Nachprüfung 18:50 UTC); Schwächen der Welt `engine/welt_grossstadt_dach.js`: Gebäude gleichförmig, Winterphase milchig, Eiswand glasig, Weißblende zu früh. „Schokolade“ abgelehnt (verdeckter Titel, überlappende Zahlen), „Stickstoff“ gesperrt (5-Sekunden-Rahmen). Gestoppt, nur auf Auftrag neu: Schere-Stein-Papier, Boden durchsichtig, Leichtes Auto; Mittagessen (halb gebaut) wird in Stil 19 neu gebaut.
+- **Skills:** beide fertig. `simulierbar-video`: Stile 17–21 (Renderzeit Cloud 1,7–4,0 s/Bild), für 03.11. fehlen themenspezifische Objekte (Taxi-Schild, Küche/Büro, je 1–3 Std.). `stelldirvor-video` (22 Pflichtpunkte in `qc/referenz_pov.py`): **Qualitätslücke** – Schrift, Layout, Abspann, Ton treffen die Referenzen, die 3D-Welt nicht (Detaildichte, Wolken/Rauch, leere Höhepunkt-Bilder); jede Grundwelt beim Erstbau auf Referenzniveau bringen.
+- **Infrastruktur:** Render-Dienst in der Cloud getestet, PC noch einzurichten. Cockpit läuft (120 Themen als `idee`). Radar läuft täglich, Telegram fehlt. Offene Radar-Vorschläge (`docs/trends/vorschlaege.md`): Tankrabatt endet 31.12. (Score 80, posten 15.–23.12.), Weihnachtsbaum (70, 01.–08.12.), Heizung nachts (82, spätestens 20.12.; **laut Sperrliste gesperrt, nur mit eigenem Winkel**). Regel-Check 02.11.: Community Guidelines und CRP EWR unverändert.
+
+**Nächste Schritte**
+1. **Startsignal 03.11.** und Plan/Demo-Bilder/Regelwerk ansehen (Inhaber, 15 Min.). 2. Nach Startsignal 03.11. produzieren: Simulierbar #1 Taxi (Stil 17, 12:30) und #2 Mittagessen (Stil 19, 19:30); Account 2 „Seil um den Äquator“ (Reserve R11, 12:30) und „Sonne 1 m näher“ (19:30), beide Berg-/Seeblick (**bewusste Ausnahme** von „gleiche Grundwelt nie zweimal am Tag“, Claude 02.11.: keine Reserve erfüllte alle Abstandsregeln, so nur ein Erstbau; Orte verschieden: Anden/Quito und Atlantikküste); max. 2 Agenten (Sonnet), ca. 2 Std. Render je Video in der Cloud (Claude). 3. `post_buffer.py --nachpruefen` für die Posts vom 02.11. (Ampel, Steuer, Eiszeit) und Ergebnis hier vermerken; Erinnerungen für Ampel/Steuer sind deaktiviert (Claude, 5 Min.). 4. Windows-PC nach `docs/18-render-pc.md` einrichten, dann GPU-Testauftrag (Inhaber, ca. 1 Std.). 5. Repo auf privat stellen, ElevenLabs-Guthaben prüfen, `SUPABASE_URL` in der Cloud-Umgebung setzen (Inhaber, 5 Min.). 6. 16.11.: Posting-Zeiten und Reihenfolge Wochen 3–5 mit Zahlen nachjustieren (Claude, 30 Min.).
+
+**Offene Punkte**
+- [ ] Teppich-Pegel (−10 dB), Effekte und Position des Folgen-Elements auf echtem Gerät abnehmen (Inhaber). Engine-Standard „keine gelbe Teamfarbe“ (im Gehalt-Video ist Team „steuerfrei“ gelb, bleibt).
+- [ ] Werte mit „prüfen“ je Video klären (Spalte `quellen_pruefen` der Pläne, Liste in `themen.md`); Account 2: Eisdicke Toronto, Genf 1816, Leoniden-Maximum, COP31-Termin.
+- [ ] „Rente mit 63“ (04.11.) ist politiknah (nur Rechnung; Tausch mit Reserve R7 oder R14 möglich).
+- [ ] Lunar Animations kann nachlegen: ein neues Lunar-Thema, das ein Planthema trifft, sperrt es (dann Reserve). Embed-Listen zeigen nur die neuesten 5–13 Videos je Konto (A).
+- [ ] Text-Überlappungs-Prüfung (`qc/text_ueberlappung.mjs`, Account 2 `…_pov.mjs`) bei jedem Video; sie prüft HUD-Texte, keine Texturen in der 3D-Szene. Firecrawl-Credits fast leer. Ob ein Impressum-Link in der Bio das CRP stört, ist von TikTok nicht dokumentiert (Link statt Kontaktdaten).
+
+## 12. Entscheidungen des Inhabers (2026 · Entscheidung · Begründung)
+Nur Entscheidungen des Inhabers; Empfehlungen von Claude stehen als offene Punkte in §11. „→“ = ersetzt durch.
+**30.10.**
+- Repo „tiktok-automation“ ist Projekt-Zentrale, Recherche als Projektwissen · dauerhaft, jede Sitzung hat Kontext (02.11.: alles in dieser Datei).
+- Hauptaccount (ca. 3k) wird umgestellt, Shop-Provisionen egal · Konto privat, Account check sauber.
+- Keine 1:1-Kopien; reine „Geld-Duell“-Nische verworfen · zu nah an @kontostand.vs/@wissentogo_de (→ Kombi 31.10., Geld-Schwerpunkt 02.11.).
+
+**31.10.**
+- Nische Kombi „Alltag durchgerechnet“ (Geld-Duell + Testlauf), Rang 1 · größter Themenvorrat, belegte Nachfrage.
+- Markt laufend beobachten: Trend-Radar täglich automatisch, Claude bewertet selbst und schlägt nur Potenzial vor (nur aktuelles Format, kein „1.000 simulierte …“), Ergebnis per Telegram statt WhatsApp · Tempo, kostenlos, offiziell.
+- ElevenLabs kleinster bezahlter Plan, bei Bedarf größer (bleibt vorerst Starter); Key erstellt · kommerzielle Lizenz.
+- Gerendert wird auf dem Windows-PC · Hardware vorhanden (02.11. präzisiert: nur das Rendern).
+- Trend-Vorschläge Weihnachtsgeld und Mindestlohn angenommen, wenn mind. 1 Min. (CRP).
+- Name **Simulierbar** (`@simulierbar` aktiv), „Der Testlauf“ abgelehnt · Auswahl aus Vorschlägen. Kein „1.000 Lebensläufe“-Merkmal · gleiches Format, eigene Themen.
+- Start mit GTA 6 weltweit (Idee des Inhabers, Release 19.11.) + Reißverschluss · Tempo, Reichweite. Reißverschluss nicht gepostet (@simulierts zuerst), ersetzt durch Spurwechsel · keine Konkurrenzthemen.
+- Stimme **Ben** `aTTiK3YzK3dXETpuDE2h` (männlich, Muttersprachler, Hörprobe; Daniel/zfc8 verworfen) **im Original,** keine eigenen Einstellungen · „genau so wie auf ElevenLabs“. Sprechtext als Regie-Text mit Zeilenumbrüchen · Stimme klang unruhig. Modell → Eleven v4 (01.11.).
+- Untertitel ohne Kasten, weiß mit dicker schwarzer Kontur, aktuelles Wort gelb · Lesbarkeit (Phrasen/Satzpausen 0,26 s → ersetzt 01.11.: Wort für Wort).
+- Ablage in Google Drive später über den PC, kein Cloud-Upload. Stil wechselt je Thema (→ 01./02.11.).
+- Posting: Partner-Tools erlaubt (Buffer), zunächst nur Entwürfe → 01.11. vollautomatisch.
+- 30-Tage-Plan = Reihenfolge, Produktion auf Zuruf (kein Autopilot), Plan auch als PDF.
+- Caption-Kurzformat, keine Quellen/Hinweise · nicht verpflichtend, kostet nur Arbeit.
+- **Neuaufstellung:** Maßstab = 4 virale Konkurrenzvideos, alle Regeln richten sich danach · „komplett neu aufrollen“. Videos nur mit Three.js/Blender; mehr Dynamik (alle 1–2 s); feste Reihenfolge (Hook, dann Aufmerksamkeit halten).
+- Rolle: Content-Creator-Experte statt Mentor, Spezialität Simulationsvideos.
+- Nie Kanalname/Rubrik im Video · unnötig, verwirrt. Neues 3D-Logo (→ 01.11. Konzept A statisch).
+- Folgen-Aufruf bei ca. 20 s („Folg mir, damit du nichts verpasst.“); Schluss „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ · kürzerer Schluss.
+- Stand vor `/compact` sichern (Hook) · keine Informationen verlieren (02.11.: Gedächtnis in dieser Datei).
+
+**01.11.**
+- Logo Konzept A „S-Kurve“, statisch · Inhaber nutzt es als TikTok-Logo.
+- Kein fester Look, Qualität ist das Markenzeichen; „Handgemachte Miniatur“ abgelehnt.
+- Eleven v4 für alle Videos (Hörprobe); Untertitel Wort für Wort (Stil „kontur“), keine Phrasen.
+- GTA 6 und Spurwechsel bereits gepostet, kein Neubau; Treppe (12:00) und Gehalt (20:00) heute.
+- Sticker in gesundem Maß (max. 5) → 02.11. keine · „wir übertreiben mit den Stickern“.
+- Inhalte mittig, 1080×1920 für TikTok und Shorts; Schutzzone 150 px symmetrisch (Achse 540, Breite 780), kein Kalibrier-Test · „sofern du verstanden hast, was ich will, passt das“.
+- Account 2: nur Blender/Three.js, keine KI-Video-Generatoren; Unreal Engine 5 erlaubt bei klarem Vorteil, sparsam mit Tokens.
+- Account 2: POV „Was wäre, wenn …“, Du-Perspektive, Nische bestätigt (Score 86 gegen 70 „Wer war's?“), Stimme Otto (→ 02.11. ohne Stimme); heißt **`@stelldirvor.pov`** · Auswahl aus Vorschlägen.
+- Steuern, Gewerbe, Nebentätigkeit für CRP-Erlöse: später.
+- Fertige Videos nicht nachbessern · „wichtig ist nur, dass wir uns bessern“.
+- Regelwerk-PDF (1 Seite) bei jeder Regel-/Wissensänderung. API-Key mit `voices_read`.
+- Buffer eingerichtet (Essentials, ca. 12 $/Monat), beide TikTok-Accounts verbunden, YouTube vorerst nicht · erst TikTok sauber automatisieren.
+- Video-Speicher Supabase Storage (Gratis-Plan, Frankfurt, privater Bucket, Datei nach dem Posten löschen); Account-2-Produktion erst nach Buffer, Key, Speicher.
+- **Kein KI-Label** (Ausnahme realistische KI-Inhalte) · TikTok: bei künstlerischen Stilen/TTS nicht nötig.
+- **Vollautomatisch posten ohne Freigabe,** jeder Post mit Caption · „ich will nicht freigeben müssen“.
+- Posting-Zeiten: beide Accounts gleich, je 2 Videos/Tag (Mo–Fr 12:30/19:30, Sa–So 09:30/19:30; ersetzt die erste Fassung für Account 2: 20:30/13:00, 1 Video/Tag) · „das schaffen wir alles“.
+
+**02.11.**
+- **Produktionsrhythmus:** 4 Videos/Tag (2 je Account) für den nächsten Tag, nie mehr gleichzeitig, max. 2 Agenten · 8–10 parallel rissen das 5-Stunden-Limit.
+- **Ruhiger Ton:** kein Geschrei, kein „Los geht's“, keine aufgeregten Audio-Tags · Videos „zu energisch“.
+- **Keine großen Sticker/Stempel,** Fokus auf die animierte Welt · „die Kunst ist es, das Umliegende aufregender und qualitativer zu gestalten“.
+- **Skript-Bild-Abgleich** und **Themen-Logik** · „Steuererklärung vs. Überstunden ergibt keinen Sinn“.
+- **Account 2 strikt im Format der 4 Referenzvideos** (keine Stimme, 80 s, feste Ich-Perspektive, Titelfrage, Messwert-Anzeige, kursive Sätze, Atmo, schwarzer Abspann), ohne „5 Sekunden“, globale Wissenschaftsthemen ohne Deutschland-Bezug, neuer 30-Tage-Plan (ersetzt den alten), fester Skill nur für Account 2 · „halte es strikt genau danach, keine Stimme mehr“.
+- **Simulierbar: Schwerpunkt GELD** (Euro-Ergebnis, Plan ab 03.11. neu, Videos vom 02.11. bleiben), fester Skill nur für Simulierbar, seriöser Look (kein Cartoon/Clay, Licht, Atmosphäre) · „das zieht am meisten“, „was seriöseres“.
+- **Cockpit reagiert sofort** auf Freigabe, Ablehnung, Kommentar · „sonst bringt mir das Cockpit nichts“.
+- Account 2 heute: Eiszeit Toronto 19:30; kein Vorrücken (Abstandsregeln), Lücke 03.11. 12:30 mit Reserve „Seil um den Äquator“.
+- **Rendern auf den Windows-PC auslagern,** Arbeit bleibt in der Cloud (Render-Dienst ohne KI, Cloud nur Rückfall) · Cloud-Sitzungen lassen sich nicht mit Windows-Ordnern verbinden, ein Dienst ohne Claude kostet keine Tokens.
+- **Alles Projektwissen in `CLAUDE.md`** (Status-Datei, Entscheidungs-Datei und die nummerierten Notizen in `docs/` gelöscht, die Git-Historie bewahrt sie), Skills bleiben getrennt · „so viele Dateien, die immer wieder gelesen werden müssen“.

@@ -7,16 +7,18 @@ description: Nur für TikTok-Account 1 @simulierbar (Simulierbar, „Alltag durc
 
 **Gilt nur für Account 1 `@simulierbar`.** Für Account 2 `@stelldirvor.pov` gilt ausschließlich `.claude/skills/stelldirvor-video/`; nichts aus diesem Skill (Stimme, Untertitel, Tafel, Folgen-Aufruf, Schlusssatz, Schleife, Stile 17–21) gilt dort, und umgekehrt.
 
-Grundlage: `CLAUDE.md` (Videoaufbau, Dynamik, Stimme, Untertitel, Teamfarben, Caption, Technik), **`docs/15-massstab.md` (verbindlich, §11 Prüfliste)**, `docs/08-beispielskripte.md` (Regie-Text), `docs/10-designstile.md` §0 (Stil-Katalog), `docs/12-30-tage-plan.md` (Reihenfolge), `pipeline/README.md`. Dieser Skill fasst zusammen und ergänzt den neuen Look; bei Widerspruch gilt die jüngste Entscheidung des Inhabers (`ENTSCHEIDUNGEN.md`).
+Grundlage: `CLAUDE.md` (Videoaufbau §6, Maßstab §5, Plattformregeln §7, Stimme §8, Pläne §9, Entscheidungen §12), **[massstab.md](massstab.md) (verbindlich, Prüfliste)**, [themen.md](themen.md) (Themen, Sperrliste, Finanzregeln), `data/plan/30-tage.csv` (Reihenfolge), `pipeline/README.md`. Dieser Skill fasst zusammen und ergänzt den neuen Look; bei Widerspruch gilt die jüngste Entscheidung des Inhabers (`CLAUDE.md` §12).
 
 ## Pflichtlektüre vor jeder Arbeit an einem Video
 | Datei | Inhalt |
 |---|---|
-| [ablauf.md](ablauf.md) | Videoaufbau als Zeitplan (0–80 s), Satzmuster, Themen-Logik, Skript-Bild-Abgleich |
+| [massstab.md](massstab.md) | der Maßstab im Volltext: 12 Gesetze, Messwerte der 4 Vorbilder, Zeitachsen, Bausteine, Prüfliste (20 Punkte) |
+| [themen.md](themen.md) | Markt und Nische, Auswahlregeln, **Konkurrenz-Sperrliste**, Finanzregeln, Zahlen Deutschland 2026, feste Termine |
+| [ablauf.md](ablauf.md) | Videoaufbau als Zeitplan (0–80 s), Satzmuster und Textregeln, Themen-Logik, Skript-Bild-Abgleich, Beispiel-Skript |
 | [stile.md](stile.md) | die 5 erlaubten Stile 17–21 (wofür, Baukasten, Demo, Renderzeit), die verbotenen Stile, Stilwahl |
 | [licht-und-atmosphaere.md](licht-und-atmosphaere.md) | Licht-Rigs, Bloom, Lichtstrahlen, Volumenlicht, Nebel, Tiefenschärfe, Spiegelungen, Grading, Körnung, Kamera-Regie, je mit Baukasten-Aufruf |
 | [design.md](design.md) | HUD im seriösen Look: Tafel, Zähler, Uhr, Chips, Karten, Typografie, Farben, Untertitel „kontur“, sichere Zonen |
-| [ton.md](ton.md) | Stimme Ben, `eleven_v4`, Regie-Text, Tonfall, Klangteppich, Effekte, Lautheit |
+| [ton.md](ton.md) | Stimme Ben, `eleven_v4`, Regie-Text (Werkzeug-Tabelle, Regeln), Tonfall, Klangteppich, Effekte, Lautheit |
 | [technik.md](technik.md) | Dateien, Szenengerüst mit `SimBuehne`, Render, Mux, Posting über `post_buffer.py` |
 | [pruefung.md](pruefung.md) | Abnahme: `massstab.py`, Text-Überlappung, Kontaktbogen, Skript-Bild-Abgleich, keine Sticker, nur erlaubte Stile |
 
@@ -37,7 +39,7 @@ Muster mit allen Bausteinen: `pipeline/projekte/_demo-simulierbar/` (eine Welt j
 12. **Rhythmus**: täglich genau 2 Simulierbar-Videos für den nächsten Tag (4 insgesamt mit Account 2), höchstens 2 Produktions-Agenten gleichzeitig, gestaffelt, mit `model: sonnet`; neue Objekttypen bzw. Szenentypen mit Opus. Posting vollautomatisch über Buffer nach eigener Prüfung, ohne KI-Label.
 
 ## Ablauf je Video (Zeit: Schätzung)
-1. **Thema** aus `data/plan/30-tage.csv` (Stil und Teamfarben stehen dort), Konkurrenz-Check (`docs/12` §3.4, `docs/15` §9), Themen-Logik prüfen. (15 Min.)
+1. **Thema** aus `data/plan/30-tage.csv` (Stil und Teamfarben stehen dort), Konkurrenz-Check ([themen.md](themen.md) §3, §8), Themen-Logik prüfen. (15 Min.)
 2. **Rechnung** als Code mit Tests in `pipeline/sim/<thema>.mjs` (Netto-Modul `pipeline/sim/netto.mjs` nutzen), Quellen nur intern. Liefert Zählerverläufe, Führungswechsel, Ergebnis, „Warum?“-Faktoren, zweite Überraschung. (30–60 Min.)
 3. **Skript** `projekte/<name>/skript.json` mit `"skill": "simulierbar-video"`, `"stil": "<Nr> <Name>"`, `stil_begruendung`, Segmenten (`text` + `sprechtext`), `bild_text_abgleich`, Caption. Vorlage `ablauf.md`, Regie-Text `ton.md`. (30 Min.)
 4. **Stimme**: `python3 tts.py projekte/<name>` → `audio/stimme.mp3` + `audio/timing.json`. (5 Min.)

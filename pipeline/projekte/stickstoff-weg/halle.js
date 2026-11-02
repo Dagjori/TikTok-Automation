@@ -1,4 +1,4 @@
-// Supermarkthalle für „Was wäre, wenn der Stickstoff 5 Sekunden verschwindet?“ – Format nach den Referenzvideos (docs/16 §12):
+// Supermarkthalle für „Was wäre, wenn der Stickstoff 5 Sekunden verschwindet?“ – Format nach den Referenzvideos (Skill .claude/skills/stelldirvor-video/):
 // feste Ich-Perspektive von einer Galerie (Zwischengeschoss) mit Geländer im Vordergrund, weiter Blick auf belebte Gänge.
 // Koordinaten (Meter): Gänge entlang +x, y nach oben, +z = rechts. Boden y = 0, Galerieboden y = 3,2, Decke y = 7,4.
 // Alles ist eine reine Funktion von t bzw. des Zustands z (deterministisch). Rechnung: ../../sim/stickstoff_weg.mjs

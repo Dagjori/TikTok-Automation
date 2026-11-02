@@ -1,4 +1,4 @@
-// Grundwelt „Großstadt-Dach“ (Account 2 @stelldirvor.pov, docs/17 §3) – NUR für den Baukasten Lunar-POV.
+// Grundwelt „Großstadt-Dach“ (Account 2 @stelldirvor.pov, .claude/skills/stelldirvor-video/themen-und-plan.md §3) – NUR für den Baukasten Lunar-POV.
 // Blick von der Dachterrasse eines Hochhauses über eine Großstadt am Wasser: Straßenraster, Hochhäuser mit Dächern,
 // Dachaufbauten und Fensterreihen (Fenster als Shader in echter Größe, Licht in Fenstern), Wahrzeichen-Turm (Silhouette wie CN Tower),
 // Stadion-Kuppel, Straßenbäume und Parks, See/Hafen mit bewegtem Wasser und Sonnenglanz, Boote, Autos, Menschen auf Straßen und Dächern,

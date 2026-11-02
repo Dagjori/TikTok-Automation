@@ -1,4 +1,4 @@
-/* Maßstab-Bausteine (docs/15 §4, §8): Anzeigetafel, Live-Zähler, Renn-Uhr, Countdown-Ring, Chips, Sticker/Stempel,
+/* Maßstab-Bausteine (.claude/skills/simulierbar-video/massstab.md §4, §8): Anzeigetafel, Live-Zähler, Renn-Uhr, Countdown-Ring, Chips, Sticker/Stempel,
    Fortschrittsleiste, Formel-, Bilanz- und Aufschlüsselungskarte, Pointe, Folgen-Aufruf, Phrasen-Untertitel.
    Nach hud.css einbinden. Teamfarben und Flächen sind Theme-Variablen (setzt Massstab je Video auf #hud):
    --team-a, --team-b, --akzent, --tinte, --karte, --karte-text.  Sichere Zonen: oben 150 px, rechts 150 px (x ≤ 930),

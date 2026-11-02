@@ -2,7 +2,7 @@
 """Plant ein fertiges, geprüftes TikTok-Video über Buffer ein (Supabase als Zwischenspeicher) und prüft es nach dem Posten.
 
 Regel:   Regeln des Inhabers vom 01.11.: kein KI-Label als Standard, keine Freigabe in Buffer (Claude prüft selbst und plant direkt),
-         feste Posting-Zeiten (data/plan/posting_zeiten.json). Technik und Feldnamen: docs/11-automatisierung.md, Abschnitt C-Technik.
+         feste Posting-Zeiten (data/plan/posting_zeiten.json). Technik und Feldnamen: pipeline/README.md, Abschnitt „Buffer-API und Supabase im Detail“.
          Standard = geplanter Post (Status „scheduled“, Buffer veröffentlicht zur Zeit selbst). Mit --entwurf wie bisher nur ein Entwurf.
 
 Aufruf:  python3 pipeline/post_buffer.py --video <mp4> --kanal simulierbar|stelldirvor.pov --text "<Caption>" --zeit auto:2026-11-03:mittag [--trocken]
@@ -62,7 +62,7 @@ MIN_TAGS, MAX_TAGS, MAX_CAPTION = 3, 5, 2200
 VERBOTENE_TAGS = ("#fyp", "#viral", "#foryou", "#foryoupage")
 BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 MIN_SEKUNDEN = 61                              # CLAUDE.md: Videos mindestens 61 s
-MAX_SEKUNDEN = 600                             # Buffer/TikTok: Video 3 s bis 10 min (docs/11 §2)
+MAX_SEKUNDEN = 600                             # Buffer/TikTok: Video 3 s bis 10 min (pipeline/README.md)
 BREITE, HOEHE = 1080, 1920
 MAX_MB = 48                                    # ab dieser Größe Upload-Kopie
 ZIEL_MB = 45                                   # Zielgröße der Kopie (MB = 1024*1024 Byte)
@@ -483,9 +483,9 @@ class Supabase:
             hinweis = " → Der Header apikey kommt nicht an (Proxy-Secret für den Supabase-Host fehlt oder greift nicht)."
         elif "required property 'authorization'" in blob:
             hinweis = (" → Storage verlangt einen Authorization-Header. Entweder kommt der apikey nicht an (Proxy-Secret fehlt), oder das Gateway ergänzt "
-                       "Authorization nicht (dann SUPABASE_AUTHORIZATION bzw. Proxy-Header Authorization setzen). Siehe docs/11 §3C-Technik.")
+                       "Authorization nicht (dann SUPABASE_AUTHORIZATION bzw. Proxy-Header Authorization setzen). Siehe pipeline/README.md (Abschnitt „Buffer-API und Supabase im Detail“).")
         elif "authorization" in blob.lower() or "JWT" in blob or status in (401, 403):
-            hinweis = " → Authorization oder apikey wird abgelehnt: SUPABASE_AUTH/SUPABASE_AUTHORIZATION bzw. docs/11 §3C-Technik beachten."
+            hinweis = " → Authorization oder apikey wird abgelehnt: SUPABASE_AUTH/SUPABASE_AUTHORIZATION bzw. pipeline/README.md (Abschnitt „Buffer-API und Supabase im Detail“) beachten."
         return Fehler(f"Supabase {was} fehlgeschlagen (HTTP {status}{', ' + code if code else ''}): {text}{hinweis}")
 
     def bucket_info(self):

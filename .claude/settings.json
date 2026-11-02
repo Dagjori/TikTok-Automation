@@ -19,7 +19,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":\"Das Gespräch wurde gerade komprimiert. Lies jetzt zuerst: STATUS.md, ENTSCHEIDUNGEN.md, docs/15-massstab.md und .sitzung/letzte_nachrichten.md (die letzten 40 Nachrichten wörtlich). Der vollständige Verlauf aller Nachrichten des Inhabers und deiner Antworten steht in .sitzung/verlauf.md (bei Unklarheiten dort per Grep nachsehen), der Repo-Stand vor dem Komprimieren in .sitzung/stand.md. Arbeite erst danach weiter.\"}}'",
+            "command": "echo '{\"hookSpecificOutput\": {\"hookEventName\": \"SessionStart\", \"additionalContext\": \"Das Gespräch wurde komprimiert. Alles Projektwissen steht in CLAUDE.md (bereits geladen). Nur bei Unklarheiten im Verlauf .sitzung/verlauf.md per Grep nachsehen (die letzten 40 Nachrichten stehen in .sitzung/letzte_nachrichten.md, der Repo-Stand vor dem Komprimieren in .sitzung/stand.md).\"}}'",
             "timeout": 10
           }
         ]

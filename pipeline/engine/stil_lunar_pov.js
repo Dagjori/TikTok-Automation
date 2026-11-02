@@ -1,4 +1,4 @@
-// Baukasten „Lunar-POV“ (Designstil 16) – NUR für Account 2 @stelldirvor.pov (Referenzformat docs/16 §12).
+// Baukasten „Lunar-POV“ (Designstil 16) – NUR für Account 2 @stelldirvor.pov (Referenzformat, Skill .claude/skills/stelldirvor-video/).
 // Verbindliche Werte, Zeitpunkte und Regeln: .claude/skills/stelldirvor-video/ (design.md, licht-und-effekte.md, technik.md).
 // Text-Ebenen, Glasriss, Linsenflecken, Vignette und Abspann liegen in engine/lunar_hud.js (+ stil_lunar_pov.css).
 //

@@ -24,7 +24,7 @@ if (!["account1", "account2"].includes(PLAN)) { console.error(`Unbekannter Plan:
 const A2 = PLAN === "account2";
 const CSV_PATH = A2 ? path.join(ROOT, "data", "plan", "account2-30-tage.csv") : path.join(ROOT, "data", "plan", "30-tage.csv");
 const PLANSTAND = A2
-  ? "02.11.2026, komplett neu nach Format docs/16 §12/§12a (keine Stimme, globale Gedankenexperimente); 2 Videos pro Tag"
+  ? "02.11.2026, komplett neu nach Format Skill stelldirvor-video (keine Stimme, globale Gedankenexperimente); 2 Videos pro Tag"
   : "02.11.2026, komplett neu mit Geld-Schwerpunkt (jedes Video mit Euro-Ergebnis, nur neue Themen); Zeilen 31.10.–02.11. unverändert; 2 Videos pro Tag 03.11.–02.12.";
 
 const argVal = (name) => {
@@ -131,7 +131,7 @@ const erzeugt = new Date().toLocaleDateString("de-DE", { day: "2-digit", month: 
 function pill(text, cls) { return `<span class="pill ${cls}">${esc(text)}</span>`; }
 function badge(s) { return `<span class="score ${scoreClass(s)}">${esc(s)}</span>`; }
 
-// Konkurrenz-Sperrliste (öffentliche Embed-Listen und Videoseiten, 02.11.2026; Details docs/12 §3.4)
+// Konkurrenz-Sperrliste (öffentliche Embed-Listen und Videoseiten, 02.11.2026; Details .claude/skills/simulierbar-video/themen.md §3)
 const A1_SPERRE = [
   ["Mieten oder kaufen", "@kontostand.vs 617k · @wissentogo_de 34k"],
   ["Leasen, finanzieren oder bar (inkl. 0-%-Falle)", "@wissentogo_de 363k"],
@@ -148,7 +148,7 @@ const A1_SPERRE = [
   ["Früh anfangen zu sparen, Million, Inflation", "@geldsimuliert 0,5–2k"],
   ["Kind kostet bzw. Kindergeld bzw. kinderfrei", "@wissentogo_de · @alltagsformel · @kontostand.vs"],
   ["Tanken: Umweg und 12-Uhr-Regel, Trockner, LED, Abos", "@alltaginzahlen 1–1,5k · @alltagsformel"],
-  ["Maßstab K1–K4 (Regen, Pausen, Tsunami, Duschen)", "docs/15 §9 · @kurzsimuliert bis 2,1 Mio."],
+  ["Maßstab K1–K4 (Regen, Pausen, Tsunami, Duschen)", ".claude/skills/simulierbar-video/massstab.md §9 · @kurzsimuliert bis 2,1 Mio."],
 ];
 const A1_REGELN = [
   ["Keine Finanz-Betrugsmaschen, keine „get-rich-quick“-Versprechen, keine MLM", "Community Guidelines, Frauds and Scams (gültig seit 24.09.2026)"],
@@ -184,7 +184,7 @@ function htmlAccount1() {
   <div class="kicker">Simulierbar · Content-Plan · Schwerpunkt Geld</div>
   <h1>30-Tage-Plan<br><span>03. November – 02. Dezember 2026</span></h1>
   <p class="lead">Jedes Video ist ein Duell zweier echter Alternativen derselben Entscheidung und endet mit einem Ergebnis in Euro auf der Anzeigetafel. Nur neue Themen: Was ein Konkurrent schon viral gemacht hat, ist gesperrt. Pro Video: Hook, Denkfalle, zwei Wendungen, Stil, Teamfarben, Rechnung, Quellen, Konkurrenz-Check, Caption und Maßstab-Score.</p>
-  <div class="stand">Planstand: ${esc(PLANSTAND)}<br>PDF erzeugt am ${esc(erzeugt)} aus <code>data/plan/30-tage.csv</code> · Text: <code>docs/12-30-tage-plan.md</code> · Captions: <code>data/plan/simulierbar-plan.json</code></div>
+  <div class="stand">Planstand: ${esc(PLANSTAND)}<br>PDF erzeugt am ${esc(erzeugt)} aus <code>data/plan/30-tage.csv</code> · Text: <code>.claude/skills/simulierbar-video/themen.md</code> · Captions: <code>data/plan/simulierbar-plan.json</code></div>
   <div class="kpis">
     <div class="kpi"><b>${neu.length}</b><span>Videos (2 pro Tag)<br>+ ${reserve.length} Reservethemen</span></div>
     <div class="kpi"><b>${avg}</b><span>Ø Maßstab-Score (S)<br>min. ${Math.min(...sc)}, max. ${Math.max(...sc)}, erste 10 Tage ${avg10}</span></div>
@@ -231,7 +231,7 @@ function htmlAccount1() {
   const aend = `
 <section class="page">
   <h2>Was sich am 02.11. geändert hat</h2>
-  <p class="intro">Auftrag des Inhabers: klarer Schwerpunkt Geld, Konkurrenz ansehen, nur neue Ideen, kompletter Plan neu, heutige Videos bleiben. Von 64 offenen Themen des alten Plans sind 10 übernommen, 5 zu neuen Geld-Fragen umgebaut und 6 in der Reserve; 43 sind raus, meist ohne Euro-Ergebnis oder bei der Konkurrenz schon gelaufen (Gründe in docs/12 §3.5).</p>
+  <p class="intro">Auftrag des Inhabers: klarer Schwerpunkt Geld, Konkurrenz ansehen, nur neue Ideen, kompletter Plan neu, heutige Videos bleiben. Von 64 offenen Themen des alten Plans sind 10 übernommen, 5 zu neuen Geld-Fragen umgebaut und 6 in der Reserve; 43 sind raus, meist ohne Euro-Ergebnis oder bei der Konkurrenz schon gelaufen (Gründe in .claude/skills/simulierbar-video/themen.md §4).</p>
   <div class="cols">
     <div class="box"><h3>Bleibt unverändert (31.10.–02.11.)</h3>
       <table class="raster">${alt.map((r) => `<tr><td class="nowrap">${esc(tag(r.datum))}</td><td>${esc(r.titel)}</td><td>${badge(r.massstab_score)}</td></tr>`).join("")}</table></div>
@@ -388,7 +388,7 @@ table.dl tr:first-child td { border-top:0; }
 `;
 
 // ---------- Account 2 (@stelldirvor.pov), Aufruf mit --plan account2 ----------
-// Spalten seit 02.11.2026 (Format docs/16 §12/§12a): datum, slot, uhrzeit, titel, themenfeld, standpunkt, welt, ereignis,
+// Spalten seit 02.11.2026 (Format Skill stelldirvor-video): datum, slot, uhrzeit, titel, themenfeld, standpunkt, welt, ereignis,
 // zeitraffer, messwert_etiketten, hoehepunkt, pointe, beats, faktenzeile, kernrechnung, quellen_pruefen, score,
 // score_begruendung, konkurrenz_check, caption_vorschlag, aufwand, status
 const A2_KRIT = { N: ["Nachfrage-Signal", 30], T: ["Timing", 20], W: ["Wettbewerb", 15], P: ["Passung zum Format", 15], A: ["Aufwand (Baukasten)", 10], R: ["Risiko", 10] };
@@ -418,8 +418,8 @@ function htmlAccount2() {
 <section class="cover">
   <div class="kicker">Stell dir vor … · @stelldirvor.pov · Content-Plan</div>
   <h1>30-Tage-Plan<br><span>03. November – 02. Dezember 2026</span></h1>
-  <p class="lead">Große, globale Gedankenexperimente aus Physik, Mathematik, Biologie, Chemie, Astronomie, Geologie und Klima, strikt im Format der Referenzvideos (docs/16 §12): 80 s, keine Stimme, feste Ich-Perspektive von einem erhöhten Standpunkt, Messwert-Anzeige bis „HIER“, schwarzer Abspann mit Faktenzeile.</p>
-  <div class="stand">Planstand: ${esc(PLANSTAND)}<br>PDF erzeugt am ${esc(erzeugt)} aus <code>data/plan/account2-30-tage.csv</code> · Text: <code>docs/17-account2-30-tage-plan.md</code> · Sätze der ersten 8 Videos: <code>data/plan/account2-plan.json</code></div>
+  <p class="lead">Große, globale Gedankenexperimente aus Physik, Mathematik, Biologie, Chemie, Astronomie, Geologie und Klima, strikt im Format der Referenzvideos (Skill .claude/skills/stelldirvor-video/): 80 s, keine Stimme, feste Ich-Perspektive von einem erhöhten Standpunkt, Messwert-Anzeige bis „HIER“, schwarzer Abspann mit Faktenzeile.</p>
+  <div class="stand">Planstand: ${esc(PLANSTAND)}<br>PDF erzeugt am ${esc(erzeugt)} aus <code>data/plan/account2-30-tage.csv</code> · Text: <code>.claude/skills/stelldirvor-video/themen-und-plan.md</code> · Sätze der ersten 8 Videos: <code>data/plan/account2-plan.json</code></div>
   <div class="kpis">
     <div class="kpi"><b>${haupt.length}</b><span>Videos (2 pro Tag)<br>+ ${reserve.length} Reservethemen</span></div>
     <div class="kpi"><b>${avg2}</b><span>Ø Trend-Score<br>min. ${Math.min(...sc)}, max. ${Math.max(...sc)}</span></div>
@@ -433,8 +433,8 @@ function htmlAccount2() {
         <li>2 Videos pro Tag: Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30 (Europe/Berlin). Produktion jeweils am Vortag, 2 Videos dieses Accounts pro Tag.</li>
         <li>Jedes Video: ein Ereignis, das man von einem festen Standpunkt aus wachsen sieht; Anzeige mit 2–4 Etiketten, Höhepunkt „HIER“ bei 55–62 s, Pointe gegen eine Denkfalle, Faktenzeile mit echtem Bezug.</li>
         <li>Die drei Beispiele des Inhabers laufen in den ersten 3 Tagen (Eiszeit, Sonne 1 m pro Jahr, alles automatisiert).</li>
-        <li>Regeln: an keinem Tag gleiche Welt, gleiches Feld oder gleiches Ende; gleiche Grundwelt nie an Folgetagen; Nachthimmel-Enden nur abends; ähnliche Themen mit Mindestabstand (docs/17 §3).</li>
-        <li>Gesperrt: Themen von Lunar Animations und der US-Konten (Liste docs/17 §3.5), kein „5 Sekunden“, keine Alltagsthemen.</li>
+        <li>Regeln: an keinem Tag gleiche Welt, gleiches Feld oder gleiches Ende; gleiche Grundwelt nie an Folgetagen; Nachthimmel-Enden nur abends; ähnliche Themen mit Mindestabstand (.claude/skills/stelldirvor-video/themen-und-plan.md §3).</li>
+        <li>Gesperrt: Themen von Lunar Animations und der US-Konten (Liste .claude/skills/stelldirvor-video/themen-und-plan.md §5), kein „5 Sekunden“, keine Alltagsthemen.</li>
       </ul>
     </div>
     <div class="box">
@@ -444,7 +444,7 @@ function htmlAccount2() {
   </div>
   <div class="cols">
     <div class="box">
-      <h3>Trend-Score (docs/07, tools/trend_score.py)</h3>
+      <h3>Trend-Score (CLAUDE.md §10, tools/trend_score.py)</h3>
       <table class="raster">${Object.entries(A2_KRIT).map(([k, [n, g]]) => `<tr><td><b>${k}</b></td><td>${esc(n)}</td><td>${g} %</td></tr>`).join("")}</table>
       <p class="hint">Je 1–5 Punkte, Score = Σ(Gewicht × Punkte) ÷ 5. Ab 70 vorschlagen. Farben: <span class="score s-top">86+</span> <span class="score s-gut">83+</span> <span class="score s-mittel">79+</span> <span class="score s-knapp">&lt;79</span></p>
     </div>

@@ -9,7 +9,7 @@ Liest:   <projekt>/audio/ereignisse.json   (schreibt render.js: Dauer, Ereignis-
          <projekt>/skript.json             ("klangteppich": Thema des Teppichs, falls die Szene keinen setzt)
 Schreibt:pipeline/out/<projekt>/ton.wav    (48 kHz, Stereo, noch nicht lautheitsnormalisiert; mux.sh macht −14 LUFS)
 
-Maßstab (docs/15 §7, §12): Unter der Stimme liegt immer ein Klangteppich passend zum Thema, in Sprechpausen ca. 10 dB
+Maßstab (.claude/skills/simulierbar-video/massstab.md §7, §12): Unter der Stimme liegt immer ein Klangteppich passend zum Thema, in Sprechpausen ca. 10 dB
 leiser als die Stimme (Vorbilder 8–13 dB). Jedes Bild-Ereignis bekommt einen kurzen Effekt (Pop, Wisch, Tick, Ding,
 Zähler-Ticken, Stempel-Aufprall), die Pointe einen Akzent-Klang. Effekte kommen automatisch aus dem Ereignis-Protokoll:
 jedes Ereignis trägt "klang" (Name, false = stumm) oder bekommt ihn über seinen Typ (AUTO unten).

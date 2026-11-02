@@ -18,7 +18,7 @@
     "wendung_1": "Nach dem ersten Monat liegt das Taxi vorn: Das Auto hat Versicherung, Steuer und Wertverlust bezahlt, bevor es einen Meter fährt (B).",
     "wendung_2": "Und das Verrückte: Unter ca. fünf Fahrten pro Woche bleibt das Taxi billiger, darüber kippt es schnell (B). Die Strecke entscheidet, nicht das Auto.",
     "teamfarben": "Koralle #FF5A5F (eigenes Auto) / Türkis #2EC4B6 (Taxi)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; Nachbarthemen Auto gegen Deutschlandticket (@alltagsformel, 259 Aufrufe) und Auto gegen Flieger (@wissentogo_de, 56,5k) vergleichen andere Alternativen · Themen-Logik: dieselbe Entscheidung (wie komme ich in der Stadt von A nach B), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; Nachbarthemen Auto gegen Deutschlandticket (@alltagsformel, 259 Aufrufe) und Auto gegen Flieger (@wissentogo_de, 56,5k) vergleichen andere Alternativen · Themen-Logik: dieselbe Entscheidung (wie komme ich in der Stadt von A nach B), die Alternativen schließen sich aus",
     "caption_vorschlag": "Eigenes Auto oder immer Taxi? 🚕 Ich hab's durchgerechnet. Ab wie vielen Fahrten lohnt sich dein Auto? 👇 #auto #autokosten #taxi #wissen #simulation"
   },
   {
@@ -40,7 +40,7 @@
     "wendung_1": "Nach 220 Arbeitstagen liegt Kochen beim Geld 2.530 € vorn (Rechnung).",
     "wendung_2": "Aber jetzt rechnen wir die Zeit mit: Mit Zuschuss zieht die Kantine knapp an beiden vorbei, 1.499 gegen 1.510 € (Rechnung).",
     "teamfarben": "Grün #2ECC71 (kochen) / Magenta #E040FB (bestellen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; Websuche 01.11. fand nur Ratgeber · Themen-Logik: dieselbe Entscheidung (Mittagessen an Arbeitstagen), die Alternativen schließen sich je Tag aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; Websuche 01.11. fand nur Ratgeber · Themen-Logik: dieselbe Entscheidung (Mittagessen an Arbeitstagen), die Alternativen schließen sich je Tag aus",
     "caption_vorschlag": "Selbst kochen oder bestellen? 🥡 Ich hab's durchgerechnet. Team Meal-Prep oder Team Lieferdienst? 👇 #mittagessen #mealprep #sparen #wissen #simulation"
   },
   {
@@ -62,7 +62,7 @@
     "wendung_1": "Der Grundpreis-Zähler läuft hoch: Die Großpackung kostet pro Kilo mehr als zwei kleine (B, Beispiel aus einem Marktcheck nachrechnen).",
     "wendung_2": "Und das Verrückte: Im Angebot dreht es sich wieder um. Und wer die halbe Großpackung wegwirft, zahlt doppelt (B).",
     "teamfarben": "Violett #8E6CFF (Großpackung) / Grün #2ECC71 (zwei kleine)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Kaufentscheidung (gleiche Ware, zwei Packungsgrößen), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Kaufentscheidung (gleiche Ware, zwei Packungsgrößen), die Alternativen schließen sich aus",
     "caption_vorschlag": "Großpackung oder zwei kleine? 🛒 Ich hab's durchgerechnet. Schaust du auf den Grundpreis? 👇 #supermarkt #sparen #einkaufen #wissen #simulation"
   },
   {
@@ -84,7 +84,7 @@
     "wendung_1": "Mit 67 hat Team 63 schon rund siebzigtausend Euro bekommen, Team 67 noch keinen Cent (B).",
     "wendung_2": "Erst mit ca. 81 holt Team 67 auf (B). Und das Verrückte: Ob es sich lohnt, entscheidet nicht der Kontostand, sondern wie alt du wirst (Lebenserwartung prüfen).",
     "teamfarben": "Türkis #2EC4B6 (Rente mit 63) / Koralle #FF5A5F (Rente mit 67)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Zeitpunkt des Renteneintritts), die Alternativen schließen sich aus · Risiko: politische Debatte, im Video keine Partei und keine Wertung",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Zeitpunkt des Renteneintritts), die Alternativen schließen sich aus · Risiko: politische Debatte, im Video keine Partei und keine Wertung",
     "caption_vorschlag": "Rente mit 63 oder mit 67? ⏳ Ich hab's durchgerechnet. Wann willst du in Rente gehen? 👇 #rente #rentemit63 #altersvorsorge #wissen #simulation"
   },
   {
@@ -106,7 +106,7 @@
     "wendung_1": "Nach acht Minuten Kreisen ist der Gratis-Parkplatz schon teurer als das Parkhaus (B).",
     "wendung_2": "Und das Verrückte: Bei kurzen Besuchen gewinnt fast immer das Parkhaus, bei langen die Straße, aber nur wenn du schnell etwas findest (B).",
     "teamfarben": "Blau #3D8BFF (Parkhaus) / Orange #FF8A3D (Parkplatz suchen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wo parke ich), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wo parke ich), die Alternativen schließen sich aus",
     "caption_vorschlag": "Parkhaus oder Parkplatz suchen? 🅿️ Ich hab's durchgerechnet. Wie lange kreist du? 👇 #parken #parkplatz #autofahren #wissen #simulation"
   },
   {
@@ -128,7 +128,7 @@
     "wendung_1": "Bei den Überstunden greifen Lohnsteuer und Sozialabgaben zu. Es bleiben nur 164 Euro (Rechnung).",
     "wendung_2": "Und das Verrückte: Der zweite Minijob wird wie normaler Lohn behandelt, dann gewinnen die Überstunden knapp (Rechnung prüfen). Und der Arbeitsvertrag muss den Nebenjob erlauben.",
     "teamfarben": "Violett #8E6CFF (Minijob) / Orange #FF8A3D (Überstunden)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Abgrenzung zum eigenen Video vom 02.11. (Steuererklärung oder Überstunden): hier zwei echte Wege zum selben Zusatzverdienst · Themen-Logik: dieselbe Entscheidung (wie verdiene ich 300 € dazu), die Alternativen werden gegeneinander abgewogen",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Abgrenzung zum eigenen Video vom 02.11. (Steuererklärung oder Überstunden): hier zwei echte Wege zum selben Zusatzverdienst · Themen-Logik: dieselbe Entscheidung (wie verdiene ich 300 € dazu), die Alternativen werden gegeneinander abgewogen",
     "caption_vorschlag": "Minijob oder Überstunden? 💶 Ich hab's durchgerechnet. Was würdest du nehmen? 👇 #minijob #überstunden #gehalt #wissen #simulation"
   },
   {
@@ -150,7 +150,7 @@
     "wendung_1": "Nach zwölf Monaten liegt der Vertrag sogar vorn, weil der Kauf mit achthundert Euro startet (B).",
     "wendung_2": "Und das Verrückte: Nach Monat vierundzwanzig zahlt der Vertrag weiter für ein Handy, das längst bezahlt ist. Nach drei Jahren trennen beide mehrere hundert Euro (B).",
     "teamfarben": "Pink #FF4FA3 (Vertrag) / Petrol #1A8C8C (selbst kaufen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie komme ich an ein neues Handy), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie komme ich an ein neues Handy), die Alternativen schließen sich aus",
     "caption_vorschlag": "Handy mit Vertrag oder selbst kaufen? 📱 Ich hab's durchgerechnet. Wie machst du es? 👇 #handyvertrag #smartphone #sparen #wissen #simulation"
   },
   {
@@ -172,7 +172,7 @@
     "wendung_1": "Nach drei Monaten ist beim Schneeball schon eine Schuld komplett weg, bei der Lawine noch keine (B).",
     "wendung_2": "Und das Verrückte: Am Ende trennen beide nur ca. vierzig Euro Zinsen (B, rechnen). Wer durchhält, gewinnt, nicht die Methode.",
     "teamfarben": "Blau #3D8BFF (kleinste zuerst) / Rot #E63946 (teuerste zuerst)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden (auch nicht im Embed von @humphreytalks) · Themen-Logik: dieselbe Entscheidung (Reihenfolge der Tilgung), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden (auch nicht im Embed von @humphreytalks) · Themen-Logik: dieselbe Entscheidung (Reihenfolge der Tilgung), die Alternativen schließen sich aus",
     "caption_vorschlag": "Kleinste Schulden zuerst oder die teuersten? ⛄ Ich hab's durchgerechnet. Welche Methode nimmst du? 👇 #schulden #dispo #finanzen #wissen #simulation"
   },
   {
@@ -194,7 +194,7 @@
     "wendung_1": "Die Steuer bremst mit: Es fehlen nur 551 Euro netto statt tausend Euro brutto (Rechnung).",
     "wendung_2": "Und das Verrückte: Pro Stunde verdient Teilzeit sogar mehr. Aber bei der Rente fehlen am Ende volle fünfundzwanzig Prozent (Rechnung).",
     "teamfarben": "Türkis #2EC4B6 (30 Stunden) / Koralle #FF5A5F (40 Stunden)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Arbeitszeit), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Arbeitszeit), die Alternativen schließen sich aus",
     "caption_vorschlag": "Teilzeit oder Vollzeit? ⏱️ Ich hab's durchgerechnet. Würdest du auf 30 Stunden gehen? 👇 #teilzeit #gehalt #netto #wissen #simulation"
   },
   {
@@ -216,7 +216,7 @@
     "wendung_1": "Nach Steuern schrumpft der Vorsprung auf 228 Euro (Rechnung). Dann kommt die erste Miete.",
     "wendung_2": "Und das Verrückte: Selbst mit einer Wohnung im Umland bleibt München hinten, bis das Gehalt rund tausend Euro höher liegt (B).",
     "teamfarben": "Blau #3D8BFF (München) / Grün #2ECC71 (Leipzig)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welches Jobangebot nehme ich), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welches Jobangebot nehme ich), die Alternativen schließen sich aus",
     "caption_vorschlag": "3.000 € in München oder 2.600 € in Leipzig? 🏙️ Ich hab's durchgerechnet. Welches Angebot nimmst du? 👇 #gehalt #miete #jobwechsel #wissen #simulation"
   },
   {
@@ -238,7 +238,7 @@
     "wendung_1": "Am ersten Abend liegt der Backofen vorn: Er ist schon bezahlt, die Fritteuse startet mit achtzig Euro Minus (B).",
     "wendung_2": "Und das Verrückte: Für die ganze Familie läuft die Fritteuse zweimal, dann schrumpft der Vorsprung auf fast nichts (B).",
     "teamfarben": "Orange #FF8A3D (Heißluftfritteuse) / Blau #3D8BFF (Backofen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; Energie-Spartipps bei @rechnetsichdas und @alltaginzahlen betreffen andere Geräte · Themen-Logik: dieselbe Entscheidung (womit mache ich Pommes), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; Energie-Spartipps bei @rechnetsichdas und @alltaginzahlen betreffen andere Geräte · Themen-Logik: dieselbe Entscheidung (womit mache ich Pommes), die Alternativen schließen sich aus",
     "caption_vorschlag": "Heißluftfritteuse oder Backofen? 🍟 Ich hab's durchgerechnet. Hast du schon eine? 👇 #airfryer #heißluftfritteuse #strom #wissen #simulation"
   },
   {
@@ -260,7 +260,7 @@
     "wendung_1": "Im Januar führt der Freelancer klar. Dann kommen Urlaub, Feiertage und eine Grippe: Diese Stunden zahlt ihm niemand (B).",
     "wendung_2": "Und das Verrückte: Den Arbeitgeberanteil der Krankenkasse zahlt er selbst. Am Jahresende liegen beide fast gleichauf (B).",
     "teamfarben": "Pink #FF4FA3 (Freelancer) / Petrol #1A8C8C (Angestellter)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (angestellt oder selbstständig arbeiten), die Alternativen schließen sich aus · Idee aus US-Formaten „1099 vs W2“ (A), eigener Winkel mit deutschen Abgaben",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (angestellt oder selbstständig arbeiten), die Alternativen schließen sich aus · Idee aus US-Formaten „1099 vs W2“ (A), eigener Winkel mit deutschen Abgaben",
     "caption_vorschlag": "50 € als Freelancer oder 30 € angestellt? 💻 Ich hab's durchgerechnet. Würdest du dich selbstständig machen? 👇 #selbstständig #freelancer #gehalt #wissen #simulation"
   },
   {
@@ -282,7 +282,7 @@
     "wendung_1": "Nach dem ersten Tank liegt E zehn vorn, obwohl die Tanknadel schneller fällt (B).",
     "wendung_2": "Und das Verrückte: Schrumpft der Preisabstand unter zwei Cent, dreht sich das Ergebnis (B). Der Abstand an der Säule entscheidet.",
     "teamfarben": "Grün #2ECC71 (E10) / Rot #E63946 (E5)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; Nachbarthemen bei @alltaginzahlen (Umweg zur Tankstelle, 1,5k) und @kurzsimuliert (Fenster oder Klima, 195,9k) sind andere Fragen · Themen-Logik: dieselbe Entscheidung (welche Sorte tanke ich), die Alternativen schließen sich je Tankfüllung aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; Nachbarthemen bei @alltaginzahlen (Umweg zur Tankstelle, 1,5k) und @kurzsimuliert (Fenster oder Klima, 195,9k) sind andere Fragen · Themen-Logik: dieselbe Entscheidung (welche Sorte tanke ich), die Alternativen schließen sich je Tankfüllung aus",
     "caption_vorschlag": "Super E10 oder E5? ⛽ Ich hab's durchgerechnet. Welche Sorte tankst du? 👇 #e10 #tanken #spritpreise #wissen #simulation"
   },
   {
@@ -304,7 +304,7 @@
     "wendung_1": "Schon im ersten Monat zählen die geteilten Kosten mit: Rundfunkbeitrag, Internet, Waschmaschine. Die WG zieht davon (B).",
     "wendung_2": "Und das Verrückte: Fast die Hälfte der Mehrkosten zahlt man allein für Dinge, die man gar nicht öfter benutzt (B).",
     "teamfarben": "Violett #8E6CFF (WG) / Orange #FF8A3D (eigene Wohnung)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie wohne ich), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie wohne ich), die Alternativen schließen sich aus",
     "caption_vorschlag": "WG-Zimmer oder eigene Wohnung? 🏠 Ich hab's durchgerechnet. Team WG oder Team allein? 👇 #wg #miete #wohnung #wissen #simulation"
   },
   {
@@ -326,7 +326,7 @@
     "wendung_1": "Nach einem Jahr hat das Pendeln rund siebentausend Euro gekostet, die Pendlerpauschale holt davon nur einen kleinen Teil zurück (B).",
     "wendung_2": "Und das Verrückte: Rechnest du die 220 Stunden im Auto mit, ist die teurere Wohnung schon ab ca. fünfundzwanzig Kilometern billiger (B).",
     "teamfarben": "Orange #FF8A3D (pendeln) / Türkis #2EC4B6 (näher ziehen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; Nachbarthema Auto gegen Deutschlandticket (@alltagsformel, 259) fragt nach dem Verkehrsmittel, nicht nach dem Wohnort · Themen-Logik: dieselbe Entscheidung (wo wohne ich im Verhältnis zur Arbeit), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; Nachbarthema Auto gegen Deutschlandticket (@alltagsformel, 259) fragt nach dem Verkehrsmittel, nicht nach dem Wohnort · Themen-Logik: dieselbe Entscheidung (wo wohne ich im Verhältnis zur Arbeit), die Alternativen schließen sich aus",
     "caption_vorschlag": "Pendeln oder näher ziehen? 🚗 Ich hab's durchgerechnet. Wie weit fährst du zur Arbeit? 👇 #pendeln #pendlerpauschale #miete #wissen #simulation"
   },
   {
@@ -348,7 +348,7 @@
     "wendung_1": "Der Dienstwagen kostet dich jeden Monat 338 Euro Steuern und Abgaben, auch wenn er nur in der Garage steht (Rechnung).",
     "wendung_2": "Und das Verrückte: Ist es ein E-Auto, zählt nur ein Viertel. Dann gewinnt der Dienstwagen um mehrere hundert Euro (Rechnung prüfen).",
     "teamfarben": "Blau #3D8BFF (Dienstwagen) / Koralle #FF5A5F (mehr Gehalt)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Angebot des Arbeitgebers: Auto oder Geld), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Angebot des Arbeitgebers: Auto oder Geld), die Alternativen schließen sich aus",
     "caption_vorschlag": "Dienstwagen oder 500 € mehr Gehalt? 🚘 Ich hab's durchgerechnet. Was würdest du nehmen? 👇 #dienstwagen #gehalt #steuern #wissen #simulation"
   },
   {
@@ -370,7 +370,7 @@
     "wendung_1": "Die Miete halbiert sich nicht, die größere Wohnung kostet mehr. Aber die doppelten Grundkosten fallen weg (B).",
     "wendung_2": "Und das Verrückte: Die kleinen Posten wie Rundfunkbeitrag, Internet und Haftpflicht sparen am Ende fast so viel wie die Miete (B).",
     "teamfarben": "Pink #FF4FA3 (zusammen) / Blau #3D8BFF (getrennt)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; das alte Planthema „Alleinleben gegen zu zweit“ ist hier als echte Entscheidung gebaut · Themen-Logik: dieselbe Entscheidung (ziehen wir zusammen), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; das alte Planthema „Alleinleben gegen zu zweit“ ist hier als echte Entscheidung gebaut · Themen-Logik: dieselbe Entscheidung (ziehen wir zusammen), die Alternativen schließen sich aus",
     "caption_vorschlag": "Zusammenziehen oder getrennt wohnen? 💑 Ich hab's durchgerechnet. Was spart ihr wirklich? 👇 #singlesday #zusammenziehen #miete #wissen #simulation"
   },
   {
@@ -392,7 +392,7 @@
     "wendung_1": "Die ersten drei Jahre liegt der Bleiber vorn, dann springt der Wechsler mit zehn Prozent vorbei (B).",
     "wendung_2": "Und das Verrückte: Ein einziger Wechsel, der in der Probezeit endet, frisst fast den ganzen Vorsprung von sechs Jahren (B).",
     "teamfarben": "Grün #2ECC71 (Wechsler) / Violett #8E6CFF (Bleiber)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; das alte Planthema „5 % mehr Gehalt bis zur Rente“ ist hier zur echten Entscheidung umgebaut · Themen-Logik: dieselbe Entscheidung (bleiben oder wechseln), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; das alte Planthema „5 % mehr Gehalt bis zur Rente“ ist hier zur echten Entscheidung umgebaut · Themen-Logik: dieselbe Entscheidung (bleiben oder wechseln), die Alternativen schließen sich aus",
     "caption_vorschlag": "Jobwechsel oder bleiben? 📈 Ich hab's durchgerechnet. Wie oft hast du schon gewechselt? 👇 #jobwechsel #gehalt #karriere #wissen #simulation"
   },
   {
@@ -414,7 +414,7 @@
     "wendung_1": "Bis Mittag liegt Team selbst weit vorn. Dann zählt die Uhr: Zwei Urlaubstage und vier Helfer kosten auch Geld (B).",
     "wendung_2": "Und das Verrückte: Bei der Firma holt die Steuer ein Fünftel der Arbeitskosten zurück. Am Ende trennen beide nur ein paar hundert Euro (B).",
     "teamfarben": "Orange #FF8A3D (selbst) / Blau #3D8BFF (Umzugsfirma)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie ziehe ich um), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie ziehe ich um), die Alternativen schließen sich aus",
     "caption_vorschlag": "Selbst umziehen oder Umzugsfirma? 📦 Ich hab's durchgerechnet. Wie viele Helfer brauchst du? 👇 #umzug #umziehen #sparen #wissen #simulation"
   },
   {
@@ -436,7 +436,7 @@
     "wendung_1": "Der Steuer-Zähler fürs Büro läuft schneller. Aber jeder Bürotag kostet dich vorher rund zehn Euro für Sprit und Verschleiß (B).",
     "wendung_2": "Und das Verrückte: Nur mit Homeoffice liegst du bei 220 Tagen knapp über dem Pauschbetrag. Von deinen 1.320 Euro wirken nur 90 (Rechnung).",
     "teamfarben": "Türkis #2EC4B6 (Homeoffice) / Rot #E63946 (Büro)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden (nur Ratgebertexte, z. B. t-online) · Themen-Logik: dieselbe Entscheidung (wo arbeite ich heute), die Alternativen schließen sich je Tag aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden (nur Ratgebertexte, z. B. t-online) · Themen-Logik: dieselbe Entscheidung (wo arbeite ich heute), die Alternativen schließen sich je Tag aus",
     "caption_vorschlag": "Homeoffice oder Büro? 🏡 Ich hab's durchgerechnet. Wie oft bist du im Homeoffice? 👇 #homeoffice #steuern #pendlerpauschale #wissen #simulation"
   },
   {
@@ -458,7 +458,7 @@
     "wendung_1": "Der erste Wechsel kostet selbst mehr: Werkzeug, eine Stunde, kalte Finger (B).",
     "wendung_2": "Und das Verrückte: Ab dem zweiten Winter liegt selbst vorn. Aber nur, wenn du nach fünfzig Kilometern nachziehst (B, ruhiger Sicherheitshinweis).",
     "teamfarben": "Orange #FF8A3D (selbst) / Petrol #1A8C8C (Werkstatt)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; das Kosten-Duell Ganzjahres- gegen Sommer- und Winterreifen hat @alltaginzahlen (4k), deshalb hier nur der Wechsel selbst gegen Werkstatt · Themen-Logik: dieselbe Entscheidung (wer wechselt die Räder), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; das Kosten-Duell Ganzjahres- gegen Sommer- und Winterreifen hat @alltaginzahlen (4k), deshalb hier nur der Wechsel selbst gegen Werkstatt · Themen-Logik: dieselbe Entscheidung (wer wechselt die Räder), die Alternativen schließen sich aus",
     "caption_vorschlag": "Reifen selbst wechseln oder Werkstatt? 🛞 Ich hab's durchgerechnet. Machst du es selbst? 👇 #winterreifen #reifenwechsel #auto #wissen #simulation"
   },
   {
@@ -480,7 +480,7 @@
     "wendung_1": "Im ersten Jahr führt die Kapsel klar, der Vollautomat startet mit vierhundertfünfzig Euro Rückstand (B).",
     "wendung_2": "Und das Verrückte: Nach knapp zwei Jahren überholt der Vollautomat. Trinkst du nur eine Tasse am Tag, erst nach fast vier (B).",
     "teamfarben": "Koralle #FF5A5F (Kapsel) / Blau #3D8BFF (Vollautomat)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; „Kaffee gegen Neuwagen“ (@geldsimuliert, 961) ist ein anderes Thema und bleibt gesperrt · Themen-Logik: dieselbe Entscheidung (welche Kaffeemaschine), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; „Kaffee gegen Neuwagen“ (@geldsimuliert, 961) ist ein anderes Thema und bleibt gesperrt · Themen-Logik: dieselbe Entscheidung (welche Kaffeemaschine), die Alternativen schließen sich aus",
     "caption_vorschlag": "Kapselmaschine oder Vollautomat? ☕ Ich hab's durchgerechnet. Wie viele Tassen trinkst du am Tag? 👇 #kaffee #kaffeevollautomat #sparen #wissen #simulation"
   },
   {
@@ -502,7 +502,7 @@
     "wendung_1": "Nach einem Jahr hat einer über sechsundzwanzigtausend Euro übrig, der andere zwölftausend. Bei gleicher Miete und gleichem Essen (B).",
     "wendung_2": "Und das Verrückte: Nach Einkommen bleibt beiden prozentual gleich viel. Fair hängt also davon ab, ob man Euro oder Prozent gleich verteilt (B).",
     "teamfarben": "Türkis #2EC4B6 (50/50) / Violett #8E6CFF (nach Einkommen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie teilen wir unsere Kosten), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie teilen wir unsere Kosten), die Alternativen schließen sich aus",
     "caption_vorschlag": "50/50 oder nach Einkommen? 💑 Ich hab's durchgerechnet. Wie teilt ihr eure Kosten? 👇 #paar #finanzen #haushaltskasse #wissen #simulation"
   },
   {
@@ -524,7 +524,7 @@
     "wendung_1": "Pro Stunde liegt der Minijob vorn, beim Werkstudenten geht die Rente ab (B).",
     "wendung_2": "Und das Verrückte: Über das Jahr holt der Werkstudent die Lohnsteuer mit der Steuererklärung zurück und sammelt dazu Rentenpunkte (B, Rechnung prüfen).",
     "teamfarben": "Blau #3D8BFF (Werkstudent) / Orange #FF8A3D (Minijob)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; @alltagsformel rechnet das erste Lehrjahr (282), anderes Thema · Themen-Logik: dieselbe Entscheidung (welcher Job neben dem Studium), die Alternativen werden gegeneinander abgewogen",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; @alltagsformel rechnet das erste Lehrjahr (282), anderes Thema · Themen-Logik: dieselbe Entscheidung (welcher Job neben dem Studium), die Alternativen werden gegeneinander abgewogen",
     "caption_vorschlag": "Werkstudent oder Minijob? 🎓 Ich hab's durchgerechnet. Was machst du neben dem Studium? 👇 #werkstudent #minijob #studium #wissen #simulation"
   },
   {
@@ -546,7 +546,7 @@
     "wendung_1": "Die ersten Tage spart Team ein Zimmer klar. Dann zieht die Kälte durch die Wände ins Wohnzimmer, der Heizkörper läuft länger (B).",
     "wendung_2": "Und das Verrückte: Unter sechzehn Grad droht Schimmel. Eine Sanierung frisst die Ersparnis von Jahren (S, prüfen).",
     "teamfarben": "Rot #E63946 (ein Zimmer) / Blau #3D8BFF (alle gleichmäßig)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; @rechnetsichdas („Heizung nachts aus“, 22,2k) und @alltagsduell behandeln die Nachtabsenkung, nicht die Raumaufteilung · Themen-Logik: dieselbe Entscheidung (wie heize ich die Wohnung), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; @rechnetsichdas („Heizung nachts aus“, 22,2k) und @alltagsduell behandeln die Nachtabsenkung, nicht die Raumaufteilung · Themen-Logik: dieselbe Entscheidung (wie heize ich die Wohnung), die Alternativen schließen sich aus",
     "caption_vorschlag": "Ein Zimmer heizen oder alle? 🔥 Ich hab's durchgerechnet. Wie heizt du im Winter? 👇 #heizen #heizkosten #winter #wissen #simulation"
   },
   {
@@ -568,7 +568,7 @@
     "wendung_1": "Jeden Monat schmilzt der Wert-Zähler: Nach einem Jahr fehlen schon rund neunzig Euro (B).",
     "wendung_2": "Und das Verrückte: Wenn die neuen Modelle kommen, fällt der Preis in einem Monat so stark wie sonst in drei (S, prüfen).",
     "teamfarben": "Grün #2ECC71 (verkaufen) / Pink #FF4FA3 (behalten)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (was mache ich mit dem alten Handy), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (was mache ich mit dem alten Handy), die Alternativen schließen sich aus",
     "caption_vorschlag": "Altes Handy verkaufen oder behalten? 📱 Ich hab's durchgerechnet. Wie viele liegen bei dir in der Schublade? 👇 #handy #smartphone #geld #wissen #simulation"
   },
   {
@@ -590,7 +590,7 @@
     "wendung_1": "Im November stoppt der Kosten-Zähler beim Saisonkennzeichen, beim anderen läuft er weiter (B).",
     "wendung_2": "Und das Verrückte: Ein einziger sonniger Wintertag mit Fahrverbot. Wer trotzdem fährt, riskiert Bußgeld und Versicherungsschutz (Regeln prüfen).",
     "teamfarben": "Orange #FF8A3D (Saisonkennzeichen) / Petrol #1A8C8C (ganzjährig)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Art der Zulassung), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Art der Zulassung), die Alternativen schließen sich aus",
     "caption_vorschlag": "Saisonkennzeichen oder ganzjährig? 🏍️ Ich hab's durchgerechnet. Fährst du auch im Winter? 👇 #motorrad #saisonkennzeichen #kfzversicherung #wissen #simulation"
   },
   {
@@ -612,7 +612,7 @@
     "wendung_1": "Im ersten Jahr liegen beide fast gleichauf: 773 Euro netto gegen fünf freie Tage im Wert von rund sechshundert Euro (Rechnung).",
     "wendung_2": "Und das Verrückte: Nach zehn Jahren hat die Erhöhung mit allen Folgeerhöhungen über achttausend Euro gebracht, der Urlaub fünfzig freie Tage (B).",
     "teamfarben": "Blau #3D8BFF (mehr Gehalt) / Grün #2ECC71 (mehr Urlaub)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Angebot in der Gehaltsverhandlung), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Angebot in der Gehaltsverhandlung), die Alternativen schließen sich aus",
     "caption_vorschlag": "3 % mehr Gehalt oder 5 Tage mehr Urlaub? 🏖️ Ich hab's durchgerechnet. Was nimmst du? 👇 #gehalt #urlaub #gehaltsverhandlung #wissen #simulation"
   },
   {
@@ -634,7 +634,7 @@
     "wendung_1": "Nach zwei Wintern ist die billige kaputt, die teure läuft weiter. Trotzdem liegen beide fast gleichauf (B).",
     "wendung_2": "Und das Verrückte: Verkaufst du die teure nach acht Jahren weiter, gewinnt sie. Ohne Wiederverkauf entscheidet ein einziger Reißverschluss (B).",
     "teamfarben": "Koralle #FF5A5F (billige Jacke) / Petrol #1A8C8C (teure Jacke)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden (auch WebSearch 31.10.) · Themen-Logik: dieselbe Kaufentscheidung (welche Jacke), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden (auch WebSearch 31.10.) · Themen-Logik: dieselbe Kaufentscheidung (welche Jacke), die Alternativen schließen sich aus",
     "caption_vorschlag": "Billige oder teure Winterjacke? 🧥 Ich hab's durchgerechnet. Team günstig oder Team Qualität? 👇 #winterjacke #kleidung #sparen #wissen #simulation"
   },
   {
@@ -656,7 +656,7 @@
     "wendung_1": "Nach einem Jahr hat das Tagesgeld rund zweihundertfünfzig Euro mehr. Das Girokonto zeigt dieselbe Zahl wie am ersten Tag (B).",
     "wendung_2": "Und das Verrückte: Die Zahl bleibt gleich, aber der Einkauf wird teurer. Das Tagesgeld rettet nur den Wert, reich macht es nicht (B).",
     "teamfarben": "Rot #E63946 (Girokonto) / Grün #2ECC71 (Tagesgeld)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; „Dein Geld schrumpft“ (@geldsimuliert, 534) behandelt nur die Inflation und bleibt gesperrt, hier geht es um den Ort des Notgroschens · Idee aus US: @humphreytalks „Overfunding your emergency fund“ (298,2k), eigener Winkel · Themen-Logik: dieselbe Entscheidung (wo parke ich den Notgroschen), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; „Dein Geld schrumpft“ (@geldsimuliert, 534) behandelt nur die Inflation und bleibt gesperrt, hier geht es um den Ort des Notgroschens · Idee aus US: @humphreytalks „Overfunding your emergency fund“ (298,2k), eigener Winkel · Themen-Logik: dieselbe Entscheidung (wo parke ich den Notgroschen), die Alternativen schließen sich aus",
     "caption_vorschlag": "Notgroschen auf dem Girokonto oder Tagesgeld? 🏦 Ich hab's durchgerechnet. Wo liegt deiner? 👇 #notgroschen #tagesgeld #zinsen #wissen #simulation"
   },
   {
@@ -678,7 +678,7 @@
     "wendung_1": "Nach fünf Jahren liegt der Hund bei den Kosten weit vorn: Hundesteuer, Futter, Versicherung (B).",
     "wendung_2": "Und das Verrückte: Die Katze lebt im Schnitt länger. Die letzten Jahre beim Tierarzt holen fast den ganzen Rückstand auf (B, prüfen).",
     "teamfarben": "Orange #FF8A3D (Hund) / Violett #8E6CFF (Katze)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden (auch WebSearch 31.10.) · Themen-Logik: dieselbe Entscheidung (welches Haustier), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden (auch WebSearch 31.10.) · Themen-Logik: dieselbe Entscheidung (welches Haustier), die Alternativen schließen sich aus",
     "caption_vorschlag": "Hund oder Katze? 🐶🐱 Ich hab's durchgerechnet. Team Hund oder Team Katze? 👇 #hund #katze #haustier #wissen #simulation"
   },
   {
@@ -700,7 +700,7 @@
     "wendung_1": "Am ersten Tag liegt das Auto drei Minuten vorn. Aber sein Kosten-Zähler läuft jeden Tag, auch am Wochenende (B).",
     "wendung_2": "Und das Verrückte: Die Pendlerpauschale gibt es fürs Fahrrad genauso wie fürs Auto (F). Nach fünf Jahren trennen beide über fünfzehntausend Euro (B).",
     "teamfarben": "Grün #2ECC71 (E-Bike) / Rot #E63946 (Zweitwagen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; Rad gegen Auto als reines Zeitrennen bei @fabrik.neu (klein), ohne Geld · Themen-Logik: dieselbe Entscheidung (Zweitwagen ja oder E-Bike), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; Rad gegen Auto als reines Zeitrennen bei @fabrik.neu (klein), ohne Geld · Themen-Logik: dieselbe Entscheidung (Zweitwagen ja oder E-Bike), die Alternativen schließen sich aus",
     "caption_vorschlag": "E-Bike oder Zweitwagen? 🚲 Ich hab's durchgerechnet. Wie fährst du zur Arbeit? 👇 #ebike #pendeln #autokosten #wissen #simulation"
   },
   {
@@ -722,7 +722,7 @@
     "wendung_1": "Im ersten Jahr liegt die Konsole sechshundert Euro vorn. Dann kommen das Online-Abo und die vollen Spielpreise (B).",
     "wendung_2": "Und das Verrückte: Nach ca. vier Jahren überholt der PC. Aber genau das Spiel, auf das heute alle warten, gibt es erst mal nur auf der Konsole (B, prüfen).",
     "teamfarben": "Blau #3D8BFF (Konsole) / Rot #E63946 (Gaming-PC)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (womit zocke ich), die Alternativen schließen sich aus · kein Kaufaufruf, keine Marken",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (womit zocke ich), die Alternativen schließen sich aus · kein Kaufaufruf, keine Marken",
     "caption_vorschlag": "Konsole oder Gaming-PC? 🎮 Ich hab's durchgerechnet. Worauf zockst du GTA 6? 👇 #gaming #gta6 #konsole #wissen #simulation"
   },
   {
@@ -744,7 +744,7 @@
     "wendung_1": "In ruhigen Jahren zieht die Staffel davon, die Indexmiete steigt nur um zwei Prozent (B).",
     "wendung_2": "Und das Verrückte: Ein einziges Krisenjahr wie 2022 holt bei der Indexmiete den ganzen Vorsprung auf einmal (B, prüfen).",
     "teamfarben": "Petrol #1A8C8C (Staffelmiete) / Orange #FF8A3D (Indexmiete)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welcher Mietvertrag), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welcher Mietvertrag), die Alternativen schließen sich aus",
     "caption_vorschlag": "Staffelmiete oder Indexmiete? 🏢 Ich hab's durchgerechnet. Was steht in deinem Vertrag? 👇 #miete #indexmiete #mietvertrag #wissen #simulation"
   },
   {
@@ -766,7 +766,7 @@
     "wendung_1": "An der Kasse liegt Team selbst vorn. Aber die Uhr läuft: Hinfahren, Suchen, Anstehen, Schleppen (B).",
     "wendung_2": "Und das Verrückte: Wer im Laden zwei Dinge mehr kauft als geplant, zahlt am Ende mehr als die Liefergebühr (S, prüfen).",
     "teamfarben": "Türkis #2EC4B6 (liefern lassen) / Koralle #FF5A5F (selbst einkaufen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie kommt der Wocheneinkauf nach Hause), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie kommt der Wocheneinkauf nach Hause), die Alternativen schließen sich aus",
     "caption_vorschlag": "Liefern lassen oder selbst einkaufen? 🛒 Ich hab's durchgerechnet. Wie kaufst du ein? 👇 #einkaufen #lieferdienst #supermarkt #wissen #simulation"
   },
   {
@@ -788,7 +788,7 @@
     "wendung_1": "Jeden Monat führt drei fünf. Dann kommt der Steuerbescheid (B).",
     "wendung_2": "Und das Verrückte: Am Ende zahlen beide fast gleich viel Steuern. Aber beim Elterngeld kann die Steuerklasse Tausende ausmachen (B, prüfen).",
     "teamfarben": "Blau #3D8BFF (3/5) / Grün #2ECC71 (4/4)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Steuerklassen-Kombination), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Steuerklassen-Kombination), die Alternativen schließen sich aus",
     "caption_vorschlag": "Steuerklasse 3/5 oder 4/4? 💍 Ich hab's durchgerechnet. Welche Kombi habt ihr? 👇 #steuerklasse #steuern #ehe #wissen #simulation"
   },
   {
@@ -810,7 +810,7 @@
     "wendung_1": "Die neue Maschine startet mit zweihundertsiebzig Euro Rückstand. Ihr Stromspar-Zähler holt nur ein paar Euro im Jahr auf (B).",
     "wendung_2": "Und das Verrückte: Mit Reparaturbonus kostet die Reparatur nur noch die Hälfte. Dann müsste die neue Maschine über zwanzig Jahre laufen, um aufzuholen (B, prüfen).",
     "teamfarben": "Petrol #1A8C8C (reparieren) / Koralle #FF5A5F (neu kaufen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (was tun mit der kaputten Maschine), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (was tun mit der kaputten Maschine), die Alternativen schließen sich aus",
     "caption_vorschlag": "Reparieren oder neu kaufen? 🔧 Ich hab's durchgerechnet. Was hättest du gemacht? 👇 #waschmaschine #reparieren #sparen #wissen #simulation"
   },
   {
@@ -832,7 +832,7 @@
     "wendung_1": "Die Spritkosten halbieren sich sofort. Und die Pendlerpauschale? Die bekommt jeder voll, auch der Mitfahrer (F, prüfen).",
     "wendung_2": "Und das Verrückte: Schon fünf Kilometer Umweg zum Abholen fressen ein Drittel der Ersparnis (B).",
     "teamfarben": "Grün #2ECC71 (Fahrgemeinschaft) / Blau #3D8BFF (allein)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie fahre ich zur Arbeit), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie fahre ich zur Arbeit), die Alternativen schließen sich aus",
     "caption_vorschlag": "Fahrgemeinschaft oder allein fahren? 🚗 Ich hab's durchgerechnet. Fährst du mit jemandem? 👇 #fahrgemeinschaft #pendeln #pendlerpauschale #wissen #simulation"
   },
   {
@@ -854,7 +854,7 @@
     "wendung_1": "Nach dem dritten Schnitt hat sich der Haarschneider bezahlt gemacht (B).",
     "wendung_2": "Und das Verrückte: Ein einziger misslungener Schnitt mit Rettung beim Friseur kostet so viel wie drei normale (B).",
     "teamfarben": "Violett #8E6CFF (selbst) / Orange #FF8A3D (Friseur)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wer schneidet die Haare), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wer schneidet die Haare), die Alternativen schließen sich aus",
     "caption_vorschlag": "Haare selbst schneiden oder Friseur? ✂️ Ich hab's durchgerechnet. Traust du dich selbst? 👇 #friseur #haareschneiden #sparen #wissen #simulation"
   },
   {
@@ -876,7 +876,7 @@
     "wendung_1": "Die Leasingrate sieht teuer aus. Aber sie geht vom Brutto ab, Steuer und Abgaben sinken mit (B).",
     "wendung_2": "Und das Verrückte: Das gesparte Geld fehlt später ein kleines bisschen bei der Rente, für jeden Monat Leasing (B, Rechnung prüfen).",
     "teamfarben": "Türkis #2EC4B6 (Dienstrad) / Rot #E63946 (selbst kaufen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie bezahle ich das Rad), die Alternativen schließen sich aus · „Jobrad“ ist eine Marke, im Video heißt es „Dienstrad“",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie bezahle ich das Rad), die Alternativen schließen sich aus · „Jobrad“ ist eine Marke, im Video heißt es „Dienstrad“",
     "caption_vorschlag": "E-Bike leasen oder selbst kaufen? 🚲 Ich hab's durchgerechnet. Hast du ein Dienstrad? 👇 #dienstrad #ebike #gehalt #wissen #simulation"
   },
   {
@@ -898,7 +898,7 @@
     "wendung_1": "Im ersten Monat liegt die Brille klar hinten. Aber jeder Monat Linsen kostet neu (B).",
     "wendung_2": "Und das Verrückte: Fast alle Linsenträger brauchen trotzdem eine Brille für abends. Dann zahlst du beides (S, prüfen).",
     "teamfarben": "Blau #3D8BFF (Brille) / Pink #FF4FA3 (Kontaktlinsen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welche Sehhilfe), die Alternativen werden gegeneinander abgewogen",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welche Sehhilfe), die Alternativen werden gegeneinander abgewogen",
     "caption_vorschlag": "Brille oder Kontaktlinsen? 👓 Ich hab's durchgerechnet. Was trägst du? 👇 #brille #kontaktlinsen #sparen #wissen #simulation"
   },
   {
@@ -920,7 +920,7 @@
     "wendung_1": "Nach zwölf Raten hat Team monatlich dreißig Euro mehr bezahlt, für dieselbe Versicherung (B).",
     "wendung_2": "Und das Verrückte: Umgerechnet ist die Ratenzahlung ein Kredit zu fast zehn Prozent Zins (Rechnung aus B). So teuer wie ein Dispo.",
     "teamfarben": "Grün #2ECC71 (jährlich) / Rot #E63946 (monatlich)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; das alte Planthema „Kfz-Schaden melden“ (@clauseinars) liegt in der Reserve · Themen-Logik: dieselbe Entscheidung (Zahlweise), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; das alte Planthema „Kfz-Schaden melden“ (@clauseinars) liegt in der Reserve · Themen-Logik: dieselbe Entscheidung (Zahlweise), die Alternativen schließen sich aus",
     "caption_vorschlag": "Kfz-Versicherung jährlich oder monatlich? 🚙 Ich hab's durchgerechnet. Wie zahlst du? 👇 #kfzversicherung #versicherung #sparen #wissen #simulation"
   },
   {
@@ -942,7 +942,7 @@
     "wendung_1": "Der Rabatt-Zähler zeigt dreißig Prozent. Aber der Preis wurde schon im Oktober angehoben, und das Dreißig-Tage-Gesetz greift nur zum Teil (B, prüfen).",
     "wendung_2": "Und das Verrückte: Im Januar fällt der Preis bei vielen Geräten noch einmal, ganz ohne Werbung (S, prüfen).",
     "teamfarben": "Koralle #FF5A5F (Black Friday) / Türkis #2EC4B6 (Januar)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; das alte Planthema „Streichpreis-Check“ ist hier zur echten Zeitpunkt-Entscheidung umgebaut · Themen-Logik: dieselbe Entscheidung (wann kaufe ich), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; das alte Planthema „Streichpreis-Check“ ist hier zur echten Zeitpunkt-Entscheidung umgebaut · Themen-Logik: dieselbe Entscheidung (wann kaufe ich), die Alternativen schließen sich aus",
     "caption_vorschlag": "Black Friday oder Januar? 🛍️ Ich hab's durchgerechnet. Wartest du lieber ab? 👇 #blackfriday #rabatt #sparen #wissen #simulation"
   },
   {
@@ -964,7 +964,7 @@
     "wendung_1": "Bei Anreise liegt die Ferienwohnung zweitausend Euro vorn. Dann kommen Einkauf, Restaurant und das erste Eis (B).",
     "wendung_2": "Und das Verrückte: Wer jeden Abend essen geht, zahlt am Ende mehr als All-inclusive (B).",
     "teamfarben": "Pink #FF4FA3 (All-inclusive) / Grün #2ECC71 (Ferienwohnung)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie machen wir Urlaub), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie machen wir Urlaub), die Alternativen schließen sich aus",
     "caption_vorschlag": "All-inclusive oder Ferienwohnung? 🌴 Ich hab's durchgerechnet. Wie macht ihr Urlaub? 👇 #urlaub #allinclusive #ferienwohnung #wissen #simulation"
   },
   {
@@ -986,7 +986,7 @@
     "wendung_1": "Nach einer Stunde Kippen ist die Wand am Fenster kalt, der Heizkörper arbeitet dagegen an (B).",
     "wendung_2": "Und das Verrückte: Fünf Minuten weit offen tauschen mehr Luft als eine Stunde Kippen (S, prüfen). Am Ende kostet der kleine Spalt am meisten.",
     "teamfarben": "Blau #3D8BFF (Stoßlüften) / Orange #FF8A3D (Kippfenster)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden (auch WebSearch 31.10.) · Themen-Logik: dieselbe Entscheidung (wie lüfte ich), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden (auch WebSearch 31.10.) · Themen-Logik: dieselbe Entscheidung (wie lüfte ich), die Alternativen schließen sich aus",
     "caption_vorschlag": "Stoßlüften oder Kippfenster? 🪟 Ich hab's durchgerechnet. Wie lüftest du? 👇 #lüften #heizkosten #winter #wissen #simulation"
   },
   {
@@ -1008,7 +1008,7 @@
     "wendung_1": "Jedes Jahr Warten legt einen Preis-Zähler drauf, ohne dass du eine Stunde gefahren bist (B).",
     "wendung_2": "Und das Verrückte: Kommt die Reform, kann Warten plötzlich billiger sein (prüfen). Das Gesetz entscheidet, nicht die Fahrschule.",
     "teamfarben": "Orange #FF8A3D (jetzt) / Violett #8E6CFF (in drei Jahren)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wann mache ich den Führerschein), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wann mache ich den Führerschein), die Alternativen schließen sich aus",
     "caption_vorschlag": "Führerschein jetzt oder später? 🚦 Ich hab's durchgerechnet. Was hat deiner gekostet? 👇 #führerschein #fahrschule #kosten #wissen #simulation"
   },
   {
@@ -1030,7 +1030,7 @@
     "wendung_1": "Nach einem Jahr hat der Kasten schon über hundert Euro gekostet, die Leitung gut einen (B).",
     "wendung_2": "Und das Verrückte: In dreißig Jahren reicht der Unterschied für einen Gebrauchtwagen (B). Und geschleppt hast du dafür über sechzehn Tonnen (Rechnung).",
     "teamfarben": "Türkis #2EC4B6 (Leitungswasser) / Koralle #FF5A5F (Kasten)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden (auch WebSearch 31.10.) · Themen-Logik: dieselbe Entscheidung (was trinke ich), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden (auch WebSearch 31.10.) · Themen-Logik: dieselbe Entscheidung (was trinke ich), die Alternativen schließen sich aus",
     "caption_vorschlag": "Leitungswasser oder Kasten? 💧 Ich hab's durchgerechnet. Was trinkst du? 👇 #wasser #leitungswasser #sparen #wissen #simulation"
   },
   {
@@ -1052,7 +1052,7 @@
     "wendung_1": "Im ersten Jahr gewinnt die Prämie klar: rund fünfhundertfünfzig gegen dreihundertdreißig Euro netto (Rechnung prüfen).",
     "wendung_2": "Und das Verrückte: Die fünfzig Euro kommen jedes Jahr wieder und wachsen mit jeder Erhöhung. Nach knapp zwei Jahren überholen sie (B).",
     "teamfarben": "Orange #FF8A3D (Prämie) / Blau #3D8BFF (50 € mehr)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Angebot des Arbeitgebers: einmal oder dauerhaft), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Angebot des Arbeitgebers: einmal oder dauerhaft), die Alternativen schließen sich aus",
     "caption_vorschlag": "1.000 € Prämie oder 50 € mehr im Monat? 💶 Ich hab's durchgerechnet. Was würdest du nehmen? 👇 #gehalt #weihnachtsgeld #gehaltserhöhung #wissen #simulation"
   },
   {
@@ -1074,7 +1074,7 @@
     "wendung_1": "Der zweite Rabatt rechnet nicht vom alten Preis, sondern vom schon reduzierten. Es fehlen fünfzig Euro (Rechnung).",
     "wendung_2": "Und das Verrückte: Ob erst zwanzig oder erst fünfundzwanzig Prozent, das Ergebnis bleibt gleich. Entscheidend ist der Preis, von dem aus gerechnet wird (Rechnung, § 11 PAngV).",
     "teamfarben": "Violett #8E6CFF (45 % sofort) / Orange #FF8A3D (25 % plus 20 %)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (zwei Angebote für dasselbe Gerät), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (zwei Angebote für dasselbe Gerät), die Alternativen schließen sich aus",
     "caption_vorschlag": "45 % Rabatt oder 25 % plus 20 %? 🏷️ Ich hab's durchgerechnet. Hättest du es gewusst? 👇 #blackfriday #rabatt #prozentrechnung #wissen #simulation"
   },
   {
@@ -1096,7 +1096,7 @@
     "wendung_1": "Nach drei Monaten gehst du nur noch einmal pro Woche. Der Preis pro Besuch springt nach oben (S, prüfen).",
     "wendung_2": "Und das Verrückte: Wer vor Monat sechzehn aufhört, hätte mit dem teureren Monatsvertrag gespart (Rechnung aus B).",
     "teamfarben": "Rot #E63946 (24 Monate) / Türkis #2EC4B6 (monatlich kündbar)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; das alte Planthema „Fitnessstudio oder joggen“ ist hier zur Vertragsentscheidung umgebaut · Themen-Logik: dieselbe Entscheidung (welcher Vertrag), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; das alte Planthema „Fitnessstudio oder joggen“ ist hier zur Vertragsentscheidung umgebaut · Themen-Logik: dieselbe Entscheidung (welcher Vertrag), die Alternativen schließen sich aus",
     "caption_vorschlag": "24 Monate Vertrag oder monatlich kündbar? 🏋️ Ich hab's durchgerechnet. Wie lange gehst du wirklich? 👇 #fitnessstudio #vertrag #sparen #wissen #simulation"
   },
   {
@@ -1118,7 +1118,7 @@
     "wendung_1": "Im ersten Jahr liegt der Waschsalon vorn, die Maschine startet mit vierhundert Euro Minus (B).",
     "wendung_2": "Und das Verrückte: Wer nur alle zwei Wochen wäscht, ist im Salon noch nach fünf Jahren günstiger (B).",
     "teamfarben": "Petrol #1A8C8C (Waschsalon) / Pink #FF4FA3 (eigene Maschine)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden; Wäsche-Duelle Trockner gegen Leine (@alltaginzahlen, @alltagsformel) sind eine andere Frage · Themen-Logik: dieselbe Entscheidung (wo wasche ich), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden; Wäsche-Duelle Trockner gegen Leine (@alltaginzahlen, @alltagsformel) sind eine andere Frage · Themen-Logik: dieselbe Entscheidung (wo wasche ich), die Alternativen schließen sich aus",
     "caption_vorschlag": "Waschsalon oder eigene Waschmaschine? 🧺 Ich hab's durchgerechnet. Ab wie vielen Wäschen lohnt sie sich? 👇 #waschmaschine #waschsalon #sparen #wissen #simulation"
   },
   {
@@ -1140,7 +1140,7 @@
     "wendung_1": "Monat für Monat sammelt der Dispo mehr Zinsen, aber der Abstand ist kleiner als gedacht (B).",
     "wendung_2": "Und das Verrückte: Zahlst du nach drei Monaten schon die Hälfte zurück, gewinnt plötzlich der Dispo (B). Entscheidend ist, wie schnell das Minus weg ist.",
     "teamfarben": "Rot #E63946 (Dispo) / Blau #3D8BFF (Ratenkredit)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie überbrücke ich das Minus), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie überbrücke ich das Minus), die Alternativen schließen sich aus",
     "caption_vorschlag": "Dispo oder Ratenkredit? 🏦 Ich hab's durchgerechnet. Warst du schon mal im Minus? 👇 #dispo #kredit #zinsen #wissen #simulation"
   },
   {
@@ -1162,7 +1162,7 @@
     "wendung_1": "Im ersten Advent liegt der echte Baum hundert Euro vorn. Aber jedes Jahr kommt ein neuer dazu (B).",
     "wendung_2": "Und das Verrückte: Ab dem vierten Weihnachten ist der künstliche billiger. Doch wer ihn nach fünf Jahren wegwirft, hat kaum gespart (B, prüfen).",
     "teamfarben": "Grün #2ECC71 (echter Baum) / Violett #8E6CFF (künstlicher Baum)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welcher Baum), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welcher Baum), die Alternativen schließen sich aus",
     "caption_vorschlag": "Echter Baum oder künstlicher? 🎄 Ich hab's durchgerechnet. Was steht bei euch? 👇 #weihnachtsbaum #weihnachten #sparen #wissen #simulation"
   },
   {
@@ -1184,7 +1184,7 @@
     "wendung_1": "Nach der ersten Wand liegt Team selbst vorn. Dann kommt das Abkleben, und die Uhr läuft (B).",
     "wendung_2": "Und das Verrückte: Beim Maler zahlt das Finanzamt ein Fünftel des Lohns zurück. Der Vorsprung schrumpft auf wenige hundert Euro (B).",
     "teamfarben": "Orange #FF8A3D (selbst) / Türkis #2EC4B6 (Maler)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wer streicht), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wer streicht), die Alternativen schließen sich aus",
     "caption_vorschlag": "Selbst streichen oder Maler? 🖌️ Ich hab's durchgerechnet. Streichst du selbst? 👇 #renovieren #streichen #handwerker #wissen #simulation"
   },
   {
@@ -1206,7 +1206,7 @@
     "wendung_1": "Die ersten zwei Jahre deckt schon das Gesetz ab. Die Garantie zahlt erst ab Jahr drei (prüfen, B).",
     "wendung_2": "Und das Verrückte: Legst du den Garantie-Preis einfach zur Seite, bleibt bei fast allen Geräten mehr übrig, als eine Reparatur kostet (B, prüfen).",
     "teamfarben": "Petrol #1A8C8C (Garantie) / Koralle #FF5A5F (Risiko selbst)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Garantie dazu oder nicht), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Garantie dazu oder nicht), die Alternativen schließen sich aus",
     "caption_vorschlag": "Garantieverlängerung oder Risiko selbst tragen? 🧾 Ich hab's durchgerechnet. Nimmst du sie? 👇 #garantie #elektronik #sparen #wissen #simulation"
   },
   {
@@ -1228,7 +1228,7 @@
     "wendung_1": "Bei acht Personen sind es nicht acht Geschenke, sondern sechsundfünfzig (Rechnung).",
     "wendung_2": "Und das Verrückte: Beim ersten Losen zieht mit über sechzig Prozent Wahrscheinlichkeit mindestens einer sich selbst (Rechnung). Dann geht alles von vorn los.",
     "teamfarben": "Rot #E63946 (jeder beschenkt jeden) / Grün #2ECC71 (Wichteln)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden (auch WebSearch 31.10.) · Themen-Logik: dieselbe Entscheidung (wie beschenken wir uns), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden (auch WebSearch 31.10.) · Themen-Logik: dieselbe Entscheidung (wie beschenken wir uns), die Alternativen schließen sich aus",
     "caption_vorschlag": "Wichteln oder jeder beschenkt jeden? 🎁 Ich hab's durchgerechnet. Wie macht ihr es? 👇 #wichteln #weihnachten #geschenke #wissen #simulation"
   },
   {
@@ -1250,7 +1250,7 @@
     "wendung_1": "Im Dezember gekauft, zählt er schon für 2026. Die Erstattung kommt ein ganzes Jahr früher (B).",
     "wendung_2": "Und das Verrückte: Liegst du sonst unter dem Pauschbetrag, bringt der Laptop fast nichts. Erst zusammen mit anderen Kosten springt die Erstattung an (Rechnung, prüfen).",
     "teamfarben": "Blau #3D8BFF (Dezember) / Orange #FF8A3D (Januar)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Zeitpunkt einer geplanten Anschaffung), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (Zeitpunkt einer geplanten Anschaffung), die Alternativen schließen sich aus",
     "caption_vorschlag": "Laptop im Dezember oder im Januar kaufen? 💻 Ich hab's durchgerechnet. Setzt du Arbeitsmittel ab? 👇 #steuern #steuererklärung #werbungskosten #wissen #simulation"
   },
   {
@@ -1272,7 +1272,7 @@
     "wendung_1": "Nach einem Monat steht die Putzhilfe bei rund zweihundert Euro, Team selbst bei null. Aber zwölf Stunden Freizeit sind weg (B).",
     "wendung_2": "Und das Verrückte: Mit dem Steuerbonus kostet die Stunde Putzhilfe kaum mehr als dein eigener Netto-Stundenlohn (B, prüfen).",
     "teamfarben": "Violett #8E6CFF (Putzhilfe) / Koralle #FF5A5F (selbst)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wer putzt), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wer putzt), die Alternativen schließen sich aus",
     "caption_vorschlag": "Putzhilfe oder selbst putzen? 🧽 Ich hab's durchgerechnet. Was ist dir deine Freizeit wert? 👇 #putzen #haushalt #steuern #wissen #simulation"
   },
   {
@@ -1294,7 +1294,7 @@
     "wendung_1": "Bis zum Sommer liegt der Dauerauftrag klar vorn. Die Challenge hat erst die kleinen Beträge (Rechnung).",
     "wendung_2": "Und das Verrückte: Am Ende stehen beide bei genau 1.378 Euro. Nur verlangt die Challenge im Dezember über zweihundert Euro in vier Wochen (Rechnung).",
     "teamfarben": "Orange #FF8A3D (52-Wochen-Challenge) / Blau #3D8BFF (Dauerauftrag)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie spare ich nächstes Jahr), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie spare ich nächstes Jahr), die Alternativen schließen sich aus",
     "caption_vorschlag": "52-Wochen-Challenge oder Dauerauftrag? 🐷 Ich hab's durchgerechnet. Startest du 2027? 👇 #sparen #52wochenchallenge #geld #wissen #simulation"
   },
   {
@@ -1316,7 +1316,7 @@
     "wendung_1": "Der Gutschein-Zähler schrumpft: Ein Teil wird vergessen, ein Teil verfällt (S, prüfen).",
     "wendung_2": "Und das Verrückte: Restbeträge von ein paar Euro bleiben fast immer liegen. Am Ende kommen vom Gutschein nur rund vier Fünftel an (B, prüfen).",
     "teamfarben": "Pink #FF4FA3 (Gutschein) / Grün #2ECC71 (Bargeld)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (was schenke ich), die Alternativen schließen sich aus",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (was schenke ich), die Alternativen schließen sich aus",
     "caption_vorschlag": "Gutschein oder Bargeld schenken? 🎁 Ich hab's durchgerechnet. Was schenkst du lieber? 👇 #geschenke #weihnachten #gutschein #wissen #simulation"
   },
   {
@@ -1338,7 +1338,7 @@
     "wendung_1": "Nach zwanzig Runden kassiert Orange schon öfter, weil alle aus dem Gefängnis genau dort landen (Rechnung).",
     "wendung_2": "Und das Verrückte: Pro investiertem Euro schlägt Orange die Schlossallee deutlich (Rechnung).",
     "teamfarben": "Blau #3D8BFF (Schlossallee) / Orange #FF8A3D (orange Straßen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht geprüft am 02.11. · Themen-Logik: dieselbe Entscheidung im Spiel (welche Straßen kaufe ich)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht geprüft am 02.11. · Themen-Logik: dieselbe Entscheidung im Spiel (welche Straßen kaufe ich)",
     "caption_vorschlag": "Schlossallee oder die orangen Straßen? 🎲 Ich hab's durchgerechnet. Welche kaufst du zuerst? 👇 #monopoly #brettspiel #strategie #wissen #simulation"
   },
   {
@@ -1360,7 +1360,7 @@
     "wendung_1": "Im ersten Jahr spart das Melden achthundert Euro. Dann steigt der Beitrag, Jahr für Jahr (B).",
     "wendung_2": "Und das Verrückte: Nach fünf Jahren hat die Rückstufung mehr gekostet als der Schaden (B, prüfen).",
     "teamfarben": "Rot #E63946 (melden) / Grün #2ECC71 (selbst zahlen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): @clauseinars (deutsches TikTok, Aufrufe nicht geprüft) · Themen-Logik: dieselbe Entscheidung (wie reguliere ich den Schaden)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): @clauseinars (deutsches TikTok, Aufrufe nicht geprüft) · Themen-Logik: dieselbe Entscheidung (wie reguliere ich den Schaden)",
     "caption_vorschlag": "Kfz-Schaden melden oder selbst zahlen? 🚗 Ich hab's durchgerechnet. Was hättest du gemacht? 👇 #kfzversicherung #autoversicherung #schaden #wissen #simulation"
   },
   {
@@ -1382,7 +1382,7 @@
     "wendung_1": "Nach einem Jahr hat die Grundversorgung rund zweihundert Euro mehr gekostet (B).",
     "wendung_2": "Und das Verrückte: Der Neukundentarif steigt im zweiten Jahr oft wieder (S, prüfen).",
     "teamfarben": "Rot #E63946 (Grundversorgung) / Türkis #2EC4B6 (Neukundentarif)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welcher Tarif)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welcher Tarif)",
     "caption_vorschlag": "Grundversorgung oder neuer Stromtarif? ⚡ Ich hab's durchgerechnet. Wann hast du zuletzt gewechselt? 👇 #strom #strompreis #sparen #wissen #simulation"
   },
   {
@@ -1404,7 +1404,7 @@
     "wendung_1": "Im Monat sind es nur knapp neun Euro (Rechnung aus B).",
     "wendung_2": "Und das Verrückte: Über zehn Jahre und mit Erhöhungen werden daraus mehr als tausend Euro (B, prüfen).",
     "teamfarben": "Blau #3D8BFF (bleiben) / Grün #2ECC71 (wechseln)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welche Kasse)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welche Kasse)",
     "caption_vorschlag": "Krankenkasse wechseln oder bleiben? 🏥 Ich hab's durchgerechnet. Hast du schon mal gewechselt? 👇 #krankenkasse #zusatzbeitrag #sparen #wissen #simulation"
   },
   {
@@ -1426,7 +1426,7 @@
     "wendung_1": "Im ersten Jahr spart der neue nur rund neunzig Euro, bezahlt hat er sechshundert (B).",
     "wendung_2": "Und das Verrückte: Erst nach sechs bis sieben Jahren ist der Tausch im Plus (B).",
     "teamfarben": "Blau #3D8BFF (alter Kühlschrank) / Orange #FF8A3D (neuer Kühlschrank)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (behalten oder tauschen)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (behalten oder tauschen)",
     "caption_vorschlag": "Alter oder neuer Kühlschrank? 🧊 Ich hab's durchgerechnet. Wie alt ist deiner? 👇 #kühlschrank #strom #sparen #wissen #simulation"
   },
   {
@@ -1448,7 +1448,7 @@
     "wendung_1": "Bis zum siebten Einsatz liegt Leihen vorn (B).",
     "wendung_2": "Und das Verrückte: Viele Bohrmaschinen laufen im ganzen Leben nur wenige Minuten (S, prüfen).",
     "teamfarben": "Orange #FF8A3D (kaufen) / Blau #3D8BFF (leihen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (kaufen oder leihen)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (kaufen oder leihen)",
     "caption_vorschlag": "Bohrmaschine kaufen oder leihen? 🔩 Ich hab's durchgerechnet. Wie oft bohrst du? 👇 #werkzeug #heimwerken #sparen #wissen #simulation"
   },
   {
@@ -1470,7 +1470,7 @@
     "wendung_1": "Nach zwei Jahren ist Team hundert Euro fertig, Team Mindestrate hat erst ein Drittel geschafft (B).",
     "wendung_2": "Und das Verrückte: Mit Mindestrate zahlst du am Ende fast so viel Zinsen wie die Schuld selbst (B, prüfen).",
     "teamfarben": "Blau #3D8BFF (feste Rate) / Rot #E63946 (Mindestrate)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie tilge ich)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie tilge ich)",
     "caption_vorschlag": "Mindestrate oder feste 100 €? 💳 Ich hab's durchgerechnet. Wie zahlst du ab? 👇 #kreditkarte #schulden #zinsen #wissen #simulation"
   },
   {
@@ -1492,7 +1492,7 @@
     "wendung_1": "Am Hochzeitstag liegt die große Feier vorn. Danach zählt der Kredit-Zähler (B).",
     "wendung_2": "Und das Verrückte: Nach zehn Jahren kostet die große Feier durch die Zinsen fast das Doppelte (B, prüfen).",
     "teamfarben": "Pink #FF4FA3 (große Hochzeit) / Petrol #1A8C8C (kleine Feier)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: grenzwertig, nur als Entscheidung über die Größe der Feier erzählen",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: grenzwertig, nur als Entscheidung über die Größe der Feier erzählen",
     "caption_vorschlag": "Große Hochzeit oder kleine Feier? 💍 Ich hab's durchgerechnet. Was ist euch wichtiger? 👇 #hochzeit #eigenkapital #finanzen #wissen #simulation"
   },
   {
@@ -1514,7 +1514,7 @@
     "wendung_1": "Nach einer Stunde fehlt eine Schraube, die Uhr läuft weiter (B).",
     "wendung_2": "Und das Verrückte: Mit Steuerbonus kostet der Service weniger als drei Stunden deines Lohns (B).",
     "teamfarben": "Orange #FF8A3D (selbst) / Violett #8E6CFF (Service)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wer baut auf)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wer baut auf)",
     "caption_vorschlag": "Selbst aufbauen oder Aufbauservice? 🪛 Ich hab's durchgerechnet. Wie lange brauchst du? 👇 #möbel #aufbau #sparen #wissen #simulation"
   },
   {
@@ -1536,7 +1536,7 @@
     "wendung_1": "Nach zwei Tagen hat das Wohnmobil schon mehr Sprit verbraucht als die Anreise mit dem Auto (B).",
     "wendung_2": "Und das Verrückte: Erst ab vier Personen liegt das Wohnmobil vorn (B).",
     "teamfarben": "Grün #2ECC71 (Wohnmobil) / Pink #FF4FA3 (Hotel)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie übernachten wir im Urlaub)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wie übernachten wir im Urlaub)",
     "caption_vorschlag": "Wohnmobil mieten oder Hotel? 🚐 Ich hab's durchgerechnet. Wie reist du lieber? 👇 #wohnmobil #urlaub #reisen #wissen #simulation"
   },
   {
@@ -1558,7 +1558,7 @@
     "wendung_1": "Im Laden spart gebraucht drei Viertel (B).",
     "wendung_2": "Und das Verrückte: Mit Wiederverkauf schrumpft der Abstand auf fast nichts (B, prüfen).",
     "teamfarben": "Türkis #2EC4B6 (Second Hand) / Koralle #FF5A5F (neu)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wo kaufe ich Kleidung)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wo kaufe ich Kleidung)",
     "caption_vorschlag": "Second Hand oder neu? 👕 Ich hab's durchgerechnet. Kaufst du gebraucht? 👇 #secondhand #kleidung #sparen #wissen #simulation"
   },
   {
@@ -1580,7 +1580,7 @@
     "wendung_1": "Heute kommen netto nur rund fünfhundertfünfzig Euro an, in die Betriebsrente fließen volle tausend (Rechnung prüfen).",
     "wendung_2": "Und das Verrückte: Im Alter holen Steuer und Krankenkasse einen Teil zurück (prüfen).",
     "teamfarben": "Orange #FF8A3D (auszahlen) / Blau #3D8BFF (Betriebsrente)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (was passiert mit dem Bonus)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (was passiert mit dem Bonus)",
     "caption_vorschlag": "Bonus auszahlen oder Betriebsrente? 💼 Ich hab's durchgerechnet. Was machst du mit deinem? 👇 #bonus #betriebsrente #rente #wissen #simulation"
   },
   {
@@ -1602,7 +1602,7 @@
     "wendung_1": "Jede Woche Warten hebt den Preis-Zähler (S, prüfen).",
     "wendung_2": "Und das Verrückte: Manche Züge werden kurz vorher wieder billiger (S, prüfen).",
     "teamfarben": "Rot #E63946 (kurz vorher) / Grün #2ECC71 (früh buchen)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wann buche ich)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (wann buche ich)",
     "caption_vorschlag": "Bahn früh buchen oder kurz vorher? 🚆 Ich hab's durchgerechnet. Wann buchst du? 👇 #bahn #weihnachten #reisen #wissen #simulation"
   },
   {
@@ -1624,7 +1624,7 @@
     "wendung_1": "Der Zuschlag geht an der Steuer vorbei und kommt fast voll an (prüfen).",
     "wendung_2": "Und das Verrückte: Pro Stunde netto steigt der Lohn stärker als brutto (Rechnung prüfen).",
     "teamfarben": "Violett #8E6CFF (Nachtschicht) / Orange #FF8A3D (Tagschicht)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welche Schicht)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): nicht gefunden · Themen-Logik: dieselbe Entscheidung (welche Schicht)",
     "caption_vorschlag": "Nachtschicht oder Tagschicht? 🌙 Ich hab's durchgerechnet. Arbeitest du nachts? 👇 #nachtschicht #gehalt #zuschlag #wissen #simulation"
   },
   {
@@ -1646,7 +1646,7 @@
     "wendung_1": "Allein gewinnt die Bahn klar (B).",
     "wendung_2": "Und das Verrückte: Ab drei Personen dreht es sich (B).",
     "teamfarben": "Orange #FF8A3D (Auto) / Blau #3D8BFF (Bahn)",
-    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, docs/12 §3.4): @wissentogo_de „Auto oder Flieger nach Spanien“ (56,5k, Personen-Wendung) · Themen-Logik: dieselbe Entscheidung (womit fahre ich)",
+    "konkurrenz_check": "Embed-Listen und Videoseiten 02.11. (14 DE-Konten, .claude/skills/simulierbar-video/themen.md §3): @wissentogo_de „Auto oder Flieger nach Spanien“ (56,5k, Personen-Wendung) · Themen-Logik: dieselbe Entscheidung (womit fahre ich)",
     "caption_vorschlag": "Auto oder Bahn nach Hause? 🚆 Ich hab's durchgerechnet. Wie fährst du zu Weihnachten? 👇 #bahn #auto #weihnachten #wissen #simulation"
   }
 ]

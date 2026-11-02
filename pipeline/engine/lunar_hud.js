@@ -1,16 +1,16 @@
-// HUD für Designstil 16 „Lunar-POV“ – NUR Account 2 @stelldirvor.pov (Referenzformat docs/16 §12, Skill .claude/skills/stelldirvor-video/).
+// HUD für Designstil 16 „Lunar-POV“ – NUR Account 2 @stelldirvor.pov (Referenzformat, Skill .claude/skills/stelldirvor-video/).
 // Genau drei Textebenen plus Abspann, alles als HTML über der Three.js-Leinwand (Stile: engine/stil_lunar_pov.css):
 //   1. Titelfrage (Serif, mittig oben)  2. Messwert-Anzeige (Versalien-Etikett, große Serif-Zahl, Unterzeile; links Mitte)
 //   3. ein kurzer kursiver Satz (unten Mitte)  ·  Abblende auf #111111  ·  Abspann: Titelfrage + Faktenzeile in Versalien.
 // Dazu Bild-Ebenen unter dem Text: Vignette, Linsenflecken (Asche, Staub), Wassertropfen, Glasriss.
-// Zeiten gemessen an den 4 Referenzen (Bildvergleich, 30 fps); Titel wie Referenz bis 4,4 s (docs/16 §12, Korrektur 02.11.).
+// Zeiten gemessen an den 4 Referenzen (Bildvergleich, 30 fps); Titel wie Referenz bis 4,4 s (Skill .claude/skills/stelldirvor-video/design.md, Korrektur 02.11.).
 // Keine Sticker, Chips, Karaoke-Untertitel, Folgen-Aufrufe, Logos – das HUD kann sie gar nicht erst darstellen.
 import { clamp, smoothstep, hash } from "./bewegung.js";
 
 /** Standard-Zeiten in s (Referenz in Klammern) */
 export const LP_ZEITEN = {
   titelEin: [0.4, 0.6],       // (0,40–0,63 s, 10–90 %)
-  titelAus: [4.1, 4.4],       // wie Referenz (4,1–4,4 s), Regel docs/16 §12 seit 02.11.
+  titelAus: [4.1, 4.4],       // wie Referenz (4,1–4,4 s), Regel seit 02.11. (Skill .claude/skills/stelldirvor-video/design.md)
   satzBlende: 0.2,            // Ein- und Ausblenden je Satz (gemessen 0,1–0,25 s)
   satzDauer: 4.4,             // Standard-Standzeit eines Satzes (gemessen 3,1–5,3 s, Lücke ≈ 1 s)
   anzeigeEin: [0, 0.01],      // Anzeige steht ab Bild 0 (alle 4 Referenzen)

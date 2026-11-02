@@ -133,12 +133,12 @@ th {{ font-size:7.2pt; letter-spacing:.06em; text-transform:uppercase; color:var
 .seitenumbruch {{ break-before:page; }}
 </style></head><body>
 <div class="kopf"><div><p class="eyebrow">TikTok-Account 2</p><h1>Stell dir vor … (@stelldirvor.pov)</h1></div>
-<div class="stand">Stand {heute}<br>Quelle: CLAUDE.md, ENTSCHEIDUNGEN.md, docs/16 §12, docs/17, Skill stelldirvor-video</div></div>
+<div class="stand">Stand {heute}<br>Quelle: CLAUDE.md (§3, §9, §12), Skill stelldirvor-video (themen-und-plan.md)</div></div>
 
 <h2>1. Steckbrief</h2>
 <div class="raster">
 <div><p class="lab">Nische</p><p>Große, globale „Was wäre, wenn …“-Gedankenexperimente aus Physik, Mathematik, Biologie, Chemie, Astronomie, Geologie und Klima. Ein Ereignis, das du von einem festen Standpunkt aus wachsen siehst, mit echter Rechnung dahinter. Kein Deutschland-Bezug, keine Alltagsthemen, kein „5 Sekunden“-Rahmen (Inhaber 02.11.). Vorbild im Stil: Lunar Animations.</p>
-<p class="lab">Ziel</p><p>Creator Rewards Program (CRP): 10.000 Follower, 100.000 Aufrufe in 30 Tagen, Videos über 1 Minute. Für ca. 1.000 € im Monat braucht es grob 1,4–5 Mio. Aufrufe (Schätzung, docs/16 §6).</p>
+<p class="lab">Ziel</p><p>Creator Rewards Program (CRP): 10.000 Follower, 100.000 Aufrufe in 30 Tagen, Videos über 1 Minute. Für ca. 1.000 € im Monat braucht es grob 1,4–5 Mio. Aufrufe (Schätzung, CLAUDE.md §3).</p>
 <p class="lab">Konto</p><p>Angelegt 01.11. als Privatkonto, Region Deutschland, in Buffer verbunden.</p></div>
 <div><p class="lab">Logo</p><p>„Fragezeichen-Countdown“: Fragezeichen aus Porzellan in einem Ring aus 5 Segmenten, der Punkt ist eine kleine türkise Welt. Koralle #FF4F5A, Türkis #2EC4B6. Nie im Video.</p>
 <p class="lab">Bio</p><p>„Was wäre, wenn …? Du erlebst es live 🌍⏱️ Dein Szenario? 👇“ (ohne Kontaktdaten, CRP-Regel)</p>
@@ -160,7 +160,7 @@ th {{ font-size:7.2pt; letter-spacing:.06em; text-transform:uppercase; color:var
 </div>
 <p class="lab">Ablauf jedes Videos</p>
 <div class="ablauf"><div><b>0–4,4 s</b>Titelfrage</div><div><b>4–30 s</b>Alltag, erste Anzeichen</div><div><b>30–55 s</b>Eskalation in Stufen</div><div><b>55–62 s</b>Höhepunkt: „HIER“</div><div><b>62–70 s</b>Nachspiel</div><div><b>72–80 s</b>Abspann mit Fakt</div></div>
-<p class="lab">Nicht im Video</p><p>Keine Sticker, Chips, Untertitel, Countdown-Ring, Logo, kein Folgen-Aufruf, kein gesprochener Schluss. Die Kommentarfrage steht in der Caption. Gesperrt sind alle Themen von Lunar Animations und der bekannten US-Konten (Liste docs/17 §3.5).</p>
+<p class="lab">Nicht im Video</p><p>Keine Sticker, Chips, Untertitel, Countdown-Ring, Logo, kein Folgen-Aufruf, kein gesprochener Schluss. Die Kommentarfrage steht in der Caption. Gesperrt sind alle Themen von Lunar Animations und der bekannten US-Konten (Liste .claude/skills/stelldirvor-video/themen-und-plan.md §5).</p>
 <p class="lab">Fester Skill</p><p>Jedes Video dieses Accounts entsteht nach dem Skill <b>stelldirvor-video</b> (.claude/skills/): gemessene Maße, Schrift, Farben je Phase, Licht und Effekte (Sonnenglanz, Dunst, Rauch, Staubwand, Lichtblitz, Glasriss, Kamera-Beben), Ton-Verlauf und eine eigene Prüfung mit 22 Pflichtpunkten. Er gilt nur für @stelldirvor.pov.</p>
 
 <h2>3. Produktion und Posten</h2>

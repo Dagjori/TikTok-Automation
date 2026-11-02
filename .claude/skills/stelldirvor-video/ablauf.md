@@ -38,7 +38,7 @@ Alle 4 Referenzen sind exakt 80,0 s lang und folgen demselben Bogen (F). Die Vor
 - Exakt dieselbe Titelfrage wie am Anfang.
 - **Faktenzeile:** echter Bezug, Form „ORT, JAHR · FAKT“ oder „FAKT · FAKT“ (Versalien kommen aus dem CSS), 1–2 Zeilen, mit Quelle in `skript.json → quellen`. Keine Quellen, URLs oder Annahmen im Bild.
 
-## Themen (R, docs/16 §12a)
+## Themen (Regel des Inhabers 02.11.)
 - Große, globale Gedankenexperimente aus Physik, Mathematik, Biologie, Chemie, Astronomie, Geologie, Klima. Standpunkt irgendwo auf der Welt, gern mit Wiedererkennung (Küste, Großstadt, Gebirge, Wüste, Eis).
 - Ein Ereignis, das man von **einem festen Standpunkt** wachsen sieht, mit einer messbaren Größe, die bis „HIER“ läuft.
 - **Gesperrt:** Asteroid explodiert über der Stadt, Sonne explodiert, Mega-Tsunami trifft Großstadt, Erde hört auf sich zu drehen. Jedes neue Thema gegen den Katalog von Lunar Animations prüfen (TikTok-Suche); nichts übernehmen, was dort schon viral lief, außer mit klar eigenem Ansatz.

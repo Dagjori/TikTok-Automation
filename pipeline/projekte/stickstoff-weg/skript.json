@@ -1,7 +1,7 @@
 {
   "titel": "Was, wenn der Stickstoff 5 Sekunden aus der Luft verschwindet?",
   "konto": "stelldirvor",
-  "format": "Referenzformat (docs/16 §12): 80 s, keine Stimme, eine durchgehende feste Ich-Perspektive von der Galerie über dem Supermarkt, Geländer im Vordergrund, Serifenschrift (EB Garamond, SIL OFL, lokal über @fontsource)",
+  "format": "Referenzformat (Skill .claude/skills/stelldirvor-video/): 80 s, keine Stimme, eine durchgehende feste Ich-Perspektive von der Galerie über dem Supermarkt, Geländer im Vordergrund, Serifenschrift (EB Garamond, SIL OFL, lokal über @fontsource)",
   "stil": "16 POV-Filmlook stilisiert (Account 2): Three.js, feste Ich-Kamera von der Galerie, Low-Poly-Supermarkthalle, Neonlicht, Bloom, Tiefenunschärfe im Vordergrund, zarter Dunst aus Luftmolekülen (N₂ blau, O₂ koralle)",
   "stil_begruendung": "Konkurrenz-Check 01.11. (Plan-Agent, öffentliche Seiten): im US-Format „What if … for 5 seconds“ laufen Schwerkraft, Reibung, Erdmagnetfeld, Sauerstoff u. a.; Stickstoff nicht als Thema gefunden. Look wie im Prototyp (Stil 16 POV-Filmlook stilisiert): Ich-Kamera auf Augenhöhe, Low-Poly-Supermarkt (Regale, Tüten, Produkte als Instanzen), Neonlicht, Bloom. Die Luftmoleküle (N₂ blau, O₂ koralle) machen das Unsichtbare sichtbar. Keine Markennamen oder Logos im Bild (Schilder und Produkte frei erfunden).",
   "titelfrage": "Was wäre, wenn der Stickstoff 5 Sekunden verschwindet?",

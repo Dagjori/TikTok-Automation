@@ -5,7 +5,7 @@ Aufruf:  python3 pipeline/tts.py <projektordner> [--voice NAME_ODER_ID] [--model
 Stimme:  Seit 31.10. (Entscheidung des Inhabers) klingt Ben wie auf der ElevenLabs-Webseite: Die Anfrage schickt KEINE
          voice_settings, also nutzt ElevenLabs die gespeicherten Einstellungen der Stimme („Voice settings overriding
          stored settings for the given voice“, API-Doku). --eigene-einstellungen = alte feste Werte (nur zum Vergleich).
-Regie:   Der „sprechtext“ ist ein Regie-Text (docs/08-beispielskripte.md): Satzzeichen, Zeilenumbrüche, Großschreibung
+Regie:   Der „sprechtext“ ist ein Regie-Text (.claude/skills/simulierbar-video/ton.md und ablauf.md): Satzzeichen, Zeilenumbrüche, Großschreibung
          für Betonung; bei Eleven v4 zusätzlich Audio-Tags wie [curious] oder [short pause]; bei Multilingual v2
          <break time="0.3s" />. Tags und Break-Markierungen werden nicht gesprochen und nicht als Untertitel-Wörter gezählt.
 Liest:   <projekt>/skript.json  (Segmente mit Text)
@@ -27,7 +27,7 @@ MODELL = MODELLE["v4"]  # Standard für alle Videos: Eleven v4 (Wahl des Inhaber
 GESPEICHERTE_EINSTELLUNGEN = True  # True = keine voice_settings senden → Original-Klang wie auf ElevenLabs
 STANDARD_STIMME = "aTTiK3YzK3dXETpuDE2h"  # „Ben“, muttersprachlich Deutsch (Wahl des Inhabers 31.10. per Hörprobe)
 EINSTELLUNGEN = {"stability": 0.5, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": True}  # Empfehlung von ElevenLabs: Startwert 50/75, „style“ immer 0 (sonst weniger stabil)
-PAUSE_ABSCHNITT = 0.35  # Pause zwischen zwei Abschnitten (Maßstab docs/15: Satzpausen ca. 0,26 s, nie über 0,4 s)
+PAUSE_ABSCHNITT = 0.35  # Pause zwischen zwei Abschnitten (Maßstab .claude/skills/simulierbar-video/massstab.md: Satzpausen ca. 0,26 s, nie über 0,4 s)
 PAUSE = 0.22          # Pause zwischen Segmenten (Vorbilder: Median 0,16–0,38 s)
 PAUSE_LANG = 0.3      # nach dem Hook und vor dem Schluss-Satz
 ZIEL_WPS = 2.95       # Wörter pro Sekunde beim Sprechen (Top-Videos: 2,91–3,02, gemessen 31.10.2026)

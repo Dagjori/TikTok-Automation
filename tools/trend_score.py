@@ -1,4 +1,4 @@
-"""Berechnet den Trend-Score nach dem Raster in docs/07-trend-monitoring.md.
+"""Berechnet den Trend-Score nach dem Raster in CLAUDE.md §10 (Trend-Radar).
 
 Aufruf: python3 tools/trend_score.py NACHFRAGE TIMING WETTBEWERB PASSUNG AUFWAND RISIKO
 Jeder Wert 1–5. Ausgabe: Score (20–100) und Entscheidung.

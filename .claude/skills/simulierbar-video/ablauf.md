@@ -1,6 +1,6 @@
 # Ablauf: Videoaufbau als Zeitplan
 
-Quelle: `CLAUDE.md` (Videoaufbau, feste Reihenfolge) und `docs/15-massstab.md` §1, §5, §11. Hier als Zeitplan für Ben im Original (ca. 2,0 Wörter/s, Satzpausen 0,5–0,7 s, 130–170 Wörter, Profil `ben` in `qc/massstab.py`). Zeiten sind Zielwerte; was `massstab.py` misst, steht in `pruefung.md`.
+Quelle: `CLAUDE.md` §6 und [massstab.md](massstab.md) §1, §11. Hier als Zeitplan für Ben im Original (ca. 2,0 Wörter/s, Satzpausen 0,5–0,7 s, 130–170 Wörter, Profil `ben` in `qc/massstab.py`). Zeiten sind Zielwerte; was `massstab.py` misst, steht in `pruefung.md`.
 
 ## 1. Zeitplan (65–80 s, mindestens 61 s)
 
@@ -21,14 +21,19 @@ Quelle: `CLAUDE.md` (Videoaufbau, feste Reihenfolge) und `docs/15-massstab.md` �
 
 **Dynamik:** alle 1–2 s etwas Neues im Bild (Bewegung in der Welt, Kamerafahrt, Lichtwechsel, Zähler, Chip, Szenenwechsel), nie mehr als 2 s Stillstand (`massstab.py` Punkt 5). Die Neuigkeit kommt bevorzugt aus der Welt: Objekt erscheint, Licht geht an, Flüssigkeit steigt, Auto biegt ab, Waage kippt. Szenenwechsel weich (`zoomwisch`, `blende`, `iris`), höchstens alle 5–15 s.
 
-## 2. Satzmuster (docs/15 §5, ruhig gesprochen)
+## 2. Satzmuster und Textregeln (ruhig gesprochen)
 - Hook „X oder Y? Was … wirklich …?“ · Denkfalle „Klar, X. Oder?“ · Wendung „Aber jetzt kommt das Merkwürdige:“, „Doch …“ · Spannung als Countdown-Fetzen · Ergebnis „Endstand:“ · Erklärung „Warum?“ · Zweite Überraschung „Und das Verrückte:“ · Merksatz kurz.
 - Sätze meist unter 10 Wörtern, Median 4–8. „du“-Ansprache. Zahlen im Sprechtext ausgeschrieben.
+
+- Immer eine offene Frage im Kopf des Zuschauers: Jede Phase endet mit einer Spannung, die erst die nächste auflöst („Also ist Rennen doch schlechter? Noch nicht.“).
+- Konkrete Personen bzw. Teams mit Namen oder Buchstaben (Paul gegen Anna, A gegen B). Zahlen rund und hörbar („zwanzig Sekunden“), im Bild die exakte Zahl.
+- Keine Füllsätze, keine Quellen, kein „laut einer Studie“ (Quellen stehen intern in `skript.json`). Verboten: künstliche Cliffhanger („Teil 2 folgt“), Kaufaufrufe, Kanalname bzw. Rubrik.
+- Tempo: Ben im Original spricht ca. 2,0 Wörter/s mit Satzpausen 0,5–0,7 s (bei v4 und v2 gleich, F, 31.10.); die Vorbilder 2,5–2,9 W/s mit 170–220 Wörtern. Das Tempo wird nicht künstlich erhöht, die Spannung kommt aus kurzen Sätzen und dem Bild.
 
 ## 3. Themen-Logik (Pflicht vor Produktionsstart)
 - Beide Seiten sind **echte Alternativen derselben Entscheidung** (schließen sich aus bzw. werden gegeneinander abgewogen). Gegenbeispiel: „Steuererklärung oder Überstunden“ (keine gemeinsame Entscheidung).
 - Ergebnis endet in **Euro** (GELD-Schwerpunkt, mind. 50 von 60 Videos).
-- Thema nicht bei der Konkurrenz viral (`docs/15` §9, `docs/12` §3.4).
+- Thema nicht bei der Konkurrenz viral ([massstab.md](massstab.md) §9, [themen.md](themen.md) §3 und §8).
 - Finanzthemen nur als Modellrechnung, keine Produkt- oder Anlageempfehlung, kein Kaufaufruf.
 
 ## 4. Skript-Bild-Abgleich (Pflicht, Inhaber 02.11.)
@@ -40,3 +45,23 @@ In `skript.json` je Segment ein Eintrag `bild_text_abgleich`: was gesagt wird (O
 ]
 ```
 Was nicht zu sehen ist, wird nicht gesagt; was groß zu sehen ist, wird erwähnt oder weggelassen.
+
+## 5. Beispiel-Skript (Muster für Aufbau und Regie-Text)
+„Spurwechsel im Stau“ im neuen Aufbau (Zahlen: Modellwerte aus der eigenen Simulation, S; Paul wechselt, Anna bleibt; neun Wechsel für 20 s). Umfang ca. 150 Wörter, mit Ben im Original ca. 75 s. Die Phasen und der Regie-Text sind die Vorlage, nicht das Thema.
+
+| Phase | Untertitel (`text`) | Regie-Text (`sprechtext`, Eleven v4) |
+|---|---|---|
+| Hook | Spur wechseln oder bleiben? Wer ist im Stau wirklich schneller? | `Spur wechseln – oder bleiben?` / `[curious] Wer ist im Stau WIRKLICH schneller?` |
+| Regeln | Fünf Kilometer Stau. Zwei Spuren. Paul wechselt, sobald es nebenan schneller läuft. Anna bleibt einfach drin. | je Satz eine Zeile |
+| Denkfalle | Klar, Paul gewinnt. Oder? | `Klar, Paul gewinnt.` / `Oder?` (ruhig, ohne „Los geht's“ und ohne `[excited]`) |
+| Rennen | Paul wechselt sofort. Und steht direkt hinter Anna. Nach anderthalb Minuten: Anna liegt 160 Meter vorn. | `Paul wechselt sofort.` / `Und steht… direkt hinter Anna.` / `Nach anderthalb Minuten:` / `Anna liegt hundertsechzig Meter VORN.` |
+| Folgen-Aufruf | Folg mir, damit du nichts verpasst. | `Folg mir, damit du nichts verpasst.` |
+| Wendung 1 | Denn jetzt kommt das Merkwürdige: Fünf Wechsel später steht Paul wieder hinter ihr. | `Denn jetzt kommt das Merkwürdige:` / `Fünf Wechsel später…` / `steht Paul WIEDER hinter ihr.` |
+| Rennen | Erst nach sieben Minuten zieht er vorbei. Jetzt wird's knapp. | `Erst nach sieben Minuten zieht er vorbei.` / `Jetzt wird's knapp.` |
+| Ergebnis | Endstand: Paul 9:36. Anna 9:56. Neun Wechsel für 20 Sekunden. | `Endstand:` / `Paul – neun Minuten sechsunddreißig.` / `Anna – neun Minuten sechsundfünfzig.` / `Neun Wechsel… für ZWANZIG Sekunden.` |
+| Warum | Warum so wenig? Jeder Wechsel bringt im Schnitt nur zwei Sekunden. | `[thoughtful] Warum so wenig?` / `Jeder Wechsel bringt im Schnitt nur zwei Sekunden.` |
+| Zweite Überraschung | Und das Verrückte: Je mehr Leute wechseln, desto weniger bringt es. Wechseln alle, bleiben drei Sekunden. | `Und das Verrückte:` / `Je mehr Leute wechseln, desto WENIGER bringt es.` / `Wechseln alle… bleiben drei Sekunden.` |
+| Merksatz | Die andere Spur wirkt nur schneller. Du wirst fast doppelt so lange überholt, wie du selbst überholst. | `Die andere Spur WIRKT nur schneller.` / `Du wirst fast doppelt so lange überholt, wie du selbst überholst.` |
+| Schluss | Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare. | `Was sollen wir als Nächstes zeigen?` / `Schreib es in die Kommentare.` |
+
+(Das Spurwechsel-Video selbst ist gepostet; die Rechnung liegt in `pipeline/projekte/spurwechsel/`.)

@@ -1,4 +1,4 @@
-// Maßstab-Bausteine für die Stilbilder ab Nr. 9 (docs/15-massstab.md, Abschnitt 4).
+// Maßstab-Bausteine für die Stilbilder ab Nr. 9 (.claude/skills/simulierbar-video/massstab.md).
 // Inhalt wie bei Stil 1–8: GELD-Duell „Deutschlandticket gegen Auto“, Beispielwerte (keine Rechnung).
 // Layout: Anzeigetafel oben · Szene Mitte · Untertitel-Phrase unten. Kein Kanalname, kein Logo, keine Rubrik.
 import { el } from "./gemeinsam.js";

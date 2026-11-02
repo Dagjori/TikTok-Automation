@@ -1,6 +1,6 @@
 {
   "titel": "Demo Maßstab-Bausteine: Rasen oder rollen?",
-  "hinweis": "Nur Demo der Engine-Bausteine (docs/15). Kein Video zum Posten, die Zahlen sind Beispielwerte ohne Rechnung. Keine Stimme: Timing wird geschätzt (Maßstab-Tempo 2,6 W/s).",
+  "hinweis": "Nur Demo der Engine-Bausteine (.claude/skills/simulierbar-video/massstab.md). Kein Video zum Posten, die Zahlen sind Beispielwerte ohne Rechnung. Keine Stimme: Timing wird geschätzt (Maßstab-Tempo 2,6 W/s).",
   "stil": "Demo (3D-Miniatur, kern.js)",
   "klangteppich": "strasse",
   "schaetzung": { "wps": 2.6, "satzpause": 0.26, "kommapause": 0.28, "segmentpause": 0.26, "vorlauf": 0.1 },

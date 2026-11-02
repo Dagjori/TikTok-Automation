@@ -1,4 +1,4 @@
-// Account 2, Video 2: „Was wäre, wenn der Stickstoff 5 Sekunden verschwindet?“ – Referenzformat (docs/16 §12), 80 s, keine Stimme.
+// Account 2, Video 2: „Was wäre, wenn der Stickstoff 5 Sekunden verschwindet?“ – Referenzformat (Skill .claude/skills/stelldirvor-video/), 80 s, keine Stimme.
 // Eine durchgehende feste Ich-Perspektive von der Galerie über dem Supermarkt, Geländer im Vordergrund, nur leichtes Atmen der Kamera,
 // beim Höhepunkt Erschütterung. Text nur in drei Ebenen (Titelfrage, Messwert-Anzeige, kursiver Satz) plus Abspann, alles in Serifenschrift.
 // Zeitplan: zeiten.json. Rechnung (live): ../../sim/stickstoff_weg.mjs. Deterministisch: window.renderAt(t).
