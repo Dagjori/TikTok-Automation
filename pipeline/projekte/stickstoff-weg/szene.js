@@ -176,16 +176,15 @@ async function start() {
     { umbruch: true },
     { text: "5", ein: "fünf-0.04" }, { text: "SEKUNDEN", ein: "Sekunden-0.04" }, { text: "WEG", ein: "lang-0.04", team: "a" },
   ] });
-  M.chips({ y: 392, ausrichtung: "mitte", aus: "start:Los-0.12", liste: [
+  M.chips({ y: 392, ausrichtung: "mitte", abstand: 40, aus: "start:Los-0.45", liste: [
     { text: "N₂ · 78 %", ein: "Stickstoff+0.2", art: "voll", team: "a" },
     { text: "O₂ · 21 %", ein: "regeln:Supermarkt.-0.05", art: "voll", team: "b" },
   ] });
   // ----- Regeln: auch in Tüten, Lunge, Ohr -----
   M.chips({ y: 560, ausrichtung: "mitte", aus: "falle:Klar,-0.35", liste: [{ text: "AUCH IN DER TÜTE", ein: "Tüten,-0.02", art: "hell", team: "a" }] });
-  M.chips({ y: 678, ausrichtung: "mitte", aus: "falle:Klar,-0.35", liste: [{ text: "AUCH IN DER LUNGE", ein: "Lunge-0.02", art: "hell", team: "a" }] });
-  M.chips({ y: 796, ausrichtung: "mitte", aus: "falle:Klar,-0.35", liste: [{ text: "AUCH IM OHR", ein: "Ohr-0.02", art: "hell", team: "a" }] });
+  M.chips({ y: 710, ausrichtung: "mitte", aus: "falle:Klar,-0.35", liste: [{ text: "AUCH IN DER LUNGE", ein: "Lunge-0.02", art: "hell", team: "a" }] });
+  M.chips({ y: 860, ausrichtung: "mitte", aus: "falle:Klar,-0.35", liste: [{ text: "AUCH IM OHR", ein: "Ohr-0.02", art: "hell", team: "a" }] });
   // ----- Denkfalle -----
-  M.chips({ y: 560, ausrichtung: "mitte", aus: "start:Los-0.12", liste: [{ text: "78 % DER LUFT WEG", ein: "falle:78-0.05", art: "voll", team: "a", gross: true }] });
   M.stempel({ text: "KLAR?", ein: "falle:Klar,", aus: "start:Los-0.1", x: SICHER.mitte, y: 900, winkel: -6, farbe: "weiss", textFarbe: "tinte", groesse: 128 });
   // ----- Start: N₂ = 0 -----
   M.chips({ y: 392, ausrichtung: "mitte", aus: "sek1:Sekunde+0.25", liste: [{ text: "N₂ · 0 %", ein: "start:Los", art: "voll", team: "a", gross: true }] });
@@ -197,12 +196,12 @@ async function start() {
 
   // ----- Sekunde 2: der Druck fällt -----
   hud.add(new Druckkarte(M, hud.wurzel, { ein: tAber - 0.1, aus: tS3 - 0.15, y: 410, tFall: tFaellt + 0.05, dauerFall: Math.max(0.9, t222 - tFaellt + 0.55), tHoehe: t11 - 0.1 }));
-  M.chips({ y: 780, ausrichtung: "mitte", aus: "sek3:Sekunde-0.15", liste: [{ text: "REISEFLUGHÖHE EINES JETS", ein: "sek2:So", art: "dunkel" }] });
+  M.chips({ y: 880, ausrichtung: "mitte", aus: "sek3:Sekunde-0.15", liste: [{ text: "REISEFLUGHÖHE EINES JETS", ein: "sek2:So", art: "dunkel" }] });
 
   // ----- Sekunde 3: Tüten -----
   M.chips({ y: 440, ausrichtung: "mitte", aus: "sek4:Sekunde-0.1", liste: [{ text: "INNEN: FAST NICHTS", ein: "sek3:Chipstüten", art: "dunkel" }] });
   M.chips({ y: 700, ausrichtung: "mitte", aus: "sek4:Sekunde-0.1", liste: [{ text: "≈ 2 T PRO M²", ein: "sek3:2", art: "voll", team: "b", gross: true }] });
-  M.stempel({ text: "KLATSCH!", ein: "sek3:klatschen", aus: "sek3:klatschen+1.1", x: SICHER.mitte, y: 960, winkel: -7, farbe: "a", groesse: 124 });
+  M.stempel({ text: "KLATSCH!", ein: "sek3:klatschen", aus: "sek3:klatschen+1.1", x: SICHER.mitte, y: 790, winkel: -7, farbe: "a", groesse: 124 });
 
   // ----- Sekunde 4: Ohr -----
   M.chips({ y: 470, ausrichtung: "mitte", aus: "sek5:Sekunde-0.1", liste: [{ text: "OHR: INNEN = AUSSEN", ein: "sek4:Ohr?", art: "hell", team: "a" }] });
@@ -218,7 +217,7 @@ async function start() {
     ],
     differenz: { label: "FEHLT", wert: Math.round(P_NORMAL - P_REST), einheit: "hPa", ein: "ergebnis:hPa.-0.1" },
   });
-  M.chips({ y: 860, ausrichtung: "mitte", aus: "warum:Warum?-0.15", liste: [{ text: `NUR ${Math.round(S.restAnteil() * 100)} % BLEIBEN`, ein: "ergebnis:hPa.+0.3", art: "voll", team: "b", gross: true }] });
+  M.chips({ y: 960, ausrichtung: "mitte", aus: "warum:Warum?-0.15", liste: [{ text: `NUR ${Math.round(S.restAnteil() * 100)} % BLEIBEN`, ein: "ergebnis:hPa.+0.3", art: "voll", team: "b", gross: true }] });
 
   // ----- Warum? Zwei Faktoren -----
   M.balken({ y: 400, ein: "warum:Erstens:-0.1", aus: "ueberraschung:Das-0.15", titel: "Warum?", max: 100, faktoren: [
@@ -231,14 +230,14 @@ async function start() {
 
   // ----- Zweite Überraschung: Kaffee -----
   M.zaehler({ ein: "ueberraschung:Wasser-0.1", aus: "merksatz:Sauerstoff-0.2", wert: M.kurve([{ t: "ueberraschung:Wasser", v: 100 }, { t: "ueberraschung:62+0.25", v: Math.round(SIEDE), e: ease.inOutCubic }]), nk: 0, einheit: "°C", max: 100, team: "a", art: "voll", label: "SIEDEPUNKT", x: SICHER.mitte, y: 440, anker: "mitte" });
-  M.chips({ y: 570, ausrichtung: "mitte", aus: "merksatz:Sauerstoff-0.2", liste: [{ text: "KAFFEE: 80 °C", ein: "ueberraschung:Kaffee", art: "dunkel" }] });
-  M.stempel({ text: "KOCHT!", ein: "ueberraschung:kocht#2", aus: "ueberraschung:kocht#2+1.2", x: SICHER.mitte, y: 760, winkel: -6, farbe: "akzent", groesse: 128 });
+  M.chips({ y: 560, ausrichtung: "mitte", aus: "merksatz:Sauerstoff-0.2", liste: [{ text: "KAFFEE: 80 °C", ein: "ueberraschung:Kaffee", art: "dunkel" }] });
+  M.stempel({ text: "KOCHT!", ein: "ueberraschung:kocht#2", aus: "ueberraschung:kocht#2+1.2", x: SICHER.mitte, y: 900, winkel: -6, farbe: "akzent", groesse: 128 });
 
   // ----- Merksatz und Schluss -----
-  M.pointe({ text: "SAUERSTOFF | ZUM *ATMEN.*", ein: "merksatz:Sauerstoff", takt: 0.22, aus: "merksatz:Stickstoff-0.1", y: 470, groesse: 124 });
+  M.pointe({ text: "SAUERSTOFF | ZUM *ATMEN.*", ein: "merksatz:Sauerstoff", takt: 0.22, aus: "merksatz:Stickstoff-0.5", y: 470, groesse: 124 });
   M.pointe({ text: "STICKSTOFF | FÜR DEN | *DRUCK.*", ein: "merksatz:Stickstoff", takt: 0.2, aus: "ende:Welches-0.1", y: 470, groesse: 124 });
   M.chips({ y: 960, ausrichtung: "mitte", aus: "ende:Schreib-0.1", liste: [{ text: "DEIN SZENARIO?", ein: "ende:Szenario-0.05", art: "voll", team: "a", gross: true }] });
-  M.untertitel({ stil: "kontur", unten: 1450, groesse: 62 });
+  M.untertitel({ stil: "kontur", unten: 1450, groesse: 62, versteckt: [[tSchluss + 4.3, DAUER + 1]] });
 
   // Blitz, wenn der Stickstoff verschwindet bzw. zurückkehrt (HUD-Ebene ohne Text)
   const blitz = el("div", "blitz-n2", "", hud.wurzel);
@@ -351,6 +350,9 @@ async function start() {
   regie.stoss({ t: tRueck, staerke: 0.9 });
   regie.stoss({ t: T("falle:Klar,") + 0.05, staerke: 0.45 });
   regie.zoom({ t: "ueberraschung:Grad.", ziel: () => V(TASSE.x, TASSE.y + 0.1, TASSE.z), staerke: 0.25, halt: 1.1, rueck: 0.7 });
+  regie.zoom({ t: "falle:Luft", staerke: 0.12, halt: 0.5, rueck: 0.4 });
+  regie.zoom({ t: "falle:erstickst.", staerke: 0.14, halt: 0.5, rueck: 0.4 });
+  regie.zoom({ t: "falle:Oder?", staerke: 0.18, halt: 0.5, rueck: 0.4 });
   regie.schleife({ ab: tSchleife, ende: ENDE });
 
   const post = { bloomStaerke: BLOOM, bloomSchwelle: 1.0, bloomRadius: 1.0, belichtung: 0.92, vignette: 0.3, saettigung: 1.08, kontrast: 1.05, koernung: 0.03 };
@@ -363,6 +365,9 @@ async function start() {
     return { pos: [lerp(-8.6, -6.3, k), lerp(8.8, 6.8, k), lerp(1.0, 0.8, k)], ziel: [lerp(3.4, 4.8, k), 0.6, lerp(0.4, 0.3, k)], fov: 54 };
   }, { zp });
   regieT.stoss({ t: tErg + 0.1, staerke: 0.5 });
+  M.melde({ t: "warum:Warum?+0.1", typ: "kamera", klang: "whoosh", dauer: 1.0, text: "Totale: Fahrt zur Erklärung" });
+  M.melde({ t: "warum:Erstens:-0.1", typ: "formel", klang: "pop", text: "Warum-Karte" });
+  for (const w of ["warum:78", "warum:aber", "warum:Dein"]) M.melde({ t: w, typ: "kamera", klang: "zoom", dauer: 1.8, text: "Totale: Zoom" });
   regieT.zoom({ t: "warum:78", ziel: () => V(0, 1.0, 0), staerke: 0.2, halt: 1.0, rueck: 0.8 });
   regieT.zoom({ t: "warum:aber", ziel: () => V(-1.7, 1.0, 1.8), staerke: 0.2, halt: 1.0, rueck: 0.8 });
   regieT.zoom({ t: "warum:Dein", ziel: () => V(0, 1.0, 0), staerke: 0.2, halt: 1.0, rueck: 0.8 });

@@ -136,35 +136,35 @@
    "text": "OHNE LUFTWIDERSTAND"
   },
   {
+   "quelle": "Chip",
+   "t": 11.55,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.55,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.55,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.55,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
    "typ": "kamera",
    "quelle": "Regie",
    "t": 12.1,
    "art": "stoss",
    "dauer": 0.2,
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 12.15,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 12.15,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 12.15,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 12.15,
-   "typ": "chip-weg",
    "klang": false
   },
   {
@@ -330,7 +330,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 24.3,
+   "t": 24.2,
    "typ": "chip-weg",
    "klang": false
   },
@@ -430,17 +430,17 @@
    "text": "Stückchen 8"
   },
   {
+   "quelle": "Chip",
+   "t": 28.3,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
    "quelle": "Hoehenanzeige",
    "t": 28.512,
    "typ": "marke",
    "klang": "tick",
    "text": "Stückchen 9"
-  },
-  {
-   "quelle": "Chip",
-   "t": 28.73,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Chip",
@@ -495,17 +495,17 @@
    "text": "Blickwechsel"
   },
   {
+   "quelle": "Chip",
+   "t": 29.9,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
    "quelle": "Hoehenanzeige",
    "t": 29.9,
    "typ": "marke",
    "klang": "tick",
    "text": "Stückchen 12"
-  },
-  {
-   "quelle": "Chip",
-   "t": 30.33,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Chip",
@@ -615,17 +615,17 @@
    "text": "Stückchen 23"
   },
   {
+   "quelle": "Chip",
+   "t": 32.31,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
    "quelle": "Hoehenanzeige",
    "t": 32.33,
    "typ": "marke",
    "klang": "ding",
    "text": "Stückchen 24"
-  },
-  {
-   "quelle": "Chip",
-   "t": 32.71,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Chip",
@@ -644,7 +644,7 @@
    "quelle": "LiveZaehler",
    "t": 33.06,
    "typ": "zaehler",
-   "dauer": 3.733,
+   "dauer": 3.68,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -810,6 +810,37 @@
    "text": "DARÜBER"
   },
   {
+   "quelle": "Szene",
+   "t": 41.54,
+   "typ": "kamera",
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.65,
+   "typ": "kamera",
+   "art": "zoom",
+   "dauer": 1.5,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.18,
+   "typ": "kamera",
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Stempel",
+   "t": 44.39,
+   "typ": "stempel",
+   "klang": "stempel",
+   "text": "WARUM?"
+  },
+  {
    "quelle": "Formel",
    "t": 44.97,
    "typ": "formel",
@@ -843,6 +874,22 @@
    "typ": "formel",
    "klang": "ding",
    "text": "2,26"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.34,
+   "typ": "kamera",
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.06,
+   "typ": "kamera",
+   "art": "stoss",
+   "dauer": 0.2,
+   "klang": false
   },
   {
    "quelle": "Formel",
@@ -941,6 +988,30 @@
   },
   {
    "quelle": "Szene",
+   "t": 59.31,
+   "typ": "kamera",
+   "klang": false,
+   "dauer": 0.9,
+   "text": "Blickwechsel"
+  },
+  {
+   "t": 60.54,
+   "typ": "uebergang",
+   "art": "zoomwisch",
+   "dauer": 0.5,
+   "quelle": "Zeitleiste",
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.79,
+   "typ": "kamera",
+   "klang": "whoosh",
+   "dauer": 0.5,
+   "text": "Seitenansicht mit Ringen"
+  },
+  {
+   "quelle": "Szene",
    "t": 60.79,
    "typ": "kamera",
    "klang": false,
@@ -953,6 +1024,12 @@
    "typ": "chip",
    "klang": "pop",
    "text": "MUSKELN: NUR 25 %"
+  },
+  {
+   "quelle": "Chip",
+   "t": 62.97,
+   "typ": "chip-weg",
+   "klang": false
   },
   {
    "quelle": "Formel",
@@ -1032,12 +1109,6 @@
    "klang": false,
    "dauer": 0.9,
    "text": "Blickwechsel"
-  },
-  {
-   "quelle": "Chip",
-   "t": 67.35,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Pointe",

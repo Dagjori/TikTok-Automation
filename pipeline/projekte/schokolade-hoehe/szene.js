@@ -521,18 +521,18 @@ function baueWelt(buehne) {
     const y = EYE0 + S.hoeheEchtMuskel() * k;
     const rel = (y - BODEN) / (topY(BERGE.zugspitze) - BODEN);
     const rad = k < 4 ? BERGE.zugspitze.R * Math.pow(1 - clamp(rel), 1 / 1.35) * 1.02 + 25 : 140;
-    const rg = new THREE.Mesh(new THREE.TorusGeometry(rad, k < 4 ? 9 : 2.6, 8, 90), new THREE.MeshBasicMaterial({ color: new THREE.Color(k < 4 ? KORALLE : TUERKIS).multiplyScalar(2.4), transparent: true, opacity: 0.95, fog: false }));
+    const rg = new THREE.Mesh(new THREE.TorusGeometry(rad, k < 4 ? 45 : 9, 8, 120), new THREE.MeshBasicMaterial({ color: new THREE.Color(k < 4 ? KORALLE : TUERKIS).multiplyScalar(2.4), transparent: true, opacity: 0.95, fog: false }));
     rg.rotation.x = Math.PI / 2; rg.position.set(ZUG_X, y, ZUG_Z); rg.visible = false; szene.add(rg);
-    const lb = textSprite(k < 4 ? `${k}` : "4 TAFELN", { farbe: k < 4 ? "#FFFFFF" : TUERKIS, hoehe: k < 4 ? 150 : 46, b: k < 4 ? 256 : 1024, h: 256 });
-    lb.position.set(ZUG_X + (k < 4 ? rad * 0.7 : 0), y + (k < 4 ? 90 : 36), ZUG_Z + (k < 4 ? rad * 0.72 : 0)); lb.visible = false; szene.add(lb);
+    const lb = textSprite(k < 4 ? `${k}` : "4 TAFELN", { farbe: k < 4 ? "#FFFFFF" : TUERKIS, hoehe: k < 4 ? 330 : 190, b: k < 4 ? 256 : 1024, h: 256 });
+    lb.position.set(ZUG_X + (k < 4 ? -rad * 0.95 : 0), y + (k < 4 ? 130 : 220), ZUG_Z + (k < 4 ? rad * 0.2 : 0)); lb.visible = false; szene.add(lb);
     ringe.push({ rg, lb, y, rad });
   }
   // Höhenmarken-Ringe an den Spitzen (leuchten beim Überholen)
   const markenRinge = [];
   for (const m of S.MARKEN) {
     const pos = m.id === "dom" ? BERGE.domPos : m.id === "turm" ? BERGE.turmPos : BERGE[m.id];
-    const r = m.id === "dom" || m.id === "turm" ? 24 : 160;
-    const rg = new THREE.Mesh(new THREE.TorusGeometry(r, r * 0.07, 8, 56), new THREE.MeshBasicMaterial({ color: new THREE.Color(TUERKIS).multiplyScalar(2.2), transparent: true, opacity: 0, fog: false, depthWrite: false }));
+    const r = m.id === "dom" || m.id === "turm" ? 22 : 60;
+    const rg = new THREE.Mesh(new THREE.TorusGeometry(r, r * 0.045, 8, 56), new THREE.MeshBasicMaterial({ color: new THREE.Color(TUERKIS).multiplyScalar(1.5), transparent: true, opacity: 0, fog: false, depthWrite: false }));
     rg.rotation.x = Math.PI / 2; rg.position.set(pos.x, topY(m), pos.z); rg.visible = false; szene.add(rg);
     markenRinge.push({ m, rg });
   }
@@ -649,38 +649,39 @@ async function start() {
     { text: "WIE HOCH?", ein: "regeln:Wie-0.02", team: "b" },
   ] });
   // Regeln als Chips
-  M.chips({ y: 470, ausrichtung: "mitte", aus: "falle:Klar,+0.1", liste: [{ text: "100 G VOLLMILCH", ein: "Hundert-0.02", art: "voll", team: "a", gross: true }] });
-  M.chips({ y: 610, ausrichtung: "mitte", aus: "falle:Klar,+0.1", liste: [{ text: "ENERGIE = HÖHE", ein: "regeln:Alles-0.02", art: "voll", team: "b" }] });
-  M.chips({ y: 750, ausrichtung: "mitte", aus: "falle:Klar,+0.1", liste: [{ text: "DU: 75 KG", ein: "regeln:Du-0.02", art: "dunkel" }] });
-  M.chips({ y: 890, ausrichtung: "mitte", aus: "falle:Klar,+0.1", liste: [{ text: "OHNE LUFTWIDERSTAND", ein: "Luftwiderstand.-0.28", art: "hell" }] });
+  M.chips({ y: 470, ausrichtung: "mitte", aus: "falle:Klar,-0.5", liste: [{ text: "100 G VOLLMILCH", ein: "Hundert-0.02", art: "voll", team: "a", gross: true }] });
+  M.chips({ y: 610, ausrichtung: "mitte", aus: "falle:Klar,-0.5", liste: [{ text: "ENERGIE = HÖHE", ein: "regeln:Alles-0.02", art: "voll", team: "b" }] });
+  M.chips({ y: 750, ausrichtung: "mitte", aus: "falle:Klar,-0.5", liste: [{ text: "DU: 75 KG", ein: "regeln:Du-0.02", art: "dunkel" }] });
+  M.chips({ y: 890, ausrichtung: "mitte", aus: "falle:Klar,-0.5", liste: [{ text: "OHNE LUFTWIDERSTAND", ein: "Luftwiderstand.-0.28", art: "hell" }] });
   // Denkfalle
-  M.stempel({ text: "KLAR?", ein: "falle:Klar,", aus: "falle:Dach.+0.9", x: SICHER.mitte, y: 1010, winkel: -6, farbe: "weiss", textFarbe: "tinte", groesse: 128 });
+  M.stempel({ text: "KLAR?", ein: "falle:Klar,", aus: "falle:Dach.+0.9", x: SICHER.mitte, y: 880, winkel: -6, farbe: "weiss", textFarbe: "tinte", groesse: 100 });
   // Folgen-Aufruf
   M.folgen({ ein: "Folg", dauer: 1.8, y: 960 });
   // Höhenmarken (Chip oben, nach den gesprochenen Wörtern)
-  const mk = (id, ein, aus, text) => M.chips({ y: 372, ausrichtung: "mitte", aus, liste: [{ text, ein, art: "voll", team: "b", gross: true }] });
+  const mk = (id, ein, aus, text) => M.chips({ y: 400, ausrichtung: "mitte", aus, liste: [{ text, ein, art: "voll", team: "b", gross: true }] });
   const tDom = tFuerS(S.markeUeberholt(MARKE.dom).stuecke), tTurm = tFuerS(S.markeUeberholt(MARKE.turm).stuecke);
   const tBro = tFuerS(S.markeUeberholt(MARKE.brocken).stuecke), tFel = tFuerS(S.markeUeberholt(MARKE.feldberg).stuecke), tZug = tFuerS(S.markeUeberholt(MARKE.zugspitze).stuecke);
-  mk("dom", tDom - 0.05, tDom + 2.0, "KÖLNER DOM · 157 M");
-  mk("turm", tTurm - 0.05, tBrocken - 0.12, "FERNSEHTURM · 368 M");
-  mk("brocken", tBrocken - 0.05, tFeld - 0.12, "BROCKEN · 1.141 M");
-  mk("feldberg", tFeld - 0.05, tZugW - 0.1, "FELDBERG · 1.493 M");
+  mk("dom", tDom - 0.05, tDom + 1.9, "KÖLNER DOM · 157 M");
+  mk("turm", tTurm - 0.05, tBrocken - 0.55, "FERNSEHTURM · 368 M");
+  mk("brocken", tBrocken - 0.05, tFeld - 0.55, "BROCKEN · 1.141 M");
+  mk("feldberg", tFeld - 0.05, tZugW - 0.5, "FELDBERG · 1.493 M");
   mk("zugspitze", tZugW - 0.02, tErg - 0.2, "ZUGSPITZE · 2.962 M");
   M.stempel({ text: "ÜBERHOLT!", ein: tFT, x: SICHER.mitte, y: 900, winkel: 5, art: "stempel", farbe: "b", groesse: 104 });
   // Restmeter bis zur Spitze (Live-Zähler)
   const bisSpitze = (t) => Math.max(0, MARKE.zugspitze.hoehe - hRoh(t));
-  M.zaehler({ ein: tZugW + 0.25, aus: tUeber + 1.0, wert: bisSpitze, nk: 0, einheit: "m", max: 99, team: "b", label: "BIS ZUR SPITZE", x: SICHER.mitte, y: 500, anker: "mitte" });
-  M.stempel({ text: "DRÜBER!", ein: tUeber + 0.55, aus: tErg - 0.2, x: SICHER.mitte, y: 900, winkel: -5, farbe: "a", groesse: 120 });
+  M.zaehler({ ein: tZugW + 0.25, aus: tUeber + 0.25, wert: bisSpitze, nk: 0, einheit: "m", max: 99, team: "b", label: "BIS ZUR SPITZE", x: SICHER.mitte, y: 560, anker: "mitte" });
+  M.stempel({ text: "DRÜBER!", ein: tUeber + 0.55, aus: tErg - 0.2, x: SICHER.mitte, y: 900, winkel: -5, farbe: "a", groesse: 100 });
   // Ergebnis: Bilanzkarte (unterer Teil, die Totale bleibt oben sichtbar)
   const hoeheEnde = S.hoehe();
   M.bilanz({
-    y: 940, ein: tErg + 0.55, aus: tWarum - 0.15, titel: "Endstand",
+    y: 840, ein: tErg + 0.55, aus: tWarum - 0.65, titel: "Endstand",
     zeilen: [
       { label: "DU", wert: Math.round(hoeheEnde), nk: 0, einheit: "m", team: "b", ein: "ergebnis:3.071" },
       { label: "ZUGSPITZE", wert: MARKE.zugspitze.hoehe, nk: 0, einheit: "m", team: "c", ein: "ergebnis:Meter.+0.15" },
     ],
     differenz: { label: "DARÜBER", wert: Math.round(S.ueberMarke(MARKE.zugspitze)), nk: 0, einheit: "m", ein: "ergebnis:109" },
   });
+  M.stempel({ text: "WARUM?", ein: tWarum, aus: tWarum + 1.0, x: SICHER.mitte, y: 960, winkel: -4, farbe: "b", groesse: 96 });
   // Warum? Zwei Faktoren als Formelkarten
   M.formel({ y: 420, ein: "warum:Tafel:-0.2", aus: "warum:Ein-0.1", titel: "Energie in der Tafel", teile: [
     { text: "540", einheit: "kcal", ein: "warum:Eine", team: "a" }, { text: "×", ein: "warum:Tafel:" }, { text: "4,184", einheit: "kJ", ein: "warum:Tafel:+0.2" },
@@ -692,17 +693,17 @@ async function start() {
   ] });
   // Zweite Überraschung: TNT
   M.bilanz({
-    y: 440, ein: tSchoko - 0.1, aus: tEcht - 0.1, titel: "Energie pro Kilo",
+    y: 420, ein: tSchoko - 0.1, aus: tKeinBoom - 0.5, titel: "Energie pro Kilo",
     zeilen: [
       { label: "SCHOKOLADE", wert: +S.mjProKg().toFixed(1), nk: 1, einheit: "MJ", team: "a", ein: "ueber:Schokolade+0.15" },
       { label: "TNT", wert: S.SZ.tntMJproKg, nk: 1, einheit: "MJ", team: "c", ein: "TNT.-0.7" },
     ],
     differenz: { label: "FAKTOR", wert: +S.tntFaktor().toFixed(1), nk: 1, einheit: "×", ein: "ueber:5,4-mal" },
   });
-  M.stempel({ text: "KEIN BOOM", ein: tKeinBoom + 0.0, aus: tEcht - 0.1, x: SICHER.mitte, y: 1010, winkel: 4, art: "stempel", farbe: "c", groesse: 100 });
+  M.stempel({ text: "KEIN BOOM", ein: tKeinBoom + 0.0, aus: tEcht - 0.1, x: SICHER.mitte, y: 900, winkel: 4, art: "stempel", farbe: "c", groesse: 76 });
   // In echt: Wirkungsgrad, vier Tafeln
-  M.chips({ y: 372, ausrichtung: "mitte", aus: tMerk - 0.1, liste: [{ text: "MUSKELN: NUR 25 %", ein: "echt:Viertel:-0.4", art: "voll", team: "a", gross: true }] });
-  M.formel({ y: 500, ein: "echt:768-0.35", aus: tMerk - 0.12, titel: "In echt", teile: [
+  M.chips({ y: 372, ausrichtung: "mitte", aus: "echt:768-0.4", liste: [{ text: "MUSKELN: NUR 25 %", ein: "echt:Viertel:-0.4", art: "voll", team: "a", gross: true }] });
+  M.formel({ y: 500, ein: "echt:768-0.35", aus: "echt:Zugspitze?-0.05", titel: "In echt", teile: [
     { text: "3.071", einheit: "m", ein: "echt:768-0.3", team: "b" }, { text: "×", ein: "echt:768-0.22" }, { text: "25", einheit: "%", ein: "echt:768-0.14" },
     { text: "=", ein: "echt:768-0.06" }, { text: "768", einheit: "m", ein: "echt:768", art: "erg" },
   ], unter: { text: "ZUGSPITZE: 4 TAFELN", ein: "echt:Vier", team: "a" } });
@@ -717,6 +718,7 @@ async function start() {
   for (const [id, t0] of [["dom", tDom], ["turm", tTurm], ["brocken", tBro], ["feldberg", tFel], ["zugspitze", tZug]]) M.melde({ t: t0, typ: "marke", klang: "ding", text: `Höhenmarke ${id} überholt` });
   M.melde({ t: tErg - 0.1, typ: "kamera", klang: "whoosh", dauer: 0.7, text: "Totale" });
   M.melde({ t: tUeb - 0.05, typ: "kamera", klang: "whoosh", dauer: 0.5, text: "zurück in die Ich-Sicht" });
+  M.melde({ t: tEcht - 0.1, typ: "kamera", klang: "whoosh", dauer: 0.5, text: "Seitenansicht mit Ringen" });
   M.melde({ t: tKitchenBack, typ: "kamera", klang: "wolke", dauer: 0.9, text: "zurück in die Küche" });
   for (let k = 1; k <= 3; k++) M.melde({ t: T("echt:Vier") + 0.1 * k + 0.1, typ: "marke", klang: "ding", text: `Ring ${k + 1}` });
 
@@ -771,7 +773,7 @@ async function start() {
       const yU = topY(MARKE.zugspitze), yO = ende.y;
       W.linie.scale.set(1, yO - yU - 4, 1); W.linie.position.set(ZUG_X, (yO + yU) / 2, ZUG_Z);
       W.kappeO.position.set(ZUG_X, yO - 2, ZUG_Z); W.kappeU.position.set(ZUG_X, yU + 0.4, ZUG_Z);
-      W.mLabel.position.set(ZUG_X + 38, (yO + yU) / 2, ZUG_Z);
+      { const rr = new THREE.Vector3().setFromMatrixColumn(kamT.matrixWorld, 0); W.mLabel.position.set(ZUG_X + rr.x * 62, (yO + yU) / 2, ZUG_Z + rr.z * 62); }
       const pop = ease.outBack(clamp((t - tErg - 0.9) / 0.5));
       W.mLabel.scale.set(34 * 3 * pop, 34 * pop, 1);
       W.baken.scale.setScalar(0.4 + 0.6 * ease.outBack(clamp((t - tErg) / 0.5)));
@@ -781,7 +783,7 @@ async function start() {
     const tR0 = tEcht + 2.0;
     W.ringe.forEach((r, i) => {
       const tr = i === 0 ? T("echt:768") - 0.1 : i === 1 ? T("echt:Zugspitze?") : i === 2 ? T("echt:Vier") : T("echt:Tafeln.");
-      const sicht = modus === "pov" && t > tr;
+      const sicht = modus === "ringe" && t > tr;
       r.rg.visible = sicht; r.lb.visible = sicht;
       if (sicht) {
         const p = ease.outBack(clamp((t - tr) / 0.45));
@@ -807,7 +809,7 @@ async function start() {
     W.tafel.gruppe.position.lerpVectors(pT, pHandW, kHand); W.tafel.gruppe.position.y += hub;
     W.tafel.gruppe.quaternion.slerpQuaternions(qT, qHandW, kHand);
     W.tafel.gruppe.scale.setScalar(lerp(TISCH.skala, sHand.x, kHand));
-    W.tafel.gruppe.visible = modus !== "totale";
+    W.tafel.gruppe.visible = modus !== "totale" && modus !== "ringe";
     W.tafel.gruppe.updateMatrixWorld(true);
     // Stückchen: glühen, schrumpfen, verschwinden
     W.tafel.stuecke.forEach((st, i) => {
@@ -855,12 +857,12 @@ async function start() {
   const vorn = (t, p) => flach(p, 300, -85); // Standardblick: voraus, leicht abwärts
   const ziele = [
     { t: 0, z: () => V(0, 0.42, -2.6), d: 0 },
-    { t: tWie - 0.15, z: () => V(0.0, 0.72, -0.5), d: 0.8 }, // Hook → Tafel ansehen
-    { t: T("regeln:Du") - 0.2, z: () => V(0.0, 0.55, 0.05), d: 0.55 }, // „Du wiegst …“: Blick nach unten
+    { t: tWie - 0.15, z: () => V(0.0, 0.95, -0.9), d: 0.8 }, // Hook → Tafel ansehen
+    { t: T("regeln:Du") - 0.2, z: () => V(0.0, 0.85, -0.7), d: 0.55 }, // „Du wiegst …“: Blick leicht nach unten
     { t: T("Luftwiderstand.") - 1.1, z: () => V(0.1, 1.45, -2.6), d: 0.95 }, // „Ohne Luftwiderstand“: Blick aus dem Fenster
     { t: T("falle:höchstens") - 0.1, z: () => V(0.0, 2.6, -0.9), d: 0.7 }, // „aufs Dach“: Blick zur Decke
-    { t: T("Oder?") - 0.15, z: () => V(0.0, 0.72, -0.5), d: 0.55 }, // „Oder?“: zurück zur Tafel
-    { t: tLos - 0.1, z: () => V(0.0, 0.85, -0.2), d: 0.45 },
+    { t: T("Oder?") - 0.15, z: () => V(0.0, 0.95, -0.9), d: 0.55 }, // „Oder?“: zurück zur Tafel
+    { t: tLos - 0.1, z: () => V(0.0, 0.95, -0.9), d: 0.45 },
     { t: tDu - 0.25, z: () => V(0.0, 2.9, -0.7), d: 0.9 }, // beim Abheben zur Decke hochsehen
     { t: tDecke + 0.45, z: (t, p) => flach(p, 260, -120), d: 0.8 }, // oben angekommen: Stadt unter dir
     { t: tDom - 1.15, z: domOben, d: 0.95 },
@@ -877,6 +879,7 @@ async function start() {
     // Ab „Und das Verrückte“: Ich-Sicht von oben, Blick über den Horizont und dann hinunter auf die Ringe
     { t: tUeb, z: (t, p) => flach(p, 600, -60), d: 0.6 },
     { t: tSchoko + 1.2, z: (t, p) => flach(p, 500, -240), d: 1.2 },
+    { t: T("ueber:Sauerstoff") - 0.3, z: (t, p) => flach(p, 700, 140), d: 0.9 }, // „braucht Sauerstoff“: Blick in den Himmel
     { t: tEcht - 0.1, z: (t, p) => V(ZUG_X, topY(MARKE.zugspitze) - 900, ZUG_Z + 80), d: 1.0 },
     { t: T("echt:768") + 0.7, z: (t, p) => V(ZUG_X, topY(MARKE.zugspitze) - 1400, ZUG_Z + 200), d: 1.3 },
     { t: tMerk - 0.2, z: (t, p) => V(ZUG_X, topY(MARKE.zugspitze) - 40, ZUG_Z - 40), d: 0.9 },
@@ -932,17 +935,45 @@ async function start() {
   const kamT = new THREE.PerspectiveCamera(46, 1080 / 1920, 5, 60000);
   const regieT = new Regie(kamT, (t) => {
     const k = ease.inOutSine(fortschritt(t, tErg - 0.2, tUeb));
-    const a = lerp(-0.55, 0.45, k) + Math.PI * 0.0;
-    const dist = lerp(420, 330, k);
+    const a = lerp(-0.6, 0.35, k);
+    const dist = lerp(520, 400, k);
     const ende = pfad(HTOP);
     const mitteY = (ende.y + topY(MARKE.zugspitze)) / 2;
-    return { pos: [ZUG_X + Math.sin(a) * dist * 0.9, mitteY - 40 + lerp(-8, 30, k), ZUG_Z + Math.cos(a) * dist], ziel: [ZUG_X, mitteY - 150, ZUG_Z], fov: 46 };
+    const sicht = 2 * dist * Math.tan((23 * Math.PI) / 180); // sichtbare Höhe in m
+    const tY = mitteY - 0.09 * sicht; // Subjekt im oberen Bilddrittel (unter dem Höhen-HUD, über der Karte)
+    return { pos: [ZUG_X + Math.sin(a) * dist, mitteY + 6, ZUG_Z + Math.cos(a) * dist], ziel: [ZUG_X, tY, ZUG_Z], fov: 46 };
   }, { zp });
   regieT.stoss({ t: T("ergebnis:109") + 0.05, staerke: 0.5 });
+  regieT.zoom({ t: T("ergebnis:über"), staerke: 0.1, halt: 0.9, rueck: 0.6 });
+  regieT.stoss({ t: T("ergebnis:Zugspitze.") + 0.05, staerke: 0.35 });
+  regieT.stoss({ t: T("warum:Millionen") + 0.05, staerke: 0.4 });
+  regieT.stoss({ t: T("warum:Joule.") + 0.05, staerke: 0.4 });
+  // Ereignisse der Totale-Kamera ins Protokoll (die Regie der Totale wird nicht automatisch übernommen)
+  M.melde({ t: T("ergebnis:109") + 0.05, typ: "kamera", art: "stoss", dauer: 0.2, klang: false });
+  M.melde({ t: T("ergebnis:über"), typ: "kamera", art: "zoom", dauer: 1.5, klang: "zoom" });
+  M.melde({ t: T("ergebnis:Zugspitze.") + 0.05, typ: "kamera", art: "stoss", dauer: 0.2, klang: false });
+  M.melde({ t: T("warum:Millionen") + 0.05, typ: "kamera", art: "stoss", dauer: 0.2, klang: false });
+  M.melde({ t: T("warum:Joule.") + 0.05, typ: "kamera", art: "stoss", dauer: 0.2, klang: false });
   const weltT = { szene: W.szene, kamera: kamT, post: { ...post, vignette: 0.36 }, update(t) {
     regieT.anwenden(t);
     W.himmel.position.copy(kamT.position);
     setzeWelt(t, "totale", kam); // Tafel-Pose braucht die POV-Kamera (matrixWorld wird mitgeführt)
+  } };
+
+  // Ringe („in echt“): Seitenansicht des ganzen Bergs, vier Tafeln à 768 m übereinander
+  const kamR = new THREE.PerspectiveCamera(48, 1080 / 1920, 20, 60000);
+  const regieR = new Regie(kamR, (t) => {
+    const k = fortschritt(t, tEcht - 0.1, tKitchenBack);
+    const a = lerp(0.1, -0.12, k), dist = lerp(6200, 5700, ease.inOutSine(k));
+    const span = 2 * dist * Math.tan((24 * Math.PI) / 180);
+    const cy = 2963 - 0.23 * span; // Gipfel bei ca. 27 % der Bildhöhe: unter dem Höhen-HUD, Ringe über den Untertiteln
+    return { pos: [ZUG_X - Math.sin(a) * dist * 0.8 - dist * 0.45, cy, ZUG_Z + Math.cos(a) * dist * 0.88], ziel: [ZUG_X, cy, ZUG_Z], fov: 48 };
+  }, { zp });
+  const weltR = { szene: W.szene, kamera: kamR, post: { ...post, vignette: 0.3 }, update(t) {
+    regieR.anwenden(t);
+    kamR.near = 20; kamR.updateProjectionMatrix();
+    W.himmel.position.copy(kamR.position);
+    setzeWelt(t, "ringe", kam);
   } };
 
   // Küche am Schluss (Schleife): gleicher Anfangszustand wie bei t = 0
@@ -964,6 +995,7 @@ async function start() {
   zl.shot(0, weltPOV);
   zl.shot(tErg - 0.1, weltT, { typ: "blasen", dauer: 0.7 });
   zl.shot(tUeb - 0.05, weltPOV, { typ: "zoomwisch", dauer: 0.5, richtung: [1, -0.2], mitte: [0.5, 0.5] });
+  zl.shot(tEcht - 0.1, weltR, { typ: "zoomwisch", dauer: 0.5, richtung: [-1, 0.2], mitte: [0.5, 0.5] });
   zl.shot(tKitchenBack, weltK, { typ: "wolken", dauer: 0.9 });
 
   // =====================================================================================

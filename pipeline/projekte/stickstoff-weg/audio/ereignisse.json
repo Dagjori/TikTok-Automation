@@ -195,17 +195,28 @@
    "text": "KLAR?"
   },
   {
-   "quelle": "Chip",
-   "t": 10.16,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "78 % DER LUFT WEG"
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 11.49,
+   "art": "zoom",
+   "dauer": 0.9,
+   "klang": "zoom"
   },
   {
-   "quelle": "Chip",
-   "t": 14.33,
-   "typ": "chip-weg",
-   "klang": false
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 12.65,
+   "art": "zoom",
+   "dauer": 0.9,
+   "klang": "zoom"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 13.61,
+   "art": "zoom",
+   "dauer": 0.9,
+   "klang": "zoom"
   },
   {
    "quelle": "Chip",
@@ -965,6 +976,22 @@
    "text": "ANTEIL DER LUFT"
   },
   {
+   "quelle": "Szene",
+   "t": 47.73,
+   "typ": "kamera",
+   "klang": "zoom",
+   "dauer": 1.8,
+   "text": "Totale: Zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.57,
+   "typ": "kamera",
+   "klang": "zoom",
+   "dauer": 1.8,
+   "text": "Totale: Zoom"
+  },
+  {
    "quelle": "Balken",
    "t": 49.89,
    "typ": "balken-tag",
@@ -977,6 +1004,14 @@
    "typ": "formel",
    "klang": "pop",
    "text": "212"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.85,
+   "typ": "kamera",
+   "klang": "zoom",
+   "dauer": 1.8,
+   "text": "Totale: Zoom"
   },
   {
    "quelle": "Formel",
