@@ -36,7 +36,7 @@ node qc/text_ueberlappung_pov.mjs projekte/<name>       # Exit 0 = keine Überla
 ffmpeg -v error -i out/<name>/<name>.mp4 -vf "fps=0.5,scale=216:384,tile=8x5" -frames:v 1 out/<name>/kontaktbogen.png
 ```
 Prüfen und im Bericht festhalten:
-- [ ] **Satz für Satz** mit `skript.json → bild_text_abgleich`: Ist das Genannte im Moment des Satzes zu sehen? Stimmen Zahlen mit der Anzeige? Wurden Titelfrage, Sätze und Faktenzeile **1:1** aus dem Skript übernommen (Abweichung nur nach Rücksprache)?
+- [ ] **Satz für Satz** mit `skript.json → bild_text_abgleich`: Ist das Genannte im Moment des Satzes zu sehen? Stimmen Zahlen mit der Anzeige? Wurden Titelfrage, Sätze und Faktenzeile **1:1** aus dem Skript übernommen (jede Abweichung steht mit Quelle unter `korrekturen`; bei gekipptem Ergebnis liegt die Zustimmung des Inhabers vor)?
 - [ ] Bild 0 zeigt die volle, belebte Szene mit Anzeige und schon Bewegung; Titel blendet bis 4,4 s aus.
 - [ ] **Welt passt zum Thema** (Natur zuerst, Stadt nur, wenn das Thema sie braucht), keine Standard-Skyline als Dauerkulisse; **Weltvielfalt:** Welttyp und Standpunkt anders als im vorigen Video, Tageszeit wechselt, nicht zwei gleiche Enden am selben Tag.
 - [ ] **Bewegung statt Warten:** In jedem 2–3-s-Abschnitt des Kontaktbogens (und in den Standbildern dazwischen) ist eine themenbezogene Veränderung zu sehen (Licht, Wetter, Wasser, Vegetation, Eis, Wolkenzug, Tiere, Fahrzeuge, Kamerafahrt); Hinweis 10 ist erklärt. Mindestens 4 erkennbare Phasen, mindestens 3 Ebenen Leben gleichzeitig. Gibt es Leerlauf, wird die Abnahme verweigert.

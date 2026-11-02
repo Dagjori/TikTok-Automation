@@ -84,7 +84,7 @@ Regel des Inhabers (02.11.2026 abends): Von der ersten Sekunde fangen, Spannung 
 - Sätze nach [[Ablauf Account 2]] „Satztakt“ (ruhig, Präsens, was im Bild zu sehen ist); der Plan für die Anzeige nach „Messwert-Anzeige“.
 
 **Übernahme durch Claude Code (Schritt 1 des Ablaufs):**
-- Titelfrage, Sätze und Faktenzeile **1:1** nach `skript.json`; Aussagen ändert Claude nur nach Rücksprache mit dem Inhaber. Passt ein Satz nicht zum Takt (Länge, Wörter), wird das gemeldet, nicht stillschweigend umgeschrieben.
+- Titelfrage, Sätze und Faktenzeile **1:1** nach `skript.json`. Faktenfehler (Inhaber 02.11. spätabends): mit Quelle korrigieren, Aussage nur so weit wie nötig ändern, im Slot-Dokument unter `korrekturen` vermerken und weiter; kippt das Ergebnis (andere Antwort auf die Titelfrage, Pointe stimmt nicht mehr), Status `rueckfrage` und Push. Passt ein Satz nicht zum Takt (Länge, Wörter), wird er nur so weit wie nötig gekürzt und unter `korrekturen` vermerkt, nie stillschweigend umgeschrieben.
 - Zahlen prüft Claude per **Rechnung als Code mit Test** (`pipeline/sim/<thema>.mjs`); weicht ein Ergebnis ab, Rücksprache mit Vorschlag.
 - Weltvorschlag prüfen (Weltvielfalt, Tageszeit, Enden, [[Themen und Plan Account 2]] §3); bei Konflikt Alternative vorschlagen.
 - Felder, die Claude Code in `skript.json` ergänzt: `skript_id` (Dokument-ID), `zeitraffer` (Liste `{von, bis, faktor, anzeige}` in Sekunden oder `"keiner"` für Echtzeit), `bewegungsplan` (Liste `[t, "Veränderung", Stufe 1–5]`), `bild_text_abgleich`, **`lern_notizen`**.
