@@ -13,7 +13,7 @@ cssclasses: [konto-gemeinsam, typ-regel]
 ## Rhythmus (verbindlich seit 02.11.)
 - Pro Tag **genau 4 Videos, 2 je Account, für den nächsten Tag**. Nach der Abnahme plant Claude sie in Buffer ein.
 - **Nie mehr als diese 4 gleichzeitig in Arbeit**, Produktions-Agenten gestaffelt, **höchstens 2 Agenten gleichzeitig** (am 01.11. rissen 8–10 parallele Agenten das 5-Stunden-Limit).
-- **Themen:** kein 30-Tage-Plan mehr. Täglich 10 Ideen je Account, der Inhaber wählt 2, Claude Chat schreibt die Skripte ([[Claude-Chat-Workflow]]); **Produktion nur auf Startsignal des Inhabers.**
+- **Themen:** kein 30-Tage-Plan mehr. Täglich 10 Ideen je Account, der Inhaber wählt 2, die Tages-Sitzung von Claude Code recherchiert und schreibt die Skripte, der Inhaber gibt frei ([[Claude-Chat-Workflow]]); **Produktion startet mit dem Knopf „An Claude Code übergeben“** (Anleitung `docs/automatik/tages-sitzung.md`).
 - Grund der Grenze: Die Tokens begrenzen, nicht mehr die Zeit (seit der PC rendert, siehe [[Render-Dienst Windows-PC]]).
 
 ## Agenten-Aufträge als Checkliste (seit 02.11. spätabends)

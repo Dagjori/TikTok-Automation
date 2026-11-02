@@ -14,12 +14,14 @@ cssclasses: [konto-stelldirvor, typ-anleitung]
 
 Ablauf und Hintergrund: [[Claude-Chat-Workflow]]. Regeln: [[Regelwerk Account 2]]. Account **@stelldirvor.pov**.
 
-## So nutzt du ihn (Handarbeit, falls das Ideen-Studio nicht genutzt wird)
-1. Neues Gespräch in Claude Chat öffnen, **Schritt 1** unten einfügen. Du bekommst 10 Ideen.
-2. Zwei Ideen wählen (Mittag 12:30 und Abend 19:30 für den nächsten Tag).
+## Standardweg: Ideen-Studio
+Im **Ideen-Studio** (Artifact) erzeugst du die Ideen per Klick; Recherche und Skript schreibt die Tages-Sitzung von Claude Code mit demselben Befehl wie Schritt 2 (plus Websuche, `python3 tools/chat_befehle.py --skript-auftrag …`). Ablauf: [[Claude-Chat-Workflow]].
+
+## Notweg von Hand (nur wenn das Studio Claude Code nicht erreicht)
+1. Neues Gespräch in Claude Chat öffnen (Websuche an), **Schritt 1** unten einfügen. Du bekommst 10 Ideen.
+2. Zwei Ideen wählen (Mittag und Abend des nächsten Tages).
 3. **Schritt 2** einfügen, die zwei Ideen einsetzen. Du bekommst zwei Skripte.
-4. Beide Skripte hier in die Claude-Code-Sitzung einfügen und „Startsignal“ schreiben. Ich baue die Videos, ohne am Inhalt etwas zu ändern.
-Komfortabler geht es im **Ideen-Studio** (Artifact): dort laufen beide Schritte per Klick, die Skripte landen automatisch bei mir.
+4. Beide Skripte in eine Claude-Code-Sitzung einfügen und dazuschreiben, dass sie freigegeben sind. Claude Code prüft jede Zahl, korrigiert Faktenfehler mit Vermerk und baut die Videos.
 
 ## Schritt 1: zehn Ideen
 ```text

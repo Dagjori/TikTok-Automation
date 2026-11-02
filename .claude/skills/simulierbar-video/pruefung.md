@@ -26,7 +26,7 @@ ffmpeg -v error -i out/<name>/<name>.mp4 -vf "fps=1,scale=216:384,tile=10x8" -fr
 ```
 Prüfen und im Bericht festhalten:
 - [ ] **Skript-Bild-Abgleich Segment für Segment** mit `skript.json → bild_text_abgleich`: Ist jedes gesagte Objekt, jede Handlung, Zahl und jeder Ort im selben Moment zu sehen? Stimmen Tafel, Chips und Welt mit der Rechnung überein (z. B. Waage kippt erst, wenn der Zähler vorn ist)?
-- [ ] **Skript übernommen:** inhaltlich 1:1 aus dem Skript des Ideen-Studios; alle Abweichungen (Zahlen, Annahmen, geänderte Aussagen) sind gemeldet und freigegeben ([ablauf.md](ablauf.md) §5.2).
+- [ ] **Skript übernommen:** inhaltlich 1:1 aus dem Skript des Ideen-Studios; alle Korrekturen (Zahlen, Annahmen, geänderte Aussagen) stehen mit Quelle in `korrekturen`; bei gekipptem Ergebnis liegt die Zustimmung des Inhabers vor ([ablauf.md](ablauf.md) §5.2).
 - [ ] **Erlaubter Stil und Qualitätslatte** ([stile.md](stile.md)): genau ein Hauptstil aus 1–15 oder 17–21 (Einschub 13 nur als „Warum?“), und je Kriterium **ja**: (1) sauberes Licht und stimmige Materialien, (2) Tiefe statt Flatness ohne Absicht, (3) lesbare Typografie, (4) konsistente Farben, (5) keine Artefakte (Banding, Flimmern, Z-Fighting, Durchdringungen, abgeschnittene Objekte), (6) nie ein Standbild über 2 s, mindestens eine sichtbare Bildänderung alle 1–2 s.
 - [ ] **Billig-Test:** „Würde ein Zuschauer denken, das sieht billig aus?“ Bei „ja“ **Abnahme verweigern**, nachbessern (oder Stil wechseln) und neu rendern.
 - [ ] **Spannungskurve:** Effektdichte und Lichtstimmung steigen bis zum Ergebnis; das Ergebnis ist der optische Höhepunkt; danach ruhigeres „Warum?“, letzter Dreh, Schleife ([ablauf.md](ablauf.md) §6.2).

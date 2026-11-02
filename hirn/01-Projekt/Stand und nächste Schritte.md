@@ -36,7 +36,7 @@ cssclasses: [konto-gemeinsam, typ-plan]
 | # | Was | Wer | Zeit |
 |---|---|---|---|
 | 1 | **PC: Autostart (Aufgabenplanung) und Energieoptionen** nach [[Render-Dienst Windows-PC]] Schritt 8 und 9; Dienst-Fenster offen lassen | Inhaber | 10 Min. |
-| 2 | **Startsignal 03.11.** geben: Simulierbar Taxi (Stil 17, 12:30) und Mittagessen (Stil 19, 19:30); Account 2 „Seil um den Äquator“ (12:30) und „Sonne 1 m näher“ (19:30); Sonnet-Agenten, max. 2 gleichzeitig; Rendern auf dem PC | Inhaber, dann Claude | 1 Satz, dann ca. 2–4 Std. Agentenarbeit je Video |
+| 2 | **03.11. im Ideen-Studio:** Simulierbar „Studium oder Ausbildung“ (12:30) und „Kind bis 18“ (19:30) sind freigegeben → Knopf „An Claude Code übergeben“; Account 2: 2 der 10 Ideen wählen → „Skripte recherchieren lassen“ → freigeben → übergeben. Die Tages-Sitzung produziert (Sonnet-Agenten, max. 2), rendert auf dem PC und plant in Buffer | Inhaber (Klicks), dann Claude Code automatisch | 5 Min., dann ca. 2–4 Std. Arbeit je Video ohne dich |
 | 3 | ~~Nachprüfung der Posts vom 02.11.~~ **erledigt** (19:17 UTC, alle drei öffentlich, Supabase-Dateien gelöscht, Cockpit auf „gepostet“) | Claude | – |
 | 4 | Stile 17–21 erstmals auf der GPU messen (Taxi) | Claude | nebenbei |
 | 5 | Repo auf privat stellen (**erst nach Lesezugang für den PC**), ElevenLabs-Guthaben prüfen, Telegram einrichten | Inhaber/Claude | 5–15 Min. je |

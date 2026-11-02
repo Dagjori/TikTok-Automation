@@ -181,6 +181,22 @@ def skript_befehl(konto, ideen, lernstand=None, format="text"):
     return "\n\n".join(teile)
 
 
+RECHERCHE_CODE = """RECHERCHE (du bist Claude Code mit Websuche; dieser Abschnitt hat Vorrang vor „frage mich vorher“ oben)
+- Du arbeitest unbeaufsichtigt: frage nicht zurück, recherchiere selbst. Was du nicht belegen kannst, lässt du weg. Trägt die Idee dann nicht, meldest du das (Status fehler mit Grund und Vorschlag), statt etwas zu erfinden.
+- Belege jede Zahl, jedes Datum und jede Regel mit einer Websuche, möglichst bei der Primärquelle (Gesetz, Behörde, amtliche Statistik, Studie, Hersteller). Öffne die Quelle, wenn die Suche nur einen Ausschnitt zeigt. Stand und Gültigkeit müssen zum Video-Tag passen (Jahr, Rechtsstand, Preise).
+- Rechne jede Zahl im Rechenweg mit Python nach, nie im Kopf. Im Sprechtext runde Zahlen, im Bild exakte.
+- Schreibe jede Quelle als „(F) Titel, Herausgeber, Stand – URL“, Schätzungen als „(S) …“, Annahmen als „(A) …“.
+- Antworte nicht im Chat, sondern schreibe das fertige Skript-Objekt (der erste Eintrag von "skripte" in der JSON-Form oben) in das Slot-Dokument (docs/automatik/tages-sitzung.md §3)."""
+
+
+def code_skript_befehl(konto, idee, lernstand=None, kommentar=""):
+    """Befehl für die Tages-Sitzung von Claude Code: derselbe Skript-Befehl wie im Studio (JSON-Form) plus Recherche-Regeln."""
+    teile = [skript_befehl(konto, [idee], lernstand=lernstand, format="json"), RECHERCHE_CODE]
+    if kommentar:
+        teile.append("WUNSCH DES INHABERS ZUR NEUFASSUNG (hat Vorrang; was er nicht kritisiert, bleibt möglichst gleich):\n" + kommentar)
+    return "\n\n".join(teile)
+
+
 # ---------------------------------------------------------------- Hirn-Notizen
 def notiz(konto, titel, ordner, zielordner_konto):
     c = KONFIG[konto]
@@ -202,12 +218,14 @@ tags: [konto/{k}, claude-chat, befehl, skript]
 
 Ablauf und Hintergrund: [[Claude-Chat-Workflow]]. Regeln: [[Regelwerk {'Simulierbar' if k == 'simulierbar' else 'Account 2'}]]. Account **{c['handle']}**.
 
-## So nutzt du ihn (Handarbeit, falls das Ideen-Studio nicht genutzt wird)
-1. Neues Gespräch in Claude Chat öffnen, **Schritt 1** unten einfügen. Du bekommst 10 Ideen.
-2. Zwei Ideen wählen (Mittag 12:30 und Abend 19:30 für den nächsten Tag).
+## Standardweg: Ideen-Studio
+Im **Ideen-Studio** (Artifact) erzeugst du die Ideen per Klick; Recherche und Skript schreibt die Tages-Sitzung von Claude Code mit demselben Befehl wie Schritt 2 (plus Websuche, `python3 tools/chat_befehle.py --skript-auftrag …`). Ablauf: [[Claude-Chat-Workflow]].
+
+## Notweg von Hand (nur wenn das Studio Claude Code nicht erreicht)
+1. Neues Gespräch in Claude Chat öffnen (Websuche an), **Schritt 1** unten einfügen. Du bekommst 10 Ideen.
+2. Zwei Ideen wählen (Mittag und Abend des nächsten Tages).
 3. **Schritt 2** einfügen, die zwei Ideen einsetzen. Du bekommst zwei Skripte.
-4. Beide Skripte hier in die Claude-Code-Sitzung einfügen und „Startsignal“ schreiben. Ich baue die Videos, ohne am Inhalt etwas zu ändern.
-Komfortabler geht es im **Ideen-Studio** (Artifact): dort laufen beide Schritte per Klick, die Skripte landen automatisch bei mir.
+4. Beide Skripte in eine Claude-Code-Sitzung einfügen und dazuschreiben, dass sie freigegeben sind. Claude Code prüft jede Zahl, korrigiert Faktenfehler mit Vermerk und baut die Videos.
 
 ## Schritt 1: zehn Ideen
 ```text
@@ -252,5 +270,24 @@ def main():
     studio_bauen()
 
 
+def cli():
+    import argparse
+    ap = argparse.ArgumentParser(description="Ohne Optionen: Hirn-Notizen, befehle.json und Studio bauen.")
+    ap.add_argument("--skript-auftrag", choices=list(KONFIG), help="Skript-Befehl für die Tages-Sitzung ausgeben")
+    ap.add_argument("--ideen", help="JSON-Datei mit der gewählten Idee (Objekt oder Liste mit einem Objekt)")
+    ap.add_argument("--lernstand", help="Textdatei mit dem aktuellen Lernstand (sonst Startwert)")
+    ap.add_argument("--kommentar", default="", help="Wunsch des Inhabers zur Neufassung")
+    a = ap.parse_args()
+    if not a.skript_auftrag:
+        return main()
+    if not a.ideen:
+        ap.error("--ideen fehlt")
+    idee = json.loads(Path(a.ideen).read_text(encoding="utf-8"))
+    if isinstance(idee, list):
+        idee = idee[0]
+    ls = Path(a.lernstand).read_text(encoding="utf-8").strip() if a.lernstand else None
+    print(code_skript_befehl(a.skript_auftrag, idee, lernstand=ls or None, kommentar=a.kommentar))
+
+
 if __name__ == "__main__":
-    main()
+    cli()

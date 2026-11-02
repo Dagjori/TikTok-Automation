@@ -4,12 +4,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: eine Arbeitsfläche, oben Konto-Wahl (grün = Simulierbar, violett = stelldirvor.pov, wie im Obsidian-Farbcode),
-   darunter der Ablauf in vier Schritten; unten fest die Auswahlleiste. */
+/* Layout: oben der Video-Tag (offene Tage als Chips) und die Tagesübersicht mit allen 4 Videos und der Claude-Code-Sitzung,
+   darunter die Konto-Wahl (grün = Simulierbar, violett = stelldirvor.pov, wie im Obsidian-Farbcode) und der Ablauf je Konto;
+   unten fest die Auswahlleiste. Alles liegt in der Datenbank des Artifacts und bleibt beim erneuten Öffnen erhalten. */
 :root {
   --bg: #F4F6F4; --surface: #FFFFFF; --surface2: #ECF0EE; --fg: #14191C; --muted: #566169; --line: #D8DFDC;
   --a1: #1B8F52; --a1-soft: #DDF3E8; --a2: #7440CF; --a2-soft: #EAE0FA;
-  --warn: #9A6200; --warn-soft: #FBEFD2; --bad: #B5382A; --bad-soft: #F8DDD8; --ok: #1B8F52; --on: #FFFFFF;
+  --warn: #9A6200; --warn-soft: #FBEFD2; --bad: #B5382A; --bad-soft: #F8DDD8; --ok: #1B8F52; --ok-soft: #DDF3E8; --run: #1F5FBF; --run-soft: #DDE8FA; --on: #FFFFFF;
   --accent: var(--a1); --accent-soft: var(--a1-soft);
   --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --f-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
@@ -19,13 +20,13 @@
   :root:not([data-theme="light"]) {
     --bg: #0E1214; --surface: #161C1F; --surface2: #1E2629; --fg: #E7ECEA; --muted: #98A5A1; --line: #2B3539;
     --a1: #3FD58D; --a1-soft: #153A2A; --a2: #B88DFF; --a2-soft: #2B1F47;
-    --warn: #E8B24A; --warn-soft: #3A2D12; --bad: #FF8A7A; --bad-soft: #3D1D19; --ok: #3FD58D; --on: #0B1210; color-scheme: dark;
+    --warn: #E8B24A; --warn-soft: #3A2D12; --bad: #FF8A7A; --bad-soft: #3D1D19; --ok: #3FD58D; --ok-soft: #153A2A; --run: #8DB8FF; --run-soft: #172740; --on: #0B1210; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0E1214; --surface: #161C1F; --surface2: #1E2629; --fg: #E7ECEA; --muted: #98A5A1; --line: #2B3539;
   --a1: #3FD58D; --a1-soft: #153A2A; --a2: #B88DFF; --a2-soft: #2B1F47;
-  --warn: #E8B24A; --warn-soft: #3A2D12; --bad: #FF8A7A; --bad-soft: #3D1D19; --ok: #3FD58D; --on: #0B1210; color-scheme: dark;
+  --warn: #E8B24A; --warn-soft: #3A2D12; --bad: #FF8A7A; --bad-soft: #3D1D19; --ok: #3FD58D; --ok-soft: #153A2A; --run: #8DB8FF; --run-soft: #172740; --on: #0B1210; color-scheme: dark;
 }
 body[data-konto="stelldirvor"] { --accent: var(--a2); --accent-soft: var(--a2-soft); }
 * { box-sizing: border-box; }
@@ -36,12 +37,16 @@ h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-
 h1 { font-size: clamp(28px, 5vw, 40px); letter-spacing: -0.02em; }
 h2 { font-size: 20px; } h3 { font-size: 17px; }
 p { margin: 0; }
+a { color: var(--accent); }
 .muted { color: var(--muted); }
 .mono { font-family: var(--f-mono); font-size: 13px; }
 button { font: inherit; cursor: pointer; }
-button:focus-visible, summary:focus-visible, textarea:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+button:focus-visible, summary:focus-visible, textarea:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; align-items: end; }
 .top .sub { color: var(--muted); }
+.days { display: flex; flex-wrap: wrap; gap: 8px; }
+.day { border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 999px; padding: 6px 14px; font-size: 14px; }
+.day[aria-pressed="true"] { border: 2px solid var(--fg); font-weight: 600; padding: 5px 13px; }
 .tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .tab { text-align: left; border: 2px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 10px; padding: 12px 14px; display: grid; gap: 2px; }
 .tab b { font-family: var(--f-display); font-size: 18px; }
@@ -49,7 +54,7 @@ button:focus-visible, summary:focus-visible, textarea:focus-visible, input:focus
 .tab[aria-pressed="true"] { border-color: var(--tabc); background: var(--tabbg); }
 .tab[data-k="simulierbar"] { --tabc: var(--a1); --tabbg: var(--a1-soft); }
 .tab[data-k="stelldirvor"] { --tabc: var(--a2); --tabbg: var(--a2-soft); }
-.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
 .steps li { border-top: 4px solid var(--line); padding-top: 6px; font-size: 14px; color: var(--muted); }
 .steps li.done { border-color: var(--accent); color: var(--fg); }
 .steps li.now { border-color: var(--accent); color: var(--fg); font-weight: 600; }
@@ -66,6 +71,7 @@ details .body { margin-top: 10px; display: grid; gap: 10px; }
 pre.text { white-space: pre-wrap; word-break: break-word; margin: 0; font-family: var(--f-body); }
 .note { border-left: 4px solid var(--warn); background: var(--warn-soft); padding: 10px 12px; border-radius: 0 8px 8px 0; font-size: 15px; }
 .err { border-left: 4px solid var(--bad); background: var(--bad-soft); padding: 10px 12px; border-radius: 0 8px 8px 0; }
+.good { border-left: 4px solid var(--ok); background: var(--ok-soft); padding: 10px 12px; border-radius: 0 8px 8px 0; }
 .ideas { display: grid; gap: 12px; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; min-width: 0; }
 .card.sel { border: 2px solid var(--accent); }
@@ -91,12 +97,23 @@ pre.text { white-space: pre-wrap; word-break: break-word; margin: 0; font-family
 .seg .ph { font-family: var(--f-mono); font-size: 13px; color: var(--accent); }
 .badge { font-family: var(--f-mono); font-size: 13px; padding: 2px 8px; border-radius: 6px; background: var(--surface2); }
 .badge.ok { background: var(--accent-soft); } .badge.warn { background: var(--warn-soft); color: var(--warn); } .badge.bad { background: var(--bad-soft); color: var(--bad); }
+.pill { font-size: 13px; font-weight: 600; padding: 2px 10px; border-radius: 999px; background: var(--surface2); color: var(--fg); white-space: nowrap; }
+.pill.run { background: var(--run-soft); color: var(--run); } .pill.ok { background: var(--ok-soft); color: var(--ok); }
+.pill.warn { background: var(--warn-soft); color: var(--warn); } .pill.bad { background: var(--bad-soft); color: var(--bad); }
+.over { display: grid; gap: 0; }
+.orow { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px 12px; padding: 9px 0; border-top: 1px solid var(--line); min-width: 0; }
+@media (min-width: 720px) { .orow { grid-template-columns: 190px minmax(0, 1fr) auto; align-items: baseline; } }
+.orow .wer { font-weight: 600; font-size: 15px; }
+.orow .wer.a1 { color: var(--a1); } .orow .wer.a2 { color: var(--a2); }
+.orow .was { min-width: 0; overflow-wrap: anywhere; }
+.orow .was small { display: block; color: var(--muted); font-size: 14px; }
+.verlauf { margin: 0; padding-left: 18px; font-size: 14px; color: var(--muted); }
 .tablewrap { overflow-x: auto; }
 table { border-collapse: collapse; width: 100%; font-size: 15px; }
 th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { color: var(--muted); font-weight: 500; font-size: 13px; }
 .state { font-size: 14px; color: var(--muted); }
-@media (prefers-reduced-motion: no-preference) { .tab, .btn, .slotbtn { transition: background-color .15s, border-color .15s; } }
+@media (prefers-reduced-motion: no-preference) { .tab, .btn, .slotbtn, .day { transition: background-color .15s, border-color .15s; } }
 </style>
 
 <div class="wrap" id="app">
@@ -106,17 +123,20 @@ th { color: var(--muted); font-weight: 500; font-size: 13px; }
       <p class="sub" id="zielzeile">Videos für morgen</p>
     </div>
     <div class="row">
-      <label class="lbl" for="datum">Video-Tag</label>
+      <label class="lbl" for="datum">Anderer Tag</label>
       <input id="datum" type="date" style="font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg)">
     </div>
   </header>
+  <nav class="days" id="tage" aria-label="Offene Video-Tage"></nav>
+  <section id="hinweis"></section>
+  <section id="tag"></section>
   <nav class="tabs" aria-label="Account" id="tabs"></nav>
   <ol class="steps" id="steps"></ol>
   <section id="lern"></section>
   <section id="schritt1"></section>
   <section id="ideen"></section>
   <section id="skripte"></section>
-  <section id="uebergabe"></section>
+  <section id="archiv"></section>
   <section id="fallback"></section>
 </div>
 <div class="bar" id="bar" hidden></div>
@@ -125,15 +145,28 @@ th { color: var(--muted); font-weight: 500; font-size: 13px; }
 <script>
 const BEFEHLE = JSON.parse(document.getElementById("befehle").textContent);
 const KONTEN = ["simulierbar", "stelldirvor"];
+const SLOTS = ["mittag", "abend"];
+/* Anbindung an Claude Code: je Video-Tag eine Sitzung (Anleitung im Repo). Die Umgebungs-ID ist kein Geheimnis, nur ein Verweis. */
+const AUTO = { server: "Claude Code Remote", umgebung: "env_01TGhvdLYk1GFuFjarVMu4gS", repo: "https://github.com/Dagjori/tiktok-automation",
+  modell: "claude-opus-5-5", anleitung: "docs/automatik/tages-sitzung.md" };
 const FELDER_IDEE = {
   simulierbar: [["hook", "Erster Satz"], ["ergebnis_ansatz", "Rechnung und Ergebnis"], ["warum_relevant", "Wen es betrifft"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["bildidee", "Bildidee"], ["laender", "Land"], ["risiko", "Risiko"]],
   stelldirvor: [["ereignis", "Ereignis"], ["messgroesse", "Messwert-Anzeige"], ["welt", "Welt"], ["standpunkt", "Standpunkt"], ["tageszeit_verlauf", "Tageszeit"], ["bewegung", "Bewegung in der Welt"], ["kamera", "Kamera"], ["zeitraffer", "Zeitraffer"], ["hoehepunkt", "Höhepunkt"], ["pointe", "Pointe"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["laender", "Ort"], ["risiko", "Risiko"]],
 };
-const S = { konto: "simulierbar", datum: "", db: null, sample: null, user: null, canWrite: null,
-  lernstand: {}, wunsch: { simulierbar: "", stelldirvor: "" }, ideen: { simulierbar: [], stelldirvor: [] },
-  auswahl: { simulierbar: { mittag: null, abend: null }, stelldirvor: { mittag: null, abend: null } },
-  skripte: { simulierbar: {}, stelldirvor: {} }, busy: {}, fehler: {}, fortschritt: {}, ctl: {}, liste: [], dbZeit: false };
+const STATUS = {
+  gewaehlt: ["Idee gewählt", ""], recherche: ["Claude Code recherchiert", "run"], skript_fertig: ["Skript fertig, bitte prüfen", "warn"],
+  freigegeben: ["Freigegeben", "ok"], uebergeben: ["Übergeben, startet", "run"], produktion: ["In Produktion", "run"],
+  rueckfrage: ["Rückfrage an dich", "bad"], geplant: ["In Buffer geplant", "ok"], gepostet: ["Gepostet", "ok"], fehler: ["Fehler", "bad"],
+};
+const FERTIG = new Set(["geplant", "gepostet"]);
+const AENDERBAR = new Set(["gewaehlt", "fehler"]);
+const BUCKET = { WORKING: ["Claude Code arbeitet", "run"], BLOCKED: ["Claude Code wartet auf dich", "bad"], REVIEW_READY: ["Claude Code hat den letzten Auftrag erledigt", "ok"],
+  COMPLETED: ["Claude Code hat den letzten Auftrag erledigt", "ok"], FAILED: ["Der letzte Auftrag endete mit einem Fehler", "bad"] };
+const S = { konto: "simulierbar", datum: "", manuell: false, db: null, sample: null, user: null, mcp: null, perm: null, tab: "",
+  lernstand: {}, ideen: {}, slots: {}, laeufe: {}, geladen: false, erster: false, dbZeit: false,
+  wunsch: { simulierbar: "", stelldirvor: "" }, entwurf: {}, busy: {}, fehler: {}, fortschritt: {}, ctl: {}, sitzung: {}, hinweis: "", kette: {}, spaeter: new Set(), manuellerAuftrag: "" };
 
+/* ---------- Hilfen ---------- */
 const $ = (s, el = document) => el.querySelector(s);
 function h(tag, attrs, ...kids) {
   const e = document.createElement(tag);
@@ -148,20 +181,34 @@ function h(tag, attrs, ...kids) {
   return e;
 }
 const K = () => BEFEHLE[S.konto];
-const pf = () => K().praefix;
+const pf = (k = S.konto) => BEFEHLE[k].praefix;
 function iso(d) { return new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Berlin" }).format(d); }
-function morgen() { return iso(new Date(Date.now() + 864e5)); }
+const heute = () => iso(new Date());
+const morgen = () => iso(new Date(Date.now() + 864e5));
+function plusTage(isoDatum, n) { const t = new Date(isoDatum + "T12:00:00Z"); t.setUTCDate(t.getUTCDate() + n); return t.toISOString().slice(0, 10); }
 function wochentag(isoDatum) { return new Date(isoDatum + "T12:00:00").toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long", year: "numeric" }); }
-function slots(isoDatum) {
-  const we = [0, 6].includes(new Date(isoDatum + "T12:00:00").getDay());
-  return { mittag: we ? "09:30" : "12:30", abend: "19:30" };
-}
-function docId(konto, slot) { return BEFEHLE[konto].praefix + "-" + S.datum + "-" + slot; }
+function kurzTag(isoDatum) { return new Date(isoDatum + "T12:00:00").toLocaleDateString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit" }); }
+function uhr(isoDatum) { const we = [0, 6].includes(new Date(isoDatum + "T12:00:00").getDay()); return { mittag: we ? "09:30" : "12:30", abend: "19:30" }; }
+const slotName = (s) => (s === "mittag" ? "Mittag" : "Abend");
+const sid = (k, s, d = S.datum) => pf(k) + "-" + d + "-" + s;
+const iid = (k, d = S.datum) => pf(k) + "-" + d;
+const slotDoc = (k, s, d = S.datum) => S.slots[sid(k, s, d)];
+const ideenListe = (k = S.konto) => S.ideen[iid(k)]?.ideen || [];
+const alleSlots = (d = S.datum) => KONTEN.flatMap((k) => SLOTS.map((s) => ({ k, s, id: sid(k, s, d), doc: S.slots[sid(k, s, d)] })));
+const tagFertig = (d) => alleSlots(d).every((x) => x.doc && FERTIG.has(x.doc.status));
+const tagAktiv = (d) => alleSlots(d).some((x) => x.doc && x.doc.status !== "gewaehlt" && !FERTIG.has(x.doc.status));
+const ideeTitel = (d) => (d ? d.idee?.titel || d.titel || "" : "");   /* ältere Dokumente (vor dem Speicher-Umbau) haben kein Feld idee */
+const brauchtSkript = (d) => d && (d.status === "gewaehlt" || (d.status === "fehler" && d.fehler_phase !== "produktion"));
+const jetzt = () => new Date().toISOString();
+function zeitText(isoZeit) { try { return new Date(isoZeit).toLocaleString("de-DE", { timeZone: "Europe/Berlin", weekday: "short", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }); } catch (e) { return String(isoZeit || ""); } }
 function lernText() { return S.lernstand[S.konto] ?? K().lernstand; }
 function bisherListe() {
   const titel = new Set(K().bisher);
-  for (const d of S.liste) if (d.konto === S.konto && d.titel) titel.add(d.titel);
+  for (const d of Object.values(S.slots)) if (d.konto === S.konto && d.titel) titel.add(d.titel);
   return [...titel];
+}
+function mitLinks(text) {
+  return String(text).split(/(https?:\/\/[^\s)]+)/).map((t, i) => (i % 2 ? h("a", { href: t, target: "_blank", rel: "noopener" }, t) : t));
 }
 function copy(text, knopf) {
   const fertig = () => { const t = knopf.textContent; knopf.textContent = "Kopiert"; setTimeout(() => (knopf.textContent = t), 1500); };
@@ -169,6 +216,7 @@ function copy(text, knopf) {
     const ta = h("textarea", { "aria-label": "Zum Kopieren" }); ta.value = text; knopf.after(ta); ta.select();
   });
 }
+function speichereWunsch() { try { localStorage.setItem("studio-wunsch", JSON.stringify(S.wunsch)); } catch (e) {} }
 const FEHLER = {
   not_granted: "Du hast Claude für diese Seite nicht freigegeben. Öffne das Berechtigungs-Menü des Artifacts und erlaube es, dann klicke noch einmal.",
   rate_limited: "Zu viele Anfragen oder dein Nutzungslimit ist erreicht. Warte etwas und klicke dann erneut.",
@@ -180,32 +228,336 @@ const FEHLER = {
   prompt_too_large: "Die Anfrage war zu groß.", empty_completion: "Claude hat nichts geschrieben. Klicke noch einmal.",
 };
 const fehlerText = (e) => FEHLER[e?.code] ?? "Es hat nicht geklappt (" + (e?.code ?? "unbekannt") + "). Klicke noch einmal.";
+const MCP_FEHLER = {
+  needs_reauth: "Der Connector „Claude Code Remote“ muss neu verbunden werden (claude.ai → Einstellungen → Connectors).",
+  server_not_connected: "Der Connector „Claude Code Remote“ ist für dein Konto nicht verbunden (claude.ai → Einstellungen → Connectors).",
+  not_in_manifest: "Du hast dem Studio den Zugriff auf Claude Code nicht erlaubt. Öffne das Berechtigungs-Menü des Artifacts und erlaube „Claude Code Remote“.",
+  approval_required: "Der Start von Claude Code braucht deine Zustimmung. Klicke noch einmal und bestätige die Abfrage.",
+  selection_required: "Wähle in der Abfrage von claude.ai, welchen Connector das Studio nutzen soll, dann klicke noch einmal.",
+  blocked_by_policy: "Deine Organisation blockiert diesen Zugriff.",
+  server_unavailable: "Claude Code ist gerade nicht erreichbar. Warte kurz und klicke noch einmal.",
+  not_granted: "Diese Ansicht darf Claude Code nicht erreichen. Öffne das Studio in claude.ai.",
+  capability_disabled: "Diese Ansicht kann Claude Code nicht erreichen. Öffne das Studio in claude.ai.",
+};
+const mcpText = (e) => (MCP_FEHLER[e?.code] ?? "Es hat nicht geklappt (" + (e?.code ?? "unbekannt") + ").") + (e?.code === "tool_error" ? " " + String(e.message || "").slice(0, 200) : "");
 
-/* ---------- Befehle bauen ---------- */
+/* ---------- Speichern (eine Schreibaktion je Dokument nach der anderen) ---------- */
+function kette(schluessel, fn) { const p = (S.kette[schluessel] || Promise.resolve()).then(fn, fn); S.kette[schluessel] = p.catch(() => {}); return p; }
+function verlaufPlus(id, text) { const alt = Array.isArray(S.slots[id]?.verlauf) ? S.slots[id].verlauf : []; return [...alt, { zeit: jetzt(), text, von: "studio" }].slice(-30); }
+async function slotSetzen(id, daten, ganz) {
+  if (!S.db) throw { code: "kein_speicher" };
+  return kette("s/" + id, async () => {
+    const ref = S.db.doc("skripte/" + id), z = jetzt();
+    if (ganz || !S.slots[id]) return ref.set({ ...daten, erstellt: S.slots[id]?.erstellt || z, aktualisiert: z });
+    try { return await ref.update({ ...daten, aktualisiert: z }); }
+    catch (e) { if (e?.code === "invalid_argument") return ref.set({ ...S.slots[id], ...daten, aktualisiert: z }); throw e; }
+  });
+}
+const slotLoeschen = (id) => kette("s/" + id, () => S.db.doc("skripte/" + id).delete());
+
+/* ---------- Tage ---------- */
+function standardTag() {
+  const hd = heute(), md = morgen();
+  const frueh = [...new Set(Object.values(S.slots).map((d) => d.datum))].filter((d) => d && d >= hd && d < md && tagAktiv(d)).sort();
+  if (frueh.length) return frueh[0];
+  let d = md; for (let i = 0; i < 60 && tagFertig(d); i++) d = plusTage(d, 1);
+  return d;
+}
+function offeneTage() {
+  const hd = heute(), md = morgen();
+  const alle = new Set([...Object.values(S.slots).map((d) => d.datum), ...Object.values(S.ideen).map((d) => d.datum), standardTag()]);
+  return [...alle].filter((d) => d && d >= hd && !tagFertig(d) && (d >= md || tagAktiv(d))).sort();
+}
+function archivTage() {
+  const hd = heute();
+  return [...new Set(Object.values(S.slots).map((d) => d.datum))].filter((d) => d && (tagFertig(d) || d < hd)).sort().reverse().slice(0, 14);
+}
+function slotsEingang(neu) {
+  const vorher = S.datum && tagFertig(S.datum);
+  S.slots = neu; S.geladen = true;
+  const std = standardTag();
+  if (!S.erster) { S.erster = true; if (!S.manuell) S.datum = std; return; }
+  if (!vorher && S.datum && tagFertig(S.datum) && S.datum !== std) {
+    S.hinweis = wochentag(S.datum) + ": alle 4 Videos sind in Buffer geplant. Weiter mit " + wochentag(std) + ".";
+    S.datum = std; S.manuell = false; return;
+  }
+  if (!S.manuell) S.datum = std;
+}
+
+/* ---------- Claude Code ---------- */
+function sitzungsId(p) {
+  if (p && typeof p === "object" && p.ccr && typeof p.ccr.id === "string") return p.ccr.id;
+  const t = typeof p === "string" ? p : JSON.stringify(p || {});
+  return (t.match(/session_[A-Za-z0-9]{8,}/) || [])[0] || "";
+}
+const sitzungsLink = (id) => "https://claude.ai/code/" + id;
+function auftragText(auftrag) { return "AUFTRAG AUS DEM IDEEN-STUDIO\n" + JSON.stringify(auftrag) + "\nBefolge " + AUTO.anleitung + " (Abschnitt zu diesem Auftrag)."; }
+async function auftragSenden(auftrag) {
+  const d = auftrag.datum, nachricht = auftragText(auftrag);
+  if (!S.mcp) { S.manuellerAuftrag = nachricht; return { ok: false, manuell: true, text: "Claude Code ist von dieser Ansicht aus nicht erreichbar. Kopiere den Auftrag (Knopf in der Tagesübersicht) und füge ihn in eine Claude-Code-Sitzung ein." }; }
+  const lauf = S.laeufe[d];
+  const eintrag = { zeit: jetzt(), art: auftrag.art, konto: auftrag.konto || "", slots: auftrag.slots || auftrag.ids || (auftrag.slot ? [auftrag.slot] : []) };
+  const protokoll = (id, neu) => kette("l/" + d, () => S.db.doc("laeufe/" + d).set({ datum: d, session_id: id, modell: AUTO.modell,
+    gestartet: neu ? jetzt() : (lauf?.gestartet || jetzt()), auftraege: [...(neu ? [] : (lauf?.auftraege || [])), eintrag].slice(-40) })).catch(() => {});
+  if (lauf?.session_id) {
+    try {
+      await S.mcp.callTool(AUTO.server, "send_message", { session_id: lauf.session_id, message: nachricht, priority: "next" }, { cache: false });
+      await protokoll(lauf.session_id, false); statusHolen(d); return { ok: true };
+    } catch (e) {
+      if (["needs_reauth", "server_not_connected", "not_in_manifest", "blocked_by_policy", "approval_required", "selection_required", "not_granted", "capability_disabled"].includes(e?.code)) return { ok: false, text: mcpText(e) };
+      if (e?.code === "server_unavailable" || e?.code === "upstream_error") return { ok: false, text: mcpText(e) + " Prüfe in der Sitzung, ob der Auftrag angekommen ist, bevor du noch einmal klickst." };
+      /* tool_error u. a.: Sitzung archiviert oder weg → neue Sitzung */
+    }
+  }
+  const lock = await S.db.doc("laeufe/" + d).acquire({ holder: S.tab, ttlMs: 60000 }).catch(() => ({ acquired: true }));
+  if (lock && lock.acquired === false) return { ok: false, text: "Gerade startet schon eine Claude-Code-Sitzung für diesen Tag (anderes Fenster). Warte eine Minute und klicke dann noch einmal." };
+  const prompt = "Du bist die Tages-Sitzung von Claude Code für den Video-Tag " + d + " (Projekt TikTok Automation, beide Accounts). Lies zuerst " + AUTO.anleitung +
+    " vollständig und befolge sie Schritt für Schritt. Weitere Aufträge kommen als neue Nachrichten in diese Sitzung.\n\n" + nachricht;
+  const eingabe = { title: "TikTok Tag " + d, prompt, environment_id: AUTO.umgebung, source_url: AUTO.repo, model: AUTO.modell, permission_mode: "auto", tags: ["tiktok-tagessitzung"] };
+  let res;
+  try { res = await S.mcp.callTool(AUTO.server, "create_session", eingabe, { cache: false }); }
+  catch (e) {
+    if (e?.code === "tool_error" && /permission/i.test(String(e.message || ""))) {
+      try { delete eingabe.permission_mode; res = await S.mcp.callTool(AUTO.server, "create_session", eingabe, { cache: false }); }
+      catch (e2) { return { ok: false, text: mcpText(e2) }; }
+    } else return { ok: false, text: mcpText(e) + (["server_unavailable", "upstream_error"].includes(e?.code) ? " Schau unter claude.ai/code nach, ob „TikTok Tag " + d + "“ doch gestartet ist, bevor du noch einmal klickst." : "") };
+  }
+  const id = sitzungsId(res?.payload ?? res);
+  if (!id) return { ok: false, text: "Claude Code hat keine Sitzungs-ID zurückgegeben. Schau unter claude.ai/code nach, ob „TikTok Tag " + d + "“ läuft." };
+  await protokoll(id, true);
+  S.sitzung[d] = { bucket: "WORKING", zeit: Date.now() }; statusHolen(d);
+  return { ok: true };
+}
+async function statusHolen(d = S.datum) {
+  const id = S.laeufe[d]?.session_id; if (!S.mcp || !id) return;
+  S.sitzung[d] = { ...(S.sitzung[d] || {}), laedt: true }; renderTag();
+  try {
+    const r = await S.mcp.callTool(AUTO.server, "get_session", { session_id: id }, { cache: false });
+    const p = r?.payload, c = (p && typeof p === "object" && p.ccr) || {}, t = typeof p === "string" ? p : JSON.stringify(p || {});
+    S.sitzung[d] = { bucket: String(c.status_bucket || (t.match(/SESSION_STATUS_BUCKET_[A-Z_]+/) || [""])[0]).replace("SESSION_STATUS_BUCKET_", ""),
+      stat: String(c.session_status || "").replace("SESSION_STATUS_", ""), modus: String(c.session_context?.permission_mode || c.permission_mode || "").toLowerCase().replace("permission_mode_", ""),
+      info: String(c.post_turn_summary?.status_detail || ""), zeit: Date.now() };
+  } catch (e) { S.sitzung[d] = { fehler: mcpText(e), zeit: Date.now() }; }
+  renderTag();
+}
+
+/* ---------- Aktionen ---------- */
 function ideenBefehl(wunsch) {
   let t = K().ideen_vorlage.replace("{{LERNSTAND}}", () => lernText()).replace("- {{BISHER}}", () => bisherListe().map((x) => "- " + x).join("\n"));
   if (wunsch.trim()) t = t.replace("AUFGABE\n", () => "MEIN WUNSCH FÜR HEUTE: " + wunsch.trim() + "\n\nAUFGABE\n");
   return t + "\n\nVideo-Tag: " + S.datum + ". Alle Aussagen müssen für das Jahr " + S.datum.slice(0, 4) + " gelten.";
 }
-function skriptBefehl(idee) {
-  return K().skript_vorlage.replace("{{LERNSTAND}}", () => lernText()).replace("{{IDEEN}}", () => JSON.stringify([idee], null, 1))
-    + "\n\nVideo-Tag: " + S.datum + ". Alle Aussagen müssen für das Jahr " + S.datum.slice(0, 4) + " gelten. Du kannst nicht im Internet recherchieren: nutze nur Fakten, deren Inhalt und Jahr du sicher kennst, und markiere alles andere als „zu prüfen“ in den Annahmen. Claude Code prüft jede Zahl danach mit Websuche.";
-}
-
-/* ---------- Erzeugen ---------- */
 async function erzeugeIdeen() {
-  const k = S.konto, id = "i-" + k;
+  const k = S.konto, id = "i-" + k, datum = S.datum;
   if (!S.sample || S.busy[id]) return;
   S.busy[id] = true; S.fehler[id] = null; S.fortschritt[id] = "Claude denkt nach …"; S.ctl[id] = new AbortController(); render();
   try {
     const data = await S.sample.json(ideenBefehl(S.wunsch[k]), { modelTier: "default", cache: false, signal: S.ctl[id].signal,
       onText: ({ text }) => { const n = (text.match(/"nr"\s*:/g) || []).length; S.fortschritt[id] = n ? "Idee " + Math.min(n, 10) + " von 10 …" : "Claude schreibt …"; renderSchritt1(); } });
-    const liste = (data?.ideen || []).filter((x) => x && x.titel);
+    const liste = (data?.ideen || []).filter((x) => x && x.titel).slice(0, 10);
     if (!liste.length) throw { code: "invalid_json" };
-    S.ideen[k] = liste.slice(0, 10); S.auswahl[k] = { mittag: null, abend: null }; S.skripte[k] = {};
-    if (S.db) S.db.doc("ideen/" + BEFEHLE[k].praefix + "-" + S.datum).set({ konto: k, datum: S.datum, ideen: S.ideen[k], erzeugt: new Date().toISOString() }).catch(() => {});
+    const dok = { konto: k, datum, ideen: liste, wunsch: S.wunsch[k] || "", erzeugt: jetzt() };
+    S.ideen[iid(k, datum)] = dok;
+    if (S.db) await kette("i/" + iid(k, datum), () => S.db.doc("ideen/" + iid(k, datum)).set(dok)).catch((e) => { S.fehler[id] = "Die Ideen sind da, konnten aber nicht gespeichert werden (" + (e?.code ?? "unbekannt") + ")."; });
   } catch (e) { if (e?.code !== "cancelled") S.fehler[id] = fehlerText(e); }
   S.busy[id] = false; S.fortschritt[id] = ""; render();
+}
+async function waehle(k, slot, i) {
+  const idee = ideenListe(k)[i], fid = "w-" + k; if (!idee || !S.db) return;
+  const id = sid(k, slot), d = S.slots[id], andere = slot === "mittag" ? "abend" : "mittag", idA = sid(k, andere), dA = S.slots[idA];
+  S.fehler[fid] = null;
+  try {
+    if (d && ideeTitel(d) === idee.titel) {
+      if (!AENDERBAR.has(d.status)) { S.fehler[fid] = "Für diese Idee läuft schon die Arbeit (" + (STATUS[d.status]?.[0] ?? d.status) + "). Verwirf zuerst das Skript unten."; render(); return; }
+      await slotLoeschen(id); return;
+    }
+    if (d && !AENDERBAR.has(d.status)) { S.fehler[fid] = slotName(slot) + " ist schon belegt (" + (STATUS[d.status]?.[0] ?? d.status) + "). Verwirf zuerst das Skript unten, dann kannst du neu wählen."; render(); return; }
+    if (dA && ideeTitel(dA) === idee.titel) {
+      if (!AENDERBAR.has(dA.status)) { S.fehler[fid] = "Diese Idee ist schon für " + slotName(andere) + " in Arbeit."; render(); return; }
+      await slotLoeschen(idA);
+    }
+    await slotSetzen(id, { konto: k, datum: S.datum, slot, uhrzeit: uhr(S.datum)[slot], idee_nr: i + 1, idee, titel: idee.titel, thema: idee.thema || "",
+      status: "gewaehlt", fortschritt: "", fehler: "", verlauf: [{ zeit: jetzt(), text: "Idee gewählt", von: "studio" }] }, true);
+  } catch (e) { S.fehler[fid] = "Speichern nicht möglich (" + (e?.code ?? "unbekannt") + ")."; render(); }
+}
+async function mitAuftrag(busyId, aenderungen, auftrag, ruecksetzen) {
+  if (S.busy[busyId]) return;
+  S.busy[busyId] = true; S.fehler[busyId] = null; render();
+  try {
+    for (const [id, daten] of aenderungen) await slotSetzen(id, daten);
+    const r = await auftragSenden(auftrag);
+    if (!r.ok) { S.fehler[busyId] = r.text; for (const [id, daten] of ruecksetzen) await slotSetzen(id, daten).catch(() => {}); }
+  } catch (e) { S.fehler[busyId] = "Speichern nicht möglich (" + (e?.code ?? "unbekannt") + ")."; }
+  S.busy[busyId] = false; render();
+}
+function skripteAnfordern(k) {
+  const offen = SLOTS.filter((s) => brauchtSkript(slotDoc(k, s)));
+  if (!offen.length) return;
+  mitAuftrag("cc-" + k, offen.map((s) => [sid(k, s), { status: "recherche", fehler: "", fehler_phase: "", fortschritt: "An Claude Code übergeben, Recherche startet …", angefordert: jetzt(), verlauf: verlaufPlus(sid(k, s), "Recherche angefordert") }]),
+    { art: "skripte", datum: S.datum, konto: k, slots: offen }, offen.map((s) => [sid(k, s), { status: "gewaehlt", fortschritt: "" }]));
+}
+function neuSchreiben(k, slot) {
+  const id = sid(k, slot), kommentar = (S.entwurf[id] || "").trim(), alt = slotDoc(k, slot)?.status;
+  if (!kommentar) { S.fehler["k-" + id] = "Schreib kurz dazu, was anders werden soll."; render(); return; }
+  S.fehler["k-" + id] = null;
+  mitAuftrag("n-" + id, [[id, { status: "recherche", kommentar, kommentar_zeit: jetzt(), fehler: "", fortschritt: "Neufassung angefordert", verlauf: verlaufPlus(id, "Neufassung angefordert: " + kommentar.slice(0, 120)) }]],
+    { art: "neu_schreiben", datum: S.datum, konto: k, slot, kommentar }, [[id, { status: alt }]]).then(() => { if (!S.fehler["n-" + id]) S.entwurf[id] = ""; render(); });
+}
+async function einfach(id, daten, text) {
+  const fid = "a-" + id; S.fehler[fid] = null;
+  try { await slotSetzen(id, { ...daten, verlauf: verlaufPlus(id, text) }); } catch (e) { S.fehler[fid] = "Speichern nicht möglich (" + (e?.code ?? "unbekannt") + ")."; render(); }
+}
+const freigeben = (k, s) => einfach(sid(k, s), { status: "freigegeben", freigegeben_am: jetzt() }, "Freigegeben");
+const zuruecknehmen = (k, s) => einfach(sid(k, s), { status: "skript_fertig" }, "Freigabe zurückgenommen");
+async function verwerfen(k, s) { const fid = "a-" + sid(k, s); try { await slotLoeschen(sid(k, s)); } catch (e) { S.fehler[fid] = "Löschen nicht möglich (" + (e?.code ?? "unbekannt") + ")."; render(); } }
+function uebergeben() {
+  const frei = alleSlots().filter((x) => x.doc?.status === "freigegeben");
+  if (!frei.length) return;
+  mitAuftrag("ueb", frei.map((x) => [x.id, { status: "uebergeben", uebergeben_am: jetzt(), fortschritt: "An Claude Code übergeben", verlauf: verlaufPlus(x.id, "An Claude Code übergeben") }]),
+    { art: "produzieren", datum: S.datum, ids: frei.map((x) => x.id) }, frei.map((x) => [x.id, { status: "freigegeben", fortschritt: "" }]));
+}
+function rueckfrageAnnehmen(k, s) {
+  const id = sid(k, s), d = slotDoc(k, s);
+  mitAuftrag("r-" + id, [[id, { status: "uebergeben", rueckfrage_antwort: "angenommen", rueckfrage_zeit: jetzt(), verlauf: verlaufPlus(id, "Vorschlag aus der Rückfrage angenommen") }]],
+    { art: "produzieren", datum: S.datum, ids: [id], hinweis: "Der Inhaber nimmt deinen Vorschlag aus der Rückfrage an: " + String(d?.fehler || "").slice(0, 600) }, [[id, { status: "rueckfrage" }]]);
+}
+function erneut(k, s) {
+  const id = sid(k, s), d = slotDoc(k, s);
+  if (d?.fehler_phase === "produktion") mitAuftrag("e-" + id, [[id, { status: "uebergeben", fortschritt: "Neuer Versuch", verlauf: verlaufPlus(id, "Neuer Versuch (Produktion)") }]], { art: "produzieren", datum: S.datum, ids: [id] }, [[id, { status: "fehler" }]]);
+  else mitAuftrag("e-" + id, [[id, { status: "recherche", fortschritt: "Neuer Versuch", verlauf: verlaufPlus(id, "Neuer Versuch (Recherche)") }]], { art: "skripte", datum: S.datum, konto: k, slots: [s] }, [[id, { status: "fehler" }]]);
+}
+function fortsetzen() { mitAuftrag("fort", [], { art: "fortsetzen", datum: S.datum }, []); }
+async function speichereLernstand(text) {
+  if (!S.db) return;
+  try { await S.db.doc("stand/lernstand-" + pf()).set({ konto: S.konto, text, aktualisiert: jetzt() }); } catch (e) { S.fehler.lern = "Speichern nicht möglich (" + (e?.code ?? "unbekannt") + ")."; renderLern(); }
+}
+
+/* ---------- Anzeige ---------- */
+function gesperrt(el, fn) { const a = document.activeElement; if (a && a.tagName === "TEXTAREA" && el.contains(a)) { S.spaeter.add(fn); return true; } return false; }
+function render() { renderKopf(); renderHinweis(); renderTag(); renderTabs(); renderSteps(); renderLern(); renderSchritt1(); renderIdeen(); renderSkripte(); renderArchiv(); renderFallback(); renderBar(); }
+const pill = (status) => { const [t, c] = STATUS[status] || [status || "–", ""]; return h("span", { class: "pill " + c }, t); };
+function renderKopf() {
+  document.body.dataset.konto = S.konto;
+  const u = uhr(S.datum);
+  $("#zielzeile").textContent = "Video-Tag: " + wochentag(S.datum) + " · Mittag " + u.mittag + " · Abend " + u.abend;
+  $("#datum").value = S.datum;
+  const tage = offeneTage(); if (!tage.includes(S.datum)) tage.push(S.datum);
+  $("#tage").replaceChildren(...tage.sort().map((d) => {
+    const n = alleSlots(d).filter((x) => x.doc && FERTIG.has(x.doc.status)).length;
+    return h("button", { class: "day", "aria-pressed": String(d === S.datum), onclick: () => { S.datum = d; S.manuell = d !== standardTag(); S.hinweis = ""; render(); } },
+      kurzTag(d) + " · " + n + "/4 geplant");
+  }));
+}
+function renderHinweis() {
+  const el = $("#hinweis");
+  el.replaceChildren(...(S.hinweis ? [h("div", { class: "good row", role: "status" }, h("span", null, S.hinweis), h("button", { class: "btn ghost small", onclick: () => { S.hinweis = ""; renderHinweis(); } }, "Ok"))] : []));
+}
+function renderTag() {
+  const el = $("#tag"), d = S.datum, lauf = S.laeufe[d], st = S.sitzung[d] || {};
+  const zeilen = alleSlots(d).map((x) => {
+    const doc = x.doc, u = uhr(d)[x.s];
+    return h("div", { class: "orow" },
+      h("span", { class: "wer " + (x.k === "simulierbar" ? "a1" : "a2") }, BEFEHLE[x.k].name + " · " + slotName(x.s) + " " + u),
+      h("span", { class: "was" }, doc ? doc.titel : h("span", { class: "muted" }, "noch keine Idee gewählt"),
+        doc?.fortschritt ? h("small", null, doc.fortschritt) : null,
+        doc?.status === "geplant" && doc.geplant_fuer ? h("small", null, "geplant für " + zeitText(doc.geplant_fuer)) : null),
+      doc ? pill(doc.status) : h("span", { class: "pill" }, "offen"));
+  });
+  const frei = alleSlots(d).filter((x) => x.doc?.status === "freigegeben").length;
+  const offenFrei = alleSlots(d).filter((x) => x.doc && ["gewaehlt", "recherche", "skript_fertig"].includes(x.doc.status)).length;
+  const cc = [];
+  if (!S.mcp) cc.push(h("p", { class: "note" }, "Claude Code ist aus dieser Ansicht nicht erreichbar (Connector „Claude Code Remote“). Aufträge kannst du kopieren und in eine Claude-Code-Sitzung einfügen."));
+  if (lauf?.session_id) {
+    const [txt, c] = st.fehler ? [st.fehler, "bad"] : st.stat === "ARCHIVED" ? ["Sitzung archiviert; der nächste Auftrag startet eine neue", ""] : (BUCKET[st.bucket] || [st.laedt ? "Status wird geladen …" : "Status noch nicht abgefragt", ""]);
+    cc.push(h("div", { class: "row" }, h("span", { class: "pill " + c }, txt),
+      h("a", { href: sitzungsLink(lauf.session_id), target: "_blank", rel: "noopener" }, "Sitzung öffnen"),
+      S.mcp ? h("button", { class: "btn ghost small", disabled: !!st.laedt, onclick: () => statusHolen(d) }, "Status prüfen") : null,
+      S.mcp ? h("button", { class: "btn ghost small", disabled: !!S.busy.fort, onclick: fortsetzen }, "Weiterarbeiten lassen") : null));
+    if (st.info) cc.push(h("p", { class: "state" }, "Letzte Meldung: " + st.info));
+    if (st.modus && st.modus !== "auto") cc.push(h("p", { class: "note" }, "Die Sitzung läuft nicht im Modus „Auto“ (" + st.modus + "). Sie kann an Rückfragen hängen bleiben: öffne sie und stelle den Modus auf „Auto“."));
+    if (st.bucket === "BLOCKED") cc.push(h("p", { class: "note" }, "Claude Code wartet auf eine Freigabe von dir. Öffne die Sitzung und bestätige dort."));
+  } else cc.push(h("p", { class: "muted" }, "Für diesen Tag läuft noch keine Claude-Code-Sitzung. Sie startet mit dem ersten Auftrag (Skripte recherchieren) und bleibt für den ganzen Tag dieselbe."));
+  if (S.fehler.fort) cc.push(h("p", { class: "err", role: "alert" }, S.fehler.fort));
+  if (S.manuellerAuftrag) cc.push(h("div", { class: "row" }, h("button", { class: "btn ghost small", onclick: (e) => copy(S.manuellerAuftrag, e.currentTarget) }, "Auftrag kopieren (für Claude Code)")));
+  el.replaceChildren(h("div", { class: "panel" },
+    h("h2", null, "Tagesübersicht"),
+    !S.db ? h("p", { class: "note" }, S.dbZeit ? "Die Datenbank ist gerade nicht erreichbar; was du siehst, wird nicht gespeichert." : "Gespeicherter Stand wird geladen …") : null,
+    h("div", { class: "over" }, zeilen),
+    h("h3", null, "Claude Code"), ...cc,
+    h("div", { class: "row" },
+      h("button", { class: "btn", id: "uebergabe", disabled: !frei || !!S.busy.ueb, onclick: uebergeben },
+        frei ? "An Claude Code übergeben: " + frei + (frei === 1 ? " Video" : " Videos") + " produzieren und in Buffer planen" : "An Claude Code übergeben"),
+      S.busy.ueb ? h("span", { class: "state", role: "status" }, "Wird übergeben …") : null),
+    frei && offenFrei ? h("p", { class: "state" }, offenFrei + " weitere(s) Video(s) sind noch nicht freigegeben. Du kannst jetzt schon übergeben; spätere Freigaben übergibst du mit demselben Knopf.") : null,
+    S.fehler.ueb ? h("p", { class: "err", role: "alert" }, S.fehler.ueb) : null));
+}
+function renderTabs() {
+  $("#tabs").replaceChildren(...KONTEN.map((k) => {
+    const n = SLOTS.filter((s) => FERTIG.has(slotDoc(k, s)?.status)).length;
+    return h("button", { class: "tab", "data-k": k, "aria-pressed": String(S.konto === k), id: "tab-" + k, onclick: () => { S.konto = k; render(); } },
+      h("b", null, BEFEHLE[k].name), h("small", null, BEFEHLE[k].handle + (k === "simulierbar" ? " · nur Geld" : " · Was wäre, wenn …") + " · " + n + "/2 geplant"));
+  }));
+}
+function renderSteps() {
+  const k = S.konto, docs = SLOTS.map((s) => slotDoc(k, s)), ab = (menge) => docs.every((d) => d && menge.includes(d.status));
+  let stufe = ideenListe(k).length || docs.some(Boolean) ? 1 : 0;
+  if (docs.every(Boolean)) stufe = 2;
+  if (ab(["skript_fertig", "freigegeben", "uebergeben", "produktion", "rueckfrage", "geplant", "gepostet"])) stufe = 3;
+  if (ab(["freigegeben", "uebergeben", "produktion", "geplant", "gepostet"])) stufe = 4;
+  if (ab(["geplant", "gepostet"])) stufe = 5;
+  const namen = ["Zehn Ideen", "2 Ideen wählen", "Recherche und Skript (Claude Code)", "Prüfen und freigeben", "Produktion und Buffer"];
+  $("#steps").replaceChildren(...namen.map((n, i) => h("li", { class: i < stufe ? "done" : i === stufe ? "now" : "" }, (i + 1) + ". " + n)));
+}
+function renderLern() {
+  const el = $("#lern"); if (gesperrt(el, renderLern)) return;
+  const kann = S.user?.canEdit?.() ?? false, offen = !!el.querySelector("details[open]");
+  const box = h("div", { class: "panel" }, h("details", { open: offen }, h("summary", null, "Lernstand, der in jeden Befehl eingebaut wird"),
+    h("div", { class: "body" }, h("pre", { class: "text", id: "lerntext" }, lernText()),
+      kann ? h("div", { class: "row" }, h("button", { class: "btn ghost small", id: "lernedit", onclick: () => {
+        const ta = h("textarea", { id: "lernarea", "aria-label": "Lernstand bearbeiten" }); ta.value = lernText(); ta.style.minHeight = "200px";
+        $("#lerntext").replaceWith(ta);
+        const sp = h("button", { class: "btn small", onclick: async () => { S.lernstand[S.konto] = ta.value; await speichereLernstand(ta.value); ta.blur(); render(); } }, "Speichern");
+        $("#lernedit").replaceWith(sp); ta.focus(); } }, "Bearbeiten")) : null,
+      S.fehler.lern ? h("p", { class: "err" }, S.fehler.lern) : null,
+      h("p", { class: "state" }, "Claude Code schreibt den Lernstand täglich um 20:00 Uhr aus den Buffer-Zahlen fort. Änderungen an Regeln brauchen deine Freigabe."))));
+  el.replaceChildren(box);
+}
+function renderSchritt1() {
+  const el = $("#schritt1"); if (gesperrt(el, renderSchritt1)) return;
+  const k = S.konto, id = "i-" + k, dok = S.ideen[iid(k)];
+  const wunsch = h("textarea", { id: "wunsch", placeholder: "Optional: ein Thema, ein Land, ein Gedanke für heute …", "aria-label": "Eigener Wunsch für heute" }); wunsch.value = S.wunsch[k];
+  wunsch.addEventListener("input", () => { S.wunsch[k] = wunsch.value; speichereWunsch(); });
+  el.replaceChildren(h("div", { class: "panel" }, h("h2", null, "1. Zehn Ideen"),
+    h("label", { class: "lbl", for: "wunsch" }, "Eigener Wunsch (optional)"), wunsch,
+    h("div", { class: "row" },
+      S.sample ? h("button", { class: "btn", id: "gen", disabled: !!S.busy[id], onclick: erzeugeIdeen }, dok ? "Neue zehn Ideen" : "Zehn Ideen erzeugen") : null,
+      S.busy[id] ? h("button", { class: "btn ghost", onclick: () => S.ctl[id]?.abort() }, "Stopp") : null,
+      S.busy[id] ? h("span", { class: "state", role: "status" }, S.fortschritt[id]) : dok ? h("span", { class: "state" }, "Gespeichert: Ideen vom " + zeitText(dok.erzeugt)) : null),
+    S.sample ? null : h("p", { class: "note" }, "Claude lässt sich auf dieser Seite gerade nicht fragen. Nutze unten den Weg über Claude Chat."),
+    S.fehler[id] ? h("p", { class: "err", role: "alert" }, S.fehler[id]) : null));
+}
+function ideeKarte(i, idee) {
+  const k = S.konto, u = uhr(S.datum);
+  const belegt = (slot) => ideeTitel(slotDoc(k, slot)) === idee.titel;
+  const gewaehltAls = SLOTS.find(belegt);
+  const paare = FELDER_IDEE[k].map(([f, l]) => {
+    let v = idee[f]; if (v == null || v === "") return null; if (Array.isArray(v)) v = v.join("  gegen  ");
+    return [h("dt", null, l), h("dd", null, String(v))];
+  }).filter(Boolean);
+  const vorn = k === "simulierbar" ? 3 : 4;
+  const slotBtn = (slot) => h("button", { class: "slotbtn", "aria-pressed": String(belegt(slot)), disabled: !S.db, onclick: () => waehle(k, slot, i) }, slotName(slot) + " " + u[slot]);
+  const chips = k === "simulierbar" && Array.isArray(idee.alternativen) ? h("div", { class: "chips" }, idee.alternativen.map((x) => h("span", { class: "chip" }, x))) : null;
+  return h("article", { class: "card" + (gewaehltAls ? " sel" : "") },
+    h("div", { class: "head" }, h("span", { class: "nr" }, String(i + 1).padStart(2, "0")), h("h3", null, idee.titel)),
+    chips, h("dl", { class: "facts" }, paare.slice(0, vorn).flat()),
+    paare.length > vorn ? h("details", null, h("summary", null, "Mehr Details"), h("dl", { class: "facts", style: "margin-top:10px" }, paare.slice(vorn).flat())) : null,
+    h("div", { class: "slot" }, slotBtn("mittag"), slotBtn("abend")));
+}
+function renderIdeen() {
+  const el = $("#ideen"), l = ideenListe(), k = S.konto;
+  el.replaceChildren(...(l.length ? [h("div", { class: "ideas" }, h("h2", null, "2. Zwei Ideen wählen"),
+    h("p", { class: "muted" }, "Tippe bei einer Idee auf Mittag oder Abend. Pro Zeitpunkt zählt genau eine Idee. Deine Wahl wird sofort gespeichert."),
+    S.fehler["w-" + k] ? h("p", { class: "err", role: "alert" }, S.fehler["w-" + k]) : null, ...l.map((x, i) => ideeKarte(i, x)))] : []));
 }
 function pruefeSkript(konto, sk) {
   const m = [];
@@ -223,112 +575,8 @@ function pruefeSkript(konto, sk) {
   m.push({ t: (sk.quellen || []).length + " Quellen", c: (sk.quellen || []).length ? "ok" : "bad" });
   return m;
 }
-async function erzeugeSkripte() {
-  const k = S.konto, a = S.auswahl[k];
-  const jobs = ["mittag", "abend"].filter((s) => a[s] != null);
-  if (!S.sample || !jobs.length) return;
-  await Promise.all(jobs.map(async (slot) => {
-    const id = "s-" + k + "-" + slot;
-    if (S.busy[id]) return;
-    S.busy[id] = true; S.fehler[id] = null; S.fortschritt[id] = "Claude denkt nach …"; S.ctl[id] = new AbortController(); render();
-    try {
-      const data = await S.sample.json(skriptBefehl(S.ideen[k][a[slot]]), { modelTier: "complex", cache: false, signal: S.ctl[id].signal,
-        onText: ({ text }) => { S.fortschritt[id] = "Schreibt … " + Math.round(text.length / 100) / 10 + " k Zeichen"; renderSkripte(); } });
-      const sk = (data?.skripte || [])[0];
-      if (!sk) throw { code: "invalid_json" };
-      S.skripte[k][slot] = { skript: sk, freigegeben: false };
-    } catch (e) { if (e?.code !== "cancelled") S.fehler[id] = fehlerText(e); }
-    S.busy[id] = false; S.fortschritt[id] = ""; render();
-  }));
-}
-async function freigeben(slot) {
-  const k = S.konto, eintrag = S.skripte[k][slot]; if (!eintrag || !S.db) return;
-  const sk = eintrag.skript, id = "f-" + k + "-" + slot; S.busy[id] = true; S.fehler[id] = null; renderSkripte();
-  try {
-    await S.db.doc("skripte/" + docId(k, slot)).set({ konto: k, datum: S.datum, slot, uhrzeit: slots(S.datum)[slot], titel: sk.titel || "", thema: sk.thema || "",
-      skript: sk, rechenweg: sk.rechenweg || "", zahlen: sk.zahlen || {}, annahmen: sk.annahmen || [], quellen: sk.quellen || [], caption: sk.caption || "",
-      dramaturgie: sk.dramaturgie || [], selbstpruefung: sk.selbstpruefung || [], status: "freigegeben", faktencheck: "offen", erstellt: new Date().toISOString() });
-    eintrag.freigegeben = true;
-  } catch (e) { S.fehler[id] = "Speichern nicht möglich (" + (e?.code ?? "unbekannt") + "). Kopiere das Skript stattdessen und füge es in die Claude-Code-Sitzung ein."; }
-  S.busy[id] = false; renderSkripte();
-}
-async function speichereLernstand(text) {
-  if (!S.db) return;
-  try { await S.db.doc("stand/lernstand-" + pf()).set({ konto: S.konto, text, aktualisiert: new Date().toISOString() }); } catch (e) { S.fehler.lern = "Speichern nicht möglich (" + (e?.code ?? "unbekannt") + ")."; renderLern(); }
-}
-
-/* ---------- Anzeige ---------- */
-function render() { renderKopf(); renderLern(); renderSchritt1(); renderIdeen(); renderSkripte(); renderUebergabe(); renderFallback(); renderBar(); }
-function renderKopf() {
-  document.body.dataset.konto = S.konto;
-  $("#zielzeile").textContent = "Videos für " + wochentag(S.datum) + " · Mittag " + slots(S.datum).mittag + " · Abend " + slots(S.datum).abend;
-  $("#datum").value = S.datum;
-  const tabs = $("#tabs"); tabs.replaceChildren(...KONTEN.map((k) => h("button", { class: "tab", "data-k": k, "aria-pressed": String(S.konto === k), id: "tab-" + k,
-    onclick: () => { S.konto = k; render(); } }, h("b", null, BEFEHLE[k].name), h("small", null, BEFEHLE[k].handle + (k === "simulierbar" ? " · nur Geld" : " · Was wäre, wenn …")))));
-  const k = S.konto, hatIdeen = S.ideen[k].length > 0, a = S.auswahl[k];
-  const gewaehlt = ["mittag", "abend"].every((s) => a[s] != null), hatSkripte = Object.keys(S.skripte[k]).length > 0;
-  const frei = Object.values(S.skripte[k]).some((x) => x.freigegeben);
-  const stufe = frei ? 4 : hatSkripte ? 3 : gewaehlt ? 2 : hatIdeen ? 1 : 0;
-  const namen = ["Ideen erzeugen", "2 Ideen wählen", "Skripte schreiben", "An Claude Code übergeben"];
-  $("#steps").replaceChildren(...namen.map((n, i) => h("li", { class: i < stufe ? "done" : i === stufe ? "now" : "" }, (i + 1) + ". " + n)));
-}
-function renderLern() {
-  const el = $("#lern"), kann = S.user?.canEdit?.() ?? false;
-  const offen = !!el.querySelector("details[open]");
-  const box = h("div", { class: "panel" }, h("details", { open: offen }, h("summary", null, "Lernstand, der in jeden Befehl eingebaut wird"),
-    h("div", { class: "body" }, h("pre", { class: "text", id: "lerntext" }, lernText()),
-      kann ? h("div", { class: "row" }, h("button", { class: "btn ghost small", id: "lernedit", onclick: () => {
-        const ta = h("textarea", { id: "lernarea", "aria-label": "Lernstand bearbeiten" }); ta.value = lernText(); ta.style.minHeight = "200px";
-        $("#lerntext").replaceWith(ta);
-        const sp = h("button", { class: "btn small", onclick: async () => { S.lernstand[S.konto] = ta.value; await speichereLernstand(ta.value); render(); } }, "Speichern");
-        $("#lernedit").replaceWith(sp); } }, "Bearbeiten")) : null,
-      S.fehler.lern ? h("p", { class: "err" }, S.fehler.lern) : null,
-      h("p", { class: "state" }, "Claude Code schreibt den Lernstand täglich um 20:00 Uhr aus den Buffer-Zahlen fort. Änderungen an Regeln brauchen deine Freigabe."))));
-  el.replaceChildren(box);
-}
-function renderSchritt1() {
-  const id = "i-" + S.konto, el = $("#schritt1");
-  const wunsch = h("textarea", { id: "wunsch", placeholder: "Optional: ein Thema, ein Land, ein Gedanke für heute …", "aria-label": "Eigener Wunsch für heute" }); wunsch.value = S.wunsch[S.konto];
-  wunsch.addEventListener("input", () => (S.wunsch[S.konto] = wunsch.value));
-  const hatIdeen = S.ideen[S.konto].length > 0;
-  el.replaceChildren(h("div", { class: "panel" }, h("h2", null, "1. Zehn Ideen"),
-    h("label", { class: "lbl", for: "wunsch" }, "Eigener Wunsch (optional)"), wunsch,
-    h("div", { class: "row" },
-      S.sample ? h("button", { class: "btn", id: "gen", disabled: !!S.busy[id], onclick: erzeugeIdeen }, hatIdeen ? "Neue zehn Ideen" : "Zehn Ideen erzeugen") : null,
-      S.busy[id] ? h("button", { class: "btn ghost", onclick: () => S.ctl[id]?.abort() }, "Stopp") : null,
-      S.busy[id] ? h("span", { class: "state", role: "status" }, S.fortschritt[id]) : null),
-    S.sample ? null : h("p", { class: "note" }, "Claude lässt sich auf dieser Seite gerade nicht fragen. Nutze unten den Weg über Claude Chat."),
-    S.fehler[id] ? h("p", { class: "err", role: "alert" }, S.fehler[id]) : null));
-}
-function ideeKarte(i, idee) {
-  const k = S.konto, a = S.auswahl[k], sl = slots(S.datum);
-  const gewaehltAls = ["mittag", "abend"].find((s) => a[s] === i);
-  const paare = FELDER_IDEE[k].map(([f, l]) => {
-    let v = idee[f]; if (v == null || v === "") return null; if (Array.isArray(v)) v = v.join("  gegen  ");
-    return [h("dt", null, l), h("dd", null, String(v))];
-  }).filter(Boolean);
-  const vorn = k === "simulierbar" ? 3 : 4;
-  const faktenVorn = paare.slice(0, vorn).flat(), faktenRest = paare.slice(vorn).flat();
-  const slotBtn = (slot) => h("button", { class: "slotbtn", "aria-pressed": String(a[slot] === i), onclick: () => {
-    if (a[slot] === i) a[slot] = null; else { const andere = slot === "mittag" ? "abend" : "mittag"; if (a[andere] === i) a[andere] = null; a[slot] = i; }
-    S.skripte[k] = {}; render(); } }, (slot === "mittag" ? "Mittag " : "Abend ") + sl[slot]);
-  const chips = k === "simulierbar" && Array.isArray(idee.alternativen) ? h("div", { class: "chips" }, idee.alternativen.map((x) => h("span", { class: "chip" }, x))) : null;
-  return h("article", { class: "card" + (gewaehltAls ? " sel" : "") },
-    h("div", { class: "head" }, h("span", { class: "nr" }, String(i + 1).padStart(2, "0")), h("h3", null, idee.titel)),
-    chips, h("dl", { class: "facts" }, faktenVorn),
-    faktenRest.length ? h("details", null, h("summary", null, "Mehr Details"), h("dl", { class: "facts", style: "margin-top:10px" }, faktenRest)) : null,
-    h("div", { class: "slot" }, slotBtn("mittag"), slotBtn("abend")));
-}
-function renderIdeen() {
-  const el = $("#ideen"), l = S.ideen[S.konto];
-  el.replaceChildren(...(l.length ? [h("div", { class: "ideas" }, h("h2", null, "2. Zwei Ideen wählen"),
-    h("p", { class: "muted" }, "Tippe bei einer Idee auf Mittag oder Abend. Pro Zeitpunkt zählt genau eine Idee."), ...l.map((x, i) => ideeKarte(i, x)))] : []));
-}
-function skriptAnsicht(slot) {
-  const k = S.konto, e = S.skripte[k][slot], sk = e.skript, sl = slots(S.datum), id = "f-" + k + "-" + slot;
-  const pruef = pruefeSkript(k, sk);
-  const teile = [h("div", { class: "row" }, h("h3", null, (slot === "mittag" ? "Mittag " : "Abend ") + sl[slot] + ": " + (sk.titel || "")), h("span", { class: "badge " + (e.freigegeben ? "ok" : "") }, e.freigegeben ? "übergeben" : "Entwurf")),
-    h("div", { class: "chips" }, pruef.map((p) => h("span", { class: "badge " + p.c }, p.t)))];
+function skriptInhalt(k, sk) {
+  const teile = [h("div", { class: "chips" }, pruefeSkript(k, sk).map((p) => h("span", { class: "badge " + p.c }, p.t)))];
   if (k === "simulierbar") {
     teile.push(...(sk.segmente || []).map((s) => h("div", { class: "seg" }, h("span", { class: "ph" }, s.phase || s.id), h("pre", { class: "text" }, s.text || ""), h("pre", { class: "text mono" }, s.sprechtext || ""))));
   } else {
@@ -339,73 +587,129 @@ function skriptAnsicht(slot) {
       h("ol", null, (sk.saetze || []).map((s) => h("li", null, h("span", { class: "mono muted" }, "ca. " + s.t_ca + " s  "), s.text))),
       sk.faktenzeile ? h("p", null, h("b", null, "Faktenzeile: "), sk.faktenzeile) : null);
   }
-  const liste = (titel, arr) => (arr && arr.length ? h("details", null, h("summary", null, titel), h("div", { class: "body" }, h("ul", null, arr.map((x) => h("li", null, typeof x === "string" ? x : JSON.stringify(x)))))) : null);
+  const liste = (titel, arr) => (arr && arr.length ? h("details", null, h("summary", null, titel + " (" + arr.length + ")"), h("div", { class: "body" }, h("ul", null, arr.map((x) => h("li", null, mitLinks(typeof x === "string" ? x : JSON.stringify(x))))))) : null);
   teile.push(h("details", null, h("summary", null, "Rechenweg"), h("div", { class: "body" }, h("pre", { class: "text" }, sk.rechenweg || "–"))),
-    liste("Annahmen", sk.annahmen), liste("Quellen (nur intern)", sk.quellen), liste("Dramaturgie für Design und Animation", sk.dramaturgie), liste("Selbstprüfung von Claude", sk.selbstpruefung),
+    liste("Quellen (nur intern)", sk.quellen), liste("Annahmen", sk.annahmen), liste("Dramaturgie für Design und Animation", sk.dramaturgie), liste("Selbstprüfung von Claude Code", sk.selbstpruefung),
     sk.caption ? h("p", null, h("b", null, "Caption: "), sk.caption) : null);
-  const tx = JSON.stringify(sk, null, 1);
-  teile.push(h("div", { class: "row" },
-    h("button", { class: "btn", disabled: !S.db || e.freigegeben || !!S.busy[id], onclick: () => freigeben(slot) }, e.freigegeben ? "Übergeben" : "Freigeben und an Claude Code übergeben"),
-    h("button", { class: "btn ghost", onclick: (ev) => copy(tx, ev.currentTarget) }, "Skript kopieren")),
-    S.fehler[id] ? h("p", { class: "err", role: "alert" }, S.fehler[id]) : null);
-  return h("article", { class: "card" }, ...teile);
+  return teile;
+}
+function kommentarFeld(id, platzhalter) {
+  const ta = h("textarea", { "aria-label": "Was soll anders werden?", placeholder: platzhalter }); ta.value = S.entwurf[id] || "";
+  ta.addEventListener("input", () => (S.entwurf[id] = ta.value));
+  return ta;
+}
+function slotKarte(k, slot) {
+  const id = sid(k, slot), d = slotDoc(k, slot), u = uhr(S.datum)[slot];
+  if (!d) return h("article", { class: "card" }, h("div", { class: "row" }, h("h3", null, slotName(slot) + " " + u), h("span", { class: "pill" }, "offen")),
+    h("p", { class: "muted" }, ideenListe(k).length ? "Wähle oben eine Idee für " + slotName(slot) + "." : "Erzeuge zuerst zehn Ideen."));
+  const sk = d.skript && typeof d.skript === "object" ? d.skript : null;
+  const teile = [h("div", { class: "row" }, h("h3", null, slotName(slot) + " " + u + ": " + (d.titel || "")), pill(d.status))];
+  if (d.fortschritt) teile.push(h("p", { class: "state", role: "status" }, d.fortschritt));
+  const knoepfe = [];
+  const laeuft = (x) => !!S.busy[x];
+  switch (d.status) {
+    case "gewaehlt": teile.push(h("p", { class: "muted" }, "Idee gewählt. Mit „Skripte recherchieren lassen“ unten übernimmt Claude Code Recherche und Skript.")); break;
+    case "recherche": teile.push(h("p", { class: "muted" }, "Claude Code recherchiert jede Zahl im Internet und schreibt das Skript (meist 10–20 Minuten). Du bekommst eine Push-Nachricht, wenn es fertig ist."));
+      if (d.kommentar) teile.push(h("p", { class: "state" }, "Dein Wunsch: " + d.kommentar)); break;
+    case "skript_fertig":
+      knoepfe.push(h("button", { class: "btn", disabled: laeuft("a-" + id), onclick: () => freigeben(k, slot) }, "Freigeben"),
+        h("button", { class: "btn ghost", onclick: () => verwerfen(k, slot) }, "Verwerfen"));
+      break;
+    case "freigegeben": knoepfe.push(h("button", { class: "btn ghost small", onclick: () => zuruecknehmen(k, slot) }, "Freigabe zurücknehmen"),
+      h("span", { class: "state" }, "Übergabe an Claude Code oben in der Tagesübersicht.")); break;
+    case "rueckfrage": teile.push(h("p", { class: "err", role: "alert" }, d.fehler || "Claude Code braucht deine Entscheidung."));
+      knoepfe.push(h("button", { class: "btn", disabled: laeuft("r-" + id), onclick: () => rueckfrageAnnehmen(k, slot) }, "Vorschlag annehmen und weiter")); break;
+    case "fehler": teile.push(h("p", { class: "err", role: "alert" }, d.fehler || "Unbekannter Fehler."));
+      knoepfe.push(h("button", { class: "btn", disabled: laeuft("e-" + id), onclick: () => erneut(k, slot) }, "Erneut versuchen"), h("button", { class: "btn ghost", onclick: () => verwerfen(k, slot) }, "Verwerfen")); break;
+    case "geplant": case "gepostet": teile.push(h("p", { class: "good" }, (d.status === "gepostet" ? "Gepostet" : "In Buffer geplant") + (d.geplant_fuer ? " für " + zeitText(d.geplant_fuer) : "") + (d.post_id ? " · Post " + d.post_id : ""))); break;
+    default: break;
+  }
+  if (sk) teile.push(h("details", { open: d.status === "skript_fertig" || d.status === "rueckfrage" || undefined }, h("summary", null, "Skript ansehen"), h("div", { class: "body" }, ...skriptInhalt(k, sk))));
+  if (Array.isArray(d.korrekturen) && d.korrekturen.length) teile.push(h("details", null, h("summary", null, "Korrekturen von Claude Code (" + d.korrekturen.length + ")"),
+    h("div", { class: "body" }, h("ul", null, d.korrekturen.map((x) => h("li", null, mitLinks((x.feld ? x.feld + ": " : "") + (x.alt ?? "") + " → " + (x.neu ?? "") + (x.grund ? " (" + x.grund + ")" : "") + (x.quelle ? " · " + x.quelle : ""))))))));
+  if (["skript_fertig", "rueckfrage", "fehler"].includes(d.status) && d.fehler_phase !== "produktion") {
+    teile.push(h("details", { open: d.status === "rueckfrage" || undefined }, h("summary", null, "Neu schreiben lassen"), h("div", { class: "body" },
+      kommentarFeld(id, "Was soll anders werden? Zum Beispiel: Hook schärfer, anderes Land, kürzer …"),
+      h("div", { class: "row" }, h("button", { class: "btn ghost", disabled: laeuft("n-" + id), onclick: () => neuSchreiben(k, slot) }, laeuft("n-" + id) ? "Wird übergeben …" : "An Claude Code: neu schreiben")),
+      S.fehler["k-" + id] ? h("p", { class: "err" }, S.fehler["k-" + id]) : null)));
+  }
+  if (knoepfe.length) teile.push(h("div", { class: "row" }, ...knoepfe));
+  ["a-", "r-", "e-", "n-"].forEach((p) => { if (S.fehler[p + id]) teile.push(h("p", { class: "err", role: "alert" }, S.fehler[p + id])); });
+  const v = Array.isArray(d.verlauf) ? d.verlauf.slice(-8).reverse() : [];
+  if (v.length) teile.push(h("details", null, h("summary", null, "Verlauf"), h("ul", { class: "verlauf" }, v.map((x) => h("li", null, zeitText(x.zeit) + " · " + x.text)))));
+  if (sk) teile.push(h("div", { class: "row" }, h("button", { class: "btn ghost small", onclick: (ev) => copy(JSON.stringify(sk, null, 1), ev.currentTarget) }, "Skript kopieren")));
+  return h("article", { class: "card" + (d.status === "skript_fertig" || d.status === "rueckfrage" ? " sel" : "") }, ...teile);
 }
 function renderSkripte() {
-  const el = $("#skripte"), k = S.konto, a = S.auswahl[k];
-  const kopf = [];
-  const laufend = ["mittag", "abend"].filter((s) => S.busy["s-" + k + "-" + s]);
-  const fehler = ["mittag", "abend"].map((s) => S.fehler["s-" + k + "-" + s]).filter(Boolean);
-  if (laufend.length) kopf.push(h("p", { class: "state", role: "status" }, laufend.map((s) => (s === "mittag" ? "Mittag" : "Abend") + ": " + S.fortschritt["s-" + k + "-" + s]).join(" · "),
-    " ", h("button", { class: "btn ghost small", onclick: () => laufend.forEach((s) => S.ctl["s-" + k + "-" + s]?.abort()) }, "Stopp")));
-  fehler.forEach((f) => kopf.push(h("p", { class: "err", role: "alert" }, f)));
-  const sicht = ["mittag", "abend"].filter((s) => S.skripte[k][s]).map(skriptAnsicht);
-  el.replaceChildren(...(sicht.length || kopf.length ? [h("div", { class: "scripts" }, h("h2", null, "3. Skripte"),
-    h("p", { class: "note" }, "Claude kann hier nicht im Internet recherchieren. Claude Code prüft jede Zahl und Quelle mit Websuche, bevor das Video entsteht."), ...kopf, ...sicht)] : []));
+  const el = $("#skripte"); if (gesperrt(el, renderSkripte)) return;
+  const k = S.konto;
+  el.replaceChildren(h("div", { class: "scripts" }, h("h2", null, "3. Skripte und Produktion"),
+    S.fehler["cc-" + k] ? h("p", { class: "err", role: "alert" }, S.fehler["cc-" + k]) : null, slotKarte(k, "mittag"), slotKarte(k, "abend")));
 }
-function renderUebergabe() {
-  const el = $("#uebergabe");
-  const liste = S.liste.filter((d) => d.konto === S.konto).slice(0, 8);
-  const offen = !!el.querySelector("details[open]");
-  el.replaceChildren(h("div", { class: "panel" }, h("details", { open: offen }, h("summary", null, "Übergeben an Claude Code (" + liste.length + ")"),
-    h("div", { class: "body" }, liste.length ? h("div", { class: "tablewrap" }, h("table", null, h("thead", null, h("tr", null, ["Tag", "Zeit", "Titel", "Status", "Faktencheck"].map((x) => h("th", null, x)))),
-      h("tbody", null, liste.map((d) => h("tr", null, [d.datum, d.uhrzeit, d.titel, d.status, d.faktencheck].map((x) => h("td", null, x ?? ""))))))) :
-      h("p", { class: "muted" }, S.db ? "Noch nichts übergeben. Freigegebene Skripte erscheinen hier und liegen für Claude Code bereit." : S.dbZeit ? "Die Datenbank ist gerade nicht erreichbar." : "Datenbank wird geladen …")))));
+function renderArchiv() {
+  const el = $("#archiv"), tage = archivTage(), offen = !!el.querySelector("details[open]");
+  el.replaceChildren(...(tage.length ? [h("div", { class: "panel" }, h("details", { open: offen }, h("summary", null, "Erledigte Tage (" + tage.length + ")"),
+    h("div", { class: "body" }, h("div", { class: "tablewrap" }, h("table", null,
+      h("thead", null, h("tr", null, ["Tag", "Account", "Zeit", "Titel", "Status"].map((x) => h("th", null, x)))),
+      h("tbody", null, tage.flatMap((d) => alleSlots(d).filter((x) => x.doc).map((x) => h("tr", null,
+        h("td", null, h("button", { class: "btn ghost small", onclick: () => { S.datum = d; S.manuell = true; render(); } }, kurzTag(d))),
+        h("td", null, BEFEHLE[x.k].name), h("td", null, uhr(d)[x.s]), h("td", null, x.doc.titel || ""), h("td", null, pill(x.doc.status)))))))))))] : []));
 }
 function renderFallback() {
   const el = $("#fallback"), k = S.konto;
-  const sel = ["mittag", "abend"].map((s) => S.auswahl[k][s]).filter((x) => x != null).map((i) => S.ideen[k][i]);
+  const sel = SLOTS.map((s) => { const d = slotDoc(k, s); return d ? d.idee || { titel: d.titel, thema: d.thema } : null; }).filter(Boolean);
   const offen = !!el.querySelector("details[open]");
-  el.replaceChildren(h("div", { class: "panel" }, h("details", { open: offen }, h("summary", null, "Alternative: Befehl in Claude Chat kopieren (mit Internet-Recherche)"),
-    h("div", { class: "body" }, h("p", { class: "muted" }, "Für maximale Faktentreue: im echten Claude Chat mit aktivierter Websuche. Befehl kopieren, dort einfügen, die Skripte danach in die Claude-Code-Sitzung einfügen."),
+  el.replaceChildren(h("div", { class: "panel" }, h("details", { open: offen }, h("summary", null, "Notweg: Befehl in Claude Chat kopieren"),
+    h("div", { class: "body" }, h("p", { class: "muted" }, "Nur falls Claude Code nicht erreichbar ist: im echten Claude Chat mit aktivierter Websuche. Befehl kopieren, dort einfügen, die Skripte danach in eine Claude-Code-Sitzung einfügen."),
       h("div", { class: "row" },
         h("button", { class: "btn ghost", onclick: (e) => copy(BEFEHLE[k].ideen_text.replace(BEFEHLE[k].lernstand, () => lernText()) + "\n\nVideo-Tag: " + S.datum, e.currentTarget) }, "Befehl 1 kopieren: zehn Ideen"),
         h("button", { class: "btn ghost", onclick: (e) => copy(BEFEHLE[k].skript_text.replace("{{IDEEN}}", () => (sel.length ? JSON.stringify(sel, null, 1) : "[Hier die zwei gewählten Ideen einfügen]")).replace(BEFEHLE[k].lernstand, () => lernText()) + "\n\nVideo-Tag: " + S.datum, e.currentTarget) }, "Befehl 2 kopieren: Skripte"))))));
 }
 function renderBar() {
-  const bar = $("#bar"), k = S.konto, a = S.auswahl[k];
-  if (!S.ideen[k].length) { bar.hidden = true; return; }
-  const sl = slots(S.datum), n = ["mittag", "abend"].filter((s) => a[s] != null).length;
-  const zeile = (s) => h("span", null, (s === "mittag" ? "Mittag " : "Abend ") + sl[s] + ": " + (a[s] != null ? S.ideen[k][a[s]].titel : "noch keine Idee"));
-  const laeuft = ["mittag", "abend"].some((s) => S.busy["s-" + k + "-" + s]);
+  const bar = $("#bar"), k = S.konto, docs = SLOTS.map((s) => slotDoc(k, s));
+  if (!ideenListe(k).length && !docs.some(Boolean)) { bar.hidden = true; return; }
+  const u = uhr(S.datum), offen = SLOTS.filter((s) => brauchtSkript(slotDoc(k, s))).length;
+  const zeile = (s, d) => h("span", null, slotName(s) + " " + u[s] + ": " + (d ? d.titel + " · " + (STATUS[d.status]?.[0] ?? d.status) : "noch keine Idee"));
   bar.hidden = false;
-  bar.replaceChildren(h("div", { class: "in" }, h("div", { class: "pick" }, zeile("mittag"), zeile("abend")),
-    S.sample ? h("button", { class: "btn", id: "skriptbtn", disabled: n === 0 || laeuft, onclick: erzeugeSkripte }, n === 2 ? "Beide Skripte schreiben" : "Skript schreiben") : null));
+  bar.replaceChildren(h("div", { class: "in" }, h("div", { class: "pick" }, zeile("mittag", docs[0]), zeile("abend", docs[1])),
+    offen ? h("button", { class: "btn", id: "skriptbtn", disabled: !!S.busy["cc-" + k], onclick: () => skripteAnfordern(k) },
+      S.busy["cc-" + k] ? "Wird übergeben …" : offen === 2 ? "Beide Skripte recherchieren lassen" : "Skript recherchieren lassen") : null));
 }
 
 /* ---------- Start ---------- */
 async function start() {
-  S.datum = morgen();
-  $("#datum").addEventListener("change", (e) => { if (e.target.value) { S.datum = e.target.value; S.skripte = { simulierbar: {}, stelldirvor: {} }; render(); } });
+  S.datum = morgen(); S.tab = "tab-" + Math.random().toString(36).slice(2, 10);
+  try { Object.assign(S.wunsch, JSON.parse(localStorage.getItem("studio-wunsch") || "{}")); } catch (e) {}
+  $("#datum").addEventListener("change", (e) => { if (e.target.value) { S.datum = e.target.value; S.manuell = S.datum !== standardTag(); S.hinweis = ""; render(); } });
+  document.addEventListener("focusout", () => setTimeout(() => {
+    const a = document.activeElement; if (a && a.tagName === "TEXTAREA") return;
+    const f = [...S.spaeter]; S.spaeter.clear(); f.forEach((fn) => fn());
+  }, 250));
   render();
   const nutze = (n) => { try { return Promise.resolve(window.claude?.use ? window.claude.use(n) : null).catch(() => null); } catch (e) { return Promise.resolve(null); } };
-  const [db, sample, user] = await Promise.all([nutze("db"), nutze("sample"), nutze("user")]);
-  S.db = db; S.sample = sample; S.user = user; render();
+  const [db, sample, user, mcp, perm] = await Promise.all([nutze("db"), nutze("sample"), nutze("user"), nutze("mcp"), nutze("permissions")]);
+  S.db = db; S.sample = sample; S.user = user; S.mcp = mcp; S.perm = perm; render();
   if (!db) return;
-  const timer = setTimeout(() => { S.dbZeit = true; renderUebergabe(); }, 10000);
+  const timer = setTimeout(() => { S.dbZeit = true; render(); }, 10000);
+  const da = () => { clearTimeout(timer); S.dbZeit = false; };
   for (const k of KONTEN) {
-    db.doc("stand/lernstand-" + BEFEHLE[k].praefix).onSnapshot((snap) => { clearTimeout(timer); const d = snap.data(); if (d?.text) { S.lernstand[k] = d.text; renderLern(); } }, () => {});
+    db.doc("stand/lernstand-" + BEFEHLE[k].praefix).onSnapshot((snap) => { const d = snap.data(); if (d?.text) { S.lernstand[k] = d.text; renderLern(); } }, () => {});
   }
-  db.collection("skripte").orderBy("erstellt", "desc").limit(30).onSnapshot((snap) => { clearTimeout(timer); S.liste = snap.docs.map((d) => d.data()); renderUebergabe(); }, () => {});
+  db.collection("skripte").where("datum", ">=", plusTage(heute(), -14)).onSnapshot((snap) => {
+    da(); const neu = {}; snap.docs.forEach((d) => { if (d.exists) neu[d.id] = d.data(); }); slotsEingang(neu); render();
+  }, (e) => { da(); S.fehler.fort = "Gespeicherter Stand nicht lesbar (" + (e?.code ?? "unbekannt") + "). Lade die Seite neu."; render(); });
+  db.collection("ideen").where("datum", ">=", plusTage(heute(), -3)).onSnapshot((snap) => {
+    const neu = {}; snap.docs.forEach((d) => { if (d.exists) neu[d.id] = d.data(); }); S.ideen = neu; render();
+  }, () => {});
+  let statusAbgefragt = false;
+  db.collection("laeufe").where("datum", ">=", plusTage(heute(), -14)).onSnapshot(async (snap) => {
+    const neu = {}; snap.docs.forEach((d) => { if (d.exists) neu[d.id] = d.data(); }); S.laeufe = neu; renderTag();
+    if (!statusAbgefragt && S.mcp && S.laeufe[S.datum]?.session_id) {
+      statusAbgefragt = true;
+      const zustand = await Promise.resolve(S.perm?.state?.("mcp:" + AUTO.server)).catch(() => "unavailable");
+      if (zustand === "granted") statusHolen(S.datum);
+    }
+  }, () => {});
 }
 start();
 </script>

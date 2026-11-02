@@ -41,7 +41,7 @@ Die Kurzfassung aller Regeln, die für **beide** Accounts gelten. Jede Regel hat
 ## Produktion
 | Regel | Details |
 |---|---|
-| 4 Videos/Tag (2 je Account) für den nächsten Tag, nur auf Startsignal; höchstens 2 Agenten gleichzeitig | [[Produktion Rhythmus und Modelle]] |
+| 4 Videos/Tag (2 je Account) für den nächsten Tag; Startsignal = Knopf „An Claude Code übergeben“ im Ideen-Studio; höchstens 2 Agenten gleichzeitig | [[Produktion Rhythmus und Modelle]] |
 | Ablauf: 10 Ideen → Inhaber wählt 2 → makelloses Skript → Claude Code baut | [[Claude-Chat-Workflow]] |
 | Modelle: Sonnet (`model: sonnet`) für Routine, Opus für neue Welten und Abnahme, Haiku für Texte | [[Produktion Rhythmus und Modelle]] |
 | Nur Three.js und/oder Blender, keine KI-Video-Generatoren; 1080×1920, mind. 61 s | [[Produktion Rhythmus und Modelle]] |

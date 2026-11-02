@@ -13,7 +13,7 @@ cssclasses: [konto-simulierbar, typ-regel]
 Feste Reihenfolge jedes Simulierbar-Videos, als Zeitplan für **Ben im Original**: **150–190 Wörter bei 65–80 s, Ziel ca. 2,3 Wörter/s (Spanne 2,2–2,5), hörbare Satzpausen als Richtwert 0,35–0,6 s** (Profil `ben` in `qc/massstab.py`, Entscheidung des Inhabers 02.11.2026 abends). Zeiten sind Zielwerte; was `massstab.py` misst, steht in [[Prüfung und Abnahme Simulierbar]]. Herkunft der Reihenfolge: [[Maßstab Simulierbar]] (12 Gesetze). Gilt nicht für Account 2 ([[Trennung der Accounts]]).
 
 > [!info] Neu seit 02.11.2026 abends
-> Der Ablauf beginnt mit „**Skript liegt vor**“ (Ideen-Studio, Claude Chat schreibt es; kein 30-Tage-Plan mehr). Dazu: Skript-Anforderungen (Abschnitt 5), Dramaturgie und Effekte (Abschnitt 6), Tempo 150–190 Wörter, nur Thema GELD, keine Sperrliste (aber keine 1:1-Kopie), Länder frei. Workflow rund um das Ideen-Studio: [[Claude-Chat-Workflow]], [[Befehl Ideen und Skripte Simulierbar]].
+> Der Ablauf beginnt mit „**Skript liegt vor**“ (Ideen-Studio: die Tages-Sitzung von Claude Code recherchiert und schreibt es, der Inhaber gibt frei; kein 30-Tage-Plan mehr). Dazu: Skript-Anforderungen (Abschnitt 5), Dramaturgie und Effekte (Abschnitt 6), Tempo 150–190 Wörter, nur Thema GELD, keine Sperrliste (aber keine 1:1-Kopie), Länder frei. Workflow rund um das Ideen-Studio: [[Claude-Chat-Workflow]], [[Befehl Ideen und Skripte Simulierbar]].
 
 ## Die elf Bausteine in fester Reihenfolge
 1. **Scroll-Stopper-Hook** (0–5 s: Duell-Frage oder Du-Szenario, Stimme < 0,2 s, ganze Szene ab Bild 1)
@@ -97,7 +97,7 @@ Das Skript schreibt Claude Chat im Ideen-Studio; Claude Code setzt es um. Der In
 
 ### 5.2 Übernahme durch Claude Code
 1. **Inhaltlich 1:1** nach `skript.json` (Regie-Text, Segmente); rein technische Anpassungen ohne Inhaltsänderung (Zeilenumbrüche, Ausschreiben, Lautschrift, Segment-IDs) sind erlaubt.
-2. **Aussagen nur nach Rücksprache ändern.** Fehlen die festen Sätze (Folgen-Aufruf, Schluss), ergänzt Claude Code sie und meldet das.
+2. **Faktenfehler korrigieren und weiter** (Inhaber 02.11. spätabends): mit Quelle korrigieren, Aussage nur so weit wie nötig ändern, Vermerk unter `korrekturen`; kippt das Ergebnis, Status `rueckfrage` und Push. Fehlen die festen Sätze (Folgen-Aufruf, Schluss), ergänzt Claude Code sie und meldet das.
 3. **Zahlen prüfen:** `rechenweg`, `zahlen`, `annahmen` als Rechnung in `pipeline/sim/<thema>.mjs` mit Test nachrechnen; **Abweichungen melden** (Feld, Wert im Skript, Wert der Rechnung, Vorschlag), nicht stillschweigend korrigieren.
 4. **Eingangsprüfung:** GELD und Euro-Ergebnis · Themen-Logik · Ausschlussthema · Finanzregeln · Wörter 150–190 · Tonregeln (16a/16b) · Caption im Format von CLAUDE.md §7 · keine erkennbare 1:1-Kopie.
 

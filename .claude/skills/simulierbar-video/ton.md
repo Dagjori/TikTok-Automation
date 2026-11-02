@@ -38,7 +38,7 @@ Schluss genau: „Was sollen wir als Nächstes zeigen? Schreib es in die Komment
 ```
 
 ### Skript-Anforderungen (Verweis)
-Das Skript kommt von Claude Chat (Ideen-Studio) und wird als Regie-Text geschrieben, damit Ben Tonfall und Betonung problemlos umsetzt: belegbar, nichts erfunden, Diskussionsbedarf ohne Aufforderung zum Streiten, kein Clickbait, keine künstlichen Cliffhanger. Die vollständigen Anforderungen und die Übernahme durch Claude Code stehen in [ablauf.md](ablauf.md) §5. Die Regeln dieser Datei (eine Zeile pro Satz, GROSSSCHREIBUNG auf dem Betonungswort, ruhige v4-Tags, keine `<break>`, Zahlen ausgeschrieben) bleiben unverändert.
+Das Skript schreibt die Tages-Sitzung von Claude Code (Ideen-Studio) als Regie-Text, damit Ben Tonfall und Betonung problemlos umsetzt: belegbar, nichts erfunden, Diskussionsbedarf ohne Aufforderung zum Streiten, kein Clickbait, keine künstlichen Cliffhanger. Die vollständigen Anforderungen und die Übernahme durch Claude Code stehen in [ablauf.md](ablauf.md) §5. Die Regeln dieser Datei (eine Zeile pro Satz, GROSSSCHREIBUNG auf dem Betonungswort, ruhige v4-Tags, keine `<break>`, Zahlen ausgeschrieben) bleiben unverändert.
 
 ## 4. Klangteppich und Effekte (`pipeline/klang.py`, nur selbst erzeugt)
 - Teppich passend zum Stil und Thema, 8–13 dB unter der Stimme, ab Bild 0 (schleifenfest):

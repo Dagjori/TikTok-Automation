@@ -3,46 +3,57 @@ typ: anleitung
 konto: gemeinsam
 status: aktuell
 datum: 2026-11-02
-quelle: Entscheidung des Inhabers 02.11.2026 (spätabends), tools/chat_befehle.py
-tags: [konto/gemeinsam, workflow, claude-chat, ideen, skript]
+quelle: Entscheidungen des Inhabers 02.11.2026 (spätabends), docs/automatik/tages-sitzung.md, tools/chat_befehle.py
+tags: [konto/gemeinsam, workflow, claude-chat, ideen, skript, ideen-studio]
 cssclasses: [konto-gemeinsam, typ-anleitung]
 ---
 
-# Claude-Chat-Workflow: tägliche Ideen und Skripte
+# Tagesablauf: Ideen-Studio und Claude Code
 
-**Entscheidung 02.11. (Inhaber):** Es gibt keinen 30-Tage-Plan mehr. Jeden Tag entstehen die Themen neu: Claude Chat liefert 10 Videoideen je Account, der Inhaber wählt je 2 für den nächsten Tag, danach schreibt Claude Chat die Skripte. Claude Code baut daraus die Videos.
+**Entscheidungen 02.11. (Inhaber):** Kein 30-Tage-Plan. Jeden Tag entstehen die Themen neu im **Ideen-Studio** (Artifact https://claude.ai/artifact/PMqMpqpmSHYmuhY229ghZC). **Claude Code recherchiert mit Websuche und schreibt die Skripte** (Wahl per Klick: „Claude Code recherchiert“), die Ideen entstehen auf Klick im Studio. Nach der Freigabe startet ein Knopf die Produktion bis zur Buffer-Planung. **Das Studio speichert alles**: Beim erneuten Öffnen sind Ideen, Auswahl, Skripte und der Stand jedes Videos noch da. Ist ein Tag komplett geplant, verschwindet er ins Archiv und der nächste Tag erscheint.
 
 ## Rollen
 | Wer | Was |
 |---|---|
-| **Claude Chat** (Ideen-Studio oder claude.ai) | kennt Nische, Rolle und Regeln; liefert 10 Ideen, danach makellose Skripte |
-| **Inhaber** | wählt je Account 2 Ideen aus (anklicken), gibt das Startsignal |
-| **Claude Code** (diese Sitzung) | prüft die Skripte, rechnet Zahlen nach, baut Szene/Stimme/Ton, rendert, nimmt ab, plant in Buffer ein, wertet täglich 20:00 aus |
+| **Inhaber** | erzeugt je Account 10 Ideen (1 Klick), wählt 2 (Mittag, Abend), prüft die Skripte und gibt frei, klickt „An Claude Code übergeben“ |
+| **Claude im Studio** | schreibt die 10 Ideen (ohne Internet, ca. 1 Min., dein claude.ai-Kontingent) |
+| **Tages-Sitzung von Claude Code** | eine Sitzung je Video-Tag (Opus 5.5, Modus „Auto“): recherchiert jede Zahl, schreibt die Skripte, nach der Übergabe Rechnung, Stimme, Szene, Render auf dem PC, Prüfung, Buffer, Nachprüfung; meldet per Push |
+| **Lernschleife** | täglich 20:00, schreibt den Lernstand fort ([[Lernschleife und Insights]]) |
 
 ## Ablauf pro Tag
-1. **Ideen** (Inhaber, 1 Klick je Account): 10 Ideen je Account. Befehle: [[Befehl Ideen und Skripte Simulierbar]], [[Befehl Ideen und Skripte Account 2]]. Der Befehl enthält Nische, Rolle, Regeln, die bisherigen Videos und den **aktuellen Lernstand** ([[Lernschleife und Insights]]).
-2. **Auswahl** (Inhaber, anklicken): 2 Ideen je Account (Mittag 12:30 und Abend 19:30 des nächsten Tages).
-3. **Skripte** (automatisch nach der Auswahl): je ein makelloses Skript, Selbstprüfung am Ende.
-4. **Übergabe:** Die Skripte liegen im Ideen-Studio in der Datenbank (Sammlung `skripte`, Dokument `acc1-JJJJ-MM-TT-mittag|abend` bzw. `acc2-…`) oder werden vom Inhaber in die Sitzung eingefügt.
-5. **Startsignal** (Inhaber): Claude Code übernimmt das Skript 1:1 nach `skript.json`, rechnet die Zahlen als Code nach (`pipeline/sim/` mit Test), meldet Abweichungen und ändert Aussagen nur nach Rücksprache.
-6. **Produktion, Abnahme, Buffer** wie gewohnt ([[Produktion Rhythmus und Modelle]]).
+1. **Ideen** (Inhaber, 1 Klick je Account): 10 Ideen. Der Befehl enthält Nische, Rolle, Regeln, bisherige Videos und den **Lernstand**.
+2. **Auswahl** (Inhaber, anklicken): Mittag und Abend des Video-Tags. Wird sofort gespeichert.
+3. **„Skripte recherchieren lassen“** (Inhaber, 1 Klick): Das Studio startet die Tages-Sitzung von Claude Code (bzw. schickt ihr den Auftrag, wenn sie schon läuft). Sie recherchiert, rechnet nach und schreibt je ein Skript nach demselben Befehl wie Claude Chat (`python3 tools/chat_befehle.py --skript-auftrag …`). Dauer meist 10–20 Min., **Push**, wenn die Skripte stehen.
+4. **Prüfen** (Inhaber): Skript lesen (Quellen als Links, Prüf-Plaketten), dann **Freigeben**, **Neu schreiben lassen** (mit Kommentar) oder **Verwerfen**.
+5. **„An Claude Code übergeben“** (Inhaber, 1 Klick, das ist das Startsignal): Dieselbe Sitzung produziert alle freigegebenen Videos des Tags, höchstens 2 Agenten gleichzeitig, rendert auf dem PC, prüft, plant in Buffer. **Push**, wenn alles geplant ist, und bei Problemen.
+6. **Nachprüfung** nach der Posting-Zeit (öffentlich, Länge, KI-Label), dann Status „gepostet“.
+
+Den Fortschritt jedes Videos zeigt das Studio live: Status, letzter Schritt, Verlauf, Korrekturen, Sitzungsstatus mit Link zur Sitzung.
+
+## Faktenfehler (Inhaber 02.11.: „korrigieren und weiter“)
+Findet Claude Code vor der Produktion eine falsche oder veraltete Zahl, korrigiert er sie mit Quelle, ändert die Aussage nur so weit wie nötig, vermerkt es im Studio (Korrekturen) und produziert weiter. **Kippt das Ergebnis** (anderer Gewinner, andere Antwort auf die Titelfrage, Pointe stimmt nicht mehr), hält dieses Video an: Status „Rückfrage“, Push, Entscheidung im Studio per Klick.
 
 ## Anforderungen an jedes Skript
-- **Faktentreu:** nichts erfinden; jede Zahl mit Rechenweg, Quelle und Jahr; Unbelegtes wird nicht verwendet; Annahmen sind als Annahmen gekennzeichnet; Quellen nur intern.
-- **Diskussionsanreiz nur implizit:** die Sache selbst regt zum Austausch an (überraschende oder lageabhängige Antwort); nie ausgesprochen, keine Provokation, kein Clickbait, keine künstlichen Cliffhanger.
+- **Faktentreu:** nichts erfinden; jede Zahl mit Rechenweg, Quelle und Stand; Unbelegtes wird nicht verwendet; Annahmen gekennzeichnet; Quellen nur intern.
+- **Diskussionsanreiz nur implizit:** die Sache selbst regt zum Austausch an; nie ausgesprochen, keine Provokation, kein Clickbait, keine künstlichen Cliffhanger.
 - **Spannung:** von der ersten Sekunde fangen, kontinuierlich steigern, Dramaturgie-Hinweise für Design und Animation.
-- **Account 1:** Regie-Text für Ben, damit Tonfall und Betonung perfekt umgesetzt werden (Details [[Stimme und Ton Simulierbar]]); 150–190 Wörter, Sprache flüssig.
-- **Account 2:** keine Stimme; Titelfrage, 12–18 kurze Sätze, Faktenzeile, Anzeige-Plan, Weltvorschlag, Zeitraffer-Faktor.
+- **Account 1:** Regie-Text für Ben ([[Stimme und Ton Simulierbar]]); 150–190 Wörter, flüssig.
+- **Account 2:** keine Stimme; Titelfrage, 12–18 kurze Sätze, Faktenzeile, Anzeige-Plan, Welt, Zeitraffer.
+
+## Datenbank des Studios (Kurzform)
+`ideen/<acc1|acc2>-JJJJ-MM-TT` (10 Ideen) · `skripte/<acc1|acc2>-JJJJ-MM-TT-<mittag|abend>` (ein Dokument je Video mit Status-Kette gewählt → Recherche → Skript fertig → freigegeben → übergeben → Produktion → geplant → gepostet, dazu Rückfrage und Fehler) · `laeufe/JJJJ-MM-TT` (Sitzung des Tages) · `stand/lernstand-…`. Vollständig: `docs/automatik/tages-sitzung.md`.
 
 ## Zugänge
 | Weg | Wann |
 |---|---|
-| **Ideen-Studio** (Artifact, Befehle laufen per Klick, Ergebnisse landen in der Datenbank) | Standard |
-| **Claude Chat von Hand** (Befehl aus der Notiz kopieren) | Rückfall, z. B. wenn das Studio nicht erreichbar ist |
+| **Ideen-Studio** (Artifact, Connector „Claude Code Remote“ startet die Sitzung) | Standard |
+| **Claude Chat von Hand** (Befehl aus [[Befehl Ideen und Skripte Simulierbar]] bzw. [[Befehl Ideen und Skripte Account 2]] kopieren, Skripte in eine Claude-Code-Sitzung einfügen) | Notweg, wenn das Studio Claude Code nicht erreicht |
 
 ## Grenzen (ehrlich)
-- Claude Code kann keine Nachrichten in deinen Claude-Chat senden. Das Ideen-Studio löst das ohne Kopieren, weil die Seite Claude selbst fragt (dein claude.ai-Kontingent, nicht Claude Code).
-- Claude Chat kann sich bei Zahlen irren. Deshalb rechnet Claude Code jede Zahl noch einmal nach, bevor ein Video entsteht.
+- Claude im Studio kann nicht ins Internet; deshalb schreibt Claude Code die Skripte (Websuche im Abo enthalten).
+- Beim ersten Klick fragt claude.ai, ob das Studio Claude Code starten darf („Claude Code Remote“). Einmal erlauben.
+- Getestet am 02.11.: eine neue Sitzung im Modus „Auto“ schreibt ohne Rückfrage ins Studio, Push-Werkzeug vorhanden. Ob claude.ai den Modus „Auto“ auch beim Start **aus dem Studio** übernimmt, zeigt erst der erste echte Klick; das Studio warnt sonst („läuft nicht im Modus Auto“).
+- Alle Sitzungen nutzen dasselbe Nutzungskontingent (am 02.11. stand das Wochenlimit auf „Warnung“).
 
 ## Siehe auch
-[[Regelwerk]] · [[Pläne und Kalender]] (Pläne sind Archiv) · [[Produktion Rhythmus und Modelle]] · [[Index]]
+[[Regelwerk]] · [[Produktion Rhythmus und Modelle]] · [[Lernschleife und Insights]] · [[Pläne und Kalender]] (Archiv) · [[Index]]

@@ -1,6 +1,6 @@
 # Themen: Markt, Auswahlregeln, Finanzregeln, Zahlen 2026 (Simulierbar) · Sperrliste und Plan sind Archiv
 
-Gilt für `@simulierbar` (Skill `simulierbar-video`). **Stand 02.11.2026 abends (Entscheidungen des Inhabers):** Themen entstehen täglich neu im Ideen-Studio (10 Ideen, der Inhaber wählt 2; das Skript schreibt Claude Chat). Es gibt **keinen 30-Tage-Plan** mehr (`data/plan/30-tage.csv`, `simulierbar-plan.json`, Plan-PDF sind nur Archiv, nicht gelöscht) und **keine Sperrliste** mehr. Es gibt nur noch das Thema **GELD** (Rubrik ALLTAG entfällt); Länder sind frei. Legende: **(F)** belegter Fakt mit Quelle · **(S)** Schätzung · **(A)** Annahme · **(B)** Beispielwert, wird vor der Produktion gerechnet · **prüfen** vor der Produktion klären.
+Gilt für `@simulierbar` (Skill `simulierbar-video`). **Stand 02.11.2026 abends (Entscheidungen des Inhabers):** Themen entstehen täglich neu im Ideen-Studio (10 Ideen, der Inhaber wählt 2; Recherche und Skript schreibt die Tages-Sitzung von Claude Code). Es gibt **keinen 30-Tage-Plan** mehr (`data/plan/30-tage.csv`, `simulierbar-plan.json`, Plan-PDF sind nur Archiv, nicht gelöscht) und **keine Sperrliste** mehr. Es gibt nur noch das Thema **GELD** (Rubrik ALLTAG entfällt); Länder sind frei. Legende: **(F)** belegter Fakt mit Quelle · **(S)** Schätzung · **(A)** Annahme · **(B)** Beispielwert, wird vor der Produktion gerechnet · **prüfen** vor der Produktion klären.
 
 ## Gültigkeit der Abschnitte (seit 02.11.2026 abends)
 | Abschnitt | Status | Hinweis |

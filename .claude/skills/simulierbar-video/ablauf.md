@@ -51,7 +51,7 @@ In `skript.json` je Segment ein Eintrag `bild_text_abgleich`: was gesagt wird (O
 Was nicht zu sehen ist, wird nicht gesagt; was groß zu sehen ist, wird erwähnt oder weggelassen. Der Abgleich ist zugleich das Beat-Blatt: Aus ihm leitet Claude Code Animation, Kamera und Licht ab (§6.2).
 
 ## 5. Skript-Anforderungen und Übernahme
-Das Skript schreibt Claude Chat (Ideen-Studio); Claude Code setzt es um. Der Inhaber wählt aus 10 Ideen täglich 2 für den nächsten Tag.
+Das Skript schreibt die Tages-Sitzung von Claude Code mit Websuche (vom Ideen-Studio gestartet, `docs/automatik/tages-sitzung.md`, Befehl aus `tools/chat_befehle.py`); nach der Freigabe durch den Inhaber setzt dieselbe Sitzung es um. Der Inhaber wählt aus 10 Ideen täglich 2 für den nächsten Tag.
 
 ### 5.1 Anforderungen an das Skript
 1. **Legitim und belegbar:** Jede Aussage und Zahl ist belegt (Quelle) oder als Modellannahme gekennzeichnet; **nichts erfinden**. Belege und Annahmen stehen im Dokument (`quellen`, `annahmen`, `rechenweg`, `zahlen`) und intern in `skript.json`, nie im Video. Ausschlussthemen und Finanzregeln aus `CLAUDE.md` §7 und [themen.md](themen.md) §2, §5 gelten.
@@ -62,14 +62,14 @@ Das Skript schreibt Claude Chat (Ideen-Studio); Claude Code setzt es um. Der Inh
 6. **Struktur:** feste Reihenfolge des Zeitplans (§1) mit den festen Sätzen (Folgen-Aufruf, Schluss), echte Alternativen derselben Entscheidung, Ergebnis mit exakter Zahl, „Warum?“ mit höchstens 2 Faktoren, zweite Überraschung, Merksatz.
 7. **Eigenständig:** eigene Formulierungen und eigene Szenenidee; keine 1:1-Übernahme fremder Skripte, Sätze oder Bildideen.
 8. **Dokument-Felder** (`skripte`, ID `acc1-JJJJ-MM-TT-mittag|abend`): `konto`, `datum`, `slot`, `titel`, `thema`, `skript`, `rechenweg`, `zahlen`, `annahmen`, `quellen`, `caption`, `status`.
-9. **Dramaturgie-Hinweise im Skript** (Claude Chat markiert, wo die Spannung steigt und welche Momente visuell besonders sein sollen: Zoom, Licht, Aufleuchten) sind Vorschläge für das Beat-Blatt (§6). Claude Code setzt sie um oder passt sie an, wenn Qualitätslatte oder Maß (§6.3) es verlangen, und hält die Abweichung im Beat-Blatt fest. Weitere Felder des Chat-Skripts (Länder, Wortzahl, Selbstprüfung) dienen der Eingangsprüfung.
+9. **Dramaturgie-Hinweise im Skript** (das Skript markiert, wo die Spannung steigt und welche Momente visuell besonders sein sollen: Zoom, Licht, Aufleuchten) sind Vorschläge für das Beat-Blatt (§6). Claude Code setzt sie um oder passt sie an, wenn Qualitätslatte oder Maß (§6.3) es verlangen, und hält die Abweichung im Beat-Blatt fest. Weitere Felder des Skripts (Länder, Wortzahl, Selbstprüfung) dienen der Eingangsprüfung.
 
 ### 5.2 Übernahme durch Claude Code
 1. **Inhaltlich 1:1** nach `skript.json`: `skript` → Segmente (`id`, `phase`, `text` = Untertitel, `sprechtext` = Regie-Text), `quellen`/`annahmen` → intern, `caption` → Caption. Rein technische Anpassungen ohne Inhaltsänderung sind ohne Rücksprache erlaubt (Zeilenumbrüche, Ziffern ausschreiben, Lautschrift, Segment-IDs).
-2. **Aussagen ändert Claude Code nur nach Rücksprache** (gebündelte Frage an den Inhaber bzw. Rückmeldung an Claude Chat). Fehlen die festen Sätze (Folgen-Aufruf „Folg mir, damit du nichts verpasst.“, Schluss „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“), ergänzt Claude Code sie und meldet das.
-3. **Zahlen prüfen:** `rechenweg`, `zahlen` und `annahmen` als Rechnung in `pipeline/sim/<thema>.mjs` mit Test nachrechnen. **Abweichungen melden** (Feld, Wert im Skript, Wert der Rechnung, Vorschlag), nicht stillschweigend korrigieren. Die Zähler im Video kommen aus der geprüften Rechnung.
+2. **Faktenfehler** (Inhaber 02.11. spätabends: „korrigieren und weiter“): mit Quelle korrigieren, die Aussage nur so weit wie nötig ändern, im Slot-Dokument unter `korrekturen` vermerken und weiterproduzieren; **kippt das Ergebnis** (anderer Gewinner bzw. andere Antwort auf die Titelfrage, Pointe stimmt nicht mehr): Status `rueckfrage`, Push an den Inhaber, dieser Slot hält an. Fehlen die festen Sätze (Folgen-Aufruf „Folg mir, damit du nichts verpasst.“, Schluss „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“), ergänzt Claude Code sie und meldet das.
+3. **Zahlen prüfen:** `rechenweg`, `zahlen` und `annahmen` als Rechnung in `pipeline/sim/<thema>.mjs` mit Test nachrechnen. **Abweichungen nie stillschweigend:** jede Korrektur steht mit Feld, altem und neuem Wert, Quelle und Grund in `korrekturen` (Punkt 2). Die Zähler im Video kommen aus der geprüften Rechnung.
 4. **Eingangsprüfung** (vor der Produktion): GELD und Euro-Ergebnis · Themen-Logik · Ausschlussthema · Finanzregeln (Modellrechnung, keine Anbieter) · Wörter 150–190 (Zählung des Sprechtexts ohne Tags) · Tonregeln (16a/16b) · Caption im Format von `CLAUDE.md` §7 · keine erkennbare 1:1-Kopie.
-5. **Rückmeldung:** Status im Dokument nur setzen, wenn der Ablauf des Ideen-Studios es vorsieht (Befehl [[Befehl Ideen und Skripte Simulierbar]]); sonst im Bericht an den Inhaber.
+5. **Rückmeldung:** Status, Fortschritt und Verlauf im Slot-Dokument nach `docs/automatik/tages-sitzung.md` (das Studio zeigt sie live), Push bei Problemen.
 
 ## 6. Dramaturgie und Effekte (Regelabschnitt, Inhaber 02.11.2026 abends)
 „Mehr Effekte, aber nichts Übertriebenes, und die Spannung steigt.“
