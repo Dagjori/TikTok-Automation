@@ -6,6 +6,17 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
+## ⏱️ Heizung nachts runter oder durchheizen: Was kostet die Gewohnheit wirklich?
+- **Score:** 82 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 5, Aufwand 4, Risiko 5) · **Status:** neu
+- **Warum:**
+  - Neukunden zahlen für Erdgas wieder ca. 12 ct/kWh, im Februar waren es ca. 8 ct (F: laut [ms-aktuell](https://ms-aktuell.de/welt/gaspreise-winter-26-10-2026/); [FTD Finanzcheck](https://www.ftd.de/finanzen/finanzcheck/gaspreise-2026-heizkosten-steigen-wegen-nahost-konflikt/) nennt den Nahost-Konflikt als Grund). Prognosen gehen auseinander (Juni-Quelle sah sinkende Kosten), vor Produktion prüfen.
+  - Heizspiegel 2026: 70 m² Mehrfamilienhaus Gas 1.120 €, Wärmepumpe 735 €, Heizöl 1.275 € (F: [co2online laut Suchzusammenfassung](https://reduco.ai/blog/heizung/heizkostenvergleich-2026)).
+  - Heizsaison läuft, das Thema wird mit jeder Kältewelle stärker (A).
+- **Eigene Umsetzung (Strategie-Vergleich, Rennen gegen die Uhr):** Zwei Wohnungen, gleiche Dämmung, gleicher Preis. Wohnung A senkt nachts auf 16 °C, Wohnung B heizt durch. Sichtbarer Euro-Zähler und Raumtemperatur über 24 Stunden. Denkfalle: „Klar, Durchheizen spart Energie, weil nichts auskühlt. Oder?“ Zwei Wendungen: erst Aufheizen frisst einen Teil der Ersparnis, dann hängt der Sieg von der Dämmung ab.
+- **Achtung:** fabrik.neu (5 Follower) hat „Heizung nachts runter oder durchheizen“ am 31.10. gepostet, nicht viral. Eigener Ansatz nötig (Zähler, Dämmungs-Wendung), keine Kopie. Konkurrenz-Check vor Produktion.
+- **Vor Produktion prüfen:** Physik (Newton-Abkühlung, Heizleistung) im Code mit Tests, Gaspreis als offene Annahme.
+- **Posten:** ab sofort, spätestens 20.12.2026 (Weihnachten-Slot frei halten).
+
 ## 💶 Tankrabatt endet: Lohnt sich Volltanken am 31.12. oder reicht der 2. Januar?
 - **Score:** 80 (Nachfrage 4, Timing 4, Wettbewerb 4, Passung 4, Aufwand 4, Risiko 4) · **Status:** neu
 - **Warum:**

@@ -43,6 +43,7 @@
 - **Gedächtnis:** PreCompact-Hook sichert nach `.sitzung/` (nicht im Repo), SessionStart-Hook erinnert nach `/compact` ans Lesen. Funktioniert (heute nach dem Komprimieren genutzt).
 - **Repo ist öffentlich.** Empfehlung: auf privat stellen. Keine Konkurrenzinhalte, keine Gesprächsverläufe im Repo.
 - **Trend-Radar:** täglich 05:35 Uhr. Telegram noch nicht eingerichtet.
+- **Neuer Trend-Vorschlag (02.11.):** Heizung nachts runter oder durchheizen (Score 82, spätestens 20.12.), Details in `docs/trends/vorschlaege.md`. Regel-Check 02.11.: Community Guidelines Released 25.08.2026 / Effective 24.09.2026, CRP EWR unverändert (Basis).
 - **Neue Trend-Vorschläge (01.11.):** Tankrabatt endet 31.12. (Score 80, posten 15.–23.12.), Weihnachtsbaum teurer (Score 70, schwächer, posten 01.–08.12.), Details in `docs/trends/vorschlaege.md`.
 
 ## Neue Regeln Automatisierung (01.11. abends)
