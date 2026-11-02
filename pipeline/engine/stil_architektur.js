@@ -75,7 +75,7 @@ function atlasBox(breite, hoehe, tiefe, { fensterBreite = 0.28, etagenHoehe = 0.
 }
 
 /** Modellplatte (Sperrholz mit sichtbaren Lagen an der Kante), Straßen als flache Gravur, darunter dunkler Tisch */
-export function modellPlatte({ breite = 14, tiefe = 14, dicke = 0.18, strassen = [], tisch = "#2A2622" } = {}) {
+export function modellPlatte({ breite = 14, tiefe = 14, dicke = 0.18, strassen = [], tisch = "#2A2622", holz = false } = {}) {
   const g = new THREE.Group();
   const kante = gemeinsam("plattenkante", () => {
     const c = leinwand(64, 256, (x, b, h) => { for (let y = 0; y < h; y += 16) { x.fillStyle = y % 32 ? "#D9C3A0" : "#C4A985"; x.fillRect(0, y, b, 16); } });
@@ -83,16 +83,20 @@ export function modellPlatte({ breite = 14, tiefe = 14, dicke = 0.18, strassen =
     return new THREE.MeshStandardMaterial({ map: t, roughness: 0.8 });
   });
   const c = leinwand(2048, 2048, (x, b, h) => {
-    x.fillStyle = MODELL.platte; x.fillRect(0, 0, b, h);
+    x.fillStyle = holz ? "#CFA66F" : MODELL.platte; x.fillRect(0, 0, b, h);
     const r = zufall(5);
+    if (holz) { // Birkensperrholz: Maserung längs, leichte Fugen
+      for (let i = 0; i < 900; i++) { x.fillStyle = `rgba(${r() < 0.5 ? "70,40,15" : "230,190,130"},${0.04 + r() * 0.07})`; x.fillRect(r() * b, r() * h, 1 + r() * 3, 40 + r() * 500); }
+      x.fillStyle = "rgba(60,35,12,0.22)"; for (let k = 1; k < 4; k++) x.fillRect(0, (k / 4) * h - 2, b, 4);
+    }
     for (let i = 0; i < 30000; i++) { x.fillStyle = `rgba(0,0,0,${0.01 + r() * 0.02})`; x.fillRect(r() * b, r() * h, 2, 1); }
-    x.fillStyle = "#D8D3C9";
+    x.fillStyle = holz ? "#A47D4E" : "#D8D3C9";
     for (const s of strassen) {
       const bb = (s.breite ?? 1) / breite * b;
       if (s.richtung === "z") x.fillRect(((s.x + breite / 2) / breite) * b - bb / 2, 0, bb, h);
       else x.fillRect(0, ((s.z + tiefe / 2) / tiefe) * h - bb / 2, b, bb);
     }
-    x.strokeStyle = "rgba(255,255,255,0.7)"; x.lineWidth = 3; x.setLineDash([22, 18]);
+    x.strokeStyle = holz ? "rgba(235,215,180,0.55)" : "rgba(255,255,255,0.7)"; x.lineWidth = 3; x.setLineDash([22, 18]);
     for (const s of strassen) { x.beginPath(); if (s.richtung === "z") { const px = ((s.x + breite / 2) / breite) * b; x.moveTo(px, 0); x.lineTo(px, h); } else { const pz = ((s.z + tiefe / 2) / tiefe) * h; x.moveTo(0, pz); x.lineTo(b, pz); } x.stroke(); }
   });
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;

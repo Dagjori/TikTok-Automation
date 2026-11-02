@@ -118,7 +118,7 @@
   {
    "id": "wendung2",
    "phase": "wendung2",
-   "text": "Jetzt verdient er mehr pro Monat. Der Abstand schrumpft … aber langsam. Mit 30 fehlen noch 100.800 €.",
+   "text": "Jetzt verdient er mehr pro Monat. Der Abstand schrumpft aber langsam. Mit 30 fehlen noch 100.800 €.",
    "sprechtext": "Jetzt verdient er mehr pro Monat.\nDer Abstand schrumpft … aber LANGSAM.\nMit dreißig fehlen noch hunderttausend.",
    "bild_text_abgleich": [
     {
@@ -134,7 +134,7 @@
   {
    "id": "wendung3",
    "phase": "wendung3",
-   "text": "Ab 30 zieht Toms Gehalt an. 61.200 €, 34.800 €, 8.400 € … Kurz vor 38 zieht er vorbei.",
+   "text": "Ab 30 zieht Toms Gehalt an. 61.200 €, 34.800 €, 8.400 € Kurz vor 38 zieht er vorbei.",
    "sprechtext": "Ab dreißig zieht Toms Gehalt an.\nEinundsechzigtausend, fünfunddreißigtausend, achttausend …\nKurz vor achtunddreißig zieht er VORBEI.",
    "bild_text_abgleich": [
     {

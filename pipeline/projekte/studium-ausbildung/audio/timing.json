@@ -356,7 +356,7 @@
   },
   {
    "id": "wendung2",
-   "text": "Jetzt verdient er mehr pro Monat. Der Abstand schrumpft … aber langsam. Mit 30 fehlen noch 100.800 €.",
+   "text": "Jetzt verdient er mehr pro Monat. Der Abstand schrumpft aber langsam. Mit 30 fehlen noch 100.800 €.",
    "start": 30.08,
    "ende": 37.52,
    "woerter": [
@@ -406,11 +406,6 @@
      "ende": 33.12
     },
     {
-     "wort": "…",
-     "start": 33.68,
-     "ende": 33.76
-    },
-    {
      "wort": "aber",
      "start": 33.84,
      "ende": 33.92
@@ -454,7 +449,7 @@
   },
   {
    "id": "wendung3",
-   "text": "Ab 30 zieht Toms Gehalt an. 61.200 €, 34.800 €, 8.400 € … Kurz vor 38 zieht er vorbei.",
+   "text": "Ab 30 zieht Toms Gehalt an. 61.200 €, 34.800 €, 8.400 € Kurz vor 38 zieht er vorbei.",
    "start": 37.6,
    "ende": 46.28,
    "woerter": [
@@ -517,11 +512,6 @@
      "wort": "€",
      "start": 42.77333333333333,
      "ende": 43.36
-    },
-    {
-     "wort": "…",
-     "start": 43.92,
-     "ende": 43.96
     },
     {
      "wort": "Kurz",

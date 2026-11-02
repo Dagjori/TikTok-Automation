@@ -140,10 +140,10 @@ async function start() {
   // ---------- Welt ----------
   const szene = new THREE.Scene();
   szene.background = abendWand();
-  dunst(szene, "#3A3342", 0.011);
+  dunst(szene, "#2A2128", 0.008);
   const SONNE = [-0.62, 0.2, -0.76];
-  const rig = rigAbendsonne(szene, buehne.renderer, { richtung: SONNE, ziel: [0, 0, 0], bereich: 12, schatten: SCHATTEN, farbe: "#FFC283", staerke: 5.6, himmel: "#A9BEDF", boden: "#6A5A4C", himmelStaerke: 0.7, umgebungsStaerke: 0.5 });
-  const platte = modellPlatte({ breite: 15, tiefe: 44, strassen: [{ x: XL, richtung: "z", breite: 0.95 }, { x: XT, richtung: "z", breite: 0.95 }] });
+  const rig = rigAbendsonne(szene, buehne.renderer, { richtung: SONNE, ziel: [0, 0, 0], bereich: 12, schatten: SCHATTEN, farbe: "#FFC283", staerke: 5.0, himmel: "#9FB0CC", boden: "#5A4636", himmelStaerke: 0.6, umgebungsStaerke: 0.45 });
+  const platte = modellPlatte({ breite: 15, tiefe: 44, strassen: [{ x: XL, richtung: "z", breite: 0.95 }, { x: XT, richtung: "z", breite: 0.95 }], holz: true });
   platte.position.set(0, 0, -8.5);
   szene.add(platte);
 
@@ -278,15 +278,16 @@ async function start() {
     shot(A.danach, 1, [0.0, 5.0, 8.0], [1.8, 1.4, -4.5], 40),
     shot(A.klar, 1, [1.4, 7.4, 6.7], [0.0, 0.3, 0.4], 38),
     shot(A.oder + 0.5, 1, [-1.4, 7.4, 6.7], [0.0, 0.3, 0.4], 38),
-    shot(A.lenaSchon - 0.6, 0, [-1.8, 3.4, 8.8], [2.8, 0.8, 3.4], 42),
-    shot(A.hoersaal + 0.4, 0, [-0.2, 3.2, 7.4], [3.4, 1.0, 3.0], 46),
+    shot(A.lenaSchon - 0.6, 0, [-2.4, 4.6, 11.5], [2.6, 0.8, 3.4], 42),
+    shot(A.hoersaal + 0.4, 0, [-1.6, 4.6, 10.6], [3.4, 1.0, 3.2], 46),
     shot(A.folg + 0.2, 1, [1.8, 7.8, 8.0], [0.0, 0.3, 0.0], 40),
     shot(A.mit24 + 0.4, 1, [1.6, 7.4, 6.7], [0.0, 0.3, 0.4], 38),
     shot(A.jetzt, 1, [-2.2, 7.4, 6.7], [0.0, 0.3, 0.4], 38),
     shot(A.mit30, 1, [2.2, 7.0, 6.4], [0.0, 0.3, 0.4], 38),
     shot(A.ab30, 1, [-2.0, 6.2, 5.8], [0.0, 0.3, 0.3], 38),
-    shot(A.n34, 1, [1.8, 5.2, 5.2], [0.0, 0.3, 0.3], 38),
-    shot(A.vorbei + 0.4, 1, [1.6, 4.4, 4.8], [0.0, 0.5, 0.0], 38),
+    shot(A.n34, 1, [1.0, 5.6, 5.4], [0.0, 0.3, 0.3], 38),
+    shot(A.kurz + 0.2, 1, [0.4, 5.8, 5.4], [0.0, 0.3, -0.5], 38),
+    shot(A.vorbei + 0.4, 1, [0.6, 5.6, 5.2], [0.0, 0.3, -0.5], 38),
     shot(A.erg40 + 0.8, 1, [3.0, 2.8, 6.0], [0.0, 1.1, -0.9], 38),
     shot(A.warum - 0.2, 0, [0.0, 11.0, -6.0], [0.0, 0.0, -11.6], 44),
     shot(A.zweitens - 1.3, 0, [0.0, 11.0, -6.0], [0.0, 0.0, -11.6], 44),
@@ -301,7 +302,8 @@ async function start() {
     const F = fokusPunkt(t);
     const sz = SW(t), luecke = Math.abs(zVon(sz.eL) - zVon(sz.eT));
     const sk = 1 + Math.max(0, luecke - 0.6) * 0.22; // große Lücke: Kamera geht zurück, beide Figuren bleiben im Bild
-    const ab = (k) => k.f ? { pos: [F[0] + k.pos[0] * sk, F[1] + k.pos[1] * sk, F[2] + k.pos[2] * sk], ziel: [F[0] + k.ziel[0], F[1] + k.ziel[1], F[2] + k.ziel[2]] } : { pos: k.pos, ziel: k.ziel };
+    const FK = 1.4; // Grundabstand: alles in der sicheren Breite
+    const ab = (k) => k.f && k.t > 3 ? { pos: [F[0] + k.pos[0] * sk * FK, F[1] + k.pos[1] * sk * FK, F[2] + k.pos[2] * sk * FK], ziel: [F[0] + k.ziel[0], F[1] + k.ziel[1], F[2] + k.ziel[2]] } : { pos: k.pos, ziel: k.ziel };
     let i = 0;
     while (i < SH.length - 1 && t > SH[i + 1].t) i++;
     const a = SH[i], b = SH[Math.min(i + 1, SH.length - 1)];
@@ -311,16 +313,16 @@ async function start() {
   };
   const regie = new Regie(kamera, kameraBasis, { zp });
   regie.atmen({ staerke: 0.012, tempo: 0.25 });
-  regie.zoom({ t: A.hoersaal - 0.1, ziel: [3.4, 1.0, 3.2], staerke: 0.22, halt: 1.2, rueck: 0.8 });
-  regie.zoom({ t: A.rueck - 0.05, ziel: (t) => { const s = SW(t); return [0, 0.5, zMitte(s)]; }, staerke: 0.3, halt: 2.4, rueck: 1.0 });
-  regie.zoom({ t: A.kurz - 0.1, ziel: (t) => { const s = SW(t); return [0, 0.6, zMitte(s)]; }, staerke: 0.4, halt: 1.7, rueck: 0.6 });
+  regie.zoom({ t: A.hoersaal - 0.1, ziel: [3.4, 1.0, 3.2], staerke: 0.15, halt: 1.2, rueck: 0.8 });
+  regie.zoom({ t: A.rueck - 0.05, ziel: (t) => { const s = SW(t); return [0, 0.5, zMitte(s)]; }, staerke: 0.15, halt: 2.4, rueck: 1.0 });
+  regie.zoom({ t: A.kurz - 0.1, ziel: (t) => { const s = SW(t); return [0, 0.6, zMitte(s)]; }, staerke: 0.12, halt: 1.7, rueck: 0.6 });
   regie.schleife({ ab: T_SCHLEIFE, ende: DAUER - 1 / FPS });
 
   // ---------- Zustand auf die Welt anwenden ----------
   const sonne = rig.sonne, hemi = rig.hemi;
   const sonneBasis = new THREE.Color("#FFC283"), sonneHeiss = new THREE.Color("#FFA45C");
   const sonnenPunkt = new THREE.Vector3(...SONNE).normalize().multiplyScalar(60).toArray();
-  const post = { ...GRADING.abend, belichtung: 1.1, splitStaerke: 0.24, saettigung: 1.1, kontrast: 1.08, vignette: 0.3, strahlen: 0.45, strahlenPunkt: sonnenPunkt, strahlenSchwelle: 1.25, strahlenLaenge: 0.75, strahlenAbfall: 0.97, strahlenFarbe: [1, 0.82, 0.6] };
+  const post = { ...GRADING.abend, belichtung: 1.02, splitStaerke: 0.24, saettigung: 1.0, kontrast: 1.1, vignette: 0.36, bloomSchwelle: 1.3, lift: [0.004, 0.004, 0.01], strahlen: 0.22, strahlenPunkt: sonnenPunkt, strahlenSchwelle: 1.4, strahlenLaenge: 0.75, strahlenAbfall: 0.97, strahlenFarbe: [1, 0.82, 0.6] };
   const tmp = new THREE.Vector3();
   const welt = {
     szene, kamera, post,
@@ -336,7 +338,7 @@ async function start() {
       const x = lerp(XT, SITZ.x, s.halle), z = lerp(zT, SITZ.z, s.halle), y = SITZ.y * s.halle;
       figT.position.set(x, y, z); figT.rotation.y = s.drehT;
       figT.pose({ geh: s.gehT, schritt: s.ampT, sitz: s.sitz });
-      figT.leuchte(0.8 + 0.7 * s.blitz + 0.4 * s.spotT);
+      figT.leuchte(0.8 + 2.4 * s.blitz + 0.4 * s.spotT); figT.fleck.scale.setScalar(1 + 1.3 * s.blitz);
       if (s.ampT === 0 && s.sitz < 0.01) figT.rotation.y += Math.sin(t * 0.8) * 0.12; // wartet, schaut sich um
       // Säulen und Spuren
       saeuleL.position.set(XL - 0.65, 0, zL); const fade = 1 - glatt(t, A.warum - 0.4, A.warum + 0.5); saeuleL.setze(s.eL > 6000 ? fade : 0); saeuleL.hoehe(Math.max(0.02, s.eL * SAEULE)); saeuleL.puls(0.35 * s.blitz);
@@ -372,13 +374,13 @@ async function start() {
       sonne.position.set(sx + rig.richtung.x * 40, rig.richtung.y * 40, sz + rig.richtung.z * 40);
       sonne.target.updateMatrixWorld();
       sonne.color.copy(sonneBasis).lerp(sonneHeiss, s.warm);
-      sonne.intensity = 5.8 + 1.1 * s.warm + 0.7 * s.hoehe + 0.6 * s.blitz;
-      hemi.intensity = 0.7 - 0.1 * s.hoehe;
-      post.bloomStaerke = 0.7 + 0.35 * s.hoehe + 0.25 * s.blitz;
-      post.vignette = 0.3 + 0.08 * s.hoehe;
-      post.belichtung = 1.1 + 0.04 * s.blitz;
+      sonne.intensity = 4.9 + 1.0 * s.warm + 0.6 * s.hoehe + 0.5 * s.blitz;
+      hemi.intensity = 0.6 - 0.06 * s.hoehe;
+      post.bloomStaerke = 0.4 + 0.2 * s.hoehe + 0.2 * s.blitz;
+      post.vignette = 0.36 + 0.08 * s.hoehe;
+      post.belichtung = 1.02 + 0.04 * s.blitz;
       regie.anwenden(t);
-      Object.assign(post, fokus(kamera, regie.zustand(t).ziel, { tiefe: 0.3, nah: 0.35, fern: 0.5 }));
+      Object.assign(post, fokus(kamera, regie.zustand(t).ziel, { tiefe: 0.28, nah: 0.45, fern: 0.6 }));
     },
   };
 
