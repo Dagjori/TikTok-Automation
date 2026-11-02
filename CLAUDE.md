@@ -112,6 +112,7 @@ Feste Reihenfolge (Zeitplan, Satzmuster, Beispiel: Skill `ablauf.md`): 1. **Scro
 - [ ] Widersprüche in Skill-Quellen (Prüfliste gegen `massstab.py`, Konkurrenzzahlen) siehe Hirn `Stand und nächste Schritte`.
 - [ ] Offene Vorschläge des Radars: `docs/trends/vorschlaege.md` (Tankrabatt, Weihnachtsbaum, Heizung nachts) können als Wunsch ins Ideen-Studio.
 - [ ] Ob ein Impressum-Link in der Bio das CRP stört, ist von TikTok nicht dokumentiert (Link statt Kontaktdaten).
+- [ ] **Vorschlag (Claude):** Prüfpunkt 12b in `qc/massstab.py` zusätzlich nach Silben/s messen (Zahlwörter verzerren Wörter/s, Fall „Kind bis 18“ am 03.11.); braucht Freigabe des Inhabers.
 - [ ] **Rechte-Sicherheitsnetz** für unbeaufsichtigte Sitzungen (`permissions.allow` in `.claude/settings.json`: ArtifactData, WebSearch, python3, node, git …) hat der Sicherheitsfilter am 02.11. blockiert (Selbständerung von Rechten). Nicht nötig, solange die Tages-Sitzung im Modus Auto läuft; Entscheidung des Inhabers offen.
 
 ## 12. Entscheidungen des Inhabers (2026 · Entscheidung · Begründung)
@@ -182,3 +183,4 @@ Nur Entscheidungen des Inhabers; Empfehlungen von Claude stehen als offene Punkt
 - **Vault-Weg: ZIP wie bisher** (Auswahl per Klick): Änderungen am Hirn kommen per ZIP in den Desktop-Vault; der Master bleibt `hirn/` im Repo; eigene Notizen vom Desktop erreichen Claude nur, wenn der Inhaber sie schickt · Claude kann nicht direkt auf den Desktop schreiben, Alternativen (Abgleich über den PC-Dienst, Obsidian-Git) wurden abgelehnt.
 - **Ideen-Studio mit Claude Code verbunden** (Auswahl per Klick): **Claude Code recherchiert und schreibt die Skripte** (Websuche im Abo, kennt alle Regeln; Firecrawl im Studio abgelehnt) · „Anbindung mit Internetzugriff, danach automatisch produzieren und an Buffer“. **Ideen auf Klick im Studio** (keine tägliche Vorbereitung). **Faktenfehler: korrigieren und weiter** (Vermerk), anhalten nur bei gekipptem Ergebnis. **Push** bei Problemen, wenn die Skripte stehen und wenn alles geplant ist. Startsignal = Knopf „An Claude Code übergeben“, je Video-Tag eine Sitzung.
 - **Studio speichert alles** (Ideen, Auswahl, Skripte, Übergabe, Stand bis „geplant“); ein komplett geplanter Tag verschwindet, der nächste erscheint · „als ich das Studio neu geöffnet habe, waren alle Sachen weg“.
+- **Ausnahme Sprechtempo** für „Kind bis 18“ (03.11. abend, per Klick auf die Rückfrage): 1,99 W/s statt 2,2–2,5 freigegeben · lange Zahlwörter zählen als ein Wort, das Silbentempo (3,6 Silben/s) liegt im Bereich der bestandenen Videos (3,5–4,0).
