@@ -200,39 +200,39 @@ async function start() {
   const blitz = new THREE.PointLight("#FFFFFF", 0, 0, 2); blitz.position.set(0, 1.6, -0.6); szene.add(blitz);
 
   // Sockel mit Münztürmen
-  const SX = 1.05, SZ = 1.3;
-  const sockA = sockel({ breite: 0.98, hoehe: 0.62, tiefe: 0.98, farbe: PINK, led: 3.5, fleck: 0.5 }); sockA.position.set(-SX, 0, SZ);
-  const sockB = sockel({ breite: 0.98, hoehe: 0.62, tiefe: 0.98, farbe: TUERKIS, led: 3.5, fleck: 0.5 }); sockB.position.set(SX, 0, SZ);
+  const SX = 0.85, SZ = 1.3;
+  const sockA = sockel({ breite: 0.8, hoehe: 0.62, tiefe: 0.8, farbe: PINK, led: 3.5, fleck: 0.5 }); sockA.position.set(-SX, 0, SZ);
+  const sockB = sockel({ breite: 0.8, hoehe: 0.62, tiefe: 0.8, farbe: TUERKIS, led: 3.5, fleck: 0.5 }); sockB.position.set(SX, 0, SZ);
   szene.add(sockA, sockB);
   // LED-Kanten mit eigener Helligkeit (Aufleuchten): zusätzliche Linie über der festen
   const ledMat = (farbe) => leuchtMat(farbe, 1, { neu: true });
   const ledA = ledMat(PINK), ledB = ledMat(TUERKIS);
-  const ledLinie = (mat, x) => { const m = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.022, 0.022), mat); m.position.set(x, 0.622, SZ + 0.5); m.userData.dynamisch = true; return m; };
+  const ledLinie = (mat, x) => { const m = new THREE.Mesh(new THREE.BoxGeometry(0.82, 0.022, 0.022), mat); m.position.set(x, 0.622, SZ + 0.41); m.userData.dynamisch = true; return m; };
   szene.add(ledLinie(ledA, -SX), ledLinie(ledB, SX));
-  const dickeM = 0.07, radM = 0.3;
-  const turmA = muenzStapel({ art: "gold", max: 34, radius: radM, dicke: dickeM, unordnung: 0.03, seed: 11, fallHoehe: 0.75 });
+  const dickeM = 0.07, radM = 0.27;
+  const turmA = muenzStapel({ art: "kupfer", max: 34, radius: radM, dicke: dickeM, unordnung: 0.03, seed: 11, fallHoehe: 0.75 });
   const turmB = muenzStapel({ art: "silber", max: 14, radius: radM, dicke: dickeM, unordnung: 0.03, seed: 5, fallHoehe: 0.75 });
   turmA.position.set(-SX, sockA.oben, SZ); turmB.position.set(SX, sockB.oben, SZ);
   // Münzen etwas matter und weniger spiegelnd, damit fallende Münzen nahe der Kamera nicht ausbrennen (Bloom)
-  for (const [t, k] of [[turmA, 0.85], [turmB, 0.75]]) for (const m of t.children[0].material) { m.envMapIntensity = 0.55; m.roughness = Math.min(0.55, m.roughness + 0.2); m.color.multiplyScalar(k); }
+  for (const [t, k] of [[turmA, 0.8], [turmB, 0.75]]) for (const m of t.children[0].material) { m.envMapIntensity = 0.55; m.roughness = Math.min(0.55, m.roughness + 0.2); m.color.multiplyScalar(k); }
   szene.add(turmA, turmB);
 
   // Drehteller mit Modellen, Altersring
   const PZ = -2.6;
-  const teller = drehteller({ radius: 1.0, led: ELFENBEIN, ledStaerke: 2.2 }); teller.position.set(0, 0, PZ); szene.add(teller);
-  const ring = altersRing({ radius: 1.5 }); ring.position.set(0, 0, PZ); szene.add(ring);
+  const teller = drehteller({ radius: 0.85, led: ELFENBEIN, ledStaerke: 2.2 }); teller.position.set(0, 0, PZ); szene.add(teller);
+  const ring = altersRing({ radius: 1.3 }); ring.position.set(0, 0, PZ); szene.add(ring);
   const wagen = kinderwagen(), rad1 = kinderrad(), rad2 = jugendrad();
-  wagen.scale.setScalar(0.8); rad1.scale.setScalar(0.95); rad2.scale.setScalar(0.66);
+  wagen.scale.setScalar(0.7); rad1.scale.setScalar(0.82); rad2.scale.setScalar(0.57);
   wagen.position.x = 0.0; rad1.position.x = 0.0; rad2.position.x = 0.0;
   for (const m of [wagen, rad1, rad2]) { m.userData.dynamisch = true; teller.modell.add(m); }
   const paket = windelPaket(), erst = erstausstattung();
-  paket.position.set(-0.78, teller.oben, PZ + 0.5); paket.rotation.y = 0.45; paket.scale.setScalar(0.55);
-  erst.position.set(0.76, teller.oben, PZ + 0.5); erst.rotation.y = -0.45; erst.scale.setScalar(0.55);
+  paket.position.set(-0.66, teller.oben, PZ + 0.5); paket.rotation.y = 0.45; paket.scale.setScalar(0.48);
+  erst.position.set(0.64, teller.oben, PZ + 0.5); erst.rotation.y = -0.45; erst.scale.setScalar(0.48);
   for (const m of [paket, erst]) { m.userData.dynamisch = true; szene.add(m); }
   // Säulen der Überraschung (auf dem Drehteller): Jahre 1–6 links, Jahre 13–18 rechts, Ausgaben in Pink
-  const HK = 1 / 38000; // Höhe je Euro
-  const sA = saeule({ breite: 0.5, farbe: PINK, staerke: 2.4 }), sB = saeule({ breite: 0.5, farbe: PINK, staerke: 2.8 });
-  sA.position.set(-0.45, teller.oben, PZ); sB.position.set(0.45, teller.oben, PZ);
+  const HK = 1 / 44000; // Höhe je Euro
+  const sA = saeule({ breite: 0.42, farbe: PINK, staerke: 2.4 }), sB = saeule({ breite: 0.42, farbe: PINK, staerke: 2.8 });
+  sA.position.set(-0.38, teller.oben, PZ); sB.position.set(0.38, teller.oben, PZ);
   szene.add(sA, sB);
   // Lücken-Anzeige: waagerechte Linie in Höhe des linken Turms, senkrechte Klammer rechts (Elfenbein)
   const lueckeMat = ledMat(ELFENBEIN);
@@ -281,7 +281,7 @@ async function start() {
     { t: tSaeuleB + 0.3, v: C(0.0, 3.8, 10.6, 0, 1.2, PZ + 0.3, 27), e: ease.inOutCubic },
     { t: tMerk - 0.2, v: C(0.8, 3.6, 10.2, 0, 1.2, PZ + 0.3, 27), e: ease.inOutSine },
   ];
-  const regie = new Regie(kamera, (t) => { const v = keyframes(camKeys, t); return { pos: v.slice(0, 3), ziel: v.slice(3, 6), fov: v[6] }; }, { zp });
+  const regie = new Regie(kamera, (t) => { const v = keyframes(camKeys, t); const z = v.slice(3, 6), D = 1.16; return { pos: [0, 1, 2].map((i) => z[i] + (v[i] - z[i]) * D), ziel: z, fov: v[6] }; }, { zp });
   regie.atmen({ staerke: 0.012, tempo: 0.25 });
   // Zoom auf die Ergebnisse (mal ja, mal nein): kurzer Heranzoom auf den linken Turm beim Ergebnis
   regie.zoom({ t: T("ergebnis:174.096") + 0.7, ziel: [-SX, 1.6, SZ], staerke: 0.14, halt: 0.9, rueck: 0.8 });
@@ -305,16 +305,16 @@ async function start() {
     const hA = turmA.hoehe(cA), hB = turmB.hoehe(cB);
     // Drehteller und Modelle
     teller.dreh(s.dreh);
-    wagen.scale.setScalar(Math.max(1e-4, 0.8 * s.sW)); wagen.visible = s.sW > 0.002;
-    rad1.scale.setScalar(Math.max(1e-4, 0.95 * s.sR)); rad1.visible = s.sR > 0.002;
-    rad2.scale.setScalar(Math.max(1e-4, 0.66 * s.sJ)); rad2.visible = s.sJ > 0.002;
+    wagen.scale.setScalar(Math.max(1e-4, 0.7 * s.sW)); wagen.visible = s.sW > 0.002;
+    rad1.scale.setScalar(Math.max(1e-4, 0.82 * s.sR)); rad1.visible = s.sR > 0.002;
+    rad2.scale.setScalar(Math.max(1e-4, 0.57 * s.sJ)); rad2.visible = s.sJ > 0.002;
     const rolle = s.alter * 5.5;
     wagen.rolle(rolle); rad1.rolle(rolle); rad2.rolle(rolle);
     wagen.position.y = 0.02 + 0.03 * s.wagenPuls; wagen.rotation.y = 0.35 * Math.sin(s.wagenPuls * Math.PI);
     teller.led.setze(s.ledP);
     ring.setze(s.alter, ELFENBEIN, 1.5);
-    paket.scale.setScalar(Math.max(1e-4, 0.55 * s.sWindel)); paket.visible = s.sWindel > 0.002; paket.position.y = teller.oben + (1 - clamp(s.sWindel)) * 0.9;
-    erst.scale.setScalar(Math.max(1e-4, 0.55 * s.sErst)); erst.visible = s.sErst > 0.002; erst.position.y = teller.oben + (1 - clamp(s.sErst)) * 0.9;
+    paket.scale.setScalar(Math.max(1e-4, 0.48 * s.sWindel)); paket.visible = s.sWindel > 0.002; paket.position.y = teller.oben + (1 - clamp(s.sWindel)) * 0.9;
+    erst.scale.setScalar(Math.max(1e-4, 0.48 * s.sErst)); erst.visible = s.sErst > 0.002; erst.position.y = teller.oben + (1 - clamp(s.sErst)) * 0.9;
     // Säulen
     sA.setze(s.saeuleA * ausgabenBis(6) * HK); sB.setze(s.saeuleB * (AUSGABEN[2] * 72) * HK);
     sA.led(1 + 0.8 * s.saeuleLuecke); sB.led(1 + 0.8 * s.saeuleLuecke);
