@@ -254,3 +254,34 @@ Speech-to-Text bestätigt: v4 spricht die Regie-Tags nicht mit (Proben 1 und 4 g
 | 5 | Mal angenommen … | `@malangenommen.pov` | frei | Wunsch des Inhabers, aber **Verwechslungsgefahr** mit dem aktiven `@mal.angenommen` (seit Okt. 2026, 1.543 Follower, Gedankenexperimente) |
 
 - **Logo:** Konzept „Fragezeichen-Countdown“, `marke/account2/` (Dateien und Farben im README dort).
+
+## 12. Verbindliches Format nach 4 Referenzvideos (Inhaber 02.11.: „genau in diesem Stil … strikt genau danach, keine Stimme mehr“)
+
+Auswertung am 02.11. (je 1 Bild pro 2 s, Lautheitsverlauf, Spracherkennung). Die Originale, Standbilder und Texte der Referenzen kommen **nicht** ins Repo (öffentlich); hier steht nur der Aufbau in eigenen Worten. **F** = gemessen, **A** = gedeutet.
+
+**Messwerte (F):** alle 4 Videos exakt 80,0 s, 30 fps, Lautheit integriert −14,3 bis −14,7 LUFS. Spracherkennung findet **keine Sprache**, nur Atmo (Vögel, Wind, Umgebung). Lautheitsverlauf: ruhiger Start (kurzzeitig ca. −16 bis −24 LUFS), Höhepunkt bei ca. 55–65 s (bis ca. −10 LUFS), Abspann leise (ca. −22 bis −30 LUFS).
+
+**Aufbau (F, in allen vier gleich):**
+| Zeit | Bild | Text |
+|---|---|---|
+| 0–3,5 s | Weite, belebte Szene aus fester Ich-Perspektive von erhöhtem Standpunkt (Balkon, Dachterrasse, Aussichtspunkt), Geländer bzw. Brüstung im Vordergrund | Titelfrage „Was wäre, wenn …?“ in Serifenschrift, weiß, mittig im oberen Drittel, blendet aus |
+| 4–30 s | Alltag, erste Anzeichen, die Welt lebt (Menschen, Autos, Vögel, Wasser) | Messwert-Anzeige links auf halber Höhe läuft (Countdown oder Anstieg); unten kurze kursive Sätze |
+| 30–55 s | Eskalation in Stufen, Licht- und Farbstimmung kippt, Wind, Trümmer, Staub | Anzeige wechselt 2–4× ihr Etikett (neue Messgröße je Stufe) |
+| 55–62 s | Höhepunkt erreicht den Standpunkt, Kamera wird erschüttert | Anzeige zeigt „HIER“ bzw. 0 |
+| 62–70 s | Nachspiel: Staub, Stille, gesprungenes Glas o. Ä. | ein letzter Satz, oft Realitätsbezug |
+| 70–72 s | Abblende auf Schwarz | – |
+| 72–80 s | Schwarzer Abspann | Titelfrage mittig, darunter eine kleine Faktenzeile in Versalien (echter Bezug, z. B. historisches Ereignis oder physikalischer Fakt) |
+
+**Gestaltungsregeln für unsere Videos (verbindlich):**
+- **Keine Stimme.** Ton nur aus selbst erzeugter Atmo und Sounddesign passend zum Ort (Vögel, Wind, Stadt, Wasser, tiefes Grollen beim Ereignis), −14 LUFS integriert, Verlauf wie oben (leise → Höhepunkt → leise).
+- **Kamera:** eine durchgehende Einstellung aus fester Ich-Perspektive (Augenhöhe, erhöhter Standpunkt, Vordergrund-Element wie Geländer, Brüstung, Fensterrahmen). Nur leichtes Atmen der Kamera, beim Höhepunkt Erschütterung bzw. Kippen. Keine Schnitte.
+- **Die Welt ist die Kunst:** belebt und detailreich (viele kleine Menschen, Fahrzeuge, Vögel, Bäume, Wasser), filmisches Licht, Dunst, Tiefenunschärfe, Farbstimmung folgt dem Ereignis. Alles, was im Text steht, ist im selben Moment zu sehen.
+- **Nur drei Textebenen**, alles in Serifenschrift (freie Schrift mit OFL-Lizenz, lokal eingebunden):
+  1. Titelfrage 0–3,5 s, mittig oben.
+  2. Messwert-Anzeige links Mitte: kleines Etikett in Versalien, große Zahl, kleine Unterzeile; die Zahl läuft durchgehend und stimmt mit unserer Rechnung überein.
+  3. Ein kurzer kursiver Satz unten Mitte, 3–9 Wörter, je ca. 4 s, insgesamt ca. 14–17 Sätze, ruhig, Präsens, Du-Perspektive erlaubt.
+- **Abspann 72–80 s:** Titelfrage plus Faktenzeile mit echtem Bezug aus unserer Rechnung bzw. Quelle.
+- **Nicht im Video:** keine Sticker, keine Chips, kein Folgen-Aufruf, kein gesprochener Schlusssatz, kein Countdown-Ring, keine Untertitel im Karaoke-Stil, kein Logo. Kommentarfrage nur in der Caption.
+- **Länge:** 80 s (CRP: über 60 s erfüllt).
+- **Themen:** ein einziges Ereignis, das man von einem festen Standpunkt aus wachsen sieht, mit einer messbaren Größe für die Anzeige. Eigene Themen mit eigener Rechnung. **Gesperrt** (Themen der Referenzen): Asteroid explodiert über der Stadt, Sonne explodiert, Mega-Tsunami trifft eine Großstadt, Erde hört auf sich zu drehen.
+- **Prüfung:** `pipeline/qc/massstab.py` passt nicht (sie misst Sprache). Für dieses Format gilt die Prüfliste oben plus Text-Überlappung, Kontaktbogen (Bild-Text-Abgleich je Satz), Lautheit und Lautheitsverlauf.

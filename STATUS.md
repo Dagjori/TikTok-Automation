@@ -55,6 +55,13 @@
 
 **02.11. 06:40 UTC:** Testvideo Account 2 „Schall in Schritttempo“ (74,1 s, 13/13 Pflichtpunkte, 0 Text-Überlappungen, −14,1 LUFS, STT passt, Kontaktbogen gesichtet; Abnahme durch Claude, da der Prototyp-Agent am Nutzungslimit abbrach) über Buffer gepostet: Post `6ae82d2564604db314449174`, fällig 06:41 UTC, Upload-Kopie 43,8 MB. **Test bestanden:** gesendet 06:43 UTC, öffentlich (privateItem=false), 74 s, kein KI-Label, Supabase-Datei gelöscht. Die Automatik-Kette funktioniert vollständig. Schokolade (Frist 09:30 UTC) und Stickstoff (Frist 15:00 UTC) laufen weiter. Vom Inhaber gestoppt und nicht fortsetzbar: Schere-Stein-Papier, Mittagessen, Boden durchsichtig, Leichtes Auto, Plan-Agent (CSV fertig, `docs/17` fehlt); Neustart nur auf ausdrücklichen Auftrag.
 
+## Neue Regeln 02.11. (Inhaber)
+- Pro Tag genau 4 Videos (2 je Account) für den nächsten Tag, nie mehr gleichzeitig, max. 2 Produktions-Agenten. Ruhiger Ton, kein „Los geht's“, keine Sticker, Fokus animierte Welt, Skript-Bild-Abgleich, Themen-Logik. `massstab.py` prüft 3b, 5d (0 Sticker), 16a/16b.
+- @stelldirvor.pov strikt im Format der 4 Referenzvideos (`docs/16` §12): keine Stimme, 80 s, feste Ich-Perspektive, Titel, Messwert-Anzeige, kursive Sätze, Atmo, schwarzer Abspann. Stickstoff (heute 19:30) wird umgebaut; eigene Prüfung `qc/referenz_pov.py` entsteht dabei.
+- Schokolade (heute 12:30) noch im alten Stil (Stimme Otto, 5 Sticker); Render läuft bis ca. 09:20 UTC. Entscheidung beim Inhaber angefragt, Standard: posten (fertige Videos bleiben).
+- Dienstag in Arbeit: Schere-Stein-Papier (neuer Agent, neue Regeln). Danach gestaffelt: Boden durchsichtig, Mittagessen, Leichtes Auto (als Autobahnbrücke, Format §12). 30-Tage-Plan Account 2 muss auf Format §12 geprüft werden (Themen mit festem Standpunkt).
+- Regelwerk-PDF `docs/regelwerk/regelwerk-2026-11-02.pdf`.
+
 ## Nächste Schritte
 
 | # | Schritt | Wer | Zeit | Status |

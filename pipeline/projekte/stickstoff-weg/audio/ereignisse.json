@@ -188,13 +188,6 @@
    "klang": false
   },
   {
-   "quelle": "Stempel",
-   "t": 9.697,
-   "typ": "stempel",
-   "klang": "stempel",
-   "text": "KLAR?"
-  },
-  {
    "typ": "kamera",
    "quelle": "Regie",
    "t": 11.49,
@@ -298,13 +291,6 @@
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
-  },
-  {
-   "quelle": "Stempel",
-   "t": 17.43,
-   "typ": "stempel",
-   "klang": "stempel",
-   "text": "ATMEN GEHT!"
   },
   {
    "quelle": "Countdown",
@@ -560,13 +546,6 @@
    "klang": "uhr"
   },
   {
-   "quelle": "Chip",
-   "t": 30.53,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "INNEN: FAST NICHTS"
-  },
-  {
    "quelle": "Countdown",
    "t": 30.723,
    "typ": "uhr",
@@ -590,13 +569,6 @@
    "text": "Tüten klatschen zusammen"
   },
   {
-   "quelle": "Stempel",
-   "t": 31.35,
-   "typ": "stempel",
-   "klang": "stempel",
-   "text": "KLATSCH!"
-  },
-  {
    "typ": "kamera",
    "quelle": "Regie",
    "t": 31.35,
@@ -618,6 +590,13 @@
    "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 31.73,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "INNEN: FAST NICHTS"
   },
   {
    "quelle": "Countdown",
@@ -1109,11 +1088,10 @@
    "text": "KAFFEE: 80 °C"
   },
   {
-   "quelle": "Stempel",
-   "t": 63.27,
-   "typ": "stempel",
-   "klang": "stempel",
-   "text": "KOCHT!"
+   "quelle": "Chip",
+   "t": 62.87,
+   "typ": "chip-weg",
+   "klang": false
   },
   {
    "quelle": "Szene",
@@ -1138,12 +1116,6 @@
    "klang": false,
    "dauer": 1,
    "text": "Blickwechsel"
-  },
-  {
-   "quelle": "Chip",
-   "t": 65.09,
-   "typ": "chip-weg",
-   "klang": false
   },
   {
    "quelle": "Pointe",

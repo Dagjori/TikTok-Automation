@@ -29,26 +29,25 @@
 <body>
 <header>
   <h1>Regelwerk Simulierbar und @stelldirvor.pov</h1>
-  <div class="stand">Stand 01.11.2026, abends · Quelle: CLAUDE.md, ENTSCHEIDUNGEN.md, docs/15-massstab.md, docs/16</div>
+  <div class="stand">Stand 02.11.2026 · Quelle: CLAUDE.md, ENTSCHEIDUNGEN.md, docs/15-massstab.md, docs/16</div>
 </header>
 
 <div class="oben">
   <div class="box anders">
-    <h2>Geändert (01.11. abends)</h2>
+    <h2>Geändert (02.11.)</h2>
     <ul>
-      <li><b>Kein KI-Label mehr.</b> TikTok verlangt es nur bei realistischen KI-Inhalten, nicht bei künstlerischen Stilen und generischer TTS-Stimme. Unsere Bilder sind in Three.js/Blender gebaut. Ausnahme: realistisch wirkende KI-Inhalte. <span class="vorher">Vorher: Schalter immer AN.</span></li>
-      <li><b>Posten ohne Freigabe:</b> Claude prüft jedes Video selbst und plant es direkt in Buffer ein. Du kannst geplante Posts bis zum Zeitpunkt löschen, musst aber nichts tun. <span class="vorher">Vorher: Inhaber gibt jedes Video frei, Claude nur Entwürfe.</span></li>
-      <li><b>YouTube vorerst nicht</b> (weder Buffer noch Zweitverwertung), kommt später. <span class="vorher">Vorher: Shorts als Zweitverwertung.</span></li>
-      <li><b>Korrektur:</b> Claude schrieb zum Gehalt-Video „Das ist unsere Pflicht-Kennzeichnung“. Laut TikTok ist das Label für unsere Videos keine Pflicht.</li>
+      <li><b>Ruhiger Ton:</b> saubere Aussprache, passender Tonfall, kein Geschrei, <b>kein „Los geht's“</b>, keine aufgeregten Audio-Tags. <span class="vorher">Vorher: Sportreporter-Kommentar und „Los geht's“ als Startsignal.</span></li>
+      <li><b>Keine großen Sticker bzw. Stempel mehr.</b> Zahlen, Zähler und Timer bleiben. <span class="vorher">Vorher: max. 5 je Video.</span></li>
+      <li><b>@stelldirvor.pov ohne Stimme</b>, strikt im Format der 4 Referenzvideos (siehe Regel 13). <span class="vorher">Vorher: Stimme Otto, Countdown-Ring, Untertitel.</span></li>
     </ul>
   </div>
   <div class="box neu">
-    <h2>Hinzugefügt (01.11. abends)</h2>
+    <h2>Hinzugefügt (02.11.)</h2>
     <ul>
-      <li><b>Posting-Zeiten</b> (Startwerte, Berlin): <b>beide Accounts gleich, je 2 Videos pro Tag:</b> Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30. Grundlage: Metricool 2026 (2,3 Mio. Posts, Abend 18–21 Uhr am stärksten), Buffer 2026 (7,1 Mio. Posts, Wochenende stark). Nach 14 Tagen mit eigenen Zahlen nachjustieren.</li>
-      <li><b>Automatik-Kette:</b> Prüfung → Upload nach Supabase (Frankfurt, privat, Link läuft ab, Kopie unter 50 MB in gleicher Auflösung) → Buffer-Post mit Caption → Nachprüfung (öffentlich?) → Datei löschen. Skript <i>pipeline/post_buffer.py</i>.</li>
-      <li><b>Jeder Post mit Caption</b> und 5 Hashtags im festen Format.</li>
-      <li><b>Account 2 = @stelldirvor.pov</b>, 2 Videos pro Tag wie Simulierbar, 30-Tage-Plan 02.11.–01.12. (60 Videos). Buffer Essentials: kein Limit für geplante Posts.</li>
+      <li><b>Produktionsrhythmus:</b> pro Tag genau 4 Videos (2 je Account) für den nächsten Tag, danach in Buffer einplanen. <b>Nie mehr als diese 4 gleichzeitig</b>, höchstens 2 Produktions-Agenten parallel.</li>
+      <li><b>Die Kunst ist die animierte Welt:</b> Detailreichtum, Licht, Figuren und Objekte, die reagieren, eine Kamera, die dem Geschehen folgt.</li>
+      <li><b>Skript-Bild-Abgleich:</b> Jedes gesprochene bzw. geschriebene Detail ist im selben Moment im Bild zu sehen.</li>
+      <li><b>Themen-Logik:</b> Ein Duell vergleicht nur echte Alternativen derselben Entscheidung.</li>
     </ul>
   </div>
 </div>
@@ -59,21 +58,21 @@
     <div class="regel"><b class="t">1 · Kanal und Ziel</b>Simulierbar (@simulierbar), Nische „Alltag durchgerechnet“, intern GELD und ALLTAG (nie im Video). Ziel: 10k Follower und CRP. YouTube kommt später.</div>
     <div class="regel"><b class="t">2 · Videoaufbau (feste Reihenfolge)</b>
       <ul>
-        <li><b>0–16 s:</b> Hook als Duell-Frage oder Du-Szenario (fertig vor 5 s, Stimme unter 0,2 s), Regeln als Chips, Denkfalle „Klar … Oder?“ und „Los geht's“.</li>
+        <li><b>0–16 s:</b> Hook als Duell-Frage oder Du-Szenario (fertig vor 5 s, Stimme unter 0,2 s), Regeln als Chips, Denkfalle „Klar … Oder?“, ruhig, kein „Los geht's“.</li>
         <li><b>Rennen:</b> laufende Uhr bzw. Zähler, Folgen-Aufruf ca. 20 s (max. 2 s), erste Wendung 18–25 s, danach alle 8–10 s eine neue.</li>
         <li><b>Ende:</b> Ergebnis mit exakter Zahl, „Warum?“ (max. 2 Faktoren), zweite Überraschung, Merksatz, Schluss genau „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“, letztes Bild = erstes Bild.</li>
       </ul></div>
-    <div class="regel"><b class="t">3 · Dynamik</b>Alle 1–2 s ein neues Bild-Ereignis, nie über 2 s Stillstand. Bewegung vor allem über Kamera, Zähler, Figuren und Szenenwechsel. Sticker max. 5. Alles mittig.</div>
+    <div class="regel"><b class="t">3 · Dynamik</b>Alle 1–2 s etwas Neues, vor allem Bewegung in der Welt und Kamera. Keine Sticker. Skript und Bild passen exakt zusammen. Duelle nur zwischen echten Alternativen. Alles mittig.</div>
     <div class="regel"><b class="t">4 · Bild</b>1080×1920, 65–80 s (mind. 61 s). Nur Three.js und/oder Blender. Genau ein Stil aus dem Katalog, nie zweimal hintereinander; die Qualität ist das Markenzeichen. Kein Kanalname, kein Logo, keine Rubrik. Zwei feste Teamfarben (kein Gelb).</div>
-    <div class="regel"><b class="t">5 · Stimme und Untertitel</b>ElevenLabs „Ben“, Eleven v4, gespeicherte Original-Einstellungen, keine Beschleunigung. Sprechtext als Regiebuch (Audio-Tags, keine &lt;break&gt;), 130–165 Wörter. Untertitel Wort für Wort im Stil „kontur“ (weiß, schwarze Kontur, aktuelles Wort gelb, kein Kasten).</div>
+    <div class="regel"><b class="t">5 · Stimme und Untertitel</b>Simulierbar: ElevenLabs „Ben“, ruhig, sachlich, freundlich, ohne aufgeregte Tags,, Eleven v4, gespeicherte Original-Einstellungen, keine Beschleunigung. Sprechtext als Regiebuch (Audio-Tags, keine &lt;break&gt;), 130–165 Wörter. Untertitel Wort für Wort im Stil „kontur“ (weiß, schwarze Kontur, aktuelles Wort gelb, kein Kasten).</div>
     <div class="regel"><b class="t">6 · Ton</b>Klangteppich zum Thema 8–13 dB unter der Stimme, Effekt bei jedem Bild-Ereignis, Akzent auf der Pointe. Nur selbst erzeugte Klänge, Lautheit −14 LUFS.</div>
     <div class="regel"><b class="t">7 · Inhalt</b>Eigene Rechnung bzw. Simulation mit Tests, Quellen nur intern (skript.json). Konkurrenz-Check vor jedem Start, keine Kopien, gesperrte Themen beachten. Finanzen nur als Modellrechnung. Keine künstlichen Cliffhanger, kein Kaufaufruf.</div>
     <div class="regel"><b class="t">8 · Caption (TikTok = YouTube)</b>Eine Zeile: „Hook-Frage? Emoji Ich hab's simuliert. Kommentarfrage? 👇“ plus 5 Hashtags (3 Thema, #wissen, #simulation). Höchstens ca. 150 Zeichen, kein #fyp, keine Quellen oder Hinweise.</div>
     <div class="regel"><b class="t">9 · Posten</b>Vollautomatisch über Buffer: Claude prüft selbst und plant zur festen Posting-Zeit (beide Accounts 2 pro Tag), ohne Freigabe. Nach dem Posten prüft Claude, ob das Video öffentlich ist. Kein KI-Label (Ausnahme: realistische KI-Inhalte). Profil ohne E-Mail und Telefonnummer.</div>
     <div class="regel"><b class="t">10 · Prüfung vor Übergabe</b><i>qc/massstab.py</i> (alle Pflichtpunkte „ja“), Text-Überlappung, Kontaktbogen sichten, Lautheit messen. Claude nimmt jedes Video selbst ab, Fehler gehen zurück an den Agenten.</div>
-    <div class="regel"><b class="t">11 · Arbeitsweise</b>Produktion nur auf Startsignal, Reihenfolge laut 30-Tage-Plan. Arbeitsstand ins Repo (STATUS.md), Entscheidungen in ENTSCHEIDUNGEN.md. Das Repo ist öffentlich: keine Konkurrenzinhalte, keine Geheimnisse. Trend-Radar täglich, Vorschläge ab Score 70.</div>
+    <div class="regel"><b class="t">11 · Arbeitsweise</b>Pro Tag 4 Videos (2 je Account) für den nächsten Tag, nie mehr gleichzeitig, höchstens 2 Agenten parallel. Reihenfolge laut 30-Tage-Plänen. Arbeitsstand ins Repo (STATUS.md), Entscheidungen in ENTSCHEIDUNGEN.md. Das Repo ist öffentlich: keine Konkurrenzinhalte, keine Geheimnisse. Trend-Radar täglich, Vorschläge ab Score 70.</div>
     <div class="regel"><b class="t">12 · Modelle und Verbrauch</b>Opus 5.5 für neue Szenentypen und Abnahme, Sonnet 5.5 für die tägliche Produktion, Haiku 5.5 für Titel und Captions. Verbrauch über /usage beobachten.</div>
-    <div class="regel"><b class="t">13 · Account 2 @stelldirvor.pov</b>„Was wäre, wenn …“ als 3D-POV in Du-Perspektive, Stimme Otto, Logo Fragezeichen-Countdown. 2 Videos pro Tag laut 30-Tage-Plan. Es gelten dieselben Qualitäts- und Plattformregeln. Der Videoaufbau wird mit dem Prototyp und der Konkurrenzanalyse festgelegt.</div>
+    <div class="regel"><b class="t">13 · Account 2 @stelldirvor.pov</b>Strikt im Format der 4 Referenzvideos: keine Stimme, 80 s, eine feste Ich-Perspektive von erhöhtem Standpunkt, nur Titelfrage, Messwert-Anzeige links und kurze kursive Sätze, Atmo statt Sprache, schwarzer Abspann mit Faktenzeile. Eigene Themen, gesperrt sind die Themen der Referenzen. 2 Videos pro Tag.</div>
   </div>
 </div>
 

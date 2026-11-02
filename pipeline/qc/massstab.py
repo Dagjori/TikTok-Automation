@@ -136,9 +136,11 @@ def pruefe(projekt, profil, extra_ziele):
     t_klar = next((w["start"] for w, x in zip(woerter, n) if x == "klar"), None)
     t_oder = next((w["start"] for w, x in zip(woerter, n) if x == "oder" and t_klar is not None and w["start"] >= t_klar and SATZENDE.search(w["wort"])), None)
     t_los = next((woerter[i]["start"] for i in range(len(n) - 1) if n[i] == "los" and n[i + 1].startswith("geht")), None)
-    ok3 = t_klar is not None and t_oder is not None and t_los is not None and max(t_klar, t_oder, t_los) < 16
-    ist3 = f"Klar {zahl(t_klar) if t_klar is not None else '–'} · oder? {zahl(t_oder) if t_oder is not None else '–'} · Los geht's {zahl(t_los) if t_los is not None else '–'}"
-    zeile("3", "Denkfalle „Klar …, oder?“ und „Los geht's“", ist3, "beide vor 16 s", "3–15,5 s", ok3, pflicht=False)
+    ok3 = t_klar is not None and t_oder is not None and max(t_klar, t_oder) < 16
+    ist3 = f"Klar {zahl(t_klar) if t_klar is not None else '–'} · oder? {zahl(t_oder) if t_oder is not None else '–'}"
+    zeile("3", "Denkfalle „Klar …, oder?“ (ruhig)", ist3, "vor 16 s", "3–15,5 s", ok3, pflicht=False)
+    # 3b Inhaber 02.11.: kein „Los geht's“, kein Geschrei – ruhiger Erzählton wie die Vorbilder (docs/15: „ruhig, sachlich, freundlich“)
+    zeile("3b", "Kein „Los geht's“ (Inhaber 02.11.)", "fehlt" if t_los is None else f"bei {zahl(t_los)} s", "nicht vorhanden", "ruhiger Erzählton", t_los is None)
 
     # 4 Ab Rennstart laufen Uhr bzw. Zähler
     if protokoll:
@@ -159,8 +161,9 @@ def pruefe(projekt, profil, extra_ziele):
         # Dramaturgie-Punkten, max. 5 je Video, mind. 5 s Abstand; Chips nur mit neuer Zahl bzw. Info.
         st = sorted(e["t"] for e in ereignisse if e.get("typ") in ("stempel", "sticker"))
         abst = min((b - a for a, b in zip(st, st[1:])), default=None)
-        ok5d = len(st) <= 5 and (abst is None or abst >= 5.0)
-        zeile("5d", "Große Sticker/Stempel (gesundes Maß)", f"{len(st)}×, kleinster Abstand {zahl(abst, 1) if abst is not None else '–'} s", "≤ 5×, Abstand ≥ 5 s", "nur Höhepunkte und Denkfalle", ok5d)
+        # Inhaber 02.11.: „auch der Sticker muss nicht sein“ – keine großen Sticker/Stempel mehr; Dynamik aus Welt und Kamera
+        ok5d = len(st) == 0
+        zeile("5d", "Keine großen Sticker/Stempel (Inhaber 02.11.)", f"{len(st)}×", "0", "Dynamik aus Welt, Kamera, Zählern", ok5d)
         chips = sum(1 for e in ereignisse if e.get("typ") == "chip")
         zeile("5e", "Chips gesamt", f"{chips}", "≤ 15 (Hinweis)", "–", chips <= 15, pflicht=False)
     else:
@@ -182,6 +185,13 @@ def pruefe(projekt, profil, extra_ziele):
             zeile("7", "Folgen-Aufruf", "fehlt", "15–25 s, max. 2 s", "(eigene Regel, ca. 20 s)", False)
     else:
         zeile("7", "Folgen-Aufruf", "kein Ereignis-Protokoll", "15–25 s, max. 2 s", "(eigene Regel)", False)
+
+    # 16 Ruhiger Ton (Inhaber 02.11.): keine aufgeregten Audio-Tags, wenige Ausrufezeichen im Sprechtext
+    sprech = " ".join(str(sg.get("sprechtext", "")) for sg in skript.get("segmente", []))
+    laut = sorted(set(m.group(0) for m in re.finditer(r"\[[^\]]*(excit|shout|yell|scream|energ|enthus|thrill|hype|aufgeregt|schrei|ruf)[^\]]*\]", sprech, re.I)))
+    zeile("16a", "Keine aufgeregten Audio-Tags (Inhaber 02.11.)", ", ".join(laut) if laut else "keine", "keine", "ruhig, sachlich, freundlich", not laut)
+    ausruf = sprech.count("!")
+    zeile("16b", "Ausrufezeichen im Sprechtext", str(ausruf), "≤ 3 (Hinweis)", "Erzähler-Ton", ausruf <= 3, pflicht=False)
 
     # 8 „Warum?“
     t_warum = next((w["start"] for w, x in zip(woerter, n) if x == "warum" and w["wort"].endswith("?")), None)

@@ -166,6 +166,39 @@ export function figurBauen({ jacke = "#4E5D8C", hose = "#2A2F3D", haare = "#4A2E
   return { g, armL, armR };
 }
 
+export function gelenkFigur({ jacke = "#4E5D8C", hose = "#2A2F3D", haare = "#4A2E22", haut = "#E8B996", schuerze = null, groesse = 1.68, zopf = true } = {}) {
+  const root = new THREE.Group();
+  const sk = groesse / 1.68;
+  const m = (f, r = 0.75) => mat(f, { rau: r });
+  const hueft = new THREE.Group(); hueft.position.y = 0.84; root.add(hueft);
+  const beine = [-1, 1].map((sd) => {
+    const pv = new THREE.Group(); pv.position.set(0, 0, sd * 0.1); hueft.add(pv);
+    const b = new THREE.Mesh(new THREE.CapsuleGeometry(0.075, 0.68, 4, 10), m(hose)); b.position.y = -0.41; b.castShadow = true; pv.add(b);
+    const sch = new THREE.Mesh(new THREE.BoxGeometry(0.26, 0.08, 0.11), m("#1C1F27")); sch.position.set(0.04, -0.8, 0); pv.add(sch);
+    return pv;
+  });
+  const ober = new THREE.Group(); hueft.add(ober);
+  const rumpf = new THREE.Mesh(new THREE.CapsuleGeometry(0.2, 0.42, 6, 14), m(jacke, 0.85)); rumpf.scale.set(0.78, 1, 1.05); rumpf.position.y = 0.22; rumpf.castShadow = true; ober.add(rumpf);
+  if (schuerze) { const sc = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.62, 0.34), m(schuerze, 0.8)); sc.position.set(0.16, 0.06, 0); ober.add(sc); }
+  const hals = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.06, 0.1, 10), m(haut, 0.6)); hals.position.y = 0.56; ober.add(hals);
+  const kopf = new THREE.Group(); kopf.position.y = 0.56; ober.add(kopf);
+  const kg = new THREE.Mesh(new THREE.SphereGeometry(0.115, 24, 18), m(haut, 0.55)); kg.scale.set(0.95, 1.08, 0.9); kg.position.y = 0.13; kg.castShadow = true; kopf.add(kg);
+  const haar = new THREE.Mesh(new THREE.SphereGeometry(0.125, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.55), m(haare, 0.9)); haar.position.set(-0.012, 0.15, 0); haar.rotation.z = 0.25; kopf.add(haar);
+  if (zopf) { const zp = new THREE.Mesh(new THREE.CapsuleGeometry(0.05, 0.16, 4, 8), m(haare, 0.9)); zp.position.set(-0.12, 0.05, 0); zp.rotation.z = -0.4; kopf.add(zp); }
+  for (const z of [-0.04, 0.04]) { const a = new THREE.Mesh(new THREE.SphereGeometry(0.014, 8, 6), mat("#1A1D26", { rau: 0.3 })); a.position.set(0.105, 0.15, z); kopf.add(a); }
+  const nase = new THREE.Mesh(new THREE.ConeGeometry(0.016, 0.04, 8), m(haut, 0.6)); nase.rotation.z = -Math.PI / 2; nase.position.set(0.122, 0.115, 0); kopf.add(nase);
+  for (const z of [-0.105, 0.105]) { const o = new THREE.Mesh(new THREE.SphereGeometry(0.022, 8, 6), m(haut, 0.6)); o.scale.set(0.6, 1, 0.5); o.position.set(-0.005, 0.13, z); kopf.add(o); }
+  const arm = (sd) => {
+    const pv = new THREE.Group(); pv.position.set(0, 0.46, sd * 0.23); ober.add(pv);
+    const a = new THREE.Mesh(new THREE.CapsuleGeometry(0.058, 0.5, 4, 10), m(jacke, 0.85)); a.position.y = -0.28; a.castShadow = true; pv.add(a);
+    const h = new THREE.Mesh(new THREE.SphereGeometry(0.055, 10, 8), m(haut, 0.6)); h.position.y = -0.58; pv.add(h);
+    return pv;
+  };
+  const armL = arm(-1), armR = arm(1);
+  root.scale.setScalar(sk);
+  return { g: root, hueft, ober, beine, kopf, armL, armR, rumpf, sk };
+}
+
 function einkaufswagen() {
   const g = new THREE.Group();
   const draht = mat("#C9CED8", { rau: 0.3, metall: 0.8 });
@@ -429,10 +462,7 @@ export function baueMarkt(buehne, { schatten = 1024 } = {}) {
   for (let i = 0; i < 4; i++) { const kn = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.03, 0.015), new THREE.MeshBasicMaterial({ color: new THREE.Color(["#3FA45B", "#2E6FD8", "#F28A30", "#E2569B"][i]).multiplyScalar(1.5) })); kn.position.set(-0.15 + i * 0.1, 0.92, -0.224); maschine.add(kn); }
   const auslauf = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.018, 0.07, 10), stahl); auslauf.position.set(0, 0.8, -0.14); maschine.add(auslauf);
   const duese = new THREE.Mesh(new THREE.BoxGeometry(0.14, 0.05, 0.12), dunkel); duese.position.set(0, 0.86, -0.13); maschine.add(duese);
-  // Mitarbeiterin hinter der Theke und ein Becher-Stapel
-  const personen = [];
-  const mitarbeiterin = figurBauen({ jacke: "#F4F5F7", hose: "#2B2F3E", haare: "#6A3F26", schuerze: "#17A5A0", groesse: 1.66 });
-  mitarbeiterin.g.position.set(-2.9, 0, 2.65); mitarbeiterin.g.rotation.y = -Math.PI / 2; szene.add(mitarbeiterin.g); personen.push(mitarbeiterin);
+  const leute = []; // Personen mit Bewegung (siehe unten)
 
   // --- Tasse mit Kaffee (Lathe), Schaum, Dampf ---
   const tasseG = new THREE.Group(); tasseG.position.set(TASSE.x, TASSE.y, TASSE.z); szene.add(tasseG);
@@ -465,15 +495,85 @@ export function baueMarkt(buehne, { schatten = 1024 } = {}) {
     dampf.push({ s, a: hash(i, 51) * Math.PI * 2, r: hash(i, 52) * 0.03, ph: hash(i, 53), rate: 0.35 + hash(i, 54) * 0.4 }); tasseG.add(s);
   }
 
-  // --- Figuren im Markt ---
-  const jacken = ["#6C4F8A", "#8A4F4F", "#4F6A8A", "#5E6B4A", "#7A5E4A", "#4A4F6E"];
-  const kundenPlan = [[10.5, 0.4, 3.0], [16.5, -0.6, 2.2], [22, 0.2, 0.2], [13.2, 3.4, 1.4], [27, -0.3, 3.8]];
-  kundenPlan.forEach(([x, z, r], i) => {
-    const f = figurBauen({ jacke: jacken[i % 6], haare: hash(i, 9) > 0.5 ? "#2A1E18" : "#7A5A3A", groesse: 1.62 + hash(i, 8) * 0.2 });
-    f.g.position.set(x, 0, z); f.g.rotation.y = r; f.armR.rotation.x = 0.1; szene.add(f.g); personen.push(f);
+  // --- Menschen im Markt: Gelenkfiguren mit Laufen, Atmen und Reaktionen (alles Funktionen von t, periodisch bzw. am Ende wieder im Ausgangszustand) ---
+  const bump = (t, a, b) => { const x = fortschritt(t, a, b); return x <= 0 || x >= 1 ? 0 : Math.sin(Math.PI * x) ** 2; };
+  const atmen = (f, t, ph = 0) => { const a = Math.sin(t * 1.5 + ph); f.rumpf.scale.set(0.78 + 0.012 * a, 1 + 0.012 * a, 1.05 + 0.018 * a); };
+  const gehPose = (f, ph, tempo) => {
+    const sw = Math.sin(ph) * 0.55 * tempo;
+    f.beine[0].rotation.z = sw; f.beine[1].rotation.z = -sw;
+    f.armL.rotation.z = -sw * 0.7; f.armR.rotation.z = sw * 0.7;
+    f.hueft.position.y = 0.84 + Math.abs(Math.cos(ph)) * 0.025 * tempo;
+  };
+  const kundin = (cfg) => { const f = gelenkFigur(cfg); szene.add(f.g); return f; };
+  // A: Kundin am Chipsregal mit Tüte in der Hand (die Tüte kollabiert mit allen anderen)
+  const fA = kundin({ jacke: "#8A4F4F", hose: "#2B2F3E", haare: "#7A5A3A", groesse: 1.66 });
+  fA.g.position.set(-2.2, 0, -0.85); fA.g.rotation.y = Math.PI / 2;
+  const tuetenGeoHand = tuetenGeometrie();
+  const tuteA = new THREE.Mesh(tuetenGeoHand, tuetenMat); tuteA.rotation.y = Math.PI / 2; tuteA.castShadow = false; fA.ober.add(tuteA);
+  leute.push((t, z) => {
+    const tL = z.n2.aus, tK = z.tKlatsch, tR = z.tRueck;
+    atmen(fA, t, 0.4);
+    let th = lerp(1.18, 0.5, smoothstep(tK + 1.4, tK + 2.6, t)); th = lerp(th, 1.18, smoothstep(tR, tR + 0.9, t));
+    if (t > tK) th += 0.22 * Math.sin(26 * (t - tK)) * Math.exp(-(t - tK) * 3.2); // schüttelt die plattgedrückte Tüte
+    fA.armR.rotation.z = th; fA.armR.rotation.x = -0.12;
+    fA.armL.rotation.z = 0.35; fA.armL.rotation.x = 0.1;
+    const nick = -0.5 + 0.45 * bump(t, tL + 0.3, tL + 2.3) + 0.0;
+    fA.kopf.rotation.z = nick;
+    fA.kopf.rotation.y = 0.5 * Math.sin((t - tL) * 4.2) * bump(t, tL + 0.5, tL + 2.7) + 0.4 * Math.sin((t - tK) * 6) * bump(t, tK + 0.5, tK + 2.2);
+    const hx = 0.58 * Math.sin(th), hy = 0.46 - 0.58 * Math.cos(th);
+    tuteA.position.set(hx + 0.07, hy - 0.34, 0.2);
   });
-  const wagen1 = einkaufswagen(); wagen1.position.set(10.9, 0, 0.5); wagen1.rotation.y = 0.15; szene.add(wagen1);
-  const wagen2 = einkaufswagen(); wagen2.position.set(17.0, 0, -0.5); wagen2.rotation.y = 3.2; szene.add(wagen2);
+  // B: Kunde mit Einkaufswagen, geht im Gang auf und ab (periodisch)
+  const fB = kundin({ jacke: "#4F6A8A", hose: "#2A2F3D", haare: "#2A1E18", groesse: 1.78 });
+  const wagenB = einkaufswagen(); szene.add(wagenB);
+  leute.push((t, z) => {
+    const w = (2 * Math.PI * t) / z.periode, x = 11 + 2.3 * Math.sin(w * 3), vx = Math.cos(w * 3);
+    const dir = Math.abs(vx) < 0.12 ? (fB.__d ?? 1) : Math.sign(vx);
+    fB.__d = dir;
+    const kopfDreh = bump(t, z.n2.aus + 0.5, z.n2.aus + 2.4);
+    fB.g.position.set(x, 0, 0.5); fB.g.rotation.y = dir > 0 ? 0 : Math.PI;
+    gehPose(fB, t * 7.5, Math.min(1, Math.abs(vx) * 1.6));
+    fB.armL.rotation.z = 1.25; fB.armR.rotation.z = 1.25; // hält den Wagen
+    fB.kopf.rotation.y = 0.6 * Math.sin((t - z.n2.aus) * 5) * kopfDreh; atmen(fB, t);
+    wagenB.position.set(x + dir * 0.85, 0, 0.5); wagenB.rotation.y = dir > 0 ? 0 : Math.PI;
+  });
+  // C: Kundin quert den Gang an der Querstraße (periodisch)
+  const fC = kundin({ jacke: "#5E6B4A", hose: "#2B2F3E", haare: "#2A1E18", groesse: 1.64 });
+  leute.push((t, z) => {
+    const w = (2 * Math.PI * t) / z.periode, zz = 3.4 * Math.sin(w * 2), vz = Math.cos(w * 2);
+    const dir = Math.abs(vz) < 0.1 ? (fC.__d ?? 1) : Math.sign(vz); fC.__d = dir;
+    fC.g.position.set(15.0, 0, zz); fC.g.rotation.y = dir > 0 ? -Math.PI / 2 : Math.PI / 2;
+    gehPose(fC, t * 6.5, Math.min(1, Math.abs(vz) * 1.8)); atmen(fC, t, 1.0);
+    fC.kopf.rotation.y = 0.5 * Math.sin((t - z.n2.aus) * 5) * bump(t, z.n2.aus + 0.8, z.n2.aus + 2.6);
+  });
+  // D: Mitarbeiterin der Backstation: wischt die Theke, tritt beim Sieden erschrocken zurück
+  const fD = kundin({ jacke: "#F4F5F7", hose: "#2B2F3E", haare: "#6A3F26", schuerze: "#17A5A0", groesse: 1.66 });
+  leute.push((t, z) => {
+    const k = smoothstep(0.35, 0.8, z.koch);
+    atmen(fD, t, 2.0);
+    fD.g.position.set(-2.55 - 0.1 * k, 0, 2.62 + 0.55 * k); fD.g.rotation.y = -Math.PI / 2;
+    const wisch = (1 - k) * Math.sin(t * 2.6);
+    fD.armR.rotation.z = lerp(0.95 + 0.12 * wisch, 2.4, k); fD.armR.rotation.x = lerp(0.1, 0.5, k);
+    fD.armL.rotation.z = lerp(0.2, 2.2, k); fD.armL.rotation.x = lerp(-0.1, -0.5, k);
+    fD.kopf.rotation.z = lerp(-0.2, 0.15, k); fD.kopf.rotation.y = lerp(0.3 * Math.sin(t * 0.8), 0, k);
+    gehPose(fD, 0, 0);
+    fD.beine[0].rotation.z = 0.35 * k; fD.beine[1].rotation.z = -0.2 * k;
+  });
+  // E–G: weitere Kunden, stehen und stöbern, schauen beim Verschwinden des Stickstoffs auf
+  [[19.0, -0.5, 1.3, 0.0, "#6C4F8A"], [24.5, 0.6, -1.6, 0.9, "#7A5E4A"], [9.0, 0.9, 0.5, 1.7, "#4A4F6E"]].forEach(([x, zz, ry, ph, jk], i) => {
+    const f = kundin({ jacke: jk, hose: "#2A2F3D", haare: hash(i, 9) > 0.4 ? "#2A1E18" : "#7A5A3A", groesse: 1.62 + hash(i, 8) * 0.2 });
+    f.g.position.set(x, 0, zz); f.g.rotation.y = ry;
+    leute.push((t, z) => {
+      const d = Math.hypot(x, zz);
+      atmen(f, t, ph);
+      f.armR.rotation.z = 0.5 + 0.35 * Math.sin(t * 0.8 + ph) * 0.5; f.armL.rotation.z = 0.2;
+      f.kopf.rotation.z = 0.2 * bump(t, z.n2.aus + 0.2 + d * 0.03, z.n2.aus + 1.8 + d * 0.03);
+      f.kopf.rotation.y = 0.45 * Math.sin((t - z.n2.aus) * 4) * bump(t, z.n2.aus + 0.4 + d * 0.03, z.n2.aus + 2.4 + d * 0.03) + 0.25 * Math.sin(t * 0.6 + ph);
+    });
+  });
+  const wagen2 = einkaufswagen(); wagen2.position.set(-1.1, 0, -0.55); wagen2.rotation.y = 0.35; szene.add(wagen2); // dein Wagen
+  const wagen3 = einkaufswagen(); wagen3.position.set(5.2, 0, 1.0); wagen3.rotation.y = 2.9; szene.add(wagen3);
+  const personen = [fA, fB, fC, fD];
 
   // „Du“ (nur in der Totalen)
   const du = figurBauen({ jacke: "#2C3A5E", hose: "#22262F", haare: "#2A1E18", haut: "#D9A47E", groesse: 1.78 });
@@ -555,8 +655,9 @@ export function baueMarkt(buehne, { schatten = 1024 } = {}) {
       setzeMol(o2Inst, dO2, false, true);
       setzeMol(arInst, dAr, false, false);
 
-      // Tüten
+      // Tüten und Menschen
       setzeTueten(tuetenMat, t - z.tKlatsch, t - z.tRueck);
+      for (const f of leute) f(t, z);
 
       // Totale: Decke weg, „Du“ sichtbar
       gruppeDecke.visible = z.pov;

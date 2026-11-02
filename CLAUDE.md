@@ -18,7 +18,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
   - meist ein Duell bzw. Rennen gegen die Uhr mit sichtbaren Zählern (Maßstab)
 - **Kanäle:** bestehender TikTok-Account des Inhabers (ca. 3k Follower). YouTube Shorts als Zweitverwertung.
 - **Ziel:** 10k Follower und CRP, danach Ausbau (zweite Nische, englische Version).
-- **Account 2 `@stelldirvor.pov` (angelegt 01.11., in Buffer verbunden):** neuer Account, „Was wäre, wenn …“-3D-POV in Du-Perspektive, nur Blender/Three.js (Unreal Engine 5 optional), Stimme **Otto** `FTNCalFNG5bRnkkaP5Ug` (Eleven v4, Original-Einstellungen), Logo „Fragezeichen-Countdown“ (`marke/account2/`). Details und Stand: `docs/16-account-2-nischen.md`.
+- **Account 2 `@stelldirvor.pov` (angelegt 01.11., in Buffer verbunden):** neuer Account, „Was wäre, wenn …“-3D-POV in Du-Perspektive, nur Blender/Three.js (Unreal Engine 5 optional), Logo „Fragezeichen-Countdown“ (`marke/account2/`). **Seit 02.11. strikt im Format der 4 Referenzvideos des Inhabers: keine Stimme, 80 s, feste Ich-Perspektive von erhöhtem Standpunkt, nur Titelfrage, Messwert-Anzeige und kurze kursive Sätze, Atmo statt Sprache, schwarzer Abspann mit Faktenzeile** (`docs/16` §12). Für Account 2 gelten Videoaufbau, Folgen-Aufruf, Schlusssatz, Schleife, Untertitel und `massstab.py` von Simulierbar **nicht**; Prüfung nach `docs/16` §12. (Stimme Otto nur noch historisch: Testvideo 01.11.)
 - **Inhaber:** arbeitet Vollzeit im Hauptjob, Zeit ist knapp. Jeder Schritt muss den größten Hebel pro Stunde haben.
 
 ## Maßstab (verbindlich, darf nie untergehen)
@@ -37,8 +37,8 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
    - Stimme startet unter 0,2 s
    - ganze Szene von Bild 1 an
 2. **Regeln** als Mini-Fakten mit Chips.
-3. **Denkfalle** „Klar, …. Oder?“ und **„Los geht's.“** (bis Sekunde 16).
-4. **Rennen** mit laufender Uhr bzw. Zählern, Kommentar wie ein Sportreporter.
+3. **Denkfalle** „Klar, …. Oder?“, ruhig gesprochen (bis Sekunde 16). **Kein „Los geht's“** (Inhaber 02.11., Prüfpunkt 3b).
+4. **Rennen** mit laufender Uhr bzw. Zählern, ruhiger Erzähler-Kommentar (kein Sportreporter, kein Geschrei).
 5. **Folgen-Aufruf bei ca. 20 s**, max. 2 s: „Folg mir, damit du nichts verpasst.“ (Entscheidung 31.10.)
 6. **Erste Wendung** bei 18–25 s, danach alle 8–10 s eine neue Wendung bzw. ein Führungswechsel.
 7. **Ergebnis** mit exakter Zahl, danach **„Warum?“** mit max. 2 Faktoren.
@@ -48,10 +48,13 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
 11. Das letzte Bild entspricht dem ersten (**Schleife**).
 
 **Dynamik:**
-- Im Bild passiert **alle 1–2 s etwas Neues**: Chip, Zähler, Sticker, Kamerafahrt oder Szenenwechsel.
+- Im Bild passiert **alle 1–2 s etwas Neues**: Bewegung in der Welt, Kamerafahrt, Zähler, Chip oder Szenenwechsel.
 - Nie mehr als 2 s Stillstand.
 - Text und Bild halten die Spannung gemeinsam (Inhaber 31.10.: „Die Aufmerksamkeitsspanne ist gering, wir müssen deutlich mehr liefern“).
-- **Gesundes Maß** (Inhaber 01.11.): große Sticker bzw. Stempel nur an Dramaturgie-Punkten (Denkfalle, Wendung, Ergebnis, zweite Überraschung), **max. 5 je Video, mind. 5 s Abstand** (Prüfpunkt 5d). Die Dynamik kommt vor allem aus Kamera, Zählern, Figuren und Szenenwechseln, nicht aus Text-Einblendungen.
+- **Keine großen Sticker bzw. Stempel** (Inhaber 02.11., Prüfpunkt 5d = 0; vorher max. 5). Zahlen, Zähler, Timer und Chips bleiben.
+- **Die Kunst ist die animierte Welt** (Inhaber 02.11.: „die Zahlen und Timer sind gut, aber keine Kunst“): Zeit und Sorgfalt gehen in Umgebung, Detailreichtum, Licht, Figuren und Objekte, die reagieren, und eine Kamera, die dem Geschehen folgt. Die Dynamik kommt aus Welt und Kamera, nicht aus Text-Einblendungen.
+- **Skript und Bild passen exakt zusammen** (Inhaber 02.11.): Jedes gesprochene Detail (Objekt, Handlung, Zahl, Ort) ist im selben Moment genau so im Bild zu sehen. Abnahme Segment für Segment am Kontaktbogen.
+- **Themen-Logik** (Inhaber 02.11., Beispiel „Steuererklärung oder Überstunden“ ergibt keinen Sinn): Ein Duell vergleicht nur echte Alternativen derselben Entscheidung, die sich ausschließen bzw. gegeneinander abgewogen werden. Keine widersprüchlichen oder schiefen Vergleiche. Prüfung vor jedem Produktionsstart.
 - **Mittig ausrichten** (Inhaber 01.11.): Mittelachse x = 540, symmetrische Schutzzone, gleiches Format für TikTok und YouTube Shorts (1080×1920).
 
 ## Kommunikation
@@ -82,7 +85,8 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
   - Läuft täglich automatisch (geplante Aufgabe „Trend-Radar Simulierbar“, 05:35 Uhr Berlin, feste Sitzung „Trend-Radar täglich (TikTok Automation)“).
   - Ablauf und Bewertungsraster: `docs/07-trend-monitoring.md`.
   - Dem Inhaber nur Trends mit Score ≥ 70 vorschlagen (`docs/trends/vorschlaege.md`). Das Ergebnis geht zusätzlich per Telegram an den Inhaber (`tools/telegram_senden.py`, `docs/13-telegram-radar.md`).
-- **Produktion nur auf Startsignal:** Der Inhaber kommt täglich in die Sitzung und gibt das Startsignal. Erst dann produziert Claude die nächsten Videos in der Reihenfolge von `data/plan/30-tage.csv` (`docs/12-30-tage-plan.md`, PDF `docs/plan/30-tage-plan.pdf`).
+- **Produktionsrhythmus (Inhaber 02.11., verbindlich):** Pro Tag entstehen **genau 4 Videos, 2 je Account**, und zwar **für den nächsten Tag**. Nach der Abnahme plant Claude sie in Buffer ein (12:30 und 19:30 bzw. am Wochenende 09:30 und 19:30). **Nie mehr als diese 4 Videos gleichzeitig in Arbeit** (am 01.11. liefen 8 bis 10 parallel und rissen das 5-Stunden-Limit). Agenten gestaffelt starten, höchstens 2 Produktions-Agenten gleichzeitig.
+- **Reihenfolge:** Simulierbar nach `data/plan/30-tage.csv` (`docs/12`), Account 2 nach `data/plan/account2-30-tage.csv`. Startsignal des Inhabers wie bisher.
 - **Keine Kopien:**
   - Fremde Videos nie nachbauen.
   - Themen, die ein Konkurrent schon viral gemacht hat, sind gesperrt (Liste in `docs/15`, Abschnitt 9) bzw. nur mit klar eigenem Ansatz erlaubt.
@@ -137,6 +141,7 @@ Lies zu Beginn jeder Sitzung zuerst `STATUS.md`, `ENTSCHEIDUNGEN.md` und **`docs
 - **ElevenLabs, Stimme „Ben“ `aTTiK3YzK3dXETpuDE2h`, im Original** (Entscheidung 31.10.).
   - Sie soll genau so klingen wie beim Anhören auf ElevenLabs. `pipeline/tts.py` schickt deshalb **keine** `voice_settings`, und ElevenLabs nutzt die gespeicherten Einstellungen der Stimme (laut API-Doku: „Voice settings overriding stored settings for the given voice“).
   - Keine künstliche Beschleunigung.
+- **Tonfall (Inhaber 02.11.):** ruhig, sachlich, freundlich, saubere Aussprache, wie die Vorbilder (`docs/15`). Kein Geschrei, keine aufgeregten Audio-Tags wie [excited], [shouting] oder [energetic] (Prüfpunkt 16a), höchstens 3 Ausrufezeichen im Sprechtext (16b). Gilt für Ben und Otto.
 - **Modell: `eleven_v4` für alle Videos** (Entscheidung des Inhabers 01.11. per Hörprobe; Standard in `pipeline/tts.py`). Regie per Audio-Tags, Satzzeichen und Großschreibung; **keine** `<break>`-Tags (v4 unterstützt sie nicht).
 - **Regie-Text:**
   - Der `sprechtext` jedes Segments ist ein Regiebuch für den Sprecher: eine Zeile pro Satz, Satzzeichen, Auslassungspunkte, Großschreibung für Betonung, bei v4 Audio-Tags. Regeln in `docs/08`, Abschnitt 3.

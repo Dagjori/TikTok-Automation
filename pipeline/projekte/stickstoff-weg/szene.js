@@ -185,12 +185,10 @@ async function start() {
   M.chips({ y: 710, ausrichtung: "mitte", aus: "falle:Klar,-0.35", liste: [{ text: "AUCH IN DER LUNGE", ein: "Lunge-0.02", art: "hell", team: "a" }] });
   M.chips({ y: 860, ausrichtung: "mitte", aus: "falle:Klar,-0.35", liste: [{ text: "AUCH IM OHR", ein: "Ohr-0.02", art: "hell", team: "a" }] });
   // ----- Denkfalle -----
-  M.stempel({ text: "KLAR?", ein: "falle:Klar,", aus: "start:Los-0.1", x: SICHER.mitte, y: 900, winkel: -6, farbe: "weiss", textFarbe: "tinte", groesse: 128 });
   // ----- Start: N₂ = 0 -----
   M.chips({ y: 392, ausrichtung: "mitte", aus: "sek1:Sekunde+0.25", liste: [{ text: "N₂ · 0 %", ein: "start:Los", art: "voll", team: "a", gross: true }] });
 
   // ----- Sekunde 1: Du atmest weiter -----
-  M.stempel({ text: "ATMEN GEHT!", ein: "sek1:weiter,", aus: "sek1:weiter,+1.15", x: SICHER.mitte, y: 880, winkel: 5, farbe: "b", groesse: 104 });
   M.chips({ y: 520, ausrichtung: "mitte", aus: "folgen:Folg-0.1", liste: [{ text: "O₂ BLEIBT: 212 HPA", ein: "sek1:Sauerstoff", art: "voll", team: "b" }] });
   M.folgen({ ein: "Folg", dauer: 1.8, y: 960 });
 
@@ -199,9 +197,8 @@ async function start() {
   M.chips({ y: 880, ausrichtung: "mitte", aus: "sek3:Sekunde-0.15", liste: [{ text: "REISEFLUGHÖHE EINES JETS", ein: "sek2:So", art: "dunkel" }] });
 
   // ----- Sekunde 3: Tüten -----
-  M.chips({ y: 440, ausrichtung: "mitte", aus: "sek4:Sekunde-0.1", liste: [{ text: "INNEN: FAST NICHTS", ein: "sek3:Chipstüten", art: "dunkel" }] });
+  M.chips({ y: 440, ausrichtung: "mitte", aus: "sek4:Sekunde-0.1", liste: [{ text: "INNEN: FAST NICHTS", ein: "sek3:zusammen.", art: "dunkel" }] });
   M.chips({ y: 700, ausrichtung: "mitte", aus: "sek4:Sekunde-0.1", liste: [{ text: "≈ 2 T PRO M²", ein: "sek3:2", art: "voll", team: "b", gross: true }] });
-  M.stempel({ text: "KLATSCH!", ein: "sek3:klatschen", aus: "sek3:klatschen+1.1", x: SICHER.mitte, y: 790, winkel: -7, farbe: "a", groesse: 124 });
 
   // ----- Sekunde 4: Ohr -----
   M.chips({ y: 470, ausrichtung: "mitte", aus: "sek5:Sekunde-0.1", liste: [{ text: "OHR: INNEN = AUSSEN", ein: "sek4:Ohr?", art: "hell", team: "a" }] });
@@ -230,8 +227,7 @@ async function start() {
 
   // ----- Zweite Überraschung: Kaffee -----
   M.zaehler({ ein: "ueberraschung:Wasser-0.1", aus: "merksatz:Sauerstoff-0.2", wert: M.kurve([{ t: "ueberraschung:Wasser", v: 100 }, { t: "ueberraschung:62+0.25", v: Math.round(SIEDE), e: ease.inOutCubic }]), nk: 0, einheit: "°C", max: 100, team: "a", art: "voll", label: "SIEDEPUNKT", x: SICHER.mitte, y: 440, anker: "mitte" });
-  M.chips({ y: 560, ausrichtung: "mitte", aus: "merksatz:Sauerstoff-0.2", liste: [{ text: "KAFFEE: 80 °C", ein: "ueberraschung:Kaffee", art: "dunkel" }] });
-  M.stempel({ text: "KOCHT!", ein: "ueberraschung:kocht#2", aus: "ueberraschung:kocht#2+1.2", x: SICHER.mitte, y: 900, winkel: -6, farbe: "akzent", groesse: 128 });
+  M.chips({ y: 560, ausrichtung: "mitte", aus: "ueberraschung:kocht#2-0.3", liste: [{ text: "KAFFEE: 80 °C", ein: "ueberraschung:Kaffee", art: "dunkel" }] });
 
   // ----- Merksatz und Schluss -----
   M.pointe({ text: "SAUERSTOFF | ZUM *ATMEN.*", ein: "merksatz:Sauerstoff", takt: 0.22, aus: "merksatz:Stickstoff-0.5", y: 470, groesse: 124 });
@@ -292,7 +288,7 @@ async function start() {
   };
   const Z0 = () => V(14, 1.35, 0.15);
   const ZUm = () => V(14, 1.45, 1.7);
-  const ZChips = () => V(-1.9, 1.1, -1.3);
+  const ZChips = () => V(-2.3, 1.15, -1.2);
   const ZBrust = () => V(1.0, 0.35, 0.3);
   const ZOhr = () => V(3.2, 1.75, 1.9);
   const ZUp = () => V(12, 2.8, 0.1);
