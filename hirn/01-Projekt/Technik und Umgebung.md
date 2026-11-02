@@ -36,6 +36,9 @@ Netzwerkzugriff eingeschränkt (10 Domains, Paketmanager aktiviert), **3 Netzwer
 - **Firecrawl-Credits fast leer:** Recherche über die Websuche.
 - Viele Plugin-MCP-Server verbinden nicht („403 Forbidden“): irrelevant für das Projekt.
 
+## Vault auf dem Desktop (Entscheidung 02.11.)
+Claude schreibt nur in `hirn/` im Repo (Master). Der Obsidian-Vault auf dem Desktop bekommt Änderungen **per ZIP** (Inhalt in den Vault-Ordner entpacken, `.obsidian` mitnehmen). Abgelehnt: automatischer Abgleich über den PC-Dienst und Obsidian-Git.
+
 ## Verbindungen Cloud ↔ PC (Lehren 02.11.)
 - Remote Control und „Ordner anfordern“ funktionieren in Cloud-Sitzungen **nur für Mac/Linux**, nicht für Windows.
 - Dispatch (Aufgaben vom Handy an den PC) nur in begrenzter Beta und nur bei offener App.
