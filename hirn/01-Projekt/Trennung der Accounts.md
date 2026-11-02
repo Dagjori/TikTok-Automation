@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §3, .claude/skills/*/SKILL.md
 tags: [konto/gemeinsam, trennung, regeln]
+cssclasses: [konto-gemeinsam, typ-regel]
 ---
 
 # Trennung der Accounts
@@ -24,11 +25,11 @@ Zwei Kanäle, zwei Skills, zwei Regelwerke. **Nie mischen.** Beim Arbeiten an ei
 | Aufbau | Hook → Regeln → Denkfalle → Rennen → Folgen-Aufruf 20 s → Wendungen → Ergebnis → Warum → Merksatz → Schlusssatz → Schleife | Titelfrage → Alltag → Auslöser → Eskalation → Höhepunkt „HIER“ → Nachspiel → Abspann |
 | Folgen-Aufruf/Schlusssatz/Schleife | ja | **nein** |
 | Bildstil | Stile 17–21, Teamfarben (nie Gelb), Mittelachse, Schutzzone 150 px | Lunar-POV, feste Ich-Perspektive, kein Teamfarben-Konzept |
-| Prüfung | `qc/massstab.py` (20 Punkte) | `qc/referenz_pov.py` (22 Pflichtpunkte) |
+| Prüfung | `qc/massstab.py` (23 Punkte) | `qc/referenz_pov.py` (21 Pflichtpunkte) |
 | Ton | Klangteppich + Effekte, −14 LUFS | Atmo/Sounddesign, −14 LUFS, Höhepunkt laut |
 | Caption | „… Ich hab's simuliert. … #wissen #simulation“ | „… Ich hab's durchgespielt. … #wissen #waswaerewenn“ |
-| Sperrliste | [[Sperrliste und Auswahlregeln Simulierbar]] | [[Konkurrenz-Check und Sperrliste Account 2]] |
-| Plan | [[Themenplan Simulierbar]] | [[Themen und Plan Account 2]] |
+| Sperrliste | entfällt seit 02.11. abends (Archiv: [[Sperrliste und Auswahlregeln Simulierbar]]) | entfällt seit 02.11. abends (Archiv: [[Konkurrenz-Check und Sperrliste Account 2]]) |
+| Plan | entfällt (Archiv: [[Themenplan Simulierbar]]), Ideen-Studio | entfällt (Weltenkatalog statt Plan: [[Themen und Plan Account 2]]), Ideen-Studio |
 | Radar | ja ([[Trend-Radar]]) | nicht angeschlossen |
 
 ## Gemeinsam gilt für beide

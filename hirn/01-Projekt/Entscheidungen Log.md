@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §12
 tags: [konto/gemeinsam, entscheidungen, log]
+cssclasses: [konto-gemeinsam, typ-entscheidung]
 ---
 
 # Entscheidungen Log
@@ -68,6 +69,15 @@ Nur **Entscheidungen des Inhabers** (2026 · Entscheidung · Begründung). Empfe
 
 - **Obsidian-Hirn** (Vault „TikTok Automation“ auf dem Desktop, Master als Ordner `hirn/` im Repo; alles Wissen strukturiert, die beiden Accounts strikt getrennt, damit neue Sitzungen schneller und mit weniger Kontext starten) · „damit können wir in Zukunft immer alle Sitzungen neu starten“. Dazu aktive Recherche „simulation“ auf TikTok, nur über öffentliche Seiten ([[Recherche-Methode und Grenzen]]).
 - **PC rendert** (RTX 2070, ca. 3 Min. je Video) · Einrichtung durch eine lokale Claude-Sitzung auf dem PC; `SUPABASE_URL` in der Cloud-Umgebung eingetragen (`.env`-Format).
+
+
+**02.11. (spätabends)**
+- **Account 1 nur noch GELD** · „eine wirklich sehr gute Nische, die echt gut funktioniert, wir müssen uns erstmal darauf fokussieren“. **Alle Stile (1–15 und 17–21) mit Qualitätslatte** · „ich möchte vermeiden, dass wir schlechte Qualität liefern, wir brauchen eine gerade Linie“. **Mehr Effekte, nichts Übertriebenes** (Licht, Zoom, Bildwechsel; große Sticker bleiben verboten, bestätigt per Klick) · Zuschauer gehen sonst verloren. **Sprechtempo Mitte** (150–190 Wörter, flüssig) · „finde die Mitte, es muss flüssig bleiben“.
+- **Kein 30-Tage-Plan, keine Sperrlisten, Länder frei** (beide Accounts) · „wird nicht mehr benötigt, ich merke mir Themen selbst, wir brauchen Flexibilität für endlos viele spannende Themen“; US-Themen auf Deutsch erlaubt, aber nur mit anderem Design.
+- **Account 2:** Welt passt zum Thema (Natur zuerst), viel mehr Bewegung, Standpunkt und Tageszeit wechseln, Kamera darf langsam fahren/zoomen (per Klick), Zeitraffer und Anzeige passend, **„5-Sekunden“-Verbot aufgehoben** (per Klick) · „das erste Video gefiel mir nicht: zu viel Skyline, zu wenig passiert“.
+- **Täglicher Ablauf über Claude Chat bzw. Ideen-Studio:** 10 Ideen je Account, der Inhaber wählt 2, danach makelloses Skript (faktentreu, nichts erfunden, Diskussionsanreiz nur implizit, perfekt für die Stimme); Claude findet den Weg ohne Kopieren · „finde einen Weg, wie wir das machen können“.
+- **Lernschleife:** täglich 20:00 Berlin Auswertung der Buffer-Zahlen, still, Lernen aus Zahlen und Skripten; Verbesserungsvorschläge nur mit Begründung und Freigabe des Inhabers · „ich segne das ab“.
+- **Fragen nur anklickbar** (Auswahl + Kommentarfeld) · „das spart mir enorm viel Zeit“. **Obsidian mit festen Farben je Kategorie** und ein eigenes Regelwerk im Hirn. Wörtliche Auszüge in `massstab.md` bleiben.
 
 
 ## Siehe auch

@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §4
 tags: [konto/gemeinsam, produktion, modelle, tokens]
+cssclasses: [konto-gemeinsam, typ-regel]
 ---
 
 # Produktion: Rhythmus und Modelle
@@ -12,7 +13,7 @@ tags: [konto/gemeinsam, produktion, modelle, tokens]
 ## Rhythmus (verbindlich seit 02.11.)
 - Pro Tag **genau 4 Videos, 2 je Account, für den nächsten Tag**. Nach der Abnahme plant Claude sie in Buffer ein.
 - **Nie mehr als diese 4 gleichzeitig in Arbeit**, Produktions-Agenten gestaffelt, **höchstens 2 Agenten gleichzeitig** (am 01.11. rissen 8–10 parallele Agenten das 5-Stunden-Limit).
-- Reihenfolge laut Plänen ([[Pläne und Kalender]]); **Produktion nur auf Startsignal des Inhabers.**
+- **Themen:** kein 30-Tage-Plan mehr. Täglich 10 Ideen je Account, der Inhaber wählt 2, Claude Chat schreibt die Skripte ([[Claude-Chat-Workflow]]); **Produktion nur auf Startsignal des Inhabers.**
 - Grund der Grenze: Die Tokens begrenzen, nicht mehr die Zeit (seit der PC rendert, siehe [[Render-Dienst Windows-PC]]).
 
 ## Skills sind Pflicht, strikt getrennt
@@ -24,7 +25,7 @@ Vor der Arbeit `SKILL.md` und die dort genannten Dateien lesen.
 Muster: `pipeline/projekte/_demo-simulierbar/`, `_demo-lunar-pov/` (nicht posten). Regeln nie mischen: [[Trennung der Accounts]].
 
 ## Pipeline (beide Accounts, Unterschiede in den Skills)
-1. Thema + Konkurrenz-Check + Themen-Logik
+1. Skript liegt vor (Ideen-Studio bzw. eingefügt); Themen-Logik prüfen; kein Pflicht-Konkurrenz-Check mehr, aber keine 1:1-Kopie
 2. Rechnung als Code mit Tests (`pipeline/sim/`)
 3. Skript + Regie-Text (`skript.json`, Quellen nur intern)
 4. Stimme (nur Account 1)
@@ -39,7 +40,7 @@ Werkzeuge: `pipeline/README.md`.
 Auch kombiniert (Blender backen → glTF → Three.js, ca. 0,9 s/Bild). Keine anderen Video-, Vorlagen- oder KI-Generatoren. HUD, Untertitel, Karten sind HTML/CSS in der Three.js-Seite. Cycles nur für Standbilder, Logo, Kurzszenen. Referenz-Repo: github.com/stochosfrance/lowpoly-reel (MIT).
 
 ## Stil (Account 1)
-Genau einer der Stile 17–21, Wahl mit Konkurrenz-Recherche und Begründung in `skript.json → stil_begruendung`, nie zweimal derselbe Stil hintereinander. Stile 1–15 nicht mehr für Simulierbar (Baukästen bleiben im Repo); Stil 16 Lunar-POV nur Account 2. Siehe [[Stile 17 bis 21]].
+Genau einer der Stile **1–15 und 17–21** (Stil 16 gehört Account 2) (Entscheidung 02.11. abends: alle wieder erlaubt, mit Qualitätslatte), Wahl mit Begründung in `skript.json → stil_begruendung`, nie zweimal derselbe Stil hintereinander. Stil 16 Lunar-POV nur Account 2. Qualitätslatte: [[Prüfung und Abnahme Simulierbar]]. Siehe [[Stile 17 bis 21]].
 
 ## Modelle und Tokens
 | Aufgabe | Modell |

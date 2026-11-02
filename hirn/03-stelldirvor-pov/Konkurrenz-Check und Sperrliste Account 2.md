@@ -1,18 +1,22 @@
 ---
 typ: regel
 konto: stelldirvor
-status: aktuell
+status: veraltet
 datum: 2026-11-02
-quelle: .claude/skills/stelldirvor-video/themen-und-plan.md §5 und §10
-tags: [konto/stelldirvor, sperrliste, konkurrenz]
+quelle: .claude/skills/stelldirvor-video/themen-und-plan.md §5 und §7
+tags: [konto/stelldirvor, sperrliste, konkurrenz, archiv]
+cssclasses: [konto-stelldirvor, typ-regel]
 ---
+
+> **Veraltet seit 02.11.2026, nur Archiv.** Die Sperrliste (Lunar Animations, US-Konten, deutscher Markt) entfällt, auch die der US-Konten und von Lunar; deren Themen sind frei und dürfen auf Deutsch umgesetzt werden. Die Notiz bleibt zur Nachvollziehbarkeit erhalten (Entscheidung des Inhabers); gültig ist [[Themen und Plan Account 2]] mit dem Weltenkatalog und der Kopierregel (keine 1:1-Kopie).
 
 > Quelle: `.claude/skills/stelldirvor-video/themen-und-plan.md`. Diese Notiz wird mit `python3 tools/hirn_aus_skills.py` erzeugt. Änderungen bitte im Skill vornehmen, nicht hier. Bei Abweichung gilt der Skill.
 
 # Konkurrenz-Check und Sperrliste Account 2
 
-*Gilt nur für Account 2. Vor jeder Produktion 5 Minuten Konkurrenz-Check; gleiches Thema nur mit klar eigenem Ansatz, sonst nicht.*
+*Gilt nur für Account 2. Es bleibt die Kopierregel: keine 1:1-Kopie von Sätzen, Etiketten, Faktenzeilen, Bild- und Szenenideen; gleiches Thema nur mit eigenem Skript und deutlich anderem Design.*
 
+> **Veraltet seit 02.11.2026 (Entscheidung des Inhabers):** Die Sperrliste entfällt, auch die der US-Konten und von Lunar Animations. Themen dieser Kanäle sind frei, US-Themen dürfen auf Deutsch umgesetzt werden. **Gültig bleibt nur die Kopierregel:** keine 1:1-Kopie von Sätzen, Etiketten, Faktenzeilen, Bild- und Szenenideen; gleiches Thema nur mit eigenem Skript und deutlich anderem Design (§1). Der Text unten ist der Stand vom 02.11. mittags und dient als Archiv (z. B. um zu wissen, was die Konkurrenz gebaut hat).
 
 **Methode:** Websuche und öffentliche Profil- bzw. Videoseiten (02.11.), keine Video- oder Tondateien, keine internen APIs. Die Sperrliste gilt: gleiches Thema nur mit klar eigenem Ansatz, sonst nicht.
 
@@ -46,7 +50,7 @@ Ein zehntes TikTok-Video ließ sich nicht zuordnen (S: Suchseiten nennen zusätz
 
 **Grenzen:** Das Firecrawl-Kontingent war nach den Katalog-Suchen erschöpft; die Einzelchecks pro Thema stützen sich auf den Katalog plus 5 Sammelsuchen. In der CSV steht bei jedem Thema, was konkret gefunden wurde; „Abgleich 02.11.“ heißt Abgleich gegen diese Listen. Vor jedem Produktionsstart 5 Minuten Einzelsuche (CLAUDE.md: Konkurrenz-Check vor jedem Start).
 
-## 10. Quellen des Konkurrenz-Checks (öffentliche Seiten, 02.11.2026)
+## 7. Quellen des Konkurrenz-Checks (Archiv, öffentliche Seiten, 02.11.2026)
 - Lunar Animations: tiktok.com/@lunarcheeseee (Videos 7692429617784802590, 7691758905940118815, 7692085157330717982, 7692690300715699486, 7693166863563476255, 7693535183416380702, 7694293928698219807), youtube.com/@lunarcheeseee, instagram.com/lunar.animations.
 - US: tiktok.com/discover/what-if, @thewhatifstudio, @man_ia_c, @cloveranimationns, @what.if.lab_, @pov.what.if0. DE: @mal.angenommen, @niklaskolorz, @weltraumweisheiten.
 

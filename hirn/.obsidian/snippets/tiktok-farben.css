@@ -1,0 +1,37 @@
+/* TikTok Automation: Farbcode (erzeugt von tools/hirn_farben.py, nicht von Hand ändern) */
+:root {
+  --c-regelwerk: #E5534B; --c-chat: #1FC7C7; --c-lernen: #E85D9A; --c-start: #E3B341;
+  --c-projekt: #4C8DF6; --c-a1: #2FBF71; --c-a2: #A066F0; --c-recherche: #F2883A; --c-vorlagen: #8B949E;
+}
+.nav-folder-title[data-path^="00-Start"], .nav-file-title[data-path^="00-Start"] { color: var(--c-start); }
+.nav-folder-title[data-path="00-Start"] { font-weight: 700; }
+.nav-folder-title[data-path^="01-Projekt"], .nav-file-title[data-path^="01-Projekt"] { color: var(--c-projekt); }
+.nav-folder-title[data-path="01-Projekt"] { font-weight: 700; }
+.nav-folder-title[data-path^="02-Simulierbar"], .nav-file-title[data-path^="02-Simulierbar"] { color: var(--c-a1); }
+.nav-folder-title[data-path="02-Simulierbar"] { font-weight: 700; }
+.nav-folder-title[data-path^="03-stelldirvor-pov"], .nav-file-title[data-path^="03-stelldirvor-pov"] { color: var(--c-a2); }
+.nav-folder-title[data-path="03-stelldirvor-pov"] { font-weight: 700; }
+.nav-folder-title[data-path^="04-Recherche"], .nav-file-title[data-path^="04-Recherche"] { color: var(--c-recherche); }
+.nav-folder-title[data-path="04-Recherche"] { font-weight: 700; }
+.nav-folder-title[data-path^="05-Vorlagen"], .nav-file-title[data-path^="05-Vorlagen"] { color: var(--c-vorlagen); }
+.nav-folder-title[data-path="05-Vorlagen"] { font-weight: 700; }
+.nav-file-title[data-path*="Regelwerk"] { color: var(--c-regelwerk); font-weight: 700; }
+.nav-file-title[data-path*="Befehl"], .nav-file-title[data-path*="Claude-Chat"] { color: var(--c-chat); }
+.nav-file-title[data-path*="Lernschleife"], .nav-file-title[data-path*="Insights"] { color: var(--c-lernen); }
+.konto-simulierbar h1, .konto-simulierbar .cm-header-1, .konto-simulierbar .inline-title { border-left: 7px solid var(--c-a1); padding-left: 0.5em; }
+.konto-simulierbar h2, .konto-simulierbar .cm-header-2 { color: var(--c-a1); }
+.konto-simulierbar h3, .konto-simulierbar .cm-header-3 { color: color-mix(in srgb, var(--c-a1) 70%, var(--text-normal)); }
+.konto-simulierbar th { border-bottom: 2px solid var(--c-a1); }
+.konto-stelldirvor h1, .konto-stelldirvor .cm-header-1, .konto-stelldirvor .inline-title { border-left: 7px solid var(--c-a2); padding-left: 0.5em; }
+.konto-stelldirvor h2, .konto-stelldirvor .cm-header-2 { color: var(--c-a2); }
+.konto-stelldirvor h3, .konto-stelldirvor .cm-header-3 { color: color-mix(in srgb, var(--c-a2) 70%, var(--text-normal)); }
+.konto-stelldirvor th { border-bottom: 2px solid var(--c-a2); }
+.konto-gemeinsam h1, .konto-gemeinsam .cm-header-1, .konto-gemeinsam .inline-title { border-left: 7px solid var(--c-projekt); padding-left: 0.5em; }
+.konto-gemeinsam h2, .konto-gemeinsam .cm-header-2 { color: var(--c-projekt); }
+.konto-gemeinsam h3, .konto-gemeinsam .cm-header-3 { color: color-mix(in srgb, var(--c-projekt) 70%, var(--text-normal)); }
+.konto-gemeinsam th { border-bottom: 2px solid var(--c-projekt); }
+.typ-regel h1, .typ-regel .cm-header-1 { border-left-color: var(--c-regelwerk) !important; }
+a.tag[href^="#konto/simulierbar"], .cm-hashtag[class*="simulierbar"] { background-color: color-mix(in srgb, var(--c-a1) 22%, transparent); color: var(--c-a1); border: 1px solid var(--c-a1); }
+a.tag[href^="#konto/stelldirvor"], .cm-hashtag[class*="stelldirvor"] { background-color: color-mix(in srgb, var(--c-a2) 22%, transparent); color: var(--c-a2); border: 1px solid var(--c-a2); }
+a.tag[href^="#konto/gemeinsam"], .cm-hashtag[class*="gemeinsam"] { background-color: color-mix(in srgb, var(--c-projekt) 22%, transparent); color: var(--c-projekt); border: 1px solid var(--c-projekt); }
+a.tag[href^="#regelwerk"] { background-color: color-mix(in srgb, var(--c-regelwerk) 22%, transparent); color: var(--c-regelwerk); border: 1px solid var(--c-regelwerk); }

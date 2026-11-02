@@ -9,10 +9,11 @@
 | `pipeline/engine/kern.js` | Nachbearbeitung: Bloom, ACES, Farbe; neu: `tiefe` (Tiefenunschärfe), `flimmern` (Hitze), `schleier` (Staub/Weißblende) |
 | `pipeline/atmo.py` | Atmo-Spur ohne Stimme aus `ton.json` + Protokoll |
 | `pipeline/qc/referenz_pov.py`, `pipeline/qc/text_ueberlappung_pov.mjs` | Prüfung (siehe `pruefung.md`) |
+| `pipeline/engine/welt_grossstadt_dach.js` | einzige fertige Welt (Großstadt-Dach, Erstbau „Eiszeit Toronto“); weitere Welttypen des Weltenkatalogs entstehen beim Erstbau, Schwächen der Dach-Welt siehe `SKILL.md` (Lehre 02.11.) |
 | `pipeline/projekte/_demo-lunar-pov/` | vollständiges Muster (Demo, nicht posten) |
 
 ## Projektordner
-`projekte/<name>/`: `szene.html` (lädt `hud.css` + `stil_lunar_pov.css`, Importmap für three), `szene.js`, `skript.json` (Titelfrage, Rechnung, Anzeige-Phasen, Sätze, `bild_text_abgleich`, Faktenzeile, Quellen, Caption; **kein** `segmente`-Feld → `render.js` schreibt keine Stimm-Schätzung), `ton.json`. Rechnung mit Test in `pipeline/sim/<name>.mjs`.
+`projekte/<name>/`: `szene.html` (lädt `hud.css` + `stil_lunar_pov.css`, Importmap für three), `szene.js`, `skript.json` (Titelfrage, Rechnung, Anzeige-Phasen, Sätze, `bild_text_abgleich`, Faktenzeile, Quellen, Caption; **kein** `segmente`-Feld → `render.js` schreibt keine Stimm-Schätzung; seit 02.11. abends zusätzlich `skript_id`, `welt`, `standpunkt`, `tageszeit_verlauf`, **`zeitraffer`**, **`bewegungsplan`**, **`lern_notizen`**, Aufbau in `ablauf.md` „Skript-Anforderungen“), `ton.json`. Rechnung mit Test in `pipeline/sim/<name>.mjs`. Das Skript kommt aus dem Ideen-Studio (ArtifactData-Sammlung `skripte`, Dokument-ID `acc2-JJJJ-MM-TT-mittag|abend`) oder vom Inhaber; Titelfrage, Sätze, Faktenzeile werden 1:1 übernommen.
 
 ## Szenengerüst (`szene.js`)
 ```js
@@ -28,7 +29,10 @@ const buehne = new Buehne(leinwand, { msaa: 0, schatten: true, tiefe: true });
 await document.fonts.load("400 80px 'Lunar Serif'"); await document.fonts.load("600 22px 'Lunar Sans'"); await document.fonts.ready;
 const szene = new THREE.Scene(); szene.fog = new THREE.FogExp2("#AAB8CB", 3.6e-5);
 const kam = new THREE.PerspectiveCamera(52, 1080 / 1920, 0.1, 40000);
-const pov = new PovKamera(kam, { pos: AUGE, ziel: BLICK, fov: 52 }).atmen().beben({ von, bis, staerke: 0.2 }).stoss({ t: T_HIER, staerke: 1.6 }).kippen({ t: T_HIER + 0.1, roll: 13 });
+const pov = new PovKamera(kam, { pos: AUGE, ziel: BLICK, fov: 52 }).atmen()
+  .bewegung([{ t: 30, pos: AUGE_2 }])                  // langsame Fahrt (weich, Ease inOutSine) – erlaubt und gewollt, keine harten Schnitte
+  .blick([{ t: 24, ziel: BLICK_2 }])                   // Schwenk, folgt dem Geschehen
+  .beben({ von, bis, staerke: 0.2 }).stoss({ t: T_HIER, staerke: 1.6 }).kippen({ t: T_HIER + 0.1, roll: 13 });
 const himmel = new Himmel(szene, { zenit, horizont, sonnenRichtung, zirren: 0.5 });
 // … Gelände, Licht (Hemisphere + Directional mit Schatten), Häuser/Bäume als InstancedMesh, vordergrund(szene, { art, pos: AUGE, ziel: BLICK, abstand: 3 })
 const puffs = new Puffs(szene, { max: 900 });                    // eine Instanz für alle normalen Puffs (gemeinsam sortiert)
@@ -47,12 +51,14 @@ window.dauer = 80; window.ereignisse = prot.alle(hud.ereignisse(), pov.ereigniss
 window.massstab = { version: 2, format: "referenz_pov", untertitel: null }; window.klangteppich = "keiner";
 window.__fertig = true;
 ```
+Kamera (02.11. abends): **Fahrt** = `bewegung()`, **Schwenk** = `blick()`; ein **Zoom** über die Brennweite ist im Baukasten noch nicht animierbar (`fov` ist fest), bis dahin Fahrt nach vorn bzw. zurück. `PovKamera.ereignisse()` meldet bisher nur beben, stoss, kippen; Fahrt, Schwenk und Zoom stehen in `skript.json → lern_notizen → kamera` (Ausbau des Baukastens: Protokoll-Einträge `typ: "kamera", art: "fahrt|schwenk|zoom"` und `zoom({ t, von, bis, fov })`, Opus-Aufgabe). Der Zeitraffer wird über `simZeit(t)` gebaut (`licht-und-effekte.md` §6).
+
 Regeln: alles ist eine Funktion von `t` (feste Seeds, `hash()`), keine `Math.random()`, kein Zustand zwischen Bildern. Dieselbe Funktion treibt Bild, Anzeige und Ton (z. B. `hoeheBei` der Säule = Anzeige-Wert, `ankunft(x, z)` = Zeit, zu der die Front einen Ort erreicht → Bäume, Menschen, Trümmer, Klang).
 
 ## Render und Mux
 ```bash
 cd pipeline
-node render.js projekte/<name> --zeiten 1.5,12,30,50,60.7,65.5,76 --worker 2   # Standbilder der Phasen → out/<name>/standbilder/
+node render.js projekte/<name> --zeiten 1.5,8,15,22,30,38,46,54,60.7,65.5,76 --worker 2   # Standbilder der Phasen (mindestens 8 über 0–70 s, dazu je Sequenzwechsel) → out/<name>/standbilder/
 node render.js projekte/<name> --worker 2                                      # alle 2.400 Bilder (abbrechbar, --nur-fehlende)
 python3 atmo.py projekte/<name>                                                # Ton
 TON_FERTIG=1 LRA_ZIEL=20 ./mux.sh projekte/<name>                              # → out/<name>/<name>.mp4 (H.264 CRF 18, AAC, −14 LUFS)
@@ -70,4 +76,4 @@ python3 post_buffer.py --nachpruefen             # nach dem Posten: öffentlich,
 ```
 - Kanal **`stelldirvor.pov`**, Slots `mittag`/`abend` aus `data/plan/posting_zeiten.json` (Mo–Fr 12:30/19:30, Sa–So 09:30/19:30).
 - **Kein `--ki-label`** (Three.js-Bilder, keine Stimme). Nur wenn ein Video doch realistisch wirkende KI-Inhalte enthielte, wäre es Pflicht.
-- Caption-Format siehe `ablauf.md`.
+- Caption-Format siehe `ablauf.md`; der Text kommt aus dem Skript (Feld `caption`).

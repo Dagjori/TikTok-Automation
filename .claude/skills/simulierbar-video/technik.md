@@ -11,15 +11,16 @@
 | `pipeline/engine/stil_nachtkarte.js` | Stil 21: `reliefKarte` (mit `.hoehe(x, z)`), `stadtLichter`, `strassenNetz`, `route`, `ortsMarke`, `wolkenSchicht`, `karteZeit` |
 | `pipeline/engine/sim_hud.css` | seriöses HUD-Thema (`design.md`), wirkt mit `#hud.sim` |
 | `pipeline/engine/massstab.js`, `regie.js`, `zeitplan.js`, `zeitleiste.js`, `bewegung.js`, `hud.js` | Maßstab-Bausteine, Kamera-Regie, Wortzeiten, Einstellungen/Übergänge, Easing, Untertitel (unverändert, `pipeline/README.md`) |
-| `pipeline/engine/stil_blaupause.js` | nur für den „Warum?“-Einschub (`stile.md`) |
+| `pipeline/engine/stil_blaupause.js` | Stil 13: „Warum?“-Einschub oder Hauptstil (`stile.md`) |
+| `pipeline/engine/stil_lowpoly.js`, `iso.js`, `stil_clay.js`/`stil_clay_welt.js`, `stil_flat.js`, `stil_collage.js`, `stil_comic.js`, `stil_glas.js` (mit `kern.js`, `bausteine.js`, `licht.js`) | Video-Baukästen der Stile 1, 2, 3, 4, 6, 12, 14 (wieder erlaubt, Qualitätslatte in `stile.md`); Demos aller Stile 1–15 in `pipeline/stile/` |
 | `pipeline/projekte/_demo-simulierbar/` | Muster: `szene.js` (gemeinsames Gerüst), `welten/<stil>.js` (je Stil eine Welt), `?stil=…` |
 
 Neue Objekte (Zapfsäule, Brotdose, Waschmaschine …) gehören ins Stil-Modul, mit geteilten Materialien und `userData.dynamisch` für bewegte Teile. Keine fremden Assets ohne freie Lizenz; Banknoten und Münzen nur in eigener, neutraler Gestaltung, keine Marken.
 
 ## Projektordner
-`pipeline/projekte/<name>/`: `skript.json`, `audio/` (stimme.mp3, timing.json, ereignisse.json), `szene.html`, `szene.js`; Rechnung mit Test in `pipeline/sim/<name>.mjs`.
+`pipeline/projekte/<name>/`: `skript.json`, `audio/` (stimme.mp3, timing.json, ereignisse.json), `szene.html`, `szene.js`; Rechnung mit Test in `pipeline/sim/<name>.mjs`. Das Skript selbst liefert das Ideen-Studio (ArtifactData-Sammlung `skripte`, Dokument-ID `acc1-JJJJ-MM-TT-mittag|abend`); Übernahme nach `skript.json` inhaltlich 1:1 (`ablauf.md` §5.2).
 
-`skript.json` (Beispiel unten): `titel`, `skill`, `konto`, `stil`, `stil_begruendung`, `teamfarben`, `klangteppich`, `segmente` (`id`, `phase`, `text` = Untertitel, `sprechtext` = Regie-Text, siehe `ton.md` §3), `bild_text_abgleich`, `caption`, `quellen` (nur intern).
+`skript.json` (Beispiel unten): `titel`, `skill`, `konto`, `stil` (`"<Nr> <Name>"`, Nr 1–15 oder 17–21), `stil_begruendung`, `teamfarben`, `klangteppich`, `segmente` (`id`, `phase`, `text` = Untertitel, `sprechtext` = Regie-Text, siehe `ton.md` §3), `bild_text_abgleich` (zugleich Beat-Blatt: Animation, Kamera, Licht je Segment), `caption`, `quellen` und `annahmen` (nur intern), `skript_quelle` (Dokument-ID im Ideen-Studio bzw. „vom Inhaber eingefügt“), **`lern_notizen`** (für die Lernschleife, unten).
 ```json
 {
   "titel": "…", "skill": "simulierbar-video", "konto": "simulierbar",
@@ -31,9 +32,19 @@ Neue Objekte (Zapfsäule, Brotdose, Waschmaschine …) gehören ins Stil-Modul, 
      "sprechtext": "Spur wechseln – oder bleiben?\n[curious] Wer ist im Stau WIRKLICH schneller?",
      "bild_text_abgleich": [{"gesagt": "…", "bild": "…"}]}
   ],
-  "caption": "…", "quellen": ["…"]
+  "caption": "…", "quellen": ["…"], "skript_quelle": "acc1-2026-11-03-mittag",
+  "lern_notizen": {
+    "thema": "Spurwechsel im Stau", "frage": "Wer ist im Stau wirklich schneller?", "laenge_s": 71.2,
+    "hook": "Spur wechseln – oder bleiben? Wer ist im Stau WIRKLICH schneller?", "hook_typ": "Duell-Frage",
+    "stil": "18 Dunkles Studio (Produktlicht)", "zoom": "ja bei Wendung 1 und Ergebnis, sonst Fahrt/Schärfenverlagerung",
+    "animationen": [{"t": 2.0, "art": "kamerafahrt", "was": "Dolly vor auf beide Schalen"}, {"t": 22.5, "art": "zoom+lichtwechsel", "was": "Wendung 1"}],
+    "licht": "Spot-Wechsel auf Anna bei Wendung 1, Strahlen steigen bis zum Ergebnis", "effekte": ["glow-puls Sieger bei 42,3 s", "zoomwisch bei 30,0 s"],
+    "zeitpunkte": {"folgen": 20.3, "wendung_1": 22.5, "ergebnis": 42.3, "warum": 45.0, "pointe": 60.1},
+    "tempo": {"woerter": 172, "wps": 2.31}, "caption": "…", "besonderheiten": "…"
+  }
 }
 ```
+**`lern_notizen`** hält fest, was die Lernschleife (täglich 20:00 Berlin, [[Lernschleife und Insights]]) später mit den Buffer-Zahlen verknüpft: Thema und Frage, Länge, Hook-Formulierung und -typ, Stil, Animationen (Art und Zeitpunkt in Sekunden), Zoom ja/nein, Licht und Effekte mit Zeitpunkt, Zeitpunkte (Folgen-Aufruf, Wendungen, Ergebnis, „Warum?“, Pointe), Wörter und Tempo (aus `qc/massstab.py`), Caption. Zeiten kommen aus `audio/timing.json` und `audio/ereignisse.json`, nicht geschätzt. Ausfüllen nach der Abnahme, vor dem Posten.
 
 ## Szenengerüst
 `szene.html`:

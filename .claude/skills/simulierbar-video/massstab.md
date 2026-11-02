@@ -1,15 +1,18 @@
 # Maßstab: 4 virale Simulationsvideos (je über 1 Mio. Aufrufe)
 
-Verbindlich für **jedes Simulierbar-Video** (Inhaber 31.10.: „das ist dein Maßstab, an dem wir uns richten müssen“). Kurzfassung in `CLAUDE.md` §5; dieser Text ist die vollständige eigene Auswertung (Stand 31.10.2026, ergänzt 01./02.11.). Zeitplan und Satzmuster: [ablauf.md](ablauf.md), HUD-Umsetzung: [design.md](design.md), Prüfung: [pruefung.md](pruefung.md), Themen und Sperrlisten: [themen.md](themen.md). Für Account 2 gilt dieser Maßstab nicht (dort `stelldirvor-video`).
+Verbindlich für **jedes Simulierbar-Video** (Inhaber 31.10.: „das ist dein Maßstab, an dem wir uns richten müssen“). Kurzfassung in `CLAUDE.md` §5; dieser Text ist die vollständige eigene Auswertung (Stand 31.10.2026, ergänzt 01./02.11.). Zeitplan, Satzmuster, Skript-Anforderungen, Dramaturgie: [ablauf.md](ablauf.md), HUD-Umsetzung: [design.md](design.md), Prüfung: [pruefung.md](pruefung.md), Themen und Auswahlregeln: [themen.md](themen.md) (die Sperrliste dort ist seit 02.11.2026 veraltet). Für Account 2 gilt dieser Maßstab nicht (dort `stelldirvor-video`).
+
+**Stand 02.11.2026 abends:** Dieser Maßstab bleibt die Messgrundlage der 4 Vorbilder. Die Neuregeln des Inhabers (SKILL.md) haben Vorrang, wo sie abweichen: nur Thema GELD, keine Sperrliste, Länder frei, alle Stile mit Qualitätslatte, mehr Effekte mit steigender Spannung, **Tempo 150–190 Wörter (Ziel ca. 2,3 W/s)** statt der Spalten „Maßstab“ unten.
 
 **Grundlage:**
 - 4 MP4 vom Inhaber hochgeladen am 31.10.2026, je 576×1024, 30 fps, 68–79 s.
 - Analysiert wurden: Bild (1 Bild pro Sekunde komplett angesehen, die ersten 3 s mit 6 Bildern pro Sekunde), Bewegung und Schnitte (gemessen), Ton (Lautheit, Pausen, Klangteppich, Effekte), Sprache (Transkript mit Wortzeiten über ElevenLabs Speech-to-Text).
-- **Speicherort:** Das Repo ist öffentlich. Originale, Transkripte und Standbilder der Konkurrenz liegen **nicht** im Repo (Urheberrecht, Konkurrenz soll die Auswertung nicht sehen); hier steht nur die eigene Auswertung mit kurzen Zitaten. Für eine erneute Analyse lädt der Inhaber die Dateien wieder hoch. Neue Vorbild-Videos werden genauso ausgewertet (jede Sekunde ansehen, Transkript mit Wortzeiten, Ton-Analyse) und hier ergänzt.
+- **Speicherort:** Das Repo ist öffentlich. Originale, Transkripte und Standbilder der Konkurrenz liegen **nicht** im Repo (Urheberrecht, Konkurrenz soll die Auswertung nicht sehen); hier steht nur die eigene Auswertung mit kurzen Zitaten. Für eine erneute Analyse lädt der Inhaber die Dateien wieder hoch. Neue Vorbild-Videos werden genauso ausgewertet (jede Sekunde ansehen, Transkript mit Wortzeiten, Ton-Analyse) und hier ergänzt (§12).
+- **Hinweis zu wörtlichen Auszügen:** Dieser Text enthält wörtliche Auszüge der 4 Vorbildvideos. Entscheidung des Inhabers 02.11.: bleiben so (Risiko: öffentliches Repo; sicherste Lösung wäre, das Repo privat zu stellen).
 
 **Legende:** **(F)** gemessen bzw. im Video gesehen · **(A)** Annahme bzw. Deutung
 
-**Abweichungen bei uns (Inhaber-Entscheidungen, haben Vorrang vor den Vorbildern):** kein „Los geht's“ (Gesetz 5), ruhiger Erzähler statt Sportreporter (Gesetz 6), keine Sticker/Stempel (Bausteine), Untertitel Wort für Wort statt Phrasen (§8), Folgen-Aufruf und eigener Schlusssatz (§10), Ziel-Tempo mit Ben im Original 130–170 Wörter (Profil `ben` in `qc/massstab.py`). Siehe §10 und Prüfliste 18–20.
+**Abweichungen bei uns (Inhaber-Entscheidungen, haben Vorrang vor den Vorbildern):** kein „Los geht's“ (Gesetz 5), ruhiger Erzähler statt Sportreporter (Gesetz 6), keine Sticker/Stempel (Bausteine), Untertitel Wort für Wort statt Phrasen (§8), Folgen-Aufruf und eigener Schlusssatz (§10), **Tempo 150–190 Wörter, Ziel ca. 2,3 W/s** (Mitte, Entscheidung 02.11. abends; Profil `ben` in `qc/massstab.py`), Stilfreiheit mit Qualitätslatte, mehr Effekte mit steigender Spannung. Siehe §10 und Prüfliste 18–23.
 
 | Kürzel | Thema | Länge | Wörter | Optik |
 |---|---|---|---|---|
@@ -37,7 +40,7 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 8. **Das Ergebnis mit exakter Zahl** kommt bei ca. 40–54 s: „Endstand:“, „A gewinnt.“ Sofort danach „Warum?“ mit einer einfachen Aufschlüsselung (2 Faktoren als Balken bzw. Karten).
 9. **Die zweite Überraschung:** „Und das Verrückte:“ bzw. „Aber jetzt wechseln wir nur …“. Eine Variante dreht das Ergebnis.
 10. **Ein Merksatz und eine Schlussfrage an den Zuschauer:** „Die Uhr entscheidet. Und du? Wie lange duschst du wirklich?“, „Hättest du gewusst, was dieses Zeichen bedeutet?“ Kein Logo, kein Abspann. K3 und K4 enden mit demselben Bild wie Sekunde 0 (**Endlos-Schleife**, F).
-11. **Im Bild passiert alle 1–2 s etwas Neues:** ein Chip, ein Zähler, ein Sticker, ein Kameraschwenk oder ein Szenenwechsel. Zähler und Uhren laufen sichtbar mit. Ruhe gibt es höchstens 1–2 s am Stück.
+11. **Im Bild passiert alle 1–2 s etwas Neues:** ein Chip, ein Zähler, ein Sticker *(bei uns verboten)*, ein Kameraschwenk oder ein Szenenwechsel. Zähler und Uhren laufen sichtbar mit. Ruhe gibt es höchstens 1–2 s am Stück.
 12. **Unter der Stimme liegt immer ein Klangteppich passend zum Thema** (Regen, Wasser, Meer, Nachtfahrt bzw. leise Musik), ca. 8–13 dB leiser als die Stimme. Dazu kommen kurze Effekte bei jedem Bild-Ereignis und ein Akzent-Klang auf der Pointe.
 
 ## 2. Messwerte
@@ -62,6 +65,8 @@ K1, K2 und K4 nutzen dasselbe Gestaltungssystem: Chips, Untertitel mit farbigem 
 - Spurwechsel: Anteil Stillstand 30 %, längste Ruhephase 3,4 s.
 
 **Wichtige Erkenntnis:** Gemessen bewegt sich in unseren Videos sogar mehr Pixel als bei der Konkurrenz. Das liegt auch an Filmkorn und Tiefenunschärfe. Trotzdem wirken sie statischer. **Dynamik entsteht nicht durch Pixelbewegung, sondern durch neue Information im Sekundentakt** (Zahlen, die laufen, Chips, die aufpoppen, Führungswechsel, Kamera, die dem Geschehen folgt). Genau das fehlt uns (A, aus dem Bildvergleich).
+
+**Was bei uns gilt (Tempo, Entscheidung des Inhabers 02.11.2026 abends):** Die Spalten „Maßstab“ oben sind die gemessenen Werte der Vorbilder. Für Simulierbar mit Ben gilt die **Mitte** aus Ben-Profil (130–170 Wörter, ca. 2,0 W/s) und Vorbildern (170–220 Wörter, 2,5–2,9 W/s): **150–190 Wörter bei 65–80 s, Ziel ca. 2,3 W/s (Spanne 2,2–2,5), Satzpausen hörbar 0,35–0,6 s (Richtwert)**, flüssig und natürlich, ohne künstliches Beschleunigen. Der frühere Widerspruch zwischen Ben-Profil und Prüfliste Punkt 12 (170–220 Wörter) ist damit aufgelöst: gültig ist nur diese Zahl.
 
 ## 3. Ablauf der vier Videos auf der Zeitachse
 
@@ -160,7 +165,7 @@ direktes „du“ („Womit wirst du …“, „Und du?“). Im Text kommt kein 
 
 - **Männlich, ruhig, sachlich, freundlich.** Erzähler-Ton, nicht reißerisch (A, aus Tempo und Pausen gedeutet; Klang nicht selbst gehört).
 - 2,5–2,9 Wörter/s. Die Pausen sind **kurz** (Satzende ca. 0,26 s, nie über 0,4 s). Die Ruhe kommt aus den **sehr kurzen Sätzen**, nicht aus langen Pausen.
-- **Folge für uns:** Abschnittspausen von 0,6 s sind länger als beim Maßstab. Ruhe entsteht über kurze Sätze und Satzzeichen, nicht über lange Stille.
+- **Folge für uns (neu gefasst 02.11. abends):** Die Vorbilder pausieren ca. 0,25 s; Ben im Original hörbar ca. 0,35 s (Messung F, 02.11.2026: `ffmpeg silencedetect` an den Stimmen von „Steuererklärung oder Überstunden“ und „Fußgängerampel“, Median je 0,35 s; die Alignment-Zeiten in `timing.json` liegen mit Median 0,22–0,24 s etwa 0,1 s darunter). Die frühere Angabe „0,5–0,7 s“ (31.10.) weicht davon ab (andere Erzeugungsart oder Messmethode, A). Für uns gilt als Richtwert **0,35–0,6 s hörbar**, damit Ben nicht gehetzt klingt; Tempo entsteht über Textlänge und Satzbau, nicht über kürzere Pausen. Ruhe entsteht über kurze Sätze und Satzzeichen, nicht über lange Stille.
 
 ## 7. Ton
 
@@ -182,7 +187,7 @@ direktes „du“ („Womit wirst du …“, „Und du?“). Im Text kommt kein 
 - Alltagsfragen, die jeder kennt, mit kontraintuitiver Antwort: Regen, Autofahrt, Strand, Bad.
 - **Messbares Duell bzw. Rennen gegen die Uhr** (3 von 4) oder ein lebenswichtiges Wissens-Szenario (K3).
 - Die Antwort ist überraschend **und** hat eine Bedingung („Die Dusche gewinnt nicht automatisch.“), das sorgt für Diskussion.
-- **Gesperrt für uns, weil schon viral:** Rennen gegen Gehen im Regen · Pausen gegen Tempo auf der Autobahn · Tsunami-Warnzeichen · Duschen gegen Baden (inklusive Duschkosten-Varianten). Die vollständige Sperrliste steht in [themen.md](themen.md).
+- ~~Gesperrt für uns, weil schon viral:~~ Rennen gegen Gehen im Regen · Pausen gegen Tempo auf der Autobahn · Tsunami-Warnzeichen · Duschen gegen Baden. **Veraltet seit 02.11.2026 (Entscheidung des Inhabers): Die Sperrliste entfällt.** Diese vier Themen sind nicht mehr gesperrt, aber weiterhin gilt: keine 1:1-Kopie von Skript, Sätzen, Bild- oder Szenenideen („Unoriginal“); gleiches Thema nur mit eigenem Skript und anderem Design. Archiv: [themen.md](themen.md) §3, §8.
 
 ---
 
@@ -192,9 +197,12 @@ direktes „du“ („Womit wirst du …“, „Und du?“). Im Text kommt kein 
 |---|---|---|---|
 | Folgen-Aufruf | keiner | kurz bei ca. 20 s: „Folg mir, damit du nichts verpasst.“ | Wunsch des Inhabers 31.10. |
 | Schluss | Frage an den Zuschauer | „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ | Wunsch des Inhabers 31.10., ebenfalls eine Frage und damit maßstabsgerecht |
-| Optik | 2D-Flat (K1, K2, K4), 3D-Miniatur (K3) | Three.js und Blender, gleiche Bausteine wie oben, hochwertiger in 3D | Alleinstellung über Qualität (Entscheidung 31.10.) |
+| Optik | 2D-Flat (K1, K2, K4), 3D-Miniatur (K3) | Three.js und Blender, gleiche Bausteine wie oben, hochwertiger in 3D; alle Stile 1–15 und 17–21 erlaubt, Qualitätslatte ([stile.md](stile.md)) | Alleinstellung über Qualität (31.10.), Stilfreiheit (02.11. abends) |
+| Tempo | 170–220 Wörter, 2,5–2,9 W/s | 150–190 Wörter, ca. 2,3 W/s, Ben im Original, flüssig und natürlich | Entscheidung des Inhabers 02.11. abends (Mitte) |
+| Effekte | Sticker, Stempel, Strahlenkränze | Aufleuchten, Licht, Glow, Zoom (abwechselnd), Fahrten, Bildwechsel; Spannung steigt bis zum Ergebnis; keine großen Sticker | [ablauf.md](ablauf.md) §6, Inhaber 02.11. abends |
+| Themen | Alltagsfragen mit Messung | nur GELD (Euro-Ergebnis), Länder frei, keine Sperrliste, keine 1:1-Kopie | Inhaber 02.11. abends |
 
-## 11. Prüfliste vor jeder Übergabe (alle Punkte müssen „ja“ sein)
+## 11. Prüfliste vor jeder Übergabe (alle 23 Punkte müssen „ja“ sein; 21–23 neu seit 02.11. abends)
 
 | # | Prüfpunkt |
 |---|---|
@@ -202,19 +210,26 @@ direktes „du“ („Womit wirst du …“, „Und du?“). Im Text kommt kein 
 | 2 | Hook = Duell-Frage bzw. Du-Szenario in max. 2 Sätzen, fertig gesprochen vor Sekunde 5 |
 | 3 | Denkfalle („Klar …, oder?“) und Startsignal vor Sekunde 16 |
 | 4 | Ab Rennstart laufen Uhr bzw. Zähler sichtbar mit |
-| 5 | Keine Phase über 2 s ohne neues Bild-Ereignis (Chip, Zahl, Kamera, Sticker, Szenenwechsel) |
+| 5 | Keine Phase über 2 s ohne neues Bild-Ereignis (Chip, Zahl, Kamera, Licht, Welt-Bewegung, Szenenwechsel; Sticker zählen nicht, sie sind verboten) |
 | 6 | Erste Wendung zwischen 18 und 25 s, danach alle 8–10 s eine neue Wendung bzw. ein Führungswechsel |
 | 7 | Folgen-Aufruf bei ca. 20 s, max. 2 s lang, vor einer Wendung |
 | 8 | Ergebnis mit exakter Zahl, danach „Warum?“ mit max. 2 Faktoren |
 | 9 | Zweite Überraschung bzw. Variante |
 | 10 | Merksatz und genau der Schluss „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ |
 | 11 | Letztes Bild = erstes Bild (Schleife) |
-| 12 | Sätze meist unter 10 Wörtern, Satzpausen ca. 0,25 s, Tempo 2,5–2,9 W/s, 170–220 Wörter, 65–80 s |
+| 12 | Sätze meist unter 10 Wörtern; **150–190 Wörter, Tempo 2,2–2,5 W/s (Ziel ca. 2,3), hörbare Satzpausen 0,35–0,6 s (Richtwert), 65–80 s**, flüssig und natürlich ohne künstliches Beschleunigen (Entscheidung 02.11. abends; ersetzt „ca. 0,25 s, 2,5–2,9 W/s, 170–220 Wörter“ und die Ben-Zahl 130–170) |
 | 13 | Klangteppich zum Thema (8–13 dB unter der Stimme), Effekt bei jedem Bild-Ereignis, Akzent auf der Pointe |
 | 14 | Untertitel **Wort für Wort** (Stil „kontur“: weiß, schwarze Kontur, kein Kasten, aktuelles Wort gelb). Entscheidung des Inhabers 01.11., weicht bewusst von den Vorbildern ab (sie zeigen Phrasen). |
 | 15 | Kein Kanalname, kein Logo, keine Rubrik im Video |
 | 16 | Teamfarben überall gleich (Figuren, Tafel, Chips, Untertitel) |
-| 17 | Thema nicht bei der Konkurrenz viral (§9 plus Sperrliste in [themen.md](themen.md) und Konkurrenz-Check vor Produktionsstart) |
-| 18 | **Keine** großen Sticker bzw. Stempel (Inhaber 02.11., vorher max. 5); Inhalte mittig (Achse x = 540) |
+| 17 | **Keine 1:1-Kopie** eines fremden Videos (Skript, Sätze, Bild- und Szenenideen eigen; „Unoriginal“). Die frühere Sperrliste ist seit 02.11. abends veraltet, der Konkurrenz-Check ist keine Pflichtsperre mehr |
+| 18 | **Keine** großen Sticker bzw. Stempel (Inhaber 02.11., bestätigt 02.11. abends; vorher max. 5); Inhalte mittig (Achse x = 540) |
 | 19 | Kein „Los geht's“, ruhiger Erzählton ohne aufgeregte Audio-Tags (Inhaber 02.11.; die Vorbilder sprechen „ruhig, sachlich, freundlich“, siehe oben) |
 | 20 | Skript-Bild-Abgleich: jedes gesprochene Detail ist im selben Moment zu sehen; Duell nur zwischen echten Alternativen derselben Entscheidung (Inhaber 02.11.) |
+| 21 | **Spannungskurve und Variation** ([ablauf.md](ablauf.md) §6): Spannung steigt von Sekunde 0 bis zum Ergebnis (Ergebnis = optischer Höhepunkt); in jedem 5-s-Fenster ein andersartiger Effekt oder Bildtyp; kein Leerlauf; nichts Übertriebenes (höchstens ein dominanter Effekt zugleich, Zoom nicht dauerhaft, kein Flackern, Text immer lesbar) |
+| 22 | **Qualitätslatte** ([stile.md](stile.md)): Licht und Materialien sauber, Tiefe, lesbare Typografie, konsistente Farben, keine Artefakte, nie ein Standbild über 2 s. „Würde ein Zuschauer denken, das sieht billig aus?“ Bei „ja“ wird die Abnahme verweigert |
+| 23 | **Skript-Qualität** ([ablauf.md](ablauf.md) §5): inhaltlich 1:1 aus dem Skript des Ideen-Studios, Abweichungen gemeldet; Aussagen belegbar bzw. als Modellannahme markiert; kein Clickbait, keine Aufforderung zum Streiten, keine künstlichen Cliffhanger; Regie-Text sauber (eine Zeile pro Satz, ruhige Tags, keine `<break>`) |
+
+## 12. Weitere Referenzvideos (Entscheidung des Inhabers 02.11.2026 abends)
+Der Inhaber kann weitere Vorbilder schicken (Upload, wie bei den 4 ersten). Auswertung wie beim Maßstab: jede Sekunde ansehen (die ersten 3 s mit 6 Bildern pro Sekunde), Schnitte und Bewegung messen, Ton (Lautheit, Pausen, Klangteppich, Effekte), Transkript mit Wortzeiten über Speech-to-Text. **Im Repo landen nur abstrahierte Muster** (Aufbau, Zeitachse, Mittel, Messwerte, eigene Deutung mit F/A-Kennung): keine Originale, keine Transkripte, keine Standbilder, keine wörtlichen Auszüge. (Die wörtlichen Auszüge der 4 ersten Vorbilder bleiben, siehe Hinweis oben.) Ergebnisse werden als neuer Abschnitt hier ergänzt; Punkte, die den Maßstab ändern, trägt Claude erst nach Freigabe des Inhabers in die Prüfliste ein. Eigene Videos orientieren sich an den Mustern, kopieren aber nie Skript, Sätze, Bild- oder Szenenideen (Prüfpunkt 17).
+

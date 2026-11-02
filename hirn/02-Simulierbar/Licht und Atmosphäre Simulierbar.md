@@ -3,13 +3,14 @@ typ: anleitung
 konto: simulierbar
 status: aktuell
 datum: 2026-11-02
-quelle: .claude/skills/simulierbar-video/licht-und-atmosphaere.md
+quelle: .claude/skills/simulierbar-video/licht-und-atmosphaere.md, SKILL.md (Neuregeln 02.11.2026 abends)
 tags: [konto/simulierbar, licht, atmosphäre, kamera, grading, render-kosten]
+cssclasses: [konto-simulierbar, typ-anleitung]
 ---
 
 # Licht und Atmosphäre Simulierbar
 
-Die Qualität entsteht aus Licht: ein Führungslicht mit Richtung, Kanten- bzw. Gegenlicht, das Formen vom Grund löst, sichtbare Luft (Dunst, Lichtstrahlen, Staub), Spiegelungen, Tiefenschärfe und ein Grading pro Stil. Alles kommt aus **`pipeline/engine/sim_atmosphaere.js`** (Simulierbar-Baukasten, ändert `kern.js` nicht). Jede Funktion ist deterministisch über `t`; `aktualisiere(t)` in `welt.update` aufrufen (das Demo-Gerüst macht das automatisch). Die fünf Stile: [[Stile 17 bis 21]]; Gerüst und Dateien: [[Technik und Szenenbau Simulierbar]].
+Die Qualität entsteht aus Licht: ein Führungslicht mit Richtung, Kanten- bzw. Gegenlicht, das Formen vom Grund löst, sichtbare Luft (Dunst, Lichtstrahlen, Staub), Spiegelungen, Tiefenschärfe und ein Grading pro Stil. Alles kommt aus **`pipeline/engine/sim_atmosphaere.js`** (Simulierbar-Baukasten, ändert `kern.js` nicht). Jede Funktion ist deterministisch über `t`; `aktualisiere(t)` in `welt.update` aufrufen (das Demo-Gerüst macht das automatisch). Die erlaubten Stile: [[Stile 17 bis 21]] (Licht-Rigs gehören zu 17–21; `SimBuehne`, Strahlen und Grading lassen sich auch in den Stilen 1–15 einsetzen); Gerüst und Dateien: [[Technik und Szenenbau Simulierbar]]. Wie Licht, Zoom und Fahrten über das Video verteilt werden: [[Videoaufbau Simulierbar]] (Abschnitt 6) und Abschnitt 9 unten.
 
 ## 1. Bühne und Nachbearbeitung
 ```js
@@ -74,7 +75,7 @@ regie.atmen({ staerke: 0.008–0.015, tempo: 0.25 });                           
 regie.schleife({ ab: tSchluss, ende: dauer - 1 / 30 });                                  // letztes Bild = erstes Bild
 regie.anwenden(t);                                                                         // in welt.update
 ```
-Seriöse Kamerasprache: langsame, gleichmäßige Fahrten (Dolly vor, Kranfahrt, Parallaxe an Vordergrund vorbei), Schärfenverlagerung statt Schnitt, Zoom nur auf den entscheidenden Moment. **Kein `regie.stoss`** (Kamerastoß gehörte zu den Stickern). Hochformat: Brennweite eng (fov 28–34), Motive in die Tiefe staffeln.
+Ruhige Kamerasprache als Grundton: langsame, gleichmäßige Fahrten (Dolly vor, Kranfahrt, Parallaxe an Vordergrund vorbei), Schärfenverlagerung statt Schnitt. **Zoom: mal ja, mal nein, abwechselnd, nicht dauerhaft** (Entscheidung 02.11. abends; Einsatz und Maß in Abschnitt 9). **Kein `regie.stoss`** (Kamerastoß gehörte zu den Stickern). Hochformat: Brennweite eng (fov 28–34), Motive in die Tiefe staffeln.
 
 ## 7. Übergänge (`zl.shot(ab, welt, { typ, dauer })`)
 Ruhig: `blende` (0,5–0,8 s), `iris` mit Lichtkante, `zoomwisch` (0,5 s) für „hinein“. `wolken`/`blasen` nur, wenn sie zur Welt passen (Nachtkarte: durch die Wolkenschicht). Jeder Übergang meldet sich im Protokoll (Ton, [[Stimme und Ton Simulierbar]]).
@@ -87,6 +88,21 @@ Teuer: Spiegelung (zweiter Durchgang), MSAA, Schattenkarte, Nebellagen über das
 - Schalter für Vorschauen: `--query "msaa=0&schatten=1024"`.
 
 Renderzeiten je Stil: [[Stile 17 bis 21]]; Render-Dienst mit GPU macht die Kosten unkritisch ([[Render-Dienst Windows-PC]]).
+
+## 9. Dramaturgie und Effekte: Lichtspiele, Zoom und Fahrten (Inhaber 02.11. abends)
+Mehr Effekte sind erwünscht, aber nichts Übertriebenes; die Spannung steigt bis zum Ergebnis (Regeln, Spannungskurve, Maß: [[Videoaufbau Simulierbar]] §6). Alles bleibt eine **reine Funktion von `t`**; Zeitpunkte kommen aus den Wortzeiten (`T("Aber")`, `T("Endstand")`).
+| Mittel | Umsetzung | Einsatz in der Kurve |
+|---|---|---|
+| **Spot-Wechsel** | Lichtstärken zweier Spots (oder Kegel) über `ease` von Seite A nach B überblenden; die führende Seite bekommt das Licht | Denkfalle (naheliegende Seite im Licht), erste Wendung (Licht kippt), Führungswechsel |
+| **Glow / Aufleuchten** | `leuchtMat`-Stärke und `glimmLinie` der führenden Seite kurz anheben (weicher Puls, 0,4–0,8 s), danach zurück; Bloom trägt den Rest | Führungswechsel, Ergebnis |
+| **Strahlen steigern** | `post.strahlen` über das Video von ca. 0,3 auf 0,7–0,9 zum Ergebnis führen, danach zurück | Spannungsaufbau bis zum Höhepunkt |
+| **Grading-Akzent** | `splitStaerke` bzw. `gain` leicht verschieben (wärmer auf den Sieger), nie hart schalten | Ergebnis, zweite Überraschung |
+| **Zoom (abwechselnd)** | `regie.zoom({ t: "Aber", staerke: 0.2–0.35, halt, rueck })` auf Wendung und Ergebnis; dazwischen **kein** Zoom, sondern Fahrt oder Schärfenverlagerung (`fokus` gleitet zur anderen Seite) | erste Wendung ja, nächstes Fenster Fahrt, Ergebnis ja; Richtwert 2–4 Zooms je Video (S) |
+| **Hineinfahren** | `regie.hinein({ t, ziel, abstand, fov })` auf ein Detail (Schalter, Waage, Kapsel), danach zurück | Erklärung im „Warum?“, einmal je Video |
+| **Fahrten** | Grundbewegung der Kamera als Dolly/Kran/Orbit (`new Regie(kamera, (t) => …)`), Parallaxe an Vordergrund; Richtung wechseln von Phase zu Phase | durchgehend; Variation alle 5 s |
+| **Situations-/Bildwechsel** | `zl.shot(ab, welt, { typ: "zoomwisch" \| "blende" \| "iris" })` zu einer anderen Einstellung oder Szene der Welt (Außen → Detail → Diagramm), höchstens alle 5–15 s | Übergang Regeln → Rennen, Rennen → Ergebnis, Einschub „Warum?“ |
+| **mehrere Animationssequenzen** | eigene Sequenzen je Segment (Münzen fallen, Füllstand steigt, Route leuchtet auf, Waage kippt) statt einer Dauerschleife | jedes Segment bekommt seine eigene Bewegung |
+**Maß:** höchstens ein dominanter Effekt zugleich; keine schnellen Helligkeitswechsel (über 3 pro Sekunde, kein Stroboskop); Glow darf Zahlen und Untertitel nicht überstrahlen; Schwärzen bleiben schwarz. Ein Effekt, der nur „da“ ist, ohne etwas aus dem Skript zu betonen, fliegt raus.
 
 ## Siehe auch
 - [[Stile 17 bis 21]] · [[Technik und Szenenbau Simulierbar]] · [[Design und Layout Simulierbar]] · [[Videoaufbau Simulierbar]]

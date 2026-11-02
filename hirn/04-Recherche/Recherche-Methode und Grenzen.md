@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §2, §10; Test vom 02.11.2026
 tags: [konto/gemeinsam, recherche, methode]
+cssclasses: [konto-gemeinsam, typ-regel]
 ---
 
 # Recherche: Methode und Grenzen

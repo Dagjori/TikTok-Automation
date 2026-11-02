@@ -3,18 +3,20 @@ typ: recherche
 konto: simulierbar
 status: aktuell
 datum: 2026-11-02
-quelle: .claude/skills/simulierbar-video/themen.md §0 und §1, CLAUDE.md §3
+quelle: .claude/skills/simulierbar-video/themen.md §0 und §1, CLAUDE.md §3, Entscheidungen des Inhabers 02.11.2026 abends
 tags: [konto/simulierbar, konkurrenz, nische, markt, kanäle, recherche]
+cssclasses: [konto-simulierbar, typ-recherche]
 ---
 
 # Konkurrenz und Themen Simulierbar
 
-Nischenwahl, Marktbelege, Konkurrenzkanäle mit Zahlen und ausgeschlossene Nischen für `@simulierbar` (Stand 29.10.–02.11.2026). Die konkrete Sperrliste, Auswahlregeln und Zahlen 2026 stehen in [[Sperrliste und Auswahlregeln Simulierbar]]. Methode und Grenzen der Recherche: [[Recherche-Methode und Grenzen]]. Legende: **(F)** belegter Fakt mit Quelle · **(S)** Schätzung · **(A)** Annahme.
+Nischenwahl, Marktbelege, Konkurrenzkanäle mit Zahlen und ausgeschlossene Nischen für `@simulierbar` (Stand 29.10.–02.11.2026). Auswahlregeln, Finanzregeln und Zahlen 2026 stehen in [[Auswahl- und Finanzregeln Simulierbar]]; die frühere Sperrliste ist seit 02.11.2026 veraltet ([[Sperrliste und Auswahlregeln Simulierbar]], Archiv). **Diese Notiz ist Hintergrund (Marktbelege, Muster), keine Sperre:** Seit 02.11. abends sperren die Konkurrenzzahlen kein Thema mehr; es gilt nur „keine 1:1-Kopie“. Methode und Grenzen der Recherche: [[Recherche-Methode und Grenzen]]. Legende: **(F)** belegter Fakt mit Quelle · **(S)** Schätzung · **(A)** Annahme.
 
 ## Kurzfazit
-- Nische **Kombi „Alltag durchgerechnet“** (Rang 1, Score 86), Schwerpunkt GELD (02.11.: „das zieht am meisten“). Rubriken GELD und ALLTAG sind nur intern, nie im Video ([[Account Simulierbar Überblick]]).
+- Nische **Kombi „Alltag durchgerechnet“** (Rang 1, Score 86), **seit 02.11. abends ausschließlich Thema GELD** (davor Schwerpunkt GELD, „das zieht am meisten“); die Rubrik ALLTAG entfällt ([[Account Simulierbar Überblick]]). Länder sind frei.
 - Das Format allein unterscheidet uns nicht mehr (viele Konten nutzen die Dramaturgie des Maßstabs). **Unser Unterschied: neue Themen und die Qualität der animierten Welt** (Inhaber 02.11.).
 - Termin-Videos sind am besten geschützt, weil das Timing nicht kopierbar ist.
+- Themen kommen jetzt täglich aus dem Ideen-Studio ([[Claude-Chat-Workflow]]); die Muster unten fließen dort als Lernstand ein ([[Lernschleife und Insights]]).
 
 ## 1. Markt und Nische (Belege, Stand 29.10.–02.11.2026)
 - **Ausgangsvideos (F, 29.10.):** 6 deutsche Simulationsvideos mit zusammen 6,04 Mio. Views (Ø 1 Mio.), 72–117 s lang: @kurzsimuliert (Regen, 2,1 Mio.), @retrodreamspace (Zigarette gegen Vape, 2,2 Mio.), @mal.angenommen (808k), @kontostand.vs (Mieten oder kaufen, 504k nach 3 Tagen), @wissentogo_de (Leasing, 298k), @unnoetig_tiefgruendig (131k). Rohdaten `data/2026-10-29_ausgangsvideos.csv`, `data/2026-10-29_kanaele.csv`.
@@ -64,7 +66,7 @@ Nischenwahl, Marktbelege, Konkurrenzkanäle mit Zahlen und ausgeschlossene Nisch
 **US als Ideenquelle (F, Videoseiten 02.11.):** @humphreytalks (3,4 Mio. Follower) erreicht mit „Notgroschen zu groß?“ 298.200 Aufrufe und mit der Reis-Visualisierung einer Milliarde 2,5 Mio. (2020). @simplysimulated (63.700 Follower) macht Was-wäre-wenn-Simulationen, Geld-Themen dort nur ca. 30.000 Aufrufe. Übernommen als eigener Winkel: Notgroschen (Plan #30), Freelancer gegen Angestellt (#12), Schneeball gegen Lawine (#8, bekanntes US-Thema, A), Hochzeit gegen Eigenkapital (Reserve).
 
 ## 3. Die vier Maßstab-Videos (Marktbeleg)
-Regen rennen/gehen, Pausen gegen Tempo, Tsunami-Warnzeichen, Duschen/Baden: laut Maßstab je über 1 Mio. Aufrufe (Stand 31.10.), vollständig ausgewertet in [[Maßstab Simulierbar]]; alle vier Themen sind gesperrt. Die Sperrliste nennt am 02.11. für diese Themen bei @kurzsimuliert „2,1 Mio. / 467.800 / 403.000“ (Zuordnung der drei Zahlen zu einzelnen Videos nennt die Quelle nicht; bei 467.800 und 403.000 liegt der Wert unter 1 Mio., Quelle `themen.md` §3 und §8). Ausgangsvideo Regen: 2,1 Mio. (siehe oben).
+Regen rennen/gehen, Pausen gegen Tempo, Tsunami-Warnzeichen, Duschen/Baden: laut Maßstab je über 1 Mio. Aufrufe (Stand 31.10.), vollständig ausgewertet in [[Maßstab Simulierbar]]; alle vier Themen waren bis 02.11. gesperrt (seit 02.11. abends nicht mehr: nur keine 1:1-Kopie). Die Sperrliste (Archiv) nannte am 02.11. für diese Themen bei @kurzsimuliert „2,1 Mio. / 467.800 / 403.000“ (Zuordnung der drei Zahlen zu einzelnen Videos nennt die Quelle nicht; bei 467.800 und 403.000 liegt der Wert unter 1 Mio., Quelle `themen.md` §3 und §8). Ausgangsvideo Regen: 2,1 Mio. (siehe oben).
 
 ## 4. Follower-Umwandlung und Wachstum (F/S)
 - Serie mit Wiedererkennung (gleiches Versprechen, eigene Auflösung im selben Video); Kommentar-Wünsche umsetzen („Antwort auf @…“, liefert Themen); Profil-Grid mit einheitlichen Covern.
@@ -78,5 +80,5 @@ Regen rennen/gehen, Pausen gegen Tempo, Tsunami-Warnzeichen, Duschen/Baden: laut
 - **Recht und Steuern (später, keine Rechtsberatung):** Regelmäßige Einnahmen mit Gewinnabsicht gelten als gewerblich (Gewerbe anmelden, Gewerbesteuer-Freibetrag 24.500 €); Kleinunternehmerregel § 19 UStG: Vorjahr ≤ 25.000 €, laufendes Jahr ≤ 100.000 €. Auszahlungen kommen von TikTok Information Technologies UK Ltd. bzw. Google Ireland (Leistungsort Ausland, in DE meist nicht steuerbar; Zusammenfassende Meldung bzw. USt-IdNr. klärt der Steuerberater). Impressum § 5 DDG als Link in der Bio (höchstens 2 Klicks; Bußgeld bis 50.000 €). Nebentätigkeit im Arbeitsvertrag prüfen (im öffentlichen Dienst anzeigepflichtig). Lizenzen: ElevenLabs Free hat keine kommerzielle Lizenz; Musik nur lizenzfrei oder selbst erzeugt; Finanz-Nische nur Modellrechnung, Affiliate-Links als Werbung kennzeichnen.
 
 ## Siehe auch
-- [[Sperrliste und Auswahlregeln Simulierbar]] · [[Themenplan Simulierbar]] · [[Maßstab Simulierbar]] · [[Account Simulierbar Überblick]]
+- [[Auswahl- und Finanzregeln Simulierbar]] · [[Sperrliste und Auswahlregeln Simulierbar]] (Archiv) · [[Themenplan Simulierbar]] (Archiv) · [[Maßstab Simulierbar]] · [[Account Simulierbar Überblick]]
 - [[Trend-Radar]] (Konkurrenz-Monitor) · [[Kanäle und Ziele]] · [[CRP Creator Rewards Program]] · [[Recherche-Methode und Grenzen]] · [[Pläne und Kalender]]

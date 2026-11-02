@@ -5,6 +5,7 @@ status: entwurf
 datum: JJJJ-MM-TT
 quelle: 
 tags: [konto/simulierbar, vorlage]
+cssclasses: [konto-simulierbar, typ-plan]
 ---
 
 # Video: Arbeitstitel

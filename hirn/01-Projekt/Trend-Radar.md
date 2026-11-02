@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §10
 tags: [konto/gemeinsam, radar, trends, telegram]
+cssclasses: [konto-gemeinsam, typ-anleitung]
 ---
 
 # Trend-Radar
@@ -18,7 +19,7 @@ Geplante Aufgabe **„Trend-Radar Simulierbar“**: täglich 05:35 Uhr (Berlin),
 2. **Monitor:** `python3 tools/monitor_kanaele.py` (öffentliche Profilseiten, 2 s Pause, Verlauf in `data/monitor/verlauf.csv`); auffällige Kanäle (≥ +20 % oder ≥ +1.000 Follower) = Signal `konkurrenz`: Profil bzw. stärkstes neues Video ansehen, welches Thema/Format zieht.
 3. **Signale sammeln** in dieser Reihenfolge: Konkurrenz-Signale · Trend-Kalender `data/trends/kalender.csv` (Termine der nächsten 7–45 Tage prüfen, fehlende der nächsten 90 Tage ergänzen: Gesetze/Preise, EZB, Feiertage, Ferien, Zeitumstellung, Sport, Shopping-Tage, Steuerfristen, Wetter) · Nachrichten mit Alltags-/Geldbezug (48 h) · internationale Vorläufer (Benchmark-Kanäle EN in `data/monitor/kanaele.csv`) · große Ereignisse aus Popkultur/Gaming/Sport/TV/Shopping 2–4 Wochen vorher („Was passiert mit der echten Wirtschaft bzw. dem Alltag, wenn alle …?“, Vorlage GTA 6) · neue Kanäle (1–2 Suchen, Treffer in `kanaele.csv`).
 4. **Jedes Signal bewerten** (Raster unten); Themen-Signale als Zeile in `data/trends/trend-log.csv`, auch verworfene; Monitor-Läufe ohne auffällige Kanäle nicht loggen; Signale aus dem Log nicht doppelt bewerten.
-5. **Vorschlagen nur bei Score ≥ 70 und ohne K.-o.:** oben in `docs/trends/vorschlaege.md`: Titel als Frage, Rubrik, Score mit Kurzbegründung, Quelle, **spätestes Posting-Datum**, Umsetzung (eigenständig, keine Kopie, im Simulierbar-Format: eine klare Modellrechnung mit konkreten Fällen, Ergebnis in Euro, Hook-Frage, Denkfalle, Rennen mit Zählern, zwei Wendungen; Sperrlisten beachten; **kein „1.000 Lebensläufe“-/„1.000 simulierte …“-Merkmal**). Bei passenden Themen zusätzlich als Idee in `data/ideen/geld-duell.csv` bzw. `testlauf.csv` mit `typ` = `news` bzw. `saisonal`.
+5. **Vorschlagen nur bei Score ≥ 70 und ohne K.-o.:** oben in `docs/trends/vorschlaege.md`: Titel als Frage, Rubrik, Score mit Kurzbegründung, Quelle, **spätestes Posting-Datum**, Umsetzung (eigenständig, keine Kopie, im Simulierbar-Format: eine klare Modellrechnung mit konkreten Fällen, Ergebnis in Euro, Hook-Frage, Denkfalle, Rennen mit Zählern, zwei Wendungen; keine 1:1-Kopie (die Sperrlisten sind seit 02.11. abends entfallen); **kein „1.000 Lebensläufe“-/„1.000 simulierte …“-Merkmal**). Bei passenden Themen zusätzlich als Idee in `data/ideen/geld-duell.csv` bzw. `testlauf.csv` mit `typ` = `news` bzw. `saisonal`.
 6. **Regel-Check jeden Montag:** „Released/Effective“-Datum der Community Guidelines (tiktok.com/community-guidelines/en), CRP-Bedingungen EWR, Startseite der Creator Academy; Änderung → Vorschlag Typ `regel` (immer, ohne Score).
 7. [[Stand und nächste Schritte]] nur bei neuen Vorschlägen oder Regeländerungen ergänzen (eine Zeile).
 8. Committen „Trend-Radar JJJJ-MM-TT“, auf `main` pushen.

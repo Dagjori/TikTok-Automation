@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: hirn/
 tags: [konto/gemeinsam, index, moc]
+cssclasses: [konto-gemeinsam, typ-index]
 ---
 
 # Index: das Hirn von TikTok Automation
@@ -13,14 +14,18 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 
 ## Schnellstart für eine neue Sitzung
 1. **Was steht an?** → [[Stand und nächste Schritte]]
-2. **Welcher Account?** → Zweig unten wählen und **nur dessen** Notizen lesen.
-3. **Video bauen?** → Überblick des Accounts, dann die dort verlinkten Skill-Notizen und den Skill unter `.claude/skills/`.
-4. **Neue Regel oder Entscheidung?** → Heimat-Notiz ändern, dann [[Entscheidungen Log]].
+2. **Welche Regeln gelten?** → [[Regelwerk]] (gemeinsam), [[Regelwerk Simulierbar]], [[Regelwerk Account 2]]
+3. **Welcher Account?** → Zweig unten wählen und **nur dessen** Notizen lesen.
+4. **Video bauen?** → Überblick des Accounts, dann die dort verlinkten Skill-Notizen und den Skill unter `.claude/skills/`.
+5. **Neue Regel oder Entscheidung?** → Heimat-Notiz ändern, dann [[Entscheidungen Log]].
 
 ## Gemeinsam (`01-Projekt`)
 | Notiz | Inhalt |
 |---|---|
-| [[Rolle und Kommunikation]] | Rolle von Claude, Antwortschema, Rangfolge |
+| [[Regelwerk]] | **alle gemeinsamen Regeln auf einer Seite**, mit Änderungen seit 02.11. abends |
+| [[Claude-Chat-Workflow]] | täglicher Ablauf: 10 Ideen, 2 wählen, Skript, Übergabe |
+| [[Lernschleife und Insights]] | tägliche Auswertung der Zahlen, Lernstand, Vorschläge mit Freigabe |
+| [[Rolle und Kommunikation]] | Rolle von Claude, Antwortschema, anklickbare Fragen, Rangfolge |
 | [[Arbeitsregeln und Sicherheit]] | Nichts ohne Auftrag, öffentliches Repo, Geheimnisse, Recherche, Gedächtnis |
 | [[Kanäle und Ziele]] | beide Kanäle im Überblick, Ziele, Kennzahlen |
 | [[CRP Creator Rewards Program]] | Bedingungen, Ausschlüsse, Rechnung |
@@ -37,8 +42,10 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 ## Account 1 `@simulierbar` (`02-Simulierbar`)
 | Notiz | Inhalt |
 |---|---|
+| [[Regelwerk Simulierbar]] | **alle Regeln von Account 1 auf einer Seite** |
+| [[Befehl Ideen und Skripte Simulierbar]] | Befehle an Claude Chat (Ideen, Skripte) |
 | [[Account Simulierbar Überblick]] | Einstieg: Nische, Marke, Ziele |
-| [[Maßstab Simulierbar]] | die 4 Vorbildvideos, 12 Gesetze, 20-Punkte-Prüfliste |
+| [[Maßstab Simulierbar]] | die 4 Vorbildvideos, 12 Gesetze, 23-Punkte-Prüfliste |
 | [[Videoaufbau Simulierbar]] | feste Reihenfolge, Dynamik, Layout, Untertitel |
 | [[Stile 17 bis 21]] | die fünf erlaubten Stile |
 | [[Licht und Atmosphäre Simulierbar]] | Licht, Dunst, Stimmung |
@@ -47,13 +54,16 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 | [[Technik und Szenenbau Simulierbar]] | Baukasten, Befehle, Render |
 | [[Prüfung und Abnahme Simulierbar]] | `massstab.py`, Sichtprüfung |
 | [[Konkurrenz und Themen Simulierbar]] | Nische, Markt, Konkurrenzzahlen |
-| [[Sperrliste und Auswahlregeln Simulierbar]] | gesperrte Themen, Auswahl, Finanzregeln |
+| [[Auswahl- und Finanzregeln Simulierbar]] | gültige Auswahl-, Finanz- und Ausschlussregeln, Zahlen 2026 |
+| [[Sperrliste und Auswahlregeln Simulierbar]] | **veraltet (Archiv):** alte Sperrliste |
 | [[Themenplan Simulierbar]] | 30-Tage-Plan |
 
 ## Account 2 `@stelldirvor.pov` (`03-stelldirvor-pov`)
 | Notiz | Inhalt |
 |---|---|
-| [[Account stelldirvor.pov Überblick]] | Einstieg: Steckbrief, 11 Regeln, Ablauf je Video |
+| [[Regelwerk Account 2]] | **alle Regeln von Account 2 auf einer Seite** |
+| [[Befehl Ideen und Skripte Account 2]] | Befehle an Claude Chat (Ideen, Skripte) |
+| [[Account stelldirvor.pov Überblick]] | Einstieg: Steckbrief, Regeln, Ablauf je Video |
 | [[Format Account 2 Lunar]] | das Referenzformat in einem Blick |
 | [[Ablauf Account 2]] | 80-s-Zeitplan, Sätze, Anzeige, Abspann |
 | [[Design Account 2]] | Maße, Schrift, Farben (gemessen) |
@@ -69,6 +79,10 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 |---|---|
 | [[Recherche-Methode und Grenzen]] | was erlaubt ist, was TikTok ohne Login zeigt |
 | [[Simulation-Trendanalyse-2026-11-02]] | Auswertung der „simulation“-Kanäle und Muster |
+| `Insights JJJJ-MM-TT` | tägliche Auswertung der eigenen Zahlen (entsteht ab 03.11.) |
+
+## Farben
+[[Farbcode]]: Grün = Account 1, Violett = Account 2, Blau = gemeinsam, Rot = Regelwerk, Türkis = Claude Chat, Pink = Lernschleife.
 
 ## Vorlagen (`05-Vorlagen`)
 [[Vorlage Notiz]] · [[Vorlage Entscheidung]] · [[Vorlage Recherche]] · [[Vorlage Video-Projekt]]

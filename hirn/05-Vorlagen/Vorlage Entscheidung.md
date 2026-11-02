@@ -5,6 +5,7 @@ status: entwurf
 datum: JJJJ-MM-TT
 quelle: 
 tags: [konto/gemeinsam, vorlage]
+cssclasses: [konto-gemeinsam, typ-entscheidung]
 ---
 
 # Entscheidung: Titel

@@ -2,22 +2,30 @@
 """Prüft die messbaren Punkte der Prüfliste aus .claude/skills/simulierbar-video/massstab.md §11 und gibt eine Tabelle ja/nein aus.
 
 Aufruf (im Ordner pipeline/):
-  python3 qc/massstab.py projekte/<name>                      Standard-Profil „ben“ (Stimme Ben, Original-Einstellungen)
+  python3 qc/massstab.py projekte/<name>                      Standard-Profil „ben“ (Stimme Ben, Original-Einstellungen; Tempo-Profil seit 02.11.2026 abends)
+  python3 qc/massstab.py projekte/<name> --profil ben_alt     bisheriges Ben-Profil (130–170 Wörter, 1,9–2,4 W/s), veraltet, nur für ältere Videos
   python3 qc/massstab.py projekte/<name> --profil massstab    Zielbereiche der Vorbilder (2,5–2,9 W/s usw.)
   python3 qc/massstab.py projekte/<name> --ziel tempo=2.0:2.5 --ziel woerter=140:180 --ziel satzpause_max=0.7
   python3 qc/massstab.py projekte/<name> --json               maschinenlesbar
+Tests: python3 qc/massstab_test.py
 
 Liest: skript.json, audio/timing.json (sonst audio/timing_schaetzung.json, dann als „geschätzt“ markiert),
        audio/ereignisse.json (schreibt render.js aus dem Ereignis-Protokoll der Bausteine), szene.js.
 Exit-Code 1, wenn ein Pflichtpunkt „nein“ ist (Kennzahlen mit Zielbereich zählen als Pflicht, Hinweise nicht).
 
-Hinweis zu den Zielbereichen (Stand 31.10.2026): Die Stimme „Ben“ läuft mit den gespeicherten Original-Einstellungen
-von ElevenLabs (Wunsch des Inhabers). Gemessen: ca. 2,0 Wörter/s, Satzpausen 0,5–0,7 s. Deshalb prüft das Standard-
-Profil Tempo, Satzpausen und Wortzahl gegen die Ben-Werte; die Werte der Vorbilder stehen in der Spalte „Maßstab“.
+Hinweis zu den Zielbereichen: Die Stimme „Ben“ läuft mit den gespeicherten Original-Einstellungen von ElevenLabs
+(Wunsch des Inhabers, kein künstliches Beschleunigen). Entscheidung des Inhabers 02.11.2026 abends: Das Tempo ist die Mitte aus
+dem früheren Ben-Profil (130–170 Wörter, ca. 2,0 W/s) und den Vorbildern (170–220 Wörter, 2,5–2,9 W/s): 150–190 Wörter bei
+65–80 s, Ziel ca. 2,3 W/s, Spanne 2,2–2,5 W/s; es muss flüssig und natürlich klingen (Qualität vor Tempo: kürzen statt
+beschleunigen). Satzpausen: Richtwert 0,35–0,6 s als Median der HÖRBAREN Stille (12d2, Hinweis, aus audio/stimme.mp3);
+die Alignment-Zeiten aus timing.json sind im Schnitt ca. 0,1 s kürzer als die hörbare Stille, deshalb bleibt 12d (Pflicht,
+max. 0,8 s) auf den Wortzeiten. Die Werte der Vorbilder stehen in der Spalte „Maßstab“.
 """
 import json
 import re
+import shutil
 import statistics
+import subprocess
 import sys
 from pathlib import Path
 
@@ -26,8 +34,12 @@ SCHLUSS = "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare."
 SCHLUSS_KONTO = {"stelldirvor": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare."}
 
 PROFILE = {
-    # Stimme Ben, Original-Einstellungen (Entscheidung 31.10.)
-    "ben": {"tempo": (1.9, 2.4), "satzpause_max": 0.8, "woerter": (130, 170), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
+    # Stimme Ben, Original-Einstellungen (Entscheidung 31.10.); Tempo seit 02.11.2026 abends (Entscheidung Inhaber): Mitte aus
+    # Ben-Profil (130–170 Wörter, ca. 2,0 W/s) und Vorbildern (170–220, 2,5–2,9 W/s) = 150–190 Wörter, Ziel ca. 2,3 W/s.
+    # satzpause_median (hörbare Stille, Hinweis) = Richtwert „nicht gehetzt“; satzpause_max (Pflicht) = Obergrenze auf den Wortzeiten.
+    "ben": {"tempo": (2.2, 2.5), "satzpause_max": 0.8, "satzpause_median": (0.35, 0.6), "woerter": (150, 190), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
+    # VERALTET seit 02.11.2026 abends: bisheriges Ben-Profil (31.10.); nur, um ältere Videos nachzumessen.
+    "ben_alt": {"tempo": (1.9, 2.4), "satzpause_max": 0.8, "woerter": (130, 170), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
     # Vorbilder K1–K4 (.claude/skills/simulierbar-video/massstab.md §2)
     "massstab": {"tempo": (2.5, 2.9), "satzpause_max": 0.4, "woerter": (170, 220), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
 }
@@ -43,6 +55,12 @@ KOMMA = re.compile(r"[,;:–—][\"“”»«’]*$")
 # Bild-Ereignisse, die für „Lücke ohne neues Bild-Ereignis“ nicht zählen
 NICHT_BILD = {"untertitel", "chip-weg", "schleife"}
 NICHT_KAMERA = {"folgen", "atmen"}
+# Erlaubte Stile für Simulierbar (Inhaber 02.11.2026 abends): 1–15 und 17–21 (Qualitätslatte per Sichtprüfung, siehe stile.md).
+# Stil 16 (Lunar-POV) gehört ausschließlich zu Account 2 (@stelldirvor.pov).
+ERLAUBTE_STILE = set(range(1, 16)) | set(range(17, 22))
+# Module von Account 2: gehören nie in eine Simulierbar-Szene (Trennung der Accounts)
+ACCOUNT2_MODULE = r"stil_lunar_pov\.js|lunar_hud\.js|welt_grossstadt_dach\.js"
+STILLE = re.compile(r"silence_start: (-?[\d.]+)|silence_end: (-?[\d.]+)")
 
 
 def zahl(x, nk=2):
@@ -75,6 +93,39 @@ def satz_liste(woerter):
             saetze.append(akt)
             akt = []
     return saetze
+
+
+def stille_im_audio(audio, rauschen="-38dB", mindestens=0.12):
+    """Hörbare Stillen (ab `mindestens` s, unter `rauschen`) einer Audiodatei als [(start, ende)] mit ffmpeg silencedetect.
+    None, wenn die Datei oder ffmpeg fehlt (dann ist die Hörpause nicht messbar)."""
+    audio = Path(audio)
+    if not audio.exists() or shutil.which("ffmpeg") is None:
+        return None
+    try:
+        p = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(audio), "-af", f"silencedetect=noise={rauschen}:d={mindestens}", "-f", "null", "-"],
+                           capture_output=True, text=True, timeout=180)
+    except (OSError, subprocess.TimeoutExpired):
+        return None
+    stillen, start = [], None
+    for m in STILLE.finditer(p.stderr):
+        if m.group(1) is not None:
+            start = float(m.group(1))
+        elif m.group(2) is not None and start is not None:
+            stillen.append((start, float(m.group(2))))
+            start = None
+    return stillen
+
+
+def satzpausen_hoerbar(woerter, stillen, toleranz=0.2):
+    """Hörbare Pause nach jedem Satzende: die längste Stille, die das Fenster zwischen dem Satzende-Wort und dem nächsten Wort
+    (± `toleranz`, wegen der Alignment-Ungenauigkeit) überlappt; 0,0, wenn keine Stille gefunden wird (= gehetzt)."""
+    werte = []
+    for i in range(len(woerter) - 1):
+        if not SATZENDE.search(woerter[i]["wort"]):
+            continue
+        von, bis = woerter[i]["ende"] - toleranz, woerter[i + 1]["start"] + toleranz
+        werte.append(max((e - s for s, e in stillen if s < bis and e > von), default=0.0))
+    return werte
 
 
 def laengste_luecke(ereignisse, von, bis, mit_laufenden=True):
@@ -229,6 +280,16 @@ def pruefe(projekt, profil, extra_ziele):
     if pausen:
         pm, px = statistics.median(pausen), max(pausen)
         zeile("12d", "Pause nach Satzende", f"Median {zahl(pm)} s, max. {zahl(px)} s", f"max. ≤ {zahl(ziele['satzpause_max'], 1)} s", MASSSTAB_TEXT["satzpause"], px <= ziele["satzpause_max"] + 1e-9)
+    if "satzpause_median" in ziele and isinstance(ziele["satzpause_median"], tuple) and pausen:
+        a, b = ziele["satzpause_median"]
+        stillen = stille_im_audio(projekt / "audio" / "stimme.mp3")
+        ziel_txt = f"Median {zahl(a)}–{zahl(b)} s (Hinweis)"
+        if stillen is None:
+            zeile("12d2", "Hörbare Satzpause, nicht gehetzt (Audio)", "nicht messbar (kein audio/stimme.mp3 oder ffmpeg)", ziel_txt, "–", False, pflicht=False)
+        else:
+            hoer = satzpausen_hoerbar(woerter, stillen)
+            hm = statistics.median(hoer)
+            zeile("12d2", "Hörbare Satzpause, nicht gehetzt (Audio)", f"Median {zahl(hm)} s, max. {zahl(max(hoer))} s", ziel_txt, "–", a <= hm <= b, pflicht=False)
     if kommas:
         zeile("12e", "Pause nach Komma (Kennzahl)", f"Median {zahl(statistics.median(kommas))} s", "–", "0,25–0,3 s", True, pflicht=False)
     laenge = dauer if dauer else stimm_ende
@@ -254,15 +315,16 @@ def pruefe(projekt, profil, extra_ziele):
     funde = re.findall(r"SIMULIERBAR|new Markenleiste\(|WUERFEL|logoGross|rubrik:|stelldirvor|STELLDIRVOR|marke/account2", szene)
     zeile("15", "Kein Kanalname/Logo/Rubrik (szene.js)", "keine Fundstelle" if not funde else ", ".join(sorted(set(funde))), "keine Fundstelle", "kein Logo, keine Rubrik", not funde)
 
-    # 18b Nur erlaubte Stile für Simulierbar (Inhaber 02.11.: seriös, Licht und Atmosphäre, kein Cartoon/Clay):
-    # Stile 17–21 (Skill .claude/skills/simulierbar-video/stile.md). Pflicht für Projekte nach dem Skill
-    # (skript.json "skill": "simulierbar-video" oder Szene mit sim_atmosphaere.js), sonst Hinweis (ältere Projekte bleiben).
+    # 18b Erlaubte Stile für Simulierbar (Inhaber 02.11.2026 abends: alle Stile 1–15 und 17–21 wieder erlaubt, mit Qualitätslatte;
+    # vorher am selben Tag nur 17–21). Genau ein Hauptstil (erste Zahl in skript.json „stil“), Einschübe (13 Blaupause, 7 als HUD) stehen
+    # nach der ersten Zahl. Stil 16 Lunar-POV gehört zu Account 2. Die Qualitätslatte (stile.md) prüft Claude am Kontaktbogen, nicht hier.
+    # Pflicht für Projekte nach dem Skill (skript.json "skill": "simulierbar-video" oder Szene mit sim_atmosphaere.js), sonst Hinweis.
     nach_skill = skript.get("skill") == "simulierbar-video" or "sim_atmosphaere" in szene
     stil_nr = re.match(r"\s*(\d+)", str(skript.get("stil", "")))
-    alt_module = sorted(set(re.findall(r"stil_(?:clay|clay_welt|comic|collage|flat|lowpoly|glas)\.js|engine/iso\.js", szene)))
-    stil_ok = bool(stil_nr) and 17 <= int(stil_nr.group(1)) <= 21 and not alt_module
-    ist = (f"Stil {stil_nr.group(1)}" if stil_nr else "kein Stil in skript.json") + (f", alte Module: {', '.join(alt_module)}" if alt_module else "")
-    zeile("18b", "Stil erlaubt (17–21, Inhaber 02.11.)", ist, "17–21" + ("" if nach_skill else " (Hinweis)"), "seriös, Licht, Atmosphäre", stil_ok, pflicht=nach_skill)
+    fremd = sorted(set(re.findall(ACCOUNT2_MODULE, szene)))
+    stil_ok = bool(stil_nr) and int(stil_nr.group(1)) in ERLAUBTE_STILE and not fremd
+    ist = (f"Stil {stil_nr.group(1)}" if stil_nr else "kein Stil in skript.json") + (f", Account-2-Module: {', '.join(fremd)}" if fremd else "")
+    zeile("18b", "Stil erlaubt (1–15, 17–21; Qualitätslatte am Kontaktbogen)", ist, "1–15, 17–21" + ("" if nach_skill else " (Hinweis)"), "genau ein Stil, hochwertige Optik", stil_ok, pflicht=nach_skill)
 
     return zeilen, {"profil": profil, "ziele": ziele, "timing": "geschätzt" if geschaetzt else "echt", "protokoll": protokoll}
 

@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: .claude/skills/stelldirvor-video/design.md
 tags: [konto/stelldirvor, design, typografie]
+cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
 > Quelle: `.claude/skills/stelldirvor-video/design.md`. Diese Notiz wird mit `python3 tools/hirn_aus_skills.py` erzeugt. Änderungen bitte im Skill vornehmen, nicht hier. Bei Abweichung gilt der Skill.
@@ -63,10 +64,11 @@ Umgesetzt in `pipeline/engine/stil_lunar_pov.css` + `pipeline/engine/lunar_hud.j
 | Zeit | Titel ein 72,5–73,2 s (A) bzw. 73,0–74,1 s (S), Faktenzeile gleich danach | Titel 72,4–73,2 s, Faktenzeile 72,9–73,7 s |
 
 ## Bildaufbau und Bildcharakter
-- **Feste Ich-Perspektive von erhöhtem Standpunkt** (Balkon, Dachterrasse, Promenade, Kreuzung), Hochformat, Horizont bei 40–55 % der Höhe, das Ereignis im oberen Drittel bis zur Hälfte (F).
-- **Vordergrund-Element** im unteren Viertel (F): Holzgeländer (Handlauf bei 78 %, unterer Riegel bei 93 % Höhe), Metallgeländer, Betonbrüstung mit Blumenkasten, Geländer an der Kreuzung. U: `vordergrund()` mit `abstand` ≈ 3 m und Augenhöhe 1,6 m bringt den Handlauf auf ≈ 75 %.
-- **Low-Poly-Welt, flach schattiert, filmisch beleuchtet** (F): keine Fotorealistik, aber dichter Detailreichtum (Wald aus Tausenden Bäumchen, Häuser mit Fenstern, Rauch aus Schornsteinen, Wasser mit Wellen, viele kleine Menschen und Autos, Vögel).
-- **Alltag (F):** mittlere Helligkeit 80–150 (Mittel ≈ 115 von 255), Kontrast (Standardabweichung) 41–58, mittlere Sättigung 24–36 → leicht entsättigt, dunstig, nie knallig. Himmel oben z. B. #8498B6, #B4B3BD, #A0ADC5.
+- **Ich-Perspektive von einem festen Standpunkt, passend zur Welt** (Regel des Inhabers 02.11. abends; ersetzt „immer erhöht von Balkon, Dachterrasse, Promenade, Kreuzung“): Die Referenzen standen erhöht (F), wir wählen den Standpunkt je Thema und **wechseln ihn von Video zu Video**: Strandblick aufs Meer, Bootsdeck, Waldlichtung, Gipfel oder Grat, Straße, Dünenkamm, Eisfläche, Uferkante, Brücke, Gondel, Kraterrand, Aussichtsterrasse. Nicht immer „aus dem Fenster“. Katalog: [[Themen und Plan Account 2]] §2. Hochformat; die Kamera darf langsam fahren, schwenken und zoomen ([[Licht und Effekte Account 2]] §4), eine durchgehende Einstellung.
+- **Bildaufteilung als Richtwert, kein Muss** (F aus den Referenzen: Horizont bei 40–55 % der Höhe, das Ereignis im oberen Drittel bis zur Hälfte). Meer, Gebirge, Weltraum dürfen den Horizont tiefer oder höher legen; die drei Textebenen unten bleiben lesbar (Zonen siehe unten), das Ereignis liegt nicht hinter dem Text.
+- **Vordergrund-Element** zum Standpunkt passend (F aus den Referenzen: Holzgeländer mit Handlauf bei 78 %, unterer Riegel bei 93 % Höhe, Metallgeländer, Betonbrüstung mit Blumenkasten): Reling, Felskante, Zaun, Dünenkamm, Eisrand, Uferstein, Handlauf, Fensterlaibung. Es verankert das Ich-Gefühl und ist eine Empfehlung; ohne Element zeigt der untere Bildrand Boden oder Wasser, nie eine leere Fläche. U: `vordergrund()` kennt bisher holz, metall, glas, beton, fenster (`abstand` ≈ 3 m, Augenhöhe 1,6 m bringt den Handlauf auf ≈ 75 %); weitere Arten (Reling, Fels, Eis) gehören in den Erstbau der jeweiligen Welt.
+- **Low-Poly-Welt, flach schattiert, filmisch beleuchtet** (F): keine Fotorealistik, aber dichter Detailreichtum (Wald aus Tausenden Bäumchen, Häuser mit Fenstern, Rauch aus Schornsteinen, Wasser mit Wellen, viele kleine Menschen und Autos, Vögel). Dichte und Bewegung bleiben die Latte, auch wenn die Welt Natur statt Stadt ist (Gräser und Wellen bewegen sich, Tiere und Vögel leben, Licht wandert).
+- **Alltag (F):** mittlere Helligkeit 80–150 (Mittel ≈ 115 von 255), Kontrast (Standardabweichung) 41–58, mittlere Sättigung 24–36 → leicht entsättigt, dunstig, nie knallig. Himmel oben z. B. #8498B6, #B4B3BD, #A0ADC5. Diese Werte stammen aus Tagesszenen der Referenzen; **die Tageszeit wechselt von Video zu Video** (Tag, Sonnenauf-/untergang, Nacht, [[Licht und Effekte Account 2]] §1), Dämmerung und Nacht sind dunkler und kühler bzw. wärmer, bleiben aber lesbar (Titel, Anzeige, Satz mit Hof) und nie knallig.
 - **Vignette (F):** Bildrand ≈ 0,80–0,82 × Bildmitte im oberen Drittel. U: `.lp-vignette` (HTML), `post.vignette = 0`.
 - **Körnung (F):** nicht messbar (Differenz zweier Standbilder 0,05 Graustufen). U: `koernung ≤ 0,01` nur gegen Banding.
 - **Schärfe (F):** Vordergrund scharf, Ferne nur durch Dunst weicher; nach dem Höhepunkt ist das ganze Bild weich (Laplace-Mittel 0,7–3 statt 7–18).

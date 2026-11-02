@@ -1,15 +1,19 @@
 ---
 typ: plan
 konto: simulierbar
-status: aktuell
+status: veraltet
 datum: 2026-11-02
 quelle: data/plan/30-tage.csv, data/plan/simulierbar-plan.json, data/plan/posting_zeiten.json, tools/plan_pdf.mjs, CLAUDE.md §9, .claude/skills/simulierbar-video/themen.md §4 §7 §9
-tags: [konto/simulierbar, plan, 30-tage, reserve, termine, priorität]
+tags: [konto/simulierbar, plan, 30-tage, reserve, termine, priorität, archiv, veraltet]
+cssclasses: [konto-simulierbar, typ-plan]
 ---
 
 # Themenplan Simulierbar
 
-Der 30-Tage-Plan ist die **Reihenfolge**, Produktion auf Zuruf des Inhabers (kein Autopilot, Entscheidung 31.10.); der Rhythmus ist genau 2 Videos/Tag für den nächsten Tag ([[Produktion Rhythmus und Modelle]]). Die Daten selbst liegen im Repo und werden hier **nicht kopiert**, nur beschrieben. Allgemeine Planlogik beider Accounts: [[Pläne und Kalender]]. Auswahlregeln und Sperren: [[Sperrliste und Auswahlregeln Simulierbar]].
+> [!warning] Veraltet seit 02.11.2026 (Entscheidung des Inhabers), nur Archiv
+> Es gibt **keinen 30-Tage-Plan mehr**. Die Dateien `data/plan/30-tage.csv`, `data/plan/simulierbar-plan.json` und das Plan-PDF `docs/plan/30-tage-plan.pdf` bleiben als Archiv im Repo (nicht gelöscht), steuern aber nichts mehr. Themen entstehen täglich neu: Der Inhaber bekommt 10 Videoideen (Ideen-Studio/Claude Chat), wählt 2 für den nächsten Tag, das Skript entsteht dort; Claude Code beginnt mit „Skript liegt vor“ ([[Claude-Chat-Workflow]], [[Befehl Ideen und Skripte Simulierbar]], [[Videoaufbau Simulierbar]]). Auch die Rubrik ALLTAG, die Sperrliste, die Stil-Zuordnung je Zeile (nur 17–21) und die Regel „mind. 50 von 60 GELD“ gelten nicht mehr. Gültige Auswahl- und Finanzregeln, Zahlen und Termine: [[Auswahl- und Finanzregeln Simulierbar]]. Alles unten ist der Stand vom 02.11. vor den Neuregeln.
+
+Der 30-Tage-Plan war die **Reihenfolge**, Produktion auf Zuruf des Inhabers (kein Autopilot, Entscheidung 31.10.); der Rhythmus ist genau 2 Videos/Tag für den nächsten Tag ([[Produktion Rhythmus und Modelle]]). Die Daten selbst liegen im Repo und werden hier **nicht kopiert**, nur beschrieben. Allgemeine Planlogik beider Accounts: [[Pläne und Kalender]]. Auswahlregeln und Sperren: [[Sperrliste und Auswahlregeln Simulierbar]].
 
 ## Dateien
 | Datei | Inhalt |
@@ -39,7 +43,7 @@ Der 30-Tage-Plan ist die **Reihenfolge**, Produktion auf Zuruf des Inhabers (kei
 - Die 7 ALLTAG-Videos (mit Euro-Ergebnis): Parkhaus oder Parkplatz suchen (05.11.), Selbst umziehen oder Umzugsfirma (12.11.), Winterreifen selbst wechseln oder Werkstatt (13.11.), Lebensmittel liefern lassen oder selbst einkaufen (20.11.), Haare selbst schneiden oder Friseur (22.11.), Selbst streichen oder Maler (29.11.), Putzhilfe oder selbst putzen (01.12.).
 - **Nummerierung #n** (in `themen.md`, Termin-Tabelle): laufend ab 03.11. mittag = #1 (Taxi), 03.11. abend = #2; #n = 2 × (Tag ab 03.11.) + 1 (mittag) bzw. + 2 (abend).
 
-## Posting-Zeiten (Startwerte, Entscheidung 01.11.)
+## Posting-Zeiten (Startwerte, Entscheidung 01.11.; weiterhin gültig)
 Beide Accounts gleich, je 2 Videos/Tag: **Mo–Fr 12:30 (mittag) und 19:30 (abend), Sa–So 09:30 und 19:30** (`data/plan/posting_zeiten.json`, Aufruf `--zeit auto:JJJJ-MM-TT:mittag|abend`). Nach 14 Tagen (16.11.) mit Zahlen aus TikTok Studio nachjustieren; Reihenfolge Wochen 3–5 dann ebenfalls. Hinweis: Die Status-Spalte der 6 alten Zeilen nennt noch die früheren Zeiten (12:00 / 20:00).
 
 ## Beispiele (gekürzt aus dem Plan)
@@ -110,5 +114,5 @@ Offene Radar-Vorschläge mit Terminbezug (Stand 02.11., Quelle `docs/trends/vors
 - Wichtig: Der Plan ist Reihenfolge, kein Autopilot; fertige Videos bleiben unverändert.
 
 ## Siehe auch
-- [[Sperrliste und Auswahlregeln Simulierbar]] · [[Konkurrenz und Themen Simulierbar]] · [[Stile 17 bis 21]] · [[Videoaufbau Simulierbar]] · [[Account Simulierbar Überblick]]
+- [[Auswahl- und Finanzregeln Simulierbar]] (gültig) · [[Sperrliste und Auswahlregeln Simulierbar]] (Archiv) · [[Konkurrenz und Themen Simulierbar]] · [[Stile 17 bis 21]] · [[Videoaufbau Simulierbar]] · [[Account Simulierbar Überblick]]
 - [[Pläne und Kalender]] · [[Cockpit]] · [[Trend-Radar]] · [[Produktion Rhythmus und Modelle]] · [[Plattformregeln und Posting]]

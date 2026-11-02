@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: docs/18-render-pc.md, CLAUDE.md §4
 tags: [konto/gemeinsam, render, windows, gpu]
+cssclasses: [konto-gemeinsam, typ-anleitung]
 ---
 
 # Render-Dienst auf dem Windows-PC

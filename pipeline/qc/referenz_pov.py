@@ -5,10 +5,16 @@ feste Ich-Perspektive, keine Stimme, Titelfrage, Messwert-Anzeige, kursive Sätz
 Aufruf:  python3 qc/referenz_pov.py projekte/<name> [--video out/<name>/<name>.mp4] [--json]
 Daten:   out/<name>/ereignisse.json (Ereignis-Protokoll der Szene, von render.js geschrieben) und – falls vorhanden – das MP4 (Länge, Lautheit,
          Lautheitsverlauf mit ffmpeg/ffprobe). Exit-Code 1, wenn ein Pflichtpunkt „nein“ ist.
-Prüft:   Länge 80 ± 0,5 s · Titel nur in 0–4,4 s · Messwert-Anzeige vorhanden, Zahl ändert sich, Etikett wechselt 2–4×, „HIER“ beim Höhepunkt ·
-         keine Stimme · kein „5 Sekunden“-Rahmen in Text, Skript und Szene · 12–18 Sätze mit 3–9 Wörtern,
-         jeder mindestens 3 s sichtbar, keine Überlappung der Sätze · keine Sticker, Chips, Karaoke, Folgen-Aufruf, Zähler-Ringe im Protokoll ·
-         Abspann ab 72 s mindestens 7 s · Lautheit −14 ± 1 LUFS integriert · Verlauf: Start leiser als Höhepunkt (55–65 s), Abspann leise.
+Prüft:   21 Pflichtpunkte: Länge 80 ± 0,5 s · Titel nur in 0–4,4 s · Messwert-Anzeige vorhanden, Zahl ändert sich, Etikett wechselt 2–4×,
+         „HIER“ beim Höhepunkt · keine Stimme · 12–18 Sätze mit 3–9 Wörtern, jeder mindestens 3 s sichtbar, keine Überlappung der Sätze ·
+         keine Sticker, Chips, Karaoke, Folgen-Aufruf, Zähler-Ringe im Protokoll · keine harten Schnitte (Protokoll und Bildvergleich Bild für Bild;
+         langsame Fahrt, Schwenk und Zoom sind erlaubt) · Abspann ab 72 s mindestens 7 s · Lautheit −14 ± 1 LUFS integriert ·
+         Verlauf: Start leiser als Höhepunkt (55–65 s), Abspann leise.
+         Dazu Hinweise (nicht Pflicht, Ausgabe „nein (Hinweis)“, Exit-Code bleibt 0), seit 02.11.2026 abends:
+         10 Bewegung (kein Leerlauf in 2,5-s-Fenstern) · 10b Einzelbild-Flackern · 11 Zeitraffer im Skript ausgewiesen und Anzeige läuft mit ·
+         12 Anzeige ohne unbegründete Sprünge.
+Nr. 9 („Kein 5-Sekunden-Rahmen“) entfällt seit 02.11.2026 abends (Inhaber: 5-Sekunden-Themen sind erlaubt); die Nummern bleiben stabil.
+Bildanalyse (5b, 10, 10b) braucht numpy und ffmpeg; ohne numpy bleibt 5b beim Protokoll, 10/10b entfallen mit Hinweis.
 """
 import json
 import re
@@ -16,7 +22,22 @@ import subprocess
 import sys
 from pathlib import Path
 
+try:
+    import numpy as np
+except ImportError:  # Bildanalyse entfällt, Protokollprüfungen laufen weiter
+    np = None
+
 WURZEL = Path(__file__).resolve().parent.parent
+
+# Bildanalyse: Graustufen, Faktor 0,1 (108 × 192), 30 Bilder/s. Schwellen sind Startwerte (S), gemessen am Video „Eiszeit Toronto“ (02.11.2026):
+# Einzelbild-Sprünge dort 4–9, Schnitt-/Blitz-Sprung 9, ruhige Phasen (Inhaber: „es wird gewartet“) 1,3–2,3 je 2,5 s, belebte Phasen 3,3–25.
+BILD_B, BILD_H, FPS = 108, 192, 30
+SCHNITT_MIN, SCHNITT_FAKTOR = 6.0, 8.0     # Bild-zu-Bild-Differenz (Grauwerte): absolut und gegenüber dem Umfeld (Median ± 0,5 s)
+BEWEGUNG_FENSTER, BEWEGUNG_SCHRITT, BEWEGUNG_MIN = 2.5, 0.5, 2.5   # Sekunden; mittlere Grauwert-Differenz zwischen Anfang und Ende des Fensters
+# Bild-Ausnahmen für die Bewegungsmessung (1080 × 1920): Anzeige links, Satz unten, Titelfrage (nur bis 4,6 s). Text zählt nicht als Bewegung der Welt.
+MASKEN = {"anzeige": (40, 880, 760, 1050), "satz": (100, 1160, 980, 1340), "titel": (80, 400, 1000, 760)}
+# Effekte, die ihren harten Bildsprung selbst mitbringen (Protokoll-Name enthält eines der Wörter) → in ihrem Zeitfenster kein „Schnitt“
+HARTE_EFFEKTE = re.compile(r"blitz|weiss|weiß|staubwand|einschlag|druckwelle|knall|stoss|stoß|kippen|aufhellung|flash|explosion|glas", re.I)
 
 
 def ffprobe_dauer(video):
@@ -47,6 +68,111 @@ def mittel_s(verlauf, a, b):
     return sum(w) / len(w) if w else None
 
 
+def bildfolge(video):
+    """Alle Bilder als Graustufen-Array (n, 192, 108) uint8 oder None (ohne numpy/ffmpeg-Fehler)."""
+    if np is None or not Path(video).exists():
+        return None
+    r = subprocess.run(["ffmpeg", "-v", "error", "-i", str(video), "-an", "-vf", f"fps={FPS},scale={BILD_B}:{BILD_H}:flags=area,format=gray", "-f", "rawvideo", "-"], capture_output=True)
+    n = len(r.stdout) // (BILD_B * BILD_H)
+    if r.returncode != 0 or n < 2:
+        return None
+    return np.frombuffer(r.stdout[: n * BILD_B * BILD_H], dtype=np.uint8).reshape(n, BILD_H, BILD_B)
+
+
+def schritte(a):
+    """d[i] = mittlere Grauwert-Differenz zwischen Bild i und Bild i+1 (blockweise, spart Speicher)."""
+    d = np.empty(len(a) - 1, dtype=np.float32)
+    for k in range(0, len(d), 300):
+        m = min(300, len(d) - k)
+        x = a[k + 1: k + 1 + m].astype(np.int16) - a[k: k + m].astype(np.int16)
+        d[k: k + m] = np.abs(x).mean(axis=(1, 2))
+    return d
+
+
+def ausnahme_fenster(ev):
+    """Zeitfenster [von, bis], in denen ein harter Bildsprung gewollt ist: Kamera-Stoß/Kippen und Effekte aus HARTE_EFFEKTE."""
+    fenster = []
+    for e in ev:
+        name = str(e.get("name", "")) + " " + str(e.get("klang", "")) if e.get("typ") == "effekt" else ""
+        if (e.get("typ") == "kamera" and e.get("art") in ("stoss", "kippen")) or (name and HARTE_EFFEKTE.search(name)):
+            fenster.append((e["t"] - 0.3, e["t"] + max(float(e.get("dauer") or 0), 0.8) + 1.0))
+    return fenster
+
+
+def harte_schnitte(a, ev):
+    """Bildzeitpunkte (s) mit hartem Schnitt: Sprung ≥ SCHNITT_MIN und ≥ SCHNITT_FAKTOR × Umfeld, der danach bleibt (kein Einzelbild-Aussetzer),
+    außerhalb gewollter Effekte. Langsame Fahrten, Schwenks und Zooms ändern das Bild stetig (kleine Bild-zu-Bild-Differenz) und fallen durch."""
+    d = schritte(a)
+    n = len(d)
+    frei = ausnahme_fenster(ev)
+    treffer = []
+    for i in range(3, n - 3):
+        if d[i] < SCHNITT_MIN:
+            continue
+        umfeld = np.concatenate([d[max(0, i - 15): i], d[i + 1: i + 16]])
+        if d[i] < SCHNITT_FAKTOR * max(float(np.median(umfeld)), 0.3):
+            continue
+        vor = a[i - 2: i + 1].astype(np.float32).mean(axis=0)
+        nach = a[i + 1: i + 4].astype(np.float32).mean(axis=0)
+        if float(np.abs(nach - vor).mean()) < 0.5 * d[i]:
+            continue
+        t = (i + 1) / FPS
+        if any(v <= t <= b for v, b in frei):
+            continue
+        if not treffer or t - treffer[-1] > 0.3:
+            treffer.append(round(t, 2))
+    return treffer
+
+
+def einzelbild_flackern(a, ev):
+    """Zeitpunkte, an denen genau ein Bild aus der Reihe fällt (Sprung hin und gleich zurück): Render-Aussetzer, z. B. springende Spiegelung."""
+    d = schritte(a)
+    frei = ausnahme_fenster(ev)
+    zeiten = []
+    for i in range(2, len(d) - 3):
+        if d[i] >= 4.0 and d[i + 1] >= 4.0 and float(np.abs(a[i + 2].astype(np.int16) - a[i].astype(np.int16)).mean()) <= 0.35 * min(d[i], d[i + 1]):
+            t = (i + 1) / FPS
+            if not any(v <= t <= b for v, b in frei):
+                zeiten.append(round(t, 2))
+    return zeiten
+
+
+def bewegung_fenster(a):
+    """[(Start s, mittlere Differenz)] für Fenster von BEWEGUNG_FENSTER s (Schritt BEWEGUNG_SCHRITT) zwischen 0 und 70 s. Text-Bereiche sind maskiert."""
+    s = BILD_B / 1080.0
+
+    def maske(*namen):
+        m = np.ones((BILD_H, BILD_B), dtype=bool)
+        for n in namen:
+            x0, y0, x1, y1 = MASKEN[n]
+            m[int(y0 * s): int(y1 * s) + 1, int(x0 * s): int(x1 * s) + 1] = False
+        return m
+    m_titel, m_text = maske("anzeige", "satz", "titel"), maske("anzeige", "satz")
+    res, t0 = [], 0.0
+    while t0 + BEWEGUNG_FENSTER <= 70.0 + 1e-9 and int(round((t0 + BEWEGUNG_FENSTER) * FPS)) < len(a):
+        i, j = int(round(t0 * FPS)), int(round((t0 + BEWEGUNG_FENSTER) * FPS))
+        m = m_titel if t0 < 4.6 else m_text
+        res.append((round(t0, 2), float(np.abs(a[j].astype(np.int16) - a[i].astype(np.int16))[m].mean())))
+        t0 += BEWEGUNG_SCHRITT
+    return res
+
+
+def luecken(fenster, grenze):
+    """Fasst aufeinanderfolgende Fenster unter der Grenze zu Zeitbereichen zusammen: [(von, bis, Minimum)]."""
+    out, akt = [], None
+    for t0, w in fenster:
+        if w < grenze:
+            if akt and t0 <= akt[1] - BEWEGUNG_FENSTER + BEWEGUNG_SCHRITT + 1e-6:
+                akt[1] = t0 + BEWEGUNG_FENSTER; akt[2] = min(akt[2], w)
+            else:
+                akt = [t0, t0 + BEWEGUNG_FENSTER, w]; out.append(akt)
+    return [tuple(x) for x in out]
+
+
+def zeiten_text(liste, maximal=4):
+    return ", ".join(f"{t:.1f}" for t in liste[:maximal]) + (" …" if len(liste) > maximal else "")
+
+
 def main():
     args = sys.argv[1:]
     projekt = Path(args[0]).resolve()
@@ -58,6 +184,13 @@ def main():
     erg = json.loads((WURZEL / "out" / name / "ereignisse.json").read_text(encoding="utf-8"))
     ev = erg["ereignisse"]
     zeilen = []
+    bilder = bildfolge(video) if video.exists() else None
+    skript = {}
+    if (projekt / "skript.json").exists():
+        try:
+            skript = json.loads((projekt / "skript.json").read_text(encoding="utf-8"))
+        except ValueError:
+            skript = {}
 
     def z(nr, punkt, ist, ziel, ok, pflicht=True):
         zeilen.append((nr, punkt, ist, ziel, ok, pflicht))
@@ -84,19 +217,37 @@ def main():
     z("3c", "Etikett wechselt mit der Phase", f"{wechsel}×", "2–4×", 2 <= wechsel <= 4)
     hier = [e for e in an if 52 <= e["t"] <= 68 and (str(e.get("zahl", "")).strip().upper() == "HIER" or e.get("wert") == 0)]
     z("3d", "Höhepunkt: Anzeige zeigt „HIER“ bzw. 0", f"ab {hier[0]['t']:.1f} s" if hier else "nicht gefunden", "zwischen 52 und 68 s", bool(hier))
+    # Zeitraffer und Anzeige (Hinweis 11, 12; Regel des Inhabers 02.11.2026 abends)
+    zr = skript.get("zeitraffer", None)
+    if "zeitraffer" not in skript:
+        z("11", "Zeitraffer im Skript ausgewiesen, Anzeige läuft mit", "Feld „zeitraffer“ fehlt in skript.json", "Liste {von, bis, faktor} oder \"keiner\"", False, pflicht=False)
+    elif zr in ("keiner", "keine", "echtzeit", "Echtzeit", [], None):
+        z("11", "Zeitraffer im Skript ausgewiesen, Anzeige läuft mit", "Echtzeit (keiner)", "ausgewiesen", True, pflicht=False)
+    else:
+        abschnitte = zr if isinstance(zr, list) else [zr]
+        probleme = []
+        for ab in abschnitte:
+            if not isinstance(ab, dict) or not ab.get("faktor") or ab.get("von") is None or ab.get("bis") is None:
+                probleme.append("Abschnitt ohne von/bis/faktor"); continue
+            fen = [(a, b) for a, b in zip(an, an[1:]) if ab["von"] <= a["t"] < ab["bis"] and a.get("wert") is not None and b.get("wert") is not None]
+            lauf = sum(1 for a, b in fen if a["wert"] != b["wert"]) / len(fen) if fen else 0
+            if lauf < 0.8:
+                probleme.append(f"{ab['von']}–{ab['bis']} s: Anzeige läuft nur in {lauf:.0%}")
+        z("11", "Zeitraffer im Skript ausgewiesen, Anzeige läuft mit", "; ".join(probleme)[:60] if probleme else f"{len(abschnitte)} Abschnitt(e), Anzeige läuft mit", "Faktor genannt, Zahl ändert sich in ≥ 80 % der Schritte", not probleme, pflicht=False)
+    sprung = []
+    for a, b, c in zip(an, an[1:], an[2:]):
+        if a["etikett"] == b["etikett"] == c["etikett"] and None not in (a.get("wert"), b.get("wert"), c.get("wert")):
+            s1, s2 = abs(b["wert"] - a["wert"]), abs(c["wert"] - b["wert"])
+            spanne = (max(werte) - min(werte)) or 1.0
+            if max(s1, s2) > 3 * max(min(s1, s2), 1e-9) and max(s1, s2) > 0.02 * spanne and abs(s1 - s2) > 0.02 * spanne:
+                sprung.append(c["t"] if s2 > s1 else b["t"])
+    z("12", "Anzeige ohne unbegründete Sprünge (innerhalb eines Etiketts)", f"Sprünge bei {zeiten_text(sorted(set(sprung)))} s" if sprung else "keine", "Etikettwechsel ausgenommen", not sprung, pflicht=False)
     # keine Stimme
     stimme = (projekt / "audio" / "stimme.mp3").exists()
     ms = erg.get("massstab") or {}
     z("8", "Keine Stimme, keine Untertitel", "stimme.mp3 vorhanden" if stimme else ("Untertitel gesetzt" if ms.get("untertitel") else "keine"), "keine", not stimme and not ms.get("untertitel"))
-    # kein „5 Sekunden“-Rahmen (Inhaber 02.11.)
-    muster = re.compile(r"(\b5|fünf|\bfuenf)[\s\-]*(sek|s\b)", re.I)
-    texte = [str(e.get(k, "")) for e in ev for k in ("text", "etikett", "zahl", "unter", "fakt")]
-    treffer = [x for x in texte if muster.search(x)]
-    for datei in ("skript.json", "szene.js"):
-        if (projekt / datei).exists():
-            inhalt = (projekt / datei).read_text(encoding="utf-8")
-            treffer += [f"{datei}: {m.group(0)}" for m in re.finditer(r"(\b5|fünf|fuenf)[\s\-]*sekunden", inhalt, re.I)]
-    z("9", "Kein „5 Sekunden“-Rahmen", ", ".join(sorted(set(treffer)))[:60] if treffer else "keiner", "keiner", not treffer)
+    # Nr. 9 („Kein 5-Sekunden-Rahmen“) entfällt seit 02.11.2026 abends: 5-Sekunden-Themen sind erlaubt, wenn sie sich gut simulieren lassen.
+    z("9", "Kein „5 Sekunden“-Rahmen (entfallen seit 02.11.2026)", "–", "–", True, pflicht=False)
     # Sätze
     sa = sorted([e for e in ev if e["typ"] == "satz"], key=lambda e: e["t"])
     z("4", "Anzahl Sätze", str(len(sa)), "12–18 (Ziel 14–17)", 12 <= len(sa) <= 18)
@@ -111,7 +262,27 @@ def main():
     # Verbotene Elemente
     verboten = sorted({e["typ"] for e in ev if e["typ"] in ("chip", "stempel", "sticker", "folgen", "ring", "tafel", "untertitel", "karaoke", "titel-wort", "pointe", "formel", "bilanz", "balken", "leiste", "zaehler", "uhr", "logo")})
     z("5", "Keine Sticker, Chips, Karaoke, Folgen-Aufruf, Ringe", ", ".join(verboten) if verboten else "keine", "keine", not verboten)
-    z("5b", "Keine Schnitte (eine Einstellung)", "keine Übergänge im Protokoll" if not [e for e in ev if e["typ"] in ("uebergang", "schnitt")] else "Übergang vorhanden", "keine", not [e for e in ev if e["typ"] in ("uebergang", "schnitt")])
+    # 5b: keine harten Schnitte. Langsame Fahrt, Schwenk und Zoom (typ „kamera“: fahrt, schwenk, zoom) sind erlaubt und gewollt (Inhaber 02.11.2026 abends).
+    schnitte_prot = [e for e in ev if e["typ"] in ("uebergang", "schnitt") or (e["typ"] == "kamera" and e.get("art") in ("schnitt", "cut", "uebergang"))]
+    schnitte_bild = harte_schnitte(bilder, ev) if bilder is not None else None
+    if schnitte_prot:
+        ist = f"{len(schnitte_prot)} Schnitt/Übergang im Protokoll (ab {schnitte_prot[0]['t']:.1f} s)"
+    elif schnitte_bild:
+        ist = f"{len(schnitte_bild)} harter Bildsprung bei {zeiten_text(schnitte_bild)} s"
+    elif schnitte_bild is None:
+        ist = "keine im Protokoll (Bildvergleich nicht möglich: kein MP4 oder numpy)"
+    else:
+        ist = "keine (Protokoll und Bildvergleich Bild für Bild)"
+    z("5b", "Keine harten Schnitte (Fahrt, Schwenk, Zoom erlaubt)", ist, "keine", not schnitte_prot and not schnitte_bild)
+    # 10, 10b: Bewegung (Hinweis; die Sichtprüfung in pruefung.md entscheidet)
+    if bilder is not None:
+        fen = bewegung_fenster(bilder)
+        leer = luecken(fen, BEWEGUNG_MIN)
+        z("10", "Bewegung: kein Leerlauf (Veränderung in jedem 2,5-s-Fenster)", ("Leerlauf " + ", ".join(f"{v:.1f}–{b:.1f} s ({m:.1f})" for v, b, m in leer[:3]) + (" …" if len(leer) > 3 else "")) if leer else f"kleinste Veränderung {min(w for _, w in fen):.1f}", f"≥ {BEWEGUNG_MIN:g} (Grauwerte) je Fenster, 0–70 s", not leer, pflicht=False)
+        flackern = einzelbild_flackern(bilder, ev)
+        z("10b", "Kein Einzelbild-Flackern (Render-Aussetzer)", f"{len(flackern)}× bei {zeiten_text(flackern)} s" if flackern else "keins", "keins", not flackern, pflicht=False)
+    else:
+        z("10", "Bewegung / Einzelbild-Flackern (Bildanalyse)", "nicht geprüft (kein MP4 oder numpy)", "–", False, pflicht=False)
     # Abspann
     ab = [e for e in ev if e["typ"] == "abspann"]
     z("6", "Abspann ab 72 s, mindestens 7 s", ", ".join(f"{e['t']:.1f}+{e['dauer']:.1f} s" for e in ab) or "fehlt", "t ≤ 72,05, Dauer ≥ 7", bool(ab) and ab[0]["t"] <= 72.05 and ab[0]["dauer"] >= 7.0 - 1e-6)
@@ -133,9 +304,12 @@ def main():
     print(f"Referenzformat-Prüfung · {name}")
     print(" | ".join(["Nr ", "Prüfpunkt".ljust(min(br[1], 46)), "Ist".ljust(min(br[2], 60)), "Ziel", "ok"]))
     for nr, punkt, ist, ziel, ok, pflicht in zeilen:
-        print(" | ".join([str(nr).ljust(3), punkt.ljust(min(br[1], 46)), str(ist).ljust(min(br[2], 60)), ziel, "ja" if ok else "NEIN" if pflicht else "nein (Hinweis)"]))
+        print(" | ".join([str(nr).ljust(3), punkt.ljust(min(br[1], 46)), str(ist).ljust(min(br[2], 60)), ziel, "entfällt" if nr == "9" else "ja" if ok else "NEIN" if pflicht else "nein (Hinweis)"]))
     schlecht = [x for x in zeilen if x[5] and not x[4]]
+    hinweise = [x for x in zeilen if not x[5] and not x[4]]
     print(f"\nPflichtpunkte: {sum(1 for x in zeilen if x[5] and x[4])} von {sum(1 for x in zeilen if x[5])} ja")
+    if hinweise:
+        print(f"Hinweise (nicht Pflicht, in pruefung.md Abschnitt 2 klären): {', '.join(str(x[0]) for x in hinweise)}")
     if "--json" in args:
         print(json.dumps([dict(nr=a, punkt=b, ist=str(c), ziel=d, ok=e) for a, b, c, d, e, f in zeilen], ensure_ascii=False))
     sys.exit(1 if schlecht else 0)

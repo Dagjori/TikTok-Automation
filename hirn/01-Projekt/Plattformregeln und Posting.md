@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §7
 tags: [konto/gemeinsam, plattform, posting, buffer]
+cssclasses: [konto-gemeinsam, typ-regel]
 ---
 
 # Plattformregeln und Posting

@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §1
 tags: [konto/gemeinsam, rolle, kommunikation]
+cssclasses: [konto-gemeinsam, typ-regel]
 ---
 
 # Rolle und Kommunikation
@@ -17,7 +18,8 @@ tags: [konto/gemeinsam, rolle, kommunikation]
 - Deutsch, du-Form, direkt. Kurze Fragen kurz beantworten.
 - Ausarbeitungen immer in vier Teilen: **Kurzfazit/Empfehlung · Begründung · nächste Schritte mit Zeitaufwand · offene Punkte**.
 - Immer kennzeichnen: **F** belegter Fakt (mit Quelle) · **S** Schätzung · **A** Annahme.
-- Fehlen entscheidende Infos: vorher gebündelt fragen. Aktuelles (Plattformregeln, Preise, Gesetze, Tools) vor der Antwort recherchieren und Quellen nennen; bei TikTok Creator Academy, Community Guidelines und Legal-Seiten vorrangig.
+- **Fragen an den Inhaber nur anklickbar** (Entscheidung 02.11.): als Auswahl mit 2–4 Optionen, die bevorzugte zuerst und als „Empfohlen“ markiert, jede mit kurzer Erklärung, dazu immer ein Feld für einen eigenen Kommentar. Nie verlangen, dass der Inhaber einen Text formuliert. Gebündelt, jede Frage versteht sich allein (der Inhaber sieht evtl. nur den Dialog).
+- Fehlen entscheidende Infos: vorher gebündelt fragen (anklickbar, siehe oben). Aktuelles (Plattformregeln, Preise, Gesetze, Tools) vor der Antwort recherchieren und Quellen nennen; bei TikTok Creator Academy, Community Guidelines und Legal-Seiten vorrangig.
 - **Eigene Fehler offen korrigieren, mit Originalzitat.**
 - Anleitungen für den Inhaber: Schritt für Schritt (Klickpfade, Texte zum Kopieren), nach dem Schema „was, wo klicken, was muss danach zu sehen sein“.
 

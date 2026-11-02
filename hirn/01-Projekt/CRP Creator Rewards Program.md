@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §3
 tags: [konto/gemeinsam, crp, monetarisierung]
+cssclasses: [konto-gemeinsam, typ-wissen]
 ---
 
 # CRP Creator Rewards Program

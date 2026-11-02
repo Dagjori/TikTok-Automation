@@ -1,6 +1,20 @@
-# Themen: Markt, Auswahlregeln, Sperrliste, Finanzregeln, Zahlen 2026 (Simulierbar)
+# Themen: Markt, Auswahlregeln, Finanzregeln, Zahlen 2026 (Simulierbar) · Sperrliste und Plan sind Archiv
 
-Gilt für `@simulierbar` (Skill `simulierbar-video`). Pflicht bei Themenwahl und vor jedem Produktionsstart (Konkurrenz-Check). Plan: `data/plan/30-tage.csv` (je Zeile `konkurrenz_check`, `quellen_pruefen`). Legende: **(F)** belegter Fakt mit Quelle · **(S)** Schätzung · **(A)** Annahme · **(B)** Beispielwert, wird vor der Produktion gerechnet · **prüfen** vor der Produktion klären.
+Gilt für `@simulierbar` (Skill `simulierbar-video`). **Stand 02.11.2026 abends (Entscheidungen des Inhabers):** Themen entstehen täglich neu im Ideen-Studio (10 Ideen, der Inhaber wählt 2; das Skript schreibt Claude Chat). Es gibt **keinen 30-Tage-Plan** mehr (`data/plan/30-tage.csv`, `simulierbar-plan.json`, Plan-PDF sind nur Archiv, nicht gelöscht) und **keine Sperrliste** mehr. Es gibt nur noch das Thema **GELD** (Rubrik ALLTAG entfällt); Länder sind frei. Legende: **(F)** belegter Fakt mit Quelle · **(S)** Schätzung · **(A)** Annahme · **(B)** Beispielwert, wird vor der Produktion gerechnet · **prüfen** vor der Produktion klären.
+
+## Gültigkeit der Abschnitte (seit 02.11.2026 abends)
+| Abschnitt | Status | Hinweis |
+|---|---|---|
+| §0 Markt und Nische | **gültig** (Hintergrund) | Rubriken-Satz „GELD und ALLTAG“ in Bezug auf ALLTAG veraltet: nur GELD |
+| §1 Was bei der Konkurrenz zieht | **gültig** (Hintergrund, Stand 02.11.) | Muster zur Orientierung; keine Sperre daraus |
+| §2 Auswahlregeln | **gültig, neu gefasst** | GELD 100 %, Länder frei, keine Sperrliste, keine 1:1-Kopie |
+| §3 Konkurrenz-Sperrliste | **VERALTET seit 02.11.2026 (Entscheidung Inhaber), nur Archiv** | Themen sind nicht mehr gesperrt |
+| §4 Was aus dem alten Plan wurde | **VERALTET, nur Archiv** | Plan entfällt; Modelle in `pipeline/projekte/` bleiben nutzbar |
+| §5 TikTok-Regeln für Finanzinhalte | **gültig** | Finanz- und Ausschlussregeln bleiben |
+| §6 Zahlen für Deutschland 2026 | **gültig** (für Themen mit Deutschland-Bezug) | andere Länder: eigene amtliche Quelle und Währung nennen |
+| §7 Feste Termine | **gültig als Information** | Spalte „Video“ gehört zum alten Plan (Archiv) |
+| §8 Sperrliste aus dem Maßstab | **VERALTET, nur Archiv** | |
+| §9 Weitere Hinweise | **VERALTET, nur Archiv** | Reserve, Kapazität und Planhinweise gehören zum alten Plan |
 
 ## 0. Markt und Nische (Belege, Stand 29.10.–02.11.2026)
 - **Ausgangsvideos (F, 29.10.):** 6 deutsche Simulationsvideos mit zusammen 6,04 Mio. Views (Ø 1 Mio.), 72–117 s lang: @kurzsimuliert (Regen, 2,1 Mio.), @retrodreamspace (Zigarette gegen Vape, 2,2 Mio.), @mal.angenommen (808k), @kontostand.vs (Mieten oder kaufen, 504k nach 3 Tagen), @wissentogo_de (Leasing, 298k), @unnoetig_tiefgruendig (131k). Rohdaten `data/2026-10-29_ausgangsvideos.csv`, `data/2026-10-29_kanaele.csv`.
@@ -14,7 +28,9 @@ Gilt für `@simulierbar` (Skill `simulierbar-video`). Pflicht bei Themenwahl und
 - **Recht und Steuern (später, keine Rechtsberatung):** Regelmäßige Einnahmen mit Gewinnabsicht gelten als gewerblich (Gewerbe anmelden, Gewerbesteuer-Freibetrag 24.500 €); Kleinunternehmerregel § 19 UStG: Vorjahr ≤ 25.000 €, laufendes Jahr ≤ 100.000 €. Auszahlungen kommen von TikTok Information Technologies UK Ltd. bzw. Google Ireland (Leistungsort Ausland, in DE meist nicht steuerbar; Zusammenfassende Meldung bzw. USt-IdNr. klärt der Steuerberater). Impressum § 5 DDG als Link in der Bio (höchstens 2 Klicks; Bußgeld bis 50.000 €). Nebentätigkeit im Arbeitsvertrag prüfen (im öffentlichen Dienst anzeigepflichtig). Lizenzen: ElevenLabs Free hat keine kommerzielle Lizenz; Musik nur lizenzfrei oder selbst erzeugt; Finanz-Nische nur Modellrechnung, Affiliate-Links als Werbung kennzeichnen.
 - **Seit 31.10. neue deutsche Konten im selben Format** (F, Profilseiten 02.11.): @simulierts, @alltagsduell, @geldsimuliert, @alltagsformel, @alltaginzahlen, @gegenprobe, @fabrik.neu, @durchgerechnet.de, @rechnetsichdas, @lohntsichdas. Unser Unterschied sind **neue Themen und die Qualität der animierten Welt**.
 
-## 1. Was bei der Konkurrenz zieht
+## 1. Was bei der Konkurrenz zieht (Hintergrund, keine Sperre)
+
+> Seit 02.11.2026 abends sperren diese Zahlen kein Thema mehr. Sie zeigen, was zieht, und helfen beim eigenen Winkel. Für jedes Video gilt: **keine 1:1-Kopie**.
 
 - **Aufrufe der Konkurrenz (F, öffentliche Videoseiten, abgerufen 02.11.2026):**
 
@@ -37,15 +53,20 @@ Gilt für `@simulierbar` (Skill `simulierbar-video`). Pflicht bei Themenwahl und
   3. Seit Ende Oktober sind viele kleine Konten im selben Format gestartet (@geldsimuliert, @alltagsformel, @alltaginzahlen, @gegenprobe, @alltagsduell, @fabrik.neu, @simulierts, @durchgerechnet.de). Klassische Duelle sind deshalb schnell vergeben. Termin-Videos sind am besten geschützt, weil das Timing nicht kopierbar ist.
 - **US als Ideenquelle (F, Videoseiten 02.11.):** @humphreytalks (3,4 Mio. Follower) erreicht mit „Notgroschen zu groß?“ 298.200 Aufrufe und mit der Reis-Visualisierung einer Milliarde 2,5 Mio. (2020). @simplysimulated (63.700 Follower) macht Was-wäre-wenn-Simulationen, Geld-Themen dort nur ca. 30.000 Aufrufe. Übernommen als eigener Winkel: Notgroschen (#30), Freelancer gegen Angestellt (#12), Schneeball gegen Lawine (#8, bekanntes US-Thema, A), Hochzeit gegen Eigenkapital (Reserve).
 
-## 2. Auswahlregeln für jedes Thema
+## 2. Auswahlregeln für jedes Thema (gültig, neu gefasst 02.11.2026 abends)
 
-1. **Ergebnis in Euro** auf der Anzeigetafel, auch bei den 7 Alltagsentscheidungen (Zeit wird mit Mindestlohn 13,90 € oder dem Netto-Stundenlohn aus dem Netto-Modul in Euro umgerechnet).
-2. **Themen-Logik (Inhaber 02.11.):** Beide Seiten sind Alternativen derselben Entscheidung, die sich ausschließen bzw. gegeneinander abgewogen werden. Geprüft und notiert in `konkurrenz_check`.
-3. **Nur neue Ideen:** nicht auf der Sperrliste (§3, §8). Wo ein Nachbarthema existiert, steht der eigene Winkel in `konkurrenz_check`.
-4. **Finanz-Regeln** (§5): nur Modellrechnung, keine Produkte, Anbieter, Banken, Coins oder Aktien, kein Kaufaufruf, kein „schnell reich“.
-5. **Maßstab-Score** nach dem bisherigen Raster (D 30, K 25, B 20, L 15, F 10, S). Unter 60 fliegt ein Thema raus; im Plan liegt keins unter 75.
+Die Ideen kommen aus dem Ideen-Studio (10 pro Tag, der Inhaber wählt 2); Claude Code prüft beim Eingang des Skripts, ob die Regeln hier eingehalten sind, und meldet Auffälligkeiten.
 
-## 3. Konkurrenz-Sperrliste
+1. **Nur Thema GELD, 100 %:** Ergebnis in **Euro** auf der Anzeigetafel (bei anderen Ländern in der passenden Währung, Quelle und Modellrechnung sauber nennen). Die Rubrik ALLTAG entfällt; Alltagsfragen nur, wenn sie ein Geld-Ergebnis haben (Zeit wird mit Mindestlohn 13,90 € oder dem Netto-Stundenlohn aus dem Netto-Modul in Euro umgerechnet). Ersetzt „mindestens 50 von 60 Videos GELD“.
+2. **Themen-Logik (Inhaber 02.11.):** Beide Seiten sind Alternativen derselben Entscheidung, die sich ausschließen bzw. gegeneinander abgewogen werden.
+3. **Länder frei:** Deutschland, weltweit oder andere Länder; Sprache bleibt Deutsch. Zahlen aus §6 gelten nur für Deutschland.
+4. **Keine Sperrliste, aber keine 1:1-Kopie:** Themen von Konkurrenzkanälen sind nicht gesperrt (der Inhaber kennt die Kanäle selbst). Kopiert wird nie Skript, Wortlaut, Bild- oder Szenenidee eines fremden Videos (CRP-Ausschluss „Unoriginal“); gleiches Thema nur mit eigenem Skript und anderem Design. Der Konkurrenz-Check ist keine Pflichtsperre mehr; eine kurze Sichtung (ca. 5 Min.) hilft dem eigenen Winkel und der `stil_begruendung`.
+5. **Finanz-Regeln und Ausschlussthemen** (§5, `CLAUDE.md` §7): nur Modellrechnung, keine Produkte, Anbieter, Banken, Coins oder Aktien, kein Kaufaufruf, kein „schnell reich“; Glücksspiel, Tabak/Vape, Gesundheitsversprechen, Tragödien, Krypto, Einzelaktien, Anbieter-Empfehlungen, Parteipolitik, NS-Kennzeichen, riskantes Nachahmen bleiben ausgeschlossen.
+6. ~~**Maßstab-Score** (D 30, K 25, B 20, L 15, F 10, S)~~ war das Raster des alten Plans (Archiv). Die Auswahl trifft jetzt der Inhaber; als Orientierung bleiben die Muster aus §1.
+
+## 3. Konkurrenz-Sperrliste · VERALTET seit 02.11.2026 (Entscheidung des Inhabers), nur Archiv
+
+> **Nicht mehr gültig.** Die Sperrliste entfällt (erstmal). Gesperrte Themen von Konkurrenzkanälen gelten nicht mehr. **Bleibt:** keine 1:1-Kopie (siehe §2). Der Abschnitt bleibt als Archiv und Marktbeleg stehen; nichts daraus sperrt ein Thema.
 
 **Methode (02.11.2026):**
 - Öffentliche Profil-Embeds `tiktok.com/embed/@konto` (das offizielle Einbett-Widget zeigt die neuesten Videos eines Kontos) und öffentliche Videoseiten mit Aufrufzahlen. Bei den Top-Videos dazu die automatischen Untertitel, nur zum Lesen der Themen, nicht im Repo.
@@ -78,7 +99,9 @@ Gilt für `@simulierbar` (Skill `simulierbar-video`). Pflicht bei Themenwahl und
 | Rolltreppe · Boarding · Phantomstau · Spurwechsel · Reißverschluss · Kassenschlange | @simulierts · @alltagsduell · @gegenprobe · @kurzsimuliert | Alltag ohne Euro, nicht im Plan |
 | Maßstab K1–K4 (Regen, Pausen, Tsunami, Duschen) | Maßstab (§8) · @kurzsimuliert 2,1 Mio. / 467.800 / 403.000 | weiter gesperrt |
 
-## 4. Was aus dem alten Plan wurde
+## 4. Was aus dem alten Plan wurde · VERALTET (Plan entfällt seit 02.11.2026), nur Archiv
+
+> Der 30-Tage-Plan ist Archiv. Die halb gebauten Modelle und Projekte unten bleiben im Repo und können wiederverwendet werden, wenn das Ideen-Studio ein passendes Thema liefert. Die Aussagen „Clay ist nicht mehr erlaubt“ und „nur Stile 17–21“ sind durch die Stilfreigabe vom 02.11. abends ersetzt ([stile.md](stile.md)); Schere-Stein-Papier hat weiterhin kein Euro-Ergebnis und passt nicht zu GELD.
 
 | Ergebnis | Anzahl | Themen |
 |---|---|---|
@@ -104,9 +127,11 @@ Gilt für `@simulierbar` (Skill `simulierbar-video`). Pflicht bei Themenwahl und
 | Keine Falschinformation mit erheblichem Schaden; bei mäßigem Schaden nicht im Für-dich-Feed | [Community Guidelines, Integrity and Authenticity](https://www.tiktok.com/community-guidelines/en/integrity-authenticity) · [FYF-Standards](https://www.tiktok.com/community-guidelines/en/fyf-standards) | jede Zahl belegt oder als Modell gekennzeichnet, Werte „prüfen“ vor der Produktion klären |
 | CRP: mindestens 1 Minute, mindestens 1.000 qualifizierte Aufrufe, keine Werbung oder Sponsoring, original, hohe Qualität | [Creator Rewards Program Terms EEA](https://www.tiktok.com/legal/page/global/tiktok-creator-rewards-program-eea/en) | 65–80 s, eigene Rechnung, kein Kaufaufruf |
 
-**Deshalb verworfen (neue Ideen):** Lotto oder Sparen, Sportwetten, Lootboxen (Glücksspiel, auch K.-o. im Trend-Radar, `CLAUDE.md` §10), Krypto und Einzelaktien, ETF-Sparplan-Vergleiche (Anlageberatungs-Nähe, außerdem bei @geldsimuliert und @kontostand.vs besetzt), Bürgergeld gegen Arbeit (politisch, bei @kontostand.vs), „Nebenverdienst-Ideen“ und passives Einkommen (get-rich-quick), Augenlasern gegen Brille (Gesundheitsnähe), Kredit- oder Kartenvergleiche mit Anbietern.
+**Deshalb verworfen (Ausschlussthemen, gültig; die Zusätze „bei @…“ sind als Konkurrenzhinweis veraltet, die Risikogründe gelten):** Lotto oder Sparen, Sportwetten, Lootboxen (Glücksspiel, auch K.-o. im Trend-Radar, `CLAUDE.md` §10), Krypto und Einzelaktien, ETF-Sparplan-Vergleiche (Anlageberatungs-Nähe, außerdem bei @geldsimuliert und @kontostand.vs besetzt), Bürgergeld gegen Arbeit (politisch, bei @kontostand.vs), „Nebenverdienst-Ideen“ und passives Einkommen (get-rich-quick), Augenlasern gegen Brille (Gesundheitsnähe), Kredit- oder Kartenvergleiche mit Anbietern.
 
-## 6. Zahlen für Deutschland 2026
+## 6. Zahlen für Deutschland 2026 (gültig für Themen mit Deutschland-Bezug)
+
+Bei anderen Ländern: eigene amtliche Quelle und Währung nennen, als Modellrechnung kennzeichnen, Wert im Skript-Dokument unter `quellen`/`annahmen` belegen.
 
 | Größe | Wert | Kennung und Quelle |
 |---|---|---|
@@ -128,7 +153,9 @@ Gilt für `@simulierbar` (Skill `simulierbar-video`). Pflicht bei Themenwahl und
 | Netto-Beispiele | 3.500 € brutto = 2.333,25 € netto; +300 € = +164,17 €; 4.000 € = 2.605,50 €; 3.000 € = 2.054,42 € (Steuerklasse 1, kinderlos) | Rechnung, Netto-Modul PAP 2026 |
 | Mieten, Autokosten, Gerätepreise, Studienwerte | je Zeile in `kernzahl_bzw_twist` | (S) bzw. (B) · **prüfen** |
 
-## 7. Feste Termine (ohne Kaufaufruf)
+## 7. Feste Termine (ohne Kaufaufruf, gültig als Information)
+
+Die Spalte „Video“ nennt Zeilen des alten Plans (Archiv). Die Termine selbst bleiben Anlass für Ideen und Posting-Zeitpunkte (Trend-Radar, `docs/trends/vorschlaege.md`).
 
 | Termin | Datum 2026 | Beleg | Video |
 |---|---|---|---|
@@ -142,10 +169,12 @@ Gilt für `@simulierbar` (Skill `simulierbar-video`). Pflicht bei Themenwahl und
 | 1. Advent | So 29.11. | Rechnung | #53 Weihnachtsbaum, #56 Wichteln am 30.11. |
 | Jahresende Steuer und Vorsätze | Dezember | – | #57 Laptop am 01.12., #59 52-Wochen-Challenge am 02.12. |
 
-## 8. Sperrliste aus dem Maßstab
+## 8. Sperrliste aus dem Maßstab · VERALTET seit 02.11.2026, nur Archiv
+
+> Nicht mehr gültig (Sperrliste entfällt). Die vier Themen sind nicht mehr gesperrt; es gilt nur: keine 1:1-Kopie.
 Gesperrt, weil schon viral: Rennen oder gehen im Regen · Pausen gegen Tempo auf der Autobahn · Tsunami-Warnzeichen · Duschen gegen Baden inklusive Duschkosten-Varianten (@kurzsimuliert 2,1 Mio. / 467.800 / 403.000).
 
-## 9. Weitere Hinweise
+## 9. Weitere Hinweise · VERALTET (gehört zum alten Plan), nur Archiv
 - **Reserve (15 Themen)** steht in `data/plan/30-tage.csv` (`datum` = reserve). Bei Ausfall oder Konkurrenztreffer nimmt Claude die Reserve und trägt sie im Cockpit ein.
 - **Kapazität (S):** ca. 179 Std. Agentenarbeit in 30 Tagen (10 Videos Aufwand 2 = 1,5 Std., 43 mit 3 = 3 Std., 7 mit 4 = 5 Std.), dazu 1–3 Std. je Video für themenspezifische Objekte in den Stilen 17–21; Cloud-Rückfall ca. 100 Std. Renderzeit, Standard ist der Render-Dienst auf dem PC.
 - **Halb gebaute Projekte:** `mittagessen-job` (Modell mit 13 Tests, Skript fertig, Szene wird in Stil 19 neu gebaut), `schere-stein-papier` (kein Euro-Ergebnis, Modell bleibt für einen späteren Alltag-Slot), `leichtes-auto` und `boden-durchsichtig` (Account-2-Themen, nicht Simulierbar).

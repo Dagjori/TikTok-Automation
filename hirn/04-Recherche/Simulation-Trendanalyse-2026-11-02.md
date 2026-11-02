@@ -5,6 +5,7 @@ status: entwurf
 datum: 2026-11-02
 quelle: öffentliche TikTok-Seiten (Embed-Widget, Videoseiten), data/monitor/verlauf.csv, Websuche; abgerufen am 02.11.2026
 tags: [konto/gemeinsam, recherche, simulation, trend]
+cssclasses: [konto-gemeinsam, typ-recherche]
 ---
 
 # Simulation-Trendanalyse 02.11.2026

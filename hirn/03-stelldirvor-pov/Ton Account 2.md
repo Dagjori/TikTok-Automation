@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: .claude/skills/stelldirvor-video/ton.md
 tags: [konto/stelldirvor, ton, atmo]
+cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
 > Quelle: `.claude/skills/stelldirvor-video/ton.md`. Diese Notiz wird mit `python3 tools/hirn_aus_skills.py` erzeugt. Änderungen bitte im Skill vornehmen, nicht hier. Bei Abweichung gilt der Skill.
@@ -34,6 +35,7 @@ tags: [konto/stelldirvor, ton, atmo]
 - Integriert **−14 LUFS ± 1** (Ziel −14,0), True Peak ≤ −1 dBTP, Lautheitsumfang ≤ 20 LU.
 - Höhepunkt (52–68 s) mindestens 4 dB lauter als der Start (4–28 s); Abspann mindestens 6 dB leiser als der Start (Prüfpunkte 7b, 7c).
 - Atmo passt zum Ort: Vögel und Wind (Land), Brandung (Küste), Stadt mit Verkehr und Gemurmel (unverständlich, keine Sprache), Wasser, Regen, Feuer.
+- **Atmo passt zur Welt** (seit 02.11. abends ist die Welt oft Natur, nicht Stadt): Wald und Lichtung (`voegel` dicht, `wind` weich, Blätter), Wüste und Dünen (`wind` hell, sonst weit und leer), Gebirge (`wind`, ferne `grollen`), Küste und Strand (`meer`, Möwen über `voegel`), See und Fluss (`wasser`), Eisfläche (`wind` kalt, Knacken als Einzelklang), Nacht (leise `wind`, `wasser`, sonst Stille mit Lichtinseln). Wo die Szene gerafft läuft, darf die Atmo mit dem Zeitraffer wandern (Wind und Wasser werden dichter, Vögel seltener); jede sichtbare Veränderung des Bewegungsplans mit Klangfarbe bekommt ihren Klang im Protokoll (`protokoll_effekte: true`).
 - Jeder sichtbare Effekt hat seinen Klang an genau der Stelle (Ereignis-Protokoll, `klang`), außer die Physik verbietet es: z. B. kommt der Knall eines 14 km entfernten Ereignisses erst nach 41 s an – vorher bleibt es still (das ist eine Pointe, kein Fehler).
 - Stille-Momente höchstens wenige Sekunden tief (Referenz A: 3 s), die Welt bleibt hörbar (Wind).
 

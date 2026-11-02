@@ -1,6 +1,6 @@
-# Ablauf: Videoaufbau als Zeitplan
+# Ablauf: Videoaufbau, Skript-Anforderungen, Dramaturgie und Effekte
 
-Quelle: `CLAUDE.md` §6 und [massstab.md](massstab.md) §1, §11. Hier als Zeitplan für Ben im Original (ca. 2,0 Wörter/s, Satzpausen 0,5–0,7 s, 130–170 Wörter, Profil `ben` in `qc/massstab.py`). Zeiten sind Zielwerte; was `massstab.py` misst, steht in `pruefung.md`.
+Quelle: `CLAUDE.md` §6 und [massstab.md](massstab.md) §1, §11; Neuregeln des Inhabers 02.11.2026 abends (SKILL.md). Hier als Zeitplan für Ben im Original: **150–190 Wörter bei 65–80 s, Ziel ca. 2,3 Wörter/s (Spanne 2,2–2,5), Satzpausen als Richtwert 0,35–0,6 s hörbar** (Profil `ben` in `qc/massstab.py`). Zeiten sind Zielwerte; was `massstab.py` misst, steht in [pruefung.md](pruefung.md).
 
 ## 1. Zeitplan (65–80 s, mindestens 61 s)
 
@@ -13,28 +13,32 @@ Quelle: `CLAUDE.md` §6 und [massstab.md](massstab.md) §1, §11. Hier als Zeitp
 | ca. 20 s, max. 2 s | **Folgen-Aufruf** | „Folg mir, damit du nichts verpasst.“ | `M.folgen({ ein, dauer: 1.8 })`, Welt läuft weiter. Direkt vor der ersten Wendung. |
 | 18–25 s | **Erste Wendung** | „Aber jetzt kommt das Merkwürdige:“ bzw. „Doch …“ | Kamera-Zoom bzw. Schärfenverlagerung auf den entscheidenden Moment, Licht wechselt (z. B. Spot auf die andere Seite). |
 | danach alle 8–10 s | **Führungswechsel / weitere Wendung** | Countdown-Zahlen als Satzfetzen, „Jetzt wird's knapp.“ (ruhig) | Tafel färbt die führende Seite, Welt reagiert (Waage kippt, Gefäß überholt, Route leuchtet auf). |
-| 40–54 s | **Ergebnis** | „Endstand: …“, exakte Zahl in Euro, „[Sieger] gewinnt.“ | Bilanzkarte (`M.bilanz`) baut sich zeilenweise auf; in der Welt hält das Rennen an, Licht auf den Sieger. |
-| 50–64 s | **„Warum?“** | max. 2 Faktoren | `M.balken` mit 2 Faktoren; Blaupause (Stil 13) als Einschub erlaubt (`stile.md`). |
+| 40–54 s | **Ergebnis** | „Endstand: …“, exakte Zahl in Euro (bzw. Währung des Landes), „[Sieger] gewinnt.“ | Bilanzkarte (`M.bilanz`) baut sich zeilenweise auf; in der Welt hält das Rennen an, Licht auf den Sieger. **Höhepunkt der Spannungskurve.** |
+| 50–64 s | **„Warum?“** | max. 2 Faktoren | `M.balken` mit 2 Faktoren; Blaupause (Stil 13) als Einschub erlaubt ([stile.md](stile.md)). |
 | 45–66 s | **Zweite Überraschung** | „Und das Verrückte: …“, eine Variante dreht das Ergebnis | neue Runde in derselben Welt (anderer Parameter), Zähler laufen neu. |
 | letzte 5–8 s | **Merksatz** | ein kurzer, zitierfähiger Satz | `M.pointe` ruhig (ohne Comic-Kontur, `design.md`) oder nur Welt + Untertitel. |
 | letzte 2–3 s | **Schluss** | genau: „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ | Kamera und Werte gleiten zum Anfangsbild zurück (`M.schleife`, `regie.schleife`): **letztes Bild = erstes Bild**. |
 
-**Dynamik:** alle 1–2 s etwas Neues im Bild (Bewegung in der Welt, Kamerafahrt, Lichtwechsel, Zähler, Chip, Szenenwechsel), nie mehr als 2 s Stillstand (`massstab.py` Punkt 5). Die Neuigkeit kommt bevorzugt aus der Welt: Objekt erscheint, Licht geht an, Flüssigkeit steigt, Auto biegt ab, Waage kippt. Szenenwechsel weich (`zoomwisch`, `blende`, `iris`), höchstens alle 5–15 s.
+**Dynamik:** alle 1–2 s etwas Neues im Bild (Bewegung in der Welt, Kamerafahrt, Lichtwechsel, Zähler, Chip, Szenenwechsel), nie mehr als 2 s Stillstand (`massstab.py` Punkt 5). Die Neuigkeit kommt bevorzugt aus der Welt: Objekt erscheint, Licht geht an, Flüssigkeit steigt, Auto biegt ab, Waage kippt. Szenenwechsel weich (`zoomwisch`, `blende`, `iris`), höchstens alle 5–15 s. Wie die Effekte über das Video verteilt werden (Spannung steigt, Variation, Maß): **§6**.
+
+### Wörter-Budget (Richtwert S, Summe ca. 177 bei 2,3 W/s)
+Hook ca. 12 · Regeln ca. 24 · Denkfalle ca. 6 · Rennen ca. 28 · Folgen-Aufruf 6 (fest) · erste Wendung ca. 18 · Ergebnis ca. 24 · „Warum?“ ca. 18 · zweite Überraschung ca. 18 · Merksatz ca. 12 · Schluss 11 (fest). Dazwischen darf verschoben werden, solange die Zeitpunkte der Tabelle halten (Folgen-Aufruf ca. 20 s entspricht bei 2,3 W/s etwa dem 46. Wort).
 
 ## 2. Satzmuster und Textregeln (ruhig gesprochen)
 - Hook „X oder Y? Was … wirklich …?“ · Denkfalle „Klar, X. Oder?“ · Wendung „Aber jetzt kommt das Merkwürdige:“, „Doch …“ · Spannung als Countdown-Fetzen · Ergebnis „Endstand:“ · Erklärung „Warum?“ · Zweite Überraschung „Und das Verrückte:“ · Merksatz kurz.
 - Sätze meist unter 10 Wörtern, Median 4–8. „du“-Ansprache. Zahlen im Sprechtext ausgeschrieben.
-
 - Immer eine offene Frage im Kopf des Zuschauers: Jede Phase endet mit einer Spannung, die erst die nächste auflöst („Also ist Rennen doch schlechter? Noch nicht.“).
 - Konkrete Personen bzw. Teams mit Namen oder Buchstaben (Paul gegen Anna, A gegen B). Zahlen rund und hörbar („zwanzig Sekunden“), im Bild die exakte Zahl.
 - Keine Füllsätze, keine Quellen, kein „laut einer Studie“ (Quellen stehen intern in `skript.json`). Verboten: künstliche Cliffhanger („Teil 2 folgt“), Kaufaufrufe, Kanalname bzw. Rubrik.
-- Tempo: Ben im Original spricht ca. 2,0 Wörter/s mit Satzpausen 0,5–0,7 s (bei v4 und v2 gleich, F, 31.10.); die Vorbilder 2,5–2,9 W/s mit 170–220 Wörtern. Das Tempo wird nicht künstlich erhöht, die Spannung kommt aus kurzen Sätzen und dem Bild.
+- **Tempo (Entscheidung des Inhabers 02.11.2026 abends, Mitte aus beiden bisherigen Vorgaben):** 150–190 Wörter bei 65–80 s, Ziel ca. 2,3 W/s, Spanne 2,2–2,5 W/s. Bisher galten 130–170 Wörter (Ben im Original ca. 2,0 W/s) und in der alten Prüfliste 170–220 Wörter (Vorbilder 2,5–2,9 W/s); beides ist ersetzt. **Es muss flüssig und natürlich klingen:** kein künstliches Beschleunigen der Stimme (`tts.py` bleibt im Original), das Tempo entsteht durch Textlänge und Satzbau (mehr Information je Satz, Kommas statt Punkte bei Aufzählungen und Countdowns, keine Füllsätze). Satzpausen so, dass Ben nicht gehetzt klingt (hörbarer Richtwert 0,35–0,6 s). **Qualität vor Tempo: klingt eine Stelle gehetzt, kürzen statt beschleunigen.** Messwert (F, 02.11.): Ben im Original lag bei den letzten Videos bei 2,15–2,38 W/s (Wortzeiten) mit hörbaren Satzpausen um 0,35 s.
 
-## 3. Themen-Logik (Pflicht vor Produktionsstart)
+## 3. Themen-Logik (Pflicht beim Eingang des Skripts)
 - Beide Seiten sind **echte Alternativen derselben Entscheidung** (schließen sich aus bzw. werden gegeneinander abgewogen). Gegenbeispiel: „Steuererklärung oder Überstunden“ (keine gemeinsame Entscheidung).
-- Ergebnis endet in **Euro** (GELD-Schwerpunkt, mind. 50 von 60 Videos).
-- Thema nicht bei der Konkurrenz viral ([massstab.md](massstab.md) §9, [themen.md](themen.md) §3 und §8).
-- Finanzthemen nur als Modellrechnung, keine Produkt- oder Anlageempfehlung, kein Kaufaufruf.
+- **Nur Thema GELD (seit 02.11. abends, 100 %):** Ergebnis endet in Euro (bei anderen Ländern in der passenden Währung mit sauberer Quelle, Modellrechnung). Die Rubrik ALLTAG entfällt; Alltagsfragen nur, wenn sie ein Geld-Ergebnis haben.
+- **Länder frei:** Deutschland, weltweit oder andere Länder; die Sprache bleibt Deutsch.
+- **Keine Sperrliste mehr** ([themen.md](themen.md), Archiv). **Bleibt:** keine 1:1-Kopie von Skript, Sätzen, Bild- oder Szenenideen eines fremden Videos („Unoriginal“, CRP-Ausschluss); gleiches Thema nur mit eigenem Skript und anderem Design.
+- Finanzthemen nur als Modellrechnung, keine Produkt- oder Anlageempfehlung, kein Kaufaufruf; Ausschlussthemen aus `CLAUDE.md` §7 bleiben.
+- Auffälligkeiten (Themen-Logik, Ausschlussthema, Kopienähe) meldet Claude Code dem Inhaber, bevor produziert wird; die Auswahl hat der Inhaber getroffen.
 
 ## 4. Skript-Bild-Abgleich (Pflicht, Inhaber 02.11.)
 In `skript.json` je Segment ein Eintrag `bild_text_abgleich`: was gesagt wird (Objekt, Handlung, Zahl, Ort) → was im selben Moment zu sehen ist (Objekt in der Welt, Kamera, Zahl auf Tafel/Chip). Beispiel:
@@ -44,10 +48,70 @@ In `skript.json` je Segment ein Eintrag `bild_text_abgleich`: was gesagt wird (O
   {"segment": "wendung", "gesagt": "Nach drei Jahren kippt die Waage", "bild": "Uhr 36 MONATE, Balken kippt nach rechts, Tafel rechts VORN"}
 ]
 ```
-Was nicht zu sehen ist, wird nicht gesagt; was groß zu sehen ist, wird erwähnt oder weggelassen.
+Was nicht zu sehen ist, wird nicht gesagt; was groß zu sehen ist, wird erwähnt oder weggelassen. Der Abgleich ist zugleich das Beat-Blatt: Aus ihm leitet Claude Code Animation, Kamera und Licht ab (§6.2).
 
-## 5. Beispiel-Skript (Muster für Aufbau und Regie-Text)
-„Spurwechsel im Stau“ im neuen Aufbau (Zahlen: Modellwerte aus der eigenen Simulation, S; Paul wechselt, Anna bleibt; neun Wechsel für 20 s). Umfang ca. 150 Wörter, mit Ben im Original ca. 75 s. Die Phasen und der Regie-Text sind die Vorlage, nicht das Thema.
+## 5. Skript-Anforderungen und Übernahme
+Das Skript schreibt Claude Chat (Ideen-Studio); Claude Code setzt es um. Der Inhaber wählt aus 10 Ideen täglich 2 für den nächsten Tag.
+
+### 5.1 Anforderungen an das Skript
+1. **Legitim und belegbar:** Jede Aussage und Zahl ist belegt (Quelle) oder als Modellannahme gekennzeichnet; **nichts erfinden**. Belege und Annahmen stehen im Dokument (`quellen`, `annahmen`, `rechenweg`, `zahlen`) und intern in `skript.json`, nie im Video. Ausschlussthemen und Finanzregeln aus `CLAUDE.md` §7 und [themen.md](themen.md) §2, §5 gelten.
+2. **Diskussionsbedarf, ohne ihn auszusprechen:** Das Skript regt Widerspruch und Kommentare an, indem es eine Annahme sichtbar macht, die man anders setzen könnte, ein Ergebnis mit Bedingung liefert oder einen überraschenden Faktor zeigt. **Keine** Aufforderung zum Streiten, **keine** Provokation, **kein** Clickbait („Das glaubst du nicht“), **keine** künstlichen Cliffhanger, keine Gruppen gegeneinander ausspielen. Prüfstein: Dient ein Satz nur dazu, Kommentare zu provozieren, fliegt er raus (CRP-Ausschluss „Clickbait“).
+3. **Als Regie-Text geschrieben**, damit Ben Tonfall und Betonung problemlos umsetzt ([ton.md](ton.md) §3): eine Zeile pro Satz, Leerzeile zwischen Phasen, GROSSSCHREIBUNG nur auf dem Betonungswort (höchstens eines je Satz), ruhige v4-Tags (`[curious]`, `[thoughtful]`, `[calm]`, je Phase höchstens einer), Auslassungspunkte für Zögern, **keine `<break>`-Tags**, Zahlen im Sprechtext ausgeschrieben (im Untertitel `text` Ziffern), englische Wörter in Lautschrift, höchstens 3 Ausrufezeichen, keine aufgeregten Tags.
+4. **Satzbau für Ben:** Sätze meist 2–8 Wörter (Median 4–8, meist unter 10), die Pointe nicht im Nebensatz verstecken, Countdowns und Aufzählungen als Satzfetzen mit Kommas, Fragen kurz und allein auf einer Zeile („Oder?“).
+5. **Tempo:** 150–190 Wörter, Ziel ca. 2,3 W/s (§2, Wörter-Budget in §1). Das Skript ist so lang, dass keine Beschleunigung nötig ist.
+6. **Struktur:** feste Reihenfolge des Zeitplans (§1) mit den festen Sätzen (Folgen-Aufruf, Schluss), echte Alternativen derselben Entscheidung, Ergebnis mit exakter Zahl, „Warum?“ mit höchstens 2 Faktoren, zweite Überraschung, Merksatz.
+7. **Eigenständig:** eigene Formulierungen und eigene Szenenidee; keine 1:1-Übernahme fremder Skripte, Sätze oder Bildideen.
+8. **Dokument-Felder** (`skripte`, ID `acc1-JJJJ-MM-TT-mittag|abend`): `konto`, `datum`, `slot`, `titel`, `thema`, `skript`, `rechenweg`, `zahlen`, `annahmen`, `quellen`, `caption`, `status`.
+9. **Dramaturgie-Hinweise im Skript** (Claude Chat markiert, wo die Spannung steigt und welche Momente visuell besonders sein sollen: Zoom, Licht, Aufleuchten) sind Vorschläge für das Beat-Blatt (§6). Claude Code setzt sie um oder passt sie an, wenn Qualitätslatte oder Maß (§6.3) es verlangen, und hält die Abweichung im Beat-Blatt fest. Weitere Felder des Chat-Skripts (Länder, Wortzahl, Selbstprüfung) dienen der Eingangsprüfung.
+
+### 5.2 Übernahme durch Claude Code
+1. **Inhaltlich 1:1** nach `skript.json`: `skript` → Segmente (`id`, `phase`, `text` = Untertitel, `sprechtext` = Regie-Text), `quellen`/`annahmen` → intern, `caption` → Caption. Rein technische Anpassungen ohne Inhaltsänderung sind ohne Rücksprache erlaubt (Zeilenumbrüche, Ziffern ausschreiben, Lautschrift, Segment-IDs).
+2. **Aussagen ändert Claude Code nur nach Rücksprache** (gebündelte Frage an den Inhaber bzw. Rückmeldung an Claude Chat). Fehlen die festen Sätze (Folgen-Aufruf „Folg mir, damit du nichts verpasst.“, Schluss „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“), ergänzt Claude Code sie und meldet das.
+3. **Zahlen prüfen:** `rechenweg`, `zahlen` und `annahmen` als Rechnung in `pipeline/sim/<thema>.mjs` mit Test nachrechnen. **Abweichungen melden** (Feld, Wert im Skript, Wert der Rechnung, Vorschlag), nicht stillschweigend korrigieren. Die Zähler im Video kommen aus der geprüften Rechnung.
+4. **Eingangsprüfung** (vor der Produktion): GELD und Euro-Ergebnis · Themen-Logik · Ausschlussthema · Finanzregeln (Modellrechnung, keine Anbieter) · Wörter 150–190 (Zählung des Sprechtexts ohne Tags) · Tonregeln (16a/16b) · Caption im Format von `CLAUDE.md` §7 · keine erkennbare 1:1-Kopie.
+5. **Rückmeldung:** Status im Dokument nur setzen, wenn der Ablauf des Ideen-Studios es vorsieht (Befehl [[Befehl Ideen und Skripte Simulierbar]]); sonst im Bericht an den Inhaber.
+
+## 6. Dramaturgie und Effekte (Regelabschnitt, Inhaber 02.11.2026 abends)
+„Mehr Effekte, aber nichts Übertriebenes, und die Spannung steigt.“
+
+### 6.1 Grundsätze
+1. **Von der ersten Sekunde fangen, bis zum Ergebnis steigern.** Der Hook (Frage plus Welt in Bewegung) fängt in Sekunde 0; danach darf die Spannung nie fallen, bevor das Ergebnis da ist. Nach dem Ergebnis ein kurzes Ausatmen („Warum?“), dann der letzte Dreh (zweite Überraschung), Merksatz, Schleife.
+2. **Skript zuerst, Design und Animation aus dem Skript ableiten.** Die Reihenfolge: Skript → Beat-Blatt (`bild_text_abgleich` plus Effekt/Kamera/Licht je Segment, in `skript.json`) → Welt und Animation. Keine Welt bauen, deren Bewegungen das Skript nicht trägt.
+3. **Erlaubt und erwünscht:** mehrere verschiedene Animationssequenzen · Situations-/Bildwechsel (weiche Übergänge, Szenenwechsel in der Welt) · **Aufleuchten** von Elementen (Zahl bei Änderung, führende Seite, LED-Kante, Chip) · **Lichtspiele und Glow** (Spot-Wechsel, Lichtstrahlen, Lichtfleck, Pulsieren des Sieger-Lichts) · **Zoom, mal ja, mal nein, abwechselnd, nicht dauerhaft** · **Fahrten** (Dolly, Kran, Parallaxe, langsamer Orbit). Technische Rezepte: [licht-und-atmosphaere.md](licht-und-atmosphaere.md) §9, HUD: [design.md](design.md) §6.
+4. **Verboten bleibt:** große Sticker/Stempel (bestätigt 02.11.), `regie.stoss`, Geschrei im Ton, Kaufaufrufe.
+
+### 6.2 Spannungskurve (Stufe 1 = ruhig, 5 = Höhepunkt)
+| Phase | Stufe | Typische Mittel (Beispiele, nicht alle zugleich) |
+|---|---|---|
+| Hook | 2 | Welt in Bewegung, langsame Fahrt, Licht auf der Frage, Tafel ab Bild 0 |
+| Regeln | 2 | Objekte erscheinen beim Wort, Chips, Schärfe wandert von Seite zu Seite |
+| Denkfalle | 2–3 | Licht rückt die naheliegende Seite ins Rampenlicht (die Erwartung wird aufgebaut) |
+| Rennen | 3 | Zähler laufen, Kamera folgt, Abstand wird sichtbar |
+| Folgen-Aufruf | 3 | ruhig, kein Effekt-Wettbewerb mit dem Element |
+| erste Wendung | 4 | Zoom oder Schärfenverlagerung, Lichtwechsel, die Erwartung kippt sichtbar |
+| Führungswechsel | 4 | Aufleuchten der führenden Seite, Kamerawechsel, engere Einstellung |
+| Ergebnis | 5 | Licht auf den Sieger, Glow, Bilanzkarte baut sich auf; optischer Höhepunkt |
+| „Warum?“ | 3 | ruhiger, erklärend (Einschub Stil 13 möglich), Fahrt statt Zoom |
+| zweite Überraschung | 4 | neue Runde, neuer Winkel, letzter Dreh |
+| Merksatz, Schluss | 2 | Kamera gleitet zurück zum Anfangsbild |
+
+### 6.3 Maß (nichts Übertriebenes, sonst gehen Zuschauer verloren)
+- **Variation alle 5 s:** In jedem 5-s-Fenster mindestens ein andersartiger Effekt oder Bildtyp als im Fenster davor (nicht dreimal hintereinander dasselbe, etwa drei Zooms).
+- **Höchstens ein dominanter Effekt zugleich.** Zoom plus Szenenwechsel plus Lichtblitz gleichzeitig ist zu viel; Untertitel und Zahlen bleiben immer lesbar (Glow überstrahlt keinen Text).
+- **Zoom nicht dauerhaft:** gezielt auf Wendung und Ergebnis, dazwischen Fahrten oder Schärfenverlagerung; Richtwert 2–4 Zooms je Video (S).
+- **Kein Leerlauf:** nie mehr als 2 s ohne sichtbare Änderung (Prüfpunkt 5); trotzdem kein Dauer-Wackeln, kein Dauer-Zoom, keine Schnittgewitter.
+- **Schutzregel:** keine schnellen Helligkeitswechsel (über 3 pro Sekunde, WCAG 2.3.1), kein Stroboskop; Blendenwechsel und Lichtpulse langsam und weich.
+- Die Effekte folgen dem Inhalt: Was passiert nicht im Skript, wird nicht „aufgeblasen“.
+
+### 6.4 Checkliste für die Abnahme (steht auch in [pruefung.md](pruefung.md) §2)
+- [ ] **Spannungskurve:** Effektdichte und Lichtstimmung steigen bis zum Ergebnis, das Ergebnis ist der optische Höhepunkt.
+- [ ] **Variation alle 5 s:** kein Fenster ohne neuen Effekt- oder Bildtyp.
+- [ ] **Kein Leerlauf:** keine Phase über 2 s ohne sichtbare Änderung.
+- [ ] **Nichts Übertriebenes:** höchstens ein dominanter Effekt zugleich, kein Dauer-Zoom, kein Flackern, Text immer lesbar, keine Sticker.
+- [ ] **„Würde ein Zuschauer denken, das sieht billig aus?“** Bei „ja“ wird die Abnahme verweigert und nachgebessert.
+
+## 7. Beispiel-Skript (Muster für Aufbau und Regie-Text)
+„Spurwechsel im Stau“ im Aufbau von §1. **Nur Muster für Phasen und Regie-Text, nicht für das Thema:** Das Beispiel ist ein ALLTAG-Thema ohne Euro-Ergebnis; neue Videos sind GELD. Zahlen: Modellwerte aus der eigenen Simulation, S; Paul wechselt, Anna bleibt; neun Wechsel für 20 s. Umfang ca. 150 Wörter (untere Grenze des heutigen Bereichs 150–190).
 
 | Phase | Untertitel (`text`) | Regie-Text (`sprechtext`, Eleven v4) |
 |---|---|---|

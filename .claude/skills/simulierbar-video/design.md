@@ -1,6 +1,6 @@
-# Design: HUD im seriösen Look
+# Design: HUD im hochwertigen Look
 
-Die Welt trägt das Bild; das HUD ist ruhig, edel und lesbar. Alle Bausteine kommen aus `pipeline/engine/massstab.js` (Aufrufe wie in `pipeline/README.md`), das Aussehen aus **`pipeline/engine/sim_hud.css`** (lädt nach `hud.css` und `massstab.css`, wirkt nur mit `<div id="hud" class="sim">`). Muster: `pipeline/projekte/_demo-simulierbar/`.
+Die Welt trägt das Bild; das HUD ist ruhig, edel und lesbar. (Das Rauchglas-HUD `sim_hud.css` gehört zu den Stilen 17–21; bei den Stilen 1–15 darf das Standard-HUD aus `massstab.css` laufen, siehe [stile.md](stile.md); in beiden Fällen gelten Qualitätslatte, Teamfarben-Regeln, Untertitel „kontur“ und das Sticker-Verbot.) Alle Bausteine kommen aus `pipeline/engine/massstab.js` (Aufrufe wie in `pipeline/README.md`), das Aussehen aus **`pipeline/engine/sim_hud.css`** (lädt nach `hud.css` und `massstab.css`, wirkt nur mit `<div id="hud" class="sim">`). Muster: `pipeline/projekte/_demo-simulierbar/`.
 
 ## 1. Theme (Pflicht in jeder Szene)
 ```js
@@ -15,7 +15,7 @@ const M = new Massstab(hud, zp, {
 | Haarlinie | `rgba(255,255,255,0.16)`, 1,5 px innen | Kante jeder Fläche |
 | Text | `#F3F5F8`, Etiketten `#9AA3B2` | Zahlen, Beschriftung |
 | Akzent | `#ECE6DA` (Elfenbein) | Ergebnis-Feld der Formel, Differenz-Zeile, Uhrbogen. **Nie Gelb** (Gelb = aktuelles Untertitel-Wort) |
-| Teamfarben | zwei feste Farben aus dem Plan (`data/plan/30-tage.csv`, Spalte `teamfarben`) | als **Licht**: Punkt mit Schein, Linie, Rand, Verlauf; nicht als knallige Vollfläche |
+| Teamfarben | zwei feste Farben je Video (Claude Code legt sie in `skript.json → teamfarben` fest; der frühere Plan `data/plan/30-tage.csv` ist Archiv) | als **Licht**: Punkt mit Schein, Linie, Rand, Verlauf; nicht als knallige Vollfläche |
 | Schatten | `0 24px 48px -18px rgba(0,0,0,0.7)` | Abheben von der Welt |
 | Radius | 22 px (Tafel), 16 px (Chips, Zeilen), 26 px (Karten) | |
 
@@ -41,7 +41,7 @@ Teamfarben-Palette ohne Gelb: Blau `#3D8BFF`, Orange `#FF8A3D`, Türkis `#2EC4B6
 | **„Warum?“-Balken** | `M.balken({ titel:"Warum?", faktoren:[…max. 2] })` | leuchtende Teambalken |
 | **Pointe/Merksatz** | `M.pointe({ text, ein })` | große Zahl/Wörter in Inter Display 800, ohne Kontur, weicher Schatten |
 | **Folgen-Aufruf** | `M.folgen({ ein, dauer: 1.8 })` | Glas-Pille |
-| **Sticker/Stempel** | **verboten** (`M.stempel` nicht aufrufen; `sim_hud.css` blendet `.ms-stempel` aus, `massstab.py` 5d zählt jeden Aufruf als Fehler) | – |
+| **Sticker/Stempel** | **verboten, auch nach der Lockerung der Effekte** (Entscheidung des Inhabers, bestätigt 02.11. abends; `M.stempel` nicht aufrufen; `sim_hud.css` blendet `.ms-stempel` aus, `massstab.py` 5d zählt jeden Aufruf als Fehler) | – |
 
 Weniger ist mehr: Chips nur mit neuer Zahl bzw. Information (≤ 15 je Video, Hinweis 5e). Jede Regel lieber als Objekt in der Welt zeigen und den Chip klein halten.
 
@@ -52,3 +52,10 @@ Weniger ist mehr: Chips nur mit neuer Zahl bzw. Information (≤ 15 je Video, Hi
 - Mittelachse **x = 540**, Schutzzone links 150 px und rechts 150 px (`SICHER` in `massstab.js`), oben 150 px. Tafel bei y = 166, Chips ab y ≈ 360, Karten 400–1100, Untertitel-Unterkante y = 1450, nichts Wichtiges unter y ≈ 1500.
 - Die Welt komponieren: Hauptobjekte zwischen y ≈ 450 und 1300, nicht hinter Tafel oder Untertitel. Hochformat bedeutet: Objekte eher übereinander bzw. in die Tiefe staffeln als nebeneinander (Breite sichtbar ≈ 0,56 × Höhe).
 - Kein Kanalname, kein Logo, keine Rubrik, keine Quellen im Bild.
+
+## 6. Dramaturgie und Effekte im HUD: Aufleuchten und Glow (Inhaber 02.11. abends: mehr Effekte, nichts Übertriebenes)
+- **Erlaubt:** Elemente leuchten kurz auf, wenn sich etwas ändert: Zahl der Tafel bei neuem Wert, die **führende Seite** (Teamrand, Teamverlauf und Schein sind in `sim_hud.css` vorhanden), Chip beim Erscheinen (`.ms-puls`, Teamring), Uhrbogen, Sieger-Banner der Bilanzkarte. Weicher Puls 0,4–0,8 s, danach zurück in den Ruhezustand.
+- **Maß:** höchstens ein Element zugleich pulsieren lassen; Glow überstrahlt nie Zahlen oder Untertitel; keine schnellen Helligkeitswechsel (über 3 pro Sekunde). Weitere Glow-Effekte, die `sim_hud.css` noch nicht kennt, werden dort ergänzt (Opus, wiederverwendbar), nicht in der Szene gebaut.
+- **Nicht erlaubt:** große Sticker/Stempel, schräge Plaketten, Strahlenkränze, Comic-Konturen am Merksatz.
+- **Zusammenspiel mit der Welt:** Das HUD-Aufleuchten fällt zeitlich mit dem Ereignis in der Welt zusammen (Münze fällt → Zahl leuchtet; Waage kippt → Seite leuchtet), gemeldet über `M.melde(...)`, damit der Effekt-Klang im Ton mitläuft ([ton.md](ton.md) §4). Verteilung über das Video: [ablauf.md](ablauf.md) §6.
+

@@ -5,6 +5,7 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §4, §7, §10
 tags: [konto/gemeinsam, technik, umgebung, supabase]
+cssclasses: [konto-gemeinsam, typ-wissen]
 ---
 
 # Technik und Umgebung
@@ -17,7 +18,9 @@ tags: [konto/gemeinsam, technik, umgebung, supabase]
 | **Supabase** (Frankfurt, Gratis-Plan) | Datei-Austausch: Buffer-Uploads, Render-Aufträge | privater Bucket `buffer-uploads`, ≤ 50 MB je Datei |
 | **Buffer** | Posten auf TikTok ([[Plattformregeln und Posting]]) | Essentials, ca. 12 $/Monat |
 | **GitHub** `Dagjori/TikTok-Automation` | Repo, öffentlich | PC klont ohne Login (daher noch nicht privat) |
-| **Claude-Artifact Cockpit** | Freigaben ([[Cockpit]]) | |
+| **Claude-Artifact Cockpit** | Freigaben ([[Cockpit]]) | Planthemen = Archiv |
+| **Claude-Artifact Ideen-Studio** | tägliche Ideen und Skripte ([[Claude-Chat-Workflow]]) | https://claude.ai/artifact/PMqMpqpmSHYmuhY229ghZC; fragt Claude auf deinem claude.ai-Konto (`sample`), speichert in der Artifact-Datenbank (`db`); kann nicht recherchieren |
+| **Geplante Aufgabe „Lernschleife Insights täglich“** | tägliche Auswertung 19:52 Berlin ([[Lernschleife und Insights]]) | Trigger `trig_01BBUe6iY7u7hpT4kEUSKn4a`, frische Sitzung je Lauf, Sonnet |
 
 ## Cloud-Umgebung („Default“)
 Netzwerkzugriff eingeschränkt (10 Domains, Paketmanager aktiviert), **3 Netzwerk-Secrets** (Schlüssel für Supabase, ElevenLabs, Buffer u. a.; der Proxy hängt sie an Anfragen an, sie sind in der Sitzung nie sichtbar), Umgebungsvariablen (1: `SUPABASE_URL`).
@@ -28,6 +31,7 @@ Netzwerkzugriff eingeschränkt (10 Domains, Paketmanager aktiviert), **3 Netzwer
 
 ## Netzwerk (Beobachtungen)
 - **tiktok.com:** das Abrufwerkzeug `WebFetch` löst `www.tiktok.com` **nicht** auf. Über Bash (`curl`, Python `urllib`) geht es über den Proxy (HTTP 200). Öffentliche **Profilseiten** liefern Follower, Likes, Videozahl (so arbeitet `tools/monitor_kanaele.py`); **Such- und Hashtag-Seiten liefern ohne Login keine Videoliste** ([[Recherche-Methode und Grenzen]]).
+- **Buffer-Kennzahlen:** `post.metrics` über die GraphQL-Schnittstelle (Aufrufe, Likes, Kommentare, Ø-Wiedergabezeit, Follower; Shares/Saves für TikTok 0), Aktualisierung nur alle paar Stunden. Werkzeug `tools/insights_abrufen.py`.
 - `elevenlabs.io` (Doku) gesperrt, `api.elevenlabs.io` erreichbar; TikTok Creative Center und mehrere Drittquellen gesperrt; `api.buffer.com`, Supabase, `api.telegram.org` über die Umgebungs-Einstellungen.
 - **Firecrawl-Credits fast leer:** Recherche über die Websuche.
 - Viele Plugin-MCP-Server verbinden nicht („403 Forbidden“): irrelevant für das Projekt.

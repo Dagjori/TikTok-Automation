@@ -5,9 +5,12 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §9, data/plan/
 tags: [konto/gemeinsam, plan, kalender]
+cssclasses: [konto-gemeinsam, typ-plan]
 ---
 
 # Pläne und Kalender
+
+> **Seit 02.11.2026 (Entscheidung des Inhabers) gibt es keinen 30-Tage-Plan mehr.** Die Pläne unten sind **Archiv** (Dateien bleiben im Repo). Themen entstehen täglich neu: 10 Ideen je Account, der Inhaber wählt 2 ([[Claude-Chat-Workflow]]). Gültig bleiben Posting-Zeiten, Trend-Kalender und Radar.
 
 | | Simulierbar (Account 1) | stelldirvor.pov (Account 2) |
 |---|---|---|
@@ -16,7 +19,7 @@ tags: [konto/gemeinsam, plan, kalender]
 | PDF | `docs/plan/30-tage-plan.pdf` (`node tools/plan_pdf.mjs`) | `docs/plan/account2-30-tage-plan.pdf` (`node tools/plan_pdf.mjs --plan account2`) |
 | Übersicht | – | `tools/account2_uebersicht.py` (HTML/PDF) |
 | Score | Ø 82,3 (**S**), Termin-Videos Priorität A | 73–92, Ø 83,3 |
-| Regeln | [[Themenplan Simulierbar]], [[Sperrliste und Auswahlregeln Simulierbar]] | [[Themen und Plan Account 2]], [[Konkurrenz-Check und Sperrliste Account 2]] |
+| Regeln | [[Themenplan Simulierbar]] (Archiv), [[Auswahl- und Finanzregeln Simulierbar]] | [[Themen und Plan Account 2]], [[Konkurrenz-Check und Sperrliste Account 2]] |
 
 ## Gemeinsam
 - **Posting-Zeiten:** `data/plan/posting_zeiten.json` ([[Plattformregeln und Posting]]).

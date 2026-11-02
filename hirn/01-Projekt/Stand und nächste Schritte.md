@@ -5,11 +5,12 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §11
 tags: [konto/gemeinsam, stand, naechste-schritte]
+cssclasses: [konto-gemeinsam, typ-plan]
 ---
 
 # Stand und nächste Schritte
 
-**Stand 02.11.2026, spätabends.** Diese Notiz ist die lebende Statusseite: am Ende jeder Arbeitseinheit aktualisieren (und CLAUDE.md §11 angleichen). **F** = belegt, **S** = Schätzung, **A** = Annahme.
+**Stand 02.11.2026, spätabends.** Seit heute Abend: Account 1 nur Geld, kein Plan, keine Sperrlisten, Ideen-Studio und tägliche Lernschleife (siehe [[Regelwerk]]). Diese Notiz ist die lebende Statusseite: am Ende jeder Arbeitseinheit aktualisieren (und CLAUDE.md §11 angleichen). **F** = belegt, **S** = Schätzung, **A** = Annahme.
 
 ## Account 1 `@simulierbar`
 - Gepostet: GTA 6 und Spurwechsel (31.10., alte Version), „Treppe oder Aufzug“ und „200 € oder 100 € steuerfrei“ (01.11.).
@@ -44,13 +45,16 @@ tags: [konto/gemeinsam, stand, naechste-schritte]
 
 ## Offene Punkte
 - [ ] Teppich-Pegel (−10 dB), Effekte und Position des Folgen-Elements auf echtem Gerät abnehmen (Inhaber). Engine-Standard „keine gelbe Teamfarbe“ (im Gehalt-Video ist Team „steuerfrei“ gelb, bleibt).
-- [ ] Werte mit „prüfen“ je Video klären (Spalte `quellen_pruefen` der Pläne; Liste in [[Sperrliste und Auswahlregeln Simulierbar]]); Account 2: Eisdicke Toronto, Genf 1816, Leoniden-Maximum, COP31-Termin.
+- [ ] Werte mit „prüfen“ je Video klären (Spalte `quellen_pruefen` der Pläne; Liste in [[Auswahl- und Finanzregeln Simulierbar]]); Account 2: Eisdicke Toronto, Genf 1816, Leoniden-Maximum, COP31-Termin.
 - [ ] „Rente mit 63“ (04.11.) ist politiknah (nur Rechnung; Tausch mit Reserve R7 oder R14 möglich).
 - [ ] Lunar Animations kann nachlegen: ein neues Lunar-Thema, das ein Planthema trifft, sperrt es (dann Reserve). Embed-Listen zeigen nur die neuesten 5–13 Videos je Konto (**A**).
 - [ ] Text-Überlappungs-Prüfung (`qc/text_ueberlappung.mjs`, Account 2 `…_pov.mjs`) bei jedem Video; sie prüft HUD-Texte, keine Texturen in der 3D-Szene.
 - [ ] Ob ein Impressum-Link in der Bio das CRP stört, ist von TikTok nicht dokumentiert.
-- [ ] **Wörtliche Sätze der 4 Vorbildvideos stehen im Skill `massstab.md` (und im Hirn)** (46 Auszüge, z. B. Hook- und Endstand-Zeilen). Das widerspricht „keine Transkripte im öffentlichen Repo“. Entscheidung des Inhabers: durch Paraphrasen ersetzen (Empfehlung) oder belassen, bis das Repo privat ist.
-- [ ] **Widersprüche in den Skill-Quellen klären** (vom Hirn-Aufbau gefunden, Details in [[Prüfung und Abnahme Simulierbar]] und [[Sperrliste und Auswahlregeln Simulierbar]]): Prüfliste 20 Punkte gegen `qc/massstab.py` (13 Punkte nur Hinweis, IDs weichen ab) · Tempo Prüfliste #12 (170–220 Wörter) gegen Profil Ben (130–170 Wörter, 2,0 W/s) · Konkurrenzzahlen 2,1 Mio./467.800/403.000 keinem Vorbild zuordenbar · Score-Raster „… S“ unerklärt · alte Planzeilen nennen Posting-Zeiten 12:00/20:00.
+- [ ] **Engine-Aufgaben (Opus, vor dem ersten „Natur“-Video von Account 2 bzw. Einsatz alter Stile bei Account 1):** Natur-Welten im Baukasten (Küste/Meer, Wald, Wüste, Gebirge, Eis; Wasser, Vegetation, Tiere, Sonnenlauf mit Schatten), echter Kamera-Zoom und Fahrt in `PovKamera` (mit Eintrag im Ereignis-Protokoll); Video-Baukästen für die Stile 5, 7–11 und 15 (Account 1, bisher nur Demos).
+- [ ] **Neue Prüfwerte sind Startwerte (S):** Hinweise 10–12 in `referenz_pov.py` und das Tempoprofil in `massstab.py` sind nur an wenigen Videos kalibriert. Das letzte Video „Steuererklärung oder Überstunden“ (144 Wörter, 2,15 W/s) fiele im neuen Profil durch; es bleibt unverändert.
+- [ ] **Stil 16 (Lunar-POV) bleibt Account 2.** „Alle Stile“ bei Account 1 heißt 1–15 und 17–21.
+- [x] Wörtliche Sätze der 4 Vorbildvideos in `massstab.md`: **Entscheidung des Inhabers 02.11.: bleiben so** (Risiko öffentliches Repo; sicherste Lösung wäre, das Repo privat zu stellen).
+- [ ] **Widersprüche in den Skill-Quellen klären** (vom Hirn-Aufbau gefunden, Details in [[Prüfung und Abnahme Simulierbar]] und [[Sperrliste und Auswahlregeln Simulierbar]]): Prüfliste 20 Punkte gegen `qc/massstab.py` (13 Punkte nur Hinweis, IDs weichen ab) (Tempo-Widerspruch ist gelöst: 150–190 Wörter, Entscheidung 02.11.) · Konkurrenzzahlen 2,1 Mio./467.800/403.000 keinem Vorbild zuordenbar · Score-Raster „… S“ unerklärt · alte Planzeilen nennen Posting-Zeiten 12:00/20:00.
 - [ ] Radar-Prompt dauerhaft auf CLAUDE.md umstellen (nur in der Radar-Sitzung selbst möglich, optional).
 
 ## Siehe auch

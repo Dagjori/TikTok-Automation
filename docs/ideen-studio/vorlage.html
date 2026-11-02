@@ -1,0 +1,411 @@
+<title>Ideen-Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: eine Arbeitsfläche, oben Konto-Wahl (grün = Simulierbar, violett = stelldirvor.pov, wie im Obsidian-Farbcode),
+   darunter der Ablauf in vier Schritten; unten fest die Auswahlleiste. */
+:root {
+  --bg: #F4F6F4; --surface: #FFFFFF; --surface2: #ECF0EE; --fg: #14191C; --muted: #566169; --line: #D8DFDC;
+  --a1: #1B8F52; --a1-soft: #DDF3E8; --a2: #7440CF; --a2-soft: #EAE0FA;
+  --warn: #9A6200; --warn-soft: #FBEFD2; --bad: #B5382A; --bad-soft: #F8DDD8; --ok: #1B8F52; --on: #FFFFFF;
+  --accent: var(--a1); --accent-soft: var(--a1-soft);
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1214; --surface: #161C1F; --surface2: #1E2629; --fg: #E7ECEA; --muted: #98A5A1; --line: #2B3539;
+    --a1: #3FD58D; --a1-soft: #153A2A; --a2: #B88DFF; --a2-soft: #2B1F47;
+    --warn: #E8B24A; --warn-soft: #3A2D12; --bad: #FF8A7A; --bad-soft: #3D1D19; --ok: #3FD58D; --on: #0B1210; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1214; --surface: #161C1F; --surface2: #1E2629; --fg: #E7ECEA; --muted: #98A5A1; --line: #2B3539;
+  --a1: #3FD58D; --a1-soft: #153A2A; --a2: #B88DFF; --a2-soft: #2B1F47;
+  --warn: #E8B24A; --warn-soft: #3A2D12; --bad: #FF8A7A; --bad-soft: #3D1D19; --ok: #3FD58D; --on: #0B1210; color-scheme: dark;
+}
+body[data-konto="stelldirvor"] { --accent: var(--a2); --accent-soft: var(--a2-soft); }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--f-body); font-size: 16px; line-height: 1.5; margin: 0;
+  padding-block: 20px 120px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1040px; margin: 0 auto; display: grid; gap: 20px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+h1 { font-size: clamp(28px, 5vw, 40px); letter-spacing: -0.02em; }
+h2 { font-size: 20px; } h3 { font-size: 17px; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.mono { font-family: var(--f-mono); font-size: 13px; }
+button { font: inherit; cursor: pointer; }
+button:focus-visible, summary:focus-visible, textarea:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; align-items: end; }
+.top .sub { color: var(--muted); }
+.tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.tab { text-align: left; border: 2px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 10px; padding: 12px 14px; display: grid; gap: 2px; }
+.tab b { font-family: var(--f-display); font-size: 18px; }
+.tab small { color: var(--muted); }
+.tab[aria-pressed="true"] { border-color: var(--tabc); background: var(--tabbg); }
+.tab[data-k="simulierbar"] { --tabc: var(--a1); --tabbg: var(--a1-soft); }
+.tab[data-k="stelldirvor"] { --tabc: var(--a2); --tabbg: var(--a2-soft); }
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.steps li { border-top: 4px solid var(--line); padding-top: 6px; font-size: 14px; color: var(--muted); }
+.steps li.done { border-color: var(--accent); color: var(--fg); }
+.steps li.now { border-color: var(--accent); color: var(--fg); font-weight: 600; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.btn { border: 0; border-radius: 8px; padding: 11px 16px; font-weight: 600; background: var(--accent); color: var(--on); }
+.btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--line); }
+.btn.small { padding: 6px 10px; font-size: 14px; }
+.btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+textarea { width: 100%; min-height: 84px; font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px; resize: vertical; }
+label.lbl { font-weight: 600; font-size: 14px; }
+details > summary { cursor: pointer; font-weight: 600; }
+details .body { margin-top: 10px; display: grid; gap: 10px; }
+pre.text { white-space: pre-wrap; word-break: break-word; margin: 0; font-family: var(--f-body); }
+.note { border-left: 4px solid var(--warn); background: var(--warn-soft); padding: 10px 12px; border-radius: 0 8px 8px 0; font-size: 15px; }
+.err { border-left: 4px solid var(--bad); background: var(--bad-soft); padding: 10px 12px; border-radius: 0 8px 8px 0; }
+.ideas { display: grid; gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; min-width: 0; }
+.card.sel { border: 2px solid var(--accent); }
+.card .head { display: flex; gap: 12px; align-items: baseline; }
+.card .nr { font-family: var(--f-mono); color: var(--accent); font-weight: 500; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { background: var(--accent-soft); color: var(--fg); border-radius: 999px; padding: 2px 10px; font-size: 14px; }
+.facts { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px 16px; margin: 0; }
+@media (min-width: 720px) { .facts { grid-template-columns: 170px minmax(0, 1fr); } }
+.facts dt { color: var(--muted); font-size: 14px; }
+.facts dd { margin: 0 0 6px; min-width: 0; overflow-wrap: anywhere; }
+.slot { display: flex; flex-wrap: wrap; gap: 8px; }
+.slotbtn { border: 1px solid var(--line); background: var(--surface2); color: var(--fg); border-radius: 8px; padding: 7px 12px; }
+.slotbtn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on); font-weight: 600; }
+.bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface); border-top: 1px solid var(--line);
+  padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); z-index: 5; }
+.bar .in { max-width: 1040px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; }
+.bar .pick { display: grid; gap: 2px; min-width: 0; font-size: 14px; }
+.bar .pick span { overflow-wrap: anywhere; }
+.scripts { display: grid; gap: 14px; }
+.seg { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; border-top: 1px solid var(--line); padding-top: 8px; }
+@media (min-width: 720px) { .seg { grid-template-columns: 110px minmax(0, 1fr) minmax(0, 1fr); gap: 4px 14px; } }
+.seg .ph { font-family: var(--f-mono); font-size: 13px; color: var(--accent); }
+.badge { font-family: var(--f-mono); font-size: 13px; padding: 2px 8px; border-radius: 6px; background: var(--surface2); }
+.badge.ok { background: var(--accent-soft); } .badge.warn { background: var(--warn-soft); color: var(--warn); } .badge.bad { background: var(--bad-soft); color: var(--bad); }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; font-size: 13px; }
+.state { font-size: 14px; color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) { .tab, .btn, .slotbtn { transition: background-color .15s, border-color .15s; } }
+</style>
+
+<div class="wrap" id="app">
+  <header class="top">
+    <div>
+      <h1>Ideen-Studio</h1>
+      <p class="sub" id="zielzeile">Videos für morgen</p>
+    </div>
+    <div class="row">
+      <label class="lbl" for="datum">Video-Tag</label>
+      <input id="datum" type="date" style="font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg)">
+    </div>
+  </header>
+  <nav class="tabs" aria-label="Account" id="tabs"></nav>
+  <ol class="steps" id="steps"></ol>
+  <section id="lern"></section>
+  <section id="schritt1"></section>
+  <section id="ideen"></section>
+  <section id="skripte"></section>
+  <section id="uebergabe"></section>
+  <section id="fallback"></section>
+</div>
+<div class="bar" id="bar" hidden></div>
+
+<script type="application/json" id="befehle">__BEFEHLE_JSON__</script>
+<script>
+const BEFEHLE = JSON.parse(document.getElementById("befehle").textContent);
+const KONTEN = ["simulierbar", "stelldirvor"];
+const FELDER_IDEE = {
+  simulierbar: [["hook", "Erster Satz"], ["ergebnis_ansatz", "Rechnung und Ergebnis"], ["warum_relevant", "Wen es betrifft"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["bildidee", "Bildidee"], ["laender", "Land"], ["risiko", "Risiko"]],
+  stelldirvor: [["ereignis", "Ereignis"], ["messgroesse", "Messwert-Anzeige"], ["welt", "Welt"], ["standpunkt", "Standpunkt"], ["tageszeit_verlauf", "Tageszeit"], ["bewegung", "Bewegung in der Welt"], ["kamera", "Kamera"], ["zeitraffer", "Zeitraffer"], ["hoehepunkt", "Höhepunkt"], ["pointe", "Pointe"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["laender", "Ort"], ["risiko", "Risiko"]],
+};
+const S = { konto: "simulierbar", datum: "", db: null, sample: null, user: null, canWrite: null,
+  lernstand: {}, wunsch: { simulierbar: "", stelldirvor: "" }, ideen: { simulierbar: [], stelldirvor: [] },
+  auswahl: { simulierbar: { mittag: null, abend: null }, stelldirvor: { mittag: null, abend: null } },
+  skripte: { simulierbar: {}, stelldirvor: {} }, busy: {}, fehler: {}, fortschritt: {}, ctl: {}, liste: [], dbZeit: false };
+
+const $ = (s, el = document) => el.querySelector(s);
+function h(tag, attrs, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k === "class") e.className = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (v === true) e.setAttribute(k, "");
+    else e.setAttribute(k, v);
+  }
+  for (const kid of kids.flat()) { if (kid == null || kid === false) continue; e.append(kid.nodeType ? kid : document.createTextNode(String(kid))); }
+  return e;
+}
+const K = () => BEFEHLE[S.konto];
+const pf = () => K().praefix;
+function iso(d) { return new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Berlin" }).format(d); }
+function morgen() { return iso(new Date(Date.now() + 864e5)); }
+function wochentag(isoDatum) { return new Date(isoDatum + "T12:00:00").toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long", year: "numeric" }); }
+function slots(isoDatum) {
+  const we = [0, 6].includes(new Date(isoDatum + "T12:00:00").getDay());
+  return { mittag: we ? "09:30" : "12:30", abend: "19:30" };
+}
+function docId(konto, slot) { return BEFEHLE[konto].praefix + "-" + S.datum + "-" + slot; }
+function lernText() { return S.lernstand[S.konto] ?? K().lernstand; }
+function bisherListe() {
+  const titel = new Set(K().bisher);
+  for (const d of S.liste) if (d.konto === S.konto && d.titel) titel.add(d.titel);
+  return [...titel];
+}
+function copy(text, knopf) {
+  const fertig = () => { const t = knopf.textContent; knopf.textContent = "Kopiert"; setTimeout(() => (knopf.textContent = t), 1500); };
+  (navigator.clipboard?.writeText(text) ?? Promise.reject()).then(fertig).catch(() => {
+    const ta = h("textarea", { "aria-label": "Zum Kopieren" }); ta.value = text; knopf.after(ta); ta.select();
+  });
+}
+const FEHLER = {
+  not_granted: "Du hast Claude für diese Seite nicht freigegeben. Öffne das Berechtigungs-Menü des Artifacts und erlaube es, dann klicke noch einmal.",
+  rate_limited: "Zu viele Anfragen oder dein Nutzungslimit ist erreicht. Warte etwas und klicke dann erneut.",
+  invalid_json: "Die Antwort war kein lesbares JSON. Klicke noch einmal; hilft das nicht, nimm den Weg über Claude Chat unten.",
+  upstream_error: "Verbindung zu Claude unterbrochen. Klicke noch einmal.",
+  session_expired: "Du musst dich neu bei claude.ai anmelden.",
+  refused: "Claude hat diese Anfrage abgelehnt. Ändere den Wunsch und versuche es erneut.",
+  sampling_disabled: "Claude ist für dieses Konto hier nicht verfügbar. Nimm den Weg über Claude Chat unten.",
+  prompt_too_large: "Die Anfrage war zu groß.", empty_completion: "Claude hat nichts geschrieben. Klicke noch einmal.",
+};
+const fehlerText = (e) => FEHLER[e?.code] ?? "Es hat nicht geklappt (" + (e?.code ?? "unbekannt") + "). Klicke noch einmal.";
+
+/* ---------- Befehle bauen ---------- */
+function ideenBefehl(wunsch) {
+  let t = K().ideen_vorlage.replace("{{LERNSTAND}}", () => lernText()).replace("- {{BISHER}}", () => bisherListe().map((x) => "- " + x).join("\n"));
+  if (wunsch.trim()) t = t.replace("AUFGABE\n", () => "MEIN WUNSCH FÜR HEUTE: " + wunsch.trim() + "\n\nAUFGABE\n");
+  return t + "\n\nVideo-Tag: " + S.datum + ". Alle Aussagen müssen für das Jahr " + S.datum.slice(0, 4) + " gelten.";
+}
+function skriptBefehl(idee) {
+  return K().skript_vorlage.replace("{{LERNSTAND}}", () => lernText()).replace("{{IDEEN}}", () => JSON.stringify([idee], null, 1))
+    + "\n\nVideo-Tag: " + S.datum + ". Alle Aussagen müssen für das Jahr " + S.datum.slice(0, 4) + " gelten. Du kannst nicht im Internet recherchieren: nutze nur Fakten, deren Inhalt und Jahr du sicher kennst, und markiere alles andere als „zu prüfen“ in den Annahmen. Claude Code prüft jede Zahl danach mit Websuche.";
+}
+
+/* ---------- Erzeugen ---------- */
+async function erzeugeIdeen() {
+  const k = S.konto, id = "i-" + k;
+  if (!S.sample || S.busy[id]) return;
+  S.busy[id] = true; S.fehler[id] = null; S.fortschritt[id] = "Claude denkt nach …"; S.ctl[id] = new AbortController(); render();
+  try {
+    const data = await S.sample.json(ideenBefehl(S.wunsch[k]), { modelTier: "default", cache: false, signal: S.ctl[id].signal,
+      onText: ({ text }) => { const n = (text.match(/"nr"\s*:/g) || []).length; S.fortschritt[id] = n ? "Idee " + Math.min(n, 10) + " von 10 …" : "Claude schreibt …"; renderSchritt1(); } });
+    const liste = (data?.ideen || []).filter((x) => x && x.titel);
+    if (!liste.length) throw { code: "invalid_json" };
+    S.ideen[k] = liste.slice(0, 10); S.auswahl[k] = { mittag: null, abend: null }; S.skripte[k] = {};
+    if (S.db) S.db.doc("ideen/" + BEFEHLE[k].praefix + "-" + S.datum).set({ konto: k, datum: S.datum, ideen: S.ideen[k], erzeugt: new Date().toISOString() }).catch(() => {});
+  } catch (e) { if (e?.code !== "cancelled") S.fehler[id] = fehlerText(e); }
+  S.busy[id] = false; S.fortschritt[id] = ""; render();
+}
+function pruefeSkript(konto, sk) {
+  const m = [];
+  if (konto === "simulierbar") {
+    const woerter = (sk.segmente || []).map((s) => (s.sprechtext || "").replace(/\[[^\]]*\]/g, " ")).join(" ").split(/\s+/).filter(Boolean).length;
+    m.push({ t: woerter + " Wörter (Ziel 150–190)", c: woerter >= 150 && woerter <= 190 ? "ok" : "warn" });
+    const alle = (sk.segmente || []).map((s) => s.sprechtext || "").join(" ");
+    const ausruf = (alle.match(/!/g) || []).length; m.push({ t: ausruf + " Ausrufezeichen (max. 3)", c: ausruf <= 3 ? "ok" : "bad" });
+    const verbot = /\[(excited|shouting|energetic)\]|<break|los geht/i.test(alle); m.push({ t: verbot ? "Verbotene Tags/Wörter gefunden" : "Keine verbotenen Tags", c: verbot ? "bad" : "ok" });
+  } else {
+    const n = (sk.saetze || []).length; m.push({ t: n + " Sätze (12–18)", c: n >= 12 && n <= 18 ? "ok" : "warn" });
+    const lang = (sk.saetze || []).filter((s) => { const w = String(s.text || "").split(/\s+/).filter(Boolean).length; return w < 3 || w > 9; }).length;
+    m.push({ t: lang ? lang + " Sätze außerhalb 3–9 Wörter" : "Alle Sätze 3–9 Wörter", c: lang ? "warn" : "ok" });
+  }
+  m.push({ t: (sk.quellen || []).length + " Quellen", c: (sk.quellen || []).length ? "ok" : "bad" });
+  return m;
+}
+async function erzeugeSkripte() {
+  const k = S.konto, a = S.auswahl[k];
+  const jobs = ["mittag", "abend"].filter((s) => a[s] != null);
+  if (!S.sample || !jobs.length) return;
+  await Promise.all(jobs.map(async (slot) => {
+    const id = "s-" + k + "-" + slot;
+    if (S.busy[id]) return;
+    S.busy[id] = true; S.fehler[id] = null; S.fortschritt[id] = "Claude denkt nach …"; S.ctl[id] = new AbortController(); render();
+    try {
+      const data = await S.sample.json(skriptBefehl(S.ideen[k][a[slot]]), { modelTier: "complex", cache: false, signal: S.ctl[id].signal,
+        onText: ({ text }) => { S.fortschritt[id] = "Schreibt … " + Math.round(text.length / 100) / 10 + " k Zeichen"; renderSkripte(); } });
+      const sk = (data?.skripte || [])[0];
+      if (!sk) throw { code: "invalid_json" };
+      S.skripte[k][slot] = { skript: sk, freigegeben: false };
+    } catch (e) { if (e?.code !== "cancelled") S.fehler[id] = fehlerText(e); }
+    S.busy[id] = false; S.fortschritt[id] = ""; render();
+  }));
+}
+async function freigeben(slot) {
+  const k = S.konto, eintrag = S.skripte[k][slot]; if (!eintrag || !S.db) return;
+  const sk = eintrag.skript, id = "f-" + k + "-" + slot; S.busy[id] = true; S.fehler[id] = null; renderSkripte();
+  try {
+    await S.db.doc("skripte/" + docId(k, slot)).set({ konto: k, datum: S.datum, slot, uhrzeit: slots(S.datum)[slot], titel: sk.titel || "", thema: sk.thema || "",
+      skript: sk, rechenweg: sk.rechenweg || "", zahlen: sk.zahlen || {}, annahmen: sk.annahmen || [], quellen: sk.quellen || [], caption: sk.caption || "",
+      dramaturgie: sk.dramaturgie || [], selbstpruefung: sk.selbstpruefung || [], status: "freigegeben", faktencheck: "offen", erstellt: new Date().toISOString() });
+    eintrag.freigegeben = true;
+  } catch (e) { S.fehler[id] = "Speichern nicht möglich (" + (e?.code ?? "unbekannt") + "). Kopiere das Skript stattdessen und füge es in die Claude-Code-Sitzung ein."; }
+  S.busy[id] = false; renderSkripte();
+}
+async function speichereLernstand(text) {
+  if (!S.db) return;
+  try { await S.db.doc("stand/lernstand-" + pf()).set({ konto: S.konto, text, aktualisiert: new Date().toISOString() }); } catch (e) { S.fehler.lern = "Speichern nicht möglich (" + (e?.code ?? "unbekannt") + ")."; renderLern(); }
+}
+
+/* ---------- Anzeige ---------- */
+function render() { renderKopf(); renderLern(); renderSchritt1(); renderIdeen(); renderSkripte(); renderUebergabe(); renderFallback(); renderBar(); }
+function renderKopf() {
+  document.body.dataset.konto = S.konto;
+  $("#zielzeile").textContent = "Videos für " + wochentag(S.datum) + " · Mittag " + slots(S.datum).mittag + " · Abend " + slots(S.datum).abend;
+  $("#datum").value = S.datum;
+  const tabs = $("#tabs"); tabs.replaceChildren(...KONTEN.map((k) => h("button", { class: "tab", "data-k": k, "aria-pressed": String(S.konto === k), id: "tab-" + k,
+    onclick: () => { S.konto = k; render(); } }, h("b", null, BEFEHLE[k].name), h("small", null, BEFEHLE[k].handle + (k === "simulierbar" ? " · nur Geld" : " · Was wäre, wenn …")))));
+  const k = S.konto, hatIdeen = S.ideen[k].length > 0, a = S.auswahl[k];
+  const gewaehlt = ["mittag", "abend"].every((s) => a[s] != null), hatSkripte = Object.keys(S.skripte[k]).length > 0;
+  const frei = Object.values(S.skripte[k]).some((x) => x.freigegeben);
+  const stufe = frei ? 4 : hatSkripte ? 3 : gewaehlt ? 2 : hatIdeen ? 1 : 0;
+  const namen = ["Ideen erzeugen", "2 Ideen wählen", "Skripte schreiben", "An Claude Code übergeben"];
+  $("#steps").replaceChildren(...namen.map((n, i) => h("li", { class: i < stufe ? "done" : i === stufe ? "now" : "" }, (i + 1) + ". " + n)));
+}
+function renderLern() {
+  const el = $("#lern"), kann = S.user?.canEdit?.() ?? false;
+  const offen = !!el.querySelector("details[open]");
+  const box = h("div", { class: "panel" }, h("details", { open: offen }, h("summary", null, "Lernstand, der in jeden Befehl eingebaut wird"),
+    h("div", { class: "body" }, h("pre", { class: "text", id: "lerntext" }, lernText()),
+      kann ? h("div", { class: "row" }, h("button", { class: "btn ghost small", id: "lernedit", onclick: () => {
+        const ta = h("textarea", { id: "lernarea", "aria-label": "Lernstand bearbeiten" }); ta.value = lernText(); ta.style.minHeight = "200px";
+        $("#lerntext").replaceWith(ta);
+        const sp = h("button", { class: "btn small", onclick: async () => { S.lernstand[S.konto] = ta.value; await speichereLernstand(ta.value); render(); } }, "Speichern");
+        $("#lernedit").replaceWith(sp); } }, "Bearbeiten")) : null,
+      S.fehler.lern ? h("p", { class: "err" }, S.fehler.lern) : null,
+      h("p", { class: "state" }, "Claude Code schreibt den Lernstand täglich um 20:00 Uhr aus den Buffer-Zahlen fort. Änderungen an Regeln brauchen deine Freigabe."))));
+  el.replaceChildren(box);
+}
+function renderSchritt1() {
+  const id = "i-" + S.konto, el = $("#schritt1");
+  const wunsch = h("textarea", { id: "wunsch", placeholder: "Optional: ein Thema, ein Land, ein Gedanke für heute …", "aria-label": "Eigener Wunsch für heute" }); wunsch.value = S.wunsch[S.konto];
+  wunsch.addEventListener("input", () => (S.wunsch[S.konto] = wunsch.value));
+  const hatIdeen = S.ideen[S.konto].length > 0;
+  el.replaceChildren(h("div", { class: "panel" }, h("h2", null, "1. Zehn Ideen"),
+    h("label", { class: "lbl", for: "wunsch" }, "Eigener Wunsch (optional)"), wunsch,
+    h("div", { class: "row" },
+      S.sample ? h("button", { class: "btn", id: "gen", disabled: !!S.busy[id], onclick: erzeugeIdeen }, hatIdeen ? "Neue zehn Ideen" : "Zehn Ideen erzeugen") : null,
+      S.busy[id] ? h("button", { class: "btn ghost", onclick: () => S.ctl[id]?.abort() }, "Stopp") : null,
+      S.busy[id] ? h("span", { class: "state", role: "status" }, S.fortschritt[id]) : null),
+    S.sample ? null : h("p", { class: "note" }, "Claude lässt sich auf dieser Seite gerade nicht fragen. Nutze unten den Weg über Claude Chat."),
+    S.fehler[id] ? h("p", { class: "err", role: "alert" }, S.fehler[id]) : null));
+}
+function ideeKarte(i, idee) {
+  const k = S.konto, a = S.auswahl[k], sl = slots(S.datum);
+  const gewaehltAls = ["mittag", "abend"].find((s) => a[s] === i);
+  const paare = FELDER_IDEE[k].map(([f, l]) => {
+    let v = idee[f]; if (v == null || v === "") return null; if (Array.isArray(v)) v = v.join("  gegen  ");
+    return [h("dt", null, l), h("dd", null, String(v))];
+  }).filter(Boolean);
+  const vorn = k === "simulierbar" ? 3 : 4;
+  const faktenVorn = paare.slice(0, vorn).flat(), faktenRest = paare.slice(vorn).flat();
+  const slotBtn = (slot) => h("button", { class: "slotbtn", "aria-pressed": String(a[slot] === i), onclick: () => {
+    if (a[slot] === i) a[slot] = null; else { const andere = slot === "mittag" ? "abend" : "mittag"; if (a[andere] === i) a[andere] = null; a[slot] = i; }
+    S.skripte[k] = {}; render(); } }, (slot === "mittag" ? "Mittag " : "Abend ") + sl[slot]);
+  const chips = k === "simulierbar" && Array.isArray(idee.alternativen) ? h("div", { class: "chips" }, idee.alternativen.map((x) => h("span", { class: "chip" }, x))) : null;
+  return h("article", { class: "card" + (gewaehltAls ? " sel" : "") },
+    h("div", { class: "head" }, h("span", { class: "nr" }, String(i + 1).padStart(2, "0")), h("h3", null, idee.titel)),
+    chips, h("dl", { class: "facts" }, faktenVorn),
+    faktenRest.length ? h("details", null, h("summary", null, "Mehr Details"), h("dl", { class: "facts", style: "margin-top:10px" }, faktenRest)) : null,
+    h("div", { class: "slot" }, slotBtn("mittag"), slotBtn("abend")));
+}
+function renderIdeen() {
+  const el = $("#ideen"), l = S.ideen[S.konto];
+  el.replaceChildren(...(l.length ? [h("div", { class: "ideas" }, h("h2", null, "2. Zwei Ideen wählen"),
+    h("p", { class: "muted" }, "Tippe bei einer Idee auf Mittag oder Abend. Pro Zeitpunkt zählt genau eine Idee."), ...l.map((x, i) => ideeKarte(i, x)))] : []));
+}
+function skriptAnsicht(slot) {
+  const k = S.konto, e = S.skripte[k][slot], sk = e.skript, sl = slots(S.datum), id = "f-" + k + "-" + slot;
+  const pruef = pruefeSkript(k, sk);
+  const teile = [h("div", { class: "row" }, h("h3", null, (slot === "mittag" ? "Mittag " : "Abend ") + sl[slot] + ": " + (sk.titel || "")), h("span", { class: "badge " + (e.freigegeben ? "ok" : "") }, e.freigegeben ? "übergeben" : "Entwurf")),
+    h("div", { class: "chips" }, pruef.map((p) => h("span", { class: "badge " + p.c }, p.t)))];
+  if (k === "simulierbar") {
+    teile.push(...(sk.segmente || []).map((s) => h("div", { class: "seg" }, h("span", { class: "ph" }, s.phase || s.id), h("pre", { class: "text" }, s.text || ""), h("pre", { class: "text mono" }, s.sprechtext || ""))));
+  } else {
+    teile.push(h("p", null, h("b", null, "Welt: "), [sk.welt, sk.standpunkt, sk.tageszeit_verlauf].filter(Boolean).join(" · ")),
+      h("p", null, h("b", null, "Zeitraffer und Kamera: "), [sk.zeitraffer, sk.kamera].filter(Boolean).join(" · ")),
+      h("div", { class: "tablewrap" }, h("table", null, h("thead", null, h("tr", null, ["Zeit", "Etikett", "Start", "Ende", "Einheit", "Unterzeile"].map((x) => h("th", null, x)))),
+        h("tbody", null, (sk.anzeige_plan || []).map((r) => h("tr", null, [r.von_s + "–" + r.bis_s + " s", r.etikett, r.start, r.ende, r.einheit, r.unter].map((x) => h("td", null, x ?? ""))))))),
+      h("ol", null, (sk.saetze || []).map((s) => h("li", null, h("span", { class: "mono muted" }, "ca. " + s.t_ca + " s  "), s.text))),
+      sk.faktenzeile ? h("p", null, h("b", null, "Faktenzeile: "), sk.faktenzeile) : null);
+  }
+  const liste = (titel, arr) => (arr && arr.length ? h("details", null, h("summary", null, titel), h("div", { class: "body" }, h("ul", null, arr.map((x) => h("li", null, typeof x === "string" ? x : JSON.stringify(x)))))) : null);
+  teile.push(h("details", null, h("summary", null, "Rechenweg"), h("div", { class: "body" }, h("pre", { class: "text" }, sk.rechenweg || "–"))),
+    liste("Annahmen", sk.annahmen), liste("Quellen (nur intern)", sk.quellen), liste("Dramaturgie für Design und Animation", sk.dramaturgie), liste("Selbstprüfung von Claude", sk.selbstpruefung),
+    sk.caption ? h("p", null, h("b", null, "Caption: "), sk.caption) : null);
+  const tx = JSON.stringify(sk, null, 1);
+  teile.push(h("div", { class: "row" },
+    h("button", { class: "btn", disabled: !S.db || e.freigegeben || !!S.busy[id], onclick: () => freigeben(slot) }, e.freigegeben ? "Übergeben" : "Freigeben und an Claude Code übergeben"),
+    h("button", { class: "btn ghost", onclick: (ev) => copy(tx, ev.currentTarget) }, "Skript kopieren")),
+    S.fehler[id] ? h("p", { class: "err", role: "alert" }, S.fehler[id]) : null);
+  return h("article", { class: "card" }, ...teile);
+}
+function renderSkripte() {
+  const el = $("#skripte"), k = S.konto, a = S.auswahl[k];
+  const kopf = [];
+  const laufend = ["mittag", "abend"].filter((s) => S.busy["s-" + k + "-" + s]);
+  const fehler = ["mittag", "abend"].map((s) => S.fehler["s-" + k + "-" + s]).filter(Boolean);
+  if (laufend.length) kopf.push(h("p", { class: "state", role: "status" }, laufend.map((s) => (s === "mittag" ? "Mittag" : "Abend") + ": " + S.fortschritt["s-" + k + "-" + s]).join(" · "),
+    " ", h("button", { class: "btn ghost small", onclick: () => laufend.forEach((s) => S.ctl["s-" + k + "-" + s]?.abort()) }, "Stopp")));
+  fehler.forEach((f) => kopf.push(h("p", { class: "err", role: "alert" }, f)));
+  const sicht = ["mittag", "abend"].filter((s) => S.skripte[k][s]).map(skriptAnsicht);
+  el.replaceChildren(...(sicht.length || kopf.length ? [h("div", { class: "scripts" }, h("h2", null, "3. Skripte"),
+    h("p", { class: "note" }, "Claude kann hier nicht im Internet recherchieren. Claude Code prüft jede Zahl und Quelle mit Websuche, bevor das Video entsteht."), ...kopf, ...sicht)] : []));
+}
+function renderUebergabe() {
+  const el = $("#uebergabe");
+  const liste = S.liste.filter((d) => d.konto === S.konto).slice(0, 8);
+  const offen = !!el.querySelector("details[open]");
+  el.replaceChildren(h("div", { class: "panel" }, h("details", { open: offen }, h("summary", null, "Übergeben an Claude Code (" + liste.length + ")"),
+    h("div", { class: "body" }, liste.length ? h("div", { class: "tablewrap" }, h("table", null, h("thead", null, h("tr", null, ["Tag", "Zeit", "Titel", "Status", "Faktencheck"].map((x) => h("th", null, x)))),
+      h("tbody", null, liste.map((d) => h("tr", null, [d.datum, d.uhrzeit, d.titel, d.status, d.faktencheck].map((x) => h("td", null, x ?? ""))))))) :
+      h("p", { class: "muted" }, S.db ? "Noch nichts übergeben. Freigegebene Skripte erscheinen hier und liegen für Claude Code bereit." : S.dbZeit ? "Die Datenbank ist gerade nicht erreichbar." : "Datenbank wird geladen …")))));
+}
+function renderFallback() {
+  const el = $("#fallback"), k = S.konto;
+  const sel = ["mittag", "abend"].map((s) => S.auswahl[k][s]).filter((x) => x != null).map((i) => S.ideen[k][i]);
+  const offen = !!el.querySelector("details[open]");
+  el.replaceChildren(h("div", { class: "panel" }, h("details", { open: offen }, h("summary", null, "Alternative: Befehl in Claude Chat kopieren (mit Internet-Recherche)"),
+    h("div", { class: "body" }, h("p", { class: "muted" }, "Für maximale Faktentreue: im echten Claude Chat mit aktivierter Websuche. Befehl kopieren, dort einfügen, die Skripte danach in die Claude-Code-Sitzung einfügen."),
+      h("div", { class: "row" },
+        h("button", { class: "btn ghost", onclick: (e) => copy(BEFEHLE[k].ideen_text.replace(BEFEHLE[k].lernstand, () => lernText()) + "\n\nVideo-Tag: " + S.datum, e.currentTarget) }, "Befehl 1 kopieren: zehn Ideen"),
+        h("button", { class: "btn ghost", onclick: (e) => copy(BEFEHLE[k].skript_text.replace("{{IDEEN}}", () => (sel.length ? JSON.stringify(sel, null, 1) : "[Hier die zwei gewählten Ideen einfügen]")).replace(BEFEHLE[k].lernstand, () => lernText()) + "\n\nVideo-Tag: " + S.datum, e.currentTarget) }, "Befehl 2 kopieren: Skripte"))))));
+}
+function renderBar() {
+  const bar = $("#bar"), k = S.konto, a = S.auswahl[k];
+  if (!S.ideen[k].length) { bar.hidden = true; return; }
+  const sl = slots(S.datum), n = ["mittag", "abend"].filter((s) => a[s] != null).length;
+  const zeile = (s) => h("span", null, (s === "mittag" ? "Mittag " : "Abend ") + sl[s] + ": " + (a[s] != null ? S.ideen[k][a[s]].titel : "noch keine Idee"));
+  const laeuft = ["mittag", "abend"].some((s) => S.busy["s-" + k + "-" + s]);
+  bar.hidden = false;
+  bar.replaceChildren(h("div", { class: "in" }, h("div", { class: "pick" }, zeile("mittag"), zeile("abend")),
+    S.sample ? h("button", { class: "btn", id: "skriptbtn", disabled: n === 0 || laeuft, onclick: erzeugeSkripte }, n === 2 ? "Beide Skripte schreiben" : "Skript schreiben") : null));
+}
+
+/* ---------- Start ---------- */
+async function start() {
+  S.datum = morgen();
+  $("#datum").addEventListener("change", (e) => { if (e.target.value) { S.datum = e.target.value; S.skripte = { simulierbar: {}, stelldirvor: {} }; render(); } });
+  render();
+  const nutze = (n) => { try { return Promise.resolve(window.claude?.use ? window.claude.use(n) : null).catch(() => null); } catch (e) { return Promise.resolve(null); } };
+  const [db, sample, user] = await Promise.all([nutze("db"), nutze("sample"), nutze("user")]);
+  S.db = db; S.sample = sample; S.user = user; render();
+  if (!db) return;
+  const timer = setTimeout(() => { S.dbZeit = true; renderUebergabe(); }, 10000);
+  for (const k of KONTEN) {
+    db.doc("stand/lernstand-" + BEFEHLE[k].praefix).onSnapshot((snap) => { clearTimeout(timer); const d = snap.data(); if (d?.text) { S.lernstand[k] = d.text; renderLern(); } }, () => {});
+  }
+  db.collection("skripte").orderBy("erstellt", "desc").limit(30).onSnapshot((snap) => { clearTimeout(timer); S.liste = snap.docs.map((d) => d.data()); renderUebergabe(); }, () => {});
+}
+start();
+</script>

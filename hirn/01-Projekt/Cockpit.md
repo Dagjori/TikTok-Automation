@@ -5,9 +5,12 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md §10, docs/cockpit/cockpit.html
 tags: [konto/gemeinsam, cockpit, freigabe]
+cssclasses: [konto-gemeinsam, typ-anleitung]
 ---
 
 # Cockpit
+
+> **Seit 02.11. abends** läuft die tägliche Themenwahl im **Ideen-Studio** ([[Claude-Chat-Workflow]]). Die 120 Planthemen im Cockpit sind Archiv; das Cockpit bleibt für Freigaben und Status einzelner Videos.
 
 Claude-Artifact: https://claude.ai/artifact/FxZc6Cpodsg12hapn6Bpxz (Quelle `docs/cockpit/cockpit.html`). Entscheidung 02.11.: „sobald ich dort etwas freigebe oder ablehne, reagierst du“ („sonst bringt mir das Cockpit nichts“).
 

@@ -5,11 +5,15 @@ status: aktuell
 datum: 2026-11-02
 quelle: CLAUDE.md
 tags: [konto/gemeinsam, hirn, anleitung]
+cssclasses: [konto-gemeinsam, typ-anleitung]
 ---
 
 # Wie dieses Hirn funktioniert
 
 Das Hirn ist der Obsidian-Vault „TikTok Automation“: alles Wissen der zwei TikTok-Kanäle, geordnet in Notizen mit Wikilinks. Einstieg: [[Index]]. Die beiden Accounts sind strikt getrennt: [[Trennung der Accounts]].
+
+## Farben
+Jede Kategorie hat eine feste Farbe (Graph, Dateiliste, Überschriften, Tags). Legende: [[Farbcode]]. Neue Notiz im richtigen Ordner anlegen, dann stimmt die Farbe automatisch.
 
 ## Ordner
 | Ordner | Inhalt | Gilt für |

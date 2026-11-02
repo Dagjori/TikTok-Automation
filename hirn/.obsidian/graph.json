@@ -1,0 +1,86 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "file:Regelwerk",
+      "color": {
+        "a": 1,
+        "rgb": 15029067
+      }
+    },
+    {
+      "query": "file:Befehl OR file:Claude-Chat",
+      "color": {
+        "a": 1,
+        "rgb": 2082759
+      }
+    },
+    {
+      "query": "file:Lernschleife OR file:Insights",
+      "color": {
+        "a": 1,
+        "rgb": 15228314
+      }
+    },
+    {
+      "query": "path:00-Start",
+      "color": {
+        "a": 1,
+        "rgb": 14922561
+      }
+    },
+    {
+      "query": "path:01-Projekt",
+      "color": {
+        "a": 1,
+        "rgb": 5017078
+      }
+    },
+    {
+      "query": "path:02-Simulierbar",
+      "color": {
+        "a": 1,
+        "rgb": 3129201
+      }
+    },
+    {
+      "query": "path:03-stelldirvor-pov",
+      "color": {
+        "a": 1,
+        "rgb": 10512112
+      }
+    },
+    {
+      "query": "path:04-Recherche",
+      "color": {
+        "a": 1,
+        "rgb": 15894586
+      }
+    },
+    {
+      "query": "path:05-Vorlagen",
+      "color": {
+        "a": 1,
+        "rgb": 9147550
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": -0.5,
+  "nodeSizeMultiplier": 1.3,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.45,
+  "repelStrength": 12,
+  "linkStrength": 1,
+  "linkDistance": 220,
+  "scale": 1,
+  "close": false
+}
