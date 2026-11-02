@@ -1,0 +1,393 @@
+<title>Kanal-Cockpit Simulierbar & Stell dir vor</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,400&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: Kopf mit Stand, Reiter, Fahrplan als Tagesraster (2 Zeiten × 2 Kanäle), Details als aufklappbare Karten */
+:root{
+  --bg:#F2F4F1; --surface:#FFFFFF; --sunk:#E8ECE8; --ink:#16201C; --muted:#5B6863; --line:#D8DED9;
+  --sim:#1D6A9E; --sim-soft:#E1EEF7; --a2:#C93A40; --a2-soft:#FBE7E7;
+  --ok:#2E7D52; --ok-soft:#E1F2E8; --warn:#9A6411; --warn-soft:#F8EED9; --crit:#B3361F; --crit-soft:#F9E3DE; --info:#3D55B8; --info-soft:#E5E9F8; --idle:#6A746F; --idle-soft:#ECEFEC;
+  --f-display:"Spectral",Georgia,"Times New Roman",serif; --f-ui:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --f-num:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1412; --surface:#171E1B; --sunk:#111816; --ink:#E4EAE7; --muted:#97A49F; --line:#28332F;
+  --sim:#6AB2E3; --sim-soft:#16303F; --a2:#F27A7E; --a2-soft:#3A1E20;
+  --ok:#6FCB97; --ok-soft:#173326; --warn:#E3B062; --warn-soft:#3A2D16; --crit:#F08A72; --crit-soft:#3D1F18; --info:#97A8F2; --info-soft:#1E2643; --idle:#9AA59F; --idle-soft:#202925;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1412; --surface:#171E1B; --sunk:#111816; --ink:#E4EAE7; --muted:#97A49F; --line:#28332F;
+  --sim:#6AB2E3; --sim-soft:#16303F; --a2:#F27A7E; --a2-soft:#3A1E20;
+  --ok:#6FCB97; --ok-soft:#173326; --warn:#E3B062; --warn-soft:#3A2D16; --crit:#F08A72; --crit-soft:#3D1F18; --info:#97A8F2; --info-soft:#1E2643; --idle:#9AA59F; --idle-soft:#202925;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--f-ui);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:clamp(1.6rem,4vw,2.2rem)} h2{font-size:1.35rem} h3{font-size:1.08rem}
+p{margin:0} small,.muted{color:var(--muted)}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+.kopf{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 24px}
+.kopf .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:.78rem;font-weight:600;letter-spacing:.02em;white-space:nowrap;border:1px solid transparent}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.s-ok{color:var(--ok);background:var(--ok-soft)} .s-warn{color:var(--warn);background:var(--warn-soft)} .s-crit{color:var(--crit);background:var(--crit-soft)} .s-info{color:var(--info);background:var(--info-soft)} .s-idle{color:var(--idle);background:var(--idle-soft)}
+.konto{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.k-sim{color:var(--sim)} .k-a2{color:var(--a2)}
+nav.reiter{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}
+nav.reiter a{padding:10px 14px;color:var(--muted);text-decoration:none;font-weight:600;border-bottom:2px solid transparent;white-space:nowrap}
+nav.reiter a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--ink)}
+nav.reiter a:focus-visible,button:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--info);outline-offset:2px}
+.hinweis{background:var(--warn-soft);color:var(--ink);border-radius:var(--r);padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+.hinweis b{color:var(--warn)}
+.tag{display:flex;flex-direction:column;gap:10px}
+.tag-kopf{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.raster{display:grid;grid-template-columns:64px 1fr 1fr;gap:8px;align-items:stretch}
+.raster .kspalte{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:0 4px}
+.zeit{font-family:var(--f-num);color:var(--muted);padding-top:12px;font-size:.9rem}
+.slot{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.slot:hover{border-color:var(--muted)}
+.slot.leer{background:transparent;border-style:dashed;cursor:default;color:var(--muted)}
+.slot .titel{font-weight:600;line-height:1.35}
+.slot .zeile{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:space-between}
+.score{font-family:var(--f-num);font-size:.85rem;padding:2px 8px;border-radius:6px;background:var(--sunk)}
+.entscheid{font-size:.78rem;font-weight:600}
+@media (max-width:640px){
+  .raster{grid-template-columns:1fr}
+  .raster .kspalte,.raster .eck{display:none}
+  .zeit{padding-top:4px}
+  .slot[data-konto]::before{content:attr(data-konto-label);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  .slot[data-konto="simulierbar"]::before{color:var(--sim)} .slot[data-konto="stelldirvor"]::before{color:var(--a2)}
+}
+.karten{display:flex;flex-direction:column;gap:14px}
+details.video{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+details.video>summary{list-style:none;cursor:pointer;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:start}
+details.video>summary::-webkit-details-marker{display:none}
+details.video>summary .rechts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+details.video[open]>summary{border-bottom:1px solid var(--line)}
+.video-inhalt{padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 24px}
+.feld{display:flex;flex-direction:column;gap:4px;min-width:0}
+.feld .lab{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.feld ol,.feld ul{margin:0;padding-left:20px}
+.feld.breit{grid-column:1/-1}
+.saetze li{font-family:var(--f-display);font-style:italic}
+.faktoren{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px}
+.faktor{background:var(--sunk);border-radius:8px;padding:6px 8px;display:flex;justify-content:space-between;gap:8px;font-size:.85rem}
+.inhaber{grid-column:1/-1;border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:8px}
+.knoepfe{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;font-weight:600;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 14px;cursor:pointer}
+button.frei{border-color:var(--ok);color:var(--ok)} button.frei[aria-pressed="true"]{background:var(--ok);color:var(--surface)}
+button.ab{border-color:var(--crit);color:var(--crit)} button.ab[aria-pressed="true"]{background:var(--crit);color:var(--surface)}
+button:disabled{opacity:.5;cursor:default}
+textarea{font:inherit;width:100%;min-height:72px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 10px;resize:vertical}
+.rueck{font-size:.82rem;color:var(--muted)}
+.raster-regeln{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.box ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.box h3 .konto{display:block;margin-bottom:2px}
+.tabelle{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.ablauf{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:s}
+.ablauf div{background:var(--sunk);border-radius:8px;padding:10px;font-size:.88rem}
+.ablauf div b{display:block;font-family:var(--f-num);font-size:.75rem;color:var(--muted)}
+.leerzustand{background:var(--surface);border:1px dashed var(--line);border-radius:var(--r);padding:20px;color:var(--muted)}
+section[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="kopf">
+    <div>
+      <p class="konto muted">Simulierbar · @stelldirvor.pov</p>
+      <h1>Kanal-Cockpit</h1>
+    </div>
+    <div class="meta">
+      <span id="prod" class="pill s-idle">Stand wird geladen</span>
+      <small id="stand" class="num"></small>
+    </div>
+  </header>
+
+  <div id="hinweis" class="hinweis" hidden></div>
+
+  <nav class="reiter" aria-label="Bereiche">
+    <a href="#fahrplan">Fahrplan</a>
+    <a href="#stelldirvor">Stell dir vor</a>
+    <a href="#simulierbar">Simulierbar</a>
+    <a href="#regeln">Regeln</a>
+    <a href="#offen">Offene Punkte</a>
+  </nav>
+
+  <section id="v-fahrplan" class="karten" aria-label="Fahrplan">
+    <p class="muted">Pro Tag 4 Videos: 2 je Kanal, Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30. Tippe auf ein Video für Details, Freigabe und Kommentar.</p>
+    <div id="tage" class="karten"><div class="leerzustand">Die Videos erscheinen hier, sobald die Daten geladen sind. Claude trägt jedes Video ein, sobald es geplant ist.</div></div>
+  </section>
+
+  <section id="v-stelldirvor" class="karten" aria-label="Stell dir vor" hidden>
+    <div class="raster-regeln">
+      <div class="box">
+        <h3><span class="konto k-a2">@stelldirvor.pov</span>Format nach deinen 4 Referenzvideos</h3>
+        <ul>
+          <li>Keine Stimme, nur selbst erzeugte Atmo und Sounddesign.</li>
+          <li>Genau 80 Sekunden, eine durchgehende Einstellung ohne Schnitte.</li>
+          <li>Feste Ich-Perspektive von erhöhtem Standpunkt, Geländer oder Brüstung im Vordergrund.</li>
+          <li>Ein Ereignis wächst in Stufen, bei ca. 58 s erreicht es dich.</li>
+          <li>Belebte, detailreiche Welt, filmisches Licht. Das ist die eigentliche Kunst.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Nur drei Textebenen</h3>
+        <ul>
+          <li><b>Titelfrage</b> 0–3,5 s, Serifenschrift, mittig oben.</li>
+          <li><b>Messwert-Anzeige</b> links Mitte: Etikett, große Zahl, Unterzeile. Läuft durchgehend, wechselt 2–4× das Etikett, am Ende „HIER“.</li>
+          <li><b>Ein kursiver Satz</b> unten, 3–9 Wörter, etwa alle 4 s, insgesamt 14–17.</li>
+          <li><b>Abspann</b> 72–80 s auf Schwarz: Titelfrage und Faktenzeile mit echtem Bezug.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Nicht im Video</h3>
+        <ul>
+          <li>Keine Sticker, Chips, Untertitel, Countdown-Ring, Logo.</li>
+          <li>Kein Folgen-Aufruf, kein gesprochener Schluss. Die Kommentarfrage steht in der Caption.</li>
+          <li>Gesperrte Themen der Referenzen: Asteroid über der Stadt, Sonne explodiert, Mega-Tsunami, Erde hört auf sich zu drehen.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="box">
+      <h3>Ablauf eines Videos</h3>
+      <div class="ablauf">
+        <div><b>0–3,5 s</b>Titelfrage über der belebten Szene</div>
+        <div><b>4–30 s</b>Alltag, erste Anzeichen, Zahl läuft</div>
+        <div><b>30–55 s</b>Eskalation in Stufen, Licht kippt</div>
+        <div><b>55–62 s</b>Höhepunkt erreicht dich: „HIER“</div>
+        <div><b>62–70 s</b>Nachspiel, Stille</div>
+        <div><b>72–80 s</b>Schwarzer Abspann mit Fakt</div>
+      </div>
+    </div>
+    <div class="box">
+      <h3>Konto</h3>
+      <ul>
+        <li>Name „Stell dir vor …“, angelegt 01.11., Logo Fragezeichen-Countdown, Bio ohne Kontaktdaten.</li>
+        <li>Testvideo „Schall in Schritttempo“ am 02.11. um 07:43 gepostet, öffentlich, Prüfung bestanden (noch im alten Stil mit Stimme).</li>
+        <li>30-Tage-Plan: 60 Themen plus 15 Reserve. Die Themen werden laufend an das Referenz-Format angepasst.</li>
+      </ul>
+    </div>
+    <h2>Ideen und Videos</h2>
+    <div id="liste-a2" class="karten"></div>
+  </section>
+
+  <section id="v-simulierbar" class="karten" aria-label="Simulierbar" hidden>
+    <div class="raster-regeln">
+      <div class="box">
+        <h3><span class="konto k-sim">@simulierbar</span>Format</h3>
+        <ul>
+          <li>Simulation als Duell oder Rennen, 65–80 s, Stimme Ben, ruhig und sachlich.</li>
+          <li>Hook vor 5 s, Denkfalle „Klar … Oder?“ ruhig, kein „Los geht's“.</li>
+          <li>Folgen-Aufruf bei ca. 20 s, Wendung 18–25 s, Ergebnis mit Zahl, „Warum?“, zweite Überraschung, Merksatz, fester Schlusssatz.</li>
+          <li>Untertitel Wort für Wort, keine Sticker, Zahlen und Timer bleiben.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Worauf die Abnahme achtet</h3>
+        <ul>
+          <li>Die animierte Welt trägt das Video: Details, Licht, Figuren, Kamera.</li>
+          <li>Jedes gesprochene Detail ist im selben Moment zu sehen.</li>
+          <li>Ein Duell vergleicht nur echte Alternativen derselben Entscheidung.</li>
+          <li>Prüfliste mit allen Pflichtpunkten, Text-Überlappung 0, −14 LUFS.</li>
+        </ul>
+      </div>
+    </div>
+    <h2>Ideen und Videos</h2>
+    <div id="liste-sim" class="karten"></div>
+  </section>
+
+  <section id="v-regeln" class="karten" aria-label="Regeln" hidden>
+    <div class="raster-regeln">
+      <div class="box">
+        <h3>Rhythmus</h3>
+        <ul>
+          <li>Pro Tag genau 4 Videos, 2 je Kanal, immer für den nächsten Tag.</li>
+          <li>Nie mehr als diese 4 gleichzeitig in Arbeit, höchstens 2 Agenten parallel.</li>
+          <li>Produktion startet nur mit deinem Startsignal.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Posten</h3>
+        <ul>
+          <li>Vollautomatisch über Buffer, ohne Freigabe. Claude prüft jedes Video selbst.</li>
+          <li>Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30, beide Kanäle gleich.</li>
+          <li>Kein KI-Label (Ausnahme: realistisch wirkende KI-Inhalte).</li>
+          <li>Nach dem Posten prüft Claude, ob das Video öffentlich ist, und löscht die Upload-Datei.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Caption</h3>
+        <ul>
+          <li>Eine Zeile: Frage, Emoji, „Ich hab's simuliert“ bzw. „durchgespielt“, Kommentarfrage, 5 Hashtags.</li>
+          <li>Kein #fyp, keine Quellen, keine Hinweise.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="box">
+      <h3>Automatik-Kette</h3>
+      <div class="ablauf">
+        <div><b>1</b>Video fertig, Prüfliste bestanden</div>
+        <div><b>2</b>Upload nach Supabase (Frankfurt, privat)</div>
+        <div><b>3</b>Post in Buffer zur festen Uhrzeit</div>
+        <div><b>4</b>Buffer postet auf TikTok</div>
+        <div><b>5</b>Nachprüfung: öffentlich? Länge?</div>
+        <div><b>6</b>Upload-Datei wird gelöscht</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-offen" class="karten" aria-label="Offene Punkte" hidden>
+    <div id="offen-liste" class="box"><p class="muted">Offene Punkte erscheinen hier, sobald die Daten geladen sind.</p></div>
+  </section>
+
+  <footer class="muted" style="font-size:.82rem">Dieses Cockpit pflegt Claude. Deine Freigaben und Kommentare liest Claude in der nächsten Sitzung aus.</footer>
+</div>
+
+<script>
+(function(){
+  const STATUS = {
+    idee:["Idee","s-idle"], angepasst:["An Format angepasst","s-info"], in_produktion:["In Produktion","s-info"],
+    gestoppt:["Gestoppt","s-warn"], abgenommen:["Abgenommen","s-ok"], eingeplant:["Eingeplant","s-ok"],
+    gepostet:["Gepostet","s-ok"], abgelehnt:["Abgelehnt","s-crit"], leer:["Kein Video","s-idle"]
+  };
+  const KONTO = {simulierbar:["Simulierbar","k-sim"], stelldirvor:["Stell dir vor","k-a2"]};
+  const WT = ["So","Mo","Di","Mi","Do","Fr","Sa"];
+  let videos = [], db = null, stand = null;
+
+  const el = (t, a={}, ...k) => { const e=document.createElement(t); for (const [n,v] of Object.entries(a)) { if (n==="class") e.className=v; else if (n==="text") e.textContent=v; else e.setAttribute(n,v);} for (const c of k) if (c!=null) e.append(c); return e; };
+  const pill = s => { const [t,c]=STATUS[s]||[s||"–","s-idle"]; return el("span",{class:"pill "+c,text:t}); };
+  const datumLang = d => { const x=new Date(d+"T12:00:00"); return WT[x.getDay()]+" "+x.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit"}); };
+
+  // Reiter über den Hash
+  const VIEWS=["fahrplan","stelldirvor","simulierbar","regeln","offen"];
+  function zeige(){ const h=(location.hash||"").slice(1); const v=VIEWS.includes(h)?h:"fahrplan";
+    for (const n of VIEWS){ document.getElementById("v-"+n).hidden = n!==v; }
+    for (const a of document.querySelectorAll("nav.reiter a")) a.setAttribute("aria-current", a.getAttribute("href")==="#"+v ? "page" : "false"); }
+  window.addEventListener("hashchange", zeige); zeige();
+
+  function slotKarte(v, konto){
+    if (!v) return el("div",{class:"slot leer","data-konto":konto,"data-konto-label":KONTO[konto][0]}, el("span",{text:"Noch kein Video geplant"}));
+    const b = el("button",{class:"slot",type:"button","data-konto":konto,"data-konto-label":KONTO[konto][0]});
+    b.append(el("span",{class:"titel",text:v.titel||"Ohne Titel"}));
+    const z = el("span",{class:"zeile"}, pill(v.status));
+    if (typeof v.score==="number") z.append(el("span",{class:"score",text:"Score "+v.score}));
+    b.append(z);
+    const e = v.inhaber && v.inhaber.entscheidung;
+    if (e) b.append(el("span",{class:"entscheid "+(e==="frei"?"k-sim":"k-a2"),text:e==="frei"?"Von dir freigegeben":"Von dir abgelehnt"}));
+    b.addEventListener("click",()=>{ location.hash = konto==="stelldirvor"?"stelldirvor":"simulierbar"; setTimeout(()=>{ const d=document.getElementById("d-"+v._id); if(d){ d.open=true; d.scrollIntoView({block:"start",behavior:"smooth"});} },60); });
+    return b;
+  }
+
+  function renderFahrplan(){
+    const box=document.getElementById("tage"); box.textContent="";
+    const tage=[...new Set(videos.map(v=>v.datum).filter(Boolean))].sort();
+    if (!tage.length){ box.append(el("div",{class:"leerzustand",text:"Noch keine Videos eingetragen."})); return; }
+    for (const d of tage){
+      const t=el("div",{class:"tag"});
+      const anzahl=videos.filter(v=>v.datum===d && !["abgelehnt","leer"].includes(v.status)).length;
+      t.append(el("div",{class:"tag-kopf"}, el("h2",{text:datumLang(d)}), el("small",{class:"num",text:anzahl+" von 4 Plätzen belegt"})));
+      const r=el("div",{class:"raster"});
+      r.append(el("span",{class:"eck"}), el("span",{class:"kspalte k-sim",text:"Simulierbar"}), el("span",{class:"kspalte k-a2",text:"Stell dir vor"}));
+      const slots=[...new Set(videos.filter(v=>v.datum===d).map(v=>v.uhrzeit))].sort();
+      for (const u of (slots.length?slots:["12:30","19:30"])){
+        r.append(el("span",{class:"zeit",text:u}));
+        for (const k of ["simulierbar","stelldirvor"]) r.append(slotKarte(videos.find(v=>v.datum===d&&v.uhrzeit===u&&v.konto===k), k));
+      }
+      t.append(r); box.append(t);
+    }
+  }
+
+  function feld(lab, inhalt, breit){ const f=el("div",{class:"feld"+(breit?" breit":"")}, el("span",{class:"lab",text:lab})); if (typeof inhalt==="string") f.append(el("p",{text:inhalt})); else f.append(inhalt); return f; }
+  function liste(arr, cls, ordered){ const l=el(ordered?"ol":"ul",{class:cls||""}); for (const s of arr) l.append(el("li",{text:typeof s==="string"?s:JSON.stringify(s)})); return l; }
+
+  function inhaberBlock(v){
+    const box=el("div",{class:"inhaber"}, el("span",{class:"feld"},el("span",{class:"lab",text:"Deine Entscheidung"})));
+    const e=(v.inhaber&&v.inhaber.entscheidung)||null;
+    const bF=el("button",{type:"button",class:"frei","aria-pressed":String(e==="frei"),text:"Freigeben"});
+    const bA=el("button",{type:"button",class:"ab","aria-pressed":String(e==="abgelehnt"),text:"Ablehnen"});
+    const ta=el("textarea",{id:"k-"+v._id,placeholder:"Kommentar an Claude, z. B. was anders werden soll"}); ta.value=(v.inhaber&&v.inhaber.kommentar)||"";
+    const bK=el("button",{type:"button",text:"Kommentar speichern"});
+    const rueck=el("span",{class:"rueck",role:"status"});
+    if (v.inhaber&&v.inhaber.zeit) rueck.textContent="Zuletzt gespeichert: "+new Date(v.inhaber.zeit).toLocaleString("de-DE",{dateStyle:"short",timeStyle:"short"});
+    async function speichern(patch, msg){
+      if (!db){ rueck.textContent="Speichern geht nur, wenn du mit deinem Claude-Konto angemeldet bist."; return; }
+      for (const b of [bF,bA,bK]) b.disabled=true;
+      try { await db.doc("videos/"+v._id).update({inhaber:Object.assign({},v.inhaber||{},patch,{zeit:new Date().toISOString()})}); rueck.textContent=msg; }
+      catch(err){ rueck.textContent="Nicht gespeichert: "+((err&&err.message)||"unbekannter Fehler")+". Bitte später erneut versuchen."; }
+      finally { for (const b of [bF,bA,bK]) b.disabled=false; }
+    }
+    bF.addEventListener("click",()=>speichern({entscheidung: e==="frei"?null:"frei", kommentar: ta.value}, e==="frei"?"Freigabe zurückgenommen.":"Freigegeben."));
+    bA.addEventListener("click",()=>speichern({entscheidung: e==="abgelehnt"?null:"abgelehnt", kommentar: ta.value}, e==="abgelehnt"?"Ablehnung zurückgenommen.":"Abgelehnt."));
+    bK.addEventListener("click",()=>speichern({kommentar: ta.value},"Kommentar gespeichert."));
+    box.append(el("div",{class:"knoepfe"},bF,bA), ta, el("div",{class:"knoepfe"},bK), rueck);
+    return box;
+  }
+
+  function videoKarte(v){
+    const d=el("details",{class:"video",id:"d-"+v._id});
+    const links=el("div",{}, el("span",{class:"konto num muted",text:datumLang(v.datum)+" · "+(v.uhrzeit||"")}), el("h3",{text:v.titel||"Ohne Titel"}));
+    const rechts=el("div",{class:"rechts"}, pill(v.status));
+    if (typeof v.score==="number") rechts.append(el("span",{class:"score",text:"Score "+v.score}));
+    d.append(el("summary",{},links,rechts));
+    const inh=el("div",{class:"video-inhalt"});
+    if (v.notiz) inh.append(feld("Stand",v.notiz,true));
+    if (v.ereignis_kurz) inh.append(feld("Worum es geht",v.ereignis_kurz));
+    if (v.standpunkt) inh.append(feld("Standpunkt",v.standpunkt));
+    if (v.ort) inh.append(feld("Ort",v.ort));
+    if (v.stil) inh.append(feld("Stil",v.stil));
+    if (Array.isArray(v.messwert)&&v.messwert.length){ const t=el("div",{class:"tabelle"}); const tb=el("table",{}, el("thead",{},el("tr",{},el("th",{text:"Etikett"}),el("th",{text:"Einheit"}),el("th",{text:"Verlauf"})))); const body=el("tbody"); for (const m of v.messwert) body.append(el("tr",{},el("td",{text:m.etikett||""}),el("td",{text:m.einheit||""}),el("td",{text:m.verlauf||""}))); tb.append(body); t.append(tb); inh.append(feld("Messwert-Anzeige",t,true)); }
+    if (Array.isArray(v.saetze)&&v.saetze.length) inh.append(feld("Sätze im Video ("+v.saetze.length+")",liste(v.saetze,"saetze",true),true));
+    if (v.faktenzeile) inh.append(feld("Faktenzeile im Abspann",v.faktenzeile));
+    if (v.kernrechnung) inh.append(feld("Kernrechnung",v.kernrechnung));
+    if (v.wendung) inh.append(feld("Wendung",v.wendung));
+    if (v.score_faktoren){ const f=el("div",{class:"faktoren"}); const namen={nachfrage:"Nachfrage",timing:"Timing",wettbewerb:"Wettbewerb",passung:"Passung",aufwand:"Aufwand",risiko:"Risiko"}; for (const [k,w] of Object.entries(v.score_faktoren)) f.append(el("div",{class:"faktor"},el("span",{text:namen[k]||k}),el("span",{class:"num",text:String(w)}))); inh.append(feld("Score-Faktoren",f,true)); }
+    if (v.score_begruendung) inh.append(feld("Begründung Score",v.score_begruendung,true));
+    if (v.konkurrenz_check) inh.append(feld("Konkurrenz-Check",v.konkurrenz_check,true));
+    if (v.geaendert) inh.append(feld("Geändert gegenüber dem alten Plan",v.geaendert,true));
+    if (v.caption) inh.append(feld("Caption",v.caption,true));
+    if (v.quellen_pruefen) inh.append(feld("Quellen (intern)",v.quellen_pruefen,true));
+    inh.append(inhaberBlock(v));
+    d.append(inh); return d;
+  }
+
+  function renderListen(){
+    for (const [k,id] of [["stelldirvor","liste-a2"],["simulierbar","liste-sim"]]){
+      const box=document.getElementById(id); const offen=new Set([...box.querySelectorAll("details[open]")].map(d=>d.id)); box.textContent="";
+      const vs=videos.filter(v=>v.konto===k).sort((a,b)=>(a.datum+a.uhrzeit).localeCompare(b.datum+b.uhrzeit));
+      if (!vs.length){ box.append(el("div",{class:"leerzustand",text:"Noch keine Videos eingetragen."})); continue; }
+      for (const v of vs){ const c=videoKarte(v); if (offen.has(c.id)) c.open=true; box.append(c); }
+    }
+  }
+
+  function renderStand(){
+    const p=document.getElementById("prod"), s=document.getElementById("stand"), h=document.getElementById("hinweis"), o=document.getElementById("offen-liste");
+    if (!stand){ return; }
+    const lauf=stand.produktion==="läuft";
+    p.className="pill "+(lauf?"s-ok":"s-warn"); p.textContent=lauf?"Produktion läuft":"Produktion pausiert";
+    s.textContent=stand.aktualisiert?("Stand "+new Date(stand.aktualisiert).toLocaleString("de-DE",{dateStyle:"short",timeStyle:"short"})):"";
+    if (stand.hinweis){ h.hidden=false; h.textContent=""; h.append(el("b",{text:"Hinweis"}), el("span",{text:stand.hinweis})); } else h.hidden=true;
+    o.textContent=""; o.append(el("h3",{text:"Was gerade offen ist"}));
+    const pk=Array.isArray(stand.offen)?stand.offen:[];
+    if (!pk.length) o.append(el("p",{class:"muted",text:"Gerade ist nichts offen."}));
+    else { const l=el("ul"); for (const x of pk){ const li=el("li"); li.append(el("b",{text:(x.wer||"")+": "}), document.createTextNode(x.was||"")); l.append(li);} o.append(l); }
+  }
+
+  function renderAlles(){ renderFahrplan(); renderListen(); renderStand(); }
+
+  (async function(){
+    const timer=setTimeout(()=>{ const h=document.getElementById("hinweis"); h.hidden=false; h.textContent=""; h.append(el("b",{text:"Keine Verbindung"}), el("span",{text:"Die Daten sind gerade nicht erreichbar. Sie erscheinen automatisch, sobald die Verbindung steht."})); },10000);
+    try { db = window.claude && window.claude.use ? await window.claude.use("db") : null; } catch(e){ db=null; }
+    if (!db){ clearTimeout(timer); const h=document.getElementById("hinweis"); h.hidden=false; h.textContent=""; h.append(el("b",{text:"Nur mit Anmeldung"}), el("span",{text:"Die Videodaten sind nur sichtbar, wenn du mit deinem Claude-Konto angemeldet bist."})); return; }
+    db.collection("videos").onSnapshot(snap=>{ clearTimeout(timer); videos=snap.docs.map(d=>Object.assign({_id:d.id}, d.data()||{})); renderAlles(); }, err=>{ clearTimeout(timer); const h=document.getElementById("hinweis"); h.hidden=false; h.textContent="Videodaten nicht geladen: "+((err&&err.message)||"Fehler"); });
+    db.doc("stand/aktuell").onSnapshot(snap=>{ stand=snap.data()||null; renderStand(); }, ()=>{});
+  })();
+})();
+</script>
