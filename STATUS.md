@@ -62,6 +62,11 @@
 - Dienstag in Arbeit: Schere-Stein-Papier (neuer Agent, neue Regeln). Danach gestaffelt: Boden durchsichtig, Mittagessen, Leichtes Auto (als Autobahnbrücke, Format §12). 30-Tage-Plan Account 2 muss auf Format §12 geprüft werden (Themen mit festem Standpunkt).
 - Regelwerk-PDF `docs/regelwerk/regelwerk-2026-11-02.pdf`.
 
+## Cockpit und Übersicht (02.11.)
+- **Kanal-Cockpit** (private Webseite, Datenbank): https://claude.ai/artifact/FxZc6Cpodsg12hapn6Bpxz · Quelle `docs/cockpit/cockpit.html`. Sammlung `videos` (ein Dokument je Video, z. B. `a2-2026-11-03-mittag`, Felder status, score, inhaber{entscheidung,kommentar,zeit}) und `stand/aktuell` (produktion, hinweis, offen). Claude pflegt Status täglich per ArtifactData und liest Freigaben bzw. Kommentare des Inhabers aus (`inhaber`).
+- **PDF Account 2:** `docs/plan/account2-uebersicht-2026-11-02.pdf` (erzeugt mit `tools/account2_uebersicht.py` und `tools/html_pdf.mjs`).
+- Account-2-Themen 03./04.11. an Format §12 angepasst (`data/plan/account2-naechste-tage.json`): Laacher See (75), Phantomstau von der Brücke (76), Sonnensturm (77), Stromausfall/Lichter aus (78). Restplan (05.11. ff.) noch nicht §12-geprüft.
+
 ## Nächste Schritte
 
 | # | Schritt | Wer | Zeit | Status |

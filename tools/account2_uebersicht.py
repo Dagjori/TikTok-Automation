@@ -19,6 +19,14 @@ def e(x):
     return html.escape(str(x if x is not None else ""))
 
 
+def kurz(t, n=90):
+    t = str(t or "")
+    for z in (";", " (", ". "):
+        if z in t:
+            t = t.split(z)[0]
+    return t if len(t) <= n else t[:n].rsplit(" ", 1)[0] + " …"
+
+
 def datum(d):
     t = datetime.date.fromisoformat(d)
     return f"{WT[t.weekday()]} {t.strftime('%d.%m.')}"
@@ -54,7 +62,7 @@ def idee_html(i):
 def main(ziel):
     ideen = json.load(open(IDEEN, encoding="utf-8")) if os.path.exists(IDEEN) else []
     ideen.sort(key=lambda i: (i["datum"], i.get("uhrzeit", "")))
-    tabelle = "".join(f"<tr><td>{e(datum(i['datum']))}</td><td class='num'>{e(i.get('uhrzeit'))}</td><td>{e(i.get('titel'))}</td><td>{e(i.get('standpunkt'))}</td><td class='num'><b>{e(i.get('score'))}</b></td></tr>" for i in ideen)
+    tabelle = "".join(f"<tr><td>{e(datum(i['datum']))}</td><td class='num'>{e(i.get('uhrzeit'))}</td><td>{e(i.get('titel'))}</td><td>{e(kurz(i.get('standpunkt')))}</td><td class='num'><b>{e(i.get('score'))}</b></td></tr>" for i in ideen)
     heute = datetime.date.today().strftime("%d.%m.%Y")
     doc = f"""<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Übersicht Stell dir vor</title>
 <style>
