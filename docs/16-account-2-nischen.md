@@ -285,3 +285,9 @@ Auswertung am 02.11. (je 1 Bild pro 2 s, Lautheitsverlauf, Spracherkennung). Die
 - **Länge:** 80 s (CRP: über 60 s erfüllt).
 - **Themen:** ein einziges Ereignis, das man von einem festen Standpunkt aus wachsen sieht, mit einer messbaren Größe für die Anzeige. Eigene Themen mit eigener Rechnung. **Gesperrt** (Themen der Referenzen): Asteroid explodiert über der Stadt, Sonne explodiert, Mega-Tsunami trifft eine Großstadt, Erde hört auf sich zu drehen.
 - **Prüfung:** `pipeline/qc/massstab.py` passt nicht (sie misst Sprache). Für dieses Format gilt die Prüfliste oben plus Text-Überlappung, Kontaktbogen (Bild-Text-Abgleich je Satz), Lautheit und Lautheitsverlauf.
+
+### 12a. Nachtrag 02.11. (Inhaber)
+- **Kein „5 Sekunden“-Rahmen mehr** (Titel, Sätze, Anzeige, Szenario). Das Ereignis dauert so lange, wie es physikalisch dauert; die Messwert-Anzeige zeigt die echte Größe (Zeit, Höhe, Temperatur …).
+- **Themen:** große, globale Gedankenexperimente aus Physik, Mathematik, Biologie, Chemie, Astronomie, Geologie und Klima (Beispiele des Inhabers: alles auf der Welt läuft automatisiert; die Sonne kommt jedes Jahr 1 m näher; wir steuern in eine neue Eiszeit). Nicht auf Deutschland bezogen, keine Alltagsthemen. Standpunkte weltweit.
+- **Vorbild:** Lunar Animations (die 4 Referenzvideos). Deren Themen sind gesperrt bzw. nur mit klar eigenem Ansatz; Konkurrenz-Check gegen deren Katalog vor jedem Thema.
+- **Skill:** `.claude/skills/stelldirvor-video/` gilt nur für diesen Account und ist verbindlich für Design, Licht, Effekte, Animation, Ton und Prüfung.

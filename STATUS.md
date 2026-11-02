@@ -67,6 +67,11 @@
 - **PDF Account 2:** `docs/plan/account2-uebersicht-2026-11-02.pdf` (erzeugt mit `tools/account2_uebersicht.py` und `tools/html_pdf.mjs`).
 - Account-2-Themen 03./04.11. an Format §12 angepasst (`data/plan/account2-naechste-tage.json`): Laacher See (75), Phantomstau von der Brücke (76), Sonnensturm (77), Stromausfall/Lichter aus (78). Restplan (05.11. ff.) noch nicht §12-geprüft.
 
+## Account 2 Neuausrichtung (02.11., Inhaber)
+- Kein „5 Sekunden“ mehr. Themen: große globale Wissenschafts-Gedankenexperimente (Physik, Mathe, Biologie, Chemie …), Vorbild Lunar Animations. Beispiele: alles automatisiert, Sonne 1 m/Jahr näher, Eiszeit.
+- In Arbeit (2 Agenten, Opus): (1) Skill `.claude/skills/stelldirvor-video/` plus Baukasten, Prüfung `qc/referenz_pov.py` und Demo-Standbilder; (2) komplett neuer 30-Tage-Plan (60 Videos plus 15 Reserve, 03.11.–02.12.), `docs/17`, PDF, `data/plan/account2-plan.json` für das Cockpit.
+- Danach: Cockpit neu befüllen, Account-2-Übersicht-PDF neu, Regelwerk-PDF.
+
 ## Nächste Schritte
 
 | # | Schritt | Wer | Zeit | Status |
