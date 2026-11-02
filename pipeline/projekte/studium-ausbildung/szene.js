@@ -123,6 +123,7 @@ async function start() {
       zeitL: glatt(t, A.erstens, A.erstens + 0.9), zeitT: glatt(t, A.erstens + 1.2, A.erstens + 2.1), klammer: glatt(t, A.acht - 0.2, A.acht + 0.5),
       vL: glatt(t, A.zweitens - 0.2, A.zweitens + 0.8), vT: glatt(t, A.zweitens + 0.25, A.zweitens + 1.1), vD: huelle(t, A.n300 - 0.1, Infinity, { feder: FEDER.standard }),
       colT: glatt(t, A.studium2 + 0.0, A.studium2 + 2.0) * IAB.studium, colL: glatt(t, A.ausb2 + 0.0, A.ausb2 + 1.8) * IAB.ausbildung,
+      pulsTor: huelle(t, T("ueberraschung:erst"), T("ueberraschung:erst") + 1.2, { ausDauer: 0.6 }) * 0.6 + huelle(t, A.iab, A.iab + 1.6, { ausDauer: 0.8 }) + huelle(t, T("ueberraschung:Arbeitsleben"), T("ueberraschung:Arbeitsleben") + 1.4, { ausDauer: 0.8 }),
       ende: glatt(t, A.abstand - 0.3, A.abstand + 0.6), pulsCol: huelle(t, A.spaeter - 0.2, A.spaeter + 1.6, { ausDauer: 0.8 }) + 0.6 * huelle(t, A.lohnt - 0.1, A.lohnt + 0.9, { ausDauer: 0.5 }),
       // Lichtstimmung: Spannung steigt bis zum Ergebnis, danach ruhiger
       warm: glatt(t, A.klar, A.mit24) * 0.35 + glatt(t, A.jetzt, A.vorbei) * 0.65, hoehe: glatt(t, A.n61, A.erg40 + 0.6) - 0.45 * glatt(t, A.warum, A.warum + 3),
@@ -291,6 +292,7 @@ async function start() {
     shot(A.zweitens - 1.3, 0, [0.0, 11.0, -6.0], [0.0, 0.0, -11.6], 44),
     shot(A.zweitens - 0.1, 0, [3.4, 3.4, -9.0], [0.0, 0.7, -13.4], 38),
     shot(A.abstand - 0.2, 0, [0.0, 4.4, -9.6], [0.0, 1.6, -18.0], 40),
+    shot(A.iab + 0.9, 0, [1.4, 5.4, -8.8], [0.0, 1.0, -18.0], 40),
     shot(A.studium2 + 1.0, 0, [0.0, 3.8, -8.2], [0.0, 2.3, -18.0], 42),
     shot(A.ausb2 + 1.2, 0, [1.0, 3.0, -8.5], [0.0, 3.1, -18.0], 44),
     shot(A.merk, 0, [2.0, 4.6, -4.5], [0.0, 1.6, -14.0], 40),
@@ -350,7 +352,7 @@ async function start() {
       mGym.setze(Math.min(1, s.markAbi) * 0.7); mHs.setze(Math.min(1, s.markStud)); mFirma.setze(Math.min(1, s.markFirma) * 0.8);
       gbL.hoehe(Math.max(0.01, s.gbL)); gbL.setze(s.gbL > 0.01 ? 1 : 0);
       gbT.hoehe(Math.max(0.01, s.gbT)); gbT.setze(s.gbT > 0.01 ? 1 : 0);
-      tor.setze(s.tor); tor65.setze(0.1 + 0.8 * s.ende * 0.5);
+      tor.setze(s.tor); tor65.setze(0.1 + 0.4 * s.ende + 0.5 * s.pulsTor);
       // Warum + Überraschung
       zeitL.setze(s.zeitL); zeitT.setze(s.zeitT); klammer.visible = s.klammer > 0.01; kMat.opacity = s.klammer;
       gvL.setze(s.vL > 0.01 ? 1 : 0); gvL.hoehe(Math.max(0.01, 2.4 * 0.5 * s.vL));
@@ -423,7 +425,7 @@ async function start() {
   ev(A.erg40, "ding", "Ziel erreicht"); ev(A.erstens, "pop", "Zeitstrahl Lena"); ev(A.erstens + 1.2, "klick", "Zeitstrahl Tom"); ev(A.acht, "ding", "8 Jahre Klammer");
   ev(A.zweitens, "whoosh", "Gehaltssäulen"); ev(A.zweitens + 1.0, "klick", "Gehaltssäule Tom"); ev(A.n300, "ding", "300 € Differenz");
   ev(A.merk, "whoosh", "Kamera gleitet zurück"); ev(A.lohnt, "ding", "Säulen leuchten"); M.melde({ t: A.spaeter, typ: "pointe", klang: "akzent", text: "Merksatz: Säulen leuchten auf" });
-  ev(A.abstand, "whoosh", "Fahrt hinter die Ziellinie"); ev(A.iab, "klick", "Bahn bis 65"); ev(A.studium2, "ding", "Säule Studium wächst"); ev(A.ausb2, "ding", "Säule Ausbildung wächst");
+  ev(A.abstand, "whoosh", "Fahrt hinter die Ziellinie"); ev(T("ueberraschung:erst"), "klick", "Tor 65 glimmt auf"); ev(T("ueberraschung:nach"), "pop", "Bahn läuft weiter"); ev(A.iab, "klick", "Bahn bis 65: Tor 65 leuchtet"); ev(T("ueberraschung:rechnet"), "klick", "Bahn glimmt"); ev(T("ueberraschung:Arbeitsleben"), "ding", "Tor 65 leuchtet erneut"); ev(T("ueberraschung:durch"), "klick", "Kamera hebt sich"); ev(A.studium2, "ding", "Säule Studium wächst"); ev(A.ausb2, "ding", "Säule Ausbildung wächst");
 
   const zl = new Zeitleiste(buehne);
   zl.shot(0, welt);
