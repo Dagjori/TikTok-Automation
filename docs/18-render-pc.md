@@ -64,9 +64,11 @@ Im selben Fenster (du bist jetzt in `C:\render\tiktok-automation\pipeline`):
 ```powershell
 npm install
 npm install -g playwright
-npx playwright install chromium
+playwright install chromium
 py -3 -m pip install numpy
 ```
+
+Wichtig: Playwright **global** installieren (`-g`) und den Browser mit dem globalen Befehl `playwright install chromium` holen (nicht mit `npx`, das kann eine andere Version laden). Fehlt das, zeigt der Dienst „GPU: keine (Cannot find module …\npm\node_modules\playwright)“ (02.11. so passiert).
 
 Meldet PowerShell bei `npm`: „…npm.ps1 kann nicht geladen werden, da die Ausführung von Skripts … deaktiviert ist“, dann einmal das ausführen und danach die Zeile wiederholen:
 
@@ -188,9 +190,9 @@ Windows-Updates, die den PC neu starten, sind kein Problem: Nach der Anmeldung s
 | Symptom | Ursache und Lösung |
 |---|---|
 | `pc_test.py`: **„KEINE echte Grafikkarte erkannt“ / „SwiftShader“ / „Microsoft Basic Render Driver“** | Kein oder falscher Grafiktreiber. Treiber des Herstellers installieren (Schritt 4), PC neu starten, Test wiederholen. Läuft der Test über Remote-Desktop, direkt am PC testen (Remote-Desktop schaltet die Grafikkarte oft ab). Zwei Grafikkarten (Laptop)? Windows-Einstellungen → System → Anzeige → Grafik → `node.exe` und `chrome-headless-shell.exe` auf „Höchstleistung“ stellen. Hilft nichts: Claude melden, in `render.js` kann ein anderer Chrome-Modus gewählt werden. |
-| **„WebGL-Test fehlgeschlagen“** | Meist Treiber. Sonst `npx playwright install chromium` wiederholen. Meldung an Claude weitergeben. |
+| **„WebGL-Test fehlgeschlagen“** | Meist Treiber. Sonst `playwright install chromium` wiederholen. Meldung an Claude weitergeben. |
 | **„Cannot find module playwright“** | `npm install -g playwright` ausführen, neues Fenster öffnen. |
-| **„Executable doesn't exist“** | `npx playwright install chromium` ausführen. |
+| **„Executable doesn't exist“** | `playwright install chromium` ausführen (neues PowerShell-Fenster). |
 | `winget` / `git` / `node` / `ffmpeg` „wird nicht erkannt“ | Nach der Installation ein **neues** PowerShell-Fenster öffnen. Hilft das nicht: PC neu starten. |
 | **Git Bash nicht gefunden** | Git for Windows (Schritt 1) installieren. Liegt es an einem ungewöhnlichen Ort: in `.env` die Zeile `BASH_PFAD=C:\Pfad\zu\Git\bin\bash.exe` ergänzen. **Nicht** `C:\Windows\System32\bash.exe` nehmen (das ist WSL). |
 | `mux.sh`: „$'\r': command not found“ | Windows-Zeilenenden. Der Dienst repariert das automatisch. Dauerhaft: `git config core.autocrlf false` (im Klon) und `git checkout -f -- pipeline/mux.sh`. |

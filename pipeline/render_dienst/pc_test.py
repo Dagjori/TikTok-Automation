@@ -184,11 +184,11 @@ def main():
     info = gpu_probe(PIPELINE)
     fehler = info.get("fehler") or ""
     if "Cannot find module" in fehler or "playwright" in fehler.lower() and "find" in fehler.lower():
-        fehlt("Playwright ist nicht installiert", "npm install -g playwright   und dann   npx playwright install chromium")
+        fehlt("Playwright ist nicht installiert", "npm install -g playwright   und dann   playwright install chromium   (neues PowerShell-Fenster)")
     elif "Executable doesn't exist" in fehler or "playwright install" in fehler:
-        fehlt("Der Chromium-Browser für Playwright fehlt", "npx playwright install chromium")
+        fehlt("Der Chromium-Browser für Playwright fehlt", "playwright install chromium")
     elif fehler:
-        fehlt(f"WebGL-Test fehlgeschlagen: {fehler}", "Grafiktreiber aktualisieren; npx playwright install chromium; docs/18, Fehlerbehebung")
+        fehlt(f"WebGL-Test fehlgeschlagen: {fehler}", "Grafiktreiber aktualisieren; playwright install chromium; docs/18, Fehlerbehebung")
     elif ist_gpu(info):
         ok(f"GPU erkannt: {gpu_name(info)}")
         print(f"           WebGL-Renderer: {info.get('renderer')}  (WebGL2: {'ja' if info.get('webgl2') else 'nein'}, {info.get('ms', 0) / 1000:.0f} s)", flush=True)
