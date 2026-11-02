@@ -172,6 +172,24 @@ python3 post_buffer.py --aufraeumen [--trocken]       # nur Supabase-Dateien lö
 - **Log:** `out/buffer_log.jsonl` (nicht im Repo): je Post Post-ID, Kanal, Supabase-Pfad, Hash, Modus; später Zeilen „nachgeprueft“ und „geloescht“. Der signierte Link steht nie im Log.
 - **Zugänge:** Cloud: der Proxy setzt die Header (Buffer `Authorization`, Supabase `apikey`). Lokal: `BUFFER_API_KEY` und `SUPABASE_KEY`; `SUPABASE_AUTH`/`SUPABASE_AUTHORIZATION` nur, falls Storage einen Authorization-Header verlangt (siehe Kopf von `post_buffer.py`).
 
+## Rendern auf dem PC (Render-Dienst, ohne KI)
+
+Skript, Szene, Prüfung und Posting bleiben in der Cloud-Sitzung. **Nur das Rendern** läuft auf dem Windows-PC mit Grafikkarte (`render.js --gpu`). Dort läuft kein Claude, sondern `render_dienst/dienst.py` (Python, Standardbibliothek). Einrichtung für den Inhaber: `docs/18-render-pc.md`.
+
+```bash
+python3 pipeline/render_dienst/auftrag.py pc                                        # Herzschlag des PCs (Exit 3 = offline)
+python3 pipeline/render_dienst/auftrag.py senden <projekt> --konto simulierbar|stelldirvor.pov   # prüft: Commit gepusht, nichts Uncommittetes, Stimme im Commit
+python3 pipeline/render_dienst/auftrag.py warten      # blockiert bis fertig (im Hintergrund starten); holt pipeline/out/<projekt>/<projekt>.mp4, löscht in Supabase
+python3 pipeline/render_dienst/auftrag.py status [--alle] | aufraeumen [--alles]
+```
+
+- **Ablauf:** Commit pushen → `senden` → `warten` → MP4 liegt da, `ereignisse.json` ist nach `projekte/<p>/audio/` kopiert → Prüfung (Kontaktbogen/Standbilder aus dem MP4 ziehen, die Bilder bleiben auf dem PC) → `post_buffer.py`.
+- **Rückfall:** Ist der Herzschlag älter als 5 Min., meldet `senden` „PC offline“ (Exit 3): dann in der Cloud rendern wie bisher (`node render.js projekte/<name> --worker 2`, ohne `--gpu`). Meldet der PC „keine GPU“, endet `warten` mit Exit 5.
+- **Optionen** gehen an `render.js` (`--von/--bis/--worker/--qualitaet/--fps/--format/--query/--bilder`) und `mux.sh` (`--mux "--teppich regen --teppich-db -11"`, `--ohne-ton`). Account 2 (`--konto stelldirvor.pov`): Der Dienst ruft `atmo.py` und `TON_FERTIG=1 LRA_ZIEL=20 ./mux.sh` wie im Skill.
+- **Kanal:** Supabase-Bucket von `post_buffer.py` (`buffer-uploads`), Präfix `render/` (auftraege, status, fertig, herzschlag). Adresse nur über `SUPABASE_URL` (Cloud) bzw. `render_dienst/.env` (PC, steht in `.gitignore`), nie im Repo oder in Ausgaben.
+- **Test ohne GPU** (nur Entwicklung, eigener Klon, nie im Arbeits-Repo): `python3 render_dienst/dienst.py --cpu-erlaubt --repo <Klon>`.
+- **Auf dem PC prüfen:** `py -3 render_dienst\pc_test.py` (Programme, Git Bash, Supabase, GPU).
+
 ## Renderzeit
 
 Ohne GPU (SwiftShader) braucht ein Bild je nach Szene 0,8–6 s. 1–2 Worker sind optimal; mehr Worker bremsen sich gegenseitig, weil SwiftShader schon alle Kerne nutzt. Mit Grafikkarte (Windows-PC) `--gpu` anhängen.

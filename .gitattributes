@@ -1,0 +1,4 @@
+# Bash-Skripte müssen auf Windows mit Unix-Zeilenenden ausgecheckt werden (sonst bricht mux.sh in Git Bash ab)
+*.sh text eol=lf
+# Batch-Dateien brauchen unter Windows CRLF (sonst werden Sprungmarken falsch gelesen)
+*.bat text eol=crlf

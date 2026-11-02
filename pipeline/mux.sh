@@ -19,7 +19,7 @@ HIER="$(cd "$(dirname "$0")" && pwd)"
 NAME="$(basename "$PROJEKT")"
 OUT="$HIER/out/$NAME"
 FRAMES="$OUT/frames"
-PY="$(command -v python3 || command -v python)"
+PY="${PYTHON:-$(command -v python3 || command -v python)}"   # PYTHON: vom Render-Dienst gesetzt (Windows: der python3-Alias des Microsoft Store ist kein Python)
 
 [ -d "$FRAMES" ] || { echo "Keine Bilder in $FRAMES – zuerst: node render.js $PROJEKT"; exit 1; }
 FPS="$("$PY" -c "import json;print(json.load(open('$OUT/ereignisse.json')).get('fps',30))" 2>/dev/null || echo 30)"
