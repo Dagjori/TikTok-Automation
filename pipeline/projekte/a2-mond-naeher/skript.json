@@ -1,0 +1,535 @@
+{
+ "skript_id": "acc2-2026-11-03-abend",
+ "titel": "Was wäre, wenn der Mond der Erde immer näher käme?",
+ "titelfrage": "Was wäre, wenn der Mond der Erde immer näher käme?",
+ "konto": "stelldirvor.pov",
+ "format": "referenz_pov",
+ "skill": "stelldirvor-video",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Grundwelt Nachtstrand (engine/welt_nachtstrand.js, Erstbau 03.11.2026)",
+ "thema": "Mond rückt stufenweise heran: halbe Entfernung, Viertel, Höhe der Wettersatelliten, Roche-Grenze (Mond zerbricht)",
+ "welt": "Breiter Atlantikstrand in Portugal bei Nacht (Sand, Dünen mit Strandgras, Felsen, Fischerboot); Meer reagiert immer heftiger",
+ "standpunkt": "Strandblick aufs Meer Richtung Westen, Augenhöhe; ab 35 s Kamera weicht langsam zur Düne zurück, ab 44 s langsamer Blick nach oben auf den riesigen Mond",
+ "tageszeit_verlauf": "Nacht durchgehend, wird durch das Mondlicht immer heller (×4 bei 20 s, ×16 bei 32 s, ×83 bei 44 s, ×438 bei 60 s)",
+ "kamera": "0–20 s ruhig, Mond wächst im Bild; 20–35 s langsamer Zoom auf den Mond; 35–55 s Kamera weicht vor dem Wasser zur Düne zurück und neigt sich nach oben; 55–60 s leichtes Beben; nach HIER ruhig",
+ "kamera_umsetzung": "0–19 s Ruhe am Dünenfuß; 19–30 s Schwenk nach links unten auf den Strand (Wasser bis an die Düne, Schatten); 30–36 s Blick hebt sich, Zoom 52° → 40° auf den Mond; 35–50 s Fahrt zurück auf den Dünenkamm, Brennweite zurück auf 50°; 44–58 s Blick hebt sich zum Mond (+3° → +8°); 55–60 s Beben; 60 s Stoß; danach ruhig",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 60,
+   "faktor": "keiner (Echtzeit-Faktor entfällt): Gedankenexperiment, die Entfernung ist die Zeitachse; d(t) log-linear zwischen 384.400 (0 s) · 192.200 (20 s) · 96.100 (32 s) · 42.164 (44 s) · 18.367 km (60 s)",
+   "anzeige": "Entfernung, Gezeitenkraft, Abstand zur Roche-Grenze, alle aus d(t) in sim/mond_naeher.mjs"
+  },
+  {
+   "von": 60,
+   "bis": 70,
+   "faktor": "keiner (Nachspiel, Anzeige HIER)"
+  }
+ ],
+ "zeitraffer_hinweis": "keine Echtzeit: Die Entfernung ist die Zeitachse (Gedankenexperiment, log-linear zwischen den Stufen). Unterzeile Phase 1: GEDANKENEXPERIMENT: DER MOND RÜCKT HERAN",
+ "anzeige_plan": [
+  {
+   "bis_s": 20,
+   "einheit": "KM",
+   "ende": "192.200",
+   "etikett": "ENTFERNUNG ZUM MOND",
+   "start": "384.400",
+   "unter": "GEDANKENEXPERIMENT: DER MOND RÜCKT HERAN",
+   "von_s": 0
+  },
+  {
+   "bis_s": 44,
+   "einheit": "× SO STARK",
+   "ende": "758",
+   "etikett": "GEZEITENKRAFT",
+   "start": "8",
+   "unter": "20 s: HALB SO WEIT · 32 s: EIN VIERTEL (96.100 KM)",
+   "von_s": 20
+  },
+  {
+   "bis_s": 70,
+   "einheit": "KM",
+   "ende": "0 (HIER bei 60 s)",
+   "etikett": "BIS ZUR ROCHE-GRENZE",
+   "start": "23.800",
+   "unter": "44 s: 42.164 KM · HÖHE DER WETTERSATELLITEN",
+   "von_s": 44
+  }
+ ],
+ "anzeige_umsetzung": "Zahl live aus anzeige(t)/d(t). Unterzeilen: 0–20 s GEDANKENEXPERIMENT: DER MOND RÜCKT HERAN · 20–24 s HALB SO WEIT: 192.200 KM · 24–31 und 36–44 s ENTFERNUNG: x KM (live) · 31–36 s EIN VIERTEL: 96.100 KM · 44–50,5 s 42.164 KM · HÖHE DER WETTERSATELLITEN · 50,5–60 s ENTFERNUNG (live) · ab 60 s HIER, Unterzeile leer. Die Plan-Unterzeile „20 s: HALB SO WEIT · 32 s: EIN VIERTEL (96.100 KM)“ ist so auf zwei Zeitfenster verteilt.",
+ "saetze": [
+  [
+   4.8,
+   "Du stehst nachts an einem Strand in Portugal."
+  ],
+  [
+   9.2,
+   "Dann rückt der Vollmond näher."
+  ],
+  [
+   13.6,
+   "Er wächst sichtbar über dem Atlantik."
+  ],
+  [
+   18,
+   "Halb so weit, achtmal so viel Gezeitenkraft."
+  ],
+  [
+   22.4,
+   "Das Wasser steigt bis an die Dünen."
+  ],
+  [
+   26.8,
+   "Das Mondlicht wirft scharfe Schatten über den Sand."
+  ],
+  [
+   31.2,
+   "Ein Viertel der Strecke: 64-fache Gezeitenkraft."
+  ],
+  [
+   35.6,
+   "Das Meer zieht sich weit hinaus zurück."
+  ],
+  [
+   40,
+   "Der Mond ist schon siebenmal so groß."
+  ],
+  [
+   44.4,
+   "So nah kreisen sonst Wettersatelliten."
+  ],
+  [
+   48.8,
+   "Eine Flutwand rollt auf den Strand zu."
+  ],
+  [
+   53.2,
+   "Risse ziehen sich über den Mond."
+  ],
+  [
+   62.4,
+   "Die Erde reißt den Mond in Stücke."
+  ],
+  [
+   66.4,
+   "Heute driftet er jedes Jahr 3,8 Zentimeter weg."
+  ]
+ ],
+ "satz_dauer": "3,7 s (Lücke 0,7 s); 62,4 s: 3,3 s; 66,4 s: 3,4 s (endet 69,8 s)",
+ "bild_text_abgleich": [
+  [
+   4.8,
+   "Du stehst nachts an einem Strand in Portugal.",
+   "Ich-Blick vom Dünenfuß über den nächtlichen Strand: Brandung mit Schaumbändern, Fischerboot mit Laterne im Sand, Vollmond über dem Atlantik mit Glitzerbahn, Landzunge mit Leuchtturm und Dorflichtern"
+  ],
+  [
+   9.2,
+   "Dann rückt der Vollmond näher.",
+   "Anzeige ENTFERNUNG ZUM MOND fällt (≈ 323.000 → 290.000 km), Mondscheibe wächst sichtbar, Halo und Glitzerbahn werden heller"
+  ],
+  [
+   13.6,
+   "Er wächst sichtbar über dem Atlantik.",
+   "Mond über dem Meer rechts der Blickachse deutlich größer (×1,7), Wellen höher, Schaumkronen"
+  ],
+  [
+   18,
+   "Halb so weit, achtmal so viel Gezeitenkraft.",
+   "Anzeige ≈ 206.000 km, Etikettwechsel bei 20 s auf GEZEITENKRAFT 8 ×, Unterzeile HALB SO WEIT: 192.200 KM; Mond doppelt so groß"
+  ],
+  [
+   22.4,
+   "Das Wasser steigt bis an die Dünen.",
+   "Kamera schwenkt nach links unten auf den Strand: das Wasser läuft bis an den Dünenfuß, Strandhafer-Horste vorn links werden überspült, das Boot schwimmt auf (ab 24,5 s)"
+  ],
+  [
+   26.8,
+   "Das Mondlicht wirft scharfe Schatten über den Sand.",
+   "Mondlicht heller (×19), lange harte Schatten von Boot, Treibholz und Strandhafer laufen über den nassen Sand zur Kamera"
+  ],
+  [
+   31.2,
+   "Ein Viertel der Strecke: 64-fache Gezeitenkraft.",
+   "Anzeige GEZEITENKRAFT ≈ 57–64 ×, Unterzeile EIN VIERTEL: 96.100 KM (31–36 s); Zoom auf den Mond beginnt, Krater deutlich"
+  ],
+  [
+   35.6,
+   "Das Meer zieht sich weit hinaus zurück.",
+   "Meer weicht zurück: freiliegender Meeresgrund mit Felsen und Tang, das Boot wird hinausgezogen und liegt trocken; Kamera zieht sich auf die Düne zurück"
+  ],
+  [
+   40,
+   "Der Mond ist schon siebenmal so groß.",
+   "Mond ×6,9 (Rechnung: siebenmal), Nacht fast taghell, blauer Himmel, Sterne verblasst"
+  ],
+  [
+   44.4,
+   "So nah kreisen sonst Wettersatelliten.",
+   "Etikett BIS ZUR ROCHE-GRENZE 23.797 km, Unterzeile 42.164 KM · HÖHE DER WETTERSATELLITEN; Blick hebt sich zum riesigen Mond"
+  ],
+  [
+   48.8,
+   "Eine Flutwand rollt auf den Strand zu.",
+   "Am Horizont steht eine dunkle Flutwand mit weißer Schaumkrone und Gischtschleier, rollt über den freien Meeresgrund heran"
+  ],
+  [
+   53.2,
+   "Risse ziehen sich über den Mond.",
+   "Feine, hell aufleuchtende Risse wachsen über die Mondscheibe (ab 53 s), ab 55 s Staubfahnen am Mondrand, leichtes Beben"
+  ],
+  [
+   62.4,
+   "Die Erde reißt den Mond in Stücke.",
+   "Mond zerbrochen: Bruchstücke treiben auseinander, glühende Kanten, Trümmerwolke; Flut steht über dem Strand"
+  ],
+  [
+   66.4,
+   "Heute driftet er jedes Jahr 3,8 Zentimeter weg.",
+   "Bruchstücke und Trümmerband über dem Meer, Wasser über den Dünen, Anzeige HIER blendet 69,2–70,1 s aus"
+  ]
+ ],
+ "bewegungsplan": [
+  [
+   0,
+   "Brandung, Glitzerbahn, Wolkenstreifen ziehen, Leuchtturmstrahl kreist, Möwen, Strandhafer im Wind, Laterne am Boot",
+   1
+  ],
+  [
+   2.5,
+   "Leuchtturm blitzt zur Kamera",
+   1
+  ],
+  [
+   5,
+   "Mond wächst, Anzeige fällt",
+   1
+  ],
+  [
+   8,
+   "Wellen werden höher, Halo heller",
+   1
+  ],
+  [
+   11,
+   "Leuchtturmstrahl, Wolken vor dem Mond",
+   1
+  ],
+  [
+   14,
+   "Mond ×1,7, Schaumkronen",
+   2
+  ],
+  [
+   17,
+   "Pegel steigt, Brandung läuft weiter hinauf",
+   2
+  ],
+  [
+   19,
+   "Schwenk nach links unten beginnt",
+   2
+  ],
+  [
+   20,
+   "Etikettwechsel GEZEITENKRAFT",
+   2
+  ],
+  [
+   22,
+   "Wasser erreicht den Dünenfuß",
+   3
+  ],
+  [
+   24.5,
+   "Boot schwimmt auf",
+   3
+  ],
+  [
+   26.8,
+   "harte Mondschatten über den Sand",
+   3
+  ],
+  [
+   28,
+   "Welle läuft bis vor die Kamera",
+   3
+  ],
+  [
+   30,
+   "Blick hebt sich, Zoom auf den Mond",
+   3
+  ],
+  [
+   32,
+   "Unterzeile EIN VIERTEL, Wasser beginnt zu fallen",
+   3
+  ],
+  [
+   33.5,
+   "Möwen fliehen",
+   3
+  ],
+  [
+   35,
+   "Rückzug zur Düne beginnt, Meer weicht",
+   3
+  ],
+  [
+   38,
+   "Felsen und Tang tauchen auf, Boot wird hinausgezogen",
+   3
+  ],
+  [
+   40,
+   "Boot liegt trocken, Mond ×7, fast taghell",
+   4
+  ],
+  [
+   42,
+   "Sterne verschwunden, Himmel blau",
+   4
+  ],
+  [
+   44,
+   "Etikett ROCHE-GRENZE, Flutwand erscheint am Horizont",
+   4
+  ],
+  [
+   47,
+   "Flutwand wächst, Blick hebt sich",
+   4
+  ],
+  [
+   50,
+   "Flutwand mit Gischtschleier, Sand weht",
+   4
+  ],
+  [
+   53,
+   "Risse auf dem Mond leuchten auf",
+   4
+  ],
+  [
+   55,
+   "Beben, Staubfahnen am Mondrand",
+   5
+  ],
+  [
+   57,
+   "Flutwand bricht, Gischt",
+   5
+  ],
+  [
+   59,
+   "Flut trifft den Strand, Tropfen auf der Linse",
+   5
+  ],
+  [
+   60,
+   "HIER: Mond zerbricht, Lichtblitz, Trümmerwolke",
+   5
+  ],
+  [
+   62,
+   "Bruchstücke treiben auseinander, Flut steigt über den Strand",
+   4
+  ],
+  [
+   64,
+   "Trümmerband beginnt, Sterne kehren zurück",
+   3
+  ],
+  [
+   66,
+   "Wasser über den Dünen, Boot treibt",
+   3
+  ],
+  [
+   68,
+   "Trümmerband zieht über den Himmel",
+   3
+  ]
+ ],
+ "lern_notizen": {
+  "welt": "Meer und Küste (Nachtstrand mit Dünen, Erstbau)",
+  "standpunkt": "Dünenfuß am Strand (Augenhöhe), später Dünenkamm",
+  "tageszeit": [
+   "Nacht (Vollmond)",
+   "Mondlicht immer heller bis fast taghell",
+   "Nacht mit Trümmerband"
+  ],
+  "kamera": [
+   {
+    "t": 0,
+    "art": "ruhe",
+    "was": "Atmen"
+   },
+   {
+    "t": 19,
+    "art": "schwenk",
+    "was": "nach links unten auf den Strand (+2° → −6°, −4° → −8°)"
+   },
+   {
+    "t": 30,
+    "art": "zoom",
+    "was": "Blick hebt sich auf +2°, Brennweite 52° → 40° auf den Mond (bis 36 s)"
+   },
+   {
+    "t": 35,
+    "art": "fahrt",
+    "was": "Rückzug vom Dünenfuß auf den Dünenkamm (bis 50 s), Brennweite zurück auf 50°"
+   },
+   {
+    "t": 44,
+    "art": "schwenk",
+    "was": "Blick hebt sich zum Mond (+3° → +8°)"
+   },
+   {
+    "t": 55,
+    "art": "beben",
+    "was": "bis 60 s"
+   },
+   {
+    "t": 60,
+    "art": "stoss",
+    "was": "Mond zerbricht"
+   }
+  ],
+  "zeitraffer": [
+   {
+    "von": 0,
+    "bis": 60,
+    "faktor": "Entfernung als Zeitachse (keine Echtzeit)"
+   }
+  ],
+  "effekte": [
+   {
+    "t": 19,
+    "name": "Brandung höher"
+   },
+   {
+    "t": 22.2,
+    "name": "Wasser steigt"
+   },
+   {
+    "t": 24.5,
+    "name": "Boot schwimmt"
+   },
+   {
+    "t": 26.8,
+    "name": "harte Schatten"
+   },
+   {
+    "t": 33.5,
+    "name": "Möwen fliehen"
+   },
+   {
+    "t": 34,
+    "name": "Meer weicht"
+   },
+   {
+    "t": 39,
+    "name": "Boot liegt trocken"
+   },
+   {
+    "t": 45,
+    "name": "Flutwand am Horizont"
+   },
+   {
+    "t": 53.2,
+    "name": "Risse im Mond"
+   },
+   {
+    "t": 55,
+    "name": "Beben, Staub am Mondrand"
+   },
+   {
+    "t": 57,
+    "name": "Flutwand bricht"
+   },
+   {
+    "t": 59,
+    "name": "Flut trifft Strand"
+   },
+   {
+    "t": 60,
+    "name": "Mond zerbricht, Lichtblitz"
+   },
+   {
+    "t": 60.4,
+    "name": "Trümmerwolke"
+   },
+   {
+    "t": 62.5,
+    "name": "Trümmerband"
+   }
+  ],
+  "sequenzen": [
+   "Nachtstrand",
+   "halbe Entfernung: Flut bis an die Dünen",
+   "Viertel: Meer weicht zurück",
+   "Wettersatelliten-Höhe: Flutwand",
+   "Roche-Grenze: Risse, Zerbrechen",
+   "Nachspiel: Trümmerband"
+  ]
+ },
+ "hoehepunkt": "60 s: Roche-Grenze erreicht – Mond zerbricht (Lichtblitz, glühende Kanten, Trümmerwolke), Stoß; Flut steht über dem Strand",
+ "abspann": {
+  "frage": "Was wäre, wenn der Mond der Erde immer näher käme?",
+  "fakt": "ROCHE-GRENZE CA. 18.400 KM · HEUTE 384.400 KM · MOND ENTFERNT SICH 3,8 CM PRO JAHR"
+ },
+ "faktenzeile": "ROCHE-GRENZE CA. 18.400 KM · HEUTE 384.400 KM · MOND ENTFERNT SICH 3,8 CM PRO JAHR",
+ "faktenzeile_umsetzung": "zweizeilig gesetzt: „Roche-Grenze ca. 18.400 km · heute 384.400 km“ / „Mond entfernt sich 3,8 cm pro Jahr“ (Versalien per CSS, Inhalt 1:1)",
+ "dramaturgie": [
+  "0–4,4 s: Nachtstrand, Brandung, Vollmond über dem Atlantik, Glitzerbahn auf dem Wasser; Anzeige 384.400 km läuft schon.",
+  "4,8–20 s: Mond wächst sichtbar (×2 bei 20 s), Licht wird heller, Wellen werden höher und unruhiger.",
+  "20–32 s Eskalation 1: Etikett GEZEITENKRAFT; Wasser läuft bis an die Dünen, Strandgras überspült, Boot schwimmt auf; harte Mondschatten; langsamer Zoom auf den Mond, Krater werden deutlich.",
+  "32–44 s Eskalation 2: Meer zieht sich weit zurück (freiliegender Meeresgrund mit Felsen und Tang), Mond ×4 → ×9, Nacht wird fast taghell; Kamera weicht zur Düne zurück. Spannung steigt.",
+  "44–55 s Eskalation 3: Etikett BIS ZUR ROCHE-GRENZE; am Horizont baut sich eine Flutwand auf und rollt heran; Kamera neigt sich nach oben zum riesigen Mond; ab 53 s feine helle Risse auf der Mondoberfläche (Aufleuchten).",
+  "55–60 s Annäherung: Risse wachsen, Staub löst sich vom Mondrand, leichtes Beben, Anzeige → 0 km.",
+  "60 s HIER: Mond bricht auf, helle Trümmerwolke, kein Satz (visuell besonders: Aufleuchten, Trümmer).",
+  "62–70 s Nachspiel: Trümmer ziehen sich zu einem Band über den Himmel, Wasser läuft über die Düne; Anzeige blendet 69,2–70,1 s aus.",
+  "70–72 s Abblende, 72–80 s Abspann mit Titelfrage und Faktenzeile."
+ ],
+ "rechenweg": "x = Entfernung; Größe 384.400/x, Licht (384.400/x)², Gezeitenkraft (384.400/x)³ (NOAA: ∝ 1/r³). Stufen (log-linear): 0 s 384.400; 20 s 192.200 (×2 groß, ×4 Licht, ×8 Gezeiten); 32 s 96.100 (×4, ×16, ×64); 44 s 42.164 km = geostationärer Bahnradius (35.786 km Höhe + 6.378 km Äquatorradius; ×9,1, ×83, ×758); 60 s Roche-Grenze flüssig 2,44 × 6.371 × (5.514/3.344)^(1/3) = 18.365 km ≈ 18.400 km (×20,9 groß, ×438 Licht, ×9.170 Gezeiten); starre Grenze 1,26 × … = 9.484 km. Bei 40 s Größe ×6,9 ('siebenmal'). Code: pipeline/sim/mond_naeher.mjs (3 Tests grün).",
+ "zahlen": {
+  "entfernung_halb": "192.200 km",
+  "entfernung_heute": "384.400 km (Halbachse)",
+  "geostationaer": "42.164 km vom Erdmittelpunkt (35.786 km Höhe) · Gezeiten ×758 · Größe ×9,1",
+  "gezeitenkraft": "×8",
+  "gezeitenkraft_bei_41s": "×4,26",
+  "halb": "192.200 km · Gezeiten ×8",
+  "heute": "384.400 km",
+  "mondlicht": "×4",
+  "roche_fluessig": "ca. 18.400 km (18.365 km) · Gezeiten ×9.170 · Größe ×21",
+  "roche_starr": "ca. 9.500 km (nicht im Video)",
+  "rueckgang_heute": "3,8 cm pro Jahr",
+  "scheinbare_groesse": "×2",
+  "umlaufzeit_halb": "9,7 Tage (nicht im Video)",
+  "viertel": "96.100 km · Gezeiten ×64 · Licht ×16"
+ },
+ "rechnung": {
+  "code": "pipeline/sim/mond_naeher.mjs (Test: pipeline/sim/mond_naeher.test.mjs, grün)",
+  "darstellung_mond": "Winkelradius = 1,9 · asin(1.737,4 / d) (× 1,9 überhöht für die Lesbarkeit der kleinen Scheibe, Verhältnis 384.400/d bleibt erhalten)"
+ },
+ "quellen": [
+  "(F) Moon Fact Sheet, NASA NSSDC (384.400 km, mittlere Dichte 3.344 kg/m³) – https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html",
+  "(F) Earth Fact Sheet, NASA NSSDC (Radius 6.371 km, Dichte 5.514 kg/m³) – https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+  "(F) Tides and Water Levels, NOAA National Ocean Service (Gezeitenkraft ∝ 1/r³) – https://oceanservice.noaa.gov/education/tutorial_tides/tides02_cause.html",
+  "(F) Geostationary satellite, AMS Glossary (35.786 km über dem Äquator; Meteosat) – https://glossary.ametsoc.org/wiki/geostationary-satellite/",
+  "(F) Forecasting the weather, ESA (Meteosat in ca. 36.000 km) – https://esa.int/Applications/Observing_the_Earth/Meteorological_missions/meteosat_third_generation/Forecasting_the_weather",
+  "(S) Roche-Grenze, Standardformel d = 2,44 R (ρ_M/ρ_m)^(1/3) – https://sciencenotes.org/roche-limit-definition-formula-physics-and-examples/",
+  "(F) Measuring the Moon's Distance, NASA GSFC (3,8 cm pro Jahr) – https://eclipse.gsfc.nasa.gov/help/ApolloLaser.html",
+  "(F) Rechnung: pipeline/sim/mond_naeher.mjs"
+ ],
+ "annahmen": [
+  "(A) Gedankenexperiment: Der Mond rückt stetig heran; die Entfernung ersetzt die Zeitachse.",
+  "(S) Roche-Grenze: Standardformel für einen flüssigen Satelliten (≈ 18.400 km); ein starrer Mond hielte bis ca. 9.500 km. Der reale Mond liegt dazwischen; das Video nimmt die flüssige Grenze und zeigt Risse kurz davor.",
+  "(S) Flutwand, extremes Zurückweichen des Meeres und überspülte Dünen sind zugespitzte, qualitative Darstellungen der vervielfachten Gezeitenkraft (Wunsch des Inhabers: dramatischer); keine Wasserhöhe in Metern wird behauptet.",
+  "(A) Vollmond, Sonne–Mond-Abstand gleich (Licht ∝ 1/r²). Strand generisch, Portugal-ähnlich; keine Menschen in Gefahr, keine Opfer.",
+  "(A) Neufassung nach Kommentar des Inhabers: Steigerung über die halbe Entfernung hinaus bis zum Zerbrechen des Mondes; Titel entsprechend angepasst."
+ ],
+ "korrekturen": [
+  "Technik (kein Inhalt): sim/mond_naeher.mjs prüft process.argv nur noch in Node (im Browser brach der Import ab)."
+ ],
+ "caption": "Was wäre, wenn der Mond der Erde immer näher käme? 🌕 Ich hab’s durchgespielt. Bei welcher Stufe wärst du vom Strand weggelaufen? 👇 #mond #gezeiten #weltall #wissen #waswaerewenn"
+}

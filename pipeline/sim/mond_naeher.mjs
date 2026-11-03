@@ -18,5 +18,5 @@ export function anzeige(t) {
   if (t < 44) return { etikett: "GEZEITENKRAFT", wert: gezeiten(x), einheit: "× SO STARK" };
   return { etikett: "BIS ZUR ROCHE-GRENZE", wert: Math.max(0, x - ROCHE), einheit: "KM", hier: t >= 60 };
 }
-if (import.meta.url === `file://${process.argv[1]}`) { console.log({ ROCHE, ROCHE_STARR, geoGez: gezeiten(GEO), geoGr: groesse(GEO), rocheGez: gezeiten(ROCHE), rocheGr: groesse(ROCHE) });
+if (typeof process !== "undefined" && import.meta.url === `file://${process.argv[1]}`) { console.log({ ROCHE, ROCHE_STARR, geoGez: gezeiten(GEO), geoGr: groesse(GEO), rocheGez: gezeiten(ROCHE), rocheGr: groesse(ROCHE) });
   for (const t of [0, 13.6, 18, 20, 22, 22.4, 26.8, 31.2, 32, 35.6, 40, 44, 48.8, 53.2, 60]) { const a = anzeige(t); console.log(t, Math.round(d(t)), a.etikett, a.wert.toFixed(1), "gr", groesse(d(t)).toFixed(1), "licht", licht(d(t)).toFixed(1)); } }
