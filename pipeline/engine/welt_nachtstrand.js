@@ -152,7 +152,7 @@ void main() {
   float u = dot(w.xz, wellenD);
   float wa = wandProfil(u);
   w.y = pegel + wellen(w.xz) * (1.0 - smoothstep(4.0, 22.0, wandHoehe) * 0.5) + wa;
-  vW = w.xyz; vWand = wandHoehe > 0.01 ? wa / wandHoehe : 0.0;
+  vW = w.xyz; vWand = wandHoehe > 0.001 ? wa / wandHoehe * smoothstep(0.0, 12.0, wandHoehe) : 0.0;
   vec4 mvPosition = viewMatrix * w; gl_Position = projectionMatrix * mvPosition;
 #include <fog_vertex>
 }`;
@@ -434,6 +434,10 @@ export class Nachtstrand {
     const H = this.G.hoehe;
     this.augeY = H(0, 0) + 1.65;
     this.D = WELLEN_D;
+    { let b = null;                                                 // Rückzugsweg der Kamera (Zaun und Treibholz meiden ihn)
+      for (let x = -36; x <= -4; x += 1) for (let z = 8; z <= 46; z += 1) { const y = H(x, z), s = y - 0.06 * Math.hypot(x, z - 20); if (!b || s > b[3]) b = [x, y, z, s]; }
+      const ax = 0, az = 0, bx = b[0], bz = b[2];
+      this._wegNah = (x, z) => { const vx = bx - ax, vz = bz - az, k = Math.max(0, Math.min(1, ((x - ax) * vx + (z - az) * vz) / (vx * vx + vz * vz))); return Math.hypot(x - ax - k * vx, z - az - k * vz); }; }
 
     // Gelände: fein nahe der Kamera
     const T = gitter(-9000, 3000, -12000, 2500, 0.55, 0.012, H);
@@ -537,11 +541,13 @@ export class Nachtstrand {
     for (let k = 0; k < 90; k++) {
       const z = -50 + k * 1.35; let x = -(this.K.x(z));
       for (let it = 0; it < 30; it++) x -= (44 + 2.2 * Math.sin(z * 0.05) - this.G.abstand(x, z)) * 0.8;
+      if (this._wegNah && this._wegNah(x, z) < 6) { zaunPunkte.length && zaunPunkte.push(null); continue; }
       const y = H(x, z); zaunPunkte.push([x, y + 1.0 + 0.04 * Math.sin(k * 1.7), z]);
       pp.set(x, y - 0.15, z); qq.setFromEuler(new THREE.Euler((hash(k, 181) - 0.5) * 0.18, 0, (hash(k, 182) - 0.5) * 0.22)); ss.set(1, 0.85 + 0.3 * hash(k, 183), 1); mm.compose(pp, qq, ss); pfahl.setMatrixAt(np++, mm);
     }
-    pfahl.castShadow = schatten; pfahl.receiveShadow = schatten; szene.add(pfahl); this.pfahl = pfahl;
-    const draht = new THREE.Line(new THREE.BufferGeometry().setFromPoints(zaunPunkte.map((p) => new THREE.Vector3(...p))), new THREE.LineBasicMaterial({ color: "#3A352F" }));
+    pfahl.count = np; pfahl.castShadow = schatten; pfahl.receiveShadow = schatten; szene.add(pfahl); this.pfahl = pfahl;
+    const drahtP = zaunPunkte.filter(Boolean).slice(0, 1).length ? zaunPunkte.reduce((a, p, i) => (p && zaunPunkte[i - 1] ? a.push(new THREE.Vector3(...zaunPunkte[i - 1]), new THREE.Vector3(...p)) : 0, a), []) : [];
+    const draht = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(drahtP), new THREE.LineBasicMaterial({ color: "#3A352F" }));
     szene.add(draht); this.draht = draht;
     const treib = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.13, 0.18, 1, 7).rotateZ(Math.PI / 2), new THREE.MeshStandardMaterial({ color: "#8A7F70", roughness: 0.95, flatShading: true }), 8);
     [[-1.6, -11, 3.2, 0.5], [2.6, -20, 2.4, -0.6], [-5.5, -27, 2.0, 1.1], [-9, -6, 4.0, 0.2], [-16, -14, 2.6, -0.3]].forEach(([x, z, l, dreh], i) => {
