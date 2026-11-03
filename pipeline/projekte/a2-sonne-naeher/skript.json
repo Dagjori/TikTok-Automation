@@ -1,0 +1,569 @@
+{
+ "skript_id": "acc2-2026-11-03-mittag",
+ "titel": "Was wäre, wenn die Erde immer näher an die Sonne rücken würde?",
+ "titelfrage": "Was wäre, wenn die Erde immer näher an die Sonne rücken würde?",
+ "konto": "stelldirvor.pov",
+ "format": "referenz_pov",
+ "skill": "stelldirvor-video",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Grundwelt Küstenklippe (engine/welt_kueste_klippe.js, Erstbau 03.11.2026)",
+ "thema": "Folgen je Entfernung: Wasserverlust-Grenze, Venusbahn, Merkurbahn, Parker-Sonde, Sonnenoberfläche",
+ "welt": "Küstenklippe am Atlantik mit Wiese, Meer, Seevögeln (generisch, Westirland-ähnlich); wird stufenweise trockener, heller, glühender",
+ "standpunkt": "Klippenkante, Blick über das Meer zur Sonne; Kamera schwenkt langsam die Klippe entlang, ab 44 s langsamer Zoom auf die wachsende Sonne",
+ "tageszeit_verlauf": "durchgehend Tag (Sonne über dem Meer), Licht kippt von warmem Mittag über grelles Weiß zu Weißglut",
+ "kamera": "0–20 s ruhig; 20–44 s langsamer Schwenk entlang der vertrocknenden Klippe; 44–60 s langsamer Zoom auf die Sonnenscheibe; Weißblende bei HIER",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 60,
+   "faktor": "keiner (Echtzeit-Faktor entfällt): Gedankenexperiment, die Entfernung zur Sonne ist die Zeitachse; r(t) log-linear zwischen den Knoten 149,598 (0 s) · 148,1 (15 s) · 108,2 (32 s) · 57,9 (45 s) · 6,8 (55 s) · 0,6957 Mio. km (60 s)",
+   "anzeige": "Entfernung, Strahlung, scheinbare Größe, Abstand zur Oberfläche, alle aus r(t) in sim/sonne_naeher.mjs"
+  },
+  {
+   "von": 60,
+   "bis": 70,
+   "faktor": "keiner (Nachspiel an der Sonnenoberfläche, Anzeige HIER)"
+  }
+ ],
+ "zeitraffer_hinweis": "keine Echtzeit: Die Entfernung ist die Zeitachse (Gedankenexperiment). Die Folgen jeder Entfernung erscheinen sofort (Gleichgewichtszustand); real dauerten sie Jahre bis Jahrmillionen. Unterzeile Phase 1: GEDANKENEXPERIMENT: DIE ERDE RÜCKT NÄHER",
+ "anzeige_plan": [
+  {
+   "bis_s": 18,
+   "einheit": "MIO. KM",
+   "ende": "140,1",
+   "etikett": "ENTFERNUNG ZUR SONNE",
+   "start": "149,6",
+   "unter": "WASSERVERLUST-GRENZE: 148,1 MIO. KM",
+   "von_s": 0
+  },
+  {
+   "bis_s": 44,
+   "einheit": "× SO STARK",
+   "ende": "6,1",
+   "etikett": "SONNENSTRAHLUNG",
+   "start": "1,1",
+   "unter": "30–38 s: VENUSBAHN · VENUS: 467 °C",
+   "von_s": 18
+  },
+  {
+   "bis_s": 55,
+   "einheit": "× SO GROSS",
+   "ende": "22",
+   "etikett": "SONNE AM HIMMEL",
+   "start": "2,5",
+   "unter": "45 s: MERKURBAHN · 57,9 MIO. KM",
+   "von_s": 44
+  },
+  {
+   "bis_s": 70,
+   "einheit": "MIO. KM",
+   "ende": "0 (HIER bei 60 s)",
+   "etikett": "BIS ZUR SONNENOBERFLÄCHE",
+   "start": "6,1",
+   "unter": "HIER FLOG DIE SONDE PARKER · 5.500 °C",
+   "von_s": 55
+  }
+ ],
+ "anzeige_umsetzung": "Zahl live aus anzeige(t)/r(t). Unterzeilen: 0–12,5 s GEDANKENEXPERIMENT: DIE ERDE RÜCKT NÄHER · 12,5–18 s WASSERVERLUST-GRENZE: 148,1 MIO. KM · 18–30 und 38–44 s ENTFERNUNG: x MIO. KM (live) · 30–38 s VENUSBAHN · VENUS: 467 °C · 44–50 s MERKURBAHN · 57,9 MIO. KM · 50–55 s ENTFERNUNG (live) · 55–57,5 s HIER FLOG DIE SONDE PARKER · 57,5–60 s SONNENOBERFLÄCHE: 5.500 °C · ab 60 s HIER, Unterzeile leer (design.md). Nachkommastellen: 2 (0–44 s), 1 bzw. 0 (44–55 s), 1 bzw. 2 (55–60 s), damit sich die Zahl stetig ändert.",
+ "saetze": [
+  [
+   4.8,
+   "Du stehst mittags an einer Klippe in Irland."
+  ],
+  [
+   9.2,
+   "Dann rückt die Erde näher an die Sonne."
+  ],
+  [
+   13.6,
+   "Ein Prozent näher, und das Wasser entweicht."
+  ],
+  [
+   18,
+   "Die Sonnenstrahlung steigt mit jedem Kilometer."
+  ],
+  [
+   22.4,
+   "Die Wiese wird gelb, dann braun."
+  ],
+  [
+   26.8,
+   "Über dem Meer steigt Dampf auf."
+  ],
+  [
+   31.2,
+   "Jetzt kreist die Erde auf der Venusbahn."
+  ],
+  [
+   35.6,
+   "Die Venus ist dort 467 Grad heiß."
+  ],
+  [
+   40,
+   "Das Meer ist verdampft, der Grund liegt frei."
+  ],
+  [
+   44.4,
+   "Auf der Merkurbahn ist die Sonne zweieinhalbmal so groß."
+  ],
+  [
+   48.8,
+   "Die Felsen der Klippe beginnen zu glühen."
+  ],
+  [
+   53.2,
+   "So nah kam nur die Sonde Parker."
+  ],
+  [
+   62.4,
+   "Die Oberfläche der Sonne hat 5.500 Grad."
+  ],
+  [
+   66.4,
+   "Heute trennen uns 150 Millionen Kilometer."
+  ]
+ ],
+ "satz_dauer": "3,7 s (Lücke 0,7 s); 62,4 s: 3,3 s; 66,4 s: 3,4 s (endet 69,8 s)",
+ "bild_text_abgleich": [
+  [
+   4.8,
+   "Du stehst mittags an einer Klippe in Irland.",
+   "Ich-Blick von der Klippenkante (62 m) über den Atlantik: Gras im Wind vorn, Steilwand mit Schichten und Felsnadeln, Mittagssonne (11° hoch) mit Glitzerbahn, Möwen, Wolken"
+  ],
+  [
+   9.2,
+   "Dann rückt die Erde näher an die Sonne.",
+   "Anzeige ENTFERNUNG ZUR SONNE fällt (148,7 → 148,3 Mio. km), Sonnenscheibe wächst minimal, Glanz auf dem Meer"
+  ],
+  [
+   13.6,
+   "Ein Prozent näher, und das Wasser entweicht.",
+   "Unterzeile WASSERVERLUST-GRENZE: 148,1 MIO. KM (ab 12,5 s), Anzeige erreicht 148,1 bei 15 s; erster Dunst steigt über dem Meer auf (ab 12,5 s)"
+  ],
+  [
+   18.0,
+   "Die Sonnenstrahlung steigt mit jedem Kilometer.",
+   "Etikett wechselt auf SONNENSTRAHLUNG (1,10 ×), Licht wird weißer, Wiese beginnt zu verblassen; Möwen fliehen ab 19,5 s"
+  ],
+  [
+   22.4,
+   "Die Wiese wird gelb, dann braun.",
+   "Gras vorn und Felder auf den Klippen: gelb ab 22 s, braun bei 26,5 s; Kamera schwenkt die Klippe entlang"
+  ],
+  [
+   26.8,
+   "Über dem Meer steigt Dampf auf.",
+   "Dampfschwaden über der ganzen Meeresfläche (ab 27 s dicht), Wasser beginnt zu kochen (Blasenfelder)"
+  ],
+  [
+   31.2,
+   "Jetzt kreist die Erde auf der Venusbahn.",
+   "Unterzeile VENUSBAHN · VENUS: 467 °C (30–38 s), Anzeige 1,91 × bei 32 s, Himmel milchig, Meer kocht und beginnt zu sinken (ab 30,5 s)"
+  ],
+  [
+   35.6,
+   "Die Venus ist dort 467 Grad heiß.",
+   "Unterzeile VENUSBAHN · VENUS: 467 °C; Meeresspiegel fällt, Riffe und Blöcke tauchen auf"
+  ],
+  [
+   40.0,
+   "Das Meer ist verdampft, der Grund liegt frei.",
+   "Meeresgrund mit Riffen, Blöcken und Salzkruste bis zum Horizont trocken (Pegel −127 m bei 40 s), Felsnadeln stehen frei"
+  ],
+  [
+   44.4,
+   "Auf der Merkurbahn ist die Sonne zweieinhalbmal so groß.",
+   "Etikett SONNE AM HIMMEL 2,5 × (Merkurbahn 57,9 Mio. km in der Unterzeile), Kamera schwenkt zur Sonne zurück, die Scheibe ist sichtbar größer"
+  ],
+  [
+   48.8,
+   "Die Felsen der Klippe beginnen zu glühen.",
+   "Felswände und Meeresgrund glühen ab 47,5 s dunkelrot, dann orange; Wiese brennt (Funken, Rauch), Hitzeflimmern; Zoom auf die Sonne läuft"
+  ],
+  [
+   53.2,
+   "So nah kam nur die Sonde Parker.",
+   "Sonne füllt einen großen Teil des Bildes (× 12 → 22), bei 55 s Unterzeile HIER FLOG DIE SONDE PARKER"
+  ],
+  [
+   62.4,
+   "Die Oberfläche der Sonne hat 5.500 Grad.",
+   "nach der Weißblende (60 s) wogende Sonnenoberfläche mit Granulation und Filamenten; Zahl 5.500 °C stand 57,5–60 s in der Unterzeile und steht in der Faktenzeile"
+  ],
+  [
+   66.4,
+   "Heute trennen uns 150 Millionen Kilometer.",
+   "Sonnenoberfläche wogt weiter, Funken treiben; Realitätsbezug zur Startzahl 149,60 Mio. km der Anzeige"
+  ]
+ ],
+ "bewegungsplan": [
+  [
+   0,
+   "Gras wiegt im Wind, Wellen und Glitzerbahn, Möwen kreisen, Wolken ziehen, Sonne mit Glanz",
+   1
+  ],
+  [
+   2.5,
+   "Möwen nah vor der Klippe, Brandung am Wandfuß",
+   1
+  ],
+  [
+   5,
+   "Wolken ziehen über der See (6 m/s), Glitzern wandert",
+   1
+  ],
+  [
+   8,
+   "Sonnenscheibe wächst minimal, Anzeige fällt",
+   1
+  ],
+  [
+   10.5,
+   "Möwen kreisen dichter an der Kante",
+   1
+  ],
+  [
+   12.5,
+   "Dunst steigt über dem Meer auf (erster Dampf), Unterzeile WASSERVERLUST-GRENZE",
+   2
+  ],
+  [
+   15,
+   "Wasserverlust-Grenze erreicht (148,1), Himmel wird blasser",
+   2
+  ],
+  [
+   18,
+   "Etikettwechsel SONNENSTRAHLUNG, Licht wird weißer",
+   2
+  ],
+  [
+   19,
+   "Kamera beginnt Schwenk die Klippe entlang",
+   2
+  ],
+  [
+   19.5,
+   "Möwen und Krähen fliehen",
+   2
+  ],
+  [
+   22,
+   "Wiese wird gelb",
+   3
+  ],
+  [
+   24.5,
+   "Wolken lösen sich auf",
+   3
+  ],
+  [
+   26.5,
+   "Wiese braun, Dampf dicht",
+   3
+  ],
+  [
+   28,
+   "Meer beginnt zu kochen",
+   3
+  ],
+  [
+   30.5,
+   "Meeresspiegel beginnt zu fallen, Unterzeile VENUSBAHN",
+   3
+  ],
+  [
+   33,
+   "Himmel milchig, Riffe tauchen auf",
+   3
+  ],
+  [
+   35.5,
+   "Felsnadeln stehen frei, Blöcke am Grund",
+   3
+  ],
+  [
+   37,
+   "Kamera schwenkt zurück zur Sonne",
+   3
+  ],
+  [
+   38.5,
+   "letzte Wasserflächen verschwinden, Salzkruste",
+   4
+  ],
+  [
+   40,
+   "Grund liegt frei",
+   4
+  ],
+  [
+   42,
+   "Dampf vergeht, Himmel wird gelblich",
+   4
+  ],
+  [
+   44,
+   "Etikettwechsel SONNE AM HIMMEL, Sonne wieder im Bild",
+   4
+  ],
+  [
+   45.5,
+   "Rauch über brennenden Wiesen",
+   4
+  ],
+  [
+   46,
+   "Zoom auf die Sonne beginnt (52° → 28°)",
+   4
+  ],
+  [
+   47.5,
+   "Wiese brennt, Funken; Felsen glühen dunkelrot",
+   4
+  ],
+  [
+   50,
+   "Hitzeflimmern, Glühen orange",
+   4
+  ],
+  [
+   52,
+   "Sonnenscheibe deutlich groß, Granulation sichtbar",
+   5
+  ],
+  [
+   55,
+   "Parker-Distanz, Etikett BIS ZUR SONNENOBERFLÄCHE, Kamera bebt",
+   5
+  ],
+  [
+   57.5,
+   "Sonne füllt das Bild",
+   5
+  ],
+  [
+   59.4,
+   "Aufhellung",
+   5
+  ],
+  [
+   60,
+   "HIER: Weißblende",
+   5
+  ],
+  [
+   61.5,
+   "Weiß klärt zur Sonnenoberfläche",
+   4
+  ],
+  [
+   63,
+   "Granulation und Filamente wogen, Funken treiben",
+   3
+  ],
+  [
+   66,
+   "Oberfläche wogt weiter, langsamer Blick nach oben",
+   3
+  ],
+  [
+   69,
+   "Funken verlöschen, Anzeige blendet aus",
+   2
+  ],
+  [
+   70,
+   "Abblende",
+   1
+  ],
+  [
+   72,
+   "Abspann",
+   1
+  ]
+ ],
+ "lern_notizen": {
+  "welt": "Meer und Küste (Küstenklippe, Erstbau)",
+  "standpunkt": "Klippenkante 62 m über dem Meer (ebenerdig an der Kante, Blick hinunter aufs Meer)",
+  "tageszeit": [
+   "Tag (Mittagssonne, 11° hoch)",
+   "grelles Weiß",
+   "Weißglut",
+   "Sonnenoberfläche"
+  ],
+  "kamera": [
+   {
+    "t": 0,
+    "art": "ruhe",
+    "was": "Atmen"
+   },
+   {
+    "t": 19,
+    "art": "schwenk",
+    "was": "die Klippe entlang nach rechts, −3° → +17°, Blick senkt sich auf −9,5°"
+   },
+   {
+    "t": 37,
+    "art": "schwenk",
+    "was": "zurück zur Sonne, −4° bei 46 s"
+   },
+   {
+    "t": 46,
+    "art": "zoom",
+    "was": "Brennweite 52° → 28° bis 58 s, Blick hebt sich auf +7,6°"
+   },
+   {
+    "t": 55,
+    "art": "beben",
+    "was": "Hitze-Beben bis 60 s"
+   },
+   {
+    "t": 60,
+    "art": "stoss",
+    "was": "Weißblende HIER"
+   }
+  ],
+  "zeitraffer": [
+   {
+    "von": 0,
+    "bis": 60,
+    "faktor": "Entfernung als Zeitachse (keine Echtzeit)"
+   }
+  ],
+  "effekte": [
+   {
+    "t": 12.5,
+    "name": "Dunst über dem Meer"
+   },
+   {
+    "t": 19.5,
+    "name": "Möwen fliehen"
+   },
+   {
+    "t": 22,
+    "name": "Wiese gelb"
+   },
+   {
+    "t": 26.5,
+    "name": "Wiese braun"
+   },
+   {
+    "t": 26.8,
+    "name": "Dampf"
+   },
+   {
+    "t": 28,
+    "name": "Meer kocht"
+   },
+   {
+    "t": 30.5,
+    "name": "Meer sinkt"
+   },
+   {
+    "t": 40,
+    "name": "Grund frei, Salzkruste"
+   },
+   {
+    "t": 45.5,
+    "name": "Rauch"
+   },
+   {
+    "t": 47.5,
+    "name": "Wiese brennt, Funken"
+   },
+   {
+    "t": 47.5,
+    "name": "Felsen glühen"
+   },
+   {
+    "t": 50,
+    "name": "Hitzeflimmern"
+   },
+   {
+    "t": 59.4,
+    "name": "Aufhellung"
+   },
+   {
+    "t": 60,
+    "name": "Weißblende"
+   },
+   {
+    "t": 61.5,
+    "name": "Sonnenoberfläche"
+   }
+  ],
+  "sequenzen": [
+   "Alltag an der Klippe",
+   "Wasserverlust-Grenze (Dunst)",
+   "Dürre und Dampf",
+   "Venusbahn: Meer kocht und verdampft",
+   "Merkurbahn: Glut und Zoom",
+   "Parker-Distanz",
+   "Höhepunkt HIER (Weißblende)",
+   "Nachspiel Sonnenoberfläche"
+  ]
+ },
+ "hoehepunkt": "60 s: die Erde erreicht die Sonnenoberfläche – Aufhellung ab 59,4 s, Weißblende bei 60 s, Stoß, danach wogende Sonnenoberfläche",
+ "abspann": {
+  "frage": "Was wäre, wenn die Erde immer näher an die Sonne rücken würde?",
+  "fakt": "WASSERVERLUST-GRENZE: 0,99 AE · VENUS 467 °C · SONNENOBERFLÄCHE 5.500 °C"
+ },
+ "faktenzeile": "WASSERVERLUST-GRENZE: 0,99 AE · VENUS 467 °C · SONNENOBERFLÄCHE 5.500 °C",
+ "faktenzeile_umsetzung": "zweizeilig gesetzt: „Wasserverlust-Grenze: 0,99 AE“ / „Venus 467 °C · Sonnenoberfläche 5.500 °C“ (Versalien per CSS, Inhalt 1:1)",
+ "dramaturgie": [
+  "0–4,4 s: grüne Klippe, Mittagssonne über dem Meer, Möwen, Wellen; Anzeige 149,6 Mio. km läuft schon.",
+  "4,8–18 s: Sonne wird minimal heller; bei 15 s Wasserverlust-Grenze erreicht (Unterzeile leuchtet kurz auf), Dunst über dem Meer.",
+  "18–32 s Auslöser/Eskalation 1: Etikett SONNENSTRAHLUNG; Wiese gelb → braun, Seevögel verschwinden, Dampfschwaden über dem Meer, Kamera schwenkt die Klippe entlang; Licht wird weißer. Spannung steigt.",
+  "30–40 s Eskalation 2 (Venusbahn): Himmel milchig-weiß, Meer kocht und sinkt, Meeresgrund mit Felsen wird sichtbar (bei 40 s frei).",
+  "44–55 s Eskalation 3 (Merkurbahn): Etikett SONNE AM HIMMEL, langsamer Zoom auf die wachsende Sonnenscheibe (×2,6 → ×22), Hitzeflimmern, Felsen glühen ab ca. 49 s rot, dann orange.",
+  "55–60 s Annäherung: Etikett BIS ZUR SONNENOBERFLÄCHE 6,1 → 0 Mio. km, Sonne füllt einen großen Teil des Bildes, Granulation sichtbar.",
+  "60 s HIER: Weißblende, kein Satz (visuell besonders: Aufleuchten).",
+  "62–70 s Nachspiel: gleißendes Weiß klärt zu wogender Sonnenoberfläche; Anzeige blendet 69,2–70,1 s aus.",
+  "70–72 s Abblende, 72–80 s Abspann mit Titelfrage und Faktenzeile."
+ ],
+ "rechenweg": "Entfernung r(t) log-linear zwischen Knoten (0 s 149,598; 15 s 0,99 AE = 148,1; 32 s Venus 108,2; 45 s Merkur 57,9; 55 s Parker 6,1 + 0,6957 = 6,8; 60 s Sonnenradius 0,6957 Mio. km). Strahlung = (149,598/r)²: Venusbahn 1,91, Merkurbahn 6,68. Scheinbare Größe = 149,598/r: Merkur 2,58 ('zweieinhalbmal'), Parker 22. Subsolar-Temperatur (Schwarzkörper, Albedo 0) 394 K/√(r/AE): bei 48,8 s ca. 680 °C, bei 51 s ca. 930 °C (Glühen ab ca. 525 °C), an der Sonnenoberfläche ca. 5.500 °C (Plausibilität zu NASA). Code: pipeline/sim/sonne_naeher.mjs (4 Tests grün).",
+ "zahlen": {
+  "aphel": "152,1 Mio. km (Anfang Juli)",
+  "entfernung_heute": "149,6 Mio. km",
+  "entfernung_nach_10000": "149.594.347 km",
+  "entfernung_start": "149.598.000 km (mittlere Entfernung, Halbachse)",
+  "jahre_bis_sonne": "ca. 408 Mio. Jahre",
+  "jahresschwankung": "5,0 Mio. km",
+  "merkur_tag": "bis 430 °C (nicht im Video)",
+  "merkurbahn": "57,9 Mio. km, Sonne ×2,6",
+  "nach_10000_jahren": "3.653 km",
+  "nach_100_jahren": "36,5 km",
+  "parker": "6,1 Mio. km über der Oberfläche (24.12.2024), Sonne ×22",
+  "perihel": "147,1 Mio. km (Anfang Januar)",
+  "pro_jahr": "365 m",
+  "sonnenoberflaeche": "5.500 °C",
+  "sonnenradius": "695.700 km",
+  "venus_temperatur": "467 °C",
+  "venusbahn": "108,2 Mio. km (NASA: 108 Mio. km), Strahlung ×1,9",
+  "wasserverlust_grenze": "0,99 AE = 148,1 Mio. km"
+ },
+ "rechnung": {
+  "code": "pipeline/sim/sonne_naeher.mjs (Test: pipeline/sim/sonne_naeher.test.mjs, grün)",
+  "darstellung_sonne": "Winkelradius = asin(1,8 · 0,6957 / r) (× 1,8 überhöht für die Lesbarkeit der kleinen Scheibe, Verhältnis 149,598/r bleibt erhalten)"
+ },
+ "quellen": [
+  "(F) Earth Fact Sheet, NASA NSSDC (Halbachse 149,598 Mio. km) – https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+  "(F) Kopparapu, R. K. et al.: Habitable Zones around Main-Sequence Stars: New Estimates, ApJ 765:131, 2013 (Wasserverlust-Grenze 0,99 AE) – https://arxiv.org/abs/1301.6674",
+  "(F) Venus: Facts, NASA Science, Stand 15.10.2026 (108 Mio. km, ca. 467 °C) – https://science.nasa.gov/venus/venus-facts/",
+  "(F) Mercury: Facts, NASA Science, Stand 25.04.2025 (58 Mio. km, tags bis 430 °C) – https://science.nasa.gov/mercury/facts/",
+  "(F) Sun: Facts, NASA Science, Stand 17.09.2026 (Oberfläche 5.500 °C) – https://science.nasa.gov/sun/facts/",
+  "(F) Sun Fact Sheet, NASA NSSDC (Radius 695.700 km) – https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html",
+  "(F) Parker Solar Probe, NASA: Rekordannäherung 24.12.2024, 3,8 Mio. Meilen (6,1 Mio. km) über der Oberfläche – https://science.nasa.gov/mission/parker-solar-probe/",
+  "(F) Rechnung: pipeline/sim/sonne_naeher.mjs"
+ ],
+ "annahmen": [
+  "(A) Gedankenexperiment: Die Erde rückt stetig näher; die Entfernung ersetzt die Zeitachse. Die gezeigten Folgen sind der Endzustand je Entfernung, real dauerte das Verdampfen der Ozeane sehr lange.",
+  "(S) Die Bildfolgen Wiese verdorrt, Dampf, Meer verdampft, Felsen glühen sind qualitative Folgen aus Strahlung und Treibhaus-Grenze (Kopparapu 2013) bzw. der Schwarzkörper-Abschätzung; keine Temperatur für die Erde selbst wird als Zahl behauptet.",
+  "(A) 'Ein Prozent näher, und das Wasser entweicht' = Wasserverlust-Grenze (moist greenhouse) bei 0,99 AE nach Kopparapu et al. 2013; Modellwert, andere Modelle setzen die Grenze etwas anders.",
+  "(A) Küste generisch, Irland-ähnlich; keine Menschen in Gefahr gezeigt, keine Opfer.",
+  "(A) Neufassung nach Kommentar des Inhabers: Fokus auf Folgen je Entfernung bis ins Extreme statt 1 m pro Tag; Titel entsprechend angepasst.",
+  "(A) Darstellung: Sonnenscheibe × 1,8 überhöht (siehe rechnung.darstellung_sonne); Sonnenhöhe 11° wie Mittag im November an der irischen Westküste (S)."
+ ],
+ "korrekturen": [],
+ "caption": "Was wäre, wenn die Erde immer näher an die Sonne rückt? ☀️ Ich hab’s durchgespielt. Ab welcher Entfernung hättest du das Ende erwartet? 👇 #sonne #weltall #erde #wissen #waswaerewenn"
+}

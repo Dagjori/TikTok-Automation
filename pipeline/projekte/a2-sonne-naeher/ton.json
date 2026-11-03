@@ -1,0 +1,21 @@
+{
+ "_hinweis": "Tonplan für atmo.py (nur selbst erzeugte Atmo und Sounddesign, keine Stimme). Schichten mit Pegelkurven [[t, dB], …] (−60 = aus). Einzelklänge aus dem Ereignis-Protokoll der Szene (protokoll_effekte).",
+ "dauer": 80,
+ "seed": 20261103,
+ "schichten": [
+  {"art": "meer", "pegel": [[0, -22], [18, -22], [26, -25], [30, -27], [34, -33], [38.5, -45], [40.5, -60]]},
+  {"art": "voegel", "pegel": [[0, -30], [19, -30], [20.5, -42], [23, -60]], "dichte": 0.6},
+  {"art": "wind", "pegel": [[0, -27], [18, -26], [30, -24], [40, -22], [46, -20], [52, -17], [57, -12], [59.6, -8], [60.4, -14], [64, -24], [70, -32], [80, -50]],
+   "hell": [[0, 0.55], [30, 0.7], [44, 0.85], [58, 1.0], [60.5, 0.3], [80, 0.12]]},
+  {"art": "wasser", "pegel": [[0, -60], [26, -60], [29, -32], [33, -27], [38, -32], [41, -60]]},
+  {"art": "feuer", "pegel": [[0, -60], [45.5, -60], [47.5, -26], [51, -24], [55, -30], [59, -36], [60, -60]]},
+  {"art": "grollen", "pegel": [[0, -60], [42, -60], [47, -34], [52, -24], [56, -17], [59.5, -12], [60.4, -11], [62.5, -18], [66, -28], [72, -40], [80, -48]]},
+  {"art": "brummen", "pegel": [[0, -60], [44, -60], [52, -40], [58, -34], [60.5, -30], [72, -38], [80, -46]], "f": 52},
+  {"art": "tinnitus", "pegel": [[0, -60], [61.3, -60], [62, -46], [69, -50], [72, -60]], "f": 620}
+ ],
+ "dumpf": [[0, 0], [60.0, 0], [60.6, 0.85], [66, 0.82], [70, 0.9], [80, 0.95]],
+ "stille": [],
+ "ereignisse": [],
+ "protokoll_effekte": true,
+ "verlauf": "Brandung, Wind, Möwen an der Klippe → Möwen fliehen → Zischen und Brodeln, als das Meer kocht → Meer verstummt (40 s), heißer Wind → Knistern der brennenden Wiese, Grollen und tiefes Brummen → Aufhellung, Einschlag-Akzent bei HIER (60 s) → dumpf mit Brummen und Pfeifton → leiser Abspann"
+}

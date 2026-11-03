@@ -20,4 +20,4 @@ export function anzeige(t) {
   if (t < 55) return { etikett: "SONNE AM HIMMEL", wert: groesse(rr), einheit: "× SO GROSS" };
   return { etikett: "BIS ZUR SONNENOBERFLÄCHE", wert: Math.max(0, rr - R_SONNE), einheit: "MIO. KM", hier: t >= 60 };
 }
-if (import.meta.url === `file://${process.argv[1]}`) for (const t of [0, 13.6, 15, 18, 22.4, 26.8, 31.2, 32, 35.6, 40, 44, 45, 48.8, 51, 53.2, 55, 58, 60]) { const a = anzeige(t); console.log(t, r(t).toFixed(3), a.etikett, a.wert.toFixed(2), "T_subsolar", subsolarC(r(t)).toFixed(0)); }
+if (typeof process !== "undefined" && process.argv && import.meta.url === `file://${process.argv[1]}`) for (const t of [0, 13.6, 15, 18, 22.4, 26.8, 31.2, 32, 35.6, 40, 44, 45, 48.8, 51, 53.2, 55, 58, 60]) { const a = anzeige(t); console.log(t, r(t).toFixed(3), a.etikett, a.wert.toFixed(2), "T_subsolar", subsolarC(r(t)).toFixed(0)); }
