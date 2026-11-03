@@ -60,8 +60,8 @@ async function start() {
   const K = (keys) => (t) => keyframes(keys.map(([tt, v, e]) => ({ t: tt, v, e: e || ease.inOutSine })), t);
   const pegel = K([[0, 0], [18, 0.35], [22, 1.0], [28, 1.9], [31, 1.9], [35, -2], [40, -10], [44, -12], [57, -12.4], [60.5, -12.4], [64, 6.5], [70, 6.8]]);
   const unruhe = K([[0, 0.35], [10, 0.5], [20, 0.8], [26, 1.15], [31, 1.0], [36, 0.7], [44, 0.5], [56, 0.8], [60, 1.4], [66, 1.2], [70, 1.0]]);
-  const wandFront = K([[0, -20000], [44, -9000], [50, -5000, ease.linear], [54, -2400, ease.linear], [56, -1300, ease.linear], [57.5, -600, ease.linear], [58.5, -220, ease.linear], [59.3, -30, ease.outSine], [60.5, 60], [64, 140]]);
-  const wandHoehe = K([[0, 0], [44, 0], [47, 35], [51, 80], [55, 95], [57, 85], [58.3, 45], [59.2, 22], [60.5, 18.5], [64, 0]]);
+  const wandFront = K([[0, -20000], [44, -7500], [48, -4200, ease.linear], [51, -2900, ease.linear], [54, -1800, ease.linear], [56, -1100, ease.linear], [57.5, -560, ease.linear], [58.5, -210, ease.linear], [59.3, -30, ease.outSine], [60.5, 60], [64, 140]]);
+  const wandHoehe = K([[0, 0], [44, 0], [46.5, 45], [49, 90], [55, 100], [57, 85], [58.3, 45], [59.2, 22], [60.5, 18.5], [64, 0]]);
   const wind = K([[0, 0.35], [20, 0.5], [32, 0.7], [44, 0.9], [55, 1.2], [60, 1.6], [66, 1.0]]);
   const gischt = K([[0, 0.35], [20, 0.6], [26, 1.0], [31, 0.9], [36, 0], [60, 0], [62, 0.8], [70, 0.6]]);
   const risse = K([[0, 0], [53, 0], [56.5, 0.45], [59.8, 1]]);
@@ -156,11 +156,11 @@ async function start() {
       const y = -12.4 + w.wandHoehe * 0.92 + r * (0.2 + 0.5 * bricht) + 4 * Math.sin(t * 2 + i);
       out.push({ p: [x, Math.max(y, H(x, z) + r * 0.3), z], r, dreh: i + t * 0.4, farbe: [0.72, 0.78, 0.84].map((c) => c * (0.35 + 0.25 * lichtK(t))), a: 0.3 + 0.25 * bricht, licht: 0.9, bild: i % 4 });
     }
-    if (auf > 0.01) for (let i = 0; i < 90; i++) {
+    if (auf > 0.01) for (let i = 0; i < 55; i++) {
       const v = -260 + 520 * hash(i, 411), tau = ((t - 58.6) + hash(i, 412) * 1.5);
       const u = Math.min(w.wandFront, 20) - 10 * hash(i, 413);
       const x = D[0] * u + Tq[0] * v, z = D[1] * u + Tq[1] * v, r = 5 + 14 * hash(i, 414);
-      out.push({ p: [x, Math.max(H(x, z), w.pegel) + 2 + tau * (6 + 8 * hash(i, 415)), z], r: r * (0.6 + 0.5 * tau), dreh: i, farbe: [0.7, 0.76, 0.82].map((c) => c * (0.4 + 0.25 * lichtK(t))), a: 0.6 * auf, licht: 0.9, bild: i % 4 });
+      out.push({ p: [x, Math.max(H(x, z), w.pegel) + 2 + tau * (6 + 8 * hash(i, 415)), z], r: r * (0.6 + 0.5 * tau), dreh: i, farbe: [0.7, 0.76, 0.82].map((c) => c * (0.4 + 0.25 * lichtK(t))), a: 0.38 * auf, licht: 0.9, bild: i % 4 });
     }
     return out;
   };
