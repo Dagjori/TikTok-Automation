@@ -30,7 +30,7 @@ let SY = 14, SP = 33, SONNE_HIER = richtung(SY, SP);            // Sonne in der 
 // Jahreszeit: Zyklen (s = Nachkomma: 0 März, 0.15 Mai, 0.3 Juli, 0.42 Aug, 0.55 Okt, 0.68 Nov, 0.8 Jan)
 const PHI = [{ t: 0, v: 0.33 }, { t: 20, v: 10.33 }, { t: 46.5, v: 19.16 }, { t: 47.5, v: 19.4 }, { t: 51, v: 19.47 }, { t: 54, v: 20.24 }, { t: 60, v: 20.3 }, { t: 70, v: 20.4 }, { t: 80, v: 20.42 }];
 const phi = (t) => keyframes(PHI.map((k) => ({ ...k, e: ease.linear })), t);
-const schneeBei = (t) => { const f = phi(t), s = f - Math.floor(f), jahrN = Math.floor(f - 0.74); const w = smoothstep(0.73, 0.78, s) * (1 - smoothstep(0.88, 0.94, s)); return w * (hash(jahrN, 7) < 0.5 ? 1 : 0.15); };
+const schneeBei = (t) => { const f = phi(t), s = f - Math.floor(f), jahrN = Math.floor(f - 0.74); const w = smoothstep(0.6, 0.8, s) * (1 - smoothstep(0.84, 0.99, s)); return 0.6 * w * (hash(jahrN, 7) < 0.5 ? 1 : 0.2); };
 
 async function start() {
   aktiviereHoehenNebel({ abfall: 0.004, basis: 0 });
@@ -199,7 +199,7 @@ async function start() {
     stern.setze({ p: STERN, staerke: 30 * br * (1 - smoothstep(62.5, 65, t)), groesse: 0.7 + 0.5 * br });
     const herbst = smoothstep(0.58, 0.64, s) * (1 - smoothstep(0.72, 0.78, s)) * smoothstep(1905, 1925, Y);
     blaetter.setze(t, kam, { deckkraft: 0.8 * herbst, wind: [1.2 + 2 * wind(t), -0.4, 0.6] });
-    const schneeFall = smoothstep(0.73, 0.77, s) * (1 - smoothstep(0.84, 0.88, s)) * (sch > 0.5 ? 1 : 0);
+    const schneeFall = smoothstep(0.64, 0.78, s) * (1 - smoothstep(0.84, 0.96, s)) * smoothstep(0.1, 0.4, sch);
     schneeT.setze(t, kam, { deckkraft: 0.7 * schneeFall });
     samen.setze(t, kam, { zentrum: [kam.position.x - 2, kam.position.y - 1, kam.position.z - 7], deckkraft: 0.85 * smoothstep(63.5, 65.5, t) * (1 - smoothstep(69, 70.5, t)), wind: [-1.6, -0.2, 0.3] });
     pollen.setze(t, kam, { zentrum: [kam.position.x + 1, kam.position.y + 1, kam.position.z - 5], deckkraft: 0.6 * smoothstep(59.6, 61, t) * (1 - smoothstep(68, 70, t)), wind: [0.2, 0.05, 0.1] });
