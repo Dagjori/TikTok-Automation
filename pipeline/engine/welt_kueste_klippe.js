@@ -166,7 +166,7 @@ ${GLSL_WIESE}`)
   float salz = uSalz * smoothstep(uPegel + 2.0, uPegel + 30.0, W.y) * smoothstep(0.35, 0.65, kF(W.xz * 0.02 + 5.0));
   grund = mix(grund, vec3(0.74, 0.72, 0.67), salz * 0.6);
   vec3 c = mix(wiese, fels, steil);
-  vec3 riff = mix(vec3(0.27, 0.25, 0.23), vec3(0.36, 0.33, 0.29), kF(W.xz * 0.04 + W.y * 0.05)) * (0.8 + 0.3 * kN(W.xz * 0.3));
+  vec3 riff = mix(vec3(0.36, 0.34, 0.31), vec3(0.47, 0.43, 0.37), kF(W.xz * 0.04 + W.y * 0.05)) * (0.8 + 0.3 * kN(W.xz * 0.3));
   c = mix(c, mix(grund, riff, steil * 0.8), unter * (1.0 - smoothstep(-6.0, 2.0, W.y) * steil));
   c *= mix(1.0, 0.55, nass * unter);
   // Verkohlung des Felsens bei großer Hitze
@@ -217,9 +217,9 @@ void main() {
   float fres = 0.03 + 0.97 * pow(1.0 - max(dot(N, V), 0.0), 5.0);
   vec3 R = reflect(-V, N);
   float s = max(dot(R, normalize(sonneDir)), 0.0);
-  float funkel = step(0.5, kH(floor(vW.xz * 0.35) + floor(zeit * 6.0)));
+  float funkel = smoothstep(0.45, 0.75, kN(vW.xz * 0.35 + vec2(zeit * 1.3, -zeit * 0.9)));   // stetig (kein Takt-Flackern)
   vec3 wasserF = mix(flach, tief, smoothstep(2.0, 30.0, tiefe));
-  vec3 col = mix(wasserF, himmel, fres * 0.8) + sonneFarbe * (pow(s, 700.0) * 30.0 * (0.25 + funkel) + pow(s, 40.0) * 0.25);
+  vec3 col = mix(wasserF, himmel, fres * 0.8) + sonneFarbe * (min(pow(s, 160.0) * 4.5 * (0.35 + 0.65 * funkel), 1.7) + pow(s, 30.0) * 0.28);
   // Brandung: Schaumbänder an der Küste, laufen auf das Ufer zu
   float ufer = 1.0 - smoothstep(0.0, 9.0, tiefe);
   float band = smoothstep(0.55, 0.95, sin(tiefe * 1.1 + zeit * 1.6 + kN(vW.xz * 0.05) * 4.0) * 0.5 + 0.5);
@@ -229,7 +229,7 @@ void main() {
   schaum += smoothstep(0.78, 0.95, kN(vW.xz * 0.02 + vec2(zeit * 0.05, -zeit * 0.08))) * smoothstep(0.7, 0.9, kN(vW.xz * 0.11 - zeit * 0.2)) * 0.6;
   // Kochen: aufsteigende Blasenfelder, Wasser wird trüb und weiß
   vec2 bz = kZelle(vW.xz * 0.12 + vec2(0.0, zeit * 0.4));
-  float blase = (1.0 - smoothstep(0.0, 0.22, bz.x)) * step(0.45, kH(floor(vW.xz * 0.12 + vec2(0.0, zeit * 0.4)) + floor(zeit * 3.0)));
+  float blase = (1.0 - smoothstep(0.0, 0.22, bz.x)) * smoothstep(0.4, 0.6, kN(vW.xz * 0.05 + vec2(zeit * 0.9, zeit * 0.6)));
   schaum += kochen * (blase * 0.9 + smoothstep(0.45, 0.8, kN(vW.xz * 0.06 + zeit * 0.7)) * 0.6);
   col = mix(col, mix(col, vec3(0.78, 0.80, 0.80), 0.5), kochen * 0.35);
   col = mix(col, vec3(0.92, 0.94, 0.95), clamp(schaum, 0.0, 1.0) * (1.0 - smoothstep(1500.0, 5000.0, d) * 0.6));
@@ -404,7 +404,7 @@ export class KuesteKlippe {
     szene.add(this.boden);
     this.vertices = nx * nz;
     // Ferne Ebenen (Meeresgrund und Hinterland jenseits des Gitters)
-    const fern = new THREE.Mesh(new THREE.PlaneGeometry(200000, 200000).rotateX(-Math.PI / 2), gelaendeMaterial(this.u));
+    const fern = new THREE.Mesh(new THREE.PlaneGeometry(120000, 120000, 240, 240).rotateX(-Math.PI / 2), gelaendeMaterial(this.u));
     fern.position.set(0, -126, 0); szene.add(fern); this.fern = fern;
 
     // Grund als Textur für das Wasser (Brandung und Farbe nach Tiefe)
@@ -422,7 +422,7 @@ export class KuesteKlippe {
       grundTex: { value: null }, grundBox: { value: new THREE.Vector4(...GB) },
     }]);
     this.wasserU.grundTex.value = tex;
-    this.wasser = new THREE.Mesh(new THREE.PlaneGeometry(200000, 200000).rotateX(-Math.PI / 2), new THREE.ShaderMaterial({ vertexShader: WASSER_V, fragmentShader: WASSER_F, uniforms: this.wasserU, fog: true }));
+    this.wasser = new THREE.Mesh(new THREE.PlaneGeometry(120000, 120000, 480, 480).rotateX(-Math.PI / 2), new THREE.ShaderMaterial({ vertexShader: WASSER_V, fragmentShader: WASSER_F, uniforms: this.wasserU, fog: true }));
     szene.add(this.wasser);
 
     // Gras-Halme vor der Kamera (nur Land)
