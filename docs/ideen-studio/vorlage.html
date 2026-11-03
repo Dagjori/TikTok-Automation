@@ -440,7 +440,8 @@ function renderTag() {
   const cc = [];
   if (S.empfaenger && S.empfaenger !== "available") cc.push(h("p", { class: "note" }, EMPFAENGER[S.empfaenger] || EMPFAENGER.off));
   if (lauf?.session_id) {
-    const [txt, c] = lauf.status === "arbeitet" ? ["Claude Code arbeitet", "run"] : lauf.status === "wartet" ? ["Claude Code wartet auf den nächsten Auftrag", "ok"] : ["Sitzung gestartet", "run"];
+    const [txt, c] = lauf.status === "arbeitet" ? ["Claude Code arbeitet", "run"] : lauf.status === "wartet" ? ["Claude Code wartet auf den nächsten Auftrag", "ok"]
+      : lauf.status === "blockiert" ? ["Claude Code wartet auf deine Antwort in der Sitzung", "bad"] : ["Sitzung gestartet", "run"];
     cc.push(h("div", { class: "row" }, h("span", { class: "pill " + c }, txt),
       h("a", { href: sitzungsLink(lauf.session_id), target: "_blank", rel: "noopener" }, "Sitzung öffnen"),
       h("button", { class: "btn ghost small", disabled: !!S.busy.fort || !S.db, onclick: fortsetzen }, "Weiterarbeiten lassen")));
