@@ -746,6 +746,11 @@ const EINSTELLUNGEN_DATEI = path.join(DATEN, "einstellungen.json");
 let einstellungen = {};
 try { einstellungen = JSON.parse(fs.readFileSync(EINSTELLUNGEN_DATEI, "utf8")); } catch { einstellungen = {}; }
 
+// Am Desktop-PC läuft der Render-Dienst eigenständig über die Aufgabenplanung (Entscheidung 03.11., "dienst_autostart": false):
+// dort startet und übernimmt das Cockpit ihn nie, weder per Knopf noch per Claude; einen versehentlich gestarteten anhalten geht.
+const dienstNurAnzeigen = () => einstellungen.dienst_autostart === false;
+const DIENST_EIGENSTAENDIG = "Auf diesem Rechner läuft der Render-Dienst eigenständig über die Aufgabenplanung; das Cockpit startet oder übernimmt ihn hier nicht.";
+
 // Einstellungen gelten für alle Rechner (Abgleich), außer was nur diesen Rechner betrifft. Je Schlüssel merkt _zeiten,
 // wann er zuletzt geändert wurde: beim Zusammenführen gewinnt die neuere Änderung.
 const NUR_HIER = new Set(["dienst_autostart"]);
@@ -942,6 +947,7 @@ async function steuern(d) {
   }
   if (a === "dienst") {
     const w = d.wert || d.ziel;
+    if ((w === "an" || w === "uebernehmen") && dienstNurAnzeigen()) return { ok: false, fehler: DIENST_EIGENSTAENDIG };
     if (w === "an") renderdienst.starten();
     else if (w === "aus") renderdienst.stoppen();
     else if (w === "uebernehmen") renderdienst.uebernehmen();
@@ -1080,6 +1086,7 @@ const server = http.createServer(async (req, res) => {
         }
       }
       if (url.pathname === "/api/dienst") {
+        if ((daten.aktion === "an" || daten.aktion === "uebernehmen") && dienstNurAnzeigen()) return antwortJson(res, 409, { ok: false, fehler: DIENST_EIGENSTAENDIG, dienst: renderdienst.zustand() });
         if (daten.aktion === "an") renderdienst.starten();
         else if (daten.aktion === "aus") renderdienst.stoppen();
         else if (daten.aktion === "uebernehmen") renderdienst.uebernehmen();

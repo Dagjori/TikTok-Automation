@@ -186,7 +186,7 @@ function laufenderJob() { return (S.render?.auftraege || []).find((a) => a.statu
 function zentraleAktiv(id) {
   const c = S.claude || {}, art = c.aktiv?.art || "";
   switch (id) {
-    case "live": return !!(laufenderJob() || S.live?.aktiv);
+    case "live": return !!(laufenderJob() || S.live?.aktiv || S.claude?.produktion?.laeuft);
     case "studio": return !!(c.laeuft && ["ideen", "skripte"].includes(art));
     case "lernen": return !!(S.lernschleife?.laeuft || (c.laeuft && (art === "lernschleife" || art.startsWith("vorschlag"))));
     case "claude": return !!c.laeuft;
@@ -202,7 +202,7 @@ function crpZiel() {
 function statusText(id) {
   const job = laufenderJob();
   switch (id) {
-    case "live": return job ? `Render läuft · ${Math.round(job.prozent || 0)} %` : "Render-Dienst bereit";
+    case "live": return job ? `Render läuft · ${Math.round(job.prozent || 0)} %` : S.claude?.produktion?.laeuft ? "Produktion läuft …" : "Render-Dienst bereit";
     case "studio": return zentraleAktiv("studio") ? "Ideen und Skripte entstehen …" : "Ideen, Skripte, Freigabe";
     case "zahlen": return "Follower, Likes, jedes Video";
     case "ziele": { const z = crpZiel(); return z ? `CRP-Ziel: ${Math.round(z.anteil * 100)} %` : "Ziele bis zum CRP"; }

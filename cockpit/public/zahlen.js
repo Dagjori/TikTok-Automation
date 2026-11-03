@@ -12,8 +12,11 @@ const DIENST_STATUS = { aus: ["aus", ""], startet: ["startet …", "laeuft"], la
 function dienstZeichnen() {
   const d = ZS.dienst;
   if (!d || !$("dienst-karte")) return;
-  // Rechner, auf dem der Dienst eigenständig über die Aufgabenplanung läuft (Desktop-PC, Entscheidung 03.11.): nur anzeigen
-  if (d.status === "aus" && S.einstellungen?.dienst_autostart === false) {
+  // Rechner, auf dem der Dienst eigenständig über die Aufgabenplanung läuft (Desktop-PC, Entscheidung 03.11.): nur anzeigen,
+  // nie starten oder übernehmen (der Server lehnt das dort auch ab); nur ein versehentlich im Cockpit gestarteter lässt sich anhalten
+  const laeuft = ["laeuft", "startet", "neustart"].includes(d.status);
+  const nurAnzeigen = S.einstellungen?.dienst_autostart === false;
+  if (nurAnzeigen && !laeuft) {
     const hier = (S.render?.rechner || []).find((r) => r.lokal);
     const st = hier?.online ? (hier.daten?.status === "rendert" ? `rendert ${Math.round(hier.daten.prozent || 0)} %` : "läuft eigenständig") : "kein Herzschlag";
     $("dienst-karte").innerHTML = `
@@ -23,10 +26,10 @@ function dienstZeichnen() {
   }
   const [text, klasse] = DIENST_STATUS[d.status] || [d.status, ""];
   const zeilen = (d.zeilen || []).slice(-4).map((z) => `<div class="dz ${esc(z.art)}">${esc(z.text.replace(/^\d\d:\d\d:\d\d\s*/, ""))}</div>`).join("");
-  const laeuft = ["laeuft", "startet", "neustart"].includes(d.status);
   $("dienst-karte").innerHTML = `
     <div class="zeile"><span class="titel"><span class="punkt ${d.status === "laeuft" ? "an" : ""}"></span> Render-Dienst</span><span class="chip ${klasse}">${esc(text)}</span></div>
     ${d.hinweis ? `<div class="slot-fehler">${esc(d.hinweis)}</div>` : ""}
+    ${nurAnzeigen ? '<div class="slot-fehler">Dieser Dienst wurde im Cockpit gestartet. Auf diesem Rechner läuft er sonst eigenständig über die Aufgabenplanung: bitte anhalten.</div>' : ""}
     <div class="dienst-zeilen" title="Klicken für die ganze Konsole">${zeilen || '<div class="dz">noch keine Ausgabe</div>'}</div>
     <div class="slot-knoepfe">
       ${laeuft ? '<button class="knopf klein rot" data-dienst="aus">⏹ Anhalten</button>' : '<button class="knopf klein" data-dienst="an">▶ Starten</button>'}
@@ -39,7 +42,8 @@ $("dienst-karte").addEventListener("click", async (e) => {
   if (b) {
     if (b.dataset.dienst === "aus" && !confirm("Render-Dienst anhalten? Läuft gerade ein Auftrag, setzt der Dienst ihn beim nächsten Start fort.")) return;
     Spiel.klang.terminal();
-    await post("/api/dienst", { aktion: b.dataset.dienst });
+    const r = await post("/api/dienst", { aktion: b.dataset.dienst });
+    if (!r.ok) toast("⚠️", "Render-Dienst", r.fehler || "nicht möglich", "problem");
     return;
   }
   if (e.target.closest("[data-konsole], .dienst-zeilen")) konsoleOeffnen();
