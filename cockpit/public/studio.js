@@ -234,9 +234,13 @@ function leisteZeichnen() {
   const offen = ["mittag", "abend"].map((s) => skriptDok(slotIdVon(ST.konto, ST.tag, s))).filter(brauchtSkript).length;
   const frei = slotsDesTages(ST.tag).filter((d) => d.daten.status === "freigegeben").length;
   const gesperrt = nurLesen();
+  const inProd = slotsDesTages(ST.tag).filter((d) => ["uebergeben", "produktion"].includes(d.daten.status)).length;
+  const prodLaeuft = !!S.claude?.produktion?.laeuft;
   $("studio-leiste").innerHTML = `<div class="tagesueberblick">${mini}</div>
     <button class="knopf gross" id="k-recherche" ${!offen || gesperrt ? "disabled" : ""}>🔎 Skripte recherchieren lassen${offen ? ` (${offen})` : ""}</button>
-    <button class="knopf gross glanz" id="k-uebergeben" ${!frei || gesperrt ? "disabled" : ""} title="Startet die Produktion (kommt mit Ausbau 3)">🚀 An Claude übergeben${frei ? ` (${frei})` : ""}</button>`;
+    <button class="knopf gross glanz" id="k-uebergeben" ${!frei || gesperrt ? "disabled" : ""} title="Startet die Produktion: Claude baut, rendert auf dem PC, prüft und plant in Buffer">🚀 An Claude übergeben${frei ? ` (${frei})` : ""}</button>
+    ${inProd && !prodLaeuft ? `<button class="knopf gross" id="k-produktion" ${gesperrt ? "disabled" : ""} title="Produktion für übergebene Videos (neu) starten, z. B. nach einem Neustart">🏭 Produktion starten (${inProd})</button>` : ""}
+    ${prodLaeuft ? `<button class="knopf gross" id="k-produktion-stopp" title="${esc(S.claude.produktion.titel || "")}">⏹ Produktion stoppen</button>` : ""}`;
 }
 
 // Gelber Punkt am Studio-Reiter: so viele Videos warten auf dich (Skript prüfen oder Rückfrage)
@@ -392,7 +396,16 @@ $("studio-leiste").addEventListener("click", async (e) => {
   if (b.id === "k-uebergeben") {
     if (!confirm(`Alle freigegebenen Videos vom ${tagLabel(ST.tag)} an Claude übergeben?`)) return;
     const r = await studioAktion("uebergeben", { datum: ST.tag });
-    if (r) { P.konfetti(x, y, 160, 11); Ton.fanfare(); toast("🚀", "Übergeben", r.produktion ? "Claude produziert jetzt" : "Die Produktion im Cockpit kommt mit Ausbau 3", "meilenstein"); }
+    if (r) { P.konfetti(x, y, 160, 11); Ton.fanfare(); toast("🚀", "Übergeben", r.produktion ? "Claude produziert jetzt (🏭 im Feed)" : "Produktion nicht angeschlossen", "meilenstein"); }
+  }
+  if (b.id === "k-produktion") {
+    const r = await studioAktion("produktion_starten", { datum: ST.tag });
+    if (r) { Ton.whoosh(); P.funken(x, y, 20); toast("🏭", "Produktion", r.laeuft_schon ? "Läuft schon, übernimmt die Videos" : `${r.ids.length} Video(s) gehen in Produktion`, "meilenstein"); }
+  }
+  if (b.id === "k-produktion-stopp") {
+    if (!confirm("Produktion wirklich stoppen? Fertige Teile bleiben erhalten, „Erneut versuchen“ setzt fort.")) return;
+    const r = await post("/api/produktion/stopp", {});
+    if (r.ok) toast("⏹", "Produktion gestoppt", "", "problem");
   }
 });
 

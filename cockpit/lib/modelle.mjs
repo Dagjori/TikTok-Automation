@@ -11,7 +11,8 @@ const FEST = {
   skripte: ["opus", "Recherche und faktentreues Skript (CLAUDE.md §4: Opus)"],
   neu_schreiben: ["opus", "Neufassung mit Recherche (CLAUDE.md §4: Opus)"],
   vorschlag_umsetzen: ["opus", "Änderung an Regeln, Skill oder Design: höchste Sorgfalt"],
-  produktion: ["sonnet", "tägliche Produktion (CLAUDE.md §4: Sonnet), Abnahme getrennt mit Opus"],
+  produktion: ["opus", "Produktion steuern und abnehmen wie die Tages-Sitzung (Opus), Bau-Agenten mit Sonnet (CLAUDE.md §4)"],
+  nachpruefen: ["sonnet", "Nachprüfung nach dem Posten: Routine"],
   abnahme: ["opus", "Abnahme eines Videos (CLAUDE.md §4: Opus)"],
   briefing: ["sonnet", "Zusammenfassen vorhandener Dateien, keine Recherche"],
 };

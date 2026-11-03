@@ -194,6 +194,17 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
       return { ok: true, ids: docs.map((d) => d.id), produktion: !!produzieren };
     },
 
+    // Produktion (neu) anstoßen für übergebene Slots eines Tages, z. B. nach Neustart des Cockpits oder wenn sie nie lief
+    produktion_starten({ datum }) {
+      pruefe({ datum });
+      if (!produzieren) throw fehler("Die Produktion ist in diesem Cockpit nicht angeschlossen");
+      const docs = db.liste("skripte", [["datum", "==", datum]]).filter((d) => ["uebergeben", "produktion"].includes(d.daten.status));
+      if (!docs.length) throw fehler("Kein übergebenes Video an diesem Tag");
+      for (const d of docs) db.meilenstein("skripte", d.id, "Produktion angestoßen", { von: "cockpit" });
+      const r = produzieren(datum, docs.map((d) => d.id)) || {};
+      return { ok: true, ids: docs.map((d) => d.id), laeuft_schon: !!r.laeuft_schon };
+    },
+
     rueckfrage_annehmen({ id }) {
       const d = slotLesen(id);
       if (d.daten.status !== "rueckfrage") throw fehler("Keine offene Rückfrage");
