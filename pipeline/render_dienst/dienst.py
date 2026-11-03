@@ -23,6 +23,7 @@ import json
 import os
 import platform
 import queue
+import random
 import re
 import shutil
 import signal
@@ -36,7 +37,7 @@ from pathlib import Path
 import speicher as sp
 from speicher import PRAEFIX, iso, maskiere, pb, sauber
 
-DIENST_VERSION = "1.0"
+DIENST_VERSION = "1.1"
 EXIT_NEUSTART = 75                  # dienst_starten.bat startet bei diesem Code neu (Update des Dienstes)
 KONTEN = ("simulierbar", "stelldirvor.pov")
 MAX_STILLE_MIN = 25                 # so lange darf ein Unterprozess ohne jede Ausgabe laufen
@@ -464,6 +465,20 @@ class Dienst:
             return auftrag
         return None
 
+    ANSPRUCH_WARTEN_S = (4.0, 8.0)
+
+    def anspruch_sichern(self, id_):
+        """Mehrere Rechner (z. B. PC und Laptop) lesen dieselbe Auftragsliste. Wer zuletzt „laeuft“ mit seinem Namen schreibt,
+        bekommt den Auftrag: schreiben, zufällig 4–8 s warten, nachlesen. Steht dort ein anderer Rechner, tritt dieser Rechner
+        zurück, ohne etwas zu schreiben. Sicher, solange zwischen Lesen der Liste und Schreiben weniger als 4 s liegen."""
+        self.sp.schreibe_json(f"{PRAEFIX}/status/{id_}.json", {**self.status, "aktualisiert": iso()})
+        time.sleep(random.uniform(*self.ANSPRUCH_WARTEN_S))
+        st = self.sp.lese_json(f"{PRAEFIX}/status/{id_}.json") or {}
+        if st.get("rechner") not in (None, self.rechner):
+            self.log(f"Auftrag {id_} hat Rechner {st.get('rechner')} übernommen; dieser Rechner tritt zurück.")
+            return False
+        return True
+
     def pruefe_auftrag(self, a):
         if a.get("konto") not in KONTEN:
             raise DienstFehler(f"Konto {a.get('konto')!r} unbekannt (erlaubt: {', '.join(KONTEN)})")
@@ -498,6 +513,10 @@ class Dienst:
         self.render_info = {}
         self.log_handle = open(self.arbeit / f"{id_}.log", "a" if fortsetzen else "w", encoding="utf-8")
         self.log(f"Auftrag {id_}: {auftrag.get('projekt')} ({auftrag.get('konto')}), Commit {str(auftrag.get('commit'))[:10]}{' (Fortsetzung)' if fortsetzen else ''}")
+        if not fortsetzen and not self.anspruch_sichern(id_):
+            self.log_handle.close()
+            self.log_handle = None
+            return
         self.hb_setzen(status="rendert", auftrag=id_, prozent=0)
         self.schlafsperre(True)
         t_start = time.time()

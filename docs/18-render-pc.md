@@ -176,6 +176,13 @@ powercfg /change monitor-timeout-ac 10
 
 Windows-Updates, die den PC neu starten, sind kein Problem: Nach der Anmeldung startet der Dienst von selbst und setzt einen unterbrochenen Auftrag fort.
 
+## 3b. Zweiter Rechner (z. B. Laptop)
+
+Der Dienst darf auf mehreren Rechnern gleichzeitig laufen (getestet in der Cloud mit zwei simulierten Rechnern, 150 Durchläufe ohne Doppel-Abholung). Jeder Rechner meldet einen eigenen Herzschlag (`render/herzschlag/<Rechnername>.json`). Einen Auftrag bekommt genau ein Rechner: Er schreibt „läuft“ mit seinem Namen, wartet 4–8 s und liest nach; steht dort ein anderer Rechner, tritt er zurück (ab Dienst-Version 1.1). Einrichtung wie Schritt 1 bis 9, dieselbe `.env`. Beim Laptop zusätzlich:
+- **Grafik auf Höchstleistung:** Windows-Einstellungen → System → Anzeige → Grafik → `node.exe` und `chrome-headless-shell.exe` hinzufügen → „Hohe Leistung“ (sonst rendert der stromsparende Grafikchip).
+- **Netzteil anschließen** und in der Aufgabenplanung (Schritt 8, Reiter Bedingungen) „nur im Netzbetrieb“ ausschalten.
+- **Zuklappen:** Energieoptionen → „Beim Zuklappen“ → „Nichts unternehmen“ (Netzbetrieb).
+
 ## 4. Im Alltag
 
 - **Du tust nichts.** Nur: PC an, angemeldet, Internet.
