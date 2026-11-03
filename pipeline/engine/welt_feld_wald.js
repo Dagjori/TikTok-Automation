@@ -85,7 +85,7 @@ export const WACHS = {
 };
 
 // --------------------------------------------------------------------------------------------- GLSL
-const GLSL_NOISE = /* glsl */ `
+export const GLSL_NOISE = /* glsl */ `
 float nH(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
 float nN(vec2 p) { vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);
   return mix(mix(nH(i), nH(i + vec2(1.0, 0.0)), u.x), mix(nH(i + vec2(0.0, 1.0)), nH(i + vec2(1.0, 1.0)), u.x), u.y); }
@@ -147,7 +147,7 @@ ${GLSL_NOISE}`)
 }
 
 /** Wind-Wiegen für Pflanzen: Spitzen schwingen (Höhe im Objektraum 0..1) */
-function windMaterial(basis, u, { staerke = 1 } = {}) {
+export function windMaterial(basis, u, { staerke = 1 } = {}) {
   const m = new THREE.MeshStandardMaterial({ color: "#FFFFFF", roughness: 0.92, metalness: 0, flatShading: true, vertexColors: true, ...basis });
   m.onBeforeCompile = (sh) => {
     sh.uniforms.uZeit = u.uZeit; sh.uniforms.uWindS = u.uWindS;
@@ -176,7 +176,7 @@ function halm() {   // Büschel aus 7 Weizenhalmen (Karten) mit Ähren, Höhe 1
   }
   return merge(g);
 }
-function buschel() { // Grasbüschel: 5 Halme als schmale Dreiecke, Höhe 1
+export function buschel() { // Grasbüschel: 5 Halme als schmale Dreiecke, Höhe 1
   const pos = [];
   for (let i = 0; i < 6; i++) {
     const a = i * 2.4, r = 0.12 + 0.05 * (i % 2), x = Math.cos(a) * r, z = Math.sin(a) * r, w = 0.05;
@@ -193,7 +193,7 @@ function distel() {
   const bl = new THREE.ConeGeometry(0.18, 0.3, 5); bl.translate(0, 0.15, 0);
   return merge([st, k, b, bl]);
 }
-function klumpen(n, seed, { flach = 1, streu = 0.55 } = {}) { // Krone/Busch aus vielen kleinen Ikosaedern in einer Ellipsoid-Schale, Einheitsgröße (Radius ≈ 1)
+export function klumpen(n, seed, { flach = 1, streu = 0.55 } = {}) { // Krone/Busch aus vielen kleinen Ikosaedern in einer Ellipsoid-Schale, Einheitsgröße (Radius ≈ 1)
   const g = [], hell = [];
   const N = Math.max(n, 6) + 6;
   for (let i = 0; i < N; i++) {
@@ -210,7 +210,7 @@ function klumpen(n, seed, { flach = 1, streu = 0.55 } = {}) { // Krone/Busch aus
   const m = merge(g, hell); m.computeVertexNormals(); return m;
 }
 function stamm() { const g = new THREE.CylinderGeometry(0.55, 1, 1, 7); g.translate(0, 0.5, 0); return g; }
-function merge(list, hell = null) {
+export function merge(list, hell = null) {
   const geos = list.map((g) => g.index ? g.toNonIndexed() : g);
   let n = 0; for (const g of geos) n += g.getAttribute("position").count;
   const pos = new Float32Array(n * 3), col = new Float32Array(n * 3).fill(1); let o = 0;

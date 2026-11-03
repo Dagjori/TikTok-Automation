@@ -1,0 +1,464 @@
+{
+ "skript_id": "acc2-2026-11-04-abend",
+ "skript_quelle": "acc2-2026-11-04-abend",
+ "titel": "Was wäre, wenn du 16.000 Jahre auf einer Sahara-Düne stehst?",
+ "titelfrage": "Was wäre, wenn du 16.000 Jahre auf einer Sahara-Düne stehst?",
+ "konto": "stelldirvor.pov",
+ "format": "referenz_pov",
+ "skill": "stelldirvor-video",
+ "stil": "16 Lunar-POV, Grundwelt Wüste → See (engine/welt_wueste_see.js, Erstbau 04.11.2026)",
+ "thema": "Afrikanische Feuchtzeit: die Sahara wird grün, der Megatschadsee wächst auf mindestens 400.000 km² und verschwindet wieder (Erdgeschichte, keine Prognose)",
+ "welt": "Wüste und Dünen → Savanne und Seeufer → Wüste (Welttyp Wüste): Dünenfeld am Nordrand des Tschadbeckens (Raum Bodélé), Felsblock mit Ritzzeichnungen in der Nähe, später Seeufer mit Schilf, Gras, Akazien, Tierherden",
+ "standpunkt": "Ebenerdig: auf einer flachen Düne, die später zum Seeufer wird (Standpunkt-Typ wechselt gegenüber dem Podest am Mittag)",
+ "tageszeit_verlauf": "Sonnenaufgang (0–10 s) → greller Mittag → Regenzeiten mit Gewittern und Regenbögen (16–34 s) → goldene Nachmittage über dem See → Sonnenuntergang mit Staubsturm am Höhepunkt (60 s) → Dämmerung",
+ "kamera": "0–20 s ruhig, Blick über die Dünen; 20–34 s langsame Fahrt die Düne hinab, das Wasser kommt entgegen; 34–48 s Schwenk über das Ufer (Tiere, Felsbild); ab 49 s weicher Zoom auf den schrumpfenden See; 58–60 s Staubwand rollt auf die Kamera zu",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 20,
+   "faktor": "1 s = 75 Jahre",
+   "anzeige": "JAHRE VOR HEUTE 16.000–14.500"
+  },
+  {
+   "von": 20,
+   "bis": 34,
+   "faktor": "1 s = 214 Jahre",
+   "anzeige": "SEEFLÄCHE 0–400.000 km²"
+  },
+  {
+   "von": 34,
+   "bis": 60,
+   "faktor": "1 s = 442 Jahre",
+   "anzeige": "JAHRE VOR HEUTE 11.500–0, HIER"
+  }
+ ],
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 20,
+   "etikett": "JAHRE VOR HEUTE",
+   "start": "16.000",
+   "ende": "14.500",
+   "einheit": "",
+   "unter": "ZEITRAFFER: 1 SEKUNDE = 75 JAHRE"
+  },
+  {
+   "von_s": 20,
+   "bis_s": 34,
+   "etikett": "SEEFLÄCHE",
+   "start": "0",
+   "ende": "400.000",
+   "einheit": "km²",
+   "unter": "1 SEKUNDE = 214 JAHRE · ab 32,5 s: GRÖSSER ALS DEUTSCHLAND"
+  },
+  {
+   "von_s": 34,
+   "bis_s": 60,
+   "etikett": "JAHRE VOR HEUTE",
+   "start": "11.500",
+   "ende": "0 → HIER",
+   "einheit": "",
+   "unter": "1 SEKUNDE = 440 JAHRE"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Sonnenaufgang auf einer Düne in der Sahara.",
+   3.7
+  ],
+  [
+   9.2,
+   "Hier fällt fast kein Regen.",
+   3.7
+  ],
+  [
+   13.6,
+   "Dann ziehen jeden Sommer mehr Wolken auf.",
+   3.7
+  ],
+  [
+   18.0,
+   "Der Monsun erreicht die Wüste.",
+   3.7
+  ],
+  [
+   22.4,
+   "Gras keimt, wo eben noch Sand war.",
+   3.9
+  ],
+  [
+   27.0,
+   "Wasser sammelt sich unten im Becken.",
+   3.8
+  ],
+  [
+   32.8,
+   "Der See wird größer als Deutschland.",
+   3.3
+  ],
+  [
+   36.8,
+   "Flusspferde und Krokodile leben im Wasser.",
+   3.5
+  ],
+  [
+   41.0,
+   "Giraffen ziehen durch die Savanne.",
+   3.5
+  ],
+  [
+   45.2,
+   "Menschen ritzen Tiere in den Fels.",
+   3.5
+  ],
+  [
+   49.4,
+   "Dann sinkt der See, und zwar schnell.",
+   3.7
+  ],
+  [
+   53.8,
+   "Die Dünen wandern zurück ins Becken.",
+   4.0
+  ],
+  [
+   62.6,
+   "Der Staub stammt vom alten Seegrund.",
+   3.2
+  ],
+  [
+   66.4,
+   "Ein Kreiseln der Erdachse machte die Sahara grün.",
+   3.4
+  ]
+ ],
+ "bild_text_abgleich": [
+  [
+   4.8,
+   "Sonnenaufgang auf einer Düne in der Sahara.",
+   "Sonnenaufgang über dem Dünenfeld, Sand weht vom Kamm"
+  ],
+  [
+   9.2,
+   "Hier fällt fast kein Regen.",
+   "Kahle Dünen, Hitzeflimmern, klarer Himmel"
+  ],
+  [
+   13.6,
+   "Dann ziehen jeden Sommer mehr Wolken auf.",
+   "Wolken türmen sich im Süden immer höher"
+  ],
+  [
+   18.0,
+   "Der Monsun erreicht die Wüste.",
+   "Gewitter, Blitze, Regenvorhänge, Regen auf der Linse"
+  ],
+  [
+   22.4,
+   "Gras keimt, wo eben noch Sand war.",
+   "Gras keimt auf dem Hang (Fahrt die Düne hinab)"
+  ],
+  [
+   27.0,
+   "Wasser sammelt sich unten im Becken.",
+   "Wasser füllt das Becken, See wächst heran"
+  ],
+  [
+   32.8,
+   "Der See wird größer als Deutschland.",
+   "Anzeige über 357.588 km² (GRÖSSER ALS DEUTSCHLAND), See bis zum Horizont, Regenbogen"
+  ],
+  [
+   36.8,
+   "Flusspferde und Krokodile leben im Wasser.",
+   "Flusspferde im Wasser, Krokodile am Ufer"
+  ],
+  [
+   41.0,
+   "Giraffen ziehen durch die Savanne.",
+   "Giraffen und Antilopen auf der Landzunge"
+  ],
+  [
+   45.2,
+   "Menschen ritzen Tiere in den Fels.",
+   "Menschen am Felsblock, Ritzbild einer Giraffe erscheint"
+  ],
+  [
+   49.4,
+   "Dann sinkt der See, und zwar schnell.",
+   "Ufer weicht schnell zurück, Zoom auf den schrumpfenden See, Vögel fliegen fort"
+  ],
+  [
+   53.8,
+   "Die Dünen wandern zurück ins Becken.",
+   "Sand schiebt sich über Gras und Uferzone ins Becken"
+  ],
+  [
+   62.6,
+   "Der Staub stammt vom alten Seegrund.",
+   "Staub weht über weißen Seegrund, Felsbild im Staub"
+  ],
+  [
+   66.4,
+   "Ein Kreiseln der Erdachse machte die Sahara grün.",
+   "Dämmerung, Felsbild der Giraffe ragt aus dem Sand"
+  ]
+ ],
+ "faktenzeile": "TSCHADBECKEN, VOR 11.500 BIS 5.000 JAHREN · EIN SEE VON BIS ZU 400.000 KM²",
+ "rechenweg": "Jahre vor heute(t): 0–20 s 16.000 − 75·t; 20–34 s 14.500 − 214,29·(t−20); 34–60 s 11.500 − 442,31·(t−34) → 0 bei 60 s. Feuchtzeit-Beginn 14.800 J. v. h. bei t = 16,0 s (Satz Monsun 18,0 s). Seefläche 20–34 s linear 0 → 400.000 km²: 357.588 km² (Deutschland) bei t = 20 + 14·357.588/400.000 = 32,5 s (Satz 32,8 s, Anzeige 365.714). 400.000/357.588 = 1,12 → See mind. 12 % größer als Deutschland. Pegelfall 5.000 J. v. h. bei t = 34 + 26·6.500/11.500 = 48,7 s (Satz 49,4 s); Bodélé trocken 1.000 J. v. h. bei 57,7 s. Gobero-Fauna 10.000–8.000 J. v. h. ≈ 37,4–41,9 s (Satz 36,8 s). Geprüft mit cockpit/daten/tmp/rechnung_0411.py.",
+ "rechnung_code": "pipeline/sim/gruene_sahara.mjs (Test gruene_sahara.test.mjs, 5/5 grün)",
+ "zahlen": {
+  "start_jvh": 16000,
+  "feuchtzeit_beginn_jvh": 14800,
+  "hoechststand_ab_jvh": 11500,
+  "pegelfall_jvh": 5000,
+  "bodele_trocken_jvh": 1000,
+  "seeflaeche_km2_min": 400000,
+  "seetiefe_m_min": 173,
+  "flaeche_deutschland_km2": 357588,
+  "verhaeltnis_see_de": 1.12,
+  "juli_einstrahlung_plus_vor_9000_j": "ca. 7 %"
+ },
+ "annahmen": [
+  "(A) Seefläche wächst in der Anzeige linear von 0 (14.500) auf 400.000 km² (11.500); belegt sind nur Beginn der Feuchtzeit (ca. 15 ka) und Höchststand ab 11,5 ka mit mindestens 400.000 km², der Verlauf dazwischen ist schematisch.",
+  "(A) Flusspferde und Krokodile sind für Gobero (Niger, Sahara) belegt und werden auf das Tschadbecken übertragen; Giraffen und Felsbilder aus Ennedi/Gobero, Datierung grob (Holozän).",
+  "(A) „Die Dünen wandern zurück ins Becken“ ist eine vereinfachte Darstellung der Austrocknung nach 5 ka (Armitage 2015 datiert Dünen und Uferlinien).",
+  "(S) Zeitangaben gerundet; verschiedene Archive datieren Beginn und Ende der Feuchtzeit um einige Jahrhunderte unterschiedlich (14,8/15 ka; 5,5/5,0 ka).",
+  "(A) Bildliche Vereinfachungen: Tageszeiten und Wetter stilisiert, Seeufer und Landzunge schematisch, Tiere als Vertreter der belegten Fauna."
+ ],
+ "quellen": [
+  "(F) deMenocal et al.: Abrupt onset and termination of the African Humid Period, Quaternary Science Reviews 19, 347–361, 2000: Feuchtzeit 14,8–5,5 ka, Sahara fast vollständig bewachsen mit vielen Seen, Auslöser stärkerer Monsun durch langsame Zunahme der Sommer-Einstrahlung (Erdbahn) – https://www.whoi.edu/cms/files/demenocal00qsr_219404.pdf",
+  "(F) Armitage, Bristow, Drake: West African monsoon dynamics inferred from abrupt fluctuations of Lake Mega-Chad, PNAS, 2015: feuchte Bedingungen ab ca. 15 ka, Höchststand ab 11,5 ka bis 5,0 ka, schneller Pegelfall um 5 ka, endgültiges Austrocknen der Bodélé um 1 ka – https://pure.royalholloway.ac.uk/en/publications/west-african-monsoon-dynamics-inferred-from-abrupt-fluctuations-o/",
+  "(F) Phys.org, Lake Mega-Chad dried more quickly than thought, 30.06.2015: Bodélé heute größte einzelne Staubquelle der Welt – https://phys.org/news/2015-06-lake-mega-chad-dried-quickly-thought.html",
+  "(F) Drake & Bristow: Shorelines in the Sahara: geomorphological evidence for an enhanced monsoon from palaeolake Megachad, The Holocene 16(6), 901–911, 2006: am Höchststand vor 7.000 Jahren über 173 m tief, mindestens 400.000 km² – https://repository.geologyscience.ru/items/41844049-e594-4896-8720-b0364c721c8a/full",
+  "(F) Fläche Deutschland 357.588 km² (Stand 2022, Destatis), Tabelle Fläche und Bevölkerung, Umweltbundesamt, 2024 – https://umweltbundesamt.de/sites/default/files/medien/384/bilder/dateien/4_tab_flaeche-bevoelkerung_2024-07-15.pdf",
+  "(F) Sereno et al.: Lakeside Cemeteries in the Sahara: 5000 Years of Holocene Population and Environmental Change, PLoS ONE 3(8): e2995, 2008: Gobero (Niger, Sahara) mit Resten von Nilbarsch, Flusspferd und Krokodil – https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0002995",
+  "(F) Felskunst der grünen Sahara mit Giraffen, Elefanten, Krokodilen (Ennedi, Tschad), Bericht 2026 – https://www.enca.com/opinion/tracing-green-sahara-chads-northern-desert",
+  "(F) Kutzbach: Monsoon Climate of the Early Holocene: Climate Experiment with the Earth's Orbital Parameters for 9000 Years Ago, Science 214, 59–61, 1981: Präzession und Achsneigung → Juli-Einstrahlung vor 9.000 Jahren ca. 7 % höher, stärkerer Monsun – https://ui.adsabs.harvard.edu/abs/1981Sci...214...59K/abstract"
+ ],
+ "caption": "War die Sahara wirklich einmal grün? 🦛 Ich hab’s durchgespielt. Hättest du gedacht, dass hier ein riesiger See lag? 👇 #sahara #grünesahara #erdgeschichte #wissen #waswaerewenn",
+ "korrekturen": [
+  "Titel ohne „wieder“ (sonst wie eine Klimaprognose).",
+  "Megatschadsee mind. 400.000 km² (Drake & Bristow 2006) statt ca. 360.000 km².",
+  "Höchststand schon ab 11.500 J. v. h. (Armitage 2015), deshalb beginnt die Anzeige bei 16.000 statt 11.000.",
+  "Fauna (Flusspferd, Krokodil) belegt für Gobero/Niger, auf das Tschadbecken übertragen (Annahme).",
+  {
+   "feld": "skript.faktenzeile",
+   "alt": "TSCHADBECKEN, VOR 11.500 BIS 5.000 JAHREN · EIN SEE VON MINDESTENS 400.000 KM²",
+   "neu": "TSCHADBECKEN, VOR 11.500 BIS 5.000 JAHREN · EIN SEE VON BIS ZU 400.000 KM²",
+   "quelle": "Armitage, Bristow & Drake 2015, PNAS (PMC4507243): Höchststand ca. 361.000 km²; Studien nennen 360.000 bis über 400.000 km²",
+   "grund": "400.000 km² ist das obere Ende der Schätzungen, nicht gesichertes Minimum; 'größer als Deutschland' gilt mit beiden Werten (361.000 > 357.588)",
+   "zeit": "2026-11-03T23:00:00+01:00"
+  }
+ ],
+ "dramaturgie": [
+  "0–4,4 s: Sonnenaufgang über den Dünen, Sand weht vom Kamm, Hitzeflimmern beginnt; Titel oben.",
+  "5–16 s: Schatten der Dünen laufen schnell (Tage flackern sanft), Dünen wandern; ab 10 s türmen sich jeden Sommer höhere Wolken am Südhorizont.",
+  "16–20 s erste Wendung: erstes Gewitter, Regenvorhang, Blitz in der Ferne, dunkle Flecken im Sand.",
+  "20–34 s Eskalation: Etikett SEEFLÄCHE, Gras breitet sich aus, Wasser füllt das Becken unter dir, Kamera fährt die Düne hinab; 32,5 s Aufleuchten der Anzeige „GRÖSSER ALS DEUTSCHLAND“, Regenbogen über dem See.",
+  "34–48 s Höhepunkt der grünen Phase: Flusspferde im Uferschilf, Krokodile, Giraffen und Herden, Menschen am Felsblock (Ritzbild wird sichtbar), goldene Nachmittage.",
+  "49–58 s Annäherung: Wolken bleiben aus, Uferlinie weicht schnell zurück (Zoom), Gras vergilbt, Dünen schieben sich über das Ufer, weiße Salz- und Kieselgurflächen am Seegrund.",
+  "58–60 s Höhepunkt HIER: heute, Sonnenuntergang, eine Staubwand aus dem trockenen Seebecken rollt über den Standpunkt (einziger harter Lichtwechsel).",
+  "62–70 s Nachspiel: Staub senkt sich, das Ritzbild der Giraffe ragt aus dem Sand, Dämmerung, erste Sterne.",
+  "72–80 s Abspann mit Titelfrage und Faktenzeile."
+ ],
+ "bewegungsplan": [
+  [
+   0,
+   "Sonnenaufgang, Sand weht",
+   1
+  ],
+  [
+   5,
+   "Hitzeflimmern, Sonne steigt",
+   1
+  ],
+  [
+   9,
+   "erste Wolken im Süden",
+   2
+  ],
+  [
+   13,
+   "Wolkentürme",
+   2
+  ],
+  [
+   16.8,
+   "erster Blitz",
+   3
+  ],
+  [
+   18,
+   "Regen",
+   3
+  ],
+  [
+   20,
+   "Fahrt die Düne hinab",
+   3
+  ],
+  [
+   22,
+   "Gras keimt",
+   3
+  ],
+  [
+   24,
+   "Wasser im Becken",
+   3
+  ],
+  [
+   28,
+   "See wächst, Akazien",
+   3
+  ],
+  [
+   32.5,
+   "größer als Deutschland, Regenbogen",
+   4
+  ],
+  [
+   35,
+   "Flusspferde, Krokodile",
+   4
+  ],
+  [
+   38,
+   "goldener Nachmittag, Seevögel",
+   4
+  ],
+  [
+   41,
+   "Giraffen, Antilopen",
+   4
+  ],
+  [
+   44,
+   "Menschen ritzen das Felsbild",
+   4
+  ],
+  [
+   48.5,
+   "See sinkt schnell (Zoom)",
+   4
+  ],
+  [
+   52,
+   "Gras vergilbt, Seegrund wird weiß",
+   4
+  ],
+  [
+   53,
+   "Dünen wandern ins Becken",
+   4
+  ],
+  [
+   55,
+   "Staubwand am Horizont, Sonnenuntergang",
+   5
+  ],
+  [
+   60,
+   "Staubwand überrollt den Standpunkt (HIER)",
+   5
+  ],
+  [
+   62,
+   "Staub senkt sich, Felsbild",
+   3
+  ],
+  [
+   64,
+   "Dämmerung, Sterne",
+   2
+  ]
+ ],
+ "lern_notizen": {
+  "welt": "Wüste/Dünen → Seeufer",
+  "standpunkt": "Dünenkamm, dann Ufer (ebenerdig)",
+  "tageszeit": [
+   "Sonnenaufgang",
+   "Mittag",
+   "Gewitter",
+   "Nachmittag",
+   "Sonnenuntergang",
+   "Dämmerung"
+  ],
+  "kamera": [
+   {
+    "t": 20,
+    "art": "fahrt",
+    "was": "Düne hinab zum Ufer"
+   },
+   {
+    "t": 34,
+    "art": "schwenk",
+    "was": "Tiere, Felsbild"
+   },
+   {
+    "t": 48.5,
+    "art": "zoom",
+    "was": "schrumpfender See 60°→46°"
+   },
+   {
+    "t": 61.5,
+    "art": "schwenk",
+    "was": "Felsbild im Staub"
+   }
+  ],
+  "zeitraffer": [
+   {
+    "von": 0,
+    "bis": 20,
+    "faktor": "75 Jahre/s"
+   },
+   {
+    "von": 20,
+    "bis": 34,
+    "faktor": "214 Jahre/s"
+   },
+   {
+    "von": 34,
+    "bis": 60,
+    "faktor": "442 Jahre/s"
+   }
+  ],
+  "effekte": [
+   {
+    "t": 16.8,
+    "name": "blitz"
+   },
+   {
+    "t": 32.6,
+    "name": "regenbogen"
+   },
+   {
+    "t": 36,
+    "name": "flusspferde"
+   },
+   {
+    "t": 44,
+    "name": "menschen_fels"
+   },
+   {
+    "t": 55,
+    "name": "staubwand_horizont"
+   },
+   {
+    "t": 60,
+    "name": "staubwand"
+   }
+  ],
+  "sequenzen": [
+   "Wüste",
+   "Monsun",
+   "See füllt sich",
+   "Grüne Sahara",
+   "Austrocknung",
+   "Staubwand HIER",
+   "Nachspiel"
+  ]
+ }
+}
