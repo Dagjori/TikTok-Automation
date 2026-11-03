@@ -37,7 +37,7 @@ UNSER KANAL
 REGELN FÜR IDEEN
 - Nur GELD. Das Ergebnis muss in Euro (bzw. passender Währung) ausgedrückt werden können und aus einer eigenen, nachvollziehbaren Modellrechnung stammen.
 - Ein Duell vergleicht nur echte Alternativen derselben Entscheidung (kein „Steuererklärung gegen Überstunden“-Unsinn).
-- Bevorzugt große Lebens- und Geldentscheidungen mit großer Endzahl (Wohnen, Auto, Ausbildung, Familie, Arbeit, Vorsorge, Steuern, Energie, Alltagsausgaben mit großer Summe über Jahre). Kleine Einzeltipps nur, wenn die Jahressumme wirklich überrascht.
+- GEWICHTUNG (Pflicht): Mindestens 6 der 10 Ideen sind Duelle zu großen Lebensentscheidungen mit großer Euro-Endzahl (z. B. Studium oder Ausbildung, Mieten oder Kaufen, Auto kaufen oder leasen, Kind, Rente bzw. Vorsorge; auch Wohnen, Arbeit, Familie, Steuern, Energie über Jahre). Die übrigen dürfen andere Geldthemen sein; kleine Alltagstipps nur als Ausnahme (höchstens 1 von 10) und nur, wenn die Jahressumme wirklich überrascht.
 - Ausgeschlossen: Glücksspiel, Tabak/Vape, Gesundheitsversprechen, Tragödien, Krypto, Einzelaktien, Empfehlungen für Anbieter, Banken, Versicherer oder Broker, Parteipolitik, riskantes Nachahmen, Kaufaufrufe, „schnell reich“.
 - Finanzthemen nur als Modellrechnung, nie als Anlageberatung.
 - Keine 1:1-Kopie eines fremden Videos: gleiches Thema nur mit eigenem Blickwinkel, eigener Rechnung und eigenen Sätzen.
