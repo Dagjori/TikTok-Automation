@@ -13,9 +13,9 @@ Alles läuft über den Supabase-Speicher, den Cockpit und Render-Dienst ohnehin 
 |---|---|---|
 | Ideen, Skripte, Lernstände, Vorschläge, Meldungen | `cockpit/db/<sammlung>/<id>.json` | Die höhere Version gewinnt, bei gleicher Version die neuere Änderung. Übernommenes löst nichts erneut aus. Eine neue Meldung kommt auf beiden Rechnern als Push. |
 | Einstellungen (Studio-Start, Lernschleife an/aus, Testwoche) | `cockpit/geteilt/einstellungen.json` | Je Einstellung gewinnt die neuere Änderung. `dienst_autostart` gilt nur je Rechner. |
-| Missionen (Startwerte der Follower, erreichte Missionen) | `cockpit/geteilt/zahlen.json` | Wird zusammengeführt. |
-| XP, Level, Erfolge, Streak, Statistik | `cockpit/geteilt/spielstand/<rechner>.json` | Jeder Rechner schreibt nur seinen eigenen Beitrag, angezeigt wird die Summe. |
-| „Wer zuerst kommt“ | `cockpit/ansprueche/<schluessel>.json` | Render-XP je Auftrag, Missionen, Erfolge, die Lernschleife des Tages und die Frage nach der Testwoche zählen nur auf dem Rechner, der die Datei zuerst anlegt. Supabase legt eine vorhandene Datei nie zweimal an. |
+| Ziele bis zum CRP (Startwerte der Follower, erreichte Ziele) | `cockpit/geteilt/zahlen.json` | Wird zusammengeführt. |
+| Welche Rechner ein Cockpit haben (Fußzeile) | `cockpit/geteilt/rechner/<rechner>.json` | Jeder Rechner legt seine Datei beim Start an. Seit 03.11. gibt es kein Spielsystem mehr (XP, Level, Erfolge); alte Dateien unter `geteilt/spielstand/` zählen nur noch als Anwesenheit. |
+| „Wer zuerst kommt“ | `cockpit/ansprueche/<schluessel>.json` | Erreichte Ziele, die Lernschleife des Tages und die Frage nach der Testwoche zählen nur auf dem Rechner, der die Datei zuerst anlegt. Supabase legt eine vorhandene Datei nie zweimal an. |
 
 Nur je Rechner bleiben: der Claude-Chatverlauf, die Logs, das Edge-Profil und die Live-Zahlen-Abrufe. Beide Rechner fragen Buffer und TikTok schonend ab.
 

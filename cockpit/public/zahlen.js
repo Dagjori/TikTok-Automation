@@ -1,5 +1,5 @@
 "use strict";
-// Zahlen (Konten, Missionen, jedes Video), Lernen (Lernschleife, Vorschläge, Testwoche), Meldungen (Push) und Render-Dienst.
+// Zahlen (Konten, Ziele bis zum CRP, jedes Video), Lernen (Lernschleife, Vorschläge, Testwoche), Meldungen (Push) und Render-Dienst.
 // Nutzt S, $, esc, post, Ton, P, toast, mitte, zahl, kurzZahl, lokal, hochzaehlen aus cockpit.js, Spiel aus spiel.js.
 
 const ZS = { zahlen: null, dienst: null, verlauf: [], sortierung: lokal.lesen("video-sort", "gesendet"), autonomieFrage: false };
@@ -202,7 +202,10 @@ function lernenPunkt() {
   $("lernen-punkt").textContent = n;
 }
 
-$("lernen").addEventListener("click", async (e) => {
+// Die Karten stehen je nach Raum der Lernzentrale auf verschiedenen Wandbildschirmen: Ereignisse auf Dokumentebene
+const imLernen = (e) => !!e.target.closest?.("#autonomie-karte, #lernschleife-karte, #vorschlaege");
+document.addEventListener("click", async (e) => {
+  if (!imLernen(e)) return;
   const v = e.target.closest("[data-vorschlag]");
   if (v) {
     let kommentar = "";
@@ -228,7 +231,7 @@ $("lernen").addEventListener("click", async (e) => {
     else { Spiel.klang.powerup(); toast("🧠", "Lernschleife gestartet", "Zahlen holen, dann wertet Claude jedes Video aus", "meilenstein"); }
   }
 });
-$("lernen").addEventListener("change", async (e) => {
+document.addEventListener("change", async (e) => {
   if (e.target.id !== "lernschleife-aktiv") return;
   await post("/api/lernen", { aktion: "aktiv", wert: e.target.checked });
   S.einstellungen.lernschleife_aktiv = e.target.checked;
@@ -328,8 +331,9 @@ document.addEventListener("cockpit:verbunden", (ev) => {
   an("meldung", (doc) => neueMeldung(doc));
   an("steuerung", (s) => { if (s.ansicht) ansichtSetzen(s.ansicht); });
 });
-document.addEventListener("cockpit:ansicht", (e) => {
-  if (e.detail === "zahlen") { zahlenZeichnen(); verlaufLaden(); }
-  if (e.detail === "lernen") lernenZeichnen();
+// Raum betreten (zentrale.js): frisch zeichnen
+document.addEventListener("cockpit:raum", (e) => {
+  if (e.detail?.zentrale === "zahlen" || e.detail?.zentrale === "ziele") { zahlenZeichnen(); verlaufLaden(); }
+  if (e.detail?.zentrale === "lernen") lernenZeichnen();
 });
 setInterval(() => { if (!$("zahlen").hidden) zahlenZeichnen(); }, 60000);

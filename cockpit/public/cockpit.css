@@ -50,7 +50,7 @@ code { font-family: var(--mono); font-size: 12px; }
 
 /* ── Kopfzeile ── */
 .kopf {
-  height: 64px; display: flex; align-items: center; gap: 24px; padding: 0 20px;
+  height: 64px; display: flex; align-items: center; gap: 24px; padding: 0 20px; position: relative; z-index: 20;
   border-bottom: 1px solid var(--panel-rand); background: rgba(5, 6, 11, 0.6); backdrop-filter: blur(10px);
 }
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; letter-spacing: 0.06em; }
@@ -71,29 +71,15 @@ code { font-family: var(--mono); font-size: 12px; }
 .uhr small { color: var(--leise); font-size: 11px; }
 .naechster { font-size: 12px; color: var(--leise); padding: 6px 12px; border: 1px solid var(--panel-rand); border-radius: 999px; white-space: nowrap; }
 .naechster b { color: var(--gold); font-family: var(--mono); }
-.spieler { margin-left: auto; display: flex; align-items: center; gap: 12px; }
-.level-ring {
-  width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 17px;
-  background: radial-gradient(circle, #141826 60%, transparent 61%), conic-gradient(var(--cyan), var(--pink), var(--violett), var(--cyan));
-  box-shadow: 0 0 18px rgba(37, 244, 238, 0.35); animation: drehen 8s linear infinite;
-}
-.level-ring span { animation: drehen 8s linear infinite reverse; }
-@keyframes drehen { to { transform: rotate(360deg); } }
-.xp { width: 220px; }
-.xp-kopf { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 5px; }
-.xp-kopf span { color: var(--leise); font-family: var(--mono); font-size: 11px; }
-.xp-balken { height: 8px; border-radius: 99px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
-.xp-balken i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--cyan), var(--pink)); box-shadow: 0 0 12px var(--pink); transition: width 0.8s cubic-bezier(0.2, 0.9, 0.2, 1.2); }
-.streak { font-size: 16px; padding: 6px 10px; border-radius: 12px; background: rgba(255, 140, 50, 0.1); border: 1px solid rgba(255, 140, 50, 0.3); }
-.knoepfe { display: flex; gap: 6px; }
+.knoepfe { display: flex; gap: 6px; margin-left: auto; }
 .icon-knopf {
   width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--panel-rand); background: rgba(255, 255, 255, 0.04);
   cursor: pointer; font-size: 16px; transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
 }
 .icon-knopf:hover { transform: translateY(-2px); background: rgba(37, 244, 238, 0.12); box-shadow: 0 0 14px rgba(37, 244, 238, 0.3); }
 
-/* ── Raster ── */
-.raster { display: grid; grid-template-columns: 330px minmax(0, 1fr) 440px; gap: 14px; padding: 14px; height: calc(100vh - 64px - 38px); }
+/* ── Ablage: die Bausteine liegen unsichtbar bereit, bis ein Raum sie auf seine Wandbildschirme holt (zentrale.js) ── */
+.ablage { display: none; }
 .panel {
   background: var(--panel); border: 1px solid var(--panel-rand); border-radius: var(--radius); backdrop-filter: blur(14px);
   padding: 14px; overflow: hidden; display: flex; flex-direction: column; min-height: 0; position: relative;
@@ -336,20 +322,14 @@ select option { background: #11131c; }
 .erfolge-dialog[open] { animation: dialog-rein 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
 @keyframes dialog-rein { from { opacity: 0; transform: perspective(1000px) translateZ(-420px) rotateX(32deg); } }
 .dialog-kopf { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-.erfolge-raster { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
-.erfolg { padding: 14px; border-radius: 14px; background: rgba(255, 255, 255, 0.03); text-align: center; filter: grayscale(1); opacity: 0.45; }
-.erfolg.frei { filter: none; opacity: 1; background: linear-gradient(160deg, rgba(37, 244, 238, 0.1), rgba(254, 44, 85, 0.1)); box-shadow: 0 0 0 1px rgba(255, 209, 102, 0.35); }
-.erfolg .icon { font-size: 34px; }
-.erfolg b { display: block; margin-top: 6px; }
-.erfolg small { color: var(--leise); font-size: 11px; }
-.xp-flug { position: fixed; z-index: 65; font-weight: 700; font-size: 16px; color: var(--gold); pointer-events: none; text-shadow: 0 0 10px rgba(255, 209, 102, 0.7); animation: flug 1.4s ease-out forwards; }
-@keyframes flug { to { transform: translateY(-50px); opacity: 0; } }
 
-/* ── Ansichten (Live / Studio) ── */
+/* ── Schnellwahl der Gebäude ── */
 .ansichten { display: flex; gap: 4px; padding: 4px; border-radius: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--panel-rand); }
-.ansichten button { border: 0; background: none; padding: 7px 14px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 13px; color: var(--leise); position: relative; transition: all 0.15s; }
+.ansichten button { border: 0; background: none; padding: 7px 12px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 13px; color: var(--leise); position: relative; transition: all 0.15s; white-space: nowrap; }
 .ansichten button:hover { color: var(--text); }
 .ansichten button.aktiv { color: #000; background: linear-gradient(135deg, var(--cyan), var(--pink)); box-shadow: 0 0 16px rgba(254, 44, 85, 0.35); }
+/* Gebäude, in dem gerade gearbeitet wird: kleiner pulsierender Punkt */
+.zentralen-leiste button.arbeitet::after { content: ""; position: absolute; top: 4px; right: 4px; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 8px var(--gold); animation: pochen 1s ease-in-out infinite; }
 .zaehler-punkt { position: absolute; top: 1px; right: 2px; min-width: 16px; height: 16px; border-radius: 9px; background: var(--gold); color: #000; font-size: 10px; display: grid; place-items: center; padding: 0 4px; animation: pochen 1.4s infinite; }
 body:not([data-ansicht="live"]) .links, body:not([data-ansicht="live"]) .mitte { display: none; }
 .studio, .ansicht-panel { grid-column: 1 / 3; display: flex; gap: 12px; --akzent: var(--cyan); }
@@ -452,12 +432,7 @@ body:not([data-ansicht="live"]) .links, body:not([data-ansicht="live"]) .mitte {
 .dialog-knoepfe { display: flex; justify-content: flex-end; margin-top: 10px; }
 .eintrag.auftrag { background: linear-gradient(90deg, rgba(255, 209, 102, 0.12), transparent); border-left-color: var(--gold); font-weight: 600; }
 
-/* ── Game-Effekte ── */
-.combo { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; padding: 3px 10px; border-radius: 99px; color: #000; background: linear-gradient(90deg, var(--gold), #ff8a3d); box-shadow: 0 0 16px rgba(255, 170, 60, 0.6); }
-.combo.knall { animation: knall 0.35s cubic-bezier(0.2, 0.9, 0.2, 1.6); }
-.combo.feuer { background: linear-gradient(90deg, #ff3d3d, var(--gold), #ff3d3d); background-size: 200% 100%; animation: knall 0.35s, flamme 0.8s linear infinite; }
-@keyframes flamme { to { background-position: 200% 0; } }
-.xp-kugel { position: fixed; z-index: 66; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle, #fff, var(--gold) 60%, transparent 70%); box-shadow: 0 0 14px var(--gold); transition: transform 0.85s cubic-bezier(0.5, 0, 0.3, 1), opacity 0.85s; }
+/* ── Effekte ── */
 body.wackeln { animation: wackeln 0.4s; }
 body.wackeln-stark { animation: wackeln 0.6s 2; }
 @keyframes wackeln { 20% { transform: translate(-3px, 1px); } 40% { transform: translate(3px, -2px); } 60% { transform: translate(-2px, 2px); } 80% { transform: translate(2px, -1px); } }
@@ -489,14 +464,6 @@ body.wackeln-stark { animation: wackeln 0.6s 2; }
 .maskottchen[data-stimmung="traurig"] .auge { background: var(--rot); box-shadow: 0 0 8px var(--rot); }
 .maskottchen[data-stimmung="hoert"] .simu-antenne::after { background: var(--cyan); box-shadow: 0 0 14px var(--cyan); animation: pochen 0.5s infinite; }
 
-/* Quests */
-.quests { display: flex; flex-direction: column; gap: 5px; }
-.quest { position: relative; display: grid; grid-template-columns: 20px 1fr auto; gap: 8px; align-items: center; padding: 7px 10px; border-radius: 10px; background: rgba(255, 255, 255, 0.035); font-size: 12px; overflow: hidden; }
-.quest i { position: absolute; left: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, var(--cyan), var(--pink)); transition: width 0.8s; }
-.quest-haken { width: 18px; height: 18px; border-radius: 6px; border: 1.5px solid rgba(255, 255, 255, 0.2); display: grid; place-items: center; font-size: 11px; font-weight: 800; }
-.quest.fertig .quest-haken { background: var(--gruen); border-color: var(--gruen); color: #000; box-shadow: 0 0 10px rgba(62, 240, 160, 0.6); animation: knall 0.4s; }
-.quest.fertig .quest-text { color: var(--leise); text-decoration: line-through; text-decoration-color: rgba(62, 240, 160, 0.6); }
-.quest-wert { font-family: var(--mono); font-size: 11px; color: var(--leise); }
 
 /* Render-Dienst */
 .dienst-karte { padding: 10px 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.035); display: flex; flex-direction: column; gap: 7px; }
@@ -603,115 +570,76 @@ body.wackeln-stark { animation: wackeln 0.6s 2; }
 .eintrag.modell-sonnet { color: var(--cyan); }
 .icon-knopf.aus { opacity: 0.5; }
 
-/* ── 3D-Welt (welt.js) und Hologramm-Oberfläche (holo.js) ── */
-@property --mx { syntax: "<number>"; inherits: false; initial-value: 0; }
-@property --my { syntax: "<number>"; inherits: false; initial-value: 0; }
+/* ── Neon-Stadt (stadt/, zentrale.js; Entscheidung 03.11.): die Stadt ist die Zentrale, Inhalte stehen in den Räumen ── */
 @property --rx { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 @property --ry { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
-#welt { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; display: block; pointer-events: none; }
+#welt { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; cursor: grab; }
 body.welt-an .hintergrund { display: none; }
 body.welt-fehlt #k-welt-stufe { display: none; }
-body.welt-an { --panel: rgba(8, 10, 20, 0.6); }
-body.welt-an .kopf { background: rgba(5, 6, 11, 0.42); }
-body.welt-an .fuss { background: rgba(5, 6, 11, 0.5); backdrop-filter: blur(8px); }
-body.welt-an .raster > .panel {
-  background:
-    linear-gradient(var(--cyan), var(--cyan)) left 8px top 8px / 18px 2px no-repeat,
-    linear-gradient(var(--cyan), var(--cyan)) left 8px top 8px / 2px 18px no-repeat,
-    linear-gradient(var(--pink), var(--pink)) right 8px bottom 8px / 18px 2px no-repeat,
-    linear-gradient(var(--pink), var(--pink)) right 8px bottom 8px / 2px 18px no-repeat,
-    linear-gradient(180deg, rgba(37, 244, 238, 0.07), transparent 120px),
-    var(--panel);
-  border-color: rgba(120, 200, 255, 0.13);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 0 30px rgba(37, 244, 238, 0.05);
-  backdrop-filter: blur(12px) saturate(1.35);
-}
-body.welt-an .raster > .rechts.arbeitet { box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45), 0 0 50px rgba(37, 244, 238, 0.2); }
-/* Bühne: die Mitte ist durchsichtig, dahinter liegt die Neon-Stadt; nur die Infokästen sind dunkles Glas */
-body.welt-an .raster > .mitte { background: linear-gradient(180deg, rgba(8, 10, 20, 0.05), rgba(8, 10, 20, 0.3)); backdrop-filter: none; border-color: rgba(120, 200, 255, 0.08); box-shadow: none; }
-body.welt-an .mitte :is(.info-zeilen > div, .zaehler > div, .detail) { background: rgba(8, 10, 20, 0.42); backdrop-filter: blur(5px); border: 1px solid rgba(120, 200, 255, 0.1); }
-body.welt-an .mitte :is(.gross-prozent, .kette-kopf, .schritt span) { filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.9)); }
-body.welt-sparsam .raster > .panel { --panel: rgba(8, 10, 20, 0.74); backdrop-filter: blur(6px); }
-.raster > .panel { transition: opacity 0.6s; }
-.fuss { transition: opacity 0.5s; }
+body.welt-an .kopf { background: rgba(5, 6, 11, 0.5); }
+.fuss { position: relative; z-index: 20; }
+body.welt-an .fuss { background: rgba(5, 6, 11, 0.55); backdrop-filter: blur(8px); }
+/* Kopf- und Fußzeile liegen über der Stadt; dazwischen ist Platz für die Stadt bzw. die Räume */
+body { display: flex; flex-direction: column; }
+body > .fuss { margin-top: auto; }
+#raum-hud { --raum-hud-oben: 76px; }
+#raum-ebene { --raum-flach-oben: 128px; --raum-flach-unten: 52px; }
 
-/* Cockpit-Bogen: die Seitenpanels sind zur Mitte gedreht, alles folgt sanft der Maus */
-@media (min-width: 1101px) {
-  .raster { perspective: 2200px; perspective-origin: 50% 45%; }
-  .raster > .panel {
-    transform: rotateY(calc(var(--basis, 0deg) + var(--mx) * 1.4deg)) rotateX(calc(var(--my) * -1.1deg));
-    transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s;
-  }
-  .raster > .links { --basis: 5deg; transform-origin: 100% 50%; }
-  .raster > .rechts { --basis: -5deg; transform-origin: 0% 50%; }
-  .handy {
-    transform: perspective(1300px) rotateY(calc(var(--mx) * 10deg - 7deg)) rotateX(calc(var(--my) * -7deg + 2deg));
-    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s;
-    animation: handy-schweben 6s ease-in-out infinite;
-  }
-}
-@keyframes handy-schweben { 50% { translate: 0 -8px; } }
+/* Bausteine auf den Wandbildschirmen */
+.wandschirm-inhalt > .baustein + .baustein { margin-top: 14px; }
+.wandschirm-inhalt h3:first-child { margin-top: 0; }
+.wandschirm .handy { height: 470px; }
+#raum-ebene.flach .handy { height: min(58vh, 560px); }
+.wandschirm .buehne { gap: 26px; }
+.wandschirm .kette { flex-wrap: wrap; }
+.wandschirm .detail { max-height: none; }
+.wandschirm-inhalt:has(> #claude-panel) { overflow: hidden; padding: 0; }
+.wandschirm-inhalt > #claude-panel { height: 100%; border: 0; border-radius: 0; background: transparent; backdrop-filter: none; }
+.wandschirm-inhalt > #aufgaben + #schnell { margin-top: 14px; }
+.wandschirm .studio-hinweis { margin-top: 10px; }
+.lernstand { display: flex; flex-direction: column; gap: 14px; }
+.lernstand-karte { padding: 14px; border-radius: 14px; background: rgba(255, 255, 255, 0.035); border-left: 3px solid var(--cyan); }
+.lernstand-karte.acc2 { border-left-color: var(--pink); }
+.lernstand-karte .zeile { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.lernstand-karte .zeile small { color: var(--leise); font-size: 11px; }
+.lernstand-karte .zeile .knopf { margin-left: auto; }
+.lernstand-text { white-space: pre-wrap; font-size: 13px; line-height: 1.55; color: #d9ddec; }
 
-/* Einflug beim Ansichtswechsel: Panels aus der Tiefe, Karten gestaffelt hinterher */
-@keyframes einflug {
-  from { opacity: 0; transform: translateZ(-1100px) translateY(90px) rotateX(24deg) rotateY(calc(var(--basis, 0deg) * 5)); filter: blur(8px) brightness(2); }
-  55% { filter: none; }
-}
-.raster > .panel.einflug { animation: einflug 0.9s cubic-bezier(0.16, 1, 0.3, 1) backwards; animation-delay: calc(var(--n, 0) * 110ms); }
-@keyframes reingleiten { from { opacity: 0; transform: perspective(700px) translateX(-46px) translateZ(-160px) rotateY(24deg); } }
-.panel.einflug :is(.karte, .quest, .idee, .slot, .konto-karte, .mission, .vorschlag, .tag, .schritt, .video-tabelle tr, .info-zeilen > div, .zaehler > div, .dienst-karte, .tagesziel, .autonomie-karte, .lernschleife-karte, .gross-prozent, .phasen) {
-  animation: reingleiten 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
-  animation-delay: calc(var(--n, 0) * 110ms + 240ms + var(--i, 0) * 38ms);
-}
+/* Claude: einklappbar am rechten Rand; die Lasche mit Simu-Gesicht öffnet und schließt (Alt+C) */
+.claude-leiste { position: fixed; top: 72px; right: 0; bottom: 46px; width: min(440px, 92vw); z-index: 24; transform: translateX(calc(100% + 12px)); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.claude-leiste > .panel { height: 100%; border-radius: 16px 0 0 16px; background: rgba(8, 10, 20, 0.86); box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5); }
+body.claude-offen .claude-leiste { transform: none; }
+.claude-lasche { position: fixed; right: 0; top: 50%; z-index: 25; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 8px; border-radius: 14px 0 0 14px; border: 1px solid rgba(37, 244, 238, 0.4); border-right: 0; background: rgba(8, 10, 20, 0.8); backdrop-filter: blur(8px); cursor: pointer; color: var(--text); transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s; box-shadow: 0 0 18px rgba(37, 244, 238, 0.2); }
+body.claude-offen .claude-lasche { right: min(440px, 92vw); }
+.lasche-simu { width: 30px; height: 22px; border-radius: 8px; background: linear-gradient(160deg, #2a3148, #151a29); border: 2px solid rgba(37, 244, 238, 0.6); display: flex; align-items: center; justify-content: center; gap: 6px; }
+.lasche-simu i { width: 5px; height: 7px; border-radius: 3px; background: var(--cyan); box-shadow: 0 0 6px var(--cyan); animation: blinzeln 4s infinite; }
+.lasche-text { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--leise); }
+body.claude-arbeitet .claude-lasche { box-shadow: 0 0 28px rgba(37, 244, 238, 0.55); border-color: var(--cyan); }
+body.claude-arbeitet .lasche-simu i { background: var(--gold); box-shadow: 0 0 8px var(--gold); animation: pochen 0.4s infinite; }
+body.im-claude-raum .claude-leiste, body.im-claude-raum .claude-lasche { display: none; }
 
-/* Karten unter dem Mauszeiger kippen */
+/* Flacher Stadtplan (3D aus oder kein WebGL) */
+.stadt-flach { position: fixed; inset: 64px 0 38px; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 24px; }
+.flach-titel { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.flach-titel b { font-size: 40px; letter-spacing: 0.32em; color: #fff; text-shadow: 0 0 24px rgba(37, 244, 238, 0.6), 0 0 60px rgba(254, 44, 85, 0.35); }
+.flach-titel small { color: var(--leise); font-size: 13px; }
+.flach-raster { display: grid; grid-template-columns: repeat(4, minmax(0, 220px)); gap: 14px; }
+.flach-kachel { position: relative; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; padding: 18px; border-radius: 18px; cursor: pointer; text-align: left; color: var(--text); background: linear-gradient(160deg, color-mix(in srgb, var(--akzent) 16%, rgba(8, 10, 20, 0.85)), rgba(8, 10, 20, 0.85)); border: 1px solid color-mix(in srgb, var(--akzent) 50%, transparent); box-shadow: 0 0 22px color-mix(in srgb, var(--akzent) 18%, transparent); transition: transform 0.2s, box-shadow 0.2s; }
+.flach-kachel:hover { transform: translateY(-3px); box-shadow: 0 0 34px color-mix(in srgb, var(--akzent) 45%, transparent); }
+.flach-emoji { font-size: 34px; }
+.flach-kachel small { color: var(--leise); font-size: 12px; }
+.flach-kachel kbd { position: absolute; top: 12px; right: 14px; font-family: var(--mono); font-size: 11px; color: var(--leise); }
+.flach-kachel.aktiv::after { content: ""; position: absolute; top: 14px; right: 34px; width: 8px; height: 8px; border-radius: 50%; background: var(--akzent); box-shadow: 0 0 10px var(--akzent); animation: pochen 1s infinite; }
+
+/* Karten unter dem Mauszeiger kippen (holo.js) */
 .gekippt {
   transform: perspective(800px) rotateX(var(--rx)) rotateY(var(--ry));
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s, border-color 0.15s, background 0.15s;
   position: relative; z-index: 1;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(37, 244, 238, 0.28), 0 0 24px rgba(37, 244, 238, 0.12);
 }
-
-/* Stadt-Modus: die Oberfläche fliegt weg, die Stadt ist begehbar */
-body.stadt .raster { pointer-events: none; }
-body.stadt .raster > .panel { opacity: 0; }
-body.stadt .raster > .links { transform: translateX(-60%) translateZ(-300px) rotateY(60deg); }
-body.stadt .raster > .rechts { transform: translateX(60%) translateZ(-300px) rotateY(-60deg); }
-body.stadt .raster > .panel:not(.links, .rechts) { transform: translateZ(-1400px) rotateX(40deg); }
-body.stadt .fuss { opacity: 0; pointer-events: none; }
-body.stadt #welt { pointer-events: auto; cursor: grab; }
-#welt.zeiger { cursor: pointer; }
-#welt.ziehen { cursor: grabbing; }
-.welt-knopf.an { background: linear-gradient(135deg, var(--cyan), var(--pink)); box-shadow: 0 0 18px rgba(37, 244, 238, 0.6); }
-.stadt-hud { position: fixed; top: 82px; left: 24px; right: 24px; bottom: 22px; z-index: 40; pointer-events: none; animation: hud-rein 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards; }
-@keyframes hud-rein { from { opacity: 0; transform: perspective(900px) translateZ(-260px) rotateX(18deg); } }
-.stadt-titel { display: flex; flex-direction: column; gap: 8px; }
-.stadt-titel b { font-size: 46px; font-weight: 700; letter-spacing: 0.32em; line-height: 1; color: #fff; text-shadow: 0 0 24px rgba(37, 244, 238, 0.6), 0 0 60px rgba(254, 44, 85, 0.35); width: max-content; }
-.stadt-titel small { color: #d6dbec; font-size: 13px; font-family: var(--mono); max-width: 760px; text-shadow: 0 2px 8px #000; }
-.stadt-legende { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: #c3c9dd; flex-wrap: wrap; text-shadow: 0 2px 8px #000; }
-.stadt-legende .acc1 { color: var(--cyan); }
-.stadt-legende .acc2 { color: var(--pink); }
-.stadt-legende .gold { color: var(--gold); }
-.stadt-legende .violett { color: #c9a6ff; }
-.stadt-hilfe { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); font-size: 12px; color: #d6dbec; padding: 8px 16px; border-radius: 99px; background: rgba(5, 6, 11, 0.55); border: 1px solid var(--panel-rand); backdrop-filter: blur(8px); white-space: nowrap; }
-#k-stadt-zurueck { position: absolute; left: 0; bottom: 0; pointer-events: auto; backdrop-filter: blur(8px); }
-.stadt-karte { position: absolute; right: 0; top: 0; width: 360px; pointer-events: auto; padding: 16px; border-radius: 18px; display: flex; flex-direction: column; gap: 10px; --farbe: var(--cyan);
-  background: rgba(8, 10, 20, 0.8); border: 1px solid color-mix(in srgb, var(--farbe) 35%, transparent); backdrop-filter: blur(14px);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 40px color-mix(in srgb, var(--farbe) 25%, transparent); }
-.stadt-karte.acc2 { --farbe: var(--pink); }
-.stadt-karte.rein { animation: karte-rein 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-@keyframes karte-rein { from { opacity: 0; transform: perspective(900px) translateX(120px) translateZ(-200px) rotateY(-50deg); } }
-.stadt-karte .zeile { display: flex; gap: 10px; align-items: center; }
-.stadt-karte .zeile small { margin-left: auto; color: var(--leise); font-size: 11px; }
-.stadt-karte .icon-knopf { width: 28px; height: 28px; font-size: 12px; }
-.stadt-karte-titel { font-size: 15px; line-height: 1.35; }
-.stadt-werte { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.stadt-werte div { padding: 8px 6px; border-radius: 10px; background: rgba(255, 255, 255, 0.045); text-align: center; }
-.stadt-werte div.gross { grid-column: 1 / -1; }
-.stadt-werte b { display: block; font-size: 16px; font-variant-numeric: tabular-nums; }
-.stadt-werte div.gross b { font-size: 36px; color: var(--farbe); text-shadow: 0 0 22px color-mix(in srgb, var(--farbe) 55%, transparent); }
-.stadt-werte small { color: var(--leise); font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; }
-.stadt-karte a.knopf { text-align: center; text-decoration: none; }
+.handy { animation: handy-schweben 6s ease-in-out infinite; }
+@keyframes handy-schweben { 50% { translate: 0 -8px; } }
 
 /* Kopfleiste: auf Laptop-Breiten (z. B. 1536 px bei 125 % Skalierung) passt alles in eine Zeile */
 .naechster { min-width: 0; overflow: hidden; text-overflow: ellipsis; flex-shrink: 1; }
@@ -720,22 +648,16 @@ body.stadt #welt { pointer-events: auto; cursor: grab; }
   .kopf { gap: 14px; }
   .knoepfe { gap: 4px; }
   .icon-knopf { width: 32px; height: 32px; font-size: 15px; }
-  .xp { width: 150px; }
 }
-@media (max-width: 1350px) {
-  .raster { grid-template-columns: 290px minmax(0, 1fr) 380px; }
-  .xp { width: 160px; }
+@media (max-width: 1450px) {
+  .zentralen-leiste button span { display: none; }
   .naechster { display: none; }
 }
 @media (max-width: 1100px) {
-  body { overflow: auto; }
   .kopf { height: auto; min-height: 64px; flex-wrap: wrap; row-gap: 8px; padding: 8px 12px; }
-  .spieler { margin-left: 0; }
-  .raster { grid-template-columns: 1fr; height: auto; }
   .buehne { grid-template-columns: 1fr; justify-items: center; }
-  .rechts { min-height: 600px; }
-  .studio, .ansicht-panel { grid-column: auto; }
   .studio-raster, .slots, .konten-karten, .missionen, .lernen-raster { grid-template-columns: 1fr; }
+  .flach-raster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sprachbot { min-width: 0; width: calc(100vw - 32px); }
   .ansichten button { padding: 6px 9px; }
 }

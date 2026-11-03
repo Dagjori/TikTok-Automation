@@ -9,7 +9,7 @@ import { execFile } from "node:child_process";
 const WOCHE = 7 * 86400000;
 const LERNSCHLEIFE_UHRZEIT = "19:52"; // wie die bisherige Cloud-Aufgabe
 
-export function erstelleLernen({ db, repo, geheim, auftrag, senden = () => {}, log = () => {}, einstellungen, einstellungenSichern, heute, berlinZeit, xp = () => {}, erfolg = () => {}, anspruch = async () => true }) {
+export function erstelleLernen({ db, repo, geheim, auftrag, senden = () => {}, log = () => {}, einstellungen, einstellungenSichern, heute, berlinZeit, anspruch = async () => true }) {
   const jetzt = () => new Date().toISOString();
   const auto = () => (einstellungen().autonomie ||= { modus: "freigabe" });
 
@@ -67,7 +67,6 @@ export function erstelleLernen({ db, repo, geheim, auftrag, senden = () => {}, l
         einstellungenSichern();
         senden("lernschleife", { laeuft: false });
         if (istFehler) melden({ art: "fehler", titel: "Lernschleife abgebrochen", text: "Die Auswertung wurde nicht fertig. Sie läuft beim nächsten Mal erneut." });
-        else { xp(60, "Lernschleife ausgewertet"); erfolg("lernender"); }
       },
     });
     return { ok: true };
@@ -122,7 +121,6 @@ export function erstelleLernen({ db, repo, geheim, auftrag, senden = () => {}, l
     if (wahl === "annehmen" && ["offen", "fehler"].includes(st)) {
       const neu = db.schreiben("vorschlaege", id, { status: "angenommen", entscheidung }, { art: "update", ifVersion: d.version });
       umsetzen(neu);
-      xp(20, "Vorschlag angenommen");
       return { ok: true };
     }
     if (wahl === "probe_ok" && st === "probe") {

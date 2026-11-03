@@ -1,25 +1,32 @@
 // Abgleich zwischen mehreren Rechnern mit Cockpit (Entscheidung 03.11.: Laptop und Desktop-PC zeigen dieselben Daten).
 // Alles läuft über den Supabase-Speicher, den Cockpit und Render-Dienst ohnehin nutzen:
-//   cockpit/db/<sammlung>/<id>.json            Dokumente: jeder Rechner spiegelt seine Änderungen (server.mjs), hier werden alle
-//                                              30 s die der anderen geholt; die höhere Version gewinnt, bei gleicher die neuere
-//   cockpit/geteilt/<name>.json                gemeinsame Stände (Einstellungen, Missionen), werden zusammengeführt
-//   cockpit/geteilt/spielstand/<rechner>.json  XP, Erfolge, Tage, Statistik je Rechner; angezeigt wird die Summe
-//   cockpit/ansprueche/<schluessel>.json       „wer zuerst kommt“: ein gemeinsames Ereignis (Render fertig, Mission, Lernschleife
-//                                              des Tages) zählt nur auf dem Rechner, der die Datei zuerst anlegt
+//   cockpit/db/<sammlung>/<id>.json         Dokumente: jeder Rechner spiegelt seine Änderungen (server.mjs), hier werden alle
+//                                           30 s die der anderen geholt; die höhere Version gewinnt, bei gleicher die neuere
+//   cockpit/geteilt/<name>.json             gemeinsame Stände (Einstellungen, Missionen), werden zusammengeführt
+//   cockpit/geteilt/rechner/<rechner>.json  Anwesenheit: jeder Rechner mit Cockpit legt beim Start seine Datei an (Fußzeile „⇄“)
+//   cockpit/ansprueche/<schluessel>.json    „wer zuerst kommt“: ein gemeinsames Ereignis (Mission, Lernschleife des Tages,
+//                                           Frage nach der Testwoche) zählt nur auf dem Rechner, der die Datei zuerst anlegt
 // Übernommene Dokumente werden nicht zurückgespiegelt und lösen keine Meldungen oder Aktionen aus, nur die Anzeige.
+// Seit 03.11. ohne Spielsystem („nur die Ziele bleiben“): cockpit/geteilt/spielstand/ und die Ansprüche render-…/erfolg-…
+// schreibt nur noch ein Rechner mit altem Code; hier wird davon nichts gelesen, render-… nur aufgeräumt.
 import fs from "node:fs";
 import fsp from "node:fs/promises";
 import path from "node:path";
 
 const TAKT = Number(process.env.COCKPIT_ABGLEICH_TAKT || 30000); // kürzer nur für Tests
-const KURZLEBIG = /^(render|lernschleife|testphase)-/; // Ansprüche, die nach 14 Tagen weg dürfen (Erfolge und Missionen bleiben)
+const KURZLEBIG = /^(render|lernschleife|testphase)-/; // Ansprüche, die nach 14 Tagen weg dürfen (render-… nur noch vom alten Code; Missionen bleiben)
 
 export function erstelleAbgleich({ sb, db, sammlungen, rechner, ordner, basis: BASIS = "cockpit", ausstehend = () => false, nochmalSpiegeln = () => {}, maskiere = (t) => t, log = () => {}, senden = () => {} }) {
   const DATEI = path.join(ordner, "abgleich.json");
   let gesehen = {}; // Supabase-Objekt → updated_at beim letzten Lesen
-  try { gesehen = JSON.parse(fs.readFileSync(DATEI, "utf8")).gesehen || {}; } catch { /* erster Start */ }
+  const bekannt = new Set(); // Rechner mit Cockpit (Anwesenheit und Herkunft gelesener Dokumente)
+  try {
+    const g = JSON.parse(fs.readFileSync(DATEI, "utf8"));
+    gesehen = g.gesehen || {};
+    for (const r of g.rechner || []) bekannt.add(r);
+  } catch { /* erster Start */ }
   let merkTimer = null;
-  const merken = () => { clearTimeout(merkTimer); merkTimer = setTimeout(() => fsp.writeFile(DATEI, JSON.stringify({ gesehen })).catch(() => {}), 1000); };
+  const merken = () => { clearTimeout(merkTimer); merkTimer = setTimeout(() => fsp.writeFile(DATEI, JSON.stringify({ gesehen, rechner: [...bekannt] })).catch(() => {}), 1000); };
   const status = { zuletzt: null, fehler: null, uebernommen: 0, rechner: [rechner] };
   const gleich = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
   let laeuft = false;
@@ -66,6 +73,7 @@ export function erstelleAbgleich({ sb, db, sammlungen, rechner, ordner, basis: B
         if (gesehen[objekt] === e.updated_at) continue;
         const fern = await sb.json(objekt);
         gesehen[objekt] = e.updated_at;
+        if (fern?.rechner) bekannt.add(fern.rechner);
         if (!fern?.daten || ausstehend(s, id)) continue; // eigene Änderung unterwegs: die gewinnt beim nächsten Vergleich
         const lokal = db.roh(s, id);
         if (lokal && gleich(fern.daten, lokal.daten)) continue;
@@ -129,33 +137,22 @@ export function erstelleAbgleich({ sb, db, sammlungen, rechner, ordner, basis: B
     }
   }
 
-  // ───────── Spielstände je Rechner ─────────
-  let spiel = { lokal: () => ({}), bei: () => {} };
-  const andere = new Map();
-  let spielTimer = null;
-  function spielstandTeilen(s) { spiel = s; }
-  function spielstandGeaendert() {
-    clearTimeout(spielTimer);
-    spielTimer = setTimeout(async () => {
-      if (!sb.bereit()) return;
-      try { await sb.schreiben(`${BASIS}/geteilt/spielstand/${rechner}.json`, { ...spiel.lokal(), rechner, zeit: new Date().toISOString() }); }
-      catch (e) { status.fehler = maskiere(e.message); spielstandGeaendert(); }
-    }, 10000);
-  }
-  async function spielstaendeHolen() {
-    const namen = [];
-    for (const e of await sb.liste(`${BASIS}/geteilt/spielstand`)) {
-      if (!e.id || !e.name.endsWith(".json")) continue;
-      const name = e.name.slice(0, -5);
-      namen.push(name);
-      if (name === rechner) continue;
-      const objekt = `${BASIS}/geteilt/spielstand/${e.name}`;
-      if (gesehen[objekt] === e.updated_at && andere.has(name)) continue;
-      const d = await sb.json(objekt);
-      gesehen[objekt] = e.updated_at;
-      if (d) { andere.set(name, d); spiel.bei(name, d); }
-    }
-    status.rechner = [...new Set([rechner, ...namen])];
+  // ───────── Rechner mit Cockpit (Fußzeile) ─────────
+  // Eigene Datei einmal je Start anlegen, dann alle auflisten (nur Namen, ohne Inhalt). Ein Rechner mit altem Code legt
+  // keine an; der zählt über die Herkunft seiner Dokumente (bekannt) und, solange er noch seinen Spielstand schreibt, über
+  // dessen Dateinamen. Fehler hier halten den übrigen Abgleich nicht auf.
+  let angemeldet = false;
+  async function rechnerHolen() {
+    try {
+      if (!angemeldet) {
+        await sb.schreiben(`${BASIS}/geteilt/rechner/${rechner}.json`, { rechner, zeit: new Date().toISOString() });
+        angemeldet = true;
+      }
+      for (const ordner of ["rechner", "spielstand"]) {
+        for (const e of await sb.liste(`${BASIS}/geteilt/${ordner}`)) if (e.id && e.name.endsWith(".json")) bekannt.add(e.name.slice(0, -5));
+      }
+    } catch { /* nächste Runde */ }
+    status.rechner = [...new Set([rechner, ...bekannt])];
   }
 
   // ───────── Takt ─────────
@@ -163,7 +160,7 @@ export function erstelleAbgleich({ sb, db, sammlungen, rechner, ordner, basis: B
     if (laeuft || !sb.bereit()) return;
     laeuft = true;
     try {
-      await spielstaendeHolen();
+      await rechnerHolen();
       await gemeinsamHolen();
       const { n, von } = await dokumenteHolen();
       if (n) {
@@ -182,19 +179,13 @@ export function erstelleAbgleich({ sb, db, sammlungen, rechner, ordner, basis: B
     await gemeinsamHochladen();
   }
 
-  // Erste Runde beim Start (bereit: danach erst Erfolge vergeben), dann alle 30 s; der eigene Spielstand geht gleich einmal hoch
-  let fertig;
-  const bereit = new Promise((r) => { fertig = r; });
+  // Erste Runde beim Start, dann alle 30 s
   async function starten() {
-    if (sb.bereit()) {
-      await runde();
-      spielstandGeaendert();
-    }
-    fertig();
+    if (sb.bereit()) await runde();
     setInterval(runde, TAKT);
     setTimeout(ansprucheAufraeumen, 60000);
     setInterval(ansprucheAufraeumen, 86400000);
   }
 
-  return { bereit, starten, runde, anspruch, teilen, geaendert, spielstandTeilen, spielstandGeaendert, andere, status: () => status };
+  return { starten, runde, anspruch, teilen, geaendert, status: () => status };
 }

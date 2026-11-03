@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // TikTok-Cockpit: lokaler Server (nur 127.0.0.1, ohne npm-Pakete).
 // Liefert die Oberfläche, Live-Ereignisse per SSE, den Render-Stand (Supabase + Bilder vom Laptop),
-// den Tagesplan aus dem Repo, startet Claude Code (CLI, Abo des Inhabers) und führt den Spielstand.
+// den Tagesplan aus dem Repo, startet Claude Code (CLI, Abo des Inhabers), führt die Ziele und holt das Berliner Wetter.
 // Start: node cockpit/server.mjs  (oder Desktop-Verknüpfung / Strg+Alt+T, siehe cockpit/README.md)
 import http from "node:http";
 import fs from "node:fs";
@@ -18,6 +18,7 @@ import { modellWaehlen, eineStufeHoeher } from "./lib/modelle.mjs";
 import { erstelleZahlen } from "./lib/zahlen.mjs";
 import { erstelleLernen } from "./lib/lernen.mjs";
 import { erstelleAbgleich } from "./lib/abgleich.mjs";
+import { erstelleWetter } from "./lib/wetter.mjs";
 
 const HIER = path.dirname(fileURLToPath(import.meta.url));
 const ARBEITS_REPO = path.resolve(HIER, "..");
@@ -158,121 +159,10 @@ function senden(art, daten) {
   for (const c of clients) c.write(text);
 }
 
-// ───────────────────────── Spielstand (Game-Modus) ─────────────────────────
-
-const STAND_DATEI = path.join(DATEN, "spielstand.json");
-const RAENGE = ["Rookie Creator", "Scroll-Stopper", "Hook-Schmied", "Trend-Jäger", "FYP-Stürmer", "Viral-Architekt", "Algorithmus-Flüsterer", "CRP-Boss", "TikTok-Legende"];
-const ERFOLGE = {
-  start: ["Zündung", "Cockpit zum ersten Mal gestartet", "🚀"],
-  claude_erster: ["Hallo Claude", "Erster Auftrag an Claude aus dem Cockpit", "🤖"],
-  erster_render: ["Erster Live-Render", "Einen Render vom Start bis zum Ziel verfolgt", "🎬"],
-  bilder_1000: ["Tausend Bilder", "1.000 gerenderte Bilder gesehen", "🎞️"],
-  bilder_10000: ["Filmrolle", "10.000 gerenderte Bilder gesehen", "📽️"],
-  doppel_gpu: ["Doppelherz", "PC und Laptop gleichzeitig online", "💞"],
-  nachtschicht: ["Nachtschicht", "Ein Render lief nach 23 Uhr", "🌙"],
-  fruehaufsteher: ["Frühaufsteher", "Cockpit vor 7 Uhr geöffnet", "🌅"],
-  combo10: ["Combo x10", "10 Claude-Werkzeuge in einer Minute", "⚡"],
-  streak3: ["Dranbleiber", "3 Tage in Folge im Cockpit", "🔥"],
-  streak7: ["Wochen-Streak", "7 Tage in Folge im Cockpit", "🏆"],
-  serie5: ["Saubere Serie", "5 Renders hintereinander ohne Fehler", "✨"],
-  ideenschmiede: ["Ideenschmiede", "Die ersten 10 Ideen im Cockpit erzeugt", "💡"],
-  chefredakteur: ["Chefredakteur", "Das erste Skript im Cockpit freigegeben", "🖋️"],
-  uebergabe: ["Startschuss", "Videos im Cockpit an Claude übergeben", "🏁"],
-  lernender: ["Datenflüsterer", "Die erste Lernschleife im Cockpit ausgewertet", "🧠"],
-  stimme: ["Sprachkommando", "Das Cockpit zum ersten Mal per Stimme gesteuert", "🎙️"],
-  mission: ["Mission erfüllt", "Die erste Meilenstein-Mission geschafft", "🎯"],
-  sparfuchs: ["Sparfuchs", "20 Aufträge mit der Modell-Automatik ohne Opus erledigt", "🦊"],
-};
-
-function standLaden() {
-  try {
-    return JSON.parse(fs.readFileSync(STAND_DATEI, "utf8"));
-  } catch {
-    return { xp: 0, erfolge: {}, tage: [], statistik: { renders: 0, bilder: 0, claude_auftraege: 0, werkzeuge: 0, serie: 0 } };
-  }
-}
-const stand = standLaden(); // Beitrag dieses Rechners; angezeigt wird die Summe aller Rechner (gesamtStand)
-let standTimer = null;
-function standSichern() {
-  clearTimeout(standTimer);
-  standTimer = setTimeout(() => fsp.writeFile(STAND_DATEI, JSON.stringify(stand, null, 1)).catch(() => {}), 500);
-  abgleich?.spielstandGeaendert();
-}
-
-let abgleich = null; // lib/abgleich.mjs, wird unten bei der Ablage angelegt
-const andereStaende = new Map(); // Rechner → Spielstand (aus cockpit/geteilt/spielstand/)
-function gesamtStand() {
-  const alle = [stand, ...andereStaende.values()];
-  const erfolge = {};
-  for (const s of alle) for (const [id, zeit] of Object.entries(s.erfolge || {})) if (!erfolge[id] || zeit < erfolge[id]) erfolge[id] = zeit;
-  const statistik = {};
-  for (const s of alle) for (const [k, v] of Object.entries(s.statistik || {})) statistik[k] = k === "serie" ? Math.max(statistik[k] || 0, v || 0) : (statistik[k] || 0) + (v || 0);
-  return { xp: alle.reduce((a, s) => a + (s.xp || 0), 0), erfolge, tage: [...new Set(alle.flatMap((s) => s.tage || []))].sort(), statistik };
-}
-
-// Level L braucht insgesamt 100·L·(L+1)/2 XP (100, 300, 600, 1.000 …)
-function levelInfo(xp) {
-  let level = 1;
-  while (xp >= (100 * level * (level + 1)) / 2) level++;
-  const vorher = (100 * (level - 1) * level) / 2;
-  const naechstes = (100 * level * (level + 1)) / 2;
-  return { level, rang: RAENGE[Math.min(level - 1, RAENGE.length - 1)], xp, von: vorher, bis: naechstes };
-}
-
-function spielInfo() {
-  const g = gesamtStand();
-  return { ...levelInfo(g.xp), streak: streak(), erfolge: g.erfolge, katalog: ERFOLGE, statistik: g.statistik };
-}
-
-function xp(menge, grund) {
-  const vorher = levelInfo(gesamtStand().xp).level;
-  stand.xp += menge;
-  const nachher = levelInfo(gesamtStand().xp);
-  standSichern();
-  senden("xp", { menge, grund, spiel: spielInfo(), levelup: nachher.level > vorher ? nachher : null });
-}
-
-// Erst nach dem ersten Abgleich (ein neuer Rechner kennt sonst die Erfolge des anderen nicht) und für alle Rechner nur einmal
-const erfolgUnterwegs = new Set();
-function erfolg(id) {
-  if (!ERFOLGE[id] || gesamtStand().erfolge[id] || erfolgUnterwegs.has(id)) return;
-  erfolgUnterwegs.add(id);
-  (abgleich ? abgleich.bereit.then(() => (gesamtStand().erfolge[id] ? false : abgleich.anspruch(`erfolg-${id}`))) : Promise.resolve(true)).then((ok) => {
-    erfolgUnterwegs.delete(id);
-    if (ok === false || gesamtStand().erfolge[id]) return; // null (Supabase weg): trotzdem hier vergeben
-    stand.erfolge[id] = new Date().toISOString();
-    const [titel, text, icon] = ERFOLGE[id];
-    senden("erfolg", { id, titel, text, icon });
-    xp(50, `Erfolg: ${titel}`);
-  });
-}
+// ───────────────────────── Datum (Berlin) ─────────────────────────
 
 function heute(d = new Date()) {
   return d.toLocaleDateString("sv-SE", { timeZone: ZEITZONE }); // JJJJ-MM-TT
-}
-
-function streak() {
-  const tage = new Set(gesamtStand().tage);
-  let n = 0;
-  const d = new Date();
-  while (tage.has(heute(d))) {
-    n++;
-    d.setDate(d.getDate() - 1);
-  }
-  return n;
-}
-
-function tagMerken() {
-  const t = heute();
-  if (!stand.tage.includes(t)) {
-    stand.tage = [...stand.tage, t].slice(-60);
-    standSichern();
-  }
-  erfolg("start");
-  const stunde = Number(new Date().toLocaleString("de-DE", { timeZone: ZEITZONE, hour: "2-digit", hour12: false }));
-  if (stunde < 7) erfolg("fruehaufsteher");
-  if (streak() >= 3) erfolg("streak3");
-  if (streak() >= 7) erfolg("streak7");
 }
 
 // ───────────────────────── Render: Supabase (alle Rechner) ─────────────────────────
@@ -319,9 +209,8 @@ async function renderAbfragen() {
       .filter((id) => !statusVon.has(id) || statusVon.get(id) === "wartet");
 
     if (!ersteAbfrage) uebergaengeAuswerten(auftraege);
-    for (const a of auftraege) letzterStatus.set(a.id, { status: a.status, bilder: a.bilder?.[0] || 0 });
+    for (const a of auftraege) letzterStatus.set(a.id, a.status);
     ersteAbfrage = false;
-    if (rechner.filter((r) => r.online).length >= 2) erfolg("doppel_gpu");
 
     Object.assign(render, { rechner, auftraege, wartend, fehler: null, zeit: new Date().toISOString() });
   } catch (e) {
@@ -332,56 +221,18 @@ async function renderAbfragen() {
   senden("render", render);
 }
 
-// XP und Statistik eines Render-Auftrags zählt nur ein Rechner (sonst doppelt, wenn Laptop und PC beide ein Cockpit offen haben);
-// die Anzeige (Toast, Konfetti, 3D-Welt) gibt es auf jedem Rechner
-const renderZaehler = new Map(); // Auftrag → Promise (true = dieser Rechner zählt)
-function fuerAuftrag(id, f) {
-  if (!renderZaehler.has(id)) {
-    renderZaehler.set(id, abgleich ? abgleich.anspruch(`render-${id}`) : Promise.resolve(true));
-    if (renderZaehler.size > 200) renderZaehler.delete(renderZaehler.keys().next().value);
-  }
-  renderZaehler.get(id).then((ok) => { if (ok !== false) f(); });
-}
-
+// Statuswechsel als Meilensteine für die Anzeige (Toast, Stadt); die gibt es auf jedem Rechner
 function uebergaengeAuswerten(auftraege) {
   for (const a of auftraege) {
-    const vorher = letzterStatus.get(a.id);
-    const fertigeBilder = a.bilder?.[0] || 0;
-    if (!vorher) {
-      if (a.status === "laeuft" || a.status === "wartet") {
-        senden("meilenstein", { art: "render_start", text: `Render gestartet: ${a.projekt}`, id: a.id });
-        fuerAuftrag(a.id, () => xp(20, `Render gestartet: ${a.projekt}`));
-      }
+    if (!letzterStatus.has(a.id)) {
+      if (a.status === "laeuft" || a.status === "wartet") senden("meilenstein", { art: "render_start", text: `Render gestartet: ${a.projekt}`, id: a.id });
       continue;
     }
-    if (fertigeBilder > vorher.bilder) {
-      const neu = fertigeBilder - vorher.bilder;
-      const schritte = Math.floor(fertigeBilder / 100) - Math.floor(vorher.bilder / 100);
-      fuerAuftrag(a.id, () => {
-        stand.statistik.bilder += neu;
-        if (schritte > 0) xp(5 * schritte, `${fertigeBilder} Bilder: ${a.projekt}`);
-        const bilder = gesamtStand().statistik.bilder;
-        if (bilder >= 1000) erfolg("bilder_1000");
-        if (bilder >= 10000) erfolg("bilder_10000");
-        standSichern();
-      });
-    }
-    if (vorher.status !== a.status) {
+    if (letzterStatus.get(a.id) !== a.status) {
       if (a.status === "fertig") {
         senden("meilenstein", { art: "render_fertig", text: `Render fertig: ${a.projekt}`, id: a.id });
-        fuerAuftrag(a.id, () => {
-          stand.statistik.renders++;
-          stand.statistik.serie++;
-          xp(150, `Render fertig: ${a.projekt}`);
-          erfolg("erster_render");
-          if (stand.statistik.serie >= 5) erfolg("serie5");
-          const stunde = Number(new Date().toLocaleString("de-DE", { timeZone: ZEITZONE, hour: "2-digit", hour12: false }));
-          if (stunde >= 23 || stunde < 4) erfolg("nachtschicht");
-          standSichern();
-        });
       } else if (a.status === "fehler" || a.status === "keine_gpu") {
         senden("meilenstein", { art: "render_fehler", text: `Render-Problem (${a.status}): ${a.projekt}`, id: a.id });
-        fuerAuftrag(a.id, () => { stand.statistik.serie = 0; standSichern(); });
       } else if (a.phase) {
         senden("meilenstein", { art: "render_phase", text: `${a.projekt}: ${a.phase}`, id: a.id });
       }
@@ -536,7 +387,7 @@ async function planAktualisieren() {
 
 // Ein Claude-Prozess zur Zeit. Aufträge: der Chat (setzt seine Sitzung fort) und Studio-Aufträge (Ideen, Skripte …)
 // mit eigener, frischer Sitzung und einer Rückmeldung nachher(text, istFehler) nach dem Ende.
-const claude = { laeuft: false, prozess: null, aktiv: null, sessionId: null, modus: "auto", modell: "", warteschlange: [], aufgaben: [], start: null, combo: [] };
+const claude = { laeuft: false, prozess: null, aktiv: null, sessionId: null, modus: "auto", modell: "", warteschlange: [], aufgaben: [], start: null };
 const FEED_DATEI = path.join(DATEN, "feed.json");
 let feed = [];
 try {
@@ -632,9 +483,6 @@ function claudeStarten(job) {
   // Modell-Automatik: günstigstes Modell ohne Qualitätsverlust (lib/modelle.mjs), Begründung sichtbar im Feed
   const wahl = job.modell ? { modell: job.modell, grund: job.grund || "vorgegeben" } : modellWaehlen(job, { lernschleifeVideos: job.lernschleifeVideos || 0 });
   Object.assign(job, { modell: wahl.modell, grund: wahl.grund });
-  stand.statistik.modelle = { ...(stand.statistik.modelle || {}), [wahl.modell]: ((stand.statistik.modelle || {})[wahl.modell] || 0) + 1 };
-  const ohneOpus = Object.entries(stand.statistik.modelle).filter(([m]) => m !== "opus").reduce((a, [, n]) => a + n, 0);
-  if (ohneOpus >= 20) erfolg("sparfuchs");
   const zusatz = [SYSTEM_ZUSATZ, chat ? STEUERUNG_ZUSATZ : "", job.stimme ? STIMME_ZUSATZ : ""].filter(Boolean).join(" ");
   const args = ["-p", "--output-format", "stream-json", "--verbose", "--permission-mode", job.modus, "--append-system-prompt", zusatz, "--model", job.modell];
   if (chat && claude.sessionId) args.push("--resume", claude.sessionId);
@@ -645,9 +493,6 @@ function claudeStarten(job) {
   if (chat) env.COCKPIT_STEUER_TOKEN = STEUER_TOKEN;
   for (const k of Object.keys(env)) if (/^SUPABASE_|^BUFFER_|^ELEVEN/i.test(k)) delete env[k];
 
-  stand.statistik.claude_auftraege++;
-  standSichern();
-  erfolg("claude_erster");
   claude.aufgaben = [];
   if (chat) feedEintrag({ art: "du", text: job.text, stimme: job.stimme });
   else feedEintrag({ art: "auftrag", text: job.titel, auftrag: job.titel });
@@ -761,12 +606,6 @@ function claudeZeile(zeile) {
         const e = feedEintrag({ art: "werkzeug", name: teil.name, titel: kurz(werkzeugTitel(teil.name, teil.input), 160), eingabe: kurz(teil.input, 1500), id: teil.id });
         offeneWerkzeuge.set(teil.id, e.nr);
         aufgabenAusWerkzeug(teil.name, teil.input);
-        stand.statistik.werkzeuge++;
-        const jetzt = Date.now();
-        claude.combo = [...claude.combo.filter((t) => jetzt - t < 60000), jetzt];
-        if (claude.combo.length >= 10) erfolg("combo10");
-        if (stand.statistik.werkzeuge % 10 === 0) xp(5, "10 Claude-Werkzeuge");
-        standSichern();
       }
     }
     return;
@@ -793,7 +632,6 @@ function claudeZeile(zeile) {
       schritte: m.num_turns,
       verweigert,
     });
-    if (!m.is_error) xp(40, "Claude-Auftrag erledigt");
   }
 }
 
@@ -867,24 +705,12 @@ const db = erstelleDb({
   },
 });
 
-// Abgleich mit den anderen Rechnern (lib/abgleich.mjs): Dokumente, Einstellungen, Missionen, Spielstand, „wer zuerst kommt“
-abgleich = erstelleAbgleich({
+// Abgleich mit den anderen Rechnern (lib/abgleich.mjs): Dokumente, Einstellungen, Missionen, „wer zuerst kommt“
+const abgleich = erstelleAbgleich({
   sb: { bereit: () => !!(SB.url && SB.key) && !OHNE_SPIEGEL, liste: sbListe, json: sbJson, schreiben: sbSchreiben, anlegen: sbAnlegen, loeschen: sbLoeschen },
   db, sammlungen: SAMMLUNGEN, rechner: RECHNER, ordner: DATEN, basis: ABGLEICH_BASIS, maskiere, log, senden,
   ausstehend: (s, id) => spiegelOffen.has(`${s}/${id}`),
   nochmalSpiegeln: (s, id) => { const d = db.roh(s, id); if (d) spiegeln(s, id, d); },
-});
-abgleich.spielstandTeilen({
-  lokal: () => stand,
-  bei: (name, d) => {
-    const neu = !andereStaende.has(name);
-    const vorher = gesamtStand().xp;
-    andereStaende.set(name, d);
-    const nachher = gesamtStand().xp;
-    // Beim ersten Laden still übernehmen; später fliegen die XP vom anderen Rechner sichtbar herein
-    if (neu || nachher <= vorher) senden("spiel", spielInfo());
-    else senden("xp", { menge: nachher - vorher, grund: `am ${name}`, spiel: spielInfo(), levelup: levelInfo(nachher).level > levelInfo(vorher).level ? levelInfo(nachher) : null });
-  },
 });
 abgleich.teilen("einstellungen", {
   lokal: () => sortiert({ werte: Object.fromEntries(geteilteSchluessel().map((k) => [k, einstellungen[k]])), zeiten: Object.fromEntries(geteilteSchluessel().map((k) => [k, einstellungen._zeiten[k] || ALT])) }),
@@ -936,8 +762,6 @@ const studio = erstelleStudio({
   db,
   repo: ARBEITS_REPO,
   auftrag: (job) => claudeJob(job),
-  xp,
-  erfolg,
   log,
   einstellungen: () => einstellungen,
 });
@@ -948,22 +772,20 @@ const renderdienst = erstelleRenderDienst({ renderRepo: RENDER_REPO, senden, log
 // Meldungen, Lernschleife, Vorschläge, Testwoche
 lernen = erstelleLernen({
   db, repo: ARBEITS_REPO, geheim: GEHEIM, auftrag: (job) => claudeJob(job), senden, log,
-  einstellungen: () => einstellungen, einstellungenSichern, heute, berlinZeit, xp, erfolg,
+  einstellungen: () => einstellungen, einstellungenSichern, heute, berlinZeit,
   anspruch: (k) => abgleich.anspruch(k),
 });
 
-// Live-Zahlen und Missionen; Startwerte und erreichte Missionen teilen sich alle Rechner, gefeiert wird nur einmal
+// Live-Zahlen und Missionen (Ziele); Startwerte und erreichte Missionen teilen sich alle Rechner, gemeldet wird nur einmal
 const zahlen = erstelleZahlen({
   repo: ARBEITS_REPO, ordner: path.join(DATEN, "zahlen"), geheim: GEHEIM, senden, log,
   beiGeteilt: () => abgleich.geaendert("zahlen"),
   belohnen: ({ konto, mission, wert }) => {
     abgleich.anspruch(`mission-${konto}-${mission.id}`).then((ok) => {
-      if (ok === false) return; // schon auf dem anderen Rechner gefeiert
+      if (ok === false) return; // schon auf dem anderen Rechner gemeldet
       const name = KONTEN[konto]?.name || konto;
       senden("mission_erreicht", { konto, mission, wert });
       lernen.melden({ art: "erfolg", titel: `🎯 Mission geschafft: ${mission.titel} (${name})`, text: `Stand: ${Number(wert).toLocaleString("de-DE")}`, ziel: { ansicht: "zahlen" } });
-      xp(300, `Mission: ${mission.titel}`);
-      erfolg("mission");
     });
   },
 });
@@ -977,6 +799,9 @@ abgleich.teilen("zahlen", {
   },
   anwenden: (g) => zahlen.geteiltSetzen(g),
 });
+
+// Echtes Berliner Wetter für die Stadt (lib/wetter.mjs, Open-Meteo)
+const wetter = erstelleWetter({ senden, log });
 
 // Für die Oberfläche: Skripte der letzten 14 Tage, Ideen der letzten 3 Tage, Lernstände, Vorschläge, letzte Meldungen
 function dbAuszug() {
@@ -1049,7 +874,7 @@ async function koerper(req) {
 }
 
 function zustand() {
-  return { instanz: INSTANZ, db: dbAuszug(), einstellungen, spiegel, abgleich: abgleich.status(), konten: KONTEN, dienst: renderdienst.zustand(), zahlen: zahlen.zustand(), lernschleife: { laeuft: lernen.laeuft(), buffer: !!GEHEIM.BUFFER_API_KEY }, rechner: RECHNER, render, live, lokal, plan, claude: claudeStatus(), feed: feed.slice(-120), spiel: spielInfo(), heute: heute(), supabase: !!(SB.url && SB.key) };
+  return { instanz: INSTANZ, db: dbAuszug(), einstellungen, spiegel, abgleich: abgleich.status(), konten: KONTEN, dienst: renderdienst.zustand(), zahlen: zahlen.zustand(), lernschleife: { laeuft: lernen.laeuft(), buffer: !!GEHEIM.BUFFER_API_KEY }, rechner: RECHNER, render, live, lokal, plan, claude: claudeStatus(), feed: feed.slice(-120), wetter: wetter.zustand(), heute: heute(), supabase: !!(SB.url && SB.key) };
 }
 
 const server = http.createServer(async (req, res) => {
@@ -1089,7 +914,6 @@ const server = http.createServer(async (req, res) => {
       }
       if (url.pathname === "/api/steuerung") {
         try {
-          if (token === STEUER_TOKEN) erfolg("stimme");
           return antwortJson(res, 200, await steuern(daten));
         } catch (e) {
           if (e instanceof DbFehler) return dbAntwort(res, e);
@@ -1171,7 +995,6 @@ const server = http.createServer(async (req, res) => {
       res.writeHead(200, { "Content-Type": "text/event-stream; charset=utf-8", "Cache-Control": "no-store", Connection: "keep-alive" });
       res.write(`event: zustand\ndata: ${JSON.stringify(zustand())}\n\n`);
       clients.add(res);
-      abgleich.bereit.then(tagMerken);
       req.on("close", () => clients.delete(res));
       return;
     }
@@ -1267,6 +1090,7 @@ server.listen(PORT, "127.0.0.1", () => {
   kopieAnlegen().catch((e) => log("Supabase-Kopie anlegen fehlgeschlagen: " + maskiere(e.message))).then(() => abgleich.starten());
   if (einstellungen.dienst_autostart !== false && !process.env.COCKPIT_OHNE_DIENST) renderdienst.starten();
   if (!process.env.COCKPIT_OHNE_ZAHLEN) zahlen.starten(); // ohne: nur für Tests (keine TikTok-Abrufe)
+  if (!process.env.COCKPIT_OHNE_WETTER) wetter.starten(); // ohne: nur für Tests (keine Wetter-Abrufe)
   lernen.starten();
   setInterval(() => senden("spiegel", spiegel), 30000);
   setInterval(lokaleVideosScannen, 20000);

@@ -18,7 +18,6 @@ const S = {
   plan: { protokoll: [], vorschlaege: [] },
   claude: { aufgaben: [] },
   feed: [],
-  spiel: null,
   heute: "",
   rechner: "",
   auswahl: null, // {typ: "job"|"video", id}
@@ -163,13 +162,16 @@ const P = {
   },
 };
 
+// Bildschirmmitte eines Elements; liegt es gerade in der Ablage (nicht sichtbar), die Mitte des Fensters
 function mitte(el) {
-  const r = el.getBoundingClientRect();
+  const r = el?.getBoundingClientRect();
+  if (!r || (!r.width && !r.height)) return [innerWidth / 2, innerHeight / 2];
   return [r.left + r.width / 2, r.top + r.height / 2];
 }
 
 function herzenAusHandy(n) {
   const r = document.querySelector(".seite-icons").getBoundingClientRect();
+  if (!r.width) return; // Handy gerade nicht zu sehen (anderer Raum oder Stadt)
   for (let i = 0; i < n; i++) setTimeout(() => P.herz(r.left + r.width / 2, r.top + 10), i * 90);
 }
 
@@ -232,40 +234,7 @@ function uhrZeichnen() {
   }
 }
 
-// ───────────────────────── Spielstand ─────────────────────────
-
-function spielZeichnen(spiel = S.spiel) {
-  if (!spiel) return;
-  $("level").textContent = spiel.level;
-  $("rang").textContent = spiel.rang;
-  $("xp-text").textContent = `${zahl(spiel.xp - spiel.von)} / ${zahl(spiel.bis - spiel.von)} XP`;
-  $("xp-fuellung").style.width = `${Math.min(100, ((spiel.xp - spiel.von) / Math.max(1, spiel.bis - spiel.von)) * 100)}%`;
-  $("streak").innerHTML = `🔥 <b>${spiel.streak}</b>`;
-  hochzaehlen($("z-bilder"), spiel.statistik?.bilder || 0, kurzZahl);
-  hochzaehlen($("z-renders"), spiel.statistik?.renders || 0);
-  hochzaehlen($("z-werkzeuge"), spiel.statistik?.werkzeuge || 0);
-}
-
-function xpFlug(menge) {
-  const r = $("xp-fuellung").parentElement.getBoundingClientRect();
-  const el = document.createElement("div");
-  el.className = "xp-flug";
-  el.textContent = `+${menge} XP`;
-  el.style.left = `${r.left + r.width * (0.3 + Math.random() * 0.5)}px`;
-  el.style.top = `${r.bottom + 4}px`;
-  document.body.append(el);
-  setTimeout(() => el.remove(), 1500);
-  P.funken(r.left + r.width * 0.6, r.top + 4, 8);
-}
-
-function levelUp(info) {
-  $("levelup-zahl").textContent = info.level;
-  $("levelup-rang").textContent = info.rang;
-  $("levelup").hidden = false;
-  Ton.fanfare();
-  P.konfetti(innerWidth / 2, innerHeight / 2, 260, 13);
-  setTimeout(() => ($("levelup").hidden = true), 2600);
-}
+// ───────────────────────── Hinweise ─────────────────────────
 
 function toast(icon, titel, text, art = "") {
   const el = document.createElement("div");
@@ -273,17 +242,6 @@ function toast(icon, titel, text, art = "") {
   el.innerHTML = `<span class="gross">${esc(icon)}</span><div><b>${esc(titel)}</b><small>${esc(text)}</small></div>`;
   $("toasts").append(el);
   setTimeout(() => el.remove(), 5200);
-}
-
-function erfolgeZeichnen() {
-  const spiel = S.spiel;
-  if (!spiel) return;
-  $("erfolge-raster").innerHTML = Object.entries(spiel.katalog)
-    .map(([id, [titel, text, icon]]) => {
-      const frei = spiel.erfolge[id];
-      return `<div class="erfolg ${frei ? "frei" : ""}"><div class="icon">${icon}</div><b>${esc(titel)}</b><small>${esc(text)}${frei ? `<br>${new Date(frei).toLocaleDateString("de-DE")}` : ""}</small></div>`;
-    })
-    .join("");
 }
 
 // ───────────────────────── Ticker ─────────────────────────
@@ -295,7 +253,7 @@ function tickerNeu(text) {
   $("ticker").innerHTML = `<span>${inhalt}</span><span>${inhalt}</span>`;
 }
 
-// ───────────────────────── Links: Heute ─────────────────────────
+// ───────────────────────── Tagesplan, Render-Aufträge, Rechner, Trend-Radar (Räume der Live-Zentrale und des Radar-Turms) ─────────────────────────
 
 function morgen() {
   const d = new Date(`${S.heute}T12:00:00`);
@@ -373,13 +331,13 @@ function linksZeichnen() {
         const status = r.online ? (d.status === "rendert" ? `rendert ${Math.round(d.prozent || 0)} %` : d.status || "online") : "offline";
         const alter = r.alter_s < 120 ? `vor ${r.alter_s} s` : r.alter_s < 7200 ? `vor ${Math.round(r.alter_s / 60)} Min.` : `vor ${Math.round(r.alter_s / 3600)} Std.`;
         return `<div class="karte" data-rechner="${esc(r.rechner)}">
-          <div class="zeile"><span class="titel"><span class="punkt ${r.online ? "an" : ""}"></span> ${esc(r.rechner)}${r.lokal ? " · dieser Laptop" : ""}</span><span class="chip ${r.online ? (d.status === "rendert" ? "laeuft" : "ok") : ""}">${esc(status)}</span></div>
+          <div class="zeile"><span class="titel"><span class="punkt ${r.online ? "an" : ""}"></span> ${esc(r.rechner)}${r.lokal ? " · dieser Rechner" : ""}</span><span class="chip ${r.online ? (d.status === "rendert" ? "laeuft" : "ok") : ""}">${esc(status)}</span></div>
           <div class="unter"><span>${esc(String(d.gpu || "GPU ?").replace(/\s*\(0x[0-9A-F]+\)/i, ""))}</span><span>Dienst ${esc(d.version || "?")}</span><span>${alter}</span></div>
         </div>`;
       }).join("")
     : `<div class="karte leer">${esc(S.render.fehler || "Noch kein Herzschlag.")}</div>`;
 
-  const radar = (S.plan.vorschlaege || []).filter((v) => !v.status || v.status === "neu").sort((a, b) => b.score - a.score).slice(0, 3);
+  const radar = (S.plan.vorschlaege || []).filter((v) => !v.status || v.status === "neu").sort((a, b) => b.score - a.score);
   $("radar").innerHTML = radar.length
     ? radar.map((v) => `<div class="karte" data-radar="${esc(v.titel)}"><div class="zeile"><span class="titel">${esc(v.titel.replace(/^\S+\s/, ""))}</span><span class="score">${v.score}</span></div><div class="unter">${esc(v.posten)}</div></div>`).join("")
     : `<div class="karte leer">Keine offenen Vorschläge.</div>`;
@@ -387,8 +345,9 @@ function linksZeichnen() {
   $("plan-stand").textContent = S.plan.commit ? `Repo ${S.plan.commit.split(" ").slice(0, 3).join(" ")}` : "";
 }
 
-document.querySelector(".links").addEventListener("click", (e) => {
-  const k = e.target.closest(".karte");
+// Die Listen stehen je nach Raum auf verschiedenen Wandbildschirmen: Klicks daher auf Dokumentebene abfangen
+document.addEventListener("click", (e) => {
+  const k = e.target.closest("#videos .karte, #auftraege .karte, #rechner .karte, #radar .karte");
   if (!k || k.classList.contains("leer")) return;
   Ton.klick();
   if (k.dataset.video) S.auswahl = { typ: "video", id: k.dataset.video };
@@ -544,7 +503,7 @@ function buehneZeichnen() {
     $("herz-zahl").textContent = kurzZahl(lok?.bilder || 0);
     $("info-zeilen").innerHTML = video
       ? infoZeilen([["Video", video.titel], ["Konto", kontoInfo(video.konto).name], ["Slot", `${video.datum} ${slotZeit(video.datum, video.slot) || video.slot}`], ["Status", video.status], ["Laptop-Render", laptopTempo(lok) || "–"], ["Post-ID", video.post_id || "–"]])
-      : infoZeilen([["Stand", "kein Auftrag ausgewählt"], ["Tipp", "links ein Video anklicken"]]);
+      : infoZeilen([["Stand", "kein Auftrag ausgewählt"], ["Tipp", "im Tagesplan ein Video anklicken"]]);
     $("phasen").innerHTML = "";
     return;
   }
@@ -644,7 +603,7 @@ function ketteZeichnen() {
 function detailZeichnen(video, job, z) {
   const s = KETTE.find((k) => k.id === S.schritt);
   if (!s) {
-    $("detail").innerHTML = `<div class="detail-leer">${video || job ? "Klicke auf einen Schritt der Kette, um Details zu sehen." : "Wähle links ein Video oder einen Render-Auftrag."}</div>`;
+    $("detail").innerHTML = `<div class="detail-leer">${video || job ? "Klicke auf einen Schritt der Kette, um Details zu sehen." : "Wähle im Tagesplan ein Video oder einen Render-Auftrag."}</div>`;
     return;
   }
   const zustandText = { fertig: "erledigt", jetzt: "läuft gerade", kaputt: "Problem", offen: "noch offen", entfaellt: "entfällt bei diesem Account" }[z[s.id]];
@@ -854,8 +813,6 @@ $("k-neustart").addEventListener("click", async () => {
   $("verbindung").textContent = "● startet neu …";
   P.konfetti(...mitte($("k-neustart")), 40, 5);
 });
-$("k-erfolge").addEventListener("click", () => { erfolgeZeichnen(); $("erfolge-dialog").showModal(); Ton.chime(); });
-$("erfolge-zu").addEventListener("click", () => $("erfolge-dialog").close());
 $("k-beenden").addEventListener("click", async () => {
   if (!confirm("Cockpit-Server beenden? Render-Dienst und Claude in der Cloud laufen weiter.")) return;
   await post("/api/beenden");
@@ -869,7 +826,6 @@ function allesZeichnen() {
   buehneZeichnen();
   ketteZeichnen();
   claudeZeichnen();
-  spielZeichnen();
 }
 
 function verbinden() {
@@ -881,14 +837,13 @@ function verbinden() {
     // Neuer Server (Neustart oder Update): Seite neu laden, damit Token und Oberfläche passen
     if (S.instanz && z.instanz && z.instanz !== S.instanz) { location.reload(); return; }
     S.instanz = z.instanz;
-    Object.assign(S, { render: z.render, live: z.live, lokal: z.lokal || [], plan: z.plan, claude: z.claude, spiel: z.spiel, heute: z.heute, rechner: z.rechner, feed: z.feed || [], db: z.db || { skripte: [], ideen: [], stand: [] }, einstellungen: z.einstellungen || {} });
+    Object.assign(S, { render: z.render, live: z.live, lokal: z.lokal || [], plan: z.plan, claude: z.claude, heute: z.heute, rechner: z.rechner, feed: z.feed || [], db: z.db || { skripte: [], ideen: [], stand: [] }, einstellungen: z.einstellungen || {} });
     S.verbunden = true;
     S.abgleich = z.abgleich || null;
     verbindungZeigen();
     feedNeu();
     allesZeichnen();
-    if (!$("studio").hidden) studioZeichnen();
-    else studioPunkt();
+    studioZeichnen();
     tickerNeu(`Cockpit verbunden · ${S.render.rechner.filter((r) => r.online).length} Rechner online`);
     setTimeout(autoBriefing, 1500);
   });
@@ -920,7 +875,7 @@ function verbinden() {
   an("claude", (c) => {
     S.claude = c;
     claudeZeichnen();
-    if (!$("studio").hidden) studioZeichnen();
+    studioZeichnen();
   });
   an("db", (e) => studioDbEreignis(e));
   an("feed", (e) => feedAnhaengen(e));
@@ -934,24 +889,9 @@ function verbinden() {
       if (offen) $("feed").querySelector(`[data-nr="${r.nr}"]`)?.classList.add("offen");
     }
   });
-  an("xp", (x) => {
-    S.spiel = x.spiel;
-    spielZeichnen();
-    xpFlug(x.menge);
-    if (x.levelup) levelUp(x.levelup);
-  });
-  // Spielstand vom anderen Rechner beim ersten Laden: still übernehmen
-  an("spiel", (s) => { S.spiel = s; spielZeichnen(); });
   // Abgleich mit dem anderen Rechner (Laptop ⇄ PC)
   an("abgleich", (a) => { S.abgleich = a; verbindungZeigen(); });
   an("abgleich_neu", (a) => { tickerNeu(`⇄ ${a.anzahl} Änderung${a.anzahl === 1 ? "" : "en"}${a.von?.length ? ` vom ${a.von.join(", ")}` : ""} übernommen`); Ton.blip(); });
-  an("erfolg", (e) => {
-    toast(e.icon, `Erfolg: ${e.titel}`, e.text);
-    Ton.chime();
-    const r = $("toasts").getBoundingClientRect();
-    P.konfetti(r.left + 140, r.top + 30, 70, 6);
-    tickerNeu(`🏆 Erfolg freigeschaltet: ${e.titel}`);
-  });
   an("meilenstein", (m) => {
     if (m.art === "render_fertig") {
       toast("🎬", "Render fertig", m.text, "meilenstein");

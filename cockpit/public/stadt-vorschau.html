@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon-Stadt Vorschau</title>
+<!-- Vorschau der Neon-Stadt ohne Cockpit-Server, mit Beispieldaten (keine echten Inhalte: das Repo ist öffentlich).
+     Parameter: ?zeit=17:10 · ?tempo=600 · ?wetter=klar|wolken|regen|schnee|nebel · ?ansicht=0..1 (Punkt des Rundflugs) · ?halt=1 · ?raum=live/regie -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stadt/stadt.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #05060b; color: #f3f5ff; font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif; overflow: hidden; }
+  #welt { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+  .hud { position: fixed; left: 16px; top: 14px; z-index: 20; background: rgba(8, 6, 16, 0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 10px 14px; font-size: 13px; line-height: 1.5; backdrop-filter: blur(6px); }
+  .hud b { font-size: 22px; font-family: "JetBrains Mono", Consolas, monospace; }
+  .leiste { position: fixed; left: 50%; bottom: 18px; z-index: 20; transform: translateX(-50%); display: flex; gap: 6px; background: rgba(8, 6, 16, 0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 6px; backdrop-filter: blur(6px); }
+  .leiste button { background: transparent; color: #f3f5ff; border: 0; border-radius: 10px; padding: 8px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+  .leiste button:hover { background: rgba(255,255,255,0.08); }
+  .leiste kbd { font-family: "JetBrains Mono", monospace; font-size: 10px; color: #8b91a8; margin-left: 4px; }
+  body.im-raum .leiste, body.im-raum .hud { display: none; }
+  /* Beispielinhalte */
+  .muster { display: grid; gap: 12px; font-size: 14px; }
+  .muster-reihe { display: flex; gap: 16px; align-items: center; }
+  .muster-handy { width: 190px; height: 340px; border-radius: 26px; border: 3px solid #2a2440; background: linear-gradient(160deg, #1a1030, #3a1650 60%, #fe2c55); position: relative; flex: none; overflow: hidden; }
+  .muster-handy::after { content: "● LIVE"; position: absolute; left: 12px; top: 12px; font-size: 12px; font-weight: 700; color: #fff; background: #fe2c55; padding: 2px 8px; border-radius: 8px; }
+  .muster-prozent { font-size: 64px; font-weight: 700; font-family: "JetBrains Mono", monospace; color: #ffd166; }
+  .muster-balken { height: 12px; background: #1c1428; border-radius: 6px; overflow: hidden; }
+  .muster-balken i { display: block; height: 100%; width: 42%; background: linear-gradient(90deg, #ffd166, #fe2c55); }
+  .muster-schritt { display: flex; justify-content: space-between; padding: 9px 12px; border-radius: 10px; background: rgba(255,255,255,0.04); border-left: 3px solid #3ef0a0; }
+  .muster-schritt.jetzt { border-left-color: #ffd166; background: rgba(255,209,102,0.08); }
+  .muster-schritt.offen { border-left-color: #3a3550; color: #8b91a8; }
+  .muster button { background: rgba(37,244,238,0.12); color: #f3f5ff; border: 1px solid #25f4ee; border-radius: 10px; padding: 8px 14px; font: inherit; cursor: pointer; }
+</style>
+</head>
+<body>
+<canvas id="welt"></canvas>
+<div class="hud"><b id="uhr">--:--</b><div id="phase"></div><div id="sonne"></div></div>
+<div class="leiste" id="leiste"></div>
+<div id="stadt-tipp" hidden></div>
+<script type="importmap">{ "imports": { "three": "./vendor/three/three.module.min.js", "three/addons/": "./vendor/three/addons/" } }</script>
+<script type="module">
+  import { STADT } from "./stadt/stadt.js";
+  const P = new URLSearchParams(location.search);
+  STADT.stadtDaten({
+    zentralen: { rendert: true, prozent: 42, titel: "Beispielvideo", claudeAktiv: true, modell: "opus", ideenAktiv: false, lernAktiv: false, zielAnteil: 0.28, radarNeu: 2 },
+    tafel: { konten: [{ name: "Simulierbar", follower: 2829, plus: 12 }, { name: "Stell dir vor", follower: 1 }], naechster: { zeit: "19:30", konto: "Simulierbar", titel: "Beispielvideo" }, render: { rendert: true, prozent: 42 }, online: 2, geplant: 4, ziel: { titel: "10.000 Follower", anteil: 0.28, wert: 2829, ziel: 10000 } },
+  });
+  const html = (s) => { const d = document.createElement("div"); d.className = "muster"; d.innerHTML = s; return d; };
+  STADT.inhaltAnbieter({
+    holen(zentrale, raum, platz) {
+      if (zentrale === "live" && raum === "regie" && platz === "mitte") return html(`
+        <div class="muster-reihe"><div class="muster-handy"></div>
+          <div style="flex:1;display:grid;gap:10px"><div class="muster-prozent">42 %</div><div class="muster-balken"><i></i></div>
+          <div>Beispielvideo · Simulierbar · 12:30</div><div style="color:#8b91a8">Bild 1.512 von 3.600 · GPU RTX 2070 · noch ca. 6 Min.</div>
+          <div><button>▶ Video ansehen</button></div></div></div>`);
+      if (zentrale === "live" && raum === "regie" && platz === "rechts") return html(["Skript freigegeben", "Faktencheck", "Ton (ElevenLabs)", "Rendern", "Prüfung", "Buffer", "Gepostet"]
+        .map((t, i) => `<div class="muster-schritt ${i === 3 ? "jetzt" : i > 3 ? "offen" : ""}"><span>${t}</span><span>${i < 3 ? "✓" : i === 3 ? "42 %" : "…"}</span></div>`).join(""));
+      return html(`<div style="color:#8b91a8">Hier stehen die Inhalte aus dem Cockpit.</div>`);
+    },
+  });
+  if (P.get("ansicht")) { STADT.W.flugT = Number(P.get("ansicht")); STADT.W.flugMisch = 1; }
+  if (P.get("halt")) setInterval(() => { if (STADT.W.modus === "flug") STADT.W.flugT = Number(P.get("ansicht") || 0); }, 50);
+  if (P.get("raum")) {
+    const [z, r] = P.get("raum").split("/");
+    if (P.get("sofort")) STADT.betreten(STADT.ZENTRALEN.find((x) => x.id === z), Math.max(0, STADT.RAEUME[z].findIndex((x) => x.id === r)));
+    else setTimeout(() => STADT.raumAnsteuern(z, r), 600);
+  }
+  const leiste = document.getElementById("leiste");
+  for (const z of STADT.ZENTRALEN) {
+    const b = document.createElement("button");
+    b.innerHTML = `${z.emoji} ${z.name}<kbd>${z.taste}</kbd>`;
+    b.onclick = () => STADT.raumAnsteuern(z.id);
+    leiste.append(b);
+  }
+  addEventListener("keydown", (e) => { if (e.target.closest("input, textarea")) return; const z = STADT.ZENTRALEN.find((x) => x.taste === e.key); if (z) STADT.raumAnsteuern(z.id); });
+  const f = (d) => d ? d.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" }) : "–";
+  setInterval(() => {
+    const h = STADT.info.himmel;
+    document.getElementById("uhr").textContent = f(STADT.jetzt());
+    if (!h) return;
+    document.getElementById("phase").textContent = `${h.abschnitt} · Sonne ${h.hoeheGrad.toFixed(1)}°`;
+    document.getElementById("sonne").textContent = `☀ ${f(h.zeiten?.aufgang)} · ☾ ${f(h.zeiten?.untergang)}`;
+  }, 250);
+</script>
+</body>
+</html>

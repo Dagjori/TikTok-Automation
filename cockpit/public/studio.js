@@ -274,22 +274,12 @@ function textDialog({ titel, hinweis = "", wert: vorgabe = "", ok, knopf = "Spei
 }
 $("text-dialog").querySelector("[data-zu]").addEventListener("click", () => $("text-dialog").close());
 
-$("ansichten").addEventListener("click", (e) => {
-  const b = e.target.closest("button[data-ansicht]");
-  if (b) ansichtSetzen(b.dataset.ansicht);
-});
-const ANSICHTEN = ["live", "studio", "zahlen", "lernen"];
-function ansichtSetzen(ansicht) {
-  if (!ANSICHTEN.includes(ansicht)) ansicht = "live";
-  document.body.dataset.ansicht = ansicht;
-  for (const a of ANSICHTEN.slice(1)) $(a).hidden = ansicht !== a;
-  document.querySelectorAll("#ansichten button").forEach((b) => b.classList.toggle("aktiv", b.dataset.ansicht === ansicht));
-  lokal.schreiben("ansicht", ansicht);
+// Seit der Neon-Stadt (03.11.) sind die Ansichten Gebäude: ansichtSetzen öffnet das passende Gebäude (zentrale.js).
+// Bleibt für Sprachbot, Meldungen und die Steuerung vom Server; „stadt“ führt zurück in die Stadt.
+function ansichtSetzen(ansicht, raum = null) {
   Ton.klick();
   if (typeof Spiel !== "undefined") Spiel.wechsel(ansicht);
-  if (S.heute && ansicht === "studio") studioZeichnen();
-  else if (S.heute && ansicht === "live") allesZeichnen();
-  document.dispatchEvent(new CustomEvent("cockpit:ansicht", { detail: ansicht }));
+  document.dispatchEvent(new CustomEvent("cockpit:oeffnen", { detail: { zentrale: ansicht, raum } }));
 }
 
 $("tage").addEventListener("click", (e) => {
@@ -435,10 +425,7 @@ function studioDbEreignis(e) {
   if (e.sammlung === "ideen" && !e.geloescht && e.von === "claude") {
     toast("💡", "10 neue Ideen", `${KONTO_NAME[e.daten.konto] || e.daten.konto} · ${tagLabel(e.daten.datum)}`, "meilenstein");
     Ton.fanfare();
-    if (!$("studio").hidden) P.konfetti(...mitte($("ideen")), 120, 9);
+    if ($("ideen").offsetParent) P.konfetti(...mitte($("ideen")), 120, 9);
   }
-  if (!$("studio").hidden) studioZeichnen();
-  else studioPunkt();
+  studioZeichnen();
 }
-
-ansichtSetzen(lokal.lesen("ansicht", "live"));

@@ -106,15 +106,14 @@ const Stimme = (() => {
   // ───────── Verstehen ─────────
   const LOKAL = [
     [/^(pause|stopp?|halt|sprachbot aus|aus|tschüss|tschau|ende|das war'?s|danke,? das war'?s)\b/i, () => sprechen("Okay, ich mache Pause. Bis gleich!", aus)],
-    [/(zurück ins cockpit|stadt (verlassen|schließen|zu))/i, () => { window.Welt?.stadt(false); sprechen("Zurück im Cockpit."); }],
-    [/(zeig|öffne|geh zu|flieg).*(stadt|3d|welt)/i, () => {
-      if (window.Welt && Welt.stufe !== "aus") { Welt.stadt(true); sprechen("Willkommen in der Neon-Stadt. Jeder Turm ist ein Video, je höher, desto mehr Views."); }
-      else sprechen("Die 3D-Welt ist gerade ausgeschaltet. Du kannst sie mit dem Glitzer-Knopf oben einschalten.");
-    }],
-    [/(zeig|öffne|geh zu).*(studio|ideen|skript)/i, () => { ansichtSetzen("studio"); sprechen("Hier ist das Studio."); }],
-    [/(zeig|öffne|geh zu).*(zahlen|statistik|follower|missionen|views)/i, () => { ansichtSetzen("zahlen"); sprechen(zahlenSatz()); }],
-    [/(zeig|öffne|geh zu).*(lernen|vorschläge|verbesserung)/i, () => { ansichtSetzen("lernen"); sprechen("Hier sind die Vorschläge."); }],
-    [/(zeig|öffne|geh zu).*(live|render|bühne|handy)/i, () => { ansichtSetzen("live"); sprechen("Hier ist die Live-Ansicht."); }],
+    [/(zurück in die stadt|raus hier|gebäude verlassen|zur stadt|zeig die stadt|stadt zeigen)/i, () => { ansichtSetzen("stadt"); sprechen("Zurück in der Neon-Stadt."); }],
+    [/(geh|flieg|zeig|öffne).*(ins|in die|zum|zur|das|die|den)?\s*(studio|ideen|skript)/i, () => { ansichtSetzen("studio"); sprechen("Willkommen im Studio."); }],
+    [/(zeig|öffne|geh|flieg).*(ziel|crp|missionen)/i, () => { ansichtSetzen("ziele"); sprechen("Hier ist der Ziele-Turm."); }],
+    [/(zeig|öffne|geh|flieg).*(zahlen|statistik|follower|views)/i, () => { ansichtSetzen("zahlen"); sprechen(zahlenSatz()); }],
+    [/(zeig|öffne|geh|flieg).*(lern|vorschläge|verbesserung)/i, () => { ansichtSetzen("lernen"); sprechen("Hier ist die Lernzentrale."); }],
+    [/(zeig|öffne|geh|flieg).*(radar|trend)/i, () => { ansichtSetzen("radar"); sprechen("Hier ist das Trend-Radar."); }],
+    [/(zeig|öffne|geh|flieg).*(hauptquartier|claude)/i, () => { ansichtSetzen("claude"); sprechen("Hier ist das Claude-Hauptquartier."); }],
+    [/(zeig|öffne|geh|flieg).*(live|render|bühne|handy|regie)/i, () => { ansichtSetzen("live"); sprechen("Hier ist die Live-Zentrale."); }],
     [/musik (aus|stopp)/i, () => { if (!$("k-musik").classList.contains("aus")) $("k-musik").click(); sprechen("Musik ist aus."); }],
     [/musik an/i, () => { if ($("k-musik").classList.contains("aus")) $("k-musik").click(); sprechen("Musik ist an."); }],
     [/(was gibt.?s neues|neue meldungen|meldungen)/i, () => sprechen(meldungenSatz())],

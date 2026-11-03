@@ -31,7 +31,7 @@ function jsonAusText(text) {
   return JSON.parse(t.slice(a, e + 1));
 }
 
-export function erstelleStudio({ db, repo, auftrag, xp = () => {}, erfolg = () => {}, log = () => {}, einstellungen = () => ({}), produzieren = null }) {
+export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellungen = () => ({}), produzieren = null }) {
   const jetzt = () => new Date().toISOString();
   const slotId = (konto, datum, slot) => `${KONTEN[konto].praefix}-${datum}-${slot}`;
   const ideenId = (konto, datum) => `${KONTEN[konto].praefix}-${datum}`;
@@ -111,8 +111,6 @@ export function erstelleStudio({ db, repo, auftrag, xp = () => {}, erfolg = () =
           if (!ideen.length) throw fehler("Claude hat keine gültigen Ideen geliefert");
           const id = ideenId(konto, datum);
           db.schreiben("ideen", id, { konto, datum, ideen, wunsch, erzeugt: jetzt() }, { ifVersion: db.get("ideen", id)?.version, von: "claude" });
-          xp(30, `10 Ideen für ${KONTEN[konto].name}`);
-          erfolg("ideenschmiede");
         },
       });
       return { ok: true, hinweis: "Claude erzeugt die Ideen (ca. 1–2 Min.)" };
@@ -141,7 +139,6 @@ export function erstelleStudio({ db, repo, auftrag, xp = () => {}, erfolg = () =
         status: "gewaehlt", fortschritt: "", fehler: "", fehler_phase: "", verlauf: [{ zeit: jetzt(), text: `Idee gewählt (${SLOT_NAME[slot]})`, von: "cockpit" }],
         erstellt: jetzt(), aktualisiert: jetzt(),
       }, { ifVersion: d?.version });
-      xp(5, `Idee für ${SLOT_NAME[slot]} gewählt`);
       return { ok: true };
     },
 
@@ -154,7 +151,6 @@ export function erstelleStudio({ db, repo, auftrag, xp = () => {}, erfolg = () =
         db.meilenstein("skripte", d.id, "Recherche angefordert", { von: "cockpit" });
       }
       skripteAnfordern(konto, datum, docs.map((d) => d.id));
-      xp(15, "Recherche gestartet");
       return { ok: true, slots: docs.map((d) => d.id) };
     },
 
@@ -172,8 +168,6 @@ export function erstelleStudio({ db, repo, auftrag, xp = () => {}, erfolg = () =
       const d = slotLesen(id);
       if (d.daten.status !== "skript_fertig") throw fehler("Nur ein fertiges Skript lässt sich freigeben");
       db.schreiben("skripte", id, { status: "freigegeben", freigegeben_am: jetzt(), fortschritt: "Freigegeben", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
-      xp(25, "Skript freigegeben");
-      erfolg("chefredakteur");
       return { ok: true };
     },
 
@@ -197,8 +191,6 @@ export function erstelleStudio({ db, repo, auftrag, xp = () => {}, erfolg = () =
       if (!docs.length) throw fehler("Kein freigegebenes Skript an diesem Tag");
       for (const d of docs) db.schreiben("skripte", d.id, { status: "uebergeben", uebergeben_am: jetzt(), fortschritt: produzieren ? "An Claude übergeben, Produktion startet …" : "Übergeben · wartet auf die lokale Produktion (Ausbau 3)", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
       if (produzieren) produzieren(datum, docs.map((d) => d.id));
-      xp(50, "An Claude übergeben");
-      erfolg("uebergabe");
       return { ok: true, ids: docs.map((d) => d.id), produktion: !!produzieren };
     },
 

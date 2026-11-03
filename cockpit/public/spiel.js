@@ -1,9 +1,10 @@
 "use strict";
-// Game-Vibes: Sounds passend zur Arbeit, Arbeitsmusik, Maskottchen „Simu“, Combo, XP-Kugeln, Quests, Render-Meilensteine.
-// Alles mit WebAudio erzeugt (keine Dateien). Nutzt S, $, esc, Ton, P, toast, mitte, lokal, xpFlug aus cockpit.js.
+// Stimmung: Sounds passend zur Arbeit, Arbeitsmusik, Maskottchen „Simu“, Render-Meilensteine, erreichte Ziele.
+// XP, Level, Combo, Quests und Erfolge gibt es seit 03.11. nicht mehr (Inhaber: „Alles Spielerische weg, nur die Ziele bleiben“).
+// Alles mit WebAudio erzeugt (keine Dateien). Nutzt S, $, esc, Ton, P, toast, mitte, lokal aus cockpit.js.
 
 const Spiel = (() => {
-  const zustand = { combo: 0, letzteAktion: 0, modus: "ruhe", musik: lokal.lesen("musik", "an") !== "aus", renderStufe: {}, quests: {} };
+  const zustand = { letzteAktion: 0, modus: "ruhe", musik: lokal.lesen("musik", "an") !== "aus", renderStufe: {} };
 
   // ───────── Klangbausteine ─────────
   const ctx = () => (Ton.an && Ton.ctx && Ton.ctx.state === "running" ? Ton.ctx : null);
@@ -73,9 +74,8 @@ const Spiel = (() => {
     const grund = 220; // A3, Moll-Färbung
     const f = (halb) => grund * Math.pow(2, halb / 12);
     const n = m.noten[schritt % m.noten.length];
-    ton(f(n + 12), 0.16, "triangle", 0.012 + Math.min(0.01, zustand.combo * 0.001));
+    ton(f(n + 12), 0.16, "triangle", 0.014);
     if (schritt % 4 === 0) ton(f(m.bass[(schritt / 4) % m.bass.length] - 12), 0.42, "sine", 0.03);
-    if (schritt % 2 === 1 && zustand.combo >= 3) rauschStoss(0.04, 7000, 0.008, 0, "highpass");
     schritt++;
     musikTimer = setTimeout(musikTakt, 60000 / m.bpm / 2);
   }
@@ -106,32 +106,6 @@ const Spiel = (() => {
   };
   const spruch = (name) => { const l = SPRUECHE[name]; return l ? l[Math.floor(Math.random() * l.length)] : null; };
 
-  // ───────── Combo und XP-Kugeln ─────────
-  function combo() {
-    const jetzt = Date.now();
-    zustand.combo = jetzt - zustand.letzteAktion < 9000 ? zustand.combo + 1 : 1;
-    zustand.letzteAktion = jetzt;
-    const el = $("combo");
-    if (zustand.combo >= 2) {
-      el.hidden = false;
-      el.querySelector("b").textContent = `x${zustand.combo}`;
-      el.classList.remove("knall"); void el.offsetWidth; el.classList.add("knall");
-      el.classList.toggle("feuer", zustand.combo >= 5);
-      if (zustand.combo % 5 === 0) { P.funken(...mitte(el), 30); KLANG.meilenstein(); simu("jubelt", `Combo x${zustand.combo}! 🔥`); }
-    }
-    clearTimeout(zustand.comboTimer);
-    zustand.comboTimer = setTimeout(() => { el.hidden = true; zustand.combo = 0; }, 9000);
-  }
-  function xpKugel(vonEl) {
-    const ziel = $("xp-fuellung").parentElement.getBoundingClientRect();
-    const [x, y] = mitte(vonEl);
-    const k = document.createElement("div");
-    k.className = "xp-kugel";
-    k.style.left = `${x}px`; k.style.top = `${y}px`;
-    document.body.append(k);
-    requestAnimationFrame(() => { k.style.transform = `translate(${ziel.left + ziel.width * 0.7 - x}px, ${ziel.top - y}px) scale(0.4)`; k.style.opacity = "0.2"; });
-    setTimeout(() => k.remove(), 900);
-  }
   function wackeln(staerke = "") {
     document.body.classList.remove("wackeln", "wackeln-stark"); void document.body.offsetWidth;
     document.body.classList.add(staerke === "stark" ? "wackeln-stark" : "wackeln");
@@ -144,10 +118,8 @@ const Spiel = (() => {
       case "werkzeug": {
         (KLANG[WERKZEUG_KLANG[e.name]] || KLANG.pop)();
         modusSetzen(WERKZEUG_MODUS[e.name] || "denken");
-        combo();
-        xpKugel(el);
-        const [x, y] = mitte(el);
-        P.funken(x - el.offsetWidth / 2 + 14, y, 8);
+        zustand.letzteAktion = Date.now();
+        if (el.offsetParent) { const [x, y] = mitte(el); P.funken(x - el.offsetWidth / 2 + 14, y, 8); }
         const s = spruch(e.name);
         simu("arbeitet", s);
         break;
@@ -155,11 +127,11 @@ const Spiel = (() => {
       case "denken": KLANG.denken(); modusSetzen("denken"); simu("denkt", "Hmm, lass mich überlegen …"); break;
       case "text": KLANG.pop(); simu("arbeitet"); break;
       case "auftrag": KLANG.meilenstein(); modusSetzen("denken"); simu("arbeitet", `Auf geht's: ${e.text.split("·")[0].trim()}`); break;
-      case "modell": (KLANG[e.modell] || (e.modell === "opus" ? KLANG.powerup : KLANG.pop))(); if (e.modell === "opus") { P.funken(...mitte($("claude-status")), 18); } break;
+      case "modell": (KLANG[e.modell] || (e.modell === "opus" ? KLANG.powerup : KLANG.pop))(); if (e.modell === "opus" && $("claude-status").offsetParent) { P.funken(...mitte($("claude-status")), 18); } break;
       case "du": KLANG.wechsel(); simu("hoert", "Verstanden!"); break;
       case "fertig":
         KLANG.sieg(); modusSetzen("ruhe"); simu("jubelt", "Erledigt! 🎉");
-        P.konfetti(...mitte($("claude-panel")), 90, 8);
+        if ($("claude-panel").getBoundingClientRect().right <= innerWidth + 1) P.konfetti(...mitte($("claude-panel")), 90, 8);
         break;
       case "fehler": KLANG.buzz(); simu("traurig", "Ups, da hakt was."); wackeln(); break;
     }
@@ -194,50 +166,19 @@ const Spiel = (() => {
     }
   }
 
-  function missionErreicht(m) {
+  // Ein Ziel bis zum CRP ist erreicht (in der Stadt steigt dazu Feuerwerk über dem Ziele-Turm)
+  function zielErreicht(m) {
     const o = $("levelup");
     $("levelup-zahl").textContent = m.mission.icon || "🎯";
     $("levelup-rang").textContent = `${m.mission.titel} · ${m.konto === "stelldirvor" ? "Stell dir vor" : "Simulierbar"}`;
-    o.querySelector("small").textContent = "MISSION GESCHAFFT";
     o.hidden = false;
     KLANG.sieg(); setTimeout(KLANG.sieg, 600);
     wackeln("stark");
     P.konfetti(innerWidth / 2, innerHeight / 2, 320, 14);
-    setTimeout(() => { o.hidden = true; o.querySelector("small").textContent = "LEVEL UP"; }, 3500);
+    setTimeout(() => { o.hidden = true; }, 3500);
   }
 
-  // ───────── Tages-Quests ─────────
-  function quests() {
-    if (!S.heute || !$("quests")) return;
-    const morgen = (() => { const d = new Date(`${S.heute}T12:00:00Z`); d.setUTCDate(d.getUTCDate() + 1); return d.toISOString().slice(0, 10); })();
-    const ab = S.einstellungen?.studio_ab || "";
-    const tag = morgen >= ab ? morgen : ab;
-    const skripte = (S.db?.skripte || []).filter((d) => d.daten.datum === tag);
-    const ideen = (S.db?.ideen || []).filter((d) => d.daten.datum === tag).length;
-    const heuteOnline = (S.plan?.protokoll || []).filter((z) => z.datum === S.heute && ["geplant", "gepostet"].includes(z.status)).length;
-    const dienstOk = S.render?.rechner?.some((r) => r.lokal && r.online && r.daten?.gpu_ok);
-    const liste = [
-      { id: "online", text: "Heute 4 Videos online", wert: heuteOnline, ziel: 4, xp: 40 },
-      { id: "ideen", text: `Ideen für ${tag.slice(8)}.${tag.slice(5, 7)}. (beide Konten)`, wert: ideen, ziel: 2, xp: 30 },
-      { id: "gewaehlt", text: "4 Videos gewählt", wert: skripte.length, ziel: 4, xp: 20 },
-      { id: "frei", text: "4 Skripte freigegeben", wert: skripte.filter((d) => ["freigegeben", "uebergeben", "produktion", "geplant", "gepostet"].includes(d.daten.status)).length, ziel: 4, xp: 50 },
-      { id: "dienst", text: "Render-Dienst mit GPU bereit", wert: dienstOk ? 1 : 0, ziel: 1, xp: 10 },
-    ];
-    const erledigtVorher = JSON.parse(lokal.lesen(`quests-${S.heute}`, "{}"));
-    $("quests").innerHTML = liste.map((q) => {
-      const fertig = q.wert >= q.ziel;
-      if (fertig && !erledigtVorher[q.id] && zustand.questsBereit) {
-        erledigtVorher[q.id] = true;
-        lokal.schreiben(`quests-${S.heute}`, JSON.stringify(erledigtVorher));
-        setTimeout(() => { KLANG.meilenstein(); toast("✅", "Quest geschafft", q.text, "meilenstein"); }, 300);
-      } else if (fertig) erledigtVorher[q.id] = true;
-      return `<div class="quest ${fertig ? "fertig" : ""}"><span class="quest-haken">${fertig ? "✓" : ""}</span><span class="quest-text">${esc(q.text)}</span><span class="quest-wert">${Math.min(q.wert, q.ziel)}/${q.ziel}</span><i style="width:${Math.min(100, (q.wert / q.ziel) * 100)}%"></i></div>`;
-    }).join("");
-    lokal.schreiben(`quests-${S.heute}`, JSON.stringify(erledigtVorher));
-    zustand.questsBereit = true;
-  }
-
-  // ───────── Ansichtswechsel (das Bild machen holo.js: Panels fliegen herein, und welt.js: die Kamera fliegt mit) ─────────
+  // ───────── Gebäudewechsel (das Bild macht die Neon-Stadt: Anflug und Eintritt) ─────────
   function wechsel() {
     KLANG.wechsel();
   }
@@ -262,15 +203,12 @@ const Spiel = (() => {
   document.addEventListener("cockpit:verbunden", (ev) => {
     const es = ev.detail;
     const an = (art, f) => es.addEventListener(art, (e) => { try { f(JSON.parse(e.data)); } catch (err) { console.error(art, err); } });
-    an("zustand", () => { setTimeout(quests, 50); simu("ruhe", "Hi! Ich bin Simu. Los geht's! 🚀"); });
-    an("render", (r) => { renderEreignis(r); quests(); });
-    an("plan", () => quests());
-    an("db", () => quests());
+    an("zustand", () => simu("ruhe", "Hi! Ich bin Simu. Los geht's! 🚀"));
+    an("render", renderEreignis);
     an("zahlen_puls", zahlenPuls);
-    an("mission_erreicht", missionErreicht);
+    an("mission_erreicht", zielErreicht);
     an("claude", (c) => { if (!c.laeuft && zustand.modus !== "rendern") modusSetzen("ruhe"); else if (c.laeuft && zustand.modus === "ruhe") modusSetzen("denken"); });
-    an("xp", (x) => { if (x.levelup) wackeln("stark"); });
   });
 
-  return { feed, simu, klang: KLANG, wechsel, modusSetzen, quests, wackeln };
+  return { feed, simu, klang: KLANG, wechsel, modusSetzen, wackeln };
 })();
