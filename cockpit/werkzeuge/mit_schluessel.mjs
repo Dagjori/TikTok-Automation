@@ -5,7 +5,8 @@
 //   node cockpit/werkzeuge/mit_schluessel.mjs render <args für pipeline/render_dienst/auftrag.py>   (senden …, warten …, status, pc)
 //   node cockpit/werkzeuge/mit_schluessel.mjs buffer <args für pipeline/post_buffer.py>             (--video … --kanal … , --nachpruefen)
 // Pfade relativ zum Arbeits-Klon (C:\tiktok\tiktok-automation). Exit-Code = Exit-Code des Skripts (1 bei Verbindungsfehler).
-// Lange Läufe (render warten) im Hintergrund starten; bricht der Aufruf ab, beendet der Server das Skript.
+// Lange Läufe (render warten) im Vordergrund mit Zeitlimit 600000 ms, bei Zeitablauf erneut aufrufen (nie im Hintergrund:
+// endet der Zug der Sitzung, endet alles). Bricht der Aufruf ab, beendet der Server das Skript.
 const URL_ = process.env.COCKPIT_URL || "http://127.0.0.1:4777";
 const TOKEN = process.env.COCKPIT_DB_TOKEN || "";
 const [werkzeug, ...args] = process.argv.slice(2);

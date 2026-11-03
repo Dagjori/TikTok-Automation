@@ -515,6 +515,9 @@ function claudeStarten(job) {
   // Git-Autor für Commits aus dem Cockpit (auf dem Desktop-PC ist keiner eingerichtet; ohne ihn scheitert jeder Commit)
   for (const k of ["GIT_AUTHOR_NAME", "GIT_COMMITTER_NAME"]) env[k] ||= "Claude Cockpit";
   for (const k of ["GIT_AUTHOR_EMAIL", "GIT_COMMITTER_EMAIL"]) env[k] ||= "noreply@anthropic.com";
+  // Python unter Windows sonst cp1252: Umlaute und Emojis in der Ausgabe brechen ab (gesehen 03.11. in der Produktion)
+  env.PYTHONUTF8 = "1";
+  env.PYTHONIOENCODING = "utf-8";
   for (const k of Object.keys(env)) if (/^SUPABASE_|^BUFFER_|^ELEVEN/i.test(k)) delete env[k];
 
   spur.aufgaben = [];
@@ -647,11 +650,14 @@ function claudeZeile(zeile, job = claude.aktiv, spur = claude) {
     return;
   }
   if (m.type === "result") {
+    // Nur das erste Ergebnis zählt (weitere kommen von Agenten innerhalb derselben Sitzung)
+    if (job && job.ergebnis !== undefined) return;
     if (job) Object.assign(job, { ergebnis: typeof m.result === "string" ? m.result : "", istFehler: !!m.is_error });
     const verweigert = (m.permission_denials || []).map((d) => d.tool_name).filter(Boolean);
+    // Produktion: „Erledigt“ erst nach Prüfung der Slots (produzieren → nachher), hier nur „Sitzung beendet“
     feedEintrag({
       art: "fertig",
-      text: m.is_error ? `Abgebrochen (${m.subtype})` : job && job.art !== "chat" ? `Erledigt: ${job.titel}` : "Auftrag erledigt",
+      text: m.is_error ? `Abgebrochen (${m.subtype})` : job?.spur === "produktion" ? `Sitzung beendet: ${job.titel} · Ergebnis je Video folgt` : job && job.art !== "chat" ? `Erledigt: ${job.titel}` : "Auftrag erledigt",
       dauer_s: Math.round((m.duration_ms || 0) / 1000),
       schritte: m.num_turns,
       verweigert,
@@ -702,6 +708,8 @@ function produzieren(datum, ids, hinweis = "") {
     text:
       `Du bist die Produktions-Sitzung des TikTok-Cockpits auf dem Rechner des Inhabers (Video-Tag ${datum}). ` +
       "Lies zuerst cockpit/anleitung/produktion.md vollständig und befolge sie Schritt für Schritt. " +
+      "WICHTIG: Du läufst als einmaliger Prozess (claude -p). Sobald du deinen Zug beendest, endet die Sitzung und alle Hintergrund-Agenten und -Befehle werden abgebrochen. " +
+      "Starte Agenten und lange Befehle deshalb nie im Hintergrund, warte im Vordergrund auf jedes Ergebnis und beende deinen Zug erst, wenn jedes Video geplant, Rückfrage oder Fehler ist. " +
       "Niemand antwortet im Chat: Rückfragen nur über den Status im Slot-Dokument.\n\nAUFTRAG\n" + JSON.stringify(auftrag),
     nachher: (_text, istFehler) => {
       for (const id of job.ids) {
@@ -715,7 +723,18 @@ function produzieren(datum, ids, hinweis = "") {
           fortschritt: "Produktion nicht abgeschlossen", aktualisiert: new Date().toISOString(),
         }, { art: "update", ifVersion: d.version, von: "cockpit" });
       }
-      lernen?.melden?.({ art: istFehler ? "fehler" : "info", titel: `🏭 Produktion ${datum} beendet`, text: job.ids.map((id) => `${id}: ${db.get("skripte", id)?.daten.status || "?"}`).join(" · "), ziel: { ansicht: "studio" } });
+      // Ehrliches Ergebnis: erledigt nur, wenn jedes Video geplant oder online ist
+      const stand = job.ids.map((id) => ({ id, d: db.get("skripte", id)?.daten || {} }));
+      const ok = stand.filter((s) => ["geplant", "gepostet"].includes(s.d.status));
+      const offen = stand.filter((s) => !["geplant", "gepostet"].includes(s.d.status));
+      const zeilen = stand.map((s) => `${s.d.titel || s.id}: ${s.d.status || "?"}${s.d.fehler ? ` (${String(s.d.fehler).slice(0, 140)})` : ""}`);
+      feedEintrag({
+        art: offen.length ? "fehler" : "fertig", spur: "produktion",
+        text: offen.length
+          ? `🏭 Produktion ${datum} NICHT erledigt: ${ok.length} von ${stand.length} geplant, ${offen.length} offen\n${zeilen.join("\n")}`
+          : `🏭 Produktion ${datum} erledigt: alle ${stand.length} Videos in Buffer geplant`,
+      });
+      lernen?.melden?.({ art: offen.length ? "fehler" : "erfolg", titel: offen.length ? `🏭 Produktion ${datum}: ${offen.length} von ${stand.length} Videos nicht geplant` : `🏭 Produktion ${datum}: alle Videos geplant`, text: zeilen.join("\n"), ziel: { ansicht: "studio" } });
     },
   };
   return claudeJob(job);
