@@ -30,7 +30,7 @@ let SY = 14, SP = 33, SONNE_HIER = richtung(SY, SP);            // Sonne in der 
 // Jahreszeit: Zyklen (s = Nachkomma: 0 März, 0.15 Mai, 0.3 Juli, 0.42 Aug, 0.55 Okt, 0.68 Nov, 0.8 Jan)
 const PHI = [{ t: 0, v: 0.33 }, { t: 20, v: 10.33 }, { t: 46.5, v: 19.16 }, { t: 47.5, v: 19.4 }, { t: 51, v: 19.47 }, { t: 54, v: 20.24 }, { t: 60, v: 20.3 }, { t: 70, v: 20.4 }, { t: 80, v: 20.42 }];
 const phi = (t) => keyframes(PHI.map((k) => ({ ...k, e: ease.linear })), t);
-const schneeBei = (t) => { const f = phi(t), s = f - Math.floor(f), jahrN = Math.floor(f - 0.74); const w = smoothstep(0.6, 0.8, s) * (1 - smoothstep(0.84, 0.99, s)); return 0.6 * w * (hash(jahrN, 7) < 0.5 ? 1 : 0.2); };
+const schneeBei = (t) => { const f = phi(t), s = f - Math.floor(f), jahrN = Math.floor(f - 0.3); const w = smoothstep(0.6, 0.8, s) * (1 - smoothstep(0.84, 0.99, s)); return 0.6 * w * (hash(jahrN, 7) < 0.5 ? 1 : 0.2); };
 
 async function start() {
   aktiviereHoehenNebel({ abfall: 0.004, basis: 0 });
