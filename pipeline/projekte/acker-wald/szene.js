@@ -23,7 +23,7 @@ const AUGE = [PODEST.x, PODEST.auge, PODEST.z];
 const L = ease.inOutSine;
 const BLICK = [{ t: 0, v: [3, -8] }, { t: 19, v: [1.5, -8] }, { t: 24.5, v: [-12, -9], e: L }, { t: 27, v: [-12, -9], e: L }, { t: 31.5, v: [17, -6], e: L },
   { t: 35, v: [19, -1], e: L }, { t: 39, v: [16, -3], e: L }, { t: 43.5, v: [0, -7], e: L }, { t: 48, v: [-6, -5], e: L }, { t: 50.5, v: [-4, -4], e: L }, { t: 54, v: [20, 12], e: L },
-  { t: 58, v: [26, 27], e: L }, { t: 61, v: [27, 28], e: L }, { t: 67.5, v: [16, -4], e: L }, { t: 70, v: [15, -4], e: L }];
+  { t: 58, v: [26, 27], e: L }, { t: 61, v: [27, 28], e: L }, { t: 67.5, v: [10, -4], e: L }, { t: 70, v: [9, -4], e: L }];
 const FOV = [{ t: 0, v: 56 }, { t: 40, v: 56 }, { t: 44, v: 60, e: L }, { t: 57, v: 62, e: L }, { t: 70, v: 60, e: L }];
 let SY = 14, SP = 33, SONNE_HIER = richtung(SY, SP);            // Sonne in der Lücke des Kronendachs (wird in start() gesucht)
 
@@ -67,7 +67,7 @@ async function start() {
   const samen = new Partikel(szene, { art: "staub", anzahl: 500, box: [16, 10, 16], seed: 23, groesse: 0.06, farbe: "#8A6A44", fall: 0.35, wirbel: 1.6 });
   const pollen = new Partikel(szene, { art: "staub", anzahl: 900, box: [14, 8, 14], seed: 24, groesse: 0.025, farbe: "#FFF2C8" });
   const kraehen = new Voegel(szene, { anzahl: 16, seed: 31, farbe: "#17171A", spannweite: 0.9 }).schwarm({ zentrum: [-6, 16, -42], radius: 22, hoehe: 6, tempo: 8, anzahl: 16 }).flucht({ t0: 22.4, richtung: [-1, 0.25, -0.4], tempo: 14 });
-  const singvoegel = new Voegel(szene, { anzahl: 22, seed: 32, farbe: "#2A2622", spannweite: 0.35 }).schwarm({ zentrum: [10, 22, -30], radius: 14, hoehe: 5, tempo: 7, anzahl: 22 });
+  const singvoegel = new Voegel(szene, { anzahl: 22, seed: 32, farbe: "#2A2622", spannweite: 0.35 }).schwarm({ zentrum: [3, 13, -24], radius: 9, hoehe: 4, tempo: 6, anzahl: 22 });
   const tauben = new Voegel(szene, { anzahl: 14, seed: 33, farbe: "#3A3A40", spannweite: 0.7 }).schwarm({ zentrum: [-60, 40, -160], radius: 40, hoehe: 10, tempo: 11, anzahl: 14 });
   const wolken = wolkenFeld({ anzahl: 16, bereich: { x: [-2600, 2600], z: [-3600, -900] }, hoehe: [520, 780], groesse: 150, farbe: "#F2F1EC", a: 0.85, wind: [14, 0], seed: 9 });
   const wolkenZeit = (t) => t < 20 ? t * 2 : 40 + (t - 20) * 4;
@@ -113,14 +113,14 @@ async function start() {
   const drescherAn = (t) => t > 46.8 && t < 51.8;
   // Reh 59–70 s: tritt aus dem Wald auf die Lichtung vor dem Podest
   const rehZust = (t) => {
-    const k = smoothstep(59, 64, t), x = lerp(6, 0.8, k), z = lerp(-18, -15, k) + 0.6 * smoothstep(64.5, 70, t);
+    const k = smoothstep(59, 64, t), x = lerp(2.5, -3.5, k), z = lerp(-29, -26, k) + 0.6 * smoothstep(64.5, 70, t);
     const gehen = (t > 59 && t < 63.6) ? 1 : 0.15, kopf = smoothstep(63.5, 65, t) * (1 - smoothstep(67.5, 69, t));
     return [x, z, Math.PI * 0.82, gehen, kopf];
   };
   // Eichelhäher 64,5–68 s: fliegt nah vorbei, von rechts nach links
   const haeherZust = (t) => {
     if (t < 64.5 || t > 68.2) return null;
-    const k = (t - 64.5) / 3.7, x = lerp(16, -6, k), z = lerp(-9, -14, k), y = 7 + 2.4 * Math.sin(k * Math.PI);
+    const k = (t - 64.5) / 3.7, x = lerp(7, -8, k), z = lerp(-7, -10, k), y = 6.6 + 1.2 * Math.sin(k * Math.PI);
     return { p: [x, y, z], dreh: -Math.PI / 2 - 0.25 };
   };
   const nebelPuffs = (t) => {
