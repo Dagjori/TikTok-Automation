@@ -1,0 +1,502 @@
+{
+ "skript_id": "acc2-2026-11-04-mittag",
+ "skript_quelle": "acc2-2026-11-04-mittag",
+ "titel": "Was wäre, wenn du einen Acker 144 Jahre lang in Ruhe lässt?",
+ "titelfrage": "Was wäre, wenn du einen Acker 144 Jahre lang in Ruhe lässt?",
+ "konto": "stelldirvor.pov",
+ "format": "referenz_pov",
+ "skill": "stelldirvor-video",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Grundwelt Feld → Wald (engine/welt_feld_wald.js, Erstbau 04.11.2026)",
+ "thema": "Broadbalk Wilderness (Rothamsted, Harpenden): ein Weizenacker, seit 1882 sich selbst überlassen, wird ohne Pflanzung zu Laubwald",
+ "welt": "Land, Feld → Wald (Welttyp Land/Feld, wird Wald und Lichtung): Weizenacker in Südengland mit Holzzaun, nebenan das weiter bewirtschaftete Weizenfeld, links ab 1900 die jährlich gerodete Hälfte (später Schafweide), rechts der wachsende Wald (Weißdorn, Esche, Bergahorn, einzelne Eichen, Efeu)",
+ "standpunkt": "Holzpodest 4 m hoch am vorderen Zaun, am Rand der gerodeten Hälfte; der Wald wächst rechts daneben und über dich hinaus",
+ "tageszeit_verlauf": "Tag im Jahreszeiten-Zeitraffer: Herbststoppeln, Schnee, Frühlingsgrün, Sommer, Laubfärbung, mehrfach Morgennebel und Abenddämmerung; am Höhepunkt Mittagssonne, die nur noch in Flecken durch das Kronendach fällt",
+ "kamera": "0–40 s ruhig, leichter Schwenk über den Acker und nach links zur gerodeten Hälfte (23 s); ab 44 s langsamer Schwenk nach oben, ab 52 s weiche Neigung ins Kronendach, bei 60 s Lichtfleck trifft das Podest; Nachspiel ruhiger Blick zurück auf Wald neben Wiese",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 20,
+   "faktor": "1 s = 0,5 Jahre",
+   "anzeige": "JAHR 1882–1892"
+  },
+  {
+   "von": 20,
+   "bis": 40,
+   "faktor": "1 s = 2,9 Jahre",
+   "anzeige": "JAHRE OHNE PFLUG 11–69"
+  },
+  {
+   "von": 40,
+   "bis": 52,
+   "faktor": "1 s = 4,1 Jahre",
+   "anzeige": "KOHLENSTOFF 234–400 t/ha"
+  },
+  {
+   "von": 52,
+   "bis": 60,
+   "faktor": "1 s = 3,4 Jahre",
+   "anzeige": "JAHR 1999–2026, HIER"
+  }
+ ],
+ "zeitraffer_hinweis": "Jahreszeiten laufen 0–20 s echt mit (halbjährlich), ab 20 s stilisiert im 3-s-Takt (ein Jahreslauf je Takt, Stroboskop-Zeitraffer), ab 54 s jeweils im Sommer; das Wachstum folgt dem echten Jahr.",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 20,
+   "etikett": "JAHR",
+   "start": "1882",
+   "ende": "1892",
+   "einheit": "",
+   "unter": "ZEITRAFFER: 1 SEKUNDE = 6 MONATE"
+  },
+  {
+   "von_s": 20,
+   "bis_s": 40,
+   "etikett": "JAHRE OHNE PFLUG",
+   "start": "11",
+   "ende": "69",
+   "einheit": "",
+   "unter": "1 SEKUNDE = 2,9 JAHRE"
+  },
+  {
+   "von_s": 40,
+   "bis_s": 52,
+   "etikett": "KOHLENSTOFF GEBUNDEN",
+   "start": "234",
+   "ende": "400",
+   "einheit": "t/ha",
+   "unter": "TONNEN PRO HEKTAR · 1950 BIS 1999"
+  },
+  {
+   "von_s": 52,
+   "bis_s": 60,
+   "etikett": "JAHR",
+   "start": "1999",
+   "ende": "2026 → HIER",
+   "einheit": "",
+   "unter": "1 SEKUNDE = 3,4 JAHRE"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Ein Weizenfeld in England, ohne Pflug und Ernte.",
+   3.6
+  ],
+  [
+   9.0,
+   "Nach vier Jahren ist der Weizen kaum zu erkennen.",
+   3.6
+  ],
+  [
+   13.2,
+   "Unkraut und Gras übernehmen den Boden.",
+   3.6
+  ],
+  [
+   17.4,
+   "Dann tauchen die ersten Büsche auf.",
+   3.8
+  ],
+  [
+   23.0,
+   "Die linke Hälfte wird nun jedes Jahr gerodet.",
+   3.7
+  ],
+  [
+   27.4,
+   "Rechts bleibt alles, wie es wächst.",
+   3.4
+  ],
+  [
+   31.4,
+   "Weißdorn schließt sich zu einem Dickicht.",
+   3.6
+  ],
+  [
+   35.6,
+   "Esche und Bergahorn wachsen über dich hinaus.",
+   4.3
+  ],
+  [
+   40.6,
+   "Jeder Baum zieht Kohlenstoff aus der Luft.",
+   3.8
+  ],
+  [
+   45.0,
+   "Auf der gerodeten Seite grasen jetzt Schafe.",
+   3.8
+  ],
+  [
+   49.4,
+   "Nebenan wird weiter Weizen geerntet.",
+   3.6
+  ],
+  [
+   53.6,
+   "Über dir ist kaum noch Himmel.",
+   4.0
+  ],
+  [
+   62.6,
+   "Niemand hat hier einen Baum gepflanzt.",
+   3.2
+  ],
+  [
+   66.4,
+   "Vögel und Wind haben den Wald gesät.",
+   3.4
+  ]
+ ],
+ "bild_text_abgleich": [
+  [
+   4.8,
+   "Ein Weizenfeld in England, ohne Pflug und Ernte.",
+   "Ungeerntetes Weizenfeld (Jahr 1884), Halme legen sich, Kraut kommt"
+  ],
+  [
+   9.0,
+   "Nach vier Jahren ist der Weizen kaum zu erkennen.",
+   "Weizen fast verschwunden, Kraut und Gras (Jahr 1886)"
+  ],
+  [
+   13.2,
+   "Unkraut und Gras übernehmen den Boden.",
+   "Kraut, Gras und Disteln bedecken den Boden (1888)"
+  ],
+  [
+   17.4,
+   "Dann tauchen die ersten Büsche auf.",
+   "Erste Brombeeren und Weißdorn-Sämlinge (1890)"
+  ],
+  [
+   23.0,
+   "Die linke Hälfte wird nun jedes Jahr gerodet.",
+   "Schwenk nach links: Büsche der linken Hälfte verschwinden 1900, kurzer Nachwuchs je Jahreslauf"
+  ],
+  [
+   27.4,
+   "Rechts bleibt alles, wie es wächst.",
+   "Schwenk nach rechts: Gebüsch wächst ungestört"
+  ],
+  [
+   31.4,
+   "Weißdorn schließt sich zu einem Dickicht.",
+   "Weißdorn-Dickicht rechts (um 1925)"
+  ],
+  [
+   35.6,
+   "Esche und Bergahorn wachsen über dich hinaus.",
+   "Kronen von Esche und Bergahorn über Augenhöhe, Herbstlaub (1937)"
+  ],
+  [
+   40.6,
+   "Jeder Baum zieht Kohlenstoff aus der Luft.",
+   "Hochwald im Licht, Anzeige Kohlenstoff 251 t/ha"
+  ],
+  [
+   45.0,
+   "Auf der gerodeten Seite grasen jetzt Schafe.",
+   "Schafe auf der gerodeten linken Hälfte (1960–2000)"
+  ],
+  [
+   49.4,
+   "Nebenan wird weiter Weizen geerntet.",
+   "Mähdrescher erntet hinten auf dem Nachbarfeld"
+  ],
+  [
+   53.6,
+   "Über dir ist kaum noch Himmel.",
+   "Blick nach oben: Kronendach deckt den Himmel fast ganz zu"
+  ],
+  [
+   62.6,
+   "Niemand hat hier einen Baum gepflanzt.",
+   "Nach dem Durchbruch: Blick sinkt auf den Wald, nur Laubbäume"
+  ],
+  [
+   66.4,
+   "Vögel und Wind haben den Wald gesät.",
+   "Eichelhäher fliegt durch, Samen treiben im Wind"
+  ]
+ ],
+ "faktenzeile": "HARPENDEN, ENGLAND, 1882 · KEIN BAUM GEPFLANZT, HEUTE LAUBWALD",
+ "rechenweg": "Jahr(t): 0–20 s 1882 + 0,5·t; 20–40 s 1892 + 2,9·(t−20); 40–52 s 1950 + 4,083·(t−40); 52–60 s 1999 + 3,375·(t−52) → 2026 bei 60 s. Gesamt 2026 − 1882 = 144 Jahre. Jahre ohne Pflug = Jahr − 1881 (letzte Saat Herbst 1881): 1892 → 11, 1950 → 69. Kohlenstoff = 3,39 t/ha/Jahr · (Jahr − 1881): 1950 → 233,9 ≈ 234 t/ha, 1999 → 400,0 t/ha; auf 0,2 ha ≈ 80 t. Satzzeiten gegen Anzeige geprüft (cockpit/daten/tmp/rechnung_0411.py): 4 Jahre Weizen = 1886 bei 8,0 s (Satz 9,0 s), erste Gehölze bis 1892 (Satz 17,4 s = 1890,7), Teilung 1900 bei 22,8 s (Satz 23,0 s), Schafe 1960–2000 (Satz 45,0 s = 1970).",
+ "rechnung_code": "pipeline/sim/acker_wald.mjs (Test acker_wald.test.mjs, 4/4 grün)",
+ "zahlen": {
+  "start_jahr": 1882,
+  "ende_jahr": 2026,
+  "jahre": 144,
+  "weizen_haelt_sich_jahre": 4,
+  "gehoelze_nach_jahren": "≤ 10",
+  "teilung": 1900,
+  "schafe": "1960–2000",
+  "c_zuwachs_t_ha_jahr": 3.39,
+  "c_1999_t_ha": 400,
+  "flaeche_ha": 0.2
+ },
+ "annahmen": [
+  "(A) Kohlenstoff-Anzeige linear mit dem Mittelwert 3,39 t/ha/Jahr hochgerechnet; belegt sind Mittelwert und Summe bis 1999 (≈ 400 t/ha), der tatsächliche Verlauf war nicht linear.",
+  "(A) Standpunkt Holzpodest 4 m am Zaun ist erfunden (POV), nicht Teil der Versuchsfläche.",
+  "(S) Dass Esche und Bergahorn bis ca. 1936 über 4 m hinauswachsen: Baumhöhen für Broadbalk nicht belegt; Vergleich Monks Wood (PLOS ONE 2021): 13,1 m mittlere Höhe nach 53 Jahren.",
+  "(A) Samenverbreitung (Vögel für Weißdorn, Wind für Esche/Bergahorn) ist allgemeine Biologie dieser Arten, für Broadbalk nicht einzeln gemessen; deshalb im Satz nur „Vögel und Wind“.",
+  "(A) Bildliche Vereinfachungen: Wachstumskurven der Gehölze geschätzt (Baumhöhen für Broadbalk nicht belegt), Jahreszeiten ab 20 s stilisiert, Eichelhäher als Vertreter der Vögel."
+ ],
+ "quellen": [
+  "(F) Broadbalk Wheat Experiment (Handout), Rothamsted Research, 2024: Wilderness 1882 eingezäunt und aufgegeben, Weizen hielt sich 4 Jahre und war dann kaum noch zu erkennen, ungepflegte Hälfte heute Laubwald v. a. Esche, Bergahorn, Weißdorn; Broadbalk wächst seit 1843 Weizen – https://www.era.rothamsted.ac.uk/metadata/rbk1/Broadbalk_handout_2024.pdf",
+  "(F) Experiment R/BK/1W Broadbalk Wilderness, e-RA Rothamsted: letzte Saat Herbst 1881 nie geerntet, 1882 eingezäunt, 1900 geteilt (eine Hälfte unberührt, andere jährlich gerodet), 1957 erneut geteilt, Schafe 1960–2000, Fläche 0,2 ha – https://www.era.rothamsted.ac.uk/experiment/rbk1w",
+  "(F) Broadbalk Wilderness accumulation of organic carbon (Datensatz 01-BKWoc), e-RA Rothamsted: Zuwachs 3,39 t C/ha/Jahr über 120 Jahre (0,54 Boden, 2,85 Bäume), Laub zersetzt sich jedes Jahr – https://www.era.rothamsted.ac.uk/dataset/rbk1w/01-BKWoc",
+  "(F) Harmer, Peterken, Kerr, Poulton: Vegetation changes during 100 years of development of two secondary woodlands on abandoned arable land, Biological Conservation 101, 291–304, 2001: Gehölze besiedelten Broadbalk innerhalb von 10 Jahren, dichter Schatten unter geschlossenem Kronendach – https://www.forestresearch.gov.uk/research/lowland-native-woodlands/lowland-native-woodlands-publications",
+  "(F) Broadbalk and Geescroft Wildernesses, Forest Research: natürliche Besiedlung, Weißdorn mit etwas Eiche, Esche, Bergahorn (1996), dichter Schatten, viel Efeu – https://www.forestresearch.gov.uk/?p=101937",
+  "(F) Appreciating woodland ecosystems through winter birdwatching, Forestry Commission (UK), 09.12.2025: Weißdorn besiedelt Lichtungen, weil Vögel die Samen tragen – https://forestrycommission.blog.gov.uk/2025/12/09/appreciating-woodland-ecosystems-through-winter-birdwatching/",
+  "(F) Tree seed dispersal, Teachers' Guide (Royal Gunpowder Mills), 2022: Esche und Bergahorn mit Flugsamen (Wind) – https://oaregunpowderworks.co.uk/wp-content/uploads/2022/11/TG3_Tree_Seed_Dispersal-a_teachers_guide.pdf"
+ ],
+ "caption": "Was passiert, wenn man einen Acker 144 Jahre in Ruhe lässt? 🌳 Ich hab’s durchgespielt. Aufforsten oder einfach wachsen lassen? 👇 #rewilding #wald #natur #wissen #waswaerewenn",
+ "korrekturen": [
+  "Titel 140 → 144 Jahre (1882–2026, Rothamsted).",
+  "Heute kein Eichenwald, sondern v. a. Esche, Bergahorn, Weißdorn (Rothamsted-Handout 2024); Pointe daher „Vögel und Wind“ statt „Eichelhäher“.",
+  "Anzeige statt Baumhöhe (nicht belegt): Jahre ohne Pflug und gebundener Kohlenstoff (e-RA)."
+ ],
+ "dramaturgie": [
+  "0–4,4 s: Herbst 1882, Stoppelfeld mit Resten von Weizen, frisch gezogener Zaun, Krähen, Wolkenzug; Titel oben.",
+  "5–20 s: halbjährlicher Wechsel sichtbar (Schnee, Grün, Gelb): Weizenhalme werden dünner (8 s fast weg), Unkraut und Gras schließen den Boden, bei 16–19 s erste Brombeeren und Weißdorn-Sämlinge, Vögel landen am Zaun.",
+  "20 s erste Wendung: Etikettwechsel, Zeitraffer ×6, Jahreszeiten flackern ruhig im 3-s-Takt; 23 s Schwenk nach links: die linke Hälfte wird jedes Jahr kahl (Gerodet-Effekt), rechts wächst Gebüsch – Kontrast als zweite Bildebene.",
+  "27–40 s Eskalation: Dickicht schließt sich, Esche und Bergahorn schießen auf, um 36 s überragen die Kronen das Podest (Aufleuchten Herbstlaub), Laubfall jedes Jahr als Partikel.",
+  "40–52 s: Etikett Kohlenstoff, Licht wird grüner und dunkler; 45 s links Schafe auf der Wiese (Leben), 49 s im Hintergrund Mähdrescher auf dem Nachbarfeld (Weizen seit 1843).",
+  "52–58 s Annäherung: Kamera neigt sich nach oben, Kronendach zieht sich zu, Himmel schrumpft zu Löchern, Spannung durch abnehmendes Licht.",
+  "60 s Höhepunkt HIER: 2026, ein einzelner Sonnenfleck fällt auf das Podest, Reh tritt auf die Lichtung darunter; Atmo Vogelchor am lautesten.",
+  "62–70 s Nachspiel: Blick zurück: links offene Wiese, rechts dichter Wald, beide aus demselben Acker; Wind in den Kronen, ein Eichelhäher fliegt durch.",
+  "72–80 s Abspann mit Titelfrage und Faktenzeile."
+ ],
+ "bewegungsplan": [
+  [
+   0,
+   "Reifer, ungeernteter Weizen, Krähen, Wolken",
+   1
+  ],
+  [
+   2.5,
+   "Halme legen sich (Herbst 1882)",
+   1
+  ],
+  [
+   4.5,
+   "Winter, Frühling: Jahreszeit wechselt alle 2 s",
+   1
+  ],
+  [
+   8,
+   "Weizen verschwindet",
+   2
+  ],
+  [
+   10,
+   "Morgennebel über dem Feld",
+   2
+  ],
+  [
+   13,
+   "Kraut und Disteln",
+   2
+  ],
+  [
+   16.5,
+   "Erste Büsche",
+   2
+  ],
+  [
+   19,
+   "Schwenk nach links",
+   2
+  ],
+  [
+   22.8,
+   "Linke Hälfte gerodet, Krähen fliegen auf",
+   3
+  ],
+  [
+   25.5,
+   "Abendrot",
+   3
+  ],
+  [
+   27,
+   "Schwenk nach rechts zum Dickicht",
+   3
+  ],
+  [
+   31,
+   "Dickicht, Jahreslauf im 3-s-Takt",
+   3
+  ],
+  [
+   36,
+   "Kronen über Augenhöhe, Herbstlaub leuchtet",
+   3
+  ],
+  [
+   38.6,
+   "Morgennebel",
+   3
+  ],
+  [
+   42.6,
+   "Schafe kommen",
+   3
+  ],
+  [
+   45,
+   "Frühling, Schafe grasen",
+   3
+  ],
+  [
+   47,
+   "Mähdrescher erntet nebenan",
+   4
+  ],
+  [
+   51,
+   "Herbst und Winter in 3 s",
+   4
+  ],
+  [
+   53,
+   "Blick hebt sich ins Kronendach",
+   4
+  ],
+  [
+   56,
+   "Kronendach schließt den Himmel",
+   4
+  ],
+  [
+   60,
+   "Sonne bricht durch (HIER), Lichtausbruch",
+   5
+  ],
+  [
+   61,
+   "Reh tritt auf die Lichtung",
+   4
+  ],
+  [
+   63,
+   "Blick sinkt auf den Wald",
+   3
+  ],
+  [
+   64.5,
+   "Eichelhäher fliegt vorbei, Samen im Wind",
+   3
+  ],
+  [
+   68,
+   "Ruhiger Blick, Wald neben Wiese",
+   2
+  ]
+ ],
+ "lern_notizen": {
+  "welt": "Land/Feld → Wald (England)",
+  "standpunkt": "Holzpodest 4 m am Feldrand",
+  "tageszeit": [
+   "Tag",
+   "Morgennebel",
+   "Abenddämmerung",
+   "Mittag"
+  ],
+  "kamera": [
+   {
+    "t": 19,
+    "art": "schwenk",
+    "was": "links zur gerodeten Hälfte"
+   },
+   {
+    "t": 27,
+    "art": "schwenk",
+    "was": "rechts zum Dickicht"
+   },
+   {
+    "t": 39,
+    "art": "schwenk",
+    "was": "Mitte: Schafe, Ernte"
+   },
+   {
+    "t": 44,
+    "art": "zoom",
+    "was": "Blick hebt sich ins Kronendach, Brennweite 56°→62°"
+   },
+   {
+    "t": 61,
+    "art": "schwenk",
+    "was": "Blick sinkt auf Wald und Wiese"
+   }
+  ],
+  "zeitraffer": [
+   {
+    "von": 0,
+    "bis": 20,
+    "faktor": "0,5 Jahre/s"
+   },
+   {
+    "von": 20,
+    "bis": 40,
+    "faktor": "2,9 Jahre/s"
+   },
+   {
+    "von": 40,
+    "bis": 52,
+    "faktor": "4,1 Jahre/s"
+   },
+   {
+    "von": 52,
+    "bis": 60,
+    "faktor": "3,4 Jahre/s"
+   }
+  ],
+  "effekte": [
+   {
+    "t": 10,
+    "name": "morgennebel"
+   },
+   {
+    "t": 22.8,
+    "name": "gerodet"
+   },
+   {
+    "t": 25.5,
+    "name": "abendrot"
+   },
+   {
+    "t": 42.6,
+    "name": "schafe"
+   },
+   {
+    "t": 47,
+    "name": "maehdrescher"
+   },
+   {
+    "t": 60,
+    "name": "sonne_bricht_durch"
+   },
+   {
+    "t": 61,
+    "name": "reh"
+   },
+   {
+    "t": 64.5,
+    "name": "eichelhaeher"
+   }
+  ],
+  "sequenzen": [
+   "Weizenfeld",
+   "Kraut",
+   "Büsche/Teilung",
+   "Dickicht",
+   "Hochwald mit Schafen und Ernte",
+   "Kronendach",
+   "Durchbruch HIER",
+   "Nachspiel Wald"
+  ]
+ }
+}
