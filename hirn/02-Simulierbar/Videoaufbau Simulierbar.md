@@ -16,7 +16,7 @@ Feste Reihenfolge jedes Simulierbar-Videos, als Zeitplan für **Ben im Original*
 > Der Ablauf beginnt mit „**Skript liegt vor**“ (Ideen-Studio: die Tages-Sitzung von Claude Code recherchiert und schreibt es, der Inhaber gibt frei; kein 30-Tage-Plan mehr). Dazu: Skript-Anforderungen (Abschnitt 5), Dramaturgie und Effekte (Abschnitt 6), Tempo 150–190 Wörter, nur Thema GELD, keine Sperrliste (aber keine 1:1-Kopie), Länder frei. Workflow rund um das Ideen-Studio: [[Claude-Chat-Workflow]], [[Befehl Ideen und Skripte Simulierbar]].
 
 ## Die elf Bausteine in fester Reihenfolge
-1. **Scroll-Stopper-Hook** (0–5 s: Duell-Frage oder Du-Szenario, Stimme < 0,2 s, ganze Szene ab Bild 1)
+1. **Scroll-Stopper-Hook** (0–5 s: Duell im ersten Satz, beide Seiten konkret genannt, seit 04.11. Pflicht; Du-Szenario nur mit beiden Seiten, keine Einzelfrage, kein Ergebnis vorweg; Stimme < 0,2 s, ganze Szene ab Bild 1)
 2. **Regeln** als Mini-Fakten mit Chips
 3. **Denkfalle** „Klar, …. Oder?“, ruhig (bis 16 s), **kein „Los geht's“**
 4. **Rennen** mit laufender Uhr/Zählern, ruhiger Erzähler (kein Sportreporter)
@@ -39,7 +39,7 @@ Feste Reihenfolge jedes Simulierbar-Videos, als Zeitplan für **Ben im Original*
 ## 1. Zeitplan (65–80 s, mindestens 61 s)
 | Zeit | Phase | Sprechtext (Muster) | Bild (Welt zuerst, HUD unterstützt) |
 |---|---|---|---|
-| 0–5 s | **Hook** | Duell-Frage in max. 2 kurzen Sätzen: „X oder Y? Was … wirklich …?“ oder Du-Szenario. Stimme startet < 0,2 s. | Ganze Szene mit beiden Seiten von Bild 1 an, schon in Bewegung (Licht, Verkehr, Staub, Kamera fährt). Tafel oben ab Bild 0 (Werte 0). Optional Titel Wort für Wort. |
+| 0–5 s | **Hook** | **Duell im ersten Satz (Pflicht seit 04.11.):** beide Alternativen bzw. Personen konkret genannt, max. 2 kurze Sätze: „X oder Y? Was … wirklich …?“ bzw. „Einer verdient ab 16, der andere ab 24. Wer hat mit 40 mehr?“. Du-Szenario nur mit beiden Seiten; keine Einzelfrage, kein Ergebnis vorweg. Stimme startet < 0,2 s. | Ganze Szene mit beiden Seiten von Bild 1 an, schon in Bewegung (Licht, Verkehr, Staub, Kamera fährt). Tafel oben ab Bild 0 (Werte 0). Optional Titel Wort für Wort. |
 | 3–12 s | **Regeln** | 3–6 Mini-Fakten, 2–5 Wörter je Satz | Jede Regel erscheint genau beim Wort: als Objekt in der Welt (Preisschild, Münzstapel, Route, Gefäß) und als Chip. |
 | bis 16 s | **Denkfalle** | „Klar, [naheliegende Antwort]. Oder?“ ruhig gesprochen. **Kein „Los geht's“.** | Kamera rückt die naheliegende Seite ins Licht (Schärfe, Lichtkegel). Kein Sticker. |
 | ab ca. 13 s | **Rennen** | ruhiger Erzähler-Kommentar, alle 2–3 s ein Zwischenstand | Uhr bzw. Zähler laufen sichtbar (Tafel, Uhr, Füllstand, Münzstapel, Lichtspur), Kamera folgt. |

@@ -207,7 +207,7 @@ direktes „du“ („Womit wirst du …“, „Und du?“). Im Text kommt kein 
 | # | Prüfpunkt |
 |---|---|
 | 1 | Stimme startet unter 0,2 s, erstes Bild zeigt die komplette Szene mit beiden Seiten |
-| 2 | Hook = Duell-Frage bzw. Du-Szenario in max. 2 Sätzen, fertig gesprochen vor Sekunde 5 |
+| 2 | Hook = Duell, das im ersten Satz beide Seiten konkret nennt (Du-Szenario nur mit beiden Seiten; keine Einzelfrage, kein Ergebnis vorweg; seit 04.11.), max. 2 Sätze, fertig gesprochen vor Sekunde 5 |
 | 3 | Denkfalle („Klar …, oder?“) und Startsignal vor Sekunde 16 |
 | 4 | Ab Rennstart laufen Uhr bzw. Zähler sichtbar mit |
 | 5 | Keine Phase über 2 s ohne neues Bild-Ereignis (Chip, Zahl, Kamera, Licht, Welt-Bewegung, Szenenwechsel; Sticker zählen nicht, sie sind verboten) |

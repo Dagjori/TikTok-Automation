@@ -6,7 +6,7 @@ Quelle: `CLAUDE.md` §6 und [massstab.md](massstab.md) §1, §11; Neuregeln des 
 
 | Zeit | Phase | Sprechtext (Muster) | Bild (Welt zuerst, HUD unterstützt) |
 |---|---|---|---|
-| 0–5 s | **Hook** | Duell-Frage in max. 2 kurzen Sätzen: „X oder Y? Was … wirklich …?“ oder Du-Szenario. Stimme startet < 0,2 s. | Ganze Szene mit beiden Seiten von Bild 1 an, schon in Bewegung (Licht, Verkehr, Staub, Kamera fährt). Tafel oben ab Bild 0 (Werte 0). Optional Titel Wort für Wort. |
+| 0–5 s | **Hook** | **Duell im ersten Satz (Pflicht seit 04.11.):** beide Alternativen bzw. beide Personen konkret genannt und gegeneinander gestellt, max. 2 kurze Sätze: „X oder Y? Was … wirklich …?“ bzw. „Einer verdient ab 16, der andere ab 24. Wer hat mit 40 mehr?“. Du-Szenario nur mit beiden Seiten im Hook. Keine Einzelfrage („Wie viel kostet X wirklich?“), kein vorweggenommenes Ergebnis. Stimme startet < 0,2 s. | Ganze Szene mit beiden Seiten von Bild 1 an, schon in Bewegung (Licht, Verkehr, Staub, Kamera fährt). Tafel oben ab Bild 0 (Werte 0). Optional Titel Wort für Wort. |
 | 3–12 s | **Regeln** | 3–6 Mini-Fakten, 2–5 Wörter je Satz | Jede Regel erscheint genau beim Wort: als Objekt in der Welt (Preisschild, Münzstapel, Route, Gefäß) und als Chip. |
 | bis 16 s | **Denkfalle** | „Klar, [naheliegende Antwort]. Oder?“ ruhig gesprochen. **Kein „Los geht's“.** | Kamera rückt die naheliegende Seite ins Licht (Schärfe, Lichtkegel). Kein Sticker. |
 | ab ca. 13 s | **Rennen** | ruhiger Erzähler-Kommentar, alle 2–3 s ein Zwischenstand | Uhr bzw. Zähler laufen sichtbar (Tafel, Uhr, Füllstand, Münzstapel, Lichtspur), Kamera folgt. |
@@ -25,7 +25,7 @@ Quelle: `CLAUDE.md` §6 und [massstab.md](massstab.md) §1, §11; Neuregeln des 
 Hook ca. 12 · Regeln ca. 24 · Denkfalle ca. 6 · Rennen ca. 28 · Folgen-Aufruf 6 (fest) · erste Wendung ca. 18 · Ergebnis ca. 24 · „Warum?“ ca. 18 · zweite Überraschung ca. 18 · Merksatz ca. 12 · Schluss 11 (fest). Dazwischen darf verschoben werden, solange die Zeitpunkte der Tabelle halten (Folgen-Aufruf ca. 20 s entspricht bei 2,3 W/s etwa dem 46. Wort).
 
 ## 2. Satzmuster und Textregeln (ruhig gesprochen)
-- Hook „X oder Y? Was … wirklich …?“ · Denkfalle „Klar, X. Oder?“ · Wendung „Aber jetzt kommt das Merkwürdige:“, „Doch …“ · Spannung als Countdown-Fetzen · Ergebnis „Endstand:“ · Erklärung „Warum?“ · Zweite Überraschung „Und das Verrückte:“ · Merksatz kurz.
+- Hook „X oder Y? Was … wirklich …?“ bzw. „A macht X, B macht Y. Wer hat am Ende mehr?“ (beide Seiten konkret im ersten Satz; Themen ohne natürliche Gegenseite als Duell rahmen, z. B. Kind: Ausgaben gegen Kindergeld schon im Hook, sonst Thema nicht nehmen; Freigabe Inhaber 04.11.2026, Messung: Duell-Hooks halten im Median 34 % der Länge, Einzelfrage/Ergebnis vorweg 19 %, n = 9) · Denkfalle „Klar, X. Oder?“ · Wendung „Aber jetzt kommt das Merkwürdige:“, „Doch …“ · Spannung als Countdown-Fetzen · Ergebnis „Endstand:“ · Erklärung „Warum?“ · Zweite Überraschung „Und das Verrückte:“ · Merksatz kurz.
 - Sätze meist unter 10 Wörtern, Median 4–8. „du“-Ansprache. Zahlen im Sprechtext ausgeschrieben.
 - Immer eine offene Frage im Kopf des Zuschauers: Jede Phase endet mit einer Spannung, die erst die nächste auflöst („Also ist Rennen doch schlechter? Noch nicht.“).
 - Konkrete Personen bzw. Teams mit Namen oder Buchstaben (Paul gegen Anna, A gegen B). Zahlen rund und hörbar („zwanzig Sekunden“), im Bild die exakte Zahl.
