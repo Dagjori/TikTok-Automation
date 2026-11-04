@@ -30,6 +30,7 @@ node qc/text_ueberlappung_pov.mjs projekte/<name>       # Exit 0 = keine Überla
 | 10b | **Kein Einzelbild-Flackern** | Kein Bild, das aus der Reihe springt und gleich zurückkehrt (Sprung ≥ 4 und Rückkehr ≤ 35 %); Render-Aussetzer. Beim Eiszeit-Video 5×, ein Teil des Vordergrunds (Wasserspiegelung) springt kurz |
 | 11 | **Zeitraffer ausgewiesen, Anzeige läuft mit** | `skript.json → zeitraffer` ist vorhanden (Liste `{von, bis, faktor}` oder `"keiner"`); in jedem Abschnitt ändert sich die Anzeige in ≥ 80 % der Schritte |
 | 12 | **Anzeige ohne unbegründete Sprünge** | Innerhalb eines Etiketts kein Schritt, der ≥ 3× größer ist als seine Nachbarschritte und ≥ 2 % der Spanne beträgt (Etikettwechsel ausgenommen) |
+| 13 | **Einstieg dicht** (seit 04.11.2026) | Erster Welteffekt vor 4 s (Protokoll-Effekt oder Bildveränderung ≥ 2,5 in 0–4 s), erster Schwenk/Zoom/Fahrt vor 8 s (Protokoll `typ: "kamera"` oder `skript.json → kamera` bzw. `lern_notizen → kamera`; `atmen`, Beben zählen nicht), Anzeige ändert sich vor 8 s. Grund: Ø-Wiedergabezeit 9–15 s bei Videos mit ruhigem Einstieg (Lernschleife 03.11.) |
 
 ## 2. Kontaktbogen und Sichtprüfung (Claude selbst)
 ```bash
@@ -37,7 +38,7 @@ ffmpeg -v error -i out/<name>/<name>.mp4 -vf "fps=0.5,scale=216:384,tile=8x5" -f
 ```
 Prüfen und im Bericht festhalten:
 - [ ] **Satz für Satz** mit `skript.json → bild_text_abgleich`: Ist das Genannte im Moment des Satzes zu sehen? Stimmen Zahlen mit der Anzeige? Wurden Titelfrage, Sätze und Faktenzeile **1:1** aus dem Skript übernommen (jede Abweichung steht mit Quelle unter `korrekturen`; bei gekipptem Ergebnis liegt die Zustimmung des Inhabers vor)?
-- [ ] Bild 0 zeigt die volle, belebte Szene mit Anzeige und schon Bewegung; Titel blendet bis 4,4 s aus.
+- [ ] Bild 0 zeigt die volle, belebte Szene mit Anzeige und schon Bewegung; Titel blendet bis 4,4 s aus. **Einstieg dicht** (Hinweis 13): Welteffekt vor 4 s, Kamerabewegung vor 8 s, Anzeige ändert sich vor 8 s, ruhige Phase höchstens 5 s.
 - [ ] **Welt passt zum Thema** (Natur zuerst, Stadt nur, wenn das Thema sie braucht), keine Standard-Skyline als Dauerkulisse; **Weltvielfalt:** Welttyp und Standpunkt anders als im vorigen Video, Tageszeit wechselt, nicht zwei gleiche Enden am selben Tag.
 - [ ] **Bewegung statt Warten:** In jedem 2–3-s-Abschnitt des Kontaktbogens (und in den Standbildern dazwischen) ist eine themenbezogene Veränderung zu sehen (Licht, Wetter, Wasser, Vegetation, Eis, Wolkenzug, Tiere, Fahrzeuge, Kamerafahrt); Hinweis 10 ist erklärt. Mindestens 4 erkennbare Phasen, mindestens 3 Ebenen Leben gleichzeitig. Gibt es Leerlauf, wird die Abnahme verweigert.
 - [ ] **Zeitraffer und Anzeige passen zusammen:** Im Faktor-Abschnitt (siehe `skript.json → zeitraffer`) läuft die Zahl im Tempo der sichtbaren Veränderung (Pegel, Schatten, Eisrand), der Faktor steht in der Unterzeile, wo nötig, keine Sprünge ohne Grund (Hinweise 11, 12).

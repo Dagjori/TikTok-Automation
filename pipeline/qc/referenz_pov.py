@@ -12,7 +12,8 @@ Prüft:   21 Pflichtpunkte: Länge 80 ± 0,5 s · Titel nur in 0–4,4 s · Mess
          Verlauf: Start leiser als Höhepunkt (55–65 s), Abspann leise.
          Dazu Hinweise (nicht Pflicht, Ausgabe „nein (Hinweis)“, Exit-Code bleibt 0), seit 02.11.2026 abends:
          10 Bewegung (kein Leerlauf in 2,5-s-Fenstern) · 10b Einzelbild-Flackern · 11 Zeitraffer im Skript ausgewiesen und Anzeige läuft mit ·
-         12 Anzeige ohne unbegründete Sprünge.
+         12 Anzeige ohne unbegründete Sprünge · 13 Einstieg dicht (seit 04.11.2026: Welteffekt vor 4 s, Kamerafahrt/-schwenk/Zoom
+         vor 8 s laut Protokoll oder skript.json → kamera, Anzeige ändert sich vor 8 s).
 Nr. 9 („Kein 5-Sekunden-Rahmen“) entfällt seit 02.11.2026 abends (Inhaber: 5-Sekunden-Themen sind erlaubt); die Nummern bleiben stabil.
 Bildanalyse (5b, 10, 10b) braucht numpy und ffmpeg; ohne numpy bleibt 5b beim Protokoll, 10/10b entfallen mit Hinweis.
 """
@@ -169,6 +170,35 @@ def luecken(fenster, grenze):
     return [tuple(x) for x in out]
 
 
+EINSTIEG_EFFEKT, EINSTIEG_KAMERA, EINSTIEG_ANZEIGE = 4.0, 8.0, 8.0   # s (Vorschlag der Lernschleife, Inhaber 04.11.2026)
+KAMERA_ARTEN = ("fahrt", "schwenk", "zoom", "drift", "kran", "dolly")
+
+
+def einstieg(ev, skript, fenster=None):
+    """Hinweis 13: Einstieg dicht. Liefert [(Teil, Ist-Text, ok)] für Welteffekt < 4 s, Kamerabewegung < 8 s, Anzeige ändert sich < 8 s.
+    Welteffekt: Protokoll-Effekt vor 4 s oder (Bildanalyse) ein 2,5-s-Fenster mit Start < 1,5 s, das ≥ BEWEGUNG_MIN Veränderung zeigt.
+    Kamera: Protokoll typ „kamera“ (fahrt/schwenk/zoom) oder skript.json → kamera bzw. lern_notizen → kamera (atmen/beben zählen nicht)."""
+    res = []
+    eff = sorted(e["t"] for e in ev if e.get("typ") == "effekt" and e.get("t") is not None)
+    bild = [w for t0, w in (fenster or []) if t0 + BEWEGUNG_FENSTER <= EINSTIEG_EFFEKT + 1e-6]
+    if eff and eff[0] < EINSTIEG_EFFEKT:
+        res.append(("Welteffekt", f"Effekt bei {eff[0]:.1f} s", True))
+    elif bild and max(bild) >= BEWEGUNG_MIN:
+        res.append(("Welteffekt", f"Bildveränderung {max(bild):.1f} in 0–4 s", True))
+    else:
+        res.append(("Welteffekt", f"erster Effekt {eff[0]:.1f} s" if eff else "kein Effekt vor 4 s", False))
+    kam = [e["t"] for e in ev if e.get("typ") == "kamera" and str(e.get("art", "")).lower() in KAMERA_ARTEN and e.get("t") is not None]
+    for quelle in (skript.get("kamera"), (skript.get("lern_notizen") or {}).get("kamera")):
+        if isinstance(quelle, list):
+            kam += [float(k["t"]) for k in quelle if isinstance(k, dict) and k.get("t") is not None and any(a in str(k.get("art", "")).lower() for a in KAMERA_ARTEN)]
+    k0 = min(kam) if kam else None
+    res.append(("Kamera", f"erste Bewegung {k0:.1f} s" if k0 is not None else "keine Fahrt/Schwenk/Zoom geplant", k0 is not None and k0 < EINSTIEG_KAMERA))
+    an = [e for e in ev if e.get("typ") == "anzeige" and e.get("wert") is not None]
+    a0 = next((b["t"] for a, b in zip(an, an[1:]) if a["wert"] != b["wert"] or a.get("etikett") != b.get("etikett")), None)
+    res.append(("Anzeige", f"erste Änderung {a0:.1f} s" if a0 is not None else "ändert sich nicht", a0 is not None and a0 < EINSTIEG_ANZEIGE))
+    return res
+
+
 def zeiten_text(liste, maximal=4):
     return ", ".join(f"{t:.1f}" for t in liste[:maximal]) + (" …" if len(liste) > maximal else "")
 
@@ -275,8 +305,11 @@ def main():
         ist = "keine (Protokoll und Bildvergleich Bild für Bild)"
     z("5b", "Keine harten Schnitte (Fahrt, Schwenk, Zoom erlaubt)", ist, "keine", not schnitte_prot and not schnitte_bild)
     # 10, 10b: Bewegung (Hinweis; die Sichtprüfung in pruefung.md entscheidet)
+    fen = bewegung_fenster(bilder) if bilder is not None else None
+    # 13: Einstieg (Hinweis; Lernschleife 03.11., Inhaber 04.11.2026): Welteffekt < 4 s, Kamerabewegung < 8 s, Anzeige ändert sich < 8 s
+    teile = einstieg(ev, skript, fen)
+    z("13", "Einstieg: Effekt < 4 s, Kamera < 8 s, Anzeige < 8 s", "; ".join(f"{n}: {t}" for n, t, _ in teile)[:60] if all(o for *_, o in teile) else "; ".join(f"{n}: {t}" for n, t, o in teile if not o)[:60], "alle drei erfüllt (ruhige Phase ≤ 5 s)", all(o for *_, o in teile), pflicht=False)
     if bilder is not None:
-        fen = bewegung_fenster(bilder)
         leer = luecken(fen, BEWEGUNG_MIN)
         z("10", "Bewegung: kein Leerlauf (Veränderung in jedem 2,5-s-Fenster)", ("Leerlauf " + ", ".join(f"{v:.1f}–{b:.1f} s ({m:.1f})" for v, b, m in leer[:3]) + (" …" if len(leer) > 3 else "")) if leer else f"kleinste Veränderung {min(w for _, w in fen):.1f}", f"≥ {BEWEGUNG_MIN:g} (Grauwerte) je Fenster, 0–70 s", not leer, pflicht=False)
         flackern = einzelbild_flackern(bilder, ev)
