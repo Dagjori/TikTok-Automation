@@ -13,8 +13,8 @@
   {
    "id": "hook",
    "phase": "hook",
-   "text": "Deine Gasheizung ist 20 Jahre alt. Neue Gasheizung oder Wärmepumpe?",
-   "sprechtext": "Deine Gasheizung ist zwanzig Jahre alt.\n[curious] Neue Gasheizung – oder WÄRMEPUMPE?",
+   "text": "Deine Gasheizung ist 20 Jahre alt. Neue oder Wärmepumpe?",
+   "sprechtext": "Deine Gasheizung ist zwanzig Jahre alt.\nNeue – oder WÄRMEPUMPE?",
    "bild_text_abgleich": [
     {
      "gesagt": "Deine Gasheizung ist zwanzig Jahre alt.",
@@ -29,8 +29,8 @@
   {
    "id": "regeln",
    "phase": "regeln",
-   "text": "130 Quadratmeter, normales Einfamilienhaus. Wir rechnen 20 Jahre. Neue Gasheizung: 10.000 Euro. Wärmepumpe: 35.000 Euro. Der Staat zahlt dir 12.880 Euro dazu.",
-   "sprechtext": "Hundertdreißig Quadratmeter, normales Einfamilienhaus.\nWir rechnen zwanzig Jahre.\nNeue Gasheizung: zehntausend Euro.\nWärmepumpe: fünfunddreißigtausend.\nDer Staat zahlt dir knapp DREIZEHNTAUSEND dazu.",
+   "text": "Wir rechnen 20 Jahre. Gasheizung: 10.000 Euro. Wärmepumpe: 35.000 Euro. Der Staat zahlt 12.880 Euro dazu.",
+   "sprechtext": "Wir rechnen zwanzig Jahre.\nGasheizung: zehntausend Euro.\nWärmepumpe: fünfunddreißigtausend.\nDer Staat zahlt knapp DREIZEHNTAUSEND dazu.",
    "bild_text_abgleich": [
     {
      "gesagt": "Hundertdreißig Quadratmeter, normales Einfamilienhaus.",
@@ -57,8 +57,8 @@
   {
    "id": "falle",
    "phase": "falle",
-   "text": "Klar, die günstige Gasheizung gewinnt. Oder?",
-   "sprechtext": "Klar … die günstige Gasheizung GEWINNT.\nOder?",
+   "text": "Klar, Gas gewinnt. Oder?",
+   "sprechtext": "Klar … Gas GEWINNT.\nOder?",
    "bild_text_abgleich": [
     {
      "gesagt": "Klar … die günstige Gasheizung GEWINNT. Oder?",
@@ -69,8 +69,8 @@
   {
    "id": "rennen",
    "phase": "rennen",
-   "text": "Start: Die Wärmepumpe liegt 12.120 Euro hinten.",
-   "sprechtext": "Start:\nDie Wärmepumpe liegt zwölftausend Euro HINTEN.",
+   "text": "Die Wärmepumpe startet 12.120 Euro hinten.",
+   "sprechtext": "Die Wärmepumpe startet zwölftausend Euro HINTEN.",
    "bild_text_abgleich": [
     {
      "gesagt": "Start: Die Wärmepumpe liegt zwölftausend Euro HINTEN.",
@@ -93,8 +93,8 @@
   {
    "id": "wendung1",
    "phase": "wendung1",
-   "text": "Doch das Merkwürdige: Gas kostet dich 2.019 Euro im Jahr. Die Wärmepumpe nur 1.263 Euro. Jedes Jahr holt sie 756 Euro auf.",
-   "sprechtext": "Doch das Merkwürdige:\nGas kostet dich zweitausend Euro im Jahr.\nDie Wärmepumpe nur zwölfhundertsechzig.\nJedes Jahr holt sie gut SIEBENHUNDERTFÜNFZIG Euro auf.",
+   "text": "Aber: Gas kostet dich 2.019 Euro im Jahr. Die Wärmepumpe nur 1.263 Euro. Sie holt jedes Jahr 756 Euro auf.",
+   "sprechtext": "Aber:\nGas kostet dich zweitausend Euro im Jahr.\nDie Wärmepumpe nur zwölfhundertsechzig.\nSie holt jedes Jahr gut SIEBENHUNDERTFÜNFZIG auf.",
    "bild_text_abgleich": [
     {
      "gesagt": "Doch das Merkwürdige: Gas kostet dich zweitausend Euro im Jahr.",
@@ -113,8 +113,8 @@
   {
    "id": "wendung2",
    "phase": "wendung2",
-   "text": "Jahr 5, 10, 15: Gas liegt noch vorn. Jahr 16: 24 Euro Abstand. Jetzt wird's knapp.",
-   "sprechtext": "Jahr fünf, zehn, fünfzehn … Gas liegt noch vorn.\nJahr sechzehn: vierundzwanzig Euro Abstand.\nJetzt wird's KNAPP.",
+   "text": "Jahr 10, 15: Gas bleibt vorn. Jahr 16: nur noch 24 Euro.",
+   "sprechtext": "Jahr zehn, fünfzehn … Gas bleibt vorn.\nJahr sechzehn: nur noch vierundzwanzig Euro.",
    "bild_text_abgleich": [
     {
      "gesagt": "Jahr fünf, zehn, fünfzehn … Gas liegt noch vorn.",
@@ -145,8 +145,8 @@
   {
    "id": "ergebnis",
    "phase": "ergebnis",
-   "text": "Endstand nach 20 Jahren: Gas 50.383 Euro. Wärmepumpe 47.384 Euro. Die Wärmepumpe spart dir 2.999 Euro.",
-   "sprechtext": "Endstand nach zwanzig Jahren:\nGas – gut fünfzigtausend Euro.\nWärmepumpe – gut siebenundvierzigtausend.\nDie Wärmepumpe spart dir rund DREITAUSEND Euro.",
+   "text": "Nach 20 Jahren: Gas 50.383 Euro. Wärmepumpe 47.384 Euro. Sie spart dir 2.999 Euro.",
+   "sprechtext": "Nach zwanzig Jahren:\nGas – gut fünfzigtausend Euro.\nWärmepumpe – gut siebenundvierzigtausend.\nSie spart dir rund DREITAUSEND Euro.",
    "bild_text_abgleich": [
     {
      "gesagt": "Endstand nach zwanzig Jahren:",
@@ -165,8 +165,8 @@
   {
    "id": "warum",
    "phase": "warum",
-   "text": "Warum so knapp? Aus 1 Kilowattstunde Strom macht sie gut 3 Kilowattstunden Wärme. Aber ohne Förderung würde sie verlieren.",
-   "sprechtext": "[thoughtful] Warum so knapp?\nAus einer Kilowattstunde Strom macht sie gut DREI Kilowattstunden Wärme.\nAber ohne Förderung würde sie verlieren.",
+   "text": "Warum? Aus 1 Kilowattstunde Strom macht sie gut 3 Kilowattstunden Wärme. Ohne Förderung würde sie verlieren.",
+   "sprechtext": "[thoughtful] Warum?\nAus einer Kilowattstunde Strom macht sie gut DREI Kilowattstunden Wärme.\nOhne Förderung würde sie verlieren.",
    "bild_text_abgleich": [
     {
      "gesagt": "Warum so knapp?",
@@ -185,8 +185,8 @@
   {
    "id": "ueberraschung",
    "phase": "ueberraschung",
-   "text": "Und das Verrückte: Die Rechnung schont die Gasheizung noch. Ab 2029 braucht sie Biogas, bis zu 60 Prozent. Schon die erste Stufe kostet heute rund 200 Euro im Jahr.",
-   "sprechtext": "Und das Verrückte:\nDie Rechnung SCHONT die Gasheizung noch.\nAb zweitausendneunundzwanzig braucht sie Biogas, bis zu sechzig Prozent.\nSchon die erste Stufe kostet heute rund zweihundert Euro im Jahr.",
+   "text": "Und das Verrückte: Die Rechnung schont das Gas noch. Ab 2029 muss Biogas rein. Die erste Stufe kostet heute schon rund 200 Euro im Jahr.",
+   "sprechtext": "Und das Verrückte:\nDie Rechnung SCHONT das Gas noch.\nAb zweitausendneunundzwanzig muss Biogas rein.\nDie erste Stufe kostet heute schon rund zweihundert Euro im Jahr.",
    "bild_text_abgleich": [
     {
      "gesagt": "Und das Verrückte: Die Rechnung SCHONT die Gasheizung noch.",
@@ -295,5 +295,5 @@
  },
  "korrekturen": [],
  "skript_quelle": "acc1-2026-11-04-abend",
- "skript_aenderungen": "Keine inhaltliche Änderung; nur technisch: Segment-IDs aus dem Studio-Skript, Bildabgleich ergänzt."
+ "skript_aenderungen": "Gekürzt für die Länge (erste Vertonung 90,3 s statt 65–80 s, Hook 5,6 s, Denkfalle 20,2 s): Einfamilienhaus/130 m² nur noch im Bild (Chip), Füllsätze weg („Jetzt wird's knapp“, „Doch das Merkwürdige“ → „Aber“, „Jahr fünf“), Denkfalle „Klar … Gas GEWINNT. Oder?“, „Warum so knapp?“ → „Warum?“, „bis zu 60 Prozent“ nur im Bild (Bio-Treppe). Zahlen, Ergebnis und Pointen unverändert."
 }
