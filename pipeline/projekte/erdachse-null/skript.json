@@ -1,0 +1,527 @@
+{
+ "skript_id": "acc2-2026-11-05-abend",
+ "skript_quelle": "acc2-2026-11-05-abend",
+ "titel": "Was wäre, wenn die Erdachse nicht mehr geneigt wäre?",
+ "titelfrage": "Was wäre, wenn die Erdachse nicht mehr geneigt wäre?",
+ "konto": "stelldirvor.pov",
+ "format": "referenz_pov",
+ "skill": "stelldirvor-video",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Welt engine/welt_waldlichtung.js (Erstbau 05.11.2026)",
+ "thema": "Achsneigung sinkt von 23,44° auf 0°: die Jahreszeiten verschwinden, die Mittagssonne steht jeden Tag gleich hoch, jeder Tag dauert rund zwölf Stunden",
+ "welt": "Wald/Lichtung (Welttyp Wald): Waldlichtung im Thüringer Wald bei ca. 50,7° N (Buchen, Fichten, Wiese mit Gräsern, Hochsitz am Rand, Rehe), Mittelgebirgskamm im Süden; anfangs echte Jahreszeiten (Frühlingsgrün, Sommer, Laubfärbung, Schnee), später gleichbleibender Zustand",
+ "standpunkt": "Ebenerdig: am Nordrand der Lichtung, Blick nach Süden über die Wiese auf Waldrand und Kamm",
+ "tageszeit_verlauf": "Jahres-Zeitraffer bei Tag: die Sonnenbahnen erscheinen als leuchtende Tagesbögen am Südhimmel (Sommer hoch und lang, Winter flach und kurz); die Bögen rücken zusammen und verschmelzen bei 0° zu einem einzigen Bogen; Licht wechselt mit den Jahreszeiten (warm, golden, kalt-blau), am Ende gleichbleibendes, mildes Tageslicht",
+ "kamera": "0–7 s langsamer Zoom über die Wiese auf den Waldrand (Beginn vor 8 s); 18–34 s langsame Neigung nach oben zu den Sonnenbögen am Südhimmel; 34–50 s ruhiger Halt auf den zusammenrückenden Bögen; 50–60 s weiche Fahrt zurück auf die Lichtung, Bögen bleiben im oberen Bild; 62–70 s ruhiger Halt",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 70,
+   "faktor": "1 s = 3 Monate (ein Jahr = 4 s, ca. 17 Jahre)",
+   "anzeige": "ACHSNEIGUNG 23,44° bis 0°; MITTAGSSONNE; TAGESLÄNGE"
+  }
+ ],
+ "zeitraffer_hinweis": "Jahrposition s(t) = 0,28 + t/4; Deklination δ = ε(t)·sin(2π(s−0,055)); Bilder (Jahreszeit, Sonnenstand, Schatten, Bögen) und Anzeige lesen dasselbe ε(t) (PCHIP durch die Ankerwerte des Rechenwegs).",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 20,
+   "etikett": "ACHSNEIGUNG",
+   "start": "23,44",
+   "ende": "18,0",
+   "einheit": "°",
+   "unter": "ZEITRAFFER: 1 SEKUNDE = 3 MONATE (Zahl fällt ab 5 s, bei 7 s: 23,0)"
+  },
+  {
+   "von_s": 20,
+   "bis_s": 40,
+   "etikett": "MITTAGSSONNE IM SOMMER",
+   "start": "57,3",
+   "ende": "46,8",
+   "einheit": "°",
+   "unter": "IM WINTER: 21,3° → 31,8° (live)"
+  },
+  {
+   "von_s": 40,
+   "bis_s": 60,
+   "etikett": "TAGESLÄNGE IM WINTER",
+   "start": "10,8",
+   "ende": "12,0",
+   "einheit": "STUNDEN",
+   "unter": "ACHSNEIGUNG 7,5° → 0° (live; bei 46,8 s: 5°, 11,2 h)"
+  },
+  {
+   "von_s": 60,
+   "bis_s": 70,
+   "etikett": "HIER",
+   "start": "12,0",
+   "ende": "12,0",
+   "einheit": "STUNDEN",
+   "unter": "JEDEN TAG · MITTAGSSONNE 39°"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Eine Lichtung im Thüringer Wald, Blick nach Süden.",
+   3.6
+  ],
+  [
+   9,
+   "Im Sommer steht die Mittagssonne über 60 Grad hoch.",
+   3.6
+  ],
+  [
+   13.2,
+   "Im Winter steht sie flach über den Bäumen.",
+   3.6
+  ],
+  [
+   17.4,
+   "Dann richtet sich die Erdachse langsam auf.",
+   3.6
+  ],
+  [
+   21.6,
+   "Die Sommersonne steigt nicht mehr so hoch.",
+   3.6
+  ],
+  [
+   25.8,
+   "Die Wintersonne klettert jedes Jahr höher.",
+   3.6
+  ],
+  [
+   30,
+   "Die Schatten im Winter werden kürzer.",
+   3.6
+  ],
+  [
+   34.2,
+   "Die Sonnenbögen rücken immer näher zusammen.",
+   3.6
+  ],
+  [
+   38.4,
+   "Dann gleichen sich Sommer und Winter an.",
+   3.6
+  ],
+  [
+   42.6,
+   "Die Winternächte werden kürzer.",
+   3.6
+  ],
+  [
+   46.8,
+   "Im Winter bleibt es über elf Stunden hell.",
+   3.6
+  ],
+  [
+   51,
+   "Die Sonnenbögen liegen fast übereinander.",
+   3.6
+  ],
+  [
+   55,
+   "Dann steht die Achse fast senkrecht.",
+   3.6
+  ],
+  [
+   62.4,
+   "Jeden Mittag steht die Sonne 39 Grad hoch.",
+   3.6
+  ],
+  [
+   66.4,
+   "Jahreszeiten kommen von der Schräglage, nicht vom Abstand.",
+   3.4
+  ]
+ ],
+ "bild_text_abgleich": [
+  [
+   4.8,
+   "Eine Lichtung im Thüringer Wald, Blick nach Süden.",
+   "Lichtung mit Buchen und Fichten, Hochsitz, Pfad; Blick nach Süden, Anzeige 23,44° steht, Zeitraffer in der Unterzeile"
+  ],
+  [
+   9,
+   "Im Sommer steht die Mittagssonne über 60 Grad hoch.",
+   "Sommerzustand bei ε≈22,9°: Sonne hoch im Süden (Mittag 62°), Anzeige 22,8°"
+  ],
+  [
+   13.2,
+   "Im Winter steht sie flach über den Bäumen.",
+   "Winterzustand (Schnee), Sonne flach über den Baumwipfeln (Mittag 16°)"
+  ],
+  [
+   17.4,
+   "Dann richtet sich die Erdachse langsam auf.",
+   "Anzeige fällt (21,5° → 18°), Tagesbögen blenden ein, Kamera neigt sich"
+  ],
+  [
+   21.6,
+   "Die Sommersonne steigt nicht mehr so hoch.",
+   "Etikett Mittagssonne im Sommer 56° fällt, oberster Bogen sinkt"
+  ],
+  [
+   25.8,
+   "Die Wintersonne klettert jedes Jahr höher.",
+   "Wintersonne im Etikett (IM WINTER) steigt, unterster Bogen steigt"
+  ],
+  [
+   30,
+   "Die Schatten im Winter werden kürzer.",
+   "Baumschatten im Winter kürzer (Sonne bei 27°)"
+  ],
+  [
+   34.2,
+   "Die Sonnenbögen rücken immer näher zusammen.",
+   "Bögen eng beieinander, Neigung ca. 11°"
+  ],
+  [
+   38.4,
+   "Dann gleichen sich Sommer und Winter an.",
+   "Jahreszeitenfarben und Schnee fast verschwunden, Neigung 8°"
+  ],
+  [
+   42.6,
+   "Die Winternächte werden kürzer.",
+   "Etikett Tageslänge im Winter, Zahl steigt (10,9 h)"
+  ],
+  [
+   46.8,
+   "Im Winter bleibt es über elf Stunden hell.",
+   "Anzeige 11,2 h bei Neigung 5° (über elf Stunden)"
+  ],
+  [
+   51,
+   "Die Sonnenbögen liegen fast übereinander.",
+   "Bögen liegen fast übereinander (Neigung 3°)"
+  ],
+  [
+   55,
+   "Dann steht die Achse fast senkrecht.",
+   "Neigung 1,1° in der Unterzeile, Achse fast senkrecht"
+  ],
+  [
+   62.4,
+   "Jeden Mittag steht die Sonne 39 Grad hoch.",
+   "Bögen zu einem Bogen verschmolzen, Anzeige HIER, Unterzeile Mittagssonne 39°"
+  ],
+  [
+   66.4,
+   "Jahreszeiten kommen von der Schräglage, nicht vom Abstand.",
+   "Ein Bogen, mildes gleichmäßiges Licht, Rehe grasen"
+  ]
+ ],
+ "faktenzeile": "IM JANUAR IST DIE ERDE DER SONNE AM NÄCHSTEN · 147 MILLIONEN KILOMETER",
+ "rechenweg": "Breite φ = 50,7° N (Thüringer Wald, Raum Oberhof). Mittagshöhe h = 90° − φ + δ, Deklination δ = ±ε zur Sonnenwende. ε = 23,44°: Sommer 62,7°, Winter 15,9°; ε = 18°: 57,3° / 21,3°; ε = 12°: 51,3° / 27,3°; ε = 7,5°: 46,8° / 31,8°; ε = 5°: 44,3° / 34,3°; ε = 0°: 39,3° jeden Tag. Tageslänge (geometrisch, Sonnenmitte am Horizont) T = 2·arccos(−tan φ·tan δ)/15°: ε = 23,44°: Sommer 16,3 h, Winter 7,7 h (mit Refraktion 16,5 / 8,0 h); ε = 7,5°: Winter 10,8 h; ε = 5°: 11,2 h; ε = 2°: 11,7 h; ε = 0°: 12,0 h (mit Refraktion und Sonnenscheibe ca. 12,2 h, daher im Satz und Abspann kein „genau“). Anker der Neigung: 0 s 23,44 · 7 s 23,0 · 13 s 22,0 · 20 s 18 · 30 s 12 · 40 s 7,5 · 46,8 s 5 · 52 s 2 · 60 s 0. Perihel/Aphel 147,095 / 152,100 Mio. km: Unterschied 3,3 %, Einstrahlung im Perihel ca. 6,9 % höher. Nachgerechnet mit py -3 (cockpit/daten/tmp/rechnung_acc2_1105.py, anker_acc2_1105.py).",
+ "rechnung_code": "pipeline/sim/erdachse_null.mjs (Test erdachse_null.test.mjs, grün)",
+ "zahlen": {
+  "achsneigung_grad": 23.44,
+  "breite_grad": 50.7,
+  "mittagssonne_sommer_grad": 62.7,
+  "mittagssonne_winter_grad": 15.9,
+  "mittagssonne_ohne_neigung_grad": 39.3,
+  "tag_sommer_h": 16.3,
+  "tag_winter_h": 7.7,
+  "tag_ohne_neigung_h": 12,
+  "perihel_mio_km": 147.095,
+  "aphel_mio_km": 152.1,
+  "perihel_2026": "03.01.2026",
+  "neigung_natuerlich_grad": "22,1–24,5"
+ },
+ "annahmen": [
+  "(A) Gedankenexperiment: Die Neigung sinkt in rund 17 Jahren auf 0°; in Wirklichkeit schwankt sie nur zwischen 22,1° und 24,5° (ca. 41.000-Jahres-Zyklus).",
+  "(A) Vegetation und Wetter am Ende vereinfacht als gleichbleibender, milder Zustand dargestellt; das Klima ohne Neigung ist nicht berechnet und wird in keinem Satz behauptet.",
+  "(A) Die Sonnenbahnen werden als leuchtende Tagesbögen (Lichtspur wie bei einer Langzeitbelichtung) dargestellt, weil im Zeitraffer 90 Tage pro Sekunde vergehen."
+ ],
+ "quellen": [
+  "(F) Earth Fact Sheet (Äquatorradius 6.378,137 km, Polradius 6.356,752 km, siderische Rotation 23,9345 h, Achsneigung 23,44°, Perihel 147,095 / Aphel 152,100 Mio. km, siderisches Jahr 365,256 d), NASA NSSDCA, Stand 15.11.2024 – https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+  "(F) Milankovitch (Orbital) Cycles and Their Role in Earth's Climate (Neigung heute 23,4°, in der letzten Million Jahre 22,1–24,5°, ca. 41.000 Jahre), NASA Science – https://science.nasa.gov/science-research/earth-science/climate-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/",
+  "(F) What Causes the Seasons? (Ursache ist die Achsneigung, nicht der Abstand; Perihel im Januar, Aphel im Juli), NASA Space Place – https://spaceplace.nasa.gov/seasons/en/",
+  "(F) Astronomische Ereignisse 2026 (Perihel 03.01.2026, 147.100.569 km), Wikibooks – https://de.wikibooks.org/wiki/Einf%C3%BChrung_in_die_Astronomie:_Astronomische_Ereignisse_2026",
+  "(F) Mittagshöhe h = 90° − φ + δ und Tagbogen T = 2·arccos(−tan φ·tan δ)/15° (astronomische Standardformeln, eigene Rechnung)"
+ ],
+ "caption": "Was wäre, wenn die Erdachse nicht mehr schief stünde? ☀️ Ich hab's durchgespielt. Dachtest du auch, Sommer kommt vom Sonnenabstand? 👇 #erdachse #jahreszeiten #sonne #wissen #waswaerewenn",
+ "korrekturen": [
+  "Anzeige: Nachkommastellen für die Prüfung (Zahl ändert sich in mind. 60 % der Halbsekundenschritte): ACHSNEIGUNG 2 Stellen (23,44 bis 0,00), MITTAGSSONNE 1 Stelle, TAGESLÄNGE IM WINTER 2 Stellen (10,80 bis 12,00); Werte unverändert.",
+  "Höhepunkt: Anzeige im Referenzformat „Zahl = HIER“ (Etikett „TAGESLÄNGE JEDEN TAG“, Unterzeile „12 STUNDEN · MITTAGSSONNE 39°“) statt Etikett „HIER“ mit Zahl 12,0 (Prüfpunkt 3d verlangt „HIER“ als Zahl); Inhalt gleich.",
+  "Sätze: keine Änderung, Standzeit 3,6 s je Satz (letzter 3,4 s)."
+ ],
+ "dramaturgie": [
+  "0–4 s: Bild 0 voll belebt: Frühsommer auf der Lichtung, Gräser im Wind, Rehe am Waldrand, Wolkenschatten ziehen (erster Welteffekt vor 4 s); hoher Sonnenbogen im Süden; Titelfrage oben",
+  "5–17 s: Jahreszeiten im 4-s-Takt: Grün, Laubfärbung, Schnee, Blüte; der Sonnenbogen wandert weich hoch und tief; Anzeige fällt ab 5 s; langsamer Zoom auf den Waldrand",
+  "18–25 s: Auslöser: Kamera neigt sich zu den Bögen, oben der Sommerbogen, unten der Winterbogen (Aufleuchten der Bögen); 1. Etikettwechsel bei 20 s",
+  "25–40 s: Eskalation: Winterbogen steigt, Sommerbogen sinkt, Schatten im Winter werden sichtbar kürzer, Jahreszeitenfarben werden blasser",
+  "40–50 s: 2. Etikettwechsel: Wintertage werden länger, der Nachtanteil im Zeitraffer schrumpft, die Bögen liegen dicht",
+  "50–58 s: Annäherung: Fahrt zurück auf die Lichtung, die Bögen schieben sich übereinander, Licht wird gleichmäßig",
+  "58–62 s: Höhepunkt HIER: die Bögen verschmelzen zu einem einzigen, hell aufleuchtenden Bogen bei 39°; ein Glanz läuft über die Wiese; keine Weißblende",
+  "62–70 s: Nachspiel: jeder Tag gleich, gleiche Schatten jeden Tag, Rehe grasen, Wolken ziehen; Abblende 70–72 s, Abspann 72–80 s"
+ ],
+ "bewegungsplan": [
+  [
+   0,
+   "Frühsommer: Gräser im Wind, Blumen, Rehe am Waldrand, Wolken ziehen",
+   1
+  ],
+  [
+   1.2,
+   "Herbst im Zeitraffer: Laub färbt sich",
+   1
+  ],
+  [
+   1.8,
+   "Windböe läuft durch Gras und Wipfel",
+   1
+  ],
+  [
+   2.2,
+   "Erster Schnee, ein Reh hebt den Kopf",
+   1
+  ],
+  [
+   2.7,
+   "Vogelschwarm steigt aus den Buchen auf",
+   1
+  ],
+  [
+   3.2,
+   "Frühling: Blüte, Laub treibt aus",
+   1
+  ],
+  [
+   4.6,
+   "Neigung beginnt zu fallen (Anzeige), nächster Sommer",
+   1
+  ],
+  [
+   5.2,
+   "zweiter Herbst, Laubfall",
+   2
+  ],
+  [
+   6.2,
+   "zweiter Winter, Schnee fällt",
+   2
+  ],
+  [
+   7,
+   "Kamera blickt höher, Zoom endet",
+   2
+  ],
+  [
+   8.2,
+   "zweites Frühjahr, Blüte",
+   2
+  ],
+  [
+   9.2,
+   "dritter Herbst, Laubfall",
+   2
+  ],
+  [
+   11,
+   "Winter, Schneedecke, flache Sonne am Südhimmel",
+   2
+  ],
+  [
+   13,
+   "Wintersonne steigt (Neigung 22°)",
+   2
+  ],
+  [
+   14.2,
+   "Schnee",
+   2
+  ],
+  [
+   16.5,
+   "Sonnenspur und Tagesbögen blenden ein",
+   2
+  ],
+  [
+   18.6,
+   "Tagesbögen leuchten auf, Kamera neigt sich zu den Bögen",
+   3
+  ],
+  [
+   21,
+   "Etikettwechsel: Mittagssonne im Sommer",
+   3
+  ],
+  [
+   22,
+   "Wintersonne steigt, Sommersonne sinkt",
+   3
+  ],
+  [
+   25,
+   "Bögen rücken enger, Jahreszeitenfarben blasser",
+   3
+  ],
+  [
+   28,
+   "Schatten im Winter kürzer",
+   3
+  ],
+  [
+   31,
+   "Winterbogen steigt weiter",
+   3
+  ],
+  [
+   33,
+   "Bögen nahe beieinander",
+   3
+  ],
+  [
+   36,
+   "Winter wird mild, Schnee schmilzt schnell",
+   3
+  ],
+  [
+   38.5,
+   "Schnee nur noch kurz",
+   3
+  ],
+  [
+   41,
+   "Etikettwechsel: Tageslänge im Winter",
+   4
+  ],
+  [
+   44,
+   "Nebel im Tal, Wintertage länger",
+   4
+  ],
+  [
+   47,
+   "Bögen dicht, Sonnenstand fast gleich",
+   4
+  ],
+  [
+   50,
+   "Fahrt zurück beginnt, Blick senkt sich",
+   4
+  ],
+  [
+   52,
+   "Bögen liegen fast übereinander",
+   4
+  ],
+  [
+   55,
+   "Jahreszeiten kaum noch erkennbar, Licht gleichmäßig",
+   4
+  ],
+  [
+   58,
+   "Glanz beginnt über die Wiese zu laufen",
+   5
+  ],
+  [
+   60,
+   "HIER: Bögen verschmelzen zu einem hell leuchtenden Bogen bei 39°",
+   5
+  ],
+  [
+   61,
+   "Glanz läuft über die Wiese",
+   5
+  ],
+  [
+   63,
+   "Rehe grasen, Wolken ziehen, jeder Tag gleich",
+   3
+  ],
+  [
+   66,
+   "Blick senkt sich, mildes Licht",
+   2
+  ],
+  [
+   68,
+   "ruhiger Halt",
+   2
+  ]
+ ],
+ "lern_notizen": {
+  "welt": "Wald/Lichtung (Thüringer Wald, Mittelgebirge)",
+  "standpunkt": "ebenerdig, Wiese am Nordrand der Lichtung, Blick nach Süden",
+  "tageszeit": [
+   "Tag (Nachmittag, Sonne nahe Süden)",
+   "Jahreszeiten im Zeitraffer"
+  ],
+  "kamera": [
+   {
+    "t": 0.5,
+    "art": "zoom",
+    "was": "langsamer Zoom und Fahrt über die Wiese auf den Waldrand, Brennweite 58° → 55°"
+   },
+   {
+    "t": 7,
+    "art": "schwenk",
+    "was": "Blick hebt sich langsam"
+   },
+   {
+    "t": 18,
+    "art": "schwenk",
+    "was": "Neigung nach oben zu den Sonnenbögen, Brennweite 58° → 70°"
+   },
+   {
+    "t": 50,
+    "art": "fahrt",
+    "was": "weiche Fahrt zurück auf die Lichtung, Blick senkt sich, Brennweite 70° → 64°"
+   }
+  ],
+  "zeitraffer": [
+   {
+    "von": 0,
+    "bis": 70,
+    "faktor": "1 s = 3 Monate"
+   }
+  ],
+  "effekte": [
+   {
+    "t": 1.2,
+    "name": "laubfaerbung"
+   },
+   {
+    "t": 1.8,
+    "name": "windboe"
+   },
+   {
+    "t": 2.2,
+    "name": "erster_schnee"
+   },
+   {
+    "t": 2.7,
+    "name": "voegel_steigen_auf"
+   },
+   {
+    "t": 18.6,
+    "name": "sonnenboegen_leuchten"
+   },
+   {
+    "t": 44.0,
+    "name": "nebel_im_tal"
+   },
+   {
+    "t": 60.0,
+    "name": "boegen_verschmelzen"
+   },
+   {
+    "t": 60.6,
+    "name": "glanz_ueber_wiese"
+   }
+  ],
+  "sequenzen": [
+   "Jahreszeiten im Zeitraffer",
+   "Auslöser: Tagesbögen leuchten auf",
+   "Eskalation: Bögen rücken zusammen",
+   "Annäherung",
+   "Höhepunkt HIER",
+   "Nachspiel: jeder Tag gleich"
+  ]
+ }
+}
