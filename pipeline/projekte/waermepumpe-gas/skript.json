@@ -1,0 +1,299 @@
+{
+ "titel": "Wärmepumpe oder neue Gasheizung: Was kostet dich in 20 Jahren mehr?",
+ "skill": "simulierbar-video",
+ "konto": "simulierbar",
+ "stil": "17 Nachtstadt-Miniatur (Winternacht)",
+ "stil_begruendung": "Heizungstausch ist ein Haus-Thema in der kalten Jahreszeit: zwei gleiche Einfamilienhäuser als Miniatur-Platten im Schnee zur blauen Stunde, erleuchtete Fenster, Laternen mit Lichtkegel, fallender Schnee, Tilt-Shift. Das Licht-Rig der Nachtstadt trägt die Atmosphäre (warme Fenster gegen kühle Schatten), die Teamfarben Rot-Orange (Gas) und Blau (Wärmepumpe) leuchten als Kessel, Außeneinheit, LED-Kante und Kostensäule. Abgrenzung: gestern Stil 4 und 18/19 in den letzten Videos (Kind bis 18: 18, Studium: 19); parallel entsteht Solar-Speicher in einem anderen Stil.",
+ "teamfarben": {
+  "GAS": "#FF5A1F",
+  "WÄRMEPUMPE": "#2F8CFF"
+ },
+ "klangteppich": "raum",
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Deine Gasheizung ist 20 Jahre alt. Neue Gasheizung oder Wärmepumpe?",
+   "sprechtext": "Deine Gasheizung ist zwanzig Jahre alt.\n[curious] Neue Gasheizung – oder WÄRMEPUMPE?",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Deine Gasheizung ist zwanzig Jahre alt.",
+     "bild": "Winterabend: zwei gleiche Häuser im Schnee auf Miniatur-Platten, im Heizraum links flackert der alte Kessel (Typenschild 2006); Kamera fährt langsam heran; Tafel GAS 0 € / WÄRMEPUMPE 0 € ab Bild 0, Schnee fällt"
+    },
+    {
+     "gesagt": "Neue Gasheizung – oder WÄRMEPUMPE?",
+     "bild": "bei „Gasheizung“ Spot und LED auf das linke Haus, bei „WÄRMEPUMPE“ Spot und LED auf das rechte Haus mit der Außeneinheit"
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "130 Quadratmeter, normales Einfamilienhaus. Wir rechnen 20 Jahre. Neue Gasheizung: 10.000 Euro. Wärmepumpe: 35.000 Euro. Der Staat zahlt dir 12.880 Euro dazu.",
+   "sprechtext": "Hundertdreißig Quadratmeter, normales Einfamilienhaus.\nWir rechnen zwanzig Jahre.\nNeue Gasheizung: zehntausend Euro.\nWärmepumpe: fünfunddreißigtausend.\nDer Staat zahlt dir knapp DREIZEHNTAUSEND dazu.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Hundertdreißig Quadratmeter, normales Einfamilienhaus.",
+     "bild": "Chip 130 m², Grundriss-Rahmen leuchtet um beide Häuser"
+    },
+    {
+     "gesagt": "Wir rechnen zwanzig Jahre.",
+     "bild": "Chip 20 JAHRE, Jahresuhr der Tafel erscheint"
+    },
+    {
+     "gesagt": "Neue Gasheizung: zehntausend Euro.",
+     "bild": "alter Kessel gleitet raus, neuer Kessel gleitet ein (Aufleuchten), Preisschild 10.000 € über dem Kessel, Tafel links zählt auf 10.000 €, Kostensäule links wächst"
+    },
+    {
+     "gesagt": "Wärmepumpe: fünfunddreißigtausend.",
+     "bild": "Preisschild 35.000 € an der Außeneinheit, Tafel rechts zählt auf 35.000 €, Säule rechts wächst höher"
+    },
+    {
+     "gesagt": "Der Staat zahlt dir knapp dreizehntausend dazu.",
+     "bild": "Förderstapel fällt auf die Außeneinheit (Aufleuchten), Chip −12.880 €, Preisschild und Tafel rechts auf 22.120 €"
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, die günstige Gasheizung gewinnt. Oder?",
+   "sprechtext": "Klar … die günstige Gasheizung GEWINNT.\nOder?",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Klar … die günstige Gasheizung GEWINNT. Oder?",
+     "bild": "Lichtkegel auf das Gashaus, Wärmepumpenhaus im Schatten; bei „Oder?“ steht das Licht ruhig"
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Start: Die Wärmepumpe liegt 12.120 Euro hinten.",
+   "sprechtext": "Start:\nDie Wärmepumpe liegt zwölftausend Euro HINTEN.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Start: Die Wärmepumpe liegt zwölftausend Euro HINTEN.",
+     "bild": "Chip −12.120 €, Abstandslinie zwischen den beiden Säulen leuchtet, rechte Säule höher als linke"
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "phase": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "sprechtext": "Folg mir, damit du nichts verpasst.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Folg mir, damit du nichts verpasst.",
+     "bild": "Folgen-Element, Welt läuft weiter (Schnee, Rauch am Schornstein)"
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Doch das Merkwürdige: Gas kostet dich 2.019 Euro im Jahr. Die Wärmepumpe nur 1.263 Euro. Jedes Jahr holt sie 756 Euro auf.",
+   "sprechtext": "Doch das Merkwürdige:\nGas kostet dich zweitausend Euro im Jahr.\nDie Wärmepumpe nur zwölfhundertsechzig.\nJedes Jahr holt sie gut SIEBENHUNDERTFÜNFZIG Euro auf.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Doch das Merkwürdige: Gas kostet dich zweitausend Euro im Jahr.",
+     "bild": "Kostenstrom links dick (Gaszähler), Chip 2.019 € / JAHR, Jahresuhr startet"
+    },
+    {
+     "gesagt": "Die Wärmepumpe nur zwölfhundertsechzig.",
+     "bild": "Kostenstrom rechts dünner, Chip 1.263 € / JAHR"
+    },
+    {
+     "gesagt": "Jedes Jahr holt sie gut siebenhundertfünfzig Euro auf.",
+     "bild": "Chip +756 € / JAHR, die rechte Säule wächst langsamer, Abstand schrumpft"
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Jahr 5, 10, 15: Gas liegt noch vorn. Jahr 16: 24 Euro Abstand. Jetzt wird's knapp.",
+   "sprechtext": "Jahr fünf, zehn, fünfzehn … Gas liegt noch vorn.\nJahr sechzehn: vierundzwanzig Euro Abstand.\nJetzt wird's KNAPP.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Jahr fünf, zehn, fünfzehn … Gas liegt noch vorn.",
+     "bild": "Jahresuhr 5, 10, 15 im Zeitraffer, Säulen wachsen, Abstand schrumpft, Gas führt (Tafel VORN links)"
+    },
+    {
+     "gesagt": "Jahr sechzehn: vierundzwanzig Euro Abstand.",
+     "bild": "Kamera-Zoom auf die beiden Säulenspitzen, Chip 24 € ABSTAND"
+    },
+    {
+     "gesagt": "Jetzt wird's KNAPP.",
+     "bild": "Spannung: Spitzen pulsen weich"
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "Im 17. Jahr zieht die Wärmepumpe vorbei.",
+   "sprechtext": "Im siebzehnten Jahr zieht die Wärmepumpe VORBEI.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Im siebzehnten Jahr zieht die Wärmepumpe VORBEI.",
+     "bild": "Jahresuhr 17, Gas-Säule überholt die Wärmepumpen-Säule, Licht springt auf das rechte Haus, VORN rechts"
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Endstand nach 20 Jahren: Gas 50.383 Euro. Wärmepumpe 47.384 Euro. Die Wärmepumpe spart dir 2.999 Euro.",
+   "sprechtext": "Endstand nach zwanzig Jahren:\nGas – gut fünfzigtausend Euro.\nWärmepumpe – gut siebenundvierzigtausend.\nDie Wärmepumpe spart dir rund DREITAUSEND Euro.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Endstand nach zwanzig Jahren:",
+     "bild": "Jahresuhr läuft auf 20, Kamera zurück ins Totale"
+    },
+    {
+     "gesagt": "Gas – gut fünfzigtausend Euro. Wärmepumpe – gut siebenundvierzigtausend.",
+     "bild": "Bilanzkarte zeilenweise: GAS 50.383 €, WÄRMEPUMPE 47.384 €"
+    },
+    {
+     "gesagt": "Die Wärmepumpe spart dir rund DREITAUSEND Euro.",
+     "bild": "Zeile WÄRMEPUMPE SPART 2.999 €, warmes Licht und Glow auf dem rechten Haus"
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Warum so knapp? Aus 1 Kilowattstunde Strom macht sie gut 3 Kilowattstunden Wärme. Aber ohne Förderung würde sie verlieren.",
+   "sprechtext": "[thoughtful] Warum so knapp?\nAus einer Kilowattstunde Strom macht sie gut DREI Kilowattstunden Wärme.\nAber ohne Förderung würde sie verlieren.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Warum so knapp?",
+     "bild": "Kamera nah an die Außeneinheit"
+    },
+    {
+     "gesagt": "Aus einer Kilowattstunde Strom macht sie gut DREI Kilowattstunden Wärme.",
+     "bild": "ein Strom-Würfel läuft in die Außeneinheit, drei Wärme-Würfel strömen ins Haus, Balkenkarte Faktor 1: Wärme aus 1 kWh (Gas 0,9 gegen Wärmepumpe 3,4)"
+    },
+    {
+     "gesagt": "Aber ohne Förderung würde sie verlieren.",
+     "bild": "Förderstapel wird weggenommen, Balkenkarte Faktor 2: 20 Jahre ohne Förderung, Gas 50.383 € gegen Wärmepumpe 60.264 €"
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "phase": "ueberraschung",
+   "text": "Und das Verrückte: Die Rechnung schont die Gasheizung noch. Ab 2029 braucht sie Biogas, bis zu 60 Prozent. Schon die erste Stufe kostet heute rund 200 Euro im Jahr.",
+   "sprechtext": "Und das Verrückte:\nDie Rechnung SCHONT die Gasheizung noch.\nAb zweitausendneunundzwanzig braucht sie Biogas, bis zu sechzig Prozent.\nSchon die erste Stufe kostet heute rund zweihundert Euro im Jahr.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Und das Verrückte: Die Rechnung SCHONT die Gasheizung noch.",
+     "bild": "Kamera wechselt zum Gashaus, Schornstein-Rauch, Gaszähler-Strom leuchtet"
+    },
+    {
+     "gesagt": "Ab zweitausendneunundzwanzig braucht sie Biogas, bis zu sechzig Prozent.",
+     "bild": "Bio-Treppe aus vier Stufen steigt neben dem Gashaus auf: 2029 10 %, 2030 15 %, 2035 30 %, 2040 60 %"
+    },
+    {
+     "gesagt": "Schon die erste Stufe kostet heute rund zweihundert Euro im Jahr.",
+     "bild": "erste Stufe leuchtet, Chip ≈ 200 € / JAHR, Gaszähler-Strom wird breiter"
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "phase": "merksatz",
+   "text": "Die Gasheizung gewinnt den Kauf. Die Wärmepumpe gewinnt die Jahre.",
+   "sprechtext": "Die Gasheizung gewinnt den Kauf.\nDie Wärmepumpe gewinnt die JAHRE.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Die Gasheizung gewinnt den Kauf. Die Wärmepumpe gewinnt die JAHRE.",
+     "bild": "Pointe KAUF (Gas-Farbe) dann JAHRE (Wärmepumpen-Farbe), Kamera fährt zurück zur Startansicht"
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "phase": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+     "bild": "Kamera und Werte gleiten zum Anfangsbild zurück (Schleife)"
+    }
+   ]
+  }
+ ],
+ "caption": "Wärmepumpe oder neue Gasheizung – was kostet dich in 20 Jahren mehr? 🔥 Ich hab's simuliert. Team Gas oder Team Wärmepumpe? 👇 #wärmepumpe #gasheizung #heizungstausch #wissen #simulation",
+ "quellen": [
+  "(F) Heizspiegel 2026, EFH 130 m²: Erdgas ca. 16.510 kWh (127 kWh/m²), Wärmepumpe ca. 4.680 kWh (36 kWh/m²), ADAC nach co2online, 23.10.2026 – https://www.adac.de/rund-ums-haus/energie/spartipps/heizkosten-haushalt/",
+  "(F) BDEW-Gaspreisanalyse Herbst 2026: Neukundengaspreis Einfamilienhaus 2026 bisher 12,23 ct/kWh, BDEW, 28.10.2026 – https://www.bdew.de/service/daten-und-grafiken/bdew-gaspreisanalyse/",
+  "(S) Marktcheck Wärmepumpenstromtarife: Modul 2 im Schnitt ca. 24 ct/kWh inkl. Netzentgeltreduktion plus ca. 140 €/Jahr Grundpreis (Erhebung Aug. 2025, Veröffentlichung 20.02.2026; Zahlen über Zusammenfassungen, PDF nicht vollständig gelesen), Verbraucherzentrale NRW – https://www.verbraucherzentrale.nrw/sites/default/files/2026-03/2026_02_marktcheck_warmepumpenstromtarife_vz-nrw.pdf",
+  "(F) KfW-Pressemitteilung: Grundförderung 30 %, Klimageschwindigkeitsbonus 16 % (sinkt ab 01.02.2027 halbjährlich um 4 Punkte), Einkommensbonus 40/30/10 %, Förderhöchstbetrag 28.000 € erste Wohneinheit, gültig ab 21.07.2026; Q1 2027 Grundförderung Wärmepumpen 15 % + Wertschöpfungsbonus 15 % (EU), KfW, 08.07.2026 – https://www.kfw.de/%C3%9Cber-die-KfW/Newsroom/Aktuelles/Pressemitteilungen-Details_900928.html",
+  "(F) Gasheizung Kosten: Heizungstausch mit Gas-Brennwert inkl. aller Umbauten im EFH etwa 10.000 €; Wartung/Schornsteinfeger/Messdienst 175 €/Jahr (Heizspiegel), co2online, 21.05.2026 – https://www.co2online.de/modernisieren-und-bauen/heizung/kosten-preise-von-gasheizungen/",
+  "(S) Wärmepumpe Kosten: meist 20.000–50.000 €, ADAC, 2026 – https://www.adac.de/rund-ums-haus/energie/versorgung/waermepumpe-funktion-kosten-foerderung/ ; Fraunhofer ISE Kurzstudie für MVV: 28.500–42.800 € im EFH, 18.06.2026 (über Pressemitteilung) – https://www.mvv.de/journalisten/pressemitteilungen/detail/studie-von-fraunhofer-ise",
+  "(F) Gesetz zur Änderung des GEG (Gebäudemodernisierungsgesetz), BGBl. 2026 I Nr. 226, verkündet 28.07.2026: neue Gasheizung im Bestand ab 1.1.2029 mind. 10 %, ab 2030 15 %, ab 2035 30 %, ab 2040 60 % der Wärme aus Biomethan, Bioöl, biogenem Flüssiggas oder Wasserstoff – https://www.recht.bund.de/bgbl/1/2026/226/regelungstext.pdf ; Beschluss Bundestag 10.07.2026 – https://www.bundestag.de/dokumente/textarchiv/2026/kw28-de-heizungsgesetz-1194534",
+  "(F) Fraunhofer ISE Feldtest Wärmepumpen im Bestand: Luft/Wasser-Wärmepumpen durchschnittliche JAZ 3,4 (77 Anlagen), BWP nach Fraunhofer ISE, 11/2025 – https://www.waermepumpe.de/presse/news/details/fraunhofer-ise-waermepumpen-auch-im-altbau-effizient-und-klimafreundlich/",
+  "(S) Mehrkosten Bio-Treppe erste Stufe: 227–310 €/Jahr bei 20.000 kWh für 10-%-Biomethan-Tarife (Gaspreis-Barometer, Stichtag 15.08.2026; Volltext nicht abrufbar, Zahl aus Suchauszug, ausdrücklich keine Prognose für 2029), TGA+E Fachplaner, 19.08.2026 – https://www.tga-fachplaner.de/meldungen/gaspreise-mehrkosten-fuer-eine-gas-heizung-auf-der-bio-treppe"
+ ],
+ "annahmen": [
+  "(A) Modellhaus: Einfamilienhaus 130 m² mit Verbrauch wie im Heizspiegel 2026 (Durchschnittswerte aus Abrechnungen), Eigentümer wohnt selbst darin.",
+  "(A) Die alte Gasheizung ist mindestens 20 Jahre alt (Voraussetzung Klimageschwindigkeitsbonus); Haushaltseinkommen über 50.000 € (kein Einkommensbonus), Antrag noch 2026 zu den Sätzen ab 21.07.2026.",
+  "(A) Wärmepumpe 35.000 € inkl. Einbau (innerhalb der Spannen von ADAC und Fraunhofer ISE); Gasheizung 10.000 € inkl. Umbauten (co2online).",
+  "(A) Energiepreise bleiben 20 Jahre auf heutigem Stand (Gas 12,23 ct/kWh inkl. heutigem CO2-Preis, Wärmepumpenstrom 24 ct/kWh + 140 €/Jahr); keine Inflation, keine Abzinsung. Steigende CO2-Preise (ETS 2 ab 2028) würden Gas verteuern.",
+  "(A) Bio-Treppe (Pflichtanteil Biomethan/Bioöl/Wasserstoff ab 2029) ist in der Endsumme nicht eingerechnet, weil die Preise offen sind; im Video als zweite Überraschung. „Biogas“ im Sprechtext steht vereinfacht für die zulässigen klimafreundlichen Brennstoffe.",
+  "(A) Wartung und Schornsteinfeger nicht eingerechnet (für beide Systeme; laut co2online-Heizspiegel bei Gas rund 175 €/Jahr inkl. Messdienst). Lebensdauer beider Geräte als 20 Jahre angenommen; Ersatz in der Laufzeit nicht gerechnet.",
+  "(A) Gasgrundpreis ist im BDEW-Durchschnittspreis enthalten; Netzanschluss Gas bleibt bestehen; Kosten einer Gas-Abmeldung bei der Wärmepumpe nicht gerechnet."
+ ],
+ "rechenweg": "Verbrauch aus dem Heizspiegel 2026 (130 m² EFH): Erdgas 16.510 kWh/Jahr, Wärmepumpe 4.680 kWh Strom/Jahr (Verhältnis 3,5; passt zur Feldtest-JAZ 3,4 bei rund 90 % Kesselnutzungsgrad). Gas: 16.510 × 0,1223 €/kWh (BDEW, Neukunden EFH 2026) = 2.019,17 €/Jahr. Wärmepumpe: 4.680 × 0,24 €/kWh + 140 € Grundpreis (Wärmepumpentarif Modul 2, VZ NRW) = 1.263,20 €/Jahr. Differenz 755,97 €/Jahr. Anschaffung: Gas 10.000 € (co2online, Heizungstausch mit allen Umbauten). Wärmepumpe 35.000 € (Annahme in den Spannen ADAC 20.000–50.000 € und Fraunhofer ISE 28.500–42.800 €). KfW 458 ab 21.07.2026: 30 % Grundförderung + 16 % Klimageschwindigkeitsbonus (Ersatz einer mindestens 20 Jahre alten Gasheizung, Selbstnutzer) auf höchstens 28.000 € förderfähige Kosten = 0,46 × 28.000 = 12.880 €. WP netto 22.120 €, Mehrpreis gegenüber Gas 12.120 €. Gleichstand: 12.120 / 755,97 = 16,03 Jahre (Jahr 16: Gas noch 24 € günstiger, Jahr 17: Wärmepumpe 732 € günstiger). 20 Jahre: Gas 10.000 + 20 × 2.019,17 = 50.383 €; Wärmepumpe 22.120 + 20 × 1.263,20 = 47.384 €; Vorteil Wärmepumpe 2.999 €. Ohne Förderung: 35.000 + 20 × 1.263,20 = 60.264 € > 50.383 € (Wärmepumpe verliert). Nur Grundförderung 30 %: 51.864 € (verliert knapp). Bio-Treppe nicht eingerechnet (Preis offen); erste Stufe nach Marktbarometer 227–310 €/Jahr bei 20.000 kWh, skaliert auf 16.510 kWh = 187–256 €/Jahr (rund 200 €). Nachgerechnet mit Python (cockpit/daten/tmp/waerme_rechnung.py).",
+ "zahlen": {
+  "wohnflaeche_m2": 130,
+  "gas_kwh_jahr": 16510,
+  "wp_strom_kwh_jahr": 4680,
+  "gaspreis_eur_kwh": 0.1223,
+  "wp_arbeitspreis_eur_kwh": 0.24,
+  "wp_grundpreis_eur_jahr": 140,
+  "gas_kosten_jahr_eur": 2019.17,
+  "wp_kosten_jahr_eur": 1263.2,
+  "differenz_jahr_eur": 755.97,
+  "gas_invest_eur": 10000,
+  "wp_invest_eur": 35000,
+  "foerderquote": 0.46,
+  "foerderfaehig_max_eur": 28000,
+  "foerderung_eur": 12880,
+  "wp_netto_eur": 22120,
+  "mehrpreis_wp_eur": 12120,
+  "gleichstand_jahre": 16.03,
+  "endstand_20j_gas_eur": 50383,
+  "endstand_20j_wp_eur": 47384,
+  "vorteil_wp_eur": 2999,
+  "wp_ohne_foerderung_20j_eur": 60264,
+  "jaz_feldtest": 3.4,
+  "bio_treppe": {
+   "2029": 0.1,
+   "2030": 0.15,
+   "2035": 0.3,
+   "2040": 0.6
+  },
+  "bio_stufe1_mehrkosten_jahr_eur": [
+   187,
+   256
+  ],
+  "zeitreihe_gas_minus_wp_eur": {
+   "j0": -12120,
+   "j1": -11364,
+   "j5": -8340,
+   "j10": -4560,
+   "j15": -780,
+   "j16": -24,
+   "j17": 732,
+   "j20": 2999
+  }
+ },
+ "korrekturen": [],
+ "skript_quelle": "acc1-2026-11-04-abend",
+ "skript_aenderungen": "Keine inhaltliche Änderung; nur technisch: Segment-IDs aus dem Studio-Skript, Bildabgleich ergänzt."
+}
