@@ -1,0 +1,956 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 83.201,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Hundert Euro ab 25 oder 150 ab 35? Wer hat mit 67 mehr?",
+   "start": 0.0,
+   "ende": 7.08,
+   "woerter": [
+    {
+     "wort": "Hundert",
+     "start": 0.0,
+     "ende": 0.32
+    },
+    {
+     "wort": "Euro",
+     "start": 0.4,
+     "ende": 0.72
+    },
+    {
+     "wort": "ab",
+     "start": 0.8,
+     "ende": 0.88
+    },
+    {
+     "wort": "25",
+     "start": 0.96,
+     "ende": 2.08
+    },
+    {
+     "wort": "oder",
+     "start": 2.16,
+     "ende": 2.48
+    },
+    {
+     "wort": "150",
+     "start": 2.72,
+     "ende": 3.52
+    },
+    {
+     "wort": "ab",
+     "start": 3.6,
+     "ende": 3.76
+    },
+    {
+     "wort": "35?",
+     "start": 3.8,
+     "ende": 4.64
+    },
+    {
+     "wort": "Wer",
+     "start": 5.2,
+     "ende": 5.28
+    },
+    {
+     "wort": "hat",
+     "start": 5.36,
+     "ende": 5.44
+    },
+    {
+     "wort": "mit",
+     "start": 5.52,
+     "ende": 5.6
+    },
+    {
+     "wort": "67",
+     "start": 5.68,
+     "ende": 6.24
+    },
+    {
+     "wort": "mehr?",
+     "start": 6.4,
+     "ende": 7.08
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Lena spart ab 25 jeden Monat. Mia startet 10 Jahre später, mit mehr Geld. Annahme: 5 Prozent Rendite im Jahr.",
+   "start": 7.44,
+   "ende": 15.96,
+   "woerter": [
+    {
+     "wort": "Lena",
+     "start": 7.44,
+     "ende": 7.68
+    },
+    {
+     "wort": "spart",
+     "start": 7.76,
+     "ende": 8.0
+    },
+    {
+     "wort": "ab",
+     "start": 8.08,
+     "ende": 8.16
+    },
+    {
+     "wort": "25",
+     "start": 8.24,
+     "ende": 8.96
+    },
+    {
+     "wort": "jeden",
+     "start": 9.12,
+     "ende": 9.28
+    },
+    {
+     "wort": "Monat.",
+     "start": 9.36,
+     "ende": 10.08
+    },
+    {
+     "wort": "Mia",
+     "start": 10.16,
+     "ende": 10.4
+    },
+    {
+     "wort": "startet",
+     "start": 10.48,
+     "ende": 10.88
+    },
+    {
+     "wort": "10",
+     "start": 10.92,
+     "ende": 11.08
+    },
+    {
+     "wort": "Jahre",
+     "start": 11.12,
+     "ende": 11.28
+    },
+    {
+     "wort": "später,",
+     "start": 11.36,
+     "ende": 11.76
+    },
+    {
+     "wort": "mit",
+     "start": 12.24,
+     "ende": 12.32
+    },
+    {
+     "wort": "mehr",
+     "start": 12.4,
+     "ende": 12.56
+    },
+    {
+     "wort": "Geld.",
+     "start": 12.64,
+     "ende": 13.2
+    },
+    {
+     "wort": "Annahme:",
+     "start": 13.44,
+     "ende": 14.08
+    },
+    {
+     "wort": "5",
+     "start": 14.24,
+     "ende": 14.4
+    },
+    {
+     "wort": "Prozent",
+     "start": 14.48,
+     "ende": 14.8
+    },
+    {
+     "wort": "Rendite",
+     "start": 14.88,
+     "ende": 15.28
+    },
+    {
+     "wort": "im",
+     "start": 15.36,
+     "ende": 15.44
+    },
+    {
+     "wort": "Jahr.",
+     "start": 15.52,
+     "ende": 15.96
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, Mia zahlt mehr ein. Oder?",
+   "start": 16.16,
+   "ende": 19.2,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 16.16,
+     "ende": 16.64
+    },
+    {
+     "wort": "Mia",
+     "start": 17.093,
+     "ende": 17.28
+    },
+    {
+     "wort": "zahlt",
+     "start": 17.36,
+     "ende": 17.68
+    },
+    {
+     "wort": "mehr",
+     "start": 17.76,
+     "ende": 17.92
+    },
+    {
+     "wort": "ein.",
+     "start": 18.0,
+     "ende": 18.44
+    },
+    {
+     "wort": "Oder?",
+     "start": 18.64,
+     "ende": 19.2
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Mit 35 hat Lena schon 15.499 Euro. Mia fängt erst an.",
+   "start": 19.52,
+   "ende": 23.88,
+   "woerter": [
+    {
+     "wort": "Mit",
+     "start": 19.52,
+     "ende": 19.68
+    },
+    {
+     "wort": "35",
+     "start": 19.72,
+     "ende": 20.4
+    },
+    {
+     "wort": "hat",
+     "start": 20.56,
+     "ende": 20.72
+    },
+    {
+     "wort": "Lena",
+     "start": 20.76,
+     "ende": 20.96
+    },
+    {
+     "wort": "schon",
+     "start": 21.04,
+     "ende": 21.2
+    },
+    {
+     "wort": "15.499",
+     "start": 21.28,
+     "ende": 21.96
+    },
+    {
+     "wort": "Euro.",
+     "start": 21.96,
+     "ende": 22.64
+    },
+    {
+     "wort": "Mia",
+     "start": 22.68,
+     "ende": 22.96
+    },
+    {
+     "wort": "fängt",
+     "start": 23.04,
+     "ende": 23.2
+    },
+    {
+     "wort": "erst",
+     "start": 23.24,
+     "ende": 23.44
+    },
+    {
+     "wort": "an.",
+     "start": 23.56,
+     "ende": 23.88
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 24.08,
+   "ende": 26.08,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 24.08,
+     "ende": 24.32
+    },
+    {
+     "wort": "mir,",
+     "start": 24.44,
+     "ende": 24.64
+    },
+    {
+     "wort": "damit",
+     "start": 24.72,
+     "ende": 24.88
+    },
+    {
+     "wort": "du",
+     "start": 24.92,
+     "ende": 24.96
+    },
+    {
+     "wort": "nichts",
+     "start": 25.04,
+     "ende": 25.24
+    },
+    {
+     "wort": "verpasst.",
+     "start": 25.28,
+     "ende": 26.08
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Doch Mia spart schneller. Mit 55 haben beide gleich viel eingezahlt. Aber auf dem Konto? Lena 81.870, Mia 61.119 Euro.",
+   "start": 26.16,
+   "ende": 37.2,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 26.16,
+     "ende": 26.32
+    },
+    {
+     "wort": "Mia",
+     "start": 26.4,
+     "ende": 26.72
+    },
+    {
+     "wort": "spart",
+     "start": 26.8,
+     "ende": 27.12
+    },
+    {
+     "wort": "schneller.",
+     "start": 27.173,
+     "ende": 27.76
+    },
+    {
+     "wort": "Mit",
+     "start": 28.0,
+     "ende": 28.16
+    },
+    {
+     "wort": "55",
+     "start": 28.24,
+     "ende": 28.96
+    },
+    {
+     "wort": "haben",
+     "start": 29.12,
+     "ende": 29.28
+    },
+    {
+     "wort": "beide",
+     "start": 29.36,
+     "ende": 29.6
+    },
+    {
+     "wort": "gleich",
+     "start": 29.68,
+     "ende": 30.0
+    },
+    {
+     "wort": "viel",
+     "start": 30.04,
+     "ende": 30.16
+    },
+    {
+     "wort": "eingezahlt.",
+     "start": 30.24,
+     "ende": 31.04
+    },
+    {
+     "wort": "Aber",
+     "start": 31.2,
+     "ende": 31.44
+    },
+    {
+     "wort": "auf",
+     "start": 31.6,
+     "ende": 31.68
+    },
+    {
+     "wort": "dem",
+     "start": 31.76,
+     "ende": 31.84
+    },
+    {
+     "wort": "Konto?",
+     "start": 31.92,
+     "ende": 32.32
+    },
+    {
+     "wort": "Lena",
+     "start": 32.72,
+     "ende": 33.04
+    },
+    {
+     "wort": "81.870,",
+     "start": 33.12,
+     "ende": 34.88
+    },
+    {
+     "wort": "Mia",
+     "start": 34.96,
+     "ende": 35.28
+    },
+    {
+     "wort": "61.119",
+     "start": 35.36,
+     "ende": 36.28
+    },
+    {
+     "wort": "Euro.",
+     "start": 36.28,
+     "ende": 37.2
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Ab jetzt zahlt Mia mehr ein. Und der Abstand wächst trotzdem. Mit 60: 23.080 Euro.",
+   "start": 37.28,
+   "ende": 44.48,
+   "woerter": [
+    {
+     "wort": "Ab",
+     "start": 37.28,
+     "ende": 37.36
+    },
+    {
+     "wort": "jetzt",
+     "start": 37.44,
+     "ende": 37.76
+    },
+    {
+     "wort": "zahlt",
+     "start": 37.84,
+     "ende": 38.08
+    },
+    {
+     "wort": "Mia",
+     "start": 38.12,
+     "ende": 38.4
+    },
+    {
+     "wort": "mehr",
+     "start": 38.44,
+     "ende": 38.64
+    },
+    {
+     "wort": "ein.",
+     "start": 38.76,
+     "ende": 39.2
+    },
+    {
+     "wort": "Und",
+     "start": 39.28,
+     "ende": 39.36
+    },
+    {
+     "wort": "der",
+     "start": 39.4,
+     "ende": 39.44
+    },
+    {
+     "wort": "Abstand",
+     "start": 39.52,
+     "ende": 40.0
+    },
+    {
+     "wort": "wächst",
+     "start": 40.48,
+     "ende": 40.8
+    },
+    {
+     "wort": "trotzdem.",
+     "start": 40.84,
+     "ende": 41.64
+    },
+    {
+     "wort": "Mit",
+     "start": 41.84,
+     "ende": 42.0
+    },
+    {
+     "wort": "60:",
+     "start": 42.04,
+     "ende": 42.85333333333333
+    },
+    {
+     "wort": "23.080",
+     "start": 42.85333333333333,
+     "ende": 43.666666666666664
+    },
+    {
+     "wort": "Euro.",
+     "start": 43.666666666666664,
+     "ende": 44.48
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand: Lena 166.640 Euro. Mia 139.181 Euro. Lena: 27.459 Euro mehr. Und 7.200 Euro weniger eingezahlt.",
+   "start": 44.6,
+   "ende": 57.28,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 44.6,
+     "ende": 45.24
+    },
+    {
+     "wort": "Lena",
+     "start": 45.44,
+     "ende": 45.84
+    },
+    {
+     "wort": "166.640",
+     "start": 46.0,
+     "ende": 47.76
+    },
+    {
+     "wort": "Euro.",
+     "start": 47.84,
+     "ende": 48.48
+    },
+    {
+     "wort": "Mia",
+     "start": 48.56,
+     "ende": 48.88
+    },
+    {
+     "wort": "139.181",
+     "start": 49.04,
+     "ende": 50.16
+    },
+    {
+     "wort": "Euro.",
+     "start": 50.16,
+     "ende": 51.28
+    },
+    {
+     "wort": "Lena:",
+     "start": 51.32,
+     "ende": 51.8
+    },
+    {
+     "wort": "27.459",
+     "start": 51.92,
+     "ende": 52.72
+    },
+    {
+     "wort": "Euro",
+     "start": 52.72,
+     "ende": 53.52
+    },
+    {
+     "wort": "mehr.",
+     "start": 53.6,
+     "ende": 54.16
+    },
+    {
+     "wort": "Und",
+     "start": 54.24,
+     "ende": 54.32
+    },
+    {
+     "wort": "7.200",
+     "start": 54.4,
+     "ende": 55.52
+    },
+    {
+     "wort": "Euro",
+     "start": 55.6,
+     "ende": 55.84
+    },
+    {
+     "wort": "weniger",
+     "start": 55.92,
+     "ende": 56.24
+    },
+    {
+     "wort": "eingezahlt.",
+     "start": 56.32,
+     "ende": 57.28
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Lenas Zinsen haben 10 Jahre länger Zeit, selbst Zinsen zu bringen. Bei 3 Prozent Rendite blieben nur 3.986 Euro Vorsprung.",
+   "start": 57.36,
+   "ende": 66.08,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 57.36,
+     "ende": 58.04
+    },
+    {
+     "wort": "Lenas",
+     "start": 58.32,
+     "ende": 58.64
+    },
+    {
+     "wort": "Zinsen",
+     "start": 58.72,
+     "ende": 59.12
+    },
+    {
+     "wort": "haben",
+     "start": 59.2,
+     "ende": 59.44
+    },
+    {
+     "wort": "10",
+     "start": 59.52,
+     "ende": 59.76
+    },
+    {
+     "wort": "Jahre",
+     "start": 59.84,
+     "ende": 60.08
+    },
+    {
+     "wort": "länger",
+     "start": 60.16,
+     "ende": 60.4
+    },
+    {
+     "wort": "Zeit,",
+     "start": 60.48,
+     "ende": 60.88
+    },
+    {
+     "wort": "selbst",
+     "start": 60.96,
+     "ende": 61.28
+    },
+    {
+     "wort": "Zinsen",
+     "start": 61.32,
+     "ende": 61.6
+    },
+    {
+     "wort": "zu",
+     "start": 61.68,
+     "ende": 61.76
+    },
+    {
+     "wort": "bringen.",
+     "start": 61.8,
+     "ende": 62.4
+    },
+    {
+     "wort": "Bei",
+     "start": 62.44,
+     "ende": 62.48
+    },
+    {
+     "wort": "3",
+     "start": 62.56,
+     "ende": 62.72
+    },
+    {
+     "wort": "Prozent",
+     "start": 62.8,
+     "ende": 63.12
+    },
+    {
+     "wort": "Rendite",
+     "start": 63.2,
+     "ende": 63.68
+    },
+    {
+     "wort": "blieben",
+     "start": 63.76,
+     "ende": 64.0
+    },
+    {
+     "wort": "nur",
+     "start": 64.04,
+     "ende": 64.24
+    },
+    {
+     "wort": "3.986",
+     "start": 64.32,
+     "ende": 64.8
+    },
+    {
+     "wort": "Euro",
+     "start": 64.88,
+     "ende": 65.12
+    },
+    {
+     "wort": "Vorsprung.",
+     "start": 65.2,
+     "ende": 66.08
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und das Verrückte: Hört Lena mit 35 auf, nach nur 12.000 Euro, hat sie mit 67 trotzdem 73.853 Euro.",
+   "start": 66.12,
+   "ende": 75.04,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 66.12,
+     "ende": 66.16
+    },
+    {
+     "wort": "das",
+     "start": 66.24,
+     "ende": 66.32
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 66.4,
+     "ende": 67.08
+    },
+    {
+     "wort": "Hört",
+     "start": 67.28,
+     "ende": 67.44
+    },
+    {
+     "wort": "Lena",
+     "start": 67.52,
+     "ende": 67.76
+    },
+    {
+     "wort": "mit",
+     "start": 67.84,
+     "ende": 67.92
+    },
+    {
+     "wort": "35",
+     "start": 68.0,
+     "ende": 68.64
+    },
+    {
+     "wort": "auf,",
+     "start": 68.8,
+     "ende": 69.28
+    },
+    {
+     "wort": "nach",
+     "start": 69.32,
+     "ende": 69.44
+    },
+    {
+     "wort": "nur",
+     "start": 69.52,
+     "ende": 69.6
+    },
+    {
+     "wort": "12.000",
+     "start": 69.68,
+     "ende": 70.24
+    },
+    {
+     "wort": "Euro,",
+     "start": 70.4,
+     "ende": 70.96
+    },
+    {
+     "wort": "hat",
+     "start": 71.04,
+     "ende": 71.12
+    },
+    {
+     "wort": "sie",
+     "start": 71.16,
+     "ende": 71.2
+    },
+    {
+     "wort": "mit",
+     "start": 71.28,
+     "ende": 71.36
+    },
+    {
+     "wort": "67",
+     "start": 71.44,
+     "ende": 72.16
+    },
+    {
+     "wort": "trotzdem",
+     "start": 72.32,
+     "ende": 72.8
+    },
+    {
+     "wort": "73.853",
+     "start": 72.88,
+     "ende": 73.96000000000001
+    },
+    {
+     "wort": "Euro.",
+     "start": 73.96000000000001,
+     "ende": 75.04
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Mia zahlt mehr ein. Lena hat mehr Zeit. Und die Zeit gewinnt.",
+   "start": 75.08,
+   "ende": 79.8,
+   "woerter": [
+    {
+     "wort": "Mia",
+     "start": 75.08,
+     "ende": 75.36
+    },
+    {
+     "wort": "zahlt",
+     "start": 75.44,
+     "ende": 75.68
+    },
+    {
+     "wort": "mehr",
+     "start": 75.76,
+     "ende": 75.92
+    },
+    {
+     "wort": "ein.",
+     "start": 76.0,
+     "ende": 76.52
+    },
+    {
+     "wort": "Lena",
+     "start": 76.72,
+     "ende": 77.04
+    },
+    {
+     "wort": "hat",
+     "start": 77.12,
+     "ende": 77.28
+    },
+    {
+     "wort": "mehr",
+     "start": 77.32,
+     "ende": 77.44
+    },
+    {
+     "wort": "Zeit.",
+     "start": 77.52,
+     "ende": 77.92
+    },
+    {
+     "wort": "Und",
+     "start": 78.24,
+     "ende": 78.32
+    },
+    {
+     "wort": "die",
+     "start": 78.4,
+     "ende": 78.48
+    },
+    {
+     "wort": "Zeit",
+     "start": 78.56,
+     "ende": 78.88
+    },
+    {
+     "wort": "gewinnt.",
+     "start": 79.04,
+     "ende": 79.8
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 80.08,
+   "ende": 83.28,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 80.08,
+     "ende": 80.24
+    },
+    {
+     "wort": "sollen",
+     "start": 80.293,
+     "ende": 80.4
+    },
+    {
+     "wort": "wir",
+     "start": 80.48,
+     "ende": 80.56
+    },
+    {
+     "wort": "als",
+     "start": 80.64,
+     "ende": 80.72
+    },
+    {
+     "wort": "Nächstes",
+     "start": 80.76,
+     "ende": 81.12
+    },
+    {
+     "wort": "zeigen?",
+     "start": 81.28,
+     "ende": 81.76
+    },
+    {
+     "wort": "Schreib",
+     "start": 81.84,
+     "ende": 82.08
+    },
+    {
+     "wort": "es",
+     "start": 82.12,
+     "ende": 82.16
+    },
+    {
+     "wort": "in",
+     "start": 82.24,
+     "ende": 82.28
+    },
+    {
+     "wort": "die",
+     "start": 82.32,
+     "ende": 82.4
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 82.44,
+     "ende": 83.28
+    }
+   ]
+  }
+ ]
+}

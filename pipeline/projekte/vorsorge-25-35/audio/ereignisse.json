@@ -1,0 +1,1093 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "vorsorge-25-35",
+ "fps": 30,
+ "dauer": 83.76666666666667,
+ "stimmEnde": 83.201,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "raum",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "LENA",
+    "farbe": "#2EC4B6"
+   },
+   "b": {
+    "name": "MIA",
+    "farbe": "#FF8A3D"
+   }
+  },
+  "schleife": {
+   "ab": 75.08,
+   "ende": 83.71766666666666
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 83.718,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 1.1963062718223227e-7
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Szene",
+   "t": 0,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Sockel leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.5,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "LED-Kanten leuchten auf"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lebensuhr-Ring leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Sockel leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ring-Ende 67 leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Licht auf Lenas Sockel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.08,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "100 € / MONAT"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.24,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AB 25"
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.24,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Startmarke 25 leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Licht auf Mias Sockel, Startmarke 35"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.48,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "150 € / MONAT"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.92,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AB 35"
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Sockel leuchtet"
+  },
+  {
+   "quelle": "Pille",
+   "t": 13.44,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "Annahme 5 % Rendite"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Spot auf die Lebensuhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.093,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Licht auf Mias Turm-Platz"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.633,
+   "typ": "zaehler",
+   "dauer": 2.667,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.64,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ring leuchtet, Bild steht"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.067,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.433,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.52,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zeiger startet, Münzen fallen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.567,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.7,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.933,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.433,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.567,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.767,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.033,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.28,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Alter 35, Lenas Turm 15.499"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Mias Sockel geht an"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 24.08,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.96,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.96,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.96,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.96,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Zaehler",
+   "t": 25.96,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "Eingezahlt a"
+  },
+  {
+   "quelle": "Zaehler",
+   "t": 25.96,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "Eingezahlt b"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.133,
+   "typ": "zaehler",
+   "dauer": 2.533,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.133,
+   "typ": "zaehler",
+   "dauer": 2.533,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.16,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera weit, Mias Turm wächst schneller"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.533,
+   "typ": "uhr",
+   "dauer": 1.733,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.24,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zeiger auf 55"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.367,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Zaehler",
+   "t": 29.68,
+   "typ": "chip",
+   "klang": "ding",
+   "text": "Eingezahlt leuchtet"
+  },
+  {
+   "quelle": "Zaehler",
+   "t": 29.68,
+   "typ": "chip",
+   "klang": "ding",
+   "text": "Eingezahlt leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "beide Eingezahlt-Zähler 36.000 € leuchten"
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.92,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lücke zwischen den Türmen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lenas Turm leuchtet, Zoom"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 33.32,
+   "art": "zoom",
+   "dauer": 2,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.36,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Mias Turm leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.267,
+   "typ": "zaehler",
+   "dauer": 4.6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.267,
+   "typ": "zaehler",
+   "dauer": 4.6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.28,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Eingezahlt-Zähler überholt"
+  },
+  {
+   "quelle": "Zaehler",
+   "t": 37.58,
+   "typ": "chip",
+   "klang": "ding",
+   "text": "Eingezahlt leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.767,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.967,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.8,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lücke wird länger"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.767,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.04,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Alter 60, Abstand 23.080"
+  },
+  {
+   "quelle": "Chip",
+   "t": 42.853,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABSTAND 23.080 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.7,
+   "typ": "zaehler",
+   "dauer": 2.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.7,
+   "typ": "zaehler",
+   "dauer": 2.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.833,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.367,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 44.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Alter 67, Kamera weit"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.833,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.133,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.333,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 46,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "LENA"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lenas Turm leuchtet"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 46.7,
+   "art": "zoom",
+   "dauer": 1.7,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 49.04,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "MIA"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.04,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Mias Turm leuchtet"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 51.92,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "LENA VORN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Differenz leuchtet"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 52.12,
+   "art": "zoom",
+   "dauer": 2.3,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Zaehler",
+   "t": 54.4,
+   "typ": "chip",
+   "klang": "ding",
+   "text": "Eingezahlt leuchtet"
+  },
+  {
+   "quelle": "Zaehler",
+   "t": 54.4,
+   "typ": "chip",
+   "klang": "ding",
+   "text": "Eingezahlt leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 54.4,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "7.200 € WENIGER EINGEZAHLT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.4,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Einzahlungen leuchten"
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.01,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "WarumKarte",
+   "t": 58.32,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "warum"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Turm leuchtet"
+  },
+  {
+   "quelle": "WarumKarte",
+   "t": 60.48,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "warum"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.48,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Turm leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.533,
+   "typ": "zaehler",
+   "dauer": 1.233,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.533,
+   "typ": "zaehler",
+   "dauer": 1.233,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Pille",
+   "t": 62.56,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "Annahme 3 % bzw. 5 % Rendite"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.56,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Rendite 5 % → 3 %, Türme schrumpfen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 64.32,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABSTAND 3.986 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.32,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Abstand 3.986 leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 65.92,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 66.1,
+   "typ": "zaehler",
+   "dauer": 0.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 66.1,
+   "typ": "zaehler",
+   "dauer": 0.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Pille",
+   "t": 66.12,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "Annahme 3 % bzw. 5 % Rendite"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.12,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Rendite zurück auf 5 %, Kamera fährt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.267,
+   "typ": "zaehler",
+   "dauer": 0.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.267,
+   "typ": "zaehler",
+   "dauer": 0.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.28,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Mias Turm sinkt, Lenas Turm sinkt auf 35"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.4,
+   "typ": "uhr",
+   "dauer": 0.6,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.8,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zeiger steht bei 35"
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Eingezahlt 12.000 leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 71.033,
+   "typ": "zaehler",
+   "dauer": 1.867,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.04,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "Lenas Turm wächst allein"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 71.167,
+   "typ": "uhr",
+   "dauer": 1.567,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 72.68,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.88,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Endwert 73.853 leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.067,
+   "typ": "zaehler",
+   "dauer": 8.684,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 75.08,
+   "art": "schleife",
+   "dauer": 8.653,
+   "klang": false
+  },
+  {
+   "t": 75.08,
+   "typ": "schleife",
+   "dauer": 8.638,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.8,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 77.033,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 77.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 77.433,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 77.52,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lebensuhr leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 77.567,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 77.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 77.833,
+   "typ": "uhr",
+   "dauer": 3,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 78.4,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "DIE ZEIT"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 80.933,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 81.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 81.333,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 81.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 81.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 81.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 82.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  }
+ ],
+ "klang": []
+}

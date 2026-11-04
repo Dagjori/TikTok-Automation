@@ -1,0 +1,265 @@
+{
+  "titel": "Mit 25 oder mit 35 anfangen vorzusorgen: Wer hat mit 67 mehr?",
+  "skill": "simulierbar-video",
+  "konto": "simulierbar",
+  "stil": "18 Dunkles Studio (Produktlicht)",
+  "stil_begruendung": "Reine Geldfrage mit Euro-Endzahl: Zinseszins als Geld zum Anfassen. Zwei Münztürme auf schwarzen Sockeln mit LED-Kante in Teamfarbe, in der Mitte die Lebensuhr (Drehteller mit 42-Stationen-Ring von 25 bis 67 und Zeiger), im Produktlicht-Studio wie bestellt in der Bildidee. Baukasten vorhanden (stil_studio.js). Zuletzt gepostet Stil 17, daher 18; Teamfarben Türkis/Orange statt Pink/Türkis der letzten Studio-Videos, damit die Reihe nicht gleich aussieht.",
+  "teamfarben": {
+    "LENA": "#2EC4B6",
+    "MIA": "#FF8A3D"
+  },
+  "klangteppich": "raum",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Hundert Euro ab 25 oder 150 ab 35? Wer hat mit 67 mehr?",
+      "sprechtext": "Hundert Euro ab fünfundzwanzig – oder hundertfünfzig ab fünfunddreißig?\n[curious] Wer hat mit siebenundsechzig MEHR?",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Hundert Euro ab fünfundzwanzig – oder hundertfünfzig ab fünfunddreißig?",
+          "bild": "Lebensuhr (Ring mit 42 Stationen, 25 bis 67) auf dem Drehteller, zwei Sockel mit Münzturm-Plätzen, Tafel 0 € / 0 € ab Bild 0; Kamera fährt langsam ein, beide LED-Kanten leuchten bei „hundert“ und „hundertfünfzig“ auf"
+        },
+        {
+          "gesagt": "Wer hat mit siebenundsechzig MEHR?",
+          "bild": "Ring-Ende (67) leuchtet auf, Licht wandert zwischen den Sockeln"
+        }
+      ]
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Lena spart ab 25 jeden Monat. Mia startet 10 Jahre später, mit mehr Geld. Annahme: 5 Prozent Rendite im Jahr.",
+      "sprechtext": "Lena spart ab fünfundzwanzig jeden Monat.\nMia startet zehn Jahre später – mit mehr Geld.\nAnnahme: fünf Prozent Rendite im Jahr.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Lena spart ab fünfundzwanzig jeden Monat.",
+          "bild": "Licht auf Lenas Sockel (links, Türkis), Chip „100 € / Monat · ab 25“, erste Münze fällt"
+        },
+        {
+          "gesagt": "Mia startet zehn Jahre später – mit mehr Geld.",
+          "bild": "Licht wandert auf Mias Sockel (rechts, Orange), Chip „150 € / Monat · ab 35“, Mias Sockel bleibt noch ohne Münzen"
+        },
+        {
+          "gesagt": "Annahme: fünf Prozent Rendite im Jahr.",
+          "bild": "Pille „ANNAHME · 5 % Rendite im Jahr“ erscheint mittig unter der Tafel und bleibt sichtbar"
+        }
+      ]
+    },
+    {
+      "id": "falle",
+      "phase": "falle",
+      "text": "Klar, Mia zahlt mehr ein. Oder?",
+      "sprechtext": "Klar … Mia zahlt MEHR ein.\nOder?",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Klar … Mia zahlt MEHR ein. Also hat sie mehr. Oder?",
+          "bild": "Lichtkegel auf Mias größeren Münzen/Sockel (Spot rechts), Kamera rückt ein; bei „Oder?“ steht das Bild kurz, Ring leuchtet"
+        }
+      ]
+    },
+    {
+      "id": "rennen",
+      "phase": "rennen",
+      "text": "Mit 35 hat Lena schon 15.499 Euro. Mia fängt erst an.",
+      "sprechtext": "Mit fünfunddreißig hat Lena schon fünfzehntausend.\nMia fängt erst an.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Mit fünfunddreißig hat Lena schon fünfzehntausend. Mia fängt erst an.",
+          "bild": "Uhr läuft 25 → 35, Ring leuchtet Station für Station, Münzen regnen auf Lenas Turm, Tafel links wächst auf 15.499 €; bei „Mia fängt erst an“ geht Mias Sockel-Licht an, Tafel rechts bleibt 0"
+        }
+      ]
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Folg mir, damit du nichts verpasst.",
+          "bild": "Folgen-Element bei ca. 20 s, Welt läuft weiter"
+        }
+      ]
+    },
+    {
+      "id": "wendung1",
+      "phase": "wendung1",
+      "text": "Doch Mia spart schneller. Mit 55 haben beide gleich viel eingezahlt. Aber auf dem Konto? Lena 81.870, Mia 61.119 Euro.",
+      "sprechtext": "Doch Mia spart schneller.\nMit fünfundfünfzig haben beide GLEICH viel eingezahlt.\nAber auf dem Konto?\nLena knapp zweiundachtzigtausend, Mia gut einundsechzigtausend.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Doch Mia spart schneller.",
+          "bild": "Uhr 35 → 55, Mias Turm wächst schneller, Mia-Münzen fallen, Ring leuchtet weiter"
+        },
+        {
+          "gesagt": "Mit fünfundfünfzig haben beide GLEICH viel eingezahlt.",
+          "bild": "Zwei Zähler „EINGEZAHLT“ links/rechts laufen hoch und stehen bei 36.000 € / 36.000 €, beide leuchten gleichzeitig auf (Uhr 55)"
+        },
+        {
+          "gesagt": "Aber auf dem Konto? Lena knapp zweiundachtzigtausend, Mia gut einundsechzigtausend.",
+          "bild": "Zoom auf die ungleichen Türme, Tafel Lena 81.870 €, Mia 61.119 €, Lücke-Linie zwischen den Türmen"
+        }
+      ]
+    },
+    {
+      "id": "wendung2",
+      "phase": "wendung2",
+      "text": "Ab jetzt zahlt Mia mehr ein. Und der Abstand wächst trotzdem. Mit 60: 23.080 Euro.",
+      "sprechtext": "Ab jetzt zahlt Mia mehr ein.\nUnd der Abstand … WÄCHST trotzdem.\nMit sechzig: dreiundzwanzigtausend.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Ab jetzt zahlt Mia mehr ein.",
+          "bild": "Uhr 55 → 60, Mias Einzahlungs-Zähler überholt (Farbwechsel/Aufleuchten)"
+        },
+        {
+          "gesagt": "Und der Abstand … WÄCHST trotzdem.",
+          "bild": "Lücke-Linie wird länger"
+        },
+        {
+          "gesagt": "Mit sechzig: dreiundzwanzigtausend.",
+          "bild": "Chip „ABSTAND 23.080 €“ bei 60, Uhr 60"
+        }
+      ]
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Endstand: Lena 166.640 Euro. Mia 139.181 Euro. Lena: 27.459 Euro mehr. Und 7.200 Euro weniger eingezahlt.",
+      "sprechtext": "Endstand:\nLena – rund hundertsiebenundsechzigtausend Euro.\nMia – rund hundertneununddreißigtausend.\nLena: gut SIEBENUNDZWANZIGTAUSEND mehr.\nUnd siebentausendzweihundert Euro weniger eingezahlt.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Endstand mit siebenundsechzig:",
+          "bild": "Uhr stoppt bei 67, Ring voll, Kamera zieht zurück"
+        },
+        {
+          "gesagt": "Lena – rund hundertsiebenundsechzigtausend Euro.",
+          "bild": "Bilanzkarte Zeile Lena 166.640 €, Licht auf Lenas Turm"
+        },
+        {
+          "gesagt": "Mia – rund hundertneununddreißigtausend.",
+          "bild": "Bilanzkarte Zeile Mia 139.181 €"
+        },
+        {
+          "gesagt": "Lena hat gut SIEBENUNDZWANZIGTAUSEND mehr.",
+          "bild": "Zeile Differenz 27.459 € (Lena vorn), Glow"
+        },
+        {
+          "gesagt": "Und siebentausendzweihundert Euro weniger eingezahlt.",
+          "bild": "Einzahlungs-Zähler 50.400 € gegen 57.600 € leuchten, Chip „7.200 € WENIGER EINGEZAHLT“"
+        }
+      ]
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Lenas Zinsen haben 10 Jahre länger Zeit, selbst Zinsen zu bringen. Bei 3 Prozent Rendite blieben nur 3.986 Euro Vorsprung.",
+      "sprechtext": "[thoughtful] Warum?\nLenas Zinsen haben zehn Jahre länger Zeit, selbst Zinsen zu bringen.\nBei drei Prozent Rendite blieben nur viertausend Euro Vorsprung.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Warum? Lenas Zinsen haben zehn Jahre länger Zeit, selbst Zinsen zu bringen.",
+          "bild": "Karte „WARUM?“: Säulen Einzahlungen gegen Zinsen für beide, Lenas Zinsen-Säule höher"
+        },
+        {
+          "gesagt": "Bei drei Prozent Rendite blieben nur viertausend Euro Vorsprung.",
+          "bild": "Annahme-Pille 5 % → 3 %, Türme schrumpfen, Tafel 100.020 € / 96.034 €, Chip „ABSTAND 3.986 €“"
+        }
+      ]
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "ueberraschung",
+      "text": "Und das Verrückte: Hört Lena mit 35 auf, nach nur 12.000 Euro, hat sie mit 67 trotzdem 73.853 Euro.",
+      "sprechtext": "Und das Verrückte:\nHört Lena mit fünfunddreißig AUF,\nnach nur zwölftausend Euro,\nhat sie mit siebenundsechzig trotzdem fast vierundsiebzigtausend.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Und das Verrückte: Hört Lena mit fünfunddreißig AUF …",
+          "bild": "Neue Runde bei 5 %: Mias Turm sinkt weg, Lenas Turm steht bei 35 (15.499 €), Zufluss stoppt"
+        },
+        {
+          "gesagt": "nach nur zwölftausend Euro …",
+          "bild": "Chip „EINGEZAHLT 12.000 €“"
+        },
+        {
+          "gesagt": "hat sie mit siebenundsechzig trotzdem fast vierundsiebzigtausend.",
+          "bild": "Lenas Turm wächst allein 35 → 67 auf 73.853 €, Ring leuchtet bis 67"
+        }
+      ]
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Mia zahlt mehr ein. Lena hat mehr Zeit. Und die Zeit gewinnt.",
+      "sprechtext": "Mia zahlt mehr ein.\nLena hat mehr ZEIT.\nUnd die Zeit gewinnt.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Mia zahlt mehr ein. Lena hat mehr ZEIT. Und die Zeit gewinnt.",
+          "bild": "Kamera auf die Lebensuhr, Licht auf Ring, ruhig; Pointe „ZEIT“ ohne Sticker"
+        }
+      ]
+    },
+    {
+      "id": "schluss",
+      "phase": "schluss",
+      "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+      "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+          "bild": "Werte und Kamera gleiten zum Anfangsbild zurück, letztes Bild = erstes Bild"
+        }
+      ]
+    }
+  ],
+  "caption": "Mit 25 oder mit 35 anfangen fürs Alter zu sparen? 💶 Ich hab's simuliert. Team früh oder Team mehr Rate? 👇 #sparen #altersvorsorge #zinseszins #wissen #simulation",
+  "quellen": [
+    "(F) § 35 SGB VI Regelaltersrente: Regelaltersgrenze mit Vollendung des 67. Lebensjahres, Bundesamt für Justiz, Stand 2026 – https://www.gesetze-im-internet.de/sgb_6/__35.html",
+    "(F) § 235 SGB VI: stufenweise Anhebung für Jahrgänge 1947–1963, ab Jahrgang 1964 gilt 67 (heute 25-/35-Jährige: Jahrgänge 2001/1991) – https://www.gesetze-im-internet.de/sgb_6/__235.html",
+    "(F) Finanztip, Pressemitteilung „MSCI-World-Rendite“, 31.01.2017: im Schnitt 7,7 % jährlich über beliebige 15-Jahres-Zeiträume seit 1975 – https://www.finanztip.de/presse/pm-finanztip-msci-world-rendite/",
+    "(F) Deutsche Börse/envestor, „MSCI World kontra Weltportfolio“, 01.12.2025: 10.000 € Ende 1969 → knapp 727.000 € Ende Nov. 2025 (rechnerisch ca. 8 % p. a.) – https://live.deutsche-boerse.com/nachrichten/msci-world-kontra-weltportfolio-warum-ein-index-selten-genuegt",
+    "(S) Eigene Modellrechnung (Zinseszins), Python, 04.11.2026."
+  ],
+  "annahmen": [
+    "(A) Modellrendite 5 % p. a. nach Kosten, konstant, ohne Schwankungen; Variante 3 %. Liegt unter dem langfristigen Weltaktienindex-Schnitt (ca. 7,7–8 % p. a.), ist also bewusst vorsichtig; kein Produkt, keine Anlageempfehlung.",
+    "(A) Einzahlung monatlich zum Monatsanfang, monatliche Verzinsung (effektiv 5 % p. a.).",
+    "(A) Ohne Steuern (Abgeltungsteuer, Sparerpauschbetrag), ohne Inflation; nominale Euro.",
+    "(A) Sparraten konstant über die ganze Laufzeit, keine Entnahmen; Ende mit Vollendung des 67. Lebensjahres (Regelaltersgrenze).",
+    "(A) Lena und Mia sind Modellpersonen."
+  ],
+  "rechenweg": "Monatliche Einzahlung am Monatsanfang, monatliche Verzinsung mit (1,05)^(1/12)−1 (= 5 % effektiv p. a.), Endwert K = Σ Rate·(1+m)^(n−i+1). Lena: 100 € × 504 Monate (25 bis 67) = 50.400 € eingezahlt → 166.640 €. Mia: 150 € × 384 Monate (35 bis 67) = 57.600 € eingezahlt → 139.181 €. Differenz 27.459 € für Lena; Mia zahlt 7.200 € mehr ein. Zwischenstände 5 %: Alter 35 Lena 15.499 / Mia 0; 45: 40.746 / 23.249; 55: 81.870 / 61.119 (beide 36.000 € eingezahlt: 1.200·30 = 1.800·20); 60: 111.298 / 88.218 (Abstand 23.080). Variante 3 %: Lena 100.020 €, Mia 96.034 €, Abstand 3.986 €. Variante 7 % (nur intern): 287.144 / 205.837. Lena nur 25 bis 35 (12.000 €), dann liegen lassen: 15.499 × 1,05^32 = 73.853 €. Mia bräuchte 179,59 €/Monat für Gleichstand bei 5 %. Nachgerechnet mit Python (cockpit/daten/tmp/rechnung_vorsorge.py).",
+  "zahlen": {
+    "lena_rate": "100 €/Monat ab 25",
+    "mia_rate": "150 €/Monat ab 35",
+    "rendite_modell": "5 % p. a. (Annahme)",
+    "lena_eingezahlt": "50.400 €",
+    "mia_eingezahlt": "57.600 €",
+    "lena_67": "166.640 €",
+    "mia_67": "139.181 €",
+    "abstand_67": "27.459 €",
+    "lena_35": "15.499 €",
+    "gleich_eingezahlt_55": "36.000 € je",
+    "lena_55": "81.870 €",
+    "mia_55": "61.119 €",
+    "abstand_60": "23.080 €",
+    "abstand_3_prozent": "3.986 € (Lena 100.020 / Mia 96.034)",
+    "lena_nur_bis_35": "73.853 € mit 12.000 € eingezahlt",
+    "mia_rate_fuer_gleichstand": "179,59 €/Monat"
+  },
+  "skript_quelle": "acc1-2026-11-05-mittag",
+  "dramaturgie": [
+    "0 s: Lebensuhr 25→67 in der Mitte, zwei Sockel (Lena links, Mia rechts), Tafel 0 € / 0 €; Szene ab Bild 1 in Bewegung, Licht kühl.",
+    "3–12 s: Regeln erscheinen beim Wort als Objekt und Chip (100 €/Monat ab 25, 150 €/Monat ab 35, Chip ‚Annahme: 5 % p. a.‘); Mias Sockel bleibt dunkel.",
+    "ca. 13 s Denkfalle: Lichtkegel auf Mias größere Münzen (150).",
+    "14–19 s Rennen: Uhr läuft von 25 bis 35, nur Lenas Turm wächst (Zähler bis 15.499 €), dann geht bei Mia das Licht an.",
+    "ca. 20 s Folgen-Aufruf, Welt läuft weiter.",
+    "22–30 s Wendung 1 (Spannung steigt): je Seite zwei Zähler ‚eingezahlt‘ und ‚Konto‘; bei 55 leuchten beide ‚eingezahlt 36.000 €‘ gleichzeitig auf, Zoom auf die ungleichen Konto-Türme.",
+    "30–36 s Wendung 2: Mias ‚eingezahlt‘ überholt (Farbwechsel), Abstandslinie zwischen den Türmen wird länger, Chip ‚Abstand 23.080 €‘ bei 60.",
+    "37–47 s Ergebnis (Höhepunkt): Uhr stoppt bei 67, Bilanzkarte zeilenweise, Licht auf Lenas Turm, Zeile ‚7.200 € weniger eingezahlt‘ leuchtet auf.",
+    "48–57 s Warum: Balken ‚Einzahlungen‘ gegen ‚Zinsen auf Zinsen‘; Regler 5 % → 3 %, Türme schrumpfen, Abstand 3.986 €.",
+    "57–66 s Zweite Überraschung: neue Runde, Lenas Zufluss stoppt bei 35, Turm wächst allein weiter bis 73.853 €.",
+    "66–72 s Merksatz ruhig, Kamera auf die Lebensuhr; Schluss: Werte gleiten auf 0 zurück, letztes Bild = erstes Bild."
+  ],
+  "skript_aenderungen": [
+    "Kürzungen gegen die Länge (Stimme mit 185 Wörtern: 84,3 s, Grenze 80 s; Folgen-Aufruf erst bei 25,3 s): entfernt „Also hat sie mehr.“ (falle), „mit siebenundsechzig“ im Endstand-Satz (das Alter 67 steht auf der Uhr und im Hook), „hat“ → „Lena: gut …“ (ergebnis); Auslassungspunkte in der Überraschung durch Kommas ersetzt (Satzpausen). Zahlen und Ergebnis unverändert."
+  ]
+}
