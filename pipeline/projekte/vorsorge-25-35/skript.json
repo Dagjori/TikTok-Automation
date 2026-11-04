@@ -261,5 +261,64 @@
   ],
   "skript_aenderungen": [
     "Kürzungen gegen die Länge (Stimme mit 185 Wörtern: 84,3 s, Grenze 80 s; Folgen-Aufruf erst bei 25,3 s): entfernt „Also hat sie mehr.“ (falle), „mit siebenundsechzig“ im Endstand-Satz (das Alter 67 steht auf der Uhr und im Hook), „hat“ → „Lena: gut …“ (ergebnis); Auslassungspunkte in der Überraschung durch Kommas ersetzt (Satzpausen). Zahlen und Ergebnis unverändert."
-  ]
+  ],
+  "lern_notizen": {
+    "thema": "Vorsorge: 100 €/Monat ab 25 gegen 150 €/Monat ab 35 bis 67 (Modellrendite 5 %)",
+    "frage": "Wer hat mit 67 mehr?",
+    "laenge_s": 83.75,
+    "hook": "Hundert Euro ab fünfundzwanzig – oder hundertfünfzig ab fünfunddreißig? Wer hat mit siebenundsechzig MEHR?",
+    "hook_typ": "Duell-Frage mit Zahlen",
+    "stil": "18 Dunkles Studio (Produktlicht)",
+    "zoom": "ja: Wendung 1 (81.870), Ergebnis (Lena-Turm, Differenz), Überraschung (73.853); nein: Regeln, Rennen, Warum (Fahrten)",
+    "animationen": [
+      {
+        "t": 0.5,
+        "art": "led-aufleuchten",
+        "was": "beide Sockel"
+      },
+      {
+        "t": 19.5,
+        "art": "zeiger+muenzregen",
+        "was": "Alter 25 bis 35, Lenas Turm wächst"
+      },
+      {
+        "t": 26.2,
+        "art": "kamerafahrt+zeiger",
+        "was": "Alter 35 bis 55, Eingezahlt-Zähler"
+      },
+      {
+        "t": 37.3,
+        "art": "zeiger",
+        "was": "55 bis 60, Abstand wächst"
+      },
+      {
+        "t": 57.4,
+        "art": "warum-karte+regler",
+        "was": "Zinsen-Säulen, Rendite 5 % auf 3 %"
+      },
+      {
+        "t": 67.3,
+        "art": "turm-sinkt",
+        "was": "neue Runde: Lena stoppt bei 35, wächst allein"
+      }
+    ],
+    "licht": "Spot-Wechsel zwischen Lena, Mia und Lebensuhr, Pulse der Lebensuhr in Pausen",
+    "effekte": [
+      "Lücke-Linie zwischen den Türmen 32 s",
+      "Annahme-Pille 5 %/3 %"
+    ],
+    "zeitpunkte": {
+      "folgen": 24.1,
+      "wendung_1": 26.2,
+      "ergebnis": 45.4,
+      "warum": 57.4,
+      "pointe": 78.2
+    },
+    "tempo": {
+      "woerter": 170,
+      "wps": 2.04
+    },
+    "caption": "Mit 25 oder mit 35 anfangen fürs Alter zu sparen? 💶 Ich hab's simuliert. Team früh oder Team mehr Rate? 👇 #sparen #altersvorsorge #zinseszins #wissen #simulation",
+    "besonderheiten": "Stimme 83,2 s (zu lang für 65–80 s, Zahlwörter), Hook 7,1 s; Skript um 5 Wörter gekürzt (skript_aenderungen)"
+  }
 }
