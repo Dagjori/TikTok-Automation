@@ -18,11 +18,11 @@
    "bild_text_abgleich": [
     {
      "gesagt": "Deine Gasheizung ist zwanzig Jahre alt.",
-     "bild": "Winterabend: zwei gleiche Häuser im Schnee auf Miniatur-Platten, im Heizraum links flackert der alte Kessel (Typenschild 2006); Kamera fährt langsam heran; Tafel GAS 0 € / WÄRMEPUMPE 0 € ab Bild 0, Schnee fällt"
+     "bild": "Winternacht: zwei gleiche Einfamilienhäuser auf Miniatur-Platten im Schnee (links LED-Kante Gas-Rot-Orange, rechts Wärmepumpen-Blau), Schnee fällt, Mond und warme Fenster; im Heizraum beider Häuser flackert der alte Kessel (Typenschild 2006 erkennbar), Rauch am linken Schornstein; Tafel GAS 0 € / WÄRMEPUMPE 0 € ab Bild 0; Kamera fährt langsam heran."
     },
     {
-     "gesagt": "Neue Gasheizung – oder WÄRMEPUMPE?",
-     "bild": "bei „Gasheizung“ Spot und LED auf das linke Haus, bei „WÄRMEPUMPE“ Spot und LED auf das rechte Haus mit der Außeneinheit"
+     "gesagt": "Neue – oder WÄRMEPUMPE?",
+     "bild": "bei „Neue“ Spot (rot-orange Kegel und Licht) auf das linke Haus; bei „WÄRMEPUMPE“ wechselt der Spot auf das rechte Haus (blauer Kegel), die Wärmepumpen-Außeneinheit wächst neben dem Haus aus der Platte, der Lüfter dreht, die blaue LED-Kante leuchtet."
     }
    ]
   },
@@ -33,24 +33,20 @@
    "sprechtext": "Wir rechnen zwanzig Jahre.\nGasheizung: zehntausend Euro.\nWärmepumpe: fünfunddreißigtausend.\nDer Staat zahlt knapp DREIZEHNTAUSEND dazu.",
    "bild_text_abgleich": [
     {
-     "gesagt": "Hundertdreißig Quadratmeter, normales Einfamilienhaus.",
-     "bild": "Chip 130 m², Grundriss-Rahmen leuchtet um beide Häuser"
-    },
-    {
      "gesagt": "Wir rechnen zwanzig Jahre.",
-     "bild": "Chip 20 JAHRE, Jahresuhr der Tafel erscheint"
+     "bild": "Kamera weitet zur Totalen; Chip 130 M² · EINFAMILIENHAUS (nur Information, nicht gesprochen), bei „zwanzig“ Chip 20 JAHRE."
     },
     {
-     "gesagt": "Neue Gasheizung: zehntausend Euro.",
-     "bild": "alter Kessel gleitet raus, neuer Kessel gleitet ein (Aufleuchten), Preisschild 10.000 € über dem Kessel, Tafel links zählt auf 10.000 €, Kostensäule links wächst"
+     "gesagt": "Gasheizung: zehntausend Euro.",
+     "bild": "Kamera zum linken Heizraum: der alte Kessel sinkt in den Boden, der neue weiße Gaskessel mit orangem LED-Streifen steigt auf (Aufleuchten); bei „zehntausend“ wächst die Gas-Säule auf 10.000 €, Tafel links zählt auf 10.000 €, Preis-Anhänger 10.000 € über dem Dach, Chip GASHEIZUNG 10.000 €."
     },
     {
      "gesagt": "Wärmepumpe: fünfunddreißigtausend.",
-     "bild": "Preisschild 35.000 € an der Außeneinheit, Tafel rechts zählt auf 35.000 €, Säule rechts wächst höher"
+     "bild": "Kamera zum rechten Haus: der alte Kessel sinkt, der blau leuchtende Pufferspeicher steigt auf; die Wärmepumpen-Säule wächst auf 35.000 €, Tafel rechts zählt auf 35.000 €, Anhänger 35.000 €, Chip WÄRMEPUMPE 35.000 €."
     },
     {
-     "gesagt": "Der Staat zahlt dir knapp dreizehntausend dazu.",
-     "bild": "Förderstapel fällt auf die Außeneinheit (Aufleuchten), Chip −12.880 €, Preisschild und Tafel rechts auf 22.120 €"
+     "gesagt": "Der Staat zahlt knapp DREIZEHNTAUSEND dazu.",
+     "bild": "Förderstapel (Elfenbein-Platten mit Blau-Streifen) fällt auf die Außeneinheit und leuchtet auf, Chip −12.880 € FÖRDERUNG; Wärmepumpen-Säule sinkt auf 22.120 €, Tafel rechts 22.120 €, Anhänger wechselt auf 22.120 €."
     }
    ]
   },
@@ -61,8 +57,12 @@
    "sprechtext": "Klar … Gas GEWINNT.\nOder?",
    "bild_text_abgleich": [
     {
-     "gesagt": "Klar … die günstige Gasheizung GEWINNT. Oder?",
-     "bild": "Lichtkegel auf das Gashaus, Wärmepumpenhaus im Schatten; bei „Oder?“ steht das Licht ruhig"
+     "gesagt": "Klar … Gas GEWINNT.",
+     "bild": "Lichtkegel und Spot auf dem Gashaus (rot-orange), das Wärmepumpenhaus liegt im Schatten; Kamera schiebt sich langsam an das Gashaus heran; Tafel GAS VORN."
+    },
+    {
+     "gesagt": "Oder?",
+     "bild": "das Licht steht ruhig auf dem Gashaus, dann blendet es sanft ab."
     }
    ]
   },
@@ -73,8 +73,8 @@
    "sprechtext": "Die Wärmepumpe startet zwölftausend Euro HINTEN.",
    "bild_text_abgleich": [
     {
-     "gesagt": "Start: Die Wärmepumpe liegt zwölftausend Euro HINTEN.",
-     "bild": "Chip −12.120 €, Abstandslinie zwischen den beiden Säulen leuchtet, rechte Säule höher als linke"
+     "gesagt": "Die Wärmepumpe startet zwölftausend Euro HINTEN.",
+     "bild": "Kamera zu den beiden Säulen: die rechte (Wärmepumpe) ist höher als die linke (Gas); Zähler ABSTAND −12.120 €; der Abstandsbalken am Boden leuchtet orange nach links (Wurzelskala)."
     }
    ]
   },
@@ -86,7 +86,7 @@
    "bild_text_abgleich": [
     {
      "gesagt": "Folg mir, damit du nichts verpasst.",
-     "bild": "Folgen-Element, Welt läuft weiter (Schnee, Rauch am Schornstein)"
+     "bild": "Folgen-Element; die Welt läuft weiter (Schnee, Rauch am Schornstein, Lüfter), Kamera weitet."
     }
    ]
   },
@@ -97,16 +97,20 @@
    "sprechtext": "Aber:\nGas kostet dich zweitausend Euro im Jahr.\nDie Wärmepumpe nur zwölfhundertsechzig.\nSie holt jedes Jahr gut SIEBENHUNDERTFÜNFZIG auf.",
    "bild_text_abgleich": [
     {
-     "gesagt": "Doch das Merkwürdige: Gas kostet dich zweitausend Euro im Jahr.",
-     "bild": "Kostenstrom links dick (Gaszähler), Chip 2.019 € / JAHR, Jahresuhr startet"
+     "gesagt": "Aber:",
+     "bild": "Kamera fährt zur Mitte, die Jahresuhr in der Tafel erscheint (JAHR 0)."
+    },
+    {
+     "gesagt": "Gas kostet dich zweitausend Euro im Jahr.",
+     "bild": "dicker orange Kostenstrom aus dem Heizraum in die Gas-Säule (Würfel fließen), Chip 2.019 € / JAHR, die Gas-Säule pulsiert beim Ankommen."
     },
     {
      "gesagt": "Die Wärmepumpe nur zwölfhundertsechzig.",
-     "bild": "Kostenstrom rechts dünner, Chip 1.263 € / JAHR"
+     "bild": "dünnerer blauer Kostenstrom aus der Außeneinheit in die Wärmepumpen-Säule, Chip 1.263 € / JAHR; die Jahresuhr läuft an (Jahr 1)."
     },
     {
-     "gesagt": "Jedes Jahr holt sie gut siebenhundertfünfzig Euro auf.",
-     "bild": "Chip +756 € / JAHR, die rechte Säule wächst langsamer, Abstand schrumpft"
+     "gesagt": "Sie holt jedes Jahr gut SIEBENHUNDERTFÜNFZIG auf.",
+     "bild": "Chip +756 € / JAHR; die Jahresuhr zählt bis Jahr 3, die Säulen wachsen, der Abstand schrumpft."
     }
    ]
   },
@@ -117,16 +121,12 @@
    "sprechtext": "Jahr zehn, fünfzehn … Gas bleibt vorn.\nJahr sechzehn: nur noch vierundzwanzig Euro.",
    "bild_text_abgleich": [
     {
-     "gesagt": "Jahr fünf, zehn, fünfzehn … Gas liegt noch vorn.",
-     "bild": "Jahresuhr 5, 10, 15 im Zeitraffer, Säulen wachsen, Abstand schrumpft, Gas führt (Tafel VORN links)"
+     "gesagt": "Jahr zehn, fünfzehn … Gas bleibt vorn.",
+     "bild": "Zeitraffer: der Himmel hellt kurz auf, der Schnee dünnt aus, die Kamera schwenkt erst nach links, dann nach rechts um die Platten; die Jahresuhr springt auf 10 und 15, die Säulen wachsen, Tafel GAS VORN."
     },
     {
-     "gesagt": "Jahr sechzehn: vierundzwanzig Euro Abstand.",
-     "bild": "Kamera-Zoom auf die beiden Säulenspitzen, Chip 24 € ABSTAND"
-    },
-    {
-     "gesagt": "Jetzt wird's KNAPP.",
-     "bild": "Spannung: Spitzen pulsen weich"
+     "gesagt": "Jahr sechzehn: nur noch vierundzwanzig Euro.",
+     "bild": "Kamera fährt auf die Säulenspitzen, Zoom; Jahr 16, der Zähler ABSTAND läuft auf −24 €; die Spitzen sind fast gleich hoch."
     }
    ]
   },
@@ -138,7 +138,7 @@
    "bild_text_abgleich": [
     {
      "gesagt": "Im siebzehnten Jahr zieht die Wärmepumpe VORBEI.",
-     "bild": "Jahresuhr 17, Gas-Säule überholt die Wärmepumpen-Säule, Licht springt auf das rechte Haus, VORN rechts"
+     "bild": "Jahresuhr 17, der Abstand kriecht von −24 € auf 0 und dreht ins Plus; bei „VORBEI“ springt das Licht auf das rechte Haus (blauer Kegel), die Wärmepumpen-Säule leuchtet auf, VORN wechselt nach rechts (Zoom auf das Wärmepumpenhaus)."
     }
    ]
   },
@@ -149,16 +149,20 @@
    "sprechtext": "Nach zwanzig Jahren:\nGas – gut fünfzigtausend Euro.\nWärmepumpe – gut siebenundvierzigtausend.\nSie spart dir rund DREITAUSEND Euro.",
    "bild_text_abgleich": [
     {
-     "gesagt": "Endstand nach zwanzig Jahren:",
-     "bild": "Jahresuhr läuft auf 20, Kamera zurück ins Totale"
+     "gesagt": "Nach zwanzig Jahren:",
+     "bild": "Jahresuhr läuft auf 20, die Kamera fährt ins Totale zurück, Lichtstrahlen steigen."
     },
     {
-     "gesagt": "Gas – gut fünfzigtausend Euro. Wärmepumpe – gut siebenundvierzigtausend.",
-     "bild": "Bilanzkarte zeilenweise: GAS 50.383 €, WÄRMEPUMPE 47.384 €"
+     "gesagt": "Gas – gut fünfzigtausend Euro.",
+     "bild": "Bilanzkarte NACH 20 JAHREN: Zeile GAS 50.383 € rollt ein; die Gas-Säule ist am höchsten."
     },
     {
-     "gesagt": "Die Wärmepumpe spart dir rund DREITAUSEND Euro.",
-     "bild": "Zeile WÄRMEPUMPE SPART 2.999 €, warmes Licht und Glow auf dem rechten Haus"
+     "gesagt": "Wärmepumpe – gut siebenundvierzigtausend.",
+     "bild": "Zeile WÄRMEPUMPE 47.384 €, Kamera fährt heran, die Gas-Säule pulsiert (noch etwas höher als die Wärmepumpen-Säule)."
+    },
+    {
+     "gesagt": "Sie spart dir rund DREITAUSEND Euro.",
+     "bild": "Differenzzeile WÄRMEPUMPE SPART 2.999 €; das Licht wandert auf das rechte Haus, Glow und Zoom auf dem Wärmepumpenhaus, Strahlen auf dem Höhepunkt."
     }
    ]
   },
@@ -169,16 +173,16 @@
    "sprechtext": "[thoughtful] Warum?\nAus einer Kilowattstunde Strom macht sie gut DREI Kilowattstunden Wärme.\nOhne Förderung würde sie verlieren.",
    "bild_text_abgleich": [
     {
-     "gesagt": "Warum so knapp?",
-     "bild": "Kamera nah an die Außeneinheit"
+     "gesagt": "Warum?",
+     "bild": "Kamera fährt dicht an die Außeneinheit, die Karte WARUM? baut sich auf, der Lüfter dreht schneller."
     },
     {
      "gesagt": "Aus einer Kilowattstunde Strom macht sie gut DREI Kilowattstunden Wärme.",
-     "bild": "ein Strom-Würfel läuft in die Außeneinheit, drei Wärme-Würfel strömen ins Haus, Balkenkarte Faktor 1: Wärme aus 1 kWh (Gas 0,9 gegen Wärmepumpe 3,4)"
+     "bild": "ein elfenbeinfarbener Strom-Würfel läuft von rechts in die Außeneinheit (Faktor 1: Balken 0,9 gegen 3,4); bei „DREI“ strömen drei blaue Wärme-Würfel durch die Hauswand in den Heizraum, der Speicher leuchtet."
     },
     {
-     "gesagt": "Aber ohne Förderung würde sie verlieren.",
-     "bild": "Förderstapel wird weggenommen, Balkenkarte Faktor 2: 20 Jahre ohne Förderung, Gas 50.383 € gegen Wärmepumpe 60.264 €"
+     "gesagt": "Ohne Förderung würde sie verlieren.",
+     "bild": "der Förderstapel erscheint auf der Außeneinheit und wird weggenommen (steigt auf); Faktor 2: 20 Jahre ohne Förderung, Gas 50.383 gegen Wärmepumpe 60.264 (VERLIERT); Tafel rechts rollt auf 60.264 €, VORN wechselt zu Gas, die Wärmepumpen-Säule überragt die Gas-Säule."
     }
    ]
   },
@@ -189,16 +193,20 @@
    "sprechtext": "Und das Verrückte:\nDie Rechnung SCHONT das Gas noch.\nAb zweitausendneunundzwanzig muss Biogas rein.\nDie erste Stufe kostet heute schon rund zweihundert Euro im Jahr.",
    "bild_text_abgleich": [
     {
-     "gesagt": "Und das Verrückte: Die Rechnung SCHONT die Gasheizung noch.",
-     "bild": "Kamera wechselt zum Gashaus, Schornstein-Rauch, Gaszähler-Strom leuchtet"
+     "gesagt": "Und das Verrückte:",
+     "bild": "der Förderstapel fällt zurück, die Wärmepumpe steht wieder bei 47.384 €; Kamera schwenkt zum Gashaus, Rauch am Schornstein, Spot auf dem Gashaus."
     },
     {
-     "gesagt": "Ab zweitausendneunundzwanzig braucht sie Biogas, bis zu sechzig Prozent.",
-     "bild": "Bio-Treppe aus vier Stufen steigt neben dem Gashaus auf: 2029 10 %, 2030 15 %, 2035 30 %, 2040 60 %"
+     "gesagt": "Die Rechnung SCHONT das Gas noch.",
+     "bild": "das Licht bleibt auf dem Gashaus, der Rauch steigt kräftiger auf."
     },
     {
-     "gesagt": "Schon die erste Stufe kostet heute rund zweihundert Euro im Jahr.",
-     "bild": "erste Stufe leuchtet, Chip ≈ 200 € / JAHR, Gaszähler-Strom wird breiter"
+     "gesagt": "Ab zweitausendneunundzwanzig muss Biogas rein.",
+     "bild": "Chip BIO-ANTEIL AB 2029; über dem Gashaus wächst die Bio-Treppe in vier Stufen: 2029 10 %, 2030 15 %, 2035 30 %, 2040 60 %."
+    },
+    {
+     "gesagt": "Die erste Stufe kostet heute schon rund zweihundert Euro im Jahr.",
+     "bild": "die erste Stufe (2029 · 10 %) leuchtet auf, Chip ≈ 200 € / JAHR, der orange Gas-Kostenstrom wird breiter."
     }
    ]
   },
@@ -209,8 +217,12 @@
    "sprechtext": "Die Gasheizung gewinnt den Kauf.\nDie Wärmepumpe gewinnt die JAHRE.",
    "bild_text_abgleich": [
     {
-     "gesagt": "Die Gasheizung gewinnt den Kauf. Die Wärmepumpe gewinnt die JAHRE.",
-     "bild": "Pointe KAUF (Gas-Farbe) dann JAHRE (Wärmepumpen-Farbe), Kamera fährt zurück zur Startansicht"
+     "gesagt": "Die Gasheizung gewinnt den Kauf.",
+     "bild": "die Bio-Treppe sinkt weg, Pointe KAUF in Gas-Farbe, Gashaus und Gas-Säule leuchten, die Kamera fährt zurück."
+    },
+    {
+     "gesagt": "Die Wärmepumpe gewinnt die JAHRE.",
+     "bild": "Pointe JAHRE in Wärmepumpen-Blau, Wärmepumpenhaus und -Säule leuchten, die Kamera gleitet Richtung Startbild."
     }
    ]
   },
@@ -221,8 +233,12 @@
    "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare.",
    "bild_text_abgleich": [
     {
-     "gesagt": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
-     "bild": "Kamera und Werte gleiten zum Anfangsbild zurück (Schleife)"
+     "gesagt": "Was sollen wir als Nächstes zeigen?",
+     "bild": "Kamera, Tafelwerte, Säulen, Kostenströme und Lichter gleiten ins Startbild zurück (Schleife)."
+    },
+    {
+     "gesagt": "Schreib es in die Kommentare.",
+     "bild": "letztes Bild = erstes Bild: beide Häuser im Schnee, Tafel GAS 0 € / WÄRMEPUMPE 0 €, alte Kessel flackern."
     }
    ]
   }

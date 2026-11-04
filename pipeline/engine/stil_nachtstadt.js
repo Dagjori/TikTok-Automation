@@ -449,3 +449,543 @@ export function baumNacht({ groesse = 0.5, seed = 1, farbe = "#1E2A24" } = {}) {
 export function himmelNacht({ oben = "#04070D", mitte = "#0C1626", horizont = "#22324A", schein = "rgba(255,170,110,0.28)", scheinY = 0.62 } = {}) {
   return verlauf([[0, oben], [0.45, mitte], [0.7, horizont], [1, "#141B26"]], { radial: [0.5, scheinY, 0.5, schein] });
 }
+
+/** Innenmodul der Wärmepumpe im Heizraum: Warmwasser-Pufferspeicher (Zylinder) mit LED-Ring in Teamfarbe; glimm(0–2), Unterkante y = 0 */
+export function speicherTank({ farbe = "#2F8CFF", radius = 0.1, hoehe = 0.4 } = {}) {
+  const g = new THREE.Group();
+  const mantel = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, hoehe, 24), stdMat("tk|mantel", { color: "#E4E9F1", roughness: 0.3, metalness: 0.35 }));
+  mantel.position.y = hoehe / 2; mantel.castShadow = true; g.add(mantel);
+  const deckel = new THREE.Mesh(new THREE.CylinderGeometry(radius * 1.02, radius * 1.02, 0.02, 24), stdMat("tk|deckel", { color: "#9AA3B2", roughness: 0.5, metalness: 0.4 }));
+  deckel.position.y = hoehe + 0.01; g.add(deckel);
+  const ledMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(farbe).multiplyScalar(3), fog: false });
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(radius * 1.03, 0.008, 6, 40), ledMat);
+  ring.rotation.x = Math.PI / 2; ring.position.y = hoehe * 0.72; g.add(ring);
+  const ring2 = new THREE.Mesh(new THREE.TorusGeometry(radius * 1.03, 0.008, 6, 40), ledMat);
+  ring2.rotation.x = Math.PI / 2; ring2.position.y = hoehe * 0.2; g.add(ring2);
+  const dispMat = new THREE.MeshBasicMaterial({ color: new THREE.Color("#BFE0FF").multiplyScalar(1.6), fog: false });
+  const disp = new THREE.Mesh(new THREE.PlaneGeometry(0.075, 0.03), dispMat);
+  disp.position.set(0, hoehe * 0.46, radius + 0.003); g.add(disp);
+  for (const x of [-radius * 0.7, radius * 0.7]) { const rohr = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.12, 8), stdMat("tk|rohr", { color: "#B26A3E", roughness: 0.4, metalness: 0.7 })); rohr.position.set(x, hoehe + 0.07, 0); g.add(rohr); }
+  g.userData.dynamisch = true;
+  g.glimm = (v) => { ledMat.color.set(farbe).multiplyScalar(3 * (0.5 + v)); dispMat.color.set("#BFE0FF").multiplyScalar(1.6 * (0.5 + 0.7 * v)); return g; };
+  g.userData.hoehe = hoehe + 0.12;
+  return g;
+}
+
+// =====================================================================================
+// Winternacht-Erweiterung (Heizungs-Videos): Miniatur-Platte im Schnee, Einfamilienhaus mit Heizraum-Einblick,
+// Gaskessel alt/neu mit Flamme, Wärmepumpen-Außeneinheit mit Lüfter, Kostensäulen, Förderstapel, Bio-Treppe,
+// Energie-/Kostenstrom, Preis-Anhänger, Rauch, Wintertanne. Alle bewegten Teile: userData.dynamisch = true
+// (danach buendeln(szene)); Zustand nur über Methoden, jede Methode ist eine reine Funktion des Arguments.
+//
+//   const p = schneePlatte({ breite: 3.1, tiefe: 3.1, led: TEAM })            Platte mit Schnee, Pfad, LED-Kante (Teamfarbe); p.userData.oben
+//   const h = einfamilienhaus({ seed: 2 })                                    Haus (Front +z), Heizraum vorn links; h.punkte, h.kesselHalter
+//   const k = gasKessel({ alt: true, farbe: GAS }); h.kesselHalter.add(k)     k.flamme(0–1), k.glimm(0–1)
+//   const w = waermepumpeAussen({ farbe: WP })                                w.lauf(t, tempo), w.led(0–1.6), w.setze(0–1)
+//   const s = kostenSaeule({ breite: 0.3, farbe, tick: 0.5 })                 s.hoehe(h), s.setze(0–1), s.puls(0–1)
+//   const f = foerderStapel({ farbe: "#ECE6DA", akzent: WP })                 f.setze(0–1), f.glimm(0–1)
+//   const b = bioTreppe({ farbe: GAS })                                       b.stufe(i, 0–1), b.puls(i, 0–1)
+//   const e = energieFluss({ punkte, farbe, radius })                         e.setze(0–1), e.lauf(t, tempo), e.breite(radius)
+//   const a = preisAnhaenger({ farbe })                                       a.text("10.000 €"), a.setze(0–1), a.glimm(0–1)
+//   const r = rauchSaeule({ hoehe: 0.9 })                                     r.lauf(t, staerke)
+//   const d = abstandsAnzeige({ farbeL, farbeR })                             d.laenge(links, rechts), d.setze(0–1)
+//   const t = winterBaum({ groesse: 0.8, seed: 3 }); speicherTank({ farbe })  Tanne; Pufferspeicher der Wärmepumpe
+const schneeFarbe = "#DCE6F4";
+const putzTextur = (() => {
+  let tex = null;
+  return () => {
+    if (tex) return tex;
+    const c = document.createElement("canvas"); c.width = c.height = 256;
+    const g = c.getContext("2d"), r = zufall(31);
+    g.fillStyle = "#FFFFFF"; g.fillRect(0, 0, 256, 256);
+    for (let i = 0; i < 9000; i++) { g.fillStyle = `rgba(${r() < 0.5 ? "0,0,0" : "255,255,255"},${0.03 + r() * 0.06})`; g.fillRect(r() * 256, r() * 256, 1 + r() * 2, 1 + r() * 2); }
+    tex = new THREE.CanvasTexture(c); tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(2, 1); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
+    return tex;
+  };
+})();
+const schneeTextur = (() => {
+  let tex = null;
+  return () => {
+    if (tex) return tex;
+    const c = document.createElement("canvas"); c.width = c.height = 256;
+    const g = c.getContext("2d"), r = zufall(53);
+    g.fillStyle = "#FFFFFF"; g.fillRect(0, 0, 256, 256);
+    for (let i = 0; i < 7000; i++) { g.fillStyle = `rgba(${r() < 0.55 ? "150,175,215" : "255,255,255"},${0.05 + r() * 0.09})`; const s = 1 + r() * 4; g.fillRect(r() * 256, r() * 256, s, s * 0.7); }
+    tex = new THREE.CanvasTexture(c); tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(3, 3); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
+    return tex;
+  };
+})();
+const stdMat = (key, opt) => gemeinsamMat(key, () => new THREE.MeshStandardMaterial(opt));
+
+/** Miniatur-Platte mit Schneedecke, Schneehügeln, geräumtem Pfad und LED-Kante in Teamfarbe. Oberkante der Decke: userData.oben (y). */
+export function schneePlatte({ breite = 3.1, tiefe = 3.1, dicke = 0.2, seed = 5, led = "#FF5A1F", pfadX = 0, pfadBreite = 0.5, pfadAb = 0.5 } = {}) {
+  const g = new THREE.Group();
+  const r = zufall(seed);
+  const rand = stdMat("pl|rand", { color: "#252D3B", roughness: 0.62, metalness: 0.15 });
+  const schnee = stdMat("pl|schnee", { color: schneeFarbe, map: schneeTextur(), roughness: 0.92, metalness: 0 });
+  const sockel = rundeBox(breite, dicke, tiefe, { material: rand, radius: 0.045 });
+  sockel.castShadow = true; sockel.receiveShadow = true;
+  g.add(sockel);
+  const deckeH = 0.05;
+  const decke = new THREE.Mesh(new THREE.BoxGeometry(breite - 0.1, deckeH, tiefe - 0.1), schnee);
+  decke.position.y = dicke + deckeH / 2 - 0.005; decke.castShadow = false; decke.receiveShadow = true;
+  g.add(decke);
+  const oben = dicke + deckeH - 0.005;
+  // Schneehügel (abgeflachte Kugeln) an Rand und Ecken
+  const huegel = new THREE.SphereGeometry(1, 14, 8);
+  for (let i = 0; i < 9; i++) {
+    const a = r() * Math.PI * 2, rr = 0.55 + r() * 0.4;
+    const x = Math.cos(a) * (breite / 2 - 0.2) * rr * (r() < 0.5 ? 1 : 0.92), z = Math.sin(a) * (tiefe / 2 - 0.2) * rr;
+    if (Math.abs(x - pfadX) < pfadBreite * 0.8 && z > pfadAb - 0.8) continue;
+    const m = new THREE.Mesh(huegel, schnee);
+    const s = 0.18 + r() * 0.2;
+    m.scale.set(s * 1.5, s * 0.34, s * 1.2); m.position.set(x, oben, z); m.receiveShadow = true; m.castShadow = true;
+    g.add(m);
+  }
+  // geräumter Pfad vom Haus zum Plattenrand
+  const pfadMat = stdMat("pl|pfad", { color: "#8D99AC", roughness: 0.8 });
+  const pf = new THREE.Mesh(new THREE.PlaneGeometry(pfadBreite, tiefe / 2 - pfadAb + 0.02), pfadMat);
+  pf.rotation.x = -Math.PI / 2; pf.position.set(pfadX, oben + 0.003, (tiefe / 2 + pfadAb) / 2 - 0.01); pf.receiveShadow = true;
+  g.add(pf);
+  // LED-Kante (Teamfarbe) rundum am Sockel
+  const y = dicke * 0.5, b2 = breite / 2 + 0.003, t2 = tiefe / 2 + 0.003;
+  const e = (a, b) => g.add(glimmLinie(a, b, { farbe: led, staerke: 2.4, dicke: 0.018 }));
+  e([-b2, y, t2], [b2, y, t2]); e([-b2, y, -t2], [b2, y, -t2]); e([-b2, y, -t2], [-b2, y, t2]); e([b2, y, -t2], [b2, y, t2]);
+  g.userData = { oben, breite, tiefe, dicke };
+  return g;
+}
+
+/**
+ * Einfamilienhaus (Front zeigt nach +z, Unterkante y = 0): Sockelgeschoss mit offenem Heizraum (Einblick vorn links),
+ * Wohngeschoss mit warmen Fenstern und Tür, verschneites Satteldach (First entlang x), Schornstein, Dachfenster.
+ * h.kesselHalter: Gruppe im Heizraum (hier Kessel/Speicher einsetzen), h.raumLicht: warmes PunktLicht des Heizraums,
+ * h.punkte: { schornstein, heizraum, front } in lokalen Koordinaten.
+ */
+export function einfamilienhaus({ breite = 1.9, tiefe = 1.45, hoehe = 0.85, sockel = 0.55, dachHoehe = 0.72, seed = 1, offenX = -0.34, offenBreite = 0.92, wand = "#C8CFDA" } = {}) {
+  const g = new THREE.Group();
+  const beton = stdMat("hs|beton", { color: "#7F8896", roughness: 0.9, map: putzTextur() });
+  const putz = stdMat("hs|putz|" + wand, { color: wand, roughness: 0.88, map: putzTextur() });
+  const dachSchnee = stdMat("hs|dachschnee", { color: "#E3ECF8", roughness: 0.92 });
+  const dunkel = stdMat("hs|dunkel", { color: "#2B303B", roughness: 0.6 });
+  const holz = stdMat("hs|holz", { color: "#4A3A30", roughness: 0.7 });
+  const box = (w, h, d, x, y, z, m, schatten = true) => { const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); b.position.set(x, y, z); b.castShadow = schatten; b.receiveShadow = true; g.add(b); return b; };
+  // Sockelgeschoss: links, rechts, Sturz, Rückwand
+  const oh = sockel - 0.07;
+  const xl = offenX - offenBreite / 2, xr = offenX + offenBreite / 2;
+  box(xl + breite / 2, sockel, tiefe, (xl - breite / 2) / 2, sockel / 2, 0, beton);
+  box(breite / 2 - xr, sockel, tiefe, (xr + breite / 2) / 2, sockel / 2, 0, beton);
+  box(breite, sockel - oh, tiefe, 0, oh + (sockel - oh) / 2, 0, beton);
+  box(offenBreite + 0.02, sockel, 0.08, offenX, sockel / 2, -tiefe / 2 + 0.04, beton, false);
+  // Innenraum: Boden, Rückwand mit warmem Schein
+  const rauMat = new THREE.MeshStandardMaterial({ color: "#59606E", roughness: 0.85, emissive: new THREE.Color("#FF9A52"), emissiveIntensity: 0.22 });
+  const rueck = new THREE.Mesh(new THREE.PlaneGeometry(offenBreite, oh), rauMat);
+  rueck.position.set(offenX, oh / 2 + 0.01, -tiefe / 2 + 0.085);
+  g.add(rueck);
+  const boden = new THREE.Mesh(new THREE.PlaneGeometry(offenBreite, tiefe - 0.2), stdMat("hs|rb", { color: "#4A5262", roughness: 0.6 }));
+  boden.rotation.x = -Math.PI / 2; boden.position.set(offenX, 0.012, 0.0); boden.receiveShadow = true;
+  g.add(boden);
+  // Rahmen um die Öffnung
+  box(offenBreite + 0.1, 0.035, 0.05, offenX, oh + 0.01, tiefe / 2 + 0.005, dunkel, false);
+  // Wohngeschoss
+  const wy = sockel + hoehe / 2;
+  box(breite + 0.04, hoehe, tiefe + 0.04, 0, wy, 0, putz);
+  box(breite + 0.08, 0.04, tiefe + 0.08, 0, sockel + 0.02, 0, stdMat("hs|band", { color: "#9AA3B2", roughness: 0.8 }), false);
+  // Fenster (warm) und Tür
+  const warm = leuchtMat("#FFC27A", 2.4);
+  for (const fx of [-0.62, -0.02]) {
+    box(0.36, 0.32, 0.03, fx, sockel + hoehe * 0.55, tiefe / 2 + 0.03, dunkel, false);
+    const p = new THREE.Mesh(new THREE.PlaneGeometry(0.3, 0.26), warm);
+    p.position.set(fx, sockel + hoehe * 0.55, tiefe / 2 + 0.048);
+    g.add(p);
+    box(0.02, 0.26, 0.012, fx, sockel + hoehe * 0.55, tiefe / 2 + 0.052, dunkel, false);
+    const pf = lichtPfuetze({ radius: 0.5, farbe: "#FFB574", staerke: 0.3, streckung: 0.7 });
+    pf.position.set(fx, 0.014, tiefe / 2 + 0.55); g.add(pf);
+  }
+  const tx = 0.62;
+  box(0.3, 0.52, 0.04, tx, sockel + 0.26 + 0.02, tiefe / 2 + 0.03, holz, false);
+  const lampe = new THREE.Mesh(new THREE.PlaneGeometry(0.07, 0.05), leuchtMat("#FFD7A6", 5));
+  lampe.position.set(tx + 0.22, sockel + 0.58, tiefe / 2 + 0.052); g.add(lampe);
+  // Satteldach (First entlang x) mit Schnee, Traufe dunkel
+  const d = tiefe / 2 + 0.11, len = breite + 0.22;
+  const sh = new THREE.Shape(); sh.moveTo(-d, 0); sh.lineTo(d, 0); sh.lineTo(0, dachHoehe); sh.closePath();
+  const dg = new THREE.ExtrudeGeometry(sh, { depth: len, bevelEnabled: false });
+  dg.translate(0, 0, -len / 2); dg.rotateY(Math.PI / 2);
+  const dach = new THREE.Mesh(dg, dachSchnee);
+  dach.position.y = sockel + hoehe; dach.castShadow = true; dach.receiveShadow = true;
+  g.add(dach);
+  box(len, 0.045, 0.05, 0, sockel + hoehe + 0.012, d - 0.01, dunkel, false);
+  // Dachfenster (warm) in der Vorderseite des Daches
+  const ang = -Math.atan2(d, dachHoehe);
+  const f = 0.42, zz = d * (1 - f), yy = sockel + hoehe + dachHoehe * f;
+  for (const fx of [-0.3, 0.3]) {
+    const rah = new THREE.Mesh(new THREE.PlaneGeometry(0.3, 0.22), dunkel);
+    rah.rotation.x = ang; rah.position.set(fx, yy, zz + 0.012); g.add(rah);
+    const gl = new THREE.Mesh(new THREE.PlaneGeometry(0.24, 0.17), leuchtMat("#FFC98A", 2.0));
+    gl.rotation.x = ang; gl.position.set(fx, yy + 0.003, zz + 0.026); g.add(gl);
+  }
+  // Schornstein mit Schneekappe
+  const cx = 0.58, cz = -0.2, fz = 1 - Math.abs(cz) / d;
+  const topY = sockel + hoehe + dachHoehe * fz + 0.34;
+  box(0.15, topY - (sockel + hoehe) + 0.02, 0.15, cx, (topY + sockel + hoehe) / 2, cz, stdMat("hs|schorn", { color: "#6A5A52", roughness: 0.95 }));
+  box(0.19, 0.045, 0.19, cx, topY + 0.02, cz, dachSchnee);
+  // Raumlicht (warm, im Heizraum)
+  const raumLicht = new THREE.PointLight("#FFB070", 2.6, 2.6, 1.5);
+  raumLicht.position.set(offenX, sockel * 0.7, tiefe / 2 - 0.12);
+  g.add(raumLicht);
+  // Halter für Kessel/Speicher im Heizraum (vorn, gut sichtbar durch die Öffnung)
+  const kesselHalter = new THREE.Group();
+  kesselHalter.position.set(offenX, 0.02, tiefe / 2 - 0.42);
+  g.add(kesselHalter);
+  g.userData = { breite, tiefe, hoehe, sockel, dachHoehe, offenX, offenBreite };
+  g.raumLicht = raumLicht; g.raumMat = rauMat; g.kesselHalter = kesselHalter;
+  g.punkte = { schornstein: new THREE.Vector3(cx, topY + 0.08, cz), heizraum: new THREE.Vector3(offenX, 0.3, tiefe / 2 + 0.05), front: new THREE.Vector3(0, 0.5, tiefe / 2), dach: new THREE.Vector3(0, sockel + hoehe + dachHoehe, 0) };
+  return g;
+}
+
+/**
+ * Gaskessel im Heizraum (Unterkante y = 0). alt = verschmutzt, Typenschild „2006“, Flamme flackert vom Aufrufer gesteuert;
+ * neu = weiß mit LED-Streifen in Teamfarbe. flamme(a): Helligkeit der Flamme im Sichtfenster 0–1, glimm(g): LED/Schein 0–2.
+ */
+export function gasKessel({ alt = true, farbe = "#FF5A1F", jahr = "2006" } = {}) {
+  const g = new THREE.Group();
+  const bw = 0.31, bh = 0.38, bd = 0.21;
+  const koerperMat = alt ? stdMat("gk|alt", { color: "#868C96", roughness: 0.8, metalness: 0.25 }) : stdMat("gk|neu", { color: "#E8EDF4", roughness: 0.3, metalness: 0.25 });
+  const k = rundeBox(bw, bh, bd, { material: koerperMat, radius: 0.025 });
+  k.castShadow = true; g.add(k);
+  const dunkel = stdMat("gk|panel", { color: alt ? "#2B2E34" : "#171B22", roughness: 0.4, metalness: 0.4 });
+  const panel = new THREE.Mesh(new THREE.PlaneGeometry(bw * 0.78, bh * 0.3), dunkel);
+  panel.position.set(0, bh * 0.76, bd / 2 + 0.002); g.add(panel);
+  // Flammenfenster unten
+  const flMat = new THREE.MeshBasicMaterial({ color: new THREE.Color("#FF7A2E").multiplyScalar(4), fog: false });
+  const fenRahmen = new THREE.Mesh(new THREE.PlaneGeometry(0.15, 0.085), dunkel);
+  fenRahmen.position.set(alt ? 0.03 : 0, bh * 0.3, bd / 2 + 0.002); g.add(fenRahmen);
+  const flamme = new THREE.Mesh(new THREE.PlaneGeometry(0.12, 0.06), flMat);
+  flamme.position.set(alt ? 0.03 : 0, bh * 0.3, bd / 2 + 0.006); g.add(flamme);
+  // Abgasrohr nach oben
+  const rohr = new THREE.Mesh(new THREE.CylinderGeometry(0.032, 0.032, 0.2, 10), stdMat("gk|rohr", { color: alt ? "#4D5158" : "#C6CCD6", roughness: 0.5, metalness: 0.6 }));
+  rohr.position.set(0.07, bh + 0.09, -0.02); g.add(rohr);
+  let ledMat = null, dispMat = null;
+  if (alt) {
+    // Typenschild mit Baujahr
+    const c = document.createElement("canvas"); c.width = 128; c.height = 64;
+    const x = c.getContext("2d"); x.fillStyle = "#C9C2A8"; x.fillRect(0, 0, 128, 64); x.strokeStyle = "#5A5240"; x.lineWidth = 3; x.strokeRect(2, 2, 124, 60);
+    x.fillStyle = "#2E2A20"; x.font = "800 26px 'SB Text', Inter, sans-serif"; x.textAlign = "center"; x.fillText(jahr, 64, 28); x.font = "600 13px Inter, sans-serif"; x.fillText("BAUJAHR", 64, 50);
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+    const sch = new THREE.Mesh(new THREE.PlaneGeometry(0.1, 0.05), new THREE.MeshBasicMaterial({ map: t, color: "#BFBFBF" }));
+    sch.position.set(-0.07, bh * 0.52, bd / 2 + 0.003); g.add(sch);
+    // Rußspuren über dem Flammenfenster
+    const russ = new THREE.Mesh(new THREE.PlaneGeometry(0.2, 0.05), new THREE.MeshBasicMaterial({ color: "#14151A", transparent: true, opacity: 0.35 }));
+    russ.position.set(0.03, bh * 0.43, bd / 2 + 0.003); g.add(russ);
+    dispMat = new THREE.MeshBasicMaterial({ color: new THREE.Color("#FF8A4D").multiplyScalar(1.5), fog: false });
+    const disp = new THREE.Mesh(new THREE.PlaneGeometry(0.06, 0.025), dispMat);
+    disp.position.set(0, bh * 0.76, bd / 2 + 0.004); g.add(disp);
+  } else {
+    ledMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(farbe).multiplyScalar(3.2), fog: false });
+    const led = new THREE.Mesh(new THREE.BoxGeometry(bw * 0.86, 0.016, 0.012), ledMat);
+    led.position.set(0, bh * 0.93, bd / 2 + 0.004); g.add(led);
+    dispMat = new THREE.MeshBasicMaterial({ color: new THREE.Color("#BFE0FF").multiplyScalar(1.6), fog: false });
+    const disp = new THREE.Mesh(new THREE.PlaneGeometry(0.075, 0.03), dispMat);
+    disp.position.set(0, bh * 0.76, bd / 2 + 0.004); g.add(disp);
+  }
+  g.userData.dynamisch = true;
+  g.flamme = (a) => { const v = Math.max(0, Math.min(1.2, a)); flamme.visible = v > 0.02; flMat.color.set("#FF7A2E").multiplyScalar(0.4 + 4.2 * v); flamme.scale.set(0.6 + 0.4 * v, 0.5 + 0.5 * v, 1); return g; };
+  g.glimm = (v) => { if (ledMat) ledMat.color.set(farbe).multiplyScalar(3.2 * (0.5 + v)); if (dispMat) dispMat.color.set(alt ? "#FF8A4D" : "#BFE0FF").multiplyScalar(1.5 * (0.5 + 0.7 * v)); return g; };
+  g.flamme(0.6);
+  g.userData.hoehe = bh + 0.19;
+  return g;
+}
+
+/**
+ * Wärmepumpen-Außeneinheit (Front +z, Unterkante y = 0): Gehäuse, Lüftergitter mit drehendem Lüfter, LED-Kante in Teamfarbe,
+ * Schneekappe, Betonplatte. lauf(t, tempo) dreht den Lüfter, led(k) 0–1.6, setze(s) 0–1 (blendet ein: wächst aus der Platte).
+ */
+export function waermepumpeAussen({ farbe = "#2F8CFF", breite = 0.66, hoehe = 0.52, tiefe = 0.3 } = {}) {
+  const g = new THREE.Group();
+  const innen = new THREE.Group(); g.add(innen);
+  const pad = new THREE.Mesh(new THREE.BoxGeometry(breite + 0.06, 0.03, tiefe + 0.2), stdMat("wp|pad", { color: "#7B8493", roughness: 0.9 }));
+  pad.position.y = 0.015; pad.receiveShadow = true; g.add(pad);
+  const metall = stdMat("wp|korpus", { color: "#D3D9E3", roughness: 0.42, metalness: 0.45 });
+  const kor = rundeBox(breite, hoehe, tiefe, { material: metall, radius: 0.03 });
+  kor.position.y = 0.06; kor.castShadow = true; innen.add(kor);
+  const dunkel = stdMat("wp|dunkel", { color: "#12151B", roughness: 0.5, metalness: 0.3 });
+  const fz = tiefe / 2 + 0.003, fy = 0.06 + hoehe * 0.5;
+  const loch = new THREE.Mesh(new THREE.CircleGeometry(hoehe * 0.38, 40), dunkel);
+  loch.position.set(-breite * 0.06, fy, fz); innen.add(loch);
+  const fan = new THREE.Group(); fan.position.set(-breite * 0.06, fy, fz + 0.006);
+  const blatt = stdMat("wp|blatt", { color: "#98A2B2", roughness: 0.4, metalness: 0.5 });
+  for (let i = 0; i < 5; i++) {
+    const b = new THREE.Mesh(new THREE.BoxGeometry(hoehe * 0.34, hoehe * 0.085, 0.008), blatt);
+    const w = (i / 5) * Math.PI * 2;
+    b.position.set(Math.cos(w) * hoehe * 0.17, Math.sin(w) * hoehe * 0.17, 0); b.rotation.z = w + 0.25; b.rotation.x = 0.35;
+    fan.add(b);
+  }
+  const nabe = new THREE.Mesh(new THREE.CylinderGeometry(hoehe * 0.06, hoehe * 0.06, 0.03, 14), blatt);
+  nabe.rotation.x = Math.PI / 2; fan.add(nabe);
+  innen.add(fan);
+  const gitterMat = stdMat("wp|gitter", { color: "#C2C9D4", roughness: 0.4, metalness: 0.6 });
+  for (const rad of [hoehe * 0.2, hoehe * 0.32, hoehe * 0.4]) {
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(rad, 0.005, 6, 40), gitterMat);
+    ring.position.set(-breite * 0.06, fy, fz + 0.025); innen.add(ring);
+  }
+  for (const w of [0, Math.PI / 2]) {
+    const st = new THREE.Mesh(new THREE.BoxGeometry(hoehe * 0.8, 0.007, 0.007), gitterMat);
+    st.position.set(-breite * 0.06, fy, fz + 0.025); st.rotation.z = w; innen.add(st);
+  }
+  // Lamellen an der rechten Seite der Front
+  for (let i = 0; i < 6; i++) {
+    const l = new THREE.Mesh(new THREE.BoxGeometry(breite * 0.17, 0.008, 0.008), dunkel);
+    l.position.set(breite * 0.37, 0.06 + hoehe * (0.22 + i * 0.09), fz + 0.004); innen.add(l);
+  }
+  // LED-Kante in Teamfarbe (oben vorn und senkrecht links)
+  const ledMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(farbe).multiplyScalar(3), fog: false });
+  const l1 = new THREE.Mesh(new THREE.BoxGeometry(breite * 0.94, 0.014, 0.012), ledMat); l1.position.set(0, 0.06 + hoehe - 0.02, fz + 0.004); innen.add(l1);
+  const l2 = new THREE.Mesh(new THREE.BoxGeometry(0.012, hoehe * 0.88, 0.012), ledMat); l2.position.set(-breite / 2 + 0.018, fy, fz + 0.004); innen.add(l2);
+  // Schneekappe und Füße
+  const kappe = new THREE.Mesh(new THREE.BoxGeometry(breite * 0.98, 0.04, tiefe * 1.0), stdMat("wp|schnee", { color: schneeFarbe, roughness: 0.92 }));
+  kappe.position.y = 0.06 + hoehe + 0.012; kappe.castShadow = true; innen.add(kappe);
+  for (const x of [-breite * 0.38, breite * 0.38]) { const f = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.03, tiefe * 0.8), dunkel); f.position.set(x, 0.045, 0); innen.add(f); }
+  const pf = lichtPfuetze({ radius: breite * 1.3, farbe, staerke: 0.5, exponent: 2 });
+  pf.material = pf.material.clone(); pf.position.set(0, 0.034, tiefe * 0.7); g.add(pf);
+  g.userData.dynamisch = true;
+  let S = 1;
+  g.lauf = (t, tempo = 1.2) => { fan.rotation.z = -t * tempo * Math.PI * 2; return g; };
+  g.led = (k) => { ledMat.color.set(farbe).multiplyScalar(3 * k); pf.material.uniforms.staerke.value = (0.35 + 0.5 * k) * S; return g; };
+  g.setze = (s) => { S = s; g.visible = s > 0.003; innen.scale.setScalar(Math.max(0.01, s)); innen.position.y = -0.1 * (1 - s); pf.visible = s > 0.2; return g; };
+  g.userData.hoehe = hoehe + 0.1; g.userData.fanPos = new THREE.Vector3(-breite * 0.06, fy, fz);
+  return g;
+}
+
+/**
+ * Kostensäule: durchscheinende Glas-Säule in Teamfarbe mit leuchtender Kappe, optional mit Skala (Querlinien alle `tick` Einheiten).
+ * hoehe(h) beliebig änderbar, setze(s) blendet ein, puls(k) lässt Kappe und Fläche aufleuchten.
+ */
+export function kostenSaeule({ breite = 0.3, farbe = "#FF5A1F", tick = 0, deckkraft = 0.5, kante = 2.6 } = {}) {
+  const g = new THREE.Group();
+  const geo = new THREE.BoxGeometry(1, 1, 1); geo.translate(0, 0.5, 0);
+  const mat = new THREE.ShaderMaterial({
+    uniforms: { farbe: { value: new THREE.Color(farbe) }, hoehe: { value: 1 }, tick: { value: tick }, op: { value: deckkraft }, puls: { value: 0 }, ein: { value: 1 } },
+    vertexShader: `uniform float hoehe; varying vec3 vP; varying float vY; void main(){ vP = vec3(position.x, position.y * hoehe, position.z); vY = position.y; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+    fragmentShader: `uniform vec3 farbe; uniform float tick, op, puls, ein; varying vec3 vP; varying float vY;
+      void main(){
+        float rim = smoothstep(0.36, 0.5, max(abs(vP.x), abs(vP.z)));
+        float tk = 0.0; if (tick > 0.0) { float f = fract(vP.y / tick); float d = min(f, 1.0 - f) * tick; tk = 1.0 - smoothstep(0.004, 0.014, d); }
+        float kopf = smoothstep(0.9, 1.0, vY);
+        float v = 0.5 + 1.4 * rim + 1.4 * tk + 0.9 * kopf + 1.2 * puls;
+        float a = clamp(op * (0.5 + 0.5 * rim + 0.5 * puls) + 0.3 * tk, 0.0, 1.0) * ein;
+        gl_FragColor = vec4(farbe * v, a);
+      }`,
+    transparent: true, depthWrite: false, side: THREE.DoubleSide,
+  });
+  const fuell = new THREE.Mesh(geo, mat); fuell.renderOrder = 4; g.add(fuell);
+  const kappeMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(farbe).multiplyScalar(kante), transparent: true, fog: false });
+  const kappe = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), kappeMat); kappe.renderOrder = 5; g.add(kappe);
+  const pf = lichtPfuetze({ radius: breite * 2.4, farbe, staerke: 0.5, exponent: 2 });
+  pf.material = pf.material.clone(); pf.position.y = 0.008; g.add(pf);
+  g.userData.dynamisch = true;
+  let H = 1, S = 1, P = 0;
+  const wende = () => {
+    g.visible = S > 0.002;
+    fuell.scale.set(breite, Math.max(H, 1e-3), breite); mat.uniforms.hoehe.value = Math.max(H, 1e-3); mat.uniforms.puls.value = P; mat.uniforms.ein.value = S;
+    kappe.scale.set(breite * 1.02, 0.026, breite * 1.02); kappe.position.y = H;
+    kappeMat.color.set(farbe).multiplyScalar(kante * (1 + 1.4 * P)); kappeMat.opacity = S;
+    pf.material.uniforms.staerke.value = (0.5 + 0.9 * P) * S;
+  };
+  g.hoehe = (h) => { H = h; wende(); return g; };
+  g.setze = (s) => { S = s; wende(); return g; };
+  g.puls = (k) => { P = k; wende(); return g; };
+  g.kopf = () => H;
+  wende();
+  return g;
+}
+
+/** Förderstapel: 7 dünne Elfenbein-Platten (Bescheide, keine Banknoten) mit Blau-Streifen auf der obersten; setze(s) 0–1 (Sichtbarkeit), glimm(k) */
+export function foerderStapel({ farbe = "#ECE6DA", akzent = "#2F8CFF", anzahl = 7 } = {}) {
+  const g = new THREE.Group();
+  const r = zufall(17);
+  const m = new THREE.MeshStandardMaterial({ color: farbe, roughness: 0.55, emissive: new THREE.Color(farbe), emissiveIntensity: 0.35, transparent: true });
+  const platten = [];
+  for (let i = 0; i < anzahl; i++) {
+    const p = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.028, 0.32), m);
+    p.position.set((r() - 0.5) * 0.03, 0.014 + i * 0.03, (r() - 0.5) * 0.03); p.rotation.y = (r() - 0.5) * 0.28; p.castShadow = true;
+    g.add(p); platten.push(p);
+  }
+  const streifenMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(akzent).multiplyScalar(3), transparent: true, fog: false });
+  const streifen = new THREE.Mesh(new THREE.PlaneGeometry(0.36, 0.045), streifenMat);
+  streifen.rotation.x = -Math.PI / 2; streifen.position.set(0, 0.03 * anzahl + 0.003, 0.06); streifen.rotation.z = platten[anzahl - 1].rotation.y; g.add(streifen);
+  const kante = glimmLinie([-0.23, 0.03 * anzahl, 0.165], [0.23, 0.03 * anzahl, 0.165], { farbe: akzent, staerke: 3, dicke: 0.012 });
+  kante.material = kante.material.clone(); kante.material.transparent = true; g.add(kante);
+  g.userData.dynamisch = true;
+  g.setze = (s) => { g.visible = s > 0.004; m.opacity = Math.min(1, s * 1.6); streifenMat.opacity = Math.min(1, s * 1.6); kante.material.opacity = Math.min(1, s * 1.6); return g; };
+  g.glimm = (k) => { m.emissiveIntensity = 0.35 + 1.1 * k; return g; };
+  g.userData.hoehe = 0.03 * anzahl;
+  g.setze(1);
+  return g;
+}
+
+/**
+ * Bio-Treppe: vier gläserne Stufen 2029 10 % · 2030 15 % · 2035 30 % · 2040 60 % (Höhe = Anteil), Beschriftung über jeder Stufe.
+ * stufe(i, a) blendet Stufe i ein (0–1, wächst), puls(i, k) lässt sie aufleuchten. Unterkante y = 0, Breite ≈ 1,9.
+ */
+export function bioTreppe({ farbe = "#FF5A1F", hoehe = 2.0, breite = 0.4, abstand = 0.5 } = {}) {
+  const g = new THREE.Group();
+  const daten = [["2029", "10 %", 0.1], ["2030", "15 %", 0.15], ["2035", "30 %", 0.3], ["2040", "60 %", 0.6]];
+  const stufen = daten.map(([jahr, pz, a], i) => {
+    const s = kostenSaeule({ breite, farbe, deckkraft: 0.42, kante: 3.0 });
+    const x = (i - 1.5) * abstand;
+    s.position.set(x, 0, 0);
+    g.add(s);
+    const c = document.createElement("canvas"); c.width = 256; c.height = 160;
+    const x2 = c.getContext("2d"); x2.textAlign = "center";
+    x2.fillStyle = "rgba(10,13,19,0.72)"; x2.beginPath(); x2.roundRect(8, 8, 240, 144, 26); x2.fill();
+    x2.strokeStyle = "rgba(255,255,255,0.22)"; x2.lineWidth = 3; x2.stroke();
+    x2.fillStyle = "#9AA3B2"; x2.font = "700 40px 'SB Text', Inter, sans-serif"; x2.fillText(jahr, 128, 54);
+    x2.fillStyle = "#FFFFFF"; x2.font = "800 72px 'SB Display', Inter, sans-serif"; x2.fillText(pz, 128, 128);
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;
+    const lm = new THREE.MeshBasicMaterial({ map: t, transparent: true, fog: false, depthWrite: false });
+    const lab = new THREE.Mesh(new THREE.PlaneGeometry(0.46, 0.46 * 160 / 256), lm); lab.renderOrder = 9;
+    g.add(lab);
+    return { s, lab, lm, h: a * hoehe, x, A: 0, P: 0 };
+  });
+  const wende = (st) => {
+    const a = st.A;
+    st.s.setze(Math.min(1, a * 1.5)); st.s.hoehe(Math.max(1e-3, st.h * a)); st.s.puls(st.P);
+    st.lab.visible = a > 0.3; st.lm.opacity = Math.min(1, Math.max(0, (a - 0.3) / 0.5));
+    st.lab.position.set(st.x, st.h * a + 0.32 + 0.04 * st.P, 0.0);
+    st.lab.scale.setScalar(1 + 0.15 * st.P);
+  };
+  g.userData.dynamisch = true;
+  g.stufe = (i, a) => { stufen[i].A = a; wende(stufen[i]); return g; };
+  g.puls = (i, k) => { stufen[i].P = k; wende(stufen[i]); return g; };
+  g.anzahl = stufen.length;
+  g.kopfPos = (i) => new THREE.Vector3(stufen[i].x, stufen[i].h * stufen[i].A, 0);
+  stufen.forEach(wende);
+  return g;
+}
+
+/**
+ * Energie-/Kostenstrom: dünnes Leuchtrohr entlang einer Kurve (Weltpunkte) mit laufenden Würfeln.
+ * setze(s) Stärke 0–1, lauf(t, tempo) Würfelpositionen, breite(r) Rohrradius (Neuaufbau in 0,003er Stufen, deterministisch).
+ */
+export function energieFluss({ punkte, farbe = "#FF5A1F", radius = 0.02, wuerfel = 8, groesse = 0.075, staerke = 2.4, spannung = 0.5 } = {}) {
+  const g = new THREE.Group();
+  const kurve = new THREE.CatmullRomCurve3(punkte.map((p) => new THREE.Vector3(...p)), false, "catmullrom", spannung);
+  const bahnMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(farbe).multiplyScalar(staerke * 0.7), transparent: true, opacity: 0.75, depthWrite: false, fog: false });
+  let rad = -1, bahn = null;
+  const baue = (r2) => { const q = Math.max(0.004, Math.round(r2 / 0.003) * 0.003); if (q === rad) return; rad = q; if (bahn) { bahn.geometry.dispose(); g.remove(bahn); } bahn = new THREE.Mesh(new THREE.TubeGeometry(kurve, 64, q, 6), bahnMat); bahn.renderOrder = 6; g.add(bahn); };
+  baue(radius);
+  const wMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(farbe).multiplyScalar(staerke * 1.5), transparent: true, fog: false });
+  const geo = new THREE.BoxGeometry(1, 1, 1);
+  const ws = [];
+  for (let i = 0; i < wuerfel; i++) { const m = new THREE.Mesh(geo, wMat); m.renderOrder = 7; g.add(m); ws.push(m); }
+  g.userData.dynamisch = true;
+  let S = 1, R = radius;
+  g.setze = (s) => { S = s; g.visible = s > 0.01; bahnMat.opacity = 0.75 * Math.min(1, s * 1.4); wMat.opacity = Math.min(1, s * 1.6); return g; };
+  g.breite = (r2) => { R = r2; baue(r2); return g; };
+  g.lauf = (t, tempo = 0.35) => {
+    ws.forEach((m, i) => {
+      const u = (((t * tempo + i / wuerfel) % 1) + 1) % 1;
+      m.position.copy(kurve.getPointAt(u));
+      m.scale.setScalar(Math.max(0.005, S * groesse * (R / radius) ** 0.5 * (0.55 + 0.6 * Math.sin(Math.PI * u))));
+      m.rotation.set(u * 7, u * 5, 0);
+    });
+    return g;
+  };
+  g.kurve = kurve;
+  g.setze(1); g.lauf(0);
+  return g;
+}
+
+/** Preis-Anhänger: schwebendes Leuchtschild (Glas, Teamfarbe als Rand) mit wechselbarem Text; text("10.000 €"), setze(s), glimm(k) */
+export function preisAnhaenger({ breite = 0.95, hoehe = 0.4, farbe = "#FF5A1F" } = {}) {
+  const g = new THREE.Group();
+  const c = document.createElement("canvas"); c.width = 512; c.height = Math.round(512 * hoehe / breite);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;
+  let aktuell = null;
+  const mal = (txt) => {
+    const x = c.getContext("2d"), b = c.width, h = c.height;
+    x.clearRect(0, 0, b, h);
+    x.fillStyle = "rgba(10,13,19,0.86)"; x.beginPath(); x.roundRect(6, 6, b - 12, h - 12, 38); x.fill();
+    x.strokeStyle = farbe; x.lineWidth = 12; x.stroke();
+    x.fillStyle = "#F3F5F8"; x.textAlign = "center"; x.textBaseline = "middle"; x.font = `800 ${Math.round(h * 0.52)}px 'SB Display', Inter, sans-serif`;
+    x.fillText(txt, b / 2, h / 2 + 5);
+    t.needsUpdate = true;
+  };
+  const mat = new THREE.MeshBasicMaterial({ map: t, transparent: true, fog: false, depthWrite: false, color: new THREE.Color(1.15, 1.15, 1.15) });
+  const tafel = new THREE.Mesh(new THREE.PlaneGeometry(breite, hoehe), mat); tafel.renderOrder = 9;
+  const halo = new THREE.Mesh(new THREE.PlaneGeometry(breite * 1.5, hoehe * 2.2), new THREE.ShaderMaterial({
+    uniforms: { farbe: { value: new THREE.Color(farbe) }, staerke: { value: 0.35 } },
+    vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }",
+    fragmentShader: "uniform vec3 farbe; uniform float staerke; varying vec2 vUv; void main(){ float r = length((vUv - 0.5) * vec2(1.0, 1.0)) * 2.0; float a = pow(clamp(1.0 - r, 0.0, 1.0), 2.2); gl_FragColor = vec4(farbe * staerke * a, 1.0); }",
+    transparent: true, blending: THREE.AdditiveBlending, depthWrite: false }));
+  halo.renderOrder = 8; halo.position.z = -0.01;
+  g.add(halo, tafel);
+  g.userData.dynamisch = true;
+  g.text = (txt) => { if (txt !== aktuell) { aktuell = txt; mal(txt); } return g; };
+  g.setze = (s) => { g.visible = s > 0.01; g.scale.setScalar(Math.max(0.01, s)); mat.opacity = Math.min(1, s * 1.5); return g; };
+  g.glimm = (k) => { halo.material.uniforms.staerke.value = 0.3 + 0.9 * k; return g; };
+  g.text("10.000 €");
+  return g;
+}
+
+/** Rauchsäule aus weichen Wolken, steigt am Schornstein auf; lauf(t, staerke 0–1). Ursprung = Mündung. */
+export function rauchSaeule({ anzahl = 14, hoehe = 1.0, farbe = "#9AA6BA", seed = 5, drift = 0.28 } = {}) {
+  const g = new THREE.Group();
+  const r = zufall(seed);
+  const geo = new THREE.SphereGeometry(1, 10, 8);
+  const teile = [];
+  for (let i = 0; i < anzahl; i++) {
+    const m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: farbe, transparent: true, opacity: 0.3, depthWrite: false }));
+    m.renderOrder = 6; g.add(m); teile.push({ m, ph: r(), sx: (r() - 0.5) * 2, sz: (r() - 0.5) * 2 });
+  }
+  g.userData.dynamisch = true;
+  g.lauf = (t, staerke = 1) => {
+    teile.forEach((p, i) => {
+      const u = (((t * 0.28 + p.ph) % 1) + 1) % 1;
+      p.m.position.set(drift * u * u + p.sx * 0.05 * u + Math.sin(t * 0.9 + i) * 0.015, u * hoehe, p.sz * 0.04 * u);
+      const s = 0.035 + 0.13 * u;
+      p.m.scale.setScalar(s);
+      p.m.material.opacity = staerke * 0.36 * Math.sin(Math.PI * Math.min(1, u * 1.15)) * (1 - 0.4 * u);
+      p.m.visible = p.m.material.opacity > 0.004;
+    });
+    return g;
+  };
+  g.lauf(0, 1);
+  return g;
+}
+
+/** Abstandsanzeige am Boden: zwei Leuchtbalken von der Mitte nach links bzw. rechts; laenge(links, rechts) in Weltmaß, setze(0–1) */
+export function abstandsAnzeige({ farbeL = "#FF5A1F", farbeR = "#2F8CFF", dicke = 0.06 } = {}) {
+  const g = new THREE.Group();
+  const mk = (f) => { const mat = new THREE.MeshBasicMaterial({ color: new THREE.Color(f).multiplyScalar(3.2), transparent: true, fog: false }); const m = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), mat); m.renderOrder = 6; g.add(m); return { m, mat }; };
+  const L = mk(farbeL), R = mk(farbeR);
+  const mitte = new THREE.Mesh(new THREE.BoxGeometry(0.014, 0.16, 0.014), new THREE.MeshBasicMaterial({ color: "#ECE6DA", fog: false }));
+  mitte.position.y = 0.08; g.add(mitte);
+  g.userData.dynamisch = true;
+  g.laenge = (l, rr) => {
+    L.m.visible = l > 0.003; R.m.visible = rr > 0.003;
+    L.m.scale.set(Math.max(l, 1e-3), dicke * 0.5, dicke); L.m.position.set(-l / 2, dicke * 0.25, 0);
+    R.m.scale.set(Math.max(rr, 1e-3), dicke * 0.5, dicke); R.m.position.set(rr / 2, dicke * 0.25, 0);
+    return g;
+  };
+  g.setze = (s) => { g.visible = s > 0.01; L.mat.opacity = R.mat.opacity = Math.min(1, s * 1.5); return g; };
+  g.laenge(0, 0);
+  return g;
+}
+
+/** Wintertanne mit Schnee auf den Etagen (statisch) */
+export function winterBaum({ groesse = 0.8, seed = 1, farbe = "#1E3A36" } = {}) {
+  const g = new THREE.Group();
+  const r = zufall(seed);
+  const stamm = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.045, groesse * 0.22, 6), stdMat("wb|stamm", { color: "#2E241E", roughness: 0.9 }));
+  stamm.position.y = groesse * 0.11; g.add(stamm);
+  const nadel = stdMat("wb|nadel|" + farbe, { color: farbe, roughness: 0.85, flatShading: true });
+  const schnee = stdMat("wb|schnee", { color: "#DCE6F4", roughness: 0.92, flatShading: true });
+  const n = 4;
+  for (let i = 0; i < n; i++) {
+    const f = i / (n - 1), rad = groesse * (0.34 - 0.22 * f) * (0.92 + 0.16 * r()), h = groesse * 0.34;
+    const y = groesse * (0.18 + 0.62 * f);
+    const k = new THREE.Mesh(new THREE.ConeGeometry(rad, h, 7), nadel); k.position.y = y + h / 2; k.castShadow = true; g.add(k);
+    const s = new THREE.Mesh(new THREE.ConeGeometry(rad * 0.74, h * 0.52, 7), schnee); s.position.y = y + h * 0.74; g.add(s);
+  }
+  return g;
+}

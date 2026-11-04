@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Wärmepumpe oder neue Gasheizung · Stil 17 Nachtstadt-Miniatur (Winternacht)</title>
+<link rel="stylesheet" href="../../engine/hud.css">
+<link rel="stylesheet" href="../../engine/massstab.css">
+<link rel="stylesheet" href="../../engine/sim_hud.css">
+<script type="importmap">
+{ "imports": {
+  "three": "/node_modules/three/build/three.module.js",
+  "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+<style>#hud.sim .ms-seite .ms-wert { font-size: 56px; } #hud.sim .ms-seite.links { padding-right: 70px; } #hud.sim .ms-seite.rechts { padding-left: 70px; }</style>
+</head>
+<body>
+<canvas id="leinwand" width="1080" height="1920"></canvas>
+<div id="hud" class="sim"></div>
+<script type="module" src="./szene.js"></script>
+</body>
+</html>

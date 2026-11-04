@@ -1,0 +1,1276 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "waermepumpe-gas",
+ "fps": 30,
+ "dauer": 76.53333333333333,
+ "stimmEnde": 75.939,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "raum",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "GAS",
+    "farbe": "#FF5A1F"
+   },
+   "b": {
+    "name": "WÄRMEPUMPE",
+    "farbe": "#2F8CFF"
+   }
+  },
+  "schleife": {
+   "ab": 72.66,
+   "ende": 76.50566666666666
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 76.506,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 0
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Szene",
+   "t": 0.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Schnee fällt, alter Kessel flackert in beiden Heizräumen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera fährt heran"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Typenschild 2006 im Heizraum links erkennbar"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.8,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Spot und LED auf das linke Haus"
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.84,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Spot wechselt auf das rechte Haus, Außeneinheit wächst, Lüfter dreht"
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.96,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "130 M² · EINFAMILIENHAUS"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.96,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera weitet zur Totalen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.55,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "20 JAHRE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Chip 20 Jahre"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.78,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.78,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.88,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zum linken Heizraum"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.38,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "alter Kessel sinkt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 7.667,
+   "typ": "zaehler",
+   "dauer": 0.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.82,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GASHEIZUNG 10.000 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.88,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "neuer Kessel steigt auf, Aufleuchten"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Säule links wächst auf 10.000 €, Preisanhänger"
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.08,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.28,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zum rechten Haus"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.88,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "alter Kessel rechts sinkt, Speicher steigt auf"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 10.133,
+   "typ": "zaehler",
+   "dauer": 1.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 10.167,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.3,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "WÄRMEPUMPE 35.000 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.4,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Säule rechts wächst auf 35.000 €, Preisanhänger"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 10.567,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.2,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.4,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Förderstapel fällt auf die Außeneinheit"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 13,
+   "typ": "zaehler",
+   "dauer": 1.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.07,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "−12.880 € FÖRDERUNG"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Stapel leuchtet, Chip −12.880 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Säule rechts sinkt auf 22.120 €, Anhänger wechselt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera zurück in die Totale"
+  },
+  {
+   "quelle": "Chip",
+   "t": 15,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.2,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Lichtkegel auf dem Gashaus, Wärmepumpenhaus im Schatten"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.133,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Gashaus leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.12,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Licht steht ruhig"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.16,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu den Säulen, Abstandsbalken erscheint"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 19.18,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.28,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Abstand −12.120 €, Gasbalken links"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Säule rechts höher als links"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 21.28,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.78,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera weitet, Rauch steigt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.48,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Schnee und Rauch laufen weiter"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera fährt zur Mitte"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kostenstrom links dick"
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.94,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2.019 € / JAHR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.04,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip 2.019 € / Jahr, Würfel fließen in die Gassäule"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.04,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Gaswürfel erreichen die Säule, sie pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.04,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kostenstrom rechts dünn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 27.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 27.98,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "1.263 € / JAHR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.08,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip 1.263 € / Jahr, Jahresuhr läuft an"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.16,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.167,
+   "typ": "zaehler",
+   "dauer": 1.267,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.167,
+   "typ": "zaehler",
+   "dauer": 1.267,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 28.18,
+   "typ": "zaehler",
+   "dauer": 1.267,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.68,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Säulen wachsen, Abstand schrumpft"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.96,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.967,
+   "typ": "zaehler",
+   "dauer": 1.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.967,
+   "typ": "zaehler",
+   "dauer": 1.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 29.98,
+   "typ": "zaehler",
+   "dauer": 1.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.08,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.38,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+756 € / JAHR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip +756 € / Jahr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.927,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.92,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Jahr 3"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 32.46,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 32.467,
+   "typ": "zaehler",
+   "dauer": 0.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 32.467,
+   "typ": "zaehler",
+   "dauer": 0.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 32.48,
+   "typ": "zaehler",
+   "dauer": 0.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 32.593,
+   "typ": "uhr",
+   "dauer": 0.333,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.78,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.88,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zeitraffer: Himmel hellt auf, Kamera schwenkt, Jahr 10"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 33.527,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 33.533,
+   "typ": "zaehler",
+   "dauer": 0.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 33.533,
+   "typ": "zaehler",
+   "dauer": 0.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 33.547,
+   "typ": "zaehler",
+   "dauer": 0.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 33.693,
+   "typ": "uhr",
+   "dauer": 0.3,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.853,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Jahr 15, Schwenk zur anderen Seite"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.933,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Gas bleibt vorn, Himmel dunkelt wieder"
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.36,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera fährt auf die Säulen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.96,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.967,
+   "typ": "zaehler",
+   "dauer": 0.5,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.967,
+   "typ": "zaehler",
+   "dauer": 0.5,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 35.98,
+   "typ": "zaehler",
+   "dauer": 0.467,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.08,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jahr 16"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.84,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zoom auf die Säulenspitzen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 36.94,
+   "art": "zoom",
+   "dauer": 2.2,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.04,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Spitzen fast gleich hoch"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.44,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Abstand nur noch 24 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Abstand kriecht Richtung 0"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.133,
+   "typ": "zaehler",
+   "dauer": 2.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.133,
+   "typ": "zaehler",
+   "dauer": 2.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 39.147,
+   "typ": "zaehler",
+   "dauer": 2.493,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.16,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.2,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jahr 17 beginnt, Abstand schrumpft"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Spitzen auf gleicher Höhe, Licht beginnt zu wandern"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 40.49,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.04,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Wärmepumpe überholt: Licht springt auf das rechte Haus, rechte Säule leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.84,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Säulen wachsen bis Jahr 17"
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.84,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zurück ins Totale, Jahresuhr läuft auf 20"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.96,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.967,
+   "typ": "zaehler",
+   "dauer": 1.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.967,
+   "typ": "zaehler",
+   "dauer": 1.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.36,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.593,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.98,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Jahr 20"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.28,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Gassäule vorn rechts neben der Wärmepumpensäule"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 43.84,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "GAS"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.84,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Bilanz: Gas 50.383 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.84,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Gas-Säule leuchtet auf: die höchste Säule"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.84,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera fährt heran"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 46.72,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "WÄRMEPUMPE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.72,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Bilanz: Wärmepumpe 47.384 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.72,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Gassäule pulsiert: noch etwas höher als die Wärmepumpensäule"
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.8,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Licht wandert auf das rechte Haus"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 49.04,
+   "art": "zoom",
+   "dauer": 2.1,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 49.24,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "WÄRMEPUMPE SPART"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.24,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Wärmepumpe spart 2.999 €, Glow auf dem rechten Haus"
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.2,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera nah an die Außeneinheit"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Strom-Würfel läuft zur Außeneinheit"
+  },
+  {
+   "quelle": "Balken",
+   "t": 52.48,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "WÄRME AUS 1 kWh GAS / STROM · kWh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "1 kWh Strom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.56,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "drei Wärme-Würfel strömen ins Haus"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.36,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Wärme im Heizraum, Speicher leuchtet"
+  },
+  {
+   "quelle": "Balken",
+   "t": 56.52,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "20 JAHRE OHNE FÖRDERUNG · €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.52,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Förderstapel kehrt zurück"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 56.733,
+   "typ": "zaehler",
+   "dauer": 0.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Förderstapel wird weggenommen, Wärmepumpe-Säule wächst"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 57.033,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.7,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Wärmepumpe 60.264 €, Gas vorn"
+  },
+  {
+   "quelle": "Balken",
+   "t": 57.76,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "VERLIERT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.76,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Wärmepumpe verliert"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.633,
+   "typ": "zaehler",
+   "dauer": 0.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.84,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zum Gashaus, Förderung zurück"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.233,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.24,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Rauch am Schornstein, Licht auf dem Gashaus"
+  },
+  {
+   "quelle": "Chip",
+   "t": 61.87,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BIO-ANTEIL AB 2029"
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Bio-Treppe: 2029 10 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.42,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Stufe 2030 15 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.28,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Stufe 2035 30 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.6,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Stufe 2040 60 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.88,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "erste Stufe leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.16,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "der Gas-Kostenstrom beginnt breiter zu werden"
+  },
+  {
+   "quelle": "Chip",
+   "t": 66.61,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 66.86,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "≈ 200 € / JAHR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.96,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip ≈ 200 € / Jahr, Gasstrom wird breiter"
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Gasstrom breit"
+  },
+  {
+   "quelle": "Chip",
+   "t": 68.7,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.8,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Bio-Treppe sinkt, Kamera fährt zurück"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 70,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "KAUF  JAHRE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "KAUF: Gashaus leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet Richtung Startbild"
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.08,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "JAHRE: Wärmepumpenhaus leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 72.633,
+   "typ": "zaehler",
+   "dauer": 3.906,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 72.633,
+   "typ": "zaehler",
+   "dauer": 3.906,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 72.66,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 72.66,
+   "art": "schleife",
+   "dauer": 3.84,
+   "klang": false
+  },
+  {
+   "t": 72.66,
+   "typ": "schleife",
+   "dauer": 3.846,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73.36,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73.56,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73.727,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.76,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera und Werte gleiten zum Startbild (Schleife)"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73.86,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73.993,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 74.227,
+   "typ": "uhr",
+   "dauer": 0.867,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.193,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.36,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.593,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  }
+ ],
+ "klang": []
+}
