@@ -158,7 +158,7 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
       const d = slotLesen(id);
       kommentar = String(kommentar || "").trim().slice(0, 2000);
       if (!kommentar) throw fehler("Bitte schreib kurz, was anders werden soll");
-      if (!NEU_SCHREIBBAR.has(d.daten.status) || d.daten.fehler_phase === "produktion") throw fehler(`Neu schreiben geht bei Status „${d.daten.status}“ nicht`);
+      if (!NEU_SCHREIBBAR.has(d.daten.status) || ["produktion", "nachpruefen"].includes(d.daten.fehler_phase)) throw fehler(`Neu schreiben geht bei Status „${d.daten.status}“ nicht`);
       db.schreiben("skripte", id, { status: "recherche", kommentar, kommentar_zeit: jetzt(), fehler: "", fehler_phase: "", fortschritt: "Neufassung angefordert", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
       skripteAnfordern(d.daten.konto, d.daten.datum, [id], "neu_schreiben", { kommentar });
       return { ok: true };
@@ -181,6 +181,7 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
     verwerfen({ id }) {
       const d = slotLesen(id);
       if (!["gewaehlt", "skript_fertig", "fehler", "rueckfrage"].includes(d.daten.status)) throw fehler(`Bei Status „${d.daten.status}“ lässt sich nichts verwerfen`);
+      if (d.daten.fehler_phase === "nachpruefen" || d.daten.post_id) throw fehler("Dieses Video ist schon in Buffer geplant bzw. gepostet und lässt sich hier nicht verwerfen");
       db.loeschen("skripte", id, { ifVersion: d.version });
       return { ok: true };
     },
@@ -219,6 +220,11 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
       if (d.daten.fehler_phase === "produktion") {
         db.schreiben("skripte", id, { status: "uebergeben", fehler: "", fortschritt: "Produktion erneut angefordert", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
         if (produzieren) produzieren(d.daten.datum, [id]);
+        return { ok: true };
+      }
+      // Nachprüfung gescheitert: Video ist schon in Buffer bzw. gepostet, also nur die Nachprüfung neu anstoßen (nie neu recherchieren)
+      if (d.daten.fehler_phase === "nachpruefen") {
+        db.schreiben("skripte", id, { status: "geplant", fehler: "", fehler_phase: "", nachpruefen_angefordert: { __delete__: true }, fortschritt: "Nachprüfung erneut angefordert (startet in ≤ 5 Min.)", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
         return { ok: true };
       }
       db.schreiben("skripte", id, { status: "recherche", fehler: "", fehler_phase: "", fortschritt: "Recherche erneut angefordert", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });

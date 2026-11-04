@@ -20,7 +20,7 @@ const INHALT = {
   "live/regie": { mitte: ["b-buehne"], rechts: ["b-kette"] },
   "live/tagesplan": { mitte: ["b-tagesziel", "b-videos"], rechts: ["b-auftraege"] },
   "live/technik": { mitte: ["b-dienst"], links: ["b-rechner"] },
-  "studio/ideen": { mitte: ["b-studio-kopf", "b-ideen"] },
+  "studio/ideen": { mitte: ["b-studio-kopf", "b-ideen"], rechts: ["b-studio-leiste"] }, // Übergabe-Knöpfe auch hier (04.11.)
   "studio/schreibstube": { mitte: ["b-studio-kopf", "b-slots"], rechts: ["b-studio-leiste"] },
   "zahlen/konten": { mitte: ["b-zahlen-kopf", "b-konten"] },
   "zahlen/archiv": { mitte: ["b-videotabelle"] },

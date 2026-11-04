@@ -139,7 +139,9 @@ function slotKnoepfe(d) {
     case "skript_fertig": return lesen + k("freigeben", "✅ Freigeben", "glanz") + k("neu", "✏️ Neu schreiben") + k("verwerfen", "🗑", "rot");
     case "freigegeben": return lesen + k("zuruecknehmen", "↩ Zurücknehmen");
     case "rueckfrage": return lesen + k("rueckfrage_annehmen", "✔ Vorschlag annehmen", "glanz") + k("neu", "✏️ Neu schreiben");
-    case "fehler": return k("erneut", "🔁 Erneut versuchen", "glanz") + (d.daten.fehler_phase !== "produktion" ? k("neu", "✏️ Neu schreiben") + k("verwerfen", "🗑", "rot") : "");
+    case "fehler":
+      if (d.daten.fehler_phase === "nachpruefen") return k("erneut", "🔁 Nachprüfung wiederholen", "glanz");
+      return k("erneut", "🔁 Erneut versuchen", "glanz") + (d.daten.fehler_phase !== "produktion" ? k("neu", "✏️ Neu schreiben") + k("verwerfen", "🗑", "rot") : "");
     default: return lesen;
   }
 }
