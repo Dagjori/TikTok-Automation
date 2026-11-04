@@ -1,0 +1,1305 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "solar-speicher",
+ "fps": 30,
+ "dauer": 78.53333333333333,
+ "stimmEnde": 77.924,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "strasse",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "LENA",
+    "farbe": "#2EC4B6"
+   },
+   "b": {
+    "name": "JONAS",
+    "farbe": "#FF8A3D"
+   }
+  },
+  "schleife": {
+   "ab": 74.58,
+   "ende": 78.49066666666667
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 78.491,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 2.7451454442939394e-9
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Szene",
+   "t": 0.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Sonne steht über beiden Dächern"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Paneelen glimmen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Akku im Keller leuchtet auf"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera fährt zwischen die Häuser"
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.07,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "10 KWP · 10.240 KWH SONNE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "10 kWp: Paneelen leuchten auf"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.24,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.64,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "4.000 KWH VERBRAUCH/JAHR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Verbrauch 4.000 kWh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Lichtstrom Dach → Haus"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.76,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.88,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu Lena: Strom Dach → Netz verstärkt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.76,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Überschuss fließt zum Mast"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.96,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "7,7 CT/KWH"
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.96,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "7,7 ct je kWh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.26,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu Jonas"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 13,
+   "typ": "zaehler",
+   "dauer": 0.5,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.02,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AKKU 8 KWH · 4.800 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 13.033,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.04,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jonas −4.800 € (Zähler rot)"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Keller leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.2,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Akku glimmt: Strom Dach → Akku"
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.88,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 16,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Spot auf Jonas' Haus"
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Akku-Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Spot erlischt"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 19.44,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.04,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera weitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Lichtströme beschleunigen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.667,
+   "typ": "zaehler",
+   "dauer": 2.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.667,
+   "typ": "zaehler",
+   "dauer": 2.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "JAHR 1: Zähler laufen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.83,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LENA +1.231 €/JAHR"
+  },
+  {
+   "quelle": "Chip",
+   "t": 22.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 22.8,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JONAS +1.696 €/JAHR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.8,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Jonas holt mehr raus"
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.48,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Jonas bleibt im Minus"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.52,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera schwenkt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.68,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu den Ringen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.68,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Akku verdoppelt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 29.04,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "UNABHÄNGIGKEIT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.04,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Ringe erscheinen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 30.33,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 30.363,
+   "typ": "zaehler",
+   "dauer": 1.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.48,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Ring Lena füllt sich bis 37 %"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 31.45,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 31.483,
+   "typ": "zaehler",
+   "dauer": 1.167,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 31.5,
+   "art": "zoom",
+   "dauer": 2.3,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Ring Jonas füllt sich bis 79 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Zoom auf den Kontrast"
+  },
+  {
+   "quelle": "Chip",
+   "t": 33.14,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.24,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Euro-Balken erscheinen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 33.96,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 33.96,
+   "typ": "zaehler",
+   "dauer": 1.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.96,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Balken Jonas wächst +38 %"
+  },
+  {
+   "quelle": "Chip",
+   "t": 35.08,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+38 % GELD"
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "+38 % steht"
+  },
+  {
+   "quelle": "Chip",
+   "t": 35.82,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.92,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zeitraffer: Sonne wandert"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.963,
+   "typ": "uhr",
+   "dauer": 0.233,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.967,
+   "typ": "zaehler",
+   "dauer": 0.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.967,
+   "typ": "zaehler",
+   "dauer": 0.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 36.02,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 36.02,
+   "typ": "zaehler",
+   "dauer": 0.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.3,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jahr 5: Lena vorn"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 36.753,
+   "typ": "zaehler",
+   "dauer": 0.367,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.763,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.767,
+   "typ": "zaehler",
+   "dauer": 0.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.767,
+   "typ": "zaehler",
+   "dauer": 0.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.897,
+   "typ": "uhr",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.093,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jahr 8"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 37.487,
+   "typ": "zaehler",
+   "dauer": 0.467,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.497,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.5,
+   "typ": "zaehler",
+   "dauer": 0.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.5,
+   "typ": "zaehler",
+   "dauer": 0.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.697,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.927,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jahr 10: knapp"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Nacht: Fenster aus dem Netz bzw. Akku"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "zweiter Tag"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 40.12,
+   "typ": "zaehler",
+   "dauer": 0.867,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.13,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.133,
+   "typ": "zaehler",
+   "dauer": 0.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.133,
+   "typ": "zaehler",
+   "dauer": 0.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.24,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Spannung steigt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.24,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zoom auf Jonas' Haus"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 40.407,
+   "art": "zoom",
+   "dauer": 2.2,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.607,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jonas überholt: Aufleuchten Jahr 11"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.633,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.6,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jonas vorn: +320 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.13,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.133,
+   "typ": "zaehler",
+   "dauer": 0.6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.133,
+   "typ": "zaehler",
+   "dauer": 0.6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.33,
+   "typ": "uhr",
+   "dauer": 0.233,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 42.51,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AKKU HÄLT 15 JAHRE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.56,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "JAHR 15"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.33,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.333,
+   "typ": "zaehler",
+   "dauer": 2.667,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.333,
+   "typ": "zaehler",
+   "dauer": 2.667,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.68,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Akku-Licht erlischt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.13,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.16,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Akku dunkel"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.63,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 44.68,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.8,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Bilanzkarte, Lichtkegel erscheint"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.03,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.06,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "beide Zähler laufen gleich schnell"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.397,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Lichtkegel wird heller"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 47.52,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "LENA"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.52,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lena 24.620 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.7,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera fährt langsam heran"
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Lichtströme pulsieren"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.54,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Licht wandert auf Jonas' Haus"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 50.56,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "JONAS"
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.56,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jonas 26.802 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.56,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Jonas-Paneele leuchten auf"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.72,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Lichtkegel pulsiert auf den Keller"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 53.38,
+   "art": "zoom",
+   "dauer": 2.3,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 53.48,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "AKKU"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Akku +2.182 €"
+  },
+  {
+   "t": 54.8,
+   "typ": "uebergang",
+   "art": "wisch",
+   "dauer": 0.5,
+   "quelle": "Zeitleiste",
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.2,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Szenenwechsel: Blaupause"
+  },
+  {
+   "quelle": "Chip",
+   "t": 55.7,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "NETZ"
+  },
+  {
+   "quelle": "Chip",
+   "t": 56.1,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AKKU"
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.96,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "kWh zweigt zum Akku ab"
+  },
+  {
+   "quelle": "Chip",
+   "t": 58.32,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "−7,7 CT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Netzpfeil verliert eine kWh: −7,7 ct"
+  },
+  {
+   "quelle": "Chip",
+   "t": 59.76,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 60.16,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "−16 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.16,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ein Sechstel verdampft als Wärme"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "−16 %"
+  },
+  {
+   "t": 62.05,
+   "typ": "uebergang",
+   "art": "wisch",
+   "dauer": 0.5,
+   "quelle": "Zeitleiste",
+   "klang": "whoosh"
+  },
+  {
+   "quelle": "Chip",
+   "t": 62.25,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 62.25,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 62.25,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.4,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zurück ins Modell: Kamera zum Keller"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 62.6,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Preisschild erscheint"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.933,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 63.933,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 63.98,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AKKU 6.600 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Preisschild dreht auf 6.600 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.44,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Lichtkegel auf den Keller"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.24,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Differenz 381 €"
+  },
+  {
+   "quelle": "Chip",
+   "t": 67.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.52,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Schild dreht auf 3.000 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.6,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 67.6,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 67.66,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AKKU 3.000 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Differenz steigt auf 3.981 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.96,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "fast 4.000"
+  },
+  {
+   "quelle": "Chip",
+   "t": 70.21,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera fährt zurück"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Paneelen beider Häuser leuchten: gleiche Sonne"
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Paneelen beider Häuser leuchten: gleiches Dach"
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Fahrt zurück zur Startposition"
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.6,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Preis im Keller"
+  },
+  {
+   "quelle": "Szene",
+   "t": 74.04,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "Merksatz: Keller leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 74.563,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 74.567,
+   "typ": "zaehler",
+   "dauer": 3.957,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 74.567,
+   "typ": "zaehler",
+   "dauer": 3.957,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 74.58,
+   "art": "schleife",
+   "dauer": 3.92,
+   "klang": false
+  },
+  {
+   "t": 74.58,
+   "typ": "schleife",
+   "dauer": 3.911,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.297,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.53,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.697,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.83,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.963,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.097,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.33,
+   "typ": "uhr",
+   "dauer": 0.7,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 77.13,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 77.297,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 77.563,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  }
+ ],
+ "klang": []
+}

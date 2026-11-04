@@ -1,0 +1,392 @@
+{
+ "titel": "Solaranlage mit Speicher oder ohne: Was bringt dir mehr Geld?",
+ "skill": "simulierbar-video",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-04-mittag",
+ "stil": "19 Architekturmodell (Abendlicht)",
+ "stil_begruendung": "Zwei identische Einfamilienhäuser als Architekturmodell auf einem Modelltisch: gleiches Dach, gleiche Sonne, sichtbar als Zwilling, Solarpaneele und der Akku im aufgeschnittenen Keller sind als Modellbauteile klar lesbar. Abendlicht mit tiefer Sonne trägt den Tagesverlauf (Sonne wandert, Nacht = Akku-Stunde), Lichtströme in Teamfarbe zeigen Energieflüsse. Stil 17 ist für das Abend-Video desselben Tages (Wärmepumpe) gesetzt, zuletzt lief Stil 18 (Kind bis 18), daher hier 19.",
+ "teamfarben": {
+  "Lena": "#2EC4B6",
+  "Jonas": "#FF8A3D"
+ },
+ "klangteppich": "strasse",
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Gleiches Dach, gleiche Sonne – einer hat einen Akku. Lohnt der sich?",
+   "sprechtext": "Gleiches Dach, gleiche Sonne, einer hat einen Akku. Lohnt der sich?",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Gleiches Dach, gleiche Sonne (0,0–2,2 s)",
+     "bild": "Ab Bild 1 beide identischen Häuser im tiefen Abend-/Gegenlicht auf der Sperrholzplatte, Sonne über beiden Dächern, Paneelen glimmen, Lichtströme Dach → Haus/Netz in Teamfarbe; Tafel LENA 0 € | JONAS 0 €; Kamera fährt langsam heran."
+    },
+    {
+     "gesagt": "einer hat einen Akku (2,3–3,5 s)",
+     "bild": "Bei „Akku“ (3,12 s) leuchtet der Akku im aufgeschnittenen Keller von Jonas' Haus auf (Ladestand-Licht, Strom Dach → Akku)."
+    },
+    {
+     "gesagt": "Lohnt der sich? (3,9–4,9 s)",
+     "bild": "Kamera ist zwischen beiden Häusern nah, Ströme laufen weiter."
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "10 Kilowatt Solar, 4.000 Kilowattstunden Verbrauch. Lena speist den Überschuss ein, für 7,7 Cent. Jonas zahlt 4.800 Euro extra für einen Akku.",
+   "sprechtext": "Zehn Kilowatt Solar, viertausend Kilowattstunden Verbrauch.\nLena speist den Überschuss ein, für knapp acht Cent.\nJonas zahlt viertausendachthundert Euro EXTRA für einen Akku.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Zehn Kilowatt Solar (5,12 s)",
+     "bild": "Beide Paneelfelder leuchten auf, Chip „10 KWP · 10.240 KWH SONNE“."
+    },
+    {
+     "gesagt": "4.000 Kilowattstunden Verbrauch (6,64 s)",
+     "bild": "Chip „4.000 KWH VERBRAUCH/JAHR“, Lichtstrom Dach → Haus."
+    },
+    {
+     "gesagt": "Lena speist den Überschuss ein, für 7,7 Cent (8,88–11,5 s)",
+     "bild": "Kamera zu Lenas Haus und Strommast, Lichtstrom Lenas Dach → Netzmast verstärkt; bei „7,7“ (10,96 s) Chip „7,7 CT/KWH“."
+    },
+    {
+     "gesagt": "Jonas zahlt 4.800 Euro extra (12,36–14,4 s)",
+     "bild": "Kamera zu Jonas; bei „4.800“ (13,04 s) springt sein Zähler auf −4.800 € (rot getönt), Chip „AKKU 8 KWH · 4.800 €“."
+    },
+    {
+     "gesagt": "für einen Akku (14,8–15,9 s)",
+     "bild": "Kamera nah am offenen Keller, Akku glimmt, Strom Dach → Akku."
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, der Akku gewinnt haushoch. Oder?",
+   "sprechtext": "Klar … der Akku gewinnt HAUSHOCH.\nOder?",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Klar, der Akku gewinnt haushoch. (16,0–18,4 s)",
+     "bild": "Ruhiger Spot-Lichtkegel auf Jonas' Haus, Kamera nah, Akku-Licht pulsiert."
+    },
+    {
+     "gesagt": "Oder? (18,64 s)",
+     "bild": "Spot erlischt, Kamera weitet sich."
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "phase": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "sprechtext": "Folg mir, damit du nichts verpasst.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Folg mir, damit du nichts verpasst. (19,44–21,4 s)",
+     "bild": "Kleines Folgen-Element (1,8 s), Welt läuft weiter, Kamera weitet sich."
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Jahr 1: Jonas holt mehr raus. Aber er startet im Minus.",
+   "sprechtext": "Jahr eins: Jonas holt mehr raus.\nAber er startet im MINUS.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Jahr eins (21,68 s)",
+     "bild": "Tafel-Uhr „JAHR 1“ startet, beide Euro-Zähler laufen (Lena +1.231 €/Jahr, Jonas +1.696 €/Jahr ab −4.800)."
+    },
+    {
+     "gesagt": "Jonas holt mehr raus. (22,8 s)",
+     "bild": "Chip „JONAS +1.696 €/JAHR“, Jonas' Zähler klettert schneller."
+    },
+    {
+     "gesagt": "Aber er startet im Minus. (24,48–26,1 s)",
+     "bild": "Jonas' Zähler bleibt bei −3.104 € (rot), Lena vorn; Kamera schwenkt auf Jonas."
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Doch das Merkwürdige: Sein Akku verdoppelt die Unabhängigkeit. Von 37 auf 79 Prozent. Aber das Geld wächst nur um gut ein Drittel.",
+   "sprechtext": "Doch das Merkwürdige:\nSein Akku verdoppelt die Unabhängigkeit.\nVon siebenunddreißig auf neunundsiebzig Prozent.\nAber das Geld wächst nur um gut ein DRITTEL.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Doch das Merkwürdige: Sein Akku verdoppelt die Unabhängigkeit (26,3–29,9 s)",
+     "bild": "Kamera fährt zu den Ringanzeigen vorn auf der Platte, Ringe erscheinen bei „Unabhängigkeit“ (29,04 s), Chip „UNABHÄNGIGKEIT“."
+    },
+    {
+     "gesagt": "Von 37 auf 79 Prozent (30,24–32,9 s)",
+     "bild": "Ring Lena füllt sich bis 37 % (30,5 s), Ring Jonas bis 79 % (31,6 s); Zoom auf den Kontrast (31,5 s)."
+    },
+    {
+     "gesagt": "Aber das Geld wächst nur um gut ein Drittel (33,24–35,6 s)",
+     "bild": "Schmale Euro-Balken zwischen den Ringen, Jonas' Balken wächst auf +38 % (Zähler „MEHR GELD“), Chip „+38 % GELD“ bei „Drittel“ (35,08 s)."
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Jahr 5, 8, 10: Lena bleibt vorn. Erst im elften Jahr zieht Jonas vorbei.",
+   "sprechtext": "Jahr fünf, acht, zehn … Lena bleibt vorn.\nErst im ELFTEN Jahr zieht Jonas vorbei.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Jahr 5, 8, 10 (35,92–38,3 s)",
+     "bild": "Zeitraffer Tag/Nacht (Sonne wandert, nachts leuchten Jonas' Fenster aus dem Akku, Lenas aus dem Netz); Tafel-Jahr 5, 8, 10; Zähler „JONAS GEGEN LENA“ −2.473, −1.077, −146 €."
+    },
+    {
+     "gesagt": "Lena bleibt vorn. (38,4–39,6 s)",
+     "bild": "Lena führt auf der Tafel, zweiter Tag, Lichtströme wechseln mit der Sonne."
+    },
+    {
+     "gesagt": "Erst im elften Jahr zieht Jonas vorbei. (39,84–42,0 s)",
+     "bild": "Bei „elften“ (40,24 s) Zoom auf Jonas' Haus, Führungswechsel auf der Tafel (40,63 s, rechts vorn), Aufleuchten auf Jonas' Haus, Jahr 11: +320 €."
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "Und mit 15 Jahren ist sein Akku am Ende.",
+   "sprechtext": "Und mit fünfzehn Jahren ist sein Akku am ENDE.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Und mit 15 Jahren ist sein Akku am Ende. (42,24–44,6 s)",
+     "bild": "Tafel „JAHR 15“, Chip „AKKU HÄLT 15 JAHRE“; Akku-Licht im Keller erlischt langsam (43,4–44,4 s), danach laufen beide Zähler gleich schnell (Ströme beider Häuser gleich)."
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Endstand nach 20 Jahren: Lena 24.620 Euro. Jonas 26.802 Euro. Der Akku bringt 2.182 Euro.",
+   "sprechtext": "Endstand nach zwanzig Jahren:\nLena – vierundzwanzigtausendsechshundert Euro.\nJonas – sechsundzwanzigtausendachthundert.\nDer Akku bringt gut ZWEITAUSEND Euro.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Endstand nach zwanzig Jahren (44,8–46,5 s)",
+     "bild": "Bilanzkarte „NACH 20 JAHREN“ baut sich auf, Lichtkegel erscheint, Kamera fährt langsam heran; Tafel zeigt Jahr 20."
+    },
+    {
+     "gesagt": "Lena – 24.620 Euro. (46,8–49,5 s)",
+     "bild": "Zeile LENA 24.620 € (47,5 s), Licht auf Lenas Haus."
+    },
+    {
+     "gesagt": "Jonas – 26.802. (49,84–52,0 s)",
+     "bild": "Zeile JONAS 26.802 € (50,56 s), Licht wandert auf Jonas' Haus, Paneelen leuchten."
+    },
+    {
+     "gesagt": "Der Akku bringt gut zweitausend Euro. (52,72–54,9 s)",
+     "bild": "Zeile AKKU +2.182 € (53,48 s), Zoom auf Jonas' Haus, Lichtkegel pulsiert auf dem Keller."
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Warum so wenig? Jede Kilowattstunde im Akku fehlt bei der Einspeisung. Und ein Sechstel geht unterwegs verloren.",
+   "sprechtext": "[thoughtful] Warum so wenig?\nJede Kilowattstunde im Akku fehlt bei der Einspeisung.\nUnd ein SECHSTEL geht unterwegs verloren.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Warum so wenig? (55,2–56,4 s)",
+     "bild": "Szenenwechsel (Wisch, 54,8 s) in den Blaupause-Look: Energiefluss-Schema mit Haus, Keller-Akku, Netzpfeil und Mast; Beschriftungen NETZ, AKKU."
+    },
+    {
+     "gesagt": "Jede Kilowattstunde im Akku fehlt bei der Einspeisung. (56,64–59,6 s)",
+     "bild": "Ein kWh-Paket zweigt vom Netzpfeil in den Akku ab (ab 56,86 s), Zellen füllen sich; bei „fehlt“ (58,32 s) Chip „−7,7 CT“."
+    },
+    {
+     "gesagt": "Und ein Sechstel geht unterwegs verloren. (59,84–61,9 s)",
+     "bild": "Die sechste von sechs Akkuzellen steigt als Wärme auf (Wellenlinien), Chip „−16 %“ (60,2 s)."
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "phase": "ueberraschung",
+   "text": "Und das Verrückte: Kostet der Akku 6.600 Euro, bleiben am Ende keine 400. Bei 3.000 Euro sind es fast 4.000.",
+   "sprechtext": "Und das Verrückte:\nKostet der Akku sechstausendsechshundert, bleiben am Ende keine vierhundert.\nBei dreitausend Euro sind es fast viertausend.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Und das Verrückte: Kostet der Akku 6.600 Euro (62,08–64,6 s)",
+     "bild": "Wisch zurück ins Modell (62,05 s), Kamera nah am Keller; Preisschild vor dem Keller dreht auf „6.600 €“ (64,0 s), Chip „AKKU 6.600 €“; Zähler „AKKU BRINGT“ fällt von 2.182 auf 381 €, Tafel Jonas folgt."
+    },
+    {
+     "gesagt": "bleiben am Ende keine 400. (65,44–67,2 s)",
+     "bild": "Lichtkegel auf den Keller, Differenz 381 € steht."
+    },
+    {
+     "gesagt": "Bei 3.000 Euro sind es fast 4.000. (67,52–70,3 s)",
+     "bild": "Schild dreht auf „3.000 €“ (67,68 s), Chip „AKKU 3.000 €“, Zähler „AKKU BRINGT“ steigt auf 3.981 €, Tafel Jonas 28.602 €."
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "phase": "merksatz",
+   "text": "Gleiche Sonne, gleiches Dach. Den Unterschied macht der Preis im Keller.",
+   "sprechtext": "Gleiche Sonne, gleiches Dach.\nDen Unterschied macht der PREIS im Keller.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Gleiche Sonne, gleiches Dach. (70,36–72,3 s)",
+     "bild": "Paneelen beider Häuser leuchten nacheinander auf (bei „Sonne“ 70,8 s, bei „Dach“ 71,8 s); Kamera fährt langsam zurück."
+    },
+    {
+     "gesagt": "Den Unterschied macht der Preis im Keller. (72,4–74,8 s)",
+     "bild": "Fahrt zurück in die Startposition; Preisschild blendet aus, Keller-Licht im Bild."
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "phase": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare. (74,88–78,0 s)",
+     "bild": "Kamera exakt in Startposition (ab 74,58 s Schleife): Zähler, Ströme, Akku-Licht und Tafel gleiten in den Anfangszustand, letztes Bild = erstes Bild."
+    }
+   ]
+  }
+ ],
+ "caption": "Solaranlage mit Speicher oder ohne – was bringt dir mehr Geld? ☀️ Ich hab's simuliert. Team Akku oder Team Einspeisen? 👇 #solaranlage #stromspeicher #photovoltaik #wissen #simulation",
+ "quellen": [
+  "(F) EEG-Fördersätze für Solaranlagen: 7,70 ct/kWh Teileinspeisung bis 10 kW, Inbetriebnahme 01.08.–31.12.2026, Bundesnetzagentur, Stand 2026 – https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/ErneuerbareEnergien/EEG_Foerderung/start.html",
+  "(F) BDEW-Strompreisanalyse Herbst 2026: Haushaltsstrom durchschnittlich 37,3 ct/kWh, BDEW, 28.10.2026 – https://www.bdew.de/service/daten-und-grafiken/bdew-strompreisanalyse/",
+  "(F) Unabhängigkeitsrechner, Datentabellen tabelleAutarkie.json und tabelleEigenverbrauch.json, HTW Berlin, Seite geändert 10.03.2026 – https://solar.htw-berlin.de/rechner/unabhaengigkeitsrechner/ (Tabellen: https://solar.htw-berlin.de/unabhaengigkeitsrechner/js/)",
+  "(F) FAQ Unabhängigkeitsrechner: 1.024 kWh/kW Ertrag, Lastprofil VDI 4655, Systemwirkungsgrad Speicher 83,9 %, 90 % nutzbare Kapazität, HTW Berlin – https://solar.htw-berlin.de/faq-unabhaengigkeitsrechner/",
+  "(F) Stromspeicher für PV-Anlage: 250–450 €/kWh ohne Montage, Installation EFH ca. 1.000–3.000 €, Lebensdauer ca. 15 Jahre, ADAC, 21.08.2026 – https://www.adac.de/rund-ums-haus/energie/versorgung/pv-stromspeicher",
+  "(F) Batterie-Rekordzubau Q1 2026: Ø-Größe neuer Heimspeicher ca. 8,3 kWh, rund 125.000 neue Heimspeicher, pv magazine nach Battery Charts (ISEA RWTH Aachen), 08.05.2026 – https://www.pv-magazine.de/2026/05/08/starkes-wachstum-im-grossspeichermarkt-fuehrt-zu-batterie-rekordzubau-von-ueber-2-gigawattstunden-im-1-quartal-2026/",
+  "(F) Hinweis Rechtsstand: EEG 2023 gilt bis 31.12.2026, Nachfolgeregelung in parlamentarischer Beratung (Bundesnetzagentur, s. o.); für Anlagen ab 2027 kann sich die Vergütung ändern, das Video rechnet mit Inbetriebnahme 2026."
+ ],
+ "annahmen": [
+  "(A) Modellhaushalt: Einfamilienhaus, 4.000 kWh Strom im Jahr, ohne Wärmepumpe und E-Auto (wie das Lastprofil des HTW-Rechners, VDI 4655).",
+  "(A) 10 kWp auf einem 35° geneigten, unverschatteten Süddach, Standort Brandenburg (Rechnerannahme HTW); Ertrag 1.024 kWh/kWp.",
+  "(A) Akkugröße 8 kWh, nahe am Durchschnitt neuer Heimspeicher (8,3 kWh, Q1 2026).",
+  "(A) Akkupreis 350 €/kWh plus 2.000 € Einbau = 4.800 € (jeweils Mitte der ADAC-Spannen 250–450 €/kWh und 1.000–3.000 €); Varianten 3.000 € und 6.600 € = untere und obere Spannenenden.",
+  "(A) Akku hält 15 Jahre (ADAC: durchschnittlich ca. 15 Jahre) und wird danach nicht ersetzt; Alterung ist über 90 % nutzbare Kapazität in den HTW-Tabellen berücksichtigt.",
+  "(A) Strompreis bleibt 20 Jahre bei 37,3 ct/kWh (keine Preissteigerung, keine Inflation, keine Abzinsung); steigende Preise würden den Akku begünstigen.",
+  "(A) Einspeisevergütung 7,70 ct/kWh fest für 20 Jahre (Inbetriebnahme 2026); Stunden mit negativen Börsenpreisen ohne Vergütung (§ 51 EEG für Neuanlagen) und eine mögliche 60-%-Einspeisebegrenzung sind nicht eingerechnet.",
+  "(A) PV-Anlage ist auf beiden Häusern identisch, ihre Kosten heben sich auf; gezählt wird nur der Ertrag (gesparter Netzstrom + Einspeisung) und der Akkupreis. Keine Wartungskosten, keine Steuern (Nullsteuersatz, Einkommensteuerbefreiung § 3 Nr. 72 EStG nicht weiter betrachtet).",
+  "(A) Namen Lena (ohne Akku) und Jonas (mit Akku) sind Modellpersonen."
+ ],
+ "korrekturen": [],
+ "lern_notizen": {
+  "thema": "Solaranlage mit Speicher oder ohne",
+  "frage": "Lohnt sich der Akku für die eigene Solaranlage?",
+  "laenge_s": 78.5,
+  "hook": "Gleiches Dach, gleiche Sonne – einer hat einen Akku. Lohnt der sich?",
+  "hook_typ": "Duell-Frage mit Zwillings-Szenario (Zwei Häuser, ein Unterschied)",
+  "stil": "19 Architekturmodell (Abendlicht)",
+  "zoom": "ja: Zoom auf den Kontrast der Ringe bei 31,5 s, auf Jonas' Haus beim Führungswechsel bei 40,4 s und auf das Ergebnis bei 53,4 s; sonst Kamerafahrten",
+  "animationen": [
+   {
+    "t": 0,
+    "art": "kamerafahrt",
+    "was": "langsame Fahrt zwischen die beiden Häuser (bis 4,7 s)"
+   },
+   {
+    "t": 3.12,
+    "art": "licht",
+    "was": "Akku im Keller von Jonas leuchtet auf"
+   },
+   {
+    "t": 5.12,
+    "art": "aufleuchten",
+    "was": "Paneelen beider Dächer leuchten bei „10 Kilowatt“"
+   },
+   {
+    "t": 8.88,
+    "art": "lichtstrom",
+    "was": "Lenas Dach → Netzmast verstärkt, Kamera zu Lena"
+   },
+   {
+    "t": 13.04,
+    "art": "zaehler",
+    "was": "Jonas springt auf −4.800 € (rot getönt)"
+   },
+   {
+    "t": 16,
+    "art": "spot",
+    "was": "Lichtkegel auf Jonas' Haus (Denkfalle)"
+   },
+   {
+    "t": 21.68,
+    "art": "zaehler",
+    "was": "JAHR 1, beide Euro-Zähler laufen"
+   },
+   {
+    "t": 29.04,
+    "art": "ringe",
+    "was": "Unabhängigkeit 37 % (Lena) und 79 % (Jonas) füllen sich"
+   },
+   {
+    "t": 31.5,
+    "art": "zoom",
+    "was": "Zoom auf den Kontrast der Ringe"
+   },
+   {
+    "t": 33.96,
+    "art": "balken",
+    "was": "Euro-Balken +38 %"
+   },
+   {
+    "t": 35.92,
+    "art": "zeitraffer",
+    "was": "Tag/Nacht, Jahre 5, 8, 10 (zwei Tage)"
+   },
+   {
+    "t": 40.63,
+    "art": "fuehrungswechsel",
+    "was": "Jonas überholt im elften Jahr, Zoom und Aufleuchten"
+   },
+   {
+    "t": 43.4,
+    "art": "licht",
+    "was": "Akku-Licht erlischt (Jahr 15)"
+   },
+   {
+    "t": 54.8,
+    "art": "szenenwechsel",
+    "was": "Blaupause: kWh zweigt in den Akku ab, ein Sechstel verdampft als Wärme"
+   },
+   {
+    "t": 62.05,
+    "art": "szenenwechsel",
+    "was": "zurück ins Modell, Preisschild dreht auf 6.600 € und 3.000 €"
+   },
+   {
+    "t": 70.36,
+    "art": "kamerafahrt",
+    "was": "Fahrt zurück in die Startposition (Schleife ab 74,58 s)"
+   }
+  ],
+  "licht": "Tiefes Abend-/Gegenlicht (goldene Stunde), Sonne wandert im Zeitraffer, nachts Mondlicht und leuchtende Fenster; Spot-Kegel auf Jonas' Haus bei der Denkfalle und beim Ergebnis; Lichtströme in Teamfarbe",
+  "effekte": [
+   "Lichtströme Dach → Haus/Netz/Akku in Teamfarbe",
+   "Aufleuchten Jonas' Haus beim Führungswechsel 40,6 s",
+   "Zeitraffer Tag/Nacht 35,9–42,5 s",
+   "Blaupause-Wisch 54,8 s und 62,05 s",
+   "Preisschild-Wende 64,0 s und 67,7 s"
+  ],
+  "zeitpunkte": {
+   "folgen": 19.4,
+   "wendung_1": 26.3,
+   "wendung_2": 35.9,
+   "wendung_3": 42.2,
+   "ergebnis": 44.8,
+   "warum": 55.2,
+   "ueberraschung": 62.1,
+   "pointe": 73.6
+  },
+  "tempo": {
+   "woerter": 176,
+   "wps": 2.26
+  },
+  "caption": "Solaranlage mit Speicher oder ohne – was bringt dir mehr Geld? ☀️ Ich hab's simuliert. Team Akku oder Team Einspeisen? 👇 #solaranlage #stromspeicher #photovoltaik #wissen #simulation",
+  "besonderheiten": "Zwei identische Häuser mit Solarpaneelen, Jonas mit aufgeschnittenem Keller und Akku; Rechnung aus pipeline/sim/solar_speicher.mjs (HTW-Tabellen); Warum-Teil als Blaupause; Denkfalle beginnt bei 16,0 s (Skript fest vorgegeben, Hinweis 3 der Prüfung)"
+ }
+}

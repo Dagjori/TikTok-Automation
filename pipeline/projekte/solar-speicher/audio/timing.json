@@ -1,0 +1,994 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 77.924,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Gleiches Dach, gleiche Sonne – einer hat einen Akku. Lohnt der sich?",
+   "start": 0.0,
+   "ende": 4.88,
+   "woerter": [
+    {
+     "wort": "Gleiches",
+     "start": 0.0,
+     "ende": 0.48
+    },
+    {
+     "wort": "Dach,",
+     "start": 0.56,
+     "ende": 1.12
+    },
+    {
+     "wort": "gleiche",
+     "start": 1.2,
+     "ende": 1.44
+    },
+    {
+     "wort": "Sonne",
+     "start": 1.6,
+     "ende": 2.24
+    },
+    {
+     "wort": "–",
+     "start": 2.24,
+     "ende": 2.32
+    },
+    {
+     "wort": "einer",
+     "start": 2.32,
+     "ende": 2.64
+    },
+    {
+     "wort": "hat",
+     "start": 2.72,
+     "ende": 2.8
+    },
+    {
+     "wort": "einen",
+     "start": 2.84,
+     "ende": 3.04
+    },
+    {
+     "wort": "Akku.",
+     "start": 3.12,
+     "ende": 3.52
+    },
+    {
+     "wort": "Lohnt",
+     "start": 3.92,
+     "ende": 4.16
+    },
+    {
+     "wort": "der",
+     "start": 4.24,
+     "ende": 4.32
+    },
+    {
+     "wort": "sich?",
+     "start": 4.36,
+     "ende": 4.88
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "10 Kilowatt Solar, 4.000 Kilowattstunden Verbrauch. Lena speist den Überschuss ein, für 7,7 Cent. Jonas zahlt 4.800 Euro extra für einen Akku.",
+   "start": 5.12,
+   "ende": 15.92,
+   "woerter": [
+    {
+     "wort": "10",
+     "start": 5.12,
+     "ende": 5.36
+    },
+    {
+     "wort": "Kilowatt",
+     "start": 5.44,
+     "ende": 5.84
+    },
+    {
+     "wort": "Solar,",
+     "start": 6.08,
+     "ende": 6.56
+    },
+    {
+     "wort": "4.000",
+     "start": 6.64,
+     "ende": 7.12
+    },
+    {
+     "wort": "Kilowattstunden",
+     "start": 7.2,
+     "ende": 7.92
+    },
+    {
+     "wort": "Verbrauch.",
+     "start": 8.0,
+     "ende": 8.68
+    },
+    {
+     "wort": "Lena",
+     "start": 8.88,
+     "ende": 9.2
+    },
+    {
+     "wort": "speist",
+     "start": 9.28,
+     "ende": 9.52
+    },
+    {
+     "wort": "den",
+     "start": 9.6,
+     "ende": 9.68
+    },
+    {
+     "wort": "Überschuss",
+     "start": 9.76,
+     "ende": 10.16
+    },
+    {
+     "wort": "ein,",
+     "start": 10.24,
+     "ende": 10.72
+    },
+    {
+     "wort": "für",
+     "start": 10.8,
+     "ende": 10.88
+    },
+    {
+     "wort": "7,7",
+     "start": 10.96,
+     "ende": 11.44
+    },
+    {
+     "wort": "Cent.",
+     "start": 11.52,
+     "ende": 12.24
+    },
+    {
+     "wort": "Jonas",
+     "start": 12.36,
+     "ende": 12.64
+    },
+    {
+     "wort": "zahlt",
+     "start": 12.72,
+     "ende": 12.96
+    },
+    {
+     "wort": "4.800",
+     "start": 13.04,
+     "ende": 14.0
+    },
+    {
+     "wort": "Euro",
+     "start": 14.08,
+     "ende": 14.24
+    },
+    {
+     "wort": "extra",
+     "start": 14.4,
+     "ende": 14.72
+    },
+    {
+     "wort": "für",
+     "start": 14.8,
+     "ende": 14.88
+    },
+    {
+     "wort": "einen",
+     "start": 14.92,
+     "ende": 15.12
+    },
+    {
+     "wort": "Akku.",
+     "start": 15.2,
+     "ende": 15.92
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, der Akku gewinnt haushoch. Oder?",
+   "start": 16.0,
+   "ende": 18.96,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 16.0,
+     "ende": 16.32
+    },
+    {
+     "wort": "der",
+     "start": 16.827,
+     "ende": 16.88
+    },
+    {
+     "wort": "Akku",
+     "start": 16.96,
+     "ende": 17.2
+    },
+    {
+     "wort": "gewinnt",
+     "start": 17.28,
+     "ende": 17.52
+    },
+    {
+     "wort": "haushoch.",
+     "start": 17.6,
+     "ende": 18.44
+    },
+    {
+     "wort": "Oder?",
+     "start": 18.64,
+     "ende": 18.96
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 19.44,
+   "ende": 21.4,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 19.44,
+     "ende": 19.68
+    },
+    {
+     "wort": "mir,",
+     "start": 19.76,
+     "ende": 20.0
+    },
+    {
+     "wort": "damit",
+     "start": 20.08,
+     "ende": 20.2
+    },
+    {
+     "wort": "du",
+     "start": 20.24,
+     "ende": 20.32
+    },
+    {
+     "wort": "nichts",
+     "start": 20.36,
+     "ende": 20.6
+    },
+    {
+     "wort": "verpasst.",
+     "start": 20.64,
+     "ende": 21.4
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Jahr 1: Jonas holt mehr raus. Aber er startet im Minus.",
+   "start": 21.68,
+   "ende": 26.12,
+   "woerter": [
+    {
+     "wort": "Jahr",
+     "start": 21.68,
+     "ende": 21.84
+    },
+    {
+     "wort": "1:",
+     "start": 22.0,
+     "ende": 22.4
+    },
+    {
+     "wort": "Jonas",
+     "start": 22.8,
+     "ende": 23.2
+    },
+    {
+     "wort": "holt",
+     "start": 23.28,
+     "ende": 23.44
+    },
+    {
+     "wort": "mehr",
+     "start": 23.52,
+     "ende": 23.68
+    },
+    {
+     "wort": "raus.",
+     "start": 23.76,
+     "ende": 24.28
+    },
+    {
+     "wort": "Aber",
+     "start": 24.48,
+     "ende": 24.72
+    },
+    {
+     "wort": "er",
+     "start": 24.8,
+     "ende": 24.88
+    },
+    {
+     "wort": "startet",
+     "start": 24.96,
+     "ende": 25.28
+    },
+    {
+     "wort": "im",
+     "start": 25.36,
+     "ende": 25.44
+    },
+    {
+     "wort": "Minus.",
+     "start": 25.52,
+     "ende": 26.12
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Doch das Merkwürdige: Sein Akku verdoppelt die Unabhängigkeit. Von 37 auf 79 Prozent. Aber das Geld wächst nur um gut ein Drittel.",
+   "start": 26.32,
+   "ende": 35.68,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 26.32,
+     "ende": 26.4
+    },
+    {
+     "wort": "das",
+     "start": 26.48,
+     "ende": 26.64
+    },
+    {
+     "wort": "Merkwürdige:",
+     "start": 26.68,
+     "ende": 27.36
+    },
+    {
+     "wort": "Sein",
+     "start": 27.68,
+     "ende": 27.92
+    },
+    {
+     "wort": "Akku",
+     "start": 28.0,
+     "ende": 28.24
+    },
+    {
+     "wort": "verdoppelt",
+     "start": 28.32,
+     "ende": 28.88
+    },
+    {
+     "wort": "die",
+     "start": 28.92,
+     "ende": 28.96
+    },
+    {
+     "wort": "Unabhängigkeit.",
+     "start": 29.04,
+     "ende": 29.92
+    },
+    {
+     "wort": "Von",
+     "start": 30.24,
+     "ende": 30.4
+    },
+    {
+     "wort": "37",
+     "start": 30.48,
+     "ende": 31.2
+    },
+    {
+     "wort": "auf",
+     "start": 31.36,
+     "ende": 31.52
+    },
+    {
+     "wort": "79",
+     "start": 31.6,
+     "ende": 32.24
+    },
+    {
+     "wort": "Prozent.",
+     "start": 32.32,
+     "ende": 33.2
+    },
+    {
+     "wort": "Aber",
+     "start": 33.24,
+     "ende": 33.36
+    },
+    {
+     "wort": "das",
+     "start": 33.44,
+     "ende": 33.52
+    },
+    {
+     "wort": "Geld",
+     "start": 33.6,
+     "ende": 33.92
+    },
+    {
+     "wort": "wächst",
+     "start": 33.96,
+     "ende": 34.24
+    },
+    {
+     "wort": "nur",
+     "start": 34.32,
+     "ende": 34.48
+    },
+    {
+     "wort": "um",
+     "start": 34.56,
+     "ende": 34.64
+    },
+    {
+     "wort": "gut",
+     "start": 34.72,
+     "ende": 34.88
+    },
+    {
+     "wort": "ein",
+     "start": 34.96,
+     "ende": 35.04
+    },
+    {
+     "wort": "Drittel.",
+     "start": 35.08,
+     "ende": 35.68
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Jahr 5, 8, 10: Lena bleibt vorn. Erst im elften Jahr zieht Jonas vorbei.",
+   "start": 35.92,
+   "ende": 42.08,
+   "woerter": [
+    {
+     "wort": "Jahr",
+     "start": 35.92,
+     "ende": 36.08
+    },
+    {
+     "wort": "5,",
+     "start": 36.16,
+     "ende": 36.89333333333333
+    },
+    {
+     "wort": "8,",
+     "start": 36.89333333333333,
+     "ende": 37.626666666666665
+    },
+    {
+     "wort": "10:",
+     "start": 37.626666666666665,
+     "ende": 38.36
+    },
+    {
+     "wort": "Lena",
+     "start": 38.4,
+     "ende": 38.72
+    },
+    {
+     "wort": "bleibt",
+     "start": 38.8,
+     "ende": 39.04
+    },
+    {
+     "wort": "vorn.",
+     "start": 39.12,
+     "ende": 39.64
+    },
+    {
+     "wort": "Erst",
+     "start": 39.84,
+     "ende": 40.0
+    },
+    {
+     "wort": "im",
+     "start": 40.08,
+     "ende": 40.16
+    },
+    {
+     "wort": "elften",
+     "start": 40.24,
+     "ende": 40.64
+    },
+    {
+     "wort": "Jahr",
+     "start": 40.72,
+     "ende": 40.88
+    },
+    {
+     "wort": "zieht",
+     "start": 40.96,
+     "ende": 41.12
+    },
+    {
+     "wort": "Jonas",
+     "start": 41.2,
+     "ende": 41.52
+    },
+    {
+     "wort": "vorbei.",
+     "start": 41.6,
+     "ende": 42.08
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "text": "Und mit 15 Jahren ist sein Akku am Ende.",
+   "start": 42.24,
+   "ende": 44.6,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 42.24,
+     "ende": 42.32
+    },
+    {
+     "wort": "mit",
+     "start": 42.4,
+     "ende": 42.48
+    },
+    {
+     "wort": "15",
+     "start": 42.56,
+     "ende": 42.96
+    },
+    {
+     "wort": "Jahren",
+     "start": 43.04,
+     "ende": 43.28
+    },
+    {
+     "wort": "ist",
+     "start": 43.36,
+     "ende": 43.44
+    },
+    {
+     "wort": "sein",
+     "start": 43.52,
+     "ende": 43.6
+    },
+    {
+     "wort": "Akku",
+     "start": 43.68,
+     "ende": 43.92
+    },
+    {
+     "wort": "am",
+     "start": 44.0,
+     "ende": 44.08
+    },
+    {
+     "wort": "Ende.",
+     "start": 44.16,
+     "ende": 44.6
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand nach 20 Jahren: Lena 24.620 Euro. Jonas 26.802 Euro. Der Akku bringt 2.182 Euro.",
+   "start": 44.8,
+   "ende": 54.92,
+   "woerter": [
+    {
+     "wort": "Endstand",
+     "start": 44.8,
+     "ende": 45.28
+    },
+    {
+     "wort": "nach",
+     "start": 45.36,
+     "ende": 45.44
+    },
+    {
+     "wort": "20",
+     "start": 45.6,
+     "ende": 46.0
+    },
+    {
+     "wort": "Jahren:",
+     "start": 46.08,
+     "ende": 46.48
+    },
+    {
+     "wort": "Lena",
+     "start": 46.8,
+     "ende": 47.2
+    },
+    {
+     "wort": "24.620",
+     "start": 47.52,
+     "ende": 49.04
+    },
+    {
+     "wort": "Euro.",
+     "start": 49.12,
+     "ende": 49.76
+    },
+    {
+     "wort": "Jonas",
+     "start": 49.84,
+     "ende": 50.32
+    },
+    {
+     "wort": "26.802",
+     "start": 50.56,
+     "ende": 51.6
+    },
+    {
+     "wort": "Euro.",
+     "start": 51.6,
+     "ende": 52.64
+    },
+    {
+     "wort": "Der",
+     "start": 52.72,
+     "ende": 52.8
+    },
+    {
+     "wort": "Akku",
+     "start": 52.88,
+     "ende": 53.12
+    },
+    {
+     "wort": "bringt",
+     "start": 53.2,
+     "ende": 53.44
+    },
+    {
+     "wort": "2.182",
+     "start": 53.48,
+     "ende": 54.32
+    },
+    {
+     "wort": "Euro.",
+     "start": 54.4,
+     "ende": 54.92
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum so wenig? Jede Kilowattstunde im Akku fehlt bei der Einspeisung. Und ein Sechstel geht unterwegs verloren.",
+   "start": 55.2,
+   "ende": 61.92,
+   "woerter": [
+    {
+     "wort": "Warum",
+     "start": 55.2,
+     "ende": 55.44
+    },
+    {
+     "wort": "so",
+     "start": 55.52,
+     "ende": 55.6
+    },
+    {
+     "wort": "wenig?",
+     "start": 55.68,
+     "ende": 56.16
+    },
+    {
+     "wort": "Jede",
+     "start": 56.64,
+     "ende": 56.88
+    },
+    {
+     "wort": "Kilowattstunde",
+     "start": 56.96,
+     "ende": 57.68
+    },
+    {
+     "wort": "im",
+     "start": 57.76,
+     "ende": 57.84
+    },
+    {
+     "wort": "Akku",
+     "start": 57.92,
+     "ende": 58.16
+    },
+    {
+     "wort": "fehlt",
+     "start": 58.32,
+     "ende": 58.56
+    },
+    {
+     "wort": "bei",
+     "start": 58.64,
+     "ende": 58.72
+    },
+    {
+     "wort": "der",
+     "start": 58.76,
+     "ende": 58.8
+    },
+    {
+     "wort": "Einspeisung.",
+     "start": 58.88,
+     "ende": 59.68
+    },
+    {
+     "wort": "Und",
+     "start": 59.84,
+     "ende": 59.92
+    },
+    {
+     "wort": "ein",
+     "start": 60.0,
+     "ende": 60.08
+    },
+    {
+     "wort": "Sechstel",
+     "start": 60.16,
+     "ende": 60.56
+    },
+    {
+     "wort": "geht",
+     "start": 60.64,
+     "ende": 60.72
+    },
+    {
+     "wort": "unterwegs",
+     "start": 60.8,
+     "ende": 61.28
+    },
+    {
+     "wort": "verloren.",
+     "start": 61.36,
+     "ende": 61.92
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und das Verrückte: Kostet der Akku 6.600 Euro, bleiben am Ende keine 400. Bei 3.000 Euro sind es fast 4.000.",
+   "start": 62.08,
+   "ende": 70.32,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 62.08,
+     "ende": 62.16
+    },
+    {
+     "wort": "das",
+     "start": 62.24,
+     "ende": 62.32
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 62.4,
+     "ende": 63.04
+    },
+    {
+     "wort": "Kostet",
+     "start": 63.2,
+     "ende": 63.52
+    },
+    {
+     "wort": "der",
+     "start": 63.56,
+     "ende": 63.6
+    },
+    {
+     "wort": "Akku",
+     "start": 63.68,
+     "ende": 63.92
+    },
+    {
+     "wort": "6.600",
+     "start": 64.0,
+     "ende": 64.64
+    },
+    {
+     "wort": "Euro,",
+     "start": 64.64,
+     "ende": 65.28
+    },
+    {
+     "wort": "bleiben",
+     "start": 65.44,
+     "ende": 65.68
+    },
+    {
+     "wort": "am",
+     "start": 65.76,
+     "ende": 65.84
+    },
+    {
+     "wort": "Ende",
+     "start": 65.92,
+     "ende": 66.16
+    },
+    {
+     "wort": "keine",
+     "start": 66.24,
+     "ende": 66.48
+    },
+    {
+     "wort": "400.",
+     "start": 66.64,
+     "ende": 67.44
+    },
+    {
+     "wort": "Bei",
+     "start": 67.52,
+     "ende": 67.6
+    },
+    {
+     "wort": "3.000",
+     "start": 67.68,
+     "ende": 68.16
+    },
+    {
+     "wort": "Euro",
+     "start": 68.32,
+     "ende": 68.56
+    },
+    {
+     "wort": "sind",
+     "start": 68.64,
+     "ende": 68.8
+    },
+    {
+     "wort": "es",
+     "start": 68.84,
+     "ende": 68.88
+    },
+    {
+     "wort": "fast",
+     "start": 68.96,
+     "ende": 69.2
+    },
+    {
+     "wort": "4.000.",
+     "start": 69.28,
+     "ende": 70.32
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Gleiche Sonne, gleiches Dach. Den Unterschied macht der Preis im Keller.",
+   "start": 70.36,
+   "ende": 74.8,
+   "woerter": [
+    {
+     "wort": "Gleiche",
+     "start": 70.36,
+     "ende": 70.64
+    },
+    {
+     "wort": "Sonne,",
+     "start": 70.8,
+     "ende": 71.28
+    },
+    {
+     "wort": "gleiches",
+     "start": 71.36,
+     "ende": 71.76
+    },
+    {
+     "wort": "Dach.",
+     "start": 71.8,
+     "ende": 72.24
+    },
+    {
+     "wort": "Den",
+     "start": 72.4,
+     "ende": 72.56
+    },
+    {
+     "wort": "Unterschied",
+     "start": 72.64,
+     "ende": 73.12
+    },
+    {
+     "wort": "macht",
+     "start": 73.2,
+     "ende": 73.36
+    },
+    {
+     "wort": "der",
+     "start": 73.44,
+     "ende": 73.52
+    },
+    {
+     "wort": "Preis",
+     "start": 73.6,
+     "ende": 73.84
+    },
+    {
+     "wort": "im",
+     "start": 73.92,
+     "ende": 74.0
+    },
+    {
+     "wort": "Keller.",
+     "start": 74.04,
+     "ende": 74.8
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 74.88,
+   "ende": 78.0,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 74.88,
+     "ende": 74.96
+    },
+    {
+     "wort": "sollen",
+     "start": 75.04,
+     "ende": 75.2
+    },
+    {
+     "wort": "wir",
+     "start": 75.227,
+     "ende": 75.28
+    },
+    {
+     "wort": "als",
+     "start": 75.36,
+     "ende": 75.44
+    },
+    {
+     "wort": "Nächstes",
+     "start": 75.52,
+     "ende": 75.84
+    },
+    {
+     "wort": "zeigen?",
+     "start": 76.0,
+     "ende": 76.56
+    },
+    {
+     "wort": "Schreib",
+     "start": 76.6,
+     "ende": 76.8
+    },
+    {
+     "wort": "es",
+     "start": 76.84,
+     "ende": 76.88
+    },
+    {
+     "wort": "in",
+     "start": 76.96,
+     "ende": 77.0
+    },
+    {
+     "wort": "die",
+     "start": 77.04,
+     "ende": 77.12
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 77.16,
+     "ende": 78.0
+    }
+   ]
+  }
+ ]
+}

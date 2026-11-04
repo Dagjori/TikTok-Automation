@@ -558,3 +558,255 @@ export function spurBand({ breite = 0.1, farbe = "#FF8A3D", staerke = 2.6, y = 0
   m.mat = lm;
   return m;
 }
+
+// =====================================================================================
+// Erweiterung (04.11., Video „Solaranlage mit Speicher oder ohne“): Energie-Objekte
+//   solarHaus     Einfamilienhaus-Modell mit Sockel („Keller“, offen = aufgeschnitten), Satteldach, Solarpaneelen und Fenstern.
+//                 paneele(0–1) Aufleuchten, fenster(0–1) Innenlicht, akku (nur offen) → akkuModul, punkte{dach, haus, akku, dachEcke}
+//   akkuModul     Heimspeicher (graphit) mit Ladestand-Licht aus Segmenten in Teamfarbe: lade(0–1), glimm(0–1)
+//   strommast     Gittermast mit Querträger und Isolatoren, spitze(nr) → Anschlusspunkt (lokal)
+//   leitung       durchhängendes Kabel zwischen zwei Weltpunkten
+//   lichtStrom    leuchtende Bahn (Röhre) mit laufenden Lichtpunkten in Teamfarbe: setze(0–1) Stärke, lauf(t, tempo) Position
+//   ringAnzeige   stehender Ring (Fortschritt in Teamfarbe): fuell(0–1), setze(0–1)
+//   preisSchild   hängendes Schild mit wechselbarem Text (Euro): text("6.600 €"), dreh(rad)
+// =====================================================================================
+
+const PANEEL_TEX = () => gemeinsam("paneel|tex", () => {
+  const c = leinwand(256, 128, (g, b, h) => {
+    const v = g.createLinearGradient(0, 0, b, h); v.addColorStop(0, "#22407A"); v.addColorStop(0.5, "#1A3166"); v.addColorStop(1, "#27487F");
+    g.fillStyle = v; g.fillRect(0, 0, b, h);
+    g.strokeStyle = "rgba(190,215,255,0.55)"; g.lineWidth = 2;
+    for (let x = 0; x <= b; x += b / 6) { g.beginPath(); g.moveTo(x, 0); g.lineTo(x, h); g.stroke(); }
+    for (let y = 0; y <= h; y += h / 4) { g.beginPath(); g.moveTo(0, y); g.lineTo(b, y); g.stroke(); }
+    g.strokeStyle = "rgba(235,242,255,0.9)"; g.lineWidth = 6; g.strokeRect(2, 2, b - 4, h - 4);
+  });
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
+  return t;
+});
+
+/** Heimspeicher (Wandmodul) mit Ladestand-Licht: lade(0–1) füllt die Segmente von unten, glimm(0–1) erhöht das Leuchten */
+export function akkuModul({ breite = 0.42, hoehe = 0.62, tiefe = 0.2, farbe = "#FF8A3D", segmente = 8 } = {}) {
+  const g = new THREE.Group();
+  const koerper = new THREE.Mesh(new THREE.BoxGeometry(breite, hoehe, tiefe), gemeinsam("akku|koerper", () => new THREE.MeshStandardMaterial({ color: "#2D3138", roughness: 0.45, metalness: 0.5 })));
+  koerper.position.y = hoehe / 2; koerper.castShadow = true; koerper.receiveShadow = true; g.add(koerper);
+  const kopf = new THREE.Mesh(new THREE.BoxGeometry(breite * 1.04, 0.05, tiefe * 1.04), gemeinsam("akku|kopf", () => new THREE.MeshStandardMaterial({ color: "#C9CCD2", roughness: 0.4, metalness: 0.6 })));
+  kopf.position.y = hoehe + 0.025; g.add(kopf);
+  const f = new THREE.Color(farbe);
+  const segHoehe = (hoehe * 0.8) / segmente;
+  const segs = [];
+  for (let i = 0; i < segmente; i++) {
+    const mat = new THREE.MeshBasicMaterial({ color: f.clone().multiplyScalar(0.06), transparent: true, fog: false });
+    const m = new THREE.Mesh(new THREE.BoxGeometry(breite * 0.62, segHoehe * 0.72, 0.02), mat);
+    m.position.set(0, hoehe * 0.1 + segHoehe * (i + 0.5), tiefe / 2 + 0.012);
+    g.add(m); segs.push(mat);
+  }
+  const pf = lichtPfuetze({ radius: breite * 2.3, farbe, staerke: 0.0, exponent: 1.8 });
+  pf.material = pf.material.clone(); pf.position.set(0, 0.01, tiefe * 0.8); g.add(pf);
+  g.userData.dynamisch = true;
+  let L = 1, G = 0;
+  const wende = () => {
+    segs.forEach((mat, i) => {
+      const an = Math.min(1, Math.max(0, L * segmente - i)); // Teilfüllung des obersten Segments
+      mat.color.copy(f).multiplyScalar(0.05 + an * (1.7 + 1.6 * G));
+    });
+    pf.material.uniforms.staerke.value = L > 0.02 ? Math.min(1.4, (0.08 + 0.55 * L) * (0.65 + 0.65 * G)) : 0;
+  };
+  g.lade = (x) => { L = x; wende(); return g; };
+  g.glimm = (x) => { G = x; wende(); return g; };
+  wende();
+  return g;
+}
+
+/** Gittermast (Strommast) mit Querträger und drei Isolatoren; spitze(nr) = Anschlusspunkt der Leitung (lokal) */
+export function strommast({ hoehe = 2.1, breite = 0.34 } = {}) {
+  const g = new THREE.Group();
+  const stahl = gemeinsam("mast|stahl", () => new THREE.MeshStandardMaterial({ color: "#B9BDC4", roughness: 0.5, metalness: 0.5 }));
+  const iso = gemeinsam("mast|iso", () => new THREE.MeshStandardMaterial({ color: "#E8E2D4", roughness: 0.4 }));
+  const b = breite / 2;
+  const stab = (a, c, d = 0.016) => { const v = new THREE.Vector3(...c).sub(new THREE.Vector3(...a)); const m = new THREE.Mesh(new THREE.BoxGeometry(d, v.length(), d), stahl); m.position.set(...a).addScaledVector(v, 0.5); m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), v.normalize()); m.castShadow = true; g.add(m); };
+  for (const [x, z] of [[-b, -b], [b, -b], [b, b], [-b, b]]) stab([x, 0, z], [x * 0.35, hoehe, z * 0.35]);
+  const gr = (y) => b * (1 - 0.65 * (y / hoehe));
+  for (let i = 1; i <= 5; i++) {
+    const y0 = (i - 1) * hoehe / 5, y1 = i * hoehe / 5, r0 = gr(y0), r1 = gr(y1);
+    stab([-r0, y0, r0], [r1, y1, r1], 0.01); stab([r0, y0, r0], [-r1, y1, r1], 0.01);
+    stab([-r1, y1, r1], [r1, y1, r1], 0.012); stab([-r1, y1, -r1], [-r1, y1, r1], 0.012);
+  }
+  const arm = new THREE.Mesh(new THREE.BoxGeometry(breite * 3.4, 0.04, 0.05), stahl);
+  arm.position.y = hoehe * 0.93; arm.castShadow = true; g.add(arm);
+  const spitzen = [];
+  for (const x of [-breite * 1.5, 0, breite * 1.5]) {
+    const i = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.1, 8), iso);
+    i.position.set(x, hoehe * 0.93 - 0.07, 0); i.castShadow = true; g.add(i); spitzen.push(new THREE.Vector3(x, hoehe * 0.93 - 0.12, 0));
+  }
+  g.spitze = (nr = 1) => spitzen[nr].clone();
+  g.userData = { hoehe, breite };
+  return g;
+}
+
+/** Durchhängendes Kabel zwischen zwei Weltpunkten (Röhre); gibt das Mesh zurück */
+export function leitung(a, b, { durchhang = 0.12, radius = 0.007, farbe = "#3A3732" } = {}) {
+  const va = new THREE.Vector3(...a), vb = new THREE.Vector3(...b), m = va.clone().add(vb).multiplyScalar(0.5);
+  m.y -= durchhang;
+  const kurve = new THREE.QuadraticBezierCurve3(va, m, vb);
+  const mesh = new THREE.Mesh(new THREE.TubeGeometry(kurve, 20, radius, 5), gemeinsam(`leitung|${farbe}`, () => new THREE.MeshStandardMaterial({ color: farbe, roughness: 0.7 })));
+  mesh.castShadow = true;
+  return mesh;
+}
+
+/**
+ * Lichtstrom: leuchtende dünne Bahn entlang einer Kurve (Weltpunkte) mit laufenden Lichtpunkten in Teamfarbe.
+ * setze(s) = Stärke 0–1 (Bahn und Punkte), lauf(t, tempo) = Position der Punkte (tempo < 0: Gegenrichtung).
+ */
+export function lichtStrom({ punkte, farbe = "#2EC4B6", radius = 0.016, kugeln = 6, kugelRadius = 0.05, staerke = 2.4, spannung = 0.5 } = {}) {
+  const g = new THREE.Group();
+  const kurve = new THREE.CatmullRomCurve3(punkte.map((p) => new THREE.Vector3(...p)), false, "catmullrom", spannung);
+  const bahnMat = leuchtMat(farbe, staerke * 0.7, { transparent: true, neu: true, deckkraft: 0.8 });
+  const bahn = new THREE.Mesh(new THREE.TubeGeometry(kurve, 48, radius, 6), bahnMat);
+  bahn.renderOrder = 6; g.add(bahn);
+  const punktMat = leuchtMat(farbe, staerke * 1.6, { transparent: true, neu: true });
+  const geo = new THREE.SphereGeometry(kugelRadius, 10, 8);
+  const ps = [];
+  for (let i = 0; i < kugeln; i++) { const m = new THREE.Mesh(geo, punktMat); m.renderOrder = 7; g.add(m); ps.push(m); }
+  g.userData.dynamisch = true;
+  let S = 1;
+  g.setze = (s) => { S = s; g.visible = s > 0.01; bahnMat.opacity = 0.8 * Math.min(1, s * 1.4); punktMat.opacity = Math.min(1, s * 1.6); return g; };
+  g.lauf = (t, tempo = 0.35) => {
+    ps.forEach((m, i) => {
+      const u = (((t * tempo + i / kugeln) % 1) + 1) % 1;
+      m.position.copy(kurve.getPointAt(u));
+      m.scale.setScalar(Math.max(0.01, S * (0.55 + 0.6 * Math.sin(Math.PI * u))));
+    });
+    return g;
+  };
+  g.kurve = kurve;
+  g.setze(1); g.lauf(0);
+  return g;
+}
+
+/** Stehender Fortschrittsring (Kreisbogen im Uhrzeigersinn ab 12 Uhr) in Teamfarbe auf dunkler Spur; fuell(0–1), setze(0–1) blendet ein */
+export function ringAnzeige({ radius = 0.8, dicke = 0.13, farbe = "#2EC4B6", staerke = 2.4 } = {}) {
+  const g = new THREE.Group();
+  const spur = new THREE.Mesh(new THREE.RingGeometry(radius - dicke / 2, radius + dicke / 2, 72), new THREE.MeshBasicMaterial({ color: "#1B1E26", transparent: true, opacity: 0.8, side: THREE.DoubleSide }));
+  const bogenMat = leuchtMat(farbe, staerke, { transparent: true, neu: true });
+  bogenMat.side = THREE.DoubleSide;
+  const bogen = new THREE.Mesh(new THREE.RingGeometry(radius - dicke / 2, radius + dicke / 2, 72, 1, Math.PI / 2, -0.001), bogenMat);
+  bogen.position.z = 0.012;
+  const rand = new THREE.Mesh(new THREE.RingGeometry(radius + dicke / 2, radius + dicke / 2 + 0.025, 72), new THREE.MeshStandardMaterial({ color: "#ECE6DA", roughness: 0.5, side: THREE.DoubleSide }));
+  const glas = new THREE.Mesh(new THREE.CircleGeometry(radius - dicke / 2, 48), new THREE.MeshBasicMaterial({ color: "#10131A", transparent: true, opacity: 0.28, side: THREE.DoubleSide, depthWrite: false }));
+  glas.position.z = -0.01;
+  const fuss = new THREE.Mesh(new THREE.BoxGeometry(0.06, radius + 0.1, 0.06), gemeinsam("ring|fuss", () => new THREE.MeshStandardMaterial({ color: MODELL.holz, roughness: 0.8 })));
+  fuss.position.y = -(radius + 0.1) / 2 - radius * 0.35;
+  g.add(glas, spur, bogen, rand, fuss);
+  g.userData.dynamisch = true;
+  let letzt = -1;
+  g.fuell = (p) => {
+    const q = Math.round(Math.min(1, Math.max(0, p)) * 720) / 720;
+    if (q !== letzt) { letzt = q; bogen.geometry.dispose(); bogen.geometry = new THREE.RingGeometry(radius - dicke / 2, radius + dicke / 2, 96, 1, Math.PI / 2, -Math.max(1e-3, q * Math.PI * 2)); }
+    bogen.visible = q > 0.002;
+    return g;
+  };
+  g.setze = (s) => { g.visible = s > 0.01; g.scale.setScalar(Math.max(0.01, s)); return g; };
+  g.fuell(0);
+  return g;
+}
+
+/** Hängendes Preisschild mit wechselbarem Text: text("6.600 €"), dreh(rad) um die senkrechte Achse (Wende des Schilds) */
+export function preisSchild({ breite = 0.9, hoehe = 0.42, farbe = "#FF8A3D" } = {}) {
+  const g = new THREE.Group();
+  const c = document.createElement("canvas"); c.width = 512; c.height = Math.round(512 * hoehe / breite);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
+  let aktuell = null;
+  const mal = (txt) => {
+    const x = c.getContext("2d"), b = c.width, h = c.height;
+    x.fillStyle = "#F3F0EA"; x.fillRect(0, 0, b, h);
+    x.strokeStyle = farbe; x.lineWidth = 16; x.strokeRect(8, 8, b - 16, h - 16);
+    x.fillStyle = "#1B1E26"; x.textAlign = "center"; x.textBaseline = "middle"; x.font = `800 ${Math.round(h * 0.5)}px 'SB Display', 'Inter', sans-serif`;
+    x.fillText(txt, b / 2, h / 2 + 4);
+    t.needsUpdate = true;
+  };
+  const mat = new THREE.MeshStandardMaterial({ map: t, emissive: "#FFFFFF", emissiveMap: t, emissiveIntensity: 0.45, roughness: 0.6 });
+  const kante = gemeinsam("schild|kante", () => new THREE.MeshStandardMaterial({ color: MODELL.holz, roughness: 0.8 }));
+  const tafel = new THREE.Mesh(new THREE.BoxGeometry(breite, hoehe, 0.03), [kante, kante, kante, kante, mat, mat]);
+  tafel.castShadow = true;
+  const draht = new THREE.Mesh(new THREE.CylinderGeometry(0.006, 0.006, 0.4, 5), gemeinsam("draht", () => new THREE.MeshStandardMaterial({ color: "#6B5E50", roughness: 0.6, metalness: 0.3 })));
+  draht.position.y = 0.2;
+  const dreher = new THREE.Group(); dreher.add(tafel); dreher.position.y = 0.4 + hoehe / 2; g.add(dreher, draht);
+  g.userData.dynamisch = true;
+  g.text = (txt) => { if (txt !== aktuell) { aktuell = txt; mal(txt); } return g; };
+  g.dreh = (r) => { dreher.rotation.y = r; return g; };
+  g.text("4.800 €");
+  return g;
+}
+
+/**
+ * Einfamilienhaus-Modell (weiß) mit Sockel-Geschoss („Keller“), Satteldach, Solarpaneelen und Fenstern. Front zeigt nach +z.
+ * offen = true: Sockel an der Front aufgeschnitten (Innenraum sichtbar, Akku-Modul darin); false: geschlossener Sockel.
+ */
+export function solarHaus({ breite = 2.5, tiefe = 1.7, hoehe = 1.0, dachHoehe = 0.7, sockel = 0.72, offen = false, farbe = "#FF8A3D", paneele = [4, 2] } = {}) {
+  const g = new THREE.Group();
+  const wand = gemeinsam("sh|wand", () => new THREE.MeshStandardMaterial({ color: MODELL.karton, roughness: 0.92 }));
+  const innen = gemeinsam("sh|innen", () => new THREE.MeshStandardMaterial({ color: "#D8D0C2", emissive: "#FFB36B", emissiveIntensity: 0.22, roughness: 0.95 }));
+  const dachMat = gemeinsam("sh|dach", () => new THREE.MeshStandardMaterial({ color: "#E7E2D8", roughness: 0.9 }));
+  const box = (w, h, d, x, y, z, mat, schatten = true) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat); m.position.set(x, y, z); m.castShadow = schatten; m.receiveShadow = true; g.add(m); return m; };
+  const dk = 0.07;
+  // Sockel / Keller
+  if (offen) {
+    box(dk, sockel, tiefe, -breite / 2 + dk / 2, sockel / 2, 0, wand);
+    box(dk, sockel, tiefe, breite / 2 - dk / 2, sockel / 2, 0, wand);
+    box(breite - 2 * dk, sockel, dk, 0, sockel / 2, -tiefe / 2 + dk / 2, innen);
+    box(breite - 2 * dk, 0.04, tiefe - dk, 0, 0.02, dk / 2, innen);
+    box(breite, dk, tiefe, 0, sockel - dk / 2, 0, wand); // Decke des Kellers
+    const kl = leuchtMat("#FFD7A0", 2.4, { transparent: true, neu: true });
+    const lampe = new THREE.Mesh(new THREE.BoxGeometry(breite * 0.5, 0.02, 0.07), kl); lampe.position.set(0, sockel - dk - 0.01, 0.1); g.add(lampe);
+    for (const [a, b] of [[[-breite / 2, 0.004, tiefe / 2], [breite / 2, 0.004, tiefe / 2]], [[-breite / 2, sockel, tiefe / 2], [breite / 2, sockel, tiefe / 2]], [[-breite / 2, 0, tiefe / 2], [-breite / 2, sockel, tiefe / 2]], [[breite / 2, 0, tiefe / 2], [breite / 2, sockel, tiefe / 2]]]) {
+      g.add(glimmLinie(a, b, { farbe, staerke: 2.6, dicke: 0.02 }));
+    }
+    const akku = akkuModul({ farbe }); akku.position.set(breite * 0.12, 0.04, -tiefe / 2 + dk + 0.12);
+    g.add(akku); g.akku = akku;
+    const bodenLicht = lichtPfuetze({ radius: breite * 0.6, farbe: "#FFC98A", staerke: 0.35, exponent: 1.6 }); bodenLicht.position.set(0, 0.05, 0.1); g.add(bodenLicht);
+  } else {
+    box(breite, sockel, tiefe, 0, sockel / 2, 0, wand);
+    const fm = gemeinsam("sh|kfenster", () => new THREE.MeshStandardMaterial({ color: "#3A3631", roughness: 0.6 }));
+    for (const x of [-breite * 0.25, breite * 0.25]) box(0.34, 0.2, 0.02, x, sockel * 0.55, tiefe / 2 + 0.005, fm, false);
+  }
+  // Wohngeschoss
+  const y0 = sockel;
+  box(breite, hoehe, tiefe, 0, y0 + hoehe / 2, 0, wand);
+  box(breite + 0.08, 0.035, tiefe + 0.08, 0, y0 + 0.0175, 0, dachMat); // Geschossplatte (schmale Schattenkante)
+  // Satteldach (First entlang x); Vorderseite neigt zur Kamera (+z)
+  const s = new THREE.Shape();
+  s.moveTo(-tiefe / 2 - 0.1, 0); s.lineTo(tiefe / 2 + 0.1, 0); s.lineTo(0, dachHoehe); s.closePath();
+  const dg = new THREE.ExtrudeGeometry(s, { depth: breite + 0.14, bevelEnabled: false });
+  dg.translate(0, 0, -(breite + 0.14) / 2); dg.rotateY(Math.PI / 2);
+  const dach = new THREE.Mesh(dg, dachMat); dach.position.y = y0 + hoehe; dach.castShadow = true; dach.receiveShadow = true; g.add(dach);
+  // Solarpaneele auf der Vorderseite
+  const winkel = Math.atan2(dachHoehe, tiefe / 2 + 0.1), schraeg = Math.hypot(dachHoehe, tiefe / 2 + 0.1);
+  const pm = new THREE.MeshStandardMaterial({ map: PANEEL_TEX(), color: "#FFFFFF", emissive: "#6FA0FF", emissiveMap: PANEEL_TEX(), emissiveIntensity: 0.12, roughness: 0.28, metalness: 0.35 });
+  const [sp, zl] = paneele, pb = (breite * 0.84) / sp, pl = (schraeg * 0.8) / zl;
+  const feld = new THREE.Group();
+  feld.position.set(0, y0 + hoehe + dachHoehe / 2 + 0.03, (tiefe / 2 + 0.1) / 2); feld.rotation.x = winkel;
+  for (let i = 0; i < sp; i++) for (let j = 0; j < zl; j++) {
+    const m = new THREE.Mesh(new THREE.BoxGeometry(pb * 0.94, 0.03, pl * 0.94), pm);
+    m.position.set((i - (sp - 1) / 2) * pb, 0, (j - (zl - 1) / 2) * pl); m.castShadow = true; m.receiveShadow = true; feld.add(m);
+  }
+  g.add(feld);
+  // Fenster und Tür (Front), Innenlicht regelbar
+  const fensterMat = new THREE.MeshStandardMaterial({ color: "#2A2D35", emissive: "#FFB36B", emissiveIntensity: 0.0, roughness: 0.3 });
+  const rahmen = gemeinsam("sh|rahmen", () => new THREE.MeshStandardMaterial({ color: "#F6F3EC", roughness: 0.8 }));
+  const fx = [-breite * 0.3, breite * 0.05, breite * 0.33];
+  fx.forEach((x, i) => {
+    const w = i === 1 ? 0.3 : 0.42, h = i === 1 ? 0.62 : 0.4, y = i === 1 ? y0 + 0.36 : y0 + hoehe * 0.58;
+    box(w + 0.07, h + 0.07, 0.012, x, y, tiefe / 2 + 0.003, rahmen, false);
+    const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, 0.012), fensterMat); m.position.set(x, y, tiefe / 2 + 0.01); g.add(m);
+  });
+  g.paneele = (k) => { pm.emissiveIntensity = 0.12 + 1.5 * k; return g; };
+  g.fenster = (k) => { fensterMat.emissiveIntensity = k * 2.0; return g; };
+  g.punkte = {
+    dach: new THREE.Vector3(0, y0 + hoehe + dachHoehe / 2 + 0.2, (tiefe / 2 + 0.1) / 2 + 0.12),
+    haus: new THREE.Vector3(0, y0 + hoehe * 0.45, tiefe / 2 + 0.22),
+    akku: new THREE.Vector3(breite * 0.12, 0.42, tiefe / 2 - 0.05),
+    dachEcke: (seite) => new THREE.Vector3(seite * breite * 0.5, y0 + hoehe + 0.3, tiefe / 2 + 0.12),
+  };
+  g.userData = { breite, tiefe, hoehe, dachHoehe, sockel, gesamt: sockel + hoehe + dachHoehe };
+  return g;
+}
