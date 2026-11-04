@@ -282,5 +282,66 @@
     "v2 (Länge, die erste Stimme hatte 85,7 s, Hook 5,6 s, Folgen-Aufruf erst bei 28,8 s): hook ohne „WIRKLICH“ und ohne Gedankenstrich; regeln „Noch“ gestrichen, Kommas statt Satzpunkt; falle Auslassungspunkte entfernt; rennen Kommas statt Satzpunkt; wendung2 „gut“ und „Jetzt wird's knapp.“ gestrichen (Untertitel „gut“ ebenso); ergebnis „nach einem Jahr“ gestrichen, Gedankenstriche zu Doppelpunkt/Komma; ueberraschung Kommas. Zahlen, Ergebnis, feste Sätze unverändert.",
     "v3 (Folgen-Aufruf lag mit v2 bei 26,7 s, erlaubt sind 15–25 s; Gesamtlänge 80,9 s): gestrichen „Erster Monat.“ (Monat 1 steht als Zähler in der Tafel) und „Kein Kind, keine Kirchensteuer.“ (steht als Annahme-Chips im Bild, nicht gesprochen). Zahlen, Ergebnis, feste Sätze unverändert.",
     "v3 technisch: Untertitel (`text`) von wendung2 und ergebnis dem Sprechtext angeglichen (gleiche Wörter an gleicher Stelle, nur Ziffern statt Zahlwörtern), damit Wort für Wort der Untertitel zur Stimme passt; Zahlen unverändert."
-  ]
+  ],
+  "lern_notizen": {
+    "thema": "Steuerklasse III/V gegen IV/IV, Modellpaar 4.500/2.500 €, Elterngeld-Überraschung",
+    "frage": "Wer hat am Ende mehr Geld?",
+    "laenge_s": 79.63,
+    "hook": "Steuerklasse drei und fünf oder vier und vier? Was bringt MEHR?",
+    "hook_typ": "Duell-Frage",
+    "stil": "20 Glas & Licht",
+    "zoom": "ja: 860 € (Wendung 1), Unterschied 0 (Ergebnis), 2.171 € (Überraschung); sonst Fahrten",
+    "animationen": [
+      {
+        "t": 16.2,
+        "art": "fuellung",
+        "was": "linker Zylinder 4.711,68 €"
+      },
+      {
+        "t": 19.9,
+        "art": "fuellung",
+        "was": "rechter Zylinder 4.640,01 €"
+      },
+      {
+        "t": 26.4,
+        "art": "skala-zoom",
+        "was": "Skala 5.000 auf 60.000 €, Monate 1 bis 12"
+      },
+      {
+        "t": 34.1,
+        "art": "nachzahlung",
+        "was": "linker Zylinder sinkt 554 €, Funken"
+      },
+      {
+        "t": 37.2,
+        "art": "erstattung",
+        "was": "rechter Zylinder steigt 306 €"
+      },
+      {
+        "t": 55.9,
+        "art": "neue-runde",
+        "was": "Zylinder leeren sich, Skala 1.200 €, Elterngeld"
+      }
+    ],
+    "licht": "Spot-Pulse je Wort, kühleres Licht ab Bescheid, Steuerlinie bei „gemeinsam“",
+    "effekte": [
+      "Skala-Zoom 26,4 s",
+      "Funken 34 s",
+      "Steuerlinie 54,5 s"
+    ],
+    "zeitpunkte": {
+      "folgen": 23.84,
+      "wendung_1": 29.52,
+      "ergebnis": 38.96,
+      "warum": 47.32,
+      "pointe": 72.64
+    },
+    "tempo": {
+      "woerter": 166,
+      "wps": 2.1,
+      "silben_pro_s": 3.67
+    },
+    "caption": "Steuerklasse 3/5 oder 4/4: Was bringt Ehepaaren mehr? 💶 Ich hab's durchgerechnet. Habt ihr schon mal nachgezahlt? 👇 #steuerklasse #steuern #elterngeld #wissen #simulation",
+    "besonderheiten": "Stimme v3 gekürzt (85,7 s → 79,2 s): Erster Monat, Kein-Kind-Satz, Jetzt wird's knapp u. a. gestrichen; Tempo 12b unter 2,2 W/s wegen langer Zahlwörter (Ausnahme nötig)"
+  }
 }
