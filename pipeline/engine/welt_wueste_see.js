@@ -164,8 +164,8 @@ export class WuesteSee {
     this.gras = this._inst(buschel(), windMaterial({ side: THREE.DoubleSide, vertexColors: false }, this.u, { staerke: 1.4 }), this.grasP.length, false, true);
     this.akP = []; for (let i = 0; this.akP.length < 90 && i < 3000; i++) { const nahb = i % 3 !== 0; const x = nahb ? R(i, 11, -70, 70) : R(i, 11, -220, 220), z = nahb ? R(i, 12, -60, -8) : R(i, 12, -96, -84);
       if (!land(x, z) || Math.hypot(x - UFERBLICK[0], z - UFERBLICK[1]) < 9 || Math.abs(x) < 20 && z > -50) continue; this.akP.push({ x, z, y: hoehe(x, z), s: R(i, 13, 0.7, 1.4), r: hash(i, 14), d: hash(i, 15) * 6.28 }); }
-    this.akStamm = this._inst(akazieGeo(), new THREE.MeshStandardMaterial({ color: "#4E3A2C", roughness: 0.9, flatShading: true }), this.akP.length, schatten, false);
-    this.akKrone = this._inst(akazieKrone(), windMaterial({}, this.u, { staerke: 0.2 }), this.akP.length, schatten, true);
+    this.akStamm = this._inst(akazieGeo(), new THREE.MeshStandardMaterial({ color: "#4E3A2C", roughness: 0.9, flatShading: true }), this.akP.length, false, false);
+    this.akKrone = this._inst(akazieKrone(), windMaterial({}, this.u, { staerke: 0.2 }), this.akP.length, false, true);
     this.schilfP = []; for (let i = 0; i < 3200; i++) { const bar = i % 3 === 0; const x = bar ? R(i, 21, -200, 200) : R(i, 21, -90, 90), z = bar ? (hash(i, 23) < 0.5 ? R(i, 22, -84, -81) : R(i, 22, -99, -96)) : R(i, 22, -48.5, -43.5); this.schilfP.push({ x, z, y: hoehe(x, z), h: R(i, 24, 1.2, 2.2), d: hash(i, 25) * 6.28, r: hash(i, 26) }); }
     this.schilf = this._inst(schilfGeo(), windMaterial({ side: THREE.DoubleSide, vertexColors: false }, this.u, { staerke: 1.2 }), this.schilfP.length, false, false);
     // Tiere
@@ -179,7 +179,7 @@ export class WuesteSee {
     for (let i = 0; i < fp.count; i++) fp.setXYZ(i, fp.getX(i) * (1.1 + 0.15 * hash(i, 31)), fp.getY(i) * (0.9 + 0.1 * hash(i, 32)), fp.getZ(i) * (0.85 + 0.15 * hash(i, 33)));
     fg.computeVertexNormals();
     this.fels = new THREE.Group();
-    const fm = new THREE.Mesh(fg, new THREE.MeshStandardMaterial({ color: "#7A4E34", roughness: 0.95, flatShading: true })); fm.castShadow = fm.receiveShadow = schatten; this.fels.add(fm);
+    const fm = new THREE.Mesh(fg, new THREE.MeshStandardMaterial({ color: "#7A4E34", roughness: 0.95, flatShading: true })); fm.castShadow = false; fm.receiveShadow = schatten; this.fels.add(fm);
     this.ritz = new THREE.Mesh(new THREE.PlaneGeometry(1.9, 1.9), new THREE.MeshBasicMaterial({ map: ritzTextur(), transparent: true, opacity: 0, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2 }));
     this.ritz.position.set(0.15, 0.35, 1.72); this.ritz.rotation.y = 0.15; this.fels.add(this.ritz);
     this.felsY = hoehe(...FELS) + 1.0; this.fels.position.set(FELS[0], this.felsY, FELS[1]); this.fels.rotation.y = 0.35; szene.add(this.fels);
