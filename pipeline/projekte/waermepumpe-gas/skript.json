@@ -311,5 +311,65 @@
  },
  "korrekturen": [],
  "skript_quelle": "acc1-2026-11-04-abend",
- "skript_aenderungen": "Gekürzt für die Länge (erste Vertonung 90,3 s statt 65–80 s, Hook 5,6 s, Denkfalle 20,2 s): Einfamilienhaus/130 m² nur noch im Bild (Chip), Füllsätze weg („Jetzt wird's knapp“, „Doch das Merkwürdige“ → „Aber“, „Jahr fünf“), Denkfalle „Klar … Gas GEWINNT. Oder?“, „Warum so knapp?“ → „Warum?“, „bis zu 60 Prozent“ nur im Bild (Bio-Treppe). Zahlen, Ergebnis und Pointen unverändert."
+ "skript_aenderungen": "Gekürzt für die Länge (erste Vertonung 90,3 s statt 65–80 s, Hook 5,6 s, Denkfalle 20,2 s): Einfamilienhaus/130 m² nur noch im Bild (Chip), Füllsätze weg („Jetzt wird's knapp“, „Doch das Merkwürdige“ → „Aber“, „Jahr fünf“), Denkfalle „Klar … Gas GEWINNT. Oder?“, „Warum so knapp?“ → „Warum?“, „bis zu 60 Prozent“ nur im Bild (Bio-Treppe). Zahlen, Ergebnis und Pointen unverändert.",
+ "lern_notizen": {
+  "thema": "Heizungstausch Gas oder Wärmepumpe, 20 Jahre",
+  "frage": "Was kostet dich in 20 Jahren mehr?",
+  "laenge_s": 76.5,
+  "hook": "Deine Gasheizung ist zwanzig Jahre alt. Neue – oder WÄRMEPUMPE?",
+  "hook_typ": "Du-Szenario + Duell-Frage",
+  "stil": "17 Nachtstadt-Miniatur (Winternacht)",
+  "zoom": "ja bei Jahr 16 (Abstand 24 €) und Warum-Einschub (Außeneinheit), sonst Fahrten",
+  "animationen": [
+   {
+    "t": 0.0,
+    "art": "kamerafahrt",
+    "was": "Heranfahrt an zwei Häuser im Schnee"
+   },
+   {
+    "t": 13.0,
+    "art": "aufleuchten",
+    "was": "Förderstapel fällt"
+   },
+   {
+    "t": 23.4,
+    "art": "kostenstroeme",
+    "was": "Gasstrom dick, WP dünn, Jahresuhr startet"
+   },
+   {
+    "t": 39.0,
+    "art": "lichtwechsel",
+    "was": "Führungswechsel Jahr 17"
+   },
+   {
+    "t": 51.2,
+    "art": "zoom",
+    "was": "Warum: 1 kWh → 3 kWh Wärme"
+   },
+   {
+    "t": 58.6,
+    "art": "bio-treppe",
+    "was": "4 Stufen über dem Gashaus"
+   }
+  ],
+  "licht": "Spots wechseln Gas/WP, Licht springt bei 'vorbei' auf das WP-Haus",
+  "effekte": [
+   "Pointe KAUF/JAHRE im Merksatz",
+   "Akzent auf der Ersparnis"
+  ],
+  "zeitpunkte": {
+   "folgen": 21.3,
+   "wendung_1": 23.4,
+   "ergebnis": 41.8,
+   "warum": 51.2,
+   "pointe": 58.6
+  },
+  "tempo": {
+   "woerter": 156,
+   "wps": 2.05,
+   "silben_s": 3.9
+  },
+  "caption": "Wärmepumpe oder neue Gasheizung – was kostet dich in 20 Jahren mehr? 🔥 Ich hab's simuliert. Team Gas oder Team Wärmepumpe? 👇 #wärmepumpe #gasheizung #heizungstausch #wissen #simulation",
+  "besonderheiten": "Text nach erster Vertonung (90 s) zweimal gekürzt; viele lange Zahlwörter drücken W/s"
+ }
 }
