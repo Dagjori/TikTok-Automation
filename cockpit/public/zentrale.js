@@ -20,8 +20,10 @@ const INHALT = {
   "live/regie": { mitte: ["b-buehne"], rechts: ["b-kette"] },
   "live/tagesplan": { mitte: ["b-tagesziel", "b-videos"], rechts: ["b-auftraege"] },
   "live/technik": { mitte: ["b-dienst"], links: ["b-rechner"] },
-  "studio/ideen": { mitte: ["b-studio-kopf", "b-ideen"], rechts: ["b-studio-leiste"] }, // Übergabe-Knöpfe auch hier (04.11.)
-  "studio/schreibstube": { mitte: ["b-studio-kopf", "b-slots"], rechts: ["b-studio-leiste"] },
+  // Übergabe-Leiste (Recherche, Übergeben, Produktion) auf dem Mittelbildschirm beider Räume: die Ideenwerkstatt hat keinen
+  // rechten Bildschirm, und rechts in der Schreibstube wurde sie übersehen (04.11.)
+  "studio/ideen": { mitte: ["b-studio-kopf", "b-studio-leiste", "b-ideen"] },
+  "studio/schreibstube": { mitte: ["b-studio-kopf", "b-studio-leiste", "b-slots"] },
   "zahlen/konten": { mitte: ["b-zahlen-kopf", "b-konten"] },
   "zahlen/archiv": { mitte: ["b-videotabelle"] },
   "ziele/ziele": { mitte: ["b-missionen"] },

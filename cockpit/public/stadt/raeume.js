@@ -19,7 +19,7 @@ export const RAEUME = {
   ],
   studio: [
     { id: "ideen", name: "Ideenwerkstatt", schirme: { mitte: { titel: "Ideen", b: 1100, h: 660 } } },
-    { id: "schreibstube", name: "Schreibstube", schirme: { mitte: { titel: "Videos des Tages", b: 1100, h: 660 }, rechts: { titel: "Freigabe", b: 720, h: 450 } } },
+    { id: "schreibstube", name: "Schreibstube", schirme: { mitte: { titel: "Videos des Tages", b: 1100, h: 660 } } },
   ],
   zahlen: [
     { id: "konten", name: "Konten", schirme: { mitte: { titel: "Konten", b: 1100, h: 620 } } },
