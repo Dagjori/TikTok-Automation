@@ -1,0 +1,15 @@
+/* Projekt steuerklasse: Modellfall-Pille, Steuerbescheid-Karte */
+#hud .ms-seite .ms-wert { font-size: 50px; }
+.st-pille { position: absolute; left: 0; top: 0; padding: 9px 22px 8px; border-radius: 999px; border: 2px solid rgba(236, 230, 218, 0.7); background: rgba(12, 14, 20, 0.7); font: 800 21px/1 var(--text, "Inter", sans-serif); letter-spacing: 0.16em; text-transform: uppercase; color: #F3F5F8; white-space: nowrap; will-change: transform, opacity; }
+.st-bescheid { position: absolute; left: 0; top: 0; padding: 20px 30px 16px; }
+.st-bescheid .st-box { overflow: hidden; }
+.st-bescheid .st-reihe { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 10px; padding: 8px 18px; border-radius: 14px; border: 2px solid var(--tf); background: color-mix(in srgb, var(--tf) 14%, rgba(10, 12, 18, 0.9)); box-shadow: 0 0 22px -8px var(--tf); will-change: transform, opacity; }
+.st-bescheid .st-reihe span { font: 700 23px/1.1 var(--text, "Inter", sans-serif); letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.86); }
+.st-bescheid .st-reihe b { font: 800 34px/1 var(--text, "Inter", sans-serif); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; color: #fff; white-space: nowrap; }
+
+/* Karten kompakter (Zylinder bleiben darunter sichtbar) */
+#hud .ms-balken .ms-fk { margin-top: 10px; }
+#hud .ms-balken .ms-zeile { margin-top: 6px; }
+#hud .ms-balken .ms-zeile .spur { height: 30px; }
+#hud .ms-balken .ms-zeile .w { width: 230px; font-size: 36px; white-space: nowrap; }
+#hud .ms-balken .ms-fk .kopf { font-size: 24px; }

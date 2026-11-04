@@ -1,0 +1,936 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 79.126,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Steuerklasse III und V oder IV und IV? Was bringt mehr?",
+   "start": 0.0,
+   "ende": 4.92,
+   "woerter": [
+    {
+     "wort": "Steuerklasse",
+     "start": 0.0,
+     "ende": 0.72
+    },
+    {
+     "wort": "III",
+     "start": 0.8,
+     "ende": 1.04
+    },
+    {
+     "wort": "und",
+     "start": 1.12,
+     "ende": 1.36
+    },
+    {
+     "wort": "V",
+     "start": 1.44,
+     "ende": 1.84
+    },
+    {
+     "wort": "oder",
+     "start": 2.08,
+     "ende": 2.4
+    },
+    {
+     "wort": "IV",
+     "start": 2.64,
+     "ende": 2.8
+    },
+    {
+     "wort": "und",
+     "start": 2.88,
+     "ende": 3.04
+    },
+    {
+     "wort": "IV?",
+     "start": 3.2,
+     "ende": 3.44
+    },
+    {
+     "wort": "Was",
+     "start": 3.888,
+     "ende": 3.92
+    },
+    {
+     "wort": "bringt",
+     "start": 4.0,
+     "ende": 4.24
+    },
+    {
+     "wort": "mehr?",
+     "start": 4.32,
+     "ende": 4.92
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Tom und Sara sind verheiratet. Tom verdient 4.500 Euro brutto, Sara 2.500.",
+   "start": 5.2,
+   "ende": 11.84,
+   "woerter": [
+    {
+     "wort": "Tom",
+     "start": 5.2,
+     "ende": 5.36
+    },
+    {
+     "wort": "und",
+     "start": 5.44,
+     "ende": 5.52
+    },
+    {
+     "wort": "Sara",
+     "start": 5.6,
+     "ende": 5.92
+    },
+    {
+     "wort": "sind",
+     "start": 6.0,
+     "ende": 6.16
+    },
+    {
+     "wort": "verheiratet.",
+     "start": 6.24,
+     "ende": 7.04
+    },
+    {
+     "wort": "Tom",
+     "start": 7.2,
+     "ende": 7.44
+    },
+    {
+     "wort": "verdient",
+     "start": 7.52,
+     "ende": 7.84
+    },
+    {
+     "wort": "4.500",
+     "start": 7.92,
+     "ende": 8.440000000000001
+    },
+    {
+     "wort": "Euro",
+     "start": 8.440000000000001,
+     "ende": 8.96
+    },
+    {
+     "wort": "brutto,",
+     "start": 9.04,
+     "ende": 9.76
+    },
+    {
+     "wort": "Sara",
+     "start": 9.8,
+     "ende": 10.16
+    },
+    {
+     "wort": "2.500.",
+     "start": 10.32,
+     "ende": 11.84
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, III und V bringt mehr. Oder?",
+   "start": 11.92,
+   "ende": 14.96,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 11.92,
+     "ende": 12.56
+    },
+    {
+     "wort": "III",
+     "start": 12.6,
+     "ende": 12.8
+    },
+    {
+     "wort": "und",
+     "start": 12.88,
+     "ende": 13.04
+    },
+    {
+     "wort": "V",
+     "start": 13.08,
+     "ende": 13.28
+    },
+    {
+     "wort": "bringt",
+     "start": 13.36,
+     "ende": 13.6
+    },
+    {
+     "wort": "mehr.",
+     "start": 13.64,
+     "ende": 14.08
+    },
+    {
+     "wort": "Oder?",
+     "start": 14.32,
+     "ende": 14.96
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "III und V: 4.711,68 Euro netto, IV und IV: 4.640,01 Euro. 71,67 Euro Vorsprung.",
+   "start": 15.28,
+   "ende": 23.64,
+   "woerter": [
+    {
+     "wort": "III",
+     "start": 15.28,
+     "ende": 15.44
+    },
+    {
+     "wort": "und",
+     "start": 15.52,
+     "ende": 15.68
+    },
+    {
+     "wort": "V:",
+     "start": 15.76,
+     "ende": 16.426666666666666
+    },
+    {
+     "wort": "4.711,68",
+     "start": 16.426666666666666,
+     "ende": 17.093333333333334
+    },
+    {
+     "wort": "Euro",
+     "start": 17.093333333333334,
+     "ende": 17.76
+    },
+    {
+     "wort": "netto,",
+     "start": 17.92,
+     "ende": 18.64
+    },
+    {
+     "wort": "IV",
+     "start": 18.72,
+     "ende": 18.8
+    },
+    {
+     "wort": "und",
+     "start": 18.88,
+     "ende": 19.04
+    },
+    {
+     "wort": "IV:",
+     "start": 19.16,
+     "ende": 19.990000000000002
+    },
+    {
+     "wort": "4.640,01",
+     "start": 19.990000000000002,
+     "ende": 20.82
+    },
+    {
+     "wort": "Euro.",
+     "start": 20.82,
+     "ende": 21.65
+    },
+    {
+     "wort": "71,67",
+     "start": 21.65,
+     "ende": 22.48
+    },
+    {
+     "wort": "Euro",
+     "start": 22.56,
+     "ende": 22.8
+    },
+    {
+     "wort": "Vorsprung.",
+     "start": 22.88,
+     "ende": 23.64
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 23.84,
+   "ende": 25.6,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 23.84,
+     "ende": 24.08
+    },
+    {
+     "wort": "mir,",
+     "start": 24.16,
+     "ende": 24.4
+    },
+    {
+     "wort": "damit",
+     "start": 24.48,
+     "ende": 24.64
+    },
+    {
+     "wort": "du",
+     "start": 24.68,
+     "ende": 24.72
+    },
+    {
+     "wort": "nichts",
+     "start": 24.8,
+     "ende": 25.04
+    },
+    {
+     "wort": "verpasst.",
+     "start": 25.12,
+     "ende": 25.6
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Nach einem Jahr: 860 Euro mehr. Doch mit III und V ist die Steuererklärung Pflicht.",
+   "start": 26.08,
+   "ende": 32.64,
+   "woerter": [
+    {
+     "wort": "Nach",
+     "start": 26.08,
+     "ende": 26.24
+    },
+    {
+     "wort": "einem",
+     "start": 26.32,
+     "ende": 26.56
+    },
+    {
+     "wort": "Jahr:",
+     "start": 26.64,
+     "ende": 27.08
+    },
+    {
+     "wort": "860",
+     "start": 27.28,
+     "ende": 28.24
+    },
+    {
+     "wort": "Euro",
+     "start": 28.32,
+     "ende": 28.56
+    },
+    {
+     "wort": "mehr.",
+     "start": 28.72,
+     "ende": 29.24
+    },
+    {
+     "wort": "Doch",
+     "start": 29.52,
+     "ende": 29.68
+    },
+    {
+     "wort": "mit",
+     "start": 29.76,
+     "ende": 29.84
+    },
+    {
+     "wort": "III",
+     "start": 29.92,
+     "ende": 30.08
+    },
+    {
+     "wort": "und",
+     "start": 30.24,
+     "ende": 30.4
+    },
+    {
+     "wort": "V",
+     "start": 30.44,
+     "ende": 30.72
+    },
+    {
+     "wort": "ist",
+     "start": 30.8,
+     "ende": 30.88
+    },
+    {
+     "wort": "die",
+     "start": 30.96,
+     "ende": 31.04
+    },
+    {
+     "wort": "Steuererklärung",
+     "start": 31.12,
+     "ende": 31.84
+    },
+    {
+     "wort": "Pflicht.",
+     "start": 32.0,
+     "ende": 32.64
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "III und V zahlen gut 554 Euro nach, IV und IV bekommen 306 zurück.",
+   "start": 32.88,
+   "ende": 38.76,
+   "woerter": [
+    {
+     "wort": "III",
+     "start": 32.88,
+     "ende": 32.96
+    },
+    {
+     "wort": "und",
+     "start": 33.12,
+     "ende": 33.2
+    },
+    {
+     "wort": "V",
+     "start": 33.28,
+     "ende": 33.52
+    },
+    {
+     "wort": "zahlen",
+     "start": 33.68,
+     "ende": 33.92
+    },
+    {
+     "wort": "gut",
+     "start": 34.0,
+     "ende": 34.16
+    },
+    {
+     "wort": "554",
+     "start": 34.24,
+     "ende": 35.12
+    },
+    {
+     "wort": "Euro",
+     "start": 35.2,
+     "ende": 35.52
+    },
+    {
+     "wort": "nach,",
+     "start": 35.6,
+     "ende": 36.32
+    },
+    {
+     "wort": "IV",
+     "start": 36.4,
+     "ende": 36.56
+    },
+    {
+     "wort": "und",
+     "start": 36.64,
+     "ende": 36.8
+    },
+    {
+     "wort": "IV",
+     "start": 36.88,
+     "ende": 36.96
+    },
+    {
+     "wort": "bekommen",
+     "start": 37.12,
+     "ende": 37.52
+    },
+    {
+     "wort": "306",
+     "start": 37.6,
+     "ende": 38.08
+    },
+    {
+     "wort": "zurück.",
+     "start": 38.16,
+     "ende": 38.76
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand: III und V rund 55.986 Euro, IV und IV genauso viel. Unterschied: 0 Euro.",
+   "start": 38.96,
+   "ende": 46.92,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 38.96,
+     "ende": 39.84
+    },
+    {
+     "wort": "III",
+     "start": 39.88,
+     "ende": 40.0
+    },
+    {
+     "wort": "und",
+     "start": 40.08,
+     "ende": 40.24
+    },
+    {
+     "wort": "V",
+     "start": 40.32,
+     "ende": 40.8
+    },
+    {
+     "wort": "rund",
+     "start": 40.88,
+     "ende": 41.04
+    },
+    {
+     "wort": "55.986",
+     "start": 41.12,
+     "ende": 42.24
+    },
+    {
+     "wort": "Euro,",
+     "start": 42.32,
+     "ende": 42.96
+    },
+    {
+     "wort": "IV",
+     "start": 43.04,
+     "ende": 43.12
+    },
+    {
+     "wort": "und",
+     "start": 43.2,
+     "ende": 43.36
+    },
+    {
+     "wort": "IV",
+     "start": 43.48,
+     "ende": 43.92
+    },
+    {
+     "wort": "genauso",
+     "start": 44.0,
+     "ende": 44.32
+    },
+    {
+     "wort": "viel.",
+     "start": 44.4,
+     "ende": 44.84
+    },
+    {
+     "wort": "Unterschied:",
+     "start": 45.04,
+     "ende": 45.92
+    },
+    {
+     "wort": "0",
+     "start": 46.08,
+     "ende": 46.32
+    },
+    {
+     "wort": "Euro.",
+     "start": 46.4,
+     "ende": 46.92
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Die Steuerklasse bestimmt nur, wie viel vorab abgezogen wird. Die echte Steuer rechnet das Finanzamt für beide gemeinsam aus.",
+   "start": 47.32,
+   "ende": 55.84,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 47.32,
+     "ende": 47.8
+    },
+    {
+     "wort": "Die",
+     "start": 48.0,
+     "ende": 48.08
+    },
+    {
+     "wort": "Steuerklasse",
+     "start": 48.16,
+     "ende": 48.8
+    },
+    {
+     "wort": "bestimmt",
+     "start": 48.88,
+     "ende": 49.28
+    },
+    {
+     "wort": "nur,",
+     "start": 49.36,
+     "ende": 49.68
+    },
+    {
+     "wort": "wie",
+     "start": 49.76,
+     "ende": 49.84
+    },
+    {
+     "wort": "viel",
+     "start": 49.88,
+     "ende": 50.0
+    },
+    {
+     "wort": "vorab",
+     "start": 50.24,
+     "ende": 50.72
+    },
+    {
+     "wort": "abgezogen",
+     "start": 50.8,
+     "ende": 51.36
+    },
+    {
+     "wort": "wird.",
+     "start": 51.44,
+     "ende": 52.0
+    },
+    {
+     "wort": "Die",
+     "start": 52.08,
+     "ende": 52.16
+    },
+    {
+     "wort": "echte",
+     "start": 52.24,
+     "ende": 52.48
+    },
+    {
+     "wort": "Steuer",
+     "start": 52.56,
+     "ende": 52.88
+    },
+    {
+     "wort": "rechnet",
+     "start": 52.96,
+     "ende": 53.2
+    },
+    {
+     "wort": "das",
+     "start": 53.28,
+     "ende": 53.36
+    },
+    {
+     "wort": "Finanzamt",
+     "start": 53.44,
+     "ende": 54.0
+    },
+    {
+     "wort": "für",
+     "start": 54.08,
+     "ende": 54.16
+    },
+    {
+     "wort": "beide",
+     "start": 54.24,
+     "ende": 54.48
+    },
+    {
+     "wort": "gemeinsam",
+     "start": 54.56,
+     "ende": 55.12
+    },
+    {
+     "wort": "aus.",
+     "start": 55.28,
+     "ende": 55.84
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und das Verrückte: Kommt ein Baby, zählt Saras Steuerklasse doch. Klasse V: 914 Euro Elterngeld im Monat. Klasse IV: 1.095 Euro. In einem Jahr: 2.171 Euro.",
+   "start": 55.88,
+   "ende": 69.28,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 55.88,
+     "ende": 55.92
+    },
+    {
+     "wort": "das",
+     "start": 56.0,
+     "ende": 56.08
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 56.12,
+     "ende": 56.96
+    },
+    {
+     "wort": "Kommt",
+     "start": 57.04,
+     "ende": 57.2
+    },
+    {
+     "wort": "ein",
+     "start": 57.28,
+     "ende": 57.36
+    },
+    {
+     "wort": "Baby,",
+     "start": 57.44,
+     "ende": 58.0
+    },
+    {
+     "wort": "zählt",
+     "start": 58.04,
+     "ende": 58.32
+    },
+    {
+     "wort": "Saras",
+     "start": 58.36,
+     "ende": 58.72
+    },
+    {
+     "wort": "Steuerklasse",
+     "start": 58.8,
+     "ende": 59.44
+    },
+    {
+     "wort": "doch.",
+     "start": 59.6,
+     "ende": 60.12
+    },
+    {
+     "wort": "Klasse",
+     "start": 60.32,
+     "ende": 60.56
+    },
+    {
+     "wort": "V:",
+     "start": 60.72,
+     "ende": 61.4
+    },
+    {
+     "wort": "914",
+     "start": 61.4,
+     "ende": 62.08
+    },
+    {
+     "wort": "Euro",
+     "start": 62.16,
+     "ende": 62.4
+    },
+    {
+     "wort": "Elterngeld",
+     "start": 62.48,
+     "ende": 63.04
+    },
+    {
+     "wort": "im",
+     "start": 63.08,
+     "ende": 63.12
+    },
+    {
+     "wort": "Monat.",
+     "start": 63.2,
+     "ende": 63.84
+    },
+    {
+     "wort": "Klasse",
+     "start": 63.88,
+     "ende": 64.16
+    },
+    {
+     "wort": "IV:",
+     "start": 64.24,
+     "ende": 64.85333333333332
+    },
+    {
+     "wort": "1.095",
+     "start": 64.85333333333332,
+     "ende": 65.46666666666667
+    },
+    {
+     "wort": "Euro.",
+     "start": 65.46666666666667,
+     "ende": 66.08
+    },
+    {
+     "wort": "In",
+     "start": 66.12,
+     "ende": 66.16
+    },
+    {
+     "wort": "einem",
+     "start": 66.24,
+     "ende": 66.48
+    },
+    {
+     "wort": "Jahr:",
+     "start": 66.56,
+     "ende": 67.04
+    },
+    {
+     "wort": "2.171",
+     "start": 67.08,
+     "ende": 68.64
+    },
+    {
+     "wort": "Euro.",
+     "start": 68.72,
+     "ende": 69.28
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Die Steuerklasse ändert nicht deine Steuer. Nur, wann du sie zahlst. Und manchmal dein Elterngeld.",
+   "start": 69.52,
+   "ende": 75.6,
+   "woerter": [
+    {
+     "wort": "Die",
+     "start": 69.52,
+     "ende": 69.6
+    },
+    {
+     "wort": "Steuerklasse",
+     "start": 69.68,
+     "ende": 70.32
+    },
+    {
+     "wort": "ändert",
+     "start": 70.4,
+     "ende": 70.72
+    },
+    {
+     "wort": "nicht",
+     "start": 70.8,
+     "ende": 71.04
+    },
+    {
+     "wort": "deine",
+     "start": 71.08,
+     "ende": 71.28
+    },
+    {
+     "wort": "Steuer.",
+     "start": 71.36,
+     "ende": 72.08
+    },
+    {
+     "wort": "Nur,",
+     "start": 72.16,
+     "ende": 72.56
+    },
+    {
+     "wort": "wann",
+     "start": 72.64,
+     "ende": 72.8
+    },
+    {
+     "wort": "du",
+     "start": 72.88,
+     "ende": 72.96
+    },
+    {
+     "wort": "sie",
+     "start": 73.04,
+     "ende": 73.12
+    },
+    {
+     "wort": "zahlst.",
+     "start": 73.2,
+     "ende": 73.92
+    },
+    {
+     "wort": "Und",
+     "start": 74.04,
+     "ende": 74.16
+    },
+    {
+     "wort": "manchmal",
+     "start": 74.24,
+     "ende": 74.72
+    },
+    {
+     "wort": "dein",
+     "start": 74.76,
+     "ende": 74.88
+    },
+    {
+     "wort": "Elterngeld.",
+     "start": 74.96,
+     "ende": 75.6
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 76.08,
+   "ende": 79.2,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 76.08,
+     "ende": 76.24
+    },
+    {
+     "wort": "sollen",
+     "start": 76.293,
+     "ende": 76.4
+    },
+    {
+     "wort": "wir",
+     "start": 76.48,
+     "ende": 76.533
+    },
+    {
+     "wort": "als",
+     "start": 76.56,
+     "ende": 76.64
+    },
+    {
+     "wort": "Nächstes",
+     "start": 76.72,
+     "ende": 77.04
+    },
+    {
+     "wort": "zeigen?",
+     "start": 77.12,
+     "ende": 77.76
+    },
+    {
+     "wort": "Schreib",
+     "start": 77.8,
+     "ende": 78.0
+    },
+    {
+     "wort": "es",
+     "start": 78.04,
+     "ende": 78.08
+    },
+    {
+     "wort": "in",
+     "start": 78.16,
+     "ende": 78.2
+    },
+    {
+     "wort": "die",
+     "start": 78.24,
+     "ende": 78.32
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 78.36,
+     "ende": 79.2
+    }
+   ]
+  }
+ ]
+}

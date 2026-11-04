@@ -1,0 +1,286 @@
+{
+  "titel": "Steuerklasse III/V oder IV/IV: Wer hat am Ende mehr Geld?",
+  "skill": "simulierbar-video",
+  "konto": "simulierbar",
+  "stil": "20 Glas & Licht",
+  "stil_begruendung": "Die Bildidee des Slots (zwei Gehaltsströme, Monatskasse füllt sich, am Jahresende gleicht der Steuerbescheid aus) ist ein Füllstand-Thema: Geld als leuchtende Flüssigkeit in Messzylindern (Zulauf = Gehalt, Füllstand = Live-Zähler), dazu ein dünnes Röhrchen für den Vorsprung, der erst wächst und dann auf null fällt. Baukasten vorhanden (stil_lichtlabor.js), noch nie in einem Video genutzt, damit anders als die letzten Videos (18, 17, 19, 18). Kein Gelb, Teamfarben Blau (III/V) und Koralle (IV/IV).",
+  "teamfarben": {
+    "III/V": "#3D8BFF",
+    "IV/IV": "#FF5A5F"
+  },
+  "klangteppich": "wasser",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Steuerklasse III und V oder IV und IV? Was bringt mehr?",
+      "sprechtext": "Steuerklasse drei und fünf oder vier und vier?\n[curious] Was bringt MEHR?",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Steuerklasse drei und fünf – oder vier und vier?",
+          "bild": "Zwei Messzylinder im dunklen Labor ab Bild 0: links III/V (Blau), rechts IV/IV (Koralle), Tafel 0 € / 0 €; Zylinder leuchten bei „drei und fünf“ (links) und „vier und vier“ (rechts) auf, Chips „STEUERKLASSE III + V“ / „IV + IV“"
+        },
+        {
+          "gesagt": "Was bringt WIRKLICH mehr?",
+          "bild": "Zwischenröhrchen (Vorsprung) leuchtet, Kamera fährt langsam ein"
+        }
+      ]
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Tom und Sara sind verheiratet. Tom verdient 4.500 Euro brutto, Sara 2.500.",
+      "sprechtext": "Tom und Sara sind verheiratet.\nTom verdient viertausendfünfhundert brutto, Sara zweitausendfünfhundert.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Tom und Sara sind verheiratet.",
+          "bild": "Licht auf beide Zulauf-Düsen oben, Chip „VERHEIRATET“"
+        },
+        {
+          "gesagt": "Tom verdient viertausendfünfhundert brutto.",
+          "bild": "dicker Zulauf (Tom) leuchtet, Chip „TOM 4.500 € BRUTTO“"
+        },
+        {
+          "gesagt": "Sara zweitausendfünfhundert.",
+          "bild": "dünner Zulauf (Sara) leuchtet, Chip „SARA 2.500 €“"
+        },
+        {
+          "gesagt": "Noch kein Kind, keine Kirchensteuer.",
+          "bild": "Chips „KEIN KIND“ und „KEINE KIRCHENSTEUER“"
+        }
+      ]
+    },
+    {
+      "id": "falle",
+      "phase": "falle",
+      "text": "Klar, III und V bringt mehr. Oder?",
+      "sprechtext": "Klar, drei und fünf bringt MEHR.\nOder?",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Klar … drei und fünf bringt MEHR. Oder?",
+          "bild": "Lichtkegel auf den linken Zylinder (III/V), Kamera rückt ein, bei „Oder?“ Pause im Licht"
+        }
+      ]
+    },
+    {
+      "id": "rennen",
+      "phase": "rennen",
+      "text": "III und V: 4.711,68 Euro netto, IV und IV: 4.640,01 Euro. 71,67 Euro Vorsprung.",
+      "sprechtext": "Drei und fünf: viertausendsiebenhundertzwölf netto,\nvier und vier: viertausendsechshundertvierzig.\nZweiundsiebzig Euro Vorsprung.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Erster Monat.",
+          "bild": "Zuläufe starten, Uhr MONAT 1, Skala 0–5.000 €"
+        },
+        {
+          "gesagt": "Drei und fünf: viertausendsiebenhundertzwölf netto.",
+          "bild": "linker Zylinder füllt sich bis 4.711,68 €, Tafel links zählt, Chip „TOM 3.221 + SARA 1.491“"
+        },
+        {
+          "gesagt": "Vier und vier: viertausendsechshundertvierzig.",
+          "bild": "rechter Zylinder füllt sich bis 4.640,01 €, Chip „TOM 2.871 + SARA 1.769“"
+        },
+        {
+          "gesagt": "Zweiundsiebzig Euro Vorsprung.",
+          "bild": "Vorsprung-Röhrchen füllt sich auf 71,67 €, Chip „+ 71,67 € VORSPRUNG“ in Blau"
+        }
+      ]
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Folg mir, damit du nichts verpasst.",
+          "bild": "Folgen-Element, Welt läuft weiter"
+        }
+      ]
+    },
+    {
+      "id": "wendung1",
+      "phase": "wendung1",
+      "text": "Nach einem Jahr: 860 Euro mehr. Doch mit III und V ist die Steuererklärung Pflicht.",
+      "sprechtext": "Nach einem Jahr: achthundertsechzig Euro mehr.\nDoch mit drei und fünf ist die Steuererklärung PFLICHT.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Nach einem Jahr: achthundertsechzig Euro mehr.",
+          "bild": "Skala zoomt von 5.000 auf 60.000 €, Monatszähler 1 → 12, beide Zylinder steigen, Vorsprung-Röhrchen auf 860 €, Chip „+ 860 € IM JAHR“"
+        },
+        {
+          "gesagt": "Doch mit drei und fünf ist die Steuererklärung PFLICHT.",
+          "bild": "Steuerbescheid-Blatt schwebt über den Zylindern ein (Zeile „STEUERERKLÄRUNG PFLICHT“ bei III/V), Licht kippt kühler, Chip „PFLICHT BEI III + V“"
+        }
+      ]
+    },
+    {
+      "id": "wendung2",
+      "phase": "wendung2",
+      "text": "III und V zahlen gut 554 Euro nach, IV und IV bekommen 306 zurück.",
+      "sprechtext": "Drei und fünf zahlen gut fünfhundertfünfzig Euro NACH,\nvier und vier bekommen dreihundert zurück.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Drei und fünf zahlen gut fünfhundertfünfzig Euro NACH.",
+          "bild": "Blatt zeigt „III/V −554,16 €“, linker Zylinder sinkt um 554 €, Chip „NACHZAHLUNG 554 €“"
+        },
+        {
+          "gesagt": "Vier und vier bekommen dreihundert zurück.",
+          "bild": "Blatt zeigt „IV/IV + 305,88 €“, rechter Zylinder steigt um 306 € (Zulauf), Chip „ERSTATTUNG 306 €“"
+        },
+        {
+          "gesagt": "Jetzt wird's knapp.",
+          "bild": "Vorsprung-Röhrchen sinkt auf 0, Zoom auf die Füllstände"
+        }
+      ]
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Endstand: III und V rund 55.986 Euro, IV und IV genauso viel. Unterschied: 0 Euro.",
+      "sprechtext": "Endstand:\nDrei und fünf: rund sechsundfünfzigtausend Euro,\nvier und vier: genauso viel.\nUnterschied: NULL Euro.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Endstand nach einem Jahr:",
+          "bild": "beide Zylinder auf gleicher Höhe, Kamera zieht zurück, Bilanzkarte baut sich auf"
+        },
+        {
+          "gesagt": "Drei und fünf – rund sechsundfünfzigtausend Euro.",
+          "bild": "Zeile III/V 55.986 €, Licht blau"
+        },
+        {
+          "gesagt": "Vier und vier – genauso viel.",
+          "bild": "Zeile IV/IV 55.986 €, Licht koralle"
+        },
+        {
+          "gesagt": "Unterschied: NULL Euro.",
+          "bild": "Zeile Unterschied 0 €, Glow auf beiden, Vorsprung-Röhrchen leer"
+        }
+      ]
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Die Steuerklasse bestimmt nur, wie viel vorab abgezogen wird. Die echte Steuer rechnet das Finanzamt für beide gemeinsam aus.",
+      "sprechtext": "[thoughtful] Warum?\nDie Steuerklasse bestimmt nur, wie viel VORAB abgezogen wird.\nDie echte Steuer rechnet das Finanzamt für beide gemeinsam aus.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Warum? Die Steuerklasse bestimmt nur, wie viel VORAB abgezogen wird.",
+          "bild": "Karte WARUM, Faktor 1 VORAB ABGEZOGEN: III/V 9.190 €, IV/IV 10.050 € (Balkenpaar)"
+        },
+        {
+          "gesagt": "Die echte Steuer rechnet das Finanzamt für beide gemeinsam aus.",
+          "bild": "Faktor 2 ECHTE STEUER: 9.744 € gemeinsam, beide Balken gleich lang"
+        }
+      ]
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "ueberraschung",
+      "text": "Und das Verrückte: Kommt ein Baby, zählt Saras Steuerklasse doch. Klasse V: 914 Euro Elterngeld im Monat. Klasse IV: 1.095 Euro. In einem Jahr: 2.171 Euro.",
+      "sprechtext": "Und das Verrückte:\nKommt ein Baby, zählt Saras Steuerklasse DOCH.\nKlasse fünf: gut neunhundert Euro Elterngeld im Monat,\nKlasse vier: fast elfhundert.\nIn einem Jahr: knapp zweitausendzweihundert Euro.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Und das Verrückte:",
+          "bild": "Zylinder leeren sich, Skala zoomt auf 1.200 € (Elterngeld pro Monat), Kamera neuer Winkel"
+        },
+        {
+          "gesagt": "Kommt ein Baby, zählt Saras Steuerklasse DOCH.",
+          "bild": "Nur Saras dünner Zulauf läuft, Chip „NUR SARAS KLASSE ZÄHLT“"
+        },
+        {
+          "gesagt": "Klasse fünf: gut neunhundert Euro Elterngeld im Monat.",
+          "bild": "linker Zylinder füllt sich bis 914,45 €, Tafel links, Chip „KLASSE V“"
+        },
+        {
+          "gesagt": "Klasse vier: fast elfhundert.",
+          "bild": "rechter Zylinder bis 1.095,36 €, Chip „KLASSE IV“, Vorsprung-Röhrchen zeigt 180,91 €"
+        },
+        {
+          "gesagt": "In einem Jahr: knapp zweitausendzweihundert Euro.",
+          "bild": "Monatszähler läuft 1 → 12, Röhrchen wächst auf 2.171 €, Chip „IN EINEM JAHR 2.171 €“"
+        }
+      ]
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Die Steuerklasse ändert nicht deine Steuer. Nur, wann du sie zahlst. Und manchmal dein Elterngeld.",
+      "sprechtext": "Die Steuerklasse ändert nicht deine Steuer.\nNur, WANN du sie zahlst.\nUnd manchmal dein Elterngeld.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Die Steuerklasse ändert nicht deine Steuer. Nur, WANN du sie zahlst. Und manchmal dein Elterngeld.",
+          "bild": "Kamera fährt zurück auf beide Zylinder, Typo „NUR *WANN*“ beim Wort, Werte gleiten auf 0"
+        }
+      ]
+    },
+    {
+      "id": "schluss",
+      "phase": "schluss",
+      "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+      "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+          "bild": "Zylinder leer, Tafel 0 €, Kamera = Anfangsbild (Schleife)"
+        }
+      ]
+    }
+  ],
+  "caption": "Steuerklasse 3/5 oder 4/4: Was bringt Ehepaaren mehr? 💶 Ich hab's durchgerechnet. Habt ihr schon mal nachgezahlt? 👇 #steuerklasse #steuern #elterngeld #wissen #simulation",
+  "quellen": [
+    "(F) Programmablaufplan Lohnsteuer 2026, BMF-Schreiben vom 12.11.2025 (umgesetzt in pipeline/sim/netto.mjs) – https://www.bundesfinanzministerium.de",
+    "(F) § 32a EStG Tarif 2026 (Grundfreibetrag 12.348 €), Splitting § 32a Abs. 5 EStG – https://www.gesetze-im-internet.de/estg/__32a.html",
+    "(F) § 46 Abs. 2 Nr. 3a EStG: Pflichtveranlagung, wenn ein Ehegatte nach Steuerklasse V besteuert wurde – https://www.gesetze-im-internet.de/estg/__46.html",
+    "(F) § 39b Abs. 2 Satz 5 Nr. 3 EStG Vorsorgepauschale (Teilbeträge a–e, Höchstbetrag 1.900 €) – https://www.gesetze-im-internet.de/estg/__39b.html",
+    "(F) § 2 BEEG: 67 %, ab 1.200 € sinkend bis 65 %, höchstens 1.800 € – https://www.gesetze-im-internet.de/beeg/__2.html",
+    "(F) § 2c BEEG: Einnahmen minus 1/12 Arbeitnehmer-Pauschbetrag, Abzugsmerkmale der Mehrheit der Monate – https://www.gesetze-im-internet.de/beeg/__2c.html",
+    "(F) § 2e BEEG: PAP vom 1. Januar des Vorjahres der Geburt, Steuerklasse und Faktor maßgeblich, Vorsorgepauschale a–c und e – https://www.gesetze-im-internet.de/beeg/__2e.html",
+    "(F) § 2f BEEG: Sozialabgaben-Pauschalen 9 % + 10 % + 2 % – https://www.gesetze-im-internet.de/beeg/__2f.html",
+    "(F) Stiftung Warentest, „Steuerklasse wechseln: Riesenplus beim Elterngeld“ (BSG-Urteil zur freien Steuerklassenwahl) – https://www.test.de/Bundessozialgericht-zum-Elterngeld-Freie-Steuerklassenwahl-1787445-0/",
+    "(F) Rechengrößen und Beitragssätze Sozialversicherung 2026 (BBG, RV 18,6 %, AV 2,6 %, KV 14,6 % + 2,9 %, PV 3,6 %) wie in pipeline/sim/netto.mjs belegt (Quellen dort und in projekte/gehalt-steuerfrei/skript.json)",
+    "(S) Eigene Modellrechnung, Node/PAP, 04.11.2026."
+  ],
+  "annahmen": [
+    "(A) Modellpaar Tom und Sara, verheiratet, Vollzeit, gesetzlich kranken- und rentenversichert, Zusatzbeitrag 2,9 % (Durchschnitt 2026), noch kinderlos (PV-Zuschlag 0,6 %), keine Kirchensteuer, Steuerjahr 2026, Bruttolöhne konstant.",
+    "(A) Einkommensteuer nach Zusammenveranlagung ohne weitere Werbungskosten, Sonderausgaben oder sonstige Einkünfte; abziehbare Vorsorge vereinfacht aus den Arbeitnehmerbeiträgen (S). Die Gleichheit des Jahresergebnisses gilt unabhängig von dieser Schätzung; nur die Höhe von Nachzahlung/Erstattung hängt daran.",
+    "(A) Elterngeld: Sara bezieht 12 Monate Basiselterngeld ohne Einkommen; ihre Steuerklasse gilt im ganzen Bemessungszeitraum (12 Monate vor dem Mutterschutz); Berechnung nach PAP 2026 (Geburt 2027). Ein Wechsel muss rechtzeitig erfolgen (Mehrheit der Monate im Bemessungszeitraum, § 2c Abs. 3 BEEG).",
+    "(A) Keine Steuer- oder Rechtsberatung; Modellfall."
+  ],
+  "rechenweg": "Lohnsteuer nach PAP 2026 (pipeline/sim/netto.mjs, cent-genau, getestet), Sozialabgaben 2026, beide kinderlos (PV +0,6 %), keine Kirchensteuer, Zusatzbeitrag 2,9 %. III/V: Tom (III) 3.221,09 € + Sara (V) 1.490,59 € = 4.711,68 €/Monat netto; Lohnsteuer 765,82 €/Monat. IV/IV: Tom 2.871,09 € + Sara 1.768,92 € = 4.640,01 €/Monat; Lohnsteuer 837,49 €/Monat. Differenz 71,67 €/Monat = 860,04 €/Jahr. Soli 0 €. Jahressteuer Zusammenveranlagung (Schätzung): Bruttolohn 84.000 € − 2 × 1.230 € Arbeitnehmer-Pauschbetrag − 2 × 36 € Sonderausgaben-Pauschbetrag − Vorsorgeaufwendungen 16.884 € (RV-AN 9,3 % = 7.812 €; KV-AN 8,75 % mit 4 % Kürzung wegen Krankengeld; PV-AN 2,4 %) = zvE 64.584 €; Splittingtarif 2026: 2 × tarif(32.292) = 9.744 €. Lohnsteuer im Jahr: III/V 9.189,84 € → Nachzahlung 554,16 €; IV/IV 10.049,88 € → Erstattung 305,88 €. Jahresnetto nach Bescheid: III/V 56.540,16 − 554,16 = 55.986,00 €; IV/IV 55.680,12 + 305,88 = 55.986,00 € → Unterschied 0 € (Gesetzmäßigkeit: Jahressteuer hängt nicht von der Steuerklasse ab, nur der Vorschuss). Elterngeld Sara (§§ 2, 2c, 2e, 2f BEEG, PAP des Vorjahres, Brutto 2.500 €): Einkommen = 2.500 − 1.230/12 − Lohnsteuer − 21 % × 2.500. Klasse V: Lohnsteuer 465,66 € → 1.406,84 € × 65 % = 914,45 €. Klasse IV: Lohnsteuer 187,33 € → 1.685,17 € × 65 % = 1.095,36 €. Differenz 180,91 €/Monat × 12 = 2.170,92 €. (Klasse III, nur intern: 1.217,13 €.) Nachgerechnet: cockpit/daten/tmp/rechnung_steuerklasse.mjs (Node, Funktionen aus pipeline/sim/netto.mjs).",
+  "zahlen": {
+    "brutto_tom": "4.500 €/Monat",
+    "brutto_sara": "2.500 €/Monat",
+    "netto_III_V": "4.711,68 €/Monat (Tom 3.221,09 / Sara 1.490,59)",
+    "netto_IV_IV": "4.640,01 €/Monat (Tom 2.871,09 / Sara 1.768,92)",
+    "vorsprung_monat": "71,67 €",
+    "vorsprung_jahr": "860,04 €",
+    "jahressteuer_splitting": "9.744 € (Schätzung)",
+    "nachzahlung_III_V": "554,16 €",
+    "erstattung_IV_IV": "305,88 €",
+    "jahresnetto_beide": "55.986,00 €",
+    "unterschied": "0 €",
+    "elterngeld_V": "914,45 €/Monat",
+    "elterngeld_IV": "1.095,36 €/Monat",
+    "elterngeld_diff_12_monate": "2.170,92 €"
+  },
+  "skript_quelle": "acc1-2026-11-05-abend",
+  "dramaturgie": [
+    "0 s: zwei Gehaltsrohre (Tom blau, Sara grün) speisen eine gemeinsame Monatskasse; Tafel ‚III/V‘ links, ‚IV/IV‘ rechts, Werte 0; Szene ab Bild 1 in Bewegung.",
+    "3–10 s: Regeln als Chips beim Wort (4.500 € brutto, 2.500 € brutto, kein Kind, keine Kirchensteuer).",
+    "ca. 11 s Denkfalle: Lichtkegel auf die III/V-Kasse.",
+    "12–20 s Rennen: Monat 1, Netto fließt, Zähler 4.711,68 € gegen 4.640,01 €, Chip ‚+71,67 €‘ leuchtet links auf; Monatszähler läuft.",
+    "ca. 20 s Folgen-Aufruf, Welt läuft weiter.",
+    "22–30 s Wendung 1: Monatszähler springt bis 12, linke Kasse +860 € höher; ein Brief/Bescheid schwebt ein, Licht kippt kühler (Spannung steigt).",
+    "30–37 s Wendung 2: aus der linken Kasse fließen 554 € ab (rot), in die rechte fließen 306 € zurück (grün); Kassen gleichen sich an, Zoom auf die Füllstände.",
+    "37–44 s Ergebnis (Höhepunkt): beide Füllstände exakt gleich, Bilanzkarte 55.986 € = 55.986 €, ‚0 €‘ leuchtet auf.",
+    "44–51 s Warum: Blaupause/Balken ‚Vorschuss (Steuerklasse)‘ gegen ‚echte Jahressteuer (gemeinsam)‘.",
+    "51–64 s Zweite Überraschung: neue Runde, Babywiege-Symbol (kein echtes Kind), Saras Rohr wird zum Elterngeld-Strom: 914 € gegen 1.095 € je Monat, 12-Monats-Zähler bis 2.171 €.",
+    "64–70 s Merksatz ruhig, Kamera fährt zurück auf die zwei Kassen; Schluss: Werte gleiten auf 0, letztes Bild = erstes Bild."
+  ],
+  "skript_aenderungen": [
+    "v2 (Länge, die erste Stimme hatte 85,7 s, Hook 5,6 s, Folgen-Aufruf erst bei 28,8 s): hook ohne „WIRKLICH“ und ohne Gedankenstrich; regeln „Noch“ gestrichen, Kommas statt Satzpunkt; falle Auslassungspunkte entfernt; rennen Kommas statt Satzpunkt; wendung2 „gut“ und „Jetzt wird's knapp.“ gestrichen (Untertitel „gut“ ebenso); ergebnis „nach einem Jahr“ gestrichen, Gedankenstriche zu Doppelpunkt/Komma; ueberraschung Kommas. Zahlen, Ergebnis, feste Sätze unverändert.",
+    "v3 (Folgen-Aufruf lag mit v2 bei 26,7 s, erlaubt sind 15–25 s; Gesamtlänge 80,9 s): gestrichen „Erster Monat.“ (Monat 1 steht als Zähler in der Tafel) und „Kein Kind, keine Kirchensteuer.“ (steht als Annahme-Chips im Bild, nicht gesprochen). Zahlen, Ergebnis, feste Sätze unverändert.",
+    "v3 technisch: Untertitel (`text`) von wendung2 und ergebnis dem Sprechtext angeglichen (gleiche Wörter an gleicher Stelle, nur Ziffern statt Zahlwörtern), damit Wort für Wort der Untertitel zur Stimme passt; Zahlen unverändert."
+  ]
+}

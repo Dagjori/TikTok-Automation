@@ -79,7 +79,7 @@ function skalaTextur(max, teilung, beschriftung) {
  * Messgefäß aus Glas mit Flüssigkeit (Teamfarbe), Skala, Bläschen und optionalem Zulauf-Strahl.
  * setze({ wert, t, zulauf }): wert in Einheiten (0 … max); Flüssigkeitshöhe = wert / max × Innenhöhe.
  */
-export function glasGefaess({ hoehe = 3.2, radius = 0.46, wand = 0.035, boden = 0.14, farbe = "#3D8BFF", max = 400, teilung = 25, beschriftung = 100, blasen = 120, seed = 1 } = {}) {
+export function glasGefaess({ hoehe = 3.2, radius = 0.46, wand = 0.035, boden = 0.14, farbe = "#3D8BFF", max = 400, teilung = 25, beschriftung = 100, blasen = 120, seed = 1, skalen = null, strahl2 = 0, ohneSkala = false, strahlHoehe = 1.6 } = {}) {
   const g = new THREE.Group();
   g.userData.dynamisch = true;
   const glas = glasMaterial({});
@@ -92,12 +92,16 @@ export function glasGefaess({ hoehe = 3.2, radius = 0.46, wand = 0.035, boden = 
   const lippe = new THREE.Mesh(new THREE.TorusGeometry(radius, wand * 0.7, 10, 72), glasMaterial({ kante: 0.8, streif: 0.8, grund: 0.12 }));
   lippe.rotation.x = Math.PI / 2; lippe.position.y = hoehe; lippe.renderOrder = 9;
   g.add(aussen, innen, fuss, lippe);
-  // Skala vorn (Halbzylinder-Band), leicht leuchtend
-  const skala = new THREE.Mesh(new THREE.CylinderGeometry(radius + 0.004, radius + 0.004, hoehe - boden - 0.2, 48, 1, true, -Math.PI * 0.18, Math.PI * 0.36),
-    new THREE.MeshBasicMaterial({ map: skalaTextur(max, teilung, beschriftung), color: new THREE.Color("#DDE6F2").multiplyScalar(1.3), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
-  skala.position.y = boden + (hoehe - boden - 0.2) / 2 + 0.02;
-  skala.rotation.y = 0.35; skala.renderOrder = 10;
-  g.add(skala);
+  // Skala vorn (Halbzylinder-Band), leicht leuchtend. skalen: mehrere Skalen zum Überblenden (setze({ skala: Index als Kommazahl, maxWert }))
+  const skalaListe = skalen || [{ max, teilung, beschriftung }];
+  const skalaMeshes = ohneSkala ? [] : skalaListe.map((sk) => {
+    const m = new THREE.Mesh(new THREE.CylinderGeometry(radius + 0.004, radius + 0.004, hoehe - boden - 0.2, 48, 1, true, -Math.PI * 0.18, Math.PI * 0.36),
+      new THREE.MeshBasicMaterial({ map: skalaTextur(sk.max, sk.teilung, sk.beschriftung), color: new THREE.Color("#DDE6F2").multiplyScalar(1.3), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+    m.position.y = boden + (hoehe - boden - 0.2) / 2 + 0.02;
+    m.rotation.y = 0.35; m.renderOrder = 10;
+    g.add(m);
+    return m;
+  });
   // Flüssigkeit (Einheitshöhe 1, wird skaliert), Oberfläche mit Meniskus-Glanz
   const fl = new THREE.Mesh(new THREE.CylinderGeometry(radius - wand - 0.004, radius - wand - 0.004, 1, 64, 1, false), fluessigMaterial(farbe));
   fl.geometry.translate(0, 0.5, 0);
@@ -127,18 +131,29 @@ export function glasGefaess({ hoehe = 3.2, radius = 0.46, wand = 0.035, boden = 
   const strahlMat = fluessigMaterial(farbe);
   const strahl = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.03, 1, 16, 1, true), strahlMat);
   strahl.geometry.translate(0, -0.5, 0);
-  strahl.position.y = hoehe + 1.6;
+  strahl.position.y = hoehe + strahlHoehe;
   g.add(strahl);
+  let strahlB = null;
+  if (strahl2 > 0) {
+    strahlB = new THREE.Mesh(new THREE.CylinderGeometry(strahl2, strahl2 * 0.85, 1, 16, 1, true), fluessigMaterial(farbe));
+    strahlB.geometry.translate(0, -0.5, 0);
+    strahlB.position.set(radius * 0.38, hoehe + strahlHoehe, 0);
+    strahl.position.x = -radius * 0.2;
+    g.add(strahlB);
+  }
   const innenHoehe = hoehe - boden - 0.05;
-  g.setze = ({ wert = 0, t = 0, zulauf = false } = {}) => {
-    const h = Math.max(0.0001, Math.min(1, wert / max)) * innenHoehe;
+  g.setze = ({ wert = 0, t = 0, zulauf = false, zulauf2 = zulauf, maxWert = max, skala = null } = {}) => {
+    const h = Math.max(0.0001, Math.min(1, wert / maxWert)) * innenHoehe;
+    if (skala !== null) skalaMeshes.forEach((m, i) => { const w = Math.max(0, 1 - 2 * Math.abs(skala - i)); m.visible = w > 0.01; m.material.color.set("#DDE6F2").multiplyScalar(1.3 * w); });
     fl.scale.y = h; fl.visible = wert > 0.01;
     meniskus.position.y = boden + h; meniskus.visible = fl.visible;
     bm.uniforms.spiegel.value = fl.visible ? h : 0;
     strahl.visible = zulauf;
-    if (zulauf) strahl.scale.y = hoehe + 1.6 - (boden + h);
+    if (zulauf) strahl.scale.y = hoehe + strahlHoehe - (boden + h);
+    if (strahlB) { strahlB.visible = zulauf2; if (zulauf2) strahlB.scale.y = hoehe + strahlHoehe - (boden + h); }
   };
-  g.fluessigHoehe = (wert) => boden + Math.min(1, wert / max) * innenHoehe;
+  g.fluessigHoehe = (wert, maxWert = max) => boden + Math.min(1, wert / maxWert) * innenHoehe;
+  g.skalaMeshes = skalaMeshes;
   g.setze({ wert: 0 });
   return g;
 }

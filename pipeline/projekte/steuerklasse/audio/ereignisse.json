@@ -1,0 +1,1464 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "steuerklasse",
+ "fps": 30,
+ "dauer": 79.63333333333334,
+ "stimmEnde": 79.126,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "wasser",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "III/V",
+    "farbe": "#3D8BFF"
+   },
+   "b": {
+    "name": "IV/IV",
+    "farbe": "#FF5A5F"
+   }
+  },
+  "schleife": {
+   "ab": 69.52,
+   "ende": 79.59266666666667
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 79.593,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 4.034012235365481e-9
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Szene",
+   "t": 0.5,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder leuchten auf"
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.8,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KLASSE III + V"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.8,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.08,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 2.64,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KLASSE IV + IV"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.2,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.888,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.05,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.05,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.2,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.6,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KEIN KIND · KEINE KIRCHENSTEUER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.2,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.52,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.92,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "TOM 4.500 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.92,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.04,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.32,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SARA 2.500 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.77,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.77,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.92,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 14.12,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.28,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 15.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 15.7,
+   "typ": "zaehler",
+   "dauer": 2.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.73,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "linker Zylinder füllt sich"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 15.733,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.427,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.093,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 17.92,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "III + V VORN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.92,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 18.72,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.2,
+   "typ": "zaehler",
+   "dauer": 2.467,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.22,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "rechter Zylinder füllt sich"
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.99,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.65,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+ 71,67 € PRO MONAT"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.65,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.65,
+   "typ": "zaehler",
+   "dauer": 1.5,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.65,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.65,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Vorsprung-Röhrchen füllt sich"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.88,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 23.84,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.84,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.48,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.88,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.08,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.38,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Skala zoomt von 5.000 auf 60.000 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.64,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.067,
+   "typ": "zaehler",
+   "dauer": 1.667,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.067,
+   "typ": "zaehler",
+   "dauer": 1.667,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 27.083,
+   "typ": "zaehler",
+   "dauer": 1.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.09,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "Monate laufen 1 bis 12"
+  },
+  {
+   "quelle": "Chip",
+   "t": 27.28,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+ 860,04 € IM JAHR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.28,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 27.38,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.667,
+   "typ": "uhr",
+   "dauer": 0.6,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.72,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 29.32,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.52,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Bescheid",
+   "t": 31.12,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "Bescheid-Zeile"
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.12,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.88,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 34.117,
+   "typ": "zaehler",
+   "dauer": 1.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.133,
+   "typ": "zaehler",
+   "dauer": 1.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.14,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Nachzahlung: Funken steigen auf"
+  },
+  {
+   "quelle": "Bescheid",
+   "t": 34.24,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "Bescheid-Zeile"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.24,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.2,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.12,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.2,
+   "typ": "zaehler",
+   "dauer": 1.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 37.217,
+   "typ": "zaehler",
+   "dauer": 1.343,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.22,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "Erstattung läuft in IV/IV"
+  },
+  {
+   "quelle": "Bescheid",
+   "t": 37.6,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "Bescheid-Zeile"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.96,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.96,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zieht zurück"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.88,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 41.12,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "III/V"
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.12,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.04,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 44,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "IV/IV"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.04,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 46.08,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "UNTERSCHIED"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 46.08,
+   "art": "zoom",
+   "dauer": 2.1,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.08,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.08,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Unterschied 0 €, Röhrchen leer"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 48,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Balken",
+   "t": 48.88,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "VORAB ABGEZOGEN IM JAHR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.24,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.8,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.08,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Balken",
+   "t": 52.24,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "ECHTE STEUER, GEMEINSAM"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.24,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.56,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.28,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.88,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.88,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zylinder leeren sich, Skala 1.200 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 55.9,
+   "typ": "zaehler",
+   "dauer": 1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 55.9,
+   "typ": "zaehler",
+   "dauer": 1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 55.9,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 56.1,
+   "typ": "uhr",
+   "dauer": 0.633,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.12,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 58.36,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "NUR SARAS KLASSE ZÄHLT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.36,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 60.17,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.32,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 60.72,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KLASSE V"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 61.1,
+   "typ": "zaehler",
+   "dauer": 1.167,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.1,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "linker Zylinder: Elterngeld Klasse V"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 61.133,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.16,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.48,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.2,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 63.88,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.88,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 64.24,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KLASSE IV"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.24,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 64.6,
+   "typ": "zaehler",
+   "dauer": 1.5,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.603,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "rechter Zylinder: Elterngeld Klasse IV"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.853,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 65.68,
+   "typ": "zaehler",
+   "dauer": 0.7,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 65.7,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 65.97,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 65.97,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.12,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.56,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 66.747,
+   "typ": "zaehler",
+   "dauer": 1.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.76,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "zwölf Monate, Röhrchen wächst auf 2.171 €"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 66.78,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Chip",
+   "t": 67.08,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "IN EINEM JAHR + 2.171 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.08,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.533,
+   "typ": "uhr",
+   "dauer": 0.333,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.967,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 68.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 68.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 68.633,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 69.27,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 69.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 69.52,
+   "art": "schleife",
+   "dauer": 10.08,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.52,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "t": 69.52,
+   "typ": "schleife",
+   "dauer": 10.073,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 69.533,
+   "typ": "zaehler",
+   "dauer": 10.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 69.533,
+   "typ": "zaehler",
+   "dauer": 10.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.8,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.36,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 72.16,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "NUR WANN"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 72.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.2,
+   "typ": "welt",
+   "klang": false,
+   "text": "Röhrchen leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73.9,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 74.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 74.24,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 74.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 74.833,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 74.96,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 75.567,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 76.08,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.8,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 77.12,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "linker Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 77.8,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 78.36,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "rechter Zylinder leuchtet"
+  }
+ ],
+ "klang": []
+}
