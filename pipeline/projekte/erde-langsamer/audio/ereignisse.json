@@ -107,7 +107,7 @@
    "typ": "effekt",
    "name": "pelikane_ziehen",
    "dauer": 0,
-   "staerke": 0.25,
+   "staerke": 0.1,
    "klang": "fluegel"
   },
   {
@@ -140,7 +140,7 @@
    "typ": "effekt",
    "name": "brandung_rollt",
    "dauer": 3,
-   "staerke": 0.3,
+   "staerke": 0.12,
    "klang": "gischt"
   },
   {
@@ -206,7 +206,7 @@
    "typ": "effekt",
    "name": "zeitraffer_setzt_ein",
    "dauer": 3,
-   "staerke": 0.4,
+   "staerke": 0.1,
    "klang": "windstoss"
   },
   {
@@ -1757,7 +1757,7 @@
    "typ": "effekt",
    "name": "sonne_leuchtet_auf",
    "dauer": 0,
-   "staerke": 0.55,
+   "staerke": 1,
    "klang": "druckwelle"
   },
   {

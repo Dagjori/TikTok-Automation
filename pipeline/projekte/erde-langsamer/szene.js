@@ -151,12 +151,12 @@ async function start() {
 
   // ---------------------------------------------------------------- Protokoll
   const prot = new Protokoll();
-  prot.effekt(1.0, "sonnenaufgang", { klang: false }).effekt(2.4, "pelikane_ziehen", { klang: "fluegel", staerke: 0.25 }).effekt(3.2, "brandung_rollt", { klang: "gischt", staerke: 0.3, dauer: 3 })
-    .effekt(5.4, "zeitraffer_setzt_ein", { klang: "windstoss", staerke: 0.4, dauer: 3 }).effekt(9.0, "lichtspur", { klang: false }).effekt(13.5, "wasserlinie_weicht", { klang: "zischen", staerke: 0.3, dauer: 4 })
+  prot.effekt(1.0, "sonnenaufgang", { klang: false }).effekt(2.4, "pelikane_ziehen", { klang: "fluegel", staerke: 0.1 }).effekt(3.2, "brandung_rollt", { klang: "gischt", staerke: 0.12, dauer: 3 })
+    .effekt(5.4, "zeitraffer_setzt_ein", { klang: "windstoss", staerke: 0.1, dauer: 3 }).effekt(9.0, "lichtspur", { klang: false }).effekt(13.5, "wasserlinie_weicht", { klang: "zischen", staerke: 0.3, dauer: 4 })
     .effekt(17.4, "nasser_sand_glaenzt", { klang: false }).effekt(21.2, "felsen_tauchen_auf", { klang: "gischt", staerke: 0.4, dauer: 4 }).effekt(24.0, "sandbaenke", { klang: false })
     .effekt(26.0, "stroemung_nord_sued", { klang: "gischt", staerke: 0.3, dauer: 4 }).effekt(29.0, "tuempel_bleiben", { klang: false }).effekt(38.4, "kueste_zum_horizont", { klang: false })
     .effekt(43.0, "voegel_ziehen_dem_wasser_nach", { klang: "fluegel", staerke: 0.6 }).effekt(48.0, "lichtspur_zerfaellt", { klang: "zischen", staerke: 0.3, dauer: 3 })
-    .effekt(T_STILL, "sonne_steht_still", { klang: "grollen", staerke: 0.5, dauer: 4 }).effekt(T_HIER, "sonne_leuchtet_auf", { klang: "druckwelle", staerke: 0.55 })
+    .effekt(T_STILL, "sonne_steht_still", { klang: "grollen", staerke: 0.5, dauer: 4 }).effekt(T_HIER, "sonne_leuchtet_auf", { klang: "druckwelle", staerke: 1.0 })
     .effekt(60.4, "lichtwelle_ueber_den_boden", { klang: "windstoss", staerke: 0.6, dauer: 4 }).effekt(63.0, "staubfahnen_ueber_dem_boden", { klang: false }).effekt(65.0, "sterne", { klang: false });
   prot.melde({ t: 0, typ: "kamera", art: "zoom", dauer: 7, von: 62, bis: 46, text: "Zoom von der Brandung auf die Seestapel", klang: false })
     .melde({ t: 18, typ: "kamera", art: "schwenk", dauer: 9, text: "Schwenk nach links über die auftauchenden Sandbänke", klang: false })
