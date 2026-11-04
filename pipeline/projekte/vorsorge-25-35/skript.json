@@ -13,32 +13,32 @@
     {
       "id": "hook",
       "phase": "hook",
-      "text": "Hundert Euro ab 25 oder 150 ab 35? Wer hat mit 67 mehr?",
-      "sprechtext": "Hundert Euro ab fünfundzwanzig – oder hundertfünfzig ab fünfunddreißig?\n[curious] Wer hat mit siebenundsechzig MEHR?",
+      "text": "Früh wenig sparen oder spät mehr? Wer hat mit 67 mehr?",
+      "sprechtext": "Früh WENIG sparen – oder spät mehr?\n[curious] Wer hat mit siebenundsechzig MEHR?",
       "bild_text_abgleich": [
         {
-          "gesagt": "Hundert Euro ab fünfundzwanzig – oder hundertfünfzig ab fünfunddreißig?",
-          "bild": "Lebensuhr (Ring mit 42 Stationen, 25 bis 67) auf dem Drehteller, zwei Sockel mit Münzturm-Plätzen, Tafel 0 € / 0 € ab Bild 0; Kamera fährt langsam ein, beide LED-Kanten leuchten bei „hundert“ und „hundertfünfzig“ auf"
+          "gesagt": "Früh WENIG sparen – oder spät mehr?",
+          "bild": "Lebensuhr (Ring mit 42 Stationen) auf dem Drehteller, zwei Sockel, Tafel 0 € / 0 € ab Bild 0, Kamera fährt langsam ein; Lenas LED-Kante (Türkis) leuchtet bei „Früh wenig“, Mias LED-Kante (Orange) bei „spät mehr“, keine Beträge"
         },
         {
           "gesagt": "Wer hat mit siebenundsechzig MEHR?",
-          "bild": "Ring-Ende (67) leuchtet auf, Licht wandert zwischen den Sockeln"
+          "bild": "Ring-Ende (67) leuchtet auf, Zeiger leuchtet, Licht wandert zwischen den Sockeln"
         }
       ]
     },
     {
       "id": "regeln",
       "phase": "regeln",
-      "text": "Lena spart ab 25 jeden Monat. Mia startet 10 Jahre später, mit mehr Geld. Annahme: 5 Prozent Rendite im Jahr.",
-      "sprechtext": "Lena spart ab fünfundzwanzig jeden Monat.\nMia startet zehn Jahre später – mit mehr Geld.\nAnnahme: fünf Prozent Rendite im Jahr.",
+      "text": "Lena spart ab 25 jeden Monat 100 Euro. Mia startet 10 Jahre später, mit 150 Euro. Annahme: 5 Prozent Rendite im Jahr.",
+      "sprechtext": "Lena spart ab fünfundzwanzig hundert Euro im Monat.\nMia startet zehn Jahre später – mit hundertfünfzig.\nAnnahme: fünf Prozent Rendite im Jahr.",
       "bild_text_abgleich": [
         {
-          "gesagt": "Lena spart ab fünfundzwanzig jeden Monat.",
-          "bild": "Licht auf Lenas Sockel (links, Türkis), Chip „100 € / Monat · ab 25“, erste Münze fällt"
+          "gesagt": "Lena spart ab fünfundzwanzig hundert Euro im Monat.",
+          "bild": "Licht auf Lenas Sockel (links, Türkis), Startmarke 25 und Chip „AB 25“ bei „fünfundzwanzig“, Chip „100 € / MONAT“ bei „hundert“"
         },
         {
-          "gesagt": "Mia startet zehn Jahre später – mit mehr Geld.",
-          "bild": "Licht wandert auf Mias Sockel (rechts, Orange), Chip „150 € / Monat · ab 35“, Mias Sockel bleibt noch ohne Münzen"
+          "gesagt": "Mia startet zehn Jahre später – mit hundertfünfzig.",
+          "bild": "Licht wandert auf Mias Sockel (rechts, Orange), Chip „AB 35“ bei „zehn Jahre“, Chip „150 € / MONAT“ bei „hundertfünfzig“, Startmarke 35"
         },
         {
           "gesagt": "Annahme: fünf Prozent Rendite im Jahr.",
@@ -85,20 +85,20 @@
     {
       "id": "wendung1",
       "phase": "wendung1",
-      "text": "Doch Mia spart schneller. Mit 55 haben beide gleich viel eingezahlt. Aber auf dem Konto? Lena 81.870, Mia 61.119 Euro.",
-      "sprechtext": "Doch Mia spart schneller.\nMit fünfundfünfzig haben beide GLEICH viel eingezahlt.\nAber auf dem Konto?\nLena knapp zweiundachtzigtausend, Mia gut einundsechzigtausend.",
+      "text": "Doch Mia spart schneller. Mit 55 haben beide gleich viel eingezahlt. Auf dem Konto: Lena 81.870, Mia 61.119 Euro.",
+      "sprechtext": "Doch Mia spart schneller.\nMit fünfundfünfzig haben beide GLEICH viel eingezahlt.\nAuf dem Konto: Lena knapp zweiundachtzigtausend, Mia gut einundsechzigtausend.",
       "bild_text_abgleich": [
         {
           "gesagt": "Doch Mia spart schneller.",
-          "bild": "Uhr 35 → 55, Mias Turm wächst schneller, Mia-Münzen fallen, Ring leuchtet weiter"
+          "bild": "Uhr 35 → 55, Mias Turm wächst schneller, Tafel hält noch 15.499 € / 0 €"
         },
         {
           "gesagt": "Mit fünfundfünfzig haben beide GLEICH viel eingezahlt.",
           "bild": "Zwei Zähler „EINGEZAHLT“ links/rechts laufen hoch und stehen bei 36.000 € / 36.000 €, beide leuchten gleichzeitig auf (Uhr 55)"
         },
         {
-          "gesagt": "Aber auf dem Konto? Lena knapp zweiundachtzigtausend, Mia gut einundsechzigtausend.",
-          "bild": "Zoom auf die ungleichen Türme, Tafel Lena 81.870 €, Mia 61.119 €, Lücke-Linie zwischen den Türmen"
+          "gesagt": "Auf dem Konto: Lena knapp zweiundachtzigtausend, Mia gut einundsechzigtausend.",
+          "bild": "Erst bei „Auf dem Konto“ rollt die Tafel hoch auf Lena 81.870 €, Mia 61.119 €, Zoom auf die ungleichen Türme, Lücke-Linie"
         }
       ]
     },
@@ -106,7 +106,7 @@
       "id": "wendung2",
       "phase": "wendung2",
       "text": "Ab jetzt zahlt Mia mehr ein. Und der Abstand wächst trotzdem. Mit 60: 23.080 Euro.",
-      "sprechtext": "Ab jetzt zahlt Mia mehr ein.\nUnd der Abstand … WÄCHST trotzdem.\nMit sechzig: dreiundzwanzigtausend.",
+      "sprechtext": "Ab jetzt zahlt Mia mehr ein.\nUnd der Abstand WÄCHST trotzdem.\nMit sechzig: dreiundzwanzigtausend.",
       "bild_text_abgleich": [
         {
           "gesagt": "Ab jetzt zahlt Mia mehr ein.",
@@ -153,12 +153,12 @@
     {
       "id": "warum",
       "phase": "warum",
-      "text": "Warum? Lenas Zinsen haben 10 Jahre länger Zeit, selbst Zinsen zu bringen. Bei 3 Prozent Rendite blieben nur 3.986 Euro Vorsprung.",
-      "sprechtext": "[thoughtful] Warum?\nLenas Zinsen haben zehn Jahre länger Zeit, selbst Zinsen zu bringen.\nBei drei Prozent Rendite blieben nur viertausend Euro Vorsprung.",
+      "text": "Warum? Lenas Zinsen bringen 10 Jahre länger neue Zinsen. Bei 3 Prozent Rendite blieben nur 3.986 Euro Vorsprung.",
+      "sprechtext": "[thoughtful] Warum?\nLenas Zinsen bringen zehn Jahre länger neue Zinsen.\nBei drei Prozent Rendite blieben nur viertausend Euro Vorsprung.",
       "bild_text_abgleich": [
         {
-          "gesagt": "Warum? Lenas Zinsen haben zehn Jahre länger Zeit, selbst Zinsen zu bringen.",
-          "bild": "Karte „WARUM?“: Säulen Einzahlungen gegen Zinsen für beide, Lenas Zinsen-Säule höher"
+          "gesagt": "Warum? Lenas Zinsen bringen zehn Jahre länger neue Zinsen.",
+          "bild": "Karte „WARUM?“: Säulen Einzahlungen gegen Zinsen für beide, Lenas Zinsen-Säule höher (Mias Reihe bei „zehn Jahre“)"
         },
         {
           "gesagt": "Bei drei Prozent Rendite blieben nur viertausend Euro Vorsprung.",
@@ -169,19 +169,19 @@
     {
       "id": "ueberraschung",
       "phase": "ueberraschung",
-      "text": "Und das Verrückte: Hört Lena mit 35 auf, nach nur 12.000 Euro, hat sie mit 67 trotzdem 73.853 Euro.",
-      "sprechtext": "Und das Verrückte:\nHört Lena mit fünfunddreißig AUF,\nnach nur zwölftausend Euro,\nhat sie mit siebenundsechzig trotzdem fast vierundsiebzigtausend.",
+      "text": "Und das Verrückte: Hört Lena mit 35 auf, nach 12.000 Euro, hat sie mit 67 trotzdem 73.853 Euro.",
+      "sprechtext": "Und das Verrückte:\nHört Lena mit fünfunddreißig AUF,\nnach zwölftausend Euro,\nhat sie am Ende trotzdem fast vierundsiebzigtausend.",
       "bild_text_abgleich": [
         {
           "gesagt": "Und das Verrückte: Hört Lena mit fünfunddreißig AUF …",
           "bild": "Neue Runde bei 5 %: Mias Turm sinkt weg, Lenas Turm steht bei 35 (15.499 €), Zufluss stoppt"
         },
         {
-          "gesagt": "nach nur zwölftausend Euro …",
+          "gesagt": "nach zwölftausend Euro …",
           "bild": "Chip „EINGEZAHLT 12.000 €“"
         },
         {
-          "gesagt": "hat sie mit siebenundsechzig trotzdem fast vierundsiebzigtausend.",
+          "gesagt": "hat sie am Ende trotzdem fast vierundsiebzigtausend.",
           "bild": "Lenas Turm wächst allein 35 → 67 auf 73.853 €, Ring leuchtet bis 67"
         }
       ]
@@ -260,7 +260,8 @@
     "66–72 s Merksatz ruhig, Kamera auf die Lebensuhr; Schluss: Werte gleiten auf 0 zurück, letztes Bild = erstes Bild."
   ],
   "skript_aenderungen": [
-    "Kürzungen gegen die Länge (Stimme mit 185 Wörtern: 84,3 s, Grenze 80 s; Folgen-Aufruf erst bei 25,3 s): entfernt „Also hat sie mehr.“ (falle), „mit siebenundsechzig“ im Endstand-Satz (das Alter 67 steht auf der Uhr und im Hook), „hat“ → „Lena: gut …“ (ergebnis); Auslassungspunkte in der Überraschung durch Kommas ersetzt (Satzpausen). Zahlen und Ergebnis unverändert."
+    "Kürzungen gegen die Länge (Stimme mit 185 Wörtern: 84,3 s, Grenze 80 s; Folgen-Aufruf erst bei 25,3 s): entfernt „Also hat sie mehr.“ (falle), „mit siebenundsechzig“ im Endstand-Satz (das Alter 67 steht auf der Uhr und im Hook), „hat“ → „Lena: gut …“ (ergebnis); Auslassungspunkte in der Überraschung durch Kommas ersetzt (Satzpausen). Zahlen und Ergebnis unverändert.",
+    "Nachbesserung 2 (04.11. abends, Hauptsitzung): Hook ohne Beträge (Beträge in den Regeln), Füllwörter gekürzt; Zahlen unverändert; Grund: Länge 83,8 s und Hook 7,1 s."
   ],
   "lern_notizen": {
     "thema": "Vorsorge: 100 €/Monat ab 25 gegen 150 €/Monat ab 35 bis 67 (Modellrendite 5 %)",

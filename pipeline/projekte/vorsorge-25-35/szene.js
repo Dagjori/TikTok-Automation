@@ -148,7 +148,7 @@ async function start() {
   const tJetzt = T("wendung2:Ab"), t60 = T("wendung2:60"), tEnd = T("ergebnis:Endstand"), t67 = T("ergebnis:166.640");
   const tWarum = T("warum:Warum"), tDrei = T("warum:3"), tBlieb = T("warum:blieben"), tAbst3 = T("warum:3.986");
   const tUeb = T("ueberraschung:Und"), tHoert = T("ueberraschung:Hört"), t35b = T("ueberraschung:35") + 0.1, tHat = T("ueberraschung:hat"), tEnd2 = T("ueberraschung:73.853");
-  const tMerk = T("merksatz:Mia");
+  const tMerk = T("merksatz:Mia"), tKonto = T("wendung1:Konto");
   const alterKeys = [
     { t: 0, v: 25 }, { t: tOder, v: 25 },
     { t: t35, v: 35, e: ease.inOutSine },                 // Rennen: 25 → 35, nur Lenas Turm wächst
@@ -166,7 +166,7 @@ async function start() {
 
   // Zustand der Welt (nur Zahlen; die Schleife lässt alles weich zum Anfangszustand zurückgleiten)
   // Zusätzliche sanfte Lichtpulse der Lebensuhr in längeren Pausen (Wortzeiten, damit nie > 2 s ohne neue Information)
-  const FUELL = [9.2, 14.8, 27.4, 30.8, 34.4, 36.3, 47.9, 53.2, 59.4, 61.5, 63.4, 74.0, 79.6];
+  const FUELL = [7.6, 10.9, 12.1, 14.8, 17.5, 22.6, 24.9, 26.3, 32.8, 37.2, 39.9, 41.7, 45.5, 48.4, 51.6, 53.4, 58.5, 65.8, 71.0, 74.6, 76.4, 78.9];
   const zustandRoh = (t) => {
     const aH = alterHaupt(t);
     // Rendite: 5 % (Annahme), in „Warum“ kurz 3 %, danach wieder 5 %
@@ -182,12 +182,12 @@ async function start() {
     return {
       alter: ring, lena, mia, einL, einM, p,
       blitz: 0.6 * blitzF(t, t35) + 0.6 * blitzF(t, t55) + 0.8 * blitzF(t, t67) + 0.5 * blitzF(t, tHoert + 0.2) + 0.6 * blitzF(t, tEnd2),
-      ledL: 1 + 1.0 * puls(t, 0.5, 0.9) + 1.2 * puls(t, T("hook:Hundert"), 0.9) + 1.3 * puls(t, T("regeln:Lena")) + 1.0 * puls(t, T("regeln:25")) + 1.0 * puls(t, T("rennen:Lena")) + 1.4 * puls(t, T("rennen:15.499"), 0.9) + 1.4 * puls(t, T("wendung1:Lena"), 0.9) + 1.6 * puls(t, T("ergebnis:166.640"), 1.0) + 2.2 * puls(t, T("ergebnis:27.459"), 1.2) + 1.2 * puls(t, T("ergebnis:weniger"), 0.8) + 1.0 * puls(t, T("warum:Warum"), 0.8) + 1.0 * puls(t, T("warum:Lenas")) + 1.2 * puls(t, T("ueberraschung:Hört")) + 1.6 * puls(t, tEnd2, 1.0) + 1.0 * puls(t, T("merksatz:Lena"), 0.9),
-      ledR: 1 + 1.0 * puls(t, 0.5, 0.9) + 1.2 * puls(t, T("hook:35"), 0.9) + 1.2 * puls(t, T("hook:150"), 0.9) + 1.3 * puls(t, T("regeln:Mia")) + 1.0 * puls(t, T("regeln:mehr")) + 1.4 * puls(t, T("falle:Mia")) + 1.2 * puls(t, T("rennen:Mia")) + 1.4 * puls(t, T("wendung1:Mia"), 0.9) + 1.0 * puls(t, T("wendung1:Mia#2")) + 1.2 * puls(t, T("wendung2:Mia")) + 1.6 * puls(t, T("ergebnis:139.181"), 1.0) + 1.2 * puls(t, T("ergebnis:eingezahlt"), 0.8) + 1.0 * puls(t, T("warum:Warum") + 0.4, 0.8) + 1.0 * puls(t, T("warum:Zeit")) + 1.0 * puls(t, T("merksatz:Mia")),
+      ledL: 1 + 1.0 * puls(t, 0.5, 0.9) + 1.2 * puls(t, T("hook:Früh"), 0.9) + 1.0 * puls(t, T("hook:wenig"), 0.9) + 1.3 * puls(t, T("regeln:Lena")) + 1.0 * puls(t, T("regeln:25")) + 1.0 * puls(t, T("rennen:Lena")) + 1.4 * puls(t, T("rennen:15.499"), 0.9) + 1.4 * puls(t, T("wendung1:Lena"), 0.9) + 1.6 * puls(t, T("ergebnis:166.640"), 1.0) + 2.2 * puls(t, T("ergebnis:27.459"), 1.2) + 1.2 * puls(t, T("ergebnis:weniger"), 0.8) + 1.0 * puls(t, T("warum:Warum"), 0.8) + 1.0 * puls(t, T("warum:Lenas")) + 1.2 * puls(t, T("ueberraschung:Hört")) + 1.6 * puls(t, tEnd2, 1.0) + 1.0 * puls(t, T("merksatz:Lena"), 0.9),
+      ledR: 1 + 1.0 * puls(t, 0.5, 0.9) + 1.2 * puls(t, T("hook:spät"), 0.9) + 1.2 * puls(t, T("hook:mehr"), 0.9) + 1.3 * puls(t, T("regeln:Mia")) + 1.0 * puls(t, T("regeln:150")) + 1.4 * puls(t, T("falle:Mia")) + 1.2 * puls(t, T("rennen:Mia")) + 1.4 * puls(t, T("wendung1:Mia"), 0.9) + 1.0 * puls(t, T("wendung1:Mia#2")) + 1.2 * puls(t, T("wendung2:Mia")) + 1.6 * puls(t, T("ergebnis:139.181"), 1.0) + 1.2 * puls(t, T("ergebnis:eingezahlt"), 0.8) + 1.0 * puls(t, T("warum:Warum") + 0.4, 0.8) + 1.0 * puls(t, T("warum:Jahre")) + 1.0 * puls(t, T("merksatz:Mia")),
       ledU: 1 + FUELL.reduce((a, f) => a + 1.0 * puls(t, f, 0.9), 0) + 1.2 * puls(t, T("ergebnis:Euro#2"), 0.9) + 1.2 * puls(t, T("ergebnis:Lena#2"), 0.9) + 1.2 * puls(t, T("hook:Wer"), 0.9) + 1.2 * puls(t, T("hook:hat") + 0.4, 0.9) + 1.2 * puls(t, T("hook:oder"), 0.9) + 1.2 * puls(t, T("hook:67"), 0.9) + 1.0 * puls(t, T("falle:Oder"), 1.0) + 1.0 * puls(t, t35, 0.9) + 1.2 * puls(t, t55, 1.0) + 1.0 * puls(t, t60, 0.9) + 1.4 * puls(t, t67, 1.0) + 1.0 * puls(t, tHat, 0.9) + 1.4 * puls(t, tEnd2, 1.0) + 1.0 * puls(t, T("merksatz:Zeit"), 1.0),
       spotU: 0.5 + 0.9 * regelnMitte + 0.7 * fenster(t, tOder - 1.2, tOder + 1.4) + 0.5 * fenster(t, t55 - 0.8, t55 + 1.6) + 0.7 * fenster(t, t67 - 1.5, t67 + 1.5) + 0.8 * fenster(t, tHat - 0.4, tEnd2 + 1.0) + 0.8 * fenster(t, tMerk - 0.3, tMerk + 4.4, 0.5, 1.0),
-      spotL: 0.5 + 1.1 * fenster(t, T("regeln:Lena") - 0.2, T("regeln:Mia") - 0.1, 0.4, 0.5) + 0.6 * fenster(t, t35 - 1.8, t35 + 1.2) + 0.9 * fenster(t, T("wendung1:Lena") - 0.3, T("wendung1:Mia#2") - 0.1) + 1.2 * fenster(t, T("ergebnis:Lena"), T("ergebnis:Mia") - 0.1, 0.5, 0.5) + 1.4 * fenster(t, T("ergebnis:Lena#2") - 0.3, T("ergebnis:Und") - 0.1, 0.4, 0.8) + 1.0 * fenster(t, T("warum:Lenas") - 0.2, T("warum:Zeit"), 0.4, 0.5) + 1.1 * fenster(t, tHoert - 0.3, tEnd2 + 1.6, 0.5, 1.0),
-      spotR: 0.5 + 1.1 * fenster(t, T("regeln:Mia") - 0.1, T("falle:Klar") - 0.3, 0.4, 0.6) + 1.2 * fenster(t, T("falle:Mia") - 0.3, T("falle:Oder"), 0.5, 0.5) + 0.8 * fenster(t, T("rennen:Mia") - 0.1, tDoch + 0.5) + 0.9 * fenster(t, T("wendung1:Mia#2") - 0.1, tJetzt - 0.2) + 0.8 * fenster(t, tJetzt, t60) + 1.2 * fenster(t, T("ergebnis:Mia"), T("ergebnis:Lena#2") - 0.1, 0.5, 0.4) + 0.8 * fenster(t, T("warum:Zeit"), tDrei, 0.4, 0.5),
+      spotL: 0.5 + 1.1 * fenster(t, T("regeln:Lena") - 0.2, T("regeln:Mia") - 0.1, 0.4, 0.5) + 0.6 * fenster(t, t35 - 1.8, t35 + 1.2) + 0.9 * fenster(t, T("wendung1:Lena") - 0.3, T("wendung1:Mia#2") - 0.1) + 1.2 * fenster(t, T("ergebnis:Lena"), T("ergebnis:Mia") - 0.1, 0.5, 0.5) + 1.4 * fenster(t, T("ergebnis:Lena#2") - 0.3, T("ergebnis:Und") - 0.1, 0.4, 0.8) + 1.0 * fenster(t, T("warum:Lenas") - 0.2, T("warum:Jahre"), 0.4, 0.5) + 1.1 * fenster(t, tHoert - 0.3, tEnd2 + 1.6, 0.5, 1.0),
+      spotR: 0.5 + 1.1 * fenster(t, T("regeln:Mia") - 0.1, T("falle:Klar") - 0.3, 0.4, 0.6) + 1.2 * fenster(t, T("falle:Mia") - 0.3, T("falle:Oder"), 0.5, 0.5) + 0.8 * fenster(t, T("rennen:Mia") - 0.1, tDoch + 0.5) + 0.9 * fenster(t, T("wendung1:Mia#2") - 0.1, tJetzt - 0.2) + 0.8 * fenster(t, tJetzt, t60) + 1.2 * fenster(t, T("ergebnis:Mia"), T("ergebnis:Lena#2") - 0.1, 0.5, 0.4) + 0.8 * fenster(t, T("warum:Jahre"), tDrei, 0.4, 0.5),
       luecke: fenster(t, T("wendung1:Konto") - 0.2, tWarum - 0.1, 0.6, 0.7) * (1 - sink) + fenster(t, tAbst3 - 0.3, tUeb + 0.2, 0.5, 0.5),
       glanz: fenster(t, T("ergebnis:27.459") - 0.1, T("ergebnis:27.459") + 2.4, 0.3, 1.2),
       gleich: puls(t, T("wendung1:gleich") - 0.1, 1.2),
@@ -273,7 +273,7 @@ async function start() {
   const C = (px, py, pz, zx, zy, zz, fov = 30) => [px, py, pz, zx, zy, zz, fov];
   const camKeys = [
     { t: 0, v: C(0.5, 5.2, 14.8, 0, 0.9, -0.6) },
-    { t: T("hook:ab#2"), v: C(0.2, 4.7, 13.4, 0, 0.95, -0.5), e: ease.inOutSine },
+    { t: T("hook:oder"), v: C(0.2, 4.7, 13.4, 0, 0.95, -0.5), e: ease.inOutSine },
     { t: T("hook:Wer") - 0.2, v: C(0.0, 4.2, 12.4, 0, 1.0, -0.6), e: ease.inOutSine },
     { t: T("regeln:Lena") - 0.1, v: C(-1.5, 3.4, 10.0, -1.2, 1.0, 1.3), e: ease.inOutCubic },
     { t: T("regeln:Mia") - 0.2, v: C(-1.2, 3.3, 9.8, -1.1, 1.0, 1.3), e: ease.inOutSine },
@@ -290,7 +290,7 @@ async function start() {
     { t: T("folgen:Folg"), v: C(0.2, 4.8, 13.0, 0, 1.2, 0), e: ease.inOutSine },
     { t: tDoch, v: C(1.3, 5.0, 14.4, 0.1, 1.0, -0.4, 30), e: ease.inOutCubic },
     { t: T("wendung1:Mit") + 0.3, v: C(0.2, 3.6, 10.4, 0, 1.0, PZ + 0.3, 26), e: ease.inOutCubic },
-    { t: T("wendung1:Aber") - 0.4, v: C(-0.6, 3.8, 11.8, 0, 1.3, 0.4, 30), e: ease.inOutSine },
+    { t: T("wendung1:Auf") - 0.4, v: C(-0.6, 3.8, 11.8, 0, 1.3, 0.4, 30), e: ease.inOutSine },
     { t: T("wendung1:Lena") + 0.3, v: C(0.0, 3.6, 12.2, 0, 1.3, 0.8, 30), e: ease.inOutCubic },
     { t: T("wendung1:Mia#2") + 0.3, v: C(0.0, 3.3, 11.0, 0, 1.3, 0.8, 28), e: ease.inOutSine },
     { t: tJetzt + 0.1, v: C(0.6, 3.0, 9.8, 0, 1.1, PZ + 0.3, 27), e: ease.inOutCubic },
@@ -300,7 +300,7 @@ async function start() {
     { t: t67 + 0.5, v: C(0, 5.0, 12.8, 0, 1.5, 0), e: ease.inOutCubic },
     { t: t67 + 6.0, v: C(0, 5.5, 14.8, 0, 1.5, -0.3), e: ease.inOutSine },
     { t: tWarum, v: C(1.2, 4.6, 14.4, 0, 1.5, 0), e: ease.inOutSine },
-    { t: T("warum:Zeit"), v: C(-1.2, 4.4, 14.2, 0, 1.5, 0), e: ease.inOutSine },
+    { t: T("warum:Jahre"), v: C(-1.2, 4.4, 14.2, 0, 1.5, 0), e: ease.inOutSine },
     { t: tDrei - 0.2, v: C(0.0, 3.9, 12.0, 0, 1.3, 0.5), e: ease.inOutCubic },
     { t: tAbst3 + 0.6, v: C(0.4, 4.2, 12.6, 0, 1.3, 0.3), e: ease.inOutSine },
     { t: tUeb, v: C(-0.8, 3.9, 11.6, 0, 1.2, -1.0), e: ease.inOutCubic },
@@ -364,7 +364,7 @@ async function start() {
     if (t < T("regeln:Mia") - 0.1) fp = t < T("regeln:Lena") - 0.2 ? [0, 1.2, 0.4] : [-SX, 1.2, SZ];
     else if (t < T("falle:Klar") - 0.2) fp = [SX, 0.9, SZ];
     else if (t < T("rennen:Lena") - 0.3) fp = t < T("falle:Mia") - 0.1 ? [0, 0.9, 1.0] : [SX, 1.0, SZ];
-    else if (t > tDoch + 1.0 && t < T("wendung1:Aber") - 0.2) fp = [0, 0.9, PZ];
+    else if (t > tDoch + 1.0 && t < T("wendung1:Auf") - 0.2) fp = [0, 0.9, PZ];
     else if (t > tJetzt - 0.2 && t < T("wendung2:wächst") - 0.5) fp = [0, 0.9, PZ];
     else if (t > tHat - 0.3 && t < tEnd2) fp = [-SX, 1.4, SZ];
     else if (t > tMerk - 0.2) fp = [0, 0.95, PZ];
@@ -379,24 +379,24 @@ async function start() {
     y: 166,
     links: { team: "a", name: "LENA", einheit: "€", nk: 0, max: 999999 },
     rechts: { team: "b", name: "MIA", einheit: "€", nk: 0, max: 999999 },
-    werte: (t) => { const s = zustandRoh(t); return { a: s.lena, b: s.mia }; },
+    werte: (t) => { const s = zustandRoh(t); if (t < tDoch || t >= tKonto + 1.0) return { a: s.lena, b: s.mia }; const h = zustandRoh(tDoch - 0.02), k = ease.inOutSine(fortschritt(t, tKonto, tKonto + 1.0)); return { a: lerp(h.lena, s.lena, k), b: lerp(h.mia, s.mia, k) }; }, // Konto-Zahlen erst mit „Auf dem Konto“
     vorn: null,
     uhr: { ein: 0.4, zeit: (t) => secToAlter(zustandRoh(t).alter), format: (sek) => String(25 + Math.min(42, Math.floor((sek * 42) / 59.9 + 0.02))), label: "ALTER" },
   });
   const w = (t, typ, klang, text) => M.melde({ t, typ, klang, text });
   w(0.5, "welt", "pop", "LED-Kanten leuchten auf");
-  w(T("hook:Hundert"), "welt", "pop", "Lenas Sockel leuchtet");
-  w(T("hook:150"), "welt", "pop", "Mias Sockel leuchtet");
+  w(T("hook:Früh"), "welt", "pop", "Lenas Sockel leuchtet");
+  w(T("hook:spät"), "welt", "pop", "Mias Sockel leuchtet");
   w(T("hook:oder"), "welt", "pop", "Lebensuhr-Ring leuchtet");
   w(T("hook:67"), "welt", "ding", "Ring-Ende 67 leuchtet");
   for (const f of FUELL) w(f, "welt", "pop", "Lebensuhr leuchtet");
-  w(T("hook:35"), "welt", "pop", "Mias Sockel leuchtet");
+  w(T("hook:mehr"), "welt", "pop", "Mias Sockel leuchtet");
   w(T("hook:Wer"), "welt", "pop", "Lebensuhr leuchtet");
   w(T("hook:hat") + 0.4, "welt", "pop", "Zeiger leuchtet");
   w(T("regeln:Lena"), "welt", "pop", "Licht auf Lenas Sockel");
   w(T("regeln:25"), "welt", "pop", "Startmarke 25 leuchtet");
   w(T("regeln:Mia"), "welt", "pop", "Licht auf Mias Sockel, Startmarke 35");
-  w(T("regeln:mehr"), "welt", "pop", "Mias Sockel leuchtet");
+  w(T("regeln:150"), "welt", "pop", "Mias Sockel leuchtet");
   w(T("falle:Klar"), "welt", "pop", "Spot auf die Lebensuhr");
   w(T("falle:Mia"), "welt", "pop", "Licht auf Mias Turm-Platz");
   w(T("falle:Oder"), "welt", "ding", "Ring leuchtet, Bild steht");
@@ -421,7 +421,7 @@ async function start() {
   w(T("ergebnis:7.200"), "welt", "ding", "Einzahlungen leuchten");
   w(T("ergebnis:weniger"), "welt", "pop", "Lenas Sockel und Zähler leuchten");
   w(T("ergebnis:eingezahlt"), "welt", "pop", "Mias Sockel und Zähler leuchten");
-  for (const x of ["warum:Lenas", "warum:Zeit"]) w(x, "welt", "pop", "Turm leuchtet");
+  for (const x of ["warum:Lenas", "warum:Jahre"]) w(x, "welt", "pop", "Turm leuchtet");
   w(tDrei, "welt", "whoosh", "Rendite 5 % → 3 %, Türme schrumpfen");
   w(tAbst3, "welt", "ding", "Abstand 3.986 leuchtet");
   w(tUeb, "welt", "whoosh", "Rendite zurück auf 5 %, Kamera fährt");
@@ -433,15 +433,15 @@ async function start() {
   w(T("merksatz:Zeit"), "welt", "ding", "Lebensuhr leuchtet");
 
   // Annahme-Pille (Rendite klar als Annahme), darunter Einzahlungs-Zähler
-  hud.add(new Pille(M, { ein: "regeln:Annahme", aus: "merksatz:Mia", x: 540, y: 330, prozent: (t) => zustand(t).p, wechsel: [tDrei, tUeb] }));
+  hud.add(new Pille(M, { ein: "regeln:Annahme", aus: "merksatz:Mia", x: 540, y: 326, prozent: (t) => zustand(t).p, wechsel: [tDrei, tUeb] }));
   const vor = (x, d = 0.3) => T(x) - d; // alte Chips blenden vor dem neuen aus (keine Überlappung beim Wechsel)
   const reihe = 390, reihe2 = 510, XL = 345, XR = 735;
-  M.chip({ text: "100 € / MONAT", ein: "regeln:ab", aus: vor("wendung1:Doch", 0.5), team: "a", art: "hell", x: XL, y: reihe, anker: "mitte" });
-  M.chip({ text: "AB 25", ein: "regeln:25", aus: vor("wendung1:Doch", 0.5), team: "a", art: "voll", x: XL, y: reihe2, anker: "mitte" });
-  M.chip({ text: "150 € / MONAT", ein: "regeln:startet", aus: vor("wendung1:Doch", 0.5), team: "b", art: "hell", x: XR, y: reihe, anker: "mitte" });
-  M.chip({ text: "AB 35", ein: "regeln:10", aus: vor("wendung1:Doch", 0.5), team: "b", art: "voll", x: XR, y: reihe2, anker: "mitte" });
-  hud.add(new Zaehler(M, { team: "a", x: XL, y: reihe, ein: tDoch - 0.2, aus: vor("merksatz:Mia", 0.2), wert: (t) => zustand(t).einL, puls: [T("wendung1:gleich"), T("ergebnis:7.200"), T("ergebnis:weniger"), T("ergebnis:eingezahlt")] }));
-  hud.add(new Zaehler(M, { team: "b", x: XR, y: reihe, ein: tDoch - 0.2, aus: vor("merksatz:Mia", 0.2), wert: (t) => zustand(t).einM, sicht: (t) => 1 - ease.inOutSine(fortschritt(t, tHoert, t35b)), puls: [T("wendung1:gleich"), tJetzt + 0.3, T("ergebnis:7.200"), T("ergebnis:weniger"), T("ergebnis:eingezahlt")] }));
+  M.chip({ text: "100 € / MONAT", ein: "regeln:100", aus: vor("wendung1:Mit", 0.5), team: "a", art: "hell", x: XL, y: reihe, anker: "mitte" });
+  M.chip({ text: "AB 25", ein: "regeln:25", aus: vor("wendung1:Mit", 0.5), team: "a", art: "voll", x: XL, y: reihe2, anker: "mitte" });
+  M.chip({ text: "150 € / MONAT", ein: "regeln:150", aus: vor("wendung1:Mit", 0.5), team: "b", art: "hell", x: XR, y: reihe, anker: "mitte" });
+  M.chip({ text: "AB 35", ein: "regeln:10", aus: vor("wendung1:Mit", 0.5), team: "b", art: "voll", x: XR, y: reihe2, anker: "mitte" });
+  hud.add(new Zaehler(M, { team: "a", x: XL, y: reihe, ein: T("wendung1:Mit") - 0.2, aus: vor("merksatz:Mia", 0.2), wert: (t) => zustand(t).einL, puls: [T("wendung1:gleich"), T("ergebnis:7.200"), T("ergebnis:weniger"), T("ergebnis:eingezahlt")] }));
+  hud.add(new Zaehler(M, { team: "b", x: XR, y: reihe, ein: T("wendung1:Mit") - 0.2, aus: vor("merksatz:Mia", 0.2), wert: (t) => zustand(t).einM, sicht: (t) => 1 - ease.inOutSine(fortschritt(t, tHoert, t35b)), puls: [T("wendung1:gleich"), tJetzt + 0.3, T("ergebnis:7.200"), T("ergebnis:weniger"), T("ergebnis:eingezahlt")] }));
   M.chip({ text: "ABSTAND 23.080 €", ein: "wendung2:23.080", aus: vor("ergebnis:Endstand", 0.2), team: "akzent", art: "voll", x: 540, y: reihe2, anker: "mitte" });
   M.chip({ text: "ABSTAND 3.986 €", ein: "warum:3.986", aus: vor("ueberraschung:Und", 0.2), team: "akzent", art: "voll", x: 540, y: reihe2, anker: "mitte" });
 
@@ -458,7 +458,7 @@ async function start() {
     ein: "warum:Warum", aus: "warum:Bei", y: 510,
     reihen: [
       { label: "LENA · 42 JAHRE", team: "a", werte: [Z.einLena, Math.round(Z.lena67 - Z.einLena)], unter: ["EINGEZAHLT", "ZINSEN"], ein: "warum:Lenas" },
-      { label: "MIA · 32 JAHRE", team: "b", werte: [Z.einMia, Math.round(Z.mia67 - Z.einMia)], unter: ["EINGEZAHLT", "ZINSEN"], ein: "warum:Zeit" },
+      { label: "MIA · 32 JAHRE", team: "b", werte: [Z.einMia, Math.round(Z.mia67 - Z.einMia)], unter: ["EINGEZAHLT", "ZINSEN"], ein: "warum:Jahre" },
     ],
   }));
   M.pointe({ woerter: [{ text: "DIE", ein: T("merksatz:die") }, { text: "ZEIT", ein: "merksatz:Zeit#2", farbe: "akzent" }], ein: "merksatz:Zeit#2", aus: "schluss:Schreib", y: 520, groesse: 190 });
