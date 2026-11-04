@@ -44,6 +44,7 @@ cssclasses: [konto-gemeinsam, typ-plan]
 | 7 | Hirn auf dem Desktop einrichten (ZIP entpacken), danach CLAUDE.md schlanker machen (Verweis auf das Hirn) | Inhaber, Claude | 5 Min. |
 
 ## Offene Punkte
+- [ ] **Lernschleife 04.11. (Vorschlag zur Freigabe):** Account 1 Hook immer als Duell zweier konkreter Alternativen im ersten Satz (Duell-Hooks Median 34 % Bindung gegen 19 % bei Einzelfrage, n = 9, A). Details `hirn/04-Recherche/Insights 2026-11-04.md`.
 - [ ] **Lernschleife 03.11. (Vorschläge zur Freigabe):** Account 2 Einstieg dichter (Kamerabewegung/Welteffekt vor 8 s, Ø-Zeit 9–15 s); Account 1 Themenwahl zugunsten großer Lebensentscheidungen (Studium/Ausbildung 4.141 Aufrufe). Details `hirn/04-Recherche/Insights 2026-11-03.md`.
 - [ ] Teppich-Pegel (−10 dB), Effekte und Position des Folgen-Elements auf echtem Gerät abnehmen (Inhaber). Engine-Standard „keine gelbe Teamfarbe“ (im Gehalt-Video ist Team „steuerfrei“ gelb, bleibt).
 - [ ] Werte mit „prüfen“ je Video klären (Spalte `quellen_pruefen` der Pläne; Liste in [[Auswahl- und Finanzregeln Simulierbar]]); Account 2: Eisdicke Toronto, Genf 1816, Leoniden-Maximum, COP31-Termin.
