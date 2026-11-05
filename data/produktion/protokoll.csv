@@ -6,7 +6,7 @@ datum,slot,konto,titel,projekt,post_id,status
 2026-11-04,mittag,stelldirvor.pov,"Was wäre, wenn du einen Acker 144 Jahre lang in Ruhe lässt?",acker-wald,6aea724a87b7c6d24c7c476b,geplant
 2026-11-04,abend,stelldirvor.pov,"Was wäre, wenn du 16.000 Jahre auf einer Sahara-Düne stehst?",gruene-sahara,6aea76f5ff887f055cda4953,geplant
 2026-11-04,mittag,simulierbar,"Solaranlage mit Speicher oder ohne: Was bringt dir mehr Geld?",solar-speicher,6aeaefa9d59713e43439713e,gepostet
-2026-11-04,abend,simulierbar,"Wärmepumpe oder neue Gasheizung: Was kostet dich in 20 Jahren mehr?",waermepumpe-gas,6aeb0d8a0eea02ace32fde98,geplant
+2026-11-04,abend,simulierbar,"Wärmepumpe oder neue Gasheizung: Was kostet dich in 20 Jahren mehr?",waermepumpe-gas,6aeb0d8a0eea02ace32fde98,gepostet
 2026-11-05,mittag,stelldirvor.pov,"Was wäre, wenn sich die Erde immer langsamer drehen würde?",erde-langsamer,6aeb9e0b66cdd5eb28573950,geplant
 2026-11-05,abend,stelldirvor.pov,"Was wäre, wenn die Erdachse nicht mehr geneigt wäre?",erdachse-null,6aebb5ab321c00b9244fabc3,geplant
 2026-11-05,abend,simulierbar,"Steuerklasse III/V oder IV/IV: Wer hat am Ende mehr Geld?",steuerklasse,6aebb5e8571331155352aca4,geplant
