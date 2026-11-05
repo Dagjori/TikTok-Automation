@@ -643,10 +643,10 @@ $("detail").addEventListener("click", (e) => {
 const WERKZEUG_ICON = { Bash: "⌨️", PowerShell: "⌨️", Read: "📖", Write: "📝", Edit: "✏️", MultiEdit: "✏️", Grep: "🔍", Glob: "🗂️", WebSearch: "🌐", WebFetch: "🔗", Task: "🤖", Agent: "🤖", TodoWrite: "📋" };
 // Modell wählt die Automatik (Feld „Modell“ = Automatisch), außer du legst es oben fest
 const SCHNELL = [
-  ["☀️ Tages-Briefing", "Gib mir ein kurzes Tages-Briefing: Was steht heute an? Nutze data/produktion/protokoll.csv, CLAUDE.md §11 (Nächste Schritte) und docs/trends/vorschlaege.md. Höchstens 8 Zeilen, dann die 3 wichtigsten nächsten Schritte für mich.", { modus: "plan" }],
+  ["☀️ Tages-Briefing", "Gib mir ein kurzes Tages-Briefing: Was steht heute an? Nutze data/produktion/protokoll.csv, CLAUDE.md §11 (Nächste Schritte) und docs/trends/vorschlaege.md. Höchstens 8 Zeilen, dann die 3 wichtigsten nächsten Schritte für mich."],
   ["🎬 Render-Lage", "Wie ist die Render-Lage? Führe py -3 C:\\render\\tiktok-automation\\pipeline\\render_dienst\\auftrag.py pc und danach … status --alle aus und erkläre das Ergebnis in 5 Zeilen.", {}],
-  ["📈 Stand der Accounts", "Fasse den aktuellen Stand beider Accounts aus CLAUDE.md §11 in 6 Zeilen zusammen, mit den offenen Punkten, die ich entscheiden muss.", { modus: "plan" }],
-  ["💡 Ideen für morgen", "Schlag mir je Account 3 Ideen für morgen vor (Regeln aus CLAUDE.md §3 und §9). Nur Titel und ein Satz, noch nichts recherchieren.", { modus: "plan" }],
+  ["📈 Stand der Accounts", "Fasse den aktuellen Stand beider Accounts aus CLAUDE.md §11 in 6 Zeilen zusammen, mit den offenen Punkten, die ich entscheiden muss."],
+  ["💡 Ideen für morgen", "Schlag mir je Account 3 Ideen für morgen vor (Regeln aus CLAUDE.md §3 und §9). Nur Titel und ein Satz, noch nichts recherchieren."],
 ];
 
 function claudeZeichnen() {
