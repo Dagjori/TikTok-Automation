@@ -126,7 +126,7 @@ async function start() {
   const skript = await lade("skript.json");
   let timing;
   try { timing = await lade("audio/timing.json"); } catch { timing = schaetzeTiming(skript); }
-  const zp = new Zeitplan(timing, { mindestlaenge: 0, nachlauf: 0.1 });
+  const zp = new Zeitplan(timing, { mindestlaenge: 0, nachlauf: 0.6 });
   const DAUER = Math.round(zp.dauer * FPS) / FPS;
   const T = (x) => zp.zeit(x);
 
@@ -166,7 +166,7 @@ async function start() {
 
   // Zustand der Welt (nur Zahlen; die Schleife lässt alles weich zum Anfangszustand zurückgleiten)
   // Zusätzliche sanfte Lichtpulse der Lebensuhr in längeren Pausen (Wortzeiten, damit nie > 2 s ohne neue Information)
-  const FUELL = [7.6, 10.9, 12.1, 13.5, 14.8, 17.5, 22.6, 24.9, 26.3, 32.8, 37.2, 39.9, 41.7, 45.5, 48.4, 51.6, 53.4, 58.5, 65.8, 71.0, 74.6, 76.4, 78.9];
+  const FUELL = [7.6, 10.9, 12.1, 13.5, 14.8, 17.5, 22.6, 23.7, 24.9, 26.3, 32.8, 37.2, 39.9, 41.7, 45.5, 48.4, 51.6, 53.4, 58.5, 65.8, 71.0, 74.6, 76.4, 78.9];
   const zustandRoh = (t) => {
     const aH = alterHaupt(t);
     // Rendite: 5 % (Annahme), in „Warum“ kurz 3 %, danach wieder 5 %
