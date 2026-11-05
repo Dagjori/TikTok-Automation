@@ -3,7 +3,7 @@
  "erzeugt": "render.js",
  "projekt": "vorsorge-25-35",
  "fps": 30,
- "dauer": 77.93333333333334,
+ "dauer": 78.43333333333334,
  "stimmEnde": 77.846,
  "timing": "timing.json (echte Stimme)",
  "protokoll": true,
@@ -22,7 +22,7 @@
   },
   "schleife": {
    "ab": 70.12,
-   "ende": 77.91266666666667
+   "ende": 78.41266666666667
   },
   "untertitel": {
    "stil": "kontur"
@@ -30,7 +30,7 @@
   "timing": "echt",
   "schleifenPruefung": {
    "ok": true,
-   "ende": 77.913,
+   "ende": 78.413,
    "nurErstesBild": [],
    "nurLetztesBild": [],
    "kameraAbweichung": 1.1102230246251565e-16
@@ -357,6 +357,13 @@
    "typ": "folgen",
    "dauer": 1.8,
    "klang": "folgen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.7,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lebensuhr leuchtet"
   },
   {
    "quelle": "Szene",
@@ -1145,7 +1152,7 @@
    "quelle": "Tafel",
    "t": 70.1,
    "typ": "zaehler",
-   "dauer": 7.846,
+   "dauer": 8.346,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -1154,13 +1161,13 @@
    "quelle": "Regie",
    "t": 70.12,
    "art": "schleife",
-   "dauer": 7.78,
+   "dauer": 8.28,
    "klang": false
   },
   {
    "t": 70.12,
    "typ": "schleife",
-   "dauer": 7.793,
+   "dauer": 8.293,
    "klang": "rueck",
    "quelle": "Massstab"
   },
@@ -1173,7 +1180,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 71.3,
+   "t": 71.4,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -1181,7 +1188,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 71.667,
+   "t": 71.767,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -1189,7 +1196,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 71.9,
+   "t": 72,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -1197,15 +1204,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 72.067,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 72.233,
+   "t": 72.2,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -1223,7 +1222,7 @@
    "quelle": "Tafel",
    "t": 72.5,
    "typ": "uhr",
-   "dauer": 3.133,
+   "dauer": 0.033,
    "laufend": true,
    "klang": "uhr"
   },
@@ -1233,6 +1232,22 @@
    "typ": "welt",
    "klang": "ding",
    "text": "Lebensuhr leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 72.633,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 72.767,
+   "typ": "uhr",
+   "dauer": 3.1,
+   "laufend": true,
+   "klang": "uhr"
   },
   {
    "quelle": "Pointe",
@@ -1250,15 +1265,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 75.767,
-   "typ": "uhr",
-   "dauer": 0.033,
-   "laufend": true,
-   "klang": "uhr"
-  },
-  {
-   "quelle": "Tafel",
-   "t": 75.9,
+   "t": 75.967,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -1274,7 +1281,7 @@
   },
   {
    "quelle": "Tafel",
-   "t": 76.3,
+   "t": 76.267,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
@@ -1289,7 +1296,23 @@
   },
   {
    "quelle": "Tafel",
-   "t": 76.633,
+   "t": 76.467,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 77.067,
    "typ": "uhr",
    "dauer": 0.033,
    "laufend": true,
