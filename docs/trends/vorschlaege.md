@@ -6,6 +6,24 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
+## 💶 Steuerreform 2027: Wie viel Netto bleibt mir ab Januar mehr?
+- **Score:** 75 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 3) · **Status:** neu
+- **Warum:**
+  - Kabinett beschloss die Einkommensteuerreform 2027 am 02.09.2026: Grundfreibetrag 12.348 → 12.564 € (2027) → 12.900 € (2028), Arbeitnehmer-Pauschbetrag 1.430 €, ca. 10 Mrd. € Entlastung (F: [PwC](https://blogs.pwc.de/de/steuern-und-recht/article/256631/bundeskabinett-beschliesst-einkommensteuerreform-2027-mehr-entlastung-fuer-familien-und-kleine-einkommen/), [finanz.de](https://www.finanz.de/news/steuern-einkommen-2027-10848/)).
+  - **Noch nicht Gesetz:** Bundestag und Bundesrat müssen zustimmen, Zahlen können sich ändern (F: laut Suchzusammenfassung, BT-Drucks. 21/8235).
+  - „Was ändert sich 2027“ ist jedes Jahr ein Suchthema (A); Leitmedien berichten breit.
+- **Eigene Umsetzung (Duell, GELD):** Zwei Gehälter (z. B. 2.800 € und 4.500 € brutto) im Rennen: Wer hat ab Januar am Jahresende wie viele Euro netto mehr? Denkfalle „Klar, mehr Freibetrag heißt mehr für alle. Oder?“ Euro-Zähler je Monat, Wendung durch Progression.
+- **Vor Produktion prüfen:** verabschiedetes Gesetz und Tarif 2027, Steuerklasse offen ausweisen. Nur Modellrechnung, keine Beratung.
+- **Posten:** erst nach Verabschiedung, spätestens 20.12.2026. Mindestens 5 Tage Abstand zum Mindestlohn-Video.
+
+## 💶 Bauzinsen über 4 %: Mieten oder kaufen, was liegt nach 30 Jahren mehr im Konto?
+- **Score:** 73 (Nachfrage 4, Timing 3, Wettbewerb 2, Passung 5, Aufwand 4, Risiko 4) · **Status:** neu
+- **Warum:** Bauzinsen laut Dr. Klein 4,16–4,71 % (Stand 09.10.2026), seit Juli ca. +0,8 Prozentpunkte (F: [Dr. Klein](https://www.drklein.de/aktuelle-hypothekenzinsen.html), [boerse-express](https://www.boerse-express.com/news/articles/immobilienkauf-unter-druck-bauzinsen-408-belasten-kaeufer-934835)). Große Lebensentscheidung mit klarer Euro-Endzahl (Themenwahl 03.11.).
+- **Achtung Wettbewerb:** @kontostand.vs hat „Mieten oder kaufen“ viral gemacht (504k Views). Nur mit eigenem Skript, eigener Rechnung (aktuelle Zinsen 2026, Eigenkapital, Mietsteigerung) und deutlich anderem Design, keine Kopie.
+- **Eigene Umsetzung (Duell):** Zwei Haushalte, gleicher Start mit 60.000 € Eigenkapital: A kauft zu 4,4 %, B mietet und legt an. Konto-Zähler über 30 Jahre, Wendung durch Zinsbindung/Anschlussfinanzierung. Annahmen offen (A), keine Anlageberatung.
+- **Vor Produktion prüfen:** aktuelle Zinsen, Mietniveau, Nebenkosten des Kaufs, Quellen intern.
+- **Posten:** evergreen, empfohlen bis 30.11.2026 (Zinsdebatte aktuell).
+
 ## ⏱️ Heizung nachts runter oder durchheizen: Was kostet die Gewohnheit wirklich?
 - **Score:** 82 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 5, Aufwand 4, Risiko 5) · **Status:** neu
 - **Warum:**
