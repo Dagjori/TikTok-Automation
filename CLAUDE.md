@@ -192,3 +192,4 @@ Nur Entscheidungen des Inhabers; Empfehlungen von Claude stehen als offene Punkt
 
 **05.11.**
 - **Cockpit-Chat immer im Modus Auto, nie „Nur planen“** · „merke dir für die zukunft das du den chat hier niemals wieder auf nur planen stellst“ (Schnellknöpfe Tages-Briefing, Stand, Ideen setzten `plan` und blockierten die Produktion; entfernt in `cockpit/public/cockpit.js`).
+- **Ausnahme Hook/Tempo** für „Mit 25 oder mit 35 vorsorgen“ (05.11. vormittags, per Klick auf die Rückfrage): Hook-Ende 5,12 s und 2,12 W/s freigegeben · in der Spanne der Vorbilder (Hook 3,4–5,2 s), Silbentempo 4,0 Silben/s, lange Zahlwörter verzerren Wörter/s (dritter Fall, stützt den Vorschlag „12b nach Silben/s“ in §11).
