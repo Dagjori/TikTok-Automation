@@ -14,7 +14,7 @@
       "id": "hook",
       "phase": "hook",
       "text": "Früh wenig sparen oder spät mehr? Wer hat mit 67 mehr?",
-      "sprechtext": "Früh WENIG sparen – oder spät mehr?\n[curious] Wer hat mit siebenundsechzig MEHR?",
+      "sprechtext": "Früh WENIG sparen oder spät mehr?\n[curious] Wer hat mit siebenundsechzig mehr?",
       "bild_text_abgleich": [
         {
           "gesagt": "Früh WENIG sparen – oder spät mehr?",
@@ -30,7 +30,7 @@
       "id": "regeln",
       "phase": "regeln",
       "text": "Lena spart ab 25 jeden Monat 100 Euro. Mia startet 10 Jahre später, mit 150 Euro. Annahme: 5 Prozent Rendite im Jahr.",
-      "sprechtext": "Lena spart ab fünfundzwanzig hundert Euro im Monat.\nMia startet zehn Jahre später – mit hundertfünfzig.\nAnnahme: fünf Prozent Rendite im Jahr.",
+      "sprechtext": "Lena spart ab fünfundzwanzig hundert Euro im Monat.\nMia startet zehn Jahre später, mit hundertfünfzig.\nAnnahme: fünf Prozent Rendite im Jahr.",
       "bild_text_abgleich": [
         {
           "gesagt": "Lena spart ab fünfundzwanzig hundert Euro im Monat.",
@@ -50,7 +50,7 @@
       "id": "falle",
       "phase": "falle",
       "text": "Klar, Mia zahlt mehr ein. Oder?",
-      "sprechtext": "Klar … Mia zahlt MEHR ein.\nOder?",
+      "sprechtext": "Klar, Mia zahlt MEHR ein.\nOder?",
       "bild_text_abgleich": [
         {
           "gesagt": "Klar … Mia zahlt MEHR ein. Also hat sie mehr. Oder?",
@@ -126,7 +126,7 @@
       "id": "ergebnis",
       "phase": "ergebnis",
       "text": "Endstand: Lena 166.640 Euro. Mia 139.181 Euro. Lena: 27.459 Euro mehr. Und 7.200 Euro weniger eingezahlt.",
-      "sprechtext": "Endstand:\nLena – rund hundertsiebenundsechzigtausend Euro.\nMia – rund hundertneununddreißigtausend.\nLena: gut SIEBENUNDZWANZIGTAUSEND mehr.\nUnd siebentausendzweihundert Euro weniger eingezahlt.",
+      "sprechtext": "Endstand: Lena rund hundertsiebenundsechzigtausend Euro.\nMia rund hundertneununddreißigtausend.\nLena: gut SIEBENUNDZWANZIGTAUSEND mehr.\nUnd siebentausendzweihundert Euro weniger eingezahlt.",
       "bild_text_abgleich": [
         {
           "gesagt": "Endstand mit siebenundsechzig:",
@@ -170,7 +170,7 @@
       "id": "ueberraschung",
       "phase": "ueberraschung",
       "text": "Und das Verrückte: Hört Lena mit 35 auf, nach 12.000 Euro, hat sie mit 67 trotzdem 73.853 Euro.",
-      "sprechtext": "Und das Verrückte:\nHört Lena mit fünfunddreißig AUF,\nnach zwölftausend Euro,\nhat sie am Ende trotzdem fast vierundsiebzigtausend.",
+      "sprechtext": "Und das Verrückte:\nHört Lena mit fünfunddreißig AUF, nach zwölftausend Euro,\nhat sie am Ende trotzdem fast vierundsiebzigtausend.",
       "bild_text_abgleich": [
         {
           "gesagt": "Und das Verrückte: Hört Lena mit fünfunddreißig AUF …",
@@ -261,7 +261,8 @@
   ],
   "skript_aenderungen": [
     "Kürzungen gegen die Länge (Stimme mit 185 Wörtern: 84,3 s, Grenze 80 s; Folgen-Aufruf erst bei 25,3 s): entfernt „Also hat sie mehr.“ (falle), „mit siebenundsechzig“ im Endstand-Satz (das Alter 67 steht auf der Uhr und im Hook), „hat“ → „Lena: gut …“ (ergebnis); Auslassungspunkte in der Überraschung durch Kommas ersetzt (Satzpausen). Zahlen und Ergebnis unverändert.",
-    "Nachbesserung 2 (04.11. abends, Hauptsitzung): Hook ohne Beträge (Beträge in den Regeln), Füllwörter gekürzt; Zahlen unverändert; Grund: Länge 83,8 s und Hook 7,1 s."
+    "Nachbesserung 2 (04.11. abends, Hauptsitzung): Hook ohne Beträge (Beträge in den Regeln), Füllwörter gekürzt; Zahlen unverändert; Grund: Länge 83,8 s und Hook 7,1 s.",
+    "Nachbesserung 3 (05.11. morgens, Cockpit-Produktion): nur Regie-Text gestrafft (Gedankenstriche und Auslassungspunkte in Hook, Regeln, Falle, Ergebnis durch Komma/Doppelpunkt ersetzt, Zeilen innerhalb eines Satzes zusammengezogen); Grund: Hook 5,28 s und Tempo 2,07 W/s. Text, Zahlen und Ergebnis unverändert. Hook: Betonung auf dem letzten \"mehr\" entfernt (gedehnt 0,68 s)."
   ],
   "lern_notizen": {
     "thema": "Vorsorge: 100 €/Monat ab 25 gegen 150 €/Monat ab 35 bis 67 (Modellrendite 5 %)",
