@@ -1,0 +1,576 @@
+{
+ "skript_id": "acc2-2026-11-06-mittag",
+ "skript_quelle": "acc2-2026-11-06-mittag",
+ "titel": "Was wäre, wenn die Erde zurück in die Zeit der Dinosaurier spulen würde?",
+ "titelfrage": "Was wäre, wenn die Erde zurück in die Zeit der Dinosaurier spulen würde?",
+ "konto": "stelldirvor.pov",
+ "format": "referenz_pov",
+ "skill": "stelldirvor-video",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Welt engine/welt_muendung.js (Erstbau 06.11.2026)",
+ "thema": "Erdgeschichte rückwärts: 66 Millionen Jahre von heute bis zur späten Kreidezeit",
+ "welt": "See, Fluss, Delta: küstennaher Wald an einer Flussmündung (gemäßigte Breiten, kein benannter Ort), wandelt sich rückwärts zu Eiszeit-Tundra, Grasland, Wald, Palmen-Urwald und Kreide-Urwald",
+ "standpunkt": "erhöht: flache Anhöhe über der Flussmündung, Blick erst auf Fluss und Meer, dann Schwenk ins Land",
+ "tageszeit_verlauf": "Morgen (0–18 s) → heller Mittag (18–45 s) → schwüler, goldener Abend (45–80 s)",
+ "kamera": "0–3 s ruhiger Weitblick auf Fluss und Meer · ab 3 s langsamer Schwenk vom Fluss ins Land (bis 20 s) · 32–45 s leichte Fahrt nach vorn an die Kante der Anhöhe (Meer flutet die Mündung) · ab 54 s sanfter Zoom auf das Unterholz am Ufer, ab 58 s weiter auf die Herde",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 18,
+   "faktor": "rückwärts, exponentiell beschleunigend von 180 auf 1,27 Mio. Jahre/s",
+   "anzeige": "JAHRE VOR HEUTE"
+  },
+  {
+   "von": 18,
+   "bis": 32,
+   "faktor": "linear 1,27 → 1,65 Mio. Jahre/s",
+   "anzeige": "JAHRE VOR HEUTE"
+  },
+  {
+   "von": 32,
+   "bis": 58,
+   "faktor": "konstant 1,65 Mio. Jahre/s",
+   "anzeige": "JAHRE VOR HEUTE"
+  },
+  {
+   "von": 58,
+   "bis": 70,
+   "faktor": "Anzeige steht auf HIER (66,0 Mio. Jahre)",
+   "anzeige": "JAHRE VOR HEUTE"
+  }
+ ],
+ "zeitraffer_text": "Rückwärts, stetig beschleunigend: 0–18 s exponentiell von 180 auf 1,27 Mio. Jahre/s; 18–32 s linear von 1,27 auf 1,65 Mio. Jahre/s; 32–58 s konstant 1,65 Mio. Jahre/s; ab 58 s steht die Anzeige auf HIER (66,0 Mio.)",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 18,
+   "etikett": "QUARTÄR",
+   "start": "0",
+   "ende": "2.580.000",
+   "einheit": "JAHRE VOR HEUTE",
+   "unter": "EISZEITALTER · ZEITRAFFER STEIGT AUF 1 S = 1,3 MIO. JAHRE"
+  },
+  {
+   "von_s": 18,
+   "bis_s": 32,
+   "etikett": "NEOGEN",
+   "start": "2.580.000",
+   "ende": "23.040.000",
+   "einheit": "JAHRE VOR HEUTE",
+   "unter": "GRASLAND · 1 S = 1,3 → 1,65 MIO. JAHRE"
+  },
+  {
+   "von_s": 32,
+   "bis_s": 58,
+   "etikett": "PALÄOGEN",
+   "start": "23.040.000",
+   "ende": "66.000.000",
+   "einheit": "JAHRE VOR HEUTE",
+   "unter": "WARMZEIT · 1 S = 1,65 MIO. JAHRE"
+  },
+  {
+   "von_s": 58,
+   "bis_s": 70,
+   "etikett": "KREIDE",
+   "start": "66.000.000",
+   "ende": "HIER",
+   "einheit": "JAHRE VOR HEUTE",
+   "unter": "ZEIT DER DINOSAURIER"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Morgen an einer Flussmündung, die Zeit läuft rückwärts.",
+   3.6
+  ],
+  [
+   8.8,
+   "Dann weicht das Meer, und Eis füllt das Tal.",
+   3.6
+  ],
+  [
+   12.8,
+   "Eine Mammutherde zieht am Eisrand vorbei.",
+   3.6
+  ],
+  [
+   16.8,
+   "Eiszeiten kommen und gehen, immer schneller.",
+   3.6
+  ],
+  [
+   20.8,
+   "Das Eis ist fort, dreizehige Pferde ziehen vorbei.",
+   3.6
+  ],
+  [
+   25,
+   "Dann wird es wärmer, Büsche erobern das Grasland.",
+   3.6
+  ],
+  [
+   29.2,
+   "Der Wald wird dicht, das Grasland verschwindet.",
+   3.6
+  ],
+  [
+   33.4,
+   "Palmen und Farne wachsen jetzt am Ufer.",
+   3.6
+  ],
+  [
+   37.6,
+   "Das Meer steigt und flutet die Flussmündung.",
+   3.6
+  ],
+  [
+   41.8,
+   "Krokodile liegen am warmen Ufer.",
+   3.6
+  ],
+  [
+   46,
+   "Schwüle Hitze, Dunst hängt über dem Wald.",
+   3.6
+  ],
+  [
+   50.2,
+   "Kleine Säugetiere huschen durchs Unterholz.",
+   3.6
+  ],
+  [
+   54.2,
+   "Im Unterholz brechen schwere Äste.",
+   3.6
+  ],
+  [
+   62.4,
+   "Eine Herde Dinosaurier trinkt am Fluss.",
+   3.6
+  ],
+  [
+   66.4,
+   "Den Homo sapiens gibt es seit 300.000 Jahren.",
+   3.4
+  ]
+ ],
+ "bild_text_abgleich": [
+  [
+   4.8,
+   "Morgen an einer Flussmündung, die Zeit läuft rückwärts.",
+   "Morgenlicht über der Flussmündung, Meer links hinten, Anhöhe mit Gras im Vordergrund; Anzeige läuft ab Bild 0 (QUARTÄR), Bäume wachsen im Rückwärts-Zeitraffer zurück, Wolken jagen; Schwenk vom Fluss ins Land hat bei 3 s begonnen (Anzeige ca. 3.516 Jahre vor heute)"
+  ],
+  [
+   8.8,
+   "Dann weicht das Meer, und Eis füllt das Tal.",
+   "Meer ist weit aus der Mündung zurückgewichen (5–8 s), ab 8,2 s schiebt sich die Eiszunge ins Tal, Licht wird kalt und blau; Anzeige im Quartär (Anzeige ca. 27.453 Jahre vor heute)"
+  ],
+  [
+   12.8,
+   "Eine Mammutherde zieht am Eisrand vorbei.",
+   "Mammutherde zieht am Eisrand durchs Bild (Tiere ab 11,2 s, Standbild 14 s), Schnee fällt; Anzeige um 190.000 bis 360.000 Jahre (Anzeige ca. 199.023 Jahre vor heute)"
+  ],
+  [
+   16.8,
+   "Eiszeiten kommen und gehen, immer schneller.",
+   "Meer und Eis pulsieren im Takt (Kaltzeiten bei 12,9 / 14,7 / 16,2 s), Schnee und Grün wechseln, Eis wird kleiner; Anzeige nähert sich 2,58 Mio. (Anzeige ca. 1.428.758 Jahre vor heute)"
+  ],
+  [
+   20.8,
+   "Das Eis ist fort, dreizehige Pferde ziehen vorbei.",
+   "Eis ist verschwunden (18,6 s), warmes Licht, Grasland, 6 dreizehige Pferde ziehen durchs Bild (ab 20,2 s); Etikett NEOGEN (Anzeige ca. 6.244.431 Jahre vor heute)"
+  ],
+  [
+   25,
+   "Dann wird es wärmer, Büsche erobern das Grasland.",
+   "Büsche erobern das Grasland (Gewicht Busch steigt bis 27 s), Pollen im Licht; Anzeige im Neogen (Anzeige ca. 12.141.923 Jahre vor heute)"
+  ],
+  [
+   29.2,
+   "Der Wald wird dicht, das Grasland verschwindet.",
+   "Wald schließt sich, Gras schwindet (Standbild 30 s: dichter Laubwald, Gras kurz); Anzeige knapp vor 23 Mio. (Anzeige ca. 18.520.431 Jahre vor heute)"
+  ],
+  [
+   33.4,
+   "Palmen und Farne wachsen jetzt am Ufer.",
+   "Palmen und Farne erscheinen am Ufer (ab 32 s), Etikett PALÄOGEN (Anzeige ca. 25.353.231 Jahre vor heute)"
+  ],
+  [
+   37.6,
+   "Das Meer steigt und flutet die Flussmündung.",
+   "Meer steigt sichtbar in die Mündung (36,4–41 s), Gischt; Anzeige knapp über 34 Mio. (Antarktis-Vereisung 38,6 s) (Anzeige ca. 32.292.923 Jahre vor heute)"
+  ],
+  [
+   41.8,
+   "Krokodile liegen am warmen Ufer.",
+   "Vier Krokodile liegen am Ufer (ab 40,4 s), Fahrt an die Kante der Anhöhe läuft (Anzeige ca. 39.232.615 Jahre vor heute)"
+  ],
+  [
+   46,
+   "Schwüle Hitze, Dunst hängt über dem Wald.",
+   "Dunst über dem Wald, Licht golden und schwül (ab 40 s bis 48 s Dunst steigt), Palmen im Bild (Standbild 46 s) (Anzeige ca. 46.172.308 Jahre vor heute)"
+  ],
+  [
+   50.2,
+   "Kleine Säugetiere huschen durchs Unterholz.",
+   "Kleine Säugetiere laufen durchs Unterholz (7 Tiere, 49,4–54,8 s), Anzeige im Paläogen (Eozän ab 51,95 s) (Anzeige ca. 53.112.000 Jahre vor heute)"
+  ],
+  [
+   54.2,
+   "Im Unterholz brechen schwere Äste.",
+   "Äste brechen bei 54,5 s, Vögel fliegen bei 54,8 s auf, leichtes Beben, Zoom auf das Unterholz beginnt (54 s) (Anzeige ca. 59.721.231 Jahre vor heute)"
+  ],
+  [
+   62.4,
+   "Eine Herde Dinosaurier trinkt am Fluss.",
+   "Herde steht am Ufer (ab 57,6 s im Bild, Sauropode, Hadrosaurier, Ceratopsier), trinkt ab 62,2 s; Flugsaurier kreisen; Lichtstrahl bricht durch den Dunst (58 s); Anzeige HIER (Kreide); Fahrt auf die Herde ab 58 s"
+  ],
+  [
+   66.4,
+   "Den Homo sapiens gibt es seit 300.000 Jahren.",
+   "Herde trinkt weiter, Abendlicht, Kamera ruhig; Anzeige HIER (66,0 Mio.), Satz zur Pointe 300.000 / 66 Mio. = 0,45 %, Faktenzeile folgt im Abspann ab 72 s"
+  ]
+ ],
+ "faktenzeile": "DIE LETZTEN GROSSEN DINOSAURIER LEBTEN VOR 66 MIO. JAHREN · DEN HOMO SAPIENS GIBT ES ERST SEIT 0,45 % DIESER ZEIT",
+ "rechenweg": "Zeitraffer als stetige Rate r(t) in Jahren pro Sekunde, Anzeige y(t) = Integral von r. Grenzen nach ICS 2024: Quartär 2,58 Mio., Neogen 23,04 Mio., Paläogen/Kreide 66,00 Mio. Jahre. Segment 3 (32–58 s): r3 = (66,00 − 23,04) Mio. / 26 s = 1.652.308 J/s. Segment 2 (18–32 s, linear): r1 = 2·(23,04 − 2,58) Mio. / 14 s − r3 = 1.270.549 J/s. Segment 1 (0–18 s): r(t) = r0·e^(a·t) mit r0·e^(18a) = r1 und (r1 − r0)/a = 2,58 Mio. → a = 0,4924 /s, r0 = 180 J/s. Kontrollwerte y(t): 4,8 s = 3.516 · 8,17 s = 20.000 (Letztes glaziales Maximum) · 12,8 s ≈ 190.000 · 13,6 s = 300.000 · 18 s = 2.580.000 · 24,35 s = 11,2 Mio. (Hipparion in Eurasien) · 32 s = 23.040.000 · 38,6 s = 34 Mio. (Antarktis-Vereisung) · 51,95 s = 56 Mio. (Beginn Eozän) · 58 s = 66.000.000. Pointe: 300.000 / 66.000.000 = 0,4545 % ≈ 0,45 %. Nachgerechnet mit Python (cockpit/daten/tmp/dino2.py).",
+ "rechnung_code": "pipeline/sim/dino_zurueck.mjs (Test: pipeline/sim/dino_zurueck.test.mjs)",
+ "zahlen": {
+  "grenze_kreide_palaeogen_jahre": 66000000,
+  "grenze_neogen_jahre": 23040000,
+  "grenze_quartaer_jahre": 2580000,
+  "lgm_jahre": 20000,
+  "lgm_meeresspiegel_m": "−120 bis −130",
+  "homo_sapiens_jahre": 300000,
+  "anteil_homo_sapiens_prozent": 0.45,
+  "antarktis_vereisung_jahre": 34000000,
+  "hipparion_eurasien_jahre": 11200000,
+  "rate_ende_jahre_pro_s": 1652308,
+  "rate_start_jahre_pro_s": 180
+ },
+ "annahmen": [
+  "(A) Ort ist eine generische Flussmündung in gemäßigten Breiten; Tiere und Pflanzen nur grob nach Epoche, keine Rekonstruktion eines realen Ortes (die Kontinente lagen früher anders, der Standpunkt bleibt fest).",
+  "(A) Gletscher im Tal während der Kaltzeiten setzt einen Ort nahe den eiszeitlichen Eisrändern voraus.",
+  "(A) Zeitraffer-Kurve frei gewählt (stetig, ohne Sprünge), damit jede Epoche sichtbar Zeit bekommt.",
+  "(S) Krokodile und Palmen im Paläogen in mittleren Breiten: belegt für das warme Eozän (sogar in der Arktis); im Oligozän als Übergang gezeigt.",
+  "(A) Höherer Meeresspiegel vor der Antarktis-Vereisung und in der Kreide nur qualitativ (Meer flutet die Mündung), keine Zahl im Bild, weil die Studien streuen (Kreide 100 ± 50 m nach Miller 2005, 75–250 m nach Haq 2014).",
+  "(A) Kein Einschlag, keine toten Tiere; das Video endet bei lebenden Dinosauriern."
+ ],
+ "quellen": [
+  "(F) International Chronostratigraphic Chart v2024/12 und ChangeLog 2012–2026 (Danian 66,00 Ma, Aquitanian 23,04 Ma, Gelasian 2,58 Ma, Ypresian 56,00 Ma), International Commission on Stratigraphy, Stand 2024 – https://stratigraphy.org/ICSchart/ChangeLog2012-2026.txt",
+  "(F) Hublin et al., New fossils from Jebel Irhoud, Morocco and the pan-African origin of Homo sapiens, Nature 546, 2017 (ca. 300.000 Jahre), MPI EVA – https://www.eva.mpg.de/homo-sapiens.html",
+  "(F) Strömberg, Evolution of Grasses and Grassland Ecosystems, Annu. Rev. Earth Planet. Sci. 39, 2011 (grasdominierte Landschaften breiten sich im mittleren bis späten Känozoikum aus) – https://www.biology.washington.edu/pubs/evolution-grasses-and-grassland-ecosystems",
+  "(F) Lisiecki & Raymo, LR04-Stapel, Paleoceanography 2005, und Folgearbeiten (Eiszeitzyklen ca. 41.000 Jahre vor, ca. 100.000 Jahre nach der Mittelpleistozänen Wende) – https://www.nature.com/articles/s41561-023-01235-x.pdf",
+  "(F) Letztes glaziales Maximum: Meeresspiegel ca. 120–130 m tiefer, um 20.000 Jahre vor heute (Yokoyama et al., Nature 2000, NOAA-Datensatz) – https://catalog-beta.data.gov/dataset/noaa-wds-paleoclimatology-yokoyama-et-al-2000-timing-lgm-from-observed-sea-level-minima",
+  "(F) Hipparionini: dreizehige Pferde erreichen Eurasien vor ca. 11,2 Mio. Jahren – https://en.wikipedia.org/wiki/Hipparionini",
+  "(F) Antarktischer Eisschild entsteht am Eozän-Oligozän-Übergang vor ca. 34 Mio. Jahren (Univ. Southampton) – https://eprints.soton.ac.uk/393827",
+  "(F) West et al., Paleobotanical proxies for early Eocene climates, Climate of the Past 16, 2020 (Krokodile und Palmen bis in die Arktis) – https://cp.copernicus.org/articles/16/1387/2020/cp-16-1387-2020.pdf",
+  "(F) Miller et al., The Phanerozoic Record of Global Sea-Level Change, Science 310, 2005 (Kreide 100 ± 50 m höher); Haq, Cretaceous eustasy revisited, Global and Planetary Change 113, 2014 (75–250 m) – https://cir.nii.ac.jp/crid/1363388844533952512"
+ ],
+ "caption": "Was wäre, wenn du die Erde bis zu den Dinosauriern zurückspulst? 🦕 Ich hab’s durchgespielt. In welcher Epoche wärst du gern ausgestiegen? 👇 #dinosaurier #erdgeschichte #zeitraffer #wissen #waswaerewenn",
+ "korrekturen": [
+  "Keine inhaltlichen Korrekturen an Titelfrage, Sätzen und Faktenzeile (1:1 aus dem Slot-Dokument); Standzeit 3,6 s je Satz (letzter 3,4 s).",
+  "Kamera am Ende (58–70 s) gegenüber dem Slot-Entwurf leicht geändert: Fahrt auf die Herde statt reiner Zoom, Brennweite 56° → 46° statt → 40°, damit die Herde im Höhepunkt sichtbar ist (Standbildprüfung 06.11.); Inhalt, Zahlen und Satzzeiten unverändert."
+ ],
+ "dramaturgie": [
+  "0–4 s: volle Szene ab Bild 0, Morgennebel über der Mündung; erster Welteffekt vor 4 s: Bäume wachsen im Rückwärts-Zeitraffer zurück und fallen, Wolken jagen; Anzeige läuft sofort.",
+  "3 s: langsamer Schwenk vom Fluss ins Land beginnt (Pflicht vor 8 s).",
+  "5–8 s: Meer zieht sich weit aus der Mündung zurück (Stufe 1), ab 8 s schiebt sich eine Gletscherzunge ins Tal, Licht wird kalt und blau.",
+  "12–18 s: Mammutherde am Eisrand; Eis pulsiert immer schneller (Kaltzeiten im Takt), Schnee und Grün wechseln.",
+  "18 s: erste Wendung, Etikett QUARTÄR → NEOGEN, Eis verschwindet endgültig, Licht wird warm (Bildwechsel), Grasland mit dreizehigen Pferden.",
+  "25–32 s: Büsche und Bäume erobern das Grasland, Wald schließt sich (Stufe 2), Mittagssonne.",
+  "32 s: Etikett NEOGEN → PALÄOGEN, Palmen und Farne; 37–41 s Meer steigt sichtbar in die Mündung bis vor die Anhöhe (Stufe 3), Fahrt an die Kante, Glanz auf dem Wasser.",
+  "42–50 s: Krokodile am Ufer, Dunst, Licht wird golden-schwül (Stufe 4).",
+  "50–58 s: Annäherung: kleine Säugetiere im Unterholz, dann knicken Äste, Vögel fliegen auf, Zoom auf das Unterholz (Stufe 5).",
+  "58 s: HIER: eine Herde großer Pflanzenfresser tritt ans Ufer, Flugsaurier über dem Wasser, Lichtstrahl bricht durch den Dunst (Aufleuchten); im Moment kein Satz.",
+  "62–70 s: Nachspiel: Herde trinkt, Flugsaurier kreisen, Abendlicht; kein Einschlag, keine Opfer.",
+  "70–72 s Abblende, 72–80 s Abspann mit Titelfrage und Faktenzeile."
+ ],
+ "selbstpruefung": [
+  "Satzzahl 15 (Vorgabe 12–18); Wörter je Satz 5–9, alle im Bereich 3–9.",
+  "Erster Satz 4,8 s, letzter 66,4–69,8 s (endet vor 70 s); Abstände 4,0–4,4 s; im Höhepunkt 58–62 s kein Satz.",
+  "Keine Ausrufezeichen, keine Fragen außer der Titelfrage, Präsens, ruhige Aussagesätze, kein künstlicher Cliffhanger.",
+  "Anzeige läuft ab Bild 0 stetig, ändert sich vor 8 s, 3 Etikettwechsel (QUARTÄR → NEOGEN → PALÄOGEN → KREIDE/HIER), Grenzwerte exakt nach ICS 2024; Zeitraffer-Faktor in der Unterzeile.",
+  "Satz-Bild-Abgleich: Satz 2 bei y ≈ 20.000 (LGM, Meer −120 m), Satz 3 Mammuts bei ca. 190.000, Satz 5 Pferde bei 6–10 Mio. (Hipparion in Eurasien ab 11,2 Mio.), Satz 9 Meer steigt bei 32–37 Mio. (Antarktis eisfrei vor 34 Mio.), Satz 14 Dinosaurier nach 66 Mio.",
+  "Pointe gerechnet: 0,3 / 66 = 0,45 %; Faktenzeile belegt (ICS 2024, Hublin 2017).",
+  "Weltvielfalt: Welttyp Fluss/Delta (letztes Account-2-Projekt Wald/Lichtung, ebenerdig, Nachmittag), Standpunkt erhöht, Tageszeit Morgen → Abend, Ende Tiere/Grün; das Abend-Video ist Küste, ebenerdig, Abend → Nacht → Morgen, Ende Gebirge/Wüste: kein Konflikt.",
+  "Verworfen, weil nicht sicher belegt: Wollnashörner (laut Studie 2025 erst nach ca. 130.000 Jahren in Europa, passt nicht ins Satzfenster), vierstoßzähnige Elefantenverwandte (Datierungen widersprechen sich), Meeresspiegel-Zahl im Bild.",
+  "Verbote: keine Stimme, keine Untertitel, kein Logo, kein Folgen-Aufruf, keine Opfer, kein Einschlag."
+ ],
+ "bewegungsplan": [
+  [
+   0,
+   "Morgennebel, Bäume wachsen im Rückwärts-Zeitraffer zurück, Wolken jagen, Anzeige läuft",
+   1
+  ],
+  [
+   1,
+   "Wolkenjagd, Windstoß",
+   1
+  ],
+  [
+   2.4,
+   "Möwen steigen über dem Meer auf",
+   1
+  ],
+  [
+   3,
+   "Schwenk vom Fluss ins Land beginnt",
+   1
+  ],
+  [
+   5,
+   "Meer zieht sich aus der Mündung zurück",
+   2
+  ],
+  [
+   8.2,
+   "Gletscherzunge schiebt sich ins Tal, Licht kalt und blau",
+   2
+  ],
+  [
+   11.4,
+   "Mammutherde am Eisrand",
+   2
+  ],
+  [
+   12.9,
+   "Eis pulsiert (Kaltzeiten im Takt, 12,9 / 14,7 / 16,2 s)",
+   3
+  ],
+  [
+   18.6,
+   "Eis schmilzt endgültig, Licht wird warm (Bildwechsel), Etikett NEOGEN",
+   3
+  ],
+  [
+   20.4,
+   "Dreizehige Pferde auf dem Grasland",
+   3
+  ],
+  [
+   24,
+   "Gras staubt, Pollen im Licht",
+   3
+  ],
+  [
+   27,
+   "Büsche und Bäume erobern das Grasland, Wald schließt sich",
+   3
+  ],
+  [
+   32,
+   "Etikett PALÄOGEN, Palmen und Farne, Fahrt an die Kante beginnt",
+   4
+  ],
+  [
+   36.4,
+   "Meer steigt und flutet die Mündung",
+   4
+  ],
+  [
+   40.4,
+   "Krokodile am Ufer",
+   4
+  ],
+  [
+   46,
+   "Dunst, goldenes schwüles Licht",
+   4
+  ],
+  [
+   49.6,
+   "Kleine Säugetiere im Unterholz",
+   4
+  ],
+  [
+   54,
+   "Zoom auf das Unterholz beginnt",
+   5
+  ],
+  [
+   54.5,
+   "Äste brechen, Vögel fliegen auf, Beben",
+   5
+  ],
+  [
+   58,
+   "HIER: Lichtstrahl bricht durch den Dunst, Herde tritt ans Ufer, Flugsaurier kreisen, Fahrt auf die Herde",
+   5
+  ],
+  [
+   62.2,
+   "Herde trinkt, Abendlicht",
+   5
+  ],
+  [
+   70,
+   "Abblende",
+   1
+  ],
+  [
+   72,
+   "Abspann: Titelfrage und Faktenzeile",
+   1
+  ]
+ ],
+ "lern_notizen": {
+  "welt": "Flussmündung/Küste mit Anhöhe in gemäßigten Breiten (Welttyp See/Fluss/Delta), engine/welt_muendung.js (Erstbau 06.11.2026)",
+  "standpunkt": "erhöht: flache Anhöhe über der Flussmündung, Blick erst auf Fluss und Meer, dann ins Land",
+  "tageszeit": [
+   "Morgen",
+   "heller Mittag",
+   "schwüler goldener Abend"
+  ],
+  "kamera": [
+   {
+    "t": 0,
+    "art": "fahrt",
+    "was": "sehr langsame Fahrt über die Anhöhe nach vorn (0–20 s)"
+   },
+   {
+    "t": 3,
+    "art": "schwenk",
+    "was": "Schwenk vom Fluss ins Land, Blickrichtung 10° → 46° (bis 20 s)"
+   },
+   {
+    "t": 32,
+    "art": "fahrt",
+    "was": "Fahrt an die Kante der Anhöhe, Blick zum Meer (32–45 s)"
+   },
+   {
+    "t": 45,
+    "art": "schwenk",
+    "was": "Blick landeinwärts auf das Unterholz am Ufer (45–54 s)"
+   },
+   {
+    "t": 54,
+    "art": "zoom",
+    "was": "Brennweite 56° → 46°, ab 58 s Fahrt auf die Herde (bis 66 s)"
+   }
+  ],
+  "zeitraffer": [
+   {
+    "von": 0,
+    "bis": 18,
+    "faktor": "rückwärts, exponentiell beschleunigend von 180 auf 1,27 Mio. Jahre/s"
+   },
+   {
+    "von": 18,
+    "bis": 32,
+    "faktor": "linear 1,27 → 1,65 Mio. Jahre/s"
+   },
+   {
+    "von": 32,
+    "bis": 58,
+    "faktor": "konstant 1,65 Mio. Jahre/s"
+   },
+   {
+    "von": 58,
+    "bis": 70,
+    "faktor": "Anzeige steht auf HIER (66,0 Mio. Jahre)"
+   }
+  ],
+  "effekte": [
+   {
+    "t": 0.6,
+    "name": "wald_zeitraffer"
+   },
+   {
+    "t": 1,
+    "name": "wolkenjagd"
+   },
+   {
+    "t": 2.4,
+    "name": "moewen_steigen"
+   },
+   {
+    "t": 5,
+    "name": "meer_weicht"
+   },
+   {
+    "t": 8.2,
+    "name": "gletscher_schiebt"
+   },
+   {
+    "t": 11.4,
+    "name": "mammuts"
+   },
+   {
+    "t": 12.9,
+    "name": "eis_pulsiert_1"
+   },
+   {
+    "t": 14.7,
+    "name": "eis_pulsiert_2"
+   },
+   {
+    "t": 16.2,
+    "name": "eis_pulsiert_3"
+   },
+   {
+    "t": 18.6,
+    "name": "eis_schmilzt"
+   },
+   {
+    "t": 20.4,
+    "name": "pferde"
+   },
+   {
+    "t": 24,
+    "name": "gras_staubt"
+   },
+   {
+    "t": 27,
+    "name": "wald_schliesst"
+   },
+   {
+    "t": 32,
+    "name": "palmen_farne"
+   },
+   {
+    "t": 36.4,
+    "name": "meer_steigt"
+   },
+   {
+    "t": 40.4,
+    "name": "krokodile"
+   },
+   {
+    "t": 46,
+    "name": "dunst"
+   },
+   {
+    "t": 49.6,
+    "name": "kleinsaeuger"
+   },
+   {
+    "t": 54.5,
+    "name": "aeste_brechen"
+   },
+   {
+    "t": 54.8,
+    "name": "voegel_fliegen_auf"
+   },
+   {
+    "t": 58,
+    "name": "lichtstrahl"
+   },
+   {
+    "t": 58.6,
+    "name": "herde_tritt"
+   },
+   {
+    "t": 62.6,
+    "name": "herde_trinkt"
+   }
+  ],
+  "sequenzen": [
+   "Quartär: Eiszeiten im Takt",
+   "Neogen: Grasland und Wald",
+   "Paläogen: Palmen, Meer steigt, Krokodile",
+   "Annäherung: Unterholz",
+   "Höhepunkt HIER: Herde",
+   "Nachspiel: Herde trinkt"
+  ]
+ }
+}
