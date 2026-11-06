@@ -1,0 +1,403 @@
+{
+  "titel": "Mieten oder kaufen: Wer hat nach 30 Jahren mehr Vermögen?",
+  "skill": "simulierbar-video",
+  "konto": "simulierbar",
+  "skript_quelle": "acc1-2026-11-06-abend",
+  "stil": "19 Architekturmodell (Abendlicht)",
+  "stil_begruendung": "Mieten oder kaufen ist ein Wohnungsthema: zwei identische Kartonhäuser mit Fensterschnitten auf einer Sperrholzplatte, in jedem die gleiche Wohnung als Acrylglas-Marker (Lisa kauft, Tom mietet). Geld wird zu Acryl-Säulen (Lisas Vermögen und Restschuld, Toms Depot), das tiefe Abendlicht im Gegenlicht wird bis zum knappen Ergebnis wärmer. Stil 19 trägt Wohnen ruhig und hochwertig, hielt bisher 34 %/36 % der Länge (Lernschleife, n = 2) und hat einen fertigen Video-Baukasten. Der letzte Stil war 18 (angestellt-selbststaendig, heute Mittag), der Stil unterscheidet sich also; Stil 18 bleibt wegen der Zusatzlatte vom 05.11. pausiert.",
+  "teamfarben": {
+    "Lisa": "#FF8A3D",
+    "Tom": "#3D8BFF"
+  },
+  "klangteppich": "raum",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Lisa kauft, Tom mietet. Wer hat nach 30 Jahren mehr?",
+      "sprechtext": "Lisa kauft, Tom mietet.\n[curious] Wer hat nach dreißig Jahren MEHR?",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Lisa kauft",
+          "bild": "Lisas Wohnung (Acryl-Marker im linken Kartonhaus) leuchtet orange auf, Lisa-Figur dreht sich zur Kamera; Tafel LISA 0 € | TOM 0 €, Uhr JAHR 0"
+        },
+        {
+          "gesagt": "Tom mietet",
+          "bild": "Toms Wohnung im identischen rechten Haus leuchtet blau auf, Chip DIESELBE WOHNUNG folgt; Kamera fährt von Lisa zu Tom"
+        },
+        {
+          "gesagt": "Wer hat nach 30 Jahren mehr?",
+          "bild": "Kamera gleitet zurück auf beide Häuser nebeneinander, Warm-Licht von hinten, Staub in den Lichtbahnen"
+        }
+      ]
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Leipzig, 80 Quadratmeter, 242.720 Euro – beide starten mit 50.000 Euro. Lisa zahlt im Monat 1.226 Euro, Tom 718 Euro Miete – den Rest legt er an.",
+      "sprechtext": "Leipzig, achtzig Quadratmeter, zweihundertvierzigtausend – beide starten mit fünfzigtausend.\nLisa zahlt im Monat gut zwölfhundert, Tom siebenhundertzwanzig Miete – den Rest legt er an.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Leipzig",
+          "bild": "Schild LEIPZIG vor den Häusern, Chip LEIPZIG · 80 m²"
+        },
+        {
+          "gesagt": "zweihundertvierzigtausend",
+          "bild": "Chip KAUFPREIS 242.720 €, Kamera hebt sich über beide Dächer"
+        },
+        {
+          "gesagt": "Beide starten mit fünfzigtausend",
+          "bild": "zwei Acryl-Säulen (Lisa orange, Tom blau) wachsen zwischen den Häusern auf 50.000 €, Tafel zählt 0 → 50.000 € für beide, Chip JE 50.000 € START"
+        },
+        {
+          "gesagt": "Lisa zahlt im Monat gut zwölfhundert",
+          "bild": "Kamera zu Lisa, Kreditturm (grau) steigt vor ihrem Haus, Chip LISA · 1.226 € IM MONAT"
+        },
+        {
+          "gesagt": "Tom siebenhundertzwanzig Miete",
+          "bild": "Kamera zu Tom, Chip TOM · 718 € MIETE"
+        },
+        {
+          "gesagt": "den Rest legt er an",
+          "bild": "Chip REST WIRD ANGELEGT, Toms Säule pulsiert"
+        }
+      ]
+    },
+    {
+      "id": "falle",
+      "phase": "falle",
+      "text": "Klar, Miete ist rausgeworfenes Geld. Oder?",
+      "sprechtext": "Klar, Miete ist RAUSGEWORFENES Geld.\nOder?",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Klar, Miete ist rausgeworfenes Geld",
+          "bild": "Lichtkegel auf Lisa, blaue Mietscheine fliegen aus Toms Haus weg, Chip RAUSGEWORFENES GELD?"
+        },
+        {
+          "gesagt": "Oder?",
+          "bild": "Lichtkegel springt auf Tom, Kamera schwenkt zu Tom"
+        }
+      ]
+    },
+    {
+      "id": "rennen",
+      "phase": "rennen",
+      "text": "Tag eins: 26.869 Euro Nebenkosten – weg.",
+      "sprechtext": "Tag eins: siebenundzwanzigtausend Nebenkosten – WEG.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Tag eins: siebenundzwanzigtausend Nebenkosten",
+          "bild": "Kamera auf Lisas Säule, heller Block (26.869 €) auf ihrer Säule, Chip NEBENKOSTEN −26.869 €"
+        },
+        {
+          "gesagt": "weg",
+          "bild": "Block löst sich auf, Lisas Säule fällt auf 23.131 €, Tafel LISA 23.131 | TOM 50.000 → TOM VORN, Lichtblitz"
+        }
+      ]
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Folg mir, damit du nichts verpasst.",
+          "bild": "Folgen-Element (M.folgen), Welt läuft weiter, Kamera zurück auf Weitwinkel"
+        }
+      ]
+    },
+    {
+      "id": "wendung1",
+      "phase": "wendung1",
+      "text": "Aber Toms Miete steigt jedes Jahr, Lisas Rate bleibt gleich. Im 20. Jahr zahlt Tom über 1.000 Euro.",
+      "sprechtext": "Aber Toms Miete steigt jedes Jahr, Lisas Rate bleibt GLEICH.\nIm zwanzigsten Jahr zahlt Tom über tausend Euro.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Toms Miete steigt jedes Jahr",
+          "bild": "Zoom auf Toms Haus, Jahresuhr läuft 0 → 20, schwebender Zähler MIETE tickt hoch, Chip MIETE +2 % IM JAHR, Lichtwechsel"
+        },
+        {
+          "gesagt": "Lisas Rate bleibt gleich",
+          "bild": "Kamera zu Lisa, schwebender Zähler RATE 1.065 € bleibt fest"
+        },
+        {
+          "gesagt": "Im zwanzigsten Jahr zahlt Tom über tausend Euro",
+          "bild": "Uhr JAHR 20, Zähler MIETE 1.045 €, Tafel LISA 256.130 | TOM 299.110"
+        }
+      ]
+    },
+    {
+      "id": "wendung2",
+      "phase": "wendung2",
+      "text": "Jahr 30: Lisas Wohnung ist abbezahlt – 439.654 Euro. Toms Depot: 512.969 Euro. Doch auf die Gewinne zahlt Tom Steuer.",
+      "sprechtext": "Jahr dreißig: Lisas Wohnung ist abbezahlt – vierhundertvierzigtausend.\nToms Depot: fünfhundertdreizehntausend.\nDoch auf die Gewinne zahlt Tom STEUER.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Jahr dreißig",
+          "bild": "Uhr springt auf JAHR 30, Kamera hebt sich, beide Säulen wachsen hoch"
+        },
+        {
+          "gesagt": "Lisas Wohnung ist abbezahlt – vierhundertvierzigtausend",
+          "bild": "Kreditturm ist null, Lisas Säule leuchtet auf 439.654 €, Chip WOHNUNG 439.654 €"
+        },
+        {
+          "gesagt": "Toms Depot: fünfhundertdreizehntausend",
+          "bild": "Kamera zu Toms Säule, leuchtet auf 512.969 €, Chip DEPOT 512.969 €"
+        },
+        {
+          "gesagt": "Doch auf die Gewinne zahlt Tom Steuer",
+          "bild": "Zoom auf Toms Säulenspitze, Steuer-Block wird abgeschnitten und gleitet zur Seite, Tafel TOM fällt auf 448.266 €, Chip STEUER AUF GEWINN"
+        }
+      ]
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Endstand: Tom 448.266 Euro, Lisa 439.654 Euro. Tom gewinnt – mit 8.612 Euro Vorsprung.",
+      "sprechtext": "Endstand:\nTom vierhundertachtundvierzigtausend, Lisa vierhundertvierzigtausend.\nTom gewinnt – mit gut ACHTTAUSEND Vorsprung.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Endstand",
+          "bild": "Bilanzkarte NACH 30 JAHREN baut sich auf, Kamera mittig auf beide Säulen"
+        },
+        {
+          "gesagt": "Tom vierhundertachtundvierzigtausend, Lisa vierhundertvierzigtausend",
+          "bild": "Zeilen TOM 448.266 € und LISA 439.654 € nacheinander, Säulen leuchten abwechselnd"
+        },
+        {
+          "gesagt": "Tom gewinnt – mit gut achttausend Vorsprung",
+          "bild": "enge Einstellung, Differenz VORSPRUNG 8.612 €, Sieger TOM GEWINNT, Glow auf Toms Säule und Haus"
+        }
+      ]
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum so knapp? Die Miete steigt, Lisas Rate nicht, und Toms Gewinne kosten 64.703 Euro Steuer.",
+      "sprechtext": "[thoughtful] Warum so knapp?\nDie Miete steigt, Lisas Rate nicht, und Toms Gewinne kosten fünfundsechzigtausend Steuer.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Warum so knapp?",
+          "bild": "ruhige Weitfahrt, Licht wird gelassener"
+        },
+        {
+          "gesagt": "Die Miete steigt, Lisas Rate nicht",
+          "bild": "Zähler MIETE tickt 718 → 1.274 €, Zähler RATE bleibt 1.065 €"
+        },
+        {
+          "gesagt": "Toms Gewinne kosten fünfundsechzigtausend Steuer",
+          "bild": "Steuer-Block erscheint neben Toms Säule, Chip STEUER −64.703 €"
+        }
+      ]
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "ueberraschung",
+      "text": "Und das Verrückte: Legt Tom die Differenz nicht an, hat er 185.431 Euro. Dann gewinnt Lisa – mit 254.222 Euro Vorsprung.",
+      "sprechtext": "Und das Verrückte:\nLegt Tom die Differenz NICHT an, hat er hundertfünfundachtzigtausend.\nDann gewinnt Lisa – mit über zweihundertfünfzigtausend Vorsprung.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Und das Verrückte",
+          "bild": "Uhr spult zurück auf JAHR 0, Säulen schrumpfen (neue Runde)"
+        },
+        {
+          "gesagt": "Legt Tom die Differenz nicht an, hat er hundertfünfundachtzigtausend",
+          "bild": "Einkaufstüten fliegen aus Toms Haus statt Münzen ins Depot, Chip TOM LEGT NICHT AN, Toms Säule wächst nur auf 216.097 €, Steuer-Block, Tafel TOM 185.431 €"
+        },
+        {
+          "gesagt": "Dann gewinnt Lisa – mit über zweihundertfünfzigtausend Vorsprung",
+          "bild": "Lisas Säule zieht an Toms vorbei (Tafel VORN wechselt auf LISA), Lisa leuchtet, Chip LISA +254.222 €"
+        }
+      ]
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Miete ist kein rausgeworfenes Geld. Aber Kaufen zwingt dich zum Sparen.",
+      "sprechtext": "Miete ist kein rausgeworfenes Geld.\nAber Kaufen zwingt dich zum SPAREN.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Miete ist kein rausgeworfenes Geld",
+          "bild": "Kamera gleitet ruhig zurück, Licht beruhigt sich"
+        },
+        {
+          "gesagt": "Aber Kaufen zwingt dich zum Sparen",
+          "bild": "Pointe KAUFEN = SPAREN, Lisas Säule leuchtet"
+        }
+      ]
+    },
+    {
+      "id": "schluss",
+      "phase": "schluss",
+      "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+      "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+          "bild": "Schleife: Kamera, Säulen, Tafel und Uhr gleiten zurück in die Startaufstellung (letztes Bild = erstes Bild)"
+        }
+      ]
+    }
+  ],
+  "caption": "Mieten oder kaufen: Wer hat nach 30 Jahren mehr Vermögen? 🏠 Ich hab's simuliert. Team Miete oder Team Eigentum? 👇 #mietenoderkaufen #immobilien #eigentumswohnung #wissen #simulation",
+  "quellen": [
+    "(F) ImmoScout24 WohnBarometer Q1 2026 Kauf: Leipzig Bestand-Eigentumswohnung 3.034 €/m² (+5,5 % z. Vj.), Referenz 3 Zimmer, 80 m², 01.04.2026 – https://www.immobilienscout24.de/unternehmen/news-medien/news/default-title/kaufmarkt-weiter-stabil-unsicherheiten-bleiben/",
+    "(F) ImmoScout24 WohnBarometer Q2 2026 Miete: Leipzig Bestand 8,97 €/m² (+2,3 % z. Vj.), Referenz 2 Zimmer, 70 m², 02.07.2026 – https://www.immobilienscout24.de/unternehmen/fileadmin/user_upload/WohnBarometer_Q2_2026_Miete.pdf",
+    "(F) PISA/Duale Hochschule Sachsen, Marktbericht Miete 2026: Leipzig Bestand Median 9,88 €/m² 2025, +2,2 % z. Vj. (Gegenprobe), L-IZ 25.07.2026 – https://www.l-iz.de/wirtschaft/verbraucher/2026/07/pisa-bericht-leipziger-mietmarkt-steigende-mieten-665289",
+    "(F) Deutsche Bundesbank, MFI-Zinsstatistik, Effektivzinssatz Wohnungsbaukredite an private Haushalte, Neugeschäft, Zinsbindung über 10 Jahre (BBIM1.M.DE.B.A2C.P.R.A.2250.EUR.N): Sept. 2026 4,13 % (vorläufig), Stand 02.11.2026 – https://www.bundesbank.de/de/statistiken/geld-und-kapitalmaerkte/zinssaetze-und-renditen/wohnungsbaukredite-an-private-haushalte-hypothekarkredite-615036",
+    "(F) Sächsisches Grunderwerbsteuersatzgesetz: 5,5 % ab 01.01.2023, REVOSax – https://www.revosax.sachsen.de/vorschrift/19800-Saechsisches-Grunderwerbsteuersatzgesetz",
+    "(F) Notar und Grundbuch zusammen ca. 1,5–2 % des Kaufpreises; Maklerprovision Halbteilung, Käufer max. 3,57 %, Finanztip – https://www.finanztip.de/baufinanzierung/nebenkosten-hauskauf/ ; § 656c BGB – https://www.gesetze-im-internet.de/bgb/__656c.html",
+    "(F) II. BV 2026: Instandhaltungspauschale 18,62 €/m²/Jahr (Bezugsfertigkeit ≥ 32 Jahre), Aufbaubank Thüringen – https://dokumente.aufbaubank.de/862739-TAB_Erfassungsbogen_Objektwirtschaftlichkeitsberechnung.pdf ; Verwaltungskosten Eigentumswohnung 445,32 €/Jahr ab 01.01.2026, Haus & Grund München, 05.12.2025 – https://www.haus-und-grund-muenchen.de/documents/press_articles/20251205_pi_mieterhhung%20bei%20sozialwohnungen%20zum%201.1.2026.pdf",
+    "(F) Abgeltungsteuer 25 % (§ 32d EStG) plus Soli 5,5 %; Teilfreistellung 30 % für Aktienfonds (§ 20 InvStG) – https://www.gesetze-im-internet.de/invstg_2018/__20.html ; private Veräußerung selbstgenutzter Wohnung steuerfrei (§ 23 Abs. 1 Nr. 1 EStG) – https://www.gesetze-im-internet.de/estg/__23.html",
+    "(S) Rendite 5 % p. a. als vorsichtige Modellannahme für breit gestreute Aktienanlage (langfristig historisch höher: MSCI World Ende 1969 bis Nov. 2025 rechnerisch ca. 8 % p. a., Deutsche Börse/envestor, 01.12.2025 – https://live.deutsche-boerse.com/nachrichten/msci-world-kontra-weltportfolio-warum-ein-index-selten-genuegt).",
+    "(S) Eigene Modellrechnung, Python, 05.11.2026 (cockpit/daten/tmp/rechnung_abend_1106.py)."
+  ],
+  "annahmen": [
+    "(A) Modellwohnung: 80 m² Bestand in Leipzig, Kaufpreis und Miete nach ImmoScout24-Angebotsdaten (Referenz Kauf 80 m² / 3 Zimmer, Miete 70 m² / 2 Zimmer, auf 80 m² hochgerechnet); tatsächliche Preise je Lage stark unterschiedlich.",
+    "(A) Beide haben 50.000 € Eigenkapital; Lisa setzt es für Nebenkosten und Anzahlung ein, Tom legt es am Tag eins an.",
+    "(A) Zins 4,13 % bleibt 30 Jahre gleich, Kredit ist nach 30 Jahren getilgt (in der Praxis Zinsbindung 10–15 Jahre, danach neuer Zins).",
+    "(A) Notar und Grundbuch 2 % (übliche Spanne 1,5–2 %), Makler 3,57 % Käuferanteil (§ 656c BGB Halbteilung).",
+    "(A) Instandhaltung und Verwaltung nach den Pauschalen der II. BV 2026 (Altbau > 32 Jahre), jährlich +2 %; umlagefähige Nebenkosten und Grundsteuer zahlen beide gleich (Mieter über die Betriebskosten) und fallen heraus.",
+    "(A) Miete, Wohnungswert und Instandhaltung steigen je 2 % im Jahr (Leipziger Bestandsmieten zuletzt +2,2 bis +2,3 %/Jahr).",
+    "(A) Tom legt breit gestreut an, Rendite 5 % im Jahr vor Steuern; Steuer am Ende auf den ganzen Gewinn (Abgeltungsteuer mit Soli, Teilfreistellung 30 %), ohne Kirchensteuer, Sparerpauschbetrag und Vorabpauschale vernachlässigt. Lisas selbstgenutzte Wohnung ist steuerfrei verkaufbar (§ 23 EStG).",
+    "(A) Vermögen nach 30 Jahren ohne Verkaufskosten; keine Produkt-, Bank- oder Anlageempfehlung, reine Modellrechnung."
+  ],
+  "zahlen": {
+    "wohnflaeche": "80 m²",
+    "kaufpreis_qm": "3.034 €/m² (Leipzig Bestand, Q1 2026)",
+    "kaufpreis": "242.720 €",
+    "nebenkosten": "26.869,10 € (GrESt 5,5 % 13.349,60 + Notar/Grundbuch 2 % 4.854,40 + Makler 3,57 % 8.665,10)",
+    "eigenkapital_je": "50.000 €",
+    "kredit": "219.589,10 €",
+    "zins": "4,13 % p. a. (Bundesbank, Zinsbindung > 10 J., Sept. 2026)",
+    "rate": "1.064,88 €/Monat (Annuität 30 Jahre)",
+    "instandhaltung_verwaltung": "161,24 €/Monat (II. BV 2026: 18,62 €/m²/J + 445,32 €/J), +2 %/J",
+    "lisa_monat_start": "1.226,12 €",
+    "miete_qm": "8,97 €/m² (Leipzig Bestand, Q2 2026)",
+    "miete_start": "717,60 €/Monat, +2 %/J",
+    "sparrate_tom_start": "508,52 €/Monat",
+    "miete_jahr20": "1.045,41 €/Monat",
+    "miete_jahr30": "1.274,35 €/Monat",
+    "lisa_zinsen_30j": "163.766 €",
+    "tom_miete_30j": "349.340 €",
+    "wohnung_wert_30": "439.654 € (+2 %/J, Annahme)",
+    "tom_depot_brutto_30": "512.969 € (eingezahlt 162.512 €)",
+    "tom_steuer": "64.703 € (18,4625 % auf 350.457 € Gewinn)",
+    "tom_netto_30": "448.266 €",
+    "lisa_30": "439.654 €",
+    "vorsprung_tom": "8.612 €",
+    "tom_ohne_anlage": "185.431 € (nur Eigenkapital angelegt)",
+    "vorsprung_lisa_ohne_anlage": "254.222 €",
+    "variante_zins_3": "Lisa +93.097 €",
+    "variante_rendite_3": "Lisa +148.074 €",
+    "variante_wert_1": "Tom +121.116 €",
+    "variante_wert_3": "Lisa +140.879 €"
+  },
+  "rechenweg": "Python, cockpit/daten/tmp/rechnung_abend_1106.py, monatlich über 360 Monate. Kaufpreis 80 × 3.034 = 242.720 €; Nebenkosten 242.720 × (5,5 % + 2,0 % + 3,57 %) = 26.869,10 €; Kredit 242.720 + 26.869,10 − 50.000 = 219.589,10 €. Annuität: K × i/(1 − (1 + i)^−360) mit i = 4,13 %/12 → 1.064,88 €/Monat, Zinsen gesamt 163.766 €. Lisa zahlt zusätzlich Instandhaltung und Verwaltung (80 × 18,62 + 445,32)/12 = 161,24 €/Monat, jährlich +2 %. Tom: Kaltmiete 80 × 8,97 = 717,60 €, jährlich +2 %; Depot startet mit 50.000 €, monatlich kommt die Differenz Lisa-Kosten − Miete dazu (Start 508,52 €), Rendite 5 % p. a. (monatlich (1,05)^(1/12) − 1). Wäre die Miete teurer, legte Lisa die Differenz an (tritt nicht ein: Jahr 30 Miete 1.274,35 € < Lisa 1.351,22 €). Nach 30 Jahren: Wohnung 242.720 × 1,02^30 = 439.654 €, schuldenfrei. Toms Depot 512.969 €, eingezahlt 162.512 €, Gewinn 350.457 € × 18,4625 % (25 % + 5,5 % Soli, 30 % Teilfreistellung Aktienfonds) = 64.703 € → 448.266 €. Vorsprung Tom 8.612 €. Variante ohne Anlage der Differenz: nur 50.000 € 30 Jahre zu 5 % = 216.097 €, nach Steuer 185.431 € → Lisa vorn um 254.222 €. Empfindlichkeit: Zins 3 % → Lisa +93.097 €; Rendite 3 % → Lisa +148.074 €; Wertsteigerung 1 % → Tom +121.116 €, 3 % → Lisa +140.879 €.",
+  "korrekturen": [],
+  "kuerzungen_fuer_laenge": "Ben las das freigegebene Skript in 86 s (Grenze 80 s, Folgen-Aufruf erst bei 28 s). Gekürzt ohne Zahlen- oder Ergebnisänderung: Hook ohne „dieselbe Wohnung“ (steht jetzt als Chip DIESELBE WOHNUNG im Bild), „Euro“ nach Zahlen im Sprechtext und „rund“ vor Rundzahlen weggelassen (Untertitel zeigen die exakten Zahlen), „im Monat“ bei Lisa/Tom zusammengezogen, „Miete“ nach 1.000 Euro, „ist/wert“ bei Lisas Wohnung, „am Ende“, „nur“ vor 8.612 und 185.431 gestrichen, kurze Sätze zu Kommasätzen zusammengezogen.",
+  "lern_notizen": {
+    "thema": "Mieten oder kaufen: Vermögen nach 30 Jahren, Leipzig 80 m² (Modellrechnung)",
+    "frage": "Wer hat nach 30 Jahren mehr Vermögen?",
+    "laenge_s": 77.82,
+    "hook": "Lisa kauft, Tom mietet. Wer hat nach dreißig Jahren MEHR?",
+    "hook_typ": "Duell mit zwei Personen und zwei Alternativen im ersten Satz",
+    "stil": "19 Architekturmodell (Abendlicht)",
+    "zoom": "ja: Toms Miete (27,8 s), Steuer an Toms Säulenspitze (41,5 s), Ergebnis (49,4 s); sonst Fahrten und Schärfenverlagerung",
+    "animationen": [
+      {
+        "t": 0.56,
+        "art": "aufleuchten",
+        "was": "Lisas Wohnung leuchtet (kauft)"
+      },
+      {
+        "t": 1.68,
+        "art": "kamerafahrt",
+        "was": "zu Toms Haus, Wohnung leuchtet (mietet)"
+      },
+      {
+        "t": 4.88,
+        "art": "schild",
+        "was": "Schild LEIPZIG"
+      },
+      {
+        "t": 9.68,
+        "art": "saeulen",
+        "was": "beide Säulen wachsen auf 50.000 €"
+      },
+      {
+        "t": 11.1,
+        "art": "kreditturm",
+        "was": "Kreditturm steigt vor Lisas Haus"
+      },
+      {
+        "t": 18.0,
+        "art": "scheine+lichtkegel",
+        "was": "Mietscheine fliegen, Spot auf Lisa, dann Tom"
+      },
+      {
+        "t": 21.5,
+        "art": "block+blitz",
+        "was": "Nebenkosten-Block löst sich auf, Lisas Säule fällt"
+      },
+      {
+        "t": 26.64,
+        "art": "zoom+zaehler",
+        "was": "Jahresuhr 0 bis 20, Miete tickt, Rate fest"
+      },
+      {
+        "t": 34.2,
+        "art": "uhr-sprung",
+        "was": "Jahr 30, Säulen leuchten"
+      },
+      {
+        "t": 41.6,
+        "art": "zoom+block",
+        "was": "Steuer-Block wird abgeschnitten"
+      },
+      {
+        "t": 44.0,
+        "art": "bilanzkarte",
+        "was": "Endstand Tom 448.266, Lisa 439.654, Vorsprung 8.612"
+      },
+      {
+        "t": 59.8,
+        "art": "uhr-ruecklauf",
+        "was": "neue Runde, Tüten statt Depot"
+      },
+      {
+        "t": 65.2,
+        "art": "fuehrungswechsel",
+        "was": "Lisa zieht an Tom vorbei"
+      },
+      {
+        "t": 72.0,
+        "art": "pointe",
+        "was": "KAUFEN = SPAREN"
+      }
+    ],
+    "licht": "tiefe Abendsonne im Gegenlicht, wärmer und stärker bis zum Endstand, Bloom am Höhepunkt, danach ruhiger; Lichtkegel in der Denkfalle",
+    "effekte": [
+      "Lichtblitz bei Nebenkosten weg 23,7 s",
+      "Säulen-Aufleuchten bei 439.654 und 512.969",
+      "Steuer-Block abgeschnitten bei 43,1 s",
+      "Uhr-Rücklauf bei 59,8 s"
+    ],
+    "zeitpunkte": {
+      "folgen": 24.48,
+      "wendung_1": 26.64,
+      "ergebnis": 44.0,
+      "warum": 52.77,
+      "ueberraschung": 59.76,
+      "pointe": 73.28
+    },
+    "tempo": {
+      "woerter": 167,
+      "wps": 2.16,
+      "silben_s": 3.86
+    },
+    "caption": "Mieten oder kaufen: Wer hat nach 30 Jahren mehr Vermögen? 🏠 Ich hab's simuliert. Team Miete oder Team Eigentum? 👇 #mietenoderkaufen #immobilien #eigentumswohnung #wissen #simulation",
+    "besonderheiten": "Freigegebenes Skript für 80-s-Grenze gekürzt (siehe kuerzungen_fuer_laenge); Ausnahme 12b Sprechtempo (Silben/s im Bereich bestandener Videos); Tafel zeigt Lisas Vermögen (Wohnungswert minus Restschuld) gegen Toms Depot, Tom führt durchgehend, Steuer holt ihn auf 8.612 € heran"
+  }
+}

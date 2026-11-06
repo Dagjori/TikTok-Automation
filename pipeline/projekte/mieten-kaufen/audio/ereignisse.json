@@ -1,0 +1,1286 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "mieten-kaufen",
+ "fps": 30,
+ "dauer": 77.83333333333333,
+ "stimmEnde": 77.219,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "raum",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "LISA",
+    "farbe": "#FF8A3D"
+   },
+   "b": {
+    "name": "TOM",
+    "farbe": "#3D8BFF"
+   }
+  },
+  "schleife": {
+   "ab": 73.94,
+   "ende": 77.78566666666666
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 77.786,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 2.59670061453221e-7
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Szene",
+   "t": 0.56,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lisas Wohnung leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Wohnung leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 1.86,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DIESELBE WOHNUNG"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.64,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zurück: beide Häuser"
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.2,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Beide Wohnungen leuchten: dreißig Jahre"
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.58,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.88,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LEIPZIG · 80 m²"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.88,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Schild Leipzig"
+  },
+  {
+   "quelle": "Szene",
+   "t": 6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "80 m²: beide Wohnungen leuchten"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.75,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 7,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KAUFPREIS 242.720 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kaufpreis"
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.827,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Beide Vorplätze und Säulenfüße leuchten"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.877,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 9.6,
+   "typ": "zaehler",
+   "dauer": 0.7,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 9.6,
+   "typ": "zaehler",
+   "dauer": 0.7,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.68,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JE 50.000 € START"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Säulen wachsen auf 50.000 €"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.87,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.12,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LISA · 1.226 € IM MONAT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.12,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kreditturm steigt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.04,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Lisas Rate"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.14,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.44,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "TOM · 718 € MIETE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.76,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Toms Miete"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Säule pulst: Miete"
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.58,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.96,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Rest wird angelegt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.88,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Spot auf Lisa"
+  },
+  {
+   "quelle": "Chip",
+   "t": 18,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RAUSGEWORFENES GELD?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mietscheine fliegen weg"
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Spot wechselt auf Tom"
+  },
+  {
+   "quelle": "Chip",
+   "t": 20.33,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.52,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "NEBENKOSTEN −26.869 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.52,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Nebenkosten-Block"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.56,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Nebenkosten-Block leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.6,
+   "typ": "zaehler",
+   "dauer": 0.6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.633,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.68,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Nebenkosten lösen sich auf"
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Folgen",
+   "t": 24.48,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.48,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lisa und Tom blicken in die Kamera, Figuren leuchten"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.633,
+   "typ": "zaehler",
+   "dauer": 4.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.633,
+   "typ": "zaehler",
+   "dauer": 4.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 26.74,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 26.74,
+   "typ": "zaehler",
+   "dauer": 4.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 27.76,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MIETE +2 % IM JAHR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.76,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Miete steigt"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 27.84,
+   "art": "zoom",
+   "dauer": 2.5,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.9,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.067,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.833,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.9,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.967,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 29,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.133,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.433,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.6,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.767,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.967,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Rate bleibt fest"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.433,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.96,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jahr 20: über 1.000 € Miete"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 31.033,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 31.3,
+   "typ": "uhr",
+   "dauer": 0.2,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.88,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Miete über 1.000 €: Toms Säule pulst"
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.78,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera hebt sich"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.133,
+   "typ": "zaehler",
+   "dauer": 0.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.133,
+   "typ": "zaehler",
+   "dauer": 0.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.3,
+   "typ": "uhr",
+   "dauer": 0.5,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.4,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Jahr 30"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.2,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.567,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.133,
+   "typ": "uhr",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.633,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.833,
+   "typ": "uhr",
+   "dauer": 0.267,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 37.12,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "WOHNUNG 439.654 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Wohnung abbezahlt: Lisa leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.5,
+   "typ": "uhr",
+   "dauer": 0.3,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.933,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.1,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.433,
+   "typ": "uhr",
+   "dauer": 0.267,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.98,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.067,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.433,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.76,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DEPOT 512.969 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Toms Depot leuchtet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.033,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.5,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.54,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 41.54,
+   "art": "zoom",
+   "dauer": 2.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.933,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.94,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STEUER AUF GEWINN"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.967,
+   "typ": "zaehler",
+   "dauer": 1.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.12,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Steuer schneidet ein Stück ab"
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.9,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.067,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.88,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Endstand Tom"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 45.28,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "TOM"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Endstand Lisa"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 47.76,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "LISA"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 49.36,
+   "art": "zoom",
+   "dauer": 2.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Tom gewinnt knapp"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 50.64,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "VORSPRUNG"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 51.54,
+   "typ": "sieger",
+   "klang": "sieg",
+   "text": "TOM GEWINNT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.773,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Warum: ruhige Fahrt"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 54.08,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 54.08,
+   "typ": "zaehler",
+   "dauer": 1.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Miete tickt"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 55.12,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.56,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Toms Säule pulst"
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.76,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STEUER −64.703 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.76,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Steuer 64.703 €"
+  },
+  {
+   "quelle": "Chip",
+   "t": 59.26,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.3,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.3,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.3,
+   "typ": "uhr",
+   "dauer": 0.833,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.433,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.76,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Uhr springt auf 0"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 60.88,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "TOM LEGT NICHT AN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.88,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Tüten statt Depot"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.933,
+   "typ": "zaehler",
+   "dauer": 1.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.933,
+   "typ": "zaehler",
+   "dauer": 2.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 61.1,
+   "typ": "uhr",
+   "dauer": 1.233,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 61.333,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.567,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 62.9,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63,
+   "typ": "uhr",
+   "dauer": 0.233,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.433,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.6,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.967,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 64.367,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 64.6,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 65.1,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 65.433,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.56,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lisa zieht vorbei"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 65.967,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 66.133,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 66.4,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 66.44,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LISA +254.222 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 66.9,
+   "typ": "uhr",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.367,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 68.94,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.24,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera gleitet zurück"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.14,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Lisas Säule pulst"
+  },
+  {
+   "quelle": "Szene",
+   "t": 71,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Säule pulst"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 72,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "KAUFEN = SPAREN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.28,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "Merksatz: Kaufen = Sparen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73.933,
+   "typ": "zaehler",
+   "dauer": 3.886,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73.933,
+   "typ": "zaehler",
+   "dauer": 3.886,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 73.94,
+   "art": "schleife",
+   "dauer": 3.86,
+   "klang": false
+  },
+  {
+   "t": 73.94,
+   "typ": "schleife",
+   "dauer": 3.846,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 74.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 74.733,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 74.967,
+   "typ": "uhr",
+   "dauer": 1.7,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 76.8,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 77,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  }
+ ],
+ "klang": []
+}

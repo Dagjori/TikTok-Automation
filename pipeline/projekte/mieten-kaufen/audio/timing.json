@@ -1,0 +1,941 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 77.219,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Lisa kauft, Tom mietet. Wer hat nach 30 Jahren mehr?",
+   "start": 0.0,
+   "ende": 4.56,
+   "woerter": [
+    {
+     "wort": "Lisa",
+     "start": 0.0,
+     "ende": 0.4
+    },
+    {
+     "wort": "kauft,",
+     "start": 0.56,
+     "ende": 1.28
+    },
+    {
+     "wort": "Tom",
+     "start": 1.44,
+     "ende": 1.6
+    },
+    {
+     "wort": "mietet.",
+     "start": 1.68,
+     "ende": 2.36
+    },
+    {
+     "wort": "Wer",
+     "start": 2.64,
+     "ende": 2.72
+    },
+    {
+     "wort": "hat",
+     "start": 2.8,
+     "ende": 2.88
+    },
+    {
+     "wort": "nach",
+     "start": 2.96,
+     "ende": 3.12
+    },
+    {
+     "wort": "30",
+     "start": 3.2,
+     "ende": 3.52
+    },
+    {
+     "wort": "Jahren",
+     "start": 3.6,
+     "ende": 3.84
+    },
+    {
+     "wort": "mehr?",
+     "start": 3.92,
+     "ende": 4.56
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Leipzig, 80 Quadratmeter, 242.720 Euro – beide starten mit 50.000 Euro. Lisa zahlt im Monat 1.226 Euro, Tom 718 Euro Miete – den Rest legt er an.",
+   "start": 4.88,
+   "ende": 16.64,
+   "woerter": [
+    {
+     "wort": "Leipzig,",
+     "start": 4.88,
+     "ende": 5.6
+    },
+    {
+     "wort": "80",
+     "start": 5.72,
+     "ende": 5.92
+    },
+    {
+     "wort": "Quadratmeter,",
+     "start": 6.0,
+     "ende": 6.96
+    },
+    {
+     "wort": "242.720",
+     "start": 7.0,
+     "ende": 7.66
+    },
+    {
+     "wort": "Euro",
+     "start": 7.66,
+     "ende": 8.32
+    },
+    {
+     "wort": "–",
+     "start": 8.72,
+     "ende": 8.773
+    },
+    {
+     "wort": "beide",
+     "start": 8.827,
+     "ende": 9.04
+    },
+    {
+     "wort": "starten",
+     "start": 9.12,
+     "ende": 9.44
+    },
+    {
+     "wort": "mit",
+     "start": 9.52,
+     "ende": 9.6
+    },
+    {
+     "wort": "50.000",
+     "start": 9.68,
+     "ende": 10.32
+    },
+    {
+     "wort": "Euro.",
+     "start": 10.32,
+     "ende": 10.96
+    },
+    {
+     "wort": "Lisa",
+     "start": 11.12,
+     "ende": 11.28
+    },
+    {
+     "wort": "zahlt",
+     "start": 11.36,
+     "ende": 11.6
+    },
+    {
+     "wort": "im",
+     "start": 11.64,
+     "ende": 11.68
+    },
+    {
+     "wort": "Monat",
+     "start": 11.76,
+     "ende": 12.0
+    },
+    {
+     "wort": "1.226",
+     "start": 12.04,
+     "ende": 12.66
+    },
+    {
+     "wort": "Euro,",
+     "start": 12.66,
+     "ende": 13.28
+    },
+    {
+     "wort": "Tom",
+     "start": 13.44,
+     "ende": 13.6
+    },
+    {
+     "wort": "718",
+     "start": 13.76,
+     "ende": 14.2
+    },
+    {
+     "wort": "Euro",
+     "start": 14.2,
+     "ende": 14.64
+    },
+    {
+     "wort": "Miete",
+     "start": 14.72,
+     "ende": 15.04
+    },
+    {
+     "wort": "–",
+     "start": 15.36,
+     "ende": 15.413
+    },
+    {
+     "wort": "den",
+     "start": 15.467,
+     "ende": 15.52
+    },
+    {
+     "wort": "Rest",
+     "start": 15.68,
+     "ende": 15.84
+    },
+    {
+     "wort": "legt",
+     "start": 15.96,
+     "ende": 16.08
+    },
+    {
+     "wort": "er",
+     "start": 16.12,
+     "ende": 16.16
+    },
+    {
+     "wort": "an.",
+     "start": 16.24,
+     "ende": 16.64
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, Miete ist rausgeworfenes Geld. Oder?",
+   "start": 16.88,
+   "ende": 20.2,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 16.88,
+     "ende": 17.44
+    },
+    {
+     "wort": "Miete",
+     "start": 17.52,
+     "ende": 17.76
+    },
+    {
+     "wort": "ist",
+     "start": 17.84,
+     "ende": 17.92
+    },
+    {
+     "wort": "rausgeworfenes",
+     "start": 18.0,
+     "ende": 18.72
+    },
+    {
+     "wort": "Geld.",
+     "start": 18.8,
+     "ende": 19.12
+    },
+    {
+     "wort": "Oder?",
+     "start": 19.6,
+     "ende": 20.2
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Tag eins: 26.869 Euro Nebenkosten – weg.",
+   "start": 20.48,
+   "ende": 24.0,
+   "woerter": [
+    {
+     "wort": "Tag",
+     "start": 20.48,
+     "ende": 20.72
+    },
+    {
+     "wort": "eins:",
+     "start": 20.8,
+     "ende": 21.44
+    },
+    {
+     "wort": "26.869",
+     "start": 21.52,
+     "ende": 22.0
+    },
+    {
+     "wort": "Euro",
+     "start": 22.0,
+     "ende": 22.48
+    },
+    {
+     "wort": "Nebenkosten",
+     "start": 22.56,
+     "ende": 23.28
+    },
+    {
+     "wort": "–",
+     "start": 23.6,
+     "ende": 23.64
+    },
+    {
+     "wort": "weg.",
+     "start": 23.68,
+     "ende": 24.0
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 24.48,
+   "ende": 26.4,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 24.48,
+     "ende": 24.72
+    },
+    {
+     "wort": "mir,",
+     "start": 24.8,
+     "ende": 25.04
+    },
+    {
+     "wort": "damit",
+     "start": 25.12,
+     "ende": 25.24
+    },
+    {
+     "wort": "du",
+     "start": 25.28,
+     "ende": 25.36
+    },
+    {
+     "wort": "nichts",
+     "start": 25.44,
+     "ende": 25.64
+    },
+    {
+     "wort": "verpasst.",
+     "start": 25.68,
+     "ende": 26.4
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Aber Toms Miete steigt jedes Jahr, Lisas Rate bleibt gleich. Im 20. Jahr zahlt Tom über 1.000 Euro.",
+   "start": 26.64,
+   "ende": 33.92,
+   "woerter": [
+    {
+     "wort": "Aber",
+     "start": 26.64,
+     "ende": 26.88
+    },
+    {
+     "wort": "Toms",
+     "start": 27.04,
+     "ende": 27.36
+    },
+    {
+     "wort": "Miete",
+     "start": 27.44,
+     "ende": 27.68
+    },
+    {
+     "wort": "steigt",
+     "start": 27.76,
+     "ende": 28.08
+    },
+    {
+     "wort": "jedes",
+     "start": 28.16,
+     "ende": 28.4
+    },
+    {
+     "wort": "Jahr,",
+     "start": 28.48,
+     "ende": 28.96
+    },
+    {
+     "wort": "Lisas",
+     "start": 29.0,
+     "ende": 29.36
+    },
+    {
+     "wort": "Rate",
+     "start": 29.44,
+     "ende": 29.68
+    },
+    {
+     "wort": "bleibt",
+     "start": 29.76,
+     "ende": 30.0
+    },
+    {
+     "wort": "gleich.",
+     "start": 30.08,
+     "ende": 30.6
+    },
+    {
+     "wort": "Im",
+     "start": 30.8,
+     "ende": 30.88
+    },
+    {
+     "wort": "20.",
+     "start": 30.96,
+     "ende": 31.44
+    },
+    {
+     "wort": "Jahr",
+     "start": 31.6,
+     "ende": 31.76
+    },
+    {
+     "wort": "zahlt",
+     "start": 31.84,
+     "ende": 32.08
+    },
+    {
+     "wort": "Tom",
+     "start": 32.16,
+     "ende": 32.4
+    },
+    {
+     "wort": "über",
+     "start": 32.48,
+     "ende": 32.72
+    },
+    {
+     "wort": "1.000",
+     "start": 32.88,
+     "ende": 33.2
+    },
+    {
+     "wort": "Euro.",
+     "start": 33.36,
+     "ende": 33.92
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Jahr 30: Lisas Wohnung ist abbezahlt – 439.654 Euro. Toms Depot: 512.969 Euro. Doch auf die Gewinne zahlt Tom Steuer.",
+   "start": 34.16,
+   "ende": 43.92,
+   "woerter": [
+    {
+     "wort": "Jahr",
+     "start": 34.16,
+     "ende": 34.32
+    },
+    {
+     "wort": "30:",
+     "start": 34.4,
+     "ende": 35.2
+    },
+    {
+     "wort": "Lisas",
+     "start": 35.28,
+     "ende": 35.6
+    },
+    {
+     "wort": "Wohnung",
+     "start": 35.68,
+     "ende": 35.92
+    },
+    {
+     "wort": "ist",
+     "start": 36.0,
+     "ende": 36.08
+    },
+    {
+     "wort": "abbezahlt",
+     "start": 36.16,
+     "ende": 36.8
+    },
+    {
+     "wort": "–",
+     "start": 36.96,
+     "ende": 37.04
+    },
+    {
+     "wort": "439.654",
+     "start": 37.12,
+     "ende": 37.92
+    },
+    {
+     "wort": "Euro.",
+     "start": 37.92,
+     "ende": 38.72
+    },
+    {
+     "wort": "Toms",
+     "start": 38.8,
+     "ende": 38.96
+    },
+    {
+     "wort": "Depot:",
+     "start": 39.08,
+     "ende": 39.44
+    },
+    {
+     "wort": "512.969",
+     "start": 39.76,
+     "ende": 40.68
+    },
+    {
+     "wort": "Euro.",
+     "start": 40.68,
+     "ende": 41.6
+    },
+    {
+     "wort": "Doch",
+     "start": 41.64,
+     "ende": 41.76
+    },
+    {
+     "wort": "auf",
+     "start": 41.84,
+     "ende": 41.92
+    },
+    {
+     "wort": "die",
+     "start": 41.96,
+     "ende": 42.0
+    },
+    {
+     "wort": "Gewinne",
+     "start": 42.04,
+     "ende": 42.48
+    },
+    {
+     "wort": "zahlt",
+     "start": 42.56,
+     "ende": 42.8
+    },
+    {
+     "wort": "Tom",
+     "start": 42.88,
+     "ende": 43.04
+    },
+    {
+     "wort": "Steuer.",
+     "start": 43.12,
+     "ende": 43.92
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand: Tom 448.266 Euro, Lisa 439.654 Euro. Tom gewinnt – mit 8.612 Euro Vorsprung.",
+   "start": 44.0,
+   "ende": 52.24,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 44.0,
+     "ende": 44.56
+    },
+    {
+     "wort": "Tom",
+     "start": 44.88,
+     "ende": 45.12
+    },
+    {
+     "wort": "448.266",
+     "start": 45.28,
+     "ende": 46.2
+    },
+    {
+     "wort": "Euro,",
+     "start": 46.2,
+     "ende": 47.12
+    },
+    {
+     "wort": "Lisa",
+     "start": 47.2,
+     "ende": 47.52
+    },
+    {
+     "wort": "439.654",
+     "start": 47.76,
+     "ende": 48.599999999999994
+    },
+    {
+     "wort": "Euro.",
+     "start": 48.599999999999994,
+     "ende": 49.44
+    },
+    {
+     "wort": "Tom",
+     "start": 49.56,
+     "ende": 49.68
+    },
+    {
+     "wort": "gewinnt",
+     "start": 49.76,
+     "ende": 50.08
+    },
+    {
+     "wort": "–",
+     "start": 50.4,
+     "ende": 50.44
+    },
+    {
+     "wort": "mit",
+     "start": 50.48,
+     "ende": 50.56
+    },
+    {
+     "wort": "8.612",
+     "start": 50.64,
+     "ende": 51.120000000000005
+    },
+    {
+     "wort": "Euro",
+     "start": 51.120000000000005,
+     "ende": 51.6
+    },
+    {
+     "wort": "Vorsprung.",
+     "start": 51.68,
+     "ende": 52.24
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum so knapp? Die Miete steigt, Lisas Rate nicht, und Toms Gewinne kosten 64.703 Euro Steuer.",
+   "start": 52.773,
+   "ende": 59.56,
+   "woerter": [
+    {
+     "wort": "Warum",
+     "start": 52.773,
+     "ende": 52.88
+    },
+    {
+     "wort": "so",
+     "start": 52.96,
+     "ende": 53.04
+    },
+    {
+     "wort": "knapp?",
+     "start": 53.12,
+     "ende": 53.68
+    },
+    {
+     "wort": "Die",
+     "start": 53.92,
+     "ende": 54.0
+    },
+    {
+     "wort": "Miete",
+     "start": 54.08,
+     "ende": 54.32
+    },
+    {
+     "wort": "steigt,",
+     "start": 54.4,
+     "ende": 55.04
+    },
+    {
+     "wort": "Lisas",
+     "start": 55.12,
+     "ende": 55.44
+    },
+    {
+     "wort": "Rate",
+     "start": 55.52,
+     "ende": 55.76
+    },
+    {
+     "wort": "nicht,",
+     "start": 55.84,
+     "ende": 56.32
+    },
+    {
+     "wort": "und",
+     "start": 56.4,
+     "ende": 56.48
+    },
+    {
+     "wort": "Toms",
+     "start": 56.56,
+     "ende": 56.8
+    },
+    {
+     "wort": "Gewinne",
+     "start": 56.88,
+     "ende": 57.2
+    },
+    {
+     "wort": "kosten",
+     "start": 57.36,
+     "ende": 57.68
+    },
+    {
+     "wort": "64.703",
+     "start": 57.76,
+     "ende": 58.32
+    },
+    {
+     "wort": "Euro",
+     "start": 58.32,
+     "ende": 58.88
+    },
+    {
+     "wort": "Steuer.",
+     "start": 58.96,
+     "ende": 59.56
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und das Verrückte: Legt Tom die Differenz nicht an, hat er 185.431 Euro. Dann gewinnt Lisa – mit 254.222 Euro Vorsprung.",
+   "start": 59.76,
+   "ende": 69.2,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 59.76,
+     "ende": 59.84
+    },
+    {
+     "wort": "das",
+     "start": 59.88,
+     "ende": 59.92
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 60.0,
+     "ende": 60.48
+    },
+    {
+     "wort": "Legt",
+     "start": 60.88,
+     "ende": 61.08
+    },
+    {
+     "wort": "Tom",
+     "start": 61.12,
+     "ende": 61.28
+    },
+    {
+     "wort": "die",
+     "start": 61.32,
+     "ende": 61.36
+    },
+    {
+     "wort": "Differenz",
+     "start": 61.44,
+     "ende": 61.92
+    },
+    {
+     "wort": "nicht",
+     "start": 62.0,
+     "ende": 62.24
+    },
+    {
+     "wort": "an,",
+     "start": 62.32,
+     "ende": 62.64
+    },
+    {
+     "wort": "hat",
+     "start": 62.72,
+     "ende": 62.8
+    },
+    {
+     "wort": "er",
+     "start": 62.88,
+     "ende": 62.96
+    },
+    {
+     "wort": "185.431",
+     "start": 63.0,
+     "ende": 63.94
+    },
+    {
+     "wort": "Euro.",
+     "start": 63.94,
+     "ende": 64.88
+    },
+    {
+     "wort": "Dann",
+     "start": 64.96,
+     "ende": 65.12
+    },
+    {
+     "wort": "gewinnt",
+     "start": 65.2,
+     "ende": 65.52
+    },
+    {
+     "wort": "Lisa",
+     "start": 65.72,
+     "ende": 65.92
+    },
+    {
+     "wort": "–",
+     "start": 66.16,
+     "ende": 66.213
+    },
+    {
+     "wort": "mit",
+     "start": 66.267,
+     "ende": 66.32
+    },
+    {
+     "wort": "254.222",
+     "start": 66.44,
+     "ende": 67.25999999999999
+    },
+    {
+     "wort": "Euro",
+     "start": 67.25999999999999,
+     "ende": 68.08
+    },
+    {
+     "wort": "Vorsprung.",
+     "start": 68.24,
+     "ende": 69.2
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Miete ist kein rausgeworfenes Geld. Aber Kaufen zwingt dich zum Sparen.",
+   "start": 69.24,
+   "ende": 74.16,
+   "woerter": [
+    {
+     "wort": "Miete",
+     "start": 69.24,
+     "ende": 69.52
+    },
+    {
+     "wort": "ist",
+     "start": 69.6,
+     "ende": 69.84
+    },
+    {
+     "wort": "kein",
+     "start": 69.92,
+     "ende": 70.16
+    },
+    {
+     "wort": "rausgeworfenes",
+     "start": 70.2,
+     "ende": 70.96
+    },
+    {
+     "wort": "Geld.",
+     "start": 71.0,
+     "ende": 71.68
+    },
+    {
+     "wort": "Aber",
+     "start": 71.72,
+     "ende": 71.92
+    },
+    {
+     "wort": "Kaufen",
+     "start": 72.0,
+     "ende": 72.48
+    },
+    {
+     "wort": "zwingt",
+     "start": 72.56,
+     "ende": 72.88
+    },
+    {
+     "wort": "dich",
+     "start": 72.933,
+     "ende": 73.04
+    },
+    {
+     "wort": "zum",
+     "start": 73.08,
+     "ende": 73.2
+    },
+    {
+     "wort": "Sparen.",
+     "start": 73.28,
+     "ende": 74.16
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 74.24,
+   "ende": 77.28,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 74.24,
+     "ende": 74.32
+    },
+    {
+     "wort": "sollen",
+     "start": 74.4,
+     "ende": 74.56
+    },
+    {
+     "wort": "wir",
+     "start": 74.587,
+     "ende": 74.64
+    },
+    {
+     "wort": "als",
+     "start": 74.72,
+     "ende": 74.8
+    },
+    {
+     "wort": "Nächstes",
+     "start": 74.88,
+     "ende": 75.2
+    },
+    {
+     "wort": "zeigen?",
+     "start": 75.28,
+     "ende": 75.84
+    },
+    {
+     "wort": "Schreib",
+     "start": 75.88,
+     "ende": 76.08
+    },
+    {
+     "wort": "es",
+     "start": 76.16,
+     "ende": 76.24
+    },
+    {
+     "wort": "in",
+     "start": 76.28,
+     "ende": 76.32
+    },
+    {
+     "wort": "die",
+     "start": 76.36,
+     "ende": 76.4
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 76.48,
+     "ende": 77.28
+    }
+   ]
+  }
+ ]
+}
