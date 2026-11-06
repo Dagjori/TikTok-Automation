@@ -58,6 +58,7 @@ const FOG = K([[0, 2.6e-4], [8, 2.3e-4], [16, 2.1e-4], [47, 2.2e-4], [49.5, 2.2e
 const BEBEN = K([[56, 0], [58, 1], [62, 0.5], [66, 0]]);
 
 async function start() {
+  if (Q.has("nohud")) document.getElementById("hud").style.display = "none";
   aktiviereHoehenNebel({ abfall: 0.0005, basis: 0 });
   const buehne = new Buehne(document.getElementById("leinwand"), { msaa: 0, schatten: SCHATTEN > 0, tiefe: true });
   await Promise.all(["400 80px 'Lunar Serif'", "italic 400 57px 'Lunar Serif'", "600 22px 'Lunar Sans'", "500 20px 'Lunar Sans'"].map((f) => document.fonts.load(f)));
@@ -112,20 +113,20 @@ async function start() {
     .effekt(2.6, "moewen", { klang: "fluegel", staerke: 0.4, text: "Möwen kreisen über der Brandung" })
     .effekt(5.0, "sonne_sinkt", { klang: false, text: "Die Sonne sinkt sichtbar dem Meer entgegen" })
     .effekt(9.0, "daemmerung", { klang: "windstoss", staerke: 0.35, dauer: 3, text: "Licht gleitet ins Dämmerblau" })
-    .effekt(12.5, "erosion", { klang: "gischt", staerke: 0.55, dauer: 3.5, text: "Wasserlinie und Felsen verändern sich sichtbar" })
+    .effekt(12.5, "erosion", { klang: "gischt", staerke: 0.35, dauer: 3.5, text: "Wasserlinie und Felsen verändern sich sichtbar" })
     .effekt(16.6, "nacht_sterne", { klang: "zischen", staerke: 0.35, dauer: 2.5, text: "Sterne ziehen als Strichspuren, der Mond geht auf" })
     .effekt(21.5, "mond_glanz", { klang: false, text: "Mondglanz auf dem Wasser" })
-    .effekt(25.3, "brandung_nagt", { klang: "gischt", staerke: 0.85, dauer: 4, text: "Die Brandung nagt an den Felsen, Gischt steigt auf" })
-    .effekt(27.5, "land_trocknet", { klang: "windstoss", staerke: 0.35, dauer: 3.5, text: "Das Land hinter dir wird trockener, Gras und Büsche vergilben" })
+    .effekt(25.3, "brandung_nagt", { klang: "gischt", staerke: 0.4, dauer: 4, text: "Die Brandung nagt an den Felsen, Gischt steigt auf" })
+    .effekt(27.5, "land_trocknet", { klang: "windstoss", staerke: 0.15, dauer: 3.5, text: "Das Land hinter dir wird trockener, Gras und Büsche vergilben" })
     .effekt(36.0, "horizont_leer", { klang: false, text: "Weite, leerer Horizont im Mondlicht" })
-    .effekt(41.5, "hitze", { klang: "windstoss", staerke: 0.4, dauer: 4, text: "Die Luft wird heißer, trockener Wind, Staub" })
+    .effekt(41.5, "hitze", { klang: "windstoss", staerke: 0.2, dauer: 4, text: "Die Luft wird heißer, trockener Wind, Staub" })
     .effekt(47.0, "dunst_hitze", { klang: "windstoss", staerke: 0.3, dauer: 3, text: "Hitzeflimmern über dem Plateau" })
     .effekt(50.3, "rauchsaeulen", { klang: "grollen", staerke: 0.35, dauer: 3, text: "Rauchsäulen stehen über dem Horizont, Morgenrot" })
     .effekt(54.3, "berge", { klang: "grollen", staerke: 0.55, dauer: 3, text: "Berge und Vulkankegel steigen über den Horizont" })
     .effekt(56.6, "meer_schmal", { klang: "grollen", staerke: 0.7, dauer: 2.5, text: "Das Meer ist nur noch ein schmaler Arm, Grollen" })
-    .effekt(T_HIER, "zusammenstoss", { klang: "einschlag", staerke: 1.0, text: "Die Küsten berühren sich, Felsen falten sich auf, Kamera bebt" })
-    .effekt(T_HIER + 0.3, "druckwelle", { klang: "druckwelle", staerke: 0.7 })
-    .effekt(T_HIER + 1.2, "gebirge_faltet", { klang: "grollen", staerke: 0.95, dauer: 5, text: "Gebirge falten sich vor dir auf, Staubwand rollt heran" })
+    .effekt(T_HIER, "zusammenstoss", { klang: "einschlag", staerke: 1.3, text: "Die Küsten berühren sich, Felsen falten sich auf, Kamera bebt" })
+    .effekt(T_HIER + 0.3, "druckwelle", { klang: "druckwelle", staerke: 1.0 })
+    .effekt(T_HIER + 1.2, "gebirge_faltet", { klang: "grollen", staerke: 1.2, dauer: 5, text: "Gebirge falten sich vor dir auf, Staubwand rollt heran" })
     .effekt(T_HIER + 2.4, "felsen_bersten", { klang: "truemmer", staerke: 0.8, text: "Felsbrocken lösen sich" })
     .effekt(62.4, "staub_ueberrollt", { klang: "windstoss", staerke: 0.55, dauer: 3, text: "Die Staubwand zieht über dich hinweg und legt sich" })
     .effekt(64.5, "wueste_glueht", { klang: false, text: "Rote Sonne über der Wüste, Hitzeflimmern" });
@@ -196,7 +197,7 @@ async function start() {
     wolkenLicht.copy(wolkenK(t));
     const wz = wolkenZeit(t);
     const lauf = (c) => ({ ...c, farbe: wolkenLicht.toArray(), a: 0.66 * (1 - 0.2 * mondAuf(t)), p: [((c.p[0] + 4200) % 8400 + 8400) % 8400 - 4200, c.p[1], c.p[2]] });
-    puffsW.setze(wolken(wz).map(lauf), kam);
+    puffsW.setze(Q.has('n_w') ? [] : wolken(wz).map(lauf), kam);
     // Rauch der Vulkane (mit der Gegenküste verschoben)
     const offZ = zsBasis(0) + ero - dm - GK.zc(0);
     const rauchT = new THREE.Color().copy(horizontK(t)).multiplyScalar(0.55);
@@ -206,14 +207,15 @@ async function start() {
     const tintG = new THREE.Color().copy(horizontK(t)).lerp(tmp.set("#FFFFFF"), 0.55 * sW + 0.15).multiplyScalar(0.5 + 0.5 * sW + 0.35 * mW);
     const dunstA = smoothstep(38, 47, t) * (1 - smoothstep(60, 62, t));
     const dust = new THREE.Color().copy(horizontK(t)).lerp(tmp.set("#D9B58A"), 0.5);
-    const wandP = wand.puffs(t);
+    const wandF = 1 - smoothstep(62.5, 66, t), wandP = wandF < 0.01 ? [] : wand.puffs(t).map((p) => ({ ...p, a: p.a * wandF }));
     const nachDunst = smoothstep(62, 63, t) * (1 - smoothstep(63.5, 68.5, t));
-    puffsG.setze([...gischt(t, camP[0], ero, tintG), ...dunstP(t, dunstA * 0.8, camP[0], camP[2], dust), ...dunstP(t + 5, nachDunst * 1.0, camP[0], camP[2], dust), ...wandP], kam);
+    puffsG.setze(Q.has('n_g') ? [] : [...(t < 62 ? gischt(t, camP[0], ero, tintG) : []), ...dunstP(t, dunstA * 0.8, camP[0], camP[2], dust), ...dunstP(t + 5, nachDunst * 1.0, camP[0], camP[2], dust), ...wandP], kam);
+    if (Q.has('n_a')) { asche.mesh && (asche.mesh.visible = false); staubT.mesh && (staubT.mesh.visible = false); }
     asche.setze(t, kam, { zentrum: [kam.position.x, kam.position.y - 2, kam.position.z - 8], deckkraft: 0.8 * smoothstep(58.4, 60, t) * (1 - smoothstep(64, 69, t)), wind: [3, -0.4, 2] });
     staubT.setze(t, kam, { zentrum: [kam.position.x, kam.position.y - 2, kam.position.z + 4], deckkraft: 0.5 * smoothstep(36, 44, t) * (1 - smoothstep(58, 60, t)) + 0.4 * smoothstep(62, 66, t), wind: [2.6 + WIND(t), 0, 1.0] });
-    moewen.mesh.visible = t < 13.5; moewen.setze(t); moewen2.mesh.visible = t > 60.5; moewen2.setze(t);
+    moewen.mesh.visible = t < 13.5; moewen.setze(t); moewen2.mesh.visible = false;
     const fp = farben(t);
-    const heiss = 0.9 * smoothstep(40, 52, t) + 1.2 * smoothstep(61, 65, t);
+    const heiss = Q.has('n_f') ? 0 : 0.9 * smoothstep(40, 52, t) + 1.2 * smoothstep(61, 65, t);
     Object.assign(welt.post, fp, { vignette: 0, koernung: 0.008, tiltStaerke: 0, flimmern: heiss, flimmerY: [0.32, 0.62] });
     welt.post.schleier = [0.82, 0.62, 0.45]; welt.post.schleierStaerke = Math.max(0, 0.5 * wand.vorKamera(t)) + 0.1 * smoothstep(60, 62.4, t) * (1 - smoothstep(63, 68, t));
   } };

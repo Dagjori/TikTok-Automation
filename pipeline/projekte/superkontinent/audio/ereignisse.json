@@ -413,7 +413,7 @@
    "typ": "effekt",
    "name": "erosion",
    "dauer": 3.5,
-   "staerke": 0.55,
+   "staerke": 0.35,
    "klang": "gischt",
    "text": "Wasserlinie und Felsen verändern sich sichtbar"
   },
@@ -791,7 +791,7 @@
    "typ": "effekt",
    "name": "brandung_nagt",
    "dauer": 4,
-   "staerke": 0.85,
+   "staerke": 0.4,
    "klang": "gischt",
    "text": "Die Brandung nagt an den Felsen, Gischt steigt auf"
   },
@@ -858,7 +858,7 @@
    "typ": "effekt",
    "name": "land_trocknet",
    "dauer": 3.5,
-   "staerke": 0.35,
+   "staerke": 0.15,
    "klang": "windstoss",
    "text": "Das Land hinter dir wird trockener, Gras und Büsche vergilben"
   },
@@ -1250,7 +1250,7 @@
    "typ": "effekt",
    "name": "hitze",
    "dauer": 4,
-   "staerke": 0.4,
+   "staerke": 0.2,
    "klang": "windstoss",
    "text": "Die Luft wird heißer, trockener Wind, Staub"
   },
@@ -1751,7 +1751,7 @@
    "typ": "effekt",
    "name": "zusammenstoss",
    "dauer": 0,
-   "staerke": 1,
+   "staerke": 1.3,
    "klang": "einschlag",
    "text": "Die Küsten berühren sich, Felsen falten sich auf, Kamera bebt"
   },
@@ -1781,7 +1781,7 @@
    "typ": "effekt",
    "name": "druckwelle",
    "dauer": 0,
-   "staerke": 0.7,
+   "staerke": 1,
    "klang": "druckwelle"
   },
   {
@@ -1814,7 +1814,7 @@
    "typ": "effekt",
    "name": "gebirge_faltet",
    "dauer": 5,
-   "staerke": 0.95,
+   "staerke": 1.2,
    "klang": "grollen",
    "text": "Gebirge falten sich vor dir auf, Staubwand rollt heran"
   },
