@@ -1,0 +1,455 @@
+{
+ "skript_id": "acc2-2026-11-06-abend",
+ "skript_quelle": "acc2-2026-11-06-abend",
+ "titel": "Was wäre, wenn alle Kontinente wieder zusammenstoßen würden?",
+ "titelfrage": "Was wäre, wenn alle Kontinente wieder zusammenstoßen würden?",
+ "konto": "stelldirvor.pov",
+ "format": "referenz_pov",
+ "skill": "stelldirvor-video",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Welt engine/welt_felskueste.js (Erstbau 06.11.2026)",
+ "thema": "Plattentektonik im Zeitraffer: 250 Millionen Jahre bis zum nächsten Superkontinent (Modell Pangaea Proxima)",
+ "welt": "Meer und Küste: Felsküste in Westafrika am offenen Atlantik, später heranrückende Gegenküste mit Vulkanen, Faltengebirge am Horizont und rote Wüste im Landesinneren",
+ "standpunkt": "ebenerdig: flaches Felsplateau direkt an der Brandung, Blick auf den offenen Ozean (statt „Klippe“ aus der Idee, damit nicht zweimal am Tag ein erhöhter Standpunkt kommt)",
+ "tageszeit_verlauf": "Sonnenuntergang (0–16 s) → Sternennacht mit Mondlicht (16–50 s) → glühender, roter Morgen mit Hitzeflimmern (50–80 s) (geändert gegenüber der Idee, damit Mittag und Abend unterschiedliche Verläufe haben)",
+ "kamera": "0–3 s ruhiger Blick aufs Meer, Brandung · ab 3 s langsame Fahrt nach vorn an die Felskante (bis 15 s) · 27–32 s Schwenk nach links über die Küste ins trockener werdende Land und zurück · ab 50 s leichter Zoom auf den Horizont · 58–62 s Kamera bebt kurz beim Zusammenstoß · 62–70 s Schwenk nach links auf die rote Wüste",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 8,
+   "faktor": "vorwärts, exponentieller Anlauf von 1.000 auf 5,28 Mio. Jahre/s",
+   "anzeige": "JAHRE IN DER ZUKUNFT"
+  },
+  {
+   "von": 8,
+   "bis": 50,
+   "faktor": "konstant 5,28 Mio. Jahre/s",
+   "anzeige": "JAHRE IN DER ZUKUNFT, ab 16,5 s BREITE DES ATLANTIKS"
+  },
+  {
+   "von": 50,
+   "bis": 58,
+   "faktor": "linear gebremst von 5,28 auf 0,5 Mio. Jahre/s",
+   "anzeige": "JAHRE BIS ZUM ZUSAMMENSTOSS"
+  },
+  {
+   "von": 58,
+   "bis": 70,
+   "faktor": "Anzeige steht auf HIER (+250 Mio. Jahre)",
+   "anzeige": "HIER"
+  }
+ ],
+ "zeitraffer_text": "Vorwärts: 0–8 s exponentieller Anlauf von 1.000 auf 5,28 Mio. Jahre/s; 8–50 s konstant 5,28 Mio. Jahre/s; 50–58 s linear gebremst auf 0,5 Mio. Jahre/s; ab 58 s HIER (+250 Mio. Jahre)",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 16.5,
+   "etikett": "JAHRE IN DER ZUKUNFT",
+   "start": "0",
+   "ende": "50.000.000",
+   "einheit": "",
+   "unter": "ATLANTIK WÄCHST 3 CM PRO JAHR · 3.003 → 4.503 KM BREIT"
+  },
+  {
+   "von_s": 16.5,
+   "bis_s": 50,
+   "etikett": "BREITE DES ATLANTIKS",
+   "start": "4.503",
+   "ende": "500",
+   "einheit": "KM",
+   "unter": "SCHRUMPFT 2,3 CM PRO JAHR · 1 S = 5,3 MIO. JAHRE"
+  },
+  {
+   "von_s": 50,
+   "bis_s": 58,
+   "etikett": "JAHRE BIS ZUM ZUSAMMENSTOSS",
+   "start": "23.000.000",
+   "ende": "0",
+   "einheit": "",
+   "unter": "ABSTAND 500 → 0 KM · ZEITRAFFER BREMST"
+  },
+  {
+   "von_s": 58,
+   "bis_s": 70,
+   "etikett": "HIER",
+   "start": "+250.000.000",
+   "ende": "HIER",
+   "einheit": "JAHRE",
+   "unter": "NEUER SUPERKONTINENT · MODELL PANGAEA PROXIMA"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Abend an einer Felsküste in Westafrika.",
+   3.6
+  ],
+  [
+   8.8,
+   "Dann vergehen Millionen Jahre in Sekunden.",
+   3.6
+  ],
+  [
+   12.8,
+   "Der Atlantik wächst um 1.500 Kilometer.",
+   3.6
+  ],
+  [
+   16.8,
+   "Dann kehrt sich die Bewegung um.",
+   3.6
+  ],
+  [
+   21,
+   "Das Meer vor dir wird schmaler.",
+   3.6
+  ],
+  [
+   25.2,
+   "Die Brandung nagt an den Felsen.",
+   3.6
+  ],
+  [
+   29.4,
+   "Hinter dir wird das Land trockener.",
+   3.6
+  ],
+  [
+   33.4,
+   "Weit draußen ist noch nichts zu sehen.",
+   3.6
+  ],
+  [
+   37.6,
+   "Noch 2.000 Kilometer bis Südamerika.",
+   3.6
+  ],
+  [
+   41.8,
+   "Die Luft wird heißer und trockener.",
+   3.6
+  ],
+  [
+   46,
+   "Nur noch 1.000 Kilometer bis Südamerika.",
+   3.6
+  ],
+  [
+   50.2,
+   "Rauchsäulen stehen über dem Horizont.",
+   3.6
+  ],
+  [
+   54.2,
+   "Dann tauchen Berge auf der anderen Seite auf.",
+   3.6
+  ],
+  [
+   62.4,
+   "Afrika und Amerika sind wieder vereint.",
+   3.6
+  ],
+  [
+   66.4,
+   "Nur 8 bis 16 Prozent des Landes bleiben bewohnbar.",
+   3.4
+  ]
+ ],
+ "bild_text_abgleich": [
+  [
+   4.8,
+   "Abend an einer Felsküste in Westafrika.",
+   "Sonnenuntergang über dem Atlantik, Felsplateau mit Brocken und Brandung im Vordergrund; Anzeige läuft seit Bild 0 (JAHRE IN DER ZUKUNFT), Wolkenbänder jagen, Möwen, Kamera fährt seit 3 s nach vorn"
+  ],
+  [
+   8.8,
+   "Dann vergehen Millionen Jahre in Sekunden.",
+   "Zeitraffer: Wolken jagen, die Sonne sinkt, Licht gleitet ins Dämmerblau; Anzeige läuft mit (ca. 5 Mio. Jahre)"
+  ],
+  [
+   12.8,
+   "Der Atlantik wächst um 1.500 Kilometer.",
+   "Dämmerung, Erosion an der Wasserlinie sichtbar; Unterzeile der Anzeige nennt 3.003 → 4.503 KM BREIT (1.500 km Wachstum); die Breite selbst ist im Bild nicht sichtbar, die Zahl trägt es"
+  ],
+  [
+   16.8,
+   "Dann kehrt sich die Bewegung um.",
+   "Bildwechsel in die Nacht: Mond geht auf, Sterne ziehen als Strichspuren; Etikettwechsel auf BREITE DES ATLANTIKS, Zahl beginnt zu fallen (4.499 km)"
+  ],
+  [
+   21,
+   "Das Meer vor dir wird schmaler.",
+   "Mondglanz auf dem Wasser; Anzeige BREITE fällt (ca. 4.200 km). Das Schmalerwerden zeigt die Anzeige, das offene Meer sieht gleich weit aus (Maßstab)"
+  ],
+  [
+   25.2,
+   "Die Brandung nagt an den Felsen.",
+   "Gischt steigt an den Felsen auf, die Uferlinie weicht sichtbar landeinwärts, Brocken verschwinden"
+  ],
+  [
+   29.4,
+   "Hinter dir wird das Land trockener.",
+   "Schwenk nach links über die Küste: Savanne mit Gras, Büschen, Akazien und Baobabs im Mondlicht, Vegetation vergilbt"
+  ],
+  [
+   33.4,
+   "Weit draußen ist noch nichts zu sehen.",
+   "Kamera zurück: leerer Horizont im Mondlicht, keine Gegenküste"
+  ],
+  [
+   37.6,
+   "Noch 2.000 Kilometer bis Südamerika.",
+   "Anzeige 2.000 KM (gerechnet 1.996 km bei 37,6 s), Horizont leer"
+  ],
+  [
+   41.8,
+   "Die Luft wird heißer und trockener.",
+   "Hitzeflimmern setzt ein, Staub treibt über das Plateau, Gras vertrocknet"
+  ],
+  [
+   46,
+   "Nur noch 1.000 Kilometer bis Südamerika.",
+   "Anzeige 1.000 KM (gerechnet 997 km bei 46,0 s), Dunst, Morgenrot beginnt"
+  ],
+  [
+   50.2,
+   "Rauchsäulen stehen über dem Horizont.",
+   "Etikettwechsel JAHRE BIS ZUM ZUSAMMENSTOSS; Rauchsäulen der Vulkane über dem Horizont, Morgenrot, Zoom beginnt"
+  ],
+  [
+   54.2,
+   "Dann tauchen Berge auf der anderen Seite auf.",
+   "Vulkankegel und Gebirge der Gegenküste steigen über den Horizont (Anzeige ca. 140 km, Sichtweite 212 km bei 53,3 s)"
+  ],
+  [
+   62.4,
+   "Afrika und Amerika sind wieder vereint.",
+   "Küsten vereint: Gebirge gefaltet, Staubwand zieht vorbei, Anzeige HIER"
+  ],
+  [
+   66.4,
+   "Nur 8 bis 16 Prozent des Landes bleiben bewohnbar.",
+   "Rote Wüste mit vertrocknetem Gras und Akazien im Morgenlicht, Hitzeflimmern, Anzeige HIER"
+  ]
+ ],
+ "faktenzeile": "PLATTEN WANDERN ETWA SO SCHNELL, WIE FINGERNÄGEL WACHSEN · IM KLIMAMODELL BLEIBEN 8–16 % DES LANDES FÜR SÄUGETIERE BEWOHNBAR",
+ "rechenweg": "Referenzstrecke Dakar (14,69° N, 17,45° W) – Natal (5,79° S, 35,21° W), Großkreis mit R = 6.371 km: 3.003 km. Phase Wachsen (A, Szenario Scotese: Atlantik wächst zunächst weiter): 50 Mio. Jahre × 3 cm/Jahr = 1.500 km → größte Breite 4.503 km. Phase Schließen: 4.503 km in 200 Mio. Jahren = 4.503·10^5 cm / 2·10^8 Jahre = 2,25 cm/Jahr (im Bereich heutiger Plattentempi 2–5 cm/Jahr). Fingernagel: 3,47 mm/Monat × 12 = 4,16 cm/Jahr, gleiche Größenordnung. Zeitraffer: Segment 1 (0–8 s) r = r0·e^(a·t) mit r0 = 1.000 J/s, a = 1,0716 /s; Segment 2 (8–50 s) konstant 5.284.123 J/s; Segment 3 (50–58 s) linear auf 500.000 J/s; Summe 250 Mio. Jahre bei 58 s. Kontrollwerte: 16,53 s = +50 Mio. (Umkehr) · 37,6 s ≈ 2.000 km · 46,0 s ≈ 1.000 km · 50,2 s ≈ 500 km und ca. 23 Mio. Jahre bis zum Stoß · 53,3 s = 200 km (Sichtweite 3,57·(√20 + √3.000) = 212 km für 3.000 m hohe Berge bei 20 m Standhöhe) · 58 s = 0 km. Bewohnbarkeit nach Farnsworth et al. 2023: vorindustrielle Erde 66 %, Pangaea Ultima bei 560 ppm CO2 16 %, bei 1.120 ppm 8 %. Nachgerechnet mit Python (cockpit/daten/tmp/konti.py).",
+ "rechnung_code": "pipeline/sim/superkontinent.mjs (Test: pipeline/sim/superkontinent.test.mjs)",
+ "zahlen": {
+  "breite_heute_km": 3003,
+  "wachstum_cm_pro_jahr": 3,
+  "wachstumsphase_jahre": 50000000,
+  "breite_max_km": 4503,
+  "schliessen_cm_pro_jahr": 2.25,
+  "fingernagel_cm_pro_jahr": 4.16,
+  "superkontinent_in_jahren": 250000000,
+  "bewohnbar_heute_prozent": 66,
+  "bewohnbar_superkontinent_prozent": "8–16",
+  "sichtweite_berge_km": 212,
+  "rate_jahre_pro_s": 5284123
+ },
+ "annahmen": [
+  "(A) Standpunkt Westafrika, Gegenküste Südamerika, Referenzstrecke Dakar–Natal; das Modell sagt nur grob, dass die Amerikas wieder mit Afrika und Europa zusammenstoßen, nicht welche Küstenpunkte genau.",
+  "(A) Ablauf nach Scotese (Pangaea Proxima): Atlantik wächst zunächst ca. 50 Mio. Jahre weiter, dann schließt ihn eine neue Subduktionszone östlich der Amerikas; Zeitpunkte und Tempi sind Modellannahmen (Scotese nennt Vorhersagen über 50 Mio. Jahre hinaus selbst unsicher).",
+  "(A) Konstante Raten 3 cm/Jahr beim Wachsen und 2,25 cm/Jahr beim Schließen (Mittelwerte, real schwankend).",
+  "(A) Vulkane (Rauchsäulen) an der heranrückenden Küste: typische Folge einer Subduktionszone, im Modell an der Ostseite der Amerikas.",
+  "(A) Die 8–16 % gelten für Säugetiere im Klimamodell von Farnsworth et al. 2023 (560 bzw. 1.120 ppm CO2, Sonne ca. 2,5 % stärker); keine Aussterbe-Dramatik im Bild.",
+  "(A) Zeitraffer-Kurve frei gewählt (stetig), damit Umkehr, Annäherung und Sichtbarkeit der Gegenküste Zeit bekommen."
+ ],
+ "quellen": [
+  "(F) How fast do tectonic plates move?, U.S. Geological Survey, FAQ (etwa so schnell, wie Fingernägel wachsen) – https://www.usgs.gov/faqs/how-fast-do-tectonic-plates-move",
+  "(F) Mid-Ocean Ridge, NOAA Ocean Exploration (Mittelatlantischer Rücken 2–5 cm/Jahr; NOAA-Lehrmaterial: 3–4 cm/Jahr zwischen Südamerika und Afrika) – https://oceanexplorer.noaa.gov/facts/mid-ocean-ridge.html",
+  "(F) Pangaea Proxima (Scotese, PALEOMAP; Atlantik und Indik schließen sich durch Subduktion östlich der Amerikas, Superkontinent in ca. 250 Mio. Jahren) – https://en.wikipedia.org/wiki/Pangaea_Proxima",
+  "(F) Farnsworth et al., Climate extremes likely to drive land mammal extinction during next supercontinent assembly, Nature Geoscience 16, 901–908, 2023 (bewohnbar: vorindustriell 66 %, 16 % bei 560 ppm, 8 % bei 1.120 ppm; Sonne ca. +2,5 %) – https://www.nature.com/articles/s41561-023-01259-3",
+  "(F) Yaemsiri et al., Growth rate of human fingernails and toenails in healthy American young adults, JEADV 24, 2010 (3,47 mm/Monat) – https://pubmed.ncbi.nlm.nih.gov/19744178/"
+ ],
+ "caption": "Was passiert, wenn alle Kontinente wieder zusammenstoßen? 🌍 Ich hab’s durchgespielt. Hättest du gedacht, dass der Atlantik erst noch wächst? 👇 #superkontinent #plattentektonik #erde #wissen #waswaerewenn",
+ "korrekturen": [
+  "Titelfrage, Sätze, Faktenzeile 1:1 aus dem Slot-Dokument; Standzeit 3,6 s je Satz (letzter 3,4 s).",
+  {
+   "feld": "anzeige_plan[2].unter",
+   "alt": "ABSTAND 500 → 0 KM · ZEITRAFFER BREMST",
+   "neu": "ABSTAND 520 → 0 KM · ZEITRAFFER BREMST",
+   "quelle": "rechenweg: 23,14 Mio. Jahre × 2,25 cm/Jahr = 521 km bei 50 s (sim/superkontinent.mjs)",
+   "grund": "Rundung 500 stimmte bei 50,0 s nicht; 500 km gilt bei 50,2 s"
+  },
+  {
+   "feld": "anzeige_plan[2].start",
+   "alt": "23.000.000",
+   "neu": "live 23.136.494 (aus der Rechnung)",
+   "quelle": "sim/superkontinent.mjs",
+   "grund": "Anzeige läuft live aus der Rechnung, Plan war gerundet"
+  },
+  {
+   "feld": "anzeige_plan[3].etikett",
+   "alt": "HIER",
+   "neu": "+250.000.000 JAHRE (Etikett) mit Zahl HIER",
+   "quelle": "qc/referenz_pov.py Punkt 3d",
+   "grund": "Zahl muss HIER zeigen; Inhalt unverändert"
+  }
+ ],
+ "dramaturgie": [
+  "0–4 s: volle Szene ab Bild 0, Sonnenuntergang über dem Atlantik, Brandung und Möwen; erster Welteffekt vor 4 s: Wellen schlagen, Gischt im Gegenlicht; Anzeige läuft sofort.",
+  "3 s: langsame Fahrt nach vorn an die Felskante (Pflicht vor 8 s).",
+  "8 s: Zeitraffer auf voller Fahrt, Wolkenbänder jagen, Licht gleitet ruhig ins Dämmerblau (kein Stroboskop).",
+  "12–16 s: Wasserlinie und Felsen verändern sich sichtbar (Erosion), Unterzeile zeigt 4.503 km.",
+  "16,5 s: erste Wendung: Etikett BREITE DES ATLANTIKS, die Zahl beginnt zu fallen; Bildwechsel in die Nacht, Sterne ziehen als Strichspuren.",
+  "25–32 s: Brandung frisst Felsen, Schwenk ins Land: Grün wird gelbbraun (Stufe 2).",
+  "33–46 s: Meer wird ruhiger, Horizont leer, Anzeige 2.000 → 1.000 km (Stufe 3); Mondglanz auf dem Wasser.",
+  "50 s: Etikett JAHRE BIS ZUM ZUSAMMENSTOSS, Morgenrot, Rauchsäulen über dem Horizont (Stufe 4), Zoom auf den Horizont.",
+  "53–58 s: Annäherung: Berge und Vulkankegel steigen über den Horizont, die Gegenküste rückt heran, das Meer wird zum schmalen Arm, Grollen (Stufe 5).",
+  "58 s: HIER: die Küsten berühren sich, Felsen falten sich vor dir auf, Staubwand, Kamera bebt kurz; im Moment kein Satz.",
+  "62–70 s: Nachspiel: Staub legt sich, glühende rote Sonne, Schwenk auf rote Wüste mit Hitzeflimmern, keine sterbenden Tiere.",
+  "70–72 s Abblende, 72–80 s Abspann mit Titelfrage und Faktenzeile."
+ ],
+ "selbstpruefung": [
+  "Satzzahl 15 (Vorgabe 12–18); Wörter je Satz 5–9, alle im Bereich 3–9 (Zahlen als ein Wort).",
+  "Erster Satz 4,8 s, letzter 66,4–69,8 s; Abstände 4,0–4,2 s; im Höhepunkt 58–62 s kein Satz.",
+  "Keine Ausrufezeichen, keine Fragen außer der Titelfrage, Präsens, ruhig, keine Aussterbe-Dramatik.",
+  "Anzeige läuft ab Bild 0 stetig und ändert sich vor 8 s, 3 Etikettwechsel (JAHRE IN DER ZUKUNFT → BREITE DES ATLANTIKS → JAHRE BIS ZUM ZUSAMMENSTOSS → HIER); Zeitraffer-Faktor in der Unterzeile.",
+  "Zahlen in Sätzen = Anzeige: 1.500 km Wachstum bis 16,5 s, 2.000 km bei 37,6 s, 1.000 km bei 46,0 s (gerechnet); Berge sichtbar ab 212 km = 53,3 s, Satz bei 54,2 s.",
+  "Modellcharakter: Unterzeile „MODELL PANGAEA PROXIMA“, Faktenzeile „IM KLIMAMODELL … FÜR SÄUGETIERE“.",
+  "Weltvielfalt: Welttyp Meer und Küste (Mittag Fluss/Delta), Standpunkt ebenerdig (Mittag erhöht), Tageszeit Sonnenuntergang → Nacht → Morgen (Mittag Morgen → Abend), Ende Gebirge/Wüste (Mittag Tiere/Grün): kein Konflikt. Standpunkt und Tageszeit nur deshalb gegenüber der Idee geändert.",
+  "Korrektur gegenüber der Idee: Zeitraffer ca. 5,3 statt 3 Mio. Jahre/s, weil 250 Mio. Jahre bis 58 s erreicht sein müssen.",
+  "Verbote: keine Stimme, keine Untertitel, kein Logo, kein Folgen-Aufruf, keine Opfer."
+ ],
+ "bewegungsplan": [
+  [
+   0,
+   "Sonnenuntergang, Wolkenbänder jagen, Gischt im Gegenlicht, Anzeige läuft",
+   1
+  ],
+  [
+   1.2,
+   "Wellen schlagen an die Felsen",
+   1
+  ],
+  [
+   2.6,
+   "Möwen kreisen",
+   1
+  ],
+  [
+   3,
+   "Kamera fährt nach vorn an die Felskante",
+   1
+  ],
+  [
+   5,
+   "Sonne sinkt dem Meer entgegen",
+   2
+  ],
+  [
+   9,
+   "Licht gleitet ins Dämmerblau",
+   2
+  ],
+  [
+   12.5,
+   "Erosion an der Wasserlinie",
+   2
+  ],
+  [
+   16.6,
+   "Nacht: Mond geht auf, Sterne als Strichspuren",
+   3
+  ],
+  [
+   21.5,
+   "Mondglanz auf dem Wasser",
+   3
+  ],
+  [
+   25.3,
+   "Brandung nagt, Gischt, Uferlinie weicht",
+   3
+  ],
+  [
+   25.6,
+   "Schwenk nach links ins trockene Land (bis 31,6 s), zurück bis 34 s",
+   3
+  ],
+  [
+   36,
+   "Weiter, leerer Horizont, Mond wandert",
+   3
+  ],
+  [
+   41.5,
+   "Hitze, Staub, Hitzeflimmern",
+   4
+  ],
+  [
+   47,
+   "Dunst, Morgenrot beginnt",
+   4
+  ],
+  [
+   50,
+   "Zoom auf den Horizont, Rauchsäulen",
+   4
+  ],
+  [
+   54.3,
+   "Berge und Vulkane steigen über den Horizont",
+   5
+  ],
+  [
+   56.6,
+   "Meer schmaler Arm, Kamera bebt",
+   5
+  ],
+  [
+   58,
+   "Zusammenstoß: Küsten berühren sich, Gebirge falten sich auf, Staubwand",
+   5
+  ],
+  [
+   62.4,
+   "Staub legt sich, Schwenk auf die rote Wüste (bis 70 s)",
+   6
+  ],
+  [
+   64.5,
+   "Rote Sonne, Hitzeflimmern, Möwen",
+   6
+  ]
+ ],
+ "lern_notizen": {
+  "welt": "Felsküste am offenen Ozean (Welttyp Meer und Küste), engine/welt_felskueste.js (Erstbau 06.11.2026) mit beweglicher Gegenküste, Savanne, Sternspuren",
+  "standpunkt": "ebenerdig am Rand eines Felsplateaus, Meer voraus, Land im Rücken",
+  "tageszeit": [
+   "Sonnenuntergang",
+   "Sternennacht mit Mond",
+   "roter Morgen"
+  ],
+  "kamera": [
+   {
+    "t": 0,
+    "art": "schwenk",
+    "was": "Blick aufs Meer"
+   },
+   {
+    "t": 3,
+    "art": "fahrt",
+    "was": "langsame Fahrt an die Felskante bis 15 s"
+   },
+   {
+    "t": 25.6,
+    "art": "schwenk",
+    "was": "nach links ins Land und zurück (34 s)"
+   },
+   {
+    "t": 50,
+    "art": "zoom",
+    "was": "Brennweite 58° → 47° bis 58 s"
+   },
+   {
+    "t": 62,
+    "art": "schwenk",
+    "was": "nach links auf die rote Wüste bis 70 s"
+   }
+  ],
+  "baukasten": "Neue Weltdatei mit Meer-Shader (Mond-/Sonnenglanz, Schaum an der Küstenlinie), Sternen-Strichspuren, verschiebbarer Gegenküste mit Faltung per Vertex-Shader",
+  "schwaechen": "offenes Meer zeigt Schmalerwerden nicht, nur die Anzeige; Schaum weich; Boden in der Nacht dunkel"
+ }
+}
