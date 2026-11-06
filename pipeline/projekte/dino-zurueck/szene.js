@@ -25,7 +25,9 @@ const KZ = K([[0, KNOSPE.z], [20, 12], [32, 10], [45, -12], [54, -12], [58, -14]
 const KYAW = K([[0, 10], [3, 10], [10, 24], [20, 46], [32, 40], [45, 6], [54, 22], [58, 29], [66, 30], [70, 28]]);
 const KPITCH = K([[0, -9], [10, -10], [20, -11], [32, -11], [45, -12], [54, -12], [58, -12], [66, -9], [70, -9]]);
 const KFOV = K([[0, 56], [3, 56], [20, 54], [45, 56], [53, 56], [58, 50], [66, 46], [70, 46]]);
-const posBei = (t) => { const x = KX(t), z = KZ(t); return [x, hoehe(x, z) + AUGE.hoehe, z]; };
+// Hub über Gras und Farn (18–56 s), weich, damit Pferde und Krokodile am Ufer sichtbar sind (Abnahme 06.11.)
+const HUB = K([[0, 0], [17, 0], [22, 2.6], [36, 2.6], [40, 3.4], [50, 3.4], [56.5, 0], [80, 0]]);
+const posBei = (t) => { const x = KX(t), z = KZ(t); return [x, hoehe(x, z) + AUGE.hoehe + HUB(t), z]; };
 const zielBei = (t) => { const p = posBei(t), d = richtung(KYAW(t), KPITCH(t)); return [p[0] + d[0] * 100, p[1] + d[1] * 100, p[2] + d[2] * 100]; };
 
 // ------------------------------------------------------------------------------ Zustände je Zeit
@@ -100,9 +102,9 @@ async function start() {
   // Kaltzeit: Mammutherde zieht am Eisrand vorbei (12–19 s)
   for (let i = 0; i < 7; i++) T.add("mammut", { p0: [175 - 12 * i + 6 * hash(i, 3), -150 - 11 * hash(i, 5) - 3 * i], v: [-2.4 - 0.4 * hash(i, 6), 0.1], von: 11.2 + 0.15 * i, bis: 19.2, skala: 1.9 + 0.2 * hash(i, 7), gang: 1.0, seed: 10 + i });
   // Neogen: dreizehige Pferde auf dem Grasland (20,6–32 s)
-  for (let i = 0; i < 6; i++) T.add("pferd", { p0: [190 - 16 * i + 6 * hash(i, 2), -85 - 16 * hash(i, 4) - 5 * i], v: [-3.4, -0.2], von: 20.2 + 0.2 * i, bis: 32.6, skala: 1.7, gang: 1.7, seed: 30 + i });
+  for (let i = 0; i < 6; i++) T.add("pferd", { p0: [44 - 7 * i + 3 * hash(i, 2), -26 - 6 * hash(i, 4) - 3 * i], v: [-2.6, -0.1], von: 20.2 + 0.2 * i, bis: 32.6, skala: 2.4, gang: 1.7, seed: 30 + i });
   // Paläogen: Krokodile am Ufer (ab 41 s), Kleinsäuger im Unterholz (49,6–54,6 s)
-  for (const [i, x] of [-50, -34, -20, -6].entries()) T.add("krokodil", { p0: [x, ufer(x, 21.6) + 2.5 + hash(i, 4) * 2], v: [0, 0], yaw: -Math.PI / 2 + (hash(i, 9) - 0.5) * 1.0 + (i % 2 ? 0.7 : -0.7), von: 40.4 + 0.3 * i, bis: 59, skala: 1.9, seed: 50 + i });
+  for (const [i, x] of [-50, -34, -20, -6].entries()) T.add("krokodil", { p0: [x, ufer(x, 21.6) + 2.5 + hash(i, 4) * 2], v: [0, 0], yaw: -Math.PI / 2 + (hash(i, 9) - 0.5) * 1.0 + (i % 2 ? 0.7 : -0.7), von: 40.4 + 0.3 * i, bis: 59, skala: 2.6, seed: 50 + i });
   for (let i = 0; i < 7; i++) T.add("klein", { p0: [-20 + 30 * hash(i, 2), -22 - 30 * hash(i, 3)], v: [(hash(i, 4) - 0.5) * 10, -1.5 - 3 * hash(i, 5)], von: 49.4 + 0.5 * i, bis: 54.8, ein: 0.3, aus: 0.4, skala: 3.0, gang: 3, seed: 70 + i });
   // Kreide: Herde tritt ans Ufer (ab 57,6 s), trinkt ab 62 s, Flugsaurier kreisen
   const herde = [["sauropode", -34, 1.0], ["sauropode", 6, 1.1], ["hadrosaurier", -56, 1.0], ["hadrosaurier", -16, 1.0], ["hadrosaurier", 22, 1.0], ["ceratopsier", -44, 1.0], ["ceratopsier", 40, 1.0]];
