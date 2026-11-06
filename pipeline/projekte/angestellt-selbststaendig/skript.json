@@ -1,0 +1,330 @@
+{
+  "titel": "Angestellt oder selbstständig: Wer hat bei gleichen 60.000 € mehr netto?",
+  "skill": "simulierbar-video",
+  "konto": "simulierbar",
+  "skript_quelle": "acc1-2026-11-06-mittag",
+  "stil": "18 Dunkles Studio (Produktlicht)",
+  "stil_begruendung": "Reine Geldfrage Gehalt gegen Freiberuflerin (Stil 18 laut stile.md: Gehalt, Freelancer, Steuern; Bildidee des Skripts: zwei Schreibtische mit gleich hohen Geldstapeln). Wegen der Zusatzlatte für Stil 18 (Inhaber 05.11.) keine reinen Objekte vor Schwarz, sondern zwei belebte Mini-Arbeitsplätze mit Modellfiguren (Büro links, Homeoffice rechts), Briefe und Steuerblätter fliegen ein, ein gesichtsloser Ärmel (Arbeitgeber) greift ein, Waage in der Mitte, Kalenderwand als Raumwechsel in der zweiten Überraschung; je Phase ein Kamera- bzw. Raumwechsel. Letzter gepostet: Stil 20 (Steuerklasse), daher 18 erlaubt; Teamfarben Blau/Orange.",
+  "teamfarben": {
+    "JONAS": "#3D8BFF",
+    "SARA": "#FF8A3D"
+  },
+  "klangteppich": "raum",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Angestellt oder selbstständig, beide 60.000. Wer hat mehr netto?",
+      "sprechtext": "Angestellt oder selbstständig, beide sechzigtausend.\n[curious] Wer hat MEHR netto?",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Jonas ist angestellt, Sara selbstständig.",
+          "bild": "Weite Einstellung, Bild 0: links das Büro-Diorama (Jonas am Schreibtisch, Monitor, blaue LED-Kante), rechts das Homeoffice-Diorama (Sara am Laptop, orange LED-Kante), auf beiden Schreibtischen gleich hohe Münzstapel, hinten die Waage im Gleichgewicht, Tafel 60.000 | 60.000 ab Bild 0; blaue Kante leuchtet bei „Jonas“, orange bei „Sara“, Kamera fährt langsam ein"
+        },
+        {
+          "gesagt": "Beide machen sechzigtausend Euro – wer hat MEHR netto?",
+          "bild": "beide Stapel leuchten gleichzeitig auf (gleiche Höhe), Licht wandert von links nach rechts, Schärfe wechselt zur Waage in der Mitte"
+        }
+      ]
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Jonas: 60.000 brutto. Sara: 60.000 Gewinn. Beide kinderlos, gesetzlich versichert, gleiche Rente.",
+      "sprechtext": "Jonas: sechzigtausend brutto.\nSara: sechzigtausend Gewinn.\nBeide kinderlos, gesetzlich versichert, gleiche Rente.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Jonas: sechzigtausend brutto.",
+          "bild": "Kamera fährt zu Jonas, Spot auf seinen Stapel, Chip „60.000 € BRUTTO“ in Blau"
+        },
+        {
+          "gesagt": "Sara: sechzigtausend Gewinn.",
+          "bild": "Kamera gleitet zu Sara, Spot auf ihren Stapel, Chip „60.000 € GEWINN“ in Orange"
+        },
+        {
+          "gesagt": "Beide kinderlos, gesetzlich versichert.",
+          "bild": "Weitwinkel auf beide Dioramen, Chip „KINDERLOS · GESETZLICH“ in der Mitte, beide Figuren heben kurz den Kopf (Aufleuchten der Kanten)"
+        },
+        {
+          "gesagt": "Sara will dieselbe Rente wie Jonas.",
+          "bild": "Chip „GLEICHE RENTE“, beide Kanten pulsieren gleichzeitig"
+        }
+      ],
+      "sprechtext_original": "Jonas: sechzigtausend brutto.\nSara: sechzigtausend Gewinn.\nBeide kinderlos, gesetzlich versichert.\nSara will dieselbe Rente wie Jonas."
+    },
+    {
+      "id": "falle",
+      "phase": "falle",
+      "text": "Klar, gleiches Geld, gleiches Netto. Oder?",
+      "sprechtext": "Klar, gleiches Geld, gleiches NETTO.\nOder?",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Klar … gleiches Geld, gleiches NETTO. Oder?",
+          "bild": "Lichtkegel auf die Waage in der Mitte, sie steht gerade, beide Stapel gleich hoch, Kamera ruhig auf die Waage; bei „Oder?“ steht das Bild kurz still (Ring leuchtet)"
+        }
+      ],
+      "sprechtext_original": "Klar … gleiches Geld, gleiches NETTO.\nOder?"
+    },
+    {
+      "id": "rennen",
+      "phase": "rennen",
+      "text": "Erste Runde: Steuer. Jonas zahlt gut 9.000. Sara nur 6.000, sie liegt vorn.",
+      "sprechtext": "Erste Runde: Steuer.\nJonas zahlt gut neuntausend.\nSara nur sechstausend, sie liegt VORN.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Erste Runde: Steuer.",
+          "bild": "Chip „RUNDE 1 · STEUER“, ein Steuerbescheid-Blatt schwebt über jedem Schreibtisch ein"
+        },
+        {
+          "gesagt": "Jonas zahlt gut neuntausend.",
+          "bild": "bei Jonas wandern Münzen in sein Blatt, Stapel sinkt auf 50.601, Tafel zählt 60.000 → 50.601, Chip „ESt −9.399 €“ (Blau)"
+        },
+        {
+          "gesagt": "Sara nur sechstausend – sie liegt VORN.",
+          "bild": "bei Sara sinkt der Stapel nur auf 53.968, Tafel 53.968, Saras Seite leuchtet „VORN“, Waage kippt leicht zu Sara, Chip „ESt −6.032 €“ (Orange)"
+        }
+      ],
+      "sprechtext_original": "Erste Runde: Steuer.\nJonas zahlt gut neuntausend.\nSara nur sechstausend – sie liegt VORN."
+    },
+    {
+      "id": "folgen",
+      "phase": "folgen",
+      "text": "Folg mir, damit du nichts verpasst.",
+      "sprechtext": "Folg mir, damit du nichts verpasst.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Folg mir, damit du nichts verpasst.",
+          "bild": "Folgen-Pille, die Welt läuft weiter (Blätter sinken langsam, Staub im Kegel)"
+        }
+      ]
+    },
+    {
+      "id": "wendung1",
+      "phase": "wendung1",
+      "text": "Doch jetzt: Sozialabgaben. Bei Jonas zahlt der Arbeitgeber die Hälfte. Sara zahlt alles allein.",
+      "sprechtext": "Doch jetzt: Sozialabgaben.\nBei Jonas zahlt der Arbeitgeber die HÄLFTE.\nSara zahlt alles allein.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Doch jetzt kommen die Sozialabgaben.",
+          "bild": "Kamera zoomt auf Jonas, Lichtwechsel kühl, Chip „RUNDE 2 · SOZIALABGABEN“"
+        },
+        {
+          "gesagt": "Bei Jonas zahlt der Arbeitgeber die HÄLFTE.",
+          "bild": "aus dem Bild links greift ein gesichtsloser Ärmel (Arbeitgeber) nach Jonas’ Abgaben-Rechnung und übernimmt die Hälfte (Hälfte des Rechnungsstapels wandert in den Ärmel)"
+        },
+        {
+          "gesagt": "Sara zahlt alles allein.",
+          "bild": "Kamera schwenkt zu Sara, sie steht allein im Licht, der ganze Rechnungsstapel liegt vor ihr"
+        }
+      ],
+      "sprechtext_original": "Doch jetzt kommen die Sozialabgaben.\nBei Jonas zahlt der Arbeitgeber die HÄLFTE.\nSara zahlt alles allein."
+    },
+    {
+      "id": "wendung2",
+      "phase": "wendung2",
+      "text": "Krankenkasse: Sara 10.500, Jonas die Hälfte. Bei der Rente dasselbe. Jonas zieht vorbei.",
+      "sprechtext": "Krankenkasse: Sara zehntausendfünfhundert, Jonas die Hälfte.\nBei der Rente dasselbe.\nJonas zieht VORBEI.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Krankenkasse: Sara zehntausendfünfhundert, Jonas die Hälfte.",
+          "bild": "Briefe fliegen einzeln zu Sara (dicker Stapel), bei Jonas halb so dicke; Chips „KRANKENKASSE 10.500 | 5.250“"
+        },
+        {
+          "gesagt": "Rente: Sara gut elftausend, Jonas wieder die Hälfte.",
+          "bild": "zweiter Briefstapel: Sara 11.160, Jonas 5.580; Chips „RENTE 11.160 | 5.580“"
+        },
+        {
+          "gesagt": "Unterm Strich: Sara vierundzwanzigtausend Abgaben, Jonas dreizehntausend.",
+          "bild": "Chip „ABGABEN 24.180 | 13.050“, beide Stapel sinken auf 29.788 bzw. 37.551"
+        },
+        {
+          "gesagt": "Jonas zieht VORBEI.",
+          "bild": "Tafel: Jonas 37.551 vorn, Jonas’ Seite leuchtet „VORN“, Waage kippt zu Jonas"
+        }
+      ],
+      "sprechtext_original": "Krankenkasse: Sara zehntausendfünfhundert, Jonas die Hälfte.\nRente: Sara gut elftausend, Jonas wieder die Hälfte.\nUnterm Strich: Sara vierundzwanzigtausend Abgaben, Jonas dreizehntausend.\nJonas zieht VORBEI."
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Endstand: Jonas rund 37.500 netto, Sara knapp 30.000. Jonas hat fast 8.000 mehr, rund 650 im Monat.",
+      "sprechtext": "Endstand: Jonas rund siebenunddreißigeinhalbtausend netto, Sara knapp dreißigtausend.\nJonas hat fast ACHTTAUSEND mehr, rund sechshundertfünfzig im Monat.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Endstand:",
+          "bild": "Weite Einstellung, Licht auf den Sieger, Bilanzkarte baut sich auf"
+        },
+        {
+          "gesagt": "Jonas – rund siebenunddreißigeinhalbtausend Euro netto.",
+          "bild": "Zeile JONAS 37.551 € zählt hoch, Jonas’ Stapel glüht"
+        },
+        {
+          "gesagt": "Sara – knapp dreißigtausend.",
+          "bild": "Zeile SARA 29.788 €"
+        },
+        {
+          "gesagt": "Jonas hat fast ACHTTAUSEND Euro mehr.",
+          "bild": "Differenz 7.763 € mit Elfenbein-Rand, Lücke zwischen den Stapeln leuchtet"
+        },
+        {
+          "gesagt": "Rund sechshundertfünfzig im Monat.",
+          "bild": "Chip „647 € / MONAT“, Sieger-Banner JONAS GEWINNT"
+        }
+      ],
+      "sprechtext_original": "Endstand:\nJonas – rund siebenunddreißigeinhalbtausend Euro netto.\nSara – knapp dreißigtausend.\nJonas hat fast ACHTTAUSEND Euro mehr.\nRund sechshundertfünfzig im Monat."
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Für Jonas zahlt der Arbeitgeber knapp 13.000 obendrauf. Saras Steuervorteil holt nur gut 3.000 zurück.",
+      "sprechtext": "[thoughtful] Warum?\nFür Jonas zahlt der Arbeitgeber knapp dreizehntausend OBENDRAUF.\nSaras Steuervorteil holt nur gut dreitausend zurück.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Warum?",
+          "bild": "ruhige Fahrt zu Jonas, Bilanzkarte blendet aus"
+        },
+        {
+          "gesagt": "Für Jonas zahlt der Arbeitgeber zwölftausendsiebenhundert Euro OBENDRAUF.",
+          "bild": "Ärmel legt einen dritten Münzstapel (12.690 €) neben Jonas’ Schreibtisch; Balken „ARBEITGEBER +12.690 €“ (Blau)"
+        },
+        {
+          "gesagt": "Saras Steuervorteil holt nur gut dreitausend zurück.",
+          "bild": "kleiner Stapel 3.367 € neben Sara; Balken „STEUERVORTEIL +3.367 €“ (Orange); die beiden Stapel im Größenvergleich"
+        }
+      ],
+      "sprechtext_original": "[thoughtful] Warum?\nFür Jonas zahlt der Arbeitgeber zwölftausendsiebenhundert Euro OBENDRAUF.\nSaras Steuervorteil holt nur gut dreitausend zurück."
+    },
+    {
+      "id": "ueberraschung",
+      "phase": "ueberraschung",
+      "text": "Und das Verrückte: Für Gleichstand braucht Sara knapp 77.000 Gewinn. Ohne bezahlten Urlaub, ohne bezahlte Krankentage. Das sind fast 46 Euro pro Arbeitsstunde. Jonas bekommt knapp 29.",
+      "sprechtext": "Und das Verrückte:\nFür Gleichstand braucht Sara knapp siebenundsiebzigtausend Gewinn.\nOhne bezahlten Urlaub, ohne bezahlte Krankentage.\nDas sind fast sechsundvierzig Euro pro Arbeitsstunde.\nJonas bekommt knapp NEUNUNDZWANZIG.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Und das Verrückte:",
+          "bild": "Szenenwechsel (Zoomwisch): Weitwinkel auf die Kalenderwand hinter den Dioramen, neue Runde"
+        },
+        {
+          "gesagt": "Für Gleichstand braucht Sara knapp siebenundsiebzigtausend Gewinn.",
+          "bild": "Saras Stapel wächst Münze für Münze, Chip „76.736 € GEWINN“, Tafel Sara 29.788 → 37.551, Waage kommt wieder ins Gleichgewicht"
+        },
+        {
+          "gesagt": "Ohne bezahlten Urlaub, ohne bezahlte Krankentage.",
+          "bild": "Kalenderwand: 261 Arbeitstage-Kacheln je Person; bei Sara erlöschen nacheinander 7 Feiertage, 30 Urlaubs- und 15 Krankentage (52 Kacheln)"
+        },
+        {
+          "gesagt": "Das sind fast sechsundvierzig Euro pro Arbeitsstunde.",
+          "bild": "Saras Stundenlohn-Chip „45,81 € / ARBEITSSTUNDE“ leuchtet auf, übrig bleiben 209 Kacheln"
+        },
+        {
+          "gesagt": "Jonas bekommt knapp NEUNUNDZWANZIG.",
+          "bild": "Chip „28,74 € / STUNDE“ bei Jonas (alle 261 Kacheln leuchten)"
+        }
+      ],
+      "sprechtext_original": "Und das Verrückte:\nFür Gleichstand braucht Sara knapp siebenundsiebzigtausend Gewinn.\nOhne bezahlten Urlaub, ohne bezahlte Krankentage.\nDas sind fast sechsundvierzig Euro pro Arbeitsstunde.\nJonas bekommt knapp NEUNUNDZWANZIG."
+    },
+    {
+      "id": "merksatz",
+      "phase": "merksatz",
+      "text": "Merke: Selbstständige brauchen gut ein Viertel mehr.",
+      "sprechtext": "Merke: Selbstständige brauchen gut ein Viertel MEHR.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Gleiche sechzigtausend – aber nicht gleich viel NETTO.",
+          "bild": "Kamera gleitet zurück zum Anfangsbild, ruhiges Licht, beide Stapel wieder gleich hoch (Schleife)"
+        },
+        {
+          "gesagt": "Selbstständige brauchen gut ein Viertel mehr.",
+          "bild": "Pointe „+ 27,9 %“ ruhig, Waage wieder gerade"
+        }
+      ]
+    },
+    {
+      "id": "schluss",
+      "phase": "schluss",
+      "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+      "sprechtext": "Was sollen wir als Nächstes zeigen?\nSchreib es in die Kommentare.",
+      "bild_text_abgleich": [
+        {
+          "gesagt": "Was sollen wir als Nächstes zeigen?",
+          "bild": "Anfangsbild, Kamera ruhig"
+        },
+        {
+          "gesagt": "Schreib es in die Kommentare.",
+          "bild": "Bild 0 erreicht (Schleife)"
+        }
+      ]
+    }
+  ],
+  "caption": "Angestellt oder selbstständig: Wer hat bei 60.000 € mehr netto? 💶 Ich hab's simuliert. Team angestellt oder Team selbstständig? 👇 #selbstständig #nettogehalt #freiberufler #wissen #simulation",
+  "quellen": [
+    "(F) § 32a EStG, Einkommensteuertarif ab VZ 2026 (Grundfreibetrag 12.348 €), Bundesamt für Justiz – https://www.gesetze-im-internet.de/estg/__32a.html",
+    "(F) § 10 EStG (Abs. 1 Nr. 3 Satz 4: 4 % Kürzung bei Krankengeldanspruch; Abs. 3: Altersvorsorge 100 % ab 2023, vermindert um steuerfreien AG-Anteil; Abs. 4: 1.900/2.800 €) – https://www.gesetze-im-internet.de/estg/__10.html",
+    "(F) § 9a EStG Arbeitnehmer-Pauschbetrag 1.230 €; § 10c EStG Sonderausgaben-Pauschbetrag 36 € – https://www.gesetze-im-internet.de/estg/__9a.html",
+    "(F) Sozialversicherungsrechengrößen 2026: BBG RV 101.400 €/Jahr, BBG KV/PV 69.750 €/Jahr, Deutsche Rentenversicherung, 08.10.2025 – https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2025/25-10-08-bundeskabinett-sv-rechengroessen-vo-2026.html",
+    "(F) Änderungen in der Rentenversicherung 2026: Beitragssatz 18,6 %, freiwillige Beiträge zwischen 112,16 € und 1.571,70 €/Monat, Deutsche Rentenversicherung, 18.12.2025 – https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Pressemitteilungen/Pressemitteilungen-archiv/2025/2025-12-18-rv-aenderungen-2026",
+    "(F) Durchschnittlicher Zusatzbeitrag 2026: 2,9 %, Bekanntmachung BMG, Bundesanzeiger AT 10.11.2025 B7 – https://www.bundesanzeiger.de/pub/publication/oUJYVk8GYRXybnb9Y4h/content/oUJYVk8GYRXybnb9Y4h/BAnz%20AT%2010.11.2025%20B7.pdf",
+    "(F) Freiwillig versichert: allgemeiner Satz 14,6 % mit Krankengeld-Wahlerklärung, sonst ermäßigt 14,0 %; PV allein getragen, Verbraucherzentrale, 2026 – https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/krankenversicherung/freiwillig-versichert-in-der-gesetzlichen-krankenkasse-das-muessen-sie-wissen-83661",
+    "(F) Pflegeversicherung 2026: 3,6 %, Kinderlosenzuschlag 0,6 % (Arbeitnehmer kinderlos 2,4 %), § 55 SGB XI – https://www.gesetze-im-internet.de/sgb_11/__55.html ; vdek „Änderungen Gesundheitswesen 2026“ – https://www.vdek.com/politik/was-aendert-sich/gesundheitswesen-2026/",
+    "(F) Arbeitslosenversicherung 2,6 % (je 1,3 %), Rechengrößen-Anlage HWK Lübeck 2026 – https://www.hwk-luebeck.de/_Resources/Persistent/c/f/d/8/cfd8b65d97aa4ff846c00d4073aa3973f95fec98/rs9125_Anlage_Rechengr_SozVers_2026.pdf",
+    "(F) Solidaritätszuschlag-Freigrenze 2026: 20.350 € (Einzelveranlagung), TK Firmenkunden – https://www.tk.de/firmenkunden/service/fachthemen/fachthema-beitraege/solidaritaetszuschlag-2075802",
+    "(F) Krankenstand 2025: 14,6 Arbeitstage je Arbeitnehmer, Destatis, Indikatoren Qualität der Arbeit – https://www.destatis.de/DE/Themen/Arbeit/Arbeitsmarkt/Indikatoren-Qualitaet-Arbeit/Dimension-2/krankenstand.html",
+    "(F) Urlaub: gesetzlich 20 Tage (5-Tage-Woche), in Tarifverträgen 30 Tage üblich, WSI/Hans-Böckler-Stiftung, Pressemitteilung Juni 2026 – https://www.boeckler.de/data/pm_ta_2026_06_16.pdf",
+    "(F) Bundesweite gesetzliche Feiertage 2026 (9; 3.10. und 26.12. fallen auf Samstag), eigene Kalenderprüfung in Python",
+    "(S) Eigene Modellrechnung, Python, 05.11.2026 (cockpit/daten/tmp/rechnung_mittag.py)."
+  ],
+  "annahmen": [
+    "(A) Beide kinderlos, älter als 23, ledig (Steuerklasse I bzw. Einzelveranlagung), keine Kirchensteuer, keine weiteren Einkünfte oder Abzüge, Wohnsitz nicht in Sachsen (PV-Sonderregel).",
+    "(A) Beide gesetzlich versichert mit dem durchschnittlichen Zusatzbeitrag 2,9 %; Sara wählt den allgemeinen Satz mit Krankengeld (14,6 %), damit sie wie Jonas bei Krankheit abgesichert ist.",
+    "(A) Sara zahlt freiwillig 18,6 % in die gesetzliche Rente, um dieselben Rentenansprüche wie Jonas zu erwerben (eine Pflicht besteht für viele Selbstständige nicht). Keine Arbeitslosenversicherung für Sara.",
+    "(A) 60.000 € ist bei Sara der Gewinn nach Betriebsausgaben; Freiberuflerin, daher keine Gewerbesteuer. Die Idee sprach von „Umsatz“; korrekt ist „Gewinn“, daher Titel „gleiche 60.000 €“.",
+    "(A) Jonas hat 30 Tage Urlaub (Tarif-Standard laut WSI), Vollzeit 40 h/Woche; Sara nimmt dieselben 30 Tage frei und ist 14,6 Tage krank (Destatis-Durchschnitt 2025), 8 h je Arbeitstag, alle Arbeitsstunden abrechenbar (Akquise und Verwaltung nicht abgezogen, sonst wäre der nötige Satz noch höher).",
+    "(A) Steuer als Jahressteuer (Veranlagung) gerechnet, nicht als monatliche Lohnsteuer; Arbeitgeberanteile ohne Umlagen und Berufsgenossenschaft."
+  ],
+  "rechenweg": "ESt nach § 32a Abs. 1 EStG 2026 (Python, cockpit/daten/tmp/rechnung_mittag.py). Jonas: AN-Anteile 60.000 × (9,3 % RV + 1,3 % AV + 8,75 % KV inkl. halbem Zusatzbeitrag 2,9 % + 2,4 % PV kinderlos) = 13.050 €. zvE = 60.000 − 1.230 (AN-Pauschbetrag) − 36 (SA-Pauschbetrag) − 5.580 (RV-AN-Anteil, 100 % abziehbar) − (5.250 × 0,96 + 1.440) (Basis-KV/PV, 4 % Kürzung wegen Krankengeld; AV fällt unter den Höchstbetrag und entfällt) = 46.674 € → ESt 9.399 €, Soli 0 (Freigrenze 20.350 €). Netto = 60.000 − 13.050 − 9.399 = 37.551 €. Sara: KV 60.000 × 17,5 % (14,6 % + 2,9 %) = 10.500 €, PV 60.000 × 4,2 % = 2.520 €, RV freiwillig 60.000 × 18,6 % = 11.160 € → 24.180 €. zvE = 60.000 − 11.160 − (10.500 × 0,96 + 2.520) − 36 = 36.204 € → ESt 6.032 €. Netto = 60.000 − 24.180 − 6.032 = 29.788 €. Differenz 7.763 €/Jahr (647 €/Monat); Steuer −3.367 € für Sara, Abgaben +11.130 € für Sara. Arbeitgeberanteile Jonas 60.000 × 21,15 % = 12.690 € (ohne Umlagen U1/U2/U3 und Unfallversicherung). Gleichstand: Bisektion über Saras Gewinn G mit KV/PV-Basis min(G; 69.750) → G = 76.736 € (Netto 37.551 €). Stunden: 2026 hat 261 Werktage Mo–Fr; 7 der 9 bundesweiten Feiertage fallen auf Mo–Fr (3.10. und 26.12. sind Samstage). Jonas bezahlt 261 × 8 = 2.088 h → 60.000 / 2.088 = 28,74 €. Sara arbeitet 261 − 7 − 30 − 14,6 = 209,4 Tage × 8 = 1.675,2 h → 76.736 / 1.675,2 = 45,81 € Gewinn je Stunde.",
+  "zahlen": {
+    "jonas_brutto": "60.000 €",
+    "sara_gewinn": "60.000 €",
+    "jonas_rv": "5.580 € (9,3 %)",
+    "jonas_av": "780 € (1,3 %)",
+    "jonas_kv": "5.250 € (7,3 % + 1,45 %)",
+    "jonas_pv": "1.440 € (2,4 % kinderlos)",
+    "jonas_abgaben": "13.050 €",
+    "jonas_zve": "46.674 €",
+    "jonas_est": "9.399 € (Soli 0 €)",
+    "jonas_netto": "37.551 €/Jahr (3.129 €/Monat)",
+    "sara_kv": "10.500 € (17,5 % mit Krankengeld)",
+    "sara_pv": "2.520 € (4,2 %)",
+    "sara_rv": "11.160 € (18,6 %, freiwillig, Annahme)",
+    "sara_abgaben": "24.180 €",
+    "sara_zve": "36.204 €",
+    "sara_est": "6.032 € (Soli 0 €)",
+    "sara_netto": "29.788 €/Jahr (2.482 €/Monat)",
+    "differenz": "7.763 €/Jahr = 647 €/Monat",
+    "steuervorteil_sara": "3.367 €",
+    "mehr_abgaben_sara": "11.130 €",
+    "ag_anteile_jonas": "12.690 € (RV 9,3 + AV 1,3 + KV 8,75 + PV 1,8 %)",
+    "arbeitgeberkosten_jonas": "72.690 €",
+    "gleichstand_gewinn_sara": "76.736 € (+27,9 %), KV/PV ab 69.750 € gedeckelt",
+    "jonas_bezahlte_stunden": "2.088 h (261 Werktage 2026 × 8 h)",
+    "sara_arbeitsstunden": "1.675,2 h (261 − 7 Feiertage Mo–Fr − 30 Urlaub − 14,6 krank = 209,4 Tage × 8 h)",
+    "jonas_stundenlohn": "28,74 €/bezahlte Stunde",
+    "sara_gewinn_je_stunde_gleichstand": "45,81 €/Arbeitsstunde (Faktor 1,59)"
+  },
+  "dramaturgie": [
+    "0 s: Zwei gleiche Arbeitsplätze unter warmem Licht, links Jonas (Büro), rechts Sara (Homeoffice), auf beiden ein gleich hoher Geldstapel 60.000 €; Tafel oben ‚NETTO 0 € | 0 €‘, Kamera fährt langsam heran.",
+    "3–9 s: Regeln erscheinen beim Wort als Chips (‚60.000 € brutto‘, ‚60.000 € Gewinn‘, ‚kinderlos · gesetzlich‘, ‚gleiche Rente‘); Schärfe wandert von links nach rechts.",
+    "10–12 s (Denkfalle): Lichtkegel auf beide gleich hohen Stapel, Waage dazwischen steht gerade.",
+    "13–19 s (Rennen, Runde Steuer): Steuerbescheid-Blatt schwebt heran, bei Jonas verschwinden 9.399 €, bei Sara nur 6.032 €; Saras Seite leuchtet ‚VORN‘ auf. Spannung steigt.",
+    "20–22 s: Folgen-Element, Welt läuft weiter (Papier sinkt langsam).",
+    "22–28 s (Wendung 1, Zoom): Kamera zoomt auf Jonas’ Seite: eine zweite Hand (Arbeitgeber, gesichtslos, nur Ärmel) übernimmt die Hälfte der Abgaben; Sara steht allein im Licht, Lichtwechsel kühl.",
+    "28–37 s (Wendung 2, Führungswechsel): Rechnungen fliegen einzeln zu Sara (Krankenkasse 10.500, Rente 11.160), bei Jonas jeweils halb so dicke Briefe; Zähler ‚Abgaben 24.180 | 13.050‘; Waage kippt zu Jonas, Tafel färbt Jonas ‚VORN‘.",
+    "38–46 s (Ergebnis, Höhepunkt): Bilanzkarte baut sich zeilenweise auf: 37.551 € | 29.788 € | +7.763 € | 647 €/Monat; Glow auf Jonas’ Stapel.",
+    "46–53 s (Warum): ruhige Fahrt; Balken mit zwei Faktoren: ‚Arbeitgeber zahlt 12.690 € dazu‘ gegen ‚Steuervorteil 3.367 €‘ (Blaupause-Einschub möglich).",
+    "53–65 s (zweite Überraschung, neue Runde): Saras Stapel wächst auf 76.736 €; Kalenderstreifen streicht 30 Urlaubs- und 15 Krankentage aus; zwei Stundenuhren: Jonas 28,74 €/h, Sara 45,81 €/h, Saras Uhr leuchtet auf.",
+    "65–78 s: Merksatz in ruhigem Licht, Kamera gleitet zurück zum Anfangsbild mit zwei gleich hohen Stapeln (Schleife zur Startfrage ‚Wer hat mehr netto?‘)."
+  ],
+  "lern_notizen": {
+    "kuerzung": "06.11.: Sprechtext gekürzt (erste Vertonung 95 s, Hook 6,5 s, Folgen 26,8 s): Hook ohne Namen (Namen ab Regeln), 'Unterm Strich' und Rentenzahlen nur im Bild, Merksatz einteilig; Untertitel zeigen die gesprochenen Rundungen, Tafel und Chips exakt."
+  }
+}

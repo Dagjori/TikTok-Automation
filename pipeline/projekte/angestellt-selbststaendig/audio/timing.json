@@ -1,0 +1,861 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 78.577,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Angestellt oder selbstständig, beide 60.000. Wer hat mehr netto?",
+   "start": 0.0,
+   "ende": 4.88,
+   "woerter": [
+    {
+     "wort": "Angestellt",
+     "start": 0.0,
+     "ende": 0.64
+    },
+    {
+     "wort": "oder",
+     "start": 0.72,
+     "ende": 0.8
+    },
+    {
+     "wort": "selbstständig,",
+     "start": 0.88,
+     "ende": 1.92
+    },
+    {
+     "wort": "beide",
+     "start": 2.0,
+     "ende": 2.32
+    },
+    {
+     "wort": "60.000.",
+     "start": 2.48,
+     "ende": 3.72
+    },
+    {
+     "wort": "Wer",
+     "start": 4.048,
+     "ende": 4.08
+    },
+    {
+     "wort": "hat",
+     "start": 4.16,
+     "ende": 4.24
+    },
+    {
+     "wort": "mehr",
+     "start": 4.32,
+     "ende": 4.48
+    },
+    {
+     "wort": "netto?",
+     "start": 4.56,
+     "ende": 4.88
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Jonas: 60.000 brutto. Sara: 60.000 Gewinn. Beide kinderlos, gesetzlich versichert, gleiche Rente.",
+   "start": 5.36,
+   "ende": 13.4,
+   "woerter": [
+    {
+     "wort": "Jonas:",
+     "start": 5.36,
+     "ende": 5.96
+    },
+    {
+     "wort": "60.000",
+     "start": 6.16,
+     "ende": 6.8
+    },
+    {
+     "wort": "brutto.",
+     "start": 6.88,
+     "ende": 7.36
+    },
+    {
+     "wort": "Sara:",
+     "start": 7.84,
+     "ende": 8.44
+    },
+    {
+     "wort": "60.000",
+     "start": 8.64,
+     "ende": 9.28
+    },
+    {
+     "wort": "Gewinn.",
+     "start": 9.36,
+     "ende": 9.76
+    },
+    {
+     "wort": "Beide",
+     "start": 10.16,
+     "ende": 10.4
+    },
+    {
+     "wort": "kinderlos,",
+     "start": 10.48,
+     "ende": 11.2
+    },
+    {
+     "wort": "gesetzlich",
+     "start": 11.28,
+     "ende": 11.68
+    },
+    {
+     "wort": "versichert,",
+     "start": 11.76,
+     "ende": 12.4
+    },
+    {
+     "wort": "gleiche",
+     "start": 12.48,
+     "ende": 12.8
+    },
+    {
+     "wort": "Rente.",
+     "start": 12.84,
+     "ende": 13.4
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, gleiches Geld, gleiches Netto. Oder?",
+   "start": 13.6,
+   "ende": 16.72,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 13.6,
+     "ende": 14.08
+    },
+    {
+     "wort": "gleiches",
+     "start": 14.16,
+     "ende": 14.48
+    },
+    {
+     "wort": "Geld,",
+     "start": 14.56,
+     "ende": 15.04
+    },
+    {
+     "wort": "gleiches",
+     "start": 15.12,
+     "ende": 15.36
+    },
+    {
+     "wort": "Netto.",
+     "start": 15.44,
+     "ende": 15.96
+    },
+    {
+     "wort": "Oder?",
+     "start": 16.16,
+     "ende": 16.72
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Erste Runde: Steuer. Jonas zahlt gut 9.000. Sara nur 6.000, sie liegt vorn.",
+   "start": 17.04,
+   "ende": 23.68,
+   "woerter": [
+    {
+     "wort": "Erste",
+     "start": 17.04,
+     "ende": 17.36
+    },
+    {
+     "wort": "Runde:",
+     "start": 17.44,
+     "ende": 17.84
+    },
+    {
+     "wort": "Steuer.",
+     "start": 18.08,
+     "ende": 18.56
+    },
+    {
+     "wort": "Jonas",
+     "start": 18.96,
+     "ende": 19.36
+    },
+    {
+     "wort": "zahlt",
+     "start": 19.44,
+     "ende": 19.68
+    },
+    {
+     "wort": "gut",
+     "start": 19.72,
+     "ende": 19.92
+    },
+    {
+     "wort": "9.000.",
+     "start": 20.0,
+     "ende": 20.96
+    },
+    {
+     "wort": "Sara",
+     "start": 21.12,
+     "ende": 21.44
+    },
+    {
+     "wort": "nur",
+     "start": 21.52,
+     "ende": 21.68
+    },
+    {
+     "wort": "6.000,",
+     "start": 21.76,
+     "ende": 22.64
+    },
+    {
+     "wort": "sie",
+     "start": 22.68,
+     "ende": 22.72
+    },
+    {
+     "wort": "liegt",
+     "start": 22.8,
+     "ende": 22.96
+    },
+    {
+     "wort": "vorn.",
+     "start": 23.04,
+     "ende": 23.68
+    }
+   ]
+  },
+  {
+   "id": "folgen",
+   "text": "Folg mir, damit du nichts verpasst.",
+   "start": 23.72,
+   "ende": 25.84,
+   "woerter": [
+    {
+     "wort": "Folg",
+     "start": 23.72,
+     "ende": 23.92
+    },
+    {
+     "wort": "mir,",
+     "start": 24.0,
+     "ende": 24.24
+    },
+    {
+     "wort": "damit",
+     "start": 24.32,
+     "ende": 24.48
+    },
+    {
+     "wort": "du",
+     "start": 24.56,
+     "ende": 24.64
+    },
+    {
+     "wort": "nichts",
+     "start": 24.68,
+     "ende": 24.92
+    },
+    {
+     "wort": "verpasst.",
+     "start": 24.96,
+     "ende": 25.84
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Doch jetzt: Sozialabgaben. Bei Jonas zahlt der Arbeitgeber die Hälfte. Sara zahlt alles allein.",
+   "start": 25.88,
+   "ende": 32.48,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 25.88,
+     "ende": 26.0
+    },
+    {
+     "wort": "jetzt:",
+     "start": 26.08,
+     "ende": 26.56
+    },
+    {
+     "wort": "Sozialabgaben.",
+     "start": 26.72,
+     "ende": 27.76
+    },
+    {
+     "wort": "Bei",
+     "start": 28.08,
+     "ende": 28.16
+    },
+    {
+     "wort": "Jonas",
+     "start": 28.24,
+     "ende": 28.64
+    },
+    {
+     "wort": "zahlt",
+     "start": 28.72,
+     "ende": 28.88
+    },
+    {
+     "wort": "der",
+     "start": 28.96,
+     "ende": 29.04
+    },
+    {
+     "wort": "Arbeitgeber",
+     "start": 29.12,
+     "ende": 29.68
+    },
+    {
+     "wort": "die",
+     "start": 29.72,
+     "ende": 29.76
+    },
+    {
+     "wort": "Hälfte.",
+     "start": 29.84,
+     "ende": 30.32
+    },
+    {
+     "wort": "Sara",
+     "start": 30.64,
+     "ende": 31.04
+    },
+    {
+     "wort": "zahlt",
+     "start": 31.2,
+     "ende": 31.44
+    },
+    {
+     "wort": "alles",
+     "start": 31.52,
+     "ende": 31.76
+    },
+    {
+     "wort": "allein.",
+     "start": 31.84,
+     "ende": 32.48
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Krankenkasse: Sara 10.500, Jonas die Hälfte. Bei der Rente dasselbe. Jonas zieht vorbei.",
+   "start": 32.72,
+   "ende": 39.96,
+   "woerter": [
+    {
+     "wort": "Krankenkasse:",
+     "start": 32.72,
+     "ende": 33.64
+    },
+    {
+     "wort": "Sara",
+     "start": 33.84,
+     "ende": 34.24
+    },
+    {
+     "wort": "10.500,",
+     "start": 34.32,
+     "ende": 35.76
+    },
+    {
+     "wort": "Jonas",
+     "start": 35.88,
+     "ende": 36.16
+    },
+    {
+     "wort": "die",
+     "start": 36.24,
+     "ende": 36.32
+    },
+    {
+     "wort": "Hälfte.",
+     "start": 36.4,
+     "ende": 36.8
+    },
+    {
+     "wort": "Bei",
+     "start": 37.12,
+     "ende": 37.2
+    },
+    {
+     "wort": "der",
+     "start": 37.24,
+     "ende": 37.28
+    },
+    {
+     "wort": "Rente",
+     "start": 37.36,
+     "ende": 37.68
+    },
+    {
+     "wort": "dasselbe.",
+     "start": 37.72,
+     "ende": 38.44
+    },
+    {
+     "wort": "Jonas",
+     "start": 38.64,
+     "ende": 39.04
+    },
+    {
+     "wort": "zieht",
+     "start": 39.12,
+     "ende": 39.28
+    },
+    {
+     "wort": "vorbei.",
+     "start": 39.36,
+     "ende": 39.96
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand: Jonas rund 37.500 netto, Sara knapp 30.000. Jonas hat fast 8.000 mehr, rund 650 im Monat.",
+   "start": 40.16,
+   "ende": 50.08,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 40.16,
+     "ende": 40.72
+    },
+    {
+     "wort": "Jonas",
+     "start": 41.04,
+     "ende": 41.44
+    },
+    {
+     "wort": "rund",
+     "start": 41.52,
+     "ende": 41.68
+    },
+    {
+     "wort": "37.500",
+     "start": 41.76,
+     "ende": 43.2
+    },
+    {
+     "wort": "netto,",
+     "start": 43.36,
+     "ende": 43.92
+    },
+    {
+     "wort": "Sara",
+     "start": 44.0,
+     "ende": 44.4
+    },
+    {
+     "wort": "knapp",
+     "start": 44.48,
+     "ende": 44.72
+    },
+    {
+     "wort": "30.000.",
+     "start": 44.8,
+     "ende": 45.84
+    },
+    {
+     "wort": "Jonas",
+     "start": 46.0,
+     "ende": 46.32
+    },
+    {
+     "wort": "hat",
+     "start": 46.4,
+     "ende": 46.48
+    },
+    {
+     "wort": "fast",
+     "start": 46.56,
+     "ende": 46.8
+    },
+    {
+     "wort": "8.000",
+     "start": 46.88,
+     "ende": 47.52
+    },
+    {
+     "wort": "mehr,",
+     "start": 47.6,
+     "ende": 48.08
+    },
+    {
+     "wort": "rund",
+     "start": 48.16,
+     "ende": 48.32
+    },
+    {
+     "wort": "650",
+     "start": 48.4,
+     "ende": 49.28
+    },
+    {
+     "wort": "im",
+     "start": 49.36,
+     "ende": 49.52
+    },
+    {
+     "wort": "Monat.",
+     "start": 49.64,
+     "ende": 50.08
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Für Jonas zahlt der Arbeitgeber knapp 13.000 obendrauf. Saras Steuervorteil holt nur gut 3.000 zurück.",
+   "start": 50.512,
+   "ende": 58.16,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 50.512,
+     "ende": 51.04
+    },
+    {
+     "wort": "Für",
+     "start": 51.28,
+     "ende": 51.36
+    },
+    {
+     "wort": "Jonas",
+     "start": 51.44,
+     "ende": 51.84
+    },
+    {
+     "wort": "zahlt",
+     "start": 51.92,
+     "ende": 52.16
+    },
+    {
+     "wort": "der",
+     "start": 52.2,
+     "ende": 52.24
+    },
+    {
+     "wort": "Arbeitgeber",
+     "start": 52.32,
+     "ende": 52.88
+    },
+    {
+     "wort": "knapp",
+     "start": 52.96,
+     "ende": 53.12
+    },
+    {
+     "wort": "13.000",
+     "start": 53.2,
+     "ende": 54.0
+    },
+    {
+     "wort": "obendrauf.",
+     "start": 54.16,
+     "ende": 54.88
+    },
+    {
+     "wort": "Saras",
+     "start": 55.2,
+     "ende": 55.52
+    },
+    {
+     "wort": "Steuervorteil",
+     "start": 55.6,
+     "ende": 56.32
+    },
+    {
+     "wort": "holt",
+     "start": 56.4,
+     "ende": 56.56
+    },
+    {
+     "wort": "nur",
+     "start": 56.64,
+     "ende": 56.72
+    },
+    {
+     "wort": "gut",
+     "start": 56.76,
+     "ende": 56.96
+    },
+    {
+     "wort": "3.000",
+     "start": 57.04,
+     "ende": 57.6
+    },
+    {
+     "wort": "zurück.",
+     "start": 57.68,
+     "ende": 58.16
+    }
+   ]
+  },
+  {
+   "id": "ueberraschung",
+   "text": "Und das Verrückte: Für Gleichstand braucht Sara knapp 77.000 Gewinn. Ohne bezahlten Urlaub, ohne bezahlte Krankentage. Das sind fast 46 Euro pro Arbeitsstunde. Jonas bekommt knapp 29.",
+   "start": 58.32,
+   "ende": 71.92,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 58.32,
+     "ende": 58.4
+    },
+    {
+     "wort": "das",
+     "start": 58.48,
+     "ende": 58.56
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 58.6,
+     "ende": 59.12
+    },
+    {
+     "wort": "Für",
+     "start": 59.44,
+     "ende": 59.6
+    },
+    {
+     "wort": "Gleichstand",
+     "start": 59.64,
+     "ende": 60.24
+    },
+    {
+     "wort": "braucht",
+     "start": 60.32,
+     "ende": 60.56
+    },
+    {
+     "wort": "Sara",
+     "start": 60.6,
+     "ende": 60.88
+    },
+    {
+     "wort": "knapp",
+     "start": 60.96,
+     "ende": 61.2
+    },
+    {
+     "wort": "77.000",
+     "start": 61.28,
+     "ende": 62.48
+    },
+    {
+     "wort": "Gewinn.",
+     "start": 62.56,
+     "ende": 63.28
+    },
+    {
+     "wort": "Ohne",
+     "start": 63.32,
+     "ende": 63.52
+    },
+    {
+     "wort": "bezahlten",
+     "start": 63.6,
+     "ende": 64.0
+    },
+    {
+     "wort": "Urlaub,",
+     "start": 64.08,
+     "ende": 64.64
+    },
+    {
+     "wort": "ohne",
+     "start": 64.72,
+     "ende": 64.88
+    },
+    {
+     "wort": "bezahlte",
+     "start": 64.96,
+     "ende": 65.36
+    },
+    {
+     "wort": "Krankentage.",
+     "start": 65.44,
+     "ende": 66.28
+    },
+    {
+     "wort": "Das",
+     "start": 66.4,
+     "ende": 66.48
+    },
+    {
+     "wort": "sind",
+     "start": 66.56,
+     "ende": 66.64
+    },
+    {
+     "wort": "fast",
+     "start": 66.72,
+     "ende": 66.96
+    },
+    {
+     "wort": "46",
+     "start": 67.04,
+     "ende": 67.76
+    },
+    {
+     "wort": "Euro",
+     "start": 67.92,
+     "ende": 68.24
+    },
+    {
+     "wort": "pro",
+     "start": 68.32,
+     "ende": 68.48
+    },
+    {
+     "wort": "Arbeitsstunde.",
+     "start": 68.56,
+     "ende": 69.36
+    },
+    {
+     "wort": "Jonas",
+     "start": 69.68,
+     "ende": 70.08
+    },
+    {
+     "wort": "bekommt",
+     "start": 70.16,
+     "ende": 70.4
+    },
+    {
+     "wort": "knapp",
+     "start": 70.48,
+     "ende": 70.72
+    },
+    {
+     "wort": "29.",
+     "start": 70.76,
+     "ende": 71.92
+    }
+   ]
+  },
+  {
+   "id": "merksatz",
+   "text": "Merke: Selbstständige brauchen gut ein Viertel mehr.",
+   "start": 72.0,
+   "ende": 75.28,
+   "woerter": [
+    {
+     "wort": "Merke:",
+     "start": 72.0,
+     "ende": 72.4
+    },
+    {
+     "wort": "Selbstständige",
+     "start": 72.72,
+     "ende": 73.36
+    },
+    {
+     "wort": "brauchen",
+     "start": 73.44,
+     "ende": 73.76
+    },
+    {
+     "wort": "gut",
+     "start": 73.84,
+     "ende": 74.0
+    },
+    {
+     "wort": "ein",
+     "start": 74.08,
+     "ende": 74.32
+    },
+    {
+     "wort": "Viertel",
+     "start": 74.4,
+     "ende": 74.72
+    },
+    {
+     "wort": "mehr.",
+     "start": 74.8,
+     "ende": 75.28
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.",
+   "start": 75.52,
+   "ende": 78.64,
+   "woerter": [
+    {
+     "wort": "Was",
+     "start": 75.52,
+     "ende": 75.68
+    },
+    {
+     "wort": "sollen",
+     "start": 75.733,
+     "ende": 75.84
+    },
+    {
+     "wort": "wir",
+     "start": 75.88,
+     "ende": 75.96
+    },
+    {
+     "wort": "als",
+     "start": 76.0,
+     "ende": 76.08
+    },
+    {
+     "wort": "Nächstes",
+     "start": 76.16,
+     "ende": 76.56
+    },
+    {
+     "wort": "zeigen?",
+     "start": 76.72,
+     "ende": 77.2
+    },
+    {
+     "wort": "Schreib",
+     "start": 77.24,
+     "ende": 77.44
+    },
+    {
+     "wort": "es",
+     "start": 77.48,
+     "ende": 77.52
+    },
+    {
+     "wort": "in",
+     "start": 77.6,
+     "ende": 77.64
+    },
+    {
+     "wort": "die",
+     "start": 77.68,
+     "ende": 77.72
+    },
+    {
+     "wort": "Kommentare.",
+     "start": 77.76,
+     "ende": 78.64
+    }
+   ]
+  }
+ ]
+}

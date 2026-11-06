@@ -1,0 +1,996 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "angestellt-selbststaendig",
+ "fps": 30,
+ "dauer": 79.16666666666667,
+ "stimmEnde": 78.577,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "raum",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "JONAS",
+    "farbe": "#3D8BFF"
+   },
+   "b": {
+    "name": "SARA",
+    "farbe": "#FF8A3D"
+   }
+  },
+  "schleife": {
+   "ab": 72,
+   "ende": 79.14366666666666
+  },
+  "untertitel": {
+   "stil": "kontur"
+  },
+  "timing": "echt",
+  "schleifenPruefung": {
+   "ok": true,
+   "ende": 79.144,
+   "nurErstesBild": [],
+   "nurLetztesBild": [],
+   "kameraAbweichung": 1.7763568394002505e-15
+  }
+ },
+ "ereignisse": [
+  {
+   "quelle": "Szene",
+   "t": 0,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Jonas’ Kante leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.5,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "LED-Kanten leuchten auf"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.88,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Saras Kante leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.3,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "beide Stapel leuchten"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "beide Münzstapel gleich hoch"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.048,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Waage leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu Jonas"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.16,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "60.000 € BRUTTO"
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Jonas’ Stapel leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.84,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu Sara"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.64,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "60.000 € GEWINN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Saras Stapel leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.16,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KINDERLOS · GESETZLICH"
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.16,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Weitwinkel, beide blicken sich an"
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.28,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kanten pulsieren"
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.48,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GLEICHE RENTE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.48,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Blick zueinander"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.2,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.2,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.2,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.2,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zur Waage, Spot"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Waage steht gerade"
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.12,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Waage leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.16,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Waage, Bild steht kurz"
+  },
+  {
+   "quelle": "Chip",
+   "t": 17.04,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RUNDE 1 · STEUER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.04,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Steuerblätter schweben ein"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.08,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Blätter über beiden Tischen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.96,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kamera zu Jonas"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.9,
+   "typ": "zaehler",
+   "dauer": 1.167,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 20,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ESt −9.399 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Münzen fliegen ins Blatt, Jonas’ Stapel sinkt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.5,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Jonas’ Stapel 50.601"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.12,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu Sara"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.52,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Saras Stapel 53.968"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.7,
+   "typ": "zaehler",
+   "dauer": 1.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.76,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ESt −6.032 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Münzen fliegen ins Blatt, Saras Stapel sinkt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.04,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Saras Seite vorn, Waage neigt zu Sara"
+  },
+  {
+   "quelle": "Folgen",
+   "t": 23.72,
+   "typ": "folgen",
+   "dauer": 1.8,
+   "klang": "folgen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.68,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "beide LED-Kanten pulsieren"
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.88,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zoom auf Jonas, kühles Licht"
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.72,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RUNDE 2 · SOZIALABGABEN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Rechnungsstapel erscheinen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.08,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Ärmel fährt ein"
+  },
+  {
+   "quelle": "Chip",
+   "t": 29.12,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ARBEITGEBER: 1/2"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.12,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Ärmel greift nach den Rechnungen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 29.84,
+   "art": "zoom",
+   "dauer": 1.5,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.84,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Hälfte des Stapels verschwindet im Ärmel"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.64,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu Sara, ganzer Stapel liegt vor ihr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 31.84,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SARA: ALLES"
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.84,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Saras Stapel leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.42,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.42,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.72,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu Sara"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.2,
+   "typ": "zaehler",
+   "dauer": 1.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 34.32,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KASSE 10.500 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.32,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Münzen fliegen in Saras Stapel, 10.500"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.1,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu Jonas"
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.4,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KASSE 5.250 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.4,
+   "typ": "zaehler",
+   "dauer": 0.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.4,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jonas 5.250"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera weit"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.6,
+   "typ": "zaehler",
+   "dauer": 1.467,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 37.72,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RENTE 11.160 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.72,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Sara 11.160"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.1,
+   "typ": "zaehler",
+   "dauer": 1.167,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.12,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RENTE 5.580 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jonas 5.580"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.14,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Weitwinkel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.34,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABGABEN 24.180 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.34,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Sara 24.180 Abgaben"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.54,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABGABEN 13.050 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.54,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jonas 13.050 Abgaben"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.26,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zur Waage"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.36,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Waage kippt zu Jonas, Blitz"
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.16,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Weitwinkel, Licht auf den Sieger"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 41.76,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "JONAS"
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jonas’ Stapel glüht, Zoom"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 42.26,
+   "art": "zoom",
+   "dauer": 1.7,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Saras Kante leuchtet"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 44.8,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "SARA"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.8,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Saras Stapel leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Jonas’ Kante leuchtet"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 46.88,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "JONAS VORN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.88,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Waage, Differenz"
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Monatswert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 49.64,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "647 € / MONAT MEHR"
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.162,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.512,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Fahrt zu Jonas"
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.92,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Ärmel fährt ein"
+  },
+  {
+   "quelle": "Balken",
+   "t": 53.2,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "ARBEITGEBER OBENDRAUF"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.2,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ärmel legt den Arbeitgeber-Stapel ab"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 53.5,
+   "art": "zoom",
+   "dauer": 1.7,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Balken",
+   "t": 53.9,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "+12.690 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Stapel leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu Sara"
+  },
+  {
+   "quelle": "Balken",
+   "t": 57.04,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "STEUERVORTEIL SARA"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.04,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Saras kleiner Steuervorteil-Stapel"
+  },
+  {
+   "quelle": "Balken",
+   "t": 57.74,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "+3.367 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.32,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera weit"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.48,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Fahrt zu Saras Kacheln"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Fahrt zu Sara"
+  },
+  {
+   "quelle": "Chip",
+   "t": 61.28,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GLEICHSTAND: 76.736 € GEWINN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.28,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Saras Stapel wächst, Waage gleicht sich aus"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 61.367,
+   "typ": "zaehler",
+   "dauer": 2.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.56,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Saras Stapel gleich hoch"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.22,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Szenenwechsel zur Kalenderwand"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.42,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Feiertage erlöschen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.08,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Urlaubstage erlöschen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Krankentage erlöschen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.04,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Saras Stunden leuchten"
+  },
+  {
+   "quelle": "Chip",
+   "t": 68.56,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "45,81 € / ARBEITSSTUNDE"
+  },
+  {
+   "quelle": "Chip",
+   "t": 69.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.68,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Fahrt zu Jonas’ Kacheln"
+  },
+  {
+   "quelle": "Chip",
+   "t": 70.76,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "28,74 € / STUNDE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jonas’ Kacheln leuchten"
+  },
+  {
+   "quelle": "Chip",
+   "t": 71.7,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 71.7,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 72,
+   "typ": "zaehler",
+   "dauer": 7.177,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 72,
+   "typ": "zaehler",
+   "dauer": 7.177,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 72,
+   "art": "schleife",
+   "dauer": 7.133,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 72,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Rückfahrt zum Anfangsbild"
+  },
+  {
+   "t": 72,
+   "typ": "schleife",
+   "dauer": 7.144,
+   "klang": "rueck",
+   "quelle": "Massstab"
+  },
+  {
+   "quelle": "Pointe",
+   "t": 72.72,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "+ 27,9 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Licht ruhig"
+  },
+  {
+   "quelle": "Szene",
+   "t": 74.4,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Waage gleicht sich aus"
+  }
+ ],
+ "klang": []
+}

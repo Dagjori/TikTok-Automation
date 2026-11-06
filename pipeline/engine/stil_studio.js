@@ -530,3 +530,212 @@ export function saeule({ breite = 0.5, farbe = "#FF4F9A", staerke = 3 } = {}) {
   g.setze(0);
   return g;
 }
+
+// =====================================================================================
+// Arbeitswelt (06.11.2026, Projekt angestellt-selbststaendig, Stil 18 „belebt“): Mini-Dioramen mit Schreibtisch, Stuhl, Modellfigur,
+// Monitor/Laptop, Lampe, Pflanze, Papierstapel, Briefe, Steuerblatt, gesichtsloser Ärmel (Arbeitgeber), Kalenderkacheln.
+// Maßstab wie die Münzstapel (Figur sitzend ca. 0,9 hoch). Alles prozedural, neutrale Farben, keine Marken. Bewegte Teile: userData.dynamisch.
+//   const d = diorama({ farbe: "#3D8BFF", fenster: "#BFD4FF" });  // Platte mit LED-Kante und Rückwand mit Fenster; d.oben, d.led (Material)
+//   const f = modellFigur({ hemd: "#3D8BFF" }); f.setze({ tippen, kopfDreh, kopfNick });
+// =====================================================================================
+const stahlGraphit = () => gemeinsam("graphit", () => new THREE.MeshStandardMaterial({ color: "#14161B", roughness: 0.34, metalness: 0.45, envMapIntensity: 1.1 }));
+const holzMat = (f) => gemeinsam(`holz|${f}`, () => new THREE.MeshStandardMaterial({ color: f, roughness: 0.55, metalness: 0.05, envMapIntensity: 0.8 }));
+const puppe = () => gemeinsam("puppe", () => new THREE.MeshStandardMaterial({ color: "#D8CBB9", roughness: 0.62, metalness: 0, envMapIntensity: 0.8 }));
+const kasten = (b, h, t, mat, x = 0, y = 0, z = 0, schatten = true) => { const m = new THREE.Mesh(new THREE.BoxGeometry(b, h, t), mat); m.position.set(x, y, z); m.castShadow = schatten; m.receiveShadow = true; return m; };
+const abgerundet = (b, h, t, r, mat, x = 0, y = 0, z = 0) => { const m = new THREE.Mesh(new RoundedBoxGeometry(b, h, t, 3, r), mat); m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true; return m; };
+/** einen Einheitszylinder (Höhe 1) von a nach b strecken */
+function strecke(m, a, b) {
+  const va = new THREE.Vector3(...a), vb = new THREE.Vector3(...b), d = vb.clone().sub(va), l = d.length();
+  m.position.copy(va).add(vb).multiplyScalar(0.5); m.scale.y = l;
+  m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize());
+}
+const einheitsZylinder = (r, mat, seg = 12) => { const m = new THREE.Mesh(new THREE.CylinderGeometry(r, r, 1, seg), mat); m.castShadow = true; m.receiveShadow = true; return m; };
+
+/** Diorama-Platte (Boden des Mini-Raums) mit LED-Kante in Teamfarbe und Rückwand mit leuchtendem Fenster */
+export function diorama({ breite = 1.75, tiefe = 1.3, farbe = "#3D8BFF", fenster = "#BFD4FF", fensterStaerke = 1.15, wand = "#1B1E26", boden = "#262A33" } = {}) {
+  const g = new THREE.Group();
+  const bodenMat = gemeinsam(`dioboden|${boden}`, () => new THREE.MeshStandardMaterial({ color: boden, roughness: 0.5, metalness: 0.15, envMapIntensity: 0.9 }));
+  g.add(kasten(breite, 0.1, tiefe, bodenMat, 0, 0.05, 0));
+  const kante = leuchtMat(farbe, 1, { neu: true });
+  const led = new THREE.Mesh(new THREE.BoxGeometry(breite + 0.01, 0.022, 0.022), kante); led.position.set(0, 0.06, tiefe / 2 + 0.006); led.userData.dynamisch = true; g.add(led);
+  const seite = (s) => { const m = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.022, tiefe), kante); m.position.set(s * (breite / 2), 0.06, 0); m.userData.dynamisch = true; return m; };
+  g.add(seite(-1), seite(1));
+  const wandMat = gemeinsam(`diowand|${wand}`, () => new THREE.MeshStandardMaterial({ color: wand, roughness: 0.6, metalness: 0.05, envMapIntensity: 0.7 }));
+  g.add(kasten(breite, 1.3, 0.05, wandMat, 0, 0.1 + 0.65, -tiefe / 2 + 0.025));
+  // Fenster: leuchtende Scheibe mit Sprossen
+  const fMat = leuchtMat(fenster, fensterStaerke, { neu: true });
+  const fb = breite * 0.46, fh = 0.62, fy = 0.92, fz = -tiefe / 2 + 0.056;
+  const f = new THREE.Mesh(new THREE.PlaneGeometry(fb, fh), fMat); f.position.set(0, fy, fz); f.userData.dynamisch = true; g.add(f);
+  const sprosse = gemeinsam("sprosse", () => new THREE.MeshStandardMaterial({ color: "#0C0D11", roughness: 0.4, metalness: 0.4 }));
+  g.add(kasten(0.02, fh, 0.012, sprosse, 0, fy, fz + 0.004, false), kasten(fb, 0.02, 0.012, sprosse, 0, fy, fz + 0.004, false), kasten(fb + 0.03, 0.02, 0.016, sprosse, 0, fy + fh / 2, fz + 0.004, false), kasten(fb + 0.03, 0.02, 0.016, sprosse, 0, fy - fh / 2, fz + 0.004, false), kasten(0.02, fh, 0.016, sprosse, -fb / 2, fy, fz + 0.004, false), kasten(0.02, fh, 0.016, sprosse, fb / 2, fy, fz + 0.004, false));
+  g.oben = 0.1; g.led = kante; g.fensterMat = fMat; g.breite = breite; g.tiefe = tiefe; g.fensterFarbe = fenster;
+  return g;
+}
+
+/** Schreibtisch (Platte, vier Beine, Schubladenblock), Oberkante = hoehe */
+export function schreibtisch({ breite = 1.4, tiefe = 0.46, hoehe = 0.4, farbe = "#6A5645" } = {}) {
+  const g = new THREE.Group();
+  const m = holzMat(farbe), bein = stahlGraphit();
+  g.add(abgerundet(breite, 0.032, tiefe, 0.012, m, 0, hoehe - 0.016, 0));
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) g.add(kasten(0.03, hoehe - 0.03, 0.03, bein, sx * (breite / 2 - 0.04), (hoehe - 0.03) / 2, sz * (tiefe / 2 - 0.04)));
+  g.add(kasten(breite - 0.12, 0.1, tiefe - 0.1, holzMat("#4F3F32"), 0, hoehe - 0.09, 0));
+  g.oben = hoehe;
+  return g;
+}
+/** Bürostuhl (Sitz, Lehne, Fuß mit Rollen), Sitzhöhe 0,26, Blick nach +z */
+export function buerostuhl({ farbe = "#20242C" } = {}) {
+  const g = new THREE.Group(), m = gemeinsam(`stuhl|${farbe}`, () => new THREE.MeshStandardMaterial({ color: farbe, roughness: 0.7, metalness: 0.05 })), al2 = alu();
+  g.add(abgerundet(0.3, 0.05, 0.3, 0.02, m, 0, 0.26, 0));
+  g.add(abgerundet(0.28, 0.34, 0.04, 0.02, m, 0, 0.5, -0.16));
+  g.add(kasten(0.03, 0.17, 0.03, al2, 0, 0.165, 0));
+  for (let i = 0; i < 5; i++) { const w = (i / 5) * Math.PI * 2; const a = einheitsZylinder(0.012, al2, 6); strecke(a, [0, 0.08, 0], [Math.cos(w) * 0.17, 0.045, Math.sin(w) * 0.17]); g.add(a); const r = new THREE.Mesh(new THREE.SphereGeometry(0.024, 10, 8), gummi()); r.position.set(Math.cos(w) * 0.17, 0.026, Math.sin(w) * 0.17); g.add(r); }
+  return g;
+}
+/** Modellfigur (gesichtslose Holzpuppe), sitzend, Blick nach +z; Hemd/Bluse in Teamfarbe. setze({ tippen: Phase (Bogenmaß), kopfDreh, kopfNick, lehnen }) */
+export function modellFigur({ hemd = "#3D8BFF", hose = "#22262F", haar = "#2B241F", frisur = "kurz", tischY = 0.4, tischZ = 0.32 } = {}) {
+  const g = new THREE.Group();
+  const mHemd = gemeinsam(`hemd|${hemd}`, () => new THREE.MeshStandardMaterial({ color: new THREE.Color(hemd).multiplyScalar(0.78), roughness: 0.62, metalness: 0, envMapIntensity: 0.8 })), mHose = gemeinsam(`hose|${hose}`, () => new THREE.MeshStandardMaterial({ color: hose, roughness: 0.7 })), mHaar = gemeinsam(`haar|${haar}`, () => new THREE.MeshStandardMaterial({ color: haar, roughness: 0.55 }));
+  const sitz = 0.285;
+  const rumpf = new THREE.Group(); rumpf.position.set(0, sitz, -0.04); g.add(rumpf);
+  const torso = new THREE.Mesh(new THREE.CapsuleGeometry(0.105, 0.2, 6, 20), mHemd); torso.position.y = 0.2; torso.scale.z = 0.78; torso.castShadow = true; rumpf.add(torso);
+  const hals = new THREE.Mesh(new THREE.CylinderGeometry(0.032, 0.038, 0.06, 14), puppe()); hals.position.y = 0.4; rumpf.add(hals);
+  const kopf = new THREE.Group(); kopf.position.y = 0.46; rumpf.add(kopf);
+  const schaedel = new THREE.Mesh(new THREE.SphereGeometry(0.078, 28, 20), puppe()); schaedel.scale.set(0.92, 1.05, 0.95); schaedel.position.y = 0.06; schaedel.castShadow = true; kopf.add(schaedel);
+  if (frisur === "kurz") { const h = new THREE.Mesh(new THREE.SphereGeometry(0.083, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.58), mHaar); h.position.y = 0.066; h.rotation.x = -0.18; h.scale.set(0.95, 1.05, 0.98); kopf.add(h); }
+  else { const h = new THREE.Mesh(new THREE.SphereGeometry(0.085, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.62), mHaar); h.position.y = 0.066; h.rotation.x = -0.1; h.scale.set(0.96, 1.08, 1.0); kopf.add(h); const dutt = new THREE.Mesh(new THREE.SphereGeometry(0.04, 16, 12), mHaar); dutt.position.set(0, 0.125, -0.07); kopf.add(dutt); }
+  // Beine (Oberschenkel nach vorn, Unterschenkel nach unten)
+  for (const s of [-1, 1]) {
+    const ob = einheitsZylinder(0.042, mHose); strecke(ob, [s * 0.065, sitz + 0.015, -0.04], [s * 0.07, sitz + 0.015, 0.24]); g.add(ob);
+    const un = einheitsZylinder(0.036, mHose); strecke(un, [s * 0.07, sitz + 0.015, 0.24], [s * 0.07, 0.03, 0.27]); g.add(un);
+    const fuss = kasten(0.07, 0.035, 0.12, gemeinsam("schuh", () => new THREE.MeshStandardMaterial({ color: "#101114", roughness: 0.5 })), s * 0.07, 0.018, 0.3); g.add(fuss);
+  }
+  // Arme (Zwei-Segment), Hände am Tisch
+  const arme = [-1, 1].map((s) => {
+    const o = einheitsZylinder(0.03, mHemd), u = einheitsZylinder(0.026, mHemd), h = new THREE.Mesh(new THREE.SphereGeometry(0.032, 12, 10), puppe()); h.castShadow = true;
+    g.add(o, u, h); return { s, o, u, h };
+  });
+  const L1 = 0.17, L2 = 0.19;
+  const aktualisiereArme = (tippen) => {
+    for (const a of arme) {
+      const sch = new THREE.Vector3(a.s * 0.13, sitz + 0.37, -0.04);
+      const hand = new THREE.Vector3(a.s * 0.09, tischY + 0.028 + 0.012 * Math.sin(tippen + (a.s > 0 ? 0 : 1.6)), tischZ - 0.02 + 0.02 * Math.cos(tippen * 0.5 + a.s));
+      const d = hand.clone().sub(sch), l = Math.min(d.length(), L1 + L2 - 0.005);
+      const dir = d.clone().normalize();
+      const x = (L1 * L1 - L2 * L2 + l * l) / (2 * l), hh = Math.sqrt(Math.max(0, L1 * L1 - x * x));
+      const ell = sch.clone().add(dir.clone().multiplyScalar(x)).add(new THREE.Vector3(a.s * 0.5, -1, 0).normalize().multiplyScalar(hh));
+      const hnd = sch.clone().add(dir.clone().multiplyScalar(l));
+      strecke(a.o, sch.toArray(), ell.toArray()); strecke(a.u, ell.toArray(), hnd.toArray()); a.h.position.copy(hnd);
+    }
+  };
+  g.userData.dynamisch = true;
+  g.rumpf = rumpf; g.kopf = kopf;
+  g.setze = ({ tippen = 0, kopfDreh = 0, kopfNick = 0, lehnen = 0 } = {}) => {
+    kopf.rotation.set(kopfNick, kopfDreh, 0); rumpf.rotation.x = lehnen; aktualisiereArme(tippen);
+  };
+  g.setze();
+  return g;
+}
+/** Monitor (Rückseite zum Betrachter, Blick nach +z); Standfuß, dünner Rahmen */
+export function monitor({ breite = 0.5, hoehe = 0.3 } = {}) {
+  const g = new THREE.Group(), gr = stahlGraphit(), al2 = alu();
+  g.add(abgerundet(breite, hoehe, 0.025, 0.01, gr, 0, 0.16 + hoehe / 2, 0));
+  g.add(kasten(0.05, 0.16, 0.03, al2, 0, 0.08, -0.01), kasten(0.22, 0.012, 0.14, al2, 0, 0.006, 0));
+  g.hoehe = 0.16 + hoehe;
+  return g;
+}
+/** Laptop (aufgeklappt, Rückseite des Deckels zum Betrachter) */
+export function laptop({ breite = 0.4, tiefe = 0.28 } = {}) {
+  const g = new THREE.Group(), al2 = alu();
+  g.add(abgerundet(breite, 0.016, tiefe, 0.006, al2, 0, 0.008, 0));
+  const deckel = new THREE.Group(); deckel.position.set(0, 0.016, -tiefe / 2); deckel.rotation.x = -0.28;
+  deckel.add(abgerundet(breite, tiefe * 0.95, 0.012, 0.006, al2, 0, tiefe * 0.475, 0)); g.add(deckel);
+  return g;
+}
+/** Schreibtischlampe mit leuchtender Birne; led = Material */
+export function tischlampe({ farbe = "#FFD9A8", staerke = 2.2 } = {}) {
+  const g = new THREE.Group(), gr = stahlGraphit();
+  const fuss = einheitsZylinder(0.05, gr, 24); fuss.scale.y = 0.016; fuss.position.y = 0.008; g.add(fuss);
+  const a1 = einheitsZylinder(0.008, gr, 8); strecke(a1, [0, 0.016, 0], [0.05, 0.22, 0]); const a2 = einheitsZylinder(0.008, gr, 8); strecke(a2, [0.05, 0.22, 0], [-0.04, 0.34, 0]); g.add(a1, a2);
+  const schirm = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.08, 24, 1, true), gr); schirm.material = schirm.material.clone(); schirm.material.side = THREE.DoubleSide; schirm.position.set(-0.05, 0.33, 0); schirm.rotation.z = 0.35; g.add(schirm);
+  const birne = leuchtMat(farbe, staerke, { neu: true }); const b = new THREE.Mesh(new THREE.SphereGeometry(0.026, 12, 10), birne); b.position.set(-0.052, 0.312, 0); b.userData.dynamisch = true; g.add(b);
+  g.led = birne; g.farbe = farbe; g.staerke = staerke;
+  return g;
+}
+/** Zimmerpflanze im Topf */
+export function pflanze({ topf = "#D8D1C4", blatt = "#3F7A52" } = {}) {
+  const g = new THREE.Group();
+  const t = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.045, 0.09, 20), gemeinsam(`topf|${topf}`, () => new THREE.MeshStandardMaterial({ color: topf, roughness: 0.7 }))); t.position.y = 0.045; t.castShadow = true; g.add(t);
+  const bm = gemeinsam(`blatt|${blatt}`, () => new THREE.MeshStandardMaterial({ color: blatt, roughness: 0.6, side: THREE.DoubleSide }));
+  for (let i = 0; i < 9; i++) { const w = (i / 9) * Math.PI * 2, k = 0.8 + 0.4 * ((i * 37) % 10) / 10; const b = new THREE.Mesh(new THREE.SphereGeometry(0.05, 12, 8), bm); b.scale.set(0.45, 1.5 * k, 0.12); b.position.set(Math.cos(w) * 0.04, 0.17 + 0.03 * k, Math.sin(w) * 0.04); b.rotation.set(Math.sin(w) * 0.5, 0, -Math.cos(w) * 0.5); b.castShadow = true; g.add(b); }
+  return g;
+}
+/** Tasse */
+export function tasse({ farbe = "#ECE6DA" } = {}) {
+  const g = new THREE.Group(), m = gemeinsam(`tasse|${farbe}`, () => new THREE.MeshStandardMaterial({ color: farbe, roughness: 0.35 }));
+  const k = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.026, 0.055, 18), m); k.position.y = 0.028; k.castShadow = true; g.add(k);
+  const h = new THREE.Mesh(new THREE.TorusGeometry(0.02, 0.006, 8, 14, Math.PI), m); h.position.set(0.035, 0.03, 0); h.rotation.z = -Math.PI / 2; g.add(h);
+  return g;
+}
+/** Papierstapel (Rechnungen, Briefe): setze(dicke) in Einheiten, Teamfarbe als Rand */
+export function papierStapel({ breite = 0.2, laenge = 0.28, farbe = "#3D8BFF", max = 0.3 } = {}) {
+  const g = new THREE.Group();
+  const weiss = gemeinsam("papier", () => new THREE.MeshStandardMaterial({ color: "#E9E6DE", roughness: 0.8 }));
+  const k = new THREE.Mesh(new THREE.BoxGeometry(breite, 1, laenge), weiss); k.castShadow = true; k.receiveShadow = true; g.add(k);
+  const band = leuchtMat(farbe, 0.9, { neu: true });
+  const rand = new THREE.Mesh(new THREE.BoxGeometry(breite + 0.004, 1, 0.012), band); g.add(rand);
+  g.userData.dynamisch = true; g.led = band;
+  g.setze = (d) => { const dd = Math.max(0.0005, Math.min(max, d)); k.scale.y = dd; k.position.y = dd / 2; rand.scale.y = dd; rand.position.set(0, dd / 2, laenge / 2 - 0.02); g.visible = d > 0.001; };
+  g.setze(0);
+  return g;
+}
+/** Steuerbescheid-Blatt (Kopf in Teamfarbe, Zeilen), schwebt über dem Tisch */
+export function papierBlatt({ farbe = "#3D8BFF", breite = 0.34, laenge = 0.46 } = {}) {
+  const g = new THREE.Group();
+  const tex = gemeinsam(`blatt|${farbe}`, () => { const c = leinwand(256, 340, (x, b, h) => { x.fillStyle = "#EFEBE2"; x.fillRect(0, 0, b, h); x.fillStyle = farbe; x.fillRect(18, 18, b - 36, 26); x.fillStyle = "#B8B4AA"; for (let i = 0; i < 12; i++) x.fillRect(18, 66 + i * 20, b - 36 - ((i * 53) % 70), 7); x.fillStyle = farbe; x.fillRect(b - 100, h - 56, 82, 28); }); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; });
+  const pm = gemeinsam("papier", () => new THREE.MeshStandardMaterial({ color: "#E9E6DE", roughness: 0.8 }));
+  const m = new THREE.Mesh(new THREE.BoxGeometry(breite, 0.008, laenge), [pm, pm, new THREE.MeshStandardMaterial({ map: tex, roughness: 0.8 }), pm, pm, pm]);
+  m.castShadow = true; g.add(m); g.userData.dynamisch = true;
+  return g;
+}
+/** Schwarm gleicher Teile (Briefe, Münzen im Flug): setzeInstanz(i, [x,y,z], ry, rz, skala, sichtbar) und fertig() */
+export function schwarm({ geo, mat, n = 16, farbe = null }) {
+  const m = new THREE.InstancedMesh(geo, mat, n); m.frustumCulled = false; m.castShadow = true;
+  const o = new THREE.Object3D(); const c = new THREE.Color(farbe || "#FFFFFF");
+  const g = new THREE.Group(); g.add(m); g.userData.dynamisch = true;
+  for (let i = 0; i < n; i++) m.setColorAt(i, c);
+  g.setzeInstanz = (i, pos, ry = 0, rz = 0, s = 1, sichtbar = true, rx = 0) => { o.position.set(...pos); o.rotation.set(rx, ry, rz); o.scale.setScalar(sichtbar ? s : 0.0001); o.updateMatrix(); m.setMatrixAt(i, o.matrix); };
+  g.fertig = () => { m.instanceMatrix.needsUpdate = true; };
+  return g;
+}
+/** Material für Briefumschläge */
+export function briefMaterial() { return gemeinsam("brief", () => new THREE.MeshStandardMaterial({ color: "#F1EEE6", roughness: 0.7, envMapIntensity: 0.8 })); }
+/** Gesichtsloser Ärmel (Arbeitgeber): kommt von links (−x), Hand am Ende bei x = 0. greifen(k) schließt die Finger */
+export function aermel({ anzug = "#2B303B", manschette = "#ECE6DA", laenge = 1.4 } = {}) {
+  const g = new THREE.Group();
+  const ma = gemeinsam(`anzug|${anzug}`, () => new THREE.MeshStandardMaterial({ color: anzug, roughness: 0.78 }));
+  const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.058, 0.07, laenge, 20), ma); arm.rotation.z = Math.PI / 2; arm.position.x = -laenge / 2 - 0.09; arm.castShadow = true; g.add(arm);
+  const man = new THREE.Mesh(new THREE.CylinderGeometry(0.054, 0.054, 0.05, 20), gemeinsam(`man|${manschette}`, () => new THREE.MeshStandardMaterial({ color: manschette, roughness: 0.5 }))); man.rotation.z = Math.PI / 2; man.position.x = -0.09; g.add(man);
+  g.add(abgerundet(0.1, 0.045, 0.1, 0.014, puppe(), -0.02, 0, 0));
+  const finger = [];
+  for (let i = 0; i < 4; i++) { const f = new THREE.Group(); f.position.set(0.03, 0, -0.036 + i * 0.024); f.add(abgerundet(0.07, 0.02, 0.02, 0.008, puppe(), 0.035, 0, 0)); g.add(f); finger.push(f); }
+  const dau = new THREE.Group(); dau.position.set(-0.02, 0, 0.052); dau.add(abgerundet(0.05, 0.02, 0.022, 0.008, puppe(), 0.02, 0, 0.012)); g.add(dau);
+  g.userData.dynamisch = true;
+  g.greifen = (k) => { finger.forEach((f) => { f.rotation.z = -1.2 * k; }); dau.rotation.y = 0.6 * k; };
+  g.greifen(0);
+  return g;
+}
+/** Kalenderkacheln (Gitter spalten × reihen): faerbe(fn(i) → 0…1 Helligkeit, 0 = erloschen), Teamfarbe als Licht */
+export function kalenderGitter({ spalten = 29, reihen = 9, kachel = 0.05, luecke = 0.012, farbe = "#3D8BFF" } = {}) {
+  const n = spalten * reihen;
+  const mat = new THREE.MeshBasicMaterial({ color: "#FFFFFF", fog: false });
+  const m = new THREE.InstancedMesh(new THREE.BoxGeometry(kachel, kachel, 0.012), mat, n); m.frustumCulled = false;
+  const o = new THREE.Object3D(), pitch = kachel + luecke;
+  const g = new THREE.Group(); g.add(m); g.userData.dynamisch = true;
+  for (let i = 0; i < n; i++) { const sp = i % spalten, re = Math.floor(i / spalten); o.position.set((sp - (spalten - 1) / 2) * pitch, ((reihen - 1) / 2 - re) * pitch, 0); o.updateMatrix(); m.setMatrixAt(i, o.matrix); m.setColorAt(i, new THREE.Color(farbe)); }
+  m.instanceMatrix.needsUpdate = true;
+  const f = new THREE.Color(farbe), c = new THREE.Color();
+  g.breite = spalten * pitch; g.hoehe = reihen * pitch; g.anzahl = n;
+  g.faerbe = (fn, staerke = 1.9) => { for (let i = 0; i < n; i++) { const k = fn(i); c.copy(f).multiplyScalar(0.05 + staerke * k); m.setColorAt(i, c); } m.instanceColor.needsUpdate = true; };
+  g.faerbe(() => 0);
+  return g;
+}
