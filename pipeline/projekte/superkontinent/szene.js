@@ -207,9 +207,9 @@ async function start() {
     const tintG = new THREE.Color().copy(horizontK(t)).lerp(tmp.set("#FFFFFF"), 0.55 * sW + 0.15).multiplyScalar(0.5 + 0.5 * sW + 0.35 * mW);
     const dunstA = smoothstep(38, 47, t) * (1 - smoothstep(60, 62, t));
     const dust = new THREE.Color().copy(horizontK(t)).lerp(tmp.set("#D9B58A"), 0.5);
-    const wandF = 1 - smoothstep(62.5, 66, t), wandP = wandF < 0.01 ? [] : wand.puffs(t).map((p) => ({ ...p, a: p.a * wandF }));
+    const wandF = 1 - smoothstep(62.5, 66, t), wandP = wandF < 0.01 ? [] : wand.puffs(t).map((p) => { const dd = Math.hypot(p.p[0] - kam.position.x, p.p[1] - kam.position.y, p.p[2] - kam.position.z); return { ...p, a: p.a * wandF * smoothstep(p.r * 0.5, p.r * 2.4, dd) }; });
     const nachDunst = smoothstep(62, 63, t) * (1 - smoothstep(63.5, 68.5, t));
-    puffsG.setze(Q.has('n_g') ? [] : [...(t < 62 ? gischt(t, camP[0], ero, tintG) : []), ...dunstP(t, dunstA * 0.8, camP[0], camP[2], dust), ...dunstP(t + 5, nachDunst * 1.0, camP[0], camP[2], dust), ...wandP], kam);
+    puffsG.setze(Q.has('n_g') ? [] : [...(t < 61 ? gischt(t, camP[0], ero, tintG).map((p) => ({ ...p, a: p.a * (1 - smoothstep(56.5, 60.5, t)) })) : []), ...dunstP(t, dunstA * 0.8, camP[0], camP[2], dust), ...dunstP(t + 5, nachDunst * 1.0, camP[0], camP[2], dust), ...wandP], kam);
     if (Q.has('n_a')) { asche.mesh && (asche.mesh.visible = false); staubT.mesh && (staubT.mesh.visible = false); }
     asche.setze(t, kam, { zentrum: [kam.position.x, kam.position.y - 2, kam.position.z - 8], deckkraft: 0.8 * smoothstep(58.4, 60, t) * (1 - smoothstep(64, 69, t)), wind: [3, -0.4, 2] });
     staubT.setze(t, kam, { zentrum: [kam.position.x, kam.position.y - 2, kam.position.z + 4], deckkraft: 0.5 * smoothstep(36, 44, t) * (1 - smoothstep(58, 60, t)) + 0.4 * smoothstep(62, 66, t), wind: [2.6 + WIND(t), 0, 1.0] });
