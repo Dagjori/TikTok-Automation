@@ -325,6 +325,24 @@
     "65–78 s: Merksatz in ruhigem Licht, Kamera gleitet zurück zum Anfangsbild mit zwei gleich hohen Stapeln (Schleife zur Startfrage ‚Wer hat mehr netto?‘)."
   ],
   "lern_notizen": {
-    "kuerzung": "06.11.: Sprechtext gekürzt (erste Vertonung 95 s, Hook 6,5 s, Folgen 26,8 s): Hook ohne Namen (Namen ab Regeln), 'Unterm Strich' und Rentenzahlen nur im Bild, Merksatz einteilig; Untertitel zeigen die gesprochenen Rundungen, Tafel und Chips exakt."
+    "kuerzung": "06.11.: Sprechtext gekürzt (erste Vertonung 95 s, Hook 6,5 s, Folgen 26,8 s): Hook ohne Namen (Namen ab Regeln), 'Unterm Strich' und Rentenzahlen nur im Bild, Merksatz einteilig; Untertitel zeigen die gesprochenen Rundungen, Tafel und Chips exakt.",
+    "laenge_s": 79.2,
+    "hook": "Angestellt oder selbstständig, beide 60.000. Wer hat mehr netto? (Duell ohne Namen, Ende 4,88 s)",
+    "stil": "18 Dunkles Studio, belebt (zwei Mini-Arbeitsplätze mit Modellfiguren, Ärmel, Kalenderwand)",
+    "zeitpunkte": {
+      "folgen": 23.72,
+      "wendung1": 25.88,
+      "wendung2_vorbei": 39.36,
+      "ergebnis": 40.16,
+      "warum": 50.51,
+      "ueberraschung": 58.32,
+      "raumwechsel_kalender": 63.2,
+      "pointe_27_9_prozent": 74.4
+    },
+    "woerter": 151,
+    "tempo_ws": 1.92,
+    "silben_s": 3.93,
+    "zoom": "ja (Ärmel 29 s, Jonas-Stapel 42 s, Arbeitgeber-Stapel 53 s)",
+    "caption": "Angestellt oder selbstständig: Wer hat bei 60.000 € mehr netto? 💶 Ich hab's simuliert. Team angestellt oder Team selbstständig? 👇 #selbstständig #nettogehalt #freiberufler #wissen #simulation"
   }
 }
