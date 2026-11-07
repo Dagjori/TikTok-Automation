@@ -1,0 +1,443 @@
+{
+ "skript_id": "acc2-2026-11-07-mittag",
+ "skript_quelle": "acc2-2026-11-07-mittag",
+ "skill": "video-produktion",
+ "konto": "stelldirvor",
+ "format": "referenz_pov",
+ "titel": "Was wäre, wenn ein ausgetrocknetes Meer plötzlich wieder vollläuft?",
+ "titelfrage": "Was wäre, wenn ein ausgetrocknetes Meer plötzlich wieder vollläuft?",
+ "stil": "16 Lunar-POV, Grundwelt Salzbecken (engine/welt_salzbecken.js, Erstbau 07.11.2026)",
+ "thema": "Ein leeres Meeresbecken 1.500 m unter dem Meeresspiegel läuft durch einen Durchbruch in gut acht Monaten voll (Vorbild: Zanklische Flut des Mittelmeers vor 5,33 Mio. Jahren).",
+ "welt": "Salzwüste am Grund eines Meeresbeckens: weiße, rissige Salzkruste mit glitzernden Kristallen, Hitzeflimmern, einzelne Felshügel in der Ebene; hohe, gestufte Felsklippen am Beckenrand. Später braunes Flutwasser mit Gischt, dann blaues Meer.",
+ "standpunkt": "Felsvorsprung hoch oben am Beckenrand, genau auf künftiger Meeresspiegelhöhe (0 m); Blick 1.500 m hinab über die Salzebene bis zum Horizont, wo die Flut hereinbricht.",
+ "tageszeit_verlauf": "0–8 s glühender Mittag (Echtzeit) · 8–16 s Nachmittag → Abend → erste Nacht im Mondlicht (1 s = 1 Stunde) · ab 20 s Tage und Nächte als weicher Lichtpuls (gemittelt, kein Flackern) · nach HIER: Morgen am neuen Meer.",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 8,
+   "faktor": "Echtzeit (Countdown)",
+   "anzeige": "DURCHBRUCH IN 0:08–0:00"
+  },
+  {
+   "von": 8,
+   "bis": 16,
+   "faktor": "1 s = 1 h (1/24 Tag/s)",
+   "anzeige": "STUNDEN SEIT DURCHBRUCH 0–27 h"
+  },
+  {
+   "von": 16,
+   "bis": 20,
+   "faktor": "weich von 1/24 auf 6,007 Tage/s",
+   "anzeige": "WASSERSTAND −1.500"
+  },
+  {
+   "von": 20,
+   "bis": 60,
+   "faktor": "1 s = 6,007 Tage",
+   "anzeige": "WASSERSTAND −1.496 bis 0 m, ab 52 s BIS ZU DEINEM FELS 349 → HIER"
+  }
+ ],
+ "kamera": [
+  {
+   "t": 0,
+   "art": "ruhe",
+   "was": "Blick in die Weite vom Felsvorsprung, atmen"
+  },
+  {
+   "t": 6,
+   "art": "schwenk",
+   "was": "Schwenk zum Horizont, wo das Meer hereinbricht (vor 8 s)"
+  },
+  {
+   "t": 11.2,
+   "art": "schwenk",
+   "was": "Rückschwenk, folgt der Flut über die Salzebene"
+  },
+  {
+   "t": 37,
+   "art": "fahrt",
+   "was": "langsame Fahrt am Fels nach außen und oben, Wasserlinie klettert (bis 50 s)"
+  },
+  {
+   "t": 52,
+   "art": "zoom",
+   "was": "Zoom 60→52° und Neigung zur Wasserlinie, Beben"
+  },
+  {
+   "t": 60,
+   "art": "schnitt",
+   "was": "harter Schnitt in den ruhigen Morgen (Höhepunkt)"
+  }
+ ],
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 8,
+   "etikett": "DURCHBRUCH IN",
+   "start": "0:08",
+   "ende": "0:00",
+   "einheit": "m:ss",
+   "unter": "BECKEN TROCKEN"
+  },
+  {
+   "von_s": 8,
+   "bis_s": 17,
+   "etikett": "STUNDEN SEIT DURCHBRUCH",
+   "start": "0",
+   "ende": "27",
+   "einheit": "h",
+   "unter": "FLUT AM HORIZONT (8 s) → SALZEBENE LÄUFT VOLL (12 s) → ERSTE NACHT (16 s)"
+  },
+  {
+   "von_s": 17,
+   "bis_s": 52,
+   "etikett": "WASSERSTAND",
+   "start": "−1.500",
+   "ende": "−349",
+   "einheit": "m",
+   "unter": "TAG 1 (17 s) → 1 SEKUNDE = 6 TAGE (20 s) → +5 M PRO TAG (33 s) → +8 M PRO TAG (41 s) → +11 M PRO TAG (50,5 s)"
+  },
+  {
+   "von_s": 52,
+   "bis_s": 60,
+   "etikett": "BIS ZU DEINEM FELS",
+   "start": "349",
+   "ende": "HIER",
+   "einheit": "m",
+   "unter": "WASSER KLETTERT (52 s) → MEERESSPIEGEL ERREICHT (60 s)"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Mittag über dem Grund eines leeren Meeres.",
+   3.75
+  ],
+  [
+   9,
+   "Dann bricht am Horizont das Meer herein.",
+   3.55
+  ],
+  [
+   13,
+   "Die Flut wälzt sich über das Salz.",
+   3.55
+  ],
+  [
+   17,
+   "Über der Flut wird es Nacht.",
+   3.55
+  ],
+  [
+   21,
+   "Dann rasen Tage und Nächte vorbei.",
+   3.55
+  ],
+  [
+   25,
+   "Das Wasser steigt Tag für Tag.",
+   3.55
+  ],
+  [
+   29,
+   "Die Salzebene ist ganz verschwunden.",
+   3.55
+  ],
+  [
+   33,
+   "Jetzt steigt es fünf Meter am Tag.",
+   3.55
+  ],
+  [
+   37,
+   "Das Wasser klettert die Klippe hinauf.",
+   3.55
+  ],
+  [
+   41,
+   "Hügel am Grund werden zu Inseln.",
+   3.55
+  ],
+  [
+   45,
+   "Noch knapp achthundert Meter bis zu dir.",
+   4.2
+  ],
+  [
+   50.5,
+   "Jetzt steigt es elf Meter am Tag.",
+   3.55
+  ],
+  [
+   54.5,
+   "Die Wellen schlagen schon unter dir.",
+   4.2
+  ],
+  [
+   62.8,
+   "Ein neuer Morgen über einem vollen Meer.",
+   3.15
+  ],
+  [
+   66.4,
+   "So füllte sich einst das Mittelmeer.",
+   3.15
+  ]
+ ],
+ "bild_text_abgleich": [
+  [
+   4.8,
+   "Mittag über dem Grund eines leeren Meeres.",
+   "Salzebene mit Rissen in Mittagshitze, Hitzeflimmern, Staubwirbel, Geier; Anzeige Countdown läuft"
+  ],
+  [
+   9,
+   "Dann bricht am Horizont das Meer herein.",
+   "Gischtfontäne und Flutstreifen am Horizont (Durchbruch bei 8,0 s auf Countdown 0:00)"
+  ],
+  [
+   13,
+   "Die Flut wälzt sich über das Salz.",
+   "Flutfront wälzt sich mit Gischt über die Salzebene, Sonne sinkt"
+  ],
+  [
+   17,
+   "Über der Flut wird es Nacht.",
+   "Sonnenuntergang vorbei, Mondnacht über dem Flutwasser, Anzeige 27 h"
+  ],
+  [
+   21,
+   "Dann rasen Tage und Nächte vorbei.",
+   "Wolken jagen, Licht pulsiert weich (1 Sekunde = 6 Tage)"
+  ],
+  [
+   25,
+   "Das Wasser steigt Tag für Tag.",
+   "Wasser steigt über die Salzebene, Wasserstand −1.451 m"
+  ],
+  [
+   29,
+   "Die Salzebene ist ganz verschwunden.",
+   "Salzebene unter Wasser, nur Hügel ragen heraus"
+  ],
+  [
+   33,
+   "Jetzt steigt es fünf Meter am Tag.",
+   "Wasserstand −1.275 m, +5 m pro Tag in der Statuszeile"
+  ],
+  [
+   37,
+   "Das Wasser klettert die Klippe hinauf.",
+   "Fahrt am Fels, Wasserlinie klettert sichtbar die Klippe hinauf, Wasser wird blau"
+  ],
+  [
+   41,
+   "Hügel am Grund werden zu Inseln.",
+   "Hügel ragen als Inseln mit Gischtsaum aus dem Wasser (−972 m)"
+  ],
+  [
+   45,
+   "Noch knapp achthundert Meter bis zu dir.",
+   "Anzeige −773 m (knapp achthundert)"
+  ],
+  [
+   50.5,
+   "Jetzt steigt es elf Meter am Tag.",
+   "Statuszeile +11 M PRO TAG"
+  ],
+  [
+   54.5,
+   "Die Wellen schlagen schon unter dir.",
+   "Wellen und Gischt schlagen an die Wasserlinie unter der Kante (152 m darunter)"
+  ],
+  [
+   62.8,
+   "Ein neuer Morgen über einem vollen Meer.",
+   "Morgen nach dem Schnitt: ruhiges Meer an der Felskante, Morgensonne, Möwen"
+  ],
+  [
+   66.4,
+   "So füllte sich einst das Mittelmeer.",
+   "ruhiges Meer, Wellen am Fels, Abblende ab 70 s"
+  ]
+ ],
+ "bewegungsplan": [
+  [
+   0,
+   "Hitzeflimmern, Salzglitzern, Staubwirbel wandert",
+   1
+  ],
+  [
+   2.4,
+   "Geier kreisen, Wolkenzug",
+   1
+  ],
+  [
+   4.8,
+   "Atem der Kamera, Staubwirbel steigt",
+   1
+  ],
+  [
+   6,
+   "Schwenk zum Horizont",
+   2
+  ],
+  [
+   7,
+   "Dunst am Horizont, Countdown 0:01",
+   2
+  ],
+  [
+   8,
+   "DURCHBRUCH: Gischtfontäne, Tonkante, Licht kippt kühl",
+   3
+  ],
+  [
+   10,
+   "Flutfront breitet sich über die Salzebene",
+   3
+  ],
+  [
+   12,
+   "Abendrot auf der Gischt, Sonne sinkt",
+   3
+  ],
+  [
+   14,
+   "Flut erreicht den Fuß der Klippe",
+   3
+  ],
+  [
+   15.5,
+   "Sonnenuntergang, Mond und Sterne",
+   3
+  ],
+  [
+   17,
+   "Nacht, Zeitraffer beschleunigt",
+   3
+  ],
+  [
+   20,
+   "Lichtpuls, Wolken jagen",
+   3
+  ],
+  [
+   24,
+   "Pegel steigt sichtbar, Salzebene verschwindet",
+   3
+  ],
+  [
+   28,
+   "Wasser wechselt von braun zu blau",
+   3
+  ],
+  [
+   32,
+   "Hügel werden zu Inseln mit Gischtring",
+   4
+  ],
+  [
+   37,
+   "Fahrt am Fels, Wasserlinie klettert",
+   4
+  ],
+  [
+   41,
+   "Inseln, Gischt stärker",
+   4
+  ],
+  [
+   45,
+   "Kamera neigt sich tiefer zur Wasserlinie",
+   4
+  ],
+  [
+   50,
+   "11 m pro Tag, Fahrt am Fels",
+   4
+  ],
+  [
+   52,
+   "Zoom und Beben, Riser",
+   5
+  ],
+  [
+   55,
+   "Wellen schlagen unter der Kante",
+   5
+  ],
+  [
+   58.5,
+   "Weißblende aus Gischt",
+   5
+  ],
+  [
+   60,
+   "HIER: harter Schnitt in den ruhigen Morgen",
+   5
+  ],
+  [
+   62,
+   "Morgensonne, Möwen, Weißblende klingt aus",
+   2
+  ],
+  [
+   65,
+   "Wellen am Fels",
+   1
+  ],
+  [
+   68,
+   "ruhiges Meer, Abblende ab 70 s",
+   1
+  ]
+ ],
+ "faktenzeile": "MITTELMEER, VOR 5,33 MIO. JAHREN · 90 % DES WASSERS FLOSSEN IN MONATEN BIS ZWEI JAHREN ZURÜCK",
+ "rechenweg": "Modellprofil (Annahme nach Garcia-Castellanos 2009: Zustrom wächst, Spitze über 10 m/Tag): Anstieg r(d) wächst linear 0→11 m/Tag (Tag 0–200, 1.100 m), 11 m/Tag konstant (Tag 200–220, 220 m), dann linear 11→0 über D = 2·180/11 = 32,7 Tage (180 m). Summe 1.100 + 220 + 180 = 1.500 m, Dauer 252,7 Tage ≈ 8,3 Monate (liegt in 'Monate bis zwei Jahre'). Zeitraffer: 8–16 s 1/24 Tag/s (8 h), 16–20 s linear auf F, 20–60 s F: 8/24 + 2·(1/24 + F) + 40·F = 252,7 → F = 6,007 Tage/s ≈ 6. Stand im Video (py -3, Schritt 0,01 Tag): 25 s Tag 42 −1.450 m · 33 s Tag 91 −1.275 m, 5,0 m/Tag · 41 s Tag 139 −972 m, 7,6 m/Tag · 45 s Tag 163 −773 m · 50,5 s Tag 196, 10,8 m/Tag · 52 s Tag 205 −349 m · 55 s −152 m · 58 s −24 m · 60 s Tag 253 0 m = HIER. Skript: cockpit/daten/tmp/rechnung-acc2-1107-mittag2.py",
+ "rechnung_code": "pipeline/sim/meer_flut.mjs (Test meer_flut.test.mjs)",
+ "zahlen": {
+  "absenkung_start_m": -1500,
+  "absenkung_spanne_quelle_m": "1.500–2.700 (Garcia-Castellanos 2009); Aloisi 2024: Ost 1.700–2.100, West ca. 850",
+  "flutdauer_modell_tage": 252.7,
+  "spitzenanstieg_m_pro_tag": 11,
+  "quelle_spitze": "mehr als 10 m/Tag",
+  "zeitraffer_tage_pro_s": 6.007,
+  "stand_45s_m": -773,
+  "rate_33s_m_pro_tag": 4.98,
+  "rate_50_5s_m_pro_tag": 10.76,
+  "hier_s": 60,
+  "flut_vor_mio_jahren": 5.33
+ },
+ "annahmen": [
+  "(A) Standort am Beckenrand, dessen Grund 1.500 m unter dem Meeresspiegel liegt (untere Grenze der Spanne 1.500–2.700 m nach Garcia-Castellanos 2009; neuere Schätzung Aloisi 2024: Ost 1,7–2,1 km, West ca. 0,85 km). Kein Ort im Video genannt.",
+  "(A) Anstiegsprofil vereinfacht (linear steigend, kurze Spitze 11 m/Tag, dann abklingend); die Studie nennt 'mehr als 10 m pro Tag' als Spitze und 'Monate bis zwei Jahre' für 90 % des Wassers. Ein langsamer Vorlauf von bis zu mehreren tausend Jahren ist laut Studie möglich; das Video zeigt nur die schnelle Hauptphase ab dem Durchbruch.",
+  "(A) Beckenform vereinfacht: Pegelanstieg pro Tag direkt angesetzt, nicht aus Zufluss und Fläche berechnet.",
+  "(A) Farbe des Flutwassers (braun, Sediment) ist gestalterisch; 'Hügel werden zu Inseln' folgt aus dem steigenden Pegel."
+ ],
+ "quellen": [
+  "(F) Garcia-Castellanos, D. et al.: Catastrophic flood of the Mediterranean after the Messinian salinity crisis, Nature 462, 778–781, 2009 – https://doi.org/10.1038/nature08555",
+  "(F) Mediterranean Sea filled in less than two years: study (AFP), phys.org, 09.12.2009 – https://phys.org/news/2009-12-mediterranean-sea-years.html (Salzebene 1.500–2.700 m unter dem Meeresspiegel, über 10 m/Tag, 90 % in Monaten bis zwei Jahren, vor 5,33 Mio. Jahren, 200 km lange Rinne)",
+  "(F) How 70% of the Mediterranean Sea was lost 5.5 million years ago, CNRS, 11/2024 – https://www.cnrs.fr/en/press/how-70-mediterranean-sea-was-lost-55-million-years-ago (Aloisi et al., Nature Communications 2024: Krise 5,97–5,33 Mio. Jahre, Absenkung Ost 1,7–2,1 km, West ca. 0,85 km)"
+ ],
+ "caption": "Was passiert, wenn ein leeres Meer plötzlich vollläuft? 🌊 Ich hab’s durchgespielt. Wusstest du, dass das Mittelmeer mal fast leer war? 👇 #mittelmeer #geologie #flut #wissen #waswaerewenn",
+ "dramaturgie": [
+  "0–4 s: Welteffekt sofort: Hitzeflimmern über der Salzebene, Salzkristalle glitzern, ein Staubwirbel wandert (erster Effekt vor 4 s); Countdown läuft, die Welt ahnt nichts (Wissensvorsprung).",
+  "6 s: langsamer Schwenk zum Horizont beginnt (Kamerabewegung vor 8 s).",
+  "8 s EREIGNIS auf Null: weißer Gischtstreifen am Horizont, Tonkante (fernes Donnern), Licht kippt leicht ins Kühle.",
+  "8–16 s Stufe 1: Flutfront breitet sich über die Salzebene aus, Sonne sinkt sichtbar (1 s = 1 h), Abendrot auf der Gischt, 16 s erste Nacht mit Mondglanz auf dem Wasser.",
+  "16–20 s Bildwechsel: Zeitraffer beschleunigt weich, Tage und Nächte werden ein ruhiger Lichtpuls, Wolken jagen.",
+  "20–37 s Stufe 2: Pegel steigt sichtbar, Salzebene verschwindet, Wasser wechselt von braun zu grün-blau (Farbdramaturgie).",
+  "37–50 s Stufe 3: Fahrt an der Klippe, Wasserlinie klettert sichtbar, Felshügel werden Inseln, Gischt stärker, Ton steigt.",
+  "50–58 s Annäherung: 11 m/Tag, Wasserlinie rast die letzten Meter herauf, Kamera bebt leicht, Riser.",
+  "60 s HÖHEPUNKT 'HIER': Wasser erreicht den Vorsprung, Weißblende aus Gischt, ein harter Schnitt in den ruhigen Morgen.",
+  "62–70 s Nachspiel: Morgensonne, ruhiges blaues Meer, Wellen am Fels, Möwen (Leben), Abblende 70–72 s."
+ ],
+ "korrekturen": [
+  "Tiefe −1.500 m als untere Grenze der belegten Spanne 1.500–2.700 m (Garcia-Castellanos 2009) gekennzeichnet; neuere Studie (Aloisi 2024) in den Quellen.",
+  "Tageszeitverlauf der Idee angepasst: Abend und erste Nacht bei 1 s = 1 h, danach gemittelter Lichtpuls statt einzelner Nächte (sonst Flackern bei 6 Tagen/s).",
+  "Formal (Produktion): Der Countdown läuft 0:08 → 0:00 (Durchbruch bei 8,0 s); Satzdauern auf Lücke zum nächsten Satz gekürzt (3,5–4,2 s), kein Text verändert.",
+  "Formal (Produktion): Anzeige 17–21 s mit einer Dezimalstelle (−1.495,8 m), weil der Pegel in dieser Phase sich um unter 1 m ändert; ab 21 s ganze Meter. Unterzeile 8–17 s und 52–60 s mit den Zustandstexten des Skripts."
+ ],
+ "lern_notizen": {}
+}
