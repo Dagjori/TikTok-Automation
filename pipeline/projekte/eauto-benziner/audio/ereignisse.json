@@ -210,6 +210,13 @@
    "text": "Preisschild 45.990 € über dem Stromer"
   },
   {
+   "quelle": "Szene",
+   "t": 8.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera schwenkt vom Stromer zum Benziner"
+  },
+  {
    "quelle": "Untertitel",
    "t": 9.25,
    "typ": "untertitel",
@@ -315,6 +322,13 @@
    "typ": "welt",
    "klang": "whoosh",
    "text": "Lichtkegel und Spot auf den Benziner"
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Spot hält auf dem Benziner, Schild 37.790 € glüht"
   },
   {
    "quelle": "Chip",
@@ -466,6 +480,13 @@
    "klang": "zaehlen"
   },
   {
+   "quelle": "Szene",
+   "t": 22,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Benziner schiebt sich weiter nach vorn, Vorsprung wächst"
+  },
+  {
    "quelle": "Chip",
    "t": 23.017,
    "typ": "chip",
@@ -495,6 +516,13 @@
    "typ": "welt",
    "klang": "klick",
    "text": "Benziner schiebt sich nach vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Benziner fast außer Bild, Vorsprung 3.000 € nähert sich"
   },
   {
    "quelle": "Untertitel",
@@ -740,6 +768,20 @@
    "zeilen": 1
   },
   {
+   "quelle": "Szene",
+   "t": 39.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Wagen erreichen das Haus, Fenster und Wallbox im Bild"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.85,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera sinkt hinter den Stromer"
+  },
+  {
    "quelle": "Untertitel",
    "t": 40.33,
    "typ": "untertitel",
@@ -836,6 +878,13 @@
    "typ": "welt",
    "klang": "ding",
    "text": "Chip 842,50 € pro Monat"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.7,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip 842,50 steht, Kamera gleitet zum Benziner"
   },
   {
    "quelle": "Chip",
@@ -966,6 +1015,13 @@
   },
   {
    "quelle": "Szene",
+   "t": 53,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Haus mit Solardach rückt ins Bild, Module noch dunkel"
+  },
+  {
+   "quelle": "Szene",
    "t": 54,
    "typ": "welt",
    "klang": "ding",
@@ -1004,6 +1060,13 @@
    "typ": "welt",
    "klang": "whoosh",
    "text": "Kamera eng, Zähler fast gleich"
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.88,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Zähler nur 525 € auseinander, Wagen nebeneinander"
   },
   {
    "quelle": "Untertitel",
@@ -1474,6 +1537,13 @@
    "text": "Welt dunkelt ab, Schlusskarte: Nicht der Motor entscheidet"
   },
   {
+   "quelle": "Szene",
+   "t": 77.56,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Zeile ENTSCHEIDET erscheint, Wagen fahren weiter"
+  },
+  {
    "quelle": "Untertitel",
    "t": 78.37,
    "typ": "untertitel",
@@ -1482,6 +1552,13 @@
    "text": "Sondern die Steckdose.",
    "woerter": 3,
    "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 78.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Zeile SONDERN DIE erscheint, Kamera weitet"
   },
   {
    "quelle": "Szene",
