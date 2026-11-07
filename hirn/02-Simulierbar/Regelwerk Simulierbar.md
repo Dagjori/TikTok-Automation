@@ -12,7 +12,15 @@ cssclasses: [konto-simulierbar, typ-regel]
 
 Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]]. Account 2 hat ein eigenes Regelwerk: [[Regelwerk Account 2]] (nie mischen: [[Trennung der Accounts]]). Einstieg: [[Account Simulierbar Überblick]].
 
-**Stand 02.11.2026, spätabends.**
+**Stand 07.11.2026.**
+
+## Neu seit 07.11. (REA-Lauf mit 9 Vorbildern, Freigabe des Inhabers per Klick)
+| Änderung | Wirkung |
+|---|---|
+| **Untertitel in Blöcken von 1–4 Wörtern, Schlüsselwort in der Teamfarbe seiner Seite** | ersetzt „Wort für Wort, aktuelles Wort gelb“; Vorbilder 6/6 mit farbigem Schlüsselwort, Hervorhebung des gesprochenen Worts 0/6 ([[REA Simulierbar Regelwerk]] R02) |
+| **Folgen-Aufruf keine Pflicht mehr** | die Lernschleife vergleicht Videos mit und ohne Aufruf; keines der 9 Vorbilder hat einen ausdrücklichen Aufruf |
+| **Sprechtempo 2,3–2,7 Wörter/s, Sätze 3–5 Wörter** | ersetzt „ca. 2,3 Wörter/s“ (Spanne bisher 2,2–2,5); Vorbilder 2,42–2,70, flüssig bleibt Pflicht |
+| **Schlusskarte Pflicht, Schleife freiwillig** | Video endet auf einer Text-/Tafelkarte mit Fazit oder Pointe (Vorbilder 6/6, schwache 1/3) |
 
 ## Neu seit 02.11. abends
 | Änderung | Wirkung |
@@ -20,7 +28,7 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 | **Nur noch GELD** | jedes Video endet mit einem Euro-Ergebnis; ALLTAG entfällt |
 | **Alle Stile (1–15 und 17–21) wieder erlaubt, mit Qualitätslatte** | Stile 1–15 und 17–21; jeder Stil muss die Abnahme am Kontaktbogen bestehen |
 | **Mehr Effekte, nichts Übertriebenes** | Licht, Aufleuchten, Zoom (mal ja, mal nein), mehrere Sequenzen und Bildwechsel; **große Sticker bleiben verboten** |
-| **Sprechtempo: Mitte** | 150–190 Wörter bei 65–80 s (ca. 2,3 Wörter/s), muss flüssig und natürlich klingen |
+| **Sprechtempo: Mitte** | 150–190 Wörter bei 65–80 s (ca. 2,3 Wörter/s), muss flüssig und natürlich klingen (→ seit 07.11.: 2,3–2,7 Wörter/s) |
 | **Kein 30-Tage-Plan, keine Sperrliste** | Skript kommt aus Claude Chat/Ideen-Studio ([[Claude-Chat-Workflow]]); Themen aller Länder erlaubt; keine 1:1-Kopie |
 
 ## Inhalt
@@ -36,7 +44,7 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 ## Aufbau und Länge
 | Regel | Details |
 |---|---|
-| Feste Reihenfolge: Hook (Duell-Frage, Stimme unter 0,2 s) · Regeln · Denkfalle · Rennen · Folgen-Aufruf ca. 20 s · erste Wendung 18–25 s, dann alle 8–10 s · Ergebnis · Warum · Überraschung · Merksatz · Schlusssatz · Schleife | [[Videoaufbau Simulierbar]] |
+| Feste Reihenfolge: Hook (Duell-Frage, Stimme unter 0,2 s) · Regeln · Denkfalle · Rennen · Folgen-Aufruf ca. 20 s (seit 07.11. keine Pflicht, wird getestet) · erste Wendung 18–25 s, dann alle 8–10 s · Ergebnis · Warum · Überraschung · Merksatz · **Schlusskarte** (seit 07.11. Pflicht) · Schleife (seit 07.11. freiwillig) | [[Videoaufbau Simulierbar]], [[REA Simulierbar Regelwerk]] |
 | Länge 65–80 s (mind. 61 s) | [[Videoaufbau Simulierbar]] |
 | Von der ersten Sekunde fangen, Spannung steigern, nie über 2 s Stillstand, alle 1–2 s etwas Neues | [[Videoaufbau Simulierbar]] |
 | Skript und Bild passen exakt zusammen | [[Videoaufbau Simulierbar]] |
@@ -48,7 +56,7 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 | **Qualitätslatte:** sauberes Licht/Material, lesbare Typografie, konsistente Farben, keine Artefakte, keine Billig-Optik; **Stil 18 nur mit belebter Szene** (Umgebung/Figuren, Bildwechsel je Phase, 05.11.) | [[Prüfung und Abnahme Simulierbar]] |
 | Dramaturgie: mehrere Animationssequenzen, Situations- und Bildwechsel, Aufleuchten, Lichtspiele, Zoom abwechselnd; **keine großen Sticker/Stempel** | [[Licht und Atmosphäre Simulierbar]], [[Design und Layout Simulierbar]] |
 | Layout: Mittelachse x = 540, Schutzzone 150 px, nichts Wichtiges unter y ≈ 1500 | [[Design und Layout Simulierbar]] |
-| Zwei Teamfarben je Video, nie Gelb; Untertitel Wort für Wort mit schwarzer Kontur, aktuelles Wort gelb | [[Design und Layout Simulierbar]] |
+| Zwei Teamfarben je Video, nie Gelb; Untertitel seit 07.11. **in Blöcken von 1–4 Wörtern mit schwarzer Kontur, Schlüsselwort in der Teamfarbe seiner Seite** (vorher Wort für Wort, aktuelles Wort gelb) | [[Design und Layout Simulierbar]], [[REA Simulierbar Regelwerk]] |
 | Kein Kanalname, Logo oder Rubrik im Video | [[Trennung der Accounts]] |
 
 ## Stimme und Ton

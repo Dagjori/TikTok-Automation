@@ -12,7 +12,12 @@ cssclasses: [konto-stelldirvor, typ-regel]
 
 Kurzfassung aller Regeln **nur für Account 2**. Gemeinsame Regeln: [[Regelwerk]]. Account 1 hat ein eigenes Regelwerk: [[Regelwerk Simulierbar]] (nie mischen: [[Trennung der Accounts]]). Einstieg: [[Account stelldirvor.pov Überblick]].
 
-**Stand 02.11.2026, spätabends.**
+**Stand 07.11.2026.**
+
+## Neu seit 07.11. (REA-Lauf mit 7 Vorbildern, Freigabe des Inhabers per Klick)
+| Änderung | Wirkung |
+|---|---|
+| **Gezielte harte Schnitte erlaubt** | höchstens 1–3 harte Schnitte, nur am Höhepunkt oder bei einem Maßstabs- bzw. Szenensprung; sonst weiter lange durchgehende Einstellungen (Vorbilder 4/6, [[REA stelldirvor Regelwerk]] R19) |
 
 ## Neu seit 02.11. abends (nach der Kritik am ersten Video)
 | Änderung | Wirkung |
@@ -20,7 +25,7 @@ Kurzfassung aller Regeln **nur für Account 2**. Gemeinsame Regeln: [[Regelwerk]
 | **Welt passt zum Thema, Natur zuerst bedenken** | keine Standard-Skyline mehr; Meer, Küste, Wald, Wüste, Gebirge, Eis, See, Weltraumnähe; Stadt nur, wenn sie passt |
 | **Viel mehr Bewegung** | nie „warten“: alle 2–3 s eine sichtbare Veränderung; Wetter, Licht, Tageszeit, Menschen, Tiere, Wasser, Vegetation |
 | **Abwechslung Pflicht** | Welttyp, Tageszeit und Standpunkt wechseln (nicht immer „von oben aus dem Fenster“) |
-| **Kamera darf sich langsam bewegen** | weiche Fahrt, Schwenk, Zoom; weiter keine harten Schnitte |
+| **Kamera darf sich langsam bewegen** | weiche Fahrt, Schwenk, Zoom; weiter keine harten Schnitte (→ seit 07.11.: 1–3 gezielte harte Schnitte erlaubt) |
 | **Zeitraffer und Anzeige passen zusammen** | Zeitraffer-Faktor im Skript, Anzeige links läuft nachvollziehbar zur sichtbaren Veränderung |
 | **Kein „5-Sekunden“-Verbot mehr** | solche Themen sind erlaubt, wenn sie sich gut simulieren lassen |
 | **Länder frei, keine Sperrliste, kein Plan** | Orte überall; Themen anderer Kanäle (auch US) frei, aber keine 1:1-Kopie und anderes Design; Skripte aus Claude Chat/Ideen-Studio ([[Claude-Chat-Workflow]]) |

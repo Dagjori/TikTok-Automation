@@ -45,7 +45,7 @@ Keine Schlüssel, Passwörter, Supabase-Adresse oder E-Mail-Adressen. Keine Inha
 ## Wo das Original liegt und wie es synchron bleibt
 - **Master** ist der Ordner `hirn/` im Repo (GitHub Dagjori/TikTok-Automation). Cloud-Sitzungen sehen nur das Repo, nicht den Desktop.
 - Der Vault auf dem Desktop ist eine **Kopie** zum Lesen und Ausbauen. Geänderte Notizen am Desktop kommen per Hand oder über eine lokale Claude-Sitzung zurück ins Repo.
-- Die operativen Anweisungen für die Videoproduktion bleiben in `.claude/skills/` (`simulierbar-video`, `stelldirvor-video`); das Hirn erklärt und verbindet sie. Bei Abweichung gilt die Skill-Datei; dann Notiz und Skill angleichen.
+- Die operativen Anweisungen stehen in `.claude/skills/`; das Hirn erklärt und verbindet sie. Bei Abweichung gilt die Skill-Datei; dann Notiz und Skill angleichen. Stand 07.11.2026: `simulierbar-video` und `stelldirvor-video` sind entfernt (06.11.); `rea-video` zerlegt virale Videos und schreibt die Regeln nach `04-Recherche` ([[REA-Video Methode]]); ein neuer Produktions-Skill folgt und baut darauf auf.
 
 ## Pflege
 1. Jede Regeländerung oder Entscheidung des Inhabers: zuerst in die Heimat-Notiz, dann in [[Entscheidungen Log]] (eine Zeile) und, wenn sie Videos betrifft, in den Skill.

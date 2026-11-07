@@ -79,13 +79,17 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 |---|---|
 | [[Recherche-Methode und Grenzen]] | was erlaubt ist, was TikTok ohne Login zeigt |
 | [[Simulation-Trendanalyse-2026-11-02]] | Auswertung der „simulation“-Kanäle und Muster |
+| [[REA-Video Methode]] | virale Videos zerlegen (Skill `rea-video`), Mindestzahl, Regelstärken; Quelle der Regeln für die Produktion |
+| [[REA Simulierbar Regelwerk]] | **Entwurf 07.11.:** Regeln aus 9 Vorbildern für Account 1 (zur Freigabe) |
+| [[REA stelldirvor Regelwerk]] | **Entwurf 07.11.:** Regeln aus 7 Vorbildern für Account 2 (zur Freigabe) |
+| [[REA Übergreifend]] | **Entwurf 07.11.:** Handwerk, das in beiden Accounts trägt (zur Freigabe) |
 | `Insights JJJJ-MM-TT` | tägliche Auswertung der eigenen Zahlen (entsteht ab 03.11.) |
 
 ## Farben
 [[Farbcode]]: Grün = Account 1, Violett = Account 2, Blau = gemeinsam, Rot = Regelwerk, Türkis = Claude Chat, Pink = Lernschleife.
 
 ## Vorlagen (`05-Vorlagen`)
-[[Vorlage Notiz]] · [[Vorlage Entscheidung]] · [[Vorlage Recherche]] · [[Vorlage Video-Projekt]]
+[[Vorlage Notiz]] · [[Vorlage Entscheidung]] · [[Vorlage Recherche]] · [[Vorlage Video-Projekt]] · [[Vorlage REA-Regelwerk]]
 
 ## Ausbau
 Neue Themen als neue Notizen im passenden Ordner anlegen, mit Kopf aus [[Vorlage Notiz]], hier verlinken, und den Konto-Tag nie mischen ([[Trennung der Accounts]]).
