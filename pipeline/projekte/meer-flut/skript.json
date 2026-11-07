@@ -439,5 +439,204 @@
   "Formal (Produktion): Der Countdown läuft 0:08 → 0:00 (Durchbruch bei 8,0 s); Satzdauern auf Lücke zum nächsten Satz gekürzt (3,5–4,2 s), kein Text verändert.",
   "Formal (Produktion): Anzeige 17–21 s mit einer Dezimalstelle (−1.495,8 m), weil der Pegel in dieser Phase sich um unter 1 m ändert; ab 21 s ganze Meter. Unterzeile 8–17 s und 52–60 s mit den Zustandstexten des Skripts."
  ],
- "lern_notizen": {}
+ "lern_notizen": {
+  "welt": "Wüste/Salzbecken am Beckengrund → Flutwasser → Meer (Welttyp Wüste + Meer, engine/welt_salzbecken.js)",
+  "standpunkt": "Felsvorsprung am Beckenrand, 1.500 m über dem Grund (erhöht, Klippe)",
+  "tageszeit": [
+   "Mittag",
+   "Sonnenuntergang",
+   "Mondnacht",
+   "Lichtpuls im Zeitraffer",
+   "Morgen"
+  ],
+  "kamera": [
+   {
+    "t": 0,
+    "art": "ruhe",
+    "was": "Blick in die Weite vom Felsvorsprung, atmen"
+   },
+   {
+    "t": 6,
+    "art": "schwenk",
+    "was": "Schwenk zum Horizont, wo das Meer hereinbricht (vor 8 s)"
+   },
+   {
+    "t": 11.2,
+    "art": "schwenk",
+    "was": "Rückschwenk, folgt der Flut über die Salzebene"
+   },
+   {
+    "t": 37,
+    "art": "fahrt",
+    "was": "langsame Fahrt am Fels nach außen und oben, Wasserlinie klettert (bis 50 s)"
+   },
+   {
+    "t": 52,
+    "art": "zoom",
+    "was": "Zoom 60→52° und Neigung zur Wasserlinie, Beben"
+   },
+   {
+    "t": 60,
+    "art": "schnitt",
+    "was": "harter Schnitt in den ruhigen Morgen (Höhepunkt)"
+   }
+  ],
+  "zeitraffer": [
+   {
+    "von": 0,
+    "bis": 8,
+    "faktor": "Echtzeit (Countdown)",
+    "anzeige": "DURCHBRUCH IN 0:08–0:00"
+   },
+   {
+    "von": 8,
+    "bis": 16,
+    "faktor": "1 s = 1 h (1/24 Tag/s)",
+    "anzeige": "STUNDEN SEIT DURCHBRUCH 0–27 h"
+   },
+   {
+    "von": 16,
+    "bis": 20,
+    "faktor": "weich von 1/24 auf 6,007 Tage/s",
+    "anzeige": "WASSERSTAND −1.500"
+   },
+   {
+    "von": 20,
+    "bis": 60,
+    "faktor": "1 s = 6,007 Tage",
+    "anzeige": "WASSERSTAND −1.496 bis 0 m, ab 52 s BIS ZU DEINEM FELS 349 → HIER"
+   }
+  ],
+  "effekte": [
+   {
+    "t": 0.8,
+    "name": "staubwirbel"
+   },
+   {
+    "t": 2.4,
+    "name": "geier_kreisen"
+   },
+   {
+    "t": 3.2,
+    "name": "salz_glitzert"
+   },
+   {
+    "t": 6.8,
+    "name": "dunst_am_horizont"
+   },
+   {
+    "t": 8,
+    "name": "durchbruch"
+   },
+   {
+    "t": 8,
+    "name": "gischtfontaene"
+   },
+   {
+    "t": 11,
+    "name": "flutfront"
+   },
+   {
+    "t": 14,
+    "name": "flut_am_fuss"
+   },
+   {
+    "t": 15,
+    "name": "sonnenuntergang"
+   },
+   {
+    "t": 16,
+    "name": "mondnacht"
+   },
+   {
+    "t": 17.5,
+    "name": "zeitraffer"
+   },
+   {
+    "t": 21,
+    "name": "wolken_jagen"
+   },
+   {
+    "t": 26,
+    "name": "salzebene_verschwindet"
+   },
+   {
+    "t": 31,
+    "name": "wasser_wird_gruen"
+   },
+   {
+    "t": 38,
+    "name": "wasserlinie_klettert"
+   },
+   {
+    "t": 41,
+    "name": "huegel_werden_inseln"
+   },
+   {
+    "t": 46,
+    "name": "gischt_steigt"
+   },
+   {
+    "t": 50.5,
+    "name": "elf_meter_pro_tag"
+   },
+   {
+    "t": 55,
+    "name": "wellen_unter_dir"
+   },
+   {
+    "t": 59.4,
+    "name": "weissblende_gischt"
+   },
+   {
+    "t": 60,
+    "name": "wasser_erreicht_den_vorsprung"
+   },
+   {
+    "t": 61.5,
+    "name": "moewen"
+   },
+   {
+    "t": 64,
+    "name": "wellen_am_fels"
+   }
+  ],
+  "sequenzen": [
+   "Countdown",
+   "Durchbruch",
+   "Flutfront",
+   "Nacht",
+   "Zeitraffer-Anstieg",
+   "Annäherung",
+   "Höhepunkt HIER",
+   "Nachspiel Morgen",
+   "Abspann"
+  ],
+  "t_ereignis": 8.0,
+  "countdown": {
+   "ja": true,
+   "zweiter": false
+  },
+  "schnitte": [
+   {
+    "t": 60.0,
+    "grund": "Höhepunkt: harter Schnitt von der Weißblende der Gischt in den ruhigen Morgen am vollen Meer"
+   }
+  ],
+  "statuszeile": [
+   "BECKEN TROCKEN",
+   "NOCH RUHIG",
+   "FLUT AM HORIZONT",
+   "SALZEBENE LÄUFT VOLL",
+   "ERSTE NACHT",
+   "TAG 1",
+   "1 SEKUNDE = 6 TAGE",
+   "+5 M PRO TAG",
+   "+8 M PRO TAG",
+   "+11 M PRO TAG",
+   "WASSER KLETTERT",
+   "FAST AUF AUGENHÖHE",
+   "MEERESSPIEGEL ERREICHT"
+  ]
+ }
 }

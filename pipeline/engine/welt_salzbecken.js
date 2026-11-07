@@ -47,7 +47,7 @@ export function hoehe(x, z) {
     const u = -b / HS + 0.55 + wob;
     const u2 = Math.floor(u) + smoothstep(0.5, 0.86, fr(u));
     const u0 = smoothstep(0.5, 0.86, 0.55);
-    y = Math.max(BODEN, SPUR_Y - HS * (u2 - u0));
+    y = Math.max(BODEN, SPUR_Y - HS * (u2 - u0) - 0.035 * se * smoothstep(0, 150, se));
     y += 0.7 * (vn(x * 0.21, z * 0.21) - 0.5) * smoothstep(0, 60, se) + 1.4 * (fbm(x * 0.03, z * 0.03, 3) - 0.5) * smoothstep(0, 90, se);
     if (se > 2800) y = BODEN + 2.2 * (fbm(x * 0.0016 + 4, z * 0.0016, 4) - 0.5) + 0.7 * (vn(x * 0.02, z * 0.02) - 0.5);
   }
@@ -164,7 +164,7 @@ void main() {
   vec3 grund = mix(tief, flach, fl * 0.85);
   grund = mix(grund, sed, braun * (0.55 + 0.45 * fl));
   vec3 col = mix(grund, himmel, fres * 0.85);
-  col += sonneF * (pow(s, 260.0) * 7.0 + pow(s, 28.0) * 0.28) * glanzS * (0.4 + 0.6 * k);
+  col += sonneF * (pow(s, 260.0) * 3.0 + pow(s, 28.0) * 0.14) * glanzS * (0.4 + 0.6 * k);
   // Gischt: Front (breiter weißer Streifen mit Brandung dahinter), Ufer (flaches Wasser), Schaumkämme
   float sf = (frontR < 1.0e5) ? (1.0 - smoothstep(0.0, 180.0, frontR - fd)) * step(fd, frontR) * smoothstep(0.0, 25.0, frontR - fd + 25.0) : 0.0;
   sf *= 0.55 + 0.45 * nN(vW.xz * 0.02 + zeit);

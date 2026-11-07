@@ -55,7 +55,7 @@ async function start() {
   await document.fonts.ready;
   const szene = new THREE.Scene();
   szene.fog = new THREE.FogExp2("#D8C8AE", 3.0e-5);
-  const kam = new THREE.PerspectiveCamera(60, 1080 / 1920, 0.1, 80000);
+  const kam = new THREE.PerspectiveCamera(60, 1080 / 1920, 0.6, 80000);
   const welt0 = new Salzbecken(szene, { gitter: Q.has("gitter") ? Q.get("gitter").split(",").map(Number) : [360, 900] });
   if (Q.get("dbg") === "1") welt0.gelaende.visible = false;
   if (Q.get("dbg") === "2") welt0.wasser.visible = false;
@@ -147,9 +147,9 @@ async function start() {
     sonne.position.copy(kam.position).addScaledVector(sV, 3000); sonne.target.position.copy(kam.position); sonne.target.updateMatrixWorld();
     const tag01 = smoothstep(-1, 6, hz.el);                         // Sonnenlicht je nach Höhe
     sonne.color.copy(sonneF(t)).lerp(cT.set("#8FA8D8"), nachtD);
-    sonne.intensity = (1.55 * tag01 * (0.35 + 0.65 * hz.puls * (1 + 0.1 * hz.pu)) + 0.35 * nachtD) * (1 - 0.0 * hz.mo) + 0.15;
-    hemi.intensity = lerp(0.55, 0.25, nachtD) * (0.8 + 0.2 * hz.puls); hemi.color.copy(zen).lerp(cT.set("#D8E0EC"), 0.4); hemi.groundColor.set("#9A7A54");
-    const lichtW = lerp(1, 0.28, nachtD) * (0.7 + 0.3 * lerp(1, hz.puls, hz.pu)) * (0.7 + 0.3 * tag01);
+    sonne.intensity = (1.55 * tag01 * (0.35 + 0.65 * hz.puls * (1 + 0.1 * hz.pu)) + 0.7 * nachtD) * (1 - 0.0 * hz.mo) + 0.15;
+    hemi.intensity = lerp(0.55, 0.45, nachtD) * (0.8 + 0.2 * hz.puls) + 0.3 * hz.mo; hemi.color.copy(zen).lerp(cT.set("#D8E0EC"), 0.4); hemi.groundColor.set("#9A7A54");
+    const lichtW = lerp(1, 0.5, nachtD) * (0.7 + 0.3 * lerp(1, hz.puls, hz.pu)) * (0.7 + 0.3 * tag01);
     const sonneRW = nachtD > 0.5 ? mondR : sd;
     const nass = smoothstep(8, 11, t);
     welt0.setze(t, kam, { flaeche: flaeche(t), frontR: frontR(t), braun: braun(t), schaum: smoothstep(8, 10, t), sonneR: sonneRW, sonneF: sonneF(t), himmelFarbe: hor.clone().lerp(zen, 0.45),
