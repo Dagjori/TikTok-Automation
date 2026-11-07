@@ -1,0 +1,1467 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "eauto-benziner",
+ "fps": 30,
+ "dauer": 79.93333333333334,
+ "stimmEnde": 79.936,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "strasse",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "STROMER",
+    "farbe": "#22C6F2"
+   },
+   "b": {
+    "name": "BENZINER",
+    "farbe": "#FF8A3D"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 4,
+   "groesse": 64,
+   "unten": 1450,
+   "phrasen": 53
+  },
+  "timing": "echt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "STROMER"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "vs"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "BENZINER"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WER FÄHRT BILLIGER?"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "tafel",
+   "klang": false,
+   "bild": false,
+   "ab": "start"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Strom gegen Benzin.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.05,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RUNDE 0 · 0 KM"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.3,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Wagen rollen an, Scheinwerfer, Lichtspuren hinter beiden Wagen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.56,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Titel läuft, Lichtkegel streicht über die Dächer"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera schiebt sich heran, Laternen ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 1.954,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "5 Jahre –",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.984,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera schwenkt näher an die Wagen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 3.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "wer fährt billiger?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.59,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "15.000 KM / JAHR"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 4.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "15.000 km im Jahr.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.64,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera weitet, Chip 15.000 km"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 6.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Stromer: 45.990.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.38,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera auf den Stromer (Cyan)"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Preisschild 45.990 € über dem Stromer"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Benziner: 37.790.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.78,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera auf den Benziner (Orange)"
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.2,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Preisschild 37.790 € über dem Benziner"
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.62,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.67,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "WERTVERLUST · VERSICHERUNG"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 11.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gezählt wird alles –",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.72,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zurück, Chips Wertverlust, Versicherung"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 13.063,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "auch der Wertverlust.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.33,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "WERKSTATT · ENERGIE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.48,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chips Werkstatt, Energie"
+  },
+  {
+   "quelle": "Chip",
+   "t": 14.42,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 14.42,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 14.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar, der Benziner.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.52,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Lichtkegel und Spot auf den Benziner"
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.19,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "8.200 € BILLIGER"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 16.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "8.200 billiger.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.24,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip 8.200 € billiger, Benziner leuchtet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 17.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.76,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Licht hält, Kamera ruhig"
+  },
+  {
+   "quelle": "Chip",
+   "t": 18.54,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 18.54,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 18.59,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RUNDE 1/4 · SÄULE 60 CT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 18.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Runde 1:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.64,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Runde 1: Wagen beschleunigen, Kilometer- und Kostenzähler laufen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.133,
+   "typ": "zaehler",
+   "dauer": 9.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.133,
+   "typ": "zaehler",
+   "dauer": 9.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.14,
+   "typ": "uhr",
+   "dauer": 9.433,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.2,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 19.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "nur Säule.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 20.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "60 Cent pro kWh.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.88,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ladesäule links (60 ct) leuchtet auf"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 20.96,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 20.96,
+   "typ": "zaehler",
+   "dauer": 7.6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 23.017,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BENZIN 2,23 € / L"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 23.037,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Benzin: 2 Euro 23.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.067,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Zapfsäule rechts mit Dach, Chip 2,23 €/L"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.567,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Benziner schiebt sich nach vorn"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 25.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der Benziner zieht davon.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.64,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Benziner zieht sichtbar davon, Vorsprung läuft"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.92,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera steigt, Vorsprung wächst"
+  },
+  {
+   "quelle": "Chip",
+   "t": 27.34,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 27.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Nach 5 Jahren:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.44,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera hoch, Zähler bei 75.000 km"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 28.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "gut 3.225 Vorsprung.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.8,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Vorsprung Benziner 3.225 €"
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.353,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 30.423,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Doch jetzt lädt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 30.453,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.453,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zoom auf den Stromer, Lichtwechsel auf Cyan"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 31.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "der Stromer anders.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 32.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Halb zu Hause,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.72,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Haus mit Wallbox am Straßenrand, Wallbox leuchtet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 33.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "halb unterwegs.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.84,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "zweite Ladesäule im Bild"
+  },
+  {
+   "quelle": "Chip",
+   "t": 34.66,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RUNDE 2/4 · GEMISCHT 45 CT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 34.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "45 Cent.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Stromer-Zähler fällt (45 ct)"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.833,
+   "typ": "zaehler",
+   "dauer": 2.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 34.86,
+   "typ": "zaehler",
+   "dauer": 2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 36.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Abstand: 1.725.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Abstand schrumpft"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.96,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Abstand 1.725 €"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.06,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.11,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RUNDE 3/4 · ZU HAUSE 35 CT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 38.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Runde 3:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.16,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Runde 3: Haus mit Wallbox"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 39.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "nur zu Hause.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 40.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "35 Cent.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.36,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Wallbox leuchtet (35 ct), Zähler fällt"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 40.393,
+   "typ": "zaehler",
+   "dauer": 3.867,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.4,
+   "typ": "zaehler",
+   "dauer": 3.867,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Jetzt wird's knapp.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.8,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera enger, Wagen nah beieinander"
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Zähler nahezu gleich, Abstand pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 43.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Pro Monat:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.04,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera hoch, Monatschips"
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.74,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "842,50 € / MONAT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 43.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "842,50 gegen 833,75.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.84,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip 842,50 € pro Monat"
+  },
+  {
+   "quelle": "Chip",
+   "t": 45.5,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "833,75 € / MONAT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.6,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip 833,75 € pro Monat"
+  },
+  {
+   "quelle": "Chip",
+   "t": 47.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 47.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 47.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Nach 5 Jahren:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera tief, Rückstand 525 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "525 Rückstand.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.28,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Abstand 525 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 49.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der Benziner führt –",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.12,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Orange noch vorn, Strahlen steigen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 51.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "noch.",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.82,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.87,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RUNDE 4/4 · SOLAR 18 CT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 51.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Letzte Runde:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.92,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Runde 4: Kamera auf das Haus mit Solardach"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 52.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Strom vom eigenen Dach.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 54,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Solarmodule leuchten auf, Cyan-Glühen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 54.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "18 Cent.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "18 ct, Status Runde 4/4"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 55.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Beide Zähler fast gleichauf.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.8,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera eng, Zähler fast gleich"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 57.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und am Ende liegt",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 57.84,
+   "art": "zoom",
+   "dauer": 2,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.84,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Zoom, Stille: Zähler dicht beieinander"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 57.86,
+   "typ": "zaehler",
+   "dauer": 0.867,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 57.867,
+   "typ": "zaehler",
+   "dauer": 2.367,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.733,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 58.803,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 58.803,
+   "typ": "zaehler",
+   "dauer": 1.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.853,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Führungswechsel: Stromer-Zähler fällt unter den Benziner, Tafel springt auf Cyan"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 58.953,
+   "art": "zoom",
+   "dauer": 1.7,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 59.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "der Stromer vorn.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.76,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Stromer fährt vor, Glow und Zoom"
+  },
+  {
+   "quelle": "Chip",
+   "t": 60.47,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 60.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Endstand: Mit Solarstrom spart",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.52,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zurück, Endstand-Karte Solar"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 61.66,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "STROMER"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 62.36,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "BENZINER"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 62.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "der Stromer knapp 1.275.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 63.34,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "STROMER SPART"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.44,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Stromer spart 1.275 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 64.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "An der Säule spart",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Wechsel auf nur Säule, Stromer-Zähler steigt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 64.633,
+   "typ": "zaehler",
+   "dauer": 1.8,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 64.9,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "STROMER"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 64.98,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "BENZINER"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 65.3,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 65.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "der Benziner gut 3.225.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 66.38,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "BENZINER SPART"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Benziner spart 3.225 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 67.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Warum?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Erklärgrafik Warum"
+  },
+  {
+   "quelle": "Balken",
+   "t": 68.24,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "AUFPREIS STROMER BEIM KAUF · €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 68.31,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "8.200 Startnachteil.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.34,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Balken Aufpreis 8.200 €"
+  },
+  {
+   "quelle": "Balken",
+   "t": 69.08,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "STARTNACHTEIL"
+  },
+  {
+   "quelle": "Balken",
+   "t": 69.72,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "STROM: SOLAR GEGEN SÄULE · €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.79,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Den holt",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Balken Solar gegen Säule 4.500 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 70.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "nur billiger Strom.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 71.2,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "HOLT AUF"
+  },
+  {
+   "quelle": "Chip",
+   "t": 72.31,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RUNDE 3/4 · ZU HAUSE 35 CT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 72.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und das Verrückte:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Rückblende zu Runde 3, Haus mit Wallbox"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 72.4,
+   "typ": "zaehler",
+   "dauer": 2.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 72.66,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 72.66,
+   "typ": "zaehler",
+   "dauer": 1.143,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 73.117,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mit 3.000 Prämie",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 73.553,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "− 3.000 € PRÄMIE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.653,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Prämie 3.000 € fällt auf den Stromer, Zähler 47.550 €"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 73.803,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 73.853,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 73.87,
+   "typ": "zaehler",
+   "dauer": 0.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 73.933,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 75.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "reicht schon Haushaltsstrom.",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 75.04,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Stromer vorn, Vorsprung 2.475 €"
+  },
+  {
+   "quelle": "Chip",
+   "t": 76.46,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 76.46,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 76.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Nicht der Motor entscheidet.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Pointe",
+   "t": 76.76,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "NICHT DER MOTOR  ENTSCHEIDET.  SONDERN DIE  STECKDOSE."
+  },
+  {
+   "quelle": "Szene",
+   "t": 76.76,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Welt dunkelt ab, Schlusskarte: Nicht der Motor entscheidet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 78.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Sondern die Steckdose.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 79.04,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "STECKDOSE in Cyan"
+  }
+ ],
+ "klang": []
+}

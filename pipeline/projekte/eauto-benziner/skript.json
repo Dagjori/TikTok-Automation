@@ -1,0 +1,334 @@
+{
+ "titel": "Elektroauto oder Benziner: Welches kostet in 5 Jahren weniger?",
+ "skill": "video-produktion",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-07-mittag",
+ "stil": "17 Nachtstadt-Miniatur (Nachtstraße nach Regen)",
+ "stil_begruendung": "Zwei gleiche Kompaktwagen auf einer nächtlichen Straße tragen das Autothema räumlich: Scheinwerfer, nasser Asphalt mit Spiegelung, Laternen, Lichtspuren und Ladesäule gegen Zapfsäule leben vom Nachtlicht. Dunkle Welt mit Leuchtakzenten (REA R13/R23, dunkle Stile zuerst), Cyan (Stromer) gegen Orange (Benziner) setzt sich gegen das Natriumlicht ab. Die letzten Simulierbar-Videos liefen in Stil 19 (mieten-kaufen) und 18 (angestellt-selbststaendig), das jüngste Stil-17-Video ist waermepumpe-gas vom 04.11.; der Stil ist nicht derselbe wie das vorige Video. Umgebung vorhanden (Straße, Häuser, Laternen), keine reinen Objekte vor schwarzem Grund.",
+ "teamfarben": {
+  "Stromer": "#22C6F2",
+  "Benziner": "#FF8A3D"
+ },
+ "klangteppich": "strasse",
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Strom gegen Benzin. 5 Jahre – wer fährt billiger?",
+   "sprechtext": "Strom gegen Benzin.\n[curious] Fünf Jahre – wer fährt BILLIGER?",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Strom gegen Benzin.",
+     "bild": "Nachtstraße, zwei gleiche Kompaktwagen nebeneinander (links Stromer cyan, rechts Benziner orange) auf nassem Asphalt, Scheinwerfer an, Titel „STROMER vs BENZINER: Wer fährt in 5 Jahren billiger?“ ab Bild 1, Tafel 0 € VS 0 € mit Statuszeile RUNDE 0 · 0 KM"
+    },
+    {
+     "gesagt": "Gleiche Klasse, fünf Jahre – wer fährt BILLIGER?",
+     "bild": "Kamera fährt langsam hinter die Wagen, Lichtkegel streicht über beide Dächer, Laternen ziehen vorbei"
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "15.000 km im Jahr. Stromer: 45.990. Benziner: 37.790. Gezählt wird alles – auch der Wertverlust.",
+   "sprechtext": "Fünfzehntausend Kilometer im Jahr.\nStromer: sechsundvierzigtausend.\nBenziner: achtunddreißigtausend.\nGezählt wird alles – auch der Wertverlust.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Zwei Kompaktwagen.",
+     "bild": "Totale auf beide Wagen, Spot-Licht auf die Dächer"
+    },
+    {
+     "gesagt": "Fünfzehntausend Kilometer im Jahr.",
+     "bild": "Chip 15.000 KM / JAHR, Kilometerleiste unter der Tafel"
+    },
+    {
+     "gesagt": "Stromer: rund sechsundvierzigtausend Euro.",
+     "bild": "Preisschild 45.990 € schwebt über dem linken Wagen (cyan), Chip"
+    },
+    {
+     "gesagt": "Benziner: rund achtunddreißigtausend.",
+     "bild": "Preisschild 37.790 € über dem rechten Wagen (orange), Chip"
+    },
+    {
+     "gesagt": "Gezählt wird alles – auch der Wertverlust.",
+     "bild": "Chips WERTVERLUST · VERSICHERUNG · WERKSTATT · ENERGIE leuchten nacheinander auf"
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, der Benziner. 8.200 billiger. Oder?",
+   "sprechtext": "Klar … der Benziner.\nAchttausend BILLIGER.\nOder?",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Klar … der Benziner.",
+     "bild": "Lichtkegel auf den Benziner, rechte Tafelseite leuchtet"
+    },
+    {
+     "gesagt": "Achttausend Euro BILLIGER.",
+     "bild": "Chip 8.200 € BILLIGER glüht orange, Preisschilder rücken zusammen"
+    },
+    {
+     "gesagt": "Oder?",
+     "bild": "Licht hält, Kamera ruhig, Schilder verblassen"
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Runde 1: nur Säule. 60 Cent pro kWh. Benzin: 2 Euro 23. Der Benziner zieht davon.",
+   "sprechtext": "Runde eins: nur Säule.\nSechzig Cent pro Kilowattstunde.\nBenzin: zwei Euro dreiundzwanzig.\nDer Benziner zieht DAVON.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Runde eins: Laden nur an der Säule.",
+     "bild": "Schnellladesäule links (cyan) und Zapfsäule rechts (orange) am Straßenrand, Wagen fahren los, Kilometerzähler und Kostenzähler laufen, Status RUNDE 1/4"
+    },
+    {
+     "gesagt": "Sechzig Cent pro Kilowattstunde.",
+     "bild": "Chip 60 CT / KWH, Schild an der Ladesäule"
+    },
+    {
+     "gesagt": "Benzin: zwei Euro dreiundzwanzig.",
+     "bild": "Chip 2,23 € / LITER, Schild an der Zapfsäule"
+    },
+    {
+     "gesagt": "Der Benziner zieht DAVON.",
+     "bild": "Benziner fährt sichtbar vor, Tafelseite rechts mit VORN, Vorsprung 3.225 € leuchtet orange"
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Nach 5 Jahren: gut 3.225 Vorsprung. Doch jetzt lädt der Stromer anders. Halb zu Hause, halb unterwegs.",
+   "sprechtext": "Nach fünf Jahren: gut dreitausend Vorsprung.\nDoch jetzt lädt der Stromer ANDERS.\nHalb zu Hause, halb unterwegs.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Nach fünf Jahren: gut dreitausend Euro Vorsprung.",
+     "bild": "Zähler bei 75.000 km: 53.250 € gegen 50.025 €, Abstandsanzeige 3.225 €"
+    },
+    {
+     "gesagt": "Doch jetzt lädt der Stromer ANDERS.",
+     "bild": "Zoom auf den Stromer, Lichtwechsel auf Cyan, Ladeort teilt sich in Haus und Säule"
+    },
+    {
+     "gesagt": "Halb zu Hause, halb unterwegs.",
+     "bild": "Haus mit Wallbox links neben der Säule, Chip 45 CT / KWH, Status RUNDE 2/4"
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "45 Cent. Abstand: 1.725. Runde 3: nur zu Hause. 35 Cent. Jetzt wird's knapp.",
+   "sprechtext": "Fünfundvierzig Cent.\nAbstand: siebzehnhundert.\nRunde drei: nur zu Hause.\nFünfunddreißig Cent.\nJetzt wird's KNAPP.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Fünfundvierzig Cent.",
+     "bild": "Schild 45 CT leuchtet"
+    },
+    {
+     "gesagt": "Der Abstand schrumpft auf siebzehnhundert Euro.",
+     "bild": "Zähler 51.750 € gegen 50.025 €, Abstand 1.725 €"
+    },
+    {
+     "gesagt": "Runde drei: nur zu Hause.",
+     "bild": "Wallbox am Haus, Kabel zum Stromer, Status RUNDE 3/4"
+    },
+    {
+     "gesagt": "Fünfunddreißig Cent.",
+     "bild": "Chip 35 CT / KWH"
+    },
+    {
+     "gesagt": "Jetzt wird's KNAPP.",
+     "bild": "Kamera enger, Zähler nahezu gleich, Abstand 525 € pulsiert"
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "Pro Monat: 842,50 gegen 833,75. Nach 5 Jahren: 525 Rückstand. Der Benziner führt – noch.",
+   "sprechtext": "Pro Monat: achthundertzweiundvierzig gegen achthundertvierunddreißig.\nNach fünf Jahren: FÜNFHUNDERT Rückstand.\nDer Benziner führt – noch.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Pro Monat: achthundertzweiundvierzig Euro gegen achthundertvierunddreißig.",
+     "bild": "Monats-Chips 842,50 € (cyan) gegen 833,75 € (orange)"
+    },
+    {
+     "gesagt": "Nach fünf Jahren: nur noch gut FÜNFHUNDERT Rückstand.",
+     "bild": "Zähler 50.550 € gegen 50.025 €, Abstand 525 € leuchtet"
+    },
+    {
+     "gesagt": "Der Benziner führt – noch.",
+     "bild": "Orange Tafelseite noch vorn, Spannung, Licht flackert nicht, Strahlen steigen"
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "phase": "kipp",
+   "text": "Letzte Runde: Strom vom eigenen Dach. 18 Cent. Beide Zähler fast gleichauf. Und am Ende liegt der Stromer vorn.",
+   "sprechtext": "Letzte Runde: Strom vom eigenen Dach.\nAchtzehn Cent.\nBeide Zähler fast GLEICHAUF.\nUnd am Ende …\nliegt der Stromer VORN.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Letzte Runde: Strom vom eigenen Dach.",
+     "bild": "Haus mit Solarpaneelen, Paneele leuchten auf, Status RUNDE 4/4"
+    },
+    {
+     "gesagt": "Achtzehn Cent pro Kilowattstunde.",
+     "bild": "Chip 18 CT / KWH"
+    },
+    {
+     "gesagt": "Beide Zähler laufen fast GLEICHAUF.",
+     "bild": "Zähler nähern sich, Wagen auf gleicher Höhe"
+    },
+    {
+     "gesagt": "Und am Ende …",
+     "bild": "kurze Stille im Bild, Zähler dicht beieinander, Kamera nah"
+    },
+    {
+     "gesagt": "liegt der Stromer VORN.",
+     "bild": "Tafel springt auf Cyan: STROMER VORN, Stromer fährt vor, Zahl glüht, Zoom"
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Endstand: Mit Solarstrom spart der Stromer knapp 1.275. An der Säule spart der Benziner gut 3.225.",
+   "sprechtext": "Endstand:\nMit Solarstrom spart der Stromer knapp dreizehnhundert.\nAn der Säule spart der Benziner gut DREITAUSEND.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Endstand:",
+     "bild": "Totale, Bilanzkarte baut sich auf"
+    },
+    {
+     "gesagt": "Mit Solarstrom spart der Stromer knapp dreizehnhundert.",
+     "bild": "Bilanz: Zeile SOLAR 48.750 € gegen 50.025 €, Differenz STROMER SPART 1.275 € leuchtet"
+    },
+    {
+     "gesagt": "Nur an der Säule spart der Benziner gut DREITAUSEND.",
+     "bild": "Bilanz: Zeile SÄULE 53.250 € gegen 50.025 €, Differenz BENZINER SPART 3.225 €"
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Warum? 8.200 Startnachteil. Den holt nur billiger Strom.",
+   "sprechtext": "[thoughtful] Warum?\\nAchttausend Startnachteil.\\nDen holt nur BILLIGER Strom.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Warum?",
+     "bild": "Erklärgrafik Balken WARUM? baut sich auf"
+    },
+    {
+     "gesagt": "Achttausend Euro Startnachteil.",
+     "bild": "Balken STARTNACHTEIL 8.200 € (orange)"
+    },
+    {
+     "gesagt": "Den holt nur BILLIGER Strom rein.",
+     "bild": "Balken ERSPARNIS SOLAR gegen SÄULE (Spanne 4.500 €) in Cyan"
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "phase": "pointe",
+   "text": "Und das Verrückte: Mit 3.000 Prämie reicht schon Haushaltsstrom.",
+   "sprechtext": "Und das Verrückte:\\nMit dreitausend Prämie …\\nreicht schon HAUSHALTSSTROM.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Und das Verrückte:",
+     "bild": "Szene springt zurück zu Runde 3 (35 CT)"
+    },
+    {
+     "gesagt": "Mit dreitausend Euro Prämie …",
+     "bild": "Prämien-Chip −3.000 € fällt auf den Stromer, Zähler springt auf 47.550 €"
+    },
+    {
+     "gesagt": "reicht schon HAUSHALTSSTROM.",
+     "bild": "Tafel: STROMER 47.550 € vor BENZINER 50.025 €, Abstand 2.475 € leuchtet cyan"
+    }
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "phase": "schlusskarte",
+   "text": "Nicht der Motor entscheidet. Sondern die Steckdose.",
+   "sprechtext": "Nicht der Motor entscheidet.\nSondern die STECKDOSE.",
+   "bild_text_abgleich": [
+    {
+     "gesagt": "Nicht der Motor entscheidet. Sondern die STECKDOSE.",
+     "bild": "Schlusskarte M.pointe, Schlüsselwort STECKDOSE in Cyan, Welt dunkelt ab"
+    }
+   ]
+  }
+ ],
+ "caption": "Elektroauto oder Benziner – was ist nach 5 Jahren wirklich billiger? ⚡ Ich hab's simuliert. Wo lädst du: zu Hause oder an der Säule? 👇 #elektroauto #autokosten #benziner #wissen #simulation",
+ "quellen": [
+  "(F) ADAC Kostenvergleich Elektroauto/Verbrenner, Ladeszenarien 18/35/45/60 ct, Stand Okt. 2026 (Artikel 03.11.2026) – https://www.adac.de/rund-ums-fahrzeug/e-mobilitaet/kaufen/elektroauto-kostenvergleich/",
+  "(F) ADAC Kostentabellen (Cupra Born 79 kWh Endurance 45.990 €: 65,0/67,4/69,0/71,0 ct/km; Cupra Leon 1.5 TSI 37.790 €: 66,7 ct/km bei 15.000 km/Jahr; Opel Astra Electric 36.490 € gegen Astra 1.2 Hybrid 48V 31.890 €), erstellt 10.2026 – https://assets.adac.de/Autodatenbank/Autokosten/E-AutosVergleich_35.pdf (ebenso _18, _45, _60)",
+  "(F) ADAC Berechnungsgrundlagen: 5 Jahre, Wertverlust ohne Zinsen, Werkstatt, Reifen, HP+VK 50 %, Kfz-Steuer inkl. E-Befreiung, WLTP-Verbrauch; Strom 0,35 €/kWh, Super 2,23 €/l – PDF S. 1 und https://assets.adac.de/image/upload/v1793028758/autokosten_grundlagen_11_26_yqd2zx.pdf",
+  "(F) Bundesumweltministerium, FAQ E-Auto-Förderung 2026: Basisförderung 3.000 € für reine E-Autos, Einkommensgrenze 80.000 € zvE (90.000 € mit Kindern) – https://p7f.vogel.de/wcms/69/6e/696e537648c06/faq-e-autofoerderung-bf.pdf; Portal seit 19.05.2026, rückwirkend ab 01.01.2026 – https://www.autozeitung.de/e-auto-foerderung-121023.html",
+  "(F) ADAC, Kraftstoffpreise Okt. 2026: Super E10 2,114 €/l, Energiesteuersenkung 14 ct/l bis 31.12.2026 (Kontext) – https://presse.adac.de/meldungen/adac-ev/verkehr/benzinpreis-im-oktober-deutlich-gesunken.html",
+  "(F) BDEW Strompreisanalyse 2026: Haushaltsstrom ca. 37,0 ct/kWh (Kontext zum 35-ct-Szenario) – https://www.bdew.de/service/daten-und-grafiken/bdew-strompreisanalyse/",
+  "(F) Deutscher Bundestag, Drittes BEHG-Änderungsgesetz: CO₂-Preiskorridor 2027 55–65 €/t; ETS2 auf 2028 verschoben (Kontext, nicht im Video) – https://www.bundestag.de/dokumente/textarchiv/2026/kw42-de-brennstoffemissionshandelsgesetz-1223608"
+ ],
+ "annahmen": [
+  "(A) Haltedauer 5 Jahre und 15.000 km/Jahr wie im ADAC-Vergleich; die Idee nannte 10 Jahre/13.000 km, für 10 Jahre gibt es keinen belegbaren Wertverlust (siehe korrekturen).",
+  "(A) Energiepreise über 5 Jahre konstant auf ADAC-Stand Okt. 2026 (Super 2,23 €/l; Strom 18/35/45/60 ct/kWh). Höhere Benzinpreise oder ein steigender CO₂-Preis ab 2028 (ETS2, Preis offen) würden den Stromer begünstigen.",
+  "(A) Ladeszenarien nach ADAC: 18 ct eigene PV-Anlage, 35 ct Hausstrom, 45 ct gemischt, 60 ct nur öffentlich.",
+  "(A) Kaufprämie voll vom Preis abgezogen, Wertverlust wie bei ADAC. Gilt nur bis 80.000 € zu versteuerndem Haushaltseinkommen (90.000 € mit Kindern), Neuwagen ab Zulassung 01.01.2026, Haltedauer 36 Monate.",
+  "(A) Im Video keine Marken: Stromer und Benziner der gleichen Klasse; konkrete Modelle nur intern.",
+  "(S) Bei einem anderen ADAC-Paar (gleiches Modell als Stromer und Mild-Hybrid-Benziner) gewinnt der Stromer bei jedem Strompreis; das Ergebnis hängt auch vom Modell ab (Diskussionsanreiz aus der Sache)."
+ ],
+ "zahlen": {
+  "laufleistung": "15.000 km/Jahr, 5 Jahre = 75.000 km (ADAC-Basis)",
+  "preis_stromer": "45.990 € (Kompakt-E-Auto 79 kWh, 170 kW, ADAC Okt. 2026)",
+  "preis_benziner": "37.790 € (Kompakt-Benziner 1.5, 110 kW, ADAC Okt. 2026)",
+  "kaufpreisdifferenz": "8.200 €",
+  "benzinpreis": "2,23 €/l Super (ADAC, Mittel der letzten drei Monate)",
+  "benziner_ct_km": "66,7 ct/km → 50.025 € in 5 Jahren, 833,75 €/Monat",
+  "stromer_60ct": "71,0 ct/km → 53.250 € (Benziner 3.225 € günstiger)",
+  "stromer_45ct": "69,0 ct/km → 51.750 € (Benziner 1.725 € günstiger)",
+  "stromer_35ct": "67,4 ct/km → 50.550 € (Benziner 525 € günstiger), 842,50 €/Monat",
+  "stromer_18ct": "65,0 ct/km → 48.750 € (Stromer 1.275 € günstiger)",
+  "praemie": "3.000 € Basisförderung reines E-Auto (Haushalt zvE bis 80.000 €)",
+  "mit_praemie_35ct": "47.550 € → Stromer 2.475 € günstiger",
+  "mit_praemie_60ct": "50.250 € → Benziner 225 € günstiger",
+  "anderes_paar_intern": "ADAC-Paar gleiches Modell (E 36.490 € / Mild-Hybrid-Benziner 31.890 €): Stromer bei allen Strompreisen vorn, 60 ct: 59,3 gegen 60,8 ct/km → 1.125 € (nur intern)"
+ },
+ "rechenweg": "Vollkosten nach ADAC (Wertverlust ohne Zinsen, Werkstatt, Reifen, Versicherung HP+VK 50 %, Kfz-Steuer, Energie nach WLTP; Super 2,23 €/l) in ct/km bei 15.000 km/Jahr, 5 Jahre = 75.000 km. Kosten = ct/km × 75.000 / 100. Benziner: 66,7 → 50.025 €. Stromer: 60 ct → 71,0 → 53.250 € (Benziner 3.225 € günstiger); 45 ct → 69,0 → 51.750 € (1.725); 35 ct → 67,4 → 50.550 € (525); 18 ct → 65,0 → 48.750 € (Stromer 1.275 € günstiger). Monat = ct/km × 1.250 km: 35 ct 842,50 € gegen 833,75 €. Spanne Stromer Solar gegen Säule 4.500 €. Kaufpreisdifferenz 45.990 − 37.790 = 8.200 €. Pointe: Kaufprämie 3.000 € (Basisbetrag reines E-Auto; ADAC rechnet ohne) direkt abgezogen: 35 ct 50.550 − 3.000 = 47.550 € < 50.025 € → Stromer 2.475 € günstiger; 60 ct 50.250 € → Benziner noch 225 € günstiger. Alles mit Python nachgerechnet (cockpit/daten/tmp/rechnung_mittag.py).",
+ "korrekturen": [
+  {
+   "feld": "segmente[].sprechtext/text",
+   "alt": "freigegebenes Skript, 175 Wörter, Ben las es in 89,3 s (Grenze 80 s)",
+   "neu": "gestrafft ohne Zahlen- oder Ergebnisänderung: Hook ohne „Gleiche Klasse“ (steht als Titel und Chip im Bild), „Zwei Kompaktwagen“ und „rund“/„Euro“ nach Zahlen im Sprechtext (Euro stehen im Bild), „Laden nur an der“ → „nur“, „Der Abstand schrumpft auf … Euro“ → „Abstand:“, „nur noch gut“ → „nur“, Kilowattstunde nur in Runde 1 gesprochen, in „Warum?“ und Pointe „Euro“ nach „achttausend“ bzw. „dreitausend“ entfallen, „Beide Zähler laufen fast“ → „Beide Zähler fast“",
+   "quelle": "qc/massstab.py 12f",
+   "grund": "Länge 65–80 s",
+   "zeit": "2026-11-07"
+  }
+ ],
+ "skript_korrekturen_aus_recherche": [
+  "Zeitraum 10 Jahre/13.000 km der Idee → 5 Jahre/15.000 km: belegbare Vollkosten inkl. Wertverlust gibt es nur im ADAC-Rahmen (5 Jahre). Titel angepasst.",
+  "Steigender CO₂-Preis nicht als Rechengröße: 2027 bleibt der Korridor 55–65 €/t, ab 2028 ETS2 mit offenem Marktpreis (nicht belegbar); steht als Annahme."
+ ],
+ "dramaturgie": [
+  "0 s: Nachtstraße (dunkler Stil mit Leuchtakzenten, z. B. 17 oder 21), zwei gleich große Kompaktwagen; links Stromer (Cyan), rechts Benziner (Orange); Titel ‚Stromer oder Benziner: Wer fährt in 5 Jahren billiger?‘ ab Bild 1, Tafel ‚0 € VS 0 €‘, Statuszeile ‚RUNDE 0 · 0 km‘.",
+  "4–11 s: Preisschilder über den Dächern (45.990 € / 37.790 €), Chips Wertverlust · Versicherung · Werkstatt · Energie leuchten nacheinander auf; Chip 15.000 km/Jahr.",
+  "12–14 s Denkfalle: Lichtkegel auf den Benziner, Chip ‚8.200 € billiger‘ glüht orange.",
+  "14–22 s Runde 1: Stromer an der Schnellladesäule (60 ct/kWh), Benziner an der Zapfsäule (2,23 €/l); Kilometerzähler 0 → 75.000, Kostenzähler laufen, Benziner bleibt niedriger; 3.225 € Vorsprung leuchtet orange.",
+  "22 s Wendung 1 (Stufe 4): Zoom auf den Stromer, Lichtwechsel; Ladeort teilt sich (Haus + Säule), Anzeige 45 ct.",
+  "29–36 s: Abstandsbalken schrumpft auf 1.725 €; Runde 3: Wallbox am Haus, 35 ct; engere Einstellung, Puls auf ‚Jetzt wird's knapp‘.",
+  "36–43 s: Monatschips 842,50 € vs 833,75 €, Rückstand 525 € leuchtet; Statuszeile ‚RUNDE 3/4‘.",
+  "43–52 s Kipp (Stufe 5): Solarpaneele auf dem Dach leuchten auf, 18 ct; beide Zähler fast gleich, am Ende springt die Tafel auf Cyan: Stromer vorn (Führungswechsel sichtbar, Zahl glüht).",
+  "52–59 s Ergebnis (ca. 75 %): Bilanzkarte zeilenweise: Solar 1.275 € für den Stromer, Säule 3.225 € für den Benziner.",
+  "59–63 s Warum: Erklärgrafik Balken ‚8.200 € Startnachteil‘ gegen die Ersparnis je Strompreis (Fahrt, kein Zoom).",
+  "63–67 s Pointe: Prämien-Chip 3.000 € fällt auf den Stromer, Runde 3 springt um: 47.550 € vs 50.025 € (Akzent).",
+  "67–70 s Schlusskarte: ‚Nicht der Motor entscheidet. Sondern die Steckdose.‘ – ‚Steckdose‘ in Cyan; Rückkehr zum Anfangsbild optional."
+ ]
+}
