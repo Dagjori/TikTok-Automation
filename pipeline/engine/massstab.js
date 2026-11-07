@@ -470,6 +470,8 @@ class Tafel extends Baustein {
     this.stoesse = (o.stoesse || []).map((s) => ({ ...s, t: M.zeit(s.t) }));
     this._zeitachse = null;
     if (this.ein > 0) this.melde({ t: this.ein, typ: "tafel", klang: "pop" });
+    // Tafel ab Bild 0: stille Meldung ohne Ton und ohne Bild-Ereignis, damit qc/massstab.py (R2) sie findet (07.11.2026)
+    else this.melde({ t: 0, typ: "tafel", klang: false, bild: false, ab: "start" });
   }
   _fuehrer(w) {
     if (!this.vornModus) return 0;
