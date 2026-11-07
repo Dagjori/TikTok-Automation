@@ -24,6 +24,7 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 |---|---|
 | [[Regelwerk]] | **alle gemeinsamen Regeln auf einer Seite**, mit Änderungen seit 02.11. abends |
 | [[Claude-Chat-Workflow]] | täglicher Ablauf: 10 Ideen, 2 wählen, Skript, Übergabe |
+| [[Originalität und Themenfindung]] | Themen, die auf Deutsch noch niemand gemacht hat: Anti-Listen, Zutaten des Tages, Websuche je Idee |
 | [[Lernschleife und Insights]] | tägliche Auswertung der Zahlen, Lernstand, Vorschläge mit Freigabe |
 | [[Rolle und Kommunikation]] | Rolle von Claude, Antwortschema, anklickbare Fragen, Rangfolge |
 | [[Arbeitsregeln und Sicherheit]] | Nichts ohne Auftrag, öffentliches Repo, Geheimnisse, Recherche, Gedächtnis |

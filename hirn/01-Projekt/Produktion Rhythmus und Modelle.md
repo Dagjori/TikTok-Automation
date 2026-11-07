@@ -26,8 +26,8 @@ cssclasses: [konto-gemeinsam, typ-regel]
 Vor der Arbeit `SKILL.md` und die dort genannten Dateien lesen.
 | Account | Skill | Hirn-Einstieg |
 |---|---|---|
-| 1 `@simulierbar` | `.claude/skills/simulierbar-video/` | [[Account Simulierbar Überblick]] |
-| 2 `@stelldirvor.pov` | `.claude/skills/stelldirvor-video/` | [[Account stelldirvor.pov Überblick]] |
+| 1 `@simulierbar` | `.claude/skills/video-produktion/`, Teil `simulierbar.md` (seit 07.11.) | [[Account Simulierbar Überblick]] |
+| 2 `@stelldirvor.pov` | `.claude/skills/video-produktion/`, Teil `stelldirvor.md` (seit 07.11.) | [[Account stelldirvor.pov Überblick]] |
 Muster: `pipeline/projekte/_demo-simulierbar/`, `_demo-lunar-pov/` (nicht posten). Regeln nie mischen: [[Trennung der Accounts]].
 
 ## Pipeline (beide Accounts, Unterschiede in den Skills)

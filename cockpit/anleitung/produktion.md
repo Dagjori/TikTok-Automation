@@ -4,7 +4,7 @@ Stand 03.11.2026 (Ausbau 3, Wunsch des Inhabers: „alles von hier aus steuern�
 
 ## 0. Grundregeln
 1. **Kleine Schritte** (CLAUDE.md §1): Auftrag zuerst mit dem Aufgaben-Werkzeug in nummerierte Teilaufgaben zerlegen, jede mit Beleg abhaken, am Ende Auftrag und Ergebnis abgleichen.
-2. **Zuerst** `git pull --rebase origin main`. Für jedes Video gilt der Skill des Accounts (`simulierbar-video` bzw. `stelldirvor-video`), strikt getrennt: `SKILL.md` und die dort genannten Dateien lesen, bevor du baust.
+2. **Zuerst** `git pull --rebase origin main`. Für jedes Video gilt der Skill `video-produktion` (`.claude/skills/video-produktion/SKILL.md`, seit 07.11.2026), strikt getrennt: zuerst die Weiche, dann nur der Teil des Accounts (`simulierbar.md` bzw. `stelldirvor.md`) mit seiner Pflichtlektüre im Hirn lesen, bevor du baust. Beim ersten Video je Account gilt der Erstlauf aus `SKILL.md` §4.
 3. **Windows:** Python immer als `py -3`. Hilfsdateien nur unter `cockpit/daten/tmp/`. Bash-Skripte (`./mux.sh` …) laufen über Git Bash.
 4. **Datenbank** über `node cockpit/db.mjs` wie in `cockpit/anleitung/skripte.md` §0.4 (get → `version` merken → `update --version`; Exit 3 = neu lesen, nur deine Felder erneut schreiben; Meilenstein mit `meilenstein`). Felder des Cockpits (`status: freigegeben`, `kommentar`, `idee`, `uhrzeit`) nie überschreiben.
 5. **Schlüssel:** Du hast keine und liest nie `.env`-Dateien. Jedes Skript, das einen Schlüssel braucht, startest du über das Schlüssel-Werkzeug (gleiche Argumente wie im Skill, nur der Aufruf davor ändert sich):

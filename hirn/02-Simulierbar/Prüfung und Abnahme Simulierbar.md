@@ -23,19 +23,20 @@ python3 qc/massstab_test.py                            # Tests der Prüfung selb
 - Stimme < 0,2 s (1), Hook vor 5 s (2), Denkfalle vor 16 s (3), kein „Los geht's“ (3b);
 - längste Phase ohne Bild-Ereignis ≤ 2 s (5);
 - **keine Sticker/Stempel (5d = 0, Pflicht)**; Chips ≤ 15 (5e, Hinweis);
-- Folgen-Aufruf 15–25 s und ≤ 2 s (7); Schlusssatz exakt (10) – **beides seit 07.11.2026 keine Regel mehr** (Aufruf nur in Testvideos, fester Schlusssatz entfällt). `massstab.py` prüft es noch, bis es mit dem Produktions-Skill angepasst ist; bis dahin diese Punkte im Bericht als „entfällt (07.11.)“ erklären;
+- Folgen-Aufruf 15–25 s und ≤ 2 s (7); Schlusssatz exakt (10) – **beides seit 07.11.2026 keine Regel mehr** (Aufruf nur in Testvideos, fester Schlusssatz entfällt); `massstab.py` ist angepasst: 7 ist Hinweis, 10 prüft die Schlusskarte;
 - **Wörter 150–190 (12a), Tempo 2,2–2,5 W/s (12b)**, Satzlängen (12c), Satzpause auf den Wortzeiten max. 0,8 s (12d, Pflicht), **hörbare Satzpause Median 0,35–0,6 s (12d2, Hinweis, aus `audio/stimme.mp3` mit ffmpeg `silencedetect`)** und Länge 65–80 s (12f);
 - Untertitel „kontur“ (14); kein Kanalname/Logo/Rubrik (15); Tonfall (16a aufgeregte Tags, 16b Ausrufezeichen);
-- **Stil erlaubt: 1–15 oder 17–21 (18b, Pflicht bei `"skill": "simulierbar-video"` oder Szene mit `sim_atmosphaere.js`; Stil 16 und Module von Account 2 (`stil_lunar_pov.js`, `lunar_hud.js`, `welt_grossstadt_dach.js`) sind in einer Simulierbar-Szene nicht erlaubt; die Qualitätslatte prüft Claude von Hand)**;
+- **Stil erlaubt: 1–15 oder 17–21 (18b, Pflicht bei `"skill": "video-produktion"` (bzw. alt `"simulierbar-video"`) oder Szene mit `sim_atmosphaere.js`; Stil 16 und Module von Account 2 (`stil_lunar_pov.js`, `lunar_hud.js`, `welt_grossstadt_dach.js`) sind in einer Simulierbar-Szene nicht erlaubt; die Qualitätslatte prüft Claude von Hand)**;
 - Schleife (11), Klangteppich (13a), Akzent (13b), „Warum?“ (8), Erste Wendung (6), Uhr/Zähler ab Rennstart (4).
+- **Seit 07.11.2026 (REA-Regelwerk, Skill `video-produktion`):** 7 Folgen-Aufruf nur noch Hinweis (Testvideo) · **10 Schlusskarte** (`M.pointe` in den letzten 8 s, letzter Satz ohne Frage und Aufruf, Pflicht) · 11 Schleife freiwillig · **12b Tempo 2,3–2,7 W/s ODER 4,6–5,4 Silben/s** · **12c Sätze Median 3–5** · **14 Untertitel-Blöcke ≤ 4 Wörter** (Stil „phrase“) · **R1 Titel ab Bild 1** · **R2 Tafel ab Bild 0** · **R3 Erklärgrafik** (Balken, Formel, Bilanz) · **R4 Du nur im Hook** · **R5 Endstand bei 75–86 % der Länge** (alle Pflicht) · R6 Kipp-Moment 55–72 % und R7 erster Satz ≤ 4 Wörter (Hinweis). Altes Profil zum Nachmessen: `--profil ben_0211`.
 
 Liest `skript.json`, `audio/timing.json` (sonst `timing_schaetzung.json`, dann als „geschätzt“ markiert), `audio/ereignisse.json` (schreibt `render.js` aus dem Ereignis-Protokoll der Bausteine) und `szene.js`. Weitere Aufrufe: `--profil massstab` (Zielbereiche der Vorbilder, 2,5–2,9 W/s usw.), `--profil ben_alt` (bisheriges Ben-Profil 130–170 Wörter, 1,9–2,4 W/s; **veraltet seit 02.11. abends**, nur um ältere Videos nachzumessen), `--ziel tempo=2.0:2.5 --ziel woerter=140:180 --ziel satzpause_max=0.7`, `--json`.
 
 ### Pflicht oder Hinweis im Code (Stand 02.11., aus `pipeline/qc/massstab.py`)
 | Art | Code-Punkte |
 |---|---|
-| **Pflicht** (Exit 1 bei „nein“) | 1 · 2 · 3b · 5 · 5d · 7 · 10 · 12a · 12b · 12c · 12d · 12f · 14 · 15 · 16a · 18b (18b nur nach Skill) |
-| **Hinweis** (zählt nicht für den Exit-Code) | 3 · 4 · 5b · 5c · 5e · 6 · 8 · 11 · 12d2 · 12e · 12g · 13a · 13b · 16b |
+| **Pflicht** (Exit 1 bei „nein“; Stand 07.11.2026) | 1 · 2 · 3b · 5 · 5d · 10 · 12a · 12b · 12c · 12d · 12f · 14 · 15 · 16a · 18b (18b nur nach Skill) · R1 · R2 · R3 · R4 · R5 |
+| **Hinweis** (zählt nicht für den Exit-Code) | 3 · 4 · 5b · 5c · 5e · 6 · 7 · 8 · 11 · 12d2 · 12e · 12g · 13a · 13b · 16b · R6 · R7 |
 
 Profil `ben` (Standard, **seit 02.11.2026 abends**): Tempo 2,2–2,5 W/s (Ziel ca. 2,3), Satzpause max. 0,8 s (Wortzeiten) und Median hörbar 0,35–0,6 s (Hinweis), 150–190 Wörter, Länge 65–80 s, Satzlänge-Median 4–8. Vorher: 1,9–2,4 W/s und 130–170 Wörter (jetzt Profil `ben_alt`). Beispiel (F, 02.11.): „Steuererklärung oder Überstunden“ hat 144 Wörter bei 2,15 W/s (neues Profil: 12a und 12b „nein“, altes Profil „ja“), „Fußgängerampel“ 156 Wörter bei 2,38 W/s (beide Profile „ja“). **Folge:** Die Prüfliste verlangt alle 20 Punkte; das Skript erzwingt nur die Pflichtpunkte. Hinweis-Punkte (Denkfalle, Uhr/Zähler, erste Wendung, „Warum?“, Schleife, Klangteppich, Akzent) müssen trotzdem von Hand erfüllt und im Bericht bestätigt werden.
 

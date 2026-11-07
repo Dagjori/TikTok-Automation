@@ -54,7 +54,7 @@ Key nur als Netzwerk-Secret (`xi-api-key` für `api.elevenlabs.io`), nie in der 
 ElevenLabs ca. 5–25 $/Monat, Buffer ca. 12 $/Monat, Claude-Abo. Render-PC vorhanden (keine Zusatzkosten).
 
 ## Werkzeuge im Repo
-`pipeline/` (render.js, mux.sh, klang.py, atmo.py, tts.py, post_buffer.py, qc/, sim/, engine/, projekte/, render_dienst/) · `tools/` (monitor_kanaele.py, trend_score.py, telegram_senden.py, plan_pdf.mjs, regelwerk_pdf.mjs, account2_uebersicht.py, sitzung_sichern.py, hirn_aus_skills.py) · `data/` (plan, ideen, monitor, trends) · `docs/` (18-render-pc.md, cockpit, plan, regelwerk, trends) · `marke/` (Logos, Account-2-Marke).
+`pipeline/` (render.js, mux.sh, klang.py, atmo.py, tts.py, post_buffer.py, qc/, sim/, engine/, projekte/, render_dienst/) · `tools/` (monitor_kanaele.py, trend_score.py, telegram_senden.py, plan_pdf.mjs, regelwerk_pdf.mjs, account2_uebersicht.py, sitzung_sichern.py, hirn_aus_skills.py, stillgelegt seit 07.11.) · `data/` (plan, ideen, monitor, trends) · `docs/` (18-render-pc.md, cockpit, plan, regelwerk, trends) · `marke/` (Logos, Account-2-Marke).
 **Render-Selbstheilung (02.11.):** `render.js` öffnet bei hängenden Screenshots den Browser neu und wiederholt das Bild ([[Render-Dienst Windows-PC]]).
 
 ## Siehe auch

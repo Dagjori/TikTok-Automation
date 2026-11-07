@@ -16,7 +16,7 @@ Zwei Kanäle, zwei Skills, zwei Regelwerke. **Nie mischen.** Beim Arbeiten an ei
 | Merkmal | Account 1 `@simulierbar` | Account 2 `@stelldirvor.pov` |
 |---|---|---|
 | Hirn-Ordner | `02-Simulierbar` | `03-stelldirvor-pov` |
-| Skill | `simulierbar-video` | `stelldirvor-video` |
+| Skill | `video-produktion`, Teil `simulierbar.md` (bis 06.11. `simulierbar-video`) | `video-produktion`, Teil `stelldirvor.md` (bis 06.11. `stelldirvor-video`) |
 | Konto-Tag | `konto/simulierbar` | `konto/stelldirvor` |
 | Thema | Alltag/Geld durchgerechnet, Euro-Ergebnis | globale Wissenschafts-Gedankenexperimente |
 | Stimme | Ben (ElevenLabs, v4) | **keine** |

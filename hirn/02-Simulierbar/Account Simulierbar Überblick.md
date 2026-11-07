@@ -10,7 +10,7 @@ cssclasses: [konto-simulierbar, typ-wissen]
 
 # Account Simulierbar Überblick
 
-Einstieg in alles zu **Account 1 `@simulierbar`** („Simulierbar“, deutsche Geld-Simulationsvideos mit Stimme Ben). Gesamt-Einstieg: [[Index]]. Account 2 (`@stelldirvor.pov`, POV ohne Stimme) ist strikt getrennt: [[Trennung der Accounts]]; nichts aus diesem Ordner gilt dort. Die operativen Anweisungen für jedes Video stehen im Skill `.claude/skills/simulierbar-video/`; dieses Hirn erklärt und verbindet sie (bei Abweichung gilt die Skill-Datei; bei Widerspruch zwischen Regeln gilt die jüngste Entscheidung des Inhabers).
+Einstieg in alles zu **Account 1 `@simulierbar`** („Simulierbar“, deutsche Geld-Simulationsvideos mit Stimme Ben). Gesamt-Einstieg: [[Index]]. Account 2 (`@stelldirvor.pov`, POV ohne Stimme) ist strikt getrennt: [[Trennung der Accounts]]; nichts aus diesem Ordner gilt dort. Die Regeln stehen in diesem Hirn (zuerst [[REA Simulierbar Regelwerk]] und [[Regelwerk Simulierbar]]); den Ablauf jedes Videos steuert seit 07.11. der Skill `.claude/skills/video-produktion/`, Teil `simulierbar.md` (bei Widerspruch zwischen Regeln gilt die jüngste Entscheidung des Inhabers).
 
 > [!info] Neuregeln des Inhabers, 02.11.2026 abends
 > Nur Thema GELD · kein 30-Tage-Plan mehr (Ideen-Studio: 10 Ideen täglich, der Inhaber wählt 2, Claude Code recherchiert und schreibt das Skript, der Inhaber gibt frei) · Sperrliste entfällt (keine 1:1-Kopie bleibt) · Länder frei · alle Stile mit Qualitätslatte · mehr Effekte mit steigender Spannung, keine großen Sticker · Tempo 150–190 Wörter (ca. 2,3 W/s) · Skript-Anforderungen · Lernschleife. Alles im Detail unten und in den verlinkten Notizen; `CLAUDE.md` wird vom Hauptagenten nachgezogen, bis dahin gelten die Skill-Dateien und dieses Hirn.
@@ -25,7 +25,7 @@ Einstieg in alles zu **Account 1 `@simulierbar`** („Simulierbar“, deutsche G
 | Format | gesichtslose Simulationsvideos, Deutsch, **65–80 s** (mind. 61 s), KI-Stimme Ben, Untertitel Wort für Wort, meist Duell bzw. Rennen gegen die Uhr mit sichtbaren Zählern, 1080×1920 für TikTok und YouTube Shorts |
 | Look | hochwertig, Licht und Atmosphäre, **alle Stile 1–15 und 17–21 mit Qualitätslatte** ([[Stile 17 bis 21]]); mehr Effekte mit steigender Spannung ([[Videoaufbau Simulierbar]]), **keine großen Sticker** |
 | Rhythmus | genau 2 Videos/Tag für den nächsten Tag (Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30); der Inhaber wählt täglich 2 von 10 Ideen; vollautomatisch über Buffer, ohne Freigabe, ohne KI-Label |
-| Skill | `.claude/skills/simulierbar-video/` (nur Account 1) |
+| Skill | `.claude/skills/video-produktion/`, Teil `simulierbar.md` (seit 07.11.; bis 06.11. `simulierbar-video`) |
 
 ## Marke und Profil
 - **Logo „S-Kurve“** (Konzept A, Entscheidung 01.11.) nur als **statisches Profilbild** (`marke/logo/a-s-kurve/…-profilbild-1080.png`), nie im Video; der Inhaber nutzt es als TikTok-Logo.

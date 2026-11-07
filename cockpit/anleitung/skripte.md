@@ -4,7 +4,7 @@ Stand 03.11.2026. Das lokale Cockpit ersetzt das Ideen-Studio (Entscheidung des 
 
 ## 0. Grundregeln
 1. **Kleine Schritte** (CLAUDE.md §1): Zerlege den Auftrag zuerst mit deinem Aufgaben-Werkzeug in nummerierte Teilaufgaben, hake jede mit Beleg ab, gleiche am Ende Auftrag und Ergebnis ab.
-2. **Zuerst** `git pull --rebase origin main`. CLAUDE.md ist geladen; für jedes Skript gilt der Skill des Accounts (`simulierbar-video` bzw. `stelldirvor-video`), strikt getrennt.
+2. **Zuerst** `git pull --rebase origin main`. CLAUDE.md ist geladen; für jedes Skript gelten die Befehle aus `tools/chat_befehle.py` und die Regeln des Accounts im Hirn (zuerst das REA-Regelwerk des Accounts), strikt getrennt.
 3. **Windows:** Python immer als `py -3` (nicht `python3`, das öffnet den Microsoft Store). Hilfsdateien nur unter `cockpit/daten/tmp/` (wird nicht committet).
 4. **Datenbank des Cockpits** über `node cockpit/db.mjs` (Ausgabe JSON):
    - lesen: `node cockpit/db.mjs get skripte <id>` (Feld `version` merken), `node cockpit/db.mjs get stand lernstand-acc1`
@@ -24,7 +24,7 @@ Für jeden Slot (nacheinander, Mittag zuerst):
 1. Slot-Dokument lesen. Weiter nur bei `status` = `recherche` (sonst überspringen und in der Abschlussnachricht nennen). Meilenstein „Recherche läuft“.
 2. **Befehl holen:** das Feld `idee` des Dokuments nach `cockpit/daten/tmp/idee-<id>.json` schreiben und den Lernstand (`stand/lernstand-<acc1|acc2>` → `text`) nach `cockpit/daten/tmp/lernstand-<acc>.txt`, dann
    `py -3 tools/chat_befehle.py --skript-auftrag <simulierbar|stelldirvor> --ideen cockpit/daten/tmp/idee-<id>.json --lernstand cockpit/daten/tmp/lernstand-<acc>.txt [--kommentar "<Kommentar des Inhabers>"]`
-   **Nur mit `--skript-auftrag` aufrufen** (ohne den Schalter schreibt das Skript Studio-Dateien und Hirn-Notizen neu). Die Ausgabe ist dein verbindlicher Auftrag (Rolle, Faktentreue, Spannung, Aufbau, Stimme bzw. Sätze, Caption, Recherche, JSON-Form). Dazu gelten aus dem Skill: Simulierbar `ablauf.md` §1–§5 und `ton.md` §3; Account 2 `ablauf.md` „Skript-Anforderungen“ und `themen-und-plan.md` (Weltvielfalt).
+   **Nur mit `--skript-auftrag` aufrufen** (ohne den Schalter schreibt das Skript Studio-Dateien und Hirn-Notizen neu). Die Ausgabe ist dein verbindlicher Auftrag (Rolle, Faktentreue, Spannung, Aufbau, Stimme bzw. Sätze, Caption, Recherche, JSON-Form). Dazu gelten aus dem Hirn: Simulierbar `REA Simulierbar Regelwerk`, `Videoaufbau Simulierbar` §1–§5 und `Stimme und Ton Simulierbar`; Account 2 `REA stelldirvor Regelwerk`, `Ablauf Account 2` „Skript-Anforderungen“ und `Themen und Plan Account 2` §2–§3 (Weltvielfalt).
 3. **Recherche:** jede Zahl, jedes Datum, jede Regel per Websuche belegen, die Primärquelle öffnen, wenn die Suche nur einen Ausschnitt zeigt. Stand passend zum Video-Tag (Jahr, Rechtsstand, Preise). Rechne jedes Ergebnis mit `py -3` nach (Skript unter `cockpit/daten/tmp/`). Meilenstein „Zahlen belegt“.
 4. **Trägt die Idee nicht** (Zahlen nicht belegbar, Themen-Logik falsch, Ausschlussthema): nichts erfinden. `status` = `fehler`, `fehler_phase` = `recherche`, `fehler` = Grund in einem Satz plus Vorschlag (z. B. andere Idee aus der Liste).
 5. **Skript schreiben** genau in der JSON-Form des Befehls (ein Objekt), Selbstprüfung ausfüllen: Simulierbar 150–190 Wörter Sprechtext (ohne Audio-Tags gezählt), höchstens 3 Ausrufezeichen, keine Tags `[excited]`/`[shouting]`/`[energetic]`, kein `<break>`, kein „Los geht's“, feste Sätze (Folgen-Aufruf, Schluss); Account 2: 12–18 Sätze mit 3–9 Wörtern, Anzeige passt zum Zeitraffer, Faktenzeile.

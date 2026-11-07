@@ -8,7 +8,7 @@ tags: [konto/stelldirvor, ueberblick]
 cssclasses: [konto-stelldirvor, typ-wissen]
 ---
 
-> Quelle: `.claude/skills/stelldirvor-video/SKILL.md`. Diese Notiz wird mit `python3 tools/hirn_aus_skills.py` erzeugt. Änderungen bitte im Skill vornehmen, nicht hier. Bei Abweichung gilt der Skill.
+> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/SKILL.md` (Skill am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` ist stillgelegt. Produktion: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
 
 # Account stelldirvor.pov Überblick
 
@@ -32,7 +32,7 @@ cssclasses: [konto-stelldirvor, typ-wissen]
 
 **Getrennt von Account 1:** Folgen-Aufruf, Schlusssatz, Schleife, Untertitel, Stimme, `massstab.py` und die Stile 17–21 gelten hier nicht ([[Trennung der Accounts]]).
 
-**Gilt nur für Account 2 `@stelldirvor.pov`.** Für Simulierbar gelten weiter der Maßstab ([[Maßstab Simulierbar]] (CLAUDE.md §5), Skill `simulierbar-video`), `pipeline/qc/massstab.py`, Stimme Ben und der Videoaufbau aus [[Videoaufbau Simulierbar]] (CLAUDE.md §6). Umgekehrt gilt für Account 2 nichts davon (kein Folgen-Aufruf, kein Schlusssatz, keine Schleife, keine Untertitel, keine Stimme).
+**Gilt nur für Account 2 `@stelldirvor.pov`.** Für Simulierbar gelten weiter der Maßstab ([[Maßstab Simulierbar]] (CLAUDE.md §5), Skill `video-produktion`, Teil `simulierbar.md`), `pipeline/qc/massstab.py`, Stimme Ben und der Videoaufbau aus [[Videoaufbau Simulierbar]] (CLAUDE.md §6). Umgekehrt gilt für Account 2 nichts davon (kein Folgen-Aufruf, kein Schlusssatz, keine Schleife, keine Untertitel, keine Stimme).
 
 Grundlage: eigene Messungen an den 4 Referenzvideos des Inhabers (02.11.; Bildvergleich je Bild, Phasenkorrelation, Pixelmessung der Schrift, EBU-R128-Lautheit, Spektren). Die Referenzen selbst, Standbilder, Texte und Ton kommen **nie** ins Repo (öffentlich). Hier stehen nur Messwerte und Regeln in eigenen Worten. Der Inhaber kann weitere Vorbild-Videos schicken; sie werden wie die ersten vier ausgewertet (nur abstrahierte Messwerte, nie die Dateien).
 

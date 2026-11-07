@@ -8,7 +8,7 @@ tags: [konto/stelldirvor, design, typografie]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
-> Quelle: `.claude/skills/stelldirvor-video/design.md`. Diese Notiz wird mit `python3 tools/hirn_aus_skills.py` erzeugt. Änderungen bitte im Skill vornehmen, nicht hier. Bei Abweichung gilt der Skill.
+> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/design.md` (Skill am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` ist stillgelegt. Produktion: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
 
 # Design Account 2
 

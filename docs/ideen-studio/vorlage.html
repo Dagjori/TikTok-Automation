@@ -150,8 +150,8 @@ const SLOTS = ["mittag", "abend"];
    docs/automatik/disponent.md) startet je Video-Tag eine Sitzung bzw. schickt ihr den Auftrag. Kein Connector nötig. */
 const AUTO = { anleitung: "docs/automatik/tages-sitzung.md" };
 const FELDER_IDEE = {
-  simulierbar: [["hook", "Erster Satz"], ["ergebnis_ansatz", "Rechnung und Ergebnis"], ["warum_relevant", "Wen es betrifft"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["bildidee", "Bildidee"], ["laender", "Land"], ["risiko", "Risiko"]],
-  stelldirvor: [["ereignis", "Ereignis"], ["messgroesse", "Messwert-Anzeige"], ["welt", "Welt"], ["standpunkt", "Standpunkt"], ["tageszeit_verlauf", "Tageszeit"], ["bewegung", "Bewegung in der Welt"], ["kamera", "Kamera"], ["zeitraffer", "Zeitraffer"], ["hoehepunkt", "Höhepunkt"], ["pointe", "Pointe"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["laender", "Ort"], ["risiko", "Risiko"]],
+  simulierbar: [["hook", "Erster Satz"], ["ergebnis_ansatz", "Rechnung und Ergebnis"], ["warum_relevant", "Wen es betrifft"], ["originalitaet", "Originalität"], ["feld", "Themenfeld"], ["zutat", "Zutat"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["bildidee", "Bildidee"], ["laender", "Land"], ["risiko", "Risiko"]],
+  stelldirvor: [["ereignis", "Ereignis"], ["messgroesse", "Messwert-Anzeige"], ["welt", "Welt"], ["standpunkt", "Standpunkt"], ["originalitaet", "Originalität"], ["feld", "Themenfeld"], ["massstab", "Maßstab"], ["zutat", "Zutat"], ["tageszeit_verlauf", "Tageszeit"], ["bewegung", "Bewegung in der Welt"], ["kamera", "Kamera"], ["zeitraffer", "Zeitraffer"], ["hoehepunkt", "Höhepunkt"], ["pointe", "Pointe"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["laender", "Ort"], ["risiko", "Risiko"]],
 };
 const STATUS = {
   gewaehlt: ["Idee gewählt", ""], recherche: ["Claude Code recherchiert", "run"], skript_fertig: ["Skript fertig, bitte prüfen", "warn"],
@@ -312,8 +312,13 @@ async function auftragSenden(auftrag) {
   }
 }
 /* ---------- Aktionen ---------- */
+/* Zutaten des Tages: je Liste n zufällige Einträge (gleiche Logik wie tools/chat_befehle.py und cockpit/lib/studio.mjs) */
+function zutatenText(b) {
+  const n = b.zutaten_je_liste || 2;
+  return (b.zutaten || []).map((z) => { const rest = z.eintraege.slice(), wahl = []; while (wahl.length < n && rest.length) wahl.push(rest.splice(Math.floor(Math.random() * rest.length), 1)[0]); return "- " + z.name + ": " + wahl.join(" · "); }).join("\n");
+}
 function ideenBefehl(wunsch) {
-  let t = K().ideen_vorlage.replace("{{LERNSTAND}}", () => lernText()).replace("- {{BISHER}}", () => bisherListe().map((x) => "- " + x).join("\n"));
+  let t = K().ideen_vorlage.replace("{{LERNSTAND}}", () => lernText()).replace("- {{BISHER}}", () => bisherListe().map((x) => "- " + x).join("\n")).replace("{{ZUTATEN}}", () => zutatenText(K()));
   if (wunsch.trim()) t = t.replace("AUFGABE\n", () => "MEIN WUNSCH FÜR HEUTE: " + wunsch.trim() + "\n\nAUFGABE\n");
   return t + "\n\nVideo-Tag: " + S.datum + ". Alle Aussagen müssen für das Jahr " + S.datum.slice(0, 4) + " gelten.";
 }
@@ -636,7 +641,7 @@ function renderFallback() {
   el.replaceChildren(h("div", { class: "panel" }, h("details", { open: offen }, h("summary", null, "Notweg: Befehl in Claude Chat kopieren"),
     h("div", { class: "body" }, h("p", { class: "muted" }, "Nur falls Claude Code nicht erreichbar ist: im echten Claude Chat mit aktivierter Websuche. Befehl kopieren, dort einfügen, die Skripte danach in eine Claude-Code-Sitzung einfügen."),
       h("div", { class: "row" },
-        h("button", { class: "btn ghost", onclick: (e) => copy(BEFEHLE[k].ideen_text.replace(BEFEHLE[k].lernstand, () => lernText()) + "\n\nVideo-Tag: " + S.datum, e.currentTarget) }, "Befehl 1 kopieren: zehn Ideen"),
+        h("button", { class: "btn ghost", onclick: (e) => copy(BEFEHLE[k].ideen_text.replace(BEFEHLE[k].lernstand, () => lernText()).replace("{{ZUTATEN}}", () => zutatenText(BEFEHLE[k])) + "\n\nVideo-Tag: " + S.datum, e.currentTarget) }, "Befehl 1 kopieren: zehn Ideen"),
         h("button", { class: "btn ghost", onclick: (e) => copy(BEFEHLE[k].skript_text.replace("{{IDEEN}}", () => (sel.length ? JSON.stringify(sel, null, 1) : "[Hier die zwei gewählten Ideen einfügen]")).replace(BEFEHLE[k].lernstand, () => lernText()) + "\n\nVideo-Tag: " + S.datum, e.currentTarget) }, "Befehl 2 kopieren: Skripte"))))));
 }
 function renderBar() {

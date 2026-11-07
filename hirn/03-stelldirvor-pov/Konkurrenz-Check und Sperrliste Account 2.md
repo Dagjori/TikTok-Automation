@@ -8,9 +8,11 @@ tags: [konto/stelldirvor, sperrliste, konkurrenz, archiv]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
+> **Seit 07.11.2026 gilt die Originalitätsregel:** Weltuntergangs-Klassiker gesperrt, kein Thema, das es auf Deutsch schon gibt ([[Originalität und Themenfindung]]). Die Listen unten helfen als Hintergrund.
+
 > **Veraltet seit 02.11.2026, nur Archiv.** Die Sperrliste (Lunar Animations, US-Konten, deutscher Markt) entfällt, auch die der US-Konten und von Lunar; deren Themen sind frei und dürfen auf Deutsch umgesetzt werden. Die Notiz bleibt zur Nachvollziehbarkeit erhalten (Entscheidung des Inhabers); gültig ist [[Themen und Plan Account 2]] mit dem Weltenkatalog und der Kopierregel (keine 1:1-Kopie).
 
-> Quelle: `.claude/skills/stelldirvor-video/themen-und-plan.md`. Diese Notiz wird mit `python3 tools/hirn_aus_skills.py` erzeugt. Änderungen bitte im Skill vornehmen, nicht hier. Bei Abweichung gilt der Skill.
+> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/themen-und-plan.md` (Skill am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` ist stillgelegt. Produktion: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
 
 # Konkurrenz-Check und Sperrliste Account 2
 

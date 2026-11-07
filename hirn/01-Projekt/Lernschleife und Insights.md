@@ -54,6 +54,7 @@ Damit Claude die Kurve trotzdem nutzen kann: wöchentlich ein Screenshot oder Ex
 | Hell gegen dunkel | Simulierbar | helle Stile (1, 2, 6, 10, 14) gegen dunkle Welten mit Leuchtakzenten: Ø-Zeit, Anteil der Länge | dunkle Stile haben Vorrang, die eigenen Zahlen vom 05.11. (Stil 18) sprechen teils dagegen |
 | Später Endstand | Simulierbar | Anteil der Länge vor und nach der Umstellung auf den Endstand bei ca. 80 % | REA: Auflösung bei 80 % gegen 57 % bei den schwachen |
 | Frühes Ereignis | stelldirvor | Ø-Wiedergabezeit vor (9–15 s) und nach der Umstellung auf das Ereignis bei ca. 8 s | REA und Lernschleife 03.11. |
+| Ungewöhnliche Themen | beide | Aufrufe und Ø-Zeit der Ideen nach den Originalitätsregeln gegen die Klassiker davor, je Themenfeld getrennt | Entscheidung 07.11. ([[Originalität und Themenfindung]]): Klassiker liefen bisher am besten, sind aber auf Deutsch schon gemacht |
 Aussagen erst ab ca. 5 Videos je Gruppe, vorher nur als Beobachtung (A).
 
 ## Regeln

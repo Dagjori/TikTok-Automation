@@ -11,6 +11,7 @@ cssclasses: [konto-simulierbar, typ-regel]
 # Sperrliste und Auswahlregeln Simulierbar
 
 > [!warning] Veraltet seit 02.11.2026 (Entscheidung des Inhabers), nur Archiv
+> **Seit 07.11.2026 gilt stattdessen die Originalitätsregel:** kein Thema, das es auf Deutsch schon gibt, Anti-Liste im Befehl ([[Originalität und Themenfindung]]). Die Listen unten helfen als Hintergrund.
 > Die **Sperrliste entfällt (erstmal)**: Gesperrte Themen von Konkurrenzkanälen gelten nicht mehr, der Konkurrenz-Check ist keine Pflichtsperre mehr, der 30-Tage-Plan ist Archiv. **Bleibt: keine 1:1-Kopie** von Skript, Sätzen, Bild- oder Szenenideen eines fremden Videos (CRP „Unoriginal“).
 > **Gültig geblieben und hierhin nicht mehr gehörig:** Auswahlregeln (GELD 100 %, Themen-Logik, Länder frei), Finanz- und Ausschlussregeln, Zahlen für Deutschland 2026 und feste Termine stehen jetzt in [[Auswahl- und Finanzregeln Simulierbar]] (Titel dieser Notiz bleibt aus Link-Gründen). Nichts unten sperrt ein Thema.
 

@@ -56,15 +56,26 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
   const befehle = () => JSON.parse(fs.readFileSync(path.join(repo, "docs", "ideen-studio", "befehle.json"), "utf8"));
   const lernstand = (konto) => db.get("stand", `lernstand-${KONTEN[konto].praefix}`)?.daten?.text || befehle()[konto].lernstand || "";
 
+  // Zutaten des Tages: je Liste n zufällige Einträge (gleiche Logik wie zutaten_ziehen in tools/chat_befehle.py)
+  function zutatenZiehen(b) {
+    const n = b.zutaten_je_liste || 2;
+    return (b.zutaten || []).map((z) => {
+      const rest = [...z.eintraege], wahl = [];
+      while (wahl.length < n && rest.length) wahl.push(rest.splice(Math.floor(Math.random() * rest.length), 1)[0]);
+      return `- ${z.name}: ${wahl.join(" · ")}`;
+    }).join("\n");
+  }
+
   function ideenPrompt(konto, datum, wunsch) {
     const b = befehle()[konto];
     const titel = db.liste("skripte", [["konto", "==", konto]]).map((d) => d.daten.titel).filter(Boolean);
     const bisher = [...new Set([...(b.bisher || []), ...titel])];
-    let p = b.ideen_vorlage.replace("{{LERNSTAND}}", () => lernstand(konto)).replace("- {{BISHER}}", () => bisher.map((t) => `- ${t}`).join("\n"));
+    const zutaten = zutatenZiehen(b);
+    let p = b.ideen_vorlage.replace("{{LERNSTAND}}", () => lernstand(konto)).replace("- {{BISHER}}", () => bisher.map((t) => `- ${t}`).join("\n")).replace("{{ZUTATEN}}", () => zutaten);
     if (wunsch) p = p.replace("AUFGABE\n", () => `MEIN WUNSCH FÜR HEUTE: ${wunsch}\n\nAUFGABE\n`);
     p += `\n\nVideo-Tag: ${datum}. Alle Aussagen müssen für das Jahr ${datum.slice(0, 4)} gelten.`;
-    p += '\n\nHINWEIS COCKPIT: Benutze keine Werkzeuge und lies keine Dateien. Antworte ausschließlich mit dem JSON-Objekt {"ideen": [...]} mit genau 10 Ideen, ohne Text davor oder danach.';
-    return p;
+    p += '\n\nHINWEIS COCKPIT: Nutze die Websuche für die Originalitäts-Prüfung und für Belege (zügig, je Idee 1 bis 3 Suchen). Lies keine Dateien und ändere nichts. Antworte am Ende ausschließlich mit dem JSON-Objekt {"gestrichen": [...], "ideen": [...]} mit genau 10 Ideen, ohne Text davor oder danach.';
+    return { text: p, zutaten };
   }
 
   const skriptPrompt = (a) =>
@@ -100,20 +111,23 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
     ideen({ konto, datum, wunsch = "" }) {
       pruefe({ konto, datum });
       wunsch = String(wunsch || "").trim().slice(0, 500);
+      const prompt = ideenPrompt(konto, datum, wunsch);
       auftrag({
         art: "ideen",
         titel: `10 Ideen · ${KONTEN[konto].name} · ${datum}`,
-        text: ideenPrompt(konto, datum, wunsch),
+        text: prompt.text,
         modus: "plan",
         nachher: (text, istFehler) => {
           if (istFehler) throw fehler("Ideen-Auftrag abgebrochen");
-          const ideen = (jsonAusText(text).ideen || []).filter((i) => i && i.titel).slice(0, 10).map((i, n) => ({ ...i, nr: Number(i.nr) || n + 1 }));
+          const antwort = jsonAusText(text);
+          const ideen = (antwort.ideen || []).filter((i) => i && i.titel).slice(0, 10).map((i, n) => ({ ...i, nr: Number(i.nr) || n + 1 }));
           if (!ideen.length) throw fehler("Claude hat keine gültigen Ideen geliefert");
+          const gestrichen = Array.isArray(antwort.gestrichen) ? antwort.gestrichen.map(String).slice(0, 30) : [];
           const id = ideenId(konto, datum);
-          db.schreiben("ideen", id, { konto, datum, ideen, wunsch, erzeugt: jetzt() }, { ifVersion: db.get("ideen", id)?.version, von: "claude" });
+          db.schreiben("ideen", id, { konto, datum, ideen, wunsch, zutaten: prompt.zutaten, gestrichen, erzeugt: jetzt() }, { ifVersion: db.get("ideen", id)?.version, von: "claude" });
         },
       });
-      return { ok: true, hinweis: "Claude erzeugt die Ideen (ca. 1–2 Min.)" };
+      return { ok: true, hinweis: "Claude sucht und prüft die Ideen (ca. 3–6 Min.)" };
     },
 
     waehlen({ konto, datum, slot, nr }) {

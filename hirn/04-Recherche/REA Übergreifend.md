@@ -46,11 +46,26 @@ Text im Bild im Hook (12/12) · Ton ab 0 s (12/12) · klares Versprechen (12/12)
 | Countdown, Wissensvorsprung | kaum (0/6) | 4–5 von 6 | nur A2 |
 | Führungswechsel, Vergleichszeichen | 5/6 | kein Gegenspieler | nur A1 |
 
+## Womit die Vorbilder gebaut sind (Werkzeug-Forensik 07.11.)
+Kein Beleg aus den Dateien: TikTok kodiert jedes Video neu (Encoder Lavf58.76.100 in 16/16, F) und entfernt so die Angabe des Programms. Die Einordnung stützt sich auf eigene Messungen (Bild-zu-Bild-Differenz, harte Schnitte, Bildmerkmale) und öffentliche Profilangaben.
+
+| | Simulierbar-Vorbilder | stelldirvor-Vorbilder |
+|---|---|---|
+| Creator | 8 von 9 vermutlich kurzsimuliert (Themen decken sich mit [[Simulation-Trendanalyse-2026-11-02]], S); V16 ein anderer, englischer Kanal | vermutlich Lunar Animation (`@lunarcheeseee`) für den Großteil (S) |
+| Bildrate | echte 30 Bilder/s, keine Doppelbilder in Bewegung (F) | echte 30 Bilder/s, Länge bildgenau (2.400 Bilder = 80,000 s, F) |
+| Schnitte | 0 harte Schnitte in 8 von 9, eine durchgehende Szene mit Blenden (F) | meist 1–2 Schnitte, Einstellungen bis 62 s am Stück (F) |
+| Bewegungsunschärfe | keine, auch bei schneller Fahrt (Radspeichen scharf, F) | ja, Kamera und Objekte; dazu Tiefenunschärfe, Leuchten, weiche Schatten (F) |
+| Sonstiges | zwei Optiken (dunkles HUD, Pastell-Papier) mit identischem Baukasten aus Karten, Zählern und Untertiteln; Hintergrund-Illustrationen stehen, nur Figurenteile, Wasser und Anzeigen bewegen sich (F) | Klötzchen-Figuren, Menschenmengen und Zähler laufen synchron über lange Einstellungen (F) |
+| **Schluss** | **programmierte 2D-Motion-Graphics:** Remotion oder ein vergleichbarer HTML-Renderer (Hyperframes sähe gleich aus), alternativ After Effects mit Vorlagen und Ausdrücken (S). Kein 3D | **echtes 3D-Programm, sehr wahrscheinlich Blender** (S): das Instagram-Konto, das der Konkurrenz-Check vom 02.11. Lunar zuordnet ([[Konkurrenz-Check und Sperrliste Account 2]]), heißt „Lunar Blender Animations“ (gleiche Bio-Formel wie auf TikTok). Unreal ist technisch nicht ausgeschlossen. Kein KI-Video (zu lange, gleichbleibende Einstellungen), kein Three.js-Look |
+
+Folge für uns: Unsere Wahl (Three.js mit HTML-HUD, Blender für 3D) deckt beide Machweisen ab. Für A2 bringt Blender mit echter Bewegungs- und Tiefenunschärfe die Optik der Vorbilder näher als reines Three.js (vgl. Qualitätslücke in [[Format Account 2 Lunar]]).
+
 ## Änderungen
 | Datum | Änderung | Freigabe |
 |---|---|---|
 | 2026-11-07 | Entwurf aus dem ersten REA-Lauf (16 Videos) | offen |
 | 2026-11-07 | freigegeben zusammen mit den Account-Regelwerken | Inhaber per Klick |
+| 2026-11-07 | Abschnitt „Womit die Vorbilder gebaut sind“ (Werkzeug-Forensik an den 16 Videos, nur Einordnung, keine Regel) | – |
 
 ## Siehe auch
 [[REA-Video Methode]] · [[REA Simulierbar Regelwerk]] · [[REA stelldirvor Regelwerk]] · [[Entscheidungen Log]]

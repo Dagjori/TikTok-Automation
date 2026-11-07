@@ -37,7 +37,7 @@ const M = new Massstab(hud, zp, {
 - Schrift Inter / Inter Display (SIL OFL, lokal über `@fontsource/inter`, Lizenz `pipeline/engine/schriften/OFL-Inter.txt`). Keine weiteren Schriften ohne Lizenzdatei.
 - **Zahlen:** Inter Display 800, Tabellenziffern (`tnum`), Laufweite −0,035 em; deutsche Schreibweise (1.000 €, 3,50 €).
 - **Etiketten:** Inter 700, Versalien, Laufweite +0,16 em, 16–22 px, Grau `#9AA3B2` bzw. Teamton.
-- **Titel im Hook (optional):** Inter Display 800, ohne Comic-Kontur, weicher Schatten.
+- **Titel im Hook (seit 07.11.2026 Pflicht ab Bild 1, [[REA Simulierbar Regelwerk]] R01):** die Duell-Frage mit „vs“ zwischen den Seiten, `M.titel({ woerter: [{ text, ein: 0, team: "a" }, { text: "vs", art: "vs", ein: 0 }, { text, ein: 0, team: "b" }] })`; Inter Display 800, ohne Comic-Kontur, weicher Schatten.
 
 ## 3. Bausteine
 | Baustein | Aufruf | Look in `sim_hud.css` |
@@ -56,8 +56,8 @@ const M = new Massstab(hud, zp, {
 
 **Weniger ist mehr:** Chips nur mit neuer Zahl bzw. Information (≤ 15 je Video, Hinweis 5e). Jede Regel lieber als Objekt in der Welt zeigen und den Chip klein halten.
 
-## 4. Untertitel (Pflicht, unverändert)
-`M.untertitel({ stil: "kontur", unten: 1450, groesse: 64 })` – **Wort für Wort**, jedes gesprochene Wort erscheint einzeln, max. 2 Zeilen, mittig, **weiße fette Schrift mit schwarzer Kontur, aktuelles Wort gelb, kein Kasten** (Inhaber 01.11.; Phrasen mit 0,26 s Satzpausen wurden ersetzt). Schlüsselwörter der Teams färbt `teams.*.woerter`. Der Phrasen-Stil (`M.untertitel()` ohne `stil`) wird nicht verwendet. `sim_hud.css` ändert die Untertitel nicht.
+## 4. Untertitel (Pflicht; seit 07.11.2026 in Blöcken)
+`M.untertitel({ max: 4, unten: 1450, groesse: 64 })` – **Blöcke von 1–4 Wörtern** (Phrasen-Stil), mittig, weiße fette Schrift mit schwarzer Kontur, kein Kasten; das **Schlüsselwort in der Teamfarbe seiner Seite** (`teams.*.woerter`, zusätzlich `schluessel: { "Wort": "akzent" }`). Grund: starke Vorbilder zeigen Blöcke 5/5 und ein nach Bedeutung gefärbtes Schlüsselwort 6/6, die Hervorhebung des gesprochenen Worts 0/6 ([[REA Simulierbar Regelwerk]]). Prüfpunkt 14 in `qc/massstab.py` (Stil „phrase“, höchstens 4 Wörter). **Bis 07.11.:** Wort für Wort (`stil: "kontur"`, aktuelles Wort gelb, Inhaber 01.11.). `sim_hud.css` ändert die Untertitel nicht.
 
 ## 5. Layout und sichere Zonen
 - Inhalte **mittig**, Mittelachse **x = 540**, Schutzzone links 150 px und rechts 150 px (`SICHER` in `massstab.js`), oben 150 px; Achse 540, nutzbare Breite 780 (Entscheidung 01.11.: symmetrisch, kein Kalibrier-Test). 1080×1920 für TikTok und YouTube Shorts.

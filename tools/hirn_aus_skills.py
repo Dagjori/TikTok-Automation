@@ -10,6 +10,7 @@ Veraltete Teile des Skills (Sperrliste, 30-Tage-Plan) erzeugen Notizen mit statu
 Nicht erzeugt (andere Quelle, von diesem Skript unberührt): Regelwerk Account 2, Befehl Ideen und Skripte Account 2.
 """
 import re
+import sys
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
@@ -182,6 +183,13 @@ def schreiben(titel, text):
 
 
 def main():
+    # STILLGELEGT seit 07.11.2026: Der Skill stelldirvor-video wurde am 06.11. entfernt. Die Notizen in hirn/03-stelldirvor-pov/
+    # werden seitdem direkt gepflegt (Regelquelle ist das Hirn; Produktion über den Skill video-produktion). Ein Lauf würde
+    # die gepflegten Notizen mit alten Ständen überschreiben, deshalb bricht das Skript ab.
+    if not QUELLE.is_dir() or "--trotzdem" not in sys.argv:
+        print("tools/hirn_aus_skills.py ist stillgelegt (seit 07.11.2026): Die Account-2-Notizen im Hirn werden direkt gepflegt. "
+              "Nichts geschrieben. Prüfen und Desktop abgleichen: python3 tools/hirn_pruefen.py")
+        return
     ZIEL.mkdir(parents=True, exist_ok=True)
     for datei, titel in TITEL.items():
         roh = (QUELLE / datei).read_text(encoding="utf-8")

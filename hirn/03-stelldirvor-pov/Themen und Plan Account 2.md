@@ -8,13 +8,13 @@ tags: [konto/stelldirvor, themen, welten, archiv]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
-> Quelle: `.claude/skills/stelldirvor-video/themen-und-plan.md`. Diese Notiz wird mit `python3 tools/hirn_aus_skills.py` erzeugt. Änderungen bitte im Skill vornehmen, nicht hier. Bei Abweichung gilt der Skill.
+> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/themen-und-plan.md` (Skill am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` ist stillgelegt. Produktion: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
 
 # Themen und Plan Account 2
 
 *Themen, Weltenkatalog und Tagesablauf · @stelldirvor.pov*
 
-Gilt nur für Account 2 (Skill `stelldirvor-video`). **Stand der Regeln: 02.11.2026 abends (Entscheidungen des Inhabers).** Kennzeichnung: **(F)** belegter Fakt · **(S)** Schätzung · **(A)** Annahme.
+Gilt nur für Account 2 (Skill `video-produktion`, Teil `stelldirvor.md`). **Stand der Regeln: 02.11.2026 abends (Entscheidungen des Inhabers).** Kennzeichnung: **(F)** belegter Fakt · **(S)** Schätzung · **(A)** Annahme.
 
 **Was seit 02.11.2026 abends gilt und was veraltet ist**
 | Gültig | Veraltet (nur Archiv, nicht gelöscht) |
@@ -34,7 +34,8 @@ Gilt nur für Account 2 (Skill `stelldirvor-video`). **Stand der Regeln: 02.11.2
 - **Kernidee bleibt:** „Was wäre, wenn …“-Gedankenexperimente mit einer **messbaren Größe** (die Anzeige läuft bis „HIER“), **ein Ereignis, das man von einem Standpunkt aus** sieht.
 - **Breite flexibel, damit es endlos viele Themen gibt:** Wissenschaft, Natur, Geografie, Geschichte, Technik und mehr; **spannend** (ersetzt „große globale Wissenschaftsthemen“). Orte weltweit, auch Deutschland und andere Länder, wie es zum Thema passt; Texte deutsch (ersetzt „kein Deutschland-Bezug“). **Ungeeignet** bleiben Alltagsthemen ohne messbare Größe.
 - **5-Sekunden-Rahmen erlaubt**, wenn sich das Thema gut simulieren lässt (das alte Verbot ist entfallen).
-- **Keine Sperrliste mehr** (auch nicht die der US-Konten und von Lunar Animations): Themen dieser Kanäle sind frei, der Inhaber kennt sie selbst; US-Themen dürfen übernommen und in deutscher Sprache umgesetzt werden.
+- **Originalität (seit 07.11., ersetzt „keine Sperrliste mehr“):** Die großen Weltuntergangs-Klassiker sind **gesperrt** (Anti-Liste im Befehl, [[Befehl Ideen und Skripte Account 2]]), und kein Thema, zu dem es auf Deutsch schon ein Video mit der gleichen Prämisse gibt (Websuche je Idee, Feld `originalitaet`). Englische Vorbilder außerhalb der Anti-Liste sind erlaubt, nur mit eigenem Skript und deutlich anderem Design. Methode: [[Originalität und Themenfindung]].
+- **Themenfelder (07.11.):** Natur und Tiere · Geschichte umgedreht (echter Ort oder Moment, eine Größe anders, keine reale Tragödie, keine Opfer) · Technik und Versorgung (an einem konkreten Ort, nicht der weltweite Blackout), je mindestens einmal unter 10 Ideen; dazu weiter Physik, Wetter, Geografie, Weltraum mit eigener Prämisse. **Maßstab meist persönlich:** mindestens 6 von 10 Ideen an einem greifbaren Ort mit vorstellbarer Skala.
 - **Die Kopierregel bleibt (verbindlich):** keine 1:1-Kopie von Sätzen, Etiketten, Faktenzeilen, Bild- und Szenenideen eines fremden Videos (CRP-Ausschluss „Unoriginal“; bei Nachahmern liegt die Reichweite laut unserer Recherche nur bei 0,2–5 % des Originals, F). **Gleiches Thema nur mit eigenem Skript und deutlich anderem Design** (anderer Ort bzw. andere Welt, andere Dramaturgie).
 - **Woher die Themen kommen:** Jeden Tag bekommt der Inhaber **10 Videoideen** (Ideen-Studio), wählt **2 für den nächsten Tag**, danach schreibt die Tages-Sitzung von Claude Code das Skript mit Recherche ([[Ablauf Account 2]] „Skript-Anforderungen“). Es gibt keinen Themenplan, keine Reihenfolge und keine Reserveliste mehr. Termingebundene Ideen (Jahrestage, Himmelsereignisse) darf das Ideen-Studio vorschlagen.
 - **Empfehlungen aus dem alten Plan (nicht verbindlich, F aus der Planung 02.11.):** Katastrophen mit staunenden und ruhigen Themen abwechseln; Pointen im Wechsel („es passiert fast nichts“, „es ist wirklich passiert“, „das Gegenteil stimmt“, „die Zahl ist kleiner bzw. größer als gedacht“); keine Opfer zeigen, jedes Ende sachlich (Pointe, Faktenzeile); Ausschlussthemen aus [[Plattformregeln und Posting]] (CLAUDE.md §7) (Tragödien, Politik, Krypto …) bleiben ausgeschlossen.

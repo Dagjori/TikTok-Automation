@@ -7,7 +7,7 @@ Erzeugt/aktualisiert (idempotent):
   hirn/.obsidian/snippets/tiktok-farben.css
   hirn/00-Start/Farbcode.md           Legende
   jede Notiz: Zeile `cssclasses: [konto-…, typ-…]` im Kopf (für die Überschriftenfarben)
-Aufruf: python3 tools/hirn_farben.py   (nach jedem Lauf von tools/hirn_aus_skills.py wiederholen)
+Aufruf: python3 tools/hirn_farben.py   (nach größeren Hirn-Änderungen wiederholen)
 """
 import json
 import re

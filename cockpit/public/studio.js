@@ -12,10 +12,10 @@ const STUFE = { gewaehlt: 1, recherche: 1, skript_fertig: 2, rueckfrage: 2, frei
 const FERTIG_STATUS = new Set(["geplant", "gepostet"]);
 const AENDERBAR = new Set(["gewaehlt", "fehler"]);
 const FELDER = {
-  simulierbar: { offen: ["hook", "ergebnis_ansatz", "warum_relevant"], mehr: ["diskussion", "daten", "bildidee", "laender", "risiko"] },
-  stelldirvor: { offen: ["ereignis", "messgroesse", "welt", "standpunkt"], mehr: ["tageszeit_verlauf", "bewegung", "kamera", "zeitraffer", "hoehepunkt", "pointe", "diskussion", "daten", "laender", "risiko"] },
+  simulierbar: { offen: ["hook", "ergebnis_ansatz", "warum_relevant", "originalitaet"], mehr: ["feld", "zutat", "diskussion", "daten", "bildidee", "laender", "risiko"] },
+  stelldirvor: { offen: ["ereignis", "messgroesse", "welt", "standpunkt", "originalitaet"], mehr: ["feld", "massstab", "zutat", "tageszeit_verlauf", "bewegung", "kamera", "zeitraffer", "hoehepunkt", "pointe", "diskussion", "daten", "laender", "risiko"] },
 };
-const FELD_NAME = { hook: "Hook", ergebnis_ansatz: "Ergebnis", warum_relevant: "Warum relevant", diskussion: "Diskussion", daten: "Daten", bildidee: "Bildidee", laender: "Länder", risiko: "Risiko", ereignis: "Ereignis", messgroesse: "Messgröße", welt: "Welt", standpunkt: "Standpunkt", tageszeit_verlauf: "Tageszeit", bewegung: "Bewegung", kamera: "Kamera", zeitraffer: "Zeitraffer", hoehepunkt: "Höhepunkt", pointe: "Pointe" };
+const FELD_NAME = { originalitaet: "Originalität", feld: "Themenfeld", zutat: "Zutat", massstab: "Maßstab", hook: "Hook", ergebnis_ansatz: "Ergebnis", warum_relevant: "Warum relevant", diskussion: "Diskussion", daten: "Daten", bildidee: "Bildidee", laender: "Länder", risiko: "Risiko", ereignis: "Ereignis", messgroesse: "Messgröße", welt: "Welt", standpunkt: "Standpunkt", tageszeit_verlauf: "Tageszeit", bewegung: "Bewegung", kamera: "Kamera", zeitraffer: "Zeitraffer", hoehepunkt: "Höhepunkt", pointe: "Pointe" };
 
 // ───────── Daten ─────────
 

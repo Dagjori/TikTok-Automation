@@ -16,7 +16,7 @@ cssclasses: [konto-gemeinsam, typ-anleitung]
 | Wer | Was |
 |---|---|
 | **Inhaber** | erzeugt je Account 10 Ideen (1 Klick), wählt 2 (Mittag, Abend), prüft die Skripte und gibt frei, klickt „An Claude Code übergeben“ |
-| **Claude im Studio** | schreibt die 10 Ideen (ohne Internet, ca. 1 Min., dein claude.ai-Kontingent) |
+| **Claude im Studio** | schreibt die 10 Ideen (ohne Internet, ca. 1 Min., dein claude.ai-Kontingent). **Im lokalen Cockpit seit 07.11. mit Websuche** für die Originalitäts-Prüfung, ca. 3–6 Min.; im alten Studio steht dort „ungeprüft“ ([[Originalität und Themenfindung]]) |
 | **Disponent** | eigene Claude-Code-Sitzung („TikTok Disponent (Ideen-Studio)“, Sonnet), beobachtet das Studio; startet bzw. benachrichtigt die Tages-Sitzung, sonst nichts (`docs/automatik/disponent.md`) |
 | **Tages-Sitzung von Claude Code** | eine Sitzung je Video-Tag (Opus 5.5, Modus „Auto“): recherchiert jede Zahl, schreibt die Skripte, nach der Übergabe Rechnung, Stimme, Szene, Render auf dem PC, Prüfung, Buffer, Nachprüfung; meldet per Push |
 | **Lernschleife** | täglich 20:00, schreibt den Lernstand fort ([[Lernschleife und Insights]]) |

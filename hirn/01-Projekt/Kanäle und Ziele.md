@@ -17,7 +17,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 | Länge | 65–80 s | exakt 80 s |
 | Format | Duell/Rennen mit Zählern, Untertitel Wort für Wort | feste Ich-Perspektive, Titelfrage, Messwert-Anzeige, kursive Sätze |
 | Stile | alle 21 mit Qualitätslatte ([[Stile 17 bis 21]]) | Lunar-POV mit Weltenkatalog |
-| Skill | `simulierbar-video` | `stelldirvor-video` |
+| Skill | `video-produktion`, Teil `simulierbar.md` (bis 06.11. `simulierbar-video`) | `video-produktion`, Teil `stelldirvor.md` (bis 06.11. `stelldirvor-video`) |
 | Einstieg | [[Account Simulierbar Überblick]] | [[Account stelldirvor.pov Überblick]] |
 
 Strikte Trennung: [[Trennung der Accounts]].

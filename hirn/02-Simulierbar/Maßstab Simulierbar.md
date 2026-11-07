@@ -19,7 +19,7 @@ Einstieg: [[Account Simulierbar Überblick]]. Zeitplan, Satzmuster, Skript-Anfor
 
 **Stand 02.11.2026 abends:** Dieser Maßstab bleibt die Messgrundlage der 4 Vorbilder. Die Neuregeln des Inhabers ([[Account Simulierbar Überblick]]) haben Vorrang, wo sie abweichen: nur Thema GELD, keine Sperrliste, Länder frei, alle Stile mit Qualitätslatte, mehr Effekte mit steigender Spannung, **Tempo 150–190 Wörter (Ziel ca. 2,3 W/s)** statt der Spalten „Maßstab“ unten.
 
-**Seit 07.11.2026 gehen die freigegebenen REA-Regeln vor** ([[REA Simulierbar Regelwerk]], 9 weitere Vorbilder): Untertitel in Blöcken von 1–4 Wörtern statt Wort für Wort, kein Pflicht-Folgen-Aufruf, **kein fester Schlusssatz** (Ende auf der Schlusskarte), Tempo 2,3–2,7 W/s, Endstand bei ca. 80 % der Länge (statt 40–54 s, Gesetz 8), neutrale Erzählhaltung (Du höchstens im Hook), dunkle Stile zuerst. Die Prüfliste unten und `qc/massstab.py` werden mit dem neuen Produktions-Skill angeglichen.
+**Seit 07.11.2026 gehen die freigegebenen REA-Regeln vor** ([[REA Simulierbar Regelwerk]], 9 weitere Vorbilder): Untertitel in Blöcken von 1–4 Wörtern statt Wort für Wort, kein Pflicht-Folgen-Aufruf, **kein fester Schlusssatz** (Ende auf der Schlusskarte), Tempo 2,3–2,7 W/s, Endstand bei ca. 80 % der Länge (statt 40–54 s, Gesetz 8), neutrale Erzählhaltung (Du höchstens im Hook), dunkle Stile zuerst. `qc/massstab.py` ist seit 07.11. angeglichen (Punkte 7, 10, 11, 12b, 12c, 14, R1–R7); die Prüfliste unten ist markiert.
 
 ## Grundlage
 - 4 MP4 vom Inhaber, hochgeladen am 31.10.2026, je 576×1024, 30 fps, 68–79 s. Stand der Auswertung 31.10.2026, ergänzt 01./02.11.

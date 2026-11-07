@@ -34,7 +34,7 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 | **Alle Stile (1–15 und 17–21) wieder erlaubt, mit Qualitätslatte** | Stile 1–15 und 17–21; jeder Stil muss die Abnahme am Kontaktbogen bestehen |
 | **Mehr Effekte, nichts Übertriebenes** | Licht, Aufleuchten, Zoom (mal ja, mal nein), mehrere Sequenzen und Bildwechsel; **große Sticker bleiben verboten** |
 | **Sprechtempo: Mitte** | 150–190 Wörter bei 65–80 s (ca. 2,3 Wörter/s), muss flüssig und natürlich klingen (→ seit 07.11.: 2,3–2,7 Wörter/s) |
-| **Kein 30-Tage-Plan, keine Sperrliste** | Skript kommt aus Claude Chat/Ideen-Studio ([[Claude-Chat-Workflow]]); Themen aller Länder erlaubt; keine 1:1-Kopie |
+| **Kein 30-Tage-Plan; Originalität statt Sperrliste** (07.11.) | Skript kommt aus Cockpit bzw. Ideen-Studio ([[Claude-Chat-Workflow]]); Themen aller Länder erlaubt; kein Thema, das es auf Deutsch schon gibt; Klassiker höchstens 1 von 10; Themenfelder Mechaniken, Geschichte, Geld hinter den Dingen, Länder-Duelle ([[Originalität und Themenfindung]]) |
 
 ## Inhalt
 | Regel | Details |

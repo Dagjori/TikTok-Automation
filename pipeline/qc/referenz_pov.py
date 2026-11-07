@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-"""Prüfung für das Referenzformat von Account 2 @stelldirvor.pov (Skill .claude/skills/stelldirvor-video/pruefung.md):
+"""Prüfung für das Referenzformat von Account 2 @stelldirvor.pov (Skill .claude/skills/video-produktion/, Teil stelldirvor.md;
+Regeln: Hirn „REA stelldirvor Regelwerk“, „Ablauf Account 2“, „Prüfung und Abnahme Account 2“):
 feste Ich-Perspektive, keine Stimme, Titelfrage, Messwert-Anzeige, kursive Sätze, Abspann.
+
+Seit 07.11.2026 (REA-Regelwerk freigegeben): 5b erlaubt höchstens 3 gezielte harte Schnitte (Höhepunkt bzw. Maßstabs- oder
+Szenensprung; 5c Hinweis), 14 Ereignis bei ca. 8 s auf Countdown-Null (erster Etikettwechsel 6–11 s, Pflicht), 14b Countdown
+erreicht 0 (Hinweis), 15 Statuszeile (Unterzeile) wechselt mehrfach (Hinweis).
 
 Aufruf:  python3 qc/referenz_pov.py projekte/<name> [--video out/<name>/<name>.mp4] [--json]
 Daten:   out/<name>/ereignisse.json (Ereignis-Protokoll der Szene, von render.js geschrieben) und – falls vorhanden – das MP4 (Länge, Lautheit,
@@ -199,6 +204,42 @@ def einstieg(ev, skript, fenster=None):
     return res
 
 
+EREIGNIS_FENSTER = (6.0, 11.0)   # s: Ereignis bei ca. 8 s genau auf Countdown-Null (Inhaber 07.11.2026, REA: Vorbilder ca. 8 s)
+SCHNITTE_MAX = 3                 # gezielte harte Schnitte (Inhaber 07.11.2026, REA: 4 von 6 starken Vorbildern setzen 1–3)
+HOEHEPUNKT = (55.0, 65.0)        # s: ein Schnitt am Höhepunkt braucht keine weitere Begründung
+
+
+def ereignis_auf_null(an):
+    """Ereignis = erster Etikettwechsel der Anzeige (Phase 1 ist der Countdown bis zum Ereignis). Liefert (t oder None, null_erreicht):
+    null_erreicht = der Countdown vor dem Wechsel läuft abwärts bis nahe 0 (≤ 1 bzw. ≤ 5 % des Startwerts) oder zeigt „0:00“."""
+    for i, (a, b) in enumerate(zip(an, an[1:])):
+        if a.get("etikett") != b.get("etikett"):
+            gruppe = [e.get("wert") for e in an[: i + 1] if e.get("wert") is not None]
+            zahl_text = str(a.get("zahl", "")).strip()
+            null = zahl_text in ("0", "0:00", "00:00", "0,0") or (
+                len(gruppe) >= 2 and gruppe[-1] < gruppe[0] and gruppe[-1] <= max(1.0, 0.05 * abs(gruppe[0])))
+            return float(b["t"]), null
+    return None, False
+
+
+def statuszeile(an):
+    """(Wechsel, verschiedene Texte) der Unterzeile über alle Messpunkte; leere Texte zählen nicht."""
+    texte = [str(e.get("unter") or "").strip() for e in an]
+    return sum(1 for a, b in zip(texte, texte[1:]) if a != b and b), len({t for t in texte if t})
+
+
+def szenenwechsel(prot, bild):
+    """Vereinigt harte Schnitte aus Protokoll (Ereignisse) und Bildvergleich (Zeiten) zu [(t, grund oder None)], Abstand ≥ 0,5 s."""
+    alle = sorted([(float(e["t"]), e.get("grund")) for e in prot] + [(float(t), None) for t in (bild or [])])
+    out = []
+    for t, g in alle:
+        if out and t - out[-1][0] < 0.5:
+            out[-1] = (out[-1][0], out[-1][1] or g)
+        else:
+            out.append((t, g))
+    return out
+
+
 def zeiten_text(liste, maximal=4):
     return ", ".join(f"{t:.1f}" for t in liste[:maximal]) + (" …" if len(liste) > maximal else "")
 
@@ -292,18 +333,27 @@ def main():
     # Verbotene Elemente
     verboten = sorted({e["typ"] for e in ev if e["typ"] in ("chip", "stempel", "sticker", "folgen", "ring", "tafel", "untertitel", "karaoke", "titel-wort", "pointe", "formel", "bilanz", "balken", "leiste", "zaehler", "uhr", "logo")})
     z("5", "Keine Sticker, Chips, Karaoke, Folgen-Aufruf, Ringe", ", ".join(verboten) if verboten else "keine", "keine", not verboten)
-    # 5b: keine harten Schnitte. Langsame Fahrt, Schwenk und Zoom (typ „kamera“: fahrt, schwenk, zoom) sind erlaubt und gewollt (Inhaber 02.11.2026 abends).
+    # 5b: seit 07.11.2026 höchstens 3 gezielte harte Schnitte (am Höhepunkt bzw. bei Maßstabs- oder Szenensprung), sonst lange
+    # durchgehende Einstellungen. Langsame Fahrt, Schwenk und Zoom (typ „kamera“: fahrt, schwenk, zoom) sind erlaubt und gewollt.
+    # Ein Schnitt im Protokoll (typ „schnitt“) soll seinen Grund tragen: {"t", "typ": "schnitt", "grund": "Maßstabssprung …"}.
     schnitte_prot = [e for e in ev if e["typ"] in ("uebergang", "schnitt") or (e["typ"] == "kamera" and e.get("art") in ("schnitt", "cut", "uebergang"))]
     schnitte_bild = harte_schnitte(bilder, ev) if bilder is not None else None
-    if schnitte_prot:
-        ist = f"{len(schnitte_prot)} Schnitt/Übergang im Protokoll (ab {schnitte_prot[0]['t']:.1f} s)"
-    elif schnitte_bild:
-        ist = f"{len(schnitte_bild)} harter Bildsprung bei {zeiten_text(schnitte_bild)} s"
-    elif schnitte_bild is None:
-        ist = "keine im Protokoll (Bildvergleich nicht möglich: kein MP4 oder numpy)"
+    wechsel = szenenwechsel(schnitte_prot, schnitte_bild)
+    if not wechsel:
+        ist = "keine" + (" im Protokoll (Bildvergleich nicht möglich: kein MP4 oder numpy)" if schnitte_bild is None else " (Protokoll und Bildvergleich Bild für Bild)")
     else:
-        ist = "keine (Protokoll und Bildvergleich Bild für Bild)"
-    z("5b", "Keine harten Schnitte (Fahrt, Schwenk, Zoom erlaubt)", ist, "keine", not schnitte_prot and not schnitte_bild)
+        ist = f"{len(wechsel)} Schnitt(e) bei {zeiten_text([t for t, _ in wechsel])} s"
+    z("5b", "Höchstens 3 gezielte harte Schnitte (Fahrt, Schwenk, Zoom frei)", ist, f"0–{SCHNITTE_MAX} (Inhaber 07.11.)", len(wechsel) <= SCHNITTE_MAX)
+    ohne_grund = [t for t, g in wechsel if not g and not (HOEHEPUNKT[0] <= t <= HOEHEPUNKT[1])]
+    z("5c", "Schnitte nur am Höhepunkt oder mit Grund (Maßstab/Szene)", f"ohne Grund bei {zeiten_text(ohne_grund)} s" if ohne_grund else ("keine Schnitte" if not wechsel else "alle begründet bzw. am Höhepunkt"),
+      "Grund im Protokoll oder 55–65 s (Sichtprüfung)", not ohne_grund, pflicht=False)
+    # 14, 14b, 15: Ereignis auf Countdown-Null bei ca. 8 s, Statuszeile (REA-Regelwerk stelldirvor, Inhaber 07.11.2026)
+    t_null, null_ok = ereignis_auf_null(an)
+    z("14", "Ereignis bei ca. 8 s auf Countdown-Null (erster Etikettwechsel)", f"bei {t_null:.1f} s" if t_null is not None else "kein Etikettwechsel",
+      f"{EREIGNIS_FENSTER[0]:g}–{EREIGNIS_FENSTER[1]:g} s (Inhaber 07.11.)", t_null is not None and EREIGNIS_FENSTER[0] <= t_null <= EREIGNIS_FENSTER[1])
+    z("14b", "Countdown läuft vor dem Ereignis bis 0", "ja" if null_ok else "nein (Phase 1 ist kein Countdown bis 0)", "Phase 1 = Countdown, endet bei 0", null_ok, pflicht=False)
+    st_wechsel, st_texte = statuszeile(an)
+    z("15", "Statuszeile (Unterzeile) wechselt mehrfach", f"{st_wechsel} Wechsel, {st_texte} Texte", "≥ 3 Wechsel (Hinweis)", st_wechsel >= 3, pflicht=False)
     # 10, 10b: Bewegung (Hinweis; die Sichtprüfung in pruefung.md entscheidet)
     fen = bewegung_fenster(bilder) if bilder is not None else None
     # 13: Einstieg (Hinweis; Lernschleife 03.11., Inhaber 04.11.2026): Welteffekt < 4 s, Kamerabewegung < 8 s, Anzeige ändert sich < 8 s

@@ -37,12 +37,30 @@ UNSER KANAL
 REGELN FÜR IDEEN
 - Nur GELD. Das Ergebnis muss in Euro (bzw. passender Währung) ausgedrückt werden können und aus einer eigenen, nachvollziehbaren Modellrechnung stammen.
 - Ein Duell vergleicht nur echte Alternativen derselben Entscheidung (kein „Steuererklärung gegen Überstunden“-Unsinn).
-- Jede Idee braucht ein Duell, das schon im Hook beide Seiten konkret nennt. Themen ohne natürliche Gegenseite als Duell rahmen (z. B. Kind: Ausgaben gegen Kindergeld schon im Hook), sonst nicht vorschlagen.
-- GEWICHTUNG (Pflicht): Mindestens 6 der 10 Ideen sind Duelle zu großen Lebensentscheidungen mit großer Euro-Endzahl (z. B. Studium oder Ausbildung, Mieten oder Kaufen, Auto kaufen oder leasen, Kind, Rente bzw. Vorsorge; auch Wohnen, Arbeit, Familie, Steuern, Energie über Jahre). Die übrigen dürfen andere Geldthemen sein; kleine Alltagstipps nur als Ausnahme (höchstens 1 von 10) und nur, wenn die Jahressumme wirklich überrascht.
+- Jede Idee braucht ein Duell, das schon im Hook beide Seiten konkret nennt. Themen ohne natürliche Gegenseite als Duell rahmen (z. B. ein Ding gegen seinen Ersatz, damals gegen heute, Deutschland gegen ein anderes Land), sonst nicht vorschlagen.
+- Eine große, überraschende Euro-Endzahl ist Pflicht (Jahres-, Jahrzehnt- oder Lebenssumme oder ein Betrag, den niemand erwartet).
+- THEMENFELDER (Pflicht): Verteile die 10 Ideen auf diese Felder, jedes der Felder 1 bis 4 mindestens einmal (Feld "feld"):
+  1. Versteckte Mechaniken: wo Geld unbemerkt fließt (Shrinkflation, Pfand, Rundungen, Grundgebühren, Mindestbestellwerte, Kündigungsfristen, Kleingedrucktes).
+  2. Geschichte und Kurioses: was etwas früher in heutigem Geld oder in Arbeitszeit kostete, kuriose Gesetze und Gebühren, Preise berühmter Dinge, Rekorde in Euro.
+  3. Geld hinter den Dingen: was ein Feuerwerk, ein Stadionrasen, eine Ampel oder ein Leuchtturm kostet, was ein seltener Beruf verdient; als Duell gerechnet.
+  4. Länder-Duelle: dieselbe Entscheidung in Deutschland gegen ein anderes Land (Gesetz, Preis, Steuer, Gewohnheit) mit Euro-Ergebnis.
+  5. Ungewöhnliche Lebensentscheidungen: echte Entscheidungen, die selten durchgerechnet werden.
+- KLASSIKER (Mieten oder Kaufen, Studium oder Ausbildung, Leasing oder Kauf, Rente bzw. Vorsorge, Kind): höchstens 1 von 10, und nur mit einer Frage, die auf Deutsch noch niemand gestellt hat. Kleine Alltagstipps nur als Ausnahme (höchstens 1 von 10) und nur, wenn die Jahressumme wirklich überrascht.
 - Ausgeschlossen: Glücksspiel, Tabak/Vape, Gesundheitsversprechen, Tragödien, Krypto, Einzelaktien, Empfehlungen für Anbieter, Banken, Versicherer oder Broker, Parteipolitik, riskantes Nachahmen, Kaufaufrufe, „schnell reich“.
 - Finanzthemen nur als Modellrechnung, nie als Anlageberatung.
-- Keine 1:1-Kopie eines fremden Videos: gleiches Thema nur mit eigenem Blickwinkel, eigener Rechnung und eigenen Sätzen.
+- Kein Thema, zu dem es auf Deutsch schon ein Video mit der gleichen Frage gibt (Regel ORIGINALITÄT). Von englischen Videos nie Skript, Sätze, Bild- oder Szenenideen übernehmen.
 - Keine Dopplung mit unseren bisherigen Videos.
+
+ORIGINALITÄT (wichtigste Regel für Ideen; Vorrang vor dem Lernstand und vor allen Beispielen)
+Andere Creator fragen dieselbe KI mit ähnlichen Befehlen. Was dir als Erstes einfällt, haben sie auch bekommen, und genau das wollen wir nicht. Wir wollen Themen, die auf Deutsch noch niemand gemacht hat.
+1. Schreibe zuerst für dich die 20 naheliegendsten Ideen zu unserer Nische auf und streiche sie alle, dazu alles von der ANTI-LISTE unten (auch umbenannt oder mit anderen Zahlen). Nenne die gestrichenen Ideen in Stichworten (Feld "gestrichen").
+2. Baue mindestens 6 der 10 Ideen auf den ZUTATEN DES TAGES auf (Feld "zutat"), jede Zutat höchstens zweimal. Eine Zutat ist ein Ausgangspunkt, kein Zwang; passt eine gar nicht, lass sie weg.
+3. Prüfe jede Idee mit der Websuche: Gibt es auf Deutsch schon ein Video zur gleichen Frage (TikTok, YouTube, Instagram)? Suche mit 2 bis 3 deutschen Begriffen. Gefunden: Idee verwerfen und ersetzen. Englische Videos zur gleichen Frage sind erlaubt, wenn unsere Fassung eigenständig ist. Trage im Feld "originalitaet" ein: welche naheliegende Idee du damit vermeidest, die Suchbegriffe und das Ergebnis („kein deutsches Video gefunden“ oder „englisch: …“). Hast du keine Websuche, schreibe „ungeprüft“.
+4. Einzigartig UND relevant, beides ist Pflicht: ein ungewöhnlicher Winkel auf etwas, das viele kennen oder betrifft. Die Frage muss ohne Erklärung verständlich sein. Abseitige Nischen fallen genauso raus wie Standardthemen.
+5. Zwei Ideen, die sich nur im Zahlenwert oder im Ort unterscheiden, zählen als eine. Der Lernstand sagt, welche Art Thema trägt, nicht welches konkrete Thema du nehmen sollst.
+
+ANTI-LISTE (auf Deutsch schon gemacht oder KI-Standard; nie vorschlagen, auch nicht umbenannt)
+Mieten oder Kaufen · Studium oder Ausbildung · Leasen, Finanzieren oder bar · Neuwagen oder Gebrauchter · E-Auto oder Verbrenner · Auto, Fahrrad oder Deutschlandticket · Bahn, Auto oder Flugzeug · Fenster auf oder Klimaanlage · Spülmaschine oder Handspülen · Duschen oder Baden · Trockner oder Wäscheleine · Wasserkocher oder Herd · Standby-Kosten · LED oder Glühbirne · Heizung nachts aus bzw. 1 Grad weniger · Wärmepumpe oder Gasheizung · Solaranlage, Balkonkraftwerk, Speicher · Tanken vor 12 bzw. Umweg zur Tankstelle · Reifendruck, Tempo 130 gegen 160, Ganzjahresreifen · früh sparen, Zinseszins, erste Million, Inflation frisst Erspartes, 1 Cent verdoppeln · Kaffee to go oder Kaffeemaschine, Latte-Faktor · Mittagessen mitnehmen oder kaufen · Kochen oder Lieferdienst · Leitungs- oder Flaschenwasser · Streaming-Abos · Handyvertrag oder Prepaid, Handy auf Raten · Fitnessstudio oder draußen trainieren · Hund oder Katze · Kindergeld, was ein Kind kostet · Bürgergeld, lohnt sich Arbeiten · Steuererklärung machen oder nicht · Überstunden oder Freizeit · Jobwechsel oder Gehaltserhöhung · Teilzeit, 4-Tage-Woche · Pendeln oder umziehen, Homeoffice · Rente mit 63 oder 67 · Black Friday · Regen: rennen oder gehen · Pausen oder Tempo auf der Autobahn
 
 FAKTENTREUE (gilt für alles, was du lieferst)
 - Erfinde nichts. Jede Zahl, jedes Datum, jede Behauptung muss belegbar sein (amtliche Statistik, Gesetz, Studie, Behörden- oder Herstellerangabe). Nenne zu jeder Zahl Quelle und Jahr.
@@ -67,11 +85,14 @@ BISHERIGE VIDEOS (nicht wiederholen):
 - Fußgängerampel (Rennen oder Gehen)
 - Steuererklärung oder Überstunden
 
+ZUTATEN DES TAGES (zufällig gezogen, damit unsere Ideen sich von denen anderer unterscheiden)
+[Hier die Zutaten einsetzen: je Liste zwei Einträge aus dem Abschnitt „Zutaten-Listen“ unten, gewürfelt; das Cockpit macht das automatisch]
+
 AUFGABE
-Wir brauchen zehn Videoideen in unserer Nische für den morgigen Tag. Sie sollen unterschiedlich sein (verschiedene Themenfelder, Länder bzw. Welten) und gleichzeitig zum Lernstand passen. Prüfe jede Idee vor der Ausgabe gegen die Regeln und die Faktenlage; schreibe nur Ideen auf, die du belegen kannst.
-Antworte als nummerierte Liste von 1 bis 10. Jede Idee mit den Feldern, die im Beispiel unten stehen, jeweils eine kurze Zeile je Feld. Danach frage mich: „Welche zwei wählst du?“
+Wir brauchen zehn Videoideen in unserer Nische für den morgigen Tag, die auf Deutsch noch niemand gemacht hat. Sie sollen unterschiedlich sein (verschiedene Themenfelder, Länder bzw. Welten) und zum Lernstand passen. Prüfe jede Idee vor der Ausgabe gegen die Regeln, die ANTI-LISTE, die Websuche und die Faktenlage; schreibe nur Ideen auf, die du belegen kannst.
+Beginne mit einer Zeile „Gestrichen (naheliegend): …“. Antworte danach als nummerierte Liste von 1 bis 10. Jede Idee mit den Feldern, die im Beispiel unten stehen, jeweils eine kurze Zeile je Feld. Danach frage mich: „Welche zwei wählst du?“
 Felder (Beispiel als JSON, nur zur Orientierung, antworte als lesbaren Text):
-{"ideen":[{"nr":1,"titel":"Duell-Frage als Videotitel","alternativen":["Alternative A","Alternative B"],"hook":"erster Satz des Videos: Duell, das beide Alternativen konkret nennt (keine Einzelfrage, kein Ergebnis vorweg)","ergebnis_ansatz":"wie die Rechnung geht und in welcher Größenordnung das Euro-Ergebnis liegt (kein erfundener Wert)","warum_relevant":"wen es betrifft und warum es viele interessiert","diskussion":"warum sich Zuschauer darüber austauschen würden (nur intern, nicht im Video)","daten":"welche belegbaren Quellen/Zahlen verfügbar sind","bildidee":"eine Szene, in der man das Duell sieht","laender":"Deutschland | weltweit | Land","risiko":"Recht, Plattform, Ausschlussthemen: kurz"}]}
+{"gestrichen":["naheliegende Idee in Stichworten"],"ideen":[{"nr":1,"titel":"Duell-Frage als Videotitel","feld":"Versteckte Mechaniken | Geschichte und Kurioses | Geld hinter den Dingen | Länder-Duell | Ungewöhnliche Lebensentscheidung | Klassiker mit neuer Frage","zutat":"welche Zutat des Tages (oder „keine“)","originalitaet":"vermeidet: naheliegende Idee · Suche: Begriffe · Ergebnis: kein deutsches Video gefunden | englisch: … | ungeprüft","alternativen":["Alternative A","Alternative B"],"hook":"erster Satz des Videos: Duell, das beide Alternativen konkret nennt (keine Einzelfrage, kein Ergebnis vorweg)","ergebnis_ansatz":"wie die Rechnung geht und in welcher Größenordnung das Euro-Ergebnis liegt (kein erfundener Wert)","warum_relevant":"wen es betrifft und warum es viele interessiert","diskussion":"warum sich Zuschauer darüber austauschen würden (nur intern, nicht im Video)","daten":"welche belegbaren Quellen/Zahlen verfügbar sind","bildidee":"eine Szene, in der man das Duell sieht","laender":"Deutschland | weltweit | Land","risiko":"Recht, Plattform, Ausschlussthemen: kurz"}]}
 ```
 
 ## Schritt 2: Skripte für die zwei gewählten Ideen
@@ -141,8 +162,18 @@ GEWÄHLTE IDEEN (für diese schreibst du jetzt je ein makelloses Skript)
 AUFGABE
 Schreibe für jede gewählte Idee ein makelloses, sendefertiges Skript nach allen Regeln oben. Erfinde nichts; jede Zahl mit Rechenweg und Quelle. Prüfe dein Skript am Ende selbst (Wortzahl bzw. Satzzahl, Fakten, Ton, Verbote) und trage das Ergebnis in selbstpruefung ein. Findest du beim Prüfen einen Fehler, korrigiere ihn vor der Ausgabe.
 Gib je Idee das Skript lesbar aus: Titel, Segmente mit Text und Sprechtext (bzw. Sätze und Anzeige-Plan), Rechenweg, Annahmen, Quellen, Caption, Dramaturgie-Hinweise, Selbstprüfung. Feldstruktur zur Orientierung:
-{"skripte":[{"nr":1,"titel":"","thema":"","laender":"","segmente":[{"id":"hook","phase":"hook","text":"Untertitel-Text (Ziffern erlaubt)","sprechtext":"Regie-Text, eine Zeile pro Satz"}],"woerter":0,"rechenweg":"Formel, Eingaben, Rechenschritte, Ergebnis","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","dramaturgie":["Hinweis mit Zeitpunkt"],"selbstpruefung":["Wortzahl ..","Fakten ..","Ton ..","Verbote .."]}]}
+{"skripte":[{"nr":1,"titel":"","thema":"","laender":"","segmente":[{"id":"hook","phase":"hook","text":"Untertitel-Text (Ziffern erlaubt)","sprechtext":"Regie-Text, eine Zeile pro Satz"}],"woerter":0,"rechenweg":"Formel, Eingaben, Rechenschritte, Ergebnis","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","originalitaet":"Suche (deutsch) und Ergebnis","dramaturgie":["Hinweis mit Zeitpunkt"],"selbstpruefung":["Wortzahl ..","Fakten ..","Ton ..","Verbote .."]}]}
 ```
 
+## Zutaten-Listen
+Das Cockpit zieht für jeden Ideen-Auftrag je Liste 2 Einträge zufällig und setzt sie unter „ZUTATEN DES TAGES“ ein. So bekommt die KI jedes Mal einen anderen Auftrag als andere Creator. Hintergrund: [[Originalität und Themenfindung]].
+
+- **Gesetz, Gebühr oder Statistik:** Pfandverordnung · Rundfunkbeitrag · Hundesteuer · Kurtaxe · Bußgeldkatalog · Briefporto seit 1950 · Grundsteuer · Kirchensteuer · Parkgebühren · Zoll-Freimengen · Fluggastrechte · Mindestlohn seit 2015 · Preisangabenverordnung · Lkw-Maut · Müllgebühren · Wasserpreise je Stadt · Notarkosten · Bargeldgebühren · Mehrwertsteuer 7 oder 19 Prozent · Schaumweinsteuer · Kaffeesteuer · Ladenöffnungszeiten · Biersteuer · Feuerwerksverkauf nur drei Tage
+- **Ding:** Feuerwerk · Weihnachtsbaum · Stadionrasen · Ampel · Straßenlaterne · Leuchtturm · Rolltreppe · Brötchen · Briefmarke · Pfandflasche · Einkaufswagen · Parkuhr · Kirchenglocke · Schulbus · Fußball · Zahnbürste · Regenschirm · Kaugummi · Kinokarte · Glühwein · Konzertticket · Schlüsseldienst · Bahnhofstoilette · Adventskalender
+- **Beruf:** Schornsteinfeger · Lotse · Fluglotse · Hufschmied · Orgelbauer · Imker · Schleusenwärter · Berufstaucher · Schäfer · Pilot · Hebamme · Winzer · Bergführer · Zugbegleiter · Eisverkäufer · Glockengießer · Tätowierer · Kapitän · Synchronsprecher · Schiedsrichter
+- **Land:** Japan · Norwegen · Schweiz · USA · Dänemark · Singapur · Island · Polen · Portugal · Kanada · Australien · Südkorea · Niederlande · Österreich · Italien · Mexiko · Finnland · Frankreich
+- **Zeit:** 1950 · 1965 · 1980 · 1990 · 2001, letztes D-Mark-Jahr · 2002, Euro-Einführung · Mittelalter · Römerzeit · Kaiserreich um 1900 · 2035, in die Zukunft gerechnet
+- **Mechanik:** Rundung · Mindestbestellwert · Staffelpreis · Grundgebühr · Kündigungsfrist · Packungsgröße · Pfand · Bonuspunkte · Gebühr je Vorgang · Mengenrabatt · Mindesthaltbarkeit · Aufrunden an der Kasse · Wechselkurs-Aufschlag · automatische Abo-Verlängerung · Inflation pro Jahr · Zinstage
+
 ## Siehe auch
-[[Claude-Chat-Workflow]] · [[Lernschleife und Insights]] · [[Regelwerk]] · [[Index]]
+[[Originalität und Themenfindung]] · [[Claude-Chat-Workflow]] · [[Lernschleife und Insights]] · [[Regelwerk]] · [[Index]]

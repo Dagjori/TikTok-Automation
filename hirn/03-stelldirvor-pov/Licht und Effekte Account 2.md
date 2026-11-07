@@ -8,7 +8,7 @@ tags: [konto/stelldirvor, licht, effekte, kamera]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
-> Quelle: `.claude/skills/stelldirvor-video/licht-und-effekte.md`. Diese Notiz wird mit `python3 tools/hirn_aus_skills.py` erzeugt. Änderungen bitte im Skill vornehmen, nicht hier. Bei Abweichung gilt der Skill.
+> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/licht-und-effekte.md` (Skill am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` ist stillgelegt. Produktion: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
 
 # Licht und Effekte Account 2
 

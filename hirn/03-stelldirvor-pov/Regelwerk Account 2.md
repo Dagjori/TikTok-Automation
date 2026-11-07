@@ -31,7 +31,7 @@ Kurzfassung aller Regeln **nur für Account 2**. Gemeinsame Regeln: [[Regelwerk]
 | **Kamera darf sich langsam bewegen** | weiche Fahrt, Schwenk, Zoom; weiter keine harten Schnitte (→ seit 07.11.: 1–3 gezielte harte Schnitte erlaubt) |
 | **Zeitraffer und Anzeige passen zusammen** | Zeitraffer-Faktor im Skript, Anzeige links läuft nachvollziehbar zur sichtbaren Veränderung |
 | **Kein „5-Sekunden“-Verbot mehr** | solche Themen sind erlaubt, wenn sie sich gut simulieren lassen |
-| **Länder frei, keine Sperrliste, kein Plan** | Orte überall; Themen anderer Kanäle (auch US) frei, aber keine 1:1-Kopie und anderes Design; Skripte aus Claude Chat/Ideen-Studio ([[Claude-Chat-Workflow]]) |
+| **Länder frei, kein Plan; Originalität statt Sperrliste** (07.11.) | Orte überall; Weltuntergangs-Klassiker gesperrt; kein Thema, das es auf Deutsch schon gibt (englische nur mit eigenem Design); Felder Natur und Tiere, Geschichte umgedreht, Technik und Versorgung; Maßstab meist persönlich ([[Originalität und Themenfindung]]); Skripte aus Cockpit bzw. Ideen-Studio ([[Claude-Chat-Workflow]]) |
 
 ## Format (unverändert, Referenz Lunar)
 | Regel | Details |

@@ -31,3 +31,46 @@ def test_bildanalyse_ersetzt_fehlenden_effekt_und_atmen_zaehlt_nicht():
     ev = [{"t": 0, "typ": "kamera", "art": "beben"}] + anzeige((0, 1), (0.5, 2))
     res = einstieg(ev, {"kamera": [{"t": 0, "art": "atmen"}]}, fenster=[(0.0, 3.1), (0.5, 1.0)])
     assert ok(res) == {"Welteffekt": True, "Kamera": False, "Anzeige": True}
+
+
+# --- seit 07.11.2026 (REA-Regelwerk stelldirvor): Ereignis auf Countdown-Null, Statuszeile, gezielte Schnitte ---
+from referenz_pov import ereignis_auf_null, statuszeile, szenenwechsel  # noqa: E402
+
+
+def phasen(*teile):
+    """teile = (etikett, [(t, wert, unter), …]) → Anzeige-Messpunkte."""
+    return [{"t": t, "typ": "anzeige", "etikett": et, "wert": w, "zahl": str(w), "unter": u} for et, punkte in teile for t, w, u in punkte]
+
+
+def test_countdown_bis_null_dann_ereignis_bei_8_s():
+    an = phasen(("ANKUNFT IN", [(0, 8, "RUHIG"), (4, 4, "RUHIG"), (7.5, 0.5, "GLEICH")]), ("HÖHE", [(8.0, 0, "STEIGT"), (12, 40, "STEIGT")]))
+    assert ereignis_auf_null(an) == (8.0, True)
+
+
+def test_alter_ablauf_mit_ausloeser_bei_20_s_wird_erkannt():
+    an = phasen(("ENTFERNUNG", [(0, 100, ""), (10, 90, ""), (19.5, 80, "")]), ("HÖHE", [(20.0, 1, "")]))
+    t, null = ereignis_auf_null(an)
+    assert t == 20.0 and null is False
+
+
+def test_ohne_etikettwechsel_kein_ereignis():
+    assert ereignis_auf_null(phasen(("JAHR", [(0, 1, ""), (5, 2, "")]))) == (None, False)
+
+
+def test_statuszeile_zaehlt_wechsel():
+    an = phasen(("A", [(0, 1, "RUHIG"), (1, 1, "RUHIG"), (2, 1, "UNRUHE"), (3, 1, "")]), ("B", [(4, 1, "FLUT"), (5, 1, "HIER")]))
+    assert statuszeile(an) == (3, 4)
+
+
+def test_szenenwechsel_vereint_protokoll_und_bild():
+    prot = [{"t": 31.0, "typ": "schnitt", "grund": "Maßstabssprung"}]
+    assert szenenwechsel(prot, [31.2, 60.1]) == [(31.0, "Maßstabssprung"), (60.1, None)]
+    assert szenenwechsel([], None) == []
+
+
+if __name__ == "__main__":  # ohne pytest: python3 qc/referenz_pov_test.py
+    tests = [f for n, f in sorted(globals().items()) if n.startswith("test_") and callable(f)]
+    for f in tests:
+        f()
+        print("ok  ", f.__name__)
+    print(f"{len(tests)} Tests ok")

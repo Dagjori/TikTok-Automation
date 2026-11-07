@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-"""Prüft die messbaren Punkte der Prüfliste aus .claude/skills/simulierbar-video/massstab.md §11 und gibt eine Tabelle ja/nein aus.
+"""Prüft die messbaren Punkte für Simulierbar-Videos (Skill .claude/skills/video-produktion/, Teil simulierbar.md; Regeln: Hirn
+„REA Simulierbar Regelwerk“, „Videoaufbau Simulierbar“, „Maßstab Simulierbar“) und gibt eine Tabelle ja/nein aus.
+
+Seit 07.11.2026 (REA-Regelwerk freigegeben): Tempo 2,3–2,7 W/s ODER 4,6–5,4 Silben/s (12b), Sätze Median 3–5 Wörter (12c),
+Folgen-Aufruf nur noch Hinweis (7), Schlusskarte statt festem Schlusssatz (10), Schleife freiwillig (11), Untertitel in Blöcken
+von höchstens 4 Wörtern (14) und die REA-Punkte R1–R7 (Titel ab Bild 1, Tafel ab Bild 0, Erklärgrafik, neutrale Erzählhaltung,
+Endstand bei ca. 80 %, Kipp-Moment, erster Satz).
 
 Aufruf (im Ordner pipeline/):
-  python3 qc/massstab.py projekte/<name>                      Standard-Profil „ben“ (Stimme Ben, Original-Einstellungen; Tempo-Profil seit 02.11.2026 abends)
-  python3 qc/massstab.py projekte/<name> --profil ben_alt     bisheriges Ben-Profil (130–170 Wörter, 1,9–2,4 W/s), veraltet, nur für ältere Videos
+  python3 qc/massstab.py projekte/<name>                      Standard-Profil „ben“ (Stimme Ben, Original-Einstellungen; Tempo seit 07.11.2026)
+  python3 qc/massstab.py projekte/<name> --profil ben_0211    Profil vom 02.11.2026 (2,2–2,5 W/s, Sätze Median 4–8), nur zum Nachmessen
+  python3 qc/massstab.py projekte/<name> --profil ben_alt     Ben-Profil vom 31.10. (130–170 Wörter, 1,9–2,4 W/s), veraltet, nur für ältere Videos
   python3 qc/massstab.py projekte/<name> --profil massstab    Zielbereiche der Vorbilder (2,5–2,9 W/s usw.)
   python3 qc/massstab.py projekte/<name> --ziel tempo=2.0:2.5 --ziel woerter=140:180 --ziel satzpause_max=0.7
   python3 qc/massstab.py projekte/<name> --json               maschinenlesbar
@@ -14,10 +21,11 @@ Liest: skript.json, audio/timing.json (sonst audio/timing_schaetzung.json, dann 
 Exit-Code 1, wenn ein Pflichtpunkt „nein“ ist (Kennzahlen mit Zielbereich zählen als Pflicht, Hinweise nicht).
 
 Hinweis zu den Zielbereichen: Die Stimme „Ben“ läuft mit den gespeicherten Original-Einstellungen von ElevenLabs
-(Wunsch des Inhabers, kein künstliches Beschleunigen). Entscheidung des Inhabers 02.11.2026 abends: Das Tempo ist die Mitte aus
-dem früheren Ben-Profil (130–170 Wörter, ca. 2,0 W/s) und den Vorbildern (170–220 Wörter, 2,5–2,9 W/s): 150–190 Wörter bei
-65–80 s, Ziel ca. 2,3 W/s, Spanne 2,2–2,5 W/s; es muss flüssig und natürlich klingen (Qualität vor Tempo: kürzen statt
-beschleunigen). Satzpausen: Richtwert 0,35–0,6 s als Median der HÖRBAREN Stille (12d2, Hinweis, aus audio/stimme.mp3);
+(Wunsch des Inhabers, kein künstliches Beschleunigen). Entscheidung des Inhabers 07.11.2026 (REA): 150–190 Wörter bei 65–80 s,
+Tempo 2,3–2,7 W/s (starke Vorbilder 2,42–2,70). Zusätzlich zählt das Silbentempo (Entscheidung 07.11.): Lange Zahlwörter
+(„tausendzweihundert“) drücken die Wörter je Sekunde; das Tempo besteht, wenn W/s ODER Silben/s im Zielbereich liegen.
+4,6–5,4 Silben/s = 2,3–2,7 W/s bei 2,0 Silben je Wort (Median der starken Vorbilder; sie sprechen 4,75–5,36 Silben/s, gemessen
+mit `silben()` an den REA-Transkripten). Es muss flüssig und natürlich klingen (Qualität vor Tempo: kürzen statt beschleunigen). Satzpausen: Richtwert 0,35–0,6 s als Median der HÖRBAREN Stille (12d2, Hinweis, aus audio/stimme.mp3);
 die Alignment-Zeiten aus timing.json sind im Schnitt ca. 0,1 s kürzer als die hörbare Stille, deshalb bleibt 12d (Pflicht,
 max. 0,8 s) auf den Wortzeiten. Die Werte der Vorbilder stehen in der Spalte „Maßstab“.
 """
@@ -29,22 +37,32 @@ import subprocess
 import sys
 from pathlib import Path
 
-SCHLUSS = "Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare."
-# Schlusssatz je Konto (skript.json „konto“); Account 2 @stelldirvor.pov laut Auftrag des Inhabers 01.11.
-SCHLUSS_KONTO = {"stelldirvor": "Welches Szenario soll ich als Nächstes durchspielen? Schreib es in die Kommentare."}
+# Seit 07.11.2026 gibt es keinen festen Schlusssatz mehr (Inhaber: „Satz fällt ganz weg“); das Video endet auf der Schlusskarte.
+# Am Ende stehen weder Frage noch Aufruf (REA: mit offener Frage enden 1/6 stark gegen 2/3 schwach).
+AUFRUF = re.compile(r"kommentar|folg\w*\s+mir|abonnier|schreib\w*\s+(es|uns|mir)|lass\w*\s+(ein|uns)", re.I)
+# Neutrale Erzählhaltung (Inhaber 07.11.): Du-Ansprache höchstens im Hook (und im Folgen-Aufruf eines Testvideos).
+DU = re.compile(r"\b(du|dich|dir|dein|deine|deinen|deinem|deiner|deines)\b", re.I)
+DU_ERLAUBT = {"hook", "folgen"}
+# Erklärgrafik (REA R04, belastbar 6/6): Balken, Formel- bzw. Vergleichskarte oder Bilanz
+ERKLAERGRAFIK = {"balken", "formel", "bilanz"}
+# Skill-Kennungen von Account 1 (alt bis 06.11. und neu seit 07.11.)
+SKILLS_A1 = {"simulierbar-video", "video-produktion"}
+VOKALE = re.compile(r"[aeiouyäöü]+")
 
 PROFILE = {
-    # Stimme Ben, Original-Einstellungen (Entscheidung 31.10.); Tempo seit 02.11.2026 abends (Entscheidung Inhaber): Mitte aus
-    # Ben-Profil (130–170 Wörter, ca. 2,0 W/s) und Vorbildern (170–220, 2,5–2,9 W/s) = 150–190 Wörter, Ziel ca. 2,3 W/s.
-    # satzpause_median (hörbare Stille, Hinweis) = Richtwert „nicht gehetzt“; satzpause_max (Pflicht) = Obergrenze auf den Wortzeiten.
-    "ben": {"tempo": (2.2, 2.5), "satzpause_max": 0.8, "satzpause_median": (0.35, 0.6), "woerter": (150, 190), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
+    # Stimme Ben, Original-Einstellungen (Entscheidung 31.10.); seit 07.11.2026 (REA, Inhaber): 2,3–2,7 W/s oder 4,6–5,4 Silben/s,
+    # Sätze Median 3–5 Wörter (Vorbilder 3–5). satzpause_median (hörbare Stille, Hinweis) = Richtwert „nicht gehetzt“;
+    # satzpause_max (Pflicht) = Obergrenze auf den Wortzeiten.
+    "ben": {"tempo": (2.3, 2.7), "silben": (4.6, 5.4), "satzpause_max": 0.8, "satzpause_median": (0.35, 0.6), "woerter": (150, 190), "laenge": (65, 80), "satzlaenge_median": (3, 5)},
+    # Profil vom 02.11.2026 abends bis 07.11.2026; nur, um Videos aus dieser Zeit nachzumessen.
+    "ben_0211": {"tempo": (2.2, 2.5), "satzpause_max": 0.8, "satzpause_median": (0.35, 0.6), "woerter": (150, 190), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
     # VERALTET seit 02.11.2026 abends: bisheriges Ben-Profil (31.10.); nur, um ältere Videos nachzumessen.
     "ben_alt": {"tempo": (1.9, 2.4), "satzpause_max": 0.8, "woerter": (130, 170), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
     # Vorbilder K1–K4 (.claude/skills/simulierbar-video/massstab.md §2)
     "massstab": {"tempo": (2.5, 2.9), "satzpause_max": 0.4, "woerter": (170, 220), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
 }
 MASSSTAB_TEXT = {
-    "tempo": "2,5–2,9 W/s",
+    "tempo": "2,5–2,9 W/s (K1–K4); REA 2,42–2,70 W/s, 4,75–5,36 Silben/s",
     "satzpause": "≈ 0,25 s, max. 0,4 s",
     "woerter": "170–220",
     "laenge": "65–80 s",
@@ -69,6 +87,17 @@ def zahl(x, nk=2):
 
 def norm(w):
     return re.sub(r"[^\wäöüß']", "", w.lower())
+
+
+def silben(wort):
+    """Silben eines gesprochenen Worts, genähert über Vokalgruppen (ei, au, eu, ie … zählen als eine). Reine Ziffern zählen
+    2 je Ziffer (im Sprechtext sind Zahlen ausgeschrieben, Ziffern sind die Ausnahme)."""
+    w = re.sub(r"[^a-zäöüß0-9]", "", wort.lower())
+    if not w:
+        return 0
+    if w.isdigit():
+        return 2 * len(w)
+    return max(1, len(VOKALE.findall(w)))
 
 
 def lade(projekt):
@@ -225,17 +254,14 @@ def pruefe(projekt, profil, extra_ziele):
     erste = next((t for t in wendungen if t >= 15), None)
     zeile("6", "Erste Wendung (Satz mit „Aber/Doch …“)", f"{zahl(erste, 1) if erste is not None else '–'} s", "18–25 s (Hinweis)", "18,4–20,8 s", erste is not None and 18 <= erste <= 25, pflicht=False)
 
-    # 7 Folgen-Aufruf
-    if protokoll:
-        f = [e for e in ereignisse if e.get("typ") == "folgen"]
-        if f:
-            e = f[0]
-            ok = 15 <= e["t"] <= 25 and float(e.get("dauer") or 0) <= 2.0
-            zeile("7", "Folgen-Aufruf", f"{zahl(e['t'], 1)} s, {zahl(float(e.get('dauer') or 0), 1)} s lang", "15–25 s, max. 2 s", "(eigene Regel, ca. 20 s)", ok)
-        else:
-            zeile("7", "Folgen-Aufruf", "fehlt", "15–25 s, max. 2 s", "(eigene Regel, ca. 20 s)", False)
+    # 7 Folgen-Aufruf: seit 07.11.2026 keine Pflicht mehr (Standard ohne; nur in Testvideos der Lernschleife). Ist er da, gilt 15–25 s, max. 2 s.
+    f = [e for e in ereignisse if e.get("typ") == "folgen"]
+    if f:
+        e = f[0]
+        ok = 15 <= e["t"] <= 25 and float(e.get("dauer") or 0) <= 2.0
+        zeile("7", "Folgen-Aufruf (nur Testvideo)", f"{zahl(e['t'], 1)} s, {zahl(float(e.get('dauer') or 0), 1)} s lang", "15–25 s, max. 2 s (Hinweis)", "Vorbilder: keiner", ok, pflicht=False)
     else:
-        zeile("7", "Folgen-Aufruf", "kein Ereignis-Protokoll", "15–25 s, max. 2 s", "(eigene Regel)", False)
+        zeile("7", "Folgen-Aufruf (nur Testvideo)", "keiner (Standard seit 07.11.)" if protokoll else "kein Ereignis-Protokoll", "freiwillig", "Vorbilder: keiner", True, pflicht=False)
 
     # 16 Ruhiger Ton (Inhaber 02.11.): keine aufgeregten Audio-Tags, wenige Ausrufezeichen im Sprechtext
     sprech = " ".join(str(sg.get("sprechtext", "")) for sg in skript.get("segmente", []))
@@ -248,19 +274,32 @@ def pruefe(projekt, profil, extra_ziele):
     t_warum = next((w["start"] for w, x in zip(woerter, n) if x == "warum" and w["wort"].endswith("?")), None)
     zeile("8", "„Warum?“ nach dem Ergebnis", f"{zahl(t_warum, 1)} s" if t_warum is not None else "fehlt", "vorhanden (Hinweis)", "50–55 s", t_warum is not None, pflicht=False)
 
-    # 10 Schlusssatz exakt
-    letzter_text = " ".join(skript["segmente"][-1]["text"].split())
-    gesprochen = " ".join(w["wort"] for w in woerter)
-    schluss = SCHLUSS_KONTO.get(skript.get("konto"), SCHLUSS)
-    ok10 = letzter_text == schluss or gesprochen.endswith(schluss)
-    zeile("10", "Schlusssatz exakt", "ja" if ok10 else f"„{letzter_text[-60:]}“", f"„{' '.join(schluss.split()[:3])} … Kommentare.“", "Frage an den Zuschauer", ok10)
-
-    # 11 Schleife
-    sp = ms.get("schleifenPruefung") if ms else None
-    if sp:
-        zeile("11", "Letztes Bild = erstes Bild", "ja" if sp.get("ok") else f"nein ({len(sp.get('nurErstesBild', [])) + len(sp.get('nurLetztesBild', []))} HUD-Unterschiede, Kamera {sp.get('kameraAbweichung')})", "ja", "K3, K4", bool(sp.get("ok")), pflicht=False)
+    # 10 Schlusskarte statt Schlusssatz (seit 07.11.2026, Inhaber: fester Schlusssatz „fällt ganz weg“): Das Video endet auf einer
+    # Fazit- bzw. Pointenkarte (Baustein M.pointe in den letzten 8 s); der letzte Satz ist weder Frage noch Aufruf.
+    laenge_gesamt = dauer if dauer else stimm_ende
+    letztes_seg = (skript.get("segmente") or [{}])[-1]
+    letzter_text = " ".join(str(letztes_seg.get("text", "")).split())
+    letzter_sprech = re.sub(r"\[[^\]]*\]", " ", str(letztes_seg.get("sprechtext", "")))
+    letzter_satz = " ".join(w["wort"] for w in saetze[-1]) if saetze else ""
+    frage = letzter_text.endswith("?") or letzter_satz.rstrip().endswith("?")
+    aufruf = AUFRUF.search(" ".join((letzter_text, letzter_sprech, letzter_satz)))
+    karte = [e for e in ereignisse if e.get("typ") == "pointe" and float(e["t"]) >= laenge_gesamt - 8.0]
+    if not protokoll:
+        ist10 = "kein Ereignis-Protokoll"
     else:
-        zeile("11", "Letztes Bild = erstes Bild", "nicht geprüft", "ja", "K3, K4", False, pflicht=False)
+        ist10 = (f"Schlusskarte bei {zahl(float(karte[-1]['t']), 1)} s" if karte else "keine Schlusskarte (M.pointe) in den letzten 8 s")
+        ist10 += "; endet mit Frage" if frage else ""
+        ist10 += f"; Aufruf „{aufruf.group(0)}“" if aufruf else ""
+    zeile("10", "Schlusskarte am Ende, keine Frage, kein Aufruf", ist10, "Karte in den letzten 8 s (Inhaber 07.11.)", "Vorbilder 6/6, schwache 1/3", protokoll and bool(karte) and not frage and not aufruf)
+
+    # 11 Schleife (seit 07.11.2026 freiwillig): nur prüfen, wenn das Video eine Schleife setzt
+    sp = ms.get("schleifenPruefung") if ms else None
+    if not any(e.get("typ") == "schleife" for e in ereignisse):
+        zeile("11", "Schleife letztes = erstes Bild (freiwillig)", "nicht genutzt", "freiwillig", "Vorbilder 3/6", True, pflicht=False)
+    elif sp:
+        zeile("11", "Schleife letztes = erstes Bild (freiwillig)", "ja" if sp.get("ok") else f"nein ({len(sp.get('nurErstesBild', [])) + len(sp.get('nurLetztesBild', []))} HUD-Unterschiede, Kamera {sp.get('kameraAbweichung')})", "wenn genutzt: ja", "Vorbilder 3/6", bool(sp.get("ok")), pflicht=False)
+    else:
+        zeile("11", "Schleife letztes = erstes Bild (freiwillig)", "genutzt, nicht geprüft", "wenn genutzt: ja", "Vorbilder 3/6", False, pflicht=False)
 
     # 12 Sprache: Wörter, Tempo, Satzlängen, Satzpausen, Länge
     anzahl = len(woerter)
@@ -274,7 +313,15 @@ def pruefe(projekt, profil, extra_ziele):
     a, b = ziele["woerter"]
     zeile("12a", "Wörter", str(anzahl), f"{a}–{b}", MASSSTAB_TEXT["woerter"], a <= anzahl <= b)
     a, b = ziele["tempo"]
-    zeile("12b", "Sprechtempo", f"{zahl(tempo)} W/s", f"{zahl(a, 1)}–{zahl(b, 1)} W/s", MASSSTAB_TEXT["tempo"], a <= tempo <= b)
+    silbentempo = sum(silben(w["wort"]) for w in woerter) / sprechzeit
+    ok_w = a <= tempo <= b
+    if isinstance(ziele.get("silben"), tuple):  # seit 07.11.2026: W/s ODER Silben/s im Zielbereich
+        sa, sb = ziele["silben"]
+        ok_s = sa <= silbentempo <= sb
+        zeile("12b", "Sprechtempo (Wörter/s oder Silben/s)", f"{zahl(tempo)} W/s · {zahl(silbentempo)} Silben/s",
+              f"{zahl(a, 1)}–{zahl(b, 1)} W/s oder {zahl(sa, 1)}–{zahl(sb, 1)} Silben/s", MASSSTAB_TEXT["tempo"], ok_w or ok_s)
+    else:
+        zeile("12b", "Sprechtempo", f"{zahl(tempo)} W/s ({zahl(silbentempo)} Silben/s)", f"{zahl(a, 1)}–{zahl(b, 1)} W/s", MASSSTAB_TEXT["tempo"], ok_w)
     a, b = ziele["satzlaenge_median"]
     zeile("12c", "Wörter je Satz", f"Median {zahl(med, 1)}, max. {max(lw)}, {round(unter10 * 100)} % unter 10", f"Median {a}–{b}, ≥ 75 % unter 10", MASSSTAB_TEXT["satzlaenge"], a <= med <= b and unter10 >= 0.75)
     if pausen:
@@ -306,10 +353,13 @@ def pruefe(projekt, profil, extra_ziele):
         akz = [e for e in ereignisse if e.get("typ") == "pointe" or e.get("klang") == "akzent"]
         zeile("13b", "Akzent-Klang auf der Pointe", f"{len(akz)}×", "≥ 1", "K1, K2", len(akz) > 0, pflicht=False)
 
-    # 14 Untertitel: Wort für Wort im Stil „kontur“ (Entscheidung des Inhabers 01.11.; Maßstab: Phrasen)
+    # 14 Untertitel: seit 07.11.2026 Blöcke von 1–4 Wörtern (Stil „phrase“, M.untertitel({max: 4})), Schlüsselwort in der Teamfarbe
+    # (Sichtprüfung). Vorher (01.11.–07.11.) Wort für Wort im Stil „kontur“.
     ut = ms.get("untertitel") if ms else None
     stil_ut = (ut or {}).get("stil", "unbekannt")
-    zeile("14", "Untertitel Wort für Wort (kontur)", stil_ut, "kontur (Inhaber 01.11.)", "Phrasen 2–5 Wörter", stil_ut == "kontur")
+    max_ut = (ut or {}).get("maxWoerter")
+    ok14 = stil_ut == "phrase" and max_ut is not None and int(max_ut) <= 4
+    zeile("14", "Untertitel in Blöcken von 1–4 Wörtern", stil_ut + (f", max. {max_ut} Wörter" if max_ut is not None else ""), "phrase, max. 4 (Inhaber 07.11.)", "REA: Blöcke 1–4 Wörter 5/5", ok14)
 
     # 15 Kein Kanalname, kein Logo, keine Rubrik
     funde = re.findall(r"SIMULIERBAR|new Markenleiste\(|WUERFEL|logoGross|rubrik:|stelldirvor|STELLDIRVOR|marke/account2", szene)
@@ -319,12 +369,44 @@ def pruefe(projekt, profil, extra_ziele):
     # vorher am selben Tag nur 17–21). Genau ein Hauptstil (erste Zahl in skript.json „stil“), Einschübe (13 Blaupause, 7 als HUD) stehen
     # nach der ersten Zahl. Stil 16 Lunar-POV gehört zu Account 2. Die Qualitätslatte (stile.md) prüft Claude am Kontaktbogen, nicht hier.
     # Pflicht für Projekte nach dem Skill (skript.json "skill": "simulierbar-video" oder Szene mit sim_atmosphaere.js), sonst Hinweis.
-    nach_skill = skript.get("skill") == "simulierbar-video" or "sim_atmosphaere" in szene
+    nach_skill = skript.get("skill") in SKILLS_A1 or "sim_atmosphaere" in szene
     stil_nr = re.match(r"\s*(\d+)", str(skript.get("stil", "")))
     fremd = sorted(set(re.findall(ACCOUNT2_MODULE, szene)))
     stil_ok = bool(stil_nr) and int(stil_nr.group(1)) in ERLAUBTE_STILE and not fremd
     ist = (f"Stil {stil_nr.group(1)}" if stil_nr else "kein Stil in skript.json") + (f", Account-2-Module: {', '.join(fremd)}" if fremd else "")
     zeile("18b", "Stil erlaubt (1–15, 17–21; Qualitätslatte am Kontaktbogen)", ist, "1–15, 17–21" + ("" if nach_skill else " (Hinweis)"), "genau ein Stil, hochwertige Optik", stil_ok, pflicht=nach_skill)
+
+    # R1–R7: Punkte aus dem freigegebenen REA-Regelwerk (Inhaber 07.11.2026, Hirn „REA Simulierbar Regelwerk“).
+    # Belastbare Regeln und ausdrückliche Entscheidungen sind Pflicht, vorläufige Richtwerte Hinweis.
+    titel = sorted(float(e["t"]) for e in ereignisse if e.get("typ") == "titel")
+    zeile("R1", "Duell-Frage als Titel im Bild ab Bild 1", (f"ab {zahl(titel[0])} s" if titel else "kein Titel (M.titel) im Protokoll") if protokoll else "kein Ereignis-Protokoll",
+          "≤ 0,5 s", "erstes Bild ohne Ton verständlich 6/6 (R01)", protokoll and bool(titel) and titel[0] <= 0.5)
+    tafel = sorted(float(e["t"]) for e in ereignisse if e.get("typ") == "tafel")
+    zeile("R2", "Anzeigetafel mit Zählern ab Bild 0", (f"ab {zahl(max(0.0, tafel[0]))} s" if tafel else "keine Tafel (M.tafel) im Protokoll") if protokoll else "kein Ereignis-Protokoll",
+          "≤ 0,1 s", "Tafel mit laufenden Zählern 6/6 (R04)", protokoll and bool(tafel) and tafel[0] <= 0.1)
+    grafik = sorted({e.get("typ") for e in ereignisse if e.get("typ") in ERKLAERGRAFIK})
+    zeile("R3", "Mindestens eine Erklärgrafik (Balken, Formel, Bilanz)", (", ".join(grafik) if grafik else "keine") if protokoll else "kein Ereignis-Protokoll",
+          "≥ 1", "Erklärgrafik 6/6 (R04)", protokoll and bool(grafik))
+    du_funde = []
+    for sg in skript.get("segmente", []):
+        if str(sg.get("id", "")) in DU_ERLAUBT:
+            continue
+        txt = re.sub(r"\[[^\]]*\]", " ", str(sg.get("sprechtext") or sg.get("text") or ""))
+        du_funde += [f"{sg.get('id', '?')}: {m.group(0)}" for m in DU.finditer(txt)]
+    zeile("R4", "Erzählhaltung neutral (Du nur im Hook)", "kein Du außerhalb des Hooks" if not du_funde else ", ".join(du_funde[:3]) + (" …" if len(du_funde) > 3 else ""),
+          "0 außerhalb von Hook (Inhaber 07.11.)", "durchgehend Du: stark 2/6, schwach 3/3", not du_funde)
+    seg = {s.get("id"): s for s in segmente}
+    t_erg = float(seg["ergebnis"]["start"]) if "ergebnis" in seg else next((w["start"] for w, x in zip(woerter, n) if x == "endstand"), None)
+    anteil = t_erg / laenge_gesamt if t_erg is not None and laenge_gesamt else None
+    zeile("R5", "Endstand bei ca. 80 % der Länge", f"{zahl(t_erg, 1)} s = {round(anteil * 100)} %" if anteil is not None else "kein Segment „ergebnis“ und kein „Endstand“",
+          "75–86 % (Inhaber 07.11.)", "stark 79–83 %, schwach 57 %", anteil is not None and 0.75 <= anteil <= 0.86)
+    if "kipp" in seg and laenge_gesamt:
+        ak = float(seg["kipp"]["start"]) / laenge_gesamt
+        zeile("R6", "Kipp-Moment (Höhepunkt) bei ca. 64 %", f"{zahl(float(seg['kipp']['start']), 1)} s = {round(ak * 100)} %", "55–72 % (Hinweis)", "stark 64 % (ca. 45 s)", 0.55 <= ak <= 0.72, pflicht=False)
+    else:
+        zeile("R6", "Kipp-Moment (Höhepunkt) bei ca. 64 %", "kein Segment „kipp“", "55–72 % (Hinweis)", "stark 64 % (ca. 45 s)", False, pflicht=False)
+    erster = len(saetze[0]) if saetze else 0
+    zeile("R7", "Erster Satz kurz", f"{erster} Wörter", "3–4 (Hinweis)", "stark 3–4, schwach 6", 1 <= erster <= 4, pflicht=False)
 
     return zeilen, {"profil": profil, "ziele": ziele, "timing": "geschätzt" if geschaetzt else "echt", "protokoll": protokoll}
 

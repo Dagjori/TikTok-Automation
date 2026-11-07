@@ -26,6 +26,17 @@ SPANNUNG = """SPANNUNG UND QUALITÄT
 - Schreibe so, dass sich daraus mehrere unterschiedliche Bildsequenzen, Wendungen und Situationswechsel ergeben (ich baue danach Design und Animation aus deinem Skript). Markiere in den Dramaturgie-Hinweisen, wo die Spannung steigt und welche Momente visuell besonders sein sollten (Zoom, Licht, Aufleuchten).
 - Nichts Übertriebenes: lieber ein klarer, sauberer Spannungsbogen als Effekthascherei."""
 
+ORIGINAL = """ORIGINALITÄT (wichtigste Regel für Ideen; Vorrang vor dem Lernstand und vor allen Beispielen)
+Andere Creator fragen dieselbe KI mit ähnlichen Befehlen. Was dir als Erstes einfällt, haben sie auch bekommen, und genau das wollen wir nicht. Wir wollen Themen, die auf Deutsch noch niemand gemacht hat.
+1. Schreibe zuerst für dich die 20 naheliegendsten Ideen zu unserer Nische auf und streiche sie alle, dazu alles von der ANTI-LISTE unten (auch umbenannt oder mit anderen Zahlen). Nenne die gestrichenen Ideen in Stichworten (Feld "gestrichen").
+2. Baue mindestens 6 der 10 Ideen auf den ZUTATEN DES TAGES auf (Feld "zutat"), jede Zutat höchstens zweimal. Eine Zutat ist ein Ausgangspunkt, kein Zwang; passt eine gar nicht, lass sie weg.
+3. Prüfe jede Idee mit der Websuche: Gibt es auf Deutsch schon ein Video zur gleichen Frage (TikTok, YouTube, Instagram)? Suche mit 2 bis 3 deutschen Begriffen. Gefunden: Idee verwerfen und ersetzen. Englische Videos zur gleichen Frage sind erlaubt, wenn unsere Fassung eigenständig ist. Trage im Feld "originalitaet" ein: welche naheliegende Idee du damit vermeidest, die Suchbegriffe und das Ergebnis („kein deutsches Video gefunden“ oder „englisch: …“). Hast du keine Websuche, schreibe „ungeprüft“.
+4. Einzigartig UND relevant, beides ist Pflicht: ein ungewöhnlicher Winkel auf etwas, das viele kennen oder betrifft. Die Frage muss ohne Erklärung verständlich sein. Abseitige Nischen fallen genauso raus wie Standardthemen.
+5. Zwei Ideen, die sich nur im Zahlenwert oder im Ort unterscheiden, zählen als eine. Der Lernstand sagt, welche Art Thema trägt, nicht welches konkrete Thema du nehmen sollst."""
+
+ZUTATEN_KOPF = """ZUTATEN DES TAGES (zufällig gezogen, damit unsere Ideen sich von denen anderer unterscheiden)
+{{ZUTATEN}}"""
+
 # ---------------------------------------------------------------- Account 1
 A1_ROLLE = """ROLLE
 Du bist mein Content-Stratege und Skript-Autor für den TikTok-Kanal „Simulierbar“ (@simulierbar). Du denkst wie ein erfahrener Creator, der Kanäle ins TikTok Creator Rewards Program bringt: Themen, die viele Menschen betreffen, mit klarem Aha-Moment und einer Zahl, die man sich merkt.
@@ -39,12 +50,31 @@ UNSER KANAL
 A1_REGELN_IDEEN = """REGELN FÜR IDEEN
 - Nur GELD. Das Ergebnis muss in Euro (bzw. passender Währung) ausgedrückt werden können und aus einer eigenen, nachvollziehbaren Modellrechnung stammen.
 - Ein Duell vergleicht nur echte Alternativen derselben Entscheidung (kein „Steuererklärung gegen Überstunden“-Unsinn).
-- Jede Idee braucht ein Duell, das schon im Hook beide Seiten konkret nennt. Themen ohne natürliche Gegenseite als Duell rahmen (z. B. Kind: Ausgaben gegen Kindergeld schon im Hook), sonst nicht vorschlagen.
-- GEWICHTUNG (Pflicht): Mindestens 6 der 10 Ideen sind Duelle zu großen Lebensentscheidungen mit großer Euro-Endzahl (z. B. Studium oder Ausbildung, Mieten oder Kaufen, Auto kaufen oder leasen, Kind, Rente bzw. Vorsorge; auch Wohnen, Arbeit, Familie, Steuern, Energie über Jahre). Die übrigen dürfen andere Geldthemen sein; kleine Alltagstipps nur als Ausnahme (höchstens 1 von 10) und nur, wenn die Jahressumme wirklich überrascht.
+- Jede Idee braucht ein Duell, das schon im Hook beide Seiten konkret nennt. Themen ohne natürliche Gegenseite als Duell rahmen (z. B. ein Ding gegen seinen Ersatz, damals gegen heute, Deutschland gegen ein anderes Land), sonst nicht vorschlagen.
+- Eine große, überraschende Euro-Endzahl ist Pflicht (Jahres-, Jahrzehnt- oder Lebenssumme oder ein Betrag, den niemand erwartet).
+- THEMENFELDER (Pflicht): Verteile die 10 Ideen auf diese Felder, jedes der Felder 1 bis 4 mindestens einmal (Feld "feld"):
+  1. Versteckte Mechaniken: wo Geld unbemerkt fließt (Shrinkflation, Pfand, Rundungen, Grundgebühren, Mindestbestellwerte, Kündigungsfristen, Kleingedrucktes).
+  2. Geschichte und Kurioses: was etwas früher in heutigem Geld oder in Arbeitszeit kostete, kuriose Gesetze und Gebühren, Preise berühmter Dinge, Rekorde in Euro.
+  3. Geld hinter den Dingen: was ein Feuerwerk, ein Stadionrasen, eine Ampel oder ein Leuchtturm kostet, was ein seltener Beruf verdient; als Duell gerechnet.
+  4. Länder-Duelle: dieselbe Entscheidung in Deutschland gegen ein anderes Land (Gesetz, Preis, Steuer, Gewohnheit) mit Euro-Ergebnis.
+  5. Ungewöhnliche Lebensentscheidungen: echte Entscheidungen, die selten durchgerechnet werden.
+- KLASSIKER (Mieten oder Kaufen, Studium oder Ausbildung, Leasing oder Kauf, Rente bzw. Vorsorge, Kind): höchstens 1 von 10, und nur mit einer Frage, die auf Deutsch noch niemand gestellt hat. Kleine Alltagstipps nur als Ausnahme (höchstens 1 von 10) und nur, wenn die Jahressumme wirklich überrascht.
 - Ausgeschlossen: Glücksspiel, Tabak/Vape, Gesundheitsversprechen, Tragödien, Krypto, Einzelaktien, Empfehlungen für Anbieter, Banken, Versicherer oder Broker, Parteipolitik, riskantes Nachahmen, Kaufaufrufe, „schnell reich“.
 - Finanzthemen nur als Modellrechnung, nie als Anlageberatung.
-- Keine 1:1-Kopie eines fremden Videos: gleiches Thema nur mit eigenem Blickwinkel, eigener Rechnung und eigenen Sätzen.
+- Kein Thema, zu dem es auf Deutsch schon ein Video mit der gleichen Frage gibt (Regel ORIGINALITÄT). Von englischen Videos nie Skript, Sätze, Bild- oder Szenenideen übernehmen.
 - Keine Dopplung mit unseren bisherigen Videos."""
+
+A1_ANTI = """ANTI-LISTE (auf Deutsch schon gemacht oder KI-Standard; nie vorschlagen, auch nicht umbenannt)
+Mieten oder Kaufen · Studium oder Ausbildung · Leasen, Finanzieren oder bar · Neuwagen oder Gebrauchter · E-Auto oder Verbrenner · Auto, Fahrrad oder Deutschlandticket · Bahn, Auto oder Flugzeug · Fenster auf oder Klimaanlage · Spülmaschine oder Handspülen · Duschen oder Baden · Trockner oder Wäscheleine · Wasserkocher oder Herd · Standby-Kosten · LED oder Glühbirne · Heizung nachts aus bzw. 1 Grad weniger · Wärmepumpe oder Gasheizung · Solaranlage, Balkonkraftwerk, Speicher · Tanken vor 12 bzw. Umweg zur Tankstelle · Reifendruck, Tempo 130 gegen 160, Ganzjahresreifen · früh sparen, Zinseszins, erste Million, Inflation frisst Erspartes, 1 Cent verdoppeln · Kaffee to go oder Kaffeemaschine, Latte-Faktor · Mittagessen mitnehmen oder kaufen · Kochen oder Lieferdienst · Leitungs- oder Flaschenwasser · Streaming-Abos · Handyvertrag oder Prepaid, Handy auf Raten · Fitnessstudio oder draußen trainieren · Hund oder Katze · Kindergeld, was ein Kind kostet · Bürgergeld, lohnt sich Arbeiten · Steuererklärung machen oder nicht · Überstunden oder Freizeit · Jobwechsel oder Gehaltserhöhung · Teilzeit, 4-Tage-Woche · Pendeln oder umziehen, Homeoffice · Rente mit 63 oder 67 · Black Friday · Regen: rennen oder gehen · Pausen oder Tempo auf der Autobahn"""
+
+A1_ZUTATEN = [
+    ("Gesetz, Gebühr oder Statistik", ["Pfandverordnung", "Rundfunkbeitrag", "Hundesteuer", "Kurtaxe", "Bußgeldkatalog", "Briefporto seit 1950", "Grundsteuer", "Kirchensteuer", "Parkgebühren", "Zoll-Freimengen", "Fluggastrechte", "Mindestlohn seit 2015", "Preisangabenverordnung", "Lkw-Maut", "Müllgebühren", "Wasserpreise je Stadt", "Notarkosten", "Bargeldgebühren", "Mehrwertsteuer 7 oder 19 Prozent", "Schaumweinsteuer", "Kaffeesteuer", "Ladenöffnungszeiten", "Biersteuer", "Feuerwerksverkauf nur drei Tage"]),
+    ("Ding", ["Feuerwerk", "Weihnachtsbaum", "Stadionrasen", "Ampel", "Straßenlaterne", "Leuchtturm", "Rolltreppe", "Brötchen", "Briefmarke", "Pfandflasche", "Einkaufswagen", "Parkuhr", "Kirchenglocke", "Schulbus", "Fußball", "Zahnbürste", "Regenschirm", "Kaugummi", "Kinokarte", "Glühwein", "Konzertticket", "Schlüsseldienst", "Bahnhofstoilette", "Adventskalender"]),
+    ("Beruf", ["Schornsteinfeger", "Lotse", "Fluglotse", "Hufschmied", "Orgelbauer", "Imker", "Schleusenwärter", "Berufstaucher", "Schäfer", "Pilot", "Hebamme", "Winzer", "Bergführer", "Zugbegleiter", "Eisverkäufer", "Glockengießer", "Tätowierer", "Kapitän", "Synchronsprecher", "Schiedsrichter"]),
+    ("Land", ["Japan", "Norwegen", "Schweiz", "USA", "Dänemark", "Singapur", "Island", "Polen", "Portugal", "Kanada", "Australien", "Südkorea", "Niederlande", "Österreich", "Italien", "Mexiko", "Finnland", "Frankreich"]),
+    ("Zeit", ["1950", "1965", "1980", "1990", "2001, letztes D-Mark-Jahr", "2002, Euro-Einführung", "Mittelalter", "Römerzeit", "Kaiserreich um 1900", "2035, in die Zukunft gerechnet"]),
+    ("Mechanik", ["Rundung", "Mindestbestellwert", "Staffelpreis", "Grundgebühr", "Kündigungsfrist", "Packungsgröße", "Pfand", "Bonuspunkte", "Gebühr je Vorgang", "Mengenrabatt", "Mindesthaltbarkeit", "Aufrunden an der Kasse", "Wechselkurs-Aufschlag", "automatische Abo-Verlängerung", "Inflation pro Jahr", "Zinstage"]),
+]
 
 A1_FORMAT_SKRIPT = """AUFBAU DES SKRIPTS (feste Reihenfolge, genau diese Phasen; Zeiten für ca. 70 Sekunden)
 1. hook (0 bis 5 s): Pflicht ist ein Duell im ersten Satz: beide Alternativen bzw. beide Personen konkret nennen und gegeneinanderstellen (z. B. „Einer verdient ab 16, der andere ab 24. Wer hat mit 40 mehr?“). Keine Einzelfrage („Wie viel kostet X wirklich?“), kein vorweggenommenes Ergebnis; ein Du-Szenario nur mit beiden Seiten im Hook. Höchstens 2 kurze Sätze, der erste mit nur 3 bis 4 Wörtern, die Stimme setzt sofort ein. Die Duell-Frage steht ab dem ersten Bild als Titel im Bild (Feld text); das erste Bild muss ohne Ton verständlich sein (beide Seiten, ihre Werte, ein Vergleichszeichen).
@@ -76,9 +106,9 @@ A1_CAPTION = """CAPTION (nicht im Video, nur Beschreibung)
 Genau eine Zeile: Hook-Frage mit Suchbegriff? Emoji Ich hab’s simuliert. Kommentarfrage? 👇 #thema1 #thema2 #thema3 #wissen #simulation
 Etwa 150 Zeichen plus 5 Hashtags, kein #fyp oder #viral, keine Quellen, keine Hinweise wie „keine Anlageberatung“."""
 
-A1_IDEEN_JSON = """{"ideen":[{"nr":1,"titel":"Duell-Frage als Videotitel","alternativen":["Alternative A","Alternative B"],"hook":"erster Satz des Videos: Duell, das beide Alternativen konkret nennt (keine Einzelfrage, kein Ergebnis vorweg)","ergebnis_ansatz":"wie die Rechnung geht und in welcher Größenordnung das Euro-Ergebnis liegt (kein erfundener Wert)","warum_relevant":"wen es betrifft und warum es viele interessiert","diskussion":"warum sich Zuschauer darüber austauschen würden (nur intern, nicht im Video)","daten":"welche belegbaren Quellen/Zahlen verfügbar sind","bildidee":"eine Szene, in der man das Duell sieht","laender":"Deutschland | weltweit | Land","risiko":"Recht, Plattform, Ausschlussthemen: kurz"}]}"""
+A1_IDEEN_JSON = """{"gestrichen":["naheliegende Idee in Stichworten"],"ideen":[{"nr":1,"titel":"Duell-Frage als Videotitel","feld":"Versteckte Mechaniken | Geschichte und Kurioses | Geld hinter den Dingen | Länder-Duell | Ungewöhnliche Lebensentscheidung | Klassiker mit neuer Frage","zutat":"welche Zutat des Tages (oder „keine“)","originalitaet":"vermeidet: naheliegende Idee · Suche: Begriffe · Ergebnis: kein deutsches Video gefunden | englisch: … | ungeprüft","alternativen":["Alternative A","Alternative B"],"hook":"erster Satz des Videos: Duell, das beide Alternativen konkret nennt (keine Einzelfrage, kein Ergebnis vorweg)","ergebnis_ansatz":"wie die Rechnung geht und in welcher Größenordnung das Euro-Ergebnis liegt (kein erfundener Wert)","warum_relevant":"wen es betrifft und warum es viele interessiert","diskussion":"warum sich Zuschauer darüber austauschen würden (nur intern, nicht im Video)","daten":"welche belegbaren Quellen/Zahlen verfügbar sind","bildidee":"eine Szene, in der man das Duell sieht","laender":"Deutschland | weltweit | Land","risiko":"Recht, Plattform, Ausschlussthemen: kurz"}]}"""
 
-A1_SKRIPT_JSON = """{"skripte":[{"nr":1,"titel":"","thema":"","laender":"","segmente":[{"id":"hook","phase":"hook","text":"Untertitel-Text (Ziffern erlaubt)","sprechtext":"Regie-Text, eine Zeile pro Satz"}],"woerter":0,"rechenweg":"Formel, Eingaben, Rechenschritte, Ergebnis","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","dramaturgie":["Hinweis mit Zeitpunkt"],"selbstpruefung":["Wortzahl ..","Fakten ..","Ton ..","Verbote .."]}]}"""
+A1_SKRIPT_JSON = """{"skripte":[{"nr":1,"titel":"","thema":"","laender":"","segmente":[{"id":"hook","phase":"hook","text":"Untertitel-Text (Ziffern erlaubt)","sprechtext":"Regie-Text, eine Zeile pro Satz"}],"woerter":0,"rechenweg":"Formel, Eingaben, Rechenschritte, Ergebnis","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","originalitaet":"Suche (deutsch) und Ergebnis","dramaturgie":["Hinweis mit Zeitpunkt"],"selbstpruefung":["Wortzahl ..","Fakten ..","Ton ..","Verbote .."]}]}"""
 
 # ---------------------------------------------------------------- Account 2
 A2_ROLLE = """ROLLE
@@ -95,9 +125,27 @@ A2_REGELN_IDEEN = """REGELN FÜR IDEEN
 - Ein einziges Ereignis, das man von einem festen Standpunkt aus wachsen sieht, mit einer messbaren Größe für die Anzeige (z. B. Temperatur, Wasserstand, Entfernung, Höhe, Jahr, Anzahl).
 - Abwechslung: Verschiedene Welten, Standpunkte, Tageszeiten und Themenfelder; nie zwei gleiche Welttypen hintereinander. Natur ausdrücklich bedenken.
 - Ohne Opferdarstellung, ohne Gore, ohne reale Tragödien; Katastrophen enden sachlich.
-- Keine 1:1-Kopie eines fremden Videos: Themen anderer Kanäle (auch US-Kanäle) sind frei, aber nur mit eigenem Skript und deutlich anderem Design (anderer Ort, andere Dramaturgie).
+- THEMENFELDER (Feld "feld"): jedes der Felder 1 bis 3 mindestens einmal unter den 10 Ideen.
+  1. Natur und Tiere: Tierwanderungen, Pflanzen, Meeresströmungen, ein Ökosystem kippt oder wächst (ohne Gore).
+  2. Geschichte umgedreht: ein echter historischer Ort oder Moment, an dem eine Größe anders ist; keine reale Tragödie, keine Opfer.
+  3. Technik und Versorgung: Strom, Wasser, Kühlung, Kabel, Satelliten oder Lieferketten an einem konkreten Ort (nicht der weltweite Blackout).
+  4. Physik, Wetter, Geografie, Weltraum mit eigener Prämisse (nichts von der ANTI-LISTE).
+- MASSSTAB meist persönlich: Mindestens 6 der 10 Ideen spielen an einem greifbaren Ort (Strand, Garten, Straße, Boot, Hütte …) mit einer Skala, die man sich vorstellen kann; höchstens 4 sind global oder kosmisch, auch dann aus der Ich-Perspektive.
+- Kein Thema, zu dem es auf Deutsch schon ein Video mit der gleichen Prämisse gibt (Regel ORIGINALITÄT). Englische Vorbilder sind erlaubt, wenn sie nicht auf der ANTI-LISTE stehen, aber nur mit eigenem Skript und deutlich anderem Design (anderer Ort, andere Dramaturgie).
 - Keine Dopplung mit unseren bisherigen Videos.
 - Die Idee muss sich visuell tragen: Beschreibe, was sich in der Welt jede Phase sichtbar verändert."""
+
+A2_ANTI = """ANTI-LISTE (die großen Was-wäre-wenn-Klassiker, gesperrt; nie vorschlagen, auch nicht umbenannt oder an anderem Ort)
+Sonne explodiert, verschwindet oder ist kurz weg · Erde hört auf sich zu drehen, dreht schneller oder kreist nicht mehr · Mond stürzt ab, verschwindet, kommt näher oder ist aus Käse bzw. Schokolade · Asteroid oder Komet schlägt ein · Sauerstoff, Atmosphäre oder Schwerkraft ist für Sekunden weg · Riesen-Tsunami bzw. Megawelle trifft eine Stadt · Supervulkan, Yellowstone · stärkstes Erdbeben trifft deine Stadt · Schwarzes Loch kommt näher · Rogue-Planet trifft die Erde · alles Eis schmilzt, neue Eiszeit · Zombie-Ausbruch · Riesenmonster · Reise durch den Erdkern bzw. Loch durch die Erde · Fall in den Jupiter · ohne Raumanzug im All · Papier 42-mal falten · du schrumpfst oder wächst · Aufwachen im Jahr 3000 · alle Menschen springen, klatschen oder niesen gleichzeitig · Erde ist flach, ein Donut oder hat Saturnringe · Magnetfeld kippt, großer Sonnensturm · 1.000 Jahre Regen · weltweiter Stromausfall, Internet fällt weltweit aus · Schall oder Licht wird langsam"""
+
+A2_ZUTATEN = [
+    ("Ort", ["Ostseestrand", "Almhütte", "Kleingarten", "Campingplatz am See", "Deck eines Fischkutters", "Galerie eines Leuchtturms", "Weinberg", "Hallig", "Dorfbahnsteig", "Waldlichtung", "Dünen", "Gletscherhütte", "Hausboot", "Reisterrassen", "Lodge in der Savanne", "Fjordufer", "Vulkaninsel", "Mangrovenufer", "Hochmoor", "Wattenmeer", "Steg über einem Korallenriff", "Wüstenoase", "Bergsee", "Schrebergarten am Bahndamm"]),
+    ("Natur", ["Zugvögel", "Bienenvolk", "Lachswanderung", "Korallen", "Golfstrom", "Monsun", "Mangroven", "Ameisenstaat", "Glühwürmchen", "Wale", "Meeresleuchten", "Moor", "Buchenwald", "Pilzgeflecht", "Seegras", "Gezeiten", "Polarlicht", "Wanderdüne", "Bambusblüte", "Plankton"]),
+    ("Geschichte", ["Pyramidenbau", "Limes", "Hansekogge", "Bau des Gotthardtunnels", "Mondlandung 1969", "erste deutsche Eisenbahn 1835", "Kölner Dom (632 Jahre Bauzeit)", "Buchdruck", "Leuchtturm von Alexandria", "Panamakanal", "Abschlussdeich 1932", "Atlantikkabel 1858", "Chinesische Mauer", "Stonehenge", "Brooklyn Bridge", "erster Heißluftballon 1783", "Speicherstadt Hamburg", "römisches Aquädukt"]),
+    ("Technik und Versorgung", ["Netzfrequenz 50 Hz", "Trinkwasserdruck", "Unterseekabel", "GPS-Satelliten", "Containerschiff", "Fernwärme", "Kläranlage", "Schleuse", "Stausee", "Windpark", "Kühlkette", "Ampelschaltung", "Funkmast", "Bahnstrom", "Pumpspeicherwerk", "Deich", "Pipeline", "Wasserturm", "Stromleitung", "Leuchtfeuer"]),
+    ("Messgröße", ["Pegel in cm", "Temperatur", "Lautstärke in dB", "Helligkeit in Lux", "Anzahl", "Salzgehalt", "pH-Wert", "Windstärke", "Frequenz in Hz", "Luftdruck", "Höhe in m", "Geschwindigkeit", "Jahr", "Gewicht in t", "Entfernung"]),
+    ("Tageszeit", ["Morgengrauen", "Mittag", "Sonnenuntergang", "Nacht", "Polarnacht", "Mitternachtssonne"]),
+]
 
 A2_FORMAT_SKRIPT = """AUFBAU DES SKRIPTS (feste Reihenfolge, 80 Sekunden)
 - Titelfrage (steht 0,4 bis 4,4 s oben im Bild, 2 bis 3 Zeilen, deutsch, eine Frage mit offener Folge, die neugierig macht; sie verrät die Gefahr, die die Welt im Bild noch nicht kennt). Im Abspann kehrt sie zurück.
@@ -111,15 +159,16 @@ A2_CAPTION = """CAPTION (nicht im Video, nur Beschreibung)
 Genau eine Zeile: Hook-Frage mit Suchbegriff? Emoji Ich hab’s durchgespielt. Kommentarfrage? 👇 #thema1 #thema2 #thema3 #wissen #waswaerewenn
 Etwa 150 Zeichen plus 5 Hashtags, kein #fyp oder #viral."""
 
-A2_IDEEN_JSON = """{"ideen":[{"nr":1,"titel":"Titelfrage „Was wäre, wenn …?“","ereignis":"was passiert, in einem Satz","messgroesse":"was die Anzeige zeigt (Größe, Einheit, Start und Ende)","welt":"Natur/Ort-Typ","standpunkt":"wo steht der Zuschauer","tageszeit_verlauf":"z. B. Morgen, Mittag, Abend","bewegung":"was sich in der Welt sichtbar verändert, Phase für Phase","kamera":"z. B. langsamer Zoom","zeitraffer":"Faktor oder Echtzeit","hoehepunkt":"was bei HIER passiert","pointe":"was man mitnimmt","diskussion":"warum sich Zuschauer austauschen würden (nur intern)","daten":"belegbare Quellen/Zahlen verfügbar","laender":"Ort/Land","risiko":"kurz"}]}"""
+A2_IDEEN_JSON = """{"gestrichen":["naheliegende Idee in Stichworten"],"ideen":[{"nr":1,"titel":"Titelfrage „Was wäre, wenn …?“","feld":"Natur und Tiere | Geschichte umgedreht | Technik und Versorgung | Physik, Wetter, Geografie, Weltraum","massstab":"persönlich | global","zutat":"welche Zutat des Tages (oder „keine“)","originalitaet":"vermeidet: naheliegende Idee · Suche: Begriffe · Ergebnis: kein deutsches Video gefunden | englisch: … | ungeprüft","ereignis":"was passiert, in einem Satz","messgroesse":"was die Anzeige zeigt (Größe, Einheit, Start und Ende)","welt":"Natur/Ort-Typ","standpunkt":"wo steht der Zuschauer","tageszeit_verlauf":"z. B. Morgen, Mittag, Abend","bewegung":"was sich in der Welt sichtbar verändert, Phase für Phase","kamera":"z. B. langsamer Zoom","zeitraffer":"Faktor oder Echtzeit","hoehepunkt":"was bei HIER passiert","pointe":"was man mitnimmt","diskussion":"warum sich Zuschauer austauschen würden (nur intern)","daten":"belegbare Quellen/Zahlen verfügbar","laender":"Ort/Land","risiko":"kurz"}]}"""
 
-A2_SKRIPT_JSON = """{"skripte":[{"nr":1,"titel":"Titelfrage","thema":"","welt":"","standpunkt":"","tageszeit_verlauf":"","zeitraffer":"","kamera":"","anzeige_plan":[{"von_s":0,"bis_s":8,"etikett":"ETIKETT (Phase 1: Countdown bis zum Ereignis)","start":"","ende":"","einheit":"","unter":"Statuszeile in Versalien"}],"saetze":[{"t_ca":4.8,"text":"Satz mit 3 bis 9 Wörtern."}],"faktenzeile":"","rechenweg":"Formel, Eingaben, Rechenschritte","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","dramaturgie":["Hinweis mit Zeitpunkt: was in der Welt passiert, Licht, Zoom"],"selbstpruefung":["Satzzahl ..","Fakten ..","Anzeige passt zum Zeitraffer ..","Verbote .."]}]}"""
+A2_SKRIPT_JSON = """{"skripte":[{"nr":1,"titel":"Titelfrage","thema":"","welt":"","standpunkt":"","tageszeit_verlauf":"","zeitraffer":"","kamera":"","anzeige_plan":[{"von_s":0,"bis_s":8,"etikett":"ETIKETT (Phase 1: Countdown bis zum Ereignis)","start":"","ende":"","einheit":"","unter":"Statuszeile in Versalien"}],"saetze":[{"t_ca":4.8,"text":"Satz mit 3 bis 9 Wörtern."}],"faktenzeile":"","rechenweg":"Formel, Eingaben, Rechenschritte","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","originalitaet":"Suche (deutsch) und Ergebnis","dramaturgie":["Hinweis mit Zeitpunkt: was in der Welt passiert, Licht, Zoom"],"selbstpruefung":["Satzzahl ..","Fakten ..","Anzeige passt zum Zeitraffer ..","Verbote .."]}]}"""
 
 KONFIG = {
     "simulierbar": {
         "name": "Simulierbar", "handle": "@simulierbar", "praefix": "acc1",
         "rolle": A1_ROLLE, "regeln_ideen": A1_REGELN_IDEEN, "format": A1_FORMAT_SKRIPT, "stimme": A1_STIMME,
         "caption": A1_CAPTION, "ideen_json": A1_IDEEN_JSON, "skript_json": A1_SKRIPT_JSON,
+        "anti": A1_ANTI, "zutaten": A1_ZUTATEN,
         "bisher": ["GTA 6 weltweit", "Spurwechsel / Reißverschluss", "Treppe oder Aufzug", "200 € oder 100 € steuerfrei",
                    "Fußgängerampel (Rennen oder Gehen)", "Steuererklärung oder Überstunden"],
         "lernstand": ("Startwerte (Recherche 02.11.2026, 50 Videos von 6 Konten, öffentliche Zahlen) und eigene erste Zahlen:\n"
@@ -132,6 +181,7 @@ KONFIG = {
         "name": "Stell dir vor", "handle": "@stelldirvor.pov", "praefix": "acc2",
         "rolle": A2_ROLLE, "regeln_ideen": A2_REGELN_IDEEN, "format": A2_FORMAT_SKRIPT, "stimme": "",
         "caption": A2_CAPTION, "ideen_json": A2_IDEEN_JSON, "skript_json": A2_SKRIPT_JSON,
+        "anti": A2_ANTI, "zutaten": A2_ZUTATEN,
         "bisher": ["Schall in Schritttempo (Test)", "Eiszeit in Toronto (Was wäre, wenn wir wieder in eine Eiszeit steuern?)"],
         "lernstand": ("Startwerte (Recherche 02.11.2026 und eigene Eindrücke):\n"
                       "- Ausführung entscheidet mehr als das Thema: dasselbe Thema erreicht bei einem aufwendig gebauten Kanal Millionen, bei einfach gebauten Kanälen nur Tausende.\n"
@@ -150,17 +200,31 @@ def bisher_block(bisher):
     return "BISHERIGE VIDEOS (nicht wiederholen):\n" + "\n".join(f"- {t}" for t in bisher)
 
 
-def ideen_befehl(konto, lernstand=None, bisher=None, wunsch="", format="text"):
+ZUTATEN_JE_LISTE = 2
+
+
+def zutaten_ziehen(konto, rng=None):
+    """Zieht je Liste ZUTATEN_JE_LISTE Einträge (gleiche Logik wie im Cockpit, cockpit/lib/studio.mjs)."""
+    import random
+    r = rng or random.SystemRandom()
+    return "\n".join(f"- {name}: " + " · ".join(r.sample(liste, ZUTATEN_JE_LISTE)) for name, liste in KONFIG[konto]["zutaten"])
+
+
+ZUTATEN_HAND = "[Hier die Zutaten einsetzen: je Liste zwei Einträge aus dem Abschnitt „Zutaten-Listen“ unten, gewürfelt; das Cockpit macht das automatisch]"
+
+
+def ideen_befehl(konto, lernstand=None, bisher=None, wunsch="", format="text", zutaten="{{ZUTATEN}}"):
     c = KONFIG[konto]
     ls = lernstand or c["lernstand"]
     b = bisher if bisher is not None else c["bisher"]
-    antwort = ("Antworte AUSSCHLIESSLICH mit gültigem JSON (kein Markdown, kein Text davor oder danach) in genau dieser Form, mit genau 10 Einträgen:\n" + c["ideen_json"]
+    antwort = ("Antworte AUSSCHLIESSLICH mit gültigem JSON (kein Markdown, kein Text davor oder danach) in genau dieser Form, mit genau 10 Einträgen unter \"ideen\":\n" + c["ideen_json"]
                if format == "json" else
-               "Antworte als nummerierte Liste von 1 bis 10. Jede Idee mit den Feldern, die im Beispiel unten stehen, jeweils eine kurze Zeile je Feld. Danach frage mich: „Welche zwei wählst du?“\nFelder (Beispiel als JSON, nur zur Orientierung, antworte als lesbaren Text):\n" + c["ideen_json"])
-    teile = [c["rolle"], c["regeln_ideen"], FAKTEN, lernstand_block(konto, ls), bisher_block(b)]
+               "Beginne mit einer Zeile „Gestrichen (naheliegend): …“. Antworte danach als nummerierte Liste von 1 bis 10. Jede Idee mit den Feldern, die im Beispiel unten stehen, jeweils eine kurze Zeile je Feld. Danach frage mich: „Welche zwei wählst du?“\nFelder (Beispiel als JSON, nur zur Orientierung, antworte als lesbaren Text):\n" + c["ideen_json"])
+    teile = [c["rolle"], c["regeln_ideen"], ORIGINAL, c["anti"], FAKTEN, lernstand_block(konto, ls), bisher_block(b),
+             ZUTATEN_KOPF.replace("{{ZUTATEN}}", zutaten)]
     if wunsch:
         teile.append("MEIN WUNSCH FÜR HEUTE: " + wunsch)
-    teile.append("AUFGABE\nWir brauchen zehn Videoideen in unserer Nische für den morgigen Tag. Sie sollen unterschiedlich sein (verschiedene Themenfelder, Länder bzw. Welten) und gleichzeitig zum Lernstand passen. Prüfe jede Idee vor der Ausgabe gegen die Regeln und die Faktenlage; schreibe nur Ideen auf, die du belegen kannst.\n" + antwort)
+    teile.append("AUFGABE\nWir brauchen zehn Videoideen in unserer Nische für den morgigen Tag, die auf Deutsch noch niemand gemacht hat. Sie sollen unterschiedlich sein (verschiedene Themenfelder, Länder bzw. Welten) und zum Lernstand passen. Prüfe jede Idee vor der Ausgabe gegen die Regeln, die ANTI-LISTE, die Websuche und die Faktenlage; schreibe nur Ideen auf, die du belegen kannst.\n" + antwort)
     return "\n\n".join(teile)
 
 
@@ -183,6 +247,7 @@ def skript_befehl(konto, ideen, lernstand=None, format="text"):
 
 RECHERCHE_CODE = """RECHERCHE (du bist Claude Code mit Websuche; dieser Abschnitt hat Vorrang vor „frage mich vorher“ oben)
 - Du arbeitest unbeaufsichtigt: frage nicht zurück, recherchiere selbst. Was du nicht belegen kannst, lässt du weg. Trägt die Idee dann nicht, meldest du das (Status fehler mit Grund und Vorschlag), statt etwas zu erfinden.
+- Originalität zuerst: Suche vor dem Schreiben, ob es auf Deutsch schon ein Video zur gleichen Frage bzw. Prämisse gibt (TikTok, YouTube, Instagram; 2 bis 3 Suchen). Gibt es eines, schreibe kein Skript, sondern setze den Status rueckfrage mit dem Fund (Titel, Konto, Aufrufe, Link nur im Slot-Dokument) und einem Vorschlag für einen eigenen Dreh. Ergebnis der Suche in "originalitaet" des Skripts.
 - Belege jede Zahl, jedes Datum und jede Regel mit einer Websuche, möglichst bei der Primärquelle (Gesetz, Behörde, amtliche Statistik, Studie, Hersteller). Öffne die Quelle, wenn die Suche nur einen Ausschnitt zeigt. Stand und Gültigkeit müssen zum Video-Tag passen (Jahr, Rechtsstand, Preise).
 - Rechne jede Zahl im Rechenweg mit Python nach, nie im Kopf. Im Sprechtext runde Zahlen, im Bild exakte.
 - Schreibe jede Quelle als „(F) Titel, Herausgeber, Stand – URL“, Schätzungen als „(S) …“, Annahmen als „(A) …“.
@@ -201,8 +266,9 @@ def code_skript_befehl(konto, idee, lernstand=None, kommentar=""):
 def notiz(konto, titel, ordner, zielordner_konto):
     c = KONFIG[konto]
     k = konto
-    ideen = ideen_befehl(k, format="text")
+    ideen = ideen_befehl(k, format="text", zutaten=ZUTATEN_HAND)
     skript = skript_befehl(k, "[Hier die zwei gewählten Ideen einfügen (Titel und Felder aus Schritt 1)]", format="text")
+    listen = "\n".join(f"- **{name}:** " + " · ".join(liste) for name, liste in c["zutaten"])
     return f"""---
 typ: anleitung
 konto: {k}
@@ -238,8 +304,13 @@ Im **Ideen-Studio** (Artifact) erzeugst du die Ideen per Klick; Recherche und Sk
 {skript}
 ```
 
+## Zutaten-Listen
+Das Cockpit zieht für jeden Ideen-Auftrag je Liste {ZUTATEN_JE_LISTE} Einträge zufällig und setzt sie unter „ZUTATEN DES TAGES“ ein. So bekommt die KI jedes Mal einen anderen Auftrag als andere Creator. Hintergrund: [[Originalität und Themenfindung]].
+
+{listen}
+
 ## Siehe auch
-[[Claude-Chat-Workflow]] · [[Lernschleife und Insights]] · [[Regelwerk]] · [[Index]]
+[[Originalität und Themenfindung]] · [[Claude-Chat-Workflow]] · [[Lernschleife und Insights]] · [[Regelwerk]] · [[Index]]
 """
 
 
@@ -263,6 +334,7 @@ def main():
     daten = {}
     for k, c in KONFIG.items():
         daten[k] = {"name": c["name"], "handle": c["handle"], "praefix": c["praefix"], "lernstand": c["lernstand"], "bisher": c["bisher"],
+                    "zutaten": [{"name": n, "eintraege": l} for n, l in c["zutaten"]], "zutaten_je_liste": ZUTATEN_JE_LISTE,
                     "ideen_vorlage": ideen_befehl(k, lernstand="{{LERNSTAND}}", bisher=["{{BISHER}}"], wunsch="", format="json"),
                     "skript_vorlage": skript_befehl(k, "{{IDEEN}}", lernstand="{{LERNSTAND}}", format="json"),
                     "ideen_text": ideen_befehl(k, format="text"), "skript_text": skript_befehl(k, "{{IDEEN}}", format="text")}

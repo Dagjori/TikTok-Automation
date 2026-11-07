@@ -8,7 +8,7 @@ tags: [konto/stelldirvor, pruefung, abnahme]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
-> Quelle: `.claude/skills/stelldirvor-video/pruefung.md`. Diese Notiz wird mit `python3 tools/hirn_aus_skills.py` erzeugt. Änderungen bitte im Skill vornehmen, nicht hier. Bei Abweichung gilt der Skill.
+> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/pruefung.md` (Skill am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` ist stillgelegt. Produktion: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
 
 # Prüfung und Abnahme Account 2
 
@@ -31,10 +31,11 @@ node qc/text_ueberlappung_pov.mjs projekte/<name>       # Exit 0 = keine Überla
 | 2 | Titelfrage | genau einmal, nur in 0–4,4 s (wie Referenz) |
 | 3, 3b, 3c, 3d | Messwert-Anzeige | ab ≤ 4,5 s bis ≥ 68 s, Zahl ändert sich in ≥ 60 % der 0,5-s-Schritte, Etikett wechselt 2–4×, „HIER“ bzw. 0 zwischen 52 und 68 s |
 | 4–4e | Sätze | 12–18 Sätze, je 3–9 Wörter, je ≥ 3 s, keine Überlappung, zwischen 4,4 und 70 s |
-| 5, 5b | Verbotene Elemente, harte Schnitte | keine Sticker, Chips, Karaoke/Untertitel, Folgen-Aufruf, Ringe, Tafeln, Logos; **keine harten Schnitte** (seit 07.11.2026 sind 1–3 gezielte harte Schnitte am Höhepunkt bzw. bei Maßstabs- oder Szenensprung erlaubt; der Code meldet sie noch, bis er mit dem Produktions-Skill angepasst ist, deshalb jeden Treffer im Bericht gegen diese Regel prüfen): weder Übergänge im Protokoll noch ein Bildsprung Bild für Bild (Sprung ≥ 6 Grauwerte und ≥ 8× das Umfeld, der bleibt; Blitz, Weißblende, Stoß, Kippen im Protokoll sind ausgenommen). **Langsame Fahrt, Schwenk und Zoom sind erlaubt** und scheitern nicht (geprüft an einem 1,0→1,5-fachen Zoom in 12 s und einem Schwenk mit ≈ 160 px/s, beide ohne Treffer; ein künstlich eingefügter Hartschnitt bei 12,0 s wurde bei 12,0 s gemeldet, und das Eiszeit-Video mit seinem Weißblende-Stoß besteht ohne Treffer) |
+| 5, 5b | Verbotene Elemente, harte Schnitte | keine Sticker, Chips, Karaoke/Untertitel, Folgen-Aufruf, Ringe, Tafeln, Logos; **höchstens 3 gezielte harte Schnitte** (seit 07.11.2026; 5b zählt Schnitte aus Protokoll und Bildvergleich, 5c als Hinweis: jeder Schnitt außerhalb 55–65 s braucht im Protokoll einen Grund, `{t, typ: "schnitt", grund}`). Als Schnitt zählen Übergänge im Protokoll noch ein Bildsprung Bild für Bild (Sprung ≥ 6 Grauwerte und ≥ 8× das Umfeld, der bleibt; Blitz, Weißblende, Stoß, Kippen im Protokoll sind ausgenommen). **Langsame Fahrt, Schwenk und Zoom sind erlaubt** und scheitern nicht (geprüft an einem 1,0→1,5-fachen Zoom in 12 s und einem Schwenk mit ≈ 160 px/s, beide ohne Treffer; ein künstlich eingefügter Hartschnitt bei 12,0 s wurde bei 12,0 s gemeldet, und das Eiszeit-Video mit seinem Weißblende-Stoß besteht ohne Treffer) |
 | 6, 6b, 6c | Abspann | ab ≤ 72,05 s, ≥ 7 s, Titelfrage + Faktenzeile; Abblende 70–72 s |
 | 7, 7b, 7c | Lautheit | −14 ± 1 LUFS, True Peak ≤ −1 dBTP; Maximum in 52–68 s und ≥ 4 dB über dem Start; Abspann ≥ 6 dB unter dem Start |
 | 8 | Keine Stimme | keine `audio/stimme.mp3`, keine Untertitel |
+| **14** | **Ereignis auf Countdown-Null** (seit 07.11.2026) | erster Etikettwechsel der Anzeige bei 6–11 s (Ziel ca. 8 s); Phase 1 der Anzeige ist der Countdown bis zum Ereignis |
 | 9 | **entfallen seit 02.11.2026 abends** (früher „Kein 5-Sekunden-Rahmen“) | 5-Sekunden-Themen sind erlaubt, wenn sie sich gut simulieren lassen; die Nummer bleibt frei, damit alle anderen Nummern stabil bleiben |
 
 **Hinweise (nicht Pflicht, Ausgabe „nein (Hinweis)“; jeder Hinweis ist im Bericht zu erklären oder zu beheben, die Sichtprüfung entscheidet)**
@@ -45,6 +46,9 @@ node qc/text_ueberlappung_pov.mjs projekte/<name>       # Exit 0 = keine Überla
 | 11 | **Zeitraffer ausgewiesen, Anzeige läuft mit** | `skript.json → zeitraffer` ist vorhanden (Liste `{von, bis, faktor}` oder `"keiner"`); in jedem Abschnitt ändert sich die Anzeige in ≥ 80 % der Schritte |
 | 12 | **Anzeige ohne unbegründete Sprünge** | Innerhalb eines Etiketts kein Schritt, der ≥ 3× größer ist als seine Nachbarschritte und ≥ 2 % der Spanne beträgt (Etikettwechsel ausgenommen) |
 | 13 | **Einstieg dicht** (seit 04.11.2026) | Erster Welteffekt vor 4 s (Protokoll-Effekt oder Bildveränderung ≥ 2,5 in 0–4 s), erster Schwenk/Zoom/Fahrt vor 8 s (Protokoll `typ: "kamera"` oder `skript.json → kamera` bzw. `lern_notizen → kamera`; `atmen`, Beben zählen nicht), Anzeige ändert sich vor 8 s. Grund: Ø-Wiedergabezeit 9–15 s bei Videos mit ruhigem Einstieg (Lernschleife 03.11.) |
+| 5c | **Schnitte begründet** (seit 07.11.2026) | jeder harte Schnitt liegt am Höhepunkt (55–65 s) oder trägt im Protokoll einen Grund (Maßstabs- bzw. Szenensprung) |
+| 14b | **Countdown läuft bis 0** (seit 07.11.2026) | die Werte der ersten Anzeige-Phase fallen bis nahe 0 bzw. zeigen „0:00“ |
+| 15 | **Statuszeile wechselt** (seit 07.11.2026) | die Unterzeile der Anzeige wechselt mindestens 3× ihren Text (Vorbilder 5/6) |
 
 ## 2. Kontaktbogen und Sichtprüfung (Claude selbst)
 ```bash

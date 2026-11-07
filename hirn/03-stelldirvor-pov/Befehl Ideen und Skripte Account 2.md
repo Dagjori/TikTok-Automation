@@ -39,9 +39,26 @@ REGELN FÜR IDEEN
 - Ein einziges Ereignis, das man von einem festen Standpunkt aus wachsen sieht, mit einer messbaren Größe für die Anzeige (z. B. Temperatur, Wasserstand, Entfernung, Höhe, Jahr, Anzahl).
 - Abwechslung: Verschiedene Welten, Standpunkte, Tageszeiten und Themenfelder; nie zwei gleiche Welttypen hintereinander. Natur ausdrücklich bedenken.
 - Ohne Opferdarstellung, ohne Gore, ohne reale Tragödien; Katastrophen enden sachlich.
-- Keine 1:1-Kopie eines fremden Videos: Themen anderer Kanäle (auch US-Kanäle) sind frei, aber nur mit eigenem Skript und deutlich anderem Design (anderer Ort, andere Dramaturgie).
+- THEMENFELDER (Feld "feld"): jedes der Felder 1 bis 3 mindestens einmal unter den 10 Ideen.
+  1. Natur und Tiere: Tierwanderungen, Pflanzen, Meeresströmungen, ein Ökosystem kippt oder wächst (ohne Gore).
+  2. Geschichte umgedreht: ein echter historischer Ort oder Moment, an dem eine Größe anders ist; keine reale Tragödie, keine Opfer.
+  3. Technik und Versorgung: Strom, Wasser, Kühlung, Kabel, Satelliten oder Lieferketten an einem konkreten Ort (nicht der weltweite Blackout).
+  4. Physik, Wetter, Geografie, Weltraum mit eigener Prämisse (nichts von der ANTI-LISTE).
+- MASSSTAB meist persönlich: Mindestens 6 der 10 Ideen spielen an einem greifbaren Ort (Strand, Garten, Straße, Boot, Hütte …) mit einer Skala, die man sich vorstellen kann; höchstens 4 sind global oder kosmisch, auch dann aus der Ich-Perspektive.
+- Kein Thema, zu dem es auf Deutsch schon ein Video mit der gleichen Prämisse gibt (Regel ORIGINALITÄT). Englische Vorbilder sind erlaubt, wenn sie nicht auf der ANTI-LISTE stehen, aber nur mit eigenem Skript und deutlich anderem Design (anderer Ort, andere Dramaturgie).
 - Keine Dopplung mit unseren bisherigen Videos.
 - Die Idee muss sich visuell tragen: Beschreibe, was sich in der Welt jede Phase sichtbar verändert.
+
+ORIGINALITÄT (wichtigste Regel für Ideen; Vorrang vor dem Lernstand und vor allen Beispielen)
+Andere Creator fragen dieselbe KI mit ähnlichen Befehlen. Was dir als Erstes einfällt, haben sie auch bekommen, und genau das wollen wir nicht. Wir wollen Themen, die auf Deutsch noch niemand gemacht hat.
+1. Schreibe zuerst für dich die 20 naheliegendsten Ideen zu unserer Nische auf und streiche sie alle, dazu alles von der ANTI-LISTE unten (auch umbenannt oder mit anderen Zahlen). Nenne die gestrichenen Ideen in Stichworten (Feld "gestrichen").
+2. Baue mindestens 6 der 10 Ideen auf den ZUTATEN DES TAGES auf (Feld "zutat"), jede Zutat höchstens zweimal. Eine Zutat ist ein Ausgangspunkt, kein Zwang; passt eine gar nicht, lass sie weg.
+3. Prüfe jede Idee mit der Websuche: Gibt es auf Deutsch schon ein Video zur gleichen Frage (TikTok, YouTube, Instagram)? Suche mit 2 bis 3 deutschen Begriffen. Gefunden: Idee verwerfen und ersetzen. Englische Videos zur gleichen Frage sind erlaubt, wenn unsere Fassung eigenständig ist. Trage im Feld "originalitaet" ein: welche naheliegende Idee du damit vermeidest, die Suchbegriffe und das Ergebnis („kein deutsches Video gefunden“ oder „englisch: …“). Hast du keine Websuche, schreibe „ungeprüft“.
+4. Einzigartig UND relevant, beides ist Pflicht: ein ungewöhnlicher Winkel auf etwas, das viele kennen oder betrifft. Die Frage muss ohne Erklärung verständlich sein. Abseitige Nischen fallen genauso raus wie Standardthemen.
+5. Zwei Ideen, die sich nur im Zahlenwert oder im Ort unterscheiden, zählen als eine. Der Lernstand sagt, welche Art Thema trägt, nicht welches konkrete Thema du nehmen sollst.
+
+ANTI-LISTE (die großen Was-wäre-wenn-Klassiker, gesperrt; nie vorschlagen, auch nicht umbenannt oder an anderem Ort)
+Sonne explodiert, verschwindet oder ist kurz weg · Erde hört auf sich zu drehen, dreht schneller oder kreist nicht mehr · Mond stürzt ab, verschwindet, kommt näher oder ist aus Käse bzw. Schokolade · Asteroid oder Komet schlägt ein · Sauerstoff, Atmosphäre oder Schwerkraft ist für Sekunden weg · Riesen-Tsunami bzw. Megawelle trifft eine Stadt · Supervulkan, Yellowstone · stärkstes Erdbeben trifft deine Stadt · Schwarzes Loch kommt näher · Rogue-Planet trifft die Erde · alles Eis schmilzt, neue Eiszeit · Zombie-Ausbruch · Riesenmonster · Reise durch den Erdkern bzw. Loch durch die Erde · Fall in den Jupiter · ohne Raumanzug im All · Papier 42-mal falten · du schrumpfst oder wächst · Aufwachen im Jahr 3000 · alle Menschen springen, klatschen oder niesen gleichzeitig · Erde ist flach, ein Donut oder hat Saturnringe · Magnetfeld kippt, großer Sonnensturm · 1.000 Jahre Regen · weltweiter Stromausfall, Internet fällt weltweit aus · Schall oder Licht wird langsam
 
 FAKTENTREUE (gilt für alles, was du lieferst)
 - Erfinde nichts. Jede Zahl, jedes Datum, jede Behauptung muss belegbar sein (amtliche Statistik, Gesetz, Studie, Behörden- oder Herstellerangabe). Nenne zu jeder Zahl Quelle und Jahr.
@@ -62,11 +79,14 @@ BISHERIGE VIDEOS (nicht wiederholen):
 - Schall in Schritttempo (Test)
 - Eiszeit in Toronto (Was wäre, wenn wir wieder in eine Eiszeit steuern?)
 
+ZUTATEN DES TAGES (zufällig gezogen, damit unsere Ideen sich von denen anderer unterscheiden)
+[Hier die Zutaten einsetzen: je Liste zwei Einträge aus dem Abschnitt „Zutaten-Listen“ unten, gewürfelt; das Cockpit macht das automatisch]
+
 AUFGABE
-Wir brauchen zehn Videoideen in unserer Nische für den morgigen Tag. Sie sollen unterschiedlich sein (verschiedene Themenfelder, Länder bzw. Welten) und gleichzeitig zum Lernstand passen. Prüfe jede Idee vor der Ausgabe gegen die Regeln und die Faktenlage; schreibe nur Ideen auf, die du belegen kannst.
-Antworte als nummerierte Liste von 1 bis 10. Jede Idee mit den Feldern, die im Beispiel unten stehen, jeweils eine kurze Zeile je Feld. Danach frage mich: „Welche zwei wählst du?“
+Wir brauchen zehn Videoideen in unserer Nische für den morgigen Tag, die auf Deutsch noch niemand gemacht hat. Sie sollen unterschiedlich sein (verschiedene Themenfelder, Länder bzw. Welten) und zum Lernstand passen. Prüfe jede Idee vor der Ausgabe gegen die Regeln, die ANTI-LISTE, die Websuche und die Faktenlage; schreibe nur Ideen auf, die du belegen kannst.
+Beginne mit einer Zeile „Gestrichen (naheliegend): …“. Antworte danach als nummerierte Liste von 1 bis 10. Jede Idee mit den Feldern, die im Beispiel unten stehen, jeweils eine kurze Zeile je Feld. Danach frage mich: „Welche zwei wählst du?“
 Felder (Beispiel als JSON, nur zur Orientierung, antworte als lesbaren Text):
-{"ideen":[{"nr":1,"titel":"Titelfrage „Was wäre, wenn …?“","ereignis":"was passiert, in einem Satz","messgroesse":"was die Anzeige zeigt (Größe, Einheit, Start und Ende)","welt":"Natur/Ort-Typ","standpunkt":"wo steht der Zuschauer","tageszeit_verlauf":"z. B. Morgen, Mittag, Abend","bewegung":"was sich in der Welt sichtbar verändert, Phase für Phase","kamera":"z. B. langsamer Zoom","zeitraffer":"Faktor oder Echtzeit","hoehepunkt":"was bei HIER passiert","pointe":"was man mitnimmt","diskussion":"warum sich Zuschauer austauschen würden (nur intern)","daten":"belegbare Quellen/Zahlen verfügbar","laender":"Ort/Land","risiko":"kurz"}]}
+{"gestrichen":["naheliegende Idee in Stichworten"],"ideen":[{"nr":1,"titel":"Titelfrage „Was wäre, wenn …?“","feld":"Natur und Tiere | Geschichte umgedreht | Technik und Versorgung | Physik, Wetter, Geografie, Weltraum","massstab":"persönlich | global","zutat":"welche Zutat des Tages (oder „keine“)","originalitaet":"vermeidet: naheliegende Idee · Suche: Begriffe · Ergebnis: kein deutsches Video gefunden | englisch: … | ungeprüft","ereignis":"was passiert, in einem Satz","messgroesse":"was die Anzeige zeigt (Größe, Einheit, Start und Ende)","welt":"Natur/Ort-Typ","standpunkt":"wo steht der Zuschauer","tageszeit_verlauf":"z. B. Morgen, Mittag, Abend","bewegung":"was sich in der Welt sichtbar verändert, Phase für Phase","kamera":"z. B. langsamer Zoom","zeitraffer":"Faktor oder Echtzeit","hoehepunkt":"was bei HIER passiert","pointe":"was man mitnimmt","diskussion":"warum sich Zuschauer austauschen würden (nur intern)","daten":"belegbare Quellen/Zahlen verfügbar","laender":"Ort/Land","risiko":"kurz"}]}
 ```
 
 ## Schritt 2: Skripte für die zwei gewählten Ideen
@@ -119,8 +139,18 @@ GEWÄHLTE IDEEN (für diese schreibst du jetzt je ein makelloses Skript)
 AUFGABE
 Schreibe für jede gewählte Idee ein makelloses, sendefertiges Skript nach allen Regeln oben. Erfinde nichts; jede Zahl mit Rechenweg und Quelle. Prüfe dein Skript am Ende selbst (Wortzahl bzw. Satzzahl, Fakten, Ton, Verbote) und trage das Ergebnis in selbstpruefung ein. Findest du beim Prüfen einen Fehler, korrigiere ihn vor der Ausgabe.
 Gib je Idee das Skript lesbar aus: Titel, Segmente mit Text und Sprechtext (bzw. Sätze und Anzeige-Plan), Rechenweg, Annahmen, Quellen, Caption, Dramaturgie-Hinweise, Selbstprüfung. Feldstruktur zur Orientierung:
-{"skripte":[{"nr":1,"titel":"Titelfrage","thema":"","welt":"","standpunkt":"","tageszeit_verlauf":"","zeitraffer":"","kamera":"","anzeige_plan":[{"von_s":0,"bis_s":8,"etikett":"ETIKETT (Phase 1: Countdown bis zum Ereignis)","start":"","ende":"","einheit":"","unter":"Statuszeile in Versalien"}],"saetze":[{"t_ca":4.8,"text":"Satz mit 3 bis 9 Wörtern."}],"faktenzeile":"","rechenweg":"Formel, Eingaben, Rechenschritte","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","dramaturgie":["Hinweis mit Zeitpunkt: was in der Welt passiert, Licht, Zoom"],"selbstpruefung":["Satzzahl ..","Fakten ..","Anzeige passt zum Zeitraffer ..","Verbote .."]}]}
+{"skripte":[{"nr":1,"titel":"Titelfrage","thema":"","welt":"","standpunkt":"","tageszeit_verlauf":"","zeitraffer":"","kamera":"","anzeige_plan":[{"von_s":0,"bis_s":8,"etikett":"ETIKETT (Phase 1: Countdown bis zum Ereignis)","start":"","ende":"","einheit":"","unter":"Statuszeile in Versalien"}],"saetze":[{"t_ca":4.8,"text":"Satz mit 3 bis 9 Wörtern."}],"faktenzeile":"","rechenweg":"Formel, Eingaben, Rechenschritte","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","originalitaet":"Suche (deutsch) und Ergebnis","dramaturgie":["Hinweis mit Zeitpunkt: was in der Welt passiert, Licht, Zoom"],"selbstpruefung":["Satzzahl ..","Fakten ..","Anzeige passt zum Zeitraffer ..","Verbote .."]}]}
 ```
 
+## Zutaten-Listen
+Das Cockpit zieht für jeden Ideen-Auftrag je Liste 2 Einträge zufällig und setzt sie unter „ZUTATEN DES TAGES“ ein. So bekommt die KI jedes Mal einen anderen Auftrag als andere Creator. Hintergrund: [[Originalität und Themenfindung]].
+
+- **Ort:** Ostseestrand · Almhütte · Kleingarten · Campingplatz am See · Deck eines Fischkutters · Galerie eines Leuchtturms · Weinberg · Hallig · Dorfbahnsteig · Waldlichtung · Dünen · Gletscherhütte · Hausboot · Reisterrassen · Lodge in der Savanne · Fjordufer · Vulkaninsel · Mangrovenufer · Hochmoor · Wattenmeer · Steg über einem Korallenriff · Wüstenoase · Bergsee · Schrebergarten am Bahndamm
+- **Natur:** Zugvögel · Bienenvolk · Lachswanderung · Korallen · Golfstrom · Monsun · Mangroven · Ameisenstaat · Glühwürmchen · Wale · Meeresleuchten · Moor · Buchenwald · Pilzgeflecht · Seegras · Gezeiten · Polarlicht · Wanderdüne · Bambusblüte · Plankton
+- **Geschichte:** Pyramidenbau · Limes · Hansekogge · Bau des Gotthardtunnels · Mondlandung 1969 · erste deutsche Eisenbahn 1835 · Kölner Dom (632 Jahre Bauzeit) · Buchdruck · Leuchtturm von Alexandria · Panamakanal · Abschlussdeich 1932 · Atlantikkabel 1858 · Chinesische Mauer · Stonehenge · Brooklyn Bridge · erster Heißluftballon 1783 · Speicherstadt Hamburg · römisches Aquädukt
+- **Technik und Versorgung:** Netzfrequenz 50 Hz · Trinkwasserdruck · Unterseekabel · GPS-Satelliten · Containerschiff · Fernwärme · Kläranlage · Schleuse · Stausee · Windpark · Kühlkette · Ampelschaltung · Funkmast · Bahnstrom · Pumpspeicherwerk · Deich · Pipeline · Wasserturm · Stromleitung · Leuchtfeuer
+- **Messgröße:** Pegel in cm · Temperatur · Lautstärke in dB · Helligkeit in Lux · Anzahl · Salzgehalt · pH-Wert · Windstärke · Frequenz in Hz · Luftdruck · Höhe in m · Geschwindigkeit · Jahr · Gewicht in t · Entfernung
+- **Tageszeit:** Morgengrauen · Mittag · Sonnenuntergang · Nacht · Polarnacht · Mitternachtssonne
+
 ## Siehe auch
-[[Claude-Chat-Workflow]] · [[Lernschleife und Insights]] · [[Regelwerk]] · [[Index]]
+[[Originalität und Themenfindung]] · [[Claude-Chat-Workflow]] · [[Lernschleife und Insights]] · [[Regelwerk]] · [[Index]]

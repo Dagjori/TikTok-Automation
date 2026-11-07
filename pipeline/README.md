@@ -2,7 +2,7 @@
 
 Ein Video entsteht aus einer Szene (`projekte/<name>/szene.html` + `szene.js`), die für jede Zeit t deterministisch ein Bild zeichnet (`window.renderAt(t)`). `render.js` fotografiert die Bilder in Headless-Chromium, `mux.sh` macht daraus das MP4 mit Ton.
 
-**Verbindlicher Maßstab:** `.claude/skills/simulierbar-video/massstab.md`. Jede neue Szene baut auf den Maßstab-Bausteinen (`engine/massstab.js`, `engine/regie.js`) auf. Die Prüfliste §11 prüft `qc/massstab.py` automatisch. Beispiel mit allen Bausteinen: `projekte/_demo-massstab/`.
+**Verbindliche Regeln (seit 07.11.2026):** Hirn `REA Simulierbar Regelwerk` bzw. `REA stelldirvor Regelwerk`, Ablauf im Skill `.claude/skills/video-produktion/` (Teil `simulierbar.md` bzw. `stelldirvor.md`); Messgrundlage der ersten 4 Vorbilder: Hirn `Maßstab Simulierbar`. Jede neue Szene baut auf den Maßstab-Bausteinen (`engine/massstab.js`, `engine/regie.js`) auf. Die Prüfliste §11 prüft `qc/massstab.py` automatisch. Beispiel mit allen Bausteinen: `projekte/_demo-massstab/`.
 
 ## Einmal einrichten
 
@@ -116,14 +116,14 @@ Jeder Baustein meldet seine Ereignisse: `{t, typ, dauer?, laufend?, klang?, text
 
 ## Simulierbar-Stile 17–21 (seriöser Look mit Licht und Atmosphäre, Inhaber 02.11.)
 
-**Verbindlich für jedes Simulierbar-Video ab 03.11.:** Skill `.claude/skills/simulierbar-video/` (Stile, Licht, Design, Ablauf, Ton, Technik, Prüfung). Muster: `projekte/_demo-simulierbar/` (eine Welt je Stil, `?stil=nachtstadt|studio|architektur|lichtlabor|nachtkarte`, z. B. `node render.js projekte/_demo-simulierbar --zeiten 10.4 --worker 1 --query "stil=studio"`).
+**Verbindlich für jedes Simulierbar-Video:** seit 07.11. Skill `.claude/skills/video-produktion/`, Teil `simulierbar.md` (Regeln im Hirn: Stile, Licht, Design, Ablauf, Ton, Technik, Prüfung). Muster: `projekte/_demo-simulierbar/` (eine Welt je Stil, `?stil=nachtstadt|studio|architektur|lichtlabor|nachtkarte`, z. B. `node render.js projekte/_demo-simulierbar --zeiten 10.4 --worker 1 --query "stil=studio"`).
 - **`engine/sim_atmosphaere.js`:** `SimBuehne` (Unterklasse von `Buehne` aus `kern.js`, zusätzlich Lichtstrahlen im Bildraum und Farbgrading: Lift/Gamma/Gain, Split-Toning; `kern.js` bleibt unverändert), `GRADING` je Stil, Licht-Rigs (`rigStudio`, `rigNacht`, `rigAbendsonne`, `rigLabor`, `flaechenLicht`), Umgebungen für Spiegelungen (`UMGEBUNG.*`), `lichtKegel`, `lichtBahn`, `lichtPfuetze`, `nebelSchicht`, `dunst`, `staub`, `spiegelBoden` (Reflector in kleiner Auflösung, gestreckt, Pfützen), `leuchtMat`, `glimmLinie`, `fokus` (Tiefenschärfe), `rauschTextur`, **`buendeln(szene)`** (statische Meshes je Material zusammenfassen; bewegte Objekte mit `userData.dynamisch = true` markieren).
-- **Stil-Module:** `stil_nachtstadt.js` (17), `stil_studio.js` (18), `stil_architektur.js` (19), `stil_lichtlabor.js` (20), `stil_nachtkarte.js` (21). **HUD-Thema:** `engine/sim_hud.css` mit `<div id="hud" class="sim">` (Rauchglas, Haarlinien, Teamfarbe als Licht; Untertitel „kontur“ unverändert; Sticker ausgeblendet).
-- **Prüfung:** `qc/massstab.py` Punkt 18b „Stil erlaubt (17–21)“ (Pflicht bei `"skill": "simulierbar-video"` in `skript.json` oder Szenen mit `sim_atmosphaere.js`, sonst Hinweis); 5d (keine Sticker) bleibt Pflicht.
+- **Stil-Module:** `stil_nachtstadt.js` (17), `stil_studio.js` (18), `stil_architektur.js` (19), `stil_lichtlabor.js` (20), `stil_nachtkarte.js` (21). **HUD-Thema:** `engine/sim_hud.css` mit `<div id="hud" class="sim">` (Rauchglas, Haarlinien, Teamfarbe als Licht; Untertitel seit 07.11. in Blöcken `M.untertitel({ max: 4 })`; Sticker ausgeblendet).
+- **Prüfung:** `qc/massstab.py` Punkt 18b „Stil erlaubt (17–21)“ (Pflicht bei `"skill": "video-produktion"` bzw. alt `"simulierbar-video"` in `skript.json` oder Szenen mit `sim_atmosphaere.js`, sonst Hinweis); 5d (keine Sticker) bleibt Pflicht.
 
-## Referenzformat Account 2 (keine Stimme, 80 s; Skill stelldirvor-video)
+## Referenzformat Account 2 (keine Stimme, 80 s; Skill video-produktion, Teil stelldirvor.md)
 
-**Verbindlich:** Skill `.claude/skills/stelldirvor-video/` (Design, Licht, Effekte, Ablauf, Ton, Technik, Prüfung – gemessen an den 4 Referenzvideos). Muster mit allen Bausteinen: `projekte/_demo-lunar-pov/` (Demo, nicht posten).
+**Verbindlich:** seit 07.11. Skill `.claude/skills/video-produktion/`, Teil `stelldirvor.md` (Regeln im Hirn: Design, Licht, Effekte, Ablauf, Ton, Technik, Prüfung; seit 07.11. Ereignis bei ca. 8 s auf Countdown-Null und höchstens 3 gezielte harte Schnitte). Muster mit allen Bausteinen: `projekte/_demo-lunar-pov/` (Demo, nicht posten).
 - **Baukasten:** `engine/stil_lunar_pov.js` (Höhennebel, Himmel mit Sonne/Bloom, Glut, Puffs: Wolken, Rauch-/Aschesäule, Druck-/Staubwand, Feuerball, Gischt; Partikel: Staub, Asche, Schnee, Eis, Regen, Funken; Trümmer; Menschen, Autos, Vögel; Geländer/Brüstung/Fensterrahmen; `PovKamera` mit Atmen, Beben, Stoß, Kippen; Farbphasen; Ereignis-Protokoll) und `engine/lunar_hud.js` + `engine/stil_lunar_pov.css` (Titelfrage, Messwert-Anzeige mit Etikettwechsel, kursive Sätze, Abblende, Abspann, Vignette, Glasriss, Linsenflecken, Tropfen). Schriften Crimson Pro und Inter (SIL OFL, lokal über `@fontsource`, Lizenztexte in `engine/schriften/`).
 - **`kern.js`** kann zusätzlich Tiefenunschärfe (`new Buehne(…, { tiefe: true })`, `post.tiefeNah/tiefeFern/fokusNah/fokusFern`), Hitzeflimmern (`post.flimmern`, `flimmerY`) und einen Farbschleier (`post.schleier`, `schleierStaerke`). Standard aus, ältere Szenen bleiben unverändert.
 - **Ton ohne Stimme:** `python3 atmo.py projekte/<name>` (oder `python3 klang.py projekte/<name> --atmo`) baut aus `projekte/<name>/ton.json` und den Effekt-Ereignissen des Protokolls die Atmo-Spur `out/<name>/ton.wav`; danach `TON_FERTIG=1 LRA_ZIEL=20 ./mux.sh projekte/<name>` (mit `TON_FERTIG` ohne Vorbegrenzer, loudnorm linear auf −14 LUFS). `atmo.py` bringt die Spur selbst auf ≈ −14 LUFS und erzwingt den Verlauf (Höhepunkt ≥ 6 dB über dem Start, Abspann leise).
@@ -139,7 +139,7 @@ python3 qc/massstab.py projekte/<name> --profil massstab   # Zielwerte der Vorbi
 python3 qc/massstab.py projekte/<name> --ziel tempo=2.0:2.5 --ziel satzpause_max=0.7 --json
 ```
 
-Prüft und zeigt als Tabelle (Ist · Ziel · Maßstab · ja/nein): Stimme startet < 0,2 s, Hook fertig vor 5 s (max. 2 Sätze), längste Phase ohne Bild-Ereignis ≤ 2 s (mit und ohne laufende Zähler), Folgen-Aufruf zwischen 15 und 25 s (max. 2 s), Schlusssatz exakt „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“, Wörter, Sprechtempo, Satzlängen, Satzpausen, Videolänge 65–80 s, Untertitel-Phrasen ≤ 5 Wörter, kein Kanalname/Logo/Rubrik in `szene.js`; als Hinweise zusätzlich Denkfalle und „Los geht's“ vor 16 s, laufende Uhr/Zähler, erste Wendung, „Warum?“, Schleife (letztes = erstes Bild), Klangteppich, Akzent auf der Pointe.
+Prüft und zeigt als Tabelle (Ist · Ziel · Maßstab · ja/nein): Stimme startet < 0,2 s, Hook fertig vor 5 s (max. 2 Sätze), längste Phase ohne Bild-Ereignis ≤ 2 s (mit und ohne laufende Zähler), Schlusskarte (`M.pointe`) in den letzten 8 s ohne Frage und Aufruf, Wörter, Sprechtempo (2,3–2,7 W/s oder 4,6–5,4 Silben/s), Satzlängen (Median 3–5), Satzpausen, Videolänge 65–80 s, Untertitel-Blöcke ≤ 4 Wörter, Titel ab Bild 1 (R1), Tafel ab Bild 0 (R2), Erklärgrafik (R3), Du nur im Hook (R4), Endstand bei 75–86 % (R5), kein Kanalname/Logo/Rubrik in `szene.js`; als Hinweise zusätzlich Folgen-Aufruf (nur Testvideo, 15–25 s), Kipp-Moment (R6), erster Satz (R7), Denkfalle und „Los geht's“ vor 16 s, laufende Uhr/Zähler, erste Wendung, „Warum?“, Schleife (freiwillig; wenn genutzt, letztes = erstes Bild), Klangteppich, Akzent auf der Pointe.
 
 Tests für Stichwort-Zeiten und Phrasen: `node --test qc/zeitplan.test.mjs`.
 
@@ -260,7 +260,7 @@ engine/          wiederverwendbar für alle Videos
   stil_nachtstadt.js / stil_studio.js / stil_architektur.js / stil_lichtlabor.js / stil_nachtkarte.js  Baukästen der Stile 17–21; sim_hud.css = seriöses HUD-Thema
   stil_clay_welt.js Belebte Welt zu Stil 3 (02.11.): `figur` (sitzend, Gesicht mit Lidern/Pupillen/Brauen/Mund, Arme per Zwei-Knochen-IK, Hände aus stil_clay.js), `gesicht`, `fan` (Zuschauer mit Fahne), `katze`, `spieltisch`, `raumWelt` (Tapete, Dielen, Teppich), `loge`, `wimpelkette`, `becher`, `notizblock`, `tasse`, `pflanze`; alle Zustände aus Parametern (deterministisch). Muster: projekte/schere-stein-papier/szene.js (Gesamtzustand je Bild als Objekt, Schleife per mixD zum Zustand bei t = 0)
 projekte/<name>/ skript.json, audio/ (stimme.mp3, timing.json, ereignisse.json), szene.html, szene.js
-qc/massstab.py   Prüfliste .claude/skills/simulierbar-video/massstab.md §11
+qc/massstab.py   Prüfung Simulierbar (Regeln: Hirn „REA Simulierbar Regelwerk“, Tests qc/massstab_test.py)
 render.js        Bilder rendern (parallel), Ereignis-Protokoll schreiben
 klang.py         Tonspur: Stimme + synthetische Effekte + Klangteppich (keine fremden Dateien)
 mux.sh           MP4 (H.264 CRF 18, yuv420p, 30 fps, AAC, −14 LUFS)

@@ -25,7 +25,7 @@ Baukasten, Dateien, Szenengerüst, Render, Mux und Posting-Befehle für `@simuli
 | 0 | **Skript liegt vor** (ArtifactData-Sammlung `skripte` des Ideen-Studios, Dokument-ID `acc1-JJJJ-MM-TT-mittag\|abend`, oder vom Inhaber eingefügt); Eingangsprüfung: GELD, Themen-Logik, Ausschlussthemen, Wörter 150–190, keine 1:1-Kopie; Übernahme inhaltlich 1:1 ([[Videoaufbau Simulierbar]] Abschnitt 5.2) | 20–30 Min. |
 | 1 | **Rechnung** als Code mit Tests in `pipeline/sim/<thema>.mjs` (Netto-Modul `pipeline/sim/netto.mjs` für deutsche Gehaltsrechnungen), aus `rechenweg`, `zahlen`, `annahmen`; Quellen nur intern; liefert Zählerverläufe, Führungswechsel, Ergebnis, „Warum?“-Faktoren, zweite Überraschung; Abweichung zum Skript = Meldung | 30–60 Min. |
 | 2 | **Stil und Teamfarben** aus dem Skript ableiten ([[Stile 17 bis 21]] Wahlregeln), Begründung in `stil_begruendung`; **Beat-Blatt** (Effekt, Kamera, Licht je Segment, [[Videoaufbau Simulierbar]] Abschnitt 6) | 20 Min. |
-| 3 | **`skript.json`** `projekte/<name>/skript.json` mit `"skill": "simulierbar-video"`, `"stil": "<Nr> <Name>"`, `stil_begruendung`, `teamfarben`, Segmenten (`text` + `sprechtext`), `bild_text_abgleich`, Caption, `lern_notizen` (Regie-Text [[Stimme und Ton Simulierbar]]) | 30 Min. |
+| 3 | **`skript.json`** `projekte/<name>/skript.json` mit `"skill": "video-produktion"`, `"konto": "simulierbar"`, `"stil": "<Nr> <Name>"`, `stil_begruendung`, `teamfarben`, Segmenten (`text` + `sprechtext`), `bild_text_abgleich`, Caption, `lern_notizen` (Regie-Text [[Stimme und Ton Simulierbar]]) | 30 Min. |
 | 4 | **Stimme**: `python3 tts.py projekte/<name>` → `audio/stimme.mp3` + `audio/timing.json`; sofort `qc/massstab.py` für Wörter/Tempo/Satzpausen (zu viele Wörter oder zu langsam = Text kürzen, nicht Stimme beschleunigen) | 5–10 Min. |
 | 5 | **Szene** `szene.html` + `szene.js` aus dem Gerüst unten: Welt im Stil-Baukasten, Licht und Atmosphäre, Kamera-Regie, HUD, Effekte nach dem Beat-Blatt. Fehlende Objekte im Stil-Modul ergänzen (wiederverwendbar) | 2–4 Std. |
 | 6 | **Standbilder** an 6–8 Schlüsselstellen (Hook, Regeln, Wendung, Ergebnis, Warum, Schluss) rendern, gegen Design, **Qualitätslatte** und Skript-Bild-Abgleich prüfen, nachbessern | 20–40 Min. |
@@ -56,7 +56,7 @@ Neue Objekte (Zapfsäule, Brotdose, Waschmaschine …) gehören ins Stil-Modul, 
 `skript.json`: `titel`, `skill`, `konto`, `stil` (`"<Nr> <Name>"`, Nr 1–15 oder 17–21), `stil_begruendung`, `teamfarben`, `klangteppich`, `segmente` (`id`, `phase`, `text` = Untertitel, `sprechtext` = Regie-Text), `bild_text_abgleich` (zugleich Beat-Blatt), `caption`, `quellen` und `annahmen` (nur intern), `skript_quelle` (Dokument-ID im Ideen-Studio bzw. „vom Inhaber eingefügt“), **`lern_notizen`** (für die Lernschleife, unten). Das Skript selbst liefert das Ideen-Studio (ArtifactData-Sammlung `skripte`, Felder `konto`, `datum`, `slot`, `titel`, `thema`, `skript`, `rechenweg`, `zahlen`, `annahmen`, `quellen`, `caption`, `status`).
 ```json
 {
-  "titel": "…", "skill": "simulierbar-video", "konto": "simulierbar",
+  "titel": "…", "skill": "video-produktion", "konto": "simulierbar",
   "stil": "18 Dunkles Studio (Produktlicht)", "stil_begruendung": "…",
   "teamfarben": {"Paul": "#FF8A3D", "Anna": "#3D8BFF"}, "klangteppich": "raum",
   "segmente": [
@@ -77,6 +77,8 @@ Neue Objekte (Zapfsäule, Brotdose, Waschmaschine …) gehören ins Stil-Modul, 
   }
 }
 ```
+**Seit 07.11.2026** (Skill `video-produktion`, Teil `simulierbar.md`): Segment-IDs `hook`, `regeln`, `falle`, `rennen`, `wendung1…`, `kipp`, `ergebnis`, `warum`, `pointe`, `schlusskarte` (Prüfpunkte R5/R6 lesen `ergebnis` und `kipp`); in `lern_notizen` zusätzlich Helligkeit des Stils (`"hell"`/`"dunkel"`), Zeitpunkte `kipp` und `schlusskarte`, Silben/s; `folgen` nur im Testvideo. Das Beispiel oben stammt aus der Zeit davor.
+
 **`lern_notizen`** hält fest, was die Lernschleife (täglich 20:00 Berlin, [[Lernschleife und Insights]]) später mit den Buffer-Zahlen verknüpft: Thema und Frage, Länge, Hook-Formulierung und -typ, Stil, Animationen (Art und Zeitpunkt in Sekunden), Zoom ja/nein, Licht und Effekte mit Zeitpunkt, Zeitpunkte (Folgen-Aufruf, Wendungen, Ergebnis, „Warum?“, Pointe), Wörter und Tempo (aus `qc/massstab.py`), Caption. Zeiten kommen aus `audio/timing.json` und `audio/ereignisse.json`, nicht geschätzt. Ausfüllen nach der Abnahme, vor dem Posten.
 
 ## Szenengerüst
