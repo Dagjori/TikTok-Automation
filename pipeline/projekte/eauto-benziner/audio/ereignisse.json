@@ -158,6 +158,20 @@
    "text": "Kamera weitet, Chip 15.000 km"
   },
   {
+   "quelle": "Szene",
+   "t": 5.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet zum Stromer, Laternen ziehen vorbei"
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera sinkt, Preisschild kündigt sich an"
+  },
+  {
    "quelle": "Untertitel",
    "t": 6.85,
    "typ": "untertitel",
@@ -207,7 +221,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 11.62,
+   "t": 11.22,
    "typ": "chip-weg",
    "klang": false
   },
@@ -331,7 +345,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 18.54,
+   "t": 18.14,
    "typ": "chip-weg",
    "klang": false
   },
@@ -534,7 +548,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 30.353,
+   "t": 29.953,
    "typ": "chip-weg",
    "klang": false
   },
@@ -673,7 +687,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 38.06,
+   "t": 37.66,
    "typ": "chip-weg",
    "klang": false
   },
@@ -898,7 +912,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 51.82,
+   "t": 51.42,
    "typ": "chip-weg",
    "klang": false
   },
@@ -1006,7 +1020,7 @@
    "quelle": "LiveZaehler",
    "t": 57.86,
    "typ": "zaehler",
-   "dauer": 0.867,
+   "dauer": 0.443,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -1035,7 +1049,7 @@
    "quelle": "LiveZaehler",
    "t": 58.803,
    "typ": "zaehler",
-   "dauer": 1.433,
+   "dauer": 1.117,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -1073,7 +1087,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 60.47,
+   "t": 59.92,
    "typ": "chip-weg",
    "klang": false
   },
@@ -1335,7 +1349,7 @@
    "quelle": "LiveZaehler",
    "t": 72.66,
    "typ": "zaehler",
-   "dauer": 1.143,
+   "dauer": 0.643,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -1411,13 +1425,13 @@
   },
   {
    "quelle": "Chip",
-   "t": 76.46,
+   "t": 76.06,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 76.46,
+   "t": 76.16,
    "typ": "chip-weg",
    "klang": false
   },
