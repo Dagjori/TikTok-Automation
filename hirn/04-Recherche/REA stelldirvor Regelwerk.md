@@ -1,7 +1,7 @@
 ---
 typ: regel
 konto: stelldirvor
-status: entwurf
+status: aktuell
 datum: 2026-11-07
 quelle: .claude/skills/rea-video/ · Korpus stelldirvor (lokal), Synthese vom 2026-11-07
 tags: [konto/stelldirvor, rea, regelwerk]
@@ -10,7 +10,7 @@ cssclasses: [konto-stelldirvor, typ-regel]
 
 # REA stelldirvor Regelwerk
 
-> **Entwurf zur Freigabe.** Quelle der Regeln für den künftigen Produktions-Skill von Account 2 `@stelldirvor.pov`. Methode: [[REA-Video Methode]]. Nur Bauweise, nie Inhalt oder Thema der Vorbilder. Kennzeichnung **F** gemessen/gesehen · **S** gefolgert · **A** Annahme. Belege als Video-IDs des lokalen Korpus.
+> **Freigegeben am 07.11.2026 (Inhaber per Klick).** Die Grundmuster sind Standard, die vorläufigen Muster Richtwert; weitere Videos (vor allem schwache) und die Lernschleife dürfen sie verschieben, jede Änderung nur mit Freigabe. Quelle der Regeln für den künftigen Produktions-Skill von Account 2 `@stelldirvor.pov`. Methode: [[REA-Video Methode]]. Nur Bauweise, nie Inhalt oder Thema der Vorbilder. Kennzeichnung **F** gemessen/gesehen · **S** gefolgert · **A** Annahme. Belege als Video-IDs des lokalen Korpus.
 
 ## Kurzfazit
 Die Vorbilder sind 3D-POV-Gedankenexperimente ohne Sprecher, mit Titelfrage, Messwert-Anzeige und kurzen kursiven Sätzen. Damit bestätigen sie unser Format (F). Was sie darüber hinaus fast alle tun (S, Zählung): **(1)** Der Zuschauer weiß durch Titel und Countdown von der Gefahr, die Welt im Bild noch nicht (Wissensvorsprung). **(2)** Das Hauptereignis fällt genau auf das Ablaufen eines Countdowns, oft folgt ein zweiter. **(3)** Die Anzeige erzählt mit: eine Statuszeile wechselt laufend, am Wendepunkt steht ein Wort statt einer Zahl. **(4)** Farbe und Licht wechseln mit dem Zustand der Geschichte. **(5)** Die Eskalation läuft in mindestens 3 Stufen, der Höhepunkt kommt spät (rund 80 % der Länge), der Ton hat große Dynamik. **(6)** Der Abspann wiederholt die Titelfrage und setzt eine Faktzeile darunter. Der Einstieg ist im Bild ruhig, die laufende Uhr trägt ihn; danach gibt es viel Bewegung.
@@ -84,11 +84,13 @@ Das schwache Video hat eine **völlig statische Kamera** (Bewegung Median 0,46 g
 | Bisher ([[Regelwerk Account 2]]) | Vorbilder (F) | Vorschlag (S) bzw. Entscheidung |
 |---|---|---|
 | keine harten Schnitte, eine durchgehende Einstellung | 4/6 setzen 1–3 harte Schnitte gezielt (Szenen- oder Maßstabswechsel, einer am Höhepunkt) | **entschieden 07.11.2026, übernommen:** 1–3 gezielte harte Schnitte am Höhepunkt bzw. bei Maßstabs- oder Szenensprung, sonst lange durchgehende Einstellungen |
+| Auslöser bei 18–25 s, davor Alltag und Vorboten | Ereignis bei ca. 8 s (10 %) genau auf Countdown-Null (4/6), Wissensvorsprung des Zuschauers (5/6); eigene Ø-Zeit 9–15 s (Lernschleife 03.11.) | **entschieden 07.11.2026, übernommen:** Countdown ab Bild 0, Ereignis bei ca. 8 s auf Null mit Bild-, Licht- und Tonkante, die Welt bis dahin ahnungslos; danach Eskalation in mindestens 3 Stufen bis zum Höhepunkt bei ca. 60 s; ein zweiter Countdown ist erlaubt |
 | Titel nur 0–4,4 s | Titel im Hook 6/6, Rückkehr im Abspann 6/6 | bleibt; Rückkehr im Abspann bestätigt |
-| Messwert-Anzeige mit Etikettwechsel 2–4× | Statuszeile wechselt laufend (5/6), Wort statt Zahl (4/6), Ereignis auf Null (4/6) | Statuszeile und Countdown-Logik als Standard aufnehmen |
-| Welt passt zum Thema, viel Bewegung | belebte, detailreiche Welt 6/6, Bewegung Median 7,1, Einstieg ruhig mit laufender Uhr | bestätigt; ruhiger Einstieg ist erlaubt, wenn die Uhr ab 0 s läuft |
+| Messwert-Anzeige mit Etikettwechsel 2–4× | Statuszeile wechselt laufend (5/6), Wort statt Zahl (4/6), Ereignis auf Null (4/6) | **übernommen 07.11.:** Statuszeile (Unterzeile) mit mehrfach wechselndem Text, Countdown-Logik als Standard |
+| Welt passt zum Thema, viel Bewegung | belebte, detailreiche Welt 6/6, Bewegung Median 7,1, Einstieg ruhig mit laufender Uhr | bestätigt; die ersten Sekunden dürfen ruhiger sein, solange der Countdown ab 0 s läuft und Bewegung ab Bild 1 da ist (Entscheidung 04.11.: erster Welteffekt vor 4 s bleibt) |
 | deutsche Texte | Vorbilder englisch | bleibt deutsch |
-Die übrigen Vorschläge und Regeln dieser Notiz bleiben **Entwurf**, bis der Inhaber sie freigibt bzw. weitere Videos sie bestätigen.
+| übrige Regeln | R01–R20, Zielkorridore, Aufbau-Schablone | **als Standard übernommen 07.11.** (Grundmuster Pflicht, vorläufige Muster Richtwert), u. a. Wissensvorsprung, Farbdramaturgie, Faktzeile ordnet die Prämisse real ein |
+Neue Videos und die Lernschleife können einzelne Regeln verschieben; geändert wird nur nach Freigabe des Inhabers.
 
 ## Offen
 - Nur ein Vergleichsvideo: Erfolgsfaktoren nicht trennbar; weitere schwache Videos desselben Formats nachlegen.
@@ -101,6 +103,7 @@ Die übrigen Vorschläge und Regeln dieser Notiz bleiben **Entwurf**, bis der In
 |---|---|---|
 | 2026-11-07 | Entwurf aus dem ersten REA-Lauf (7 Videos) | offen |
 | 2026-11-07 | gezielte harte Schnitte (1–3) ins [[Regelwerk Account 2]] übernommen | Inhaber per Klick |
+| 2026-11-07 | Regelwerk freigegeben: Ereignis bei ca. 8 s auf Countdown-Null, Statuszeile und Countdown-Logik Standard, übrige Regeln Standard; Befehle (`tools/chat_befehle.py`) angepasst | Inhaber per Klick |
 
 ## Siehe auch
 [[REA-Video Methode]] · [[REA Übergreifend]] · [[Regelwerk Account 2]] · [[Entscheidungen Log]]

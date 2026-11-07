@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-DATUM = "2026-11-02"
+DATUM = "2026-11-07"
 
 # ---------------------------------------------------------------- gemeinsame Blöcke
 FAKTEN = """FAKTENTREUE (gilt für alles, was du lieferst)
@@ -32,7 +32,7 @@ Du bist mein Content-Stratege und Skript-Autor für den TikTok-Kanal „Simulier
 
 UNSER KANAL
 - Nische: „Alltag durchgerechnet“, ab sofort ausschließlich GELD. Jedes Video beantwortet eine Geldfrage mit einer eigenen Modellrechnung und endet mit einem konkreten Ergebnis in Euro.
-- Format: gesichtsloses 3D-Simulationsvideo, Deutsch, 65 bis 80 Sekunden, ruhige KI-Stimme („Ben“), meist ein Duell oder Rennen zwischen zwei echten Alternativen derselben Entscheidung mit laufenden Zählern; danach Ergebnis, „Warum?“, eine zweite Überraschung und ein Merksatz.
+- Format: gesichtsloses 3D-Simulationsvideo, Deutsch, 65 bis 80 Sekunden, ruhige KI-Stimme („Ben“), meist ein Duell oder Rennen zwischen zwei echten Alternativen derselben Entscheidung mit laufenden Zählern; das Ergebnis kommt spät (bei ca. 80 % der Länge), danach „Warum?“, eine Pointe und eine Schlusskarte mit Fazit.
 - Themen dürfen Deutschland, die ganze Welt oder andere Länder betreffen; die Sprache bleibt Deutsch. Wir brauchen Flexibilität und endlos viele spannende Themen.
 - Unser Alltag: Jeden Tag entstehen zwei Videos für den nächsten Tag. Du lieferst zuerst zehn Ideen, ich wähle zwei, danach schreibst du die Skripte. Ich baue daraus Animation, Stimme und Schnitt."""
 
@@ -46,20 +46,19 @@ A1_REGELN_IDEEN = """REGELN FÜR IDEEN
 - Keine 1:1-Kopie eines fremden Videos: gleiches Thema nur mit eigenem Blickwinkel, eigener Rechnung und eigenen Sätzen.
 - Keine Dopplung mit unseren bisherigen Videos."""
 
-A1_FORMAT_SKRIPT = """AUFBAU DES SKRIPTS (feste Reihenfolge, genau diese Phasen)
-1. hook (0 bis 5 s): Pflicht ist ein Duell im ersten Satz: beide Alternativen bzw. beide Personen konkret nennen und gegeneinanderstellen (z. B. „Einer verdient ab 16, der andere ab 24. Wer hat mit 40 mehr?“). Keine Einzelfrage („Wie viel kostet X wirklich?“), kein vorweggenommenes Ergebnis; ein Du-Szenario nur mit beiden Seiten im Hook. Höchstens 2 kurze Sätze, die Stimme setzt sofort ein.
-2. regeln: die Spielregeln als Mini-Fakten (kurz, mit konkreten Zahlen der Modellperson).
+A1_FORMAT_SKRIPT = """AUFBAU DES SKRIPTS (feste Reihenfolge, genau diese Phasen; Zeiten für ca. 70 Sekunden)
+1. hook (0 bis 5 s): Pflicht ist ein Duell im ersten Satz: beide Alternativen bzw. beide Personen konkret nennen und gegeneinanderstellen (z. B. „Einer verdient ab 16, der andere ab 24. Wer hat mit 40 mehr?“). Keine Einzelfrage („Wie viel kostet X wirklich?“), kein vorweggenommenes Ergebnis; ein Du-Szenario nur mit beiden Seiten im Hook. Höchstens 2 kurze Sätze, der erste mit nur 3 bis 4 Wörtern, die Stimme setzt sofort ein. Die Duell-Frage steht ab dem ersten Bild als Titel im Bild (Feld text); das erste Bild muss ohne Ton verständlich sein (beide Seiten, ihre Werte, ein Vergleichszeichen).
+2. regeln: die Spielregeln knapp als Mini-Fakten (kurz, mit konkreten Zahlen der Modellperson; im Bild als Chips), nicht lang aufzählen.
 3. falle (Denkfalle, bis ca. 16 s): „Klar, …. Oder?“ ruhig, kein „Los geht’s“.
-4. rennen: das Duell mit laufender Uhr bzw. Zählern; ruhiger Erzähler, kein Sportreporter.
-5. folgen (bei ca. 20 s, höchstens 2 s): genau dieser Satz: „Folg mir, damit du nichts verpasst.“
-6. wendung1 (bei 18 bis 25 s), danach alle 8 bis 10 s eine weitere Wendung oder ein Führungswechsel (wendung2 …).
-7. ergebnis: exakte Euro-Zahl, dann
-8. warum: höchstens zwei Faktoren,
-9. ueberraschung: eine zweite Überraschung,
-10. merksatz: ein Satz, den man weitererzählt,
-11. schluss: genau dieser Satz: „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“
-Der letzte Gedanke soll zum ersten zurückführen (Schleife).
-Länge: 150 bis 190 gesprochene Wörter (ca. 65 bis 80 Sekunden bei ruhigem, flüssigem Tempo von rund 2,3 Wörtern pro Sekunde). Es muss natürlich und flüssig klingen: lieber kürzen als hetzen. Sätze meist 2 bis 8 Wörter, Du-Ansprache, Zahlen im Sprechtext gerundet (im Bild exakt)."""
+4. rennen: das Duell mit laufender Uhr bzw. Zählern; ruhiger Erzähler, kein Sportreporter; mindestens eine Zahl je 10 Sekunden.
+5. wendung1 (bei 18 bis 25 s), danach alle 8 bis 10 s eine weitere Wendung oder ein Führungswechsel (wendung2 …); insgesamt 4 bis 5 Wendepunkte, die Führung kippt mindestens einmal sichtbar.
+6. kipp (Höhepunkt, bei ca. 45 s): der Moment, in dem das Duell kippt; die Spannung ist am höchsten, das Ergebnis noch offen.
+7. ergebnis (erst bei ca. 80 % der Länge, bei 70 s also ca. 55 bis 58 s): exakte Euro-Zahl, dann
+8. warum: höchstens zwei Faktoren, kurz,
+9. pointe: eine überraschende Einordnung bzw. zweite Überraschung,
+10. schlusskarte (letzte 2 bis 3 s): ein kurzes Fazit oder die Pointe in einem Satz, der zugleich als Karte im Bild steht. Keine Frage, kein Aufruf.
+Kein Schlusssatz mit Aufforderung und kein Folgen-Aufruf; die Kommentarfrage steht nur in der Caption. Nur wenn mein Auftrag es ausdrücklich verlangt: folgen bei ca. 20 s, höchstens 2 s, genau „Folg mir, damit du nichts verpasst.“
+Länge: 150 bis 190 gesprochene Wörter (ca. 65 bis 80 Sekunden bei flüssigem Tempo von 2,3 bis 2,7 Wörtern pro Sekunde). Es muss natürlich und flüssig klingen: lieber kürzen als hetzen. Sätze meist 3 bis 5 Wörter. Erzählhaltung neutral: Du-Ansprache höchstens im Hook, danach neutral formulieren („Wer wechselt, wird doppelt so lange überholt.“ statt „Du wirst …“). Zahlen im Sprechtext gerundet (im Bild exakt)."""
 
 A1_STIMME = """REGIE-TEXT FÜR DIE STIMME (ElevenLabs „Ben“, Modell v4) — so schreiben, dass die Stimme Tonfall und Betonung perfekt umsetzt
 - Ruhig, sachlich, freundlich, sauber ausgesprochen; Erzähler wie in einer guten Wissenssendung.
@@ -89,7 +88,7 @@ UNSER KANAL
 - Format: „Was wäre, wenn …“ als 3D-POV-Zeitraffer ohne Stimme, 80 Sekunden. Der Zuschauer sieht das Ereignis aus der Ich-Perspektive. Es gibt nur drei Textebenen: eine Titelfrage am Anfang, links eine laufende Messwert-Anzeige (Zahl mit Etikett, z. B. Temperatur, Pegel, Jahr, die bis zu einem Höhepunkt mit „HIER“ läuft) und kurze kursive Sätze. Am Ende ein dunkler Abspann mit Titelfrage und Faktenzeile. Ton ist nur Atmo und Sounddesign.
 - Themen: spannende Gedankenexperimente mit messbarer Größe und einem Ereignis, das man von einem Standpunkt aus wachsen sieht (Wissenschaft, Natur, Geografie, Geschichte, Technik …). Die Orte dürfen überall liegen: Deutschland, weltweit, andere Länder. Wir brauchen Flexibilität und endlos viele spannende Themen; Sprache ist Deutsch. Auch Themen mit „in 5 Sekunden“-Rahmen sind erlaubt, wenn sie sich gut zeigen lassen.
 - WELT UND BEWEGUNG (wichtig): Die Welt passt zum Thema. Bevorzuge oft Natur (Meer, Küste, Strand, Wald, Wüste, Gebirge, Gletscher, See, Weltraumnähe); Städte nur, wenn sie wirklich passen. Variiere Ort, Tageszeit (Tag, Sonnenauf- und -untergang, Nacht) und Standpunkt (nicht immer „von oben aus dem Fenster“: Strandblick aufs Meer, Bootsdeck, Waldlichtung, Gipfel, Straße, Dünen, Eisfläche …). Es darf nie „gewartet“ werden: Im Zeitraffer muss alle paar Sekunden etwas Sichtbares passieren (Licht, Wetter, Wasser, Vegetation, Menschen, Tiere, Fahrzeuge), und die Messwert-Anzeige muss zur sichtbaren Veränderung passen.
-- Die Kamera darf sich langsam bewegen (weiche Fahrt, Schwenk, Zoom), es gibt keine harten Schnitte.
+- Die Kamera darf sich langsam bewegen (weiche Fahrt, Schwenk, Zoom); sonst lange durchgehende Einstellungen. Erlaubt sind höchstens 1 bis 3 gezielte harte Schnitte, nur am Höhepunkt oder bei einem Maßstabs- bzw. Szenensprung.
 - Unser Alltag: Jeden Tag entstehen zwei Videos für den nächsten Tag. Du lieferst zuerst zehn Ideen, ich wähle zwei, danach schreibst du die Skripte. Ich baue daraus die 3D-Szene."""
 
 A2_REGELN_IDEEN = """REGELN FÜR IDEEN
@@ -101,11 +100,11 @@ A2_REGELN_IDEEN = """REGELN FÜR IDEEN
 - Die Idee muss sich visuell tragen: Beschreibe, was sich in der Welt jede Phase sichtbar verändert."""
 
 A2_FORMAT_SKRIPT = """AUFBAU DES SKRIPTS (feste Reihenfolge, 80 Sekunden)
-- Titelfrage (steht 0,4 bis 4,4 s oben im Bild, 2 bis 3 Zeilen, deutsch, eine Frage).
+- Titelfrage (steht 0,4 bis 4,4 s oben im Bild, 2 bis 3 Zeilen, deutsch, eine Frage mit offener Folge, die neugierig macht; sie verrät die Gefahr, die die Welt im Bild noch nicht kennt). Im Abspann kehrt sie zurück.
 - 12 bis 18 kursive Sätze: je 3 bis 9 Wörter, ruhig, Präsens, Aussagesätze, gern Du-Perspektive, Übergänge mit „Dann …“, keine Ausrufezeichen, keine Fragen. Erster Satz bei ca. 4,8 s, der letzte endet spätestens bei 70 s. Jeder Satz beschreibt genau das, was im selben Moment zu sehen ist; Zahlen im Satz stimmen mit der Anzeige überein.
-- Bogen: Alltag und erste Anzeichen (5 bis 20 s) · Auslöser, erste Wendung (18 bis 25 s) · Eskalation in Stufen alle 8 bis 10 s (25 bis 50 s) · Annäherung (50 bis 58 s) · Höhepunkt (58 bis 62 s; Anzeige zeigt „HIER“, im Moment selbst kein Satz) · Nachspiel (62 bis 70 s) · Abblende (70 bis 72 s) · Abspann (72 bis 80 s).
-- Messwert-Anzeige: läuft von Bild 1 an, 2 bis 4 Etikettwechsel (je Stufe eine neue echte Messgröße), endet bei „HIER“. Raffst du die Zeit, nenne den Zeitraffer-Faktor und eine nachvollziehbare Anzeige-Größe.
-- Faktenzeile für den Abspann: „ORT, JAHR · FAKT“ oder „FAKT · FAKT“, eine bis zwei Zeilen, belegbar.
+- Bogen: Start mit Countdown (0 bis ca. 8 s: der Countdown läuft ab Bild 1, die Welt lebt noch ahnungslos weiter, der Zuschauer weiß mehr) · Ereignis genau auf Countdown-Null (ca. 8 s; Bild, Licht und Ton kippen gleichzeitig) · Eskalation in mindestens 3 Stufen alle 8 bis 10 s (ca. 10 bis 50 s; Farbe und Licht wechseln mit der Lage) · Annäherung (50 bis 58 s; ein zweiter Countdown ist erlaubt) · Höhepunkt (58 bis 62 s; Anzeige zeigt „HIER“, im Moment selbst kein Satz) · Nachspiel (62 bis 70 s) · Abblende (70 bis 72 s) · Abspann (72 bis 80 s).
+- Messwert-Anzeige: läuft von Bild 1 an. Phase 1 ist ein Countdown bis zum Ereignis (bei Zeitraffer-Themen die Zeit bis zum Einsetzen der Veränderung), danach 2 bis 4 Etikettwechsel (je Stufe eine neue echte Messgröße), endet bei „HIER“. Darunter eine Statuszeile in Versalien (1 bis 3 Wörter zur Lage), deren Text mehrfach wechselt. Raffst du die Zeit, nenne den Zeitraffer-Faktor und eine nachvollziehbare Anzeige-Größe.
+- Faktenzeile für den Abspann: „ORT, JAHR · FAKT“ oder „FAKT · FAKT“, eine bis zwei Zeilen, belegbar; sie ordnet die Prämisse real ein.
 - Keine Stimme, keine Untertitel, kein Logo, keine Sticker, kein Folgen-Aufruf im Bild. Die Kommentarfrage steht nur in der Caption."""
 
 A2_CAPTION = """CAPTION (nicht im Video, nur Beschreibung)
@@ -114,7 +113,7 @@ Etwa 150 Zeichen plus 5 Hashtags, kein #fyp oder #viral."""
 
 A2_IDEEN_JSON = """{"ideen":[{"nr":1,"titel":"Titelfrage „Was wäre, wenn …?“","ereignis":"was passiert, in einem Satz","messgroesse":"was die Anzeige zeigt (Größe, Einheit, Start und Ende)","welt":"Natur/Ort-Typ","standpunkt":"wo steht der Zuschauer","tageszeit_verlauf":"z. B. Morgen, Mittag, Abend","bewegung":"was sich in der Welt sichtbar verändert, Phase für Phase","kamera":"z. B. langsamer Zoom","zeitraffer":"Faktor oder Echtzeit","hoehepunkt":"was bei HIER passiert","pointe":"was man mitnimmt","diskussion":"warum sich Zuschauer austauschen würden (nur intern)","daten":"belegbare Quellen/Zahlen verfügbar","laender":"Ort/Land","risiko":"kurz"}]}"""
 
-A2_SKRIPT_JSON = """{"skripte":[{"nr":1,"titel":"Titelfrage","thema":"","welt":"","standpunkt":"","tageszeit_verlauf":"","zeitraffer":"","kamera":"","anzeige_plan":[{"von_s":0,"bis_s":18,"etikett":"ETIKETT","start":"","ende":"","einheit":"","unter":"Unterzeile in Versalien"}],"saetze":[{"t_ca":4.8,"text":"Satz mit 3 bis 9 Wörtern."}],"faktenzeile":"","rechenweg":"Formel, Eingaben, Rechenschritte","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","dramaturgie":["Hinweis mit Zeitpunkt: was in der Welt passiert, Licht, Zoom"],"selbstpruefung":["Satzzahl ..","Fakten ..","Anzeige passt zum Zeitraffer ..","Verbote .."]}]}"""
+A2_SKRIPT_JSON = """{"skripte":[{"nr":1,"titel":"Titelfrage","thema":"","welt":"","standpunkt":"","tageszeit_verlauf":"","zeitraffer":"","kamera":"","anzeige_plan":[{"von_s":0,"bis_s":8,"etikett":"ETIKETT (Phase 1: Countdown bis zum Ereignis)","start":"","ende":"","einheit":"","unter":"Statuszeile in Versalien"}],"saetze":[{"t_ca":4.8,"text":"Satz mit 3 bis 9 Wörtern."}],"faktenzeile":"","rechenweg":"Formel, Eingaben, Rechenschritte","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","dramaturgie":["Hinweis mit Zeitpunkt: was in der Welt passiert, Licht, Zoom"],"selbstpruefung":["Satzzahl ..","Fakten ..","Anzeige passt zum Zeitraffer ..","Verbote .."]}]}"""
 
 KONFIG = {
     "simulierbar": {
@@ -211,6 +210,7 @@ status: aktuell
 datum: {DATUM}
 quelle: tools/chat_befehle.py
 tags: [konto/{k}, claude-chat, befehl, skript]
+cssclasses: [konto-{k}, typ-anleitung]
 ---
 
 # {titel}
@@ -249,15 +249,15 @@ def studio_bauen():
     daten = (ziel / "befehle.json").read_text(encoding="utf-8")
     kompakt = json.dumps(json.loads(daten), ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     html = (ziel / "vorlage.html").read_text(encoding="utf-8").replace("__BEFEHLE_JSON__", kompakt)
-    (ziel / "ideen-studio.html").write_text(html, encoding="utf-8")
+    (ziel / "ideen-studio.html").write_bytes((html).encode("utf-8"))
     print("gebaut: docs/ideen-studio/ideen-studio.html", round(len(html) / 1024), "KB")
 
 
 def main():
     a1 = WURZEL / "hirn" / "02-Simulierbar" / "Befehl Ideen und Skripte Simulierbar.md"
     a2 = WURZEL / "hirn" / "03-stelldirvor-pov" / "Befehl Ideen und Skripte Account 2.md"
-    a1.write_text(notiz("simulierbar", "Befehl Ideen und Skripte Simulierbar", "02-Simulierbar", "simulierbar"), encoding="utf-8")
-    a2.write_text(notiz("stelldirvor", "Befehl Ideen und Skripte Account 2", "03-stelldirvor-pov", "stelldirvor"), encoding="utf-8")
+    a1.write_bytes((notiz("simulierbar", "Befehl Ideen und Skripte Simulierbar", "02-Simulierbar", "simulierbar")).encode("utf-8"))
+    a2.write_bytes((notiz("stelldirvor", "Befehl Ideen und Skripte Account 2", "03-stelldirvor-pov", "stelldirvor")).encode("utf-8"))
     ziel = WURZEL / "docs" / "ideen-studio"
     ziel.mkdir(parents=True, exist_ok=True)
     daten = {}
@@ -266,7 +266,7 @@ def main():
                     "ideen_vorlage": ideen_befehl(k, lernstand="{{LERNSTAND}}", bisher=["{{BISHER}}"], wunsch="", format="json"),
                     "skript_vorlage": skript_befehl(k, "{{IDEEN}}", lernstand="{{LERNSTAND}}", format="json"),
                     "ideen_text": ideen_befehl(k, format="text"), "skript_text": skript_befehl(k, "{{IDEEN}}", format="text")}
-    (ziel / "befehle.json").write_text(json.dumps(daten, ensure_ascii=False, indent=1), encoding="utf-8")
+    (ziel / "befehle.json").write_bytes((json.dumps(daten, ensure_ascii=False, indent=1)).encode("utf-8"))
     print("geschrieben:", a1.name, "|", a2.name, "| docs/ideen-studio/befehle.json")
     studio_bauen()
 

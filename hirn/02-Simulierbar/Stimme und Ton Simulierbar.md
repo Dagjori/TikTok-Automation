@@ -48,7 +48,7 @@ Stimme Ben, Regie-Text, Tonfall, Klangteppich und Lautheit für `@simulierbar`. 
 4. Countdowns als Satzfetzen mit Kommas: „Fünfzehn Kilometer, dreizehn, zwölf, zehn.“
 5. Nach der Vertonung prüft `qc/massstab.py` Tempo, Satzpausen und Satzlängen; zusätzlich Abgleich Sprechtext gegen Spracherkennung (ElevenLabs Speech-to-Text; v4 spricht die Tags nicht mit, F): jedes Wort richtig ausgesprochen, keine verschluckten Zahlen.
 
-**Feste Sätze:** Schluss genau „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ · Folgen-Aufruf genau „Folg mir, damit du nichts verpasst.“
+**Feste Sätze (seit 07.11.2026):** Der Schlusssatz „Was sollen wir als Nächstes zeigen? …“ **entfällt**; das Video endet auf der Schlusskarte mit Fazit oder Pointe. Der Folgen-Aufruf ist keine Pflicht mehr; nur in Testvideos genau „Folg mir, damit du nichts verpasst.“ **Erzählhaltung:** neutral, Du höchstens im Hook ([[REA Simulierbar Regelwerk]]).
 
 Zahlen im Sprechtext: rund und ausgeschrieben, im Bild exakt (Ausnahme in Beispielen: Endstand-Zeiten werden auch exakt gesprochen, siehe Beispiel-Skript in [[Videoaufbau Simulierbar]]).
 

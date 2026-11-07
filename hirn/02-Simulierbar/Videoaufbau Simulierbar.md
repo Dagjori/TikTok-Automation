@@ -15,23 +15,25 @@ Feste Reihenfolge jedes Simulierbar-Videos, als Zeitplan für **Ben im Original*
 > [!info] Neu seit 02.11.2026 abends
 > Der Ablauf beginnt mit „**Skript liegt vor**“ (Ideen-Studio: die Tages-Sitzung von Claude Code recherchiert und schreibt es, der Inhaber gibt frei; kein 30-Tage-Plan mehr). Dazu: Skript-Anforderungen (Abschnitt 5), Dramaturgie und Effekte (Abschnitt 6), Tempo 150–190 Wörter, nur Thema GELD, keine Sperrliste (aber keine 1:1-Kopie), Länder frei. Workflow rund um das Ideen-Studio: [[Claude-Chat-Workflow]], [[Befehl Ideen und Skripte Simulierbar]].
 
-## Die elf Bausteine in fester Reihenfolge
-1. **Scroll-Stopper-Hook** (0–5 s: Duell im ersten Satz, beide Seiten konkret genannt, seit 04.11. Pflicht; Du-Szenario nur mit beiden Seiten, keine Einzelfrage, kein Ergebnis vorweg; Stimme < 0,2 s, ganze Szene ab Bild 1)
-2. **Regeln** als Mini-Fakten mit Chips
+> [!info] Neu seit 07.11.2026 (REA-Regelwerk freigegeben, [[REA Simulierbar Regelwerk]])
+> Endstand erst bei ca. 80 % der Länge, davor ein Kipp-Moment bei ca. 45 s als Höhepunkt · Ende auf einer **Schlusskarte** (Fazit oder Pointe), **kein fester Schlusssatz** mehr · Folgen-Aufruf keine Pflicht (nur in Testvideos) · Schleife freiwillig · Tempo 2,3–2,7 W/s, Sätze 3–5 Wörter · **neutrale Erzählhaltung**, Du höchstens im Hook · Duell-Frage als Titel im Bild ab Bild 1 (Pflicht), erstes Bild ohne Ton verständlich · Untertitel in Blöcken von 1–4 Wörtern mit Schlüsselwort in der Teamfarbe.
+
+## Die Bausteine in fester Reihenfolge (seit 07.11.2026)
+1. **Scroll-Stopper-Hook** (0–5 s: Duell im ersten Satz, beide Seiten konkret genannt, seit 04.11. Pflicht; erster Satz 3–4 Wörter; Du-Szenario nur mit beiden Seiten, keine Einzelfrage, kein Ergebnis vorweg; Stimme < 0,2 s, ganze Szene ab Bild 1, **Duell-Frage als Titel im Bild ab Bild 1**, erstes Bild ohne Ton verständlich)
+2. **Regeln** knapp als Mini-Fakten mit Chips (nicht lang aufzählen)
 3. **Denkfalle** „Klar, …. Oder?“, ruhig (bis 16 s), **kein „Los geht's“**
-4. **Rennen** mit laufender Uhr/Zählern, ruhiger Erzähler (kein Sportreporter)
-5. **Folgen-Aufruf bei ca. 20 s**, max. 2 s: „Folg mir, damit du nichts verpasst.“
-6. **Erste Wendung** bei 18–25 s, danach alle 8–10 s Wendung/Führungswechsel
-7. **Ergebnis** mit exakter Euro-Zahl (bzw. Währung des Landes), dann **„Warum?“** (max. 2 Faktoren)
-8. **Zweite Überraschung**
-9. **Merksatz**
-10. **Schluss genau:** „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“
-11. letztes Bild = erstes (**Schleife**)
+4. **Rennen** mit laufender Uhr/Zählern, ruhiger Erzähler (kein Sportreporter), mindestens eine Zahl je 10 s
+5. **Erste Wendung** bei 18–25 s, danach alle 8–10 s Wendung/Führungswechsel (insgesamt 4–5 Wendepunkte, die Führung kippt mindestens einmal sichtbar)
+6. **Kipp-Moment** bei ca. 45 s: Höhepunkt der Spannung, Ergebnis noch offen
+7. **Ergebnis** mit exakter Euro-Zahl (bzw. Währung des Landes) **erst bei ca. 80 % der Länge**, dann kurz **„Warum?“** (max. 2 Faktoren)
+8. **Pointe** (zweite Überraschung bzw. überraschende Einordnung)
+9. **Schlusskarte** (Pflicht): Fazit oder Pointe als kurzer Satz und Karte im Bild; keine Frage, kein Aufruf
+- **Entfallen seit 07.11.:** fester Schlusssatz „Was sollen wir als Nächstes zeigen? …“ (ganz), Folgen-Aufruf als Pflicht (nur noch in Testvideos, siehe [[Lernschleife und Insights]]), Schleife als Pflicht (freiwillig: letztes Bild = erstes).
 
 ## Länge und Text (Kennzahlen)
 - Länge **65–80 s** (mind. 61 s wegen [[CRP Creator Rewards Program]]).
 - **Tempo (Mitte aus beiden bisherigen Vorgaben):** 150–190 Wörter, Ziel ca. 2,3 W/s, Spanne 2,2–2,5 W/s. Ersetzt 130–170 Wörter (Ben im Original ca. 2,0 W/s) und 170–220 Wörter (alte Prüfliste, Vorbilder 2,5–2,9 W/s); der frühere Widerspruch zwischen beiden ist damit aufgelöst. **Flüssig und natürlich**, kein künstliches Beschleunigen; das Tempo entsteht durch Textlänge und Satzbau. **Qualität vor Tempo: klingt eine Stelle gehetzt, kürzen statt beschleunigen.**
-- Sätze meist 2–8 Wörter (Median 4–8, meist unter 10), Du-Ansprache, Zahlen im Sprechtext rund und ausgeschrieben („zwanzig Sekunden“), im Bild exakt. Keine Füllsätze, keine Quellen, kein „laut einer Studie“ (Quellen nur intern in `skript.json`).
+- **Seit 07.11.:** Tempo 2,3–2,7 W/s (Vorbilder 2,42–2,70), Wörter weiter 150–190. Sätze meist 3–5 Wörter (vorher 2–8), **neutrale Erzählhaltung, Du höchstens im Hook** (durchgehend Du: starke Vorbilder 2/6, schwache 3/3), Zahlen im Sprechtext rund und ausgeschrieben („zwanzig Sekunden“), im Bild exakt. Keine Füllsätze, keine Quellen, kein „laut einer Studie“ (Quellen nur intern in `skript.json`).
 - **Verboten:** künstliche Cliffhanger („Teil 2 folgt“), Kaufaufrufe, Kanalname bzw. Rubrik im Video.
 - Immer eine offene Frage im Kopf des Zuschauers: Jede Phase endet mit einer Spannung, die erst die nächste auflöst („Also ist Rennen doch schlechter? Noch nicht.“).
 - Konkrete Personen bzw. Teams mit Namen oder Buchstaben (Paul gegen Anna, A gegen B).
@@ -39,20 +41,20 @@ Feste Reihenfolge jedes Simulierbar-Videos, als Zeitplan für **Ben im Original*
 ## 1. Zeitplan (65–80 s, mindestens 61 s)
 | Zeit | Phase | Sprechtext (Muster) | Bild (Welt zuerst, HUD unterstützt) |
 |---|---|---|---|
-| 0–5 s | **Hook** | **Duell im ersten Satz (Pflicht seit 04.11.):** beide Alternativen bzw. Personen konkret genannt, max. 2 kurze Sätze: „X oder Y? Was … wirklich …?“ bzw. „Einer verdient ab 16, der andere ab 24. Wer hat mit 40 mehr?“. Du-Szenario nur mit beiden Seiten; keine Einzelfrage, kein Ergebnis vorweg. Stimme startet < 0,2 s. | Ganze Szene mit beiden Seiten von Bild 1 an, schon in Bewegung (Licht, Verkehr, Staub, Kamera fährt). Tafel oben ab Bild 0 (Werte 0). Optional Titel Wort für Wort. |
+| 0–5 s | **Hook** | **Duell im ersten Satz (Pflicht seit 04.11.):** beide Alternativen bzw. Personen konkret genannt, max. 2 kurze Sätze: „X oder Y? Was … wirklich …?“ bzw. „Einer verdient ab 16, der andere ab 24. Wer hat mit 40 mehr?“. Du-Szenario nur mit beiden Seiten; keine Einzelfrage, kein Ergebnis vorweg. Stimme startet < 0,2 s. | Ganze Szene mit beiden Seiten von Bild 1 an, schon in Bewegung (Licht, Verkehr, Staub, Kamera fährt). Tafel oben ab Bild 0 (Werte 0) mit Vergleichszeichen; **Duell-Frage als Titel im Bild ab Bild 1 (Pflicht seit 07.11.)**; das erste Bild ist ohne Ton verständlich. |
 | 3–12 s | **Regeln** | 3–6 Mini-Fakten, 2–5 Wörter je Satz | Jede Regel erscheint genau beim Wort: als Objekt in der Welt (Preisschild, Münzstapel, Route, Gefäß) und als Chip. |
 | bis 16 s | **Denkfalle** | „Klar, [naheliegende Antwort]. Oder?“ ruhig gesprochen. **Kein „Los geht's“.** | Kamera rückt die naheliegende Seite ins Licht (Schärfe, Lichtkegel). Kein Sticker. |
 | ab ca. 13 s | **Rennen** | ruhiger Erzähler-Kommentar, alle 2–3 s ein Zwischenstand | Uhr bzw. Zähler laufen sichtbar (Tafel, Uhr, Füllstand, Münzstapel, Lichtspur), Kamera folgt. |
-| ca. 20 s, max. 2 s | **Folgen-Aufruf** | „Folg mir, damit du nichts verpasst.“ | `M.folgen({ ein, dauer: 1.8 })`, Welt läuft weiter. Direkt vor der ersten Wendung. |
+| ca. 20 s, max. 2 s | **Folgen-Aufruf** (seit 07.11. nur in Testvideos) | „Folg mir, damit du nichts verpasst.“ | `M.folgen({ ein, dauer: 1.8 })`, Welt läuft weiter. Direkt vor der ersten Wendung. |
 | 18–25 s | **Erste Wendung** | „Aber jetzt kommt das Merkwürdige:“ bzw. „Doch …“ | Kamera-Zoom bzw. Schärfenverlagerung auf den entscheidenden Moment, Licht wechselt (z. B. Spot auf die andere Seite). |
 | danach alle 8–10 s | **Führungswechsel / weitere Wendung** | Countdown-Zahlen als Satzfetzen, „Jetzt wird's knapp.“ (ruhig) | Tafel färbt die führende Seite, Welt reagiert (Waage kippt, Gefäß überholt, Route leuchtet auf). |
-| 40–54 s | **Ergebnis** | „Endstand: …“, exakte Zahl in Euro, „[Sieger] gewinnt.“ | Bilanzkarte (`M.bilanz`) baut sich zeilenweise auf; in der Welt hält das Rennen an, Licht auf den Sieger. **Höhepunkt der Spannungskurve.** |
-| 50–64 s | **„Warum?“** | max. 2 Faktoren | `M.balken` mit 2 Faktoren; Blaupause (Stil 13) als Einschub erlaubt ([[Stile 17 bis 21]]). |
-| 45–66 s | **Zweite Überraschung** | „Und das Verrückte: …“, eine Variante dreht das Ergebnis | neue Runde in derselben Welt (anderer Parameter), Zähler laufen neu. |
-| letzte 5–8 s | **Merksatz** | ein kurzer, zitierfähiger Satz | `M.pointe` ruhig (ohne Comic-Kontur) oder nur Welt + Untertitel. |
-| letzte 2–3 s | **Schluss** | genau: „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ | Kamera und Werte gleiten zum Anfangsbild zurück (`M.schleife`, `regie.schleife`): **letztes Bild = erstes Bild**. |
+| ca. 45 s (ca. 64 %) | **Kipp-Moment** (seit 07.11.) | die Führung kippt endgültig, das Ergebnis ist noch offen | wichtige Zahl leuchtet auf, Licht und Kamera auf den Kipp. **Höhepunkt der Spannungskurve.** |
+| ca. 80 % der Länge (bei 70 s ca. 55–58 s; bis 07.11.: 40–54 s) | **Ergebnis** | „Endstand: …“, exakte Zahl in Euro, „[Sieger] gewinnt.“ | Bilanzkarte (`M.bilanz`) baut sich zeilenweise auf; in der Welt hält das Rennen an, Licht auf den Sieger. Die Spannung löst sich. |
+| direkt danach, kurz | **„Warum?“** | max. 2 Faktoren | `M.balken` mit 2 Faktoren (Erklärgrafik, Pflicht seit 07.11.); Blaupause (Stil 13) als Einschub erlaubt ([[Stile 17 bis 21]]). |
+| danach, kurz | **Pointe** | „Und das Verrückte: …“, überraschende Einordnung bzw. eine Variante, die das Ergebnis dreht | neue Runde in derselben Welt (anderer Parameter) oder Einordnung im Bild. |
+| letzte 2–3 s | **Schlusskarte** (Pflicht seit 07.11.) | Fazit oder Pointe in einem kurzen, zitierfähigen, neutralen Satz; keine Frage, kein Aufruf (der feste Schlusssatz entfällt seit 07.11.) | Text- bzw. Tafelkarte mit Schlüsselwort in der Teamfarbe; Rückkehr zum Anfangsbild (`M.schleife`) freiwillig. |
 
-**Wörter-Budget (Richtwert S, Summe ca. 177 bei 2,3 W/s):** Hook ca. 12 · Regeln ca. 24 · Denkfalle ca. 6 · Rennen ca. 28 · Folgen-Aufruf 6 (fest) · erste Wendung ca. 18 · Ergebnis ca. 24 · „Warum?“ ca. 18 · zweite Überraschung ca. 18 · Merksatz ca. 12 · Schluss 11 (fest). Der Folgen-Aufruf bei ca. 20 s liegt bei 2,3 W/s etwa beim 46. Wort.
+**Wörter-Budget (Richtwert S, seit 07.11., Summe ca. 172 bei ca. 2,5 W/s):** Hook ca. 10 · Regeln ca. 18 · Denkfalle ca. 6 · Rennen und Wendungen ca. 80 · Kipp-Moment ca. 12 · Ergebnis ca. 15 · „Warum?“ ca. 14 · Pointe ca. 10 · Schlusskarte ca. 7. Bis zum Endstand (ca. 56 s) also ca. 140 Wörter, danach nur noch ca. 30.
 
 ## 2. Dynamik (Inhaber 31.10./02.11.)
 - **Alle 1–2 s etwas Neues im Bild** (Bewegung in der Welt, Kamerafahrt, Lichtwechsel, Zähler, Chip, Szenenwechsel), **nie mehr als 2 s Stillstand** (`massstab.py` Punkt 5). Inhaber 31.10.: „Die Aufmerksamkeitsspanne ist gering, wir müssen deutlich mehr liefern“.
@@ -71,8 +73,8 @@ Feste Reihenfolge jedes Simulierbar-Videos, als Zeitplan für **Ben im Original*
 | Spannung | Countdown-Fetzen („Fünfzehn Kilometer, dreizehn, zwölf, zehn.“), „Jetzt wird's knapp.“ |
 | Ergebnis | „Endstand:“ |
 | Erklärung | „Warum?“ |
-| Zweite Überraschung | „Und das Verrückte:“ |
-| Merksatz | kurz, zitierfähig |
+| Pointe | „Und das Verrückte:“ |
+| Schlusskarte | kurz, zitierfähig, neutral (Fazit oder Pointe, keine Frage) |
 - Messwert (F, 02.11.): Ben im Original lag bei den letzten Videos bei 2,15–2,38 W/s (Wortzeiten) mit hörbaren Satzpausen um 0,35 s; das Ziel 2,3 W/s ist damit ohne Beschleunigung erreichbar, wenn der Text dicht genug ist. Regie-Text-Technik: [[Stimme und Ton Simulierbar]].
 
 ## 4. Themen-Logik (Pflicht beim Eingang des Skripts, Inhaber 02.11.)
@@ -97,14 +99,14 @@ Das Skript schreibt Claude Chat im Ideen-Studio; Claude Code setzt es um. Der In
 
 ### 5.2 Übernahme durch Claude Code
 1. **Inhaltlich 1:1** nach `skript.json` (Regie-Text, Segmente); rein technische Anpassungen ohne Inhaltsänderung (Zeilenumbrüche, Ausschreiben, Lautschrift, Segment-IDs) sind erlaubt.
-2. **Faktenfehler korrigieren und weiter** (Inhaber 02.11. spätabends): mit Quelle korrigieren, Aussage nur so weit wie nötig ändern, Vermerk unter `korrekturen`; kippt das Ergebnis, Status `rueckfrage` und Push. Fehlen die festen Sätze (Folgen-Aufruf, Schluss), ergänzt Claude Code sie und meldet das.
+2. **Faktenfehler korrigieren und weiter** (Inhaber 02.11. spätabends): mit Quelle korrigieren, Aussage nur so weit wie nötig ändern, Vermerk unter `korrekturen`; kippt das Ergebnis, Status `rueckfrage` und Push. Feste Sätze gibt es seit 07.11. nicht mehr (Folgen-Aufruf nur in Testvideos, Schlusssatz entfällt); fehlt die Schlusskarte, ergänzt Claude Code sie aus Fazit bzw. Pointe und meldet das.
 3. **Zahlen prüfen:** `rechenweg`, `zahlen`, `annahmen` als Rechnung in `pipeline/sim/<thema>.mjs` mit Test nachrechnen; **Abweichungen melden** (Feld, Wert im Skript, Wert der Rechnung, Vorschlag), nicht stillschweigend korrigieren.
 4. **Eingangsprüfung:** GELD und Euro-Ergebnis · Themen-Logik · Ausschlussthema · Finanzregeln · Wörter 150–190 · Tonregeln (16a/16b) · Caption im Format von CLAUDE.md §7 · keine erkennbare 1:1-Kopie.
 
 ## 6. Dramaturgie und Effekte (Regelabschnitt, Inhaber 02.11.2026 abends)
 „Mehr Effekte, aber nichts Übertriebenes, und die Spannung steigt.“
 
-**Grundsätze:** (1) Von der ersten Sekunde fangen und die Spannung bis zum Ergebnis steigern; nach dem Ergebnis kurz ausatmen („Warum?“), dann letzter Dreh, Merksatz, Schleife. (2) **Skript zuerst**, Design und Animation aus dem Skript ableiten (Skript → Beat-Blatt in `skript.json` → Welt). (3) Erlaubt und erwünscht: mehrere verschiedene Animationssequenzen, Situations-/Bildwechsel, Aufleuchten von Elementen, Lichtspiele, Glow, Zoom (mal ja, mal nein, abwechselnd, nicht dauerhaft), Fahrten. (4) **Große Sticker/Stempel bleiben verboten** (bestätigt 02.11.), ebenso `regie.stoss`.
+**Grundsätze:** (1) Von der ersten Sekunde fangen, die Spannung bis zum Kipp-Moment (ca. 45 s) steigern und bis zum Endstand bei ca. 80 % halten; danach kurz ausatmen („Warum?“), Pointe, Schlusskarte (seit 07.11.). (2) **Skript zuerst**, Design und Animation aus dem Skript ableiten (Skript → Beat-Blatt in `skript.json` → Welt). (3) Erlaubt und erwünscht: mehrere verschiedene Animationssequenzen, Situations-/Bildwechsel, Aufleuchten von Elementen, Lichtspiele, Glow, Zoom (mal ja, mal nein, abwechselnd, nicht dauerhaft), Fahrten. (4) **Große Sticker/Stempel bleiben verboten** (bestätigt 02.11.), ebenso `regie.stoss`.
 
 **Spannungskurve (Stufe 1 = ruhig, 5 = Höhepunkt):**
 | Phase | Stufe | Typische Mittel (Beispiele, nicht alle zugleich) |
@@ -113,13 +115,14 @@ Das Skript schreibt Claude Chat im Ideen-Studio; Claude Code setzt es um. Der In
 | Regeln | 2 | Objekte erscheinen beim Wort, Chips, Schärfe wandert von Seite zu Seite |
 | Denkfalle | 2–3 | Licht rückt die naheliegende Seite ins Rampenlicht |
 | Rennen | 3 | Zähler laufen, Kamera folgt, Abstand wird sichtbar |
-| Folgen-Aufruf | 3 | ruhig, kein Effekt-Wettbewerb mit dem Element |
+| Folgen-Aufruf (nur Testvideos) | 3 | ruhig, kein Effekt-Wettbewerb mit dem Element |
 | erste Wendung | 4 | Zoom oder Schärfenverlagerung, Lichtwechsel, die Erwartung kippt sichtbar |
 | Führungswechsel | 4 | Aufleuchten der führenden Seite, Kamerawechsel, engere Einstellung |
-| Ergebnis | 5 | Licht auf den Sieger, Glow, Bilanzkarte baut sich auf; optischer Höhepunkt |
+| Kipp-Moment (ca. 45 s) | 5 | wichtige Zahl leuchtet auf, Licht und Kamera auf den Kipp; optischer Höhepunkt |
+| Ergebnis (ca. 80 %) | 5 | Licht auf den Sieger, Glow, Bilanzkarte baut sich auf; die Spannung löst sich |
 | „Warum?“ | 3 | ruhiger, erklärend (Einschub Stil 13 möglich), Fahrt statt Zoom |
-| zweite Überraschung | 4 | neue Runde, neuer Winkel, letzter Dreh |
-| Merksatz, Schluss | 2 | Kamera gleitet zurück zum Anfangsbild |
+| Pointe | 4 | neuer Winkel, letzter Dreh |
+| Schlusskarte | 2 | Fazit- bzw. Pointenkarte; Rückkehr zum Anfangsbild freiwillig |
 
 **Maß (sonst gehen Zuschauer verloren):** Variation alle 5 s (in jedem 5-s-Fenster ein andersartiger Effekt oder Bildtyp) · höchstens ein dominanter Effekt zugleich, Text immer lesbar · Zoom nicht dauerhaft, Richtwert 2–4 je Video (S) · kein Leerlauf (nie über 2 s ohne sichtbare Änderung), aber auch kein Dauer-Wackeln oder Schnittgewitter · Schutzregel: keine schnellen Helligkeitswechsel (über 3 pro Sekunde, WCAG 2.3.1) · Effekte folgen dem Inhalt des Skripts. Technische Rezepte: [[Licht und Atmosphäre Simulierbar]] (Abschnitt 9) und [[Design und Layout Simulierbar]] (Abschnitt 6).
 
@@ -143,7 +146,7 @@ Was nicht zu sehen ist, wird nicht gesagt; was groß zu sehen ist, wird erwähnt
 - **Ton:** Klangteppich zum Thema 8–13 dB unter der Stimme, Effekt je Bild-Ereignis, Akzent auf der Pointe, −14 LUFS, nur selbst erzeugte Klänge (`pipeline/klang.py`).
 
 ## 9. Beispiel-Skript (Muster für Aufbau und Regie-Text)
-„Spurwechsel im Stau“ im Aufbau von Abschnitt 1. **Nur Muster für Phasen und Regie-Text, nicht für das Thema:** Das Beispiel ist ein ALLTAG-Thema ohne Euro-Ergebnis; neue Videos sind GELD. Zahlen: Modellwerte aus der eigenen Simulation, S; Paul wechselt, Anna bleibt; neun Wechsel für 20 s. Umfang ca. 150 Wörter (untere Grenze des heutigen Bereichs 150–190). (Das Spurwechsel-Video selbst ist gepostet; die Rechnung liegt in `pipeline/projekte/spurwechsel/`.)
+„Spurwechsel im Stau“ im Aufbau **bis 07.11.2026** (mit Folgen-Aufruf, festem Schlusssatz und Du-Merksatz; neue Skripte folgen dem Zeitplan in Abschnitt 1). **Nur Muster für Phasen und Regie-Text, nicht für das Thema:** Das Beispiel ist ein ALLTAG-Thema ohne Euro-Ergebnis; neue Videos sind GELD. Zahlen: Modellwerte aus der eigenen Simulation, S; Paul wechselt, Anna bleibt; neun Wechsel für 20 s. Umfang ca. 150 Wörter (untere Grenze des heutigen Bereichs 150–190). (Das Spurwechsel-Video selbst ist gepostet; die Rechnung liegt in `pipeline/projekte/spurwechsel/`.)
 
 | Phase | Untertitel (`text`) | Regie-Text (`sprechtext`, Eleven v4) |
 |---|---|---|

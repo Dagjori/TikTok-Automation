@@ -90,6 +90,9 @@ Gemeinsam: Die Demos in `pipeline/stile/stil_<Nr>_*.html|js|py` zeigen den Look 
 
 Die Werte „Passt zu“ der Stile 1–15 sind Annahmen (A) aus den Demos und bisherigen Videos, nicht gemessen. Renderzeiten der Stile 1–15 im Video: nur Stil 1 gemessen (oben); für die anderen vor dem Einsatz am Standbild messen (`render.js … --zeiten`).
 
+## Stilwahl nach Helligkeit (Inhaber 07.11.2026)
+Dunkle Welten mit Leuchtakzenten haben bei der Stilwahl **Vorrang** (REA: dunkles Farbschema mit Leuchtfarben bei 4 von 6 starken, 1 von 3 schwachen Vorbildern, Helligkeit Median 40 gegen 171; [[REA Simulierbar Regelwerk]] R13, R23). Helle Pastell- und Papier-Stile (**1, 2, 6, 10, 14**) nur, wenn das Thema sie klar trägt; die Begründung steht in `stil_begruendung`. **Kein Verbot:** Die Vorbilder sind 2D und teils von anderen Creators, und die eigenen Zahlen (Lernschleife 05.11.) sahen das dunkle Studio (Stil 18) schwächer als 17 und 19. Deshalb misst die Lernschleife hell gegen dunkel ([[Lernschleife und Insights]]).
+
 ## Frühere Einschätzung der Stile 1–15 (Archiv, ersetzt 02.11. abends)
 Am 02.11. nachmittags waren diese Stile ausgeschlossen. Die Gründe bleiben als **Risikohinweise für die Qualitätslatte** stehen, sind aber kein Verbot mehr:
 | Stil | Früherer Grund | Hinweis heute |

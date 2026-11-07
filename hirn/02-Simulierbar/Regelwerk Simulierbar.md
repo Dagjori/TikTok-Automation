@@ -21,6 +21,11 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 | **Folgen-Aufruf keine Pflicht mehr** | die Lernschleife vergleicht Videos mit und ohne Aufruf; keines der 9 Vorbilder hat einen ausdrücklichen Aufruf |
 | **Sprechtempo 2,3–2,7 Wörter/s, Sätze 3–5 Wörter** | ersetzt „ca. 2,3 Wörter/s“ (Spanne bisher 2,2–2,5); Vorbilder 2,42–2,70, flüssig bleibt Pflicht |
 | **Schlusskarte Pflicht, Schleife freiwillig** | Video endet auf einer Text-/Tafelkarte mit Fazit oder Pointe (Vorbilder 6/6, schwache 1/3) |
+| **Endstand bei ca. 80 % der Länge** | Kipp-Moment als Höhepunkt bei ca. 45 s, Endstand bei ca. 55–58 s (bei 70 s), danach Warum, Pointe und Schlusskarte kompakt; ersetzt „Ergebnis 40–54 s = Höhepunkt“ (Vorbilder 80 %, schwache 57 %) |
+| **Dunkle Stile mit Leuchtakzenten zuerst** | helle Pastell- und Papier-Stile (1, 2, 6, 10, 14) nur, wenn das Thema sie klar trägt; die Lernschleife misst hell gegen dunkel ([[Stile 17 bis 21]]) |
+| **Neutrale Erzählhaltung** | Du-Ansprache höchstens im Hook; Rennen, Ergebnis, Pointe und Schlusskarte neutral (durchgehend Du: starke 2/6, schwache 3/3) |
+| **Fester Schlusssatz entfällt ganz** | kein „Was sollen wir als Nächstes zeigen? …“ mehr; das Ende ist die Schlusskarte, die Kommentarfrage steht nur in der Caption |
+| **Übrige REA-Regeln Standard** | belastbare Pflicht, vorläufige Richtwert, u. a. Duell-Frage als Titel im Bild ab Bild 1, erstes Bild ohne Ton verständlich, Vergleichszeichen und Statuszeile an der Tafel, wichtige Zahlen leuchten auf, Führungswechsel sichtbar, mindestens eine Erklärgrafik, Regeln knapp als Chips ([[REA Simulierbar Regelwerk]]) |
 
 ## Neu seit 02.11. abends
 | Änderung | Wirkung |
@@ -44,7 +49,7 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 ## Aufbau und Länge
 | Regel | Details |
 |---|---|
-| Feste Reihenfolge: Hook (Duell-Frage, Stimme unter 0,2 s) · Regeln · Denkfalle · Rennen · Folgen-Aufruf ca. 20 s (seit 07.11. keine Pflicht, wird getestet) · erste Wendung 18–25 s, dann alle 8–10 s · Ergebnis · Warum · Überraschung · Merksatz · **Schlusskarte** (seit 07.11. Pflicht) · Schleife (seit 07.11. freiwillig) | [[Videoaufbau Simulierbar]], [[REA Simulierbar Regelwerk]] |
+| Feste Reihenfolge (seit 07.11.): Hook (Duell-Frage, Stimme unter 0,2 s, Titel im Bild ab Bild 1) · Regeln (knapp, Chips) · Denkfalle · Rennen · erste Wendung 18–25 s, dann alle 8–10 s (4–5 Wendepunkte, Führungswechsel) · Kipp-Moment ca. 45 s · **Endstand bei ca. 80 %** · Warum · Pointe · **Schlusskarte** (Pflicht). Folgen-Aufruf nur in Testvideos, kein fester Schlusssatz, Schleife freiwillig | [[Videoaufbau Simulierbar]], [[REA Simulierbar Regelwerk]] |
 | Länge 65–80 s (mind. 61 s) | [[Videoaufbau Simulierbar]] |
 | Von der ersten Sekunde fangen, Spannung steigern, nie über 2 s Stillstand, alle 1–2 s etwas Neues | [[Videoaufbau Simulierbar]] |
 | Skript und Bild passen exakt zusammen | [[Videoaufbau Simulierbar]] |
@@ -52,7 +57,7 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 ## Bild und Stil
 | Regel | Details |
 |---|---|
-| Alle Stile (1–15 und 17–21), genau einer je Video, nie zweimal derselbe hintereinander, Wahl mit Begründung. **Stile ohne Video-Baukasten (5, 7–11, 15) brauchen vor dem Einsatz einen Erstbau.** | [[Stile 17 bis 21]] |
+| Alle Stile (1–15 und 17–21), genau einer je Video, nie zweimal derselbe hintereinander, Wahl mit Begründung; **seit 07.11. dunkle Welten mit Leuchtakzenten zuerst**, helle Pastell- und Papier-Stile nur, wenn das Thema sie trägt. **Stile ohne Video-Baukasten (5, 7–11, 15) brauchen vor dem Einsatz einen Erstbau.** | [[Stile 17 bis 21]] |
 | **Qualitätslatte:** sauberes Licht/Material, lesbare Typografie, konsistente Farben, keine Artefakte, keine Billig-Optik; **Stil 18 nur mit belebter Szene** (Umgebung/Figuren, Bildwechsel je Phase, 05.11.) | [[Prüfung und Abnahme Simulierbar]] |
 | Dramaturgie: mehrere Animationssequenzen, Situations- und Bildwechsel, Aufleuchten, Lichtspiele, Zoom abwechselnd; **keine großen Sticker/Stempel** | [[Licht und Atmosphäre Simulierbar]], [[Design und Layout Simulierbar]] |
 | Layout: Mittelachse x = 540, Schutzzone 150 px, nichts Wichtiges unter y ≈ 1500 | [[Design und Layout Simulierbar]] |
@@ -63,7 +68,7 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 | Regel | Details |
 |---|---|
 | Ben (ElevenLabs), Modell v4, gespeicherte Original-Einstellungen, keine Beschleunigung | [[Stimme und Ton Simulierbar]] |
-| Ruhig, sachlich, freundlich; keine aufgeregten Tags, höchstens 3 Ausrufezeichen, kein „Los geht’s“ | [[Stimme und Ton Simulierbar]] |
+| Ruhig, sachlich, freundlich; keine aufgeregten Tags, höchstens 3 Ausrufezeichen, kein „Los geht’s“; seit 07.11. neutral erzählen, Du höchstens im Hook | [[Stimme und Ton Simulierbar]] |
 | Regie-Text: eine Zeile pro Satz, höchstens ein GROSSgeschriebenes Wort je Satz, keine `<break>`-Tags, Zahlen ausgeschrieben | [[Stimme und Ton Simulierbar]] |
 | Klangteppich 8–13 dB unter der Stimme, Effekt je Bild-Ereignis, −14 LUFS, nur selbst erzeugte Klänge | [[Stimme und Ton Simulierbar]] |
 

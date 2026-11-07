@@ -8,30 +8,30 @@ tags: [konto/stelldirvor, ablauf, skript]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
-> Quelle: `.claude/skills/stelldirvor-video/ablauf.md`. Diese Notiz wird mit `python3 tools/hirn_aus_skills.py` erzeugt. Änderungen bitte im Skill vornehmen, nicht hier. Bei Abweichung gilt der Skill.
+> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/ablauf.md` (der Skill wurde am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` nicht mehr dafür ausführen. **Seit 07.11.2026** gilt der frühe Ereignis-Zeitpunkt aus [[REA stelldirvor Regelwerk]] (Zeitplan unten angepasst).
 
 # Ablauf Account 2
 
 *Ablauf: 80-s-Zeitplan, Sätze, Anzeige, Bewegung, Dramaturgie, Skript, Abspann, Themen*
 
-Alle 4 Referenzen sind exakt 80,0 s lang und folgen demselben Bogen (F). Die Vorlage unten ist verbindlich; Zeiten dürfen je Thema um ±2 s wandern, die Fixpunkte (Titel bis 4,4 s wie in den Referenzen, Abblende 70–72 s, Abspann 72–80 s) nicht. Seit 02.11.2026 abends gelten dazu die Abschnitte **Bewegung und Zeitraffer**, **Dramaturgie und Qualitätslatte** und **Skript-Anforderungen** (Regeln des Inhabers).
+Alle 4 Referenzen sind exakt 80,0 s lang und folgen demselben Bogen (F). Die Vorlage unten ist verbindlich; Zeiten dürfen je Thema um ±2 s wandern, die Fixpunkte (Titel bis 4,4 s wie in den Referenzen, **Ereignis bei ca. 8 s auf Countdown-Null** seit 07.11., Abblende 70–72 s, Abspann 72–80 s) nicht. Seit 02.11.2026 abends gelten dazu die Abschnitte **Bewegung und Zeitraffer**, **Dramaturgie und Qualitätslatte** und **Skript-Anforderungen** (Regeln des Inhabers).
 
 ## Zeitplan (Vorlage)
 | Zeit | Phase | Bild | Anzeige | Satz | Ton |
 |---|---|---|---|---|---|
-| 0 s (Bild 1) | Start | ganze Szene, die Welt lebt schon (Wetter, Licht, Wasser, Menschen, Tiere, Fahrzeuge, Vögel, Wolken) | **steht schon** (Phase 1) | – | Atmo ab Bild 0 |
-| 0,4–4,4 s | Titel | Weite **mit Bewegung und erstem Hinweis**: kein Standbild, ein Vorbote ist schon sichtbar (Lichtstimmung, Tiere, Wasser, Himmel), das Ereignis selbst noch klein oder unsichtbar; **erster sichtbarer Welteffekt vor 4 s** (Wind, Wasser, Tiere, Licht; Einstieg unten) | läuft | – (Titelfrage oben) | Atmo |
+| 0 s (Bild 1) | Start | ganze Szene, die Welt lebt schon (Wetter, Licht, Wasser, Menschen, Tiere, Fahrzeuge, Vögel, Wolken) | **steht schon**: Phase 1 = Countdown bis zum Ereignis, Statuszeile darunter | – | Atmo ab Bild 0 |
+| 0,4–4,4 s | Titel | Weite mit Bewegung, kein Standbild; die Welt lebt **ahnungslos** weiter (Wissensvorsprung: Titelfrage und Countdown verraten die Gefahr, das Bild noch nicht); **erster sichtbarer Welteffekt vor 4 s** (Wind, Wasser, Tiere, Licht) | Countdown läuft | – (Titelfrage oben) | Atmo |
 | ≈ 4,8 s | Satz 1 | Ort und Lage in einem Satz | | „Ort, Tageszeit, Ruhe“ | |
-| 5–20 s | Alltag, erste Anzeichen | kleine Vorboten, die man sieht (Dampf, Lichtpunkt, Wasser zieht sich zurück, Wind, Licht kippt, Tiere reagieren); **erster Schwenk, langsamer Zoom oder Fahrt beginnt vor 8 s** | Phase 1 (z. B. Entfernung, Druck, Höhe, Jahr), **Zahl ändert sich vor 8 s** | 2–3 Sätze | Atmo, evtl. erstes Grollen |
-| 18–25 s | Auslöser, erste Wendung | das Ereignis beginnt sichtbar, **Bildwechsel** (Licht, Wetter, Tageszeit oder Zoom) | 1. Etikettwechsel | „Dann …“ | |
-| 25–50 s | Eskalation in Stufen | alle 8–10 s eine neue Stufe: Licht kippt, Wind, Staub, Trümmer, Statisten reagieren; dazwischen immer Veränderung (Bewegungsplan) | 2.–3. Etikettwechsel (neue Messgröße je Stufe) | 4–6 Sätze | Pegel steigt, ggf. ein kurzer Stille-Moment (A: 3 s) |
+| 5–8 s | letzte Sekunden vor Null | höchstens eine kleine Anomalie in den letzten 1–2 s; **erster Schwenk, langsamer Zoom oder Fahrt beginnt vor 8 s** | Countdown läuft gegen 0 | 0–1 Satz | Atmo, leiser Riser |
+| **ca. 8 s** | **Ereignis auf Countdown-Null** (seit 07.11.; bis dahin Auslöser bei 18–25 s) | das Ereignis setzt sichtbar ein; Bild, Licht und Ton kippen gleichzeitig (**Bildwechsel**: Licht, Wetter, Tageszeit oder Zoom) | Countdown 0 → 1. Etikettwechsel (ggf. zweiter Countdown bis zur Ankunft) | „Dann …“ | Tonkante |
+| 10–50 s | Eskalation in mindestens 3 Stufen | alle 8–10 s eine neue Stufe: Licht und Farbe kippen mit der Lage, Wind, Staub, Trümmer, Statisten reagieren; dazwischen immer Veränderung (Bewegungsplan) | 2.–3. Etikettwechsel (neue Messgröße je Stufe), Statuszeile wechselt | 6–9 Sätze | Pegel steigt, ggf. ein kurzer Stille-Moment (A: 3 s) |
 | 50–58 s | Annäherung | Front/Welle/Wolke/Wasserlinie rückt sichtbar heran, Kamera bebt oder fährt zu | Countdown bzw. Entfernung → 0 | 1–2 Sätze, kurz | Grollen, Wind, lauter |
 | **58–62 s** | **Höhepunkt** | trifft den Standpunkt: Weißblende bzw. Staubwand bzw. Wasser, Stoß, Kamera kippt, Glas springt, Trümmer | **„HIER“** | höchstens ein kurzer Satz kurz davor, im Moment selbst keiner | lautester Punkt (kurzzeitig −9 … −11 LUFS) |
 | 62–70 s | Nachspiel | Staub, Asche, Wasser, Stille, Kamera liegt still, Flecken vor der Linse; die Welt bewegt sich weiter (Partikel, Licht klärt auf) | bleibt „HIER“, blendet 69,2–70,1 s aus | 1–2 Sätze, der letzte oft mit Realitätsbezug | dumpf, Pfeifen/Brummen |
 | 70–72 s | Abblende | auf #111111 | – | – | leiser |
 | 72–80 s | Abspann | Titelfrage + Faktenzeile auf #111111 | – | – | tiefes Brummen, leise (−18 … −32 LUFS) |
 
-**Bogen für Zeitraffer-Themen** (Wachstum, Wandel, Eisschmelze, Pegel, Jahreszeiten): dieselben Fixpunkte, andere Wörter. Auslöser = Veränderung setzt ein, Eskalation = Veränderung beschleunigt sich (der Zeitraffer-Faktor darf wachsen), Annäherung = eine Marke rückt heran (Wasserlinie, Eisrand, Schattenlinie), **Höhepunkt „HIER“ = die Marke erreicht den Standpunkt** oder die Pointe wird sichtbar, Nachspiel = Welt im neuen Zustand, die sich weiter regt.
+**Bogen für Zeitraffer-Themen** (Wachstum, Wandel, Eisschmelze, Pegel, Jahreszeiten): dieselben Fixpunkte, andere Wörter. Ereignis auf Null (ca. 8 s) = Veränderung setzt ein, Eskalation = Veränderung beschleunigt sich (der Zeitraffer-Faktor darf wachsen), Annäherung = eine Marke rückt heran (Wasserlinie, Eisrand, Schattenlinie), **Höhepunkt „HIER“ = die Marke erreicht den Standpunkt** oder die Pointe wird sichtbar, Nachspiel = Welt im neuen Zustand, die sich weiter regt.
 
 ## Satztakt
 - **12–18 Sätze** (Referenzen ≈ 11–15), je **3–9 Wörter**, **mindestens 3 s** sichtbar (Referenz 3,1–5,3 s), Lücke 0,6–1 s, Ein- und Ausblenden 0,2 s.
@@ -46,8 +46,8 @@ Alle 4 Referenzen sind exakt 80,0 s lang und folgen demselben Bogen (F). Die Vor
 
 ## Messwert-Anzeige
 - Steht **ab Bild 0**, Zahl läuft durchgehend (live aus der Rechnung, keine Sprünge ohne Grund), endet 69,2–70,1 s.
-- **2–4 Etikettwechsel** (F: 2–4): je Stufe eine neue echte Messgröße. Muster (Struktur, keine Kopie): Phase 1 Lage (Entfernung, Höhe, Druck, Temperatur, Jahr) → Phase 2 Ereignis wächst (Höhe, Tempo, Wellenhöhe, Pegel) → Phase 3 Ankunft (Countdown `m:ss` oder Entfernung) → Höhepunkt **„HIER“**.
-- Unterzeile: Kontext in Versalien (Tempo, Entfernung, Vergleich, Zeitraffer-Faktor), kurz, darf sich mitändern.
+- **2–4 Etikettwechsel** (F: 2–4): je Stufe eine neue echte Messgröße. Muster (Struktur, keine Kopie), seit 07.11.: Phase 1 **Countdown bis zum Ereignis** (`m:ss`; bei Zeitraffer-Themen die Zeit bis zum Einsetzen der Veränderung) → Phase 2 Ereignis wächst (Höhe, Tempo, Wellenhöhe, Pegel) → Phase 3 Ankunft (zweiter Countdown `m:ss` oder Entfernung) → Höhepunkt **„HIER“** (Wort statt Zahl).
+- Unterzeile = **Statuszeile** (seit 07.11.): Lage in 1–3 Wörtern bzw. Kontext in Versalien (Tempo, Entfernung, Vergleich, Zeitraffer-Faktor), kurz; ihr Text wechselt mehrfach (Vorbilder 5/6).
 - Etikettwechsel blenden weich (0,3 s Abtauchen, `LP_ZEITEN.etikettWechsel`).
 - **Zeitraffer und Anzeige gehören zusammen** (Regel des Inhabers 02.11. abends; ersetzt „Zeitraffer nur, wenn die Rechnung ihn ausweist“, „lieber Echtzeit-Physik“):
   - Wo die Szene gerafft läuft, steht der **Zeitraffer-Faktor in `skript.json`** (Feld `zeitraffer`, Aufbau unten). Echtzeit-Physik (Schall 343 m/s, Wellen, Fronten) bleibt eine gute Wahl, ist aber kein Muss mehr.

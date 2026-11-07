@@ -47,6 +47,15 @@ Damit Claude die Kurve trotzdem nutzen kann: wöchentlich ein Screenshot oder Ex
 | Offene Vorschläge | Datenbank (`stand/vorschlaege`) und Eintrag in [[Stand und nächste Schritte]] |
 | freigegebene Änderungen | zuerst Heimat-Notiz, dann [[Entscheidungen Log]], dann Skill/Befehl |
 
+## Laufende Tests (seit 07.11.2026, aus der Freigabe der REA-Regelwerke)
+| Test | Konto | Vergleich | Grund |
+|---|---|---|---|
+| Folgen-Aufruf | Simulierbar | Videos mit Aufruf (nur auf ausdrücklichen Auftrag) gegen ohne: Follower je 1.000 Aufrufe, Ø-Zeit | Aufruf keine Pflicht mehr; keines der starken Vorbilder hat einen |
+| Hell gegen dunkel | Simulierbar | helle Stile (1, 2, 6, 10, 14) gegen dunkle Welten mit Leuchtakzenten: Ø-Zeit, Anteil der Länge | dunkle Stile haben Vorrang, die eigenen Zahlen vom 05.11. (Stil 18) sprechen teils dagegen |
+| Später Endstand | Simulierbar | Anteil der Länge vor und nach der Umstellung auf den Endstand bei ca. 80 % | REA: Auflösung bei 80 % gegen 57 % bei den schwachen |
+| Frühes Ereignis | stelldirvor | Ø-Wiedergabezeit vor (9–15 s) und nach der Umstellung auf das Ereignis bei ca. 8 s | REA und Lernschleife 03.11. |
+Aussagen erst ab ca. 5 Videos je Gruppe, vorher nur als Beobachtung (A).
+
 ## Regeln
 - Claude schreibt dem Inhaber **keine** täglichen Zahlenberichte, sondern nur Vorschläge mit Begründung.
 - Jeder Vorschlag nennt den Gedankengang (Messung → Schluss → Änderung) und ist **anklickbar** zu beantworten (Annehmen / Ablehnen / eigener Kommentar).

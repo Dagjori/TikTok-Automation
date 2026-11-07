@@ -2,7 +2,7 @@
 typ: anleitung
 konto: stelldirvor
 status: aktuell
-datum: 2026-11-02
+datum: 2026-11-07
 quelle: tools/chat_befehle.py
 tags: [konto/stelldirvor, claude-chat, befehl, skript]
 cssclasses: [konto-stelldirvor, typ-anleitung]
@@ -32,7 +32,7 @@ UNSER KANAL
 - Format: „Was wäre, wenn …“ als 3D-POV-Zeitraffer ohne Stimme, 80 Sekunden. Der Zuschauer sieht das Ereignis aus der Ich-Perspektive. Es gibt nur drei Textebenen: eine Titelfrage am Anfang, links eine laufende Messwert-Anzeige (Zahl mit Etikett, z. B. Temperatur, Pegel, Jahr, die bis zu einem Höhepunkt mit „HIER“ läuft) und kurze kursive Sätze. Am Ende ein dunkler Abspann mit Titelfrage und Faktenzeile. Ton ist nur Atmo und Sounddesign.
 - Themen: spannende Gedankenexperimente mit messbarer Größe und einem Ereignis, das man von einem Standpunkt aus wachsen sieht (Wissenschaft, Natur, Geografie, Geschichte, Technik …). Die Orte dürfen überall liegen: Deutschland, weltweit, andere Länder. Wir brauchen Flexibilität und endlos viele spannende Themen; Sprache ist Deutsch. Auch Themen mit „in 5 Sekunden“-Rahmen sind erlaubt, wenn sie sich gut zeigen lassen.
 - WELT UND BEWEGUNG (wichtig): Die Welt passt zum Thema. Bevorzuge oft Natur (Meer, Küste, Strand, Wald, Wüste, Gebirge, Gletscher, See, Weltraumnähe); Städte nur, wenn sie wirklich passen. Variiere Ort, Tageszeit (Tag, Sonnenauf- und -untergang, Nacht) und Standpunkt (nicht immer „von oben aus dem Fenster“: Strandblick aufs Meer, Bootsdeck, Waldlichtung, Gipfel, Straße, Dünen, Eisfläche …). Es darf nie „gewartet“ werden: Im Zeitraffer muss alle paar Sekunden etwas Sichtbares passieren (Licht, Wetter, Wasser, Vegetation, Menschen, Tiere, Fahrzeuge), und die Messwert-Anzeige muss zur sichtbaren Veränderung passen.
-- Die Kamera darf sich langsam bewegen (weiche Fahrt, Schwenk, Zoom), es gibt keine harten Schnitte.
+- Die Kamera darf sich langsam bewegen (weiche Fahrt, Schwenk, Zoom); sonst lange durchgehende Einstellungen. Erlaubt sind höchstens 1 bis 3 gezielte harte Schnitte, nur am Höhepunkt oder bei einem Maßstabs- bzw. Szenensprung.
 - Unser Alltag: Jeden Tag entstehen zwei Videos für den nächsten Tag. Du lieferst zuerst zehn Ideen, ich wähle zwei, danach schreibst du die Skripte. Ich baue daraus die 3D-Szene.
 
 REGELN FÜR IDEEN
@@ -78,7 +78,7 @@ UNSER KANAL
 - Format: „Was wäre, wenn …“ als 3D-POV-Zeitraffer ohne Stimme, 80 Sekunden. Der Zuschauer sieht das Ereignis aus der Ich-Perspektive. Es gibt nur drei Textebenen: eine Titelfrage am Anfang, links eine laufende Messwert-Anzeige (Zahl mit Etikett, z. B. Temperatur, Pegel, Jahr, die bis zu einem Höhepunkt mit „HIER“ läuft) und kurze kursive Sätze. Am Ende ein dunkler Abspann mit Titelfrage und Faktenzeile. Ton ist nur Atmo und Sounddesign.
 - Themen: spannende Gedankenexperimente mit messbarer Größe und einem Ereignis, das man von einem Standpunkt aus wachsen sieht (Wissenschaft, Natur, Geografie, Geschichte, Technik …). Die Orte dürfen überall liegen: Deutschland, weltweit, andere Länder. Wir brauchen Flexibilität und endlos viele spannende Themen; Sprache ist Deutsch. Auch Themen mit „in 5 Sekunden“-Rahmen sind erlaubt, wenn sie sich gut zeigen lassen.
 - WELT UND BEWEGUNG (wichtig): Die Welt passt zum Thema. Bevorzuge oft Natur (Meer, Küste, Strand, Wald, Wüste, Gebirge, Gletscher, See, Weltraumnähe); Städte nur, wenn sie wirklich passen. Variiere Ort, Tageszeit (Tag, Sonnenauf- und -untergang, Nacht) und Standpunkt (nicht immer „von oben aus dem Fenster“: Strandblick aufs Meer, Bootsdeck, Waldlichtung, Gipfel, Straße, Dünen, Eisfläche …). Es darf nie „gewartet“ werden: Im Zeitraffer muss alle paar Sekunden etwas Sichtbares passieren (Licht, Wetter, Wasser, Vegetation, Menschen, Tiere, Fahrzeuge), und die Messwert-Anzeige muss zur sichtbaren Veränderung passen.
-- Die Kamera darf sich langsam bewegen (weiche Fahrt, Schwenk, Zoom), es gibt keine harten Schnitte.
+- Die Kamera darf sich langsam bewegen (weiche Fahrt, Schwenk, Zoom); sonst lange durchgehende Einstellungen. Erlaubt sind höchstens 1 bis 3 gezielte harte Schnitte, nur am Höhepunkt oder bei einem Maßstabs- bzw. Szenensprung.
 - Unser Alltag: Jeden Tag entstehen zwei Videos für den nächsten Tag. Du lieferst zuerst zehn Ideen, ich wähle zwei, danach schreibst du die Skripte. Ich baue daraus die 3D-Szene.
 
 FAKTENTREUE (gilt für alles, was du lieferst)
@@ -95,11 +95,11 @@ SPANNUNG UND QUALITÄT
 - Nichts Übertriebenes: lieber ein klarer, sauberer Spannungsbogen als Effekthascherei.
 
 AUFBAU DES SKRIPTS (feste Reihenfolge, 80 Sekunden)
-- Titelfrage (steht 0,4 bis 4,4 s oben im Bild, 2 bis 3 Zeilen, deutsch, eine Frage).
+- Titelfrage (steht 0,4 bis 4,4 s oben im Bild, 2 bis 3 Zeilen, deutsch, eine Frage mit offener Folge, die neugierig macht; sie verrät die Gefahr, die die Welt im Bild noch nicht kennt). Im Abspann kehrt sie zurück.
 - 12 bis 18 kursive Sätze: je 3 bis 9 Wörter, ruhig, Präsens, Aussagesätze, gern Du-Perspektive, Übergänge mit „Dann …“, keine Ausrufezeichen, keine Fragen. Erster Satz bei ca. 4,8 s, der letzte endet spätestens bei 70 s. Jeder Satz beschreibt genau das, was im selben Moment zu sehen ist; Zahlen im Satz stimmen mit der Anzeige überein.
-- Bogen: Alltag und erste Anzeichen (5 bis 20 s) · Auslöser, erste Wendung (18 bis 25 s) · Eskalation in Stufen alle 8 bis 10 s (25 bis 50 s) · Annäherung (50 bis 58 s) · Höhepunkt (58 bis 62 s; Anzeige zeigt „HIER“, im Moment selbst kein Satz) · Nachspiel (62 bis 70 s) · Abblende (70 bis 72 s) · Abspann (72 bis 80 s).
-- Messwert-Anzeige: läuft von Bild 1 an, 2 bis 4 Etikettwechsel (je Stufe eine neue echte Messgröße), endet bei „HIER“. Raffst du die Zeit, nenne den Zeitraffer-Faktor und eine nachvollziehbare Anzeige-Größe.
-- Faktenzeile für den Abspann: „ORT, JAHR · FAKT“ oder „FAKT · FAKT“, eine bis zwei Zeilen, belegbar.
+- Bogen: Start mit Countdown (0 bis ca. 8 s: der Countdown läuft ab Bild 1, die Welt lebt noch ahnungslos weiter, der Zuschauer weiß mehr) · Ereignis genau auf Countdown-Null (ca. 8 s; Bild, Licht und Ton kippen gleichzeitig) · Eskalation in mindestens 3 Stufen alle 8 bis 10 s (ca. 10 bis 50 s; Farbe und Licht wechseln mit der Lage) · Annäherung (50 bis 58 s; ein zweiter Countdown ist erlaubt) · Höhepunkt (58 bis 62 s; Anzeige zeigt „HIER“, im Moment selbst kein Satz) · Nachspiel (62 bis 70 s) · Abblende (70 bis 72 s) · Abspann (72 bis 80 s).
+- Messwert-Anzeige: läuft von Bild 1 an. Phase 1 ist ein Countdown bis zum Ereignis (bei Zeitraffer-Themen die Zeit bis zum Einsetzen der Veränderung), danach 2 bis 4 Etikettwechsel (je Stufe eine neue echte Messgröße), endet bei „HIER“. Darunter eine Statuszeile in Versalien (1 bis 3 Wörter zur Lage), deren Text mehrfach wechselt. Raffst du die Zeit, nenne den Zeitraffer-Faktor und eine nachvollziehbare Anzeige-Größe.
+- Faktenzeile für den Abspann: „ORT, JAHR · FAKT“ oder „FAKT · FAKT“, eine bis zwei Zeilen, belegbar; sie ordnet die Prämisse real ein.
 - Keine Stimme, keine Untertitel, kein Logo, keine Sticker, kein Folgen-Aufruf im Bild. Die Kommentarfrage steht nur in der Caption.
 
 CAPTION (nicht im Video, nur Beschreibung)
@@ -119,7 +119,7 @@ GEWÄHLTE IDEEN (für diese schreibst du jetzt je ein makelloses Skript)
 AUFGABE
 Schreibe für jede gewählte Idee ein makelloses, sendefertiges Skript nach allen Regeln oben. Erfinde nichts; jede Zahl mit Rechenweg und Quelle. Prüfe dein Skript am Ende selbst (Wortzahl bzw. Satzzahl, Fakten, Ton, Verbote) und trage das Ergebnis in selbstpruefung ein. Findest du beim Prüfen einen Fehler, korrigiere ihn vor der Ausgabe.
 Gib je Idee das Skript lesbar aus: Titel, Segmente mit Text und Sprechtext (bzw. Sätze und Anzeige-Plan), Rechenweg, Annahmen, Quellen, Caption, Dramaturgie-Hinweise, Selbstprüfung. Feldstruktur zur Orientierung:
-{"skripte":[{"nr":1,"titel":"Titelfrage","thema":"","welt":"","standpunkt":"","tageszeit_verlauf":"","zeitraffer":"","kamera":"","anzeige_plan":[{"von_s":0,"bis_s":18,"etikett":"ETIKETT","start":"","ende":"","einheit":"","unter":"Unterzeile in Versalien"}],"saetze":[{"t_ca":4.8,"text":"Satz mit 3 bis 9 Wörtern."}],"faktenzeile":"","rechenweg":"Formel, Eingaben, Rechenschritte","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","dramaturgie":["Hinweis mit Zeitpunkt: was in der Welt passiert, Licht, Zoom"],"selbstpruefung":["Satzzahl ..","Fakten ..","Anzeige passt zum Zeitraffer ..","Verbote .."]}]}
+{"skripte":[{"nr":1,"titel":"Titelfrage","thema":"","welt":"","standpunkt":"","tageszeit_verlauf":"","zeitraffer":"","kamera":"","anzeige_plan":[{"von_s":0,"bis_s":8,"etikett":"ETIKETT (Phase 1: Countdown bis zum Ereignis)","start":"","ende":"","einheit":"","unter":"Statuszeile in Versalien"}],"saetze":[{"t_ca":4.8,"text":"Satz mit 3 bis 9 Wörtern."}],"faktenzeile":"","rechenweg":"Formel, Eingaben, Rechenschritte","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","dramaturgie":["Hinweis mit Zeitpunkt: was in der Welt passiert, Licht, Zoom"],"selbstpruefung":["Satzzahl ..","Fakten ..","Anzeige passt zum Zeitraffer ..","Verbote .."]}]}
 ```
 
 ## Siehe auch

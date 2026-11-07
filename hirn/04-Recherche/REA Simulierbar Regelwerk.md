@@ -1,7 +1,7 @@
 ---
 typ: regel
 konto: simulierbar
-status: entwurf
+status: aktuell
 datum: 2026-11-07
 quelle: .claude/skills/rea-video/ · Korpus simulierbar (lokal), Synthese vom 2026-11-07
 tags: [konto/simulierbar, rea, regelwerk]
@@ -10,7 +10,7 @@ cssclasses: [konto-simulierbar, typ-regel]
 
 # REA Simulierbar Regelwerk
 
-> **Entwurf zur Freigabe.** Quelle der Regeln für den künftigen Produktions-Skill von Account 1 `@simulierbar`. Methode: [[REA-Video Methode]]. Nur Bauweise, nie Inhalt oder Thema der Vorbilder. Kennzeichnung **F** gemessen/gesehen · **S** gefolgert · **A** Annahme. Belege als Video-IDs des lokalen Korpus.
+> **Freigegeben am 07.11.2026 (Inhaber per Klick).** Die belastbaren Regeln sind Standard, die vorläufigen Richtwert; weitere Videos und die Lernschleife dürfen sie verschieben, jede Änderung nur mit Freigabe. Quelle der Regeln für den künftigen Produktions-Skill von Account 1 `@simulierbar`. Methode: [[REA-Video Methode]]. Nur Bauweise, nie Inhalt oder Thema der Vorbilder. Kennzeichnung **F** gemessen/gesehen · **S** gefolgert · **A** Annahme. Belege als Video-IDs des lokalen Korpus.
 
 ## Kurzfazit
 Die starken Vorbilder tun fünf Dinge, die die schwachen auslassen (F, Zählung): **(1)** Das erste Bild erklärt das Duell ohne Ton. **(2)** Schlüsselwörter sind nach Bedeutung eingefärbt. **(3)** Zähler laufen sichtbar auf einer Anzeigetafel und leuchten bei wichtigen Zahlen auf. **(4)** Die Auflösung kommt spät, bei rund 80 % der Länge statt 57 %, mit 4–5 Wendepunkten und einem neuen Reiz alle rund 2,6 s. **(5)** Das Video endet auf einer **Schlusskarte** mit Fazit oder Pointe statt auf einer offenen Frage. Gesprochen wird in sehr kurzen Sätzen (Median 4–5 Wörter), schneller als bisher bei uns (2,4–2,7 Wörter/s), und eher neutral als durchgehend in Du-Form.
@@ -96,7 +96,12 @@ Text im Bild im Hook (6/6) · Ton ab 0,0 s, erstes Wort im Median bei 0,04 s (6/
 | Sprechtempo 2,2–2,5 Wörter/s | 2,42–2,70 Wörter/s | **übernommen:** 2,3–2,7 Wörter/s, Sätze 3–5 Wörter |
 | Schlusssatz und Schleife | Schlusskarte 6/6 (Vergleich 1/3), Schleife nur 3/6 | **übernommen:** Schlusskarte Pflicht, Schleife freiwillig |
 | 3D-Welten | alle Vorbilder 2D | bleibt 3D (Qualitätsentscheidung); Lesbarkeits- und Zählerregeln werden übernommen |
-Die übrigen Regeln dieser Notiz bleiben **Entwurf**, bis der Inhaber sie freigibt bzw. weitere Videos sie bestätigen.
+| Ergebnis bei 40–54 s, Ergebnis = Höhepunkt | Auflösung bei 79–83 % der Länge (Vergleich 57 %), Kipp-Moment davor bei ca. 64 % | **übernommen:** Kipp-Moment ca. 45 s, Endstand bei ca. 80 % (bei 70 s ca. 55–58 s), danach Warum, Pointe, Schlusskarte kompakt |
+| alle Stile gleichrangig | dunkles Farbschema mit Leuchtfarben 4/6 gegen 1/3 (R13, R23) | **übernommen:** dunkle Welten mit Leuchtakzenten zuerst; helle Pastell- und Papier-Stile (1, 2, 6, 10, 14) nur, wenn das Thema sie klar trägt; die Lernschleife misst hell gegen dunkel (eigene Zahlen 05.11.: Stil 18 schwächer, deshalb kein Verbot) |
+| Du-Ansprache durchgehend | durchgehend Du 2/6 gegen 3/3 (R15, R19) | **übernommen:** neutral erzählen, Du höchstens im Hook |
+| fester Schlusssatz „Was sollen wir als Nächstes zeigen? …“ | mit offener Frage enden 1/6 gegen 2/3 (R22), kein ausdrücklicher Aufruf 6/6 | **entfällt ganz:** Ende ist die Fazit- bzw. Pointenkarte; die Kommentarfrage steht nur in der Caption |
+| übrige Regeln | R01–R18, Grundformat, Zielkorridore, Aufbau-Schablone | **als Standard übernommen** (belastbare Pflicht, vorläufige Richtwert), u. a. Titelfrage als Text ab Bild 1 Pflicht (bisher optional), Vergleichszeichen auf der Tafel, mitlaufende Statuszeile, Zahlen leuchten auf, Führungswechsel sichtbar, mindestens eine Erklärgrafik, Regeln knapp als Chips |
+Neue Videos und die Lernschleife können einzelne Regeln verschieben; geändert wird nur nach Freigabe des Inhabers.
 
 ## Offen
 - Creator unbekannt: Die Vielfalt ist nicht prüfbar; V09 und V12 sowie V02 und V14 stammen vermutlich jeweils vom selben Kanal (S).
@@ -110,6 +115,7 @@ Die übrigen Regeln dieser Notiz bleiben **Entwurf**, bis der Inhaber sie freigi
 |---|---|---|
 | 2026-11-07 | Entwurf aus dem ersten REA-Lauf (9 Videos) | offen |
 | 2026-11-07 | Untertitel-Blöcke mit Schlüsselwort, Aufruf keine Pflicht, Tempo 2,3–2,7, Schlusskarte Pflicht ins [[Regelwerk Simulierbar]] übernommen | Inhaber per Klick |
+| 2026-11-07 | Regelwerk freigegeben: Endstand bei ca. 80 %, dunkle Stile bevorzugt, neutrale Erzählhaltung, fester Schlusssatz entfällt, übrige Regeln Standard; Befehle (`tools/chat_befehle.py`) angepasst | Inhaber per Klick |
 
 ## Siehe auch
 [[REA-Video Methode]] · [[REA Übergreifend]] · [[Regelwerk Simulierbar]] · [[Entscheidungen Log]]

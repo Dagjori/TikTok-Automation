@@ -18,6 +18,9 @@ Kurzfassung aller Regeln **nur für Account 2**. Gemeinsame Regeln: [[Regelwerk]
 | Änderung | Wirkung |
 |---|---|
 | **Gezielte harte Schnitte erlaubt** | höchstens 1–3 harte Schnitte, nur am Höhepunkt oder bei einem Maßstabs- bzw. Szenensprung; sonst weiter lange durchgehende Einstellungen (Vorbilder 4/6, [[REA stelldirvor Regelwerk]] R19) |
+| **Ereignis bei ca. 8 s auf Countdown-Null** | Countdown ab Bild 0, die Welt lebt bis dahin ahnungslos (Wissensvorsprung), auf Null kippen Bild, Licht und Ton; danach Eskalation in mindestens 3 Stufen bis zum Höhepunkt 58–62 s; ein zweiter Countdown ist erlaubt. Ersetzt „Auslöser 18–25 s“ (Vorbilder ca. 8 s; eigene Ø-Zeit 9–15 s, Lernschleife 03.11.) |
+| **Statuszeile und Countdown-Logik Standard** | die Unterzeile ist eine Statuszeile, deren Text mehrfach wechselt; Wort statt Zahl am Wendepunkt („HIER“) |
+| **Übrige REA-Regeln Standard** | Grundmuster Pflicht, vorläufige Muster Richtwert, u. a. Titelfrage mit Neugier-Lücke und Rückkehr im Abspann, Farbe und Licht kippen mit der Lage, Faktzeile ordnet die Prämisse real ein ([[REA stelldirvor Regelwerk]]) |
 
 ## Neu seit 02.11. abends (nach der Kritik am ersten Video)
 | Änderung | Wirkung |
@@ -34,8 +37,8 @@ Kurzfassung aller Regeln **nur für Account 2**. Gemeinsame Regeln: [[Regelwerk]
 | Regel | Details |
 |---|---|
 | 80 s, 30 fps, 1080×1920; **keine Stimme, keine Untertitel** | [[Format Account 2 Lunar]] |
-| Drei Textebenen: Titelfrage (0,4–4,4 s), Messwert-Anzeige links ab Bild 0 bis „HIER“, 12–18 kursive Sätze (3–9 Wörter, je mind. 3 s) | [[Design Account 2]], [[Ablauf Account 2]] |
-| Bogen: Auslöser 18–25 s · Eskalation in Stufen · Höhepunkt 58–62 s („HIER“) · Nachspiel · Abblende 70–72 s · Abspann 72–80 s (`#111111`, Titelfrage + Faktenzeile) | [[Ablauf Account 2]] |
+| Drei Textebenen: Titelfrage (0,4–4,4 s), Messwert-Anzeige links ab Bild 0 bis „HIER“ (Phase 1 Countdown, darunter Statuszeile, seit 07.11.), 12–18 kursive Sätze (3–9 Wörter, je mind. 3 s) | [[Design Account 2]], [[Ablauf Account 2]] |
+| Bogen (seit 07.11.): Countdown ab 0 s · **Ereignis bei ca. 8 s auf Countdown-Null** · Eskalation in mindestens 3 Stufen · Höhepunkt 58–62 s („HIER“) · Nachspiel · Abblende 70–72 s · Abspann 72–80 s (`#111111`, Titelfrage + Faktenzeile) | [[Ablauf Account 2]] |
 | Jeder Satz passt exakt zum Bild, Zahlen stimmen mit der Anzeige überein | [[Ablauf Account 2]] |
 | Kein Logo, Kanalname, Sticker, Chips, Karaoke, Folgen-Aufruf im Bild | [[Prüfung und Abnahme Account 2]] |
 

@@ -19,6 +19,8 @@ Einstieg: [[Account Simulierbar Überblick]]. Zeitplan, Satzmuster, Skript-Anfor
 
 **Stand 02.11.2026 abends:** Dieser Maßstab bleibt die Messgrundlage der 4 Vorbilder. Die Neuregeln des Inhabers ([[Account Simulierbar Überblick]]) haben Vorrang, wo sie abweichen: nur Thema GELD, keine Sperrliste, Länder frei, alle Stile mit Qualitätslatte, mehr Effekte mit steigender Spannung, **Tempo 150–190 Wörter (Ziel ca. 2,3 W/s)** statt der Spalten „Maßstab“ unten.
 
+**Seit 07.11.2026 gehen die freigegebenen REA-Regeln vor** ([[REA Simulierbar Regelwerk]], 9 weitere Vorbilder): Untertitel in Blöcken von 1–4 Wörtern statt Wort für Wort, kein Pflicht-Folgen-Aufruf, **kein fester Schlusssatz** (Ende auf der Schlusskarte), Tempo 2,3–2,7 W/s, Endstand bei ca. 80 % der Länge (statt 40–54 s, Gesetz 8), neutrale Erzählhaltung (Du höchstens im Hook), dunkle Stile zuerst. Die Prüfliste unten und `qc/massstab.py` werden mit dem neuen Produktions-Skill angeglichen.
+
 ## Grundlage
 - 4 MP4 vom Inhaber, hochgeladen am 31.10.2026, je 576×1024, 30 fps, 68–79 s. Stand der Auswertung 31.10.2026, ergänzt 01./02.11.
 - Analysiert: Bild (1 Bild pro Sekunde komplett angesehen, die ersten 3 s mit 6 Bildern pro Sekunde), Bewegung und Schnitte (gemessen), Ton (Lautheit, Pausen, Klangteppich, Effekte), Sprache (Transkript mit Wortzeiten über ElevenLabs Speech-to-Text).
@@ -195,21 +197,21 @@ Weitere Abweichungen (02.11.): kein „Los geht's“, keine Sticker, ruhiger Erz
 | 4 | Ab Rennstart laufen Uhr bzw. Zähler sichtbar mit |
 | 5 | Keine Phase über 2 s ohne neues Bild-Ereignis (Chip, Zahl, Kamera, Licht, Welt-Bewegung, Szenenwechsel; Sticker zählen nicht, sie sind verboten) |
 | 6 | Erste Wendung zwischen 18 und 25 s, danach alle 8–10 s eine neue Wendung bzw. ein Führungswechsel |
-| 7 | Folgen-Aufruf bei ca. 20 s, max. 2 s lang, vor einer Wendung |
-| 8 | Ergebnis mit exakter Zahl, danach „Warum?“ mit max. 2 Faktoren |
-| 9 | Zweite Überraschung bzw. Variante |
-| 10 | Merksatz und genau der Schluss „Was sollen wir als Nächstes zeigen? Schreib es in die Kommentare.“ |
-| 11 | Letztes Bild = erstes Bild (Schleife) |
-| 12 | Sätze meist unter 10 Wörtern; **150–190 Wörter, Tempo 2,2–2,5 W/s (Ziel ca. 2,3), hörbare Satzpausen 0,35–0,6 s (Richtwert), 65–80 s**, flüssig und natürlich ohne künstliches Beschleunigen (Entscheidung 02.11. abends; ersetzt „ca. 0,25 s, 2,5–2,9 W/s, 170–220 Wörter“ und die Ben-Zahl 130–170) |
+| 7 | ~~Folgen-Aufruf bei ca. 20 s, max. 2 s lang, vor einer Wendung~~ **seit 07.11. keine Pflicht** (nur in Testvideos) |
+| 8 | Ergebnis mit exakter Zahl **bei ca. 80 % der Länge** (seit 07.11.; davor Kipp-Moment bei ca. 45 s), danach „Warum?“ mit max. 2 Faktoren |
+| 9 | Zweite Überraschung bzw. Pointe |
+| 10 | ~~Merksatz und genau der Schluss „Was sollen wir als Nächstes zeigen? …“~~ **seit 07.11.: Schlusskarte mit Fazit oder Pointe** (Pflicht), kein fester Schlusssatz, keine Frage am Ende |
+| 11 | ~~Letztes Bild = erstes Bild (Schleife)~~ **seit 07.11. freiwillig** |
+| 12 | Sätze meist unter 10 Wörtern (seit 07.11. meist 3–5); **150–190 Wörter, Tempo 2,2–2,5 W/s (seit 07.11.: 2,3–2,7), neutrale Erzählhaltung (Du höchstens im Hook), hörbare Satzpausen 0,35–0,6 s (Richtwert), 65–80 s**, flüssig und natürlich ohne künstliches Beschleunigen (Entscheidung 02.11. abends; ersetzt „ca. 0,25 s, 2,5–2,9 W/s, 170–220 Wörter“ und die Ben-Zahl 130–170) |
 | 13 | Klangteppich zum Thema (8–13 dB unter der Stimme), Effekt bei jedem Bild-Ereignis, Akzent auf der Pointe |
-| 14 | Untertitel **Wort für Wort** (Stil „kontur“: weiß, schwarze Kontur, kein Kasten, aktuelles Wort gelb). Entscheidung des Inhabers 01.11., weicht bewusst von den Vorbildern ab (sie zeigen Phrasen). |
+| 14 | ~~Untertitel **Wort für Wort** (aktuelles Wort gelb)~~ **seit 07.11.: Untertitel in Blöcken von 1–4 Wörtern** mit schwarzer Kontur, Schlüsselwort in der Teamfarbe seiner Seite ([[REA Simulierbar Regelwerk]]) |
 | 15 | Kein Kanalname, kein Logo, keine Rubrik im Video |
 | 16 | Teamfarben überall gleich (Figuren, Tafel, Chips, Untertitel) |
 | 17 | **Keine 1:1-Kopie** eines fremden Videos (Skript, Sätze, Bild- und Szenenideen eigen; „Unoriginal“). Die frühere Sperrliste ist seit 02.11. abends veraltet, der Konkurrenz-Check ist keine Pflichtsperre mehr |
 | 18 | **Keine** großen Sticker bzw. Stempel (Inhaber 02.11., bestätigt 02.11. abends; vorher max. 5); Inhalte mittig (Achse x = 540) |
 | 19 | Kein „Los geht's“, ruhiger Erzählton ohne aufgeregte Audio-Tags (Inhaber 02.11.; die Vorbilder sprechen „ruhig, sachlich, freundlich“) |
 | 20 | Skript-Bild-Abgleich: jedes gesprochene Detail ist im selben Moment zu sehen; Duell nur zwischen echten Alternativen derselben Entscheidung (Inhaber 02.11.) |
-| 21 | **Spannungskurve und Variation** ([[Videoaufbau Simulierbar]] Abschnitt 6): Spannung steigt von Sekunde 0 bis zum Ergebnis (Ergebnis = optischer Höhepunkt); in jedem 5-s-Fenster ein andersartiger Effekt oder Bildtyp; kein Leerlauf; nichts Übertriebenes (höchstens ein dominanter Effekt zugleich, Zoom nicht dauerhaft, kein Flackern, Text immer lesbar) |
+| 21 | **Spannungskurve und Variation** ([[Videoaufbau Simulierbar]] Abschnitt 6): Spannung steigt von Sekunde 0 bis zum Kipp-Moment (ca. 45 s, optischer Höhepunkt, seit 07.11.) und hält bis zum Endstand; in jedem 5-s-Fenster ein andersartiger Effekt oder Bildtyp; kein Leerlauf; nichts Übertriebenes (höchstens ein dominanter Effekt zugleich, Zoom nicht dauerhaft, kein Flackern, Text immer lesbar) |
 | 22 | **Qualitätslatte** ([[Stile 17 bis 21]]): Licht und Materialien sauber, Tiefe, lesbare Typografie, konsistente Farben, keine Artefakte, nie ein Standbild über 2 s. „Würde ein Zuschauer denken, das sieht billig aus?“ Bei „ja“ wird die Abnahme verweigert |
 | 23 | **Skript-Qualität** ([[Videoaufbau Simulierbar]] Abschnitt 5): inhaltlich 1:1 aus dem Skript des Ideen-Studios, Abweichungen gemeldet; Aussagen belegbar bzw. als Modellannahme markiert; kein Clickbait, keine Aufforderung zum Streiten, keine künstlichen Cliffhanger; Regie-Text sauber (eine Zeile pro Satz, ruhige Tags, keine `<break>`) |
 

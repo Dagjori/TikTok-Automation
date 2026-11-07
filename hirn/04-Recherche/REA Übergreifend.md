@@ -1,7 +1,7 @@
 ---
 typ: regel
 konto: gemeinsam
-status: entwurf
+status: aktuell
 datum: 2026-11-07
 quelle: .claude/skills/rea-video/ · Korpora simulierbar + stelldirvor (lokal), Synthese vom 2026-11-07
 tags: [konto/gemeinsam, rea, regelwerk, handwerk]
@@ -10,7 +10,7 @@ cssclasses: [konto-gemeinsam, typ-regel]
 
 # REA Übergreifend
 
-> **Entwurf zur Freigabe.** Formatunabhängiges Handwerk aus beiden Korpora zusammen. Jede Regel gilt erst in der Übersetzung des jeweiligen Accounts ([[Trennung der Accounts]]); die Account-Regelwerke [[REA Simulierbar Regelwerk]] und [[REA stelldirvor Regelwerk]] gehen vor. Methode: [[REA-Video Methode]].
+> **Freigegeben am 07.11.2026 (Inhaber per Klick):** belastbare Regeln Standard, vorläufige Richtwert. Formatunabhängiges Handwerk aus beiden Korpora zusammen. Jede Regel gilt erst in der Übersetzung des jeweiligen Accounts ([[Trennung der Accounts]]); die Account-Regelwerke [[REA Simulierbar Regelwerk]] und [[REA stelldirvor Regelwerk]] gehen vor. Methode: [[REA-Video Methode]].
 
 ## Korpus
 12 virale (6 je Account) und 4 Vergleichsvideos (3 aus Account 1, 1 aus Account 2): **Minimum erreicht, Sättigung erreicht** (F). Vorsicht (S): Die Vergleichsgruppe ist gemischt und hat teils einen anderen Stil oder Creator; „Erfolgsfaktor“ heißt hier „unterscheidet stark von schwach in diesem Korpus“.
@@ -50,6 +50,7 @@ Text im Bild im Hook (12/12) · Ton ab 0 s (12/12) · klares Versprechen (12/12)
 | Datum | Änderung | Freigabe |
 |---|---|---|
 | 2026-11-07 | Entwurf aus dem ersten REA-Lauf (16 Videos) | offen |
+| 2026-11-07 | freigegeben zusammen mit den Account-Regelwerken | Inhaber per Klick |
 
 ## Siehe auch
 [[REA-Video Methode]] · [[REA Simulierbar Regelwerk]] · [[REA stelldirvor Regelwerk]] · [[Entscheidungen Log]]

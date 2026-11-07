@@ -15,9 +15,12 @@ Richtung: Repo → Desktop. Der Desktop-Vault wird nie blind überschrieben:
   - Notizen, die der Inhaber in Obsidian geändert hat, bleiben unangetastet (Konflikt wird gemeldet).
   - Eigene Desktop-Notizen und Dateien (z. B. .txt) bleiben, wie sie sind; sie gehen nie automatisch ins Repo.
   - Was entfernt oder ersetzt wird, landet im Obsidian-Papierkorb `.trash/abgleich-<datum>/` (wiederherstellbar).
-Merkt sich in `<vault>/.hirn-abgleich.json`, welche Fassung zuletzt abgeglichen wurde.
+Merkt sich in `<vault>/.hirn-abgleich.json`, welche Fassung zuletzt abgeglichen wurde und welche Fassungen das Skript
+selbst geschrieben hat. Läufe sind über `<vault>/.hirn-abgleich.lock` gegeneinander gesperrt: Die Hooks starten nach
+jeder Änderung parallel; ohne Sperre hielt ein Lauf die Kopie eines anderen für eine Änderung des Inhabers (07.11.).
 Vault-Pfad: Umgebungsvariable HIRN_DESKTOP, sonst ~/Desktop/TikTok Automation.
 """
+import contextlib
 import datetime
 import hashlib
 import json
@@ -25,12 +28,45 @@ import os
 import re
 import shutil
 import sys
+import time
 from pathlib import Path
 
 REPO_HIRN = Path(os.environ.get("HIRN_REPO") or (Path(__file__).resolve().parents[1] / "hirn"))
 VAULT = Path(os.environ.get("HIRN_DESKTOP") or (Path.home() / "Desktop" / "TikTok Automation"))
 STAND = ".hirn-abgleich.json"
-NIE = re.compile(r"^(\.trash/|\.git/|\.hirn-abgleich\.json$|\.obsidian/workspace[^/]*\.json$|\.obsidian/plugins/)", re.I)
+SPERRE = ".hirn-abgleich.lock"
+NIE = re.compile(r"^(\.trash/|\.git/|\.hirn-abgleich\.(json|lock)$|\.obsidian/workspace[^/]*\.json$|\.obsidian/plugins/)", re.I)
+VERLAUF = 10  # so viele selbst geschriebene Fassungen je Datei merken
+
+
+@contextlib.contextmanager
+def gesperrt(warten=25.0):
+    """Nur ein Abgleich zugleich. Eine Sperre älter als 2 Minuten gilt als verwaist."""
+    pfad = VAULT / SPERRE
+    ende = time.monotonic() + warten
+    while True:
+        try:
+            fd = os.open(str(pfad), os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            os.write(fd, str(os.getpid()).encode())
+            os.close(fd)
+            break
+        except FileExistsError:
+            try:
+                if time.time() - pfad.stat().st_mtime > 120:
+                    pfad.unlink()
+                    continue
+            except OSError:
+                continue
+            if time.monotonic() > ende:
+                raise TimeoutError("ein anderer Hirn-Abgleich läuft noch")
+            time.sleep(0.2)
+    try:
+        yield
+    finally:
+        try:
+            pfad.unlink()
+        except OSError:
+            pass
 
 
 def dateien(basis):
@@ -48,10 +84,19 @@ def summe(p):
 
 
 def stand_laden():
+    """Gibt (dateien, geschrieben) zurück: zuletzt abgeglichene Summe je Datei und selbst geschriebene Summen."""
     try:
-        return json.loads((VAULT / STAND).read_text(encoding="utf-8")).get("dateien", {})
+        s = json.loads((VAULT / STAND).read_text(encoding="utf-8"))
+        return s.get("dateien", {}), s.get("geschrieben", {})
     except (OSError, ValueError):
-        return {}
+        return {}, {}
+
+
+def stand_schreiben(dateien_, geschrieben):
+    geschrieben = {k: v[-VERLAUF:] for k, v in geschrieben.items() if k in dateien_}
+    (VAULT / STAND).write_text(json.dumps({"stand": datetime.datetime.now().isoformat(timespec="seconds"),
+                                           "repo": str(REPO_HIRN), "dateien": dateien_, "geschrieben": geschrieben},
+                                          ensure_ascii=False, indent=1), encoding="utf-8")
 
 
 def papierkorb(p, heute, trocken):
@@ -93,9 +138,22 @@ def abgleichen(trocken=False):
     """Gibt (aktionen, konflikte) zurück, je eine Liste kurzer Texte."""
     if not REPO_HIRN.is_dir() or not VAULT.is_dir():
         return [], []
+    if trocken:
+        return _abgleichen(True)
+    with gesperrt():
+        return _abgleichen(False)
+
+
+def _abgleichen(trocken):
     heute = datetime.date.today().isoformat()
-    r, d, alt = dateien(REPO_HIRN), dateien(VAULT), stand_laden()
+    r, d = dateien(REPO_HIRN), dateien(VAULT)
+    alt, geschrieben = stand_laden()
     neu, aktionen, konflikte = {}, [], []
+
+    def merken(k, h):
+        liste = [x for x in geschrieben.get(k, []) if x != h]
+        geschrieben[k] = liste + [h]
+
     for k in sorted(set(r) | set(alt)):
         dp = VAULT / k
         hr = summe(r[k]) if k in r else None
@@ -119,17 +177,20 @@ def abgleichen(trocken=False):
                 neu[k] = last
                 continue
             kopieren(r[k], dp, trocken)
+            merken(k, hr)
             aktionen.append(f"neu: {k}")
             neu[k] = hr
             continue
-        if last is not None and hd == last:  # Desktop unverändert seit dem letzten Abgleich
+        if (last is not None and hd == last) or hd in geschrieben.get(k, []):  # Desktop seit dem Abgleich unverändert
             kopieren(r[k], dp, trocken)
+            merken(k, hr)
             aktionen.append(f"aktualisiert: {k}")
             neu[k] = hr
         elif last is None:  # erster Abgleich dieser Datei
             if dp.stat().st_mtime <= r[k].stat().st_mtime:
                 papierkorb(dp, heute, trocken)
                 kopieren(r[k], dp, trocken)
+                merken(k, hr)
                 aktionen.append(f"aktualisiert (alte Fassung im Papierkorb): {k}")
                 neu[k] = hr
             elif not obsidian:  # Obsidian-Ansicht (Zoom, Fenster) des Inhabers still behalten
@@ -146,9 +207,7 @@ def abgleichen(trocken=False):
             papierkorb(VAULT / k, heute, trocken)
             aktionen.append(f"zerstörter Dateiname aus dem ZIP entfernt: {k} (richtig: {heil})")
     if not trocken:
-        (VAULT / STAND).write_text(json.dumps({"stand": datetime.datetime.now().isoformat(timespec="seconds"),
-                                               "repo": str(REPO_HIRN), "dateien": neu}, ensure_ascii=False, indent=1),
-                                   encoding="utf-8")
+        stand_schreiben(neu, geschrieben)
     return aktionen, konflikte
 
 
@@ -191,12 +250,11 @@ def main():
         quelle, ziel = VAULT / rel, REPO_HIRN / rel
         if not quelle.is_file():
             sys.exit(f"nicht im Desktop-Vault: {quelle}")
-        kopieren(quelle, ziel, False)
-        alt = stand_laden()
-        alt[rel] = summe(ziel)
-        (VAULT / STAND).write_text(json.dumps({"stand": datetime.datetime.now().isoformat(timespec="seconds"),
-                                               "repo": str(REPO_HIRN), "dateien": alt}, ensure_ascii=False, indent=1),
-                                   encoding="utf-8")
+        with gesperrt():
+            kopieren(quelle, ziel, False)
+            alt, geschrieben = stand_laden()
+            alt[rel] = summe(ziel)
+            stand_schreiben(alt, geschrieben)
         print(f"übernommen ins Repo-Hirn: {ziel} (vor dem Commit auf Privates prüfen, das Repo ist öffentlich)")
         return
     trocken = "--pruefen" in args
