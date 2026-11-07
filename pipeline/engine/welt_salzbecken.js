@@ -225,7 +225,15 @@ export class Salzbecken {
       const rand = (s) => hash(i, 900 + s);
       const kante = i < 44; const x = kante ? lerp(-9, 9, rand(1)) : lerp(-14, 14, rand(1)), z = kante ? lerp(-1.2, 0.6, rand(2)) : lerp(1.5, 14, rand(2));
       const sz = kante ? lerp(0.15, 0.6, rand(3)) * (1 - Math.abs(x) / 18) : lerp(0.15, 0.5, rand(3));
-      const y = hoehe(x, z) + sz * 0.25; e.set(rand(4) * 0.4, rand(5) * 6.28, rand(6) * 0.4); q.setFromEuler(e); pp.set(x, y, z); ss.set(sz * lerp(0.9, 1.7, rand(7)), sz * lerp(0.6, 1.0, rand(8)), sz);
+      // Das Gelände-Gitter ist an der Kante grob (ca. 5–6 m in z): ein Brocken muss auf Zellen stehen, deren Ecken alle auf Plattenhöhe liegen, sonst schwebt er über der abgeschrägten Kante
+      const gitterHoehe = (px, pz, r) => {
+        const bz = Math.pow(Math.max(0, (-pz - S0) / (S1 - S0)), 1 / 2.4), ax = Math.pow(Math.abs(px) / XM, 1 / 2.4) * Math.sign(px);
+        const j0 = Math.floor(bz * NZ), i0 = Math.floor(((ax + 1) / 2) * NX); let lo = 1e9, hi = -1e9;
+        for (let dj = -1; dj <= 2; dj++) for (let di = -1; di <= 2; di++) { const h = hoehe(xs(-1 + (2 * (i0 + di)) / NX), zs((j0 + dj) / NZ)); lo = Math.min(lo, h); hi = Math.max(hi, h); }
+        return hi - lo < 1.6 + 0 * r;
+      };
+      let zz = z; for (let k = 0; k < 60 && !gitterHoehe(x, zz, sz); k++) zz += 0.8;
+      const y = hoehe(x, zz) + sz * 0.25; e.set(rand(4) * 0.4, rand(5) * 6.28, rand(6) * 0.4); q.setFromEuler(e); pp.set(x, y, zz); ss.set(sz * lerp(0.9, 1.7, rand(7)), sz * lerp(0.6, 1.0, rand(8)), sz);
       m4.compose(pp, q, ss); this.felsen.setMatrixAt(i, m4);
       const v = lerp(0.62, 1.0, rand(9)); this.felsen.setColorAt(i, cc.setRGB(0.62 * v + 0.1, 0.5 * v + 0.06, 0.38 * v + 0.03));
     }
