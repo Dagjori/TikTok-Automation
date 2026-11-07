@@ -6,6 +6,16 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
+## 💶 Black Friday: Wer spart bei 100 € wirklich mehr, der Sofort-Käufer oder der Preisverlauf-Wartende?
+- **Score:** 81 (Nachfrage 4, Timing 5, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 4) · **Status:** neu (Neubewertung, vorher 69 beobachten)
+- **Warum:**
+  - Black Friday ist am 27.11.2026, Black Week 23.–29.11., Cyber Monday 30.11. (F: [techzeitgeist](https://www.techzeitgeist.de/black-friday-2026-termine-und-wie-sie-echte-rabatte-erkennen/)).
+  - Idealo-Auswertung (Black Friday 2024, über 10.000 Produkte): 3 von 4 Artikeln waren tatsächlich billiger als im Oktober, im Schnitt aber nur 7 % (F: laut [echo24](https://www.echo24.de/welt/black-friday-echte-schnaeppchen-oder-nur-show-im-schnitt-sparen-sie-prozent-zr-94536813.html), Daten von 2024, nicht 2026).
+  - Bezugspreis ist der niedrigste Preis der letzten 30 Tage, ein Rabatt auf die unverbindliche Preisempfehlung kann kaum eine Ersparnis sein (F: Verbraucherzentrale Rheinland-Pfalz und [delamar](https://www.delamar.de/news/falsche-preisnachlaesse-bei-online-haendlern-zum-black-friday-und-cyber-monday-v12-87626/)).
+- **Eigene Umsetzung (Duell, GELD):** Zwei Käufer, gleiches Produkt mit Streichpreis 100 €: A kauft sofort bei „−40 %“, B vergleicht den 30-Tage-Preis. Euro-Zähler zeigt die echte Ersparnis (z. B. 7 € statt 40 €). Denkfalle „Klar, 40 % sind 40 € gespart. Oder?“ Wendung: der echte Vorher-Preis. Annahmen offen (A), keine Produkt- oder Shop-Namen.
+- **Vor Produktion prüfen:** aktuelle Zahlen (Idealo 2025), Rechtslage 30-Tage-Preis, keine Marken im Bild.
+- **Posten:** 18.–25.11.2026, spätestens 25.11.
+
 ## 💶 Steuerreform 2027: Wie viel Netto bleibt mir ab Januar mehr?
 - **Score:** 75 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 3) · **Status:** neu
 - **Warum:**
