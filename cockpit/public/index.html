@@ -8,242 +8,275 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="cockpit.css">
-<link rel="stylesheet" href="stadt/stadt.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
 </head>
 <body>
-<div class="hintergrund" aria-hidden="true"><div class="gitter"></div><div class="glow glow-a"></div><div class="glow glow-b"></div></div>
-<canvas id="welt" aria-hidden="true"></canvas>
-<canvas id="partikel" aria-hidden="true"></canvas>
 
-<header class="kopf">
-  <div class="logo" title="TikTok Cockpit">
-    <svg viewBox="0 0 48 48" class="logo-note" aria-hidden="true"><path d="M30 6c1.2 5.4 4.8 8.6 10 9v6.4c-3.7 0-7-1.1-10-3.1V31a11 11 0 1 1-11-11c.7 0 1.4 0 2 .2v6.6a4.6 4.6 0 1 0 3 4.3V6h6z"/></svg>
-    <span class="glitch" data-text="TIKTOK//COCKPIT">TIKTOK//COCKPIT</span>
+<!-- Seitenleiste: Bereiche (Tasten 1–6), unten Meldungen, Einstellungen, Server -->
+<aside class="leiste" id="leiste">
+  <div class="marke" title="TikTok Cockpit">
+    <img src="icon.svg" alt="" width="30" height="30">
+    <span><b>TikTok</b> Cockpit</span>
   </div>
-  <!-- Schnellwahl der Gebäude (Tasten 0–7) -->
-  <nav class="ansichten zentralen-leiste" id="zentralen-leiste">
-    <button data-zentrale="stadt" class="aktiv" title="Neon-Stadt (0)">🌆</button>
-    <button data-zentrale="live" title="Live-Zentrale (1)">🎬 <span>Live</span></button>
-    <button data-zentrale="studio" title="Studio (2)">💡 <span>Studio</span> <b class="zaehler-punkt" id="studio-punkt" hidden></b></button>
-    <button data-zentrale="zahlen" title="Zahlen-Turm (3)">📈 <span>Zahlen</span></button>
-    <button data-zentrale="ziele" title="Ziele-Turm (4)">🎯 <span>Ziele</span></button>
-    <button data-zentrale="lernen" title="Lernzentrale (5)">🧠 <span>Lernen</span> <b class="zaehler-punkt" id="lernen-punkt" hidden></b></button>
-    <button data-zentrale="radar" title="Trend-Radar (6)">📡 <span>Radar</span></button>
-    <button data-zentrale="claude" title="Claude-Hauptquartier (7)">🤖 <span>Claude</span></button>
+  <nav class="nav" id="nav">
+    <a href="#jetzt" data-seite="jetzt"><i data-ico="jetzt"></i><span>Jetzt</span><b class="zahl-punkt" id="punkt-jetzt" hidden></b><kbd>1</kbd></a>
+    <a href="#studio" data-seite="studio"><i data-ico="studio"></i><span>Studio</span><b class="zahl-punkt" id="punkt-studio" hidden></b><kbd>2</kbd></a>
+    <a href="#produktion" data-seite="produktion"><i data-ico="produktion"></i><span>Produktion</span><b class="zahl-punkt" id="punkt-produktion" hidden></b><kbd>3</kbd></a>
+    <a href="#zahlen" data-seite="zahlen"><i data-ico="zahlen"></i><span>Zahlen</span><kbd>4</kbd></a>
+    <a href="#lernen" data-seite="lernen"><i data-ico="lernen"></i><span>Lernen</span><b class="zahl-punkt" id="punkt-lernen" hidden></b><kbd>5</kbd></a>
+    <a href="#radar" data-seite="radar"><i data-ico="radar"></i><span>Radar</span><b class="zahl-punkt leise" id="punkt-radar" hidden></b><kbd>6</kbd></a>
   </nav>
-  <div class="uhr"><span id="uhr">--:--</span><small id="datum"></small></div>
-  <div class="naechster" id="naechster" title="Nächstes Posting"></div>
-  <nav class="knoepfe">
-    <button class="icon-knopf sprachbot-knopf" id="k-stimme" title="Sprachbot an/aus">🎙️</button>
-    <button class="icon-knopf glocke" id="k-meldungen" title="Meldungen">🔔<b class="zaehler-punkt" id="meldungen-punkt" hidden></b></button>
-    <button class="icon-knopf" id="k-welt-stufe" title="3D-Qualität">✨</button>
-    <button class="icon-knopf" id="k-musik" title="Arbeitsmusik an/aus">🎵</button>
-    <button class="icon-knopf" id="k-ton" title="Ton an/aus">🔊</button>
-    <button class="icon-knopf" id="k-aktualisieren" title="Daten neu laden">⟳</button>
-    <button class="icon-knopf" id="k-neustart" title="Cockpit neu starten (nach einem Update)">♻</button>
-    <button class="icon-knopf" id="k-beenden" title="Cockpit-Server beenden">⏻</button>
-  </nav>
-</header>
-
-<!-- Ablage: Bausteine der Räume. zentrale.js setzt sie beim Betreten eines Raums auf die Wandbildschirme und legt sie danach zurück -->
-<main class="ablage" aria-hidden="true">
-  <section class="panel links">
-    <div class="baustein" id="b-tagesziel">
-      <div class="tagesziel">
-        <svg viewBox="0 0 120 120" class="ring"><circle cx="60" cy="60" r="50" class="ring-bahn"/><circle cx="60" cy="60" r="50" class="ring-wert" id="ziel-ring"/></svg>
-        <div class="ziel-text"><b id="ziel-zahl">0/4</b><small>heute online</small></div>
-        <div class="ziel-liste" id="ziel-konten"></div>
-      </div>
-      <span class="hinweis" id="plan-stand"></span>
+  <div class="leiste-unten">
+    <button class="leiste-knopf" id="k-meldungen" title="Meldungen"><i data-ico="glocke"></i><span>Meldungen</span><b class="zahl-punkt" id="punkt-meldungen" hidden></b></button>
+    <button class="leiste-knopf" id="k-einstellungen" title="Automatik und Einstellungen"><i data-ico="regler"></i><span>Automatik</span></button>
+    <div class="leiste-server">
+      <button class="mini-knopf" id="k-aktualisieren" title="Daten neu laden"><i data-ico="neu-laden"></i></button>
+      <button class="mini-knopf" id="k-neustart" title="Cockpit neu starten (nach einem Update)"><i data-ico="neustart"></i></button>
+      <button class="mini-knopf rot" id="k-beenden" title="Cockpit-Server beenden"><i data-ico="aus"></i></button>
     </div>
-    <div class="baustein" id="b-videos"><h3>Videos</h3><div class="liste" id="videos"></div></div>
-    <div class="baustein" id="b-auftraege"><div class="liste" id="auftraege"></div></div>
-    <div class="baustein" id="b-dienst"><div class="dienst-karte" id="dienst-karte"></div></div>
-    <div class="baustein" id="b-rechner"><div class="liste" id="rechner"></div></div>
-    <div class="baustein" id="b-radar"><div class="liste" id="radar"></div></div>
-  </section>
-
-  <section class="panel mitte">
-    <div class="baustein" id="b-buehne">
-      <div class="buehne">
-        <div class="handy" id="handy">
-          <div class="handy-notch"></div>
-          <div class="handy-bild">
-            <img id="live-bild" alt="">
-            <img id="live-bild-b" alt="">
-            <canvas id="bild-raster"></canvas>
-            <video id="handy-video" playsinline preload="none"></video>
-            <div class="scanlines"></div>
-            <div class="leerlauf" id="leerlauf">
-              <div class="leerlauf-note">♪</div>
-              <b>Warte auf Aufträge</b>
-              <small id="leerlauf-text">Der Render-Dienst ist bereit.</small>
-            </div>
-            <div class="live-badge" id="live-badge">● LIVE</div>
-            <button class="abspielen" id="k-abspielen" hidden>▶ Video ansehen</button>
-            <div class="handy-ui">
-              <div class="seite-icons"><span>♥<small id="herz-zahl">0</small></span><span>💬<small>0</small></span><span>↗<small>0</small></span></div>
-              <div class="handy-unten">
-                <b id="buehne-titel">@cockpit</b>
-                <small id="buehne-unter">bereit</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="buehne-info">
-          <div class="gross-prozent"><span id="prozent">0</span><small>%</small></div>
-          <div class="info-zeilen" id="info-zeilen"></div>
-          <div class="phasen" id="phasen"></div>
-        </div>
-      </div>
-    </div>
-    <div class="baustein" id="b-kette">
-      <div class="kette-kopf"><h2 id="kette-titel">Produktionskette</h2><span class="hinweis">Schritt anklicken für Details</span></div>
-      <div class="kette" id="kette"></div>
-      <div class="detail" id="detail"><div class="detail-leer">Wähle im Tagesplan ein Video oder einen Auftrag und klicke auf einen Schritt.</div></div>
-    </div>
-  </section>
-
-  <section class="panel studio" id="studio">
-    <div class="baustein" id="b-studio-kopf">
-      <div class="studio-kopf">
-        <div class="tage" id="tage"></div>
-        <label class="datum-wahl" title="Anderen Tag öffnen">📅<input type="date" id="tag-wahl"></label>
-        <div class="konto-tabs" id="konto-tabs"></div>
-        <button class="knopf klein" id="k-lernstand" title="Was Claude aus den Zahlen gelernt hat">🧠 Lernstand</button>
-      </div>
-      <div class="studio-hinweis" id="studio-hinweis" hidden></div>
-    </div>
-    <div class="baustein" id="b-ideen">
-      <div class="ideen-spalte">
-        <div class="spalte-kopf">
-          <h2>Ideen <span class="hinweis" id="ideen-info"></span></h2>
-          <div class="wunsch">
-            <input id="wunsch" maxlength="500" placeholder="Wunsch (optional), z. B. „etwas mit Weihnachten“">
-            <button class="knopf" id="k-ideen">💡 10 Ideen erzeugen</button>
-          </div>
-        </div>
-        <div class="ideen" id="ideen"></div>
-      </div>
-    </div>
-    <div class="baustein" id="b-slots">
-      <div class="slot-spalte">
-        <div class="slots" id="slots"></div>
-        <div class="skript" id="skript"></div>
-      </div>
-    </div>
-    <div class="baustein" id="b-studio-leiste"><div class="studio-leiste" id="studio-leiste"></div></div>
-  </section>
-
-  <section class="panel ansicht-panel" id="zahlen">
-    <div class="baustein" id="b-zahlen-kopf">
-      <div class="studio-kopf">
-        <h2>Zahlen <span class="hinweis" id="zahlen-stand"></span></h2>
-        <button class="knopf klein" id="k-zahlen-jetzt" title="Jetzt neu abfragen (schonend)">⟳ Aktualisieren</button>
-      </div>
-      <div class="zahlen-hinweis" id="zahlen-hinweis" hidden></div>
-    </div>
-    <div class="baustein" id="b-konten"><div class="konten-karten" id="konten-karten"></div></div>
-    <div class="baustein" id="b-missionen"><div class="missionen" id="missionen"></div></div>
-    <div class="baustein" id="b-videotabelle">
-      <p class="hinweis">Ø gesehen = Ø Wiedergabezeit ÷ Länge (eine Sekundenkurve liefert nur TikTok Studio)</p>
-      <div class="video-tabelle" id="video-tabelle"></div>
-    </div>
-  </section>
-
-  <section class="panel ansicht-panel" id="lernen">
-    <div class="baustein" id="b-autonomie"><div class="autonomie-karte" id="autonomie-karte"></div></div>
-    <div class="baustein" id="b-lernschleife"><div class="lernschleife-karte" id="lernschleife-karte"></div></div>
-    <div class="baustein" id="b-vorschlaege"><div class="vorschlaege" id="vorschlaege"></div></div>
-    <div class="baustein" id="b-lernstand"><div class="lernstand" id="lernstand-inhalt"></div></div>
-  </section>
-</main>
-
-<!-- Claude: einklappbar am rechten Rand (Alt+C); im Claude-Hauptquartier steht dasselbe Panel groß an der Wand -->
-<button class="claude-lasche" id="k-claude" title="Claude ein-/ausklappen (Alt+C)"><span class="lasche-simu"><i></i><i></i></span><span class="lasche-text">Claude</span></button>
-<aside class="claude-leiste" id="claude-leiste">
-  <section class="panel rechts" id="claude-panel">
-    <div class="panel-kopf">
-      <h2>Claude <span class="welle" id="welle"><i></i><i></i><i></i><i></i><i></i></span></h2>
-      <span class="claude-status" id="claude-status">bereit</span>
-    </div>
-    <div class="maskottchen" id="maskottchen" title="Simu, dein Cockpit-Bot">
-      <div class="simu"><div class="simu-antenne"></div><div class="simu-kopf"><i class="auge"></i><i class="auge"></i><b class="mund"></b></div><div class="simu-koerper"><span class="simu-licht"></span></div></div>
-      <div class="simu-sprechblase" id="simu-text">Bereit, wenn du es bist!</div>
-    </div>
-    <div class="claude-steuer">
-      <label>Modus
-        <select id="modus">
-          <option value="auto">Auto (arbeitet selbständig)</option>
-          <option value="plan">Nur planen</option>
-          <option value="acceptEdits">Nur Dateien ändern</option>
-        </select>
-      </label>
-      <label>Modell
-        <select id="modell">
-          <option value="">🤖 Automatisch</option>
-          <option value="opus">Opus</option>
-          <option value="sonnet">Sonnet</option>
-          <option value="haiku">Haiku</option>
-        </select>
-      </label>
-      <button class="knopf klein" id="k-neu" title="Neue Unterhaltung beginnen">Neu</button>
-      <button class="knopf klein rot" id="k-stopp" title="Claude anhalten">Stopp</button>
-    </div>
-    <div class="cli-fehlt" id="cli-fehlt" hidden>
-      <b>Claude Code fehlt noch auf diesem Rechner.</b>
-      <p>Einmal in einem <u>normalen</u> PowerShell-Fenster (Startmenü, nicht in der Claude-App) eingeben, danach <code>claude</code> starten und anmelden:</p>
-      <code class="befehl">irm https://claude.ai/install.ps1 | iex</code>
-    </div>
-    <div class="aufgaben" id="aufgaben"></div>
-    <div class="feed" id="feed"></div>
-    <div class="schnell" id="schnell"></div>
-    <form class="eingabe" id="eingabe">
-      <textarea id="eingabe-text" rows="2" placeholder="Sag Claude, was er tun soll …  (Enter = senden, Umschalt+Enter = neue Zeile)"></textarea>
-      <button class="knopf senden" type="submit" title="Senden">➤</button>
-    </form>
-  </section>
+    <div class="verbindung" id="verbindung"><span class="led"></span><span class="verbindung-text">verbinde …</span></div>
+  </div>
 </aside>
 
-<footer class="fuss">
-  <span class="verbindung" id="verbindung">● verbinde …</span>
-  <div class="ticker"><div class="ticker-inhalt" id="ticker"></div></div>
-</footer>
+<!-- Hauptbereich -->
+<div class="haupt">
+  <header class="kopf">
+    <div class="kopf-titel"><h1 id="seiten-titel">Jetzt</h1><small id="seiten-unter"></small></div>
+    <div class="kopf-rechts">
+      <div class="rechner-leds" id="rechner-leds"></div>
+      <div class="naechster" id="naechster"></div>
+      <div class="uhr"><b id="uhr">--:--</b><small id="datum"></small></div>
+    </div>
+  </header>
 
-<div class="stadt-flach" id="stadt-flach" hidden></div>
-<div id="stadt-tipp" hidden></div>
-<div class="toasts" id="toasts"></div>
+  <main class="seiten" id="seiten">
+
+    <!-- ───────── JETZT ───────── -->
+    <section class="seite" id="seite-jetzt" data-titel="Jetzt" hidden>
+      <div class="block">
+        <div class="block-kopf"><h2><span class="led" id="laeuft-led"></span>Läuft gerade</h2><span class="hinweis" id="laeuft-info"></span></div>
+        <div class="live-raster" id="live-karten"></div>
+        <div class="ruhe" id="ruhe" hidden></div>
+      </div>
+      <div class="zwei-spalten">
+        <div class="block">
+          <div class="block-kopf"><h2>Für dich</h2><span class="hinweis" id="fuer-dich-info"></span></div>
+          <div class="aufgaben-liste" id="fuer-dich"></div>
+        </div>
+        <div class="block">
+          <div class="block-kopf"><h2>Tagesplan</h2><span class="hinweis">Idee · Skript · Freigabe · Produktion · Online</span></div>
+          <div class="tagesplan" id="tagesplan"></div>
+        </div>
+      </div>
+      <div class="drei-spalten">
+        <div class="block">
+          <div class="block-kopf"><h2>Aktivität</h2></div>
+          <div class="aktivitaet" id="aktivitaet"></div>
+        </div>
+        <div class="block">
+          <div class="block-kopf"><h2>Erledigt heute</h2><span class="hinweis" id="erledigt-info"></span></div>
+          <div class="erledigt" id="erledigt"></div>
+        </div>
+        <div class="block">
+          <div class="block-kopf"><h2>Konten</h2><a class="hinweis link" href="#zahlen">alle Zahlen →</a></div>
+          <div class="konten-mini" id="konten-mini"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── STUDIO ───────── -->
+    <section class="seite" id="seite-studio" data-titel="Studio" hidden>
+      <div class="studio-kopf">
+        <div class="tage" id="tage"></div>
+        <label class="datum-wahl" title="Anderen Tag öffnen"><i data-ico="kalender"></i><input type="date" id="tag-wahl"></label>
+        <div class="segment-wahl" id="konto-tabs"></div>
+        <button class="knopf" id="k-lernstand" title="Was Claude aus den Zahlen gelernt hat">Lernstand</button>
+      </div>
+      <div class="hinweis-band" id="studio-hinweis" hidden></div>
+      <div class="studio-leiste" id="studio-leiste"></div>
+      <div class="studio-raster">
+        <div class="block">
+          <div class="block-kopf">
+            <h2>Ideen <span class="hinweis" id="ideen-info"></span></h2>
+            <div class="wunsch">
+              <input id="wunsch" maxlength="500" placeholder="Wunsch (optional), z. B. „etwas mit Weihnachten“">
+              <button class="knopf haupt-knopf" id="k-ideen">10 Ideen erzeugen</button>
+            </div>
+          </div>
+          <div class="ideen" id="ideen"></div>
+        </div>
+        <div class="block studio-rechts">
+          <div class="block-kopf"><h2>Videos des Tages</h2></div>
+          <div class="slots" id="slots"></div>
+          <div class="skript" id="skript"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── PRODUKTION ───────── -->
+    <section class="seite" id="seite-produktion" data-titel="Produktion" hidden>
+      <div class="produktion-raster">
+        <div class="block buehne-block">
+          <div class="buehne">
+            <div class="handy-rahmen">
+              <div class="handy" id="handy">
+                <div class="handy-bild">
+                  <img id="live-bild" alt="">
+                  <img id="live-bild-b" alt="">
+                  <canvas id="bild-raster"></canvas>
+                  <video id="handy-video" playsinline preload="none"></video>
+                  <div class="leerlauf" id="leerlauf"><b>Warte auf Aufträge</b><small id="leerlauf-text">Der Render-Dienst ist bereit.</small></div>
+                  <div class="live-marke" id="live-marke">LIVE</div>
+                  <button class="abspielen" id="k-abspielen" hidden>▶ Video ansehen</button>
+                  <div class="handy-unten"><b id="buehne-titel">@cockpit</b><small id="buehne-unter">bereit</small></div>
+                </div>
+                <div class="handy-glanz"></div>
+              </div>
+            </div>
+            <div class="buehne-info">
+              <div class="gross-prozent"><span id="prozent">0</span><small>%</small></div>
+              <div class="info-zeilen" id="info-zeilen"></div>
+              <div class="phasen" id="phasen"></div>
+            </div>
+          </div>
+          <div class="kette-kopf"><h2 id="kette-titel">Produktionskette</h2><span class="hinweis">Schritt anklicken für Details</span></div>
+          <div class="kette" id="kette"></div>
+          <div class="detail" id="detail"></div>
+        </div>
+        <div class="produktion-rechts">
+          <div class="block">
+            <div class="block-kopf"><h2>Videos</h2><span class="hinweis" id="plan-stand"></span></div>
+            <div class="liste" id="videos"></div>
+          </div>
+          <div class="block">
+            <div class="block-kopf"><h2>Render-Aufträge</h2></div>
+            <div class="liste" id="auftraege"></div>
+          </div>
+          <div class="block">
+            <div class="block-kopf"><h2>Render-Dienst</h2></div>
+            <div class="dienst-karte" id="dienst-karte"></div>
+            <div class="liste" id="rechner"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── ZAHLEN ───────── -->
+    <section class="seite" id="seite-zahlen" data-titel="Zahlen" hidden>
+      <div class="block-kopf seiten-aktion">
+        <span class="hinweis" id="zahlen-stand"></span>
+        <button class="knopf" id="k-zahlen-jetzt" title="Jetzt neu abfragen (schonend)"><i data-ico="neu-laden"></i> Aktualisieren</button>
+      </div>
+      <div class="hinweis-band" id="zahlen-hinweis" hidden></div>
+      <div class="konten-karten" id="konten-karten"></div>
+      <div class="block">
+        <div class="block-kopf"><h2>Ziele bis zum CRP</h2></div>
+        <div class="missionen" id="missionen"></div>
+      </div>
+      <div class="block">
+        <div class="block-kopf"><h2>Jedes Video</h2><span class="hinweis">Ø gesehen = Ø Wiedergabezeit ÷ Länge</span></div>
+        <div class="video-tabelle" id="video-tabelle"></div>
+      </div>
+    </section>
+
+    <!-- ───────── LERNEN ───────── -->
+    <section class="seite" id="seite-lernen" data-titel="Lernen" hidden>
+      <div class="zwei-spalten">
+        <div class="block" id="autonomie-karte"></div>
+        <div class="block" id="lernschleife-karte"></div>
+      </div>
+      <div class="block">
+        <div class="block-kopf"><h2>Vorschläge</h2></div>
+        <div class="vorschlaege" id="vorschlaege"></div>
+      </div>
+      <div class="block">
+        <div class="block-kopf"><h2>Was Claude gelernt hat</h2></div>
+        <div class="lernstand" id="lernstand-inhalt"></div>
+      </div>
+    </section>
+
+    <!-- ───────── RADAR ───────── -->
+    <section class="seite" id="seite-radar" data-titel="Radar" hidden>
+      <div class="block">
+        <div class="block-kopf"><h2>Trend-Vorschläge</h2><span class="hinweis">Klick: Claude bewertet den Vorschlag</span></div>
+        <div class="liste" id="radar"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Claude: rechts, einklappbar (Alt+C) -->
+<button class="claude-lasche" id="k-claude" title="Claude ein-/ausklappen (Alt+C)"><span class="led"></span><span>Claude</span></button>
+<aside class="claude" id="claude">
+  <div class="claude-kopf">
+    <h2><span class="led" id="claude-led"></span>Claude</h2>
+    <span class="claude-status" id="claude-status">bereit</span>
+    <button class="mini-knopf" id="k-claude-zu" title="Einklappen (Alt+C)">✕</button>
+  </div>
+  <div class="claude-steuer">
+    <select id="modus" title="Modus">
+      <option value="auto">Auto (selbständig)</option>
+      <option value="plan">Nur planen</option>
+      <option value="acceptEdits">Nur Dateien ändern</option>
+    </select>
+    <select id="modell" title="Modell">
+      <option value="">Modell: Automatik</option>
+      <option value="opus">Opus</option>
+      <option value="sonnet">Sonnet</option>
+      <option value="haiku">Haiku</option>
+    </select>
+    <button class="knopf klein" id="k-neu" title="Neue Unterhaltung beginnen">Neu</button>
+    <button class="knopf klein rot" id="k-stopp" title="Claude anhalten">Stopp</button>
+  </div>
+  <div class="cli-fehlt" id="cli-fehlt" hidden>
+    <b>Claude Code fehlt noch auf diesem Rechner.</b>
+    <p>Einmal in einem <u>normalen</u> PowerShell-Fenster eingeben, danach <code>claude</code> starten und anmelden:</p>
+    <code class="befehl">irm https://claude.ai/install.ps1 | iex</code>
+  </div>
+  <div class="claude-aufgaben" id="aufgaben"></div>
+  <div class="feed-filter" id="feed-filter">
+    <button data-filter="alle" class="aktiv">Alles</button>
+    <button data-filter="chat">Chat</button>
+    <button data-filter="produktion">Produktion</button>
+  </div>
+  <div class="feed" id="feed"></div>
+  <div class="schnell" id="schnell"></div>
+  <form class="eingabe" id="eingabe">
+    <textarea id="eingabe-text" rows="2" placeholder="Sag Claude, was er tun soll …  (Enter = senden, Umschalt+Enter = neue Zeile)"></textarea>
+    <button class="knopf haupt-knopf senden" type="submit" title="Senden">➤</button>
+  </form>
+</aside>
+
+<!-- Meldungen -->
 <div class="meldungen-panel" id="meldungen-panel" hidden>
-  <div class="dialog-kopf"><h2>Meldungen</h2><button class="knopf klein" id="k-alle-gelesen">Alle gelesen</button></div>
+  <div class="panel-kopf"><h2>Meldungen</h2><button class="knopf klein" id="k-alle-gelesen">Alle gelesen</button></div>
   <div class="meldungen-liste" id="meldungen-liste"></div>
 </div>
-<div class="sprachbot" id="sprachbot" hidden>
-  <div class="orb" id="orb"><canvas id="orb-welle" width="160" height="160"></canvas><span id="orb-icon">🎙️</span></div>
-  <div class="sprachbot-text"><b id="sprachbot-status">Ich höre zu …</b><small id="sprachbot-mitschrift">Sag zum Beispiel: „Geh ins Studio“, „Erzeuge Ideen für Stell dir vor“ oder „Pause“.</small></div>
-  <button class="icon-knopf" id="k-stimme-aus" title="Sprachbot aus">✕</button>
-</div>
-<dialog class="erfolge-dialog konsole-dialog" id="konsole-dialog">
-  <div class="dialog-kopf"><h2>Render-Dienst · Konsole</h2><button class="icon-knopf" data-zu title="Schließen">✕</button></div>
+
+<div class="toasts" id="toasts"></div>
+
+<dialog class="dialog" id="einstellungen-dialog">
+  <div class="panel-kopf"><h2>Automatik</h2><button class="mini-knopf" data-zu title="Schließen">✕</button></div>
+  <p class="hinweis">Gilt für Laptop und PC. Deine Freigabe der Skripte bleibt immer bei dir.</p>
+  <div class="schalter-liste" id="automatik-schalter"></div>
+</dialog>
+<dialog class="dialog" id="konsole-dialog">
+  <div class="panel-kopf"><h2>Render-Dienst · Konsole</h2><button class="mini-knopf" data-zu title="Schließen">✕</button></div>
   <pre class="konsole" id="konsole"></pre>
 </dialog>
-<!-- Ziel erreicht (Ziele bis zum CRP) -->
-<div class="levelup" id="levelup" hidden><div><small>ZIEL ERREICHT</small><b id="levelup-zahl">🎯</b><span id="levelup-rang"></span></div></div>
-<dialog class="erfolge-dialog" id="text-dialog">
-  <div class="dialog-kopf"><h2 id="text-dialog-titel">Text</h2><button class="icon-knopf" data-zu title="Schließen">✕</button></div>
+<dialog class="dialog" id="text-dialog">
+  <div class="panel-kopf"><h2 id="text-dialog-titel">Text</h2><button class="mini-knopf" data-zu title="Schließen">✕</button></div>
   <p class="hinweis" id="text-dialog-hinweis"></p>
   <textarea id="text-dialog-feld" rows="10"></textarea>
-  <div class="dialog-knoepfe"><button class="knopf" id="text-dialog-ok">Speichern</button></div>
+  <div class="dialog-knoepfe"><button class="knopf haupt-knopf" id="text-dialog-ok">Speichern</button></div>
 </dialog>
 
-<script src="cockpit.js"></script>
+<script src="kern.js"></script>
+<script src="claude.js"></script>
 <script src="studio.js"></script>
-<script src="spiel.js"></script>
+<script src="produktion.js"></script>
 <script src="zahlen.js"></script>
-<script src="stimme.js"></script>
-<script src="holo.js"></script>
-<script type="importmap">{ "imports": { "three": "./vendor/three/three.module.min.js", "three/addons/": "./vendor/three/addons/" } }</script>
-<script type="module" src="zentrale.js"></script>
+<script src="jetzt.js"></script>
 </body>
 </html>

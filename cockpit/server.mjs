@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 // TikTok-Cockpit: lokaler Server (nur 127.0.0.1, ohne npm-Pakete).
 // Liefert die Oberfläche, Live-Ereignisse per SSE, den Render-Stand (Supabase + Bilder vom Laptop),
-// den Tagesplan aus dem Repo, startet Claude Code (CLI, Abo des Inhabers), führt die Ziele und holt das Berliner Wetter.
+// den Tagesplan aus dem Repo, startet Claude Code (CLI, Abo des Inhabers), führt die Ziele und die Automatiken (lib/automatik.mjs).
 // Start: node cockpit/server.mjs  (oder Desktop-Verknüpfung / Strg+Alt+T, siehe cockpit/README.md)
+// Nur für Tests (Umgebung): COCKPIT_PORT, COCKPIT_DATEN, COCKPIT_RECHNER, COCKPIT_KEIN_SPIEGEL, COCKPIT_OHNE_DIENST, COCKPIT_OHNE_ZAHLEN,
+// COCKPIT_OEFFENTLICH=<ordner> (statische Dateien statt public/), COCKPIT_ATTRAPPE=1 (simulierte Claude-Aufträge, lib/attrappe.mjs,
+// nie ein echter claude-Prozess), COCKPIT_ATTRAPPE_FEHLER=1 (jeder simulierte Auftrag scheitert), COCKPIT_WIEDERHOLEN_S.
 import http from "node:http";
 import fs from "node:fs";
 import fsp from "node:fs/promises";
@@ -18,14 +21,16 @@ import { modellWaehlen, eineStufeHoeher } from "./lib/modelle.mjs";
 import { erstelleZahlen } from "./lib/zahlen.mjs";
 import { erstelleLernen } from "./lib/lernen.mjs";
 import { erstelleAbgleich } from "./lib/abgleich.mjs";
-import { erstelleWetter } from "./lib/wetter.mjs";
+import { erstelleAutomatik, automatikLesen, automatikPruefen, WIEDERHOLEN_NACH_S } from "./lib/automatik.mjs";
+import { erstelleAttrappe } from "./lib/attrappe.mjs";
 
 const HIER = path.dirname(fileURLToPath(import.meta.url));
 const ARBEITS_REPO = path.resolve(HIER, "..");
 const RENDER_REPO = process.env.RENDER_REPO || "C:\\render\\tiktok-automation";
 const PORT = Number(process.env.COCKPIT_PORT || 4777);
 const DATEN = process.env.COCKPIT_DATEN || path.join(HIER, "daten"); // COCKPIT_DATEN nur für Tests
-const OEFFENTLICH = path.join(HIER, "public");
+const OEFFENTLICH = path.resolve(HIER, process.env.COCKPIT_OEFFENTLICH || "public"); // COCKPIT_OEFFENTLICH nur für Tests (relativ zu cockpit/ oder absolut)
+const ATTRAPPE = process.env.COCKPIT_ATTRAPPE === "1"; // nur für Tests: simulierte Claude-Aufträge, nie ein echter claude-Prozess
 const TOKEN = crypto.randomBytes(16).toString("hex");
 const CLAUDE_TOKEN = crypto.randomBytes(16).toString("hex"); // nur für node cockpit/db.mjs in Claude-Prozessen
 const STEUER_TOKEN = crypto.randomBytes(16).toString("hex"); // nur für Chat-Aufträge des Inhabers: node cockpit/aktion.mjs
@@ -435,7 +440,9 @@ const STEUERUNG_ZUSATZ = [
   "Studio: `node cockpit/aktion.mjs ideen konto=simulierbar|stelldirvor datum=JJJJ-MM-TT [wunsch=\"…\"]`, `waehlen konto=… datum=… slot=mittag|abend nr=3`, `recherchieren konto=… datum=…`,",
   "`freigeben id=acc1-JJJJ-MM-TT-mittag`, `zuruecknehmen id=…`, `neu_schreiben id=… kommentar=\"…\"`, `verwerfen id=…`, `uebergeben datum=…`, `rueckfrage_annehmen id=…`, `erneut id=…`.",
   "Produktion (Disponent, eigene Spur neben dem Chat, cockpit/anleitung/produktion.md): `produktion_starten datum=…` (für übergebene Videos, auch nach Neustart), `produktion_stopp`. Produziere nie selbst im Chat.",
-  "Cockpit: `ansicht ziel=live|studio|zahlen|lernen`, `dienst an|aus`, `lernschleife`, `vorschlag id=… wahl=annehmen|ablehnen`. acc1 = Simulierbar, acc2 = Stell dir vor.",
+  "Automatik (Einstellung automatik, `stand` zeigt sie): Die Recherche startet von selbst 15 s (beide Slots belegt) bzw. 3 Min. nach der Wahl, die Produktion 60 s nach der Freigabe, sobald alle Skripte des Tages freigegeben sind; morgens kommen die Ideen für morgen; Fehler werden einmal wiederholt. Freigeben bleibt beim Inhaber.",
+  "`automatik_jetzt konto=… datum=… [was=produktion]` zieht sie vor, `automatik_halt konto=… datum=… [was=produktion|alles]` hält sie für den Tag an (ohne konto: beide Konten).",
+  "Cockpit: `ansicht ziel=jetzt|studio|produktion|zahlen|lernen|radar`, `dienst an|aus`, `lernschleife`, `vorschlag id=… wahl=annehmen|ablehnen`. acc1 = Simulierbar, acc2 = Stell dir vor.",
   "Aktionen, die freigeben, übergeben, verwerfen oder ablehnen, nur ausführen, wenn der Inhaber es in seiner Nachricht ausdrücklich verlangt; sonst nachfragen.",
 ].join(" ");
 const STIMME_ZUSATZ = "Diese Nachricht kam per Sprache und deine Antwort wird vorgelesen: höchstens 3 kurze Sätze, kein Markdown, keine Listen, keine Emojis, keine Dateipfade. Sag zuerst, was du getan oder herausgefunden hast.";
@@ -444,15 +451,24 @@ const STIMME_ZUSATZ = "Diese Nachricht kam per Sprache und deine Antwort wird vo
 // Im Cockpit nur die drei sinnvollen ohne Rückfrage (Rückfragen kann -p nicht beantworten), nie bypassPermissions.
 const MODI = new Set(["auto", "acceptEdits", "plan"]);
 
+// Für die Live-Karten der Oberfläche: worum es in einem Auftrag geht (Konto, Video-Tag, Slot-IDs)
+const jobInfo = (j) => ({ art: j.art, titel: j.titel, konto: j.konto || null, datum: j.datum || null, ids: j.ids || [] });
+// Feed-Einträge eines Auftrags tragen job: "<spur>:<start-ISO>" (spur = chat | produktion), damit die Oberfläche
+// Werkzeug-Schritte dem richtigen Auftrag zuordnen kann
+const jobSchluessel = (j) => (j?.start ? `${j.spur === "produktion" ? "produktion" : "chat"}:${j.start}` : undefined);
+
 function claudeStatus() {
   return {
     laeuft: claude.laeuft, sessionId: claude.sessionId, modus: claude.modus, modell: claude.modell,
-    aktiv: claude.aktiv ? { art: claude.aktiv.art, titel: claude.aktiv.titel } : null,
+    aktiv: claude.aktiv ? { ...jobInfo(claude.aktiv), start: claude.aktiv.start || claude.start, job: jobSchluessel(claude.aktiv) } : null,
     warteschlange: claude.warteschlange.length, wartend: claude.warteschlange.map((j) => j.titel),
-    aufgaben: claude.aufgaben, start: claude.start, cli: !!findeClaude(),
+    wartend_info: claude.warteschlange.map(jobInfo),
+    aufgaben: claude.aufgaben, start: claude.start, cli: ATTRAPPE || !!findeClaude(), attrappe: ATTRAPPE,
     produktion: {
       laeuft: prod.laeuft, titel: prod.aktiv?.titel || "", datum: prod.aktiv?.datum || "", start: prod.start,
       aufgaben: prod.aufgaben, wartend: prod.warteschlange.map((j) => j.titel),
+      art: prod.aktiv?.art || "", konto: prod.aktiv?.konto || null, ids: prod.aktiv?.ids || [], job: jobSchluessel(prod.aktiv),
+      wartend_info: prod.warteschlange.map(jobInfo),
     },
   };
 }
@@ -481,18 +497,20 @@ function claudeJob(job) {
   return claudeStarten(job);
 }
 
-// Feed-Einträge der Produktionsspur sind markiert (🏭), damit sie sich vom Chat unterscheiden
+// Feed-Einträge der Produktionsspur sind markiert (🏭), damit sie sich vom Chat unterscheiden; alle tragen den Auftrag (job)
 function feedVon(job) {
-  if (job?.spur !== "produktion") return feedEintrag;
-  return (e) => feedEintrag({
+  const markiert = (e) => ({ ...e, ...(jobSchluessel(job) ? { job: jobSchluessel(job) } : {}) });
+  if (job?.spur !== "produktion") return (e) => feedEintrag(markiert(e));
+  return (e) => feedEintrag(markiert({
     ...e, spur: "produktion",
     ...(e.art === "werkzeug" && e.titel ? { titel: "🏭 " + e.titel } : {}),
     ...(["text", "fertig", "start", "modell", "auftrag"].includes(e.art) && e.text ? { text: "🏭 " + e.text } : {}),
-  });
+  }));
 }
 
 function claudeStarten(job) {
-  const cli = findeClaude();
+  // Attrappe (nur Tests): nie die CLI suchen oder starten
+  const cli = ATTRAPPE ? { pfad: "attrappe", node: false } : findeClaude();
   if (!cli) {
     feedEintrag({ art: "fehler", text: "Claude Code ist auf diesem Laptop noch nicht installiert (siehe Hinweis im Cockpit)." });
     if (job.nachher) setTimeout(() => jobAbschliessen(job, true), 0);
@@ -521,13 +539,14 @@ function claudeStarten(job) {
   for (const k of Object.keys(env)) if (/^SUPABASE_|^BUFFER_|^ELEVEN/i.test(k)) delete env[k];
 
   spur.aufgaben = [];
+  job.start = new Date().toISOString(); // ab hier tragen alle Feed-Einträge job: "<spur>:<start>"
   if (chat) fe({ art: "du", text: job.text, stimme: job.stimme });
   else fe({ art: "auftrag", text: job.titel, auftrag: job.titel });
   fe({ art: "modell", text: `${job.modell[0].toUpperCase() + job.modell.slice(1)} · ${job.grund}`, modell: job.modell });
-  log(`Claude-${chat ? "Chat" : "Auftrag"} (${job.modus}${job.modell ? ", " + job.modell : ""}${chat && claude.sessionId ? ", fortgesetzt" : ""}): ${(chat ? job.text : job.titel).slice(0, 120)}`);
+  log(`Claude-${chat ? "Chat" : "Auftrag"}${ATTRAPPE ? " ATTRAPPE" : ""} (${job.modus}${job.modell ? ", " + job.modell : ""}${chat && claude.sessionId ? ", fortgesetzt" : ""}): ${(chat ? job.text : job.titel).slice(0, 120)}`);
 
-  const p = spawn(befehl, argv, { cwd: ARBEITS_REPO, env, windowsHide: true, stdio: ["pipe", "pipe", "pipe"] });
-  Object.assign(spur, { laeuft: true, prozess: p, aktiv: job, start: new Date().toISOString() });
+  const p = ATTRAPPE ? attrappe.prozess(job) : spawn(befehl, argv, { cwd: ARBEITS_REPO, env, windowsHide: true, stdio: ["pipe", "pipe", "pipe"] });
+  Object.assign(spur, { laeuft: true, prozess: p, aktiv: job, start: job.start });
   senden("claude", claudeStatus());
   p.stdin.end(job.text);
 
@@ -567,6 +586,7 @@ function eskalieren(job, grund) {
   return true;
 }
 
+// nachher(ergebnisText, istFehler, job): job.gestoppt = vom Inhaber gestoppt (die Automatik wiederholt das nie)
 function jobAbschliessen(job, istFehler) {
   if (job.abgeschlossen) return;
   job.abgeschlossen = true;
@@ -575,9 +595,9 @@ function jobAbschliessen(job, istFehler) {
     return;
   }
   try {
-    job.nachher(job.ergebnis || "", istFehler);
+    job.nachher(job.ergebnis || "", istFehler, job);
   } catch (e) {
-    if (!eskalieren(job, `Ergebnis von ${job.modell} unbrauchbar`)) feedEintrag({ art: "fehler", text: `${job.titel}: ${maskiere(e.message)}` });
+    if (!eskalieren(job, `Ergebnis von ${job.modell} unbrauchbar`)) feedVon(job)({ art: "fehler", text: `${job.titel}: ${maskiere(e.message)}` });
   }
 }
 
@@ -665,14 +685,21 @@ function claudeZeile(zeile, job = claude.aktiv, spur = claude) {
   }
 }
 
+// Prozess einer Spur beenden (echter claude-Prozess samt Kindern bzw. die Attrappe)
+function prozessBeenden(p) {
+  if (p?.attrappe) p.kill();
+  else if (p?.pid) execFile("taskkill", ["/PID", String(p.pid), "/T", "/F"], { windowsHide: true }, () => {});
+}
+
+// gestoppt am Job: nachher() setzt dann auto_wiederholt_phase, damit die Automatik das nie wiederholt (lib/automatik.mjs)
 function claudeStoppen() {
   // Wartende Studio-Aufträge melden ihren Abbruch (Slots gehen auf „fehler“ statt still auf „recherche“ zu bleiben)
   const wartende = claude.warteschlange;
   claude.warteschlange = [];
   if (claude.aktiv) claude.aktiv.gestoppt = true;
   for (const j of wartende) { j.gestoppt = true; jobAbschliessen(j, true); }
-  if (claude.prozess?.pid) execFile("taskkill", ["/PID", String(claude.prozess.pid), "/T", "/F"], { windowsHide: true }, () => {});
-  feedEintrag({ art: "fehler", text: "Von dir gestoppt." });
+  feedEintrag({ art: "fehler", text: "Von dir gestoppt.", ...(jobSchluessel(claude.aktiv) ? { job: jobSchluessel(claude.aktiv) } : {}) });
+  prozessBeenden(claude.prozess);
   senden("claude", claudeStatus());
 }
 
@@ -682,8 +709,8 @@ function produktionStoppen() {
   prod.warteschlange = [];
   if (prod.aktiv) prod.aktiv.gestoppt = true;
   for (const j of wartende) { j.gestoppt = true; jobAbschliessen(j, true); }
-  if (prod.prozess?.pid) execFile("taskkill", ["/PID", String(prod.prozess.pid), "/T", "/F"], { windowsHide: true }, () => {});
-  feedEintrag({ art: "fehler", text: "🏭 Produktion von dir gestoppt.", spur: "produktion" });
+  feedEintrag({ art: "fehler", text: "🏭 Produktion von dir gestoppt.", spur: "produktion", ...(jobSchluessel(prod.aktiv) ? { job: jobSchluessel(prod.aktiv) } : {}) });
+  prozessBeenden(prod.prozess);
   senden("claude", claudeStatus());
 }
 
@@ -695,12 +722,14 @@ function produzieren(datum, ids, hinweis = "") {
   if (laufend) {
     // Die laufende Sitzung liest am Ende alle Slots des Tages erneut und übernimmt neue Übergaben selbst
     laufend.ids = [...new Set([...(laufend.ids || []), ...ids])];
-    feedEintrag({ art: "warteschlange", text: `🏭 Produktion ${datum} läuft schon, übernimmt ${ids.join(", ")}`, spur: "produktion" });
+    laufend.titel = `Produktion · ${datum} · ${laufend.ids.length} Video(s)`;
+    feedEintrag({ art: "warteschlange", text: `🏭 Produktion ${datum} läuft schon, übernimmt ${ids.join(", ")}`, spur: "produktion", ...(jobSchluessel(laufend) ? { job: jobSchluessel(laufend) } : {}) });
+    senden("claude", claudeStatus());
     return { ok: true, laeuft_schon: true };
   }
   const auftrag = { art: "produzieren", datum, ids, ...(hinweis ? { hinweis: String(hinweis).slice(0, 1500) } : {}) };
   const job = {
-    art: "produktion", spur: "produktion", datum, ids,
+    art: "produktion", spur: "produktion", datum, ids, konto: null,
     titel: `Produktion · ${datum} · ${ids.length} Video(s)`,
     modus: "auto",
     modell: "opus",
@@ -717,24 +746,37 @@ function produzieren(datum, ids, hinweis = "") {
         if (!d || !["uebergeben", "produktion"].includes(d.daten.status)) continue;
         db.schreiben("skripte", id, {
           status: "fehler", fehler_phase: "produktion",
-          fehler: istFehler || job.gestoppt
-            ? "Die Produktion wurde abgebrochen (Limit, Stopp oder Fehler). „Erneut versuchen“ setzt sie fort, fertige Teile bleiben erhalten."
-            : "Die Produktions-Sitzung endete, ohne das Video in Buffer zu planen. Bitte „Erneut versuchen“.",
+          fehler: job.gestoppt
+            ? "Von dir gestoppt. „Erneut versuchen“ setzt die Produktion fort, fertige Teile bleiben erhalten."
+            : istFehler
+              ? "Die Produktion wurde abgebrochen (Limit, Stopp oder Fehler). „Erneut versuchen“ setzt sie fort, fertige Teile bleiben erhalten."
+              : "Die Produktions-Sitzung endete, ohne das Video in Buffer zu planen. Bitte „Erneut versuchen“.",
+          // Vom Inhaber gestoppt: nie automatisch wiederholen und nicht melden (lib/automatik.mjs)
+          ...(job.gestoppt ? { auto_wiederholt_phase: "produktion", auto_gemeldet: true } : {}),
           fortschritt: "Produktion nicht abgeschlossen", aktualisiert: new Date().toISOString(),
         }, { art: "update", ifVersion: d.version, von: "cockpit" });
       }
       // Ehrliches Ergebnis: erledigt nur, wenn jedes Video geplant oder online ist
-      const stand = job.ids.map((id) => ({ id, d: db.get("skripte", id)?.daten || {} }));
+      const stand = job.ids.map((id) => ({ id, doc: db.get("skripte", id), d: db.get("skripte", id)?.daten || {} }));
       const ok = stand.filter((s) => ["geplant", "gepostet"].includes(s.d.status));
       const offen = stand.filter((s) => !["geplant", "gepostet"].includes(s.d.status));
+      // Übernimmt die Automatik alle offenen Videos (Wiederholung bzw. eigene Meldung „… braucht dich“), wird der Inhaber hier
+      // noch nicht gefragt: bei ausstehender Wiederholung nur informiert, sonst meldet die Automatik selbst (eine Meldung, nicht zwei)
+      const uebernommen = offen.length > 0 && offen.every((s) => s.doc && automatik?.uebernimmt(s.doc));
+      const wiederholt = uebernommen && offen.some((s) => automatik.wiederholungAussteht(s.doc));
       const zeilen = stand.map((s) => `${s.d.titel || s.id}: ${s.d.status || "?"}${s.d.fehler ? ` (${String(s.d.fehler).slice(0, 140)})` : ""}`);
+      const nachMin = Math.max(1, Math.round(WIEDERHOLEN_NACH_S / 60));
       feedEintrag({
-        art: offen.length ? "fehler" : "fertig", spur: "produktion",
+        art: offen.length ? "fehler" : "fertig", spur: "produktion", ...(jobSchluessel(job) ? { job: jobSchluessel(job) } : {}),
         text: offen.length
-          ? `🏭 Produktion ${datum} NICHT erledigt: ${ok.length} von ${stand.length} geplant, ${offen.length} offen\n${zeilen.join("\n")}`
+          ? `🏭 Produktion ${datum} NICHT erledigt: ${ok.length} von ${stand.length} geplant, ${offen.length} offen${wiederholt ? ` · 🔁 automatische Wiederholung in ${nachMin} Min.` : ""}\n${zeilen.join("\n")}`
           : `🏭 Produktion ${datum} erledigt: alle ${stand.length} Videos in Buffer geplant`,
       });
-      lernen?.melden?.({ art: offen.length ? "fehler" : "erfolg", titel: offen.length ? `🏭 Produktion ${datum}: ${offen.length} von ${stand.length} Videos nicht geplant` : `🏭 Produktion ${datum}: alle Videos geplant`, text: zeilen.join("\n"), ziel: { ansicht: "studio" } });
+      if (!uebernommen || wiederholt) lernen?.melden?.({
+        art: offen.length ? (wiederholt ? "info" : "fehler") : "erfolg",
+        titel: offen.length ? `🏭 Produktion ${datum}: ${offen.length} von ${stand.length} Videos nicht geplant${wiederholt ? ` · 🔁 wird in ${nachMin} Min. automatisch wiederholt` : ""}` : `🏭 Produktion ${datum}: alle Videos geplant`,
+        text: zeilen.join("\n"), ziel: { ansicht: "studio" },
+      });
     },
   };
   return claudeJob(job);
@@ -793,6 +835,7 @@ async function spiegelSenden() {
 }
 
 let lernen = null; // wird unten angelegt; meldet neue Vorschläge
+let automatik = null; // wird unten angelegt (lib/automatik.mjs)
 const db = erstelleDb({
   ordner: path.join(DATEN, "db"),
   spiegel: spiegeln,
@@ -801,8 +844,11 @@ const db = erstelleDb({
     // Vom anderen Rechner übernommen: nur anzeigen (eine neue Meldung auch hier als Push), nichts erneut auslösen
     if (e.abgleich) { if (e.sammlung === "meldungen" && !e.geloescht && e.version === 1 && !e.daten?.gelesen) senden("meldung", e); return; }
     lernen?.dbEreignis(e);
+    automatik?.dbEreignis(e); // Änderung auf diesem Rechner: Vorrang für die Automatik
   },
 });
+// Nur für Tests: simulierte Claude-Aufträge statt claude-Prozess (lib/attrappe.mjs)
+const attrappe = ATTRAPPE ? erstelleAttrappe({ db, log }) : null;
 
 // Abgleich mit den anderen Rechnern (lib/abgleich.mjs): Dokumente, Einstellungen, Missionen, „wer zuerst kommt“
 const abgleich = erstelleAbgleich({
@@ -864,6 +910,7 @@ const studio = erstelleStudio({
   log,
   einstellungen: () => einstellungen,
   produzieren: (datum, ids, hinweis) => produzieren(datum, ids, hinweis),
+  heute: () => heute(),
 });
 
 // Nachprüfung nach dem Posten (ersetzt send_later der Cloud): ca. 20 Min. nach der Posting-Zeit ein kleiner Auftrag
@@ -878,7 +925,7 @@ function nachpruefungenStarten() {
       db.schreiben("skripte", d.id, { nachpruefen_angefordert: new Date().toISOString() }, { art: "update", ifVersion: d.version, von: "cockpit" });
     } catch { continue; }
     claudeJob({
-      art: "nachpruefen", spur: "produktion", modus: "auto", modell: "sonnet",
+      art: "nachpruefen", spur: "produktion", modus: "auto", modell: "sonnet", konto: d.daten.konto, datum: d.daten.datum, ids: [d.id],
       grund: "Nachprüfung nach dem Posten: Routine (CLAUDE.md §4: Sonnet)",
       titel: `Nachprüfung · ${d.daten.titel || d.id}`,
       text: `Du bist die Produktions-Sitzung des TikTok-Cockpits. Lies cockpit/anleitung/produktion.md §0 und §4 und führe nur die Nachprüfung aus.\n\nAUFTRAG\n${JSON.stringify({ art: "nachpruefen", datum: d.daten.datum, id: d.id })}`,
@@ -921,8 +968,16 @@ abgleich.teilen("zahlen", {
   anwenden: (g) => zahlen.geteiltSetzen(g),
 });
 
-// Echtes Berliner Wetter für die Stadt (lib/wetter.mjs, Open-Meteo)
-const wetter = erstelleWetter({ senden, log });
+// Automatiken (Entscheidung 07.11.): Recherche nach Wahl, Produktion nach Freigabe, Ideen jeden Morgen, Fehler einmal wiederholen
+automatik = erstelleAutomatik({
+  db, studio, konten: KONTEN, einstellungen: () => einstellungen, einstellungenSichern, heute, berlinZeit, log,
+  anspruch: (k) => abgleich.anspruch(k),
+  feed: (text, extra = {}) => { log(text); feedEintrag({ art: "automatik", text, ...extra }); },
+  melden: (m) => lernen.melden(m),
+  jobs: () => [claude.aktiv, ...claude.warteschlange, prod.aktiv, ...prod.warteschlange].filter(Boolean),
+  cliDa: () => ATTRAPPE || !!findeClaude(),
+  mehrereRechner: () => !OHNE_SPIEGEL && !!(SB.url && SB.key) && abgleich.status().rechner.length > 1,
+});
 
 // Für die Oberfläche: Skripte der letzten 14 Tage, Ideen der letzten 3 Tage, Lernstände, Vorschläge, letzte Meldungen
 function dbAuszug() {
@@ -938,12 +993,16 @@ function dbAuszug() {
 }
 
 // Steuerung aus dem Chat bzw. Sprachbot (aktion.mjs) und aus der Oberfläche
+const ANSICHTEN = ["jetzt", "studio", "produktion", "zahlen", "lernen", "radar"];
 async function steuern(d) {
   const a = d.aktion;
   if (a === "ansicht") {
-    if (!["live", "studio", "zahlen", "lernen"].includes(d.ziel || d.wert)) return { ok: false, fehler: "ziel=live|studio|zahlen|lernen" };
-    senden("steuerung", { ansicht: d.ziel || d.wert });
-    return { ok: true };
+    // Ansichten der neuen Oberfläche (ohne 3D-Stadt); „live“ bleibt als alter Name für „produktion“
+    let ziel = d.ziel || d.wert;
+    if (ziel === "live") ziel = "produktion";
+    if (!ANSICHTEN.includes(ziel)) return { ok: false, fehler: `ziel=${ANSICHTEN.join("|")}` };
+    senden("steuerung", { ansicht: ziel });
+    return { ok: true, ansicht: ziel };
   }
   if (a === "dienst") {
     const w = d.wert || d.ziel;
@@ -967,6 +1026,7 @@ async function steuern(d) {
       offene_vorschlaege: db.liste("vorschlaege", [["status", "==", "offen"]]).map((v) => ({ id: v.id, titel: v.daten.titel })),
       claude: { laeuft: claude.laeuft, wartend: claude.warteschlange.length },
       produktion: { laeuft: prod.laeuft, titel: prod.aktiv?.titel || "", seit: prod.start, aufgaben: prod.aufgaben.length, wartend: prod.warteschlange.length },
+      automatik: automatikLesen(einstellungen),
       // nur vorhanden ja/nein, nie Werte
       schluessel: Object.fromEntries(Object.entries(WERKZEUGE).map(([n, w]) => [n, w.pflicht.every((k) => !!GEHEIM[k])])),
     };
@@ -1038,8 +1098,13 @@ async function koerper(req) {
   return roh ? JSON.parse(roh) : {};
 }
 
+// POST /api/einstellungen {schluessel, wert}: erlaubte Schlüssel und ihre Prüfung (liefert den zu speichernden Wert)
+const EINSTELLBAR = {
+  automatik: (wert) => automatikPruefen(wert, einstellungen.automatik),
+};
+
 function zustand() {
-  return { instanz: INSTANZ, db: dbAuszug(), einstellungen, spiegel, abgleich: abgleich.status(), konten: KONTEN, dienst: renderdienst.zustand(), zahlen: zahlen.zustand(), lernschleife: { laeuft: lernen.laeuft(), buffer: !!GEHEIM.BUFFER_API_KEY }, rechner: RECHNER, render, live, lokal, plan, claude: claudeStatus(), feed: feed.slice(-120), wetter: wetter.zustand(), heute: heute(), supabase: !!(SB.url && SB.key) };
+  return { instanz: INSTANZ, db: dbAuszug(), einstellungen, spiegel, abgleich: abgleich.status(), konten: KONTEN, dienst: renderdienst.zustand(), zahlen: zahlen.zustand(), lernschleife: { laeuft: lernen.laeuft(), buffer: !!GEHEIM.BUFFER_API_KEY }, rechner: RECHNER, render, live, lokal, plan, claude: claudeStatus(), feed: feed.slice(-120), heute: heute(), supabase: !!(SB.url && SB.key), automatik: automatikLesen(einstellungen), wiederholen_nach_s: WIEDERHOLEN_NACH_S };
 }
 
 const server = http.createServer(async (req, res) => {
@@ -1105,6 +1170,17 @@ const server = http.createServer(async (req, res) => {
           if (e instanceof DbFehler) return dbAntwort(res, e);
           return antwortJson(res, 400, { ok: false, fehler: maskiere(e.message) });
         }
+      }
+      // Geteilte Einstellungen aus der Oberfläche: nur freigegebene Schlüssel, geprüft; Speichern sendet SSE „einstellungen“ und gleicht ab
+      if (url.pathname === "/api/einstellungen") {
+        const pruefer = EINSTELLBAR[daten.schluessel];
+        if (!pruefer) return antwortJson(res, 400, { ok: false, fehler: `schluessel: ${Object.keys(EINSTELLBAR).join("|")}` });
+        let wert;
+        try { wert = pruefer(daten.wert); } catch (e) { return antwortJson(res, 400, { ok: false, fehler: e.message }); }
+        einstellungen[daten.schluessel] = wert;
+        einstellungenSichern();
+        log(`Einstellung ${daten.schluessel} = ${JSON.stringify(wert)}`);
+        return antwortJson(res, 200, { ok: true, schluessel: daten.schluessel, wert, automatik: automatikLesen(einstellungen) });
       }
       if (url.pathname === "/api/meldungen") {
         const offen = db.liste("meldungen", [["gelesen", "==", false]]);
@@ -1251,15 +1327,15 @@ server.on("error", (e) => {
 });
 
 server.listen(PORT, "127.0.0.1", () => {
-  log(`TikTok-Cockpit läuft auf http://127.0.0.1:${PORT} · Rechner ${RECHNER} · Arbeits-Repo ${ARBEITS_REPO} · Render-Repo ${RENDER_REPO} · Supabase ${SB.url ? "ja" : "nein"} · Claude CLI ${findeClaude() ? "ja" : "fehlt"}`);
+  log(`TikTok-Cockpit läuft auf http://127.0.0.1:${PORT} · Rechner ${RECHNER} · Arbeits-Repo ${ARBEITS_REPO} · Render-Repo ${RENDER_REPO} · Supabase ${SB.url ? "ja" : "nein"} · Claude CLI ${ATTRAPPE ? "ATTRAPPE (simuliert, kein claude-Prozess)" : findeClaude() ? "ja" : "fehlt"}${OEFFENTLICH !== path.join(HIER, "public") ? ` · Oberfläche ${OEFFENTLICH}` : ""}`);
   renderAbfragen();
   planAktualisieren();
   lokaleVideosScannen();
   kopieAnlegen().catch((e) => log("Supabase-Kopie anlegen fehlgeschlagen: " + maskiere(e.message))).then(() => abgleich.starten());
   if (einstellungen.dienst_autostart !== false && !process.env.COCKPIT_OHNE_DIENST) renderdienst.starten();
   if (!process.env.COCKPIT_OHNE_ZAHLEN) zahlen.starten(); // ohne: nur für Tests (keine TikTok-Abrufe)
-  if (!process.env.COCKPIT_OHNE_WETTER) wetter.starten(); // ohne: nur für Tests (keine Wetter-Abrufe)
   lernen.starten();
+  automatik.starten();
   setInterval(() => senden("spiegel", spiegel), 30000);
   setInterval(lokaleVideosScannen, 20000);
   setInterval(renderAbfragen, 8000);

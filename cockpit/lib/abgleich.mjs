@@ -5,7 +5,8 @@
 //   cockpit/geteilt/<name>.json             gemeinsame Stände (Einstellungen, Missionen), werden zusammengeführt
 //   cockpit/geteilt/rechner/<rechner>.json  Anwesenheit: jeder Rechner mit Cockpit legt beim Start seine Datei an (Fußzeile „⇄“)
 //   cockpit/ansprueche/<schluessel>.json    „wer zuerst kommt“: ein gemeinsames Ereignis (Mission, Lernschleife des Tages,
-//                                           Frage nach der Testwoche) zählt nur auf dem Rechner, der die Datei zuerst anlegt
+//                                           Frage nach der Testwoche, Automatik auto-…) zählt nur auf dem Rechner, der die Datei
+//                                           zuerst anlegt
 // Übernommene Dokumente werden nicht zurückgespiegelt und lösen keine Meldungen oder Aktionen aus, nur die Anzeige.
 // Seit 03.11. ohne Spielsystem („nur die Ziele bleiben“): cockpit/geteilt/spielstand/ und die Ansprüche render-…/erfolg-…
 // schreibt nur noch ein Rechner mit altem Code; hier wird davon nichts gelesen, render-… nur aufgeräumt.
@@ -14,7 +15,8 @@ import fsp from "node:fs/promises";
 import path from "node:path";
 
 const TAKT = Number(process.env.COCKPIT_ABGLEICH_TAKT || 30000); // kürzer nur für Tests
-const KURZLEBIG = /^(render|lernschleife|testphase)-/; // Ansprüche, die nach 14 Tagen weg dürfen (render-… nur noch vom alten Code; Missionen bleiben)
+// Ansprüche, die nach 14 Tagen weg dürfen (render-… nur noch vom alten Code; auto-… = Automatiken, lib/automatik.mjs; Missionen bleiben)
+const KURZLEBIG = /^(render|lernschleife|testphase|auto)-/;
 
 export function erstelleAbgleich({ sb, db, sammlungen, rechner, ordner, basis: BASIS = "cockpit", ausstehend = () => false, nochmalSpiegeln = () => {}, maskiere = (t) => t, log = () => {}, senden = () => {} }) {
   const DATEI = path.join(ordner, "abgleich.json");
@@ -44,6 +46,7 @@ export function erstelleAbgleich({ sb, db, sammlungen, rechner, ordner, basis: B
   }
 
   async function ansprucheAufraeumen() {
+    if (!sb.bereit()) return; // ohne Abgleich (z. B. Test-Instanz mit COCKPIT_KEIN_SPIEGEL) nichts in Supabase löschen
     try {
       const grenze = Date.now() - 14 * 86400000;
       const alt = (await sb.liste(`${BASIS}/ansprueche`))

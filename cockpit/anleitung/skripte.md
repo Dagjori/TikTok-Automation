@@ -1,6 +1,6 @@
 # Skript-Sitzung im Cockpit (Laptop): Anleitung für Claude Code
 
-Stand 03.11.2026. Das lokale Cockpit ersetzt das Ideen-Studio (Entscheidung des Inhabers 03.11.). Es startet dich mit einem Auftrag (JSON unten in der ersten Nachricht) im Arbeits-Klon `C:\tiktok\tiktok-automation`. Inhaltlich gelten dieselben Regeln wie in `docs/automatik/tages-sitzung.md` §0, §3 und §4; geändert sind nur die Werkzeuge (Cockpit-Datenbank statt Studio, Windows statt Cloud). **Niemand liest im Chat mit:** Rückfragen nur über den Status `rueckfrage` im Slot-Dokument. Der Inhaber sieht jeden deiner Schritte live im Cockpit.
+Stand 03.11.2026. Das lokale Cockpit ersetzt das Ideen-Studio (Entscheidung des Inhabers 03.11.). Es startet dich mit einem Auftrag (JSON unten in der ersten Nachricht) im Arbeits-Klon `C:\tiktok\tiktok-automation`, seit 07.11. auch von selbst kurz nach der Wahl einer Idee (Automatik), nicht nur über den Knopf „Skripte recherchieren lassen“. Inhaltlich gelten dieselben Regeln wie in `docs/automatik/tages-sitzung.md` §0, §3 und §4; geändert sind nur die Werkzeuge (Cockpit-Datenbank statt Studio, Windows statt Cloud). **Niemand liest im Chat mit:** Rückfragen nur über den Status `rueckfrage` im Slot-Dokument. Der Inhaber sieht jeden deiner Schritte live im Cockpit.
 
 ## 0. Grundregeln
 1. **Kleine Schritte** (CLAUDE.md §1): Zerlege den Auftrag zuerst mit deinem Aufgaben-Werkzeug in nummerierte Teilaufgaben, hake jede mit Beleg ab, gleiche am Ende Auftrag und Ergebnis ab.
@@ -26,7 +26,7 @@ Für jeden Slot (nacheinander, Mittag zuerst):
    `py -3 tools/chat_befehle.py --skript-auftrag <simulierbar|stelldirvor> --ideen cockpit/daten/tmp/idee-<id>.json --lernstand cockpit/daten/tmp/lernstand-<acc>.txt [--kommentar "<Kommentar des Inhabers>"]`
    **Nur mit `--skript-auftrag` aufrufen** (ohne den Schalter schreibt das Skript Studio-Dateien und Hirn-Notizen neu). Die Ausgabe ist dein verbindlicher Auftrag (Rolle, Faktentreue, Spannung, Aufbau, Stimme bzw. Sätze, Caption, Recherche, JSON-Form). Dazu gelten aus dem Hirn: Simulierbar `REA Simulierbar Regelwerk`, `Videoaufbau Simulierbar` §1–§5 und `Stimme und Ton Simulierbar`; Account 2 `REA stelldirvor Regelwerk`, `Ablauf Account 2` „Skript-Anforderungen“ und `Themen und Plan Account 2` §2–§3 (Weltvielfalt).
 3. **Recherche:** jede Zahl, jedes Datum, jede Regel per Websuche belegen, die Primärquelle öffnen, wenn die Suche nur einen Ausschnitt zeigt. Stand passend zum Video-Tag (Jahr, Rechtsstand, Preise). Rechne jedes Ergebnis mit `py -3` nach (Skript unter `cockpit/daten/tmp/`). Meilenstein „Zahlen belegt“.
-4. **Trägt die Idee nicht** (Zahlen nicht belegbar, Themen-Logik falsch, Ausschlussthema): nichts erfinden. `status` = `fehler`, `fehler_phase` = `recherche`, `fehler` = Grund in einem Satz plus Vorschlag (z. B. andere Idee aus der Liste).
+4. **Trägt die Idee nicht** (Zahlen nicht belegbar, Themen-Logik falsch, Ausschlussthema): nichts erfinden. `status` = `fehler`, `fehler_phase` = `recherche`, `auto_wiederholt_phase` = `recherche` (eine automatische Wiederholung hilft hier nicht; das Cockpit fragt dann gleich den Inhaber), `fehler` = Grund in einem Satz plus Vorschlag (z. B. andere Idee aus der Liste).
 5. **Skript schreiben** genau in der JSON-Form des Befehls (ein Objekt), Selbstprüfung ausfüllen: Simulierbar 150–190 Wörter Sprechtext (ohne Audio-Tags gezählt), höchstens 3 Ausrufezeichen, keine Tags `[excited]`/`[shouting]`/`[energetic]`, kein `<break>`, kein „Los geht's“, feste Sätze (Folgen-Aufruf, Schluss); Account 2: 12–18 Sätze mit 3–9 Wörtern, Anzeige passt zum Zeitraffer, Faktenzeile.
 6. **Schreiben** (`update` mit `--version`): `status` = `skript_fertig`, `skript` = das Objekt, dazu auf oberster Ebene `titel`, `thema`, `quellen`, `zahlen`, `rechenweg`, `annahmen`, `caption`, `dramaturgie`, `selbstpruefung`, `faktencheck` = `recherchiert`, `fortschritt` = „Skript fertig, bitte prüfen“, `aktualisiert` (ISO-Zeit). Danach Meilenstein „Skript fertig, bitte prüfen“.
 
@@ -34,5 +34,5 @@ Für jeden Slot (nacheinander, Mittag zuerst):
 Wie §2, aber der `kommentar` des Inhabers hat Vorrang (an `--kommentar` übergeben). Was er nicht kritisiert, bleibt möglichst gleich. Am Ende `kommentar` nicht löschen, sondern `kommentar_erledigt` = Zeit setzen.
 
 ## 4. Grenzen
-- Nutzungslimit erreicht oder Abbruch: Das Cockpit setzt nicht fertig gewordene Slots auf `fehler` mit Hinweis; der Inhaber startet sie neu.
+- Nutzungslimit erreicht oder Abbruch: Das Cockpit setzt nicht fertig gewordene Slots auf `fehler` mit Hinweis; es startet die Recherche nach 5 Min. einmal selbst neu (Automatik seit 07.11.), scheitert sie erneut, fragt es den Inhaber.
 - Keine TikTok-Schutzmaßnahmen umgehen, keine fremden Videos laden (CLAUDE.md §2).

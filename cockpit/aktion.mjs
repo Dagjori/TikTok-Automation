@@ -4,8 +4,11 @@
 // Studio:  ideen konto=simulierbar|stelldirvor datum=JJJJ-MM-TT [wunsch="…"] · waehlen konto= datum= slot=mittag|abend nr=<1-10>
 //          recherchieren konto= datum= · freigeben id= · zuruecknehmen id= · neu_schreiben id= kommentar="…" · verwerfen id=
 //          uebergeben datum= · rueckfrage_annehmen id= · erneut id=
+// Automatik (Recherche nach Wahl, Produktion nach Freigabe): automatik_jetzt [konto=] datum= [was=recherche|produktion]
+//          · automatik_halt [konto=] datum= [was=recherche|produktion|alles]   (ohne konto: beide Konten)
 // Produktion: produktion_starten datum= · produktion_stopp   (eigene Spur neben dem Chat, cockpit/anleitung/produktion.md)
-// Cockpit: ansicht ziel=live|studio|zahlen|lernen · dienst an|aus · lernschleife · vorschlag id= wahl=annehmen|ablehnen [kommentar="…"]
+// Cockpit: ansicht ziel=jetzt|studio|produktion|zahlen|lernen|radar (live = produktion) · dienst an|aus · lernschleife
+//          · vorschlag id= wahl=annehmen|ablehnen [kommentar="…"]
 //          stand   (kurzer Überblick: Slots, Render, Zahlen, offene Vorschläge)
 // Slot-IDs: <acc1|acc2>-<JJJJ-MM-TT>-<mittag|abend> (acc1 = simulierbar, acc2 = stelldirvor). Ausgabe JSON, Exit 0 ok · 1 Fehler.
 const URL_ = process.env.COCKPIT_URL || "http://127.0.0.1:4777";

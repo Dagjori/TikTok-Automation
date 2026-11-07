@@ -2,8 +2,11 @@
 // Regeln wie im bisherigen Studio (docs/ideen-studio/vorlage.html, docs/automatik/tages-sitzung.md §1):
 // gewaehlt → recherche → skript_fertig → freigegeben → uebergeben → produktion → geplant → gepostet,
 // Nebenzweige rueckfrage und fehler. Slot-ID acc1|acc2-JJJJ-MM-TT-mittag|abend, Ideen-ID acc1|acc2-JJJJ-MM-TT.
+// Automatik (07.11., lib/automatik.mjs): waehlen setzt auto_recherche_ab, freigeben auto_produktion_ab; der Takt dort startet
+// Recherche bzw. Übergabe von selbst. automatik_jetzt / automatik_halt ziehen sie vor bzw. halten sie für einen Tag an.
 import fs from "node:fs";
 import path from "node:path";
+import { automatikLesen, RECHERCHE_BEIDE_S, RECHERCHE_EINZELN_S, PRODUKTION_NACH_S } from "./automatik.mjs";
 
 export const KONTEN = {
   simulierbar: { praefix: "acc1", name: "Simulierbar", kanal: "simulierbar" },
@@ -31,10 +34,15 @@ function jsonAusText(text) {
   return JSON.parse(t.slice(a, e + 1));
 }
 
-export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellungen = () => ({}), produzieren = null }) {
+export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellungen = () => ({}), produzieren = null, heute = () => new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Berlin" }) }) {
   const jetzt = () => new Date().toISOString();
+  const spaeter = (s) => new Date(Date.now() + s * 1000).toISOString();
+  const WEG = { __delete__: true };
+  const automatik = () => automatikLesen(einstellungen());
   const slotId = (konto, datum, slot) => `${KONTEN[konto].praefix}-${datum}-${slot}`;
   const ideenId = (konto, datum) => `${KONTEN[konto].praefix}-${datum}`;
+  // Slots eines Tages, ohne Konto beide Konten
+  const tagesSlots = (datum, konto) => db.liste("skripte", [["datum", "==", datum], ...(konto ? [["konto", "==", konto]] : [])]);
 
   function pruefe({ konto, datum, slot } = {}) {
     if (konto !== undefined && !KONTEN[konto]) throw fehler(`Unbekanntes Konto „${konto}“`);
@@ -83,14 +91,17 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
     "Lies zuerst cockpit/anleitung/skripte.md vollständig und befolge sie Schritt für Schritt. " +
     "Niemand antwortet im Chat: Rückfragen nur über den Status im Slot-Dokument.\n\nAUFTRAG\n" + JSON.stringify(a);
 
-  // Nach einem Skript-Auftrag: Slots, die noch auf „recherche“ stehen, als Fehler markieren (nie stumm hängen lassen)
-  function nachRecherche(ids, istFehler) {
+  // Nach einem Skript-Auftrag: Slots, die noch auf „recherche“ stehen, als Fehler markieren (nie stumm hängen lassen).
+  // Vom Inhaber gestoppt: nie automatisch wiederholen und nicht melden (auto_wiederholt_phase, auto_gemeldet).
+  function nachRecherche(ids, istFehler, gestoppt = false) {
     for (const id of ids) {
       const d = db.get("skripte", id);
       if (d?.daten.status !== "recherche") continue;
       db.schreiben("skripte", id, {
         status: "fehler", fehler_phase: "recherche",
-        fehler: istFehler ? "Claude hat den Auftrag abgebrochen (Limit, Stopp oder Fehler). „Erneut versuchen“ startet die Recherche neu." : "Claude hat den Auftrag beendet, ohne das Skript zu schreiben. Bitte „Erneut versuchen“.",
+        fehler: gestoppt ? "Von dir gestoppt. „Erneut versuchen“ startet die Recherche neu."
+          : istFehler ? "Claude hat den Auftrag abgebrochen (Limit, Stopp oder Fehler). „Erneut versuchen“ startet die Recherche neu." : "Claude hat den Auftrag beendet, ohne das Skript zu schreiben. Bitte „Erneut versuchen“.",
+        ...(gestoppt ? { auto_wiederholt_phase: "recherche", auto_gemeldet: true } : {}),
         fortschritt: "Recherche nicht abgeschlossen", aktualisiert: jetzt(),
       }, { art: "update", ifVersion: d.version, von: "cockpit" });
     }
@@ -99,12 +110,22 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
   function skripteAnfordern(konto, datum, ids, art = "skripte", extra = {}) {
     const a = { art, datum, konto, ...(art === "skripte" ? { slots: ids } : { slot: ids[0].split("-").pop() }), ...extra };
     auftrag({
-      art: "skripte",
+      art: "skripte", konto, datum, ids,
       titel: `${art === "skripte" ? "Skripte" : "Neufassung"} · ${KONTEN[konto].name} · ${datum}`,
       text: skriptPrompt(a),
       modus: "auto",
-      nachher: (_text, istFehler) => nachRecherche(ids, istFehler),
+      nachher: (_text, istFehler, job) => nachRecherche(ids, istFehler, !!job?.gestoppt),
     });
+  }
+
+  // Recherche-Automatik: Nach jeder neuen Wahl startet die Recherche von selbst, für alle gewählten Slots des Kontos und
+  // Tages in einem Auftrag. Sind beide Slots belegt, nach 15 s (Zeit zum Umentscheiden), sonst nach 3 Min. (Zeit für den zweiten).
+  function autoRechercheSetzen(konto, datum) {
+    if (!automatik().recherche || datum < heute()) return null;
+    const docs = SLOTS.map((s) => db.get("skripte", slotId(konto, datum, s)));
+    const ab = spaeter(docs.every(Boolean) ? RECHERCHE_BEIDE_S : RECHERCHE_EINZELN_S);
+    for (const d of docs) if (d?.daten.status === "gewaehlt") db.schreiben("skripte", d.id, { auto_recherche_ab: ab }, { art: "update", ifVersion: d.version });
+    return ab;
   }
 
   const aktionen = {
@@ -113,7 +134,7 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
       wunsch = String(wunsch || "").trim().slice(0, 500);
       const prompt = ideenPrompt(konto, datum, wunsch);
       auftrag({
-        art: "ideen",
+        art: "ideen", konto, datum, ids: [],
         titel: `10 Ideen · ${KONTEN[konto].name} · ${datum}`,
         text: prompt.text,
         modus: "plan",
@@ -153,15 +174,19 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
         status: "gewaehlt", fortschritt: "", fehler: "", fehler_phase: "", verlauf: [{ zeit: jetzt(), text: `Idee gewählt (${SLOT_NAME[slot]})`, von: "cockpit" }],
         erstellt: jetzt(), aktualisiert: jetzt(),
       }, { ifVersion: d?.version });
-      return { ok: true };
+      const ab = autoRechercheSetzen(konto, datum);
+      return { ok: true, ...(ab ? { auto_recherche_ab: ab } : {}) };
     },
 
-    recherchieren({ konto, datum }) {
+    // ids (optional, Automatik): nur diese Slots; sonst alle gewählten bzw. in der Recherche gescheiterten des Kontos und Tages
+    recherchieren({ konto, datum, ids }) {
       pruefe({ konto, datum });
-      const docs = SLOTS.map((s) => db.get("skripte", slotId(konto, datum, s))).filter((d) => d && (d.daten.status === "gewaehlt" || (d.daten.status === "fehler" && d.daten.fehler_phase !== "produktion")));
+      const nur = Array.isArray(ids) ? new Set(ids) : null;
+      // Gescheiterte Produktion oder Nachprüfung nie neu recherchieren (das Video ist schon gebaut bzw. in Buffer)
+      const docs = SLOTS.map((s) => db.get("skripte", slotId(konto, datum, s))).filter((d) => d && (!nur || nur.has(d.id)) && (d.daten.status === "gewaehlt" || (d.daten.status === "fehler" && !["produktion", "nachpruefen"].includes(d.daten.fehler_phase))));
       if (!docs.length) throw fehler("Kein gewählter Slot ohne Skript");
       for (const d of docs) {
-        db.schreiben("skripte", d.id, { status: "recherche", fortschritt: "An Claude übergeben, Recherche startet …", angefordert: jetzt(), fehler: "", fehler_phase: "", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
+        db.schreiben("skripte", d.id, { status: "recherche", fortschritt: "An Claude übergeben, Recherche startet …", angefordert: jetzt(), fehler: "", fehler_phase: "", auto_recherche_ab: WEG, auto_gemeldet: WEG, aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
         db.meilenstein("skripte", d.id, "Recherche angefordert", { von: "cockpit" });
       }
       skripteAnfordern(konto, datum, docs.map((d) => d.id));
@@ -173,22 +198,28 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
       kommentar = String(kommentar || "").trim().slice(0, 2000);
       if (!kommentar) throw fehler("Bitte schreib kurz, was anders werden soll");
       if (!NEU_SCHREIBBAR.has(d.daten.status) || ["produktion", "nachpruefen"].includes(d.daten.fehler_phase)) throw fehler(`Neu schreiben geht bei Status „${d.daten.status}“ nicht`);
-      db.schreiben("skripte", id, { status: "recherche", kommentar, kommentar_zeit: jetzt(), fehler: "", fehler_phase: "", fortschritt: "Neufassung angefordert", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
+      // Neuer Auftrag des Inhabers: eine Recherche-Wiederholung steht ihm wieder zu
+      db.schreiben("skripte", id, {
+        status: "recherche", kommentar, kommentar_zeit: jetzt(), fehler: "", fehler_phase: "", fortschritt: "Neufassung angefordert", aktualisiert: jetzt(),
+        auto_gemeldet: WEG, ...(d.daten.auto_wiederholt_phase === "recherche" ? { auto_wiederholt_phase: WEG } : {}),
+      }, { art: "update", ifVersion: d.version });
       skripteAnfordern(d.daten.konto, d.daten.datum, [id], "neu_schreiben", { kommentar });
       return { ok: true };
     },
 
+    // Produktions-Automatik: 60 s Zeit zum Zurücknehmen, dann übergibt der Takt (sobald alle Skripte des Tages freigegeben sind)
     freigeben({ id }) {
       const d = slotLesen(id);
       if (d.daten.status !== "skript_fertig") throw fehler("Nur ein fertiges Skript lässt sich freigeben");
-      db.schreiben("skripte", id, { status: "freigegeben", freigegeben_am: jetzt(), fortschritt: "Freigegeben", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
-      return { ok: true };
+      const ab = automatik().produktion && d.daten.datum >= heute() ? spaeter(PRODUKTION_NACH_S) : null;
+      db.schreiben("skripte", id, { status: "freigegeben", freigegeben_am: jetzt(), fortschritt: "Freigegeben", aktualisiert: jetzt(), ...(ab ? { auto_produktion_ab: ab } : {}) }, { art: "update", ifVersion: d.version });
+      return { ok: true, ...(ab ? { auto_produktion_ab: ab } : {}) };
     },
 
     zuruecknehmen({ id }) {
       const d = slotLesen(id);
       if (d.daten.status !== "freigegeben") throw fehler("Nur eine Freigabe lässt sich zurücknehmen");
-      db.schreiben("skripte", id, { status: "skript_fertig", freigegeben_am: { __delete__: true }, fortschritt: "Freigabe zurückgenommen", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
+      db.schreiben("skripte", id, { status: "skript_fertig", freigegeben_am: WEG, auto_produktion_ab: WEG, auto_produktion_wartet: WEG, fortschritt: "Freigabe zurückgenommen", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
       return { ok: true };
     },
 
@@ -200,11 +231,13 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
       return { ok: true };
     },
 
-    uebergeben({ datum }) {
+    // ids (optional, Automatik): nur diese freigegebenen Slots; sonst alle des Tages
+    uebergeben({ datum, ids }) {
       pruefe({ datum });
-      const docs = db.liste("skripte", [["datum", "==", datum], ["status", "==", "freigegeben"]]);
+      const nur = Array.isArray(ids) ? new Set(ids) : null;
+      const docs = db.liste("skripte", [["datum", "==", datum], ["status", "==", "freigegeben"]]).filter((d) => !nur || nur.has(d.id));
       if (!docs.length) throw fehler("Kein freigegebenes Skript an diesem Tag");
-      for (const d of docs) db.schreiben("skripte", d.id, { status: "uebergeben", uebergeben_am: jetzt(), fortschritt: produzieren ? "An Claude übergeben, Produktion startet …" : "Übergeben · wartet auf die lokale Produktion (Ausbau 3)", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
+      for (const d of docs) db.schreiben("skripte", d.id, { status: "uebergeben", uebergeben_am: jetzt(), auto_produktion_ab: WEG, auto_produktion_wartet: WEG, fortschritt: produzieren ? "An Claude übergeben, Produktion startet …" : "Übergeben · wartet auf die lokale Produktion (Ausbau 3)", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
       if (produzieren) produzieren(datum, docs.map((d) => d.id));
       return { ok: true, ids: docs.map((d) => d.id), produktion: !!produzieren };
     },
@@ -228,22 +261,56 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
       return { ok: true };
     },
 
+    // Auch von der Automatik aufgerufen (einmal je Phase, lib/automatik.mjs); auto_wiederholt_phase bleibt dabei stehen
     erneut({ id }) {
       const d = slotLesen(id);
       if (d.daten.status !== "fehler") throw fehler("Nur ein Fehler lässt sich erneut versuchen");
       if (d.daten.fehler_phase === "produktion") {
-        db.schreiben("skripte", id, { status: "uebergeben", fehler: "", fortschritt: "Produktion erneut angefordert", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
+        db.schreiben("skripte", id, { status: "uebergeben", fehler: "", auto_gemeldet: WEG, fortschritt: "Produktion erneut angefordert", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
         if (produzieren) produzieren(d.daten.datum, [id]);
         return { ok: true };
       }
       // Nachprüfung gescheitert: Video ist schon in Buffer bzw. gepostet, also nur die Nachprüfung neu anstoßen (nie neu recherchieren)
       if (d.daten.fehler_phase === "nachpruefen") {
-        db.schreiben("skripte", id, { status: "geplant", fehler: "", fehler_phase: "", nachpruefen_angefordert: { __delete__: true }, fortschritt: "Nachprüfung erneut angefordert (startet in ≤ 5 Min.)", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
+        db.schreiben("skripte", id, { status: "geplant", fehler: "", fehler_phase: "", auto_gemeldet: WEG, nachpruefen_angefordert: WEG, fortschritt: "Nachprüfung erneut angefordert (startet in ≤ 5 Min.)", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
         return { ok: true };
       }
-      db.schreiben("skripte", id, { status: "recherche", fehler: "", fehler_phase: "", fortschritt: "Recherche erneut angefordert", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
+      db.schreiben("skripte", id, { status: "recherche", fehler: "", fehler_phase: "", auto_gemeldet: WEG, fortschritt: "Recherche erneut angefordert", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
       skripteAnfordern(d.daten.konto, d.daten.datum, [id]);
       return { ok: true };
+    },
+
+    // Automatik eines Tages sofort auslösen (ab = jetzt). was: "recherche" (Standard, gewählte Slots) oder "produktion"
+    // (freigegebene Slots; übergeben wird trotzdem erst, wenn alle Skripte des Tages freigegeben sind). Ohne konto: beide Konten.
+    automatik_jetzt({ konto, datum, was = "recherche" }) {
+      pruefe({ konto: konto || undefined, datum });
+      if (!["recherche", "produktion"].includes(was)) throw fehler("was=recherche|produktion");
+      if (datum < heute()) throw fehler("Die Automatik gilt nur für heute und spätere Tage");
+      const a = automatik();
+      if (!a[was]) throw fehler(was === "recherche" ? "Die Recherche-Automatik ist aus. „Skripte recherchieren lassen“ startet sie von Hand." : "Die Produktions-Automatik ist aus. „An Claude übergeben“ startet sie von Hand.");
+      const feld = was === "recherche" ? "auto_recherche_ab" : "auto_produktion_ab";
+      const docs = tagesSlots(datum, konto).filter((d) => d.daten.status === (was === "recherche" ? "gewaehlt" : "freigegeben"));
+      if (!docs.length) throw fehler(was === "recherche" ? "Kein gewählter Slot an diesem Tag" : "Kein freigegebenes Skript an diesem Tag");
+      const ab = jetzt();
+      for (const d of docs) db.schreiben("skripte", d.id, { [feld]: ab }, { art: "update", ifVersion: d.version });
+      return { ok: true, ids: docs.map((d) => d.id), [feld]: ab };
+    },
+
+    // Automatik eines Tages anhalten (Felder entfernen): danach startet nur noch der Knopf. was: "recherche" (Standard),
+    // "produktion" oder "alles". Ohne konto: beide Konten.
+    automatik_halt({ konto, datum, was = "recherche" }) {
+      pruefe({ konto: konto || undefined, datum });
+      if (!["recherche", "produktion", "alles"].includes(was)) throw fehler("was=recherche|produktion|alles");
+      const ids = [];
+      for (const d of tagesSlots(datum, konto)) {
+        const weg = {};
+        if (was !== "produktion" && d.daten.auto_recherche_ab) weg.auto_recherche_ab = WEG;
+        if (was !== "recherche" && (d.daten.auto_produktion_ab || d.daten.auto_produktion_wartet)) Object.assign(weg, { auto_produktion_ab: WEG, auto_produktion_wartet: WEG });
+        if (!Object.keys(weg).length) continue;
+        db.schreiben("skripte", d.id, weg, { art: "update", ifVersion: d.version });
+        ids.push(d.id);
+      }
+      return { ok: true, ids };
     },
 
     lernstand({ konto, text }) {
