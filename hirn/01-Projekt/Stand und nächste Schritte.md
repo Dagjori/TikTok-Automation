@@ -41,7 +41,7 @@ cssclasses: [konto-gemeinsam, typ-plan]
 | 4 | Stile 17–21 erstmals auf der GPU messen (Taxi) | Claude | nebenbei |
 | 5 | Repo auf privat stellen (**erst nach Lesezugang für den PC**), ElevenLabs-Guthaben prüfen, Telegram einrichten | Inhaber/Claude | 5–15 Min. je |
 | 6 | 16.11.: Posting-Zeiten und Reihenfolge Wochen 3–5 mit Zahlen nachjustieren | Claude | 30 Min. |
-| 7 | Hirn auf dem Desktop einrichten (ZIP entpacken), danach CLAUDE.md schlanker machen (Verweis auf das Hirn) | Inhaber, Claude | 5 Min. |
+| 7 | ~~Hirn auf dem Desktop einrichten (ZIP entpacken)~~ **erledigt 07.11.: direkter Abgleich statt ZIP** ([[Technik und Umgebung]]); offen: CLAUDE.md schlanker machen (Verweis auf das Hirn) | Claude | – |
 | 8 | **REA-Video (07.11.):** erster Lauf mit 16 Vorbildern fertig: Regelwerk-Entwürfe [[REA Simulierbar Regelwerk]], [[REA stelldirvor Regelwerk]], [[REA Übergreifend]] **zur Freigabe**, darin je Account die Abweichungen zum bisherigen Regelwerk (Untertitel, Aufruf zum Folgen, Sprechtempo, Schlusskarte; harte Schnitte bei Account 2). Für belastbare Erfolgsfaktoren je Account fehlen Videos (Minimum 12 + 4, Ziel 20 + 6), besonders schwache Vergleichsvideos für Account 2 | Inhaber (Freigabe, weitere Videos), Claude | Freigabe 15 Min. |
 | 9 | Danach neuer Produktions-Skill auf Basis der freigegebenen REA-Regelwerke; Verweise auf die am 06.11. entfernten Skills (`CLAUDE.md`, Tages-Sitzung, Cockpit, `tools/hirn_aus_skills.py`) dabei umstellen. **Prüfskripte an die Entscheidungen vom 07.11. anpassen:** `pipeline/qc/massstab.py` Punkt 7 (Folgen-Aufruf Pflicht), 11 (Schleife), 14 (Untertitel Wort für Wort) und `pipeline/qc/referenz_pov.py` Punkt 5b (keine harten Schnitte) prüfen noch die alten Regeln | Claude | offen |
 

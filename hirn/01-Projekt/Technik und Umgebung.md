@@ -36,8 +36,8 @@ Netzwerkzugriff eingeschränkt (10 Domains, Paketmanager aktiviert), **3 Netzwer
 - **Firecrawl-Credits fast leer:** Recherche über die Websuche.
 - Viele Plugin-MCP-Server verbinden nicht („403 Forbidden“): irrelevant für das Projekt.
 
-## Vault auf dem Desktop (Entscheidung 02.11.)
-Claude schreibt nur in `hirn/` im Repo (Master). Der Obsidian-Vault auf dem Desktop bekommt Änderungen **per ZIP** (Inhalt in den Vault-Ordner entpacken, `.obsidian` mitnehmen). Abgelehnt: automatischer Abgleich über den PC-Dienst und Obsidian-Git.
+## Vault auf dem Desktop (Entscheidung 07.11., ersetzt das ZIP vom 02.11.)
+Claude schreibt in `hirn/` im Repo (Master); `tools/hirn_abgleich.py` spielt jede Änderung **direkt** in den Obsidian-Vault `~/Desktop/TikTok Automation` (Ordner und Dateinamen 1:1, Umlaute korrekt). Der Abgleich läuft automatisch: über Claude-Code-Hooks in den Benutzereinstellungen des Laptops (`~/.claude/settings.json`, eingetragen 07.11. mit Freigabe; im Hintergrund nach jeder Datei- oder Befehlsaktion, die das Hirn betrifft, und beim Sitzungsstart mit Konfliktmeldung) sowie am Ende von `tools/hirn_pruefen.py`, das nach jeder Hirn-Änderung Pflicht ist; einzeln: `python tools/hirn_abgleich.py` (`--pruefen` zeigt nur). Regeln: im Desktop geänderte Notizen werden nicht überschrieben (Konflikt-Meldung), eigene Desktop-Notizen und Dateien bleiben unangetastet und gehen nie automatisch ins öffentliche Repo, die Obsidian-Ansicht (`workspace.json`, Graph-Zoom) bleibt, Ersetztes landet in `.trash/abgleich-<datum>/`. Stand des letzten Abgleichs: `<vault>/.hirn-abgleich.json`. In der Cloud oder auf Rechnern ohne Vault passiert nichts; Notizen aus Cloud-Läufen (z. B. Lernschleife) erreichen den Desktop beim nächsten `git pull` und der nächsten Prüfung. Beim ersten Abgleich (07.11.) wurden 9 vom ZIP zerstörte Dateinamen (z. B. „Kan├ñle“) in den Papierkorb gelegt.
 
 ## Verbindungen Cloud ↔ PC (Lehren 02.11.)
 - Remote Control und „Ordner anfordern“ funktionieren in Cloud-Sitzungen **nur für Mac/Linux**, nicht für Windows.

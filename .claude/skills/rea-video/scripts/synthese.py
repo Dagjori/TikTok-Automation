@@ -122,6 +122,45 @@ def prozent(x):
     return "–" if x is None else f"{100 * x:.0f} %"
 
 
+def aenderungen_schreiben(aus, basis, zeilen, kname, heute, n_viral, n_vergleich, ids, gesaettigt):
+    """Vergleicht mit dem Vorher-Stand: Stärke, Unterscheider, Belastbarkeit je Merkmal. Schreibt aenderungen.md."""
+    alt = {z["merkmal"]: z for z in basis.get("merkmale", [])}
+    neu_ids = [i for i in ids if i not in set(basis.get("ids") or [])]
+    zeilen_md, wichtig = [], ("Gesetz", "Muster", "Variante")
+    for z in zeilen:
+        a = alt.get(z["merkmal"])
+        jetzt = f"{z['staerke']}, viral {z['k']}/{z['n']}, Vergleich {z['kc']}/{z['nc']}"
+        if not a:
+            if z["staerke"] in wichtig:
+                zeilen_md.append(f"| `{z['merkmal']}` | neu | {jetzt} · {z['unterscheider']} |")
+            continue
+        teile = []
+        if a.get("staerke") != z["staerke"] and (a.get("staerke") in wichtig or z["staerke"] in wichtig):
+            teile.append(f"Stärke {a.get('staerke')} → **{z['staerke']}**")
+        if a.get("unterscheider") != z["unterscheider"]:
+            teile.append(f"Unterscheider {a.get('unterscheider')} → **{z['unterscheider']}**")
+        if a.get("belastbar") != z["belastbar"]:
+            teile.append("belastbar " + ("nein → **ja**" if z["belastbar"] else "ja → **nein**"))
+        if teile:
+            vorher_txt = f"{a.get('staerke')}, viral {a.get('k')}/{a.get('n')}, Vergleich {a.get('kc')}/{a.get('nc')}"
+            zeilen_md.append(f"| `{z['merkmal']}` | {' · '.join(teile)} | {vorher_txt} → {jetzt} |")
+    for m, a in alt.items():
+        if m not in {z["merkmal"] for z in zeilen} and a.get("staerke") in wichtig:
+            zeilen_md.append(f"| `{m}` | entfallen (nicht mehr kodiert) | vorher {a.get('staerke')} |")
+    md = [f"# Änderungen Korpus „{kname}“ ({basis.get('stand', '?')} → {heute})", "",
+          f"Neu analysiert: {', '.join(neu_ids) if neu_ids else 'keine (gleicher Videostand)'} · "
+          f"jetzt {n_viral} viral, {n_vergleich} Vergleich analysiert (vorher {basis.get('viral_analysiert', '?')}, "
+          f"{basis.get('vergleich_analysiert', '?')}) · Sättigung {'ja' if gesaettigt else 'nein'}", "",
+          "Aufgeführt sind nur Merkmale, deren Stärke (Gesetz/Muster/Variante), Unterscheider-Urteil oder Belastbarkeit "
+          "sich geändert hat, und neue Merkmale ab Variante. Regeln im Hirn ändern sich erst nach Freigabe des Inhabers.", ""]
+    if zeilen_md:
+        md += ["| Merkmal | Änderung | Belege vorher → jetzt |", "|---|---|---|"] + zeilen_md
+    else:
+        md.append("**Keine Änderung** an Stärke, Unterscheidern oder Belastbarkeit: Das neue Material bestätigt den Stand.")
+    (aus / "aenderungen.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    return len(zeilen_md)
+
+
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -384,11 +423,26 @@ def main():
         if z["n"] >= 3:
             karten.append(f"- **{z['wert']}:** Median {p(z['median'], 2)}, Korridor {p(z['q1'], 2)}–{p(z['q3'], 2)} (n = {z['n']}; Vergleich {p(z['median_c'], 2)})")
     (aus / "regelkandidaten.md").write_text("\n".join(karten) + "\n", encoding="utf-8")
+    # Vorher-Stand sichern, sobald neue Videos analysiert sind (Basis für aenderungen.md)
+    ids = sorted(d["zeile"]["id"] for d in v_ok + c_ok)
+    basis = None
+    try:
+        vorher = json.loads((aus / "kennzahlen.json").read_text(encoding="utf-8")) if (aus / "kennzahlen.json").exists() else None
+        if vorher and vorher.get("ids") != ids:
+            (aus / "kennzahlen.vorher.json").write_text(json.dumps(vorher, ensure_ascii=False, indent=1), encoding="utf-8")
+            basis = vorher
+        elif (aus / "kennzahlen.vorher.json").exists():
+            basis = json.loads((aus / "kennzahlen.vorher.json").read_text(encoding="utf-8"))
+    except ValueError:
+        basis = None
     (aus / "kennzahlen.json").write_text(json.dumps({
-        "stand": heute, "korpus": kname, "viral": len(viral), "viral_analysiert": len(v_ok), "vergleich": len(vergleich),
+        "stand": heute, "korpus": kname, "ids": ids, "viral": len(viral), "viral_analysiert": len(v_ok), "vergleich": len(vergleich),
         "vergleich_analysiert": len(c_ok), "creator": creator, "minimum_erreicht": not mangel, "mangel": mangel, "ziel_erreicht": ziel,
         "gesaettigt": gesaettigt, "erfolg": erfolg, "merkmale": [{k: v for k, v in z.items()} for z in zeilen], "zahlen": zahlen,
         "saettigung": neu_je, "warnungen": warnungen}, ensure_ascii=False, indent=1), encoding="utf-8")
+    if basis:
+        n_aend = aenderungen_schreiben(aus, basis, zeilen, kname, heute, len(v_ok), len(c_ok), ids, gesaettigt)
+        print(f"Änderungen gegenüber dem Stand vom {basis.get('stand', '?')}: {n_aend} → {aus / 'aenderungen.md'}")
     print(f"Synthese {kname}: {len(v_ok)}/{len(viral)} viral, {len(c_ok)}/{len(vergleich)} Vergleich analysiert · "
           f"{sum(1 for z in zeilen if z['staerke'] == 'Gesetz')} Gesetze, {sum(1 for z in zeilen if z['staerke'] == 'Muster')} Muster · "
           f"Minimum {'ja' if not mangel else 'nein'} · Sättigung {'ja' if gesaettigt else 'nein'} → {aus / 'matrix.md'}")

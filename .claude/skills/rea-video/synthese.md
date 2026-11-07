@@ -4,7 +4,7 @@
 ```
 python .claude/skills/rea-video/scripts/synthese.py C:\tiktok\rea-video\<korpus>
 ```
-Schreibt nach `synthese/`: `matrix.md` (alles auf einen Blick), `regelkandidaten.md` (vorbefüllte Regelkarten), `kennzahlen.json` (für spätere Vergleiche). Jederzeit wiederholbar; nach jedem neuen Video neu laufen lassen.
+Schreibt nach `synthese/`: `matrix.md` (alles auf einen Blick), `regelkandidaten.md` (vorbefüllte Regelkarten), `kennzahlen.json` (für spätere Vergleiche). Jederzeit wiederholbar; nach jedem neuen Video neu laufen lassen. Sind seit dem letzten Lauf neue Videos analysiert, sichert es den alten Stand als `kennzahlen.vorher.json` und schreibt `aenderungen.md` (Merkmale, deren Stärke, Unterscheider-Urteil oder Belastbarkeit sich geändert hat): Grundlage für den Kurzbericht an den Inhaber.
 
 ## 2. Matrix lesen
 | Teil | Bedeutung |

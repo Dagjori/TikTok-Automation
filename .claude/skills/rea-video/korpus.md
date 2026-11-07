@@ -38,11 +38,14 @@ Warum genau diese Zahlen:
 ```
 C:\tiktok\rea-video\                 Arbeitsordner (Linux/Cloud: ../rea-video neben dem Repo)
   _modelle\ggml-*.bin                Whisper-Modell (messung.md §2)
+  _index.csv                         Prüfsumme je aufgenommenem Video (scripts/aufnehmen.py, verhindert Doppelte)
+  _eingang\                          optionaler Ablageordner für neue Videos (neben Downloads)
+  _uebergreifend\synthese\           übergreifende Auswertung beider Accounts
   <korpus>\                          z. B. geld-duell-stimme, pov-was-waere-wenn
     korpus.csv                       eine Zeile je Video (Vorlage vorlagen/korpus.csv)
     videos\V01.mp4 …                 Dateiname = ID; viral und Vergleich fortlaufend nummeriert
     analysen\V01\                    messung.json, messung.md, bilder\, transkript.srt, analyse.md, merkmale.json
-    synthese\                        matrix.md, regelkandidaten.md, kennzahlen.json, regelwerk-entwurf.md
+    synthese\                        matrix.md, regelkandidaten.md, kennzahlen.json (+ .vorher.json), aenderungen.md
 ```
 Korpus-Namen: klein, mit Bindestrich, nach dem Format benannt, nicht nach einem Creator.
 
@@ -62,6 +65,6 @@ Trennzeichen Semikolon, eine Zeile je Video, Reihenfolge = Analysereihenfolge (w
 | `notiz` | z. B. „Paar mit V14“, „Serie Teil 2“ |
 
 ## 6. Beschaffung
-- Der Inhaber lädt die Videos selbst herunter und legt sie in `videos\` oder schickt sie. Claude lädt keine Videos von TikTok herunter (Nutzungsbedingungen; Downloads nur mit ausdrücklicher Freigabe).
+- Der Inhaber lädt die Videos selbst herunter und schickt sie im Chat (Anhang oder hineingezogen) oder legt sie in `Downloads` bzw. `_eingang\`; `scripts/aufnehmen.py` übernimmt sie in den Korpus (SKILL.md, Schnellablauf). Claude lädt keine Videos von TikTok herunter (Nutzungsbedingungen; Downloads nur mit ausdrücklicher Freigabe).
 - Die Zahlen notiert der Inhaber oder Claude von der öffentlichen Videoseite ([[Recherche-Methode und Grenzen]]), immer mit `abgerufen`.
 - Fehlen Zahlen, bleibt das Feld leer; die Synthese rechnet dann ohne diese Kennzahl.

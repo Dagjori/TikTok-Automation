@@ -81,7 +81,28 @@ def main():
     for f in fehler:
         print("FEHLER: ", f)
     print("Ergebnis:", "OK" if not fehler else f"{len(fehler)} Fehler")
+    desktop_abgleichen()
     return 1 if fehler else 0
+
+
+def desktop_abgleichen():
+    """Seit 07.11.2026 statt ZIP: Repo-Hirn direkt ins Desktop-Hirn spielen (tools/hirn_abgleich.py).
+    Ohne Desktop-Vault (Cloud, anderer Rechner) passiert nichts. Abschalten: --ohne-abgleich."""
+    if "--ohne-abgleich" in sys.argv:
+        return
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import hirn_abgleich
+        if not hirn_abgleich.VAULT.is_dir():
+            return
+        aktionen, konflikte = hirn_abgleich.abgleichen()
+        print(f"Desktop-Hirn: {len(aktionen)} Änderung(en) eingespielt, {len(konflikte)} Konflikt(e) ({hirn_abgleich.VAULT})")
+        for a in aktionen:
+            print("  " + a)
+        for k in konflikte:
+            print("  KONFLIKT " + k)
+    except Exception as e:  # die Prüfung selbst darf nie am Abgleich scheitern
+        print("Desktop-Hirn: Abgleich fehlgeschlagen:", e)
 
 
 if __name__ == "__main__":

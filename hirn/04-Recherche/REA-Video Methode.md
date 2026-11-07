@@ -35,7 +35,10 @@ Vorbild: „Reverse Engineer Anything“ (REA), übertragen von Programmen auf V
 ## Was analysiert wird (13 Bereiche)
 A Steckbrief und Erfolg · B Struktur und Phasen · C Hook (0–3 s) und Halt (3–8 s) · D Skript und Sprache · E Spannung und Dramaturgie · F Bild und Design · G Text im Bild · H Schnitt und Übergänge · I Bewegung und Animation · J Ton (Stimme, Musik, Soundeffekte) · K Call to Action und Bindung · L Plattform · M Erfolgshypothesen. Gemessen wird mit ffmpeg (Schnitte, Bewegung, Farben, Lautheit, Effekt-Kandidaten, Spannungsindex, Transkript mit Whisper); Bild, Text und Wirkung beurteilt Claude an Kontaktbögen und Spektren.
 
-## Ablauf
+## Neues Video nachlegen (Standardfall)
+Der Inhaber lädt ein Video im Chat hoch (oder legt es in `Downloads`). **Das ist der Auslöser; die einzige Rückfrage ist ein Klick auf den Account** (Simulierbar oder stelldirvor). Danach läuft alles automatisch: Aufnahme mit nächster ID und Doppelprüfung (`aufnehmen.py`), Messung, blinde Einzelanalyse, Synthese mit Änderungsbericht (`aenderungen.md`), Regelwerk-Entwurf nachziehen, Kurzbericht. Zahlen (Likes usw.) übernimmt Claude, wenn sie in der Nachricht oder auf einem Screenshot stehen; ohne Zahlen gilt das Video als viral (A), „schwach“ oder „Vergleich“ in der Nachricht macht es zum Vergleichsvideo. Eine Freigabe-Frage kommt nur, wenn sich eine Regel im echten Regelwerk ändern würde. Der Skill greift in jeder Sitzung, auch im Desktop-Ordner (Verweis unter `~/.claude/skills/rea-video/`).
+
+## Ablauf (ganzer Korpus)
 1. Korpus anlegen (lokal `C:\tiktok\rea-video\<korpus>\`, Videos vom Inhaber).
 2. Messen (`messen.py`) → 3. Einzelanalyse je Video nach Raster → 4. Synthese (`synthese.py`): Anteile, Stärke, Unterscheider, Korridore, Sättigung.
 5. Regelwerk-Entwurf dem Inhaber anklickbar vorlegen → 6. **nur freigegebene Regeln** ins Hirn, [[Entscheidungen Log]] nachziehen.
