@@ -124,6 +124,13 @@
    "text": "Kamera schwenkt näher an die Wagen"
   },
   {
+   "quelle": "Szene",
+   "t": 3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Wagen ziehen an den Laternen vorbei, Lichtspuren länger"
+  },
+  {
    "quelle": "Untertitel",
    "t": 3.17,
    "typ": "untertitel",
@@ -132,6 +139,13 @@
    "text": "wer fährt billiger?",
    "woerter": 3,
    "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Titel blendet aus, Tafel bleibt"
   },
   {
    "quelle": "Chip",

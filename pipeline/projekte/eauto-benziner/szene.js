@@ -360,7 +360,7 @@ async function start() {
 
   // ---------- Welt-Ereignisse (Protokoll für Ton und Prüfung; jede Zeile ist im Bild zu sehen) ----------
   const ev = (t, klang, text) => M.melde({ t, typ: "welt", klang, text });
-  ev(0.3, "pop", "Wagen rollen an, Scheinwerfer, Lichtspuren hinter beiden Wagen"); ev(1.4, "klick", "Kamera schiebt sich heran, Laternen ziehen vorbei"); ev(A.hGegen, "klick", "Titel läuft, Lichtkegel streicht über die Dächer"); ev(A.h5, "whoosh", "Kamera schwenkt näher an die Wagen");
+  ev(0.3, "pop", "Wagen rollen an, Scheinwerfer, Lichtspuren hinter beiden Wagen"); ev(1.4, "klick", "Kamera schiebt sich heran, Laternen ziehen vorbei"); ev(A.hGegen, "klick", "Titel läuft, Lichtkegel streicht über die Dächer"); ev(A.h5, "whoosh", "Kamera schwenkt näher an die Wagen"); ev(3.0, "klick", "Wagen ziehen an den Laternen vorbei, Lichtspuren länger"); ev(4.1, "klick", "Titel blendet aus, Tafel bleibt");
   ev(A.r15, "whoosh", "Kamera weitet, Chip 15.000 km"); ev(5.8, "klick", "Kamera gleitet zum Stromer, Laternen ziehen vorbei"); ev(6.5, "klick", "Kamera sinkt, Preisschild kündigt sich an"); ev(A.rStromer + 0.5, "klick", "Kamera auf den Stromer (Cyan)"); ev(A.r4599, "ding", "Preisschild 45.990 € über dem Stromer");
   ev(A.rBenz + 0.5, "klick", "Kamera auf den Benziner (Orange)"); ev(A.r3779, "ding", "Preisschild 37.790 € über dem Benziner"); ev(A.rGez, "whoosh", "Kamera zurück, Chips Wertverlust, Versicherung"); ev(A.rWert, "klick", "Chips Werkstatt, Energie");
   ev(A.fKlar, "whoosh", "Lichtkegel und Spot auf den Benziner"); ev(A.f8200, "ding", "Chip 8.200 € billiger, Benziner leuchtet"); ev(A.fOder, "klick", "Licht hält, Kamera ruhig");
