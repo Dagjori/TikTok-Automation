@@ -330,5 +330,64 @@
   "59–63 s Warum: Erklärgrafik Balken ‚8.200 € Startnachteil‘ gegen die Ersparnis je Strompreis (Fahrt, kein Zoom).",
   "63–67 s Pointe: Prämien-Chip 3.000 € fällt auf den Stromer, Runde 3 springt um: 47.550 € vs 50.025 € (Akzent).",
   "67–70 s Schlusskarte: ‚Nicht der Motor entscheidet. Sondern die Steckdose.‘ – ‚Steckdose‘ in Cyan; Rückkehr zum Anfangsbild optional."
- ]
+ ],
+ "lern_notizen": {
+  "thema": "Elektroauto oder Benziner: Vollkosten Kompaktklasse nach 5 Jahren, vier Ladeszenarien (ADAC Okt. 2026)",
+  "frage": "Wer fährt in 5 Jahren billiger?",
+  "laenge_s": 79.93,
+  "hook": "Strom gegen Benzin. Fünf Jahre – wer fährt BILLIGER?",
+  "hook_typ": "Duell-Frage (3-Wort-Satz, beide Seiten)",
+  "stil": "17 Nachtstadt-Miniatur (Nachtstraße nach Regen)",
+  "helligkeit": "dunkel",
+  "zoom": "ja bei Wendung 1, „Und am Ende“, Stromer vorn und Prämie; sonst Fahrt und Schwenk",
+  "animationen": [
+   {
+    "t": 0.56,
+    "art": "kamerafahrt",
+    "was": "Schub heran an beide Wagen"
+   },
+   {
+    "t": 6.88,
+    "art": "kamera",
+    "was": "Fahrt zum Stromer"
+   },
+   {
+    "t": 30.45,
+    "art": "zoom+lichtwechsel",
+    "was": "Wendung 1, Stromer"
+   },
+   {
+    "t": 51.92,
+    "art": "kamerafahrt",
+    "was": "Haus mit Solardach"
+   },
+   {
+    "t": 59.76,
+    "art": "zoom",
+    "was": "Stromer vorn"
+   }
+  ],
+  "licht": "Spot und Lichtkegel wechseln auf den jeweils Führenden (Benziner bis 58,9 s, danach Stromer), Solarmodule glühen ab 54 s, Strahlen steigen bis zum Kipp-Moment",
+  "effekte": [
+   "Preisschilder über den Wagen (Kaufpreis, dann laufender Kostenzähler)",
+   "Lichtspuren hinter den Wagen",
+   "Führungswechsel der Tafel bei 58,9 s",
+   "Abdunkeln zur Schlusskarte ab 76,8 s"
+  ],
+  "zeitpunkte": {
+   "wendung_1": 30.45,
+   "kipp": 51.92,
+   "ergebnis": 60.52,
+   "warum": 67.6,
+   "pointe": 72.36,
+   "schlusskarte": 76.76
+  },
+  "tempo": {
+   "woerter": 160,
+   "wps": 1.89,
+   "silben_s": 4.25
+  },
+  "caption": "Elektroauto oder Benziner – was ist nach 5 Jahren wirklich billiger? ⚡ Ich hab's simuliert. Wo lädst du: zu Hause oder an der Säule? 👇 #elektroauto #autokosten #benziner #wissen #simulation",
+  "besonderheiten": "Zähler: Stromer-Zähler fällt von Runde zu Runde (53.250 → 51.750 → 50.550 → 48.750 €), Benziner konstant 50.025 €; Tempo 12b unter dem Korridor (lange Zahlwörter), Ausnahme beantragt"
+ }
 }
