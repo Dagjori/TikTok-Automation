@@ -70,7 +70,7 @@ async function start() {
   const gischt = new Puffs(szene, { max: 400, schatten: 0.1, renderOrder: 12 });
   const staubP = new Partikel(szene, { art: "staub", anzahl: 1600, box: [30, 8, 30], seed: 6, groesse: 0.03, farbe: "#E8D8B8" });
   const geier = new Voegel(szene, { anzahl: 3, seed: 91, farbe: "#26211E", spannweite: 3.2 }).schwarm({ zentrum: [40, 70, -260], radius: 140, hoehe: 25, tempo: 12, anzahl: 3 });
-  const moewen = new Voegel(szene, { anzahl: 18, seed: 93, farbe: "#F0EDE6", spannweite: 1.1 }).schwarm({ zentrum: [4, 6, -34], radius: 36, hoehe: 10, tempo: 8, anzahl: 18 });
+  const moewen = new Voegel(szene, { anzahl: 18, seed: 93, farbe: "#F4F1EA", spannweite: 2.6 }).schwarm({ zentrum: [10, 5, -38], radius: 18, hoehe: 8, tempo: 5, anzahl: 18 });
   const sterne = (() => { const n = 1100, p = new Float32Array(n * 3); for (let i = 0; i < n; i++) { const a = hash(i, 1) * 6.283, z = 0.04 + 0.96 * hash(i, 2), r = Math.sqrt(1 - z * z); p.set([Math.cos(a) * r * 30000, z * 30000, Math.sin(a) * r * 30000], i * 3); }
     const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(p, 3));
     const m = new THREE.PointsMaterial({ color: "#FFFFFF", size: 2.4, sizeAttenuation: false, transparent: true, opacity: 0, fog: false, depthWrite: false });
