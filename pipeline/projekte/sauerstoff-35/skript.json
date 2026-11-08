@@ -1,0 +1,582 @@
+{
+ "skript_id": "acc2-2026-11-08-mittag",
+ "skript_quelle": "acc2-2026-11-08-mittag",
+ "skill": "video-produktion",
+ "konto": "stelldirvor",
+ "format": "referenz_pov",
+ "titel": "Was wäre, wenn unsere Luft 35 % Sauerstoff hätte?",
+ "titelfrage": "Was wäre, wenn unsere Luft 35 % Sauerstoff hätte?",
+ "stil": "16 Lunar-POV, Grundwelt Mischwald mit Bach und Lichtung (engine/welt_waldbach.js, Erstbau 08.11.2026)",
+ "thema": "Sauerstoffanteil der Luft steigt von heute 20,9 % auf 35 % (Schätzung für das Karbon): Brände breiten sich leichter aus, Libellen werden über viele Generationen größer bis zur Spannweite der Urzeitlibelle Meganeura (ca. 70 cm). Ob der Sauerstoff die Riesen ermöglichte, ist umstritten (Nature 2026).",
+ "welt": "Mischwald mit Bach und Lichtung (Welttyp Wald und Lichtung; Erstbau nötig, im Repo liegt unversioniert welt_sommerwiese.js als mögliche Basis)",
+ "standpunkt": "ebenerdig auf einer Waldlichtung neben einem moosigen Baumstumpf, Blick über den Bach zum Waldrand",
+ "tageszeit_verlauf": "Morgen (0–12 s) → Mittag mit aufziehendem Gewitter (12–20 s) → Gewitterabend mit Blitz und Waldbrand (20–27 s) → Nacht mit Glut (27–31 s) → heller Vormittag nach dem Zeitraffersprung (31–48 s) → goldener Spätnachmittag (48–70 s)",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 8,
+   "faktor": "Echtzeit (Countdown)",
+   "anzeige": "ANSTIEG IN 0:08–0:00"
+  },
+  {
+   "von": 8,
+   "bis": 27,
+   "faktor": "1 s = 5 Jahre (95 Jahre)",
+   "anzeige": "SAUERSTOFF 20,9 → 35,0 %, Statuszeile 1 SEKUNDE = 5 JAHRE"
+  },
+  {
+   "von": 27,
+   "bis": 30,
+   "faktor": "Echtzeit (Nachglühen)",
+   "anzeige": "SAUERSTOFF 35,0 % (steht), Statuszeile WIE IM KARBON"
+  },
+  {
+   "von": 30,
+   "bis": 50,
+   "faktor": "1 s = 100.000 Jahre (2 Mio. Jahre)",
+   "anzeige": "SPANNWEITE LIBELLE 11 → 70 cm, Statuszeile 1 SEKUNDE = 100.000 JAHRE"
+  },
+  {
+   "von": 50,
+   "bis": 70,
+   "faktor": "Echtzeit (Anflug, Landung)",
+   "anzeige": "ABSTAND 20,0 → 0,5 m, ab 58 s HIER"
+  }
+ ],
+ "zeitraffer_skript": "0–8 s Echtzeit (Countdown) · 8–27 s 1 Sekunde = 5 Jahre (Sauerstoff steigt, ca. 95 Jahre) · 27–30 s Echtzeit-Nachglühen · 30–50 s 1 Sekunde = 100.000 Jahre (Libellen werden größer, ca. 2 Mio. Jahre) · 50–70 s Echtzeit (Anflug, Landung)",
+ "kamera": [
+  {
+   "t": 0,
+   "art": "ruhe",
+   "was": "ruhiger Blick vom Ufer auf den Bach mit Libellen (atmen)"
+  },
+  {
+   "t": 6,
+   "art": "fahrt",
+   "was": "langsame Fahrt vom Bach zurück auf die Lichtung neben den Baumstumpf, Blick hebt sich zum Waldrand (vor 8 s)"
+  },
+  {
+   "t": 15,
+   "art": "schwenk",
+   "was": "Blick zur hohen Fichte unter der Gewitterfront"
+  },
+  {
+   "t": 19.7,
+   "art": "zoom",
+   "was": "kurzer Zoom auf den Blitzeinschlag (60° → 52°)"
+  },
+  {
+   "t": 22,
+   "art": "schwenk",
+   "was": "folgt dem Feuer durchs Unterholz"
+  },
+  {
+   "t": 30.4,
+   "art": "schwenk",
+   "was": "Blick sinkt auf die austreibenden Farne"
+  },
+  {
+   "t": 34.5,
+   "art": "schwenk",
+   "was": "ruhiger Schwenk mit den kreisenden Libellen"
+  },
+  {
+   "t": 50,
+   "art": "schwenk",
+   "was": "folgt der anfliegenden Riesenlibelle"
+  },
+  {
+   "t": 54,
+   "art": "zoom",
+   "was": "Blickwinkel öffnet sich (60° → 66°), Libelle füllt das Bild"
+  },
+  {
+   "t": 60,
+   "art": "schnitt",
+   "was": "harter Schnitt in die Nahsicht am Baumstumpf (Höhepunkt)"
+  },
+  {
+   "t": 60,
+   "art": "fahrt",
+   "was": "langsame Fahrt auf den Baumstumpf zu, Landung"
+  }
+ ],
+ "kamera_skript": "0–6 s ruhiger Blick auf den Bach mit Libellen; ab 6 s langsame Fahrt vom Bach zur Lichtung; 20 s kurzer Zoom auf den Blitzeinschlag; 35–50 s ruhiger Schwenk mit den kreisenden Libellen; 50–58 s Schwenk folgt der anfliegenden Riesenlibelle; 60 s ein harter Schnitt in die Nahsicht (Libelle neben dem Baumstumpf)",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 8,
+   "etikett": "ANSTIEG IN",
+   "start": "0:08",
+   "ende": "0:00",
+   "einheit": "m:ss",
+   "unter": "LUFT HEUTE: 20,9 % → (4 s) WALD AHNUNGSLOS"
+  },
+  {
+   "von_s": 8,
+   "bis_s": 30,
+   "etikett": "SAUERSTOFF",
+   "start": "20,9",
+   "ende": "35,0",
+   "einheit": "%",
+   "unter": "1 SEKUNDE = 5 JAHRE → (14 s) BRÄNDE NEHMEN ZU → (20 s) WALDBRAND → (27 s) WIE IM KARBON"
+  },
+  {
+   "von_s": 30,
+   "bis_s": 50,
+   "etikett": "SPANNWEITE LIBELLE",
+   "start": "11",
+   "ende": "70",
+   "einheit": "cm",
+   "unter": "1 SEKUNDE = 100.000 JAHRE → (40 s) GENERATION FÜR GENERATION → (46 s) SO GROSS WIE EIN FALKE"
+  },
+  {
+   "von_s": 50,
+   "bis_s": 58,
+   "etikett": "ABSTAND",
+   "start": "20,0",
+   "ende": "0,5",
+   "einheit": "m",
+   "unter": "ECHTZEIT → (54 s) IM ANFLUG"
+  },
+  {
+   "von_s": 58,
+   "bis_s": 70,
+   "etikett": "HIER",
+   "start": "HIER",
+   "ende": "HIER",
+   "einheit": "",
+   "unter": "70 CM SPANNWEITE"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Ein stiller Morgen am Waldbach.",
+   3.15
+  ],
+  [
+   8.4,
+   "Dann steigt der Sauerstoff in der Luft.",
+   3.55
+  ],
+  [
+   12.4,
+   "Über dem Wald ziehen Gewitterwolken auf.",
+   3.35
+  ],
+  [
+   16.2,
+   "Ab 25 Prozent brennen auch feuchte Wälder leichter.",
+   3.15
+  ],
+  [
+   19.8,
+   "Dann schlägt ein Blitz in die Fichte.",
+   3.15
+  ],
+  [
+   23.4,
+   "Das Feuer frisst sich durchs feuchte Unterholz.",
+   3.15
+  ],
+  [
+   27,
+   "Der Anteil erreicht 35 Prozent.",
+   3.55
+  ],
+  [
+   31,
+   "Asche fällt, und die Farne treiben aus.",
+   3.55
+  ],
+  [
+   35,
+   "Dann wachsen die Libellen, Generation um Generation.",
+   4.2
+  ],
+  [
+   39.8,
+   "Ihre Flügel spannen 40 Zentimeter.",
+   4.2
+  ],
+  [
+   46.8,
+   "Dann spannen sie 60 Zentimeter.",
+   3.35
+  ],
+  [
+   50.6,
+   "Eine von ihnen hält auf dich zu.",
+   3.35
+  ],
+  [
+   54.4,
+   "Ihr Schatten gleitet über die Lichtung.",
+   4.2
+  ],
+  [
+   63,
+   "Sie landet auf dem Baumstumpf neben dir.",
+   3.35
+  ],
+  [
+   66.8,
+   "So ähnlich war die Luft vor 300 Millionen Jahren.",
+   3.1
+  ]
+ ],
+ "faktenzeile": "KARBON, VOR RUND 300 MIO. JAHREN · SCHÄTZUNGEN BIS 35 % SAUERSTOFF · LIBELLEN MIT BIS ZU 70 CM SPANNWEITE",
+ "rechenweg": "Sauerstoff (Phase 2, linear 8–27 s): O2(t) = 20,9 + (t − 8)/19 · 14,1 → bei 16,2 s = 26.99 % (Satz ‚ab 25 Prozent‘ passt, Schwelle 25 % bei 13.52 s), bei 27 s = 35,0 %. Zeitraffer Phase 2: 19 s × 5 Jahre = 95 Jahre (Annahme). Spannweite (Phase 3, linear 30–50 s): S(t) = 11 + (t − 30)/20 · 59 cm → bei 39,8 s = 39.91 cm (Satz ‚40 Zentimeter‘), bei 46,8 s = 60.56 cm (Satz ‚60 Zentimeter‘), bei 50 s = 70 cm. Zeitraffer Phase 3: 20 s × 100.000 Jahre = 2000000 Jahre (Annahme). Meganeura 70 cm gegen Königslibelle 11 cm = Faktor 6.36. Abstand (Phase 4, linear 50–58 s): 20 m → 0,5 m, bei 54,4 s = 9.28 m. Nachgerechnet mit Python (cockpit/daten/tmp/skripte_acc2_0811.py).",
+ "rechnung_code": "pipeline/sim/sauerstoff_35.mjs (Test sauerstoff_35.test.mjs)",
+ "zahlen": {
+  "sauerstoff_heute_prozent": 20.95,
+  "sauerstoff_karbon_schaetzung_max_prozent": 35,
+  "sauerstoff_karbon_andere_modelle_prozent": "25–30",
+  "brand_schwelle_groessere_flaechen_prozent": 25,
+  "meganeura_spannweite_cm": 70,
+  "koenigslibelle_spannweite_cm": 11,
+  "libellen_31_prozent_o2_groesser_bis_prozent": 15,
+  "fruchtfliegen_selektion_11_generationen_groesser_prozent": 15,
+  "vor_millionen_jahren": 300,
+  "o2_bei_16_2": 26.99,
+  "o2_ueber_25_ab_s": 13.52,
+  "o2_bei_27": 35,
+  "spann_bei_39_8": 39.91,
+  "spann_bei_46_8": 60.56,
+  "raffer_o2_jahre": 95,
+  "raffer_libelle_jahre": 2000000,
+  "faktor_meganeura_zu_koenigslibelle": 6.36,
+  "abstand_bei_54_4": 9.28
+ },
+ "annahmen": [
+  "(A) Gedankenexperiment: Der Sauerstoff steigt in ca. 95 Jahren von 20,9 auf 35 % (Tempo frei gewählt, real dauerten solche Änderungen Jahrmillionen).",
+  "(A) Libellen wachsen in ca. 2 Mio. Jahren bis 70 cm Spannweite; das Tempo ist nicht belegt, die Endgröße entspricht den Fossilien des Karbons.",
+  "(A) Ob hoher Sauerstoff die Riesenlibellen ermöglichte, ist umstritten (Nature 2026: Sauerstoff begrenzt die Größe fliegender Insekten wohl nicht). Das Video zeigt nur ‚was wäre, wenn‘, der Schlusssatz sagt ‚so ähnlich war die Luft‘, nicht ‚deshalb waren sie so groß‘.",
+  "(S) ‚Ab 25 Prozent brennen auch feuchte Wälder leichter‘: abgeleitet aus Belcher et al. 2010 (über 25 % könnten viel größere Flächen brennen, hoher Sauerstoff trifft vor allem feuchte Ökosysteme).",
+  "(A) Startwert 11 cm = Königslibelle, größte Libelle Mitteleuropas.",
+  "(A) Farne treiben nach dem Brand aus: übliches Pionierverhalten, kein Sauerstoffeffekt behauptet.",
+  "(A) Keine Tiere in Not: das Feuer läuft über Unterholz und Totholz, Tiere sind vorher weg."
+ ],
+ "quellen": [
+  "(F) Berner, R. A. (2001): Modeling atmospheric O2 over Phanerozoic time, Geochimica et Cosmochimica Acta; Exkursion bis 35 % im Permokarbon – https://repository.geologyscience.ru/items/5f703fbf-913e-4cc7-8d63-3cf83ed74156/full",
+  "(F) Krause et al. (2018): Stepwise oxygenation of the Paleozoic atmosphere, Nature Communications; Höchstwert ca. 25–30 % um 300 Mio. Jahre – https://www.nature.com/articles/s41467-018-06383-y",
+  "(F) Belcher et al. (2010): Baseline intrinsic flammability of Earth's ecosystems …, PNAS; ‚If O2 significantly increased (> 25%), this would allow much larger areas of land to burn‘ – https://pmc.ncbi.nlm.nih.gov/articles/PMC3012516",
+  "(F) Meganeura, Fossil aus Commentry (Frankreich), Spannweite bis ca. 70 cm, Guinness World Records – https://www.guinnessworldrecords.com/world-records/76051-largest-prehistoric-insect",
+  "(F) wissenschaft.de, 07.09.2026: Als Luftsauerstoff die Regie übernahm; Karbon 30–35 %, heute 21 %, Meganeura teils über 70 cm – https://wissenschaft.de/artikel/als-luftsauerstoff-die-regie-uebernahm",
+  "(F) Trinity College Dublin / Nature, 25.03.2026: Why are there no gigantic dragonflies …; Sauerstoff begrenzt Insektengröße wohl nicht – https://www.tcd.ie/news_events/articles/2026/gigantic-dragonflies/ und https://www.derstandard.at/story/3000000314233/",
+  "(F) Arizona State University, 2010 (VandenBrooks, GSA): Libellen in 31 % Sauerstoff bis zu 15 % größer – https://news.asu.edu/content/high-oxygen-super-sizes-dragonflies-asu-study-reports",
+  "(F) Klok & Harrison (2009), PLoS ONE: Fruchtfliegen in 21 und 40 kPa O2 nach 11 Generationen Selektion ca. 15 % größer – https://asu.elsevierpure.com/en/publications/atmospheric-hypoxia-limits-selection-for-large-body-size-in-insec",
+  "(F) Spektrum Lexikon Biologie: Große Königslibelle bis ca. 11 cm Spannweite – https://www.spektrum.de/lexikon/biologie-kompakt/anisoptera/663",
+  "(F) Zusammensetzung trockener Luft: 20,95 % Sauerstoff – https://www.chemie.de/lexikon/Sauerstoff.html"
+ ],
+ "caption": "Was wäre, wenn die Luft 35 % Sauerstoff hätte? 🔥 Ich hab’s durchgespielt. Lag es am Sauerstoff oder an fehlenden Feinden? 👇 #sauerstoff #urzeit #libellen #wissen #waswaerewenn",
+ "dramaturgie": [
+  "0–4 s: voller Morgenwald, Bach glitzert, Libellen (11 cm) jagen, Lichtstrahlen durch die Kronen; erster Welteffekt (Wind im Farn, Libellenflug) vor 2 s, Countdown läuft – die Welt ist ahnungslos.",
+  "6 s: langsame Fahrt vom Bach zur Lichtung beginnt (Kamera vor 8 s).",
+  "8 s Ereignis auf Null: Licht wird klarer und härter, leichtes Aufleuchten, Ton kippt (tieferes Rauschen); Anzeige springt auf SAUERSTOFF 20,9 und zählt.",
+  "12–20 s Stufe 1: Zeitraffer, Wolken ziehen schnell, Gewitterfront baut sich auf; Statuszeile BRÄNDE NEHMEN ZU.",
+  "20 s Stufe 2 (visuell besonders): Blitz schlägt in die Fichte, kurzer Zoom, Flammen laufen ungewöhnlich schnell durchs feuchte Unterholz, Funkenflug, Orange kippt ins Bild; keine Tiere in Not.",
+  "27–31 s: Nacht, Glut leuchtet hell nach, Asche fällt; 35 % erreicht – Atempause höchstens 3 s.",
+  "31 s Stufe 3: Zeitraffersprung (1 s = 100.000 Jahre), heller Vormittag, Farne treiben dicht aus, Lichtung wird grün.",
+  "35–50 s Stufe 4: Libellen werden sichtbar von Schnitt zu Schnitt größer (Schwarm über dem Bach, Flügelglanz im Gegenlicht), Spannweite zählt 11 → 70 cm; Statuszeile SO GROSS WIE EIN FALKE.",
+  "50–58 s Annäherung: eine Riesenlibelle löst sich, fliegt in Echtzeit auf die Kamera zu, Schatten gleitet über die Lichtung, Flügelsurren als Riser, Abstand 20 → 0,5 m.",
+  "60 s Höhepunkt HIER: harter Schnitt in die Nahsicht, 70-cm-Libelle schwebt direkt vor dir im goldenen Licht, Flügeladern glänzen; lautester Punkt, kein Satz.",
+  "62–70 s Nachspiel: Libelle landet auf dem Baumstumpf, Flügel zittern, Pollen und Licht treiben; letzter Satz mit Realitätsbezug.",
+  "70–80 s: Abblende, Abspann mit Titelfrage und Faktenzeile.",
+  "Weltvielfalt: vorher Meer-Flut (Wüste/Salzbecken, erhöht, Klippe) → jetzt Wald, ebenerdig, Ende ‚Grün/Tier‘; anderer Welttyp, anderer Standpunkt-Typ."
+ ],
+ "originalitaet": "Suchen 07./08.11.2026: ‚was wäre wenn Sauerstoff 35 Prozent Video deutsch Rieseninsekten‘, ‚was wäre wenn mehr Sauerstoff in der Luft Rieseninsekten TikTok YouTube deutsch‘ → kein deutsches Was-wäre-wenn-Video gefunden; nur Erklärformate (ZDFinfo ‚Verborgene Welten: Rieseninsekten der Vorzeit‘ 2020, Artikel). Englisch: ‚What 35% Oxygen Did to Life on Earth‘ (Endling Echoes). Unsere Fassung: POV im heutigen Mischwald, eigene Sätze und Dramaturgie.",
+ "bewegungsplan": [
+  [
+   0,
+   "Morgensonne im Gegenlicht über dem Bach, Glitzern auf dem Wasser, Libellen (11 cm) jagen über dem Wasser, Gras wiegt im Wind",
+   1
+  ],
+  [
+   1.6,
+   "Libellen springen von Punkt zu Punkt, dünne Nebelschwaden treiben über dem Wasser",
+   1
+  ],
+  [
+   3,
+   "Lichtstrahlen und Staub im Gegenlicht, Glitzern wandert mit der Strömung",
+   1
+  ],
+  [
+   5.5,
+   "Vögel kreisen über dem Wald; Fahrt vom Ufer zurück auf die Lichtung beginnt",
+   2
+  ],
+  [
+   8,
+   "EREIGNIS: Anstieg beginnt – Aufleuchten, Licht wird klar und hart, Nebel löst sich, Tonkante",
+   3
+  ],
+  [
+   10.5,
+   "Zeitraffer: Wolken ziehen schnell, Sonne steigt auf Mittag, Fahrt erreicht die Lichtung",
+   2
+  ],
+  [
+   12.4,
+   "Gewitterfront zieht auf, Libellen verschwinden, Licht wird grau",
+   3
+  ],
+  [
+   13.2,
+   "Vögel fliehen vor dem Gewitter",
+   3
+  ],
+  [
+   15.6,
+   "Wetterleuchten in der Wolkendecke, Wind in den Kronen nimmt zu",
+   3
+  ],
+  [
+   16.5,
+   "Regen setzt ein, Ringe auf dem Bach",
+   3
+  ],
+  [
+   17.7,
+   "zweites Wetterleuchten, Himmel fast schwarz",
+   3
+  ],
+  [
+   19.9,
+   "Blitz schlägt in die hohe Fichte, kurzer Zoom, Donnerschlag, Kamera zuckt",
+   4
+  ],
+  [
+   20.6,
+   "Fichte brennt, Funkenflug, Flammen springen ins Unterholz",
+   4
+  ],
+  [
+   23,
+   "Feuerfront läuft durchs Unterholz bis zum Bach, Rauch steigt, Orange kippt ins Bild",
+   4
+  ],
+  [
+   24.6,
+   "Wetterleuchten über dem brennenden Wald",
+   4
+  ],
+  [
+   27,
+   "Nacht: Flammen sinken zu Glut, Sterne, Rauch",
+   3
+  ],
+  [
+   28.5,
+   "Asche fällt vor der Linse, Glut glimmt am Boden",
+   3
+  ],
+  [
+   30.6,
+   "Zeitraffersprung (1 s = 100.000 Jahre): Licht kehrt zurück",
+   3
+  ],
+  [
+   31.5,
+   "verkohlter Boden, Farne treiben aus und entrollen sich",
+   3
+  ],
+  [
+   33.5,
+   "Boden ergrünt, Fichtenstumpf verschwindet, Lichtstrahlen im Vormittag",
+   3
+  ],
+  [
+   35,
+   "Libellen erscheinen über dem Bach und kreisen, Schwenk folgt",
+   3
+  ],
+  [
+   37.5,
+   "Libellen sichtbar größer (ca. 26 cm), Flügel glänzen im Gegenlicht",
+   3
+  ],
+  [
+   40,
+   "Spannweite 40 cm, Schwarm kreist dichter vor dir",
+   4
+  ],
+  [
+   42.5,
+   "Wolken jagen (Zeitraffer), Licht wandert",
+   3
+  ],
+  [
+   44.5,
+   "Lichtstrahlen werden golden, Libellen über 50 cm",
+   4
+  ],
+  [
+   46.6,
+   "eine Riesenlibelle löst sich aus dem Schwarm und fliegt über den Bach davon",
+   4
+  ],
+  [
+   49,
+   "goldener Spätnachmittag, Sonne im Gegenlicht",
+   4
+  ],
+  [
+   50,
+   "Riesenlibelle wendet in 20 m und fliegt auf dich zu (Echtzeit)",
+   4
+  ],
+  [
+   52.5,
+   "Anflug, Flügelschlag wird hörbar, Schwarm im Hintergrund",
+   4
+  ],
+  [
+   54.4,
+   "Schatten der Libelle gleitet über die Lichtung auf dich zu",
+   5
+  ],
+  [
+   56,
+   "Libelle füllt immer mehr das Bild, Blickwinkel öffnet sich",
+   5
+  ],
+  [
+   58,
+   "HIER: Riesenlibelle schwebt eine Armlänge vor dir",
+   5
+  ],
+  [
+   60,
+   "harter Schnitt in die Nahsicht am Baumstumpf (Höhepunkt)",
+   5
+  ],
+  [
+   62,
+   "Libelle schwebt neben dem Stumpf, Pollen im Gegenlicht, Fahrt auf den Stumpf zu",
+   4
+  ],
+  [
+   63.4,
+   "Landung auf dem moosigen Baumstumpf",
+   4
+  ],
+  [
+   65.5,
+   "Flügel kommen zur Ruhe und zittern, Pollen treiben",
+   3
+  ],
+  [
+   68,
+   "Licht flirrt, Gras wiegt, ruhiges Nachspiel",
+   2
+  ],
+  [
+   70,
+   "Abblende auf Schwarz",
+   1
+  ]
+ ],
+ "bild_text_abgleich": [
+  [
+   4.8,
+   "Ein stiller Morgen am Waldbach.",
+   "Morgensonne im Gegenlicht über dem Waldbach, Glitzern, Nebelschwaden, kleine Libellen über dem Wasser"
+  ],
+  [
+   8.4,
+   "Dann steigt der Sauerstoff in der Luft.",
+   "Anzeige springt bei 8,0 s von 0:00 auf SAUERSTOFF 20,9 % und zählt; Licht wird klar und hart, Nebel löst sich"
+  ],
+  [
+   12.4,
+   "Über dem Wald ziehen Gewitterwolken auf.",
+   "graue Wolkendecke und Gewitterturm ziehen über den Wald, Licht wird grau, Vögel fliehen"
+  ],
+  [
+   16.2,
+   "Ab 25 Prozent brennen auch feuchte Wälder leichter.",
+   "Anzeige 27,0 % (über 25 %), Regen, Wetterleuchten über dem Wald; Statuszeile BRÄNDE NEHMEN ZU"
+  ],
+  [
+   19.8,
+   "Dann schlägt ein Blitz in die Fichte.",
+   "Blitz schlägt bei 19,9 s in die Spitze der hohen Fichte, kurzer Zoom, Fichte fängt Feuer"
+  ],
+  [
+   23.4,
+   "Das Feuer frisst sich durchs feuchte Unterholz.",
+   "Flammenfront läuft über den Waldboden bis ans Bachufer, Rauch und Funken; Statuszeile WALDBRAND"
+  ],
+  [
+   27,
+   "Der Anteil erreicht 35 Prozent.",
+   "Anzeige 35,0 % ab 27,0 s, Nacht mit Glut und Rauch; Statuszeile WIE IM KARBON"
+  ],
+  [
+   31,
+   "Asche fällt, und die Farne treiben aus.",
+   "Asche fällt vor der Linse, auf dem verkohlten Boden entrollen sich Farne (31–35 s)"
+  ],
+  [
+   35,
+   "Dann wachsen die Libellen, Generation um Generation.",
+   "Libellenschwarm über dem Bach, Spannweite in der Anzeige wächst sichtbar mit (1 s = 100.000 Jahre)"
+  ],
+  [
+   39.8,
+   "Ihre Flügel spannen 40 Zentimeter.",
+   "Anzeige SPANNWEITE LIBELLE 39,9 cm, Libellen deutlich größer"
+  ],
+  [
+   46.8,
+   "Dann spannen sie 60 Zentimeter.",
+   "Anzeige 60,6 cm, eine Riesenlibelle löst sich aus dem Schwarm"
+  ],
+  [
+   50.6,
+   "Eine von ihnen hält auf dich zu.",
+   "Anzeige ABSTAND 20 → 0,5 m, die Libelle fliegt frontal auf die Kamera zu"
+  ],
+  [
+   54.4,
+   "Ihr Schatten gleitet über die Lichtung.",
+   "Schatten der Libelle wandert über die sonnige Wiese vor dir (Abstand 9,3 m)"
+  ],
+  [
+   63,
+   "Sie landet auf dem Baumstumpf neben dir.",
+   "Nahsicht: Libelle setzt sich 63,4–65,5 s auf den moosigen Baumstumpf"
+  ],
+  [
+   66.8,
+   "So ähnlich war die Luft vor 300 Millionen Jahren.",
+   "Libelle (70 cm) ruht auf dem Stumpf im goldenen Licht, Pollen treiben"
+  ]
+ ],
+ "korrekturen": [
+  {
+   "feld": "anzeige_plan[4].etikett",
+   "alt": "HIER (als Etikett)",
+   "neu": "Etikett ABSTAND bleibt, Zahl „HIER“, Statuszeile „70 CM SPANNWEITE“",
+   "quelle": "hirn/03-stelldirvor-pov/Design Account 2.md (beim Höhepunkt Zahl „HIER“ ohne Einheit)",
+   "grund": "Darstellung nach Design-Regel; Inhalt unverändert",
+   "zeit": "2026-11-08T00:23:25.409Z"
+  },
+  {
+   "feld": "saetze[*].dauer",
+   "alt": "nur t_ca",
+   "neu": "Standzeit je Satz bis 0,45 s vor dem nächsten Satz, höchstens 4,2 s, letzter bis 69,9 s (3,1 s)",
+   "quelle": "hirn/03-stelldirvor-pov/Ablauf Account 2.md (Satztakt)",
+   "grund": "Zeiten gesetzt, Text 1:1",
+   "zeit": "2026-11-08T00:23:25.410Z"
+  }
+ ],
+ "hinweise_eingang": [
+  "Zeitraffer 8–27 s (1 s = 5 Jahre) zeigt Gewitter, Blitz und Brand wie in Echtzeit: dramaturgisch verdichtet (Brände nehmen zu), so im Skript geplant; Anzeige und Statuszeile weisen den Faktor aus.",
+  "Caption 175 Zeichen (Richtwert ca. 150) – unverändert aus dem Skript übernommen.",
+  "Buffer: meer-flut (acc2-2026-11-07-mittag) ist laut Buffer-Log ebenfalls auf So 08.11. 09:30 (Kanal stelldirvor.pov) geplant – gleicher Termin wie dieser Slot."
+ ]
+}

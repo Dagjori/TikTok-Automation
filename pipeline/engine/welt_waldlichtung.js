@@ -91,7 +91,7 @@ export function saison(s, w) {
 
 // ----------------------------------------------------------------------------------------------- Geometrie-Bausteine
 /** Teile zu einer Geometrie verschmelzen: { g, c (Helligkeit | [r,g,b] | f(x,y,z)→Helligkeit), kc, kz } */
-function sammle(teile, { farbig = false } = {}) {
+export function sammle(teile, { farbig = false } = {}) {
   const geos = teile.map((t) => (t.g.index ? t.g.toNonIndexed() : t.g));
   let n = 0; for (const g of geos) n += g.getAttribute("position").count;
   const pos = new Float32Array(n * 3), col = new Float32Array(n * 3), kc = new Float32Array(n * 3), kz = new Float32Array(n), nor = new Float32Array(n * 3);
@@ -116,14 +116,14 @@ function sammle(teile, { farbig = false } = {}) {
   if (!nor.some((v) => v !== 0)) out.computeVertexNormals();
   return out;
 }
-function zweig(a, b, r0, r1, c) {         // Zylinder von a nach b
+export function zweig(a, b, r0, r1, c) {         // Zylinder von a nach b
   const A = new THREE.Vector3(...a), B = new THREE.Vector3(...b), L = A.distanceTo(B);
   const g = new THREE.CylinderGeometry(r1, r0, L, 5, 1); g.translate(0, L / 2, 0);
   const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), B.clone().sub(A).normalize());
   g.applyQuaternion(q); g.translate(A.x, A.y, A.z);
   return { g, c };
 }
-function klumpe(zentrum, r, seed, hell, flach = 0.82) {   // Laubballen: Ikosaeder mit Unregelmäßigkeit
+export function klumpe(zentrum, r, seed, hell, flach = 0.82) {   // Laubballen: Ikosaeder mit Unregelmäßigkeit
   const g = new THREE.IcosahedronGeometry(r, 1), p = g.getAttribute("position");
   for (let j = 0; j < p.count; j++) {
     const x = p.getX(j), y = p.getY(j), z = p.getZ(j), f = 1 + 0.16 * (hash(Math.round((x + 9) * 31 + (z + 9) * 17), seed) - 0.5);
@@ -135,7 +135,7 @@ function klumpe(zentrum, r, seed, hell, flach = 0.82) {   // Laubballen: Ikosaed
 }
 
 /** Buche (Meter): Stamm 9 m, Äste in die Krone, ca. 17 Laubballen; Höhe ≈ 21 m */
-function bucheGeo(seed, { gross = 1 } = {}) {
+export function bucheGeo(seed, { gross = 1 } = {}) {
   const tr = [], kr = [];
   const H0 = 8.5 + 2.5 * hash(seed, 1);
   const stamm = new THREE.CylinderGeometry(0.36, 0.62, H0, 7); stamm.translate(0, H0 / 2, 0);
@@ -154,7 +154,7 @@ function bucheGeo(seed, { gross = 1 } = {}) {
   return { stamm: sammle(tr), krone: sammle(kr) };
 }
 /** Fichte (Meter): 20 m, 10 Etagen aus Kegeln */
-function fichteGeo(seed) {
+export function fichteGeo(seed) {
   const T = [], hoch = 19 + 3 * hash(seed, 3);
   const st = new THREE.CylinderGeometry(0.1, 0.34, hoch, 6); st.translate(0, hoch / 2, 0); T.push({ g: st, c: [0.3, 0.2, 0.14], kz: 0 });
   const nE = 10;
@@ -170,14 +170,14 @@ function fichteGeo(seed) {
   return sammle(T);
 }
 /** einfache Silhouetten für Wald in der Ferne */
-function bucheFern() {
+export function bucheFern() {
   const st = new THREE.CylinderGeometry(0.4, 0.7, 9, 6); st.translate(0, 4.5, 0);
   const k = new THREE.IcosahedronGeometry(4.6, 1); const p = k.getAttribute("position");
   for (let j = 0; j < p.count; j++) { const f = 1 + 0.2 * (hash(j, 5) - 0.5); p.setXYZ(j, p.getX(j) * f, p.getY(j) * f * 0.85, p.getZ(j) * f); }
   k.translate(0, 13, 0); k.computeVertexNormals();
   return { stamm: sammle([{ g: st, c: [0.4, 0.33, 0.26] }]), krone: sammle([{ g: k, c: (x, y) => 0.72 + 0.36 * clamp((y - 8) / 9), kc: [0, 13, 0], kz: 0.4 }]) };
 }
-function fichteFern() {
+export function fichteFern() {
   const T = [];
   for (let i = 0; i < 4; i++) { const f = i / 4, r = 3.6 * (1 - f * 0.8) + 0.4, h = 6, g = new THREE.ConeGeometry(r, h, 7, 1); g.translate(0, 2 + f * 11 + h / 2, 0); g.computeVertexNormals(); T.push({ g, c: (x, y) => 0.6 + 0.45 * clamp(y / 18) }); }
   return sammle(T);

@@ -1,0 +1,26 @@
+{
+ "_hinweis": "Tonplan atmo.py: Morgen am Waldbach (Vögel, Bach, Wind), 8 s Tonkante (Zischen, Wind), Gewitter mit Regen und Wetterleuchten, 19,9 s Blitz und Donnerschlag, Waldbrand (Feuer), Nacht mit Glut, 31 s Zeitsprung, Vormittag mit Vögeln und Bach, Libellen-Flügel, Riser 50-58 s (Flügelsurren, Brummen, Wind), 58-60 s lautester Punkt, Nahsicht ruhig, Abspann leise. Keine Stimme.",
+ "dauer": 80,
+ "seed": 20261108,
+ "schichten": [
+  { "art": "voegel", "dichte": 0.75, "pegel": [[0, -26], [8, -27], [12, -32], [13.5, -60], [31, -60], [33, -30], [48, -31], [52, -40], [58, -60], [61, -36], [69, -38], [71, -60]] },
+  { "art": "wasser", "pegel": [[0, -27], [8, -28], [16, -30], [21, -34], [27, -38], [31, -32], [50, -32], [58, -38], [60.2, -34], [70, -36], [72, -60]] },
+  { "art": "wind", "pegel": [[0, -30], [7.5, -30], [8.3, -22], [12, -24], [18, -18], [27, -24], [30, -32], [31.5, -26], [50, -28], [55, -22], [58, -14], [60, -12], [60.3, -30], [70, -34], [72, -60]],
+    "hell": [[0, 0.7], [12, 0.5], [20, 0.4], [31, 0.6], [55, 0.4], [60, 0.3], [62, 0.6]] },
+  { "art": "regen", "pegel": [[0, -60], [16, -60], [17.2, -26], [20.5, -26], [22, -60]] },
+  { "art": "grollen", "pegel": [[0, -60], [12, -40], [16, -30], [19.5, -26], [21, -24], [27, -32], [30, -46], [31, -60], [52, -60], [56, -30], [59.5, -20], [60.3, -50], [80, -60]] },
+  { "art": "feuer", "pegel": [[0, -60], [20, -60], [21, -24], [24, -20], [27, -24], [29, -30], [30.6, -60]] },
+  { "art": "brummen", "f": 78, "pegel": [[0, -60], [50, -60], [54, -30], [58, -18], [60, -16], [60.4, -32], [70, -36], [72, -40], [80, -42]] }
+ ],
+ "ereignisse": [
+  { "t": 7.95, "art": "zischen", "pegel": -24, "dauer": 1.6 },
+  { "t": 30.8, "art": "windstoss", "pegel": -22, "dauer": 2.5 },
+  { "t": 55.5, "art": "fluegel", "pegel": -18, "dauer": 1.6 },
+  { "t": 56.8, "art": "fluegel", "pegel": -14, "dauer": 1.6 },
+  { "t": 58.0, "art": "windstoss", "pegel": -12, "dauer": 2.0 },
+  { "t": 58.3, "art": "fluegel", "pegel": -10, "dauer": 1.8 },
+  { "t": 60.0, "art": "fluegel", "pegel": -16, "dauer": 1.6 },
+  { "t": 61.6, "art": "fluegel", "pegel": -20, "dauer": 1.6 }
+ ],
+ "protokoll_effekte": true
+}
