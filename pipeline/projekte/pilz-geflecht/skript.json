@@ -230,5 +230,63 @@
    "grund": "Der Satz „Dann stürzt sie“ (23,4 s) wird im Querschnitt mit der braunen, sterbenden Tanne und Erschütterung gezeigt, nicht mehr an der Oberfläche; Inhalt unverändert",
    "zeit": "2026-11-09"
   }
- ]
+ ],
+ "lern_notizen": {
+  "welt": "Wald (Waldlichtung) + Boden-Querschnitt (neuer Baustein myzel.js)",
+  "standpunkt": "ebenerdig im Wald, später Aufstieg über den Hang",
+  "tageszeit": [
+   "Nacht",
+   "Morgengrauen",
+   "Herbsttag",
+   "Schnee",
+   "goldenes Abendlicht"
+  ],
+  "kamera": [
+   {
+    "t": 0.3,
+    "art": "fahrt"
+   },
+   {
+    "t": 10,
+    "art": "schnitt (Querschnitt)"
+   },
+   {
+    "t": 24,
+    "art": "schnitt (zurück)"
+   },
+   {
+    "t": 26.6,
+    "art": "fahrt nach oben bis 2.050 m"
+   }
+  ],
+  "zeitraffer": "1 s = 46 Jahre ab 8 s",
+  "effekte": "siehe ereignisse.json",
+  "sequenzen": 5,
+  "t_ereignis": 8,
+  "countdown": "ja, zweiter: nein",
+  "schnitte": [
+   {
+    "t": 10,
+    "grund": "Maßstabssprung Querschnitt"
+   },
+   {
+    "t": 24,
+    "grund": "Szenensprung zurück"
+   }
+  ],
+  "statuszeile": [
+   "BLUE MOUNTAINS, OREGON",
+   "WALD AHNUNGSLOS",
+   "1 SEKUNDE = 46 JAHRE",
+   "ERSTE TANNE BEFALLEN",
+   "TANNE STÜRZT",
+   "LÜCKEN IM WALD",
+   "WINTER",
+   "EIN EINZIGER PILZ"
+  ],
+  "testbloecke": {},
+  "laenge_s": 80,
+  "t_stufe2": 24,
+  "folgen_hinweis": ""
+ }
 }
