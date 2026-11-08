@@ -189,12 +189,12 @@ async function start() {
   chip("LÖSLICHER KAFFEE", v("wendung3:Noch", 0.05), v("kipp:Jetzt", 0.4), "akzent", "voll", 372);
   chip("ZEITRAFFER · 60 JAHRE", v("kipp:Jetzt", 0.05), v("ergebnis:Endstand", 0.2), "akzent", "voll", 372);
   // Regeln
-  chip("TOM · KAFFEE", v("regeln:Tom", 0.1), v("falle:Klar", 0.1), "a", "voll", 490);
-  chip("MIA · TEE", v("regeln:Mia", 0.1), v("falle:Klar", 0.1), "b", "voll", 600);
+  chip("TOM · KAFFEE", v("regeln:Tom", -0.2), v("falle:Klar", 0.1), "a", "voll", 490);
+  chip("MIA · TEE", v("regeln:Mia", -0.1), v("falle:Klar", 0.1), "b", "voll", 600);
   chip("3 TASSEN AM TAG", v("regeln:3", 0.1), v("falle:Klar", 0.1), "akzent", "hell", 710);
   chip("60 JAHRE", v("regeln:60", 0.1), v("falle:Klar", 0.1), "akzent", "hell", 820);
   // Rennen
-  chip("7,5 G KAFFEE JE TASSE", v("rennen:7,5", 0.1), v("rennen:Darauf", 0.1), "a", "hell", 490);
+  chip("7,5 G KAFFEE JE TASSE", v("rennen:7,5", 0.1), v("rennen:Darauf", 0.5), "a", "hell", 490);
   chip("KAFFEESTEUER · 2,19 € JE KILO", v("rennen:Darauf", 0.1), v("wendung1:Denn", 0.2), "a", "voll", 490);
   chip("MIA · 0 €", v("rennen:Mias", 0.1), v("wendung1:Denn", 0.2), "b", "voll", 600);
   // Wendung 1: Teesteuer bis 1992
@@ -220,7 +220,7 @@ async function start() {
     faktoren: [{ label: "STEUER JE KILO · KAFFEE GEGEN TEE", ein: T("warum:Kaffee"), a: { wert: 2.19, text: "2,19 €" }, b: { wert: 0, text: "0 €" }, tag: "TEE SEIT 1993 FREI", tagEin: T("warum:1993") }] });
   chip("BUND · 2,84 MIO. € JE TAG", v("pointe:Millionen", 0.2), v("schlusskarte:Gleicher", 0.2), "akzent", "voll", 490);
   chip("1.038 MIO. € KAFFEESTEUER 2025", v("pointe:Bund", 0.1), v("schlusskarte:Gleicher", 0.2), "akzent", "hell", 600);
-  M.titel({ woerter: [{ text: "KAFFEE", ein: -0.3, team: "a" }, { text: "vs", art: "vs", ein: -0.3 }, { text: "TEE", ein: -0.3, team: "b" }, { umbruch: true }, { text: "WER ZAHLT MEHR", ein: -0.3, art: "klein" }, { umbruch: true }, { text: "KAFFEESTEUER IM LEBEN?", ein: -0.3, art: "klein" }], y: 470, groesse: 112, aus: T("regeln:Tom") + 0.6 });
+  M.titel({ woerter: [{ text: "KAFFEE", ein: -0.3, team: "a" }, { text: "vs", art: "vs", ein: -0.3 }, { text: "TEE", ein: -0.3, team: "b" }, { umbruch: true }, { text: "WER ZAHLT MEHR", ein: -0.3, art: "klein" }, { umbruch: true }, { text: "KAFFEESTEUER IM LEBEN?", ein: -0.3, art: "klein" }], y: 470, groesse: 112, aus: T("regeln:Tom") - 0.25 });
   M.pointe({ woerter: [{ text: "GLEICHER DURST –", ein: T("schlusskarte:Gleicher"), farbe: "akzent" }, { umbruch: true }, { text: "NUR KAFFEE", ein: T("schlusskarte:nur"), farbe: "a" }, { umbruch: true }, { text: "ZAHLT EXTRA.", ein: T("schlusskarte:extra"), farbe: "a" }], ein: T("schlusskarte:Gleicher"), y: 470, groesse: 88 });
   M.untertitel({ max: 4, unten: 1450, groesse: 64 });
 
