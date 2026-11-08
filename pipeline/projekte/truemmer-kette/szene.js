@@ -284,9 +284,10 @@ async function start() {
   const anzeige = (t) => {
     if (t < 8) return { etikett: "KOLLISION IN", zahl: S.countdownText(t), einheit: "", unter: t < 4 ? "ABENDDÄMMERUNG" : "ZWEI SATELLITEN AUF KURS", wert: 8 - t };
     if (t < 24) return { etikett: "TRÜMMER > 10 CM", zahl: zahlDE(S.truemmer(t)), einheit: "", unter: t < 12 ? "KOLLISION · 789 KM HOCH" : t < 18 ? "1 SEKUNDE = 1 TAG" : "WOLKE UMRUNDET DIE ERDE", wert: S.truemmer(t) };
-    if (t < 50) return { etikett: "KOLLISIONEN", zahl: String(Math.max(1, S.kollisionen(t))), einheit: "", unter: t < 32 ? "1 SEKUNDE = 1 JAHR" : t < 38 ? "KETTENREAKTION" : "IMMER SCHNELLER", wert: Math.max(1, S.kollisionen(t)) };
+    if (t < 50) { const j = Math.floor(S.jahreSeit(t)), kz = Math.max(1, S.kollisionen(t));          // Zähler 1 → 8, daneben die Jahre live (1 s = 1 Jahr)
+      return { etikett: "KOLLISIONEN", zahl: String(kz), einheit: "", unter: `JAHR ${j} · ` + (t < 32 ? "1 SEKUNDE = 1 JAHR" : t < 38 ? "KETTENREAKTION" : "IMMER SCHNELLER"), wert: kz + j / 100 }; }
     if (t < 58) return { etikett: "TRÜMMER > 10 CM", zahl: zahlDE(S.truemmer(t)), einheit: "", unter: t < 54 ? "NEUE TEILE ERFASST" : "BAND SCHLIESST SICH", wert: S.truemmer(t) };
-    return { etikett: "TRÜMMER > 10 CM", zahl: "HIER", einheit: "", unter: "8 KOLLISIONEN", wert: 0 };
+    return { etikett: "IM ORBIT", zahl: "HIER", einheit: "", unter: "8 KOLLISIONEN", wert: 0 };
   };
   const hud = new LunarHUD(document.getElementById("hud"), { titel: TITEL, fakt: FAKT, anzeige, saetze: SAETZE });
   const ereignisse = prot.alle(hud.ereignisse(), pov.ereignisse());
