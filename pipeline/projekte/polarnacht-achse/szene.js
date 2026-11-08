@@ -19,8 +19,8 @@ const K = (keys, e = L) => (t) => keyframes(keys.map(([tt, v, ee]) => ({ t: tt, 
 // ------------------------------------------------------------------------------ Kamera (yaw 0 = Süden, −90 Osten, ±180 Norden, +90 Westen)
 // 0–8 s Fahrt über das Deck: vom Osten (Landzunge, Polarlicht) zum Ort im Süden; 10–16 s Schwenk nach Norden mit der Mitternachtssonne;
 // 18–24 s zurück nach Süden; 24–40 s ruhiger Halt Richtung Süden; 40–58 s langsame Rückfahrt; 58 s harter Schnitt auf die Totale.
-const KYAW = K([[0, -138], [8, -14], [10, -12], [16, -178], [20, -180], [24, -2], [40, 0], [58, -4], [58.03, -3], [70, -1], [80, 0]]);
-const KPITCH = K([[0, 26], [8, 9], [10, 8], [16, 7], [20, 8], [24, 7], [40, 9], [58, 12], [58.03, 4], [70, 5], [80, 5]]);
+const KYAW = K([[0, -138], [8, -14], [10, -12], [16, -178], [20, -180], [24, -2], [26.5, -2], [28.4, -150], [30.8, -150], [33.4, -4], [40, 0], [58, -4], [58.03, -3], [70, -1], [80, 0]]);
+const KPITCH = K([[0, 26], [8, 9], [10, 8], [16, 7], [20, 8], [24, 7], [26.5, 7], [28.4, 26], [30.8, 26], [33.4, 8], [40, 9], [58, 12], [58.03, 4], [70, 5], [80, 5]]);
 const KFOV = K([[0, 62], [8, 56], [10, 58], [20, 58], [24, 56], [40, 58], [58, 70], [58.03, 78], [70, 70], [80, 66]]);
 const DREH = (yaw) => ((yaw % 360) + 360) % 360;                       // für die Welt (heck) in 0…360
 const hStd = K([[0, 0], [9.5, 0, ease.inOutSine], [15, 180], [19.5, 180], [24, 0], [80, 0]]);   // Stundenwinkel der gezeigten Sonne: Süden (0) bzw. Norden (180)
@@ -53,12 +53,15 @@ async function start() {
     let hell = t < T_NULL ? 0.03 : t < T_HIER ? tagesMittel(dk).hell : 0.9;
     // Dämmerblau-Übergang bei Countdown-Null: Himmel kippt von Schwarz in Dämmerblau
     if (t >= T_NULL && t < T_NULL + 3) hell = Math.max(hell, 0.38 * smoothstep(T_NULL, T_NULL + 0.5, t));
+    // Herbstnacht mit Polarlicht (27,2–30,8 s): der Zeitraffer-Tag wird dunkel, sonst überstrahlt das Polarlicht den hellen Himmel
+    const nacht = polarlichtKurve(t, [[27.2, 30.8]], 1.2);
+    hell = hell * (1 - 0.95 * nacht);
     const sommer = smoothstep(-6, 12, dk);
     const winterNull = t >= T_HIER ? 1 : 0;
-    const polarlicht = Math.max(polarlichtKurve(t, [[0, T_NULL + 0.15]], 0.6), polarlichtKurve(t, [[27.2, 30.8]], 1.2)) * clamp(1 - 1.8 * hell);
+    const polarlicht = Math.max(polarlichtKurve(t, [[0, T_NULL + 0.15]], 0.6), 0.7 * nacht) * clamp(1 - 1.8 * hell);
     return {
       e, dk, hell,
-      sonne: { dekl: t >= T_HIER ? 0 : dk, H: hStd(t) },
+      sonne: { dekl: t >= T_HIER ? 0 : dk, H: nacht > 0.02 ? lerp(hStd(t), 180, nacht) : hStd(t) },
       schnee: t >= T_HIER ? 0.8 : lerp(1, 0.22, sommer),
       eis: t >= T_HIER ? 0.35 : lerp(0.75, 0.06, sommer),
       polarlicht, tempo: zeitraffer(t) ? 0.3 : 1, winterNull,
@@ -93,7 +96,8 @@ async function start() {
   prot.melde({ t: 0.3, typ: "kamera", art: "fahrt", dauer: 7.7, text: "Fahrt über das Deck vom Osten zum Ort, Neigung senkt sich", klang: false })
     .melde({ t: 10, typ: "kamera", art: "schwenk", dauer: 6, text: "Schwenk nach Norden mit der Mitternachtssonne", klang: false })
     .melde({ t: 18, typ: "kamera", art: "schwenk", dauer: 6, text: "Schwenk zurück nach Süden", klang: false })
-    .melde({ t: 24, typ: "kamera", art: "fahrt", dauer: 16, text: "ruhiger Halt Richtung Süden mit leichter Drift", klang: false })
+    .melde({ t: 26.5, typ: "kamera", art: "schwenk", dauer: 7, text: "Schwenk zum Nordosten ins Polarlicht und zurück", klang: false })
+    .melde({ t: 33.4, typ: "kamera", art: "fahrt", dauer: 6.6, text: "ruhiger Halt Richtung Süden mit leichter Drift", klang: false })
     .melde({ t: 40, typ: "kamera", art: "zoom", dauer: 18, von: 58, bis: 70, text: "langsame Rückfahrt, Brennweite 58° → 70°", klang: false })
     .melde({ t: T_SCHNITT, typ: "schnitt", grund: "Höhepunkt: Totale über den Fjord, ein einziger flacher Bogen", klang: false })
     .melde({ t: 58.2, typ: "kamera", art: "zoom", dauer: 12, von: 78, bis: 70, text: "Totale zieht sich langsam zusammen", klang: false });
