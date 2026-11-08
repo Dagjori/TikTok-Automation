@@ -15,12 +15,12 @@ cssclasses: [konto-gemeinsam, typ-regel]
 ## Treffer-Regel
 | Schritt | Regel |
 |---|---|
-| **Auslöser** | Ein Video hat nach 24 Stunden mindestens das **Dreifache des Medians der letzten 10 Videos** desselben Accounts (Aufrufe). Die Lernschleife meldet es ([[Lernschleife und Insights]]). |
+| **Auslöser** | Ein Video hat nach 24 Stunden mindestens das **Dreifache des Medians der letzten 10 Videos** desselben Accounts (Aufrufe). Das Cockpit erkennt es selbst und meldet es (seit 08.11., [[Lernschleife und Insights]]); ein Urteil gibt es erst ab 5 älteren Videos mit 24-h-Zahl, gemeldet wird nur, solange die 24-h-Marke höchstens 72 h zurückliegt. |
 | **Folgeteil** | Am nächsten Produktionstag baut die Produktion einen **nummerierten Folgeteil**: gleiches Versprechen, **neue Rechnung bzw. neues Szenario**, nie dieselbe Aussage noch einmal (sonst unoriginal, **F** Community Guidelines). Er ersetzt einen der zwei Plätze des Tages; der Inhaber wählt ihn wie eine Idee im Studio. |
 | **Kennzeichnung** | „Teil 2“ (bzw. 3, 4 …) groß im ersten Bild und in der Caption. Teil 2 muss auch ohne Teil 1 verständlich sein. |
 | **Verknüpfung** | Teil 1 wird angepinnt ([[Profil und Follow-Umwandlung]]) und bekommt einen angepinnten Kommentar mit Verweis auf Teil 2. Das geht nur von Hand in der App (Buffer kann keine Kommentare), ca. 1 Minute je Treffer, Inhaber. |
 | **Folgen-Hinweis** | Am Ende von Teil 1 bzw. im Folgeteil ein inhaltlicher Hinweis („Teil 2 ist im Profil“), Testregeln in [[Regelwerk Simulierbar]] bzw. [[Regelwerk Account 2]]. |
-| **Ende der Serie** (Startwert, **S**) | Liegt ein Folgeteil unter dem Median, endet die Serie. Höchstens 3 Folgeteile hintereinander, dann mindestens 1 Tag mit anderem Thema. Nach den ersten Serien mit Zahlen nachjustieren. |
+| **Ende der Serie** (Startwert, **S**) | Liegt ein Folgeteil unter dem Median, endet die Serie; **ein Folgeteil mit mindestens dem Median bekommt den nächsten Teil** (Wahl des Inhabers 08.11., per Klick: nicht erst bei erneutem Treffer). Höchstens 3 Folgeteile hintereinander (Teil 2 bis 4), dann mindestens 1 Tag mit anderem Thema. Nach den ersten Serien mit Zahlen nachjustieren. |
 | **Originalität** | Folgeteile eigener Treffer sind von der Sperre „bisher gebaut“ ausgenommen ([[Originalität und Themenfindung]]). |
 | **Playlists** | erst ab ca. 10.000 Followern verfügbar (**S**, Ratgeber); dann Serien als Playlist bündeln. |
 
@@ -32,8 +32,11 @@ cssclasses: [konto-gemeinsam, typ-regel]
 - Kein künstlicher Cliffhanger: jedes Video löst seine Frage im selben Video auf (CRP- und Feed-Regel „Clickbait“, [[CRP Creator Rewards Program]]). Teil 2 bringt eine **neue** Frage, nicht die fehlende Antwort.
 - Kein „Folge für Teil 2“ als Bedingung (Feed-Regel gegen Manipulation, **F**).
 
-## Wo es umgesetzt werden muss (offen)
-Lernschleife bzw. Cockpit: Treffer automatisch erkennen und als Idee „Teil 2“ ins Studio legen. Skill `video-produktion`: Folgeteil als Ideentyp. Siehe [[Stand und nächste Schritte]].
+## Wo es umgesetzt ist (seit 08.11.2026)
+- **Cockpit** (`cockpit/lib/treffer.mjs`, `lib/zahlen.mjs`, `lib/studio.mjs`): Aufrufe nach 24 h je Video, Faktor gegen den Median der letzten 10 („× Median“ auf der Zahlen-Seite), Serie aus dem Slot-Dokument des Videos. Bei einem Treffer bzw. einem Folgeteil ≥ Median: Meldung „🎯 Treffer“ und Idee „Teil N: …“ (Typ `folgeteil`, Nr. 11 aufwärts, oben in der Liste) bei den Ideen des nächsten freien Video-Tags; gibt es dort noch keine Ideen, wird sie vorgemerkt (`stand/treffer-offen`) und beim Erzeugen eingefügt. Nur ein Rechner legt sie an. Gewählt wird sie wie jede Idee. Wirkt nach dem nächsten Cockpit-Neustart (♻).
+- **Skript-Befehl** (`tools/chat_befehle.py`): Abschnitt FOLGETEIL (neue Rechnung, „Teil N“ im ersten Bild und in der Caption, kein Cliffhanger, eigenes Teil 1 zählt bei der Originalitäts-Suche nicht).
+- **Skill** `video-produktion` (Schritt 1): Folgeteil erkennen und kennzeichnen.
+- Von Hand bleibt: Teil 1 anpinnen und angepinnter Kommentar mit Verweis (Inhaber, App). Siehe [[Stand und nächste Schritte]].
 
 ## Siehe auch
 [[Wachstum auf 10.000 Follower]] · [[Originalität und Themenfindung]] · [[Profil und Follow-Umwandlung]] · [[Index]]

@@ -33,7 +33,7 @@ def timing(anzahl, satzlaenge, wd=0.3, lk=0.06, sp=0.5, wort="wort"):
 
 
 def pruefe(profil="ben", stil="18 Dunkles Studio", szene="", skill="video-produktion", extra=None, segmente=None,
-           ereignisse=None, timing_json=None, **timing_args):
+           ereignisse=None, timing_json=None, testbloecke=None, **timing_args):
     """Baut ein Temp-Projekt und gibt die Prüfzeilen als {nr: Zeile} zurück.
     ereignisse: {"dauer": …, "ereignisse": [...], "massstab": {...}} wird als audio/ereignisse.json geschrieben (mit protokoll: true)."""
     with tempfile.TemporaryDirectory() as tmp:
@@ -41,6 +41,8 @@ def pruefe(profil="ben", stil="18 Dunkles Studio", szene="", skill="video-produk
         (p / "audio").mkdir()
         skript = {"konto": "simulierbar", "stil": stil,
                   "segmente": segmente or [{"id": "hook", "phase": "hook", "text": "Am Ende zählt die Zeit.", "sprechtext": ""}]}
+        if testbloecke is not None:
+            skript["testbloecke"] = testbloecke
         if skill:
             skript["skill"] = "simulierbar-video" if skill is True else skill
         (p / "skript.json").write_text(json.dumps(skript, ensure_ascii=False), encoding="utf-8")
@@ -251,13 +253,41 @@ class ReaRegeln(unittest.TestCase):
         {"t": 67.4, "typ": "pointe", "text": "Zeit schlägt Zins."}],
         "massstab": {"untertitel": {"stil": "phrase", "maxWoerter": 4}}}
 
-    def test_folgen_aufruf_ist_keine_pflicht_mehr(self):
+    def test_ohne_testblock_kein_folgen_hinweis_und_kein_aufruf(self):
+        # seit 08.11.2026: Standard ohne Hinweis ist ok; der alte Aufruf M.folgen ist immer ein Fehler (Pflicht)
         ohne = pruefe(anzahl=168, satzlaenge=4, ereignisse={"dauer": 70.0, "ereignisse": []})["7"]
-        self.assertTrue(ohne["ok"])
-        self.assertFalse(ohne["pflicht"])
-        spaet = pruefe(anzahl=168, satzlaenge=4, ereignisse={"dauer": 70.0, "ereignisse": [{"t": 40.0, "typ": "folgen", "dauer": 1.8}]})["7"]
-        self.assertFalse(spaet["ok"])
-        self.assertFalse(spaet["pflicht"])
+        self.assertTrue(ohne["ok"], ohne["ist"])
+        self.assertTrue(ohne["pflicht"])
+        alt = pruefe(anzahl=168, satzlaenge=4, ereignisse={"dauer": 70.0, "ereignisse": [{"t": 20.0, "typ": "folgen", "dauer": 1.8}]})["7"]
+        self.assertFalse(alt["ok"])
+        self.assertIn("M.folgen", alt["ist"])
+        ohne_block = pruefe(anzahl=168, satzlaenge=4, testbloecke={"folgen_hinweis": "ohne"},
+                            ereignisse={"dauer": 70.0, "ereignisse": [{"t": 67.5, "typ": "folgen_hinweis", "text": "Teil 2 ist im Profil"}]})["7"]
+        self.assertFalse(ohne_block["ok"])
+
+    def test_folgen_hinweis_im_testblock_mit(self):
+        def sieben(hinweise):
+            return pruefe(anzahl=168, satzlaenge=4, testbloecke={"folgen_hinweis": "mit"}, ereignisse={"dauer": 70.0, "ereignisse": hinweise})["7"]
+        gut = sieben([{"t": 67.5, "typ": "folgen_hinweis", "text": "Jeden Tag ein Geld-Duell im Profil"}])
+        self.assertTrue(gut["ok"], gut["ist"])
+        self.assertFalse(sieben([])["ok"])                                                                    # fehlt
+        self.assertIn("zu früh", sieben([{"t": 50.0, "typ": "folgen_hinweis", "text": "Teil 2 ist im Profil"}])["ist"])
+        self.assertIn("Druck", sieben([{"t": 67.5, "typ": "folgen_hinweis", "text": "Folg mir für Teil 2"}])["ist"])
+        self.assertIn("Druck", sieben([{"t": 67.5, "typ": "folgen_hinweis", "text": "Nicht verpassen: Teil 2"}])["ist"])
+        self.assertIn("Wörter", sieben([{"t": 67.5, "typ": "folgen_hinweis", "text": " ".join(["Wort"] * 12)}])["ist"])
+
+    def test_folgen_hinweis_darf_nicht_gesprochen_werden(self):
+        # Die künstlichen Wortzeiten heißen „wort0 … wort167“; ein Hinweis mit denselben Wörtern am Ende gilt als gesprochen
+        z = pruefe(anzahl=168, satzlaenge=4, testbloecke={"folgen_hinweis": "mit"},
+                   ereignisse={"dauer": 70.0, "ereignisse": [{"t": 67.0, "typ": "folgen_hinweis", "text": "wort166 wort167"}]})["7"]
+        self.assertFalse(z["ok"])
+        self.assertIn("gesprochen", z["ist"])
+
+    def test_druck_muster(self):
+        for text, druck in (("Teil 2 ist im Profil", False), ("Morgen: Pfand gegen Müll", False), ("Folg mir, damit du nichts verpasst", True),
+                            ("Wenn du folgst, kommt Teil 2", True), ("Gratis-Rechner im Profil", True), ("Jetzt folgen!", True)):
+            with self.subTest(text=text):
+                self.assertEqual(bool(massstab.DRUCK.search(text)), druck)
 
     def test_schlusskarte_statt_schlusssatz(self):
         gut = pruefe(anzahl=168, satzlaenge=4, ereignisse=self.VOLL)["10"]
@@ -310,6 +340,46 @@ class ReaRegeln(unittest.TestCase):
         z = pruefe(timing_json=segment_timing(70.0, kipp=45.0, ergebnis=56.0))["R6"]
         self.assertTrue(z["ok"], z["ist"])
         self.assertFalse(z["pflicht"])
+
+
+class Aufloesung(unittest.TestCase):
+    """12h (seit 08.11.2026): fertiges MP4 genau 1080×1920, sonst Pflichtpunkt nein; ohne MP4 entfällt der Punkt."""
+
+    def projekt_mit_video(self, tmp, groesse):
+        pipeline = Path(tmp)
+        p = pipeline / "projekte" / "testvideo"
+        (p / "audio").mkdir(parents=True)
+        (p / "skript.json").write_text(json.dumps({"konto": "simulierbar", "stil": "17", "segmente": [{"id": "hook", "text": "x"}]}), encoding="utf-8")
+        (p / "audio" / "timing.json").write_text(json.dumps(timing(170, 4)), encoding="utf-8")
+        (p / "szene.js").write_text("", encoding="utf-8")
+        if groesse:
+            out = pipeline / "out" / "testvideo"
+            out.mkdir(parents=True)
+            import subprocess
+            subprocess.run(["ffmpeg", "-v", "error", "-f", "lavfi", "-i", f"color=c=black:s={groesse}:d=0.2", "-pix_fmt", "yuv420p", str(out / "testvideo.mp4")], check=True)
+        return p
+
+    def test_ohne_video_entfaellt_der_punkt(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            zeilen, _ = massstab.pruefe(self.projekt_mit_video(tmp, None), "ben", {})
+        self.assertNotIn("12h", {z["nr"] for z in zeilen})
+
+    @unittest.skipIf(shutil.which("ffmpeg") is None or shutil.which("ffprobe") is None, "ffmpeg/ffprobe fehlt")
+    def test_1080p_besteht(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            zeilen, _ = massstab.pruefe(self.projekt_mit_video(tmp, "1080x1920"), "ben", {})
+        z = {z["nr"]: z for z in zeilen}["12h"]
+        self.assertTrue(z["ok"])
+        self.assertTrue(z["pflicht"])
+        self.assertEqual(z["ist"], "1080×1920")
+
+    @unittest.skipIf(shutil.which("ffmpeg") is None or shutil.which("ffprobe") is None, "ffmpeg/ffprobe fehlt")
+    def test_720p_faellt_durch(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            zeilen, _ = massstab.pruefe(self.projekt_mit_video(tmp, "720x1280"), "ben", {})
+        z = {z["nr"]: z for z in zeilen}["12h"]
+        self.assertFalse(z["ok"])
+        self.assertTrue(z["pflicht"])
 
 
 if __name__ == "__main__":

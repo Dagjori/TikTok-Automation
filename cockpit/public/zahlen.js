@@ -61,8 +61,21 @@ function zahlenZeichnen() {
   const posts = [...(z.posts || [])];
   const s = ZS.sortierung;
   posts.sort((a, b) => (s === "gesendet" ? String(b.gesendet).localeCompare(String(a.gesendet)) : (b[s] ?? -1) - (a[s] ?? -1)));
-  const spalten = [["gesendet", "Gepostet"], ["views", "Views"], ["likes", "❤️"], ["kommentare", "💬"], ["shares", "↗"], ["saves", "🔖"], ["gesehen_prozent", "Ø gesehen"], ["follows", "+👥"], ["trend", "Trend"]];
-  htmlSetzen($("video-tabelle"), posts.length ? `<table><thead><tr><th>Video</th>${spalten.map(([k, t]) => `<th data-sort="${k}" class="${s === k ? "aktiv" : ""}">${t}</th>`).join("")}</tr></thead><tbody>
+  // Zielgröße seit 08.11.: Follower-Zuwachs 24 h nach dem Post, je 1.000 Aufrufe, Faktor gegen den Median der letzten 10 (Treffer ab 3×)
+  const spalten = [["gesendet", "Gepostet"], ["views", "Views"], ["likes", "❤️"], ["kommentare", "💬"], ["shares", "↗"], ["saves", "🔖"], ["gesehen_prozent", "Ø gesehen"], ["plus24", "+👥 24 h"], ["je1000", "je 1.000"], ["treffer_faktor", "× Median"], ["trend", "Trend"]];
+  const titel = { plus24: "Follower-Zuwachs in den 24 Stunden nach dem Post (netto; zwei Posts am Tag überlappen). ~ = geschätzt (Lücke im Verlauf)", je1000: "Follower je 1.000 Aufrufe: Zuwachs 24 h ÷ Aufrufe nach 24 h × 1.000", treffer_faktor: "Aufrufe nach 24 h ÷ Median der letzten 10 Videos des Accounts. Ab 3× = Treffer → Idee „Teil 2“" };
+  const komma = (x) => String(x).replace(".", ",");
+  const plus24 = (p) => {
+    if (Number.isFinite(p.plus24)) return `<span class="${p.plus24 > 0 ? "plus" : ""}" title="${p.plus24_geschaetzt ? "geschätzt" : "gemessen"}">${p.plus24 > 0 ? "+" : ""}${zahl(p.plus24)}${p.plus24_geschaetzt ? " ~" : ""}</span>`;
+    if (p.plus24_status === "laeuft") return `<small title="noch keine 24 Stunden">läuft${Number.isFinite(p.plus24_bisher) ? ` (${p.plus24_bisher >= 0 ? "+" : ""}${p.plus24_bisher})` : ""}</small>`;
+    return "–";
+  };
+  const faktor = (p) => {
+    if (!Number.isFinite(p.treffer_faktor)) return "–";
+    const tipp = `${zahl(p.v24)} Aufrufe nach 24 h${p.v24_geschaetzt ? " (geschätzt)" : ""}, Median ${zahl(p.treffer_median)}${p.naechster_teil ? ` · Idee „Teil ${p.naechster_teil}“` : ""}`;
+    return `<span title="${esc(tipp)}" class="${p.treffer ? "plus" : ""}">${p.treffer ? "🎯 " : ""}${komma(p.treffer_faktor)}×</span>`;
+  };
+  htmlSetzen($("video-tabelle"), posts.length ? `<table><thead><tr><th>Video</th>${spalten.map(([k, t]) => `<th data-sort="${k}" class="${s === k ? "aktiv" : ""}"${titel[k] ? ` title="${esc(titel[k])}"` : ""}>${t}</th>`).join("")}</tr></thead><tbody>
     ${posts.map((p) => {
       const g = p.gesehen_prozent;
       return `<tr>
@@ -70,7 +83,9 @@ function zahlenZeichnen() {
         <td>${new Date(p.gesendet).toLocaleString("de-DE", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}</td>
         <td class="gross">${zahl(p.views)}</td><td>${zahl(p.likes)}</td><td>${zahl(p.kommentare)}</td><td>${zahl(p.shares)}</td><td>${zahl(p.saves)}</td>
         <td>${g === null ? "–" : `<span class="gesehen" style="--p:${Math.min(100, g)}%">${g} %</span>`}</td>
-        <td>${p.follows ?? "–"}</td>
+        <td>${plus24(p)}</td>
+        <td>${Number.isFinite(p.je1000) ? komma(p.je1000) : "–"}</td>
+        <td>${faktor(p)}</td>
         <td>${p.trend ? `<span class="plus">+${zahl(p.trend)}</span>` : "–"}</td>
       </tr>`;
     }).join("")}</tbody></table>` : `<div class="leer">${z.buffer ? "Noch keine Videodaten. Der erste Abruf läuft in Kürze." : "Mit dem Buffer-Schlüssel erscheint hier jedes Video mit seinen Zahlen."}</div>`);

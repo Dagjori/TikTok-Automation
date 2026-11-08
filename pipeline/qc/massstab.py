@@ -6,6 +6,10 @@ Seit 07.11.2026 (REA-Regelwerk freigegeben): Tempo 2,3–2,7 W/s ODER 4,6–5,4 
 Folgen-Aufruf nur noch Hinweis (7), Schlusskarte statt festem Schlusssatz (10), Schleife freiwillig (11), Untertitel in Blöcken
 von höchstens 4 Wörtern (14) und die REA-Punkte R1–R7 (Titel ab Bild 1, Tafel ab Bild 0, Erklärgrafik, neutrale Erzählhaltung,
 Endstand bei ca. 80 %, Kipp-Moment, erster Satz).
+Seit 08.11.2026 (Wahl des Inhabers): 7 = Folgen-Hinweis als nicht gesprochene Textzeile am Ende (M.hinweis), Pflicht und nur im
+Testblock folgen_hinweis = „mit“ (skript.json → testbloecke, tools/testblock.py); M.folgen bei ca. 20 s ist ersetzt.
+Seit 08.11.2026: 12h = Auflösung des fertigen MP4 (pipeline/out/<name>/<name>.mp4) genau 1080×1920, Pflicht (CRP-Zusatzbonus);
+vor dem Render gibt es kein MP4, dann entfällt der Punkt.
 
 Aufruf (im Ordner pipeline/):
   python3 qc/massstab.py projekte/<name>                      Standard-Profil „ben“ (Stimme Ben, Original-Einstellungen; Tempo seit 07.11.2026)
@@ -98,6 +102,67 @@ def silben(wort):
     if w.isdigit():
         return 2 * len(w)
     return max(1, len(VOKALE.findall(w)))
+
+
+# Folgen-Hinweis (Wahl des Inhabers 08.11.2026, Hirn „Regelwerk Simulierbar“): ersetzt den Folgen-Aufruf bei ca. 20 s (M.folgen) durch
+# eine nicht gesprochene Textzeile unter der Schlusskarte in den letzten 2–3 s (M.hinweis), nur im Testblock folgen_hinweis = „mit“
+# (tools/testblock.py, skript.json → testbloecke). An den Inhalt gebunden; kein Tausch, keine Belohnung, kein Druck.
+HINWEIS_FENSTER_S = 3.5          # Hinweis beginnt frühestens 3,5 s vor dem Ende (letzte 2–3 s, kleine Toleranz)
+HINWEIS_MAX_WOERTER = 10
+DRUCK = re.compile(r"folg\w*\s+(mir|uns|jetzt|sofort|für|fuer)|wenn\s+du\s+(mir\s+|uns\s+)?folgst|nicht\s+verpassen|verpass|sonst\b|gewinn|verlos|gratis|"
+                   r"geschenk|belohn|abonnier|\blike\b|\bfolgen\s*!|\bjetzt\b", re.I)
+
+
+def folgen_hinweis(ereignisse, testbloecke, laenge, woerter):
+    """Prüfpunkt 7 seit 08.11.2026 → (ist, ok). testbloecke: skript.json → testbloecke; woerter: Wortzeiten der Stimme."""
+    variante = (testbloecke or {}).get("folgen_hinweis")
+    alt = [e for e in ereignisse if e.get("typ") == "folgen"]
+    h = [e for e in ereignisse if e.get("typ") == "folgen_hinweis"]
+    if alt:
+        return f"M.folgen bei {zahl(float(alt[0]['t']), 1)} s (seit 08.11. ersetzt durch M.hinweis am Ende)", False
+    if variante != "mit":
+        if h:
+            return f"Hinweis „{h[0].get('text', '')}“, aber Testblock {variante or '–'} (nur bei „mit“)", False
+        return f"kein Hinweis (Testblock {variante or 'keiner'})", True
+    if not h:
+        return "Testblock „mit“, aber kein M.hinweis am Ende", False
+    e = h[0]
+    text = " ".join(str(e.get("text", "")).split())
+    t = float(e["t"])
+    probleme = []
+    if not text:
+        probleme.append("leer")
+    if laenge and t < laenge - HINWEIS_FENSTER_S:
+        probleme.append(f"zu früh ({zahl(t, 1)} s, Ende {zahl(laenge, 1)} s)")
+    if len(text.split()) > HINWEIS_MAX_WOERTER:
+        probleme.append(f"{len(text.split())} Wörter (höchstens {HINWEIS_MAX_WOERTER})")
+    druck = DRUCK.search(text)
+    if druck:
+        probleme.append(f"Druck/Tausch „{druck.group(0)}“")
+    gesprochen = " ".join(norm(w["wort"]) for w in woerter if float(w.get("start", 0)) >= t - 6)
+    if text and len(text.split()) >= 2 and " ".join(norm(w) for w in text.split()) in gesprochen:
+        probleme.append("wird gesprochen (soll nur Textzeile sein)")
+    ist = f"„{text}“ bei {zahl(t, 1)} s" + (f": {', '.join(probleme)}" if probleme else "")
+    return ist, not probleme
+
+
+def video_pfad(projekt):
+    """Fertiges MP4 des Projekts (pipeline/out/<name>/<name>.mp4, wie render warten es ablegt), sonst None."""
+    p = projekt.parent.parent / "out" / projekt.name / f"{projekt.name}.mp4"
+    return p if p.is_file() else None
+
+
+def aufloesung(video):
+    """(Breite, Höhe) der Videospur per ffprobe; (None, None) ohne ffprobe oder bei unlesbarer Datei."""
+    if not shutil.which("ffprobe"):
+        return None, None
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "csv=p=0:s=x", str(video)],
+                       capture_output=True, text=True)
+    try:
+        b, h = r.stdout.strip().splitlines()[0].split("x")[:2]
+        return int(b), int(h)
+    except (IndexError, ValueError):
+        return None, None
 
 
 def lade(projekt):
@@ -254,14 +319,13 @@ def pruefe(projekt, profil, extra_ziele):
     erste = next((t for t in wendungen if t >= 15), None)
     zeile("6", "Erste Wendung (Satz mit „Aber/Doch …“)", f"{zahl(erste, 1) if erste is not None else '–'} s", "18–25 s (Hinweis)", "18,4–20,8 s", erste is not None and 18 <= erste <= 25, pflicht=False)
 
-    # 7 Folgen-Aufruf: seit 07.11.2026 keine Pflicht mehr (Standard ohne; nur in Testvideos der Lernschleife). Ist er da, gilt 15–25 s, max. 2 s.
-    f = [e for e in ereignisse if e.get("typ") == "folgen"]
-    if f:
-        e = f[0]
-        ok = 15 <= e["t"] <= 25 and float(e.get("dauer") or 0) <= 2.0
-        zeile("7", "Folgen-Aufruf (nur Testvideo)", f"{zahl(e['t'], 1)} s, {zahl(float(e.get('dauer') or 0), 1)} s lang", "15–25 s, max. 2 s (Hinweis)", "Vorbilder: keiner", ok, pflicht=False)
+    # 7 Folgen-Hinweis (seit 08.11.2026, ersetzt den Folgen-Aufruf bei ca. 20 s): nur im Testblock „mit“ eine nicht gesprochene
+    # Textzeile in den letzten 2–3 s (M.hinweis), an Inhalt gebunden; sonst gar nichts. M.folgen ist immer ein Fehler.
+    if protokoll:
+        ist7, ok7 = folgen_hinweis(ereignisse, skript.get("testbloecke"), dauer or stimm_ende, woerter)
     else:
-        zeile("7", "Folgen-Aufruf (nur Testvideo)", "keiner (Standard seit 07.11.)" if protokoll else "kein Ereignis-Protokoll", "freiwillig", "Vorbilder: keiner", True, pflicht=False)
+        ist7, ok7 = "kein Ereignis-Protokoll", False
+    zeile("7", "Folgen-Hinweis am Ende (nur Testblock „mit“)", ist7, "„mit“: Textzeile letzte 2–3 s, ohne Druck; sonst keiner", "Inhaber 08.11.: Blocktest 10/10", ok7)
 
     # 16 Ruhiger Ton (Inhaber 02.11.): keine aufgeregten Audio-Tags, wenige Ausrufezeichen im Sprechtext
     sprech = " ".join(str(sg.get("sprechtext", "")) for sg in skript.get("segmente", []))
@@ -345,6 +409,11 @@ def pruefe(projekt, profil, extra_ziele):
     if dauer:
         nach = dauer - stimm_ende
         zeile("12g", "Nach dem letzten Wort", f"{zahl(nach, 1)} s", "0,5–1,0 s (Hinweis)", "0,5–1,0 s", 0.5 <= nach <= 1.0, pflicht=False)
+    # 12h Auflösung (seit 08.11.2026 Pflicht, CRP-Zusatzbonus verlangt 1080p); vor dem Render kein MP4 → Punkt entfällt
+    mp4 = video_pfad(projekt)
+    if mp4:
+        b, h = aufloesung(mp4)
+        zeile("12h", "Auflösung des Videos", f"{b}×{h}" if b else "nicht lesbar (ffprobe?)", "1080×1920", "1080×1920 (CRP)", (b, h) == (1080, 1920))
 
     # 13 Ton: Teppich, Akzent auf der Pointe
     teppich = (ev or {}).get("teppich") or skript.get("klangteppich")

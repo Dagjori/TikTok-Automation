@@ -1,0 +1,36 @@
+{
+  "stand": "2026-11-08",
+  "quelle": "Wahl des Inhabers 08.11.2026 (per Klick): Folgen-Hinweis als Blocktest 10 mit / 10 ohne in beiden Accounts, Einstiegstest Account 2 mit Blöcken zu je 5 Videos, jeder Block ändert nur seine eine Sache (einzeln gegen den Standard), Start Video-Tag 10.11.2026. Hirn: Lernschleife und Insights › Laufende Tests, Regelwerk Simulierbar, Regelwerk Account 2.",
+  "zaehlung": "Je Account 2 Videos pro Video-Tag. Index eines Videos = 2 × (Tage seit start) + 0 (mittag) bzw. 1 (abend); Block = Index ÷ Blockgröße. Fällt ein Video aus, wird der Block nur kürzer (kein Speicherstand, gleiches Ergebnis auf jedem Rechner). Werkzeug: python tools/testblock.py --konto … --datum … --slot …",
+  "tests": [
+    {
+      "id": "folgen_hinweis",
+      "konten": ["simulierbar", "stelldirvor"],
+      "start": "2026-11-10",
+      "block": 10,
+      "folge": ["mit", "ohne"],
+      "wiederholen": true,
+      "messung": "Follows je 1.000 Aufrufe (Cockpit: Zuwachs 24 h) und Anteil der Länge",
+      "varianten": {
+        "mit": "Folgen-Hinweis als nicht gesprochene Textzeile am Ende: Simulierbar unter der Schlusskarte in den letzten 2–3 s (M.hinweis), Account 2 im Abspann (LunarHUD-Option hinweis). An den Inhalt gebunden (z. B. „Teil 2 ist im Profil“, „Morgen: …“, „Jeden Tag ein Geld-Duell im Profil“); kein Tausch, keine Belohnung, kein Druck, kein „Folg mir“.",
+        "ohne": "Kein Folgen-Hinweis und kein Folgen-Aufruf im Bild."
+      }
+    },
+    {
+      "id": "einstieg_a2",
+      "konten": ["stelldirvor"],
+      "start": "2026-11-10",
+      "block": 5,
+      "folge": ["a", "b", "c"],
+      "wiederholen": false,
+      "danach": "standard",
+      "messung": "Anteil der Länge und Ø-Wiedergabezeit gegen die Standard-Videos davor",
+      "varianten": {
+        "a": "Ereignis bei 2–3 s auf Countdown-Null (Countdown entsprechend kurz); sonst Standard (zweite Stufe wie üblich, 80 s).",
+        "b": "Zweite sichtbare Stufe bei 12–15 s (Sprung im Messwert bzw. neues Etikett oder neue Statuszeile, deutlich im Bild); sonst Standard (Ereignis ca. 8 s, 80 s).",
+        "c": "Länge 62–70 s statt 80 s: Zeitplan anteilig kürzen (lpZeitenFuer(laenge)), Abspann bleibt die letzten 8 s; sonst Standard (Ereignis ca. 8 s).",
+        "standard": "Kein Einstiegstest mehr: Standard (Ereignis ca. 8 s, 80 s)."
+      }
+    }
+  ]
+}

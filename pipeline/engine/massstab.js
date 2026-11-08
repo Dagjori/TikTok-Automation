@@ -11,7 +11,8 @@
 // Bausteine: titel, tafel (Anzeigetafel oben mit Live-Zählern, vs-Kreis bzw. Uhr), uhr (Renn-Uhr/Stoppuhr), ring
 // (Pausen-/Countdown-Ring), chip/chips, stempel (Sticker/Stempel mit Strahlenkranz), leiste (Fortschritt mit Marken und
 // Team-Punkten), formel (Vergleichs-/Formelkarte), bilanz (Zeile für Zeile), balken (Aufschlüsselung, 2 Faktoren),
-// pointe (große Typo), folgen (Folgen-Aufruf, max. 2 s), zaehler (schwebender Live-Zähler), untertitel (Phrasen, §8).
+// pointe (große Typo), hinweis (Folgen-Hinweis als Textzeile am Ende, seit 08.11.2026 nur im Testblock; ersetzt folgen),
+// folgen (alter Folgen-Aufruf bei ca. 20 s, veraltet), zaehler (schwebender Live-Zähler), untertitel (Phrasen, §8).
 // Stile: engine/massstab.css (nach hud.css einbinden).
 import { feder, FEDER, ease, fortschritt, clamp, lerp, keyframes, schleifenWert, smoothstep } from "./bewegung.js";
 import { el, fmt, Karaoke } from "./hud.js";
@@ -266,7 +267,10 @@ export class Massstab {
   bilanz(o) { return this.hud.add(new Bilanz(this, o)); }
   balken(o) { return this.hud.add(new Balken(this, o)); }
   pointe(o) { return this.hud.add(new Pointe(this, o)); }
+  /** Veraltet seit 08.11.2026 (qc/massstab.py Punkt 7 = NEIN): ersetzt durch M.hinweis am Ende, nur im Testblock „mit“. */
   folgen(o = {}) { return this.hud.add(new Folgen(this, o)); }
+  /** Folgen-Hinweis (seit 08.11.2026, nur Testblock folgen_hinweis = „mit“, tools/testblock.py): Textzeile unter der Schlusskarte. */
+  hinweis(o) { return this.hud.add(new Hinweis(this, o)); }
   zaehler(o) { return this.hud.add(new LiveZaehler(this, o)); }
   /** Untertitel (Standard „phrase“ nach §8; stil: "kontur" = alter Wort-für-Wort-Stil). Erst nach document.fonts.ready. */
   untertitel(o = {}) {
@@ -1086,6 +1090,34 @@ class Pointe extends Baustein {
       setzeStil(w.e, "opacity", String(clamp(d / 0.05)));
       w.e.style.transform = `translateY(${((1 - s) * 50).toFixed(2)}px) scale(${lerp(1.35, 1, clamp(s)).toFixed(4)}) rotate(${((1 - s) * -6).toFixed(2)}deg)`;
     }
+  }
+}
+
+// =====================================================================================
+// Folgen-Hinweis (Wahl des Inhabers 08.11.2026, Hirn „Regelwerk Simulierbar“): kleine, NICHT gesprochene Textzeile unter der
+// Schlusskarte in den letzten 2–3 s, an den Inhalt gebunden („Teil 2 ist im Profil“, „Jeden Tag ein Geld-Duell im Profil“);
+// kein Tausch, keine Belohnung, kein Druck. Nur im Testblock folgen_hinweis = „mit“ (10 Videos mit, 10 ohne). Ersetzt M.folgen bei ca. 20 s.
+// =====================================================================================
+class Hinweis extends Baustein {
+  /** o: {text, ein = Videoende − 2,5 s (Zahl oder Wortzeit), aus, y = 1190, groesse = 46} */
+  constructor(M, o) {
+    super(M, o, Math.max(0, M.dauer - 2.5));
+    this.text = String(o.text || "").trim();
+    this.e = el("div", "ms ms-hinweis", "", M.hud.wurzel);
+    this.e.textContent = this.text;
+    this.e.style.top = (o.y ?? 1190) + "px";
+    this.e.style.fontSize = (o.groesse ?? 46) + "px";
+    const ende = Number.isFinite(this.aus) ? this.aus : M.dauer;
+    this.melde({ t: this.ein, typ: "folgen_hinweis", dauer: +Math.max(0, ende - this.ein).toFixed(3), text: this.text, gesprochen: false, klang: false });
+  }
+  update(t) {
+    const an = t >= this.ein && t <= this.aus + 0.3;
+    zeige(this.e, an);
+    if (!an) return;
+    const s = ease.outCubic(clamp((t - this.ein) / 0.4));
+    const weg = Number.isFinite(this.aus) ? clamp((t - this.aus) / 0.3) : 0;
+    this.e.style.opacity = String(s * (1 - weg));
+    this.e.style.transform = `translateY(${((1 - s) * 18).toFixed(2)}px)`;
   }
 }
 

@@ -9,6 +9,8 @@ Aufruf:  python3 pipeline/post_buffer.py --video <mp4> --kanal simulierbar|stell
            --zeit  auto:YYYY-MM-DD:slot (Uhrzeit aus posting_zeiten.json, Sommer-/Winterzeit automatisch) | ISO mit Zone | sofort (= jetzt + 15 Min.)
            --ki-label   setzt die KI-Kennzeichnung (isAiGenerated) auf AN; Standard AUS, nur für realistischen KI-Inhalt
            --entwurf    nur Entwurf (saveToDraft), kein Einplanen
+           --cover-ms N Cover = Bild bei N ms (Standard simulierbar 1000, stelldirvor.pov 1500; seit 08.11.2026), --ohne-cover: keins.
+                        Buffer setzt es über assets[].video.metadata.thumbnailOffset; das Bild liegt zur Sichtprüfung als <video>_cover.jpg daneben.
          python3 pipeline/post_buffer.py --pruefen [--schreibtest]      Zugangstest (Buffer lesen, Supabase lesen, optional Supabase-Roundtrip)
          python3 pipeline/post_buffer.py --nachpruefen [--trocken]      gepostete Videos auf der öffentlichen TikTok-Seite prüfen, dann Supabase-Datei löschen
          python3 pipeline/post_buffer.py --aufraeumen [--trocken]       nur Supabase-Dateien löschen, deren Buffer-Post „sent“ ist
@@ -70,6 +72,12 @@ MB = 1024 * 1024
 AUDIO_BPS = 192_000
 MIN_VIDEO_BPS = 1_500_000                      # darunter wird die Kopie bei 1080x1920 sichtbar schlecht → lieber abbrechen
 GUELTIG = ("automatic", "notification")
+# Cover (Wahl des Inhabers 08.11.2026, Hirn „Plattformregeln und Posting“ › Cover): einheitliches Raster im Profil. Buffer nimmt kein
+# eigenes Bild an (VideoAssetInput.thumbnailUrl wird abgelehnt), sondern einen Zeitpunkt im Video: metadata.thumbnailOffset in ms
+# (F, developers.buffer.com, Typ VideoAssetInput; nur Instagram, TikTok, Pinterest). Account 1: Titel mit Duell-Frage und „VS“-Tafel
+# stehen ab Bild 0 (Titeltafel 0–3 s); Account 2: Titelfrage 0,4–4,4 s, voll sichtbar ab 0,6 s, Ereignis frühestens bei 2 s (Testblock a).
+COVER_MS = {"simulierbar": 1000, "stelldirvor.pov": 1500}
+COVER_SCHWARZ_YAVG = 20                        # mittlere Helligkeit (0–255) darunter: Cover ist fast schwarz → Warnung
 
 
 class Fehler(Exception):
@@ -322,6 +330,26 @@ class Schema:
                     fehler.append(f"{pfad}.{fname}: Pflichtfeld fehlt")
 
 
+def cover_im_schema(schema=None):
+    """True, wenn das Live-Schema VideoAssetInput.metadata.thumbnailOffset kennt (öffentliche Beta: Namen können sich ändern)."""
+    s = schema or Schema()
+    felder = {f["name"]: f for f in s.typ("VideoAssetInput")["inputFields"]}
+    if "metadata" not in felder:
+        return False
+    t = felder["metadata"]["type"]
+    while t.get("ofType"):
+        t = t["ofType"]
+    return "thumbnailOffset" in {f["name"] for f in s.typ(t["name"])["inputFields"]}
+
+
+def cover_ohne(variablen):
+    """Variablen ohne Cover (thumbnailOffset) – Rückfall, falls Buffer das Feld nicht (mehr) kennt; der Post geht dann trotzdem raus."""
+    neu = json.loads(json.dumps(variablen))
+    for a in neu["input"].get("assets") or []:
+        (a.get("video") or {}).pop("metadata", None)
+    return neu
+
+
 def schema_pruefung(variablen, bericht):
     """Variablen der Mutation gegen das Live-Schema; zusätzlich (falls graphql-core installiert) das ganze Dokument."""
     try:
@@ -395,6 +423,37 @@ def pruefe_video(pfad, bericht):
     if not s["audio"]:
         bericht.warnung("Das Video hat keine Tonspur.")
     return s
+
+
+def cover_ms_fuer(kanal, wunsch=None, ohne=False):
+    """Cover-Zeitpunkt in ms: --cover-ms, sonst Standard des Kanals; --ohne-cover → None."""
+    if ohne:
+        return None
+    return int(wunsch) if wunsch is not None else COVER_MS.get(kanal)
+
+
+def cover_bild(video, ms, dauer, bericht):
+    """Speichert das Cover-Bild (<video>_cover.jpg neben dem Video) für die Sichtprüfung und warnt, wenn es fast schwarz ist."""
+    if ms is None:
+        bericht.ok("Cover: keins gesetzt (--ohne-cover), TikTok nimmt sein Standardbild.")
+        return None
+    if ms < 0 or ms >= dauer * 1000:
+        bericht.fehl(f"Cover-Zeitpunkt {ms} ms liegt außerhalb des Videos (0–{dauer * 1000:.0f} ms).")
+        return None
+    ziel = video.with_name(f"{video.stem}_cover.jpg")
+    lauf = subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", f"{ms / 1000:.3f}", "-i", str(video), "-frames:v", "1",
+                           "-vf", "signalstats,metadata=print:key=lavfi.signalstats.YAVG:file=-", "-q:v", "3", str(ziel)],
+                          capture_output=True, text=True)
+    m = re.search(r"YAVG=([\d.]+)", lauf.stdout + lauf.stderr)
+    if lauf.returncode != 0 or not ziel.exists():
+        bericht.warnung(f"Cover-Bild bei {ms} ms ließ sich nicht speichern ({(lauf.stderr or '').strip()[:120]}); das Cover wird trotzdem gesetzt.")
+        return None
+    hell = float(m.group(1)) if m else None
+    if hell is not None and hell < COVER_SCHWARZ_YAVG:
+        bericht.warnung(f"Cover bei {ms / 1000:.1f} s ist fast schwarz (Helligkeit {hell:.0f} von 255): {ziel.name} ansehen, ggf. --cover-ms ändern.")
+    else:
+        bericht.ok(f"Cover: Bild bei {ms / 1000:.1f} s ({ziel.name}{f', Helligkeit {hell:.0f}' if hell is not None else ''}); Titel und Frage müssen darauf zu lesen sein.")
+    return ziel
 
 
 def komprimiere(video, s, ziel, max_bytes, ziel_bytes, preset, bericht):
@@ -723,14 +782,17 @@ def raeume_weg(sb, objekt):
         info(f"[WARNUNG]  Supabase-Datei {objekt} konnte nicht gelöscht werden ({e}); später mit --aufraeumen --verwaiste prüfen bzw. im Dashboard löschen.")
 
 
-def baue_variablen(kanal_id, text, zeit_utc, planung, link, ki_label=False, entwurf=False):
+def baue_variablen(kanal_id, text, zeit_utc, planung, link, ki_label=False, entwurf=False, cover_ms=None):
+    video = {"url": link}
+    if cover_ms is not None:
+        video["metadata"] = {"thumbnailOffset": int(cover_ms)}  # Cover = Bild an dieser Stelle (ms); thumbnailUrl lehnt Buffer ab
     eingabe = {
         "channelId": kanal_id,
         "text": text,
         "mode": "customScheduled",          # Zeitpunkt aus dueAt
         "dueAt": zeit_utc.strftime("%Y-%m-%dT%H:%M:%S.000Z"),
         "schedulingType": planung,          # automatic = Buffer veröffentlicht zur Zeit selbst; notification = nur Erinnerung
-        "assets": [{"video": {"url": link}}],
+        "assets": [{"video": video}],
         "metadata": {"tiktok": {"isAiGenerated": bool(ki_label)}},  # KI-Kennzeichnung: Standard AUS, --ki-label = AN
     }
     if entwurf:
@@ -823,6 +885,8 @@ def befehl_posten(args, sb_url):
     bericht.ok(f"KI-Kennzeichnung: {'AN (--ki-label)' if ki else 'AUS (Standard)'}.")
 
     s = pruefe_video(video, bericht)
+    cover_ms = cover_ms_fuer(args.kanal, args.cover_ms, args.ohne_cover)
+    cover_bild(video, cover_ms, s["dauer"], bericht)
     pruef_hash = sha256(video)
     log = Path(args.log)
     if not args.nochmal and any(z.get("video_sha256") == pruef_hash and z.get("kanal") == args.kanal for z in log_lesen(log) if z.get("ereignis") == "angelegt"):
@@ -862,7 +926,16 @@ def befehl_posten(args, sb_url):
         bericht.fehl(str(e))
     objekt = f"{datetime.date.today().isoformat()}/{uuid.uuid4()}.mp4"
     platzhalter = f"<SUPABASE_URL>/storage/v1/object/sign/{args.bucket}/{objekt}?token=<SIGNIERT, {link_sekunden(zeit) / 3600:.0f} h>"
-    variablen = baue_variablen(kanal["id"] if kanal else "<KANAL-ID>", text, zeit, args.planung, platzhalter, ki, entwurf)
+    if kanal and cover_ms is not None:
+        # Kennt Buffer das Cover-Feld nicht (mehr), geht der Post ohne Cover raus statt abzubrechen
+        try:
+            if not cover_im_schema():
+                bericht.warnung("Cover: Buffer kennt VideoAssetInput.metadata.thumbnailOffset nicht (mehr); der Post geht ohne Cover raus (TikTok-Standardbild).")
+                cover_ms = None
+        except Fehler as e:
+            bericht.warnung(f"Cover: Schema nicht prüfbar ({e}); der Post geht ohne Cover raus.")
+            cover_ms = None
+    variablen = baue_variablen(kanal["id"] if kanal else "<KANAL-ID>", text, zeit, args.planung, platzhalter, ki, entwurf, cover_ms)
     if kanal:
         schema_pruefung(variablen, bericht)  # nur lesende Introspection; vor dem Upload, damit nichts umsonst hochgeladen wird
     halt()
@@ -910,7 +983,7 @@ def befehl_posten(args, sb_url):
     except Fehler:
         raeume_weg(sb, objekt)  # nichts liegen lassen, wenn es nicht weitergeht
         raise
-    variablen = baue_variablen(kanal["id"], text, zeit, args.planung, link, ki, entwurf)
+    variablen = baue_variablen(kanal["id"], text, zeit, args.planung, link, ki, entwurf, cover_ms)
     info(f"== Buffer: {'Entwurf anlegen' if entwurf else 'Post einplanen'} ==")
     try:
         status, antwort = buffer_roh(MUTATION, variablen)
@@ -927,7 +1000,7 @@ def befehl_posten(args, sb_url):
     ki_ist = (post.get("metadata") or {}).get("isAiGenerated")
     log_schreiben(log, {"ereignis": "angelegt", "zeit": jetzt(), "post_id": post["id"], "kanal": args.kanal, "kanal_id": kanal["id"], "bucket": args.bucket,
                         "pfad": objekt, "video": video.name, "video_sha256": pruef_hash, "video_dauer_s": round(s["dauer"], 1), "upload_kopie": kopie,
-                        "modus": "entwurf" if entwurf else "geplant", "due_at": post.get("dueAt"), "status": post["status"], "ki_flag": ki_ist})
+                        "modus": "entwurf" if entwurf else "geplant", "due_at": post.get("dueAt"), "status": post["status"], "ki_flag": ki_ist, "cover_ms": cover_ms})
     bericht.ok(f"Angelegt: Post-ID {post['id']}, Status {post['status']}, fällig {post.get('dueAt')}, Planung {post.get('schedulingType')}.")
     if post["status"] == erwartet:
         bericht.ok(f"Status „{erwartet}“ wie erwartet.")
@@ -950,6 +1023,9 @@ def befehl_posten(args, sb_url):
         auf_supabase = host == sb.host
         info(f"           Asset {a.get('type')}: {a.get('mimeType')}, {v.get('width')}x{v.get('height')}, {(v.get('durationMs') or 0) / 1000:.1f} s, "
              f"Verarbeitung läuft: {v.get('isVideoProcessing')}, Transcodierung nötig: {v.get('isTranscodingRequired')}")
+        # 1080p ist Bedingung für den CRP-Zusatzbonus (Hirn „CRP Creator Rewards Program“): meldet Buffer eine andere Größe, sichtbar warnen
+        if v.get("width") and v.get("height") and (int(v["width"]), int(v["height"])) != (BREITE, HOEHE):
+            bericht.warnung(f"Buffer meldet {v.get('width')}x{v.get('height')} statt {BREITE}x{HOEHE}: Auflösung nach dem Posten prüfen (CRP verlangt 1080p).")
         if auf_supabase:
             info(f"           assets[].source zeigt noch auf Supabase (Link gültig bis {bis:%Y-%m-%d %H:%M} UTC): die Datei dort NICHT vor dem Posten löschen.")
             if entwurf:
@@ -1122,6 +1198,8 @@ def main():
     p.add_argument("--zeit", help="auto:YYYY-MM-DD:slot (Slots in data/plan/posting_zeiten.json, z. B. auto:2026-11-03:mittag) | ISO 8601 mit Zone | sofort (jetzt + 15 Min.)")
     p.add_argument("--ki-label", action="store_true", help="KI-Kennzeichnung (isAiGenerated) AN; Standard AUS, nur für realistischen KI-Inhalt")
     p.add_argument("--entwurf", action="store_true", help="nur Entwurf anlegen (saveToDraft), nicht einplanen; der Inhaber gibt dann in Buffer frei")
+    p.add_argument("--cover-ms", type=int, default=None, help="Cover = Bild an dieser Stelle in ms (Standard: simulierbar 1000, stelldirvor.pov 1500; Titel bzw. Titelfrage im Bild)")
+    p.add_argument("--ohne-cover", action="store_true", help="kein Cover setzen (TikTok nimmt sein Standardbild)")
     p.add_argument("--trocken", action="store_true", help="alles prüfen, nichts schreiben, Mutation nur ausgeben")
     p.add_argument("--nochmal", action="store_true", help="auch anlegen, wenn für dieses Video und den Kanal schon ein Log-Eintrag steht oder der Slot belegt ist")
     p.add_argument("--planung", choices=GUELTIG, default="automatic", help="automatic (Standard): Buffer veröffentlicht zur Zeit selbst; notification: nur Erinnerung")

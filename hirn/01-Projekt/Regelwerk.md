@@ -43,7 +43,7 @@ Die Kurzfassung aller Regeln, die für **beide** Accounts gelten. Jede Regel hat
 |---|---|
 | 4 Videos/Tag (2 je Account) für den nächsten Tag; Startsignal = Knopf „An Claude Code übergeben“ im Ideen-Studio; höchstens 2 Agenten gleichzeitig | [[Produktion Rhythmus und Modelle]] |
 | Ablauf: 10 Ideen → Inhaber wählt 2 → makelloses Skript → Claude Code baut | [[Claude-Chat-Workflow]] |
-| Modelle: Sonnet (`model: sonnet`) für Routine, Opus für neue Welten und Abnahme, Haiku für Texte | [[Produktion Rhythmus und Modelle]] |
+| Modelle: Videos mit Sonnet 5.5 von der Steuerung bis zur Abnahme (feste Regel im Cockpit seit 08.11.), Opus nur als Agent für einen Neubau, Haiku für Texte | [[Produktion Rhythmus und Modelle]] |
 | Nur Three.js und/oder Blender, keine KI-Video-Generatoren; 1080×1920, mind. 61 s | [[Produktion Rhythmus und Modelle]] |
 | Rendern auf dem Windows-PC, Rückfall Cloud | [[Render-Dienst Windows-PC]] |
 | Claude nimmt jedes Video selbst ab; bei „sieht billig aus“ Abnahme verweigern, Fehler zurück an den Agenten | [[Prüfung und Abnahme Simulierbar]], [[Prüfung und Abnahme Account 2]] |

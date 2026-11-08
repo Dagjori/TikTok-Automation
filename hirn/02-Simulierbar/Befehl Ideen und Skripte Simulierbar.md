@@ -2,7 +2,7 @@
 typ: anleitung
 konto: simulierbar
 status: aktuell
-datum: 2026-11-07
+datum: 2026-11-08
 quelle: tools/chat_befehle.py
 tags: [konto/simulierbar, claude-chat, befehl, skript]
 cssclasses: [konto-simulierbar, typ-anleitung]
@@ -45,7 +45,7 @@ REGELN FÜR IDEEN
   3. Geld hinter den Dingen: was ein Feuerwerk, ein Stadionrasen, eine Ampel oder ein Leuchtturm kostet, was ein seltener Beruf verdient; als Duell gerechnet.
   4. Länder-Duelle: dieselbe Entscheidung in Deutschland gegen ein anderes Land (Gesetz, Preis, Steuer, Gewohnheit) mit Euro-Ergebnis.
   5. Ungewöhnliche Lebensentscheidungen: echte Entscheidungen, die selten durchgerechnet werden.
-- KLASSIKER (Mieten oder Kaufen, Studium oder Ausbildung, Leasing oder Kauf, Rente bzw. Vorsorge, Kind): höchstens 1 von 10, und nur mit einer Frage, die auf Deutsch noch niemand gestellt hat. Kleine Alltagstipps nur als Ausnahme (höchstens 1 von 10) und nur, wenn die Jahressumme wirklich überrascht.
+- KLASSIKER (Mieten oder Kaufen, Studium oder Ausbildung, Leasing oder Kauf, Rente bzw. Vorsorge, Kind): bis zu 3 von 10, jeweils mit eigenem Blickwinkel bzw. einer Frage, die auf Deutsch noch niemand gestellt hat (eine neue eigene Rechnung zu einem bekannten Thema ist erlaubt, die bekannte Standardfrage nicht). Feld "feld" dann „Klassiker mit neuer Frage“. Grund: Unser einziger Treffer war ein Klassiker mit eigener Frage. Kleine Alltagstipps nur als Ausnahme (höchstens 1 von 10) und nur, wenn die Jahressumme wirklich überrascht.
 - Ausgeschlossen: Glücksspiel, Tabak/Vape, Gesundheitsversprechen, Tragödien, Krypto, Einzelaktien, Empfehlungen für Anbieter, Banken, Versicherer oder Broker, Parteipolitik, riskantes Nachahmen, Kaufaufrufe, „schnell reich“.
 - Finanzthemen nur als Modellrechnung, nie als Anlageberatung.
 - Kein Thema, zu dem es auf Deutsch schon ein Video mit der gleichen Frage gibt (Regel ORIGINALITÄT). Von englischen Videos nie Skript, Sätze, Bild- oder Szenenideen übernehmen.
@@ -58,8 +58,14 @@ Andere Creator fragen dieselbe KI mit ähnlichen Befehlen. Was dir als Erstes ei
 3. Prüfe jede Idee mit der Websuche: Gibt es auf Deutsch schon ein Video zur gleichen Frage (TikTok, YouTube, Instagram)? Suche mit 2 bis 3 deutschen Begriffen. Gefunden: Idee verwerfen und ersetzen. Englische Videos zur gleichen Frage sind erlaubt, wenn unsere Fassung eigenständig ist. Trage im Feld "originalitaet" ein: welche naheliegende Idee du damit vermeidest, die Suchbegriffe und das Ergebnis („kein deutsches Video gefunden“ oder „englisch: …“). Hast du keine Websuche, schreibe „ungeprüft“.
 4. Einzigartig UND relevant, beides ist Pflicht: ein ungewöhnlicher Winkel auf etwas, das viele kennen oder betrifft. Die Frage muss ohne Erklärung verständlich sein. Abseitige Nischen fallen genauso raus wie Standardthemen.
 5. Zwei Ideen, die sich nur im Zahlenwert oder im Ort unterscheiden, zählen als eine. Der Lernstand sagt, welche Art Thema trägt, nicht welches konkrete Thema du nehmen sollst.
+6. WÜRDE MAN DAS JEMANDEM SCHICKEN? Jede Idee muss so sein, dass man das Video einer bestimmten Person weiterschicken würde (Freundin, Kollege, Eltern, Mitbewohner), weil es sie betrifft oder überrascht. Nenne im Feld "weiterschicken", wem und warum. Ideen, die man nur allein anschaut, fallen raus. (Unser einziger Treffer war das einzige Video mit nennenswert vielen Shares.)
+7. Ausnahme Folgeteile: Ein nummerierter Folgeteil eines eigenen Treffers (Teil 2, 3 …: gleiches Versprechen, neue Rechnung bzw. neues Szenario) ist von BISHERIGE VIDEOS und der ANTI-LISTE ausgenommen. Solche Folgeteile legt das Cockpit selbst an, wenn ein Video ein Treffer war; schlage du keine eigenen vor.
+
+SUCHBEGRIFF
+Jede Idee nennt im Feld "suchbegriff" das Wort, das jemand in die TikTok-Suche tippen würde (z. B. „Studium“, „Pfand“, „Mond“, „Golfstrom“). Es steht in der Titelfrage, möglichst vorn, und später vorn in der Caption. Kein Kunstwort, keine Zahl allein.
 
 ANTI-LISTE (auf Deutsch schon gemacht oder KI-Standard; nie vorschlagen, auch nicht umbenannt)
+Ausnahme: Die fünf KLASSIKER (Mieten oder Kaufen, Studium oder Ausbildung, Leasing, Rente bzw. Vorsorge, Kind) sind mit einer neuen eigenen Frage erlaubt (bis 3 von 10, Regel KLASSIKER oben); in ihrer bekannten Standardfrage bleiben sie gesperrt.
 Mieten oder Kaufen · Studium oder Ausbildung · Leasen, Finanzieren oder bar · Neuwagen oder Gebrauchter · E-Auto oder Verbrenner · Auto, Fahrrad oder Deutschlandticket · Bahn, Auto oder Flugzeug · Fenster auf oder Klimaanlage · Spülmaschine oder Handspülen · Duschen oder Baden · Trockner oder Wäscheleine · Wasserkocher oder Herd · Standby-Kosten · LED oder Glühbirne · Heizung nachts aus bzw. 1 Grad weniger · Wärmepumpe oder Gasheizung · Solaranlage, Balkonkraftwerk, Speicher · Tanken vor 12 bzw. Umweg zur Tankstelle · Reifendruck, Tempo 130 gegen 160, Ganzjahresreifen · früh sparen, Zinseszins, erste Million, Inflation frisst Erspartes, 1 Cent verdoppeln · Kaffee to go oder Kaffeemaschine, Latte-Faktor · Mittagessen mitnehmen oder kaufen · Kochen oder Lieferdienst · Leitungs- oder Flaschenwasser · Streaming-Abos · Handyvertrag oder Prepaid, Handy auf Raten · Fitnessstudio oder draußen trainieren · Hund oder Katze · Kindergeld, was ein Kind kostet · Bürgergeld, lohnt sich Arbeiten · Steuererklärung machen oder nicht · Überstunden oder Freizeit · Jobwechsel oder Gehaltserhöhung · Teilzeit, 4-Tage-Woche · Pendeln oder umziehen, Homeoffice · Rente mit 63 oder 67 · Black Friday · Regen: rennen oder gehen · Pausen oder Tempo auf der Autobahn
 
 FAKTENTREUE (gilt für alles, was du lieferst)
@@ -77,7 +83,7 @@ Startwerte (Recherche 02.11.2026, 50 Videos von 6 Konten, öffentliche Zahlen) u
 - Caption, Hashtag-Zahl und Uhrzeit trennen Treffer nicht vom Rest; das Thema entscheidet. Wer dasselbe Thema später nachmacht, bekommt nur 0,2 bis 5 Prozent des Originals.
 - Erste eigene Zahlen (02.11.): durchschnittliche Wiedergabezeit ca. 26 Sekunden bei 66 Sekunden Länge (rund 39 Prozent). Der Lernstand wird täglich aus unseren Zahlen fortgeschrieben.
 
-BISHERIGE VIDEOS (nicht wiederholen):
+BISHERIGE VIDEOS (nicht wiederholen; ausgenommen sind nur Folgeteile eigener Treffer, Regel ORIGINALITÄT 7):
 - GTA 6 weltweit
 - Spurwechsel / Reißverschluss
 - Treppe oder Aufzug
@@ -92,7 +98,7 @@ AUFGABE
 Wir brauchen zehn Videoideen in unserer Nische für den morgigen Tag, die auf Deutsch noch niemand gemacht hat. Sie sollen unterschiedlich sein (verschiedene Themenfelder, Länder bzw. Welten) und zum Lernstand passen. Prüfe jede Idee vor der Ausgabe gegen die Regeln, die ANTI-LISTE, die Websuche und die Faktenlage; schreibe nur Ideen auf, die du belegen kannst.
 Beginne mit einer Zeile „Gestrichen (naheliegend): …“. Antworte danach als nummerierte Liste von 1 bis 10. Jede Idee mit den Feldern, die im Beispiel unten stehen, jeweils eine kurze Zeile je Feld. Danach frage mich: „Welche zwei wählst du?“
 Felder (Beispiel als JSON, nur zur Orientierung, antworte als lesbaren Text):
-{"gestrichen":["naheliegende Idee in Stichworten"],"ideen":[{"nr":1,"titel":"Duell-Frage als Videotitel","feld":"Versteckte Mechaniken | Geschichte und Kurioses | Geld hinter den Dingen | Länder-Duell | Ungewöhnliche Lebensentscheidung | Klassiker mit neuer Frage","zutat":"welche Zutat des Tages (oder „keine“)","originalitaet":"vermeidet: naheliegende Idee · Suche: Begriffe · Ergebnis: kein deutsches Video gefunden | englisch: … | ungeprüft","alternativen":["Alternative A","Alternative B"],"hook":"erster Satz des Videos: Duell, das beide Alternativen konkret nennt (keine Einzelfrage, kein Ergebnis vorweg)","ergebnis_ansatz":"wie die Rechnung geht und in welcher Größenordnung das Euro-Ergebnis liegt (kein erfundener Wert)","warum_relevant":"wen es betrifft und warum es viele interessiert","diskussion":"warum sich Zuschauer darüber austauschen würden (nur intern, nicht im Video)","daten":"welche belegbaren Quellen/Zahlen verfügbar sind","bildidee":"eine Szene, in der man das Duell sieht","laender":"Deutschland | weltweit | Land","risiko":"Recht, Plattform, Ausschlussthemen: kurz"}]}
+{"gestrichen":["naheliegende Idee in Stichworten"],"ideen":[{"nr":1,"titel":"Duell-Frage als Videotitel","feld":"Versteckte Mechaniken | Geschichte und Kurioses | Geld hinter den Dingen | Länder-Duell | Ungewöhnliche Lebensentscheidung | Klassiker mit neuer Frage","zutat":"welche Zutat des Tages (oder „keine“)","originalitaet":"vermeidet: naheliegende Idee · Suche: Begriffe · Ergebnis: kein deutsches Video gefunden | englisch: … | ungeprüft","alternativen":["Alternative A","Alternative B"],"suchbegriff":"Wort für die TikTok-Suche, steht in der Titelfrage","hook":"erster Satz des Videos: Duell, das beide Alternativen konkret nennt (keine Einzelfrage, kein Ergebnis vorweg)","ergebnis_ansatz":"wie die Rechnung geht und in welcher Größenordnung das Euro-Ergebnis liegt (kein erfundener Wert)","warum_relevant":"wen es betrifft und warum es viele interessiert","weiterschicken":"wem man das Video schicken würde und warum","diskussion":"warum sich Zuschauer darüber austauschen würden (nur intern, nicht im Video)","daten":"welche belegbaren Quellen/Zahlen verfügbar sind","bildidee":"eine Szene, in der man das Duell sieht","laender":"Deutschland | weltweit | Land","risiko":"Recht, Plattform, Ausschlussthemen: kurz"}]}
 ```
 
 ## Schritt 2: Skripte für die zwei gewählten Ideen
@@ -120,7 +126,7 @@ SPANNUNG UND QUALITÄT
 - Nichts Übertriebenes: lieber ein klarer, sauberer Spannungsbogen als Effekthascherei.
 
 AUFBAU DES SKRIPTS (feste Reihenfolge, genau diese Phasen; Zeiten für ca. 70 Sekunden)
-1. hook (0 bis 5 s): Pflicht ist ein Duell im ersten Satz: beide Alternativen bzw. beide Personen konkret nennen und gegeneinanderstellen (z. B. „Einer verdient ab 16, der andere ab 24. Wer hat mit 40 mehr?“). Keine Einzelfrage („Wie viel kostet X wirklich?“), kein vorweggenommenes Ergebnis; ein Du-Szenario nur mit beiden Seiten im Hook. Höchstens 2 kurze Sätze, der erste mit nur 3 bis 4 Wörtern, die Stimme setzt sofort ein. Die Duell-Frage steht ab dem ersten Bild als Titel im Bild (Feld text); das erste Bild muss ohne Ton verständlich sein (beide Seiten, ihre Werte, ein Vergleichszeichen).
+1. hook (0 bis 5 s): Pflicht ist ein Duell im ersten Satz: beide Alternativen bzw. beide Personen konkret nennen und gegeneinanderstellen (z. B. „Einer verdient ab 16, der andere ab 24. Wer hat mit 40 mehr?“). Keine Einzelfrage („Wie viel kostet X wirklich?“), kein vorweggenommenes Ergebnis; ein Du-Szenario nur mit beiden Seiten im Hook. Höchstens 2 kurze Sätze, der erste mit nur 3 bis 4 Wörtern, die Stimme setzt sofort ein. Die Duell-Frage steht ab dem ersten Bild als Titel im Bild (Feld text) und enthält den Suchbegriff (Feld suchbegriff); das erste Bild muss ohne Ton verständlich sein (beide Seiten, ihre Werte, ein Vergleichszeichen). Dieses Bild ist zugleich das Cover im Profil.
 2. regeln: die Spielregeln knapp als Mini-Fakten (kurz, mit konkreten Zahlen der Modellperson; im Bild als Chips), nicht lang aufzählen.
 3. falle (Denkfalle, bis ca. 16 s): „Klar, …. Oder?“ ruhig, kein „Los geht’s“.
 4. rennen: das Duell mit laufender Uhr bzw. Zählern; ruhiger Erzähler, kein Sportreporter; mindestens eine Zahl je 10 Sekunden.
@@ -130,7 +136,7 @@ AUFBAU DES SKRIPTS (feste Reihenfolge, genau diese Phasen; Zeiten für ca. 70 Se
 8. warum: höchstens zwei Faktoren, kurz,
 9. pointe: eine überraschende Einordnung bzw. zweite Überraschung,
 10. schlusskarte (letzte 2 bis 3 s): ein kurzes Fazit oder die Pointe in einem Satz, der zugleich als Karte im Bild steht. Keine Frage, kein Aufruf.
-Kein Schlusssatz mit Aufforderung und kein Folgen-Aufruf; die Kommentarfrage steht nur in der Caption. Nur wenn mein Auftrag es ausdrücklich verlangt: folgen bei ca. 20 s, höchstens 2 s, genau „Folg mir, damit du nichts verpasst.“
+Kein Schlusssatz mit Aufforderung und kein gesprochener Folgen-Aufruf; die Kommentarfrage steht nur in der Caption. Schreibe zusätzlich im Feld folgen_hinweis eine kurze Textzeile (höchstens 8 Wörter), die nicht gesprochen wird und nur in Testvideos unter der Schlusskarte steht: an den Inhalt gebunden („Teil 2 ist im Profil“, „Jeden Tag ein Geld-Duell im Profil“), kein Tausch, keine Belohnung, kein Druck, kein „Folg mir“. Ob sie ins Video kommt, entscheidet der Testblock.
 Länge: 150 bis 190 gesprochene Wörter (ca. 65 bis 80 Sekunden bei flüssigem Tempo von 2,3 bis 2,7 Wörtern pro Sekunde). Es muss natürlich und flüssig klingen: lieber kürzen als hetzen. Sätze meist 3 bis 5 Wörter. Erzählhaltung neutral: Du-Ansprache höchstens im Hook, danach neutral formulieren („Wer wechselt, wird doppelt so lange überholt.“ statt „Du wirst …“). Zahlen im Sprechtext gerundet (im Bild exakt).
 
 REGIE-TEXT FÜR DIE STIMME (ElevenLabs „Ben“, Modell v4) — so schreiben, dass die Stimme Tonfall und Betonung perfekt umsetzt
@@ -147,7 +153,7 @@ REGIE-TEXT FÜR DIE STIMME (ElevenLabs „Ben“, Modell v4) — so schreiben, d
 
 CAPTION (nicht im Video, nur Beschreibung)
 Genau eine Zeile: Hook-Frage mit Suchbegriff? Emoji Ich hab’s simuliert. Kommentarfrage? 👇 #thema1 #thema2 #thema3 #wissen #simulation
-Etwa 150 Zeichen plus 5 Hashtags, kein #fyp oder #viral, keine Quellen, keine Hinweise wie „keine Anlageberatung“.
+Der Suchbegriff steht vorn in der Hook-Frage (dasselbe Wort wie in der Titelfrage im Bild). Etwa 150 Zeichen plus 5 Hashtags, kein #fyp oder #viral, keine Quellen, keine Hinweise wie „keine Anlageberatung“.
 
 LERNSTAND (aus unseren Zahlen, bitte berücksichtigen)
 Startwerte (Recherche 02.11.2026, 50 Videos von 6 Konten, öffentliche Zahlen) und eigene erste Zahlen:
@@ -162,7 +168,7 @@ GEWÄHLTE IDEEN (für diese schreibst du jetzt je ein makelloses Skript)
 AUFGABE
 Schreibe für jede gewählte Idee ein makelloses, sendefertiges Skript nach allen Regeln oben. Erfinde nichts; jede Zahl mit Rechenweg und Quelle. Prüfe dein Skript am Ende selbst (Wortzahl bzw. Satzzahl, Fakten, Ton, Verbote) und trage das Ergebnis in selbstpruefung ein. Findest du beim Prüfen einen Fehler, korrigiere ihn vor der Ausgabe.
 Gib je Idee das Skript lesbar aus: Titel, Segmente mit Text und Sprechtext (bzw. Sätze und Anzeige-Plan), Rechenweg, Annahmen, Quellen, Caption, Dramaturgie-Hinweise, Selbstprüfung. Feldstruktur zur Orientierung:
-{"skripte":[{"nr":1,"titel":"","thema":"","laender":"","segmente":[{"id":"hook","phase":"hook","text":"Untertitel-Text (Ziffern erlaubt)","sprechtext":"Regie-Text, eine Zeile pro Satz"}],"woerter":0,"rechenweg":"Formel, Eingaben, Rechenschritte, Ergebnis","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","originalitaet":"Suche (deutsch) und Ergebnis","dramaturgie":["Hinweis mit Zeitpunkt"],"selbstpruefung":["Wortzahl ..","Fakten ..","Ton ..","Verbote .."]}]}
+{"skripte":[{"nr":1,"titel":"","thema":"","laender":"","suchbegriff":"","folgen_hinweis":"kurze, nicht gesprochene Textzeile für Testvideos","teil":1,"segmente":[{"id":"hook","phase":"hook","text":"Untertitel-Text (Ziffern erlaubt)","sprechtext":"Regie-Text, eine Zeile pro Satz"}],"woerter":0,"rechenweg":"Formel, Eingaben, Rechenschritte, Ergebnis","zahlen":{"name":"wert"},"annahmen":["(A) ..."],"quellen":["(F) Quelle, Jahr"],"caption":"","originalitaet":"Suche (deutsch) und Ergebnis","dramaturgie":["Hinweis mit Zeitpunkt"],"selbstpruefung":["Wortzahl ..","Fakten ..","Ton ..","Verbote .."]}]}
 ```
 
 ## Zutaten-Listen

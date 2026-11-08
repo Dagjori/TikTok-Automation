@@ -147,6 +147,9 @@
 .ms-pointe .ms-pw.a { color: var(--team-a); }
 .ms-pointe .ms-pw.b { color: var(--team-b); }
 
+/* ---------- Folgen-Hinweis (seit 08.11.2026, nur Testblock): ruhige Textzeile unter der Schlusskarte, kein Knopf, kein Pfeil ---------- */
+.ms-hinweis { left: 150px; width: 780px; text-align: center; color: rgba(255, 255, 255, 0.9); font-weight: 600; letter-spacing: 0.005em; line-height: 1.2; text-wrap: balance; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.45), 0 8px 26px rgba(0, 0, 0, 0.6); will-change: transform, opacity; }
+
 /* ---------- Folgen-Aufruf ---------- */
 .ms-folgen { left: 0; top: 0; display: flex; align-items: center; gap: 12px; transform-origin: 100% 50%; }
 .ms-folgen .ms-fp { display: inline-flex; align-items: center; gap: 14px; height: 80px; padding: 0 32px 0 12px; border-radius: 999px; background: var(--tinte); color: #fff; font-weight: 900; font-size: 38px; letter-spacing: -0.01em; box-shadow: var(--ms-schatten); white-space: nowrap; }

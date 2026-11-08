@@ -18,7 +18,7 @@ cssclasses: [konto-stelldirvor, typ-anleitung]
 | Datei | Inhalt |
 |---|---|
 | `pipeline/engine/stil_lunar_pov.js` | Welt und Effekte: `aktiviereHoehenNebel`, `Himmel`, `Glut`, `Puffs` + `wolkenFeld`, `rauchSaeule`, `staubWand`, `feuerBall`, `puffStrahl`; `Partikel` (staub, asche, schnee, eis, regen, funken); `Truemmer`; `Menschen`, `Autos`, `Voegel`; `vordergrund` (holz, metall, glas, beton, fenster); `PovKamera`; `PHASE`, `farbPhasen`; `huelle`, `blitzKurve`; `Protokoll` |
-| `pipeline/engine/lunar_hud.js` | `LunarHUD` (Titel, Anzeige mit Etikettwechsel, Sätze, Abblende, Abspann, Vignette, `glas`, `flecken`, `tropfen`, `ereignisse()`), `LP_ZEITEN`, `zahlDE`, `uhrzeit` |
+| `pipeline/engine/lunar_hud.js` | `LunarHUD` (Titel, Anzeige mit Etikettwechsel, Sätze, Abblende, Abspann, Vignette, `glas`, `flecken`, `tropfen`, `ereignisse()`, seit 08.11. Option `hinweis` = Folgen-Hinweis im Abspann nur im Testblock „mit“), `LP_ZEITEN`, `zahlDE`, `uhrzeit`, seit 08.11. `lpZeitenFuer(L)` (Zeiten für 62–70 s, Testblock c) und `lpSkala(t, L)` (Zeitpunkt aus dem 80-s-Plan umrechnen) |
 | `pipeline/engine/stil_lunar_pov.css` | gemessene Maße und Farben, Schriften (Crimson Pro, Inter; OFL-Texte in `engine/schriften/`) |
 | `pipeline/engine/kern.js` | Nachbearbeitung: Bloom, ACES, Farbe; neu: `tiefe` (Tiefenunschärfe), `flimmern` (Hitze), `schleier` (Staub/Weißblende) |
 | `pipeline/atmo.py` | Atmo-Spur ohne Stimme aus `ton.json` + Protokoll |

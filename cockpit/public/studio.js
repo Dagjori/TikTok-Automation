@@ -9,10 +9,10 @@ const STUFE = { gewaehlt: 1, recherche: 1, skript_fertig: 2, rueckfrage: 2, frei
 const FERTIG_STATUS = new Set(["geplant", "gepostet"]);
 const AENDERBAR = new Set(["gewaehlt", "fehler"]);
 const FELDER = {
-  simulierbar: { offen: ["hook", "ergebnis_ansatz", "warum_relevant", "originalitaet"], mehr: ["feld", "zutat", "diskussion", "daten", "bildidee", "laender", "risiko"] },
-  stelldirvor: { offen: ["ereignis", "messgroesse", "welt", "standpunkt", "originalitaet"], mehr: ["feld", "massstab", "zutat", "tageszeit_verlauf", "bewegung", "kamera", "zeitraffer", "hoehepunkt", "pointe", "diskussion", "daten", "laender", "risiko"] },
+  simulierbar: { offen: ["treffer", "hook", "ergebnis_ansatz", "warum_relevant", "weiterschicken", "originalitaet"], mehr: ["suchbegriff", "feld", "zutat", "diskussion", "daten", "bildidee", "laender", "risiko"] },
+  stelldirvor: { offen: ["treffer", "ereignis", "messgroesse", "welt", "standpunkt", "weiterschicken", "originalitaet"], mehr: ["suchbegriff", "feld", "massstab", "zutat", "tageszeit_verlauf", "bewegung", "kamera", "zeitraffer", "hoehepunkt", "pointe", "diskussion", "daten", "laender", "risiko"] },
 };
-const FELD_NAME = { originalitaet: "Originalität", feld: "Themenfeld", zutat: "Zutat", massstab: "Maßstab", hook: "Hook", ergebnis_ansatz: "Ergebnis", warum_relevant: "Warum relevant", diskussion: "Diskussion", daten: "Daten", bildidee: "Bildidee", laender: "Länder", risiko: "Risiko", ereignis: "Ereignis", messgroesse: "Messgröße", welt: "Welt", standpunkt: "Standpunkt", tageszeit_verlauf: "Tageszeit", bewegung: "Bewegung", kamera: "Kamera", zeitraffer: "Zeitraffer", hoehepunkt: "Höhepunkt", pointe: "Pointe" };
+const FELD_NAME = { originalitaet: "Originalität", feld: "Themenfeld", zutat: "Zutat", massstab: "Maßstab", hook: "Hook", ergebnis_ansatz: "Ergebnis", warum_relevant: "Warum relevant", diskussion: "Diskussion", daten: "Daten", bildidee: "Bildidee", laender: "Länder", risiko: "Risiko", ereignis: "Ereignis", messgroesse: "Messgröße", welt: "Welt", standpunkt: "Standpunkt", tageszeit_verlauf: "Tageszeit", bewegung: "Bewegung", kamera: "Kamera", zeitraffer: "Zeitraffer", hoehepunkt: "Höhepunkt", pointe: "Pointe", weiterschicken: "Würde man es schicken?", suchbegriff: "Suchbegriff", treffer: "Treffer" };
 
 const wert = (v) => (Array.isArray(v) ? v.join("  gegen  ") : v && typeof v === "object" ? JSON.stringify(v) : String(v ?? ""));
 const nurLesen = () => !!(S.einstellungen?.studio_ab && ST.tag < S.einstellungen.studio_ab);
@@ -98,8 +98,10 @@ function ideenZeichnen() {
     const offenFelder = felder.offen.filter((f) => i[f]).map(zeile).join("");
     const mehr = felder.mehr.filter((f) => i[f]).map(zeile).join("");
     const alt = Array.isArray(i.alternativen) && i.alternativen.length ? `<div class="idee-chips">${i.alternativen.map((a) => `<span class="chip">${esc(a)}</span>`).join("")}</div>` : "";
-    return `<div class="idee ${gewaehlt ? "gewaehlt" : ""}" style="animation-delay:${n * 35}ms">
-      <div class="idee-kopf"><span class="idee-nr">${i.nr}</span><span class="idee-titel">${esc(i.titel)}</span></div>
+    // Folgeteil eines eigenen Treffers (Cockpit, seit 08.11.): oben, mit Hinweis auf den Treffer
+    const teil = i.typ === "folgeteil" ? `<div class="idee-chips"><span class="chip teil">🎯 Folgeteil · Teil ${esc(i.teil)}</span>${i.serie?.link ? `<a class="chip" href="${esc(i.serie.link)}" target="_blank" rel="noopener noreferrer">Teil davor ansehen</a>` : ""}</div>` : "";
+    return `<div class="idee ${gewaehlt ? "gewaehlt" : ""} ${i.typ === "folgeteil" ? "folgeteil" : ""}" style="animation-delay:${n * 35}ms">
+      <div class="idee-kopf"><span class="idee-nr">${i.nr}</span><span class="idee-titel">${esc(i.titel)}</span></div>${teil}
       ${alt}<div class="idee-felder">${offenFelder}</div>
       ${mehr ? `<details><summary>Mehr Details</summary><div class="idee-felder">${mehr}</div></details>` : ""}
       <div class="idee-knoepfe">${knoepfe}</div>

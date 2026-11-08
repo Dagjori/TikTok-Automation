@@ -33,7 +33,7 @@ Profilbild bleibt das Logo (Account 1 „S-Kurve“, Account 2 „Fragezeichen-C
 |---|---|
 | `@simulierbar` | Titeltafel mit der Duell-Frage und „VS“, groß lesbar |
 | `@stelldirvor.pov` | die Titelfrage aus dem ersten Bild |
-- Umsetzung offen: `pipeline/post_buffer.py` setzt heute kein Cover; Buffer kann ein Cover-Bild setzen (**S**, Buffer-Hilfe). Bis dahin wählt TikTok das Standardbild ([[Plattformregeln und Posting]]).
+- Umgesetzt 08.11.: `pipeline/post_buffer.py` setzt das Cover über Buffer als Zeitpunkt im Video (Account 1 bei 1,0 s, Account 2 bei 1,5 s); Details und Grenzen in [[Plattformregeln und Posting]] › Cover. Ältere Videos behalten ihr Standardbild (nur in der App änderbar).
 
 ## Alte Shop-Videos (Account 1)
 Bleiben öffentlich, weil Markeninhalte sich nicht privat stellen lassen ([[Account Simulierbar Überblick]]). Die drei Pins stehen davor, damit Besucher zuerst das Geld-Format sehen.

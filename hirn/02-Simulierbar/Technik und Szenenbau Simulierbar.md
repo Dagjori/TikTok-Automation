@@ -130,7 +130,7 @@ const welt = { szene, kamera, post, update(t) {
 } };
 
 M.tafel({ y: 166, links: { team: "a", einheit: "€" }, rechts: { team: "b", einheit: "€" }, werte: (t) => ({ a, b }), uhr: { ein: "Was", zeit: (t) => … } });
-M.folgen({ ein: "Folg", dauer: 1.8 });
+// Folgen-Hinweis nur im Testblock „mit“ (seit 08.11., ersetzt M.folgen): if (skript.testbloecke?.folgen_hinweis === "mit") M.hinweis({ text: skript.folgen_hinweis });
 M.untertitel({ stil: "kontur", unten: 1450, groesse: 64 });
 M.schleife({ ab: T("Was#2") - 0.3 });
 

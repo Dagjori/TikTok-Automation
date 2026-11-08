@@ -51,7 +51,7 @@ const M = new Massstab(hud, zp, {
 | **Bilanzkarte** | `M.bilanz({…})` | Zeilen mit Haarlinie, Differenz mit Elfenbein-Rand, Sieger-Banner als Teamverlauf mit Schein |
 | **„Warum?“-Balken** | `M.balken({ titel:"Warum?", faktoren:[…max. 2] })` | leuchtende Teambalken |
 | **Pointe/Merksatz** | `M.pointe({ text, ein })` | große Zahl/Wörter in Inter Display 800, ohne Kontur, weicher Schatten |
-| **Folgen-Aufruf** | `M.folgen({ ein, dauer: 1.8 })` | Glas-Pille |
+| **Folgen-Hinweis** (seit 08.11., nur Testblock „mit“) | `M.hinweis({ text })` (letzte 2,5 s, y ≈ 1190) | ruhige weiße Textzeile unter der Schlusskarte, kein Knopf, kein Pfeil; ersetzt `M.folgen` (Glas-Pille bei ca. 20 s, veraltet) |
 | **Sticker/Stempel** | **verboten, auch nach der Lockerung der Effekte** (bestätigt 02.11. abends; `M.stempel` nicht aufrufen; `sim_hud.css` blendet `.ms-stempel` aus, `massstab.py` 5d zählt jeden Aufruf als Fehler) | – |
 
 **Weniger ist mehr:** Chips nur mit neuer Zahl bzw. Information (≤ 15 je Video, Hinweis 5e). Jede Regel lieber als Objekt in der Welt zeigen und den Chip klein halten.

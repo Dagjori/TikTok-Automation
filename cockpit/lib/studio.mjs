@@ -7,6 +7,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { automatikLesen, RECHERCHE_BEIDE_S, RECHERCHE_EINZELN_S, PRODUKTION_NACH_S } from "./automatik.mjs";
+import { teilIdee, frageAusCaption, teilAusText } from "./treffer.mjs";
 
 export const KONTEN = {
   simulierbar: { praefix: "acc1", name: "Simulierbar", kanal: "simulierbar" },
@@ -128,6 +129,59 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
     return ab;
   }
 
+  // ───────── Treffer-Folgen (Wahl des Inhabers 08.11.2026, Hirn „Serien und Treffer-Folgen“) ─────────
+  // Serie eines geposteten Videos aus seinem Slot-Dokument (über post_id): Teil und Titel von Teil 1; ältere Posts ohne Dokument aus der Caption.
+  function serieVon(post) {
+    const d = post?.post_id ? db.liste("skripte", [["post_id", "==", post.post_id]])[0] : null;
+    const idee = d?.daten.idee || null;
+    if (idee?.typ === "folgeteil") return { teil: Number(idee.teil) || 2, wurzel: idee.serie?.wurzel_titel || idee.titel, titel: d.daten.titel || idee.titel, slot: d.id };
+    if (d) return { teil: 1, wurzel: d.daten.titel || idee?.titel || frageAusCaption(post.titel), titel: d.daten.titel || idee?.titel, slot: d.id };
+    return { teil: teilAusText(post?.titel), wurzel: frageAusCaption(post?.titel), titel: frageAusCaption(post?.titel), slot: null };
+  }
+
+  // Nächster Video-Tag ab morgen, an dem im Konto noch ein Slot frei bzw. änderbar ist („am nächsten Produktionstag“, höchstens 4 Tage voraus)
+  function folgeteilTag(konto) {
+    const basis = Date.parse(`${heute()}T12:00:00Z`);
+    for (let n = 1; n <= 4; n++) {
+      const datum = new Date(basis + n * 86400000).toISOString().slice(0, 10);
+      if (SLOTS.some((s) => { const d = db.get("skripte", slotId(konto, datum, s)); return !d || AENDERBAR.has(d.daten.status); })) return datum;
+    }
+    return new Date(basis + 5 * 86400000).toISOString().slice(0, 10);
+  }
+
+  // Vorgemerkte Folgeteile (stand/treffer-offen) eines Kontos für einen Tag herausnehmen; ältere Vormerkungen wandern mit
+  function vorgemerkteNehmen(konto, datum) {
+    const v = db.get("stand", "treffer-offen");
+    const liste = v?.daten.liste || [];
+    const nehmen = liste.filter((x) => x.konto === konto && x.datum <= datum);
+    if (!nehmen.length) return [];
+    db.schreiben("stand", "treffer-offen", { liste: liste.filter((x) => !nehmen.includes(x)), aktualisiert: jetzt() }, { ifVersion: v.version, von: "cockpit" });
+    return nehmen.map((x) => x.idee);
+  }
+
+  // Treffer → Idee „Teil N“ in die Ideen des nächsten freien Video-Tags (gibt es dort noch keine Ideen: vormerken)
+  function trefferIdee({ konto, post, teil, bewertung, views24, serie }) {
+    if (!KONTEN[konto]) throw fehler(`Unbekanntes Konto „${konto}“`);
+    const s = serie || serieVon(post);
+    const idee = teilIdee({ konto, teil, wurzelTitel: s.wurzel, vorherTitel: s.titel, post, bewertung, views24 });
+    const datum = folgeteilTag(konto);
+    const id = ideenId(konto, datum);
+    const gleich = (i) => i?.typ === "folgeteil" && i.serie?.post_id && i.serie.post_id === post?.post_id;
+    const dok = db.get("ideen", id);
+    if (dok) {
+      const ideen = dok.daten.ideen || [];
+      if (ideen.some(gleich)) return { ok: true, datum, schon_da: true, idee };
+      const nr = Math.max(10, ...ideen.map((i) => Number(i.nr) || 0)) + 1;
+      db.schreiben("ideen", id, { ideen: [{ ...idee, nr }, ...ideen] }, { art: "update", ifVersion: dok.version, von: "cockpit" });
+      return { ok: true, datum, nr, vorgemerkt: false, idee };
+    }
+    const v = db.get("stand", "treffer-offen");
+    const liste = v?.daten.liste || [];
+    if (liste.some((x) => gleich(x.idee))) return { ok: true, datum, schon_da: true, idee };
+    db.schreiben("stand", "treffer-offen", { liste: [...liste, { konto, datum, idee, zeit: jetzt() }], aktualisiert: jetzt() }, { ifVersion: v?.version, von: "cockpit" });
+    return { ok: true, datum, vorgemerkt: true, idee };
+  }
+
   const aktionen = {
     ideen({ konto, datum, wunsch = "" }) {
       pruefe({ konto, datum });
@@ -145,7 +199,10 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
           if (!ideen.length) throw fehler("Claude hat keine gültigen Ideen geliefert");
           const gestrichen = Array.isArray(antwort.gestrichen) ? antwort.gestrichen.map(String).slice(0, 30) : [];
           const id = ideenId(konto, datum);
-          db.schreiben("ideen", id, { konto, datum, ideen, wunsch, zutaten: prompt.zutaten, gestrichen, erzeugt: jetzt() }, { ifVersion: db.get("ideen", id)?.version, von: "claude" });
+          // Folgeteile eigener Treffer bleiben bzw. kommen dazu (vorhandene Idee des Tages, vorgemerkte aus stand/treffer-offen)
+          const folgeteile = [...(db.get("ideen", id)?.daten.ideen || []).filter((i) => i.typ === "folgeteil"), ...vorgemerkteNehmen(konto, datum)];
+          const alle = [...folgeteile.map((i, n) => ({ ...i, nr: 11 + n })), ...ideen.filter((i) => i.typ !== "folgeteil")];
+          db.schreiben("ideen", id, { konto, datum, ideen: alle, wunsch, zutaten: prompt.zutaten, gestrichen, erzeugt: jetzt() }, { ifVersion: db.get("ideen", id)?.version, von: "claude" });
         },
       });
       return { ok: true, hinweis: "Claude sucht und prüft die Ideen (ca. 3–6 Min.)" };
@@ -329,5 +386,7 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
       return f(daten);
     },
     istStudioFehler: (e) => e instanceof StudioFehler,
+    serieVon,
+    trefferIdee,
   };
 }

@@ -17,12 +17,12 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 ## Neu seit 08.11. (Wachstums-Recherche, Wahl des Inhabers per Klick)
 | Änderung | Wirkung |
 |---|---|
-| **Folgen-Hinweis als Blocktest am Ende** | ersetzt den Testaufruf bei ca. 20 s: eine kleine **Textzeile in den letzten 2–3 s** unter der Schlusskarte, nicht gesprochen, **an Inhalt gebunden** („Teil 2 ist im Profil“, „Morgen: …“); kein Tausch, keine Belohnung, kein Druck. Abwechselnd **10 Videos mit, 10 ohne**, gemessen an Follows je 1.000 Aufrufe und Anteil der Länge; Start, sobald die Follows je Video gemessen werden ([[Lernschleife und Insights]]). Die Schlusskarte selbst bleibt ohne Frage und Aufruf. |
+| **Folgen-Hinweis als Blocktest am Ende** | ersetzt den Testaufruf bei ca. 20 s: eine kleine **Textzeile in den letzten 2–3 s** unter der Schlusskarte, nicht gesprochen, **an Inhalt gebunden** („Teil 2 ist im Profil“, „Morgen: …“); kein Tausch, keine Belohnung, kein Druck. Abwechselnd **10 Videos mit, 10 ohne**, gemessen an Follows je 1.000 Aufrufe und Anteil der Länge; **Start Video-Tag 10.11.2026 mit „mit“** (Wahl des Inhabers 08.11.; das Cockpit misst die Follows je Video seit 08.11., [[Lernschleife und Insights]]). Die Schlusskarte selbst bleibt ohne Frage und Aufruf. **Technik:** Zuordnung je Video `tools/testblock.py` → `skript.json → testbloecke`; Baustein `M.hinweis({ text })` (Text aus `skript.json → folgen_hinweis`); Prüfpunkt 7 in `qc/massstab.py` (Pflicht: bei „mit“ Textzeile in den letzten 2–3 s ohne Druck, sonst keine; `M.folgen` ist ersetzt). |
 | **Treffer laufen als Serie weiter** | ≥ 3× Median nach 24 h → nummerierter Folgeteil am nächsten Produktionstag ([[Serien und Treffer-Folgen]]) |
 | **Klassiker bis 3 von 10** | mit eigenem Blickwinkel; Folgeteile eigener Treffer ausgenommen; neues Kriterium „Würde man das jemandem schicken?“ ([[Originalität und Themenfindung]]) |
 | **Finanz-Formulierungen** | Modell statt Versprechen, Bedingung nennen, 1–2 Annahmen sichtbar im Bild, keine FOMO ([[Finanz-Formulierungen Simulierbar]]) |
 | **Antwort-Videos ab sofort, Stitch-Test** | Zuschauerwünsche als Antwort-Video mit Erwähnung; 4–6 Stitches „Ich hab's durchgerechnet“ ([[Kommentare Antwort-Videos und Stitch]]) |
-| **Profil: 3 Pins, Bio mit Versprechen und Takt, einheitliches Cover** | [[Profil und Follow-Umwandlung]] |
+| **Profil: 3 Pins, Bio mit Versprechen und Takt, einheitliches Cover** | [[Profil und Follow-Umwandlung]]; Cover = Bild bei 1,0 s (Titel mit „VS“ und Tafel), gesetzt von `pipeline/post_buffer.py` ([[Plattformregeln und Posting]] › Cover) |
 | **Suchbegriff in Titelfrage und Caption** | [[Plattformregeln und Posting]] › Caption |
 
 ## Neu seit 07.11. (REA-Lauf mit 9 Vorbildern, Freigabe des Inhabers per Klick)

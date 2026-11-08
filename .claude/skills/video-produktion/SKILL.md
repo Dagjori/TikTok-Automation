@@ -25,7 +25,7 @@ Lies danach **nur** den Teil dieses Accounts und dessen Pflichtlektüre. Nichts 
 5. **Kein Logo, kein Kanalname, keine Rubrik, keine Sticker/Stempel im Video**; kein KI-Label beim Posten; die Kommentarfrage steht nur in der Caption.
 6. **Keine 1:1-Kopie** fremder Videos (Sätze, Bild- und Szenenideen); gleiches Thema nur mit eigenem Skript und anderem Design. **Das Repo ist öffentlich:** keine fremden Videos, Standbilder, Transkripte oder Links ins Repo, keine Schlüssel, keine E-Mail-Adressen.
 7. **Qualität vor Tempo:** Wirkt etwas billig, flach, leer oder gehetzt, wird die Abnahme verweigert und nachgebessert. Gepostet wird nur, was jede Pflichtprüfung besteht.
-8. **Modelle:** Opus steuert und nimmt ab; Produktions-Agenten ausdrücklich `model: sonnet`, höchstens 2 gleichzeitig, Auftrag als nummerierte Checkliste mit Beleg je Punkt; Erstbau eines Stils, Welttyps oder Objekttyps mit Opus.
+8. **Modelle (feste Regel des Inhabers 08.11.2026, Tokens sparen):** Videos baut **Sonnet 5.5** von der Steuerung bis zur Abnahme; Produktions-Agenten ausdrücklich `model: sonnet`, höchstens 2 gleichzeitig, Auftrag als nummerierte Checkliste mit Beleg je Punkt. **Opus 5.5 nur für einen Neubau von Grund auf** (Erstbau eines Stils, Welttyps, Objekttyps oder Design-Elements): genau ein Agent mit `model: opus` nur für diesen Baustein, vorher Meilenstein „Neubau mit Opus: …“. Abwandlungen von Vorhandenem sind kein Neubau.
 9. **Reihenfolge (Inhaber 06.11.):** zuerst beide 12:30-Videos bis Buffer, dann die 19:30-Videos; ein Abend-Video wird nicht angefangen, solange ein Mittag-Video nicht geplant ist (außer es wartet nur auf den Render).
 10. **Regeln ändert dieser Ablauf nie.** Ideen für Verbesserungen gehen als Vorschlag an den Inhaber (Lernschleife bzw. Abschlussnachricht).
 
@@ -35,7 +35,7 @@ Lies danach **nur** den Teil dieses Accounts und dessen Pflichtlektüre. Nichts 
 | # | Schritt | Was genau | Meilenstein |
 |---|---|---|---|
 | 0 | **Start** | `git pull --rebase origin main`; Weiche (§1); Pflichtlektüre des Accounts lesen; Projektordner `pipeline/projekte/<name>/` (kurz, ASCII) | „Produktion gestartet“ |
-| 1 | **Eingangsprüfung** | Skript gegen die Regeln des Accounts (Teil-Datei, Abschnitt „Eingangsprüfung“); Auffälligkeiten melden, bevor gebaut wird | – |
+| 1 | **Eingangsprüfung** | Skript gegen die Regeln des Accounts (Teil-Datei, Abschnitt „Eingangsprüfung“); Auffälligkeiten melden, bevor gebaut wird. **Testblock** (seit 08.11.): `python3 tools/testblock.py --konto simulierbar|stelldirvor --datum <Video-Tag> --slot <mittag|abend>` → Ergebnis als `testbloecke` in `skript.json` (steht es schon im Skript, muss es gleich sein); die Variante bestimmt Folgen-Hinweis bzw. Einstieg (Teil-Datei). **Folgeteil** (`idee.typ` = `folgeteil`): „Teil N“ groß im ersten Bild und vorn in der Caption, eigene Rechnung bzw. eigenes Szenario | – |
 | 2 | **Rechnung** | `sim/<thema>.mjs` mit Test `sim/<thema>.test.mjs` (`node --test sim/<thema>.test.mjs`); Faktencheck nach §2.1 | „Rechnung geprüft“ |
 | 3 | **Dramaturgie** | Beat-Blatt bzw. Bewegungsplan aus dem Skript ableiten (Teil-Datei) | – |
 | 4 | **`skript.json`** | mit `"skill": "video-produktion"`, `"konto"`, `skript_quelle` = Dokument-ID, Feldern nach Teil-Datei | – |
@@ -45,12 +45,12 @@ Lies danach **nur** den Teil dieses Accounts und dessen Pflichtlektüre. Nichts 
 | 8 | **Render** | committen, `git pull --rebase`, pushen (der PC holt `origin/main`), dann Render-Dienst auf dem PC: `python3 render_dienst/auftrag.py senden <name> --konto simulierbar|stelldirvor.pov` und `… warten` (im Cockpit über `mit_schluessel.mjs render …`). Exit 3 = PC offline: Cloud-Rückfall nur, wenn die Posting-Zeit sonst fällt | „Render auf dem PC“ |
 | 9 | **Prüfung** | Prüfskript des Accounts + Text-Überlappung + Kontaktbogen + Sichtprüfung (Teil-Datei, Abschnitt „Prüfung“); jeder Hinweis wird im Bericht erklärt oder behoben; nach zwei gescheiterten Nachbesserungen `fehler` | „Prüfung bestanden“ |
 | 10 | **`lern_notizen`** | nach der Abnahme aus `audio/timing.json` bzw. `ereignisse.json` ausfüllen (Teil-Datei); die Lernschleife verknüpft sie mit den Zahlen | – |
-| 11 | **Buffer** | `post_buffer.py --video … --kanal simulierbar|stelldirvor.pov --zeit auto:<datum>:<slot> --text "<Caption>"` (Caption-Format CLAUDE.md §7), Status `scheduled`; Protokollzeile `data/produktion/protokoll.csv`; committen, pushen | „In Buffer geplant …“ |
+| 11 | **Buffer** | `post_buffer.py --video … --kanal simulierbar|stelldirvor.pov --zeit auto:<datum>:<slot> --text "<Caption>"` (Caption-Format CLAUDE.md §7, Suchbegriff vorn), Status `scheduled`. **Cover** (seit 08.11.) setzt das Skript selbst: Bild bei 1,0 s (A1) bzw. 1,5 s (A2), gespeichert als `<video>_cover.jpg`; ansehen, Titel bzw. Titelfrage müssen lesbar sein, sonst `--cover-ms`. Protokollzeile `data/produktion/protokoll.csv`; committen, pushen | „In Buffer geplant …“ |
 | 12 | **Nachprüfung** | ca. 20 Min. nach der Posting-Zeit `post_buffer.py --nachpruefen` (öffentlich, Länge, KI-Label wie gesetzt) | „gepostet“ |
 
 ## 4. Erstlauf (Entscheidung des Inhabers 07.11.2026: „am nächsten echten Video testen“)
 Bis dieser Abschnitt für einen Account „erprobt“ zeigt, gilt beim ersten Video dieses Accounts nach diesem Skill:
-1. Abnahme durch Opus selbst, kein Agent. Jeden Pflicht- und Hinweispunkt des Prüfskripts **und** jeden Punkt der Sichtprüfung mit Beleg im Bericht (Slot-Feld `fortschritt` bzw. Abschlussnachricht).
+1. Abnahme durch die steuernde Sitzung selbst (Sonnet 5.5, Punkt 8), kein Agent. Das MP4 ist 1080×1920 (CRP), sonst nicht abnehmen. Jeden Pflicht- und Hinweispunkt des Prüfskripts **und** jeden Punkt der Sichtprüfung mit Beleg im Bericht (Slot-Feld `fortschritt` bzw. Abschlussnachricht).
 2. Kontaktbogen und mindestens 8 Standbilder wirklich ansehen, die REA-Regeln des Accounts Punkt für Punkt gegen das Video halten.
 3. Bei jedem Zweifel `rueckfrage` statt posten. Was am Skill fehlt oder hakt, steht als Vorschlag in der Abschlussnachricht.
 | Account | Stand |

@@ -39,8 +39,8 @@ Andere Creator fragen dieselbe KI mit ähnlichen Befehlen. Die KI liefert dann d
 - Details: [[Themen und Plan Account 2]] §1.
 
 ## Wo es umgesetzt ist
-- Befehlstext: `tools/chat_befehle.py` (Blöcke `ORIGINAL`, `A1_ANTI`, `A2_ANTI`, Zutaten-Listen) → Befehl-Notizen, `docs/ideen-studio/befehle.json`. **Noch nicht nachgezogen (Stand 08.11.):** Klassiker bis 3 von 10, Ausnahme für Folgeteile, Weiterschick-Wert ([[Stand und nächste Schritte]]).
-- Cockpit: `cockpit/lib/studio.mjs` zieht die Zutaten, erlaubt dem Ideen-Auftrag die Websuche und speichert `zutaten` und `gestrichen` mit den Ideen; die Karten zeigen „Originalität“, „Themenfeld“ und „Zutat“.
+- Befehlstext: `tools/chat_befehle.py` (Blöcke `ORIGINAL`, `SUCHBEGRIFF`, `A1_ANTI`, `A2_ANTI`, Zutaten-Listen) → Befehl-Notizen, `docs/ideen-studio/befehle.json`. **Seit 08.11. nachgezogen:** Klassiker bis 3 von 10 (nur Simulierbar; die Anti-Liste nennt die Ausnahme), Folgeteile eigener Treffer von „bisher“ und Anti-Liste ausgenommen (ORIGINALITÄT 7, im Skript-Befehl Abschnitt FOLGETEIL), Weiterschick-Wert (ORIGINALITÄT 6, Feld `weiterschicken`), Suchbegriff in der Titelfrage und vorn in der Caption (Feld `suchbegriff`).
+- Cockpit: `cockpit/lib/studio.mjs` zieht die Zutaten, erlaubt dem Ideen-Auftrag die Websuche und speichert `zutaten` und `gestrichen` mit den Ideen; die Karten zeigen „Originalität“, „Themenfeld“, „Zutat“ und seit 08.11. „Würde man es schicken?“ und „Suchbegriff“. Folgeteile legt das Cockpit selbst an ([[Serien und Treffer-Folgen]]).
 - Tages-Sitzung: Originalitäts-Suche vor dem Skript (`RECHERCHE_CODE`), Produktion: Eingangsprüfung im Skill `video-produktion`.
 
 ## Grenzen

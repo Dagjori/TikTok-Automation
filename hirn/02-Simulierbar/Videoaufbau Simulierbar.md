@@ -115,7 +115,7 @@ Das Skript schreibt Claude Chat im Ideen-Studio; Claude Code setzt es um. Der In
 | Regeln | 2 | Objekte erscheinen beim Wort, Chips, Schärfe wandert von Seite zu Seite |
 | Denkfalle | 2–3 | Licht rückt die naheliegende Seite ins Rampenlicht |
 | Rennen | 3 | Zähler laufen, Kamera folgt, Abstand wird sichtbar |
-| Folgen-Aufruf (nur Testvideos) | 3 | ruhig, kein Effekt-Wettbewerb mit dem Element |
+| Folgen-Hinweis (seit 08.11. nur im Testblock „mit“, letzte 2–3 s) | 1 | leise Textzeile unter der Schlusskarte, kein eigener Effekt |
 | erste Wendung | 4 | Zoom oder Schärfenverlagerung, Lichtwechsel, die Erwartung kippt sichtbar |
 | Führungswechsel | 4 | Aufleuchten der führenden Seite, Kamerawechsel, engere Einstellung |
 | Kipp-Moment (ca. 45 s) | 5 | wichtige Zahl leuchtet auf, Licht und Kamera auf den Kipp; optischer Höhepunkt |

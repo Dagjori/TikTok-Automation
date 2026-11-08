@@ -17,7 +17,7 @@ import { fileURLToPath } from "node:url";
 import { erstelleDb, DbFehler, SAMMLUNGEN } from "./lib/db.mjs";
 import { erstelleStudio, KONTEN } from "./lib/studio.mjs";
 import { erstelleRenderDienst } from "./lib/renderdienst.mjs";
-import { modellWaehlen, eineStufeHoeher } from "./lib/modelle.mjs";
+import { modellWaehlen, eineStufeHoeher, PRODUKTION_MODELLREGEL } from "./lib/modelle.mjs";
 import { erstelleZahlen } from "./lib/zahlen.mjs";
 import { erstelleLernen } from "./lib/lernen.mjs";
 import { erstelleAbgleich } from "./lib/abgleich.mjs";
@@ -618,7 +618,7 @@ function werkzeugTitel(name, input = {}) {
     case "Glob": return "Findet " + (input.pattern || "");
     case "WebSearch": return "Websuche: " + (input.query || "");
     case "WebFetch": return "Öffnet " + (input.url || "");
-    case "Task": case "Agent": return "Agent: " + (input.description || "");
+    case "Task": case "Agent": return "Agent" + (input.model ? ` (${String(input.model)[0].toUpperCase() + String(input.model).slice(1)})` : "") + ": " + (input.description || "");
     case "TodoWrite": return "Aufgabenliste aktualisiert";
     default: return name;
   }
@@ -653,6 +653,10 @@ function claudeZeile(zeile, job = claude.aktiv, spur = claude) {
         const e = feedEintrag({ art: "werkzeug", name: teil.name, titel: kurz(werkzeugTitel(teil.name, teil.input), 160), eingabe: kurz(teil.input, 1500), id: teil.id });
         offeneWerkzeuge.set(teil.id, e.nr);
         aufgabenAusWerkzeug(teil.name, teil.input, spur);
+        // Feste Modell-Regel sichtbar: ein Opus-Agent ist nur für einen Neubau erlaubt (lib/modelle.mjs)
+        if (["Task", "Agent"].includes(teil.name) && /opus/i.test(String(teil.input?.model || ""))) {
+          feedEintrag({ art: "modell", text: `Opus · Neubau: ${kurz(String(teil.input.description || "ohne Beschreibung").replace(/^neubau\s*[:–-]\s*/i, ""), 120)}`, modell: "opus" });
+        }
       }
     }
     return;
@@ -732,11 +736,12 @@ function produzieren(datum, ids, hinweis = "") {
     art: "produktion", spur: "produktion", datum, ids, konto: null,
     titel: `Produktion · ${datum} · ${ids.length} Video(s)`,
     modus: "auto",
-    modell: "opus",
-    grund: "Disponent: Produktion steuern und abnehmen (wie die Tages-Sitzung: Opus, Agenten mit Sonnet)",
+    // Kein festes Modell hier: lib/modelle.mjs → FEST.produktion (feste Regel 08.11.: Sonnet 5.5, Opus nur als Neubau-Agent)
     text:
       `Du bist die Produktions-Sitzung des TikTok-Cockpits auf dem Rechner des Inhabers (Video-Tag ${datum}). ` +
       "Lies zuerst cockpit/anleitung/produktion.md vollständig und befolge sie Schritt für Schritt. " +
+      PRODUKTION_MODELLREGEL + " " +
+      "QUALITÄT: Jedes Video in 1080×1920 (Full HD hochkant), nie kleiner rendern oder posten; Prüfskript, Render-Dienst und Buffer prüfen das. " +
       "WICHTIG: Du läufst als einmaliger Prozess (claude -p). Sobald du deinen Zug beendest, endet die Sitzung und alle Hintergrund-Agenten und -Befehle werden abgebrochen. " +
       "Starte Agenten und lange Befehle deshalb nie im Hintergrund, warte im Vordergrund auf jedes Ergebnis und beende deinen Zug erst, wenn jedes Video geplant, Rückfrage oder Fehler ist. " +
       "Niemand antwortet im Chat: Rückfragen nur über den Status im Slot-Dokument.\n\nAUFTRAG\n" + JSON.stringify(auftrag),
@@ -956,6 +961,25 @@ const zahlen = erstelleZahlen({
       lernen.melden({ art: "erfolg", titel: `🎯 Mission geschafft: ${mission.titel} (${name})`, text: `Stand: ${Number(wert).toLocaleString("de-DE")}`, ziel: { ansicht: "zahlen" } });
     });
   },
+  // Treffer-Folgen (Wahl des Inhabers 08.11.2026): Serie aus dem Slot-Dokument, Treffer → Idee „Teil N“ (nur ein Rechner legt sie an)
+  teilVon: (post) => studio.serieVon(post),
+  beiTreffer: ({ konto, post, teil, bewertung, views24, serie }) => abgleich.anspruch(`treffer-${post.post_id}`).then((ok) => {
+    if (ok !== true) return ok; // null: Abgleich gerade weg (nächster Lauf versucht es erneut); false: anderer Rechner war schneller
+    const r = studio.trefferIdee({ konto, post, teil, bewertung, views24, serie });
+    const name = KONTEN[konto]?.name || konto;
+    const faktor = String(bewertung?.faktor ?? "?").replace(".", ",");
+    const tag = new Date(`${r.datum}T12:00:00Z`).toLocaleDateString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit" });
+    lernen.melden({
+      art: "erfolg",
+      titel: `🎯 ${teil === 2 ? "Treffer" : "Serie läuft weiter"}: ${(serie?.wurzel || post.titel || "").slice(0, 70)} (${name})`,
+      text: `${Number(views24 || 0).toLocaleString("de-DE")} Aufrufe nach 24 h = ${faktor}× Median der letzten ${bewertung?.vergleich ?? "?"} Videos. `
+        + `Die Idee „Teil ${teil}“ liegt ${r.vorgemerkt ? "vorgemerkt für die Ideen von" : "bei den Ideen für"} ${tag}${r.schon_da ? " (war schon da)" : ""}. `
+        + `Von Hand in der App (ca. 1 Min.): Teil 1 anpinnen und dort einen angepinnten Kommentar mit Verweis auf Teil ${teil} setzen, sobald er online ist.`,
+      ziel: { ansicht: "studio" },
+    });
+    feedEintrag({ art: "automatik", text: `🎯 Treffer-Folge: Idee „Teil ${teil}“ für ${name} (${r.datum})` });
+    return true;
+  }),
 });
 abgleich.teilen("zahlen", {
   lokal: () => sortiert(zahlen.geteilt()),

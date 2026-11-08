@@ -6,6 +6,10 @@ feste Ich-Perspektive, keine Stimme, Titelfrage, Messwert-Anzeige, kursive Sätz
 Seit 07.11.2026 (REA-Regelwerk freigegeben): 5b erlaubt höchstens 3 gezielte harte Schnitte (Höhepunkt bzw. Maßstabs- oder
 Szenensprung; 5c Hinweis), 14 Ereignis bei ca. 8 s auf Countdown-Null (erster Etikettwechsel 6–11 s, Pflicht), 14b Countdown
 erreicht 0 (Hinweis), 15 Statuszeile (Unterzeile) wechselt mehrfach (Hinweis).
+Seit 08.11.2026 (Wahl des Inhabers, Testblöcke aus skript.json → testbloecke, tools/testblock.py; je Block nur eine Änderung):
+einstieg_a2 = a → 14 Ereignis bei 2–3 s · b → 14c zweite sichtbare Stufe bei 12–15 s (Pflicht) · c → 1 Länge 62–70 s, alle Zeitfenster
+mit der Länge laut Protokoll (Abspann die letzten 8 s, Abblende 2 s davor, Höhepunkt-Fenster gestaucht wie engine/lunar_hud.js → lpSkala);
+16 Folgen-Hinweis im Abspann nur bei folgen_hinweis = „mit“ (Pflicht; sonst darf keiner da sein).
 
 Aufruf:  python3 qc/referenz_pov.py projekte/<name> [--video out/<name>/<name>.mp4] [--json]
 Daten:   out/<name>/ereignisse.json (Ereignis-Protokoll der Szene, von render.js geschrieben) und – falls vorhanden – das MP4 (Länge, Lautheit,
@@ -208,6 +212,74 @@ EREIGNIS_FENSTER = (6.0, 11.0)   # s: Ereignis bei ca. 8 s genau auf Countdown-N
 SCHNITTE_MAX = 3                 # gezielte harte Schnitte (Inhaber 07.11.2026, REA: 4 von 6 starken Vorbildern setzen 1–3)
 HOEHEPUNKT = (55.0, 65.0)        # s: ein Schnitt am Höhepunkt braucht keine weitere Begründung
 
+# ───────── Testblöcke (Wahl des Inhabers 08.11.2026; skript.json → testbloecke, tools/testblock.py; je Block nur eine Änderung) ─────────
+# einstieg_a2: a = Ereignis bei 2–3 s · b = zweite sichtbare Stufe bei 12–15 s · c = Länge 62–70 s (Abspann bleibt die letzten 8 s)
+# folgen_hinweis: „mit“ = Textzeile im Abspann (LunarHUD-Option hinweis), sonst keine.
+EREIGNIS_FENSTER_A = (1.5, 3.5)  # s: Testblock a (Ereignis bei 2–3 s, kleine Toleranz)
+STUFE2_FENSTER = (12.0, 15.0)    # s: Testblock b
+LAENGE_STANDARD = (79.5, 80.5)
+LAENGE_C = (61.5, 70.5)          # Testblock c: 62–70 s, ± 0,5 s
+HINWEIS_MAX_WOERTER = 10
+# wie qc/massstab.py (Account 1), hier eigenständig gehalten (die Prüfungen der Accounts bleiben getrennt)
+DRUCK = re.compile(r"folg\w*\s+(mir|uns|jetzt|sofort|für|fuer)|wenn\s+du\s+(mir\s+|uns\s+)?folgst|nicht\s+verpassen|verpass|sonst\b|gewinn|verlos|gratis|"
+                   r"geschenk|belohn|abonnier|\blike\b|\bfolgen\s*!|\bjetzt\b", re.I)
+
+
+def skala(t, laenge=80.0):
+    """Zeitpunkt aus dem 80-s-Plan auf die Länge des Videos (gleich engine/lunar_hud.js → lpSkala): bis 10 s unverändert,
+    10–70 s gleichmäßig gestaucht auf 10 bis Länge − 10, ab 70 s (Abblende, Abspann) fest vor dem Ende."""
+    if t <= 10:
+        return t
+    if t >= 70:
+        return t - 80 + laenge
+    return 10 + (t - 10) * (laenge - 20) / 60
+
+
+def laenge_ziel(testbloecke):
+    """(min, max, Text) der Länge: Testblock c 62–70 s, sonst 80 s."""
+    if (testbloecke or {}).get("einstieg_a2") == "c":
+        return (*LAENGE_C, "62–70 s (Testblock c), 1080×1920")
+    return (*LAENGE_STANDARD, "80 ± 0,5 s, 1080×1920")
+
+
+def ereignis_fenster(testbloecke):
+    return EREIGNIS_FENSTER_A if (testbloecke or {}).get("einstieg_a2") == "a" else EREIGNIS_FENSTER
+
+
+def zweite_stufe(an, t_null, fenster=STUFE2_FENSTER):
+    """Testblock b: nach dem Ereignis eine zweite sichtbare Stufe in 12–15 s (neues Etikett, neue Statuszeile oder ein Protokoll-
+    Ereignis „stufe“). Liefert den Zeitpunkt oder None."""
+    for a, b in zip(an, an[1:]):
+        if t_null is not None and b["t"] <= t_null + 0.25:
+            continue
+        if fenster[0] <= b["t"] <= fenster[1] and (a.get("etikett") != b.get("etikett") or (str(b.get("unter") or "").strip() and a.get("unter") != b.get("unter"))):
+            return float(b["t"])
+    return None
+
+
+def folgen_hinweis_a2(ev, testbloecke, laenge):
+    """Prüfpunkt 16 (seit 08.11.2026) → (ist, ok): nur im Testblock folgen_hinweis = „mit“ eine Textzeile im Abspann (letzte 8 s),
+    an den Inhalt gebunden, ohne Druck; sonst keine. Ein alter Folgen-Aufruf („folgen“) fällt schon unter Punkt 5."""
+    variante = (testbloecke or {}).get("folgen_hinweis")
+    h = [e for e in ev if e.get("typ") == "folgen_hinweis"]
+    if variante != "mit":
+        return (f"„{h[0].get('text', '')}“, aber Testblock {variante or '–'} (nur bei „mit“)", False) if h else (f"keiner (Testblock {variante or 'keiner'})", True)
+    if not h:
+        return "Testblock „mit“, aber kein Hinweis im Abspann (LunarHUD hinweis)", False
+    text = " ".join(str(h[0].get("text", "")).split())
+    t = float(h[0]["t"])
+    probleme = []
+    if not text:
+        probleme.append("leer")
+    if t < laenge - 8.0 - 0.05:
+        probleme.append(f"vor dem Abspann ({t:.1f} s)")
+    if len(text.split()) > HINWEIS_MAX_WOERTER:
+        probleme.append(f"{len(text.split())} Wörter")
+    d = DRUCK.search(text)
+    if d:
+        probleme.append(f"Druck/Tausch „{d.group(0)}“")
+    return f"„{text}“ bei {t:.1f} s" + (f": {', '.join(probleme)}" if probleme else ""), not probleme
+
 
 def ereignis_auf_null(an):
     """Ereignis = erster Etikettwechsel der Anzeige (Phase 1 ist der Countdown bis zum Ereignis). Liefert (t oder None, null_erreicht):
@@ -266,14 +338,21 @@ def main():
     def z(nr, punkt, ist, ziel, ok, pflicht=True):
         zeilen.append((nr, punkt, ist, ziel, ok, pflicht))
 
+    # Testblöcke (seit 08.11.2026): Zeitfenster richten sich nach der Länge des Videos (Testblock c: 62–70 s)
+    tb = skript.get("testbloecke") or {}
+    lmin, lmax, ltext = laenge_ziel(tb)
     # Länge
     dauer_prot = float(erg["dauer"])
     if video.exists():
         d, w, h, fps, hat_ton = ffprobe_dauer(video)
-        z("1", "Länge des MP4", f"{d:.2f} s ({w}×{h}, {fps})", "80 ± 0,5 s, 1080×1920", abs(d - 80) <= 0.5 and (w, h) == (1080, 1920))
+        z("1", "Länge des MP4", f"{d:.2f} s ({w}×{h}, {fps})", ltext, lmin <= d <= lmax and (w, h) == (1080, 1920))
         z("1b", "Tonspur vorhanden", "ja" if hat_ton else "nein", "ja", hat_ton)
     else:
-        z("1", "Länge laut Protokoll", f"{dauer_prot:.2f} s", "80 ± 0,5 s", abs(dauer_prot - 80) <= 0.5)
+        z("1", "Länge laut Protokoll", f"{dauer_prot:.2f} s", ltext.split(",")[0], lmin <= dauer_prot <= lmax)
+    L = dauer_prot  # Zeitfenster aus der geplanten Länge laut Protokoll (80 s bzw. im Testblock c 62–70 s)
+    if tb:
+        z("T", "Testblöcke laut skript.json", ", ".join(f"{k} = {v}" for k, v in tb.items()), "tools/testblock.py", True, pflicht=False)
+    S = lambda t: skala(t, L)  # noqa: E731  Zeitpunkt aus dem 80-s-Plan auf diese Länge
     # Titel
     titel = [e for e in ev if e["typ"] == "titel"]
     ok = len(titel) == 1 and titel[0]["t"] >= 0 and titel[0]["t"] + titel[0].get("dauer", 0) <= 4.45
@@ -283,11 +362,11 @@ def main():
     werte = [e["wert"] for e in an if e.get("wert") is not None]
     wechsel = sum(1 for a, b in zip(an, an[1:]) if a["etikett"] != b["etikett"])
     aend = sum(1 for a, b in zip(an, an[1:]) if a["wert"] != b["wert"])
-    z("3", "Messwert-Anzeige vorhanden", f"{len(an)} Messpunkte, {an[0]['t']:.1f}–{an[-1]['t']:.1f} s" if an else "fehlt", "ab ≤ 4,5 s bis ≥ 68 s", bool(an) and an[0]["t"] <= 4.5 and an[-1]["t"] >= 68)
+    z("3", "Messwert-Anzeige vorhanden", f"{len(an)} Messpunkte, {an[0]['t']:.1f}–{an[-1]['t']:.1f} s" if an else "fehlt", f"ab ≤ 4,5 s bis ≥ {L - 12:.0f} s", bool(an) and an[0]["t"] <= 4.5 and an[-1]["t"] >= L - 12 - 1e-6)
     z("3b", "Zahl ändert sich (live)", f"{aend} von {max(1, len(an) - 1)} Schritten, min {min(werte):g}, max {max(werte):g}" if an else "–", "ändert sich in ≥ 60 % der Schritte", bool(an) and aend >= 0.6 * (len(an) - 1))
     z("3c", "Etikett wechselt mit der Phase", f"{wechsel}×", "2–4×", 2 <= wechsel <= 4)
-    hier = [e for e in an if 52 <= e["t"] <= 68 and (str(e.get("zahl", "")).strip().upper() == "HIER" or e.get("wert") == 0)]
-    z("3d", "Höhepunkt: Anzeige zeigt „HIER“ bzw. 0", f"ab {hier[0]['t']:.1f} s" if hier else "nicht gefunden", "zwischen 52 und 68 s", bool(hier))
+    hier = [e for e in an if S(52) <= e["t"] <= S(68) and (str(e.get("zahl", "")).strip().upper() == "HIER" or e.get("wert") == 0)]
+    z("3d", "Höhepunkt: Anzeige zeigt „HIER“ bzw. 0", f"ab {hier[0]['t']:.1f} s" if hier else "nicht gefunden", f"zwischen {S(52):.0f} und {S(68):.0f} s", bool(hier))
     # Zeitraffer und Anzeige (Hinweis 11, 12; Regel des Inhabers 02.11.2026 abends)
     zr = skript.get("zeitraffer", None)
     if "zeitraffer" not in skript:
@@ -329,7 +408,7 @@ def main():
     ueber = [(a["text"], b["text"]) for a, b in zip(sa, sa[1:]) if a["t"] + a["dauer"] > b["t"] + 1e-6]
     z("4d", "Sätze überlappen nicht", "ja" if not ueber else f"{len(ueber)} Überlappungen", "keine", not ueber)
     erster = sa[0]["t"] if sa else 0; letzter = max((e["t"] + e["dauer"] for e in sa), default=0)
-    z("4e", "Sätze zwischen Titel und Abblende", f"{erster:.1f}–{letzter:.1f} s", "ab ≥ 4,4 s, bis ≤ 70 s", erster >= 4.4 and letzter <= 70.0 + 1e-6)
+    z("4e", "Sätze zwischen Titel und Abblende", f"{erster:.1f}–{letzter:.1f} s", f"ab ≥ 4,4 s, bis ≤ {L - 10:.0f} s", erster >= 4.4 and letzter <= L - 10 + 1e-6)
     # Verbotene Elemente
     verboten = sorted({e["typ"] for e in ev if e["typ"] in ("chip", "stempel", "sticker", "folgen", "ring", "tafel", "untertitel", "karaoke", "titel-wort", "pointe", "formel", "bilanz", "balken", "leiste", "zaehler", "uhr", "logo")})
     z("5", "Keine Sticker, Chips, Karaoke, Folgen-Aufruf, Ringe", ", ".join(verboten) if verboten else "keine", "keine", not verboten)
@@ -344,13 +423,18 @@ def main():
     else:
         ist = f"{len(wechsel)} Schnitt(e) bei {zeiten_text([t for t, _ in wechsel])} s"
     z("5b", "Höchstens 3 gezielte harte Schnitte (Fahrt, Schwenk, Zoom frei)", ist, f"0–{SCHNITTE_MAX} (Inhaber 07.11.)", len(wechsel) <= SCHNITTE_MAX)
-    ohne_grund = [t for t, g in wechsel if not g and not (HOEHEPUNKT[0] <= t <= HOEHEPUNKT[1])]
+    ohne_grund = [t for t, g in wechsel if not g and not (S(HOEHEPUNKT[0]) <= t <= S(HOEHEPUNKT[1]))]
     z("5c", "Schnitte nur am Höhepunkt oder mit Grund (Maßstab/Szene)", f"ohne Grund bei {zeiten_text(ohne_grund)} s" if ohne_grund else ("keine Schnitte" if not wechsel else "alle begründet bzw. am Höhepunkt"),
-      "Grund im Protokoll oder 55–65 s (Sichtprüfung)", not ohne_grund, pflicht=False)
-    # 14, 14b, 15: Ereignis auf Countdown-Null bei ca. 8 s, Statuszeile (REA-Regelwerk stelldirvor, Inhaber 07.11.2026)
+      f"Grund im Protokoll oder {S(HOEHEPUNKT[0]):.0f}–{S(HOEHEPUNKT[1]):.0f} s (Sichtprüfung)", not ohne_grund, pflicht=False)
+    # 14, 14b, 15: Ereignis auf Countdown-Null bei ca. 8 s (Testblock a: 2–3 s), Statuszeile (REA-Regelwerk stelldirvor, Inhaber 07.11.2026)
     t_null, null_ok = ereignis_auf_null(an)
-    z("14", "Ereignis bei ca. 8 s auf Countdown-Null (erster Etikettwechsel)", f"bei {t_null:.1f} s" if t_null is not None else "kein Etikettwechsel",
-      f"{EREIGNIS_FENSTER[0]:g}–{EREIGNIS_FENSTER[1]:g} s (Inhaber 07.11.)", t_null is not None and EREIGNIS_FENSTER[0] <= t_null <= EREIGNIS_FENSTER[1])
+    ef = ereignis_fenster(tb)
+    z("14", "Ereignis auf Countdown-Null (erster Etikettwechsel)" + (" · Testblock a" if tb.get("einstieg_a2") == "a" else " bei ca. 8 s"), f"bei {t_null:.1f} s" if t_null is not None else "kein Etikettwechsel",
+      f"{ef[0]:g}–{ef[1]:g} s (Inhaber {'08.11., Testblock a' if ef == EREIGNIS_FENSTER_A else '07.11.'})", t_null is not None and ef[0] <= t_null <= ef[1])
+    if tb.get("einstieg_a2") == "b":
+        t2 = zweite_stufe(an, t_null)
+        z("14c", "Testblock b: zweite sichtbare Stufe bei 12–15 s", f"bei {t2:.1f} s" if t2 is not None else "kein Etikett- bzw. Statuswechsel in 12–15 s",
+          "neues Etikett oder neue Statuszeile in 12–15 s", t2 is not None)
     z("14b", "Countdown läuft vor dem Ereignis bis 0", "ja" if null_ok else "nein (Phase 1 ist kein Countdown bis 0)", "Phase 1 = Countdown, endet bei 0", null_ok, pflicht=False)
     st_wechsel, st_texte = statuszeile(an)
     z("15", "Statuszeile (Unterzeile) wechselt mehrfach", f"{st_wechsel} Wechsel, {st_texte} Texte", "≥ 3 Wechsel (Hinweis)", st_wechsel >= 3, pflicht=False)
@@ -368,17 +452,21 @@ def main():
         z("10", "Bewegung / Einzelbild-Flackern (Bildanalyse)", "nicht geprüft (kein MP4 oder numpy)", "–", False, pflicht=False)
     # Abspann
     ab = [e for e in ev if e["typ"] == "abspann"]
-    z("6", "Abspann ab 72 s, mindestens 7 s", ", ".join(f"{e['t']:.1f}+{e['dauer']:.1f} s" for e in ab) or "fehlt", "t ≤ 72,05, Dauer ≥ 7", bool(ab) and ab[0]["t"] <= 72.05 and ab[0]["dauer"] >= 7.0 - 1e-6)
+    z("6", f"Abspann ab {L - 8:.0f} s, mindestens 7 s", ", ".join(f"{e['t']:.1f}+{e['dauer']:.1f} s" for e in ab) or "fehlt", f"t ≤ {L - 8 + 0.05:.2f}, Dauer ≥ 7".replace(".", ","), bool(ab) and ab[0]["t"] <= L - 8 + 0.05 and ab[0]["dauer"] >= 7.0 - 1e-6)
     z("6b", "Abspann: Titelfrage plus Faktenzeile", "ja" if ab and ab[0].get("text") and ab[0].get("fakt") else "nein", "ja", bool(ab) and bool(ab[0].get("text")) and bool(ab[0].get("fakt")))
     abl = [e for e in ev if e["typ"] == "abblende"]
-    z("6c", "Abblende auf Schwarz 70–72 s", ", ".join(f"{e['t']:.1f}+{e['dauer']:.1f} s" for e in abl) or "fehlt", "70–72 s", bool(abl) and abs(abl[0]["t"] - 70) < 0.05 and abs(abl[0]["t"] + abl[0]["dauer"] - 72) < 0.05)
+    z("6c", f"Abblende auf Schwarz {L - 10:.0f}–{L - 8:.0f} s", ", ".join(f"{e['t']:.1f}+{e['dauer']:.1f} s" for e in abl) or "fehlt", f"{L - 10:.0f}–{L - 8:.0f} s", bool(abl) and abs(abl[0]["t"] - (L - 10)) < 0.05 and abs(abl[0]["t"] + abl[0]["dauer"] - (L - 8)) < 0.05)
+    # 16 Folgen-Hinweis im Abspann (seit 08.11.2026, nur Testblock „mit“)
+    ist16, ok16 = folgen_hinweis_a2(ev, tb, L)
+    z("16", "Folgen-Hinweis im Abspann (nur Testblock „mit“)", ist16, "„mit“: Zeile im Abspann, ohne Druck; sonst keiner", ok16)
     # Lautheit
     if video.exists():
         I, TP, verlauf = lautheit(video)
         z("7", "Lautheit integriert", f"{I:.1f} LUFS, True Peak {TP:.1f} dBTP" if I is not None else "nicht messbar", "−14 ± 1 LUFS, ≤ −1 dBTP", I is not None and abs(I + 14) <= 1.0 and (TP is None or TP <= -1.0))
-        start = mittel_s(verlauf, 4, 28); mitte = mittel_s(verlauf, 30, 50); hoch = max((s for t, m, s in verlauf if 52 <= t <= 68), default=None); abspann = mittel_s(verlauf, 73, 79)
-        hoch_t = max(((s, t) for t, m, s in verlauf if 0 <= t <= 80 if s > -100), default=(None, None))[1]
-        z("7b", "Verlauf: Höhepunkt bei 55–65 s", f"Maximum (kurzzeitig) bei {hoch_t:.1f} s: {hoch:.1f} LUFS, Start {start:.1f}, Mitte {mitte:.1f}" if hoch is not None and start is not None else "–", "Maximum in 52–68 s, ≥ 4 dB über dem Start", hoch is not None and hoch_t is not None and 52 <= hoch_t <= 68 and hoch >= start + 4)
+        h0, h1 = S(52), S(68)
+        start = mittel_s(verlauf, 4, S(28)); mitte = mittel_s(verlauf, S(30), S(50)); hoch = max((s for t, m, s in verlauf if h0 <= t <= h1), default=None); abspann = mittel_s(verlauf, L - 7, L - 1)
+        hoch_t = max(((s, t) for t, m, s in verlauf if 0 <= t <= L if s > -100), default=(None, None))[1]
+        z("7b", f"Verlauf: Höhepunkt bei {S(55):.0f}–{S(65):.0f} s", f"Maximum (kurzzeitig) bei {hoch_t:.1f} s: {hoch:.1f} LUFS, Start {start:.1f}, Mitte {mitte:.1f}" if hoch is not None and start is not None else "–", f"Maximum in {h0:.0f}–{h1:.0f} s, ≥ 4 dB über dem Start", hoch is not None and hoch_t is not None and h0 <= hoch_t <= h1 and hoch >= start + 4)
         z("7c", "Verlauf: Abspann leise", f"{abspann:.1f} LUFS (kurzzeitig), Start {start:.1f}" if abspann is not None else "–", "mind. 6 dB unter dem Start", abspann is not None and abspann <= start - 6)
     else:
         z("7", "Lautheit (MP4 fehlt)", "–", "−14 ± 1 LUFS", False)

@@ -36,6 +36,7 @@ node qc/text_ueberlappung_pov.mjs projekte/<name>       # Exit 0 = keine Überla
 | 7, 7b, 7c | Lautheit | −14 ± 1 LUFS, True Peak ≤ −1 dBTP; Maximum in 52–68 s und ≥ 4 dB über dem Start; Abspann ≥ 6 dB unter dem Start |
 | 8 | Keine Stimme | keine `audio/stimme.mp3`, keine Untertitel |
 | **14** | **Ereignis auf Countdown-Null** (seit 07.11.2026) | erster Etikettwechsel der Anzeige bei 6–11 s (Ziel ca. 8 s); Phase 1 der Anzeige ist der Countdown bis zum Ereignis |
+| **Testblöcke** (seit 08.11.2026, `skript.json → testbloecke`, [[Regelwerk Account 2]]) | a / b / c, Folgen-Hinweis | **a:** 14 bei 1,5–3,5 s · **b:** 14c zweite sichtbare Stufe (neues Etikett oder neue Statuszeile) in 12–15 s · **c:** 1 Länge 62–70 s; dann gelten alle Zeitfenster dieser Tabelle mit der Länge L laut Protokoll (Abspann ab L − 8, Abblende L − 10 bis L − 8, Anzeige bis ≥ L − 12, Sätze bis ≤ L − 10, „HIER“ und Lautheits-Maximum im gestauchten Fenster wie `lpSkala`) · **16:** Folgen-Hinweis im Abspann nur bei `folgen_hinweis` = „mit“ (an Inhalt gebunden, ohne Druck), sonst keiner |
 | 9 | **entfallen seit 02.11.2026 abends** (früher „Kein 5-Sekunden-Rahmen“) | 5-Sekunden-Themen sind erlaubt, wenn sie sich gut simulieren lassen; die Nummer bleibt frei, damit alle anderen Nummern stabil bleiben |
 
 **Hinweise (nicht Pflicht, Ausgabe „nein (Hinweis)“; jeder Hinweis ist im Bericht zu erklären oder zu beheben, die Sichtprüfung entscheidet)**

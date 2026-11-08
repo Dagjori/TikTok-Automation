@@ -50,3 +50,5 @@
 #hud .lp-abspann { background: var(--lp-abspann-grund); display: flex; flex-direction: column; align-items: center; justify-content: center; padding-bottom: 142px; box-sizing: border-box; }
 #hud .lp-frage { width: 886px; text-align: center; font-size: 80px; line-height: 1.07; color: var(--lp-abspann-text); text-shadow: none; }
 #hud .lp-fakt { width: 900px; margin-top: 53px; text-align: center; text-wrap: balance; white-space: pre-line; font-size: 20.5px; line-height: 1.55; font-weight: 500; letter-spacing: 0.2em; color: var(--lp-fakt); }
+/* Folgen-Hinweis im Abspann (seit 08.11.2026, nur Testblock „mit“): Schrift des Abspanns, etwas größer und heller als die Faktenzeile */
+#hud .lp-hinweis { width: 900px; margin-top: 46px; text-align: center; text-wrap: balance; font-size: 25px; line-height: 1.45; font-weight: 500; letter-spacing: 0.16em; color: var(--lp-abspann-text); opacity: 0; }

@@ -2,7 +2,7 @@
 typ: regel
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-02
+datum: 2026-11-08
 quelle: CLAUDE.md §4
 tags: [konto/gemeinsam, produktion, modelle, tokens]
 cssclasses: [konto-gemeinsam, typ-regel]
@@ -51,11 +51,14 @@ Genau einer der Stile **1–15 und 17–21** (Stil 16 gehört Account 2) (Entsch
 ## Modelle und Tokens
 | Aufgabe | Modell |
 |---|---|
-| tägliche Produktion | **Sonnet 5.5**, Agenten **ausdrücklich mit `model: sonnet`** (sonst erben sie Opus) |
-| Architektur, neue Welten/Objekttypen, Abnahme | Opus 5.5 |
+| tägliche Produktion **von der Steuerung bis zur Abnahme** (feste Regel im Cockpit seit 08.11.) | **Sonnet 5.5**, Agenten **ausdrücklich mit `model: sonnet`** |
+| Neubau von Grund auf (Stil ohne Baukasten, neuer Welttyp, Objekttyp, Design-Element) | Opus 5.5, **nur als einzelner Agent** für diesen Baustein |
+| Architektur, Ideen, Skripte mit Recherche | Opus 5.5 |
 | Titel, Beschreibungen, Hashtags | Haiku 5.5 |
 | Fable 5.1 | lohnt nicht |
 | Warten auf Renders | ohne Modell (Hintergrund-Befehl, kostet keine Tokens) |
+- **Feste Regel (Inhaber 08.11.2026):** „es kann nicht sein dass das ganze limit genutzt wird nur für 1 video“. Was wir schon gebaut haben, baut Sonnet; Abwandlungen (Farben, Zahlen, Kamerafahrt, Variante einer vorhandenen Welt) sind kein Neubau. Das Cockpit startet die Produktion mit Sonnet (`cockpit/lib/modelle.mjs`) und zeigt jeden Opus-Agenten im Feed.
+- **Qualität:** jedes Video 1080×1920 (Bedingung für den CRP-Zusatzbonus, [[CRP Creator Rewards Program]]); Render, Prüfskripte, Render-Dienst und Buffer prüfen das.
 - Verbrauch über `/usage`; bei erreichtem Limit Credits zukaufen, Max 20x oder warten.
 - Kapazität (**S**): Claude Max 5x trägt 2 Videos/Tag/Account mit ca. 10–20 % des Abos.
 - **Tokens sparen:** Rendern auf dem PC statt Warten in der Cloud (Entscheidung 02.11.; das Warten kostet allerdings ohnehin keine Tokens, gespart wird Zeit), Wissen kompakt halten ([[Wie dieses Hirn funktioniert]]), Sonnet für Routine, Opus nur gezielt.

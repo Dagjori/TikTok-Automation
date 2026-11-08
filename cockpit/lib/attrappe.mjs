@@ -55,7 +55,9 @@ function plan(job) {
         schritte: ["Anleitung produktion.md lesen", "Faktencheck vor dem Bau", "Szene und Ton bauen", "Rendern über den Render-Dienst", "Komplette Prüfung", "In Buffer planen"],
         werkzeuge: [
           ["Read", { file_path: "cockpit/anleitung/produktion.md" }],
-          ["Agent", { description: `Baut die Szene für ${id}` }],
+          // Feste Modell-Regel (08.11.): Bau-Agenten mit Sonnet; COCKPIT_ATTRAPPE_NEUBAU=1 zeigt zusätzlich einen Opus-Agenten für einen Neubau
+          ...(process.env.COCKPIT_ATTRAPPE_NEUBAU === "1" ? [["Agent", { description: `Neubau: neue Welt für ${id}`, model: "opus" }]] : []),
+          ["Agent", { description: `Baut die Szene für ${id}`, model: "sonnet" }],
           ["Bash", { command: "node cockpit/werkzeuge/mit_schluessel.mjs stimme …", description: "Erzeugt die Stimme" }],
           ["Bash", { command: "node cockpit/werkzeuge/mit_schluessel.mjs render senden …", description: `Rendert ${id} über den Render-Dienst` }],
           ["Bash", { command: "node cockpit/werkzeuge/mit_schluessel.mjs render warten …", description: "Wartet auf den Render" }],

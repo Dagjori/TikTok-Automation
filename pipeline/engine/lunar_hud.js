@@ -20,8 +20,30 @@ export const LP_ZEITEN = {
   abspann: 72,                // Abspann-Ereignis ab 72 s bis Ende (80 s)
   frageEin: [72.4, 73.2],     // (72,5–73,2 s bzw. 73,0–74,1 s)
   faktEin: [72.9, 73.7],
+  hinweisEin: [74.2, 75.0],   // Folgen-Hinweis im Abspann (seit 08.11.2026, nur Testblock „mit“), nach der Faktenzeile
   ende: 80,
 };
+
+/** Testblock einstieg_a2 = c (Wahl des Inhabers 08.11.2026): Zeiten für eine Länge von 62–70 s statt 80 s. Der Abspann bleibt die
+ *  letzten 8 s (Abblende davor 2 s, Anzeige endet wie gewohnt kurz vor der Abblende); Titel und Countdown bleiben unverändert.
+ *  Beispiel: new LunarHUD(wurzel, { …, zeiten: lpZeitenFuer(66) }) und Zeiten der Szene mit lpSkala(t, 66) umrechnen. */
+export function lpZeitenFuer(laenge = 80) {
+  const L = Number(laenge);
+  if (!Number.isFinite(L) || L < 60 || L > 80) throw new Error(`lpZeitenFuer: Länge ${laenge} s außerhalb von 60–80 s`);
+  const d = L - LP_ZEITEN.ende;
+  const plus = ([a, b]) => [a + d, b + d];
+  return { ...LP_ZEITEN, anzeigeAus: plus(LP_ZEITEN.anzeigeAus), abblende: plus(LP_ZEITEN.abblende), abspann: LP_ZEITEN.abspann + d,
+    frageEin: plus(LP_ZEITEN.frageEin), faktEin: plus(LP_ZEITEN.faktEin), hinweisEin: plus(LP_ZEITEN.hinweisEin), ende: L };
+}
+
+/** Zeitpunkt aus dem 80-s-Plan auf eine kürzere Länge umrechnen (gleich in qc/referenz_pov.py → skala): bis 10 s unverändert
+ *  (Titel, Countdown, Ereignis), 10–70 s gleichmäßig gestaucht auf 10 bis Länge − 10, ab 70 s (Abblende, Abspann) fest vor dem Ende. */
+export function lpSkala(t, laenge = 80) {
+  const L = Number(laenge);
+  if (t <= 10) return t;
+  if (t >= 70) return t - 80 + L;
+  return 10 + ((t - 10) * (L - 20)) / 60;
+}
 
 /** Zahl deutsch formatieren: 12.345,6 */
 export const zahlDE = (x, nk = 0) => new Intl.NumberFormat("de-DE", { minimumFractionDigits: nk, maximumFractionDigits: nk }).format(x);
@@ -99,13 +121,14 @@ function punktBei(pts, R) {
  *   fakt: "ORT, JAHR · ECHTER BEZUG",                 // Faktenzeile im Abspann (Versalien kommen aus CSS)
  *   saetze: [[5.6, "Ein ganz normaler Morgen."], [11.4, "…", 4.6], …],   // [Start s, Text, Dauer s (optional)]
  *   anzeige: (t) => ({ etikett: "HÖHE", zahl: "12.400", einheit: "m", unter: "STEIGT 80 M/S" }),
- *   zeiten: { … }                                     // überschreibt LP_ZEITEN
+ *   hinweis: "Morgen: …",                             // Folgen-Hinweis im Abspann, NUR im Testblock folgen_hinweis = „mit“ (seit 08.11.2026)
+ *   zeiten: { … }                                     // überschreibt LP_ZEITEN (Testblock c: lpZeitenFuer(66))
  * })
  */
 export class LunarHUD {
-  constructor(wurzel, { titel, fakt, saetze = [], anzeige, zeiten = {}, vignette = true } = {}) {
+  constructor(wurzel, { titel, fakt, saetze = [], anzeige, zeiten = {}, vignette = true, hinweis = "" } = {}) {
     this.Z = { ...LP_ZEITEN, ...zeiten };
-    this.titelText = titel; this.faktText = fakt; this.anzeigeF = anzeige;
+    this.titelText = titel; this.faktText = fakt; this.anzeigeF = anzeige; this.hinweisText = String(hinweis || "").trim();
     this.saetze = saetze.map(([t, text, dauer]) => ({ t, text, dauer: dauer ?? this.Z.satzDauer }));
     this.saetze.sort((a, b) => a.t - b.t);
     // Ebenen (Reihenfolge = Stapel): Vignette, Flecken, Tropfen, Glas, Titel, Anzeige, Satz, Abblende, Abspann
@@ -133,6 +156,8 @@ export class LunarHUD {
     this.eFrage.textContent = titel;
     this.eFakt = el("div", "lp-fakt lp-sans", this.eAbspann);
     this.eFakt.textContent = fakt || "";
+    this.eHinweis = null;
+    if (this.hinweisText) { this.eHinweis = el("div", "lp-hinweis lp-sans", this.eAbspann); this.eHinweis.textContent = this.hinweisText; }
     this.glasL = []; this.fleckL = []; this.tropfenL = [];
     // Etikettwechsel einmal vorab bestimmen (deterministisch, unabhängig von der Renderreihenfolge)
     this.wechsel = [];
@@ -250,6 +275,7 @@ export class LunarHUD {
     this.eAbspann.style.opacity = t >= Z.abspann ? "1" : "0";
     this.eFrage.style.opacity = String(smoothstep(Z.frageEin[0], Z.frageEin[1], t));
     this.eFakt.style.opacity = String(smoothstep(Z.faktEin[0], Z.faktEin[1], t));
+    if (this.eHinweis) this.eHinweis.style.opacity = String(smoothstep(Z.hinweisEin[0], Z.hinweisEin[1], t));
     this.eVig.style.opacity = String(1 - schwarz);
   }
 
@@ -266,6 +292,7 @@ export class LunarHUD {
     for (const G of this.glasL) e.push({ t: G.t, typ: "effekt", name: "glas", dauer: G.wachsen, quelle: "LunarHUD", klang: "glas" });
     e.push({ t: Z.abblende[0], typ: "abblende", dauer: Z.abblende[1] - Z.abblende[0], quelle: "LunarHUD", klang: false });
     e.push({ t: Z.abspann, typ: "abspann", dauer: Z.ende - Z.abspann, text: this.titelText, fakt: this.faktText, quelle: "LunarHUD", klang: false });
+    if (this.hinweisText) e.push({ t: Z.hinweisEin[0], typ: "folgen_hinweis", dauer: +(Z.ende - Z.hinweisEin[0]).toFixed(3), text: this.hinweisText, quelle: "LunarHUD", klang: false, bild: false });
     return e;
   }
 }
