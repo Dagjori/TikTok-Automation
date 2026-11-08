@@ -1,0 +1,164 @@
+{
+  "titel": "Kaiserreich oder heute: Wer zahlt bei gleichem Gehalt mehr Steuern?",
+  "skill": "video-produktion",
+  "konto": "simulierbar",
+  "skript_quelle": "acc1-2026-11-08-mittag",
+  "stil": "19 Architekturmodell (Abendlicht)",
+  "stil_begruendung": "Zwei Kartonhaus-Modelle auf einer Sperrholzplatte tragen das Thema Amt und Steuern räumlich: links die Amtsstube um 1900 im warmen Gaslicht (Kupfer), rechts das moderne Finanzamt im kühlen Licht (Türkis); Gegenlicht-Sonne tief, lange Schatten, Strahlen und Dunst geben die Atmosphäre, Acryl-Marker und Geldsäulen in Teamfarbe zeigen die Steuer als wachsende Höhe. Dunkle Welt mit Leuchtakzenten (REA R13/R23, dunkle Stile zuerst): die Platte steht im Abenddunkel, das Licht kommt aus den Fenstern und den Säulen. Das letzte Simulierbar-Video eauto-benziner war Stil 17, Stil 19 liegt am längsten zurück (mieten-kaufen 06.11.), die Dramaturgie des Skripts schlägt ihn vor. Umgebung vorhanden (Kartonstadt mit Rathaus, Bäume, Figuren), keine reinen Objekte vor schwarzem Grund.",
+  "teamfarben": {
+    "Kaiserreich": "#E58A47",
+    "Heute": "#2FD6C9"
+  },
+  "klangteppich": "raum",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Kaiserreich oder heute? Gleiches Gehalt: Wer zahlt mehr Steuern?",
+      "sprechtext": "Kaiserreich oder heute?\n[curious] Gleiches Gehalt – wer zahlt MEHR Steuern?",
+      "bild_text_abgleich": []
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Preußen: Tarif von 1891. Gegen: Tarif 2026. 1 Mark von 1900 = 8,50 € Kaufkraft. Nur die Einkommensteuer zählt.",
+      "sprechtext": "Preußen, Tarif von achtzehnhunderteinundneunzig.\nGegen zweitausendsechsundzwanzig.\nEine Mark von damals: achteinhalb Euro Kaufkraft.\nNur die Einkommensteuer zählt.",
+      "bild_text_abgleich": []
+    },
+    {
+      "id": "falle",
+      "phase": "falle",
+      "text": "Klar, damals zahlte man weniger. Oder?",
+      "sprechtext": "Klar … damals zahlte man WENIGER.\nOder?",
+      "bild_text_abgleich": []
+    },
+    {
+      "id": "rennen",
+      "phase": "rennen",
+      "text": "Start: 10.000 € Einkommen. Die Zähler laufen. Heute: 0 € Steuer. Das Kaiserreich will schon 76,50 €. Steuerfrei war nur bis 900 Mark.",
+      "sprechtext": "Start: zehntausend Euro Einkommen.\nDie Zähler laufen.\nHeute: null Euro Steuer.\nDas Kaiserreich will schon SECHSUNDSIEBZIG Euro.\nDamals war nur bis neunhundert Mark steuerfrei.",
+      "bild_text_abgleich": []
+    },
+    {
+      "id": "wendung1",
+      "phase": "wendung1",
+      "text": "Doch dazu kam die Stadt. In Berlin: noch einmal +100 %. Kaiserreich: 153 €.",
+      "sprechtext": "Doch dazu kam die Stadt.\nIn Berlin: noch einmal hundert PROZENT.\nKaiserreich: hundertdreiundfünfzig Euro.",
+      "bild_text_abgleich": []
+    },
+    {
+      "id": "wendung2",
+      "phase": "wendung2",
+      "text": "Das Gehalt steigt. 12.000, 13.000, 15.000 €. Heute: 435 €. Kaiserreich: 442 €. Jetzt wird's knapp.",
+      "sprechtext": "Das Gehalt steigt.\nZwölftausend, dreizehntausend, fünfzehntausend.\nHeute: vierhundertfünfunddreißig Euro.\nKaiserreich: vierhundertzweiundvierzig.\nJetzt wird's KNAPP.",
+      "bild_text_abgleich": []
+    },
+    {
+      "id": "wendung3",
+      "phase": "wendung3",
+      "text": "Ein paar Euro mehr, und es kippt. Heute zahlt man mehr. Bei 20.000 €: 1.570 € gegen 612 €.",
+      "sprechtext": "Ein paar Euro mehr … und es kippt.\nHeute zahlt man MEHR.\nBei zwanzigtausend schon gut zweieinhalbmal so viel.",
+      "bild_text_abgleich": []
+    },
+    {
+      "id": "kipp",
+      "phase": "kipp",
+      "text": "Dann das mittlere Gehalt: 54.066 € brutto. Zu versteuern: 41.932 €. Der Abstand wächst. Heute: 32 Cent je weiterem Euro. Damals: rund 6.",
+      "sprechtext": "Dann das mittlere Gehalt: vierundfünfzigtausend brutto.\nNach Abzügen: knapp zweiundvierzigtausend zu versteuern.\nDer Abstand WÄCHST mit jedem Euro.\nHeute: zweiunddreißig Cent von jedem weiteren Euro.\nDamals: rund sechs.",
+      "bild_text_abgleich": []
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Endstand: heute 7.827 €, Kaiserreich 2.006 €. Heute 5.821 € mehr, jedes Jahr.",
+      "sprechtext": "Endstand:\nHeute rund fünftausendachthundert Euro MEHR – jedes Jahr.",
+      "bild_text_abgleich": []
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Warum? Heute ist mehr steuerfrei. Danach steigt der Satz aber steil.",
+      "sprechtext": "[thoughtful] Warum?\nHeute ist mehr steuerfrei.\nDanach steigt der Satz aber STEIL.",
+      "bild_text_abgleich": []
+    },
+    {
+      "id": "pointe",
+      "phase": "pointe",
+      "text": "Und das Verrückte: Mit diesem Gehalt war man damals reich.",
+      "sprechtext": "Und das Verrückte:\nMit diesem Gehalt war man damals REICH.",
+      "bild_text_abgleich": []
+    },
+    {
+      "id": "schlusskarte",
+      "phase": "schlusskarte",
+      "text": "Kleine Einkommen: damals teurer. Ab der Mitte: heute.",
+      "sprechtext": "Kleine Einkommen: damals teurer.\nAb der Mitte: HEUTE.",
+      "bild_text_abgleich": []
+    }
+  ],
+  "caption": "Steuern im Kaiserreich oder heute – wer zahlt bei gleichem Gehalt mehr Einkommensteuer? 👑 Ich hab's simuliert. Team 1900 oder Team heute? 👇 #steuern #einkommensteuer #kaiserreich #wissen #simulation",
+  "quellen": [
+    "(F) Preußisches Einkommensteuergesetz vom 24.06.1891, GS S. 175, § 17 Steuertarif (Stufen ab mehr als 900 Mark; 1.050–1.200 Mark: 9 Mark; 1.650–1.800: 26 Mark; 2.100–2.400: 36 Mark; 4.500–5.000: 118 Mark; über 100.000 bis 105.000 Mark: 4.000 Mark = 4 %), Tarif bis 1906 unverändert – https://www.verfassungen.de/preussen/gesetze/einkommensteuergesetz91.htm",
+    "(F) Deutsche Bundesbank, Kaufkraftäquivalente historischer Beträge in deutschen Währungen, Stand Januar 2026: 1 Mark (1900) = 8,5 € im Durchschnitt 2025 – https://www.bundesbank.de/resource/blob/615162/9bc61627b2eaf3491c5064f4bab7f0e2/472B63F073F071307366337C94F8C870/kaufkraftaequivalente-historischer-betraege-in-deutschen-waehrungen-data.pdf",
+    "(F) Julius Wolf, Die öffentlichen Abgaben in Deutschland, Handbuch der Politik Bd. 2, 1914: Gemeindezuschläge zur preußischen Staatseinkommensteuer 1913: Berlin 100, Köln 155, Breslau 164 – https://de.wikisource.org/wiki/Die_%C3%B6ffentlichen_Abgaben_in_Deutschland",
+    "(F) § 32a EStG, Tarif ab Veranlagungszeitraum 2026 (Grundfreibetrag 12.348 €; 17.800–69.878 €: (173,10·z+2.397)·z+1.034,87) – https://www.gesetze-im-internet.de/estg/__32a.html",
+    "(F) § 3 Abs. 3 SolZG: Freigrenze 20.350 € (Einzelveranlagung) – https://www.gesetze-im-internet.de/solzg_1995/__3.html",
+    "(F) Destatis, Pressemitteilung Nr. 113 vom 01.04.2026: mittlerer Bruttojahresverdienst Vollzeit 2025 inkl. Sonderzahlungen 54.066 € – https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/04/PD26_113_621.html",
+    "(F) Beitragssätze 2026: RV 18,6 %, KV 14,6 % + durchschnittlicher Zusatzbeitrag 2,9 %, PV 3,6 % (+0,6 kinderlos), AV 2,6 %, BBG KV 69.750 € – https://www.haufe.de/personal/entgelt/beitragssaetze-zur-sozialversicherung_78_493770.html und https://www.vdek.com/content/vdeksite/vertragspartner/arbeitgeber/beitragssaetze.html",
+    "(F) bpb, Durchschnittliche Jahresverdienste von Arbeitnehmern in Industrie, Handel und Verkehr 1871–1913 (Desai 1968, nach Hohorst u. a. 1978): 1895 665 Mark, 1913 1.083 Mark – https://www.bpb.de/system/files/dokument_pdf/BPB_Tabellen_DurchschnittlVerdienstArbeitnehmer.pdf"
+  ],
+  "annahmen": [
+    "(A) Modellperson ledig, kinderlos, ohne Kirchensteuer, Vollzeit mit dem mittleren Bruttojahresverdienst 2025 (54.066 €), gerechnet mit Tarif und Beitragssätzen 2026.",
+    "(A) Beide Tarife auf dasselbe zu versteuernde Einkommen angewandt (Brutto minus Pauschbeträge und abziehbare Sozialbeiträge); das Gesetz von 1891 erlaubte ebenfalls Abzüge (Werbungskosten, Versicherungsbeiträge).",
+    "(A) Umrechnung über die Bundesbank-Kaufkraft (1 Mark 1900 = 8,50 €); deren Index 1881–1913 beruht auf Ernährungspreisen, die Umrechnung ist eine Näherung.",
+    "(A) Gemeindezuschlag 100 % wie in Berlin 1913 (niedrigster Wert der drei größten preußischen Städte; Köln 155 %, Breslau 164 %); für 1900 ist kein Durchschnitt belegt, der Zuschlag variierte je Gemeinde.",
+    "(A) Sozialabgaben, Verbrauchsteuern und Zölle in keinem der beiden Fälle gezählt (nur Einkommensteuer, im Video so gesagt).",
+    "(S) Durchschnittsverdienst 1900 laut Grafik (Desai) ca. 785 Mark; im Bild nur die belegten Werte 1895 (665 Mark) und 1913 (1.083 Mark) verwenden."
+  ],
+  "rechenweg": "Kaufkraft: zu versteuerndes Einkommen in € / 8,5 = Mark (Bundesbank, 1900 → Ø 2025). Tarif 1891 § 17 (Stufen) → Steuer in Mark × 8,5 = €; Gemeindezuschlag 100 % (Berlin 1913) verdoppelt. 2026: Brutto 54.066 − 1.230 (Arbeitnehmer-Pauschbetrag) − 36 (Sonderausgaben-Pauschbetrag) − RV 9,3 % 5.028,14 − KV 8,75 % × 0,96 = 4.541,54 − PV 2,4 % 1.297,58 = zvE 41.932 €; ESt nach § 32a: z = 2,4133 → 7.827 €; Soli 0. 1900: 41.932 / 8,5 = 4.933,3 Mark → 118 Mark → 1.003 € → mit Zuschlag 2.006 €. Differenz 5.821 €/Jahr. Einkommensleiter: 10.000 € → 1.176,5 Mark → 9 Mark → 76,50 € (mit Zuschlag 153 €), heute 0; 15.000 € → 26 Mark → 442 € gegen heute 435 €; Kreuzung bei 15.040 €; 20.000 € → 612 € gegen 1.570 €. Grenzsteuersatz 2026 bei 41.932 €: (2·173,10·z + 2.397)/10.000 = 32,3 %. Mit Python nachgerechnet (cockpit/daten/tmp/rechnung_mittag.py).",
+  "zahlen": {
+    "kaufkraft": "1 Mark (1900) = 8,50 € (Bundesbank, Ø 2025)",
+    "steuerfrei_1900": "bis 900 Mark = 7.650 € Kaufkraft; heute Grundfreibetrag 12.348 €",
+    "stufe_10000": "10.000 € = 1.176,5 Mark → 9 Mark = 76,50 €; mit Zuschlag 153 €; heute 0 €",
+    "stufe_15000": "15.000 € = 1.764,7 Mark → 26 Mark → mit Zuschlag 442 €; heute 435 €",
+    "fuehrungswechsel": "ab ca. 15.040 € zu versteuern zahlt man heute mehr (mit Gemeindezuschlag 100 %)",
+    "stufe_20000": "20.000 € = 2.352,9 Mark → 36 Mark → mit Zuschlag 612 €; heute 1.570 € (Faktor 2,57)",
+    "brutto_median": "54.066 € (Destatis 2025)",
+    "sozialabgaben_an": "RV 5.028,14 · KV 4.730,77 · PV 1.297,58 · AV 702,86 = 11.759,36 € (nicht gezählt, nur für das zu versteuernde Einkommen)",
+    "zve": "41.932 €",
+    "est_2026": "7.827 € (Soli 0 €, unter Freigrenze 20.350 €)",
+    "grenzsteuersatz_2026": "32,3 %",
+    "mark_zve": "4.933,3 Mark → Stufe 4.500–5.000 Mark = 118 Mark",
+    "steuer_1900_ohne_zuschlag": "1.003 €",
+    "steuer_1900_mit_zuschlag": "2.006 €",
+    "grenzbelastung_1900": "ca. 5,6 % mit Zuschlag (nächste Stufe +14 Mark je 500 Mark, verdoppelt)",
+    "differenz_jahr": "5.821 € (485,08 €/Monat)",
+    "differenz_40_jahre": "232.840 € (nur intern, konstant gerechnet)",
+    "hoechstsatz_1900": "4 % ab über 100.000 Mark = 892.500 € Kaufkraft",
+    "verhaeltnis_arbeiter": "4.933 Mark = 4,6-fach des Durchschnittsverdiensts 1913 (1.083 Mark), 7,4-fach von 1895 (665 Mark)"
+  },
+  "korrekturen": [
+    {
+      "feld": "skript",
+      "alt": "",
+      "neu": "",
+      "grund": "Idee verglich das Netto; umgesetzt als Duell um die Einkommensteuer mit Einkommensleiter, weil Sozialabgaben getrennt bleiben sollen und so ein echter Führungswechsel sichtbar wird (kleine Einkommen zahlten damals mehr).",
+      "zeit": "2026-11-07"
+    },
+    {
+      "feld": "skript",
+      "alt": "",
+      "neu": "",
+      "grund": "Gemeindezuschlag ergänzt (die Idee rechnete nur den Staatstarif); ohne ihn wäre der Vergleich zugunsten von 1900 verzerrt.",
+      "zeit": "2026-11-07"
+    },
+    {
+      "feld": "skript",
+      "alt": "",
+      "neu": "",
+      "grund": "Summe über ein Berufsleben (232.840 € in 40 Jahren) nur intern; im Video steht das belegte Jahresergebnis.",
+      "zeit": "2026-11-07"
+    }
+  ],
+  "korrekturen_produktion": []
+}
