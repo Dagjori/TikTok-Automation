@@ -1,0 +1,886 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 75.521,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Kaiserreich oder heute? Wer zahlt mehr Steuern?",
+   "start": 0.0,
+   "ende": 3.36,
+   "woerter": [
+    {
+     "wort": "Kaiserreich",
+     "start": 0.0,
+     "ende": 0.64
+    },
+    {
+     "wort": "oder",
+     "start": 0.72,
+     "ende": 0.88
+    },
+    {
+     "wort": "heute?",
+     "start": 0.96,
+     "ende": 1.56
+    },
+    {
+     "wort": "Wer",
+     "start": 1.76,
+     "ende": 1.92
+    },
+    {
+     "wort": "zahlt",
+     "start": 2.0,
+     "ende": 2.24
+    },
+    {
+     "wort": "mehr",
+     "start": 2.32,
+     "ende": 2.48
+    },
+    {
+     "wort": "Steuern?",
+     "start": 2.56,
+     "ende": 3.36
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Gleiches Gehalt, zwei Tarife. Eine Mark damals: 8,50 €. Nur die Einkommensteuer zählt.",
+   "start": 3.4,
+   "ende": 10.12,
+   "woerter": [
+    {
+     "wort": "Gleiches",
+     "start": 3.4,
+     "ende": 3.76
+    },
+    {
+     "wort": "Gehalt,",
+     "start": 3.84,
+     "ende": 4.48
+    },
+    {
+     "wort": "zwei",
+     "start": 4.56,
+     "ende": 4.8
+    },
+    {
+     "wort": "Tarife.",
+     "start": 4.88,
+     "ende": 5.56
+    },
+    {
+     "wort": "Eine",
+     "start": 5.76,
+     "ende": 6.0
+    },
+    {
+     "wort": "Mark",
+     "start": 6.12,
+     "ende": 6.24
+    },
+    {
+     "wort": "damals:",
+     "start": 6.36,
+     "ende": 6.96
+    },
+    {
+     "wort": "8,50",
+     "start": 7.12,
+     "ende": 7.699999999999999
+    },
+    {
+     "wort": "€.",
+     "start": 7.699999999999999,
+     "ende": 8.28
+    },
+    {
+     "wort": "Nur",
+     "start": 8.48,
+     "ende": 8.56
+    },
+    {
+     "wort": "die",
+     "start": 8.64,
+     "ende": 8.72
+    },
+    {
+     "wort": "Einkommensteuer",
+     "start": 8.8,
+     "ende": 9.52
+    },
+    {
+     "wort": "zählt.",
+     "start": 9.6,
+     "ende": 10.12
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, damals zahlte man weniger. Oder?",
+   "start": 10.32,
+   "ende": 13.28,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 10.32,
+     "ende": 10.72
+    },
+    {
+     "wort": "damals",
+     "start": 11.28,
+     "ende": 11.6
+    },
+    {
+     "wort": "zahlte",
+     "start": 11.68,
+     "ende": 11.92
+    },
+    {
+     "wort": "man",
+     "start": 12.0,
+     "ende": 12.08
+    },
+    {
+     "wort": "weniger.",
+     "start": 12.16,
+     "ende": 12.76
+    },
+    {
+     "wort": "Oder?",
+     "start": 12.96,
+     "ende": 13.28
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Start: 10.000 € Einkommen. Heute: 0 € Steuer. Das Kaiserreich will schon 76,50 €. Steuerfrei war nur bis 900 Mark.",
+   "start": 13.76,
+   "ende": 24.08,
+   "woerter": [
+    {
+     "wort": "Start:",
+     "start": 13.76,
+     "ende": 14.08
+    },
+    {
+     "wort": "10.000",
+     "start": 14.2,
+     "ende": 14.739999999999998
+    },
+    {
+     "wort": "€",
+     "start": 14.739999999999998,
+     "ende": 15.28
+    },
+    {
+     "wort": "Einkommen.",
+     "start": 15.36,
+     "ende": 16.24
+    },
+    {
+     "wort": "Heute:",
+     "start": 16.32,
+     "ende": 16.64
+    },
+    {
+     "wort": "0",
+     "start": 16.8,
+     "ende": 17.32
+    },
+    {
+     "wort": "€",
+     "start": 17.32,
+     "ende": 17.84
+    },
+    {
+     "wort": "Steuer.",
+     "start": 17.92,
+     "ende": 18.56
+    },
+    {
+     "wort": "Das",
+     "start": 18.64,
+     "ende": 18.72
+    },
+    {
+     "wort": "Kaiserreich",
+     "start": 18.8,
+     "ende": 19.36
+    },
+    {
+     "wort": "will",
+     "start": 19.44,
+     "ende": 19.6
+    },
+    {
+     "wort": "schon",
+     "start": 19.653,
+     "ende": 19.76
+    },
+    {
+     "wort": "76,50",
+     "start": 19.92,
+     "ende": 20.64
+    },
+    {
+     "wort": "€.",
+     "start": 20.64,
+     "ende": 21.36
+    },
+    {
+     "wort": "Steuerfrei",
+     "start": 21.44,
+     "ende": 22.08
+    },
+    {
+     "wort": "war",
+     "start": 22.16,
+     "ende": 22.32
+    },
+    {
+     "wort": "nur",
+     "start": 22.4,
+     "ende": 22.48
+    },
+    {
+     "wort": "bis",
+     "start": 22.56,
+     "ende": 22.72
+    },
+    {
+     "wort": "900",
+     "start": 22.88,
+     "ende": 23.36
+    },
+    {
+     "wort": "Mark.",
+     "start": 23.44,
+     "ende": 24.08
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Doch dazu kam die Stadt. In Berlin: noch einmal +100 %. Kaiserreich: 153 €.",
+   "start": 24.133,
+   "ende": 30.4,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 24.133,
+     "ende": 24.24
+    },
+    {
+     "wort": "dazu",
+     "start": 24.28,
+     "ende": 24.64
+    },
+    {
+     "wort": "kam",
+     "start": 24.72,
+     "ende": 24.88
+    },
+    {
+     "wort": "die",
+     "start": 24.96,
+     "ende": 25.04
+    },
+    {
+     "wort": "Stadt.",
+     "start": 25.12,
+     "ende": 25.76
+    },
+    {
+     "wort": "In",
+     "start": 25.8,
+     "ende": 25.84
+    },
+    {
+     "wort": "Berlin:",
+     "start": 25.92,
+     "ende": 26.64
+    },
+    {
+     "wort": "noch",
+     "start": 26.76,
+     "ende": 26.88
+    },
+    {
+     "wort": "einmal",
+     "start": 26.96,
+     "ende": 27.533333333333335
+    },
+    {
+     "wort": "+100",
+     "start": 27.533333333333335,
+     "ende": 28.106666666666666
+    },
+    {
+     "wort": "%.",
+     "start": 28.106666666666666,
+     "ende": 28.68
+    },
+    {
+     "wort": "Kaiserreich:",
+     "start": 28.68,
+     "ende": 29.253333333333334
+    },
+    {
+     "wort": "153",
+     "start": 29.253333333333334,
+     "ende": 29.826666666666664
+    },
+    {
+     "wort": "€.",
+     "start": 29.826666666666664,
+     "ende": 30.4
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Das Gehalt steigt auf 15.000 €. Heute: 435 €. Kaiserreich: 442 €. Jetzt wird's knapp.",
+   "start": 30.48,
+   "ende": 39.04,
+   "woerter": [
+    {
+     "wort": "Das",
+     "start": 30.48,
+     "ende": 30.56
+    },
+    {
+     "wort": "Gehalt",
+     "start": 30.64,
+     "ende": 30.96
+    },
+    {
+     "wort": "steigt",
+     "start": 31.04,
+     "ende": 31.28
+    },
+    {
+     "wort": "auf",
+     "start": 31.4,
+     "ende": 31.52
+    },
+    {
+     "wort": "15.000",
+     "start": 31.56,
+     "ende": 32.22
+    },
+    {
+     "wort": "€.",
+     "start": 32.22,
+     "ende": 32.88
+    },
+    {
+     "wort": "Heute:",
+     "start": 32.96,
+     "ende": 33.6
+    },
+    {
+     "wort": "435",
+     "start": 33.68,
+     "ende": 34.496
+    },
+    {
+     "wort": "€.",
+     "start": 34.496,
+     "ende": 35.312
+    },
+    {
+     "wort": "Kaiserreich:",
+     "start": 35.312,
+     "ende": 36.128
+    },
+    {
+     "wort": "442",
+     "start": 36.128,
+     "ende": 36.943999999999996
+    },
+    {
+     "wort": "€.",
+     "start": 36.943999999999996,
+     "ende": 37.76
+    },
+    {
+     "wort": "Jetzt",
+     "start": 37.84,
+     "ende": 38.08
+    },
+    {
+     "wort": "wird's",
+     "start": 38.12,
+     "ende": 38.32
+    },
+    {
+     "wort": "knapp.",
+     "start": 38.4,
+     "ende": 39.04
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "text": "Ein paar Euro mehr, und es kippt. Heute zahlt man mehr. Bei 20.000 €: 1.570 € gegen 612 €.",
+   "start": 39.16,
+   "ende": 46.32,
+   "woerter": [
+    {
+     "wort": "Ein",
+     "start": 39.16,
+     "ende": 39.28
+    },
+    {
+     "wort": "paar",
+     "start": 39.36,
+     "ende": 39.52
+    },
+    {
+     "wort": "Euro",
+     "start": 39.6,
+     "ende": 39.84
+    },
+    {
+     "wort": "mehr,",
+     "start": 40.0,
+     "ende": 40.24
+    },
+    {
+     "wort": "und",
+     "start": 40.747,
+     "ende": 40.8
+    },
+    {
+     "wort": "es",
+     "start": 40.88,
+     "ende": 40.96
+    },
+    {
+     "wort": "kippt.",
+     "start": 41.04,
+     "ende": 41.76
+    },
+    {
+     "wort": "Heute",
+     "start": 41.8,
+     "ende": 42.08
+    },
+    {
+     "wort": "zahlt",
+     "start": 42.24,
+     "ende": 42.48
+    },
+    {
+     "wort": "man",
+     "start": 42.6,
+     "ende": 42.72
+    },
+    {
+     "wort": "mehr.",
+     "start": 42.8,
+     "ende": 43.36
+    },
+    {
+     "wort": "Bei",
+     "start": 43.44,
+     "ende": 43.52
+    },
+    {
+     "wort": "20.000",
+     "start": 43.6,
+     "ende": 43.98857142857143
+    },
+    {
+     "wort": "€:",
+     "start": 43.98857142857143,
+     "ende": 44.37714285714286
+    },
+    {
+     "wort": "1.570",
+     "start": 44.37714285714286,
+     "ende": 44.76571428571429
+    },
+    {
+     "wort": "€",
+     "start": 44.76571428571429,
+     "ende": 45.15428571428571
+    },
+    {
+     "wort": "gegen",
+     "start": 45.15428571428571,
+     "ende": 45.542857142857144
+    },
+    {
+     "wort": "612",
+     "start": 45.542857142857144,
+     "ende": 45.93142857142857
+    },
+    {
+     "wort": "€.",
+     "start": 45.93142857142857,
+     "ende": 46.32
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "text": "Dann das mittlere Gehalt: 54.066 €. Zu versteuern: 41.932 €. Der Abstand wächst. Heute: 32 Cent davon. Damals: rund 6 Cent.",
+   "start": 46.373,
+   "ende": 58.24,
+   "woerter": [
+    {
+     "wort": "Dann",
+     "start": 46.373,
+     "ende": 46.48
+    },
+    {
+     "wort": "das",
+     "start": 46.56,
+     "ende": 46.72
+    },
+    {
+     "wort": "mittlere",
+     "start": 46.8,
+     "ende": 47.2
+    },
+    {
+     "wort": "Gehalt:",
+     "start": 47.24,
+     "ende": 47.92
+    },
+    {
+     "wort": "54.066",
+     "start": 48.04,
+     "ende": 48.78
+    },
+    {
+     "wort": "€.",
+     "start": 48.78,
+     "ende": 49.52
+    },
+    {
+     "wort": "Zu",
+     "start": 49.547,
+     "ende": 49.6
+    },
+    {
+     "wort": "versteuern:",
+     "start": 49.68,
+     "ende": 50.48
+    },
+    {
+     "wort": "41.932",
+     "start": 50.52,
+     "ende": 51.46
+    },
+    {
+     "wort": "€.",
+     "start": 51.46,
+     "ende": 52.4
+    },
+    {
+     "wort": "Der",
+     "start": 52.44,
+     "ende": 52.48
+    },
+    {
+     "wort": "Abstand",
+     "start": 52.56,
+     "ende": 52.96
+    },
+    {
+     "wort": "wächst.",
+     "start": 53.04,
+     "ende": 53.76
+    },
+    {
+     "wort": "Heute:",
+     "start": 53.84,
+     "ende": 54.48
+    },
+    {
+     "wort": "32",
+     "start": 54.52,
+     "ende": 55.28
+    },
+    {
+     "wort": "Cent",
+     "start": 55.36,
+     "ende": 55.52
+    },
+    {
+     "wort": "davon.",
+     "start": 55.6,
+     "ende": 56.24
+    },
+    {
+     "wort": "Damals:",
+     "start": 56.32,
+     "ende": 56.96
+    },
+    {
+     "wort": "rund",
+     "start": 57.0,
+     "ende": 57.2
+    },
+    {
+     "wort": "6",
+     "start": 57.28,
+     "ende": 57.44
+    },
+    {
+     "wort": "Cent.",
+     "start": 57.52,
+     "ende": 58.24
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand: heute 7.827 €, Kaiserreich 2.006 €. Heute 5.821 € mehr, jedes Jahr.",
+   "start": 58.36,
+   "ende": 62.68,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 58.36,
+     "ende": 59.12
+    },
+    {
+     "wort": "heute",
+     "start": 59.2,
+     "ende": 59.52
+    },
+    {
+     "wort": "7.827",
+     "start": 59.6,
+     "ende": 61.36
+    },
+    {
+     "wort": "€,",
+     "start": 61.68,
+     "ende": 61.72
+    },
+    {
+     "wort": "Kaiserreich",
+     "start": 61.72,
+     "ende": 61.72571428571428
+    },
+    {
+     "wort": "2.006",
+     "start": 61.72571428571428,
+     "ende": 61.73142857142857
+    },
+    {
+     "wort": "€.",
+     "start": 61.73142857142857,
+     "ende": 61.73714285714286
+    },
+    {
+     "wort": "Heute",
+     "start": 61.73714285714286,
+     "ende": 61.74285714285714
+    },
+    {
+     "wort": "5.821",
+     "start": 61.74285714285714,
+     "ende": 61.748571428571424
+    },
+    {
+     "wort": "€",
+     "start": 61.748571428571424,
+     "ende": 61.754285714285714
+    },
+    {
+     "wort": "mehr,",
+     "start": 61.754285714285714,
+     "ende": 61.76
+    },
+    {
+     "wort": "jedes",
+     "start": 61.76,
+     "ende": 62.16
+    },
+    {
+     "wort": "Jahr.",
+     "start": 62.24,
+     "ende": 62.68
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Heute ist mehr steuerfrei. Danach steigt der Satz aber steil.",
+   "start": 62.96,
+   "ende": 67.76,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 62.96,
+     "ende": 63.84
+    },
+    {
+     "wort": "Heute",
+     "start": 63.92,
+     "ende": 64.16
+    },
+    {
+     "wort": "ist",
+     "start": 64.24,
+     "ende": 64.48
+    },
+    {
+     "wort": "mehr",
+     "start": 64.56,
+     "ende": 64.72
+    },
+    {
+     "wort": "steuerfrei.",
+     "start": 64.8,
+     "ende": 65.76
+    },
+    {
+     "wort": "Danach",
+     "start": 65.84,
+     "ende": 66.16
+    },
+    {
+     "wort": "steigt",
+     "start": 66.24,
+     "ende": 66.56
+    },
+    {
+     "wort": "der",
+     "start": 66.6,
+     "ende": 66.64
+    },
+    {
+     "wort": "Satz",
+     "start": 66.72,
+     "ende": 66.96
+    },
+    {
+     "wort": "aber",
+     "start": 66.96,
+     "ende": 67.04
+    },
+    {
+     "wort": "steil.",
+     "start": 67.04,
+     "ende": 67.76
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "text": "Das Verrückte: Mit diesem Gehalt war man damals reich.",
+   "start": 67.84,
+   "ende": 71.44,
+   "woerter": [
+    {
+     "wort": "Das",
+     "start": 67.84,
+     "ende": 67.92
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 68.0,
+     "ende": 68.8
+    },
+    {
+     "wort": "Mit",
+     "start": 68.88,
+     "ende": 68.96
+    },
+    {
+     "wort": "diesem",
+     "start": 69.04,
+     "ende": 69.28
+    },
+    {
+     "wort": "Gehalt",
+     "start": 69.36,
+     "ende": 69.76
+    },
+    {
+     "wort": "war",
+     "start": 69.84,
+     "ende": 69.92
+    },
+    {
+     "wort": "man",
+     "start": 70.0,
+     "ende": 70.08
+    },
+    {
+     "wort": "damals",
+     "start": 70.16,
+     "ende": 70.56
+    },
+    {
+     "wort": "reich.",
+     "start": 70.64,
+     "ende": 71.44
+    }
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "text": "Kleine Einkommen: damals teurer. Ab der Mitte: heute.",
+   "start": 71.48,
+   "ende": 75.6,
+   "woerter": [
+    {
+     "wort": "Kleine",
+     "start": 71.48,
+     "ende": 71.76
+    },
+    {
+     "wort": "Einkommen:",
+     "start": 71.84,
+     "ende": 72.64
+    },
+    {
+     "wort": "damals",
+     "start": 72.76,
+     "ende": 73.12
+    },
+    {
+     "wort": "teurer.",
+     "start": 73.2,
+     "ende": 73.92
+    },
+    {
+     "wort": "Ab",
+     "start": 74.0,
+     "ende": 74.08
+    },
+    {
+     "wort": "der",
+     "start": 74.16,
+     "ende": 74.24
+    },
+    {
+     "wort": "Mitte:",
+     "start": 74.32,
+     "ende": 74.88
+    },
+    {
+     "wort": "heute.",
+     "start": 74.96,
+     "ende": 75.6
+    }
+   ]
+  }
+ ]
+}

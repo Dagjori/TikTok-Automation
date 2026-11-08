@@ -14,15 +14,15 @@
     {
       "id": "hook",
       "phase": "hook",
-      "text": "Kaiserreich oder heute? Gleiches Gehalt: Wer zahlt mehr Steuern?",
-      "sprechtext": "Kaiserreich oder heute?\n[curious] Gleiches Gehalt – wer zahlt MEHR Steuern?",
+      "text": "Kaiserreich oder heute? Wer zahlt mehr Steuern?",
+      "sprechtext": "Kaiserreich oder heute?\nWer zahlt mehr Steuern?",
       "bild_text_abgleich": []
     },
     {
       "id": "regeln",
       "phase": "regeln",
-      "text": "Preußen: Tarif von 1891. Gegen: Tarif 2026. 1 Mark von 1900 = 8,50 € Kaufkraft. Nur die Einkommensteuer zählt.",
-      "sprechtext": "Preußen, Tarif von achtzehnhunderteinundneunzig.\nGegen zweitausendsechsundzwanzig.\nEine Mark von damals: achteinhalb Euro Kaufkraft.\nNur die Einkommensteuer zählt.",
+      "text": "Gleiches Gehalt, zwei Tarife. Eine Mark damals: 8,50 €. Nur die Einkommensteuer zählt.",
+      "sprechtext": "Gleiches Gehalt, zwei Tarife.\nEine Mark damals: achteinhalb Euro.\nNur die Einkommensteuer zählt.",
       "bild_text_abgleich": []
     },
     {
@@ -35,57 +35,57 @@
     {
       "id": "rennen",
       "phase": "rennen",
-      "text": "Start: 10.000 € Einkommen. Die Zähler laufen. Heute: 0 € Steuer. Das Kaiserreich will schon 76,50 €. Steuerfrei war nur bis 900 Mark.",
-      "sprechtext": "Start: zehntausend Euro Einkommen.\nDie Zähler laufen.\nHeute: null Euro Steuer.\nDas Kaiserreich will schon SECHSUNDSIEBZIG Euro.\nDamals war nur bis neunhundert Mark steuerfrei.",
+      "text": "Start: 10.000 € Einkommen. Heute: 0 € Steuer. Das Kaiserreich will schon 76,50 €. Steuerfrei war nur bis 900 Mark.",
+      "sprechtext": "Start bei zehntausend Euro Einkommen.\nHeute zahlt man null Euro Steuer.\nDas Kaiserreich will schon sechsundsiebzig Euro.\nSteuerfrei war nur bis neunhundert Mark.",
       "bild_text_abgleich": []
     },
     {
       "id": "wendung1",
       "phase": "wendung1",
       "text": "Doch dazu kam die Stadt. In Berlin: noch einmal +100 %. Kaiserreich: 153 €.",
-      "sprechtext": "Doch dazu kam die Stadt.\nIn Berlin: noch einmal hundert PROZENT.\nKaiserreich: hundertdreiundfünfzig Euro.",
+      "sprechtext": "Doch dazu kam die Stadt.\nIn Berlin: noch mal hundert PROZENT.\nSchon hundertdreiundfünfzig Euro.",
       "bild_text_abgleich": []
     },
     {
       "id": "wendung2",
       "phase": "wendung2",
-      "text": "Das Gehalt steigt. 12.000, 13.000, 15.000 €. Heute: 435 €. Kaiserreich: 442 €. Jetzt wird's knapp.",
-      "sprechtext": "Das Gehalt steigt.\nZwölftausend, dreizehntausend, fünfzehntausend.\nHeute: vierhundertfünfunddreißig Euro.\nKaiserreich: vierhundertzweiundvierzig.\nJetzt wird's KNAPP.",
+      "text": "Das Gehalt steigt auf 15.000 €. Heute: 435 €. Kaiserreich: 442 €. Jetzt wird's knapp.",
+      "sprechtext": "Das Gehalt steigt auf fünfzehntausend.\nHeute: vierhundertfünfunddreißig.\nDamals: vierhundertzweiundvierzig.\nJetzt wird's KNAPP.",
       "bild_text_abgleich": []
     },
     {
       "id": "wendung3",
       "phase": "wendung3",
       "text": "Ein paar Euro mehr, und es kippt. Heute zahlt man mehr. Bei 20.000 €: 1.570 € gegen 612 €.",
-      "sprechtext": "Ein paar Euro mehr … und es kippt.\nHeute zahlt man MEHR.\nBei zwanzigtausend schon gut zweieinhalbmal so viel.",
+      "sprechtext": "Ein paar Euro mehr … und es kippt.\nHeute zahlt man MEHR.\nBei zwanzigtausend zweieinhalbmal so viel.",
       "bild_text_abgleich": []
     },
     {
       "id": "kipp",
       "phase": "kipp",
-      "text": "Dann das mittlere Gehalt: 54.066 € brutto. Zu versteuern: 41.932 €. Der Abstand wächst. Heute: 32 Cent je weiterem Euro. Damals: rund 6.",
-      "sprechtext": "Dann das mittlere Gehalt: vierundfünfzigtausend brutto.\nNach Abzügen: knapp zweiundvierzigtausend zu versteuern.\nDer Abstand WÄCHST mit jedem Euro.\nHeute: zweiunddreißig Cent von jedem weiteren Euro.\nDamals: rund sechs.",
+      "text": "Dann das mittlere Gehalt: 54.066 €. Zu versteuern: 41.932 €. Der Abstand wächst. Heute: 32 Cent davon. Damals: rund 6 Cent.",
+      "sprechtext": "Dann das mittlere Gehalt: vierundfünfzigtausend.\nZu versteuern: knapp zweiundvierzigtausend.\nDer Abstand WÄCHST.\nHeute: zweiunddreißig Cent davon.\nDamals: rund sechs Cent.",
       "bild_text_abgleich": []
     },
     {
       "id": "ergebnis",
       "phase": "ergebnis",
       "text": "Endstand: heute 7.827 €, Kaiserreich 2.006 €. Heute 5.821 € mehr, jedes Jahr.",
-      "sprechtext": "Endstand:\nHeute rund fünftausendachthundert Euro MEHR – jedes Jahr.",
+      "sprechtext": "Endstand:\nHeute knapp sechstausend Euro MEHR – jedes Jahr.",
       "bild_text_abgleich": []
     },
     {
       "id": "warum",
       "phase": "warum",
       "text": "Warum? Heute ist mehr steuerfrei. Danach steigt der Satz aber steil.",
-      "sprechtext": "[thoughtful] Warum?\nHeute ist mehr steuerfrei.\nDanach steigt der Satz aber STEIL.",
+      "sprechtext": "[thoughtful] Warum?\nHeute ist mehr steuerfrei.\nDanach steigt der Satz STEIL.",
       "bild_text_abgleich": []
     },
     {
       "id": "pointe",
       "phase": "pointe",
-      "text": "Und das Verrückte: Mit diesem Gehalt war man damals reich.",
-      "sprechtext": "Und das Verrückte:\nMit diesem Gehalt war man damals REICH.",
+      "text": "Das Verrückte: Mit diesem Gehalt war man damals reich.",
+      "sprechtext": "Das Verrückte:\nMit diesem Gehalt war man damals REICH.",
       "bild_text_abgleich": []
     },
     {
