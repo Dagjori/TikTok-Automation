@@ -270,7 +270,7 @@
   },
   {
    "id": "wendung1",
-   "text": "Doch dazu kam die Stadt. In Berlin: noch einmal +100 %. Kaiserreich: 153 €.",
+   "text": "Doch dazu kam die Stadt. In Berlin: noch mal +100 %. Schon 153 €.",
    "start": 24.133,
    "ende": 30.4,
    "woerter": [
@@ -315,40 +315,40 @@
      "ende": 26.88
     },
     {
-     "wort": "einmal",
+     "wort": "mal",
      "start": 26.96,
-     "ende": 27.533333333333335
+     "ende": 27.12
     },
     {
      "wort": "+100",
-     "start": 27.533333333333335,
-     "ende": 28.106666666666666
+     "start": 27.2,
+     "ende": 27.72
     },
     {
      "wort": "%.",
-     "start": 28.106666666666666,
-     "ende": 28.68
+     "start": 27.72,
+     "ende": 28.24
     },
     {
-     "wort": "Kaiserreich:",
-     "start": 28.68,
-     "ende": 29.253333333333334
+     "wort": "Schon",
+     "start": 28.28,
+     "ende": 28.4
     },
     {
      "wort": "153",
-     "start": 29.253333333333334,
-     "ende": 29.826666666666664
+     "start": 28.56,
+     "ende": 29.479999999999997
     },
     {
      "wort": "€.",
-     "start": 29.826666666666664,
+     "start": 29.479999999999997,
      "ende": 30.4
     }
    ]
   },
   {
    "id": "wendung2",
-   "text": "Das Gehalt steigt auf 15.000 €. Heute: 435 €. Kaiserreich: 442 €. Jetzt wird's knapp.",
+   "text": "Das Gehalt steigt auf 15.000 €. Heute: 435 €. Damals: 442 €. Jetzt wird's knapp.",
    "start": 30.48,
    "ende": 39.04,
    "woerter": [
@@ -390,26 +390,26 @@
     {
      "wort": "435",
      "start": 33.68,
-     "ende": 34.496
+     "ende": 34.480000000000004
     },
     {
      "wort": "€.",
-     "start": 34.496,
-     "ende": 35.312
+     "start": 34.480000000000004,
+     "ende": 35.28
     },
     {
-     "wort": "Kaiserreich:",
-     "start": 35.312,
-     "ende": 36.128
+     "wort": "Damals:",
+     "start": 35.4,
+     "ende": 36.08
     },
     {
      "wort": "442",
-     "start": 36.128,
-     "ende": 36.943999999999996
+     "start": 36.16,
+     "ende": 36.959999999999994
     },
     {
      "wort": "€.",
-     "start": 36.943999999999996,
+     "start": 36.959999999999994,
      "ende": 37.76
     },
     {
@@ -431,7 +431,7 @@
   },
   {
    "id": "wendung3",
-   "text": "Ein paar Euro mehr, und es kippt. Heute zahlt man mehr. Bei 20.000 €: 1.570 € gegen 612 €.",
+   "text": "Ein paar Euro mehr, und es kippt. Heute zahlt man mehr. Bei 20.000 € zweieinhalbmal so viel.",
    "start": 39.16,
    "ende": 46.32,
    "woerter": [
@@ -498,36 +498,26 @@
     {
      "wort": "20.000",
      "start": 43.6,
-     "ende": 43.98857142857143
-    },
-    {
-     "wort": "€:",
-     "start": 43.98857142857143,
-     "ende": 44.37714285714286
-    },
-    {
-     "wort": "1.570",
-     "start": 44.37714285714286,
-     "ende": 44.76571428571429
+     "ende": 44.04
     },
     {
      "wort": "€",
-     "start": 44.76571428571429,
-     "ende": 45.15428571428571
+     "start": 44.04,
+     "ende": 44.48
     },
     {
-     "wort": "gegen",
-     "start": 45.15428571428571,
-     "ende": 45.542857142857144
+     "wort": "zweieinhalbmal",
+     "start": 44.64,
+     "ende": 45.52
     },
     {
-     "wort": "612",
-     "start": 45.542857142857144,
-     "ende": 45.93142857142857
+     "wort": "so",
+     "start": 45.6,
+     "ende": 45.68
     },
     {
-     "wort": "€.",
-     "start": 45.93142857142857,
+     "wort": "viel.",
+     "start": 45.72,
      "ende": 46.32
     }
    ]
@@ -647,7 +637,7 @@
   },
   {
    "id": "ergebnis",
-   "text": "Endstand: heute 7.827 €, Kaiserreich 2.006 €. Heute 5.821 € mehr, jedes Jahr.",
+   "text": "Endstand: Heute knapp 6.000 € mehr – jedes Jahr.",
    "start": 58.36,
    "ende": 62.68,
    "woerter": [
@@ -657,54 +647,34 @@
      "ende": 59.12
     },
     {
-     "wort": "heute",
+     "wort": "Heute",
      "start": 59.2,
      "ende": 59.52
     },
     {
-     "wort": "7.827",
+     "wort": "knapp",
      "start": 59.6,
-     "ende": 61.36
+     "ende": 59.84
     },
     {
-     "wort": "€,",
-     "start": 61.68,
-     "ende": 61.72
-    },
-    {
-     "wort": "Kaiserreich",
-     "start": 61.72,
-     "ende": 61.72571428571428
-    },
-    {
-     "wort": "2.006",
-     "start": 61.72571428571428,
-     "ende": 61.73142857142857
-    },
-    {
-     "wort": "€.",
-     "start": 61.73142857142857,
-     "ende": 61.73714285714286
-    },
-    {
-     "wort": "Heute",
-     "start": 61.73714285714286,
-     "ende": 61.74285714285714
-    },
-    {
-     "wort": "5.821",
-     "start": 61.74285714285714,
-     "ende": 61.748571428571424
+     "wort": "6.000",
+     "start": 60.0,
+     "ende": 60.480000000000004
     },
     {
      "wort": "€",
-     "start": 61.748571428571424,
-     "ende": 61.754285714285714
+     "start": 60.480000000000004,
+     "ende": 60.96
     },
     {
-     "wort": "mehr,",
-     "start": 61.754285714285714,
-     "ende": 61.76
+     "wort": "mehr",
+     "start": 61.12,
+     "ende": 61.36
+    },
+    {
+     "wort": "–",
+     "start": 61.68,
+     "ende": 61.72
     },
     {
      "wort": "jedes",
