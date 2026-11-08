@@ -225,5 +225,74 @@
    "grund": "Faktencheck vor dem Bau, Ergebnis unverändert",
    "zeit": "2026-11-09"
   }
- ]
+ ],
+ "lern_notizen": {
+  "welt": "Polar/Fjord (Adventfjord, Spitzbergen, Erstbau 08.11.)",
+  "standpunkt": "auf dem Wasser, Deck eines Forschungsboots",
+  "tageszeit": [
+   "Polarnacht mit Polarlicht",
+   "Dämmerblau",
+   "Mitternachtssonne",
+   "Herbstnacht mit Polarlicht",
+   "Wintersonne",
+   "flache Dauersonne"
+  ],
+  "kamera": [
+   {
+    "t": 0.3,
+    "art": "fahrt"
+   },
+   {
+    "t": 10,
+    "art": "schwenk (Norden)"
+   },
+   {
+    "t": 18,
+    "art": "schwenk (Süden)"
+   },
+   {
+    "t": 26.5,
+    "art": "schwenk (Polarlicht)"
+   },
+   {
+    "t": 40,
+    "art": "zoom 58→70"
+   },
+   {
+    "t": 58,
+    "art": "schnitt"
+   }
+  ],
+  "zeitraffer": "1 s = 1 Monat ab 8 s",
+  "effekte": "siehe ereignisse.json",
+  "sequenzen": 6,
+  "t_ereignis": 8,
+  "countdown": "ja, zweiter: nein",
+  "schnitte": [
+   {
+    "t": 58,
+    "grund": "Höhepunkt: Totale"
+   }
+  ],
+  "statuszeile": [
+   "POLARNACHT · LONGYEARBYEN",
+   "STADT AHNUNGSLOS",
+   "1 SEKUNDE = 1 MONAT",
+   "SONNE KEHRT ZURÜCK",
+   "MITTERNACHTSSONNE",
+   "WIEDER DUNKEL",
+   "19 TAGE KÜRZER",
+   "NUR NOCH 3 MONATE",
+   "POLARLICHT",
+   "SONNE JEDEN TAG",
+   "SONNE GEHT UNTER",
+   "6° HOCH",
+   "NEIGUNG UNTER 2°",
+   "SOMMER = WINTER"
+  ],
+  "testbloecke": {},
+  "laenge_s": 80,
+  "t_stufe2": 12,
+  "folgen_hinweis": ""
+ }
 }

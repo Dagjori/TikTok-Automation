@@ -799,15 +799,6 @@
    "text": "Sommer: Mitternachtssonne nur noch drei Monate"
   },
   {
-   "quelle": "lunar",
-   "t": 24,
-   "typ": "kamera",
-   "art": "fahrt",
-   "dauer": 16,
-   "text": "ruhiger Halt Richtung Süden mit leichter Drift",
-   "klang": false
-  },
-  {
    "t": 24,
    "typ": "anzeige",
    "etikett": "MITTERNACHTSSONNE",
@@ -875,6 +866,15 @@
    "quelle": "LunarHUD",
    "klang": false,
    "bild": false
+  },
+  {
+   "quelle": "lunar",
+   "t": 26.5,
+   "typ": "kamera",
+   "art": "schwenk",
+   "dauer": 7,
+   "text": "Schwenk zum Nordosten ins Polarlicht und zurück",
+   "klang": false
   },
   {
    "t": 26.5,
@@ -1081,6 +1081,15 @@
    "quelle": "LunarHUD",
    "klang": false,
    "bild": false
+  },
+  {
+   "quelle": "lunar",
+   "t": 33.4,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 6.6,
+   "text": "ruhiger Halt Richtung Süden mit leichter Drift",
+   "klang": false
   },
   {
    "t": 33.5,
