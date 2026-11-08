@@ -1,0 +1,234 @@
+{
+ "skript_id": "acc2-2026-11-09-abend",
+ "skript_quelle": "acc2-2026-11-09-abend",
+ "titel": "Was wäre, wenn du 2.400 Jahre einem Pilzgeflecht zusiehst?",
+ "titelfrage": "Was wäre, wenn du 2.400 Jahre einem Pilzgeflecht zusiehst?",
+ "suchbegriff": "Pilzgeflecht",
+ "konto": "stelldirvor.pov",
+ "format": "referenz_pov",
+ "skill": "video-produktion",
+ "laenge_s": 80,
+ "teil": 1,
+ "testbloecke": {},
+ "folgen_hinweis": "",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Welt engine/welt_waldlichtung.js, Neubau engine/myzel.js (Opus, 09.11.2026)",
+ "thema": "Der größte bekannte Pilz der Welt, ein Dunkler Hallimasch in Oregon, wächst im Zeitraffer unter dem Wald von null auf 965 Hektar.",
+ "welt": "Wald und Lichtung: trockener Nadel-Mischwald am Hang der Blue Mountains (Malheur National Forest, Oregon), Tannen und Douglasien, Moos, Totholz, Rehe; Querschnitt-Ansicht des Bodens mit leuchtendem Myzel (Welttyp Wald, Ausbau nötig)",
+ "standpunkt": "ebenerdig auf einer Lichtung am Hang, Blick hangabwärts über den Wald; später erhöht durch langsame Fahrt nach oben; ein Schnitt in den Boden-Querschnitt",
+ "tageszeit_verlauf": "Nacht mit Mond (0–10 s) → Morgengrauen (16–24 s) → Herbsttag (26–33 s) → bedeckter Tag → Schnee (41–45 s) → goldenes Abendlicht (45–70 s)",
+ "zeitraffer": [
+  {
+   "von": 8,
+   "bis": 60,
+   "faktor": "1 s = 46 Jahre",
+   "anzeige": "FLÄCHE in Hektar bzw. FUSSBALLFELDER live"
+  }
+ ],
+ "zeitraffer_hinweis": "0–8 s Echtzeit; ab 8 s 1 Sekunde = 46 Jahre (2.400 Jahre bis 60 s); Jahreszeiten als Stimmungen je Stufe",
+ "kamera": "0–8 s langsame Fahrt ein; harter Schnitt bei 10 s in den Boden-Querschnitt; harter Schnitt bei 22 s zurück an die Oberfläche; 30–58 s weiche Fahrt nach oben über die Lichtung; Halt am Höhepunkt",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 8,
+   "etikett": "PILZ KEIMT IN",
+   "start": "0:08",
+   "ende": "0:00",
+   "einheit": "m:ss",
+   "unter": "BLUE MOUNTAINS, OREGON → (4 s) WALD AHNUNGSLOS"
+  },
+  {
+   "von_s": 8,
+   "bis_s": 30,
+   "etikett": "FLÄCHE",
+   "start": "0",
+   "ende": "173",
+   "einheit": "HEKTAR",
+   "unter": "1 SEKUNDE = 46 JAHRE → (16 s) ERSTE TANNE BEFALLEN → (23 s) TANNE STÜRZT → (27 s) JAHR 860 → (30 s) JAHR 1.000"
+  },
+  {
+   "von_s": 30,
+   "bis_s": 50,
+   "etikett": "FUSSBALLFELDER",
+   "start": "242",
+   "ende": "882",
+   "einheit": "",
+   "unter": "JAHR 1.000 (live) → (34 s) LÜCKEN IM WALD → (41 s) WINTER → (46 s) JAHR 1.735"
+  },
+  {
+   "von_s": 50,
+   "bis_s": 58,
+   "etikett": "FLÄCHE",
+   "start": "630",
+   "ende": "892",
+   "einheit": "HEKTAR",
+   "unter": "JAHR 1.940 (live) → (53 s) EIN EINZIGER PILZ → (56 s) JAHR 2.300"
+  },
+  {
+   "von_s": 58,
+   "bis_s": 70,
+   "etikett": "HIER",
+   "start": "HIER",
+   "ende": "HIER",
+   "einheit": "",
+   "unter": "965 HEKTAR · ÜBER 1.350 FUSSBALLFELDER · JAHR 2.400"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Du stehst nachts am Waldhang in Oregon.",
+   3.45
+  ],
+  [
+   8.4,
+   "Dann beginnt unter dir ein Pilz zu wachsen.",
+   3.45
+  ],
+  [
+   12,
+   "Weiße Fäden kriechen von Wurzel zu Wurzel.",
+   3.6
+  ],
+  [
+   15.8,
+   "Sie dringen in die Wurzeln einer Tanne.",
+   3.6
+  ],
+  [
+   19.6,
+   "Oben verliert die Tanne ihre Nadeln.",
+   3.6
+  ],
+  [
+   23.4,
+   "Dann stürzt sie, und junge Bäume wachsen nach.",
+   3.05
+  ],
+  [
+   26.6,
+   "Im Herbst sprießen braune Hüte aus dem Moos.",
+   3.05
+  ],
+  [
+   29.8,
+   "Nach 1.000 Jahren misst das Geflecht 170 Hektar.",
+   3.6
+  ],
+  [
+   33.6,
+   "Im Wald entstehen Lücken mit toten Stämmen.",
+   3.6
+  ],
+  [
+   37.4,
+   "Junge Bäume schließen sie wieder.",
+   3.6
+  ],
+  [
+   41.2,
+   "Schnee fällt, das Geflecht wächst weiter.",
+   3.6
+  ],
+  [
+   45.6,
+   "Es bedeckt jetzt über 700 Fußballfelder.",
+   3.6
+  ],
+  [
+   49.4,
+   "Dann spannt es sich unter dem ganzen Hang.",
+   3.6
+  ],
+  [
+   53.2,
+   "Ein einziger Pilz, genetisch überall gleich.",
+   3.6
+  ],
+  [
+   62.4,
+   "Oben siehst du nur ein paar Pilze.",
+   3.6
+  ],
+  [
+   66.4,
+   "Er ist der größte bekannte Pilz der Welt.",
+   3.6
+  ]
+ ],
+ "satz_dauer": "3,05–3,6 s, Lücke ≥ 0,15 s",
+ "faktenzeile": "MALHEUR NATIONAL FOREST, OREGON · 965 HEKTAR · ALTER MINDESTENS 2.400, VIELLEICHT 8.650 JAHRE",
+ "abspann": {
+  "frage": "Was wäre, wenn du 2.400 Jahre einem Pilzgeflecht zusiehst?",
+  "fakt": "MALHEUR NATIONAL FOREST, OREGON · 965 HEKTAR · ALTER MINDESTENS 2.400, VIELLEICHT 8.650 JAHRE"
+ },
+ "rechnung": {
+  "code": "pipeline/sim/pilz_geflecht.mjs (Test: pipeline/sim/pilz_geflecht.test.mjs, grün)"
+ },
+ "rechenweg": "Endwerte (F): 965 ha (Guinness, Ferguson et al. 2003), Alter mindestens 2.400 Jahre (Guinness; Studie: 1.900–8.650 Jahre je nach Ausbreitungsrate). Zeitraffer: 2.400 Jahre von 8 s bis 60 s = 52 s → 46,15 Jahre/s; Jahr(t) = 2400·(t−8)/52. Modell gleichmäßige Ausbreitung nach außen (A): Fläche wächst mit dem Quadrat der Zeit, A(t) = 965·(Jahr/2400)² ha. Werte: 12,0 s Jahr 185 / 5,7 ha · 23,4 s 711 / 84,6 ha · 29,8 s Jahr 1.006 / 169,6 ha (Satz: 1.000 Jahre, 170 ha) · 30 s 172,7 ha = 242 Felder · 45,6 s Jahr 1.735 / 504,5 ha = 707 Felder (Satz: über 700) · 50 s 629,5 ha = 882 Felder · 58 s 892 ha · 60 s 965 ha. Fußballfeld 105 × 68 m = 0,714 ha; 965 / 0,714 = 1.351,5 → über 1.350. 965 ha = 9,65 km². Gleichwertiger Kreisradius 1.753 m (nur intern, nicht im Video). Nachgerechnet mit py -3 (cockpit/daten/tmp/rechnung_acc2_1109a.py).",
+ "zahlen": {
+  "flaeche_ha": 965,
+  "flaeche_acres": 2385,
+  "flaeche_km2": 9.65,
+  "alter_mind_jahre": 2400,
+  "alter_max_jahre": 8650,
+  "alter_spanne_studie": "1.900–8.650",
+  "fussballfeld_ha": 0.714,
+  "fussballfelder": 1351,
+  "zeitraffer_jahre_pro_s": 46.15,
+  "flaeche_nach_1000_jahren_ha": 170,
+  "felder_bei_45_6_s": 707
+ },
+ "annahmen": [
+  "(A) Ausbreitung gleichmäßig nach außen (Fläche ∝ Zeit²); das echte Geflecht ist unregelmäßig geformt, der Verlauf über die Jahrhunderte ist nicht gemessen, nur Endfläche und Altersspanne.",
+  "(A) Zeitraffer auf 2.400 Jahre (untere Altersgrenze laut Guinness), die Studie nennt 1.900–8.650 Jahre; die Faktenzeile nennt die Spanne.",
+  "(A) Tageszeiten und Jahreszeiten (Nacht, Morgengrauen, Herbst, Schnee) sind Stimmungen je Stufe; bei 46 Jahren pro Sekunde wäre echtes Wechseln ein Flackern.",
+  "(A) Baumarten vereinfacht als Tannen (Quellen nennen Tannen und Douglasien als Opfer); Fruchtkörper des Dunklen Hallimaschs braun, selten sichtbar.",
+  "(S) Wortwahl „größter bekannter Pilz“ statt „größtes Lebewesen“: nach Fläche gilt eine Seegraswiese in der Shark Bay (Australien, 2022) als größer."
+ ],
+ "quellen": [
+  "(F) Largest fungus (965 ha, Malheur National Forest, Oregon, Armillaria ostoyae, mindestens 2.400, bis 8.650 Jahre), Guinness World Records – https://www.guinnessworldrecords.com/world-records/66481-largest-fungi",
+  "(F) Ferguson, B.A. et al. 2003: Coarse-scale population structure of pathogenic Armillaria species in a mixed-conifer forest in the Blue Mountains of northeast Oregon, Can. J. For. Res. 33: 612–623 (Genet 965 ha, Alter 1.900–8.650 Jahre), USDA Forest Service Treesearch – https://research.fs.usda.gov/treesearch/20135",
+  "(F) Das weltgrößte Lebewesen (Fäden dringen von Baum zu Baum, Fruchtkörper wegen geringer Niederschläge selten), Planet Wissen (WDR) – https://www.planet-wissen.de/gesellschaft/lebensmittel/gift_und_speisepilze/pwiedasweltgroesstelebewesen100.html",
+  "(F) Wildpilze sammeln: Tannen und Douglasfichten dem Pilz zum Opfer gefallen, Stiftung Warentest – https://www.test.de/Wildpilze-sammeln-und-zubereiten-Tipps-fuer-den-unbeschwerten-Genuss-1163075-1163669/",
+  "(F) Fußballfeld 105 × 68 m, FIFA-Empfehlung (Stadium Guidelines)"
+ ],
+ "caption": "Was wäre, wenn du 2.400 Jahre einem Pilzgeflecht beim Wachsen zusiehst? 🍄 Ich hab’s durchgespielt. Wie viele Pilze hast du im Wald schon übersehen? 👇 #pilzgeflecht #hallimasch #pilze #wissen #waswaerewenn",
+ "dramaturgie": [
+  "0–8 s: Nacht am Waldhang, Mondlicht durch Tannen und Douglasien, Reh zieht vorbei, Nebel kriecht; Countdown läuft, Wald ahnungslos; Kamera fährt langsam ein (Welteffekt Nebel vor 4 s).",
+  "8 s Ereignis auf Countdown-Null: weißes Glimmen im Boden unter der Kamera, tiefer Ton, Licht kippt ins Kühle; Zeitraffer startet.",
+  "10 s harter Schnitt in die Querschnitt-Ansicht des Bodens (Maßstabssprung): weiße Fäden kriechen leuchtend durch die Erde von Wurzel zu Wurzel (10–22 s).",
+  "16–24 s Stufe 1: Morgengrauen, die befallene Tanne wird licht, verliert Nadeln, stürzt (Staubwolke, Tonakzent), Jungwuchs.",
+  "26–30 s Stufe 2: Herbsttag, braune Hüte im Moos, Anzeige wechselt zu Fußballfeldern, Lichtakzent.",
+  "30–45 s Stufe 3: Lücken mit toten Stämmen entstehen und schließen sich, Schnee (41 s); Kamera fährt weich nach oben über die Lichtung, darunter halbtransparent das wachsende weiße Netz.",
+  "45–58 s Annäherung: Netz spannt sich über den ganzen Hang, Riser, Licht golden; Anzeige zurück auf Hektar.",
+  "58–62 s Höhepunkt: höchster Kamerapunkt, das ganze Geflecht leuchtet einmal auf unter dem Wald, Anzeige HIER, kein Satz.",
+  "62–70 s Nachspiel: Netz erlischt, oben nur ein paar Pilze im Moos, ruhiger Wald; 70–72 s Abblende; 72–80 s Abspann mit Titelfrage und Faktenzeile."
+ ],
+ "hoehepunkt": "58 s: höchster Kamerapunkt, das ganze Geflecht leuchtet auf (Anzeige HIER)",
+ "bewegungsplan": [
+  [
+   0,
+   "Nacht im Wald, Nebel, Kamera fährt langsam ein",
+   1
+  ]
+ ],
+ "bild_text_abgleich": [],
+ "korrekturen": [
+  {
+   "feld": "faktencheck",
+   "alt": "-",
+   "neu": "Rechnung in sim/pilz_geflecht.mjs nachgebaut (5 Tests grün): 965 ha, 2.400 Jahre, 46,15 Jahre/s, 169,6 ha bei 1.006 Jahren, 707 Felder bei 45,6 s, über 1.350 Felder; keine Abweichung zum Skript.",
+   "quelle": "pipeline/sim/pilz_geflecht.test.mjs",
+   "grund": "Faktencheck vor dem Bau, Ergebnis unverändert",
+   "zeit": "2026-11-09"
+  },
+  {
+   "feld": "kamera",
+   "alt": "harter Schnitt zurück an die Oberfläche bei 22 s",
+   "neu": "zurück bei 24,0 s",
+   "quelle": "Skript-Bild-Abgleich",
+   "grund": "Der Satz „Dann stürzt sie“ (23,4 s) wird im Querschnitt mit der braunen, sterbenden Tanne und Erschütterung gezeigt, nicht mehr an der Oberfläche; Inhalt unverändert",
+   "zeit": "2026-11-09"
+  }
+ ]
+}
