@@ -356,6 +356,7 @@ async function start() {
   ev(A.pDas, "whoosh", "Rückblende zu Damals, Kamera auf das Haus"); ev(A.p10, "ding", "Damals leuchtet auf, 10 %"); ev(A.pHalbes, "klick", "Damals-Licht pulsiert");
   ev(A.s70, "akzent", "Welt dunkelt ab, Schlusskarte: 70 % mehr Steuer"); ev(A.sNur, "klick", "Zeile Nur 4 % erscheint"); ev(A.sTeurer, "akzent", "Teurer, Kamera weitet");
 
+  ev(5.0, "klick", "Wagen ziehen weiter, Laternen ziehen vorbei"); ev(11.9, "klick", "Kamera gleitet nach oben, Heute-Wagen im Bild"); ev(14.1, "klick", "Spot auf Heute baut sich auf, Lichtkegel wächst"); ev(20.2, "klick", "Kamera schwenkt zum Heute-Wagen, Laternen ziehen vorbei"); ev(34.5, "klick", "Kamera nähert sich dem Heute-Wagen"); ev(48.9, "klick", "Kamera gleitet zum hohen Block, Laternen ziehen vorbei"); ev(67.3, "klick", "Kamera sinkt, Balken steht"); ev(73.5, "klick", "Kamera weitet langsam, Welt dunkelt weiter ab");
   const zl = new Zeitleiste(buehne);
   zl.shot(0, welt);
   const gl = buehne.renderer.getContext(), px = new Uint8Array(4);

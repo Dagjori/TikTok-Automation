@@ -1220,6 +1220,20 @@
    "zeilen": 1
   },
   {
+   "quelle": "Szene",
+   "t": 62.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet über die Wagen, Laternen ziehen vorbei"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera hebt sich Richtung Erklärgrafik, Jahreskarte steht"
+  },
+  {
    "quelle": "Untertitel",
    "t": 64.29,
    "typ": "untertitel",
