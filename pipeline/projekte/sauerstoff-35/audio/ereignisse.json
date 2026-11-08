@@ -535,7 +535,7 @@
    "quelle": "lunar",
    "t": 15.6,
    "typ": "effekt",
-   "name": "wetterleuchten",
+   "name": "blitz_wetterleuchten",
    "dauer": 0,
    "staerke": 0.35,
    "klang": "donner"
@@ -610,7 +610,7 @@
    "quelle": "lunar",
    "t": 17.7,
    "typ": "effekt",
-   "name": "wetterleuchten",
+   "name": "blitz_wetterleuchten",
    "dauer": 0,
    "staerke": 0.4,
    "klang": "donner"
@@ -869,7 +869,7 @@
    "quelle": "lunar",
    "t": 24.6,
    "typ": "effekt",
-   "name": "wetterleuchten",
+   "name": "blitz_wetterleuchten",
    "dauer": 0,
    "staerke": 0.3,
    "klang": "donner"

@@ -162,8 +162,8 @@ function stumpfTeile() {
   const wurzel = [];
   for (let k = 0; k < 6; k++) { const a = k * 1.05 + 0.4 + 0.3 * hash(k, 3), g = new THREE.CylinderGeometry(0.025, 0.12, 0.8, 7, 3); g.rotateZ(-1.3); g.translate(0.38, 0.05, 0); g.rotateY(a); wurzel.push({ g, c: (x, y) => [0.24, 0.19, 0.14].map((c) => c * (0.85 + 0.3 * vn(x * 20, y * 20))) }); }
   const moos = [];
-  for (let k = 0; k < 60; k++) { const a = 1.2 + hash(k, 5) * 2.2, rr = R * (0.9 + 0.12 * hash(k, 6)), y = H - 0.02 - 0.18 * hash(k, 7) ** 2;
-    const g = new THREE.IcosahedronGeometry(0.012 + 0.02 * hash(k, 8), 1); g.scale(1.3, 0.7, 1.3); g.translate(Math.cos(a) * rr, y, Math.sin(a) * rr); const hh = 0.75 + 0.5 * hash(k, 9); moos.push({ g, c: [0.24 * hh, 0.44 * hh, 0.1 * hh] }); }
+  for (let k = 0; k < 40; k++) { const a = 4.3 + hash(k, 5) * 2.0, rr = R * (0.92 + 0.1 * hash(k, 6)), y = H - 0.02 - 0.18 * hash(k, 7) ** 2;
+    const g = new THREE.IcosahedronGeometry(0.008 + 0.012 * hash(k, 8), 1); g.scale(1.3, 0.6, 1.3); g.translate(Math.cos(a) * rr, y, Math.sin(a) * rr); const hh = 0.75 + 0.5 * hash(k, 9); moos.push({ g, c: [0.24 * hh, 0.44 * hh, 0.1 * hh] }); }
   const pilze = [];
   for (const [a, s] of [[2.4, 1], [2.62, 0.7], [2.95, 0.85], [3.3, 0.55]]) { const st = new THREE.CylinderGeometry(0.01 * s, 0.014 * s, 0.07 * s, 8); st.translate(Math.cos(a) * (R + 0.07), 0.035 * s, Math.sin(a) * (R + 0.07)); const hu = new THREE.SphereGeometry(0.036 * s, 12, 6, 0, 6.283, 0, 1.5); hu.scale(1, 0.7, 1); hu.translate(Math.cos(a) * (R + 0.07), 0.062 * s, Math.sin(a) * (R + 0.07)); pilze.push({ g: st, c: [0.86, 0.82, 0.72] }, { g: hu, c: (x, y) => [0.66, 0.4 - 0.1 * (y > 0.07 * s), 0.2] }); }
   return { rinde, ringe, rest: verbinde([...wurzel, ...moos, ...pilze]) };
@@ -359,8 +359,8 @@ float waldF(vec2 p) {
   c = mix(c, kohle, vb * (1.0 - nass * 0.6));
   diffuseColor.rgb = c;`)
       .replace("#include <emissivemap_fragment>", `#include <emissivemap_fragment>
-  { float g = glutF(vNW.xz); float muster = smoothstep(0.35, 0.8, nF(vNW.xz * 1.7 + vec2(uT * 0.4, 0.0))) * (0.6 + 0.4 * sin(uT * 7.0 + vNW.x * 3.0));
-    totalEmissiveRadiance += vec3(1.0, 0.32, 0.06) * g * muster * 2.6; }`);
+  { float g = glutF(vNW.xz); float muster = smoothstep(0.3, 0.9, nF(vNW.xz * 0.9 + vec2(uT * 0.3, 0.0))) * (0.7 + 0.3 * sin(uT * 5.0 + vNW.x * 1.3));
+    totalEmissiveRadiance += vec3(1.0, 0.32, 0.06) * g * muster * 1.7; }`);
   };
   return m;
 }

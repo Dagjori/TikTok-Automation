@@ -153,7 +153,7 @@ async function start() {
     { t: 7.9, werte: { belichtung: 1.0, saettigung: 0.92, kontrast: 1.03, tonung: [1.08, 1.0, 0.88], tonungStaerke: 0.3, bloomStaerke: 1.1 } },
     { t: 9.0, werte: { belichtung: 1.05, saettigung: 1.02, kontrast: 1.12, tonung: [1.0, 1.0, 1.0], tonungStaerke: 0.08, bloomStaerke: 1.0 } },
     { t: 14, werte: { belichtung: 0.95, saettigung: 0.86, kontrast: 1.06, tonung: [0.94, 0.98, 1.06], tonungStaerke: 0.28, bloomStaerke: 1.0 } },
-    { t: 19.5, werte: { belichtung: 0.82, saettigung: 0.74, kontrast: 1.06, tonung: [0.9, 0.95, 1.08], tonungStaerke: 0.35, bloomStaerke: 1.15 } },
+    { t: 19.5, werte: { belichtung: 0.92, saettigung: 0.76, kontrast: 1.06, tonung: [0.9, 0.95, 1.08], tonungStaerke: 0.35, bloomStaerke: 1.15 } },
     { t: 22, werte: { belichtung: 0.9, saettigung: 1.08, kontrast: 1.08, tonung: [1.14, 0.92, 0.74], tonungStaerke: 0.42, bloomStaerke: 1.45 } },
     { t: 27.5, phase: "nacht", werte: { belichtung: 0.78, saettigung: 0.9, tonung: [0.88, 0.9, 1.1], tonungStaerke: 0.4, bloomStaerke: 1.45 } },
     { t: 30.2, phase: "nacht", werte: { belichtung: 0.78, saettigung: 0.9, tonung: [0.88, 0.9, 1.1], tonungStaerke: 0.4, bloomStaerke: 1.45 } },
@@ -170,9 +170,9 @@ async function start() {
   prot.effekt(0.6, "wind_im_farn", { klang: "windstoss", staerke: 0.25 }).effekt(1.6, "libellen_am_bach", { klang: "fluegel", staerke: 0.35 }).effekt(3.0, "bach_glitzert", { klang: false })
     .effekt(5.5, "voegel_kreisen", { klang: false }).effekt(T_EREIGNIS, "sauerstoff_steigt", { klang: "zischen", staerke: 0.7, dauer: 2 }).effekt(T_EREIGNIS, "licht_wird_hart", { klang: "windstoss", staerke: 0.5 })
     .effekt(10.5, "zeitraffer_wolken", { klang: false }).effekt(12.4, "gewitterfront", { klang: "grollen", staerke: 0.5, dauer: 4 }).effekt(13.2, "voegel_fliehen", { klang: "fluegel", staerke: 0.4 })
-    .effekt(15.6, "wetterleuchten", { klang: "donner", staerke: 0.35 }).effekt(16.5, "regen", { klang: false }).effekt(17.7, "wetterleuchten", { klang: "donner", staerke: 0.4 })
+    .effekt(15.6, "blitz_wetterleuchten", { klang: "donner", staerke: 0.35 }).effekt(16.5, "regen", { klang: false }).effekt(17.7, "blitz_wetterleuchten", { klang: "donner", staerke: 0.4 })
     .effekt(TB, "blitz", { klang: "blitz", staerke: 1 }).effekt(TB + 0.25, "donnerschlag", { klang: "donner", staerke: 1 }).effekt(TB + 0.4, "fichte_brennt", { klang: "zischen", staerke: 0.5, dauer: 3 })
-    .effekt(22.5, "feuer_im_unterholz", { klang: "windstoss", staerke: 0.5, dauer: 3 }).effekt(24.6, "wetterleuchten", { klang: "donner", staerke: 0.3 }).effekt(27.0, "nacht_glut", { klang: false })
+    .effekt(22.5, "feuer_im_unterholz", { klang: "windstoss", staerke: 0.5, dauer: 3 }).effekt(24.6, "blitz_wetterleuchten", { klang: "donner", staerke: 0.3 }).effekt(27.0, "nacht_glut", { klang: false })
     .effekt(28.0, "asche_faellt", { klang: false }).effekt(31.0, "zeitsprung", { klang: "windstoss", staerke: 0.4, dauer: 2.5 }).effekt(31.5, "farne_treiben_aus", { klang: false })
     .effekt(35.0, "libellen_wachsen", { klang: "fluegel", staerke: 0.4 }).effekt(40.0, "libellen_40cm", { klang: "fluegel", staerke: 0.5 }).effekt(44.5, "lichtstrahlen", { klang: false })
     .effekt(46.6, "riesenlibelle_loest_sich", { klang: "fluegel", staerke: 0.6 }).effekt(50.0, "anflug", { klang: "fluegel", staerke: 0.6 }).effekt(54.4, "schatten_ueber_lichtung", { klang: "fluegel", staerke: 0.8 })
@@ -257,11 +257,11 @@ async function start() {
     sonne.color.copy(sonneF(t)); if (nacht > 0.01) sonne.color.lerp(cT.set("#7E94C8"), nacht);
     const anflugL = smoothstep(49, 51, t) * (1 - smoothstep(57.5, 59, t));
     sonne.intensity = lerp(3.1 * elF * (1 - 0.82 * sturm), 0.3, nacht) + 3.5 * bl + 1.0 * wl + 0.7 * anflugL;
-    hemi.intensity = lerp(lerp(1.35, 0.75, sturm), 0.3, nacht) + 0.8 * bl + 0.3 * wl + (nah ? 0.15 : 0) - 0.3 * anflugL;
+    hemi.intensity = lerp(lerp(1.35, 1.05, sturm), 0.3, nacht) + 0.8 * bl + 0.3 * wl + (nah ? 0.15 : 0) - 0.3 * anflugL;
     hemi.color.copy(zen).lerp(cT.set("#E0E6EE"), 0.45); hemi.groundColor.set(t > 31.6 ? "#4E6030" : "#3E4A2A");
     // Feuerlicht
     const fz = fichteZ(t), fdir = norm([0.5, 0, 0.62]), R = clamp((t - TB) * 7, 0, 40);
-    feuerL.position.set(FICHTE.x + 2, gy(FICHTE.x, FICHTE.z) + 2.5, FICHTE.z + 9); feuerL.intensity = 45 * fz.feuer * (0.85 + 0.15 * Math.sin(t * 13));
+    feuerL.position.set(FICHTE.x + 2, gy(FICHTE.x, FICHTE.z) + 2.5, FICHTE.z + 9); feuerL.intensity = 28 * fz.feuer * (0.85 + 0.15 * Math.sin(t * 13));
     feuerL2.position.set(FICHTE.x + fdir[0] * R, gy(FICHTE.x, FICHTE.z) + 3, FICHTE.z + fdir[2] * R * 0.6); feuerL2.intensity = 160 * br * (0.8 + 0.2 * Math.sin(t * 17 + 1));
     // Welt
     const glutLicht = [1.0 * br * 0.5 + 0.3 * fz.feuer, 0.35 * br * 0.5 + 0.1 * fz.feuer, 0.06 * br * 0.5];
