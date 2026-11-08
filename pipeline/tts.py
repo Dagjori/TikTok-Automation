@@ -43,8 +43,14 @@ def anfrage(pfad, daten=None):
         kopf["xi-api-key"] = os.environ["ELEVENLABS_API_KEY"]
     body = json.dumps(daten).encode() if daten is not None else None
     req = urllib.request.Request(API + pfad, data=body, headers=kopf, method="POST" if body else "GET")
-    with urllib.request.urlopen(req, timeout=120) as antwort:
-        return json.loads(antwort.read())
+    try:
+        with urllib.request.urlopen(req, timeout=120) as antwort:
+            return json.loads(antwort.read())
+    except urllib.error.HTTPError as e:
+        # Antwort von ElevenLabs zeigen (enthält den Grund, z. B. quota_exceeded oder invalid_api_key, nie den Schlüssel)
+        grund = e.read().decode("utf-8", "replace")[:500]
+        print(f"ElevenLabs HTTP {e.code}: {grund}", file=sys.stderr)
+        raise
 
 
 # Feste Voice-IDs (der Key braucht dafür kein Leserecht „voices_read“). Deutsche Bibliotheksstimmen: IDs laut json2video.com/ai-voices/elevenlabs/languages/german/
