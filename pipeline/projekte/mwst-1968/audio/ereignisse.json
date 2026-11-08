@@ -7,7 +7,7 @@
  "stimmEnde": 76.096,
  "timing": "timing.json (echte Stimme)",
  "protokoll": true,
- "teppich": "stadt_nacht",
+ "teppich": "nachtfahrt",
  "massstab": {
   "version": 1,
   "teams": {
@@ -1022,7 +1022,7 @@
    "t": 53.34,
    "typ": "chip",
    "klang": "pop",
-   "text": "HEUTE · RUND 260 €"
+   "text": "REST: HEUTE RUND 260 €"
   },
   {
    "quelle": "Szene",
@@ -1046,7 +1046,7 @@
    "t": 55.78,
    "typ": "chip",
    "klang": "pop",
-   "text": "DAMALS · RUND 130 €"
+   "text": "REST: DAMALS RUND 130 €"
   },
   {
    "quelle": "Szene",
