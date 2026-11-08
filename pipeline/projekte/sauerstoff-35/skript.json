@@ -578,5 +578,257 @@
   "Zeitraffer 8–27 s (1 s = 5 Jahre) zeigt Gewitter, Blitz und Brand wie in Echtzeit: dramaturgisch verdichtet (Brände nehmen zu), so im Skript geplant; Anzeige und Statuszeile weisen den Faktor aus.",
   "Caption 175 Zeichen (Richtwert ca. 150) – unverändert aus dem Skript übernommen.",
   "Buffer: meer-flut (acc2-2026-11-07-mittag) ist laut Buffer-Log ebenfalls auf So 08.11. 09:30 (Kanal stelldirvor.pov) geplant – gleicher Termin wie dieser Slot."
- ]
+ ],
+ "lern_notizen": {
+  "welt": "Mischwald mit Bach und Lichtung (Welttyp Wald und Lichtung, engine/welt_waldbach.js, Erstbau 08.11.2026)",
+  "standpunkt": "ebenerdig: erst am Bachufer, dann auf der Lichtung neben einem moosigen Baumstumpf (nach dem Schnitt Nahsicht am Stumpf)",
+  "tageszeit": [
+   "Morgen (Gegenlicht)",
+   "Mittag mit Gewitterfront",
+   "Gewitterabend mit Blitz und Waldbrand",
+   "Nacht mit Glut",
+   "heller Vormittag",
+   "goldener Spätnachmittag"
+  ],
+  "kamera": [
+   {
+    "t": 6,
+    "art": "fahrt",
+    "was": "langsame Fahrt vom Bach zurück auf die Lichtung, Blick hebt sich zum Waldrand"
+   },
+   {
+    "t": 15,
+    "art": "schwenk",
+    "was": "Blick zur hohen Fichte unter der Gewitterfront"
+   },
+   {
+    "t": 19.7,
+    "art": "zoom",
+    "was": "kurzer Zoom auf den Blitzeinschlag"
+   },
+   {
+    "t": 22,
+    "art": "schwenk",
+    "was": "Schwenk folgt dem Feuer durchs Unterholz"
+   },
+   {
+    "t": 30.4,
+    "art": "schwenk",
+    "was": "Blick sinkt auf die austreibenden Farne"
+   },
+   {
+    "t": 34.5,
+    "art": "schwenk",
+    "was": "ruhiger Schwenk mit den kreisenden Libellen"
+   },
+   {
+    "t": 50,
+    "art": "schwenk",
+    "was": "Schwenk folgt der anfliegenden Riesenlibelle"
+   },
+   {
+    "t": 54,
+    "art": "zoom",
+    "was": "Blickwinkel öffnet sich, Libelle füllt das Bild"
+   },
+   {
+    "t": 60,
+    "art": "fahrt",
+    "was": "langsame Fahrt auf den Baumstumpf zu, Landung"
+   }
+  ],
+  "zeitraffer": [
+   {
+    "von": 0,
+    "bis": 8,
+    "faktor": "Echtzeit (Countdown)"
+   },
+   {
+    "von": 8,
+    "bis": 27,
+    "faktor": "1 s = 5 Jahre (95 Jahre)"
+   },
+   {
+    "von": 27,
+    "bis": 30,
+    "faktor": "Echtzeit (Nachglühen)"
+   },
+   {
+    "von": 30,
+    "bis": 50,
+    "faktor": "1 s = 100.000 Jahre (2 Mio. Jahre)"
+   },
+   {
+    "von": 50,
+    "bis": 70,
+    "faktor": "Echtzeit (Anflug, Landung)"
+   }
+  ],
+  "effekte": [
+   {
+    "t": 0.6,
+    "name": "wind_im_farn"
+   },
+   {
+    "t": 1.6,
+    "name": "libellen_am_bach"
+   },
+   {
+    "t": 3,
+    "name": "bach_glitzert"
+   },
+   {
+    "t": 5.5,
+    "name": "voegel_kreisen"
+   },
+   {
+    "t": 8,
+    "name": "sauerstoff_steigt"
+   },
+   {
+    "t": 8,
+    "name": "licht_wird_hart"
+   },
+   {
+    "t": 10.5,
+    "name": "zeitraffer_wolken"
+   },
+   {
+    "t": 12.4,
+    "name": "gewitterfront"
+   },
+   {
+    "t": 13.2,
+    "name": "voegel_fliehen"
+   },
+   {
+    "t": 15.6,
+    "name": "blitz_wetterleuchten"
+   },
+   {
+    "t": 16.5,
+    "name": "regen"
+   },
+   {
+    "t": 17.7,
+    "name": "blitz_wetterleuchten"
+   },
+   {
+    "t": 19.9,
+    "name": "blitz"
+   },
+   {
+    "t": 20.15,
+    "name": "donnerschlag"
+   },
+   {
+    "t": 20.299999999999997,
+    "name": "fichte_brennt"
+   },
+   {
+    "t": 22.5,
+    "name": "feuer_im_unterholz"
+   },
+   {
+    "t": 24.6,
+    "name": "blitz_wetterleuchten"
+   },
+   {
+    "t": 27,
+    "name": "nacht_glut"
+   },
+   {
+    "t": 28,
+    "name": "asche_faellt"
+   },
+   {
+    "t": 31,
+    "name": "zeitsprung"
+   },
+   {
+    "t": 31.5,
+    "name": "farne_treiben_aus"
+   },
+   {
+    "t": 35,
+    "name": "libellen_wachsen"
+   },
+   {
+    "t": 40,
+    "name": "libellen_40cm"
+   },
+   {
+    "t": 44.5,
+    "name": "lichtstrahlen"
+   },
+   {
+    "t": 46.6,
+    "name": "riesenlibelle_loest_sich"
+   },
+   {
+    "t": 50,
+    "name": "anflug"
+   },
+   {
+    "t": 54.4,
+    "name": "schatten_ueber_lichtung"
+   },
+   {
+    "t": 57.2,
+    "name": "fluegel_nah"
+   },
+   {
+    "t": 58,
+    "name": "hier"
+   },
+   {
+    "t": 63.4,
+    "name": "landung"
+   },
+   {
+    "t": 65.5,
+    "name": "pollen_treiben"
+   }
+  ],
+  "sequenzen": [
+   "Countdown, Morgen am Bach (ahnungslos)",
+   "Ereignis 8 s: Anstieg, Licht kippt",
+   "Gewitter",
+   "Blitz und Waldbrand",
+   "Nacht mit Glut",
+   "Zeitsprung: Farne",
+   "Libellen wachsen",
+   "Anflug der Riesenlibelle",
+   "Höhepunkt HIER + Schnitt",
+   "Landung (Nachspiel)",
+   "Abspann"
+  ],
+  "t_ereignis": 8,
+  "countdown": {
+   "ja": true,
+   "zweiter": false,
+   "text": "ANSTIEG IN 0:08 → 0:00"
+  },
+  "schnitte": [
+   {
+    "t": 60,
+    "grund": "Höhepunkt: harter Schnitt in die Nahsicht am Baumstumpf"
+   }
+  ],
+  "statuszeile": [
+   "LUFT HEUTE: 20,9 %",
+   "WALD AHNUNGSLOS",
+   "1 SEKUNDE = 5 JAHRE",
+   "BRÄNDE NEHMEN ZU",
+   "WALDBRAND",
+   "WIE IM KARBON",
+   "1 SEKUNDE = 100.000 JAHRE",
+   "GENERATION FÜR GENERATION",
+   "SO GROSS WIE EIN FALKE",
+   "ECHTZEIT",
+   "IM ANFLUG",
+   "70 CM SPANNWEITE"
+  ],
+  "hell_dunkel": "gemischt: hell (Morgen, Vormittag, Nachmittag) mit dunkler Mitte (Gewitter, Brand, Nacht 12–31 s)"
+ }
 }
