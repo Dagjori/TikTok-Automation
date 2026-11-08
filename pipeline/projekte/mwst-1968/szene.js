@@ -352,7 +352,7 @@ async function start() {
   ev(A.w3Dritte, "whoosh", "Station 3: Kamera hoch zum Mietshaus"); ev(A.w3Miete, "ding", "Mietshäuser leuchten, Steuer 0 €"); ev(A.w3Abst, "klick", "Zähler bleiben stehen, Abstand bleibt");
   ev(A.kDann, "whoosh", "Station 4: Kamera auf den hohen Block"); ev(A.kStrom, "ding", "Block leuchtet, Strom Auto Handy"); ev(A.k1600, "klick", "Chip 1.600 € zum vollen Satz"); ev(A.k260, "ding", "Heute rund 260 €, Zähler steigen"); ev(A.k130, "ding", "Damals rund 130 €"); ev(A.kZieht, "whoosh", "Heute zieht davon, Glow und Zoom");
   ev(A.eEnd, "whoosh", "Kamera zurück, Jahreskarte"); ev(A.e1500, "ding", "Heute zahlt 1.505 € mehr");
-  ev(A.wWarum, "whoosh", "Erklärgrafik Warum"); ev(A.wHaelfte, "ding", "Balken 44 % ohne vollen Satz"); ev(A.wAusg, "klick", "Tag fast die Hälfte");
+  ev(62.9, "klick", "Kamera gleitet über die Wagen, Laternen ziehen vorbei"); ev(63.6, "klick", "Kamera hebt sich Richtung Erklärgrafik, Jahreskarte steht"); ev(A.wWarum, "whoosh", "Erklärgrafik Warum"); ev(A.wHaelfte, "ding", "Balken 44 % ohne vollen Satz"); ev(A.wAusg, "klick", "Tag fast die Hälfte");
   ev(A.pDas, "whoosh", "Rückblende zu Damals, Kamera auf das Haus"); ev(A.p10, "ding", "Damals leuchtet auf, 10 %"); ev(A.pHalbes, "klick", "Damals-Licht pulsiert");
   ev(A.s70, "akzent", "Welt dunkelt ab, Schlusskarte: 70 % mehr Steuer"); ev(A.sNur, "klick", "Zeile Nur 4 % erscheint"); ev(A.sTeurer, "akzent", "Teurer, Kamera weitet");
 

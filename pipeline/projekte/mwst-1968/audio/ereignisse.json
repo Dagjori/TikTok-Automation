@@ -232,6 +232,20 @@
    "zeilen": 1
   },
   {
+   "quelle": "Szene",
+   "t": 9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet nach rechts, Laternen ziehen vorbei"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera schiebt sich zwischen die Wagen, Heute-Wagen rückt ins Bild"
+  },
+  {
    "quelle": "Chip",
    "t": 10.67,
    "typ": "chip",
