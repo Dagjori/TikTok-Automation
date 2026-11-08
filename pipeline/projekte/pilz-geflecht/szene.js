@@ -20,6 +20,8 @@ const MITTE = [-110, -40];
 const hM = hoehe(...MITTE);
 const STAND = [MITTE[0] + 3.2, hoehe(MITTE[0] + 3.2, MITTE[1] + 4.2) + 1.7, MITTE[1] + 4.2];
 const HOCH = [MITTE[0], 2050, 1600], HOCHZIEL = [MITTE[0], 0, -255];
+const BASIS = [STAND[0] + 0.35 * Math.sin(8 * 0.12), STAND[1], STAND[2] - 0.8];                // Pose bei 8 s (Aufstieg beginnt hier, kein Sprung)
+const BZIEL = [MITTE[0] - 0.6 + 0.7, hM - 0.2 + 0.6, MITTE[1] - 1.2 - 2];
 const K = (keys, e = ease.inOutSine) => (t) => keyframes(keys.map(([tt, v, ee]) => ({ t: tt, v, e: ee || e })), t);
 
 // Tageszeit: 0 = Nacht … 1 = Tag (Nacht 0–10, Morgengrauen 16–24, Herbsttag 26–33, bedeckt, Schnee 41–45, goldenes Abendlicht 45–70)
@@ -53,12 +55,13 @@ async function start() {
 
   // ---------------------------------------------------------------- Kamera
   const w = (t) => { const f = clamp((t - T_AUS) / (56 - T_AUS)); return ease.inOutSine(f) ** 1.5; };    // Aufstieg 24–56 s
-  const hOben = (t) => (t < 26.6 ? STAND[1] : t < 30.5 ? STAND[1] * Math.pow(45 / STAND[1], ease.inOutSine((t - 26.6) / 3.9)) : 45 * Math.pow(HOCH[1] / 45, ease.inOutSine(clamp((t - 30.5) / 25.5)) ** 1.2));
+  const hOben = (t) => (t < 26.6 ? BASIS[1] : t < 30.5 ? BASIS[1] * Math.pow(45 / BASIS[1], ease.inOutSine((t - 26.6) / 3.9)) : 45 * Math.pow(HOCH[1] / 45, ease.inOutSine(clamp((t - 30.5) / 25.5)) ** 1.2));
   const posOben = (t) => {
-    const h = hOben(t), f = clamp((h - 45) / (HOCH[1] - 45));
-    return [lerp(STAND[0], HOCH[0], f), Math.max(h, hoehe(lerp(STAND[0], HOCH[0], f), lerp(STAND[2], HOCH[2], f)) + 4), lerp(STAND[2], HOCH[2], f)];
+    const h = hOben(t), f = clamp((h - 6) / (HOCH[1] - 6));
+    const x = lerp(BASIS[0], HOCH[0], f), z = lerp(BASIS[2], HOCH[2], f);
+    return [x, Math.max(h, hoehe(x, z) + 4), z];
   };
-  const zielOben = (t) => { const k = clamp((hOben(t) - 45) / (HOCH[1] - 45)); const f = Math.pow(k, 0.8); return [lerp(MITTE[0] - 0.6, HOCHZIEL[0], f), lerp(hM - 0.2, HOCHZIEL[1], f), lerp(MITTE[1] - 1.2, HOCHZIEL[2], f)]; };
+  const zielOben = (t) => { const k = clamp((hOben(t) - 45) / (HOCH[1] - 45)); const f = Math.pow(k, 0.8); return [lerp(BZIEL[0], HOCHZIEL[0], f), lerp(BZIEL[1], HOCHZIEL[1], f), lerp(BZIEL[2], HOCHZIEL[2], f)]; };
   const schnittWurzel = (t) => smoothstep(18, 21, t);                      // innerhalb des Querschnitts langsam näher an die Wurzel
   const KOMMT = K([[0, 60], [8, 56], [24, 60], [40, 64], [56, 62], [70, 60]]);
   const KOMPITCH = K([[0, 0], [8, 3]]);
