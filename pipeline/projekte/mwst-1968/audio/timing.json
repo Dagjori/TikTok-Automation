@@ -1,0 +1,866 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 76.096,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Damals oder heute? Wo zahlt man mehr Steuer?",
+   "start": 0.0,
+   "ende": 3.52,
+   "woerter": [
+    {
+     "wort": "Damals",
+     "start": 0.0,
+     "ende": 0.533
+    },
+    {
+     "wort": "oder",
+     "start": 0.64,
+     "ende": 0.92
+    },
+    {
+     "wort": "heute?",
+     "start": 0.96,
+     "ende": 1.52
+    },
+    {
+     "wort": "Wo",
+     "start": 2.0,
+     "ende": 2.08
+    },
+    {
+     "wort": "zahlt",
+     "start": 2.16,
+     "ende": 2.4
+    },
+    {
+     "wort": "man",
+     "start": 2.48,
+     "ende": 2.56
+    },
+    {
+     "wort": "mehr",
+     "start": 2.64,
+     "ende": 2.8
+    },
+    {
+     "wort": "Steuer?",
+     "start": 2.88,
+     "ende": 3.52
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Ein Haushalt, gleicher Einkauf, 3.000 € im Monat. Damals: 10 und 5 %. Heute: 19 und 7.",
+   "start": 3.76,
+   "ende": 13.04,
+   "woerter": [
+    {
+     "wort": "Ein",
+     "start": 3.76,
+     "ende": 3.92
+    },
+    {
+     "wort": "Haushalt,",
+     "start": 3.96,
+     "ende": 4.72
+    },
+    {
+     "wort": "gleicher",
+     "start": 4.8,
+     "ende": 5.12
+    },
+    {
+     "wort": "Einkauf,",
+     "start": 5.2,
+     "ende": 5.92
+    },
+    {
+     "wort": "3.000",
+     "start": 6.0,
+     "ende": 6.4399999999999995
+    },
+    {
+     "wort": "€",
+     "start": 6.4399999999999995,
+     "ende": 6.88
+    },
+    {
+     "wort": "im",
+     "start": 6.92,
+     "ende": 6.96
+    },
+    {
+     "wort": "Monat.",
+     "start": 7.04,
+     "ende": 7.68
+    },
+    {
+     "wort": "Damals:",
+     "start": 7.92,
+     "ende": 8.68
+    },
+    {
+     "wort": "10",
+     "start": 8.88,
+     "ende": 9.12
+    },
+    {
+     "wort": "und",
+     "start": 9.28,
+     "ende": 9.44
+    },
+    {
+     "wort": "5",
+     "start": 9.48,
+     "ende": 10.06
+    },
+    {
+     "wort": "%.",
+     "start": 10.06,
+     "ende": 10.64
+    },
+    {
+     "wort": "Heute:",
+     "start": 10.72,
+     "ende": 11.44
+    },
+    {
+     "wort": "19",
+     "start": 11.52,
+     "ende": 12.0
+    },
+    {
+     "wort": "und",
+     "start": 12.08,
+     "ende": 12.24
+    },
+    {
+     "wort": "7.",
+     "start": 12.32,
+     "ende": 13.04
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar … heute zahlt man überall mehr. Oder?",
+   "start": 13.12,
+   "ende": 16.16,
+   "woerter": [
+    {
+     "wort": "Klar",
+     "start": 13.12,
+     "ende": 13.52
+    },
+    {
+     "wort": "…",
+     "start": 13.92,
+     "ende": 13.973
+    },
+    {
+     "wort": "heute",
+     "start": 14.027,
+     "ende": 14.24
+    },
+    {
+     "wort": "zahlt",
+     "start": 14.32,
+     "ende": 14.48
+    },
+    {
+     "wort": "man",
+     "start": 14.56,
+     "ende": 14.64
+    },
+    {
+     "wort": "überall",
+     "start": 14.72,
+     "ende": 15.12
+    },
+    {
+     "wort": "mehr.",
+     "start": 15.16,
+     "ende": 15.44
+    },
+    {
+     "wort": "Oder?",
+     "start": 15.84,
+     "ende": 16.16
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Erste Station: das Restaurant. Gut 200 € im Monat. Heute: 14 € Steuer. Damals: 20.",
+   "start": 16.72,
+   "ende": 25.0,
+   "woerter": [
+    {
+     "wort": "Erste",
+     "start": 16.72,
+     "ende": 16.96
+    },
+    {
+     "wort": "Station:",
+     "start": 17.04,
+     "ende": 17.72
+    },
+    {
+     "wort": "das",
+     "start": 17.84,
+     "ende": 18.0
+    },
+    {
+     "wort": "Restaurant.",
+     "start": 18.28,
+     "ende": 18.64
+    },
+    {
+     "wort": "Gut",
+     "start": 18.96,
+     "ende": 19.2
+    },
+    {
+     "wort": "200",
+     "start": 19.28,
+     "ende": 19.68
+    },
+    {
+     "wort": "€",
+     "start": 19.68,
+     "ende": 20.08
+    },
+    {
+     "wort": "im",
+     "start": 20.16,
+     "ende": 20.24
+    },
+    {
+     "wort": "Monat.",
+     "start": 20.32,
+     "ende": 20.88
+    },
+    {
+     "wort": "Heute:",
+     "start": 21.12,
+     "ende": 21.72
+    },
+    {
+     "wort": "14",
+     "start": 21.92,
+     "ende": 22.240000000000002
+    },
+    {
+     "wort": "€",
+     "start": 22.240000000000002,
+     "ende": 22.56
+    },
+    {
+     "wort": "Steuer.",
+     "start": 22.64,
+     "ende": 23.24
+    },
+    {
+     "wort": "Damals:",
+     "start": 23.44,
+     "ende": 24.12
+    },
+    {
+     "wort": "20.",
+     "start": 24.24,
+     "ende": 25.0
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Denn Essen im Restaurant zahlt heute nur 7 %. Damals: der volle Satz.",
+   "start": 25.2,
+   "ende": 30.44,
+   "woerter": [
+    {
+     "wort": "Denn",
+     "start": 25.2,
+     "ende": 25.36
+    },
+    {
+     "wort": "Essen",
+     "start": 25.44,
+     "ende": 25.68
+    },
+    {
+     "wort": "im",
+     "start": 25.72,
+     "ende": 25.76
+    },
+    {
+     "wort": "Restaurant",
+     "start": 25.84,
+     "ende": 26.4
+    },
+    {
+     "wort": "zahlt",
+     "start": 26.48,
+     "ende": 26.72
+    },
+    {
+     "wort": "heute",
+     "start": 26.76,
+     "ende": 26.96
+    },
+    {
+     "wort": "nur",
+     "start": 27.04,
+     "ende": 27.2
+    },
+    {
+     "wort": "7",
+     "start": 27.28,
+     "ende": 27.78
+    },
+    {
+     "wort": "%.",
+     "start": 27.78,
+     "ende": 28.28
+    },
+    {
+     "wort": "Damals:",
+     "start": 28.48,
+     "ende": 29.04
+    },
+    {
+     "wort": "der",
+     "start": 29.2,
+     "ende": 29.36
+    },
+    {
+     "wort": "volle",
+     "start": 29.52,
+     "ende": 29.76
+    },
+    {
+     "wort": "Satz.",
+     "start": 29.84,
+     "ende": 30.44
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Zweite Station: der Supermarkt nebenan. 500 €, ermäßigt. Heute 34, damals 24. Jetzt liegt heute knapp vorn.",
+   "start": 30.72,
+   "ende": 41.6,
+   "woerter": [
+    {
+     "wort": "Zweite",
+     "start": 30.72,
+     "ende": 30.96
+    },
+    {
+     "wort": "Station:",
+     "start": 31.04,
+     "ende": 31.6
+    },
+    {
+     "wort": "der",
+     "start": 31.84,
+     "ende": 31.92
+    },
+    {
+     "wort": "Supermarkt",
+     "start": 32.0,
+     "ende": 32.56
+    },
+    {
+     "wort": "nebenan.",
+     "start": 32.6,
+     "ende": 33.44
+    },
+    {
+     "wort": "500",
+     "start": 33.52,
+     "ende": 34.02
+    },
+    {
+     "wort": "€,",
+     "start": 34.02,
+     "ende": 34.52
+    },
+    {
+     "wort": "ermäßigt.",
+     "start": 34.64,
+     "ende": 35.6
+    },
+    {
+     "wort": "Heute",
+     "start": 35.68,
+     "ende": 36.0
+    },
+    {
+     "wort": "34,",
+     "start": 36.24,
+     "ende": 37.36
+    },
+    {
+     "wort": "damals",
+     "start": 37.44,
+     "ende": 37.92
+    },
+    {
+     "wort": "24.",
+     "start": 38.16,
+     "ende": 39.36
+    },
+    {
+     "wort": "Jetzt",
+     "start": 39.44,
+     "ende": 39.76
+    },
+    {
+     "wort": "liegt",
+     "start": 39.8,
+     "ende": 40.0
+    },
+    {
+     "wort": "heute",
+     "start": 40.08,
+     "ende": 40.32
+    },
+    {
+     "wort": "knapp",
+     "start": 40.48,
+     "ende": 40.72
+    },
+    {
+     "wort": "vorn.",
+     "start": 40.8,
+     "ende": 41.6
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "text": "Dritte Station: die Miete im Haus. Keine Mehrwertsteuer, der Abstand bleibt.",
+   "start": 41.64,
+   "ende": 46.72,
+   "woerter": [
+    {
+     "wort": "Dritte",
+     "start": 41.64,
+     "ende": 41.84
+    },
+    {
+     "wort": "Station:",
+     "start": 41.92,
+     "ende": 42.72
+    },
+    {
+     "wort": "die",
+     "start": 42.76,
+     "ende": 42.8
+    },
+    {
+     "wort": "Miete",
+     "start": 42.88,
+     "ende": 43.2
+    },
+    {
+     "wort": "im",
+     "start": 43.28,
+     "ende": 43.36
+    },
+    {
+     "wort": "Haus.",
+     "start": 43.44,
+     "ende": 44.08
+    },
+    {
+     "wort": "Keine",
+     "start": 44.16,
+     "ende": 44.4
+    },
+    {
+     "wort": "Mehrwertsteuer,",
+     "start": 44.48,
+     "ende": 45.36
+    },
+    {
+     "wort": "der",
+     "start": 45.44,
+     "ende": 45.52
+    },
+    {
+     "wort": "Abstand",
+     "start": 45.6,
+     "ende": 45.92
+    },
+    {
+     "wort": "bleibt.",
+     "start": 46.0,
+     "ende": 46.72
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "text": "Dann der Rest: Strom, Auto, Handy. 1.600 € zum vollen Satz. Heute: rund 260. Damals: rund 130. Jetzt zieht es davon, Monat für Monat.",
+   "start": 46.76,
+   "ende": 60.08,
+   "woerter": [
+    {
+     "wort": "Dann",
+     "start": 46.76,
+     "ende": 46.96
+    },
+    {
+     "wort": "der",
+     "start": 47.04,
+     "ende": 47.12
+    },
+    {
+     "wort": "Rest:",
+     "start": 47.2,
+     "ende": 47.84
+    },
+    {
+     "wort": "Strom,",
+     "start": 47.92,
+     "ende": 48.56
+    },
+    {
+     "wort": "Auto,",
+     "start": 48.76,
+     "ende": 49.12
+    },
+    {
+     "wort": "Handy.",
+     "start": 49.24,
+     "ende": 49.92
+    },
+    {
+     "wort": "1.600",
+     "start": 50.0,
+     "ende": 50.42
+    },
+    {
+     "wort": "€",
+     "start": 50.42,
+     "ende": 50.84
+    },
+    {
+     "wort": "zum",
+     "start": 50.84,
+     "ende": 51.26
+    },
+    {
+     "wort": "vollen",
+     "start": 51.26,
+     "ende": 51.68
+    },
+    {
+     "wort": "Satz.",
+     "start": 51.72,
+     "ende": 52.4
+    },
+    {
+     "wort": "Heute:",
+     "start": 52.48,
+     "ende": 52.96
+    },
+    {
+     "wort": "rund",
+     "start": 53.12,
+     "ende": 53.36
+    },
+    {
+     "wort": "260.",
+     "start": 53.44,
+     "ende": 54.8
+    },
+    {
+     "wort": "Damals:",
+     "start": 54.88,
+     "ende": 55.6
+    },
+    {
+     "wort": "rund",
+     "start": 55.64,
+     "ende": 55.84
+    },
+    {
+     "wort": "130.",
+     "start": 55.88,
+     "ende": 57.04
+    },
+    {
+     "wort": "Jetzt",
+     "start": 57.12,
+     "ende": 57.52
+    },
+    {
+     "wort": "zieht",
+     "start": 57.56,
+     "ende": 57.76
+    },
+    {
+     "wort": "es",
+     "start": 57.84,
+     "ende": 57.92
+    },
+    {
+     "wort": "davon,",
+     "start": 58.0,
+     "ende": 58.56
+    },
+    {
+     "wort": "Monat",
+     "start": 58.64,
+     "ende": 59.04
+    },
+    {
+     "wort": "für",
+     "start": 59.12,
+     "ende": 59.28
+    },
+    {
+     "wort": "Monat.",
+     "start": 59.4,
+     "ende": 60.08
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand im Jahr: Rund 1.500 € mehr als damals.",
+   "start": 60.2,
+   "ende": 64.04,
+   "woerter": [
+    {
+     "wort": "Endstand",
+     "start": 60.2,
+     "ende": 60.56
+    },
+    {
+     "wort": "im",
+     "start": 60.64,
+     "ende": 60.72
+    },
+    {
+     "wort": "Jahr:",
+     "start": 60.8,
+     "ende": 61.28
+    },
+    {
+     "wort": "Rund",
+     "start": 61.32,
+     "ende": 61.52
+    },
+    {
+     "wort": "1.500",
+     "start": 61.6,
+     "ende": 62.120000000000005
+    },
+    {
+     "wort": "€",
+     "start": 62.120000000000005,
+     "ende": 62.64
+    },
+    {
+     "wort": "mehr",
+     "start": 62.8,
+     "ende": 63.04
+    },
+    {
+     "wort": "als",
+     "start": 63.12,
+     "ende": 63.28
+    },
+    {
+     "wort": "damals.",
+     "start": 63.36,
+     "ende": 64.04
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Fast die Hälfte der Ausgaben trifft der volle Satz gar nicht.",
+   "start": 64.32,
+   "ende": 68.48,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 64.32,
+     "ende": 65.04
+    },
+    {
+     "wort": "Fast",
+     "start": 65.28,
+     "ende": 65.44
+    },
+    {
+     "wort": "die",
+     "start": 65.52,
+     "ende": 65.6
+    },
+    {
+     "wort": "Hälfte",
+     "start": 65.68,
+     "ende": 65.92
+    },
+    {
+     "wort": "der",
+     "start": 66.0,
+     "ende": 66.08
+    },
+    {
+     "wort": "Ausgaben",
+     "start": 66.16,
+     "ende": 66.64
+    },
+    {
+     "wort": "trifft",
+     "start": 66.72,
+     "ende": 66.96
+    },
+    {
+     "wort": "der",
+     "start": 67.04,
+     "ende": 67.12
+    },
+    {
+     "wort": "volle",
+     "start": 67.2,
+     "ende": 67.36
+    },
+    {
+     "wort": "Satz",
+     "start": 67.44,
+     "ende": 67.68
+    },
+    {
+     "wort": "gar",
+     "start": 67.76,
+     "ende": 67.84
+    },
+    {
+     "wort": "nicht.",
+     "start": 67.92,
+     "ende": 68.48
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "text": "Das Verrückte: Die 10 % hielten nur ein halbes Jahr.",
+   "start": 68.56,
+   "ende": 72.4,
+   "woerter": [
+    {
+     "wort": "Das",
+     "start": 68.56,
+     "ende": 68.64
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 68.68,
+     "ende": 69.52
+    },
+    {
+     "wort": "Die",
+     "start": 69.6,
+     "ende": 69.68
+    },
+    {
+     "wort": "10",
+     "start": 69.76,
+     "ende": 70.12
+    },
+    {
+     "wort": "%",
+     "start": 70.12,
+     "ende": 70.48
+    },
+    {
+     "wort": "hielten",
+     "start": 70.56,
+     "ende": 70.88
+    },
+    {
+     "wort": "nur",
+     "start": 70.92,
+     "ende": 71.04
+    },
+    {
+     "wort": "ein",
+     "start": 71.12,
+     "ende": 71.2
+    },
+    {
+     "wort": "halbes",
+     "start": 71.28,
+     "ende": 71.68
+    },
+    {
+     "wort": "Jahr.",
+     "start": 71.76,
+     "ende": 72.4
+    }
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "text": "70 % mehr Steuer. Nur 4 % teurer.",
+   "start": 72.48,
+   "ende": 76.16,
+   "woerter": [
+    {
+     "wort": "70",
+     "start": 72.48,
+     "ende": 72.92
+    },
+    {
+     "wort": "%",
+     "start": 72.92,
+     "ende": 73.36
+    },
+    {
+     "wort": "mehr",
+     "start": 73.44,
+     "ende": 73.6
+    },
+    {
+     "wort": "Steuer.",
+     "start": 73.68,
+     "ende": 74.4
+    },
+    {
+     "wort": "Nur",
+     "start": 74.453,
+     "ende": 74.56
+    },
+    {
+     "wort": "4",
+     "start": 74.72,
+     "ende": 75.03999999999999
+    },
+    {
+     "wort": "%",
+     "start": 75.03999999999999,
+     "ende": 75.36
+    },
+    {
+     "wort": "teurer.",
+     "start": 75.44,
+     "ende": 76.16
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,140 @@
+{
+ "titel": "1968 oder heute: Wie viel mehr Mehrwertsteuer zahlt ein Haushalt im Jahr?",
+ "skill": "video-produktion",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-08-abend",
+ "stil": "17 Nachtstadt-Miniatur (Nachtstraße nach Regen)",
+ "stil_begruendung": "Das Skript ist eine Fahrt durch vier Stationen desselben Einkaufs (Restaurant, Supermarkt, Wohnhaus mit Miete, Läden für den Rest), die Nachtstadt trägt das räumlich: eine nasse Straße mit zwei Fahrspuren, links 1968 (Orange, Natriumlicht), rechts heute (Cyan), an jeder Station leuchtet die Fassade, daneben wächst je Seite eine Steuersäule. Dunkle Welt mit Leuchtakzenten (REA R13/R23, dunkle Stile zuerst), Umgebung vorhanden (Häuserzeilen, Laternen, Skyline). Das Mittag-Video (kaiserreich-steuer) ist Stil 19, also nie derselbe Stil hintereinander; Stil 17 lag seit eauto-benziner (07.11.) nicht mehr an, die Dramaturgie des Skripts schlägt ihn vor.",
+ "teamfarben": {
+  "1968": "#FF8A3D",
+  "Heute": "#22C6F2"
+ },
+ "klangteppich": "stadt_nacht",
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Damals oder heute? Wo zahlt man mehr Steuer?",
+   "sprechtext": "Damals oder heute?\n[curious] Wo zahlt man mehr Steuer?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "Ein Haushalt, gleicher Einkauf, 3.000 € im Monat. Damals: 10 und 5 %. Heute: 19 und 7.",
+   "sprechtext": "Ein Haushalt, gleicher Einkauf, dreitausend Euro im Monat.\nDamals: zehn und fünf Prozent.\nHeute: neunzehn und sieben.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar … heute zahlt man überall mehr. Oder?",
+   "sprechtext": "Klar … heute zahlt man überall MEHR.\nOder?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Erste Station: das Restaurant. Gut 200 € im Monat. Heute: 14 € Steuer. Damals: 20.",
+   "sprechtext": "Erste Station: das Restaurant.\nGut zweihundert Euro im Monat.\nHeute: vierzehn Euro Steuer.\nDamals: ZWANZIG.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Denn Essen im Restaurant zahlt heute nur 7 %. Damals: der volle Satz.",
+   "sprechtext": "Denn Essen im Restaurant zahlt heute nur sieben Prozent.\nDamals: der VOLLE Satz.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Zweite Station: der Supermarkt nebenan. 500 €, ermäßigt. Heute 34, damals 24. Jetzt liegt heute knapp vorn.",
+   "sprechtext": "Zweite Station: der Supermarkt nebenan.\nFünfhundert Euro, ermäßigt.\nHeute vierunddreißig, damals vierundzwanzig.\nJetzt liegt heute KNAPP vorn.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "Dritte Station: die Miete im Haus. Keine Mehrwertsteuer, der Abstand bleibt.",
+   "sprechtext": "Dritte Station: die Miete im Haus.\nKeine Mehrwertsteuer, der Abstand bleibt.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "kipp",
+   "phase": "kipp",
+   "text": "Dann der Rest: Strom, Auto, Handy. 1.600 € zum vollen Satz. Heute: rund 260. Damals: rund 130. Jetzt zieht es davon, Monat für Monat.",
+   "sprechtext": "Dann der Rest: Strom, Auto, Handy.\nSechzehnhundert Euro, voller Satz.\nHeute: rund zweihundertsechzig.\nDamals: rund hundertdreißig.\nJetzt ZIEHT es davon, Monat für Monat.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Endstand im Jahr: Rund 1.500 € mehr als damals.",
+   "sprechtext": "Endstand im Jahr:\nRund fünfzehnhundert Euro MEHR als damals.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Warum? Fast die Hälfte der Ausgaben trifft der volle Satz gar nicht.",
+   "sprechtext": "[thoughtful] Warum?\nFast die Hälfte der Ausgaben trifft der volle Satz gar NICHT.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "pointe",
+   "phase": "pointe",
+   "text": "Das Verrückte: Die 10 % hielten nur ein halbes Jahr.",
+   "sprechtext": "Das Verrückte:\nDie zehn Prozent hielten nur ein halbes JAHR.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "schlusskarte",
+   "phase": "schlusskarte",
+   "text": "70 % mehr Steuer. Nur 4 % teurer.",
+   "sprechtext": "Siebzig Prozent mehr Steuer.\nNur VIER Prozent teurer.",
+   "bild_text_abgleich": []
+  }
+ ],
+ "caption": "Mehrwertsteuer von 1968 oder von heute – wie viel mehr zahlt ein Haushalt im Jahr? 🛒 Ich hab's simuliert. Wo merkst du die 19 % am meisten? 👇 #mehrwertsteuer #einkaufen #steuern #wissen #simulation",
+ "rechenweg": "Konsum 3.257 €/Monat (LWR 2024) nach Destatis-Struktur aufgeteilt: Regelsatz 56 % = 1.823,92 € (davon Gastronomie 215 € gesondert, Rest 1.608,92 €), ermäßigt 16 % = 521,12 €, steuerfrei 28 % = 911,96 €. Je Block Nettowert = Brutto heute / (1 + Satz heute); Steuer heute = Netto × Satz heute; Steuer 1968 = Netto × Satz 1968 (gleicher Nettowert, gleiche Menge). Gastronomie: 215/1,07 = 200,93 → 14,07 € gegen 20,09 € (10 %). Ermäßigt: 521,12/1,07 = 487,03 → 34,09 € gegen 24,35 € (5 %). Regelsatz: 1.608,92/1,19 = 1.352,03 → 256,89 € gegen 135,20 € (10 %). Monat 305,04 € gegen 179,65 € → Jahr 3.660,53 € gegen 2.155,78 €, Differenz 1.504,75 €. Steuer +69,8 %; Korb mit Sätzen 1968 = 3.257 − 125,40 = 3.131,60 € → heute 4,0 % teurer. Mit Python nachgerechnet (cockpit/daten/tmp/rechnung_abend.py).",
+ "zahlen": {
+  "konsum_monat": "3.257 € (Destatis LWR 2024)",
+  "aufteilung": "56 % Regelsatz, 16 % ermäßigt, 28 % steuerfrei (Destatis EVS 2003)",
+  "gastronomie": "215 € → heute 7 %: 14,07 € Steuer; 1968 10 %: 20,09 €",
+  "ermaessigt": "521,12 € → heute 7 %: 34,09 €; 1968 5 %: 24,35 €",
+  "zwischenstand_nach_supermarkt": "heute 48,16 € gegen 1968 44,44 € (Führungswechsel)",
+  "steuerfrei": "911,96 € (u. a. Kaltmiete) → 0 € / 0 €",
+  "regelsatz_rest": "1.608,92 € → heute 19 %: 256,89 €; 1968 10 %: 135,20 €",
+  "monat": "heute 305,04 € gegen 179,65 € (Differenz 125,40 €)",
+  "jahr_heute": "3.660,53 €",
+  "jahr_1968": "2.155,78 €",
+  "differenz_jahr": "1.504,75 €",
+  "steuer_mehr_prozent": "+69,8 %",
+  "korb_teurer": "+4,0 % (3.257 € gegen 3.131,60 € mit den Sätzen von 1968)",
+  "anteil_nicht_regelsatz": "44 % (16 % ermäßigt + 28 % steuerfrei)",
+  "variante_gastro_19": "Differenz 1.747,89 €/Jahr, wenn Gastronomie heute komplett 19 % hätte (oberes Ende)",
+  "variante_juli_1968": "mit 11 % / 5,5 % (ab Juli 1968): Differenz 1.289,17 €/Jahr"
+ },
+ "annahmen": [
+  "(A) Durchschnittshaushalt mit den Konsumausgaben 2024 (3.257 €/Monat); gleiche Nettopreise und gleiche Mengen, nur die Steuersätze wechseln (volle Weitergabe der Steuer an die Kunden).",
+  "(A) Aufteilung auf Regelsatz, ermäßigten Satz und steuerfrei nach Destatis (EVS 2003: 56/16/28 %); neuere amtliche Aufteilung nicht veröffentlicht.",
+  "(A) Gastronomie (215 €) heute vollständig mit 7 % gerechnet (Getränke tragen eigentlich 19 %) → Ergebnis eher zu niedrig; mit 19 % wären es 1.748 € statt 1.505 € im Jahr. 1968 Gastronomie zum Regelsatz 10 % (‚Verzehr an Ort und Stelle‘).",
+  "(A) Dieselben Güter waren 1968 ermäßigt bzw. steuerfrei wie heute (u. a. Wohnungsmiete steuerfrei, § 4 Nr. 12 UStG); Abweichungen im Detail nicht berücksichtigt.",
+  "(A) Sätze vom 01.01.1968 (10 %/5 %); ab Juli 1968 galten 11 %/5,5 %, dann wäre die Differenz 1.289 € im Jahr."
+ ],
+ "quellen": [
+  "(F) bpb, Seit 50 Jahren: einschließlich Mehrwertsteuer (2018): Einführung 1968 Regelsatz 10 %, ermäßigt 5 %; Juli 1968 11 % bzw. 5,5 %; ermäßigt seit Juli 1983 7 %; 2007 Regelsatz 19 %; Spiegel 1968: ‚Verzehr an Ort und Stelle‘ 10 % – https://www.bpb.de/kurz-knapp/hintergrund-aktuell/262186/seit-50-jahren-einschliesslich-mehrwertsteuer/",
+  "(F) Destatis, Konsumausgaben privater Haushalte in Deutschland (Laufende Wirtschaftsrechnungen 2024, Stand 17.08.2026): insgesamt 3.257 € je Haushalt und Monat, Gastronomie- und Beherbergungsdienstleistungen 215 €, Wohnen/Energie 1.181 € – https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Einkommen-Konsum-Lebensbedingungen/Konsumausgaben-Lebenshaltungskosten/Tabellen/privater-konsum-d-lwr.html",
+  "(F) Destatis, Wirtschaft und Statistik 11/2006, Linz u. a., Belastung der Haushalte durch die Mehrwertsteuererhöhung 2007 (EVS 2003): 56 % der Konsumausgaben zum Regelsatz, 16 % ermäßigt (überwiegend Nahrungsmittel), 28 % steuerfrei (überwiegend Kaltmiete 24 %) – https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2006/11/belastung-mwst-2007-112006.pdf?__blob=publicationFile",
+  "(F) Speisen in der Gastronomie dauerhaft 7 % ab 01.01.2026 (Steueränderungsgesetz 2025, Bundesrat 19.12.2025), Getränke weiter 19 % – https://www.frankfurt-main.ihk.de/branchenthemen/portal-gastronomie-tourismus-und-gesundheitswirtschaft/wichtige-informationen-zum-gaststaettengewerbe/news-fuer-die-gastronomie/reduzierter-mehrwertsteuersatz-6847546"
+ ],
+ "korrekturen": [
+  "Idee verglich den Wocheneinkauf; umgesetzt mit dem gesamten Monatskonsum des Durchschnittshaushalts (amtliche Zahl), aufgeteilt in vier Stationen, damit Restaurant (heute niedriger besteuert) und Miete (steuerfrei) sichtbar werden.",
+  "Geplante Satzänderung 2026 geprüft: Speisen in der Gastronomie seit 01.01.2026 dauerhaft 7 % (in der Rechnung berücksichtigt); Lebensmittel im Handel unverändert 7 %.",
+  "Summe über ein Leben (60.190 € in 40 Jahren) nur intern; im Video das Jahresergebnis."
+ ],
+ "suchbegriff": "Mehrwertsteuer",
+ "testbloecke": {},
+ "stil_helligkeit": "dunkel"
+}
