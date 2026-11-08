@@ -1,0 +1,229 @@
+{
+ "skript_id": "acc2-2026-11-09-mittag",
+ "skript_quelle": "acc2-2026-11-09-mittag",
+ "titel": "Teil 2: Erdachse ohne Neigung – was wird aus der Polarnacht?",
+ "titelfrage": "Teil 2: Erdachse ohne Neigung – was wird aus der Polarnacht?",
+ "suchbegriff": "Erdachse",
+ "konto": "stelldirvor.pov",
+ "format": "referenz_pov",
+ "skill": "video-produktion",
+ "laenge_s": 80,
+ "teil": 2,
+ "testbloecke": {},
+ "folgen_hinweis": "",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Welt engine/welt_polar_fjord.js (Erstbau 08.11.2026, Opus)",
+ "thema": "Achsneigung sinkt auf 0°: Auf Spitzbergen (78° N) verschwinden Polarnacht und Mitternachtssonne; die Sonne geht jeden Tag auf und unter, steigt aber nie über 12°.",
+ "welt": "Gletscher, Eis, Polarregion: Adventfjord bei Longyearbyen, Spitzbergen (78,2° N), Hafen mit bunten Holzhäusern, Schnee, Berge flach gehalten, Rentiere, Boote, Polarlicht (Welttyp Polar/Fjord, Erstbau nötig)",
+ "standpunkt": "auf dem Wasser: Deck eines verankerten Forschungsboots im Adventfjord, Blick über den Fjord nach Süden auf den Ort, Reling im Vordergrund; Schwenk nach Norden bei Mitternachtssonne",
+ "tageszeit_verlauf": "Polarnacht mit Polarlicht (0–9 s) → Dämmerblau → Mitternachtssonne (11–16 s) → Polarnacht (18–21 s) → Sommer → Herbstnacht mit Polarlicht (28 s) → erster kurzer Wintertag (31 s) → gleichmäßig flaches Tageslicht (ab 55 s)",
+ "zeitraffer": [
+  {
+   "von": 8,
+   "bis": 58,
+   "faktor": "1 s = 1 Monat",
+   "anzeige": "POLARNACHT/MITTERNACHTSSONNE in Tagen; MITTAGSSONNE IM WINTER"
+  }
+ ],
+ "zeitraffer_hinweis": "0–8 s Echtzeit (Polarnacht); ab 8 s 1 Sekunde = 1 Monat (rund 4 Jahre bis 58 s); Sonnenbahn als leuchtender Tagesbogen",
+ "kamera": "0–8 s langsame Fahrt über das Deck zur Reling; 10–16 s weicher Schwenk nach Norden mit der Mitternachtssonne; 24–40 s ruhiger Halt Richtung Süden; 40–58 s langsame Rückfahrt; harter Schnitt bei 58 s auf die Totale",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 8,
+   "etikett": "ACHSE RICHTET SICH AUF IN",
+   "start": "0:08",
+   "ende": "0:00",
+   "einheit": "m:ss",
+   "unter": "POLARNACHT · LONGYEARBYEN → (4 s) STADT AHNUNGSLOS"
+  },
+  {
+   "von_s": 8,
+   "bis_s": 24,
+   "etikett": "POLARNACHT",
+   "start": "113",
+   "ende": "94",
+   "einheit": "TAGE",
+   "unter": "1 SEKUNDE = 1 MONAT → (10 s) SONNE KEHRT ZURÜCK → (12 s) MITTERNACHTSSONNE → (18 s) WIEDER DUNKEL → (21 s, Zahl springt auf 94) 19 TAGE KÜRZER"
+  },
+  {
+   "von_s": 24,
+   "bis_s": 40,
+   "etikett": "MITTERNACHTSSONNE",
+   "start": "119",
+   "ende": "0",
+   "einheit": "TAGE",
+   "unter": "(24 s, Zahl 119 → 92) NUR NOCH 3 MONATE → (28 s) POLARLICHT → (31 s) SONNE JEDEN TAG → (37 s, Zahl → 0) SONNE GEHT UNTER"
+  },
+  {
+   "von_s": 40,
+   "bis_s": 58,
+   "etikett": "MITTAGSSONNE IM WINTER",
+   "start": "3,8",
+   "ende": "11,8",
+   "einheit": "°",
+   "unter": "NEIGUNG 8° (live) → (44 s) 6° HOCH → (52 s) NEIGUNG UNTER 2° → (55 s) SOMMER = WINTER"
+  },
+  {
+   "von_s": 58,
+   "bis_s": 70,
+   "etikett": "HIER",
+   "start": "HIER",
+   "ende": "HIER",
+   "einheit": "",
+   "unter": "JEDEN TAG 12,5 STUNDEN · MITTAGS 11,8°"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Polarnacht auf Spitzbergen, du stehst an Deck.",
+   3.45
+  ],
+  [
+   8.4,
+   "Dann richtet sich die Erdachse langsam auf.",
+   3.05
+  ],
+  [
+   11.6,
+   "Die Sonne kehrt zurück und bleibt Tag und Nacht.",
+   3.25
+  ],
+  [
+   15,
+   "Wochenlang kreist sie rund um den Fjord.",
+   3.25
+  ],
+  [
+   18.4,
+   "Dann wird es wieder dunkel.",
+   3.05
+  ],
+  [
+   21.6,
+   "Diese Polarnacht ist knapp drei Wochen kürzer.",
+   3.25
+  ],
+  [
+   25,
+   "Die Mitternachtssonne hält nur noch drei Monate.",
+   3.05
+  ],
+  [
+   28.2,
+   "Über dem Fjord tanzt wieder Polarlicht.",
+   3.25
+  ],
+  [
+   31.6,
+   "Zum ersten Mal geht die Sonne jeden Tag auf.",
+   3.6
+  ],
+  [
+   36.4,
+   "Im Sommer geht sie jetzt jeden Abend unter.",
+   3.6
+  ],
+  [
+   40.4,
+   "Die Mitternachtssonne ist verschwunden.",
+   3.6
+  ],
+  [
+   44.4,
+   "Mittags steht sie im Winter sechs Grad hoch.",
+   3.6
+  ],
+  [
+   48.4,
+   "Die Tagesbögen werden einander immer ähnlicher.",
+   3.6
+  ],
+  [
+   52.4,
+   "Die Neigung fällt unter zwei Grad.",
+   3.6
+  ],
+  [
+   62.4,
+   "Jeden Tag zwölfeinhalb Stunden Licht, das ganze Jahr.",
+   3.6
+  ],
+  [
+   66.4,
+   "Doch höher als zwölf Grad steigt die Sonne nie.",
+   3.6
+  ]
+ ],
+ "satz_dauer": "3,05–3,6 s, Lücke ≥ 0,15 s",
+ "faktenzeile": "LONGYEARBYEN, 78° NORD · SONNE HEUTE VOM 26. OKTOBER BIS 15. FEBRUAR UNTER DEM HORIZONT",
+ "abspann": {
+  "frage": "Teil 2: Erdachse ohne Neigung – was wird aus der Polarnacht?",
+  "fakt": "LONGYEARBYEN, 78° NORD · SONNE HEUTE VOM 26. OKTOBER BIS 15. FEBRUAR UNTER DEM HORIZONT"
+ },
+ "rechnung": {
+  "code": "pipeline/sim/polarnacht_achse.mjs (Test: pipeline/sim/polarnacht_achse.test.mjs, grün)"
+ },
+ "rechenweg": "Ort: Longyearbyen, Breite φ = 78,22° N. Sonnenhöhe mittags h = 90° − φ + δ, um Mitternacht h = φ − 90° + δ, Deklination δ = ε·sin(2π(Tag−80)/365,2422). Sonne über dem Horizont, wenn die Sonnenmitte über −0,833° liegt (Refraktion + Sonnenscheibe). Polarnacht: Mittagshöhe < −0,833°, also δ < −12,61°; Mitternachtssonne: Mitternachtshöhe > −0,833°, also δ > 10,95°. Heute (ε = 23,44°): Modell 116 Tage Polarnacht / 126 Tage Mitternachtssonne; real 26.10.–15.02. = 113 Tage bzw. 20.04.–23.08. = 126 Tage (Modell ohne Bahnexzentrizität, Polarnacht-Zahlen daher mit 113/116 skaliert). Zeitraffer ab 8 s: 1 s = 1 Monat (8 s = 1. Januar), Neigung ε(t) linear zwischen Ankern 8 s 23,44° · 20 s 18,5° · 32 s 12,0° · 44 s 6,0° · 52 s 2,0° · 58 s 0°. Tag-für-Tag-Simulation: Polarnacht Winter 1 (18–21 s) 96 Tage → skaliert 94 (19 Tage kürzer als 113); Winter 2 (Dezember bei 31,7 s, ε 12,2°): keine Polarnacht, Mittagshöhe −0,4° > −0,833°, Tageslänge 2,1 h. Mitternachtssonne Sommer 1 (11,7–15,5 s) 119 Tage, Sommer 2 (24,0–27,0 s) 92 Tage (≈ 3 Monate), Sommer 3 (37,7 s, ε 9,2°) 0 Tage (Mitternachtshöhe −2,6°). Mittagssonne am 21.12. = 90 − 78,22 − ε: 40 s 3,8° · 44,4 s 6,0° · 52,4 s ε 1,87° · 58 s 11,8°. Ohne Neigung: Mittagshöhe 11,78° jeden Tag, Tageslänge mit Refraktion 12,54 h (geometrisch 12,0 h). Heute: Sommer max. 35,2°. Nachgerechnet mit py -3 (cockpit/daten/tmp/rechnung_acc2_1109m.py).",
+ "zahlen": {
+  "breite_grad": 78.22,
+  "achsneigung_grad": 23.44,
+  "polarnacht_heute_tage": 113,
+  "mitternachtssonne_heute_tage": 126,
+  "polarnacht_winter1_tage_modell": 94,
+  "mitternachtssonne_sommer1_tage_modell": 119,
+  "mitternachtssonne_sommer2_tage_modell": 92,
+  "schwelle_polarnacht_eps_grad": 12.61,
+  "schwelle_mitternachtssonne_eps_grad": 10.95,
+  "mittagssonne_ohne_neigung_grad": 11.78,
+  "tageslaenge_ohne_neigung_h": 12.54,
+  "mittagssonne_sommer_heute_grad": 35.22,
+  "zeitraffer": "1 s = 1 Monat"
+ },
+ "annahmen": [
+  "(A) Gedankenexperiment: Die Neigung sinkt in rund 4 Jahren von 23,44° auf 0°; real schwankt sie nur zwischen 22,1° und 24,5° (ca. 41.000-Jahres-Zyklus).",
+  "(A) Modell mit Kreisbahn (ohne Exzentrizität), Horizont als freier Meereshorizont; die Berge um den Adventfjord sind niedrig gehalten, damit die Sonne bei 11,8° sichtbar bleibt.",
+  "(S) Polarnacht-Tage der Folgewinter mit dem Faktor 113/116 auf den realen Startwert skaliert.",
+  "(A) Weil 30 Tage pro Sekunde vergehen, zeigt das Bild die Sonnenbahn als leuchtenden Tagesbogen (Langzeitbelichtung) und die mittlere Helligkeit statt Tag-Nacht-Flackern.",
+  "(A) Klima, Eis und Wetter ohne Neigung werden nicht berechnet und in keinem Satz behauptet; Polarlicht ist Stimmung (dunkle Herbstnächte)."
+ ],
+ "quellen": [
+  "(F) Earth Fact Sheet (Achsneigung 23,44°), NASA NSSDCA, Stand 2024 – https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+  "(F) Milankovitch (Orbital) Cycles (Neigung 22,1–24,5°, ca. 41.000 Jahre), NASA Science – https://science.nasa.gov/science-research/earth-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/",
+  "(F) Midnight sun and polar night (Sonne unter dem Horizont 26.10.–15.02., Mitternachtssonne ab 20.04.; Polarnacht im engen Sinn 11.11.–30.01.), spitsbergen-svalbard.com, Rolf Stange – https://www.spitsbergen-svalbard.com/spitsbergen-information/midnight-sun-polar-night.html",
+  "(F) Longyearbyen (Mitternachtssonne 19./20.04.–23.08., Lage 78°13′ N), Wikivoyage/Wikipedia – https://en.wikipedia.org/wiki/Longyearbyen",
+  "(F) Lage 78,22314° N, 15,64686° O, lokalhistoriewiki.no – https://lokalhistoriewiki.no/wiki/Longyearbyen"
+ ],
+ "caption": "Teil 2: Erdachse ohne Neigung – was wird aus der Polarnacht? ❄️ Ich hab’s durchgespielt. Lieber Polarnacht oder jeden Tag nur flache Sonne? 👇 #erdachse #polarnacht #spitzbergen #wissen #waswaerewenn",
+ "dramaturgie": [
+  "0–8 s: Januar-Polarnacht, Hafen Longyearbyen mit warmen Fensterlichtern, Polarlicht, Menschen mit Stirnlampen, Schneemobil; Countdown läuft, Welt ahnungslos; Kamera schiebt langsam über das Deck (Bewegung ab Bild 1, Welteffekt Polarlicht vor 4 s).",
+  "8 s Ereignis auf Countdown-Null: tiefer Tonimpuls, Polarlicht verblasst schlagartig, Himmel kippt von Schwarz in Dämmerblau, Zeitraffer startet (Statuszeile 1 SEKUNDE = 1 MONAT).",
+  "10–16 s Stufe 1: Sonne kehrt zurück, warmes Gold, Tagesbogen schließt sich zum vollen Kreis über dem Fjord (Mitternachtssonne); Kamera schwenkt weich nach Norden mit der Sonne.",
+  "18–21 s: zurück ins Blau-Schwarz, Polarnacht kürzer; Anzeige springt 113 → 94 mit Aufleuchten.",
+  "24–30 s Stufe 2: Sommer mit tieferem Kreis, Zahl 119 → 92; Herbstnacht mit grünem Polarlicht.",
+  "31,6 s Stufe 3 (Wendepunkt): erster Winter-Sonnenaufgang mitten im Dezember, kurzer rosa Bogen knapp über dem Horizont, Lichtakzent.",
+  "36–41 s: im Sommer sinkt die Sonne erstmals hinter den Horizont, Mitternachtssonne-Zähler fällt auf 0.",
+  "40–58 s Annäherung: Tagesbögen rücken zu einem flachen Bogen zusammen, Licht wird gleichmäßig kühl-golden, Riser im Ton; Kamera fährt langsam zurück auf das Deck.",
+  "58–62 s Höhepunkt: harter Schnitt auf die Totale über den Fjord, ein einziger flacher Bogen, Anzeige HIER, kein Satz.",
+  "62–70 s Nachspiel: Boote, Rentiere am Ufer, flache Sonne jeden Tag; 70–72 s Abblende; 72–80 s Abspann mit Titelfrage und Faktenzeile."
+ ],
+ "hoehepunkt": "58 s: harter Schnitt auf die Totale über den Fjord, ein einziger flacher Bogen (Anzeige HIER)",
+ "bewegungsplan": [
+  [
+   0,
+   "Polarnacht: Polarlicht, Fensterlichter im Ort, Menschen mit Stirnlampen, Schneemobil, Boot dümpelt; Kamera fährt über das Deck",
+   1
+  ]
+ ],
+ "bild_text_abgleich": [],
+ "korrekturen": [
+  {
+   "feld": "faktencheck",
+   "alt": "-",
+   "neu": "Rechnung in sim/polarnacht_achse.mjs nachgebaut (9 Tests grün): 116 Tage Modell (skaliert 113), 126 Tage Mitternachtssonne, Schwellen ε 12,61°/10,95°, Mittagssonne 11,78°, Tag 12,54 h; keine Abweichung zum Skript. Live-Zähler: Polarnacht fällt von 113 auf 94 (bis 19,65 s), Mitternachtssonne von 126 auf 0 (ab ca. 35 s).",
+   "quelle": "pipeline/sim/polarnacht_achse.test.mjs",
+   "grund": "Faktencheck vor dem Bau, Ergebnis unverändert",
+   "zeit": "2026-11-09"
+  }
+ ]
+}
