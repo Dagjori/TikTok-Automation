@@ -3,7 +3,7 @@
  "erzeugt": "render.js",
  "projekt": "mindestlohn-kaufkraft",
  "fps": 30,
- "dauer": 74.43333333333334,
+ "dauer": 74.93333333333334,
  "stimmEnde": 74.424,
  "timing": "timing.json (echte Stimme)",
  "protokoll": true,
@@ -858,7 +858,7 @@
    "quelle": "LiveZaehler",
    "t": 33.553,
    "typ": "zaehler",
-   "dauer": 2.6,
+   "dauer": 2.467,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -927,15 +927,15 @@
   },
   {
    "quelle": "LiveZaehler",
-   "t": 36.52,
+   "t": 36.62,
    "typ": "zaehler-ein",
    "klang": "pop"
   },
   {
    "quelle": "LiveZaehler",
-   "t": 36.52,
+   "t": 36.62,
    "typ": "zaehler",
-   "dauer": 0.2,
+   "dauer": 0.1,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -1109,6 +1109,12 @@
    "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
   },
   {
+   "quelle": "Chip",
+   "t": 42.8,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
    "quelle": "LiveZaehler",
    "t": 42.987,
    "typ": "zaehler",
@@ -1130,19 +1136,6 @@
    "typ": "welt",
    "klang": "whoosh",
    "text": "Sprung auf 12 €: Lenas Stand steigt"
-  },
-  {
-   "quelle": "Chip",
-   "t": 43.1,
-   "typ": "chip-weg",
-   "klang": false
-  },
-  {
-   "quelle": "Chip",
-   "t": 43.15,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "LENA ZIEHT VORBEI"
   },
   {
    "quelle": "Untertitel",
@@ -1167,6 +1160,13 @@
    "typ": "welt",
    "klang": "pop",
    "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.3,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LENA ZIEHT VORBEI"
   },
   {
    "quelle": "LiveZaehler",
@@ -1670,7 +1670,7 @@
    "typ": "balken",
    "dauer": 0.7,
    "klang": "wachsen",
-   "text": "PREISE FRESSEN VOM PLUS"
+   "text": "PLUS NOMINAL (KUPFER) · REAL (TÜRKIS)"
   },
   {
    "quelle": "Szene",

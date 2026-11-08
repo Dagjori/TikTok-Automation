@@ -162,5 +162,28 @@
    "grund": "Faktencheck vor dem Bau, Ergebnis unverändert",
    "zeit": "2026-11-09"
   }
- ]
+ ],
+ "lern_notizen": {
+  "thema": "Mindestlohn 2015 gegen 2026, Kaufkraft im Jahr",
+  "laenge_s": 74.9,
+  "hook": "Duell-Frage, 2 Sätze, 4,2 s",
+  "stil": "20 Glas & Licht (Lichtlabor)",
+  "helligkeit": "dunkel",
+  "zoom": "ja (3 Zooms)",
+  "zeitpunkte": {
+   "wendung_1": 25.3,
+   "kipp": 47.1,
+   "ergebnis": 57.7,
+   "warum": 62.9,
+   "pointe": 67.6,
+   "schlusskarte": 71.8
+  },
+  "testbloecke": {},
+  "suchbegriff": "Mindestlohn",
+  "woerter": 171,
+  "w_pro_s": 2.3,
+  "silben_pro_s": 5.46,
+  "tempo_ausnahme": "vom Inhaber im Cockpit angenommen (Rückfrage 09.11.), Silben/s 0,06 über der Grenze",
+  "caption": "Mindestlohn 2015 oder 2026 – wer kann sich mit einem Jahr Arbeit mehr leisten? 🛒 Ich hab's simuliert. Hättet ihr gedacht, dass er 2022 kurz weniger wert war? 👇 #mindestlohn #inflation #gehalt #wissen #simulation"
+ }
 }
