@@ -136,5 +136,28 @@
  ],
  "suchbegriff": "Mehrwertsteuer",
  "testbloecke": {},
- "stil_helligkeit": "dunkel"
+ "stil_helligkeit": "dunkel",
+ "lern_notizen": {
+  "thema": "Mehrwertsteuer 1968 gegen heute, Haushalt im Jahr",
+  "laenge_s": 76.1,
+  "hook": "Duell-Frage, 2 Sätze, 3,52 s",
+  "stil": "17 Nachtstadt-Miniatur",
+  "helligkeit": "dunkel",
+  "zoom": "ja (4 Zooms)",
+  "zeitpunkte": {
+   "wendung_1": 25.2,
+   "kipp": 46.76,
+   "ergebnis": 60.2,
+   "warum": 64.32,
+   "pointe": 68.56,
+   "schlusskarte": 72.48
+  },
+  "testbloecke": {},
+  "suchbegriff": "Mehrwertsteuer",
+  "woerter": 152,
+  "w_pro_s": 2.0,
+  "silben_pro_s": 3.58,
+  "tempo_ausnahme": "vom Inhaber freigegeben (Rückfrage angenommen 08.11.)",
+  "caption": "Mehrwertsteuer von 1968 oder von heute – wie viel mehr zahlt ein Haushalt im Jahr? 🛒 Ich hab's simuliert. Wo merkst du die 19 % am meisten? 👇 #mehrwertsteuer #einkaufen #steuern #wissen #simulation"
+ }
 }
