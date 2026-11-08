@@ -1,0 +1,1393 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "mwst-1968",
+ "fps": 30,
+ "dauer": 76.1,
+ "stimmEnde": 76.096,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "stadt_nacht",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "DAMALS",
+    "farbe": "#FF8A3D"
+   },
+   "b": {
+    "name": "HEUTE",
+    "farbe": "#22C6F2"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 4,
+   "groesse": 64,
+   "unten": 1450,
+   "phrasen": 54
+  },
+  "timing": "echt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "DAMALS"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "vs"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "HEUTE"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WER ZAHLT MEHR"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "MEHRWERTSTEUER?"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "tafel",
+   "klang": false,
+   "bild": false,
+   "ab": "start"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Damals oder heute?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.05,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "EIN MONAT · EIN EINKAUF"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.3,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Wagen rollen an, Scheinwerfer, Lichtspuren hinter beiden Wagen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera schiebt sich heran, Laternen ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 1.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wo zahlt man",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Titel läuft, Lichtkegel streicht über die Dächer"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 2.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mehr Steuer?",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Wagen ziehen an den Laternen vorbei, Lichtspuren länger"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 3.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ein Haushalt,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.96,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera weitet, Titel blendet aus"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 4.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "gleicher Einkauf,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.95,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "3.000 € IM MONAT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 5.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "3.000 € im Monat.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip 3.000 € im Monat"
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.72,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.87,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "1968 · 10 % UND 5 %"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 7.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Damals:",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kamera auf Damals, Chip 10 und 5 %"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 8.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "10 und 5 %.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.67,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "HEUTE · 19 % UND 7 %"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 10.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Heute: 19 und 7.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.72,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kamera auf Heute, Chip 19 und 7 %"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.02,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.02,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 13.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar …",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.12,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Lichtkegel und Spot auf Heute"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 13.997,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "heute zahlt man",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 14.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "überall mehr.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.16,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Spot hält auf Heute, Schild glüht"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 15.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.84,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Licht hält, Kamera ruhig"
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.67,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STATION 1/4 · RESTAURANT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 16.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Erste Station:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.72,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Station 1: Wagen beschleunigen, Steuerzähler laufen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 17.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "das Restaurant.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.28,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Restaurant-Häuser beiderseits leuchten auf"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 18.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gut 200 €",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 19.18,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RESTAURANT · 215 € IM MONAT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 20.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Monat.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.02,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 21.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Heute: 14 € Steuer.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.2,
+   "typ": "zaehler",
+   "dauer": 1.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.82,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "HEUTE · 14 € STEUER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Heute zahlt 14 €, Heute-Schild leuchtet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 23.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Damals: 20.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.467,
+   "typ": "zaehler",
+   "dauer": 1.4,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.7,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.14,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DAMALS · 20 € STEUER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.24,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Damals zahlt 20 €, Führung wechselt zu Damals"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 24.367,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 24.74,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 24.74,
+   "typ": "zaehler",
+   "dauer": 0.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 25.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Denn Essen",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.2,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera hoch"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 25.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Restaurant zahlt heute",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 27.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "nur 7 %.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 27.04,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.04,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip heute nur 7 %, Zoom auf Heute"
+  },
+  {
+   "quelle": "Chip",
+   "t": 27.18,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "HEUTE NUR 7 %"
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.43,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DAMALS: VOLLER SATZ 10 %"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 28.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Damals: der volle Satz.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip Damals voller Satz 10 %"
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.52,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.67,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STATION 2/4 · SUPERMARKT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 30.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Zweite Station:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.72,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Station 2: Kamera gleitet zum Supermarkt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 31.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "der Supermarkt nebenan.",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 32,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Supermarkt-Häuser leuchten"
+  },
+  {
+   "quelle": "Chip",
+   "t": 33.42,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "500 € · ERMÄSSIGT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 33.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "500 €, ermäßigt.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 35.58,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 35.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Heute 34,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.667,
+   "typ": "zaehler",
+   "dauer": 1.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 35.673,
+   "typ": "zaehler",
+   "dauer": 0.207,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.033,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.14,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "HEUTE · 34 € STEUER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.24,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Heute zahlt 34 € im Supermarkt, Führung wechselt zu Heute"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 37.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "damals 24.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.433,
+   "typ": "zaehler",
+   "dauer": 1.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.06,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DAMALS · 24 € STEUER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.16,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Damals zahlt 24 €, holt auf"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 39.14,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 39.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Jetzt liegt heute",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 39.44,
+   "art": "zoom",
+   "dauer": 2,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.44,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera eng, Zähler nahe beieinander"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 40.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "knapp vorn.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.14,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.54,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.54,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.59,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STATION 3/4 · MIETE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Dritte Station:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.64,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Station 3: Kamera hoch zum Mietshaus"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 42.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "die Miete im Haus.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.88,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Mietshäuser leuchten, Steuer 0 €"
+  },
+  {
+   "quelle": "Chip",
+   "t": 44.11,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MIETE · 0 € STEUER"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 44.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Keine Mehrwertsteuer,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 45.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "der Abstand bleibt.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Zähler bleiben stehen, Abstand bleibt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 46.26,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 46.56,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 46.71,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STATION 4/4 · DER REST"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 46.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Dann der Rest:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.76,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Station 4: Kamera auf den hohen Block"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 47.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Strom, Auto, Handy.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Block leuchtet, Strom Auto Handy"
+  },
+  {
+   "quelle": "Chip",
+   "t": 49.9,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "1.600 € · VOLLER SATZ"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 49.933,
+   "typ": "zaehler",
+   "dauer": 9.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 49.933,
+   "typ": "zaehler",
+   "dauer": 9.633,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 49.94,
+   "typ": "zaehler",
+   "dauer": 9.6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 49.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "1.600 €",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 50,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip 1.600 € zum vollen Satz"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 50.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "zum vollen Satz.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 52.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Heute: rund 260.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.34,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "HEUTE · RUND 260 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.44,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Heute rund 260 €, Zähler steigen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 54.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Damals: rund 130.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 55.78,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DAMALS · RUND 130 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.88,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Damals rund 130 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 57.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Jetzt zieht es davon,",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 57.56,
+   "art": "zoom",
+   "dauer": 1.7,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.56,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Heute zieht davon, Glow und Zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 58.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Monat für Monat.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 60,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 60,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 60,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 60.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Endstand im Jahr:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.2,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zurück, Jahreskarte"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.5,
+   "typ": "zaehler",
+   "dauer": 1.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.5,
+   "typ": "zaehler",
+   "dauer": 1.3,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.753,
+   "typ": "uhr",
+   "dauer": 0.8,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 61,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "DAMALS"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 61.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Rund 1.500 €",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 61.5,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "HEUTE ZAHLT MEHR"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 61.52,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "HEUTE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.6,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Heute zahlt 1.505 € mehr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 61.787,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 62.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mehr als damals.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 64.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Warum?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.32,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Erklärgrafik Warum"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 65.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Fast die Hälfte",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 65.58,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "AUSGABEN OHNE VOLLEN SATZ · %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Balken 44 % ohne vollen Satz"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 65.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "der Ausgaben trifft der",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 66.16,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "FAST DIE HÄLFTE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.16,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Tag fast die Hälfte"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 67.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "volle Satz gar nicht.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 68.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Das Verrückte:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.56,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Rückblende zu Damals, Kamera auf das Haus"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Die 10 % hielten",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Damals leuchtet auf, 10 %"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 70.56,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 70.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "nur ein halbes Jahr.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.28,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Damals-Licht pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 72.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "70 % mehr Steuer.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Pointe",
+   "t": 72.48,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "70 % MEHR STEUER.  NUR 4 %  TEURER."
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.48,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Welt dunkelt ab, Schlusskarte: 70 % mehr Steuer"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 74.423,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Nur 4 % teurer.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 74.453,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Zeile Nur 4 % erscheint"
+  },
+  {
+   "quelle": "Szene",
+   "t": 75.44,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Teurer, Kamera weitet"
+  }
+ ],
+ "klang": []
+}
