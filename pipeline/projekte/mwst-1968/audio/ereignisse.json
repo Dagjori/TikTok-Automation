@@ -168,6 +168,13 @@
    "zeilen": 1
   },
   {
+   "quelle": "Szene",
+   "t": 5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Wagen ziehen weiter, Laternen ziehen vorbei"
+  },
+  {
    "quelle": "Chip",
    "t": 5.95,
    "typ": "chip",
@@ -270,6 +277,13 @@
    "text": "Kamera auf Heute, Chip 19 und 7 %"
   },
   {
+   "quelle": "Szene",
+   "t": 11.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet nach oben, Heute-Wagen im Bild"
+  },
+  {
    "quelle": "Chip",
    "t": 13.02,
    "typ": "chip-weg",
@@ -307,6 +321,13 @@
    "text": "heute zahlt man",
    "woerter": 3,
    "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Spot auf Heute baut sich auf, Lichtkegel wächst"
   },
   {
    "quelle": "Untertitel",
@@ -415,6 +436,13 @@
    "text": "im Monat.",
    "woerter": 2,
    "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera schwenkt zum Heute-Wagen, Laternen ziehen vorbei"
   },
   {
    "quelle": "Chip",
@@ -684,6 +712,13 @@
    "text": "500 €, ermäßigt.",
    "woerter": 3,
    "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera nähert sich dem Heute-Wagen"
   },
   {
    "quelle": "Chip",
@@ -956,6 +991,13 @@
    "typ": "welt",
    "klang": "ding",
    "text": "Block leuchtet, Strom Auto Handy"
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet zum hohen Block, Laternen ziehen vorbei"
   },
   {
    "quelle": "Chip",
@@ -1310,6 +1352,13 @@
    "zeilen": 1
   },
   {
+   "quelle": "Szene",
+   "t": 67.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera sinkt, Balken steht"
+  },
+  {
    "quelle": "Untertitel",
    "t": 68.53,
    "typ": "untertitel",
@@ -1391,6 +1440,13 @@
    "typ": "welt",
    "klang": "akzent",
    "text": "Welt dunkelt ab, Schlusskarte: 70 % mehr Steuer"
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera weitet langsam, Welt dunkelt weiter ab"
   },
   {
    "quelle": "Untertitel",
