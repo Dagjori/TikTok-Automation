@@ -1,0 +1,2022 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "mindestlohn-kaufkraft",
+ "fps": 30,
+ "dauer": 74.43333333333334,
+ "stimmEnde": 74.424,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "wasser",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "ANNA 2015",
+    "farbe": "#E0813A"
+   },
+   "b": {
+    "name": "LENA 2026",
+    "farbe": "#22C6D6"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 4,
+   "groesse": 64,
+   "unten": 1450,
+   "phrasen": 57
+  },
+  "timing": "echt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "2015"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "vs"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "2026"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "MINDESTLOHN"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WER KANN MEHR KAUFEN?"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "tafel",
+   "klang": false,
+   "bild": false,
+   "ab": "start"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mindestlohn 2015 oder 2026?",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.05,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "EIN JAHR VOLLZEIT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder leuchten auf, Kamera schiebt sich heran"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.04,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.92,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 2.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wer kann sich",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.72,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 3.098,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mit einem Jahr Arbeit",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 3.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mehr leisten?",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.36,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 4.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Anna, 2015:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.314,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ANNA · 2015 · 8,50 € JE STUNDE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 5.384,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "8,50 € die Stunde.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.414,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.914,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 7.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Lena, 2026:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.84,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.967,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LENA · 2026 · 13,90 € JE STUNDE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.037,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "13,90 €.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.067,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 10.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Beide Vollzeit,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.52,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.38,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "VOLLZEIT · 40 STUNDEN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 11.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "40 Stunden.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.48,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.5,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GEZÄHLT WIRD NETTO"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 11.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gezählt wird netto.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 13.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar, Lena gewinnt haushoch.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.2,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.08,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 15.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.68,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.68,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.06,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.51,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STUFE 1 · LOHN NOMINAL"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 16.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ein Jahr Arbeit.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 18.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Anna: 17.680 € brutto.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.4,
+   "typ": "zaehler",
+   "dauer": 1.767,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.41,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "Annas Zylinder füllt sich"
+  },
+  {
+   "quelle": "Chip",
+   "t": 18.62,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ANNA 17.680 € BRUTTO"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.743,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.077,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.443,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.777,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.11,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.22,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.477,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 20.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Lena: 28.912 €.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.81,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.867,
+   "typ": "zaehler",
+   "dauer": 1.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.89,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "Lenas Zylinder füllt sich"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.9,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.143,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.18,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LENA 28.912 € BRUTTO"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.267,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.28,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.51,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.843,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 22.177,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.42,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Vorsprung-Röhrchen füllt sich"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 22.62,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 22.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "11.232 € Vorsprung.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.72,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.24,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.78,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.08,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.08,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.23,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STUFE 2 · IN HEUTIGEN EURO"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 25.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Doch die Preise",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.28,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 25.487,
+   "typ": "zaehler",
+   "dauer": 2.5,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 25.5,
+   "typ": "zaehler",
+   "dauer": 2.467,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.5,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Preise steigen: Annas Stand steigt, Funken"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 25.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "stiegen seit 2015",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 26.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "um 32 %.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.86,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "PREISE + 32 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.3,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 28.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Annas 8,50 € wären",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.7,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ANNAS 8,50 € = 11,23 € HEUTE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 29.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "heute 11,23 € wert.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.84,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.84,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Annas Stand 11,23 € heute"
+  },
+  {
+   "quelle": "Chip",
+   "t": 31.14,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 31.24,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 31.39,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MAI 2022 · IN HEUTIGEN EURO"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 31.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und unterwegs passiert etwas:",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.44,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.94,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 33.553,
+   "typ": "zaehler",
+   "dauer": 2.6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 33.567,
+   "typ": "zaehler",
+   "dauer": 3.133,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 33.58,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MAI 2022 · 9,82 € MINDESTLOHN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.58,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Mai 2022: Lenas Stand bricht ein, Funken"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 33.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mai 2022.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.68,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 35.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Die Preise rasen.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.167,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 36.52,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 36.52,
+   "typ": "zaehler",
+   "dauer": 0.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.62,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 36.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "9,82 € Mindestlohn",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.72,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 37.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "sind nur 8,45",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.1,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "= NUR 8,45 € VON 2015"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.2,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.2,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Mindestlohn real nur 8,45 €, Anna vorn"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 38.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "€ von 2015.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.58,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ANNA LIEGT VORN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 39.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Anna liegt vorn.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.68,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 40,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.74,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.84,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.84,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.99,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "HEUTE · IN HEUTIGEN EURO"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Dann der Sprung",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "auf 12 €.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.98,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "OKT. 2022 · 12 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 42.987,
+   "typ": "zaehler",
+   "dauer": 0.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43,
+   "typ": "zaehler",
+   "dauer": 1.6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Sprung auf 12 €: Lenas Stand steigt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.15,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LENA ZIEHT VORBEI"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 43.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Lena zieht wieder vorbei.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.2,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.2,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 44.08,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 44.08,
+   "typ": "zaehler",
+   "dauer": 0.5,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 44.08,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.08,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lena zieht vorbei, Zoom auf Lena"
+  },
+  {
+   "quelle": "Chip",
+   "t": 44.7,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 44.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und heute:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.567,
+   "typ": "zaehler",
+   "dauer": 1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 45.58,
+   "typ": "zaehler",
+   "dauer": 1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 45.58,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "HEUTE · 13,90 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.58,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "Lena steigt auf 13,90 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 45.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "13,90 €.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.68,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 46.62,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 46.92,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 47.07,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STUFE 3 · NETTO"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 47.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Jetzt die Abgaben.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.12,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 47.48,
+   "typ": "zaehler",
+   "dauer": 6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.5,
+   "typ": "zaehler",
+   "dauer": 5.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.5,
+   "typ": "zaehler",
+   "dauer": 5.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.5,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Abgaben: beide Zylinder sinken, Funken"
+  },
+  {
+   "quelle": "Chip",
+   "t": 48.38,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABGABEN · KASSE UND PFLEGE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Kasse und Pflege",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 49,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 49.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "kosten 2026 mehr.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.78,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 50.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Von jedem Euro",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 51.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "bleiben Anna 73 Cent.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 52,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.46,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ANNA BEHÄLT 73 CENT JE EURO"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.56,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.56,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Anna behält 73 Cent"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 53.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Lena nur 71.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 54,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 54.58,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LENA BEHÄLT 71 CENT JE EURO"
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.68,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lena behält 71 Cent"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 55.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der Abstand schrumpft weiter.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.84,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.34,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.48,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.48,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.48,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 57.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Endstand in heutigen Euro:",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.68,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Vorsprung-Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.68,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zurück, Jahresnetto-Karte"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 59.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Anna 17.118 € netto,",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 59.36,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "ANNA 2015"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.36,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 59.604,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Lena 20.598 €.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 59.634,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "LENA 2026"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 59.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Lena hat 3.480 €",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 60.38,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "LENA HAT MEHR"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 60.48,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.48,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lena hat 3.480 € mehr, Zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 61.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mehr im Jahr.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.98,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 62.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Warum?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.92,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Erklärgrafik Warum"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 63.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Die Preise fressen",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 63.76,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "PREISE FRESSEN VOM PLUS"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.76,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 64.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "4.156 €.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 64.8,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "− 4.156 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.8,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Teuerung frisst 4.156 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 65.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Die Abgaben rund",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 65.92,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "ABGABEN (SCHON IM NETTO)"
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.92,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 66.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "600 €.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 66.88,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "ZUSATZ"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.433,
+   "typ": "zaehler",
+   "dauer": 0.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.443,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.46,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Rückblende: Lenas Zylinder leert sich, Marker in Annas Höhe"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 67.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und das Verrückte:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 67.7,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 68,
+   "typ": "zaehler",
+   "dauer": 2.867,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.01,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "Lenas Zylinder füllt sich Monat für Monat"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 68.033,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 68.577,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 68.62,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ANNAS GANZES JAHR"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 68.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Annas ganzes Jahr",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 68.843,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.12,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Annas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 69.143,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 69.41,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "hat Lena",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 69.71,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "schon Ende Oktober verdient.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Tafel",
+   "t": 69.977,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 70.277,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 70.3,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ENDE OKTOBER · 17.118 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 70.4,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Lenas Zylinder leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.4,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Ende Oktober: Lena erreicht Annas Jahr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 70.543,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 71.613,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 71.613,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 71.783,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Vom Plus bleibt real",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Pointe",
+   "t": 71.813,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "VOM PLUS BLEIBT  REAL KNAPP  DIE HÄLFTE."
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.813,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Welt dunkelt ab, Schlusskarte"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 73.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "knapp die Hälfte.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.313,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.76,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Hälfte leuchtet"
+  }
+ ],
+ "klang": []
+}

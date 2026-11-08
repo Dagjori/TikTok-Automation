@@ -1,0 +1,166 @@
+{
+ "titel": "Mindestlohn 2015 oder 2026: Wer kann sich mit einem Jahr Arbeit mehr leisten?",
+ "skill": "video-produktion",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-09-mittag",
+ "stil": "20 Glas & Licht (Lichtlabor)",
+ "stil_begruendung": "Das Skript ist ein Rennen zweier Jahreslöhne, die sich in drei Stufen (nominal, in heutigen Euro, netto) verändern und dabei zweimal die Führung wechseln: Zwei Messzylinder aus Glas, in die der Lohn als leuchtende Flüssigkeit läuft, zeigen Füllstand = Zahl und lassen sich beim Preisanstieg, beim Einbruch im Mai 2022 und bei den Abgaben sichtbar heben und senken. Dunkle Welt mit Leuchtakzenten (REA R13/R23), Umgebung vorhanden (Laborbank mit Spiegelung, Lichtkegel, Staub, Kaustik), Kupfer gegen Türkis, nie Gelb. Die zwei Vortage liefen in Stil 19 (Mittag) und 17 (Abend), Stil 20 kam zuletzt am 06.11. vor (Steuerklasse).",
+ "teamfarben": {
+  "Anna 2015": "#E0813A",
+  "Lena 2026": "#22C6D6"
+ },
+ "klangteppich": "wasser",
+ "stil_helligkeit": "dunkel",
+ "suchbegriff": "Mindestlohn",
+ "testbloecke": {},
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Mindestlohn 2015 oder 2026? Wer kann sich mit einem Jahr Arbeit mehr leisten?",
+   "sprechtext": "Mindestlohn damals oder heute?\nWer kann mehr kaufen?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "Anna, 2015: 8,50 € die Stunde. Lena, 2026: 13,90 €. Beide Vollzeit, 40 Stunden. Gezählt wird netto.",
+   "sprechtext": "Anna, zweitausendfünfzehn: acht Euro fünfzig.\nLena, heute: dreizehn neunzig.\nBeide Vollzeit.\nGezählt wird NETTO.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, Lena gewinnt haushoch. Oder?",
+   "sprechtext": "Klar … Lena gewinnt HAUSHOCH.\nOder?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Ein Jahr Arbeit. Anna: 17.680 € brutto. Lena: 28.912 €. 11.232 € Vorsprung.",
+   "sprechtext": "Ein Jahr Arbeit.\nAnna: knapp achtzehntausend brutto.\nLena: fast neunundzwanzigtausend.\nElftausend Euro VORSPRUNG.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Doch die Preise stiegen seit 2015 um 32 %. Annas 8,50 € wären heute 11,23 € wert.",
+   "sprechtext": "Doch die Preise stiegen.\nUm fast ein DRITTEL.\nAnnas Lohn wäre heute elf zwanzig wert.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Und unterwegs passiert etwas: Mai 2022. Die Preise rasen. 9,82 € Mindestlohn sind nur 8,45 € von 2015. Anna liegt vorn.",
+   "sprechtext": "Und unterwegs passiert etwas.\nMai zweiundzwanzig.\nDie Preise rasen.\nDer Mindestlohn ist WENIGER wert als zum Start.\nAnna liegt vorn.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "Dann der Sprung auf 12 €. Lena zieht wieder vorbei. Und heute: 13,90 €.",
+   "sprechtext": "Dann der Sprung auf zwölf Euro.\nLena zieht WIEDER vorbei.\nUnd heute: dreizehn neunzig.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "kipp",
+   "phase": "kipp",
+   "text": "Jetzt die Abgaben. Kasse und Pflege kosten 2026 mehr. Von jedem Euro bleiben Anna 73 Cent. Lena nur 71. Der Abstand schrumpft weiter.",
+   "sprechtext": "Jetzt die Abgaben.\nKasse und Pflege kosten heute mehr.\nVon jedem Euro bleiben Anna dreiundsiebzig Cent.\nLena nur EINUNDSIEBZIG.\nDer Abstand schrumpft weiter.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Endstand in heutigen Euro: Anna 17.118 € netto, Lena 20.598 €. Lena hat 3.480 € mehr im Jahr.",
+   "sprechtext": "Endstand, in heutigen Euro:\nLena hat dreitausendfünfhundert MEHR im Jahr.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Warum? Die Preise fressen 4.156 €. Die Abgaben rund 600 €.",
+   "sprechtext": "[thoughtful] Warum?\nDie Preise fressen viertausend.\nDie Abgaben sechshundert.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "pointe",
+   "phase": "pointe",
+   "text": "Und das Verrückte: Annas ganzes Jahr hat Lena schon Ende Oktober verdient.",
+   "sprechtext": "Und das Verrückte:\nAnnas Jahr hat Lena Ende OKTOBER verdient.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "schlusskarte",
+   "phase": "schlusskarte",
+   "text": "Vom Plus bleibt real knapp die Hälfte.",
+   "sprechtext": "Vom Plus bleibt real knapp die HÄLFTE.",
+   "bild_text_abgleich": []
+  }
+ ],
+ "caption": "Mindestlohn 2015 oder 2026 – wer kann sich mit einem Jahr Arbeit mehr leisten? 🛒 Ich hab's simuliert. Hättet ihr gedacht, dass er 2022 kurz weniger wert war? 👇 #mindestlohn #inflation #gehalt #wissen #simulation",
+ "rechenweg": "Jahresbrutto = Stundenlohn × 40 h × 52 Wochen (2.080 h): 2015 8,50 × 2.080 = 17.680 €; 2026 13,90 × 2.080 = 28.912 €; Differenz 11.232 €. Sozialabgaben AN-Anteil 2015: RV 9,35 % + KV 7,3 % + Ø-Zusatzbeitrag 0,9 % + PV 1,175 % + Kinderlosenzuschlag 0,25 % + AV 1,5 % = 20,475 % → 3.619,98 €. 2026: RV 9,3 % + KV 7,3 % + halber Ø-Zusatzbeitrag 1,45 % + PV 1,8 % + Kinderlosenzuschlag 0,6 % + AV 1,3 % = 21,75 % → 6.288,36 €. Zu versteuerndes Einkommen = Brutto − Arbeitnehmer-Pauschbetrag (2015: 1.000 €, 2026: 1.230 €) − Sonderausgaben-Pauschbetrag 36 € − abziehbare Altersvorsorge (2015: 80 % × 18,7 % × Brutto − AG-Anteil = 991,85 €; 2026: AN-Anteil RV 2.688,82 €) − Basis-KV/PV (KV ohne 4-%-Krankengeldanteil): 2015 zvE 14.003 € → ESt nach § 32a (Tarif 2015) 1.077 € + Soli 21 € (Milderungszone 20 % × (1.077 − 972)); 2026 zvE 21.820 € → ESt nach § 32a (Tarif 2026) 2.026 €, kein Soli. Netto: 2015 12.962,02 € (1.080 €/Monat), 2026 20.597,64 € (1.716 €/Monat; deckt sich mit rechner-hub 1.716 €). Behalten je Euro: 0,733 gegen 0,712. Preise: VPI (2020=100) 2015 = 94,5; 2026 = Mittel Jan–Sep 124,8 → Faktor 1,3206 (+32,1 %). 8,50 € × 1,3206 = 11,23 €; 13,90 € / 1,3206 = 10,53 € in Euro von 2015. Brutto real: 2015 in heutigen Euro 23.348,83 € → Vorsprung 5.563 €. Netto real: Anna 12.962,02 × 1,3206 = 17.118,10 €; Lena 20.597,64 € → Vorsprung 3.479,54 € ≈ 3.480 € (nominal 7.635,62 €; Teuerung frisst 4.156,08 €, real bleiben 45,6 % des Plus). Abgaben-Effekt: Lena mit Annas Netto-Quote 0,733 hätte 599 € mehr (im Netto bereits enthalten, nicht doppelt abgezogen). Mai/Juni 2022: 9,82 € × 94,5 / 109,8 = 8,45 € < 8,50 € (April 8,53 €, Juli 10,45 € → 8,95 €, Okt. 12 € → 9,99 €). Pointe: Annas Jahr in heutigen Euro 17.118,10 € / Lenas Nettostundenlohn 9,90 € = 1.729 h = 9,97 Monate → Ende Oktober. Alles mit Python nachgerechnet (cockpit/daten/tmp/mindestlohn.py).",
+ "zahlen": {
+  "Mindestlohn 2015": "8,50 €/h",
+  "Mindestlohn 2026": "13,90 €/h",
+  "Stunden/Jahr (A)": "2.080",
+  "Brutto 2015": "17.680 €",
+  "Brutto 2026": "28.912 €",
+  "Brutto-Vorsprung nominal": "11.232 €",
+  "VPI 2015": "94,5",
+  "VPI 2026 (Mittel Jan–Sep)": "124,8",
+  "Teuerung": "+32,1 %",
+  "8,50 € in heutigen Euro": "11,23 €",
+  "Mindestlohn Mai 2022 real": "8,45 € (Euro von 2015)",
+  "Netto 2015": "12.962 € (1.080 €/Monat)",
+  "Netto 2026": "20.598 € (1.716 €/Monat)",
+  "Behalten je Euro": "73 Cent gegen 71 Cent",
+  "Netto 2015 in heutigen Euro": "17.118 €",
+  "Endstand Vorsprung real": "3.480 €/Jahr",
+  "Teuerung frisst": "4.156 €",
+  "Abgaben-Effekt": "rund 600 €",
+  "Annas Jahr erreicht": "Ende Oktober (9,97 Monate)",
+  "Plus real erhalten": "45,6 %"
+ },
+ "annahmen": [
+  "(A) Vollzeit 40 h × 52 Wochen = 2.080 bezahlte Stunden, ganzes Jahr zum jeweiligen Mindestlohn",
+  "(A) Steuerklasse I, ledig, kinderlos, über 23, keine Kirchensteuer, gesetzlich versichert mit durchschnittlichem Zusatzbeitrag",
+  "(A) Steuer als Jahresveranlagung nach § 32a mit Pauschbeträgen und abziehbaren Vorsorgeaufwendungen (keine weiteren Abzüge)",
+  "(A) „Heutige Euro“ = Mittel des VPI Januar–September 2026 (Oktober noch vorläufig, Jahreswert fehlt)",
+  "(A) Kaufkraft über den allgemeinen VPI; wer mehr Miete oder Energie zahlt, kann real anders dastehen",
+  "(S) Zwischenwert Mai 2022: Monats-VPI gegen Jahresmittel 2015"
+ ],
+ "quellen": [
+  "(F) MiLoV5 § 1: 13,90 € ab 01.01.2026, 14,60 € ab 01.01.2027, BMJ – https://www.gesetze-im-internet.de/milov5/BJNR10C0A0025.html",
+  "(F) Mindestlohn 8,50 € ab 01.01.2015, Stufen bis 10,45 € (2022), bpb – https://fsk12.bpb.de/system/files/dokument_pdf/4.6_Entwicklung%20des%20gesetzlichen%20Mindestlohns%202015-2022.pdf",
+  "(F) VPI Jahreswerte 2015 = 94,5 … 2025 = 121,9 (2020=100), AGV Versicherungen nach Destatis – https://www.agv-vers.de/statistiken/verbraucherpreise/preise-vpi-jahresuebersicht.html",
+  "(F) VPI Jahreswerte 2021–2025, Destatis Konjunkturindikatoren – https://www.destatis.de/DE/Themen/Wirtschaft/Konjunkturindikatoren/Basisdaten/vpi141a.html",
+  "(F) VPI Monatswerte 2022 und Jan–Sep 2026 (Sep 126,6), deutschland-rechner nach Destatis – https://www.deutschland-rechner.de/vpi-tabelle",
+  "(F) Inflationsrate Oktober 2026 +2,8 % (vorläufig), Destatis 30.10.2026 – https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_382_611.html",
+  "(F) § 32a EStG Tarif 2026 (Grundfreibetrag 12.348 €), BMJ – https://www.gesetze-im-internet.de/estg/__32a.html",
+  "(F) Einkommensteuertarif 2015 (Grundfreibetrag 8.472 €), lohn-info – https://lohn-info.de/einkommensteuertarif_2015.html",
+  "(F) Beitragssätze 2026: KV 14,6 %, Ø-Zusatzbeitrag 2,9 %, PV 3,6 % (kinderlos 4,2 %), AV 2,6 %, RV 18,6 %, Haufe – https://www.haufe.de/personal/entgelt/beitragssaetze-zur-sozialversicherung_78_493770.html",
+  "(F) Beitragssätze 2015: RV 18,7 %, AV 3,0 %, PV 2,35 % + 0,25 %, Ø-Zusatzbeitrag 0,9 %, lohn-info – https://lohn-info.de/sozialversicherungsbeitraege2015.html",
+  "(F) Netto Mindestlohn 2026 Vollzeit ca. 1.716 €/Monat (Abgleich), rechner-hub – https://rechner-hub.de/mindestlohn-rechner/mindestlohn-2026/",
+  "(F) IAB: Kaufkraft des 12-€-Mindestlohns 09/2023 um 11,6 % über Januar 2015 (Plausibilität) – https://bundestag.api.proxy.bund.dev/resource/blob/1135388/21-11-64-IAB.pdf"
+ ],
+ "korrekturen": [
+  {
+   "feld": "segmente[11].id",
+   "alt": "schluss",
+   "neu": "schlusskarte",
+   "quelle": "Skill simulierbar.md, Eingangsprüfung (Phasen-IDs)",
+   "grund": "formale Phasen-ID, Inhalt unverändert",
+   "zeit": "2026-11-09"
+  },
+  {
+   "feld": "faktencheck",
+   "alt": "-",
+   "neu": "Alle Zahlen mit sim/mindestlohn.mjs nachgerechnet (9 Tests grün): Brutto 17.680/28.912, Netto 12.962/20.598 (1.716 €/Monat), Preisfaktor 1,3206, Endstand 3.480 €, Teuerung 4.156 €, Abgaben-Effekt 599 €, Mai 2022 = 8,45 €; keine Abweichung zum Skript.",
+   "quelle": "pipeline/sim/mindestlohn.test.mjs",
+   "grund": "Faktencheck vor dem Bau, Ergebnis unverändert",
+   "zeit": "2026-11-09"
+  }
+ ]
+}

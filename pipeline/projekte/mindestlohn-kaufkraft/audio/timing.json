@@ -1,0 +1,961 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 74.424,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Mindestlohn 2015 oder 2026? Wer kann sich mit einem Jahr Arbeit mehr leisten?",
+   "start": 0.0,
+   "ende": 4.24,
+   "woerter": [
+    {
+     "wort": "Mindestlohn",
+     "start": 0.0,
+     "ende": 0.72
+    },
+    {
+     "wort": "2015",
+     "start": 1.04,
+     "ende": 1.6
+    },
+    {
+     "wort": "oder",
+     "start": 1.68,
+     "ende": 1.84
+    },
+    {
+     "wort": "2026?",
+     "start": 1.92,
+     "ende": 2.52
+    },
+    {
+     "wort": "Wer",
+     "start": 2.72,
+     "ende": 2.88
+    },
+    {
+     "wort": "kann",
+     "start": 2.96,
+     "ende": 3.12
+    },
+    {
+     "wort": "sich",
+     "start": 3.12,
+     "ende": 3.128
+    },
+    {
+     "wort": "mit",
+     "start": 3.128,
+     "ende": 3.136
+    },
+    {
+     "wort": "einem",
+     "start": 3.136,
+     "ende": 3.144
+    },
+    {
+     "wort": "Jahr",
+     "start": 3.144,
+     "ende": 3.152
+    },
+    {
+     "wort": "Arbeit",
+     "start": 3.152,
+     "ende": 3.16
+    },
+    {
+     "wort": "mehr",
+     "start": 3.16,
+     "ende": 3.28
+    },
+    {
+     "wort": "leisten?",
+     "start": 3.36,
+     "ende": 4.24
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Anna, 2015: 8,50 € die Stunde. Lena, 2026: 13,90 €. Beide Vollzeit, 40 Stunden. Gezählt wird netto.",
+   "start": 4.32,
+   "ende": 12.72,
+   "woerter": [
+    {
+     "wort": "Anna,",
+     "start": 4.32,
+     "ende": 4.8
+    },
+    {
+     "wort": "2015:",
+     "start": 4.827,
+     "ende": 5.4136
+    },
+    {
+     "wort": "8,50",
+     "start": 5.4136,
+     "ende": 6.0001999999999995
+    },
+    {
+     "wort": "€",
+     "start": 6.0001999999999995,
+     "ende": 6.5868
+    },
+    {
+     "wort": "die",
+     "start": 6.5868,
+     "ende": 7.1734
+    },
+    {
+     "wort": "Stunde.",
+     "start": 7.1734,
+     "ende": 7.76
+    },
+    {
+     "wort": "Lena,",
+     "start": 7.84,
+     "ende": 8.32
+    },
+    {
+     "wort": "2026:",
+     "start": 8.36,
+     "ende": 9.066666666666666
+    },
+    {
+     "wort": "13,90",
+     "start": 9.066666666666666,
+     "ende": 9.773333333333333
+    },
+    {
+     "wort": "€.",
+     "start": 9.773333333333333,
+     "ende": 10.48
+    },
+    {
+     "wort": "Beide",
+     "start": 10.52,
+     "ende": 10.72
+    },
+    {
+     "wort": "Vollzeit,",
+     "start": 10.8,
+     "ende": 11.48
+    },
+    {
+     "wort": "40",
+     "start": 11.48,
+     "ende": 11.54
+    },
+    {
+     "wort": "Stunden.",
+     "start": 11.54,
+     "ende": 11.6
+    },
+    {
+     "wort": "Gezählt",
+     "start": 11.6,
+     "ende": 12.0
+    },
+    {
+     "wort": "wird",
+     "start": 12.08,
+     "ende": 12.24
+    },
+    {
+     "wort": "netto.",
+     "start": 12.32,
+     "ende": 12.72
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, Lena gewinnt haushoch. Oder?",
+   "start": 13.2,
+   "ende": 16.0,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 13.2,
+     "ende": 13.6
+    },
+    {
+     "wort": "Lena",
+     "start": 14.08,
+     "ende": 14.32
+    },
+    {
+     "wort": "gewinnt",
+     "start": 14.4,
+     "ende": 14.64
+    },
+    {
+     "wort": "haushoch.",
+     "start": 14.72,
+     "ende": 15.36
+    },
+    {
+     "wort": "Oder?",
+     "start": 15.68,
+     "ende": 16.0
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Ein Jahr Arbeit. Anna: 17.680 € brutto. Lena: 28.912 €. 11.232 € Vorsprung.",
+   "start": 16.56,
+   "ende": 25.04,
+   "woerter": [
+    {
+     "wort": "Ein",
+     "start": 16.56,
+     "ende": 16.8
+    },
+    {
+     "wort": "Jahr",
+     "start": 16.88,
+     "ende": 17.12
+    },
+    {
+     "wort": "Arbeit.",
+     "start": 17.2,
+     "ende": 17.92
+    },
+    {
+     "wort": "Anna:",
+     "start": 18.16,
+     "ende": 18.6
+    },
+    {
+     "wort": "17.680",
+     "start": 18.72,
+     "ende": 19.240000000000002
+    },
+    {
+     "wort": "€",
+     "start": 19.240000000000002,
+     "ende": 19.76
+    },
+    {
+     "wort": "brutto.",
+     "start": 19.84,
+     "ende": 20.44
+    },
+    {
+     "wort": "Lena:",
+     "start": 20.64,
+     "ende": 21.04
+    },
+    {
+     "wort": "28.912",
+     "start": 21.28,
+     "ende": 22.0
+    },
+    {
+     "wort": "€.",
+     "start": 22.0,
+     "ende": 22.72
+    },
+    {
+     "wort": "11.232",
+     "start": 22.72,
+     "ende": 23.44
+    },
+    {
+     "wort": "€",
+     "start": 23.44,
+     "ende": 24.16
+    },
+    {
+     "wort": "Vorsprung.",
+     "start": 24.24,
+     "ende": 25.04
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Doch die Preise stiegen seit 2015 um 32 %. Annas 8,50 € wären heute 11,23 € wert.",
+   "start": 25.28,
+   "ende": 30.96,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 25.28,
+     "ende": 25.36
+    },
+    {
+     "wort": "die",
+     "start": 25.44,
+     "ende": 25.52
+    },
+    {
+     "wort": "Preise",
+     "start": 25.6,
+     "ende": 25.92
+    },
+    {
+     "wort": "stiegen",
+     "start": 26.0,
+     "ende": 26.56
+    },
+    {
+     "wort": "seit",
+     "start": 26.56,
+     "ende": 26.64
+    },
+    {
+     "wort": "2015",
+     "start": 26.64,
+     "ende": 26.72
+    },
+    {
+     "wort": "um",
+     "start": 26.72,
+     "ende": 26.8
+    },
+    {
+     "wort": "32",
+     "start": 26.96,
+     "ende": 27.560000000000002
+    },
+    {
+     "wort": "%.",
+     "start": 27.560000000000002,
+     "ende": 28.16
+    },
+    {
+     "wort": "Annas",
+     "start": 28.4,
+     "ende": 28.72
+    },
+    {
+     "wort": "8,50",
+     "start": 28.8,
+     "ende": 28.96
+    },
+    {
+     "wort": "€",
+     "start": 28.96,
+     "ende": 29.12
+    },
+    {
+     "wort": "wären",
+     "start": 29.12,
+     "ende": 29.28
+    },
+    {
+     "wort": "heute",
+     "start": 29.36,
+     "ende": 29.68
+    },
+    {
+     "wort": "11,23",
+     "start": 29.84,
+     "ende": 30.2
+    },
+    {
+     "wort": "€",
+     "start": 30.2,
+     "ende": 30.56
+    },
+    {
+     "wort": "wert.",
+     "start": 30.64,
+     "ende": 30.96
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Und unterwegs passiert etwas: Mai 2022. Die Preise rasen. 9,82 € Mindestlohn sind nur 8,45 € von 2015. Anna liegt vorn.",
+   "start": 31.44,
+   "ende": 40.64,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 31.44,
+     "ende": 31.6
+    },
+    {
+     "wort": "unterwegs",
+     "start": 31.76,
+     "ende": 32.24
+    },
+    {
+     "wort": "passiert",
+     "start": 32.32,
+     "ende": 32.72
+    },
+    {
+     "wort": "etwas:",
+     "start": 32.8,
+     "ende": 33.44
+    },
+    {
+     "wort": "Mai",
+     "start": 33.68,
+     "ende": 33.84
+    },
+    {
+     "wort": "2022.",
+     "start": 33.92,
+     "ende": 34.88
+    },
+    {
+     "wort": "Die",
+     "start": 35.2,
+     "ende": 35.28
+    },
+    {
+     "wort": "Preise",
+     "start": 35.36,
+     "ende": 35.76
+    },
+    {
+     "wort": "rasen.",
+     "start": 35.84,
+     "ende": 36.4
+    },
+    {
+     "wort": "9,82",
+     "start": 36.72,
+     "ende": 36.76
+    },
+    {
+     "wort": "€",
+     "start": 36.76,
+     "ende": 36.8
+    },
+    {
+     "wort": "Mindestlohn",
+     "start": 36.88,
+     "ende": 37.44
+    },
+    {
+     "wort": "sind",
+     "start": 37.56,
+     "ende": 37.88
+    },
+    {
+     "wort": "nur",
+     "start": 37.88,
+     "ende": 38.2
+    },
+    {
+     "wort": "8,45",
+     "start": 38.2,
+     "ende": 38.519999999999996
+    },
+    {
+     "wort": "€",
+     "start": 38.519999999999996,
+     "ende": 38.839999999999996
+    },
+    {
+     "wort": "von",
+     "start": 38.839999999999996,
+     "ende": 39.16
+    },
+    {
+     "wort": "2015.",
+     "start": 39.16,
+     "ende": 39.48
+    },
+    {
+     "wort": "Anna",
+     "start": 39.68,
+     "ende": 39.92
+    },
+    {
+     "wort": "liegt",
+     "start": 40.0,
+     "ende": 40.16
+    },
+    {
+     "wort": "vorn.",
+     "start": 40.24,
+     "ende": 40.64
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "text": "Dann der Sprung auf 12 €. Lena zieht wieder vorbei. Und heute: 13,90 €.",
+   "start": 41.04,
+   "ende": 47.04,
+   "woerter": [
+    {
+     "wort": "Dann",
+     "start": 41.04,
+     "ende": 41.2
+    },
+    {
+     "wort": "der",
+     "start": 41.28,
+     "ende": 41.36
+    },
+    {
+     "wort": "Sprung",
+     "start": 41.44,
+     "ende": 41.76
+    },
+    {
+     "wort": "auf",
+     "start": 41.88,
+     "ende": 42.0
+    },
+    {
+     "wort": "12",
+     "start": 42.08,
+     "ende": 42.599999999999994
+    },
+    {
+     "wort": "€.",
+     "start": 42.599999999999994,
+     "ende": 43.12
+    },
+    {
+     "wort": "Lena",
+     "start": 43.2,
+     "ende": 43.52
+    },
+    {
+     "wort": "zieht",
+     "start": 43.6,
+     "ende": 43.76
+    },
+    {
+     "wort": "wieder",
+     "start": 43.84,
+     "ende": 44.0
+    },
+    {
+     "wort": "vorbei.",
+     "start": 44.08,
+     "ende": 44.48
+    },
+    {
+     "wort": "Und",
+     "start": 44.8,
+     "ende": 44.88
+    },
+    {
+     "wort": "heute:",
+     "start": 44.96,
+     "ende": 45.36
+    },
+    {
+     "wort": "13,90",
+     "start": 45.68,
+     "ende": 46.36
+    },
+    {
+     "wort": "€.",
+     "start": 46.36,
+     "ende": 47.04
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "text": "Jetzt die Abgaben. Kasse und Pflege kosten 2026 mehr. Von jedem Euro bleiben Anna 73 Cent. Lena nur 71. Der Abstand schrumpft weiter.",
+   "start": 47.12,
+   "ende": 57.48,
+   "woerter": [
+    {
+     "wort": "Jetzt",
+     "start": 47.12,
+     "ende": 47.36
+    },
+    {
+     "wort": "die",
+     "start": 47.44,
+     "ende": 47.52
+    },
+    {
+     "wort": "Abgaben.",
+     "start": 47.6,
+     "ende": 48.28
+    },
+    {
+     "wort": "Kasse",
+     "start": 48.48,
+     "ende": 48.8
+    },
+    {
+     "wort": "und",
+     "start": 48.88,
+     "ende": 48.96
+    },
+    {
+     "wort": "Pflege",
+     "start": 49.04,
+     "ende": 49.36
+    },
+    {
+     "wort": "kosten",
+     "start": 49.52,
+     "ende": 49.84
+    },
+    {
+     "wort": "2026",
+     "start": 49.88,
+     "ende": 50.16
+    },
+    {
+     "wort": "mehr.",
+     "start": 50.24,
+     "ende": 50.56
+    },
+    {
+     "wort": "Von",
+     "start": 50.88,
+     "ende": 51.04
+    },
+    {
+     "wort": "jedem",
+     "start": 51.12,
+     "ende": 51.36
+    },
+    {
+     "wort": "Euro",
+     "start": 51.44,
+     "ende": 51.76
+    },
+    {
+     "wort": "bleiben",
+     "start": 51.84,
+     "ende": 52.16
+    },
+    {
+     "wort": "Anna",
+     "start": 52.32,
+     "ende": 52.48
+    },
+    {
+     "wort": "73",
+     "start": 52.56,
+     "ende": 53.2
+    },
+    {
+     "wort": "Cent.",
+     "start": 53.36,
+     "ende": 53.92
+    },
+    {
+     "wort": "Lena",
+     "start": 54.0,
+     "ende": 54.32
+    },
+    {
+     "wort": "nur",
+     "start": 54.4,
+     "ende": 54.64
+    },
+    {
+     "wort": "71.",
+     "start": 54.68,
+     "ende": 55.76
+    },
+    {
+     "wort": "Der",
+     "start": 55.84,
+     "ende": 55.92
+    },
+    {
+     "wort": "Abstand",
+     "start": 56.0,
+     "ende": 56.4
+    },
+    {
+     "wort": "schrumpft",
+     "start": 56.48,
+     "ende": 56.8
+    },
+    {
+     "wort": "weiter.",
+     "start": 56.88,
+     "ende": 57.48
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand in heutigen Euro: Anna 17.118 € netto, Lena 20.598 €. Lena hat 3.480 € mehr im Jahr.",
+   "start": 57.68,
+   "ende": 62.52,
+   "woerter": [
+    {
+     "wort": "Endstand",
+     "start": 57.68,
+     "ende": 58.4
+    },
+    {
+     "wort": "in",
+     "start": 58.48,
+     "ende": 58.56
+    },
+    {
+     "wort": "heutigen",
+     "start": 58.6,
+     "ende": 58.96
+    },
+    {
+     "wort": "Euro:",
+     "start": 59.04,
+     "ende": 59.36
+    },
+    {
+     "wort": "Anna",
+     "start": 59.36,
+     "ende": 59.42857142857143
+    },
+    {
+     "wort": "17.118",
+     "start": 59.42857142857143,
+     "ende": 59.497142857142855
+    },
+    {
+     "wort": "€",
+     "start": 59.497142857142855,
+     "ende": 59.565714285714286
+    },
+    {
+     "wort": "netto,",
+     "start": 59.565714285714286,
+     "ende": 59.63428571428572
+    },
+    {
+     "wort": "Lena",
+     "start": 59.63428571428572,
+     "ende": 59.70285714285715
+    },
+    {
+     "wort": "20.598",
+     "start": 59.70285714285715,
+     "ende": 59.77142857142857
+    },
+    {
+     "wort": "€.",
+     "start": 59.77142857142857,
+     "ende": 59.84
+    },
+    {
+     "wort": "Lena",
+     "start": 59.84,
+     "ende": 60.16
+    },
+    {
+     "wort": "hat",
+     "start": 60.28,
+     "ende": 60.4
+    },
+    {
+     "wort": "3.480",
+     "start": 60.48,
+     "ende": 61.0
+    },
+    {
+     "wort": "€",
+     "start": 61.0,
+     "ende": 61.52
+    },
+    {
+     "wort": "mehr",
+     "start": 61.68,
+     "ende": 61.84
+    },
+    {
+     "wort": "im",
+     "start": 61.92,
+     "ende": 62.0
+    },
+    {
+     "wort": "Jahr.",
+     "start": 62.08,
+     "ende": 62.52
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Die Preise fressen 4.156 €. Die Abgaben rund 600 €.",
+   "start": 62.92,
+   "ende": 67.52,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 62.92,
+     "ende": 63.4
+    },
+    {
+     "wort": "Die",
+     "start": 63.6,
+     "ende": 63.68
+    },
+    {
+     "wort": "Preise",
+     "start": 63.76,
+     "ende": 64.16
+    },
+    {
+     "wort": "fressen",
+     "start": 64.24,
+     "ende": 64.64
+    },
+    {
+     "wort": "4.156",
+     "start": 64.8,
+     "ende": 65.28
+    },
+    {
+     "wort": "€.",
+     "start": 65.28,
+     "ende": 65.76
+    },
+    {
+     "wort": "Die",
+     "start": 65.8,
+     "ende": 65.84
+    },
+    {
+     "wort": "Abgaben",
+     "start": 65.92,
+     "ende": 66.4
+    },
+    {
+     "wort": "rund",
+     "start": 66.56,
+     "ende": 66.88
+    },
+    {
+     "wort": "600",
+     "start": 66.88,
+     "ende": 67.2
+    },
+    {
+     "wort": "€.",
+     "start": 67.2,
+     "ende": 67.52
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "text": "Und das Verrückte: Annas ganzes Jahr hat Lena schon Ende Oktober verdient.",
+   "start": 67.56,
+   "ende": 71.76,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 67.56,
+     "ende": 67.6
+    },
+    {
+     "wort": "das",
+     "start": 67.68,
+     "ende": 67.76
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 67.84,
+     "ende": 68.32
+    },
+    {
+     "wort": "Annas",
+     "start": 68.72,
+     "ende": 69.12
+    },
+    {
+     "wort": "ganzes",
+     "start": 69.12,
+     "ende": 69.2
+    },
+    {
+     "wort": "Jahr",
+     "start": 69.2,
+     "ende": 69.36
+    },
+    {
+     "wort": "hat",
+     "start": 69.44,
+     "ende": 69.6
+    },
+    {
+     "wort": "Lena",
+     "start": 69.64,
+     "ende": 69.92
+    },
+    {
+     "wort": "schon",
+     "start": 69.92,
+     "ende": 70.08
+    },
+    {
+     "wort": "Ende",
+     "start": 70.08,
+     "ende": 70.32
+    },
+    {
+     "wort": "Oktober",
+     "start": 70.4,
+     "ende": 70.88
+    },
+    {
+     "wort": "verdient.",
+     "start": 70.96,
+     "ende": 71.76
+    }
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "text": "Vom Plus bleibt real knapp die Hälfte.",
+   "start": 71.813,
+   "ende": 74.4,
+   "woerter": [
+    {
+     "wort": "Vom",
+     "start": 71.813,
+     "ende": 71.92
+    },
+    {
+     "wort": "Plus",
+     "start": 72.08,
+     "ende": 72.24
+    },
+    {
+     "wort": "bleibt",
+     "start": 72.32,
+     "ende": 72.56
+    },
+    {
+     "wort": "real",
+     "start": 72.64,
+     "ende": 73.04
+    },
+    {
+     "wort": "knapp",
+     "start": 73.2,
+     "ende": 73.52
+    },
+    {
+     "wort": "die",
+     "start": 73.6,
+     "ende": 73.68
+    },
+    {
+     "wort": "Hälfte.",
+     "start": 73.76,
+     "ende": 74.4
+    }
+   ]
+  }
+ ]
+}

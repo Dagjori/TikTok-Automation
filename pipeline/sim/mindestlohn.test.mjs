@@ -1,0 +1,13 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { videoZahlen, rechne, LOHN } from "./mindestlohn.mjs";
+const Z = videoZahlen();
+test("Brutto je Jahr", () => { assert.equal(Z.bruttoAlt, 17680); assert.equal(Z.bruttoNeu, 28912); assert.equal(Z.bruttoVorsprung, 11232); });
+test("Netto 2015 und 2026 (Skript: 12.962 / 20.598)", () => { assert.equal(Math.round(Z.nettoAlt), 12962); assert.equal(Math.round(Z.nettoNeu), 20598); assert.equal(Math.round(Z.nettoNeu / 12), 1716); });
+test("Preise: +32,1 %, 8,50 € heute 11,23 €", () => { assert.equal(Z.teuerungProzent, 32.1); assert.equal(Z.stundeAltHeute, 11.23); });
+test("Mai 2022: 9,82 € sind nur 8,45 € von 2015 (Anna vorn)", () => { assert.equal(Math.round(Z.stundeMai22Real2015 * 100) / 100, 8.45); assert.ok(Z.stundeMai22Real2015 < LOHN.y2015); assert.ok(Z.lenaMai22Real < Z.bruttoAltReal); });
+test("Okt. 2022 (12 €): Lena liegt wieder vorn", () => assert.ok(Z.lenaOkt22Real > Z.bruttoAltReal && Z.lenaOkt22Real < Z.bruttoNeu));
+test("Endstand real: Lena 3.480 € mehr, Teuerung frisst 4.156 €", () => { assert.equal(Math.round(Z.nettoAltReal), 17118); assert.equal(Math.round(Z.vorsprungNettoReal), 3480); assert.equal(Math.round(Z.teuerungFrisst), 4156); });
+test("Behalten je Euro 73 gegen 71 Cent, Abgaben rund 600 €", () => { assert.equal(Z.behaltenAlt, 0.733); assert.equal(Z.behaltenNeu, 0.712); assert.equal(Math.round(Z.abgabenEffekt), 599); });
+test("Pointe: Annas Jahr in rund 10 Monaten (Ende Oktober), real bleibt knapp die Hälfte", () => { assert.equal(Math.round(Z.monateFuerAnnasJahr * 100) / 100, 9.97); assert.equal(Z.realAnteil, 45.6); });
+test("Rechnung ist deterministisch", () => assert.equal(rechne(2026, 13.9).netto, rechne(2026, 13.9).netto));
