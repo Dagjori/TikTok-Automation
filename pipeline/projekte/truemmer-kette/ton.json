@@ -1,0 +1,17 @@
+{
+ "_hinweis": "Tonplan für atmo.py (nur selbst erzeugte Atmo und Sounddesign, keine Stimme). Schichten mit Pegelkurven [[t, dB], …] (−60 = aus). Einzelklänge aus dem Ereignis-Protokoll der Szene (protokoll_effekte).",
+ "dauer": 80,
+ "seed": 20261108,
+ "schichten": [
+  {"art": "wind", "pegel": [[0, -27], [8, -27], [12, -31], [24, -30], [40, -27], [52, -23], [58, -17], [60, -12], [63, -24], [70, -30], [80, -50]], "hell": [[0, 0.45], [30, 0.6], [58, 0.9], [60.5, 0.3], [80, 0.12]]},
+  {"art": "raum", "pegel": [[0, -34], [8, -34], [12, -30], [30, -28], [50, -24], [58, -20], [60.4, -18], [70, -28], [80, -50]]},
+  {"art": "grollen", "pegel": [[0, -60], [7.6, -60], [8.4, -30], [14, -34], [24, -40], [34, -30], [46, -24], [54, -17], [59.6, -11], [60.4, -10], [63, -18], [70, -34], [80, -50]]},
+  {"art": "brummen", "pegel": [[0, -60], [44, -60], [52, -38], [58, -30], [60.4, -26], [72, -36], [80, -48]], "f": 48},
+  {"art": "tinnitus", "pegel": [[0, -60], [61.2, -60], [62, -48], [69, -52], [72, -60]], "f": 700}
+ ],
+ "dumpf": [[0, 0], [60.0, 0], [60.6, 0.7], [66, 0.65], [70, 0.8], [80, 0.95]],
+ "stille": [],
+ "ereignisse": [],
+ "protokoll_effekte": true,
+ "verlauf": "Gras im Wind, leiser Raumton → Knall bei 8 s und tiefes Grollen → Blitze der Folgekollisionen, Grollen steigt (Riser ab 44 s) → lautester Punkt bei 60 s (Ring geschlossen) → dumpf mit Brummen und Pfeifton → leiser Abspann"
+}

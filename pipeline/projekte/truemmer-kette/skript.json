@@ -1,0 +1,456 @@
+{
+ "skript_id": "acc2-2026-11-08-abend",
+ "skript_quelle": "acc2-2026-11-08-abend",
+ "titel": "Was wäre, wenn im Orbit eine Trümmer-Kettenreaktion startet?",
+ "titelfrage": "Was wäre, wenn im Orbit eine Trümmer-Kettenreaktion startet?",
+ "suchbegriff": "Orbit Trümmer Kettenreaktion",
+ "konto": "stelldirvor",
+ "format": "referenz_pov",
+ "skill": "video-produktion",
+ "laenge_s": 80,
+ "testbloecke": {},
+ "folgen_hinweis": "",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Grundwelt Hochebene bei Nacht (Variante engine/welt_sommerwiese.js)",
+ "thema": "Kessler-Syndrom als Gedankenexperiment: Zwei Satelliten kollidieren wie 2009 über Sibirien, ihre Trümmer treffen weitere Satelliten. Ausgangslage real (ESA, Stand 02.11.2026): 68.450 Objekte über 10 cm im Erdorbit. Verlauf als Modellannahme (ca. 2.300 erfasste Trümmer je Kollision wie 2009).",
+ "welt": "Hochebene im Gebirge mit Gras, Felsen und Wolkenmeer unter dir, klarer Himmel (Welttyp Himmel/Weltraumnähe + Gebirge; Erstbau nötig)",
+ "standpunkt": "erhöht: auf dem Rücken liegend auf einer Felskuppe am Rand einer Hochebene in ca. 2.400 m, Blick schräg nach oben in den Himmel, Grashalme und Fels am unteren Bildrand",
+ "tageszeit_verlauf": "Abenddämmerung (0–12 s, Satelliten im Sonnenlicht sichtbar) → Nacht (12–18 s) → Morgendämmerung (18–24 s) → Nachthimmel im Jahres-Zeitraffer mit wiederkehrenden Dämmerungs-Lichtern (24–58 s) → klare Nacht mit Band (58–70 s)",
+ "zeitraffer": [
+  {
+   "von": 12,
+   "bis": 24,
+   "faktor": "1 Sekunde = 1 Tag (12 Tage)"
+  },
+  {
+   "von": 24,
+   "bis": 58,
+   "faktor": "1 Sekunde = 1 Jahr (26 Jahre bis 50 s, danach Band schließt sich)"
+  }
+ ],
+ "zeitraffer_hinweis": "0–8 s Echtzeit (Countdown), 8–12 s Echtzeit (Kollision), 12–24 s 1 s = 1 Tag, 24–58 s 1 s = 1 Jahr, ab 58 s Echtzeit (Anzeige HIER); Statuszeile nennt den Faktor",
+ "kamera": "0–6 s ruhiger Blick in den Dämmerungshimmel; ab 5 s langsamer Schwenk zu zwei sich nähernden Lichtpunkten; 8 s langsamer Zoom auf den Treffpunkt; 12–24 s Zoom zurück, Schwenk entlang der Trümmerspur; 24–50 s ruhiger Weitwinkel, leichte Drift; 54–58 s Kamera kippt langsam nach oben in den Zenit; 60 s ein harter Schnitt auf den Weitwinkel mit dem geschlossenen Band",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 8,
+   "etikett": "KOLLISION IN",
+   "start": "0:08",
+   "ende": "0:00",
+   "einheit": "m:ss",
+   "unter": "ABENDDÄMMERUNG → (4 s) ZWEI SATELLITEN AUF KURS"
+  },
+  {
+   "von_s": 8,
+   "bis_s": 24,
+   "etikett": "TRÜMMER > 10 CM",
+   "start": "68.450",
+   "ende": "70.750",
+   "einheit": "",
+   "unter": "KOLLISION · 789 KM HOCH → (12 s) 1 SEKUNDE = 1 TAG → (18 s) WOLKE UMRUNDET DIE ERDE"
+  },
+  {
+   "von_s": 24,
+   "bis_s": 50,
+   "etikett": "KOLLISIONEN",
+   "start": "1",
+   "ende": "8",
+   "einheit": "",
+   "unter": "1 SEKUNDE = 1 JAHR → (32 s) KETTENREAKTION → (38 s) IMMER SCHNELLER"
+  },
+  {
+   "von_s": 50,
+   "bis_s": 58,
+   "etikett": "TRÜMMER > 10 CM",
+   "start": "84.550",
+   "ende": "86.850",
+   "einheit": "",
+   "unter": "NEUE TEILE ERFASST → (54 s) BAND SCHLIESST SICH"
+  },
+  {
+   "von_s": 58,
+   "bis_s": 70,
+   "etikett": "TRÜMMER > 10 CM",
+   "start": "HIER",
+   "ende": "HIER",
+   "einheit": "",
+   "unter": "8 KOLLISIONEN"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Abenddämmerung auf der Hochebene, du liegst im Gras."
+  ],
+  [
+   8.4,
+   "Dann treffen sich zwei Lichtpunkte."
+  ],
+  [
+   12,
+   "Aus zwei Satelliten werden Tausende Trümmer."
+  ],
+  [
+   16,
+   "Die Wolke zieht sich um die Erde."
+  ],
+  [
+   20,
+   "Am Morgen glitzern Splitter im Sonnenlicht."
+  ],
+  [
+   24.4,
+   "Dann trifft ein Splitter den nächsten Satelliten."
+  ],
+  [
+   28.4,
+   "Wieder blitzt es, wieder Tausende Teile."
+  ],
+  [
+   32.4,
+   "Jedes Teil wird zum nächsten Geschoss."
+  ],
+  [
+   36.4,
+   "Die Kollisionen folgen immer schneller aufeinander."
+  ],
+  [
+   40.4,
+   "Satellitenketten zerfallen über dir zu Splitterwolken."
+  ],
+  [
+   44.4,
+   "Sternschnuppen ziehen, alte Teile verglühen."
+  ],
+  [
+   50.8,
+   "Jetzt kreisen über 80.000 große Trümmer."
+  ],
+  [
+   54.6,
+   "Die Spuren schließen sich zu einem Band."
+  ],
+  [
+   63,
+   "Darüber leuchten die Sterne wie immer."
+  ],
+  [
+   66.8,
+   "Noch ist das nur ein Modell."
+  ]
+ ],
+ "satz_dauer": "3,2–4,4 s, Lücke ≥ 0,2 s; letzter Satz endet 70,0 s",
+ "bild_text_abgleich": [
+  [
+   4.8,
+   "Abenddämmerung auf der Hochebene, du liegst im Gras.",
+   "Ich-Blick auf dem Rücken im Gras der Hochebene, Gras und Felsen am unteren Rand, Dämmerungshimmel mit ersten Sternen, ein Satellitenzug und zwei Lichtpunkte ziehen"
+  ],
+  [
+   8.4,
+   "Dann treffen sich zwei Lichtpunkte.",
+   "Zwei Lichtpunkte treffen sich bei 8,0 s genau auf Countdown-Null, weißer Blitz mit Funkenfächer"
+  ],
+  [
+   12,
+   "Aus zwei Satelliten werden Tausende Trümmer.",
+   "Trümmerfächer aus Tausenden Lichtpunkten, Zähler läuft 68.450 → 70.750, Kamera zoomt zurück"
+  ],
+  [
+   16,
+   "Die Wolke zieht sich um die Erde.",
+   "Trümmerspur verteilt sich zu einem Streifen quer über den Himmel (1 s = 1 Tag)"
+  ],
+  [
+   20,
+   "Am Morgen glitzern Splitter im Sonnenlicht.",
+   "Morgendämmerung (Horizont rötlich), Splitter glitzern im Licht"
+  ],
+  [
+   24.4,
+   "Dann trifft ein Splitter den nächsten Satelliten.",
+   "Zweite Kollision (Blitz) bei 24,4 s, Anzeige wechselt auf KOLLISIONEN"
+  ],
+  [
+   28.4,
+   "Wieder blitzt es, wieder Tausende Teile.",
+   "Dritte Kollision mit Blitz und neuem Fächer"
+  ],
+  [
+   32.4,
+   "Jedes Teil wird zum nächsten Geschoss.",
+   "Kollisionen 4 und 5, Anzeige KETTENREAKTION"
+  ],
+  [
+   36.4,
+   "Die Kollisionen folgen immer schneller aufeinander.",
+   "Kollisionen 6 und 7 in immer kürzerem Abstand, Himmel kippt ins Violett"
+  ],
+  [
+   40.4,
+   "Satellitenketten zerfallen über dir zu Splitterwolken.",
+   "Satellitenpunkte der Kette zerfallen in Splitterwolken (Mini-Blitze), 8. Kollision bei 41,6 s"
+  ],
+  [
+   44.4,
+   "Sternschnuppen ziehen, alte Teile verglühen.",
+   "Sternschnuppen ziehen über den Himmel"
+  ],
+  [
+   50.8,
+   "Jetzt kreisen über 80.000 große Trümmer.",
+   "Anzeige TRÜMMER 84.550 → 86.850, Band leuchtet auf"
+  ],
+  [
+   54.6,
+   "Die Spuren schließen sich zu einem Band.",
+   "Die Spuren verdichten sich zu einem schimmernden Band, Kamera kippt in den Zenit"
+  ],
+  [
+   63,
+   "Darüber leuchten die Sterne wie immer.",
+   "Nach dem harten Schnitt: geschlossenes helles Band über der Hochebene, Sterne dahinter"
+  ],
+  [
+   66.8,
+   "Noch ist das nur ein Modell.",
+   "Band schimmert ruhig, Wind im Gras"
+  ]
+ ],
+ "bewegungsplan": [
+  [
+   0,
+   "Gras wiegt sich vor der Linse, Dämmerungshimmel, Satellitenzug zieht, zwei Satelliten nähern sich",
+   1
+  ],
+  [
+   2.5,
+   "Satelliten blinken im Sonnenlicht, erste Sterne treten hervor",
+   1
+  ],
+  [
+   5,
+   "Schwenk zu den zwei Lichtpunkten, Zoom beginnt bei 7,4 s",
+   1
+  ],
+  [
+   8,
+   "Kollisionsblitz, Funkenfächer, Kamerastoß",
+   2
+  ],
+  [
+   10,
+   "Trümmerfächer breitet sich aus, Sternenhimmel dreht sich",
+   1
+  ],
+  [
+   14,
+   "Wolke verteilt sich zu einem Streifen, Himmel dunkel",
+   1
+  ],
+  [
+   18,
+   "Morgendämmerung baut sich auf, Horizont rötlich",
+   1
+  ],
+  [
+   21,
+   "Splitter glitzern, Dämmerlicht",
+   1
+  ],
+  [
+   24.4,
+   "Kollision 2, Farbe kippt ins Violett",
+   2
+  ],
+  [
+   28.4,
+   "Kollision 3",
+   2
+  ],
+  [
+   32,
+   "Kollision 4",
+   2
+  ],
+  [
+   35,
+   "Kollision 5",
+   2
+  ],
+  [
+   37.6,
+   "Kollision 6",
+   2
+  ],
+  [
+   39.8,
+   "Kollision 7",
+   2
+  ],
+  [
+   41.6,
+   "Kollision 8, Satellitenketten zerfallen",
+   2
+  ],
+  [
+   44.4,
+   "Sternschnuppen häufen sich",
+   1
+  ],
+  [
+   50,
+   "Band leuchtet auf, Kamera kippt in den Zenit",
+   1
+  ],
+  [
+   55,
+   "Band schließt sich zum Ring",
+   1
+  ],
+  [
+   60,
+   "Harter Schnitt: Weitwinkel, Band geschlossen, Lichtschimmer läuft einmal herum",
+   3
+  ],
+  [
+   64,
+   "Sterne und Band, Wind im Gras",
+   1
+  ]
+ ],
+ "hoehepunkt": "60 s: harter Schnitt auf den Weitwinkel, das Band schließt sich zum Ring (Anzeige HIER)",
+ "abspann": {
+  "frage": "Was wäre, wenn im Orbit eine Trümmer-Kettenreaktion startet?",
+  "fakt": "SIBIRIEN, 2009 · ZWEI SATELLITEN KOLLIDIEREN, ÜBER 2.000 ERFASSTE TRÜMMER · HEUTE 68.450 OBJEKTE ÜBER 10 CM IM ORBIT"
+ },
+ "faktenzeile": "SIBIRIEN, 2009 · ZWEI SATELLITEN KOLLIDIEREN, ÜBER 2.000 ERFASSTE TRÜMMER · HEUTE 68.450 OBJEKTE ÜBER 10 CM IM ORBIT",
+ "dramaturgie": [
+  "0–4 s: Dämmerungshimmel über Wolkenmeer, Gras weht vor der Linse, erste Sterne, ein Satellitenzug zieht; Welteffekt (Wind, Wolkenzug) vor 2 s; Countdown läuft, zwei Lichtpunkte nähern sich unbemerkt.",
+  "5 s: langsamer Schwenk zu den zwei Lichtpunkten (Kamera vor 8 s).",
+  "8 s Ereignis auf Null: Lichtpunkte treffen sich, kurzes weißes Aufblitzen, ein Fächer aus feinen Lichtspuren; Ton: trockener Knall-Akzent, danach tiefes Brummen; Anzeige wechselt auf TRÜMMER > 10 CM und zählt 68.450 → 70.750.",
+  "12–24 s Stufe 1: Zeitraffer (1 s = 1 Tag), Sterne drehen sich, die Trümmerspur verteilt sich zu einem dünnen Streifen quer über den Himmel; 20 s Morgendämmerung, Splitter glitzern rötlich.",
+  "24,4 s Stufe 2: zweite Kollision (Blitz), Zähler KOLLISIONEN 2; Farbe kippt von Blau ins kalte Violett.",
+  "28–45 s Stufe 3 (visuell besonders): Blitze in immer kürzeren Abständen (Kollisionen 3–8 bei 28,4 bis 41,6 s), Satellitenzüge zerfallen, Sternschnuppen verglühen tiefer; Statuszeile KETTENREAKTION → IMMER SCHNELLER; Riser baut sich auf.",
+  "50–58 s Annäherung: Spuren verdichten sich zu einem schimmernden Band, Kamera kippt langsam in den Zenit; Zähler TRÜMMER > 10 CM 84.550 → 86.850.",
+  "60 s Höhepunkt HIER: harter Schnitt auf den Weitwinkel, das Band schließt sich als heller Ring über der Hochebene, heller Lichtschimmer läuft einmal ums Band, lautester Punkt, kein Satz.",
+  "62–70 s Nachspiel: Ton wird dumpf, das Band schimmert weiter, dahinter ruhige Sterne, Wind im Gras; Schlusssatz ordnet als Modell ein.",
+  "70–80 s: Abblende, Abspann mit Titelfrage und Faktenzeile.",
+  "Weltvielfalt: Mittag Wald (ebenerdig, Ende Grün/Tier) → Abend Hochebene (erhöht, Ende Nachthimmel); anderer Welttyp, Standpunkt-Typ und Tageszeit-Verlauf (Mittag Tag → Abend, Abend Dämmerung/Nacht)."
+ ],
+ "rechenweg": "Basis 68.450 Objekte > 10 cm (ESA MASTER-8, Referenz 02/2026). Je Kollision + 2.300 (Annahme nach 2009: 1.668 + 628 = 2296 katalogisierte Teile). Nach Kollision 1 (8 s): 68.450 + 2.300 = 70750. Kollisionen 2–8 bei 24,4 / 28,4 / 32,0 / 35,0 / 37,6 / 39,8 / 41,6 s (Abstände 4,0 → 3,6 → 3,0 → 2,6 → 2,2 → 1,8 s = immer schneller; bei 1 s = 1 Jahr also ca. 4 Jahre bis unter 2 Jahre, Zähler 1 → 8). Phase 4 (50–58 s): die Teile der 7. und 8. Kollision werden nach und nach erfasst, Anzeige 84.550 → 86.850 (wie 2009: die Zahl erfasster Teile wuchs über Jahre). Nach 7: 68.450 + 7 × 2.300 = 84550 (Satz ‚über 80.000‘ bei 50,8 s passt, Anzeige dann ca. 84.780), nach 8 voll erfasst (58 s): 86850 = +26.9 % gegenüber heute. Zeitraffer: 12–24 s = 12 s × 1 Tag = 12 Tage; 24–50 s = 26 s × 1 Jahr = 26 Jahre. Nachgerechnet mit Python (cockpit/daten/tmp/skripte_acc2_0811.py).",
+ "zahlen": {
+  "objekte_ueber_10cm_esa_02_2026": 68450,
+  "objekte_1_bis_10cm": 1500000,
+  "objekte_1mm_bis_1cm": 230000000,
+  "katalogisiert_verfolgt": 47340,
+  "satelliten_im_orbit": 19610,
+  "davon_aktiv": 15800,
+  "kollision_2009_hoehe_km": 789,
+  "kollision_2009_relativgeschwindigkeit_km_s": 11.7,
+  "kollision_2009_teile_katalogisiert_2016": 2296,
+  "wiedereintritte_intakt_pro_tag": "mehr als 3",
+  "iridium_kosmos_teile": 2296,
+  "truemmer_nach_1": 70750,
+  "truemmer_nach_7": 84550,
+  "truemmer_nach_8": 86850,
+  "zuwachs_nach_8_prozent": 26.9,
+  "raffer_phase3_jahre": 26,
+  "raffer_phase2_tage": 12
+ },
+ "rechnung": {
+  "code": "pipeline/sim/truemmer_kette.mjs (Test: pipeline/sim/truemmer_kette.test.mjs, grün)"
+ },
+ "quellen": [
+  "(F) ESA DISCOSweb Space Environment Statistics, Stand 02.11.2026: 68.450 Objekte > 10 cm (MASTER-8, Referenz 02/2026), 1,5 Mio. 1–10 cm, 230 Mio. 1 mm–1 cm, ca. 47.340 verfolgt, 19.610 Satelliten im All, 15.800 aktiv – https://sdup.esoc.esa.int/discosweb/statistics/",
+  "(F) ESA, Der ESA Space Environment Report 2026, 14.09.2026: ‚Kollisionen erzeugen Kollisionen‘, Population wächst selbst ohne neue Starts, mehr als drei intakte Wiedereintritte pro Tag – https://www.esa.int/Space_in_Member_States/Germany/Der_ESA_Space_Environment_Report_2026",
+  "(F) Kessler & Cour-Palais (1978): Collision Frequency of Artificial Satellites: The Creation of a Debris Belt, Journal of Geophysical Research 83(A6) – https://ntrs.nasa.gov/citations/19780057167",
+  "(F) Kollision Iridium 33 / Kosmos-2251, 10.02.2009 über der Taimyr-Halbinsel (Sibirien), ca. 789 km, 11,7 km/s; Space News 2016: 1.668 + 628 katalogisierte Teile; NASA ODQN 07/2011: über 2.000 große Fragmente – https://en.wikipedia.org/wiki/2009_satellite_collision",
+  "(F) Wang, T. (2010): Analysis of Debris from the Collision of the Cosmos 2251 and the Iridium 33 Satellites, Science & Global Security – https://scienceandglobalsecurity.org/archive/sgs18tingwang.pdf"
+ ],
+ "annahmen": [
+  "(A) Modellannahme: jede Kollision erzeugt wie 2009 rund 2.300 erfasste Trümmer über 10 cm; 8 Kollisionen in rund 18 Jahren mit schrumpfenden Abständen. Tempo und Zahl der Folgekollisionen sind nicht belegt, sie veranschaulichen nur das Prinzip ‚Kollisionen erzeugen Kollisionen‘ (ESA 2026).",
+  "(A) Sichtbarkeit stilisiert: Einzelne Trümmer sind mit bloßem Auge meist nicht zu sehen; Satelliten und große Teile sieht man nur in der Dämmerung im Sonnenlicht. Im Bild erscheinen sie als Lichtpunkte und Spuren.",
+  "(A) Höhe der Kollision 789 km wie 2009.",
+  "(A) Kein Mensch in Gefahr, keine Raumstation im Bild; Schlusssatz ‚Noch ist das nur ein Modell‘ gegen Panik.",
+  "(S) ‚Sternschnuppen, alte Teile verglühen‘: ESA meldet im Schnitt mehr als drei intakte Wiedereintritte pro Tag, dazu kleine Fragmente."
+ ],
+ "caption": "Was wäre, wenn Weltraumschrott eine Kettenreaktion startet? 🛰️ Ich hab’s durchgespielt. Wer sollte den Orbit aufräumen? 👇 #weltraumschrott #kesslersyndrom #satelliten #wissen #waswaerewenn",
+ "korrekturen": [
+  {
+   "feld": "anzeige_plan[4].etikett",
+   "alt": "HIER",
+   "neu": "TRÜMMER > 10 CM (Zahl HIER, Unterzeile 8 KOLLISIONEN)",
+   "quelle": "Lesbarkeit der Anzeige",
+   "grund": "Etikett und Zahl „HIER“ doppelt wäre unleserlich; Etikett bleibt, Zahl zeigt HIER",
+   "zeit": "2026-11-08T11:05:15.832Z"
+  }
+ ],
+ "lern_notizen": {
+  "welt": "Hochebene bei Nacht (Variante der Sommerwiese)",
+  "standpunkt": "auf dem Rücken im Gras, Blick schräg nach oben",
+  "tageszeit": [
+   "Abenddämmerung",
+   "Nacht",
+   "Morgendämmerung",
+   "Nacht (violett)"
+  ],
+  "kamera": [
+   {
+    "t": 5,
+    "art": "schwenk"
+   },
+   {
+    "t": 7.4,
+    "art": "zoom",
+    "von": 52,
+    "bis": 34
+   },
+   {
+    "t": 12,
+    "art": "zoom",
+    "von": 34,
+    "bis": 62
+   },
+   {
+    "t": 24,
+    "art": "fahrt"
+   },
+   {
+    "t": 50,
+    "art": "schwenk (Zenit)"
+   },
+   {
+    "t": 60,
+    "art": "schnitt"
+   }
+  ],
+  "zeitraffer": "1 s = 1 Tag, dann 1 s = 1 Jahr",
+  "effekte": "siehe ereignisse.json",
+  "sequenzen": 5,
+  "t_ereignis": 8,
+  "countdown": "ja, zweiter: nein",
+  "schnitte": [
+   {
+    "t": 60,
+    "grund": "Höhepunkt"
+   }
+  ],
+  "statuszeile": [
+   "ABENDDÄMMERUNG",
+   "ZWEI SATELLITEN AUF KURS",
+   "KOLLISION · 789 KM HOCH",
+   "1 SEKUNDE = 1 TAG",
+   "WOLKE UMRUNDET DIE ERDE",
+   "1 SEKUNDE = 1 JAHR",
+   "KETTENREAKTION",
+   "IMMER SCHNELLER",
+   "NEUE TEILE ERFASST",
+   "BAND SCHLIESST SICH",
+   "8 KOLLISIONEN"
+  ],
+  "testbloecke": {},
+  "laenge_s": 80,
+  "t_stufe2": 24.4,
+  "folgen_hinweis": ""
+ }
+}
