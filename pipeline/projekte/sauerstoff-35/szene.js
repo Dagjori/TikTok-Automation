@@ -64,7 +64,7 @@ function zielBei(t) {
 }
 // nach dem Schnitt: Nahsicht am Baumstumpf (Blick nach +x/−z, Sonne im Gegenlicht)
 const S_OBEN = () => [STUMPF.x, gy(STUMPF.x, STUMPF.z) - 0.06 + STUMPF.h + 0.02, STUMPF.z];
-const C2a = () => add(S_OBEN(), [-1.2, 0.27, 1.08]), C2b = () => add(S_OBEN(), [-0.92, 0.23, 0.82]);
+const C2a = () => add(S_OBEN(), [-1.25, 0.62, 1.12]), C2b = () => add(S_OBEN(), [-0.98, 0.52, 0.88]);
 const SCHWEBE = () => add(S_OBEN(), [0.02, 0.34, 0.05]);
 
 // ---------------------------------------------------------------- Tageslauf, Himmel, Licht
@@ -265,7 +265,7 @@ async function start() {
     feuerL2.position.set(FICHTE.x + fdir[0] * R, gy(FICHTE.x, FICHTE.z) + 3, FICHTE.z + fdir[2] * R * 0.6); feuerL2.intensity = 160 * br * (0.8 + 0.2 * Math.sin(t * 17 + 1));
     // Welt
     const glutLicht = [1.0 * br * 0.5 + 0.3 * fz.feuer, 0.35 * br * 0.5 + 0.1 * fz.feuer, 0.06 * br * 0.5];
-    welt0.setze(t, kam, { wind: WIND(t), laub: laubF(t), laub2: laub2F(t), gras: grasF(t), gras2: gras2F(t), TB, brandAn: t > TB ? 1 : 0, erholt: smoothstep(31, 34.5, t), glutS: lerp(1, 0.75, smoothstep(26, 28, t)) * (1 - smoothstep(30.3, 31.2, t)),
+    welt0.setze(t, kam, { wind: WIND(t), laub: laubF(t), laub2: laub2F(t), gras: grasF(t), gras2: gras2F(t), TB, brandAn: t > TB ? 1 : 0, erholt: smoothstep(31.8, 36, t), glutS: lerp(1, 0.75, smoothstep(26, 28, t)) * (1 - smoothstep(30.3, 31.2, t)),
       farnNeu: smoothstep(30.8, 35.5, t), zenit: zen, horizont: hor, sonne: L0, sonneF: sonneF(t), glitzer: (1 - sturm) * (1 - nacht) * (t < 12 ? 1.25 : t > 48 ? 1.2 : 0.8),
       wasserHell: lerp(lerp(1, 0.5, sturm), 0.2, nacht) + bl * 0.6, regen: smoothstep(16.3, 17.5, t) * (1 - smoothstep(20.5, 22, t)), glutLicht,
       waldR: cT2.set("#2E4A2A").lerp(cT.set("#0A0E12"), Math.max(nacht, sturm * 0.6)), fichteZ: fz });
