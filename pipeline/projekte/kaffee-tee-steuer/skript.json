@@ -1,0 +1,159 @@
+{
+ "titel": "Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?",
+ "skill": "video-produktion",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-09-abend",
+ "stil": "18 Dunkles Studio (Produktlicht), belebte Szene",
+ "stil_begruendung": "Das Skript dreht sich um zwei Tassen und eine Steuer, die Münze für Münze aus Toms Tasse fällt: Produktlicht auf zwei Küchen-Dioramen (Tom in Kupfer, Mia in Grün) mit dampfender Tasse, Fenster, Münzstapel, einer Balkenwaage als Gleichgewicht-Bild und einer Kalenderwand für die 60 Jahre. Dunkle Welt mit Leuchtakzenten (REA R13/R23), Umgebung und Handlung vorhanden (Küchenräume, Dampf, fallende Münzen, Kalender), nicht reine Objekte vor Schwarz. Vortag Abend Stil 17, Mittag heute Stil 20; Stil 18 zuletzt am 06.11.",
+ "teamfarben": {
+  "Tom": "#D9822B",
+  "Mia": "#3FBF7F"
+ },
+ "klangteppich": "raum",
+ "stil_helligkeit": "dunkel",
+ "suchbegriff": "Kaffeesteuer",
+ "testbloecke": {},
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?",
+   "sprechtext": "Kaffee oder Tee?\nWer zahlt im Leben mehr Steuern?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "Tom trinkt Kaffee. Mia trinkt Tee. Beide 3 Tassen am Tag. 60 Jahre lang. Gezählt wird nur die Extra-Steuer.",
+   "sprechtext": "Tom trinkt Kaffee, Mia trinkt Tee,\nbeide drei Tassen am Tag, sechzig Jahre lang.\nGezählt wird nur die EXTRA-Steuer.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, beide zahlen gleich. Oder?",
+   "sprechtext": "Klar … beide zahlen GLEICH.\nOder?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Die Zähler laufen. Toms Tasse: 7,5 g Kaffee. Darauf: Kaffeesteuer, 2,19 € pro Kilo. Mias Zähler bleibt bei 0 €.",
+   "sprechtext": "Die Zähler laufen.\nToms Tasse: siebeneinhalb Gramm Kaffee,\ndarauf liegt die Kaffeesteuer, zwei Euro neunzehn pro Kilo.\nMias Zähler bleibt bei null.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Denn eine Teesteuer gibt es nicht mehr. Bis 1992 schon: 4,15 Mark pro Kilo. Fast genau so viel wie Kaffee heute.",
+   "sprechtext": "Denn eine Teesteuer gibt es nicht mehr.\nBis zweiundneunzig schon, vier Mark fünfzehn pro Kilo.\nFast GENAU so viel wie Kaffee heute.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Zurück zu Tom. Pro Tasse: 1,64 Cent. Doch auf die Steuer kommen 7 % Umsatzsteuer. Steuer auf die Steuer.",
+   "sprechtext": "Zurück zu Tom.\nPro Tasse: gut eineinhalb Cent.\nDoch auf die Steuer kommt Umsatzsteuer.\nSteuer auf die STEUER.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "Noch merkwürdiger: Löslicher Kaffee zahlt 4,78 € pro Kilo. Mehr als das Doppelte. Pro Tasse aber nur die Hälfte.",
+   "sprechtext": "Noch merkwürdiger:\nLöslicher Kaffee zahlt pro Kilo mehr als das Doppelte.\nPro Tasse aber nur die HÄLFTE.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "kipp",
+   "phase": "kipp",
+   "text": "Jetzt summiert es sich. 10 Jahre: 192 €. 30 Jahre: 577 €. Mia: immer noch 0 €.",
+   "sprechtext": "Jetzt summiert es sich.\nZehn Jahre: knapp zweihundert Euro.\nDreißig Jahre: fast sechshundert.\nMia: immer noch NULL.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Endstand nach 60 Jahren: Tom 1.154,66 €. Mia 0 €.",
+   "sprechtext": "Endstand nach sechzig Jahren:\nTom zahlt rund elfhundertfünfzig Euro.\nMia – NULL.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Warum? Kaffee hat eine eigene Steuer. Tee seit 1993 nicht mehr.",
+   "sprechtext": "[thoughtful] Warum?\nKaffee hat eine eigene Steuer, Tee nicht mehr.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "pointe",
+   "phase": "pointe",
+   "text": "Und das Verrückte: Der Bund nimmt so täglich fast 3 Millionen € ein.",
+   "sprechtext": "Und das Verrückte:\nDer Bund nimmt so täglich fast DREI Millionen ein.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "schlusskarte",
+   "phase": "schlusskarte",
+   "text": "Gleicher Durst – nur Kaffee zahlt extra.",
+   "sprechtext": "Gleicher Durst – nur Kaffee zahlt EXTRA.",
+   "bild_text_abgleich": []
+  }
+ ],
+ "caption": "Kaffee oder Tee – wer zahlt im Leben mehr Steuern fürs Heißgetränk? ☕ Ich hab's simuliert. Wusstet ihr, dass es bis 1992 eine Teesteuer gab? 👇 #kaffeesteuer #kaffee #tee #wissen #simulation",
+ "rechenweg": "Kaffee je Tasse (125 ml) = 60 g/l × 0,125 l = 7,5 g. Kaffeesteuer je Tasse = 0,0075 kg × 2,19 €/kg = 1,6425 ct; Umsatzsteuer 7 % auf die Steuer (Bemessungsgrundlage enthält die Verbrauchsteuer) = 0,115 ct → 1,7575 ct je Tasse. Tassen je Jahr = 3 × 365 = 1.095 → 8,2125 kg → 17,99 € Kaffeesteuer, 19,24 € inkl. USt darauf. Zwischenstände inkl. USt: 10 Jahre 192,44 €, 20 Jahre 384,89 €, 30 Jahre 577,33 €, 40 Jahre 769,77 €, 50 Jahre 962,22 €. 60 Jahre: 65.700 Tassen, 492,75 kg Kaffee → 1.079,12 € Kaffeesteuer + 75,54 € USt darauf = 1.154,66 €. Tee: 0 € Verbrauchsteuer (seit 1993 keine Teesteuer). Löslicher Kaffee: 4,78 €/kg = 2,18 × Röstkaffee-Satz; je Tasse 1,8 g × 4,78 €/kg = 0,86 ct = 52,4 % der Filtertasse. Teesteuer bis 1992: 4,15 DM/kg = 2,12 € (÷ 1,95583) gegen 2,19 €/kg Kaffee heute. Aufkommen 2025: 1.037,9 Mio. € / 365 = 2,84 Mio. € je Tag. Alles mit Python nachgerechnet.",
+ "zahlen": {
+  "Kaffeesteuer Röstkaffee": "2,19 €/kg",
+  "Kaffeesteuer löslicher Kaffee": "4,78 €/kg",
+  "Kaffee je Tasse (A)": "7,5 g (125 ml, 60 g/l)",
+  "Steuer je Tasse": "1,64 ct (1,76 ct inkl. USt)",
+  "Tassen je Tag (A)": "3",
+  "Jahre (A)": "60",
+  "Tassen im Leben": "65.700",
+  "Kaffee im Leben": "492,75 kg",
+  "10 Jahre": "192,44 €",
+  "30 Jahre": "577,33 €",
+  "Endstand Kaffee": "1.154,66 € (1.079,12 € Kaffeesteuer + 75,54 € USt darauf)",
+  "Endstand Tee": "0 €",
+  "Teesteuer bis 1992": "4,15 DM/kg ≈ 2,12 €/kg",
+  "Instant je Tasse": "0,86 ct (52 % der Filtertasse)",
+  "Aufkommen 2025": "1.037,9 Mio. €",
+  "Aufkommen je Tag": "2,84 Mio. €"
+ },
+ "annahmen": [
+  "(A) Modellperson: 3 Tassen à 125 ml täglich, 60 Jahre lang (Kaffeeverband: Kaffeetrinker trinken im Schnitt knapp 4 Tassen, Wert 2022 → konservativ gerechnet)",
+  "(A) 7,5 g Röstkaffee je Tasse nach Faustregel 60 g je Liter; stärkere oder schwächere Zubereitung ändert das Ergebnis proportional",
+  "(A) Steuer wird voll im Preis weitergegeben; gezählt wird nur die Extra-Steuer (Kaffeesteuer und die Umsatzsteuer, die auf sie entfällt), nicht die Umsatzsteuer auf das Getränk selbst, die beide zahlen",
+  "(A) Rechtsstand 2026 bleibt 60 Jahre gleich, ohne Inflation oder Satzänderung",
+  "(A) Löslicher Kaffee 1,8 g je Tasse nach Herstellerangaben (200 g ≈ 112 Tassen)",
+  "(S) Teesteuer endete mit dem Inkrafttreten des Kaffeesteuergesetzes vom 21.12.1992 (Binnenmarkt, 01.01.1993)"
+ ],
+ "quellen": [
+  "(F) § 2 KaffeeStG: 2,19 €/kg Röstkaffee, 4,78 €/kg löslicher Kaffee, BMJ – https://www.gesetze-im-internet.de/kaffeestg_2009/__2.html",
+  "(F) Entwurf Kaffee- und Teesteuergesetz, Drucksache 8/3297 (26.10.1979): Tee 4,15 DM/kg, Röstkaffee 4,30 DM/kg – https://dserver.bundestag.de/btd/08/032/0803297.pdf",
+  "(F) Kaffeesteuergesetz vom 21.12.1992 (BGBl. I S. 2150) § 22: Kaffee- und Teesteuergesetz vom 05.05.1980 tritt außer Kraft – https://umwelt-online.de/recht/allgemei/steuer/kaffeestgz1992.htm",
+  "(F) Kaffeesteuer-Aufkommen 2025 1.037,9 Mio. € (BMF-Übersicht, Meldung 03.10.2026) – https://www.deutscherpresseindex.de/2026/10/03/kaffeesteuer-bringt-dem-bund-2025-wieder-1-04-milliarden-euro-nach-dem-einzigen-jahr-unter-der-milliardenmarke-wchst-das-aufkommen-um-4-6-prozent/",
+  "(F) Deutscher Kaffeemarkt 2025: ca. 456.000 t Röstkaffee, Deutscher Kaffeeverband (01.04.2026) – https://www.kaffeeverband.de/media/presse_pdf/Deutscher_Kaffeemarkt_2025.pdf",
+  "(F) Kaffeetrinker trinken im Schnitt knapp 4 Tassen täglich, Deutscher Kaffeeverband via hogapage – https://www.hogapage.de/nachrichten/beverage/kaffee-tee/deutschlands-kaffeekonsum-auf-rekordniveau",
+  "(F) Dosierung Filterkaffee 60 g je Liter (Standard 6 g je 100 ml), Kaffeemacher – https://kaffeemacher.de/blogs/kaffeewissen/wieviel-kaffee-pro-tasse",
+  "(F) Löslicher Kaffee ca. 1,8 g je Tasse (Herstellerangaben 200 g ≈ 112 Tassen), lecker.de – https://www.lecker.de/loeslicher-kaffee-127514.html",
+  "(F) Umsatzsteuer 7 % auf Röstkaffee und Tee (§ 12 Abs. 2 Nr. 1 UStG, Anlage 2), Bemessungsgrundlage inkl. Verbrauchsteuer (§ 10 UStG) – https://www.gesetze-im-internet.de/ustg_1980/__12.html"
+ ],
+ "korrekturen": [
+  {
+   "feld": "segmente[11].id",
+   "alt": "schluss",
+   "neu": "schlusskarte",
+   "quelle": "Skill simulierbar.md, Eingangsprüfung",
+   "grund": "formale Phasen-ID, Inhalt unverändert",
+   "zeit": "2026-11-09"
+  },
+  {
+   "feld": "faktencheck",
+   "alt": "-",
+   "neu": "Alle Zahlen mit sim/kaffeesteuer.mjs nachgerechnet (5 Tests grün): 1,64 ct je Tasse (1,76 mit USt), 192,44 € / 577,33 €, Endstand 1.154,66 € (1.079,12 € + 75,54 € USt), Instant 0,86 ct (52,4 %), 2,84 Mio. € je Tag; keine Abweichung zum Skript.",
+   "quelle": "pipeline/sim/kaffeesteuer.test.mjs",
+   "grund": "Faktencheck vor dem Bau, Ergebnis unverändert",
+   "zeit": "2026-11-09"
+  }
+ ]
+}

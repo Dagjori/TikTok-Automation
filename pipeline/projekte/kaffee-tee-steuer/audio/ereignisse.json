@@ -1,0 +1,1988 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "kaffee-tee-steuer",
+ "fps": 30,
+ "dauer": 73,
+ "stimmEnde": 72.491,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "raum",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "TOM · KAFFEE",
+    "farbe": "#D9822B"
+   },
+   "b": {
+    "name": "MIA · TEE",
+    "farbe": "#3FBF7F"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 4,
+   "groesse": 64,
+   "unten": 1450,
+   "phrasen": 59
+  },
+  "timing": "echt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "KAFFEE"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "vs"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "TEE"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WER ZAHLT MEHR"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "KAFFEESTEUER IM LEBEN?"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "tafel",
+   "klang": false,
+   "bild": false,
+   "ab": "start"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Kaffee oder Tee?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 0,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.05,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "EXTRA-STEUER IM LEBEN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zwei Küchen leuchten auf, Dampf steigt, Kamera schiebt sich heran"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 1.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wer zahlt",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.36,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 2.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Leben mehr Steuern",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.86,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 3.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "für sein Heißgetränk?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.28,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 3.58,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "TOM · KAFFEE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 3.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Tom trinkt Kaffee.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.68,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.98,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MIA · TEE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 5.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mia trinkt Tee.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.08,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 6.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Beide 3 Tassen",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.7,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "3 TASSEN AM TAG"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 7.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "am Tag.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.14,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "60 JAHRE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 8.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "60 Jahre lang.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gezählt wird nur",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.76,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 10.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "die Extra-Steuer.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.26,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.9,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.9,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.9,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.9,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 11.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar, beide zahlen gleich.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 12,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.827,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 14.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 14.8,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.15,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STUFE 1 · TASSE FÜR TASSE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 15.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Die Zähler laufen.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 16.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Toms Tasse:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.56,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 17.58,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "7,5 G KAFFEE JE TASSE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 17.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "7,5 g Kaffee.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.06,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 19.14,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 19.14,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KAFFEESTEUER · 2,19 € JE KILO"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 19.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Darauf: Kaffeesteuer,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.24,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.24,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Erste Münze fällt in Toms Stapel, Waage neigt sich zu Tom"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 19.44,
+   "art": "zoom",
+   "dauer": 1.6,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.533,
+   "typ": "zaehler",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.567,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.74,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 20.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "2,19 € pro Kilo.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.96,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.46,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 22.94,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MIA · 0 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 23.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mias Zähler bleibt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.04,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.04,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Mias Stapel bleibt leer"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 24.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "bei 0 €.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.56,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.76,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.76,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.91,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RÜCKBLICK · TEESTEUER BIS 1992"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 24.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Denn eine Teesteuer gibt",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.96,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.96,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Rückblick: Kamera zu Mias Teetasse"
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.26,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "TEESTEUER BIS 1992"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.36,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 26.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "es nicht mehr.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.86,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 27.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Bis 1992 schon:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 27.44,
+   "art": "zoom",
+   "dauer": 1.6,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.44,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Teesteuer bis 1992, Zoom auf Mias Tasse"
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.7,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "4,15 MARK = 2,12 € JE KILO"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 28.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "4,15 Mark pro Kilo.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.8,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.58,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KAFFEE HEUTE · 2,19 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 30.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Fast genau so viel",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.68,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 31.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "wie Kaffee heute.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.56,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.76,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.76,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.76,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.91,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STEUER AUF DIE STEUER"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 32.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Zurück zu Tom.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.96,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.96,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zurück zu Tom, Kamera nah"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 34.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Pro Tasse:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.46,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 34.86,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "1,64 CENT JE TASSE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 34.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "1,64 Cent.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.96,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 36.477,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Doch auf die Steuer",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.507,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 37.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "kommen 7 % Umsatzsteuer.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 37.34,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+ 7 % UMSATZSTEUER DARAUF"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.72,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "= 1,76 CENT JE TASSE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 38.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Steuer auf die Steuer.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.92,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Steuer auf die Steuer: Chip 1,76 Cent"
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.12,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.32,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.32,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.32,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.47,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LÖSLICHER KAFFEE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 40.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Noch merkwürdiger:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.52,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.52,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Löslicher Kaffee: Spot auf Toms Tasse"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Löslicher Kaffee zahlt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.84,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 42.94,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LÖSLICH · 4,78 € JE KILO"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 43.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "4,78 € pro Kilo.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.02,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JE TASSE NUR 0,86 CENT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.04,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.12,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Je Tasse nur die Hälfte, Tasse pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 43.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mehr als das Doppelte.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.62,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 45.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Pro Tasse",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 45.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "aber nur die Hälfte.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.12,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 46.92,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 47.12,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 47.12,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 47.27,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ZEITRAFFER · 60 JAHRE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 47.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Jetzt summiert es sich.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.3,
+   "typ": "zaehler",
+   "dauer": 8.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.32,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zeitraffer: Kalenderwand leuchtet, Jahre laufen, Stapel wächst"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.953,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 48.153,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 48.32,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 48.453,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 48.62,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 48.787,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "10 Jahre:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 48.987,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 49.22,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 49.66,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "10 JAHRE · 192 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 49.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "192 €.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 49.753,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.76,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "10 Jahre: 192 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 49.887,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 50.02,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 50.153,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 50.287,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 50.42,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 50.653,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 50.787,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 50.92,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.053,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 51.063,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "30 Jahre:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.187,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.26,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.32,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.453,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.587,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.72,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.853,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.987,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.12,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.253,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.3,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "30 JAHRE · 577 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 52.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "577 €.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.387,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.4,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "30 Jahre: 577 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.82,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 53.02,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 53.187,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 53.42,
+   "typ": "uhr",
+   "dauer": 1.933,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.7,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MIA · IMMER NOCH 0 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 53.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mia:",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.8,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 54.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "immer noch 0 €.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 55.453,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 55.56,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 55.56,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 55.56,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 55.56,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 55.587,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 55.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Endstand nach 60 Jahren:",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.76,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.76,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zurück, Bilanzkarte, Lichtblitz"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 55.787,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 56.253,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.26,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 57.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Tom 1.154,66 €.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 57.6,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "TOM · KAFFEE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 57.92,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Toms Steuer 1.154,66 €, Zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.42,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 60.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mia 0 €.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 60.96,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "MIA · TEE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.96,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 61.46,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "TOM ZAHLT MEHR"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 61.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Warum?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.8,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Erklärgrafik Warum"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 62.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Kaffee hat eine",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 62.56,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "STEUER JE KILO · KAFFEE GEGEN TEE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.56,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 63.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "eigene Steuer.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.06,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 64.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Tee seit",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 64.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "1993 nicht mehr.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 64.68,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "TEE SEIT 1993 FREI"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Tee seit 1993 steuerfrei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 65.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und das Verrückte:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.52,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 66.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der Bund nimmt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 66.78,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "1.038 MIO. € KAFFEESTEUER 2025"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 67.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "so täglich fast",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.14,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Dampf steigt, Staub schwebt im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 68.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "3 Millionen € ein.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 68.52,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BUND · 2,84 MIO. € JE TAG"
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.72,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Bund nimmt 2,84 Mio. € täglich ein, Lichtblitz"
+  },
+  {
+   "quelle": "Chip",
+   "t": 69.72,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 69.72,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gleicher Durst –",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Pointe",
+   "t": 69.92,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "GLEICHER DURST –  NUR KAFFEE  ZAHLT EXTRA."
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.92,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Studio dunkelt ab, Schlusskarte"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.32,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 70.983,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "nur Kaffee zahlt extra.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.24,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.96,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Extra leuchtet"
+  }
+ ],
+ "klang": []
+}

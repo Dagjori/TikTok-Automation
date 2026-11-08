@@ -1,0 +1,971 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 72.491,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?",
+   "start": 0.0,
+   "ende": 3.28,
+   "woerter": [
+    {
+     "wort": "Kaffee",
+     "start": 0.0,
+     "ende": 0.36
+    },
+    {
+     "wort": "oder",
+     "start": 0.4,
+     "ende": 0.6
+    },
+    {
+     "wort": "Tee?",
+     "start": 0.64,
+     "ende": 1.12
+    },
+    {
+     "wort": "Wer",
+     "start": 1.36,
+     "ende": 1.707
+    },
+    {
+     "wort": "zahlt",
+     "start": 1.76,
+     "ende": 2.04
+    },
+    {
+     "wort": "im",
+     "start": 2.08,
+     "ende": 2.16
+    },
+    {
+     "wort": "Leben",
+     "start": 2.24,
+     "ende": 2.48
+    },
+    {
+     "wort": "mehr",
+     "start": 2.56,
+     "ende": 2.72
+    },
+    {
+     "wort": "Steuern",
+     "start": 2.8,
+     "ende": 3.28
+    },
+    {
+     "wort": "für",
+     "start": 3.28,
+     "ende": 3.28
+    },
+    {
+     "wort": "sein",
+     "start": 3.28,
+     "ende": 3.28
+    },
+    {
+     "wort": "Heißgetränk?",
+     "start": 3.28,
+     "ende": 3.28
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Tom trinkt Kaffee. Mia trinkt Tee. Beide 3 Tassen am Tag. 60 Jahre lang. Gezählt wird nur die Extra-Steuer.",
+   "start": 3.68,
+   "ende": 11.6,
+   "woerter": [
+    {
+     "wort": "Tom",
+     "start": 3.68,
+     "ende": 3.92
+    },
+    {
+     "wort": "trinkt",
+     "start": 4.0,
+     "ende": 4.24
+    },
+    {
+     "wort": "Kaffee.",
+     "start": 4.32,
+     "ende": 5.04
+    },
+    {
+     "wort": "Mia",
+     "start": 5.08,
+     "ende": 5.36
+    },
+    {
+     "wort": "trinkt",
+     "start": 5.44,
+     "ende": 5.68
+    },
+    {
+     "wort": "Tee.",
+     "start": 5.72,
+     "ende": 6.32
+    },
+    {
+     "wort": "Beide",
+     "start": 6.4,
+     "ende": 6.72
+    },
+    {
+     "wort": "3",
+     "start": 6.8,
+     "ende": 7.04
+    },
+    {
+     "wort": "Tassen",
+     "start": 7.12,
+     "ende": 7.44
+    },
+    {
+     "wort": "am",
+     "start": 7.48,
+     "ende": 7.52
+    },
+    {
+     "wort": "Tag.",
+     "start": 7.68,
+     "ende": 8.16
+    },
+    {
+     "wort": "60",
+     "start": 8.24,
+     "ende": 8.72
+    },
+    {
+     "wort": "Jahre",
+     "start": 8.8,
+     "ende": 9.04
+    },
+    {
+     "wort": "lang.",
+     "start": 9.12,
+     "ende": 9.36
+    },
+    {
+     "wort": "Gezählt",
+     "start": 9.76,
+     "ende": 10.16
+    },
+    {
+     "wort": "wird",
+     "start": 10.24,
+     "ende": 10.4
+    },
+    {
+     "wort": "nur",
+     "start": 10.44,
+     "ende": 10.56
+    },
+    {
+     "wort": "die",
+     "start": 10.64,
+     "ende": 10.72
+    },
+    {
+     "wort": "Extra-Steuer.",
+     "start": 10.84,
+     "ende": 11.6
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, beide zahlen gleich. Oder?",
+   "start": 12.0,
+   "ende": 14.64,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 12.0,
+     "ende": 12.24
+    },
+    {
+     "wort": "beide",
+     "start": 12.827,
+     "ende": 13.04
+    },
+    {
+     "wort": "zahlen",
+     "start": 13.12,
+     "ende": 13.36
+    },
+    {
+     "wort": "gleich.",
+     "start": 13.44,
+     "ende": 13.92
+    },
+    {
+     "wort": "Oder?",
+     "start": 14.32,
+     "ende": 14.64
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Die Zähler laufen. Toms Tasse: 7,5 g Kaffee. Darauf: Kaffeesteuer, 2,19 € pro Kilo. Mias Zähler bleibt bei 0 €.",
+   "start": 15.2,
+   "ende": 24.64,
+   "woerter": [
+    {
+     "wort": "Die",
+     "start": 15.2,
+     "ende": 15.28
+    },
+    {
+     "wort": "Zähler",
+     "start": 15.36,
+     "ende": 15.68
+    },
+    {
+     "wort": "laufen.",
+     "start": 15.76,
+     "ende": 16.16
+    },
+    {
+     "wort": "Toms",
+     "start": 16.56,
+     "ende": 16.88
+    },
+    {
+     "wort": "Tasse:",
+     "start": 16.92,
+     "ende": 17.6
+    },
+    {
+     "wort": "7,5",
+     "start": 17.68,
+     "ende": 18.08
+    },
+    {
+     "wort": "g",
+     "start": 18.08,
+     "ende": 18.48
+    },
+    {
+     "wort": "Kaffee.",
+     "start": 18.56,
+     "ende": 19.2
+    },
+    {
+     "wort": "Darauf:",
+     "start": 19.24,
+     "ende": 19.6
+    },
+    {
+     "wort": "Kaffeesteuer,",
+     "start": 19.92,
+     "ende": 20.88
+    },
+    {
+     "wort": "2,19",
+     "start": 20.96,
+     "ende": 21.42
+    },
+    {
+     "wort": "€",
+     "start": 21.42,
+     "ende": 21.88
+    },
+    {
+     "wort": "pro",
+     "start": 21.92,
+     "ende": 22.08
+    },
+    {
+     "wort": "Kilo.",
+     "start": 22.16,
+     "ende": 22.76
+    },
+    {
+     "wort": "Mias",
+     "start": 23.04,
+     "ende": 23.36
+    },
+    {
+     "wort": "Zähler",
+     "start": 23.44,
+     "ende": 23.76
+    },
+    {
+     "wort": "bleibt",
+     "start": 23.84,
+     "ende": 24.08
+    },
+    {
+     "wort": "bei",
+     "start": 24.16,
+     "ende": 24.24
+    },
+    {
+     "wort": "0",
+     "start": 24.32,
+     "ende": 24.48
+    },
+    {
+     "wort": "€.",
+     "start": 24.48,
+     "ende": 24.64
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Denn eine Teesteuer gibt es nicht mehr. Bis 1992 schon: 4,15 Mark pro Kilo. Fast genau so viel wie Kaffee heute.",
+   "start": 24.96,
+   "ende": 32.68,
+   "woerter": [
+    {
+     "wort": "Denn",
+     "start": 24.96,
+     "ende": 25.12
+    },
+    {
+     "wort": "eine",
+     "start": 25.173,
+     "ende": 25.28
+    },
+    {
+     "wort": "Teesteuer",
+     "start": 25.36,
+     "ende": 25.92
+    },
+    {
+     "wort": "gibt",
+     "start": 26.0,
+     "ende": 26.16
+    },
+    {
+     "wort": "es",
+     "start": 26.24,
+     "ende": 26.32
+    },
+    {
+     "wort": "nicht",
+     "start": 26.373,
+     "ende": 26.48
+    },
+    {
+     "wort": "mehr.",
+     "start": 26.56,
+     "ende": 26.96
+    },
+    {
+     "wort": "Bis",
+     "start": 27.2,
+     "ende": 27.36
+    },
+    {
+     "wort": "1992",
+     "start": 27.44,
+     "ende": 28.0
+    },
+    {
+     "wort": "schon:",
+     "start": 28.16,
+     "ende": 28.72
+    },
+    {
+     "wort": "4,15",
+     "start": 28.8,
+     "ende": 28.96
+    },
+    {
+     "wort": "Mark",
+     "start": 29.04,
+     "ende": 29.28
+    },
+    {
+     "wort": "pro",
+     "start": 29.76,
+     "ende": 29.92
+    },
+    {
+     "wort": "Kilo.",
+     "start": 30.0,
+     "ende": 30.56
+    },
+    {
+     "wort": "Fast",
+     "start": 30.68,
+     "ende": 30.8
+    },
+    {
+     "wort": "genau",
+     "start": 30.92,
+     "ende": 31.12
+    },
+    {
+     "wort": "so",
+     "start": 31.2,
+     "ende": 31.28
+    },
+    {
+     "wort": "viel",
+     "start": 31.36,
+     "ende": 31.52
+    },
+    {
+     "wort": "wie",
+     "start": 31.6,
+     "ende": 31.68
+    },
+    {
+     "wort": "Kaffee",
+     "start": 31.76,
+     "ende": 32.08
+    },
+    {
+     "wort": "heute.",
+     "start": 32.12,
+     "ende": 32.68
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Zurück zu Tom. Pro Tasse: 1,64 Cent. Doch auf die Steuer kommen 7 % Umsatzsteuer. Steuer auf die Steuer.",
+   "start": 32.96,
+   "ende": 40.48,
+   "woerter": [
+    {
+     "wort": "Zurück",
+     "start": 32.96,
+     "ende": 33.2
+    },
+    {
+     "wort": "zu",
+     "start": 33.28,
+     "ende": 33.36
+    },
+    {
+     "wort": "Tom.",
+     "start": 33.44,
+     "ende": 33.88
+    },
+    {
+     "wort": "Pro",
+     "start": 34.08,
+     "ende": 34.24
+    },
+    {
+     "wort": "Tasse:",
+     "start": 34.32,
+     "ende": 34.8
+    },
+    {
+     "wort": "1,64",
+     "start": 34.96,
+     "ende": 35.68
+    },
+    {
+     "wort": "Cent.",
+     "start": 35.84,
+     "ende": 36.48
+    },
+    {
+     "wort": "Doch",
+     "start": 36.507,
+     "ende": 36.56
+    },
+    {
+     "wort": "auf",
+     "start": 36.64,
+     "ende": 36.72
+    },
+    {
+     "wort": "die",
+     "start": 36.8,
+     "ende": 36.88
+    },
+    {
+     "wort": "Steuer",
+     "start": 36.96,
+     "ende": 37.28
+    },
+    {
+     "wort": "kommen",
+     "start": 37.36,
+     "ende": 37.44
+    },
+    {
+     "wort": "7",
+     "start": 37.44,
+     "ende": 37.52
+    },
+    {
+     "wort": "%",
+     "start": 37.52,
+     "ende": 37.6
+    },
+    {
+     "wort": "Umsatzsteuer.",
+     "start": 37.76,
+     "ende": 38.8
+    },
+    {
+     "wort": "Steuer",
+     "start": 38.92,
+     "ende": 39.2
+    },
+    {
+     "wort": "auf",
+     "start": 39.36,
+     "ende": 39.52
+    },
+    {
+     "wort": "die",
+     "start": 39.56,
+     "ende": 39.6
+    },
+    {
+     "wort": "Steuer.",
+     "start": 39.68,
+     "ende": 40.48
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "text": "Noch merkwürdiger: Löslicher Kaffee zahlt 4,78 € pro Kilo. Mehr als das Doppelte. Pro Tasse aber nur die Hälfte.",
+   "start": 40.52,
+   "ende": 47.2,
+   "woerter": [
+    {
+     "wort": "Noch",
+     "start": 40.52,
+     "ende": 40.72
+    },
+    {
+     "wort": "merkwürdiger:",
+     "start": 40.8,
+     "ende": 41.76
+    },
+    {
+     "wort": "Löslicher",
+     "start": 41.84,
+     "ende": 42.32
+    },
+    {
+     "wort": "Kaffee",
+     "start": 42.4,
+     "ende": 42.72
+    },
+    {
+     "wort": "zahlt",
+     "start": 42.8,
+     "ende": 43.04
+    },
+    {
+     "wort": "4,78",
+     "start": 43.04,
+     "ende": 43.08
+    },
+    {
+     "wort": "€",
+     "start": 43.08,
+     "ende": 43.12
+    },
+    {
+     "wort": "pro",
+     "start": 43.12,
+     "ende": 43.28
+    },
+    {
+     "wort": "Kilo.",
+     "start": 43.36,
+     "ende": 43.6
+    },
+    {
+     "wort": "Mehr",
+     "start": 43.76,
+     "ende": 43.92
+    },
+    {
+     "wort": "als",
+     "start": 44.0,
+     "ende": 44.16
+    },
+    {
+     "wort": "das",
+     "start": 44.24,
+     "ende": 44.32
+    },
+    {
+     "wort": "Doppelte.",
+     "start": 44.4,
+     "ende": 45.2
+    },
+    {
+     "wort": "Pro",
+     "start": 45.28,
+     "ende": 45.36
+    },
+    {
+     "wort": "Tasse",
+     "start": 45.44,
+     "ende": 45.76
+    },
+    {
+     "wort": "aber",
+     "start": 45.92,
+     "ende": 46.08
+    },
+    {
+     "wort": "nur",
+     "start": 46.12,
+     "ende": 46.24
+    },
+    {
+     "wort": "die",
+     "start": 46.28,
+     "ende": 46.32
+    },
+    {
+     "wort": "Hälfte.",
+     "start": 46.4,
+     "ende": 47.2
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "text": "Jetzt summiert es sich. 10 Jahre: 192 €. 30 Jahre: 577 €. Mia: immer noch 0 €.",
+   "start": 47.32,
+   "ende": 55.36,
+   "woerter": [
+    {
+     "wort": "Jetzt",
+     "start": 47.32,
+     "ende": 47.52
+    },
+    {
+     "wort": "summiert",
+     "start": 47.6,
+     "ende": 48.0
+    },
+    {
+     "wort": "es",
+     "start": 48.04,
+     "ende": 48.08
+    },
+    {
+     "wort": "sich.",
+     "start": 48.16,
+     "ende": 48.8
+    },
+    {
+     "wort": "10",
+     "start": 48.88,
+     "ende": 49.04
+    },
+    {
+     "wort": "Jahre:",
+     "start": 49.12,
+     "ende": 49.6
+    },
+    {
+     "wort": "192",
+     "start": 49.76,
+     "ende": 50.42666666666666
+    },
+    {
+     "wort": "€.",
+     "start": 50.42666666666666,
+     "ende": 51.093333333333334
+    },
+    {
+     "wort": "30",
+     "start": 51.093333333333334,
+     "ende": 51.76
+    },
+    {
+     "wort": "Jahre:",
+     "start": 51.84,
+     "ende": 52.16
+    },
+    {
+     "wort": "577",
+     "start": 52.4,
+     "ende": 53.08
+    },
+    {
+     "wort": "€.",
+     "start": 53.08,
+     "ende": 53.76
+    },
+    {
+     "wort": "Mia:",
+     "start": 53.8,
+     "ende": 54.16
+    },
+    {
+     "wort": "immer",
+     "start": 54.56,
+     "ende": 54.72
+    },
+    {
+     "wort": "noch",
+     "start": 54.8,
+     "ende": 54.96
+    },
+    {
+     "wort": "0",
+     "start": 55.04,
+     "ende": 55.2
+    },
+    {
+     "wort": "€.",
+     "start": 55.2,
+     "ende": 55.36
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand nach 60 Jahren: Tom 1.154,66 €. Mia 0 €.",
+   "start": 55.76,
+   "ende": 61.4,
+   "woerter": [
+    {
+     "wort": "Endstand",
+     "start": 55.76,
+     "ende": 56.16
+    },
+    {
+     "wort": "nach",
+     "start": 56.213,
+     "ende": 56.32
+    },
+    {
+     "wort": "60",
+     "start": 56.4,
+     "ende": 56.72
+    },
+    {
+     "wort": "Jahren:",
+     "start": 56.8,
+     "ende": 57.2
+    },
+    {
+     "wort": "Tom",
+     "start": 57.6,
+     "ende": 57.84
+    },
+    {
+     "wort": "1.154,66",
+     "start": 57.92,
+     "ende": 60.48
+    },
+    {
+     "wort": "€.",
+     "start": 60.88,
+     "ende": 60.92
+    },
+    {
+     "wort": "Mia",
+     "start": 60.96,
+     "ende": 61.10666666666667
+    },
+    {
+     "wort": "0",
+     "start": 61.10666666666667,
+     "ende": 61.25333333333333
+    },
+    {
+     "wort": "€.",
+     "start": 61.25333333333333,
+     "ende": 61.4
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Kaffee hat eine eigene Steuer. Tee seit 1993 nicht mehr.",
+   "start": 61.8,
+   "ende": 65.2,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 61.8,
+     "ende": 62.32
+    },
+    {
+     "wort": "Kaffee",
+     "start": 62.56,
+     "ende": 62.88
+    },
+    {
+     "wort": "hat",
+     "start": 62.96,
+     "ende": 63.04
+    },
+    {
+     "wort": "eine",
+     "start": 63.08,
+     "ende": 63.28
+    },
+    {
+     "wort": "eigene",
+     "start": 63.36,
+     "ende": 63.68
+    },
+    {
+     "wort": "Steuer.",
+     "start": 63.76,
+     "ende": 64.4
+    },
+    {
+     "wort": "Tee",
+     "start": 64.44,
+     "ende": 64.64
+    },
+    {
+     "wort": "seit",
+     "start": 64.64,
+     "ende": 64.68
+    },
+    {
+     "wort": "1993",
+     "start": 64.68,
+     "ende": 64.72
+    },
+    {
+     "wort": "nicht",
+     "start": 64.72,
+     "ende": 64.88
+    },
+    {
+     "wort": "mehr.",
+     "start": 64.96,
+     "ende": 65.2
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "text": "Und das Verrückte: Der Bund nimmt so täglich fast 3 Millionen € ein.",
+   "start": 65.52,
+   "ende": 69.72,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 65.52,
+     "ende": 65.6
+    },
+    {
+     "wort": "das",
+     "start": 65.68,
+     "ende": 65.76
+    },
+    {
+     "wort": "Verrückte:",
+     "start": 65.813,
+     "ende": 66.44
+    },
+    {
+     "wort": "Der",
+     "start": 66.64,
+     "ende": 66.8
+    },
+    {
+     "wort": "Bund",
+     "start": 66.88,
+     "ende": 67.12
+    },
+    {
+     "wort": "nimmt",
+     "start": 67.16,
+     "ende": 67.36
+    },
+    {
+     "wort": "so",
+     "start": 67.48,
+     "ende": 67.6
+    },
+    {
+     "wort": "täglich",
+     "start": 67.64,
+     "ende": 68.0
+    },
+    {
+     "wort": "fast",
+     "start": 68.08,
+     "ende": 68.32
+    },
+    {
+     "wort": "3",
+     "start": 68.36,
+     "ende": 68.64
+    },
+    {
+     "wort": "Millionen",
+     "start": 68.72,
+     "ende": 69.2
+    },
+    {
+     "wort": "€",
+     "start": 69.2,
+     "ende": 69.28
+    },
+    {
+     "wort": "ein.",
+     "start": 69.28,
+     "ende": 69.72
+    }
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "text": "Gleicher Durst – nur Kaffee zahlt extra.",
+   "start": 69.92,
+   "ende": 72.56,
+   "woerter": [
+    {
+     "wort": "Gleicher",
+     "start": 69.92,
+     "ende": 70.24
+    },
+    {
+     "wort": "Durst",
+     "start": 70.32,
+     "ende": 70.64
+    },
+    {
+     "wort": "–",
+     "start": 70.96,
+     "ende": 70.987
+    },
+    {
+     "wort": "nur",
+     "start": 71.013,
+     "ende": 71.2
+    },
+    {
+     "wort": "Kaffee",
+     "start": 71.24,
+     "ende": 71.52
+    },
+    {
+     "wort": "zahlt",
+     "start": 71.6,
+     "ende": 71.84
+    },
+    {
+     "wort": "extra.",
+     "start": 71.96,
+     "ende": 72.56
+    }
+   ]
+  }
+ ]
+}
