@@ -155,5 +155,28 @@
    "grund": "Faktencheck vor dem Bau, Ergebnis unverändert",
    "zeit": "2026-11-09"
   }
- ]
+ ],
+ "lern_notizen": {
+  "thema": "Kaffeesteuer gegen Tee, Extra-Steuer im Leben",
+  "laenge_s": 73.0,
+  "hook": "Duell-Frage, 2 Sätze, ca. 3,7 s",
+  "stil": "18 Dunkles Studio (belebt)",
+  "helligkeit": "dunkel",
+  "zoom": "ja (3 Zooms)",
+  "zeitpunkte": {
+   "wendung_1": 25.0,
+   "kipp": 47.3,
+   "ergebnis": 55.8,
+   "warum": 61.8,
+   "pointe": 65.5,
+   "schlusskarte": 69.9
+  },
+  "testbloecke": {},
+  "suchbegriff": "Kaffeesteuer",
+  "woerter": 173,
+  "w_pro_s": 2.38,
+  "silben_pro_s": 4.19,
+  "sprechtext": "kurze Sätze mit Kommas verbunden (weniger Satzpausen, Tempo ≥ 2,3 W/s)",
+  "caption": "Kaffee oder Tee – wer zahlt im Leben mehr Steuern fürs Heißgetränk? ☕ Ich hab's simuliert. Wusstet ihr, dass es bis 1992 eine Teesteuer gab? 👇 #kaffeesteuer #kaffee #tee #wissen #simulation"
+ }
 }

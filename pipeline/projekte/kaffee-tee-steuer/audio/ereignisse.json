@@ -165,13 +165,6 @@
    "text": "Waage und Kalenderwand im Licht, Kamera gleitet"
   },
   {
-   "quelle": "Chip",
-   "t": 3.58,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "TOM · KAFFEE"
-  },
-  {
    "quelle": "Untertitel",
    "t": 3.65,
    "typ": "untertitel",
@@ -189,18 +182,18 @@
    "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
   },
   {
+   "quelle": "Chip",
+   "t": 3.88,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "TOM · KAFFEE"
+  },
+  {
    "quelle": "Szene",
    "t": 4.32,
    "typ": "welt",
    "klang": "pop",
    "text": "Toms Küche leuchtet, Tasse dampft, Licht pulsiert"
-  },
-  {
-   "quelle": "Chip",
-   "t": 4.98,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "MIA · TEE"
   },
   {
    "quelle": "Untertitel",
@@ -218,6 +211,13 @@
    "typ": "welt",
    "klang": "pop",
    "text": "Mias Küche leuchtet, Tee dampft, Licht pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.18,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MIA · TEE"
   },
   {
    "quelle": "Szene",
@@ -463,7 +463,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 19.14,
+   "t": 18.74,
    "typ": "chip-weg",
    "klang": false
   },
