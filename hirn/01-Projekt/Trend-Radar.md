@@ -2,15 +2,15 @@
 typ: anleitung
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-02
-quelle: CLAUDE.md §10
+datum: 2026-11-08
+quelle: CLAUDE.md §10; Abschnitt Account 2: Wahl des Inhabers 08.11.2026
 tags: [konto/gemeinsam, radar, trends, telegram]
 cssclasses: [konto-gemeinsam, typ-anleitung]
 ---
 
 # Trend-Radar
 
-Geplante Aufgabe **„Trend-Radar Simulierbar“**: täglich 05:35 Uhr (Berlin), feste Sitzung „Trend-Radar täglich (TikTok Automation)“, Sonnet 5.5, max. ca. 20 Minuten, höchstens ca. 12 Websuchen. Ziel: Trends vor dem Höhepunkt erkennen, Konkurrenz und Regeländerungen im Blick behalten, den Inhaber nur mit geprüften Vorschlägen behelligen. Der Radar arbeitet für Simulierbar (Account 1).
+Geplante Aufgabe **„Trend-Radar Simulierbar“**: täglich 05:35 Uhr (Berlin), feste Sitzung „Trend-Radar täglich (TikTok Automation)“, Sonnet 5.5, max. ca. 20 Minuten, höchstens ca. 12 Websuchen. Ziel: Trends vor dem Höhepunkt erkennen, Konkurrenz und Regeländerungen im Blick behalten, den Inhaber nur mit geprüften Vorschlägen behelligen. Der Radar arbeitet für Simulierbar (Account 1) und seit 08.11. auch für Account 2 (eigener Abschnitt unten).
 
 **Hinweis:** Der Prompt der geplanten Aufgabe zeigt noch auf `docs/07-trend-monitoring.md`, das nur noch hierher bzw. auf CLAUDE.md §10 verweist. Der Prompt lässt sich nur in der Radar-Sitzung selbst ändern (optional: dort „Ändere den Prompt: lies statt docs/07 den Abschnitt Trend-Radar in CLAUDE.md §10“; erst dann kann der Stub entfallen).
 
@@ -38,6 +38,16 @@ Nicht als eigene Rechnung/Simulation mit Euro-Ergebnis umsetzbar (Schwerpunkt GE
 | Aufwand | 10 % | Vorlage reicht |
 | Risiko | 10 % | kein Plattform-/Rechtsrisiko |
 **Score = Σ(Gewicht × Punkte)/5 (20–100)**, immer mit `python3 tools/trend_score.py N T W P A R` berechnen. ≥ 70 vorschlagen · 50–69 `beobachten` (nach 7 Tagen erneut) · < 50 `verworfen`. Optional wöchentlich vom Inhaber: Screenshot der App-„Inspiration“, bewertet nach demselben Raster.
+
+## Account 2 `@stelldirvor.pov` (seit 08.11.2026, Wahl des Inhabers)
+Der Radar arbeitet ab jetzt auch für Account 2, strikt getrennt ([[Trennung der Accounts]]): eigene Signale, eigene K.-o.-Kriterien, eigene Vorschläge. Anlass: TikTok nennt **Neugier und Abstecher in Nischen** als Leitmotiv 2026 (**F**, Prognose, [[Wachstum auf 10.000 Follower]]); Account 2 hatte bisher gar keinen Radar.
+| | Account 2 |
+|---|---|
+| **Signale** | Naturereignisse und Himmelsereignisse mit Termin (Sonnenfinsternis, Meteorschauer, Sturmfluten, Kälte- und Hitzewellen), Wissenschafts- und Raumfahrtnachrichten der letzten 48 h, Jahrestage („vor 200 Jahren …“), Neugier-Fragen, die in Nachrichten gerade gestellt werden; internationale „Was wäre, wenn“-Vorläufer nur als Themensignal |
+| **K.-o.** | keine **messbare Größe** · nicht als ein Ereignis an einem Ort aus der Ich-Perspektive zeigbar · reale Tragödie mit Opfern oder Parteipolitik · steht auf der Anti-Liste von Account 2 ([[Originalität und Themenfindung]]) · nur durch Nachbau eines fremden Videos umsetzbar · Höhepunkt in weniger als 2 Tagen und nicht vorbereitbar |
+| **Raster** | dasselbe Bewertungsraster; „Passung“ = Gedankenexperiment mit echtem Aha in einer Welt, „Wettbewerb DE“ = niemand zeigt es auf Deutsch |
+| **Vorschlag** | im Format von Account 2: Titelfrage, Welt (Natur zuerst), Messgröße der Anzeige, spätestes Posting-Datum; als Idee für das Studio von Account 2 |
+**Umsetzung offen:** Der Prompt der geplanten Radar-Aufgabe lässt sich nur in der Radar-Sitzung selbst ändern (siehe Hinweis oben); bis dahin gilt dieser Abschnitt als Vorgabe, und neue Account-2-Signale werden in der Radar-Sitzung nachgezogen ([[Stand und nächste Schritte]]).
 
 ## Telegram (noch nicht eingerichtet)
 Inhaber ca. 10 Min.: `@BotFather` → `/newbot` („Simulierbar Radar“), Bot starten; in der Cloud-Umgebung Domain `api.telegram.org` freigeben, Variablen `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` setzen (Token nie in Chat/Repo; Chat-ID notfalls `telegram_senden.py --chat-id-finden`), Testnachricht. (**A:** Die Radar-Sitzung übernimmt neue Variablen beim nächsten Containerstart.) WhatsApp verworfen, Anrufe nicht eingerichtet.

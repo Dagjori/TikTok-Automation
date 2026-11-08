@@ -2,8 +2,8 @@
 typ: regel
 konto: simulierbar
 status: aktuell
-datum: 2026-11-02
-quelle: CLAUDE.md §6, .claude/skills/simulierbar-video/ablauf.md, SKILL.md (Neuregeln 02.11.2026 abends)
+datum: 2026-11-08
+quelle: CLAUDE.md §6, .claude/skills/simulierbar-video/ablauf.md, SKILL.md (Neuregeln 02.11.2026 abends); Folgen-Hinweis und Folgeteile: Wahl des Inhabers 08.11.2026
 tags: [konto/simulierbar, videoaufbau, zeitplan, dynamik, skript, dramaturgie, effekte, tempo]
 cssclasses: [konto-simulierbar, typ-regel]
 ---
@@ -16,7 +16,7 @@ Feste Reihenfolge jedes Simulierbar-Videos, als Zeitplan für **Ben im Original*
 > Der Ablauf beginnt mit „**Skript liegt vor**“ (Ideen-Studio: die Tages-Sitzung von Claude Code recherchiert und schreibt es, der Inhaber gibt frei; kein 30-Tage-Plan mehr). Dazu: Skript-Anforderungen (Abschnitt 5), Dramaturgie und Effekte (Abschnitt 6), Tempo 150–190 Wörter, nur Thema GELD, keine Sperrliste (aber keine 1:1-Kopie), Länder frei. Workflow rund um das Ideen-Studio: [[Claude-Chat-Workflow]], [[Befehl Ideen und Skripte Simulierbar]].
 
 > [!info] Neu seit 07.11.2026 (REA-Regelwerk freigegeben, [[REA Simulierbar Regelwerk]])
-> Endstand erst bei ca. 80 % der Länge, davor ein Kipp-Moment bei ca. 45 s als Höhepunkt · Ende auf einer **Schlusskarte** (Fazit oder Pointe), **kein fester Schlusssatz** mehr · Folgen-Aufruf keine Pflicht (nur in Testvideos) · Schleife freiwillig · Tempo 2,3–2,7 W/s, Sätze 3–5 Wörter · **neutrale Erzählhaltung**, Du höchstens im Hook · Duell-Frage als Titel im Bild ab Bild 1 (Pflicht), erstes Bild ohne Ton verständlich · Untertitel in Blöcken von 1–4 Wörtern mit Schlüsselwort in der Teamfarbe.
+> Endstand erst bei ca. 80 % der Länge, davor ein Kipp-Moment bei ca. 45 s als Höhepunkt · Ende auf einer **Schlusskarte** (Fazit oder Pointe), **kein fester Schlusssatz** mehr · Folgen-Hinweis nur als Blocktest: Textzeile in den letzten 2–3 s unter der Schlusskarte (seit 08.11., [[Regelwerk Simulierbar]]) · Schleife freiwillig · Tempo 2,3–2,7 W/s, Sätze 3–5 Wörter · **neutrale Erzählhaltung**, Du höchstens im Hook · Duell-Frage als Titel im Bild ab Bild 1 (Pflicht), erstes Bild ohne Ton verständlich · Untertitel in Blöcken von 1–4 Wörtern mit Schlüsselwort in der Teamfarbe.
 
 ## Die Bausteine in fester Reihenfolge (seit 07.11.2026)
 1. **Scroll-Stopper-Hook** (0–5 s: Duell im ersten Satz, beide Seiten konkret genannt, seit 04.11. Pflicht; erster Satz 3–4 Wörter; Du-Szenario nur mit beiden Seiten, keine Einzelfrage, kein Ergebnis vorweg; Stimme < 0,2 s, ganze Szene ab Bild 1, **Duell-Frage als Titel im Bild ab Bild 1**, erstes Bild ohne Ton verständlich)
@@ -28,13 +28,13 @@ Feste Reihenfolge jedes Simulierbar-Videos, als Zeitplan für **Ben im Original*
 7. **Ergebnis** mit exakter Euro-Zahl (bzw. Währung des Landes) **erst bei ca. 80 % der Länge**, dann kurz **„Warum?“** (max. 2 Faktoren)
 8. **Pointe** (zweite Überraschung bzw. überraschende Einordnung)
 9. **Schlusskarte** (Pflicht): Fazit oder Pointe als kurzer Satz und Karte im Bild; keine Frage, kein Aufruf
-- **Entfallen seit 07.11.:** fester Schlusssatz „Was sollen wir als Nächstes zeigen? …“ (ganz), Folgen-Aufruf als Pflicht (nur noch in Testvideos, siehe [[Lernschleife und Insights]]), Schleife als Pflicht (freiwillig: letztes Bild = erstes).
+- **Entfallen seit 07.11.:** fester Schlusssatz „Was sollen wir als Nächstes zeigen? …“ (ganz), Folgen-Aufruf als Pflicht (nur noch in Testvideos, siehe [[Lernschleife und Insights]]; seit 08.11. als Textzeile am Ende statt bei ca. 20 s), Schleife als Pflicht (freiwillig: letztes Bild = erstes).
 
 ## Länge und Text (Kennzahlen)
 - Länge **65–80 s** (mind. 61 s wegen [[CRP Creator Rewards Program]]).
 - **Tempo (Mitte aus beiden bisherigen Vorgaben):** 150–190 Wörter, Ziel ca. 2,3 W/s, Spanne 2,2–2,5 W/s. Ersetzt 130–170 Wörter (Ben im Original ca. 2,0 W/s) und 170–220 Wörter (alte Prüfliste, Vorbilder 2,5–2,9 W/s); der frühere Widerspruch zwischen beiden ist damit aufgelöst. **Flüssig und natürlich**, kein künstliches Beschleunigen; das Tempo entsteht durch Textlänge und Satzbau. **Qualität vor Tempo: klingt eine Stelle gehetzt, kürzen statt beschleunigen.**
 - **Seit 07.11.:** Tempo 2,3–2,7 W/s (Vorbilder 2,42–2,70), Wörter weiter 150–190. Sätze meist 3–5 Wörter (vorher 2–8), **neutrale Erzählhaltung, Du höchstens im Hook** (durchgehend Du: starke Vorbilder 2/6, schwache 3/3), Zahlen im Sprechtext rund und ausgeschrieben („zwanzig Sekunden“), im Bild exakt. Keine Füllsätze, keine Quellen, kein „laut einer Studie“ (Quellen nur intern in `skript.json`).
-- **Verboten:** künstliche Cliffhanger („Teil 2 folgt“), Kaufaufrufe, Kanalname bzw. Rubrik im Video.
+- **Verboten:** künstliche Cliffhanger („Teil 2 folgt“ statt Auflösung), Kaufaufrufe, Kanalname bzw. Rubrik im Video. **Erlaubt seit 08.11.:** echte Folgeteile eines Treffers, jeder mit eigener Frage und eigener Auflösung ([[Serien und Treffer-Folgen]]).
 - Immer eine offene Frage im Kopf des Zuschauers: Jede Phase endet mit einer Spannung, die erst die nächste auflöst („Also ist Rennen doch schlechter? Noch nicht.“).
 - Konkrete Personen bzw. Teams mit Namen oder Buchstaben (Paul gegen Anna, A gegen B).
 
@@ -45,7 +45,7 @@ Feste Reihenfolge jedes Simulierbar-Videos, als Zeitplan für **Ben im Original*
 | 3–12 s | **Regeln** | 3–6 Mini-Fakten, 2–5 Wörter je Satz | Jede Regel erscheint genau beim Wort: als Objekt in der Welt (Preisschild, Münzstapel, Route, Gefäß) und als Chip. |
 | bis 16 s | **Denkfalle** | „Klar, [naheliegende Antwort]. Oder?“ ruhig gesprochen. **Kein „Los geht's“.** | Kamera rückt die naheliegende Seite ins Licht (Schärfe, Lichtkegel). Kein Sticker. |
 | ab ca. 13 s | **Rennen** | ruhiger Erzähler-Kommentar, alle 2–3 s ein Zwischenstand | Uhr bzw. Zähler laufen sichtbar (Tafel, Uhr, Füllstand, Münzstapel, Lichtspur), Kamera folgt. |
-| ca. 20 s, max. 2 s | **Folgen-Aufruf** (seit 07.11. nur in Testvideos) | „Folg mir, damit du nichts verpasst.“ | `M.folgen({ ein, dauer: 1.8 })`, Welt läuft weiter. Direkt vor der ersten Wendung. |
+| ~~ca. 20 s, max. 2 s~~ | ~~**Folgen-Aufruf**~~ **seit 08.11. ersetzt:** Folgen-Hinweis als nicht gesprochene Textzeile in den letzten 2–3 s, an Inhalt gebunden, nur in den Testblöcken ([[Regelwerk Simulierbar]]) | – | ~~`M.folgen({ ein, dauer: 1.8 })` bei ca. 20 s~~; Baustein für die Textzeile am Ende offen ([[Stand und nächste Schritte]]) |
 | 18–25 s | **Erste Wendung** | „Aber jetzt kommt das Merkwürdige:“ bzw. „Doch …“ | Kamera-Zoom bzw. Schärfenverlagerung auf den entscheidenden Moment, Licht wechselt (z. B. Spot auf die andere Seite). |
 | danach alle 8–10 s | **Führungswechsel / weitere Wendung** | Countdown-Zahlen als Satzfetzen, „Jetzt wird's knapp.“ (ruhig) | Tafel färbt die führende Seite, Welt reagiert (Waage kippt, Gefäß überholt, Route leuchtet auf). |
 | ca. 45 s (ca. 64 %) | **Kipp-Moment** (seit 07.11.) | die Führung kippt endgültig, das Ergebnis ist noch offen | wichtige Zahl leuchtet auf, Licht und Kamera auf den Kipp. **Höhepunkt der Spannungskurve.** |

@@ -2,7 +2,7 @@
 typ: index
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-02
+datum: 2026-11-08
 quelle: hirn/
 tags: [konto/gemeinsam, index, moc]
 cssclasses: [konto-gemeinsam, typ-index]
@@ -25,7 +25,10 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 | [[Regelwerk]] | **alle gemeinsamen Regeln auf einer Seite**, mit Änderungen seit 02.11. abends |
 | [[Claude-Chat-Workflow]] | täglicher Ablauf: 10 Ideen, 2 wählen, Skript, Übergabe |
 | [[Originalität und Themenfindung]] | Themen, die auf Deutsch noch niemand gemacht hat: Anti-Listen, Zutaten des Tages, Websuche je Idee |
-| [[Lernschleife und Insights]] | tägliche Auswertung der Zahlen, Lernstand, Vorschläge mit Freigabe |
+| [[Lernschleife und Insights]] | tägliche Auswertung der Zahlen, Lernstand, Vorschläge mit Freigabe; seit 08.11. Zielgröße Follows je Video |
+| [[Serien und Treffer-Folgen]] | **neu 08.11.:** Treffer (≥ 3× Median) läuft als nummerierte Serie weiter |
+| [[Profil und Follow-Umwandlung]] | **neu 08.11.:** 3 Pins, Bio mit Versprechen und Takt, einheitliche Cover |
+| [[Kommentare Antwort-Videos und Stitch]] | **neu 08.11.:** Antwort-Videos ab sofort, Kommentare anpinnen, Stitch-Test, LIVE später |
 | [[Rolle und Kommunikation]] | Rolle von Claude, Antwortschema, anklickbare Fragen, Rangfolge |
 | [[Arbeitsregeln und Sicherheit]] | Nichts ohne Auftrag, öffentliches Repo, Geheimnisse, Recherche, Gedächtnis |
 | [[Kanäle und Ziele]] | beide Kanäle im Überblick, Ziele, Kennzahlen |
@@ -35,7 +38,7 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 | [[Render-Dienst Windows-PC]] | Rendern auf dem PC, Messwerte, Einrichtung, Fehler |
 | [[Technik und Umgebung]] | Cloud-Umgebung, Supabase, Netzwerk, Blender, Kosten |
 | [[Cockpit]] | Freigaben und Status im Artifact |
-| [[Trend-Radar]] | täglicher Radar, Raster, Telegram |
+| [[Trend-Radar]] | täglicher Radar, Raster, Telegram; seit 08.11. auch Account 2 |
 | [[Pläne und Kalender]] | beide 30-Tage-Pläne, Ideen, Trend-Kalender |
 | [[Stand und nächste Schritte]] | aktueller Stand, Aufgaben, offene Punkte |
 | [[Entscheidungen Log]] | alle Entscheidungen des Inhabers nach Datum |
@@ -56,6 +59,7 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 | [[Prüfung und Abnahme Simulierbar]] | `massstab.py`, Sichtprüfung |
 | [[Konkurrenz und Themen Simulierbar]] | Nische, Markt, Konkurrenzzahlen |
 | [[Auswahl- und Finanzregeln Simulierbar]] | gültige Auswahl-, Finanz- und Ausschlussregeln, Zahlen 2026 |
+| [[Finanz-Formulierungen Simulierbar]] | **neu 08.11.:** wie wir über Geld sprechen (Modell statt Versprechen, Annahmen sichtbar, keine FOMO) |
 | [[Sperrliste und Auswahlregeln Simulierbar]] | **veraltet (Archiv):** alte Sperrliste |
 | [[Themenplan Simulierbar]] | 30-Tage-Plan |
 
@@ -81,9 +85,10 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 | [[Recherche-Methode und Grenzen]] | was erlaubt ist, was TikTok ohne Login zeigt |
 | [[Simulation-Trendanalyse-2026-11-02]] | Auswertung der „simulation“-Kanäle und Muster |
 | [[REA-Video Methode]] | virale Videos zerlegen (Skill `rea-video`), Mindestzahl, Regelstärken; Quelle der Regeln für die Produktion |
-| [[REA Simulierbar Regelwerk]] | **Entwurf 07.11.:** Regeln aus 9 Vorbildern für Account 1 (zur Freigabe) |
-| [[REA stelldirvor Regelwerk]] | **Entwurf 07.11.:** Regeln aus 7 Vorbildern für Account 2 (zur Freigabe) |
-| [[REA Übergreifend]] | **Entwurf 07.11.:** Handwerk, das in beiden Accounts trägt (zur Freigabe) |
+| [[REA Simulierbar Regelwerk]] | **freigegeben 07.11.:** Regeln aus 9 Vorbildern für Account 1 |
+| [[REA stelldirvor Regelwerk]] | **freigegeben 07.11.:** Regeln aus 7 Vorbildern für Account 2 |
+| [[REA Übergreifend]] | **freigegeben 07.11.:** Handwerk, das in beiden Accounts trägt |
+| [[Wachstum auf 10.000 Follower]] | **08.11.:** Tiefenrecherche Follower-Wachstum, Lücken im Hirn, Weg zu 10.000 je Account, Meilensteine bis 31.01.2027 |
 | `Insights JJJJ-MM-TT` | tägliche Auswertung der eigenen Zahlen (entsteht ab 03.11.) |
 
 ## Farben

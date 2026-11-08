@@ -2,8 +2,8 @@
 typ: wissen
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-02
-quelle: CLAUDE.md §3
+datum: 2026-11-08
+quelle: CLAUDE.md §3; Ziele und Antwort-Videos: Wahl des Inhabers 08.11.2026
 tags: [konto/gemeinsam, kanaele, ziele]
 cssclasses: [konto-gemeinsam, typ-wissen]
 ---
@@ -14,8 +14,8 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 |---|---|---|
 | Inhalt | deutsche Geld-Simulationen („Alltag durchgerechnet“), **ausschließlich GELD** | „Was wäre, wenn …“-3D-POV-Zeitraffer, flexible Themen mit messbarer Größe, Orte überall |
 | Stimme | ja, Ben (ElevenLabs) | keine |
-| Länge | 65–80 s | exakt 80 s |
-| Format | Duell/Rennen mit Zählern, Untertitel Wort für Wort | feste Ich-Perspektive, Titelfrage, Messwert-Anzeige, kursive Sätze |
+| Länge | 65–80 s | 80 s (seit 08.11. Testblock 62–70 s, [[Regelwerk Account 2]]) |
+| Format | Duell/Rennen mit Zählern, Untertitel in Blöcken von 1–4 Wörtern (seit 07.11.) | feste Ich-Perspektive, Titelfrage, Messwert-Anzeige, kursive Sätze |
 | Stile | alle 21 mit Qualitätslatte ([[Stile 17 bis 21]]) | Lunar-POV mit Weltenkatalog |
 | Skill | `video-produktion`, Teil `simulierbar.md` (bis 06.11. `simulierbar-video`) | `video-produktion`, Teil `stelldirvor.md` (bis 06.11. `stelldirvor-video`) |
 | Einstieg | [[Account Simulierbar Überblick]] | [[Account stelldirvor.pov Überblick]] |
@@ -33,9 +33,12 @@ Kein 30-Tage-Plan mehr; täglich 10 Ideen je Account, der Inhaber wählt 2 ([[Cl
 
 ## Ziele
 - **10.000 Follower + CRP**, danach Ausbau: zweite Nische, englische Version (USA/UK sind CRP-Länder), YouTube Shorts mit derselben MP4.
-- Auswertung nach **14 Tagen (16.11.)** und nach **28 Videos** (Themenfeld-Vergleich). Ziele (S): ≥ 1 Video > 50k Views, Median > 5k, ≥ 1 Follower je 1.000 Views, +1.000 Follower.
-- Ab Woche 3 wöchentlich 1–2 Antwort-Videos auf Zuschauerfragen (Account 1).
+- **Zielgröße seit 08.11.: neue Follower je 1.000 Aufrufe**, vor allem bei Treffern (Follower = Aufrufe × Follows je 1.000; [[Wachstum auf 10.000 Follower]]). Messung: [[Lernschleife und Insights]].
+- **Ziele je Account und zwei Wochen (S, seit 08.11.):** mindestens **1 Video über 10.000 Aufrufe**, Follows je 1.000 Aufrufe steigend (Richtwert ≥ 3 bis 20.12.). Meilensteine bis 31.01.2027: [[Wachstum auf 10.000 Follower]]. ~~Median > 5k~~ entfällt (das 14-Fache des Marktwerts von ca. 350 Aufrufen je Post in unserer Größe, **F** Socialinsider).
+- Auswertung nach **14 Tagen (16.11.)** und nach **28 Videos** (Themenfeld-Vergleich); Videos erst nach 7 Tagen bewerten, Regeln nur aus Blöcken von mindestens 10 Videos.
+- **Antwort-Videos ab sofort** (beide Accounts, seit 08.11., ersetzt „ab Woche 3“): [[Kommentare Antwort-Videos und Stitch]]. Treffer laufen als Serie weiter: [[Serien und Treffer-Folgen]]. Profil: [[Profil und Follow-Umwandlung]].
+- Umbauten dürfen den Takt von 2 Videos pro Tag und Account nicht unterbrechen: Jeder ausgefallene Post ist ein verpasstes Los auf einen Treffer (**F**, mehr Posts heben die obersten 10 %).
 - Steuern, Gewerbe, Nebentätigkeit: später (Impressum § 5 DDG, Kleinunternehmer § 19 UStG, Steuerberater).
 
 ## Siehe auch
-[[CRP Creator Rewards Program]] · [[Pläne und Kalender]] · [[Plattformregeln und Posting]] · [[Index]]
+[[CRP Creator Rewards Program]] · [[Pläne und Kalender]] · [[Plattformregeln und Posting]] · [[Wachstum auf 10.000 Follower]] · [[Index]]

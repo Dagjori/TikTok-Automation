@@ -2,7 +2,7 @@
 typ: wissen
 konto: simulierbar
 status: aktuell
-datum: 2026-11-02
+datum: 2026-11-08
 quelle: CLAUDE.md §3 §4 §5 §6 §9 §11 §12, .claude/skills/simulierbar-video/SKILL.md (Neuregeln 02.11.2026 abends)
 tags: [konto/simulierbar, überblick, einstieg, nische, marke, ziele]
 cssclasses: [konto-simulierbar, typ-wissen]
@@ -22,7 +22,7 @@ Einstieg in alles zu **Account 1 `@simulierbar`** („Simulierbar“, deutsche G
 | Nische | **„Alltag durchgerechnet“** (Kombi aus Geld-Duell und Testlauf, Rang 1, Score 86); Name und Bio bleiben |
 | Rubriken | ~~💶 GELD und ⏱️ ALLTAG~~ **veraltet seit 02.11. abends:** nur noch GELD, ALLTAG entfällt komplett |
 | Thema | **GELD zu 100 %** (02.11. abends; vorher „mind. 50 von 60“): jedes Video endet mit einem Ergebnis in Euro (bei anderen Ländern in der passenden Währung, Quelle und Modellrechnung sauber nennen); **Länder frei**; Themen kommen aus dem Ideen-Studio, keine Sperrliste ([[Auswahl- und Finanzregeln Simulierbar]]) |
-| Format | gesichtslose Simulationsvideos, Deutsch, **65–80 s** (mind. 61 s), KI-Stimme Ben, Untertitel Wort für Wort, meist Duell bzw. Rennen gegen die Uhr mit sichtbaren Zählern, 1080×1920 für TikTok und YouTube Shorts |
+| Format | gesichtslose Simulationsvideos, Deutsch, **65–80 s** (mind. 61 s), KI-Stimme Ben, Untertitel in Blöcken von 1–4 Wörtern (seit 07.11.), meist Duell bzw. Rennen gegen die Uhr mit sichtbaren Zählern, 1080×1920 für TikTok und YouTube Shorts |
 | Look | hochwertig, Licht und Atmosphäre, **alle Stile 1–15 und 17–21 mit Qualitätslatte** ([[Stile 17 bis 21]]); mehr Effekte mit steigender Spannung ([[Videoaufbau Simulierbar]]), **keine großen Sticker** |
 | Rhythmus | genau 2 Videos/Tag für den nächsten Tag (Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30); der Inhaber wählt täglich 2 von 10 Ideen; vollautomatisch über Buffer, ohne Freigabe, ohne KI-Label |
 | Skill | `.claude/skills/video-produktion/`, Teil `simulierbar.md` (seit 07.11.; bis 06.11. `simulierbar-video`) |
@@ -30,13 +30,14 @@ Einstieg in alles zu **Account 1 `@simulierbar`** („Simulierbar“, deutsche G
 ## Marke und Profil
 - **Logo „S-Kurve“** (Konzept A, Entscheidung 01.11.) nur als **statisches Profilbild** (`marke/logo/a-s-kurve/…-profilbild-1080.png`), nie im Video; der Inhaber nutzt es als TikTok-Logo.
 - **Bio ≤ 80 Zeichen:** „Ich simuliere deinen Alltag mit echten Zahlen 💶⏱️ Dein Wunsch? Kommentar 👇“. Link nur Impressum (§ 5 DDG). **Keine E-Mail-Adresse und keine Telefonnummer in der Bio** (CRP-Ausschluss „Advertising“). Ob ein Impressum-Link in der Bio das CRP stört, ist von TikTok nicht dokumentiert (Link statt Kontaktdaten).
-- **Alte Shop-Videos** bleiben öffentlich (Markeninhalte lassen sich nicht privat stellen, Kennzeichnung nie abschalten); **keine neuen Shop-/Werbevideos** auf diesem Account.
+- **Alte Shop-Videos** bleiben öffentlich (Markeninhalte lassen sich nicht privat stellen, Kennzeichnung nie abschalten); **keine neuen Shop-/Werbevideos** auf diesem Account. Seit 08.11. stehen **drei Pins** davor, damit Besucher zuerst das Geld-Format sehen.
+- **Profil seit 08.11.:** 3 Pins (beste Follow-Rate, typisches Video, Teil 1 der aktuellen Serie), Bio mit Versprechen und Takt (die heutige Bio verspricht noch „Alltag“), einheitliches Cover mit Duell-Frage und „VS“: [[Profil und Follow-Umwandlung]].
 - **Kein Kanalname, Logo oder Rubrik im Video, nie** (Entscheidung 31.10.: unnötig, verwirrt). Name „Simulierbar“ gewählt am 31.10. („Der Testlauf“ abgelehnt).
 
 ## Ziele und Kennzahlen
 - **Ziel:** 10k Follower + Aufnahme ins [[CRP Creator Rewards Program]]; danach Ausbau (zweite Nische, englische Version; USA/UK sind CRP-Länder). Details der Kanalziele: [[Kanäle und Ziele]].
-- **Auswertung** nach 14 Tagen (16.11.) und nach 28 Videos (Themenfeld-Vergleich). Ziele (S): ≥ 1 Video > 50k Views, Median > 5k, ≥ 1 Follower je 1.000 Views, +1.000 Follower.
-- **Ab Woche 3** wöchentlich 1–2 Antwort-Videos auf Zuschauerfragen.
+- **Auswertung** nach 14 Tagen (16.11.) und nach 28 Videos (Themenfeld-Vergleich). Ziele seit 08.11. (S): je zwei Wochen mindestens 1 Video über 10.000 Aufrufe, **Follows je 1.000 Aufrufe** als Zielgröße (heute ca. 0,1); ~~Median > 5k~~ entfällt ([[Kanäle und Ziele]], [[Wachstum auf 10.000 Follower]]).
+- **Antwort-Videos ab sofort** (seit 08.11., ersetzt „ab Woche 3“), dazu Stitch-Test „Ich hab's durchgerechnet“: [[Kommentare Antwort-Videos und Stitch]]. Treffer als Serie: [[Serien und Treffer-Folgen]].
 - **CRP-Eckwerte (F):** Konto persönlich, 18+, öffentlich, 10.000 Follower und 100.000 Views in 30 Tagen; Video original, über 1 Min., ≥ 1.000 FYF-Views, 1080p für den Additional Reward, kein Duett/Stitch/Photo/Werbung; qualifizierter View ≥ 5 s in CRP-Ländern (nicht AT/CH). Ausschlüsse: Unoriginal, Low quality, Advertising, Clickbait (keine künstlichen Cliffhanger), 5+ nicht förderfähige Videos in 30 Tagen. Rechnung (S): 1.000 €/Monat ≈ 1,4–5 Mio. qualifizierte Views (mittel 2,4 Mio. ≈ 40k je Video bei 60 Videos). Das Format (65–80 s) ist darauf ausgelegt.
 - **Szenarien (S):** [[Konkurrenz und Themen Simulierbar]] (Einnahmen, YouTube Shorts später, Steuern später).
 
@@ -66,8 +67,8 @@ Einstieg in alles zu **Account 1 `@simulierbar`** („Simulierbar“, deutsche G
 | 4 | **Skript und Bild passen exakt**: Jedes gesprochene Detail ist im selben Moment genau so im Bild; Abgleich Segment für Segment | [[Videoaufbau Simulierbar]] |
 | 5 | **Themen-Logik**: Ein Duell vergleicht nur echte Alternativen derselben Entscheidung | [[Auswahl- und Finanzregeln Simulierbar]] |
 | 6 | **Ruhiger Ton**: ruhig, sachlich, freundlich; kein Geschrei, keine aufgeregten Audio-Tags, kein „Los geht's“, höchstens 3 Ausrufezeichen | [[Stimme und Ton Simulierbar]] |
-| 7 | **Videoaufbau, Folgen-Aufruf bei ca. 20 s, Schlusssatz genau, Schleife** | [[Videoaufbau Simulierbar]] |
-| 8 | **Untertitel Wort für Wort**, Stil „kontur“: weiß, fett, schwarze Kontur, aktuelles Wort gelb, mittig, kein Kasten (01.11.) | [[Design und Layout Simulierbar]] |
+| 7 | **Videoaufbau** in fester Reihenfolge mit Endstand bei ca. 80 % und Schlusskarte (seit 07.11.); ~~Folgen-Aufruf bei ca. 20 s, Schlusssatz genau, Schleife~~ → Folgen-Hinweis nur als Blocktest am Ende (08.11.), kein fester Schlusssatz, Schleife freiwillig | [[Videoaufbau Simulierbar]], [[Regelwerk Simulierbar]] |
+| 8 | **Untertitel** seit 07.11. in Blöcken von 1–4 Wörtern mit schwarzer Kontur, Schlüsselwort in der Teamfarbe seiner Seite (~~Wort für Wort, aktuelles Wort gelb~~, 01.11.) | [[Design und Layout Simulierbar]] |
 | 9 | **Teamfarben**: zwei feste Farben je Video, überall gleich, **nie Gelb** (Claude Code legt sie in `skript.json` fest) | [[Design und Layout Simulierbar]] |
 | 10 | **Kein Kanalname, kein Logo, keine Rubrik im Video. Mittig auf x = 540**, gleiches Format für TikTok und YouTube Shorts (1080×1920) | [[Design und Layout Simulierbar]] |
 | 11 | **Nur Three.js bzw. Blender** (Blender backen → glTF → Three.js erlaubt), keine KI-Bild- oder Video-Generatoren, nur Assets und Schriften mit freier Lizenz (Lizenzdatei ablegen); keine echten Banknoten- oder Münzmotive, keine Marken | [[Technik und Szenenbau Simulierbar]] |

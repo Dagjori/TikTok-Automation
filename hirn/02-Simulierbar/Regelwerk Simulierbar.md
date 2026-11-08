@@ -2,8 +2,8 @@
 typ: regel
 konto: simulierbar
 status: aktuell
-datum: 2026-11-02
-quelle: CLAUDE.md, .claude/skills/simulierbar-video/, Entscheidungen des Inhabers bis 02.11.2026 spätabends
+datum: 2026-11-08
+quelle: CLAUDE.md, .claude/skills/simulierbar-video/, Entscheidungen des Inhabers bis 08.11.2026
 tags: [konto/simulierbar, regelwerk, regeln]
 cssclasses: [konto-simulierbar, typ-regel]
 ---
@@ -12,13 +12,24 @@ cssclasses: [konto-simulierbar, typ-regel]
 
 Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]]. Account 2 hat ein eigenes Regelwerk: [[Regelwerk Account 2]] (nie mischen: [[Trennung der Accounts]]). Einstieg: [[Account Simulierbar Überblick]].
 
-**Stand 07.11.2026.**
+**Stand 08.11.2026.**
+
+## Neu seit 08.11. (Wachstums-Recherche, Wahl des Inhabers per Klick)
+| Änderung | Wirkung |
+|---|---|
+| **Folgen-Hinweis als Blocktest am Ende** | ersetzt den Testaufruf bei ca. 20 s: eine kleine **Textzeile in den letzten 2–3 s** unter der Schlusskarte, nicht gesprochen, **an Inhalt gebunden** („Teil 2 ist im Profil“, „Morgen: …“); kein Tausch, keine Belohnung, kein Druck. Abwechselnd **10 Videos mit, 10 ohne**, gemessen an Follows je 1.000 Aufrufe und Anteil der Länge; Start, sobald die Follows je Video gemessen werden ([[Lernschleife und Insights]]). Die Schlusskarte selbst bleibt ohne Frage und Aufruf. |
+| **Treffer laufen als Serie weiter** | ≥ 3× Median nach 24 h → nummerierter Folgeteil am nächsten Produktionstag ([[Serien und Treffer-Folgen]]) |
+| **Klassiker bis 3 von 10** | mit eigenem Blickwinkel; Folgeteile eigener Treffer ausgenommen; neues Kriterium „Würde man das jemandem schicken?“ ([[Originalität und Themenfindung]]) |
+| **Finanz-Formulierungen** | Modell statt Versprechen, Bedingung nennen, 1–2 Annahmen sichtbar im Bild, keine FOMO ([[Finanz-Formulierungen Simulierbar]]) |
+| **Antwort-Videos ab sofort, Stitch-Test** | Zuschauerwünsche als Antwort-Video mit Erwähnung; 4–6 Stitches „Ich hab's durchgerechnet“ ([[Kommentare Antwort-Videos und Stitch]]) |
+| **Profil: 3 Pins, Bio mit Versprechen und Takt, einheitliches Cover** | [[Profil und Follow-Umwandlung]] |
+| **Suchbegriff in Titelfrage und Caption** | [[Plattformregeln und Posting]] › Caption |
 
 ## Neu seit 07.11. (REA-Lauf mit 9 Vorbildern, Freigabe des Inhabers per Klick)
 | Änderung | Wirkung |
 |---|---|
 | **Untertitel in Blöcken von 1–4 Wörtern, Schlüsselwort in der Teamfarbe seiner Seite** | ersetzt „Wort für Wort, aktuelles Wort gelb“; Vorbilder 6/6 mit farbigem Schlüsselwort, Hervorhebung des gesprochenen Worts 0/6 ([[REA Simulierbar Regelwerk]] R02) |
-| **Folgen-Aufruf keine Pflicht mehr** | die Lernschleife vergleicht Videos mit und ohne Aufruf; keines der 9 Vorbilder hat einen ausdrücklichen Aufruf |
+| **Folgen-Aufruf keine Pflicht mehr** | die Lernschleife vergleicht Videos mit und ohne Aufruf; keines der 9 Vorbilder hat einen ausdrücklichen Aufruf (→ seit 08.11.: Test als Textzeile am Ende, siehe oben) |
 | **Sprechtempo 2,3–2,7 Wörter/s, Sätze 3–5 Wörter** | ersetzt „ca. 2,3 Wörter/s“ (Spanne bisher 2,2–2,5); Vorbilder 2,42–2,70, flüssig bleibt Pflicht |
 | **Schlusskarte Pflicht, Schleife freiwillig** | Video endet auf einer Text-/Tafelkarte mit Fazit oder Pointe (Vorbilder 6/6, schwache 1/3) |
 | **Endstand bei ca. 80 % der Länge** | Kipp-Moment als Höhepunkt bei ca. 45 s, Endstand bei ca. 55–58 s (bei 70 s), danach Warum, Pointe und Schlusskarte kompakt; ersetzt „Ergebnis 40–54 s = Höhepunkt“ (Vorbilder 80 %, schwache 57 %) |
@@ -34,7 +45,7 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 | **Alle Stile (1–15 und 17–21) wieder erlaubt, mit Qualitätslatte** | Stile 1–15 und 17–21; jeder Stil muss die Abnahme am Kontaktbogen bestehen |
 | **Mehr Effekte, nichts Übertriebenes** | Licht, Aufleuchten, Zoom (mal ja, mal nein), mehrere Sequenzen und Bildwechsel; **große Sticker bleiben verboten** |
 | **Sprechtempo: Mitte** | 150–190 Wörter bei 65–80 s (ca. 2,3 Wörter/s), muss flüssig und natürlich klingen (→ seit 07.11.: 2,3–2,7 Wörter/s) |
-| **Kein 30-Tage-Plan; Originalität statt Sperrliste** (07.11.) | Skript kommt aus Cockpit bzw. Ideen-Studio ([[Claude-Chat-Workflow]]); Themen aller Länder erlaubt; kein Thema, das es auf Deutsch schon gibt; Klassiker höchstens 1 von 10; Themenfelder Mechaniken, Geschichte, Geld hinter den Dingen, Länder-Duelle ([[Originalität und Themenfindung]]) |
+| **Kein 30-Tage-Plan; Originalität statt Sperrliste** (07.11.) | Skript kommt aus Cockpit bzw. Ideen-Studio ([[Claude-Chat-Workflow]]); Themen aller Länder erlaubt; kein Thema, das es auf Deutsch schon gibt; Klassiker ~~höchstens 1 von 10~~ seit 08.11. bis 3 von 10; Themenfelder Mechaniken, Geschichte, Geld hinter den Dingen, Länder-Duelle ([[Originalität und Themenfindung]]) |
 
 ## Inhalt
 | Regel | Details |
@@ -44,12 +55,13 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 | Bevorzugt große Lebens-/Geldentscheidungen mit großer Endzahl (Recherche 02.11.: dort die Treffer) | [[Simulation-Trendanalyse-2026-11-02]] |
 | Länder frei (Deutschland, weltweit, andere), Sprache Deutsch | [[Account Simulierbar Überblick]] |
 | Ausschlussthemen und Finanzregeln (nur Modellrechnung, keine Anbieter) | [[Auswahl- und Finanzregeln Simulierbar]] |
+| Wie wir über Geld sprechen (seit 08.11.): Modell statt Versprechen, Bedingung und Annahmen sichtbar | [[Finanz-Formulierungen Simulierbar]] |
 | Skript: legitim, nichts erfinden, Diskussionsanreiz nur implizit, als Regie-Text für Ben | [[Befehl Ideen und Skripte Simulierbar]], [[Stimme und Ton Simulierbar]] |
 
 ## Aufbau und Länge
 | Regel | Details |
 |---|---|
-| Feste Reihenfolge (seit 07.11.): Hook (Duell-Frage, Stimme unter 0,2 s, Titel im Bild ab Bild 1) · Regeln (knapp, Chips) · Denkfalle · Rennen · erste Wendung 18–25 s, dann alle 8–10 s (4–5 Wendepunkte, Führungswechsel) · Kipp-Moment ca. 45 s · **Endstand bei ca. 80 %** · Warum · Pointe · **Schlusskarte** (Pflicht). Folgen-Aufruf nur in Testvideos, kein fester Schlusssatz, Schleife freiwillig | [[Videoaufbau Simulierbar]], [[REA Simulierbar Regelwerk]] |
+| Feste Reihenfolge (seit 07.11.): Hook (Duell-Frage, Stimme unter 0,2 s, Titel im Bild ab Bild 1) · Regeln (knapp, Chips) · Denkfalle · Rennen · erste Wendung 18–25 s, dann alle 8–10 s (4–5 Wendepunkte, Führungswechsel) · Kipp-Moment ca. 45 s · **Endstand bei ca. 80 %** · Warum · Pointe · **Schlusskarte** (Pflicht). Folgen-Hinweis nur als Blocktest (Textzeile in den letzten 2–3 s, seit 08.11.), kein fester Schlusssatz, Schleife freiwillig | [[Videoaufbau Simulierbar]], [[REA Simulierbar Regelwerk]] |
 | Länge 65–80 s (mind. 61 s) | [[Videoaufbau Simulierbar]] |
 | Von der ersten Sekunde fangen, Spannung steigern, nie über 2 s Stillstand, alle 1–2 s etwas Neues | [[Videoaufbau Simulierbar]] |
 | Skript und Bild passen exakt zusammen | [[Videoaufbau Simulierbar]] |

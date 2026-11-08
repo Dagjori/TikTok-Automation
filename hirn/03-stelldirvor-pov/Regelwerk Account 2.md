@@ -2,8 +2,8 @@
 typ: regel
 konto: stelldirvor
 status: aktuell
-datum: 2026-11-02
-quelle: CLAUDE.md, .claude/skills/stelldirvor-video/, Entscheidungen des Inhabers bis 02.11.2026 spätabends
+datum: 2026-11-08
+quelle: CLAUDE.md, .claude/skills/stelldirvor-video/, Entscheidungen des Inhabers bis 08.11.2026
 tags: [konto/stelldirvor, regelwerk, regeln]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
@@ -12,7 +12,20 @@ cssclasses: [konto-stelldirvor, typ-regel]
 
 Kurzfassung aller Regeln **nur für Account 2**. Gemeinsame Regeln: [[Regelwerk]]. Account 1 hat ein eigenes Regelwerk: [[Regelwerk Simulierbar]] (nie mischen: [[Trennung der Accounts]]). Einstieg: [[Account stelldirvor.pov Überblick]].
 
-**Stand 07.11.2026.**
+**Stand 08.11.2026.**
+
+## Neu seit 08.11. (Wachstums-Recherche, Wahl des Inhabers per Klick)
+Anlass: Die Zuschauer gehen nach 10–17 s, gesehen werden nur 13–18 % der Länge, auch nach den dichteren Einstiegen und dem Ereignis bei 8 s ([[Wachstum auf 10.000 Follower]]). Für diesen Account ist der Einstieg die Hauptbaustelle.
+| Änderung | Wirkung |
+|---|---|
+| **Testblöcke zum Einstieg** (je 5 Videos, nacheinander) | **(a)** Ereignis bei **2–3 s** statt bei ca. 8 s (Countdown entsprechend kurz) · **(b)** eine **zweite sichtbare Stufe bei 12–15 s** (Sprung im Messwert oder Wechsel der Statuszeile, deutlich im Bild) · **(c)** Länge **62–70 s gegen 80 s** (Zeitplan anteilig kürzen, Abspann bleibt die letzten 8 s, **S**). Gemessen am Anteil der Länge und an der Ø-Zeit; die Gewinner-Variante wird erst nach dem Block als Regel vorgeschlagen ([[Lernschleife und Insights]]). Der laufende Test „frühes Ereignis“ wird dabei nach Blöcken ausgewertet. |
+| **Folgen-Hinweis als Blocktest** | Regel 12 ([[Account stelldirvor.pov Überblick]]) für einen Test geöffnet: eine **Textzeile im Abspann** (72–80 s bzw. letzte 8 s), in der Schrift des Abspanns, **an Inhalt gebunden** („Morgen: …“, „Teil 2 im Profil“), kein Tausch, keine Belohnung, kein Druck. Abwechselnd **10 Videos mit, 10 ohne**; Start, sobald die Follows je Video gemessen werden. Sonst bleibt das Bild frei von Aufrufen. |
+| **Treffer laufen als Serie weiter** | ≥ 3× Median nach 24 h → nummerierter Folgeteil, eigene Prämisse, eigene Auflösung ([[Serien und Treffer-Folgen]]) |
+| **Antwort-Videos und Erwähnungen ab sofort; Stitch und Duett freischalten** | Erwähnungen helfen gerade Accounts unter 2.000 Followern ([[Kommentare Antwort-Videos und Stitch]]) |
+| **Profil: 3 Pins, Bio mit Takt, Cover = Titelfrage** | [[Profil und Follow-Umwandlung]] |
+| **Suchbegriff in Titelfrage und Caption** | [[Plattformregeln und Posting]] › Caption |
+| **Trend-Radar auch für diesen Account** | eigene Signale und K.-o.-Kriterien ([[Trend-Radar]] › Account 2) |
+Stimme oder Musik bleiben ausgeschlossen; ein Test damit nur nach eigener Freigabe des Inhabers (das einzige Video mit Stimme hielt 35 %, n = 1, **A**).
 
 ## Neu seit 07.11. (REA-Lauf mit 7 Vorbildern, Freigabe des Inhabers per Klick)
 | Änderung | Wirkung |
@@ -36,11 +49,11 @@ Kurzfassung aller Regeln **nur für Account 2**. Gemeinsame Regeln: [[Regelwerk]
 ## Format (unverändert, Referenz Lunar)
 | Regel | Details |
 |---|---|
-| 80 s, 30 fps, 1080×1920; **keine Stimme, keine Untertitel** | [[Format Account 2 Lunar]] |
+| 80 s, 30 fps, 1080×1920; **keine Stimme, keine Untertitel** (seit 08.11. Testblock 62–70 s, siehe oben) | [[Format Account 2 Lunar]] |
 | Drei Textebenen: Titelfrage (0,4–4,4 s), Messwert-Anzeige links ab Bild 0 bis „HIER“ (Phase 1 Countdown, darunter Statuszeile, seit 07.11.), 12–18 kursive Sätze (3–9 Wörter, je mind. 3 s) | [[Design Account 2]], [[Ablauf Account 2]] |
 | Bogen (seit 07.11.): Countdown ab 0 s · **Ereignis bei ca. 8 s auf Countdown-Null** · Eskalation in mindestens 3 Stufen · Höhepunkt 58–62 s („HIER“) · Nachspiel · Abblende 70–72 s · Abspann 72–80 s (`#111111`, Titelfrage + Faktenzeile) | [[Ablauf Account 2]] |
 | Jeder Satz passt exakt zum Bild, Zahlen stimmen mit der Anzeige überein | [[Ablauf Account 2]] |
-| Kein Logo, Kanalname, Sticker, Chips, Karaoke, Folgen-Aufruf im Bild | [[Prüfung und Abnahme Account 2]] |
+| Kein Logo, Kanalname, Sticker, Chips, Karaoke, Folgen-Aufruf im Bild (Ausnahme seit 08.11.: Folgen-Hinweis im Abspann, nur in den Testblöcken, siehe oben) | [[Prüfung und Abnahme Account 2]] |
 
 ## Inhalt
 | Regel | Details |

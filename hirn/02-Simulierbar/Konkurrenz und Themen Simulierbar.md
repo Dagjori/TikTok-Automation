@@ -2,7 +2,7 @@
 typ: recherche
 konto: simulierbar
 status: aktuell
-datum: 2026-11-02
+datum: 2026-11-08
 quelle: .claude/skills/simulierbar-video/themen.md §0 und §1, CLAUDE.md §3, Entscheidungen des Inhabers 02.11.2026 abends
 tags: [konto/simulierbar, konkurrenz, nische, markt, kanäle, recherche]
 cssclasses: [konto-simulierbar, typ-recherche]
@@ -69,9 +69,9 @@ Nischenwahl, Marktbelege, Konkurrenzkanäle mit Zahlen und ausgeschlossene Nisch
 Regen rennen/gehen, Pausen gegen Tempo, Tsunami-Warnzeichen, Duschen/Baden: laut Maßstab je über 1 Mio. Aufrufe (Stand 31.10.), vollständig ausgewertet in [[Maßstab Simulierbar]]; alle vier Themen waren bis 02.11. gesperrt (seit 02.11. abends nicht mehr: nur keine 1:1-Kopie). Die Sperrliste (Archiv) nannte am 02.11. für diese Themen bei @kurzsimuliert „2,1 Mio. / 467.800 / 403.000“ (Zuordnung der drei Zahlen zu einzelnen Videos nennt die Quelle nicht; bei 467.800 und 403.000 liegt der Wert unter 1 Mio., Quelle `themen.md` §3 und §8). Ausgangsvideo Regen: 2,1 Mio. (siehe oben).
 
 ## 4. Follower-Umwandlung und Wachstum (F/S)
-- Serie mit Wiedererkennung (gleiches Versprechen, eigene Auflösung im selben Video); Kommentar-Wünsche umsetzen („Antwort auf @…“, liefert Themen); Profil-Grid mit einheitlichen Covern.
-- Teile nur, wenn ein Thema über 3 Minuten braucht (dann je Teil mind. 1 Min. und eigene Auflösung). TikTok selbst: über 1 Minute lange Videos machen das Aufteilen überflüssig, und „den besten Moment ans Ende zu legen“ ist ein häufiger Fehler, weil viele es nie erreichen (daher der Aufbau mit Wendung bei 18–25 s, [[Videoaufbau Simulierbar]]).
-- **Nicht machen:** Follower oder fertige Accounts kaufen (CRP verlangt authentische Follower), Like-for-like-Aufrufe (Engagement-Bait), massenhaft fast identische Videos (Spam). Playlists gibt es erst ab 10k Followern.
+- Serie mit Wiedererkennung (gleiches Versprechen, eigene Auflösung im selben Video); Kommentar-Wünsche umsetzen („Antwort auf @…“, liefert Themen); Profil-Grid mit einheitlichen Covern. **Seit 08.11. als Regeln ausgearbeitet:** [[Serien und Treffer-Folgen]], [[Kommentare Antwort-Videos und Stitch]], [[Profil und Follow-Umwandlung]] (Grundlage: [[Wachstum auf 10.000 Follower]]).
+- Teile nur, wenn ein Thema über 3 Minuten braucht (dann je Teil mind. 1 Min. und eigene Auflösung). TikTok selbst: über 1 Minute lange Videos machen das Aufteilen überflüssig, und „den besten Moment ans Ende zu legen“ ist ein häufiger Fehler, weil viele es nie erreichen (daher der Aufbau mit Wendung bei 18–25 s, [[Videoaufbau Simulierbar]]). **Aufgelöst seit 07.11.:** Das ist kein Widerspruch zum Endstand bei ca. 80 % ([[REA Simulierbar Regelwerk]]): Spannung und Höhepunkte kommen früh und laufend (erste Wendung 18–25 s, Kipp-Moment ca. 45 s), nur das **Ergebnis** steht spät; ein Video, das erst am Ende etwas Sehenswertes zeigt, bleibt verboten.
+- **Nicht machen:** Follower oder fertige Accounts kaufen (CRP verlangt authentische Follower), Like-for-like-Aufrufe (Engagement-Bait), massenhaft fast identische Videos (Spam). Playlists gibt es laut Ratgebern erst ab ca. 10k Followern (**S**, von TikTok nicht offiziell bestätigt, Stand 08.11.).
 - **Alte Shop-Videos:** Produktlinks nicht nachträglich entfernen (geht nur durch Löschen und neu Hochladen) und das Affiliate-Konto nicht deaktivieren (entfernt alle Links, stoppt Provisionen); das 3k-Konto war am 30.10. privat und laut Account check sauber, Einwände gegen die Shop-Videos für das CRP gibt es nicht (Geld bringen ohnehin nur Videos nach der Freischaltung). Wirkung eines Themenwechsels, Löschens oder Privatstellens auf die Reichweite ist von TikTok nicht dokumentiert.
 
 ## 5. Einnahmen-Szenarien und Recht (S, später)

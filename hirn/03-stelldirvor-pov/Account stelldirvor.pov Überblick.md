@@ -2,8 +2,8 @@
 typ: wissen
 konto: stelldirvor
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/stelldirvor-video/SKILL.md
+datum: 2026-11-08
+quelle: .claude/skills/stelldirvor-video/SKILL.md (bis 06.11.), Wahl des Inhabers 08.11.2026, marke/account2/README.md
 tags: [konto/stelldirvor, ueberblick]
 cssclasses: [konto-stelldirvor, typ-wissen]
 ---
@@ -28,6 +28,8 @@ cssclasses: [konto-stelldirvor, typ-wissen]
 | Qualität | Dramaturgie und Qualitätslatte: von der ersten Sekunde fangen, Spannung steigern, nichts Übertriebenes, „sieht es billig aus?“ → Abnahme verweigern ([[Ablauf Account 2]], [[Prüfung und Abnahme Account 2]]) |
 | Lernschleife | täglich 20:00 Uhr (Berlin) Auswertung der Buffer-Zahlen, Verbesserungsvorschläge zur Freigabe, erst danach ändert sich eine Regel ([[Lernschleife und Insights]]); `lern_notizen` in jeder `skript.json` |
 | Kurzfassung | [[Regelwerk Account 2]] (für den Inhaber), gemeinsamer Überblick [[Regelwerk]] |
+| Profil (seit 08.11. im Hirn) | Bio (gesetzt 01.11., 57 Zeichen, ohne Kontaktdaten): „Was wäre, wenn …? Du erlebst es live 🌍⏱️ Dein Szenario? 👇“ (`marke/account2/README.md`); Takt ergänzen, 3 Pins, Cover = Titelfrage ([[Profil und Follow-Umwandlung]]) |
+| Wachstum (seit 08.11.) | Testblöcke zum Einstieg, Folgen-Hinweis als Test, Serien nach Treffern, Antwort-Videos, Stitch und Duett frei ([[Regelwerk Account 2]] › Neu seit 08.11., [[Wachstum auf 10.000 Follower]]) |
 | Konto-Kandidat 3 | „Wer war's?“ (animiertes Krimirätsel, Score 70) |
 
 **Getrennt von Account 1:** Folgen-Aufruf, Schlusssatz, Schleife, Untertitel, Stimme, `massstab.py` und die Stile 17–21 gelten hier nicht ([[Trennung der Accounts]]).
@@ -63,7 +65,7 @@ Muster mit allen Bausteinen: `pipeline/projekte/_demo-lunar-pov/` (Demo, nicht z
 9. **Keine 1:1-Kopie** (bleibt; die Sperrliste entfällt): Themen von Lunar Animations, US-Konten und anderen Kanälen sind frei, der Inhaber kennt sie selbst, und US-Themen dürfen auf Deutsch umgesetzt werden. **Verboten bleibt**, Sätze, Etiketten, Faktenzeilen, Bild- und Szenenideen eines fremden Videos zu übernehmen (CRP-Ausschluss „Unoriginal“; Nachahmer erreichen laut unserer Recherche nur 0,2–5 % des Originals). Gleiches Thema nur mit **eigenem Skript und deutlich anderem Design** (anderer Ort bzw. andere Welt, andere Dramaturgie).
 10. **Deutsche Texte**, deutsche Zahlen (1.013,2), Einheiten metrisch.
 11. **Rhythmus und Skriptquelle:** 2 Videos pro Tag für diesen Account (4 insgesamt), für den nächsten Tag; **höchstens 2 Produktions-Agenten gleichzeitig**, gestaffelt, Produktions-Agenten mit `model: sonnet`. Ein 30-Tage-Plan und Abstandsregeln nach Plan gibt es nicht mehr: Der Inhaber bekommt täglich 10 Videoideen, wählt 2 für den nächsten Tag, Recherche und Skript übernimmt die Tages-Sitzung von Claude Code (Ideen-Studio, `docs/automatik/tages-sitzung.md`), der Inhaber gibt frei ([[Ablauf Account 2]] „Skript-Anforderungen“). Der Ablauf beginnt mit „Skript liegt vor“.
-12. **Kein Logo, kein Kanalname, keine Sticker, Chips, Karaoke, Folgen-Aufruf, Kommentar-Aufruf im Bild.** Die Kommentarfrage steht nur in der Caption. Der Diskussionsanreiz steckt höchstens implizit im Thema, nie ausgesprochen.
+12. **Kein Logo, kein Kanalname, keine Sticker, Chips, Karaoke, Folgen-Aufruf, Kommentar-Aufruf im Bild.** Die Kommentarfrage steht nur in der Caption. Der Diskussionsanreiz steckt höchstens implizit im Thema, nie ausgesprochen. **Ausnahme seit 08.11. (Wahl des Inhabers), nur als Test:** ein inhaltlicher Folgen-Hinweis als Textzeile im Abspann, abwechselnd in Blöcken von 10 Videos mit und ohne ([[Regelwerk Account 2]] › Neu seit 08.11.).
 13. **Kein KI-Label** beim Posten (Bilder sind in Three.js gebaut, keine Stimme).
 
 ## Ablauf je Video (Zeit: Schätzung)
