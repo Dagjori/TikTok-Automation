@@ -1,0 +1,1871 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "kindergeld-kanada",
+ "fps": 30,
+ "dauer": 75.66666666666667,
+ "stimmEnde": 75.051,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "raum",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "DEUTSCHLAND",
+    "farbe": "#3D8BFF"
+   },
+   "b": {
+    "name": "KANADA",
+    "farbe": "#FF4D5A"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 4,
+   "groesse": 64,
+   "unten": 1450,
+   "phrasen": 55
+  },
+  "timing": "echt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "DEUTSCHLAND"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "vs"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "KANADA"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "KINDERGELD BIS 18"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WO GIBT ES MEHR?"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "tafel",
+   "klang": false,
+   "bild": false,
+   "ab": "start"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Deutschland gegen Kanada?",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.05,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KINDERGELD · BIS ZUM 18. GEBURTSTAG"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.1,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Deutsches Zimmer leuchtet blau auf"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.3,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kamera gleitet, beide Kinderzimmer im Abendlicht"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.04,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kanadisches Zimmer leuchtet rot auf"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 2.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wo gibt",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.08,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zurück, beide Zimmer"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 2.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "es mehr Kindergeld?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.27,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ALTER 0 · BABY"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 4.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ein Kind,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.32,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera nah an die Kinder, Titel blendet aus"
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.51,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "EIN KIND"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 5.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "gleiches Einkommen:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 5.55,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "50.000 € FAMILIENEINKOMMEN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera wechselt zu Kanada, Chip Einkommen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 6.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "50.000 € im Jahr.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Säulen wachsen aus dem Boden"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.98,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.35,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GEZÄHLT BIS 18"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 8.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gezählt bis zum 18.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera hebt sich, Chip bis 18"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Geburtstag.",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.67,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ALLES IN EURO"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 10.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Alles in Euro.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.72,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip alles in Euro"
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.98,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.98,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.98,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.98,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 12.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar, Kanada zahlt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.08,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Spot auf Kanada"
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.99,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KANADA ZAHLT MEHR?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 13.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "für Kleinkinder viel mehr.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.92,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kanadisches Kind leuchtet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 15.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Spot wechselt auf Deutschland"
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.7,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.7,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.75,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ALTER 1 · KLEINKIND"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 16.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Jahr 1.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 16.8,
+   "typ": "zaehler",
+   "dauer": 3.267,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 16.8,
+   "typ": "zaehler",
+   "dauer": 3.267,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.8,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera tief, Jahresuhr läuft"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 16.833,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 18.03,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DEUTSCHLAND · 259 € IM MONAT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 18.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Deutschland zahlt 259",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 18.84,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.04,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Deutschland 259 € im Monat, Säule wächst"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 19.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "€ im Monat.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20.033,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.54,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.27,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "EGAL, WAS DIE ELTERN VERDIENEN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 21.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Egal,",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip egal, was die Eltern verdienen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 21.597,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "was die Eltern verdienen.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 23.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 23.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 23.15,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KANADA · BIS ZU 432,82 € IM MONAT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 23.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Kanada zahlt bis",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.2,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zu Kanada, Säule wächst höher"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 24.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "zu 432,82 € –",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 24.36,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.56,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kanada bis zu 432,82 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 25.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "für Kleinkinder.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.06,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 27.34,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 27.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Doch Kanada rechnet nach.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 27.44,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "EINKOMMEN: 78.525 CAD"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 27.44,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.44,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Einkommens-Schieberegler erscheint"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 28.24,
+   "typ": "zaehler",
+   "dauer": 3.7,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 28.34,
+   "art": "zoom",
+   "dauer": 2.7,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.94,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 29.193,
+   "typ": "zaehler",
+   "dauer": 2.733,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.2,
+   "typ": "zaehler",
+   "dauer": 2.733,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 29.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ab einer Grenze kostet",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 29.44,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 29.69,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GRENZE: 38.237 CAD"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.84,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Grenze 38.237 CAD leuchtet auf"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 30.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "jeder Dollar 7 Cent.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 31.02,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JEDER DOLLAR DARÜBER: −7 CENT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.12,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Knopf fährt über die Grenze, Kanadas Säule schrumpft"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.62,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.7,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.7,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 32.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Hier bleiben 283,18",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.8,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KANADA · NUR NOCH 283,18 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.44,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kanada nur noch 283,18 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 33.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "€ im Monat.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.94,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 35.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Kanada liegt trotzdem vorn.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.1,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KANADA LIEGT TROTZDEM VORN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera zurück, Kanada bleibt vorn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 37.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 37.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.567,
+   "typ": "zaehler",
+   "dauer": 2.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.567,
+   "typ": "zaehler",
+   "dauer": 2.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 37.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Nach 6 Jahren führt",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 37.68,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "NACH 6 JAHREN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.68,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Jahresuhr springt auf 6, Kinder wachsen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.667,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 38.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Kanada mit 1.741 €.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 39.367,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.5,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KANADA +1.741 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.6,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kanada führt mit 1.741 €"
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.92,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.02,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ALTER 6 · SCHULKIND"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.433,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.767,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.35,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.35,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ab dem 6.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.6,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "AB 6 JAHREN: WENIGER"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 41.6,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 41.6,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kanadas Betrag sinkt, Kamera zu Kanada"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 42.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Geburtstag senkt Kanada",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 43.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "den Betrag.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.2,
+   "typ": "zaehler",
+   "dauer": 13.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.2,
+   "typ": "zaehler",
+   "dauer": 13.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 44.5,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 44.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Nur noch 215,58",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 44.6,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KANADA · 215,58 € IM MONAT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.96,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kanada 215,58 € im Monat"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 45.39,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "€ im Monat.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.46,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 46.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Deutschland zahlt weiter gleich",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.96,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "viel und holt jedes",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 48.98,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DEUTSCHLAND HOLT 521 € PRO JAHR AUF"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Deutschland holt auf, Leiste schrumpft"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 49.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Jahr 521 € auf.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.04,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "521 € pro Jahr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.54,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 51.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Jahr 7,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.64,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.64,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.64,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.69,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ALTER 7 BIS 9"
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.84,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Jahre 7 und 8 laufen, Vorsprung schmilzt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.867,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 52.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Jahr 8,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.867,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.34,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 53.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "der Vorsprung schmilzt.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.55,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DER VORSPRUNG SCHMILZT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.84,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 55.033,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 55.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 55.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mit 9 Jahren",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 55.2,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "9 JAHRE · 5 MONATE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.2,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "9 Jahre 5 Monate, Gleichstand"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 56.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "und 5 Monaten",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 56.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ist es soweit:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 56.367,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.7,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 57.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Deutschland überholt.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.28,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DEUTSCHLAND ÜBERHOLT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.28,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Deutschland überholt, Leiste wechselt auf Blau"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 57.5,
+   "art": "zoom",
+   "dauer": 2.7,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Chip",
+   "t": 58.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.433,
+   "typ": "zaehler",
+   "dauer": 1.6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.433,
+   "typ": "zaehler",
+   "dauer": 1.6,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.667,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.78,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.867,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.133,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 59.18,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 59.18,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 59.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Endstand mit 18:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.267,
+   "typ": "uhr",
+   "dauer": 0.133,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.28,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Jahresuhr läuft auf 18, Zimmer ausgewachsen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.667,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.4,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.78,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 60.79,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "DEUTSCHLAND"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 60.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Deutschland liegt vorn,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 60.967,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 61.6,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "KANADA"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 61.7,
+   "typ": "uhr",
+   "dauer": 0.067,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 61.98,
+   "art": "zoom",
+   "dauer": 2.6,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 62.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mit 4.511 €.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 62.38,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "VORSPRUNG"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.38,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Endstand-Karte, Differenz 4.511 € glüht"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.88,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 64.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Warum?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Erklärgrafik Warum"
+  },
+  {
+   "quelle": "Balken",
+   "t": 65.4,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "KÜRZUNG DURCH EINKOMMEN · € JE JAHR"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 65.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Kanada kürzt",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.08,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Balken Kürzung durch Einkommen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 66.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mit dem Einkommen.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 66.8,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "KANADA KÜRZT"
+  },
+  {
+   "quelle": "Balken",
+   "t": 67.4,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "BETRAG AB 6 JAHREN · € JE JAHR"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 67.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und zahlt",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kinder atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 67.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "für Schulkinder weniger.",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Balken",
+   "t": 68.16,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "SCHULKINDER: WENIGER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.16,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Balken Betrag ab 6 Jahren"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Aber unter 46.400",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.68,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Schieberegler fährt nach links, Kamera zum Regler"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 69.7,
+   "typ": "zaehler",
+   "dauer": 1.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 69.98,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "UNTER 46.400 €: KANADA VORN"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 70.02,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 70.02,
+   "typ": "zaehler",
+   "dauer": 1.5,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.32,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Einkommen 40.000 €, Säule Kanada steigt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 70.467,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 70.663,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "€ Einkommen gewinnt Kanada.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.6,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kanada überholt zurück, Leiste wechselt auf Rot"
+  },
+  {
+   "quelle": "Chip",
+   "t": 72.66,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 72.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Den Sieger bestimmt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Pointe",
+   "t": 72.96,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "DEN SIEGER  BESTIMMT  DAS EINKOMMEN."
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.96,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Welt dunkelt ab, Schlusskarte"
+  },
+  {
+   "quelle": "Hinweis",
+   "t": 73.151,
+   "typ": "folgen_hinweis",
+   "dauer": 2.5,
+   "text": "Jeden Tag ein Geld-Duell im Profil",
+   "gesprochen": false,
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 74.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "das Einkommen.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 74.32,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Wort Einkommen leuchtet"
+  }
+ ],
+ "klang": []
+}

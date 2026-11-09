@@ -1,0 +1,906 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 75.051,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Deutschland gegen Kanada? Wo gibt es mehr Kindergeld?",
+   "start": 0.0,
+   "ende": 3.68,
+   "woerter": [
+    {
+     "wort": "Deutschland",
+     "start": 0.0,
+     "ende": 0.64
+    },
+    {
+     "wort": "gegen",
+     "start": 0.72,
+     "ende": 0.96
+    },
+    {
+     "wort": "Kanada?",
+     "start": 1.04,
+     "ende": 1.6
+    },
+    {
+     "wort": "Wo",
+     "start": 2.08,
+     "ende": 2.24
+    },
+    {
+     "wort": "gibt",
+     "start": 2.32,
+     "ende": 2.48
+    },
+    {
+     "wort": "es",
+     "start": 2.56,
+     "ende": 2.64
+    },
+    {
+     "wort": "mehr",
+     "start": 2.72,
+     "ende": 2.96
+    },
+    {
+     "wort": "Kindergeld?",
+     "start": 3.04,
+     "ende": 3.68
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Ein Kind, gleiches Einkommen: 50.000 € im Jahr. Gezählt bis zum 18. Geburtstag. Alles in Euro.",
+   "start": 4.32,
+   "ende": 11.8,
+   "woerter": [
+    {
+     "wort": "Ein",
+     "start": 4.32,
+     "ende": 4.48
+    },
+    {
+     "wort": "Kind,",
+     "start": 4.56,
+     "ende": 5.12
+    },
+    {
+     "wort": "gleiches",
+     "start": 5.2,
+     "ende": 5.52
+    },
+    {
+     "wort": "Einkommen:",
+     "start": 5.6,
+     "ende": 6.4
+    },
+    {
+     "wort": "50.000",
+     "start": 6.48,
+     "ende": 7.0
+    },
+    {
+     "wort": "€",
+     "start": 7.0,
+     "ende": 7.52
+    },
+    {
+     "wort": "im",
+     "start": 7.6,
+     "ende": 7.68
+    },
+    {
+     "wort": "Jahr.",
+     "start": 7.76,
+     "ende": 8.2
+    },
+    {
+     "wort": "Gezählt",
+     "start": 8.4,
+     "ende": 8.8
+    },
+    {
+     "wort": "bis",
+     "start": 8.88,
+     "ende": 8.96
+    },
+    {
+     "wort": "zum",
+     "start": 9.04,
+     "ende": 9.2
+    },
+    {
+     "wort": "18.",
+     "start": 9.28,
+     "ende": 9.68
+    },
+    {
+     "wort": "Geburtstag.",
+     "start": 9.76,
+     "ende": 10.64
+    },
+    {
+     "wort": "Alles",
+     "start": 10.72,
+     "ende": 10.96
+    },
+    {
+     "wort": "in",
+     "start": 11.04,
+     "ende": 11.12
+    },
+    {
+     "wort": "Euro.",
+     "start": 11.2,
+     "ende": 11.8
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, Kanada zahlt für Kleinkinder viel mehr. Oder?",
+   "start": 12.08,
+   "ende": 16.36,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 12.08,
+     "ende": 12.48
+    },
+    {
+     "wort": "Kanada",
+     "start": 13.04,
+     "ende": 13.44
+    },
+    {
+     "wort": "zahlt",
+     "start": 13.52,
+     "ende": 13.68
+    },
+    {
+     "wort": "für",
+     "start": 13.76,
+     "ende": 13.84
+    },
+    {
+     "wort": "Kleinkinder",
+     "start": 13.92,
+     "ende": 14.48
+    },
+    {
+     "wort": "viel",
+     "start": 14.64,
+     "ende": 14.8
+    },
+    {
+     "wort": "mehr.",
+     "start": 14.88,
+     "ende": 15.4
+    },
+    {
+     "wort": "Oder?",
+     "start": 15.6,
+     "ende": 16.36
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Jahr 1. Deutschland zahlt 259 € im Monat. Egal, was die Eltern verdienen. Kanada zahlt bis zu 432,82 € – für Kleinkinder.",
+   "start": 16.8,
+   "ende": 26.8,
+   "woerter": [
+    {
+     "wort": "Jahr",
+     "start": 16.8,
+     "ende": 17.04
+    },
+    {
+     "wort": "1.",
+     "start": 17.12,
+     "ende": 17.8
+    },
+    {
+     "wort": "Deutschland",
+     "start": 18.08,
+     "ende": 18.56
+    },
+    {
+     "wort": "zahlt",
+     "start": 18.64,
+     "ende": 18.96
+    },
+    {
+     "wort": "259",
+     "start": 19.04,
+     "ende": 19.68
+    },
+    {
+     "wort": "€",
+     "start": 19.68,
+     "ende": 20.32
+    },
+    {
+     "wort": "im",
+     "start": 20.4,
+     "ende": 20.48
+    },
+    {
+     "wort": "Monat.",
+     "start": 20.56,
+     "ende": 21.12
+    },
+    {
+     "wort": "Egal,",
+     "start": 21.32,
+     "ende": 21.573
+    },
+    {
+     "wort": "was",
+     "start": 21.627,
+     "ende": 21.68
+    },
+    {
+     "wort": "die",
+     "start": 21.76,
+     "ende": 21.84
+    },
+    {
+     "wort": "Eltern",
+     "start": 21.92,
+     "ende": 22.16
+    },
+    {
+     "wort": "verdienen.",
+     "start": 22.24,
+     "ende": 22.72
+    },
+    {
+     "wort": "Kanada",
+     "start": 23.2,
+     "ende": 23.6
+    },
+    {
+     "wort": "zahlt",
+     "start": 23.76,
+     "ende": 24.0
+    },
+    {
+     "wort": "bis",
+     "start": 24.08,
+     "ende": 24.16
+    },
+    {
+     "wort": "zu",
+     "start": 24.24,
+     "ende": 24.4
+    },
+    {
+     "wort": "432,82",
+     "start": 24.56,
+     "ende": 25.04
+    },
+    {
+     "wort": "€",
+     "start": 25.04,
+     "ende": 25.52
+    },
+    {
+     "wort": "–",
+     "start": 25.92,
+     "ende": 25.96
+    },
+    {
+     "wort": "für",
+     "start": 26.0,
+     "ende": 26.08
+    },
+    {
+     "wort": "Kleinkinder.",
+     "start": 26.16,
+     "ende": 26.8
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Doch Kanada rechnet nach. Ab einer Grenze kostet jeder Dollar 7 Cent. Hier bleiben 283,18 € im Monat. Kanada liegt trotzdem vorn.",
+   "start": 27.44,
+   "ende": 37.04,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 27.44,
+     "ende": 27.6
+    },
+    {
+     "wort": "Kanada",
+     "start": 27.76,
+     "ende": 28.16
+    },
+    {
+     "wort": "rechnet",
+     "start": 28.24,
+     "ende": 28.56
+    },
+    {
+     "wort": "nach.",
+     "start": 28.64,
+     "ende": 29.24
+    },
+    {
+     "wort": "Ab",
+     "start": 29.44,
+     "ende": 29.52
+    },
+    {
+     "wort": "einer",
+     "start": 29.6,
+     "ende": 29.76
+    },
+    {
+     "wort": "Grenze",
+     "start": 29.84,
+     "ende": 30.24
+    },
+    {
+     "wort": "kostet",
+     "start": 30.32,
+     "ende": 30.72
+    },
+    {
+     "wort": "jeder",
+     "start": 30.8,
+     "ende": 31.04
+    },
+    {
+     "wort": "Dollar",
+     "start": 31.12,
+     "ende": 31.36
+    },
+    {
+     "wort": "7",
+     "start": 31.52,
+     "ende": 31.76
+    },
+    {
+     "wort": "Cent.",
+     "start": 31.92,
+     "ende": 32.32
+    },
+    {
+     "wort": "Hier",
+     "start": 32.8,
+     "ende": 32.96
+    },
+    {
+     "wort": "bleiben",
+     "start": 33.04,
+     "ende": 33.36
+    },
+    {
+     "wort": "283,18",
+     "start": 33.44,
+     "ende": 34.0
+    },
+    {
+     "wort": "€",
+     "start": 34.0,
+     "ende": 34.56
+    },
+    {
+     "wort": "im",
+     "start": 34.64,
+     "ende": 34.72
+    },
+    {
+     "wort": "Monat.",
+     "start": 34.8,
+     "ende": 35.44
+    },
+    {
+     "wort": "Kanada",
+     "start": 35.52,
+     "ende": 35.92
+    },
+    {
+     "wort": "liegt",
+     "start": 35.96,
+     "ende": 36.16
+    },
+    {
+     "wort": "trotzdem",
+     "start": 36.2,
+     "ende": 36.64
+    },
+    {
+     "wort": "vorn.",
+     "start": 36.72,
+     "ende": 37.04
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Nach 6 Jahren führt Kanada mit 1.741 €.",
+   "start": 37.68,
+   "ende": 41.04,
+   "woerter": [
+    {
+     "wort": "Nach",
+     "start": 37.68,
+     "ende": 37.84
+    },
+    {
+     "wort": "6",
+     "start": 37.92,
+     "ende": 38.16
+    },
+    {
+     "wort": "Jahren",
+     "start": 38.24,
+     "ende": 38.56
+    },
+    {
+     "wort": "führt",
+     "start": 38.64,
+     "ende": 38.88
+    },
+    {
+     "wort": "Kanada",
+     "start": 38.96,
+     "ende": 39.36
+    },
+    {
+     "wort": "mit",
+     "start": 39.44,
+     "ende": 39.52
+    },
+    {
+     "wort": "1.741",
+     "start": 39.6,
+     "ende": 40.32
+    },
+    {
+     "wort": "€.",
+     "start": 40.32,
+     "ende": 41.04
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "text": "Ab dem 6. Geburtstag senkt Kanada den Betrag. Nur noch 215,58 € im Monat. Deutschland zahlt weiter gleich viel und holt jedes Jahr 521 € auf.",
+   "start": 41.6,
+   "ende": 51.04,
+   "woerter": [
+    {
+     "wort": "Ab",
+     "start": 41.6,
+     "ende": 41.68
+    },
+    {
+     "wort": "dem",
+     "start": 41.76,
+     "ende": 41.84
+    },
+    {
+     "wort": "6.",
+     "start": 41.92,
+     "ende": 42.24
+    },
+    {
+     "wort": "Geburtstag",
+     "start": 42.32,
+     "ende": 42.88
+    },
+    {
+     "wort": "senkt",
+     "start": 42.96,
+     "ende": 43.2
+    },
+    {
+     "wort": "Kanada",
+     "start": 43.28,
+     "ende": 43.6
+    },
+    {
+     "wort": "den",
+     "start": 43.68,
+     "ende": 43.76
+    },
+    {
+     "wort": "Betrag.",
+     "start": 43.84,
+     "ende": 44.56
+    },
+    {
+     "wort": "Nur",
+     "start": 44.6,
+     "ende": 44.72
+    },
+    {
+     "wort": "noch",
+     "start": 44.8,
+     "ende": 44.88
+    },
+    {
+     "wort": "215,58",
+     "start": 44.96,
+     "ende": 45.42
+    },
+    {
+     "wort": "€",
+     "start": 45.42,
+     "ende": 45.88
+    },
+    {
+     "wort": "im",
+     "start": 45.92,
+     "ende": 46.0
+    },
+    {
+     "wort": "Monat.",
+     "start": 46.08,
+     "ende": 46.68
+    },
+    {
+     "wort": "Deutschland",
+     "start": 46.96,
+     "ende": 47.44
+    },
+    {
+     "wort": "zahlt",
+     "start": 47.52,
+     "ende": 47.76
+    },
+    {
+     "wort": "weiter",
+     "start": 47.8,
+     "ende": 48.08
+    },
+    {
+     "wort": "gleich",
+     "start": 48.16,
+     "ende": 48.4
+    },
+    {
+     "wort": "viel",
+     "start": 48.48,
+     "ende": 48.64
+    },
+    {
+     "wort": "und",
+     "start": 48.96,
+     "ende": 49.04
+    },
+    {
+     "wort": "holt",
+     "start": 49.08,
+     "ende": 49.28
+    },
+    {
+     "wort": "jedes",
+     "start": 49.36,
+     "ende": 49.68
+    },
+    {
+     "wort": "Jahr",
+     "start": 49.76,
+     "ende": 50.0
+    },
+    {
+     "wort": "521",
+     "start": 50.04,
+     "ende": 50.3
+    },
+    {
+     "wort": "€",
+     "start": 50.3,
+     "ende": 50.56
+    },
+    {
+     "wort": "auf.",
+     "start": 50.64,
+     "ende": 51.04
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "text": "Jahr 7, Jahr 8, der Vorsprung schmilzt. Mit 9 Jahren und 5 Monaten ist es soweit: Deutschland überholt.",
+   "start": 51.6,
+   "ende": 58.72,
+   "woerter": [
+    {
+     "wort": "Jahr",
+     "start": 51.6,
+     "ende": 51.76
+    },
+    {
+     "wort": "7,",
+     "start": 51.84,
+     "ende": 52.48
+    },
+    {
+     "wort": "Jahr",
+     "start": 52.52,
+     "ende": 52.72
+    },
+    {
+     "wort": "8,",
+     "start": 52.84,
+     "ende": 53.36
+    },
+    {
+     "wort": "der",
+     "start": 53.44,
+     "ende": 53.52
+    },
+    {
+     "wort": "Vorsprung",
+     "start": 53.6,
+     "ende": 54.08
+    },
+    {
+     "wort": "schmilzt.",
+     "start": 54.16,
+     "ende": 54.72
+    },
+    {
+     "wort": "Mit",
+     "start": 55.2,
+     "ende": 55.28
+    },
+    {
+     "wort": "9",
+     "start": 55.36,
+     "ende": 55.84
+    },
+    {
+     "wort": "Jahren",
+     "start": 55.92,
+     "ende": 56.24
+    },
+    {
+     "wort": "und",
+     "start": 56.24,
+     "ende": 56.266666666666666
+    },
+    {
+     "wort": "5",
+     "start": 56.266666666666666,
+     "ende": 56.29333333333334
+    },
+    {
+     "wort": "Monaten",
+     "start": 56.29333333333334,
+     "ende": 56.32
+    },
+    {
+     "wort": "ist",
+     "start": 56.32,
+     "ende": 56.4
+    },
+    {
+     "wort": "es",
+     "start": 56.48,
+     "ende": 56.56
+    },
+    {
+     "wort": "soweit:",
+     "start": 56.6,
+     "ende": 57.2
+    },
+    {
+     "wort": "Deutschland",
+     "start": 57.28,
+     "ende": 57.84
+    },
+    {
+     "wort": "überholt.",
+     "start": 58.0,
+     "ende": 58.72
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand mit 18: Deutschland liegt vorn, mit 4.511 €.",
+   "start": 59.28,
+   "ende": 63.92,
+   "woerter": [
+    {
+     "wort": "Endstand",
+     "start": 59.28,
+     "ende": 59.68
+    },
+    {
+     "wort": "mit",
+     "start": 59.76,
+     "ende": 59.84
+    },
+    {
+     "wort": "18:",
+     "start": 59.92,
+     "ende": 60.8
+    },
+    {
+     "wort": "Deutschland",
+     "start": 60.84,
+     "ende": 61.28
+    },
+    {
+     "wort": "liegt",
+     "start": 61.36,
+     "ende": 61.52
+    },
+    {
+     "wort": "vorn,",
+     "start": 61.6,
+     "ende": 62.16
+    },
+    {
+     "wort": "mit",
+     "start": 62.24,
+     "ende": 62.32
+    },
+    {
+     "wort": "4.511",
+     "start": 62.48,
+     "ende": 63.2
+    },
+    {
+     "wort": "€.",
+     "start": 63.2,
+     "ende": 63.92
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Kanada kürzt mit dem Einkommen. Und zahlt für Schulkinder weniger.",
+   "start": 64.6,
+   "ende": 69.44,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 64.6,
+     "ende": 65.24
+    },
+    {
+     "wort": "Kanada",
+     "start": 65.6,
+     "ende": 66.0
+    },
+    {
+     "wort": "kürzt",
+     "start": 66.08,
+     "ende": 66.48
+    },
+    {
+     "wort": "mit",
+     "start": 66.52,
+     "ende": 66.56
+    },
+    {
+     "wort": "dem",
+     "start": 66.64,
+     "ende": 66.72
+    },
+    {
+     "wort": "Einkommen.",
+     "start": 66.8,
+     "ende": 67.52
+    },
+    {
+     "wort": "Und",
+     "start": 67.6,
+     "ende": 67.68
+    },
+    {
+     "wort": "zahlt",
+     "start": 67.72,
+     "ende": 67.92
+    },
+    {
+     "wort": "für",
+     "start": 68.0,
+     "ende": 68.08
+    },
+    {
+     "wort": "Schulkinder",
+     "start": 68.16,
+     "ende": 68.72
+    },
+    {
+     "wort": "weniger.",
+     "start": 68.8,
+     "ende": 69.44
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "text": "Aber unter 46.400 € Einkommen gewinnt Kanada.",
+   "start": 69.68,
+   "ende": 72.48,
+   "woerter": [
+    {
+     "wort": "Aber",
+     "start": 69.68,
+     "ende": 69.92
+    },
+    {
+     "wort": "unter",
+     "start": 70.08,
+     "ende": 70.24
+    },
+    {
+     "wort": "46.400",
+     "start": 70.32,
+     "ende": 70.69333333333333
+    },
+    {
+     "wort": "€",
+     "start": 70.69333333333333,
+     "ende": 71.06666666666666
+    },
+    {
+     "wort": "Einkommen",
+     "start": 71.06666666666666,
+     "ende": 71.44
+    },
+    {
+     "wort": "gewinnt",
+     "start": 71.6,
+     "ende": 71.92
+    },
+    {
+     "wort": "Kanada.",
+     "start": 72.0,
+     "ende": 72.48
+    }
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "text": "Den Sieger bestimmt das Einkommen.",
+   "start": 72.96,
+   "ende": 75.12,
+   "woerter": [
+    {
+     "wort": "Den",
+     "start": 72.96,
+     "ende": 73.12
+    },
+    {
+     "wort": "Sieger",
+     "start": 73.2,
+     "ende": 73.52
+    },
+    {
+     "wort": "bestimmt",
+     "start": 73.68,
+     "ende": 74.08
+    },
+    {
+     "wort": "das",
+     "start": 74.16,
+     "ende": 74.24
+    },
+    {
+     "wort": "Einkommen.",
+     "start": 74.32,
+     "ende": 75.12
+    }
+   ]
+  }
+ ]
+}

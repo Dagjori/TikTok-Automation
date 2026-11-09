@@ -1,0 +1,160 @@
+{
+ "titel": "Kindergeld in Deutschland oder in Kanada: Wo zahlt der Staat bis 18 mehr?",
+ "skill": "video-produktion",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-10-abend",
+ "stil": "19 Architekturmodell (Abendlicht, Kinderzimmer-Schnitthäuser)",
+ "stil_begruendung": "Zwei gleiche Kinderzimmer als Schnitthäuser auf einer dunklen Holzplatte im tiefen Abendlicht: links Deutschland (Blau), rechts Kanada (Rot). Das Kind wächst mit den Jahren, Geld wächst als Acryl-Säulen mit Leuchtkante, ein Einkommens-Schieberegler zeigt, woran Kanadas Betrag hängt. Familie und Wohnen gehört in den Architekturmodell-Baukasten (Stil 19, Abendlicht, dunkle Platte, Leuchtakzente); Vorgänger heute Mittag war Stil 17 (Nachtstadt), davor Stil 20, damit kein Stil zweimal hintereinander.",
+ "teamfarben": {
+  "Deutschland": "#3D8BFF",
+  "Kanada": "#FF4D5A"
+ },
+ "klangteppich": "raum",
+ "stil_helligkeit": "dunkel",
+ "suchbegriff": "Kindergeld",
+ "testbloecke": {
+  "folgen_hinweis": "mit"
+ },
+ "folgen_hinweis": "Jeden Tag ein Geld-Duell im Profil",
+ "teil": 1,
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Deutschland gegen Kanada? Wo gibt es mehr Kindergeld?",
+   "sprechtext": "Deutschland gegen Kanada.\nWo gibt es mehr Kindergeld?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "Ein Kind, gleiches Einkommen: 50.000 € im Jahr. Gezählt bis zum 18. Geburtstag. Alles in Euro.",
+   "sprechtext": "Ein Kind, gleiches Einkommen: fünfzigtausend Euro im Jahr.\nGezählt bis zum achtzehnten Geburtstag, alles in Euro.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, Kanada zahlt für Kleinkinder viel mehr. Oder?",
+   "sprechtext": "Klar … Kanada zahlt für Kleinkinder viel mehr.\nOder?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Jahr 1. Deutschland zahlt 259 € im Monat. Egal, was die Eltern verdienen. Kanada zahlt bis zu 432,82 € – für Kleinkinder.",
+   "sprechtext": "Jahr eins.\nDeutschland zahlt zweihundertneunundfünfzig im Monat, egal, was die Eltern verdienen.\nKanada zahlt bis zu vierhundertdreißig – für Kleinkinder.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Doch Kanada rechnet nach. Ab einer Grenze kostet jeder Dollar 7 Cent. Hier bleiben 283,18 € im Monat. Kanada liegt trotzdem vorn.",
+   "sprechtext": "Doch Kanada rechnet nach.\nAb einer Grenze kostet jeder Dollar sieben Cent.\nHier bleiben zweihundertdreiundachtzig im Monat, Kanada liegt trotzdem VORN.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Nach 6 Jahren führt Kanada mit 1.741 €.",
+   "sprechtext": "Nach sechs Jahren führt Kanada mit rund siebzehnhundert Euro.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "Ab dem 6. Geburtstag senkt Kanada den Betrag. Nur noch 215,58 € im Monat. Deutschland zahlt weiter gleich viel und holt jedes Jahr 521 € auf.",
+   "sprechtext": "Ab dem sechsten Geburtstag senkt Kanada den Betrag, nur noch zweihundertfünfzehn im Monat.\nDeutschland zahlt weiter gleich viel und holt jedes Jahr FÜNFHUNDERT auf.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "kipp",
+   "phase": "kipp",
+   "text": "Jahr 7, Jahr 8, der Vorsprung schmilzt. Mit 9 Jahren und 5 Monaten ist es soweit: Deutschland überholt.",
+   "sprechtext": "Jahr sieben, Jahr acht, der Vorsprung schmilzt.\nMit gut neun Jahren ist es soweit, Deutschland ÜBERHOLT.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Endstand mit 18: Deutschland liegt vorn, mit 4.511 €.",
+   "sprechtext": "Endstand mit achtzehn: Deutschland liegt VORN, mit viereinhalbtausend Euro.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Warum? Kanada kürzt mit dem Einkommen. Und zahlt für Schulkinder weniger.",
+   "sprechtext": "[thoughtful] Warum?\nKanada kürzt mit dem Einkommen, und zahlt für Schulkinder weniger.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "pointe",
+   "phase": "pointe",
+   "text": "Aber unter 46.400 € Einkommen gewinnt Kanada.",
+   "sprechtext": "Aber unter sechsundvierzigtausend gewinnt KANADA.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "schlusskarte",
+   "phase": "schlusskarte",
+   "text": "Den Sieger bestimmt das Einkommen.",
+   "sprechtext": "Den Sieger bestimmt das EINKOMMEN.",
+   "bild_text_abgleich": []
+  }
+ ],
+ "caption": "Kindergeld in Deutschland oder Kanada – wo gibt es bis 18 mehr? 🍁 Ich hab's simuliert. Hättet ihr auf Kanada getippt? 👇 #kindergeld #kanada #familie #wissen #simulation",
+ "originalitaet": "Suche (deutsch): „Kindergeld Kanada Deutschland Vergleich“, „Canada Child Benefit Kindergeld“ (Ideenphase) – kein deutsches Video mit dieser Frage gefunden; eigenes Video ‚Kind bis 18‘ (Kosten) ist eine andere Frage (Staat zahlt, nicht Eltern zahlen).",
+ "rechenweg": "Deutschland: 259 €/Monat × 12 = 3.108 €/Jahr, × 18 = 55.944 €. Kanada (1 Kind, Einkommen 50.000 € × 1,5705 = 78.525 CAD): Kürzung 7 % × (78.525 − 38.237) = 2.820,16 CAD. Unter 6: (8.157 − 2.820,16)/1,5705 = 3.398,18 €/Jahr (283,18 €/Monat); 6–17: (6.883 − 2.820,16)/1,5705 = 2.586,97 €/Jahr (215,58 €/Monat). Summe: 6 × 3.398,18 + 12 × 2.586,97 = 51.432,74 €. Differenz 55.944 − 51.433 = 4.511 € für Deutschland. Nach 6 Jahren: Kanada 20.389 €, Deutschland 18.648 € (+1.741 € Kanada); Aufholen 3.108 − 2.587 = 521 €/Jahr → Überholen in Monat 113 (9 Jahre 5 Monate). Gleichstand der 18-Jahres-Summe bei ca. 46.420 € Einkommen (72.902 CAD); bei Maximalbetrag (Einkommen unter 38.237 CAD) zahlt Kanada 131.538 CAD = 83.755 €. Nachgerechnet mit Python (cockpit/daten/tmp/rechnung_kind.py, rechnung_kind2.py).",
+ "zahlen": {
+  "Kindergeld 2026": "259 €/Monat (3.108 €/Jahr)",
+  "Deutschland bis 18": "55.944 €",
+  "CCB max. unter 6 (2026/27)": "8.157 CAD/Jahr (679,75 CAD/Monat = 432,82 €)",
+  "CCB max. 6–17": "6.883 CAD/Jahr (573,58 CAD/Monat)",
+  "Kürzungsgrenzen (1 Kind)": "7 % über 38.237 CAD; über 82.847 CAD 3.123 CAD + 3,2 %",
+  "Kurs EZB 06.11.2026": "1 € = 1,5705 CAD",
+  "Modelleinkommen": "50.000 €/Jahr = 78.525 CAD",
+  "Kürzung": "2.820,16 CAD/Jahr",
+  "Kanada unter 6": "3.398,18 €/Jahr (283,18 €/Monat)",
+  "Kanada 6–17": "2.586,97 €/Jahr (215,58 €/Monat)",
+  "Stand nach 6 Jahren": "Kanada 20.389 € gegen Deutschland 18.648 € (+1.741 €)",
+  "Aufholen Deutschland": "521 €/Jahr",
+  "Überholen": "mit 9 Jahren 5 Monaten",
+  "Kanada bis 18": "51.433 €",
+  "Endstand": "Deutschland +4.511 €",
+  "Gleichstand": "ca. 46.420 € Einkommen",
+  "Kanada maximal bis 18": "83.755 € (131.538 CAD)"
+ },
+ "annahmen": [
+  "(A) Modellfamilie mit einem Kind und 50.000 € Familieneinkommen im Jahr; in Kanada gleichgesetzt mit dem bereinigten Familien-Nettoeinkommen (AFNI), umgerechnet zum EZB-Kurs vom 06.11.2026 (1,5705 CAD/€), Kurs und Einkommen 18 Jahre konstant.",
+  "(A) Beide Leistungen bleiben 18 Jahre auf dem Stand 2026 bzw. 2026/27 (keine Erhöhungen oder Indexierung eingerechnet).",
+  "(A) Nur Bundesleistungen: deutsches Kindergeld gegen Canada Child Benefit. Nicht eingerechnet: Kinderzuschlag und Kinderfreibetrag (Deutschland), Leistungen der Provinzen (Kanada).",
+  "(A) Gezählt bis zum 18. Geburtstag; in Deutschland kann Kindergeld in Ausbildung bis 25 weiterlaufen, das bleibt außen vor.",
+  "(A) Beide Leistungen steuerfrei, keine Wechselwirkung mit anderen Leistungen."
+ ],
+ "quellen": [
+  "(F) How we calculate your CCB, Canada Revenue Agency, Zeitraum Juli 2026 – Juni 2027 (8.157/6.883 CAD; Grenzen 38.237/82.847 CAD; 7 % bzw. 3.123 CAD + 3,2 % bei einem Kind) – https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-we-calculate-your-ccb.html",
+  "(F) Kindergelderhöhung zum 01.01.2026 auf 259 €, Bundesagentur für Arbeit/Familienkasse, 2025 – https://www.arbeitsagentur.de/vor-ort/datei/2025-42-kindergelderhoehung_ba258916.pdf",
+  "(F) Euro-Referenzkurs Kanadischer Dollar, Europäische Zentralbank, 06.11.2026 (1,5705 CAD je €) – https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-cad.en.html",
+  "(F) Kindergeld 2027: 267 € geplant, noch nicht beschlossen (Stand Okt. 2026), fedratecalc – https://fedratecalc.com/de/kindergeld-erhoehung/"
+ ],
+ "korrekturen": [
+  {
+   "feld": "segmente[11].id",
+   "alt": "schluss",
+   "neu": "schlusskarte",
+   "quelle": "Skill simulierbar.md, Eingangsprüfung (Phasen-IDs)",
+   "grund": "formale Phasen-ID, Inhalt unverändert",
+   "zeit": "2026-11-09"
+  },
+  {
+   "feld": "segmente[regeln,rennen,wendung1,wendung3,kipp,warum].sprechtext",
+   "alt": "einzelne kurze Sätze",
+   "neu": "je zwei Sätze mit Komma verbunden (Wortlaut unverändert)",
+   "quelle": "qc/stimme_vorab.py (Tempo 12b)",
+   "grund": "Satzenden kosten Zeit; Tempo von 2,23 auf 2,31 W/s, Inhalt und Zahlen unverändert",
+   "zeit": "2026-11-09"
+  }
+ ],
+ "lern_notizen": {}
+}
