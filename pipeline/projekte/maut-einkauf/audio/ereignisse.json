@@ -1,0 +1,1847 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "maut-einkauf",
+ "fps": 30,
+ "dauer": 76.36666666666666,
+ "stimmEnde": 75.782,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "nachtfahrt",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "FAMILIE A",
+    "farbe": "#3D8BFF"
+   },
+   "b": {
+    "name": "FAMILIE B",
+    "farbe": "#FF8A3D"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 4,
+   "groesse": 64,
+   "unten": 1450,
+   "phrasen": 66
+  },
+  "timing": "echt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "2021"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "vs"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "HEUTE"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "LKW-MAUT"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WELCHE FAMILIE ZAHLT MEHR?"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "tafel",
+   "klang": false,
+   "bild": false,
+   "ab": "start"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Maut 2021 oder heute?",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.05,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DER BUND NIMMT MAUT EIN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.3,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Wagen rollen an, Scheinwerfer der Laternen, Lichtspuren hinter beiden Wagen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Wagen A leuchtet blau auf"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.36,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Wagen B leuchtet orange auf"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera schiebt sich heran, Laternen ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 2.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Welche Familie zahlt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.24,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera weitet, Titel läuft"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 3.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mehr mit?",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.74,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 4.43,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "FAMILIE A · 2021"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 4.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Familie A: 2021.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.48,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera auf Familie A, Titel blendet aus"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.98,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 6.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Familie B: heute.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 7.23,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "FAMILIE B · HEUTE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.28,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kamera auf Familie B, Chip heute"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.54,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BEIDE ZU VIERT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 8.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Beide zu viert.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera hebt sich, beide Wagen im Bild"
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.74,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ANNAHME: JEDER MAUT-EURO IM PREIS"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Annahme: Jeder Maut-Euro landet",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.84,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet heran, Chip Annahme"
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.34,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 11.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Preis.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 12.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar, ein paar Cent",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.48,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Lichtkegel auf die Wagen, Kamera ruhig und nah"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.66,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "EIN PAAR CENT PRO EINKAUF?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip ein paar Cent"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 14.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "pro Einkauf.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 15.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.2,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Licht hält, Kamera weitet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.76,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.11,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JAHR 2021 · FAMILIE A"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 16.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Familie A zuerst.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.16,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Wagen A zieht an, Kamera folgt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 17.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "2021 nimmt der Bund",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.66,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 18.3,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 18.333,
+   "typ": "zaehler",
+   "dauer": 1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 18.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "7,64 Mrd.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.4,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Mautbrücke zählt Milliarden, Schild leuchtet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 19.223,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "€ Maut ein.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 20.54,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "÷ 83,2 MIO. EINWOHNER"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 20.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Pro Kopf:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet zu Wagen A, Chip pro Kopf"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.22,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 21.253,
+   "typ": "zaehler",
+   "dauer": 0.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 21.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "91,83 €.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.32,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Zähler pro Kopf läuft auf 91,83 €"
+  },
+  {
+   "quelle": "Chip",
+   "t": 22.77,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 23.02,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "× 4 PERSONEN = FAMILIE A"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 23.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Familie A:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.667,
+   "typ": "zaehler",
+   "dauer": 1.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 24.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "367,31 € im Jahr.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.08,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Zähler Familie A läuft auf 367,31 €, Wagen A rollt vor"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.86,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.083,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.11,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DEZ. 2023 · CO2-AUFSCHLAG"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 26.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Dann Dezember 2023.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.16,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera hoch, Dezember 2023, Statuszeile springt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.367,
+   "typ": "zaehler",
+   "dauer": 1.8,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.38,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "B STARTET AUF DEM STAND VON 2021"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Wagen B holt auf, Zähler läuft"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.567,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.98,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 28.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Auf die Maut",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 28.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 29.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "kommt ein CO2-Aufschlag.",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.433,
+   "typ": "zaehler",
+   "dauer": 5.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 29.44,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 29.44,
+   "typ": "zaehler",
+   "dauer": 5.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 29.44,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.44,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Großer Lkw mit CO2-Wolke rollt ein, Zoom"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.467,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.06,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "200 € JE TONNE CO2"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 30.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "200 €",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.94,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 31.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "pro Tonne CO2.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.44,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.58,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 32.78,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 32.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Großer Lkw:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 33.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "19,0 → 34,8",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.8,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Brücke zeigt Tarif 19,0 → 34,8 ct/km"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 33.88,
+   "typ": "zaehler",
+   "dauer": 0.5,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.02,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Tarif steht bei 34,8 ct/km"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 34.1,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ct pro km.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.52,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.26,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.483,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.51,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JULI 2024 · AB 3,5 TONNEN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 36.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Juli 2024.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.533,
+   "typ": "zaehler",
+   "dauer": 4.867,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 36.54,
+   "typ": "zaehler",
+   "dauer": 4.867,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.56,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Juli 2024, Kamera hoch, Statuszeile springt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.06,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.22,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MAUTPFLICHT SCHON AB 3,5 t"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 38.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Jetzt zahlen auch",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 39.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "kleinere Lkw.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kleinere Lkw rollen durch die Mautbrücke"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 40.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Schon ab 3,5 Tonnen",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 40.4,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.4,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Brücke zeigt ab 3,5 t, Zoom"
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.8,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "VORHER NUR AB 7,5 t"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "(vorher 7,5 t).",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 42.02,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 42.12,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 42.12,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.25,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 42.27,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2024 · WIRTSCHAFT SCHWÄCHELT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 42.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Doch die Wirtschaft schwächelt.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.3,
+   "typ": "zaehler",
+   "dauer": 7.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 42.307,
+   "typ": "zaehler",
+   "dauer": 7.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.32,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Verkehr dünnt aus, Zähler B verlangsamt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.82,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "WENIGER FAHRTEN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 43.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Weniger Fahrten.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.92,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Lkw verschwinden, Chip weniger Fahrten"
+  },
+  {
+   "quelle": "Chip",
+   "t": 44.89,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 45.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "2024 fehlen 2 Mrd.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 45.24,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "PLAN 2024 · 15 MRD. €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.42,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 46.16,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LÜCKE · 2 MRD. €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.92,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 46.997,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "€ zum Plan",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.72,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Brücke zeigt Plan 15 Mrd. €"
+  },
+  {
+   "quelle": "Chip",
+   "t": 47.77,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 48.02,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "IST · 12,96 MRD. €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "(12,96 Mrd.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Brücke zeigt Ist 12,96 Mrd. €, Lücke"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.223,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "€).",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der Abstand wächst langsamer.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.48,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera nah an Wagen B, Abstand wächst langsamer"
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.98,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.18,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 50.417,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.43,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2025 · EINNAHMEN STEIGEN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 50.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "2025 steigen",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 50.467,
+   "typ": "zaehler",
+   "dauer": 3.367,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 50.473,
+   "typ": "zaehler",
+   "dauer": 3.367,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.48,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "2025: Brücke zeigt 13,4 Mrd. €, Warnlinie leuchtet auf"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 51.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "die Einnahmen wieder:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.98,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.82,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2025 · 13,4 MRD. €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 52.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "13,4 Mrd.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 53.023,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "€.",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 53.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ein Lkw-Verband warnte 2023:",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.26,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.36,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera auf die Warnlinie"
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.76,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "WARNUNG 2023 · BIS ZU 400 € MEHR"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 54.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "bis zu 400 €",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.86,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 55.36,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.36,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Warnung 400 € leuchtet, Zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 56.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mehr pro Familie",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.86,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 57.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "(350–400 €).",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.74,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KOMMT ES SO SCHLIMM?"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 57.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Kommt es so schlimm?",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.84,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Wagen B nähert sich der Warnlinie"
+  },
+  {
+   "quelle": "Chip",
+   "t": 59.24,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 59.24,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 59.24,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 59.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Endstand: Familie B zahlt",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.44,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Beide Wagen bremsen, Kamera zurück, Endstand-Karte"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.94,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 61.32,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "FAMILIE B · HEUTE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 61.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "641,92 € (2025,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.52,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Wagen B bleibt bei 641,92 € stehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 62.477,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "13,4 Mrd.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.02,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 63.134,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "€ Maut).",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 63.722,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "B ZAHLT MEHR"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 63.792,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "274,61 € mehr als",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 63.822,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.822,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "B zahlt 274,61 € mehr, Zoom, Warnlinie leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 64.54,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BLEIBT UNTER DER WARNLINIE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 65.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Familie A (367,31 €).",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.322,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 65.58,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "FAMILIE A · 2021"
+  },
+  {
+   "quelle": "Chip",
+   "t": 66.5,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 66.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Warum?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Erklärgrafik Warum"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 67.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der CO2-Aufschlag.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 67.5,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "CO2-AUFSCHLAG · MAUTSATZ GROSSER LKW (CT/KM)"
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.6,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Balken Mautsatz 19,0 gegen 34,8"
+  },
+  {
+   "quelle": "Balken",
+   "t": 68.2,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "+ 83,2 %"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 68.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und mehr zahlende Lkw.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Balken",
+   "t": 69.3,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "MEHR ZAHLENDE LKW · MAUTPFLICHT AB (TONNEN)"
+  },
+  {
+   "quelle": "Balken",
+   "t": 70,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "GRENZE SINKT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Balken Mautpflicht 7,5 gegen 3,5 Tonnen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 70.94,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "WENIGER ALS BEFÜRCHTET"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 71.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Weniger als befürchtet.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 71.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und fast die Hälfte",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.04,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zur Brücke, Geldstrom teilt sich"
+  },
+  {
+   "quelle": "Chip",
+   "t": 71.247,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 71.447,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "FAST DIE HÄLFTE → SCHIENE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.547,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Gleis leuchtet, Hälfte fließt in die Schiene"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 71.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "der Maut fließt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 72.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "in die Schiene.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.047,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Laternen und Lichtspuren ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 73.16,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 73.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gut 5 €",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Pointe",
+   "t": 73.36,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "GUT 5 € MEHR  JEDE WOCHE.  12,34 € STATT 7,06 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.36,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Welt dunkelt ab, Schlusskarte: Gut 5 € mehr"
+  },
+  {
+   "quelle": "Hinweis",
+   "t": 73.882,
+   "typ": "folgen_hinweis",
+   "dauer": 2.5,
+   "text": "Jeden Tag ein Geld-Duell im Profil",
+   "gesprochen": false,
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 74.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mehr –",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 74.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "jede Woche.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 74.96,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Zeile jede Woche erscheint"
+  },
+  {
+   "quelle": "Szene",
+   "t": 75.43,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Zeile 12,34 € statt 7,06 € leuchtet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 75.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "(12,34 € statt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 75.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "7,06 €)",
+   "woerter": 2,
+   "zeilen": 1
+  }
+ ],
+ "klang": []
+}

@@ -1,0 +1,156 @@
+{
+ "titel": "Maut 2021 oder heute: Welche Familie zahlt beim Einkaufen mehr mit?",
+ "skill": "video-produktion",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-10-mittag",
+ "stil": "17 Nachtstadt-Miniatur (Autobahn mit Mautbrücke)",
+ "stil_begruendung": "Das Skript führt zwei gleiche Einkaufswagen-Familien durch die Jahre unter einer Mautbrücke auf nächtlicher Autobahn: links Familie A 2021 in Blau, rechts Familie B heute in Orange, über jedem Wagen steht der bisher mitgezahlte Maut-Betrag; die Brücke zählt die Milliarden, ein Warnlicht markiert die 400-Euro-Warnung des Verbands. Dunkle Welt mit Leuchtakzenten (REA R13/R23, dunkle Stile zuerst), Umgebung vorhanden (Autobahn, Lichtspuren, Gebäude, Laternen). Die Vortage liefen in Stil 20 (Mindestlohn, 09.11. Mittag) und 18 (Kaffee/Tee, 09.11. Abend), Stil 17 zuletzt am 08.11. Abend (Mehrwertsteuer), also nie derselbe Stil hintereinander.",
+ "teamfarben": {
+  "Familie A 2021": "#3D8BFF",
+  "Familie B heute": "#FF8A3D"
+ },
+ "klangteppich": "nachtfahrt",
+ "stil_helligkeit": "dunkel",
+ "suchbegriff": "Maut",
+ "testbloecke": {
+  "folgen_hinweis": "mit"
+ },
+ "folgen_hinweis": "Jeden Tag ein Geld-Duell im Profil",
+ "teil": 1,
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Maut 2021 oder heute? Welche Familie zahlt mehr mit?",
+   "sprechtext": "Maut damals gegen heute.\nWelche Familie zahlt mehr mit?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "Familie A: 2021. Familie B: heute. Beide zu viert. Annahme: Jeder Maut-Euro landet im Preis.",
+   "sprechtext": "Familie A lebt einundzwanzig.\nFamilie B lebt heute.\nBeide zu viert.\nJeder Maut-Euro landet im PREIS.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, ein paar Cent pro Einkauf. Oder?",
+   "sprechtext": "Klar … ein paar Cent pro Einkauf.\nOder?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Familie A zuerst. 2021 nimmt der Bund 7,64 Mrd. € Maut ein. Pro Kopf: 91,83 €. Familie A: 367,31 € im Jahr.",
+   "sprechtext": "Familie A zuerst.\nDer Bund nimmt knapp acht Milliarden Maut ein.\nPro Kopf: zweiundneunzig Euro.\nDie Familie zahlt rund DREIHUNDERTSIEBZIG im Jahr.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Dann Dezember 2023. Auf die Maut kommt ein CO2-Aufschlag. 200 € pro Tonne CO2. Großer Lkw: 19,0 → 34,8 ct pro km.",
+   "sprechtext": "Dann Dezember dreiundzwanzig.\nAuf die Maut kommt ein Klima-Aufschlag.\nZweihundert Euro pro Tonne.\nEin großer Lkw zahlt pro Kilometer fast DOPPELT.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Juli 2024. Jetzt zahlen auch kleinere Lkw. Schon ab 3,5 Tonnen (vorher 7,5 t).",
+   "sprechtext": "Juli vierundzwanzig.\nJetzt zahlen auch kleinere Lkw.\nSchon ab dreieinhalb TONNEN.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "Doch die Wirtschaft schwächelt. Weniger Fahrten. 2024 fehlen 2 Mrd. € zum Plan (12,96 Mrd. €). Der Abstand wächst langsamer.",
+   "sprechtext": "Doch die Wirtschaft schwächelt.\nWeniger Fahrten.\nVierundzwanzig fehlen zwei Milliarden zum Plan.\nDer Abstand wächst LANGSAMER.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "kipp",
+   "phase": "kipp",
+   "text": "2025 steigen die Einnahmen wieder: 13,4 Mrd. €. Ein Lkw-Verband warnte 2023: bis zu 400 € mehr pro Familie (350–400 €). Kommt es so schlimm?",
+   "sprechtext": "Fünfundzwanzig steigen die Einnahmen wieder.\nEin Verband warnte damals:\nbis zu VIERHUNDERT Euro mehr pro Familie.\nKommt es so schlimm?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Endstand: Familie B zahlt 641,92 € (2025, 13,4 Mrd. € Maut). 274,61 € mehr als Familie A (367,31 €).",
+   "sprechtext": "Endstand:\nFamilie B zahlt rund sechshundertvierzig.\nZweihundertfünfundsiebzig MEHR als Familie A.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Warum? Der CO2-Aufschlag. Und mehr zahlende Lkw.",
+   "sprechtext": "[thoughtful] Warum?\nDer Klima-Aufschlag.\nUnd mehr zahlende Lkw.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "pointe",
+   "phase": "pointe",
+   "text": "Weniger als befürchtet. Und fast die Hälfte der Maut fließt in die Schiene.",
+   "sprechtext": "Und fast die Hälfte fließt in die SCHIENE.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "schlusskarte",
+   "phase": "schlusskarte",
+   "text": "Gut 5 € mehr – jede Woche. (12,34 € statt 7,06 €)",
+   "sprechtext": "Gut fünf Euro mehr – jede WOCHE.",
+   "bild_text_abgleich": []
+  }
+ ],
+ "caption": "Maut 2021 oder heute – welche Familie zahlt beim Einkaufen mehr mit? 🚚 Ich hab's simuliert. Hättet ihr mit so viel gerechnet? 👇 #maut #lkwmaut #preise #wissen #simulation",
+ "originalitaet": "Suche (deutsch): „Lkw-Maut Kosten pro Haushalt Video“, „Maut Lebensmittel Preise TikTok/YouTube“ (Ideenphase) – nur Presseartikel aus der Debatte 2023 (BGL-Schätzung), kein deutsches Video mit Duell 2021 gegen heute gefunden; TikTok-Suche ohne Login nicht prüfbar.",
+ "rechenweg": "Pro Kopf = Maut-Einnahmen des Bundes / Einwohner; Familie = 4 × pro Kopf. 2021: 7,64 Mrd. € / 83,2 Mio. = 91,83 €/Kopf → 367,31 €/Jahr. 2025: 13,4 Mrd. € / 83,5 Mio. = 160,48 €/Kopf → 641,92 €/Jahr. Differenz 274,61 €/Jahr (+74,8 %); pro Woche 641,92/52 = 12,34 € gegen 367,31/52 = 7,06 € (+5,28 €). Mautsatz Euro-6-Lkw > 18 t, 5+ Achsen: 19,0 → 34,8 ct/km (+83,2 %). 2024: Plan 15 Mrd. €, Ist 12,96 Mrd. € (≈ 2 Mrd. € darunter). BGL-Warnung 350–400 €/Jahr Mehrkosten gegen gerechnet 274,61 €. Hälfte (nach Erhebungskosten) für die Schiene: ca. 321 € der 641,92 €. Nachgerechnet mit Python (cockpit/daten/tmp/rechnung_maut.py).",
+ "zahlen": {
+  "Maut-Einnahmen 2021": "7,64 Mrd. €",
+  "Maut-Einnahmen 2024 (Ist)": "12,96 Mrd. €",
+  "Plan 2024": "15 Mrd. €",
+  "Maut-Einnahmen 2025": "13,4 Mrd. €",
+  "Einwohner Ende 2021": "83,2 Mio.",
+  "Einwohner Ende 2025": "83,5 Mio.",
+  "Pro Kopf 2021": "91,83 €",
+  "Pro Kopf 2025": "160,48 €",
+  "Familie A (2021)": "367,31 €/Jahr",
+  "Familie B (2025)": "641,92 €/Jahr",
+  "Differenz": "274,61 €/Jahr (+74,8 %)",
+  "Pro Woche": "7,06 € gegen 12,34 € (+5,28 €)",
+  "CO2-Aufschlag": "200 €/t CO2 ab 01.12.2023",
+  "Mautsatz Euro 6 > 18 t, 5+ Achsen": "19,0 → 34,8 ct/km",
+  "Mautpflicht": "ab 01.07.2024 über 3,5 t (vorher ab 7,5 t)",
+  "BGL-Warnung 2023": "350–400 €/Jahr je Vier-Personen-Haushalt",
+  "Verwendung": "Hälfte Fernstraßen, Hälfte überwiegend Schiene"
+ },
+ "annahmen": [
+  "(A) Jeder Maut-Euro wird vollständig über Preise an die Verbraucher in Deutschland weitergegeben und gleichmäßig auf alle Einwohner verteilt. Das ist eine Obergrenze: Ein Teil der Maut zahlen Transit-Lkw, deren Ware im Ausland landet; die Bundesregierung hielt 2023 die Wirkung auf das Preisniveau für gering.",
+  "(A) Familie = 4 Personen mit Durchschnittsverbrauch (4 × Pro-Kopf-Wert).",
+  "(A) ‚Heute‘ = letztes volles Jahr 2025 (Ist 13,4 Mrd. €); die Mautsätze stiegen zum 01.01.2026 nicht.",
+  "(A) Nominalwerte, ohne Inflationsbereinigung."
+ ],
+ "quellen": [
+  "(F) Lkw-Maut, Bundesministerium für Verkehr, Stand 2026 (Einnahmen 2025 rund 13,4 Mrd. €, CO2-Differenzierung ab 01.12.2023, Mautpflicht über 3,5 t ab 01.07.2024, Verwendung Hälfte Straße/Hälfte überwiegend Schiene) – https://www.bmv.de/SharedDocs/DE/Artikel/StV/Strassenverkehr/lkw-maut.html",
+  "(F) hib 134/2025, Deutscher Bundestag, 07.04.2025 (Ist 2024 rund 12,96 Mrd. €, deutlich unter Ansatz) – https://www.bundestag.de/presse/hib/kurzmeldungen-1061408",
+  "(F) Lkw-Maut-Einnahmen unter Plan, Verkehrsrundschau, 2025 (Plan 2024 15 Mrd. €) – https://www.verkehrsrundschau.de/nachrichten/transport-logistik/lkw-maut-einnahmen-unter-plan-3637159",
+  "(F) Nun also doch, TRANSPORT/transport-online, 18.11.2022 (Bundesregierung: 7,64 Mrd. € im Jahr 2021) – https://transport-online.de/fachzeitung/fachartikel/politik-und-wirtschaft-lkw-maut-nun-also-doch-78051.html",
+  "(F) CO2-Maut Mauttarife 2023, SVG (200 €/t CO2 ab 01.12.2023; Euro 6 > 18 t 19,0 ct/km) – https://www.svg.de/fileadmin/user_upload/Dateisammlung-Allgemein/PDF/Maut/CO2-Maut_Mauttarife_2023.pdf",
+  "(F) Lkw-Mautsätze, IHK (Euro 6, > 18 t, 5+ Achsen, CO2-Klasse 1: 34,8 ct/km) – https://www.ihk.de/blueprint/servlet/resource/blob/6007920/d8c4952996c5a276ed0f811c8ea64fc0/lkw-mautsaetze-data.pdf",
+  "(F) Höhere Preise wegen Lkw-Mautreform erwartet, Schwäbische Zeitung, 20.09.2023 (BGL: 350–400 € Mehrkosten je Vier-Personen-Haushalt) – https://www.schwaebische.de/wirtschaft/hoehere-preise-wegen-lkw-mautreform-erwartet-1918239",
+  "(F) Lkw-Maut: Keine Erhöhung ab Januar 2026, Verkehrsrundschau, 11.04.2025 – https://www.verkehrsrundschau.de/nachrichten/recht-geld/lkw-maut-keine-erhoehung-ab-januar-2026-3654131",
+  "(F) Pressemitteilung Nr. 251, Destatis, 20.06.2022 (Bevölkerung Ende 2021: 83,2 Mio.) – https://destatis.de/EN/Press/2022/06/PE22_251_12411.html",
+  "(F) Bevölkerung Deutschlands sinkt im Jahr 2025 um 0,1 %, Destatis, 16.06.2026 (Ende 2025: 83,5 Mio.) – https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/06/PD26_203_124.html"
+ ],
+ "korrekturen": [
+  {
+   "feld": "segmente[11].id",
+   "alt": "schluss",
+   "neu": "schlusskarte",
+   "quelle": "Skill simulierbar.md, Eingangsprüfung (Phasen-IDs)",
+   "grund": "formale Phasen-ID, Inhalt unverändert",
+   "zeit": "2026-11-09"
+  }
+ ]
+}

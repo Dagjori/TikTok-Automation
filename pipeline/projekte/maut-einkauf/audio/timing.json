@@ -1,0 +1,1031 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": "gespeichert (Original)",
+ "dauer": 75.782,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Maut 2021 oder heute? Welche Familie zahlt mehr mit?",
+   "start": 0.0,
+   "ende": 3.92,
+   "woerter": [
+    {
+     "wort": "Maut",
+     "start": 0.0,
+     "ende": 0.32
+    },
+    {
+     "wort": "2021",
+     "start": 0.48,
+     "ende": 0.88
+    },
+    {
+     "wort": "oder",
+     "start": 0.88,
+     "ende": 1.28
+    },
+    {
+     "wort": "heute?",
+     "start": 1.36,
+     "ende": 2.0
+    },
+    {
+     "wort": "Welche",
+     "start": 2.24,
+     "ende": 2.48
+    },
+    {
+     "wort": "Familie",
+     "start": 2.56,
+     "ende": 3.04
+    },
+    {
+     "wort": "zahlt",
+     "start": 3.12,
+     "ende": 3.36
+    },
+    {
+     "wort": "mehr",
+     "start": 3.44,
+     "ende": 3.6
+    },
+    {
+     "wort": "mit?",
+     "start": 3.68,
+     "ende": 3.92
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Familie A: 2021. Familie B: heute. Beide zu viert. Annahme: Jeder Maut-Euro landet im Preis.",
+   "start": 4.48,
+   "ende": 12.24,
+   "woerter": [
+    {
+     "wort": "Familie",
+     "start": 4.48,
+     "ende": 4.88
+    },
+    {
+     "wort": "A:",
+     "start": 5.04,
+     "ende": 5.2
+    },
+    {
+     "wort": "2021.",
+     "start": 5.28,
+     "ende": 6.8
+    },
+    {
+     "wort": "Familie",
+     "start": 6.84,
+     "ende": 7.2
+    },
+    {
+     "wort": "B:",
+     "start": 7.28,
+     "ende": 7.52
+    },
+    {
+     "wort": "heute.",
+     "start": 7.92,
+     "ende": 8.44
+    },
+    {
+     "wort": "Beide",
+     "start": 8.64,
+     "ende": 8.96
+    },
+    {
+     "wort": "zu",
+     "start": 9.04,
+     "ende": 9.2
+    },
+    {
+     "wort": "viert.",
+     "start": 9.28,
+     "ende": 9.84
+    },
+    {
+     "wort": "Annahme:",
+     "start": 9.84,
+     "ende": 10.08
+    },
+    {
+     "wort": "Jeder",
+     "start": 10.08,
+     "ende": 10.32
+    },
+    {
+     "wort": "Maut-Euro",
+     "start": 10.4,
+     "ende": 11.04
+    },
+    {
+     "wort": "landet",
+     "start": 11.16,
+     "ende": 11.36
+    },
+    {
+     "wort": "im",
+     "start": 11.44,
+     "ende": 11.52
+    },
+    {
+     "wort": "Preis.",
+     "start": 11.6,
+     "ende": 12.24
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, ein paar Cent pro Einkauf. Oder?",
+   "start": 12.48,
+   "ende": 15.52,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 12.48,
+     "ende": 12.8
+    },
+    {
+     "wort": "ein",
+     "start": 13.28,
+     "ende": 13.36
+    },
+    {
+     "wort": "paar",
+     "start": 13.52,
+     "ende": 13.68
+    },
+    {
+     "wort": "Cent",
+     "start": 13.76,
+     "ende": 14.0
+    },
+    {
+     "wort": "pro",
+     "start": 14.08,
+     "ende": 14.24
+    },
+    {
+     "wort": "Einkauf.",
+     "start": 14.32,
+     "ende": 14.88
+    },
+    {
+     "wort": "Oder?",
+     "start": 15.2,
+     "ende": 15.52
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Familie A zuerst. 2021 nimmt der Bund 7,64 Mrd. € Maut ein. Pro Kopf: 91,83 €. Familie A: 367,31 € im Jahr.",
+   "start": 16.16,
+   "ende": 25.84,
+   "woerter": [
+    {
+     "wort": "Familie",
+     "start": 16.16,
+     "ende": 16.56
+    },
+    {
+     "wort": "A",
+     "start": 16.64,
+     "ende": 16.8
+    },
+    {
+     "wort": "zuerst.",
+     "start": 16.88,
+     "ende": 17.68
+    },
+    {
+     "wort": "2021",
+     "start": 17.68,
+     "ende": 17.8
+    },
+    {
+     "wort": "nimmt",
+     "start": 17.8,
+     "ende": 17.92
+    },
+    {
+     "wort": "der",
+     "start": 17.92,
+     "ende": 18.0
+    },
+    {
+     "wort": "Bund",
+     "start": 18.08,
+     "ende": 18.32
+    },
+    {
+     "wort": "7,64",
+     "start": 18.4,
+     "ende": 18.826666666666664
+    },
+    {
+     "wort": "Mrd.",
+     "start": 18.826666666666664,
+     "ende": 19.253333333333334
+    },
+    {
+     "wort": "€",
+     "start": 19.253333333333334,
+     "ende": 19.68
+    },
+    {
+     "wort": "Maut",
+     "start": 19.76,
+     "ende": 20.0
+    },
+    {
+     "wort": "ein.",
+     "start": 20.12,
+     "ende": 20.56
+    },
+    {
+     "wort": "Pro",
+     "start": 20.64,
+     "ende": 20.72
+    },
+    {
+     "wort": "Kopf:",
+     "start": 20.8,
+     "ende": 21.28
+    },
+    {
+     "wort": "91,83",
+     "start": 21.32,
+     "ende": 22.18
+    },
+    {
+     "wort": "€.",
+     "start": 22.18,
+     "ende": 23.04
+    },
+    {
+     "wort": "Familie",
+     "start": 23.12,
+     "ende": 23.52
+    },
+    {
+     "wort": "A:",
+     "start": 23.6,
+     "ende": 24.080000000000002
+    },
+    {
+     "wort": "367,31",
+     "start": 24.080000000000002,
+     "ende": 24.56
+    },
+    {
+     "wort": "€",
+     "start": 24.56,
+     "ende": 25.04
+    },
+    {
+     "wort": "im",
+     "start": 25.12,
+     "ende": 25.2
+    },
+    {
+     "wort": "Jahr.",
+     "start": 25.28,
+     "ende": 25.84
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Dann Dezember 2023. Auf die Maut kommt ein CO2-Aufschlag. 200 € pro Tonne CO2. Großer Lkw: 19,0 → 34,8 ct pro km.",
+   "start": 26.16,
+   "ende": 36.48,
+   "woerter": [
+    {
+     "wort": "Dann",
+     "start": 26.16,
+     "ende": 26.4
+    },
+    {
+     "wort": "Dezember",
+     "start": 26.48,
+     "ende": 26.96
+    },
+    {
+     "wort": "2023.",
+     "start": 27.04,
+     "ende": 28.32
+    },
+    {
+     "wort": "Auf",
+     "start": 28.4,
+     "ende": 28.48
+    },
+    {
+     "wort": "die",
+     "start": 28.56,
+     "ende": 28.64
+    },
+    {
+     "wort": "Maut",
+     "start": 28.68,
+     "ende": 28.96
+    },
+    {
+     "wort": "kommt",
+     "start": 29.04,
+     "ende": 29.2
+    },
+    {
+     "wort": "ein",
+     "start": 29.28,
+     "ende": 29.36
+    },
+    {
+     "wort": "CO2-Aufschlag.",
+     "start": 29.44,
+     "ende": 30.16
+    },
+    {
+     "wort": "200",
+     "start": 30.16,
+     "ende": 30.880000000000003
+    },
+    {
+     "wort": "€",
+     "start": 30.880000000000003,
+     "ende": 31.6
+    },
+    {
+     "wort": "pro",
+     "start": 31.68,
+     "ende": 31.84
+    },
+    {
+     "wort": "Tonne",
+     "start": 31.92,
+     "ende": 32.24
+    },
+    {
+     "wort": "CO2.",
+     "start": 32.72,
+     "ende": 32.8
+    },
+    {
+     "wort": "Großer",
+     "start": 32.88,
+     "ende": 33.28
+    },
+    {
+     "wort": "Lkw:",
+     "start": 33.36,
+     "ende": 33.68
+    },
+    {
+     "wort": "19,0",
+     "start": 33.8,
+     "ende": 33.91
+    },
+    {
+     "wort": "→",
+     "start": 33.91,
+     "ende": 34.019999999999996
+    },
+    {
+     "wort": "34,8",
+     "start": 34.019999999999996,
+     "ende": 34.13
+    },
+    {
+     "wort": "ct",
+     "start": 34.13,
+     "ende": 34.24
+    },
+    {
+     "wort": "pro",
+     "start": 34.32,
+     "ende": 34.48
+    },
+    {
+     "wort": "km.",
+     "start": 34.56,
+     "ende": 36.48
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Juli 2024. Jetzt zahlen auch kleinere Lkw. Schon ab 3,5 Tonnen (vorher 7,5 t).",
+   "start": 36.56,
+   "ende": 41.84,
+   "woerter": [
+    {
+     "wort": "Juli",
+     "start": 36.56,
+     "ende": 36.88
+    },
+    {
+     "wort": "2024.",
+     "start": 36.96,
+     "ende": 38.24
+    },
+    {
+     "wort": "Jetzt",
+     "start": 38.32,
+     "ende": 38.56
+    },
+    {
+     "wort": "zahlen",
+     "start": 38.64,
+     "ende": 38.88
+    },
+    {
+     "wort": "auch",
+     "start": 38.92,
+     "ende": 39.04
+    },
+    {
+     "wort": "kleinere",
+     "start": 39.12,
+     "ende": 39.52
+    },
+    {
+     "wort": "Lkw.",
+     "start": 39.6,
+     "ende": 40.24
+    },
+    {
+     "wort": "Schon",
+     "start": 40.4,
+     "ende": 40.56
+    },
+    {
+     "wort": "ab",
+     "start": 40.64,
+     "ende": 40.72
+    },
+    {
+     "wort": "3,5",
+     "start": 40.8,
+     "ende": 41.36
+    },
+    {
+     "wort": "Tonnen",
+     "start": 41.44,
+     "ende": 41.84
+    },
+    {
+     "wort": "(vorher",
+     "start": 41.84,
+     "ende": 41.84
+    },
+    {
+     "wort": "7,5",
+     "start": 41.84,
+     "ende": 41.84
+    },
+    {
+     "wort": "t).",
+     "start": 41.84,
+     "ende": 41.84
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "text": "Doch die Wirtschaft schwächelt. Weniger Fahrten. 2024 fehlen 2 Mrd. € zum Plan (12,96 Mrd. €). Der Abstand wächst langsamer.",
+   "start": 42.32,
+   "ende": 50.4,
+   "woerter": [
+    {
+     "wort": "Doch",
+     "start": 42.32,
+     "ende": 42.48
+    },
+    {
+     "wort": "die",
+     "start": 42.52,
+     "ende": 42.56
+    },
+    {
+     "wort": "Wirtschaft",
+     "start": 42.64,
+     "ende": 43.04
+    },
+    {
+     "wort": "schwächelt.",
+     "start": 43.12,
+     "ende": 43.6
+    },
+    {
+     "wort": "Weniger",
+     "start": 43.92,
+     "ende": 44.24
+    },
+    {
+     "wort": "Fahrten.",
+     "start": 44.32,
+     "ende": 45.2
+    },
+    {
+     "wort": "2024",
+     "start": 45.24,
+     "ende": 45.92
+    },
+    {
+     "wort": "fehlen",
+     "start": 46.16,
+     "ende": 46.48
+    },
+    {
+     "wort": "2",
+     "start": 46.52,
+     "ende": 46.77333333333333
+    },
+    {
+     "wort": "Mrd.",
+     "start": 46.77333333333333,
+     "ende": 47.02666666666667
+    },
+    {
+     "wort": "€",
+     "start": 47.02666666666667,
+     "ende": 47.28
+    },
+    {
+     "wort": "zum",
+     "start": 47.36,
+     "ende": 47.52
+    },
+    {
+     "wort": "Plan",
+     "start": 47.72,
+     "ende": 48.12
+    },
+    {
+     "wort": "(12,96",
+     "start": 48.12,
+     "ende": 48.18666666666667
+    },
+    {
+     "wort": "Mrd.",
+     "start": 48.18666666666667,
+     "ende": 48.25333333333333
+    },
+    {
+     "wort": "€).",
+     "start": 48.25333333333333,
+     "ende": 48.32
+    },
+    {
+     "wort": "Der",
+     "start": 48.32,
+     "ende": 48.4
+    },
+    {
+     "wort": "Abstand",
+     "start": 48.48,
+     "ende": 48.96
+    },
+    {
+     "wort": "wächst",
+     "start": 49.04,
+     "ende": 49.28
+    },
+    {
+     "wort": "langsamer.",
+     "start": 49.36,
+     "ende": 50.4
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "text": "2025 steigen die Einnahmen wieder: 13,4 Mrd. €. Ein Lkw-Verband warnte 2023: bis zu 400 € mehr pro Familie (350–400 €). Kommt es so schlimm?",
+   "start": 50.48,
+   "ende": 58.88,
+   "woerter": [
+    {
+     "wort": "2025",
+     "start": 50.48,
+     "ende": 51.2
+    },
+    {
+     "wort": "steigen",
+     "start": 51.44,
+     "ende": 51.76
+    },
+    {
+     "wort": "die",
+     "start": 51.84,
+     "ende": 51.92
+    },
+    {
+     "wort": "Einnahmen",
+     "start": 51.96,
+     "ende": 52.4
+    },
+    {
+     "wort": "wieder:",
+     "start": 52.44,
+     "ende": 52.92
+    },
+    {
+     "wort": "13,4",
+     "start": 52.92,
+     "ende": 52.986666666666665
+    },
+    {
+     "wort": "Mrd.",
+     "start": 52.986666666666665,
+     "ende": 53.053333333333335
+    },
+    {
+     "wort": "€.",
+     "start": 53.053333333333335,
+     "ende": 53.12
+    },
+    {
+     "wort": "Ein",
+     "start": 53.12,
+     "ende": 53.28
+    },
+    {
+     "wort": "Lkw-Verband",
+     "start": 53.36,
+     "ende": 53.68
+    },
+    {
+     "wort": "warnte",
+     "start": 53.76,
+     "ende": 54.08
+    },
+    {
+     "wort": "2023:",
+     "start": 54.2,
+     "ende": 54.72
+    },
+    {
+     "wort": "bis",
+     "start": 54.88,
+     "ende": 55.04
+    },
+    {
+     "wort": "zu",
+     "start": 55.12,
+     "ende": 55.2
+    },
+    {
+     "wort": "400",
+     "start": 55.36,
+     "ende": 55.8
+    },
+    {
+     "wort": "€",
+     "start": 55.8,
+     "ende": 56.24
+    },
+    {
+     "wort": "mehr",
+     "start": 56.32,
+     "ende": 56.56
+    },
+    {
+     "wort": "pro",
+     "start": 56.64,
+     "ende": 56.8
+    },
+    {
+     "wort": "Familie",
+     "start": 56.84,
+     "ende": 57.6
+    },
+    {
+     "wort": "(350–400",
+     "start": 57.6,
+     "ende": 57.72
+    },
+    {
+     "wort": "€).",
+     "start": 57.72,
+     "ende": 57.84
+    },
+    {
+     "wort": "Kommt",
+     "start": 57.84,
+     "ende": 58.0
+    },
+    {
+     "wort": "es",
+     "start": 58.08,
+     "ende": 58.24
+    },
+    {
+     "wort": "so",
+     "start": 58.32,
+     "ende": 58.4
+    },
+    {
+     "wort": "schlimm?",
+     "start": 58.48,
+     "ende": 58.88
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Endstand: Familie B zahlt 641,92 € (2025, 13,4 Mrd. € Maut). 274,61 € mehr als Familie A (367,31 €).",
+   "start": 59.44,
+   "ende": 65.92,
+   "woerter": [
+    {
+     "wort": "Endstand:",
+     "start": 59.44,
+     "ende": 60.08
+    },
+    {
+     "wort": "Familie",
+     "start": 60.4,
+     "ende": 60.72
+    },
+    {
+     "wort": "B",
+     "start": 60.88,
+     "ende": 61.12
+    },
+    {
+     "wort": "zahlt",
+     "start": 61.2,
+     "ende": 61.44
+    },
+    {
+     "wort": "641,92",
+     "start": 61.52,
+     "ende": 61.848888888888894
+    },
+    {
+     "wort": "€",
+     "start": 61.848888888888894,
+     "ende": 62.177777777777784
+    },
+    {
+     "wort": "(2025,",
+     "start": 62.177777777777784,
+     "ende": 62.50666666666667
+    },
+    {
+     "wort": "13,4",
+     "start": 62.50666666666667,
+     "ende": 62.83555555555556
+    },
+    {
+     "wort": "Mrd.",
+     "start": 62.83555555555556,
+     "ende": 63.16444444444445
+    },
+    {
+     "wort": "€",
+     "start": 63.16444444444445,
+     "ende": 63.49333333333334
+    },
+    {
+     "wort": "Maut).",
+     "start": 63.49333333333334,
+     "ende": 63.82222222222222
+    },
+    {
+     "wort": "274,61",
+     "start": 63.82222222222222,
+     "ende": 64.15111111111112
+    },
+    {
+     "wort": "€",
+     "start": 64.15111111111112,
+     "ende": 64.48
+    },
+    {
+     "wort": "mehr",
+     "start": 64.64,
+     "ende": 64.88
+    },
+    {
+     "wort": "als",
+     "start": 64.96,
+     "ende": 65.12
+    },
+    {
+     "wort": "Familie",
+     "start": 65.16,
+     "ende": 65.52
+    },
+    {
+     "wort": "A",
+     "start": 65.68,
+     "ende": 65.92
+    },
+    {
+     "wort": "(367,31",
+     "start": 65.92,
+     "ende": 65.92
+    },
+    {
+     "wort": "€).",
+     "start": 65.92,
+     "ende": 65.92
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Warum? Der CO2-Aufschlag. Und mehr zahlende Lkw.",
+   "start": 66.6,
+   "ende": 70.56,
+   "woerter": [
+    {
+     "wort": "Warum?",
+     "start": 66.6,
+     "ende": 67.16
+    },
+    {
+     "wort": "Der",
+     "start": 67.44,
+     "ende": 67.52
+    },
+    {
+     "wort": "CO2-Aufschlag.",
+     "start": 67.6,
+     "ende": 68.68
+    },
+    {
+     "wort": "Und",
+     "start": 68.88,
+     "ende": 69.12
+    },
+    {
+     "wort": "mehr",
+     "start": 69.28,
+     "ende": 69.44
+    },
+    {
+     "wort": "zahlende",
+     "start": 69.52,
+     "ende": 69.92
+    },
+    {
+     "wort": "Lkw.",
+     "start": 70.0,
+     "ende": 70.56
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "text": "Weniger als befürchtet. Und fast die Hälfte der Maut fließt in die Schiene.",
+   "start": 71.04,
+   "ende": 73.16,
+   "woerter": [
+    {
+     "wort": "Weniger",
+     "start": 71.04,
+     "ende": 71.04
+    },
+    {
+     "wort": "als",
+     "start": 71.04,
+     "ende": 71.04
+    },
+    {
+     "wort": "befürchtet.",
+     "start": 71.04,
+     "ende": 71.04
+    },
+    {
+     "wort": "Und",
+     "start": 71.04,
+     "ende": 71.12
+    },
+    {
+     "wort": "fast",
+     "start": 71.24,
+     "ende": 71.36
+    },
+    {
+     "wort": "die",
+     "start": 71.44,
+     "ende": 71.52
+    },
+    {
+     "wort": "Hälfte",
+     "start": 71.547,
+     "ende": 71.92
+    },
+    {
+     "wort": "der",
+     "start": 71.92,
+     "ende": 71.96000000000001
+    },
+    {
+     "wort": "Maut",
+     "start": 71.96000000000001,
+     "ende": 72.0
+    },
+    {
+     "wort": "fließt",
+     "start": 72.0,
+     "ende": 72.32
+    },
+    {
+     "wort": "in",
+     "start": 72.36,
+     "ende": 72.4
+    },
+    {
+     "wort": "die",
+     "start": 72.48,
+     "ende": 72.56
+    },
+    {
+     "wort": "Schiene.",
+     "start": 72.64,
+     "ende": 73.16
+    }
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "text": "Gut 5 € mehr – jede Woche. (12,34 € statt 7,06 €)",
+   "start": 73.36,
+   "ende": 75.84,
+   "woerter": [
+    {
+     "wort": "Gut",
+     "start": 73.36,
+     "ende": 73.52
+    },
+    {
+     "wort": "5",
+     "start": 73.6,
+     "ende": 73.91999999999999
+    },
+    {
+     "wort": "€",
+     "start": 73.91999999999999,
+     "ende": 74.24
+    },
+    {
+     "wort": "mehr",
+     "start": 74.32,
+     "ende": 74.56
+    },
+    {
+     "wort": "–",
+     "start": 74.88,
+     "ende": 74.92
+    },
+    {
+     "wort": "jede",
+     "start": 74.96,
+     "ende": 75.2
+    },
+    {
+     "wort": "Woche.",
+     "start": 75.28,
+     "ende": 75.84
+    },
+    {
+     "wort": "(12,34",
+     "start": 75.84,
+     "ende": 75.84
+    },
+    {
+     "wort": "€",
+     "start": 75.84,
+     "ende": 75.84
+    },
+    {
+     "wort": "statt",
+     "start": 75.84,
+     "ende": 75.84
+    },
+    {
+     "wort": "7,06",
+     "start": 75.84,
+     "ende": 75.84
+    },
+    {
+     "wort": "€)",
+     "start": 75.84,
+     "ende": 75.84
+    }
+   ]
+  }
+ ]
+}
