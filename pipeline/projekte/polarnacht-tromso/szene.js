@@ -27,12 +27,20 @@ const KPITCH = K([[0, 5], [2.5, 6], [5, 8], [8, 5], [20, 5], [34, 7], [40, 6], [
 const KFOV = K([[0, 60], [8, 56], [34, 58], [40, 40], [46, 50], [52, 56], [60.5, 30], [62, 30], [62.02, 80], [70, 74], [80, 70]]);
 const KDX = K([[0, 0], [80, 0]]);                  // Fahrt am Ufer (+x = nach Westen), Meter
 
+// Gestaltung: im Zeitraffer (1 Tag = 2 s) bleibt die Sonne nachts nur wenig unter dem Horizont, sonst blitzt der Himmel im Sekundentakt zwischen Schwarz und Tag (Stroboskop).
+// Sonnenstand über dem Horizont und der Untergang/Aufgang bleiben exakt, nur die Tiefe der Nacht ist begrenzt (Boden −4° bis −9° gegen Ende).
+const weich = (x, t) => {
+  const so = S.sonneBei(x), F = -4 - 5 * smoothstep(30, 42, t), z = t > T_NULL + 0.5 && t < T_SCHNITT - 0.5;
+  return z && so.scheinbar < F ? { ...so, scheinbar: F + (so.scheinbar - F) * 0.08 } : so;
+};
 const hellAusHoehe = (a) => smoothstep(-13, 5, a);
 const sonnenVec = (so) => { const alt = so.scheinbar * D2R, az = so.az * D2R; return [Math.sin(az) * Math.cos(alt), Math.sin(alt), -Math.cos(az) * Math.cos(alt)]; };
-function helligkeit(t) {                       // reale Helligkeit, leicht geglättet (kein hartes Pulsieren im Zeitraffer 1 Tag = 2 s)
-  const tt = (x) => hellAusHoehe(S.sonneBei(x).scheinbar);
-  const n = tt(t), m = (tt(t - 0.3) + tt(t - 0.15) + tt(t + 0.15) + tt(t + 0.3)) / 4;
-  const v = lerp(n, m, t > T_NULL && t < T_SCHNITT - 0.2 ? 0.45 : 0);
+function helligkeit(t, roh = false) {         // Zeitraffer 1 Tag = 2 s: Helligkeit über einen ganzen Tag gemittelt (kein Tag-Nacht-Stroboskop), Sonne und Schatten laufen real
+  const tt = (x) => hellAusHoehe(weich(x, t).scheinbar);
+  const n = tt(t);
+  if (roh) return n;
+  let m = 0; for (let i = 0; i < 8; i++) m += tt(t - 1 + (2 * (i + 0.5)) / 8); m /= 8;
+  const v = t > T_NULL + 1 && t < T_SCHNITT - 0.2 ? lerp(n, m, 0.8) : n;
   return t >= T_SCHNITT ? v * 0.45 : v;          // Nachspiel: Mittagsdämmerung etwas dunkler gestaltet, damit das Nordlicht trägt
 }
 
@@ -59,10 +67,10 @@ async function start() {
   // ------------------------------------------------------------------ Zustand je Zeit
   const zeitraffer = (t) => t >= T_NULL && t < T_SCHNITT;
   const zustand = (t) => {
-    const so = S.sonneBei(t), hell = helligkeit(t);
+    const so = weich(t, t), hell = helligkeit(t), hellRoh = hellAusHoehe(S.sonneBei(t).scheinbar) * (t >= T_SCHNITT ? 0.45 : 1);
     const schnee = t < T_NULL ? 0.12 : t >= 25 ? 1 : lerp(0.12, 1, smoothstep(8, 25, t));
     const pl = Math.max(smoothstep(33, 38, t) * (1 - smoothstep(60.2, 61.2, t)), smoothstep(62, 62.5, t));
-    return { so, hell, schnee, eis: lerp(0.15, 0.7, smoothstep(10, 48, t)), polarlicht: 0.8 * pl * PLK * clamp(1 - 1.8 * hell),
+    return { so, hell, schnee, eis: lerp(0.15, 0.7, smoothstep(10, 48, t)), polarlicht: 0.8 * pl * PLK * clamp(1 - 1.8 * hellRoh),
       schneefall: t < 15 ? 0 : t < 32 ? 0.55 : t < 60 ? 0.3 : 0.15, tempo: zeitraffer(t) ? 0.3 : 1 };
   };
   const schiffPos = (t) => { const u = clamp((t - 31) / 20); return { x: lerp(300, -140, u), z: -320 + 40 * u, ry: Math.PI / 2 }; };
