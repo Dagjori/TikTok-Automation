@@ -1,0 +1,422 @@
+{
+ "skript_id": "acc2-2026-11-10-abend",
+ "skript_quelle": "acc2-2026-11-10-abend",
+ "titel": "Was wäre, wenn du die Polarnacht in Tromsø erlebst?",
+ "titelfrage": "Was wäre, wenn du die Polarnacht in Tromsø erlebst?",
+ "suchbegriff": "Polarnacht",
+ "konto": "stelldirvor",
+ "format": "referenz_pov",
+ "skill": "video-produktion",
+ "laenge_s": 80,
+ "teil": 1,
+ "testbloecke": {
+  "folgen_hinweis": "mit",
+  "einstieg_a2": "a"
+ },
+ "folgen_hinweis": "Warum die Erdachse das macht: im Profil",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Welt engine/welt_polar_fjord.js, Variante PolarStrand (Abwandlung, kein Neubau)",
+ "thema": "Vom 29. Oktober bis 27. November 2026 schrumpft der Tag in Tromsø (69,6° N) von 7:02 Std. auf 22 Minuten; danach geht die Sonne bis zum 15. Januar 2027 nicht mehr auf.",
+ "welt": "Gletscher, Eis, Polarregion / Küste: Strand an der Südspitze der Insel Tromsøya, Blick nach Süden über das Wasser auf flache, verschneite Bergkämme; links bunte Holzhäuser am Ufer, Bootssteg, Straßenlaternen; Leben: Möwen, Eiderenten, Spaziergänger, Boote, ein Schiff; Nordlicht in den Nächten der zweiten Hälfte und im Nachspiel. Berge im Süden flach halten (die Sonnenzeiten gelten für den freien Horizont). Basis: Welt aus „Polarnacht Teil 2“ bzw. pipeline/projekte/_test-polar-fjord prüfen und umbauen (Strand statt Bootsdeck)",
+ "standpunkt": "ebenerdig: am Strand auf Höhe der Wasserlinie, Steine und Seetang im Vordergrund, Blick nach Süden; die Sonne wandert flach von links (Südosten) nach rechts (Südwesten)",
+ "tageszeit_verlauf": "Spätnachmittag mit Sonnenuntergang am 29.10. (0–4 s) → Tag-Nacht-Zeitraffer, je Tag 2 s, die Sonnenbahn wird jeden Tag flacher und kürzer (4–58 s): goldenes Licht (bis ca. 30 s) → blaues, fahles Mittagslicht (ab ca. 38 s), Nächte mit Nordlicht (ab ca. 34 s) → letzter kurzer Sonnenauf- und -untergang am 27.11., 11:21–11:43 (58–62 s) → Polarnacht: blaue Mittagsdämmerung und Nordlicht (62–70 s)",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 2.5,
+   "faktor": "1 s = 2 Min. (Sonnenuntergang, Countdown)",
+   "anzeige": "SONNENUNTERGANG IN 0:02 → 0:00"
+  },
+  {
+   "von": 2.5,
+   "bis": 57,
+   "faktor": "1 Tag = 2 s (1 s = 12 Std.), 29.10. → 25.11.",
+   "anzeige": "TAGESLÄNGE 7:02 → 2:31 (Std:Min), Datum läuft mit"
+  },
+  {
+   "von": 57,
+   "bis": 62,
+   "faktor": "weich verlangsamt bis zum letzten Sonnenrand (27.11., 11:21–11:43)",
+   "anzeige": "LETZTE SONNE IN 5 → 0 TAGE, dann HIER"
+  },
+  {
+   "von": 62,
+   "bis": 70,
+   "faktor": "1 s = 1 Std. (Polarnacht, 28.11.)",
+   "anzeige": "HIER, POLARNACHT BIS 15. JANUAR"
+  }
+ ],
+ "zeitraffer_hinweis": "0–2,5 s Echtzeit (Countdown) · 2,5–60,5 s: 1 Tag je 2 s (1 s ≈ 12 Std.), 29.10.→27.11.2026 · 58–62 s weich verlangsamt auf den letzten Sonnenrand · ab 62 s: 1 s ≈ 1 Std. (Mittagsdämmerung der Polarnacht, dann Nacht mit Nordlicht)",
+ "kamera": "fest mit Blick nach Süden; 5–8 s langsamer Schwenk mit der untergehenden Sonne nach rechts und zurück (vor 8 s); 34–40 s langsame Fahrt am Ufer entlang auf das Schiff zu; 52–60 s langsamer Zoom auf den Horizontpunkt, an dem die Sonne zuletzt erscheint; bei 62 s harter Schnitt (Maßstabssprung) auf den weiten Blick nach oben ins Nordlicht",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 2.5,
+   "etikett": "SONNENUNTERGANG IN",
+   "start": "0:02",
+   "ende": "0:00",
+   "einheit": "m:ss",
+   "unter": "TROMSØ, 29. OKTOBER"
+  },
+  {
+   "von_s": 2.5,
+   "bis_s": 50.5,
+   "etikett": "TAGESLÄNGE",
+   "start": "7:02",
+   "ende": "2:31",
+   "einheit": "Std.:Min.",
+   "unter": "1 TAG = 2 SEKUNDEN (2,5–10 s) → Datum läuft mit, z. B. „3. NOVEMBER“ (10–24 s) → SONNE MITTAGS 3° HOCH (24–30 s) → LICHTER FRÜHER AN (30–38 s) → SONNE MITTAGS 1° HOCH (38–46 s) → MINUS 15 MINUTEN PRO TAG (46–50,5 s)"
+  },
+  {
+   "von_s": 50.5,
+   "bis_s": 60.5,
+   "etikett": "LETZTE SONNE IN",
+   "start": "5",
+   "ende": "0",
+   "einheit": "Tage",
+   "unter": "22. NOVEMBER → 27. NOVEMBER, 11:21–11:43 UHR"
+  },
+  {
+   "von_s": 60.5,
+   "bis_s": 70,
+   "etikett": "HIER",
+   "start": "HIER",
+   "ende": "HIER",
+   "einheit": "Wort",
+   "unter": "POLARNACHT BIS 15. JANUAR (blendet 69,2–70,1 s aus)"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Die Sonne geht kurz vor drei unter.",
+   3.4
+  ],
+  [
+   9,
+   "Dann kommt sie später und geht früher.",
+   3.4
+  ],
+  [
+   13.2,
+   "Jeden Tag fehlen rund zehn Minuten Licht.",
+   3.4
+  ],
+  [
+   17.4,
+   "Die Schatten am Strand werden immer länger.",
+   3.4
+  ],
+  [
+   21.6,
+   "Schnee legt sich auf die Holzhäuser.",
+   3.4
+  ],
+  [
+   25.8,
+   "Der Tag ist nur noch fünf Stunden lang.",
+   3.4
+  ],
+  [
+   30,
+   "Die Lichter am Ufer gehen früher an.",
+   3.4
+  ],
+  [
+   34.2,
+   "Ein Schiff zieht durch den dunklen Fjord.",
+   3.4
+  ],
+  [
+   38.4,
+   "Das Licht wird blau statt golden.",
+   3.4
+  ],
+  [
+   42.6,
+   "Mittags steht die Sonne knapp über dem Horizont.",
+   3.4
+  ],
+  [
+   46.8,
+   "Der Tag schrumpft auf drei Stunden.",
+   3.4
+  ],
+  [
+   50.8,
+   "Noch fünf Tage, dann bleibt sie weg.",
+   3.4
+  ],
+  [
+   54.6,
+   "Sie streift nur noch den Horizont.",
+   3.3
+  ],
+  [
+   63,
+   "Bis Mitte Januar geht sie nicht mehr auf.",
+   3.4
+  ],
+  [
+   66.8,
+   "Doch mittags dämmert es noch vier Stunden.",
+   3.2
+  ]
+ ],
+ "satz_dauer": "3,2–3,4 s, Lücke ≥ 0,8 s",
+ "faktenzeile": "TROMSØ, 2026 · LETZTE SONNE AM 27. NOVEMBER, DIE NÄCHSTE AM 15. JANUAR",
+ "abspann": {
+  "frage": "Was wäre, wenn du die Polarnacht in Tromsø erlebst?",
+  "fakt": "TROMSØ, 2026 · LETZTE SONNE AM 27. NOVEMBER, DIE NÄCHSTE AM 15. JANUAR",
+  "hinweis": "Warum die Erdachse das macht: im Profil"
+ },
+ "rechnung": {
+  "code": "pipeline/sim/polarnacht_tromso.mjs (Test: pipeline/sim/polarnacht_tromso.test.mjs, 9 Tests grün)"
+ },
+ "rechenweg": "NOAA-Sonnenrechnung in Python (cockpit/daten/tmp/tromso_sonne.py, tromso_achse.py) für Tromsø 69,6492° N, 18,9553° O, MEZ; Sonnenauf-/-untergang bei −0,833° (Refraktion + Sonnenrand), bürgerliche Dämmerung bei −6°. Ergebnis: 29.10. 7:57–14:59 = 7:02 Std.; 1.11. 6:33 (time-ok.com 6:33:42 ✓); 10.11. 5:02, Mittagshöhe 3,1°; 18.11. 3:28, 1,1°; 20.11. 3:01; 22.11. 2:31; 26.11. 1:08; 27.11. 11:21–11:43 = 0:22 (Quellen 11:16–11:46 bzw. 11:21–11:41 ✓); 28.11.2026 bis 14.01.2027 keine Sonne (48 Tage ≈ 7 Wochen); erster Sonnenaufgang 15.01.2027 11:35–12:13 ✓. Tagesverlust: 29.10.–11.11. 9–11 Min./Tag („rund zehn Minuten“), 19.–22.11. 13–15 Min., 24.–27.11. 19–46 Min. Bürgerliche Dämmerung 21.12.: 9:32–13:54 = 4:22 Std. (Minimum der Polarnacht; Ende November 5:45) → „noch vier Stunden“. Zeitachse: Tag n (0 = 29.10.) bei t = 2,5 + 2·n s → 27.11. bei 60,5 s. Prüfwerte: 25,8 s → 10.11., 5:06 („fünf Stunden“); 46,8 s → 20./21.11., 2:59 („drei Stunden“); 50,8 s → 22.11., LETZTE SONNE IN 5 TAGE („Noch fünf Tage“).",
+ "zahlen": {
+  "breite_grad": 69.65,
+  "tageslaenge_29_10": "7:02",
+  "tageslaenge_10_11": "5:02",
+  "tageslaenge_20_11": "3:01",
+  "tageslaenge_27_11": "0:22",
+  "letzter_sonnenaufgang_2026": "27.11. 11:21–11:43",
+  "erster_sonnenaufgang_2027": "15.01. 11:35–12:13",
+  "polarnacht_tage": 48,
+  "verlust_pro_tag_anfang_min": 10,
+  "daemmerung_21_12": "9:32–13:54 (4:22 Std.)",
+  "ereignis_s": 2.5,
+  "hoehepunkt_s": 60.5
+ },
+ "annahmen": [
+  "(A) Freier, flacher Horizont im Süden: Die Sonnenzeiten gelten astronomisch; Berge um Tromsø verdecken die Sonne vielerorts schon früher, darum Bergkämme in der Szene flach halten.",
+  "(A) Schnee, Schiff, Lichter, Spaziergänger und Nordlicht sind Bildgestaltung (typisch für Tromsø im November), keine gemessenen Ereignisse an bestimmten Tagen.",
+  "(S) Kleine Abweichungen der Minuten je nach Rechenverfahren (time-ok.com nennt am 27.11. 11:16–11:46); Anzeige und Faktenzeile nutzen die eigene Rechnung, die mit den Zeiten nach Visit Tromsø (via pixidia) übereinstimmt.",
+  "(A) Wetter im Video meist klar, damit Sonnenbahn und Nordlicht sichtbar sind."
+ ],
+ "quellen": [
+  "(F) Sunrise and sunset times in Tromsø, November 2026, time-ok.com, abgerufen 09.11.2026 (1.11. 8:10–14:44, 6:33:42; 27.11. 11:16–11:46; ab 28.11. keine Sonne) – https://time-ok.com/sun/tromso",
+  "(F) Polar Night in Tromsø 2026/27, pixidia.com nach Visit Tromsø und Tromsø Winter (letzte Sonne 27.11.2026 ca. 11:21–11:41; Polarnacht 27.11.2026–15.01.2027; 21.12. bürgerliche Dämmerung ca. 9:31–13:53; erste Sonne 15.01.2027 ca. 11:35–12:12) – https://pixidia.com/?p=89830",
+  "(F) Stichwort Polarnacht: keine Sonne, aber nicht dunkel, SRF Meteo (Tromsø Ende November bis Mitte Januar, mittags Dämmerung) – https://www.srf.ch/meteo/meteo-news/stichwort-polarnacht-keine-sonne-aber-nicht-dunkel",
+  "(F) Norwegens Polarnacht und die Schönheit der blauen Stunde, Hurtigruten (Tromsø etwa 27. November bis Mitte Januar) – https://www.hurtigruten.com/de-de/norwegen-entdecken/polarnacht",
+  "(F) Eigene Rechnung nach dem NOAA-Sonnenalgorithmus (Solar Calculator, NOAA Global Monitoring Laboratory), 09.11.2026 – https://gml.noaa.gov/grad/solcalc/"
+ ],
+ "caption": "Polarnacht in Tromsø: Wie schnell verschwindet die Sonne? 🌌 Ich hab’s durchgespielt. Sieben Wochen ohne Sonne – könntest du das? 👇 #polarnacht #tromsø #norwegen #wissen #waswaerewenn",
+ "dramaturgie": [
+  "0–2,5 s: tief stehende Spätnachmittagssonne im Südwesten, Wellen am Strand, Möwen (erster Welteffekt ab Bild 1); Countdown SONNENUNTERGANG IN 0:02.",
+  "2,5 s EREIGNIS (Testblock a): Sonnenrand taucht unter, Licht kippt von Gold zu Rosa-Blau, leise Tonkante; Anzeige springt auf TAGESLÄNGE 7:02.",
+  "5–8 s: Kamera schwenkt mit dem Nachglühen; ab ca. 8 s läuft der Tag-Nacht-Zeitraffer (1 Tag = 2 s): Sonnenbogen flach über dem Wasser, jeden Tag kürzer (Stufe 1, golden).",
+  "17–24 s: Schatten der Steine und Pfähle werden sichtbar länger, Schnee fällt, Dächer werden weiß (Stufe 2, kühles Weiß).",
+  "30–38 s: Lichter in den Häusern gehen jeden Tag früher an; ein Schiff zieht mit Lichtern durch den Fjord, Kamerafahrt; erste Nordlichtbögen in den Nächten (Stufe 3, Grün in der Nacht).",
+  "38–50 s: Mittagslicht wird blau und fahl, die Sonne bleibt eine Handbreit über dem Horizont, der Bogen schrumpft sichtbar (Stufe 4).",
+  "50,5–58 s: Annäherung: zweiter Countdown LETZTE SONNE IN 5 → 1 Tage, Sonne nur noch als kurzer Glutpunkt, langsamer Zoom auf die Stelle am Horizont; Riser.",
+  "58–62 s HÖHEPUNKT: Zeitraffer bremst, der letzte Sonnenrand blitzt am 27.11. kurz auf (11:21–11:43) und verschwindet; Anzeige HIER, lautester Moment, kein Satz.",
+  "62 s harter Schnitt nach oben: Nordlicht über dem Fjord; 62–70 s Polarnacht: mittags blaue Dämmerung über dem Schnee, dann Nacht mit Nordlicht.",
+  "70–72 s Abblende, 72–80 s Abspann mit Titelfrage, Faktenzeile und (Testvideo) Folgen-Hinweis."
+ ],
+ "hoehepunkt": "58–62 s: Zeitraffer bremst, letzter Sonnenrand blitzt am 27.11. (11:21–11:43) kurz auf (60–60,5 s), Anzeige HIER bei 60,5 s; 62 s harter Schnitt ins Nordlicht",
+ "bewegungsplan": [
+  [
+   0,
+   "Sonne tief im Südwesten, Wellen, Möwen, Eiderenten, Spaziergänger; Kamera schwenkt mit dem Sonnenrand",
+   1
+  ],
+  [
+   2.5,
+   "Sonnenrand taucht unter, Licht kippt Gold → Rosa-Blau; Zeitraffer startet",
+   1
+  ],
+  [
+   10,
+   "Sonnenbogen wird täglich flacher, Datum läuft mit, Schatten wachsen",
+   1
+  ],
+  [
+   17,
+   "Schnee fällt, Strand und Dächer werden weiß",
+   2
+  ],
+  [
+   30,
+   "Lichter am Ufer gehen früher an, Schiff im Sund, Zoom",
+   3
+  ],
+  [
+   38,
+   "Licht wird blau, Nordlichtbögen in den Nächten",
+   4
+  ],
+  [
+   50.5,
+   "zweiter Countdown, Sonne nur noch Glutpunkt, Zoom auf den Horizontpunkt",
+   4
+  ],
+  [
+   60,
+   "letzter Sonnenrand, Schnitt ins Nordlicht",
+   5
+  ],
+  [
+   62,
+   "Mittagsdämmerung, Nacht, Nordlicht",
+   5
+  ]
+ ],
+ "bild_text_abgleich": [
+  {
+   "t": 4.8,
+   "satz": "Die Sonne geht kurz vor drei unter.",
+   "bild": "Sonne am Horizont im Südwesten, Untergang um 14:59 (Rechnung); Anzeige TAGESLÄNGE 7:02 beginnt"
+  },
+  {
+   "t": 13.2,
+   "satz": "Jeden Tag fehlen rund zehn Minuten Licht.",
+   "bild": "Tageslänge fällt von 7:02 mit 9–11 Min. je Tag (Anzeige 6:16 bei 12 s)"
+  },
+  {
+   "t": 17.4,
+   "satz": "Die Schatten am Strand werden immer länger.",
+   "bild": "Steine am Strand mit längerem Schatten, flacher Sonnenbogen"
+  },
+  {
+   "t": 21.6,
+   "satz": "Schnee legt sich auf die Holzhäuser.",
+   "bild": "Schneefall seit 17 s, Strand und Häuser weiß (Schneedecke wächst bis 25 s)"
+  },
+  {
+   "t": 25.8,
+   "satz": "Der Tag ist nur noch fünf Stunden lang.",
+   "bild": "Anzeige TAGESLÄNGE 5:06 (Rechnung) bei 25,8 s"
+  },
+  {
+   "t": 30,
+   "satz": "Die Lichter am Ufer gehen früher an.",
+   "bild": "Laternen und Fensterlichter gehen früher an, Statuszeile LICHTER FRÜHER AN"
+  },
+  {
+   "t": 34.2,
+   "satz": "Ein Schiff zieht durch den dunklen Fjord.",
+   "bild": "Küstenschiff mit Lichtern im Sund ab 32 s, Zoom auf das Schiff"
+  },
+  {
+   "t": 38.4,
+   "satz": "Das Licht wird blau statt golden.",
+   "bild": "Himmel und Wasser blau-violett, Mittagslicht fahl"
+  },
+  {
+   "t": 42.6,
+   "satz": "Mittags steht die Sonne knapp über dem Horizont.",
+   "bild": "Statuszeile SONNE MITTAGS 1° HOCH, flacher kurzer Sonnenbogen"
+  },
+  {
+   "t": 46.8,
+   "satz": "Der Tag schrumpft auf drei Stunden.",
+   "bild": "Anzeige TAGESLÄNGE 2:59 bei 46,8 s"
+  },
+  {
+   "t": 50.8,
+   "satz": "Noch fünf Tage, dann bleibt sie weg.",
+   "bild": "zweiter Countdown LETZTE SONNE IN 5 TAGE"
+  },
+  {
+   "t": 54.6,
+   "satz": "Sie streift nur noch den Horizont.",
+   "bild": "Sonne nur noch Glutpunkt am Horizont, Zoom"
+  },
+  {
+   "t": 63,
+   "satz": "Bis Mitte Januar geht sie nicht mehr auf.",
+   "bild": "Anzeige HIER, POLARNACHT BIS 15. JANUAR; Mittagsdämmerung und Nordlicht"
+  },
+  {
+   "t": 66.8,
+   "satz": "Doch mittags dämmert es noch vier Stunden.",
+   "bild": "blaue Dämmerung über Schnee und Häusern mit Nordlicht, Lichter am Ufer"
+  }
+ ],
+ "korrekturen": [
+  {
+   "feld": "faktencheck",
+   "alt": "-",
+   "neu": "Rechnung in sim/polarnacht_tromso.mjs nachgebaut (9 Tests grün): 29.10. 7:57–14:59 = 7:02; 10.11. 5:02; 20.11. 3:01; 22.11. 2:31; 27.11. 11:21–11:43 = 0:22; Polarnacht 48 Tage bis 15.01.; Dämmerung 21.12. 4:22 Std.; keine Abweichung zum Skript.",
+   "quelle": "pipeline/sim/polarnacht_tromso.test.mjs",
+   "grund": "Faktencheck vor dem Bau, Ergebnis unverändert",
+   "zeit": "2026-11-10"
+  }
+ ],
+ "lern_notizen": {
+  "welt": "Polar/Fjord, Variante PolarStrand (Strand Tromsøya, 69,65° N)",
+  "standpunkt": "ebenerdig am Kiesstrand, Auge 1,45 m",
+  "tageszeit": [
+   "goldener Spätnachmittag",
+   "Rosa-Blau nach Sonnenuntergang",
+   "kurze Polartage",
+   "blaues Mittagslicht",
+   "Nächte mit Nordlicht",
+   "Mittagsdämmerung der Polarnacht",
+   "Nacht mit Nordlicht"
+  ],
+  "kamera": [
+   {
+    "t": 0.2,
+    "art": "schwenk"
+   },
+   {
+    "t": 3,
+    "art": "schwenk"
+   },
+   {
+    "t": 10,
+    "art": "schwenk"
+   },
+   {
+    "t": 34,
+    "art": "zoom 58→40"
+   },
+   {
+    "t": 40,
+    "art": "schwenk"
+   },
+   {
+    "t": 52,
+    "art": "zoom 56→30"
+   },
+   {
+    "t": 62,
+    "art": "schnitt"
+   },
+   {
+    "t": 62.1,
+    "art": "schwenk"
+   }
+  ],
+  "zeitraffer": "1 Tag = 2 s ab 2,5 s",
+  "effekte": "siehe ereignisse.json",
+  "sequenzen": 9,
+  "t_ereignis": 2.5,
+  "countdown": "ja, zweiter: ja (Tage)",
+  "schnitte": [
+   {
+    "t": 62,
+    "grund": "Maßstabssprung: Horizontpunkt → weiter Blick ins Nordlicht"
+   }
+  ],
+  "statuszeile": [
+   "TROMSØ, 29. OKTOBER",
+   "1 TAG = 2 SEKUNDEN",
+   "Datum läuft mit",
+   "SONNE MITTAGS n° HOCH",
+   "LICHTER FRÜHER AN",
+   "MINUS 15 MINUTEN PRO TAG",
+   "Datum → 27. NOVEMBER",
+   "27. NOVEMBER, 11:21–11:43 UHR",
+   "POLARNACHT BIS 15. JANUAR"
+  ],
+  "testbloecke": {
+   "folgen_hinweis": "mit",
+   "einstieg_a2": "a"
+  },
+  "laenge_s": 80,
+  "t_stufe2": 10,
+  "folgen_hinweis": "Warum die Erdachse das macht: im Profil"
+ }
+}

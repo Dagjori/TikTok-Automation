@@ -77,6 +77,7 @@ function vn(x, y) { const i = Math.floor(x), j = Math.floor(y), u = x - i, v = y
 function fbm(x, y, o = 4) { let s = 0, a = 0.5; for (let k = 0; k < o; k++) { s += a * vn(x, y); x = x * 2.03 + 17.1; y = y * 2.03 + 17.1; a *= 0.5; } return s; }
 
 // ----------------------------------------------------------------------------------------------- Lage und Gelände
+let STRAND = false;                                         // Variante „Strand Tromsø“ (PolarStrand, Ende der Datei): schaltet hoehe()/landAbstand() um
 export const PHI = 78.22;                                   // Breite Longyearbyen
 export const AUGE = { x: 0, z: 0, hoehe: 2.2, deck: 0.62 };
 export const richtung = (yaw, pitch = 0) => [Math.sin(yaw * D2R) * Math.cos(pitch * D2R), Math.sin(pitch * D2R), -Math.cos(yaw * D2R) * Math.cos(pitch * D2R)];
@@ -93,6 +94,7 @@ function spitAbstand(x, z) {
 export const spitPunkt = (s) => [lerp(SPIT_A[0], SPIT_B[0], s), lerp(SPIT_A[1], SPIT_B[1], s)];
 /** > 0 Land, < 0 Wasser (ungefähr Meter bis zur Küste) */
 export function landAbstand(x, z) {
+  if (STRAND) return landAbstandT(x, z);
   const dSeite = Math.abs(x - fjordMitte(z)) - fjordBreite(z), dSued = kuesteS(x) - z, dNord = z - 12500;
   let d = Math.max(dSeite, dSued, dNord);
   d += 34 * (fbm(x * 0.005 + 3, z * 0.005 + 1, 3) - 0.5) + 8 * (vn(x * 0.03, z * 0.03) - 0.5);
@@ -100,6 +102,7 @@ export function landAbstand(x, z) {
 }
 function terrasse(m) { const s = m * 4, f = Math.floor(s) + smoothstep(0.2, 0.78, s - Math.floor(s)); return 0.3 * m + 0.7 * (f / 4); }
 export function hoehe(x, z) {
+  if (STRAND) return hoeheT(x, z);
   const d = landAbstand(x, z);
   if (d < 0) return Math.max(-30, d * 0.06) - 0.5;
   const mitte = fjordMitte(z), dSeite = Math.abs(x - mitte) - fjordBreite(z), dSued = kuesteS(x) - z, dNord = z - 12500;
@@ -210,13 +213,14 @@ vec3 polarlichtF(vec3 d) {
       float rx = x * 0.11 / (1.0 + schritt * 0.02);
       float strahl = 0.12 + 0.88 * pow(nN(vec2(rx + zeit * (0.22 + 0.1 * fc), fc * 13.0)), 2.6) + 0.35 * pow(nN(vec2(rx * 3.1 - zeit * 0.5, fc)), 4.0);
       float unten = smoothstep(-0.02, 0.05, ff);
-      float profil = (exp(-ff * 3.4) + 0.35 * exp(-pow((ff - 0.08) / 0.05, 2.0))) * unten;
+      float profil = (exp(-ff * 3.4) + 0.35 * exp(-(((ff - 0.08) / 0.05) * ((ff - 0.08) / 0.05)))) * unten;   // kein pow(negativ, 2.0): auf der GPU NaN (weißer Balken, 10.11.2026)
       vec3 col = mix(plGruen, plRot, smoothstep(0.42, 1.0, ff)) * (1.0 + 0.6 * (1.0 - unten));
       acc += col * band * strahl * profil * st;
     }
   }
   float nord = smoothstep(-0.45, 0.25, normalize(d.xz + vec2(1e-5)).y);
   acc *= nord * smoothstep(0.004, 0.05, d.y);
+  if (any(isnan(acc)) || any(isinf(acc))) acc = vec3(0.0);                                    // GPU: einzelne NaN/Inf-Pixel würden im Bloom zu einem weißen Balken (10.11.2026)
   float puls = 0.82 + 0.18 * sin(zeit * 0.9) * sin(zeit * 0.37 + 1.0);
   return acc * polarlicht * puls * 0.2;
 }`;
@@ -237,7 +241,7 @@ void main() {
   float tiefS = 1.0 - smoothstep(0.05, 0.45, s.y);                                  // Hof nur bei tiefer Sonne
   float hofM = exp((azc - 1.0) * 1.6) * exp(-max(h, 0.0) / 0.16) * smoothstep(-0.32, -0.02, s.y) * tiefS;
   col += hof * hofM * 0.9;
-  float belt = exp((-azc - 1.0) * 1.2) * exp(-pow((h - 0.075) / 0.055, 2.0));
+  float belt = exp((-azc - 1.0) * 1.2) * exp(-(((h - 0.075) / 0.055) * ((h - 0.075) / 0.055)));   // kein pow(negativ, 2.0) (GPU: NaN)
   col = mix(col, guertel, clamp(belt * guertelS, 0.0, 1.0));
   if (sterne > 0.001 && h > -0.01) {
     vec2 sp = vec2(atan(d.x, -d.z), asin(clamp(h, -1.0, 1.0))) * 300.0;
@@ -942,7 +946,7 @@ export class PolarFjord {
       let s = w.steh ? w.s0 : w.s0 + w.v * 1.1 * tt; s = ((s % (2 * w.len)) + 2 * w.len) % (2 * w.len); const zur = s > w.len; if (zur) s = 2 * w.len - s;
       const f = s / w.len, dx = (w.w[1][0] - w.w[0][0]) / w.len, dz = (w.w[1][1] - w.w[0][1]) / w.len;
       const x = lerp(w.w[0][0], w.w[1][0], f) - dz * w.quer, zz = lerp(w.w[0][1], w.w[1][1], f) + dx * w.quer;
-      const auf = i < 3 ? 1.98 : hoehe(x, zz) - 0.02, dir = (w.steh ? 1 : (w.v > 0) !== zur ? 1 : -1);
+      const auf = w.auf ?? (i < 3 ? 1.98 : hoehe(x, zz) - 0.02), dir = (w.steh ? 1 : (w.v > 0) !== zur ? 1 : -1);
       const ry = Math.atan2(dx * dir, dz * dir) + (w.steh ? 0.6 * Math.sin(tt * 0.2 + i) : 0);
       const wipp = w.steh ? 0 : 0.03 * Math.abs(Math.sin(tt * 5 + i));
       this._setze(mi, i, x, auf + wipp, zz, 1, ry);
@@ -955,7 +959,7 @@ export class PolarFjord {
     mi.instanceMatrix.needsUpdate = true;
     const mo = this.mobilIM;
     this.mobilL.forEach((m, i) => this._setze(mo, i, m.x, hoehe(m.x, m.z) - 0.02, m.z, schnee > 0.25 ? 1 : 0.001, m.ry));
-    { // fahrendes Schneemobil auf der Uferstraße (hin und zurück)
+    if (!this.strand) { // fahrendes Schneemobil auf der Uferstraße (hin und zurück)
       const len = 900, s0 = ((tt * 7) % (2 * len) + 2 * len) % (2 * len), s = s0 > len ? 2 * len - s0 : s0, x = -480 + s, zz = kuesteS(x) - 30, dir = s0 > len ? -1 : 1, k = smoothstep(0.3, 0.5, schnee);
       this._setze(mo, 4, x, hoehe(x, zz), zz, k + 0.001, dir > 0 ? Math.PI / 2 : -Math.PI / 2);
       if (k > 0.01 && lampe > 0.01) liste.push({ p: [x + dir * 1.4, hoehe(x, zz) + 0.8, zz], f: [4 * lampe * k, 3.8 * lampe * k, 3.2 * lampe * k], r: 0.7 }, { p: [x - dir * 1.3, hoehe(x, zz) + 0.7, zz], f: [2.5 * lampe * k, 0.15, 0.1], r: 0.4 });
@@ -1035,4 +1039,214 @@ export class Sonnenboegen {
     return this;
   }
   folge(kamera) { this.mesh.position.copy(kamera.position); return this; }
+}
+
+// =============================================================================================== Variante „Strand Tromsø“
+// Abwandlung der Welt (kein Neubau, 09.11.2026, „Was wäre, wenn du die Polarnacht in Tromsø erlebst?“, 69,65° N): Standpunkt ebenerdig am Kiesstrand
+// an der Südspitze von Tromsøya, Blick nach Süden über das offene Wasser. Links eine Halbinsel mit bunten Holzhäusern und Laternen, davor ein Bootssteg,
+// im Süden/Südwesten freier Horizont (die Sonnenzeiten gelten für den freien Horizont), flache Bergkämme nur im Südosten, im Norden hohe Berge.
+// Aufruf: const welt = new PolarStrand(szene, { schatten: 4096 }); welt.update(t, { …wie PolarFjord… }) – die Datei bleibt für PolarFjord unverändert (STRAND = false).
+// Zusätze in update(): schiff {x, z, ry} (Küstenschiff im Sund, sonst aus), moewen 0..1, enten 0..1.
+//   welt.augePos(t) → Kamera am Strand (Auge 1,45 m über dem Kies);  PolarStrand.PHI = 69,65;  Koordinaten wie PolarFjord (Süden −z, Osten −x).
+const PEN_A = [-60, -10], PEN_B = [-100, -420];                                  // Halbinsel (Achse), links vom Standpunkt
+const zShoreT = (x) => -9 + 0.05 * x + 2.2 * (vn(x * 0.03 + 5, 1.5) - 0.5);       // Ufer am Strand (z des Wasserrands)
+function penAbstand(x, z) {
+  const ax = PEN_B[0] - PEN_A[0], az = PEN_B[1] - PEN_A[1], s = clamp(((x - PEN_A[0]) * ax + (z - PEN_A[1]) * az) / (ax * ax + az * az));
+  const px = PEN_A[0] + ax * s, pz = PEN_A[1] + az * s, w = lerp(46, 18, s) + 5 * (vn(x * 0.03 + 7, z * 0.03) - 0.5);
+  return w - Math.hypot(x - px, z - pz);
+}
+const penPunkt = (s, seite = 0) => { const ax = PEN_B[0] - PEN_A[0], az = PEN_B[1] - PEN_A[1], L = Math.hypot(ax, az); return [lerp(PEN_A[0], PEN_B[0], s) + (az / L) * seite, lerp(PEN_A[1], PEN_B[1], s) - (ax / L) * seite]; };
+const fernQ = (x, z) => (-x) / Math.max(-z, 1);                                  // tan des Winkels östlich von Süden
+function landAbstandT(x, z) {
+  let d = z - zShoreT(x);
+  d = Math.max(d, penAbstand(x, z));
+  if (z < -6000 && fernQ(x, z) > 0.06) d = Math.max(d, -z - (9500 + 3500 * (fbm(x * 0.0003 + 2, z * 0.0003 + 1, 2) - 0.5)));   // ferne flache Bergkämme im Südosten
+  return d + 1.6 * (vn(x * 0.07, z * 0.07) - 0.5);
+}
+function hoeheT(x, z) {
+  const d = landAbstandT(x, z);
+  if (d < 0) return Math.max(-30, d * 0.07);
+  let y = 0.05 + 0.085 * Math.min(d, 13) + 0.5 * (fbm(x * 0.09, z * 0.09, 2) - 0.5) * smoothstep(1, 10, d);
+  const dp = penAbstand(x, z); if (dp > 0) y = Math.max(y, 1.1 + 4.6 * smoothstep(0, 32, dp) + 1.4 * (fbm(x * 0.05, z * 0.05, 2) - 0.5));
+  const dm = z - zShoreT(x);
+  if (dm > 0) y += 18 * smoothstep(60, 600, dm) + 560 * smoothstep(1500, 4600, z) * (0.6 + 0.8 * fbm(x * 0.0006 + 2, z * 0.0004, 3));
+  if (z < -6000 && fernQ(x, z) > 0.06) y += (70 + 150 * fbm(x * 0.0005, z * 0.0005, 3)) * smoothstep(0.06, 0.3, fernQ(x, z)) * smoothstep(0, 900, d);
+  return y;
+}
+
+export class PolarStrand extends PolarFjord {
+  constructor(szene, o = {}) {
+    STRAND = true;
+    super(szene, { eisschollen: 0, menschen: 7, rentiere: 0, nebelDichte: 3.2e-5, ...o });
+    this.strand = true; this.schornstein = [0, -50, 0];
+    const sc = this.lichter?.sonne?.shadow?.camera; if (sc) { Object.assign(sc, { left: -75, right: 75, top: 75, bottom: -75 }); sc.updateProjectionMatrix(); }
+  }
+  static get PHI() { return 69.65; }
+  _gelaende() { this.boden = this._mesh(gitter(-16000, 16000, -26000, 18000, 0.8, 0.02, hoehe), bodenMat(this.u), { schatten: false }); }
+  _schollen() { this.schollenL = []; this.schollen = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial(), 1); this.schollen.count = 0; }
+  _eisberge() {}
+  _rentiere() { this.rentierL = []; }
+  _mobile() { this.mobilL = []; this.mobilIM = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial(), 5); this.mobilIM.count = 0; }
+  augePos(t) { const w = this.wiegen(t); return [0, hoehe(0, 0) + 1.45 + 0.4 * w.heave, 0]; }
+  _eigenesBoot() {                                                                           // kein Boot: leere Gruppe und Platzhalter für update()
+    this.eigen = new THREE.Group(); this.szene.add(this.eigen); this.ruderGlas = new THREE.MeshStandardMaterial(); this.ankerBoje = new THREE.Object3D(); this.deckLichtLokal = [-6, 3.6, 6];
+    this._strandDetails();
+  }
+  _ort() {
+    const u = this.u, mat = hausMat(u), farben = ["#A8332A", "#C9952F", "#2F5F94", "#E6E2D8", "#3F6E52", "#7E2E3C", "#5E93AE", "#B85A2A", "#D8C9A0", "#1F3B5C", "#C86A32", "#8E2F3A"].map(C);
+    const plaetze = [[], [], [], []];
+    // Halbinsel links: drei Reihen (Ufer, Mitte, dahinter), Längsseite parallel zur Achse
+    const ax = PEN_B[0] - PEN_A[0], az = PEN_B[1] - PEN_A[1], th = Math.atan2(-az, ax);
+    for (let r = 0; r < 3; r++) for (let i = 0; i < 17; i++) {
+      const s = 0.04 + i * 0.056 + 0.012 * (hash(i, r + 10) - 0.5), seite = [-17, -3, 11][r] + 2 * (hash(i, r + 20) - 0.5);
+      const [x, z] = penPunkt(s, seite); if (hash(i, r + 30) < 0.14 || landAbstand(x, z) < 6) continue;
+      const art = r === 2 ? (hash(i, 40) < 0.5 ? 1 : 3) : hash(i, r + 50) < 0.12 ? 2 : hash(i, r + 51) < 0.62 ? 0 : hash(i, r + 52) < 0.8 ? 3 : 1;
+      plaetze[art].push({ x, z, ry: th + (hash(i, r + 60) - 0.5) * 0.14, f: farben[Math.floor(hash(i, r + 70) * farben.length)] });
+    }
+    // Hinterland nördlich des Strands (Blick nach Norden im Nachspiel)
+    for (let i = 0; i < 26; i++) {
+      const x = -230 + i * 21 + 9 * (hash(i, 81) - 0.5), z = 55 + 120 * hash(i, 82) + 30 * Math.sin(i * 0.7), art = hash(i, 83) < 0.55 ? 0 : hash(i, 83) < 0.8 ? 3 : 1;
+      if (landAbstand(x, z) < 20) continue;
+      plaetze[art].push({ x, z, ry: (hash(i, 84) < 0.3 ? Math.PI / 2 : 0) + (hash(i, 85) - 0.5) * 0.3, f: farben[Math.floor(hash(i, 86) * farben.length)] });
+    }
+    this.hausZahl = 0;
+    plaetze.forEach((liste, art) => {
+      if (!liste.length) return;
+      const im = this._inst(hausGeo(art), mat, liste.length, true);
+      liste.forEach((h, i) => { this._setze(im, i, h.x, hoehe(h.x, h.z) + 0.25, h.z, 1, h.ry); im.setColorAt(i, h.f); });
+      im.instanceColor.needsUpdate = true; this.hausZahl += liste.length;
+    });
+    // Laternen entlang der Halbinsel-Uferkante, der Strandpromenade und im Hinterland
+    for (let i = 0; i < 22; i++) { const [x, z] = penPunkt(0.04 + i * 0.044, -25); if (landAbstand(x, z) > 2) this.statLichter.push({ p: [x, hoehe(x, z) + 5.2, z], art: "laterne" }); }
+    for (let i = 0; i < 12; i++) { const x = -30 + i * 22, z = zShoreT(x) + 22; this.statLichter.push({ p: [x, hoehe(x, z) + 4.6, z], art: "laterne" }); }
+    for (let i = 0; i < 10; i++) { const x = -200 + i * 40, z = 60 + 10 * Math.sin(i); if (landAbstand(x, z) > 5) this.statLichter.push({ p: [x, hoehe(x, z) + 4.6, z], art: "laterne" }); }
+    // kleine weiße Kirche auf der Halbinsel
+    const holz = schneeMat(u, { color: "#E8E4DA", key: "kirche" }), dunkel = schneeMat(u, { color: "#2A2A2E", key: "dach" });
+    const [kx, kz] = penPunkt(0.5, -5), kg = new THREE.Group(), kadd = (g, m) => { const me = new THREE.Mesh(g, m); me.castShadow = me.receiveShadow = this.schattenAn; kg.add(me); };
+    kadd(box(14, 6.5, 8, 0, 3.25, 0), holz); kadd(box(3.6, 11, 3.6, 8.2, 5.5, 0), holz);
+    const sp = new THREE.ConeGeometry(2.7, 7, 4); sp.rotateY(Math.PI / 4); sp.translate(8.2, 14.5, 0); kadd(sp, dunkel);
+    for (const sgn of [-1, 1]) { const g = new THREE.BoxGeometry(15, 0.25, 5.6); g.rotateX(sgn * 0.6); g.translate(0, 7.8, sgn * 2.2); kadd(g, dunkel); }
+    kg.position.set(kx, hoehe(kx, kz), kz); kg.rotation.y = th; this.szene.add(kg);
+  }
+  _steg() {
+    const u = this.u, holz = schneeMat(u, { color: "#4E3E30", key: "steg" }), pf = new THREE.MeshStandardMaterial({ color: "#241E1A", roughness: 0.9 });
+    const x0 = -9, zA = zShoreT(x0) + 3, zB = -52, L = zA - zB;                              // Bootssteg vom Kies nach Süden ins Wasser (links vorn)
+    this._mesh(box(2.6, 0.3, L, x0, 1.15, (zA + zB) / 2), holz);
+    this._mesh(box(0.14, 0.9, L, x0 - 1.28, 1.65, (zA + zB) / 2), holz); this._mesh(box(0.14, 0.9, L, x0 + 1.28, 1.65, (zA + zB) / 2), holz);   // Geländer
+    const pile = new THREE.CylinderGeometry(0.17, 0.17, 4.2, 6), n = Math.ceil(L / 3.5) * 2 + 2, pm = this._inst(pile, pf, n, true); let k = 0;
+    for (let z = zA - 0.5; z > zB && k < n - 1; z -= 3.5) for (const s of [-1, 1]) this._setze(pm, k++, x0 + 1.2 * s, -1.0, z, 1, 0);
+    pm.count = k;
+    for (let z = zA - 5; z > zB; z -= 9) this.statLichter.push({ p: [x0 + 1.3, 2.5, z], art: "laterne" });
+    this.steg = { x: x0, zA, zB };
+    this._schiffBauen();
+  }
+  _schiffBauen() {                                                                           // Küstenschiff im Sund (fährt von rechts nach links, Position über update({schiff}))
+    const u = this.u, g = new THREE.Group(), hull = new THREE.MeshStandardMaterial({ color: "#1B2E4A", roughness: 0.6 }), aufb = schneeMat(u, { color: "#ECEBE6", key: "schiff" });
+    const add = (geo, m) => { const me = new THREE.Mesh(geo, m); me.castShadow = me.receiveShadow = this.schattenAn; g.add(me); return me; };
+    const rumpf = new THREE.BoxGeometry(110, 9, 17, 10, 2, 2), rp = rumpf.getAttribute("position");
+    for (let i = 0; i < rp.count; i++) { const x = rp.getX(i), s = x / 55; if (s > 0.55) rp.setZ(i, rp.getZ(i) * (1 - Math.pow((s - 0.55) / 0.45, 1.6) * 0.95)); }
+    rumpf.computeVertexNormals(); rumpf.translate(0, 2.5, 0); add(rumpf, hull);
+    add(box(66, 5, 15.4, -8, 9.5, 0), aufb); add(box(46, 4.4, 13.6, -8, 14.2, 0), aufb); add(box(18, 4, 11, 4, 18.4, 0), aufb);
+    const sc = new THREE.CylinderGeometry(1.9, 2.2, 6, 10); sc.translate(-26, 19, 0); add(sc, new THREE.MeshStandardMaterial({ color: "#B23A2E", roughness: 0.6 }));
+    this.schiffFenster = new THREE.MeshStandardMaterial({ color: "#1A1A1A", emissive: "#FFB060", emissiveIntensity: 0 });
+    for (const [y, L, w] of [[10.2, 62, 15.5], [14.9, 44, 13.7]]) for (const sgn of [-1, 1]) { const b = new THREE.BoxGeometry(L, 1.2, 0.1); b.translate(-8, y, sgn * (w / 2 + 0.05)); add(b, this.schiffFenster); }
+    g.visible = false; this.szene.add(g); this.schiff = g;
+  }
+  _boote() {
+    const mat = schneeMat(this.u, { vertexColors: true, roughness: 0.6, key: "boot", staerke: 0.8 });
+    const defs = [
+      { x: -9, z: -49, ry: Math.PI / 2 + 0.05, o: { L: 4.6, B: 1.5, rumpf: [0.62, 0.12, 0.1], mast: 4 } },       // Fischerboot am Stegende
+      { x: 34, z: -62, ry: 2.6, o: { L: 3.0, B: 1.1, rumpf: [0.16, 0.34, 0.58], mast: 3 } },                      // Boot vor Anker
+      { x: -36, z: -90, ry: 0.4, o: { L: 3.6, B: 1.3, rumpf: [0.85, 0.42, 0.12], streifen: [0.9, 0.9, 0.88], mast: 3.4 } },
+      { x: 82, z: -150, ry: 1.2, o: { L: 5.2, B: 1.7, rumpf: [0.9, 0.9, 0.88], streifen: [0.15, 0.25, 0.5], mast: 5 } },
+      { x: -4, z: -14, ry: -0.5, o: { L: 2.0, B: 0.9, rumpf: [0.8, 0.25, 0.12], streifen: [0.12, 0.12, 0.13], kajuete: false, mast: 0 } },  // Beiboot am Kies
+    ];
+    this.boote = defs.map((b, i) => {
+      const g = bootGeo(b.o), gr = new THREE.Group(), r = new THREE.Mesh(g.rumpf, mat), a = new THREE.Mesh(g.aufbau, mat);
+      r.castShadow = a.castShadow = this.schattenAn; r.receiveShadow = a.receiveShadow = this.schattenAn; gr.add(r, a); this.szene.add(gr);
+      return { gr, ...b, i, mastTop: b.o.mast ? g.mastTop : null };
+    });
+  }
+  _menschen(n) {
+    const farben = ["#C7372B", "#E8741E", "#1D2B44", "#222326", "#D9B02A", "#2F6F8F", "#5A2A4A"].map(C);
+    this.menschIM = this._inst(menschGeo(), schneeMat(this.u, { vertexColors: true, roughness: 0.8, key: "mensch", staerke: 0.2 }), n, true);
+    const st = this.steg || { x: -9, zA: -12, zB: -52 };
+    const wege = [
+      { w: [[-9, st.zA - 2], [-9, st.zB + 8]], auf: 1.3, v: 0.9, steh: false, quer: 0.3 },                                 // auf dem Steg
+      { w: [[-5, zShoreT(-5) + 3], [90, zShoreT(90) + 4]], v: 1.0, steh: false, quer: 0 },                               // am Wasserrand nach Westen
+      { w: [[25, zShoreT(25) + 6], [-3, zShoreT(-3) + 5]], v: 0.8, steh: false, quer: 1 },
+      { w: [[44, zShoreT(44) + 5], [44.5, zShoreT(44.5) + 5.3]], v: 0, steh: true, quer: 0 },                              // zwei stehen am Wasser
+      { w: [[47, zShoreT(47) + 5], [47.5, zShoreT(47.5) + 5.4]], v: 0, steh: true, quer: 0 },
+      { w: [[-34, zShoreT(-34) - 6], [-40, -60]], v: 0.9, steh: false, quer: 0 },                                         // Uferweg zur Halbinsel
+      { w: [[-100, 58], [160, 70]], v: 1.1, steh: false, quer: 0 },
+    ];
+    this.wege = [];
+    for (let i = 0; i < n; i++) {
+      const d = wege[i % wege.length], len = Math.hypot(d.w[1][0] - d.w[0][0], d.w[1][1] - d.w[0][1]);
+      this.wege.push({ w: d.w, len, s0: hash(i, 91) * len, v: d.v * (hash(i, 93) < 0.5 ? 1 : -1) || 0, steh: d.steh, quer: d.quer, auf: d.auf });
+      this.menschIM.setColorAt(i, farben[i % farben.length]);
+    }
+    this.menschIM.instanceColor.needsUpdate = true;
+  }
+  _strandDetails() {
+    const u = this.u, hh = (a, b) => hash(a, b);
+    // Steine und Kiesel auf dem Strand und im Flachwasser
+    const g = new THREE.IcosahedronGeometry(1, 1), p = g.getAttribute("position");
+    for (let i = 0; i < p.count; i++) { const f = 0.78 + 0.4 * hh(Math.round(p.getX(i) * 9 + p.getY(i) * 5 + p.getZ(i) * 7) + 300, 1); p.setXYZ(i, p.getX(i) * f, p.getY(i) * f * 0.62, p.getZ(i) * f * 1.05); }
+    g.computeVertexNormals();
+    const N = 260, stein = this._inst(g, schneeMat(u, { color: "#FFFFFF", roughness: 0.92, key: "stein", staerke: 0.9 }), N, true);
+    const grau = [[0.15, 0.15, 0.16], [0.28, 0.27, 0.27], [0.38, 0.36, 0.34], [0.22, 0.2, 0.19], [0.46, 0.43, 0.4]];
+    for (let i = 0, k = 0; i < 3000 && k < N; i++) {
+      const gross = k < 18, x = (hh(i, 401) - 0.5) * (gross ? 34 : 38), z = -14 + 20 * hh(i, 402), d = landAbstand(x, z);
+      if (d < -2.5 || d > 15 || (!gross && Math.hypot(x, z - 1) < 0.5)) continue;
+      if (gross && (d < -0.5 || d > 5)) continue;
+      const s = gross ? 0.5 + 0.9 * hh(i, 403) : 0.07 + 0.34 * Math.pow(hh(i, 403), 1.7), col = grau[Math.floor(hh(i, 404) * grau.length)], vf = 0.85 + 0.3 * hh(i, 408);
+      this._setze(stein, k, x, hoehe(x, z) + s * 0.25, z, s, hh(i, 405) * 6.28, s * (0.8 + 0.5 * hh(i, 406)), s * (0.8 + 0.5 * hh(i, 407)));
+      stein.setColorAt(k, this._c.setRGB(col[0] * vf, col[1] * vf, col[2] * vf)); k++;
+    }
+    stein.instanceColor.needsUpdate = true; stein.instanceMatrix.needsUpdate = true;
+    // Seetang: dunkle, flache Büschel im Spülsaum
+    const tg = new THREE.IcosahedronGeometry(1, 1); tg.scale(1, 0.13, 0.55);
+    const tang = this._inst(tg, schneeMat(u, { color: "#FFFFFF", roughness: 0.9, key: "tang", staerke: 0.4 }), 90, false);
+    for (let i = 0, k = 0; i < 1200 && k < 90; i++) {
+      const x = (hh(i, 501) - 0.5) * 40, z0 = zShoreT(x), z = z0 + (hh(i, 502) - 0.35) * 5, d = landAbstand(x, z); if (d < -1.6 || d > 4.2) continue;
+      const s = 0.18 + 0.5 * hh(i, 503), c = hh(i, 504) < 0.7 ? [0.17, 0.15, 0.05] : [0.1, 0.19, 0.08];
+      this._setze(tang, k, x, hoehe(x, z) + 0.05, z, s, hh(i, 505) * 6.28, s * (1 + hh(i, 506)), s); tang.setColorAt(k, this._c.setRGB(...c)); k++;
+    }
+    tang.instanceColor.needsUpdate = true; tang.instanceMatrix.needsUpdate = true;
+    // Möwen (fliegen in Kreisen am Strand), Eiderenten (schwimmen am Wasserrand)
+    const weiss = new THREE.MeshStandardMaterial({ color: "#F2F2EE", roughness: 0.7, side: THREE.DoubleSide }), grauM = new THREE.MeshStandardMaterial({ color: "#8E9498", roughness: 0.7, side: THREE.DoubleSide });
+    this.moewen = [];
+    for (let i = 0; i < 9; i++) {
+      const gr = new THREE.Group(), kg = new THREE.IcosahedronGeometry(0.2, 1); kg.scale(2.1, 0.7, 0.8); const koerper = new THREE.Mesh(kg, weiss);
+      const kopf = new THREE.Mesh(new THREE.IcosahedronGeometry(0.1, 0), weiss); kopf.position.set(0.4, 0.05, 0);
+      const fl = []; for (const sgn of [-1, 1]) { const wg = new THREE.BoxGeometry(0.16, 0.012, 0.7, 1, 1, 3); wg.translate(0, 0, sgn * 0.35); const w = new THREE.Mesh(wg, i % 3 ? weiss : grauM); w.userData.sgn = sgn; gr.add(w); fl.push(w); }
+      gr.add(koerper, kopf); gr.scale.setScalar(1.7); this.szene.add(gr);
+      this.moewen.push({ gr, fl, cx: -10 + 50 * hh(i, 601), cz: -22 + 36 * hh(i, 602) - 10, r: 12 + 40 * hh(i, 603), h: 3.2 + 9 * hh(i, 604), ph: hh(i, 605) * 6.28, om: (0.12 + 0.12 * hh(i, 606)) * (hh(i, 607) < 0.5 ? 1 : -1), fr: 5 + 3 * hh(i, 608) });
+    }
+    const eg = new THREE.IcosahedronGeometry(0.3, 1); eg.scale(1.5, 0.75, 0.75);
+    this.enten = this._inst(eg, new THREE.MeshStandardMaterial({ color: "#FFFFFF", roughness: 0.85 }), 12, true);
+    this.entenL = []; for (let i = 0; i < 12; i++) { this.entenL.push({ x: -6 + 44 * hh(i, 701) + 4, z: -14 - 16 * hh(i, 702) - 4, ry: hh(i, 703) * 6.28, v: 0.2 + 0.2 * hh(i, 704), ph: hh(i, 705) * 6.28 }); this.enten.setColorAt(i, this._c.setRGB(...(i % 3 === 0 ? [0.1, 0.1, 0.11] : [0.8, 0.8, 0.78]))); }
+    this.enten.instanceColor.needsUpdate = true;
+  }
+  update(t, z = {}) {
+    super.update(t, { heck: 0, dampf: 0, ...z });
+    const tempo = z.tempo ?? 1, tt = t * tempo, nacht = 1 - smoothstep(0.15, 0.6, this.zustand.hell ?? 0), u = this.u;
+    // Schiff
+    if (this.schiff) { const s = z.schiff; this.schiff.visible = !!s; if (s) { this.schiff.position.set(s.x, 0.08 * Math.sin(t * 0.6), s.z); this.schiff.rotation.y = s.ry ?? Math.PI; this.schiff.updateMatrixWorld(true); this.schiffFenster.emissiveIntensity = 2.6 * clamp(u.uFenster.value * 1.2 + 0.25 * nacht); } }
+    // Möwen
+    const mw = z.moewen ?? 1;
+    for (const m of this.moewen) {
+      const a = m.ph + m.om * tt, x = m.cx + Math.cos(a) * m.r, zz = m.cz + Math.sin(a) * m.r * 0.8, y = hoehe(x, zz) + m.h + 0.8 * Math.sin(t * 0.9 + m.ph);
+      const dx = -Math.sin(a) * Math.sign(m.om), dz = Math.cos(a) * 0.8 * Math.sign(m.om), fl = 0.55 * Math.sin(t * m.fr + m.ph) * (Math.sin(t * 0.35 + m.ph * 2) > -0.2 ? 1 : 0.15);
+      m.gr.position.set(x, y, zz); m.gr.rotation.set(0, Math.atan2(-dz, dx), 0.18 * Math.sign(m.om)); m.gr.visible = mw > 0.02;
+      for (const w of m.fl) w.rotation.x = w.userData.sgn * fl;
+      m.gr.updateMatrixWorld(true);
+    }
+    // Enten
+    const en = z.enten ?? 1;
+    this.entenL.forEach((e, i) => { const x = e.x + 0.6 * Math.sin(tt * 0.08 + e.ph) + e.v * tt * 0.3, zz = e.z + 0.4 * Math.cos(tt * 0.06 + e.ph); this._setze(this.enten, i, ((x + 20) % 60 + 60) % 60 - 20, 0.05 + 0.03 * Math.sin(t * 1.3 + e.ph), zz, en > 0.02 ? 1 : 0.001, e.ry + 0.3 * Math.sin(tt * 0.05 + e.ph)); });
+    this.enten.instanceMatrix.needsUpdate = true;
+    return this;
+  }
 }
