@@ -2,13 +2,14 @@
 typ: regel
 konto: stelldirvor
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/stelldirvor-video/ablauf.md
-tags: [konto/stelldirvor, ablauf, skript]
+datum: 2026-11-09
+aliases: [Skriptaufbau stelldirvor]
+quelle: .claude/skills/themen-skript/stelldirvor.md (Teil B), .claude/skills/video-produktion/stelldirvor.md; bis 06.11. aus dem entfernten Skill stelldirvor-video
+tags: [konto/stelldirvor, ablauf, skript, skriptaufbau]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
-> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/ablauf.md` (der Skill wurde am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` nicht mehr dafür ausführen. **Seit 07.11.2026** gilt der frühe Ereignis-Zeitpunkt aus [[REA stelldirvor Regelwerk]] (Zeitplan unten angepasst).
+> Diese Notiz ist der **Skriptaufbau von Account 2** (Abteil `1-Skripterstellung`, auch unter dem Namen „Skriptaufbau stelldirvor“ zu finden). Sie wird direkt gepflegt. Den Ablauf und das Ausgabeformat führen die Skills `themen-skript` (Teil `stelldirvor.md`, B) und `video-produktion` (Teil `stelldirvor.md`). Der Aufbau ist am 09.11.2026 **nicht** geändert worden; seit 07.11.2026 gilt der frühe Ereignis-Zeitpunkt aus [[REA stelldirvor Regelwerk]]. Themen: [[Themenfindung stelldirvor]].
 
 # Ablauf Account 2
 
@@ -42,7 +43,7 @@ Alle 4 Referenzen sind exakt 80,0 s lang und folgen demselben Bogen (F). Die Vor
   "bild_text_abgleich": [[19.6, "Dann reißt der Gipfel auf.", "Lichtblitz und Feuerball am Gipfel bei 19,6 s"], …]
   ```
 - Ein Satz darf ein Sinneseindruck sein, den Bild und Ton zugleich tragen (z. B. Stille, solange der Schall unterwegs ist), nie etwas Unsichtbares.
-- Die Sätze kommen aus dem Skript (Ideen-Studio) und werden 1:1 übernommen; Claude Code setzt nur die Zeiten nach diesem Takt.
+- Die Sätze kommen aus dem freigegebenen Skript und werden 1:1 übernommen; die Produktion setzt nur die Zeiten nach diesem Takt.
 
 ## Messwert-Anzeige
 - Steht **ab Bild 0**, Zahl läuft durchgehend (live aus der Rechnung, keine Sprünge ohne Grund), endet 69,2–70,1 s.
@@ -71,14 +72,14 @@ Regel des Inhabers (02.11.2026 abends): **Es wird nie „gewartet“.** Die Eisz
 Regel des Inhabers (02.11.2026 abends): Von der ersten Sekunde fangen, Spannung steigern, nie langweilig, nichts Übertriebenes. **Skript zuerst, Design und Animation daraus ableiten** (nie umgekehrt).
 - **Von der ersten Sekunde:** Bild 0 ist die volle, belebte Szene mit einem Vorboten oder einem ungewöhnlichen Blick; Titelfrage und Anzeige stehen sofort. Kein „ruhiges Einblenden“; ruhige Phase höchstens 5 s, Welteffekt vor 4 s, Kamerabewegung und Anzeige-Änderung vor 8 s (Einstieg dicht, oben).
 - **Spannungskurve:** mindestens 4 Stufen zwischen 5 und 58 s, jede mit neuer Information in Bild, Anzeige und (wenn vorhanden) Satz; die Kurve steigt, flacht nur kurz ab (Atempause höchstens 3 s, selten) und erreicht im Höhepunkt (58–62 s) ihr Maximum. Das Nachspiel löst auf, ohne zu langweilen.
-- **Mehrere Sequenzen, Bildwechsel innerhalb der durchgehenden Einstellung:** Licht-, Wetter- und Tageszeit-Wechsel, langsame Fahrt, Schwenk und Zoom wirken wie Schnitte, ohne zu schneiden (die Einstellung bleibt eine).
+- **Mehrere Sequenzen, Bildwechsel innerhalb langer Einstellungen:** Licht-, Wetter- und Tageszeit-Wechsel, langsame Fahrt, Schwenk und Zoom wirken wie Schnitte, ohne zu schneiden. Seit 07.11. sind dazu **höchstens 1–3 gezielte harte Schnitte** erlaubt, nur am Höhepunkt oder bei einem Maßstabs- bzw. Szenensprung ([[REA stelldirvor Regelwerk]]).
 - **Aufleuchten und Lichtspiele:** Sonnenstrahlen durch Wolken, Glanz und Reflexe auf Wasser und Eis, Sternschnuppen, Polarlicht, Blitze, Fensterlichter, Schimmern. **Maß halten:** höchstens eine Weißblende (Höhepunkt), Bloom und Farbstich ruhig, jeder Effekt trägt Information (Zeitpunkt im Protokoll, Klang dazu). Übertriebene Effekte (Dauerblitzen, schreiende Farben, Dauerbeben) sind ein Fehler.
 - **Qualitätslatte „sieht es billig aus?“:** Vor der Abnahme betrachtet Claude die Standbilder und den Kontaktbogen wie ein Zuschauer. Wirken Gelände, Bäume, Wasser, Himmel, Gebäude flach, gleichförmig, milchig, glasig oder leer, ist das Video nicht abnahmefähig, auch wenn alle Pflichtpunkte stimmen. Checkliste in [[Prüfung und Abnahme Account 2]] §2.
 
 ## Skript-Anforderungen
-**Quelle der Skripte:** Ideen-Studio; Recherche und Skript schreibt die Tages-Sitzung von Claude Code mit Websuche (`docs/automatik/tages-sitzung.md`, Befehl aus `tools/chat_befehle.py`; Notweg Claude Chat: [[Claude-Chat-Workflow]], [[Befehl Ideen und Skripte Account 2]]). Der Inhaber bekommt täglich 10 Videoideen, wählt 2 für den nächsten Tag und gibt das Skript frei. ArtifactData-Sammlung **`skripte`**, Dokument-ID `acc2-JJJJ-MM-TT-mittag|abend`; Felder: `konto`, `datum`, `slot`, `titel`, `thema`, `welt`, `standpunkt`, `tageszeit_verlauf`, `zeitraffer`, `anzeige_plan`, `saetze`, `faktenzeile`, `rechenweg`, `zahlen`, `annahmen`, `quellen`, `caption`, `status`. Das Skript kann auch vom Inhaber eingefügt werden.
+**Quelle der Skripte:** Skill `themen-skript`, Teil `stelldirvor.md` (im Cockpit: Automatik „Recherche nach Wahl“, Auftragstext aus `tools/chat_befehle.py`; Notweg Claude Chat: [[Claude-Chat-Workflow]], [[Befehl Ideen und Skripte Account 2]]). Der Inhaber wählt aus 10 Ideen und gibt das Skript frei. Dokument-ID `acc2-JJJJ-MM-TT-mittag|abend`; die Felder des Skripts stehen im Skill (`stelldirvor.md` B3): u. a. `titel`, `thema`, `feld`, `suchbegriff`, `nachfrage`, `welt`, `standpunkt`, `tageszeit_verlauf`, `zeitraffer`, `anzeige_plan`, `saetze`, `faktenzeile`, `rechenweg`, `zahlen`, `annahmen`, `quellen`, `caption`, `originalitaet`, `selbstpruefung`. Das Skript kann auch vom Inhaber eingefügt werden.
 
-**Anforderungen an das Skript (gelten für das Ideen-Studio):**
+**Anforderungen an das Skript:**
 - **Aussagen legitim und belegbar, nichts erfinden.** Jede Zahl hat Rechenweg und Quelle, Annahmen sind als Annahme gekennzeichnet; offene Werte stehen als „prüfen“ drin.
 - **Diskussionsanreiz nur implizit.** Das Thema regt zum Nachdenken und Kommentieren an; ausgesprochen wird das nie (keine Provokation, kein Clickbait, kein künstlicher Cliffhanger). Die Kommentarfrage steht nur in der Caption.
 - **Ohne Stimme:** Titelfrage, **12–18 kurze Sätze (3–9 Wörter)**, Faktenzeile („ORT, JAHR · FAKT“), **Anzeige-Plan** (Etiketten, Werte, Zeitraffer-Faktor), **Weltvorschlag** (Welttyp aus dem Weltenkatalog, Standpunkt, Tageszeit-Verlauf).
@@ -95,18 +96,16 @@ Regel des Inhabers (02.11.2026 abends): Von der ersten Sekunde fangen, Spannung 
 - Exakt dieselbe Titelfrage wie am Anfang.
 - **Faktenzeile:** echter Bezug, Form „ORT, JAHR · FAKT“ oder „FAKT · FAKT“ (Versalien kommen aus dem CSS), 1–2 Zeilen, mit Quelle in `skript.json → quellen`. Keine Quellen, URLs oder Annahmen im Bild.
 
-## Themen (Regel des Inhabers 02.11.2026 abends; ersetzt die Regel vom 02.11. mittags)
-- **Kernidee:** „Was wäre, wenn …“-Gedankenexperiment mit einer **messbaren Größe**, die bis „HIER“ läuft, **ein Ereignis, das man von einem Standpunkt aus** (Welt, Standpunkt aus dem Weltenkatalog) wachsen oder sich verändern sieht.
-- **Breite:** spannend und flexibel: Wissenschaft, Natur, Geografie, Geschichte, Technik und mehr, damit es endlos viele Themen gibt. Orte weltweit, auch Deutschland und andere Länder, wie es zum Thema passt; Texte deutsch. Ungeeignet: Alltagsthemen ohne messbare Größe.
-- **5-Sekunden-Rahmen erlaubt**, wenn sich das Thema gut simulieren lässt (das frühere Verbot und Prüfpunkt 9 sind entfallen).
-- **Keine Sperrliste mehr** (auch nicht die der US-Konten und von Lunar Animations): Themen dieser Kanäle sind frei, der Inhaber kennt sie. **Es bleibt die Kopierregel:** keine 1:1-Kopie von Sätzen, Etiketten, Faktenzeilen, Bild- und Szenenideen; gleiches Thema nur mit eigenem Skript und deutlich anderem Design (anderer Ort bzw. andere Welt, andere Dramaturgie).
-- Keine Opfer zeigen (Menschen fallen um, aber keine Verletzungen), kein Gore (CRP „Disturbing“); Ausschlussthemen aus [[Plattformregeln und Posting]] (CLAUDE.md §7) gelten weiter (Tragödien, Politik, Krypto …).
-- Veraltet seit 02.11.2026: „große globale Wissenschaftsthemen“, „kein Deutschland-Bezug“, „keine Alltagsthemen“ als Einengung, Sperrliste Lunar/US/DE, Plan aus `data/plan/account2-30-tage.csv` (Archiv in [[Themen und Plan Account 2]] §5 Sperrliste und §6 Plan).
+## Themen
+Die Themenregeln stehen seit 09.11.2026 in [[Themenfindung stelldirvor]] (Themenfelder, Nachfrage, Winkel, gesperrte Klassiker, Kopierregel). Für den Skriptaufbau bleibt daraus wichtig:
+- **Kernidee:** eine **messbare Größe**, die bis „HIER“ läuft, und **ein Ereignis, das man von einem Standpunkt aus** wachsen oder sich verändern sieht.
+- Keine Opfer zeigen (Menschen fallen um, aber keine Verletzungen), kein Gore (CRP „Disturbing“); Ausschlussthemen aus [[Plattformregeln und Posting]] gelten weiter.
+- Der alte Plan und die alte Sperrliste sind Archiv ([[Themen und Plan Account 2 (Archiv)]], [[Konkurrenz-Check und Sperrliste Account 2]]).
 
 ## Caption (nur Text beim Posten)
 `Hook-Frage mit Suchbegriff? Emoji Ich hab's durchgespielt. Kommentarfrage? 👇 #thema1 #thema2 #thema3 #wissen #waswaerewenn`, höchstens ca. 150 Zeichen plus 5 Hashtags, kein #fyp/#viral. Die Caption steht im Skript (Feld `caption`) und wird übernommen.
 
 ## Siehe auch
-[[Account stelldirvor.pov Überblick]] · [[Format Account 2 Lunar]] · [[Design Account 2]] · [[Licht und Effekte Account 2]] · [[Ton Account 2]] · [[Technik und Szenenbau Account 2]] · [[Prüfung und Abnahme Account 2]] · [[Themen und Plan Account 2]] · [[Konkurrenz-Check und Sperrliste Account 2]]
+[[Account stelldirvor.pov Überblick]] · [[Format Account 2 Lunar]] · [[Design Account 2]] · [[Licht und Effekte Account 2]] · [[Ton Account 2]] · [[Technik und Szenenbau Account 2]] · [[Prüfung und Abnahme Account 2]] · [[Themenfindung stelldirvor]] · [[Themen und Plan Account 2]] · [[Pipeline und Skills]]
 
 Account 1 gehört nicht hierher: [[Trennung der Accounts]] · Einstieg [[Index]] · Gemeinsame Regeln: [[Plattformregeln und Posting]], [[Produktion Rhythmus und Modelle]], [[Render-Dienst Windows-PC]].

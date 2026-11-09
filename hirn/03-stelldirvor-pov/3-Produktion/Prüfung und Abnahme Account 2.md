@@ -2,13 +2,13 @@
 typ: regel
 konto: stelldirvor
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/stelldirvor-video/pruefung.md
+datum: 2026-11-09
+quelle: pipeline/qc/referenz_pov.py, .claude/skills/video-produktion/stelldirvor.md (bis 06.11. aus dem entfernten Skill stelldirvor-video)
 tags: [konto/stelldirvor, pruefung, abnahme]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
-> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/pruefung.md` (Skill am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` ist stillgelegt. Produktion: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
+> Diese Notiz wird direkt gepflegt (Abteil `3-Produktion`). Ablauf: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
 
 # Prüfung und Abnahme Account 2
 
@@ -61,7 +61,7 @@ Prüfen und im Bericht festhalten:
 - [ ] **Welt passt zum Thema** (Natur zuerst, Stadt nur, wenn das Thema sie braucht), keine Standard-Skyline als Dauerkulisse; **Weltvielfalt:** Welttyp und Standpunkt anders als im vorigen Video, Tageszeit wechselt, nicht zwei gleiche Enden am selben Tag.
 - [ ] **Bewegung statt Warten:** In jedem 2–3-s-Abschnitt des Kontaktbogens (und in den Standbildern dazwischen) ist eine themenbezogene Veränderung zu sehen (Licht, Wetter, Wasser, Vegetation, Eis, Wolkenzug, Tiere, Fahrzeuge, Kamerafahrt); Hinweis 10 ist erklärt. Mindestens 4 erkennbare Phasen, mindestens 3 Ebenen Leben gleichzeitig. Gibt es Leerlauf, wird die Abnahme verweigert.
 - [ ] **Zeitraffer und Anzeige passen zusammen:** Im Faktor-Abschnitt (siehe `skript.json → zeitraffer`) läuft die Zahl im Tempo der sichtbaren Veränderung (Pegel, Schatten, Eisrand), der Faktor steht in der Unterzeile, wo nötig, keine Sprünge ohne Grund (Hinweise 11, 12).
-- [ ] **Kamera:** weich und ohne Ruck; Fahrt, Schwenk und Zoom folgen dem Geschehen; **keine harten Schnitte, keine mehreren Einstellungen**; im Nachspiel liegt sie still; die Textebenen bleiben lesbar. Seit 07.11.: lange durchgehende Einstellungen, höchstens 1–3 gezielte harte Schnitte (am Höhepunkt bzw. bei Maßstabs- oder Szenensprung).
+- [ ] **Kamera:** weich und ohne Ruck; Fahrt, Schwenk und Zoom folgen dem Geschehen; lange durchgehende Einstellungen, **höchstens 1–3 gezielte harte Schnitte** (am Höhepunkt bzw. bei Maßstabs- oder Szenensprung, jeder mit Grund im Protokoll); im Nachspiel liegt sie still; die Textebenen bleiben lesbar.
 - [ ] **Dramaturgie:** fängt in der ersten Sekunde; mindestens 4 steigende Spannungsstufen zwischen 5 und 58 s mit neuer Information; Höhepunkt 58–62 s ist der stärkste Moment; kein Dauerblitzen, keine übertriebenen Effekte, nichts, das nur Effekt ist.
 - [ ] **Detaildichte wie die Referenzen** (größte Lücke laut Demo und Eiszeit-Video 02.11.): Gelände und Gebäude mit Form, Dach, Fenstern, Details statt Quadern und glatter Fläche; dichte, abwechslungsreiche Vegetation; Wasser mit Bewegung, wo die Welt Wasser hat; Menschen, Tiere und Fahrzeuge im Mittelgrund erkennbar; der Höhepunkt zeigt das Ereignis selbst (Wand, Trümmer, Licht), nicht nur eine leere Fläche; keine milchige Phase, keine glasige Fläche, Weißblende nicht zu früh. Vergleich: 8 Phasen-Standbilder neben Referenzbildern derselben Phase bzw. neben dem Vorgänger-Video (nur im Scratchpad, nie im Repo).
 - [ ] **Qualitätslatte „sieht es billig aus?“:** Kontaktbogen und Standbilder wie ein Zuschauer betrachten. Wirkt die Welt flach, gleichförmig, leer, milchig oder glasig, oder ist die Veränderung dürftig, lautet die Antwort **Abnahme verweigert**, auch bei 21/21 Pflichtpunkten (das erste Video bestand 22/22 und gefiel dem Inhaber trotzdem nicht). Ursache beheben, nicht posten.

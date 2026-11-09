@@ -2,8 +2,8 @@
 typ: regel
 konto: simulierbar
 status: aktuell
-datum: 2026-11-08
-quelle: CLAUDE.md, .claude/skills/simulierbar-video/, Entscheidungen des Inhabers bis 08.11.2026
+datum: 2026-11-09
+quelle: CLAUDE.md, .claude/skills/themen-skript/simulierbar.md, .claude/skills/stimme-elevenlabs/SKILL.md, .claude/skills/video-produktion/simulierbar.md, Entscheidungen des Inhabers bis 09.11.2026
 tags: [konto/simulierbar, regelwerk, regeln]
 cssclasses: [konto-simulierbar, typ-regel]
 ---
@@ -12,87 +12,64 @@ cssclasses: [konto-simulierbar, typ-regel]
 
 Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]]. Account 2 hat ein eigenes Regelwerk: [[Regelwerk Account 2]] (nie mischen: [[Trennung der Accounts]]). Einstieg: [[Account Simulierbar Überblick]].
 
-**Stand 08.11.2026.**
+**Stand 09.11.2026.** Ein gültiger Stand; wie er entstanden ist, steht im [[Entscheidungen Log]]. Jede Regel hat ihre Heimat-Notiz in der Spalte „Details“.
 
-## Neu seit 08.11. (Wachstums-Recherche, Wahl des Inhabers per Klick)
-| Änderung | Wirkung |
-|---|---|
-| **Folgen-Hinweis als Blocktest am Ende** | ersetzt den Testaufruf bei ca. 20 s: eine kleine **Textzeile in den letzten 2–3 s** unter der Schlusskarte, nicht gesprochen, **an Inhalt gebunden** („Teil 2 ist im Profil“, „Morgen: …“); kein Tausch, keine Belohnung, kein Druck. Abwechselnd **10 Videos mit, 10 ohne**, gemessen an Follows je 1.000 Aufrufe und Anteil der Länge; **Start Video-Tag 10.11.2026 mit „mit“** (Wahl des Inhabers 08.11.; das Cockpit misst die Follows je Video seit 08.11., [[Lernschleife und Insights]]). Die Schlusskarte selbst bleibt ohne Frage und Aufruf. **Technik:** Zuordnung je Video `tools/testblock.py` → `skript.json → testbloecke`; Baustein `M.hinweis({ text })` (Text aus `skript.json → folgen_hinweis`); Prüfpunkt 7 in `qc/massstab.py` (Pflicht: bei „mit“ Textzeile in den letzten 2–3 s ohne Druck, sonst keine; `M.folgen` ist ersetzt). |
-| **Treffer laufen als Serie weiter** | ≥ 3× Median nach 24 h → nummerierter Folgeteil am nächsten Produktionstag ([[Serien und Treffer-Folgen]]) |
-| **Klassiker bis 3 von 10** | mit eigenem Blickwinkel; Folgeteile eigener Treffer ausgenommen; neues Kriterium „Würde man das jemandem schicken?“ ([[Originalität und Themenfindung]]) |
-| **Finanz-Formulierungen** | Modell statt Versprechen, Bedingung nennen, 1–2 Annahmen sichtbar im Bild, keine FOMO ([[Finanz-Formulierungen Simulierbar]]) |
-| **Antwort-Videos ab sofort, Stitch-Test** | Zuschauerwünsche als Antwort-Video mit Erwähnung; 4–6 Stitches „Ich hab's durchgerechnet“ ([[Kommentare Antwort-Videos und Stitch]]) |
-| **Profil: 3 Pins, Bio mit Versprechen und Takt, einheitliches Cover** | [[Profil und Follow-Umwandlung]]; Cover = Bild bei 1,0 s (Titel mit „VS“ und Tafel), gesetzt von `pipeline/post_buffer.py` ([[Plattformregeln und Posting]] › Cover) |
-| **Suchbegriff in Titelfrage und Caption** | [[Plattformregeln und Posting]] › Caption |
-
-## Neu seit 07.11. (REA-Lauf mit 9 Vorbildern, Freigabe des Inhabers per Klick)
-| Änderung | Wirkung |
-|---|---|
-| **Untertitel in Blöcken von 1–4 Wörtern, Schlüsselwort in der Teamfarbe seiner Seite** | ersetzt „Wort für Wort, aktuelles Wort gelb“; Vorbilder 6/6 mit farbigem Schlüsselwort, Hervorhebung des gesprochenen Worts 0/6 ([[REA Simulierbar Regelwerk]] R02) |
-| **Folgen-Aufruf keine Pflicht mehr** | die Lernschleife vergleicht Videos mit und ohne Aufruf; keines der 9 Vorbilder hat einen ausdrücklichen Aufruf (→ seit 08.11.: Test als Textzeile am Ende, siehe oben) |
-| **Sprechtempo 2,3–2,7 Wörter/s, Sätze 3–5 Wörter** | ersetzt „ca. 2,3 Wörter/s“ (Spanne bisher 2,2–2,5); Vorbilder 2,42–2,70, flüssig bleibt Pflicht |
-| **Schlusskarte Pflicht, Schleife freiwillig** | Video endet auf einer Text-/Tafelkarte mit Fazit oder Pointe (Vorbilder 6/6, schwache 1/3) |
-| **Endstand bei ca. 80 % der Länge** | Kipp-Moment als Höhepunkt bei ca. 45 s, Endstand bei ca. 55–58 s (bei 70 s), danach Warum, Pointe und Schlusskarte kompakt; ersetzt „Ergebnis 40–54 s = Höhepunkt“ (Vorbilder 80 %, schwache 57 %) |
-| **Dunkle Stile mit Leuchtakzenten zuerst** | helle Pastell- und Papier-Stile (1, 2, 6, 10, 14) nur, wenn das Thema sie klar trägt; die Lernschleife misst hell gegen dunkel ([[Stile 17 bis 21]]) |
-| **Neutrale Erzählhaltung** | Du-Ansprache höchstens im Hook; Rennen, Ergebnis, Pointe und Schlusskarte neutral (durchgehend Du: starke 2/6, schwache 3/3) |
-| **Fester Schlusssatz entfällt ganz** | kein „Was sollen wir als Nächstes zeigen? …“ mehr; das Ende ist die Schlusskarte, die Kommentarfrage steht nur in der Caption |
-| **Übrige REA-Regeln Standard** | belastbare Pflicht, vorläufige Richtwert, u. a. Duell-Frage als Titel im Bild ab Bild 1, erstes Bild ohne Ton verständlich, Vergleichszeichen und Statuszeile an der Tafel, wichtige Zahlen leuchten auf, Führungswechsel sichtbar, mindestens eine Erklärgrafik, Regeln knapp als Chips ([[REA Simulierbar Regelwerk]]) |
-
-## Neu seit 02.11. abends
-| Änderung | Wirkung |
-|---|---|
-| **Nur noch GELD** | jedes Video endet mit einem Euro-Ergebnis; ALLTAG entfällt |
-| **Alle Stile (1–15 und 17–21) wieder erlaubt, mit Qualitätslatte** | Stile 1–15 und 17–21; jeder Stil muss die Abnahme am Kontaktbogen bestehen |
-| **Mehr Effekte, nichts Übertriebenes** | Licht, Aufleuchten, Zoom (mal ja, mal nein), mehrere Sequenzen und Bildwechsel; **große Sticker bleiben verboten** |
-| **Sprechtempo: Mitte** | 150–190 Wörter bei 65–80 s (ca. 2,3 Wörter/s), muss flüssig und natürlich klingen (→ seit 07.11.: 2,3–2,7 Wörter/s) |
-| **Kein 30-Tage-Plan; Originalität statt Sperrliste** (07.11.) | Skript kommt aus Cockpit bzw. Ideen-Studio ([[Claude-Chat-Workflow]]); Themen aller Länder erlaubt; kein Thema, das es auf Deutsch schon gibt; Klassiker ~~höchstens 1 von 10~~ seit 08.11. bis 3 von 10; Themenfelder Mechaniken, Geschichte, Geld hinter den Dingen, Länder-Duelle ([[Originalität und Themenfindung]]) |
-
-## Inhalt
+## 1. Themen (Abteil `1-Skripterstellung`)
 | Regel | Details |
 |---|---|
-| Nische „Alltag durchgerechnet“, **ausschließlich GELD**, Euro-Ergebnis aus eigener Modellrechnung | [[Account Simulierbar Überblick]] |
-| Duell nur zwischen echten Alternativen derselben Entscheidung | [[Videoaufbau Simulierbar]] |
-| Bevorzugt große Lebens-/Geldentscheidungen mit großer Endzahl (Recherche 02.11.: dort die Treffer) | [[Simulation-Trendanalyse-2026-11-02]] |
-| Länder frei (Deutschland, weltweit, andere), Sprache Deutsch | [[Account Simulierbar Überblick]] |
-| Ausschlussthemen und Finanzregeln (nur Modellrechnung, keine Anbieter) | [[Auswahl- und Finanzregeln Simulierbar]] |
-| Wie wir über Geld sprechen (seit 08.11.): Modell statt Versprechen, Bedingung und Annahmen sichtbar | [[Finanz-Formulierungen Simulierbar]] |
-| Skript: legitim, nichts erfinden, Diskussionsanreiz nur implizit, als Regie-Text für Ben | [[Befehl Ideen und Skripte Simulierbar]], [[Stimme und Ton Simulierbar]] |
+| Nische **Geld in Deutschland**; jedes Video endet mit einem Euro-Ergebnis aus eigener Modellrechnung | [[Themenfindung Simulierbar]] |
+| **Nachfrage belegt** (Suchformulierung, Quelle, Datum) und **Winkel** sind Pflicht | [[Themenfindung Simulierbar]] §1, §3, §4 |
+| Formate: **Duell, Zeitverlauf, Was bleibt, Lernvideo**; das Duell ist keine Pflicht mehr. Ein Duell nur zwischen echten Alternativen derselben Entscheidung | [[Themenfindung Simulierbar]] §5 |
+| Liste „abgenutzt“ nie in der Standardfrage; stark gesuchte Themen (Rente, Steuererklärung, Grundsicherung …) mit neuem Winkel erlaubt; **Parteipolitik ausgeschlossen** | [[Themenfindung Simulierbar]] §6 |
+| Originalität: Websuche je Idee, kein deutsches Video zur gleichen Frage | [[Originalität und Themenfindung]] |
+| Ausschlussthemen und Finanzregeln (nur Modellrechnung, keine Anbieter) | [[Finanzregeln Simulierbar]] |
+| Wie wir über Geld sprechen: Modell statt Versprechen, Bedingung und Annahmen sichtbar, keine FOMO | [[Finanz-Formulierungen Simulierbar]] |
+| Treffer (ab 3× Median nach 24 h) laufen als nummerierte Serie weiter | [[Serien und Treffer-Folgen]] |
 
-## Aufbau und Länge
+## 2. Skript (Abteil `1-Skripterstellung`)
 | Regel | Details |
 |---|---|
-| Feste Reihenfolge (seit 07.11.): Hook (Duell-Frage, Stimme unter 0,2 s, Titel im Bild ab Bild 1) · Regeln (knapp, Chips) · Denkfalle · Rennen · erste Wendung 18–25 s, dann alle 8–10 s (4–5 Wendepunkte, Führungswechsel) · Kipp-Moment ca. 45 s · **Endstand bei ca. 80 %** · Warum · Pointe · **Schlusskarte** (Pflicht). Folgen-Hinweis nur als Blocktest (Textzeile in den letzten 2–3 s, seit 08.11.), kein fester Schlusssatz, Schleife freiwillig | [[Videoaufbau Simulierbar]], [[REA Simulierbar Regelwerk]] |
-| Länge 65–80 s (mind. 61 s) | [[Videoaufbau Simulierbar]] |
-| Von der ersten Sekunde fangen, Spannung steigern, nie über 2 s Stillstand, alle 1–2 s etwas Neues | [[Videoaufbau Simulierbar]] |
-| Skript und Bild passen exakt zusammen | [[Videoaufbau Simulierbar]] |
+| **Aufbau (Standard seit 09.11.):** Hook 0–3 s mit Frage zum Tippen · Zähler laufen ab 3 s, Regeln als Chips · Denkfalle bis ca. 11 s · erste Wendung 12–15 s · danach alle 8–10 s ein Befund, dabei wird die **zweite Frage** gesetzt · Kipp-Moment bei ca. 60–65 % · **Ergebnis bei ca. 75–80 %** · „Warum?“ höchstens 6 s · Pointe löst die zweite Frage auf · Schlusskarte. Höchstens 12 s nach dem Ergebnis | [[Skriptaufbau Simulierbar]] |
+| Etwa 150–190 Wörter als grober Richtwert; Sätze meist 4–10 Wörter (Hinweis); neutral erzählt, Du höchstens im Hook; kein „Los geht’s“ | [[Skriptaufbau Simulierbar]] §3 |
+| Legitim und belegt, nichts erfunden; Diskussionsanreiz nur implizit; keine künstlichen Cliffhanger | [[Skriptaufbau Simulierbar]] §3 |
+| Suchbegriff im ersten Satz, in der Titelfrage und vorn in der Caption | [[Plattformregeln und Posting]] |
+| Ende: Schlusskarte mit Fazit oder Pointe; kein fester Schlusssatz, keine Frage, kein gesprochener Aufruf; Schleife freiwillig | [[Skriptaufbau Simulierbar]], [[REA Simulierbar Regelwerk]] |
 
-## Bild und Stil
+## 3. Stimme (Abteil `2-Stimme`)
 | Regel | Details |
 |---|---|
-| Alle Stile (1–15 und 17–21), genau einer je Video, nie zweimal derselbe hintereinander, Wahl mit Begründung; **seit 07.11. dunkle Welten mit Leuchtakzenten zuerst**, helle Pastell- und Papier-Stile nur, wenn das Thema sie trägt. **Stile ohne Video-Baukasten (5, 7–11, 15) brauchen vor dem Einsatz einen Erstbau.** | [[Stile 17 bis 21]] |
-| **Qualitätslatte:** sauberes Licht/Material, lesbare Typografie, konsistente Farben, keine Artefakte, keine Billig-Optik; **Stil 18 nur mit belebter Szene** (Umgebung/Figuren, Bildwechsel je Phase, 05.11.) | [[Prüfung und Abnahme Simulierbar]] |
-| Dramaturgie: mehrere Animationssequenzen, Situations- und Bildwechsel, Aufleuchten, Lichtspiele, Zoom abwechselnd; **keine großen Sticker/Stempel** | [[Licht und Atmosphäre Simulierbar]], [[Design und Layout Simulierbar]] |
-| Layout: Mittelachse x = 540, Schutzzone 150 px, nichts Wichtiges unter y ≈ 1500 | [[Design und Layout Simulierbar]] |
-| Zwei Teamfarben je Video, nie Gelb; Untertitel seit 07.11. **in Blöcken von 1–4 Wörtern mit schwarzer Kontur, Schlüsselwort in der Teamfarbe seiner Seite** (vorher Wort für Wort, aktuelles Wort gelb) | [[Design und Layout Simulierbar]], [[REA Simulierbar Regelwerk]] |
+| Ben (ElevenLabs), `eleven_v4`, `language_code` de, Stabilität 0,5, Ähnlichkeit 0,75, ganzes Skript in einer Anfrage | [[Stimme ElevenLabs Simulierbar]] §2 |
+| **Textformat:** keine Auslassungspunkte, keine Gedankenstriche als Pause, kein Wort in Großbuchstaben, keine Gefühls-Tags, alles ausgeschrieben, höchstens 3 Ausrufezeichen | [[Stimme ElevenLabs Simulierbar]] §3 |
+| **Genau eine Aufnahme je Skript**; eine zweite nur bei hörbarem Fehler der Stimme, einmal. Nach der Aufnahme wird nie gekürzt und neu vertont | [[Stimme ElevenLabs Simulierbar]] §5 |
+| **Keine Regel zum Sprechtempo** (seit 09.11.): Das Video folgt der fertigen Stimme (`timing.json`); mindestens 61 s | [[Stimme ElevenLabs Simulierbar]] §1 |
+| Ruhig, sachlich, freundlich | [[Stimme ElevenLabs Simulierbar]] §3 |
+
+## 4. Bild und Aufbau (Abteil `3-Produktion`)
+| Regel | Details |
+|---|---|
+| Erstes Bild ohne Ton verständlich: Titelfrage im Bild ab Bild 1, Tafel mit Startwerten ab Bild 0; Bild bei 1,0 s ist das Cover | [[Videoaufbau Simulierbar]] §1 |
+| Von der ersten Sekunde fangen, Spannung bis zum Kipp-Moment steigern, nie über 2 s Stillstand, alle 1–2 s etwas Neues | [[Videoaufbau Simulierbar]] §2, §3 |
+| Skript und Bild passen exakt zusammen (`bild_text_abgleich`) | [[Videoaufbau Simulierbar]] §4 |
+| Mindestens eine Erklärgrafik; laufende Zähler; wichtige Zahlen leuchten auf | [[REA Simulierbar Regelwerk]] |
+| Stile 1–15 und 17–21, genau einer je Video, nie zweimal derselbe hintereinander, Wahl mit Begründung; **dunkle Welten mit Leuchtakzenten zuerst**, helle Pastell- und Papier-Stile nur, wenn das Thema sie trägt. Stile ohne Video-Baukasten (5, 7–11, 15) brauchen vor dem Einsatz einen Erstbau | [[Stile 17 bis 21]] |
+| **Qualitätslatte:** sauberes Licht und Material, lesbare Typografie, konsistente Farben, keine Billig-Optik; Stil 18 nur mit belebter Szene | [[Prüfung und Abnahme Simulierbar]] |
+| Mehr Effekte, nichts Übertriebenes; **keine großen Sticker oder Stempel** | [[Licht und Atmosphäre Simulierbar]], [[Design und Layout Simulierbar]] |
+| Layout: Mittelachse x = 540, Schutzzone 150 px, nichts Wichtiges unter y ≈ 1500; 1080×1920 | [[Design und Layout Simulierbar]] |
+| Zwei Teamfarben je Video, nie Gelb; **Untertitel in Blöcken von 1–4 Wörtern**, Schlüsselwort in der Teamfarbe seiner Seite | [[Design und Layout Simulierbar]] |
 | Kein Kanalname, Logo oder Rubrik im Video | [[Trennung der Accounts]] |
+| Klangteppich 8–13 dB unter der Stimme, Effekt je Bild-Ereignis, −14 LUFS, nur selbst erzeugte Klänge | [[Klangteppich und Ton Simulierbar]] |
+| **Folgen-Hinweis nur im Testblock** (seit 08.11., 10 Videos mit, 10 ohne): nicht gesprochene Textzeile in den letzten 2–3 s unter der Schlusskarte, an den Inhalt gebunden, kein Tausch, keine Belohnung, kein Druck (`tools/testblock.py`, `M.hinweis`, Prüfpunkt 7). Einen Folgen-Aufruf bei ca. 20 s gibt es nicht mehr | [[Lernschleife und Insights]] |
 
-## Stimme und Ton
+## 5. Prüfung und Posten
 | Regel | Details |
 |---|---|
-| Ben (ElevenLabs), Modell v4, gespeicherte Original-Einstellungen, keine Beschleunigung | [[Stimme und Ton Simulierbar]] |
-| Ruhig, sachlich, freundlich; keine aufgeregten Tags, höchstens 3 Ausrufezeichen, kein „Los geht’s“; seit 07.11. neutral erzählen, Du höchstens im Hook | [[Stimme und Ton Simulierbar]] |
-| Regie-Text: eine Zeile pro Satz, höchstens ein GROSSgeschriebenes Wort je Satz, keine `<break>`-Tags, Zahlen ausgeschrieben | [[Stimme und Ton Simulierbar]] |
-| Klangteppich 8–13 dB unter der Stimme, Effekt je Bild-Ereignis, −14 LUFS, nur selbst erzeugte Klänge | [[Stimme und Ton Simulierbar]] |
-
-## Prüfung und Posten
-| Regel | Details |
-|---|---|
-| Prüfliste (23 Punkte, `massstab.py` prüft das Messbare) muss erfüllt sein | [[Maßstab Simulierbar]], [[Prüfung und Abnahme Simulierbar]] |
-| Caption: `Hook-Frage? Emoji Ich hab's simuliert. Kommentarfrage? 👇 #t1 #t2 #t3 #wissen #simulation` | [[Plattformregeln und Posting]] |
+| Prüfliste mit **23 Punkten**; `qc/massstab.py` prüft das Messbare, dazu Sichtprüfung am Kontaktbogen | [[Prüfung und Abnahme Simulierbar]] |
+| Caption: `Titelfrage? Emoji Ich hab's simuliert. Kommentarfrage? 👇 #t1 #t2 #t3 #wissen #simulation` | [[Plattformregeln und Posting]] |
 | Posten über Buffer, Zeiten, `--nachpruefen`, kein KI-Label | [[Plattformregeln und Posting]] |
+| Profil: 3 Pins, Bio mit Versprechen und Takt, einheitliches Cover; Antwort-Videos und Stitch-Test | [[Profil und Follow-Umwandlung]], [[Kommentare Antwort-Videos und Stitch]] |
 
-## Lernen
-Täglich 20:00 Auswertung der Zahlen dieses Kontos; Vorschläge nur mit Begründung und nach Freigabe ([[Lernschleife und Insights]]). `skript.json` hält Hook-Formulierung, Stil, Animationen und Zeitpunkte fest (`lern_notizen`).
+## 6. Lernen
+Täglich 19:52 Auswertung der Zahlen dieses Kontos; Vorschläge nur mit Begründung und nach Freigabe ([[Lernschleife und Insights]]). `skript.json` hält Hook, Format, Stil, Zeitpunkte und Auffälligkeiten der Stimme fest (`lern_notizen`).
 
 ## Siehe auch
-[[Regelwerk]] · [[Maßstab Simulierbar]] · [[Themenplan Simulierbar]] (veraltet, Archiv) · [[Sperrliste und Auswahlregeln Simulierbar]] (veraltet, Archiv) · [[Index]]
+[[Regelwerk]] · [[Pipeline und Skills]] · [[REA Simulierbar Regelwerk]] · Archiv: [[Maßstab Simulierbar]], [[Themenplan Simulierbar]], [[Sperrliste und Auswahlregeln Simulierbar]] · [[Index]]

@@ -2,7 +2,7 @@
 typ: anleitung
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-07
+datum: 2026-11-09
 quelle: .claude/skills/rea-video/
 tags: [konto/gemeinsam, rea, methode, videoanalyse]
 cssclasses: [konto-gemeinsam, typ-anleitung]
@@ -10,7 +10,7 @@ cssclasses: [konto-gemeinsam, typ-anleitung]
 
 # REA-Video: Methode
 
-**REA-Video** zerlegt virale Kurzvideos (mehrere Millionen Aufrufe) im kleinsten Detail und leitet daraus belegte Regeln ab. Das Ergebnis je Format ist eine Notiz „REA <Format> Regelwerk“ hier in `04-Recherche`. **Sie ist die Quelle der Regeln für den späteren Produktions-Skill.** Die Arbeitsanweisung steht im Skill `.claude/skills/rea-video/` (bei Abweichung gilt der Skill).
+**REA-Video** zerlegt virale Kurzvideos (mehrere Millionen Aufrufe) im kleinsten Detail und leitet daraus belegte Regeln ab. Das Ergebnis je Format ist eine Notiz „REA <Format> Regelwerk“ hier in `04-Recherche`. **Sie ist die Quelle der Regeln für die Skills `themen-skript` und `video-produktion`** ([[Pipeline und Skills]]); die drei Regelwerke sind seit 07.11.2026 freigegeben. Die Arbeitsanweisung steht im Skill `.claude/skills/rea-video/` (bei Abweichung gilt der Skill).
 
 Vorbild: „Reverse Engineer Anything“ (REA), übertragen von Programmen auf Videos: erst Überblick, dann Detail; jede Aussage mit Beleg; **F** gemessen, **S** gefolgert, **A** Annahme, offen; am Ende die Checkliste prüfen.
 
@@ -63,9 +63,9 @@ Claude kann nicht hören: Stimme, Musik und Effekte kommen aus Messung und Spekt
 ## Korpora
 | Korpus | Format | Konto | viral/Vergleich | Stand | Regelwerk |
 |---|---|---|---|---|---|
-| simulierbar | Vorbilder für Account 1 | simulierbar | 6/3 (V12 Grenzfall) | 07.11.: analysiert, Synthese fertig; unter dem Minimum → vorläufig | [[REA Simulierbar Regelwerk]] (Entwurf) |
-| stelldirvor | Vorbilder für Account 2 | stelldirvor | 6/1 | 07.11.: analysiert, Synthese fertig; unter dem Minimum → vorläufig | [[REA stelldirvor Regelwerk]] (Entwurf) |
-| übergreifend | beide, nur formatunabhängiges Handwerk | gemeinsam | 12/4 | Minimum und Sättigung erreicht | [[REA Übergreifend]] (Entwurf) |
+| simulierbar | Vorbilder für Account 1 | simulierbar | 6/3 (V12 Grenzfall) | 07.11.: analysiert, Synthese fertig; unter dem Minimum → vorläufig | [[REA Simulierbar Regelwerk]] (freigegeben 07.11.) |
+| stelldirvor | Vorbilder für Account 2 | stelldirvor | 6/1 | 07.11.: analysiert, Synthese fertig; unter dem Minimum → vorläufig | [[REA stelldirvor Regelwerk]] (freigegeben 07.11.) |
+| übergreifend | beide, nur formatunabhängiges Handwerk | gemeinsam | 12/4 | Minimum und Sättigung erreicht | [[REA Übergreifend]] (freigegeben 07.11.) |
 Erfolgsmaß beider Korpora: Likes (Aufrufe nicht notiert), Vergleich = unter 10 % des Like-Medians der starken Videos.
 
 ## Siehe auch

@@ -2,13 +2,13 @@
 typ: regel
 konto: stelldirvor
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/stelldirvor-video/design.md
+datum: 2026-11-09
+quelle: .claude/skills/video-produktion/stelldirvor.md, pipeline/engine/lunar_hud.js (bis 06.11. aus dem entfernten Skill stelldirvor-video)
 tags: [konto/stelldirvor, design, typografie]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
-> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/design.md` (Skill am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` ist stillgelegt. Produktion: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
+> Diese Notiz wird direkt gepflegt (Abteil `3-Produktion`). Ablauf: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
 
 # Design Account 2
 

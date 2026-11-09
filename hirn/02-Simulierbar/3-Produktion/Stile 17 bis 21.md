@@ -2,8 +2,8 @@
 typ: regel
 konto: simulierbar
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/simulierbar-video/stile.md, .claude/skills/simulierbar-video/SKILL.md, CLAUDE.md §4, pipeline/stile/, pipeline/qc/massstab.py (18b)
+datum: 2026-11-09
+quelle: .claude/skills/video-produktion/simulierbar.md (bis 06.11. aus dem entfernten Skill simulierbar-video), CLAUDE.md §4, pipeline/stile/, pipeline/qc/massstab.py (18b)
 tags: [konto/simulierbar, stile, look, renderzeit, baukasten, qualitätslatte]
 cssclasses: [konto-simulierbar, typ-regel]
 ---
@@ -115,5 +115,5 @@ Fertige Videos in älteren Stilen bleiben, wie sie sind (z. B. GTA 6 in Stil 1, 
 - Renderzeit: mit Fremdlast erneut prüfen; Standard ist der Render-Dienst auf dem PC ([[Render-Dienst Windows-PC]]). Die Stile 1–15 (außer Stil 1) und alle Stile auf der GPU sind noch nicht im Video gemessen.
 
 ## Siehe auch
-- [[Licht und Atmosphäre Simulierbar]] · [[Technik und Szenenbau Simulierbar]] · [[Design und Layout Simulierbar]] · [[Stimme und Ton Simulierbar]] (Klangteppich je Stil)
-- [[Videoaufbau Simulierbar]] (dort: Dramaturgie und Effekte) · [[Auswahl- und Finanzregeln Simulierbar]] · [[Themenplan Simulierbar]] (Archiv) · [[Prüfung und Abnahme Simulierbar]] · [[Account Simulierbar Überblick]]
+- [[Licht und Atmosphäre Simulierbar]] · [[Technik und Szenenbau Simulierbar]] · [[Design und Layout Simulierbar]] · [[Klangteppich und Ton Simulierbar]] (Klangteppich je Stil)
+- [[Videoaufbau Simulierbar]] (dort: Dramaturgie und Effekte) · [[Finanzregeln Simulierbar]] · [[Themenplan Simulierbar]] (Archiv) · [[Prüfung und Abnahme Simulierbar]] · [[Account Simulierbar Überblick]]

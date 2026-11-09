@@ -2,51 +2,41 @@
 typ: regel
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-08
-quelle: Entscheidung des Inhabers 07.11.2026 (per Klick), tools/chat_befehle.py; Lockerung Klassiker, Folgeteile, Weiterschick-Wert: Wahl des Inhabers 08.11.2026
+datum: 2026-11-09
+quelle: Entscheidungen des Inhabers 07.11., 08.11. und 09.11.2026, .claude/skills/themen-skript/SKILL.md
 tags: [konto/gemeinsam, themen, originalitaet, ideen]
 cssclasses: [konto-gemeinsam, typ-regel]
 ---
 
 # Originalität und Themenfindung
 
-**Gültig seit 07.11.2026 für beide Accounts.** Anlass: Viele Ideen-Vorschläge waren 1:1 dieselben, die auch andere Creator bekommen. Der Inhaber: „Ich will keine 0815-Vorschläge, sondern Themen, die wirklich niemand macht.“
+Das gemeinsame Prinzip für beide Accounts. Die Regeln je Account stehen seit 09.11.2026 in [[Themenfindung Simulierbar]] und [[Themenfindung stelldirvor]]; den Ablauf führt der Skill `themen-skript` ([[Pipeline und Skills]]).
 
-## Warum das passiert
-Andere Creator fragen dieselbe KI mit ähnlichen Befehlen. Die KI liefert dann die naheliegendsten Antworten, bei allen dieselben (Mieten oder Kaufen, Duschen oder Baden, Sonne explodiert). Der Ausweg ist ein Befehl, den sonst niemand stellt, und eine Prüfung gegen das, was es schon gibt.
+## Warum
+Andere Creator fragen dieselbe KI mit ähnlichen Befehlen und bekommen dieselben naheliegenden Antworten (Mieten oder Kaufen, Duschen oder Baden, Sonne explodiert). Der Inhaber am 07.11.: „Ich will keine 0815-Vorschläge, sondern Themen, die wirklich niemand macht.“ Am 09.11. kam dazu: Themen müssen nachweislich gesucht werden.
 
-## Die Regeln (Entscheidungen des Inhabers, 07.11.)
+## Das Prinzip (gilt für beide Accounts)
 | Regel | Inhalt |
 |---|---|
-| **Strenge** | Kein Thema, zu dem es **auf Deutsch** schon ein Video mit der gleichen Frage bzw. Prämisse gibt (TikTok, YouTube, Instagram). Englische Vorbilder sind erlaubt, aber nur mit eigenem Skript und deutlich anderem Design; nie Sätze, Bild- oder Szenenideen übernehmen. |
-| **Einzigartig und relevant** | Beides ist Pflicht: ein ungewöhnlicher Winkel auf etwas, das viele kennen oder betrifft. Ganz abseitige Nischen fallen genauso raus wie Standardthemen. |
-| **20 naheliegende streichen** | Die KI schreibt zuerst die 20 naheliegendsten Ideen auf und streicht sie, dazu alles von der Anti-Liste des Accounts. Die gestrichenen Ideen stehen im Ergebnis (Feld `gestrichen`). |
-| **Anti-Liste** | je Account eine Liste der Standardthemen, nie vorschlagen, auch nicht umbenannt (Text im Befehl: [[Befehl Ideen und Skripte Simulierbar]], [[Befehl Ideen und Skripte Account 2]]) |
-| **Zutaten des Tages** | Das Cockpit zieht für jeden Ideen-Auftrag je Liste 2 zufällige Einträge (Gesetz, Ding, Beruf, Land, Zeit, Mechanik bzw. Ort, Natur, Geschichte, Technik, Messgröße, Tageszeit). Mindestens 6 der 10 Ideen bauen darauf auf. Die gezogenen Zutaten werden mit den Ideen gespeichert. |
-| **Websuche je Idee** | Jede Idee wird vor dem Vorschlag gesucht; das Ergebnis steht im Feld `originalitaet` („kein deutsches Video gefunden“, „englisch: …“ oder „ungeprüft“). Die Tages-Sitzung sucht vor dem Skript noch einmal; bei einem deutschen Fund schreibt sie kein Skript, sondern setzt den Status `rueckfrage` mit dem Fund und einem eigenen Dreh. |
-| Kein Gedächtnis aller Vorschläge | bewusst **nicht** gewählt: Nicht gewählte Ideen dürfen später wiederkommen. Gesperrt sind nur unsere gebauten Videos (Liste „bisher“). **Ausnahme seit 08.11.:** Folgeteile eigener Treffer (neue Rechnung bzw. neues Szenario zum selben Versprechen) sind von der Sperre „bisher“ und der Anti-Liste ausgenommen ([[Serien und Treffer-Folgen]]). |
-| **Weiterschick-Wert** (seit 08.11.) | Jede Idee beantwortet zusätzlich: „Würde man das jemandem schicken?“ Unser einziger Treffer war das einzige Video mit nennenswerten Shares (30 statt 0–1, **F**, n = 1). |
+| **Nachfrage vor Einfall** (09.11.) | Jedes Thema beginnt bei etwas, das Menschen nachweislich suchen oder fragen. Ohne Beleg wird es nicht vorgeschlagen. |
+| **Das Thema ist gesucht, der Winkel ist neu** (09.11.) | Stark gesuchte Themen sind erlaubt, wenn die Frage bzw. Prämisse neu ist. Ganz abseitige Nischen fallen genauso raus wie Standardfragen. |
+| **20 naheliegende streichen** | Zuerst die 20 naheliegendsten Ideen aufschreiben und streichen, dazu alles von der Liste „abgenutzt“ des Accounts. Die gestrichenen Ideen stehen im Ergebnis. |
+| **Liste „abgenutzt“ je Account** | Standardthemen, die in ihrer Standardfrage nie vorgeschlagen werden. Sie steht in der Themenfindung-Notiz des Accounts. Zusammen mit der Websuche je Idee ersetzt sie die alten Sperrlisten und den „Konkurrenz-Check vor jeder Produktion“. |
+| **Websuche je Idee** | Gibt es auf Deutsch schon ein Video zur gleichen Frage bzw. Prämisse (TikTok, YouTube, Instagram)? Ergebnis im Feld `originalitaet`. Bei einem Fund: Winkel drehen oder verwerfen. Vor dem Skript wird noch einmal gesucht. |
+| **Englische Vorbilder** | erlaubt, aber nur mit eigenem Skript und deutlich anderem Design. Nie Sätze, Bild- oder Szenenideen übernehmen (CRP-Ausschluss „Unoriginal“). |
+| **Kein Gedächtnis aller Vorschläge** | Nicht gewählte Ideen dürfen wiederkommen. Gesperrt sind nur die eigenen gebauten Videos. Ausnahme: Folgeteile eigener Treffer ([[Serien und Treffer-Folgen]]). |
+| **Weiterschick-Wert** (08.11.) | Jede Idee beantwortet: „Würde man das jemandem schicken?“ Unser einziger Treffer war das einzige Video mit nennenswerten Shares (**F**, n = 1). |
+| **Der Inhaber wählt** | 10 Ideen, dann seine Wahl. Ein Skript entsteht nur für gewählte Ideen. |
 
-## Account 1 Simulierbar
-- **Klassiker** (Mieten oder Kaufen, Studium oder Ausbildung, Leasing, Rente bzw. Vorsorge, Kind): ~~höchstens 1 von 10~~ **seit 08.11. bis 3 von 10**, jeweils mit eigenem Blickwinkel bzw. einer Frage, die auf Deutsch noch niemand gestellt hat. Grund: Der einzige Treffer („Studium oder Ausbildung“, 7.721 Aufrufe, 27-facher Median) war ein Klassiker; TikTok schließt nur fremdes oder wiederverwendetes Material ohne Neues aus, eine neue eigene Rechnung zu einem bekannten Thema ist erlaubt (**F**, [[Wachstum auf 10.000 Follower]]). Ersetzt die Gewichtung vom 03.11. („mindestens 6 von 10 große Lebensentscheidungen“). Die große, überraschende Euro-Endzahl bleibt Pflicht.
-- **Themenfelder** (jedes der Felder 1–4 mindestens einmal je 10 Ideen): 1 Versteckte Mechaniken · 2 Geschichte und Kurioses · 3 Geld hinter den Dingen · 4 Länder-Duelle · 5 ungewöhnliche Lebensentscheidungen. Jede Idee bleibt ein Duell mit Euro-Ergebnis.
-- Details: [[Auswahl- und Finanzregeln Simulierbar]] §1.
-
-## Account 2 stelldirvor
-- **Klassiker gesperrt** (die Lockerung vom 08.11. gilt nur für Account 1; offen, ob Account 2 nachzieht, [[Wachstum auf 10.000 Follower]] › Offene Fragen): Sonne explodiert, Erde hört auf sich zu drehen, Mond stürzt ab, Asteroid, Sauerstoff weg, Megawelle, Supervulkan, Schwarzes Loch, Zombie und die übrigen Punkte der Anti-Liste.
-- **Neue Themenfelder** (jedes mindestens einmal je 10 Ideen): Natur und Tiere · Geschichte umgedreht (keine reale Tragödie, keine Opfer) · Technik und Versorgung (an einem konkreten Ort, nicht der weltweite Blackout); dazu weiter Physik, Wetter, Geografie, Weltraum mit eigener Prämisse.
-- **Maßstab meist persönlich:** mindestens 6 von 10 an einem greifbaren Ort mit vorstellbarer Skala.
-- Details: [[Themen und Plan Account 2]] §1.
-
-## Wo es umgesetzt ist
-- Befehlstext: `tools/chat_befehle.py` (Blöcke `ORIGINAL`, `SUCHBEGRIFF`, `A1_ANTI`, `A2_ANTI`, Zutaten-Listen) → Befehl-Notizen, `docs/ideen-studio/befehle.json`. **Seit 08.11. nachgezogen:** Klassiker bis 3 von 10 (nur Simulierbar; die Anti-Liste nennt die Ausnahme), Folgeteile eigener Treffer von „bisher“ und Anti-Liste ausgenommen (ORIGINALITÄT 7, im Skript-Befehl Abschnitt FOLGETEIL), Weiterschick-Wert (ORIGINALITÄT 6, Feld `weiterschicken`), Suchbegriff in der Titelfrage und vorn in der Caption (Feld `suchbegriff`).
-- Cockpit: `cockpit/lib/studio.mjs` zieht die Zutaten, erlaubt dem Ideen-Auftrag die Websuche und speichert `zutaten` und `gestrichen` mit den Ideen; die Karten zeigen „Originalität“, „Themenfeld“, „Zutat“ und seit 08.11. „Würde man es schicken?“ und „Suchbegriff“. Folgeteile legt das Cockpit selbst an ([[Serien und Treffer-Folgen]]).
-- Tages-Sitzung: Originalitäts-Suche vor dem Skript (`RECHERCHE_CODE`), Produktion: Eingangsprüfung im Skill `video-produktion`.
+## Was sich am 09.11.2026 geändert hat
+- Die Klassiker-Quoten für Account 1 („höchstens 1 von 10“ vom 07.11., „bis 3 von 10“ vom 08.11.) sind ersetzt: Stark gesuchte Themen sind mit neuem Winkel offen, das Duell ist keine Pflicht mehr ([[Themenfindung Simulierbar]]).
+- Account 2: Themenfelder zu Wissenschaft, Naturphänomenen, Körper und Skurrilem verschoben; die Klassiker bleiben gesperrt ([[Themenfindung stelldirvor]]).
+- Die „Zutaten des Tages“ (zufällige Einträge je Ideen-Auftrag, 07.11.) nennt der Skill `themen-skript` nicht mehr als Pflicht; ob das Cockpit sie weiter zieht, hängt am Stand von `tools/chat_befehle.py` und `cockpit/lib/studio.mjs`.
 
 ## Grenzen
-- TikTok zeigt Such- und Hashtag-Seiten ohne Login nicht; die Websuche findet TikTok-Videos nur, soweit Suchmaschinen sie kennen ([[Recherche-Methode und Grenzen]]). „Kein deutsches Video gefunden“ heißt deshalb: nicht gefunden, nicht: sicher keins (A).
-- Der Trend-Radar schlägt weiter eigene Themen vor; die Anti-Liste gilt dort noch nicht (Radar-Prompt nur in der Radar-Sitzung änderbar, [[Trend-Radar]]).
-- Ob ungewöhnliche Themen so gut laufen wie die Klassiker, misst die Lernschleife ([[Lernschleife und Insights]], Abschnitt „Laufende Tests“).
+- TikTok zeigt Such- und Hashtag-Seiten ohne Login nicht; die Websuche findet TikTok-Videos nur, soweit Suchmaschinen sie kennen ([[Recherche-Methode und Grenzen]]). „Kein deutsches Video gefunden“ heißt: nicht gefunden, nicht: sicher keins (**A**).
+- Der Trend-Radar schlägt weiter eigene Themen vor; die Listen „abgenutzt“ gelten dort noch nicht ([[Trend-Radar]]).
+- Ob Themen mit neuem Winkel so gut laufen wie die Klassiker, misst die Lernschleife ([[Lernschleife und Insights]]).
 
 ## Siehe auch
-[[Entscheidungen Log]] · [[Claude-Chat-Workflow]] · [[Regelwerk Simulierbar]] · [[Regelwerk Account 2]] · [[Index]]
+[[Themenfindung Simulierbar]] · [[Themenfindung stelldirvor]] · [[Pipeline und Skills]] · [[Entscheidungen Log]] · [[Claude-Chat-Workflow]] · [[Regelwerk Simulierbar]] · [[Regelwerk Account 2]] · [[Index]]

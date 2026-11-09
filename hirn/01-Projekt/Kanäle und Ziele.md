@@ -2,7 +2,7 @@
 typ: wissen
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-08
+datum: 2026-11-09
 quelle: CLAUDE.md §3; Ziele und Antwort-Videos: Wahl des Inhabers 08.11.2026
 tags: [konto/gemeinsam, kanaele, ziele]
 cssclasses: [konto-gemeinsam, typ-wissen]
@@ -17,7 +17,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 | Länge | 65–80 s | 80 s (seit 08.11. Testblock 62–70 s, [[Regelwerk Account 2]]) |
 | Format | Duell/Rennen mit Zählern, Untertitel in Blöcken von 1–4 Wörtern (seit 07.11.) | feste Ich-Perspektive, Titelfrage, Messwert-Anzeige, kursive Sätze |
 | Stile | alle 21 mit Qualitätslatte ([[Stile 17 bis 21]]) | Lunar-POV mit Weltenkatalog |
-| Skill | `video-produktion`, Teil `simulierbar.md` (bis 06.11. `simulierbar-video`) | `video-produktion`, Teil `stelldirvor.md` (bis 06.11. `stelldirvor-video`) |
+| Skills | `themen-skript` → `stimme-elevenlabs` → `video-produktion`, jeweils Teil `simulierbar.md` ([[Pipeline und Skills]]) | `themen-skript` → `video-produktion`, jeweils Teil `stelldirvor.md` (keine Stimme) |
 | Einstieg | [[Account Simulierbar Überblick]] | [[Account stelldirvor.pov Überblick]] |
 
 Strikte Trennung: [[Trennung der Accounts]].

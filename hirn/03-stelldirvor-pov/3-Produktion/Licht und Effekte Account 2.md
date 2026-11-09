@@ -2,13 +2,13 @@
 typ: regel
 konto: stelldirvor
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/stelldirvor-video/licht-und-effekte.md
+datum: 2026-11-09
+quelle: .claude/skills/video-produktion/stelldirvor.md, pipeline/engine/stil_lunar_pov.js (bis 06.11. aus dem entfernten Skill stelldirvor-video)
 tags: [konto/stelldirvor, licht, effekte, kamera]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
-> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/licht-und-effekte.md` (Skill am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` ist stillgelegt. Produktion: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
+> Diese Notiz wird direkt gepflegt (Abteil `3-Produktion`). Ablauf: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
 
 # Licht und Effekte Account 2
 
@@ -65,7 +65,7 @@ Der Tageszeit-Verlauf steht im Skript (`tageszeit_verlauf`) und im Zeitraffer si
 Jeder Effekt meldet sich im Protokoll (`Protokoll.effekt(t, name, { klang })`), damit der Ton an genau dieser Stelle sitzt.
 
 ## 4. Kamera (Referenzmessung F, Regel des Inhabers 02.11. abends)
-**Eine durchgehende Einstellung, keine harten Schnitte, keine mehreren Einstellungen. Langsame Fahrt, Schwenk und Zoom sind erlaubt und gewollt** (weich, dem Geschehen folgend). Die Referenzen standen fast starr (F, unten); das ist für uns **nicht** mehr die Norm. **Seit 04.11.2026 ruht die Kamera am Anfang höchstens 5 s; der erste Schwenk, langsame Zoom oder die erste Fahrt beginnt vor 8 s** ([[Ablauf Account 2]] „Einstieg dicht“, Hinweis 13). Danach darf und soll sich die Kamera bewegen, wo es der Spannung dient; reine Ruhe mit `atmen()` bleibt für kurze Atempausen und das Nachspiel.
+**Lange, durchgehende Einstellungen. Langsame Fahrt, Schwenk und Zoom sind erlaubt und gewollt** (weich, dem Geschehen folgend). **Seit 07.11.2026 sind höchstens 1–3 gezielte harte Schnitte erlaubt**, nur am Höhepunkt oder bei einem Maßstabs- bzw. Szenensprung ([[REA stelldirvor Regelwerk]] R19); jeder Schnitt steht mit Grund im Ereignis-Protokoll. Die Referenzen standen fast starr (F, unten); das ist für uns **nicht** mehr die Norm. **Seit 04.11.2026 ruht die Kamera am Anfang höchstens 5 s; der erste Schwenk, langsame Zoom oder die erste Fahrt beginnt vor 8 s** ([[Ablauf Account 2]] „Einstieg dicht“, Hinweis 13). Danach darf und soll sich die Kamera bewegen, wo es der Spannung dient; reine Ruhe mit `atmen()` bleibt für kurze Atempausen und das Nachspiel.
 | Größe | Messwert (F) bzw. Regel (U) | Baukasten |
 |---|---|---|
 | Ruhe (nur kurze Atempausen, am Anfang ≤ 5 s) | F: praktisch starr: 0,01–0,03 px/Bild, Drift ≤ 3 px in 4 s | `PovKamera.atmen()` (≈ 0,04°, 0,1–0,3 Hz) |
@@ -75,7 +75,7 @@ Jeder Effekt meldet sich im Protokoll (`Protokoll.effekt(t, name, { klang })`), 
 | Beben/Grollen | F: 4,0–4,5 Hz senkrecht, 3–6 Hz waagrecht; Standardabweichung 0,5–4 px (≈ 0,05–0,3°) | `beben({ von, bis, staerke })` |
 | Stoß beim Höhepunkt | F: stärkster Ausschlag, klingt in ≈ 1–2 s ab | `stoss({ t, staerke ≈ 1,5 })` |
 | Kippen | F: Kamera wird umgeworfen: Rollen 10–20°, Nicken, Absinken; danach **liegt sie still** (60–68 s: 0,01 px/Bild) | `kippen({ t, roll, nick, fall })` |
-| Schnitte | **keine harten Schnitte**, keine `zl.shot`-Übergänge, kein Wechsel der Einstellung | – (Prüfpunkt 5b meldet harte Bildsprünge) |
+| Schnitte | **höchstens 1–3 gezielte harte Schnitte** (Höhepunkt, Maßstabs- oder Szenensprung), sonst kein Wechsel der Einstellung | im Ereignis-Protokoll mit Grund melden, z. B. `{ t: 31.0, typ: "schnitt", grund: "…" }` (Prüfpunkte 5b, 5c) |
 - **Wann bewegen:** Eine Kamerabewegung hat einen Grund im Skript (folgt der Flutlinie, fährt auf die Front zu, zoomt auf den Vorboten, hebt sich mit der Säule). Sie ist Teil des Bewegungsplans und trägt zur Spannungskurve bei ([[Ablauf Account 2]]). Im Höhepunkt gelten weiter Stoß und Kippen, im Nachspiel liegt die Kamera still.
 - **Weich:** keine Sprünge der Geschwindigkeit; jede Fahrt, jeder Schwenk und jeder Zoom beginnt und endet mit Ease. Bewegungen, die sich überlagern (Fahrt plus Schwenk), sind erlaubt, solange das Bild ruhig bleibt.
 - **Text bleibt lesbar:** Die drei Textebenen sind HTML über der Leinwand und bewegen sich nicht mit der Kamera; Fahrt und Zoom dürfen den Text nicht mit hellen oder unruhigen Flächen übertönen (Hof, [[Design Account 2]]).

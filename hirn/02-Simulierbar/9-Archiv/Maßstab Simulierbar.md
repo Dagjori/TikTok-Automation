@@ -1,21 +1,33 @@
 ---
 typ: regel
 konto: simulierbar
-status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/simulierbar-video/massstab.md, CLAUDE.md §5, SKILL.md (Neuregeln 02.11.2026 abends)
-tags: [konto/simulierbar, maßstab, prüfliste, vorbilder, gesetze]
+status: veraltet
+datum: 2026-11-09
+quelle: CLAUDE.md §5; bis 06.11. aus dem entfernten Skill simulierbar-video (massstab.md); Messung der ersten 4 Vorbilder vom 31.10.2026
+tags: [konto/simulierbar, maßstab, prüfliste, vorbilder, gesetze, archiv]
 cssclasses: [konto-simulierbar, typ-regel]
 ---
 
 # Maßstab Simulierbar
+
+> [!warning] Archiv und Messgrundlage (seit 09.11.2026)
+> Diese Notiz ist **nicht mehr maßgeblich**. Sie bleibt als Messgrundlage der ersten 4 Vorbilder erhalten; die Messtabellen der fremden Videos sind Recherche-Daten und unverändert. **Abgelöst sind:**
+> - **jede Vorgabe zum Sprechtempo** (Wörter je Sekunde, Silben, Satzpausen, Tempo-Profile, „Tempo 150–190 Wörter, Ziel ca. 2,3 W/s“, „2,3–2,7 W/s“): entfällt seit 09.11.2026, das Video folgt der fertigen Stimme → [[Stimme ElevenLabs Simulierbar]]
+> - **Aufbau und Zeiten** (Gesetze zum Ablauf, Ergebnis bei 40–54 s, Kipp-Moment bei ca. 45 s, erste Wendung bei 18–25 s) → [[Skriptaufbau Simulierbar]], [[Videoaufbau Simulierbar]]
+> - **Untertitel Wort für Wort, aktuelles Wort gelb** → Blöcke von 1–4 Wörtern, Schlüsselwort in der Teamfarbe ([[Design und Layout Simulierbar]])
+> - **fester Schlusssatz, Folgen-Aufruf bei ca. 20 s, Schleife als Pflicht** → Schlusskarte, Schleife freiwillig, Folgen-Hinweis nur im Testblock ([[Regelwerk Simulierbar]])
+> - **Sätze mit Auslassungspunkten, Großschreibung zur Betonung, Gefühls-Tags** → Textformat in [[Stimme ElevenLabs Simulierbar]]
+> - **„Prüfliste 20 Punkte“** → 23 Punkte, maßgeblich ist [[Prüfung und Abnahme Simulierbar]]
+> - **Themenregeln und Sperrliste** → [[Themenfindung Simulierbar]]
+>
+> Rangfolge: jüngste Entscheidung des Inhabers > [[REA Simulierbar Regelwerk]] > [[Regelwerk Simulierbar]] > Detail-Notizen > diese Notiz.
 
 > [!info] Hinweis zu wörtlichen Auszügen
 > Enthält wörtliche Auszüge der 4 Vorbildvideos. Entscheidung des Inhabers 02.11.: bleiben so (Risiko: öffentliches Repo; sicherste Lösung wäre, das Repo privat zu stellen).
 
 **Verbindlich für jedes Simulierbar-Video** (Inhaber 31.10.: „das ist dein Maßstab, an dem wir uns richten müssen“). Bild, Stimme, Text, Hook, Ton, Captions und Themen richten sich danach. Jedes Video muss die **Prüfliste (20 Punkte, Abschnitt 11)** komplett erfüllen, bevor es in Buffer geht; das Messbare prüft `pipeline/qc/massstab.py` ([[Prüfung und Abnahme Simulierbar]]). Für Account 2 gilt dieser Maßstab **nicht** ([[Trennung der Accounts]]).
 
-Einstieg: [[Account Simulierbar Überblick]]. Zeitplan, Satzmuster, Skript-Anforderungen, Dramaturgie: [[Videoaufbau Simulierbar]]. HUD-Umsetzung: [[Design und Layout Simulierbar]]. Themen und Auswahlregeln: [[Auswahl- und Finanzregeln Simulierbar]] (die Sperrliste ist seit 02.11.2026 veraltet: [[Sperrliste und Auswahlregeln Simulierbar]]).
+Einstieg: [[Account Simulierbar Überblick]]. Zeitplan, Satzmuster, Skript-Anforderungen, Dramaturgie: [[Videoaufbau Simulierbar]]. HUD-Umsetzung: [[Design und Layout Simulierbar]]. Themen und Auswahlregeln: [[Themenfindung Simulierbar]] und [[Finanzregeln Simulierbar]] (die Sperrliste ist seit 02.11.2026 veraltet: [[Sperrliste und Auswahlregeln Simulierbar]]).
 
 **Stand 02.11.2026 abends:** Dieser Maßstab bleibt die Messgrundlage der 4 Vorbilder. Die Neuregeln des Inhabers ([[Account Simulierbar Überblick]]) haben Vorrang, wo sie abweichen: nur Thema GELD, keine Sperrliste, Länder frei, alle Stile mit Qualitätslatte, mehr Effekte mit steigender Spannung, **Tempo 150–190 Wörter (Ziel ca. 2,3 W/s)** statt der Spalten „Maßstab“ unten.
 
@@ -221,5 +233,5 @@ Weitere Abweichungen (02.11.): kein „Los geht's“, keine Sticker, ruhiger Erz
 Der Inhaber kann weitere Vorbilder schicken (Upload, wie bei den 4 ersten). Auswertung wie beim Maßstab: jede Sekunde ansehen (die ersten 3 s mit 6 Bildern pro Sekunde), Schnitte und Bewegung messen, Ton (Lautheit, Pausen, Klangteppich, Effekte), Transkript mit Wortzeiten über Speech-to-Text. **Im Repo landen nur abstrahierte Muster** (Aufbau, Zeitachse, Mittel, Messwerte, eigene Deutung mit F/A-Kennung): keine Originale, keine Transkripte, keine Standbilder, keine wörtlichen Auszüge. (Die wörtlichen Auszüge der 4 ersten Vorbilder bleiben, siehe Hinweis oben.) Ergebnisse werden als neuer Abschnitt hier ergänzt; Punkte, die den Maßstab ändern, trägt Claude erst nach Freigabe des Inhabers in die Prüfliste ein. Eigene Videos orientieren sich an den Mustern, kopieren aber nie Skript, Sätze, Bild- oder Szenenideen (Prüfpunkt 17).
 
 ## Siehe auch
-- [[Account Simulierbar Überblick]] · [[Videoaufbau Simulierbar]] · [[Design und Layout Simulierbar]] · [[Stimme und Ton Simulierbar]] · [[Prüfung und Abnahme Simulierbar]]
-- [[Konkurrenz und Themen Simulierbar]] · [[Auswahl- und Finanzregeln Simulierbar]] · [[Sperrliste und Auswahlregeln Simulierbar]] (Archiv) · [[Entscheidungen Log]] · [[Recherche-Methode und Grenzen]] · [[Lernschleife und Insights]]
+- [[Account Simulierbar Überblick]] · [[Videoaufbau Simulierbar]] · [[Design und Layout Simulierbar]] · [[Stimme ElevenLabs Simulierbar]] · [[Klangteppich und Ton Simulierbar]] · [[Prüfung und Abnahme Simulierbar]]
+- [[Konkurrenz und Themen Simulierbar]] · [[Finanzregeln Simulierbar]] · [[Sperrliste und Auswahlregeln Simulierbar]] (Archiv) · [[Entscheidungen Log]] · [[Recherche-Methode und Grenzen]] · [[Lernschleife und Insights]]

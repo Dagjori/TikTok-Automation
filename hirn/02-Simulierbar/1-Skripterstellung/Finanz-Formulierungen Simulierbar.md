@@ -2,7 +2,7 @@
 typ: regel
 konto: simulierbar
 status: aktuell
-datum: 2026-11-08
+datum: 2026-11-09
 quelle: Wahl des Inhabers 08.11.2026 (per Klick), Recherche [[Wachstum auf 10.000 Follower]] (BaFin 2026, TikTok Community Guidelines)
 tags: [konto/simulierbar, finanzen, formulierung, bafin, skript]
 cssclasses: [konto-simulierbar, typ-regel]
@@ -10,11 +10,11 @@ cssclasses: [konto-simulierbar, typ-regel]
 
 # Finanz-Formulierungen Simulierbar
 
-**Gültig seit 08.11.2026 nur für Account 1 `@simulierbar`.** Wie wir über Geld **sprechen und schreiben** (Skript, Text im Bild, Schlusskarte, Caption). Welche Themen erlaubt sind und was TikTok bei Finanzinhalten verbietet, steht weiter in [[Auswahl- und Finanzregeln Simulierbar]] §2 und §3.
+**Gültig seit 08.11.2026 nur für Account 1 `@simulierbar`.** Wie wir über Geld **sprechen und schreiben** (Skript, Text im Bild, Schlusskarte, Caption). Welche Themen erlaubt sind und was TikTok bei Finanzinhalten verbietet, steht weiter in [[Finanzregeln Simulierbar]] §2 und §3.
 
 ## Warum
 - Die BaFin hat 2026 für Finfluencer „fünf Punkte“ veröffentlicht: Interessenkonflikte offenlegen, Fakt und Meinung trennen, keine FOMO-Techniken, faire Risikoinformation, Erlaubnispflichten beachten (**F**, Behörde, [Regulation Tomorrow](https://www.regulationtomorrow.com/2026/08/bafin-published-five-points-to-note-for-influencers/)).
-- TikTok verbietet „get-rich-quick“-Maschen und falsche Anlageangebote (**F**, [[Auswahl- und Finanzregeln Simulierbar]] §3).
+- TikTok verbietet „get-rich-quick“-Maschen und falsche Anlageangebote (**F**, [[Finanzregeln Simulierbar]] §3).
 - Über 70 % der Finanz-Creator zeigen keine erkennbare Qualifikation (**S**, kleine Studie, [Euronews](https://de.euronews.com/2026/08/15/tiktok-finfluencer-wie-verlasslich-ist-der-online-rat-fur-junge-anleger)). Sichtbare Annahmen und saubere Sprache können uns abheben (**A**).
 
 ## Regeln
@@ -35,4 +35,4 @@ cssclasses: [konto-simulierbar, typ-regel]
 - Das Diskussionsangebot bleibt implizit: eine sichtbare Annahme lädt zum Widerspruch ein, ohne Aufforderung.
 
 ## Siehe auch
-[[Regelwerk Simulierbar]] · [[Auswahl- und Finanzregeln Simulierbar]] · [[Account Simulierbar Überblick]] · [[Index]]
+[[Regelwerk Simulierbar]] · [[Finanzregeln Simulierbar]] · [[Account Simulierbar Überblick]] · [[Index]]

@@ -2,13 +2,13 @@
 typ: regel
 konto: stelldirvor
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/stelldirvor-video/ton.md
+datum: 2026-11-09
+quelle: .claude/skills/video-produktion/stelldirvor.md, pipeline/atmo.py (bis 06.11. aus dem entfernten Skill stelldirvor-video)
 tags: [konto/stelldirvor, ton, atmo]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
-> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/ton.md` (Skill am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` ist stillgelegt. Produktion: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
+> Diese Notiz wird direkt gepflegt (Abteil `3-Produktion`). Der Account ist stumm (bestätigt 09.11.2026): keine Stimme, keine Musik; nur selbst erzeugte Atmo und Sounddesign. Ablauf: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
 
 # Ton Account 2
 

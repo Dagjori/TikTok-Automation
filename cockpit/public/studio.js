@@ -9,10 +9,10 @@ const STUFE = { gewaehlt: 1, recherche: 1, skript_fertig: 2, rueckfrage: 2, frei
 const FERTIG_STATUS = new Set(["geplant", "gepostet"]);
 const AENDERBAR = new Set(["gewaehlt", "fehler"]);
 const FELDER = {
-  simulierbar: { offen: ["treffer", "hook", "ergebnis_ansatz", "warum_relevant", "weiterschicken", "originalitaet"], mehr: ["suchbegriff", "feld", "zutat", "diskussion", "daten", "bildidee", "laender", "risiko"] },
-  stelldirvor: { offen: ["treffer", "ereignis", "messgroesse", "welt", "standpunkt", "weiterschicken", "originalitaet"], mehr: ["suchbegriff", "feld", "massstab", "zutat", "tageszeit_verlauf", "bewegung", "kamera", "zeitraffer", "hoehepunkt", "pointe", "diskussion", "daten", "laender", "risiko"] },
+  simulierbar: { offen: ["treffer", "hook", "nachfrage", "winkel", "tipp", "ergebnis_ansatz", "warum_relevant", "weiterschicken", "originalitaet"], mehr: ["punkte", "format", "suchbegriff", "feld", "vermeidet", "zweite_frage", "zutat", "diskussion", "daten", "bildidee", "laender", "risiko"] },
+  stelldirvor: { offen: ["treffer", "ereignis", "nachfrage", "winkel", "messgroesse", "welt", "standpunkt", "weiterschicken", "originalitaet"], mehr: ["punkte", "suchbegriff", "feld", "massstab", "vermeidet", "zutat", "tageszeit_verlauf", "bewegung", "kamera", "zeitraffer", "hoehepunkt", "pointe", "diskussion", "daten", "laender", "risiko"] },
 };
-const FELD_NAME = { originalitaet: "Originalität", feld: "Themenfeld", zutat: "Zutat", massstab: "Maßstab", hook: "Hook", ergebnis_ansatz: "Ergebnis", warum_relevant: "Warum relevant", diskussion: "Diskussion", daten: "Daten", bildidee: "Bildidee", laender: "Länder", risiko: "Risiko", ereignis: "Ereignis", messgroesse: "Messgröße", welt: "Welt", standpunkt: "Standpunkt", tageszeit_verlauf: "Tageszeit", bewegung: "Bewegung", kamera: "Kamera", zeitraffer: "Zeitraffer", hoehepunkt: "Höhepunkt", pointe: "Pointe", weiterschicken: "Würde man es schicken?", suchbegriff: "Suchbegriff", treffer: "Treffer" };
+const FELD_NAME = { nachfrage: "Nachfrage", winkel: "Winkel", vermeidet: "Vermeidet", tipp: "Tipp des Zuschauers", zweite_frage: "Zweite Frage", punkte: "Punkte", format: "Format", originalitaet: "Originalität", feld: "Themenfeld", zutat: "Zutat", massstab: "Maßstab", hook: "Hook", ergebnis_ansatz: "Ergebnis", warum_relevant: "Warum relevant", diskussion: "Diskussion", daten: "Daten", bildidee: "Bildidee", laender: "Länder", risiko: "Risiko", ereignis: "Ereignis", messgroesse: "Messgröße", welt: "Welt", standpunkt: "Standpunkt", tageszeit_verlauf: "Tageszeit", bewegung: "Bewegung", kamera: "Kamera", zeitraffer: "Zeitraffer", hoehepunkt: "Höhepunkt", pointe: "Pointe", weiterschicken: "Würde man es schicken?", suchbegriff: "Suchbegriff", treffer: "Treffer" };
 
 const wert = (v) => (Array.isArray(v) ? v.join("  gegen  ") : v && typeof v === "object" ? JSON.stringify(v) : String(v ?? ""));
 const nurLesen = () => !!(S.einstellungen?.studio_ab && ST.tag < S.einstellungen.studio_ab);
@@ -184,8 +184,10 @@ function pruefungen(konto, s, d) {
   const sprech = (s.segmente || []).map((x) => x.sprechtext || "").join(" ");
   const woerter = sprech.replace(/\[[^\]]*\]/g, " ").split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
   const ausrufe = (sprech.match(/!/g) || []).length;
-  const verboten = /\[(excited|shouting|energetic)\]|<break|los geht/i.test(sprech);
-  return pruefChip(woerter >= 150 && woerter <= 190, `${woerter} Wörter (150–190)`) + pruefChip(ausrufe <= 3, `${ausrufe} Ausrufezeichen (≤ 3)`) + pruefChip(!verboten, verboten ? "verbotener Tag oder Satz" : "keine verbotenen Tags") + pruefChip(quellen > 0, `${quellen} Quellen`);
+  // Textformat der Stimme seit 09.11.2026 (Skill stimme-elevenlabs §3): keine Tags, Auslassungspunkte, Gedankenstriche als Pause,
+  // Ziffern oder GROSS-Wörter. Die Wortzahl ist nur noch ein Richtwert (kein Fehler), Tempo und Dauer werden nicht mehr geprüft.
+  const verboten = /\[[^\]]+\]|<break|…|\.\.\.| [–—-] |\d|los geht/i.test(sprech) || /(^|[^\p{L}])\p{Lu}{3,}(?!\p{L})/u.test(sprech);
+  return `<span class="chip">${woerter} Wörter (Richtwert 150–190)</span>` + pruefChip(ausrufe <= 3, `${ausrufe} Ausrufezeichen (≤ 3)`) + pruefChip(!verboten, verboten ? "Sprechtext nicht im Textformat" : "Sprechtext im Textformat") + pruefChip(quellen > 0, `${quellen} Quellen`);
 }
 function skriptZeichnen() {
   const d = ST.slot ? skriptDok(ST.slot) : null;

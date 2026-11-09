@@ -1,0 +1,6 @@
+{
+ "_hinweis": "Aussprache-Ersetzungen für tts.py: \"Wort\": \"gesprochene Form\". Ganzes Wort, Groß-/Kleinschreibung genau. Gilt nur für den Sprechtext, nie für die Anzeige. Schlüssel mit _ am Anfang sind Anmerkungen.",
+ "ETF": "E T F",
+ "DAX": "Dax",
+ "kWh": "Kilowattstunden"
+}

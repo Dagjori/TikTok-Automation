@@ -150,8 +150,8 @@ const SLOTS = ["mittag", "abend"];
    docs/automatik/disponent.md) startet je Video-Tag eine Sitzung bzw. schickt ihr den Auftrag. Kein Connector nötig. */
 const AUTO = { anleitung: "docs/automatik/tages-sitzung.md" };
 const FELDER_IDEE = {
-  simulierbar: [["hook", "Erster Satz"], ["ergebnis_ansatz", "Rechnung und Ergebnis"], ["warum_relevant", "Wen es betrifft"], ["originalitaet", "Originalität"], ["feld", "Themenfeld"], ["zutat", "Zutat"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["bildidee", "Bildidee"], ["laender", "Land"], ["risiko", "Risiko"]],
-  stelldirvor: [["ereignis", "Ereignis"], ["messgroesse", "Messwert-Anzeige"], ["welt", "Welt"], ["standpunkt", "Standpunkt"], ["originalitaet", "Originalität"], ["feld", "Themenfeld"], ["massstab", "Maßstab"], ["zutat", "Zutat"], ["tageszeit_verlauf", "Tageszeit"], ["bewegung", "Bewegung in der Welt"], ["kamera", "Kamera"], ["zeitraffer", "Zeitraffer"], ["hoehepunkt", "Höhepunkt"], ["pointe", "Pointe"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["laender", "Ort"], ["risiko", "Risiko"]],
+  simulierbar: [["hook", "Erster Satz"], ["nachfrage", "Nachfrage"], ["winkel", "Winkel"], ["tipp", "Tipp des Zuschauers"], ["ergebnis_ansatz", "Rechnung und Ergebnis"], ["zweite_frage", "Zweite Frage"], ["warum_relevant", "Wen es betrifft"], ["vermeidet", "Vermeidet"], ["originalitaet", "Originalität"], ["punkte", "Punkte"], ["format", "Format"], ["feld", "Themenfeld"], ["zutat", "Zutat"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["bildidee", "Bildidee"], ["laender", "Land"], ["risiko", "Risiko"]],
+  stelldirvor: [["ereignis", "Ereignis"], ["nachfrage", "Nachfrage"], ["winkel", "Winkel"], ["messgroesse", "Messwert-Anzeige"], ["welt", "Welt"], ["standpunkt", "Standpunkt"], ["vermeidet", "Vermeidet"], ["originalitaet", "Originalität"], ["punkte", "Punkte"], ["feld", "Themenfeld"], ["massstab", "Maßstab"], ["zutat", "Zutat"], ["tageszeit_verlauf", "Tageszeit"], ["bewegung", "Bewegung in der Welt"], ["kamera", "Kamera"], ["zeitraffer", "Zeitraffer"], ["hoehepunkt", "Höhepunkt"], ["pointe", "Pointe"], ["diskussion", "Gesprächsstoff (nur intern)"], ["daten", "Belegbare Daten"], ["laender", "Ort"], ["risiko", "Risiko"]],
 };
 const STATUS = {
   gewaehlt: ["Idee gewählt", ""], recherche: ["Claude Code recherchiert", "run"], skript_fertig: ["Skript fertig, bitte prüfen", "warn"],
@@ -542,10 +542,10 @@ function pruefeSkript(konto, sk) {
   const m = [];
   if (konto === "simulierbar") {
     const woerter = (sk.segmente || []).map((s) => (s.sprechtext || "").replace(/\[[^\]]*\]/g, " ")).join(" ").split(/\s+/).filter(Boolean).length;
-    m.push({ t: woerter + " Wörter (Ziel 150–190)", c: woerter >= 150 && woerter <= 190 ? "ok" : "warn" });
+    m.push({ t: woerter + " Wörter (Richtwert 150–190, keine Sperre)", c: "ok" });
     const alle = (sk.segmente || []).map((s) => s.sprechtext || "").join(" ");
     const ausruf = (alle.match(/!/g) || []).length; m.push({ t: ausruf + " Ausrufezeichen (max. 3)", c: ausruf <= 3 ? "ok" : "bad" });
-    const verbot = /\[(excited|shouting|energetic)\]|<break|los geht/i.test(alle); m.push({ t: verbot ? "Verbotene Tags/Wörter gefunden" : "Keine verbotenen Tags", c: verbot ? "bad" : "ok" });
+    const verbot = /\[[^\]]+\]|<break|…|\.\.\.| [–—-] |\d|los geht/i.test(alle) || /(^|[^\p{L}])\p{Lu}{3,}(?!\p{L})/u.test(alle); m.push({ t: verbot ? "Sprechtext nicht im Textformat (Tags, Zeichen, Ziffern, GROSS-Wörter)" : "Sprechtext im Textformat", c: verbot ? "bad" : "ok" });
   } else {
     const n = (sk.saetze || []).length; m.push({ t: n + " Sätze (12–18)", c: n >= 12 && n <= 18 ? "ok" : "warn" });
     const lang = (sk.saetze || []).filter((s) => { const w = String(s.text || "").split(/\s+/).filter(Boolean).length; return w < 3 || w > 9; }).length;

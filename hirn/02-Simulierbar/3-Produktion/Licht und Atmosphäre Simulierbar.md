@@ -2,8 +2,8 @@
 typ: anleitung
 konto: simulierbar
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/simulierbar-video/licht-und-atmosphaere.md, SKILL.md (Neuregeln 02.11.2026 abends)
+datum: 2026-11-09
+quelle: .claude/skills/video-produktion/simulierbar.md, pipeline/engine/sim_atmosphaere.js, pipeline/engine/regie.js (bis 06.11. aus dem entfernten Skill simulierbar-video)
 tags: [konto/simulierbar, licht, atmosphäre, kamera, grading, render-kosten]
 cssclasses: [konto-simulierbar, typ-anleitung]
 ---
@@ -78,7 +78,7 @@ regie.anwenden(t);                                                              
 Ruhige Kamerasprache als Grundton: langsame, gleichmäßige Fahrten (Dolly vor, Kranfahrt, Parallaxe an Vordergrund vorbei), Schärfenverlagerung statt Schnitt. **Zoom: mal ja, mal nein, abwechselnd, nicht dauerhaft** (Entscheidung 02.11. abends; Einsatz und Maß in Abschnitt 9). **Kein `regie.stoss`** (Kamerastoß gehörte zu den Stickern). Hochformat: Brennweite eng (fov 28–34), Motive in die Tiefe staffeln.
 
 ## 7. Übergänge (`zl.shot(ab, welt, { typ, dauer })`)
-Ruhig: `blende` (0,5–0,8 s), `iris` mit Lichtkante, `zoomwisch` (0,5 s) für „hinein“. `wolken`/`blasen` nur, wenn sie zur Welt passen (Nachtkarte: durch die Wolkenschicht). Jeder Übergang meldet sich im Protokoll (Ton, [[Stimme und Ton Simulierbar]]).
+Ruhig: `blende` (0,5–0,8 s), `iris` mit Lichtkante, `zoomwisch` (0,5 s) für „hinein“. `wolken`/`blasen` nur, wenn sie zur Welt passen (Nachtkarte: durch die Wolkenschicht). Jeder Übergang meldet sich im Protokoll (Ton, [[Klangteppich und Ton Simulierbar]]).
 
 ## 8. Kosten (Cloud, 4 Kerne, ohne GPU)
 Teuer: Spiegelung (zweiter Durchgang), MSAA, Schattenkarte, Nebellagen über das ganze Bild, viele Draw-Calls. Deshalb:

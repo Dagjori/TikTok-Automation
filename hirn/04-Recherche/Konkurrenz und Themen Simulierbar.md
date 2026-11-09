@@ -2,21 +2,21 @@
 typ: recherche
 konto: simulierbar
 status: aktuell
-datum: 2026-11-08
-quelle: .claude/skills/simulierbar-video/themen.md §0 und §1, CLAUDE.md §3, Entscheidungen des Inhabers 02.11.2026 abends
+datum: 2026-11-09
+quelle: Recherche 29.10.–02.11.2026 (bis 06.11. im entfernten Skill simulierbar-video, themen.md §0 und §1), CLAUDE.md §3, Entscheidungen des Inhabers 02.11.2026 abends
 tags: [konto/simulierbar, konkurrenz, nische, markt, kanäle, recherche]
 cssclasses: [konto-simulierbar, typ-recherche]
 ---
 
 # Konkurrenz und Themen Simulierbar
 
-Nischenwahl, Marktbelege, Konkurrenzkanäle mit Zahlen und ausgeschlossene Nischen für `@simulierbar` (Stand 29.10.–02.11.2026). Auswahlregeln, Finanzregeln und Zahlen 2026 stehen in [[Auswahl- und Finanzregeln Simulierbar]]; die frühere Sperrliste ist seit 02.11.2026 veraltet ([[Sperrliste und Auswahlregeln Simulierbar]], Archiv). **Diese Notiz ist Hintergrund (Marktbelege, Muster), keine Sperre:** Seit 02.11. abends sperren die Konkurrenzzahlen kein Thema mehr; es gilt nur „keine 1:1-Kopie“. Methode und Grenzen der Recherche: [[Recherche-Methode und Grenzen]]. Legende: **(F)** belegter Fakt mit Quelle · **(S)** Schätzung · **(A)** Annahme.
+Nischenwahl, Marktbelege, Konkurrenzkanäle mit Zahlen und ausgeschlossene Nischen für `@simulierbar` (Stand 29.10.–02.11.2026). Seit 09.11.2026 liegt diese Notiz in `04-Recherche`. Die Themenregeln stehen in [[Themenfindung Simulierbar]], Finanzregeln und Zahlen 2026 in [[Finanzregeln Simulierbar]]; die frühere Sperrliste ist seit 02.11.2026 veraltet ([[Sperrliste und Auswahlregeln Simulierbar]], Archiv). **Diese Notiz ist Hintergrund (Marktbelege, Muster), keine Sperre:** Die Konkurrenzzahlen sperren kein Thema; es gelten die Liste „abgenutzt“, die Originalitätsprüfung je Idee und „keine 1:1-Kopie“. Methode und Grenzen der Recherche: [[Recherche-Methode und Grenzen]]. Legende: **(F)** belegter Fakt mit Quelle · **(S)** Schätzung · **(A)** Annahme.
 
 ## Kurzfazit
 - Nische **Kombi „Alltag durchgerechnet“** (Rang 1, Score 86), **seit 02.11. abends ausschließlich Thema GELD** (davor Schwerpunkt GELD, „das zieht am meisten“); die Rubrik ALLTAG entfällt ([[Account Simulierbar Überblick]]). Länder sind frei.
 - Das Format allein unterscheidet uns nicht mehr (viele Konten nutzen die Dramaturgie des Maßstabs). **Unser Unterschied: neue Themen und die Qualität der animierten Welt** (Inhaber 02.11.).
 - Termin-Videos sind am besten geschützt, weil das Timing nicht kopierbar ist.
-- Themen kommen jetzt täglich aus dem Ideen-Studio ([[Claude-Chat-Workflow]]); die Muster unten fließen dort als Lernstand ein ([[Lernschleife und Insights]]).
+- Themen kommen täglich neu aus dem Skill `themen-skript` im Cockpit ([[Claude-Chat-Workflow]], [[Themenfindung Simulierbar]]); die Muster unten fließen dort als Lernstand ein ([[Lernschleife und Insights]]).
 
 ## 1. Markt und Nische (Belege, Stand 29.10.–02.11.2026)
 - **Ausgangsvideos (F, 29.10.):** 6 deutsche Simulationsvideos mit zusammen 6,04 Mio. Views (Ø 1 Mio.), 72–117 s lang: @kurzsimuliert (Regen, 2,1 Mio.), @retrodreamspace (Zigarette gegen Vape, 2,2 Mio.), @mal.angenommen (808k), @kontostand.vs (Mieten oder kaufen, 504k nach 3 Tagen), @wissentogo_de (Leasing, 298k), @unnoetig_tiefgruendig (131k). Rohdaten `data/2026-10-29_ausgangsvideos.csv`, `data/2026-10-29_kanaele.csv`.
@@ -80,5 +80,5 @@ Regen rennen/gehen, Pausen gegen Tempo, Tsunami-Warnzeichen, Duschen/Baden: laut
 - **Recht und Steuern (später, keine Rechtsberatung):** Regelmäßige Einnahmen mit Gewinnabsicht gelten als gewerblich (Gewerbe anmelden, Gewerbesteuer-Freibetrag 24.500 €); Kleinunternehmerregel § 19 UStG: Vorjahr ≤ 25.000 €, laufendes Jahr ≤ 100.000 €. Auszahlungen kommen von TikTok Information Technologies UK Ltd. bzw. Google Ireland (Leistungsort Ausland, in DE meist nicht steuerbar; Zusammenfassende Meldung bzw. USt-IdNr. klärt der Steuerberater). Impressum § 5 DDG als Link in der Bio (höchstens 2 Klicks; Bußgeld bis 50.000 €). Nebentätigkeit im Arbeitsvertrag prüfen (im öffentlichen Dienst anzeigepflichtig). Lizenzen: ElevenLabs Free hat keine kommerzielle Lizenz; Musik nur lizenzfrei oder selbst erzeugt; Finanz-Nische nur Modellrechnung, Affiliate-Links als Werbung kennzeichnen.
 
 ## Siehe auch
-- [[Auswahl- und Finanzregeln Simulierbar]] · [[Sperrliste und Auswahlregeln Simulierbar]] (Archiv) · [[Themenplan Simulierbar]] (Archiv) · [[Maßstab Simulierbar]] · [[Account Simulierbar Überblick]]
+- [[Themenfindung Simulierbar]] · [[Finanzregeln Simulierbar]] · [[Sperrliste und Auswahlregeln Simulierbar]] (Archiv) · [[Themenplan Simulierbar]] (Archiv) · [[Maßstab Simulierbar]] · [[Account Simulierbar Überblick]]
 - [[Trend-Radar]] (Konkurrenz-Monitor) · [[Kanäle und Ziele]] · [[CRP Creator Rewards Program]] · [[Recherche-Methode und Grenzen]] · [[Pläne und Kalender]]

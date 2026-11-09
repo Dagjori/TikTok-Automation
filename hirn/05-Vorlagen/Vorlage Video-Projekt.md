@@ -14,14 +14,17 @@ cssclasses: [konto-simulierbar, typ-plan]
 |---|---|
 | Account | Simulierbar / stelldirvor.pov |
 | Slot | JJJJ-MM-TT mittag/abend |
-| Thema, Score | |
-| Stil bzw. Grundwelt | |
-| Konkurrenz-Check | (Datum, Ergebnis) |
+| Thema, Punkte, Format bzw. Themenfeld | |
+| Nachfrage (Suchformulierung, Quelle, Datum) | |
+| Stil bzw. Welttyp | |
+| Originalität | (Suchbegriffe, Ergebnis, Datum) |
 | Projektordner | `pipeline/projekte/<name>/` |
 | Status | Idee · Skript · Szene · gerendert · abgenommen · eingeplant · gepostet · nachgeprüft |
 
 ## Checkliste
-- [ ] Skill des richtigen Accounts gelesen
+- [ ] Kette beachtet ([[Pipeline und Skills]]): `themen-skript` → `stimme-elevenlabs` (nur Simulierbar) → `video-produktion`, jeweils die Teil-Datei des richtigen Accounts gelesen
+- [ ] Skript vom Inhaber freigegeben
+- [ ] Nur Simulierbar: Textprüfung „BEREIT“, genau eine Aufnahme
 - [ ] Rechnung mit Test
 - [ ] Skript und Bild-Text-Abgleich
 - [ ] Szene und Standbilder

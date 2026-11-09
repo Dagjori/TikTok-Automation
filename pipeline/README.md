@@ -22,7 +22,12 @@ Danach im Ordner `pipeline/`: `npm install`.
 ```bash
 cd pipeline
 # 1. Stimme mit Wortzeiten (ElevenLabs-Key nur als Umgebungsvariable bzw. Netzwerk-Secret)
-python3 tts.py projekte/<name>                         # → audio/stimme.mp3 + audio/timing.json
+#    Genau EINE Aufnahme je Skript (Regel 08.11.2026). Seit 09.11.2026 gibt es keine Tempo-Regeln mehr: Die Vorprüfung
+#    prüft nur die Text-Hygiene des Sprechtexts, bis „BEREIT“ steht (tts.py prüft selbst noch einmal und sperrt jede
+#    zweite Aufnahme; Neuaufnahme nur bei hörbarem Stimmfehler: --neuaufnahme "<Grund>", nie für Länge, Tempo, Pausen).
+#    Danach folgt das Video der fertigen Stimme (audio/timing.json), nie umgekehrt.
+python3 qc/stimme_vorab.py projekte/<name>             # Text-Hygiene (Ziffern, Zeichen, Abkürzungen, Tags …), ohne ElevenLabs
+python3 tts.py projekte/<name>                         # → audio/stimme.mp3 + audio/timing.json (+ audio/aufnahmen.json)
 # 2. Prüfbilder (PNG) an einzelnen Zeitpunkten
 node render.js projekte/<name> --zeiten 1.5,30,64 --worker 1
 # 3. Maßstab prüfen (Timing, Ereignisse, Schlusssatz, Folgen-Aufruf …)
@@ -34,6 +39,15 @@ node render.js projekte/<name> --worker 2
 ./mux.sh projekte/<name> --teppich regen --teppich-db -11   # Teppich/Pegel überschreiben (gehen an klang.py)
 ./mux.sh projekte/<name> --ohne-ton                    # → out/<name>/vorschau_ohne_ton.mp4
 ```
+
+### Stimme: Hygiene-Vorprüfung → eine Aufnahme → Video folgt `timing.json`
+
+Entscheidung des Inhabers 09.11.2026: **keine Sprechtempo-Regeln mehr** (Wörter bzw. Silben je Sekunde, Silben je Wort, gemessene Satzpausen, geschätzte Stimmdauer, Hook-Zeit). Sie haben die Automatik gestört und ElevenLabs-Credits gekostet.
+
+1. **`qc/stimme_vorab.py` (kostenlos):** prüft genau den Text, den `tts.py` sendet (`sprechtext`, sonst `text`, nach den Aussprache-Ersetzungen). **Pflicht** (sonst „NICHT BEREIT“, je Fund Segment, Textstelle und Abhilfe): jedes Segment hat Text (T0), keine Ziffern (Ta), keine Zeichen `€ % & § + = / * # @ °` und keine Abkürzungen wie z. B., ca., bzw., usw., Mio., Nr., km/h, kWh, EUR (Tb), keine Auslassungspunkte (Tc), kein Strich als Pause (Td; „Vier-Tage-Woche“ ist in Ordnung), keine Wörter in GROSSBUCHSTABEN (Te; buchstabiert „G T A“ ist erlaubt), keine Markierungen `<…>` (Tf), höchstens EIN Audio-Tag ganz am Anfang des ersten Segments und nur `[calm]`, `[thoughtful]` oder `[curious]` (Tg), höchstens 3 Ausrufezeichen (Th), keine Emojis und nicht gesprochenen Zeichen (Ti). **Hinweis** (blockt nie): Wortzahl außerhalb 150–190 (grobe Länge, die Stimme bestimmt die Videolänge), Sätze über 16 Wörter, mehr als 2 Sätze mit höchstens 2 Wörtern, Segment ohne Satzende, Regieanweisung in Klammern bzw. Anführungszeichen, englische Wörter wie in der Anzeige geschrieben. Es gibt keine Schätzung von Dauer, Hook, Tempo oder Pausen mehr; `qc/stimme_eichung.json` wird nicht mehr gelesen.
+2. **`tts.py` (eine bezahlte Anfrage):** Stimme Ben (`aTTiK3YzK3dXETpuDE2h`), Modell `eleven_v4`, das ganze Skript in einer Anfrage über `/with-timestamps`. Der Body enthält `language_code: "de"`, feste `voice_settings` (`stability` 0,5, `similarity_boost` 0,75; Wahl des Inhabers „feste Stabilität“) und einen festen `seed` aus dem Namen des Projektordners. Lehnt ElevenLabs eines dieser Felder mit HTTP 400/422 ab, geht die Anfrage einmal ohne dieses Feld erneut raus (eine abgelehnte Anfrage kostet keine Credits). `--gespeicherte-einstellungen` sendet keine `voice_settings` (Verhalten bis 08.11.). Das Verfahren je Segment (`--segmente`) und jeder Tempo-Faktor sind entfernt. `audio/aufnahmen.json` hält je Aufnahme Zeit, Zeichen, Seed, Anfrage-Kennung und Zeichen-Kosten fest; der Wächter sperrt jede zweite Aufnahme.
+3. **Aussprache:** `pipeline/aussprache.json` (`{"Wort": "gesprochene Form"}`, ganzes Wort, Groß-/Kleinschreibung genau) wird vor dem Senden auf jeden Sprechtext angewendet, z. B. `"ETF": "E T F"`. Die Anzeige (`text`) bleibt unberührt.
+4. **Video folgt der Stimme:** `audio/timing.json` (Format unverändert) gibt Start und Ende je Segment und Wort vor; alle Animationen hängen an Wörtern. Die Stimme wird nie beschleunigt, gedehnt, geschnitten oder für Länge, Tempo bzw. Pausen neu vertont.
 
 - Fehlt `audio/timing.json`, schreibt `render.js` eine **Schätzung** (`audio/timing_schaetzung.json`) und die Szene nutzt sie. Standard der Schätzung = gemessene Werte der Stimme Ben (Original-Einstellungen): 2,0 Wörter/s, Satzpause 0,6 s, Kommapause 0,35 s. Ein Skript kann eigene Werte setzen: `"schaetzung": {"wps": 2.6, "satzpause": 0.26}`. Kommt später die echte Stimme, genügt es, Schritt 4 und 5 neu auszuführen: alle Animationen hängen an Wörtern.
 - `render.js` schreibt bei jedem Lauf das **Ereignis-Protokoll** nach `projekte/<name>/audio/ereignisse.json` (und `out/<name>/ereignisse.json`). Daraus macht `klang.py` die Effekte und `qc/massstab.py` die Prüfung.
@@ -134,18 +148,17 @@ Jeder Baustein meldet seine Ereignisse: `{t, typ, dauer?, laufend?, klang?, text
 ## Prüfung (`qc/massstab.py`)
 
 ```bash
-python3 qc/massstab.py projekte/<name>                     # Profil „ben“ (Standard)
-python3 qc/massstab.py projekte/<name> --profil massstab   # Zielwerte der Vorbilder
-python3 qc/massstab.py projekte/<name> --ziel tempo=2.0:2.5 --ziel satzpause_max=0.7 --json
+python3 qc/massstab.py projekte/<name>                     # einziges Profil „ben“
+python3 qc/massstab.py projekte/<name> --ziel woerter=140:180 --json
 ```
 
-Prüft und zeigt als Tabelle (Ist · Ziel · Maßstab · ja/nein): Stimme startet < 0,2 s, Hook fertig vor 5 s (max. 2 Sätze), längste Phase ohne Bild-Ereignis ≤ 2 s (mit und ohne laufende Zähler), Schlusskarte (`M.pointe`) in den letzten 8 s ohne Frage und Aufruf, Wörter, Sprechtempo (2,3–2,7 W/s oder 4,6–5,4 Silben/s), Satzlängen (Median 3–5), Satzpausen, Videolänge 65–80 s, Untertitel-Blöcke ≤ 4 Wörter, Titel ab Bild 1 (R1), Tafel ab Bild 0 (R2), Erklärgrafik (R3), Du nur im Hook (R4), Endstand bei 75–86 % (R5), kein Kanalname/Logo/Rubrik in `szene.js`; als Hinweise zusätzlich Folgen-Aufruf (nur Testvideo, 15–25 s), Kipp-Moment (R6), erster Satz (R7), Denkfalle und „Los geht's“ vor 16 s, laufende Uhr/Zähler, erste Wendung, „Warum?“, Schleife (freiwillig; wenn genutzt, letztes = erstes Bild), Klangteppich, Akzent auf der Pointe.
+Prüft und zeigt als Tabelle (Ist · Ziel · Maßstab · ja/nein). **Pflicht:** Stimme startet < 0,2 s, längste Phase ohne Bild-Ereignis ≤ 2 s, Schlusskarte (`M.pointe`) in den letzten 8 s ohne Frage und Aufruf, **Videolänge mindestens 61 s** (12f, Creator Rewards verlangt über 60 s), Auflösung 1080×1920 (12h), Untertitel-Blöcke ≤ 4 Wörter, Titel ab Bild 1 (R1), Tafel ab Bild 0 (R2), Erklärgrafik (R3), Du nur im Hook (R4), kein Kanalname/Logo/Rubrik in `szene.js`, Stil erlaubt (18b). **Nur Hinweis** (seit 09.11.2026, das Video folgt der Stimme): Hook fertig vor 5 s (2), Wortzahl 150–190 (12a), Satzlängen (12c), Videolänge 65–80 s (12f2), Endstand bei 75–86 % (R5), dazu wie bisher Kipp-Moment (R6), erster Satz (R7), Denkfalle, laufende Uhr/Zähler, erste Wendung, „Warum?“, Schleife (freiwillig), Klangteppich, Akzent auf der Pointe. **Entfernt** (Entscheidung des Inhabers 09.11.2026): Sprechtempo 12b (Wörter bzw. Silben je Sekunde), Satzpausen 12d und 12d2, Komma-Pause 12e, die Profile `ben_alt`, `ben_0211`, `massstab` und `--ziel tempo=…`/`satzpause_…` (alte Aufrufe laufen mit einem Hinweis als „ben“ durch).
 
 Tests für Stichwort-Zeiten und Phrasen: `node --test qc/zeitplan.test.mjs`.
 
 Text-Überlappung aller Bilder (HUD: Tafel, Chips, Zähler, Ringe, Sticker-Plaketten, Schlagzeilen, Karten, Leiste, Untertitel-Wörter; Deckkraft > 0,3): `node qc/text_ueberlappung.mjs projekte/<name> [--abstand 12] [--deckkraft 0.15] [--von s --bis s]`. Nutzt `window.hudAt(t)` der Szene (nur HUD, ca. 30 s für ein Video), sonst `renderAt`. Exit-Code 1 bei Treffern.
 
-**Zielbereiche:** Profil `ben` = Stimme Ben mit Original-Einstellungen (1,9–2,4 W/s, Satzpausen ≤ 0,8 s, 130–170 Wörter, 65–80 s); Profil `massstab` = Vorbilder (2,5–2,9 W/s, ≤ 0,4 s, 170–220 Wörter). Exit-Code 1, wenn ein Pflichtpunkt „nein“ ist.
+**Richtwerte:** 150–190 Wörter und 65–80 s sind nur noch Orientierung (Hinweis); es gibt keinen Zielbereich für Tempo oder Pausen. Exit-Code 1, wenn ein Pflichtpunkt „nein“ ist.
 
 ## Post über Buffer einplanen (`post_buffer.py`)
 

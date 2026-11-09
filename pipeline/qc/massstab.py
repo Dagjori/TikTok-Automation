@@ -2,36 +2,32 @@
 """Prüft die messbaren Punkte für Simulierbar-Videos (Skill .claude/skills/video-produktion/, Teil simulierbar.md; Regeln: Hirn
 „REA Simulierbar Regelwerk“, „Videoaufbau Simulierbar“, „Maßstab Simulierbar“) und gibt eine Tabelle ja/nein aus.
 
-Seit 07.11.2026 (REA-Regelwerk freigegeben): Tempo 2,3–2,7 W/s ODER 4,6–5,4 Silben/s (12b), Sätze Median 3–5 Wörter (12c),
-Folgen-Aufruf nur noch Hinweis (7), Schlusskarte statt festem Schlusssatz (10), Schleife freiwillig (11), Untertitel in Blöcken
-von höchstens 4 Wörtern (14) und die REA-Punkte R1–R7 (Titel ab Bild 1, Tafel ab Bild 0, Erklärgrafik, neutrale Erzählhaltung,
-Endstand bei ca. 80 %, Kipp-Moment, erster Satz).
+Seit 07.11.2026 (REA-Regelwerk freigegeben): Folgen-Aufruf nur noch Hinweis (7), Schlusskarte statt festem Schlusssatz (10),
+Schleife freiwillig (11), Untertitel in Blöcken von höchstens 4 Wörtern (14) und die REA-Punkte R1–R7 (Titel ab Bild 1, Tafel ab
+Bild 0, Erklärgrafik, neutrale Erzählhaltung, Endstand, Kipp-Moment, erster Satz).
 Seit 08.11.2026 (Wahl des Inhabers): 7 = Folgen-Hinweis als nicht gesprochene Textzeile am Ende (M.hinweis), Pflicht und nur im
 Testblock folgen_hinweis = „mit“ (skript.json → testbloecke, tools/testblock.py); M.folgen bei ca. 20 s ist ersetzt.
 Seit 08.11.2026: 12h = Auflösung des fertigen MP4 (pipeline/out/<name>/<name>.mp4) genau 1080×1920, Pflicht (CRP-Zusatzbonus);
 vor dem Render gibt es kein MP4, dann entfällt der Punkt.
+Seit 09.11.2026 (Entscheidung des Inhabers): KEINE Sprechtempo-Regeln mehr. Entfernt sind 12b (Wörter bzw. Silben je Sekunde),
+12d und 12d2 (gemessene Satzpausen), 12e (Komma-Pause) und alle Tempo-Profile. Das Video folgt der fertigen Stimme
+(audio/timing.json), nie umgekehrt. Nur noch Hinweis sind: 2 (Hook-Zeit), 12a (Wortzahl), 12c (Satzlängen), 12f2 (Richtwert
+65–80 s) und R5 (Endstand; der Aufbau-Standard ändert sich: Zähler ab Sekunde 3, erste Wendung bis 12–15 s, Ergebnis bei
+ca. 75–80 % der Länge). Pflicht bleibt bei der Länge allein 12f: mindestens 61 s (Creator Rewards verlangt über 60 s).
 
 Aufruf (im Ordner pipeline/):
-  python3 qc/massstab.py projekte/<name>                      Standard-Profil „ben“ (Stimme Ben, Original-Einstellungen; Tempo seit 07.11.2026)
-  python3 qc/massstab.py projekte/<name> --profil ben_0211    Profil vom 02.11.2026 (2,2–2,5 W/s, Sätze Median 4–8), nur zum Nachmessen
-  python3 qc/massstab.py projekte/<name> --profil ben_alt     Ben-Profil vom 31.10. (130–170 Wörter, 1,9–2,4 W/s), veraltet, nur für ältere Videos
-  python3 qc/massstab.py projekte/<name> --profil massstab    Zielbereiche der Vorbilder (2,5–2,9 W/s usw.)
-  python3 qc/massstab.py projekte/<name> --ziel tempo=2.0:2.5 --ziel woerter=140:180 --ziel satzpause_max=0.7
+  python3 qc/massstab.py projekte/<name>                      Prüfung (einziges Profil „ben“)
+  python3 qc/massstab.py projekte/<name> --ziel woerter=140:180 --ziel laenge_min=61   Richtwerte bzw. Mindestlänge überschreiben
   python3 qc/massstab.py projekte/<name> --json               maschinenlesbar
+  (--profil ben_alt|ben_0211|massstab und --ziel tempo=…/silben=…/satzpause_…=… gibt es nicht mehr; sie werden mit Hinweis übergangen.)
 Tests: python3 qc/massstab_test.py
 
 Liest: skript.json, audio/timing.json (sonst audio/timing_schaetzung.json, dann als „geschätzt“ markiert),
        audio/ereignisse.json (schreibt render.js aus dem Ereignis-Protokoll der Bausteine), szene.js.
 Exit-Code 1, wenn ein Pflichtpunkt „nein“ ist (Kennzahlen mit Zielbereich zählen als Pflicht, Hinweise nicht).
 
-Hinweis zu den Zielbereichen: Die Stimme „Ben“ läuft mit den gespeicherten Original-Einstellungen von ElevenLabs
-(Wunsch des Inhabers, kein künstliches Beschleunigen). Entscheidung des Inhabers 07.11.2026 (REA): 150–190 Wörter bei 65–80 s,
-Tempo 2,3–2,7 W/s (starke Vorbilder 2,42–2,70). Zusätzlich zählt das Silbentempo (Entscheidung 07.11.): Lange Zahlwörter
-(„tausendzweihundert“) drücken die Wörter je Sekunde; das Tempo besteht, wenn W/s ODER Silben/s im Zielbereich liegen.
-4,6–5,4 Silben/s = 2,3–2,7 W/s bei 2,0 Silben je Wort (Median der starken Vorbilder; sie sprechen 4,75–5,36 Silben/s, gemessen
-mit `silben()` an den REA-Transkripten). Es muss flüssig und natürlich klingen (Qualität vor Tempo: kürzen statt beschleunigen). Satzpausen: Richtwert 0,35–0,6 s als Median der HÖRBAREN Stille (12d2, Hinweis, aus audio/stimme.mp3);
-die Alignment-Zeiten aus timing.json sind im Schnitt ca. 0,1 s kürzer als die hörbare Stille, deshalb bleibt 12d (Pflicht,
-max. 0,8 s) auf den Wortzeiten. Die Werte der Vorbilder stehen in der Spalte „Maßstab“.
+Hinweis zu den Richtwerten: 150–190 Wörter und 65–80 s sind nur noch eine grobe Orientierung (Hinweis). Die Stimme „Ben“
+(Eleven v4) spricht, wie sie spricht; sie wird nie beschleunigt und nicht für Länge, Tempo oder Pausen neu vertont.
 """
 import json
 import re
@@ -51,29 +47,21 @@ DU_ERLAUBT = {"hook", "folgen"}
 ERKLAERGRAFIK = {"balken", "formel", "bilanz"}
 # Skill-Kennungen von Account 1 (alt bis 06.11. und neu seit 07.11.)
 SKILLS_A1 = {"simulierbar-video", "video-produktion"}
-VOKALE = re.compile(r"[aeiouyäöü]+")
 
+# Seit 09.11.2026 (Entscheidung des Inhabers) gibt es keine Tempo-Profile mehr (ben_alt, ben_0211, massstab und die Werte
+# tempo, silben, satzpause_max, satzpause_median sind entfernt). Wortzahl, Satzlänge und Länge 65–80 s sind Richtwerte
+# (Hinweis); Pflicht ist nur die Mindestlänge des Videos (Creator Rewards: über 60 s).
 PROFILE = {
-    # Stimme Ben, Original-Einstellungen (Entscheidung 31.10.); seit 07.11.2026 (REA, Inhaber): 2,3–2,7 W/s oder 4,6–5,4 Silben/s,
-    # Sätze Median 3–5 Wörter (Vorbilder 3–5). satzpause_median (hörbare Stille, Hinweis) = Richtwert „nicht gehetzt“;
-    # satzpause_max (Pflicht) = Obergrenze auf den Wortzeiten.
-    "ben": {"tempo": (2.3, 2.7), "silben": (4.6, 5.4), "satzpause_max": 0.8, "satzpause_median": (0.35, 0.6), "woerter": (150, 190), "laenge": (65, 80), "satzlaenge_median": (3, 5)},
-    # Profil vom 02.11.2026 abends bis 07.11.2026; nur, um Videos aus dieser Zeit nachzumessen.
-    "ben_0211": {"tempo": (2.2, 2.5), "satzpause_max": 0.8, "satzpause_median": (0.35, 0.6), "woerter": (150, 190), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
-    # VERALTET seit 02.11.2026 abends: bisheriges Ben-Profil (31.10.); nur, um ältere Videos nachzumessen.
-    "ben_alt": {"tempo": (1.9, 2.4), "satzpause_max": 0.8, "woerter": (130, 170), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
-    # Vorbilder K1–K4 (.claude/skills/simulierbar-video/massstab.md §2)
-    "massstab": {"tempo": (2.5, 2.9), "satzpause_max": 0.4, "woerter": (170, 220), "laenge": (65, 80), "satzlaenge_median": (4, 8)},
+    "ben": {"woerter": (150, 190), "laenge": (65, 80), "laenge_min": 61.0, "satzlaenge_median": (3, 5)},
 }
+ALTE_PROFILE = {"ben_alt", "ben_0211", "massstab"}                     # werden mit Hinweis als „ben“ geprüft
+ALTE_ZIELE = {"tempo", "silben", "satzpause_max", "satzpause_median"}  # werden mit Hinweis übergangen
 MASSSTAB_TEXT = {
-    "tempo": "2,5–2,9 W/s (K1–K4); REA 2,42–2,70 W/s, 4,75–5,36 Silben/s",
-    "satzpause": "≈ 0,25 s, max. 0,4 s",
     "woerter": "170–220",
     "laenge": "65–80 s",
     "satzlaenge": "Median 4–8, meist < 10",
 }
 SATZENDE = re.compile(r"[.!?…][\"“”»«’]*$")
-KOMMA = re.compile(r"[,;:–—][\"“”»«’]*$")
 # Bild-Ereignisse, die für „Lücke ohne neues Bild-Ereignis“ nicht zählen
 NICHT_BILD = {"untertitel", "chip-weg", "schleife"}
 NICHT_KAMERA = {"folgen", "atmen"}
@@ -82,7 +70,6 @@ NICHT_KAMERA = {"folgen", "atmen"}
 ERLAUBTE_STILE = set(range(1, 16)) | set(range(17, 22))
 # Module von Account 2: gehören nie in eine Simulierbar-Szene (Trennung der Accounts)
 ACCOUNT2_MODULE = r"stil_lunar_pov\.js|lunar_hud\.js|welt_grossstadt_dach\.js"
-STILLE = re.compile(r"silence_start: (-?[\d.]+)|silence_end: (-?[\d.]+)")
 
 
 def zahl(x, nk=2):
@@ -91,17 +78,6 @@ def zahl(x, nk=2):
 
 def norm(w):
     return re.sub(r"[^\wäöüß']", "", w.lower())
-
-
-def silben(wort):
-    """Silben eines gesprochenen Worts, genähert über Vokalgruppen (ei, au, eu, ie … zählen als eine). Reine Ziffern zählen
-    2 je Ziffer (im Sprechtext sind Zahlen ausgeschrieben, Ziffern sind die Ausnahme)."""
-    w = re.sub(r"[^a-zäöüß0-9]", "", wort.lower())
-    if not w:
-        return 0
-    if w.isdigit():
-        return 2 * len(w)
-    return max(1, len(VOKALE.findall(w)))
 
 
 # Folgen-Hinweis (Wahl des Inhabers 08.11.2026, Hirn „Regelwerk Simulierbar“): ersetzt den Folgen-Aufruf bei ca. 20 s (M.folgen) durch
@@ -189,39 +165,6 @@ def satz_liste(woerter):
     return saetze
 
 
-def stille_im_audio(audio, rauschen="-38dB", mindestens=0.12):
-    """Hörbare Stillen (ab `mindestens` s, unter `rauschen`) einer Audiodatei als [(start, ende)] mit ffmpeg silencedetect.
-    None, wenn die Datei oder ffmpeg fehlt (dann ist die Hörpause nicht messbar)."""
-    audio = Path(audio)
-    if not audio.exists() or shutil.which("ffmpeg") is None:
-        return None
-    try:
-        p = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(audio), "-af", f"silencedetect=noise={rauschen}:d={mindestens}", "-f", "null", "-"],
-                           capture_output=True, text=True, timeout=180)
-    except (OSError, subprocess.TimeoutExpired):
-        return None
-    stillen, start = [], None
-    for m in STILLE.finditer(p.stderr):
-        if m.group(1) is not None:
-            start = float(m.group(1))
-        elif m.group(2) is not None and start is not None:
-            stillen.append((start, float(m.group(2))))
-            start = None
-    return stillen
-
-
-def satzpausen_hoerbar(woerter, stillen, toleranz=0.2):
-    """Hörbare Pause nach jedem Satzende: die längste Stille, die das Fenster zwischen dem Satzende-Wort und dem nächsten Wort
-    (± `toleranz`, wegen der Alignment-Ungenauigkeit) überlappt; 0,0, wenn keine Stille gefunden wird (= gehetzt)."""
-    werte = []
-    for i in range(len(woerter) - 1):
-        if not SATZENDE.search(woerter[i]["wort"]):
-            continue
-        von, bis = woerter[i]["ende"] - toleranz, woerter[i + 1]["start"] + toleranz
-        werte.append(max((e - s for s, e in stillen if s < bis and e > von), default=0.0))
-    return werte
-
-
 def laengste_luecke(ereignisse, von, bis, mit_laufenden=True):
     """Längste Zeitspanne in [von, bis] ohne Bild-Ereignis. Laufende Ereignisse (Zähler, Uhr) decken ihr Intervall ab."""
     abdeckung = []
@@ -246,10 +189,12 @@ def laengste_luecke(ereignisse, von, bis, mit_laufenden=True):
     return luecke, wo
 
 
-def pruefe(projekt, profil, extra_ziele):
+def pruefe(projekt, profil, extra_ziele, daten=None):
+    """daten = (skript, timing, geschaetzt, ereignisse, szene) statt aus dem Projektordner zu laden (projekt darf dann
+    None sein). Alte Tempo-Ziele in extra_ziele (tempo, silben, satzpause_…) werden übergangen."""
     ziele = dict(PROFILE[profil])
-    ziele.update(extra_ziele)
-    skript, timing, geschaetzt, ev, szene = lade(projekt)
+    ziele.update({k: v for k, v in extra_ziele.items() if k not in ALTE_ZIELE})
+    skript, timing, geschaetzt, ev, szene = daten if daten is not None else lade(projekt)
     zeilen = []
 
     def zeile(nr, punkt, ist, ziel, massstab, ok, pflicht=True):
@@ -271,10 +216,12 @@ def pruefe(projekt, profil, extra_ziele):
     # 1 Stimme startet
     zeile("1", "Stimme startet", f"{zahl(erstes['start'])} s", "< 0,2 s", "0,08–0,16 s", erstes["start"] < 0.2)
 
-    # 2 Hook fertig vor 5 s, max. 2 Sätze
+    # 2 Hook fertig vor 5 s, max. 2 Sätze. Seit 09.11.2026 nur Hinweis: Die Hook-Zeit kommt aus der Stimme und ist keine Regel mehr.
     hook = next((s for s in segmente if s["id"] == "hook"), segmente[0])
     hook_saetze = len(satz_liste(hook["woerter"]))
-    zeile("2", "Hook fertig gesprochen", f"{zahl(hook['ende'])} s, {hook_saetze} Sätze", "vor 5 s, max. 2 Sätze", "3,4–5,2 s", hook["ende"] < 5.0 and hook_saetze <= 2)
+    hook_max = float(ziele.get("hook_max", 5.0))
+    zeile("2", "Hook fertig gesprochen", f"{zahl(hook['ende'])} s, {hook_saetze} Sätze", f"vor {zahl(hook_max, 1)} s, max. 2 Sätze (Hinweis)", "3,4–5,2 s",
+          hook["ende"] < hook_max and hook_saetze <= 2, pflicht=False)
 
     # 3 Denkfalle und Startsignal vor 16 s (Text)
     n = [norm(w["wort"]) for w in woerter]
@@ -314,10 +261,10 @@ def pruefe(projekt, profil, extra_ziele):
     else:
         zeile("5", "Längste Phase ohne Bild-Ereignis", "kein Ereignis-Protokoll", "≤ 2 s", "1,7 s (K3)", False)
 
-    # 6 Erste Wendung 18–25 s (Text-Heuristik: Satz beginnt mit Aber/Doch/Jetzt/Und das)
+    # 6 Erste Wendung 12–15 s, Hinweis 10–18 s (Standard seit 09.11.2026; Text-Heuristik: Satz beginnt mit Aber/Doch/Und das)
     wendungen = [s[0]["start"] for s in saetze if norm(s[0]["wort"]) in ("aber", "doch") or (len(s) > 2 and norm(s[0]["wort"]) == "und" and norm(s[1]["wort"]) == "das")]
-    erste = next((t for t in wendungen if t >= 15), None)
-    zeile("6", "Erste Wendung (Satz mit „Aber/Doch …“)", f"{zahl(erste, 1) if erste is not None else '–'} s", "18–25 s (Hinweis)", "18,4–20,8 s", erste is not None and 18 <= erste <= 25, pflicht=False)
+    erste = next((t for t in wendungen if t >= 8), None)
+    zeile("6", "Erste Wendung (Satz mit „Aber/Doch …“)", f"{zahl(erste, 1) if erste is not None else '–'} s", "12–15 s (Hinweis)", "18,4–20,8 s", erste is not None and 10 <= erste <= 18, pflicht=False)
 
     # 7 Folgen-Hinweis (seit 08.11.2026, ersetzt den Folgen-Aufruf bei ca. 20 s): nur im Testblock „mit“ eine nicht gesprochene
     # Textzeile in den letzten 2–3 s (M.hinweis), an Inhalt gebunden; sonst gar nichts. M.folgen ist immer ein Fehler.
@@ -365,52 +312,32 @@ def pruefe(projekt, profil, extra_ziele):
     else:
         zeile("11", "Schleife letztes = erstes Bild (freiwillig)", "genutzt, nicht geprüft", "wenn genutzt: ja", "Vorbilder 3/6", False, pflicht=False)
 
-    # 12 Sprache: Wörter, Tempo, Satzlängen, Satzpausen, Länge
+    # 12 Sprache: Wörter, Satzlängen, Länge. Entscheidung des Inhabers 09.11.2026: keine Sprechtempo-Regeln mehr, das Video
+    # folgt der Stimme. 12a und 12c sind nur noch Hinweis.
     anzahl = len(woerter)
-    sprechzeit = max(1e-9, letztes["ende"] - erstes["start"])
-    tempo = anzahl / sprechzeit
     lw = [len(s) for s in saetze]
     med = statistics.median(lw)
     unter10 = sum(1 for x in lw if x < 10) / len(lw)
-    pausen = [woerter[i + 1]["start"] - woerter[i]["ende"] for i in range(len(woerter) - 1) if SATZENDE.search(woerter[i]["wort"])]
-    kommas = [woerter[i + 1]["start"] - woerter[i]["ende"] for i in range(len(woerter) - 1) if KOMMA.search(woerter[i]["wort"])]
     a, b = ziele["woerter"]
-    zeile("12a", "Wörter", str(anzahl), f"{a}–{b}", MASSSTAB_TEXT["woerter"], a <= anzahl <= b)
-    a, b = ziele["tempo"]
-    silbentempo = sum(silben(w["wort"]) for w in woerter) / sprechzeit
-    ok_w = a <= tempo <= b
-    if isinstance(ziele.get("silben"), tuple):  # seit 07.11.2026: W/s ODER Silben/s im Zielbereich
-        sa, sb = ziele["silben"]
-        ok_s = sa <= silbentempo <= sb
-        zeile("12b", "Sprechtempo (Wörter/s oder Silben/s)", f"{zahl(tempo)} W/s · {zahl(silbentempo)} Silben/s",
-              f"{zahl(a, 1)}–{zahl(b, 1)} W/s oder {zahl(sa, 1)}–{zahl(sb, 1)} Silben/s", MASSSTAB_TEXT["tempo"], ok_w or ok_s)
-    else:
-        zeile("12b", "Sprechtempo", f"{zahl(tempo)} W/s ({zahl(silbentempo)} Silben/s)", f"{zahl(a, 1)}–{zahl(b, 1)} W/s", MASSSTAB_TEXT["tempo"], ok_w)
+    zeile("12a", "Wörter (grobe Länge)", str(anzahl), f"{a}–{b} (Hinweis)", MASSSTAB_TEXT["woerter"], a <= anzahl <= b, pflicht=False)
+    # 12b (Sprechtempo: Wörter/s bzw. Silben/s) entfernt, Entscheidung des Inhabers 09.11.2026.
     a, b = ziele["satzlaenge_median"]
-    zeile("12c", "Wörter je Satz", f"Median {zahl(med, 1)}, max. {max(lw)}, {round(unter10 * 100)} % unter 10", f"Median {a}–{b}, ≥ 75 % unter 10", MASSSTAB_TEXT["satzlaenge"], a <= med <= b and unter10 >= 0.75)
-    if pausen:
-        pm, px = statistics.median(pausen), max(pausen)
-        zeile("12d", "Pause nach Satzende", f"Median {zahl(pm)} s, max. {zahl(px)} s", f"max. ≤ {zahl(ziele['satzpause_max'], 1)} s", MASSSTAB_TEXT["satzpause"], px <= ziele["satzpause_max"] + 1e-9)
-    if "satzpause_median" in ziele and isinstance(ziele["satzpause_median"], tuple) and pausen:
-        a, b = ziele["satzpause_median"]
-        stillen = stille_im_audio(projekt / "audio" / "stimme.mp3")
-        ziel_txt = f"Median {zahl(a)}–{zahl(b)} s (Hinweis)"
-        if stillen is None:
-            zeile("12d2", "Hörbare Satzpause, nicht gehetzt (Audio)", "nicht messbar (kein audio/stimme.mp3 oder ffmpeg)", ziel_txt, "–", False, pflicht=False)
-        else:
-            hoer = satzpausen_hoerbar(woerter, stillen)
-            hm = statistics.median(hoer)
-            zeile("12d2", "Hörbare Satzpause, nicht gehetzt (Audio)", f"Median {zahl(hm)} s, max. {zahl(max(hoer))} s", ziel_txt, "–", a <= hm <= b, pflicht=False)
-    if kommas:
-        zeile("12e", "Pause nach Komma (Kennzahl)", f"Median {zahl(statistics.median(kommas))} s", "–", "0,25–0,3 s", True, pflicht=False)
+    zeile("12c", "Wörter je Satz", f"Median {zahl(med, 1)}, max. {max(lw)}, {round(unter10 * 100)} % unter 10", f"Median {a}–{b}, ≥ 75 % unter 10 (Hinweis)",
+          MASSSTAB_TEXT["satzlaenge"], a <= med <= b and unter10 >= 0.75, pflicht=False)
+    # 12d (Pause nach Satzende), 12d2 (hörbare Satzpause) und 12e (Pause nach Komma) entfernt, Entscheidung des Inhabers
+    # 09.11.2026: Pausen der Stimme werden nicht mehr gemessen.
+    # 12f Mindestlänge bleibt Pflicht (Creator Rewards verlangt über 60 s); der Richtwert 65–80 s ist nur noch Hinweis (12f2).
     laenge = dauer if dauer else stimm_ende
+    nur_stimme = "" if dauer else " (nur Stimme)"
+    minimum = float(ziele.get("laenge_min", 61.0))
+    zeile("12f", "Videolänge mindestens 61 s (Creator Rewards)", f"{zahl(laenge, 1)} s" + nur_stimme, f"≥ {zahl(minimum, 0)} s", "über 60 s (CRP)", laenge >= minimum)
     a, b = ziele["laenge"]
-    zeile("12f", "Videolänge", f"{zahl(laenge, 1)} s" + ("" if dauer else " (nur Stimme)"), f"{a}–{b} s", MASSSTAB_TEXT["laenge"], a <= laenge <= b)
+    zeile("12f2", "Videolänge im Richtwert", f"{zahl(laenge, 1)} s" + nur_stimme, f"{a}–{b} s (Hinweis)", MASSSTAB_TEXT["laenge"], a <= laenge <= b, pflicht=False)
     if dauer:
         nach = dauer - stimm_ende
         zeile("12g", "Nach dem letzten Wort", f"{zahl(nach, 1)} s", "0,5–1,0 s (Hinweis)", "0,5–1,0 s", 0.5 <= nach <= 1.0, pflicht=False)
     # 12h Auflösung (seit 08.11.2026 Pflicht, CRP-Zusatzbonus verlangt 1080p); vor dem Render kein MP4 → Punkt entfällt
-    mp4 = video_pfad(projekt)
+    mp4 = video_pfad(projekt) if projekt else None
     if mp4:
         b, h = aufloesung(mp4)
         zeile("12h", "Auflösung des Videos", f"{b}×{h}" if b else "nicht lesbar (ffprobe?)", "1080×1920", "1080×1920 (CRP)", (b, h) == (1080, 1920))
@@ -467,8 +394,10 @@ def pruefe(projekt, profil, extra_ziele):
     seg = {s.get("id"): s for s in segmente}
     t_erg = float(seg["ergebnis"]["start"]) if "ergebnis" in seg else next((w["start"] for w, x in zip(woerter, n) if x == "endstand"), None)
     anteil = t_erg / laenge_gesamt if t_erg is not None and laenge_gesamt else None
+    # Seit 09.11.2026 nur Hinweis: Zeitpunkte der Phasen sind keine Pflicht mehr (neuer Aufbau-Standard: Ergebnis bei ca. 75–80 %).
+    ea, eb = ziele.get("endstand", (0.75, 0.86))
     zeile("R5", "Endstand bei ca. 80 % der Länge", f"{zahl(t_erg, 1)} s = {round(anteil * 100)} %" if anteil is not None else "kein Segment „ergebnis“ und kein „Endstand“",
-          "75–86 % (Inhaber 07.11.)", "stark 79–83 %, schwach 57 %", anteil is not None and 0.75 <= anteil <= 0.86)
+          f"{round(ea * 100)}–{round(eb * 100)} % (Hinweis)", "stark 79–83 %, schwach 57 %", anteil is not None and ea <= anteil <= eb, pflicht=False)
     if "kipp" in seg and laenge_gesamt:
         ak = float(seg["kipp"]["start"]) / laenge_gesamt
         zeile("R6", "Kipp-Moment (Höhepunkt) bei ca. 64 %", f"{zahl(float(seg['kipp']['start']), 1)} s = {round(ak * 100)} %", "55–72 % (Hinweis)", "stark 64 % (ca. 45 s)", 0.55 <= ak <= 0.72, pflicht=False)
@@ -495,7 +424,7 @@ def tabelle(zeilen, info, projekt):
     ok = sum(1 for z in pflicht if z["ok"])
     print(f"\nPflichtpunkte: {ok} von {len(pflicht)} ja · Hinweise (H): {sum(1 for z in zeilen if not z['pflicht'] and z['ok'])} von {sum(1 for z in zeilen if not z['pflicht'])} ja")
     if info["timing"] == "geschätzt":
-        print("Achtung: Timing ist geschätzt (keine Stimme). Tempo und Pausen gelten erst mit audio/timing.json.")
+        print("Achtung: Timing ist geschätzt (keine Stimme). Alle Zeiten gelten erst mit audio/timing.json; das Video folgt der Stimme.")
 
 
 def main():
@@ -510,10 +439,15 @@ def main():
     while i < len(args):
         if args[i] == "--profil":
             profil = args[i + 1]
+            if profil in ALTE_PROFILE:
+                print(f"Hinweis: Profil „{profil}“ gibt es seit 09.11.2026 nicht mehr (keine Tempo-Regeln); geprüft wird mit „ben“.", file=sys.stderr)
+                profil = "ben"
             i += 1
         elif args[i] == "--ziel":
             k, v = args[i + 1].split("=")
-            if ":" in v:
+            if k in ALTE_ZIELE:
+                print(f"Hinweis: --ziel {k} gibt es seit 09.11.2026 nicht mehr (keine Tempo-Regeln); übergangen.", file=sys.stderr)
+            elif ":" in v:
                 a, b = v.split(":")
                 extra[k] = (float(a), float(b))
             else:

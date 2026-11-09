@@ -7,13 +7,13 @@
 |---|---|
 | `04-Recherche/REA stelldirvor Regelwerk.md` | **die Regeln** (R01–R20), Zielkorridore, Aufbau-Schablone, Entscheidungen vom 07.11. |
 | `03-stelldirvor-pov/Regelwerk Account 2.md` | alle geltenden Regeln des Accounts auf einen Blick |
-| `03-stelldirvor-pov/Ablauf Account 2.md` | 80-s-Zeitplan (seit 07.11. mit Ereignis bei ca. 8 s), Satztakt, Messwert-Anzeige, Bewegung und Zeitraffer, Skript-Anforderungen |
-| `03-stelldirvor-pov/Design Account 2.md` | Maße, Schrift und Farben der drei Textebenen und des Abspanns |
-| `03-stelldirvor-pov/Licht und Effekte Account 2.md` | Licht und Farbe je Phase, Effekte mit Baukasten-Aufruf, Kamera, Zeitraffer-Technik |
-| `03-stelldirvor-pov/Ton Account 2.md` | Atmo und Sounddesign, Lautheitskurve, `atmo.py` |
-| `03-stelldirvor-pov/Technik und Szenenbau Account 2.md` | Baukasten (`engine/stil_lunar_pov.js`, `engine/lunar_hud.js`), Szenengerüst, Render, Mux, Posting |
-| `03-stelldirvor-pov/Themen und Plan Account 2.md` | §2 Weltenkatalog (Natur zuerst), §3 Weltvielfalt, Tageszeit, Enden |
-| `03-stelldirvor-pov/Prüfung und Abnahme Account 2.md` | Prüfbefehle, Kontaktbogen, Sichtprüfung, Qualitätslatte |
+| `03-stelldirvor-pov/1-Skripterstellung/Ablauf Account 2.md` | 80-s-Zeitplan (seit 07.11. mit Ereignis bei ca. 8 s), Satztakt, Messwert-Anzeige, Bewegung und Zeitraffer, Skript-Anforderungen |
+| `03-stelldirvor-pov/3-Produktion/Design Account 2.md` | Maße, Schrift und Farben der drei Textebenen und des Abspanns |
+| `03-stelldirvor-pov/3-Produktion/Licht und Effekte Account 2.md` | Licht und Farbe je Phase, Effekte mit Baukasten-Aufruf, Kamera, Zeitraffer-Technik |
+| `03-stelldirvor-pov/3-Produktion/Ton Account 2.md` | Atmo und Sounddesign, Lautheitskurve, `atmo.py` |
+| `03-stelldirvor-pov/3-Produktion/Technik und Szenenbau Account 2.md` | Baukasten (`engine/stil_lunar_pov.js`, `engine/lunar_hud.js`), Szenengerüst, Render, Mux, Posting |
+| `03-stelldirvor-pov/1-Skripterstellung/Themen und Plan Account 2.md` | §2 Weltenkatalog (Natur zuerst), §3 Weltvielfalt, Tageszeit, Enden |
+| `03-stelldirvor-pov/3-Produktion/Prüfung und Abnahme Account 2.md` | Prüfbefehle, Kontaktbogen, Sichtprüfung, Qualitätslatte |
 Muster mit allen Bausteinen: `pipeline/projekte/_demo-lunar-pov/` (Demo, nicht posten). Hintergrund: `03-stelldirvor-pov/Format Account 2 Lunar.md`.
 
 ## Die Regeln auf einen Blick (Stand 08.11.2026; bei Abweichung gilt das Hirn)
@@ -35,7 +35,7 @@ Muster mit allen Bausteinen: `pipeline/projekte/_demo-lunar-pov/` (Demo, nicht p
 **Richtwerte** (vorläufige REA-Regeln): zweiter Countdown bis zur Ankunft, Wort statt Zahl am Wendepunkt, Texte in Du-Form, ruhige und fahrende Kamera im Wechsel, Bildaufbau mittig, Lichtblitz als Übergang an Wendepunkten (sparsam).
 
 ## Eingangsprüfung (Schritt 1)
-Ein Ereignis, ein Standpunkt, eine messbare Größe · der Bogen trägt ein **Ereignis bei ca. 8 s** (Countdown bis dahin; bei Zeitraffer-Themen die Zeit bis zum Einsetzen der Veränderung) · Weltvielfalt gegenüber dem vorigen Video · keine Opferdarstellung, kein Gore · keine 1:1-Kopie · **Originalität** laut Feld `originalitaet` (kein Klassiker der Anti-Liste, kein deutsches Video zur gleichen Prämisse; fehlt die Prüfung, kurz nachsuchen, bei Fund Status `rueckfrage`; Hirn „Originalität und Themenfindung“) · Sätze 12–18 mit 3–9 Wörtern · Faktzeile belegbar. Ein altes Skript mit Auslöser bei 18–25 s wird umgestellt: Countdown-Phase und Ereignis nach vorn, die Sätze nur so weit wie nötig verschieben und unter `korrekturen` vermerken.
+Ein Ereignis, ein Standpunkt, eine messbare Größe · Themenfeld und Nachfrage genannt (Skill `themen-skript`, Teil stelldirvor) · der Bogen trägt ein **Ereignis bei ca. 8 s** (Countdown bis dahin; bei Zeitraffer-Themen die Zeit bis zum Einsetzen der Veränderung) · Weltvielfalt gegenüber dem vorigen Video · keine Opferdarstellung, kein Gore · keine 1:1-Kopie · **Originalität** laut Feld `originalitaet` (kein Klassiker der Anti-Liste, kein deutsches Video zur gleichen Prämisse; fehlt die Prüfung, kurz nachsuchen, bei Fund Status `rueckfrage`; Hirn „Originalität und Themenfindung“) · Sätze 12–18 mit 3–9 Wörtern · Faktzeile belegbar. Ein altes Skript mit Auslöser bei 18–25 s wird umgestellt: Countdown-Phase und Ereignis nach vorn, die Sätze nur so weit wie nötig verschieben und unter `korrekturen` vermerken.
 
 ## Bauen
 - **Rechnung** liefert Anzeige-Werte, Countdown, Zeitraffer-Faktoren und Zeitpunkte (`t_ereignis` ≈ 8 s, Stufen, Höhepunkt).
@@ -43,7 +43,7 @@ Ein Ereignis, ein Standpunkt, eine messbare Größe · der Bogen trägt ein **Er
 - **`skript.json`:** `"skill": "video-produktion"`, `"konto": "stelldirvor"`, Titelfrage, Sätze und Faktenzeile 1:1, `anzeige_plan`, `zeitraffer` (Liste `{von, bis, faktor}` oder `"keiner"`), `kamera`, `bild_text_abgleich`, `caption`, `skript_quelle`, `korrekturen`, seit 08.11. `testbloecke`, `suchbegriff`, `folgen_hinweis`, `laenge_s`, bei Folgeteilen `teil`.
 - **Anzeige** (`LunarHUD`, `anzeige: (t) => ({ etikett, zahl, einheit, unter, wert })`): Phase 1 als Countdown, z. B. `t < T_NULL ? { etikett: "EINSCHLAG IN", zahl: uhrzeit(T_NULL - t), unter: "NOCH RUHIG", wert: T_NULL - t } : …`; ab Null die nächste Messgröße; `unter` ist die **Statuszeile** (1–3 Wörter zur Lage, mehrfach wechselnd); am Höhepunkt `zahl: "HIER"`, `wert: 0`. Zahlenformat deutsch (`zahlDE`, Countdown `m:ss`).
 - **Harte Schnitte** (höchstens 3): im Ereignis-Protokoll der Szene mit Grund melden, z. B. `{ t: 31.0, typ: "schnitt", grund: "Maßstabssprung Stadt → Kontinent" }`; ein Schnitt am Höhepunkt (55–65 s) braucht keinen weiteren Grund.
-- **Szene:** Gerüst aus der Technik-Notiz, Welt aus dem Weltenkatalog (Erstbau eines Welttyps hebt die Welt erst auf Referenzniveau, Opus), Effekte nach dem Zeitplan, Kamera weich und dem Geschehen folgend.
+- **Szene:** Gerüst aus der Technik-Notiz, Welt aus dem Weltenkatalog (Erstbau eines Welttyps hebt die Welt erst auf Referenzniveau, Opus), Effekte nach dem Zeitplan, Kamera weich und dem Geschehen folgend. Lebt das Ereignis oder der Höhepunkt davon, echt auszusehen (Wasser, Wolken, Feuer, Rauch, Makro im Körper), und trägt three.js das nicht: **Blender-Schlüsselszene** nach [technik.md](technik.md) §3 (höchstens 2 je Video).
 - **Standbilder:** mindestens 8 über 0–70 s (Bild 0, 4 s, Ereignis bei ca. 8 s, jede Stufe, Höhepunkt, Nachspiel, Abspann) gegen Design und Referenzniveau prüfen.
 - **Ton:** `ton.json` → `python3 atmo.py projekte/<name>`; Mux `TON_FERTIG=1 LRA_ZIEL=20 ./mux.sh projekte/<name>` (der Render-Dienst erledigt das auf dem PC).
 

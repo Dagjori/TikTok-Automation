@@ -1,19 +1,18 @@
 #!/usr/bin/env python3
-"""Tests für qc/massstab.py: Tempo-Profil „ben“ (seit 07.11.2026: W/s oder Silben/s), hörbare Satzpause (12d2), Stil-Prüfung 18b
-und die Regeln aus dem REA-Regelwerk (Folgen-Aufruf freiwillig, Schlusskarte, Untertitel-Blöcke, R1–R7).
+"""Tests für qc/massstab.py: Richtwerte ohne Tempo-Regeln (Entscheidung des Inhabers 09.11.2026: 12b, 12d, 12d2, 12e und die
+Tempo-Profile sind entfernt; Hook-Zeit, Wortzahl, Satzlängen, Länge 65–80 s und Endstand sind nur noch Hinweis; Pflicht bleibt
+die Mindestlänge 61 s), Stil-Prüfung 18b und die Regeln aus dem REA-Regelwerk (Schlusskarte, Untertitel-Blöcke, R1–R7).
 
 Aufruf (im Ordner pipeline/):  python3 qc/massstab_test.py
 Die Tests bauen kleine Projekte mit künstlichen Wortzeiten in einem Temp-Ordner; sie brauchen weder Stimme noch Render.
-Der ffmpeg-Test (silencedetect) wird übersprungen, wenn ffmpeg fehlt.
 """
+import contextlib
+import io
 import json
-import math
 import shutil
-import struct
 import sys
 import tempfile
 import unittest
-import wave
 from pathlib import Path
 from unittest import mock
 
@@ -65,146 +64,101 @@ def segment_timing(gesamt=70.0, **starts):
     return {"dauer": gesamt, "segmente": segmente}
 
 
-class TempoProfil(unittest.TestCase):
-    def test_profil_werte(self):
+class OhneTempoRegeln(unittest.TestCase):
+    """Entscheidung des Inhabers 09.11.2026: keine Sprechtempo-Regeln mehr, das Video folgt der Stimme."""
+
+    def test_profil_ohne_tempo_werte(self):
+        self.assertEqual(list(massstab.PROFILE), ["ben"])
         ben = massstab.PROFILE["ben"]
         self.assertEqual(ben["woerter"], (150, 190))
-        self.assertEqual(ben["tempo"], (2.3, 2.7))
-        self.assertEqual(ben["silben"], (4.6, 5.4))
         self.assertEqual(ben["satzlaenge_median"], (3, 5))
-        self.assertEqual(ben["satzpause_median"], (0.35, 0.6))
-        self.assertEqual(ben["satzpause_max"], 0.8)
         self.assertEqual(ben["laenge"], (65, 80))
+        self.assertEqual(ben["laenge_min"], 61.0)
+        for alt in ("tempo", "silben", "satzpause_max", "satzpause_median"):
+            self.assertNotIn(alt, ben)
+        for name in ("silben", "stille_im_audio", "satzpausen_hoerbar"):
+            self.assertFalse(hasattr(massstab, name), name)
 
-    def test_alte_profile_bleiben_zum_nachmessen(self):
-        alt = massstab.PROFILE["ben_alt"]
-        self.assertEqual(alt["woerter"], (130, 170))
-        self.assertEqual(alt["tempo"], (1.9, 2.4))
-        self.assertNotIn("satzpause_median", alt)
-        vorher = massstab.PROFILE["ben_0211"]
-        self.assertEqual(vorher["tempo"], (2.2, 2.5))
-        self.assertEqual(vorher["satzlaenge_median"], (4, 8))
-        self.assertNotIn("silben", vorher)
+    def test_tempo_und_pausen_punkte_sind_weg(self):
+        for z in (pruefe(anzahl=168, satzlaenge=4), pruefe(anzahl=168, satzlaenge=6, sp=1.5), pruefe(anzahl=168, satzlaenge=6, wd=0.15, lk=0.02, sp=0.1)):
+            self.assertFalse({"12b", "12d", "12d2", "12e"} & set(z))
+            for zeile in z.values():
+                for wort in ("W/s", "Silben", "Tempo", "Pause"):
+                    self.assertNotIn(wort, zeile["punkt"] + str(zeile["ist"]) + zeile["ziel"], zeile["nr"])
 
-    def test_spanne_trifft_die_vorbilder(self):
-        a, b = massstab.PROFILE["ben"]["tempo"]
-        self.assertTrue(a <= 2.42 and 2.70 <= b)       # REA: starke Vorbilder 2,42–2,70 W/s
+    def test_sehr_langsame_und_sehr_schnelle_stimme_bestehen(self):
+        # früher 12b/12d nein; jetzt entscheidet kein Tempo und keine Pause mehr über „ja“ oder „nein“
+        langsam = pruefe(anzahl=168, satzlaenge=4, wd=0.5, lk=0.2, sp=1.5)
+        schnell = pruefe(anzahl=420, satzlaenge=4, wd=0.15, lk=0.02, sp=0.1)   # ca. 5,3 Wörter/s, ca. 80 s
+        for z in (langsam, schnell):
+            tempo_pflicht = [x["nr"] for x in z.values() if x["pflicht"] and not x["ok"] and x["nr"].startswith("12")]
+            self.assertEqual(tempo_pflicht, [])
 
-    def test_gutes_tempo(self):
-        z = pruefe(anzahl=168, satzlaenge=4, wd=0.28, lk=0.05, sp=0.4)    # 168 Wörter, ca. 2,4 W/s, ca. 70 s, Sätze 4 Wörter
-        self.assertTrue(z["12a"]["ok"], z["12a"]["ist"])
-        self.assertTrue(z["12b"]["ok"], z["12b"]["ist"])
-        self.assertTrue(z["12c"]["ok"], z["12c"]["ist"])
-        self.assertTrue(z["12f"]["ok"], z["12f"]["ist"])
-
-    def test_lange_saetze_fallen_seit_0711_durch(self):
-        self.assertFalse(pruefe(anzahl=168, satzlaenge=7, wd=0.28, lk=0.05, sp=0.4)["12c"]["ok"])
-        self.assertTrue(pruefe(profil="ben_0211", anzahl=168, satzlaenge=7, wd=0.28, lk=0.05, sp=0.4)["12c"]["ok"])
-
-    def test_untere_und_obere_wortgrenze(self):
+    def test_wortzahl_ist_nur_hinweis(self):
         for anzahl, erwartet in ((149, False), (150, True), (190, True), (191, False)):
             with self.subTest(anzahl=anzahl):
-                self.assertEqual(pruefe(anzahl=anzahl, satzlaenge=6)["12a"]["ok"], erwartet)
+                z = pruefe(anzahl=anzahl, satzlaenge=4)["12a"]
+                self.assertEqual(z["ok"], erwartet)
+                self.assertFalse(z["pflicht"])
 
-    def test_zu_wenig_woerter_nach_altem_profil_ok_nach_neuem_nicht(self):
-        neu = pruefe(anzahl=140, satzlaenge=5, sp=0.6)   # 140 Wörter bei ca. 2,14 W/s: altes Ben-Profil ja, neues nein
-        alt = pruefe(profil="ben_alt", anzahl=140, satzlaenge=5, sp=0.6)
-        self.assertFalse(neu["12a"]["ok"])
-        self.assertFalse(neu["12b"]["ok"])
-        self.assertTrue(alt["12a"]["ok"])
-        self.assertTrue(alt["12b"]["ok"])
+    def test_satzlaenge_ist_nur_hinweis(self):
+        lang = pruefe(anzahl=168, satzlaenge=7)["12c"]
+        self.assertFalse(lang["ok"])
+        self.assertFalse(lang["pflicht"])
+        self.assertTrue(pruefe(anzahl=168, satzlaenge=4)["12c"]["ok"])
 
-    def test_zu_langsam_und_zu_schnell(self):
-        langsam = pruefe(anzahl=168, satzlaenge=6, sp=1.2)
-        schnell = pruefe(anzahl=168, satzlaenge=6, wd=0.22, lk=0.04, sp=0.3)
-        self.assertFalse(langsam["12b"]["ok"], langsam["12b"]["ist"])
-        self.assertFalse(schnell["12b"]["ok"], schnell["12b"]["ist"])
-        self.assertFalse(langsam["12d"]["ok"])           # Satzpause über 0,8 s bleibt Pflichtverstoß
+    def test_hook_zeit_ist_nur_hinweis(self):
+        z = pruefe(timing_json=segment_timing(70.0, regeln=9.0, ergebnis=56.0))["2"]     # Hook endet erst bei 8,7 s
+        self.assertFalse(z["ok"], z["ist"])
+        self.assertFalse(z["pflicht"])
+
+    def test_mindestlaenge_61_s_bleibt_pflicht(self):
+        for gesamt, erwartet in ((60.0, False), (60.9, False), (61.0, True), (72.0, True), (95.0, True)):
+            with self.subTest(gesamt=gesamt):
+                z = pruefe(timing_json=segment_timing(gesamt, ergebnis=gesamt * 0.8), ereignisse={"dauer": gesamt, "ereignisse": []})["12f"]
+                self.assertEqual(z["ok"], erwartet, z["ist"])
+                self.assertTrue(z["pflicht"])
+        nur_stimme = pruefe(timing_json=segment_timing(58.0, ergebnis=45.0))["12f"]      # ohne Ereignis-Protokoll zählt die Stimme
+        self.assertFalse(nur_stimme["ok"])
+        self.assertIn("nur Stimme", nur_stimme["ist"])
+
+    def test_richtwert_65_bis_80_ist_nur_hinweis(self):
+        for gesamt, erwartet in ((62.0, False), (65.0, True), (80.0, True), (95.0, False)):
+            with self.subTest(gesamt=gesamt):
+                z = pruefe(timing_json=segment_timing(gesamt, ergebnis=gesamt * 0.8), ereignisse={"dauer": gesamt, "ereignisse": []})["12f2"]
+                self.assertEqual(z["ok"], erwartet, z["ist"])
+                self.assertFalse(z["pflicht"])
 
     def test_extra_ziel_ueberschreibt_profil(self):
-        z = pruefe(anzahl=168, satzlaenge=6, extra={"woerter": (100, 120)})
-        self.assertFalse(z["12a"]["ok"])
+        self.assertFalse(pruefe(anzahl=168, satzlaenge=6, extra={"woerter": (100, 120)})["12a"]["ok"])
+        self.assertTrue(pruefe(timing_json=segment_timing(58.0, ergebnis=45.0), extra={"laenge_min": 50.0})["12f"]["ok"])
 
+    def test_alte_tempo_ziele_werden_uebergangen(self):
+        z = pruefe(anzahl=168, satzlaenge=4, extra={"tempo": (2.0, 2.5), "silben": (4.6, 5.4), "satzpause_max": 0.7, "satzpause_median": (0.3, 0.6)})
+        self.assertNotIn("12b", z)
+        self.assertNotIn("12d", z)
 
-class Silbentempo(unittest.TestCase):
-    def test_silben_zaehlen(self):
-        for wort, n in (("Zeit", 1), ("Euro.", 2), ("tausendzweihundert", 5), ("Klimaanlage", 4), ("wirklich?", 2), ("2026", 8), ("", 0)):
-            with self.subTest(wort=wort):
-                self.assertEqual(massstab.silben(wort), n)
-
-    def test_lange_zahlwoerter_retten_das_tempo(self):
-        # 3 Silben je Wort bei ca. 1,7 W/s = ca. 5,1 Silben/s: W/s zu langsam, Silben/s im Ziel → besteht
-        z = pruefe(anzahl=150, satzlaenge=4, wd=0.42, lk=0.08, sp=0.45, wort="zahlenwort")
-        self.assertIn("Silben/s", z["12b"]["ist"])
-        self.assertTrue(z["12b"]["ok"], z["12b"]["ist"])
-
-    def test_beide_daneben_faellt_durch(self):
-        # 3 Silben je Wort bei ca. 2,0 W/s = ca. 6 Silben/s: W/s zu langsam und Silben/s zu schnell
-        z = pruefe(anzahl=150, satzlaenge=4, wd=0.38, lk=0.05, sp=0.35, wort="zahlenwort")
-        self.assertFalse(z["12b"]["ok"], z["12b"]["ist"])
-
-    def test_altes_profil_misst_nur_woerter(self):
-        z = pruefe(profil="ben_0211", anzahl=150, satzlaenge=4, wd=0.42, lk=0.08, sp=0.45, wort="zahlenwort")
-        self.assertFalse(z["12b"]["ok"], z["12b"]["ist"])
-
-
-class SatzpauseHoerbar(unittest.TestCase):
-    WOERTER = [{"wort": "a.", "start": 0.0, "ende": 1.0}, {"wort": "b", "start": 1.04, "ende": 1.5},
-               {"wort": "c?", "start": 1.6, "ende": 2.0}, {"wort": "d", "start": 2.05, "ende": 2.5}]
-
-    def test_stillen_werden_den_satzenden_zugeordnet(self):
-        werte = massstab.satzpausen_hoerbar(self.WOERTER, [(0.85, 1.27), (2.0, 2.3)])
-        self.assertEqual(len(werte), 2)
-        self.assertAlmostEqual(werte[0], 0.42, places=2)
-        self.assertAlmostEqual(werte[1], 0.3, places=2)
-
-    def test_ohne_stille_ist_die_pause_null(self):
-        self.assertEqual(massstab.satzpausen_hoerbar(self.WOERTER, []), [0.0, 0.0])
-
-    def test_fenster_nimmt_nur_stillen_in_der_naehe(self):
-        werte = massstab.satzpausen_hoerbar(self.WOERTER, [(5.0, 6.0)])
-        self.assertEqual(werte, [0.0, 0.0])
-
-    def test_hinweis_12d2_mit_gepatchter_stille(self):
-        with mock.patch.object(massstab, "stille_im_audio", return_value=None):
-            z = pruefe(anzahl=168, satzlaenge=6)
-        self.assertFalse(z["12d2"]["ok"])
-        self.assertFalse(z["12d2"]["pflicht"])           # nur Hinweis
-        self.assertIn("nicht messbar", z["12d2"]["ist"])
-        # Stille 0,5 s nach jedem Satzende: im Richtwert
-        t = timing(anzahl=168, satzlaenge=6)["segmente"][0]["woerter"]
-        gut = [(w["ende"], w["ende"] + 0.5) for w in t if w["wort"].endswith(".")]
-        kurz = [(w["ende"], w["ende"] + 0.2) for w in t if w["wort"].endswith(".")]
-        with mock.patch.object(massstab, "stille_im_audio", return_value=gut):
-            self.assertTrue(pruefe(anzahl=168, satzlaenge=6)["12d2"]["ok"])
-        with mock.patch.object(massstab, "stille_im_audio", return_value=kurz):
-            z = pruefe(anzahl=168, satzlaenge=6)
-            self.assertFalse(z["12d2"]["ok"])
-            self.assertFalse(z["12d2"]["pflicht"])
-
-    def test_profil_massstab_hat_keine_hoerpause(self):
-        self.assertNotIn("12d2", pruefe(profil="massstab", anzahl=190, satzlaenge=6, wd=0.22, lk=0.04, sp=0.26))
-
-    @unittest.skipIf(shutil.which("ffmpeg") is None, "ffmpeg fehlt")
-    def test_stille_im_audio_mit_ffmpeg(self):
-        rate = 16000
-        def ton(sekunden):
-            return [int(8000 * math.sin(2 * math.pi * 440 * i / rate)) for i in range(int(sekunden * rate))]
-        proben = ton(1.0) + [0] * int(0.4 * rate) + ton(1.0) + [0] * int(0.2 * rate) + ton(1.0)
+    def test_cli_alte_profile_und_ziele(self):
         with tempfile.TemporaryDirectory() as tmp:
-            pfad = Path(tmp) / "stimme.wav"
-            with wave.open(str(pfad), "wb") as w:
-                w.setnchannels(1)
-                w.setsampwidth(2)
-                w.setframerate(rate)
-                w.writeframes(struct.pack("<%dh" % len(proben), *proben))
-            stillen = massstab.stille_im_audio(pfad)
-        self.assertEqual(len(stillen), 2)
-        self.assertAlmostEqual(stillen[0][1] - stillen[0][0], 0.4, delta=0.05)
-        self.assertAlmostEqual(stillen[1][1] - stillen[1][0], 0.2, delta=0.05)
-
-    def test_stille_im_audio_ohne_datei(self):
-        self.assertIsNone(massstab.stille_im_audio(Path("/gibt/es/nicht.mp3")))
+            p = Path(tmp)
+            (p / "audio").mkdir()
+            (p / "skript.json").write_text(json.dumps({"stil": "18", "segmente": [{"id": "hook", "text": "x"}]}), encoding="utf-8")
+            (p / "audio" / "timing.json").write_text(json.dumps(timing(168, 4)), encoding="utf-8")
+            (p / "szene.js").write_text("", encoding="utf-8")
+            for argv in (["--profil", "massstab"], ["--profil", "ben_alt"], ["--ziel", "tempo=2.0:2.5", "--ziel", "satzpause_max=0.7"]):
+                with self.subTest(argv=argv), mock.patch.object(sys, "argv", ["massstab.py", str(p), "--json"] + argv), \
+                        contextlib.redirect_stdout(io.StringIO()) as aus, contextlib.redirect_stderr(io.StringIO()) as fehler, \
+                        self.assertRaises(SystemExit) as ende:
+                    massstab.main()
+                self.assertIn(ende.exception.code, (0, 1))               # läuft durch (kein Aufruffehler 2)
+                self.assertIn("gibt es seit 09.11.2026 nicht mehr", fehler.getvalue())
+                ergebnis = json.loads(aus.getvalue())
+                self.assertEqual(ergebnis["info"]["profil"], "ben")
+                self.assertNotIn("tempo", ergebnis["info"]["ziele"])
+            with mock.patch.object(sys, "argv", ["massstab.py", str(p), "--profil", "gibtsnicht"]), \
+                    contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as ende:
+                massstab.main()
+            self.assertEqual(ende.exception.code, 2)
 
 
 class StilPruefung18b(unittest.TestCase):
@@ -327,12 +281,12 @@ class ReaRegeln(unittest.TestCase):
         self.assertTrue(z["pflicht"])
         self.assertIn("pointe", z["ist"])
 
-    def test_endstand_bei_ca_80_prozent(self):
+    def test_endstand_bei_ca_80_prozent_ist_hinweis(self):
         for start, erwartet in ((56.0, True), (53.0, True), (40.0, False), (63.0, False)):
             with self.subTest(start=start):
                 z = pruefe(timing_json=segment_timing(70.0, rennen=12.0, kipp=45.0, ergebnis=start))["R5"]
                 self.assertEqual(z["ok"], erwartet, z["ist"])
-                self.assertTrue(z["pflicht"])
+                self.assertFalse(z["pflicht"])                # seit 09.11.2026 nur Hinweis (Phasen-Zeitpunkte)
         ohne = pruefe(anzahl=168, satzlaenge=4)["R5"]      # weder Segment „ergebnis“ noch das Wort „Endstand“
         self.assertFalse(ohne["ok"])
 

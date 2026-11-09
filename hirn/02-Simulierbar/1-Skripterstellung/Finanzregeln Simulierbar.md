@@ -2,27 +2,21 @@
 typ: regel
 konto: simulierbar
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/simulierbar-video/themen.md §2 §5 §6 §7, CLAUDE.md §7, Entscheidungen des Inhabers 02.11.2026 abends
-tags: [konto/simulierbar, auswahlregeln, finanzregeln, ausschlussthemen, zahlen-2026]
+datum: 2026-11-09
+aliases: [Auswahl- und Finanzregeln Simulierbar]
+quelle: CLAUDE.md §7, Entscheidungen des Inhabers 02.11.2026 abends und 09.11.2026; bis 09.11.2026 Notiz „Auswahl- und Finanzregeln Simulierbar“ (Quelle damals: entfernter Skill simulierbar-video)
+tags: [konto/simulierbar, finanzregeln, ausschlussthemen, zahlen-2026]
 cssclasses: [konto-simulierbar, typ-regel]
 ---
 
-# Auswahl- und Finanzregeln Simulierbar
+# Finanzregeln Simulierbar
 
-**Gültig.** Auswahl-, Finanz- und Ausschlussregeln für `@simulierbar` nach den Neuregeln des Inhabers vom 02.11.2026 abends. Die frühere **Sperrliste und der 30-Tage-Plan sind veraltet** und stehen nur noch als Archiv in [[Sperrliste und Auswahlregeln Simulierbar]] und [[Themenplan Simulierbar]]. Marktbelege und Konkurrenzzahlen (Hintergrund): [[Konkurrenz und Themen Simulierbar]]. Legende: **(F)** belegter Fakt mit Quelle · **(S)** Schätzung · **(A)** Annahme · **(B)** Beispielwert, wird vor der Produktion gerechnet · **prüfen** vor der Produktion klären.
+**Gültig.** Finanz- und Ausschlussregeln sowie die belegten Zahlen für `@simulierbar`. Die Notiz hieß bis 09.11.2026 „Auswahl- und Finanzregeln Simulierbar“; die Themenauswahl (früher §1) steht seitdem in [[Themenfindung Simulierbar]]. Die frühere Sperrliste und der 30-Tage-Plan sind Archiv ([[Sperrliste und Auswahlregeln Simulierbar]], [[Themenplan Simulierbar]]). Marktbelege: [[Konkurrenz und Themen Simulierbar]]. Legende: **(F)** belegter Fakt mit Quelle · **(S)** Schätzung · **(A)** Annahme · **(B)** Beispielwert, wird vor der Produktion gerechnet · **prüfen** vor der Produktion klären.
 
-Die Ideen kommen aus dem Ideen-Studio (10 pro Tag, der Inhaber wählt 2, die Tages-Sitzung von Claude Code recherchiert und schreibt das Skript: [[Claude-Chat-Workflow]], [[Befehl Ideen und Skripte Simulierbar]]); Claude Code prüft beim Schreiben und vor der Produktion, ob diese Regeln eingehalten sind, und meldet Auffälligkeiten im Studio ([[Videoaufbau Simulierbar]] Abschnitt 5).
+Geprüft werden diese Regeln beim Schreiben des Skripts (Selbstprüfung Punkt 7, [[Skriptaufbau Simulierbar]]) und in der Eingangsprüfung der Produktion (Skill `video-produktion`).
 
-## 1. Auswahlregeln für jedes Thema (neu gefasst 02.11.2026 abends)
-1. **Nur Thema GELD, 100 %:** Ergebnis in **Euro** auf der Anzeigetafel (bei anderen Ländern in der passenden Währung, Quelle und Modellrechnung sauber nennen). Die Rubrik ALLTAG entfällt; Alltagsfragen nur, wenn sie ein Geld-Ergebnis haben (Zeit wird mit Mindestlohn 13,90 € oder dem Netto-Stundenlohn aus dem Netto-Modul `pipeline/sim/netto.mjs` in Euro umgerechnet). Ersetzt „mindestens 50 von 60 Videos GELD“.
-2. **Themen-Logik (Inhaber 02.11.):** Beide Seiten sind Alternativen derselben Entscheidung, die sich ausschließen bzw. gegeneinander abgewogen werden. Gegenbeispiel: „Steuererklärung vs. Überstunden“ ergibt keinen Sinn.
-3. **Länder frei:** Deutschland, weltweit oder andere Länder; Sprache bleibt Deutsch. Die Zahlen in Abschnitt 4 gelten nur für Deutschland; bei anderen Ländern eigene amtliche Quelle und Währung nennen.
-4. **Originalität (seit 07.11., ersetzt „keine Sperrliste“):** Kein Thema, zu dem es auf Deutsch schon ein Video mit der gleichen Frage gibt; die Websuche je Idee steht im Feld `originalitaet`. Englische Vorbilder sind erlaubt, aber nie Skript, Wortlaut, Bild- oder Szenenidee eines fremden Videos (CRP-Ausschluss „Unoriginal“, [[Arbeitsregeln und Sicherheit]]). Die Anti-Liste der Standardthemen steht im Befehl ([[Befehl Ideen und Skripte Simulierbar]]); Methode: [[Originalität und Themenfindung]].
-5. **Finanz-Regeln und Ausschlussthemen:** siehe Abschnitt 2 und 3.
-6. **Themenfelder (Inhaber 07.11., ersetzt die Gewichtung vom 03.11.):** Die große, überraschende Euro-Endzahl bleibt Pflicht. Die 10 Ideen verteilen sich auf **1 Versteckte Mechaniken · 2 Geschichte und Kurioses · 3 Geld hinter den Dingen · 4 Länder-Duelle · 5 ungewöhnliche Lebensentscheidungen**, die Felder 1–4 je mindestens einmal. **Klassiker** (Mieten oder Kaufen, Studium oder Ausbildung, Leasing, Rente bzw. Vorsorge, Kind) höchstens 1 von 10 und nur mit einer Frage, die auf Deutsch noch niemand gestellt hat; kleine Alltagstipps höchstens 1 von 10. ~~Mindestens 6 von 10 große Lebensentscheidungen~~ (03.11., Beleg damals: „Studium oder Ausbildung“ 4.141 Aufrufe gegen Median 323, n = 1). Die Lernschleife vergleicht beide Phasen. Umgesetzt in [[Befehl Ideen und Skripte Simulierbar]].
-6. Mind. 61 s (Ziel 65–80 s), 1080×1920, eigene Rechnung; Quellen nur intern in `skript.json`.
-7. Das Score-Raster des alten Plans (D 30, K 25, B 20, L 15, F 10) ist Archiv; die Auswahl trifft der Inhaber. Orientierung: große Lebens- und Geldentscheidungen mit großer Endzahl ziehen, kleine Einzeltipps kaum (Muster in [[Konkurrenz und Themen Simulierbar]]).
+## 1. Themenauswahl
+Steht seit 09.11.2026 in [[Themenfindung Simulierbar]] (Themenfelder, Nachfrage, Winkel, Formate, „abgenutzt“, Bewertung). Hier bleibt nur: Die Zahlen in Abschnitt 4 gelten für Deutschland; bei einem anderen Land eigene amtliche Quelle und Währung nennen.
 
 ## 2. Ausschlussthemen (CLAUDE.md §7, gültig)
 Glücksspiel, Tabak/Vape, Gesundheitsversprechen, Tragödien, Krypto, Einzelaktien, Anbieter-Empfehlungen, Parteipolitik, NS-Kennzeichen, riskantes Nachahmen. **Kein Kaufaufruf im Video** (TikTok drosselt in Shop-Märkten), kein „schnell reich“, keine Produkte, Banken, Versicherer, Broker, Coins. Finanzthemen nur als Modellrechnung; **kein KI-Label** (Ausnahme: realistisch wirkende KI-Inhalte). Details zu Plattformregeln: [[Plattformregeln und Posting]].
@@ -43,7 +37,7 @@ Gesperrte Formate und Merkmale (gültig):
 
 **Deshalb verworfen (neue Ideen):** Lotto oder Sparen, Sportwetten, Lootboxen (Glücksspiel, auch K.-o. im Trend-Radar), Krypto und Einzelaktien, ETF-Sparplan-Vergleiche (Anlageberatungs-Nähe, außerdem bei @geldsimuliert und @kontostand.vs besetzt), Bürgergeld gegen Arbeit (politisch, bei @kontostand.vs), „Nebenverdienst-Ideen“ und passives Einkommen (get-rich-quick), Augenlasern gegen Brille (Gesundheitsnähe), Kredit- oder Kartenvergleiche mit Anbietern.
 
-**Hinweis:** In der Zeile „Deshalb verworfen“ sind die Zusätze „bei @…“ (Konkurrenzhinweise) veraltet, die Risikogründe gelten weiter.
+**Hinweis:** In der Zeile „Deshalb verworfen“ sind die Zusätze „bei @…“ (Konkurrenzhinweise) veraltet, die Risikogründe gelten weiter. **Seit 09.11.2026** sind stark gesuchte Themen wie Grundsicherung erlaubt, wenn sie als persönliche Euro-Folge für eine Modellperson gerechnet werden und einen neuen Winkel haben; Parteipolitik und Wertungen über Gruppen bleiben ausgeschlossen ([[Themenfindung Simulierbar]] §6).
 
 ## 4. Zahlen für Deutschland 2026 (gültig für Themen mit Deutschland-Bezug)
 | Größe | Wert | Kennung und Quelle |
@@ -105,5 +99,5 @@ Gesperrte Formate und Merkmale (gültig):
 Offene Radar-Vorschläge mit Terminbezug (Stand 02.11., Quelle `docs/trends/vorschlaege.md`): Tankrabatt endet 31.12. (Score 80, posten 15.–23.12.), Weihnachtsbaum (70, 01.–08.12.), Heizung nachts (82, spätestens 20.12.; früher laut Sperrliste nur mit eigenem Winkel; die Sperrliste entfällt seit 02.11. abends, es gilt: keine 1:1-Kopie) ([[Trend-Radar]]).
 
 ## Siehe auch
-- [[Videoaufbau Simulierbar]] (Themen-Logik, Skript-Anforderungen) · [[Konkurrenz und Themen Simulierbar]] · [[Account Simulierbar Überblick]] · [[Regelwerk Simulierbar]]
+- [[Themenfindung Simulierbar]] · [[Skriptaufbau Simulierbar]] · [[Finanz-Formulierungen Simulierbar]] · [[Konkurrenz und Themen Simulierbar]] · [[Account Simulierbar Überblick]] · [[Regelwerk Simulierbar]]
 - [[Sperrliste und Auswahlregeln Simulierbar]] (Archiv) · [[Themenplan Simulierbar]] (Archiv) · [[Trend-Radar]] · [[Plattformregeln und Posting]] · [[CRP Creator Rewards Program]] · [[Arbeitsregeln und Sicherheit]]

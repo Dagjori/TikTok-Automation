@@ -50,7 +50,7 @@ Vier Web-Recherchen (Algorithmus, Follow-Umwandlung, Reichweiten-Risiken, Format
 
 ## Folgen für Account 1 (`@simulierbar`)
 - Die Reichweite im Video ist Durchschnitt (349 gegen Markt 350), die Haltezeit ordentlich (Duell-Hooks 30–42 %, Einzelfragen 17–24 %, n = 9). **Die Lücke ist der Schritt zum Folgen** (S).
-- Umgesetzt (Wahl des Inhabers 08.11.): [[Serien und Treffer-Folgen]], [[Profil und Follow-Umwandlung]], [[Kommentare Antwort-Videos und Stitch]], [[Finanz-Formulierungen Simulierbar]], Klassiker bis 3 von 10 ([[Originalität und Themenfindung]]), Folgen-Hinweis als Blocktest am Ende ([[Regelwerk Simulierbar]]), Messung der Follows ([[Lernschleife und Insights]]).
+- Umgesetzt (Wahl des Inhabers 08.11.): [[Serien und Treffer-Folgen]], [[Profil und Follow-Umwandlung]], [[Kommentare Antwort-Videos und Stitch]], [[Finanz-Formulierungen Simulierbar]], Klassiker bis 3 von 10 (seit 09.11.2026 ersetzt: Nachfrage und Winkel statt Quote, [[Originalität und Themenfindung]]), Folgen-Hinweis als Blocktest am Ende ([[Regelwerk Simulierbar]]), Messung der Follows ([[Lernschleife und Insights]]).
 - Weg zu 10.000 (S, eigene Rechnung, es fehlen 7.170): bei 1 Follow je 1.000 Aufrufe 7,2 Mio. Aufrufe, bei 3 → 2,4 Mio., bei 5 → 1,4 Mio., bei 10 → 717.000. Ohne Treffer (ca. 21.000 Aufrufe im Monat) 5,7–28 Jahre; mit einzelnen Treffern (ca. 71.000) bei 3–5 Follows je 1.000 etwa 1,7–2,8 Jahre; mit Treffer-Serie (ca. 750.000 im Monat) 2–3 Monate ab dem Durchbruch.
 
 ## Folgen für Account 2 (`@stelldirvor.pov`)

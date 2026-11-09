@@ -36,6 +36,13 @@ def kopf_lesen(text):
 
 def main():
     notizen = {p.stem: p for p in HIRN.rglob("*.md")}
+    # Umbenannte Notizen tragen den alten Namen als `aliases: [Alter Name]` im Kopf (Obsidian löst solche Links auf, seit 09.11.2026).
+    aliase = {}
+    for stamm, pfad in notizen.items():
+        m = re.search(r"^aliases:\s*\[(.*?)\]\s*$", pfad.read_text(encoding="utf-8").split("\n---", 1)[0], re.M)
+        for a in (m.group(1).split(",") if m else []):
+            if a.strip():
+                aliase[a.strip()] = stamm
     fehler, warnungen = [], []
     verlinkt = set()
     for name, pfad in sorted(notizen.items()):
@@ -64,7 +71,7 @@ def main():
                 fehler.append(f"{rel}: verbotener Inhalt ({muster}): {m.group(0)[:40]}")
         ohne_code = re.sub(r"`[^`\n]*`", "", re.sub(r"```.*?```", "", text, flags=re.S))   # Wikilinks in Code zählen nicht
         for ziel in re.findall(r"\[\[([^\]\|#]+)(?:[#\|][^\]]*)?\]\]", ohne_code):
-            ziel = ziel.strip()
+            ziel = aliase.get(ziel.strip(), ziel.strip())
             verlinkt.add(ziel)
             if ziel not in notizen:
                 fehler.append(f"{rel}: Wikilink ohne Ziel [[{ziel}]]")

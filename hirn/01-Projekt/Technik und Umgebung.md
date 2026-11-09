@@ -2,8 +2,8 @@
 typ: wissen
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-02
-quelle: CLAUDE.md §4, §7, §10
+datum: 2026-11-09
+quelle: CLAUDE.md §4, §7, §10, .claude/skills/video-produktion/technik.md
 tags: [konto/gemeinsam, technik, umgebung, supabase]
 cssclasses: [konto-gemeinsam, typ-wissen]
 ---
@@ -18,8 +18,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 | **Supabase** (Frankfurt, Gratis-Plan) | Datei-Austausch: Buffer-Uploads, Render-Aufträge | privater Bucket `buffer-uploads`, ≤ 50 MB je Datei |
 | **Buffer** | Posten auf TikTok ([[Plattformregeln und Posting]]) | Essentials, ca. 12 $/Monat |
 | **GitHub** `Dagjori/TikTok-Automation` | Repo, öffentlich | PC klont ohne Login (daher noch nicht privat) |
-| **Claude-Artifact Cockpit** | Freigaben ([[Cockpit]]) | Planthemen = Archiv |
-| **Claude-Artifact Ideen-Studio** | tägliche Ideen und Skripte ([[Claude-Chat-Workflow]]) | https://claude.ai/artifact/PMqMpqpmSHYmuhY229ghZC; fragt Claude auf deinem claude.ai-Konto (`sample`), speichert in der Artifact-Datenbank (`db`); kann nicht recherchieren |
+| **Lokales Cockpit** (Laptop und Desktop-PC, seit 07.11.) | Ideen wählen, Skripte freigeben, Automatik, Produktion, Zahlen, Lernen ([[Cockpit]], [[Claude-Chat-Workflow]]) | `cockpit/README.md`; das frühere Claude-Artifact-Cockpit und das Ideen-Studio (Artifact) sind abgelöst |
 | **Geplante Aufgabe „Lernschleife Insights täglich“** | tägliche Auswertung 19:52 Berlin ([[Lernschleife und Insights]]) | Trigger `trig_01BBUe6iY7u7hpT4kEUSKn4a`, frische Sitzung je Lauf, Sonnet |
 
 ## Cloud-Umgebung („Default“)
@@ -44,17 +43,27 @@ Claude schreibt in `hirn/` im Repo (Master); `tools/hirn_abgleich.py` spielt jed
 - Dispatch (Aufgaben vom Handy an den PC) nur in begrenzter Beta und nur bei offener App.
 - Der Weg ist deshalb: Dienst auf dem PC, Austausch über Supabase.
 
-## Blender
+## Technik der Produktion (Entscheidung des Inhabers 09.11.2026)
+| Aufgabe | Werkzeug | Stand |
+|---|---|---|
+| 3D-Szenen, Zähler, Welten, Kamera; Text als HTML und CSS darüber | **three.js** | Kern beider Accounts |
+| Aufnahme Bild für Bild, Ton, Zusammenbau | `render.js`, `klang.py` bzw. `atmo.py`, `mux.sh` | Kern |
+| Fotorealistische Schlüsselszene, die three.js nicht trägt | **Blender ohne Oberfläche**, als Python-Skript, Bildfolge als Ebene in der three.js-Szene | höchstens 1–2 Szenen je Video |
+| Zusammenbau und Untertitel über **Remotion** | nur **Probelauf** an einem fertigen, geposteten Projekt | nicht für Videos, die gepostet werden |
+
+Alles bleibt eine reine Funktion der Zeit `t`. Keine KI-Bild-, Video- oder Stimmen-Generatoren außer der freigegebenen Stimme von Account 1. Einzelheiten und Regeln je Szene: `.claude/skills/video-produktion/technik.md`. **Offen:** Die Blender-Bildfolgen gehören nicht ins öffentliche Repo; wie sie zum rendernden Rechner kommen, ist noch nicht geklärt ([[Stand und nächste Schritte]]).
+
+## Blender in der Cloud
 `bpy` 5.2.3 in der Cloud (`/home/user/.venv-blender`; nach Container-Neustart neu: `python3 -m venv ~/.venv-blender && ~/.venv-blender/bin/pip install bpy==5.2.3`). Cycles nur CPU (130–300 s je Bild), Eevee unbrauchbar; ganze Videos in Blender-Optik nur über Bake → glTF → Three.js oder auf dem PC mit GPU.
 
 ## Stimme (ElevenLabs)
-Key nur als Netzwerk-Secret (`xi-api-key` für `api.elevenlabs.io`), nie in der Sitzung sichtbar; `voices_read` für die Bibliothek; Speech-to-Text für Analysen und den Abgleich Sprechtext gegen Spracherkennung. Reichen die Credits nicht: nächstgrößerer Plan (Free hat keine kommerzielle Lizenz). Details [[Stimme und Ton Simulierbar]].
+Key nur als Netzwerk-Secret (`xi-api-key` für `api.elevenlabs.io`), nie in der Sitzung sichtbar; `voices_read` für die Bibliothek; Speech-to-Text für Analysen und den Abgleich Sprechtext gegen Spracherkennung. Reichen die Credits nicht: nächstgrößerer Plan (Free hat keine kommerzielle Lizenz). Genau eine Aufnahme je Skript, das ganze Skript in einer Anfrage. Details [[Stimme ElevenLabs Simulierbar]].
 
 ## Kosten (**S**)
 ElevenLabs ca. 5–25 $/Monat, Buffer ca. 12 $/Monat, Claude-Abo. Render-PC vorhanden (keine Zusatzkosten).
 
 ## Werkzeuge im Repo
-`pipeline/` (render.js, mux.sh, klang.py, atmo.py, tts.py, post_buffer.py, qc/, sim/, engine/, projekte/, render_dienst/) · `tools/` (monitor_kanaele.py, trend_score.py, telegram_senden.py, plan_pdf.mjs, regelwerk_pdf.mjs, account2_uebersicht.py, sitzung_sichern.py, hirn_aus_skills.py, stillgelegt seit 07.11.) · `data/` (plan, ideen, monitor, trends) · `docs/` (18-render-pc.md, cockpit, plan, regelwerk, trends) · `marke/` (Logos, Account-2-Marke).
+`pipeline/` (render.js, mux.sh, klang.py, atmo.py, tts.py, aussprache.json, post_buffer.py, qc/, sim/, engine/, projekte/, render_dienst/) · `cockpit/` (lokales Cockpit) · `.claude/skills/` (themen-skript, stimme-elevenlabs, video-produktion, rea-video) · `tools/` (chat_befehle.py, testblock.py, hirn_pruefen.py, hirn_abgleich.py, hirn_farben.py, monitor_kanaele.py, trend_score.py, telegram_senden.py, plan_pdf.mjs, regelwerk_pdf.mjs, account2_uebersicht.py, sitzung_sichern.py; hirn_aus_skills.py ist seit 07.11. stillgelegt) · `data/` (plan, ideen, monitor, trends) · `docs/` (18-render-pc.md, cockpit, plan, regelwerk, trends) · `marke/` (Logos, Account-2-Marke).
 **Render-Selbstheilung (02.11.):** `render.js` öffnet bei hängenden Screenshots den Browser neu und wiederholt das Bild ([[Render-Dienst Windows-PC]]).
 
 ## Siehe auch

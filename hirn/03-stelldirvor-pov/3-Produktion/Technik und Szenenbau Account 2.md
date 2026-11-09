@@ -2,13 +2,13 @@
 typ: anleitung
 konto: stelldirvor
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/stelldirvor-video/technik.md
+datum: 2026-11-09
+quelle: .claude/skills/video-produktion/stelldirvor.md, .claude/skills/video-produktion/technik.md (bis 06.11. aus dem entfernten Skill stelldirvor-video)
 tags: [konto/stelldirvor, technik, render, posting]
 cssclasses: [konto-stelldirvor, typ-anleitung]
 ---
 
-> Quelle bis 06.11.: `.claude/skills/stelldirvor-video/technik.md` (Skill am 06.11. entfernt). Seitdem wird diese Notiz direkt gepflegt; `tools/hirn_aus_skills.py` ist stillgelegt. Produktion: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]].
+> Diese Notiz wird direkt gepflegt (Abteil `3-Produktion`). Ablauf: Skill `video-produktion`, Teil `stelldirvor.md`; neuere Regeln: [[REA stelldirvor Regelwerk]]. **Technik seit 09.11.2026:** three.js ist der Kern; lebt das Ereignis oder der Höhepunkt davon, echt auszusehen (Wasser, Wolken, Feuer, Rauch, Makro im Körper), sind höchstens 2 Blender-Schlüsselszenen je Video erlaubt (`.claude/skills/video-produktion/technik.md` §3); Remotion nur als Probelauf.
 
 # Technik und Szenenbau Account 2
 
@@ -27,7 +27,7 @@ cssclasses: [konto-stelldirvor, typ-anleitung]
 | `pipeline/projekte/_demo-lunar-pov/` | vollständiges Muster (Demo, nicht posten) |
 
 ## Projektordner
-`projekte/<name>/`: `szene.html` (lädt `hud.css` + `stil_lunar_pov.css`, Importmap für three), `szene.js`, `skript.json` (Titelfrage, Rechnung, Anzeige-Phasen, Sätze, `bild_text_abgleich`, Faktenzeile, Quellen, Caption; **kein** `segmente`-Feld → `render.js` schreibt keine Stimm-Schätzung; seit 02.11. abends zusätzlich `skript_id`, `welt`, `standpunkt`, `tageszeit_verlauf`, **`zeitraffer`**, **`bewegungsplan`**, **`lern_notizen`**, Aufbau in [[Ablauf Account 2]] „Skript-Anforderungen“), `ton.json`. Rechnung mit Test in `pipeline/sim/<name>.mjs`. Das Skript kommt aus dem Ideen-Studio (ArtifactData-Sammlung `skripte`, Dokument-ID `acc2-JJJJ-MM-TT-mittag|abend`) oder vom Inhaber; Titelfrage, Sätze, Faktenzeile werden 1:1 übernommen.
+`projekte/<name>/`: `szene.html` (lädt `hud.css` + `stil_lunar_pov.css`, Importmap für three), `szene.js`, `skript.json` (Titelfrage, Rechnung, Anzeige-Phasen, Sätze, `bild_text_abgleich`, Faktenzeile, Quellen, Caption; **kein** `segmente`-Feld → `render.js` schreibt keine Stimm-Schätzung; seit 02.11. abends zusätzlich `skript_id`, `welt`, `standpunkt`, `tageszeit_verlauf`, **`zeitraffer`**, **`bewegungsplan`**, **`lern_notizen`**, Aufbau in [[Ablauf Account 2]] „Skript-Anforderungen“), `ton.json`. Rechnung mit Test in `pipeline/sim/<name>.mjs`. Das Skript kommt aus dem Skill `themen-skript` im Cockpit (Dokument-ID `acc2-JJJJ-MM-TT-mittag|abend`) oder vom Inhaber; Titelfrage, Sätze, Faktenzeile werden 1:1 übernommen.
 
 ## Szenengerüst (`szene.js`)
 ```js
@@ -44,7 +44,7 @@ await document.fonts.load("400 80px 'Lunar Serif'"); await document.fonts.load("
 const szene = new THREE.Scene(); szene.fog = new THREE.FogExp2("#AAB8CB", 3.6e-5);
 const kam = new THREE.PerspectiveCamera(52, 1080 / 1920, 0.1, 40000);
 const pov = new PovKamera(kam, { pos: AUGE, ziel: BLICK, fov: 52 }).atmen()
-  .bewegung([{ t: 30, pos: AUGE_2 }])                  // langsame Fahrt (weich, Ease inOutSine) – erlaubt und gewollt, keine harten Schnitte
+  .bewegung([{ t: 30, pos: AUGE_2 }])                  // langsame Fahrt (weich, Ease inOutSine) – erlaubt und gewollt (harte Schnitte höchstens 1–3, gezielt)
   .blick([{ t: 24, ziel: BLICK_2 }])                   // Schwenk, folgt dem Geschehen
   .beben({ von, bis, staerke: 0.2 }).stoss({ t: T_HIER, staerke: 1.6 }).kippen({ t: T_HIER + 0.1, roll: 13 });
 const himmel = new Himmel(szene, { zenit, horizont, sonnenRichtung, zirren: 0.5 });

@@ -83,7 +83,7 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
     let p = b.ideen_vorlage.replace("{{LERNSTAND}}", () => lernstand(konto)).replace("- {{BISHER}}", () => bisher.map((t) => `- ${t}`).join("\n")).replace("{{ZUTATEN}}", () => zutaten);
     if (wunsch) p = p.replace("AUFGABE\n", () => `MEIN WUNSCH FÜR HEUTE: ${wunsch}\n\nAUFGABE\n`);
     p += `\n\nVideo-Tag: ${datum}. Alle Aussagen müssen für das Jahr ${datum.slice(0, 4)} gelten.`;
-    p += '\n\nHINWEIS COCKPIT: Nutze die Websuche für die Originalitäts-Prüfung und für Belege (zügig, je Idee 1 bis 3 Suchen). Lies keine Dateien und ändere nichts. Antworte am Ende ausschließlich mit dem JSON-Objekt {"gestrichen": [...], "ideen": [...]} mit genau 10 Ideen, ohne Text davor oder danach.';
+    p += '\n\nHINWEIS COCKPIT: Nutze die Websuche zuerst für die Nachfrage (Abschnitt NACHFRAGE: Suchvorschläge und steigende Suchanfragen zu den Suchstämmen), danach für die Originalitäts-Prüfung und für Belege (zügig, je Idee 1 bis 3 Suchen). Lies keine Dateien und ändere nichts. Antworte am Ende ausschließlich mit dem JSON-Objekt {"gestrichen": [...], "ideen": [...]} mit genau 10 Ideen, ohne Text davor oder danach.';
     return { text: p, zutaten };
   }
 

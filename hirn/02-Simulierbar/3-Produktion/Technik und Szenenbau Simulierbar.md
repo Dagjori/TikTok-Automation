@@ -2,8 +2,8 @@
 typ: anleitung
 konto: simulierbar
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/simulierbar-video/technik.md, .claude/skills/simulierbar-video/SKILL.md (Neuregeln 02.11.2026 abends), CLAUDE.md §4, CLAUDE.md §7, CLAUDE.md §10
+datum: 2026-11-09
+quelle: .claude/skills/video-produktion/SKILL.md, .claude/skills/video-produktion/simulierbar.md, .claude/skills/video-produktion/technik.md, CLAUDE.md §4, CLAUDE.md §7, CLAUDE.md §10
 tags: [konto/simulierbar, technik, three-js, szenenbau, render, mux, posting, pipeline]
 cssclasses: [konto-simulierbar, typ-anleitung]
 ---
@@ -13,21 +13,21 @@ cssclasses: [konto-simulierbar, typ-anleitung]
 Baukasten, Dateien, Szenengerüst, Render, Mux und Posting-Befehle für `@simulierbar`. Look je Stil: [[Stile 17 bis 21]]. Licht-Funktionen: [[Licht und Atmosphäre Simulierbar]]. HUD-Bausteine: [[Design und Layout Simulierbar]]. Rhythmus, Modelle, Agenten: [[Produktion Rhythmus und Modelle]].
 
 ## Werkzeug-Regeln
-- **Nur Three.js und/oder Blender** (31.10.; auch kombiniert: Blender backen → glTF → Three.js, ca. 0,9 s/Bild). Keine anderen Video-, Vorlagen- oder KI-Generatoren (keine KI-Bild- oder Video-Generatoren). HUD, Untertitel, Karten sind HTML/CSS in der Three.js-Seite; Cycles nur für Standbilder, Logo, Kurzszenen. Referenz: github.com/stochosfrance/lowpoly-reel (MIT).
+- **three.js ist der Kern** (Entscheidung 09.11.2026); Blender ohne Oberfläche nur für 1–2 realistische Schlüsselszenen je Video oder zum Backen von Objekten (Blender backen → glTF → Three.js, ca. 0,9 s/Bild); Remotion nur als Probelauf an einem fertigen Projekt (`.claude/skills/video-produktion/technik.md`). Keine anderen Video-, Vorlagen- oder KI-Generatoren (keine KI-Bild- oder Video-Generatoren). HUD, Untertitel, Karten sind HTML/CSS in der Three.js-Seite; Cycles nur für Standbilder, Logo, Kurzszenen. Referenz: github.com/stochosfrance/lowpoly-reel (MIT).
 - Nur Assets und Schriften mit freier Lizenz (Lizenzdatei ablegen). Keine echten Banknoten- oder Münzmotive, keine Marken; Banknoten und Münzen nur in eigener, neutraler Gestaltung.
 - **Blender:** `bpy` 5.2.3 in der Cloud (`/home/user/.venv-blender`; nach Container-Neustart neu: `python3 -m venv ~/.venv-blender && ~/.venv-blender/bin/pip install bpy==5.2.3`). Cycles nur CPU (130–300 s je Bild), Eevee unbrauchbar; ganze Videos in Blender-Optik nur über Bake → glTF → Three.js oder auf dem PC mit GPU.
 - Alles muss eine **reine Funktion von `t`** sein (jedes Bild einzeln renderbar). Werte für Zähler und Objekte kommen aus der getesteten Rechnung.
-- Pipeline-Kette (seit 02.11. abends): **Skript liegt vor** (Ideen-Studio) + Eingangsprüfung (GELD, Themen-Logik, keine 1:1-Kopie) → Rechnung als Code mit Tests (`pipeline/sim/`), Abweichungen melden → `skript.json` + Regie-Text (Quellen nur intern) → Stimme, Tempo prüfen → Szene in Three.js → Standbilder gegen die Qualitätslatte prüfen, Rendern → Ton/Mix → Prüfung → Buffer, `--nachpruefen`. Werkzeuge: `pipeline/README.md`.
+- Pipeline-Kette (seit 09.11.2026): **freigegebenes Skript liegt vor** (Skill `themen-skript`) + Eingangsprüfung → Rechnung als Code mit Tests (`pipeline/sim/`), Abweichungen melden → `skript.json` mit Sprechtext (Quellen nur intern) → Stimme: Textprüfung, **genau eine Aufnahme** (Skill `stimme-elevenlabs`) → Szene in Three.js **auf die Wortzeiten der fertigen Stimme** → Standbilder gegen die Qualitätslatte prüfen, Rendern → Ton/Mix → Prüfung → Buffer, `--nachpruefen`. Übersicht: [[Pipeline und Skills]]. Werkzeuge: `pipeline/README.md`.
 
 ## Ablauf je Video (Zeit: Schätzung)
 | # | Schritt | Zeit |
 |---|---|---|
-| 0 | **Skript liegt vor** (ArtifactData-Sammlung `skripte` des Ideen-Studios, Dokument-ID `acc1-JJJJ-MM-TT-mittag\|abend`, oder vom Inhaber eingefügt); Eingangsprüfung: GELD, Themen-Logik, Ausschlussthemen, Wörter 150–190, keine 1:1-Kopie; Übernahme inhaltlich 1:1 ([[Videoaufbau Simulierbar]] Abschnitt 5.2) | 20–30 Min. |
+| 0 | **Skript liegt vor** (Cockpit, Dokument-ID `acc1-JJJJ-MM-TT-mittag\|abend`, oder vom Inhaber eingefügt); Eingangsprüfung: Geld und Euro-Ergebnis, Format genannt, Frage zum Tippen, zweite Frage, Ausschlussthemen, Originalität, Phasen-IDs; Übernahme inhaltlich 1:1 ([[Skriptaufbau Simulierbar]] §7) | 20–30 Min. |
 | 1 | **Rechnung** als Code mit Tests in `pipeline/sim/<thema>.mjs` (Netto-Modul `pipeline/sim/netto.mjs` für deutsche Gehaltsrechnungen), aus `rechenweg`, `zahlen`, `annahmen`; Quellen nur intern; liefert Zählerverläufe, Führungswechsel, Ergebnis, „Warum?“-Faktoren, zweite Überraschung; Abweichung zum Skript = Meldung | 30–60 Min. |
-| 2 | **Stil und Teamfarben** aus dem Skript ableiten ([[Stile 17 bis 21]] Wahlregeln), Begründung in `stil_begruendung`; **Beat-Blatt** (Effekt, Kamera, Licht je Segment, [[Videoaufbau Simulierbar]] Abschnitt 6) | 20 Min. |
-| 3 | **`skript.json`** `projekte/<name>/skript.json` mit `"skill": "video-produktion"`, `"konto": "simulierbar"`, `"stil": "<Nr> <Name>"`, `stil_begruendung`, `teamfarben`, Segmenten (`text` + `sprechtext`), `bild_text_abgleich`, Caption, `lern_notizen` (Regie-Text [[Stimme und Ton Simulierbar]]) | 30 Min. |
-| 4 | **Stimme**: `python3 tts.py projekte/<name>` → `audio/stimme.mp3` + `audio/timing.json`; sofort `qc/massstab.py` für Wörter/Tempo/Satzpausen (zu viele Wörter oder zu langsam = Text kürzen, nicht Stimme beschleunigen) | 5–10 Min. |
-| 5 | **Szene** `szene.html` + `szene.js` aus dem Gerüst unten: Welt im Stil-Baukasten, Licht und Atmosphäre, Kamera-Regie, HUD, Effekte nach dem Beat-Blatt. Fehlende Objekte im Stil-Modul ergänzen (wiederverwendbar) | 2–4 Std. |
+| 2 | **Stil und Teamfarben** aus dem Skript ableiten ([[Stile 17 bis 21]] Wahlregeln), Begründung in `stil_begruendung`; **Beat-Blatt** (Effekt, Kamera, Licht je Segment, [[Videoaufbau Simulierbar]] §3 und §4) | 20 Min. |
+| 3 | **`skript.json`** `projekte/<name>/skript.json` mit `"skill": "video-produktion"`, `"konto": "simulierbar"`, `"stil": "<Nr> <Name>"`, `stil_begruendung`, `teamfarben`, Segmenten (`text` + `sprechtext`), `bild_text_abgleich`, Caption, `lern_notizen` (Sprechtext im Textformat: [[Stimme ElevenLabs Simulierbar]]) | 30 Min. |
+| 4 | **Stimme** (Skill `stimme-elevenlabs`): `python3 qc/stimme_vorab.py projekte/<name>` bis „BEREIT“ (kostenlos), dann **einmal** `python3 tts.py projekte/<name>` → `audio/stimme.mp3` + `audio/timing.json`. Die Stimme bleibt, wie sie ist: nie wegen Länge oder Tempo neu vertonen, nie den Text nach der Aufnahme kürzen ([[Stimme ElevenLabs Simulierbar]] §5) | 5–10 Min. |
+| 5 | **Szene** `szene.html` + `szene.js` aus dem Gerüst unten, gebaut auf die Wortzeiten aus `timing.json`: Welt im Stil-Baukasten, Licht und Atmosphäre, Kamera-Regie, HUD, Effekte nach dem Beat-Blatt. Fehlende Objekte im Stil-Modul ergänzen (wiederverwendbar) | 2–4 Std. |
 | 6 | **Standbilder** an 6–8 Schlüsselstellen (Hook, Regeln, Wendung, Ergebnis, Warum, Schluss) rendern, gegen Design, **Qualitätslatte** und Skript-Bild-Abgleich prüfen, nachbessern | 20–40 Min. |
 | 7 | **Render** über den Render-Dienst auf dem Windows-PC (unten); bei Exit 3 Rückfall Cloud | PC: Minuten; Cloud ca. 1–3 Std. Rechenzeit |
 | 8 | **Prüfung** ([[Prüfung und Abnahme Simulierbar]]): Skripte + Kontaktbogen + Sichtprüfung inkl. Qualitätslatte, Spannungskurve, Variation; wirkt etwas billig, wird die Abnahme verweigert | 20 Min. |
@@ -53,7 +53,7 @@ Neue Objekte (Zapfsäule, Brotdose, Waschmaschine …) gehören ins Stil-Modul, 
 ## Projektordner und `skript.json`
 `pipeline/projekte/<name>/`: `skript.json`, `audio/` (stimme.mp3, timing.json, ereignisse.json), `szene.html`, `szene.js`; Rechnung mit Test in `pipeline/sim/<name>.mjs`.
 
-`skript.json`: `titel`, `skill`, `konto`, `stil` (`"<Nr> <Name>"`, Nr 1–15 oder 17–21), `stil_begruendung`, `teamfarben`, `klangteppich`, `segmente` (`id`, `phase`, `text` = Untertitel, `sprechtext` = Regie-Text), `bild_text_abgleich` (zugleich Beat-Blatt), `caption`, `quellen` und `annahmen` (nur intern), `skript_quelle` (Dokument-ID im Ideen-Studio bzw. „vom Inhaber eingefügt“), **`lern_notizen`** (für die Lernschleife, unten). Das Skript selbst liefert das Ideen-Studio (ArtifactData-Sammlung `skripte`, Felder `konto`, `datum`, `slot`, `titel`, `thema`, `skript`, `rechenweg`, `zahlen`, `annahmen`, `quellen`, `caption`, `status`).
+`skript.json`: `titel`, `skill`, `konto`, `stil` (`"<Nr> <Name>"`, Nr 1–15 oder 17–21), `stil_begruendung`, `teamfarben`, `klangteppich`, `format`, `suchbegriff`, `zweite_frage`, `segmente` (`id`, `phase`, `text` = Untertitel, `sprechtext` = Text für die Stimme), `bild_text_abgleich` (zugleich Beat-Blatt), `caption`, `quellen` und `annahmen` (nur intern), `skript_quelle` (Dokument-ID bzw. „vom Inhaber eingefügt“), `korrekturen`, `testbloecke`, **`lern_notizen`** (für die Lernschleife, unten). Das Skript selbst liefert der Skill `themen-skript` (Felder in `.claude/skills/themen-skript/simulierbar.md` B5).
 ```json
 {
   "titel": "…", "skill": "video-produktion", "konto": "simulierbar",
@@ -62,24 +62,24 @@ Neue Objekte (Zapfsäule, Brotdose, Waschmaschine …) gehören ins Stil-Modul, 
   "segmente": [
     {"id": "hook", "phase": "hook",
      "text": "Spur wechseln oder bleiben? Wer ist im Stau wirklich schneller?",
-     "sprechtext": "Spur wechseln – oder bleiben?\n[curious] Wer ist im Stau WIRKLICH schneller?",
+     "sprechtext": "Spur wechseln oder bleiben?\nWer ist im Stau wirklich schneller?",
      "bild_text_abgleich": [{"gesagt": "…", "bild": "…"}]}
   ],
   "caption": "…", "quellen": ["…"], "skript_quelle": "acc1-2026-11-03-mittag",
   "lern_notizen": {
     "thema": "Spurwechsel im Stau", "frage": "Wer ist im Stau wirklich schneller?", "laenge_s": 71.2,
-    "hook": "Spur wechseln – oder bleiben? Wer ist im Stau WIRKLICH schneller?", "hook_typ": "Duell-Frage",
+    "hook": "Spur wechseln oder bleiben? Wer ist im Stau wirklich schneller?", "hook_typ": "Duell-Frage",
     "stil": "18 Dunkles Studio (Produktlicht)", "zoom": "ja bei Wendung 1 und Ergebnis, sonst Fahrt/Schärfenverlagerung",
     "animationen": [{"t": 2.0, "art": "kamerafahrt", "was": "Dolly vor auf beide Schalen"}, {"t": 22.5, "art": "zoom+lichtwechsel", "was": "Wendung 1"}],
     "licht": "Spot-Wechsel auf Anna bei Wendung 1, Strahlen steigen bis zum Ergebnis", "effekte": ["glow-puls Sieger bei 42,3 s", "zoomwisch bei 30,0 s"],
-    "zeitpunkte": {"folgen": 20.3, "wendung_1": 22.5, "ergebnis": 42.3, "warum": 45.0, "pointe": 60.1},
-    "tempo": {"woerter": 172, "wps": 2.31}, "caption": "…", "besonderheiten": "…"
+    "zeitpunkte": {"wendung_1": 13.5, "kipp": 44.0, "ergebnis": 54.0, "warum": 57.0, "pointe": 63.0, "schlusskarte": 68.5},
+    "woerter": 172, "stimmdauer_s": 70.4, "caption": "…", "besonderheiten": "…"
   }
 }
 ```
-**Seit 07.11.2026** (Skill `video-produktion`, Teil `simulierbar.md`): Segment-IDs `hook`, `regeln`, `falle`, `rennen`, `wendung1…`, `kipp`, `ergebnis`, `warum`, `pointe`, `schlusskarte` (Prüfpunkte R5/R6 lesen `ergebnis` und `kipp`); in `lern_notizen` zusätzlich Helligkeit des Stils (`"hell"`/`"dunkel"`), Zeitpunkte `kipp` und `schlusskarte`, Silben/s; `folgen` nur im Testvideo. Das Beispiel oben stammt aus der Zeit davor.
+Das Beispiel zeigt nur die Form der Felder; Thema und Zahlen sind Platzhalter (das Thema ist ein altes Alltag-Beispiel ohne Euro-Ergebnis, neue Videos sind Geld-Themen). **Segment-IDs:** `hook`, `regeln`, `falle`, `rennen`, `wendung1…`, `kipp`, `ergebnis`, `warum`, `pointe`, `schlusskarte` (Prüfpunkte R5/R6 lesen `ergebnis` und `kipp`). In `lern_notizen` zusätzlich: Helligkeit des Stils (`"hell"`/`"dunkel"`), `format`, `zweite_frage` (gesetzt bei … s, aufgelöst bei … s), `testbloecke`, `teil`, Suchbegriff, Auffälligkeiten der Stimme (Segment und Wortlaut), bei Testblock „mit“ `folgen_hinweis`. Werte zum Sprechtempo werden seit 09.11.2026 nicht mehr festgehalten.
 
-**`lern_notizen`** hält fest, was die Lernschleife (täglich 20:00 Berlin, [[Lernschleife und Insights]]) später mit den Buffer-Zahlen verknüpft: Thema und Frage, Länge, Hook-Formulierung und -typ, Stil, Animationen (Art und Zeitpunkt in Sekunden), Zoom ja/nein, Licht und Effekte mit Zeitpunkt, Zeitpunkte (Folgen-Aufruf, Wendungen, Ergebnis, „Warum?“, Pointe), Wörter und Tempo (aus `qc/massstab.py`), Caption. Zeiten kommen aus `audio/timing.json` und `audio/ereignisse.json`, nicht geschätzt. Ausfüllen nach der Abnahme, vor dem Posten.
+**`lern_notizen`** hält fest, was die Lernschleife (täglich 19:52 Berlin, [[Lernschleife und Insights]]) später mit den Zahlen verknüpft: Thema und Frage, Länge, Hook-Formulierung und -typ, Stil, Animationen (Art und Zeitpunkt in Sekunden), Zoom ja/nein, Licht und Effekte mit Zeitpunkt, Zeitpunkte (Wendungen, Kipp-Moment, Ergebnis, „Warum?“, Pointe, Schlusskarte), Wörter, Stimmdauer, Caption. Zeiten kommen aus `audio/timing.json` und `audio/ereignisse.json`, nicht geschätzt. Ausfüllen nach der Abnahme, vor dem Posten.
 
 ## Szenengerüst
 `szene.html`:
@@ -131,8 +131,8 @@ const welt = { szene, kamera, post, update(t) {
 
 M.tafel({ y: 166, links: { team: "a", einheit: "€" }, rechts: { team: "b", einheit: "€" }, werte: (t) => ({ a, b }), uhr: { ein: "Was", zeit: (t) => … } });
 // Folgen-Hinweis nur im Testblock „mit“ (seit 08.11., ersetzt M.folgen): if (skript.testbloecke?.folgen_hinweis === "mit") M.hinweis({ text: skript.folgen_hinweis });
-M.untertitel({ stil: "kontur", unten: 1450, groesse: 64 });
-M.schleife({ ab: T("Was#2") - 0.3 });
+M.untertitel({ max: 4, unten: 1450, groesse: 64 });   // Blöcke von 1–4 Wörtern, Schlüsselwort in der Teamfarbe
+// M.schleife({ ab: … }) nur, wenn die Schleife gewollt ist (freiwillig)
 
 const zl = new Zeitleiste(buehne); zl.shot(0, welt);
 const gl = buehne.renderer.getContext(), px = new Uint8Array(4);
@@ -174,6 +174,6 @@ python3 post_buffer.py --nachpruefen                # nach dem Posten: öffentli
 - Mehr zu Buffer, Nachprüfung und Kennzeichnung: [[Plattformregeln und Posting]].
 
 ## Siehe auch
-- [[Stile 17 bis 21]] · [[Licht und Atmosphäre Simulierbar]] · [[Design und Layout Simulierbar]] · [[Stimme und Ton Simulierbar]] · [[Prüfung und Abnahme Simulierbar]]
+- [[Stile 17 bis 21]] · [[Licht und Atmosphäre Simulierbar]] · [[Design und Layout Simulierbar]] · [[Stimme ElevenLabs Simulierbar]] · [[Klangteppich und Ton Simulierbar]] · [[Prüfung und Abnahme Simulierbar]] · [[Pipeline und Skills]]
 - [[Render-Dienst Windows-PC]] · [[Produktion Rhythmus und Modelle]] · [[Plattformregeln und Posting]] · [[Account Simulierbar Überblick]]
 - [[Lernschleife und Insights]] · [[Claude-Chat-Workflow]] · [[Befehl Ideen und Skripte Simulierbar]] · [[Regelwerk Simulierbar]]

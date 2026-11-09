@@ -2,7 +2,7 @@
 typ: regel
 konto: simulierbar
 status: aktuell
-datum: 2026-11-07
+datum: 2026-11-09
 quelle: .claude/skills/rea-video/ · Korpus simulierbar (lokal), Synthese vom 2026-11-07
 tags: [konto/simulierbar, rea, regelwerk]
 cssclasses: [konto-simulierbar, typ-regel]
@@ -10,7 +10,9 @@ cssclasses: [konto-simulierbar, typ-regel]
 
 # REA Simulierbar Regelwerk
 
-> **Freigegeben am 07.11.2026 (Inhaber per Klick).** Die belastbaren Regeln sind Standard, die vorläufigen Richtwert; weitere Videos und die Lernschleife dürfen sie verschieben, jede Änderung nur mit Freigabe. Quelle der Regeln für den künftigen Produktions-Skill von Account 1 `@simulierbar`. Methode: [[REA-Video Methode]]. Nur Bauweise, nie Inhalt oder Thema der Vorbilder. Kennzeichnung **F** gemessen/gesehen · **S** gefolgert · **A** Annahme. Belege als Video-IDs des lokalen Korpus.
+> **Freigegeben am 07.11.2026 (Inhaber per Klick).** Die belastbaren Regeln sind Standard, die vorläufigen Richtwert; weitere Videos und die Lernschleife dürfen sie verschieben, jede Änderung nur mit Freigabe. Quelle der Regeln für die Skills `themen-skript` und `video-produktion` von Account 1 `@simulierbar`.
+>
+> **Seit 09.11.2026 (Entscheidung des Inhabers):** Jede Regel oder Empfehlung dieser Notiz, die **unser** Sprechtempo vorgibt (Wörter je Sekunde, Silben, Satzlängen als Pflicht), **entfällt**. Die Messwerte der fremden Videos bleiben als Recherche-Daten stehen. Der Aufbau ist verfeinert ([[Skriptaufbau Simulierbar]]); das Duell ist keine Pflicht mehr ([[Themenfindung Simulierbar]]). Methode: [[REA-Video Methode]]. Nur Bauweise, nie Inhalt oder Thema der Vorbilder. Kennzeichnung **F** gemessen/gesehen · **S** gefolgert · **A** Annahme. Belege als Video-IDs des lokalen Korpus.
 
 ## Kurzfazit
 Die starken Vorbilder tun fünf Dinge, die die schwachen auslassen (F, Zählung): **(1)** Das erste Bild erklärt das Duell ohne Ton. **(2)** Schlüsselwörter sind nach Bedeutung eingefärbt. **(3)** Zähler laufen sichtbar auf einer Anzeigetafel und leuchten bei wichtigen Zahlen auf. **(4)** Die Auflösung kommt spät, bei rund 80 % der Länge statt 57 %, mit 4–5 Wendepunkten und einem neuen Reiz alle rund 2,6 s. **(5)** Das Video endet auf einer **Schlusskarte** mit Fazit oder Pointe statt auf einer offenen Frage. Gesprochen wird in sehr kurzen Sätzen (Median 4–5 Wörter), schneller als bisher bei uns (2,4–2,7 Wörter/s), und eher neutral als durchgehend in Du-Form.
@@ -93,10 +95,10 @@ Text im Bild im Hook (6/6) · Ton ab 0,0 s, erstes Wort im Median bei 0,04 s (6/
 |---|---|---|
 | Untertitel Wort für Wort, aktuelles Wort gelb | satzweise Blöcke von 1–4 Wörtern (5/5), Schlüsselwort nach Bedeutung gefärbt (6/6); Hervorhebung des gesprochenen Worts 0/6 | **übernommen:** Blöcke von 1–4 Wörtern, Schlüsselwort in der Teamfarbe seiner Seite |
 | Folgen-Aufruf bei ca. 20 s | kein ausdrücklicher Aufruf (viral 6/6, Vergleich 3/3) | **übernommen:** keine Pflicht mehr, die Lernschleife testet mit und ohne |
-| Sprechtempo 2,2–2,5 Wörter/s | 2,42–2,70 Wörter/s | **übernommen:** 2,3–2,7 Wörter/s, Sätze 3–5 Wörter |
+| Sprechtempo 2,2–2,5 Wörter/s | 2,42–2,70 Wörter/s | ~~übernommen: 2,3–2,7 Wörter/s, Sätze 3–5 Wörter~~ **(entfällt seit 09.11.2026:** keine Vorgabe zum Sprechtempo; Sätze meist 4–10 Wörter als Hinweis, [[Stimme ElevenLabs Simulierbar]]**)** |
 | Schlusssatz und Schleife | Schlusskarte 6/6 (Vergleich 1/3), Schleife nur 3/6 | **übernommen:** Schlusskarte Pflicht, Schleife freiwillig |
 | 3D-Welten | alle Vorbilder 2D | bleibt 3D (Qualitätsentscheidung); Lesbarkeits- und Zählerregeln werden übernommen |
-| Ergebnis bei 40–54 s, Ergebnis = Höhepunkt | Auflösung bei 79–83 % der Länge (Vergleich 57 %), Kipp-Moment davor bei ca. 64 % | **übernommen:** Kipp-Moment ca. 45 s, Endstand bei ca. 80 % (bei 70 s ca. 55–58 s), danach Warum, Pointe, Schlusskarte kompakt |
+| Ergebnis bei 40–54 s, Ergebnis = Höhepunkt | Auflösung bei 79–83 % der Länge (Vergleich 57 %), Kipp-Moment davor bei ca. 64 % | **übernommen:** Kipp-Moment ca. 45 s, Endstand bei ca. 80 % (bei 70 s ca. 55–58 s), danach Warum, Pointe, Schlusskarte kompakt (**seit 09.11.2026 verfeinert:** Kipp-Moment bei ca. 60–65 %, Ergebnis bei ca. 75–80 %, höchstens 12 s danach, [[Skriptaufbau Simulierbar]]) |
 | alle Stile gleichrangig | dunkles Farbschema mit Leuchtfarben 4/6 gegen 1/3 (R13, R23) | **übernommen:** dunkle Welten mit Leuchtakzenten zuerst; helle Pastell- und Papier-Stile (1, 2, 6, 10, 14) nur, wenn das Thema sie klar trägt; die Lernschleife misst hell gegen dunkel (eigene Zahlen 05.11.: Stil 18 schwächer, deshalb kein Verbot) |
 | Du-Ansprache durchgehend | durchgehend Du 2/6 gegen 3/3 (R15, R19) | **übernommen:** neutral erzählen, Du höchstens im Hook |
 | fester Schlusssatz „Was sollen wir als Nächstes zeigen? …“ | mit offener Frage enden 1/6 gegen 2/3 (R22), kein ausdrücklicher Aufruf 6/6 | **entfällt ganz:** Ende ist die Fazit- bzw. Pointenkarte; die Kommentarfrage steht nur in der Caption |

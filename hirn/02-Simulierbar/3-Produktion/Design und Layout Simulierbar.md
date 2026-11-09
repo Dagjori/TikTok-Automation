@@ -2,8 +2,8 @@
 typ: regel
 konto: simulierbar
 status: aktuell
-datum: 2026-11-02
-quelle: .claude/skills/simulierbar-video/design.md, CLAUDE.md §6, SKILL.md (Neuregeln 02.11.2026 abends)
+datum: 2026-11-09
+quelle: .claude/skills/video-produktion/simulierbar.md, pipeline/engine/massstab.js, pipeline/engine/sim_hud.css, CLAUDE.md §6 (bis 06.11. aus dem entfernten Skill simulierbar-video)
 tags: [konto/simulierbar, design, hud, layout, untertitel, teamfarben]
 cssclasses: [konto-simulierbar, typ-regel]
 ---
@@ -69,7 +69,7 @@ const M = new Massstab(hud, zp, {
 - **Erlaubt:** Elemente leuchten kurz auf, wenn sich etwas ändert: Zahl der Tafel bei neuem Wert, die **führende Seite** (Teamrand, Teamverlauf und Schein sind in `sim_hud.css` vorhanden), Chip beim Erscheinen (`.ms-puls`, Teamring), Uhrbogen, Sieger-Banner der Bilanzkarte. Weicher Puls 0,4–0,8 s, danach zurück in den Ruhezustand.
 - **Maß:** höchstens ein Element zugleich pulsieren lassen; Glow überstrahlt nie Zahlen oder Untertitel; keine schnellen Helligkeitswechsel (über 3 pro Sekunde). Weitere Glow-Effekte, die `sim_hud.css` noch nicht kennt, werden dort ergänzt (Opus, wiederverwendbar), nicht in der Szene gebaut.
 - **Nicht erlaubt:** große Sticker/Stempel, schräge Plaketten, Strahlenkränze, Comic-Konturen am Merksatz.
-- **Zusammenspiel mit der Welt:** Das HUD-Aufleuchten fällt zeitlich mit dem Ereignis in der Welt zusammen (Münze fällt → Zahl leuchtet; Waage kippt → Seite leuchtet), gemeldet über `M.melde(...)`, damit der Effekt-Klang im Ton mitläuft ([[Stimme und Ton Simulierbar]] §4). Verteilung über das Video: [[Videoaufbau Simulierbar]] §6.
+- **Zusammenspiel mit der Welt:** Das HUD-Aufleuchten fällt zeitlich mit dem Ereignis in der Welt zusammen (Münze fällt → Zahl leuchtet; Waage kippt → Seite leuchtet), gemeldet über `M.melde(...)`, damit der Effekt-Klang im Ton mitläuft ([[Klangteppich und Ton Simulierbar]] §2). Verteilung über das Video: [[Videoaufbau Simulierbar]] §3.
 
 ## Siehe auch
 - [[Videoaufbau Simulierbar]] · [[Stile 17 bis 21]] · [[Licht und Atmosphäre Simulierbar]] · [[Technik und Szenenbau Simulierbar]]

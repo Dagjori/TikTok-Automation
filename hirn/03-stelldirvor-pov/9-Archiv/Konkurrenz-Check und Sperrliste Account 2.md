@@ -2,13 +2,13 @@
 typ: regel
 konto: stelldirvor
 status: veraltet
-datum: 2026-11-02
-quelle: .claude/skills/stelldirvor-video/themen-und-plan.md §5 und §7
+datum: 2026-11-09
+quelle: Recherche 01./02.11.2026; bis 06.11. aus dem entfernten Skill stelldirvor-video (themen-und-plan.md §5 und §7)
 tags: [konto/stelldirvor, sperrliste, konkurrenz, archiv]
 cssclasses: [konto-stelldirvor, typ-regel]
 ---
 
-> **Seit 07.11.2026 gilt die Originalitätsregel:** Weltuntergangs-Klassiker gesperrt, kein Thema, das es auf Deutsch schon gibt ([[Originalität und Themenfindung]]). Die Listen unten helfen als Hintergrund.
+> **Archiv (seit 09.11.2026 im Abteil `9-Archiv`).** Gültig ist [[Themenfindung stelldirvor]]: Nachfrage und Winkel Pflicht, Klassiker gesperrt, Websuche je Idee. Der hier beschriebene „Konkurrenz-Check vor jeder Produktion“, bei dem ein Treffer das Thema sperrte, ist dadurch ersetzt. Die Listen unten helfen nur als Hintergrund.
 
 > **Veraltet seit 02.11.2026, nur Archiv.** Die Sperrliste (Lunar Animations, US-Konten, deutscher Markt) entfällt, auch die der US-Konten und von Lunar; deren Themen sind frei und dürfen auf Deutsch umgesetzt werden. Die Notiz bleibt zur Nachvollziehbarkeit erhalten (Entscheidung des Inhabers); gültig ist [[Themen und Plan Account 2]] mit dem Weltenkatalog und der Kopierregel (keine 1:1-Kopie).
 
