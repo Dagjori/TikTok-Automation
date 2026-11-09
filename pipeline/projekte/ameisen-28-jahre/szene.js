@@ -20,13 +20,13 @@ const K = (keys, e = ease.inOutSine) => (t) => keyframes(keys.map(([tt, v, ee]) 
 
 // Volk (Bild): erste Arbeiterinnen ab Tag ≈ 46, dann Wachstum bis ≈ 6.000 (im Text nur „Tausende“)
 const volk = (t) => { const d = S.tag(t), j = S.jahr(t); if (j < 1) return d < 44 ? 0 : 6 + 14 * smoothstep(44, 300, d); return Math.min(6000, 30 + 5970 * smoothstep(1, 14, j)); };
-const STUNDE = K([[0, 18.0], [9, 18.0], [10, 15], [16, 13], [22, 15], [52, 16], [56, 17.6], [80, 17.9]]);
+const STUNDE = K([[0, 18.0], [9, 18.0], [10, 15], [16, 13], [22, 14], [30, 13], [48, 13], [52, 14.5], [56, 17.6], [80, 17.9]]);
 // Jahreszeit: im schnellen Zeitraffer (ab 22 s) schwingt die Position im Jahr um Mitte Juli; in den Fenstern der Sommer-Momente
 // (Frühling/Blattläuse 22–28,6 s, erster Schwarm 32,4–36 s, Hochzeitsflug ab 49 s) wird der Ausschlag eingefroren, damit sie nie im Winter landen.
 const AUSSCHLAG = (t) => 1 - 0.95 * Math.max(smoothstep(21.9, 22.3, t) * (1 - smoothstep(28.6, 29.8, t)), smoothstep(31.6, 32.6, t) * (1 - smoothstep(36, 37.2, t)), smoothstep(48, 50, t));
 const jahrPos = (t) => {
   if (t < S.T_JAHR0) return S.jahresPos(t);
-  const p = 196 / 365 + AUSSCHLAG(t) * 0.42 * Math.sin(Math.PI * S.jahr(t));   // stetig: Mitte Juli bei jedem ganzen Jahr, dazwischen ein Ausflug Richtung Winter (kein Sprung)
+  const p = 196 / 365 + AUSSCHLAG(t) * 0.36 * Math.sin(Math.PI * S.jahr(t));   // stetig: Mitte Juli bei jedem ganzen Jahr, dazwischen ein Ausflug Richtung Winter (kein Sprung)
   return ((p % 1) + 1) % 1;
 };
 // Königin: Landung 2,5 s auf der Platte, Flügel ab 4,8–6,6 s, läuft zur Fuge 6,6–8,0 s, verschwindet bis 8,8 s
@@ -113,7 +113,8 @@ async function start() {
   const welt = { szene, kamera: kam, post: {}, update(t) {
     const j = S.jahr(t), jn = j < 1 ? 0 : Math.floor(j);
     const p = jahrPos(t);
-    const Z = jahreszeit(p, jn), L = tageslicht(p, STUNDE(t), Z);
+    const Z = jahreszeit(p, jn), pL = t < S.T_JAHR0 ? p : 196 / 365 + 0.25 * (p - 196 / 365);   // Sonnenstand schwingt im Zeitraffer kaum mit (kein Wechsel Sonne/Schatten/Dämmerung von Bild zu Bild)
+    const L = tageslicht(pL, STUNDE(t), Z);
     // Kamera
     const RP = welt0.rosenPfad(j);
     let c = t < T_HIER ? CAM(t) : WEIT(t);
