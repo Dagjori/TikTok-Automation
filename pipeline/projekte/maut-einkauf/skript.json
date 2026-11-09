@@ -152,5 +152,36 @@
    "grund": "formale Phasen-ID, Inhalt unverändert",
    "zeit": "2026-11-09"
   }
- ]
+ ],
+ "lern_notizen": {
+  "thema": "Lkw-Maut je Vier-Personen-Familie, 2021 gegen heute (2025), Modell: jeder Maut-Euro im Preis",
+  "laenge_s": 76.4,
+  "hook": "Duell-Frage, 2 Sätze, 3,92 s",
+  "stil": "17 Nachtstadt-Miniatur (Autobahn mit Mautbrücken)",
+  "helligkeit": "dunkel",
+  "zoom": "ja (4 Zooms)",
+  "animationen": "Einkaufswagen-Duell, Mautbrücken mit Schildern, Lkw mit CO2-Wolke, Warnlinie, Geldstrom zur Schiene",
+  "licht_effekte": "Spot-Wechsel je Führendem, Brückenglimmen, Strahlen steigen bis Kipp (50,48 s), Warnlinie leuchtet bei 400 €",
+  "zeitpunkte": {
+   "wendung_1": 26.16,
+   "kipp": 50.48,
+   "ergebnis": 59.44,
+   "warum": 66.6,
+   "pointe": 71.04,
+   "schlusskarte": 73.36,
+   "folgen_hinweis": {
+    "zeit": 73.8,
+    "text": "Jeden Tag ein Geld-Duell im Profil"
+   }
+  },
+  "testbloecke": {
+   "folgen_hinweis": "mit"
+  },
+  "teil": 1,
+  "suchbegriff": "Maut",
+  "woerter": 185,
+  "w_pro_s": 2.44,
+  "silben_pro_s": 5.49,
+  "caption": "Maut 2021 oder heute – welche Familie zahlt beim Einkaufen mehr mit? 🚚 Ich hab's simuliert. Hättet ihr mit so viel gerechnet? 👇 #maut #lkwmaut #preise #wissen #simulation"
+ }
 }
