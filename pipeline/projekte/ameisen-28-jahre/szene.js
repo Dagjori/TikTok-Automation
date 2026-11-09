@@ -26,8 +26,7 @@ const STUNDE = K([[0, 18.0], [9, 18.0], [10, 15], [16, 13], [22, 15], [52, 16], 
 const AUSSCHLAG = (t) => 1 - 0.95 * Math.max(smoothstep(21.9, 22.3, t) * (1 - smoothstep(28.6, 29.8, t)), smoothstep(31.6, 32.6, t) * (1 - smoothstep(36, 37.2, t)), smoothstep(48, 50, t));
 const jahrPos = (t) => {
   if (t < S.T_JAHR0) return S.jahresPos(t);
-  const j = S.jahr(t), off = j - Math.round(j);
-  const p = 196 / 365 + AUSSCHLAG(t) * 0.92 * off;
+  const p = 196 / 365 + AUSSCHLAG(t) * 0.42 * Math.sin(Math.PI * S.jahr(t));   // stetig: Mitte Juli bei jedem ganzen Jahr, dazwischen ein Ausflug Richtung Winter (kein Sprung)
   return ((p % 1) + 1) % 1;
 };
 // Königin: Landung 2,5 s auf der Platte, Flügel ab 4,8–6,6 s, läuft zur Fuge 6,6–8,0 s, verschwindet bis 8,8 s
@@ -40,7 +39,7 @@ function koenigin(t) {
 }
 // Kamera: [px,py,pz, zx,zy,zz, fov, fokus, tiefe]
 const CAM = K([
-  [0, [0.11, TY + 0.15, 0.46, 0.02, TY, 0.255, 50, 0.24, 2.4]],
+  [0, [0.135, TY + 0.175, 0.53, 0.02, TY, 0.255, 50, 0.26, 2.4]],
   [4.5, [0.11, TY + 0.15, 0.46, 0.02, TY, 0.255, 50, 0.24, 2.4]],
   [8.6, [0.06, TY + 0.085, 0.36, 0.02, TY, 0.255, 50, 0.15, 2.4]],
   [9.8, [0.06, TY + 0.085, 0.36, 0.02, TY, 0.255, 50, 0.15, 2.4]],
@@ -102,7 +101,8 @@ async function start() {
     .effekt(T_HIER + 0.2, "hoehepunkt_fluegel", { klang: "fluegel", staerke: 0.8, dauer: 3, text: "Flügelschwirren des Schwarms" })
     .effekt(63.0, "nachspiel", { klang: false, text: "Der Schwarm verteilt sich, Licht klingt zur blauen Stunde ab" })
     .effekt(66.5, "jungkoenigin_landet", { klang: false, text: "Einzelne Jungköniginnen landen im Rasen" });
-  prot.melde({ t: 4.5, typ: "kamera", art: "zoom", dauer: 4.3, text: "Langsamer Zoom auf die Königin an der Fuge", klang: false })
+  prot.melde({ t: 0.3, typ: "kamera", art: "fahrt", dauer: 4.2, text: "Sehr langsame Fahrt ein auf die Plattenfuge", klang: false })
+    .melde({ t: 4.5, typ: "kamera", art: "zoom", dauer: 4.3, text: "Langsamer Zoom auf die Königin an der Fuge", klang: false })
     .melde({ t: 9.8, typ: "kamera", art: "fahrt", dauer: 4.2, text: "Fahrt zurück und höher: Blick entlang der entstehenden Ameisenstraße", klang: false })
     .melde({ t: 22.5, typ: "kamera", art: "fahrt", dauer: 2.5, text: "Fahrt über den Rasen zum Rosenbeet entlang der Ameisenstraße", klang: false })
     .melde({ t: 28.6, typ: "kamera", art: "fahrt", dauer: 1.8, text: "Fahrt zurück zur Terrassenfuge", klang: false })

@@ -36,6 +36,15 @@
    "text": "Geflügelte Ameisen tanzen im Gegenlicht über dem Rasen, Hummeln an der Rose"
   },
   {
+   "quelle": "lunar",
+   "t": 0.3,
+   "typ": "kamera",
+   "art": "fahrt",
+   "dauer": 4.2,
+   "text": "Sehr langsame Fahrt ein auf die Plattenfuge",
+   "klang": false
+  },
+  {
    "t": 0.4,
    "typ": "titel",
    "dauer": 4,
