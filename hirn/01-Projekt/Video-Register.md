@@ -14,8 +14,8 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 ## Überblick
 
-- **Videos im Register:** 42 (Simulierbar 23, davon 18 gepostet · Stell dir vor 19, davon 15 gepostet)
-- **Nach Status:** Idee 0 · Skript 0 · in Produktion 2 · geplant 4 · gepostet 33 · Fehler 3
+- **Videos im Register:** 42 (Simulierbar 23, davon 19 gepostet · Stell dir vor 19, davon 16 gepostet)
+- **Nach Status:** Idee 0 · Skript 0 · in Produktion 2 · geplant 2 · gepostet 35 · Fehler 3
 - **Nach Format:** ohne Angabe 25 · referenz_pov 16 · Duell 1
 - **Lesart:** „gepostet“ heißt, Buffer hat das Video gesendet (oder die Nachprüfung hat es bestätigt). Follows = Follower-Zuwachs in den 24 Stunden nach dem Post (netto, zwei Videos am Tag überlappen). Ø-Wiedergabe = durchschnittliche Wiedergabezeit, in Klammern der Anteil an der Länge.
 
@@ -25,9 +25,9 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 |---|---|---|---|---|---|---|---|---|---|
 | 11.11. | Mittag | Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern? | Rente und Vorsorge · Duell | in Produktion | – | – | – | – | – |
 | 10.11. | Abend | Kindergeld in Deutschland oder in Kanada: Wo zahlt der Staat bis 18 mehr? | Klassiker mit neuer Frage | geplant | – | – | – | – | – |
-| 10.11. | Mittag | Maut 2021 oder heute: Welche Familie zahlt beim Einkaufen mehr mit? | Versteckte Mechaniken | geplant | 76 s | – | – | – | – |
-| 09.11. | Abend | [Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?](https://tiktok.com/@simulierbar/video/7706241140705479968) | Versteckte Mechaniken | gepostet | 73 s | 260 | 20,5 s (28 %) | – | – |
-| 09.11. | Mittag | [Mindestlohn 2015 oder 2026: Wer kann sich mit einem Jahr Arbeit mehr leisten?](https://tiktok.com/@simulierbar/video/7706132764512292128) | Geschichte und Kurioses | gepostet | 74 s | 293 | 26,8 s (36 %) | – | – |
+| 10.11. | Mittag | [Maut 2021 oder heute: Welche Familie zahlt beim Einkaufen mehr mit?](https://tiktok.com/@simulierbar/video/7706503906116832544) | Versteckte Mechaniken | gepostet | 76 s | 93 | – | – | – |
+| 09.11. | Abend | [Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?](https://tiktok.com/@simulierbar/video/7706241140705479968) | Versteckte Mechaniken | gepostet | 73 s | 262 | 20,5 s (28 %) | – | – |
+| 09.11. | Mittag | [Mindestlohn 2015 oder 2026: Wer kann sich mit einem Jahr Arbeit mehr leisten?](https://tiktok.com/@simulierbar/video/7706132764512292128) | Geschichte und Kurioses | gepostet | 74 s | 293 | 26,8 s (36 %) | 0 | – |
 | 08.11. | Abend | [1968 oder heute: Wie viel mehr Mehrwertsteuer zahlt ein Haushalt im Jahr?](https://www.tiktok.com/@simulierbar/video/7705869881165581600) | Geschichte und Kurioses | gepostet | 76 s | 294 | 25,9 s (34 %) | -1 | – |
 | 08.11. | Mittag | [Kaiserreich oder heute: Wer zahlt bei gleichem Gehalt mehr Steuern?](https://www.tiktok.com/@simulierbar/video/7705833029092052257) | Geschichte und Kurioses | gepostet | 76 s | 776 | 29,5 s (39 %) | -1 | – |
 | 07.11. | Abend | Allein wohnen oder zusammenziehen: Was kostet das Single-Leben in 10 Jahren? | – | Fehler (produktion) | – | – | – | – | – |
@@ -53,9 +53,9 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 |---|---|---|---|---|---|---|---|---|---|
 | 11.11. | Mittag | Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft? | Naturphänomene | in Produktion | – | – | – | – | – |
 | 10.11. | Abend | Was wäre, wenn du die Polarnacht in Tromsø erlebst? | Physik, Wetter, Geografie, Weltraum · referenz_pov | geplant | 80 s | – | – | – | – |
-| 10.11. | Mittag | Was wäre, wenn du 28 Jahre lang Ameisen zusiehst? | Natur und Tiere · referenz_pov | geplant | 80 s | – | – | – | – |
+| 10.11. | Mittag | [Was wäre, wenn du 28 Jahre lang Ameisen zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706503882209381664) | Natur und Tiere · referenz_pov | gepostet | 80 s | 77 | – | – | – |
 | 09.11. | Abend | [Was wäre, wenn du 2.400 Jahre einem Pilzgeflecht zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706241106614193440) | Natur und Tiere · referenz_pov | gepostet | 80 s | 260 | 11,1 s (14 %) | – | – |
-| 09.11. | Mittag | [Teil 2: Erdachse ohne Neigung – was wird aus der Polarnacht?](https://tiktok.com/@stelldirvor.pov/video/7706132771348942113) | Folgeteil (Treffer-Serie) · referenz_pov | gepostet | 80 s | 242 | 7,3 s (9 %) | – | Teil 2 |
+| 09.11. | Mittag | [Teil 2: Erdachse ohne Neigung – was wird aus der Polarnacht?](https://tiktok.com/@stelldirvor.pov/video/7706132771348942113) | Folgeteil (Treffer-Serie) · referenz_pov | gepostet | 80 s | 242 | 7,3 s (9 %) | 0 | Teil 2 |
 | 08.11. | Abend | [Was wäre, wenn im Orbit eine Trümmer-Kettenreaktion startet?](https://www.tiktok.com/@stelldirvor.pov/video/7705869901285707041) | Technik und Versorgung · referenz_pov | gepostet | 80 s | 270 | 12,3 s (15 %) | 0 | – |
 | 08.11. | Mittag | [Was wäre, wenn unsere Luft 35 % Sauerstoff hätte?](https://www.tiktok.com/@stelldirvor.pov/video/7705792540250836256) | Physik, Wetter, Geografie, Weltraum · referenz_pov | gepostet | 80 s | 303 | 15,5 s (19 %) | 0 | – |
 | 07.11. | Abend | Was wäre, wenn die Sonne in diesem Moment erlischt? | – | Fehler (produktion) | – | – | – | – | – |

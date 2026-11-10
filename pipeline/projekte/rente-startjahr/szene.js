@@ -249,22 +249,22 @@ async function start() {
   chip("STUFE 3 · ÜBER DEM GRUNDFREIBETRAG", v("kipp:Dann", 0.05), v("ergebnis:Sie", 0.3), "akzent", "voll", 372);
   chip("STUFE 4 · EINKOMMENSTEUER · 30× GRÖSSER", v("ergebnis:Sie", 0.05), v("warum:Ihr", 0.2), "akzent", "voll", 372);
   // Regeln
-  chip("BEIDE ALLEINSTEHEND", v("regeln:alleinstehend,", 0.1), v("falle:Klar", 0.1), "akzent", "hell", 490);
-  chip("NUR GESETZLICHE RENTE", v("regeln:ohne", 0.1), v("falle:Klar", 0.1), "akzent", "hell", 600);
-  chip("STEUERJAHR 2026", v("regeln:Steuerjahr", 0.1), v("falle:Klar", 0.1), "akzent", "hell", 710);
+  chip("BEIDE ALLEINSTEHEND", v("regeln:alleinstehend,", 0.1), v("falle:Klar", 0.3), "akzent", "hell", 490);
+  chip("NUR GESETZLICHE RENTE", v("regeln:ohne", 0.1), v("falle:Klar", 0.3), "akzent", "hell", 600);
+  chip("STEUERJAHR 2026", v("regeln:Steuerjahr", 0.1), v("falle:Klar", 0.3), "akzent", "hell", 710);
   chip("GLEICHE RENTE · GLEICHE STEUER?", v("falle:Klar", 0.0), v("falle:Oder", 0.0), "akzent", "voll", 490);
   // Wendung 1: Startjahr und steuerfreier Anteil
-  chip("START 2010 · 40 % STEUERFREI", v("wendung1:40", 0.15), v("rennen:Dieser", 0.1), "a", "voll", 490);
-  chip("START 2026 · 16 % STEUERFREI", v("wendung1:16", 0.15), v("rennen:Dieser", 0.1), "b", "voll", 600);
+  chip("START 2010 · 40 % STEUERFREI", v("wendung1:40", 0.15), v("rennen:Dieser", 0.4), "a", "voll", 490);
+  chip("START 2026 · 16 % STEUERFREI", v("wendung1:16", 0.15), v("rennen:Dieser", 0.4), "b", "voll", 600);
   // Rennen: in Euro festgeschrieben
-  chip("EINMAL FEST IN EURO", v("rennen:Dieser", 0.05), v("rennen:Bei", 0.2), "akzent", "voll", 490);
+  chip("EINMAL FEST IN EURO", v("rennen:Dieser", 0.05), v("rennen:Bei", 0.4), "akzent", "voll", 490);
   chip("SIE · 6.433 € STEUERFREI", v("rennen:Bei", 0.1), v("wendung2:Dabei", 0.2), "a", "voll", 490);
   chip("ER · 3.921 € STEUERFREI", v("rennen:Bei#2", 0.1), v("wendung2:Dabei", 0.2), "b", "voll", 600);
   const vorB = (t) => zustandRoh(t).vor;
-  M.zaehler({ wert: vorB, einheit: " €", nk: 0, max: 99999, team: "b", art: "voll", label: "ER VERSTEUERT MEHR", x: SICHER.mitte, y: 790, ein: v("rennen:Euro", 0.2), aus: v("ergebnis:Sie", 0.35), anker: "mitte" });
+  M.zaehler({ wert: vorB, einheit: " €", nk: 0, max: 99999, team: "b", art: "voll", label: "ER VERSTEUERT MEHR", x: SICHER.mitte, y: 790, ein: v("rennen:Euro", 0.2), aus: v("kipp:2.600", 0.2), anker: "mitte" });
   // Wendung 2: Rente 2010 gegen heute, die zweite Frage
   M.zaehler({ wert: (t) => Z.monat2010A + (2000 - Z.monat2010A) * R(t, tRz0, tRz1, ease.inOutCubic), einheit: " €", nk: 0, max: 99999, team: "a", art: "voll", label: "IHRE RENTE · MONAT", x: SICHER.mitte, y: 900, ein: v("wendung2:Dabei", 0.1), aus: v("kipp:Jetzt", 0.3), anker: "mitte" });
-  chip("2010 · 1.334 € IM MONAT", v("wendung2:1.300", 0.1), v("wendung2:Seitdem", 0.1), "a", "voll", 490);
+  chip("2010 · 1.334 € IM MONAT", v("wendung2:1.300", 0.1), v("wendung2:Seitdem", 0.3), "a", "voll", 490);
   chip("SEITDEM + 50 % · HEUTE 2.000 €", v("wendung2:Seitdem", 0.1), v("wendung2:Auf", 0.1), "a", "voll", 490);
   chip("BESCHEID · 60 % STEUERPFLICHTIG", v("wendung2:Bescheid", 0.15), v("kipp:Jetzt", 0.3), "a", "voll", 490);
   chip("STIMMT DAS HEUTE NOCH?", v("wendung2:Stimmt", 0.1), v("kipp:Jetzt", 0.3), "akzent", "hell", 600);
@@ -284,7 +284,7 @@ async function start() {
     ] });
   M.zaehler({ wert: (t) => 60 + (Z.anteilA * 100 - 60) * R(t, tPz0, tPz1, ease.inOutCubic), einheit: " %", nk: 1, max: 99999, team: "a", art: "voll", label: "SIE · STEUERPFLICHTIG", x: SICHER.mitte, y: 790, ein: v("pointe:Und", 0.1), aus: v("schluss:Gleiche", 0.2), anker: "mitte" });
   chip("JEDE ERHÖHUNG VOLL STEUERPFLICHTIG", v("pointe:Weil", 0.1), v("schluss:Gleiche", 0.2), "akzent", "voll", 490);
-  chip("BESCHEID VON 2010 · 60 %", v("pointe:Und", 0.1), v("pointe:Weil", 0.1), "a", "hell", 490);
+  chip("BESCHEID VON 2010 · 60 %", v("pointe:Und", 0.1), v("pointe:Weil", 0.3), "a", "hell", 490);
   M.titel({ woerter: [{ text: "RENTE", ein: -0.3, art: "klein" }, { umbruch: true }, { text: "2010", ein: -0.3, team: "a" }, { text: "vs", art: "vs", ein: -0.3 }, { text: "2026", ein: -0.3, team: "b" }, { umbruch: true }, { text: "WER ZAHLT MEHR STEUERN?", ein: -0.3, art: "klein" }], y: 470, groesse: 112, aus: T("regeln:Beide") + 0.6 });
   M.pointe({ woerter: [{ text: "GLEICHE RENTE.", ein: T("schluss:Gleiche"), farbe: "akzent" }, { umbruch: true }, { text: "DAS STARTJAHR", ein: T("schluss:Startjahr"), farbe: "akzent" }, { umbruch: true }, { text: "ENTSCHEIDET.", ein: T("schluss:entscheidet."), farbe: "b" }], ein: T("schluss:Gleiche"), y: 470, groesse: 88 });
   if (skript.testbloecke && skript.testbloecke.folgen_hinweis === "mit") M.hinweis({ text: skript.folgen_hinweis });
