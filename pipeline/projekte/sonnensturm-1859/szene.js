@@ -32,14 +32,14 @@ const zustand = (t) => {
   const s = S.staerke(t), r = t < T_ZURUECK ? 1 : ruhig(t);
   const nach = t >= T_ZURUECK;
   return {
-    dunkel: 0.06 + 0.94 * smoothstep(0, 9, t),
+    dunkel: 0.06 + 0.94 * smoothstep(0, 18, t),
     morgen: smoothstep(T_ZURUECK, 70, t),
     wolken: lerp(0.72, 0.1, smoothstep(24, 35, t)) * (1 - 0.3 * smoothstep(60, 70, t)),
-    plNord: t < T_NULL ? 0 : (0.95 * smoothstep(0.0, 0.46, s) * (nach ? 0.15 + 0.85 * r : 1)),
-    plRot: (smoothstep(0.34, 0.72, s)) * (nach ? 0.1 + 0.9 * r : 1),
+    plNord: t < T_NULL ? 0 : (0.95 * smoothstep(0.0, 0.22, s) * (nach ? 0.15 + 0.85 * r : 1)),
+    plRot: (smoothstep(0.2, 0.62, s)) * (nach ? 0.1 + 0.9 * r : 1),
     plKrone: smoothstep(0.52, 0.68, s) * (nach ? r : 1),
     plSued: smoothstep(0.66, 0.86, s) * (nach ? r : 1),
-    plHelle: (0.25 * smoothstep(0.1, 0.5, s) + 0.75 * smoothstep(0.7, 1.0, s)) * (nach ? r : 1),
+    plHelle: (0.45 * smoothstep(0.03, 0.4, s) + 0.55 * smoothstep(0.7, 1.0, s)) * (nach ? r : 1),
     pegel: S.pegel(t),
   };
 };
