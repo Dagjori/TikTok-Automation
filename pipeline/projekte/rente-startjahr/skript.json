@@ -143,5 +143,40 @@
   "(F) Durchschnittlicher Zusatzbeitrag GKV 2026: 2,9 %, allgemeiner Beitragssatz 14,6 %, vdek Änderungen Gesundheitswesen 2026 – https://www.vdek.com/politik/was-aendert-sich/gesundheitswesen-2026/",
   "(F) Beitragssatz Pflegeversicherung 2026: 3,6 % (Kinderlose 4,2 %), § 55 SGB XI, sozialversicherung-kompetent.de, 2026 – https://sozialversicherung-kompetent.de/pflegeversicherung/versicherungsrecht/1636-beitragssatz-pflegeversicherung-2026.html"
  ],
- "korrekturen": []
+ "korrekturen": [],
+ "lern_notizen": {
+  "thema": "Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern?",
+  "frage": "Wer zahlt mehr Steuern, Rentenstart 2010 oder 2026?",
+  "laenge_s": 84.742,
+  "hook": "Zweimal 2.000 € Rente im Monat. Wer zahlt mehr Steuern: Rentenstart 2010 oder heute? (Duell, Frage, beide Seiten)",
+  "stil": "20 Glas & Licht",
+  "helligkeit": "dunkel",
+  "animationen": "Messzylinder füllen und sinken über 4 Stufen (Jahresrente, steuerpflichtig, nach Abzügen, über Grundfreibetrag), Vergrößerung 30× auf die Steuer, Röhrchen für den Unterschied",
+  "licht_effekte": "Lichtpulse an Wörtern, Funken bei Freibetrag, Abzügen und Grundfreibetrag, Linie bei 12.348 € (ca. 60 s), Bloom am Ergebnis",
+  "zoom": "ja (Grundfreibetrag 59 s, Unterschied 527 € ca. 68 s, Freibetrag 22 s)",
+  "zeitpunkte": {
+   "wendung_1": 18.32,
+   "kipp": 48.64,
+   "ergebnis": 62.64,
+   "warum": 71.68,
+   "pointe": 76.52,
+   "schlusskarte": 82.2,
+   "folgen_hinweis": "Jeden Tag eine Geldfrage im Profil (letzte 2,5 s)"
+  },
+  "testbloecke": {
+   "folgen_hinweis": "mit"
+  },
+  "teil": 1,
+  "suchbegriff": "Rente",
+  "format": "Duell",
+  "zweite_frage": {
+   "gesetzt_bei_s": 35.84,
+   "aufgeloest_bei_s": 76.52
+  },
+  "woerter": 182,
+  "stimmdauer_s": 84.742,
+  "stimme": "keine Auffälligkeiten festgestellt (Spracherkennungs-Abgleich nicht gelaufen)",
+  "caption": "Rente 2010 oder 2026: gleiche 2.000 €, wer zahlt mehr Steuern? 💶 Ich hab’s simuliert. Gleiche Steuer getippt? 👇 #rente #rentensteuer #steuern #wissen #simulation",
+  "hinweise_pruefskript": "Hook 6,9 s, Länge 85,2 s, Endstand 73 %, Kipp 57 %: folgen der Stimme (keine Vorgaben seit 09.11.); 24 Chips; Warum-Satz ohne das Wort Warum, Balkengrafik vorhanden"
+ }
 }

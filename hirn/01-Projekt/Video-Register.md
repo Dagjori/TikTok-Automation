@@ -15,7 +15,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 ## Überblick
 
 - **Videos im Register:** 42 (Simulierbar 23, davon 19 gepostet · Stell dir vor 19, davon 16 gepostet)
-- **Nach Status:** Idee 0 · Skript 0 · in Produktion 2 · geplant 2 · gepostet 35 · Fehler 3
+- **Nach Status:** Idee 0 · Skript 0 · in Produktion 1 · geplant 3 · gepostet 35 · Fehler 3
 - **Nach Format:** ohne Angabe 24 · referenz_pov 17 · Duell 1
 - **Lesart:** „gepostet“ heißt, Buffer hat das Video gesendet (oder die Nachprüfung hat es bestätigt). Follows = Follower-Zuwachs in den 24 Stunden nach dem Post (netto, zwei Videos am Tag überlappen). Ø-Wiedergabe = durchschnittliche Wiedergabezeit, in Klammern der Anteil an der Länge.
 
@@ -23,7 +23,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 | Datum | Slot | Titel | Feld · Format | Status | Länge | Aufrufe | Ø-Wiedergabe | Follows | Treffer · Teil |
 |---|---|---|---|---|---|---|---|---|---|
-| 11.11. | Mittag | Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern? | Rente und Vorsorge · Duell | in Produktion | – | – | – | – | – |
+| 11.11. | Mittag | Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern? | Rente und Vorsorge · Duell | geplant | 85 s | – | – | – | – |
 | 10.11. | Abend | Kindergeld in Deutschland oder in Kanada: Wo zahlt der Staat bis 18 mehr? | Klassiker mit neuer Frage | geplant | – | – | – | – | – |
 | 10.11. | Mittag | [Maut 2021 oder heute: Welche Familie zahlt beim Einkaufen mehr mit?](https://tiktok.com/@simulierbar/video/7706503906116832544) | Versteckte Mechaniken | gepostet | 76 s | 93 | – | – | – |
 | 09.11. | Abend | [Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?](https://tiktok.com/@simulierbar/video/7706241140705479968) | Versteckte Mechaniken | gepostet | 73 s | 262 | 20,5 s (28 %) | – | – |

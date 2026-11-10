@@ -299,19 +299,19 @@
   },
   {
    "quelle": "Chip",
-   "t": 14.02,
+   "t": 13.82,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 14.02,
+   "t": 13.82,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 14.02,
+   "t": 13.82,
    "typ": "chip-weg",
    "klang": false
   },
@@ -576,13 +576,13 @@
   },
   {
    "quelle": "Chip",
-   "t": 26.86,
+   "t": 26.56,
    "typ": "chip-weg",
    "klang": false
   },
   {
    "quelle": "Chip",
-   "t": 26.86,
+   "t": 26.56,
    "typ": "chip-weg",
    "klang": false
   },
@@ -650,7 +650,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 29.56,
+   "t": 29.36,
    "typ": "chip-weg",
    "klang": false
   },
@@ -848,7 +848,7 @@
   },
   {
    "quelle": "Chip",
-   "t": 41.46,
+   "t": 41.26,
    "typ": "chip-weg",
    "klang": false
   },
@@ -1288,7 +1288,7 @@
    "quelle": "LiveZaehler",
    "t": 59.82,
    "typ": "zaehler",
-   "dauer": 1.4,
+   "dauer": 0.78,
    "laufend": true,
    "klang": "zaehlen"
   },
@@ -1698,16 +1698,16 @@
   },
   {
    "quelle": "Chip",
-   "t": 78.1,
-   "typ": "chip",
-   "klang": "pop",
-   "text": "JEDE ERHÖHUNG VOLL STEUERPFLICHTIG"
+   "t": 77.9,
+   "typ": "chip-weg",
+   "klang": false
   },
   {
    "quelle": "Chip",
    "t": 78.1,
-   "typ": "chip-weg",
-   "klang": false
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JEDE ERHÖHUNG VOLL STEUERPFLICHTIG"
   },
   {
    "quelle": "Untertitel",
