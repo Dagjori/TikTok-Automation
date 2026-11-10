@@ -68,6 +68,7 @@ Keine bekannten. Zuletzt bereinigt am 10.11.2026: **Einstieg Account 2** („ahn
 - [ ] **Stil 16 (Lunar-POV) bleibt Account 2.** „Alle Stile“ bei Account 1 heißt 1–15 und 17–21.
 - [ ] Die „Zutaten des Tages“ nennt der Skill `themen-skript` nicht mehr; klären, ob das Cockpit sie weiter ziehen soll ([[Originalität und Themenfindung]]).
 - [ ] Radar-Prompt dauerhaft auf `CLAUDE.md` umstellen (nur in der Radar-Sitzung möglich, optional).
+- [ ] **Vorschläge der Lernschleife 10.11.** (zur Freigabe, [[Insights 2026-11-10]]): Simulierbar erste Wendung wirklich bis 15 s (hoch, `v-2026-11-10-acc1-1`); Stil 18 pausieren (niedrig, `v-2026-11-10-acc1-2`); stelldirvor erste 8 s im Tageslicht nach den Einstiegsblöcken (mittel, `v-2026-11-10-acc2-1`).
 
 ## Siehe auch
 [[Pipeline und Skills]] · [[Pläne und Kalender]] · [[Entscheidungen Log]] · [[Index]]
