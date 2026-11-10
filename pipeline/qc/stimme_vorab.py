@@ -2,7 +2,7 @@
 """Kostenlose Vorprüfung vor der einen Aufnahme: Text-Hygiene des Sprechtexts (ohne ElevenLabs, ohne Credits).
 
 Entscheidung des Inhabers 09.11.2026: Es gibt keine Sprechtempo-Regeln mehr. Dieses Skript schätzt weder Stimmdauer noch
-Hook-Zeit, Tempo, Silben oder Pausen (die Schätzung vom 08.11. samt Eichung qc/stimme_eichung.json ist entfernt und wird
+Hook-Zeit, Tempo, Silben oder Pausen (die Schätzung vom 08.11. samt Eichdatei ist entfernt und wird
 nicht mehr gelesen). Das Video folgt der fertigen Stimme (audio/timing.json), nie umgekehrt.
 Geprüft wird nur, ob der Text sauber ist, damit die EINE Aufnahme (Regel 08.11.2026) nicht an vermeidbaren Lesefehlern
 scheitert. Geprüft wird genau der Text, den tts.aufbereiten an ElevenLabs schickt: „sprechtext“ (sonst „text“) je Segment,

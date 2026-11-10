@@ -50,8 +50,8 @@ Die lebende Statusseite: am Ende jeder Arbeitseinheit aktualisieren. **F** = bel
 | 9 | PC: Autostart und Energieoptionen nach [[Render-Dienst Windows-PC]]; Repo auf privat stellen (erst nach Lesezugang für den PC); Telegram einrichten | Inhaber |
 | 10 | `CLAUDE.md` schlanker machen (Verweis auf das Hirn) und an den Stand vom 09.11. angleichen | Claude (nach Auftrag) |
 
-## Offene Widersprüche (Entscheidung des Inhabers nötig)
-- **Einstieg Account 2:** Zwei gültige Regeln ziehen in verschiedene Richtungen. (a) Bis zum Ereignis bei ca. 8 s lebt die Welt **ahnungslos** und ruhig weiter; nur Titel und Countdown verraten die Gefahr (REA, 07.11.). (b) **Einstieg dicht:** Welteffekt vor 4 s, Kamerabewegung vor 8 s (Lernschleife 03.11., Hinweis 13 in `referenz_pov.py`). Beides steht nebeneinander in [[Regelwerk Account 2]] und im Skill `video-produktion`. Nicht entschieden; bis dahin gilt beides, und die Sichtprüfung wägt ab.
+## Offene Widersprüche
+Keine bekannten. Zuletzt bereinigt am 10.11.2026: **Einstieg Account 2** („ahnungslos“ gegen „dicht“) gilt jetzt als „lebendig, aber ahnungslos“ ([[Regelwerk Account 2]], [[Entscheidungen Log]]).
 
 ## Offene Punkte
 - [ ] **Laufende Tests** (Folgen-Hinweis am Ende in Blöcken, hell gegen dunkel, später Endstand, frühes Ereignis, Einstieg Account 2 a–c, Stitch-Test): [[Lernschleife und Insights]]; auswertbar erst mit Follows je Video.

@@ -118,5 +118,9 @@ Nur **Entscheidungen des Inhabers** (2026 · Entscheidung · Begründung). Empfe
 - **Themen:** Simulierbar: Beleg für Nachfrage Pflicht, Winkel Pflicht, das Duell ist keine Pflicht mehr (Formate Duell, Zeitverlauf, Was bleibt, Lernvideo), stark gesuchte Themen sind mit neuem Winkel geöffnet, Parteipolitik bleibt ausgeschlossen (→ ersetzt die Klassiker-Quoten „1 von 10“ vom 07.11. und „3 von 10“ vom 08.11.). stelldirvor: Themenfelder zu Wissenschaft, Naturphänomenen, Körper und Skurrilem verschoben; die Klassiker bleiben gesperrt. [[Themenfindung Simulierbar]], [[Themenfindung stelldirvor]], [[Originalität und Themenfindung]]
 - **Drei Skills in fester Reihenfolge:** `themen-skript` → `stimme-elevenlabs` → `video-produktion`; `rea-video` liefert die Regeln aus Vorbildern, die Lernschleife schließt den Kreis. [[Pipeline und Skills]]
 
+**10.11.**
+- **Einstieg Account 2 bereinigt (auf Auftrag des Inhabers):** „Welt lebt ahnungslos weiter“ (REA 07.11.) und „Einstieg dicht, Welteffekt vor 4 s, Kamerabewegung vor 8 s“ (Lernschleife 03.11.) regeln Verschiedenes und gelten beide: **lebendig, aber ahnungslos.** Das Bild zeigt von Bild 1 an Alltagsbewegung, verrät aber nichts vom Ereignis (kein Vorbote, keine Reaktion, kein Farbstich); der erste Welteffekt ist ein Alltagseffekt, die Kamera fährt vor Null nicht auf die Gefahr zu. [[Regelwerk Account 2]], [[Ablauf Account 2]]
+- **Eichdatei `qc/stimme_eichung.json` gelöscht** (gehörte zur entfernten Dauer-Schätzung).
+
 ## Siehe auch
 [[Arbeitsregeln und Sicherheit]] · [[Rolle und Kommunikation]] · [[Index]]
