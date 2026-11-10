@@ -330,5 +330,45 @@
  "korrekturen": [
   "Idee: „Leuchtfeuer flackert, Lichter im Dorf erlöschen“ gestrichen, weil für Deutschland nicht belegt.",
   "Idee: Carrington-Wert „−850 (Siscoe 2006) bis −1.760“ → Anzeige ca. −900 nT (Cliver & Dietrich 2013, meistzitiert); Pointe „etwa die Hälfte“ bleibt (412/900 = 0,46)."
- ]
+ ],
+ "lern_notizen": {
+  "welt": "Wattenmeer mit Leuchtturm (neue Welt engine/welt_watt_leuchtturm.js)",
+  "standpunkt": "Galerie des Leuchtturms, 39,6 m; ein Schnitt auf das Dorf im Süden",
+  "tageszeit": "späte Abenddämmerung 18:35 → tiefe Nacht → Morgengrauen 06:15",
+  "kamera": "0–7 s Fahrt am Geländer, 20–34 s Schwenk Nord→Zenit, 40–47 s Schwenk über den Zenit nach Süden, 50–58 s Zoom 62°→46°, Schnitt 58 s Dorf, Schnitt 62 s zurück",
+  "zeitraffer": "1 s = 10 Minuten (0–70 s)",
+  "effekte": "siehe out/sonnensturm-1859/ereignisse.json (24 Effekte, 8 Kamerameldungen)",
+  "sequenzen": 9,
+  "t_ereignis": 2.5,
+  "countdown": "ja (0:25 → 0:00 in 2,5 s), zweiter: nein",
+  "schnitte": [
+   {
+    "t": 58,
+    "grund": "Höhepunkt: Schnitt auf das Dorf"
+   },
+   {
+    "t": 62,
+    "grund": "Szenensprung zurück auf die Galerie"
+   }
+  ],
+  "statuszeile": [
+   "17 STUNDEN UNTERWEGS",
+   "EINSCHLAG",
+   "1 SEKUNDE = 10 MINUTEN",
+   "WIE MAI 2024",
+   "STÄRKER ALS MAI 2024",
+   "STÄRKSTER SEIT 1957",
+   "SÜDHIMMEL ROT",
+   "FAST WIE 1859",
+   "STÄRKE WIE 1859 · CA. −900 NT"
+  ],
+  "testbloecke": {
+   "folgen_hinweis": "mit",
+   "einstieg_a2": "a"
+  },
+  "laenge_s": 80,
+  "t_stufe2": 21,
+  "folgen_hinweis": "Mehr Polarlicht: Polarnacht Tromsø im Profil",
+  "hinweise_pruefskript": "14b: Countdown läuft 0:25 → 0:00 (Zeitraffer), vom Skript nicht als m:ss-Countdown erkannt; Leerlauf-Hinweis 10 nach Aufhellen der dunklen Phase behoben"
+ }
 }
