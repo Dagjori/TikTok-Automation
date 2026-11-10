@@ -25,8 +25,8 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 |---|---|---|---|---|---|---|---|---|---|
 | 10.11. | Abend | Kindergeld in Deutschland oder in Kanada: Wo zahlt der Staat bis 18 mehr? | Klassiker mit neuer Frage | geplant | – | – | – | – | – |
 | 10.11. | Mittag | Maut 2021 oder heute: Welche Familie zahlt beim Einkaufen mehr mit? | Versteckte Mechaniken | geplant | 76 s | – | – | – | – |
-| 09.11. | Abend | [Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?](https://tiktok.com/@simulierbar/video/7706241140705479968) | Versteckte Mechaniken | gepostet | 73 s | 254 | – | – | – |
-| 09.11. | Mittag | [Mindestlohn 2015 oder 2026: Wer kann sich mit einem Jahr Arbeit mehr leisten?](https://tiktok.com/@simulierbar/video/7706132764512292128) | Geschichte und Kurioses | gepostet | 74 s | 287 | – | – | – |
+| 09.11. | Abend | [Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?](https://tiktok.com/@simulierbar/video/7706241140705479968) | Versteckte Mechaniken | gepostet | 73 s | 257 | – | – | – |
+| 09.11. | Mittag | [Mindestlohn 2015 oder 2026: Wer kann sich mit einem Jahr Arbeit mehr leisten?](https://tiktok.com/@simulierbar/video/7706132764512292128) | Geschichte und Kurioses | gepostet | 74 s | 289 | – | – | – |
 | 08.11. | Abend | [1968 oder heute: Wie viel mehr Mehrwertsteuer zahlt ein Haushalt im Jahr?](https://www.tiktok.com/@simulierbar/video/7705869881165581600) | Geschichte und Kurioses | gepostet | 76 s | 294 | 26,3 s (35 %) | -1 | – |
 | 08.11. | Mittag | [Kaiserreich oder heute: Wer zahlt bei gleichem Gehalt mehr Steuern?](https://www.tiktok.com/@simulierbar/video/7705833029092052257) | Geschichte und Kurioses | gepostet | 76 s | 769 | 28,9 s (38 %) | -1 | – |
 | 07.11. | Abend | Allein wohnen oder zusammenziehen: Was kostet das Single-Leben in 10 Jahren? | – | Fehler (produktion) | – | – | – | – | – |

@@ -12,6 +12,8 @@ cssclasses: [konto-gemeinsam, typ-anleitung]
 
 Das Cockpit ist seit 07.11.2026 ein **lokales Programm im Regie-Design** auf Laptop und Desktop-PC. Von dort wählt der Inhaber Ideen, gibt Skripte frei und sieht jede laufende Aufgabe. Vollständige Beschreibung: `cockpit/README.md`.
 
+**Design seit 10.11.2026 (Fassung 2, „Sendezentrale“):** Türkis steht für Simulierbar, Violett für Stell dir vor ([[Farbcode]]), Rot nur noch für Fehler, Blau für Claude und Automatik. „Jetzt“ zeigt oben groß, was läuft, bzw. die Zeit bis zum nächsten Posting, daneben „Für dich“, darunter den Sendeplan mit einer Karte je Video. Weiter ohne 3D-Engine, damit der Rechner beim Rendern nicht überlastet.
+
 > **Abgelöst:** Die frühere Beschreibung dieser Notiz (Claude-Artifact mit 120 Planthemen, Sammlung `videos` in ArtifactData, Freigabe per Kommentar an Claude; Stand 02.11.) gilt nicht mehr. Die 120 Planthemen sind Archiv ([[Pläne und Kalender]]).
 
 ## Start und Aufbau

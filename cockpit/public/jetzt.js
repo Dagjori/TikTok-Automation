@@ -423,14 +423,16 @@ $("live-karten").addEventListener("click", async (e) => {
 function ruheZeichnen() {
   const a = automatik(), n = naechstesPosting();
   const zeilen = [];
-  if (n) zeilen.push(`Nächstes Posting: <b>${esc(kontoInfo(n.konto).name)}</b> um ${slotZeit(n.datum, n.slot)}${n.datum !== S.heute ? ` (${tagLabel(n.datum)})` : ""}`);
   if (automatikDa() && a.ideen) {
     const fehlen = Object.keys(PRAEFIX).filter((k) => !doks("ideen").some((d) => d.id === `${PRAEFIX[k]}-${morgen()}`));
     if (fehlen.length && S.einstellungen?.automatik_ideen_zuletzt !== S.heute) zeilen.push(`Ideen für morgen kommen automatisch ab ${esc(a.ideen_uhrzeit)} Uhr`);
   }
   if (S.einstellungen?.lernschleife_aktiv) zeilen.push("Lernschleife um 19:52");
   if (limitJetzt()) zeilen.unshift(`<b>Claude wartet auf Limit bis ${esc(uhrzeitVon(limitJetzt().weiter_ab))}</b>, danach geht es von selbst weiter`);
-  htmlSetzen($("ruhe"), `<span class="led an"></span><div><b>Gerade läuft nichts.</b><small>${zeilen.join(" · ") || "Alles erledigt."}</small></div>`);
+  // Rechts groß die Zeit bis zum nächsten Posting (das Feld läuft über data-bis im Sekundentakt mit, der Text steht nicht in der Vorlage)
+  const naechstes = n ? `<div class="ruhe-naechstes"><small>Nächstes Posting in</small><b class="ruhe-zeit" data-bis="${new Date(n.ms).toISOString()}"></b><div class="ruhe-wann"><span class="chip ${kontoInfo(n.konto).klasse}">${esc(kontoInfo(n.konto).name)}</span><span>${n.datum !== S.heute ? `${tagLabel(n.datum)}, ` : ""}${slotZeit(n.datum, n.slot)} Uhr</span></div>${n.titel ? `<div class="ruhe-titel" title="${esc(n.titel)}">${esc(n.titel)}</div>` : ""}</div>` : "";
+  htmlSetzen($("ruhe"), `<div class="ruhe-lage"><span class="led an"></span><div><b>Gerade läuft nichts.</b><small>${zeilen.join("<br>") || (n ? "Alles Geplante ist vorbereitet." : "Alles erledigt.")}</small></div></div>${naechstes}`);
+  $("ruhe").querySelectorAll("[data-bis]").forEach(zeitFeld);
 }
 
 // ───────── Für dich ─────────
@@ -530,10 +532,11 @@ function tagesplanZeichnen() {
       const titel = d?.daten.titel || proto?.titel || "noch frei";
       const stufen = d ? slotStufen(d) : proto ? Array(5).fill("an").map((s, i) => (i === 4 && proto.status !== "gepostet" ? "dran" : s)) : Array(5).fill("");
       const arbeitet = stufen.includes("jetzt");
-      return `<div class="tp-slot ${PRAEFIX[konto]} ${d || proto ? "" : "frei"} ${arbeitet ? "arbeitet" : ""}" data-tp="${d ? id : `${konto}|${tag}`}" title="${esc(titel)}">
-        <div class="tp-slot-kopf"><b>${KONTO_NAME[konto]}</b><span>${slotZeit(tag, slot)} · ${esc(status)}</span></div>
+      const lage = d ? d.daten.status : proto ? proto.status : "frei";
+      return `<div class="tp-slot ${PRAEFIX[konto]} ${d || proto ? "" : "frei"} ${arbeitet ? "arbeitet" : ""}" data-status="${esc(lage)}" data-tp="${d ? id : `${konto}|${tag}`}" title="${esc(titel)}">
+        <div class="tp-slot-kopf"><b>${KONTO_NAME[konto]}</b><span class="tp-zeit">${slotZeit(tag, slot)}</span></div>
         <div class="tp-slot-titel">${esc(titel)}</div>
-        <div class="stufen">${stufen.map((s) => `<i class="${s}"></i>`).join("")}</div>
+        <div class="tp-slot-fuss"><div class="stufen">${stufen.map((s) => `<i class="${s}"></i>`).join("")}</div><span class="tp-status">${esc(status)}</span></div>
       </div>`;
     })).join("");
     const fertig = Object.keys(PRAEFIX).flatMap((konto) => ["mittag", "abend"].map((s) => skriptDok(slotIdVon(konto, tag, s)))).filter((d) => d && FERTIG_STATUS.has(d.daten.status)).length;

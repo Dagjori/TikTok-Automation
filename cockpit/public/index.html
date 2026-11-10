@@ -8,6 +8,7 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
 </head>
@@ -16,13 +17,15 @@
 <!-- Seitenleiste: Bereiche (Tasten 1–7), unten Meldungen, Einstellungen, Server -->
 <aside class="leiste" id="leiste">
   <div class="marke" title="TikTok Cockpit">
-    <img src="icon.svg" alt="" width="30" height="30">
-    <span><b>TikTok</b> Cockpit</span>
+    <div class="marke-zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 5.6v12.8a.9.9 0 0 0 1.37.77l10.2-6.4a.9.9 0 0 0 0-1.54L9.57 4.83A.9.9 0 0 0 8.2 5.6Z"/><rect x="3.4" y="5" width="2.4" height="14" rx="1.2"/></svg></div>
+    <span class="marke-text"><b>Cockpit</b><small>TikTok Regie</small></span>
   </div>
   <nav class="nav" id="nav">
+    <div class="nav-gruppe">Heute</div>
     <a href="#jetzt" data-seite="jetzt"><i data-ico="jetzt"></i><span>Jetzt</span><b class="zahl-punkt" id="punkt-jetzt" hidden></b><kbd>1</kbd></a>
     <a href="#studio" data-seite="studio"><i data-ico="studio"></i><span>Studio</span><b class="zahl-punkt" id="punkt-studio" hidden></b><kbd>2</kbd></a>
     <a href="#produktion" data-seite="produktion"><i data-ico="produktion"></i><span>Produktion</span><b class="zahl-punkt" id="punkt-produktion" hidden></b><kbd>3</kbd></a>
+    <div class="nav-gruppe">Auswertung</div>
     <a href="#zahlen" data-seite="zahlen"><i data-ico="zahlen"></i><span>Zahlen</span><kbd>4</kbd></a>
     <a href="#lernen" data-seite="lernen"><i data-ico="lernen"></i><span>Lernen</span><b class="zahl-punkt" id="punkt-lernen" hidden></b><kbd>5</kbd></a>
     <a href="#radar" data-seite="radar"><i data-ico="radar"></i><span>Radar</span><b class="zahl-punkt leise" id="punkt-radar" hidden></b><kbd>6</kbd></a>
@@ -55,20 +58,20 @@
 
     <!-- ───────── JETZT ───────── -->
     <section class="seite" id="seite-jetzt" data-titel="Jetzt" hidden>
-      <div class="block">
-        <div class="block-kopf"><h2><span class="led" id="laeuft-led"></span>Läuft gerade</h2><span class="hinweis" id="laeuft-info"></span></div>
-        <div class="live-raster" id="live-karten"></div>
-        <div class="ruhe" id="ruhe" hidden></div>
-      </div>
-      <div class="zwei-spalten">
+      <div class="jetzt-oben">
+        <div class="block held">
+          <div class="block-kopf"><h2><span class="led" id="laeuft-led"></span>Läuft gerade</h2><span class="hinweis" id="laeuft-info"></span></div>
+          <div class="live-raster" id="live-karten"></div>
+          <div class="ruhe" id="ruhe" hidden></div>
+        </div>
         <div class="block">
           <div class="block-kopf"><h2>Für dich</h2><span class="hinweis" id="fuer-dich-info"></span></div>
           <div class="aufgaben-liste" id="fuer-dich"></div>
         </div>
-        <div class="block">
-          <div class="block-kopf"><h2>Tagesplan</h2><span class="hinweis">Idee · Skript · Freigabe · Produktion · Online</span></div>
-          <div class="tagesplan" id="tagesplan"></div>
-        </div>
+      </div>
+      <div class="block">
+        <div class="block-kopf"><h2>Sendeplan</h2><span class="hinweis">Idee · Skript · Freigabe · Produktion · Online</span></div>
+        <div class="tagesplan" id="tagesplan"></div>
       </div>
       <div class="drei-spalten">
         <div class="block">

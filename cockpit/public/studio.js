@@ -100,14 +100,17 @@ function ideenZeichnen() {
       const gesperrt = nurLesen() || (d && !hier && !AENDERBAR.has(d.daten.status)) || (hier && !AENDERBAR.has(d.daten.status));
       return `<button data-waehlen="${s}" data-nr="${i.nr}" class="${hier ? "belegt" : ""}" ${gesperrt ? "disabled" : ""}>${hier ? "✓ " : ""}${SLOT_NAME[s]} ${slotZeit(ST.tag, s)}</button>`;
     }).join("");
-    const zeile = (f) => `<div><b>${FELD_NAME[f] || f}</b>${esc(wert(i[f]))}</div>`;
+    const zeile = (f) => `<div data-f="${f}"><b>${FELD_NAME[f] || f}</b>${esc(wert(i[f]))}</div>`;
+    // Punkte (von 21), Format und Themenfeld stehen oben auf der Karte, nicht in der Feldliste
+    const punkte = Number(i.punkte) > 0 ? `<span class="idee-punkte" style="--p:${Math.min(100, Math.round((Number(i.punkte) / 21) * 100))}%" title="Punkte von 21 (Nachfrage, Winkel, Belegbarkeit …)"><span>${esc(i.punkte)}</span><small>/21</small></span>` : "";
+    const meta = [i.format, i.feld].filter(Boolean).map((t) => `<span class="chip">${esc(wert(t))}</span>`).join("");
     const offenFelder = felder.offen.filter((f) => i[f]).map(zeile).join("");
-    const mehr = felder.mehr.filter((f) => i[f]).map(zeile).join("");
+    const mehr = felder.mehr.filter((f) => i[f] && !["punkte", "format", "feld"].includes(f)).map(zeile).join("");
     const alt = Array.isArray(i.alternativen) && i.alternativen.length ? `<div class="idee-chips">${i.alternativen.map((a) => `<span class="chip">${esc(a)}</span>`).join("")}</div>` : "";
     // Folgeteil eines eigenen Treffers (Cockpit, seit 08.11.): oben, mit Hinweis auf den Treffer
     const teil = i.typ === "folgeteil" ? `<div class="idee-chips"><span class="chip teil">🎯 Folgeteil · Teil ${esc(i.teil)}</span>${i.serie?.link ? `<a class="chip" href="${esc(i.serie.link)}" target="_blank" rel="noopener noreferrer">Teil davor ansehen</a>` : ""}</div>` : "";
     return `<div class="idee ${gewaehlt ? "gewaehlt" : ""} ${i.typ === "folgeteil" ? "folgeteil" : ""}" style="animation-delay:${n * 35}ms">
-      <div class="idee-kopf"><span class="idee-nr">${i.nr}</span><span class="idee-titel">${esc(i.titel)}</span></div>${teil}
+      <div class="idee-kopf"><span class="idee-nr">${i.nr}</span><span class="idee-titel">${esc(i.titel)}</span>${punkte}</div>${meta ? `<div class="idee-meta">${meta}</div>` : ""}${teil}
       ${alt}<div class="idee-felder">${offenFelder}</div>
       ${mehr ? `<details><summary>Mehr Details</summary><div class="idee-felder">${mehr}</div></details>` : ""}
       <div class="idee-knoepfe">${knoepfe}</div>
