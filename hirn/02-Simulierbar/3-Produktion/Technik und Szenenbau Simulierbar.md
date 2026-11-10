@@ -31,7 +31,7 @@ Baukasten, Dateien, Szenengerüst, Render, Mux und Posting-Befehle für `@simuli
 | 6 | **Standbilder** an 6–8 Schlüsselstellen (Hook, Regeln, Wendung, Ergebnis, Warum, Schluss) rendern, gegen Design, **Qualitätslatte** und Skript-Bild-Abgleich prüfen, nachbessern | 20–40 Min. |
 | 7 | **Render** über den Render-Dienst auf dem Windows-PC (unten); bei Exit 3 Rückfall Cloud | PC: Minuten; Cloud ca. 1–3 Std. Rechenzeit |
 | 8 | **Prüfung** ([[Prüfung und Abnahme Simulierbar]]): Skripte + Kontaktbogen + Sichtprüfung inkl. Qualitätslatte, Spannungskurve, Variation; wirkt etwas billig, wird die Abnahme verweigert | 20 Min. |
-| 9 | **Posting** über `post_buffer.py --kanal simulierbar --zeit auto:<datum>:<slot>` mit Caption (aus dem Skript-Dokument, gegen das Format geprüft), ohne KI-Label; nach dem Posten `--nachpruefen` | 5 Min. |
+| 9 | **Posting** über `post_buffer.py --kanal simulierbar --zeit auto:<datum>:<slot>` mit Caption (aus dem Skript-Dokument, gegen das Format geprüft); nach dem Posten `--nachpruefen` | 5 Min. |
 
 ## Dateien
 | Datei | Inhalt |
@@ -163,15 +163,15 @@ Andere Prozesse mit Vorrang: `nice -n 15` voranstellen und `--worker 1`. Nie meh
 ```bash
 python3 post_buffer.py --video out/<name>/<name>.mp4 --kanal simulierbar --zeit auto:2026-11-05:mittag \
   --text "Parkhaus oder Parkplatz suchen? 🅿️ Ich hab's simuliert. Team Parkhaus oder Team Suchen? 👇 #parken #autofahren #geld #wissen #simulation" --trocken
-python3 post_buffer.py … (ohne --trocken)          # plant in Buffer ein, kein KI-Label (Standard)
+python3 post_buffer.py … (ohne --trocken)          # plant in Buffer ein
 python3 post_buffer.py --nachpruefen                # nach dem Posten: öffentlich, Länge, danach Upload-Datei im Zwischenspeicher löschen
 ```
 - **Caption-Format genau (eine Zeile, TikTok und YouTube gleich, 31.10.):** `Hook-Frage mit Suchbegriff? Emoji Ich hab's simuliert. (bzw. durchgerechnet.) Kommentarfrage? 👇 #thema1 #thema2 #thema3 #wissen #simulation`. Ca. 150 Zeichen + 5 Hashtags, kein #fyp/#viral/#foryou, keine Quellen, Annahmen, Hinweise („Stimme: KI“, „keine Anlageberatung“). Beispiel: „Früh einordnen oder bis zum Ende fahren? 🚗 Ich hab's simuliert. Team früh oder Team Reißverschluss? 👇 #reißverschlussverfahren #stau #autofahren #wissen #simulation“.
 - **Posting-Zeiten** (Europe/Berlin, `data/plan/posting_zeiten.json`): Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30; Slots `mittag`/`abend`. Nach 14 Tagen mit Zahlen aus TikTok Studio nachjustieren.
 - Erwartung beim Planen: Status `scheduled`, sonst Exit 2. Der Inhaber kann Posts in Buffer bis zum Zeitpunkt löschen.
 - **Dateigröße:** ≤ 50 MB je Datei im privaten Zwischenspeicher (Frankfurt, Gratis-Plan), ab 48 MB automatische Upload-Kopie; Buffer holt die Datei zur Posting-Zeit, gelöscht wird sie erst nach `--nachpruefen`. Log `pipeline/out/buffer_log.jsonl` nur im Container. Per API nicht setzbar: Markeninhalt, Sichtbarkeit, Kommentare, Duett/Stitch (daher `--nachpruefen`).
-- **Kennzeichnung:** kein KI-Label (Standard); nur bei realistisch wirkenden KI-Inhalten (Stimme einer echten Person, fotorealistische KI-Bilder) Label AN mit `--ki-label`. Manueller Rückfall: TikTok Studio Web (Markeninhalt AUS, kein KI-Label). Verboten: Skripte/Browser-Bots in TikTok Studio, Cookie-Uploader, eigene unauditierte API-App.
-- Mehr zu Buffer, Nachprüfung und Kennzeichnung: [[Plattformregeln und Posting]].
+- Manueller Rückfall: TikTok Studio Web (Markeninhalt AUS). Verboten: Skripte/Browser-Bots in TikTok Studio, Cookie-Uploader, eigene unauditierte API-App.
+- Mehr zu Buffer und Nachprüfung: [[Plattformregeln und Posting]].
 
 ## Siehe auch
 - [[Stile 17 bis 21]] · [[Licht und Atmosphäre Simulierbar]] · [[Design und Layout Simulierbar]] · [[Stimme ElevenLabs Simulierbar]] · [[Klangteppich und Ton Simulierbar]] · [[Prüfung und Abnahme Simulierbar]] · [[Pipeline und Skills]]

@@ -57,7 +57,7 @@ export function metrikenPunkte(text) {
   return erg;
 }
 
-export function erstelleZahlen({ repo, ordner, geheim, senden = () => {}, log = () => {}, belohnen = () => {}, beiGeteilt = () => {}, teilVon = null, beiTreffer = null }) {
+export function erstelleZahlen({ repo, ordner, geheim, senden = () => {}, log = () => {}, belohnen = () => {}, beiGeteilt = () => {}, teilVon = null, beiTreffer = null, nachSchreiben = () => {} }) {
   fs.mkdirSync(ordner, { recursive: true });
   const STAND = path.join(ordner, "stand.json");
   const VERLAUF = path.join(ordner, "verlauf.jsonl");
@@ -310,6 +310,8 @@ export function erstelleZahlen({ repo, ordner, geheim, senden = () => {}, log = 
     try { auswerten(); } catch (e) { log(`Zahlen-Auswertung: ${e.message}`); }
     sichern();
     senden("zahlen", zustand());
+    // stand.json und folgen24.json sind geschrieben: Folgearbeiten anstoßen (Video-Register, lib/register.mjs)
+    try { nachSchreiben(); } catch (e) { log(`Zahlen, Folgearbeit: ${e.message}`); }
   }
 
   // Gemeinsam mit den anderen Rechnern (Abgleich): Follower beim Start (Mission „+1.000 seit Start“) und erreichte Missionen

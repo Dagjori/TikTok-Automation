@@ -81,15 +81,14 @@ TON_FERTIG=1 LRA_ZIEL=20 ./mux.sh projekte/<name>                              #
 - Schnelle Probe: `--query "schatten=0"`.
 - Ohne Ton (Sichtprüfung): `./mux.sh projekte/<name> --ohne-ton`.
 
-## Posting (Buffer, ohne KI-Label, ohne Freigabe)
+## Posting (Buffer, ohne Freigabe)
 ```bash
 python3 post_buffer.py --video out/<name>/<name>.mp4 --kanal stelldirvor.pov --zeit auto:2026-11-04:mittag \
   --text "Was passiert, wenn …? 🌋 Ich hab's durchgespielt. Würdest du stehen bleiben? 👇 #a #b #c #wissen #waswaerewenn" --trocken
 python3 post_buffer.py … (ohne --trocken)        # erst nach bestandener Prüfung (pruefung.md)
-python3 post_buffer.py --nachpruefen             # nach dem Posten: öffentlich, Länge 80 s, KI-Label aus; Supabase-Datei löschen
+python3 post_buffer.py --nachpruefen             # nach dem Posten: öffentlich, Länge 80 s; Supabase-Datei löschen
 ```
 - Kanal **`stelldirvor.pov`**, Slots `mittag`/`abend` aus `data/plan/posting_zeiten.json` (Mo–Fr 12:30/19:30, Sa–So 09:30/19:30).
-- **Kein `--ki-label`** (Three.js-Bilder, keine Stimme). Nur wenn ein Video doch realistisch wirkende KI-Inhalte enthielte, wäre es Pflicht.
 - Caption-Format siehe [[Ablauf Account 2]]; der Text kommt aus dem Skript (Feld `caption`).
 
 ## Siehe auch

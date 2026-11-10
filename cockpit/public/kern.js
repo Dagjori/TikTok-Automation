@@ -49,6 +49,7 @@ const ICO = {
   zahlen: '<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-7"/>',
   lernen: '<path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2.5 9 2.5 12 0v-5"/>',
   radar: '<circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><path d="M12 12l6-6"/><circle cx="12" cy="12" r="1.3"/>',
+  register: '<rect x="3" y="3.5" width="18" height="17" rx="2.5"/><path d="M3 9h18M3 14.5h18M9 9v11.5"/>',
   glocke: '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/>',
   regler: '<path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/>',
   "neu-laden": '<path d="M21 4v6h-6M3 20v-6h6"/><path d="M5.5 9a8 8 0 0 1 13.2-3L21 8.5M3 15.5 5.3 18a8 8 0 0 0 13.2-3"/>',
@@ -138,7 +139,11 @@ const skriptDok = (id) => doks("skripte").find((d) => d.id === id);
 const slotIdVon = (konto, tag, slot) => `${PRAEFIX[konto]}-${tag}-${slot}`;
 // Kennt der laufende Server die Automatik (ab Neubau 07.11.)? Sonst zeigt die Oberfläche keine Countdowns
 const automatikDa = () => !!S.automatik;
-const automatik = () => ({ recherche: true, produktion: true, ideen: true, ideen_uhrzeit: "07:00", wiederholen: true, ...(S.automatik || {}), ...(S.einstellungen?.automatik || {}) });
+const automatik = () => ({ recherche: true, produktion: true, ideen: true, ideen_uhrzeit: "07:00", wiederholen: true, auto_wahl: false, auto_wahl_frist_min: 120, auto_freigabe: false, auto_freigabe_frist_min: 180, ...(S.automatik || {}), ...(S.einstellungen?.automatik || {}) });
+// Handy-Meldungen (Telegram): Schalter je Ereignis, Standard alles an (lib/melden.mjs); S.handy.eingerichtet sagt, ob der Zugang da ist
+const meldenEinstellung = () => ({ aktiv: true, ideen: true, skript: true, rueckfrage: true, fehler: true, video: true, treffer: true, tagesabschluss: true, tagesabschluss_uhrzeit: "21:30", ...(S.melden || {}), ...(S.einstellungen?.melden || {}) });
+// Nutzungslimit von Claude: { bis, weiter_ab, text } solange es gilt, sonst null
+const limitJetzt = () => { const l = S.claude?.limit; return l && Date.parse(l.weiter_ab) > Date.now() ? l : null; };
 
 // ───────── Hinweise ─────────
 function toast(icon, titel, text = "", art = "") {
@@ -158,7 +163,7 @@ function aktivitaet(icon, text) {
 }
 
 // ───────── Seiten und gebündeltes Zeichnen ─────────
-const SEITEN = ["jetzt", "studio", "produktion", "zahlen", "lernen", "radar"];
+const SEITEN = ["jetzt", "studio", "produktion", "zahlen", "lernen", "radar", "register"];
 const ZEICHNER = new Map(); // seite → [f]
 const IMMER = []; // läuft bei jeder Änderung (Zählpunkte, Kopf)
 function zeichner(seite, f) {
@@ -265,7 +270,7 @@ function beiEreignis(art, f) { (HOERER.get(art) || HOERER.set(art, []).get(art))
 function verbinden() {
   const es = new EventSource("/api/events");
   const kanaele = new Set(["zustand", "render", "live", "renderlog", "plan", "lokal", "claude", "db", "feed", "werkzeug_ergebnis", "abgleich", "abgleich_neu",
-    "meilenstein", "puls", "dienst", "dienst_zeile", "zahlen", "zahlen_puls", "einstellungen", "lernschleife", "meldung", "steuerung", "mission_erreicht", "spiegel"]);
+    "meilenstein", "puls", "dienst", "dienst_zeile", "zahlen", "zahlen_puls", "einstellungen", "lernschleife", "meldung", "steuerung", "mission_erreicht", "spiegel", "register"]);
   for (const art of kanaele) {
     es.addEventListener(art, (e) => {
       let d;
@@ -288,6 +293,7 @@ function zustandUebernehmen(z) {
     render: z.render || S.render, live: z.live || {}, lokal: z.lokal || [], plan: z.plan || S.plan, claude: z.claude || {}, heute: z.heute,
     rechner: z.rechner, feed: z.feed || [], db: { skripte: [], ideen: [], stand: [], vorschlaege: [], meldungen: [], ...(z.db || {}) },
     einstellungen: z.einstellungen || {}, abgleich: z.abgleich || null, automatik: z.automatik || null, wiederholen_nach_s: z.wiederholen_nach_s || 300,
+    melden: z.melden || null, handy: z.handy || null,
   });
   S.verbunden = true;
   verbindungZeigen();
@@ -298,8 +304,11 @@ function verbindungZeigen() {
   const a = S.abgleich;
   const andere = (a?.rechner || []).filter((r) => r !== S.rechner);
   $("verbindung").className = "verbindung an";
-  $("verbindung").querySelector(".verbindung-text").textContent = `${S.rechner}${andere.length ? ` ⇄ ${andere.join(", ")}` : ""}${a?.fehler ? " · Abgleich gestört" : ""}`;
-  $("verbindung").title = a ? `Abgleich über Supabase${a.zuletzt ? `, zuletzt ${new Date(a.zuletzt).toLocaleTimeString("de-DE")}` : ""}${a.fehler ? `: ${a.fehler}` : ""}` : "verbunden";
+  // Supabase länger nicht erreichbar: die Automatik läuft dann lokal auf diesem Rechner weiter (lib/automatik.mjs)
+  const lokal = !!S.claude?.automatik_lokal;
+  $("verbindung").classList.toggle("lokal", lokal);
+  $("verbindung").querySelector(".verbindung-text").textContent = `${S.rechner}${andere.length ? ` ⇄ ${andere.join(", ")}` : ""}${lokal ? " · Automatik lokal" : a?.fehler ? " · Abgleich gestört" : ""}`;
+  $("verbindung").title = lokal ? "Supabase ist nicht erreichbar. Die Automatik läuft so lange nur auf diesem Rechner weiter." : a ? `Abgleich über Supabase${a.zuletzt ? `, zuletzt ${new Date(a.zuletzt).toLocaleTimeString("de-DE")}` : ""}${a.fehler ? `: ${a.fehler}` : ""}` : "verbunden";
 }
 
 // Grundereignisse, die mehrere Seiten betreffen
@@ -311,6 +320,7 @@ beiEreignis("einstellungen", (e) => { S.einstellungen = e; planen(); });
 beiEreignis("abgleich", (a) => { S.abgleich = a; verbindungZeigen(); });
 beiEreignis("abgleich_neu", (a) => aktivitaet("⇄", `${a.anzahl} Änderung${a.anzahl === 1 ? "" : "en"}${a.von?.length ? ` vom ${a.von.join(", ")}` : ""} übernommen`));
 beiEreignis("puls", () => uhrZeichnen());
+beiEreignis("claude", (c) => { S.claude = c; verbindungZeigen(); }); // Abzeichen „Automatik lokal“ (alles Weitere in claude.js)
 beiEreignis("db", (e) => {
   const liste = (S.db[e.sammlung] ||= []);
   const i = liste.findIndex((d) => d.id === e.id);
@@ -338,7 +348,9 @@ $("k-neustart").addEventListener("click", async () => {
 });
 $("k-beenden").addEventListener("click", async () => {
   if (!confirm("Cockpit-Server beenden? Das Fenster bleibt offen, zeigt dann aber nichts mehr an.")) return;
-  const r = await post("/api/beenden");
+  let r = await post("/api/beenden");
+  // Es läuft noch ein Auftrag: noch einmal ausdrücklich fragen (nach dem nächsten Start setzt das Cockpit die Videos von selbst fort)
+  if (!r.ok && r.laeuft && confirm(`${r.fehler}\n\nTrotzdem beenden? Der laufende Auftrag wird abgebrochen; nach dem nächsten Start setzt das Cockpit ihn von selbst fort.`)) r = await post("/api/beenden", { trotzdem: true });
   if (!r.ok) toast("⚠️", "Beenden nicht möglich", r.fehler || "", "problem");
 });
 

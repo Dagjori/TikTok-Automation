@@ -63,7 +63,7 @@ Die Gewinner-Variante wird erst nach dem Block als Regel vorgeschlagen ([[Lernsc
 |---|---|
 | Pflichtpunkte in `qc/referenz_pov.py`, Text-Überlappung, Kontaktbogen, Sichtprüfung (Detaildichte, Bewegung, „sieht es billig aus?“) | [[Prüfung und Abnahme Account 2]] |
 | Caption: `Titelfrage? Emoji Ich hab's durchgespielt. Kommentarfrage? 👇 #t1 #t2 #t3 #wissen #waswaerewenn`, Suchbegriff vorn | [[Plattformregeln und Posting]] |
-| Posten über Buffer, Zeiten, `--nachpruefen`, kein KI-Label; Cover = Bild bei 1,5 s mit lesbarer Titelfrage | [[Plattformregeln und Posting]] |
+| Posten über Buffer, Zeiten, `--nachpruefen`; Cover = Bild bei 1,5 s mit lesbarer Titelfrage | [[Plattformregeln und Posting]] |
 | Profil: 3 Pins, Bio mit Takt; Antwort-Videos, Stitch und Duett freischalten | [[Profil und Follow-Umwandlung]], [[Kommentare Antwort-Videos und Stitch]] |
 | Trend-Radar auch für diesen Account | [[Trend-Radar]] |
 

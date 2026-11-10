@@ -762,3 +762,24 @@ body.claude-offen .toasts { right: calc(var(--claude-b) + 16px); }
 .toast.problem { border-color: color-mix(in srgb, var(--fehler) 45%, transparent); }
 @keyframes toast-rein { from { opacity: 0; transform: translateX(24px); } }
 @keyframes toast-raus { to { opacity: 0; transform: translateX(24px); } }
+
+/* ───────── Ausbau 10.11.: Register, Autopilot- und Handy-Schalter, Limit, Abzeichen „Automatik lokal“ ───────── */
+.dialog { max-height: 92vh; overflow-y: auto; }
+.dialog-zwischen { margin: 18px 16px 0; font-size: 13.5px; font-weight: 600; display: flex; align-items: baseline; gap: 10px; }
+.dialog-zwischen .hinweis { font-weight: 400; }
+.schalter-zeile input[type="number"] { width: 78px; margin: 6px 6px 0 0; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--rand-stark); background: rgba(0, 0, 0, 0.35); color: var(--text); }
+.schalter-zeile .frist { display: inline-flex; align-items: center; font-size: 12px; color: var(--leise); }
+.schalter-zeile.kompakt { padding: 7px 12px; }
+.verbindung.lokal .led { --farbe: var(--laeuft); }
+.verbindung.lokal .verbindung-text { color: #f4dca8; }
+.limit-band { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.automatik-chip.auto { background: color-mix(in srgb, var(--ok) 9%, transparent); border-color: color-mix(in srgb, var(--ok) 26%, transparent); color: #bfe9cf; }
+.automatik-chip.wartet { background: color-mix(in srgb, var(--laeuft) 9%, transparent); border-color: color-mix(in srgb, var(--laeuft) 28%, transparent); color: #f4dca8; }
+.todo.alt .todo-icon { opacity: 0.75; }
+.register-kopf { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.register-kopf .hinweis { margin-left: auto; }
+.register-tabelle th { cursor: default; }
+.register-tabelle td.video-titel { max-width: 460px; }
+.register-tabelle td small { display: block; color: var(--leise); font-size: 11px; }
+.register-tabelle .chip { font-size: 11px; }
+.register-summe { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 2px 10px; }

@@ -55,4 +55,4 @@ three.js ist der Kern beider Accounts. Blender ohne Oberfläche rendert bei Beda
 Jüngste Entscheidung des Inhabers ([[Entscheidungen Log]]) > REA-Regelwerk des Accounts > Regelwerk des Accounts > Detail-Notizen > [[Maßstab Simulierbar]] (Archiv, Messgrundlage). Ein Widerspruch wird gemeldet, nie still aufgelöst. Kein Skill ändert Regeln.
 
 ## Siehe auch
-[[Claude-Chat-Workflow]] (Tagesablauf) · [[Cockpit]] · [[Produktion Rhythmus und Modelle]] · [[Originalität und Themenfindung]] · [[Wie dieses Hirn funktioniert]] · [[Index]]
+[[Claude-Chat-Workflow]] (Tagesablauf) · [[Cockpit]] · [[Video-Register]] (alle Videos mit Stand und Zahlen, vom Cockpit erzeugt) · [[Produktion Rhythmus und Modelle]] · [[Originalität und Themenfindung]] · [[Wie dieses Hirn funktioniert]] · [[Index]]

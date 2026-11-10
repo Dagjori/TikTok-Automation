@@ -19,8 +19,19 @@ Hintergrund im Hirn: `hirn/03-stelldirvor-pov/1-Skripterstellung/` (Themenfindun
 | 8 Geschichte umgedreht | höchstens 1 von 10 | ein echter Ort, eine Größe anders; keine reale Tragödie |
 
 ### A2. Suchstämme für die Nachfrage
-Deutsch: `was passiert wenn man` · `was passiert wenn` · `was wäre wenn` · `wie lange kann man` · `wie lange würde` · `kann man überleben` · `was passiert mit dem körper wenn` · `warum gibt es` (Naturphänomene).
+Allgemein (liefern vor allem Körper-Themen und Klassiker, darum nur ein Teil der Suche): `was passiert wenn man` · `was passiert wenn` · `was wäre wenn` · `wie lange kann man` · `wie lange würde` · `kann man überleben` · `was passiert mit dem körper wenn`.
+**Je Feld** (aus dem ersten Lauf am 10.11.2026; diese tragen die Felder 1, 4, 6 und 7):
+| Feld | Stämme |
+|---|---|
+| 1 Naturphänomene | `warum gibt es` · `warum gibt es dieses jahr` · `warum ist der himmel` · `rekord` · `wie entsteht` |
+| 3 Tiere und Ökosysteme | `was wäre wenn es keine` · `warum gibt es dieses jahr so viele` · `was passiert wenn ein` |
+| 4 Physik und Chemie im Alltag | `was passiert wenn man wasser` · `was passiert wenn lava` · `wie heiß wird` · `wie viel druck` |
+| 5 Weltraum | `sternschnuppen` · `kann man im all` · `wie lange würde es dauern zum` |
+| 6 Skurriles | `wie viel tonnen` · `wie viele menschen passen` · `was wäre wenn alle` (nur mit Winkel, A5 beachten) |
+| 7 Technik und Versorgung | `stromausfall` · `wie lange würde ein` · `was passiert wenn das internet` (nur an einem Ort) |
 Englisch (zeigt, was als Nächstes nach Deutschland kommt): `what would happen if` · `what if` · `how long would` · `could you survive`.
+
+**Zeitlupe** ist neben Zeitraffer und Echtzeit erlaubt (z. B. ein Nieser auf 60 s gedehnt); im Feld `zeitraffer` dann „Zeitlupe, Faktor …“.
 
 **Anlässe:** Naturereignisse mit Datum in den nächsten 8 Wochen (Sonnen- und Mondfinsternis, Sternschnuppenströme, Polarlicht-Phasen, Sturm- und Frostsaison, Zugvogelzeit, Jahreszeitenwechsel), wissenschaftliche Meldungen der Woche.
 
@@ -64,7 +75,7 @@ Opferdarstellung, Gore, reale Tragödien · Gesundheitsversprechen und alles, wa
 Unter 14 Punkten nicht vorschlagen. Bei „Sichtbarkeit“ oder „Belegbarkeit“ 0 Punkte: raus.
 
 ### A8. Ausgabe „Ideen“ (genau dieses Format, je Idee eine Karte)
-Zuerst `Gestrichen (naheliegend): …`, dann `Nachfrage geprüft: Suchvorschläge ja/nein · Trends ja/nein · Stand <Datum>`. Dann 10 Karten:
+Zuerst `Gestrichen (naheliegend): …`, dann `Nachfrage geprüft: Suchvorschläge ja/nein (Stämme × Buchstaben) · Folge-Vorschläge ja/nein · Trends ja/nein/nicht abrufbar · Stand <Datum>`. Dann 10 Karten:
 
 ```
 IDEE <Nr> · <Punkte>/21 · Feld <Nr Name> · Maßstab <persönlich|global>

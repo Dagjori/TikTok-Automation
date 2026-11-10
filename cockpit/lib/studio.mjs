@@ -35,7 +35,11 @@ function jsonAusText(text) {
   return JSON.parse(t.slice(a, e + 1));
 }
 
-export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellungen = () => ({}), produzieren = null, heute = () => new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Berlin" }) }) {
+// Nach einer automatischen Wahl (Autopilot) bleibt länger Zeit zum Umentscheiden als nach einer eigenen (nur für Tests kürzer)
+const AUTO_WAHL_RECHERCHE_S = Number(process.env.COCKPIT_AUTO_WAHL_RECHERCHE_S) > 0 ? Number(process.env.COCKPIT_AUTO_WAHL_RECHERCHE_S) : 600;
+
+// bisher(konto) → Liste „Titel (Suchbegriff: …)“ aus dem Video-Register (lib/register.mjs); beiIdeen({konto, datum, anzahl}) nach neuen Ideen
+export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellungen = () => ({}), produzieren = null, heute = () => new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Berlin" }), bisher = null, beiIdeen = () => {} }) {
   const jetzt = () => new Date().toISOString();
   const spaeter = (s) => new Date(Date.now() + s * 1000).toISOString();
   const WEG = { __delete__: true };
@@ -75,12 +79,21 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
     }).join("\n");
   }
 
+  // Bisherige Videos eines Kontos für die Befehle: aus dem Video-Register (Titel und Suchbegriff, neueste zuerst), dazu die
+  // festen Alt-Titel aus befehle.json, die das Register nicht kennt. Ohne Register (Tests): Titel aus den Slot-Dokumenten.
+  function bisherigeVideos(konto) {
+    let liste = [];
+    try { liste = bisher ? bisher(konto) || [] : []; } catch (e) { log(`Studio: Video-Register nicht lesbar (${e.message})`); }
+    if (!liste.length) liste = db.liste("skripte", [["konto", "==", konto]]).map((d) => d.daten.titel).filter(Boolean);
+    const kennt = (t) => liste.some((z) => z.toLowerCase().startsWith(String(t).toLowerCase()));
+    return [...liste, ...(befehle()[konto].bisher || []).filter((t) => !kennt(t))];
+  }
+
   function ideenPrompt(konto, datum, wunsch) {
     const b = befehle()[konto];
-    const titel = db.liste("skripte", [["konto", "==", konto]]).map((d) => d.daten.titel).filter(Boolean);
-    const bisher = [...new Set([...(b.bisher || []), ...titel])];
     const zutaten = zutatenZiehen(b);
-    let p = b.ideen_vorlage.replace("{{LERNSTAND}}", () => lernstand(konto)).replace("- {{BISHER}}", () => bisher.map((t) => `- ${t}`).join("\n")).replace("{{ZUTATEN}}", () => zutaten);
+    const bisherige = bisherigeVideos(konto);
+    let p = b.ideen_vorlage.replace("{{LERNSTAND}}", () => lernstand(konto)).replace("- {{BISHER}}", () => bisherige.map((t) => `- ${t}`).join("\n")).replace("{{ZUTATEN}}", () => zutaten);
     if (wunsch) p = p.replace("AUFGABE\n", () => `MEIN WUNSCH FÜR HEUTE: ${wunsch}\n\nAUFGABE\n`);
     p += `\n\nVideo-Tag: ${datum}. Alle Aussagen müssen für das Jahr ${datum.slice(0, 4)} gelten.`;
     p += '\n\nHINWEIS COCKPIT: Nutze die Websuche zuerst für die Nachfrage (Abschnitt NACHFRAGE: Suchvorschläge und steigende Suchanfragen zu den Suchstämmen), danach für die Originalitäts-Prüfung und für Belege (zügig, je Idee 1 bis 3 Suchen). Lies keine Dateien und ändere nichts. Antworte am Ende ausschließlich mit dem JSON-Objekt {"gestrichen": [...], "ideen": [...]} mit genau 10 Ideen, ohne Text davor oder danach.';
@@ -94,37 +107,42 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
 
   // Nach einem Skript-Auftrag: Slots, die noch auf „recherche“ stehen, als Fehler markieren (nie stumm hängen lassen).
   // Vom Inhaber gestoppt: nie automatisch wiederholen und nicht melden (auto_wiederholt_phase, auto_gemeldet).
-  function nachRecherche(ids, istFehler, gestoppt = false) {
+  // abbruch: klarer Grund vom Server (Zeitlimit, Stillstand, Nutzungslimit; lib/wache.mjs)
+  // limit: am Nutzungslimit gescheitert; das verbraucht die eine automatische Wiederholung nicht (sie kommt nach dem Reset)
+  function nachRecherche(ids, istFehler, gestoppt = false, abbruch = "", limit = false) {
     for (const id of ids) {
       const d = db.get("skripte", id);
       if (d?.daten.status !== "recherche") continue;
       db.schreiben("skripte", id, {
         status: "fehler", fehler_phase: "recherche",
         fehler: gestoppt ? "Von dir gestoppt. „Erneut versuchen“ startet die Recherche neu."
+          : abbruch ? `${abbruch} „Erneut versuchen“ startet die Recherche neu.`
           : istFehler ? "Claude hat den Auftrag abgebrochen (Limit, Stopp oder Fehler). „Erneut versuchen“ startet die Recherche neu." : "Claude hat den Auftrag beendet, ohne das Skript zu schreiben. Bitte „Erneut versuchen“.",
-        ...(gestoppt ? { auto_wiederholt_phase: "recherche", auto_gemeldet: true } : {}),
+        ...(gestoppt ? { auto_wiederholt_phase: "recherche", auto_gemeldet: true } : limit ? { auto_wiederholt_phase: WEG } : {}),
         fortschritt: "Recherche nicht abgeschlossen", aktualisiert: jetzt(),
       }, { art: "update", ifVersion: d.version, von: "cockpit" });
     }
   }
 
   function skripteAnfordern(konto, datum, ids, art = "skripte", extra = {}) {
-    const a = { art, datum, konto, ...(art === "skripte" ? { slots: ids } : { slot: ids[0].split("-").pop() }), ...extra };
+    // bisherige_videos: aus dem Video-Register; die Sitzung hängt sie an die Lernstand-Datei für --skript-auftrag (anleitung/skripte.md §1.2)
+    const a = { art, datum, konto, ...(art === "skripte" ? { slots: ids } : { slot: ids[0].split("-").pop() }), ...extra, bisherige_videos: bisherigeVideos(konto).slice(0, 60) };
     auftrag({
       art: "skripte", konto, datum, ids,
       titel: `${art === "skripte" ? "Skripte" : "Neufassung"} · ${KONTEN[konto].name} · ${datum}`,
       text: skriptPrompt(a),
       modus: "auto",
-      nachher: (_text, istFehler, job) => nachRecherche(ids, istFehler, !!job?.gestoppt),
+      nachher: (_text, istFehler, job) => nachRecherche(ids, istFehler, !!job?.gestoppt, job?.abbruch || "", istFehler && !!job?.limit),
     });
   }
 
   // Recherche-Automatik: Nach jeder neuen Wahl startet die Recherche von selbst, für alle gewählten Slots des Kontos und
   // Tages in einem Auftrag. Sind beide Slots belegt, nach 15 s (Zeit zum Umentscheiden), sonst nach 3 Min. (Zeit für den zweiten).
-  function autoRechercheSetzen(konto, datum) {
+  function autoRechercheSetzen(konto, datum, auto = false) {
     if (!automatik().recherche || datum < heute()) return null;
     const docs = SLOTS.map((s) => db.get("skripte", slotId(konto, datum, s)));
-    const ab = spaeter(docs.every(Boolean) ? RECHERCHE_BEIDE_S : RECHERCHE_EINZELN_S);
+    // Automatisch gewählt (Autopilot): 10 Min. Zeit, die Wahl noch zu ändern
+    const ab = spaeter(auto || docs.some((d) => d?.daten.status === "gewaehlt" && d.daten.auto_gewaehlt) ? AUTO_WAHL_RECHERCHE_S : docs.every(Boolean) ? RECHERCHE_BEIDE_S : RECHERCHE_EINZELN_S);
     for (const d of docs) if (d?.daten.status === "gewaehlt") db.schreiben("skripte", d.id, { auto_recherche_ab: ab }, { art: "update", ifVersion: d.version });
     return ab;
   }
@@ -203,13 +221,16 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
           const folgeteile = [...(db.get("ideen", id)?.daten.ideen || []).filter((i) => i.typ === "folgeteil"), ...vorgemerkteNehmen(konto, datum)];
           const alle = [...folgeteile.map((i, n) => ({ ...i, nr: 11 + n })), ...ideen.filter((i) => i.typ !== "folgeteil")];
           db.schreiben("ideen", id, { konto, datum, ideen: alle, wunsch, zutaten: prompt.zutaten, gestrichen, erzeugt: jetzt() }, { ifVersion: db.get("ideen", id)?.version, von: "claude" });
+          try { beiIdeen({ konto, datum, anzahl: alle.length }); } catch (e) { log(`Studio: Meldung „Ideen bereit“: ${e.message}`); }
         },
       });
       return { ok: true, hinweis: "Claude sucht und prüft die Ideen (ca. 3–6 Min.)" };
     },
 
-    waehlen({ konto, datum, slot, nr }) {
+    // auto (nur Autopilot, lib/automatik.mjs): Grund der automatischen Wahl; der Slot trägt dann auto_gewaehlt
+    waehlen({ konto, datum, slot, nr, auto = "" }) {
       pruefe({ konto, datum, slot });
+      auto = auto ? String(auto).slice(0, 160) : "";
       const idee = db.get("ideen", ideenId(konto, datum))?.daten.ideen?.find((i) => i.nr === Number(nr));
       if (!idee) throw fehler(`Idee ${nr} gibt es für diesen Tag nicht`);
       const id = slotId(konto, datum, slot);
@@ -228,10 +249,12 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
       }
       db.schreiben("skripte", id, {
         konto, datum, slot, uhrzeit: uhrzeit(datum, slot), idee_nr: idee.nr, idee, titel: idee.titel, thema: idee.thema || "",
-        status: "gewaehlt", fortschritt: "", fehler: "", fehler_phase: "", verlauf: [{ zeit: jetzt(), text: `Idee gewählt (${SLOT_NAME[slot]})`, von: "cockpit" }],
+        status: "gewaehlt", fortschritt: auto ? "Automatisch gewählt" : "", fehler: "", fehler_phase: "",
+        verlauf: [{ zeit: jetzt(), text: auto ? `Idee automatisch gewählt (${SLOT_NAME[slot]}): ${auto}` : `Idee gewählt (${SLOT_NAME[slot]})`, von: "cockpit" }],
+        ...(auto ? { auto_gewaehlt: true, auto_gewaehlt_grund: auto } : {}),
         erstellt: jetzt(), aktualisiert: jetzt(),
       }, { ifVersion: d?.version });
-      const ab = autoRechercheSetzen(konto, datum);
+      const ab = autoRechercheSetzen(konto, datum, !!auto);
       return { ok: true, ...(ab ? { auto_recherche_ab: ab } : {}) };
     },
 
@@ -258,25 +281,39 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
       // Neuer Auftrag des Inhabers: eine Recherche-Wiederholung steht ihm wieder zu
       db.schreiben("skripte", id, {
         status: "recherche", kommentar, kommentar_zeit: jetzt(), fehler: "", fehler_phase: "", fortschritt: "Neufassung angefordert", aktualisiert: jetzt(),
-        auto_gemeldet: WEG, ...(d.daten.auto_wiederholt_phase === "recherche" ? { auto_wiederholt_phase: WEG } : {}),
+        auto_gemeldet: WEG, auto_freigabe_wartet: WEG, ...(d.daten.auto_wiederholt_phase === "recherche" ? { auto_wiederholt_phase: WEG } : {}),
       }, { art: "update", ifVersion: d.version });
       skripteAnfordern(d.daten.konto, d.daten.datum, [id], "neu_schreiben", { kommentar });
       return { ok: true };
     },
 
     // Produktions-Automatik: 60 s Zeit zum Zurücknehmen, dann übergibt der Takt (sobald alle Skripte des Tages freigegeben sind)
-    freigeben({ id }) {
+    // auto (nur Autopilot): die Freigabe kam vom Cockpit nach bestandener Prüfung; der Slot trägt dann auto_freigegeben
+    freigeben({ id, auto = false }) {
       const d = slotLesen(id);
       if (d.daten.status !== "skript_fertig") throw fehler("Nur ein fertiges Skript lässt sich freigeben");
       const ab = automatik().produktion && d.daten.datum >= heute() ? spaeter(PRODUKTION_NACH_S) : null;
-      db.schreiben("skripte", id, { status: "freigegeben", freigegeben_am: jetzt(), fortschritt: "Freigegeben", aktualisiert: jetzt(), ...(ab ? { auto_produktion_ab: ab } : {}) }, { art: "update", ifVersion: d.version });
+      db.schreiben("skripte", id, {
+        status: "freigegeben", freigegeben_am: jetzt(), fortschritt: auto ? "Automatisch freigegeben" : "Freigegeben", aktualisiert: jetzt(),
+        auto_freigabe_wartet: WEG, ...(auto ? { auto_freigegeben: true } : { auto_freigegeben: WEG }), ...(ab ? { auto_produktion_ab: ab } : {}),
+      }, { art: "update", ifVersion: d.version });
+      if (auto) db.meilenstein("skripte", id, "Automatisch freigegeben (Prüfung bestanden)", { von: "cockpit" });
       return { ok: true, ...(ab ? { auto_produktion_ab: ab } : {}) };
     },
 
+    // Zurückgenommen: der Autopilot gibt dieses Skript nicht noch einmal von selbst frei
     zuruecknehmen({ id }) {
       const d = slotLesen(id);
       if (d.daten.status !== "freigegeben") throw fehler("Nur eine Freigabe lässt sich zurücknehmen");
-      db.schreiben("skripte", id, { status: "skript_fertig", freigegeben_am: WEG, auto_produktion_ab: WEG, auto_produktion_wartet: WEG, fortschritt: "Freigabe zurückgenommen", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
+      db.schreiben("skripte", id, { status: "skript_fertig", freigegeben_am: WEG, auto_produktion_ab: WEG, auto_produktion_wartet: WEG, auto_freigegeben: WEG, auto_freigabe_wartet: "Freigabe von dir zurückgenommen", fortschritt: "Freigabe zurückgenommen", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
+      return { ok: true };
+    },
+
+    // Erledigten Altfall aus „Für dich“ nehmen (vergangene Tage: Fehler oder nie gepostetes Video); ändert sonst nichts
+    abhaken({ id }) {
+      const d = slotLesen(id);
+      if (d.daten.datum >= heute()) throw fehler("Abhaken geht nur für vergangene Tage");
+      db.schreiben("skripte", id, { abgehakt: jetzt() }, { art: "update", ifVersion: d.version });
       return { ok: true };
     },
 
@@ -329,7 +366,7 @@ export function erstelleStudio({ db, repo, auftrag, log = () => {}, einstellunge
       }
       // Nachprüfung gescheitert: Video ist schon in Buffer bzw. gepostet, also nur die Nachprüfung neu anstoßen (nie neu recherchieren)
       if (d.daten.fehler_phase === "nachpruefen") {
-        db.schreiben("skripte", id, { status: "geplant", fehler: "", fehler_phase: "", auto_gemeldet: WEG, nachpruefen_angefordert: WEG, fortschritt: "Nachprüfung erneut angefordert (startet in ≤ 5 Min.)", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
+        db.schreiben("skripte", id, { status: "geplant", fehler: "", fehler_phase: "", auto_gemeldet: WEG, nachpruefen_angefordert: WEG, nachpruefen_versuche: WEG, nachpruefen_ab: WEG, fortschritt: "Nachprüfung erneut angefordert (startet in ≤ 5 Min.)", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });
         return { ok: true };
       }
       db.schreiben("skripte", id, { status: "recherche", fehler: "", fehler_phase: "", auto_gemeldet: WEG, fortschritt: "Recherche erneut angefordert", aktualisiert: jetzt() }, { art: "update", ifVersion: d.version });

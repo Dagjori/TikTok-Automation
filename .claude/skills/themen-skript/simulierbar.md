@@ -69,7 +69,7 @@ Parteipolitik und Wertungen über Gruppen · Anlageberatung, Einzelaktien, Krypt
 Unter 14 Punkten nicht vorschlagen. Bei „Nachfrage“ oder „Belegbarkeit“ 0 Punkte: raus.
 
 ### A8. Ausgabe „Ideen“ (genau dieses Format, je Idee eine Karte)
-Zuerst eine Zeile `Gestrichen (naheliegend): …`, dann eine Zeile `Nachfrage geprüft: Suchvorschläge ja/nein · Trends ja/nein · Stand <Datum>`. Dann 10 Karten:
+Zuerst eine Zeile `Gestrichen (naheliegend): …`, dann eine Zeile `Nachfrage geprüft: Suchvorschläge ja/nein (Stämme × Buchstaben) · Folge-Vorschläge ja/nein · Trends ja/nein/nicht abrufbar · Stand <Datum>`. Dann 10 Karten:
 
 ```
 IDEE <Nr> · <Punkte>/21 · Feld <Nr Name> · Format <Duell|Zeitverlauf|Was bleibt|Lernvideo>

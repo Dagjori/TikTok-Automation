@@ -65,7 +65,7 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 |---|---|
 | Prüfliste mit **23 Punkten**; `qc/massstab.py` prüft das Messbare, dazu Sichtprüfung am Kontaktbogen | [[Prüfung und Abnahme Simulierbar]] |
 | Caption: `Titelfrage? Emoji Ich hab's simuliert. Kommentarfrage? 👇 #t1 #t2 #t3 #wissen #simulation` | [[Plattformregeln und Posting]] |
-| Posten über Buffer, Zeiten, `--nachpruefen`, kein KI-Label | [[Plattformregeln und Posting]] |
+| Posten über Buffer, Zeiten, `--nachpruefen` | [[Plattformregeln und Posting]] |
 | Profil: 3 Pins, Bio mit Versprechen und Takt, einheitliches Cover; Antwort-Videos und Stitch-Test | [[Profil und Follow-Umwandlung]], [[Kommentare Antwort-Videos und Stitch]] |
 
 ## 6. Lernen

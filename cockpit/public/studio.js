@@ -77,11 +77,17 @@ function ideenZeichnen() {
   $("wunsch").disabled = nurLesen();
   const wunsch = String(dok?.daten.wunsch || "");
   $("ideen-info").textContent = dok ? `· ${dok.daten.ideen?.length || 0} Ideen, ${new Date(dok.daten.erzeugt || dok.aktualisiert).toLocaleString("de-DE", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}${wunsch ? ` · Wunsch: ${wunsch.length > 70 ? wunsch.slice(0, 70) + " …" : wunsch}` : ""}` : "";
+  // Autopilot (Standard aus): wann das Cockpit selbst wählt, falls du es nicht tust
+  const ap = automatik();
+  if (dok && ap.auto_wahl && !dok.daten.auto_wahl_erledigt && ST.tag >= S.heute && ["mittag", "abend"].some((s) => !skriptDok(slotIdVon(ST.konto, ST.tag, s)))) {
+    const t = Date.parse(dok.daten.erzeugt || dok.aktualisiert || "");
+    if (t) $("ideen-info").textContent += ` · Autopilot wählt um ${uhrzeitVon(new Date(t + ap.auto_wahl_frist_min * 60000).toISOString())} selbst`;
+  }
   $("ideen-info").title = wunsch;
   if (laeuft && !dok) return htmlSetzen($("ideen"), `<div class="ideen-laden">${"<div></div>".repeat(6)}</div>`);
   if (!dok) {
     const a = automatik();
-    const auto = automatikDa() && a.ideen && ST.tag === morgen() ? `<br><span class="hinweis">Automatik: Claude erzeugt sie täglich ab ${esc(a.ideen_uhrzeit)} Uhr.</span>` : "";
+    const auto = automatikDa() && a.ideen && ST.tag === morgen() ? `<br><span class="hinweis">Automatik: Claude erzeugt sie täglich ab ${esc(a.ideen_uhrzeit)} Uhr${limitJetzt() ? ` (wartet gerade auf das Nutzungslimit bis ${uhrzeitVon(limitJetzt().weiter_ab)})` : ""}.</span>` : "";
     return htmlSetzen($("ideen"), `<div class="leer">Noch keine Ideen für ${esc(KONTO_NAME[ST.konto])} am ${tagLabel(ST.tag)}.${nurLesen() ? "" : " Oben „10 Ideen erzeugen“."}${auto}</div>`);
   }
   const belegung = Object.fromEntries(["mittag", "abend"].map((s) => [s, skriptDok(slotIdVon(ST.konto, ST.tag, s))]));
@@ -133,9 +139,18 @@ function slotAutomatik(d) {
   if (x.status === "freigegeben" && a.produktion && x.auto_produktion_wartet) return `<span class="automatik-chip">Produktion wartet: ${esc(x.auto_produktion_wartet)}</span>`;
   if (x.status === "freigegeben" && a.produktion && x.auto_produktion_ab) return `<span class="automatik-chip">Produktion startet in <b data-bis="${esc(x.auto_produktion_ab)}">…</b></span>`;
   const wiederholung = wiederholungAb(d);
-  if (wiederholung) return `<span class="automatik-chip">Neuer Versuch in <b data-bis="${esc(wiederholung)}">…</b></span>`;
+  if (wiederholung) return `<span class="automatik-chip">${limitJetzt() ? "Wartet auf Limit · neuer Versuch in" : "Neuer Versuch in"} <b data-bis="${esc(wiederholung)}">…</b></span>`;
+  // Autopilot (Ausbau 10.11.): Frist bis zur automatischen Freigabe bzw. Grund, warum das Skript auf dich wartet
+  if (x.status === "skript_fertig" && x.auto_freigabe_wartet) return `<span class="automatik-chip wartet" title="${esc(x.auto_freigabe_wartet)}">Wartet auf dich: ${esc(String(x.auto_freigabe_wartet).slice(0, 80))}</span>`;
+  if (x.status === "skript_fertig" && a.auto_freigabe && x.datum >= S.heute) {
+    const t = Date.parse(x.aktualisiert || d.aktualisiert || "");
+    if (t) return `<span class="automatik-chip" title="Nur wenn die Prüfung besteht; sonst wartet das Skript auf dich">Automatische Freigabe in <b data-bis="${esc(new Date(t + a.auto_freigabe_frist_min * 60000).toISOString())}">…</b></span>`;
+  }
+  if (x.status === "freigegeben" && x.auto_freigegeben) return '<span class="automatik-chip auto">automatisch freigegeben</span>';
   return "";
 }
+// Dauerhafte Marke am Slot: vom Autopilot gewählt bzw. freigegeben
+const slotMarken = (d) => `${d.daten.auto_gewaehlt ? `<span class="chip" title="${esc(d.daten.auto_gewaehlt_grund || "")}">automatisch gewählt</span>` : ""}${d.daten.auto_freigegeben && d.daten.status !== "freigegeben" ? '<span class="chip">automatisch freigegeben</span>' : ""}`;
 /** Zeitpunkt der automatischen Wiederholung eines Fehlers (oder null) */
 function wiederholungAb(d) {
   const x = d.daten;
@@ -144,7 +159,9 @@ function wiederholungAb(d) {
   if (x.datum < (x.fehler_phase === "nachpruefen" ? plusTage(S.heute, -1) : S.heute)) return null;
   const t = Date.parse(x.aktualisiert || d.aktualisiert || "");
   if (!t || Date.now() - t > 12 * 3600000) return null;
-  return t ? new Date(t + (S.wiederholen_nach_s || 300) * 1000).toISOString() : null;
+  // Nutzungslimit: die Wiederholung kommt erst kurz nach dem Reset
+  const nachLimit = limitJetzt() ? Date.parse(limitJetzt().weiter_ab) : 0;
+  return new Date(Math.max(t + (S.wiederholen_nach_s || 300) * 1000, nachLimit)).toISOString();
 }
 
 function slotsZeichnen() {
@@ -159,7 +176,7 @@ function slotsZeichnen() {
     const geplant = d.daten.geplant_fuer ? `Geplant: ${new Date(d.daten.geplant_fuer).toLocaleString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}` : "";
     return `<div class="slot ${arbeitet ? "arbeitet" : ""} ${ST.slot === id ? "gewaehlt-ansicht" : ""}" data-slot="${id}">
       ${kopf}
-      <div class="slot-titel">${esc(d.daten.titel || "")}</div>
+      <div class="slot-titel">${esc(d.daten.titel || "")} ${slotMarken(d)}</div>
       <div class="slot-info">${esc(d.daten.fortschritt || "")}${geplant ? `<br>${esc(geplant)}` : ""}</div>
       ${d.daten.fehler ? `<div class="fehler-text">${esc(d.daten.fehler)}</div>` : ""}
       <div class="slot-knoepfe">${slotAutomatik(d)}${slotKnoepfe(d)}</div>

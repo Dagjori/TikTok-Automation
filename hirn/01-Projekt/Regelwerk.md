@@ -68,7 +68,6 @@ Die Kurzfassung aller Regeln, die für **beide** Accounts gelten. Jede Regel hat
 | Nur über Buffer, vollautomatisch ohne weitere Freigabe; danach `--nachpruefen` | [[Plattformregeln und Posting]] |
 | Zeiten: Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30 | [[Plattformregeln und Posting]] |
 | Caption eine Zeile, Suchbegriff vorn, ca. 150 Zeichen + 5 Hashtags, kein #fyp | [[Plattformregeln und Posting]] |
-| Kein KI-Label (Ausnahme: realistisch wirkende KI-Inhalte) | [[Plattformregeln und Posting]] |
 | Profil ohne E-Mail und Telefonnummer (CRP „Advertising“) | [[CRP Creator Rewards Program]] |
 
 ## Recherche

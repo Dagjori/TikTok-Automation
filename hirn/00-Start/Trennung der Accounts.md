@@ -34,7 +34,7 @@ Zwei Kanäle, zwei Regelwerke, in jedem Skill zwei getrennte Teile. **Nie mische
 | Radar | ja ([[Trend-Radar]]) | seit 08.11. eigener Abschnitt in [[Trend-Radar]] (Prompt der Radar-Aufgabe noch nicht umgestellt) |
 
 ## Gemeinsam gilt für beide
-[[Plattformregeln und Posting]] (Buffer, Posting-Zeiten, kein KI-Label) · [[Produktion Rhythmus und Modelle]] (4 Videos/Tag, max. 2 Agenten, Sonnet) · [[Render-Dienst Windows-PC]] · [[Arbeitsregeln und Sicherheit]] · [[CRP Creator Rewards Program]] · Kein Logo, kein Kanalname, keine Sticker im Bild.
+[[Plattformregeln und Posting]] (Buffer, Posting-Zeiten) · [[Produktion Rhythmus und Modelle]] (4 Videos/Tag, max. 2 Agenten, Sonnet) · [[Render-Dienst Windows-PC]] · [[Arbeitsregeln und Sicherheit]] · [[CRP Creator Rewards Program]] · Kein Logo, kein Kanalname, keine Sticker im Bild.
 
 ## Typische Verwechslungen (vermeiden)
 - Maßstab und `massstab.py` auf Account 2 anwenden: falsch, dort gilt `referenz_pov.py`.

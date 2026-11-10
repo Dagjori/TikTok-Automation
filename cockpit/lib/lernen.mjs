@@ -9,7 +9,14 @@ import { execFile } from "node:child_process";
 const WOCHE = 7 * 86400000;
 const LERNSCHLEIFE_UHRZEIT = "19:52"; // wie die bisherige Cloud-Aufgabe
 
-export function erstelleLernen({ db, repo, geheim, auftrag, senden = () => {}, log = () => {}, einstellungen, einstellungenSichern, heute, berlinZeit, anspruch = async () => true }) {
+const LERNSCHLEIFE_VERSUCHE = 3; // je Tag; erst ein erfolgreicher Lauf setzt lernschleife_zuletzt (Ausbau 10.11.2026)
+const umgebungS = Number(process.env.COCKPIT_WIEDERHOLEN_S); // nur für Tests kürzer
+const LERNSCHLEIFE_ABSTAND_MS = (umgebungS > 0 ? umgebungS : 900) * 1000; // Abstand zwischen zwei Versuchen
+const VORSCHLAG_VERWAIST_MS = 3 * 3600 * 1000;
+
+// beiMeldung(doc): jede neue Meldung (für die Handy-Meldung, lib/melden.mjs). limitBis(): ms, bis wann das Nutzungslimit gilt.
+// jobs(): laufende und wartende Claude-Aufträge dieses Rechners.
+export function erstelleLernen({ db, repo, geheim, auftrag, senden = () => {}, log = () => {}, einstellungen, einstellungenSichern, heute, berlinZeit, anspruch = async () => true, beiMeldung = () => {}, limitBis = () => 0, jobs = () => [] }) {
   const jetzt = () => new Date().toISOString();
   const auto = () => (einstellungen().autonomie ||= { modus: "freigabe" });
 
@@ -18,6 +25,7 @@ export function erstelleLernen({ db, repo, geheim, auftrag, senden = () => {}, l
     const id = `m-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
     const doc = db.schreiben("meldungen", id, { zeit: jetzt(), art, titel: String(titel).slice(0, 160), text: String(text).slice(0, 1200), ziel, gelesen: false }, { von: "cockpit" });
     senden("meldung", doc);
+    try { beiMeldung(doc); } catch (e) { log(`Meldung weitergeben: ${e.message}`); }
     return doc;
   }
 
@@ -61,12 +69,26 @@ export function erstelleLernen({ db, repo, geheim, auftrag, senden = () => {}, l
       lernschleifeVideos: video,
       modus: "auto",
       text: `Du bist die Lernschleife des TikTok-Cockpits auf einem Rechner des Inhabers (Tag ${tag}, Anlass: ${grund}). Lies zuerst cockpit/anleitung/lernschleife.md vollständig und befolge sie Schritt für Schritt.\n\nDATENABRUF DES COCKPITS (gerade eben)\n${abruf.ok ? "erfolgreich" : "FEHLGESCHLAGEN"}\n${abruf.ausgabe}\n${abruf.fehler ? "Hinweise: " + abruf.fehler : ""}`,
-      nachher: (_text, istFehler) => {
+      nachher: (_text, istFehler, job) => {
         laeuft = false;
-        einstellungen().lernschleife_zuletzt = tag;
-        einstellungenSichern();
+        const e = einstellungen();
         senden("lernschleife", { laeuft: false });
-        if (istFehler) melden({ art: "fehler", titel: "Lernschleife abgebrochen", text: "Die Auswertung wurde nicht fertig. Sie läuft beim nächsten Mal erneut." });
+        if (!istFehler) {
+          // Nur ein erfolgreicher Lauf gilt als erledigt
+          e.lernschleife_zuletzt = tag;
+          delete e.lernschleife_versuche;
+          einstellungenSichern();
+          return;
+        }
+        // Gescheitert: Versuch zählen (ein Nutzungslimit zählt nicht), der Zeitplan versucht es bis zu 3-mal am Tag
+        const v = e.lernschleife_versuche?.tag === tag ? e.lernschleife_versuche : { tag, n: 0 };
+        e.lernschleife_versuche = { tag, n: v.n + (job?.limit ? 0 : 1), zuletzt: jetzt(), gestoppt: !!job?.gestoppt };
+        const letzter = e.lernschleife_versuche.n >= LERNSCHLEIFE_VERSUCHE || job?.gestoppt;
+        if (letzter) e.lernschleife_zuletzt = tag; // heute nicht noch einmal von selbst
+        einstellungenSichern();
+        if (job?.gestoppt) return;
+        if (letzter) melden({ art: "fehler", titel: "Lernschleife abgebrochen", text: `${job?.abbruch ? job.abbruch + " " : ""}Die Auswertung wurde heute ${LERNSCHLEIFE_VERSUCHE}-mal nicht fertig. Unter „Lernen“ startest du sie von Hand, sonst läuft sie morgen wieder.`, ziel: { ansicht: "lernen" } });
+        else log(`Lernschleife ${tag} nicht fertig (${job?.abbruch || "Abbruch"}), neuer Versuch folgt`);
       },
     });
     return { ok: true };
@@ -74,19 +96,34 @@ export function erstelleLernen({ db, repo, geheim, auftrag, senden = () => {}, l
 
   // Täglich um 19:52 (Berlin), wenn eingeschaltet; verpasst (Cockpit war aus) → beim nächsten Start nachholen.
   // Mit Cockpit auf Laptop und PC läuft sie nur einmal am Tag: auf dem Rechner, der den Tag zuerst für sich beansprucht.
-  let beansprucht = null; // Tag, für den dieser Rechner schon gefragt hat
+  // Scheitert sie (Abbruch, Zeitlimit), folgt nach 15 Min. ein neuer Versuch, höchstens 3 am Tag; während eines Nutzungslimits wartet sie.
+  let beansprucht = null; // Schlüssel (Tag und Versuch), für den dieser Rechner schon gefragt hat
+  let supabaseWeg = 0; // Anzahl Takte in Folge, in denen Supabase nicht erreichbar war
   function zeitplan() {
     const e = einstellungen();
     if (!e.lernschleife_aktiv || laeuft || !geheim.BUFFER_API_KEY) return;
     const tag = heute();
-    if (e.lernschleife_zuletzt === tag || beansprucht === tag) return;
+    if (e.lernschleife_zuletzt === tag || limitBis() > Date.now()) return;
+    const v = e.lernschleife_versuche?.tag === tag ? e.lernschleife_versuche : { tag, n: 0 };
+    if (v.n >= LERNSCHLEIFE_VERSUCHE || v.gestoppt) return;
+    if (v.zuletzt && Date.now() < Date.parse(v.zuletzt) + LERNSCHLEIFE_ABSTAND_MS) return;
+    if (jobs().some((j) => j.art === "lernschleife" && !j.abgeschlossen)) return;
     const gestern = heute(new Date(Date.now() - 86400000));
     const verpasst = e.lernschleife_zuletzt && e.lernschleife_zuletzt < gestern;
     if (berlinZeit() < LERNSCHLEIFE_UHRZEIT && !verpasst) return;
-    beansprucht = tag;
-    anspruch(`lernschleife-${tag}`).then((ok) => {
-      if (ok === null) { beansprucht = null; return; } // Supabase gerade weg: beim nächsten Takt erneut
-      if (ok) lernschleife(verpasst ? "verpassten Lauf nachholen" : "täglicher Lauf");
+    const schluessel = `lernschleife-${tag}${v.n ? `-v${v.n + 1}` : ""}`;
+    if (beansprucht === schluessel) return;
+    beansprucht = schluessel;
+    anspruch(schluessel).then((ok) => {
+      if (ok === null) {
+        // Supabase gerade weg: beim nächsten Takt erneut; nach zwei Takten in Folge läuft sie lokal auf diesem Rechner
+        beansprucht = null;
+        if (++supabaseWeg < 2) return;
+        log(`Lernschleife ${tag}: Supabase nicht erreichbar, läuft lokal auf diesem Rechner`);
+        beansprucht = schluessel;
+        ok = true;
+      } else supabaseWeg = 0;
+      if (ok) lernschleife(v.n ? `neuer Versuch (${v.n + 1} von ${LERNSCHLEIFE_VERSUCHE})` : verpasst ? "verpassten Lauf nachholen" : "täglicher Lauf");
       else log(`Lernschleife ${tag} läuft auf einem anderen Rechner`);
     });
   }
@@ -100,18 +137,38 @@ export function erstelleLernen({ db, repo, geheim, auftrag, senden = () => {}, l
 
   function umsetzen(d, teil = "umsetzen") {
     auftrag({
-      art: "vorschlag_umsetzen",
+      art: "vorschlag_umsetzen", vorschlag: d.id,
       titel: `${teil === "probe" ? "Probebilder" : "Umsetzen"} · ${d.daten.titel}`.slice(0, 120),
       modus: "auto",
       text: `Du bist die Umsetzungs-Sitzung des TikTok-Cockpits. Lies zuerst cockpit/anleitung/vorschlag.md vollständig und befolge sie Schritt für Schritt.\n\nVORSCHLAG (Dokument vorschlaege/${d.id}, Version ${d.version}, Schritt: ${teil})\n${JSON.stringify(d.daten, null, 1)}`,
-      nachher: (_t, istFehler) => {
+      nachher: (_t, istFehler, job) => {
         const neu = db.get("vorschlaege", d.id);
-        if (istFehler && neu && ["angenommen", "probe_ok"].includes(neu.daten.status)) {
-          db.schreiben("vorschlaege", d.id, { status: "fehler", umsetzung: { ...(neu.daten.umsetzung || {}), fehler: "Umsetzung abgebrochen (Limit, Stopp oder Fehler)", zeit: jetzt() } }, { art: "update", ifVersion: neu.version });
-          melden({ art: "fehler", titel: `Umsetzung abgebrochen: ${d.daten.titel}`, text: "„Erneut umsetzen“ im Cockpit startet sie neu.", ziel: { ansicht: "lernen", id: d.id } });
-        }
+        if (!neu || !["angenommen", "probe_ok"].includes(neu.daten.status)) return;
+        if (istFehler) {
+          db.schreiben("vorschlaege", d.id, { status: "fehler", umsetzung: { ...(neu.daten.umsetzung || {}), fehler: job?.abbruch || "Umsetzung abgebrochen (Limit, Stopp oder Fehler)", zeit: jetzt() } }, { art: "update", ifVersion: neu.version });
+          melden({ art: "fehler", titel: `Umsetzung abgebrochen: ${d.daten.titel}`, text: `${job?.abbruch ? job.abbruch + " " : ""}„Erneut umsetzen“ im Cockpit startet sie neu.`, ziel: { ansicht: "lernen", id: d.id } });
+        } else zurueckAufOffen(neu, "Die Sitzung endete ohne Ergebnis.");
       },
     });
+  }
+
+  // Sitzung ohne Ergebnis (oder Cockpit neu gestartet): der Vorschlag darf nicht auf „angenommen“ hängen bleiben
+  function zurueckAufOffen(doc, grund) {
+    const zurueck = doc.daten.status === "probe_ok" ? "probe" : "offen";
+    db.schreiben("vorschlaege", doc.id, { status: zurueck, umsetzung: { ...(doc.daten.umsetzung || {}), hinweis: grund, zeit: jetzt() } }, { art: "update", ifVersion: doc.version });
+    melden({ art: "fehler", titel: `Nicht umgesetzt: ${doc.daten.titel}`, text: `${grund} Der Vorschlag steht wieder auf „${zurueck === "probe" ? "Probebilder" : "offen"}“; nimm ihn noch einmal an, wenn er umgesetzt werden soll.`, ziel: { ansicht: "lernen", id: doc.id } });
+  }
+
+  // Beim Start und alle 5 Min.: angenommene Vorschläge ohne laufenden Auftrag, deren Entscheidung länger als 3 Std. her ist
+  // (bzw. deren Auftrag vor dem Neustart auf diesem Rechner lief: eigene)
+  function vorschlaegeAufraeumen(eigene = []) {
+    const aktiv = jobs().filter((j) => j.art === "vorschlag_umsetzen" && !j.abgeschlossen).map((j) => j.vorschlag);
+    for (const d of db.liste("vorschlaege")) {
+      if (!["angenommen", "probe_ok"].includes(d.daten.status) || aktiv.includes(d.id)) continue;
+      const alt = Date.now() - (Date.parse(d.daten.entscheidung?.zeit || d.aktualisiert || "") || 0) > VORSCHLAG_VERWAIST_MS;
+      if (!alt && !eigene.includes(d.id)) continue;
+      try { zurueckAufOffen(d, eigene.includes(d.id) ? "Cockpit wurde neu gestartet, die Umsetzung lief nicht zu Ende." : "Die Umsetzung lief nicht zu Ende."); } catch (e) { log(`Vorschlag ${d.id} zurücksetzen: ${e.message}`); }
+    }
   }
 
   function entscheiden(id, wahl, kommentar = "") {
@@ -184,9 +241,12 @@ export function erstelleLernen({ db, repo, geheim, auftrag, senden = () => {}, l
   }
 
   function starten() {
-    setInterval(() => { zeitplan(); testphasePruefen(); }, 5 * 60 * 1000);
-    setTimeout(() => { zeitplan(); testphasePruefen(); }, 30000);
+    const takt = () => {
+      for (const f of [zeitplan, testphasePruefen, vorschlaegeAufraeumen]) { try { f(); } catch (e) { log(`Lernen: ${e.message}`); } }
+    };
+    setInterval(takt, umgebungS > 0 ? 15000 : 5 * 60 * 1000);
+    setTimeout(takt, 30000);
   }
 
-  return { melden, lernschleife, entscheiden, dbEreignis, autonomie, starten, laeuft: () => laeuft };
+  return { melden, lernschleife, entscheiden, dbEreignis, autonomie, starten, vorschlaegeAufraeumen, laeuft: () => laeuft };
 }

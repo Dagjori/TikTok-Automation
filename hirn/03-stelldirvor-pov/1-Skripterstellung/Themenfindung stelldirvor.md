@@ -2,7 +2,7 @@
 typ: regel
 konto: stelldirvor
 status: aktuell
-datum: 2026-11-09
+datum: 2026-11-10
 quelle: .claude/skills/themen-skript/SKILL.md, .claude/skills/themen-skript/stelldirvor.md (Teil A), Entscheidung des Inhabers 09.11.2026
 tags: [konto/stelldirvor, themen, themenfindung, nachfrage, winkel, originalitaet]
 cssclasses: [konto-stelldirvor, typ-regel]
@@ -96,4 +96,4 @@ Jede Idee kommt als Karte mit Titelfrage, Suchbegriff, Nachfrage, Winkel, „Ver
 Empfehlungen für die Mischung (nicht verbindlich): Katastrophen mit staunenden, ruhigen Themen abwechseln; Pointen im Wechsel („es passiert fast nichts“, „es ist wirklich passiert“, „das Gegenteil stimmt“, „die Zahl ist kleiner bzw. größer als gedacht“); jedes Ende sachlich.
 
 ## Siehe auch
-[[Ablauf Account 2]] (Skriptaufbau) · [[Themen und Plan Account 2]] (Weltenkatalog, Weltvielfalt) · [[Pipeline und Skills]] · [[Regelwerk Account 2]] · [[Account stelldirvor.pov Überblick]] · [[REA stelldirvor Regelwerk]] · [[Trend-Radar]]
+[[Themen-Nachfrage]] (Vorrat an Nachfrage-Belegen, Was-wäre-wenn-Cluster mit Winkel) · [[Ablauf Account 2]] (Skriptaufbau) · [[Themen und Plan Account 2]] (Weltenkatalog, Weltvielfalt) · [[Pipeline und Skills]] · [[Regelwerk Account 2]] · [[Account stelldirvor.pov Überblick]] · [[REA stelldirvor Regelwerk]] · [[Trend-Radar]]

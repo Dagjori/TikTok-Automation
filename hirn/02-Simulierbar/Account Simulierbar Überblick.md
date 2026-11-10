@@ -22,7 +22,7 @@ Einstieg in alles zu **Account 1 `@simulierbar`** („Simulierbar“, deutsche G
 | Versprechen | Jedes Video beantwortet eine Geldfrage mit einer **eigenen Modellrechnung** und endet mit einem konkreten Ergebnis in Euro |
 | Format | gesichtsloses 3D-Simulationsvideo, Deutsch, Stimme Ben, **mindestens 61 s**, in der Regel 65–80 s (die Länge folgt der Stimme), 1080×1920; als **Duell, Zeitverlauf, „Was bleibt“ oder Lernvideo**, immer mit Tafel und laufenden Zählern; Untertitel in Blöcken von 1–4 Wörtern |
 | Look | hochwertig, Licht und Atmosphäre, Stile 1–15 und 17–21 mit Qualitätslatte, dunkle Welten mit Leuchtakzenten zuerst ([[Stile 17 bis 21]]); keine großen Sticker |
-| Rhythmus | 2 Videos pro Tag für den nächsten Tag (Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30); der Inhaber wählt aus 10 Ideen und gibt die Skripte frei; Posting über Buffer, ohne KI-Label |
+| Rhythmus | 2 Videos pro Tag für den nächsten Tag (Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30); der Inhaber wählt aus 10 Ideen und gibt die Skripte frei; Posting über Buffer |
 | Skills | `themen-skript` (Teil `simulierbar.md`) → `stimme-elevenlabs` → `video-produktion` (Teil `simulierbar.md`) |
 
 ## Die Abteile dieses Ordners

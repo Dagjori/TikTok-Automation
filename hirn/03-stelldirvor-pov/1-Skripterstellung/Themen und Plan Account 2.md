@@ -17,7 +17,6 @@ Gilt nur für Account 2. Diese Notiz enthält seit 09.11.2026 nur noch die gült
 ## 1. Markt und Belege (F, 01./02.11.2026)
 - US-Videos des Formats „Was wäre, wenn …“ in 3D (Okt. 2026): Median 838.700 Views, Maximum 18,2 Mio., alle 61–80 s (CRP-fähig); junge Accounts wachsen schnell (@thewhatifstudio 59.300 Follower im ersten Monat, @man_ia_c 281.000 Follower mit 22 Videos). In Deutschland ist das Format kaum besetzt (@angenommen.pov und @waswaerewenn.pov haben das Konzept reserviert, 0–2 Videos).
 - Gesättigt oder schwach (nicht empfohlen): KI-Obst-/Tier-Seifenopern, KI-Geschichts-POV, Psychologie/Finanzen ohne Gesicht (Median ca. 1.000 Views). Die Einschätzung „Körper 3D gesättigt“ vom 01.11. betraf Erklärvideos; seit 09.11.2026 ist „Körper und Leben“ ein eigenes Themenfeld, als Reise in den Körper mit echter Messgröße ([[Themenfindung stelldirvor]]).
-- Das KI-Label steht auf der öffentlichen Videoseite im Feld `aigcLabelType`; Pflicht nur bei realistischen Inhalten ([[Plattformregeln und Posting]]).
 - **Werkzeuge:** three.js ist der Kern; Blender ohne Oberfläche für 1–2 realistische Schlüsselszenen je Video; Remotion nur als Probelauf (Entscheidung 09.11.2026, `.claude/skills/video-produktion/technik.md`). Unreal Engine 5 nur bei klarem Vorteil und erst nach Einrichtung des PCs.
 - **Account 3 (Kandidat):** „Wer war's?“ (animiertes Krimirätsel); vor dem Start frisch messen.
 - Format-Quelle der Optik: Die Vorbilder entstehen vermutlich mit KI-Video (Label gesetzt, A); wir bauen den POV-Look stilisiert-filmisch in 3D nach.

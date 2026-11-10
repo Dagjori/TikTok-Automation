@@ -2,7 +2,7 @@
 typ: regel
 konto: simulierbar
 status: aktuell
-datum: 2026-11-09
+datum: 2026-11-10
 quelle: .claude/skills/stimme-elevenlabs/SKILL.md, pipeline/tts.py, pipeline/qc/stimme_vorab.py, Entscheidungen des Inhabers 08.11.2026 (eine Aufnahme) und 09.11.2026 (kein Tempo, neues Textformat)
 tags: [konto/simulierbar, stimme, elevenlabs, sprechtext, textformat, credits]
 cssclasses: [konto-simulierbar, typ-regel]
@@ -85,4 +85,4 @@ Nach der Aufnahme wird der Text nie gekürzt und neu vertont. `tts.py` lehnt Neu
 Reihenfolge der Ursachen: Verstoß gegen §3, den die Prüfung nicht kennt → viele sehr kurze Sätze hintereinander → Zahlenketten. Erst wenn das über mehrere Videos ausgeschlossen ist, schlägt Claude dem Inhaber einen einmaligen Vergleich mit einem anderen Modell vor. Modell, Stimme oder Regler werden nie selbstständig gewechselt.
 
 ## Siehe auch
-[[Skriptaufbau Simulierbar]] · [[Klangteppich und Ton Simulierbar]] · [[Technik und Szenenbau Simulierbar]] · [[Prüfung und Abnahme Simulierbar]] · [[Pipeline und Skills]] · [[Regelwerk Simulierbar]] · [[Account Simulierbar Überblick]]
+[[Aussprache Simulierbar]] (Ausspracheliste, Schreibweisen-Muster, Auffälligkeiten aus Aufnahmen) · [[Skriptaufbau Simulierbar]] · [[Klangteppich und Ton Simulierbar]] · [[Technik und Szenenbau Simulierbar]] · [[Prüfung und Abnahme Simulierbar]] · [[Pipeline und Skills]] · [[Regelwerk Simulierbar]] · [[Account Simulierbar Überblick]]

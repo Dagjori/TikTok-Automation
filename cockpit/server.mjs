@@ -5,7 +5,12 @@
 // Start: node cockpit/server.mjs  (oder Desktop-Verknüpfung / Strg+Alt+T, siehe cockpit/README.md)
 // Nur für Tests (Umgebung): COCKPIT_PORT, COCKPIT_DATEN, COCKPIT_RECHNER, COCKPIT_KEIN_SPIEGEL, COCKPIT_OHNE_DIENST, COCKPIT_OHNE_ZAHLEN,
 // COCKPIT_OEFFENTLICH=<ordner> (statische Dateien statt public/), COCKPIT_ATTRAPPE=1 (simulierte Claude-Aufträge, lib/attrappe.mjs,
-// nie ein echter claude-Prozess), COCKPIT_ATTRAPPE_FEHLER=1 (jeder simulierte Auftrag scheitert), COCKPIT_WIEDERHOLEN_S.
+// nie ein echter claude-Prozess), COCKPIT_ATTRAPPE_FEHLER=1 (jeder simulierte Auftrag scheitert), COCKPIT_WIEDERHOLEN_S,
+// COCKPIT_ATTRAPPE_MODUS_DATEI / COCKPIT_ATTRAPPE_DAUER_S (lib/attrappe.mjs), COCKPIT_WACHE_MAX_S / COCKPIT_WACHE_STILL_S (Wache in
+// Sekunden), COCKPIT_LIMIT_PUFFER_S, COCKPIT_AUTOPILOT_FRIST_S, COCKPIT_AUTO_WAHL_RECHERCHE_S, COCKPIT_REGISTER_NOTIZ (Hirn-Notiz des
+// Video-Registers umlenken), COCKPIT_REGISTER_TAKT_S, COCKPIT_MELDEN_DATEI (Handy-Meldungen in eine Datei statt an Telegram).
+// Ausbau 10.11.2026: Wache (Zeitlimit, Stillstand, Nutzungslimit, Erholung nach Neustart; lib/wache.mjs), Handy-Meldungen
+// (lib/melden.mjs), Autopilot (lib/autopilot.mjs, Standard aus), Video-Register (lib/register.mjs).
 import http from "node:http";
 import fs from "node:fs";
 import fsp from "node:fs/promises";
@@ -23,6 +28,9 @@ import { erstelleLernen } from "./lib/lernen.mjs";
 import { erstelleAbgleich } from "./lib/abgleich.mjs";
 import { erstelleAutomatik, automatikLesen, automatikPruefen, WIEDERHOLEN_NACH_S } from "./lib/automatik.mjs";
 import { erstelleAttrappe } from "./lib/attrappe.mjs";
+import { grenzenLesen, wachePruefen, limitErkennen, erholung, nachpruefungErgebnis } from "./lib/wache.mjs";
+import { erstelleRegister } from "./lib/register.mjs";
+import { erstelleMelden, meldenLesen, meldenPruefen, meldenErlaubt, tagesabschlussText } from "./lib/melden.mjs";
 
 const HIER = path.dirname(fileURLToPath(import.meta.url));
 const ARBEITS_REPO = path.resolve(HIER, "..");
@@ -77,9 +85,12 @@ const SB = {
   authorization: GEHEIM.SUPABASE_AUTHORIZATION || "",
 };
 
+// Handy-Meldungen (lib/melden.mjs): gleiche Namen wie tools/telegram_senden.py, aus der Umgebung oder der .env des Render-Dienstes
+const TELEGRAM = { token: process.env.TELEGRAM_BOT_TOKEN || GEHEIM.TELEGRAM_BOT_TOKEN || "", chat: process.env.TELEGRAM_CHAT_ID || GEHEIM.TELEGRAM_CHAT_ID || "" };
+
 function maskiere(text) {
   let t = String(text ?? "");
-  for (const g of [SB.url, SB.key, SB.authorization, ...Object.values(GEHEIM)]) if (g && g.length > 6) t = t.split(g).join("<GEHEIM>");
+  for (const g of [SB.url, SB.key, SB.authorization, TELEGRAM.token, ...Object.values(GEHEIM)]) if (g && g.length > 6) t = t.split(g).join("<GEHEIM>");
   return t;
 }
 
@@ -396,6 +407,48 @@ const claude = { laeuft: false, prozess: null, aktiv: null, sessionId: null, mod
 // Zweite Spur nur für die Produktion (Disponent, Ausbau 3): läuft stundenlang und darf den Chat nicht blockieren
 const prod = { laeuft: false, prozess: null, aktiv: null, warteschlange: [], aufgaben: [], start: null };
 const spurVon = (job) => (job?.spur === "produktion" ? prod : claude);
+const alleJobs = () => [claude.aktiv, ...claude.warteschlange, prod.aktiv, ...prod.warteschlange].filter(Boolean);
+
+// Laufende und wartende Studio-/Produktions-Aufträge dieses Rechners stehen in daten/laufend.json. Nach einem Neustart oder
+// Absturz weiß das Cockpit so, welche Slots es selbst in Arbeit hatte (Erholung, lib/wache.mjs → erholen unten).
+const LAUFEND_DATEI = path.join(DATEN, "laufend.json");
+let laufendVorher = [];
+try { laufendVorher = JSON.parse(fs.readFileSync(LAUFEND_DATEI, "utf8")).jobs || []; } catch { laufendVorher = []; }
+function laufendMerken() {
+  const jobs = alleJobs().filter((j) => j.art !== "chat").map((j) => ({
+    art: j.art, ids: j.ids || [], datum: j.datum || null, konto: j.konto || null, vorschlag: j.vorschlag || null, start: j.start || null,
+    pid: (j === claude.aktiv ? claude.prozess?.pid : j === prod.aktiv ? prod.prozess?.pid : null) || null,
+  }));
+  try { fs.writeFileSync(LAUFEND_DATEI, JSON.stringify({ zeit: new Date().toISOString(), jobs })); } catch { /* nicht kritisch */ }
+}
+
+// ───────── Nutzungslimit von Claude (lib/wache.mjs → limitErkennen) ─────────
+// Gemerkt in einstellungen._limit (nur dieser Rechner, übersteht einen Neustart). Solange es gilt, startet die Automatik nichts
+// und wiederholt nichts; kurz nach dem Reset (Puffer) geht es von selbst weiter. Ein erfolgreicher Auftrag hebt es sofort auf.
+const LIMIT_PUFFER_S = Number(process.env.COCKPIT_LIMIT_PUFFER_S) > 0 ? Number(process.env.COCKPIT_LIMIT_PUFFER_S) : 180;
+function limitBis() {
+  const bis = Date.parse(einstellungen._limit?.bis || "");
+  return bis && bis + LIMIT_PUFFER_S * 1000 > Date.now() ? bis + LIMIT_PUFFER_S * 1000 : 0;
+}
+const uhrBerlin = (ms) => new Date(ms).toLocaleTimeString("de-DE", { timeZone: ZEITZONE, hour: "2-digit", minute: "2-digit" });
+const limitStatus = () => (limitBis() ? { bis: einstellungen._limit.bis, weiter_ab: new Date(limitBis()).toISOString(), text: einstellungen._limit.text || "", ungefaehr: !!einstellungen._limit.ungefaehr } : null);
+function limitSetzen(l, job) {
+  const neu = einstellungen._limit?.bis !== l.bis;
+  einstellungen._limit = { bis: l.bis, text: l.text, ungefaehr: !!l.ungefaehr, seit: new Date().toISOString() };
+  fsp.writeFile(EINSTELLUNGEN_DATEI, JSON.stringify(einstellungen, null, 1)).catch(() => {});
+  if (!neu) return;
+  const um = uhrBerlin(limitBis());
+  log(`Nutzungslimit erkannt (${l.text}), weiter ab ${um}`);
+  feedEintrag({ art: "automatik", text: `⏳ Nutzungslimit von Claude erreicht · wartet auf Limit bis ${um}${l.ungefaehr ? " (geschätzt)" : ""}, danach geht es von selbst weiter` });
+  lernen?.melden?.({ art: "info", titel: `⏳ Nutzungslimit erreicht, weiter um ${um}`, text: `${job?.titel ? `Betroffen: ${job.titel}. ` : ""}Das Cockpit startet bis dahin nichts Neues und setzt danach von selbst fort.`, ziel: { ansicht: "jetzt" } });
+  senden("claude", claudeStatus());
+}
+function limitLoeschen() {
+  if (!einstellungen._limit) return;
+  delete einstellungen._limit;
+  fsp.writeFile(EINSTELLUNGEN_DATEI, JSON.stringify(einstellungen, null, 1)).catch(() => {});
+  log("Nutzungslimit aufgehoben (ein Auftrag lief wieder durch)");
+}
 const FEED_DATEI = path.join(DATEN, "feed.json");
 let feed = [];
 try {
@@ -442,7 +495,8 @@ const STEUERUNG_ZUSATZ = [
   "Produktion (Disponent, eigene Spur neben dem Chat, cockpit/anleitung/produktion.md): `produktion_starten datum=…` (für übergebene Videos, auch nach Neustart), `produktion_stopp`. Produziere nie selbst im Chat.",
   "Automatik (Einstellung automatik, `stand` zeigt sie): Die Recherche startet von selbst 15 s (beide Slots belegt) bzw. 3 Min. nach der Wahl, die Produktion 60 s nach der Freigabe, sobald alle Skripte des Tages freigegeben sind; morgens kommen die Ideen für morgen; Fehler werden einmal wiederholt. Freigeben bleibt beim Inhaber.",
   "`automatik_jetzt konto=… datum=… [was=produktion]` zieht sie vor, `automatik_halt konto=… datum=… [was=produktion|alles]` hält sie für den Tag an (ohne konto: beide Konten).",
-  "Cockpit: `ansicht ziel=jetzt|studio|produktion|zahlen|lernen|radar`, `dienst an|aus`, `lernschleife`, `vorschlag id=… wahl=annehmen|ablehnen`. acc1 = Simulierbar, acc2 = Stell dir vor.",
+  "Autopilot (Standard aus, Einstellung automatik: auto_wahl, auto_freigabe): wählt nach einer Frist selbst Ideen bzw. gibt geprüfte Skripte frei. `abhaken id=…` nimmt einen erledigten Altfall vergangener Tage aus „Für dich“. `stand` zeigt auch limit (Nutzungslimit von Claude: bis dahin startet die Automatik nichts) und das Video-Register (alle Videos: cockpit/daten/register.json, Ansicht register).",
+  "Cockpit: `ansicht ziel=jetzt|studio|produktion|zahlen|lernen|radar|register`, `dienst an|aus`, `lernschleife`, `vorschlag id=… wahl=annehmen|ablehnen`. acc1 = Simulierbar, acc2 = Stell dir vor.",
   "Aktionen, die freigeben, übergeben, verwerfen oder ablehnen, nur ausführen, wenn der Inhaber es in seiner Nachricht ausdrücklich verlangt; sonst nachfragen.",
 ].join(" ");
 const STIMME_ZUSATZ = "Diese Nachricht kam per Sprache und deine Antwort wird vorgelesen: höchstens 3 kurze Sätze, kein Markdown, keine Listen, keine Emojis, keine Dateipfade. Sag zuerst, was du getan oder herausgefunden hast.";
@@ -464,6 +518,8 @@ function claudeStatus() {
     warteschlange: claude.warteschlange.length, wartend: claude.warteschlange.map((j) => j.titel),
     wartend_info: claude.warteschlange.map(jobInfo),
     aufgaben: claude.aufgaben, start: claude.start, cli: ATTRAPPE || !!findeClaude(), attrappe: ATTRAPPE,
+    // Nutzungslimit ({bis, weiter_ab, text} oder null) und ob die Automatik gerade ohne Supabase lokal läuft
+    limit: limitStatus(), automatik_lokal: !!automatik?.lokal(),
     produktion: {
       laeuft: prod.laeuft, titel: prod.aktiv?.titel || "", datum: prod.aktiv?.datum || "", start: prod.start,
       aufgaben: prod.aufgaben, wartend: prod.warteschlange.map((j) => j.titel),
@@ -489,9 +545,14 @@ function claudeJob(job) {
   if (!MODI.has(job.modus)) job.modus = "plan";
   const spur = spurVon(job);
   if (spur.laeuft) {
-    spur.warteschlange.push(job);
+    // vorne (Nachprüfung, ca. 1 Min.): vor wartende lange Aufträge, hinter andere mit Vorrang
+    if (job.vorne) {
+      const i = spur.warteschlange.findIndex((j) => !j.vorne);
+      spur.warteschlange.splice(i < 0 ? spur.warteschlange.length : i, 0, job);
+    } else spur.warteschlange.push(job);
     feedEintrag({ art: "warteschlange", text: job.art === "chat" ? job.text : job.titel });
     senden("claude", claudeStatus());
+    laufendMerken();
     return { ok: true, wartet: spur.warteschlange.length };
   }
   return claudeStarten(job);
@@ -536,7 +597,7 @@ function claudeStarten(job) {
   // Python unter Windows sonst cp1252: Umlaute und Emojis in der Ausgabe brechen ab (gesehen 03.11. in der Produktion)
   env.PYTHONUTF8 = "1";
   env.PYTHONIOENCODING = "utf-8";
-  for (const k of Object.keys(env)) if (/^SUPABASE_|^BUFFER_|^ELEVEN/i.test(k)) delete env[k];
+  for (const k of Object.keys(env)) if (/^SUPABASE_|^BUFFER_|^ELEVEN|^TELEGRAM_/i.test(k)) delete env[k];
 
   spur.aufgaben = [];
   job.start = new Date().toISOString(); // ab hier tragen alle Feed-Einträge job: "<spur>:<start>"
@@ -547,12 +608,15 @@ function claudeStarten(job) {
 
   const p = ATTRAPPE ? attrappe.prozess(job) : spawn(befehl, argv, { cwd: ARBEITS_REPO, env, windowsHide: true, stdio: ["pipe", "pipe", "pipe"] });
   Object.assign(spur, { laeuft: true, prozess: p, aktiv: job, start: job.start });
+  job.letzteAusgabe = Date.now(); // für die Wache (Stillstand)
   senden("claude", claudeStatus());
+  laufendMerken();
   p.stdin.end(job.text);
 
   let rest = "";
   p.stdout.setEncoding("utf8");
   p.stdout.on("data", (chunk) => {
+    job.letzteAusgabe = Date.now();
     rest += chunk;
     let i;
     while ((i = rest.indexOf("\n")) >= 0) {
@@ -564,23 +628,63 @@ function claudeStarten(job) {
   let fehlerText = "";
   p.stderr.setEncoding("utf8");
   p.stderr.on("data", (c) => { fehlerText = (fehlerText + c).slice(-4000); });
-  p.on("error", (e) => fe({ art: "fehler", text: "Claude ließ sich nicht starten: " + e.message }));
-  p.on("close", (code) => {
+  // Ende des Auftrags, genau einmal: vom „close“ des Prozesses, vom Startfehler oder von der Wache (wenn der Prozess trotz
+  // Beenden kein „close“ meldet); danach ist die Spur frei und der nächste wartende Auftrag startet
+  let beendet = false;
+  const ende = (code) => {
+    if (beendet) return;
+    beendet = true;
     if (rest.trim()) claudeZeile(rest.trim(), job, spur);
     if (code && code !== 0 && fehlerText.trim()) fe({ art: "fehler", text: maskiere(fehlerText.trim().split("\n").slice(-6).join("\n")) });
-    Object.assign(spur, { laeuft: false, prozess: null, aktiv: null });
-    jobAbschliessen(job, !!(code && code !== 0) || job.istFehler || job.ergebnis === undefined);
+    if (spur.prozess === p) Object.assign(spur, { laeuft: false, prozess: null, aktiv: null });
+    const istFehler = !!(code && code !== 0) || job.istFehler || !!job.wache || job.ergebnis === undefined;
+    // Nutzungslimit: nur bei einem gescheiterten Auftrag auswerten (die Meldung der CLI steht im Text, im Ergebnis oder in stderr)
+    if (istFehler && !job.gestoppt && !job.wache) {
+      job.limit ||= limitErkennen(`${job.ergebnis || ""}\n${fehlerText}`);
+      if (job.limit) {
+        limitSetzen(job.limit, job);
+        job.abbruch = `Nutzungslimit von Claude erreicht (weiter ab ${uhrBerlin(limitBis() || Date.parse(job.limit.bis))} Uhr). Das Cockpit macht danach von selbst weiter.`;
+      }
+    } else {
+      job.limit = null;
+      if (!istFehler) limitLoeschen();
+    }
+    jobAbschliessen(job, istFehler);
     senden("claude", claudeStatus());
     const naechster = spur.warteschlange.shift();
     if (naechster) setTimeout(() => claudeStarten(naechster), 300);
-  });
+    laufendMerken();
+  };
+  p.cockpitEnde = ende;
+  p.on("error", (e) => { fe({ art: "fehler", text: "Claude ließ sich nicht starten: " + e.message }); setTimeout(() => ende(1), 500); });
+  p.on("close", ende);
   return { ok: true };
 }
+
+// ───────── Wache: Zeitlimit und Stillstand je Auftrag (lib/wache.mjs) ─────────
+// Ohne sie blockiert ein hängender claude-Prozess seine Spur für immer. Bei Überschreitung: Prozessbaum beenden, der Auftrag
+// endet als Fehler mit klarem Grund (job.abbruch) und läuft in den normalen Fehlerweg (nachher → Slot „fehler“ → Automatik).
+const WACHE_UMGEBUNG = { max_s: process.env.COCKPIT_WACHE_MAX_S, still_s: process.env.COCKPIT_WACHE_STILL_S }; // nur für Tests
+function wacheTakt() {
+  for (const spur of [claude, prod]) {
+    const job = spur.aktiv, p = spur.prozess;
+    if (!spur.laeuft || !job || !p || job.wache) continue;
+    const w = wachePruefen({ startMs: Date.parse(job.start || "") || 0, letzteAusgabeMs: job.letzteAusgabe, jetztMs: Date.now() }, grenzenLesen(job.art, einstellungen, WACHE_UMGEBUNG));
+    if (!w) continue;
+    Object.assign(job, { wache: w, abbruch: w.text, istFehler: true });
+    log(`Wache: ${job.titel || job.art}: ${w.text}`);
+    feedVon(job)({ art: "fehler", text: `⏱ ${job.art === "chat" ? "Chat" : job.titel}: ${w.text}` });
+    prozessBeenden(p);
+    setTimeout(() => p.cockpitEnde?.(1), 30000);
+  }
+}
+setInterval(() => { try { wacheTakt(); } catch (e) { log("Wache: " + e.message); } }, Number(WACHE_UMGEBUNG.max_s) > 0 || Number(WACHE_UMGEBUNG.still_s) > 0 ? 3000 : 30000);
 
 // Eskalation: Fehler oder ungültiges Ergebnis eines kleineren Modells → einmal eine Stufe höher wiederholen
 function eskalieren(job, grund) {
   const hoeher = eineStufeHoeher(job.modell);
-  if (!hoeher || job.modellFest || job.eskaliert || job.gestoppt || !["chat", "ideen", "briefing"].includes(job.art)) return false;
+  // Zeitlimit oder Nutzungslimit: ein größeres Modell hilft nicht
+  if (!hoeher || job.modellFest || job.eskaliert || job.gestoppt || job.limit || job.wache || !["chat", "ideen", "briefing"].includes(job.art)) return false;
   feedEintrag({ art: "modell", text: `${grund} · wiederhole mit ${hoeher[0].toUpperCase() + hoeher.slice(1)}`, modell: hoeher });
   claudeJob({ ...job, modell: hoeher, grund: `Eskalation nach ${job.modell}`, eskaliert: true, abgeschlossen: false, ergebnis: undefined, istFehler: false });
   return true;
@@ -647,8 +751,11 @@ function claudeZeile(zeile, job = claude.aktiv, spur = claude) {
   }
   if (m.type === "assistant") {
     for (const teil of m.message?.content || []) {
-      if (teil.type === "text" && teil.text?.trim()) feedEintrag({ art: "text", text: maskiere(teil.text) });
-      else if (teil.type === "thinking" && teil.thinking?.trim()) feedEintrag({ art: "denken", text: kurz(teil.thinking, 1500) });
+      if (teil.type === "text" && teil.text?.trim()) {
+        feedEintrag({ art: "text", text: maskiere(teil.text) });
+        // Limit-Meldung der CLI („You've hit your 5-hour limit · resets 6pm (Europe/Berlin)“): merken, gilt nur, wenn der Auftrag scheitert
+        if (job && teil.text.length < 400 && /hit your .{0,40}limit/i.test(teil.text)) job.limit = limitErkennen(teil.text) || job.limit;
+      } else if (teil.type === "thinking" && teil.thinking?.trim()) feedEintrag({ art: "denken", text: kurz(teil.thinking, 1500) });
       else if (teil.type === "tool_use") {
         const e = feedEintrag({ art: "werkzeug", name: teil.name, titel: kurz(werkzeugTitel(teil.name, teil.input), 160), eingabe: kurz(teil.input, 1500), id: teil.id });
         offeneWerkzeuge.set(teil.id, e.nr);
@@ -753,11 +860,13 @@ function produzieren(datum, ids, hinweis = "") {
           status: "fehler", fehler_phase: "produktion",
           fehler: job.gestoppt
             ? "Von dir gestoppt. „Erneut versuchen“ setzt die Produktion fort, fertige Teile bleiben erhalten."
+            : job.abbruch ? `${job.abbruch} „Erneut versuchen“ setzt die Produktion fort, fertige Teile bleiben erhalten.`
             : istFehler
               ? "Die Produktion wurde abgebrochen (Limit, Stopp oder Fehler). „Erneut versuchen“ setzt sie fort, fertige Teile bleiben erhalten."
               : "Die Produktions-Sitzung endete, ohne das Video in Buffer zu planen. Bitte „Erneut versuchen“.",
           // Vom Inhaber gestoppt: nie automatisch wiederholen und nicht melden (lib/automatik.mjs)
-          ...(job.gestoppt ? { auto_wiederholt_phase: "produktion", auto_gemeldet: true } : {}),
+          // Am Nutzungslimit gescheitert: verbraucht die eine automatische Wiederholung nicht (sie kommt kurz nach dem Reset)
+          ...(job.gestoppt ? { auto_wiederholt_phase: "produktion", auto_gemeldet: true } : job.limit ? { auto_wiederholt_phase: { __delete__: true } } : {}),
           fortschritt: "Produktion nicht abgeschlossen", aktualisiert: new Date().toISOString(),
         }, { art: "update", ifVersion: d.version, von: "cockpit" });
       }
@@ -770,18 +879,20 @@ function produzieren(datum, ids, hinweis = "") {
       const uebernommen = offen.length > 0 && offen.every((s) => s.doc && automatik?.uebernimmt(s.doc));
       const wiederholt = uebernommen && offen.some((s) => automatik.wiederholungAussteht(s.doc));
       const zeilen = stand.map((s) => `${s.d.titel || s.id}: ${s.d.status || "?"}${s.d.fehler ? ` (${String(s.d.fehler).slice(0, 140)})` : ""}`);
-      const nachMin = Math.max(1, Math.round(WIEDERHOLEN_NACH_S / 60));
+      // Wann die Automatik wiederholt: nach 5 Min. bzw. bei einem Nutzungslimit kurz nach dem Reset
+      const wann = limitBis() ? `nach dem Limit (ab ${uhrBerlin(limitBis())} Uhr)` : `in ${Math.max(1, Math.round(WIEDERHOLEN_NACH_S / 60))} Min.`;
       feedEintrag({
         art: offen.length ? "fehler" : "fertig", spur: "produktion", ...(jobSchluessel(job) ? { job: jobSchluessel(job) } : {}),
         text: offen.length
-          ? `🏭 Produktion ${datum} NICHT erledigt: ${ok.length} von ${stand.length} geplant, ${offen.length} offen${wiederholt ? ` · 🔁 automatische Wiederholung in ${nachMin} Min.` : ""}\n${zeilen.join("\n")}`
+          ? `🏭 Produktion ${datum} NICHT erledigt: ${ok.length} von ${stand.length} geplant, ${offen.length} offen${wiederholt ? ` · 🔁 automatische Wiederholung ${wann}` : ""}\n${zeilen.join("\n")}`
           : `🏭 Produktion ${datum} erledigt: alle ${stand.length} Videos in Buffer geplant`,
       });
       if (!uebernommen || wiederholt) lernen?.melden?.({
         art: offen.length ? (wiederholt ? "info" : "fehler") : "erfolg",
-        titel: offen.length ? `🏭 Produktion ${datum}: ${offen.length} von ${stand.length} Videos nicht geplant${wiederholt ? ` · 🔁 wird in ${nachMin} Min. automatisch wiederholt` : ""}` : `🏭 Produktion ${datum}: alle Videos geplant`,
+        titel: offen.length ? `🏭 Produktion ${datum}: ${offen.length} von ${stand.length} Videos nicht geplant${wiederholt ? ` · 🔁 wird ${wann} automatisch wiederholt` : ""}` : `🏭 Produktion ${datum}: alle Videos geplant`,
         text: zeilen.join("\n"), ziel: { ansicht: "studio" },
       });
+      register?.anstossen();
     },
   };
   return claudeJob(job);
@@ -841,19 +952,87 @@ async function spiegelSenden() {
 
 let lernen = null; // wird unten angelegt; meldet neue Vorschläge
 let automatik = null; // wird unten angelegt (lib/automatik.mjs)
+let register = null; // Video-Register (lib/register.mjs)
+const letzterSlotStatus = new Map(); // Slot-ID → Status (für Handy-Meldungen bei Statuswechsel)
 const db = erstelleDb({
   ordner: path.join(DATEN, "db"),
   spiegel: spiegeln,
   beiAenderung: (e) => {
     senden("db", e);
+    if (e.sammlung === "skripte") register?.anstossen(); // Video-Register folgt jeder Änderung an einem Video (gebündelt)
     // Vom anderen Rechner übernommen: nur anzeigen (eine neue Meldung auch hier als Push), nichts erneut auslösen
-    if (e.abgleich) { if (e.sammlung === "meldungen" && !e.geloescht && e.version === 1 && !e.daten?.gelesen) senden("meldung", e); return; }
+    if (e.abgleich) {
+      if (e.sammlung === "meldungen" && !e.geloescht && e.version === 1 && !e.daten?.gelesen) senden("meldung", e);
+      if (e.sammlung === "skripte") { if (e.geloescht) letzterSlotStatus.delete(e.id); else letzterSlotStatus.set(e.id, e.daten?.status); }
+      return;
+    }
+    try { slotMelden(e); } catch (err) { log("Handy-Meldung: " + err.message); }
     lernen?.dbEreignis(e);
     automatik?.dbEreignis(e); // Änderung auf diesem Rechner: Vorrang für die Automatik
   },
 });
+for (const d of db.liste("skripte")) letzterSlotStatus.set(d.id, d.daten.status);
 // Nur für Tests: simulierte Claude-Aufträge statt claude-Prozess (lib/attrappe.mjs)
 const attrappe = ATTRAPPE ? erstelleAttrappe({ db, log }) : null;
+
+// ───────── Handy-Meldungen (lib/melden.mjs): Telegram, wenn eingerichtet; sonst passiert still nichts ─────────
+// Mit der Attrappe (Tests) geht nie etwas an Telegram; COCKPIT_MELDEN_DATEI schreibt die Nachrichten in eine Datei.
+const melder = erstelleMelden({ zugang: () => TELEGRAM, einstellungen: () => einstellungen, log, nurTest: ATTRAPPE });
+const benachrichtigen = (ereignis, text) => { melder.senden(ereignis, `TikTok-Cockpit · ${maskiere(text)}`); };
+const tagKurz = (datum) => new Date(`${datum}T12:00:00Z`).toLocaleDateString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit", timeZone: "UTC" });
+
+// Statuswechsel eines Videos auf diesem Rechner → Handy-Meldung (Skript wartet, Rückfrage, geplant, gepostet)
+function slotMelden(e) {
+  if (e.sammlung !== "skripte") return;
+  if (e.geloescht) { letzterSlotStatus.delete(e.id); return; }
+  const alt = letzterSlotStatus.get(e.id), neu = e.daten?.status;
+  letzterSlotStatus.set(e.id, neu);
+  if (alt === neu) return;
+  const x = e.daten;
+  const wo = `${KONTEN[x.konto]?.name || x.konto}, ${tagKurz(x.datum)} ${x.uhrzeit || ""}`.trim();
+  if (neu === "skript_fertig" && alt !== "freigegeben") {
+    const a = automatikLesen(einstellungen);
+    benachrichtigen("skript", `Skript wartet auf deine Freigabe: ${x.titel} (${wo})${a.auto_freigabe ? `\nOhne deine Entscheidung gibt das Cockpit es nach ${a.auto_freigabe_frist_min} Min. selbst frei, wenn die Prüfung besteht.` : ""}`);
+  } else if (neu === "rueckfrage") benachrichtigen("rueckfrage", `Rückfrage: ${x.titel} (${wo})\n${String(x.fehler || "").slice(0, 600)}`);
+  else if (neu === "geplant" && alt !== "fehler") benachrichtigen("video", `Geplant: ${x.titel} (${wo})`);
+  else if (neu === "gepostet") benachrichtigen("video", `Gepostet und nachgeprüft: ${x.titel} (${wo})`);
+}
+
+// Meldungen des Cockpits, die auch aufs Handy gehen: Fehler (nach dem letzten Versuch), Fragen, Treffer
+function meldungAufsHandy(doc) {
+  const d = doc?.daten || {};
+  const text = `${d.titel}${d.text ? `\n${String(d.text).slice(0, 700)}` : ""}`;
+  if (d.art === "fehler") benachrichtigen("fehler", text);
+  else if (d.art === "frage") benachrichtigen("rueckfrage", text);
+  else if (d.art === "erfolg" && /Treffer|Serie läuft/.test(d.titel || "")) benachrichtigen("treffer", text);
+}
+
+// Text-Vorprüfung der Stimme für die automatische Freigabe (lib/autopilot.mjs): kostenlos, ohne Schlüssel, ohne ElevenLabs.
+// Die Segmente gehen in eine Datei im Temp-Ordner (außerhalb des Repos) und durch pipeline/qc/stimme_vorab.py --datei.
+function stimmePruefen(skript) {
+  return new Promise((ok) => {
+    if (!Array.isArray(skript?.segmente) || !skript.segmente.length) return ok({ ok: false, text: "keine Segmente im Skript" });
+    const datei = path.join(os.tmpdir(), `cockpit-vorab-${process.pid}-${Date.now()}.json`);
+    try { fs.writeFileSync(datei, JSON.stringify({ segmente: skript.segmente }), "utf8"); } catch (e) { return ok({ ok: false, text: e.message }); }
+    execFile("py", ["-3", path.join("qc", "stimme_vorab.py"), "--datei", datei], { cwd: path.join(ARBEITS_REPO, "pipeline"), env: { ...process.env, PYTHONUTF8: "1", PYTHONIOENCODING: "utf-8" }, windowsHide: true, timeout: 60000, encoding: "utf8", maxBuffer: 4 << 20 },
+      (err, out) => {
+        fs.rm(datei, { force: true }, () => {});
+        const code = err ? (typeof err.code === "number" ? err.code : 2) : 0;
+        const zeilen = String(out || "").split(/\r?\n/).filter((z) => z.trim());
+        ok({ ok: code === 0, text: code === 0 ? "BEREIT" : code === 1 ? (zeilen.find((z) => /NEIN|✗|nein/.test(z)) || zeilen.at(-1) || "nicht bereit").trim().slice(0, 200) : "Vorprüfung ließ sich nicht starten" });
+      });
+  });
+}
+
+// Video-Register: daten/register.json und die erzeugte Hirn-Notiz. Die Notiz wird nur geschrieben, wenn kein Claude-Auftrag
+// läuft oder wartet (der Server commitet nie; eine Sitzung nimmt sie in ihren Commit, anleitung/produktion.md).
+// Test-Instanz (Attrappe oder eigener Datenordner): die Notiz landet im Datenordner, nie im echten hirn/.
+register = erstelleRegister({
+  db, repo: ARBEITS_REPO, daten: DATEN, log, senden, heute: () => heute(),
+  notizDatei: process.env.COCKPIT_REGISTER_NOTIZ || (ATTRAPPE || process.env.COCKPIT_DATEN ? path.join(DATEN, "Video-Register.md") : null),
+  darfSchreiben: () => !claude.laeuft && !prod.laeuft && !claude.warteschlange.length && !prod.warteschlange.length,
+  taktS: Number(process.env.COCKPIT_REGISTER_TAKT_S) > 0 ? Number(process.env.COCKPIT_REGISTER_TAKT_S) : 30,
+});
 
 // Abgleich mit den anderen Rechnern (lib/abgleich.mjs): Dokumente, Einstellungen, Missionen, „wer zuerst kommt“
 const abgleich = erstelleAbgleich({
@@ -916,28 +1095,119 @@ const studio = erstelleStudio({
   einstellungen: () => einstellungen,
   produzieren: (datum, ids, hinweis) => produzieren(datum, ids, hinweis),
   heute: () => heute(),
+  // Bisherige Videos für die Befehle kommen aus dem Video-Register (Titel und Suchbegriff je Konto)
+  bisher: (konto) => register.bisher(konto),
+  beiIdeen: ({ konto, datum, anzahl }) => {
+    const a = automatikLesen(einstellungen);
+    benachrichtigen("ideen", `${anzahl} Ideen bereit: ${KONTEN[konto]?.name || konto} für ${tagKurz(datum)}\n${a.auto_wahl ? `Ohne deine Wahl wählt das Cockpit in ${a.auto_wahl_frist_min} Min. selbst.` : "Bitte im Studio wählen."}`);
+  },
 });
 
 // Nachprüfung nach dem Posten (ersetzt send_later der Cloud): ca. 20 Min. nach der Posting-Zeit ein kleiner Auftrag
-// auf der Produktionsspur (cockpit/anleitung/produktion.md §4). Je Slot nur einmal.
+// auf der Produktionsspur (cockpit/anleitung/produktion.md §4). Seit 10.11.2026 mit Abschluss (lib/wache.mjs →
+// nachpruefungErgebnis): Erfolg = Slot „gepostet“; endet die Sitzung ohne Ergebnis, bis zu 3 Versuche mit Abstand, dann
+// Fehler und Meldung (vorher blieb der Slot für immer auf „geplant“ mit nachpruefen_angefordert hängen).
+// Sie läuft bewusst auf der Produktionsspur und nicht parallel zur Produktion: Sie commitet und pusht im selben Klon
+// (Protokollzeile). Dafür reiht sie sich vor wartende Produktionen ein (vorne) und wartet nur die laufende ab.
+const NACHPRUEFEN_ABSTAND_S = WIEDERHOLEN_NACH_S * 2; // zwischen zwei Versuchen (10 Min.)
 function nachpruefungenStarten() {
   const jetztMs = Date.now();
+  if (limitBis()) return; // Nutzungslimit: erst danach
+  const laufend = new Set(alleJobs().filter((j) => j.art === "nachpruefen" && !j.abgeschlossen).flatMap((j) => j.ids || []));
   for (const d of db.liste("skripte", [["status", "==", "geplant"]])) {
-    const zeit = Date.parse(d.daten.geplant_fuer || "");
+    const x = d.daten;
+    const zeit = Date.parse(x.geplant_fuer || "");
     // Ältere Tage hat noch die Cloud-Tages-Sitzung nachgeprüft
-    if (!zeit || d.daten.datum < "2026-11-04" || d.daten.nachpruefen_angefordert || jetztMs < zeit + 20 * 60000) continue;
+    if (!zeit || x.datum < "2026-11-04" || x.nachpruefen_angefordert || laufend.has(d.id) || jetztMs < zeit + 20 * 60000) continue;
+    if (x.nachpruefen_ab && jetztMs < Date.parse(x.nachpruefen_ab)) continue;
     try {
       db.schreiben("skripte", d.id, { nachpruefen_angefordert: new Date().toISOString() }, { art: "update", ifVersion: d.version, von: "cockpit" });
     } catch { continue; }
+    const versuch = (Number(x.nachpruefen_versuche) || 0) + 1;
     claudeJob({
-      art: "nachpruefen", spur: "produktion", modus: "auto", modell: "sonnet", konto: d.daten.konto, datum: d.daten.datum, ids: [d.id],
+      art: "nachpruefen", spur: "produktion", vorne: true, modus: "auto", modell: "sonnet", konto: x.konto, datum: x.datum, ids: [d.id],
       grund: "Nachprüfung nach dem Posten: Routine (CLAUDE.md §4: Sonnet)",
-      titel: `Nachprüfung · ${d.daten.titel || d.id}`,
-      text: `Du bist die Produktions-Sitzung des TikTok-Cockpits. Lies cockpit/anleitung/produktion.md §0 und §4 und führe nur die Nachprüfung aus.\n\nAUFTRAG\n${JSON.stringify({ art: "nachpruefen", datum: d.daten.datum, id: d.id })}`,
+      titel: `Nachprüfung · ${x.titel || d.id}${versuch > 1 ? ` (Versuch ${versuch})` : ""}`,
+      text: `Du bist die Produktions-Sitzung des TikTok-Cockpits. Lies cockpit/anleitung/produktion.md §0 und §4 und führe nur die Nachprüfung aus.\n\nAUFTRAG\n${JSON.stringify({ art: "nachpruefen", datum: x.datum, id: d.id })}`,
+      nachher: (_text, istFehler, job) => nachpruefungFertig(d.id, istFehler, job),
     });
   }
 }
-setInterval(() => { try { nachpruefungenStarten(); } catch (e) { log("Nachprüfung: " + e.message); } }, 5 * 60000);
+
+function nachpruefungFertig(id, istFehler, job) {
+  const d = db.get("skripte", id);
+  if (!d) return;
+  const r = nachpruefungErgebnis(d.daten, { gestoppt: !!job?.gestoppt, limit: istFehler && !!job?.limit, abstandS: NACHPRUEFEN_ABSTAND_S });
+  if (r.felder) db.schreiben("skripte", id, r.felder, { art: "update", ifVersion: d.version, von: "cockpit" });
+  const titel = d.daten.titel || id;
+  const fe = (art, text) => feedEintrag({ art, text: `🏭 ${text}`, spur: "produktion", id, ...(jobSchluessel(job) ? { job: jobSchluessel(job) } : {}) });
+  if (r.art === "fertig") fe("fertig", `Nachgeprüft: ${titel} ist online`);
+  else if (r.art === "nochmal") fe("fehler", `Nachprüfung ohne Ergebnis: ${titel}${job?.abbruch ? ` (${job.abbruch})` : ""} · neuer Versuch in ${Math.max(1, Math.round(NACHPRUEFEN_ABSTAND_S / 60))} Min.`);
+  else if (r.art === "limit") fe("fehler", `Nachprüfung wartet auf das Nutzungslimit: ${titel}`);
+  else if (r.art === "aufgeben") {
+    fe("fehler", `Nachprüfung endgültig ohne Ergebnis: ${titel}`);
+    lernen?.melden?.({ art: "fehler", titel: `${titel} braucht dich (Nachprüfung)`, text: `${r.felder.fehler}`, ziel: { ansicht: "studio", id } });
+  } else if (r.art === "claude_fehler" && d.daten.status === "fehler" && !d.daten.auto_gemeldet && !automatik?.uebernimmt(d)) {
+    // Befund von Claude an einem älteren Video: die Automatik wiederholt bzw. meldet nur heute und gestern, also hier melden
+    try { db.schreiben("skripte", id, { auto_gemeldet: true }, { art: "update", ifVersion: d.version, von: "cockpit" }); } catch { /* Meldung trotzdem */ }
+    lernen?.melden?.({ art: "fehler", titel: `${titel} braucht dich (Nachprüfung)`, text: String(d.daten.fehler || "Die Nachprüfung hat einen Befund eingetragen."), ziel: { ansicht: "studio", id } });
+  }
+  register?.anstossen();
+}
+setInterval(() => { try { nachpruefungenStarten(); } catch (e) { log("Nachprüfung: " + e.message); } }, 60000);
+
+// ───────── Erholung nach Neustart oder Absturz (lib/wache.mjs → erholung) ─────────
+// Slots, die in einem Übergangszustand hängen (recherche, uebergeben, produktion, angeforderte Nachprüfung) und für die hier
+// kein Auftrag läuft, kommen zurück auf ihren automatischen Weg. Sofort nur, was dieser Rechner vor dem Neustart selbst in
+// Arbeit hatte (daten/laufend.json); alles andere erst, wenn es lange unverändert ist (der andere Rechner könnte daran arbeiten),
+// und dann über beide Rechner nur einmal. Ein Video mit post_id oder geplant_fuer wird nie neu produziert (→ Nachprüfung).
+let erholenLaeuft = false;
+async function erholen(beimStart = false) {
+  if (erholenLaeuft) return;
+  erholenLaeuft = true;
+  try {
+    const eigene = new Set(beimStart ? laufendVorher.flatMap((j) => j.ids || []) : []);
+    const inArbeit = new Set(alleJobs().filter((j) => !j.abgeschlossen).flatMap((j) => j.ids || []));
+    for (const d of db.liste("skripte")) {
+      const x = d.daten;
+      if (!["recherche", "uebergeben", "produktion", "geplant"].includes(x.status) || inArbeit.has(d.id)) continue;
+      if (einstellungen.studio_ab && x.datum < einstellungen.studio_ab) continue;
+      const eigen = eigene.has(d.id);
+      const r = erholung(x, { eigen, alterMs: Date.now() - (Date.parse(d.aktualisiert || "") || 0) });
+      if (!r) continue;
+      if (!eigen && (await abgleich.anspruch(`auto-verwaist-${d.id}-${String(d.aktualisiert || "").replace(/[^0-9TZ]/g, "")}`)) === false) continue;
+      const neu = db.get("skripte", d.id);
+      if (!neu || neu.version !== d.version || inArbeitJetzt(d.id)) continue;
+      try {
+        // Mit Eintrag im Verlauf (außer beim bloßen Freigeben einer hängenden Nachprüfung)
+        if (r.art === "nachpruefen") db.schreiben("skripte", d.id, r.felder, { art: "update", ifVersion: neu.version, von: "cockpit" });
+        else db.meilenstein("skripte", d.id, r.felder.fortschritt || r.text, { von: "cockpit", felder: r.felder });
+        log(`Erholung: ${d.id} (${x.status}) · ${r.text}`);
+        feedEintrag({ art: "automatik", text: `♻ ${x.titel || d.id}: ${r.text}`, id: d.id });
+      } catch (e) { log(`Erholung ${d.id}: ${e.message}`); }
+    }
+    if (beimStart) lernen.vorschlaegeAufraeumen(laufendVorher.map((j) => j.vorschlag).filter(Boolean));
+  } finally {
+    erholenLaeuft = false;
+    if (beimStart) { laufendVorher = []; laufendMerken(); }
+  }
+}
+const inArbeitJetzt = (id) => alleJobs().some((j) => !j.abgeschlossen && (j.ids || []).includes(id));
+
+// Verwaiste claude-Prozesse eines abgestürzten Cockpits beenden (sonst liefe z. B. eine Produktion ohne Aufsicht neben ihrer
+// Wiederholung). Nur wenn unter der gemerkten PID wirklich noch claude.exe läuft.
+function verwaisteProzesseBeenden() {
+  if (ATTRAPPE) return;
+  for (const j of laufendVorher) {
+    if (!j.pid) continue;
+    try {
+      const aus = execFileSync("tasklist", ["/FI", `PID eq ${Number(j.pid)}`, "/FO", "CSV", "/NH"], { windowsHide: true, encoding: "utf8", timeout: 15000 });
+      if (!/^"claude(\.exe)?"/im.test(aus)) continue;
+      execFileSync("taskkill", ["/PID", String(Number(j.pid)), "/T", "/F"], { windowsHide: true, stdio: "ignore", timeout: 15000 });
+      log(`Erholung: verwaisten claude-Prozess ${j.pid} beendet (${j.art})`);
+    } catch { /* schon weg oder nicht prüfbar */ }
+  }
+}
 
 // Render-Dienst als Teil des Cockpits (kein eigenes Fenster)
 const renderdienst = erstelleRenderDienst({ renderRepo: RENDER_REPO, senden, log, maskiere });
@@ -947,12 +1217,16 @@ lernen = erstelleLernen({
   db, repo: ARBEITS_REPO, geheim: GEHEIM, auftrag: (job) => claudeJob(job), senden, log,
   einstellungen: () => einstellungen, einstellungenSichern, heute, berlinZeit,
   anspruch: (k) => abgleich.anspruch(k),
+  beiMeldung: (doc) => meldungAufsHandy(doc),
+  limitBis: () => limitBis(),
+  jobs: () => alleJobs(),
 });
 
 // Live-Zahlen und Missionen (Ziele); Startwerte und erreichte Missionen teilen sich alle Rechner, gemeldet wird nur einmal
 const zahlen = erstelleZahlen({
   repo: ARBEITS_REPO, ordner: path.join(DATEN, "zahlen"), geheim: GEHEIM, senden, log,
   beiGeteilt: () => abgleich.geaendert("zahlen"),
+  nachSchreiben: () => register.anstossen(), // neue Zahlen → Video-Register
   belohnen: ({ konto, mission, wert }) => {
     abgleich.anspruch(`mission-${konto}-${mission.id}`).then((ok) => {
       if (ok === false) return; // schon auf dem anderen Rechner gemeldet
@@ -998,10 +1272,35 @@ automatik = erstelleAutomatik({
   anspruch: (k) => abgleich.anspruch(k),
   feed: (text, extra = {}) => { log(text); feedEintrag({ art: "automatik", text, ...extra }); },
   melden: (m) => lernen.melden(m),
-  jobs: () => [claude.aktiv, ...claude.warteschlange, prod.aktiv, ...prod.warteschlange].filter(Boolean),
+  jobs: () => alleJobs(),
   cliDa: () => ATTRAPPE || !!findeClaude(),
   mehrereRechner: () => !OHNE_SPIEGEL && !!(SB.url && SB.key) && abgleich.status().rechner.length > 1,
+  limitBis: () => limitBis(),
+  stimmePruefen: (skript) => stimmePruefen(skript),
+  benachrichtigen,
 });
+
+// Tagesabschluss aufs Handy: eine Zeile zur eingestellten Uhrzeit (Standard 21:30), über beide Rechner nur einmal
+let abschlussLaeuft = false;
+async function tagesabschlussPruefen() {
+  const tag = heute();
+  if (abschlussLaeuft || einstellungen.melden_abschluss_zuletzt === tag || !meldenErlaubt(einstellungen, "tagesabschluss")) return;
+  if (!(melder.eingerichtet() || melder.test()) || berlinZeit() < meldenLesen(einstellungen).tagesabschluss_uhrzeit) return;
+  abschlussLaeuft = true;
+  try {
+    const ok = await abgleich.anspruch(`melden-abschluss-${tag}`);
+    if (ok === null) return; // Supabase gerade weg: nächster Takt
+    einstellungen.melden_abschluss_zuletzt = tag;
+    einstellungenSichern();
+    if (!ok) return;
+    const morgen = heute(new Date(Date.now() + 86400000));
+    const plusHeute = {};
+    const beginn = {};
+    for (const z of await zahlen.verlauf(2)) if (heute(new Date(z.zeit)) === tag && beginn[z.kanal] === undefined) beginn[z.kanal] = z.follower;
+    for (const [kanal, p] of Object.entries(zahlen.zustand().profile || {})) if (Number.isFinite(p?.follower) && Number.isFinite(beginn[kanal])) plusHeute[kanal] = p.follower - beginn[kanal];
+    benachrichtigen("tagesabschluss", tagesabschlussText({ heute: tag, morgen, slots: db.liste("skripte", [["datum", ">=", tag]]).map((d) => d.daten), plusHeute }));
+  } catch (e) { log("Tagesabschluss: " + maskiere(e.message)); } finally { abschlussLaeuft = false; }
+}
 
 // Für die Oberfläche: Skripte der letzten 14 Tage, Ideen der letzten 3 Tage, Lernstände, Vorschläge, letzte Meldungen
 function dbAuszug() {
@@ -1017,7 +1316,7 @@ function dbAuszug() {
 }
 
 // Steuerung aus dem Chat bzw. Sprachbot (aktion.mjs) und aus der Oberfläche
-const ANSICHTEN = ["jetzt", "studio", "produktion", "zahlen", "lernen", "radar"];
+const ANSICHTEN = ["jetzt", "studio", "produktion", "zahlen", "lernen", "radar", "register"];
 async function steuern(d) {
   const a = d.aktion;
   if (a === "ansicht") {
@@ -1051,6 +1350,9 @@ async function steuern(d) {
       claude: { laeuft: claude.laeuft, wartend: claude.warteschlange.length },
       produktion: { laeuft: prod.laeuft, titel: prod.aktiv?.titel || "", seit: prod.start, aufgaben: prod.aufgaben.length, wartend: prod.warteschlange.length },
       automatik: automatikLesen(einstellungen),
+      limit: limitStatus(), automatik_lokal: !!automatik?.lokal(),
+      handy_meldungen: { eingerichtet: melder.eingerichtet(), ...meldenLesen(einstellungen) },
+      register: register.lesen().zusammenfassung,
       // nur vorhanden ja/nein, nie Werte
       schluessel: Object.fromEntries(Object.entries(WERKZEUGE).map(([n, w]) => [n, w.pflicht.every((k) => !!GEHEIM[k])])),
     };
@@ -1125,10 +1427,11 @@ async function koerper(req) {
 // POST /api/einstellungen {schluessel, wert}: erlaubte Schlüssel und ihre Prüfung (liefert den zu speichernden Wert)
 const EINSTELLBAR = {
   automatik: (wert) => automatikPruefen(wert, einstellungen.automatik),
+  melden: (wert) => meldenPruefen(wert, einstellungen.melden),
 };
 
 function zustand() {
-  return { instanz: INSTANZ, db: dbAuszug(), einstellungen, spiegel, abgleich: abgleich.status(), konten: KONTEN, dienst: renderdienst.zustand(), zahlen: zahlen.zustand(), lernschleife: { laeuft: lernen.laeuft(), buffer: !!GEHEIM.BUFFER_API_KEY }, rechner: RECHNER, render, live, lokal, plan, claude: claudeStatus(), feed: feed.slice(-120), heute: heute(), supabase: !!(SB.url && SB.key), automatik: automatikLesen(einstellungen), wiederholen_nach_s: WIEDERHOLEN_NACH_S };
+  return { melden: meldenLesen(einstellungen), handy: { eingerichtet: melder.eingerichtet() }, register: { stand: register.lesen().stand, zusammenfassung: register.lesen().zusammenfassung }, instanz: INSTANZ, db: dbAuszug(), einstellungen, spiegel, abgleich: abgleich.status(), konten: KONTEN, dienst: renderdienst.zustand(), zahlen: zahlen.zustand(), lernschleife: { laeuft: lernen.laeuft(), buffer: !!GEHEIM.BUFFER_API_KEY }, rechner: RECHNER, render, live, lokal, plan, claude: claudeStatus(), feed: feed.slice(-120), heute: heute(), supabase: !!(SB.url && SB.key), automatik: automatikLesen(einstellungen), wiederholen_nach_s: WIEDERHOLEN_NACH_S };
 }
 
 const server = http.createServer(async (req, res) => {
@@ -1144,7 +1447,7 @@ const server = http.createServer(async (req, res) => {
       const herkunft = req.headers.origin;
       const token = req.headers["x-cockpit-token"];
       const tokenOk = token === TOKEN
-        || (token === CLAUDE_TOKEN && (url.pathname.startsWith("/api/db/") || url.pathname === "/api/werkzeug"))
+        || (token === CLAUDE_TOKEN && (url.pathname.startsWith("/api/db/") || url.pathname === "/api/werkzeug" || url.pathname === "/api/register"))
         || (token === STEUER_TOKEN && (url.pathname.startsWith("/api/db/") || url.pathname === "/api/steuerung"));
       if (!tokenOk || (herkunft && !ERLAUBTE_HOSTS.has(herkunft.replace(/^https?:\/\//, "")))) {
         antwortJson(res, 403, { ok: false, fehler: "Nicht erlaubt" });
@@ -1204,7 +1507,20 @@ const server = http.createServer(async (req, res) => {
         einstellungen[daten.schluessel] = wert;
         einstellungenSichern();
         log(`Einstellung ${daten.schluessel} = ${JSON.stringify(wert)}`);
-        return antwortJson(res, 200, { ok: true, schluessel: daten.schluessel, wert, automatik: automatikLesen(einstellungen) });
+        return antwortJson(res, 200, { ok: true, schluessel: daten.schluessel, wert, automatik: automatikLesen(einstellungen), melden: meldenLesen(einstellungen) });
+      }
+      // Video-Register sofort neu bauen und die Hirn-Notiz schreiben (auch während ein Auftrag läuft): für den Commit-Schritt
+      // einer Sitzung (node cockpit/werkzeuge/register.mjs) und den Knopf in der Ansicht „Register“
+      if (url.pathname === "/api/register") {
+        const r = await register.aktualisieren({ erzwingen: true });
+        return antwortJson(res, r.ok ? 200 : 500, { ...r, datei: path.relative(ARBEITS_REPO, register.notizDatei).replace(/\\/g, "/") });
+      }
+      // Probe-Nachricht aufs Handy (Knopf bei den Schaltern); sagt nur, ob es geklappt hat, nie den Zugang
+      if (url.pathname === "/api/melden/test") {
+        if (!melder.eingerichtet() && !melder.test()) return antwortJson(res, 400, { ok: false, fehler: "Telegram ist nicht eingerichtet: TELEGRAM_BOT_TOKEN und TELEGRAM_CHAT_ID fehlen (siehe cockpit/README.md)." });
+        const z = TELEGRAM;
+        const r = await erstelleMelden({ zugang: () => z, einstellungen: () => ({}), log, nurTest: ATTRAPPE }).senden("fehler", "TikTok-Cockpit · Probe: Die Handy-Meldungen funktionieren.");
+        return antwortJson(res, r.gesendet ? 200 : 400, { ok: !!r.gesendet, fehler: r.gesendet ? undefined : maskiere(r.grund || "nicht gesendet") });
       }
       if (url.pathname === "/api/meldungen") {
         const offen = db.liste("meldungen", [["gelesen", "==", false]]);
@@ -1219,8 +1535,14 @@ const server = http.createServer(async (req, res) => {
       if (url.pathname === "/api/claude/neu") { claude.sessionId = null; claude.aufgaben = []; feedEintrag({ art: "start", text: "Neue Unterhaltung" }); senden("claude", claudeStatus()); return antwortJson(res, 200, { ok: true }); }
       if (url.pathname === "/api/aktualisieren") { renderAbfragen(); planAktualisieren(); return antwortJson(res, 200, { ok: true }); }
       if (url.pathname === "/api/beenden") {
+        // Läuft noch ein Auftrag, erst nachfragen (trotzdem: true beendet ihn; nach dem nächsten Start holt die Erholung die Slots zurück)
+        if ((claude.laeuft || prod.laeuft) && !daten.trotzdem) {
+          return antwortJson(res, 409, { ok: false, laeuft: true, fehler: `${prod.laeuft ? prod.aktiv?.titel || "Die Produktion" : claude.aktiv?.titel || "Claude"} läuft gerade. Erst stoppen oder warten.` });
+        }
         antwortJson(res, 200, { ok: true });
-        log("Beendet über das Cockpit");
+        log(`Beendet über das Cockpit${claude.laeuft || prod.laeuft ? " (laufende Aufträge abgebrochen)" : ""}`);
+        prozessBeenden(claude.prozess);
+        prozessBeenden(prod.prozess);
         renderdienst.stoppen();
         setTimeout(() => process.exit(0), 1200);
         return;
@@ -1235,6 +1557,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (url.pathname === "/api/ping") return antwortJson(res, 200, { ok: true, cockpit: true });
+    if (url.pathname === "/api/register") return antwortJson(res, 200, { ok: true, ...register.lesen() });
     if (url.pathname === "/api/zahlen/verlauf") return antwortJson(res, 200, { ok: true, verlauf: await zahlen.verlauf(Math.min(60, Number(url.searchParams.get("tage")) || 7)) });
     if (url.pathname === "/api/vorschau") {
       const id = url.searchParams.get("id") || "", f = url.searchParams.get("f") || "";
@@ -1335,6 +1658,11 @@ function neuStarten() {
 process.on("exit", () => {
   const pid = renderdienst.zustand().pid;
   if (pid) try { execFileSync("taskkill", ["/PID", String(pid), "/T", "/F"], { windowsHide: true, stdio: "ignore" }); } catch { /* schon weg */ }
+  // Auch kein verwaister claude-Prozess: sonst liefe z. B. eine Produktion ohne Aufsicht weiter, während die Erholung
+  // nach dem nächsten Start sie wiederholt
+  for (const p of [claude.prozess, prod.prozess]) {
+    if (p?.pid) try { execFileSync("taskkill", ["/PID", String(p.pid), "/T", "/F"], { windowsHide: true, stdio: "ignore" }); } catch { /* schon weg */ }
+  }
 });
 for (const sig of ["SIGINT", "SIGTERM", "SIGBREAK"]) process.on(sig, () => process.exit(0));
 
@@ -1360,6 +1688,13 @@ server.listen(PORT, "127.0.0.1", () => {
   if (!process.env.COCKPIT_OHNE_ZAHLEN) zahlen.starten(); // ohne: nur für Tests (keine TikTok-Abrufe)
   lernen.starten();
   automatik.starten();
+  register.starten();
+  // Erholung: erst verwaiste Prozesse beenden, dann (nach der ersten Abgleich-Runde) hängende Slots zurück auf ihren Weg
+  verwaisteProzesseBeenden();
+  setTimeout(() => erholen(true).catch((e) => log("Erholung: " + e.message)), 15000);
+  setInterval(() => erholen(false).catch((e) => log("Erholung: " + e.message)), 5 * 60000);
+  setTimeout(() => { try { nachpruefungenStarten(); } catch (e) { log("Nachprüfung: " + e.message); } }, 25000);
+  setInterval(() => tagesabschlussPruefen(), 60000);
   setInterval(() => senden("spiegel", spiegel), 30000);
   setInterval(lokaleVideosScannen, 20000);
   setInterval(renderAbfragen, 8000);

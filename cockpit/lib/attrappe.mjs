@@ -2,7 +2,13 @@
 // stream-json-Zeilen schreibt wie `claude -p --output-format stream-json --verbose`. So laufen Feed, Aufgabenliste,
 // Spuren, Warteschlange, Stopp und nachher() im Server genau wie bei einem echten Auftrag, ohne Claude, ohne Repo,
 // ohne Buffer. Ergebnisse werden simuliert: ideen → JSON mit 10 Testideen, skripte → Slots auf skript_fertig,
-// produktion → Slots auf geplant, nachpruefen → nichts. COCKPIT_ATTRAPPE_FEHLER=1: jeder Auftrag endet als Fehler.
+// produktion → Slots auf geplant, nachpruefen → Slot auf gepostet (wie anleitung/produktion.md §4).
+// COCKPIT_ATTRAPPE_FEHLER=1: jeder Auftrag endet als Fehler. COCKPIT_ATTRAPPE_DAUER_S=<s>: feste kurze Laufzeit.
+// COCKPIT_ATTRAPPE_MODUS_DATEI=<json-datei>: wird vor jedem Auftrag gelesen, { "modus": "ok" | "fehler" | "limit" | "haengt",
+// "arten": ["ideen", …] (optional: nur diese Auftragsarten), "je_art": { "skripte": "limit", … } (optional: Modus je Art),
+// "limit_s": 90 }. „limit“ endet mit der Limit-Meldung der CLI
+// („You've hit your 5-hour limit · resets …“), „haengt“ schreibt nach dem Start nichts mehr und endet nie (für die Wache).
+import fs from "node:fs";
 import { EventEmitter } from "node:events";
 import { PassThrough, Writable } from "node:stream";
 import { KONTEN } from "./studio.mjs";
@@ -96,9 +102,17 @@ function ergebnis(job, db, log) {
   const jetzt = new Date().toISOString();
   const name = KONTEN[job.konto]?.name || "";
   if (job.art === "ideen") {
+    // Punkte absteigend, Idee 1 und 2 im selben Themenfeld (so lässt sich die Regel der automatischen Wahl prüfen)
     const ideen = Array.from({ length: 10 }, (_, i) => ({
       nr: i + 1,
+      punkte: 20 - i,
       titel: `Testidee ${i + 1} · ${name} · ${job.datum}`,
+      feld: `Testfeld ${i < 2 ? "A" : String.fromCharCode(65 + i)}`,
+      format: i % 2 ? "Rechnung" : "Duell",
+      suchbegriff: `Testbegriff ${i + 1}`,
+      nachfrage: "Attrappe: keine echte Nachfrage geprüft",
+      winkel: "Attrappe",
+      originalitaet: "Suche: „Testidee“ · Ergebnis: kein deutsches Video gefunden (Attrappe)",
       thema: `Testthema ${i + 1}`,
       hook: `Hook der Testidee ${i + 1}: Was wäre, wenn …?`,
       ergebnis_ansatz: "Testrechnung mit erfundenen Zahlen (Attrappe)",
@@ -120,12 +134,14 @@ function ergebnis(job, db, log) {
           status: "skript_fertig",
           skript: {
             nr: d.daten.idee_nr, titel: d.daten.titel, thema: d.daten.thema || "Testthema", laender: "Deutschland",
+            // Sprechtext im Textformat der Stimme (besteht pipeline/qc/stimme_vorab.py: keine Ziffern, keine Auslassungspunkte)
             segmente: [
-              { id: "hook", phase: "hook", text: `${d.daten.titel}?`, sprechtext: "Was wäre, wenn … ?" },
+              { id: "hook", phase: "hook", text: `${d.daten.titel}?`, sprechtext: "Was wäre, wenn das hier nur ein Test ist?" },
               { id: "regeln", phase: "regeln", text: "Gleiche Regeln für beide.", sprechtext: "Gleiche Regeln für beide." },
-              { id: "aufloesung", phase: "aufloesung", text: "Ergebnis: 42", sprechtext: "Am Ende: zweiundvierzig." },
+              { id: "aufloesung", phase: "aufloesung", text: "Ergebnis: 42", sprechtext: "Am Ende steht zweiundvierzig." },
             ],
           },
+          selbstpruefung: ["Wortzahl: ok (Attrappe)", "Fakten: belegt (Attrappe)", "Textformat der Stimme: ok"],
           caption: "Testvideo aus der Attrappe #test",
           quellen: [{ titel: "Testquelle (Attrappe)", url: "https://example.org" }],
           zahlen: [{ wert: 42, einheit: "Stück", quelle: "Testquelle (Attrappe)" }],
@@ -148,15 +164,47 @@ function ergebnis(job, db, log) {
     }
     return `Attrappe: Produktion ${job.datum} fertig, ${(job.ids || []).length} Video(s) geplant.`;
   }
-  if (job.art === "nachpruefen") return "Attrappe: Nachprüfung erledigt (nichts geändert).";
+  if (job.art === "nachpruefen") {
+    for (const id of job.ids || []) {
+      const d = db.get("skripte", id);
+      if (!d || d.daten.status !== "geplant") continue;
+      try {
+        db.schreiben("skripte", id, { status: "gepostet", nachgeprueft: jetzt, fortschritt: "Gepostet und nachgeprüft (Attrappe)", aktualisiert: jetzt }, { art: "update", ifVersion: d.version, von: "claude" });
+      } catch (e) { log(`Attrappe: ${id} nicht nachgeprüft (${e.message})`); }
+    }
+    return "Attrappe: Nachprüfung erledigt, Video ist online.";
+  }
   return "Attrappe: Das ist eine simulierte Antwort. Es lief kein echter Claude-Prozess.";
 }
 
+// Reset-Zeit wie die CLI sie schreibt: „6:05pm (Europe/Berlin)“
+function limitText(sekunden) {
+  const bis = new Date(Math.ceil((Date.now() + sekunden * 1000) / 60000) * 60000);
+  const [h, m] = bis.toLocaleTimeString("de-DE", { timeZone: "Europe/Berlin", hour: "2-digit", minute: "2-digit", hour12: false }).split(":").map(Number);
+  const zeit = `${h % 12 || 12}${m ? `:${String(m).padStart(2, "0")}` : ""}${h >= 12 ? "pm" : "am"}`;
+  return `You've hit your 5-hour limit · resets ${zeit} (Europe/Berlin)`;
+}
+
 export function erstelleAttrappe({ db, log = () => {} }) {
-  const FEHLER = process.env.COCKPIT_ATTRAPPE_FEHLER === "1";
+  const IMMER_FEHLER = process.env.COCKPIT_ATTRAPPE_FEHLER === "1";
+  const MODUS_DATEI = process.env.COCKPIT_ATTRAPPE_MODUS_DATEI || "";
+  const DAUER_S = Number(process.env.COCKPIT_ATTRAPPE_DAUER_S);
+
+  function modusLesen(job) {
+    if (IMMER_FEHLER) return { modus: "fehler" };
+    if (!MODUS_DATEI) return { modus: "ok" };
+    try {
+      const m = JSON.parse(fs.readFileSync(MODUS_DATEI, "utf8"));
+      // je_art (optional) geht vor: { "je_art": { "nachpruefen": "fehler", "skripte": "limit" } }
+      const wahl = m.je_art && typeof m.je_art === "object" ? m.je_art[job.art] || "ok" : Array.isArray(m.arten) && !m.arten.includes(job.art) ? "ok" : m.modus;
+      return { modus: ["fehler", "limit", "haengt"].includes(wahl) ? wahl : "ok", limit_s: Number(m.limit_s) > 0 ? Number(m.limit_s) : 90 };
+    } catch { return { modus: "ok" }; }
+  }
 
   // Liefert ein Objekt wie child_process.spawn: stdin, stdout, stderr, Ereignis "close"; kill() beendet es wie ein Stopp
   function prozess(job) {
+    const { modus, limit_s: limitS } = modusLesen(job);
+    const FEHLER = modus === "fehler" || modus === "limit";
     const p = new EventEmitter();
     p.attrappe = true;
     p.pid = undefined;
@@ -186,7 +234,7 @@ export function erstelleAttrappe({ db, log = () => {} }) {
 
     const { schritte: alle, werkzeuge, texte } = plan(job);
     const schritte = alle.slice(0, Math.min(alle.length, ganz(4, 6)));
-    const dauer = zufall(25000, 45000);
+    const dauer = DAUER_S > 0 ? Math.max(6, DAUER_S) * 1000 : zufall(25000, 45000);
     const start = Date.now();
     const sitzung = `attrappe-${start.toString(36)}`;
     let werkzeugNr = 0, zuege = 0;
@@ -203,6 +251,8 @@ export function erstelleAttrappe({ db, log = () => {} }) {
     spaeter(300, () => zeile({ type: "system", subtype: "init", model: job.modell || "attrappe", permissionMode: job.modus || "plan", session_id: sitzung, tools: [] }));
     spaeter(900, () => assistent({ type: "text", text: `(Attrappe) Ich zerlege den Auftrag in ${schritte.length} Schritte.` }));
     spaeter(1400, () => aufgaben(0));
+    // „haengt“: nach dem Start kommt nichts mehr und der Prozess endet nie von selbst (nur kill() der Wache oder ein Stopp)
+    if (modus === "haengt") return p;
     // Produktion: übergebene Slots gehen wie echt zuerst auf „produktion“
     if (job.art === "produktion") spaeter(2500, () => {
       for (const id of job.ids || []) {
@@ -231,18 +281,21 @@ export function erstelleAttrappe({ db, log = () => {} }) {
     spaeter(dauer - 600, () => {
       const text = FEHLER ? "" : ergebnis(job, db, log);
       if (!FEHLER && job.art !== "ideen") assistent({ type: "text", text });
+      // Limit wie echt (gesehen 09.11.): die Meldung kommt als Text, das Ergebnis ist ein Fehler mit subtype „success“
+      const limit = modus === "limit" ? limitText(limitS) : "";
+      if (limit) assistent({ type: "text", text: limit });
       zeile({
-        type: "result", subtype: FEHLER ? "error_during_execution" : "success", is_error: FEHLER,
-        result: FEHLER ? "Attrappe: simulierter Fehler (COCKPIT_ATTRAPPE_FEHLER=1)" : text,
+        type: "result", subtype: FEHLER && !limit ? "error_during_execution" : "success", is_error: FEHLER,
+        result: limit || (FEHLER ? "Attrappe: simulierter Fehler" : text),
         duration_ms: Date.now() - start, num_turns: zuege, session_id: sitzung, permission_denials: [],
       });
     });
     spaeter(dauer, () => {
-      if (FEHLER) p.stderr.write("Attrappe: simulierter Fehler (COCKPIT_ATTRAPPE_FEHLER=1)\n");
+      if (FEHLER) p.stderr.write("Attrappe: simulierter Fehler\n");
       ende(FEHLER ? 1 : 0);
     });
     return p;
   }
 
-  return { prozess, fehler: FEHLER };
+  return { prozess, fehler: IMMER_FEHLER };
 }

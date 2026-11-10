@@ -79,7 +79,7 @@ Prüfen und im Bericht festhalten:
 ## 4. Inhalt und Plattform
 - [ ] **Keine 1:1-Kopie** eines fremden Videos (Sätze, Etiketten, Faktenzeile, Bild- und Szenenideen); ein gleiches Thema nur mit eigenem Skript und deutlich anderem Design (Welt, Dramaturgie). Eine Sperrliste gibt es nicht mehr (veraltet seit 02.11.2026), die Kopierregel bleibt.
 - [ ] Skript liegt vor und ist übernommen (`skript_id`), Rechnung als Code mit Test (`pipeline/sim/`), Quellen und Annahmen in `skript.json`, `lern_notizen` ausgefüllt.
-- [ ] Caption aus dem Skript im Account-2-Format, 3–5 Hashtags, kein #fyp/#viral; kein KI-Label.
+- [ ] Caption aus dem Skript im Account-2-Format, 3–5 Hashtags, kein #fyp/#viral.
 
 Bei einem „nein“: Ursache beheben, betroffene Bilder mit `--von/--bis` neu rendern, erneut prüfen. Erst danach `post_buffer.py` ohne `--trocken`.
 

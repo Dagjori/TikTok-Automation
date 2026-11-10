@@ -2,7 +2,7 @@
 typ: regel
 konto: simulierbar
 status: aktuell
-datum: 2026-11-09
+datum: 2026-11-10
 quelle: .claude/skills/themen-skript/SKILL.md, .claude/skills/themen-skript/simulierbar.md (Teil A), Entscheidung des Inhabers 09.11.2026
 tags: [konto/simulierbar, themen, themenfindung, nachfrage, winkel, originalitaet]
 cssclasses: [konto-simulierbar, typ-regel]
@@ -101,4 +101,4 @@ Jede Idee kommt als Karte mit Titelfrage, Suchbegriff, Nachfrage, Winkel, „Ver
 Eine Idee ist erst fertig, wenn ein Fremder nach dem Lesen sagen kann: wonach gesucht wird, was der Zuschauer tippt, was am Ende herauskommt und warum es dieses Video auf Deutsch noch nicht gibt.
 
 ## Siehe auch
-[[Skriptaufbau Simulierbar]] · [[Finanzregeln Simulierbar]] · [[Finanz-Formulierungen Simulierbar]] · [[Konkurrenz und Themen Simulierbar]] (Marktbelege) · [[Pipeline und Skills]] · [[Regelwerk Simulierbar]] · [[Account Simulierbar Überblick]] · [[Trend-Radar]]
+[[Themen-Nachfrage]] (Vorrat an Nachfrage-Belegen, 25 Cluster mit Winkel) · [[Zahlen 2027 Simulierbar]] (Stammdaten 2027 mit Status) · [[Skriptaufbau Simulierbar]] · [[Finanzregeln Simulierbar]] · [[Finanz-Formulierungen Simulierbar]] · [[Konkurrenz und Themen Simulierbar]] (Marktbelege) · [[Pipeline und Skills]] · [[Regelwerk Simulierbar]] · [[Account Simulierbar Überblick]] · [[Trend-Radar]]

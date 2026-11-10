@@ -2,7 +2,7 @@
 typ: regel
 konto: simulierbar
 status: aktuell
-datum: 2026-11-09
+datum: 2026-11-10
 aliases: [Auswahl- und Finanzregeln Simulierbar]
 quelle: CLAUDE.md §7, Entscheidungen des Inhabers 02.11.2026 abends und 09.11.2026; bis 09.11.2026 Notiz „Auswahl- und Finanzregeln Simulierbar“ (Quelle damals: entfernter Skill simulierbar-video)
 tags: [konto/simulierbar, finanzregeln, ausschlussthemen, zahlen-2026]
@@ -19,7 +19,7 @@ Geprüft werden diese Regeln beim Schreiben des Skripts (Selbstprüfung Punkt 7,
 Steht seit 09.11.2026 in [[Themenfindung Simulierbar]] (Themenfelder, Nachfrage, Winkel, Formate, „abgenutzt“, Bewertung). Hier bleibt nur: Die Zahlen in Abschnitt 4 gelten für Deutschland; bei einem anderen Land eigene amtliche Quelle und Währung nennen.
 
 ## 2. Ausschlussthemen (CLAUDE.md §7, gültig)
-Glücksspiel, Tabak/Vape, Gesundheitsversprechen, Tragödien, Krypto, Einzelaktien, Anbieter-Empfehlungen, Parteipolitik, NS-Kennzeichen, riskantes Nachahmen. **Kein Kaufaufruf im Video** (TikTok drosselt in Shop-Märkten), kein „schnell reich“, keine Produkte, Banken, Versicherer, Broker, Coins. Finanzthemen nur als Modellrechnung; **kein KI-Label** (Ausnahme: realistisch wirkende KI-Inhalte). Details zu Plattformregeln: [[Plattformregeln und Posting]].
+Glücksspiel, Tabak/Vape, Gesundheitsversprechen, Tragödien, Krypto, Einzelaktien, Anbieter-Empfehlungen, Parteipolitik, NS-Kennzeichen, riskantes Nachahmen. **Kein Kaufaufruf im Video** (TikTok drosselt in Shop-Märkten), kein „schnell reich“, keine Produkte, Banken, Versicherer, Broker, Coins. Finanzthemen nur als Modellrechnung. Details zu Plattformregeln: [[Plattformregeln und Posting]].
 
 Gesperrte Formate und Merkmale (gültig):
 - Kein „1.000 Lebensläufe“-/„1.000 simulierte …“-Merkmal (Entscheidung 31.10.: gleiches Format, eigene Themen; gilt auch für Trend-Vorschläge). Eine klare Modellrechnung mit konkreten Fällen statt Massen-Simulation.
@@ -35,11 +35,13 @@ Gesperrte Formate und Merkmale (gültig):
 | Keine Falschinformation mit erheblichem Schaden; bei mäßigem Schaden nicht im Für-dich-Feed | Community Guidelines, Integrity and Authenticity; FYF-Standards (tiktok.com/community-guidelines/en/fyf-standards) | jede Zahl belegt oder als Modell gekennzeichnet, Werte „prüfen“ vor der Produktion klären |
 | CRP: mindestens 1 Minute, mindestens 1.000 qualifizierte Aufrufe, keine Werbung oder Sponsoring, original, hohe Qualität | Creator Rewards Program Terms EEA (tiktok.com/legal/page/global/tiktok-creator-rewards-program-eea/en) | 65–80 s, eigene Rechnung, kein Kaufaufruf ([[CRP Creator Rewards Program]]) |
 
-**Deshalb verworfen (neue Ideen):** Lotto oder Sparen, Sportwetten, Lootboxen (Glücksspiel, auch K.-o. im Trend-Radar), Krypto und Einzelaktien, ETF-Sparplan-Vergleiche (Anlageberatungs-Nähe, außerdem bei @geldsimuliert und @kontostand.vs besetzt), Bürgergeld gegen Arbeit (politisch, bei @kontostand.vs), „Nebenverdienst-Ideen“ und passives Einkommen (get-rich-quick), Augenlasern gegen Brille (Gesundheitsnähe), Kredit- oder Kartenvergleiche mit Anbietern.
+**Deshalb verworfen (neue Ideen):** Lotto oder Sparen, Sportwetten, Lootboxen (Glücksspiel, auch K.-o. im Trend-Radar), Krypto und Einzelaktien, ETF-Sparplan-Vergleiche (Anlageberatungs-Nähe, außerdem bei @geldsimuliert und @kontostand.vs besetzt), Bürgergeld gegen Arbeit als Grundsatzfrage (politisch, bei @kontostand.vs; als persönliche Euro-Rechnung mit neuem Winkel seit 09.11. erlaubt, siehe Hinweis), „Nebenverdienst-Ideen“ und passives Einkommen (get-rich-quick), Augenlasern gegen Brille (Gesundheitsnähe), Kredit- oder Kartenvergleiche mit Anbietern.
 
 **Hinweis:** In der Zeile „Deshalb verworfen“ sind die Zusätze „bei @…“ (Konkurrenzhinweise) veraltet, die Risikogründe gelten weiter. **Seit 09.11.2026** sind stark gesuchte Themen wie Grundsicherung erlaubt, wenn sie als persönliche Euro-Folge für eine Modellperson gerechnet werden und einen neuen Winkel haben; Parteipolitik und Wertungen über Gruppen bleiben ausgeschlossen ([[Themenfindung Simulierbar]] §6).
 
 ## 4. Zahlen für Deutschland 2026 (gültig für Themen mit Deutschland-Bezug)
+Für Rechnungen im Jahr 2027 gilt [[Zahlen 2027 Simulierbar]] (je Zeile Status beschlossen, geplant oder offen).
+
 | Größe | Wert | Kennung und Quelle |
 |---|---|---|
 | Mindestlohn | 13,90 € je Stunde seit 01.01.2026, 14,60 € ab 2027 | (F) Bundesregierung (bundesregierung.de, „Mindestlohn steigt“) |
@@ -99,5 +101,5 @@ Gesperrte Formate und Merkmale (gültig):
 Offene Radar-Vorschläge mit Terminbezug (Stand 02.11., Quelle `docs/trends/vorschlaege.md`): Tankrabatt endet 31.12. (Score 80, posten 15.–23.12.), Weihnachtsbaum (70, 01.–08.12.), Heizung nachts (82, spätestens 20.12.; früher laut Sperrliste nur mit eigenem Winkel; die Sperrliste entfällt seit 02.11. abends, es gilt: keine 1:1-Kopie) ([[Trend-Radar]]).
 
 ## Siehe auch
-- [[Themenfindung Simulierbar]] · [[Skriptaufbau Simulierbar]] · [[Finanz-Formulierungen Simulierbar]] · [[Konkurrenz und Themen Simulierbar]] · [[Account Simulierbar Überblick]] · [[Regelwerk Simulierbar]]
+- [[Zahlen 2027 Simulierbar]] · [[Themenfindung Simulierbar]] · [[Skriptaufbau Simulierbar]] · [[Finanz-Formulierungen Simulierbar]] · [[Konkurrenz und Themen Simulierbar]] · [[Account Simulierbar Überblick]] · [[Regelwerk Simulierbar]]
 - [[Sperrliste und Auswahlregeln Simulierbar]] (Archiv) · [[Themenplan Simulierbar]] (Archiv) · [[Trend-Radar]] · [[Plattformregeln und Posting]] · [[CRP Creator Rewards Program]] · [[Arbeitsregeln und Sicherheit]]

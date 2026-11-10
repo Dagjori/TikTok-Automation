@@ -2,7 +2,7 @@
 typ: entscheidung
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-09
+datum: 2026-11-10
 quelle: CLAUDE.md §12
 tags: [konto/gemeinsam, entscheidungen, log]
 cssclasses: [konto-gemeinsam, typ-entscheidung]
@@ -121,6 +121,11 @@ Nur **Entscheidungen des Inhabers** (2026 · Entscheidung · Begründung). Empfe
 **10.11.**
 - **Einstieg Account 2 bereinigt (auf Auftrag des Inhabers):** „Welt lebt ahnungslos weiter“ (REA 07.11.) und „Einstieg dicht, Welteffekt vor 4 s, Kamerabewegung vor 8 s“ (Lernschleife 03.11.) regeln Verschiedenes und gelten beide: **lebendig, aber ahnungslos.** Das Bild zeigt von Bild 1 an Alltagsbewegung, verrät aber nichts vom Ereignis (kein Vorbote, keine Reaktion, kein Farbstich); der erste Welteffekt ist ein Alltagseffekt, die Kamera fährt vor Null nicht auf die Gefahr zu. [[Regelwerk Account 2]], [[Ablauf Account 2]]
 - **Eichdatei `qc/stimme_eichung.json` gelöscht** (gehörte zur entfernten Dauer-Schätzung).
+- **KI-Kennzeichnung gestrichen** · „KI Kennzeichnung können wir ganz rausnehmen, das wird nicht benötigt in unseren Nischen“: Es bleibt bei der einen Regel „kein KI-Label beim Posten“; alle offenen Punkte und Prüfschritte dazu sind entfernt (→ schließt die offene Frage vom 08.11. aus [[Wachstum auf 10.000 Follower]]). [[Plattformregeln und Posting]]
+- **Abschlussquote: Aussage des Inhabers, keine laufende Erfassung** · Der Anteil der Zuschauer, die bis zum Ende schauen, hat sich mit dem neuen Skriptaufbau laut TikTok Studio etwa verdreifacht bis vervierfacht; die Zahl ist nur als Prozentwert sichtbar und wird nicht in die Lernschleife eingebaut. [[Lernschleife und Insights]]
+- **Video-Register automatisch aus dem Cockpit** · Alles, was im Cockpit erstellt wird, landet von selbst im Register; die Notiz „Video-Register“ folgt mit dem Cockpit-Ausbau.
+- **Hirn ergänzt:** [[Themen-Nachfrage]] (Recherche vom 09.11. gesichert), [[Zahlen 2027 Simulierbar]] (Stammdaten mit Status), [[Aussprache Simulierbar]].
+- **Beauftragt:** Blender-Testlauf (ein Probe-Projekt, Auswertung nach Aussehen und Rechenzeit) und der erste Lauf des Skills `themen-skript` (Ideen für beide Accounts); dazu Aufwertung und weitere Automatisierung des Cockpits.
 
 ## Siehe auch
 [[Arbeitsregeln und Sicherheit]] · [[Rolle und Kommunikation]] · [[Index]]

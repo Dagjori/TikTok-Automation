@@ -2,7 +2,7 @@
 typ: index
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-09
+datum: 2026-11-10
 quelle: hirn/
 tags: [konto/gemeinsam, index, moc]
 cssclasses: [konto-gemeinsam, typ-index]
@@ -33,6 +33,7 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 | [[Pipeline und Skills]] | die Kette der Skills: was jeder nimmt und übergibt, wo der Inhaber klickt |
 | [[Claude-Chat-Workflow]] | Tagesablauf im Cockpit: Ideen 07:00, Wahl, Skript, Freigabe, Produktion |
 | [[Cockpit]] | lokales Regie-Cockpit, Bereiche, vier Automatiken |
+| [[Video-Register]] | jedes Video von der Idee bis zu den Zahlen, je Account eine Tabelle; vom Cockpit erzeugt, nicht von Hand ändern |
 | [[Originalität und Themenfindung]] | gemeinsames Prinzip: Nachfrage, neuer Winkel, Websuche je Idee |
 | [[Lernschleife und Insights]] | tägliche Auswertung der Zahlen (19:52), Lernstand, Vorschläge mit Freigabe |
 | [[Serien und Treffer-Folgen]] | Treffer (ab 3× Median) läuft als nummerierte Serie weiter |
@@ -42,7 +43,7 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 | [[Arbeitsregeln und Sicherheit]] | Nichts ohne Auftrag, öffentliches Repo, Geheimnisse, Recherche |
 | [[Kanäle und Ziele]] | beide Kanäle im Überblick, Ziele, Kennzahlen |
 | [[CRP Creator Rewards Program]] | Bedingungen, Ausschlüsse, Rechnung |
-| [[Plattformregeln und Posting]] | Buffer, Zeiten, Caption, Kennzeichnung, Inhaltsregeln |
+| [[Plattformregeln und Posting]] | Buffer, Zeiten, Caption, Inhaltsregeln |
 | [[Produktion Rhythmus und Modelle]] | 4 Videos pro Tag, Agenten, Modelle |
 | [[Render-Dienst Windows-PC]] | Rendern auf dem PC, Messwerte, Einrichtung, Fehler |
 | [[Technik und Umgebung]] | Umgebung, Supabase, Netzwerk, Blender, Kosten |
@@ -64,6 +65,7 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 | [[Themenfindung Simulierbar]] | Themenfelder, Nachfrage, Winkel-Werkzeuge, Formate, „abgenutzt“, Bewertung |
 | [[Skriptaufbau Simulierbar]] | Phasen mit Zeiten, Sprache, Selbstprüfung, Beispiel-Gerüst |
 | [[Finanzregeln Simulierbar]] | Ausschlussthemen, TikTok-Regeln für Finanzinhalte, Zahlen 2026 |
+| [[Zahlen 2027 Simulierbar]] | **neu 10.11.:** Stammdaten für Rechnungen im Jahr 2027, je Zeile Status (beschlossen, geplant, offen) und Quelle |
 | [[Finanz-Formulierungen Simulierbar]] | wie wir über Geld sprechen (Modell statt Versprechen) |
 | [[Befehl Ideen und Skripte Simulierbar]] | Auftragstexte für Ideen und Skripte (erzeugt aus `tools/chat_befehle.py`) |
 
@@ -71,6 +73,7 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 | Notiz | Inhalt |
 |---|---|
 | [[Stimme ElevenLabs Simulierbar]] | Ben, Textformat, Einstellungen, eine Aufnahme, Aussprache, Credits |
+| [[Aussprache Simulierbar]] | **neu 10.11.:** Ausspracheliste `aussprache.json`, Schreibweisen-Muster, Auffälligkeiten aus Aufnahmen |
 
 **`3-Produktion`** (Skill `video-produktion`)
 | Notiz | Inhalt |
@@ -131,6 +134,8 @@ Zwei TikTok-Kanäle, ein gemeinsames Fundament, strikt getrennte Regelwerke. Zue
 | [[REA Übergreifend]] | freigegeben 07.11.: Handwerk, das in beiden Accounts trägt |
 | [[Konkurrenz und Themen Simulierbar]] | Nische, Markt, Konkurrenzzahlen von Account 1 |
 | [[Simulation-Trendanalyse-2026-11-02]] | Auswertung der „simulation“-Kanäle und Muster |
+| [[Themen-Nachfrage]] | **neu 10.11.:** wonach gesucht wird (25 Geld-Cluster, Was-wäre-wenn-Cluster, Wochen-Methode, was TikTok zur Abschlussquote sagt); wird wöchentlich fortgeschrieben |
+| [[Ideenlauf 2026-11-10]] | **neu 10.11.:** erster Lauf von `themen-skript`, je 10 Ideen für beide Accounts zur Wahl, was der Lauf am Skill geändert hat |
 | [[Wachstum auf 10.000 Follower]] | Tiefenrecherche Follower-Wachstum, Weg zu 10.000 je Account |
 | `Insights JJJJ-MM-TT` | tägliche Auswertung der eigenen Zahlen (seit 03.11.) |
 

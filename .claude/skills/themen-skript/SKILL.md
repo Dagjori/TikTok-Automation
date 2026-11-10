@@ -40,16 +40,22 @@ Lies danach **nur** den Teil dieses Accounts. Ist der Account unklar: eine Rück
 | Quelle | Wofür |
 |---|---|
 | jüngste `hirn/04-Recherche/Insights JJJJ-MM-TT.md` | Lernstand: welche Themenart, welcher Einstieg, welche Länge trägt |
-| `data/produktion/protokoll.csv` | bisherige Videos (keine Dopplung; Folgeteile legt das Cockpit an) |
+| `hirn/01-Projekt/Video-Register.md` (Rückfall: `data/produktion/protokoll.csv`) | bisherige Videos (keine Dopplung; Folgeteile legt das Cockpit an) |
+| stelldirvor: `pipeline/projekte/<letztes Projekt>/skript.json` (`welt`, `standpunkt`, `tageszeit_verlauf`) | Weltvielfalt gegenüber dem vorigen Video; das Protokoll enthält diese Felder nicht |
 | Teil-Datei des Accounts | Themenfelder, Formate, Aufbau, Ausgabe |
 | `hirn/01-Projekt/Originalität und Themenfindung.md` | Hintergrund zur Anti-Liste |
 
 ## 4. Nachfrage finden (kostenlos, je Lauf)
 Arbeite die Quellen in dieser Reihenfolge ab und notiere je Fund **Suchformulierung, Quelle, Datum**:
-1. **Suchvorschläge (Autocomplete):** Stamm + Buchstabe a bis z. Abruf ohne Anmeldung über
-   `https://suggestqueries.google.com/complete/search?client=firefox&hl=de&gl=de&q=<Stamm>+<Buchstabe>` (Google) und mit `&ds=yt` (YouTube). Antwortet die Adresse nicht, dieselben Stämme über die Websuche abfragen. Die Stämme stehen in der Teil-Datei.
-2. **Google Trends, „Zunehmend“:** je Stamm die steigenden Suchanfragen für Deutschland (3 Monate). Alles über +500 % notieren. Nicht abrufbar: überspringen und im Ergebnis als „Trends nicht geprüft“ vermerken.
-3. **„Weitere Fragen“ (People also ask):** zu den stärksten Funden die Folgefragen aus der Websuche. Die Folgefrage ist oft schon der Winkel.
+1. **Suchvorschläge (Autocomplete):** zuerst der nackte Stamm, dann Stamm + Leerzeichen + Buchstabe für die **12 Buchstaben a, b, d, e, f, g, k, m, p, s, w, z** (nicht a bis z: das wären zu viele Abrufe für zu wenig Neues). Abruf ohne Anmeldung über
+   `https://suggestqueries.google.com/complete/search?client=firefox&hl=de&gl=de&q=<Stamm>+<Buchstabe>` (Google).
+   - **Umlaute und Leerzeichen prozentkodieren** (UTF-8: `ä` = `%C3%A4`, `ö` = `%C3%B6`, `ü` = `%C3%BC`, `ß` = `%C3%9F`, Leerzeichen = `+`), sonst kommt eine leere Antwort.
+   - Die Antwort ist nicht immer sauber UTF-8: erst als UTF-8 lesen, bei Fehlern als Latin-1.
+   - **YouTube** (`&ds=yt`) nur ergänzend mit 4 Buchstaben je Stamm; zu Geldthemen liefert es überwiegend Musik und Spiele.
+   - Themenfremde Vorschläge (Medikamente, Recht, Geräte, Prominente, Spiele) sofort verwerfen, nicht notieren.
+   - Antwortet die Adresse nicht, dieselben Stämme über die Websuche abfragen. Die Stämme stehen in der Teil-Datei.
+2. **Folge-Suchvorschläge statt „Weitere Fragen“:** Zu den 5 stärksten Funden den ganzen Fund als neuen Stamm abfragen (nackt plus 4 Buchstaben). Die Folgefrage ist oft schon der Winkel. „Weitere Fragen“ (People also ask) gibt es ohne Browser nicht; nur nutzen, wenn ein Browser bereitsteht.
+3. **Google Trends, „Zunehmend“:** einmal versuchen. Antwortet Trends mit Fehler 429 oder gar nicht, **nicht wiederholen**, sondern in der Zeile „Nachfrage geprüft“ „Trends nicht abrufbar“ vermerken. Die Nachfrage gilt dann über Suchvorschläge und Anlässe als belegt.
 4. **Anlässe mit Datum:** Gesetzesänderungen, Stichtage, Jahreszeiten, Naturereignisse der nächsten 8 Wochen (Teil-Datei).
 5. **Vom Inhaber (wenn vorhanden):** Begriffe aus TikTok „Creator Search Insights“ (Filter „Inhaltslücke“) und Kommentare unter eigenen Videos. Das kann nur der Inhaber in der App abrufen; liegen keine vor, ohne sie arbeiten.
 
@@ -61,12 +67,19 @@ Die Liste abgenutzter Themen der Teil-Datei zeigt, wo die Nachfrage zwar groß, 
 | 1 | Lernstand, bisherige Videos, Teil-Datei lesen | – |
 | 2 | Nachfrage sammeln (§4), mindestens **30 Rohfunde** über alle Themenfelder | Rohliste mit Quelle |
 | 3 | Die **20 naheliegendsten Ideen** aufschreiben und streichen, dazu alles von der Liste „abgenutzt“ in seiner Standardfrage | Zeile „Gestrichen (naheliegend): …“ |
-| 4 | Je Rohfund einen **Winkel** suchen (Winkel-Werkzeuge der Teil-Datei); ohne Winkel fällt der Fund raus | Kandidaten |
-| 5 | Originalität je Kandidat per Websuche prüfen (§2.5) | Feld `originalitaet` |
-| 6 | Bewerten (Punkte der Teil-Datei), die 10 besten wählen, Verteilung über Themenfelder und Formate einhalten | 10 Ideen |
-| 7 | Ausgabe im Ideen-Format der Teil-Datei, danach die Frage „Welche wählst du?“ | Ausgabe |
+| 4 | Je Rohfund einen **Winkel** suchen (Winkel-Werkzeuge der Teil-Datei); ohne Winkel fällt der Fund raus. Etwa **15 Kandidaten** bilden, weil rund ein Drittel an der Originalität scheitert | Kandidaten |
+| 5 | **Originalität zuerst** je Kandidat per Websuche prüfen (§2.5, Regel „gleiche Frage“ unten), **bevor** Quellen gesucht werden: das ist billig, die Quellensuche teuer | Feld `originalitaet` |
+| 6 | Für die verbliebenen Kandidaten **eine Leitzahl** mit Quelle suchen (die Zahl, an der die Idee hängt). Höchstens 3 Quellen je Kandidat öffnen, keine PDFs über 20 Seiten; die volle Rechnung kommt erst im Ablauf „Skript“ | Feld `daten` |
+| 7 | Bewerten (Punkte der Teil-Datei), die 10 besten wählen, Verteilung über Themenfelder und Formate einhalten | 10 Ideen |
+| 8 | Ausgabe im Ideen-Format der Teil-Datei, danach die Frage „Welche wählst du?“ | Ausgabe |
 
-**Stopp nach Schritt 7.** Kein Skript ohne Wahl.
+**Stopp nach Schritt 8.** Kein Skript ohne Wahl.
+
+**Regel „gleiche Frage“ (für Schritt 5):** Eine Idee ist schon gemacht, wenn ein deutsches Video (TikTok, YouTube, Reel) **dieselbe Frage als Hauptinhalt** stellt und beantwortet. Kein Hindernis sind: ein Erklärvideo zum Thema allgemein, eine Erwähnung in einem Satz, ein Video mit anderer Frage zum selben Thema. Dann im Feld `originalitaet` „ähnlich: …“ mit kurzer Begründung, warum unsere Frage und Auflösung anders sind. Instagram-Reels zählen mit; dort liegen die meisten deutschen Treffer.
+
+**Endzahl bei der Idee:** Eine Leitzahl mit Quelle genügt. Eine Endzahl, die aus einer Rechnung mit Annahme entsteht, ist erlaubt, wenn sie als „(Rechnung mit Annahme: …)“ markiert ist. Fehlt die Endzahl noch, steht in `auflösung` „Endzahl offen, Rechnung im Skript“, und das Kriterium „Endzahl“ bzw. „Messgröße“ bekommt höchstens 1 Punkt.
+
+**Stand von Gesetzen und Werten** (überall, wo ein Wert für die Zukunft genannt wird): **beschlossen** (im Gesetzblatt bzw. verkündet) · **Kabinett, Bundesrat offen** · **geplant** (Entwurf, Ziel) · **offen** (Prognose). Im Video heißt alles, was nicht beschlossen ist, „geplant“.
 
 ## 6. Ablauf „Skript“ (je gewählter Idee)
 | # | Schritt | Ergebnis |

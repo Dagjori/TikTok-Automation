@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<!-- Seitenleiste: Bereiche (Tasten 1–6), unten Meldungen, Einstellungen, Server -->
+<!-- Seitenleiste: Bereiche (Tasten 1–7), unten Meldungen, Einstellungen, Server -->
 <aside class="leiste" id="leiste">
   <div class="marke" title="TikTok Cockpit">
     <img src="icon.svg" alt="" width="30" height="30">
@@ -26,6 +26,7 @@
     <a href="#zahlen" data-seite="zahlen"><i data-ico="zahlen"></i><span>Zahlen</span><kbd>4</kbd></a>
     <a href="#lernen" data-seite="lernen"><i data-ico="lernen"></i><span>Lernen</span><b class="zahl-punkt" id="punkt-lernen" hidden></b><kbd>5</kbd></a>
     <a href="#radar" data-seite="radar"><i data-ico="radar"></i><span>Radar</span><b class="zahl-punkt leise" id="punkt-radar" hidden></b><kbd>6</kbd></a>
+    <a href="#register" data-seite="register"><i data-ico="register"></i><span>Register</span><kbd>7</kbd></a>
   </nav>
   <div class="leiste-unten">
     <button class="leiste-knopf" id="k-meldungen" title="Meldungen"><i data-ico="glocke"></i><span>Meldungen</span><b class="zahl-punkt" id="punkt-meldungen" hidden></b></button>
@@ -203,6 +204,20 @@
         <div class="liste" id="radar"></div>
       </div>
     </section>
+
+    <!-- ───────── REGISTER (Video-Register: jedes Video von der Idee bis zu den Zahlen) ───────── -->
+    <section class="seite" id="seite-register" data-titel="Register" hidden>
+      <div class="register-kopf">
+        <div class="segment-wahl" id="register-konto"></div>
+        <div class="segment-wahl" id="register-status"></div>
+        <span class="hinweis" id="register-stand"></span>
+        <button class="knopf" id="k-register-neu" title="Register jetzt neu aufbauen und die Hirn-Notiz schreiben"><i data-ico="neu-laden"></i> Aktualisieren</button>
+      </div>
+      <div class="block">
+        <div class="block-kopf"><h2>Alle Videos</h2><span class="hinweis" id="register-info"></span></div>
+        <div class="video-tabelle register-tabelle" id="register-tabelle"></div>
+      </div>
+    </section>
   </main>
 </div>
 
@@ -258,8 +273,12 @@
 
 <dialog class="dialog" id="einstellungen-dialog">
   <div class="panel-kopf"><h2>Automatik</h2><button class="mini-knopf" data-zu title="Schließen">✕</button></div>
-  <p class="hinweis">Gilt für Laptop und PC. Deine Freigabe der Skripte bleibt immer bei dir.</p>
+  <p class="hinweis">Gilt für Laptop und PC. Deine Freigabe der Skripte bleibt bei dir, solange der Autopilot aus ist.</p>
   <div class="schalter-liste" id="automatik-schalter"></div>
+  <h3 class="dialog-zwischen">Autopilot <span class="hinweis">aus, bis du ihn einschaltest</span></h3>
+  <div class="schalter-liste" id="autopilot-schalter"></div>
+  <h3 class="dialog-zwischen">Meldungen aufs Handy <span class="hinweis" id="handy-stand"></span></h3>
+  <div class="schalter-liste" id="melden-schalter"></div>
 </dialog>
 <dialog class="dialog" id="konsole-dialog">
   <div class="panel-kopf"><h2>Render-Dienst · Konsole</h2><button class="mini-knopf" data-zu title="Schließen">✕</button></div>
@@ -277,6 +296,7 @@
 <script src="studio.js"></script>
 <script src="produktion.js"></script>
 <script src="zahlen.js"></script>
+<script src="register.js"></script>
 <script src="jetzt.js"></script>
 </body>
 </html>

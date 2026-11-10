@@ -27,7 +27,7 @@ Einstieg in alles zu **Account 2 `@stelldirvor.pov`** („Was wäre, wenn …“
 | Bewegung | nie warten: alle 2–3 s eine sichtbare, themenbezogene Veränderung; Zeitraffer mit Faktor im Skript, die Anzeige läuft passend dazu |
 | Kamera | lange, durchgehende Einstellungen mit langsamer Fahrt, Schwenk, Zoom; **höchstens 1–3 gezielte harte Schnitte**, nur am Höhepunkt oder bei einem Maßstabs- bzw. Szenensprung |
 | Technik | three.js als Kern; bei Bedarf höchstens 2 Blender-Schlüsselszenen je Video; keine KI-Video-Generatoren ([[Technik und Szenenbau Account 2]]) |
-| Rhythmus | 2 Videos pro Tag für den nächsten Tag; der Inhaber wählt aus 10 Ideen und gibt die Skripte frei; Posting Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30, ohne KI-Label |
+| Rhythmus | 2 Videos pro Tag für den nächsten Tag; der Inhaber wählt aus 10 Ideen und gibt die Skripte frei; Posting Mo–Fr 12:30 und 19:30, Sa–So 09:30 und 19:30 |
 | Skills | `themen-skript` (Teil `stelldirvor.md`) → `video-produktion` (Teil `stelldirvor.md`); keine Stimme |
 | Profil | Bio (gesetzt 01.11., ohne Kontaktdaten): „Was wäre, wenn …? Du erlebst es live 🌍⏱️ Dein Szenario? 👇“; Takt ergänzen, 3 Pins, Cover = Titelfrage ([[Profil und Follow-Umwandlung]]) |
 | Konto-Kandidat 3 | „Wer war's?“ (animiertes Krimirätsel) |

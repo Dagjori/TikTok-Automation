@@ -206,7 +206,7 @@ function countdownAufgaben() {
       const titel = eintraege.map((x) => x.d.daten.titel).join(" · ");
       liste.push({
         key: `auto-wiederholen:${k}`, art: "countdown", status: "countdown", akzent: "var(--fehler)", bis, gesamt: S.wiederholen_nach_s || 300,
-        titel: `Neuer Versuch: ${PHASE[phase] || phase}`, unter: `${kontoChip(konto)}<span>${tagLabel(datum)} · ${esc(titel)}</span>`,
+        titel: limitJetzt() ? `Wartet auf Limit bis ${uhrzeitVon(limitJetzt().weiter_ab)}: ${PHASE[phase] || phase}` : `Neuer Versuch: ${PHASE[phase] || phase}`, unter: `${kontoChip(konto)}<span>${tagLabel(datum)} · ${esc(titel)}</span>`,
         text: String(eintraege[0].d.daten.fehler || "abgebrochen").slice(0, 140),
         knoepfe: eintraege.map((x, i) => `<button class="knopf klein ${i ? "" : "haupt-knopf"}" data-erneut="${x.d.id}">${eintraege.length > 1 ? `Jetzt erneut: ${esc(SLOT_NAME[x.d.daten.slot] || x.d.id)}` : "Jetzt erneut"}</button>`).join(""),
       });
@@ -429,6 +429,7 @@ function ruheZeichnen() {
     if (fehlen.length && S.einstellungen?.automatik_ideen_zuletzt !== S.heute) zeilen.push(`Ideen für morgen kommen automatisch ab ${esc(a.ideen_uhrzeit)} Uhr`);
   }
   if (S.einstellungen?.lernschleife_aktiv) zeilen.push("Lernschleife um 19:52");
+  if (limitJetzt()) zeilen.unshift(`<b>Claude wartet auf Limit bis ${esc(uhrzeitVon(limitJetzt().weiter_ab))}</b>, danach geht es von selbst weiter`);
   htmlSetzen($("ruhe"), `<span class="led an"></span><div><b>Gerade läuft nichts.</b><small>${zeilen.join(" · ") || "Alles erledigt."}</small></div>`);
 }
 
@@ -436,10 +437,26 @@ function ruheZeichnen() {
 function fuerDich() {
   const liste = [];
   const a = automatik();
+  // Nutzungslimit von Claude: nur zur Information (das Cockpit macht danach von selbst weiter)
+  const limit = limitJetzt();
+  if (limit) liste.push({ prio: 0.5, art: "", icon: "⏳", titel: `Claude wartet auf Limit bis ${uhrzeitVon(limit.weiter_ab)}`, text: "Nutzungslimit erreicht. Danach setzt das Cockpit von selbst fort, du musst nichts tun.", knopf: "" });
+  const gesendet = new Set((ZS.zahlen?.posts || []).flatMap((p) => [p.post_id, p.projekt]).filter(Boolean));
   for (const d of doks("skripte")) {
     const x = d.daten;
-    if (x.datum < S.heute) continue;
     const wo = `${KONTO_NAME[x.konto] || ""} · ${tagLabel(x.datum)} ${SLOT_NAME[x.slot] || ""}`;
+    // Vergangene Tage (Ausbau 10.11.): Ungelöstes bleibt sichtbar, neueste zuerst: Fehler, Rückfragen, nie gepostete Videos.
+    // „Abhaken“ nimmt einen erledigten Altfall heraus.
+    if (x.datum < S.heute) {
+      if (x.abgehakt || (S.einstellungen?.studio_ab && x.datum < S.einstellungen.studio_ab)) continue;
+      const alter = 1 + (Date.parse(`${S.heute}T12:00:00Z`) - Date.parse(`${x.datum}T12:00:00Z`)) / 86400000 / 100; // neueste zuerst
+      const knoepfe = `<button class="knopf klein" data-oeffnen="${d.id}">Ansehen</button><button class="knopf klein" data-abhaken="${d.id}" title="Erledigt: nicht mehr anzeigen">Abhaken</button>`;
+      const istOnline = gesendet.has(x.post_id) || gesendet.has(x.buffer_post_id) || gesendet.has(x.projekt);
+      if (x.status === "fehler") liste.push({ prio: 5 + alter, art: "problem", alt: true, icon: "⚠️", titel: `Fehler vom ${tagLabel(x.datum)}: ${x.titel}`, text: x.fehler || wo, knopf: `${x.fehler_phase === "nachpruefen" ? `<button class="knopf klein" data-erneut="${d.id}">Nachprüfung wiederholen</button>` : ""}${knoepfe}` });
+      else if (x.status === "rueckfrage") liste.push({ prio: 5 + alter, art: "wichtig", alt: true, icon: "❓", titel: `Rückfrage vom ${tagLabel(x.datum)}: ${x.titel}`, text: x.fehler || wo, knopf: knoepfe });
+      else if (x.status === "geplant" && !istOnline && Date.now() - (Date.parse(x.geplant_fuer || "") || Date.parse(`${x.datum}T23:00:00Z`)) > 3 * 3600000) liste.push({ prio: 5 + alter, art: "problem", alt: true, icon: "📭", titel: `Nicht bestätigt vom ${tagLabel(x.datum)}: ${x.titel}`, text: `${wo} · geplant, aber weder nachgeprüft noch in den Zahlen`, knopf: knoepfe });
+      else if (!["geplant", "gepostet"].includes(x.status)) liste.push({ prio: 5 + alter, art: "problem", alt: true, icon: "📭", titel: `Nie gepostet vom ${tagLabel(x.datum)}: ${x.titel}`, text: `${wo} · blieb bei „${STATUS_NAME[x.status] || x.status}“ stehen`, knopf: knoepfe });
+      continue;
+    }
     if (x.status === "skript_fertig") liste.push({ prio: 1, art: "wichtig", icon: "📜", titel: `Skript prüfen: ${x.titel}`, text: wo, knopf: `<button class="knopf klein haupt-knopf" data-oeffnen="${d.id}">Lesen und freigeben</button>` });
     else if (x.status === "rueckfrage") liste.push({ prio: 0, art: "wichtig", icon: "❓", titel: `Rückfrage: ${x.titel}`, text: x.fehler || wo, knopf: `<button class="knopf klein haupt-knopf" data-oeffnen="${d.id}">Ansehen</button>` });
     else if (x.status === "fehler" && !wiederholungAb(d)) liste.push({ prio: 0, art: "problem", icon: "⚠️", titel: `Fehler: ${x.titel}`, text: x.fehler || wo, knopf: `<button class="knopf klein" data-erneut="${d.id}">Erneut versuchen</button><button class="knopf klein" data-oeffnen="${d.id}">Ansehen</button>` });
@@ -467,7 +484,7 @@ function fuerDichZeichnen() {
   $("punkt-jetzt").textContent = liste.filter((x) => x.art).length;
   $("fuer-dich-info").textContent = liste.length ? `${liste.length} offen` : "";
   htmlSetzen($("fuer-dich"), liste.length
-    ? liste.slice(0, 9).map((t, i) => `<div class="todo ${t.art}" style="animation-delay:${i * 40}ms"><span class="todo-icon">${t.icon}</span><div><b title="${esc(t.titel)}">${esc(t.titel)}</b><small title="${esc(t.text)}">${esc(t.text)}</small></div><div class="slot-knoepfe" style="margin:0">${t.knopf}</div></div>`).join("")
+    ? liste.slice(0, 14).map((t, i) => `<div class="todo ${t.art} ${t.alt ? "alt" : ""}" style="animation-delay:${i * 40}ms"><span class="todo-icon">${t.icon}</span><div><b title="${esc(t.titel)}">${esc(t.titel)}</b><small title="${esc(t.text)}">${esc(t.text)}</small></div><div class="slot-knoepfe" style="margin:0">${t.knopf}</div></div>`).join("")
     : `<div class="alles-erledigt"><svg viewBox="0 0 24 24">${ICO.haken}</svg><div><b>Nichts wartet auf dich.</b><br><small class="hinweis">Neues erscheint hier, sobald du gebraucht wirst.</small></div></div>`);
   return liste;
 }
@@ -476,6 +493,7 @@ $("fuer-dich").addEventListener("click", async (e) => {
   if (!b) return;
   if (b.dataset.oeffnen) studioOeffnen(b.dataset.oeffnen);
   else if (b.dataset.erneut) await studioAktion("erneut", { id: b.dataset.erneut });
+  else if (b.dataset.abhaken) await studioAktion("abhaken", { id: b.dataset.abhaken });
   else if (b.dataset.studio) { const [konto, datum] = b.dataset.studio.split("|"); studioTag(konto, datum); }
   else if (b.dataset.ideen) { const [konto, datum] = b.dataset.ideen.split("|"); const r = await studioAktion("ideen", { konto, datum }); if (r) toast("💡", "Ideen angefordert", r.hinweis || ""); }
   else if (b.dataset.seiteZiel) seiteZeigen(b.dataset.seiteZiel);

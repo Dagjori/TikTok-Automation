@@ -28,7 +28,7 @@ Der Tagesablauf von der Idee bis zum geposteten Video. **Stand 09.11.2026:** Er 
 3. **Recherche und Skript (Automatik nach der Wahl):** Jede Zahl wird an der Quelle geprüft, die Rechnung aufgestellt, das Skript nach dem Aufbau des Accounts geschrieben und selbst geprüft ([[Skriptaufbau Simulierbar]], [[Ablauf Account 2]]).
 4. **Prüfen (Inhaber):** Skript lesen, dann **Freigeben**, **Neu schreiben lassen** (mit Kommentar) oder **Verwerfen**.
 5. **Produktion (Automatik nach der Freigabe):** Sind alle Skripte eines Tages freigegeben, startet die Produktion nach 60 s. Bei Simulierbar zuerst die Stimme (eine Aufnahme), dann richtet sich das Video nach der Stimme. Reihenfolge: zuerst beide 12:30-Videos bis Buffer, dann die 19:30-Videos.
-6. **Nachprüfung** ca. 20 Min. nach der Posting-Zeit (öffentlich, Länge, KI-Label wie gesetzt), dann Status „gepostet“.
+6. **Nachprüfung** ca. 20 Min. nach der Posting-Zeit (öffentlich, Länge), dann Status „gepostet“.
 
 Den Fortschritt jedes Videos zeigt das Cockpit als Live-Karte auf „Jetzt“.
 

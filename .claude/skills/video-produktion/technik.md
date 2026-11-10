@@ -36,6 +36,13 @@ Stand 09.11.2026, nach einer Recherche dazu, womit Videos 2026 tatsächlich per 
 
 **Offen (vor dem ersten echten Einsatz mit dem Inhaber klären):** Die Bildfolgen sind groß und gehören nicht ins öffentliche Repo. Der Render-Dienst holt den Stand aber aus `origin/main`. Bis geklärt ist, wie die Bilder zum rendernden Rechner kommen, gilt: Blender-Szenen nur in Videos, die auf demselben Rechner gebaut und gerendert werden, und der Ordner `projekte/<name>/blender/<szene>/` bleibt außerhalb von Git.
 
+**Testlauf 10.11.2026 (Laptop, Muster: `pipeline/projekte/_test-blender/blender/szene.py`):**
+- Rechner: Intel i5-1135G7, 16 GB, nur eingebaute Grafik (Iris Xe). Cycles findet nur die CPU. Mit 6 von 8 Threads rendern.
+- Namen in Blender 5.2: Engine `BLENDER_EEVEE` bzw. `CYCLES`, Himmel `MULTIPLE_SCATTERING`, Farbe AgX „Medium High Contrast“, Entrauscher `OPENIMAGEDENOISE`. Ausgabepfade immer absolut angeben.
+- Zeit je Bild (1080 × 1920): **EEVEE ca. 7 s** (einmalig ca. 2 Minuten Shader-Übersetzung beim ersten Start), **Cycles ca. 80 s**. Eine 8-s-Szene (240 Bilder) dauert mit EEVEE ca. 27 Minuten, mit Cycles ca. 5,5 Stunden; three.js braucht dafür ca. 18 s.
+- Ergebnis: Ruhige Bilder (Dämmerungshimmel, nasser Sand, Sonnenglitzern, Felsen) wirken mit Cycles fotoecht. **Bewegte Ereignisse** (brechende Welle, Gischt) wirken mit dem Ozean-Modifier unecht; dafür bräuchte es Flüssigkeits-Simulation, die dieser Laptop nicht in vertretbarer Zeit schafft. Ozean-Auflösung klein halten (zu fein: 5,6 GB Speicher, Absturz).
+- Folgerung: Auf diesem Rechner taugt Blender für ruhige, fotoechte Einstiegs- oder Hintergrundbilder, die über Nacht gerendert werden, nicht für das Ereignis selbst. Die Einbindung als Ebene über `renderAt(t)` funktioniert (`_test-blender/ebene_demo.html`).
+
 ## 4. Probelauf Remotion (Entscheidung des Inhabers 09.11.2026: testen)
 Ziel: herausfinden, ob Zusammenbau und Untertitel über Remotion besser oder schneller sind als `render.js` plus `mux.sh`. **Nur an einem schon fertigen, geposteten Projekt**, nie an einem Video in Arbeit.
 1. Ein fertiges Simulierbar-Projekt wählen. In `pipeline/vorschau/remotion-probe/` ein Remotion-Projekt anlegen (Skill-Familie `remotion:*`), das die vorhandene Bildfolge bzw. die three.js-Szene, `audio/stimme.mp3`, den Klangteppich und die Untertitel aus `timing.json` zusammensetzt.

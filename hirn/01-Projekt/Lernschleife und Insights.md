@@ -2,7 +2,7 @@
 typ: anleitung
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-09
+datum: 2026-11-10
 quelle: Entscheidung des Inhabers 02.11.2026 (spätabends), Buffer-API (geprüft 02.11.); Zielgröße und Tests: Wahl des Inhabers 08.11.2026; cockpit/README.md (Takt 19:52)
 tags: [konto/gemeinsam, lernschleife, insights, buffer]
 cssclasses: [konto-gemeinsam, typ-anleitung]
@@ -71,6 +71,9 @@ Follower = Aufrufe × Follows je 1.000 Aufrufe. Ohne diese Zahl optimiert die Sc
 | Ungewöhnliche Themen | beide | Aufrufe, Ø-Zeit und Follows je 1.000 der Ideen nach den Originalitätsregeln gegen die Klassiker, je Themenfeld getrennt; seit 09.11. sind stark gesuchte Themen mit neuem Winkel offen, die Quote „bis 3 von 10“ ist ersetzt ([[Themenfindung Simulierbar]]) | Entscheidung 07.11. ([[Originalität und Themenfindung]]): Klassiker liefen bisher am besten, sind aber auf Deutsch schon gemacht; der einzige Treffer war ein Klassiker |
 | Stitch „Ich hab's durchgerechnet“ (seit 08.11.) | Simulierbar | 4–6 Stitches gegen normale Videos: Follows je 1.000 Aufrufe | [[Kommentare Antwort-Videos und Stitch]] |
 Aussagen erst ab ca. 5 Videos je Gruppe, vorher nur als Beobachtung (A); Regeländerungen erst aus Blöcken von 10.
+
+## Aussage des Inhabers (10.11.2026)
+Laut TikTok Studio hat sich der Anteil der Zuschauer, die ein Video **bis zum Ende** schauen, mit dem neuen Skriptaufbau etwa **verdreifacht bis vervierfacht**. Die Zahl ist dort nur als Prozentwert sichtbar und wird **nicht laufend erfasst**; es gibt dafür keine neue Kennzahl und keine Abfrage beim Inhaber. Die Lernschleife arbeitet weiter mit Ø-Wiedergabezeit und Follows je Video und behandelt diese Aussage als Beleg dafür, dass der Aufbau trägt ([[Skriptaufbau Simulierbar]]).
 
 ## Regeln
 - Claude schreibt dem Inhaber **keine** täglichen Zahlenberichte, sondern nur Vorschläge mit Begründung.

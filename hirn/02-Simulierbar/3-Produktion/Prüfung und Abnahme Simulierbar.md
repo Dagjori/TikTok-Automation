@@ -79,11 +79,11 @@ Ergänzend beim Eingang des Skripts (nicht erst bei der Abnahme): Geld-Ergebnis,
 
 ## 3. Ablauf bis zum Posten
 1. Prüfung 1 und 2 bestanden, Bericht (welche Punkte, welche Messwerte).
-2. Planen in Buffer: `python3 post_buffer.py --video … --kanal simulierbar --zeit auto:JJJJ-MM-TT:mittag|abend --text "<Caption>"` (vorher `--trocken`), Erwartung Status `scheduled`, sonst Exit 2; kein KI-Label ([[Technik und Szenenbau Simulierbar]]).
+2. Planen in Buffer: `python3 post_buffer.py --video … --kanal simulierbar --zeit auto:JJJJ-MM-TT:mittag|abend --text "<Caption>"` (vorher `--trocken`), Erwartung Status `scheduled`, sonst Exit 2 ([[Technik und Szenenbau Simulierbar]]).
 3. Der Inhaber kann Posts in Buffer bis zum Zeitpunkt löschen.
 
 ## 4. Nach dem Posten
-`python3 post_buffer.py --nachpruefen`: Video öffentlich (`privateItem=false`), Länge stimmt, KI-Label wie gesetzt; **erst danach** wird die Upload-Datei im Zwischenspeicher gelöscht (Buffer holt sie zur Posting-Zeit). Ergebnis in [[Stand und nächste Schritte]] vermerken. Die Zahlen des Videos (Aufrufe, Likes, Kommentare, Shares, Saves, Ø-Wiedergabezeit, Follower) wertet die Lernschleife aus ([[Lernschleife und Insights]]); dafür muss `skript.json → lern_notizen` ausgefüllt sein ([[Technik und Szenenbau Simulierbar]]).
+`python3 post_buffer.py --nachpruefen`: Video öffentlich (`privateItem=false`), Länge stimmt; **erst danach** wird die Upload-Datei im Zwischenspeicher gelöscht (Buffer holt sie zur Posting-Zeit). Ergebnis in [[Stand und nächste Schritte]] vermerken. Die Zahlen des Videos (Aufrufe, Likes, Kommentare, Shares, Saves, Ø-Wiedergabezeit, Follower) wertet die Lernschleife aus ([[Lernschleife und Insights]]); dafür muss `skript.json → lern_notizen` ausgefüllt sein ([[Technik und Szenenbau Simulierbar]]).
 
 ## Siehe auch
 - [[Videoaufbau Simulierbar]] · [[Stile 17 bis 21]] · [[Design und Layout Simulierbar]] · [[Stimme ElevenLabs Simulierbar]] · [[Klangteppich und Ton Simulierbar]]

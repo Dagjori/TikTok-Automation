@@ -273,11 +273,30 @@ const AUTOMATIK_TEXT = [
   ["recherche", "Recherche sofort nach Wahl", "Wählst du eine Idee, startet Recherche und Skript von selbst (beide Slots gewählt: nach 15 s, sonst nach 3 Min.)."],
   ["produktion", "Produktion sofort nach Freigabe", "Sind alle Skripte eines Tages freigegeben, startet die Produktion nach 60 s von selbst."],
   ["ideen", "Ideen jeden Morgen bereit", "Claude erzeugt täglich die Ideen für morgen in beiden Accounts."],
-  ["wiederholen", "Fehler einmal selbst wiederholen", "Bricht Recherche, Nachprüfung oder Produktion ab, versucht das Cockpit es nach 5 Min. noch einmal. Was du selbst stoppst, bleibt gestoppt."],
+  ["wiederholen", "Fehler einmal selbst wiederholen", "Bricht Recherche, Nachprüfung oder Produktion ab, versucht das Cockpit es nach 5 Min. noch einmal (bei einem Nutzungslimit kurz nach dem Reset). Was du selbst stoppst, bleibt gestoppt."],
+];
+// Autopilot (Ausbau 10.11., Standard aus): [Schalter, Feld der Frist, Titel, Text]
+const AUTOPILOT_TEXT = [
+  ["auto_wahl", "auto_wahl_frist_min", "Ideen selbst wählen", "Wählst du nach der Frist nicht, wählt das Cockpit: zuerst Folgeteile eigener Treffer, dann die höchsten Punkte, nie zwei Ideen aus demselben Themenfeld am selben Tag. Du kannst die Wahl ändern, bis die Recherche startet (10 Min.)."],
+  ["auto_freigabe", "auto_freigabe_frist_min", "Geprüfte Skripte selbst freigeben", "Nach der Frist gibt das Cockpit ein Skript nur frei, wenn die Selbstprüfung keinen offenen Punkt hat, die Zahlen Quellen haben, die Originalität geprüft ist und (Simulierbar) der Sprechtext die Text-Vorprüfung besteht. Sonst wartet es auf dich."],
+];
+const MELDEN_TEXT = [
+  ["ideen", "Ideen sind bereit"], ["skript", "Skript wartet auf deine Freigabe"], ["rueckfrage", "Rückfrage"], ["fehler", "Fehler nach dem letzten Versuch"],
+  ["video", "Video geplant bzw. gepostet"], ["treffer", "Treffer"], ["tagesabschluss", "Tagesabschluss (eine Zeile am Abend)"],
 ];
 function automatikZeichnen() {
   const a = automatik();
   htmlSetzen($("automatik-schalter"), AUTOMATIK_TEXT.map(([k, titel, text]) => `<div class="schalter-zeile"><div><b>${titel}</b><small>${text}</small>${k === "ideen" ? `<input type="time" data-uhrzeit value="${esc(a.ideen_uhrzeit)}">` : ""}</div><label class="kipp"><input type="checkbox" data-automatik="${k}" ${a[k] ? "checked" : ""}><span></span></label></div>`).join(""));
+  htmlSetzen($("autopilot-schalter"), AUTOPILOT_TEXT.map(([k, frist, titel, text]) => `<div class="schalter-zeile"><div><b>${titel}</b><small>${text}</small><span class="frist"><input type="number" min="1" max="2880" step="1" data-frist="${frist}" value="${esc(a[frist])}"> Minuten Frist</span></div><label class="kipp"><input type="checkbox" data-automatik="${k}" ${a[k] ? "checked" : ""}><span></span></label></div>`).join(""));
+  const m = meldenEinstellung();
+  $("handy-stand").textContent = S.handy?.eingerichtet ? "Telegram ist eingerichtet" : "Telegram ist noch nicht eingerichtet (siehe cockpit/README.md)";
+  htmlSetzen($("melden-schalter"),
+    `<div class="schalter-zeile"><div><b>Meldungen per Telegram</b><small>Ohne TELEGRAM_BOT_TOKEN und TELEGRAM_CHAT_ID passiert nichts. Die Meldungen im Cockpit bleiben immer.</small>${S.handy?.eingerichtet ? '<button class="knopf klein" data-melden-test style="margin-top:6px">Probe senden</button>' : ""}</div><label class="kipp"><input type="checkbox" data-melden="aktiv" ${m.aktiv ? "checked" : ""}><span></span></label></div>`
+    + MELDEN_TEXT.map(([k, titel]) => `<div class="schalter-zeile kompakt"><div><b>${titel}</b>${k === "tagesabschluss" ? `<input type="time" data-abschluss value="${esc(m.tagesabschluss_uhrzeit)}">` : ""}</div><label class="kipp"><input type="checkbox" data-melden="${k}" ${m[k] ? "checked" : ""}><span></span></label></div>`).join(""));
+}
+async function meldenSpeichern(neu) {
+  const r = await post("/api/einstellungen", { schluessel: "melden", wert: { ...meldenEinstellung(), ...neu } });
+  if (!r.ok) toast("⚠️", "Handy-Meldungen", r.fehler || "Speichern nicht möglich (Cockpit nach dem Update neu starten?)", "problem");
 }
 async function automatikSpeichern(neu) {
   const r = await post("/api/einstellungen", { schluessel: "automatik", wert: { ...automatik(), ...neu } });
@@ -287,6 +306,20 @@ $("k-einstellungen").addEventListener("click", () => { automatikZeichnen(); $("e
 $("automatik-schalter").addEventListener("change", (e) => {
   if (e.target.dataset.automatik) automatikSpeichern({ [e.target.dataset.automatik]: e.target.checked });
   if (e.target.dataset.uhrzeit !== undefined && /^\d\d:\d\d$/.test(e.target.value)) automatikSpeichern({ ideen_uhrzeit: e.target.value });
+});
+$("autopilot-schalter").addEventListener("change", (e) => {
+  if (e.target.dataset.automatik) automatikSpeichern({ [e.target.dataset.automatik]: e.target.checked });
+  const n = Number(e.target.value);
+  if (e.target.dataset.frist) { if (Number.isInteger(n) && n >= 1 && n <= 2880) automatikSpeichern({ [e.target.dataset.frist]: n }); else toast("⚠️", "Frist", "Ganze Minuten von 1 bis 2880", "problem"); }
+});
+$("melden-schalter").addEventListener("change", (e) => {
+  if (e.target.dataset.melden) meldenSpeichern({ [e.target.dataset.melden]: e.target.checked });
+  if (e.target.dataset.abschluss !== undefined && /^\d\d:\d\d$/.test(e.target.value)) meldenSpeichern({ tagesabschluss_uhrzeit: e.target.value });
+});
+$("melden-schalter").addEventListener("click", async (e) => {
+  if (!e.target.closest("[data-melden-test]")) return;
+  const r = await post("/api/melden/test");
+  toast(r.ok ? "📱" : "⚠️", r.ok ? "Probe gesendet" : "Probe nicht gesendet", r.ok ? "Schau auf dein Handy." : r.fehler || "", r.ok ? "erfolg" : "problem");
 });
 
 // ───────── Ereignisse ─────────
