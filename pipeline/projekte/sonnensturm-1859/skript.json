@@ -1,0 +1,334 @@
+{
+ "skript_id": "acc2-2026-11-11-mittag",
+ "skript_quelle": "acc2-2026-11-11-mittag",
+ "titel": "Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft?",
+ "titelfrage": "Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft?",
+ "suchbegriff": "Sonnensturm",
+ "konto": "stelldirvor",
+ "format": "referenz_pov",
+ "skill": "video-produktion",
+ "laenge_s": 80,
+ "teil": 1,
+ "testbloecke": {
+  "folgen_hinweis": "mit",
+  "einstieg_a2": "a"
+ },
+ "folgen_hinweis": "Mehr Polarlicht: Polarnacht Tromsø im Profil",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Welt engine/welt_watt_leuchtturm.js (Neubau Wattenmeer mit Leuchtturm, 10.11.2026)",
+ "thema": "Carrington-Sonnensturm von 1859 heute über der Nordseeküste, Stufe für Stufe bis zur Stärke von 1859",
+ "welt": "Nordseeküste/Wattenmeer: Salzwiesen, Priele, Deich mit Schafen, rot-weißer Leuchtturm (Vorbild Westerheversand), kleines Dorf mit Warften im Hinterland; Wolkenfelder, die im Lauf der Nacht aufreißen",
+ "standpunkt": "Auf der Galerie des Leuchtturms, Geländer im Vordergrund, Blick nach Norden übers Watt; ab Stufe 2 Schwenk zum Zenit, ab Stufe 3 nach Süden; ein harter Schnitt bei HIER auf das Dorf im Süden",
+ "tageszeit_verlauf": "Späte Abenddämmerung 18:35 (0 s) → tiefe Nacht mit Polarlicht (ca. 2,5–62 s) → erstes Morgengrauen 06:15 (70 s)",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 2.5,
+   "faktor": "1 s = 10 Min. (Countdown 0:25 → 0:00)",
+   "anzeige": "ANKUNFT PLASMAWOLKE 0:25 → 0:00"
+  },
+  {
+   "von": 2.5,
+   "bis": 70,
+   "faktor": "1 s = 10 Min. (19:00 → 06:15)",
+   "anzeige": "MAGNETFELD-STÖRUNG 0 → −589 nT, dann 1,4× → 2,2×, HIER"
+  }
+ ],
+ "kamera": "0–7 s langsame Fahrt am Geländer entlang (beginnt vor 2 s), 20–34 s weicher Schwenk von Nord zum Zenit, 40–50 s Schwenk über den Zenit nach Süden, 58 s harter Schnitt auf das Dorf unter rotem Himmel, 62–70 s ruhige Einstellung nach Norden",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 2.5,
+   "etikett": "ANKUNFT PLASMAWOLKE",
+   "start": "0:25",
+   "ende": "0:00",
+   "einheit": "Std:Min",
+   "unter": "17 STUNDEN UNTERWEGS"
+  },
+  {
+   "von_s": 2.5,
+   "bis_s": 34,
+   "etikett": "MAGNETFELD-STÖRUNG",
+   "start": "0",
+   "ende": "−589",
+   "einheit": "nT",
+   "unter": "EINSCHLAG (2,5–8 s) → 1 SEKUNDE = 10 MINUTEN (8–20 s) → WIE MAI 2024 (bei −412, ca. 21 s) → STÄRKER ALS MAI 2024 (26–34 s)"
+  },
+  {
+   "von_s": 34,
+   "bis_s": 58,
+   "etikett": "STÄRKE IM VERGLEICH ZU MAI 2024",
+   "start": "1,4×",
+   "ende": "2,2×",
+   "einheit": "×",
+   "unter": "STÄRKSTER SEIT 1957 (34–44 s) → SÜDHIMMEL ROT (44–52 s) → FAST WIE 1859 (52–58 s)"
+  },
+  {
+   "von_s": 58,
+   "bis_s": 70,
+   "etikett": "HIER",
+   "start": "HIER",
+   "ende": "HIER",
+   "einheit": "",
+   "unter": "STÄRKE WIE 1859 · CA. −900 NT (blendet 69,2–70,1 s aus)"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Du stehst oben auf dem Leuchtturm.",
+   3.4
+  ],
+  [
+   9,
+   "Am Nordhorizont glimmt ein grüner Saum.",
+   3.4
+  ],
+  [
+   13.5,
+   "Das Licht spiegelt sich in den Prielen.",
+   3.4
+  ],
+  [
+   18,
+   "Dann wachsen rote Bögen über das Watt.",
+   3.4
+  ],
+  [
+   22.5,
+   "So stark war es im Mai 2024.",
+   3.4
+  ],
+  [
+   27,
+   "Die Wolken reißen auf, der Himmel pulsiert.",
+   3.4
+  ],
+  [
+   31.5,
+   "Über dir bildet sich eine Krone.",
+   3.4
+  ],
+  [
+   36,
+   "Stärker als jeder Sturm seit 1957.",
+   3.4
+  ],
+  [
+   40.5,
+   "Dann färbt sich auch der Südhimmel rot.",
+   3.4
+  ],
+  [
+   45,
+   "Die Salzwiese leuchtet rot und grün.",
+   3.4
+  ],
+  [
+   49.5,
+   "Das Licht reicht zum Zeitunglesen.",
+   3.4
+  ],
+  [
+   54,
+   "Der Sturm nähert sich der Stärke von 1859.",
+   3.4
+  ],
+  [
+   62.5,
+   "Mai 2024 war nur etwa die Hälfte.",
+   3.4
+  ],
+  [
+   66.5,
+   "Dann wird der Himmel langsam ruhig.",
+   3.4
+  ]
+ ],
+ "satz_dauer": 3.4,
+ "faktenzeile": "1859 · POLARLICHT BIS KUBA UND JAMAIKA · MAI 2024: ETWA HALB SO STARK",
+ "abspann": "Titelfrage und Faktenzeile auf #111111, Folgen-Hinweis (Testblock mit)",
+ "rechenweg": "Dst-Minimum Mai 2024 = −412 nT (Kyoto), März 1989 = −589 nT, Carrington 1859 ≈ −900 nT (Cliver & Dietrich 2013). Vielfaches: 589/412 = 1,43 → „1,4×“; 900/412 = 2,18 → „2,2×“. Anteil Mai 2024 an 1859: 412/900 = 0,46 → „etwa die Hälfte“ (Spanne −750 bis −950 nT: 0,43–0,55). Laufzeit 1859: 150 Mio. km / 17,6 h ≈ 2.370 km/s. Zeitraffer 1 s = 10 min: 2,5 s = 25 min (Countdown 0:25); 0 s = 18:35, 2,5 s = 19:00, 21 s = 22:05 (−412), 34 s = 00:15 (−589), 58 s = 04:15 (HIER), 70 s = 06:15. Nachgerechnet mit py -3 (cockpit/daten/tmp/rechnung-acc2-mittag.py).",
+ "zahlen": {
+  "dst_mai_2024_nT": -412,
+  "dst_maerz_1989_nT": -589,
+  "dst_carrington_1859_nT": -900,
+  "faktor_1989_zu_2024": 1.43,
+  "faktor_1859_zu_2024": 2.18,
+  "anteil_2024_an_1859": 0.46,
+  "laufzeit_1859_h": 17.6,
+  "tempo_km_s": 2367,
+  "zeitraffer_min_je_s": 10
+ },
+ "annahmen": [
+  "(A) Modellnacht: dieselbe Stärke wie 1859 (ca. −900 nT), Ankunft 19:00, Minimum gegen 04:15; der Verlauf ist vereinfacht (stetiger Anstieg), echte Stürme schwanken.",
+  "(A) Klarer Himmel nach aufreißender Bewölkung; ohne Wolkenlücken sähe man nichts.",
+  "(S) Polarlicht in dieser Stärke steht über Norddeutschland im Zenit und färbt den Südhimmel rot; abgeleitet aus 1859 (Polarlicht bis in die Tropen) und Mai 2024 (sichtbar bis zu den Alpen).",
+  "(S) „Licht reicht zum Zeitunglesen“ ist 1859 aus Boston überliefert; auf die Nordsee übertragen.",
+  "(A) Kein Stromausfall gezeigt: für Deutschland gibt es keine belegte Schätzung (Bundestag Drs. 19/493); „Leuchtfeuer flackert, Lichter im Dorf erlöschen“ aus der Idee gestrichen.",
+  "(A) Die Schätzung für 1859 ist unsicher (ca. −750 bis −1.760 nT); verwendet wird der meistzitierte Wert ca. −900 nT."
+ ],
+ "quellen": [
+  "(F) Dst-Minimum 10.–11.05.2024: −412 nT (stündlicher Dst, WDC for Geomagnetism Kyoto), zitiert u. a. in „First observations of a geomagnetic superstorm with a sub-L1 monitor“, arXiv 2411.12490, 2024 – https://arxiv.org/html/2411.12490v2 ; Rangliste nach WDC Kyoto, SpaceWeatherLive 2024 – https://spaceweather.live/en/auroral-activity/top-50-geomagnetic-storms/year/2024.html",
+  "(F) Carrington-Sturm 1859: Dst ca. −900 nT (Cliver & Dietrich, The 1859 space weather event revisited: limits of extreme activity, J. Space Weather Space Clim. 3, A31, 2013) – https://doaj.org/article/55f1c09f573d453f8ed33b3f79f56dfb ; Zusammenfassung NASA HelioWiki – https://heliowiki.smce.nasa.gov/wiki/index.php/The_1859_Space_Weather_Event_Revisited",
+  "(F) Ältere Schätzung −1.760 nT (Tsurutani et al. 2003, Colaba/Bombay); „≈ −900 (+50/−150) nT“ nach Siscoe et al. 2006 und Cliver & Dietrich 2013, zitiert in arXiv 1708.01790, 2017 – https://arxiv.org/pdf/1708.01790",
+  "(F) März 1989: Dst-Minimum −589 nT, größter aufgezeichneter Dst-Wert, Hydro-Québec ca. 9 Std. ohne Strom (Boteler, A 21st century view of the March 1989 magnetic storm, Space Weather, 2019, doi 10.1029/2019SW002278) – https://en.wikipedia.org/wiki/March_1989_geomagnetic_storm",
+  "(F) Dst-Index wird seit 1957 berechnet (WDC for Geomagnetism Kyoto, Dst index service) – https://wdc.kugi.kyoto-u.ac.jp/dstdir/",
+  "(F) Laufzeit der Plasmawolke 1859 ca. 17,6 Std. für 150 Mio. km (Cliver & Svalgaard, Solar Physics 224, 407, 2004) – https://en.wikipedia.org/wiki/Carrington_Event",
+  "(F) Polarlichter 1859 bis Kuba und Jamaika, in Boston Zeitunglesen im Licht des Polarlichts, Goldgräber in den Rocky Mountains machten Frühstück (History.com, A Perfect Solar Superstorm: The 1859 Carrington Event) – https://www.history.com/articles/a-perfect-solar-superstorm-the-1859-carrington-event",
+  "(F) Mai 2024: G5-Sturm, Polarlichter über ganz Deutschland bis zu den Alpen (daswetter.com, „Stärkster Sonnensturm seit über 20 Jahren“, 05/2024) – https://www.daswetter.com/nachrichten/aktuelles/polarlicht-spektakel-deutschland-alpen-sonnensturm.html",
+  "(F) DLR: Polarlichter in Deutschland bei starken Stürmen, Gefährdung von Satelliten, GPS, Stromnetzen (DLR, 04.12.2025) – https://www.dlr.de/de/aktuelles/nachrichten/2025/erhoehtes-sonnensturm-risiko-dlr-beobachtet-weltraumwetter-in-echtzeit",
+  "(F) Bundesregierung: keine eigene Analyse zu Folgen für Stromnetze in Deutschland (Deutscher Bundestag, Drs. 19/493, 2018) – https://dserver.bundestag.de/btd/19/004/1900493.pdf"
+ ],
+ "caption": "Sonnensturm wie 1859 heute Nacht über Deutschland? 🌌 Ich hab’s durchgespielt. Hast du im Mai 2024 Polarlichter gesehen? 👇 #sonnensturm #polarlichter #nordsee #wissen #waswaerewenn",
+ "dramaturgie": [
+  "0–2,5 s: späte Dämmerung, Leuchtfeuer dreht, Schafe auf dem Deich, Möwen ziehen (erster Welteffekt vor 2 s), Kamera fährt langsam am Geländer; Countdown 0:25 → 0:00, nichts verrät das Ereignis (Testblock a).",
+  "2,5 s EREIGNIS: Tonkante (tiefer Puls), Anzeige wechselt auf MAGNETFELD-STÖRUNG, am Nordhorizont glimmt ein grüner Saum auf; die Titelfrage steht noch bis 4,4 s.",
+  "8–20 s Stufe 1: grüner Bogen wächst, Spiegelung in den Prielen, Wolken ziehen im Zeitraffer, Statuszeile zeigt den Faktor.",
+  "ca. 21 s Stufe 2 (−412, WIE MAI 2024): rote und violette Bögen steigen, Licht wird kräftiger (Aufleuchten).",
+  "26–34 s: Wolken reißen auf, Licht pulsiert, Schwenk zum Zenit, Korona bildet sich; bei −589 Etikettwechsel (Spannung steigt).",
+  "34–50 s Stufe 3: STÄRKSTER SEIT 1957, Schwenk nach Süden, Südhimmel rot, Salzwiese und Deich farbig beleuchtet, Dorf in rotem Licht.",
+  "50–58 s Annäherung: Licht so hell, dass Geländer und Schafe Konturen zeigen, Anzeige läuft auf 2,2×, Ton schwillt an.",
+  "58–62 s HÖHEPUNKT: harter Schnitt auf das Dorf unter rotem und grünem Himmel, Korona über dem Leuchtturm, Anzeige HIER, kein Satz, lautester Punkt.",
+  "62–70 s Nachspiel: zurück auf die Galerie, Farben verblassen, erstes Morgengrauen im Osten, Leuchtfeuer dreht weiter.",
+  "70–72 s Abblende auf #111111; 72–80 s Abspann mit Titelfrage, Faktenzeile und Folgen-Hinweis (Testblock mit)."
+ ],
+ "hoehepunkt": "58–62 s: harter Schnitt auf das Dorf unter rotem und grünem Himmel, Anzeige HIER (Rechnung: sim/sonnensturm_1859.mjs)",
+ "bewegungsplan": [
+  [
+   0,
+   "Leuchtfeuer dreht, Schafe weiden, Möwen, Wolken ziehen; Kamera fährt am Geländer",
+   1
+  ],
+  [
+   2.5,
+   "Einschlag: grüner Saum am Nordhorizont, Zeitraffer startet",
+   1
+  ],
+  [
+   10,
+   "grüner Bogen, Priele spiegeln, Wasser steigt",
+   1
+  ],
+  [
+   16,
+   "rote Bögen wachsen",
+   1
+  ],
+  [
+   21,
+   "Stufe 2: wie Mai 2024",
+   1
+  ],
+  [
+   26,
+   "Wolken reißen auf, Schwenk zum Zenit",
+   1
+  ],
+  [
+   31,
+   "Korona im Zenit",
+   1
+  ],
+  [
+   40,
+   "Südhimmel rot, Schwenk nach Süden",
+   1
+  ],
+  [
+   48,
+   "Dorf und Deich im roten Licht",
+   1
+  ],
+  [
+   51,
+   "Annäherung, Riser",
+   1
+  ],
+  [
+   58,
+   "harter Schnitt auf das Dorf, HIER",
+   1
+  ],
+  [
+   62,
+   "zurück, Licht verebbt, Morgengrauen",
+   1
+  ]
+ ],
+ "bild_text_abgleich": [
+  {
+   "t": 4.8,
+   "satz": "Du stehst oben auf dem Leuchtturm.",
+   "bild": "Leuchtturm-Galerie, Geländer im Vordergrund, Watt und Priele unter Wolken, Anzeige Magnetfeld-Störung läuft"
+  },
+  {
+   "t": 9,
+   "satz": "Am Nordhorizont glimmt ein grüner Saum.",
+   "bild": "grüner Saum am Nordhorizont, Anzeige −2xx nT"
+  },
+  {
+   "t": 13.5,
+   "satz": "Das Licht spiegelt sich in den Prielen.",
+   "bild": "Priele spiegeln das grüne Licht"
+  },
+  {
+   "t": 18,
+   "satz": "Dann wachsen rote Bögen über das Watt.",
+   "bild": "rote Bögen über dem Watt"
+  },
+  {
+   "t": 22.5,
+   "satz": "So stark war es im Mai 2024.",
+   "bild": "Anzeige −412 nT, WIE MAI 2024, Bögen kräftiger"
+  },
+  {
+   "t": 27,
+   "satz": "Die Wolken reißen auf, der Himmel pulsiert.",
+   "bild": "Wolken reißen auf, Licht pulsiert"
+  },
+  {
+   "t": 31.5,
+   "satz": "Über dir bildet sich eine Krone.",
+   "bild": "Korona im Zenit, Kamera schwenkt nach oben"
+  },
+  {
+   "t": 36,
+   "satz": "Stärker als jeder Sturm seit 1957.",
+   "bild": "Anzeige 1,4×, STÄRKSTER SEIT 1957"
+  },
+  {
+   "t": 40.5,
+   "satz": "Dann färbt sich auch der Südhimmel rot.",
+   "bild": "Südhimmel färbt sich rot"
+  },
+  {
+   "t": 45,
+   "satz": "Die Salzwiese leuchtet rot und grün.",
+   "bild": "Salzwiese und Deich leuchten rot und grün"
+  },
+  {
+   "t": 49.5,
+   "satz": "Das Licht reicht zum Zeitunglesen.",
+   "bild": "Geländer und Schafe mit Konturen im Licht"
+  },
+  {
+   "t": 54,
+   "satz": "Der Sturm nähert sich der Stärke von 1859.",
+   "bild": "Anzeige 2,2×, FAST WIE 1859, langsamer Zoom nach Süden"
+  },
+  {
+   "t": 62.5,
+   "satz": "Mai 2024 war nur etwa die Hälfte.",
+   "bild": "zurück auf der Galerie, Licht verebbt, Anzeige HIER"
+  },
+  {
+   "t": 66.5,
+   "satz": "Dann wird der Himmel langsam ruhig.",
+   "bild": "Himmel ruhig, Morgengrauen im Osten"
+  }
+ ],
+ "korrekturen": [
+  "Idee: „Leuchtfeuer flackert, Lichter im Dorf erlöschen“ gestrichen, weil für Deutschland nicht belegt.",
+  "Idee: Carrington-Wert „−850 (Siscoe 2006) bis −1.760“ → Anzeige ca. −900 nT (Cliver & Dietrich 2013, meistzitiert); Pointe „etwa die Hälfte“ bleibt (412/900 = 0,46)."
+ ]
+}

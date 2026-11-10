@@ -16,7 +16,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 - **Videos im Register:** 42 (Simulierbar 23, davon 19 gepostet · Stell dir vor 19, davon 16 gepostet)
 - **Nach Status:** Idee 0 · Skript 0 · in Produktion 2 · geplant 2 · gepostet 35 · Fehler 3
-- **Nach Format:** ohne Angabe 25 · referenz_pov 16 · Duell 1
+- **Nach Format:** ohne Angabe 24 · referenz_pov 17 · Duell 1
 - **Lesart:** „gepostet“ heißt, Buffer hat das Video gesendet (oder die Nachprüfung hat es bestätigt). Follows = Follower-Zuwachs in den 24 Stunden nach dem Post (netto, zwei Videos am Tag überlappen). Ø-Wiedergabe = durchschnittliche Wiedergabezeit, in Klammern der Anteil an der Länge.
 
 ## Simulierbar
@@ -51,7 +51,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 | Datum | Slot | Titel | Feld · Format | Status | Länge | Aufrufe | Ø-Wiedergabe | Follows | Treffer · Teil |
 |---|---|---|---|---|---|---|---|---|---|
-| 11.11. | Mittag | Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft? | Naturphänomene | in Produktion | – | – | – | – | – |
+| 11.11. | Mittag | Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft? | Naturphänomene · referenz_pov | in Produktion | – | – | – | – | – |
 | 10.11. | Abend | Was wäre, wenn du die Polarnacht in Tromsø erlebst? | Physik, Wetter, Geografie, Weltraum · referenz_pov | geplant | 80 s | – | – | – | – |
 | 10.11. | Mittag | [Was wäre, wenn du 28 Jahre lang Ameisen zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706503882209381664) | Natur und Tiere · referenz_pov | gepostet | 80 s | 77 | – | – | – |
 | 09.11. | Abend | [Was wäre, wenn du 2.400 Jahre einem Pilzgeflecht zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706241106614193440) | Natur und Tiere · referenz_pov | gepostet | 80 s | 260 | 11,1 s (14 %) | – | – |
