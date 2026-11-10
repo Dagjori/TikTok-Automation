@@ -1,0 +1,451 @@
+{
+ "skript_id": "acc2-2026-11-11-abend",
+ "skript_quelle": "acc2-2026-11-11-abend",
+ "titel": "Was wäre, wenn der Erdkern abkühlt?",
+ "titelfrage": "Was wäre, wenn der Erdkern abkühlt?",
+ "suchbegriff": "Erdkern",
+ "konto": "stelldirvor",
+ "format": "referenz_pov",
+ "skill": "video-produktion",
+ "laenge_s": 80,
+ "teil": 1,
+ "testbloecke": {
+  "folgen_hinweis": "mit",
+  "einstieg_a2": "a"
+ },
+ "folgen_hinweis": "Morgen: die nächste Welt im Zeitraffer",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Welt engine/welt_bergsee.js (Neubau Bergsee im Herbstwald, 10.11.2026)",
+ "thema": "Der flüssige äußere Kern kühlt im Zeitraffer-Modell ab, der Geodynamo erlahmt, und über einem Bergsee sinkt das Magnetfeld von 49 auf 0 Mikrotesla.",
+ "feld": "1 Naturphänomene",
+ "nachfrage": "„was wäre wenn der erdkern abkühlt“ · Google Autocomplete DE · 10.11.2026",
+ "welt": "Bergsee im Herbstwald: dunkler Nadel- und gelber Laubwald am Ufer, Felsgipfel dahinter, Schilf, Holzsteg, Enten auf dem Wasser; ein flacher Stein im Vordergrund mit einem aufgeklappten Wanderkompass",
+ "standpunkt": "bodennah am Seeufer, sitzend neben dem Kompass-Stein, Blick nach Norden über den See; Kompass unten im Bild",
+ "tageszeit_verlauf": "heller Herbstnachmittag (0–18 s) → Sonnenuntergang (18–22 s) → klare Nacht mit Polarlicht (22–58 s) → Polarlicht erlischt (58–62 s) → fahle Morgendämmerung (62–70 s)",
+ "zeitraffer": [
+  {
+   "von": 2.5,
+   "bis": 58,
+   "faktor": "Modell: Kernabkühlung (real mehrere Milliarden Jahre) auf ca. 55 s gestaucht; Anzeige zeigt Feldgrößen statt Jahre",
+   "anzeige": "MAGNETFELD 49 → 22 µT, BERYLLIUM-10 ×1,0 → ×2,0, SCHUTZSCHILD 4,6 → 1,5 Erdradien, MAGNETFELD 0,17 → 0 µT"
+  },
+  {
+   "von": 58,
+   "bis": 70,
+   "faktor": "Nachspiel: Welt durchläuft nur eine Nacht (Dämmerung)",
+   "anzeige": "MAGNETFELD 0 µT"
+  }
+ ],
+ "zeitraffer_text": "Modell: die Abkühlung des Kerns, real mehrere Milliarden Jahre (Zeitpunkt unbekannt), ist auf ca. 55 s gestaucht; die Welt durchläuft dabei nur einen Tag. Die Anzeige zeigt deshalb Feldgrößen statt Jahre.",
+ "kamera": "0–18 s fest auf See und Kompass, ab 3 s langsamer Zoom auf die zitternde Nadel; 20–26 s langsamer Schwenk vom Kompass in den Nordhimmel; 36–48 s weiter bis in den Zenit (Polarlicht über dir); 51 s zurück auf die ruhende Nadel; ein harter Schnitt bei 58 s (HIER) auf die Totale des Sees",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 2.5,
+   "etikett": "MODELLSTART IN",
+   "start": "2,5",
+   "ende": "0",
+   "einheit": "s",
+   "unter": "KERN FLÜSSIG"
+  },
+  {
+   "von_s": 2.5,
+   "bis_s": 20,
+   "etikett": "MAGNETFELD",
+   "start": "49",
+   "ende": "22",
+   "einheit": "µT",
+   "unter": "KERN KÜHLT AB → WIE SÜDATLANTIK"
+  },
+  {
+   "von_s": 20,
+   "bis_s": 34,
+   "etikett": "BERYLLIUM-10-BILDUNG",
+   "start": "×1,0",
+   "ende": "×2,0",
+   "einheit": "",
+   "unter": "FELD BEI 10 % → WIE LASCHAMP"
+  },
+  {
+   "von_s": 34,
+   "bis_s": 48,
+   "etikett": "SCHUTZSCHILD",
+   "start": "4,6",
+   "ende": "1,5",
+   "einheit": "Erdradien",
+   "unter": "SCHILD SCHRUMPFT → ZUGVÖGEL IRREN"
+  },
+  {
+   "von_s": 48,
+   "bis_s": 58,
+   "etikett": "MAGNETFELD",
+   "start": "0,17",
+   "ende": "0",
+   "einheit": "µT",
+   "unter": "DYNAMO STOCKT"
+  },
+  {
+   "von_s": 58,
+   "bis_s": 62,
+   "etikett": "MAGNETFELD",
+   "start": "0",
+   "ende": "0",
+   "einheit": "µT · HIER",
+   "unter": "SCHILD WEG"
+  },
+  {
+   "von_s": 62,
+   "bis_s": 70,
+   "etikett": "MAGNETFELD",
+   "start": "0",
+   "ende": "0",
+   "einheit": "µT",
+   "unter": "SONNENWIND DIREKT"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Ein heller Herbsttag am Bergsee.",
+   3.2
+  ],
+  [
+   8.3,
+   "Im Modell kühlt nur der Kern ab.",
+   3.2
+  ],
+  [
+   11.8,
+   "Die Kompassnadel zittert auf dem Stein.",
+   3.2
+  ],
+  [
+   15,
+   "Das Feld fällt auf 22 Mikrotesla.",
+   3.2
+  ],
+  [
+   18.3,
+   "So schwach ist es heute nur überm Südatlantik.",
+   3.2
+  ],
+  [
+   22,
+   "Dann wird es Nacht über dem See.",
+   3.2
+  ],
+  [
+   25.5,
+   "Grünes Polarlicht steht über dem Wasser.",
+   3.2
+  ],
+  [
+   29,
+   "Kosmische Strahlung bildet doppelt so viel Beryllium.",
+   3.2
+  ],
+  [
+   32.3,
+   "So war es vor 41.000 Jahren.",
+   3.2
+  ],
+  [
+   36,
+   "Der Schutzschild rückt immer näher heran.",
+   3.2
+  ],
+  [
+   39.5,
+   "Das Polarlicht wandert bis über dich.",
+   3.2
+  ],
+  [
+   43,
+   "Zugvögel verlieren einen ihrer Kompasse.",
+   3.2
+  ],
+  [
+   47,
+   "Dann stockt der Dynamo im Kern.",
+   3.2
+  ],
+  [
+   51,
+   "Die Kompassnadel kommt zur Ruhe.",
+   3.2
+  ],
+  [
+   63,
+   "Das Polarlicht erlischt über dem See.",
+   3.2
+  ],
+  [
+   66.5,
+   "Der Sonnenwind trifft jetzt direkt die Luft.",
+   3.2
+  ]
+ ],
+ "satz_dauer": 3.2,
+ "faktenzeile": "MODELL, REAL MILLIARDEN JAHRE · MARS VERLOR SEIN MAGNETFELD VOR CA. 4 MRD. JAHREN",
+ "abspann": "Titelfrage, Faktenzeile und Folgen-Hinweis „Morgen: die nächste Welt im Zeitraffer“ auf #111111 (Testblock mit)",
+ "rechenweg": "Startwert 49 µT (PTB-Messung 2024: 49,68 µT, gerundet). Stufe 1: 49 → 22 µT = Minimum der Südatlantik-Anomalie heute (ESA 2020), Anteil 22/49 = 44,9 %. Stufe 2: 22 → 4,9 µT = 10 % von heute (Laschamp-Exkursion 4–10 %, Ediacarium < 10 %); Anzeige Beryllium-10-Bildung ×1,0 → ×2,0 (Laschamp-Mittel ×2). Stufe 3: Abstand des Schutzschilds (Magnetopause, tagseitig) r = 10 RE · (B/B0)^(1/3): bei 10 % → 10 · 0,1^(1/3) = 4,64 ≈ 4,6 RE; bei 0,34 % → 10 · 0,0034^(1/3) = 1,50 RE, entspricht 49 · 0,0034 = 0,17 µT. Annäherung 0,17 → 0 µT, HIER 0 µT. Nachgerechnet mit py -3 (cockpit/daten/tmp/rechnung-acc2-abend.py). Die Anzeige zeigt nur Feldgrößen, keine Jahreszahl, weil der reale Zeitpunkt unbekannt ist (mehrere Milliarden Jahre).",
+ "zahlen": {
+  "feld_start_uT": "49 (PTB 04/2024: 49,68 µT; Mitteleuropa ca. 48–50)",
+  "feld_suedatlantik_uT": "22 (ESA 2020, Minimum der Anomalie)",
+  "anteil_suedatlantik": "44,9 % von 49 µT",
+  "feld_laschamp_anteil": "ca. 4–10 % von heute → im Modell 10 % = 4,9 µT",
+  "beryllium10_faktor": "×2 (Laschamp, Panovska 2024)",
+  "laschamp_vor_jahren": "ca. 41.000",
+  "magnetopause_heute_RE": "10 (S)",
+  "magnetopause_bei_10_prozent_RE": "4,6 (10 · 0,1^(1/3) = 4,64)",
+  "magnetopause_bei_0_34_prozent_RE": "1,5 (Feldanteil (1,5/10)^3 = 0,34 % ≈ 0,17 µT)",
+  "feld_rueckgang_200_jahre": "ca. 9 % (ESA 2020)",
+  "mars_dynamo_ende": "vor ca. 4 Mrd. Jahren (Spanne 4,0–3,6)",
+  "zeitraffer": "Modell, real mehrere Milliarden Jahre, Zeitpunkt unbekannt"
+ },
+ "annahmen": [
+  "(A) Modell: nur der Kern kühlt ab, Klima, Sonne und Landschaft bleiben wie heute; die Abkühlung, die real mehrere Milliarden Jahre dauert, ist auf ca. 55 s gestaucht.",
+  "(A) Das Feld fällt im Modell gleichmäßig, ohne Polumkehr (Polumkehr ist ein gesperrter Klassiker und nicht Teil dieser Prämisse).",
+  "(A) Beryllium-10-Faktor ×2 gilt für ein Feld von ca. 5–10 % (Laschamp-Wert), darunter wird er nicht weiter beziffert.",
+  "(S) Schutzschild-Abstand nach einfachem Druckgleichgewicht (Kubikwurzel); echte Werte schwanken mit dem Sonnenwind.",
+  "(S) Ohne globales Feld gibt es kein geordnetes Polarlicht-Oval mehr; der Mars zeigt dann nur diffuse, meist ultraviolette Aurora."
+ ],
+ "quellen": [
+  "(F) Swarm probes weakening of Earth's magnetic field, ESA, 20.05.2020 – https://www.esa.int/Applications/Observing_the_Earth/FutureEO/Swarm/Swarm_probes_weakening_of_Earth_s_magnetic_field (9 % schwächer in 200 Jahren; Südatlantik-Anomalie Minimum 24.000 → 22.000 nT 1970–2020; Feld entsteht im flüssigen äußeren Kern)",
+  "(F) Live-Daten Erdmagnetfeldmessung, PTB Braunschweig, Stand 04/2024 – https://www.ptb.de/cms/nc/ptb/fachabteilungen/abt2/fb-25/ag-251/live-daten-erdmagnetfeldmessung/ (Totalintensität 49.680 nT)",
+  "(F) Erdmagnetfeld, chemie.de-Lexikon – https://www.chemie.de/lexikon/Erdmagnetfeld (Mitteleuropa ca. 48 µT)",
+  "(F) Cosmic rays streamed through Earth's atmosphere 41,000 years ago (Panovska, GFZ, EGU 2024), phys.org, 04/2024 – https://phys.org/news/2024-04-cosmic-rays-streamed-earth-atmosphere.html (Beryllium-10-Produktion während Laschamp im Mittel doppelt so hoch wie heute; Magnetosphäre schrumpfte)",
+  "(F) Geomagnetic excursion (Laschamp, Übersicht) – https://www.wikipedia.org/wiki/Geomagnetic_excursion und Science Advances 2025 (White Rose eprint 225953) – https://eprints.whiterose.ac.uk/id/eprint/225953 (Feld ca. 4–10 % von heute; Polarlicht-Oval wandert Richtung Äquator, Modellergebnis)",
+  "(F) Bono et al., Young inner core inferred from Ediacaran ultra-low geomagnetic field intensity, Nature Geoscience 12, 2019 – Bericht phys.org https://phys.org/news/2019-01-ancient-crystals-evidence-earth-core.html (vor ca. 565 Mio. Jahren Feld unter 10 % von heute)",
+  "(F) Alter des inneren Erdkerns näher bestimmt, Spektrum der Wissenschaft – https://www.spektrum.de/news/alter-des-inneren-erdkerns-naeher-bestimmt/1370179 und Spektrum-Lexikon Erdkern – https://www.spektrum.de/lexikon/physik/erdkern/4459 (innerer Kern 0,5–2 Mrd. Jahre alt, wächst um Millimeter pro Jahr)",
+  "(F) Erdkern kühlt schneller ab als erwartet (ETH Zürich), wetter.de – https://www.wetter.de/cms/erdkern-kuehlt-schneller-ab-als-erwartet-wie-dramatisch-sind-die-folgen-4902181.html (vollständige Abkühlung erst in mehreren Milliarden Jahren, Tempo offen)",
+  "(F) Mars losing gas to solar wind (MAVEN; globales Feld vor über 4 Mrd. Jahren verloren), Sky & Telescope, 2015 – https://skyandtelescope.org/astronomy-news/mars-losing-gas-to-solar-wind-0911201523/ ; Dynamo-Ende ca. 4,0–3,6 Mrd. Jahre (Studien bis 2024), Universe Today – https://www.universetoday.com/articles/when-did-mars-lose-its-global-magnetic-field",
+  "(F) Stripping the Martian Atmosphere, NASA Scientific Visualization Studio, 2015 – https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=12046 (ohne globales Feld trifft der Sonnenwind direkt die obere Atmosphäre)",
+  "(F) Discovery of diffuse aurora on Mars, Schneider et al., Science 2015 – https://hal.archives-ouvertes.fr/insu-01227468 (ohne globales Feld diffuse, ultraviolette Aurora über fast die ganze Nachtseite)",
+  "(F) Die Chemie weist den Weg (Magnetkompass des Rotkehlchens, Wiltschko, Uni Frankfurt), Spektrum – https://spektrum.de/news/die-chemie-weist-den-weg/720134 (Zugvögel nutzen einen Magnetkompass, daneben Sonnen- und Sternkompass)",
+  "(S) Magnetopause tagseitig ca. 10 Erdradien; nach Druckgleichgewicht Abstand ∝ Dipolmoment^(1/3) (Chapman-Ferraro; Tabelle https://agentcalc-cloudflare-public.pages.dev/planetary-magnetopause-standoff-distance-calculator); Simulationen zeigen teils abweichende Exponenten",
+  "(F) Frag den Lesch: Wird die Erde kalt?, ZDF – https://www.zdf.de/video/explainer/frag-den-lesch-104/wird-die-erde-kalt-100 (nur Originalitätsprüfung: anderes Thema, radioaktive Wärme)"
+ ],
+ "caption": "Was wäre, wenn der Erdkern abkühlt? 🧭 Ich hab’s durchgespielt. Wer merkt es zuerst: Kompass, Zugvögel oder der Himmel? 👇 #erdkern #magnetfeld #polarlicht #wissen #waswaerewenn",
+ "originalitaet": "Suchen: „Erdkern abkühlt was passiert Video TikTok YouTube“, „Erdkern abkühlen was wäre wenn tiktok/youtube/instagram“ (10.11.2026) · Ergebnis: kein deutsches Video mit dieser Frage gefunden; nur Artikel (wetter.de, Spektrum, news.de) und FAQ-Seiten. Ähnlich: ZDF „Frag den Lesch: Wird die Erde kalt?“ (Erklärvideo zur radioaktiven Wärme, andere Frage, kein Zeitraffer an einem Ort). Abgrenzung zum gesperrten Klassiker „Magnetfeld kippt“: keine Polumkehr, sondern das Erlöschen des Felds Stufe für Stufe an einem Seeufer.",
+ "offene_frage": "Was merkt man am Seeufer, wenn der Kern abkühlt: nichts, Kälte oder etwas am Himmel?",
+ "aufloesung": "Nicht Kälte, sondern das Magnetfeld verschwindet: die Kompassnadel ruht, Zugvögel verlieren einen Kompass, das Polarlicht wandert über dich und erlischt; der Sonnenwind trifft die Luft direkt wie beim Mars.",
+ "zweite_frage": "Warum wird das Polarlicht erst stärker und ist am Ende weg? (gesetzt 25–40 s, aufgelöst 58–63 s: ohne Feld kein geordnetes Polarlicht-Oval)",
+ "dramaturgie": [
+  "0–2,5 s: Herbstnachmittag, Enten ziehen Bahnen, Blätter fallen, Wind im Schilf (Welteffekt ab Bild 1); Countdown MODELLSTART 2,5 → 0. Bei 2,5 s (Testblock a) kippen Bild und Ton: tiefes Grollen aus dem Boden, Licht flackert kurz, die Kompassnadel zuckt.",
+  "3–18 s: langsamer Zoom auf den Kompass, die Nadel zittert immer stärker, Anzeige fällt 49 → 22 µT; Wolkenschatten jagen über den See (Zeitraffer sichtbar). Statuszeile KERN KÜHLT AB → WIE SÜDATLANTIK.",
+  "18–22 s: Sonne sinkt hinter den Gipfel, Himmel glüht orange, dann tiefblau; Spannung steigt.",
+  "20–34 s: Schwenk in den Nordhimmel, erstes grünes Polarlicht spiegelt sich im See und wird heller; Anzeige springt auf BERYLLIUM-10 ×1,0 → ×2,0, Statuszeile WIE LASCHAMP. Aufleuchten bei 25 s.",
+  "34–48 s: Polarlicht wandert vom Nordhorizont bis in den Zenit, die Ränder werden rot (Lichtwechsel grün → rot); ein Kranich-Zug kreuzt den Himmel und dreht unschlüssig ab; Anzeige SCHUTZSCHILD 4,6 → 1,5 Erdradien.",
+  "48–58 s: Annäherung: Grollen wird leiser, Kamera zurück auf den Kompass, die Nadel pendelt aus und bleibt stehen; Anzeige 0,17 → 0 µT (zweiter Countdown erlaubt).",
+  "58–62 s: HIER: harter Schnitt auf die Totale, das Polarlicht zerfällt schlagartig, der Himmel wird stumpf; Stille, kein Satz.",
+  "62–70 s: fahle, bleiche Morgendämmerung, kaltes Licht ohne Polarlicht, See glatt; Abblende 70–72 s; Abspann 72–80 s mit Titelfrage, Faktenzeile und Folgen-Hinweis (Testblock).",
+  "Weltvielfalt: Das Mittagsvideo (Sonnensturm) zeigt Watt, Leuchtturm-Galerie und eine Polarlicht-Nacht; hier Bergsee, bodennaher Standpunkt und Start am hellen Tag; das Polarlicht nur 22–58 s und mit gegenläufiger Pointe (es verschwindet)."
+ ],
+ "hoehepunkt": "58–62 s: harter Schnitt auf die Totale des Sees, das Polarlicht zerfällt schlagartig, Anzeige HIER, kein Satz (Rechnung: sim/erdkern_kuehlt.mjs)",
+ "bewegungsplan": [
+  [
+   0,
+   "Enten ziehen Bahnen, Blätter fallen, Wind im Schilf; Kamera fest auf See und Kompass",
+   1
+  ],
+  [
+   2.5,
+   "Modellstart: Grollen aus dem Boden, Lichtflackern, Nadel zuckt",
+   1
+  ],
+  [
+   3,
+   "langsamer Zoom auf die Nadel",
+   1
+  ],
+  [
+   8,
+   "Wolkenschatten jagen über den See, Nadel zittert stärker",
+   1
+  ],
+  [
+   14,
+   "Licht wird golden, Sonne sinkt",
+   1
+  ],
+  [
+   18,
+   "Sonnenuntergang, Himmelsglut",
+   1
+  ],
+  [
+   20,
+   "Schwenk Kompass → Nordhimmel, Stufe Beryllium",
+   1
+  ],
+  [
+   25,
+   "erstes Polarlicht, Aufleuchten",
+   1
+  ],
+  [
+   30,
+   "Polarlicht heller, Spiegelung im See",
+   1
+  ],
+  [
+   34,
+   "Stufe Schutzschild, Polarlicht wandert Richtung Zenit",
+   1
+  ],
+  [
+   39,
+   "Polarlicht über der Kamera, Ränder rot",
+   1
+  ],
+  [
+   43,
+   "Zugvogel-Schwarm kreuzt und dreht ab",
+   1
+  ],
+  [
+   48,
+   "Stufe Dynamo stockt, Polarlicht flackert",
+   1
+  ],
+  [
+   51,
+   "Kamera zurück auf die Nadel, sie kommt zur Ruhe",
+   1
+  ],
+  [
+   55,
+   "Riser, Polarlicht flackert unruhig",
+   1
+  ],
+  [
+   58,
+   "harter Schnitt auf die Totale, Polarlicht erlischt, HIER",
+   1
+  ],
+  [
+   62,
+   "fahle Dämmerung, See glatt, Abblende 70–72 s",
+   1
+  ]
+ ],
+ "bild_text_abgleich": [
+  {
+   "t": 4.8,
+   "satz": "Ein heller Herbsttag am Bergsee.",
+   "bild": "heller Herbstnachmittag am Bergsee: Herbstwald, Felsgipfel, Enten und Wind im Schilf; Kompass auf dem Stein unten im Bild; Anzeige MAGNETFELD 49 µT läuft"
+  },
+  {
+   "t": 8.3,
+   "satz": "Im Modell kühlt nur der Kern ab.",
+   "bild": "Zoom auf den Kompass läuft; Anzeige MAGNETFELD, Statuszeile KERN KÜHLT AB; Kern-Grollen und Lichtflackern lagen bei 2,5 s"
+  },
+  {
+   "t": 11.8,
+   "satz": "Die Kompassnadel zittert auf dem Stein.",
+   "bild": "Nahe Kompass, Nadel zittert sichtbar auf dem Stein"
+  },
+  {
+   "t": 15,
+   "satz": "Das Feld fällt auf 22 Mikrotesla.",
+   "bild": "Anzeige MAGNETFELD ca. 22–23 µT (22 ab 18,5 s), Nadel zittert und wandert"
+  },
+  {
+   "t": 18.3,
+   "satz": "So schwach ist es heute nur überm Südatlantik.",
+   "bild": "Anzeige 22 µT, Statuszeile WIE SÜDATLANTIK; Sonne sinkt, Himmel glüht"
+  },
+  {
+   "t": 22,
+   "satz": "Dann wird es Nacht über dem See.",
+   "bild": "Sonnenuntergang vorbei, Dämmerung geht in Nacht über (Schwenk vom Kompass in den Nordhimmel, 20–26 s)"
+  },
+  {
+   "t": 25.5,
+   "satz": "Grünes Polarlicht steht über dem Wasser.",
+   "bild": "erstes grünes Polarlicht steht über dem Wasser und spiegelt sich im See, Aufleuchten bei 25 s"
+  },
+  {
+   "t": 29,
+   "satz": "Kosmische Strahlung bildet doppelt so viel Beryllium.",
+   "bild": "Anzeige BERYLLIUM-10-BILDUNG ×1,0 → ×2,0 (×2,0 ab 29,5 s), Polarlicht heller"
+  },
+  {
+   "t": 32.3,
+   "satz": "So war es vor 41.000 Jahren.",
+   "bild": "Anzeige ×2,0, Statuszeile FELD BEI 10 % → WIE LASCHAMP"
+  },
+  {
+   "t": 36,
+   "satz": "Der Schutzschild rückt immer näher heran.",
+   "bild": "Anzeige SCHUTZSCHILD 4,6 → Erdradien, Polarlicht wandert höher"
+  },
+  {
+   "t": 39.5,
+   "satz": "Das Polarlicht wandert bis über dich.",
+   "bild": "Polarlicht wandert bis in den Zenit über der Kamera (Blick steil nach oben), Ränder rot"
+  },
+  {
+   "t": 43,
+   "satz": "Zugvögel verlieren einen ihrer Kompasse.",
+   "bild": "Zugvogel-Schwarm kreuzt den Himmel und dreht ab; Statuszeile ZUGVÖGEL IRREN"
+  },
+  {
+   "t": 47,
+   "satz": "Dann stockt der Dynamo im Kern.",
+   "bild": "Anzeige SCHUTZSCHILD ca. 1,5–1,6 Erdradien → bei 48 s MAGNETFELD 0,17 µT, DYNAMO STOCKT"
+  },
+  {
+   "t": 51,
+   "satz": "Die Kompassnadel kommt zur Ruhe.",
+   "bild": "Kamera zurück auf die Kompassnadel, sie pendelt aus und kommt zur Ruhe; Anzeige 0,17 → 0 µT"
+  },
+  {
+   "t": 63,
+   "satz": "Das Polarlicht erlischt über dem See.",
+   "bild": "Totale des Sees nach dem Schnitt (58 s): Polarlicht erloschen, Himmel stumpf, fahle Dämmerung; Anzeige MAGNETFELD 0 µT"
+  },
+  {
+   "t": 66.5,
+   "satz": "Der Sonnenwind trifft jetzt direkt die Luft.",
+   "bild": "fahle Morgendämmerung ohne Polarlicht, Statuszeile SONNENWIND DIREKT"
+  }
+ ],
+ "korrekturen": [
+  "Zahlenformat: die Anzeige zeigt MAGNETFELD in Phase 2 mit einer Dezimalstelle (49,0 → 22,0 µT), damit die Zahl bis 18,5 s live läuft und beim Satz „fällt auf 22 Mikrotesla“ (15–18 s) bei ca. 22 steht; der Skript-Plan nennt 49 → 22 µT.",
+  "Satz-Standzeit je 3,2 s (Skript nennt nur Startzeiten); letzter Satz endet 69,7 s."
+ ],
+ "lern_notizen": {
+  "welt": "Bergsee im Herbstwald (neue Welt engine/welt_bergsee.js)",
+  "standpunkt": "bodennah am Südufer, sitzend, Kompass auf dem Stein unten im Bild",
+  "tageszeit": "Herbstnachmittag → Sonnenuntergang 18–22 s → Nacht mit Polarlicht 22–58 s → erloschen 58–62 s → fahle Dämmerung 62–70 s",
+  "kamera": "0–3 s fest, 3–18 s langsamer Zoom auf die Nadel (fov 58→28), 20–26 s Schwenk Kompass → Nordhimmel, 36–48 s weiter bis in den Zenit, 48,5–51,5 s zurück auf die Nadel, 51,5–58 s Zoom bis fov 16, Schnitt 58 s auf die Totale, 62–70 s ruhiger Blick nach Norden",
+  "zeitraffer": "Modell Kernabkühlung (real Milliarden Jahre) auf ca. 55 s gestaucht; Welt durchläuft einen Tag",
+  "effekte": "siehe out/erdkern-kuehlt/ereignisse.json",
+  "sequenzen": 9,
+  "t_ereignis": 2.5,
+  "countdown": "ja (2,5 s → 0, zweiter: nein)",
+  "schnitte": [
+   {
+    "t": 58,
+    "grund": "Höhepunkt: harter Schnitt auf die Totale"
+   }
+  ],
+  "statuszeile": [
+   "KERN FLÜSSIG",
+   "KERN KÜHLT AB → WIE SÜDATLANTIK",
+   "FELD BEI 10 % → WIE LASCHAMP",
+   "SCHILD SCHRUMPFT → ZUGVÖGEL IRREN",
+   "DYNAMO STOCKT",
+   "SCHILD WEG",
+   "SONNENWIND DIREKT"
+  ],
+  "testbloecke": {
+   "folgen_hinweis": "mit",
+   "einstieg_a2": "a"
+  },
+  "laenge_s": 80,
+  "t_stufe2": 20,
+  "folgen_hinweis": "Morgen: die nächste Welt im Zeitraffer"
+ }
+}
