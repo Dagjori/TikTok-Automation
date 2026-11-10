@@ -52,7 +52,7 @@ Kurzfassung aller Regeln **nur für Account 1**. Gemeinsame Regeln: [[Regelwerk]
 | Skript und Bild passen exakt zusammen (`bild_text_abgleich`) | [[Videoaufbau Simulierbar]] §4 |
 | Mindestens eine Erklärgrafik; laufende Zähler; wichtige Zahlen leuchten auf | [[REA Simulierbar Regelwerk]] |
 | Stile 1–15 und 17–21, genau einer je Video, nie zweimal derselbe hintereinander, Wahl mit Begründung; **dunkle Welten mit Leuchtakzenten zuerst**, helle Pastell- und Papier-Stile nur, wenn das Thema sie trägt. Stile ohne Video-Baukasten (5, 7–11, 15) brauchen vor dem Einsatz einen Erstbau | [[Stile 17 bis 21]] |
-| **Qualitätslatte:** sauberes Licht und Material, lesbare Typografie, konsistente Farben, keine Billig-Optik; Stil 18 nur mit belebter Szene | [[Prüfung und Abnahme Simulierbar]] |
+| **Qualitätslatte:** sauberes Licht und Material, lesbare Typografie, konsistente Farben, keine Billig-Optik; **Stil 18 pausiert seit 10.11.** (Studio-Themen in Stil 19 oder 17) | [[Prüfung und Abnahme Simulierbar]] |
 | Mehr Effekte, nichts Übertriebenes; **keine großen Sticker oder Stempel** | [[Licht und Atmosphäre Simulierbar]], [[Design und Layout Simulierbar]] |
 | Layout: Mittelachse x = 540, Schutzzone 150 px, nichts Wichtiges unter y ≈ 1500; 1080×1920 | [[Design und Layout Simulierbar]] |
 | Zwei Teamfarben je Video, nie Gelb; **Untertitel in Blöcken von 1–4 Wörtern**, Schlüsselwort in der Teamfarbe seiner Seite | [[Design und Layout Simulierbar]] |
