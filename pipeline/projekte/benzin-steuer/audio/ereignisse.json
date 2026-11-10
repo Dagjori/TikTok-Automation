@@ -1,0 +1,1985 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "benzin-steuer",
+ "fps": 30,
+ "dauer": 81.5,
+ "stimmEnde": 80.902,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "nachtfahrt",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "MWST·ENERGIE",
+    "farbe": "#22C6D6"
+   },
+   "b": {
+    "name": "MWST·CO₂",
+    "farbe": "#A06BFF"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 4,
+   "groesse": 64,
+   "unten": 1450,
+   "phrasen": 64
+  },
+  "timing": "echt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "BENZIN"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "STEUER AUF STEUER"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "PRO TANKFÜLLUNG?"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "tafel",
+   "klang": false,
+   "bild": false,
+   "ab": "start"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Beim Benzin zahlst",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.3,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Tankstelle bei Nacht, Glassäule leuchtet, Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.4,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "1 LITER SUPER · ALLE ZAHLEN IN CENT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.5,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Ein Liter Benzin füllt die Glassäule, Uhr zählt auf 1,0"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 1.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "du Steuer auf Steuer.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera schiebt sich heran, Laternen und Lichtspuren"
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 2.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wie viel davon steckt",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.36,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera auf die Säule"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 3.367,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 3.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "in einer Tankfüllung?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.86,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 5.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gerechnet wird mit",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera gleitet, Chips der Regeln"
+  },
+  {
+   "quelle": "Chip",
+   "t": 6.22,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "50 LITER SUPER"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 6.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "50 Litern Super.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.86,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera zur Seite, Chip Super"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 7.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Es gelten die Steuersätze",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.51,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SÄTZE AB 01.01.2027"
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.56,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip Steuersätze"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ab Januar.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.34,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "CO₂ 65 €/T"
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.69,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MWST 19 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.06,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.22,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 10.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar,",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.32,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Licht ruhig, Kamera nah an der unteren Schicht"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 10.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "die Mehrwertsteuer fällt nur",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.12,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MWST NUR AUFS BENZIN?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip Mehrwertsteuer nur aufs Benzin"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 12.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "auf das Benzin selbst.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.62,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 14.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder doch nicht?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 14.16,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ODER DOCH NICHT?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.16,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera weitet, Oder doch nicht"
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.3,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.55,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SCHRITT 1 · ENERGIESTEUER"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 15.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Zuerst kommt die Energiesteuer,",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.66,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.4,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Türkise Energiesteuer-Schicht füllt die Säule"
+  },
+  {
+   "quelle": "Chip",
+   "t": 17.06,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ENERGIESTEUER 65,45 CT/L"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 17.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "rund 65 Cent",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 18.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "pro Liter.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 19.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Auf diese Steuer fallen",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 20.91,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+ 19 % MWST = 12,44 CT/L"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 20.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "19 Prozent Mehrwertsteuer an.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.96,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Goldene Mehrwertsteuer-Schicht wächst auf der Energiesteuer"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.46,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 23.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Das sind gut",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.133,
+   "typ": "zaehler",
+   "dauer": 1.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 23.167,
+   "typ": "zaehler",
+   "dauer": 1.167,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 23.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "12 Cent pro Liter.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 23.76,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Zähler läuft auf 0,12 €, Zoom, Gold leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.06,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.06,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.06,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.26,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.31,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SCHRITT 2 · CO₂-PREIS"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 25.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Dann folgt der Kohlendioxidpreis,",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.08,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "CO₂-PREIS 15,56 CT/L"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.08,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Violette CO₂-Schicht füllt die Säule"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 27.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "knapp 16 Cent",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 28.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "pro Liter.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 29.463,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Auch darauf",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 30.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "fällt Mehrwertsteuer an:",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.36,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+ 19 % MWST = 2,96 CT/L"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.36,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Zweite goldene Schicht wächst auf dem CO₂-Preis"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 31.567,
+   "typ": "zaehler",
+   "dauer": 0.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 31.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "rund 3 Cent.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 31.6,
+   "typ": "zaehler",
+   "dauer": 0.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 31.92,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Zähler läuft auf 0,15 €, Zoom"
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.69,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.94,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.94,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.99,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "TANKRABATT −14,04 CT/L · BIS 31.12."
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 33.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Noch gilt allerdings",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.42,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 33.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ein Tankrabatt.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 34.08,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.08,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Etikett Tankrabatt hängt an der Energiesteuer, Zoom"
+  },
+  {
+   "quelle": "Chip",
+   "t": 35.27,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "WAS PASSIERT, WENN ER ENDET?"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 35.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Was passiert",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera weitet, offene Frage im Bild"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 35.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mit der Steuer",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 36.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "auf Steuer,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 37.277,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "wenn er endet?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.16,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 38.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Zusammen sind das gut",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Beide Goldschichten leuchten gemeinsam, 15 Cent je Liter"
+  },
+  {
+   "quelle": "Chip",
+   "t": 39.14,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GUT 15 CT PRO LITER"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 39.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "15 Cent pro Liter.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.86,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 41.24,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Die Zapfsäule läuft,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 41.44,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.44,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera fährt zur Zapfsäule, Anzeige und Tankanzeige gehen an"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 41.94,
+   "typ": "zaehler",
+   "dauer": 2.667,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.467,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 42.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Liter für Liter.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Liter laufen an der Zapfsäule"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 42.9,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.433,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.6,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 43.8,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.033,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 44.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Nach 10 Litern sind",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 44.51,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "10 LITER: 1,54 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.56,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Haltepunkt 10 Liter: 1,54 €, Gold-Säule wächst"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.6,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 45.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "es rund eineinhalb Euro.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 45.507,
+   "typ": "zaehler",
+   "dauer": 2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.767,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.9,
+   "typ": "uhr",
+   "dauer": 1.2,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.06,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.2,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 47.24,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 47.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Nach 30 Litern",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 47.39,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "30 LITER: 4,62 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.44,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Haltepunkt 30 Liter: 4,62 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 47.467,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "schon über vier Euro.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.94,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 49.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Auf der Quittung",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.11,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KEINE EIGENE ZEILE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.16,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera auf die Anzeige, Quittung ohne eigene Zeile"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 50.273,
+   "typ": "zaehler",
+   "dauer": 3.367,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 50.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "steht dieser Betrag",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 50.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 51.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "nicht als eigene Zeile.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.66,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.733,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.367,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.633,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.16,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 53.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Nach 40 Litern sind",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.55,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "40 LITER: 6,16 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.6,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "40 Liter: 6,16 €, Tankanzeige fast voll"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 53.633,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 54.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "es über sechs Euro.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 55.707,
+   "typ": "zaehler",
+   "dauer": 2.433,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 56.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 56.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der Tank",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 56.35,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DER TANK IST FAST VOLL"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 56.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.4,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Licht wärmer, Spannung am höchsten"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 56.567,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 56.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ist fast voll.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 56.733,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 56.9,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 57.067,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 57.2,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 57.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 57.6,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.88,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.88,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 57.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Bei 50 Litern:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.08,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "50 Liter: Zähler stoppt bei 7,70 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 58.18,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 59.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "rund 7,70 Euro.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 59.37,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "TANK · 50 L"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 59.94,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.24,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Gold-Säule leuchtet auf, Zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 61.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Bei 1.000 Litern",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 61.18,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.28,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "20 goldene Platten legen sich zum Jahr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 62.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Jahr:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 62.18,
+   "typ": "zaehler",
+   "dauer": 1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 62.42,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "JAHR · 1.000 L"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.78,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 62.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "rund 154 Euro.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Jahressumme 153,92 € steht"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.62,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 65.117,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Denn die Mehrwertsteuer rechnet",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.147,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zurück zur Glassäule, Warum"
+  },
+  {
+   "quelle": "Formel",
+   "t": 65.49,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "(65,45"
+  },
+  {
+   "quelle": "Formel",
+   "t": 65.99,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "+"
+  },
+  {
+   "quelle": "Formel",
+   "t": 66.29,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "15,56)"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 66.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "auf den ganzen Preis.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Formel",
+   "t": 66.64,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "×"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.647,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Formel",
+   "t": 66.84,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "19 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.96,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Goldener Rahmen legt sich um alle Schichten"
+  },
+  {
+   "quelle": "Formel",
+   "t": 67.06,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "="
+  },
+  {
+   "quelle": "Formel",
+   "t": 67.26,
+   "typ": "formel",
+   "klang": "pop",
+   "text": "MWST AUF DEN GANZEN PREIS: ENERGIESTEUER UND CO₂-PREIS"
+  },
+  {
+   "quelle": "Formel",
+   "t": 67.44,
+   "typ": "formel",
+   "klang": "ding",
+   "text": "15,39"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 68.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Endet der Tankrabatt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.24,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kalenderblatt 31.12. erscheint"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "am 31.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.52,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kalenderblatt kippt auf 01.01., Rabatt-Etikett fällt ab"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 70.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Dezember,",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 71.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "steigt auch die Steuer",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 71.12,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+ 2,67 CT JE LITER"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 71.12,
+   "art": "zoom",
+   "dauer": 2,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Goldschicht leuchtet auf, Zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 72.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "auf Steuer.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.62,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 73.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Rund 27 Euro",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 73.42,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+ 26,68 € IM JAHR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.52,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Chip plus 26,68 € im Jahr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 74.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mehr im Jahr,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 75.02,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 75.63,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "OHNE NEUEN BESCHLUSS"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 75.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ohne neuen Beschluss.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 76.52,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Chip",
+   "t": 76.84,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 76.84,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 76.84,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 77.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Steuer auf Steuer:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Pointe",
+   "t": 77.04,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "STEUER AUF STEUER  153,92 € IM JAHR"
+  },
+  {
+   "quelle": "Szene",
+   "t": 77.04,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Welt dunkelt ab, Schlusskarte"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 78.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "rund 154 Euro",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 78.62,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Zeile 153,92 € im Jahr leuchtet"
+  },
+  {
+   "quelle": "Hinweis",
+   "t": 79.002,
+   "typ": "folgen_hinweis",
+   "dauer": 2.5,
+   "text": "Jeden Tag eine Geldfrage im Profil",
+   "gesprochen": false,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 80.12,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichter und Autos ziehen vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 80.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Jahr.",
+   "woerter": 2,
+   "zeilen": 1
+  }
+ ],
+ "klang": []
+}

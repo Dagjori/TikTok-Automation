@@ -1,0 +1,13 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "_test-bergsee",
+ "fps": 30,
+ "dauer": 30,
+ "timing": "kein Sprechtext (Format ohne Stimme, z. B. Account 2)",
+ "protokoll": true,
+ "teppich": "keiner",
+ "massstab": null,
+ "ereignisse": [],
+ "klang": []
+}

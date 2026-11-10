@@ -1,0 +1,1014 @@
+{
+ "hook": [
+  {
+   "wort": "Beim",
+   "start": 0.0,
+   "ende": 0.16
+  },
+  {
+   "wort": "Benzin",
+   "start": 0.267,
+   "ende": 0.64
+  },
+  {
+   "wort": "zahlst",
+   "start": 0.72,
+   "ende": 1.0
+  },
+  {
+   "wort": "du",
+   "start": 1.04,
+   "ende": 1.2
+  },
+  {
+   "wort": "Steuer",
+   "start": 1.32,
+   "ende": 1.68
+  },
+  {
+   "wort": "auf",
+   "start": 1.76,
+   "ende": 1.92
+  },
+  {
+   "wort": "Steuer.",
+   "start": 2.0,
+   "ende": 2.48
+  },
+  {
+   "wort": "Wie",
+   "start": 2.96,
+   "ende": 3.12
+  },
+  {
+   "wort": "viel",
+   "start": 3.2,
+   "ende": 3.28
+  },
+  {
+   "wort": "davon",
+   "start": 3.36,
+   "ende": 3.6
+  },
+  {
+   "wort": "steckt",
+   "start": 3.68,
+   "ende": 3.92
+  },
+  {
+   "wort": "in",
+   "start": 3.96,
+   "ende": 4.0
+  },
+  {
+   "wort": "einer",
+   "start": 4.08,
+   "ende": 4.24
+  },
+  {
+   "wort": "Tankfüllung?",
+   "start": 4.32,
+   "ende": 4.96
+  }
+ ],
+ "regeln": [
+  {
+   "wort": "Gerechnet",
+   "start": 5.36,
+   "ende": 5.84
+  },
+  {
+   "wort": "wird",
+   "start": 5.88,
+   "ende": 6.0
+  },
+  {
+   "wort": "mit",
+   "start": 6.08,
+   "ende": 6.16
+  },
+  {
+   "wort": "fünfzig",
+   "start": 6.32,
+   "ende": 6.72
+  },
+  {
+   "wort": "Litern",
+   "start": 6.8,
+   "ende": 7.12
+  },
+  {
+   "wort": "Super.",
+   "start": 7.2,
+   "ende": 7.72
+  },
+  {
+   "wort": "Es",
+   "start": 7.92,
+   "ende": 8.08
+  },
+  {
+   "wort": "gelten",
+   "start": 8.16,
+   "ende": 8.4
+  },
+  {
+   "wort": "die",
+   "start": 8.44,
+   "ende": 8.48
+  },
+  {
+   "wort": "Steuersätze",
+   "start": 8.56,
+   "ende": 9.2
+  },
+  {
+   "wort": "ab",
+   "start": 9.28,
+   "ende": 9.36
+  },
+  {
+   "wort": "Januar.",
+   "start": 9.44,
+   "ende": 10.08
+  }
+ ],
+ "falle": [
+  {
+   "wort": "Klar,",
+   "start": 10.32,
+   "ende": 10.88
+  },
+  {
+   "wort": "die",
+   "start": 10.96,
+   "ende": 11.04
+  },
+  {
+   "wort": "Mehrwertsteuer",
+   "start": 11.12,
+   "ende": 11.76
+  },
+  {
+   "wort": "fällt",
+   "start": 11.84,
+   "ende": 12.08
+  },
+  {
+   "wort": "nur",
+   "start": 12.16,
+   "ende": 12.4
+  },
+  {
+   "wort": "auf",
+   "start": 12.48,
+   "ende": 12.56
+  },
+  {
+   "wort": "das",
+   "start": 12.64,
+   "ende": 12.72
+  },
+  {
+   "wort": "Benzin",
+   "start": 12.8,
+   "ende": 13.2
+  },
+  {
+   "wort": "selbst.",
+   "start": 13.32,
+   "ende": 13.92
+  },
+  {
+   "wort": "Oder",
+   "start": 14.16,
+   "ende": 14.4
+  },
+  {
+   "wort": "doch",
+   "start": 14.56,
+   "ende": 14.72
+  },
+  {
+   "wort": "nicht?",
+   "start": 14.76,
+   "ende": 15.04
+  }
+ ],
+ "wendung1": [
+  {
+   "wort": "Zuerst",
+   "start": 15.6,
+   "ende": 16.0
+  },
+  {
+   "wort": "kommt",
+   "start": 16.08,
+   "ende": 16.24
+  },
+  {
+   "wort": "die",
+   "start": 16.28,
+   "ende": 16.32
+  },
+  {
+   "wort": "Energiesteuer,",
+   "start": 16.4,
+   "ende": 17.44
+  },
+  {
+   "wort": "rund",
+   "start": 17.48,
+   "ende": 17.68
+  },
+  {
+   "wort": "fünfundsechzig",
+   "start": 17.76,
+   "ende": 18.4
+  },
+  {
+   "wort": "Cent",
+   "start": 18.56,
+   "ende": 18.72
+  },
+  {
+   "wort": "pro",
+   "start": 18.8,
+   "ende": 18.88
+  },
+  {
+   "wort": "Liter.",
+   "start": 18.96,
+   "ende": 19.48
+  },
+  {
+   "wort": "Auf",
+   "start": 19.68,
+   "ende": 19.84
+  },
+  {
+   "wort": "diese",
+   "start": 19.92,
+   "ende": 20.08
+  },
+  {
+   "wort": "Steuer",
+   "start": 20.16,
+   "ende": 20.48
+  },
+  {
+   "wort": "fallen",
+   "start": 20.64,
+   "ende": 20.88
+  },
+  {
+   "wort": "neunzehn",
+   "start": 20.96,
+   "ende": 21.36
+  },
+  {
+   "wort": "Prozent",
+   "start": 21.44,
+   "ende": 21.84
+  },
+  {
+   "wort": "Mehrwertsteuer",
+   "start": 21.92,
+   "ende": 22.56
+  },
+  {
+   "wort": "an.",
+   "start": 22.64,
+   "ende": 23.12
+  },
+  {
+   "wort": "Das",
+   "start": 23.16,
+   "ende": 23.2
+  },
+  {
+   "wort": "sind",
+   "start": 23.24,
+   "ende": 23.44
+  },
+  {
+   "wort": "gut",
+   "start": 23.48,
+   "ende": 23.68
+  },
+  {
+   "wort": "zwölf",
+   "start": 23.76,
+   "ende": 24.0
+  },
+  {
+   "wort": "Cent",
+   "start": 24.16,
+   "ende": 24.4
+  },
+  {
+   "wort": "pro",
+   "start": 24.48,
+   "ende": 24.56
+  },
+  {
+   "wort": "Liter.",
+   "start": 24.64,
+   "ende": 25.16
+  }
+ ],
+ "wendung2": [
+  {
+   "wort": "Dann",
+   "start": 25.36,
+   "ende": 25.52
+  },
+  {
+   "wort": "folgt",
+   "start": 25.6,
+   "ende": 25.84
+  },
+  {
+   "wort": "der",
+   "start": 25.88,
+   "ende": 25.92
+  },
+  {
+   "wort": "Kohlendioxidpreis,",
+   "start": 26.08,
+   "ende": 27.52
+  },
+  {
+   "wort": "knapp",
+   "start": 27.6,
+   "ende": 27.84
+  },
+  {
+   "wort": "sechzehn",
+   "start": 27.92,
+   "ende": 28.32
+  },
+  {
+   "wort": "Cent",
+   "start": 28.4,
+   "ende": 28.64
+  },
+  {
+   "wort": "pro",
+   "start": 28.68,
+   "ende": 28.72
+  },
+  {
+   "wort": "Liter.",
+   "start": 28.8,
+   "ende": 29.44
+  },
+  {
+   "wort": "Auch",
+   "start": 29.493,
+   "ende": 29.6
+  },
+  {
+   "wort": "darauf",
+   "start": 29.68,
+   "ende": 30.0
+  },
+  {
+   "wort": "fällt",
+   "start": 30.08,
+   "ende": 30.32
+  },
+  {
+   "wort": "Mehrwertsteuer",
+   "start": 30.36,
+   "ende": 31.04
+  },
+  {
+   "wort": "an:",
+   "start": 31.12,
+   "ende": 31.52
+  },
+  {
+   "wort": "rund",
+   "start": 31.6,
+   "ende": 31.76
+  },
+  {
+   "wort": "drei",
+   "start": 31.92,
+   "ende": 32.16
+  },
+  {
+   "wort": "Cent.",
+   "start": 32.24,
+   "ende": 32.96
+  },
+  {
+   "wort": "Noch",
+   "start": 33.04,
+   "ende": 33.2
+  },
+  {
+   "wort": "gilt",
+   "start": 33.28,
+   "ende": 33.44
+  },
+  {
+   "wort": "allerdings",
+   "start": 33.56,
+   "ende": 33.84
+  },
+  {
+   "wort": "ein",
+   "start": 33.92,
+   "ende": 34.0
+  },
+  {
+   "wort": "Tankrabatt.",
+   "start": 34.08,
+   "ende": 35.2
+  },
+  {
+   "wort": "Was",
+   "start": 35.32,
+   "ende": 35.44
+  },
+  {
+   "wort": "passiert",
+   "start": 35.56,
+   "ende": 35.84
+  },
+  {
+   "wort": "mit",
+   "start": 35.92,
+   "ende": 36.0
+  },
+  {
+   "wort": "der",
+   "start": 36.08,
+   "ende": 36.16
+  },
+  {
+   "wort": "Steuer",
+   "start": 36.24,
+   "ende": 36.56
+  },
+  {
+   "wort": "auf",
+   "start": 36.64,
+   "ende": 36.8
+  },
+  {
+   "wort": "Steuer,",
+   "start": 36.88,
+   "ende": 37.28
+  },
+  {
+   "wort": "wenn",
+   "start": 37.307,
+   "ende": 37.36
+  },
+  {
+   "wort": "er",
+   "start": 37.44,
+   "ende": 37.52
+  },
+  {
+   "wort": "endet?",
+   "start": 37.6,
+   "ende": 38.32
+  }
+ ],
+ "rennen": [
+  {
+   "wort": "Zusammen",
+   "start": 38.36,
+   "ende": 38.72
+  },
+  {
+   "wort": "sind",
+   "start": 38.8,
+   "ende": 38.96
+  },
+  {
+   "wort": "das",
+   "start": 39.04,
+   "ende": 39.12
+  },
+  {
+   "wort": "gut",
+   "start": 39.2,
+   "ende": 39.36
+  },
+  {
+   "wort": "fünfzehn",
+   "start": 39.44,
+   "ende": 39.92
+  },
+  {
+   "wort": "Cent",
+   "start": 40.08,
+   "ende": 40.24
+  },
+  {
+   "wort": "pro",
+   "start": 40.32,
+   "ende": 40.4
+  },
+  {
+   "wort": "Liter.",
+   "start": 40.48,
+   "ende": 41.04
+  },
+  {
+   "wort": "Die",
+   "start": 41.28,
+   "ende": 41.36
+  },
+  {
+   "wort": "Zapfsäule",
+   "start": 41.44,
+   "ende": 42.0
+  },
+  {
+   "wort": "läuft,",
+   "start": 42.08,
+   "ende": 42.72
+  },
+  {
+   "wort": "Liter",
+   "start": 42.8,
+   "ende": 43.2
+  },
+  {
+   "wort": "für",
+   "start": 43.36,
+   "ende": 43.52
+  },
+  {
+   "wort": "Liter.",
+   "start": 43.68,
+   "ende": 43.92
+  },
+  {
+   "wort": "Nach",
+   "start": 44.32,
+   "ende": 44.48
+  },
+  {
+   "wort": "zehn",
+   "start": 44.56,
+   "ende": 44.76
+  },
+  {
+   "wort": "Litern",
+   "start": 44.8,
+   "ende": 45.2
+  },
+  {
+   "wort": "sind",
+   "start": 45.24,
+   "ende": 45.36
+  },
+  {
+   "wort": "es",
+   "start": 45.44,
+   "ende": 45.52
+  },
+  {
+   "wort": "rund",
+   "start": 45.6,
+   "ende": 45.84
+  },
+  {
+   "wort": "eineinhalb",
+   "start": 45.92,
+   "ende": 46.4
+  },
+  {
+   "wort": "Euro.",
+   "start": 46.48,
+   "ende": 47.2
+  },
+  {
+   "wort": "Nach",
+   "start": 47.28,
+   "ende": 47.36
+  },
+  {
+   "wort": "dreißig",
+   "start": 47.44,
+   "ende": 47.84
+  },
+  {
+   "wort": "Litern",
+   "start": 47.92,
+   "ende": 48.24
+  },
+  {
+   "wort": "schon",
+   "start": 48.32,
+   "ende": 48.48
+  },
+  {
+   "wort": "über",
+   "start": 48.56,
+   "ende": 48.72
+  },
+  {
+   "wort": "vier",
+   "start": 48.88,
+   "ende": 49.04
+  },
+  {
+   "wort": "Euro.",
+   "start": 49.2,
+   "ende": 49.84
+  },
+  {
+   "wort": "Auf",
+   "start": 49.92,
+   "ende": 50.0
+  },
+  {
+   "wort": "der",
+   "start": 50.04,
+   "ende": 50.08
+  },
+  {
+   "wort": "Quittung",
+   "start": 50.16,
+   "ende": 50.56
+  },
+  {
+   "wort": "steht",
+   "start": 50.64,
+   "ende": 50.88
+  },
+  {
+   "wort": "dieser",
+   "start": 50.933,
+   "ende": 51.12
+  },
+  {
+   "wort": "Betrag",
+   "start": 51.24,
+   "ende": 51.6
+  },
+  {
+   "wort": "nicht",
+   "start": 51.68,
+   "ende": 51.92
+  },
+  {
+   "wort": "als",
+   "start": 52.0,
+   "ende": 52.08
+  },
+  {
+   "wort": "eigene",
+   "start": 52.16,
+   "ende": 52.48
+  },
+  {
+   "wort": "Zeile.",
+   "start": 52.56,
+   "ende": 53.36
+  }
+ ],
+ "kipp": [
+  {
+   "wort": "Nach",
+   "start": 53.44,
+   "ende": 53.52
+  },
+  {
+   "wort": "vierzig",
+   "start": 53.6,
+   "ende": 53.92
+  },
+  {
+   "wort": "Litern",
+   "start": 54.0,
+   "ende": 54.4
+  },
+  {
+   "wort": "sind",
+   "start": 54.44,
+   "ende": 54.56
+  },
+  {
+   "wort": "es",
+   "start": 54.64,
+   "ende": 54.8
+  },
+  {
+   "wort": "über",
+   "start": 54.92,
+   "ende": 55.04
+  },
+  {
+   "wort": "sechs",
+   "start": 55.2,
+   "ende": 55.36
+  },
+  {
+   "wort": "Euro.",
+   "start": 55.52,
+   "ende": 56.16
+  },
+  {
+   "wort": "Der",
+   "start": 56.24,
+   "ende": 56.32
+  },
+  {
+   "wort": "Tank",
+   "start": 56.4,
+   "ende": 56.64
+  },
+  {
+   "wort": "ist",
+   "start": 56.72,
+   "ende": 56.88
+  },
+  {
+   "wort": "fast",
+   "start": 56.96,
+   "ende": 57.2
+  },
+  {
+   "wort": "voll.",
+   "start": 57.28,
+   "ende": 57.84
+  }
+ ],
+ "ergebnis": [
+  {
+   "wort": "Bei",
+   "start": 57.92,
+   "ende": 58.0
+  },
+  {
+   "wort": "fünfzig",
+   "start": 58.08,
+   "ende": 58.48
+  },
+  {
+   "wort": "Litern:",
+   "start": 58.56,
+   "ende": 59.04
+  },
+  {
+   "wort": "rund",
+   "start": 59.2,
+   "ende": 59.44
+  },
+  {
+   "wort": "sieben",
+   "start": 59.52,
+   "ende": 59.76
+  },
+  {
+   "wort": "Euro",
+   "start": 59.84,
+   "ende": 60.08
+  },
+  {
+   "wort": "siebzig.",
+   "start": 60.24,
+   "ende": 61.04
+  },
+  {
+   "wort": "Bei",
+   "start": 61.08,
+   "ende": 61.12
+  },
+  {
+   "wort": "tausend",
+   "start": 61.28,
+   "ende": 61.68
+  },
+  {
+   "wort": "Litern",
+   "start": 61.76,
+   "ende": 62.0
+  },
+  {
+   "wort": "im",
+   "start": 62.08,
+   "ende": 62.16
+  },
+  {
+   "wort": "Jahr:",
+   "start": 62.24,
+   "ende": 62.8
+  },
+  {
+   "wort": "rund",
+   "start": 62.84,
+   "ende": 63.04
+  },
+  {
+   "wort": "hundertvierundfünfzig",
+   "start": 63.12,
+   "ende": 64.32
+  },
+  {
+   "wort": "Euro.",
+   "start": 64.48,
+   "ende": 65.12
+  }
+ ],
+ "warum": [
+  {
+   "wort": "Denn",
+   "start": 65.147,
+   "ende": 65.2
+  },
+  {
+   "wort": "die",
+   "start": 65.28,
+   "ende": 65.36
+  },
+  {
+   "wort": "Mehrwertsteuer",
+   "start": 65.44,
+   "ende": 66.08
+  },
+  {
+   "wort": "rechnet",
+   "start": 66.24,
+   "ende": 66.56
+  },
+  {
+   "wort": "auf",
+   "start": 66.64,
+   "ende": 66.72
+  },
+  {
+   "wort": "den",
+   "start": 66.8,
+   "ende": 66.88
+  },
+  {
+   "wort": "ganzen",
+   "start": 66.96,
+   "ende": 67.36
+  },
+  {
+   "wort": "Preis.",
+   "start": 67.44,
+   "ende": 68.04
+  }
+ ],
+ "pointe": [
+  {
+   "wort": "Endet",
+   "start": 68.24,
+   "ende": 68.48
+  },
+  {
+   "wort": "der",
+   "start": 68.56,
+   "ende": 68.64
+  },
+  {
+   "wort": "Tankrabatt",
+   "start": 68.72,
+   "ende": 69.2
+  },
+  {
+   "wort": "am",
+   "start": 69.28,
+   "ende": 69.44
+  },
+  {
+   "wort": "einunddreißigsten",
+   "start": 69.52,
+   "ende": 70.16
+  },
+  {
+   "wort": "Dezember,",
+   "start": 70.24,
+   "ende": 71.04
+  },
+  {
+   "wort": "steigt",
+   "start": 71.12,
+   "ende": 71.44
+  },
+  {
+   "wort": "auch",
+   "start": 71.52,
+   "ende": 71.68
+  },
+  {
+   "wort": "die",
+   "start": 71.76,
+   "ende": 71.84
+  },
+  {
+   "wort": "Steuer",
+   "start": 71.92,
+   "ende": 72.24
+  },
+  {
+   "wort": "auf",
+   "start": 72.32,
+   "ende": 72.4
+  },
+  {
+   "wort": "Steuer.",
+   "start": 72.48,
+   "ende": 73.2
+  },
+  {
+   "wort": "Rund",
+   "start": 73.24,
+   "ende": 73.44
+  },
+  {
+   "wort": "siebenundzwanzig",
+   "start": 73.52,
+   "ende": 74.24
+  },
+  {
+   "wort": "Euro",
+   "start": 74.4,
+   "ende": 74.64
+  },
+  {
+   "wort": "mehr",
+   "start": 74.72,
+   "ende": 74.88
+  },
+  {
+   "wort": "im",
+   "start": 74.96,
+   "ende": 75.04
+  },
+  {
+   "wort": "Jahr,",
+   "start": 75.12,
+   "ende": 75.6
+  },
+  {
+   "wort": "ohne",
+   "start": 75.68,
+   "ende": 75.84
+  },
+  {
+   "wort": "neuen",
+   "start": 75.92,
+   "ende": 76.16
+  },
+  {
+   "wort": "Beschluss.",
+   "start": 76.24,
+   "ende": 76.84
+  }
+ ],
+ "schlusskarte": [
+  {
+   "wort": "Steuer",
+   "start": 77.04,
+   "ende": 77.44
+  },
+  {
+   "wort": "auf",
+   "start": 77.52,
+   "ende": 77.68
+  },
+  {
+   "wort": "Steuer:",
+   "start": 77.76,
+   "ende": 78.4
+  },
+  {
+   "wort": "rund",
+   "start": 78.44,
+   "ende": 78.64
+  },
+  {
+   "wort": "hundertvierundfünfzig",
+   "start": 78.72,
+   "ende": 79.76
+  },
+  {
+   "wort": "Euro",
+   "start": 80.0,
+   "ende": 80.24
+  },
+  {
+   "wort": "im",
+   "start": 80.32,
+   "ende": 80.4
+  },
+  {
+   "wort": "Jahr.",
+   "start": 80.48,
+   "ende": 80.96
+  }
+ ]
+}

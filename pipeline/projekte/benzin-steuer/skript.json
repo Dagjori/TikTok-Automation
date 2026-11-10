@@ -1,0 +1,186 @@
+{
+  "titel": "Benzin: Wie viel Steuer zahlst du auf Steuer?",
+  "skill": "video-produktion",
+  "konto": "simulierbar",
+  "skript_quelle": "acc1-2026-11-11-abend",
+  "stil": "17 Nachtstadt-Miniatur (Tankstelle bei Nacht)",
+  "stil_begruendung": "Das Skript zeigt einen Liter Benzin als Glassäule in Schichten (Energiesteuer, CO2-Preis, darüber dünne goldene Steuer-auf-Steuer-Schichten) und danach eine Zapfsäule bei Nacht, an der Liter für Liter ein Zähler die Steuer auf Steuer sammelt. Dunkle Welt mit Leuchtakzenten (REA R13/R23, dunkle Stile zuerst), Umgebung vorhanden (Tankstellendach, Nachtstraße, Gebäude, Laternen, Lichtspuren), keine reinen Objekte vor schwarzem Grund. Vortage: 11.11. Mittag Stil 20 (Rente), 10.11. Abend Stil 19 (Kindergeld), 10.11. Mittag Stil 17 (Maut); Stil 17 lief damit zuletzt vor zwei Videos, also nie derselbe Stil hintereinander.",
+  "teamfarben": {
+    "Energiesteuer": "#22C6D6",
+    "CO2-Preis": "#A06BFF",
+    "Steuer-auf-Steuer-Schicht (nur Akzent, keine Teamfarbe)": "#F2B63C"
+  },
+  "klangteppich": "nachtfahrt",
+  "stil_helligkeit": "dunkel",
+  "format": "Lernvideo",
+  "suchbegriff": "Benzin",
+  "testbloecke": {
+    "folgen_hinweis": "mit"
+  },
+  "folgen_hinweis": "Jeden Tag eine Geldfrage im Profil",
+  "teil": 1,
+  "zweite_frage": {
+    "text": "Was passiert mit der Steuer auf Steuer, wenn der Tankrabatt am 31.12. endet?",
+    "gesetzt_in": "wendung2",
+    "aufgeloest_in": "pointe"
+  },
+  "offene_frage": "Wie viel Euro Steuer auf Steuer stecken in einer 50-Liter-Tankfüllung Benzin?",
+  "aufloesung": "Ab Januar 2027 rund 7,70 € je 50-Liter-Tankfüllung, bei 1.000 Litern im Jahr 153,92 €.",
+  "segmente": [
+    {
+      "id": "hook",
+      "phase": "hook",
+      "text": "Beim Benzin zahlst du Steuer auf Steuer. Wie viel davon steckt in einer Tankfüllung?",
+      "sprechtext": "Beim Benzin zahlst du Steuer auf Steuer.\nWie viel davon steckt in einer Tankfüllung?",
+      "bild_text_abgleich": [],
+      "text_karte": "Benzin: Wie viel Steuer auf Steuer zahlst du pro Tankfüllung?"
+    },
+    {
+      "id": "regeln",
+      "phase": "regeln",
+      "text": "Gerechnet wird mit 50 Litern Super. Es gelten die Steuersätze ab Januar.",
+      "sprechtext": "Gerechnet wird mit fünfzig Litern Super.\nEs gelten die Steuersätze ab Januar.",
+      "bild_text_abgleich": [],
+      "text_karte": "50 Liter Super · Steuersätze ab 01.01.2027 · CO₂ 65 €/t · MwSt 19 %"
+    },
+    {
+      "id": "falle",
+      "phase": "falle",
+      "text": "Klar, die Mehrwertsteuer fällt nur auf das Benzin selbst. Oder doch nicht?",
+      "sprechtext": "Klar, die Mehrwertsteuer fällt nur auf das Benzin selbst.\nOder doch nicht?",
+      "bild_text_abgleich": [],
+      "text_karte": "Klar, die Mehrwertsteuer fällt nur aufs Benzin. Oder?"
+    },
+    {
+      "id": "wendung1",
+      "phase": "wendung1",
+      "text": "Zuerst kommt die Energiesteuer, rund 65 Cent pro Liter. Auf diese Steuer fallen 19 Prozent Mehrwertsteuer an. Das sind gut 12 Cent pro Liter.",
+      "sprechtext": "Zuerst kommt die Energiesteuer, rund fünfundsechzig Cent pro Liter.\nAuf diese Steuer fallen neunzehn Prozent Mehrwertsteuer an.\nDas sind gut zwölf Cent pro Liter.",
+      "bild_text_abgleich": [],
+      "text_karte": "Energiesteuer: 65,45 Cent je Liter. Darauf 19 % MwSt: 12,4 Cent."
+    },
+    {
+      "id": "wendung2",
+      "phase": "wendung2",
+      "text": "Dann folgt der Kohlendioxidpreis, knapp 16 Cent pro Liter. Auch darauf fällt Mehrwertsteuer an: rund 3 Cent. Noch gilt allerdings ein Tankrabatt. Was passiert mit der Steuer auf Steuer, wenn er endet?",
+      "sprechtext": "Dann folgt der Kohlendioxidpreis, knapp sechzehn Cent pro Liter.\nAuch darauf fällt Mehrwertsteuer an: rund drei Cent.\nNoch gilt allerdings ein Tankrabatt.\nWas passiert mit der Steuer auf Steuer, wenn er endet?",
+      "bild_text_abgleich": [],
+      "text_karte": "CO₂-Preis: 15,6 Cent je Liter. Darauf MwSt: 3,0 Cent. Noch gilt der Tankrabatt. Was passiert, wenn er endet?"
+    },
+    {
+      "id": "rennen",
+      "phase": "rennen",
+      "text": "Zusammen sind das gut 15 Cent pro Liter. Die Zapfsäule läuft, Liter für Liter. Nach 10 Litern sind es rund eineinhalb Euro. Nach 30 Litern schon über vier Euro. Auf der Quittung steht dieser Betrag nicht als eigene Zeile.",
+      "sprechtext": "Zusammen sind das gut fünfzehn Cent pro Liter.\nDie Zapfsäule läuft, Liter für Liter.\nNach zehn Litern sind es rund eineinhalb Euro.\nNach dreißig Litern schon über vier Euro.\nAuf der Quittung steht dieser Betrag nicht als eigene Zeile.",
+      "bild_text_abgleich": [],
+      "text_karte": "Zusammen: 15,4 Cent Steuer auf Steuer je Liter. 10 Liter: 1,54 € · 30 Liter: 4,62 €"
+    },
+    {
+      "id": "kipp",
+      "phase": "kipp",
+      "text": "Nach 40 Litern sind es über sechs Euro. Der Tank ist fast voll.",
+      "sprechtext": "Nach vierzig Litern sind es über sechs Euro.\nDer Tank ist fast voll.",
+      "bild_text_abgleich": [],
+      "text_karte": "40 Liter: 6,16 € – der Tank ist fast voll"
+    },
+    {
+      "id": "ergebnis",
+      "phase": "ergebnis",
+      "text": "Bei 50 Litern: rund 7,70 Euro. Bei 1.000 Litern im Jahr: rund 154 Euro.",
+      "sprechtext": "Bei fünfzig Litern: rund sieben Euro siebzig.\nBei tausend Litern im Jahr: rund hundertvierundfünfzig Euro.",
+      "bild_text_abgleich": [],
+      "text_karte": "50 Liter: 7,70 € Steuer auf Steuer · 1.000 Liter im Jahr: 153,92 €"
+    },
+    {
+      "id": "warum",
+      "phase": "warum",
+      "text": "Denn die Mehrwertsteuer rechnet auf den ganzen Preis.",
+      "sprechtext": "Denn die Mehrwertsteuer rechnet auf den ganzen Preis.",
+      "bild_text_abgleich": [],
+      "text_karte": "Die MwSt rechnet auf den ganzen Preis."
+    },
+    {
+      "id": "pointe",
+      "phase": "pointe",
+      "text": "Endet der Tankrabatt am 31. Dezember, steigt auch die Steuer auf Steuer. Rund 27 Euro mehr im Jahr, ohne neuen Beschluss.",
+      "sprechtext": "Endet der Tankrabatt am einunddreißigsten Dezember, steigt auch die Steuer auf Steuer.\nRund siebenundzwanzig Euro mehr im Jahr, ohne neuen Beschluss.",
+      "bild_text_abgleich": [],
+      "text_karte": "Tankrabatt endet am 31.12.2026: +2,67 Cent je Liter · +26,68 € im Jahr"
+    },
+    {
+      "id": "schlusskarte",
+      "phase": "schlusskarte",
+      "text": "Steuer auf Steuer: rund 154 Euro im Jahr.",
+      "sprechtext": "Steuer auf Steuer: rund hundertvierundfünfzig Euro im Jahr.",
+      "bild_text_abgleich": [],
+      "text_karte": "Steuer auf Steuer: 153,92 € im Jahr"
+    }
+  ],
+  "caption": "Benzin: Wie viel Steuer auf Steuer zahlst du pro Tankfüllung? ⛽ Ich hab's simuliert. Hättest du mehr oder weniger getippt? 👇 #benzin #tanken #steuern #wissen #simulation",
+  "originalitaet": "Suchen: „Steuer auf Steuer Benzin Mehrwertsteuer Energiesteuer pro Tankfüllung“, „\"Steuer auf Steuer\" Tanken Video YouTube Shorts“ (10.11.2026) · Ergebnis: nur Artikel (Steuerzahlerbund-Kritik, auto motor und sport je Liter), kein deutsches Video mit Rechnung je Tankfüllung und Rabatt-Ende gefunden",
+  "nachfrage": "„wie viel steuern auf benzin“, „wie viel steuern sind auf 1 liter benzin“, „co2 preis 2027 benzin“ · Google-Autocomplete · 10.11.2026; Anlass: Tankrabatt endet 31.12.2026",
+  "rechenweg": "CO2 je Liter = 0,755 t/1.000 l × 43,5 GJ/t × 0,0729 t/GJ = 2,3942 kg; × 65 €/t = 15,56 ct/l netto (55 €/t: 13,17). Steuer auf Steuer 2027 = 19 % × (65,45 + 15,56) = 15,39 ct/l; × 50 l = 7,70 €; × 1.000 l = 153,92 €. Mit Tankrabatt: 19 % × (51,41 + 15,56) = 12,72 ct/l; 6,36 €/Tank; 127,25 €/Jahr. Anstieg nach Rabatt-Ende = 19 % × 14,04 = 2,67 ct/l; 1,33 €/Tank; 26,68 €/Jahr. Zwischenstände: 10 l 1,54 €, 30 l 4,62 €, 40 l 6,16 €. Abgleich Bundestag: 14,04 × 1,19 = 16,71 ≈ 17 ct brutto. Nachgerechnet mit Python (cockpit/daten/tmp/rechnung-benzin.py).",
+  "zahlen": {
+    "energiesteuer_benzin_ct_l": 65.45,
+    "tankrabatt_ct_l": 14.04,
+    "energiesteuer_rabatt_ct_l": 51.41,
+    "co2_t_je_1000l": 2.3942,
+    "co2_preis_eur_t": 65,
+    "co2_anteil_netto_ct_l": 15.56,
+    "mwst_auf_energiesteuer_ct_l": 12.44,
+    "mwst_auf_co2_ct_l": 2.96,
+    "steuer_auf_steuer_2027_ct_l": 15.39,
+    "steuer_auf_steuer_rabatt_ct_l": 12.72,
+    "je_tank_50l_2027_eur": 7.7,
+    "je_tank_50l_rabatt_eur": 6.36,
+    "jahr_1000l_2027_eur": 153.92,
+    "jahr_1000l_rabatt_eur": 127.25,
+    "anstieg_nach_rabatt_ct_l": 2.67,
+    "anstieg_je_tank_eur": 1.33,
+    "anstieg_jahr_eur": 26.68,
+    "zwischenstand_10l_eur": 1.54,
+    "zwischenstand_30l_eur": 4.62,
+    "zwischenstand_40l_eur": 6.16
+  },
+  "annahmen": [
+    "(A) Modellperson tankt Super, gerechnet als fossiles Benzin nach EBeV-Standardwert; ein Bioethanol-Anteil (E5/E10) senkt den CO2-Anteil und damit die Steuer auf Steuer um wenige Zehntel Cent je Liter.",
+    "(A) CO2-Preis 2027 = 65 €/t (Obergrenze des Korridors, wie beim Zuschlag der ersten Versteigerung 2026); bei 55 €/t wären es 14,94 statt 15,39 ct/l. Der Korridor 2027 ist vom Bundestag beschlossen (15.10.2026), Bundesrat und Verkündung standen bei der Recherche noch aus.",
+    "(A) Steuersätze ab 01.01.2027: Energiesteuer wieder 65,45 ct/l, weil der Tankrabatt am 31.12.2026 endet und keine Verlängerung vorgesehen ist (Stand Recherche 10.11.2026).",
+    "(A) 50 Liter je Tankfüllung, 1.000 Liter im Jahr (20 Tankfüllungen, etwa 13.000 km bei 7,7 l/100 km).",
+    "(A) „Steuer auf Steuer“ meint hier die Mehrwertsteuer auf Energiesteuer und auf den weitergegebenen CO2-Preis (der CO2-Preis ist rechtlich ein Zertifikatspreis, keine Steuer). Die Mehrwertsteuer auf den Warenpreis selbst ist nicht enthalten."
+  ],
+  "quellen": [
+    "(F) Energiesteuergesetz § 2 Abs. 1 Nr. 1: Benzin 654,50 €/1.000 l (65,45 ct/l), Stand 2026 – https://www.gesetze-im-internet.de/energiestg/__2.html",
+    "(F) Deutscher Bundestag, „Bundestag beschließt Tankrabatt …“, 25.09.2026: Energiesteuer auf Benzin und Diesel 01.10.–31.12.2026 um 14,04 ct/l gesenkt, mit MwSt rund 17 ct/l – https://www.bundestag.de/dokumente/textarchiv/2026/kw39-de-versicherung-aufsicht-1216898",
+    "(F) Ebner Stolz, „Erneuter Tankrabatt ab 01.10.2026“: Satz Benzin 514,10 €/1.000 l, keine Verlängerung vorgesehen, 2026 – https://www.ebnerstolz.de/de/unser-angebot/leistungen/steuerberatung/zollrecht-energiesteuer-aussenwirtschaft/erneuter-tankrabatt-ab-01.10.2026-113433.html",
+    "(F) Deutscher Bundestag, Brennstoffemissionshandelsgesetz, Beschluss 15.10.2026: CO2-Preiskorridor 55–65 €/t auch 2027 – https://www.bundestag.de/dokumente/textarchiv/2026/kw42-de-brennstoffemissionshandelsgesetz-1223608",
+    "(F) EEX, Pressemitteilung „EEX führt erste nEHS-Auktion erfolgreich durch“, 02.07.2026: Zuschlag 65 €/nEZ (Höchstpreis) – https://www.eex.com/fileadmin/Global/News/EEX/EEX_Press_Release/2026/20260702_EEX_nEHS_first_auction.pdf",
+    "(F) EBeV 2030 Anlage 2 Teil 4: Benzin Dichte 0,755 t/1.000 l, Heizwert 43,5 GJ/t, Emissionsfaktor 0,0729 t CO2/GJ, Stand 2026 – https://www.gesetze-im-internet.de/ebev_2030/anlage_2.html",
+    "(F) Umsatzsteuergesetz § 10 Abs. 1 (Bemessungsgrundlage ist das Entgelt, Verbrauchsteuern wie die Energiesteuer sind Teil davon) und § 12 Abs. 1 (19 %) – https://www.gesetze-im-internet.de/ustg_1980/__10.html",
+    "(F) auto motor und sport, „Warum zahlen wir 50 Euro pro Tankfüllung an den Staat?“, 2026: MwSt auf Energiesteuer und CO2-Abgabe rund 0,15 €/l (Plausibilitätsabgleich) – https://www.auto-motor-und-sport.de/verkehr/hoechste-eu-spritpreis-steigerung-warum-zahlen-wir-50-euro-pro-tankfuellung-an-den-staat/",
+    "(F) echo24, Bund der Steuerzahler zur „Steuer auf Steuer“ an der Zapfsäule, 2026 – https://www.echo24.de/welt/reiche-kritik-wegen-sprit-abzocke-staat-verdient-experte-sieht-glasklare-doppelbesteuerung-zr-94224919.html"
+  ],
+  "dramaturgie": [
+    "hook: Glassäule eines Liters Benzin in Schichten, Titelfrage und Zähler „Steuer auf Steuer 0,00 €“ ab Bild 1; Tankanzeige 0 von 50 Litern.",
+    "regeln: Chips „50 l Super“, „Sätze ab 01.01.2027“, „CO₂ 65 €/t“, „MwSt 19 %“ fliegen ein, der Zähler läuft an.",
+    "falle: Mehrwertsteuer-Schicht legt sich scheinbar nur über die unterste Schicht (Warenpreis), ruhiges Licht.",
+    "wendung1: Energiesteuer-Schicht leuchtet auf, darüber wächst eine dünne goldene Schicht (12,4 ct); erster Aha-Moment, leichter Zoom auf die Goldschicht.",
+    "wendung2: CO₂-Schicht kommt dazu, zweite goldene Schicht (3,0 ct); dann blendet ein Etikett „Tankrabatt −14,04 ct bis 31.12.“ ein und bleibt als offene Frage sichtbar.",
+    "rennen: Szenenwechsel an die Zapfsäule bei Nacht, Liter- und Euro-Zähler laufen synchron, Haltepunkte bei 10 l und 30 l; Quittung druckt ohne eigene Zeile. Spannung steigt.",
+    "kipp: Tankanzeige fast voll, Licht wird wärmer, Spannung am höchsten.",
+    "ergebnis: Zähler stoppt auf 7,70 €, goldenes Aufleuchten; Sprung auf eine Jahresleiste, 20 Tankfüllungen stapeln sich zu 153,92 €.",
+    "warum: Mehrwertsteuer-Rahmen legt sich sichtbar um alle Schichten.",
+    "pointe: Kalenderblatt 31.12. kippt, das Rabatt-Etikett fällt ab, die Goldschicht wächst ohne Zutun (+2,67 ct/l, +26,68 €/Jahr).",
+    "schlusskarte: Karte „Steuer auf Steuer: 153,92 € im Jahr“, darunter in den letzten 2–3 s der Folgen-Hinweis."
+  ],
+  "korrekturen": [
+    {
+      "feld": "segmente[*].text",
+      "alt": "Kartentexte (Kurzfassung mit Zahlen und Zeichen)",
+      "neu": "Untertitel-Fassung = Sprechtext mit Ziffern (Kartentext bleibt in text_karte)",
+      "quelle": "Skill simulierbar.md (Untertitel folgen der Stimme)",
+      "grund": "formal: Wortzeiten der Untertitel passen sonst nicht zur Stimme; Inhalt und Zahlen unverändert",
+      "zeit": "2026-11-10"
+    }
+  ]
+}

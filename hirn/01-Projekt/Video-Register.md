@@ -25,9 +25,9 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 |---|---|---|---|---|---|---|---|---|---|
 | 11.11. | Abend | Benzin: Wie viel Steuer zahlst du auf Steuer? | Preise und Lebenshaltung · Lernvideo | in Produktion | – | – | – | – | – |
 | 11.11. | Mittag | Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern? | Rente und Vorsorge · Duell | geplant | 85 s | – | – | – | – |
-| 10.11. | Abend | Kindergeld in Deutschland oder in Kanada: Wo zahlt der Staat bis 18 mehr? | Klassiker mit neuer Frage | gepostet | 75 s | 55 | – | – | – |
+| 10.11. | Abend | [Kindergeld in Deutschland oder in Kanada: Wo zahlt der Staat bis 18 mehr?](https://tiktok.com/@simulierbar/video/7706612169021852961) | Klassiker mit neuer Frage | gepostet | 75 s | 75 | – | – | – |
 | 10.11. | Mittag | [Maut 2021 oder heute: Welche Familie zahlt beim Einkaufen mehr mit?](https://tiktok.com/@simulierbar/video/7706503906116832544) | Versteckte Mechaniken | gepostet | 76 s | 257 | – | – | – |
-| 09.11. | Abend | [Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?](https://tiktok.com/@simulierbar/video/7706241140705479968) | Versteckte Mechaniken | gepostet | 73 s | 267 | 20,5 s (28 %) | 0 | – |
+| 09.11. | Abend | [Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?](https://tiktok.com/@simulierbar/video/7706241140705479968) | Versteckte Mechaniken | gepostet | 72 s | 267 | 20,5 s (28 %) | 0 | – |
 | 09.11. | Mittag | [Mindestlohn 2015 oder 2026: Wer kann sich mit einem Jahr Arbeit mehr leisten?](https://tiktok.com/@simulierbar/video/7706132764512292128) | Geschichte und Kurioses | gepostet | 74 s | 293 | 26,8 s (36 %) | 0 | – |
 | 08.11. | Abend | [1968 oder heute: Wie viel mehr Mehrwertsteuer zahlt ein Haushalt im Jahr?](https://www.tiktok.com/@simulierbar/video/7705869881165581600) | Geschichte und Kurioses | gepostet | 76 s | 294 | 25,9 s (34 %) | -1 | – |
 | 08.11. | Mittag | [Kaiserreich oder heute: Wer zahlt bei gleichem Gehalt mehr Steuern?](https://www.tiktok.com/@simulierbar/video/7705833029092052257) | Geschichte und Kurioses | gepostet | 76 s | 776 | 29,5 s (39 %) | -1 | – |
@@ -54,7 +54,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 |---|---|---|---|---|---|---|---|---|---|
 | 11.11. | Abend | Was wäre, wenn der Erdkern abkühlt? | Naturphänomene | in Produktion | – | – | – | – | – |
 | 11.11. | Mittag | Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft? | Naturphänomene · referenz_pov | geplant | 80 s | – | – | – | – |
-| 10.11. | Abend | Was wäre, wenn du die Polarnacht in Tromsø erlebst? | Physik, Wetter, Geografie, Weltraum · referenz_pov | gepostet | 80 s | 0 | – | – | – |
+| 10.11. | Abend | [Was wäre, wenn du die Polarnacht in Tromsø erlebst?](https://tiktok.com/@stelldirvor.pov/video/7706612156975811872) | Physik, Wetter, Geografie, Weltraum · referenz_pov | gepostet | 80 s | 80 | – | – | – |
 | 10.11. | Mittag | [Was wäre, wenn du 28 Jahre lang Ameisen zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706503882209381664) | Natur und Tiere · referenz_pov | gepostet | 80 s | 267 | – | – | – |
 | 09.11. | Abend | [Was wäre, wenn du 2.400 Jahre einem Pilzgeflecht zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706241106614193440) | Natur und Tiere · referenz_pov | gepostet | 80 s | 264 | 11,1 s (14 %) | 0 | – |
 | 09.11. | Mittag | [Teil 2: Erdachse ohne Neigung – was wird aus der Polarnacht?](https://tiktok.com/@stelldirvor.pov/video/7706132771348942113) | Folgeteil (Treffer-Serie) · referenz_pov | gepostet | 80 s | 242 | 7,3 s (9 %) | 0 | Teil 2 |
