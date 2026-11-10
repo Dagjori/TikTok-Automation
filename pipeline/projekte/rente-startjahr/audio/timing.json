@@ -1,0 +1,1011 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": {
+  "stability": 0.5,
+  "similarity_boost": 0.75
+ },
+ "dauer": 84.742,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Zweimal 2.000 € Rente im Monat. Wer zahlt mehr Steuern: Rentenstart 2010 oder heute?",
+   "start": 0.0,
+   "ende": 6.88,
+   "woerter": [
+    {
+     "wort": "Zweimal",
+     "start": 0.0,
+     "ende": 0.08
+    },
+    {
+     "wort": "2.000",
+     "start": 0.08,
+     "ende": 0.7599999999999999
+    },
+    {
+     "wort": "€",
+     "start": 0.7599999999999999,
+     "ende": 1.44
+    },
+    {
+     "wort": "Rente",
+     "start": 1.5,
+     "ende": 1.92
+    },
+    {
+     "wort": "im",
+     "start": 1.96,
+     "ende": 2.04
+    },
+    {
+     "wort": "Monat.",
+     "start": 2.08,
+     "ende": 2.44
+    },
+    {
+     "wort": "Wer",
+     "start": 2.48,
+     "ende": 2.72
+    },
+    {
+     "wort": "zahlt",
+     "start": 3.12,
+     "ende": 3.4
+    },
+    {
+     "wort": "mehr",
+     "start": 3.42,
+     "ende": 3.64
+    },
+    {
+     "wort": "Steuern:",
+     "start": 3.68,
+     "ende": 4.08
+    },
+    {
+     "wort": "Rentenstart",
+     "start": 4.16,
+     "ende": 5.088
+    },
+    {
+     "wort": "2010",
+     "start": 5.136,
+     "ende": 5.76
+    },
+    {
+     "wort": "oder",
+     "start": 6.0,
+     "ende": 6.48
+    },
+    {
+     "wort": "heute?",
+     "start": 6.52,
+     "ende": 6.88
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Beide sind alleinstehend, ohne weitere Einkünfte. Gerechnet wird das Steuerjahr 2026.",
+   "start": 6.96,
+   "ende": 14.08,
+   "woerter": [
+    {
+     "wort": "Beide",
+     "start": 6.96,
+     "ende": 7.72
+    },
+    {
+     "wort": "sind",
+     "start": 7.76,
+     "ende": 8.08
+    },
+    {
+     "wort": "alleinstehend,",
+     "start": 8.16,
+     "ende": 9.12
+    },
+    {
+     "wort": "ohne",
+     "start": 9.16,
+     "ende": 9.36
+    },
+    {
+     "wort": "weitere",
+     "start": 9.4,
+     "ende": 9.76
+    },
+    {
+     "wort": "Einkünfte.",
+     "start": 9.8,
+     "ende": 10.6
+    },
+    {
+     "wort": "Gerechnet",
+     "start": 10.8,
+     "ende": 11.28
+    },
+    {
+     "wort": "wird",
+     "start": 11.333,
+     "ende": 11.44
+    },
+    {
+     "wort": "das",
+     "start": 11.48,
+     "ende": 11.52
+    },
+    {
+     "wort": "Steuerjahr",
+     "start": 11.6,
+     "ende": 12.16
+    },
+    {
+     "wort": "2026.",
+     "start": 12.24,
+     "ende": 14.08
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, gleiche Rente, gleiche Steuer. Oder doch nicht?",
+   "start": 14.12,
+   "ende": 18.08,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 14.12,
+     "ende": 14.72
+    },
+    {
+     "wort": "gleiche",
+     "start": 14.8,
+     "ende": 15.04
+    },
+    {
+     "wort": "Rente,",
+     "start": 15.12,
+     "ende": 15.68
+    },
+    {
+     "wort": "gleiche",
+     "start": 15.76,
+     "ende": 16.0
+    },
+    {
+     "wort": "Steuer.",
+     "start": 16.08,
+     "ende": 16.48
+    },
+    {
+     "wort": "Oder",
+     "start": 16.96,
+     "ende": 17.2
+    },
+    {
+     "wort": "doch",
+     "start": 17.36,
+     "ende": 17.52
+    },
+    {
+     "wort": "nicht?",
+     "start": 17.6,
+     "ende": 18.08
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Das Finanzamt schaut auf das Startjahr der Rente. 2010 blieben 40 % steuerfrei. Heute sind es nur 16 %.",
+   "start": 18.32,
+   "ende": 26.88,
+   "woerter": [
+    {
+     "wort": "Das",
+     "start": 18.32,
+     "ende": 18.4
+    },
+    {
+     "wort": "Finanzamt",
+     "start": 18.48,
+     "ende": 19.12
+    },
+    {
+     "wort": "schaut",
+     "start": 19.16,
+     "ende": 19.36
+    },
+    {
+     "wort": "auf",
+     "start": 19.44,
+     "ende": 19.52
+    },
+    {
+     "wort": "das",
+     "start": 19.6,
+     "ende": 19.68
+    },
+    {
+     "wort": "Startjahr",
+     "start": 19.76,
+     "ende": 20.24
+    },
+    {
+     "wort": "der",
+     "start": 20.32,
+     "ende": 20.4
+    },
+    {
+     "wort": "Rente.",
+     "start": 20.44,
+     "ende": 21.2
+    },
+    {
+     "wort": "2010",
+     "start": 21.24,
+     "ende": 22.0
+    },
+    {
+     "wort": "blieben",
+     "start": 22.16,
+     "ende": 22.4
+    },
+    {
+     "wort": "40",
+     "start": 22.56,
+     "ende": 22.96
+    },
+    {
+     "wort": "%",
+     "start": 22.96,
+     "ende": 23.36
+    },
+    {
+     "wort": "steuerfrei.",
+     "start": 23.48,
+     "ende": 24.16
+    },
+    {
+     "wort": "Heute",
+     "start": 24.56,
+     "ende": 24.88
+    },
+    {
+     "wort": "sind",
+     "start": 24.96,
+     "ende": 25.12
+    },
+    {
+     "wort": "es",
+     "start": 25.2,
+     "ende": 25.28
+    },
+    {
+     "wort": "nur",
+     "start": 25.32,
+     "ende": 25.44
+    },
+    {
+     "wort": "16",
+     "start": 25.52,
+     "ende": 26.2
+    },
+    {
+     "wort": "%.",
+     "start": 26.2,
+     "ende": 26.88
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Dieser Teil wird einmal in Euro festgeschrieben. Bei ihr sind es rund 6.400 € im Jahr. Bei ihm nur rund 3.900 €.",
+   "start": 26.96,
+   "ende": 35.64,
+   "woerter": [
+    {
+     "wort": "Dieser",
+     "start": 26.96,
+     "ende": 27.12
+    },
+    {
+     "wort": "Teil",
+     "start": 27.2,
+     "ende": 27.44
+    },
+    {
+     "wort": "wird",
+     "start": 27.48,
+     "ende": 27.68
+    },
+    {
+     "wort": "einmal",
+     "start": 27.8,
+     "ende": 28.0
+    },
+    {
+     "wort": "in",
+     "start": 28.08,
+     "ende": 28.16
+    },
+    {
+     "wort": "Euro",
+     "start": 28.32,
+     "ende": 28.56
+    },
+    {
+     "wort": "festgeschrieben.",
+     "start": 28.64,
+     "ende": 29.68
+    },
+    {
+     "wort": "Bei",
+     "start": 29.76,
+     "ende": 29.84
+    },
+    {
+     "wort": "ihr",
+     "start": 29.88,
+     "ende": 30.0
+    },
+    {
+     "wort": "sind",
+     "start": 30.08,
+     "ende": 30.24
+    },
+    {
+     "wort": "es",
+     "start": 30.32,
+     "ende": 30.4
+    },
+    {
+     "wort": "rund",
+     "start": 30.44,
+     "ende": 30.64
+    },
+    {
+     "wort": "6.400",
+     "start": 30.72,
+     "ende": 31.4
+    },
+    {
+     "wort": "€",
+     "start": 31.4,
+     "ende": 32.08
+    },
+    {
+     "wort": "im",
+     "start": 32.16,
+     "ende": 32.24
+    },
+    {
+     "wort": "Jahr.",
+     "start": 32.32,
+     "ende": 32.88
+    },
+    {
+     "wort": "Bei",
+     "start": 32.96,
+     "ende": 33.04
+    },
+    {
+     "wort": "ihm",
+     "start": 33.12,
+     "ende": 33.28
+    },
+    {
+     "wort": "nur",
+     "start": 33.52,
+     "ende": 33.6
+    },
+    {
+     "wort": "rund",
+     "start": 33.68,
+     "ende": 33.84
+    },
+    {
+     "wort": "3.900",
+     "start": 34.0,
+     "ende": 34.82
+    },
+    {
+     "wort": "€.",
+     "start": 34.82,
+     "ende": 35.64
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Dabei war ihre Rente 2010 viel kleiner. Sie bekam rund 1.300 € im Monat. Seitdem ist sie um die Hälfte gestiegen. Auf ihrem Bescheid stehen 60 % steuerpflichtig. Stimmt das heute noch?",
+   "start": 35.84,
+   "ende": 48.36,
+   "woerter": [
+    {
+     "wort": "Dabei",
+     "start": 35.84,
+     "ende": 36.08
+    },
+    {
+     "wort": "war",
+     "start": 36.16,
+     "ende": 36.24
+    },
+    {
+     "wort": "ihre",
+     "start": 36.28,
+     "ende": 36.48
+    },
+    {
+     "wort": "Rente",
+     "start": 36.56,
+     "ende": 36.8
+    },
+    {
+     "wort": "2010",
+     "start": 36.88,
+     "ende": 37.68
+    },
+    {
+     "wort": "viel",
+     "start": 37.84,
+     "ende": 38.08
+    },
+    {
+     "wort": "kleiner.",
+     "start": 38.16,
+     "ende": 38.88
+    },
+    {
+     "wort": "Sie",
+     "start": 38.92,
+     "ende": 38.96
+    },
+    {
+     "wort": "bekam",
+     "start": 39.04,
+     "ende": 39.36
+    },
+    {
+     "wort": "rund",
+     "start": 39.44,
+     "ende": 39.6
+    },
+    {
+     "wort": "1.300",
+     "start": 39.76,
+     "ende": 40.2
+    },
+    {
+     "wort": "€",
+     "start": 40.2,
+     "ende": 40.64
+    },
+    {
+     "wort": "im",
+     "start": 40.72,
+     "ende": 40.8
+    },
+    {
+     "wort": "Monat.",
+     "start": 40.88,
+     "ende": 41.52
+    },
+    {
+     "wort": "Seitdem",
+     "start": 41.56,
+     "ende": 42.0
+    },
+    {
+     "wort": "ist",
+     "start": 42.08,
+     "ende": 42.16
+    },
+    {
+     "wort": "sie",
+     "start": 42.24,
+     "ende": 42.32
+    },
+    {
+     "wort": "um",
+     "start": 42.36,
+     "ende": 42.4
+    },
+    {
+     "wort": "die",
+     "start": 42.48,
+     "ende": 42.56
+    },
+    {
+     "wort": "Hälfte",
+     "start": 42.587,
+     "ende": 42.88
+    },
+    {
+     "wort": "gestiegen.",
+     "start": 43.0,
+     "ende": 43.76
+    },
+    {
+     "wort": "Auf",
+     "start": 43.84,
+     "ende": 43.92
+    },
+    {
+     "wort": "ihrem",
+     "start": 43.96,
+     "ende": 44.08
+    },
+    {
+     "wort": "Bescheid",
+     "start": 44.16,
+     "ende": 44.56
+    },
+    {
+     "wort": "stehen",
+     "start": 44.64,
+     "ende": 44.88
+    },
+    {
+     "wort": "60",
+     "start": 45.04,
+     "ende": 45.44
+    },
+    {
+     "wort": "%",
+     "start": 45.44,
+     "ende": 45.84
+    },
+    {
+     "wort": "steuerpflichtig.",
+     "start": 45.92,
+     "ende": 47.0
+    },
+    {
+     "wort": "Stimmt",
+     "start": 47.2,
+     "ende": 47.44
+    },
+    {
+     "wort": "das",
+     "start": 47.52,
+     "ende": 47.6
+    },
+    {
+     "wort": "heute",
+     "start": 47.64,
+     "ende": 47.84
+    },
+    {
+     "wort": "noch?",
+     "start": 47.96,
+     "ende": 48.36
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "text": "Jetzt kommen die Abzüge. Krankenversicherung und Pflegeversicherung kosten beide gleich viel, rund 3.000 €. Dann zählt der Grundfreibetrag. Er liegt rund 5.000 € darüber. Sie nur rund 2.600 €.",
+   "start": 48.64,
+   "ende": 62.56,
+   "woerter": [
+    {
+     "wort": "Jetzt",
+     "start": 48.64,
+     "ende": 48.88
+    },
+    {
+     "wort": "kommen",
+     "start": 48.96,
+     "ende": 49.12
+    },
+    {
+     "wort": "die",
+     "start": 49.2,
+     "ende": 49.28
+    },
+    {
+     "wort": "Abzüge.",
+     "start": 49.36,
+     "ende": 49.92
+    },
+    {
+     "wort": "Krankenversicherung",
+     "start": 50.24,
+     "ende": 51.12
+    },
+    {
+     "wort": "und",
+     "start": 51.2,
+     "ende": 51.28
+    },
+    {
+     "wort": "Pflegeversicherung",
+     "start": 51.36,
+     "ende": 52.24
+    },
+    {
+     "wort": "kosten",
+     "start": 52.32,
+     "ende": 52.64
+    },
+    {
+     "wort": "beide",
+     "start": 52.72,
+     "ende": 52.96
+    },
+    {
+     "wort": "gleich",
+     "start": 53.04,
+     "ende": 53.28
+    },
+    {
+     "wort": "viel,",
+     "start": 53.36,
+     "ende": 53.84
+    },
+    {
+     "wort": "rund",
+     "start": 53.92,
+     "ende": 54.16
+    },
+    {
+     "wort": "3.000",
+     "start": 54.24,
+     "ende": 54.88
+    },
+    {
+     "wort": "€.",
+     "start": 54.88,
+     "ende": 55.52
+    },
+    {
+     "wort": "Dann",
+     "start": 55.6,
+     "ende": 55.76
+    },
+    {
+     "wort": "zählt",
+     "start": 55.84,
+     "ende": 56.08
+    },
+    {
+     "wort": "der",
+     "start": 56.12,
+     "ende": 56.16
+    },
+    {
+     "wort": "Grundfreibetrag.",
+     "start": 56.24,
+     "ende": 57.28
+    },
+    {
+     "wort": "Er",
+     "start": 57.52,
+     "ende": 57.68
+    },
+    {
+     "wort": "liegt",
+     "start": 57.76,
+     "ende": 57.92
+    },
+    {
+     "wort": "rund",
+     "start": 58.0,
+     "ende": 58.16
+    },
+    {
+     "wort": "5.000",
+     "start": 58.24,
+     "ende": 58.64
+    },
+    {
+     "wort": "€",
+     "start": 58.64,
+     "ende": 59.04
+    },
+    {
+     "wort": "darüber.",
+     "start": 59.12,
+     "ende": 59.8
+    },
+    {
+     "wort": "Sie",
+     "start": 60.0,
+     "ende": 60.16
+    },
+    {
+     "wort": "nur",
+     "start": 60.32,
+     "ende": 60.48
+    },
+    {
+     "wort": "rund",
+     "start": 60.52,
+     "ende": 60.72
+    },
+    {
+     "wort": "2.600",
+     "start": 60.8,
+     "ende": 61.68
+    },
+    {
+     "wort": "€.",
+     "start": 61.68,
+     "ende": 62.56
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Sie zahlt 418 € Steuern. Er zahlt 945 €. Bei gleicher Rente 527 € mehr im Jahr.",
+   "start": 62.64,
+   "ende": 71.52,
+   "woerter": [
+    {
+     "wort": "Sie",
+     "start": 62.64,
+     "ende": 62.72
+    },
+    {
+     "wort": "zahlt",
+     "start": 62.8,
+     "ende": 63.12
+    },
+    {
+     "wort": "418",
+     "start": 63.2,
+     "ende": 63.76
+    },
+    {
+     "wort": "€",
+     "start": 63.76,
+     "ende": 64.32
+    },
+    {
+     "wort": "Steuern.",
+     "start": 64.48,
+     "ende": 65.2
+    },
+    {
+     "wort": "Er",
+     "start": 65.28,
+     "ende": 65.36
+    },
+    {
+     "wort": "zahlt",
+     "start": 65.44,
+     "ende": 65.76
+    },
+    {
+     "wort": "945",
+     "start": 65.84,
+     "ende": 66.80000000000001
+    },
+    {
+     "wort": "€.",
+     "start": 66.80000000000001,
+     "ende": 67.76
+    },
+    {
+     "wort": "Bei",
+     "start": 67.8,
+     "ende": 67.84
+    },
+    {
+     "wort": "gleicher",
+     "start": 67.92,
+     "ende": 68.24
+    },
+    {
+     "wort": "Rente",
+     "start": 68.32,
+     "ende": 68.72
+    },
+    {
+     "wort": "527",
+     "start": 68.96,
+     "ende": 69.8
+    },
+    {
+     "wort": "€",
+     "start": 69.8,
+     "ende": 70.64
+    },
+    {
+     "wort": "mehr",
+     "start": 70.72,
+     "ende": 70.88
+    },
+    {
+     "wort": "im",
+     "start": 70.96,
+     "ende": 71.04
+    },
+    {
+     "wort": "Jahr.",
+     "start": 71.12,
+     "ende": 71.52
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Ihr Freibetrag ist größer. Und jeder Euro darüber kostet mehr Steuern.",
+   "start": 71.68,
+   "ende": 76.4,
+   "woerter": [
+    {
+     "wort": "Ihr",
+     "start": 71.68,
+     "ende": 71.76
+    },
+    {
+     "wort": "Freibetrag",
+     "start": 71.84,
+     "ende": 72.4
+    },
+    {
+     "wort": "ist",
+     "start": 72.48,
+     "ende": 72.56
+    },
+    {
+     "wort": "größer.",
+     "start": 72.64,
+     "ende": 73.2
+    },
+    {
+     "wort": "Und",
+     "start": 73.36,
+     "ende": 73.52
+    },
+    {
+     "wort": "jeder",
+     "start": 73.6,
+     "ende": 73.84
+    },
+    {
+     "wort": "Euro",
+     "start": 73.92,
+     "ende": 74.16
+    },
+    {
+     "wort": "darüber",
+     "start": 74.28,
+     "ende": 74.64
+    },
+    {
+     "wort": "kostet",
+     "start": 74.8,
+     "ende": 75.2
+    },
+    {
+     "wort": "mehr",
+     "start": 75.28,
+     "ende": 75.44
+    },
+    {
+     "wort": "Steuern.",
+     "start": 75.6,
+     "ende": 76.4
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "text": "Und ihre 60 %? Weil jede Erhöhung voll zählt, sind es heute fast 74.",
+   "start": 76.52,
+   "ende": 82.16,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 76.52,
+     "ende": 76.64
+    },
+    {
+     "wort": "ihre",
+     "start": 76.72,
+     "ende": 76.88
+    },
+    {
+     "wort": "60",
+     "start": 76.96,
+     "ende": 77.56
+    },
+    {
+     "wort": "%?",
+     "start": 77.56,
+     "ende": 78.16
+    },
+    {
+     "wort": "Weil",
+     "start": 78.2,
+     "ende": 78.32
+    },
+    {
+     "wort": "jede",
+     "start": 78.4,
+     "ende": 78.56
+    },
+    {
+     "wort": "Erhöhung",
+     "start": 78.64,
+     "ende": 79.04
+    },
+    {
+     "wort": "voll",
+     "start": 79.2,
+     "ende": 79.36
+    },
+    {
+     "wort": "zählt,",
+     "start": 79.52,
+     "ende": 79.92
+    },
+    {
+     "wort": "sind",
+     "start": 79.96,
+     "ende": 80.08
+    },
+    {
+     "wort": "es",
+     "start": 80.16,
+     "ende": 80.24
+    },
+    {
+     "wort": "heute",
+     "start": 80.32,
+     "ende": 80.56
+    },
+    {
+     "wort": "fast",
+     "start": 80.64,
+     "ende": 80.88
+    },
+    {
+     "wort": "74.",
+     "start": 80.96,
+     "ende": 82.16
+    }
+   ]
+  },
+  {
+   "id": "schluss",
+   "text": "Gleiche Rente, das Startjahr entscheidet.",
+   "start": 82.2,
+   "ende": 84.8,
+   "woerter": [
+    {
+     "wort": "Gleiche",
+     "start": 82.2,
+     "ende": 82.48
+    },
+    {
+     "wort": "Rente,",
+     "start": 82.56,
+     "ende": 83.28
+    },
+    {
+     "wort": "das",
+     "start": 83.36,
+     "ende": 83.44
+    },
+    {
+     "wort": "Startjahr",
+     "start": 83.52,
+     "ende": 84.0
+    },
+    {
+     "wort": "entscheidet.",
+     "start": 84.08,
+     "ende": 84.8
+    }
+   ]
+  }
+ ]
+}

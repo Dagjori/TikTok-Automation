@@ -1,0 +1,12 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { videoZahlen } from "./rente_startjahr.mjs";
+const Z = videoZahlen();
+test("Jahresrente 2026 je 24.508,95 €", () => assert.equal(Math.round(Z.jahresrente * 100) / 100, 24508.95));
+test("Rente 2010: 1.334 € im Monat, seitdem +50 %", () => { assert.equal(Math.round(Z.monat2010A), 1334); assert.equal(Math.round(Z.steigerungA * 100), 50); });
+test("Steuerfreier Teil fest: A 6.433 €, B 3.921 €", () => { assert.equal(Math.round(Z.freiA), 6433); assert.equal(Math.round(Z.freiB), 3921); });
+test("Heutiger Anteil von A: 73,8 %", () => assert.equal(Math.round(Z.anteilA * 1000) / 10, 73.8));
+test("Vorsorge 3.027 €, zvE 14.910 / 17.422", () => { assert.equal(Math.round(Z.vorsorge), 3027); assert.equal(Z.zveA, 14910); assert.equal(Z.zveB, 17422); });
+test("Über dem Grundfreibetrag: 2.562 / 5.074", () => { assert.equal(Z.ueberA, 2562); assert.equal(Z.ueberB, 5074); });
+test("Steuer 418 € gegen 945 €, Differenz 527 € (43,92 €/Monat)", () => { assert.equal(Z.estA, 418); assert.equal(Z.estB, 945); assert.equal(Z.diffJahr, 527); assert.equal(Math.round(Z.diffMonat * 100) / 100, 43.92); });
+test("Steuersatz auf den nächsten Euro: 18,7 % gegen 23,3 %", () => { assert.equal(Math.round(Z.grenzA * 1000) / 10, 18.7); assert.equal(Math.round(Z.grenzB * 1000) / 10, 23.3); });

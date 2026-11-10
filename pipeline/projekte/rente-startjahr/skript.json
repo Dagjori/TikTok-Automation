@@ -1,0 +1,147 @@
+{
+ "titel": "Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern?",
+ "skill": "video-produktion",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-11-mittag",
+ "stil": "20 Glas & Licht (Lichtlabor)",
+ "stil_begruendung": "Zwei Messzylinder aus Glas in dunklem Labor mit Lichtkegeln: Der Betrag, der besteuert wird, läuft als leuchtende Flüssigkeit durch eine Abzugstreppe (Jahresrente → steuerpflichtig → zu versteuerndes Einkommen → über dem Grundfreibetrag → Steuer). Füllstand = Zahl, das Röhrchen in der Mitte zeigt den Unterschied. Dunkle Welt mit Leuchtakzenten (REA R13/R23), Umgebung vorhanden (Laborbank mit Spiegelung, Staub, Kaustik), Türkis (2010) gegen Violett (2026), nie Gelb. Vortage: Stil 17 (10.11. Mittag) und 19 (10.11. Abend), Stil 20 zuletzt am 09.11.",
+ "teamfarben": {
+  "Rentnerin 2010": "#22C6D6",
+  "Rentner 2026": "#A06BFF"
+ },
+ "klangteppich": "raum",
+ "stil_helligkeit": "dunkel",
+ "suchbegriff": "Rente",
+ "testbloecke": {
+  "folgen_hinweis": "mit"
+ },
+ "folgen_hinweis": "Jeden Tag eine Geldfrage im Profil",
+ "teil": 1,
+ "format": "Duell",
+ "zweite_frage": {
+  "text": "Auf dem Bescheid der Rentnerin von 2010 stehen 60 % steuerpflichtig. Stimmt das heute noch? (Nein: 73,8 %, weil jede Erhöhung voll zählt)",
+  "gesetzt_in": "wendung2",
+  "aufgeloest_in": "pointe"
+ },
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Zweimal 2.000 € Rente im Monat. Wer zahlt mehr Steuern: Rentenstart 2010 oder heute?",
+   "sprechtext": "Zweimal zweitausend Euro Rente im Monat.\nWer zahlt mehr Steuern: Rentenstart zweitausendzehn oder heute?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "Beide sind alleinstehend, ohne weitere Einkünfte. Gerechnet wird das Steuerjahr 2026.",
+   "sprechtext": "Beide sind alleinstehend, ohne weitere Einkünfte.\nGerechnet wird das Steuerjahr zweitausendsechsundzwanzig.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, gleiche Rente, gleiche Steuer. Oder doch nicht?",
+   "sprechtext": "Klar, gleiche Rente, gleiche Steuer.\nOder doch nicht?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Das Finanzamt schaut auf das Startjahr der Rente. 2010 blieben 40 % steuerfrei. Heute sind es nur 16 %.",
+   "sprechtext": "Das Finanzamt schaut auf das Startjahr der Rente.\nZweitausendzehn blieben vierzig Prozent steuerfrei.\nHeute sind es nur sechzehn Prozent.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Dieser Teil wird einmal in Euro festgeschrieben. Bei ihr sind es rund 6.400 € im Jahr. Bei ihm nur rund 3.900 €.",
+   "sprechtext": "Dieser Teil wird einmal in Euro festgeschrieben.\nBei ihr sind es rund sechstausendvierhundert Euro im Jahr.\nBei ihm nur rund dreitausendneunhundert Euro.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Dabei war ihre Rente 2010 viel kleiner. Sie bekam rund 1.300 € im Monat. Seitdem ist sie um die Hälfte gestiegen. Auf ihrem Bescheid stehen 60 % steuerpflichtig. Stimmt das heute noch?",
+   "sprechtext": "Dabei war ihre Rente zweitausendzehn viel kleiner.\nSie bekam rund dreizehnhundert Euro im Monat.\nSeitdem ist sie um die Hälfte gestiegen.\nAuf ihrem Bescheid stehen sechzig Prozent steuerpflichtig.\nStimmt das heute noch?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "kipp",
+   "phase": "kipp",
+   "text": "Jetzt kommen die Abzüge. Krankenversicherung und Pflegeversicherung kosten beide gleich viel, rund 3.000 €. Dann zählt der Grundfreibetrag. Er liegt rund 5.000 € darüber. Sie nur rund 2.600 €.",
+   "sprechtext": "Jetzt kommen die Abzüge.\nKrankenversicherung und Pflegeversicherung kosten beide gleich viel, rund dreitausend Euro.\nDann zählt der Grundfreibetrag.\nEr liegt rund fünftausend Euro darüber.\nSie nur rund zweitausendsechshundert Euro.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Sie zahlt 418 € Steuern. Er zahlt 945 €. Bei gleicher Rente 527 € mehr im Jahr.",
+   "sprechtext": "Sie zahlt vierhundertachtzehn Euro Steuern.\nEr zahlt neunhundertfünfundvierzig Euro.\nBei gleicher Rente fünfhundertsiebenundzwanzig Euro mehr im Jahr.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Ihr Freibetrag ist größer. Und jeder Euro darüber kostet mehr Steuern.",
+   "sprechtext": "Ihr Freibetrag ist größer.\nUnd jeder Euro darüber kostet mehr Steuern.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "pointe",
+   "phase": "pointe",
+   "text": "Und ihre 60 %? Weil jede Erhöhung voll zählt, sind es heute fast 74.",
+   "sprechtext": "Und ihre sechzig Prozent?\nWeil jede Erhöhung voll zählt, sind es heute fast vierundsiebzig.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "schluss",
+   "phase": "schlusskarte",
+   "text": "Gleiche Rente, das Startjahr entscheidet.",
+   "sprechtext": "Gleiche Rente, das Startjahr entscheidet.",
+   "bild_text_abgleich": []
+  }
+ ],
+ "caption": "Rente 2010 oder 2026: gleiche 2.000 €, wer zahlt mehr Steuern? 💶 Ich hab’s simuliert. Gleiche Steuer getippt? 👇 #rente #rentensteuer #steuern #wissen #simulation",
+ "originalitaet": "Suche: gleiche Rente 2000 Euro Rentenbeginn 2010 2026 netto Steuer · Ergebnis: nur Artikel und Tabellen, kein deutsches Video gefunden",
+ "rechenweg": "Monatsrente 2026: 2.000 € (Jan–Jun, Rentenwert 40,79), ab Juli 2.000×42,52/40,79 = 2.084,82 €; Jahr = 6×2.000 + 6×2.084,82 = 24.508,95 €. A (Beginn 2010): Rente folgte dem Rentenwert West, 2010 = 2.000×27,20/40,79 = 1.333,66 €; Jahresrente 2011 (Festschreibungsjahr) = 2.000/40,79×(6×27,20+6×27,47) = 16.083,35 €; steuerfreier Teil fest 40 % = 6.433,34 €. B (Beginn 2026): steuerfrei 16 % × 24.508,95 = 3.921,43 €. Steuerpflichtig: A 24.508,95−6.433,34 = 18.075,61 € (73,8 %), B 20.587,52 € (84 %). Abzüge je: Vorsorge (7,3+1,45+3,6 %)×24.508,95 = 3.026,86 €, Werbungskosten 102 €, Sonderausgaben 36 €. zvE: A 14.910 €, B 17.422 €. ESt § 32a 2026 Zone 2: (914,51·y+1.400)·y, y=(zvE−12.348)/10.000 → A 418 €, B 945 €. Differenz 527 €/Jahr = 43,92 €/Monat. Nachgerechnet mit Python (cockpit/daten/tmp/rechnung_rente.py).",
+ "zahlen": {
+  "jahresrente_2026_je": "24.508,95 €",
+  "monat_bis_juni": "2.000,00 €",
+  "monat_ab_juli": "2.084,82 €",
+  "rente_A_2010_monat": "1.333,66 €",
+  "jahresrente_A_2011": "16.083,35 €",
+  "steuerfrei_A_fest": "6.433,34 € (40 % von 16.083,35 €)",
+  "steuerfrei_B_2026": "3.921,43 € (16 % von 24.508,95 €)",
+  "steuerpflichtig_A": "18.075,61 € (73,8 %)",
+  "steuerpflichtig_B": "20.587,52 € (84,0 %)",
+  "vorsorge_je": "3.026,86 € (12,35 %)",
+  "pauschalen": "102 € + 36 €",
+  "zvE_A": "14.910 €",
+  "zvE_B": "17.422 €",
+  "ueber_grundfreibetrag_A": "2.562 €",
+  "ueber_grundfreibetrag_B": "5.074 €",
+  "est_A": "418 €",
+  "est_B": "945 €",
+  "differenz_jahr": "527 €",
+  "differenz_monat": "43,92 €"
+ },
+ "annahmen": [
+  "(A) Beide alleinstehend, keine weiteren Einkünfte, nur gesetzliche Rente, keine Kirchensteuer, kein Soli (fällt in dieser Höhe nicht an).",
+  "(A) Gleiche Rente: beide bekommen Januar bis Juni 2026 je 2.000 € brutto im Monat, ab Juli 2.084,82 € (+4,24 %); Jahresrente 2026 je 24.508,95 €.",
+  "(A) Rentnerin A: Rentenbeginn Januar 2010, Rentenwert West, ihre Rente folgte allen Anpassungen (2010: 1.333,66 €/Monat).",
+  "(A) Rentner B: Rentenbeginn Januar 2026 (im Beginnjahr gilt der Anteil von 84 %, die Festschreibung in Euro folgt 2027).",
+  "(A) KV 7,3 % + halber Durchschnitts-Zusatzbeitrag 1,45 %, PV 3,6 % (mit Kind), voll als Vorsorgeaufwendungen abziehbar; je 3.026,86 €.",
+  "(A) Modellrechnung, keine Steuerberatung; reale Bescheide hängen von Kasse, Kindern und weiteren Einkünften ab."
+ ],
+ "quellen": [
+  "(F) § 22 Nr. 1 Satz 3 Buchst. a Doppelbuchst. aa EStG, Besteuerungsanteil-Tabelle (2010: 60 %, 2026: 84 %; Stufen von 0,5 Punkten seit Wachstumschancengesetz), BGBl. 2024 I Nr. 108, Stand 2026 – https://www.gesetze-im-internet.de/estg/__22.html",
+  "(F) Übersicht zur Rentenbesteuerung 2026 (Renten und Steuern), Bundesministerium der Finanzen, Juni 2026 (steuerfreier Teil wird im Jahr nach Rentenbeginn festgeschrieben; Werbungskosten 102 €, Sonderausgaben 36 €) – https://finanzamt.brandenburg.de/sixcms/media.php/9/Renten%20und%20Steuern_BMF-Tabelle%202026.pdf",
+  "(F) § 32a Abs. 1 EStG, Tarif ab Veranlagungszeitraum 2026 (Grundfreibetrag 12.348 €, Zonenformeln), Stand 2026 – https://www.gesetze-im-internet.de/estg/__32a.html",
+  "(F) Aktueller Rentenwert West 2010–2026 (27,20 € bis 42,52 €) nach § 68 SGB VI, sozialversicherung-kompetent.de, Stand 2026 – https://sozialversicherung-kompetent.de/rentenversicherung/zahlen-werte/650-aktueller-rentenwert.html",
+  "(F) Rentenanpassung 1. Juli 2026: +4,24 %, Rentenwert 40,79 € → 42,52 €, Deutsche Rentenversicherung, 29.04.2026 – https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/260429-rentenanpassung-2026-bundeskabinett.html",
+  "(F) Durchschnittlicher Zusatzbeitrag GKV 2026: 2,9 %, allgemeiner Beitragssatz 14,6 %, vdek Änderungen Gesundheitswesen 2026 – https://www.vdek.com/politik/was-aendert-sich/gesundheitswesen-2026/",
+  "(F) Beitragssatz Pflegeversicherung 2026: 3,6 % (Kinderlose 4,2 %), § 55 SGB XI, sozialversicherung-kompetent.de, 2026 – https://sozialversicherung-kompetent.de/pflegeversicherung/versicherungsrecht/1636-beitragssatz-pflegeversicherung-2026.html"
+ ],
+ "korrekturen": []
+}
