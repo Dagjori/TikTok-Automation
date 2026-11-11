@@ -69,6 +69,7 @@ Keine bekannten. Zuletzt bereinigt am 10.11.2026: **Einstieg Account 2** („ahn
 - [ ] Die „Zutaten des Tages“ nennt der Skill `themen-skript` nicht mehr; klären, ob das Cockpit sie weiter ziehen soll ([[Originalität und Themenfindung]]).
 - [ ] Radar-Prompt dauerhaft auf `CLAUDE.md` umstellen (nur in der Radar-Sitzung möglich, optional).
 - [ ] **Vorschläge der Lernschleife 10.11.** (zur Freigabe, [[Insights 2026-11-10]]): Simulierbar erste Wendung wirklich bis 15 s (hoch, `v-2026-11-10-acc1-1`); Stil 18 pausieren (niedrig, `v-2026-11-10-acc1-2`); stelldirvor erste 8 s im Tageslicht nach den Einstiegsblöcken (mittel, `v-2026-11-10-acc2-1`).
+- [ ] **Vorschlag der Lernschleife 11.11.** (zur Freigabe, [[Insights 2026-11-11]]): stelldirvor Leitmotiv wechseln, kein Themenkreis (Polarnacht/Polarlicht) öfter als 1 von 4 Videos, Treffer-Folge nur einmal (mittel, `v-2026-11-11-acc2-1`).
 
 ## Siehe auch
 [[Pipeline und Skills]] · [[Pläne und Kalender]] · [[Entscheidungen Log]] · [[Index]]
