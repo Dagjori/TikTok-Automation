@@ -1,0 +1,17 @@
+{
+  "_hinweis": "Tonplan atmo.py: Novembernachmittag am Dorfbahnsteig (Wind, ferne Dorfgeräusche und Verkehr, die mit den Stufen leiser werden), Netzbrummen mit sinkender Frequenz 50 → 47,5 Hz (f_kurve), Grollen bei 2,5 s, Relais-Klacks bei jeder Stufe (Protokoll), Riser vor 58 s, Stille nach dem Zusammenbruch, Abspann leise.",
+  "dauer": 80,
+  "seed": 20261112,
+  "schichten": [
+    { "art": "wind", "pegel": [[0, -27], [8, -26], [20, -28], [40, -27], [52, -22], [57.6, -16], [58.2, -46], [61, -42], [64, -34], [70.5, -38], [72, -48], [80, -52]],
+      "hell": [[0, 0.4], [30, 0.35], [57, 0.55], [62, 0.3], [70, 0.25]] },
+    { "art": "dorf", "pegel": [[0, -29], [2.5, -29], [21, -31], [28.2, -36], [37, -42], [46.5, -52], [50, -60], [80, -60]] },
+    { "art": "voegel", "dichte": 0.4, "pegel": [[0, -29], [2.5, -27], [8, -32], [16, -42], [21, -60], [62, -60], [64, -46], [68, -50], [72, -60]] },
+    { "art": "brummen", "f": 50, "f_kurve": [[0, 50], [2.5, 50], [12, 49.8], [21, 49], [46.5, 48.1], [58, 47.5], [80, 47.5]],
+      "pegel": [[0, -44], [2.4, -38], [8, -33], [21, -30], [40, -27], [52, -21], [57.7, -15], [58.3, -60], [80, -60]] }
+  ],
+  "ereignisse": [],
+  "protokoll_effekte": true,
+  "dumpf": [[0, 0], [58, 0], [60, 0.4], [70, 0.4], [72, 0.8]],
+  "stille": [[58.3, 61.5, -10]]
+}

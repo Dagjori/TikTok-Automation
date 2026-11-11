@@ -1,0 +1,217 @@
+{
+ "titel": "Rentenerhöhung 2027: Was bleibt von 82 Euro mehr?",
+ "skill": "video-produktion",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-12-mittag",
+ "stil": "21 Nachtkarte (Geldweg durch drei Schranken)",
+ "stil_begruendung": "Das Skript erzählt einen Weg: Die Rentenerhöhung wandert von der Rentenkasse durch drei Schranken (Krankenkasse, Pflege, Finanzamt) zum Konto, an jeder Station zweigt ein Abzug ab und die Route wird schmaler. Das ist ein Orts- und Wegthema für Stil 21 Nachtkarte (Reliefkarte im Mondlicht, Lichtkopf, Lichtsäulen als Schranken). Dunkle Welt mit Leuchtakzenten (Vorrang laut REA R13/R23). Vorgänger: 11.11. abend Stil 17, 11.11. mittag Stil 20, 10.11. abend Stil 19; Stil 21 war in keinem Video dran und ist nicht derselbe wie kindergeld-kanada (19).",
+ "teamfarben": {
+  "BLEIBT": "#3DDC97",
+  "ABZÜGE": "#FF5C7A"
+ },
+ "klangteppich": "nacht",
+ "stil_helligkeit": "dunkel",
+ "suchbegriff": "Rentenerhöhung",
+ "testbloecke": {
+  "folgen_hinweis": "mit"
+ },
+ "folgen_hinweis": "Jeden Tag eine Geldfrage im Profil",
+ "teil": 1,
+ "format": "Was bleibt",
+ "zweite_frage": {
+  "text": "Das Plus gilt 2027 erst ab Juli: Wie viel kommt im ganzen Jahr 2027 an?",
+  "gesetzt_in": "wendung2",
+  "aufgeloest_in": "pointe"
+ },
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Rentenerhöhung 2027: Von 82 € mehr – was bleibt wirklich?",
+   "sprechtext": "Die Rentenerhöhung zweitausendsiebenundzwanzig bringt bei zweitausend Euro Rente voraussichtlich zweiundachtzig Euro mehr.\nWie viel bleibt dir davon?",
+   "bild_text_abgleich": [
+    "Bild 0 bis 8,7 s: Titel RENTENERHÖHUNG 2027 · WAS BLEIBT VON 82 €? (Suchbegriff) und Tafel BLEIBT/ABZÜGE ab Bild 0, Chip PROGNOSE · AB 01.07.2027",
+    "Nachtkarte: Rentenkasse als Lichtteppich oben, Lichtkopf startet bei 0,5 s auf der breiten Route, BLEIBT-Zähler läuft ab 0,3 s von 0 auf 82,00 € (bei „zweiundachtzig Euro“ 5,3 s), Kamera gleitet und fährt bei 4 s nah an die Rentenkasse"
+   ]
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "2.000 € Rente · +4,1 % ab 01.07.2027 (Prognose) · Rentenbeginn 2020 · mit Kindern · ledig · keine Kirchensteuer",
+   "sprechtext": "Gerechnet wird mit Rentenbeginn zweitausendzwanzig, mit Kindern.",
+   "bild_text_abgleich": [
+    "Chips fliegen nacheinander ein: 2.000 € RENTE (9,1 s), +4,1 % = 82 € MEHR, RENTENBEGINN 2020 (bei „Rentenbeginn“ 9,9 s), MIT KINDERN (12,2 s), LEDIG · KEINE KIRCHENSTEUER; Tafel zeigt 82,00 €, Titel blendet aus"
+   ]
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, da kommt fast alles an. Oder?",
+   "sprechtext": "Klar, fast alles davon kommt an.\nOder doch nicht?",
+   "bild_text_abgleich": [
+    "Kamera fährt zum Konto (Lichtteppich in Mint), Chip FAST ALLES KOMMT AN? (13,3 s), Tafel steht bei 82,00 €; kurze ruhige Fahrt vor „Oder doch nicht?“ (15,6 s)"
+   ]
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Krankenkasse: 7,3 % = −5,99 € · halber Zusatzbeitrag 1,45 % = −1,19 € → 74,82 €",
+   "sprechtext": "Zuerst greift die Krankenkasse zu.\nSieben Komma drei Prozent, dazu der halbe Zusatzbeitrag.\nDas sind rund sieben Euro weniger.",
+   "bild_text_abgleich": [
+    "17,3 s: Lichtkopf erreicht Schranke KRANKENKASSE (Lichtsäule in Korall, Pulsring), Abzugsast zweigt ab, danach ist der Weg schmaler",
+    "Chips KRANKENKASSE: 7,3 % = −5,99 € (18,2 s) und HALBER ZUSATZBEITRAG 1,45 % = −1,19 € (21,3 s); Tafel BLEIBT 82,00 → 76,01 (21,2 s) → 74,82 € (23,1 s), ABZÜGE 7,18 €; Chip NACH DER KRANKENKASSE: 74,82 €"
+   ]
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Pflege: 3,6 % = −2,95 € (Rentner zahlen allein) → 71,87 € · Plus erst ab Juli. Was kommt 2027 an?",
+   "sprechtext": "Dann die Pflegeversicherung mit drei Komma sechs Prozent.\nDie zahlen Rentner ganz allein, ohne Zuschuss.\nWieder fast drei Euro weniger.\nUnd das Plus gibt es erst ab Juli.\nWie viel kommt im ganzen Jahr zweitausendsiebenundzwanzig an?",
+   "bild_text_abgleich": [
+    "Schranke PFLEGE leuchtet (26,3 s), zweiter Abzugsast, Chip PFLEGE: 3,6 % = −2,95 € und RENTNER ZAHLEN ALLEIN, OHNE ZUSCHUSS (30,6 s); Tafel 71,87 €, ABZÜGE 10,13 €",
+    "Monatsreihe 2027 erscheint bei „Plus“ (34,7 s): Januar bis Juni grau, Juli bis Dezember mint; Chip PLUS ERST AB JULI; Chip 2027 GESAMT: ? bleibt im Bild (zweite Frage, 36,8 s)"
+   ]
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Auf dem Konto: 71,87 € · Rentenfreibetrag seit 2021 fest: 3.860 €/Jahr",
+   "sprechtext": "Auf dem Konto landen knapp zweiundsiebzig Euro.\nDas Finanzamt war aber noch nicht dran.\nDer Rentenfreibetrag wurde einmal festgeschrieben, als fester Eurobetrag.\nBei keiner Erhöhung wächst er mit.",
+   "bild_text_abgleich": [
+    "Lichtkopf erreicht das Konto (40,7 s), Lichtsäule wächst, Zähler AUF DEM KONTO 71,87 €; Kamera zum Finanzamt (43,8 s) mit Chip FINANZAMT: NOCH NICHT DRAN",
+    "Freibetrag-Säule in Weiß (46,1 s) mit Chip RENTENFREIBETRAG: 3.860 € IM JAHR · FEST und Zähler FREIBETRAG · FEST; Erhöhungs-Säule in Mint wächst bei „wächst“ (51,8 s) am Freibetrag vorbei, Chip ERHÖHUNG WÄCHST NICHT MIT"
+   ]
+  },
+  {
+   "id": "kipp",
+   "phase": "kipp",
+   "text": "Erhöhung zu 100 % steuerpflichtig · Grenzsteuersatz ca. 24 % (Tarif 2027, geplant)",
+   "sprechtext": "Damit ist die ganze Erhöhung steuerpflichtig.\nJeder zusätzliche Euro wird hier mit rund vierundzwanzig Prozent besteuert.\nDer Steuerbescheid kommt erst im Jahr danach.",
+   "bild_text_abgleich": [
+    "53,1 s: Kamera zoomt auf die Finanzamt-Schranke, Säule fährt hoch, Chip ERHÖHUNG ZU 100 % STEUERPFLICHTIG",
+    "Abzugsast zum Finanzamt bei „Jeder zusätzliche Euro“ (55,9 s), Chip GRENZSTEUERSATZ CA. 24 % (GEPLANT) bei „vierundzwanzig“ (58,2 s), Chip STEUERBESCHEID ERST IM JAHR DANACH (60,6 s)"
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Finanzamt: −16,75 € → es bleiben 55,12 € von 82 €",
+   "sprechtext": "Rund siebzehn Euro gehen an das Finanzamt.\nVon zweiundachtzig Euro bleiben rund fünfundfünfzig Euro.",
+   "bild_text_abgleich": [
+    "Finanzamt holt 16,75 € vom Konto (Tafel BLEIBT 71,87 → 55,12 € ab 63,6 s, ABZÜGE 26,88 €, Konto-Säule sinkt, Zähler FINANZAMT 16,75 €)",
+    "Bilanzkarte ab 66,0 s: ERHÖHUNG 82,00 €, KRANKEN- UND PFLEGEKASSE 10,13 €, FINANZAMT 16,75 €, BLEIBT 55,12 € (bei „fünfundfünfzig“ 68,2 s); Zoom auf das Konto"
+   ]
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Pflege allein bezahlt · Erhöhung voll steuerpflichtig",
+   "sprechtext": "Rentner tragen die Pflege allein.\nUnd die Erhöhung ist voll steuerpflichtig.",
+   "bild_text_abgleich": [
+    "Erklärgrafik WARUM? mit zwei Balken: PFLEGEBEITRAG 0 % ZUSCHUSS gegen 100 % SELBST (70,9 s), STEUER AUF DIE ERHÖHUNG 0 % STEUERFREI gegen 100 % STEUERPFLICHTIG (73,3 s)"
+   ]
+  },
+  {
+   "id": "pointe",
+   "phase": "pointe",
+   "text": "2027: 6 × 82 € = 492 € brutto → 332,24 € bleiben",
+   "sprechtext": "Zweitausendsiebenundzwanzig wirkt das Plus nur sechs Monate.\nIm ganzen Jahr bleiben rund dreihundertdreißig Euro.",
+   "bild_text_abgleich": [
+    "Kamera zur Monatsreihe (75 s): Juli bis Dezember wachsen nacheinander (76,8–78,3 s), Chips 2027: NUR 6 MONATE WIRKSAM und 6 × 82 € = 492 € BRUTTO, Zähler BRUTTO 2027",
+    "Zähler BLEIBT 2027 rollt bei „dreihundertdreißig“ auf 332,24 € (79,5–81,5 s), Chip 2027: 332,24 € BLEIBEN löst die zweite Frage auf"
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "phase": "schlusskarte",
+   "text": "Von der Rentenerhöhung bleiben gut zwei Drittel.",
+   "sprechtext": "Von der Rentenerhöhung bleiben gut zwei Drittel.",
+   "bild_text_abgleich": [
+    "Schlusskarte VON DER ERHÖHUNG BLEIBEN GUT ZWEI DRITTEL. (Wort für Wort ab 82,1 s, „GUT ZWEI DRITTEL.“ in Mint), Folgen-Hinweis (Testblock mit) in den letzten 2,5 s"
+   ]
+  }
+ ],
+ "caption": "Rentenerhöhung 2027: Von 82 € mehr, was bleibt wirklich übrig? 💶 Ich hab’s simuliert. Mit wie viel hättest du gerechnet? 👇 #rentenerhöhung #rente #rentner #wissen #simulation",
+ "originalitaet": "Suchen „Rentenerhöhung 2027 was bleibt netto nach Abzügen Video“ und „Rentenerhöhung 2027 was bleibt netto Steuer“ (11.11.2026): nur Artikel und Tabellen (echo24, gegen-hartz, finanz.de) mit KV/PV-Abzug, kein deutsches Video; unser Winkel: Abzugs-Treppe inkl. voll steuerpflichtiger Erhöhung und Halbjahreseffekt 2027.",
+ "rechenweg": "Erhöhung: 2.000 € × 4,1 % = 82,00 €/Monat (Prognose). KV 7,3 % = 5,99 €; halber Zusatzbeitrag 2,9 %/2 = 1,45 % = 1,19 €; PV 3,6 % = 2,95 €; zusammen 12,35 % = 10,13 € → 71,87 €. Steuer: Rentenbeginn 2020 (Besteuerungsanteil 80 %), Freibetrag = 20 % der Jahresrente 2021; Rente 2021 = 2.000/(1,0535·1,0439·1,0457·1,0374·1,0424) = 1.608,23 €/Monat → Freibetrag 3.860 €/Jahr. zvE (Volljahr, Modell Tarif 2027) = Jahresrente − 3.860 − 102 (WK-Pauschbetrag) − 36 (SA-Pauschbetrag) − 12,35 % KV/PV als Vorsorgeaufwand: ohne Erhöhung 24.000 → 17.038 € (ESt 817 €), mit 24.984 → 17.900 € (ESt 1.018 €). Mehrsteuer 201 €/Jahr = 16,75 €/Monat (Grenzsteuersatz ≈ 24,0 %). Bleibt 82,00 − 10,13 − 16,75 = 55,12 €/Monat (67,2 %). 2027 (Juli–Dez.): 6 × 82 = 492 € brutto, KV/PV 60,76 €, Mehrsteuer 99 € (zvE 2027 mit Halbjahres-Erhöhung) → 332,24 €. Tarif 2027 nach geplantem Grundfreibetrag 12.564 €, Eckwert 17.800 € (14 → 24 %), 42 % ab 70.601 €, Zonen linear-progressiv nachgebildet; nachgerechnet mit cockpit/daten/tmp/rechnung_rente.py.",
+ "zahlen": {
+  "rente_brutto_eur": 2000,
+  "erhoehung_prozent": 4.1,
+  "erhoehung_eur": 82,
+  "kv_eur": 5.99,
+  "zusatzbeitrag_halb_eur": 1.19,
+  "pv_eur": 2.95,
+  "sv_gesamt_eur": 10.13,
+  "nach_sv_eur": 71.87,
+  "rentenfreibetrag_eur_jahr": 3860,
+  "zve_ohne_eur": 17038,
+  "zve_mit_eur": 17900,
+  "est_ohne_eur": 817,
+  "est_mit_eur": 1018,
+  "steuer_monat_eur": 16.75,
+  "grenzsteuersatz_prozent": 24,
+  "bleibt_monat_eur": 55.12,
+  "anteil_bleibt_prozent": 67.2,
+  "brutto_2027_eur": 492,
+  "sv_2027_eur": 60.76,
+  "steuer_2027_eur": 99,
+  "bleibt_2027_eur": 332.24
+ },
+ "annahmen": [
+  "(A) Modellperson: 2.000 € Bruttorente/Monat (Stand nach 01.07.2026), Rentenbeginn 2020, ledig, keine weiteren Einkünfte, keine Kirchensteuer, gesetzlich versichert (KVdR), Eltern (PV 3,6 %).",
+  "(A) Krankenkasse mit durchschnittlichem Zusatzbeitrag 2,9 % (2027); die tatsächliche Kasse kann abweichen.",
+  "(A) Rentenanpassung 4,1 % zum 01.07.2027 laut Entwurf des Rentenversicherungsberichts 2026 (Prognose, Festsetzung im Frühjahr 2027): im Bild „voraussichtlich/Prognose“.",
+  "(A) Einkommensteuertarif 2027 nach Regierungsentwurf (geplant, Bundestag noch nicht abschließend); Zonenformeln aus den Eckwerten nachgebildet, Abweichung vom Gesetzestext im Cent-Bereich.",
+  "(A) KV/PV-Beiträge voll als Vorsorgeaufwendungen abgezogen (Rentner ohne Krankengeldanspruch); WK-Pauschbetrag 102 €, SA-Pauschbetrag 36 €.",
+  "(S) Rentenanpassungen West 2022–2026: 5,35 / 4,39 / 4,57 / 3,74 / 4,24 % (Rückrechnung des Freibetrags; wirkt nur auf den Grenzsteuersatz)."
+ ],
+ "quellen": [
+  "(F) Rentenerhöhung 2027: Renten steigen voraussichtlich um 4,1 Prozent, cash-online, 11/2026 – https://www.cash-online.de/a/rentenerhoehung-2027-renten-steigen-voraussichtlich-um-41-prozent-729419/",
+  "(F) Rentenversicherungsbericht: So viel mehr Geld soll es 2027 geben (Entwurf 4,09 %, Ressortabstimmung 03.11.2026), inFranken, 11/2026 – https://www.infranken.de/ratgeber/karriere-geld/rente-erhoehung-2027-geld-rentnertner-art-6398475",
+  "(F) Durchschnittlicher Zusatzbeitrag 2027 soll stabil bleiben (2,9 %, Schätzerkreis 14.10.2026), Der Paritätische, 10/2026 – https://www.der-paritaetische.de/alle-meldungen/durchschnittlicher-zusatzbeitragssatz-soll-2027-stabil-bleiben/",
+  "(F) Pflegeneuordnungsgesetz: allgemeiner PV-Satz bleibt 3,6 %, Rentner tragen PV allein, cash-online, 2026 – https://www.cash-online.de/a/pflegeneuordnungsgesetz-diese-mehrkosten-kommen-auf-rentner-zu-729220/",
+  "(F) § 22 Nr. 1 S. 3 Buchst. a Doppelbuchst. aa EStG, Festschreibung Rentenfreibetrag; reguläre Anpassungen voll steuerpflichtig, BFH X R 12/18 (03.12.2019), Haufe – https://www.haufe.de/id/beitrag/renten-10-rentenfreibetrag-HI2530319.html",
+  "(F) Einkommensteuerreformgesetz 2027, Referenten-/Regierungsentwurf: Grundfreibetrag 12.564 €, 42 % ab 70.601 €, PwC Tax News, 08/2026 – https://blogs.pwc.de/de/german-tax-and-legal-news/article/256516/federal-ministry-of-finance-publishes-draft-bill-for-the-income-tax-reform-act-2027/",
+  "(F) Eckwert 17.800 € bleibt; Gesetzgebungsstand (1. Lesung 08.10.2026, Anhörung 04.11.2026), Deubner, 2026 – https://www.deubner-steuern.de/themen/einkommensteuer/einkommensteuerreformgesetz-2027/"
+ ],
+ "korrekturen": [],
+ "lern_notizen": {
+  "thema": "Rentenerhöhung 2027: Was bleibt von 82 Euro mehr?",
+  "frage": "Wie viel von 82 € Rentenerhöhung bleibt im Monat und im Jahr 2027 wirklich übrig?",
+  "laenge_s": 85.42,
+  "stimmdauer_s": 84.821,
+  "hook": "Die Rentenerhöhung 2027 bringt bei 2.000 € Rente voraussichtlich 82 € mehr. Wie viel bleibt dir davon? (Was bleibt: Startwert 82 €, Frage, Du nur im Hook; Hook-Ende 8,76 s)",
+  "stil": "21 Nachtkarte",
+  "helligkeit": "dunkel",
+  "animationen": "Lichtkopf wandert über die Karte von der Rentenkasse durch zwei Schranken zum Konto, Abzugsäste zweigen in Korall ab, die Route wird schmaler (Breite = Rest), Konto-Lichtsäule wächst und schrumpft mit dem Rest, Freibetrag-Säule gegen wachsende Erhöhungs-Säule, Monatsreihe Juli bis Dezember wächst, Tafel rollt mit",
+  "licht_effekte": "Pulsringe und Lichtsäulen an Schranken (17,3 s, 26,3 s, 43,8 s, 53,6 s), Lichtteppiche der Städte, Wolken mit Parallaxe, Bloom, Tilt-Shift, Tafel BLEIBT/ABZÜGE rollt an den Abzügen (21,2 s, 23,1 s, 29,0 s, 63,6 s)",
+  "zoom": "ja (53,5 s Finanzamt, 66,4 s Konto, 79,6 s Monatsreihe) plus fortlaufende Kamerafahrt zwischen 29 Standpunkten",
+  "zeitpunkte": {
+   "wendung_1": 17.28,
+   "wendung_2": 25.92,
+   "kipp": 53.08,
+   "ergebnis": 63.28,
+   "warum": 70.0,
+   "pointe": 75.0,
+   "schlusskarte": 82.08,
+   "folgen_hinweis": "Jeden Tag eine Geldfrage im Profil (letzte 2,5 s)"
+  },
+  "ergebnis_prozent_der_laenge": 74.6,
+  "kipp_prozent_der_laenge": 62.6,
+  "testbloecke": {
+   "folgen_hinweis": "mit"
+  },
+  "teil": 1,
+  "suchbegriff": "Rentenerhöhung",
+  "format": "Was bleibt",
+  "zweite_frage": {
+   "gesetzt_bei_s": 36.8,
+   "aufgeloest_bei_s": 79.52
+  },
+  "woerter": 185,
+  "stimme": "Aufnahme am Stück (eine Anfrage, 1340 Zeichen), Hook 8,76 s lang (Zahlwörter), Abgleich mit Spracherkennung nach dem Render noch offen",
+  "caption": "Rentenerhöhung 2027: Von 82 € mehr, was bleibt wirklich übrig? 💶 Ich hab’s simuliert. Mit wie viel hättest du gerechnet? 👇 #rentenerhöhung #rente #rentner #wissen #simulation",
+  "hinweise_pruefskript": "offen bis zum Render; Hinweise zu erwarten: Wendung 1 erst bei 17,3 s (Hook 8,76 s lang), Länge 85,4 s über 80 s"
+ },
+ "untertitel_hinweis": "Die Untertitel zeigen das tatsächlich Gesprochene (Wortzeiten aus audio/sprech_woerter.json, Zahlwörter als Ziffern), weil `text` der Segmente die Chip-Texte der Szene enthält und bei den Zeitstempeln von timing.json (Anzeigewörter auf Sprechwörter verteilt) Wortblöcke im Segment regeln und hook zerhackt wären; `text` und `sprechtext` bleiben 1:1 aus dem Dokument."
+}

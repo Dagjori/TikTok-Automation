@@ -1,0 +1,1901 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "rente-erhoehung-2027",
+ "fps": 30,
+ "dauer": 85.43333333333334,
+ "stimmEnde": 84.821,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "nacht",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "BLEIBT",
+    "farbe": "#3DDC97"
+   },
+   "b": {
+    "name": "ABZÜGE",
+    "farbe": "#FF5C7A"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 4,
+   "groesse": 64,
+   "unten": 1450,
+   "phrasen": 58
+  },
+  "timing": "echt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "RENTENERHÖHUNG"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "2027"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WAS BLEIBT VON 82 €?"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "tafel",
+   "klang": false,
+   "bild": false,
+   "ab": "start"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Die Rentenerhöhung 2027 bringt",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.05,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "PROGNOSE · AB 01.07.2027"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0.3,
+   "typ": "zaehler",
+   "dauer": 6.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.3,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Lichtkopf mit 82 € startet an der Rentenkasse, Kamera gleitet"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0.8,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 1.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 1.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 1.433,
+   "typ": "uhr",
+   "dauer": 3.833,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 2.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "bei 2.000 Euro Rente",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 4.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "voraussichtlich 82 Euro mehr.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.28,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kamera nah an die Rentenkasse, Erhöhung 82 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 5.367,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 5.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 5.667,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 5.867,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.78,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 7.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wie viel bleibt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.44,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera zurück, Frage Wie viel bleibt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 8.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "dir davon?",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.74,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.94,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gerechnet wird",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.04,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MODELLRENTE · PRO MONAT"
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.09,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2.000 € RENTE"
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.54,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+4,1 % = 82 € MEHR"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mit Rentenbeginn 2020,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.87,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RENTENBEGINN 2020"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.92,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera über der Route, Chips Rentenbeginn und mit Kindern"
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.42,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 11.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mit Kindern.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.19,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MIT KINDERN"
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.74,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LEDIG · KEINE KIRCHENSTEUER"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 13.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar, fast alles davon",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.04,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zum Konto, Chip fast alles kommt an"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.28,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "FAST ALLES KOMMT AN?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.54,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 14.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "kommt an.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.29,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.29,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.29,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.29,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.29,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 15.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder doch nicht?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera näher, Zweifel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.93,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.93,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 17.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Zuerst greift",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 17.28,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SCHRANKE 1 · KRANKENKASSE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.28,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Schranke Krankenkasse leuchtet auf, Lichtkopf erreicht sie"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 18.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "die Krankenkasse zu.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 18.19,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KRANKENKASSE: 7,3 % = −5,99 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.24,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Abzugsast in Korall zweigt ab, Weg wird schmaler"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 19.5,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 19.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "7,3 Prozent,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Krankenkasse 7,3 Prozent, Zähler Abzug"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.2,
+   "typ": "zaehler",
+   "dauer": 0.7,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.2,
+   "typ": "zaehler",
+   "dauer": 0.7,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.257,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "HALBER ZUSATZBEITRAG 1,45 % = −1,19 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 21.277,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "dazu der halbe Zusatzbeitrag.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.307,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Halber Zusatzbeitrag"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.4,
+   "typ": "uhr",
+   "dauer": 0.233,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 21.733,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.807,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.1,
+   "typ": "zaehler",
+   "dauer": 0.733,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.1,
+   "typ": "zaehler",
+   "dauer": 0.733,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 23.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Das sind rund",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 23.68,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "NACH DER KRANKENKASSE: 74,82 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Rest 74,82 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 24.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "sieben Euro weniger.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.57,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.57,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.57,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.57,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 25.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Dann die Pflegeversicherung",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 25.92,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SCHRANKE 2 · PFLEGE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.92,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Lichtkopf läuft zur Pflege-Schranke"
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.22,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "PFLEGE: 3,6 % = −2,95 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.32,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Schranke Pflege leuchtet, zweiter Abzugsast"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 27.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mit 3,6 Prozent.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 27.42,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.033,
+   "typ": "zaehler",
+   "dauer": 0.733,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.033,
+   "typ": "zaehler",
+   "dauer": 0.733,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 29.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Die zahlen Rentner",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 29.533,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 30.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ganz allein,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.46,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RENTNER ZAHLEN ALLEIN, OHNE ZUSCHUSS"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.56,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip allein ohne Zuschuss"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 31.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ohne Zuschuss.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.06,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 32.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wieder fast",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 32.32,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "NACH DER PFLEGE: 71,87 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.32,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Rest 71,87 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 32.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "drei Euro weniger.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 34.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und das Plus gibt",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 34.62,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "PLUS ERST AB JULI"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.72,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Monatsreihe 2027 erscheint, Januar bis Juni dunkel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 35.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "es erst ab Juli.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Juli bis Dezember leuchten schwach auf"
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.75,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2027 GESAMT: ?"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 36.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wie viel kommt im",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip 2027 gesamt mit Fragezeichen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 37.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ganzen Jahr 2027 an?",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.05,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.05,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.05,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.05,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.05,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 40.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Auf dem Konto landen",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.4,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "DAS KONTO · 2027 NUR JULI BIS DEZEMBER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.4,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Lichtkopf erreicht das Konto, Lichtsäule wächst"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 41.36,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "knapp 72 Euro.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.76,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Konto 71,87 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.26,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 43.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Das Finanzamt war",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.71,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "FINANZAMT: NOCH NICHT DRAN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.76,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zum Finanzamt, Schranke leuchtet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 44.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "aber noch nicht dran.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.26,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 45.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der Rentenfreibetrag wurde",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 46.03,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RENTENFREIBETRAG: 3.860 € IM JAHR · FEST"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 46.08,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.08,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Freibetrag-Säule 3.860 € steht fest"
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 47.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "einmal festgeschrieben,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "als fester Eurobetrag.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.83,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ERHÖHUNG WÄCHST NICHT MIT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 50.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Bei keiner Erhöhung",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.88,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Erhöhungs-Säule wächst am Freibetrag vorbei"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 51.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "wächst er mit.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.38,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.03,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ERHÖHUNG ZU 100 % STEUERPFLICHTIG"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 53.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Damit ist die ganze",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.08,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Finanzamt-Schranke fährt hoch, Licht kippt kühl"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 53.48,
+   "art": "zoom",
+   "dauer": 2.5,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 53.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Erhöhung steuerpflichtig.",
+   "woerter": 2,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 55.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Jeder zusätzliche Euro",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.92,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Abzugsast zum Finanzamt, Chip 24 Prozent"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 57.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "wird hier mit rund",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.42,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.94,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GRENZSTEUERSATZ CA. 24 % (GEPLANT)"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 58.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "24 Prozent besteuert.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.92,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 60.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der Steuerbescheid kommt erst",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 60.51,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STEUERBESCHEID ERST IM JAHR DANACH"
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.56,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip Bescheid erst im Jahr danach"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 61.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Jahr danach.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.06,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 62.93,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 62.93,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 62.93,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 63.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Rund 17 Euro gehen",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 63.28,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.28,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Finanzamt holt 16,75 € vom Konto, Säule sinkt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.6,
+   "typ": "zaehler",
+   "dauer": 1.767,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.6,
+   "typ": "zaehler",
+   "dauer": 1.767,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 63.613,
+   "typ": "zaehler",
+   "dauer": 1.767,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 63.867,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 64.033,
+   "typ": "uhr",
+   "dauer": 0.8,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 64.12,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 64.12,
+   "typ": "zaehler",
+   "dauer": 1.267,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 64.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "an das Finanzamt.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 64.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.96,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Zähler Finanzamt 16,75 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 65.067,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 66.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Von 82 Euro bleiben",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.08,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zoom auf das Konto, Bilanzkarte"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 66.27,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "ERHÖHUNG"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 66.38,
+   "art": "zoom",
+   "dauer": 2.7,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 67.34,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "KRANKEN- UND PFLEGEKASSE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 67.64,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "FINANZAMT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 67.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "rund 55 Euro.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 68.06,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "BLEIBT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.16,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Es bleiben 55,12 €, Differenz leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.66,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Rentner tragen",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 70,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "PFLEGEBEITRAG"
+  },
+  {
+   "quelle": "Szene",
+   "t": 70,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Erklärgrafik Warum"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 70.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "die Pflege allein.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 71.28,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "RENTNER ALLEIN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Balken",
+   "t": 72.06,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "STEUER AUF DIE ERHÖHUNG"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 72.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und die Erhöhung",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.16,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Balken Erhöhung voll steuerpflichtig"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 72.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ist voll steuerpflichtig.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 73.28,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "VOLL BESTEUERT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.66,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 74.65,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 74.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "2027 wirkt das Plus",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 75,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zur Monatsreihe, 2027"
+  },
+  {
+   "quelle": "Chip",
+   "t": 76.43,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2027: NUR 6 MONATE WIRKSAM"
+  },
+  {
+   "quelle": "Szene",
+   "t": 76.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Juli bis Dezember wachsen nacheinander"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 76.98,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 76.98,
+   "typ": "zaehler",
+   "dauer": 1.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 77.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "nur sechs Monate.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 77.34,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "6 × 82 € = 492 € BRUTTO"
+  },
+  {
+   "quelle": "Szene",
+   "t": 77.44,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Brutto 492 €"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 78.62,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 78.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Im ganzen Jahr bleiben",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 78.72,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Zähler 2027 bleibt"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 78.82,
+   "typ": "zaehler",
+   "dauer": 2.51,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 79.56,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2027: 332,24 € BLEIBEN"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 79.62,
+   "art": "zoom",
+   "dauer": 2.5,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 79.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "rund 330 Euro.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 80.16,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "332,24 € bleiben im Jahr 2027"
+  },
+  {
+   "quelle": "Szene",
+   "t": 81.66,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 81.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 81.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 81.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 82.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Von der Rentenerhöhung bleiben",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Pointe",
+   "t": 82.08,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "VON DER  ERHÖHUNG BLEIBEN  GUT ZWEI DRITTEL."
+  },
+  {
+   "quelle": "Szene",
+   "t": 82.08,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Welt dunkelt ab, Schlusskarte"
+  },
+  {
+   "quelle": "Hinweis",
+   "t": 82.921,
+   "typ": "folgen_hinweis",
+   "dauer": 2.5,
+   "text": "Jeden Tag eine Geldfrage im Profil",
+   "gesprochen": false,
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 83.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "gut zwei Drittel.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 83.6,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Gut zwei Drittel leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 85.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Lichtkopf wandert, Wolken ziehen"
+  }
+ ],
+ "klang": []
+}

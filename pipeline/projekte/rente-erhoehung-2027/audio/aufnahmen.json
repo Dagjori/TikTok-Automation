@@ -1,0 +1,16 @@
+{
+ "regel": "Ein Skript geht genau einmal durch ElevenLabs (Inhaber 08.11.2026)",
+ "aufnahmen": [
+  {
+   "zeit": "2026-11-11T09:35:15+01:00",
+   "zeichen": 1340,
+   "credits_geschaetzt": 536,
+   "modell": "eleven_v4",
+   "voice_id": "aTTiK3YzK3dXETpuDE2h",
+   "grund": "erste Aufnahme",
+   "seed": 211634926,
+   "request_id": "jfUN0sOX2L8Po7DD2R3o",
+   "character_cost": "590"
+  }
+ ]
+}

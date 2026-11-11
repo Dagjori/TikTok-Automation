@@ -184,9 +184,11 @@ def s_grollen(n, rng, tt, o):
 
 def s_brummen(n, rng, tt, o):
     f = o.get("f", 55)
+    # optional "f_kurve": [[t, Hz], …] → Brummton, dessen Frequenz im Lauf der Zeit sinkt/steigt (Netzbrummen im Video zur Netzfrequenz)
+    ph0 = 2 * np.pi * np.cumsum(kurve(o["f_kurve"], tt, f)) / SR if o.get("f_kurve") else 2 * np.pi * f * tt
     def kanal():
         p = rng.uniform(0, 6)
-        x = sum(np.sin(2 * np.pi * f * h * tt * (1 + 0.003 * h) + p * h) / h ** 1.3 for h in (1, 2, 3, 4))
+        x = sum(np.sin(ph0 * h * (1 + 0.003 * h) + p * h) / h ** 1.3 for h in (1, 2, 3, 4))
         return x * (0.8 + 0.2 * np.sin(2 * np.pi * 0.13 * tt + p)) + K.tiefpass_schnell(braun(n, rng), 120) * 0.5
     return norm(stereo(kanal, n))
 

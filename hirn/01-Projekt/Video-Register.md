@@ -2,7 +2,7 @@
 typ: wissen
 konto: gemeinsam
 status: aktuell
-datum: 2026-11-10
+datum: 2026-11-11
 quelle: cockpit/lib/register.mjs
 tags: [konto/gemeinsam, cockpit, register, videos]
 cssclasses: [konto-gemeinsam, typ-wissen]
@@ -14,19 +14,21 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 ## Überblick
 
-- **Videos im Register:** 44 (Simulierbar 24, davon 20 gepostet · Stell dir vor 20, davon 17 gepostet)
-- **Nach Status:** Idee 0 · Skript 0 · in Produktion 0 · geplant 4 · gepostet 37 · Fehler 3
-- **Nach Format:** ohne Angabe 24 · referenz_pov 18 · Duell 1 · Lernvideo 1
+- **Videos im Register:** 48 (Simulierbar 26, davon 20 gepostet · Stell dir vor 22, davon 17 gepostet)
+- **Nach Status:** Idee 0 · Skript 0 · in Produktion 4 · geplant 4 · gepostet 37 · Fehler 3
+- **Nach Format:** ohne Angabe 25 · referenz_pov 19 · Was bleibt 2 · Duell 1 · Lernvideo 1
 - **Lesart:** „gepostet“ heißt, Buffer hat das Video gesendet (oder die Nachprüfung hat es bestätigt). Follows = Follower-Zuwachs in den 24 Stunden nach dem Post (netto, zwei Videos am Tag überlappen). Ø-Wiedergabe = durchschnittliche Wiedergabezeit, in Klammern der Anteil an der Länge.
 
 ## Simulierbar
 
 | Datum | Slot | Titel | Feld · Format | Status | Länge | Aufrufe | Ø-Wiedergabe | Follows | Treffer · Teil |
 |---|---|---|---|---|---|---|---|---|---|
+| 12.11. | Abend | Gasrechnung zerlegt: Wie viel davon bekommt der Staat? | Wohnen und Energie · Was bleibt | in Produktion | – | – | – | – | – |
+| 12.11. | Mittag | Rentenerhöhung 2027: Was bleibt von 82 Euro mehr? | Rente und Vorsorge · Was bleibt | in Produktion | 85 s | – | – | – | – |
 | 11.11. | Abend | Benzin: Wie viel Steuer zahlst du auf Steuer? | Preise und Lebenshaltung · Lernvideo | geplant | 82 s | – | – | – | – |
 | 11.11. | Mittag | Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern? | Rente und Vorsorge · Duell | geplant | 85 s | – | – | – | – |
-| 10.11. | Abend | [Kindergeld in Deutschland oder in Kanada: Wo zahlt der Staat bis 18 mehr?](https://tiktok.com/@simulierbar/video/7706612169021852961) | Klassiker mit neuer Frage | gepostet | 75 s | 121 | – | – | – |
-| 10.11. | Mittag | [Maut 2021 oder heute: Welche Familie zahlt beim Einkaufen mehr mit?](https://tiktok.com/@simulierbar/video/7706503906116832544) | Versteckte Mechaniken | gepostet | 76 s | 263 | – | – | – |
+| 10.11. | Abend | [Kindergeld in Deutschland oder in Kanada: Wo zahlt der Staat bis 18 mehr?](https://tiktok.com/@simulierbar/video/7706612169021852961) | Klassiker mit neuer Frage | gepostet | 75 s | 242 | – | – | – |
+| 10.11. | Mittag | [Maut 2021 oder heute: Welche Familie zahlt beim Einkaufen mehr mit?](https://tiktok.com/@simulierbar/video/7706503906116832544) | Versteckte Mechaniken | gepostet | 76 s | 269 | – | – | – |
 | 09.11. | Abend | [Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?](https://tiktok.com/@simulierbar/video/7706241140705479968) | Versteckte Mechaniken | gepostet | 72 s | 267 | 20,5 s (28 %) | 0 | – |
 | 09.11. | Mittag | [Mindestlohn 2015 oder 2026: Wer kann sich mit einem Jahr Arbeit mehr leisten?](https://tiktok.com/@simulierbar/video/7706132764512292128) | Geschichte und Kurioses | gepostet | 74 s | 293 | 26,8 s (36 %) | 0 | – |
 | 08.11. | Abend | [1968 oder heute: Wie viel mehr Mehrwertsteuer zahlt ein Haushalt im Jahr?](https://www.tiktok.com/@simulierbar/video/7705869881165581600) | Geschichte und Kurioses | gepostet | 76 s | 294 | 25,9 s (34 %) | -1 | – |
@@ -52,10 +54,12 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 | Datum | Slot | Titel | Feld · Format | Status | Länge | Aufrufe | Ø-Wiedergabe | Follows | Treffer · Teil |
 |---|---|---|---|---|---|---|---|---|---|
+| 12.11. | Abend | Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz? | Physik und Chemie im Alltag | in Produktion | – | – | – | – | – |
+| 12.11. | Mittag | Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt? | Technik und Versorgung · referenz_pov | in Produktion | 80 s | – | – | – | – |
 | 11.11. | Abend | Was wäre, wenn der Erdkern abkühlt? | Naturphänomene · referenz_pov | geplant | 80 s | – | – | – | – |
 | 11.11. | Mittag | Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft? | Naturphänomene · referenz_pov | geplant | 80 s | – | – | – | – |
-| 10.11. | Abend | [Was wäre, wenn du die Polarnacht in Tromsø erlebst?](https://tiktok.com/@stelldirvor.pov/video/7706612156975811872) | Physik, Wetter, Geografie, Weltraum · referenz_pov | gepostet | 80 s | 91 | – | – | – |
-| 10.11. | Mittag | [Was wäre, wenn du 28 Jahre lang Ameisen zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706503882209381664) | Natur und Tiere · referenz_pov | gepostet | 80 s | 270 | – | – | – |
+| 10.11. | Abend | [Was wäre, wenn du die Polarnacht in Tromsø erlebst?](https://tiktok.com/@stelldirvor.pov/video/7706612156975811872) | Physik, Wetter, Geografie, Weltraum · referenz_pov | gepostet | 80 s | 249 | – | – | – |
+| 10.11. | Mittag | [Was wäre, wenn du 28 Jahre lang Ameisen zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706503882209381664) | Natur und Tiere · referenz_pov | gepostet | 80 s | 271 | – | – | – |
 | 09.11. | Abend | [Was wäre, wenn du 2.400 Jahre einem Pilzgeflecht zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706241106614193440) | Natur und Tiere · referenz_pov | gepostet | 80 s | 264 | 11,1 s (14 %) | 0 | – |
 | 09.11. | Mittag | [Teil 2: Erdachse ohne Neigung – was wird aus der Polarnacht?](https://tiktok.com/@stelldirvor.pov/video/7706132771348942113) | Folgeteil (Treffer-Serie) · referenz_pov | gepostet | 80 s | 242 | 7,3 s (9 %) | 0 | Teil 2 |
 | 08.11. | Abend | [Was wäre, wenn im Orbit eine Trümmer-Kettenreaktion startet?](https://www.tiktok.com/@stelldirvor.pov/video/7705869901285707041) | Technik und Versorgung · referenz_pov | gepostet | 80 s | 270 | 12,3 s (15 %) | 0 | – |

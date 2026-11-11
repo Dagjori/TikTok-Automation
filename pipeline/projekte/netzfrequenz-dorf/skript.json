@@ -1,0 +1,151 @@
+{
+  "skript_id": "acc2-2026-11-12-mittag",
+  "skript_quelle": "acc2-2026-11-12-mittag",
+  "titel": "Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt?",
+  "titelfrage": "Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt?",
+  "suchbegriff": "Netzfrequenz",
+  "konto": "stelldirvor",
+  "format": "referenz_pov",
+  "skill": "video-produktion",
+  "laenge_s": 80,
+  "teil": 1,
+  "testbloecke": { "folgen_hinweis": "mit", "einstieg_a2": "a" },
+  "folgen_hinweis": "Heute Abend: Ein Blitz trifft dein Flugzeug",
+  "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Welt engine/welt_dorf_bahnsteig.js (Neubau 12.11.2026: Dorfbahnsteig mit zehn Ortsteilen, Windpark, Umspannwerk, fernem Kraftwerk)",
+  "thema": "Ein großes Kraftwerk fällt aus, die Netzfrequenz sinkt in Zeitlupe von 50 auf 47,5 Hertz, und die automatischen Schutzstufen schalten das Dorf Ortsteil für Ortsteil ab, erlebt vom Bahnsteig.",
+  "feld": "Technik und Versorgung",
+  "nachfrage": "„was passiert bei Blackout“ / „Stromausfall oder Blackout“ · Anlass Blackout Iberische Halbinsel 28.04.2025 (ENTSO-E-Abschlussbericht März 2026) und Berichterstattung cleanthinking.de 04.10.2026; kein Autocomplete-Beleg für „Netzfrequenz“ allein",
+  "originalitaet": "Suchen „Netzfrequenz Video was passiert wenn 50 Hertz fällt“ und „Netzfrequenz youtube OR tiktok Lastabwurf Animation“ (11.11.2026): kein deutsches Video mit dieser Prämisse gefunden, nur Fachartikel (ingenieur.de, TU Graz, netztransparenz) und eine Nachrichten-Simulation zum Beinahe-Blackout 2021 (vienna.at, andere Prämisse, keine POV-Abschaltleiter).",
+  "welt": "Dorfbahnsteig in Niedersachsen: zwei Gleise, Wartehäuschen mit Anzeigetafel, Bahnsteiglaternen, dahinter das Dorf aus zehn Ortsteilen (Neubaugebiet, Gewerbegebiet, Siedlung West und Ost, Schule mit Sportplatz und Flutlicht, Kreuzung mit Ampel, Ortskern mit Kirche, Hangsiedlung, Höfe, Mühlenweg), Umspannwerk mit Freileitung am Ortsrand, Windpark auf den Feldern, am Horizont Kühltürme und Schornsteine eines fernen Kraftwerks",
+  "standpunkt": "auf dem Bahnsteig stehend, Blick über die Gleise auf Dorf und Windpark (Ich-Perspektive, Augenhöhe 1,6 m über dem Bahnsteig); die Gesamtansicht ab 58 s von der Fußgängerbrücke (17 m)",
+  "tageszeit_verlauf": "später Nachmittag im November, tiefe Sonne von links hinten, helles Tageslicht, Fenster und Straßenlaternen sind schon an; nach dem Blackout bleibt nur das Tageslicht der tiefen Sonne (sie sinkt bis 70 s leicht, Licht wird wärmer)",
+  "zeitraffer": [
+    { "von": 0, "bis": 2.5, "faktor": 1, "anzeige": "Countdown 2,5 → 0,0 s, Echtzeit" },
+    { "von": 2.5, "bis": 58, "faktor": 0.125, "anzeige": "Zeitlupe ca. 1:8, Anzeige Netzfrequenz in Hundertstel-Hertz bzw. abgeschaltete Last in Prozent" },
+    { "von": 58, "bis": 72, "faktor": 1, "anzeige": "Echtzeit nach dem Blackout" }
+  ],
+  "zeitraffer_hinweis": "Modell: ein Frequenzabfall von ca. 7 s Echtzeit (Iberien 2025 ca. 6 s) wird auf 2,5–58 s gedehnt (Faktor sim/netzfrequenz.mjs ZEITLUPE ≈ 7,9, also ca. 1:8)",
+  "kamera": "0–8 s Schwenk vom Umspannwerk/Windpark nach links über das Dorf (erste Bewegung ab Bild 1); 8–27 s langsamer Zoom auf das Neubaugebiet (58° → 46°); 27–39 s langsamer Schwenk von rechts nach links über die Ortsteile; 39,5–46 s Blick den Bahnsteig entlang, zurück zum Dorf; 46–58 s langsamer Zoom auf die Dorfmitte (56° → 40°); harter Schnitt bei 58 s (Szenensprung am Höhepunkt) auf die Gesamtansicht von der Fußgängerbrücke, danach langsamer Schwenk zum Umspannwerk",
+  "anzeige_plan": [
+    { "von_s": 0, "bis_s": 2.5, "etikett": "KRAFTWERKSAUSFALL IN", "start": "2,5", "ende": "0,0", "einheit": "s", "unter": "NORMALBETRIEB" },
+    { "von_s": 2.5, "bis_s": 21, "etikett": "NETZFREQUENZ", "start": "50,00", "ende": "49,00", "einheit": "Hz", "unter": "KRAFTWERK AUS → REGELRESERVE (AB 49,80) → RESERVE REICHT NICHT" },
+    { "von_s": 21, "bis_s": 48, "etikett": "ABGESCHALTETE LAST", "start": "6,4", "ende": "41,6", "einheit": "%", "unter": "STUFE 1 · 49,0 HZ → … → STUFE 10 · 48,1 HZ (Stufen bei 21 / 28,2 … 46,5 s)" },
+    { "von_s": 48, "bis_s": 58, "etikett": "NETZFREQUENZ", "start": "48,10", "ende": "47,50", "einheit": "Hz", "unter": "ALLE STUFEN AUS → KRAFTWERKE TRENNEN SICH GLEICH" },
+    { "von_s": 58, "bis_s": 70, "etikett": "HIER", "start": "HIER", "ende": "HIER", "einheit": "", "unter": "47,50 HZ · NETZZUSAMMENBRUCH → NETZAUFBAU: STUNDEN" }
+  ],
+  "saetze": [
+    [4.8, "Ein großes Kraftwerk fällt gerade aus.", 3.4],
+    [8.5, "Die Netzfrequenz sinkt unter 50 Hertz.", 3.4],
+    [12.5, "Bei 49,8 Hertz springt die Reserve an.", 3.4],
+    [16.5, "Ferne Kraftwerke fahren hoch. Es reicht nicht.", 3.4],
+    [21, "Dann 49 Hertz: Das Neubaugebiet wird dunkel.", 3.4],
+    [25, "Automatisch, ohne Vorwarnung: 6,4 Prozent der Last.", 3.4],
+    [30, "Alle zehntel Hertz trifft es den nächsten Ortsteil.", 3.4],
+    [35, "Die Ampel an der Kreuzung geht aus.", 3.4],
+    [40, "Dein Bahnsteig hat noch Licht.", 3.4],
+    [46.5, "Bei 48,1 Hertz sind 41,6 Prozent abgeschaltet.", 3.4],
+    [51, "Dann sinkt die Frequenz trotzdem weiter.", 3.4],
+    [55, "Bei 47,5 Hertz trennen sich die Kraftwerke.", 3.0],
+    [61, "Das Umspannwerk ist dunkel.", 3.0],
+    [64, "Die Windräder drehen langsam aus.", 3.0],
+    [67, "Der Netzaufbau dauert jetzt Stunden.", 3.0]
+  ],
+  "faktenzeile": "IBERISCHE HALBINSEL, 28.04.2025 · 48 HERTZ, DREI SEKUNDEN SPÄTER BLACKOUT",
+  "abspann": {
+    "frage": "Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt?",
+    "fakt": "IBERISCHE HALBINSEL, 28.04.2025 · 48 HERTZ, DREI SEKUNDEN SPÄTER BLACKOUT",
+    "hinweis": "Heute Abend: Ein Blitz trifft dein Flugzeug"
+  },
+  "rechnung": { "code": "pipeline/sim/netzfrequenz.mjs (Test: pipeline/sim/netzfrequenz.test.mjs, 7 Tests grün)" },
+  "rechenweg": "Schwellen aus dem UFLA-Reporting 2023 der vier ÜNB: Regelbereich 50 Hz ± 200 mHz → Reserve ab 49,80 Hz. Lastabwurf in 10 Stufen 49,0 … 48,1 Hz (49,0 − 0,1·i). Abwurfleistung 2023 je Stufe in % der Gesamtlast: 6,4 / 4,0 / 4,2 / 3,9 / 3,9 / 3,6 / 4,2 / 3,6 / 3,6 / 4,3; gerundete Einzelwerte ergeben 41,7, der Bericht nennt 41,6 → Anzeige kumuliert 6,4 · 10,4 · 14,6 · 18,5 · 22,4 · 26,0 · 30,2 · 33,8 · 37,4 · 41,6. Trennung der Erzeuger bei 47,5 Hz → Abstand zum Sollwert 2,5 Hz. Zeitlupe: Iberien 12:33:18 bis Kollaps 12:33:24 ca. 6 s, im Video ca. 7 s Echtzeit auf 55,5 s gedehnt → ca. 1:8. Faktenzeile: 48,0 Hz um 12:33:21, Kollaps 12:33:24 → 3 s. Die Frequenzkurve (Hermite, monoton, Stufen bremsen den Abfall) und die Stufenzeiten (Stufe 1 bei 21 s, Stufe 2 bei 28,2 s, Stufe 10 bei 46,5 s) stehen in sim/netzfrequenz.mjs, die Anzeige kommt aus dieser Datei.",
+  "zahlen": {
+    "sollfrequenz_hz": 50, "reserve_ab_hz": 49.8, "lastabwurf_start_hz": 49, "lastabwurf_ende_hz": 48.1, "stufen": 10,
+    "stufe1_prozent_2023": 6.4, "kumuliert_prozent_2023": 41.6, "vorgabe_nc_er_prozent": "45 ± 7", "erzeuger_trennen_hz": 47.5, "abstand_hz": 2.5,
+    "iberien_min_frequenz_hz": 48, "iberien_48hz_bis_kollaps_s": 3, "zeitlupe_faktor": "ca. 1:8",
+    "ereignis_s": 2.5, "stufe1_s": 21, "stufe10_s": 46.5, "hoehepunkt_s": 58
+  },
+  "annahmen": [
+    "(A) Szenario: ein Erzeugungsdefizit, so groß, dass auch alle zehn Lastabwurfstufen die Frequenz nicht halten; im Normalfall fangen Reserve oder Lastabwurf den Abfall vorher ab.",
+    "(A) Welcher Ortsteil in welcher Stufe abgeschaltet wird, legt der Verteilnetzbetreiber fest; die Reihenfolge im Dorf ist modellhaft, die Prozentwerte sind deutsche Jahresmittel 2023.",
+    "(A) Der Bahnsteig hängt am Ortsnetz (Beleuchtung, Anzeige) und fällt mit dem Blackout aus; der Zugverkehr (eigenes 16,7-Hz-Bahnstromnetz) wird nicht gezeigt, weil die Folgen für ihn nicht belegt sind.",
+    "(A) Zeitverlauf des Frequenzabfalls von ca. 7 s Echtzeit angelehnt an Iberien 2025 (ca. 6 s), im Video auf ca. 1:8 gedehnt.",
+    "(A) Dauer „Stunden“ für den Netzaufbau angelehnt an Iberien 2025 (Portugal ca. 12 h, Spanien ca. 16 h bis zum vollständigen Übertragungsnetz).",
+    "(A) Windräder, Autos, Leute, Dampffahnen, Laub sind Bildgestaltung; die Windräder laufen nach dem Zusammenbruch aus, das Verhalten der Kraftwerke danach ist nicht gemessen."
+  ],
+  "quellen": [
+    "(F) UFLA Reporting 2023 gemäß VDE-AR-N 4142, die vier deutschen Übertragungsnetzbetreiber, 2024 – https://www.netztransparenz.de/xspproxy/api/staticfiles/ntp-relaunch/dokumente/strommarktdesign/er-verordnung/2024_ufla_reporting_2023_4%C3%BCnb.pdf (am 11.11.2026 im PDF gegengelesen: Tabelle 1 mit 6,4/4,0/4,2/3,9/3,9/3,6/4,2/3,6/3,6/4,3 % und Summe 41,6 %, Abtrennen der Erzeugungsanlagen bei 47,5 Hz, Lastabwurfbereich 45 % ± 7 %)",
+    "(F) ENTSO-E, vorläufige Chronologie Blackout Iberische Halbinsel 28.04.2025, wiedergegeben bei T&D World, Mai 2025 – https://www.tdworld.com/utility-business/news/55290241/expert-panel-begins-investigation-into-iberian-peninsula-blackout (48,0 Hz um 12:33:21, Kollaps 12:33:24; erneut per Websuche bestätigt 11.11.2026)",
+    "(F) Power Magazine, Anatomy of a Blackout: Findings from the Spain-Portugal Grid Collapse Final Report, 2026 – https://www.powermag.com/anatomy-of-a-blackout-findings-from-the-spain-portugal-grid-collapse-final-report/",
+    "(F) ingenieur.de, 50 Hertz im Stromnetz: Wann ein Blackout droht – https://www.ingenieur.de/50-hertz-im-stromnetz-wann-ein-blackout-droht-und-was-ihn-verhindert-c7e34a97-5fe3-4cbe-9e3a-ed4c5b71c895/",
+    "(F) DB Energie GmbH, Stellungnahme an die Bundesnetzagentur, 2026 (Bahnstromnetz 16,7 Hz; Grund, den Zug nicht zu zeigen)"
+  ],
+  "caption": "Was passiert, wenn die Netzfrequenz unter 50 Hertz fällt? ⚡ Ich hab's durchgespielt. In welcher Stufe wäre dein Ort schon dunkel? 👇 #netzfrequenz #blackout #stromnetz #wissen #waswaerewenn",
+  "dramaturgie": [
+    "0–2,5 s: Bahnsteig voller Leben (Wartehäuschen, Autos auf der Hauptstraße, Windräder drehen, Dampf aus dem fernen Kraftwerk, Laub weht), Countdown 2,5 → 0,0; Kamera schwenkt ab Bild 1 vom Umspannwerk über das Dorf.",
+    "2,5 s Ereignis (Testblock a): die Dampffahne des fernen Kraftwerks fällt in sich zusammen, das Netzbrummen im Ton sinkt hörbar ab; Anzeige springt auf NETZFREQUENZ 50,00.",
+    "2,5–12 s: Hundertstel laufen nach unten, bei 12 s 49,80, Statuszeile REGELRESERVE, die Schornsteine eines zweiten Kraftwerks stoßen mehr Dampf aus.",
+    "16–21 s: RESERVE REICHT NICHT, Zoom auf das Neubaugebiet.",
+    "21 s: Etikettwechsel ABGESCHALTETE LAST 6,4 %, das Neubaugebiet erlischt (Fenster, Laternen), Relais-Klack im Ton.",
+    "28,2–46,5 s: Stufen 2–10 (Siedlung Ost, Hangsiedlung, Schule mit Flutlicht, Kreuzung mit Ampel bei 35,1 s, Ortskern mit Kirche, Siedlung West, Mühlenweg, Gewerbegebiet, Höfe); Prozent zählt hoch, Statuszeile STUFE n · Hz.",
+    "39,5–44 s: Kamera den eigenen Bahnsteig entlang, Lampen und Anzeigetafel noch an, das Dorf dahinter dunkel.",
+    "48–58 s: Etikett zurück auf NETZFREQUENZ 48,10 → 47,50, kein Flackern, nur das Brummen sinkt weiter, langsamer Zoom.",
+    "58 s: HIER 47,50, harter Schnitt auf die Gesamtansicht von der Brücke, Umspannwerk, Bahnsteig, Ampel und alle Lampen aus, Stille im Moment selbst.",
+    "61–70 s: Schwenk zum Umspannwerk, Windräder laufen aus, tiefe Novembersonne über dem stillen Dorf.",
+    "70–72 s Abblende, 72–80 s schwarzer Abspann mit Titelfrage, Faktenzeile und Folgen-Hinweis (Testvideo)."
+  ],
+  "hoehepunkt": "58 s: HIER bei 47,50 Hz, harter Schnitt auf die Gesamtansicht, alles Licht im Dorf, Umspannwerk und Bahnsteig gleichzeitig aus",
+  "bewegungsplan": [
+    [0, "Bahnsteig, Autos, Windräder, Laub, Dampf; Schwenk vom Umspannwerk über das Dorf", 1],
+    [2.5, "Dampffahne des Kraftwerks fällt zusammen, Netzbrummen sinkt", 1],
+    [12, "49,80: Reserve, zweites Kraftwerk dampft stärker", 2],
+    [21, "Stufe 1: Neubaugebiet dunkel", 3],
+    [28.2, "Stufen 2–10 alle ca. 2,3 s, Schwenk über die Ortsteile, Ampel aus bei 35 s, Autos halten", 3],
+    [39.5, "Blick den Bahnsteig entlang, Lampen und Tafel noch an", 4],
+    [48, "Frequenz fällt weiter, Zoom", 4],
+    [58, "HIER: Schnitt, alles aus, Windräder laufen aus", 5],
+    [62, "stilles Dorf in der tiefen Sonne", 5]
+  ],
+  "bild_text_abgleich": [
+    { "t": 4.8, "satz": "Ein großes Kraftwerk fällt gerade aus.", "bild": "Dampffahne des fernen Kraftwerks ist seit 2,5 s abgerissen, Anzeige NETZFREQUENZ 50,00 Hz" },
+    { "t": 8.5, "satz": "Die Netzfrequenz sinkt unter 50 Hertz.", "bild": "Anzeige zählt unter 50,00 (ca. 49,9)" },
+    { "t": 12.5, "satz": "Bei 49,8 Hertz springt die Reserve an.", "bild": "Anzeige 49,80 Hz, Statuszeile REGELRESERVE (AB 49,80), zweites Kraftwerk dampft stärker" },
+    { "t": 16.5, "satz": "Ferne Kraftwerke fahren hoch. Es reicht nicht.", "bild": "Schornsteine des zweiten Kraftwerks dampfen, Statuszeile RESERVE REICHT NICHT" },
+    { "t": 21, "satz": "Dann 49 Hertz: Das Neubaugebiet wird dunkel.", "bild": "Etikett ABGESCHALTETE LAST 6,4 %, Fenster und Laternen des Neubaugebiets erlöschen" },
+    { "t": 25, "satz": "Automatisch, ohne Vorwarnung: 6,4 Prozent der Last.", "bild": "Anzeige steht bei 6,4 % (Stufe 1 · 49,0 Hz), Neubaugebiet dunkel, Zoom" },
+    { "t": 30, "satz": "Alle zehntel Hertz trifft es den nächsten Ortsteil.", "bild": "Stufe 3 bei 30,5 s, Hangsiedlung dunkel, Statuszeile STUFE n · Hz" },
+    { "t": 35, "satz": "Die Ampel an der Kreuzung geht aus.", "bild": "Stufe 5 bei 35,06 s: Ampel erlischt, Autos halten, Kreuzungshäuser und Laternen dunkel" },
+    { "t": 40, "satz": "Dein Bahnsteig hat noch Licht.", "bild": "Kamera am Bahnsteig entlang: Lampen und Anzeigetafel leuchten, das Dorf dahinter dunkler" },
+    { "t": 46.5, "satz": "Bei 48,1 Hertz sind 41,6 Prozent abgeschaltet.", "bild": "Anzeige 41,6 % bei 46,5 s, Statuszeile STUFE 10 · 48,1 HZ" },
+    { "t": 51, "satz": "Dann sinkt die Frequenz trotzdem weiter.", "bild": "Etikett NETZFREQUENZ 48,1x Hz, Anzeige fällt weiter" },
+    { "t": 55, "satz": "Bei 47,5 Hertz trennen sich die Kraftwerke.", "bild": "Anzeige läuft auf 47,5x Hz, Statuszeile KRAFTWERKE TRENNEN SICH GLEICH" },
+    { "t": 61, "satz": "Das Umspannwerk ist dunkel.", "bild": "Gesamtansicht, Umspannwerk (Flutlicht, Schalthaus) ist aus" },
+    { "t": 64, "satz": "Die Windräder drehen langsam aus.", "bild": "Rotoren des Windparks werden langsamer" },
+    { "t": 67, "satz": "Der Netzaufbau dauert jetzt Stunden.", "bild": "stilles Dorf in tiefer Sonne, Statuszeile NETZAUFBAU: STUNDEN" }
+  ],
+  "korrekturen": [
+    { "feld": "anzeige_plan[0].start", "alt": "3", "neu": "2,5", "quelle": "sim/netzfrequenz.mjs (Countdown läuft ab Bild 0 bis zum Ereignis bei 2,5 s)", "grund": "Der Countdown zeigt die Restzeit mit einer Nachkommastelle wie bei den früheren Testblock-a-Videos; keine inhaltliche Änderung", "zeit": "2026-11-12" },
+    { "feld": "saetze[12..14].t_ca", "alt": "63 / 65,5 / 68", "neu": "61 / 64 / 67", "quelle": "qc/referenz_pov.py 4b und 4e (jeder Satz mindestens 3 s sichtbar, alle Sätze enden bis 70 s)", "grund": "Drei Sätze zu je 3 s brauchen 9 s zwischen 61 und 70 s; bei 63/65,5/68 wären zwei Sätze nur 2,5 s sichtbar, der letzte endete nach 70 s. Reihenfolge und Wortlaut unverändert; der Satz 55 s steht 3,0 s (endet bei 58 s), damit im Höhepunkt kein Satz überlappt", "zeit": "2026-11-12" },
+    { "feld": "dramaturgie / stufenzeiten", "alt": "alle ca. 2,7 s eine Stufe ab 21 s", "neu": "Stufe 1 bei 21 s, Stufe 2 bei 28,2 s, dann gleichmäßig bis Stufe 10 bei 46,5 s", "quelle": "Skript-Bild-Abgleich: Satz 25 s nennt 6,4 Prozent, Satz 46,5 s 41,6 Prozent", "grund": "Die Anzeige muss bei den Sätzen 25 s und 46,5 s genau diese Werte zeigen; die Stufen davor bzw. danach sind modellhaft", "zeit": "2026-11-12" },
+    { "feld": "faktencheck", "alt": "-", "neu": "UFLA-Tabelle (6,4/4,0/4,2/3,9/3,9/3,6/4,2/3,6/3,6/4,3 %, Summe 41,6 %), Trennung bei 47,5 Hz, Lastabwurfbereich 45 % ± 7 % im PDF gegengelesen; Iberien 48,0 Hz um 12:33:21, Kollaps 12:33:24 per Websuche bestätigt (ENTSO-E-Chronologie über T&D World); keine Abweichung zum Skript", "quelle": "siehe quellen", "grund": "Faktencheck vor dem Bau, Ergebnis unverändert", "zeit": "2026-11-12" }
+  ],
+  "lern_notizen": {
+    "welt": "Dorfbahnsteig (Land, Technik und Versorgung), Neubau welt_dorf_bahnsteig.js",
+    "standpunkt": "auf dem Bahnsteig, Augenhöhe 1,6 m, Gesamtansicht ab 58 s von der Brücke",
+    "tageszeit": ["später Nachmittag, tiefe Sonne, warmes Tageslicht", "Sonne sinkt bis 70 s leicht", "Tageslicht bleibt bis zum Schluss"],
+    "kamera": [
+      { "t": 0, "art": "schwenk" }, { "t": 8, "art": "zoom 58→46" }, { "t": 27, "art": "schwenk" }, { "t": 39.5, "art": "schwenk" },
+      { "t": 46, "art": "zoom 56→40" }, { "t": 58, "art": "schnitt" }, { "t": 58.1, "art": "schwenk" }
+    ],
+    "zeitraffer": "Zeitlupe ca. 1:8 von 2,5 bis 58 s",
+    "effekte": "siehe ereignisse.json (Dampffahne fällt zusammen, 10 Stufen, Ampel aus, Bahnsteig aus, Windräder laufen aus)",
+    "sequenzen": 6,
+    "t_ereignis": 2.5,
+    "countdown": "ja, zweiter: nein",
+    "schnitte": [{ "t": 58, "grund": "Szenensprung am Höhepunkt: Gesamtansicht von der Fußgängerbrücke" }],
+    "statuszeile": ["NORMALBETRIEB", "KRAFTWERK AUS", "REGELRESERVE (AB 49,80)", "RESERVE REICHT NICHT", "STUFE 1 · 49,0 HZ … STUFE 10 · 48,1 HZ", "ALLE STUFEN AUS", "KRAFTWERKE TRENNEN SICH GLEICH", "47,50 HZ · NETZZUSAMMENBRUCH", "NETZAUFBAU: STUNDEN"],
+    "testbloecke": { "folgen_hinweis": "mit", "einstieg_a2": "a" },
+    "laenge_s": 80,
+    "t_stufe2": 12,
+    "folgen_hinweis": "Heute Abend: Ein Blitz trifft dein Flugzeug"
+  }
+}

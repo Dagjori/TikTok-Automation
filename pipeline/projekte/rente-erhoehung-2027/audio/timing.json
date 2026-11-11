@@ -1,0 +1,791 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": {
+  "stability": 0.5,
+  "similarity_boost": 0.75
+ },
+ "dauer": 84.821,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Rentenerhöhung 2027: Von 82 € mehr – was bleibt wirklich?",
+   "start": 0.0,
+   "ende": 8.76,
+   "woerter": [
+    {
+     "wort": "Rentenerhöhung",
+     "start": 0.28,
+     "ende": 0.88
+    },
+    {
+     "wort": "2027:",
+     "start": 0.96,
+     "ende": 2.34
+    },
+    {
+     "wort": "Von",
+     "start": 2.34,
+     "ende": 3.72
+    },
+    {
+     "wort": "82",
+     "start": 3.72,
+     "ende": 5.1000000000000005
+    },
+    {
+     "wort": "€",
+     "start": 5.1000000000000005,
+     "ende": 6.48
+    },
+    {
+     "wort": "mehr",
+     "start": 6.56,
+     "ende": 7.16
+    },
+    {
+     "wort": "–",
+     "start": 7.44,
+     "ende": 7.5600000000000005
+    },
+    {
+     "wort": "was",
+     "start": 7.5600000000000005,
+     "ende": 7.68
+    },
+    {
+     "wort": "bleibt",
+     "start": 7.76,
+     "ende": 8.0
+    },
+    {
+     "wort": "wirklich?",
+     "start": 8.04,
+     "ende": 8.76
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "2.000 € Rente · +4,1 % ab 01.07.2027 (Prognose) · Rentenbeginn 2020 · mit Kindern · ledig · keine Kirchensteuer",
+   "start": 9.04,
+   "ende": 12.84,
+   "woerter": [
+    {
+     "wort": "2.000",
+     "start": 9.04,
+     "ende": 9.12
+    },
+    {
+     "wort": "€",
+     "start": 9.12,
+     "ende": 9.2
+    },
+    {
+     "wort": "Rente",
+     "start": 9.2,
+     "ende": 9.28
+    },
+    {
+     "wort": "·",
+     "start": 9.28,
+     "ende": 9.36
+    },
+    {
+     "wort": "+4,1",
+     "start": 9.36,
+     "ende": 9.44
+    },
+    {
+     "wort": "%",
+     "start": 9.44,
+     "ende": 9.52
+    },
+    {
+     "wort": "ab",
+     "start": 9.52,
+     "ende": 9.6
+    },
+    {
+     "wort": "01.07.2027",
+     "start": 9.6,
+     "ende": 9.68
+    },
+    {
+     "wort": "(Prognose)",
+     "start": 9.68,
+     "ende": 9.76
+    },
+    {
+     "wort": "·",
+     "start": 9.76,
+     "ende": 9.84
+    },
+    {
+     "wort": "Rentenbeginn",
+     "start": 9.92,
+     "ende": 10.48
+    },
+    {
+     "wort": "2020",
+     "start": 10.56,
+     "ende": 11.2
+    },
+    {
+     "wort": "·",
+     "start": 11.2,
+     "ende": 11.84
+    },
+    {
+     "wort": "mit",
+     "start": 12.0,
+     "ende": 12.16
+    },
+    {
+     "wort": "Kindern",
+     "start": 12.24,
+     "ende": 12.84
+    },
+    {
+     "wort": "·",
+     "start": 12.84,
+     "ende": 12.84
+    },
+    {
+     "wort": "ledig",
+     "start": 12.84,
+     "ende": 12.84
+    },
+    {
+     "wort": "·",
+     "start": 12.84,
+     "ende": 12.84
+    },
+    {
+     "wort": "keine",
+     "start": 12.84,
+     "ende": 12.84
+    },
+    {
+     "wort": "Kirchensteuer",
+     "start": 12.84,
+     "ende": 12.84
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, da kommt fast alles an. Oder?",
+   "start": 13.04,
+   "ende": 16.92,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 13.04,
+     "ende": 13.6
+    },
+    {
+     "wort": "da",
+     "start": 13.6,
+     "ende": 13.64
+    },
+    {
+     "wort": "kommt",
+     "start": 13.64,
+     "ende": 13.68
+    },
+    {
+     "wort": "fast",
+     "start": 13.68,
+     "ende": 13.92
+    },
+    {
+     "wort": "alles",
+     "start": 14.0,
+     "ende": 14.24
+    },
+    {
+     "wort": "an.",
+     "start": 14.92,
+     "ende": 15.32
+    },
+    {
+     "wort": "Oder?",
+     "start": 15.6,
+     "ende": 15.84
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Krankenkasse: 7,3 % = −5,99 € · halber Zusatzbeitrag 1,45 % = −1,19 € → 74,82 €",
+   "start": 17.28,
+   "ende": 25.64,
+   "woerter": [
+    {
+     "wort": "Krankenkasse:",
+     "start": 18.24,
+     "ende": 18.88
+    },
+    {
+     "wort": "7,3",
+     "start": 18.96,
+     "ende": 19.405714285714286
+    },
+    {
+     "wort": "%",
+     "start": 19.405714285714286,
+     "ende": 19.85142857142857
+    },
+    {
+     "wort": "=",
+     "start": 19.85142857142857,
+     "ende": 20.297142857142855
+    },
+    {
+     "wort": "−5,99",
+     "start": 20.297142857142855,
+     "ende": 20.742857142857144
+    },
+    {
+     "wort": "€",
+     "start": 20.742857142857144,
+     "ende": 21.18857142857143
+    },
+    {
+     "wort": "·",
+     "start": 21.18857142857143,
+     "ende": 21.634285714285713
+    },
+    {
+     "wort": "halber",
+     "start": 21.634285714285713,
+     "ende": 22.08
+    },
+    {
+     "wort": "Zusatzbeitrag",
+     "start": 22.16,
+     "ende": 23.12
+    },
+    {
+     "wort": "1,45",
+     "start": 23.52,
+     "ende": 23.785
+    },
+    {
+     "wort": "%",
+     "start": 23.785,
+     "ende": 24.05
+    },
+    {
+     "wort": "=",
+     "start": 24.05,
+     "ende": 24.315
+    },
+    {
+     "wort": "−1,19",
+     "start": 24.315,
+     "ende": 24.58
+    },
+    {
+     "wort": "€",
+     "start": 24.58,
+     "ende": 24.845
+    },
+    {
+     "wort": "→",
+     "start": 24.845,
+     "ende": 25.11
+    },
+    {
+     "wort": "74,82",
+     "start": 25.11,
+     "ende": 25.375
+    },
+    {
+     "wort": "€",
+     "start": 25.375,
+     "ende": 25.64
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Pflege: 3,6 % = −2,95 € (Rentner zahlen allein) → 71,87 € · Plus erst ab Juli. Was kommt 2027 an?",
+   "start": 25.92,
+   "ende": 40.32,
+   "woerter": [
+    {
+     "wort": "Pflege:",
+     "start": 25.92,
+     "ende": 26.560000000000002
+    },
+    {
+     "wort": "3,6",
+     "start": 26.560000000000002,
+     "ende": 27.200000000000003
+    },
+    {
+     "wort": "%",
+     "start": 27.200000000000003,
+     "ende": 27.840000000000003
+    },
+    {
+     "wort": "=",
+     "start": 27.840000000000003,
+     "ende": 28.48
+    },
+    {
+     "wort": "−2,95",
+     "start": 28.48,
+     "ende": 29.12
+    },
+    {
+     "wort": "€",
+     "start": 29.12,
+     "ende": 29.76
+    },
+    {
+     "wort": "(Rentner",
+     "start": 29.84,
+     "ende": 30.16
+    },
+    {
+     "wort": "zahlen",
+     "start": 30.24,
+     "ende": 30.48
+    },
+    {
+     "wort": "allein)",
+     "start": 30.56,
+     "ende": 31.04
+    },
+    {
+     "wort": "→",
+     "start": 31.08,
+     "ende": 31.97
+    },
+    {
+     "wort": "71,87",
+     "start": 31.97,
+     "ende": 32.86
+    },
+    {
+     "wort": "€",
+     "start": 32.86,
+     "ende": 33.75
+    },
+    {
+     "wort": "·",
+     "start": 33.75,
+     "ende": 34.64
+    },
+    {
+     "wort": "Plus",
+     "start": 34.72,
+     "ende": 35.04
+    },
+    {
+     "wort": "erst",
+     "start": 35.52,
+     "ende": 35.68
+    },
+    {
+     "wort": "ab",
+     "start": 35.76,
+     "ende": 35.84
+    },
+    {
+     "wort": "Juli.",
+     "start": 35.92,
+     "ende": 36.72
+    },
+    {
+     "wort": "Was",
+     "start": 36.8,
+     "ende": 37.12
+    },
+    {
+     "wort": "kommt",
+     "start": 37.2,
+     "ende": 37.36
+    },
+    {
+     "wort": "2027",
+     "start": 37.44,
+     "ende": 39.44
+    },
+    {
+     "wort": "an?",
+     "start": 39.6,
+     "ende": 40.32
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Auf dem Konto: 71,87 € · Rentenfreibetrag seit 2021 fest: 3.860 €/Jahr",
+   "start": 40.4,
+   "ende": 52.96,
+   "woerter": [
+    {
+     "wort": "Auf",
+     "start": 40.4,
+     "ende": 40.48
+    },
+    {
+     "wort": "dem",
+     "start": 40.52,
+     "ende": 40.56
+    },
+    {
+     "wort": "Konto:",
+     "start": 40.72,
+     "ende": 41.04
+    },
+    {
+     "wort": "71,87",
+     "start": 41.16,
+     "ende": 42.77333333333333
+    },
+    {
+     "wort": "€",
+     "start": 42.77333333333333,
+     "ende": 44.38666666666666
+    },
+    {
+     "wort": "·",
+     "start": 44.38666666666666,
+     "ende": 46.0
+    },
+    {
+     "wort": "Rentenfreibetrag",
+     "start": 46.08,
+     "ende": 47.2
+    },
+    {
+     "wort": "seit",
+     "start": 47.24,
+     "ende": 48.384
+    },
+    {
+     "wort": "2021",
+     "start": 48.384,
+     "ende": 49.528
+    },
+    {
+     "wort": "fest:",
+     "start": 49.528,
+     "ende": 50.672000000000004
+    },
+    {
+     "wort": "3.860",
+     "start": 50.672000000000004,
+     "ende": 51.816
+    },
+    {
+     "wort": "€/Jahr",
+     "start": 51.816,
+     "ende": 52.96
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "text": "Erhöhung zu 100 % steuerpflichtig · Grenzsteuersatz ca. 24 % (Tarif 2027, geplant)",
+   "start": 53.08,
+   "ende": 63.2,
+   "woerter": [
+    {
+     "wort": "Erhöhung",
+     "start": 54.0,
+     "ende": 54.4
+    },
+    {
+     "wort": "zu",
+     "start": 54.4,
+     "ende": 54.42666666666666
+    },
+    {
+     "wort": "100",
+     "start": 54.42666666666666,
+     "ende": 54.45333333333333
+    },
+    {
+     "wort": "%",
+     "start": 54.45333333333333,
+     "ende": 54.48
+    },
+    {
+     "wort": "steuerpflichtig",
+     "start": 54.48,
+     "ende": 55.84
+    },
+    {
+     "wort": "·",
+     "start": 55.92,
+     "ende": 56.83
+    },
+    {
+     "wort": "Grenzsteuersatz",
+     "start": 56.83,
+     "ende": 57.74
+    },
+    {
+     "wort": "ca.",
+     "start": 57.74,
+     "ende": 58.650000000000006
+    },
+    {
+     "wort": "24",
+     "start": 58.650000000000006,
+     "ende": 59.56
+    },
+    {
+     "wort": "%",
+     "start": 59.56,
+     "ende": 60.47
+    },
+    {
+     "wort": "(Tarif",
+     "start": 60.47,
+     "ende": 61.38
+    },
+    {
+     "wort": "2027,",
+     "start": 61.38,
+     "ende": 62.290000000000006
+    },
+    {
+     "wort": "geplant)",
+     "start": 62.290000000000006,
+     "ende": 63.2
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Finanzamt: −16,75 € → es bleiben 55,12 € von 82 €",
+   "start": 63.28,
+   "ende": 69.84,
+   "woerter": [
+    {
+     "wort": "Finanzamt:",
+     "start": 64.96,
+     "ende": 66.0
+    },
+    {
+     "wort": "−16,75",
+     "start": 66.08,
+     "ende": 66.4
+    },
+    {
+     "wort": "€",
+     "start": 66.4,
+     "ende": 66.72
+    },
+    {
+     "wort": "→",
+     "start": 66.72,
+     "ende": 67.03999999999999
+    },
+    {
+     "wort": "es",
+     "start": 67.03999999999999,
+     "ende": 67.36
+    },
+    {
+     "wort": "bleiben",
+     "start": 67.44,
+     "ende": 67.76
+    },
+    {
+     "wort": "55,12",
+     "start": 67.8,
+     "ende": 68.208
+    },
+    {
+     "wort": "€",
+     "start": 68.208,
+     "ende": 68.616
+    },
+    {
+     "wort": "von",
+     "start": 68.616,
+     "ende": 69.024
+    },
+    {
+     "wort": "82",
+     "start": 69.024,
+     "ende": 69.432
+    },
+    {
+     "wort": "€",
+     "start": 69.432,
+     "ende": 69.84
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Pflege allein bezahlt · Erhöhung voll steuerpflichtig",
+   "start": 70.0,
+   "ende": 74.96,
+   "woerter": [
+    {
+     "wort": "Pflege",
+     "start": 70.88,
+     "ende": 71.2
+    },
+    {
+     "wort": "allein",
+     "start": 71.28,
+     "ende": 72.08
+    },
+    {
+     "wort": "bezahlt",
+     "start": 72.16,
+     "ende": 72.24
+    },
+    {
+     "wort": "·",
+     "start": 72.24,
+     "ende": 72.32
+    },
+    {
+     "wort": "Erhöhung",
+     "start": 72.4,
+     "ende": 72.88
+    },
+    {
+     "wort": "voll",
+     "start": 73.28,
+     "ende": 73.52
+    },
+    {
+     "wort": "steuerpflichtig",
+     "start": 73.6,
+     "ende": 74.96
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "text": "2027: 6 × 82 € = 492 € brutto → 332,24 € bleiben",
+   "start": 75.0,
+   "ende": 82.0,
+   "woerter": [
+    {
+     "wort": "2027:",
+     "start": 75.0,
+     "ende": 75.37
+    },
+    {
+     "wort": "6",
+     "start": 75.37,
+     "ende": 75.74
+    },
+    {
+     "wort": "×",
+     "start": 75.74,
+     "ende": 76.11
+    },
+    {
+     "wort": "82",
+     "start": 76.11,
+     "ende": 76.48
+    },
+    {
+     "wort": "€",
+     "start": 76.48,
+     "ende": 76.85
+    },
+    {
+     "wort": "=",
+     "start": 76.85,
+     "ende": 77.22
+    },
+    {
+     "wort": "492",
+     "start": 77.22,
+     "ende": 77.59
+    },
+    {
+     "wort": "€",
+     "start": 77.59,
+     "ende": 77.96
+    },
+    {
+     "wort": "brutto",
+     "start": 77.96,
+     "ende": 78.33
+    },
+    {
+     "wort": "→",
+     "start": 78.33,
+     "ende": 78.7
+    },
+    {
+     "wort": "332,24",
+     "start": 78.7,
+     "ende": 79.07
+    },
+    {
+     "wort": "€",
+     "start": 79.07,
+     "ende": 79.44
+    },
+    {
+     "wort": "bleiben",
+     "start": 79.52,
+     "ende": 79.84
+    }
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "text": "Von der Rentenerhöhung bleiben gut zwei Drittel.",
+   "start": 82.08,
+   "ende": 84.88,
+   "woerter": [
+    {
+     "wort": "Von",
+     "start": 82.08,
+     "ende": 82.16
+    },
+    {
+     "wort": "der",
+     "start": 82.24,
+     "ende": 82.32
+    },
+    {
+     "wort": "Rentenerhöhung",
+     "start": 82.44,
+     "ende": 83.04
+    },
+    {
+     "wort": "bleiben",
+     "start": 83.2,
+     "ende": 83.52
+    },
+    {
+     "wort": "gut",
+     "start": 83.6,
+     "ende": 83.84
+    },
+    {
+     "wort": "zwei",
+     "start": 83.92,
+     "ende": 84.16
+    },
+    {
+     "wort": "Drittel.",
+     "start": 84.24,
+     "ende": 84.88
+    }
+   ]
+  }
+ ]
+}
