@@ -6,6 +6,7 @@
 //   · Treffer: Aufrufe nach 24 h ≥ 3× Median der letzten 10 Videos desselben Accounts → Idee „Teil 2“.
 //   · Serie (Inhaber 08.11.: „Folgeteil ≥ Median“): Ein Folgeteil mit mindestens dem Median bekommt den nächsten Teil,
 //     darunter endet die Serie; höchstens 3 Folgeteile hintereinander (Teil 2 bis 4).
+//   · stelldirvor (Vorschlag „Leitmotiv wechseln“, 11.11.2026): nur ein Folgeteil je Treffer (Teil 2), danach keine Serie.
 // Nur reine Funktionen (keine Dateien, kein Netz), Tests: node --test cockpit/lib/treffer.test.mjs
 
 export const STUNDE = 3600000;
@@ -14,6 +15,7 @@ export const TREFFER_FAKTOR = 3;
 export const VERGLEICH_VIDEOS = 10;
 export const MIN_VERGLEICH = 5;        // unter 5 älteren Videos mit 24-h-Zahl gibt es kein Urteil (A)
 export const MAX_FOLGETEILE = 3;       // Teil 2, 3, 4; danach mindestens 1 Tag anderes Thema
+export const MAX_FOLGETEILE_KONTO = { stelldirvor: 1 }; // Account 2: Folgeteil nur einmal (Leitmotiv wechseln, 11.11.2026)
 export const KLAMMER_MAX_H = 12;       // Interpolation nur zwischen Punkten, die je höchstens 12 h vom Ziel entfernt sind
 export const NAH_H = 2;                // ohne Klammer: nächster Punkt höchstens 2 h entfernt
 export const GENAU_H = 1.5;            // Abstand bis hier gilt als gemessen, darüber als geschätzt
@@ -116,11 +118,12 @@ export function bewerten(videos) {
 }
 
 /** Nächster Teil einer Serie oder null. teil = Teil des bewerteten Videos (1 = normales Video, 2.. = Folgeteil).
- *  Normales Video: Teil 2 nur bei Treffer. Folgeteil: nächster Teil, wenn ≥ Median (Inhaber 08.11.), höchstens bis Teil 4. */
-export function naechsterTeil(teil, bewertung) {
+ *  Normales Video: Teil 2 nur bei Treffer. Folgeteil: nächster Teil, wenn ≥ Median (Inhaber 08.11.), höchstens bis Teil 4;
+ *  für stelldirvor höchstens Teil 2 (MAX_FOLGETEILE_KONTO). */
+export function naechsterTeil(teil, bewertung, konto = null) {
   if (!bewertung || bewertung.median === null || bewertung.faktor === null) return null;
   if (teil <= 1) return bewertung.treffer ? 2 : null;
-  if (teil >= 1 + MAX_FOLGETEILE) return null;
+  if (teil >= 1 + (MAX_FOLGETEILE_KONTO[konto] ?? MAX_FOLGETEILE)) return null;
   return bewertung.ueber_median ? teil + 1 : null;
 }
 
@@ -155,7 +158,7 @@ export function teilIdee({ konto, teil, wurzelTitel, vorherTitel, post, bewertun
     originalitaet: "Folgeteil eines eigenen Treffers: von „bisher“ und der Anti-Liste ausgenommen (Hirn: Serien und Treffer-Folgen)",
   };
   const relevant = "Das Versprechen von Teil 1 hat gezogen; ein Folgeteil erreicht die Zuschauer, solange Teil 1 noch Aufrufe bekommt (96 % in 10 Tagen).";
-  if (konto === "stelldirvor") Object.assign(idee, { ereignis: auftrag, messgroesse: "neue Messgröße bzw. neuer Ort zur selben Prämisse", pointe: relevant });
+  if (konto === "stelldirvor") Object.assign(idee, { ereignis: auftrag, messgroesse: "neue Messgröße bzw. neuer Ort zur selben Prämisse", pointe: relevant, leitbild: "wie Teil 1 (einziger Folgeteil; danach mindestens 3 Videos mit anderem Leitbild)" });
   else Object.assign(idee, { hook: auftrag, ergebnis_ansatz: "neue eigene Modellrechnung mit Euro-Ergebnis zum selben Versprechen", warum_relevant: relevant });
   return idee;
 }

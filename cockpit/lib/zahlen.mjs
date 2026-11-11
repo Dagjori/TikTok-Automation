@@ -220,7 +220,7 @@ export function erstelleZahlen({ repo, ordner, geheim, senden = () => {}, log = 
           v24: v ? v.views : null, v24_geschaetzt: v ? v.geschaetzt : null,
           je1000: f && v ? jeTausend(f.plus, v.views) : null,
           treffer_faktor: bw.faktor ?? null, treffer_median: bw.median ?? null, treffer: !!bw.treffer, teil,
-          naechster_teil: naechsterTeil(teil, bw),
+          naechster_teil: naechsterTeil(teil, bw, KONTO_VON_KANAL[p.kanal]),
         });
         trefferMelden(p, neu.get(p.post_id), bw, serie, jetzt);
       }

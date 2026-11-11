@@ -102,6 +102,10 @@ test("naechsterTeil: Treffer → Teil 2; Folgeteil ≥ Median → weiter bis Tei
   assert.equal(naechsterTeil(4, treffer), null);   // höchstens 3 Folgeteile
   assert.equal(naechsterTeil(2, schwach), null);
   assert.equal(naechsterTeil(1, { median: null, faktor: null }), null);
+  // stelldirvor: Folgeteil nur einmal (Leitmotiv wechseln, 11.11.2026)
+  assert.equal(naechsterTeil(1, treffer, "stelldirvor"), 2);
+  assert.equal(naechsterTeil(2, treffer, "stelldirvor"), null);
+  assert.equal(naechsterTeil(2, mittel, "simulierbar"), 3);
 });
 
 test("frageAusCaption und teilAusText", () => {

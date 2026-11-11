@@ -51,6 +51,7 @@ Englisch (zeigt, was als Nächstes nach Deutschland kommt): `what would happen i
 - In jeder Phase verändert sich die Welt sichtbar; nie „warten“.
 - Maßstab meist persönlich: mindestens 6 von 10 Ideen an einem greifbaren Ort.
 - Weltvielfalt: Welttyp, Standpunkt und Tageszeit anders als im vorigen Video; Natur zuerst.
+- **Leitbild wechseln** (seit 11.11.2026): Jede Idee nennt ihr Leitbild (Themenkreis, der den Großteil des Videos prägt, z. B. Polarnacht, Polarlicht, Nachthimmel, Eis). Ein Leitbild kommt in höchstens **1 von 4 aufeinanderfolgenden Videos** vor: keine Idee mit dem Leitbild eines der 3 neuesten Videos, unter den 10 Ideen jedes Leitbild höchstens einmal. Ein Folgeteil zu einem Treffer entsteht nur einmal (Teil 2) und wird nie im Folgen-Hinweis eines anderen Videos angekündigt.
 - Die Titelfrage macht eine Folge neugierig, die man nicht errät, und enthält den Suchbegriff.
 
 ### A5. Abgenutzt und gesperrt (nie vorschlagen, auch nicht umbenannt oder an anderem Ort)
@@ -79,6 +80,7 @@ Zuerst `Gestrichen (naheliegend): …`, dann `Nachfrage geprüft: Suchvorschläg
 
 ```
 IDEE <Nr> · <Punkte>/21 · Feld <Nr Name> · Maßstab <persönlich|global>
+Leitbild:        <Themenkreis in 1 bis 3 Wörtern; nicht in den 3 neuesten Videos>
 Titelfrage:      <„Was wäre, wenn …?“ bzw. „Was passiert, wenn …?“, Suchbegriff enthalten>
 Suchbegriff:     <ein Wort oder Wortpaar für die TikTok-Suche>
 Nachfrage:       <Suchformulierung(en) · Quelle · Datum bzw. Anlass mit Datum>
@@ -116,6 +118,7 @@ Danach: `Welche wählst du?`
 6. Faktenzeile belegbar; Quellen mit Jahr.
 7. Kein Klassiker aus A5, nichts aus A6.
 8. Welttyp, Standpunkt, Tageszeit anders als im vorigen Video.
+9. `folgen_hinweis` kündigt keinen Folgeteil an (kein „Teil 2 im Profil“).
 
 ### B3. Ausgabe „Skript“ (genau diese Felder)
 ```json

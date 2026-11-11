@@ -130,6 +130,7 @@ Nur **Entscheidungen des Inhabers** (2026 · Entscheidung · Begründung). Empfe
 
 **11.11.**
 - **Anfangslicht Account 2 hell bis zum Ereignis** (Inhaber gibt im Cockpit den Vorschlag der Lernschleife frei, Probebilder am Projekt Pilz-Geflecht) · dunkler Anfang Median 14 % der Länge gesehen gegen 18,5 % bei hellem Anfang (n = 13, Thema und Welt als Störgrößen). Bis ca. 8 s Tag, Morgen, Sonnenaufgang oder hell beleuchteter Vollmond; Nacht, Polarnacht, Dämmerung erst als Stufe danach; Dunkel-Themen mit sichtbarem Licht aufhellen. Gilt erst nach den Einstiegs-Testblöcken a–c (ab Video-Tag 17.11. abends), damit jeder Block nur eine Sache ändert. [[Licht und Effekte Account 2]], [[Ablauf Account 2]], [[Regelwerk Account 2]]
+- **Leitmotiv wechseln Account 2: kein Themenkreis öfter als 1 von 4** (Inhaber gibt im Cockpit den Vorschlag der Lernschleife frei, selbständig umgesetzt) · Erdachse null (Treffer, 822 Aufrufe, 18 %) → Polarnacht Teil 2 (243, 9 %) → Polarnacht Tromsø (249, Ø 2,8 s); 4 der letzten 5 Videos mit Nacht und Polarlicht (n = 3, **A**, nicht trennbar von Einstieg a und dunklem Licht). Jede Idee nennt ihr Leitbild, keines aus den 3 neuesten Videos; Folgeteil eines Treffers nur einmal (Teil 2, Cockpit `MAX_FOLGETEILE_KONTO`), nie im Folgen-Hinweis eines anderen Videos angekündigt. [[Themenfindung stelldirvor]], [[Serien und Treffer-Folgen]], [[Regelwerk Account 2]]
 
 ## Siehe auch
 [[Arbeitsregeln und Sicherheit]] · [[Rolle und Kommunikation]] · [[Index]]

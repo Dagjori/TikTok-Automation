@@ -55,7 +55,7 @@ Anlass: Die Zuschauer gehen nach 10–17 s; gesehen werden nur 13–18 % der Lä
 | **Einstieg a** | Ereignis bei **2–3 s** statt bei ca. 8 s | `referenz_pov.py` 14 (1,5–3,5 s) |
 | **Einstieg b** | zweite sichtbare Stufe bei **12–15 s** (neues Etikett oder neue Statuszeile) | 14c |
 | **Einstieg c** | Länge **62–70 s** statt 80 s; Abspann bleibt die letzten 8 s (`lpZeitenFuer`, `lpSkala`) | 1 |
-| **Folgen-Hinweis** | abwechselnd 10 Videos mit, 10 ohne: eine Textzeile im Abspann, an den Inhalt gebunden („Morgen: …“, „Teil 2 im Profil“), kein Tausch, keine Belohnung, kein Druck (`LunarHUD`-Option `hinweis`) | 16 |
+| **Folgen-Hinweis** | abwechselnd 10 Videos mit, 10 ohne: eine Textzeile im Abspann, an den Inhalt gebunden („Morgen: …“; seit 11.11.2026 nie einen Folgeteil ankündigen), kein Tausch, keine Belohnung, kein Druck (`LunarHUD`-Option `hinweis`) | 16 |
 
 Die Gewinner-Variante wird erst nach dem Block als Regel vorgeschlagen ([[Lernschleife und Insights]]).
 

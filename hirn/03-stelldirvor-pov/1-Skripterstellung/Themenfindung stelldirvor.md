@@ -67,13 +67,14 @@ Abruf und Reihenfolge: Skill `themen-skript` §4.
 - In jeder Phase verändert sich die Welt sichtbar; nie „warten“.
 - Maßstab meist persönlich: mindestens 6 von 10 Ideen an einem greifbaren Ort.
 - Weltvielfalt: Welttyp, Standpunkt und Tageszeit anders als im vorigen Video; Natur zuerst ([[Themen und Plan Account 2]]).
+- **Leitbild wechseln** (seit 11.11.2026, Vorschlag der Lernschleife, [[Entscheidungen Log]]): Jede Idee nennt ihr Leitbild (Themenkreis, der den Großteil des Videos prägt, z. B. Polarnacht, Polarlicht, Nachthimmel, Eis). Ein Leitbild kommt in höchstens **1 von 4 aufeinanderfolgenden Videos** vor: keine Idee mit dem Leitbild eines der 3 neuesten Videos, unter den 10 Ideen jedes Leitbild höchstens einmal. Ein Folgeteil zu einem Treffer entsteht nur einmal (Teil 2) und wird nie im Folgen-Hinweis eines anderen Videos angekündigt. Beleg: Erdachse null (822 Aufrufe) → Polarnacht Teil 2 (243) → Polarnacht Tromsø (249, Ø 2,8 s); 4 der letzten 5 Videos mit Nacht und Polarlicht (n = 3, **A**, Buffer 11.11.).
 - Die Titelfrage macht eine Folge neugierig, die man nicht errät, und enthält den Suchbegriff.
 
 ## 6. Gesperrte Klassiker und Ausschlüsse
 - **Abgenutzt und gesperrt (nie vorschlagen, auch nicht umbenannt oder an anderem Ort):** Sonne explodiert, verschwindet oder ist kurz weg · Erde hört auf sich zu drehen oder dreht schneller · Mond stürzt ab, verschwindet, kommt näher · Asteroid oder Komet schlägt ein · Sauerstoff, Atmosphäre oder Schwerkraft ist für Sekunden weg · Riesen-Tsunami trifft eine Stadt · Supervulkan · stärkstes Erdbeben · Schwarzes Loch kommt näher · alles Eis schmilzt, neue Eiszeit · Zombie-Ausbruch · Riesenmonster · Loch durch die Erde · Fall in den Jupiter · ohne Raumanzug im All · Papier 42-mal falten · du schrumpfst oder wächst · Aufwachen im Jahr 3000 · alle Menschen springen gleichzeitig · Erde ist flach oder hat Ringe · Magnetfeld kippt · 1.000 Jahre Regen · weltweiter Stromausfall · Schall oder Licht wird langsam.
 - Zu einem gesperrten Klassiker ist nur eine Fassung erlaubt, die mit einem Werkzeug aus §4 eine **andere Frage** stellt (anderer Maßstab, andere Messgröße, anderes Ereignis im Bild). Im Zweifel verwerfen. Die Lockerung für Klassiker bei Account 1 gilt hier nicht.
 - **Ausgeschlossen:** Opferdarstellung, Gore, reale Tragödien · Gesundheitsversprechen und alles, was zum Nachmachen einlädt (Dosierungen, Mutproben, Fasten oder Schlafentzug als Anleitung) · Parteipolitik. Körper-Themen nur erklärend, sachlich, mit belegten Werten und ohne Empfehlung.
-- **Eigene Videos** werden nicht wiederholt; Ausnahme sind Folgeteile eigener Treffer ([[Serien und Treffer-Folgen]]).
+- **Eigene Videos** werden nicht wiederholt; Ausnahme sind Folgeteile eigener Treffer ([[Serien und Treffer-Folgen]]), bei diesem Account nur einmal (Teil 2).
 
 Diese Liste und die Originalitätsprüfung je Idee ersetzen den alten „Konkurrenz-Check vor jeder Produktion“, bei dem ein Treffer das Thema sperrte (Archiv: [[Konkurrenz-Check und Sperrliste Account 2]]).
 
@@ -91,7 +92,7 @@ Diese Liste und die Originalitätsprüfung je Idee ersetzen den alten „Konkurr
 | Greifbarkeit | persönlicher Maßstab, Ort, den man kennt |
 
 ## 8. Was eine Idee enthält
-Jede Idee kommt als Karte mit Titelfrage, Suchbegriff, Nachfrage, Winkel, „Vermeidet“, Originalität, Ereignis, Messgröße, Welt, Bewegung, Höhepunkt, Zeitraffer, „Mitnehmen“, Weiterschick-Wert und Risiko. Das genaue Format steht im Skill (`stelldirvor.md` A8). Der Auftragstext für das Cockpit steht in [[Befehl Ideen und Skripte Account 2]].
+Jede Idee kommt als Karte mit Leitbild, Titelfrage, Suchbegriff, Nachfrage, Winkel, „Vermeidet“, Originalität, Ereignis, Messgröße, Welt, Bewegung, Höhepunkt, Zeitraffer, „Mitnehmen“, Weiterschick-Wert und Risiko. Das genaue Format steht im Skill (`stelldirvor.md` A8). Der Auftragstext für das Cockpit steht in [[Befehl Ideen und Skripte Account 2]].
 
 Empfehlungen für die Mischung (nicht verbindlich): Katastrophen mit staunenden, ruhigen Themen abwechseln; Pointen im Wechsel („es passiert fast nichts“, „es ist wirklich passiert“, „das Gegenteil stimmt“, „die Zahl ist kleiner bzw. größer als gedacht“); jedes Ende sachlich.
 

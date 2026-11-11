@@ -30,8 +30,12 @@ def test_themen_regeln_vom_0911():
     assert "Körper und Leben" in a2 and "was passiert wenn man" in a2 and "Sonne explodiert" in a2
     assert "Fasten- oder Schlafentzug als Anleitung" in a2
     assert "höchstens 5 Duelle" not in a2
-    for feld in ('"ereignis"', '"messgroesse"', '"hoehepunkt"', '"pointe"', '"massstab"'):
+    for feld in ('"ereignis"', '"messgroesse"', '"hoehepunkt"', '"pointe"', '"massstab"', '"leitbild"'):
         assert feld in a2, feld
+    assert "LEITBILD WECHSELN" in a2 and "höchstens 1 von 4" in a2   # Vorschlag Leitmotiv wechseln, 11.11.2026
+    assert "LEITBILD WECHSELN" not in a1
+    s2 = cb.skript_befehl("stelldirvor", "{{IDEEN}}", format="json")
+    assert "„Teil 2 im Profil“), kein Tausch" not in s2 and "nie einen Folgeteil an" in s2
 
 
 def test_skript_aufbau_und_textformat_vom_0911():
