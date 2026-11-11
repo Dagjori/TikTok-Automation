@@ -42,6 +42,7 @@ Kurzfassung aller Regeln **nur für Account 2**. Gemeinsame Regeln: [[Regelwerk]
 | Nie „warten“: alle 2–3 s eine sichtbare Veränderung (Wetter, Licht, Tageszeit, Menschen, Tiere, Wasser, Vegetation) | [[Ablauf Account 2]], [[Licht und Effekte Account 2]] |
 | Kamera: lange, durchgehende Einstellungen mit langsamer Fahrt, Schwenk, Zoom; **höchstens 1–3 gezielte harte Schnitte**, nur am Höhepunkt oder bei einem Maßstabs- bzw. Szenensprung | [[Licht und Effekte Account 2]], [[REA stelldirvor Regelwerk]] |
 | Low-Poly, filmisch beleuchtet, dichter Detailreichtum, Dunst, Bloom, Partikel; Farbe und Licht kippen mit der Lage | [[Licht und Effekte Account 2]] |
+| **Anfangslicht hell bis zum Ereignis** (seit 11.11.2026, ab Ende der Einstiegsblöcke a–c, Video-Tag 17.11. abends): Tag, Morgen, Sonnenaufgang oder hell beleuchteter Vollmond; Nacht, Polarnacht, Dämmerung erst nach dem Ereignis; Dunkel-Themen mit sichtbarem Licht aufhellen | [[Licht und Effekte Account 2]] §1, [[Ablauf Account 2]] |
 | Erstbau eines Welttyps auf Referenzniveau (Neubau, Opus); bei Bedarf höchstens 2 Blender-Schlüsselszenen je Video | [[Technik und Szenenbau Account 2]] |
 | Kein Logo, Kanalname, Sticker, Chips, Tafel, Karaoke, Folgen-Aufruf im Bild | [[Prüfung und Abnahme Account 2]] |
 | Ton: nur selbst erzeugte Atmo, −14 LUFS, Höhepunkt mindestens 4 dB lauter als der Start, Abspann leise | [[Ton Account 2]] |

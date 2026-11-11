@@ -128,5 +128,8 @@ Nur **Entscheidungen des Inhabers** (2026 · Entscheidung · Begründung). Empfe
 - **Hirn ergänzt:** [[Themen-Nachfrage]] (Recherche vom 09.11. gesichert), [[Zahlen 2027 Simulierbar]] (Stammdaten mit Status), [[Aussprache Simulierbar]].
 - **Beauftragt:** Blender-Testlauf (ein Probe-Projekt, Auswertung nach Aussehen und Rechenzeit) und der erste Lauf des Skills `themen-skript` (Ideen für beide Accounts); dazu Aufwertung und weitere Automatisierung des Cockpits.
 
+**11.11.**
+- **Anfangslicht Account 2 hell bis zum Ereignis** (Inhaber gibt im Cockpit den Vorschlag der Lernschleife frei, Probebilder am Projekt Pilz-Geflecht) · dunkler Anfang Median 14 % der Länge gesehen gegen 18,5 % bei hellem Anfang (n = 13, Thema und Welt als Störgrößen). Bis ca. 8 s Tag, Morgen, Sonnenaufgang oder hell beleuchteter Vollmond; Nacht, Polarnacht, Dämmerung erst als Stufe danach; Dunkel-Themen mit sichtbarem Licht aufhellen. Gilt erst nach den Einstiegs-Testblöcken a–c (ab Video-Tag 17.11. abends), damit jeder Block nur eine Sache ändert. [[Licht und Effekte Account 2]], [[Ablauf Account 2]], [[Regelwerk Account 2]]
+
 ## Siehe auch
 [[Arbeitsregeln und Sicherheit]] · [[Rolle und Kommunikation]] · [[Index]]

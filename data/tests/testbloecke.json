@@ -29,7 +29,7 @@
         "a": "Ereignis bei 2–3 s auf Countdown-Null (Countdown entsprechend kurz); sonst Standard (zweite Stufe wie üblich, 80 s).",
         "b": "Zweite sichtbare Stufe bei 12–15 s (Sprung im Messwert bzw. neues Etikett oder neue Statuszeile, deutlich im Bild); sonst Standard (Ereignis ca. 8 s, 80 s).",
         "c": "Länge 62–70 s statt 80 s: Zeitplan anteilig kürzen (lpZeitenFuer(laenge)), Abspann bleibt die letzten 8 s; sonst Standard (Ereignis ca. 8 s).",
-        "standard": "Kein Einstiegstest mehr: Standard (Ereignis ca. 8 s, 80 s)."
+        "standard": "Kein Einstiegstest mehr: Standard (Ereignis ca. 8 s, 80 s). Seit 11.11.2026: Anfangslicht hell bis zum Ereignis (Tag, Morgen, Sonnenaufgang oder hell beleuchteter Vollmond), Nacht erst als Stufe danach (Hirn Licht und Effekte Account 2)."
       }
     }
   ]
