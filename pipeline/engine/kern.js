@@ -17,6 +17,7 @@ void main() {
   vec3 c = texture2D(tQuelle, vUv + texel * vec2(-0.5, -0.5)).rgb + texture2D(tQuelle, vUv + texel * vec2(0.5, -0.5)).rgb
          + texture2D(tQuelle, vUv + texel * vec2(-0.5, 0.5)).rgb + texture2D(tQuelle, vUv + texel * vec2(0.5, 0.5)).rgb;
   c *= 0.25;
+  if (any(isnan(c)) || any(isinf(c))) c = vec3(0.0);
   c = min(c, vec3(40.0));
   float hell = max(c.r, max(c.g, c.b));
   float weich = clamp(hell - schwelle + knie, 0.0, 2.0 * knie);

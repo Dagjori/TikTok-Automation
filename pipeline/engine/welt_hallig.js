@@ -182,7 +182,7 @@ const HIMMEL_F = /* glsl */ `
 varying vec3 vDir;
 ${GLSL_NOISE}
 ${GLSL_HIMMEL}
-void main() { gl_FragColor = vec4(himmel(normalize(vDir)), 1.0); }`;
+void main() { vec3 c = himmel(normalize(vDir)); c = min(c, vec3(48.0)); if (any(isnan(c))) c = vec3(0.0); gl_FragColor = vec4(c, 1.0); }`;
 
 // ----------------------------------------------------------------------------------------------- Wasser (Priel, Watt, Meer)
 const WASSER_V = /* glsl */ `
@@ -227,6 +227,7 @@ void main() {
   float st = smoothstep(0.7, 0.95, nN(vec2(dot(p, w) * 0.06 - wZeit * 0.4, dot(p, qn) * 0.9))) * smoothstep(0.45, 1.0, wSturm) * 0.6;
   float schaum = clamp(fk + st, 0.0, 1.0) * (1.0 - smoothstep(300.0, 2500.0, dist) * 0.7);
   col = mix(col, wSchaumF, schaum * 0.75);
+  col = min(col, vec3(7.0)); if (any(isnan(col))) col = vec3(0.0);
   gl_FragColor = vec4(col, 1.0);
 #include <fog_fragment>
 }`;
