@@ -15,7 +15,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 ## Überblick
 
 - **Videos im Register:** 48 (Simulierbar 26, davon 20 gepostet · Stell dir vor 22, davon 17 gepostet)
-- **Nach Status:** Idee 0 · Skript 0 · in Produktion 2 · geplant 6 · gepostet 37 · Fehler 3
+- **Nach Status:** Idee 0 · Skript 0 · in Produktion 0 · geplant 8 · gepostet 37 · Fehler 3
 - **Nach Format:** ohne Angabe 24 · referenz_pov 20 · Was bleibt 2 · Duell 1 · Lernvideo 1
 - **Lesart:** „gepostet“ heißt, Buffer hat das Video gesendet (oder die Nachprüfung hat es bestätigt). Follows = Follower-Zuwachs in den 24 Stunden nach dem Post (netto, zwei Videos am Tag überlappen). Ø-Wiedergabe = durchschnittliche Wiedergabezeit, in Klammern der Anteil an der Länge.
 
@@ -23,7 +23,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 | Datum | Slot | Titel | Feld · Format | Status | Länge | Aufrufe | Ø-Wiedergabe | Follows | Treffer · Teil |
 |---|---|---|---|---|---|---|---|---|---|
-| 12.11. | Abend | Gasrechnung zerlegt: Wie viel davon bekommt der Staat? | Wohnen und Energie · Was bleibt | in Produktion | 79 s | – | – | – | – |
+| 12.11. | Abend | Gasrechnung zerlegt: Wie viel davon bekommt der Staat? | Wohnen und Energie · Was bleibt | geplant | 79 s | – | – | – | – |
 | 12.11. | Mittag | Rentenerhöhung 2027: Was bleibt von 82 Euro mehr? | Rente und Vorsorge · Was bleibt | geplant | 85 s | – | – | – | – |
 | 11.11. | Abend | Benzin: Wie viel Steuer zahlst du auf Steuer? | Preise und Lebenshaltung · Lernvideo | geplant | 82 s | – | – | – | – |
 | 11.11. | Mittag | Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern? | Rente und Vorsorge · Duell | geplant | 85 s | – | – | – | – |
@@ -54,7 +54,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 | Datum | Slot | Titel | Feld · Format | Status | Länge | Aufrufe | Ø-Wiedergabe | Follows | Treffer · Teil |
 |---|---|---|---|---|---|---|---|---|---|
-| 12.11. | Abend | Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz? | Physik und Chemie im Alltag · referenz_pov | in Produktion | 80 s | – | – | – | – |
+| 12.11. | Abend | Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz? | Physik und Chemie im Alltag · referenz_pov | geplant | 80 s | – | – | – | – |
 | 12.11. | Mittag | Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt? | Technik und Versorgung · referenz_pov | geplant | 80 s | – | – | – | – |
 | 11.11. | Abend | Was wäre, wenn der Erdkern abkühlt? | Naturphänomene · referenz_pov | geplant | 80 s | – | – | – | – |
 | 11.11. | Mittag | Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft? | Naturphänomene · referenz_pov | geplant | 80 s | – | – | – | – |
