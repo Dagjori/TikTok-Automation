@@ -579,7 +579,15 @@ export class WattSandbank {
   _wasser() {
     const mat = new THREE.ShaderMaterial({ vertexShader: WASSER_V, fragmentShader: WASSER_F, uniforms: THREE.UniformsUtils.merge([THREE.UniformsLib.fog]), fog: true, transparent: true, depthWrite: true });
     Object.assign(mat.uniforms, this.u, this.wu);
-    const g = new THREE.PlaneGeometry(60000, 60000, 1, 1); g.rotateX(-Math.PI / 2);
+    // feines, nach außen gestrecktes Gitter (statt 2 Riesendreiecken): bei tiefer Kamera knapp über dem Wasser werden Tiefe und Weltposition
+    // sonst über 30-km-Dreiecke interpoliert, ungenau und von Bild zu Bild verschieden (Wasser lag flackernd über dem Sand, 55,8–58 s)
+    const N = 320, A = 1.0, K = 10.3, xs = new Float32Array(N + 1);
+    for (let i = 0; i <= N; i++) { const u = (i / N) * 2 - 1; xs[i] = Math.sign(u) * A * (Math.exp(K * Math.abs(u)) - 1); }
+    const pos = new Float32Array((N + 1) * (N + 1) * 3), idx = new Uint32Array(N * N * 6);
+    for (let j = 0; j <= N; j++) for (let i = 0; i <= N; i++) { const k = (j * (N + 1) + i) * 3; pos[k] = xs[i]; pos[k + 1] = 0; pos[k + 2] = xs[j]; }
+    let o = 0; for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) { const a = j * (N + 1) + i, b = a + 1, c = a + N + 1, d = c + 1; idx[o++] = a; idx[o++] = c; idx[o++] = b; idx[o++] = b; idx[o++] = c; idx[o++] = d; }
+    const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(pos, 3)); g.setIndex(new THREE.BufferAttribute(idx, 1));
+    mat.polygonOffset = true; mat.polygonOffsetFactor = 1; mat.polygonOffsetUnits = 2;   // bei Gleichstand gewinnt der Sand
     this.wasser = new THREE.Mesh(g, mat); this.wasser.frustumCulled = false; this.wasser.renderOrder = 5; this.szene.add(this.wasser); this._zaehle(this.wasser);
   }
   _haeufchen(n) {
