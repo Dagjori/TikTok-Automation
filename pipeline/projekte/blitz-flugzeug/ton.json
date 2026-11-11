@@ -1,0 +1,17 @@
+{
+  "_hinweis": "Tonplan atmo.py: Kabine im Steigflug (Triebwerksbrummen, Wind am Rumpf, Regen auf der Scheibe), Einflug in die Wolke ab 5,6 s lauter, Druckknall bei 8 s (Protokoll), danach in der Zeitlupe ein tiefes, gedehntes Grollen (Brummen sinkt in der Frequenz), Blitz-Knistern bei jedem Teilschlag (Protokoll), Riser bis 57,7 s, kurzer Knall und Stille nach HIER, Echtzeit-Blitz und Donner bei 62,4 s, Ausflug: Wind und Regen werden leiser, Abspann leise.",
+  "dauer": 80,
+  "seed": 20261112,
+  "schichten": [
+    { "art": "brummen", "f": 92, "f_kurve": [[0, 92], [8, 92], [13, 46], [48, 38], [58, 34], [62, 92], [80, 92]],
+      "pegel": [[0, -44], [5, -40], [7.9, -34], [8.1, -30], [30, -30], [50, -28], [57.7, -24], [58.3, -60], [61.8, -60], [62.2, -40], [70, -44], [72, -60], [80, -60]] },
+    { "art": "wind", "pegel": [[0, -30], [6, -26], [8, -22], [13, -30], [40, -30], [52, -24], [57.6, -15], [58.2, -46], [61.5, -44], [64, -32], [70.5, -36], [72, -50], [80, -54]],
+      "hell": [[0, 0.45], [8, 0.35], [30, 0.3], [57, 0.55], [62, 0.3], [70, 0.3]] },
+    { "art": "regen", "pegel": [[0, -60], [2, -42], [6, -34], [8, -28], [13, -46], [57, -44], [58.3, -60], [62, -50], [64, -34], [67, -42], [72, -60], [80, -60]] },
+    { "art": "grollen", "pegel": [[0, -60], [7.6, -50], [8.2, -26], [14, -32], [30, -30], [50, -26], [57.7, -20], [58.3, -60], [80, -60]] }
+  ],
+  "ereignisse": [],
+  "protokoll_effekte": true,
+  "dumpf": [[0, 0], [58, 0], [60, 0.5], [66, 0.3], [70, 0.6], [72, 0.9]],
+  "stille": [[58.3, 61.5, -10]]
+}

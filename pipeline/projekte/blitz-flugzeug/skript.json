@@ -1,0 +1,503 @@
+{
+  "skript_id": "acc2-2026-11-12-abend",
+  "skript_quelle": "acc2-2026-11-12-abend",
+  "titel": "Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz?",
+  "titelfrage": "Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz?",
+  "suchbegriff": "Blitz Flugzeug",
+  "konto": "stelldirvor",
+  "format": "referenz_pov",
+  "skill": "video-produktion",
+  "laenge_s": 80,
+  "teil": 1,
+  "testbloecke": {
+    "folgen_hinweis": "mit",
+    "einstieg_a2": "b"
+  },
+  "folgen_hinweis": "Heute Mittag: Wenn die Netzfrequenz fällt",
+  "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Welt engine/welt_flugzeug_fenster.js (Neubau 12.11.2026: Fensterplatz über der Tragfläche, Gewitterwolken, Blitzkanal)",
+  "thema": "Ein typischer Blitz (Median: 30.000 Ampere, 0,2 Sekunden) trifft ein Verkehrsflugzeug im Steigflug; in starker Zeitlupe sieht man vom Fensterplatz, wie der Blitzkanal still in der Luft steht und das Flugzeug durch ihn hindurchfliegt, bis er am Heck abreißt.",
+  "feld": "Physik und Chemie im Alltag",
+  "nachfrage": "„was passiert wenn ein flugzeug vom blitz getroffen wird“ · Google-Suchvorschlag (Stamm „was passiert wenn ein“) · 11.11.2026; dazu laufende Berichterstattung (aerotelegraph, travelbook, daswetter)",
+  "originalitaet": "Suchen „Flugzeug Blitzeinschlag Zeitlupe Kabine Video deutsch“ und „Video Blitz trifft Flugzeug Zeitlupe Fensterplatz Kabine deutsch TikTok YouTube“ (11.11.2026): kein deutsches Video mit dieser Prämisse (simulierte Zeitlupe vom Fensterplatz, Kanal steht, Flugzeug fliegt hindurch). Gefunden nur echte Handyaufnahmen in Nachrichtenbeiträgen (aerotelegraph: Etihad-777 Tragfläche; Einschlag A350 am Gate São Paulo, 24.01.2025, Außenaufnahme) und Erklärartikel; andere Machart, keine Zeitlupe, keine Messgröße.",
+  "welt": "Verkehrsflugzeug im Steigflug durch eine Gewitterfront über Süddeutschland, nahe der Nullgradgrenze; draußen Tragfläche mit Winglet, wachsende Wolkentürme, Regen am Fenster, später Sonne über der Wolkendecke",
+  "standpunkt": "Fensterplatz über der Tragfläche (Ich-Perspektive), Blick schräg nach vorn zur Nase und nach hinten zum Leitwerk möglich",
+  "tageszeit_verlauf": "später Nachmittag im Sommer: helle, sonnenbeschienene Wolkentürme (0–6 s), dann Einflug in eine graue Wolke mit Regen; nach dem Blitz Ausflug in die Sonne über den Wolken",
+  "zeitraffer": [
+    {
+      "von": 0,
+      "bis": 8,
+      "faktor": 1,
+      "anzeige": "Countdown in Sekunden, Echtzeit"
+    },
+    {
+      "von": 8,
+      "bis": 13,
+      "faktor": "ca. 1:909.000",
+      "anzeige": "Spitzenstrom 0 → 30.000 A, Anstieg in 5,5 Mikrosekunden"
+    },
+    {
+      "von": 13,
+      "bis": 48,
+      "faktor": "ca. 1:219",
+      "anzeige": "Zeit seit Einschlag in Millisekunden, 0 bis 160"
+    },
+    {
+      "von": 48,
+      "bis": 58,
+      "faktor": "ca. 1:250",
+      "anzeige": "Strecke durch den Blitz 21 bis 26 m (160 bis 200 ms)"
+    }
+  ],
+  "zeitraffer_hinweis": "Modell: ein typischer Blitz (0,2 s) wird in drei Zeitlupen gezeigt; der Anfang (5,5 µs) auf 5 s gedehnt, 160 ms auf 35 s, die letzten 40 ms auf 10 s. Faktoren aus sim/blitz_flugzeug.mjs. Ab 58 s steht die Anzeige auf HIER (Höhepunkt), die Zeitlupe läuft bis 62 s aus, danach Echtzeit (62–72 s) ohne Zeitraffer.",
+  "kamera": "0–6,5 s langsamer Zoom von der Wolkenwand auf die Tragflächenspitze (erste Bewegung ab Bild 1, 58° → 54°); 8–10,5 s Schwenk schräg nach vorn Richtung Nase; 25–58 s langsamer Schwenk nach hinten, die Kamera folgt dem Kanal, Brennweite weitet sich ab 44 s von 52° auf 56°; harter Schnitt bei 58 s (Höhepunkt) auf den Blick nach hinten; ab 62 s ruhiger Blick auf Wolken und Sonne",
+  "anzeige_plan": [
+    {
+      "von_s": 0,
+      "bis_s": 8,
+      "etikett": "EINSCHLAG IN",
+      "start": "8",
+      "ende": "0",
+      "einheit": "s",
+      "unter": "STEIGFLUG → IN DER WOLKE"
+    },
+    {
+      "von_s": 8,
+      "bis_s": 13,
+      "etikett": "SPITZENSTROM",
+      "start": "0",
+      "ende": "30.000",
+      "einheit": "A",
+      "unter": "ERSTER SCHLAG"
+    },
+    {
+      "von_s": 13,
+      "bis_s": 48,
+      "etikett": "ZEIT SEIT EINSCHLAG",
+      "start": "0",
+      "ende": "160",
+      "einheit": "ms",
+      "unter": "ZEITLUPE → SCHLAG 2 · 35 MS → SCHLAG 3 · 70 MS → SCHLAG 4 · KANAL WANDERT"
+    },
+    {
+      "von_s": 48,
+      "bis_s": 58,
+      "etikett": "STRECKE DURCH DEN BLITZ",
+      "start": "21",
+      "ende": "26",
+      "einheit": "m",
+      "unter": "KANAL WANDERT → AM HECK"
+    },
+    {
+      "von_s": 58,
+      "bis_s": 70,
+      "etikett": "HIER",
+      "start": "HIER",
+      "ende": "HIER",
+      "einheit": "",
+      "unter": "26 M · KANAL REISST AB → ECHTZEIT"
+    }
+  ],
+  "saetze": [
+    [
+      4.8,
+      "Du sitzt am Fenster über der Tragfläche.",
+      3.2
+    ],
+    [
+      8.4,
+      "Dann trifft ein Blitz vorne die Nase.",
+      3.0
+    ],
+    [
+      11.4,
+      "In fünfeinhalb Mikrosekunden: 30.000 Ampere.",
+      3.0
+    ],
+    [
+      14.4,
+      "Jetzt zählt die Zeit in Millisekunden.",
+      3.0
+    ],
+    [
+      17.6,
+      "Der Strom fließt außen über die Hülle.",
+      3.0
+    ],
+    [
+      20.6,
+      "Nach 35 Millisekunden kommt der zweite Schlag.",
+      3.2
+    ],
+    [
+      24.2,
+      "Der Blitzkanal selbst steht still in der Luft.",
+      3.4
+    ],
+    [
+      28.2,
+      "Bei 70 Millisekunden folgt der dritte Schlag.",
+      3.2
+    ],
+    [
+      33.4,
+      "Das Flugzeug fliegt einfach durch ihn hindurch.",
+      3.4
+    ],
+    [
+      37.4,
+      "Der Kanal gleitet an deinem Fenster vorbei.",
+      3.4
+    ],
+    [
+      41.2,
+      "Die leitende Hülle führt den Strom an dir vorbei.",
+      3.2
+    ],
+    [
+      44.8,
+      "Nach 160 Millisekunden hängt er hinten.",
+      3.0
+    ],
+    [
+      48.0,
+      "Das Flugzeug ist jetzt 21 Meter weiter.",
+      3.0
+    ],
+    [
+      51.6,
+      "Der Kanal rutscht bis ans Heck.",
+      3.2
+    ],
+    [
+      61.0,
+      "In Echtzeit war das ein Knall und ein Lichtblitz.",
+      3.0
+    ],
+    [
+      64.0,
+      "Die Maschine steigt aus der Wolke.",
+      3.0
+    ],
+    [
+      67.0,
+      "Über den Wolken scheint wieder die Sonne.",
+      3.0
+    ]
+  ],
+  "faktenzeile": "JEDES VERKEHRSFLUGZEUG · ETWA EIN BLITZTREFFER PRO JAHR",
+  "abspann": {
+    "frage": "Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz?",
+    "fakt": "JEDES VERKEHRSFLUGZEUG · ETWA EIN BLITZTREFFER PRO JAHR",
+    "hinweis": "Heute Mittag: Wenn die Netzfrequenz fällt"
+  },
+  "rechnung": {
+    "code": "pipeline/sim/blitz_flugzeug.mjs (Test: pipeline/sim/blitz_flugzeug.test.mjs, 7 Tests grün)"
+  },
+  "rechenweg": "Typischer negativer Erdblitz (Median, Lightning Direct Effects Handbook Tab. 2-2): erster Schlag 30 kA Spitzenstrom, Anstieg 5,5 µs; 3–4 Teilschläge, Abstand 35 ms; Gesamtdauer 0,2 s. Teilschläge im Modell bei 0, 35, 70, 105 ms. Zeitlupe: 5,5 µs auf 5 s (8–13 s) → 5/5,5e-6 ≈ 1:909.000; 160 ms auf 35 s (13–48 s) → 35/0,160 ≈ 1:219; Videozeit eines Teilschlags t = 13 + ms/160·35 → 35 ms ≈ 20,7 s, 70 ms ≈ 28,3 s, 105 ms ≈ 36,0 s. Wandern des Kanals (swept flash): Geschwindigkeit ca. 250 Knoten = 250 · 0,5144 ≈ 128,6 m/s, gerundet 130 m/s (A); Strecke nach 160 ms = 130 · 0,160 ≈ 20,8 m → 21 m; nach 200 ms = 130 · 0,200 = 26,0 m. Häufigkeit: 1 Treffer je ca. 3.000 Flugstunden ≈ 1 Treffer pro Jahr und Flugzeug (Handbuch nach Newman/Perry). Nachgerechnet mit Python. Anpassung der Szene: Zeitlupe 48–58 s auf 160 → 200 ms (1:250), damit 26 m und HIER bei 58 s zusammenfallen.",
+  "zahlen": {
+    "spitzenstrom_median_a": 30000,
+    "anstiegszeit_us": 5.5,
+    "teilschlaege_median": "3–4",
+    "abstand_teilschlaege_ms": 35,
+    "blitzdauer_median_s": 0.2,
+    "geschwindigkeit_m_s": 130,
+    "strecke_160ms_m": 21,
+    "strecke_200ms_m": 26,
+    "treffer_pro_jahr": 1,
+    "flugstunden_je_treffer": 3000,
+    "zeitlupe_ms_phase": "ca. 1:220"
+  },
+  "annahmen": [
+    "(A) Gezeigt wird ein typischer Blitz mit Medianwerten (30 kA, 3–4 Teilschläge im Abstand von 35 ms, 0,2 s); echte Blitze schwanken stark (14–80 kA, 0,03–1 s).",
+    "(A) Geschwindigkeit im Steigflug ca. 250 Knoten ≈ 130 m/s; daraus 26 m Wanderstrecke des Kanals in 0,2 s.",
+    "(A) Eintritt an der Nase, Austritt am Heck als typischer Fall (Handbuch: Eintritt meist an Nase oder Flügelspitze, Austritt hinten bzw. unten); dass der Kanal sichtbar am Fenster vorbeigleitet, ist eine Veranschaulichung des „swept flash“.",
+    "(A) Flughöhe nahe der Nullgradgrenze in einer Gewitterfront über Süddeutschland, keine Airline-Marke.",
+    "(A) Die Hülle wird nicht als „perfekter Faradayscher Käfig“ dargestellt (Einschränkung Fenster und Kabel, TU Cottbus via travelbook); der Satz sagt nur, dass die leitende Hülle den Strom außen vorbeiführt.",
+    "(A) Heckkegel statt Heckspitze: 26 m hinter der Nasen-Kontaktstelle liegt die Schwanzkegel-Wurzel (z ≈ 10 m); die Szene zeigt den Kanal dort abreißen."
+  ],
+  "quellen": [
+    "(F) Lightning Direct Effects Handbook, Rev. A, NIAR/AGATE, 2016 – https://agate.niar.wichita.edu/Lightning/ENV-RP-2016-004RevA.pdf (Tab. 2-2: Median 30 kA, Anstieg 5,5 µs, 3–4 Teilschläge, 35 ms Abstand, Dauer 0,2 s; Kap. 3.2 Eintritt an Nase/Flügelspitze, Austritt hinten; Kap. 3.3: ein Treffer je ca. 3.000 Flugstunden ≈ einmal pro Jahr; über 80 % der Treffer in Wolken mit Niederschlag, meist nahe der Nullgradgrenze; Kap. 3.5 swept flash)",
+    "(F) NASA/TM-1999-209734, Lightning Protection Guidelines for Aerospace Vehicles, NASA, 1999 – https://ntrs.nasa.gov/api/citations/20000004589/downloads/20000004589.pdf (Definitionen Initial entry point = meist Extremität, Initial exit point = meist Hinterkante, swept flash points)",
+    "(F) travelbook.de, Was passiert, wenn ein Blitz ins Flugzeug einschlägt – https://www.travelbook.de/fliegen/flugzeug-blitz-einschlag (FAA: etwa einmal pro Jahr; Einschränkung TU Cottbus zu Fenstern und Kabeln)",
+    "(F) wetter.at / aerotelegraph, Passagierjet vom Blitz getroffen – https://www.wetter.at/wetter/welt-wetter/passagierjet-vom-blitz-getroffen/233583546 und https://www.aerotelegraph.com/wie-gefaehrlich-ist-ein-blitzeinschlag-im-flugzeug-delta-atlanta-blitz-gewitter-boeing-airbus-sicherheit (Passagiere bemerken meist nur Lichtblitz und Knall; LBA: Absturz durch Blitz äußerst selten)",
+    "(F) Flight Safety Foundation, AeroSafetyWorld Juni 2010 (ONERA: etwa ein Treffer je 1.000 Flugstunden, entspricht etwa einem Treffer pro Flugzeug und Jahr) – https://flightsafety.org/wp-content/uploads/2016/11/asw_jun10_p18-23.pdf",
+    "(F) Lightning Parameters for Engineering Applications (ATIS PEG): erster Schlag Median 30 kA, Stirnzeit 5,5 µs – https://peg.atis.org/wp-content/uploads/2018/09/Lightning-Parameters-for-Engineering-Applications-1.pdf"
+  ],
+  "caption": "Was passiert, wenn ein Blitz dein Flugzeug trifft? ⚡ Ich hab's durchgespielt. Hättest du den Einschlag in der Kabine bemerkt? 👇 #blitz #flugzeug #gewitter #wissen #waswaerewenn",
+  "dramaturgie": [
+    "0–6 s: helles Sonnenlicht auf den Wolkentürmen, Tragfläche zittert leicht, Regentropfen ziehen über das Fenster (erster Welteffekt vor 2 s), Zoom auf die Flügelspitze; Countdown 8–0; ab ca. 6 s Einflug in die graue Wolke, Turbulenz.",
+    "8 s Ereignis: grelles blauweißes Licht von vorn, Tragfläche und Fensterrahmen leuchten auf, Ton bricht ab in einen tiefen Druckknall (in Zeitlupe gedehnt); Anzeige SPITZENSTROM zählt 0 → 30.000 A.",
+    "13 s (Testblock b, zweite Stufe 12–15 s): Etikettwechsel ZEIT SEIT EINSCHLAG 0 ms, Statuszeile ZEITLUPE; Licht friert fast ein, Regentropfen stehen in der Luft.",
+    "18–21 s: Lichtadern laufen außen über die Hülle; bei 20,7 s (35 ms) zweiter Schlag: erneutes Aufleuchten, Statuszeile SCHLAG 2.",
+    "25–37 s: der leuchtende Kanal steht still vor dem Fenster, das Flugzeug schiebt sich durch ihn; bei 28,3 s (70 ms) dritter Schlag; Kamera folgt dem Kanal von vorn nach hinten, er gleitet am Fenster vorbei (Spannung Stufe 4).",
+    "36 s (105 ms): vierter, schwächerer Schlag, Statuszeile KANAL WANDERT.",
+    "42–48 s: Kabinenlicht bleibt ruhig, Blick zurück nach draußen; Kanal hinter der Tragfläche.",
+    "48–58 s: Etikett STRECKE DURCH DEN BLITZ 21 → 26 m, der Kanal rutscht Richtung Leitwerk, Licht wird schwächer und flackert aus.",
+    "58–62 s: harter Schnitt auf den Blick nach hinten: Kanal reißt am Heck ab, HIER 26 m, danach Dunkel der Wolke; im Moment selbst kein Satz.",
+    "62–70 s: Echtzeit, Regen läuft wieder, Flugzeug steigt aus der Wolke in goldenes Sonnenlicht über der Wolkendecke (Aufleuchten als Erlösung).",
+    "70–72 s Abblende, 72–80 s schwarzer Abspann mit Titelfrage, Faktenzeile und Folgen-Hinweis (Testvideo)."
+  ],
+  "hoehepunkt": "58 s: HIER, 26 m, harter Schnitt auf den Blick nach hinten, der Kanal flammt weich auf und reißt am Heck ab, das Licht erlischt",
+  "bewegungsplan": [
+    [
+      0,
+      "Wolkentürme in der Sonne, Tragfläche zittert, Regentropfen ziehen über die Scheibe; Zoom auf die Flügelspitze ab Bild 1",
+      1
+    ],
+    [
+      5.6,
+      "Einflug in die Wolke, Turbulenz, Licht wird weicher (noch hell)",
+      1
+    ],
+    [
+      8,
+      "Einschlag: Wolke wird zum dunklen Gewitterkern, grelles Licht von vorn, Tragfläche leuchtet",
+      2
+    ],
+    [
+      13,
+      "Etikettwechsel ms, Zeitlupe, stehende Tropfen, Lichtadern über die Hülle",
+      3
+    ],
+    [
+      20.7,
+      "Schlag 2 (35 ms)",
+      3
+    ],
+    [
+      28.3,
+      "Schlag 3 (70 ms), Schwenk folgt dem Kanal",
+      3
+    ],
+    [
+      36.0,
+      "Schlag 4 (105 ms), Kanal wandert",
+      4
+    ],
+    [
+      42.5,
+      "Kanal steht auf Höhe des Fensters",
+      4
+    ],
+    [
+      48,
+      "Etikettwechsel Strecke 21 m",
+      5
+    ],
+    [
+      58,
+      "HIER: 26 m, Schnitt, Kanal reißt ab, Licht erlischt",
+      6
+    ],
+    [
+      62.4,
+      "Echtzeit: Lichtblitz und Knall in 0,2 s",
+      6
+    ],
+    [
+      64,
+      "Ausflug aus der Wolke, goldenes Licht",
+      6
+    ]
+  ],
+  "bild_text_abgleich": [
+    {
+      "t": 4.8,
+      "satz": "Du sitzt am Fenster über der Tragfläche.",
+      "bild": "Fenster, Tragfläche mit Winglet im Bild, Wolkentürme im Sonnenlicht"
+    },
+    {
+      "t": 8.4,
+      "satz": "Dann trifft ein Blitz vorne die Nase.",
+      "bild": "Countdown null, Blitz trifft die Nase (grelles Aufleuchten von vorn), Anzeige SPITZENSTROM"
+    },
+    {
+      "t": 11.4,
+      "satz": "In fünfeinhalb Mikrosekunden: 30.000 Ampere.",
+      "bild": "SPITZENSTROM zählt in der µs-Zeitlupe auf 30.000 A"
+    },
+    {
+      "t": 14.4,
+      "satz": "Jetzt zählt die Zeit in Millisekunden.",
+      "bild": "Etikett ZEIT SEIT EINSCHLAG (seit 13 s), ms zählt"
+    },
+    {
+      "t": 17.6,
+      "satz": "Der Strom fließt außen über die Hülle.",
+      "bild": "Lichtadern laufen über die Tragfläche"
+    },
+    {
+      "t": 20.6,
+      "satz": "Nach 35 Millisekunden kommt der zweite Schlag.",
+      "bild": "Anzeige 35 ms, Statuszeile SCHLAG 2, erneutes Aufleuchten"
+    },
+    {
+      "t": 24.2,
+      "satz": "Der Blitzkanal selbst steht still in der Luft.",
+      "bild": "Kanal steht still in der Luft vor dem Fenster"
+    },
+    {
+      "t": 28.2,
+      "satz": "Bei 70 Millisekunden folgt der dritte Schlag.",
+      "bild": "Anzeige 70 ms, Statuszeile SCHLAG 3"
+    },
+    {
+      "t": 33.4,
+      "satz": "Das Flugzeug fliegt einfach durch ihn hindurch.",
+      "bild": "Der Kanal rückt am Rumpf nach hinten, Flugzeug fliegt hindurch"
+    },
+    {
+      "t": 37.4,
+      "satz": "Der Kanal gleitet an deinem Fenster vorbei.",
+      "bild": "Kanal nähert sich dem eigenen Fenster"
+    },
+    {
+      "t": 41.2,
+      "satz": "Die leitende Hülle führt den Strom an dir vorbei.",
+      "bild": "Kanal auf Höhe des Fensters (42,5 s), Anzeige um 130 ms"
+    },
+    {
+      "t": 44.8,
+      "satz": "Nach 160 Millisekunden hängt er hinten.",
+      "bild": "Anzeige läuft auf 160 ms, Kanal hinter der Tragfläche"
+    },
+    {
+      "t": 48.0,
+      "satz": "Das Flugzeug ist jetzt 21 Meter weiter.",
+      "bild": "Etikett STRECKE DURCH DEN BLITZ, 21 m"
+    },
+    {
+      "t": 51.6,
+      "satz": "Der Kanal rutscht bis ans Heck.",
+      "bild": "Strecke wächst Richtung 26 m, Kanal läuft nach hinten"
+    },
+    {
+      "t": 61.0,
+      "satz": "In Echtzeit war das ein Knall und ein Lichtblitz.",
+      "bild": "Nach HIER (58 s) Echtzeit, Lichtblitz bei 62,4 s mit Knall"
+    },
+    {
+      "t": 64.0,
+      "satz": "Die Maschine steigt aus der Wolke.",
+      "bild": "Wolke wird heller, Maschine steigt aus der Wolke"
+    },
+    {
+      "t": 67.0,
+      "satz": "Über den Wolken scheint wieder die Sonne.",
+      "bild": "Sonnenlicht über der Wolkendecke"
+    }
+  ],
+  "korrekturen": [
+    {
+      "feld": "faktenzeile",
+      "alt": "JEDES VERKEHRSFLUGZEUG · ETWA EIN BLITZTREFFER PRO JAHR, IM SCHNITT ALLE 3.000 FLUGSTUNDEN",
+      "neu": "JEDES VERKEHRSFLUGZEUG · ETWA EIN BLITZTREFFER PRO JAHR",
+      "quelle": "FAA/US-Flotte ca. 3.000 Flugstunden je Treffer (Lightning Direct Effects Handbook), ONERA/Flight Safety Foundation (AeroSafetyWorld 06/2010) ca. 1.000 Flugstunden je Treffer; beide nennen etwa einen Treffer pro Flugzeug und Jahr",
+      "grund": "Die Quellen widersprechen sich bei den Flugstunden (3.000 gegen 1.000); belegt und einheitlich ist nur „etwa einmal pro Jahr“. Das Ergebnis (Titelfrage, Pointe) ändert sich nicht.",
+      "zeit": "2026-11-12"
+    },
+    {
+      "feld": "saetze[].t_ca (Sätze 3, 5, 7, 10–17)",
+      "alt": "11 / 18 / 25 / 37 / 42 / 47 / 51 / 55 / 63 / 66 / 68,5",
+      "neu": "11,4 / 17,6 / 24,2 / 37,4 / 41,2 / 44,8 / 48,0 / 51,6 / 61,0 / 64,0 / 67,0 (Satztexte unverändert)",
+      "quelle": "Prüfpunkte 4b/4e referenz_pov.py (jeder Satz ≥ 3 s sichtbar, letzter Satz endet bis 70 s) und sim/blitz_flugzeug.mjs (Zeitpunkte der Teilschläge, Kanal am Fenster bei 42,5 s)",
+      "grund": "Skript-Zeiten ließen Sätze unter 3 s bzw. bis 71,5 s stehen; nur Zeitpunkte geschoben, Satztexte 1:1",
+      "zeit": "2026-11-12"
+    },
+    {
+      "feld": "zeitraffer[48–60].faktor und anzeige_plan[3]",
+      "alt": "48–60 s, ca. 1:300, Strecke 21 → 26 m, HIER nach 60 s",
+      "neu": "48–58 s, 1:250 (160 → 200 ms in 10 s), Strecke 21 → 26 m, HIER bei 58 s (Höhepunkt 58–62 s laut Skill); ab 62 s Echtzeit",
+      "quelle": "sim/blitz_flugzeug.mjs (ZEITLUPE_ENDE = 10 s / 0,04 s = 250), Skill stelldirvor.md (Höhepunkt 58–62 s)",
+      "grund": "Das Skript ließ die Strecke bis 60 s laufen, HIER aber im Fenster 58–62 s; damit 26 m und HIER zusammenfallen, endet der Blitz (200 ms) bei 58 s. Zahlen unverändert",
+      "zeit": "2026-11-12"
+    },
+    {
+      "feld": "dramaturgie (Kanalweg)",
+      "alt": "Kanal am Fenster bei 37 s, Heck bei 58 s",
+      "neu": "Kanal am Fenster bei 42,5 s (135 ms), am Heckkegel (z ≈ 10 m hinter der Nase-Kontaktstelle bei 26 m Wanderstrecke) bei 58 s",
+      "quelle": "Kontaktstelle = Nase + 130 m/s · ms (Rechenweg des Skripts); Fensterposition 17,5 m hinter der Nase",
+      "grund": "Das Skript rechnete 26 m Wanderstrecke, setzte das Fenster aber früher an; die Szene folgt jetzt strikt der Rechnung",
+      "zeit": "2026-11-12"
+    }
+  ],
+  "lern_notizen": {
+    "welt": "Fensterplatz über der Tragfläche (Himmel/Flug, Physik im Alltag), Neubau welt_flugzeug_fenster.js",
+    "standpunkt": "Fensterplatz über der Tragfläche, Blick schräg nach vorn und hinten",
+    "tageszeit": [
+      "später Nachmittag im Sommer, helle Wolkentürme in der Sonne (0–8 s)",
+      "dunkler Gewitterkern nach dem Einschlag (8–62 s)",
+      "goldenes Sonnenlicht über den Wolken (64–70 s)"
+    ],
+    "kamera": [
+      {
+        "t": 0,
+        "art": "zoom 58→54"
+      },
+      {
+        "t": 8,
+        "art": "schwenk"
+      },
+      {
+        "t": 25,
+        "art": "schwenk folgt dem Kanal"
+      },
+      {
+        "t": 44,
+        "art": "zoom 52→56"
+      },
+      {
+        "t": 58,
+        "art": "schnitt"
+      },
+      {
+        "t": 62,
+        "art": "schwenk"
+      }
+    ],
+    "zeitraffer": "1:909.000 (8–13 s), 1:219 (13–48 s), 1:250 (48–58 s), Echtzeit ab 62 s",
+    "t_ereignis": 8,
+    "countdown": {
+      "ja": true,
+      "zweiter": false
+    },
+    "schnitte": [
+      {
+        "t": 58,
+        "grund": "Höhepunkt: Blick nach hinten, Kanal reißt ab"
+      }
+    ],
+    "statuszeile": [
+      "STEIGFLUG",
+      "IN DER WOLKE",
+      "ERSTER SCHLAG",
+      "ZEITLUPE",
+      "SCHLAG 2 · 35 MS",
+      "SCHLAG 3 · 70 MS",
+      "SCHLAG 4 · KANAL WANDERT",
+      "KANAL WANDERT",
+      "AM HECK",
+      "26 M · KANAL REISST AB",
+      "ECHTZEIT"
+    ],
+    "testbloecke": {
+      "folgen_hinweis": "mit",
+      "einstieg_a2": "b"
+    },
+    "laenge_s": 80,
+    "t_stufe2": 13,
+    "folgen_hinweis": "Heute Mittag: Wenn die Netzfrequenz fällt"
+  },
+  "selbstpruefung_skript": [
+    "Satzzahl: 17 Sätze (Soll 12–18), je 5–9 Wörter (Soll 3–9), Präsens bzw. Rückblick nur im Nachspiel, keine Fragen, keine Ausrufezeichen: ja",
+    "Erster Satz 4,8 s, letzter beginnt 68,5 s und endet vor 70 s: ja",
+    "Im Höhepunkt 58–62 s kein Satz: ja",
+    "Fakten: alle Blitzwerte als Medianwerte aus dem Lightning Direct Effects Handbook, Häufigkeit ebenda; Idee-Wert „0 → ca. 100 ms“ korrigiert auf belegte 0,2 s Dauer (korrigiert): ja",
+    "Zahlen im Satz = Anzeige (30.000 A; 35/70/160 ms; 21 m): ja",
+    "Anzeige passt zum Zeitraffer: Faktoren je Abschnitt ausgewiesen: ja",
+    "Testblock b: Ereignis bei 8 s auf Countdown-Null, zweite sichtbare Stufe (Etikettwechsel ms) bei 13 s: ja; folgen_hinweis gesetzt (6 Wörter, inhaltlich gebunden): ja",
+    "Titelfrage enthält Suchbegriff (Blitz, Flugzeug), Caption beginnt damit: ja",
+    "Verbote: keine Stimme, kein Logo, keine Sticker, keine Airline-Marke, kein „perfekter Faradayscher Käfig“, keine Panikmache: ja",
+    "Tageslicht am Anfang, Veränderung am eigenen Standpunkt (Lernstand): ja"
+  ]
+}
