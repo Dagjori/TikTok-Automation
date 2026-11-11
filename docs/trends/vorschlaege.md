@@ -6,6 +6,17 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
+## 💶 Gas wird 2027 teurer: Wer zahlt mehr drauf, Wohnung mit 70 m² oder Haus mit 140 m²?
+- **Score:** 81 (Nachfrage 4, Timing 5, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 4) · **Status:** neu
+- **Warum:**
+  - Zum 01.01.2027 steigt Gas für viele Haushalte um 10–20 % laut Verivox; ein großer Versorger erhöht die Grund- und Ersatzversorgung um 8,4 % (ca. 215 € Mehrkosten bei Gas im Beispielhaushalt), ein anderer nennt Gas +300 € im Jahr (F: [Berliner Zeitung](https://www.berliner-zeitung.de/article/10504650), [EnBW](https://www.enbw.com/presse/enbw-strompreis-gaspreis-anpassung-2027.html), [EWE laut leinetal24](https://www.leinetal24.de/niedersachsen/ewe-hebt-preise-an-strom-128-euro-gas-300-euro-teurer-94575450.html)).
+  - Grundversorger müssen die Erhöhung sechs Wochen vorher ankündigen, also bis etwa 20.11.; bei einer Erhöhung gilt ein Sonderkündigungsrecht bis zum Tag der Erhöhung (F: Suchzusammenfassung, vor Produktion gegen Primärquelle prüfen).
+  - Netzentgelte und CO2-Preis (Korridor 55–65 €/t, Bundesrat noch offen) treiben die Kosten (F: Berliner Zeitung, laut Suchzusammenfassung).
+- **Eigene Umsetzung (Duell, GELD):** Zwei Haushalte mit gleichem Preissprung: Wohnung 70 m² gegen Haus 140 m². Euro-Zähler zeigt die Mehrkosten pro Jahr, Denkfalle „Klar, mehr Fläche heißt doppelt so viel Mehrkosten. Oder?“ (Grundpreis-Anteil, Verbrauch je m²). Wendung: das Sonderkündigungsrecht und was ein Tarifwechsel in Euro ausmacht. Keine Anbieter- oder Tarifnamen, Annahmen offen (A).
+- **Abgrenzung:** Nicht das Heizverhalten (siehe Vorschlag „Heizung nachts runter oder durchheizen“), sondern der Preissprung zum Jahreswechsel.
+- **Vor Produktion prüfen:** aktuelle Spanne je Versorger, Verbrauchsannahmen (z. B. Heizspiegel), Fristen laut Energiewirtschaftsgesetz bzw. Verbraucherzentrale.
+- **Posten:** 14.–25.11.2026 empfohlen, spätestens 05.12.2026.
+
 ## 💶 Black Friday: Wer spart bei 100 € wirklich mehr, der Sofort-Käufer oder der Preisverlauf-Wartende?
 - **Score:** 81 (Nachfrage 4, Timing 5, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 4) · **Status:** neu (Neubewertung, vorher 69 beobachten)
 - **Warum:**
