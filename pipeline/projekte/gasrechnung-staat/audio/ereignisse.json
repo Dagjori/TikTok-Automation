@@ -1,0 +1,1654 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "gasrechnung-staat",
+ "fps": 30,
+ "dauer": 79.16666666666667,
+ "stimmEnde": 78.577,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "nacht",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "STAAT",
+    "farbe": "#FF5A1F"
+   },
+   "b": {
+    "name": "DER REST",
+    "farbe": "#2F8CFF"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 4,
+   "groesse": 64,
+   "unten": 1450,
+   "phrasen": 54
+  },
+  "timing": "echt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "GASPREIS"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "VON 2.446 €"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WIE VIEL BEKOMMT DER STAAT?"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "tafel",
+   "klang": false,
+   "bild": false,
+   "ab": "start"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Beim aktuellen Gaspreis kostet",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.3,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Gas fließt in den Zähler, Zähler der Rechnung läuft, Kamera gleitet"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 0.4,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 0.4,
+   "typ": "zaehler",
+   "dauer": 4.467,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.6,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MODELLRECHNUNG · EINFAMILIENHAUS · 2026"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 1.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ein Einfamilienhaus rund",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera nah am Gaszähler, Zeiger dreht"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 3.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "2.400 Euro im Jahr.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.44,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Rechnung 2.446 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.94,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 5.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wie viel davon",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera zurück, Frage an die Säulen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 6.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "bekommt der Staat?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 8.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gerechnet wird mit",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 8.2,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Regeln als Chips, Kamera Totale"
+  },
+  {
+   "quelle": "Chip",
+   "t": 8.6,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "20.000 KWH IM JAHR"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "dem Durchschnittspreis für Neukunden.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 9.18,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "12,23 CT/KWH · NEUKUNDEN 2026"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.7,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.19,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "CO₂-PREIS 65 € PRO TONNE"
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.01,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.01,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.01,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.06,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 11.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar, der Staat bekommt",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.36,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STAAT: HÖCHSTENS EIN ZEHNTEL?"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 11.36,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zum Staats-Stapel, Zehntel-Marke leuchtet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 12.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "höchstens ein Zehntel.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.86,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.36,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 14.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder doch nicht?",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera näher, Zweifel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.89,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 16.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Schon die Mehrwertsteuer allein",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.24,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Orangefarbener Strom aus dem Zähler in den Staats-Stapel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.51,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MEHRWERTSTEUER 19 % = 390,54 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.56,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Mehrwertsteuer wächst, Stapel springt über die Zehntel-Marke"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 16.633,
+   "typ": "zaehler",
+   "dauer": 2.867,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 16.66,
+   "typ": "zaehler",
+   "dauer": 2.833,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 17.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "sind fast 400 Euro.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 17.76,
+   "art": "zoom",
+   "dauer": 2.2,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.9,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.06,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 19.033,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.56,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 19.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Das ist mehr als",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 20.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ein Sechstel der Rechnung.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 20.52,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MEHR ALS EIN SECHSTEL · 16 %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.72,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Mehr als ein Sechstel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.81,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.81,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 22.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Dann der Kohlendioxidpreis,",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.16,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zum Schornstein, Rauch steigt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 22.64,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "CO₂-PREIS 1,18 CT/KWH = 236,00 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.64,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "CO₂-Preis, zweites Stück im Staats-Stapel"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.14,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 24.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "65 Euro pro Tonne.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 26.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Auf der Rechnung sind",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 26.393,
+   "typ": "zaehler",
+   "dauer": 2.767,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.4,
+   "typ": "zaehler",
+   "dauer": 2.767,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 26.867,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.14,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 27.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "das rund 240 Euro.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.3,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.633,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.76,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "236 € Zuwachs"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 27.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 28.7,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.26,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 29.58,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BIS ZU WELCHEM TAG NUR FÜR DEN STAAT?"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 29.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Bis zu welchem Tag",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.68,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kalenderplatten erscheinen, zweite Frage"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 30.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Jahr heizt man",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 31.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 31.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "nur für den Staat?",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.68,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 33.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Dazu kommt die Energiesteuer",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera an den Säulen entlang"
+  },
+  {
+   "quelle": "Chip",
+   "t": 33.63,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 34.03,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ENERGIESTEUER 0,55 CT/KWH = 110,00 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.08,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Energiesteuer, drittes Stück"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 34.46,
+   "typ": "zaehler",
+   "dauer": 1.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34.467,
+   "typ": "zaehler",
+   "dauer": 1.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 34.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "mit 110 Euro.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.067,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 35.567,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 36.2,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 36.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Die Gemeinde erhält 6",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.71,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GEMEINDE: 6,00 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.76,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Gemeinde, viertes Stück"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 37.627,
+   "typ": "zaehler",
+   "dauer": 0.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 37.633,
+   "typ": "zaehler",
+   "dauer": 0.567,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 37.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Euro für die Leitungen",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.26,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 39.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "unter der Straße.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.76,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.29,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 40.29,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 40.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Das Gasnetz kostet",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 40.44,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.64,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Netz-Säule wächst"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.933,
+   "typ": "zaehler",
+   "dauer": 1.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 40.94,
+   "typ": "zaehler",
+   "dauer": 1.967,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "rund 500 Euro.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.14,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 43.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Für das Gas selbst",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zur Lieferanten-Säule"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 44.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "und den Vertrieb bleiben",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Tafel",
+   "t": 44.5,
+   "typ": "zaehler",
+   "dauer": 2.733,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 44.52,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 44.52,
+   "typ": "zaehler",
+   "dauer": 2.7,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.72,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lieferanten-Säule wächst"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 45.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "knapp 1.200 Euro.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 46.22,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 47.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der Stapel",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Licht kippt, Vergleichslinie Staat gegen Netz"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "für den Staat",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 48.46,
+   "art": "zoom",
+   "dauer": 2.2,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Chip",
+   "t": 48.51,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STAAT 742,54 € > NETZ 514,00 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 49.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ist längst höher als",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 50.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "der für das Netz.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Szene",
+   "t": 50.96,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Staat höher als Netz"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 51.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Er ist sogar größer",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.46,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.85,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "> HÄLFTE DES LIEFERANTEN · 594,73 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 52.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "als die Hälfte dessen,",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Mehr als die Hälfte des Lieferanten"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 54.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "was der Lieferant bekommt.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.7,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 55.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Er wächst",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 56.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "auf über 700 Euro.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.96,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Marke 700 € leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.96,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.96,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 58.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der Staat bekommt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.56,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Zoom auf den Staats-Stapel, Bilanzkarte"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 58.57,
+   "art": "zoom",
+   "dauer": 2.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 58.72,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "MEHRWERTSTEUER"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 58.97,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "CO₂-PREIS"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 59.22,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "ENERGIESTEUER"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 59.47,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "GEMEINDE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 59.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "rund 740 Euro.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 59.82,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "STAAT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.92,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "742,54 € Staat, Stapel leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.42,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 61.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Das ist fast",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 62.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ein Drittel der Gasrechnung.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.64,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Fast ein Drittel"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.14,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 64.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Größter Posten",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 64.4,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "MEHRWERTSTEUER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.4,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Erklärgrafik Warum"
+  },
+  {
+   "quelle": "Balken",
+   "t": 64.8,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "GRÖSSTER POSTEN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 65.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ist die Mehrwertsteuer,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 65.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Balken",
+   "t": 66.58,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "CO₂-PREIS"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 66.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "danach der Kohlendioxidpreis.",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Balken",
+   "t": 66.68,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "DANACH"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.68,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Balken CO₂-Preis"
+  },
+  {
+   "quelle": "Szene",
+   "t": 68.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 68.69,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 68.99,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2.446 € ÷ 365 TAGE · GLEICHMÄSSIG"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Vom 1.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.04,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zum Kalender"
+  },
+  {
+   "quelle": "Chip",
+   "t": 69.5,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "1. JANUAR BIS 21. APRIL = 111 VON 365 TAGEN"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 69.5,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 69.5,
+   "typ": "zaehler",
+   "dauer": 2.333,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Januar bis zum 21.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.6,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Kalender füllt sich ab Januar"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 71.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "April heizt man rechnerisch",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 71.28,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "21. April erreicht"
+  },
+  {
+   "quelle": "Szene",
+   "t": 72,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "111 von 365 Tagen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 73.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "nur für den Staat.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 74.61,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 74.61,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 74.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Fast jeder dritte Euro",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Pointe",
+   "t": 74.96,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "FAST JEDER  DRITTE EURO  GEHT AN DEN STAAT."
+  },
+  {
+   "quelle": "Szene",
+   "t": 74.96,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Welt dunkelt ab, Schlusskarte"
+  },
+  {
+   "quelle": "Szene",
+   "t": 75.68,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Dritte Euro leuchtet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 76.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "der Gasrechnung geht",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Hinweis",
+   "t": 76.677,
+   "typ": "folgen_hinweis",
+   "dauer": 2.5,
+   "text": "Jeden Tag eine Geldfrage im Profil",
+   "gesprochen": false,
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 77.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 77.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "an den Staat.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 78.68,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Schnee fällt, Rauch steigt"
+  }
+ ],
+ "klang": []
+}

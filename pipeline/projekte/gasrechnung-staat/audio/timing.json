@@ -1,0 +1,751 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": {
+  "stability": 0.5,
+  "similarity_boost": 0.75
+ },
+ "dauer": 78.577,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Beim Gaspreis: Von 2.446 € Gasrechnung – wie viel bekommt der Staat?",
+   "start": 0.0,
+   "ende": 8.16,
+   "woerter": [
+    {
+     "wort": "Beim",
+     "start": 0.0,
+     "ende": 0.24
+    },
+    {
+     "wort": "Gaspreis:",
+     "start": 0.8,
+     "ende": 1.44
+    },
+    {
+     "wort": "Von",
+     "start": 1.52,
+     "ende": 2.4000000000000004
+    },
+    {
+     "wort": "2.446",
+     "start": 2.4000000000000004,
+     "ende": 3.2800000000000002
+    },
+    {
+     "wort": "€",
+     "start": 3.2800000000000002,
+     "ende": 4.16
+    },
+    {
+     "wort": "Gasrechnung",
+     "start": 4.16,
+     "ende": 5.040000000000001
+    },
+    {
+     "wort": "–",
+     "start": 5.040000000000001,
+     "ende": 5.92
+    },
+    {
+     "wort": "wie",
+     "start": 6.0,
+     "ende": 6.08
+    },
+    {
+     "wort": "viel",
+     "start": 6.24,
+     "ende": 6.4
+    },
+    {
+     "wort": "bekommt",
+     "start": 6.8,
+     "ende": 7.04
+    },
+    {
+     "wort": "der",
+     "start": 7.08,
+     "ende": 7.12
+    },
+    {
+     "wort": "Staat?",
+     "start": 7.2,
+     "ende": 8.16
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "20.000 kWh/Jahr · 12,23 ct/kWh (BDEW, Neukunden 2026) · CO₂ 65 €/t",
+   "start": 8.2,
+   "ende": 11.12,
+   "woerter": [
+    {
+     "wort": "20.000",
+     "start": 8.2,
+     "ende": 8.526666666666666
+    },
+    {
+     "wort": "kWh/Jahr",
+     "start": 8.526666666666666,
+     "ende": 8.853333333333333
+    },
+    {
+     "wort": "·",
+     "start": 8.853333333333333,
+     "ende": 9.18
+    },
+    {
+     "wort": "12,23",
+     "start": 9.18,
+     "ende": 9.506666666666666
+    },
+    {
+     "wort": "ct/kWh",
+     "start": 9.506666666666666,
+     "ende": 9.833333333333334
+    },
+    {
+     "wort": "(BDEW,",
+     "start": 9.833333333333334,
+     "ende": 10.16
+    },
+    {
+     "wort": "Neukunden",
+     "start": 10.24,
+     "ende": 11.12
+    },
+    {
+     "wort": "2026)",
+     "start": 11.12,
+     "ende": 11.12
+    },
+    {
+     "wort": "·",
+     "start": 11.12,
+     "ende": 11.12
+    },
+    {
+     "wort": "CO₂",
+     "start": 11.12,
+     "ende": 11.12
+    },
+    {
+     "wort": "65",
+     "start": 11.12,
+     "ende": 11.12
+    },
+    {
+     "wort": "€/t",
+     "start": 11.12,
+     "ende": 11.12
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, der Staat bekommt höchstens ein Zehntel. Oder?",
+   "start": 11.36,
+   "ende": 15.92,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 11.36,
+     "ende": 11.92
+    },
+    {
+     "wort": "der",
+     "start": 12.0,
+     "ende": 12.08
+    },
+    {
+     "wort": "Staat",
+     "start": 12.16,
+     "ende": 12.4
+    },
+    {
+     "wort": "bekommt",
+     "start": 12.52,
+     "ende": 12.8
+    },
+    {
+     "wort": "höchstens",
+     "start": 12.84,
+     "ende": 13.28
+    },
+    {
+     "wort": "ein",
+     "start": 13.36,
+     "ende": 13.44
+    },
+    {
+     "wort": "Zehntel.",
+     "start": 13.52,
+     "ende": 14.0
+    },
+    {
+     "wort": "Oder?",
+     "start": 14.64,
+     "ende": 14.88
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Mehrwertsteuer 19 %: 390,54 € = 16 % der Rechnung",
+   "start": 16.24,
+   "ende": 21.68,
+   "woerter": [
+    {
+     "wort": "Mehrwertsteuer",
+     "start": 16.56,
+     "ende": 17.2
+    },
+    {
+     "wort": "19",
+     "start": 17.36,
+     "ende": 17.885714285714286
+    },
+    {
+     "wort": "%:",
+     "start": 17.885714285714286,
+     "ende": 18.41142857142857
+    },
+    {
+     "wort": "390,54",
+     "start": 18.41142857142857,
+     "ende": 18.937142857142856
+    },
+    {
+     "wort": "€",
+     "start": 18.937142857142856,
+     "ende": 19.462857142857143
+    },
+    {
+     "wort": "=",
+     "start": 19.462857142857143,
+     "ende": 19.98857142857143
+    },
+    {
+     "wort": "16",
+     "start": 19.98857142857143,
+     "ende": 20.514285714285712
+    },
+    {
+     "wort": "%",
+     "start": 20.514285714285712,
+     "ende": 21.04
+    },
+    {
+     "wort": "der",
+     "start": 21.12,
+     "ende": 21.2
+    },
+    {
+     "wort": "Rechnung",
+     "start": 21.24,
+     "ende": 21.68
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "CO₂-Preis: 1,18 ct/kWh = 236,00 € · Bis wann heizt man nur für den Staat?",
+   "start": 22.16,
+   "ende": 33.08,
+   "woerter": [
+    {
+     "wort": "CO₂-Preis:",
+     "start": 22.16,
+     "ende": 23.165714285714287
+    },
+    {
+     "wort": "1,18",
+     "start": 23.165714285714287,
+     "ende": 24.17142857142857
+    },
+    {
+     "wort": "ct/kWh",
+     "start": 24.17142857142857,
+     "ende": 25.177142857142858
+    },
+    {
+     "wort": "=",
+     "start": 25.177142857142858,
+     "ende": 26.18285714285714
+    },
+    {
+     "wort": "236,00",
+     "start": 26.18285714285714,
+     "ende": 27.18857142857143
+    },
+    {
+     "wort": "€",
+     "start": 27.18857142857143,
+     "ende": 28.194285714285712
+    },
+    {
+     "wort": "·",
+     "start": 28.194285714285712,
+     "ende": 29.2
+    },
+    {
+     "wort": "Bis",
+     "start": 29.68,
+     "ende": 29.84
+    },
+    {
+     "wort": "wann",
+     "start": 29.92,
+     "ende": 31.12
+    },
+    {
+     "wort": "heizt",
+     "start": 31.2,
+     "ende": 31.52
+    },
+    {
+     "wort": "man",
+     "start": 31.6,
+     "ende": 31.68
+    },
+    {
+     "wort": "nur",
+     "start": 31.84,
+     "ende": 32.0
+    },
+    {
+     "wort": "für",
+     "start": 32.08,
+     "ende": 32.16
+    },
+    {
+     "wort": "den",
+     "start": 32.24,
+     "ende": 32.32
+    },
+    {
+     "wort": "Staat?",
+     "start": 32.4,
+     "ende": 33.08
+    }
+   ]
+  },
+  {
+   "id": "rennen",
+   "text": "Energiesteuer 0,55 ct/kWh: 110,00 € · Konzessionsabgabe Gemeinde: 6,00 € · Netz: 514,00 € · Gas und Vertrieb: 1.189,46 €",
+   "start": 33.36,
+   "ende": 47.32,
+   "woerter": [
+    {
+     "wort": "Energiesteuer",
+     "start": 34.08,
+     "ende": 34.88
+    },
+    {
+     "wort": "0,55",
+     "start": 34.96,
+     "ende": 35.25333333333333
+    },
+    {
+     "wort": "ct/kWh:",
+     "start": 35.25333333333333,
+     "ende": 35.54666666666667
+    },
+    {
+     "wort": "110,00",
+     "start": 35.54666666666667,
+     "ende": 35.84
+    },
+    {
+     "wort": "€",
+     "start": 35.84,
+     "ende": 36.13333333333333
+    },
+    {
+     "wort": "·",
+     "start": 36.13333333333333,
+     "ende": 36.42666666666666
+    },
+    {
+     "wort": "Konzessionsabgabe",
+     "start": 36.42666666666666,
+     "ende": 36.72
+    },
+    {
+     "wort": "Gemeinde:",
+     "start": 36.76,
+     "ende": 37.2
+    },
+    {
+     "wort": "6,00",
+     "start": 37.28,
+     "ende": 38.182857142857145
+    },
+    {
+     "wort": "€",
+     "start": 38.182857142857145,
+     "ende": 39.08571428571429
+    },
+    {
+     "wort": "·",
+     "start": 39.08571428571429,
+     "ende": 39.98857142857143
+    },
+    {
+     "wort": "Netz:",
+     "start": 39.98857142857143,
+     "ende": 40.89142857142857
+    },
+    {
+     "wort": "514,00",
+     "start": 40.89142857142857,
+     "ende": 41.794285714285714
+    },
+    {
+     "wort": "€",
+     "start": 41.794285714285714,
+     "ende": 42.69714285714286
+    },
+    {
+     "wort": "·",
+     "start": 42.69714285714286,
+     "ende": 43.6
+    },
+    {
+     "wort": "Gas",
+     "start": 43.68,
+     "ende": 43.92
+    },
+    {
+     "wort": "und",
+     "start": 44.48,
+     "ende": 44.56
+    },
+    {
+     "wort": "Vertrieb:",
+     "start": 44.72,
+     "ende": 45.2
+    },
+    {
+     "wort": "1.189,46",
+     "start": 45.28,
+     "ende": 46.3
+    },
+    {
+     "wort": "€",
+     "start": 46.3,
+     "ende": 47.32
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "text": "Staat 742,54 € > Netz 514,00 € · > ½ Lieferant (594,73 €)",
+   "start": 47.6,
+   "ende": 58.28,
+   "woerter": [
+    {
+     "wort": "Staat",
+     "start": 48.56,
+     "ende": 48.96
+    },
+    {
+     "wort": "742,54",
+     "start": 49.12,
+     "ende": 49.70666666666666
+    },
+    {
+     "wort": "€",
+     "start": 49.70666666666666,
+     "ende": 50.29333333333334
+    },
+    {
+     "wort": ">",
+     "start": 50.29333333333334,
+     "ende": 50.88
+    },
+    {
+     "wort": "Netz",
+     "start": 50.96,
+     "ende": 51.52
+    },
+    {
+     "wort": "514,00",
+     "start": 51.76,
+     "ende": 52.256
+    },
+    {
+     "wort": "€",
+     "start": 52.256,
+     "ende": 52.752
+    },
+    {
+     "wort": "·",
+     "start": 52.752,
+     "ende": 53.248
+    },
+    {
+     "wort": ">",
+     "start": 53.248,
+     "ende": 53.744
+    },
+    {
+     "wort": "½",
+     "start": 53.744,
+     "ende": 54.24
+    },
+    {
+     "wort": "Lieferant",
+     "start": 54.32,
+     "ende": 54.8
+    },
+    {
+     "wort": "(594,73",
+     "start": 54.92,
+     "ende": 56.6
+    },
+    {
+     "wort": "€)",
+     "start": 56.6,
+     "ende": 58.28
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Staat: 742,54 € von 2.446 € = 30,4 %",
+   "start": 58.56,
+   "ende": 64.32,
+   "woerter": [
+    {
+     "wort": "Staat:",
+     "start": 58.72,
+     "ende": 59.12
+    },
+    {
+     "wort": "742,54",
+     "start": 59.2,
+     "ende": 59.84
+    },
+    {
+     "wort": "€",
+     "start": 59.84,
+     "ende": 60.480000000000004
+    },
+    {
+     "wort": "von",
+     "start": 60.480000000000004,
+     "ende": 61.12
+    },
+    {
+     "wort": "2.446",
+     "start": 61.12,
+     "ende": 61.76
+    },
+    {
+     "wort": "€",
+     "start": 61.76,
+     "ende": 62.4
+    },
+    {
+     "wort": "=",
+     "start": 62.4,
+     "ende": 63.03999999999999
+    },
+    {
+     "wort": "30,4",
+     "start": 63.03999999999999,
+     "ende": 63.67999999999999
+    },
+    {
+     "wort": "%",
+     "start": 63.67999999999999,
+     "ende": 64.32
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Größter Posten: Mehrwertsteuer · dann CO₂-Preis",
+   "start": 64.4,
+   "ende": 68.96,
+   "woerter": [
+    {
+     "wort": "Größter",
+     "start": 64.4,
+     "ende": 64.72
+    },
+    {
+     "wort": "Posten:",
+     "start": 64.8,
+     "ende": 65.2
+    },
+    {
+     "wort": "Mehrwertsteuer",
+     "start": 65.6,
+     "ende": 66.56
+    },
+    {
+     "wort": "·",
+     "start": 66.68,
+     "ende": 67.44
+    },
+    {
+     "wort": "dann",
+     "start": 67.44,
+     "ende": 68.2
+    },
+    {
+     "wort": "CO₂-Preis",
+     "start": 68.2,
+     "ende": 68.96
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "text": "1. Januar bis 21. April: nur für den Staat (111 von 365 Tagen, gleichmäßig verteilt)",
+   "start": 69.04,
+   "ende": 74.88,
+   "woerter": [
+    {
+     "wort": "1.",
+     "start": 69.04,
+     "ende": 69.52
+    },
+    {
+     "wort": "Januar",
+     "start": 69.6,
+     "ende": 70.0
+    },
+    {
+     "wort": "bis",
+     "start": 70.08,
+     "ende": 70.16
+    },
+    {
+     "wort": "21.",
+     "start": 70.24,
+     "ende": 71.2
+    },
+    {
+     "wort": "April:",
+     "start": 71.28,
+     "ende": 71.68
+    },
+    {
+     "wort": "nur",
+     "start": 73.44,
+     "ende": 73.6
+    },
+    {
+     "wort": "für",
+     "start": 73.68,
+     "ende": 73.84
+    },
+    {
+     "wort": "den",
+     "start": 73.92,
+     "ende": 74.0
+    },
+    {
+     "wort": "Staat",
+     "start": 74.08,
+     "ende": 74.88
+    },
+    {
+     "wort": "(111",
+     "start": 74.88,
+     "ende": 74.88
+    },
+    {
+     "wort": "von",
+     "start": 74.88,
+     "ende": 74.88
+    },
+    {
+     "wort": "365",
+     "start": 74.88,
+     "ende": 74.88
+    },
+    {
+     "wort": "Tagen,",
+     "start": 74.88,
+     "ende": 74.88
+    },
+    {
+     "wort": "gleichmäßig",
+     "start": 74.88,
+     "ende": 74.88
+    },
+    {
+     "wort": "verteilt)",
+     "start": 74.88,
+     "ende": 74.88
+    }
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "text": "Fast jeder dritte Euro der Gasrechnung geht an den Staat.",
+   "start": 74.96,
+   "ende": 78.64,
+   "woerter": [
+    {
+     "wort": "Fast",
+     "start": 74.96,
+     "ende": 75.28
+    },
+    {
+     "wort": "jeder",
+     "start": 75.36,
+     "ende": 75.6
+    },
+    {
+     "wort": "dritte",
+     "start": 75.68,
+     "ende": 76.0
+    },
+    {
+     "wort": "Euro",
+     "start": 76.16,
+     "ende": 76.4
+    },
+    {
+     "wort": "der",
+     "start": 76.48,
+     "ende": 76.56
+    },
+    {
+     "wort": "Gasrechnung",
+     "start": 76.64,
+     "ende": 77.28
+    },
+    {
+     "wort": "geht",
+     "start": 77.44,
+     "ende": 77.6
+    },
+    {
+     "wort": "an",
+     "start": 77.68,
+     "ende": 77.76
+    },
+    {
+     "wort": "den",
+     "start": 77.8,
+     "ende": 77.84
+    },
+    {
+     "wort": "Staat.",
+     "start": 78.0,
+     "ende": 78.64
+    }
+   ]
+  }
+ ]
+}

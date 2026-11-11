@@ -1,0 +1,228 @@
+{
+ "titel": "Gasrechnung zerlegt: Wie viel davon bekommt der Staat?",
+ "skill": "video-produktion",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-12-abend",
+ "stil": "17 Nachtstadt-Miniatur (Winternacht, Gaszähler und Kostensäulen)",
+ "stil_begruendung": "Heizen im Winter: Einfamilienhaus mit Gaszähler im verschneiten Nachtdorf, aus dem Zähler fließt das Geld in drei Kostensäulen (Lieferant, Netz, Staat). Wohnen-und-Energie-Thema für Stil 17 (Winternacht, Haus, Schornsteinrauch, Schnee), dunkle Welt mit Leuchtakzenten (REA R13/R23). Vorgänger: 12.11. mittag Stil 21 (Rentenerhöhung), 11.11. abend Stil 17 (Wärmepumpe/Gas war 04.11.), kindergeld-kanada Stil 19; hier eigener Aufbau (Zähler, Säulen, Monatsleiste) statt zwei Häuser im Duell.",
+ "teamfarben": {
+  "STAAT": "#FF7A33",
+  "DER REST": "#4DB8FF"
+ },
+ "klangteppich": "nacht",
+ "stil_helligkeit": "dunkel",
+ "suchbegriff": "Gaspreis",
+ "testbloecke": {
+  "folgen_hinweis": "mit"
+ },
+ "folgen_hinweis": "Jeden Tag eine Geldfrage im Profil",
+ "teil": 1,
+ "format": "Was bleibt",
+ "zweite_frage": {
+  "text": "Bis zu welchem Tag im Jahr heizt man rechnerisch nur für den Staat?",
+  "gesetzt_in": "wendung2",
+  "aufgeloest_in": "pointe"
+ },
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Beim Gaspreis: Von 2.446 € Gasrechnung – wie viel bekommt der Staat?",
+   "sprechtext": "Beim aktuellen Gaspreis kostet ein Einfamilienhaus rund zweitausendvierhundert Euro im Jahr.\nWie viel davon bekommt der Staat?",
+   "bild_text_abgleich": [
+    "Bild 0 bis 8,0 s: Titel GASPREIS · VON 2.446 € · WIE VIEL BEKOMMT DER STAAT? (Suchbegriff Gaspreis) und Tafel STAAT 0,00 € / DER REST 0,00 € ab Bild 0; Chip MODELLRECHNUNG · EINFAMILIENHAUS ab 0,6 s",
+    "Winternacht-Dorf: Einfamilienhaus, davor der Gaszähler, Gas fließt hinein (weiße Würfel), Zähler GASRECHNUNG IM JAHR läuft ab 0,3 s von 0 auf 2.446,00 € (bei „zweitausendvierhundert“ 3,4 s erreicht), Kamera fährt bei 2,4 s an den Zähler heran, bei 6,0 s zurück zur Frage"
+   ]
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "20.000 kWh/Jahr · 12,23 ct/kWh (BDEW, Neukunden 2026) · CO₂ 65 €/t",
+   "sprechtext": "Gerechnet wird mit dem Durchschnittspreis für Neukunden.",
+   "bild_text_abgleich": [
+    "Chips 20.000 KWH IM JAHR (8,6 s), 12,23 CT/KWH · NEUKUNDEN 2026 (9,2 s), CO₂-PREIS 65 € PRO TONNE (10,2 s); Titel blendet aus, Kamera Totale auf Haus, Zähler und drei Säulenplätze"
+   ]
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, der Staat bekommt höchstens ein Zehntel. Oder?",
+   "sprechtext": "Klar, der Staat bekommt höchstens ein Zehntel.\nOder doch nicht?",
+   "bild_text_abgleich": [
+    "Kamera fährt auf den Staats-Stapel (11,4 s), Chip STAAT: HÖCHSTENS EIN ZEHNTEL? und Zähler STAAT 0,00 € bei „Klar“, Zehntel-Marke (weißes Band bei 244,60 €) leuchtet; näher heran bei „Oder doch nicht?“ (14,6 s)"
+   ]
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Mehrwertsteuer 19 %: 390,54 € = 16 % der Rechnung",
+   "sprechtext": "Schon die Mehrwertsteuer allein sind fast vierhundert Euro.\nDas ist mehr als ein Sechstel der Rechnung.",
+   "bild_text_abgleich": [
+    "16,2 s: orange Strom aus dem Zähler in den Staats-Stapel, unterstes Stück MEHRWERTSTEUER wächst bei „Mehrwertsteuer“ (16,6 s) über die Zehntel-Marke auf 390,54 € (Tafel STAAT 390,54 €, Chip MEHRWERTSTEUER 19 % = 390,54 €), Chip MEHR ALS EIN SECHSTEL · 16 % bei „Sechstel“ (20,7 s)"
+   ]
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "CO₂-Preis: 1,18 ct/kWh = 236,00 € · Bis wann heizt man nur für den Staat?",
+   "sprechtext": "Dann der Kohlendioxidpreis, fünfundsechzig Euro pro Tonne.\nAuf der Rechnung sind das rund zweihundertvierzig Euro.\nBis zu welchem Tag im Jahr heizt man nur für den Staat?",
+   "bild_text_abgleich": [
+    "22,2 s: Kamera zum Schornstein, Rauch steigt; zweites Stück CO₂-PREIS wächst bei „Auf der Rechnung“ (26,3 s) um 236,00 € (Tafel 626,54 €), Chip CO₂-PREIS 1,18 CT/KWH = 236,00 €",
+    "Zweite Frage bei „Bis zu welchem Tag“ (29,7 s): Monatsplatten (Kalender) erscheinen vorn, Chip BIS ZU WELCHEM TAG NUR FÜR DEN STAAT? bleibt im Bild bis zur Auflösung"
+   ]
+  },
+  {
+   "id": "rennen",
+   "phase": "rennen",
+   "text": "Energiesteuer 0,55 ct/kWh: 110,00 € · Konzessionsabgabe Gemeinde: 6,00 € · Netz: 514,00 € · Gas und Vertrieb: 1.189,46 €",
+   "sprechtext": "Dazu kommt die Energiesteuer mit hundertzehn Euro.\nDie Gemeinde erhält sechs Euro für die Leitungen unter der Straße.\nDas Gasnetz kostet rund fünfhundert Euro.\nFür das Gas selbst und den Vertrieb bleiben knapp zwölfhundert Euro.",
+   "bild_text_abgleich": [
+    "Energiesteuer-Stück (34,1–36,4 s, Chip ENERGIESTEUER 0,55 CT/KWH = 110,00 €, Tafel 736,54 €), Gemeinde-Stück bei „sechs Euro“ (37,6 s, Chip GEMEINDE: 6,00 €, Tafel STAAT 742,54 €), NETZ-Säule blau wächst auf 514,00 € bei „Gasnetz“ (40,6–42,9 s, Zähler NETZ), LIEFERANT-Säule wächst auf 1.189,46 € (44,7–47,3 s, Zähler LIEFERANT); Kamera fährt entlang der Säulen; Tafel DER REST bis 1.703,46 €"
+   ]
+  },
+  {
+   "id": "kipp",
+   "phase": "kipp",
+   "text": "Staat 742,54 € > Netz 514,00 € · > ½ Lieferant (594,73 €)",
+   "sprechtext": "Der Stapel für den Staat ist längst höher als der für das Netz.\nEr ist sogar größer als die Hälfte dessen, was der Lieferant bekommt.\nEr wächst auf über siebenhundert Euro.",
+   "bild_text_abgleich": [
+    "47,6 s: Licht kippt, Vergleichslinie Staats-Stapel gegen NETZ (Chip STAAT 742,54 € > NETZ 514,00 €), Chip > HÄLFTE DES LIEFERANTEN · 594,73 € bei „Hälfte“ (53,2 s), Marke 700 € leuchtet bei „siebenhundert“ (57,0 s)"
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Staat: 742,54 € von 2.446 € = 30,4 %",
+   "sprechtext": "Der Staat bekommt rund siebenhundertvierzig Euro.\nDas ist fast ein Drittel der Gasrechnung.",
+   "bild_text_abgleich": [
+    "58,6 s: Zoom auf den Staats-Stapel, Bilanzkarte WER BEKOMMT WAS: MEHRWERTSTEUER 390,54, CO₂-PREIS 236,00, ENERGIESTEUER 110,00, GEMEINDE 6,00, STAAT 742,54 € (bei „siebenhundertvierzig“ 59,9 s), Tafel 742,54 € · 30 %, Stapel leuchtet; Fast ein Drittel bei „Drittel“ (62,6 s)"
+   ]
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Größter Posten: Mehrwertsteuer · dann CO₂-Preis",
+   "sprechtext": "Größter Posten ist die Mehrwertsteuer, danach der Kohlendioxidpreis.",
+   "bild_text_abgleich": [
+    "Erklärgrafik WARUM? mit zwei Balken: MEHRWERTSTEUER 16 % (GRÖSSTER POSTEN, 64,4 s), CO₂-PREIS 9,6 % (DANACH, 66,7 s)"
+   ]
+  },
+  {
+   "id": "pointe",
+   "phase": "pointe",
+   "text": "1. Januar bis 21. April: nur für den Staat (111 von 365 Tagen, gleichmäßig verteilt)",
+   "sprechtext": "Vom ersten Januar bis zum einundzwanzigsten April heizt man rechnerisch nur für den Staat.",
+   "bild_text_abgleich": [
+    "Kamera zum Kalender (69 s): Monatsplatten Januar bis April füllen sich orange bei „Januar … April“ (69,6–71,7 s), Zähler NUR FÜR DEN STAAT zählt bis 111 TAGE, Chips 2.446 € ÷ 365 TAGE · GLEICHMÄSSIG und 1. JANUAR BIS 21. APRIL = 111 VON 365 TAGEN; löst die zweite Frage auf"
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "phase": "schlusskarte",
+   "text": "Fast jeder dritte Euro der Gasrechnung geht an den Staat.",
+   "sprechtext": "Fast jeder dritte Euro der Gasrechnung geht an den Staat.",
+   "bild_text_abgleich": [
+    "Schlusskarte FAST JEDER · DRITTE EURO (orange, bei „dritte“ 75,7 s) · GEHT AN DEN STAAT. Wort für Wort ab 75,0 s, Folgen-Hinweis (Testblock mit) „Jeden Tag eine Geldfrage im Profil“ in den letzten 2,5 s"
+   ]
+  }
+ ],
+ "caption": "Gaspreis zerlegt: Wie viel deiner Gasrechnung bekommt der Staat? 🔥 Ich hab’s simuliert. Hättest du so viel getippt? 👇 #gaspreis #heizkosten #gasrechnung #wissen #simulation",
+ "originalitaet": "Suchen „Gasrechnung wie viel bekommt der Staat Video TikTok Gaspreis Zusammensetzung Euro“ und „Gaspreis Zusammensetzung Steuern Abgaben CO2 Haushalt“ (11.11.2026): nur Ratgeber und Branchenseiten (BDEW, Vattenfall, EnBW) mit Prozent-Grafiken bzw. Beispielrechnung, kein deutsches Video mit Euro-Stapel nach Empfängern und Stichtag; eigener Winkel: Stapel in Euro plus „Staats-Stichtag“.",
+ "dramaturgie": [
+  "hook: Gaszähler im winterlichen Keller-Diorama dreht sich, Rechnung 2.446 € schwebt, Titelfrage und Zähler „Staat 0,00 €“ ab Bild 1.",
+  "regeln: Chips 20.000 kWh, 12,23 ct/kWh, CO₂ 65 €/t; Münzstrom aus dem Zähler startet.",
+  "falle: ruhiger Blick auf den Lieferanten-Trichter, der sich füllt; Zehntel-Markierung am Staats-Trichter leuchtet schwach.",
+  "wendung1 (12–15 s): Staats-Trichter springt über die Zehntel-Marke, Zähler 390,54 €, Aufleuchten.",
+  "wendung2: CO₂-Chip, Rauchschwade aus dem Schornstein wird zu Münzen, Zähler 626,54 €; Kalender-Icon mit Fragezeichen erscheint (zweite Frage) und bleibt.",
+  "rennen: Trichter wachsen im Wechsel (Energiesteuer, Gemeinde, Netz, Lieferant); Kamerafahrt an den Trichtern entlang, je Posten ein Zähler.",
+  "kipp: Staats-Stapel überholt den Netz-Stapel, Lichtwechsel kühler, Spannung hoch.",
+  "ergebnis: Zoom auf den Staats-Stapel, Zähler stoppt bei 742,54 € / 30,4 %, Teamfarbe leuchtet.",
+  "warum: zwei Chips MwSt und CO₂, kurz.",
+  "pointe: Kalenderblätter fliegen vom 1. Januar bis 21. April, Markierung „nur für den Staat“.",
+  "schlusskarte: Fazit-Karte, darunter Folgen-Hinweis (Testblock)."
+ ],
+ "rechenweg": "Jahresrechnung: 20.000 kWh × 12,23 ct = 2.446,00 € brutto; netto 2.446/1,19 = 2.055,46 €; MwSt = 390,54 €. Energiesteuer 0,55 ct/kWh × 20.000 = 110,00 €. CO2-Preis 65 €/t × 181,4 g/kWh (Brennwert) = 1,18 ct/kWh × 20.000 = 236,00 €. Konzessionsabgabe Sondervertrag 0,03 ct/kWh = 6,00 €. Staat (MwSt + Energiesteuer + CO2 + Konzession) = 742,54 € = 30,4 % (BDEW: rund 30 %). Netzentgelt 2,57 ct/kWh netto = 514,00 € (21,0 %, BDEW: ca. ein Fünftel). Beschaffung/Vertrieb = Rest 2.055,46 − 110 − 236 − 6 − 514 = 1.189,46 € (48,6 %, BDEW: knapp die Hälfte). Tage: 742,54/2.446 × 365 = 110,8 → 111. Tag = 21. April. Nachgerechnet mit cockpit/daten/tmp/rechnung_gas.py.",
+ "zahlen": {
+  "verbrauch_kwh": 20000,
+  "preis_ct_kwh": 12.23,
+  "rechnung_brutto_eur": 2446,
+  "rechnung_netto_eur": 2055.46,
+  "mwst_eur": 390.54,
+  "energiesteuer_eur": 110,
+  "co2_ct_kwh": 1.18,
+  "co2_eur": 236,
+  "konzession_eur": 6,
+  "netz_eur": 514,
+  "lieferant_eur": 1189.46,
+  "staat_eur": 742.54,
+  "staat_prozent": 30.4,
+  "tage_staat": 111,
+  "stichtag": "21.04."
+ },
+ "annahmen": [
+  "(A) Einfamilienhaus mit 20.000 kWh/Jahr, Neukunden-Durchschnittspreis 2026 (BDEW 12,23 ct/kWh, Grundpreis anteilig); Bestandsverträge und Regionen weichen ab.",
+  "(A) CO2-Preis 65 €/t (Höchstwert des Korridors 2026, alle Versteigerungen seit Juli 2026 dort), Emissionsfaktor 181,4 g CO2/kWh Brennwert → 1,18 ct/kWh netto; andere Faktoren ergeben bis 1,30 ct.",
+  "(A) Netzentgelt EFH 2,57 ct/kWh netto aus BDEW-Gaspreisanalyse 01/2026 (inkl. Messung), regional verschieden; Lieferant = Rest.",
+  "(A) Konzessionsabgabe 0,03 ct/kWh (Heizgas-Sondervertrag, BDEW-Fußnote) zählt zur öffentlichen Hand (Gemeinde).",
+  "(A) „Tage nur für den Staat“: Rechnung gleichmäßig auf 365 Tage verteilt (Bild: „gleichmäßig verteilt“).",
+  "(A) Gasspeicherumlage seit 01.01.2026 entfallen (BDEW)."
+ ],
+ "quellen": [
+  "(F) BDEW-Gaspreisanalyse Herbst 2026: EFH 12,23 ct/kWh, Steuern/Abgaben/Umlagen rund 30 %, Netz ca. ein Fünftel, Beschaffung/Vertrieb knapp die Hälfte, Gasspeicherumlage entfallen, Konzessionsabgabe 0,03 ct/kWh, BDEW, 28.10.2026 – https://www.bdew.de/media/documents/BDEW_Gaspreisanalyse_102026_1.pdf",
+  "(F) BDEW-Gaspreisanalyse Januar 2026: Netzentgelte EFH 2,57 ct/kWh, BDEW, 01/2026 – https://www.bdew.de/media/documents/BDEW_Gaspreisanalyse_012026_1.pdf",
+  "(F) § 2 Abs. 3 Satz 1 Nr. 4 EnergieStG: Erdgas 5,50 €/MWh = 0,55 ct/kWh, Stand 2026 – https://www.gesetze-im-internet.de/energiestg/__2.html",
+  "(F) nEHS-Versteigerungen 2026 alle zum Höchstpreis 65 €/t, ZfK, 2026 – https://www.zfk.de/unternehmen/beschaffung/warum-der-preiskorridor-beim-nehs-kaum-wirkung-entfaltet",
+  "(F) CO2-Steuer 2026: 65 €/t ≈ 1,18 ct/kWh netto (181,4 g/kWh Brennwert), 42watt, 2026 – https://42watt.de/magazin/co2-steuer",
+  "(F) CO2-Preis 2027 bleibt im Korridor 55–65 € (Kabinett 12.08.2026), EMA, 2026 – https://ema-energiewelt.de/wissen/co2-preis-2027-behg-novelle-korridor-55-65-euro"
+ ],
+ "korrekturen": [
+  {
+   "feld": "segmente[hook].text",
+   "alt": "Gaspreis: Von 2.446 € Gasrechnung – wie viel bekommt der Staat?",
+   "neu": "Beim Gaspreis: Von 2.446 € Gasrechnung – wie viel bekommt der Staat?",
+   "quelle": "formal",
+   "grund": "Untertitel-Text beginnt mit dem ersten gesprochenen Wort (Prüfpunkt Stimme startet < 0,2 s misst das erste Wort aus text); Inhalt, Zahlen und sprechtext unverändert",
+   "zeit": "2026-11-11T09:38:06.651Z"
+  }
+ ],
+ "faktencheck": "Faktencheck 11.11.2026: BDEW-Gaspreisanalyse Oktober 2026 im Original gelesen (EFH 12,23 ct/kWh bisher 2026, Beschaffung/Vertrieb knapp die Hälfte, Netz ca. ein Fünftel, Steuern/Abgaben/Umlagen rund 30 %, Gasspeicherumlage Anfang 2026 weggefallen); BEHG-Korridor 55–65 € 2027: Kabinett 12.08.2026, Bundestag laut Ausschussdokument 15.10.2026, Verkündung nicht bestätigt (im Video nur Preis 2026, 2027 nicht genannt); Rechnung in sim/gasrechnung.mjs mit 7 Tests, Ergebnis unverändert 742,54 € = 30,4 %.",
+ "untertitel_hinweis": "Die Untertitel zeigen das tatsächlich Gesprochene (Wortzeiten aus audio/sprech_woerter.json, Zahlwörter als Ziffern), weil text der Segmente teils Chip-Texte der Szene enthält; text und sprechtext bleiben 1:1 aus dem Dokument (Ausnahme: erstes Wort des Hook-Texts, siehe korrekturen).",
+ "lern_notizen": {
+  "thema": "Gasrechnung zerlegt: Wie viel davon bekommt der Staat?",
+  "frage": "Wie viel von rund 2.446 € Gasrechnung im Jahr bekommt der Staat?",
+  "laenge_s": 79.2,
+  "stimmdauer_s": 78.577,
+  "hook": "Beim aktuellen Gaspreis kostet ein Einfamilienhaus rund zweitausendvierhundert Euro im Jahr. Wie viel davon bekommt der Staat? (Was bleibt: Startwert 2.446 €, Frage, Hook-Ende 8,16 s, Du nicht im Hook)",
+  "stil": "17 Nachtstadt-Miniatur (Winternacht)",
+  "helligkeit": "dunkel",
+  "animationen": "Gaszähler mit drehendem Zeiger und blinkender LED, Gasstrom ins Haus, drei Geldströme aus dem Zähler in Kostensäulen (Staat aus vier gestapelten Stücken, Netz, Lieferant), Höhe = Euro, Zehntel-Marke und 700-€-Marke, Vergleichslinie Staat gegen Netz, Schornsteinrauch, Schneefall, zwölf Monatsplatten als Kalender die bis 21. April orange wachsen, Tafel rollt mit",
+  "licht_effekte": "orangefarbener Spot und Lichtkegel auf dem Staats-Stapel in den Staatsphasen (11,4 s, 16,2 s, 26,3 s, 34 s, 47,5 s, 58,5 s, 69 s), blauer Spot bei Netz und Lieferant (40–49 s), Bloom und Strahlen steigen bis zum Ergebnis, Staats-Stapel pulst bei Mehrwertsteuer, CO₂, Energiesteuer, 742,54 €",
+  "zoom": "ja (17,8 s Mehrwertsteuer, 48,5 s Staat gegen Netz, 58,4 s Ergebnis) plus fortlaufende Kamerafahrt zwischen 26 Standpunkten",
+  "zeitpunkte": {
+   "wendung_1": 16.24,
+   "wendung_2": 22.16,
+   "kipp": 47.6,
+   "ergebnis": 58.56,
+   "warum": 64.4,
+   "pointe": 69.04,
+   "schlusskarte": 74.96,
+   "folgen_hinweis": "Jeden Tag eine Geldfrage im Profil (letzte 2,5 s)"
+  },
+  "ergebnis_prozent_der_laenge": 73.9,
+  "kipp_prozent_der_laenge": 60.1,
+  "testbloecke": {
+   "folgen_hinweis": "mit"
+  },
+  "teil": 1,
+  "suchbegriff": "Gaspreis",
+  "format": "Was bleibt",
+  "zweite_frage": {
+   "gesetzt_bei_s": 29.68,
+   "aufgeloest_bei_s": 69.04
+  },
+  "woerter": 188,
+  "stimme": "Aufnahme am Stück (eine Anfrage, 1244 Zeichen), Hook 8,16 s lang (Zahlwörter), eine Aufnahme, keine Neuaufnahme; Abgleich mit Spracherkennung nach dem Render noch offen",
+  "caption": "Gaspreis zerlegt: Wie viel deiner Gasrechnung bekommt der Staat? 🔥 Ich hab’s simuliert. Hättest du so viel getippt? 👇 #gaspreis #heizkosten #gasrechnung #wissen #simulation",
+  "hinweise_pruefskript": "Hinweise zu erwarten: Hook 8,2 s und 12 Wörter im ersten Satz, erste Wendung erst bei 16,2 s (Hook 8,16 s lang), Ergebnis bei 74 % statt 75–86 %, Wörter je Satz im Median 19 (Prüfskript zählt über Zeilengrenzen), „Warum?“ nicht als gesprochenes Wort (Erklärgrafik WARUM? steht im Bild), Chips 15"
+ }
+}
