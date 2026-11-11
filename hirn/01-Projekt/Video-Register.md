@@ -15,8 +15,8 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 ## Überblick
 
 - **Videos im Register:** 52 (Simulierbar 28, davon 21 gepostet · Stell dir vor 24, davon 18 gepostet)
-- **Nach Status:** Idee 0 · Skript 0 · in Produktion 4 · geplant 6 · gepostet 39 · Fehler 3
-- **Nach Format:** ohne Angabe 26 · referenz_pov 20 · Duell 3 · Was bleibt 2 · Lernvideo 1
+- **Nach Status:** Idee 0 · Skript 0 · in Produktion 3 · geplant 7 · gepostet 39 · Fehler 3
+- **Nach Format:** ohne Angabe 25 · referenz_pov 21 · Duell 3 · Was bleibt 2 · Lernvideo 1
 - **Lesart:** „gepostet“ heißt, Buffer hat das Video gesendet (oder die Nachprüfung hat es bestätigt). Follows = Follower-Zuwachs in den 24 Stunden nach dem Post (netto, zwei Videos am Tag überlappen). Ø-Wiedergabe = durchschnittliche Wiedergabezeit, in Klammern der Anteil an der Länge.
 
 ## Simulierbar
@@ -24,7 +24,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 | Datum | Slot | Titel | Feld · Format | Status | Länge | Aufrufe | Ø-Wiedergabe | Follows | Treffer · Teil |
 |---|---|---|---|---|---|---|---|---|---|
 | 13.11. | Abend | Deutschlandticket: 2023 oder 2027, wer arbeitet länger dafür? | Geld früher und heute · Duell | in Produktion | – | – | – | – | – |
-| 13.11. | Mittag | Aktivrente: Gleiches Gehalt, wer hat mehr netto? | Arbeit und Gehalt · Duell | in Produktion | – | – | – | – | – |
+| 13.11. | Mittag | Aktivrente: Gleiches Gehalt, wer hat mehr netto? | Arbeit und Gehalt · Duell | geplant | – | – | – | – | – |
 | 12.11. | Abend | Gasrechnung zerlegt: Wie viel davon bekommt der Staat? | Wohnen und Energie · Was bleibt | geplant | 79 s | – | – | – | – |
 | 12.11. | Mittag | Rentenerhöhung 2027: Was bleibt von 82 Euro mehr? | Rente und Vorsorge · Was bleibt | geplant | 85 s | – | – | – | – |
 | 11.11. | Abend | Benzin: Wie viel Steuer zahlst du auf Steuer? | Preise und Lebenshaltung · Lernvideo | geplant | 82 s | – | – | – | – |
@@ -57,7 +57,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 | Datum | Slot | Titel | Feld · Format | Status | Länge | Aufrufe | Ø-Wiedergabe | Follows | Treffer · Teil |
 |---|---|---|---|---|---|---|---|---|---|
 | 13.11. | Abend | Was passiert, wenn du im Watt stehst und die Flut kommt? | Naturphänomene | in Produktion | – | – | – | – | – |
-| 13.11. | Mittag | Was passiert auf einer Hallig, wenn der Luftdruck rapide fällt? | Naturphänomene | in Produktion | – | – | – | – | – |
+| 13.11. | Mittag | Was passiert auf einer Hallig, wenn der Luftdruck rapide fällt? | Naturphänomene · referenz_pov | in Produktion | – | – | – | – | – |
 | 12.11. | Abend | Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz? | Physik und Chemie im Alltag · referenz_pov | geplant | 80 s | – | – | – | – |
 | 12.11. | Mittag | Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt? | Technik und Versorgung · referenz_pov | geplant | 80 s | – | – | – | – |
 | 11.11. | Abend | Was wäre, wenn der Erdkern abkühlt? | Naturphänomene · referenz_pov | geplant | 80 s | – | – | – | – |
