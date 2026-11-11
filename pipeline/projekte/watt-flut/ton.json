@@ -1,0 +1,19 @@
+{
+ "_hinweis": "Tonplan atmo.py: Sandbank im Watt bei auflaufender Flut. Leichter Wind, Rinnsale und Wasser (steigen mit dem Strom ab 13 s, kräftig ab 31 s), fernes Meer, Möwen und Austernfischer (werden ab 40 s weniger), tiefes Brummen und Riser 44–58 s, Impuls bei 8 s (Kenterung), Höhepunkt bei 58 s (Schnitt auf die Draufsicht), ruhiges Nachspiel in der Dämmerung, leiser Abspann.",
+ "dauer": 80,
+ "seed": 202611132,
+ "schichten": [
+  {"art": "wind", "pegel": [[0, -27], [8, -27], [30, -26], [44, -24], [56, -19], [58, -15], [61, -20], [66, -23], [69.5, -26], [71, -36], [72.5, -48], [80, -54]],
+   "hell": [[0, 0.45], [30, 0.5], [58, 0.65], [66, 0.45], [72, 0.3]]},
+  {"art": "wasser", "pegel": [[0, -31], [7.6, -32], [8.4, -27], [12, -28], [14, -25], [30, -24], [34, -19], [44, -18], [56, -14], [58, -11], [62, -16], [70, -24], [72, -46], [80, -54]]},
+  {"art": "meer", "pegel": [[0, -38], [30, -37], [40, -33], [50, -29], [58, -25], [64, -29], [70, -36], [72, -52], [80, -58]]},
+  {"art": "voegel", "dichte": 0.6, "pegel": [[0, -30], [8, -32], [20, -31], [28, -33], [40, -36], [48, -42], [58, -50], [64, -46], [70, -52], [72, -64], [80, -66]]},
+  {"art": "brummen", "f": 62, "pegel": [[0, -62], [36, -60], [44, -50], [50, -42], [55, -33], [57.6, -26], [58.5, -23], [60.5, -26], [63, -36], [70, -46], [72, -60], [80, -64]]}
+ ],
+ "ereignisse": [
+  {"t": 46.0, "art": "windstoss", "pegel": -30, "dauer": 12},
+  {"t": 50.5, "art": "gischt", "pegel": -30, "dauer": 8}
+ ],
+ "protokoll_effekte": true,
+ "dumpf": [[0, 0], [69, 0], [72, 0.8]]
+}

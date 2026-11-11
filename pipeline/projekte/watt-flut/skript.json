@@ -1,0 +1,198 @@
+{
+ "skript_id": "acc2-2026-11-13-abend",
+ "skript_quelle": "acc2-2026-11-13-abend",
+ "titel": "Was passiert, wenn du im Watt stehst und die Flut kommt?",
+ "titelfrage": "Was passiert, wenn du im Watt stehst und die Flut kommt?",
+ "suchbegriff": "Flut Watt",
+ "konto": "stelldirvor",
+ "format": "referenz_pov",
+ "skill": "video-produktion",
+ "laenge_s": 80,
+ "teil": 1,
+ "testbloecke": {
+  "folgen_hinweis": "mit",
+  "einstieg_a2": "b"
+ },
+ "folgen_hinweis": "Im Profil: die Hallig im Orkantief",
+ "stil": "16 Lunar-POV (engine/stil_lunar_pov.js, engine/lunar_hud.js), Welt engine/welt_watt_flut.js (Neubau Sandbank im Watt, 13.11.2026)",
+ "thema": "Du stehst bei Niedrigwasser auf einer Sandbank im Wattenmeer vor Cuxhaven; die Flut läuft nach der echten Pegelkurve Cuxhaven Steubenhöft vom 09.11.2026 auf und füllt zuerst den Priel hinter dir",
+ "welt": "Wattenmeer vor Cuxhaven Richtung Neuwerk: flache Sandbank mit Rippelmarken und Wattwurmhaufen, glitzernde Priele, Pfützen, Möwen und Austernfischer; hinter dir ein Priel Richtung Festland (Deichlinie am Horizont), vorne trockenes Watt bis zum Meer; später Seehunde im Priel",
+ "standpunkt": "stehend auf der Sandbank (Augenhöhe ca. 1,7 m), Blick abwechselnd nach vorne Richtung Meer und nach hinten auf den Priel Richtung Festland; Höhepunkt als Draufsicht auf die Sandbank",
+ "tageszeit_verlauf": "heller Nachmittag (ca. 14:45) → goldene Stunde ab ca. 16:05 (Video ca. 48 s) → Sonnenuntergang ca. 16:27 genau am Höhepunkt → Abenddämmerung erst im Nachspiel",
+ "zeitraffer": [
+  {
+   "von": 0,
+   "bis": 70,
+   "faktor": 105.6
+  }
+ ],
+ "zeitraffer_text": "durchgehend 105,6-fach (1 s = 1,76 min): 0–8 s die letzten 14 Minuten Ebbe, 8–58 s die ersten 88 Minuten Flut (Anstieg 1 m), bis 70 s weitere 21 Minuten",
+ "kamera": "0–6 s Blick nach vorne über das trockene Watt (Möwen, Licht), ab ca. 6 s langsamer Schwenk nach hinten auf den Priel (vor 8 s); 8–44 s lange Einstellung mit sanften Schwenks zwischen Priel hinten und Watt vorne; ab 44 s langsames Absenken der Kamera Richtung Wasserlinie; harter Schnitt bei 58 s auf die Draufsicht: die Sandbank als kleine Insel, Wasser an den Füßen; Nachspiel zurück auf Augenhöhe",
+ "anzeige_plan": [
+  {
+   "von_s": 0,
+   "bis_s": 8,
+   "etikett": "BIS ZUR FLUT",
+   "start": "14:05",
+   "ende": "0:00",
+   "einheit": "min",
+   "unter": "0–4 s NIEDRIGWASSER · 4–8 s PRIEL 20 CM TIEF"
+  },
+  {
+   "von_s": 8,
+   "bis_s": 13,
+   "etikett": "PEGEL ÜBER NIEDRIGWASSER",
+   "start": "+0",
+   "ende": "+1",
+   "einheit": "cm",
+   "unter": "STRÖMUNG KIPPT"
+  },
+  {
+   "von_s": 13,
+   "bis_s": 36,
+   "etikett": "FLUT STEIGT",
+   "start": "9",
+   "ende": "83",
+   "einheit": "cm pro Stunde",
+   "unter": "13–22 s ZEITRAFFER 106-FACH · 22–31 s VORNE NOCH TROCKEN · 31–36 s PRIEL WIRD STROM"
+  },
+  {
+   "von_s": 36,
+   "bis_s": 58,
+   "etikett": "PRIEL HINTER DIR",
+   "start": "48",
+   "ende": "121",
+   "einheit": "cm tief",
+   "unter": "36–44 s 1 METER PRO STUNDE · 44–53 s SANDBANK WIRD INSEL · 53–58 s 2 CM PRO MINUTE"
+  },
+  {
+   "von_s": 58,
+   "bis_s": 70,
+   "etikett": "HIER",
+   "start": "HIER",
+   "ende": "HIER",
+   "einheit": "",
+   "unter": "RÜCKWEG ABGESCHNITTEN (blendet 69,2–70,1 s aus)"
+  }
+ ],
+ "saetze": [
+  [
+   4.8,
+   "Du stehst auf einer Sandbank im Watt.",
+   3.4
+  ],
+  [
+   9,
+   "Dann kippt die Strömung im Priel hinter dir.",
+   3.4
+  ],
+  [
+   13.6,
+   "Das Wasser fließt jetzt landeinwärts, nicht zum Meer.",
+   3.4
+  ],
+  [
+   18,
+   "Kleine Rinnsale verbinden sich zu Bächen.",
+   3.4
+  ],
+  [
+   22.4,
+   "Die Flut steigt schon 32 Zentimeter pro Stunde.",
+   3.4
+  ],
+  [
+   26.8,
+   "Vorne zum Meer liegt das Watt noch trocken.",
+   3.4
+  ],
+  [
+   31.2,
+   "Hinter dir wird der Priel zum Strom.",
+   3.4
+  ],
+  [
+   35.6,
+   "Jetzt steigt das Wasser 83 Zentimeter pro Stunde.",
+   3.4
+  ],
+  [
+   40,
+   "Der Priel hinter dir ist 58 Zentimeter tief.",
+   3.4
+  ],
+  [
+   44.4,
+   "Pfützen laufen über, die Sandbank wird zur Insel.",
+   3.4
+  ],
+  [
+   48.8,
+   "Die goldene Stunde färbt das Wasser.",
+   3.4
+  ],
+  [
+   53.2,
+   "Der Priel reicht dir jetzt über die Hüfte.",
+   3.4
+  ],
+  [
+   62.4,
+   "Das Wasser erreicht deine Füße, der Rückweg ist zu.",
+   3.4
+  ],
+  [
+   66.4,
+   "Seehunde tauchen auf, wo eben noch Watt war.",
+   3.4
+  ]
+ ],
+ "satz_dauer": 3.4,
+ "faktenzeile": "CUXHAVEN, 09.11.2026 · DIE FLUT STIEG 1 METER IN 88 MINUTEN · PRIELE LAUFEN ZUERST VOLL",
+ "abspann": "Titelfrage und Faktenzeile auf #111111, Folgen-Hinweis (Testblock mit)",
+ "rechenweg": "Pegelkurve: WSV Pegelonline, Pegel Cuxhaven Steubenhöft, Wasserstand-Rohdaten im Minutentakt, 15-Minuten-Mittel. Niedrigwasser 09.11.2026 07:28 MEZ bei 352 cm, Hochwasser 13:03 bei 658 cm (Hub 306 cm, Flutdauer 5,6 h; MThw 655 / MTnw 363 cm → mittlerer Tidenhub 292 cm, 2010–2020). Anstieg über Niedrigwasser: +10 cm nach 33 min, +50 cm nach 63 min, +100 cm nach 88 min. Steiggeschwindigkeit = Differenz über 30 min × 2: 13 s (8,8 min) 9 cm/h · 22,4 s 32 cm/h · 35,6 s 83 cm/h · 40 s 96 cm/h · 53,2 s 122 cm/h · 58 s 124 cm/h (= ca. 2 cm pro Minute, Maximum der Flut). Zeitraffer: 88 min / 50 s = 105,6-fach (1 s = 1,76 min); Videozeit v → Minuten nach Niedrigwasser m = (v − 8) · 1,76. Priel-Tiefe = 20 cm (A, bei Niedrigwasser) + Anstieg: 36 s → 48 cm · 40 s → 58 cm · 53,2 s → 104 cm (über der Hüfte, A ≈ 1 m) · 58 s → 121 cm. Sandbank-Oberkante = Niedrigwasser + 100 cm (A) → Wasser an den Füßen bei 58 s. Sonnenuntergang Cuxhaven (53,87° N, 8,70° O) am 13.11.: Sonnenstandsformel ≈ 16:27 MEZ; Niedrigwasser im Bild auf 15:00 gelegt (A) → Höhepunkt 16:28. Nachgerechnet mit Python (cockpit/daten/tmp/flut.py, flut2.py).",
+ "zahlen": {
+  "niedrigwasser_cm_pegel": 352,
+  "hochwasser_cm_pegel": 658,
+  "tidenhub_09_11_cm": 306,
+  "mittlerer_tidenhub_cm": 292,
+  "flutdauer_h": 5.6,
+  "anstieg_1m_min": 88,
+  "steigrate_max_cm_h": 124,
+  "steigrate_22s_cm_h": 32,
+  "steigrate_36s_cm_h": 83,
+  "priel_tiefe_nw_cm": 20,
+  "priel_tiefe_40s_cm": 58,
+  "priel_tiefe_hier_cm": 121,
+  "sandbank_ueber_nw_cm": 100,
+  "zeitraffer": 105.6,
+  "sonnenuntergang_mez": "16:27"
+ },
+ "annahmen": [
+  "(A) Der Standpunkt liegt im Watt vor Cuxhaven; Wasserstand und Steiggeschwindigkeit folgen der gemessenen Kurve am Pegel Cuxhaven Steubenhöft (09.11.2026). Im Watt kommt die Flut je nach Ort etwas später und flacher an.",
+  "(A) Priel hinter dir 20 cm tief bei Niedrigwasser, Sandbank-Oberkante 100 cm über Niedrigwasser; „über der Hüfte“ bei ca. 1 m Wassertiefe (Erwachsener).",
+  "(A) Uhrzeit im Bild (Niedrigwasser 15:00, Sonnenuntergang 16:27) ist für die Lichtführung gewählt; die Messkurve vom 09.11. lag am Vormittag.",
+  "(A) Seehunde, Möwen, Rinnsale und Schaumlinien sind Bildgestaltung passend zum Wattenmeer, keine Messwerte.",
+  "(A) Kein Unglück, keine Rettung im Bild; das Video zeigt nur, wie schnell der Rückweg abgeschnitten wird."
+ ],
+ "quellen": [
+  "(F) WSV Pegelonline, Pegel Cuxhaven Steubenhöft, Wasserstand (Rohdaten) 01.–11.11.2026 und Kennwerte MThw 655 cm / MTnw 363 cm (2010–2020), abgerufen 11.11.2026 – https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/aad49293-242a-43ad-a8b1-e91d7792c4b2/W.json",
+  "(F) Wattwanderung: Das sollten Sie beachten, AOK-Magazin (Priele „verwandeln sich bei Flut binnen Minuten in starke Ströme“ und „können den Rückweg zum Festland abschneiden“), abgerufen 11.11.2026 – https://www.aok.de/pk/magazin/reisen/sicher-reisen/wattwanderung-das-sollten-sie-beachten/",
+  "(F) Wattwandern 2026, Nordseeheilbad Cuxhaven (Priele füllen sich bei Flut zuerst, starke Strömung, Rückweg zum Festland kann abgeschnitten werden; Tidenhub bis 3 m), Stand 2026, nur Suchauszug (PDF beim Abruf nicht erreichbar) – https://www.nordseeheilbad-cuxhaven.de/fileadmin/Mediendatenbank/Service/Prospekte/wattwandern-2026-prospekt-nordseeheilbad-cuxhaven.pdf"
+ ],
+ "caption": "Was passiert, wenn du im Watt stehst und die Flut kommt? 🌊 Ich hab’s durchgespielt. Hättest du gedacht, dass sie von hinten kommt? 👇 #flut #watt #nordsee #wissen #waswaerewenn",
+ "dramaturgie": [
+  "0–4 s: Titelfrage über hellem, glitzerndem Watt am Nachmittag; Möwen landen, Wattwürmer werfen Häufchen auf, Wasser rinnt noch seewärts ab (Welteffekt vor 4 s); nichts deutet die Gefahr an.",
+  "6–8 s: langsamer Schwenk nach hinten auf den flachen Priel; bei 8 s (Countdown 0:00) kentert die Strömung: Schaum und Treibgut bleiben stehen und ziehen dann landeinwärts, Licht wird einen Hauch kühler, Tonkante (Rauschen setzt ein).",
+  "13 s (Testblock b): deutlicher Etikettwechsel auf FLUT STEIGT, Strömungslinien im Priel klar sichtbar landeinwärts.",
+  "18–31 s: Rinnsale verästeln sich und verbinden sich zu Bächen; Gegenschnitt-Schwenk nach vorne: das Watt zum Meer ist noch trocken (Wendung: die Gefahr liegt hinten).",
+  "31–36 s: der Priel wird zum Strom mit Schaumlinien und kleinen Wirbeln; Spannung steigt, Rauschen lauter.",
+  "36–48 s: Etikett PRIEL HINTER DIR, Tiefe wächst sichtbar an einer Pricke (Markierungsstange) im Priel; Pfützen laufen über, Wasser umfließt die Sandbank.",
+  "48 s: goldene Stunde, das Wasser leuchtet orange (Farbdramaturgie).",
+  "53–58 s: Kamera sinkt Richtung Wasserlinie, 2 cm pro Minute in der Statuszeile, Ton schwillt an.",
+  "58 s: harter Schnitt auf die Draufsicht: die Sandbank ist eine kleine Insel, das Wasser erreicht deine Füße, Sonne berührt den Horizont; Anzeige HIER, kein Satz.",
+  "62–70 s: Dämmerung, Wasser rund um dich, Seehunde tauchen im Priel auf; Abblende 70–72 s, Abspann 72–80 s mit Titelfrage, Faktenzeile und Folgen-Hinweis (Testvideo)."
+ ],
+ "hoehepunkt": "58–62 s: harter Schnitt auf die Draufsicht der Sandbank, Anzeige HIER (Rechnung: sim/watt_flut.mjs)",
+ "korrekturen": []
+}
