@@ -14,21 +14,23 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 ## Überblick
 
-- **Videos im Register:** 48 (Simulierbar 26, davon 20 gepostet · Stell dir vor 22, davon 17 gepostet)
-- **Nach Status:** Idee 0 · Skript 0 · in Produktion 0 · geplant 8 · gepostet 37 · Fehler 3
-- **Nach Format:** ohne Angabe 24 · referenz_pov 20 · Was bleibt 2 · Duell 1 · Lernvideo 1
+- **Videos im Register:** 52 (Simulierbar 28, davon 21 gepostet · Stell dir vor 24, davon 17 gepostet)
+- **Nach Status:** Idee 0 · Skript 4 · in Produktion 0 · geplant 7 · gepostet 38 · Fehler 3
+- **Nach Format:** ohne Angabe 26 · referenz_pov 20 · Duell 3 · Was bleibt 2 · Lernvideo 1
 - **Lesart:** „gepostet“ heißt, Buffer hat das Video gesendet (oder die Nachprüfung hat es bestätigt). Follows = Follower-Zuwachs in den 24 Stunden nach dem Post (netto, zwei Videos am Tag überlappen). Ø-Wiedergabe = durchschnittliche Wiedergabezeit, in Klammern der Anteil an der Länge.
 
 ## Simulierbar
 
 | Datum | Slot | Titel | Feld · Format | Status | Länge | Aufrufe | Ø-Wiedergabe | Follows | Treffer · Teil |
 |---|---|---|---|---|---|---|---|---|---|
+| 13.11. | Abend | Deutschlandticket: 2023 oder 2027, wer arbeitet länger dafür? | Geld früher und heute · Duell | Skript | – | – | – | – | – |
+| 13.11. | Mittag | Aktivrente: Gleiches Gehalt, wer hat mehr netto? | Arbeit und Gehalt · Duell | Skript | – | – | – | – | – |
 | 12.11. | Abend | Gasrechnung zerlegt: Wie viel davon bekommt der Staat? | Wohnen und Energie · Was bleibt | geplant | 79 s | – | – | – | – |
 | 12.11. | Mittag | Rentenerhöhung 2027: Was bleibt von 82 Euro mehr? | Rente und Vorsorge · Was bleibt | geplant | 85 s | – | – | – | – |
 | 11.11. | Abend | Benzin: Wie viel Steuer zahlst du auf Steuer? | Preise und Lebenshaltung · Lernvideo | geplant | 82 s | – | – | – | – |
-| 11.11. | Mittag | Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern? | Rente und Vorsorge · Duell | geplant | 85 s | – | – | – | – |
+| 11.11. | Mittag | Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern? | Rente und Vorsorge · Duell | gepostet | 85 s | – | – | – | – |
 | 10.11. | Abend | [Kindergeld in Deutschland oder in Kanada: Wo zahlt der Staat bis 18 mehr?](https://tiktok.com/@simulierbar/video/7706612169021852961) | Klassiker mit neuer Frage | gepostet | 75 s | 243 | 18,7 s (25 %) | – | – |
-| 10.11. | Mittag | [Maut 2021 oder heute: Welche Familie zahlt beim Einkaufen mehr mit?](https://tiktok.com/@simulierbar/video/7706503906116832544) | Versteckte Mechaniken | gepostet | 76 s | 269 | 21,3 s (28 %) | – | – |
+| 10.11. | Mittag | [Maut 2021 oder heute: Welche Familie zahlt beim Einkaufen mehr mit?](https://tiktok.com/@simulierbar/video/7706503906116832544) | Versteckte Mechaniken | gepostet | 76 s | 271 | 21,3 s (28 %) | -1 | – |
 | 09.11. | Abend | [Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?](https://tiktok.com/@simulierbar/video/7706241140705479968) | Versteckte Mechaniken | gepostet | 72 s | 268 | 20,1 s (28 %) | 0 | – |
 | 09.11. | Mittag | [Mindestlohn 2015 oder 2026: Wer kann sich mit einem Jahr Arbeit mehr leisten?](https://tiktok.com/@simulierbar/video/7706132764512292128) | Geschichte und Kurioses | gepostet | 74 s | 294 | 26,7 s (36 %) | 0 | – |
 | 08.11. | Abend | [1968 oder heute: Wie viel mehr Mehrwertsteuer zahlt ein Haushalt im Jahr?](https://www.tiktok.com/@simulierbar/video/7705869881165581600) | Geschichte und Kurioses | gepostet | 76 s | 294 | 25,9 s (34 %) | -1 | – |
@@ -54,12 +56,14 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 | Datum | Slot | Titel | Feld · Format | Status | Länge | Aufrufe | Ø-Wiedergabe | Follows | Treffer · Teil |
 |---|---|---|---|---|---|---|---|---|---|
+| 13.11. | Abend | Was passiert, wenn du im Watt stehst und die Flut kommt? | Naturphänomene | Skript | – | – | – | – | – |
+| 13.11. | Mittag | Was passiert auf einer Hallig, wenn der Luftdruck rapide fällt? | Naturphänomene | Skript | – | – | – | – | – |
 | 12.11. | Abend | Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz? | Physik und Chemie im Alltag · referenz_pov | geplant | 80 s | – | – | – | – |
 | 12.11. | Mittag | Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt? | Technik und Versorgung · referenz_pov | geplant | 80 s | – | – | – | – |
 | 11.11. | Abend | Was wäre, wenn der Erdkern abkühlt? | Naturphänomene · referenz_pov | geplant | 80 s | – | – | – | – |
 | 11.11. | Mittag | Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft? | Naturphänomene · referenz_pov | geplant | 80 s | – | – | – | – |
-| 10.11. | Abend | [Was wäre, wenn du die Polarnacht in Tromsø erlebst?](https://tiktok.com/@stelldirvor.pov/video/7706612156975811872) | Physik, Wetter, Geografie, Weltraum · referenz_pov | gepostet | 80 s | 249 | 2,8 s (3 %) | – | – |
-| 10.11. | Mittag | [Was wäre, wenn du 28 Jahre lang Ameisen zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706503882209381664) | Natur und Tiere · referenz_pov | gepostet | 80 s | 271 | 13,9 s (17 %) | – | – |
+| 10.11. | Abend | [Was wäre, wenn du die Polarnacht in Tromsø erlebst?](https://tiktok.com/@stelldirvor.pov/video/7706612156975811872) | Physik, Wetter, Geografie, Weltraum · referenz_pov | gepostet | 80 s | 250 | 2,8 s (3 %) | – | – |
+| 10.11. | Mittag | [Was wäre, wenn du 28 Jahre lang Ameisen zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706503882209381664) | Natur und Tiere · referenz_pov | gepostet | 80 s | 271 | 13,9 s (17 %) | 0 | – |
 | 09.11. | Abend | [Was wäre, wenn du 2.400 Jahre einem Pilzgeflecht zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706241106614193440) | Natur und Tiere · referenz_pov | gepostet | 80 s | 264 | 11,2 s (14 %) | 0 | – |
 | 09.11. | Mittag | [Teil 2: Erdachse ohne Neigung – was wird aus der Polarnacht?](https://tiktok.com/@stelldirvor.pov/video/7706132771348942113) | Folgeteil (Treffer-Serie) · referenz_pov | gepostet | 80 s | 243 | 7,3 s (9 %) | 0 | Teil 2 |
 | 08.11. | Abend | [Was wäre, wenn im Orbit eine Trümmer-Kettenreaktion startet?](https://www.tiktok.com/@stelldirvor.pov/video/7705869901285707041) | Technik und Versorgung · referenz_pov | gepostet | 80 s | 270 | 12,3 s (15 %) | 0 | – |
