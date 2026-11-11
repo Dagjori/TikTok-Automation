@@ -258,7 +258,7 @@ async function start() {
     differenz: { label: "MEHR ARBEIT", wert: Z.diffMin, nk: 1, einheit: "min", ein: T("ergebnis:29,5") - 0.1 } });
   M.zaehler({ wert: (t) => Z.diffJahrEuro * R(t, T("ergebnis:86,20") - 0.6, T("ergebnis:86,20") + 1.0), einheit: " €", nk: 2, max: 9999, team: "b", art: "voll", label: "IM JAHR · 5,9 STD.", x: SICHER.mitte, y: 1040, ein: v("ergebnis:5,9", 0.1), aus: v("warum:Preis", 0.2), anker: "mitte" });
   M.balken({ x: SICHER.mitte - 390, breite: 780, y: 440, titel: "WARUM?", ein: tWarum + 0.1, aus: v("pointe:Und", 0.3), max: 40,
-    faktoren: [{ label: "PREIS GEGEN LOHN SEIT 2023", ein: tWarum + 0.2, a: { wert: Z.preisPlus, text: "+36,3 %" }, b: { wert: Z.lohnPlus, text: "+21,7 %" }, tag: "PREIS SCHNELLER", tagEin: T("warum:Mindestlohn") }] });
+    faktoren: [{ label: "SEIT 2023 · IN PROZENT", ein: tWarum + 0.2, a: { wert: Z.preisPlus, text: "+36,3" }, b: { wert: Z.lohnPlus, text: "+21,7" }, tag: "PREIS VORN", tagEin: T("warum:Mindestlohn") }] });
   chip("ARBEITGEBER ZAHLT MIND. 25 %", v("pointe:Mit", 0.05), v("schlusskarte:Ohne", 0.4), "akzent", "voll", 490);
   chip("JOBTICKET · 3 STD. 12 MIN.", v("pointe:3", 0.1), v("schlusskarte:Ohne", 0.4), "a", "voll", 600);
   M.zaehler({ wert: (t) => 66.8 + (Z.jobEigen - 66.8) * R(t, tJob - 0.2, tJob + 2.2, ease.inOutCubic), einheit: " €", nk: 2, max: 999, team: "a", art: "voll", label: "EIGENANTEIL JOBTICKET", x: SICHER.mitte, y: 790, ein: v("pointe:Mit", 0.1), aus: v("schlusskarte:Ohne", 0.4), anker: "mitte" });
