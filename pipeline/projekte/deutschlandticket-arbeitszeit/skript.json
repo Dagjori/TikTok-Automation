@@ -1,0 +1,149 @@
+{
+ "titel": "Deutschlandticket: 2023 oder 2027, wer arbeitet länger dafür?",
+ "skill": "video-produktion",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-13-abend",
+ "stil": "20 Glas & Licht (Lichtlabor)",
+ "stil_begruendung": "Zwei Messzylinder aus Glas im dunklen Labor: Der linke zeigt die Arbeitszeit für das Ticket 2023 (Türkis, bleibt stehen), der rechte die Arbeitszeit des laufenden Jahres (Orange), das Röhrchen in der Mitte den Unterschied. Dunkle Welt mit Leuchtakzenten, Spiegelung auf der Laborbank, Kaustik. Vortage: Stil 19 (13.11. Mittag), 17 (12.11. Abend), nie Gelb.",
+ "teamfarben": {
+  "Ticket 2023": "#22C6D6",
+  "Ticket heute": "#FF8A4C"
+ },
+ "klangteppich": "raum",
+ "stil_helligkeit": "dunkel",
+ "suchbegriff": "Deutschlandticket",
+ "testbloecke": {
+  "folgen_hinweis": "mit"
+ },
+ "folgen_hinweis": "Jeden Tag eine Geldfrage im Profil",
+ "teil": 1,
+ "format": "Duell",
+ "offene_frage": "Kostet das Deutschlandticket 2027 mit Mindestlohn mehr oder weniger Arbeitszeit als zum Start 2023?",
+ "aufloesung": "2027 kostet ein Ticket 4 Std. 34,5 Min. statt 4 Std. 5 Min. Mindestlohn-Arbeit, 29,5 Min. mehr im Monat, 5,9 Std. bzw. 86,20 € im Jahr.",
+ "zweite_frage": {
+  "text": "Welche Gruppe zahlt 2027 trotzdem weniger als zum Start?",
+  "gesetzt_in": "wendung3",
+  "aufgeloest_in": "pointe"
+ },
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Deutschlandticket: 49 € im Mai 2023, 66,80 € ab Januar 2027. Wer arbeitet mit Mindestlohn länger für ein Monatsticket?",
+   "sprechtext": "Deutschlandticket: neunundvierzig Euro im Mai zweitausenddreiundzwanzig, sechsundsechzig Euro achtzig ab Januar.\nWer arbeitet mit Mindestlohn länger für ein Monatsticket?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "Gemessen wird in Arbeitszeit: Ticketpreis geteilt durch den Mindestlohn je Stunde.",
+   "sprechtext": "Gemessen wird in Arbeitszeit.\nDer Ticketpreis wird durch den Mindestlohn einer Stunde geteilt.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, der Lohn ist auch gestiegen. Das gleicht sich aus. Oder?",
+   "sprechtext": "Klar, der Lohn ist auch gestiegen.\nDas gleicht sich aus, oder?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Mai 2023: 12,00 € Mindestlohn. Ein Ticket kostet 4 Std. 5 Min. Arbeit.",
+   "sprechtext": "Start im Mai zweitausenddreiundzwanzig.\nDer Mindestlohn liegt bei zwölf Euro.\nEin Ticket kostet vier Stunden und fünf Minuten Arbeit.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "2024 steigt nur der Lohn auf 12,41 €. Das Ticket kostet 3 Std. 57 Min. So günstig war es nie wieder.",
+   "sprechtext": "Zweitausendvierundzwanzig steigt nur der Lohn.\nDas Ticket kostet jetzt knapp vier Stunden.\nSo günstig war es danach nie wieder.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "2025 springt der Preis auf 58 €: 4 Std. 32 Min. Eine Gruppe zahlt 2027 trotzdem weniger als zum Start. Wer, zeigt sich am Ende.",
+   "sprechtext": "Zweitausendfünfundzwanzig springt der Preis auf achtundfünfzig Euro.\nPlötzlich sind es viereinhalb Stunden.\nEine Gruppe zahlt im Januar trotzdem weniger als zum Start.\nWer das ist, zeigt sich am Ende.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "kipp",
+   "phase": "kipp",
+   "text": "2026: 63 € bei 13,90 €, wieder 4 Std. 32 Min. Im Januar 2027: Lohn +5,0 %, Ticket +6,0 %.",
+   "sprechtext": "Zweitausendsechsundzwanzig kostet es dreiundsechzig Euro, die Zeit bleibt fast gleich.\nDann kommt der Januar.\nDer Mindestlohn steigt um fünf Prozent, das Ticket um sechs.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "2027: 4 Std. 34,5 Min. gegen 4 Std. 5 Min. Plus 29,5 Min. im Monat, 5,9 Std. im Jahr = 86,20 €.",
+   "sprechtext": "Ab Januar sind es vier Stunden fünfunddreißig Minuten.\nFast eine halbe Stunde mehr, im Jahr sechsundachtzig Euro.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Preis seit dem Start +36,3 %, Mindestlohn +21,7 %.",
+   "sprechtext": "Preis plus sechsunddreißig, Lohn plus zweiundzwanzig Prozent.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "pointe",
+   "phase": "pointe",
+   "text": "Und wer zahlt weniger? Mit Jobticket höchstens 46,76 €: 3 Std. 12 Min. Arbeit.",
+   "sprechtext": "Und wer zahlt weniger?\nMit Jobticket höchstens knapp siebenundvierzig Euro.\nNur gut drei Stunden Arbeit.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "schlusskarte",
+   "phase": "schlusskarte",
+   "text": "Ohne Jobticket kostet es mehr Arbeit als zum Start.",
+   "sprechtext": "Ohne Jobticket kostet es mehr Arbeit.",
+   "bild_text_abgleich": []
+  }
+ ],
+ "caption": "Deutschlandticket 2023 oder 2027: Wer arbeitet länger dafür? 🚆 Ich hab's durchgerechnet. Hättest du auf 2023 getippt? 👇 #deutschlandticket #mindestlohn #nahverkehr #wissen #simulation",
+ "quellen": [
+  "(F) Preisanpassung bei Deutschlandticket: 66,80 € ab 01.01.2027, Jobticket 63,46 €, Preisindex, Bayerisches Staatsministerium für Wohnen, Bau und Verkehr, PM 30.09.2026 – https://www.stmb.bayern.de/med/pressemitteilungen/pressearchiv/2026/115/index.php",
+  "(F) Deutschlandticket kostet ab Januar 66,80 Euro, ZDFheute, 30.09.2026 – https://www.zdfheute.de/politik/deutschland/deutschlandticket-preis-2027-regionalverkehr-nahverkehr-100.html",
+  "(F) Deutschland-Ticket Jobticket: Ausgabepreis, 5 % Rabatt, Mindestzuschuss 25 %, Eigenanteil 2027 höchstens 46,76 €, Deutsche Bahn bahn.business FAQ, Stand 2026 – https://www.bahn.de/bahnbusiness/faq/dt-jobticket-preis",
+  "(F) Deutschlandticket 49 € ab 01.05.2023, 58 € ab 2025, 63 € ab 2026, navit/utopia; Preis 2026 63 € auch DB Regional – https://www.navit.com/blog-de/deutschlandticket-preis-steigt-2026-auf-63-euro",
+  "(F) Mindestlohn 12 € ab 01.10.2022, Bundesregierung (Archiv) – https://www.bundesregierung.de/breg-de/service/archiv-bundesregierung/gestzliche-neuregelungen-oktober-2130032",
+  "(F) Mindestlohn 12,41 € (2024), 12,82 € (2025): Vierte Mindestlohnanpassungsverordnung, Stellungnahme IAB 2025 – https://doku.iab.de/stellungnahme/2025/sn0125.pdf",
+  "(F) Mindestlohn 13,90 € ab 01.01.2026 und 14,60 € ab 01.01.2027: Fünfte Mindestlohnanpassungsverordnung (Kabinett 29.10.2025), Haufe – https://www.haufe.de/id/norm/fuenfte-verordnung-zur-anpassung-der-hoehe-des-mindestlohns-HI17036857.html"
+ ],
+ "annahmen": [
+  "(A) Maßstab ist der gesetzliche Mindestlohn brutto je Stunde; netto wäre der Abstand wegen gestiegener Sozialbeiträge eher größer (S, nicht gerechnet).",
+  "(A) Monatspreis des regulären Abos im jeweiligen Jahr; Zwischenjahre 2024 bis 2026 je mit dem Preis und Mindestlohn vom 1. Januar (2024: Ticket noch 49 €).",
+  "(A) Jobticket: Der Arbeitgeber zahlt genau den Mindestzuschuss von 25 %; ein Jobticket gab es auch 2023 (damals 34,30 € Eigenanteil), die Pointe vergleicht mit dem regulären Ticket zum Start.",
+  "(A) Modellrechnung, keine Empfehlung zum Kündigen oder Abschließen."
+ ],
+ "rechenweg": "Arbeitszeit = Monatspreis ÷ Mindestlohn je Stunde (brutto). 2023: 49 ÷ 12,00 = 4,0833 Std. = 245,0 Min. (4 Std. 5 Min.); 2024: 49 ÷ 12,41 = 3,9484 Std. = 236,9 Min. (3 Std. 57 Min., Tiefpunkt); 2025: 58 ÷ 12,82 = 271,5 Min. (4 Std. 31,5 Min.); 2026: 63 ÷ 13,90 = 271,9 Min. (4 Std. 32 Min.); 2027: 66,80 ÷ 14,60 = 274,5 Min. (4 Std. 34,5 Min.). Differenz 2027 − 2023 = 29,52 Min./Monat; × 12 = 354,2 Min. = 5,904 Std./Jahr; × 14,60 € = 86,20 €. Gegenprobe: Preis, der die Arbeitszeit von 2023 gehalten hätte = 4,0833 × 14,60 = 59,62 €; 66,80 − 59,62 = 7,18 €/Monat × 12 = 86,20 €. Januar 2027: Mindestlohn 14,60 ÷ 13,90 = +5,04 %, Ticket 66,80 ÷ 63 = +6,03 %. Seit Start: Preis 66,80 ÷ 49 = +36,3 %, Mindestlohn 14,60 ÷ 12 = +21,7 %. Jobticket 2027: 66,80 × 0,95 = 63,46 €; Eigenanteil nach Mindestzuschuss 25 % (16,70 €) = 46,76 €; ÷ 14,60 = 192,2 Min. (3 Std. 12 Min.) < 245 Min. Alles mit Python nachgerechnet.",
+ "zahlen": {
+  "preis_2023": "49,00 €",
+  "mindestlohn_2023": "12,00 €",
+  "zeit_2023": "4 Std. 5 Min. (245,0 Min.)",
+  "preis_2024": "49,00 €",
+  "mindestlohn_2024": "12,41 €",
+  "zeit_2024": "3 Std. 57 Min. (236,9 Min.)",
+  "preis_2025": "58,00 €",
+  "mindestlohn_2025": "12,82 €",
+  "zeit_2025": "4 Std. 31,5 Min.",
+  "preis_2026": "63,00 €",
+  "mindestlohn_2026": "13,90 €",
+  "zeit_2026": "4 Std. 32 Min.",
+  "preis_2027": "66,80 €",
+  "mindestlohn_2027": "14,60 €",
+  "zeit_2027": "4 Std. 34,5 Min. (274,5 Min.)",
+  "mehr_je_monat": "29,5 Min.",
+  "mehr_je_jahr": "5,9 Std. = 86,20 €",
+  "gleichwert_preis_2027": "59,62 €",
+  "preis_plus_seit_start": "+36,3 %",
+  "lohn_plus_seit_start": "+21,7 %",
+  "jobticket_2027": "63,46 €",
+  "jobticket_eigenanteil_2027": "46,76 € (3 Std. 12 Min.)"
+ },
+ "korrekturen": []
+}

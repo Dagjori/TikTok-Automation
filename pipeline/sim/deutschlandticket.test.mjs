@@ -1,0 +1,10 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { videoZahlen, fmtStdMin } from "./deutschlandticket.mjs";
+const Z = videoZahlen();
+const nah = (a, b, e = 0.06) => assert.ok(Math.abs(a - b) <= e, `erwartet ${b}, erhalten ${a}`);
+test("Minuten je Jahr", () => { nah(Z.min2023, 245.0); nah(Z.min2024, 236.9); nah(Z.min2025, 271.5); nah(Z.min2026, 271.9); nah(Z.min2027, 274.5); });
+test("Format 4 Std. 5 Min. / 4 Std. 35 Min.", () => { assert.equal(fmtStdMin(Z.min2023), "4 Std. 5 Min."); assert.equal(fmtStdMin(Z.min2027), "4 Std. 35 Min."); });
+test("Differenz 29,5 Min., 5,9 Std., 86,20 €", () => { nah(Z.diffMin, 29.52); nah(Z.diffJahrStd, 5.904, 0.01); assert.equal(Z.diffJahrEuro, 86.2); });
+test("Gleichwert 59,62 €, +36,3 % Preis, +21,7 % Lohn, Januar +6,03 / +5,04", () => { assert.equal(Z.gleichwertPreis, 59.62); assert.equal(Z.preisPlus, 36.33); assert.equal(Z.lohnPlus, 21.67); nah(Z.preisPlusJan, 6.03, 0.01); nah(Z.lohnPlusJan, 5.04, 0.01); });
+test("Jobticket 63,46 €, Eigenanteil 46,76 € = 192,2 Min.", () => { assert.equal(Z.jobTicket, 63.46); assert.equal(Z.jobEigen, 46.76); nah(Z.jobMin, 192.2, 0.1); });

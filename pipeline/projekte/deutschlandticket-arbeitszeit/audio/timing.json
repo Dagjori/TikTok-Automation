@@ -1,0 +1,971 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": {
+  "stability": 0.5,
+  "similarity_boost": 0.75
+ },
+ "dauer": 85.212,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Deutschlandticket: 49 € im Mai 2023, 66,80 € ab Januar 2027. Wer arbeitet mit Mindestlohn länger für ein Monatsticket?",
+   "start": 0.0,
+   "ende": 11.36,
+   "woerter": [
+    {
+     "wort": "Deutschlandticket:",
+     "start": 0.0,
+     "ende": 1.28
+    },
+    {
+     "wort": "49",
+     "start": 1.36,
+     "ende": 1.88
+    },
+    {
+     "wort": "€",
+     "start": 1.88,
+     "ende": 2.4
+    },
+    {
+     "wort": "im",
+     "start": 2.48,
+     "ende": 2.64
+    },
+    {
+     "wort": "Mai",
+     "start": 2.72,
+     "ende": 2.88
+    },
+    {
+     "wort": "2023,",
+     "start": 2.96,
+     "ende": 4.026666666666666
+    },
+    {
+     "wort": "66,80",
+     "start": 4.026666666666666,
+     "ende": 5.093333333333334
+    },
+    {
+     "wort": "€",
+     "start": 5.093333333333334,
+     "ende": 6.16
+    },
+    {
+     "wort": "ab",
+     "start": 6.4,
+     "ende": 6.56
+    },
+    {
+     "wort": "Januar",
+     "start": 6.64,
+     "ende": 7.52
+    },
+    {
+     "wort": "2027.",
+     "start": 7.52,
+     "ende": 8.0
+    },
+    {
+     "wort": "Wer",
+     "start": 8.0,
+     "ende": 8.16
+    },
+    {
+     "wort": "arbeitet",
+     "start": 8.24,
+     "ende": 8.64
+    },
+    {
+     "wort": "mit",
+     "start": 8.72,
+     "ende": 8.88
+    },
+    {
+     "wort": "Mindestlohn",
+     "start": 8.96,
+     "ende": 9.6
+    },
+    {
+     "wort": "länger",
+     "start": 9.68,
+     "ende": 9.92
+    },
+    {
+     "wort": "für",
+     "start": 10.0,
+     "ende": 10.08
+    },
+    {
+     "wort": "ein",
+     "start": 10.16,
+     "ende": 10.24
+    },
+    {
+     "wort": "Monatsticket?",
+     "start": 10.32,
+     "ende": 11.36
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Gemessen wird in Arbeitszeit: Ticketpreis geteilt durch den Mindestlohn je Stunde.",
+   "start": 11.68,
+   "ende": 17.2,
+   "woerter": [
+    {
+     "wort": "Gemessen",
+     "start": 11.68,
+     "ende": 12.08
+    },
+    {
+     "wort": "wird",
+     "start": 12.16,
+     "ende": 12.32
+    },
+    {
+     "wort": "in",
+     "start": 12.4,
+     "ende": 12.48
+    },
+    {
+     "wort": "Arbeitszeit:",
+     "start": 12.56,
+     "ende": 13.52
+    },
+    {
+     "wort": "Ticketpreis",
+     "start": 13.84,
+     "ende": 14.48
+    },
+    {
+     "wort": "geteilt",
+     "start": 14.56,
+     "ende": 14.72
+    },
+    {
+     "wort": "durch",
+     "start": 14.773,
+     "ende": 14.88
+    },
+    {
+     "wort": "den",
+     "start": 14.96,
+     "ende": 15.04
+    },
+    {
+     "wort": "Mindestlohn",
+     "start": 15.12,
+     "ende": 15.76
+    },
+    {
+     "wort": "je",
+     "start": 15.84,
+     "ende": 16.08
+    },
+    {
+     "wort": "Stunde.",
+     "start": 16.16,
+     "ende": 16.48
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, der Lohn ist auch gestiegen. Das gleicht sich aus. Oder?",
+   "start": 17.44,
+   "ende": 20.72,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 17.44,
+     "ende": 18.0
+    },
+    {
+     "wort": "der",
+     "start": 18.04,
+     "ende": 18.08
+    },
+    {
+     "wort": "Lohn",
+     "start": 18.16,
+     "ende": 18.32
+    },
+    {
+     "wort": "ist",
+     "start": 18.4,
+     "ende": 18.48
+    },
+    {
+     "wort": "auch",
+     "start": 18.56,
+     "ende": 18.64
+    },
+    {
+     "wort": "gestiegen.",
+     "start": 18.72,
+     "ende": 19.36
+    },
+    {
+     "wort": "Das",
+     "start": 19.52,
+     "ende": 19.6
+    },
+    {
+     "wort": "gleicht",
+     "start": 19.68,
+     "ende": 19.84
+    },
+    {
+     "wort": "sich",
+     "start": 19.92,
+     "ende": 20.0
+    },
+    {
+     "wort": "aus.",
+     "start": 20.08,
+     "ende": 20.4
+    },
+    {
+     "wort": "Oder?",
+     "start": 20.52,
+     "ende": 20.72
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Mai 2023: 12,00 € Mindestlohn. Ein Ticket kostet 4 Std. 5 Min. Arbeit.",
+   "start": 21.52,
+   "ende": 30.56,
+   "woerter": [
+    {
+     "wort": "Mai",
+     "start": 22.08,
+     "ende": 22.24
+    },
+    {
+     "wort": "2023:",
+     "start": 22.4,
+     "ende": 23.013333333333332
+    },
+    {
+     "wort": "12,00",
+     "start": 23.013333333333332,
+     "ende": 23.626666666666665
+    },
+    {
+     "wort": "€",
+     "start": 23.626666666666665,
+     "ende": 24.24
+    },
+    {
+     "wort": "Mindestlohn.",
+     "start": 24.32,
+     "ende": 24.96
+    },
+    {
+     "wort": "Ein",
+     "start": 26.72,
+     "ende": 26.8
+    },
+    {
+     "wort": "Ticket",
+     "start": 26.88,
+     "ende": 27.2
+    },
+    {
+     "wort": "kostet",
+     "start": 27.28,
+     "ende": 27.6
+    },
+    {
+     "wort": "4",
+     "start": 27.76,
+     "ende": 28.16
+    },
+    {
+     "wort": "Std.",
+     "start": 28.16,
+     "ende": 28.560000000000002
+    },
+    {
+     "wort": "5",
+     "start": 28.560000000000002,
+     "ende": 28.96
+    },
+    {
+     "wort": "Min.",
+     "start": 28.96,
+     "ende": 29.36
+    },
+    {
+     "wort": "Arbeit.",
+     "start": 29.52,
+     "ende": 30.56
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "2024 steigt nur der Lohn auf 12,41 €. Das Ticket kostet 3 Std. 57 Min. So günstig war es nie wieder.",
+   "start": 30.6,
+   "ende": 38.88,
+   "woerter": [
+    {
+     "wort": "2024",
+     "start": 30.6,
+     "ende": 31.88
+    },
+    {
+     "wort": "steigt",
+     "start": 32.0,
+     "ende": 32.32
+    },
+    {
+     "wort": "nur",
+     "start": 32.4,
+     "ende": 32.64
+    },
+    {
+     "wort": "der",
+     "start": 32.72,
+     "ende": 32.8
+    },
+    {
+     "wort": "Lohn",
+     "start": 32.88,
+     "ende": 33.44
+    },
+    {
+     "wort": "auf",
+     "start": 33.44,
+     "ende": 33.46666666666667
+    },
+    {
+     "wort": "12,41",
+     "start": 33.46666666666667,
+     "ende": 33.49333333333333
+    },
+    {
+     "wort": "€.",
+     "start": 33.49333333333333,
+     "ende": 33.52
+    },
+    {
+     "wort": "Das",
+     "start": 33.52,
+     "ende": 33.6
+    },
+    {
+     "wort": "Ticket",
+     "start": 33.68,
+     "ende": 33.92
+    },
+    {
+     "wort": "kostet",
+     "start": 34.0,
+     "ende": 34.32
+    },
+    {
+     "wort": "3",
+     "start": 34.4,
+     "ende": 34.839999999999996
+    },
+    {
+     "wort": "Std.",
+     "start": 34.839999999999996,
+     "ende": 35.28
+    },
+    {
+     "wort": "57",
+     "start": 35.28,
+     "ende": 35.72
+    },
+    {
+     "wort": "Min.",
+     "start": 35.72,
+     "ende": 36.16
+    },
+    {
+     "wort": "So",
+     "start": 36.24,
+     "ende": 36.32
+    },
+    {
+     "wort": "günstig",
+     "start": 36.4,
+     "ende": 36.88
+    },
+    {
+     "wort": "war",
+     "start": 36.96,
+     "ende": 37.04
+    },
+    {
+     "wort": "es",
+     "start": 37.08,
+     "ende": 37.12
+    },
+    {
+     "wort": "nie",
+     "start": 37.76,
+     "ende": 37.92
+    },
+    {
+     "wort": "wieder.",
+     "start": 38.0,
+     "ende": 38.88
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "text": "2025 springt der Preis auf 58 €: 4 Std. 32 Min. Eine Gruppe zahlt 2027 trotzdem weniger als zum Start. Wer, zeigt sich am Ende.",
+   "start": 38.96,
+   "ende": 51.76,
+   "woerter": [
+    {
+     "wort": "2025",
+     "start": 38.96,
+     "ende": 40.28
+    },
+    {
+     "wort": "springt",
+     "start": 40.4,
+     "ende": 40.68
+    },
+    {
+     "wort": "der",
+     "start": 40.72,
+     "ende": 40.8
+    },
+    {
+     "wort": "Preis",
+     "start": 40.88,
+     "ende": 41.2
+    },
+    {
+     "wort": "auf",
+     "start": 41.32,
+     "ende": 41.44
+    },
+    {
+     "wort": "58",
+     "start": 41.52,
+     "ende": 42.21333333333334
+    },
+    {
+     "wort": "€:",
+     "start": 42.21333333333334,
+     "ende": 42.906666666666666
+    },
+    {
+     "wort": "4",
+     "start": 42.906666666666666,
+     "ende": 43.6
+    },
+    {
+     "wort": "Std.",
+     "start": 43.6,
+     "ende": 44.29333333333334
+    },
+    {
+     "wort": "32",
+     "start": 44.29333333333334,
+     "ende": 44.986666666666665
+    },
+    {
+     "wort": "Min.",
+     "start": 44.986666666666665,
+     "ende": 45.68
+    },
+    {
+     "wort": "Eine",
+     "start": 45.76,
+     "ende": 45.92
+    },
+    {
+     "wort": "Gruppe",
+     "start": 46.0,
+     "ende": 46.32
+    },
+    {
+     "wort": "zahlt",
+     "start": 46.4,
+     "ende": 46.64
+    },
+    {
+     "wort": "2027",
+     "start": 46.68,
+     "ende": 47.2
+    },
+    {
+     "wort": "trotzdem",
+     "start": 47.24,
+     "ende": 47.68
+    },
+    {
+     "wort": "weniger",
+     "start": 47.76,
+     "ende": 48.24
+    },
+    {
+     "wort": "als",
+     "start": 48.32,
+     "ende": 48.4
+    },
+    {
+     "wort": "zum",
+     "start": 48.48,
+     "ende": 48.64
+    },
+    {
+     "wort": "Start.",
+     "start": 48.72,
+     "ende": 49.44
+    },
+    {
+     "wort": "Wer,",
+     "start": 49.52,
+     "ende": 49.6
+    },
+    {
+     "wort": "zeigt",
+     "start": 50.36,
+     "ende": 50.48
+    },
+    {
+     "wort": "sich",
+     "start": 50.52,
+     "ende": 50.64
+    },
+    {
+     "wort": "am",
+     "start": 50.72,
+     "ende": 50.8
+    },
+    {
+     "wort": "Ende.",
+     "start": 50.88,
+     "ende": 51.76
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "text": "2026: 63 € bei 13,90 €, wieder 4 Std. 32 Min. Im Januar 2027: Lohn +5,0 %, Ticket +6,0 %.",
+   "start": 51.8,
+   "ende": 63.04,
+   "woerter": [
+    {
+     "wort": "2026:",
+     "start": 51.8,
+     "ende": 52.32333333333333
+    },
+    {
+     "wort": "63",
+     "start": 52.32333333333333,
+     "ende": 52.846666666666664
+    },
+    {
+     "wort": "€",
+     "start": 52.846666666666664,
+     "ende": 53.37
+    },
+    {
+     "wort": "bei",
+     "start": 53.37,
+     "ende": 53.89333333333333
+    },
+    {
+     "wort": "13,90",
+     "start": 53.89333333333333,
+     "ende": 54.416666666666664
+    },
+    {
+     "wort": "€,",
+     "start": 54.416666666666664,
+     "ende": 54.94
+    },
+    {
+     "wort": "wieder",
+     "start": 54.94,
+     "ende": 55.46333333333333
+    },
+    {
+     "wort": "4",
+     "start": 55.46333333333333,
+     "ende": 55.986666666666665
+    },
+    {
+     "wort": "Std.",
+     "start": 55.986666666666665,
+     "ende": 56.51
+    },
+    {
+     "wort": "32",
+     "start": 56.51,
+     "ende": 57.03333333333333
+    },
+    {
+     "wort": "Min.",
+     "start": 57.03333333333333,
+     "ende": 57.556666666666665
+    },
+    {
+     "wort": "Im",
+     "start": 57.556666666666665,
+     "ende": 58.08
+    },
+    {
+     "wort": "Januar",
+     "start": 58.16,
+     "ende": 58.76
+    },
+    {
+     "wort": "2027:",
+     "start": 58.96,
+     "ende": 59.6
+    },
+    {
+     "wort": "Lohn",
+     "start": 59.6,
+     "ende": 60.24
+    },
+    {
+     "wort": "+5,0",
+     "start": 60.24,
+     "ende": 60.88
+    },
+    {
+     "wort": "%,",
+     "start": 60.88,
+     "ende": 61.52
+    },
+    {
+     "wort": "Ticket",
+     "start": 61.6,
+     "ende": 61.92
+    },
+    {
+     "wort": "+6,0",
+     "start": 62.08,
+     "ende": 62.56
+    },
+    {
+     "wort": "%.",
+     "start": 62.56,
+     "ende": 63.04
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "2027: 4 Std. 34,5 Min. gegen 4 Std. 5 Min. Plus 29,5 Min. im Monat, 5,9 Std. im Jahr = 86,20 €.",
+   "start": 63.12,
+   "ende": 70.8,
+   "woerter": [
+    {
+     "wort": "2027:",
+     "start": 63.12,
+     "ende": 63.435294117647054
+    },
+    {
+     "wort": "4",
+     "start": 63.435294117647054,
+     "ende": 63.75058823529412
+    },
+    {
+     "wort": "Std.",
+     "start": 63.75058823529412,
+     "ende": 64.06588235294117
+    },
+    {
+     "wort": "34,5",
+     "start": 64.06588235294117,
+     "ende": 64.38117647058823
+    },
+    {
+     "wort": "Min.",
+     "start": 64.38117647058823,
+     "ende": 64.6964705882353
+    },
+    {
+     "wort": "gegen",
+     "start": 64.6964705882353,
+     "ende": 65.01176470588236
+    },
+    {
+     "wort": "4",
+     "start": 65.01176470588236,
+     "ende": 65.32705882352941
+    },
+    {
+     "wort": "Std.",
+     "start": 65.32705882352941,
+     "ende": 65.64235294117647
+    },
+    {
+     "wort": "5",
+     "start": 65.64235294117647,
+     "ende": 65.95764705882353
+    },
+    {
+     "wort": "Min.",
+     "start": 65.95764705882353,
+     "ende": 66.2729411764706
+    },
+    {
+     "wort": "Plus",
+     "start": 66.2729411764706,
+     "ende": 66.58823529411765
+    },
+    {
+     "wort": "29,5",
+     "start": 66.58823529411765,
+     "ende": 66.90352941176471
+    },
+    {
+     "wort": "Min.",
+     "start": 66.90352941176471,
+     "ende": 67.21882352941176
+    },
+    {
+     "wort": "im",
+     "start": 67.21882352941176,
+     "ende": 67.53411764705882
+    },
+    {
+     "wort": "Monat,",
+     "start": 67.53411764705882,
+     "ende": 67.84941176470589
+    },
+    {
+     "wort": "5,9",
+     "start": 67.84941176470589,
+     "ende": 68.16470588235295
+    },
+    {
+     "wort": "Std.",
+     "start": 68.16470588235295,
+     "ende": 68.48
+    },
+    {
+     "wort": "im",
+     "start": 68.56,
+     "ende": 68.64
+    },
+    {
+     "wort": "Jahr",
+     "start": 68.72,
+     "ende": 68.96
+    },
+    {
+     "wort": "=",
+     "start": 69.2,
+     "ende": 69.73333333333333
+    },
+    {
+     "wort": "86,20",
+     "start": 69.73333333333333,
+     "ende": 70.26666666666667
+    },
+    {
+     "wort": "€.",
+     "start": 70.26666666666667,
+     "ende": 70.8
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Preis seit dem Start +36,3 %, Mindestlohn +21,7 %.",
+   "start": 70.88,
+   "ende": 74.88,
+   "woerter": [
+    {
+     "wort": "Preis",
+     "start": 70.88,
+     "ende": 71.2
+    },
+    {
+     "wort": "seit",
+     "start": 71.28,
+     "ende": 71.73
+    },
+    {
+     "wort": "dem",
+     "start": 71.73,
+     "ende": 72.18
+    },
+    {
+     "wort": "Start",
+     "start": 72.18,
+     "ende": 72.63
+    },
+    {
+     "wort": "+36,3",
+     "start": 72.63,
+     "ende": 73.08
+    },
+    {
+     "wort": "%,",
+     "start": 73.08,
+     "ende": 73.53
+    },
+    {
+     "wort": "Mindestlohn",
+     "start": 73.53,
+     "ende": 73.97999999999999
+    },
+    {
+     "wort": "+21,7",
+     "start": 73.97999999999999,
+     "ende": 74.42999999999999
+    },
+    {
+     "wort": "%.",
+     "start": 74.42999999999999,
+     "ende": 74.88
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "text": "Und wer zahlt weniger? Mit Jobticket höchstens 46,76 €: 3 Std. 12 Min. Arbeit.",
+   "start": 75.36,
+   "ende": 82.64,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 75.36,
+     "ende": 75.6
+    },
+    {
+     "wort": "wer",
+     "start": 75.68,
+     "ende": 75.84
+    },
+    {
+     "wort": "zahlt",
+     "start": 75.92,
+     "ende": 76.16
+    },
+    {
+     "wort": "weniger?",
+     "start": 76.24,
+     "ende": 76.72
+    },
+    {
+     "wort": "Mit",
+     "start": 77.2,
+     "ende": 77.36
+    },
+    {
+     "wort": "Jobticket",
+     "start": 77.44,
+     "ende": 78.08
+    },
+    {
+     "wort": "höchstens",
+     "start": 78.16,
+     "ende": 78.56
+    },
+    {
+     "wort": "46,76",
+     "start": 78.64,
+     "ende": 79.16
+    },
+    {
+     "wort": "€:",
+     "start": 79.16,
+     "ende": 79.68
+    },
+    {
+     "wort": "3",
+     "start": 79.68,
+     "ende": 80.2
+    },
+    {
+     "wort": "Std.",
+     "start": 80.2,
+     "ende": 80.72
+    },
+    {
+     "wort": "12",
+     "start": 80.72,
+     "ende": 81.24000000000001
+    },
+    {
+     "wort": "Min.",
+     "start": 81.24000000000001,
+     "ende": 81.76
+    },
+    {
+     "wort": "Arbeit.",
+     "start": 81.84,
+     "ende": 82.64
+    }
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "text": "Ohne Jobticket kostet es mehr Arbeit als zum Start.",
+   "start": 82.68,
+   "ende": 85.28,
+   "woerter": [
+    {
+     "wort": "Ohne",
+     "start": 82.68,
+     "ende": 82.88
+    },
+    {
+     "wort": "Jobticket",
+     "start": 82.96,
+     "ende": 83.52
+    },
+    {
+     "wort": "kostet",
+     "start": 83.68,
+     "ende": 84.0
+    },
+    {
+     "wort": "es",
+     "start": 84.08,
+     "ende": 84.24
+    },
+    {
+     "wort": "mehr",
+     "start": 84.32,
+     "ende": 84.48
+    },
+    {
+     "wort": "Arbeit",
+     "start": 84.56,
+     "ende": 85.28
+    },
+    {
+     "wort": "als",
+     "start": 85.28,
+     "ende": 85.28
+    },
+    {
+     "wort": "zum",
+     "start": 85.28,
+     "ende": 85.28
+    },
+    {
+     "wort": "Start.",
+     "start": 85.28,
+     "ende": 85.28
+    }
+   ]
+  }
+ ]
+}

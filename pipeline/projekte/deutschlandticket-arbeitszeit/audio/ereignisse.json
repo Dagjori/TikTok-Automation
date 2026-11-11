@@ -1,0 +1,1856 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "deutschlandticket-arbeitszeit",
+ "fps": 30,
+ "dauer": 85.7,
+ "stimmEnde": 85.212,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "raum",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "TICKET 2023",
+    "farbe": "#22C6D6"
+   },
+   "b": {
+    "name": "TICKET HEUTE",
+    "farbe": "#FF8A4C"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 4,
+   "groesse": 64,
+   "unten": 1450,
+   "phrasen": 63
+  },
+  "timing": "echt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "DEUTSCHLANDTICKET"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "2023"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "vs"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "2027"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WER ARBEITET LÄNGER?"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "tafel",
+   "klang": false,
+   "bild": false,
+   "ab": "start"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Deutschlandticket: 49 €",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.05,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "49 € IM MAI 2023 · 66,80 € AB JANUAR"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0.3,
+   "typ": "zaehler",
+   "dauer": 13.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0.3,
+   "typ": "zaehler",
+   "dauer": 13.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.3,
+   "typ": "welt",
+   "klang": "wachsen",
+   "text": "beide Zylinder füllen sich mit 245 Minuten Arbeitszeit"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 0.4,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.4,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder leuchten auf, Kamera schiebt sich heran"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.36,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder links leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 2.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Mai 2023,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 2.72,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder links leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 3.997,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "66,80 €",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.027,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder rechts leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 5.527,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 6.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ab Januar 2027.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.64,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder rechts leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 7.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wer arbeitet mit Mindestlohn",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 8,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder rechts leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 9.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "länger für ein Monatsticket?",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.63,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ARBEITSZEIT = PREIS ÷ MINDESTLOHN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 11.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gemessen wird in Arbeitszeit:",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.46,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ARBEITSZEIT IN MINUTEN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.74,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "TICKETPREIS ÷ MINDESTLOHN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 13.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ticketpreis geteilt durch",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.84,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder links leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 14.92,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 14.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "den Mindestlohn je Stunde.",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.12,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 16.01,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BRUTTO · JE STUNDE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 16.62,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 17.04,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 17.04,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 17.04,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 17.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar, der Lohn",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 17.44,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LOHN GESTIEGEN = AUSGEGLICHEN?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.12,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 18.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ist auch gestiegen.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 19.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Das gleicht sich aus.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 19.52,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 20.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.52,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder rechts leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.63,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 21.68,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 22.03,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STUFE 1 · START MAI 2023"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 22.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mai 2023:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 22.08,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder links leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Chip",
+   "t": 22.863,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "MINDESTLOHN 12,00 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 22.983,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "12,00 € Mindestlohn.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Szene",
+   "t": 25.08,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.27,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.58,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.67,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "4 STD. 5 MIN. ARBEIT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 26.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ein Ticket kostet",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.88,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder links leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 27.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "4 Std.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 28.38,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 28.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "5 Min.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 29.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Arbeit.",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.88,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.15,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.2,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.55,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STUFE 2 · 2024"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 30.567,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 30.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "2024 steigt nur der",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 30.6,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2024 · LOHN 12,41 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.6,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder rechts leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Referenzlinie 2023 leuchtet am rechten Zylinder auf"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 32.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Lohn auf 12,41 €.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 32.967,
+   "typ": "zaehler",
+   "dauer": 1.4,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 32.98,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "rechter Zylinder sinkt auf 3 Std. 57 Min."
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 32.987,
+   "typ": "zaehler",
+   "dauer": 1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 33.167,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 33.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Das Ticket kostet",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 33.53,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 33.68,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "3 STD. 57 MIN. · TIEFPUNKT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 34.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "3 Std.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 34.48,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 35.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "57 Min.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.98,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 36.21,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "So günstig war",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.35,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SO GÜNSTIG WAR ES NIE WIEDER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 36.4,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 37.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "es nie wieder.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.9,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.51,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.51,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.56,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.91,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STUFE 3 · 2025"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 38.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "2025 springt der Preis",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 38.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.96,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2025 · PREIS 58 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.96,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder rechts leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 40.487,
+   "typ": "zaehler",
+   "dauer": 1.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 40.5,
+   "typ": "zaehler",
+   "dauer": 1.8,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 40.5,
+   "typ": "zaehler",
+   "dauer": 1.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 40.5,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "rechter Zylinder steigt auf 4 Std. 32 Min., Funken, Zoom"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 41.233,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "auf 58 €:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 41.3,
+   "art": "zoom",
+   "dauer": 1.8,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 42,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 42.407,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.707,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Röhrchen füllt sich: Unterschied"
+  },
+  {
+   "quelle": "Chip",
+   "t": 42.807,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "4 STD. 32 MIN. ARBEIT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 42.877,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "4 Std.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 44.207,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 44.263,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "32 Min.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 45.5,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.707,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 45.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Eine Gruppe zahlt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 45.95,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "WER ZAHLT 2027 WENIGER?"
+  },
+  {
+   "quelle": "Szene",
+   "t": 46,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder links leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 46.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "2027 trotzdem weniger",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "als zum Start.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 49,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 49.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wer,",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.52,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 50.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "zeigt sich am Ende.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.02,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.35,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.4,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.75,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STUFE 4 · 2026"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 51.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "2026: 63 €",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 51.8,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 51.8,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "2026 · 63 € · 13,90 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.8,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder rechts leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.8,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "2026: Zylinder fast gleich"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 52.087,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 52.1,
+   "typ": "zaehler",
+   "dauer": 0.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 52.133,
+   "typ": "zaehler",
+   "dauer": 1.033,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 53.34,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "bei 13,90 €,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 54.49,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 54.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 54.89,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "WIEDER 4 STD. 32 MIN."
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 54.91,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "wieder 4 Std.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 56.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 56.48,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "32 Min.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 57.527,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Im Januar 2027:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.66,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.76,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 58.11,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "STUFE 5 · JANUAR 2027"
+  },
+  {
+   "quelle": "Chip",
+   "t": 58.11,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JANUAR 2027 · LOHN +5,0 %"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 58.133,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.16,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder rechts leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 59.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Lohn +5,0 %,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 59.587,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 59.6,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Januar 2027: rechter Zylinder steigt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 59.667,
+   "typ": "zaehler",
+   "dauer": 3.067,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 61.1,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.1,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 61.2,
+   "typ": "zaehler",
+   "dauer": 1.2,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 61.55,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "TICKET +6,0 %"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 61.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ticket +6,0 %.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 62.82,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 63.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "2027: 4 Std.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.12,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder rechts leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 63.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Endstand-Karte, Zoom"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 63.435,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "JANUAR 2027"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 63.72,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 64.036,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "34,5 Min.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 64.666,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "gegen 4 Std.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 64.696,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "START 2023"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.696,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder links leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 65.612,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "5 Min.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 66.243,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Plus 29,5 Min.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.273,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 66.488,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "MEHR ARBEIT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 67.189,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Monat,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 67.749,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.773,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 67.819,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "5,9 Std.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 68.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Jahr =",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 69.116,
+   "typ": "zaehler",
+   "dauer": 1.564,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.273,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.703,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "86,20 €.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 69.733,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.733,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.733,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "86,20 € im Jahr leuchtet"
+  },
+  {
+   "quelle": "Chip",
+   "t": 70.58,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 70.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Preis seit dem Start",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 70.88,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Erklärgrafik Warum"
+  },
+  {
+   "quelle": "Balken",
+   "t": 71.08,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "SEIT DEM START IN %"
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.38,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 72.6,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "+36,3 %,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 73.5,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mindestlohn +21,7 %.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Balken",
+   "t": 73.53,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "PREIS WÄCHST SCHNELLER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 73.53,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder rechts leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 75.03,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 75.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und wer zahlt weniger?",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 75.36,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Röhrchen leuchtet, Kamera gleitet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 76.86,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 77.1,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Chip",
+   "t": 77.15,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ARBEITGEBER ZAHLT MIND. 25 %"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 77.17,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Mit Jobticket höchstens",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 77.44,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder rechts leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 77.833,
+   "typ": "zaehler",
+   "dauer": 2.4,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 78.033,
+   "typ": "zaehler",
+   "dauer": 2.4,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 78.04,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Jobticket: rechter Zylinder sinkt unter die Referenzlinie, Funken"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 78.61,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "46,76 €:",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 79.133,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "links vorn"
+  },
+  {
+   "quelle": "Szene",
+   "t": 79.54,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Chip",
+   "t": 79.58,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "JOBTICKET · 3 STD. 12 MIN."
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 79.64,
+   "art": "zoom",
+   "dauer": 1.9,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 79.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "3 Std.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 80.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "12 Min.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 81.04,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 81.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Arbeit.",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 82.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 82.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 82.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ohne Jobticket kostet",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Pointe",
+   "t": 82.68,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "OHNE JOBTICKET  MEHR ARBEIT  ALS 2023."
+  },
+  {
+   "quelle": "Szene",
+   "t": 82.68,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Zylinder links leuchtet, Lichtkegel pulsiert"
+  },
+  {
+   "quelle": "Szene",
+   "t": 82.68,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Welt dunkelt ab, Schlusskarte"
+  },
+  {
+   "quelle": "Hinweis",
+   "t": 83.212,
+   "typ": "folgen_hinweis",
+   "dauer": 2.5,
+   "text": "Jeden Tag eine Geldfrage im Profil",
+   "gesprochen": false,
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 84.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "es mehr Arbeit",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 84.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Bläschen steigen im Lichtkegel"
+  },
+  {
+   "quelle": "Szene",
+   "t": 84.56,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "2023 leuchtet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 85.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "als zum Start.",
+   "woerter": 3,
+   "zeilen": 1
+  }
+ ],
+ "klang": []
+}
