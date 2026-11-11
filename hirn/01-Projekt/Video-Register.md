@@ -14,8 +14,8 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 ## Überblick
 
-- **Videos im Register:** 52 (Simulierbar 28, davon 21 gepostet · Stell dir vor 24, davon 17 gepostet)
-- **Nach Status:** Idee 0 · Skript 4 · in Produktion 0 · geplant 7 · gepostet 38 · Fehler 3
+- **Videos im Register:** 52 (Simulierbar 28, davon 21 gepostet · Stell dir vor 24, davon 18 gepostet)
+- **Nach Status:** Idee 0 · Skript 4 · in Produktion 0 · geplant 6 · gepostet 39 · Fehler 3
 - **Nach Format:** ohne Angabe 26 · referenz_pov 20 · Duell 3 · Was bleibt 2 · Lernvideo 1
 - **Lesart:** „gepostet“ heißt, Buffer hat das Video gesendet (oder die Nachprüfung hat es bestätigt). Follows = Follower-Zuwachs in den 24 Stunden nach dem Post (netto, zwei Videos am Tag überlappen). Ø-Wiedergabe = durchschnittliche Wiedergabezeit, in Klammern der Anteil an der Länge.
 
@@ -61,7 +61,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 | 12.11. | Abend | Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz? | Physik und Chemie im Alltag · referenz_pov | geplant | 80 s | – | – | – | – |
 | 12.11. | Mittag | Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt? | Technik und Versorgung · referenz_pov | geplant | 80 s | – | – | – | – |
 | 11.11. | Abend | Was wäre, wenn der Erdkern abkühlt? | Naturphänomene · referenz_pov | geplant | 80 s | – | – | – | – |
-| 11.11. | Mittag | Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft? | Naturphänomene · referenz_pov | geplant | 80 s | – | – | – | – |
+| 11.11. | Mittag | Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft? | Naturphänomene · referenz_pov | gepostet | 80 s | – | – | – | – |
 | 10.11. | Abend | [Was wäre, wenn du die Polarnacht in Tromsø erlebst?](https://tiktok.com/@stelldirvor.pov/video/7706612156975811872) | Physik, Wetter, Geografie, Weltraum · referenz_pov | gepostet | 80 s | 250 | 2,8 s (3 %) | – | – |
 | 10.11. | Mittag | [Was wäre, wenn du 28 Jahre lang Ameisen zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706503882209381664) | Natur und Tiere · referenz_pov | gepostet | 80 s | 271 | 13,9 s (17 %) | 0 | – |
 | 09.11. | Abend | [Was wäre, wenn du 2.400 Jahre einem Pilzgeflecht zusiehst?](https://tiktok.com/@stelldirvor.pov/video/7706241106614193440) | Natur und Tiere · referenz_pov | gepostet | 80 s | 264 | 11,2 s (14 %) | 0 | – |
