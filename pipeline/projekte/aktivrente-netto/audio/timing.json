@@ -1,0 +1,1006 @@
+{
+ "stimme": "Ben",
+ "voice_id": "aTTiK3YzK3dXETpuDE2h",
+ "modell": "eleven_v4",
+ "verfahren": "am_stueck",
+ "einstellungen": {
+  "stability": 0.5,
+  "similarity_boost": 0.75
+ },
+ "dauer": 89.601,
+ "segmente": [
+  {
+   "id": "hook",
+   "text": "Aktivrente: gleicher Job, gleiche 2.000 € brutto. Wer hat mehr auf dem Konto, die Kollegin mit 67 oder die mit 45?",
+   "start": 0.0,
+   "ende": 10.32,
+   "woerter": [
+    {
+     "wort": "Aktivrente:",
+     "start": 0.0,
+     "ende": 0.96
+    },
+    {
+     "wort": "gleicher",
+     "start": 1.44,
+     "ende": 1.76
+    },
+    {
+     "wort": "Job,",
+     "start": 1.84,
+     "ende": 2.4
+    },
+    {
+     "wort": "gleiche",
+     "start": 2.48,
+     "ende": 2.72
+    },
+    {
+     "wort": "2.000",
+     "start": 2.88,
+     "ende": 3.32
+    },
+    {
+     "wort": "€",
+     "start": 3.32,
+     "ende": 3.76
+    },
+    {
+     "wort": "brutto.",
+     "start": 3.84,
+     "ende": 4.32
+    },
+    {
+     "wort": "Wer",
+     "start": 4.8,
+     "ende": 4.96
+    },
+    {
+     "wort": "hat",
+     "start": 5.04,
+     "ende": 5.12
+    },
+    {
+     "wort": "mehr",
+     "start": 5.2,
+     "ende": 5.28
+    },
+    {
+     "wort": "auf",
+     "start": 5.36,
+     "ende": 5.44
+    },
+    {
+     "wort": "dem",
+     "start": 5.52,
+     "ende": 5.6
+    },
+    {
+     "wort": "Konto,",
+     "start": 5.68,
+     "ende": 6.4
+    },
+    {
+     "wort": "die",
+     "start": 6.44,
+     "ende": 6.48
+    },
+    {
+     "wort": "Kollegin",
+     "start": 6.56,
+     "ende": 6.96
+    },
+    {
+     "wort": "mit",
+     "start": 7.04,
+     "ende": 7.12
+    },
+    {
+     "wort": "67",
+     "start": 7.2,
+     "ende": 8.0
+    },
+    {
+     "wort": "oder",
+     "start": 8.4,
+     "ende": 8.56
+    },
+    {
+     "wort": "die",
+     "start": 8.64,
+     "ende": 8.72
+    },
+    {
+     "wort": "mit",
+     "start": 8.8,
+     "ende": 8.88
+    },
+    {
+     "wort": "45?",
+     "start": 8.96,
+     "ende": 10.32
+    }
+   ]
+  },
+  {
+   "id": "regeln",
+   "text": "Beide arbeiten am selben Schreibtisch. Beide haben ein Kind, keine Kirchensteuer.",
+   "start": 10.36,
+   "ende": 15.2,
+   "woerter": [
+    {
+     "wort": "Beide",
+     "start": 10.36,
+     "ende": 10.56
+    },
+    {
+     "wort": "arbeiten",
+     "start": 10.64,
+     "ende": 11.04
+    },
+    {
+     "wort": "am",
+     "start": 11.12,
+     "ende": 11.2
+    },
+    {
+     "wort": "selben",
+     "start": 11.28,
+     "ende": 11.52
+    },
+    {
+     "wort": "Schreibtisch.",
+     "start": 11.6,
+     "ende": 12.4
+    },
+    {
+     "wort": "Beide",
+     "start": 12.48,
+     "ende": 12.72
+    },
+    {
+     "wort": "haben",
+     "start": 12.8,
+     "ende": 12.96
+    },
+    {
+     "wort": "ein",
+     "start": 13.04,
+     "ende": 13.12
+    },
+    {
+     "wort": "Kind,",
+     "start": 13.2,
+     "ende": 13.52
+    },
+    {
+     "wort": "keine",
+     "start": 14.16,
+     "ende": 14.4
+    },
+    {
+     "wort": "Kirchensteuer.",
+     "start": 14.48,
+     "ende": 15.2
+    }
+   ]
+  },
+  {
+   "id": "falle",
+   "text": "Klar, gleiches Brutto heißt gleiches Netto. Oder?",
+   "start": 15.68,
+   "ende": 19.96,
+   "woerter": [
+    {
+     "wort": "Klar,",
+     "start": 15.68,
+     "ende": 16.32
+    },
+    {
+     "wort": "gleiches",
+     "start": 16.4,
+     "ende": 16.72
+    },
+    {
+     "wort": "Brutto",
+     "start": 16.8,
+     "ende": 17.2
+    },
+    {
+     "wort": "heißt",
+     "start": 17.28,
+     "ende": 17.56
+    },
+    {
+     "wort": "gleiches",
+     "start": 17.6,
+     "ende": 17.92
+    },
+    {
+     "wort": "Netto.",
+     "start": 18.0,
+     "ende": 18.6
+    },
+    {
+     "wort": "Oder?",
+     "start": 18.88,
+     "ende": 19.04
+    }
+   ]
+  },
+  {
+   "id": "wendung1",
+   "text": "Erster Abzug: Lohnsteuer. Die Jüngere zahlt 91,08 €, die Ältere 0 €. Nach der Regelaltersgrenze sind seit 2026 bis zu 2.000 € im Monat steuerfrei.",
+   "start": 20.32,
+   "ende": 31.68,
+   "woerter": [
+    {
+     "wort": "Erster",
+     "start": 20.32,
+     "ende": 20.64
+    },
+    {
+     "wort": "Abzug:",
+     "start": 20.76,
+     "ende": 21.12
+    },
+    {
+     "wort": "Lohnsteuer.",
+     "start": 21.44,
+     "ende": 22.16
+    },
+    {
+     "wort": "Die",
+     "start": 22.48,
+     "ende": 22.56
+    },
+    {
+     "wort": "Jüngere",
+     "start": 22.6,
+     "ende": 22.96
+    },
+    {
+     "wort": "zahlt",
+     "start": 23.04,
+     "ende": 23.36
+    },
+    {
+     "wort": "91,08",
+     "start": 23.48,
+     "ende": 24.060000000000002
+    },
+    {
+     "wort": "€,",
+     "start": 24.060000000000002,
+     "ende": 24.64
+    },
+    {
+     "wort": "die",
+     "start": 24.68,
+     "ende": 24.72
+    },
+    {
+     "wort": "Ältere",
+     "start": 24.8,
+     "ende": 25.2
+    },
+    {
+     "wort": "0",
+     "start": 25.44,
+     "ende": 25.72
+    },
+    {
+     "wort": "€.",
+     "start": 25.72,
+     "ende": 26.0
+    },
+    {
+     "wort": "Nach",
+     "start": 26.32,
+     "ende": 26.48
+    },
+    {
+     "wort": "der",
+     "start": 26.56,
+     "ende": 26.64
+    },
+    {
+     "wort": "Regelaltersgrenze",
+     "start": 26.72,
+     "ende": 27.76
+    },
+    {
+     "wort": "sind",
+     "start": 27.8,
+     "ende": 28.0
+    },
+    {
+     "wort": "seit",
+     "start": 28.04,
+     "ende": 28.16
+    },
+    {
+     "wort": "2026",
+     "start": 28.24,
+     "ende": 28.72
+    },
+    {
+     "wort": "bis",
+     "start": 28.8,
+     "ende": 28.96
+    },
+    {
+     "wort": "zu",
+     "start": 29.04,
+     "ende": 29.12
+    },
+    {
+     "wort": "2.000",
+     "start": 29.28,
+     "ende": 29.759999999999998
+    },
+    {
+     "wort": "€",
+     "start": 29.759999999999998,
+     "ende": 30.24
+    },
+    {
+     "wort": "im",
+     "start": 30.28,
+     "ende": 30.32
+    },
+    {
+     "wort": "Monat",
+     "start": 30.4,
+     "ende": 30.72
+    },
+    {
+     "wort": "steuerfrei.",
+     "start": 30.8,
+     "ende": 31.68
+    }
+   ]
+  },
+  {
+   "id": "wendung2",
+   "text": "Dann die Rentenversicherung: 186 € bei der Jüngeren, die Ältere ist befreit. Ihr Arbeitgeber zahlt trotzdem seinen Anteil. Was ihr das bringt, zeigt sich am Ende.",
+   "start": 32.0,
+   "ende": 43.12,
+   "woerter": [
+    {
+     "wort": "Dann",
+     "start": 32.0,
+     "ende": 32.24
+    },
+    {
+     "wort": "die",
+     "start": 32.52,
+     "ende": 32.56
+    },
+    {
+     "wort": "Rentenversicherung:",
+     "start": 32.64,
+     "ende": 33.8
+    },
+    {
+     "wort": "186",
+     "start": 34.0,
+     "ende": 34.512
+    },
+    {
+     "wort": "€",
+     "start": 34.512,
+     "ende": 35.024
+    },
+    {
+     "wort": "bei",
+     "start": 35.024,
+     "ende": 35.536
+    },
+    {
+     "wort": "der",
+     "start": 35.536,
+     "ende": 36.048
+    },
+    {
+     "wort": "Jüngeren,",
+     "start": 36.048,
+     "ende": 36.56
+    },
+    {
+     "wort": "die",
+     "start": 36.6,
+     "ende": 36.64
+    },
+    {
+     "wort": "Ältere",
+     "start": 36.72,
+     "ende": 37.12
+    },
+    {
+     "wort": "ist",
+     "start": 37.2,
+     "ende": 37.28
+    },
+    {
+     "wort": "befreit.",
+     "start": 37.36,
+     "ende": 38.08
+    },
+    {
+     "wort": "Ihr",
+     "start": 38.32,
+     "ende": 38.48
+    },
+    {
+     "wort": "Arbeitgeber",
+     "start": 38.56,
+     "ende": 39.04
+    },
+    {
+     "wort": "zahlt",
+     "start": 39.2,
+     "ende": 39.44
+    },
+    {
+     "wort": "trotzdem",
+     "start": 39.52,
+     "ende": 39.92
+    },
+    {
+     "wort": "seinen",
+     "start": 39.96,
+     "ende": 40.16
+    },
+    {
+     "wort": "Anteil.",
+     "start": 40.24,
+     "ende": 40.88
+    },
+    {
+     "wort": "Was",
+     "start": 41.12,
+     "ende": 41.28
+    },
+    {
+     "wort": "ihr",
+     "start": 41.307,
+     "ende": 41.36
+    },
+    {
+     "wort": "das",
+     "start": 41.44,
+     "ende": 41.52
+    },
+    {
+     "wort": "bringt,",
+     "start": 41.6,
+     "ende": 42.16
+    },
+    {
+     "wort": "zeigt",
+     "start": 42.28,
+     "ende": 42.4
+    },
+    {
+     "wort": "sich",
+     "start": 42.44,
+     "ende": 42.56
+    },
+    {
+     "wort": "am",
+     "start": 42.64,
+     "ende": 42.72
+    },
+    {
+     "wort": "Ende.",
+     "start": 42.8,
+     "ende": 43.12
+    }
+   ]
+  },
+  {
+   "id": "wendung3",
+   "text": "Arbeitslosenversicherung: 26 € gegen 0 €. Der Abstand wächst auf 303,08 €.",
+   "start": 43.76,
+   "ende": 50.48,
+   "woerter": [
+    {
+     "wort": "Arbeitslosenversicherung:",
+     "start": 43.76,
+     "ende": 45.44
+    },
+    {
+     "wort": "26",
+     "start": 45.52,
+     "ende": 46.08
+    },
+    {
+     "wort": "€",
+     "start": 46.08,
+     "ende": 46.64
+    },
+    {
+     "wort": "gegen",
+     "start": 46.8,
+     "ende": 47.04
+    },
+    {
+     "wort": "0",
+     "start": 47.2,
+     "ende": 47.58
+    },
+    {
+     "wort": "€.",
+     "start": 47.58,
+     "ende": 47.96
+    },
+    {
+     "wort": "Der",
+     "start": 48.16,
+     "ende": 48.24
+    },
+    {
+     "wort": "Abstand",
+     "start": 48.32,
+     "ende": 48.72
+    },
+    {
+     "wort": "wächst",
+     "start": 48.8,
+     "ende": 49.04
+    },
+    {
+     "wort": "auf",
+     "start": 49.12,
+     "ende": 49.2
+    },
+    {
+     "wort": "303,08",
+     "start": 49.24,
+     "ende": 49.86
+    },
+    {
+     "wort": "€.",
+     "start": 49.86,
+     "ende": 50.48
+    }
+   ]
+  },
+  {
+   "id": "kipp",
+   "text": "Bleibt die Krankenkasse, hier zahlen beide. 175 € gegen 169 €: Ohne Anspruch auf Krankengeld gilt für die Ältere ein niedrigerer Satz. Pflege: 36 € bei beiden.",
+   "start": 51.04,
+   "ende": 64.8,
+   "woerter": [
+    {
+     "wort": "Bleibt",
+     "start": 51.04,
+     "ende": 51.28
+    },
+    {
+     "wort": "die",
+     "start": 51.32,
+     "ende": 51.36
+    },
+    {
+     "wort": "Krankenkasse,",
+     "start": 51.44,
+     "ende": 52.4
+    },
+    {
+     "wort": "hier",
+     "start": 52.44,
+     "ende": 52.64
+    },
+    {
+     "wort": "zahlen",
+     "start": 52.8,
+     "ende": 53.04
+    },
+    {
+     "wort": "beide.",
+     "start": 53.12,
+     "ende": 53.84
+    },
+    {
+     "wort": "175",
+     "start": 53.88,
+     "ende": 54.58
+    },
+    {
+     "wort": "€",
+     "start": 54.58,
+     "ende": 55.28
+    },
+    {
+     "wort": "gegen",
+     "start": 55.36,
+     "ende": 55.6
+    },
+    {
+     "wort": "169",
+     "start": 55.68,
+     "ende": 56.6
+    },
+    {
+     "wort": "€:",
+     "start": 56.6,
+     "ende": 57.52
+    },
+    {
+     "wort": "Ohne",
+     "start": 57.56,
+     "ende": 57.76
+    },
+    {
+     "wort": "Anspruch",
+     "start": 57.84,
+     "ende": 58.16
+    },
+    {
+     "wort": "auf",
+     "start": 58.24,
+     "ende": 58.32
+    },
+    {
+     "wort": "Krankengeld",
+     "start": 58.4,
+     "ende": 59.04
+    },
+    {
+     "wort": "gilt",
+     "start": 59.12,
+     "ende": 59.28
+    },
+    {
+     "wort": "für",
+     "start": 59.32,
+     "ende": 59.36
+    },
+    {
+     "wort": "die",
+     "start": 59.44,
+     "ende": 59.52
+    },
+    {
+     "wort": "Ältere",
+     "start": 59.6,
+     "ende": 60.0
+    },
+    {
+     "wort": "ein",
+     "start": 60.08,
+     "ende": 60.16
+    },
+    {
+     "wort": "niedrigerer",
+     "start": 60.24,
+     "ende": 60.8
+    },
+    {
+     "wort": "Satz.",
+     "start": 60.84,
+     "ende": 61.2
+    },
+    {
+     "wort": "Pflege:",
+     "start": 62.0,
+     "ende": 62.4
+    },
+    {
+     "wort": "36",
+     "start": 62.56,
+     "ende": 63.120000000000005
+    },
+    {
+     "wort": "€",
+     "start": 63.120000000000005,
+     "ende": 63.68
+    },
+    {
+     "wort": "bei",
+     "start": 63.68,
+     "ende": 64.24
+    },
+    {
+     "wort": "beiden.",
+     "start": 64.24,
+     "ende": 64.8
+    }
+   ]
+  },
+  {
+   "id": "ergebnis",
+   "text": "Netto: 1.485,92 € gegen 1.795,00 €. 309,08 € mehr im Monat, 3.708,96 € im Jahr.",
+   "start": 64.88,
+   "ende": 74.88,
+   "woerter": [
+    {
+     "wort": "Netto:",
+     "start": 64.88,
+     "ende": 65.12
+    },
+    {
+     "wort": "1.485,92",
+     "start": 65.2,
+     "ende": 66.2
+    },
+    {
+     "wort": "€",
+     "start": 66.2,
+     "ende": 67.2
+    },
+    {
+     "wort": "gegen",
+     "start": 67.44,
+     "ende": 67.68
+    },
+    {
+     "wort": "1.795,00",
+     "start": 67.76,
+     "ende": 68.68
+    },
+    {
+     "wort": "€.",
+     "start": 68.68,
+     "ende": 69.6
+    },
+    {
+     "wort": "309,08",
+     "start": 69.6,
+     "ende": 70.52
+    },
+    {
+     "wort": "€",
+     "start": 70.52,
+     "ende": 71.44
+    },
+    {
+     "wort": "mehr",
+     "start": 71.52,
+     "ende": 71.68
+    },
+    {
+     "wort": "im",
+     "start": 71.72,
+     "ende": 71.76
+    },
+    {
+     "wort": "Monat,",
+     "start": 71.84,
+     "ende": 72.48
+    },
+    {
+     "wort": "3.708,96",
+     "start": 72.52,
+     "ende": 73.25999999999999
+    },
+    {
+     "wort": "€",
+     "start": 73.25999999999999,
+     "ende": 74.0
+    },
+    {
+     "wort": "im",
+     "start": 74.08,
+     "ende": 74.16
+    },
+    {
+     "wort": "Jahr.",
+     "start": 74.24,
+     "ende": 74.88
+    }
+   ]
+  },
+  {
+   "id": "warum",
+   "text": "Den Unterschied machen vor allem Lohnsteuer (91,08 €) und Rentenbeitrag (186 €).",
+   "start": 74.92,
+   "ende": 78.0,
+   "woerter": [
+    {
+     "wort": "Den",
+     "start": 74.92,
+     "ende": 74.96
+    },
+    {
+     "wort": "Unterschied",
+     "start": 75.04,
+     "ende": 75.52
+    },
+    {
+     "wort": "machen",
+     "start": 75.6,
+     "ende": 75.76
+    },
+    {
+     "wort": "vor",
+     "start": 75.84,
+     "ende": 75.92
+    },
+    {
+     "wort": "allem",
+     "start": 76.0,
+     "ende": 76.16
+    },
+    {
+     "wort": "Lohnsteuer",
+     "start": 76.24,
+     "ende": 76.88
+    },
+    {
+     "wort": "(91,08",
+     "start": 76.88,
+     "ende": 76.91999999999999
+    },
+    {
+     "wort": "€)",
+     "start": 76.91999999999999,
+     "ende": 76.96
+    },
+    {
+     "wort": "und",
+     "start": 76.96,
+     "ende": 77.04
+    },
+    {
+     "wort": "Rentenbeitrag",
+     "start": 77.12,
+     "ende": 78.0
+    },
+    {
+     "wort": "(186",
+     "start": 78.0,
+     "ende": 78.0
+    },
+    {
+     "wort": "€).",
+     "start": 78.0,
+     "ende": 78.0
+    }
+   ]
+  },
+  {
+   "id": "pointe",
+   "text": "Und der Anteil des Arbeitgebers? 186 € im Monat für die Rentenkasse. Ihre Rente steigt dadurch um 0 €.",
+   "start": 78.48,
+   "ende": 86.28,
+   "woerter": [
+    {
+     "wort": "Und",
+     "start": 78.48,
+     "ende": 78.64
+    },
+    {
+     "wort": "der",
+     "start": 78.68,
+     "ende": 78.72
+    },
+    {
+     "wort": "Anteil",
+     "start": 78.8,
+     "ende": 79.04
+    },
+    {
+     "wort": "des",
+     "start": 79.12,
+     "ende": 79.2
+    },
+    {
+     "wort": "Arbeitgebers?",
+     "start": 79.28,
+     "ende": 80.24
+    },
+    {
+     "wort": "186",
+     "start": 80.48,
+     "ende": 81.12
+    },
+    {
+     "wort": "€",
+     "start": 81.12,
+     "ende": 81.76
+    },
+    {
+     "wort": "im",
+     "start": 81.84,
+     "ende": 81.92
+    },
+    {
+     "wort": "Monat",
+     "start": 82.0,
+     "ende": 82.32
+    },
+    {
+     "wort": "für",
+     "start": 82.36,
+     "ende": 82.4
+    },
+    {
+     "wort": "die",
+     "start": 82.48,
+     "ende": 82.56
+    },
+    {
+     "wort": "Rentenkasse.",
+     "start": 82.68,
+     "ende": 83.36
+    },
+    {
+     "wort": "Ihre",
+     "start": 83.68,
+     "ende": 83.84
+    },
+    {
+     "wort": "Rente",
+     "start": 83.92,
+     "ende": 84.24
+    },
+    {
+     "wort": "steigt",
+     "start": 84.32,
+     "ende": 84.64
+    },
+    {
+     "wort": "dadurch",
+     "start": 84.76,
+     "ende": 85.04
+    },
+    {
+     "wort": "um",
+     "start": 85.12,
+     "ende": 85.28
+    },
+    {
+     "wort": "0",
+     "start": 85.36,
+     "ende": 85.82
+    },
+    {
+     "wort": "€.",
+     "start": 85.82,
+     "ende": 86.28
+    }
+   ]
+  },
+  {
+   "id": "schlusskarte",
+   "text": "Gleiches Brutto, 309 € mehr netto.",
+   "start": 86.56,
+   "ende": 89.68,
+   "woerter": [
+    {
+     "wort": "Gleiches",
+     "start": 86.56,
+     "ende": 86.96
+    },
+    {
+     "wort": "Brutto,",
+     "start": 87.04,
+     "ende": 87.76
+    },
+    {
+     "wort": "309",
+     "start": 87.84,
+     "ende": 88.24000000000001
+    },
+    {
+     "wort": "€",
+     "start": 88.24000000000001,
+     "ende": 88.64
+    },
+    {
+     "wort": "mehr",
+     "start": 88.72,
+     "ende": 88.96
+    },
+    {
+     "wort": "netto.",
+     "start": 89.04,
+     "ende": 89.68
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { videoZahlen } from "./aktivrente.mjs";
+const Z = videoZahlen();
+test("Beiträge der 45-Jährigen", () => { assert.equal(Z.rv45, 186); assert.equal(Z.av45, 26); assert.equal(Z.kv45, 175); assert.equal(Z.pv, 36); });
+test("Lohnsteuer 91,08 € und Netto-Modul stimmt", () => { assert.equal(Z.lst45, 91.08); assert.equal(Z.soli45, 0); assert.equal(Z.nettoModul45, Z.netto45); });
+test("KV ermäßigt 169 € bei der 67-Jährigen", () => assert.equal(Z.kv67, 169));
+test("Netto 1.485,92 € gegen 1.795,00 €", () => { assert.equal(Z.netto45, 1485.92); assert.equal(Z.netto67, 1795); });
+test("Abstand 303,08 € nach AV, 309,08 € im Monat, 3.708,96 € im Jahr", () => { assert.equal(Z.abstandNachAv, 303.08); assert.equal(Z.diffMonat, 309.08); assert.equal(Z.diffJahr, 3708.96); });
+test("Arbeitgeberanteil 186 € im Monat, 2.232 € im Jahr", () => { assert.equal(Z.agRvMonat, 186); assert.equal(Z.agRvJahr, 2232); });

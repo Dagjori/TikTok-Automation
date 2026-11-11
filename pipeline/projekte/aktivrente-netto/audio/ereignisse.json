@@ -1,0 +1,1946 @@
+{
+ "version": 2,
+ "erzeugt": "render.js",
+ "projekt": "aktivrente-netto",
+ "fps": 30,
+ "dauer": 90.2,
+ "stimmEnde": 89.601,
+ "timing": "timing.json (echte Stimme)",
+ "protokoll": true,
+ "teppich": "raum",
+ "massstab": {
+  "version": 1,
+  "teams": {
+   "a": {
+    "name": "KOLLEGIN 45",
+    "farbe": "#22C6D6"
+   },
+   "b": {
+    "name": "KOLLEGIN 67",
+    "farbe": "#FF7A59"
+   }
+  },
+  "schleife": null,
+  "untertitel": {
+   "stil": "phrase",
+   "maxWoerter": 4,
+   "groesse": 64,
+   "unten": 1450,
+   "phrasen": 58
+  },
+  "timing": "echt",
+  "schleifenPruefung": null
+ },
+ "ereignisse": [
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "AKTIVRENTE"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "NETTO 45"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "vs"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "67"
+  },
+  {
+   "quelle": "Titel",
+   "t": -0.3,
+   "typ": "titel",
+   "klang": "klick",
+   "text": "WER HAT MEHR?"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0,
+   "typ": "tafel",
+   "klang": false,
+   "bild": false,
+   "ab": "start"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 0,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Aktivrente: gleicher Job,",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 0.05,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BRUTTO 2.000 € · BEIDE GLEICH"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.2,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Haus der 45-Jährigen leuchtet türkis"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0.233,
+   "typ": "zaehler",
+   "dauer": 3.367,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 0.233,
+   "typ": "zaehler",
+   "dauer": 3.367,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 0.3,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Kamera gleitet, Säulen füllen sich bis 2.000 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 1.84,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Haus der 67-Jährigen leuchtet orange"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 2.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "gleiche 2.000 € brutto.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 3.34,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 4.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Wer hat mehr",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 4.8,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zurück, beide Büros"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 5.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 5.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "auf dem Konto,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 6,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 6.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 6.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "die Kollegin mit 67",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 6.667,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 7.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 7.767,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 7.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 8.233,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 8.37,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "oder die mit 45?",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 8.667,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 9.1,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 9.3,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 9.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 9.9,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.01,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 10.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.31,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LOHNLAUF LÄUFT"
+  },
+  {
+   "quelle": "Chip",
+   "t": 10.31,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "45 · STEUERKLASSE 1"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 10.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Beide arbeiten",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 10.36,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera nah an das Haus der 45-Jährigen, Titel blendet aus"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 10.667,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 11.033,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 11.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "am selben Schreibtisch.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 11.3,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GLEICHER SCHREIBTISCH"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 11.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 11.6,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip gleicher Schreibtisch"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 11.767,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.08,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 12.133,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 12.43,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "67 · RENTE WIRD BEZOGEN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 12.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Beide haben ein Kind,",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 12.48,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera wechselt zur 67-Jährigen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 12.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 12.9,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 13.15,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "EIN KIND · KEINE KIRCHENSTEUER"
+  },
+  {
+   "quelle": "Szene",
+   "t": 13.2,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip Kind, keine Kirchensteuer"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 13.267,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 13.667,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 14.067,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 14.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "keine Kirchensteuer.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 14.48,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KRANKENKASSE Ø 2,9 % ZUSATZ"
+  },
+  {
+   "quelle": "Szene",
+   "t": 14.48,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip Zusatzbeitrag"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 14.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 14.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.28,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 15.4,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 15.63,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "GLEICHES BRUTTO = GLEICHES NETTO?"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 15.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Klar, gleiches Brutto heißt",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 15.68,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Spot auf die 45-Jährige"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 15.933,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 16.5,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 17.167,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 17.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 17.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "gleiches Netto.",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 18,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Szene",
+   "t": 18,
+   "typ": "welt",
+   "klang": "pop",
+   "text": "Chip gleiches Netto"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 18.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Oder?",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 18.88,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Spot wechselt zur 67-Jährigen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 19.97,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Tafel",
+   "t": 20,
+   "typ": "uhr",
+   "dauer": 0.033,
+   "laufend": true,
+   "klang": "uhr"
+  },
+  {
+   "quelle": "Chip",
+   "t": 20.12,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 20.27,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABZUG 1 · LOHNSTEUER"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 20.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Erster Abzug: Lohnsteuer.",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 20.32,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera nah, Lohnlauf Tag 30"
+  },
+  {
+   "quelle": "Szene",
+   "t": 21.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 22.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Die Jüngere zahlt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 23.18,
+   "art": "zoom",
+   "dauer": 2.5,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Chip",
+   "t": 23.38,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LOHNSTEUER 91,08 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 23.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "91,08 €,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.467,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 23.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Lohnsteuer-Kachel löst sich links, Säule sinkt"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 23.5,
+   "typ": "fuehrung",
+   "klang": "ding",
+   "text": "rechts vorn"
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.35,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 24.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "die Ältere 0 €.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 24.8,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "LOHNSTEUER 0 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 24.8,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Rechts bleibt die Säule stehen, 0 € leuchtet"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 26.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Nach der Regelaltersgrenze",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 26.32,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "SEIT 2026: BIS 2.000 € STEUERFREI"
+  },
+  {
+   "quelle": "Szene",
+   "t": 26.32,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zurück, Chip steuerfrei bis 2.000 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 27.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "sind seit 2026 bis",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 27.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 29.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "zu 2.000 €",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 29.32,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 30.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Monat steuerfrei.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 30.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 31.65,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 31.8,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 31.8,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 31.95,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABZUG 2 · RENTENVERSICHERUNG"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 31.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Dann die Rentenversicherung:",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 32,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zur Jüngeren, Rentenversicherung"
+  },
+  {
+   "quelle": "Szene",
+   "t": 33.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 33.9,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RENTENBEITRAG 186 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 33.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "186 €",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 34,
+   "typ": "zaehler",
+   "dauer": 0.9,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 34,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "186-€-Kachel fliegt links davon"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 34.994,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "bei der Jüngeren,",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 35.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 36.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "die Ältere ist befreit.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 36.91,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Szene",
+   "t": 37,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 37.36,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "BEFREIT · 0 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 37.36,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Ältere befreit, Haus rechts glüht"
+  },
+  {
+   "quelle": "Chip",
+   "t": 38.27,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ARBEITGEBER ZAHLT TROTZDEM?"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 38.29,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ihr Arbeitgeber zahlt",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 38.32,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zur Rentenkasse, Lichtstrom vom Arbeitgeber"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 39.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "trotzdem seinen Anteil.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 39.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 41.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Was ihr das bringt,",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 41.12,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Chip Arbeitgeber zahlt trotzdem"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 42.25,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "zeigt sich am Ende.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 42.62,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.41,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.56,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.56,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 43.71,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABZUG 3 · ARBEITSLOSENVERS."
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 43.73,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Arbeitslosenversicherung: 26 €",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 43.76,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zur Jüngeren, Arbeitslosenversicherung"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.26,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 45.42,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ARBEITSLOSENVERS. 26 € · 0 €"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 45.5,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 45.52,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "26-€-Kachel fliegt links davon"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 46.77,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "gegen 0 €.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 47.02,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 47.82,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 48.13,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Der Abstand wächst",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 48.32,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABSTAND 303,08 €"
+  },
+  {
+   "quelle": "Szene",
+   "t": 48.32,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Abstand 303,08 € wächst, Leiste leuchtet"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 48.84,
+   "art": "zoom",
+   "dauer": 2.5,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 49.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "auf 303,08 €.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 49.82,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.69,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.84,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 50.99,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "ABZUG 4 · KRANKENKASSE"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 51.01,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Bleibt die Krankenkasse,",
+   "woerter": 3,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 51.04,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera hebt sich, Krankenkasse bei beiden"
+  },
+  {
+   "quelle": "Chip",
+   "t": 52.39,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "KRANKENKASSE: BEIDE ZAHLEN"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 52.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "hier zahlen beide.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 52.54,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.38,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 53.78,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "175 € GEGEN 169 €"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 53.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "175 €",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 53.867,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 53.88,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "175-€-Kachel links"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 55.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "gegen 169 €:",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.38,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 55.667,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 55.68,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "169-€-Kachel rechts"
+  },
+  {
+   "quelle": "Szene",
+   "t": 57.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.46,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 57.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ohne Anspruch auf Krankengeld",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Chip",
+   "t": 57.56,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "OHNE KRANKENGELD: NIEDRIGERER SATZ"
+  },
+  {
+   "quelle": "Szene",
+   "t": 58.68,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 59.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "gilt für die Ältere",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 60.05,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "ein niedrigerer Satz.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 60.18,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 61.68,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 61.8,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 61.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Pflege:",
+   "woerter": 1,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 62,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "PFLEGE · 36 € BEI BEIDEN"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera mittig, Pflege bei beiden"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 62.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "36 € bei beiden.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.533,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 62.56,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "36-€-Kacheln beidseitig"
+  },
+  {
+   "quelle": "Tafel",
+   "t": 62.833,
+   "typ": "zaehler",
+   "dauer": 0.933,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.06,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 64.53,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Chip",
+   "t": 64.73,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 64.85,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Netto: 1.485,92 €",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 64.88,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera nah, Endstand-Karte erscheint"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 65.15,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "KOLLEGIN 45"
+  },
+  {
+   "quelle": "Szene",
+   "t": 66.38,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 67.41,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "gegen 1.795,00 €.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 67.71,
+   "typ": "bilanz",
+   "klang": "klick",
+   "text": "KOLLEGIN 67"
+  },
+  {
+   "quelle": "Szene",
+   "t": 67.71,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "1.795,00 € rechts"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 69.2,
+   "art": "zoom",
+   "dauer": 2.7,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.21,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Bilanz",
+   "t": 69.5,
+   "typ": "bilanz",
+   "klang": "ding",
+   "text": "MEHR NETTO"
+  },
+  {
+   "quelle": "Szene",
+   "t": 69.5,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Differenz 309,08 € glüht"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 69.57,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "309,08 € mehr",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 71,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 71.69,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "im Monat,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 72.49,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "3.708,96 € im Jahr.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 72.5,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Szene",
+   "t": 74,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 74.89,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Den Unterschied machen vor",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 74.92,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Erklärgrafik Warum"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 75.97,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "allem Lohnsteuer (91,08 €)",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Balken",
+   "t": 76.04,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "LOHNSTEUER · € IM MONAT"
+  },
+  {
+   "quelle": "Balken",
+   "t": 76.24,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "STEUERFREI"
+  },
+  {
+   "quelle": "Szene",
+   "t": 76.24,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Balken Lohnsteuer"
+  },
+  {
+   "quelle": "Balken",
+   "t": 76.92,
+   "typ": "balken",
+   "dauer": 0.7,
+   "klang": "wachsen",
+   "text": "RENTENBEITRAG · € IM MONAT"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 76.93,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "und Rentenbeitrag (186 €).",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Balken",
+   "t": 77.12,
+   "typ": "balken-tag",
+   "klang": "pop",
+   "text": "BEFREIT"
+  },
+  {
+   "quelle": "Szene",
+   "t": 77.12,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Balken Rentenbeitrag"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 78.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Und der Anteil",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 78.48,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zur Rentenkasse, Arbeitgeberanteil"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 79.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "des Arbeitgebers?",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 79.98,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 80.28,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 80.38,
+   "typ": "zaehler",
+   "dauer": 1.1,
+   "laufend": true,
+   "klang": "zaehlen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 80.45,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "186 € im Monat",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 80.48,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "186 € fließen in die Kasse, Zähler läuft"
+  },
+  {
+   "quelle": "Szene",
+   "t": 81.98,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 82.33,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "für die Rentenkasse.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Chip",
+   "t": 82.63,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "RENTENKASSE"
+  },
+  {
+   "quelle": "Szene",
+   "t": 83.48,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  },
+  {
+   "quelle": "Chip",
+   "t": 83.58,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 83.65,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Ihre Rente steigt dadurch",
+   "woerter": 4,
+   "zeilen": 2
+  },
+  {
+   "quelle": "Szene",
+   "t": 83.68,
+   "typ": "welt",
+   "klang": "whoosh",
+   "text": "Kamera zur Älteren, Rente bleibt"
+  },
+  {
+   "quelle": "Chip",
+   "t": 83.92,
+   "typ": "chip",
+   "klang": "pop",
+   "text": "+0 € RENTE FÜR 67"
+  },
+  {
+   "typ": "kamera",
+   "quelle": "Regie",
+   "t": 84.76,
+   "art": "zoom",
+   "dauer": 2.6,
+   "klang": "zoom"
+  },
+  {
+   "quelle": "LiveZaehler",
+   "t": 84.96,
+   "typ": "zaehler-ein",
+   "klang": "pop"
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 85.09,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "um 0 €.",
+   "woerter": 3,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 85.36,
+   "typ": "welt",
+   "klang": "ding",
+   "text": "Rente steigt um 0 €"
+  },
+  {
+   "quelle": "Chip",
+   "t": 86.26,
+   "typ": "chip-weg",
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 86.53,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "Gleiches Brutto,",
+   "woerter": 2,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Pointe",
+   "t": 86.56,
+   "typ": "pointe",
+   "klang": "akzent",
+   "text": "GLEICHES BRUTTO,  309 € MEHR  NETTO."
+  },
+  {
+   "quelle": "Szene",
+   "t": 86.56,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "Welt dunkelt ab, Schlusskarte"
+  },
+  {
+   "quelle": "Hinweis",
+   "t": 87.701,
+   "typ": "folgen_hinweis",
+   "dauer": 2.5,
+   "text": "Jeden Tag eine Geldfrage im Profil",
+   "gesprochen": false,
+   "klang": false
+  },
+  {
+   "quelle": "Untertitel",
+   "t": 87.81,
+   "typ": "untertitel",
+   "klang": false,
+   "bild": false,
+   "text": "309 € mehr netto.",
+   "woerter": 4,
+   "zeilen": 1
+  },
+  {
+   "quelle": "Szene",
+   "t": 87.84,
+   "typ": "welt",
+   "klang": "akzent",
+   "text": "309 € leuchtet"
+  },
+  {
+   "quelle": "Szene",
+   "t": 89.34,
+   "typ": "welt",
+   "klang": "klick",
+   "text": "Kamera gleitet weiter, Licht wandert, Kolleginnen atmen"
+  }
+ ],
+ "klang": []
+}

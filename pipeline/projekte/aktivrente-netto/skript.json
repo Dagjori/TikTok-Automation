@@ -1,0 +1,145 @@
+{
+ "titel": "Aktivrente: Gleiches Gehalt, wer hat mehr netto?",
+ "skill": "video-produktion",
+ "konto": "simulierbar",
+ "skript_quelle": "acc1-2026-11-13-mittag",
+ "stil": "19 Architekturmodell (Abendlicht, zwei Büro-Schnitthäuser)",
+ "stil_begruendung": "Zwei identische Büro-Schnitthäuser (Schreibtisch, Lohnzettel) im Abendlicht nebeneinander: Abzugsposten sind Kacheln, die nur auf einer Seite aus dem Raum fliegen. Umgebung vorhanden, Licht warm gegen kühl, Vortag Stil 17 (12.11. Abend), Stil 19 zuletzt 10.11., nie Gelb.",
+ "teamfarben": {
+  "Kollegin 45": "#22C6D6",
+  "Kollegin 67": "#FF7A59"
+ },
+ "klangteppich": "raum",
+ "stil_helligkeit": "dunkel",
+ "suchbegriff": "Aktivrente",
+ "testbloecke": {
+  "folgen_hinweis": "mit"
+ },
+ "folgen_hinweis": "Jeden Tag eine Geldfrage im Profil",
+ "teil": 1,
+ "format": "Duell",
+ "offene_frage": "Wer hat bei gleichen 2.000 € brutto mehr netto: die Kollegin mit 67 oder die mit 45, und wie viel?",
+ "aufloesung": "Die 67-Jährige hat mit 1.795,00 € netto 309,08 € im Monat (3.708,96 € im Jahr) mehr als die 45-Jährige mit 1.485,92 €.",
+ "zweite_frage": {
+  "text": "Der Arbeitgeber zahlt für die Ältere trotzdem in die Rentenversicherung; was bringt ihr das?",
+  "gesetzt_in": "wendung2",
+  "aufgeloest_in": "pointe"
+ },
+ "segmente": [
+  {
+   "id": "hook",
+   "phase": "hook",
+   "text": "Aktivrente: gleicher Job, gleiche 2.000 € brutto. Wer hat mehr auf dem Konto, die Kollegin mit 67 oder die mit 45?",
+   "sprechtext": "Aktivrente: gleicher Job, gleiche zweitausend Euro brutto.\nWer hat mehr auf dem Konto, die Kollegin mit siebenundsechzig oder die mit fünfundvierzig?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "regeln",
+   "phase": "regeln",
+   "text": "Beide arbeiten am selben Schreibtisch. Beide haben ein Kind, keine Kirchensteuer.",
+   "sprechtext": "Beide arbeiten am selben Schreibtisch.\nBeide haben ein Kind und zahlen keine Kirchensteuer.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "falle",
+   "phase": "falle",
+   "text": "Klar, gleiches Brutto heißt gleiches Netto. Oder?",
+   "sprechtext": "Klar, gleiches Brutto heißt gleiches Netto.\nOder doch nicht?",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung1",
+   "phase": "wendung1",
+   "text": "Erster Abzug: Lohnsteuer. Die Jüngere zahlt 91,08 €, die Ältere 0 €. Nach der Regelaltersgrenze sind seit 2026 bis zu 2.000 € im Monat steuerfrei.",
+   "sprechtext": "Erster Abzug ist die Lohnsteuer.\nDie Jüngere zahlt einundneunzig Euro, die Ältere null.\nNach der Regelaltersgrenze sind seit diesem Jahr bis zu zweitausend Euro im Monat steuerfrei.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung2",
+   "phase": "wendung2",
+   "text": "Dann die Rentenversicherung: 186 € bei der Jüngeren, die Ältere ist befreit. Ihr Arbeitgeber zahlt trotzdem seinen Anteil. Was ihr das bringt, zeigt sich am Ende.",
+   "sprechtext": "Dann kommt die Rentenversicherung.\nDie Jüngere zahlt hundertsechsundachtzig Euro, die Ältere ist befreit.\nIhr Arbeitgeber zahlt trotzdem seinen Anteil.\nWas ihr das bringt, zeigt sich am Ende.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "wendung3",
+   "phase": "wendung3",
+   "text": "Arbeitslosenversicherung: 26 € gegen 0 €. Der Abstand wächst auf 303,08 €.",
+   "sprechtext": "Arbeitslosenversicherung: sechsundzwanzig Euro gegen null Euro.\nDer Abstand wächst auf rund dreihundert Euro.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "kipp",
+   "phase": "kipp",
+   "text": "Bleibt die Krankenkasse, hier zahlen beide. 175 € gegen 169 €: Ohne Anspruch auf Krankengeld gilt für die Ältere ein niedrigerer Satz. Pflege: 36 € bei beiden.",
+   "sprechtext": "Bleibt die Krankenkasse, hier zahlen beide.\nHundertfünfundsiebzig Euro gegen hundertneunundsechzig Euro.\nOhne Anspruch auf Krankengeld gilt für die Ältere ein niedrigerer Satz.\nFür die Pflege zahlen beide sechsunddreißig Euro.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "ergebnis",
+   "phase": "ergebnis",
+   "text": "Netto: 1.485,92 € gegen 1.795,00 €. 309,08 € mehr im Monat, 3.708,96 € im Jahr.",
+   "sprechtext": "Netto bleiben tausendvierhundertsechsundachtzig gegen tausendsiebenhundertfünfundneunzig Euro.\nGut dreihundert Euro mehr im Monat, rund dreitausendsiebenhundert im Jahr.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "warum",
+   "phase": "warum",
+   "text": "Den Unterschied machen vor allem Lohnsteuer (91,08 €) und Rentenbeitrag (186 €).",
+   "sprechtext": "Den Unterschied machen vor allem Lohnsteuer und Rentenbeitrag.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "pointe",
+   "phase": "pointe",
+   "text": "Und der Anteil des Arbeitgebers? 186 € im Monat für die Rentenkasse. Ihre Rente steigt dadurch um 0 €.",
+   "sprechtext": "Und der Anteil des Arbeitgebers?\nHundertsechsundachtzig Euro im Monat für die Rentenkasse.\nIhre Rente steigt dadurch um null Euro.",
+   "bild_text_abgleich": []
+  },
+  {
+   "id": "schlusskarte",
+   "phase": "schlusskarte",
+   "text": "Gleiches Brutto, 309 € mehr netto.",
+   "sprechtext": "Gleiches Brutto, dreihundert Euro mehr netto.",
+   "bild_text_abgleich": []
+  }
+ ],
+ "caption": "Aktivrente: Gleiches Gehalt, wer hat mehr netto? 💶 Ich hab's simuliert. Hättest du auf die Jüngere oder die Ältere getippt? 👇 #aktivrente #rente #nettogehalt #wissen #simulation",
+ "quellen": [
+  "(F) FAQ zur Aktivrente (§ 3 Nr. 21 EStG), Bundesministerium der Finanzen, 2026 – https://www.bundesfinanzministerium.de/Content/DE/FAQ/FAQ-zur-Aktivrente.html",
+  "(F) Aktivrente: bis 2.000 €/Monat bzw. 24.000 €/Jahr, Freistellung im Lohnsteuerabzug, kein Progressionsvorbehalt, steuerschroeder.de, Rechtsstand 30.06.2026 – https://www.steuerschroeder.de/Aktivrente.html",
+  "(F) Aktivrente, Sozialversicherungslexikon, Barmer, 2026 – https://www.barmer.de/firmenkunden/sozialversicherung/sozialversicherungslexikon/aktivrente-1519506",
+  "(F) Aktivrente SV-Recht: steuerfreier Lohn bleibt beitragspflichtig, TK Firmenkunden, 20.02.2026 – https://www.tk.de/firmenkunden/service/fachthemen/fachthema-beitraege/aktivrente-sv-recht-2212822",
+  "(F) Versicherungsfreiheit nach Erreichen der Regelaltersgrenze, Arbeitgeberanteil seit 01.01.2022, Deutsche Rentenversicherung summa summarum – https://www.deutsche-rentenversicherung.de/DRV/DE/Experten/Arbeitgeber-und-Steuerberater/summa-summarum/Lexikon/V/versicherungsfreiheit_nach_erreichen_der_regelaltersgrenze.html",
+  "(F) § 172 SGB VI Arbeitgeberanteil bei Versicherungsfreiheit – https://lxgesetze.de/sgb-vi/172",
+  "(F) Versicherungsfrei weiterarbeiten bringt keine höhere Rente (LSG Hessen), steuertipps.de – https://www.steuertipps.de/altersvorsorge-rente/rentner-pensionaere/rentner-versicherungsfrei-in-teilzeit-bringt-keine-hoehere-rente",
+  "(F) Beschäftigte im Rentenalter (KV/PV-pflichtig, arbeitslosenversicherungsfrei), AOK Firmenkunden 2026 – https://www.aok.de/fk/nordwest/aktuelles/beschaeftigte-im-rentenalter/",
+  "(F) Ermäßigter Beitragssatz ohne Krankengeldanspruch bei Vollrente, BKK-Informationsportal – https://www.informationsportal.de/sozialversicherung-und-hinzuverdienst-regelungen-ab-dem-renteneintritt/",
+  "(F) Lohnsteuer 2026: Programmablaufplan, BMF-Schreiben vom 12.11.2025; Beitragssätze 2026 (RV 18,6 %, AV 2,6 %, KV 14,6 %/14,0 %, Ø-Zusatzbeitrag 2,9 %, PV 3,6 %), umgesetzt in pipeline/sim/netto.mjs"
+ ],
+ "annahmen": [
+  "(A) Beide Vollzeit am selben Arbeitsplatz, 2.000 € brutto im Monat, Steuerklasse 1, je ein Kind (kein PV-Zuschlag, kein Abschlag), keine Kirchensteuer, gesetzlich versichert mit dem durchschnittlichen Zusatzbeitrag 2,9 % (je nach Kasse leicht anders).",
+  "(A) Die 67-Jährige hat die Regelaltersgrenze erreicht, bezieht eine Altersvollrente (daher kein Krankengeld, ermäßigter KV-Satz) und hat nicht auf die Rentenversicherungsfreiheit verzichtet.",
+  "(A) 2.000 € liegen genau an der Obergrenze des Übergangsbereichs; dort ist die beitragspflichtige Einnahme der volle Lohn, die Beiträge sind die regulären.",
+  "(A) Verglichen wird nur der Lohnzettel; die Rente der Älteren wird wie bisher gesondert versteuert, die Aktivrente ändert daran nichts. Modellrechnung, keine Steuerberatung."
+ ],
+ "rechenweg": "Kollegin 45 (StKl 1, 1 Kind, keine Kirche, GKV mit Ø-Zusatzbeitrag 2,9 %): Lohnsteuer 91,08 € (PAP 2026, pipeline/sim/netto.mjs), Soli 0; RV 2.000 × 9,3 % = 186,00; AV 2.000 × 1,3 % = 26,00; KV 2.000 × (7,3 % + 1,45 %) = 175,00; PV 2.000 × 1,8 % = 36,00; Netto = 2.000 − 514,08 = 1.485,92 €. Kollegin 67 (Regelaltersgrenze erreicht, bezieht Altersvollrente, kein Verzicht auf RV-Freiheit): Lohnsteuer 0 (§ 3 Nr. 21 EStG, 2.000 € steuerfrei); RV 0 und AV 0 (versicherungsfrei); KV ermäßigt 2.000 × (7,0 % + 1,45 %) = 169,00; PV 36,00; Netto = 2.000 − 205,00 = 1.795,00 €. Abstand nach LSt + RV + AV: 91,08 + 186 + 26 = 303,08 €; KV-Vorteil + 6,00 → 309,08 €/Monat; × 12 = 3.708,96 €/Jahr. Arbeitgeberanteil RV für die Ältere (§ 172 Abs. 1 SGB VI): 2.000 × 9,3 % = 186,00 €/Monat (2.232 €/Jahr), ohne Wirkung auf ihre Rente. Nachgerechnet mit Python und netto.mjs.",
+ "zahlen": {
+  "brutto_beide": "2.000,00 €",
+  "lohnsteuer_45": "91,08 €",
+  "lohnsteuer_67": "0,00 €",
+  "rv_45": "186,00 €",
+  "av_45": "26,00 €",
+  "kv_45": "175,00 €",
+  "kv_67": "169,00 €",
+  "pv_beide": "36,00 €",
+  "abstand_nach_av": "303,08 €",
+  "netto_45": "1.485,92 €",
+  "netto_67": "1.795,00 €",
+  "differenz_monat": "309,08 €",
+  "differenz_jahr": "3.708,96 €",
+  "ag_rv_anteil_67": "186,00 €/Monat",
+  "rentenzuwachs_ohne_verzicht": "0 €"
+ },
+ "korrekturen": []
+}
