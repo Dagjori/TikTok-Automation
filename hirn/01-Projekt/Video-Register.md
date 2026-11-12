@@ -25,13 +25,13 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 |---|---|---|---|---|---|---|---|---|---|
 | 13.11. | Abend | Deutschlandticket: 2023 oder 2027, wer arbeitet länger dafür? | Geld früher und heute · Duell | geplant | – | – | – | – | – |
 | 13.11. | Mittag | Aktivrente: Gleiches Gehalt, wer hat mehr netto? | Arbeit und Gehalt · Duell | geplant | – | – | – | – | – |
-| 12.11. | Abend | Gasrechnung zerlegt: Wie viel davon bekommt der Staat? | Wohnen und Energie · Was bleibt | gepostet | 79 s | – | – | – | – |
+| 12.11. | Abend | Gasrechnung zerlegt: Wie viel davon bekommt der Staat? | Wohnen und Energie · Was bleibt | gepostet | 79 s | 25 | – | – | – |
 | 12.11. | Mittag | [Rentenerhöhung 2027: Was bleibt von 82 Euro mehr?](https://tiktok.com/@simulierbar/video/7707246072925654304) | Rente und Vorsorge · Was bleibt | gepostet | 85 s | 255 | – | – | – |
 | 11.11. | Abend | [Benzin: Wie viel Steuer zahlst du auf Steuer?](https://www.tiktok.com/@simulierbar/video/7706983308667702560) | Preise und Lebenshaltung · Lernvideo | gepostet | 81 s | 266 | 11,8 s (15 %) | – | – |
-| 11.11. | Mittag | [Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern?](https://www.tiktok.com/@simulierbar/video/7706875034270223649) | Rente und Vorsorge · Duell | gepostet | 85 s | 271 | 16,5 s (19 %) | 0 | – |
+| 11.11. | Mittag | [Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern?](https://www.tiktok.com/@simulierbar/video/7706875034270223649) | Rente und Vorsorge · Duell | gepostet | 85 s | 273 | 16,5 s (19 %) | 0 | – |
 | 10.11. | Abend | [Kindergeld in Deutschland oder in Kanada: Wo zahlt der Staat bis 18 mehr?](https://www.tiktok.com/@simulierbar/video/7706612169021852961) | Klassiker mit neuer Frage | gepostet | 75 s | 246 | 18,6 s (25 %) | -1 | – |
 | 10.11. | Mittag | [Maut 2021 oder heute: Welche Familie zahlt beim Einkaufen mehr mit?](https://www.tiktok.com/@simulierbar/video/7706503906116832544) | Versteckte Mechaniken | gepostet | 76 s | 272 | 21 s (28 %) | -1 | – |
-| 09.11. | Abend | [Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?](https://www.tiktok.com/@simulierbar/video/7706241140705479968) | Versteckte Mechaniken | gepostet | 72 s | 269 | 20 s (28 %) | 0 | – |
+| 09.11. | Abend | [Kaffee oder Tee? Wer zahlt im Leben mehr Steuern für sein Heißgetränk?](https://www.tiktok.com/@simulierbar/video/7706241140705479968) | Versteckte Mechaniken | gepostet | 72 s | 270 | 20 s (28 %) | 0 | – |
 | 09.11. | Mittag | [Mindestlohn 2015 oder 2026: Wer kann sich mit einem Jahr Arbeit mehr leisten?](https://www.tiktok.com/@simulierbar/video/7706132764512292128) | Geschichte und Kurioses | gepostet | 74 s | 294 | 26,6 s (36 %) | 0 | – |
 | 08.11. | Abend | [1968 oder heute: Wie viel mehr Mehrwertsteuer zahlt ein Haushalt im Jahr?](https://www.tiktok.com/@simulierbar/video/7705869881165581600) | Geschichte und Kurioses | gepostet | 76 s | 294 | 25,8 s (34 %) | -1 | – |
 | 08.11. | Mittag | [Kaiserreich oder heute: Wer zahlt bei gleichem Gehalt mehr Steuern?](https://www.tiktok.com/@simulierbar/video/7705833029092052257) | Geschichte und Kurioses | gepostet | 76 s | 778 | 29,5 s (39 %) | -1 | – |
@@ -58,7 +58,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 |---|---|---|---|---|---|---|---|---|---|
 | 13.11. | Abend | Was passiert, wenn du im Watt stehst und die Flut kommt? | Naturphänomene · referenz_pov | geplant | – | – | – | – | – |
 | 13.11. | Mittag | Was passiert auf einer Hallig, wenn der Luftdruck rapide fällt? | Naturphänomene · referenz_pov | geplant | – | – | – | – | – |
-| 12.11. | Abend | Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz? | Physik und Chemie im Alltag · referenz_pov | gepostet | 80 s | – | – | – | – |
+| 12.11. | Abend | Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz? | Physik und Chemie im Alltag · referenz_pov | gepostet | 80 s | 0 | – | – | – |
 | 12.11. | Mittag | [Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt?](https://tiktok.com/@stelldirvor.pov/video/7707246113908182304) | Technik und Versorgung · referenz_pov | gepostet | 80 s | 253 | – | – | – |
 | 11.11. | Abend | [Was wäre, wenn der Erdkern abkühlt?](https://www.tiktok.com/@stelldirvor.pov/video/7706983251285445921) | Naturphänomene · referenz_pov | gepostet | 80 s | 280 | 8,8 s (11 %) | – | – |
 | 11.11. | Mittag | [Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft?](https://www.tiktok.com/@stelldirvor.pov/video/7706875053215878432) | Naturphänomene · referenz_pov | gepostet | 80 s | 278 | 7,8 s (10 %) | +2 | – |
