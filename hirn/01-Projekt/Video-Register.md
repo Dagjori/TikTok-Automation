@@ -14,8 +14,8 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 ## Überblick
 
-- **Videos im Register:** 52 (Simulierbar 28, davon 23 gepostet · Stell dir vor 24, davon 20 gepostet)
-- **Nach Status:** Idee 0 · Skript 0 · in Produktion 0 · geplant 6 · gepostet 43 · Fehler 3
+- **Videos im Register:** 52 (Simulierbar 28, davon 24 gepostet · Stell dir vor 24, davon 21 gepostet)
+- **Nach Status:** Idee 0 · Skript 0 · in Produktion 0 · geplant 4 · gepostet 45 · Fehler 3
 - **Nach Format:** ohne Angabe 24 · referenz_pov 22 · Duell 3 · Was bleibt 2 · Lernvideo 1
 - **Lesart:** „gepostet“ heißt, Buffer hat das Video gesendet (oder die Nachprüfung hat es bestätigt). Follows = Follower-Zuwachs in den 24 Stunden nach dem Post (netto, zwei Videos am Tag überlappen). Ø-Wiedergabe = durchschnittliche Wiedergabezeit, in Klammern der Anteil an der Länge.
 
@@ -25,7 +25,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 |---|---|---|---|---|---|---|---|---|---|
 | 13.11. | Abend | Deutschlandticket: 2023 oder 2027, wer arbeitet länger dafür? | Geld früher und heute · Duell | geplant | – | – | – | – | – |
 | 13.11. | Mittag | Aktivrente: Gleiches Gehalt, wer hat mehr netto? | Arbeit und Gehalt · Duell | geplant | – | – | – | – | – |
-| 12.11. | Abend | Gasrechnung zerlegt: Wie viel davon bekommt der Staat? | Wohnen und Energie · Was bleibt | geplant | 79 s | – | – | – | – |
+| 12.11. | Abend | Gasrechnung zerlegt: Wie viel davon bekommt der Staat? | Wohnen und Energie · Was bleibt | gepostet | 79 s | – | – | – | – |
 | 12.11. | Mittag | [Rentenerhöhung 2027: Was bleibt von 82 Euro mehr?](https://tiktok.com/@simulierbar/video/7707246072925654304) | Rente und Vorsorge · Was bleibt | gepostet | 85 s | 255 | – | – | – |
 | 11.11. | Abend | [Benzin: Wie viel Steuer zahlst du auf Steuer?](https://www.tiktok.com/@simulierbar/video/7706983308667702560) | Preise und Lebenshaltung · Lernvideo | gepostet | 81 s | 266 | 11,8 s (15 %) | – | – |
 | 11.11. | Mittag | [Rente 2010 oder 2026: gleiche 2.000 Euro, wer zahlt mehr Steuern?](https://www.tiktok.com/@simulierbar/video/7706875034270223649) | Rente und Vorsorge · Duell | gepostet | 85 s | 271 | 16,5 s (19 %) | 0 | – |
@@ -58,7 +58,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 |---|---|---|---|---|---|---|---|---|---|
 | 13.11. | Abend | Was passiert, wenn du im Watt stehst und die Flut kommt? | Naturphänomene · referenz_pov | geplant | – | – | – | – | – |
 | 13.11. | Mittag | Was passiert auf einer Hallig, wenn der Luftdruck rapide fällt? | Naturphänomene · referenz_pov | geplant | – | – | – | – | – |
-| 12.11. | Abend | Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz? | Physik und Chemie im Alltag · referenz_pov | geplant | 80 s | – | – | – | – |
+| 12.11. | Abend | Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz? | Physik und Chemie im Alltag · referenz_pov | gepostet | 80 s | – | – | – | – |
 | 12.11. | Mittag | [Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt?](https://tiktok.com/@stelldirvor.pov/video/7707246113908182304) | Technik und Versorgung · referenz_pov | gepostet | 80 s | 253 | – | – | – |
 | 11.11. | Abend | [Was wäre, wenn der Erdkern abkühlt?](https://www.tiktok.com/@stelldirvor.pov/video/7706983251285445921) | Naturphänomene · referenz_pov | gepostet | 80 s | 280 | 8,8 s (11 %) | – | – |
 | 11.11. | Mittag | [Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft?](https://www.tiktok.com/@stelldirvor.pov/video/7706875053215878432) | Naturphänomene · referenz_pov | gepostet | 80 s | 278 | 7,8 s (10 %) | +2 | – |
