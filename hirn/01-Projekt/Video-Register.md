@@ -14,8 +14,8 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 
 ## Überblick
 
-- **Videos im Register:** 52 (Simulierbar 28, davon 23 gepostet · Stell dir vor 24, davon 19 gepostet)
-- **Nach Status:** Idee 0 · Skript 0 · in Produktion 0 · geplant 7 · gepostet 42 · Fehler 3
+- **Videos im Register:** 52 (Simulierbar 28, davon 23 gepostet · Stell dir vor 24, davon 20 gepostet)
+- **Nach Status:** Idee 0 · Skript 0 · in Produktion 0 · geplant 6 · gepostet 43 · Fehler 3
 - **Nach Format:** ohne Angabe 24 · referenz_pov 22 · Duell 3 · Was bleibt 2 · Lernvideo 1
 - **Lesart:** „gepostet“ heißt, Buffer hat das Video gesendet (oder die Nachprüfung hat es bestätigt). Follows = Follower-Zuwachs in den 24 Stunden nach dem Post (netto, zwei Videos am Tag überlappen). Ø-Wiedergabe = durchschnittliche Wiedergabezeit, in Klammern der Anteil an der Länge.
 
@@ -59,7 +59,7 @@ cssclasses: [konto-gemeinsam, typ-wissen]
 | 13.11. | Abend | Was passiert, wenn du im Watt stehst und die Flut kommt? | Naturphänomene · referenz_pov | geplant | – | – | – | – | – |
 | 13.11. | Mittag | Was passiert auf einer Hallig, wenn der Luftdruck rapide fällt? | Naturphänomene · referenz_pov | geplant | – | – | – | – | – |
 | 12.11. | Abend | Was passiert, wenn ein Blitz dein Flugzeug trifft, in Zeitlupe vom Fensterplatz? | Physik und Chemie im Alltag · referenz_pov | geplant | 80 s | – | – | – | – |
-| 12.11. | Mittag | Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt? | Technik und Versorgung · referenz_pov | geplant | 80 s | – | – | – | – |
+| 12.11. | Mittag | Was passiert in deinem Dorf, wenn die Netzfrequenz unter 50 Hertz fällt? | Technik und Versorgung · referenz_pov | gepostet | 80 s | – | – | – | – |
 | 11.11. | Abend | [Was wäre, wenn der Erdkern abkühlt?](https://tiktok.com/@stelldirvor.pov/video/7706983251285445921) | Naturphänomene · referenz_pov | gepostet | 80 s | 272 | – | – | – |
 | 11.11. | Mittag | [Was wäre, wenn ein Sonnensturm wie 1859 heute Nacht Deutschland trifft?](https://tiktok.com/@stelldirvor.pov/video/7706875053215878432) | Naturphänomene · referenz_pov | gepostet | 80 s | 278 | – | – | – |
 | 10.11. | Abend | [Was wäre, wenn du die Polarnacht in Tromsø erlebst?](https://tiktok.com/@stelldirvor.pov/video/7706612156975811872) | Physik, Wetter, Geografie, Weltraum · referenz_pov | gepostet | 80 s | 252 | 2,8 s (3 %) | +2 | – |
