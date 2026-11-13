@@ -6,6 +6,16 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
+## 💶 Kfz-Versicherung 2027: Gleiches Auto, anderer Wohnort, wie viel Euro macht die Regionalklasse aus?
+- **Score:** 74 (Nachfrage 4, Timing 5, Wettbewerb 3, Passung 3, Aufwand 3, Risiko 3) · **Status:** neu (Neubewertung, vorher 68 beobachten)
+- **Warum:**
+  - Neue Typ- und Regionalklassen für 2027: laut Berichten bekommen ca. 7,4 Mio. Autofahrende eine höhere Typklasse in der Haftpflicht, ca. 4,8 Mio. eine schlechtere Regionalklasse, ca. 5,2 Mio. eine bessere (F: sekundär, [kfz-auskunft.de](https://www.kfz-auskunft.de/news/32894.html), [meinauto.de](https://www.meinauto.de/news/2026/09/kfz-versicherung-2027-fuer-4-8-millionen-autofahrer-steigt-die-regionalklasse), [echo24](https://www.echo24.de/leben/auto/wird-die-kfz-versicherung-2027-teurer-oder-billiger-typklasssen-legen-kosten-fest-94518285.html); Zahlen weichen je Quelle ab).
+  - Wer zum 01.01.2027 wechseln will, muss in der Regel bis 30.11.2026 kündigen, die Kündigung muss beim Versicherer eingehen (F: Suchzusammenfassung, vor Produktion prüfen).
+  - Der Wohnort kann den Beitrag laut Bericht um mehr als 60 % verändern (F: [experten.de](https://www.experten.de/id/4951788/Kfz-Versicherung-Der-Wohnort-kann-den-Beitrag-um-mehr-als-60-Prozent-veraendern/index.pdf), Einzelquelle).
+- **Eigene Umsetzung (Duell/Was bleibt, GELD):** Zwei Fahrer mit identischem Auto und Fahrprofil, ein Wohnort mit besserer, einer mit schlechterer Regionalklasse. Euro-Zähler zeigt die Jahresprämie, Denkfalle „Klar, der Fahrer zahlt, was sein Auto kostet. Oder?“ Zweite Frage: was ändert sich zum 01.01. und bis wann kann man handeln. **Nur Modellrechnung mit offenen Annahmen (Faktoren, A), keine Versicherer-, Tarif- oder Anbieternamen.**
+- **Vor Produktion prüfen:** GDV-Tabelle (Primärquelle), Faktorspanne der Regionalklassen, Kündigungsfrist.
+- **Posten:** 17.–25.11.2026, spätestens 25.11. (vor Fristende 30.11.).
+
 ## 💶 Krankenkasse erhöht 2027: Was kosten 0,5 Prozentpunkte mehr, bei 3.000 € und bei 5.000 € brutto?
 - **Score:** 75 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 3) · **Status:** neu
 - **Warum:**
@@ -13,7 +23,7 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
   - Bei einer Erhöhung gilt ein Sonderkündigungsrecht (neue Kasse bis Monatsende des Erhöhungsmonats), und die Pflicht der Kassen, vorab persönlich zu informieren, ist entfallen (F: laut [buerger-geld.org](https://www.buerger-geld.org/?p=49150), Suchzusammenfassung, vor Produktion gegen Primärquelle prüfen).
   - Der Zusatzbeitrag wird je zur Hälfte von Arbeitnehmer und Arbeitgeber getragen.
 - **Eigene Umsetzung (Zeitverlauf/Was bleibt, GELD):** Zwei Gehälter (3.000 € und 5.000 € brutto): Euro-Zähler über zwölf Monate zeigt, wie viel Netto 0,5 Prozentpunkte mehr Zusatzbeitrag kosten, ohne dass die Kasse schreibt. Denkfalle „Klar, es zahlt ja der Arbeitgeber mit. Oder?“ Zwei offene Fragen: wie viel zahlt man selbst, was bringt der Wechsel. Keine Kassennamen, nur Modellrechnung (A).
-- **Vor Produktion prüfen:** Beitragsbemessungsgrenze 2027 (nicht belegt), allgemeiner Beitragssatz, Zusatzbeitrag-Entwurf der Kassen, Fristen.
+- **Vor Produktion prüfen:** Beitragsbemessungsgrenze KV/PV 2027 (laut krankenkassen.de 76.500 €/Jahr = 6.375 €/Monat, lohn-info.de widerspricht, 13.11.), allgemeiner Beitragssatz, Zusatzbeitrag-Entwurf der Kassen, Fristen.
 - **Posten:** 14.–22.12.2026 empfohlen, spätestens 30.12.2026 (Wechsel zum 01.04. möglich, Frist bis 31.01.).
 
 ## 💶 Gas wird 2027 teurer: Wer zahlt mehr drauf, Wohnung mit 70 m² oder Haus mit 140 m²?
