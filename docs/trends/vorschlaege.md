@@ -6,6 +6,17 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
+## 💶 Altersvorsorgedepot statt Riester: Wie viel Euro machen 540 € Zulage nach 30 Jahren aus?
+- **Score:** 70 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 3, Aufwand 3, Risiko 3) · **Status:** neu (knapp über der Schwelle, schwächerer Vorschlag)
+- **Warum:**
+  - Das Altersvorsorgereformgesetz ist durch: Bundestag 27.03.2026, Bundesrat 08.05.2026, Start 01.01.2027; das Altersvorsorgedepot ersetzt die Riester-Rente für Neuverträge (F: [Ebner Stolz](https://www.ebnerstolz.de/de/unser-angebot/leistungen/steuerberatung/allgemeine-steuerberatung/altersvorsorgereformgesetz-103778.html), [cash-online](https://www.cash-online.de/a/altersvorsorgedepot-2027-warum-sich-sonderzahlungen-in-die-basisrente-weiterhin-lohnen-729328/)).
+  - Zulage laut einer Quelle bis 540 € im Jahr, die Angaben schwanken je Quelle (F: [rechner-hub](https://rechner-hub.de/blog/altersvorsorgedepot-2027-zulagen-rechnung/), vor Produktion gegen das Gesetz prüfen).
+  - Die Basisrente (Rürup) bleibt bestehen, Einzahlungsfrist für 2026 ist der 31.12. (F: Ratgeber, Höchstbetrag 30.826 € für Ledige 2026).
+- **Eigene Umsetzung (Zeitverlauf, GELD):** Zwei Sparer mit gleicher Eigenleistung, einer mit Zulage, einer ohne. Euro-Zähler über 30 Jahre zeigt, wie viel die Zulage am Ende ausmacht (Wendung: Zinseszins). Annahmen offen (A), **keine Anbieter-, Produkt- oder ETF-Namen**, keine Anlageberatung.
+- **Hinweis:** Das Video „Mit 25 oder mit 35 vorsorgen“ gibt es schon, der Winkel hier ist die Zulage.
+- **Vor Produktion prüfen:** Zulagenhöhe und Bedingungen im Gesetz, Renditeannahme.
+- **Posten:** 01.–20.12.2026 empfohlen, spätestens 28.12.2026.
+
 ## 💶 Kfz-Versicherung 2027: Gleiches Auto, anderer Wohnort, wie viel Euro macht die Regionalklasse aus?
 - **Score:** 74 (Nachfrage 4, Timing 5, Wettbewerb 3, Passung 3, Aufwand 3, Risiko 3) · **Status:** neu (Neubewertung, vorher 68 beobachten)
 - **Warum:**
