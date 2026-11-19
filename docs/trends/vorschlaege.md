@@ -6,6 +6,17 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
+## 💶 Stromsteuer sinkt 2027: Was spart ein Haushalt in Euro wirklich, wenn der Versorger nichts weitergibt?
+- **Score:** 77 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 4) · **Status:** neu (Neubewertung, vorher 62 beobachten)
+- **Warum:**
+  - Koalition hat sich am 18.11. auf Senkung der Stromsteuer für alle Verbraucher geeinigt: von 2,05 auf 0,1 Cent/kWh, Entlastung 1,95 Cent, mit MwSt rund 2,32 Cent; befristet bis Ende 2027 (F: [ZDF heute](https://www.zdfheute.de/politik/stromsteuer-senkung-beschlossen-100.html), [Berliner Zeitung](https://www.berliner-zeitung.de/article/strompreis-sinkt-2027-so-viel-geld-sparen-sie-durch-die-neue-stromsteuer-senkung-wirklich-10609655), [t-online](https://www.t-online.de/finanzen/energie/id_101532442/stromsteuer-sinkt-diese-verbraucher-profitieren-von-der-senkung.html)).
+  - Versorger sind nicht verpflichtet, die Entlastung weiterzugeben (F: Berichte vom 18.11.); Startdatum Januar 2027 laut einer Quelle, Quellen weichen leicht ab.
+- **Eigene Umsetzung (Was bleibt, GELD):** Haushalte mit 1.500, 3.000 und 5.000 kWh/Jahr; Euro-Zähler zeigt die Ersparnis pro Jahr (kWh x 2,32 Ct), Wendung: Weitergabe 100 % gegen 0 %. Annahmen offen, keine Anbieternamen, rein als Modellrechnung, keine Parteibewertung.
+- **Vor Produktion prüfen:** Gesetz noch im Verfahren (Beschluss Bundestag, Startdatum, Weitergabe), Satz inkl. MwSt.
+- **Posten:** ab sofort bis 20.12.2026, spätestens 31.12.2026.
+
+---
+
 ## 💶 Altersvorsorgedepot statt Riester: Wie viel Euro machen 540 € Zulage nach 30 Jahren aus?
 - **Score:** 70 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 3, Aufwand 3, Risiko 3) · **Status:** neu (knapp über der Schwelle, schwächerer Vorschlag)
 - **Warum:**
