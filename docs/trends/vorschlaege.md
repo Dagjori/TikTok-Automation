@@ -6,6 +6,18 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
+## 💶 Frühstart-Rente: Wie viel Euro werden aus 10 € im Monat vom Staat, bis das Kind in Rente geht?
+- **Score:** 75 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 3) · **Status:** neu
+- **Warum:**
+  - Der Bundesrat hat die Frühstart-Rente am 20.11. gebilligt, Start 01.01.2027: 10 € im Monat vom Staat je Kind vom 6. bis 18. Geburtstag, zusammen 1.440 €, am Kapitalmarkt angelegt, Erträge bis zur Auszahlung steuerfrei, Eltern dürfen zusätzlich einzahlen (F: [aktiencheck](https://aktiencheck.de/artikel/fruehstartrente-bundesrat-gibt-gruenes-licht-fuer-10-euro-im-monat-je-kind-wer), [Sparkasse-Ratgeber](https://www.sparkasse.de/pk/ratgeber/finanzplanung/rente-planen/fruehstartrente.html), [t-online](https://www.t-online.de/finanzen/ratgeber/altersvorsorge/privatevorsorge/id_101354688/fruehstart-rente-bundesrat-beschliesst-die-naechste-rentenreform.html)).
+  - Große Berichterstattung mit „eine Million“-Überschriften (F: [infranken](https://www.infranken.de/ratgeber/karriere-geld/bundesrat-fruehstartrente-eine-million-wie-viel-zuzahlen-art-6411087)); dort beziehen sich die hohen Endbeträge auf deutlich höhere Beträge als 10 €, genau diese Einordnung ist der Winkel.
+  - Quellen widersprechen sich bei der Zielgruppe (ab 6 Jahre bzw. Jahrgang 2020 rückwirkend; ältere Kinder evtl. ohne Förderung).
+- **Eigene Umsetzung (Zeitverlauf, GELD):** Euro-Zähler über 12 Einzahl- und anschließend Wartejahre bis 67: nur Staatsbeitrag (1.440 €) gegen mit 50 €/Monat Eigenanteil, drei Renditeannahmen offen als Kette, Wendung: die Rendite macht mehr als die Einzahlung. Keine Anbieter, keine Produktempfehlung, rein als Modellrechnung.
+- **Vor Produktion prüfen:** Gesetzestext (Zielgruppe, Beitragshöhe, Anlageform, Auszahlung), Renditeannahme, Abgrenzung zum Altersvorsorgedepot-Vorschlag.
+- **Posten:** ab sofort bis 20.12.2026, spätestens 31.12.2026.
+
+---
+
 ## 💶 Stromsteuer sinkt 2027: Was spart ein Haushalt in Euro wirklich, wenn der Versorger nichts weitergibt?
 - **Score:** 77 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 4) · **Status:** neu (Neubewertung, vorher 62 beobachten)
 - **Warum:**
