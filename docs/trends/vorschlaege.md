@@ -6,6 +6,17 @@ Status: `neu` · `angenommen` · `abgelehnt` · `produziert`
 
 ---
 
+## 💶 Weihnachtsmarkt zu viert: Was kostet ein Abend wirklich, wenn Pfand und Kleinigkeiten dazukommen?
+- **Score:** 73 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 2, Aufwand 4, Risiko 5) · **Status:** neu (Neubewertung, vorher 67 beobachten; Passung knapp, nur mit Winkel)
+- **Warum:**
+  - Märkte starten ab ca. 23.11., 1. Advent 29.11.; viele Preisübersichten, Glühwein bleibt laut dpa-Umfrage meist stabil bei 4–5 €, Bratwurst 4,50–5 €, Tassenpfand teils bis 3,50 € (F: [meinKA](https://meinka.de/weihnachtsmarkt-saison-2026-gluehweinpreise-im-land-bleiben-meist-stabil/), [Verbraucherschutzforum](https://verbraucherschutzforum.berlin/2026-11-15/weihnachtsmaerkte-2026-in-schleswig-holstein-so-viel-kosten-gluehwein-bratwurst-und-gebrannte-mandeln-447461/), Preise je Stadt verschieden, vor Produktion prüfen).
+  - Beispielrechnungen in Quellen: Köln vier Personen ca. 30 €, Schleswig-Holstein ca. 44 € (F: dieselben Quellen).
+- **Eigene Umsetzung (Was bleibt, GELD):** Familie mit zwei Erwachsenen und zwei Kindern, Euro-Zähler über den Abend (Getränke, Essen, Mandeln, Karussell), Wendung: Pfand und „nur noch eine Runde“ machen den Unterschied; Stadtvergleich mit zwei Preisannahmen. Keine Anbieter, rein als Modellrechnung.
+- **Vor Produktion prüfen:** Preise je Stadt (Annahmen offen als Chips), Pfandhöhe.
+- **Posten:** 23.11.–10.12.2026, spätestens 20.12.
+
+---
+
 ## 💶 Frühstart-Rente: Wie viel Euro werden aus 10 € im Monat vom Staat, bis das Kind in Rente geht?
 - **Score:** 75 (Nachfrage 4, Timing 4, Wettbewerb 3, Passung 4, Aufwand 4, Risiko 3) · **Status:** neu
 - **Warum:**
